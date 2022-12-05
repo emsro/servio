@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.24)
 
 project(servio C CXX ASM)
 
@@ -7,6 +7,7 @@ set(CMAKE_C_STANDARD 99)
 
 include(cmake/flags.cmake)
 
+cmake_policy(SET CMP0077 NEW)
 option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 
@@ -51,12 +52,14 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     CMSIS
     COMPONENTS STM32G4
     REQUIRED
-    GLOBAL)
+    GLOBAL
+)
   find_package(
     HAL
     COMPONENTS STM32G4
     REQUIRED
-    GLOBAL)
+    GLOBAL
+)
 
   function(servio_board_library)
     cmake_parse_arguments(A "" "TARGET" "CUSTOM_FILES" ${ARGN})
