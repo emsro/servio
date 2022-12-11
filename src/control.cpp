@@ -61,15 +61,15 @@ void control::switch_to_power_control( int16_t power )
     state_.emplace< power_control >( power );
     power_ = power;
 }
-void control::switch_to_current_control( std::chrono::milliseconds now, float current )
+void control::switch_to_current_control( std::chrono::milliseconds, float current )
 {
     state_.emplace< current_control >( current );
 }
-void control::switch_to_velocity_control( std::chrono::milliseconds now, float velocity )
+void control::switch_to_velocity_control( std::chrono::milliseconds, float velocity )
 {
     state_.emplace< velocity_control >( velocity, current_pid_.get_desired() );
 }
-void control::switch_to_position_control( std::chrono::milliseconds now, float position )
+void control::switch_to_position_control( std::chrono::milliseconds, float position )
 {
     state_.emplace< position_control >(
         position, velocity_pid_.get_desired(), current_pid_.get_desired() );
