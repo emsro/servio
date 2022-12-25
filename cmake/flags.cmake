@@ -14,6 +14,7 @@ function(servio_compile_options target)
             -Wsign-conversion
             -Wdouble-promotion
             -Wno-psabi
+            -Wno-format-nonliteral
             $<$<COMPILE_LANGUAGE:CXX>:
             -Wconversion
             # -Wcast-align ## can't get rid of it at certain places
