@@ -3,7 +3,7 @@
 namespace fw
 {
 
-bool hbridge::setup( em::function_view< bool( handles& ) > setup_f, const config& cfg )
+bool hbridge::setup( em::function_view< bool( handles& ) > setup_f, const config& )
 {
 
     bool res = setup_f( h_ );

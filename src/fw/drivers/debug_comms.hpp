@@ -38,9 +38,9 @@ public:
 
     void start_receiving();
 
-    void transmit( std::span< uint8_t > );
+    void transmit( std::span< const uint8_t > );
 
-    std::optional< em::static_vector< uint8_t, 64 > > receive( std::size_t size );
+    em::static_vector< uint8_t, 32 > receive( std::size_t size = 32 );
 
 private:
     handles h_;

@@ -20,11 +20,6 @@ namespace fw
 struct acquisition_status
 {
     bool buffer_was_full = false;
-
-    bool degraded() const
-    {
-        return buffer_was_full;
-    }
 };
 
 class acquisition

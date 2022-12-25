@@ -28,10 +28,13 @@ void debug_comms::uart_irq()
     HAL_UART_IRQHandler( &h_.uart );
 }
 
-void debug_comms::transmit( std::span< uint8_t > inpt )
+void debug_comms::transmit( std::span< const uint8_t > inpt )
 {
     while ( ( HAL_UART_GetState( &h_.uart ) & HAL_UART_STATE_BUSY_TX ) == HAL_UART_STATE_BUSY_TX ) {
         asm( "nop" );  // TODO: fix this properly
+    }
+    if ( inpt.size() > odata_buffer_.size() ) {
+        stop_exec();
     }
     // TODO: size check!
     std::copy( inpt.begin(), inpt.end(), odata_buffer_.begin() );
@@ -40,17 +43,13 @@ void debug_comms::transmit( std::span< uint8_t > inpt )
         &h_.uart, odata_buffer_.begin(), static_cast< uint16_t >( inpt.size() ) );
 }
 
-std::optional< em::static_vector< uint8_t, 64 > > debug_comms::receive( std::size_t size )
+em::static_vector< uint8_t, 32 > debug_comms::receive( std::size_t size )
 {
-    while ( idata_buffer_.size() < size ) {
+    if ( idata_buffer_.size() < size ) {
         HAL_Delay( 10 );
     }
-    size = std::min< std::size_t >( idata_buffer_.size(), size );
-    if ( size == 0 ) {
-        return {};
-    }
-
-    em::static_vector< uint8_t, 64 > data;
+    size = std::min(idata_buffer_.size(), size);
+    em::static_vector< uint8_t, 32 > data;
     for ( std::size_t i = 0; i < size; i++ ) {
         data.push_back( idata_buffer_.take_front() );
     }
