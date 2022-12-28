@@ -33,13 +33,7 @@ int main()
 
     acquisition_ptr->start();
     hbridge_ptr->start();
-
-    const master_to_servo_message* msg_ptr;
-
-    auto comms_cb = [&]( const master_to_servo_message& msg ) {
-        msg_ptr = &msg;
-    };
-    comms_ptr->set_msg_callback( comms_cb );
+    comms_ptr->start_receiving();
     debug_comms_ptr->start_receiving();
 
     std::chrono::milliseconds now{ HAL_GetTick() };
@@ -50,21 +44,17 @@ int main()
     acquisition_ptr->set_position_callback( fw::position_callback{ ctl, met } );
 
     while ( true ) {
-        while ( msg_ptr == nullptr ) {
-            now = std::chrono::milliseconds{ HAL_GetTick() };
-        }
-        master_to_servo_message msg = *msg_ptr;
-        msg_ptr                     = nullptr;
-
-        master_to_servo_deserialize( msg ).match(
-            [&]( master_to_servo_variant var ) {
-                fw::dispatcher dis{ *comms_ptr, *acquisition_ptr, ctl, now };
-                em::match( var, [&]< typename T >( T item ) {
+        now = std::chrono::milliseconds{ HAL_GetTick() };
+        fw::dispatcher dis{ *comms_ptr, *acquisition_ptr, ctl, now };
+        em::match(
+            comms_ptr->get_message(),
+            []( std::monostate ) {},
+            [&]( const master_to_servo_variant& var ) {
+                em::match( var, [&]< typename T >( const T& item ) {
                     dis.handle_message( item );
                 } );
             },
-            [&]( em::protocol::error_record e ) {
-                std::ignore = e;
+            [&]( const em::protocol::error_record& ) {
                 fw::stop_exec();
             } );
     }

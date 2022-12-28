@@ -3,8 +3,8 @@
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/either.h>
 #include <emlabcpp/protocol.h>
+#include <emlabcpp/protocol/endpoint.h>
 #include <emlabcpp/protocol/packet.h>
-#include <emlabcpp/protocol/sequencer.h>
 
 #pragma once
 
@@ -12,7 +12,6 @@ namespace em = emlabcpp;
 
 enum messages_id : uint8_t
 {
-    MEASURE_CURRENT            = 1,
     SWITCH_TO_POWER_CONTROL    = 2,
     SWITCH_TO_CURRENT_CONTROL  = 3,
     SWITCH_TO_VELOCITY_CONTROL = 4,
@@ -52,18 +51,16 @@ using switch_to_velocity_command =
     message_with_float< SWITCH_TO_VELOCITY_CONTROL, protocol_velocity >;
 using switch_to_position_command =
     message_with_float< SWITCH_TO_POSITION_CONTROL, protocol_position >;
-using measure_current_command = command< MEASURE_CURRENT >;
-using get_current_command     = command< GET_CURRENT >;
-using get_vcc_command         = command< GET_VCC >;
-using get_temp_command        = command< GET_TEMP >;
-using get_position_command    = command< GET_POSITION >;
+using get_current_command  = command< GET_CURRENT >;
+using get_vcc_command      = command< GET_VCC >;
+using get_temp_command     = command< GET_TEMP >;
+using get_position_command = command< GET_POSITION >;
 
 using master_to_servo_group = em::protocol::tag_group<
     switch_to_power_command,
     switch_to_current_command,
     switch_to_velocity_command,
     switch_to_position_command,
-    measure_current_command,
     get_current_command,
     get_vcc_command,
     get_temp_command,
@@ -72,14 +69,12 @@ using master_to_servo_group = em::protocol::tag_group<
 using master_to_servo_variant =
     typename em::protocol::traits_for< master_to_servo_group >::value_type;
 
-using measure_current_response = getter< MEASURE_CURRENT, em::static_vector< uint16_t, 128 > >;
 using get_current_response     = message_with_float< GET_CURRENT, protocol_current >;
 using get_vcc_response         = message_with_float< GET_VCC, protocol_voltage >;
 using get_temp_response        = message_with_float< GET_TEMP, protocol_temperature >;
 using get_position_response    = message_with_float< GET_POSITION, protocol_position >;
 
 using servo_to_master_group = em::protocol::tag_group<
-    measure_current_response,
     get_current_response,
     get_vcc_response,
     get_temp_response,
@@ -109,13 +104,8 @@ using master_to_servo_message = typename master_to_servo_packet::message_type;
 using servo_to_master_packet  = em::protocol::packet< packet_def, servo_to_master_group >;
 using servo_to_master_message = typename servo_to_master_packet::message_type;
 
-servo_to_master_message servo_to_master_serialize( const servo_to_master_variant& );
-em::either< servo_to_master_variant, em::protocol::error_record >
-servo_to_master_deserialize( const servo_to_master_message& );
+using servo_endpoint  = em::protocol::endpoint< master_to_servo_packet, servo_to_master_packet >;
+using master_endpoint = em::protocol::endpoint< servo_to_master_packet, master_to_servo_packet >;
 
-master_to_servo_message master_to_servo_serialize( const master_to_servo_variant& );
-em::either< master_to_servo_variant, em::protocol::error_record >
-master_to_servo_deserialize( const master_to_servo_message& );
-
-using master_to_servo_sequencer = typename master_to_servo_packet::sequencer_type;
-using servo_to_master_sequencer = typename servo_to_master_packet::sequencer_type;
+extern template class em::protocol::endpoint< master_to_servo_packet, servo_to_master_packet >;
+extern template class em::protocol::endpoint< servo_to_master_packet, master_to_servo_packet >;

@@ -2,6 +2,7 @@ find_package(GTest REQUIRED)
 find_package(nlohmann_json REQUIRED)
 find_package(Boost 1.70 REQUIRED system program_options)
 
+
 function(add_fwlib_test)
   cmake_parse_arguments(A "" "TARGET" "ARGS" ${ARGN})
   add_executable(${A_TARGET} ${A_TARGET}.cpp)
@@ -14,5 +15,7 @@ function(add_fwlib_test)
 endfunction()
 
 add_fwlib_test(TARGET kalman_utest)
+add_fwlib_test(TARGET control_utest)
 
-add_test(NAME ktest COMMAND kalman_utest)
+add_test(NAME kalman_test COMMAND kalman_utest)
+add_test(NAME control_test COMMAND control_utest)

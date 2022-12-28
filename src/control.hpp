@@ -1,72 +1,20 @@
 #include "base.hpp"
+#include "ctl/pid_module.hpp"
 
-#include <emlabcpp/pid.h>
 #include <variant>
 
 #pragma once
 
 class control
 {
-    using pid = em::pid< typename std::chrono::milliseconds::rep >;
-
-    struct power_control
-    {
-        const int16_t power;
-
-        power_control( int16_t pwr )
-          : power( pwr )
-        {
-        }
-    };
-
-    struct current_control
-    {
-        const float current;
-
-        current_control( float c )
-          : current( c )
-        {
-        }
-    };
-
-    struct velocity_control
-    {
-        const float velocity;
-        float       current;
-
-        velocity_control( float vel, float cur )
-          : velocity( vel )
-          , current( cur )
-        {
-        }
-    };
-
-    struct position_control
-    {
-        const float position;
-        float       velocity;
-        float       current;
-
-        position_control( float pos, float vel, float cur )
-          : position( pos )
-          , velocity( vel )
-          , current( cur )
-        {
-        }
-    };
 
 public:
-    using pidconf = typename pid::config;
-    using state_variant =
-        std::variant< power_control, current_control, velocity_control, position_control >;
-
     control( std::chrono::milliseconds );
 
-    control_mode get_mode();
+    void set_pid( control_loop, float p, float i, float d );
+    void set_limits( control_loop, limits< float > lim );
 
-    void set_current_pid_config( const pidconf& conf );
-    void set_velocity_pid_config( const pidconf& conf );
-    void set_position_pid_config( const pidconf& conf );
+    control_mode get_mode();
 
     void switch_to_power_control( int16_t power );
     void switch_to_current_control( std::chrono::milliseconds now, float current );
@@ -84,15 +32,19 @@ public:
     float get_desired_position() const;
 
 private:
-    void update_config();
+    ctl::pid_module& ref_module( control_loop );
 
-    state_variant state_ = power_control{ 0 };
+    control_mode state_ = control_mode::POWER;
 
-    pid position_pid_;
+    float goal_position_ = 0.f;
 
-    pid velocity_pid_;
+    limits<float> position_lims_;
 
-    pid current_pid_;
+    ctl::pid_module position_pid_;
+
+    ctl::pid_module velocity_pid_;
+
+    ctl::pid_module current_pid_;
 
     int16_t power_ = 0;
 };

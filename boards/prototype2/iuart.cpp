@@ -40,16 +40,6 @@ bool setup_iuart( comms::handles& res )
     res.tx_dma.Init.Mode                = DMA_NORMAL;
     res.tx_dma.Init.Priority            = DMA_PRIORITY_LOW;
 
-    res.rx_dma.Instance                 = DMA1_Channel3;
-    res.rx_dma.Init.Request             = DMA_REQUEST_USART2_RX;
-    res.rx_dma.Init.Direction           = DMA_PERIPH_TO_MEMORY;
-    res.rx_dma.Init.PeriphInc           = DMA_PINC_DISABLE;
-    res.rx_dma.Init.MemInc              = DMA_MINC_ENABLE;
-    res.rx_dma.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
-    res.rx_dma.Init.MemDataAlignment    = DMA_MDATAALIGN_BYTE;
-    res.rx_dma.Init.Mode                = DMA_NORMAL;
-    res.rx_dma.Init.Priority            = DMA_PRIORITY_LOW;
-
     __HAL_RCC_DMAMUX1_CLK_ENABLE();
     __HAL_RCC_DMA1_CLK_ENABLE();
 
@@ -78,12 +68,6 @@ bool setup_iuart( comms::handles& res )
     }
 
     __HAL_LINKDMA( ( &res.uart ), hdmatx, res.tx_dma );
-
-    if ( HAL_DMA_Init( &res.rx_dma ) != HAL_OK ) {
-        stop_exec();
-    }
-
-    __HAL_LINKDMA( ( &res.uart ), hdmarx, res.rx_dma );
 
     if ( HAL_UARTEx_SetTxFifoThreshold( &res.uart, UART_TXFIFO_THRESHOLD_1_8 ) != HAL_OK ) {
         stop_exec();

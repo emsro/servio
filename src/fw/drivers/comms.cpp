@@ -15,11 +15,6 @@ void comms::tx_dma_irq()
     HAL_DMA_IRQHandler( &h_.tx_dma );
 }
 
-void comms::rx_dma_irq()
-{
-    HAL_DMA_IRQHandler( &h_.rx_dma );
-}
-
 void comms::uart_irq()
 {
     HAL_UART_IRQHandler( &h_.uart );
@@ -31,50 +26,44 @@ void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
         return;
     }
 
-    auto dview = em::view_n( idata_buffer_.begin(), huart->RxXferSize );
-
-    iseq_.insert( dview );
-    iseq_.get_message().match(
-        [&]( em::protocol::sequencer_read_request next_read ) {
-            // TODO: technically, the cast can create an error here
-            HAL_UART_Receive_DMA(
-                &h_.uart, idata_buffer_.begin(), static_cast< uint16_t >( *next_read ) );
-        },
-        [&]( auto msg ) {
-            imsg_i_               = ( imsg_i_ + 1 ) % imsg_buffer_.size();
-            imsg_buffer_[imsg_i_] = msg;
-            received_counter_ += 1;
-            if ( msg_callback_ ) {
-                msg_callback_( imsg_buffer_[imsg_i_] );
-            }
-        } );
+    ep_.insert( em::view_n( &rx_byte_, 1 ) );
+    start_receiving();
 }
 
-void comms::set_msg_callback( msg_callback c )
+std::variant< std::monostate, master_to_servo_variant, em::protocol::error_record >
+comms::get_message()
 {
-    msg_callback_ = std::move( c );
+    using return_type =
+        std::variant< std::monostate, master_to_servo_variant, em::protocol::error_record >;
+    return em::match(
+        ep_.get_value(),
+        []( std::size_t ) -> return_type {
+            return std::monostate{};
+        },
+        []( master_to_servo_variant var ) -> return_type {
+            return var;
+        },
+        []( em::protocol::error_record err ) -> return_type {
+            return err;
+        } );
 }
 
 void comms::start_receiving()
 {
-    HAL_UART_Receive_DMA( &h_.uart, idata_buffer_.begin(), master_to_servo_sequencer::fixed_size );
+    // TODO: return value ignored
+    HAL_UART_Receive_IT( &h_.uart, &rx_byte_, 1 );
 }
 
-void comms::send_msg( servo_to_master_message msg )
+void comms::send( const servo_to_master_variant& var )
 {
-    if ( !( HAL_UART_GetState( &h_.uart ) & HAL_UART_STATE_READY ) ) {
-        stop_exec();
+    while ( !( HAL_UART_GetState( &h_.uart ) & HAL_UART_STATE_READY ) ) {
+        asm( "nop" );
     }
-    omsg_ = msg;
+    omsg_ = ep_.serialize( var );
     static_assert( servo_to_master_message::capacity < std::numeric_limits< uint16_t >::max() );
     // TODO: problematic cast
+    // TODO: return value ignored
     HAL_UART_Transmit_DMA( &h_.uart, omsg_.begin(), static_cast< uint16_t >( omsg_.size() ) );
-    sent_counter_ += 1;
-}
-
-void comms::transmit( servo_to_master_variant var )
-{
-    send_msg( servo_to_master_serialize( var ) );
 }
 
 }  // namespace fw

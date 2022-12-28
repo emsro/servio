@@ -31,11 +31,6 @@ void USART2_IRQHandler( void )
     fw::COMMS.uart_irq();
 }
 
-void DMA1_Channel3_IRQHandler( void )
-{
-    fw::COMMS.rx_dma_irq();
-}
-
 void DMA1_Channel4_IRQHandler( void )
 {
     fw::COMMS.tx_dma_irq();
