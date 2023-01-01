@@ -28,17 +28,8 @@ int main()
         fw::stop_exec();
     }
 
-    fw::cfg_dispatcher cfg_dis{ CONFIG, *acquisition_ptr };
-
-    fw::apply_config( cfg_dis );
-
     hbridge_ptr->set_period_callback(
         fw::acquisition_period_callback{ *acquisition_ptr, *hbridge_ptr } );
-
-    acquisition_ptr->start();
-    hbridge_ptr->start();
-    comms_ptr->start_receiving();
-    debug_comms_ptr->start_receiving();
 
     std::chrono::milliseconds now{ HAL_GetTick() };
     control                   ctl{ now };
@@ -46,6 +37,14 @@ int main()
 
     acquisition_ptr->set_current_callback( fw::current_callback{ *hbridge_ptr, ctl } );
     acquisition_ptr->set_position_callback( fw::position_callback{ ctl, met } );
+
+    fw::cfg_dispatcher cfg_dis{ CONFIG, *acquisition_ptr, ctl };
+    fw::apply_config( cfg_dis );
+
+    acquisition_ptr->start();
+    hbridge_ptr->start();
+    comms_ptr->start_receiving();
+    debug_comms_ptr->start_receiving();
 
     while ( true ) {
         now = std::chrono::milliseconds{ HAL_GetTick() };

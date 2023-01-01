@@ -17,12 +17,27 @@ enum class cfg_key : uint16_t
     TEMP_CONV_SCALE                     = 0x1c,
     TEMP_CONV_OFFSET                    = 0x20,
     VOLTAGE_CONV_SCALE                  = 0x24,
+    CONTROL_CURRENT_LOOP_P              = 0x28,
+    CONTROL_CURRENT_LOOP_I              = 0x2c,
+    CONTROL_CURRENT_LOOP_D              = 0x30,
+    CONTROL_CURRENT_LIM_MIN             = 0x34,
+    CONTROL_CURRENT_LIM_MAX             = 0x38,
+    CONTROL_VELOCITY_LOOP_P             = 0x3c,
+    CONTROL_VELOCITY_LOOP_I             = 0x40,
+    CONTROL_VELOCITY_LOOP_D             = 0x44,
+    CONTROL_VELOCITY_LIM_MIN            = 0x48,
+    CONTROL_VELOCITY_LIM_MAX            = 0x4c,
+    CONTROL_POSITION_LOOP_P             = 0x50,
+    CONTROL_POSITION_LOOP_I             = 0x54,
+    CONTROL_POSITION_LOOP_D             = 0x58,
+    CONTROL_POSITION_LIM_MIN            = 0x5c,
+    CONTROL_POSITION_LIM_MAX            = 0x60
 };
 
 template < auto Key, typename T >
 using cfg_reg = em::protocol::register_pair< Key, T >;
 
-// TODO: this overlaps /o\ write a check for reg_map that confirms that config values does not
+// TODO: write a check for reg_map that confirms that config values does not
 // overlap
 using cfg_map = em::protocol::register_map<
     std::endian::little,
@@ -35,7 +50,22 @@ using cfg_map = em::protocol::register_map<
     cfg_reg< cfg_key::CURRENT_CONV_OFFSET, float >,
     cfg_reg< cfg_key::TEMP_CONV_SCALE, float >,
     cfg_reg< cfg_key::TEMP_CONV_OFFSET, float >,
-    cfg_reg< cfg_key::VOLTAGE_CONV_SCALE, float > >;
+    cfg_reg< cfg_key::VOLTAGE_CONV_SCALE, float >,
+    cfg_reg< cfg_key::CONTROL_CURRENT_LOOP_P, float >,
+    cfg_reg< cfg_key::CONTROL_CURRENT_LOOP_I, float >,
+    cfg_reg< cfg_key::CONTROL_CURRENT_LOOP_D, float >,
+    cfg_reg< cfg_key::CONTROL_CURRENT_LIM_MIN, float >,
+    cfg_reg< cfg_key::CONTROL_CURRENT_LIM_MAX, float >,
+    cfg_reg< cfg_key::CONTROL_VELOCITY_LOOP_P, float >,
+    cfg_reg< cfg_key::CONTROL_VELOCITY_LOOP_I, float >,
+    cfg_reg< cfg_key::CONTROL_VELOCITY_LOOP_D, float >,
+    cfg_reg< cfg_key::CONTROL_VELOCITY_LIM_MIN, float >,
+    cfg_reg< cfg_key::CONTROL_VELOCITY_LIM_MAX, float >,
+    cfg_reg< cfg_key::CONTROL_POSITION_LOOP_P, float >,
+    cfg_reg< cfg_key::CONTROL_POSITION_LOOP_I, float >,
+    cfg_reg< cfg_key::CONTROL_POSITION_LOOP_D, float >,
+    cfg_reg< cfg_key::CONTROL_POSITION_LIM_MIN, float >,
+    cfg_reg< cfg_key::CONTROL_POSITION_LIM_MAX, float > >;
 
 using cfg_value_message = typename cfg_map::message_type;
 
