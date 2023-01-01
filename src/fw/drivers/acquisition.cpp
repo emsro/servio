@@ -5,13 +5,8 @@
 namespace fw
 {
 
-bool acquisition::setup( em::function_view< bool( handles& ) > setup_f, const config& cfg )
+bool acquisition::setup( em::function_view< bool( handles& ) > setup_f )
 {
-    pos_conver_  = position_converter{ cfg.position_conv };
-    curr_conver_ = current_converter{ cfg.current_conv };
-    temp_conver_ = temperature_converter{ cfg.temp_conv };
-    volt_conver_ = voltage_converter{ cfg.volt_conv };
-
     return setup_f( h_ );
 }
 void acquisition::dma_irq()
@@ -55,6 +50,26 @@ void acquisition::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
             break;
     }
     switch_adc_channel( READ_CURRENT );
+}
+void acquisition::set_position_cfg(
+    uint16_t low_value,
+    float    low_angle,
+    uint16_t high_value,
+    float    high_angle )
+{
+    pos_conver_ = position_converter{ low_value, low_angle, high_value, high_angle };
+}
+void acquisition::set_current_cfg( float scale, float offset )
+{
+    curr_conver_ = current_converter{ scale, offset };
+}
+void acquisition::set_temp_cfg( float scale, float offset )
+{
+    temp_conver_ = temperature_converter{ scale, offset };
+}
+void acquisition::set_vcc_cfg( float scale )
+{
+    volt_conver_ = voltage_converter{ scale };
 }
 
 void acquisition::start()

@@ -1,11 +1,25 @@
 #include "fw/board.hpp"
 
+#include <emlabcpp/protocol/register_handler.h>
 #include <numbers>
 
 namespace fw
 {
 
 // TODO: move the formula into library
+
+struct off_scale
+{
+    float offset;
+    float scale;
+};
+
+// TODO: move somewhere
+struct setpoint
+{
+    float    angle;
+    uint16_t value;
+};
 
 // The formula asserted:
 //
@@ -22,7 +36,7 @@ namespace fw
 // offset = V_min / R_shunt
 // scale = (V_max - V_min) / (adc_steps * R_shunt * gain)
 //
-constexpr current_converter_config
+constexpr off_scale
 calculate_current_conversion( float v_max, float v_min, float steps, float r_shunt, float gain )
 {
     return {
@@ -53,7 +67,7 @@ calculate_current_conversion( float v_max, float v_min, float steps, float r_shu
 //
 //
 
-constexpr temperature_converter_config calculate_temp_conversion()
+constexpr off_scale calculate_temp_conversion()
 {
     auto cal1 = static_cast< float >( *TEMPSENSOR_CAL1_ADDR );
     auto cal2 = static_cast< float >( *TEMPSENSOR_CAL2_ADDR );
@@ -61,26 +75,37 @@ constexpr temperature_converter_config calculate_temp_conversion()
     float scale =
         static_cast< float >( TEMPSENSOR_CAL2_TEMP - TEMPSENSOR_CAL1_TEMP ) / ( cal2 - cal1 );
 
-    return { .scale = scale, .offset = 30 - cal1 * scale };
+    return { .offset = 30 - cal1 * scale, .scale = scale };
 }
 
-void setup_config( config& cfg )
+using handler = em::protocol::register_handler< cfg_map >;
+
+template < auto ID, typename CB, typename Val >
+void kset( CB& cb, const Val& v )
 {
+    cb( cfg_keyval{ .key = ID, .msg = handler::serialize< ID >( v ) } );
+}
+
+void apply_config( em::function_view< void( const cfg_keyval& ) > f )
+{
+    kset< cfg_key::POSITION_CONV_LOWER_SETPOINT_VALUE >( f, 0u );
+    kset< cfg_key::POSITION_CONV_LOWER_SETPOINT_ANGLE >( f, 0.f );
+    kset< cfg_key::POSITION_CONV_HIGHER_SETPOINT_VALUE >( f, 4096u );
+    kset< cfg_key::POSITION_CONV_HIGHER_SETPOINT_ANGLE >(
+        f, 240.f * std::numbers::pi_v< float > / 180.f );
 
     static constexpr float r_shunt = 0.043f;
     static constexpr float gain    = 100.f;
-    cfg.current_conv = calculate_current_conversion( 3.3f, 0, 1 << 12, r_shunt, gain );
+    off_scale curr_cfg = calculate_current_conversion( 3.3f, 0, 1 << 12, r_shunt, gain );
+    kset< cfg_key::CURRENT_CONV_SCALE >( f, curr_cfg.scale );
+    kset< cfg_key::CURRENT_CONV_OFFSET >( f, curr_cfg.offset );
 
-    // TODO: this is not really _board_ config
-    cfg.position_conv = position_converter_config{
-        .lower_setpoint  = { .value = 0, .angle = 0.f },
-        .higher_setpoint = {
-            .value = 4096, .angle = 240.f * std::numbers::pi_v< float > / 180.f } };
+    off_scale temp_cfg = calculate_temp_conversion();
+    kset< cfg_key::TEMP_CONV_SCALE >( f, temp_cfg.scale );
+    kset< cfg_key::TEMP_CONV_OFFSET >( f, temp_cfg.offset );
 
-    cfg.temp_conv = calculate_temp_conversion();
-
-    cfg.volt_conv = voltage_converter_config{ .scale = 0.f };
-
-    cfg.reversed = false;
+    // TODO: fix this
+    kset< cfg_key::VOLTAGE_CONV_SCALE >( f, 0.f );
 }
+
 }  // namespace fw

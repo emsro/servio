@@ -1,4 +1,3 @@
-#include "config/conversion.hpp"
 
 #include <cstdint>
 
@@ -8,14 +7,15 @@ class position_converter
 {
 public:
     position_converter(
-        position_converter_config config = {
-            .lower_setpoint  = { .value = 0, .angle = 0.f },
-            .higher_setpoint = { .value = 4096, .angle = 3.141592f } } )
+        uint16_t lower_value  = 0,
+        float    lower_angle  = 0.f,
+        uint16_t higher_value = 4096,
+        float    higher_angle = 3.141592f )
     {
-        int   val_diff   = config.higher_setpoint.value - config.lower_setpoint.value;
-        float angle_diff = config.higher_setpoint.angle - config.lower_setpoint.angle;
+        int   val_diff   = higher_value - lower_value;
+        float angle_diff = higher_angle - lower_angle;
         scale_           = angle_diff / static_cast< float >( val_diff );
-        offset_          = config.lower_setpoint.angle - config.lower_setpoint.value * scale_;
+        offset_          = lower_angle - lower_value * scale_;
     }
 
     float convert( uint32_t val )

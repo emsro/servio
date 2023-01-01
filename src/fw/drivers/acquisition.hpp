@@ -1,4 +1,3 @@
-#include "config.hpp"
 #include "conversion/current.hpp"
 #include "conversion/position.hpp"
 #include "conversion/temperature.hpp"
@@ -58,12 +57,21 @@ public:
 
     acquisition() = default;
 
-    bool setup( em::function_view< bool( handles& ) >, const config& );
+    bool setup( em::function_view< bool( handles& ) > );
 
     void adc_irq();
     void adc_conv_cplt_irq( ADC_HandleTypeDef* h );
     void adc_error_irq( ADC_HandleTypeDef* h );
     void dma_irq();
+    void period_elapsed_irq( int8_t power_direction );
+
+    void start();
+
+    void
+    set_position_cfg( uint16_t low_value, float low_angle, uint16_t high_value, float high_angle );
+    void set_current_cfg( float scale, float offset );
+    void set_temp_cfg( float scale, float offset );
+    void set_vcc_cfg( float scale );
 
     // Callback is called each time current measurement of one PWM pulse.
     // The callback gets average current during that pulse.
@@ -77,8 +85,6 @@ public:
     // Callback is called each time new position is read, the argument is the position
     void                     set_position_callback( position_callback );
     const position_callback& get_position_callback();
-
-    void period_elapsed_irq( int8_t power_direction );
 
     float get_current() const
     {
@@ -106,8 +112,6 @@ public:
     {
         status_ = acquisition_status{};
     }
-
-    void start();
 
 private:
     void       switch_adc_channel( adc_states );

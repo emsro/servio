@@ -1,21 +1,22 @@
 
-#include "config/conversion.hpp"
 
 #pragma once
 
 class temperature_converter
 {
 public:
-    temperature_converter( temperature_converter_config conf = { .scale = 1.f, .offset = 0.f } )
-      : conf_( conf )
+    temperature_converter( float scale = 1.f, float offset = 0.f )
+      : scale_( scale )
+      , offset_( offset )
     {
     }
 
     float convert( uint32_t val )
     {
-        return static_cast< float >( val ) * conf_.scale + conf_.offset;
+        return static_cast< float >( val ) * scale_ + offset_;
     }
 
 private:
-    temperature_converter_config conf_;
+    float scale_;
+    float offset_;
 };

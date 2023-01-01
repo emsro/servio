@@ -31,7 +31,7 @@ public:
     hbridge& operator=( const hbridge& ) = delete;
     hbridge& operator=( hbridge&& )      = delete;
 
-    bool setup( em::function_view< bool( handles& ) >, const config& );
+    bool setup( em::function_view< bool( handles& ) > );
 
     void timer_period_irq();
     void timer_irq();

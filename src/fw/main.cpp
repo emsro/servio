@@ -1,6 +1,7 @@
 #include "control.hpp"
 #include "fw/board.hpp"
 #include "fw/callbacks.hpp"
+#include "fw/cfg_dispatcher.hpp"
 #include "fw/dispatcher.hpp"
 #include "metrics.hpp"
 #include "protocol.hpp"
@@ -11,15 +12,14 @@
 #include <emlabcpp/pid.h>
 #include <string>
 
+cfg_map CONFIG;
+
 int main()
 {
     fw::setup_board();
 
-    config cfg;
-    fw::setup_config( cfg );
-
-    fw::acquisition* acquisition_ptr = fw::setup_acquisition( cfg );
-    fw::hbridge*     hbridge_ptr     = fw::setup_hbridge( cfg );
+    fw::acquisition* acquisition_ptr = fw::setup_acquisition();
+    fw::hbridge*     hbridge_ptr     = fw::setup_hbridge();
     fw::comms*       comms_ptr       = fw::setup_comms();
     fw::debug_comms* debug_comms_ptr = fw::setup_debug_comms();
 
@@ -27,6 +27,10 @@ int main()
          debug_comms_ptr == nullptr ) {
         fw::stop_exec();
     }
+
+    fw::cfg_dispatcher cfg_dis{ CONFIG, *acquisition_ptr };
+
+    fw::apply_config( cfg_dis );
 
     hbridge_ptr->set_period_callback(
         fw::acquisition_period_callback{ *acquisition_ptr, *hbridge_ptr } );

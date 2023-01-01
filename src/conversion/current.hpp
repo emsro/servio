@@ -1,4 +1,3 @@
-#include "config/conversion.hpp"
 
 #include <cstdint>
 
@@ -7,16 +6,18 @@
 class current_converter
 {
 public:
-    current_converter( current_converter_config conf = { .offset = 0.f, .scale = 1.f } )
-      : config_( conf )
+    current_converter( float scale = 1.f, float offset = 0.f )
+      : offset_( offset )
+      , scale_( scale )
     {
     }
 
     float convert( float input )
     {
-        return input * config_.scale + config_.offset;
+        return input * scale_ + offset_;
     }
 
 private:
-    current_converter_config config_;
+    float offset_;
+    float scale_;
 };

@@ -79,18 +79,18 @@ void setup_board()
     setup_clock();
 }
 
-acquisition* setup_acquisition( const config& cfg )
+acquisition* setup_acquisition()
 {
     auto acq_setup = []( acquisition::handles& h ) {
         return setup_adc( h ) && setup_adc_timer( h );
     };
-    if ( !ACQUISITION.setup( acq_setup, cfg ) ) {
+    if ( !ACQUISITION.setup( acq_setup ) ) {
         return nullptr;
     }
     return &ACQUISITION;
 }
 
-hbridge* setup_hbridge( const config& cfg )
+hbridge* setup_hbridge()
 {
     auto setup_f = []( hbridge::handles& h ) {
         bool res = setup_hbridge_timers( h );
@@ -102,7 +102,7 @@ hbridge* setup_hbridge( const config& cfg )
 
         return res;
     };
-    if ( !HBRIDGE.setup( setup_f, cfg ) ) {
+    if ( !HBRIDGE.setup( setup_f ) ) {
         return nullptr;
     }
 

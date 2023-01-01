@@ -9,10 +9,10 @@
 namespace fw
 {
 
+void         apply_config( em::function_view< void( const cfg_keyval& ) > f );
 void         setup_board();
-void         setup_config( config& );
-acquisition* setup_acquisition( const config& );
-hbridge*     setup_hbridge( const config& );
+acquisition* setup_acquisition();
+hbridge*     setup_hbridge();
 comms*       setup_comms();
 debug_comms* setup_debug_comms();
 

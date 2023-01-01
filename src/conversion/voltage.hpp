@@ -1,20 +1,19 @@
-#include "config/conversion.hpp"
 
 #pragma once
 
 class voltage_converter
 {
 public:
-    voltage_converter( voltage_converter_config conf = { .scale = 1.f } )
-      : conf_( conf )
+    voltage_converter( float scale = 1.f )
+      : scale_( scale )
     {
     }
 
     float convert( uint32_t val )
     {
-        return static_cast< float >( val ) * conf_.scale;
+        return static_cast< float >( val ) * scale_;
     }
 
 private:
-    voltage_converter_config conf_;
+    float scale_;
 };
