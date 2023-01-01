@@ -5,7 +5,7 @@
 
 namespace em = emlabcpp;
 
-enum class cfg_key : uint16_t
+enum cfg_key : uint16_t
 {
     REVERSED                            = 0x00,
     POSITION_CONV_LOWER_SETPOINT_VALUE  = 0x04,
@@ -41,31 +41,31 @@ using cfg_reg = em::protocol::register_pair< Key, T >;
 // overlap
 using cfg_map = em::protocol::register_map<
     std::endian::little,
-    cfg_reg< cfg_key::REVERSED, bool >,
-    cfg_reg< cfg_key::POSITION_CONV_LOWER_SETPOINT_VALUE, uint16_t >,
-    cfg_reg< cfg_key::POSITION_CONV_LOWER_SETPOINT_ANGLE, float >,
-    cfg_reg< cfg_key::POSITION_CONV_HIGHER_SETPOINT_VALUE, uint16_t >,
-    cfg_reg< cfg_key::POSITION_CONV_HIGHER_SETPOINT_ANGLE, float >,
-    cfg_reg< cfg_key::CURRENT_CONV_SCALE, float >,
-    cfg_reg< cfg_key::CURRENT_CONV_OFFSET, float >,
-    cfg_reg< cfg_key::TEMP_CONV_SCALE, float >,
-    cfg_reg< cfg_key::TEMP_CONV_OFFSET, float >,
-    cfg_reg< cfg_key::VOLTAGE_CONV_SCALE, float >,
-    cfg_reg< cfg_key::CONTROL_CURRENT_LOOP_P, float >,
-    cfg_reg< cfg_key::CONTROL_CURRENT_LOOP_I, float >,
-    cfg_reg< cfg_key::CONTROL_CURRENT_LOOP_D, float >,
-    cfg_reg< cfg_key::CONTROL_CURRENT_LIM_MIN, float >,
-    cfg_reg< cfg_key::CONTROL_CURRENT_LIM_MAX, float >,
-    cfg_reg< cfg_key::CONTROL_VELOCITY_LOOP_P, float >,
-    cfg_reg< cfg_key::CONTROL_VELOCITY_LOOP_I, float >,
-    cfg_reg< cfg_key::CONTROL_VELOCITY_LOOP_D, float >,
-    cfg_reg< cfg_key::CONTROL_VELOCITY_LIM_MIN, float >,
-    cfg_reg< cfg_key::CONTROL_VELOCITY_LIM_MAX, float >,
-    cfg_reg< cfg_key::CONTROL_POSITION_LOOP_P, float >,
-    cfg_reg< cfg_key::CONTROL_POSITION_LOOP_I, float >,
-    cfg_reg< cfg_key::CONTROL_POSITION_LOOP_D, float >,
-    cfg_reg< cfg_key::CONTROL_POSITION_LIM_MIN, float >,
-    cfg_reg< cfg_key::CONTROL_POSITION_LIM_MAX, float > >;
+    cfg_reg< REVERSED, bool >,
+    cfg_reg< POSITION_CONV_LOWER_SETPOINT_VALUE, uint16_t >,
+    cfg_reg< POSITION_CONV_LOWER_SETPOINT_ANGLE, float >,
+    cfg_reg< POSITION_CONV_HIGHER_SETPOINT_VALUE, uint16_t >,
+    cfg_reg< POSITION_CONV_HIGHER_SETPOINT_ANGLE, float >,
+    cfg_reg< CURRENT_CONV_SCALE, float >,
+    cfg_reg< CURRENT_CONV_OFFSET, float >,
+    cfg_reg< TEMP_CONV_SCALE, float >,
+    cfg_reg< TEMP_CONV_OFFSET, float >,
+    cfg_reg< VOLTAGE_CONV_SCALE, float >,
+    cfg_reg< CONTROL_CURRENT_LOOP_P, float >,
+    cfg_reg< CONTROL_CURRENT_LOOP_I, float >,
+    cfg_reg< CONTROL_CURRENT_LOOP_D, float >,
+    cfg_reg< CONTROL_CURRENT_LIM_MIN, float >,
+    cfg_reg< CONTROL_CURRENT_LIM_MAX, float >,
+    cfg_reg< CONTROL_VELOCITY_LOOP_P, float >,
+    cfg_reg< CONTROL_VELOCITY_LOOP_I, float >,
+    cfg_reg< CONTROL_VELOCITY_LOOP_D, float >,
+    cfg_reg< CONTROL_VELOCITY_LIM_MIN, float >,
+    cfg_reg< CONTROL_VELOCITY_LIM_MAX, float >,
+    cfg_reg< CONTROL_POSITION_LOOP_P, float >,
+    cfg_reg< CONTROL_POSITION_LOOP_I, float >,
+    cfg_reg< CONTROL_POSITION_LOOP_D, float >,
+    cfg_reg< CONTROL_POSITION_LIM_MIN, float >,
+    cfg_reg< CONTROL_POSITION_LIM_MAX, float > >;
 
 using cfg_value_message = typename cfg_map::message_type;
 

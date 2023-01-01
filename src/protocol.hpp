@@ -1,4 +1,5 @@
 #include "base.hpp"
+#include "config.hpp"
 
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/either.h>
@@ -12,16 +13,16 @@ namespace em = emlabcpp;
 
 enum messages_id : uint8_t
 {
-    SWITCH_TO_POWER_CONTROL    = 2,
-    SWITCH_TO_CURRENT_CONTROL  = 3,
-    SWITCH_TO_VELOCITY_CONTROL = 4,
-    SWITCH_TO_POSITION_CONTROL = 5,
-    SET_POWER                  = 6,
-    GET_CURRENT                = 7,
-    GET_VCC                    = 8,
-    GET_TEMP                   = 9,
-    GET_POSITION               = 10,
-    ERROR_MSG                  = 13
+    SWITCH_TO_POWER_CONTROL    = 0x01,
+    SWITCH_TO_CURRENT_CONTROL  = 0x02,
+    SWITCH_TO_VELOCITY_CONTROL = 0x03,
+    SWITCH_TO_POSITION_CONTROL = 0x04,
+    GET_CURRENT                = 0x05,
+    GET_VCC                    = 0x06,
+    GET_TEMP                   = 0x07,
+    GET_POSITION               = 0x08,
+    SET_CONFIG                 = 0x09,
+    GET_CONFIG                 = 0x0a
 };
 
 template < messages_id ID, typename ProtocolType >
@@ -45,6 +46,29 @@ struct getter
 
     T value;
 };
+
+struct set_config
+{
+    static constexpr messages_id id = SET_CONFIG;
+
+    cfg_key           key;
+    cfg_value_message msg;
+};
+
+struct get_config_request
+{
+    static constexpr messages_id id = GET_CONFIG;
+
+    cfg_key key;
+};
+
+struct get_config_response
+{
+    static constexpr messages_id id = GET_CONFIG;
+
+    cfg_value_message msg;
+};
+
 using switch_to_power_command   = getter< SWITCH_TO_POWER_CONTROL, protocol_power >;
 using switch_to_current_command = message_with_float< SWITCH_TO_CURRENT_CONTROL, protocol_current >;
 using switch_to_velocity_command =
@@ -64,21 +88,24 @@ using master_to_servo_group = em::protocol::tag_group<
     get_current_command,
     get_vcc_command,
     get_temp_command,
-    get_position_command >;
+    get_position_command,
+    set_config,
+    get_config_request >;
 
 using master_to_servo_variant =
     typename em::protocol::traits_for< master_to_servo_group >::value_type;
 
-using get_current_response     = message_with_float< GET_CURRENT, protocol_current >;
-using get_vcc_response         = message_with_float< GET_VCC, protocol_voltage >;
-using get_temp_response        = message_with_float< GET_TEMP, protocol_temperature >;
-using get_position_response    = message_with_float< GET_POSITION, protocol_position >;
+using get_current_response  = message_with_float< GET_CURRENT, protocol_current >;
+using get_vcc_response      = message_with_float< GET_VCC, protocol_voltage >;
+using get_temp_response     = message_with_float< GET_TEMP, protocol_temperature >;
+using get_position_response = message_with_float< GET_POSITION, protocol_position >;
 
 using servo_to_master_group = em::protocol::tag_group<
     get_current_response,
     get_vcc_response,
     get_temp_response,
-    get_position_response >;
+    get_position_response,
+    get_config_response >;
 using servo_to_master_variant =
     typename em::protocol::traits_for< servo_to_master_group >::value_type;
 

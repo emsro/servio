@@ -48,7 +48,7 @@ int main()
 
     while ( true ) {
         now = std::chrono::milliseconds{ HAL_GetTick() };
-        fw::dispatcher dis{ *comms_ptr, *acquisition_ptr, ctl, now };
+        fw::dispatcher dis{ *comms_ptr, *acquisition_ptr, ctl, cfg_dis, now };
         em::match(
             comms_ptr->get_message(),
             []( std::monostate ) {},

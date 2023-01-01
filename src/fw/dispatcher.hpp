@@ -1,6 +1,7 @@
 #include "control.hpp"
 #include "drivers/acquisition.hpp"
 #include "drivers/comms.hpp"
+#include "fw/cfg_dispatcher.hpp"
 
 #pragma once
 
@@ -12,6 +13,7 @@ struct dispatcher
     comms&                    comm;
     acquisition&              acquistion;
     control&                  ctl;
+    cfg_dispatcher&           cfg_disp;
     std::chrono::milliseconds now;
 
     void handle_message( const switch_to_power_command& cmd )
@@ -52,6 +54,16 @@ struct dispatcher
     void handle_message( const get_position_command& )
     {
         comm.send( get_position_response{ acquistion.get_position() } );
+    }
+
+    void handle_message( const set_config& req )
+    {
+        cfg_disp.set( req.key, req.msg );
+    }
+
+    void handle_message( const get_config_request& req )
+    {
+        comm.send( get_config_response{ .msg = cfg_disp.get( req.key ) } );
     }
 };
 
