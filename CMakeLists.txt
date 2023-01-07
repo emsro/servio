@@ -72,6 +72,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
       src/fw/drivers/debug_comms.cpp
       src/fw/drivers/hbridge.cpp
       src/fw/extra.cpp
+      src/fw/cfg_dispatcher.cpp
       src/fw/util.cpp)
     servio_compile_options(${A_TARGET})
     target_link_libraries(
