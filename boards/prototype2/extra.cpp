@@ -2,11 +2,11 @@
 
 #include <stm32g4xx_hal.h>
 
-namespace fw
+namespace brd
 {
 
 void setup_extra()
 {
 }
 
-}  // namespace fw
+}  // namespace brd

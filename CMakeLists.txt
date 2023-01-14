@@ -11,6 +11,7 @@ cmake_policy(SET CMP0077 NEW)
 option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 
+if(NOT TARGET emlabcpp)
 if(SERVIO_EMLABCPP_SRC)
   if(NOT IS_ABSOLUTE ${SERVIO_EMLABCPP_SRC})
     set(SERVIO_EMLABCPP_SRC
@@ -25,9 +26,10 @@ else()
     GIT_TAG main)
   FetchContent_MakeAvailable(emlabcpp)
 endif()
+endif()
 target_compile_options(emlabcpp PRIVATE -Os)
 
-add_library(servio_lib STATIC src/metrics.cpp src/control.cpp src/protocol.cpp)
+add_library(servio_lib STATIC src/metrics.cpp src/control.cpp src/protocol.cpp src/indication.cpp)
 target_include_directories(servio_lib PUBLIC src/)
 target_link_libraries(servio_lib PUBLIC emlabcpp)
 servio_compile_options(servio_lib)
@@ -67,12 +69,14 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     add_library(
       ${A_TARGET} STATIC
       ${A_CUSTOM_FILES}
+      src/fw/cfg_dispatcher.cpp
       src/fw/drivers/acquisition.cpp
       src/fw/drivers/comms.cpp
       src/fw/drivers/debug_comms.cpp
       src/fw/drivers/hbridge.cpp
+      src/fw/drivers/leds.cpp
       src/fw/extra.cpp
-      src/fw/cfg_dispatcher.cpp
+      src/fw/globals.cpp
       src/fw/util.cpp)
     servio_compile_options(${A_TARGET})
     target_link_libraries(
@@ -103,6 +107,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     CUSTOM_FILES
     boards/prototype2/adc.cpp
     boards/prototype2/board.cpp
+    boards/prototype2/gpio.cpp
     boards/prototype2/clock.cpp
     boards/prototype2/config.cpp
     boards/prototype2/duart.cpp

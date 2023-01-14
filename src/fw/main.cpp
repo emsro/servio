@@ -3,6 +3,8 @@
 #include "fw/callbacks.hpp"
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/dispatcher.hpp"
+#include "fw/globals.hpp"
+#include "indication.hpp"
 #include "metrics.hpp"
 #include "protocol.hpp"
 
@@ -16,35 +18,48 @@ cfg_map CONFIG;
 
 int main()
 {
-    fw::setup_board();
+    brd::setup_board();
 
-    fw::acquisition* acquisition_ptr = fw::setup_acquisition();
-    fw::hbridge*     hbridge_ptr     = fw::setup_hbridge();
-    fw::comms*       comms_ptr       = fw::setup_comms();
-    fw::debug_comms* debug_comms_ptr = fw::setup_debug_comms();
+    fw::leds* leds_ptr = brd::setup_leds();
+    if ( leds_ptr != nullptr ) {
+        fw::STOP_CALLBACK = [leds_ptr] {
+            leds_ptr->force_red_led();
+        };
+    }
+    fw::acquisition* acquisition_ptr = brd::setup_acquisition();
+    fw::hbridge*     hbridge_ptr     = brd::setup_hbridge();
+    fw::comms*       comms_ptr       = brd::setup_comms();
+    fw::debug_comms* debug_comms_ptr = brd::setup_debug_comms();
 
     if ( acquisition_ptr == nullptr || hbridge_ptr == nullptr || comms_ptr == nullptr ||
-         debug_comms_ptr == nullptr ) {
+         debug_comms_ptr == nullptr || leds_ptr == nullptr ) {
         fw::stop_exec();
     }
-
-    hbridge_ptr->set_period_callback(
-        fw::acquisition_period_callback{ *acquisition_ptr, *hbridge_ptr } );
 
     std::chrono::milliseconds now{ HAL_GetTick() };
     control                   ctl{ now };
     metrics                   met{ now, acquisition_ptr->get_position() };
+    indication                indi{ now, indication_event::BOOTING };
 
+    now = std::chrono::milliseconds{ HAL_GetTick() };
+    indi.tick( now );
+    leds_ptr->update( indi.get_state() );
+
+    hbridge_ptr->set_period_callback(
+        fw::acquisition_period_callback{ *acquisition_ptr, *hbridge_ptr } );
     acquisition_ptr->set_current_callback( fw::current_callback{ *hbridge_ptr, ctl } );
     acquisition_ptr->set_position_callback( fw::position_callback{ ctl, met } );
 
     fw::cfg_dispatcher cfg_dis{ CONFIG, *acquisition_ptr, ctl };
-    fw::apply_config( cfg_dis );
+    brd::apply_config( cfg_dis );
 
     acquisition_ptr->start();
     hbridge_ptr->start();
     comms_ptr->start_receiving();
     debug_comms_ptr->start_receiving();
+
+    now = std::chrono::milliseconds{ HAL_GetTick() };
+    indi.on_event( now, indication_event::INITIALIZED );
 
     while ( true ) {
         now = std::chrono::milliseconds{ HAL_GetTick() };
@@ -60,5 +75,10 @@ int main()
             [&]( const em::protocol::error_record& ) {
                 fw::stop_exec();
             } );
+
+        now = std::chrono::milliseconds{ HAL_GetTick() };
+        indi.on_event( now, indication_event::HEARTBEAT );
+        indi.tick( now );
+        leds_ptr->update( indi.get_state() );
     }
 }

@@ -5,10 +5,10 @@
 
 // TODO: enable clock in clock setup?
 
-namespace fw
+namespace brd
 {
 
-bool setup_iuart( comms::handles& res )
+bool setup_iuart( fw::comms::handles& res )
 {
     res.uart.Instance                    = USART2;
     res.uart.Init.BaudRate               = 115200;
@@ -51,7 +51,7 @@ bool setup_iuart( comms::handles& res )
     HAL_GPIO_Init( GPIOB, &ginitb );
 
     if ( HAL_UART_Init( &res.uart ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     HAL_NVIC_SetPriority( DMA1_Channel3_IRQn, 1, 0 );
@@ -64,22 +64,22 @@ bool setup_iuart( comms::handles& res )
     HAL_NVIC_EnableIRQ( USART2_IRQn );
 
     if ( HAL_DMA_Init( &res.tx_dma ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     __HAL_LINKDMA( ( &res.uart ), hdmatx, res.tx_dma );
 
     if ( HAL_UARTEx_SetTxFifoThreshold( &res.uart, UART_TXFIFO_THRESHOLD_1_8 ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
     if ( HAL_UARTEx_SetRxFifoThreshold( &res.uart, UART_RXFIFO_THRESHOLD_1_8 ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
     if ( HAL_UARTEx_DisableFifoMode( &res.uart ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     return true;
 }
 
-}  // namespace fw
+}  // namespace brd

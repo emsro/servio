@@ -5,13 +5,13 @@
 
 // TODO: bigass duplication from IUART< but who is counting?
 
-namespace fw
+namespace brd
 {
 
 // RX to PA10
 // TX to PB6
 
-bool setup_duart( debug_comms::handles& h )
+bool setup_duart( fw::debug_comms::handles& h )
 {
     h.uart.Instance                    = USART1;
     h.uart.Init.BaudRate               = 460800;
@@ -82,13 +82,13 @@ bool setup_duart( debug_comms::handles& h )
     HAL_NVIC_EnableIRQ( USART1_IRQn );
 
     if ( HAL_DMA_Init( &h.tx_dma ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     __HAL_LINKDMA( ( &h.uart ), hdmatx, h.tx_dma );
 
     if ( HAL_DMA_Init( &h.rx_dma ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     __HAL_LINKDMA( ( &h.uart ), hdmarx, h.rx_dma );
@@ -96,20 +96,20 @@ bool setup_duart( debug_comms::handles& h )
     if ( HAL_UART_Init( &h.uart ) != HAL_OK ) {
         //    if (HAL_RS485Ex_Init(&res.uart, UART_DE_POLARITY_HIGH, 0, 0) !=
         //    HAL_OK) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     if ( HAL_UARTEx_SetTxFifoThreshold( &h.uart, UART_TXFIFO_THRESHOLD_1_2 ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
     if ( HAL_UARTEx_SetRxFifoThreshold( &h.uart, UART_RXFIFO_THRESHOLD_1_2 ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
     if ( HAL_UARTEx_EnableFifoMode( &h.uart ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     return true;
 }
 
-}  // namespace fw
+}  // namespace brd

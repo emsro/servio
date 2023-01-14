@@ -4,8 +4,6 @@
 #include <emlabcpp/range.h>
 #include <gtest/gtest.h>
 
-using namespace std::literals::chrono_literals;
-
 class ControlFixture : public ::testing::Test
 {
 public:

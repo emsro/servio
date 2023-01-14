@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 
-namespace fw
+namespace brd
 {
 
 /// external opamp:
@@ -19,7 +19,7 @@ namespace fw
 ///   circ_current - PA2 - IN3
 ///   low_side_current - PA3 - IN4
 ///
-bool setup_adc( acquisition::handles& h )
+bool setup_adc( fw::acquisition::handles& h )
 {
 
     h.adc.Instance                   = ADC1;
@@ -79,22 +79,22 @@ bool setup_adc( acquisition::handles& h )
     HAL_GPIO_Init( GPIOA, &gpio_c );
 
     if ( HAL_ADC_Init( &h.adc ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     if ( HAL_ADCEx_MultiModeConfigChannel( &h.adc, &mmode ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     if ( HAL_ADC_ConfigChannel( &h.adc, &h.current_chconf ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     HAL_NVIC_SetPriority( DMA1_Channel1_IRQn, 0, 0 );
     HAL_NVIC_EnableIRQ( DMA1_Channel1_IRQn );
 
     if ( HAL_DMA_Init( &h.dma ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
 
     __HAL_LINKDMA( ( &h.adc ), DMA_Handle, h.dma );
@@ -105,4 +105,4 @@ bool setup_adc( acquisition::handles& h )
     return true;
 }
 
-}  // namespace fw
+}  // namespace brd

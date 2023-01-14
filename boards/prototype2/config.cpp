@@ -3,7 +3,7 @@
 #include <emlabcpp/protocol/register_handler.h>
 #include <numbers>
 
-namespace fw
+namespace brd
 {
 
 // TODO: move the formula into library
@@ -108,4 +108,4 @@ void apply_config( em::function_view< void( const cfg_keyval& ) > f )
     kset< cfg_key::VOLTAGE_CONV_SCALE >( f, 0.f );
 }
 
-}  // namespace fw
+}  // namespace brd

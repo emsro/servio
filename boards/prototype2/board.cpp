@@ -1,87 +1,90 @@
 
 #include "fw/board.hpp"
 
-namespace fw
+namespace brd
 {
 
-bool setup_iuart( comms::handles& );
-bool setup_adc( acquisition::handles& );
+bool setup_adc( fw::acquisition::handles& );
+bool setup_adc_timer( fw::acquisition::handles& );
+bool setup_duart( fw::debug_comms::handles& );
+bool setup_hbridge_timers( fw::hbridge::handles& );
+bool setup_iuart( fw::comms::handles& );
+bool setup_leds_gpio( fw::leds::handles& );
+bool setup_leds_timer( fw::leds::handles& );
 void setup_clock();
-bool setup_hbridge_timers( hbridge::handles& );
-bool setup_adc_timer( acquisition::handles& );
-bool setup_duart( debug_comms::handles& );
 void setup_extra();
 
-debug_comms DEBUG_COMMS{};
-acquisition ACQUISITION{};
-hbridge     HBRIDGE{};
-comms       COMMS{};
+fw::acquisition ACQUISITION{};
+fw::comms       COMMS{};
+fw::debug_comms DEBUG_COMMS{};
+fw::hbridge     HBRIDGE{};
+fw::leds        LEDS;
 
-}  // namespace fw
+}  // namespace brd
 
 extern "C" {
 
 void TIM1_UP_TIM16_IRQHandler()
 {
-    fw::HBRIDGE.timer_irq();
+    brd::HBRIDGE.timer_irq();
 }
 
 void USART2_IRQHandler( void )
 {
-    fw::COMMS.uart_irq();
+    brd::COMMS.uart_irq();
 }
 
 void DMA1_Channel4_IRQHandler( void )
 {
-    fw::COMMS.tx_dma_irq();
+    brd::COMMS.tx_dma_irq();
 }
 
 void USART1_IRQHandler( void )
 {
-    fw::DEBUG_COMMS.uart_irq();
+    brd::DEBUG_COMMS.uart_irq();
 }
 
 void DMA1_Channel2_IRQHandler( void )
 {
-    fw::DEBUG_COMMS.rx_dma_irq();
+    brd::DEBUG_COMMS.rx_dma_irq();
 }
 
 void DMA1_Channel5_IRQHandler( void )
 {
-    fw::DEBUG_COMMS.tx_dma_irq();
+    brd::DEBUG_COMMS.tx_dma_irq();
 }
 
 void DMA1_Channel1_IRQHandler()
 {
-    fw::ACQUISITION.dma_irq();
+    brd::ACQUISITION.dma_irq();
 }
 void ADC1_2_IRQHandler()
 {
-    fw::ACQUISITION.adc_irq();
+    brd::ACQUISITION.adc_irq();
 }
 
 void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
-    fw::ACQUISITION.adc_conv_cplt_irq( h );
+    brd::ACQUISITION.adc_conv_cplt_irq( h );
 }
 void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
 {
-    fw::ACQUISITION.adc_error_irq( h );
+    brd::ACQUISITION.adc_error_irq( h );
 }
 }
 
-namespace fw
+namespace brd
 {
 
 void setup_board()
 {
-    hal_check{} << HAL_Init();
+    fw::hal_check{} << HAL_Init();
     setup_clock();
 }
 
-acquisition* setup_acquisition()
+fw::acquisition* setup_acquisition()
 {
-    auto acq_setup = []( acquisition::handles& h ) {
+    auto acq_setup = []( fw::acquisition::handles& h ) {
         return setup_adc( h ) && setup_adc_timer( h );
     };
     if ( !ACQUISITION.setup( acq_setup ) ) {
@@ -90,12 +93,12 @@ acquisition* setup_acquisition()
     return &ACQUISITION;
 }
 
-hbridge* setup_hbridge()
+fw::hbridge* setup_hbridge()
 {
-    auto setup_f = []( hbridge::handles& h ) {
+    auto setup_f = []( fw::hbridge::handles& h ) {
         bool res = setup_hbridge_timers( h );
 
-        hal_check{} << HAL_TIM_RegisterCallback(
+        fw::hal_check{} << HAL_TIM_RegisterCallback(
             &h.timer, HAL_TIM_PERIOD_ELAPSED_CB_ID, []( TIM_HandleTypeDef* ) {
                 HBRIDGE.timer_period_irq();
             } );
@@ -108,9 +111,10 @@ hbridge* setup_hbridge()
 
     return &HBRIDGE;
 }
-comms* setup_comms()
+
+fw::comms* setup_comms()
 {
-    auto comms_setup = []( comms::handles& h ) {
+    auto comms_setup = []( fw::comms::handles& h ) {
         return setup_iuart( h );
     };
     if ( !COMMS.setup( comms_setup ) ) {
@@ -118,11 +122,12 @@ comms* setup_comms()
     }
     return &COMMS;
 }
-debug_comms* setup_debug_comms()
+
+fw::debug_comms* setup_debug_comms()
 {
-    auto setup_f = []( debug_comms::handles& h ) {
+    auto setup_f = []( fw::debug_comms::handles& h ) {
         bool res = setup_duart( h );
-        hal_check{} << HAL_UART_RegisterCallback(
+        fw::hal_check{} << HAL_UART_RegisterCallback(
             &h.uart, HAL_UART_RX_COMPLETE_CB_ID, []( UART_HandleTypeDef* huart ) {
                 DEBUG_COMMS.rx_cplt_irq( huart );
             } );
@@ -136,4 +141,17 @@ debug_comms* setup_debug_comms()
     return &DEBUG_COMMS;
 }
 
-}  // namespace fw
+fw::leds* setup_leds()
+{
+    auto setup_f = []( fw::leds::handles& h ) {
+        return setup_leds_gpio( h ) && setup_leds_timer( h );
+    };
+
+    if ( !LEDS.setup( setup_f ) ) {
+        return nullptr;
+    }
+
+    return &LEDS;
+}
+
+}  // namespace brd

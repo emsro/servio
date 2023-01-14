@@ -103,19 +103,17 @@ inline auto& velocity( T& x )
     return x[1][0];
 }
 
-constexpr float PI = std::numbers::pi_v< float >;
-
 inline bool requires_offset( const float v )
 {
-    return ( v < 0.4f * PI ) || ( 1.6f * PI < v );
+    return ( v < 0.4f * pi ) || ( 1.6f * pi < v );
 }
 
 inline float angle_mod( float v )
 {
     if ( v < 0.f ) {
-        return angle_mod( v + 2.f * PI );
+        return angle_mod( v + 2.f * pi );
     }
-    return std::fmod( v, 2.f * PI );
+    return std::fmod( v, 2.f * pi );
 }
 
 template < typename T >
@@ -154,8 +152,8 @@ inline std::vector< state > simulate(
         std::tie( x, P ) = kalman::update( x, P, z, H, R );
 
         if ( requires_offset( angle( x ) ) ) {
-            offset = angle_mod( offset + PI );
-            modify_angle( x, +PI );
+            offset = angle_mod( offset + pi );
+            modify_angle( x, +pi );
         }
 
         res.push_back( x );

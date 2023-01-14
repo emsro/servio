@@ -6,7 +6,7 @@
 #include <stm32g4xx.h>
 #include <stm32g4xx_hal.h>
 
-namespace fw
+namespace brd
 {
 
 void setup_clock()
@@ -38,7 +38,7 @@ void setup_clock()
     RCC_OscInitStruct.PLL.PLLQ            = RCC_PLLQ_DIV4;
     RCC_OscInitStruct.PLL.PLLR            = RCC_PLLR_DIV2;
     if ( HAL_RCC_OscConfig( &RCC_OscInitStruct ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
     /** Initializes the CPU, AHB and APB buses clocks
      */
@@ -50,7 +50,7 @@ void setup_clock()
     RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
     if ( HAL_RCC_ClockConfig( &RCC_ClkInitStruct, FLASH_LATENCY_2 ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
     /** Initializes the peripherals clocks
      */
@@ -63,7 +63,7 @@ void setup_clock()
     PeriphClkInit.UsbClockSelection    = RCC_USBCLKSOURCE_PLL;
     PeriphClkInit.Adc12ClockSelection  = RCC_ADC12CLKSOURCE_SYSCLK;
     if ( HAL_RCCEx_PeriphCLKConfig( &PeriphClkInit ) != HAL_OK ) {
-        stop_exec();
+        fw::stop_exec();
     }
     /** Configures CRS
      */
@@ -82,4 +82,4 @@ void setup_clock()
     __HAL_RCC_GPIOB_CLK_ENABLE();
 }
 
-}  // namespace fw
+}  // namespace brd
