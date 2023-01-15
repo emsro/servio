@@ -34,12 +34,17 @@ void control::set_pid( control_loop cl, float p, float i, float d )
 void control::set_limits( control_loop cl, limits< float > lim )
 {
     if ( cl == control_loop::CURRENT ) {
-         velocity_pid_.set_config_limit( lim );
+        velocity_pid_.set_config_limit( lim );
     } else if ( cl == control_loop::VELOCITY ) {
-         position_pid_.set_config_limit( lim );
+        position_pid_.set_config_limit( lim );
     } else {
-         position_lims_ = lim;
+        position_lims_ = lim;
     }
+}
+
+bool control::is_engaged()
+{
+    return engaged_;
 }
 
 control_mode control::get_mode()
@@ -47,10 +52,17 @@ control_mode control::get_mode()
     return state_;
 }
 
+void control::disengage()
+{
+    switch_to_power_control( 0 );
+    engaged_ = false;
+}
+
 void control::switch_to_power_control( int16_t power )
 {
-    state_ = control_mode::POWER;
-    power_ = power;
+    state_   = control_mode::POWER;
+    power_   = power;
+    engaged_ = true;
 }
 void control::switch_to_current_control( std::chrono::milliseconds now, float current )
 {
@@ -61,19 +73,22 @@ void control::switch_to_current_control( std::chrono::milliseconds now, float cu
         position_pid_.set_output( -infty );
         velocity_pid_.set_momentary_limit( { current, infty } );
     }
-    state_ = control_mode::CURRENT;
+    state_   = control_mode::CURRENT;
+    engaged_ = true;
 }
 void control::switch_to_velocity_control( std::chrono::milliseconds, float velocity )
 {
     state_ = control_mode::VELOCITY;
     velocity_pid_.reset_momentary_limit();
     position_pid_.set_output( velocity );
+    engaged_ = true;
 }
 void control::switch_to_position_control( std::chrono::milliseconds, float position )
 {
     state_ = control_mode::POSITION;
     velocity_pid_.reset_momentary_limit();
     goal_position_ = position;
+    engaged_       = true;
 }
 
 void control::position_irq( std::chrono::milliseconds now, float position )

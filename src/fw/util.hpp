@@ -1,5 +1,6 @@
 #include <emlabcpp/algorithm.h>
 #include <stm32g4xx_hal.h>
+#include <chrono>
 
 #pragma once
 
@@ -9,6 +10,11 @@ namespace fw
 {
 
 void stop_exec();
+
+inline std::chrono::milliseconds ticks_ms()
+{
+    return std::chrono::milliseconds{ HAL_GetTick() };
+}
 
 struct check_bool
 {

@@ -26,7 +26,7 @@ enum class indication_event
     HEARTBEAT,
     ENGAGED,
     DISENGAGED,
-    STUCK,
+    STUCK, // can't detect this yet
     BOOTING,
     INITIALIZED,
     INCOMING_MESSAGE
@@ -35,11 +35,10 @@ enum class indication_event
 class indication
 {
 public:
-    indication( std::chrono::milliseconds now, indication_event e )
-      : red_phase_( now )
-      , last_tick_( now )
+    indication( std::chrono::milliseconds now )
+      : last_tick_( now )
+      , red_phase_( now )
     {
-        on_event( now, e );
     }
 
     bool on_event( std::chrono::milliseconds now, const indication_event& e );
@@ -61,9 +60,9 @@ private:
     std::chrono::milliseconds                                  red_phase_;
     em::static_circular_buffer< std::chrono::milliseconds, 2 > red_events_;
 
-    float green_i_;
-    float green_step_;
-    float green_amplitude_;
+    float green_i_      = 0.f;
+    float green_step_   = 0.f;
+    float green_offset_ = 0.f;
 
     std::chrono::milliseconds yellow_engaged_until_;
 

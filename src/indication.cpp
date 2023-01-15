@@ -19,10 +19,10 @@ bool indication::on_event( std::chrono::milliseconds now, const indication_event
             green_step_ += 0.1f;
             break;
         case indication_event::ENGAGED:
-            green_amplitude_ = 1.f;
+            green_offset_ = 0.5f;
             break;
         case indication_event::DISENGAGED:
-            green_amplitude_ = 0.5;
+            green_offset_ = 0.f;
             break;
         case indication_event::STUCK:
             yellow_engaged_until_ = now + 50ms;
@@ -45,9 +45,9 @@ void indication::tick( std::chrono::milliseconds now )
 {
     tick_red( now );
 
-    green_i_ += std::fmod( green_i_ + green_step_, 2 * pi );
-    float green_val = ( std::sin( green_i_ ) + 0.5f ) * green_amplitude_;
-    state_.green    = em::map_range< float, uint8_t >( green_val, 0.f, 2 * pi, 0, 255u );
+    green_i_        = std::fmod( green_i_ + green_step_, 2 * pi );
+    float green_val = ( std::sin( green_i_ ) + 1.f ) / 2.f + green_offset_;
+    state_.green    = em::map_range< float, float >( green_val, 0.f, 2.f, 0.f, 255.f );
 
     green_step_ = 0.f;
 

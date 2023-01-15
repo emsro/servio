@@ -14,7 +14,10 @@ public:
     void set_pid( control_loop, float p, float i, float d );
     void set_limits( control_loop, limits< float > lim );
 
+    bool         is_engaged();
     control_mode get_mode();
+
+    void disengage();
 
     void switch_to_power_control( int16_t power );
     void switch_to_current_control( std::chrono::milliseconds now, float current );
@@ -34,11 +37,12 @@ public:
 private:
     ctl::pid_module& ref_module( control_loop );
 
-    control_mode state_ = control_mode::POWER;
+    bool         engaged_ = false;
+    control_mode state_   = control_mode::POWER;
 
     float goal_position_ = 0.f;
 
-    limits<float> position_lims_;
+    limits< float > position_lims_;
 
     ctl::pid_module position_pid_;
 

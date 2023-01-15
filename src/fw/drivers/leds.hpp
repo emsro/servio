@@ -32,6 +32,8 @@ public:
 
     bool setup( em::function_view< bool( handles& ) > setup_f );
 
+    void start();
+
     void force_red_led();
 
     void update( const leds_vals& leds );

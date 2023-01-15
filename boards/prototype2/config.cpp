@@ -88,7 +88,7 @@ void kset( CB& cb, const Val& v )
 
 void apply_config( em::function_view< void( const cfg_keyval& ) > f )
 {
-    kset< cfg_key::POSITION_CONV_LOWER_SETPOINT_VALUE >( f, 0u );
+    kset< cfg_key::POSITION_CONV_LOWER_SETPOINT_VALUE >( f, static_cast<uint8_t>(0u) );
     kset< cfg_key::POSITION_CONV_LOWER_SETPOINT_ANGLE >( f, 0.f );
     kset< cfg_key::POSITION_CONV_HIGHER_SETPOINT_VALUE >( f, 4096u );
     kset< cfg_key::POSITION_CONV_HIGHER_SETPOINT_ANGLE >(

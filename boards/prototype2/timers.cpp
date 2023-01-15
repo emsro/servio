@@ -149,7 +149,7 @@ bool setup_leds_timer( fw::leds::handles& h )
     smc.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
 
     h.yellow_channel = TIM_CHANNEL_2;
-    h.green_channel  = TIM_CHANNEL_2;
+    h.green_channel  = TIM_CHANNEL_3;
 
     TIM_OC_InitTypeDef chc;
 

@@ -4,6 +4,7 @@
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/dispatcher.hpp"
 #include "fw/globals.hpp"
+#include "fw/monitor.hpp"
 #include "indication.hpp"
 #include "metrics.hpp"
 #include "protocol.hpp"
@@ -36,13 +37,12 @@ int main()
         fw::stop_exec();
     }
 
-    std::chrono::milliseconds now{ HAL_GetTick() };
-    control                   ctl{ now };
-    metrics                   met{ now, acquisition_ptr->get_position() };
-    indication                indi{ now, indication_event::BOOTING };
+    control     ctl{ fw::ticks_ms() };
+    metrics     met{ fw::ticks_ms(), acquisition_ptr->get_position() };
+    indication  indi{ fw::ticks_ms() };
+    fw::monitor mon{ fw::ticks_ms(), ctl, *acquisition_ptr, indi };
 
-    now = std::chrono::milliseconds{ HAL_GetTick() };
-    indi.tick( now );
+    indi.tick( fw::ticks_ms() );
     leds_ptr->update( indi.get_state() );
 
     hbridge_ptr->set_period_callback(
@@ -58,12 +58,10 @@ int main()
     comms_ptr->start_receiving();
     debug_comms_ptr->start_receiving();
 
-    now = std::chrono::milliseconds{ HAL_GetTick() };
-    indi.on_event( now, indication_event::INITIALIZED );
+    indi.on_event( fw::ticks_ms(), indication_event::INITIALIZED );
 
     while ( true ) {
-        now = std::chrono::milliseconds{ HAL_GetTick() };
-        fw::dispatcher dis{ *comms_ptr, *acquisition_ptr, ctl, cfg_dis, now };
+        fw::dispatcher dis{ *comms_ptr, *acquisition_ptr, ctl, cfg_dis, fw::ticks_ms() };
         em::match(
             comms_ptr->get_message(),
             []( std::monostate ) {},
@@ -71,14 +69,14 @@ int main()
                 em::match( var, [&]< typename T >( const T& item ) {
                     dis.handle_message( item );
                 } );
+                indi.on_event( fw::ticks_ms(), indication_event::INCOMING_MESSAGE );
             },
             [&]( const em::protocol::error_record& ) {
                 fw::stop_exec();
             } );
 
-        now = std::chrono::milliseconds{ HAL_GetTick() };
-        indi.on_event( now, indication_event::HEARTBEAT );
-        indi.tick( now );
+        mon.tick( fw::ticks_ms() );
+        indi.tick( fw::ticks_ms() );
         leds_ptr->update( indi.get_state() );
     }
 }
