@@ -41,7 +41,7 @@ rad/s ─┤VELOCITY    │
    A  ─┤CURRENT     │
        └─────┬──────┘
              │
-					  PWR
+            PWR
 ```
 
 That is, position/velocity control loops does not directly control the motor, but rather different control loop that in consequence controls the motor:
