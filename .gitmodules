@@ -1,3 +1,6 @@
 [submodule "stm32-cmake"]
 	path = stm32-cmake
 	url = https://github.com/ObKo/stm32-cmake
+[submodule ".doxygen/doxygen-awesome-css"]
+	path = .doxygen/doxygen-awesome-css
+	url = https://github.com/jothepro/doxygen-awesome-css.git
