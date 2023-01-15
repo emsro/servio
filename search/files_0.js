@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['acquisition_2ecpp_461',['acquisition.cpp',['../acquisition_8cpp.html',1,'']]],
-  ['acquisition_2ehpp_462',['acquisition.hpp',['../acquisition_8hpp.html',1,'']]]
+  ['0001_2drecord_2darchitecture_2ddecisions_2emd_477',['0001-record-architecture-decisions.md',['../0001-record-architecture-decisions_8md.html',1,'']]],
+  ['0002_2dproject_2dshall_2dbe_2dwriten_2dwith_2dc_2d20_2emd_478',['0002-project-shall-be-writen-with-c-20.md',['../0002-project-shall-be-writen-with-c-20_8md.html',1,'']]],
+  ['0003_2dstm32g4_2dis_2dthe_2dfirst_2dplatform_2emd_479',['0003-stm32g4-is-the-first-platform.md',['../0003-stm32g4-is-the-first-platform_8md.html',1,'']]],
+  ['0004_2dservo_2dshall_2dprovide_2dposition_2dcontrol_2emd_480',['0004-servo-shall-provide-position-control.md',['../0004-servo-shall-provide-position-control_8md.html',1,'']]],
+  ['0005_2dservo_2dshall_2dprovide_2dvelocity_2dcontrol_2emd_481',['0005-servo-shall-provide-velocity-control.md',['../0005-servo-shall-provide-velocity-control_8md.html',1,'']]],
+  ['0006_2dservo_2dshall_2dprovide_2dcurrent_2dcontrol_2emd_482',['0006-servo-shall-provide-current-control.md',['../0006-servo-shall-provide-current-control_8md.html',1,'']]],
+  ['0007_2dchained_2dcontrol_2dloops_2darchitecture_2dshall_2dbe_2dused_2emd_483',['0007-chained-control-loops-architecture-shall-be-used.md',['../0007-chained-control-loops-architecture-shall-be-used_8md.html',1,'']]],
+  ['0008_2dcmake_2dis_2dthe_2done_2donly_2dbuild_2dsystem_2emd_484',['0008-cmake-is-the-one-only-build-system.md',['../0008-cmake-is-the-one-only-build-system_8md.html',1,'']]]
 ];

@@ -25,6 +25,55 @@
 var NAVTREE =
 [
   [ "servio", "index.html", [
+    [ "Architecture Decision Records", "index.html", null ],
+    [ "1. Record architecture decisions", "md_doc_adr_0001_record_architecture_decisions.html", [
+      [ "Status", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md1", null ],
+      [ "Context", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md2", null ],
+      [ "Decision", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md3", null ],
+      [ "Consequences", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md4", null ]
+    ] ],
+    [ "2. Project shall be writen with C++20", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html", [
+      [ "Status", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md6", null ],
+      [ "Context", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md7", null ],
+      [ "Decision", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md8", null ],
+      [ "Consequences", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md9", null ]
+    ] ],
+    [ "3. STM32G4 is the first platform", "md_doc_adr_0003_stm32g4_is_the_first_platform.html", [
+      [ "Status", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md11", null ],
+      [ "Context", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md12", null ],
+      [ "Decision", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md13", null ],
+      [ "Consequences", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md14", null ]
+    ] ],
+    [ "4. Servo shall provide position control", "md_doc_adr_0004_servo_shall_provide_position_control.html", [
+      [ "Status", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md16", null ],
+      [ "Context", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md17", null ],
+      [ "Decision", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md18", null ],
+      [ "Consequences", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md19", null ]
+    ] ],
+    [ "5. Servo shall provide velocity control", "md_doc_adr_0005_servo_shall_provide_velocity_control.html", [
+      [ "Status", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md21", null ],
+      [ "Context", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md22", null ],
+      [ "Decision", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md23", null ],
+      [ "Consequences", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md24", null ]
+    ] ],
+    [ "6. Servo shall provide current control", "md_doc_adr_0006_servo_shall_provide_current_control.html", [
+      [ "Status", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md26", null ],
+      [ "Context", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md27", null ],
+      [ "Decision", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md28", null ],
+      [ "Consequences", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md29", null ]
+    ] ],
+    [ "7. Chained control loops architecture shall be used", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html", [
+      [ "Status", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md31", null ],
+      [ "Context", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md32", null ],
+      [ "Decision", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md33", null ],
+      [ "Consequences", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md34", null ]
+    ] ],
+    [ "8. CMake is the one only build system", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html", [
+      [ "Status", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md36", null ],
+      [ "Context", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md37", null ],
+      [ "Decision", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md38", null ],
+      [ "Consequences", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md39", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -64,7 +113,7 @@ var NAVTREEINDEX =
 [
 "acquisition_8cpp.html",
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a76e72afa4f8d540bba69263a712a52d6",
-"stm32g4xx__hal__conf_8h.html#a5ef4d67cd7630f6e2e67d17370fbffdb"
+"protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaa8fad798c5d300a31b8cc8bb90e5dbd3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

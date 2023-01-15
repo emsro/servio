@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['leds_214',['leds',['../classfw_1_1leds.html',1,'fw::leds'],['../classfw_1_1leds.html#a7b8984c053c13ff6771c9b71b5f1ac46',1,'fw::leds::leds()']]],
-  ['leds_2ecpp_215',['leds.cpp',['../leds_8cpp.html',1,'']]],
-  ['leds_2ehpp_216',['leds.hpp',['../leds_8hpp.html',1,'']]],
-  ['leds_5fvals_217',['leds_vals',['../base_8hpp.html#structleds__vals',1,'']]],
-  ['limits_218',['limits',['../base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c',1,'base.hpp']]],
-  ['lse_5fstartup_5ftimeout_219',['LSE_STARTUP_TIMEOUT',['../stm32g4xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32g4xx_hal_conf.h']]],
-  ['lse_5fvalue_220',['LSE_VALUE',['../stm32g4xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d',1,'stm32g4xx_hal_conf.h']]],
-  ['lsi_5fvalue_221',['LSI_VALUE',['../stm32g4xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9',1,'stm32g4xx_hal_conf.h']]]
+  ['base_2ehpp_33',['base.hpp',['../base_8hpp.html',1,'']]],
+  ['blue_34',['blue',['../base_8hpp.html#a51017d246d02f245608d9ffda556ddd8',1,'leds_vals']]],
+  ['blue_5fperipheral_35',['blue_peripheral',['../classfw_1_1leds.html#a9fce93e166a44330c97e84442c529605',1,'fw::leds::handles']]],
+  ['blue_5fpin_36',['blue_pin',['../classfw_1_1leds.html#aab96ce6f66e62a593bc38d626aa5836c',1,'fw::leds::handles']]],
+  ['board_2ehpp_37',['board.hpp',['../board_8hpp.html',1,'']]],
+  ['booting_38',['BOOTING',['../indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14ad32cbe23a48d1576416d9eb314876c6d',1,'indication.hpp']]],
+  ['brd_39',['brd',['../namespacebrd.html',1,'']]],
+  ['buffer_40',['buffer',['../structfw_1_1acquisition_1_1current__sequence.html#a2db024a2a79a2a64e2662e83998dac38',1,'fw::acquisition::current_sequence']]],
+  ['buffer_5fsize_41',['buffer_size',['../structfw_1_1acquisition_1_1current__sequence.html#a3699cad154f0998dd01e00d890fcfe96',1,'fw::acquisition::current_sequence']]],
+  ['buffer_5fwas_5ffull_42',['buffer_was_full',['../namespacefw.html#a61e31aee7594c31cc25e2fa29c805d70',1,'fw::acquisition_status']]],
+  ['busfault_5fhandler_43',['BusFault_Handler',['../it_8cpp.html#a850cefb17a977292ae5eb4cafa9976c3',1,'it.cpp']]]
 ];

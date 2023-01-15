@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['globals_2ecpp_478',['globals.cpp',['../globals_8cpp.html',1,'']]],
-  ['globals_2ehpp_479',['globals.hpp',['../globals_8hpp.html',1,'']]]
+  ['extra_2ecpp_501',['extra.cpp',['../extra_8cpp.html',1,'']]]
 ];

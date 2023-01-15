@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['extra_2ecpp_477',['extra.cpp',['../extra_8cpp.html',1,'']]]
+  ['debug_5fcomms_2ecpp_498',['debug_comms.cpp',['../debug__comms_8cpp.html',1,'']]],
+  ['debug_5fcomms_2ehpp_499',['debug_comms.hpp',['../debug__comms_8hpp.html',1,'']]],
+  ['dispatcher_2ehpp_500',['dispatcher.hpp',['../dispatcher_8hpp.html',1,'']]]
 ];
