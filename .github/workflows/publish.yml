@@ -13,6 +13,6 @@ jobs:
             - name: Install graphviz
               run: sudo apt install graphviz
 
-            - uses: JamesIves/github-pages-deploy-action@3.7.1
+            - uses: DenverCoder1/doxygen-github-pages-action@v1.2.0
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
