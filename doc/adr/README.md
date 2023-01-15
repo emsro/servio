@@ -7,3 +7,4 @@
 * [5. Servo shall provide velocity control](0005-servo-shall-provide-velocity-control.md)
 * [6. Servo shall provide current control](0006-servo-shall-provide-current-control.md)
 * [7. Chained control loops architecture shall be used](0007-chained-control-loops-architecture-shall-be-used.md)
+* [8. CMake is the one only build system](0008-cmake-is-the-one-only-build-system.md)
