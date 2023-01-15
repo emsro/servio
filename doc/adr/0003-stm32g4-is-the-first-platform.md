@@ -6,6 +6,8 @@ Date: 2023-01-15
 
 Accepted
 
+Parent of [7. Chained control loops architecture shall be used](0007-chained-control-loops-architecture-shall-be-used.md)
+
 ## Context
 
 The servio is firmware for servomotors, that firmware has to run on some MCU - platform.

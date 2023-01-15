@@ -6,6 +6,8 @@ Date: 2023-01-15
 
 Accepted
 
+Parent of [7. Chained control loops architecture shall be used](0007-chained-control-loops-architecture-shall-be-used.md)
+
 ## Context
 
 The project represents firmware for servomotors, these however have various forms of modes.
