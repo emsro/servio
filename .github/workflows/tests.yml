@@ -1,0 +1,30 @@
+name: Tests
+
+on: [push]
+
+jobs:
+    test:
+        runs-on: ubuntu-22.04	
+
+        defaults:
+            run:
+                shell:
+                    bash
+        env:
+            CC: gcc-10
+            CXX: g++-10
+        
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Install dependencies
+              run: sudo apt install libgtest-dev gcc-10 g++-10 nlohmann-json3-dev libgtest-dev
+
+            - name: Test
+              run: make test
+            
+            - name: Test under address sanitizer
+              run: make test SANITIZER=address
+            
+            - name: Test under undefined sanitizer
+              run: make test SANITIZER=undefined
