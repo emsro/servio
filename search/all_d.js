@@ -1,7 +1,14 @@
 var searchData=
 [
-  ['endianess_108',['endianess',['../structpacket__def.html#a6a8940ecd9f06ef6da58fe8e59358e86',1,'packet_def']]],
-  ['engaged_109',['ENGAGED',['../indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a91fc31ffb68f72532b0ab7f28f24db85',1,'indication.hpp']]],
-  ['external_5fclock_5fvalue_110',['EXTERNAL_CLOCK_VALUE',['../stm32g4xx__hal__conf_8h.html#a8c47c935e91e70569098b41718558648',1,'stm32g4xx_hal_conf.h']]],
-  ['extra_2ecpp_111',['extra.cpp',['../extra_8cpp.html',1,'']]]
+  ['data_5fcache_5fenable_99',['DATA_CACHE_ENABLE',['../stm32g4xx__hal__conf_8h.html#a5b4c32a40cf49b06c0d761e385949a6b',1,'stm32g4xx_hal_conf.h']]],
+  ['debug_5fcomms_100',['debug_comms',['../classfw_1_1debug__comms.html#a1f302f5bc9032c433aeadfc5fca72292',1,'fw::debug_comms::debug_comms()=default'],['../classfw_1_1debug__comms.html#a90eb1e4fccfc205f9b77a605cef638b1',1,'fw::debug_comms::debug_comms(const debug_comms &amp;)=delete'],['../classfw_1_1debug__comms.html#a468b91007e8c35c23e6e3ab7ee833e8c',1,'fw::debug_comms::debug_comms(debug_comms &amp;&amp;)=delete'],['../classfw_1_1debug__comms.html',1,'fw::debug_comms']]],
+  ['debug_5fcomms_2ecpp_101',['debug_comms.cpp',['../debug__comms_8cpp.html',1,'']]],
+  ['debug_5fcomms_2ehpp_102',['debug_comms.hpp',['../debug__comms_8hpp.html',1,'']]],
+  ['debugmon_5fhandler_103',['DebugMon_Handler',['../it_8cpp.html#adbdfb05858cc36fc520974df37ec3cb0',1,'it.cpp']]],
+  ['disengage_104',['disengage',['../classcontrol.html#a72d1d14a2342d2a7c4a0b61d2cfb27c6',1,'control']]],
+  ['disengaged_105',['DISENGAGED',['../indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14afeffe8e712a5ce9a0cedef11c364fa74',1,'indication.hpp']]],
+  ['dispatcher_106',['dispatcher',['../structfw_1_1dispatcher.html',1,'fw']]],
+  ['dispatcher_2ehpp_107',['dispatcher.hpp',['../dispatcher_8hpp.html',1,'']]],
+  ['dma_108',['dma',['../classfw_1_1acquisition.html#ae06c9f1f85308b7f439bb1b7baeb19e6',1,'fw::acquisition::handles']]],
+  ['dma_5firq_109',['dma_irq',['../classfw_1_1acquisition.html#a00fdf74bd952cb693dafd591ee026ad9',1,'fw::acquisition']]]
 ];

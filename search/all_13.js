@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['leds_231',['leds',['../classfw_1_1leds.html',1,'fw::leds'],['../classfw_1_1leds.html#a7b8984c053c13ff6771c9b71b5f1ac46',1,'fw::leds::leds()']]],
-  ['leds_2ecpp_232',['leds.cpp',['../leds_8cpp.html',1,'']]],
-  ['leds_2ehpp_233',['leds.hpp',['../leds_8hpp.html',1,'']]],
-  ['leds_5fvals_234',['leds_vals',['../base_8hpp.html#structleds__vals',1,'']]],
-  ['limits_235',['limits',['../base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c',1,'base.hpp']]],
-  ['lse_5fstartup_5ftimeout_236',['LSE_STARTUP_TIMEOUT',['../stm32g4xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32g4xx_hal_conf.h']]],
-  ['lse_5fvalue_237',['LSE_VALUE',['../stm32g4xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d',1,'stm32g4xx_hal_conf.h']]],
-  ['lsi_5fvalue_238',['LSI_VALUE',['../stm32g4xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9',1,'stm32g4xx_hal_conf.h']]]
+  ['kalman_229',['kalman',['../namespacekalman.html',1,'']]],
+  ['kalman_2ehpp_230',['kalman.hpp',['../kalman_8hpp.html',1,'']]],
+  ['kalman_5fgain_231',['kalman_gain',['../namespacekalman.html#aa06b341b7242ae4d2e6499f4b66e1e5a',1,'kalman']]],
+  ['key_232',['key',['../config_8hpp.html#a7e1b4963cd8853783479f72a0c2fc073',1,'cfg_keyval::key()'],['../structset__config.html#afd848a7d9e7ba244d9ab2dc32d2af3eb',1,'set_config::key()'],['../structget__config__request.html#aa676ee73c49ec894b9d2074b8b317a5e',1,'get_config_request::key()']]]
 ];

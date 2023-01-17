@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scaled_469',['scaled',['../classscaled.html',1,'']]],
-  ['set_5fconfig_470',['set_config',['../structset__config.html',1,'']]]
+  ['scaled_471',['scaled',['../classscaled.html',1,'']]],
+  ['set_5fconfig_472',['set_config',['../structset__config.html',1,'']]]
 ];

@@ -74,6 +74,12 @@ var NAVTREE =
       [ "Decision", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md38", null ],
       [ "Consequences", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md39", null ]
     ] ],
+    [ "9. If servo in position, velocity, or current mode, limits for all three modes shall be respected at once", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html", [
+      [ "Status", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md41", null ],
+      [ "Context", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md42", null ],
+      [ "Decision", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md43", null ],
+      [ "Consequences", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md44", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -113,7 +119,7 @@ var NAVTREEINDEX =
 [
 "acquisition_8cpp.html",
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a76e72afa4f8d540bba69263a712a52d6",
-"protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaa8fad798c5d300a31b8cc8bb90e5dbd3"
+"protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dba530fc538952383b10b439da67bd1a340"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
