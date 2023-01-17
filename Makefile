@@ -21,7 +21,7 @@ build_g4:
 	cmake --build build/g4 -j 4
 
 test: build_host
-	cd build/host/fwlib && ctest -T Test --output-on-failure
+	cd build/host && ctest -T Test --output-on-failure
 
 clang-format:
 	find ./ ${FIND_FILTER} \( -iname "*.h" -o -iname "*.cpp" -o -iname "*.hpp" \)  | xargs clang-format -i

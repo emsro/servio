@@ -36,6 +36,8 @@ servio_compile_options(servio_lib)
 target_compile_options(servio_lib PRIVATE -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
+  include(CTest)
+  enable_testing()
 
   add_subdirectory(tests)
 
