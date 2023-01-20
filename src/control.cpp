@@ -64,7 +64,7 @@ void control::switch_to_power_control( int16_t power )
     power_   = power;
     engaged_ = true;
 }
-void control::switch_to_current_control( std::chrono::milliseconds now, float current )
+void control::switch_to_current_control( std::chrono::milliseconds, float current )
 {
     if ( current >= 0.f ) {
         position_pid_.set_output( infty );
