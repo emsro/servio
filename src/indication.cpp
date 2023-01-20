@@ -47,7 +47,8 @@ void indication::tick( std::chrono::milliseconds now )
 
     green_i_        = std::fmod( green_i_ + green_step_, 2 * pi );
     float green_val = ( std::sin( green_i_ ) + 1.f ) / 2.f + green_offset_;
-    state_.green    = em::map_range< float, float >( green_val, 0.f, 2.f, 0.f, 255.f );
+    state_.green =
+        static_cast< uint8_t >( em::map_range< float, float >( green_val, 0.f, 2.f, 0.f, 255.f ) );
 
     green_step_ = 0.f;
 
