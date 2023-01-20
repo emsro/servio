@@ -1,5 +1,6 @@
 #include "scaled.hpp"
 
+#include <numbers>
 #include <chrono>
 #include <cstdint>
 #include <emlabcpp/algorithm.h>
