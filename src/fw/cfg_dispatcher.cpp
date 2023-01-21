@@ -91,6 +91,12 @@ void cfg_dispatcher::set( const cfg_key& key, const cfg_value_message& msg )
                 { map.get_val< CONTROL_POSITION_LIM_MIN >(),
                   map.get_val< CONTROL_POSITION_LIM_MAX >() } );
             break;
+        case MINIMUM_VOLTAGE:
+            m.set_minimum_voltage( map.get_val< MINIMUM_VOLTAGE >() );
+            break;
+        case MAXIMUM_TEMPERATURE:
+            m.set_maximum_temperature( map.get_val< MAXIMUM_TEMPERATURE >() );
+            break;
     }
 }
 }  // namespace fw

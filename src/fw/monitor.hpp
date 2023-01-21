@@ -18,17 +18,25 @@ public:
         indi_.on_event( now, indication_event::BOOTING );
     }
 
+    void set_minimum_voltage( float vcc )
+    {
+        min_vcc_ = vcc;
+    }
+
+    void set_maximum_temperature( float temp )
+    {
+        max_tmp_ = temp;
+    }
+
     void tick( std::chrono::milliseconds now )
     {
         indi_.on_event( now, indication_event::HEARTBEAT );
 
-        // TODO: hardcoded constant /o....
-        if ( acqui_.get_vcc() < 6.f ) {
+        if ( acqui_.get_vcc() < min_vcc_ ) {
             indi_.on_event( now, indication_event::VOLTAGE_LOW );
         }
 
-        // TODO: constant /o..
-        if ( acqui_.get_temp() > 70.f ) {
+        if ( acqui_.get_temp() > max_tmp_ ) {
             indi_.on_event( now, indication_event::TEMPERATURE_HIGH );
         }
 
@@ -43,6 +51,9 @@ private:
     control&     ctl_;
     acquisition& acqui_;
     indication&  indi_;
+
+    float min_vcc_ = 0.f;
+    float max_tmp_ = 90.f;
 };
 
 }  // namespace fw

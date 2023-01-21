@@ -31,7 +31,9 @@ enum cfg_key : uint16_t
     CONTROL_POSITION_LOOP_I             = 0x54,
     CONTROL_POSITION_LOOP_D             = 0x58,
     CONTROL_POSITION_LIM_MIN            = 0x5c,
-    CONTROL_POSITION_LIM_MAX            = 0x60
+    CONTROL_POSITION_LIM_MAX            = 0x60,
+    MINIMUM_VOLTAGE                     = 0x64,
+    MAXIMUM_TEMPERATURE                 = 0x68,
 };
 
 template < auto Key, typename T >
@@ -65,7 +67,9 @@ using cfg_map = em::protocol::register_map<
     cfg_reg< CONTROL_POSITION_LOOP_I, float >,
     cfg_reg< CONTROL_POSITION_LOOP_D, float >,
     cfg_reg< CONTROL_POSITION_LIM_MIN, float >,
-    cfg_reg< CONTROL_POSITION_LIM_MAX, float > >;
+    cfg_reg< CONTROL_POSITION_LIM_MAX, float >,
+    cfg_reg< MINIMUM_VOLTAGE, float >,
+    cfg_reg< MAXIMUM_TEMPERATURE, float > >;
 
 using cfg_value_message = typename cfg_map::message_type;
 

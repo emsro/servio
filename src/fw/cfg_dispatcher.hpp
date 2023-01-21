@@ -1,6 +1,7 @@
 #include "config.hpp"
 #include "control.hpp"
 #include "fw/drivers/acquisition.hpp"
+#include "fw/monitor.hpp"
 
 #pragma once
 
@@ -13,6 +14,7 @@ struct cfg_dispatcher
     cfg_map&     map;
     acquisition& acq;
     control&     ctl;
+    monitor&     m;
 
     void operator()( const cfg_keyval& kv )
     {

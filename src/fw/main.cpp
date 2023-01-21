@@ -50,7 +50,7 @@ int main()
     acquisition_ptr->set_current_callback( fw::current_callback{ *hbridge_ptr, ctl } );
     acquisition_ptr->set_position_callback( fw::position_callback{ ctl, met } );
 
-    fw::cfg_dispatcher cfg_dis{ CONFIG, *acquisition_ptr, ctl };
+    fw::cfg_dispatcher cfg_dis{ CONFIG, *acquisition_ptr, ctl, mon };
     brd::apply_config( cfg_dis );
 
     acquisition_ptr->start();
