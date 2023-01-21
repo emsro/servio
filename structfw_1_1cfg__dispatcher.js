@@ -5,5 +5,6 @@ var structfw_1_1cfg__dispatcher =
     [ "set", "structfw_1_1cfg__dispatcher.html#ad09a796d7bec26618eac8d55baf657fd", null ],
     [ "acq", "structfw_1_1cfg__dispatcher.html#ac8bbfcb8bcebb26cb760424c4e2da2f7", null ],
     [ "ctl", "structfw_1_1cfg__dispatcher.html#a33d10d57fe1c9a4762d2b934ac68859b", null ],
+    [ "m", "structfw_1_1cfg__dispatcher.html#aa1f62409052967e8dedeb2f004982d57", null ],
     [ "map", "structfw_1_1cfg__dispatcher.html#acd4eceafa6aa5606d61423ff9ede0445", null ]
 ];

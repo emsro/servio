@@ -1,7 +1,8 @@
 <map id="fw::dispatcher" name="fw::dispatcher">
-<area shape="rect" id="node1" title=" " alt="" coords="187,184,299,211"/>
-<area shape="rect" id="node2" href="$classfw_1_1acquisition.html" title=" " alt="" coords="45,5,160,32"/>
-<area shape="rect" id="node4" href="$structfw_1_1cfg__dispatcher.html" title=" " alt="" coords="96,95,235,121"/>
-<area shape="rect" id="node3" href="$classfw_1_1comms.html" title=" " alt="" coords="329,95,421,121"/>
-<area shape="rect" id="node5" href="$classcontrol.html" title=" " alt="" coords="209,5,276,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="231,184,343,211"/>
+<area shape="rect" id="node2" href="$classfw_1_1acquisition.html" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node4" href="$structfw_1_1cfg__dispatcher.html" title=" " alt="" coords="140,95,279,121"/>
+<area shape="rect" id="node3" href="$classfw_1_1comms.html" title=" " alt="" coords="373,95,465,121"/>
+<area shape="rect" id="node5" href="$classfw_1_1monitor.html" title=" " alt="" coords="162,5,257,32"/>
+<area shape="rect" id="node6" href="$classcontrol.html" title=" " alt="" coords="288,5,355,32"/>
 </map>
