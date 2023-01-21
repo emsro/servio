@@ -30,12 +30,12 @@ void leds::update( const leds_vals& leds )
 
     HAL_GPIO_WritePin( h_.blue_peripheral, h_.blue_pin, leds.blue ? GPIO_PIN_SET : GPIO_PIN_RESET );
 
-    uint16_t yellow_val = em::map_range< uint8_t, uint16_t >(
-        leds.yellow, 0u, std::numeric_limits< uint8_t >::max(), 0, h_.tim.Init.Period );
+    uint16_t yellow_val = em::map_range< uint8_t, uint32_t >(
+        leds.yellow, 0u, std::numeric_limits< uint8_t >::max(), 0u, h_.tim.Init.Period );
     __HAL_TIM_SET_COMPARE( &h_.tim, h_.yellow_channel, yellow_val );
 
-    uint16_t green_val = em::map_range< uint8_t, uint16_t >(
-        leds.green, 0u, std::numeric_limits< uint8_t >::max(), 0, h_.tim.Init.Period );
+    uint16_t green_val = em::map_range< uint8_t, uint32_t >(
+        leds.green, 0u, std::numeric_limits< uint8_t >::max(), 0u, h_.tim.Init.Period );
     __HAL_TIM_SET_COMPARE( &h_.tim, h_.green_channel, green_val );
 }
 
