@@ -12,24 +12,25 @@ option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 
 if(NOT TARGET emlabcpp)
-if(SERVIO_EMLABCPP_SRC)
-  if(NOT IS_ABSOLUTE ${SERVIO_EMLABCPP_SRC})
-    set(SERVIO_EMLABCPP_SRC
-        "${CMAKE_CURRENT_SOURCE_DIR}/${SERVIO_EMLABCPP_SRC}")
+  if(SERVIO_EMLABCPP_SRC)
+    if(NOT IS_ABSOLUTE ${SERVIO_EMLABCPP_SRC})
+      set(SERVIO_EMLABCPP_SRC
+          "${CMAKE_CURRENT_SOURCE_DIR}/${SERVIO_EMLABCPP_SRC}")
+    endif()
+    add_subdirectory(${SERVIO_EMLABCPP_SRC} emlabcpp)
+  else()
+    include(FetchContent)
+    FetchContent_Declare(
+      emlabcpp
+      GIT_REPOSITORY https://github.com/koniarik/emlabcpp
+      GIT_TAG main)
+    FetchContent_MakeAvailable(emlabcpp)
   endif()
-  add_subdirectory(${SERVIO_EMLABCPP_SRC} emlabcpp)
-else()
-  include(FetchContent)
-  FetchContent_Declare(
-    emlabcpp
-    GIT_REPOSITORY https://github.com/koniarik/emlabcpp
-    GIT_TAG main)
-  FetchContent_MakeAvailable(emlabcpp)
-endif()
 endif()
 target_compile_options(emlabcpp PRIVATE -Os)
 
-add_library(servio_lib STATIC src/metrics.cpp src/control.cpp src/protocol.cpp src/indication.cpp)
+add_library(servio_lib STATIC src/metrics.cpp src/control.cpp src/protocol.cpp
+                              src/indication.cpp)
 target_include_directories(servio_lib PUBLIC src/)
 target_link_libraries(servio_lib PUBLIC emlabcpp)
 servio_compile_options(servio_lib)
@@ -55,15 +56,11 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   find_package(
     CMSIS
     COMPONENTS STM32G4
-    REQUIRED
-    GLOBAL
-)
+    REQUIRED GLOBAL)
   find_package(
     HAL
     COMPONENTS STM32G4
-    REQUIRED
-    GLOBAL
-)
+    REQUIRED GLOBAL)
 
   function(servio_board_library)
     cmake_parse_arguments(A "" "TARGET" "CUSTOM_FILES" ${ARGN})
