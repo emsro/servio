@@ -1,12 +1,9 @@
-#include "control.hpp"
 #include "fw/board.hpp"
 #include "fw/callbacks.hpp"
 #include "fw/cfg_dispatcher.hpp"
+#include "fw/core.hpp"
 #include "fw/dispatcher.hpp"
 #include "fw/globals.hpp"
-#include "fw/monitor.hpp"
-#include "indication.hpp"
-#include "metrics.hpp"
 #include "protocol.hpp"
 
 #include <emlabcpp/algorithm.h>
@@ -37,20 +34,12 @@ int main()
         fw::stop_exec();
     }
 
-    control     ctl{ fw::ticks_ms() };
-    metrics     met{ fw::ticks_ms(), acquisition_ptr->get_position() };
-    indication  indi{ fw::ticks_ms() };
-    fw::monitor mon{ fw::ticks_ms(), ctl, *acquisition_ptr, indi };
+    fw::core cor{ fw::ticks_ms(), *acquisition_ptr };
+    leds_ptr->update( cor.ind.get_state() );
 
-    indi.tick( fw::ticks_ms() );
-    leds_ptr->update( indi.get_state() );
+    fw::setup_standard_callbacks( *hbridge_ptr, *acquisition_ptr, cor.ctl, cor.met );
 
-    hbridge_ptr->set_period_callback(
-        fw::acquisition_period_callback{ *acquisition_ptr, *hbridge_ptr } );
-    acquisition_ptr->set_current_callback( fw::current_callback{ *hbridge_ptr, ctl } );
-    acquisition_ptr->set_position_callback( fw::position_callback{ ctl, met } );
-
-    fw::cfg_dispatcher cfg_dis{ CONFIG, *acquisition_ptr, ctl, mon };
+    fw::cfg_dispatcher cfg_dis{ CONFIG, *acquisition_ptr, cor.ctl, cor.mon };
     brd::apply_config( cfg_dis );
 
     acquisition_ptr->start();
@@ -58,10 +47,10 @@ int main()
     comms_ptr->start_receiving();
     debug_comms_ptr->start_receiving();
 
-    indi.on_event( fw::ticks_ms(), indication_event::INITIALIZED );
+    cor.ind.on_event( fw::ticks_ms(), indication_event::INITIALIZED );
 
     while ( true ) {
-        fw::dispatcher dis{ *comms_ptr, *acquisition_ptr, ctl, cfg_dis, fw::ticks_ms() };
+        fw::dispatcher dis{ *comms_ptr, *acquisition_ptr, cor.ctl, cfg_dis, fw::ticks_ms() };
         em::match(
             comms_ptr->get_message(),
             []( std::monostate ) {},
@@ -69,14 +58,14 @@ int main()
                 em::match( var, [&]< typename T >( const T& item ) {
                     dis.handle_message( item );
                 } );
-                indi.on_event( fw::ticks_ms(), indication_event::INCOMING_MESSAGE );
+                cor.ind.on_event( fw::ticks_ms(), indication_event::INCOMING_MESSAGE );
             },
             [&]( const em::protocol::error_record& ) {
                 fw::stop_exec();
             } );
 
-        mon.tick( fw::ticks_ms() );
-        indi.tick( fw::ticks_ms() );
-        leds_ptr->update( indi.get_state() );
+        cor.mon.tick( fw::ticks_ms() );
+        cor.ind.tick( fw::ticks_ms() );
+        leds_ptr->update( cor.ind.get_state() );
     }
 }
