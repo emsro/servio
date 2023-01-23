@@ -11,6 +11,7 @@ var dir_4fc88152649b3a7b0043869ddaf105b0 =
     [ "cfg_dispatcher.hpp", "cfg__dispatcher_8hpp.html", [
       [ "cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", "structfw_1_1cfg__dispatcher" ]
     ] ],
+    [ "core.hpp", "core_8hpp.html", "core_8hpp" ],
     [ "dispatcher.hpp", "dispatcher_8hpp.html", [
       [ "dispatcher", "structfw_1_1dispatcher.html", "structfw_1_1dispatcher" ]
     ] ],

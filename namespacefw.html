@@ -103,6 +103,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1cfg__dispatcher.html">cfg_dispatcher</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1core.html">core</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1dispatcher.html">dispatcher</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structfw_1_1acquisition__status"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#structfw_1_1acquisition__status">acquisition_status</a></td></tr>
@@ -131,6 +133,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a7de90521979b7e15c9384d0e45456222"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a7de90521979b7e15c9384d0e45456222">setup_standard_callbacks</a> (<a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;hb, <a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;acqui, <a class="el" href="classcontrol.html">control</a> &amp;ctl, <a class="el" href="classmetrics.html">metrics</a> &amp;met)</td></tr>
+<tr class="separator:a7de90521979b7e15c9384d0e45456222"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0b580f4dd8010ffb0db37533802021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a> ()</td></tr>
 <tr class="separator:a8e0b580f4dd8010ffb0db37533802021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a374c51e3b6ffdefff3e332856e34e8a8"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a374c51e3b6ffdefff3e332856e34e8a8">ticks_ms</a> ()</td></tr>
@@ -289,6 +293,48 @@ buffer_was_full</td>
 
 </div>
 </div>
+<a id="a7de90521979b7e15c9384d0e45456222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7de90521979b7e15c9384d0e45456222">&#9670;&nbsp;</a></span>setup_standard_callbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fw::setup_standard_callbacks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;&#160;</td>
+          <td class="paramname"><em>hb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;&#160;</td>
+          <td class="paramname"><em>acqui</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcontrol.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>ctl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmetrics.html">metrics</a> &amp;&#160;</td>
+          <td class="paramname"><em>met</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classfw_1_1acquisition.html#acce976c2a6963b87836c05d89974a2c3">fw::acquisition::set_current_callback()</a>, <a class="el" href="classfw_1_1hbridge.html#a04ce5446d9e6b64b85ed2e5c82a54fd2">fw::hbridge::set_period_callback()</a>, and <a class="el" href="classfw_1_1acquisition.html#a49f596ed7a9f8e020f0cf1da687fe157">fw::acquisition::set_position_callback()</a>.</p>
+
+</div>
+</div>
 <a id="a8e0b580f4dd8010ffb0db37533802021"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e0b580f4dd8010ffb0db37533802021">&#9670;&nbsp;</a></span>stop_exec()</h2>
 
@@ -354,7 +400,7 @@ buffer_was_full</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li>
-    <li class="footer">Generated on Sat Jan 21 2023 23:42:43 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Jan 23 2023 20:47:49 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

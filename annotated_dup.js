@@ -8,6 +8,7 @@ var annotated_dup =
       [ "current_callback", "structfw_1_1current__callback.html", "structfw_1_1current__callback" ],
       [ "position_callback", "structfw_1_1position__callback.html", "structfw_1_1position__callback" ],
       [ "cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", "structfw_1_1cfg__dispatcher" ],
+      [ "core", "structfw_1_1core.html", "structfw_1_1core" ],
       [ "dispatcher", "structfw_1_1dispatcher.html", "structfw_1_1dispatcher" ],
       [ "acquisition_status", "namespacefw.html#structfw_1_1acquisition__status", "namespacefw_structfw_1_1acquisition__status_dup" ],
       [ "acquisition", "classfw_1_1acquisition.html", "classfw_1_1acquisition" ],

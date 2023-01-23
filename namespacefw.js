@@ -4,6 +4,7 @@ var namespacefw =
     [ "current_callback", "structfw_1_1current__callback.html", "structfw_1_1current__callback" ],
     [ "position_callback", "structfw_1_1position__callback.html", "structfw_1_1position__callback" ],
     [ "cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", "structfw_1_1cfg__dispatcher" ],
+    [ "core", "structfw_1_1core.html", "structfw_1_1core" ],
     [ "dispatcher", "structfw_1_1dispatcher.html", "structfw_1_1dispatcher" ],
     [ "acquisition_status", "namespacefw.html#structfw_1_1acquisition__status", "namespacefw_structfw_1_1acquisition__status_dup" ],
     [ "acquisition", "classfw_1_1acquisition.html", "classfw_1_1acquisition" ],
@@ -17,6 +18,7 @@ var namespacefw =
     [ "handler", "namespacefw.html#a1bbd86673200da7abcf665f3e7f02f91", null ],
     [ "operator<<", "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e", null ],
     [ "operator<<", "namespacefw.html#aa77aaddd76d27d03433b9ced02d8a6f0", null ],
+    [ "setup_standard_callbacks", "namespacefw.html#a7de90521979b7e15c9384d0e45456222", null ],
     [ "stop_exec", "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021", null ],
     [ "ticks_ms", "namespacefw.html#a374c51e3b6ffdefff3e332856e34e8a8", null ],
     [ "STOP_CALLBACK", "namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3", null ]
