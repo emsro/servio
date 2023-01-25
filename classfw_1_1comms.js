@@ -14,7 +14,7 @@ var classfw_1_1comms =
     [ "rx_cplt_irq", "classfw_1_1comms.html#a9e4415ae6b86a9bac85b5ba2b3b39ab4", null ],
     [ "send", "classfw_1_1comms.html#aa00458e721d092916461b3141248b5c3", null ],
     [ "setup", "classfw_1_1comms.html#a3823cf20a4cd75bcc58aedf1db2bd05d", null ],
-    [ "start_receiving", "classfw_1_1comms.html#aa15a02a13499bbbea67b2a913165d85f", null ],
+    [ "start", "classfw_1_1comms.html#a06e8bf851a9439dec92ad0e24042de9b", null ],
     [ "tx_dma_irq", "classfw_1_1comms.html#a622a12b88e2b1a46980b1f1b6be9513b", null ],
     [ "uart_irq", "classfw_1_1comms.html#a63c946004a0c6ba281202c2879f725c2", null ]
 ];

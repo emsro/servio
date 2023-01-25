@@ -14,7 +14,7 @@ var classfw_1_1debug__comms =
     [ "rx_cplt_irq", "classfw_1_1debug__comms.html#a5d5e6dca57a8cbf7ef29de08294042e4", null ],
     [ "rx_dma_irq", "classfw_1_1debug__comms.html#a17c9693bd5eafa497612580df7a8ce50", null ],
     [ "setup", "classfw_1_1debug__comms.html#ab6e2f34dc3a5ff2e8848f0f443d1b160", null ],
-    [ "start_receiving", "classfw_1_1debug__comms.html#a34f28fd891ac2c4a2a2e3235dfa92b57", null ],
+    [ "start", "classfw_1_1debug__comms.html#a76d84670331a8bb3b587bbb4baa38299", null ],
     [ "transmit", "classfw_1_1debug__comms.html#ade33cd968ae887b401d90d11f0b010ac", null ],
     [ "tx_dma_irq", "classfw_1_1debug__comms.html#aca51fedf6357a5fc1c769df300bdf3cf", null ],
     [ "uart_irq", "classfw_1_1debug__comms.html#a3b6673ba522b825dda092af7c1f2c842", null ]

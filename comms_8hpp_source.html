@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('comms_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::variant&lt; std::monostate, master_to_servo_variant, em::protocol::error_record &gt; <a class="code" href="classfw_1_1comms.html#a1d113b0183216f9026691a443d0c173e">get_message</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classfw_1_1comms.html#aa15a02a13499bbbea67b2a913165d85f">start_receiving</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classfw_1_1comms.html#a06e8bf851a9439dec92ad0e24042de9b">start</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classfw_1_1comms.html#aa00458e721d092916461b3141248b5c3">send</a>( <span class="keyword">const</span> <a class="code" href="protocol_8hpp.html#a84f3643ead2482dca6d9d2edce3d45c2">servo_to_master_variant</a>&amp; var );</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
@@ -140,6 +140,7 @@ $(document).ready(function(){initNavTree('comms_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}  <span class="comment">// namespace fw</span></div>
 <div class="ttc" id="aclassfw_1_1comms_html"><div class="ttname"><a href="classfw_1_1comms.html">fw::comms</a></div><div class="ttdef"><b>Definition:</b> comms.hpp:13</div></div>
+<div class="ttc" id="aclassfw_1_1comms_html_a06e8bf851a9439dec92ad0e24042de9b"><div class="ttname"><a href="classfw_1_1comms.html#a06e8bf851a9439dec92ad0e24042de9b">fw::comms::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> comms.cpp:51</div></div>
 <div class="ttc" id="aclassfw_1_1comms_html_a13fa399339e6458b86f924d66cd143ad"><div class="ttname"><a href="classfw_1_1comms.html#a13fa399339e6458b86f924d66cd143ad">fw::comms::comms</a></div><div class="ttdeci">comms()=default</div></div>
 <div class="ttc" id="aclassfw_1_1comms_html_a1d113b0183216f9026691a443d0c173e"><div class="ttname"><a href="classfw_1_1comms.html#a1d113b0183216f9026691a443d0c173e">fw::comms::get_message</a></div><div class="ttdeci">std::variant&lt; std::monostate, master_to_servo_variant, em::protocol::error_record &gt; get_message()</div><div class="ttdef"><b>Definition:</b> comms.cpp:34</div></div>
 <div class="ttc" id="aclassfw_1_1comms_html_a3823cf20a4cd75bcc58aedf1db2bd05d"><div class="ttname"><a href="classfw_1_1comms.html#a3823cf20a4cd75bcc58aedf1db2bd05d">fw::comms::setup</a></div><div class="ttdeci">bool setup(em::function_view&lt; bool(handles &amp;) &gt;)</div><div class="ttdef"><b>Definition:</b> comms.cpp:8</div></div>
@@ -151,7 +152,6 @@ $(document).ready(function(){initNavTree('comms_8hpp_source.html',''); initResiz
 <div class="ttc" id="aclassfw_1_1comms_html_a97655ce508e97fdab006e0a437f225c8"><div class="ttname"><a href="classfw_1_1comms.html#a97655ce508e97fdab006e0a437f225c8">fw::comms::operator=</a></div><div class="ttdeci">comms &amp; operator=(const comms &amp;)=delete</div></div>
 <div class="ttc" id="aclassfw_1_1comms_html_a9e4415ae6b86a9bac85b5ba2b3b39ab4"><div class="ttname"><a href="classfw_1_1comms.html#a9e4415ae6b86a9bac85b5ba2b3b39ab4">fw::comms::rx_cplt_irq</a></div><div class="ttdeci">void rx_cplt_irq(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> comms.cpp:23</div></div>
 <div class="ttc" id="aclassfw_1_1comms_html_aa00458e721d092916461b3141248b5c3"><div class="ttname"><a href="classfw_1_1comms.html#aa00458e721d092916461b3141248b5c3">fw::comms::send</a></div><div class="ttdeci">void send(const servo_to_master_variant &amp;var)</div><div class="ttdef"><b>Definition:</b> comms.cpp:57</div></div>
-<div class="ttc" id="aclassfw_1_1comms_html_aa15a02a13499bbbea67b2a913165d85f"><div class="ttname"><a href="classfw_1_1comms.html#aa15a02a13499bbbea67b2a913165d85f">fw::comms::start_receiving</a></div><div class="ttdeci">void start_receiving()</div><div class="ttdef"><b>Definition:</b> comms.cpp:51</div></div>
 <div class="ttc" id="aclassfw_1_1comms_html_aae9c9a77e0c7bf8169e1afa4abc2021d"><div class="ttname"><a href="classfw_1_1comms.html#aae9c9a77e0c7bf8169e1afa4abc2021d">fw::comms::comms</a></div><div class="ttdeci">comms(const comms &amp;)=delete</div></div>
 <div class="ttc" id="aclassfw_1_1comms_html_ab824b741c165ecfd2d57f16ab9e30365"><div class="ttname"><a href="classfw_1_1comms.html#ab824b741c165ecfd2d57f16ab9e30365">fw::comms::comms</a></div><div class="ttdeci">comms(comms &amp;&amp;)=delete</div></div>
 <div class="ttc" id="aclassfw_1_1comms_html_ad6e730a55f373f45762192e85d903f39"><div class="ttname"><a href="classfw_1_1comms.html#ad6e730a55f373f45762192e85d903f39">fw::comms::operator=</a></div><div class="ttdeci">comms &amp; operator=(comms &amp;&amp;)=delete</div></div>
@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('comms_8hpp_source.html',''); initResiz
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_4e8e1185eea579a81ab1815e3b8726c0.html">drivers</a></li><li class="navelem"><a class="el" href="comms_8hpp.html">comms.hpp</a></li>
-    <li class="footer">Generated on Mon Jan 23 2023 20:47:49 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Jan 25 2023 16:09:17 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
