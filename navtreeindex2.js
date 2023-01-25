@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"namespacemembers_type.html":[10,1,3],
 "namespacemembers_vars.html":[10,1,2],
 "namespaces.html":[10,0],
 "pages.html":[],
@@ -205,10 +206,11 @@ var NAVTREEINDEX2 =
 "util_8cpp.html":[12,0,1,2,13],
 "util_8cpp.html#a8e0b580f4dd8010ffb0db37533802021":[12,0,1,2,13,0],
 "util_8hpp.html":[12,0,1,2,14],
-"util_8hpp.html#a374c51e3b6ffdefff3e332856e34e8a8":[12,0,1,2,14,5],
-"util_8hpp.html#a63ae6e6b6964e56f358aa0727ebe568e":[12,0,1,2,14,2],
-"util_8hpp.html#a8e0b580f4dd8010ffb0db37533802021":[12,0,1,2,14,4],
-"util_8hpp.html#aa77aaddd76d27d03433b9ced02d8a6f0":[12,0,1,2,14,3],
+"util_8hpp.html#a374c51e3b6ffdefff3e332856e34e8a8":[12,0,1,2,14,6],
+"util_8hpp.html#a63ae6e6b6964e56f358aa0727ebe568e":[12,0,1,2,14,3],
+"util_8hpp.html#a8e0b580f4dd8010ffb0db37533802021":[12,0,1,2,14,5],
+"util_8hpp.html#aa77aaddd76d27d03433b9ced02d8a6f0":[12,0,1,2,14,4],
+"util_8hpp.html#ac05d95b2aaa02b49156b63e48e57b69a":[12,0,1,2,14,2],
 "util_8hpp_source.html":[12,0,1,2,14],
 "voltage_8hpp.html":[12,0,1,0,3],
 "voltage_8hpp_source.html":[12,0,1,0,3]

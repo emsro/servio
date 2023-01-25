@@ -5,16 +5,16 @@
  -->
 <!-- Title: src/fw/util.hpp Pages: 1 -->
 <svg width="320pt" height="84pt"
- viewBox="0.00 0.00 320.00 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 319.50 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>src/fw/util.hpp</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-80 316,-80 316,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-80 315.5,-80 315.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="150.5,-56.5 150.5,-75.5 235.5,-75.5 235.5,-56.5 150.5,-56.5"/>
-<text text-anchor="middle" x="193" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/fw/util.hpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="87.5,-56.5 87.5,-75.5 172.5,-75.5 172.5,-56.5 87.5,-56.5"/>
+<text text-anchor="middle" x="130" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/fw/util.hpp</text>
 </a>
 </g>
 </g>
@@ -22,46 +22,46 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="0,-0.5 0,-19.5 124,-19.5 124,-0.5 0,-0.5"/>
-<text text-anchor="middle" x="62" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">emlabcpp/algorithm.h</text>
+<polygon fill="white" stroke="#bfbfbf" points="0,-0.5 0,-19.5 50,-19.5 50,-0.5 0,-0.5"/>
+<text text-anchor="middle" x="25" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">chrono</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M172.24,-56.44C150.68,-47.56 116.74,-33.56 92.21,-23.45"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="93.24,-20.09 82.66,-19.52 90.57,-26.56 93.24,-20.09"/>
+<path fill="none" stroke="midnightblue" d="M113.13,-56.32C96.29,-47.66 70.19,-34.24 50.76,-24.25"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="52.32,-21.12 41.83,-19.65 49.12,-27.34 52.32,-21.12"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="142.5,-0.5 142.5,-19.5 243.5,-19.5 243.5,-0.5 142.5,-0.5"/>
-<text text-anchor="middle" x="193" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">stm32g4xx_hal.h</text>
+<polygon fill="white" stroke="#bfbfbf" points="68,-0.5 68,-19.5 192,-19.5 192,-0.5 68,-0.5"/>
+<text text-anchor="middle" x="130" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">emlabcpp/algorithm.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M193,-56.08C193,-49.01 193,-38.86 193,-29.99"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="196.5,-29.75 193,-19.75 189.5,-29.75 196.5,-29.75"/>
+<path fill="none" stroke="midnightblue" d="M130,-56.08C130,-49.01 130,-38.86 130,-29.99"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="133.5,-29.75 130,-19.75 126.5,-29.75 133.5,-29.75"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="262,-0.5 262,-19.5 312,-19.5 312,-0.5 262,-0.5"/>
-<text text-anchor="middle" x="287" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">chrono</text>
+<polygon fill="white" stroke="#bfbfbf" points="210.5,-0.5 210.5,-19.5 311.5,-19.5 311.5,-0.5 210.5,-0.5"/>
+<text text-anchor="middle" x="261" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">stm32g4xx_hal.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M208.1,-56.32C222.9,-47.82 245.69,-34.73 262.98,-24.8"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="265.01,-27.67 271.93,-19.65 261.52,-21.6 265.01,-27.67"/>
+<path fill="none" stroke="midnightblue" d="M150.76,-56.44C172.32,-47.56 206.26,-33.56 230.79,-23.45"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="232.43,-26.56 240.34,-19.52 229.76,-20.09 232.43,-26.56"/>
 </g>
 </g>
 </svg>

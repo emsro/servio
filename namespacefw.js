@@ -16,6 +16,7 @@ var namespacefw =
     [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "hal_check", "namespacefw.html#structfw_1_1hal__check", null ],
     [ "handler", "namespacefw.html#a1bbd86673200da7abcf665f3e7f02f91", null ],
+    [ "multistart", "namespacefw.html#ac05d95b2aaa02b49156b63e48e57b69a", null ],
     [ "operator<<", "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e", null ],
     [ "operator<<", "namespacefw.html#aa77aaddd76d27d03433b9ced02d8a6f0", null ],
     [ "setup_standard_callbacks", "namespacefw.html#a7de90521979b7e15c9384d0e45456222", null ],
