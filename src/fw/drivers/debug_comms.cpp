@@ -56,7 +56,7 @@ em::static_vector< uint8_t, 32 > debug_comms::receive( std::size_t size )
     return data;
 }
 
-void debug_comms::start_receiving()
+void debug_comms::start()
 {
     hal_check{} << HAL_UART_Receive_IT( &h_.uart, &ibyte_, 1 );
 }
@@ -68,7 +68,7 @@ void debug_comms::rx_cplt_irq( UART_HandleTypeDef* huart )
     }
 
     idata_buffer_.push_back( ibyte_ );
-    start_receiving();
+    start();
 }
 
 }  // namespace fw

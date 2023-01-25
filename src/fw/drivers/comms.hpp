@@ -35,7 +35,7 @@ public:
 
     std::variant< std::monostate, master_to_servo_variant, em::protocol::error_record > get_message();
 
-    void start_receiving();
+    void start();
 
     void send( const servo_to_master_variant& var );
 

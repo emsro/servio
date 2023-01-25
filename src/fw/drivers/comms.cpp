@@ -27,7 +27,7 @@ void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
     }
 
     ep_.insert( em::view_n( &rx_byte_, 1 ) );
-    start_receiving();
+    start();
 }
 
 std::variant< std::monostate, master_to_servo_variant, em::protocol::error_record >
@@ -48,7 +48,7 @@ comms::get_message()
         } );
 }
 
-void comms::start_receiving()
+void comms::start()
 {
     // TODO: return value ignored
     HAL_UART_Receive_IT( &h_.uart, &rx_byte_, 1 );

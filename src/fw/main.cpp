@@ -42,10 +42,11 @@ int main()
     fw::cfg_dispatcher cfg_dis{ CONFIG, *acquisition_ptr, cor.ctl, cor.mon };
     brd::apply_config( cfg_dis );
 
+    leds_ptr->start();
     acquisition_ptr->start();
     hbridge_ptr->start();
-    comms_ptr->start_receiving();
-    debug_comms_ptr->start_receiving();
+    comms_ptr->start();
+    debug_comms_ptr->start();
 
     cor.ind.on_event( fw::ticks_ms(), indication_event::INITIALIZED );
 

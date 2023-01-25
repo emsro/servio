@@ -36,7 +36,7 @@ public:
     void uart_irq();
     void rx_cplt_irq( UART_HandleTypeDef* huart );
 
-    void start_receiving();
+    void start();
 
     void transmit( std::span< const uint8_t > );
 
