@@ -1,6 +1,6 @@
+#include <chrono>
 #include <emlabcpp/algorithm.h>
 #include <stm32g4xx_hal.h>
-#include <chrono>
 
 #pragma once
 
@@ -14,6 +14,12 @@ void stop_exec();
 inline std::chrono::milliseconds ticks_ms()
 {
     return std::chrono::milliseconds{ HAL_GetTick() };
+}
+
+template < typename... Components >
+void multistart( Components&... comps )
+{
+    ( comps.start(), ... );
 }
 
 struct check_bool
