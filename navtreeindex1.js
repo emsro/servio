@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a320e4444416841c21c421e471316b0c4":[12,0,1,4,4,22],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a3f481ea537d3750cc482fa823a6715c6":[12,0,1,4,4,14],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a4b3361306c52f3d715404f815b24eb99":[12,0,1,4,4,25],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a732ec7aa145dfb9cb69bf3962988dfef":[12,0,1,4,4,12],
@@ -212,14 +213,15 @@ var NAVTREEINDEX1 =
 "namespacectl.html":[10,0,1],
 "namespacefw.html":[10,0,2],
 "namespacefw.html#a1bbd86673200da7abcf665f3e7f02f91":[10,0,2,15],
-"namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3":[10,0,2,22],
-"namespacefw.html#a374c51e3b6ffdefff3e332856e34e8a8":[10,0,2,21],
+"namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3":[10,0,2,23],
+"namespacefw.html#a374c51e3b6ffdefff3e332856e34e8a8":[10,0,2,22],
 "namespacefw.html#a61e31aee7594c31cc25e2fa29c805d70":[12,0,1,2,0,1,0,0],
 "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e":[10,0,2,17],
-"namespacefw.html#a7de90521979b7e15c9384d0e45456222":[10,0,2,19],
-"namespacefw.html#a8e0b580f4dd8010ffb0db37533802021":[10,0,2,20],
+"namespacefw.html#a7de90521979b7e15c9384d0e45456222":[10,0,2,20],
+"namespacefw.html#a8e0b580f4dd8010ffb0db37533802021":[10,0,2,21],
 "namespacefw.html#aa77aaddd76d27d03433b9ced02d8a6f0":[10,0,2,18],
 "namespacefw.html#ac05d95b2aaa02b49156b63e48e57b69a":[10,0,2,16],
+"namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1":[10,0,2,19],
 "namespacefw.html#structfw_1_1acquisition__status":[12,0,1,2,0,1,0],
 "namespacefw.html#structfw_1_1check__bool":[12,0,1,2,14,0],
 "namespacefw.html#structfw_1_1hal__check":[12,0,1,2,14,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "namespacekalman.html#ad73bc14d9ae4d49d14781f2402637839":[10,0,3,5],
 "namespacekalman.html#ad8331048b8638fb9e36b4d5bd59112bb":[10,0,3,6],
 "namespacekalman.html#aee77e3ba89eb600013e17d3467583701":[10,0,3,7],
-"namespacekalman.html#af5cff5e9fec3a001b5e862e24701e86b":[10,0,3,4],
-"namespacemembers.html":[10,1,0],
-"namespacemembers_func.html":[10,1,1]
+"namespacekalman.html#af5cff5e9fec3a001b5e862e24701e86b":[10,0,3,4]
 };

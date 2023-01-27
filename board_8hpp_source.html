@@ -88,39 +88,57 @@ $(document).ready(function(){initNavTree('board_8hpp_source.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <a href="board_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8hpp.html">config.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="acquisition_8hpp.html">fw/drivers/acquisition.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="comms_8hpp.html">fw/drivers/comms.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug__comms_8hpp.html">fw/drivers/debug_comms.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hbridge_8hpp.html">fw/drivers/hbridge.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="leds_8hpp.html">fw/drivers/leds.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacebrd.html">   10</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacebrd.html">brd</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">   13</a></span>&#160;<span class="keywordtype">void</span>             <a class="code" href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">apply_config</a>( em::function_view&lt; <span class="keywordtype">void</span>( <span class="keyword">const</span> <a class="code" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>&amp; ) &gt; f );</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">   14</a></span>&#160;<span class="keywordtype">void</span>             <a class="code" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">setup_board</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">   15</a></span>&#160;<a class="code" href="classfw_1_1acquisition.html">fw::acquisition</a>* <a class="code" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">setup_acquisition</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">   16</a></span>&#160;<a class="code" href="classfw_1_1hbridge.html">fw::hbridge</a>*     <a class="code" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">setup_hbridge</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">   17</a></span>&#160;<a class="code" href="classfw_1_1comms.html">fw::comms</a>*       <a class="code" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">setup_comms</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">   18</a></span>&#160;<a class="code" href="classfw_1_1debug__comms.html">fw::debug_comms</a>* <a class="code" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">setup_debug_comms</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">   19</a></span>&#160;<a class="code" href="classfw_1_1leds.html">fw::leds</a>*        <a class="code" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">setup_leds</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}  <span class="comment">// namespace brd</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="globals_8hpp.html">globals.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="acquisition_8hpp.html">fw/drivers/acquisition.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="comms_8hpp.html">fw/drivers/comms.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug__comms_8hpp.html">fw/drivers/debug_comms.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hbridge_8hpp.html">fw/drivers/hbridge.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="leds_8hpp.html">fw/drivers/leds.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacebrd.html">   11</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacebrd.html">brd</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">   14</a></span>&#160;<span class="keywordtype">void</span>             <a class="code" href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">apply_config</a>( em::function_view&lt; <span class="keywordtype">void</span>( <span class="keyword">const</span> <a class="code" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>&amp; ) &gt; f );</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">   15</a></span>&#160;<span class="keywordtype">void</span>             <a class="code" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">setup_board</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">   16</a></span>&#160;<a class="code" href="classfw_1_1acquisition.html">fw::acquisition</a>* <a class="code" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">setup_acquisition</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">   17</a></span>&#160;<a class="code" href="classfw_1_1hbridge.html">fw::hbridge</a>*     <a class="code" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">setup_hbridge</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">   18</a></span>&#160;<a class="code" href="classfw_1_1comms.html">fw::comms</a>*       <a class="code" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">setup_comms</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">   19</a></span>&#160;<a class="code" href="classfw_1_1debug__comms.html">fw::debug_comms</a>* <a class="code" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">setup_debug_comms</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">   20</a></span>&#160;<a class="code" href="classfw_1_1leds.html">fw::leds</a>*        <a class="code" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">setup_leds</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}  <span class="comment">// namespace brd</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacefw.html">   24</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw.html">fw</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">   26</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classfw_1_1leds.html">leds</a>* <a class="code" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">setup_leds_with_stop_callback</a>()</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classfw_1_1leds.html">leds</a>* leds_ptr = <a class="code" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">brd::setup_leds</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> ( leds_ptr != <span class="keyword">nullptr</span> ) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3">STOP_CALLBACK</a> = [leds_ptr] {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            leds_ptr-&gt;<a class="code" href="classfw_1_1leds.html#a9fba8745bbfca7ded22d54f4b6422b74">force_red_led</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        };</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> leds_ptr;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}  <span class="comment">// namespace fw</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="ttc" id="aacquisition_8hpp_html"><div class="ttname"><a href="acquisition_8hpp.html">acquisition.hpp</a></div></div>
 <div class="ttc" id="aclassfw_1_1acquisition_html"><div class="ttname"><a href="classfw_1_1acquisition.html">fw::acquisition</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:25</div></div>
 <div class="ttc" id="aclassfw_1_1comms_html"><div class="ttname"><a href="classfw_1_1comms.html">fw::comms</a></div><div class="ttdef"><b>Definition:</b> comms.hpp:13</div></div>
 <div class="ttc" id="aclassfw_1_1debug__comms_html"><div class="ttname"><a href="classfw_1_1debug__comms.html">fw::debug_comms</a></div><div class="ttdef"><b>Definition:</b> debug_comms.hpp:16</div></div>
 <div class="ttc" id="aclassfw_1_1hbridge_html"><div class="ttname"><a href="classfw_1_1hbridge.html">fw::hbridge</a></div><div class="ttdef"><b>Definition:</b> hbridge.hpp:14</div></div>
 <div class="ttc" id="aclassfw_1_1leds_html"><div class="ttname"><a href="classfw_1_1leds.html">fw::leds</a></div><div class="ttdef"><b>Definition:</b> leds.hpp:15</div></div>
+<div class="ttc" id="aclassfw_1_1leds_html_a9fba8745bbfca7ded22d54f4b6422b74"><div class="ttname"><a href="classfw_1_1leds.html#a9fba8745bbfca7ded22d54f4b6422b74">fw::leds::force_red_led</a></div><div class="ttdeci">void force_red_led()</div><div class="ttdef"><b>Definition:</b> leds.cpp:13</div></div>
 <div class="ttc" id="acomms_8hpp_html"><div class="ttname"><a href="comms_8hpp.html">comms.hpp</a></div></div>
 <div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
 <div class="ttc" id="aconfig_8hpp_html_structcfg__keyval"><div class="ttname"><a href="config_8hpp.html#structcfg__keyval">cfg_keyval</a></div><div class="ttdef"><b>Definition:</b> config.hpp:77</div></div>
 <div class="ttc" id="adebug__comms_8hpp_html"><div class="ttname"><a href="debug__comms_8hpp.html">debug_comms.hpp</a></div></div>
+<div class="ttc" id="aglobals_8hpp_html"><div class="ttname"><a href="globals_8hpp.html">globals.hpp</a></div></div>
 <div class="ttc" id="ahbridge_8hpp_html"><div class="ttname"><a href="hbridge_8hpp.html">hbridge.hpp</a></div></div>
 <div class="ttc" id="aleds_8hpp_html"><div class="ttname"><a href="leds_8hpp.html">leds.hpp</a></div></div>
-<div class="ttc" id="anamespacebrd_html"><div class="ttname"><a href="namespacebrd.html">brd</a></div><div class="ttdef"><b>Definition:</b> board.hpp:11</div></div>
+<div class="ttc" id="anamespacebrd_html"><div class="ttname"><a href="namespacebrd.html">brd</a></div><div class="ttdef"><b>Definition:</b> board.hpp:12</div></div>
 <div class="ttc" id="anamespacebrd_html_a087fa49ff66d40e71e5f0e380bf7d8ce"><div class="ttname"><a href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">brd::setup_comms</a></div><div class="ttdeci">fw::comms * setup_comms()</div></div>
 <div class="ttc" id="anamespacebrd_html_a383835cb418f3a5885b56943e4159618"><div class="ttname"><a href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">brd::apply_config</a></div><div class="ttdeci">void apply_config(em::function_view&lt; void(const cfg_keyval &amp;) &gt; f)</div></div>
 <div class="ttc" id="anamespacebrd_html_a72ff84e491fb17723a0a882bcb62918e"><div class="ttname"><a href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">brd::setup_board</a></div><div class="ttdeci">void setup_board()</div></div>
@@ -128,13 +146,16 @@ $(document).ready(function(){initNavTree('board_8hpp_source.html',''); initResiz
 <div class="ttc" id="anamespacebrd_html_a819eafbbe048c5c78601b7d38112f9c2"><div class="ttname"><a href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">brd::setup_hbridge</a></div><div class="ttdeci">fw::hbridge * setup_hbridge()</div></div>
 <div class="ttc" id="anamespacebrd_html_a8519578452e3aafee624c12984dc01b1"><div class="ttname"><a href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">brd::setup_leds</a></div><div class="ttdeci">fw::leds * setup_leds()</div></div>
 <div class="ttc" id="anamespacebrd_html_affb7bb25d62335f866ca96e7bf84397a"><div class="ttname"><a href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">brd::setup_acquisition</a></div><div class="ttdeci">fw::acquisition * setup_acquisition()</div></div>
+<div class="ttc" id="anamespacefw_html"><div class="ttname"><a href="namespacefw.html">fw</a></div><div class="ttdef"><b>Definition:</b> board.hpp:25</div></div>
+<div class="ttc" id="anamespacefw_html_a2911addbbf2c32e3c0bbd374e6698ee3"><div class="ttname"><a href="namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3">fw::STOP_CALLBACK</a></div><div class="ttdeci">em::static_function&lt; void(), 16 &gt; STOP_CALLBACK</div><div class="ttdef"><b>Definition:</b> globals.cpp:6</div></div>
+<div class="ttc" id="anamespacefw_html_acff2051fff6f79ebbfe80b750bd77be1"><div class="ttname"><a href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">fw::setup_leds_with_stop_callback</a></div><div class="ttdeci">leds * setup_leds_with_stop_callback()</div><div class="ttdef"><b>Definition:</b> board.hpp:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="board_8hpp.html">board.hpp</a></li>
-    <li class="footer">Generated on Wed Jan 25 2023 16:28:52 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Jan 27 2023 21:28:40 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
