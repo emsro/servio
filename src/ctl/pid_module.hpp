@@ -8,12 +8,12 @@
 namespace ctl
 {
 
+using pid      = em::pid< typename std::chrono::milliseconds::rep >;
+using pid_conf = typename pid::config;
+
 class pid_module
 {
 public:
-    using pid     = em::pid< typename std::chrono::milliseconds::rep >;
-    using pidconf = typename pid::config;
-
     pid_module( std::chrono::milliseconds now, limits< float > lim )
       : momentary_lim_( lim )
       , config_lim_( lim )
