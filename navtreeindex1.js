@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a320e4444416841c21c421e471316b0c4":[12,0,1,4,4,22],
-"config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a3f481ea537d3750cc482fa823a6715c6":[12,0,1,4,4,14],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a4b3361306c52f3d715404f815b24eb99":[12,0,1,4,4,25],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a732ec7aa145dfb9cb69bf3962988dfef":[12,0,1,4,4,12],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a76e72afa4f8d540bba69263a712a52d6":[12,0,1,4,4,6],
@@ -95,8 +93,8 @@ var NAVTREEINDEX1 =
 "hbridge_8hpp.html":[12,0,1,2,0,7],
 "hbridge_8hpp_source.html":[12,0,1,2,0,7],
 "hierarchy.html":[11,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "indication_8cpp.html":[12,0,1,7],
 "indication_8hpp.html":[12,0,1,8],
 "indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14":[12,0,1,8,1],
@@ -211,6 +209,8 @@ var NAVTREEINDEX1 =
 "namespacebrd.html#a8519578452e3aafee624c12984dc01b1":[10,0,0,6],
 "namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a":[10,0,0,1],
 "namespacectl.html":[10,0,1],
+"namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5":[10,0,1,2],
+"namespacectl.html#a76960ea4f9746825f88cc171a48e51dc":[10,0,1,1],
 "namespacefw.html":[10,0,2],
 "namespacefw.html#a1bbd86673200da7abcf665f3e7f02f91":[10,0,2,15],
 "namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3":[10,0,2,23],

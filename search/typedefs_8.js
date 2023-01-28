@@ -1,8 +1,8 @@
 var searchData=
 [
   ['period_5fcallback_749',['period_callback',['../classfw_1_1hbridge.html#a77b0d0e44308ebb608a6e16656bfef63',1,'fw::hbridge']]],
-  ['pid_750',['pid',['../classctl_1_1pid__module.html#a4972ea541d979952ec0772ab84a781f8',1,'ctl::pid_module']]],
-  ['pidconf_751',['pidconf',['../classctl_1_1pid__module.html#a31361e09744fd9cad623c69f292b8a88',1,'ctl::pid_module']]],
+  ['pid_750',['pid',['../namespacectl.html#a76960ea4f9746825f88cc171a48e51dc',1,'ctl']]],
+  ['pid_5fconf_751',['pid_conf',['../namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5',1,'ctl']]],
   ['position_5fcallback_752',['position_callback',['../classfw_1_1acquisition.html#ac309413ec165a5d4f25f03a2aef34416',1,'fw::acquisition']]],
   ['process_5fnoise_5fcovariance_753',['process_noise_covariance',['../namespacekalman.html#aee77e3ba89eb600013e17d3467583701',1,'kalman']]],
   ['protocol_5fcurrent_754',['protocol_current',['../base_8hpp.html#a918c8b836c9acdbd90b1e33c9d8314c4',1,'base.hpp']]],
