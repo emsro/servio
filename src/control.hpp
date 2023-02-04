@@ -1,5 +1,6 @@
 #include "base.hpp"
 #include "ctl/pid_module.hpp"
+#include "ctl/config.hpp"
 
 #include <variant>
 
@@ -9,9 +10,9 @@ class control
 {
 
 public:
-    control( std::chrono::milliseconds );
+    control( std::chrono::milliseconds, ctl::config cfg );
 
-    void set_pid( control_loop, float p, float i, float d );
+    void set_pid( control_loop, ctl::pid_coefficients coeffs );
     void set_limits( control_loop, limits< float > lim );
 
     bool         is_engaged();

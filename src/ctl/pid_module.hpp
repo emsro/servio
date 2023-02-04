@@ -8,23 +8,24 @@
 namespace ctl
 {
 
-using pid      = em::pid< typename std::chrono::milliseconds::rep >;
-using pid_conf = typename pid::config;
+using pid              = em::pid< typename std::chrono::milliseconds::rep >;
+using pid_conf         = typename pid::config;
+using pid_coefficients = em::pid_coefficients;
 
 class pid_module
 {
 public:
-    pid_module( std::chrono::milliseconds now, limits< float > lim )
-      : momentary_lim_( lim )
-      , config_lim_( lim )
-      , pid_( now.count() )
+    pid_module( std::chrono::milliseconds now, pid_coefficients coeffs, limits< float > limits )
+      : momentary_lim_( limits )
+      , config_lim_( limits )
+      , pid_( now.count(), { coeffs, limits } )
     {
         update_limit();
     }
 
-    void set_pid( float p, float i, float d )
+    void set_pid( pid_coefficients coeff )
     {
-        pid_.set_pid( p, i, d );
+        pid_.set_pid( coeff );
     }
 
     void set_config_limit( limits< float > lim )
@@ -56,7 +57,7 @@ public:
 
     limits< float > get_limits()
     {
-        return { pid_.get_config().min, pid_.get_config().max };
+        return pid_.get_limits();
     }
 
     float get_desired() const

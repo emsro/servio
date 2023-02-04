@@ -11,11 +11,37 @@ public:
     {
         now = 0ms;
         motor.emplace();
-        ctl.emplace( now );
-
-        ctl->set_pid( control_loop::CURRENT, 2048.f, 512.f, 1024.f );
-        ctl->set_pid( control_loop::VELOCITY, 16.0f, 0.0005f, 4.f );
-        ctl->set_pid( control_loop::POSITION, 4.0f, 0.f, 0.f );
+        ctl.emplace(
+            now,
+            ctl::config{
+                .position_pid{
+                    .p = 4.f,
+                    .i = 0.f,
+                    .d = 0.f,
+                },
+                .velocity_pid{
+                    .p = 16.f,
+                    .i = 0.0005f,
+                    .d = 4.f,
+                },
+                .current_pid{
+                    .p = 2048.f,
+                    .i = 512.f,
+                    .d = 1024.f,
+                },
+                .position_limits{
+                    -10.f,
+                    10.f,
+                },
+                .velocity_limits{
+                    -10.f,
+                    10.f,
+                },
+                .current_limits{
+                    -10.f,
+                    10.f,
+                },
+            } );
     }
 
     void tick()

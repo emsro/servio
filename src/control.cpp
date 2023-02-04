@@ -3,17 +3,15 @@
 #include <emlabcpp/match.h>
 #include <emlabcpp/protocol/register_handler.h>
 
-control::control( std::chrono::milliseconds now )
-  : position_lims_( -10.f, 10.f )
-  , position_pid_( now, { -10.f, 10.f } )
-  , velocity_pid_( now, { -10.f, 10.f } )
+control::control( std::chrono::milliseconds now, ctl::config cfg )
+  : position_lims_( cfg.position_limits )
+  , position_pid_( now, cfg.position_pid, cfg.velocity_limits )
+  , velocity_pid_( now, cfg.velocity_pid, cfg.current_limits )
   , current_pid_(
         now,
+        cfg.current_pid,
         { std::numeric_limits< int16_t >::lowest(), std::numeric_limits< int16_t >::max() } )
 {
-    set_pid( control_loop::POSITION, 1.f, 0.f, 0.f );
-    set_pid( control_loop::VELOCITY, 0.1f, 0.01f, 0.f );
-    set_pid( control_loop::CURRENT, 1024 * 32, 1024 * 4, 0 );
 }
 
 ctl::pid_module& control::ref_module( control_loop cl )
@@ -27,9 +25,9 @@ ctl::pid_module& control::ref_module( control_loop cl )
     }
 }
 
-void control::set_pid( control_loop cl, float p, float i, float d )
+void control::set_pid( control_loop cl, ctl::pid_coefficients coeffs )
 {
-    ref_module( cl ).set_pid( p, i, d );
+    ref_module( cl ).set_pid( coeffs );
 }
 void control::set_limits( control_loop cl, limits< float > lim )
 {
