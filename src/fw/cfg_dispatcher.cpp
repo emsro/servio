@@ -48,9 +48,9 @@ void cfg_dispatcher::set( const cfg_key& key, const cfg_value_message& msg )
         case CONTROL_CURRENT_LOOP_D:
             ctl.set_pid(
                 control_loop::CURRENT,
-                map.get_val< CONTROL_CURRENT_LOOP_P >(),
-                map.get_val< CONTROL_CURRENT_LOOP_I >(),
-                map.get_val< CONTROL_CURRENT_LOOP_D >() );
+                { map.get_val< CONTROL_CURRENT_LOOP_P >(),
+                  map.get_val< CONTROL_CURRENT_LOOP_I >(),
+                  map.get_val< CONTROL_CURRENT_LOOP_D >() } );
             break;
         case CONTROL_CURRENT_LIM_MIN:
         case CONTROL_CURRENT_LIM_MAX:
@@ -64,9 +64,9 @@ void cfg_dispatcher::set( const cfg_key& key, const cfg_value_message& msg )
         case CONTROL_VELOCITY_LOOP_D:
             ctl.set_pid(
                 control_loop::VELOCITY,
-                map.get_val< CONTROL_VELOCITY_LOOP_P >(),
-                map.get_val< CONTROL_VELOCITY_LOOP_I >(),
-                map.get_val< CONTROL_VELOCITY_LOOP_D >() );
+                { map.get_val< CONTROL_VELOCITY_LOOP_P >(),
+                  map.get_val< CONTROL_VELOCITY_LOOP_I >(),
+                  map.get_val< CONTROL_VELOCITY_LOOP_D >() } );
             break;
         case CONTROL_VELOCITY_LIM_MIN:
         case CONTROL_VELOCITY_LIM_MAX:
@@ -80,9 +80,9 @@ void cfg_dispatcher::set( const cfg_key& key, const cfg_value_message& msg )
         case CONTROL_POSITION_LOOP_D:
             ctl.set_pid(
                 control_loop::POSITION,
-                map.get_val< CONTROL_POSITION_LOOP_P >(),
-                map.get_val< CONTROL_POSITION_LOOP_I >(),
-                map.get_val< CONTROL_POSITION_LOOP_D >() );
+                { map.get_val< CONTROL_POSITION_LOOP_P >(),
+                  map.get_val< CONTROL_POSITION_LOOP_I >(),
+                  map.get_val< CONTROL_POSITION_LOOP_D >() } );
             break;
         case CONTROL_POSITION_LIM_MIN:
         case CONTROL_POSITION_LIM_MAX:

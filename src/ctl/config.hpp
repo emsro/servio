@@ -41,9 +41,9 @@ struct nlohmann::adl_serializer< ctl::config >
         cfg.position_pid    = j["position_pid"];
         cfg.velocity_pid    = j["velocity_pid"];
         cfg.current_pid     = j["current_pid"];
-        cfg.position_limits = j["position_pid"];
-        cfg.velocity_limits = j["velocity_pid"];
-        cfg.current_limits  = j["current_pid"];
+        cfg.position_limits = j["position_limits"];
+        cfg.velocity_limits = j["velocity_limits"];
+        cfg.current_limits  = j["current_limits"];
         return cfg;
     }
 };

@@ -18,7 +18,7 @@ struct core
     monitor    mon;
 
     core( std::chrono::milliseconds ms, acquisition& acqui )
-      : ctl( ms )
+      : ctl( ms, ctl::config{} )
       , met( ms, acqui.get_position() )
       , ind( ms )
       , mon( ms, ctl, acqui, ind )
