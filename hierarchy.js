@@ -8,6 +8,7 @@ var hierarchy =
     [ "fw::check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "command< ID >", "structcommand.html", null ],
     [ "fw::comms", "classfw_1_1comms.html", null ],
+    [ "ctl::config", "namespacectl.html#structctl_1_1config", null ],
     [ "control", "classcontrol.html", null ],
     [ "fw::core", "structfw_1_1core.html", null ],
     [ "fw::current_callback", "structfw_1_1current__callback.html", null ],

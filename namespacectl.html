@@ -93,6 +93,8 @@ $(document).ready(function(){initNavTree('namespacectl.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:structctl_1_1config"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacectl.html#structctl_1_1config">config</a></td></tr>
+<tr class="separator:structctl_1_1config"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctl_1_1pid__module.html">pid_module</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -102,7 +104,63 @@ Typedefs</h2></td></tr>
 <tr class="separator:a76960ea4f9746825f88cc171a48e51dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a254eee5cc344e1590ae9434a7073d1b5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5">pid_conf</a> = typename pid::config</td></tr>
 <tr class="separator:a254eee5cc344e1590ae9434a7073d1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31369f8fd89ca0fd4d2bf8970a4653d1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a> = em::pid_coefficients</td></tr>
+<tr class="separator:a31369f8fd89ca0fd4d2bf8970a4653d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structctl_1_1config" id="structctl_1_1config"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structctl_1_1config">&#9670;&nbsp;</a></span>ctl::config</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct ctl::config</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a42c41625e334582523c4f5be94bddb8a"></a><a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt;</td>
+<td class="fieldname">
+current_limits</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a3d55b5c4569a6d2ae3aba339917347d0"></a><a class="el" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a></td>
+<td class="fieldname">
+current_pid</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aafaa848d5ed73333863c1852ce3bca95"></a><a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt;</td>
+<td class="fieldname">
+position_limits</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a8a7ee8b41237dc1f6e7c7732cc2be632"></a><a class="el" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a></td>
+<td class="fieldname">
+position_pid</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a20ed600b5a9c9a30f83df677768e46a4"></a><a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt;</td>
+<td class="fieldname">
+velocity_limits</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a767ce52998c9c33836b3348656f6c9a5"></a><a class="el" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a></td>
+<td class="fieldname">
+velocity_pid</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a76960ea4f9746825f88cc171a48e51dc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a76960ea4f9746825f88cc171a48e51dc">&#9670;&nbsp;</a></span>pid</h2>
@@ -112,6 +170,20 @@ Typedefs</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespacectl.html#a76960ea4f9746825f88cc171a48e51dc">ctl::pid</a> = typedef em::pid&lt; typename std::chrono::milliseconds::rep &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31369f8fd89ca0fd4d2bf8970a4653d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31369f8fd89ca0fd4d2bf8970a4653d1">&#9670;&nbsp;</a></span>pid_coefficients</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">ctl::pid_coefficients</a> = typedef em::pid_coefficients</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -138,7 +210,7 @@ Typedefs</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacectl.html">ctl</a></li>
-    <li class="footer">Generated on Sat Jan 28 2023 22:27:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Feb 4 2023 16:49:12 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -1,6 +1,7 @@
 var annotated_dup =
 [
     [ "ctl", "namespacectl.html", [
+      [ "config", "namespacectl.html#structctl_1_1config", "namespacectl_structctl_1_1config_dup" ],
       [ "pid_module", "classctl_1_1pid__module.html", "classctl_1_1pid__module" ]
     ] ],
     [ "fw", "namespacefw.html", [

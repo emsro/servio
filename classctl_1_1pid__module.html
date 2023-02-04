@@ -95,10 +95,10 @@ $(document).ready(function(){initNavTree('classctl_1_1pid__module.html',''); ini
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afc5adfcdc25ab8174b69c3b813e3d473"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctl_1_1pid__module.html#afc5adfcdc25ab8174b69c3b813e3d473">pid_module</a> (std::chrono::milliseconds now, <a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt; lim)</td></tr>
-<tr class="separator:afc5adfcdc25ab8174b69c3b813e3d473"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42e8ad0c57625a081b644bdf0b4c0e69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctl_1_1pid__module.html#a42e8ad0c57625a081b644bdf0b4c0e69">set_pid</a> (float p, float i, float d)</td></tr>
-<tr class="separator:a42e8ad0c57625a081b644bdf0b4c0e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e49ad3a9ed9a551d20ff38b3d4b1655"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctl_1_1pid__module.html#a7e49ad3a9ed9a551d20ff38b3d4b1655">pid_module</a> (std::chrono::milliseconds now, <a class="el" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a> coeffs, <a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt; <a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>)</td></tr>
+<tr class="separator:a7e49ad3a9ed9a551d20ff38b3d4b1655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa670c5f3213b0c085faa5a6e0758d43e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctl_1_1pid__module.html#aa670c5f3213b0c085faa5a6e0758d43e">set_pid</a> (<a class="el" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a> coeff)</td></tr>
+<tr class="separator:aa670c5f3213b0c085faa5a6e0758d43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5eca057c309bafa9383d64fac5a96bd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctl_1_1pid__module.html#a5eca057c309bafa9383d64fac5a96bd2">set_config_limit</a> (<a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt; lim)</td></tr>
 <tr class="separator:a5eca057c309bafa9383d64fac5a96bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a146847a5d4fab5f3f83587be78e86f60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctl_1_1pid__module.html#a146847a5d4fab5f3f83587be78e86f60">set_momentary_limit</a> (<a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt; lim)</td></tr>
@@ -117,8 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac5eaa6fde73f1553f93bc3b2f3ca05ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afc5adfcdc25ab8174b69c3b813e3d473"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc5adfcdc25ab8174b69c3b813e3d473">&#9670;&nbsp;</a></span>pid_module()</h2>
+<a id="a7e49ad3a9ed9a551d20ff38b3d4b1655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e49ad3a9ed9a551d20ff38b3d4b1655">&#9670;&nbsp;</a></span>pid_module()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,8 +135,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a>&#160;</td>
+          <td class="paramname"><em>coeffs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt;&#160;</td>
-          <td class="paramname"><em>lim</em>&#160;</td>
+          <td class="paramname"><em>limits</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -334,8 +340,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a42e8ad0c57625a081b644bdf0b4c0e69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42e8ad0c57625a081b644bdf0b4c0e69">&#9670;&nbsp;</a></span>set_pid()</h2>
+<a id="aa670c5f3213b0c085faa5a6e0758d43e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa670c5f3213b0c085faa5a6e0758d43e">&#9670;&nbsp;</a></span>set_pid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -346,25 +352,9 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void ctl::pid_module::set_pid </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a>&#160;</td>
+          <td class="paramname"><em>coeff</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>d</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -427,7 +417,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacectl.html">ctl</a></li><li class="navelem"><a class="el" href="classctl_1_1pid__module.html">pid_module</a></li>
-    <li class="footer">Generated on Sat Jan 28 2023 22:27:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Feb 4 2023 16:49:12 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -1,13 +1,14 @@
 var searchData=
 [
-  ['cfg_5fdispatcher_455',['cfg_dispatcher',['../structfw_1_1cfg__dispatcher.html',1,'fw']]],
-  ['cfg_5fkeyval_456',['cfg_keyval',['../config_8hpp.html#structcfg__keyval',1,'']]],
-  ['check_5fbool_457',['check_bool',['../namespacefw.html#structfw_1_1check__bool',1,'fw']]],
-  ['command_458',['command',['../structcommand.html',1,'']]],
-  ['comms_459',['comms',['../classfw_1_1comms.html',1,'fw']]],
-  ['control_460',['control',['../classcontrol.html',1,'']]],
-  ['core_461',['core',['../structfw_1_1core.html',1,'fw']]],
-  ['current_5fcallback_462',['current_callback',['../structfw_1_1current__callback.html',1,'fw']]],
-  ['current_5fconverter_463',['current_converter',['../classcurrent__converter.html',1,'']]],
-  ['current_5fsequence_464',['current_sequence',['../structfw_1_1acquisition_1_1current__sequence.html',1,'fw::acquisition']]]
+  ['cfg_5fdispatcher_463',['cfg_dispatcher',['../structfw_1_1cfg__dispatcher.html',1,'fw']]],
+  ['cfg_5fkeyval_464',['cfg_keyval',['../config_8hpp.html#structcfg__keyval',1,'']]],
+  ['check_5fbool_465',['check_bool',['../namespacefw.html#structfw_1_1check__bool',1,'fw']]],
+  ['command_466',['command',['../structcommand.html',1,'']]],
+  ['comms_467',['comms',['../classfw_1_1comms.html',1,'fw']]],
+  ['config_468',['config',['../namespacectl.html#structctl_1_1config',1,'ctl']]],
+  ['control_469',['control',['../classcontrol.html',1,'']]],
+  ['core_470',['core',['../structfw_1_1core.html',1,'fw']]],
+  ['current_5fcallback_471',['current_callback',['../structfw_1_1current__callback.html',1,'fw']]],
+  ['current_5fconverter_472',['current_converter',['../classcurrent__converter.html',1,'']]],
+  ['current_5fsequence_473',['current_sequence',['../structfw_1_1acquisition_1_1current__sequence.html',1,'fw::acquisition']]]
 ];
