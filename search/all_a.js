@@ -13,8 +13,9 @@ var searchData=
   ['adc_5firq_28',['adc_irq',['../classfw_1_1acquisition.html#ac4a173c3db73c5ad55acf156edde8e3f',1,'fw::acquisition']]],
   ['angle_29',['angle',['../namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e',1,'kalman']]],
   ['angle_5fmod_30',['angle_mod',['../namespacekalman.html#a6cc93d05251465608fabf61924de702c',1,'kalman']]],
-  ['apply_5fconfig_31',['apply_config',['../namespacebrd.html#a383835cb418f3a5885b56943e4159618',1,'brd']]],
-  ['architecture_20decision_20records_32',['Architecture Decision Records',['../index.html',1,'']]],
-  ['as_5ffloat_33',['as_float',['../classscaled.html#ad0c137095775ae685c2fc049d1784dd2',1,'scaled']]],
-  ['assert_5fparam_34',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32g4xx_hal_conf.h']]]
+  ['apply_31',['apply',['../structfw_1_1cfg__dispatcher.html#a0002caf837323cd3cf3536483088b49b',1,'fw::cfg_dispatcher']]],
+  ['apply_5fconfig_32',['apply_config',['../namespacebrd.html#a383835cb418f3a5885b56943e4159618',1,'brd']]],
+  ['architecture_20decision_20records_33',['Architecture Decision Records',['../index.html',1,'']]],
+  ['as_5ffloat_34',['as_float',['../classscaled.html#ad0c137095775ae685c2fc049d1784dd2',1,'scaled']]],
+  ['assert_5fparam_35',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32g4xx_hal_conf.h']]]
 ];

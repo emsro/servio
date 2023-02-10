@@ -113,9 +113,13 @@ $(document).ready(function(){initNavTree('cfg__dispatcher_8hpp_source.html','');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="config_8hpp.html#ac5e70fc82e3c7cc847dbb8c917d336e4">cfg_value_message</a> <a class="code" href="structfw_1_1cfg__dispatcher.html#a2657b48de86c14e6bd213f2ff2cc646b">get</a>( <span class="keyword">const</span> <a class="code" href="config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6">cfg_key</a>&amp; key );</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structfw_1_1cfg__dispatcher.html#ad09a796d7bec26618eac8d55baf657fd">set</a>( <span class="keyword">const</span> <a class="code" href="config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6">cfg_key</a>&amp; key, <span class="keyword">const</span> <a class="code" href="config_8hpp.html#ac5e70fc82e3c7cc847dbb8c917d336e4">cfg_value_message</a>&amp; msg );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}  <span class="comment">// namespace fw</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structfw_1_1cfg__dispatcher.html#afabdb6e774eadc76d457a9ea20c526ef">full_apply</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structfw_1_1cfg__dispatcher.html#a0002caf837323cd3cf3536483088b49b">apply</a>( <span class="keyword">const</span> <a class="code" href="config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6">cfg_key</a>&amp; key );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}  <span class="comment">// namespace fw</span></div>
 <div class="ttc" id="aacquisition_8hpp_html"><div class="ttname"><a href="acquisition_8hpp.html">acquisition.hpp</a></div></div>
 <div class="ttc" id="aclasscontrol_html"><div class="ttname"><a href="classcontrol.html">control</a></div><div class="ttdef"><b>Definition:</b> control.hpp:10</div></div>
 <div class="ttc" id="aclassfw_1_1acquisition_html"><div class="ttname"><a href="classfw_1_1acquisition.html">fw::acquisition</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:25</div></div>
@@ -130,6 +134,7 @@ $(document).ready(function(){initNavTree('cfg__dispatcher_8hpp_source.html','');
 <div class="ttc" id="amonitor_8hpp_html"><div class="ttname"><a href="monitor_8hpp.html">monitor.hpp</a></div></div>
 <div class="ttc" id="anamespacefw_html"><div class="ttname"><a href="namespacefw.html">fw</a></div><div class="ttdef"><b>Definition:</b> board.hpp:25</div></div>
 <div class="ttc" id="astructfw_1_1cfg__dispatcher_html"><div class="ttname"><a href="structfw_1_1cfg__dispatcher.html">fw::cfg_dispatcher</a></div><div class="ttdef"><b>Definition:</b> cfg_dispatcher.hpp:12</div></div>
+<div class="ttc" id="astructfw_1_1cfg__dispatcher_html_a0002caf837323cd3cf3536483088b49b"><div class="ttname"><a href="structfw_1_1cfg__dispatcher.html#a0002caf837323cd3cf3536483088b49b">fw::cfg_dispatcher::apply</a></div><div class="ttdeci">void apply(const cfg_key &amp;key)</div><div class="ttdef"><b>Definition:</b> cfg_dispatcher.cpp:30</div></div>
 <div class="ttc" id="astructfw_1_1cfg__dispatcher_html_a2657b48de86c14e6bd213f2ff2cc646b"><div class="ttname"><a href="structfw_1_1cfg__dispatcher.html#a2657b48de86c14e6bd213f2ff2cc646b">fw::cfg_dispatcher::get</a></div><div class="ttdeci">cfg_value_message get(const cfg_key &amp;key)</div><div class="ttdef"><b>Definition:</b> cfg_dispatcher.cpp:12</div></div>
 <div class="ttc" id="astructfw_1_1cfg__dispatcher_html_a33d10d57fe1c9a4762d2b934ac68859b"><div class="ttname"><a href="structfw_1_1cfg__dispatcher.html#a33d10d57fe1c9a4762d2b934ac68859b">fw::cfg_dispatcher::ctl</a></div><div class="ttdeci">control &amp; ctl</div><div class="ttdef"><b>Definition:</b> cfg_dispatcher.hpp:16</div></div>
 <div class="ttc" id="astructfw_1_1cfg__dispatcher_html_a73b6b66b6d1a61b1dce607496b65e4d4"><div class="ttname"><a href="structfw_1_1cfg__dispatcher.html#a73b6b66b6d1a61b1dce607496b65e4d4">fw::cfg_dispatcher::operator()</a></div><div class="ttdeci">void operator()(const cfg_keyval &amp;kv)</div><div class="ttdef"><b>Definition:</b> cfg_dispatcher.hpp:19</div></div>
@@ -137,13 +142,14 @@ $(document).ready(function(){initNavTree('cfg__dispatcher_8hpp_source.html','');
 <div class="ttc" id="astructfw_1_1cfg__dispatcher_html_ac8bbfcb8bcebb26cb760424c4e2da2f7"><div class="ttname"><a href="structfw_1_1cfg__dispatcher.html#ac8bbfcb8bcebb26cb760424c4e2da2f7">fw::cfg_dispatcher::acq</a></div><div class="ttdeci">acquisition &amp; acq</div><div class="ttdef"><b>Definition:</b> cfg_dispatcher.hpp:15</div></div>
 <div class="ttc" id="astructfw_1_1cfg__dispatcher_html_acd4eceafa6aa5606d61423ff9ede0445"><div class="ttname"><a href="structfw_1_1cfg__dispatcher.html#acd4eceafa6aa5606d61423ff9ede0445">fw::cfg_dispatcher::map</a></div><div class="ttdeci">cfg_map &amp; map</div><div class="ttdef"><b>Definition:</b> cfg_dispatcher.hpp:14</div></div>
 <div class="ttc" id="astructfw_1_1cfg__dispatcher_html_ad09a796d7bec26618eac8d55baf657fd"><div class="ttname"><a href="structfw_1_1cfg__dispatcher.html#ad09a796d7bec26618eac8d55baf657fd">fw::cfg_dispatcher::set</a></div><div class="ttdeci">void set(const cfg_key &amp;key, const cfg_value_message &amp;msg)</div><div class="ttdef"><b>Definition:</b> cfg_dispatcher.cpp:17</div></div>
+<div class="ttc" id="astructfw_1_1cfg__dispatcher_html_afabdb6e774eadc76d457a9ea20c526ef"><div class="ttname"><a href="structfw_1_1cfg__dispatcher.html#afabdb6e774eadc76d457a9ea20c526ef">fw::cfg_dispatcher::full_apply</a></div><div class="ttdeci">void full_apply()</div><div class="ttdef"><b>Definition:</b> cfg_dispatcher.cpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="cfg__dispatcher_8hpp.html">cfg_dispatcher.hpp</a></li>
-    <li class="footer">Generated on Sat Feb 4 2023 16:56:10 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Feb 10 2023 07:55:56 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
