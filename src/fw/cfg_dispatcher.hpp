@@ -24,6 +24,10 @@ struct cfg_dispatcher
     cfg_value_message get( const cfg_key& key );
 
     void set( const cfg_key& key, const cfg_value_message& msg );
+
+    void full_apply();
+
+    void apply( const cfg_key& key );
 };
 
 }  // namespace fw

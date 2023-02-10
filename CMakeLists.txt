@@ -61,6 +61,16 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     HAL
     COMPONENTS STM32G4
     REQUIRED GLOBAL)
+    
+    add_library( cfg_lib STATIC
+      src/fw/cfg_dispatcher.cpp )
+    servio_compile_options(cfg_lib)
+    target_link_libraries(cfg_lib PUBLIC servio_lib
+             CMSIS::STM32::G431xx
+             HAL::STM32::G4::ADC
+             STM32::NoSys
+      )
+    target_compile_options(cfg_lib PRIVATE -O3)
 
   function(servio_board_library)
     cmake_parse_arguments(A "" "TARGET" "CUSTOM_FILES" ${ARGN})
@@ -68,7 +78,6 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     add_library(
       ${A_TARGET} STATIC
       ${A_CUSTOM_FILES}
-      src/fw/cfg_dispatcher.cpp
       src/fw/drivers/acquisition.cpp
       src/fw/drivers/comms.cpp
       src/fw/drivers/debug_comms.cpp
@@ -81,6 +90,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     target_link_libraries(
       ${A_TARGET}
       PUBLIC servio_lib
+             cfg_lib
              CMSIS::STM32::G431xx
              HAL::STM32::G4::ADC
              HAL::STM32::G4::ADCEx

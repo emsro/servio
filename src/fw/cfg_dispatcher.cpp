@@ -17,7 +17,18 @@ cfg_value_message cfg_dispatcher::get( const cfg_key& key )
 void cfg_dispatcher::set( const cfg_key& key, const cfg_value_message& msg )
 {
     handler::insert( map, key, msg );
+    apply( key );
+}
 
+void cfg_dispatcher::full_apply()
+{
+    for ( cfg_key key : map.get_keys() ) {
+        apply( key );
+    }
+}
+
+void cfg_dispatcher::apply( const cfg_key& key )
+{
     switch ( key ) {
         case REVERSED:
             break;
