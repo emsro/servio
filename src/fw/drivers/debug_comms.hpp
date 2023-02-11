@@ -15,39 +15,39 @@ namespace fw
 class debug_comms
 {
 public:
-    struct handles
-    {
-        UART_HandleTypeDef uart;
-        DMA_HandleTypeDef  tx_dma;
-        DMA_HandleTypeDef  rx_dma;
-    };
+        struct handles
+        {
+                UART_HandleTypeDef uart;
+                DMA_HandleTypeDef  tx_dma;
+                DMA_HandleTypeDef  rx_dma;
+        };
 
-    debug_comms() = default;
+        debug_comms() = default;
 
-    debug_comms( const debug_comms& )            = delete;
-    debug_comms( debug_comms&& )                 = delete;
-    debug_comms& operator=( const debug_comms& ) = delete;
-    debug_comms& operator=( debug_comms&& )      = delete;
+        debug_comms( const debug_comms& )            = delete;
+        debug_comms( debug_comms&& )                 = delete;
+        debug_comms& operator=( const debug_comms& ) = delete;
+        debug_comms& operator=( debug_comms&& )      = delete;
 
-    bool setup( em::function_view< bool( handles& ) > setup_f );
+        bool setup( em::function_view< bool( handles& ) > setup_f );
 
-    void tx_dma_irq();
-    void rx_dma_irq();
-    void uart_irq();
-    void rx_cplt_irq( UART_HandleTypeDef* huart );
+        void tx_dma_irq();
+        void rx_dma_irq();
+        void uart_irq();
+        void rx_cplt_irq( UART_HandleTypeDef* huart );
 
-    void start();
+        void start();
 
-    void transmit( std::span< const uint8_t > );
+        void transmit( std::span< const uint8_t > );
 
-    em::static_vector< uint8_t, 32 > receive( std::size_t size = 32 );
+        em::static_vector< uint8_t, 32 > receive( std::size_t size = 32 );
 
 private:
-    handles h_;
+        handles h_;
 
-    uint8_t                                    ibyte_;
-    em::static_circular_buffer< uint8_t, 128 > idata_buffer_{};
-    std::array< uint8_t, 128 >                 odata_buffer_{};
+        uint8_t                                    ibyte_;
+        em::static_circular_buffer< uint8_t, 128 > idata_buffer_{};
+        std::array< uint8_t, 128 >                 odata_buffer_{};
 };
 
 }  // namespace fw

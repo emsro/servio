@@ -1,5 +1,5 @@
 ---
-AccessModifierOffset: -4
+AccessModifierOffset: -8
 AlignAfterOpenBracket: AlwaysBreak
 AlignConsecutiveAssignments: true
 AlignConsecutiveDeclarations: true
@@ -45,9 +45,9 @@ ContinuationIndentWidth: 4
 Cpp11BracedListStyle: true
 DerivePointerBinding: false
 ExperimentalAutoDetectBinPacking: false
-IndentCaseLabels: true
+IndentCaseLabels: false
 IndentFunctionDeclarationAfterType: false
-IndentWidth:     4
+IndentWidth:     8
 KeepEmptyLinesAtTheStartOfBlocks: true
 Language: Cpp
 MaxEmptyLinesToKeep: 1
@@ -72,8 +72,7 @@ SpacesInAngles:  true
 SpacesInCStyleCastParentheses: false
 SpacesInParentheses: true
 SpacesInSquareBrackets: false
-Standard:        Auto
-Standard:        Cpp11
+Standard:        c++20
 TabWidth:        4
 UseTab:          Never
 IncludeCategories:

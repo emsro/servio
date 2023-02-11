@@ -4,16 +4,16 @@
 class voltage_converter
 {
 public:
-    voltage_converter( float scale = 1.f )
-      : scale_( scale )
-    {
-    }
+        voltage_converter( float scale = 1.f )
+          : scale_( scale )
+        {
+        }
 
-    float convert( uint32_t val )
-    {
-        return static_cast< float >( val ) * scale_;
-    }
+        float convert( uint32_t val )
+        {
+                return static_cast< float >( val ) * scale_;
+        }
 
 private:
-    float scale_;
+        float scale_;
 };

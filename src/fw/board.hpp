@@ -1,10 +1,10 @@
 #include "config.hpp"
-#include "globals.hpp"
 #include "fw/drivers/acquisition.hpp"
 #include "fw/drivers/comms.hpp"
 #include "fw/drivers/debug_comms.hpp"
 #include "fw/drivers/hbridge.hpp"
 #include "fw/drivers/leds.hpp"
+#include "globals.hpp"
 
 #pragma once
 
@@ -25,13 +25,12 @@ namespace fw
 {
 inline leds* setup_leds_with_stop_callback()
 {
-    leds* leds_ptr = brd::setup_leds();
-    if ( leds_ptr != nullptr ) {
-        STOP_CALLBACK = [leds_ptr] {
-            leds_ptr->force_red_led();
-        };
-    }
-    return leds_ptr;
+        leds* leds_ptr = brd::setup_leds();
+        if ( leds_ptr != nullptr ) {
+                STOP_CALLBACK = [leds_ptr] {
+                        leds_ptr->force_red_led();
+                };
+        }
+        return leds_ptr;
 };
 }  // namespace fw
-

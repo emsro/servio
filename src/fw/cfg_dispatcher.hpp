@@ -11,23 +11,23 @@ namespace fw
 struct cfg_dispatcher
 {
 
-    cfg_map&     map;
-    acquisition& acq;
-    control&     ctl;
-    monitor&     m;
+        cfg_map&     map;
+        acquisition& acq;
+        control&     ctl;
+        monitor&     m;
 
-    void operator()( const cfg_keyval& kv )
-    {
-        set( kv.key, kv.msg );
-    }
+        void operator()( const cfg_keyval& kv )
+        {
+                set( kv.key, kv.msg );
+        }
 
-    cfg_value_message get( const cfg_key& key );
+        cfg_value_message get( const cfg_key& key );
 
-    void set( const cfg_key& key, const cfg_value_message& msg );
+        void set( const cfg_key& key, const cfg_value_message& msg );
 
-    void full_apply();
+        void full_apply();
 
-    void apply( const cfg_key& key );
+        void apply( const cfg_key& key );
 };
 
 }  // namespace fw

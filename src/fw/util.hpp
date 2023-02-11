@@ -13,13 +13,13 @@ void stop_exec();
 
 inline std::chrono::milliseconds ticks_ms()
 {
-    return std::chrono::milliseconds{ HAL_GetTick() };
+        return std::chrono::milliseconds{ HAL_GetTick() };
 }
 
 template < typename... Components >
 void multistart( Components&... comps )
 {
-    ( comps.start(), ... );
+        ( comps.start(), ... );
 }
 
 struct check_bool
@@ -28,9 +28,9 @@ struct check_bool
 
 inline void operator<<( const check_bool&, bool val )
 {
-    if ( !val ) {
-        stop_exec();
-    }
+        if ( !val ) {
+                stop_exec();
+        }
 }
 
 struct hal_check
@@ -39,9 +39,9 @@ struct hal_check
 
 inline void operator<<( hal_check, HAL_StatusTypeDef s )
 {
-    if ( s != HAL_OK ) {
-        stop_exec();
-    }
+        if ( s != HAL_OK ) {
+                stop_exec();
+        }
 }
 
 }  // namespace fw

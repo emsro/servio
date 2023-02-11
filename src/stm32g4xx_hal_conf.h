@@ -139,10 +139,11 @@ extern "C" {
  *        which is subject to manufacturing process variations.
  */
 #if !defined( HSI48_VALUE )
-#define HSI48_VALUE                                                                       \
-    ( 48000000UL ) /*!< Value of the Internal High Speed oscillator for USB FS/RNG in Hz. \
-                          The real value my vary depending on manufacturing process variations.*/
-#endif             /* HSI48_VALUE */
+#define HSI48_VALUE                                                                           \
+        ( 48000000UL ) /*!< Value of the Internal High Speed oscillator for USB FS/RNG in Hz. \
+                              The real value my vary depending on manufacturing process       \
+                          variations.*/
+#endif                 /* HSI48_VALUE */
 
 /**
  * @brief Internal Low Speed oscillator (LSI) value.
@@ -367,7 +368,7 @@ The real value may vary depending on the variations in voltage and temperature.*
  * @retval None
  */
 #define assert_param( expr ) \
-    ( ( expr ) ? (void) 0U : assert_failed( (uint8_t*) __FILE__, __LINE__ ) )
+        ( ( expr ) ? (void) 0U : assert_failed( (uint8_t*) __FILE__, __LINE__ ) )
 /* Exported functions ------------------------------------------------------- */
 void assert_failed( uint8_t* file, uint32_t line );
 #else

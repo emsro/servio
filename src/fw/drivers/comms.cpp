@@ -7,63 +7,63 @@ namespace fw
 
 bool comms::setup( em::function_view< bool( handles& ) > setup_f )
 {
-    return setup_f( h_ );
+        return setup_f( h_ );
 }
 
 void comms::tx_dma_irq()
 {
-    HAL_DMA_IRQHandler( &h_.tx_dma );
+        HAL_DMA_IRQHandler( &h_.tx_dma );
 }
 
 void comms::uart_irq()
 {
-    HAL_UART_IRQHandler( &h_.uart );
+        HAL_UART_IRQHandler( &h_.uart );
 }
 
 void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
 {
-    if ( huart != &h_.uart ) {
-        return;
-    }
+        if ( huart != &h_.uart ) {
+                return;
+        }
 
-    ep_.insert( em::view_n( &rx_byte_, 1 ) );
-    start();
+        ep_.insert( em::view_n( &rx_byte_, 1 ) );
+        start();
 }
 
 std::variant< std::monostate, master_to_servo_variant, em::protocol::error_record >
 comms::get_message()
 {
-    using return_type =
-        std::variant< std::monostate, master_to_servo_variant, em::protocol::error_record >;
-    return em::match(
-        ep_.get_value(),
-        []( std::size_t ) -> return_type {
-            return std::monostate{};
-        },
-        []( master_to_servo_variant var ) -> return_type {
-            return var;
-        },
-        []( em::protocol::error_record err ) -> return_type {
-            return err;
-        } );
+        using return_type =
+            std::variant< std::monostate, master_to_servo_variant, em::protocol::error_record >;
+        return em::match(
+            ep_.get_value(),
+            []( std::size_t ) -> return_type {
+                    return std::monostate{};
+            },
+            []( master_to_servo_variant var ) -> return_type {
+                    return var;
+            },
+            []( em::protocol::error_record err ) -> return_type {
+                    return err;
+            } );
 }
 
 void comms::start()
 {
-    // TODO: return value ignored
-    HAL_UART_Receive_IT( &h_.uart, &rx_byte_, 1 );
+        // TODO: return value ignored
+        HAL_UART_Receive_IT( &h_.uart, &rx_byte_, 1 );
 }
 
 void comms::send( const servo_to_master_variant& var )
 {
-    while ( !( HAL_UART_GetState( &h_.uart ) & HAL_UART_STATE_READY ) ) {
-        asm( "nop" );
-    }
-    omsg_ = ep_.serialize( var );
-    static_assert( servo_to_master_message::capacity < std::numeric_limits< uint16_t >::max() );
-    // TODO: problematic cast
-    // TODO: return value ignored
-    HAL_UART_Transmit_DMA( &h_.uart, omsg_.begin(), static_cast< uint16_t >( omsg_.size() ) );
+        while ( !( HAL_UART_GetState( &h_.uart ) & HAL_UART_STATE_READY ) ) {
+                asm( "nop" );
+        }
+        omsg_ = ep_.serialize( var );
+        static_assert( servo_to_master_message::capacity < std::numeric_limits< uint16_t >::max() );
+        // TODO: problematic cast
+        // TODO: return value ignored
+        HAL_UART_Transmit_DMA( &h_.uart, omsg_.begin(), static_cast< uint16_t >( omsg_.size() ) );
 }
 
 }  // namespace fw

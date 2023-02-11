@@ -20,51 +20,51 @@
 
 enum class indication_event
 {
-    //    ERROR,
-    VOLTAGE_LOW,
-    TEMPERATURE_HIGH,
-    HEARTBEAT,
-    ENGAGED,
-    DISENGAGED,
-    STUCK, // can't detect this yet
-    BOOTING,
-    INITIALIZED,
-    INCOMING_MESSAGE
+        //    ERROR,
+        VOLTAGE_LOW,
+        TEMPERATURE_HIGH,
+        HEARTBEAT,
+        ENGAGED,
+        DISENGAGED,
+        STUCK,  // can't detect this yet
+        BOOTING,
+        INITIALIZED,
+        INCOMING_MESSAGE
 };
 
 class indication
 {
 public:
-    indication( std::chrono::milliseconds now )
-      : last_tick_( now )
-      , red_phase_( now )
-    {
-    }
+        indication( std::chrono::milliseconds now )
+          : last_tick_( now )
+          , red_phase_( now )
+        {
+        }
 
-    bool on_event( std::chrono::milliseconds now, const indication_event& e );
+        bool on_event( std::chrono::milliseconds now, const indication_event& e );
 
-    void tick( std::chrono::milliseconds now );
+        void tick( std::chrono::milliseconds now );
 
-    const leds_vals& get_state() const
-    {
-        return state_;
-    }
+        const leds_vals& get_state() const
+        {
+                return state_;
+        }
 
 private:
-    void tick_red( std::chrono::milliseconds now );
+        void tick_red( std::chrono::milliseconds now );
 
-    leds_vals                 state_;
-    std::chrono::milliseconds last_tick_;
+        leds_vals                 state_;
+        std::chrono::milliseconds last_tick_;
 
-    static constexpr std::chrono::milliseconds                 red_window_ = 1s;
-    std::chrono::milliseconds                                  red_phase_;
-    em::static_circular_buffer< std::chrono::milliseconds, 2 > red_events_;
+        static constexpr std::chrono::milliseconds                 red_window_ = 1s;
+        std::chrono::milliseconds                                  red_phase_;
+        em::static_circular_buffer< std::chrono::milliseconds, 2 > red_events_;
 
-    float green_i_      = 0.f;
-    float green_step_   = 0.f;
-    float green_offset_ = 0.f;
+        float green_i_      = 0.f;
+        float green_step_   = 0.f;
+        float green_offset_ = 0.f;
 
-    std::chrono::milliseconds yellow_engaged_until_;
+        std::chrono::milliseconds yellow_engaged_until_;
 
-    std::chrono::milliseconds blue_disengage_at_;
+        std::chrono::milliseconds blue_disengage_at_;
 };
