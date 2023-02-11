@@ -12,39 +12,6 @@
 #include <emlabcpp/pid.h>
 #include <string>
 
-consteval cfg_map get_default_config()
-{
-    return cfg_map{
-        cfg_reg< REVERSED, bool >{ false },
-        cfg_reg< POSITION_CONV_LOWER_SETPOINT_VALUE, uint16_t >{ 0 },
-        cfg_reg< POSITION_CONV_LOWER_SETPOINT_ANGLE, float >{ 0.f },
-        cfg_reg< POSITION_CONV_HIGHER_SETPOINT_VALUE, uint16_t >{ 0 },
-        cfg_reg< POSITION_CONV_HIGHER_SETPOINT_ANGLE, float >{ 0.f },
-        cfg_reg< CURRENT_CONV_SCALE, float >{ 0.f },
-        cfg_reg< CURRENT_CONV_OFFSET, float >{ 0.f },
-        cfg_reg< TEMP_CONV_SCALE, float >{ 0.f },
-        cfg_reg< TEMP_CONV_OFFSET, float >{ 0.f },
-        cfg_reg< VOLTAGE_CONV_SCALE, float >{ 0.f },
-        cfg_reg< CONTROL_CURRENT_LOOP_P, float >{ 0.f },
-        cfg_reg< CONTROL_CURRENT_LOOP_I, float >{ 0.f },
-        cfg_reg< CONTROL_CURRENT_LOOP_D, float >{ 0.f },
-        cfg_reg< CONTROL_CURRENT_LIM_MIN, float >{ 0.f },
-        cfg_reg< CONTROL_CURRENT_LIM_MAX, float >{ 0.f },
-        cfg_reg< CONTROL_VELOCITY_LOOP_P, float >{ 0.f },
-        cfg_reg< CONTROL_VELOCITY_LOOP_I, float >{ 0.f },
-        cfg_reg< CONTROL_VELOCITY_LOOP_D, float >{ 0.f },
-        cfg_reg< CONTROL_VELOCITY_LIM_MIN, float >{ 0.f },
-        cfg_reg< CONTROL_VELOCITY_LIM_MAX, float >{ 0.f },
-        cfg_reg< CONTROL_POSITION_LOOP_P, float >{ 0.f },
-        cfg_reg< CONTROL_POSITION_LOOP_I, float >{ 0.f },
-        cfg_reg< CONTROL_POSITION_LOOP_D, float >{ 0.f },
-        cfg_reg< CONTROL_POSITION_LIM_MIN, float >{ 0.f },
-        cfg_reg< CONTROL_POSITION_LIM_MAX, float >{ 0.f },
-        cfg_reg< MINIMUM_VOLTAGE, float >{ 0.f },
-        cfg_reg< MAXIMUM_TEMPERATURE, float >{ 0.f },
-    };
-}
-
 int main()
 {
     cfg_map cfg = get_default_config();
