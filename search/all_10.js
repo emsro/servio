@@ -12,7 +12,7 @@ var searchData=
   ['get_5fcurrent_5fcommand_132',['get_current_command',['../protocol_8hpp.html#a008e352071cc07adf345f4a3637a9e0c',1,'protocol.hpp']]],
   ['get_5fcurrent_5freading_133',['get_current_reading',['../classfw_1_1acquisition.html#a4a1e4d07f634db7d5349a03129c3dd93',1,'fw::acquisition']]],
   ['get_5fcurrent_5fresponse_134',['get_current_response',['../protocol_8hpp.html#a069261ba1a799a184362fe4b152c70df',1,'protocol.hpp']]],
-  ['get_5fdefault_5fconfig_135',['get_default_config',['../main_8cpp.html#ae12fd96fc9e7230dfa70d78ca9e20964',1,'main.cpp']]],
+  ['get_5fdefault_5fconfig_135',['get_default_config',['../config_8hpp.html#ae12fd96fc9e7230dfa70d78ca9e20964',1,'config.hpp']]],
   ['get_5fdesired_136',['get_desired',['../classctl_1_1pid__module.html#a9d7e7ad3a1bf3a1783ee8d7ff43b5146',1,'ctl::pid_module']]],
   ['get_5fdesired_5fcurrent_137',['get_desired_current',['../classcontrol.html#a6e6d38e68abd83842dcd25078aa7a6cd',1,'control']]],
   ['get_5fdesired_5fposition_138',['get_desired_position',['../classcontrol.html#a4b8d545153a3fea744b09c8374a67e65',1,'control']]],

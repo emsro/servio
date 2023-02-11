@@ -35,5 +35,6 @@ var config_8hpp =
       [ "CONTROL_POSITION_LIM_MAX", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a8d9054e0f71aeb6017b5e5ba987c3ffd", null ],
       [ "MINIMUM_VOLTAGE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a4b3361306c52f3d715404f815b24eb99", null ],
       [ "MAXIMUM_TEMPERATURE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a2865279ffdc6266db7215e0151d2974d", null ]
-    ] ]
+    ] ],
+    [ "get_default_config", "config_8hpp.html#ae12fd96fc9e7230dfa70d78ca9e20964", null ]
 ];
