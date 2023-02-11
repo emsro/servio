@@ -88,8 +88,8 @@ $(document).ready(function(){initNavTree('control_8hpp_source.html',''); initRes
 </div><!--header-->
 <div class="contents">
 <a href="control_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">base.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pid__module_8hpp.html">ctl/pid_module.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ctl_2config_8hpp.html">ctl/config.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ctl_2config_8hpp.html">ctl/config.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pid__module_8hpp.html">ctl/pid_module.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;variant&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
@@ -99,48 +99,48 @@ $(document).ready(function(){initNavTree('control_8hpp_source.html',''); initRes
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classcontrol.html#a438d0927b342f5b0c1564636302862c6">control</a>( std::chrono::milliseconds, <a class="code" href="namespacectl.html#structctl_1_1config">ctl::config</a> cfg );</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classcontrol.html#a438d0927b342f5b0c1564636302862c6">control</a>( std::chrono::milliseconds, <a class="code" href="namespacectl.html#structctl_1_1config">ctl::config</a> cfg );</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a89721e40ebe007563bc70e1242ce941f">set_pid</a>( <a class="code" href="base_8hpp.html#a2d21811ce1f560323f48c16592782d7f">control_loop</a>, <a class="code" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">ctl::pid_coefficients</a> coeffs );</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#aa8e61e5cd2701933862464ba56e70dc9">set_limits</a>( <a class="code" href="base_8hpp.html#a2d21811ce1f560323f48c16592782d7f">control_loop</a>, <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> lim );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a89721e40ebe007563bc70e1242ce941f">set_pid</a>( <a class="code" href="base_8hpp.html#a2d21811ce1f560323f48c16592782d7f">control_loop</a>, <a class="code" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">ctl::pid_coefficients</a> coeffs );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#aa8e61e5cd2701933862464ba56e70dc9">set_limits</a>( <a class="code" href="base_8hpp.html#a2d21811ce1f560323f48c16592782d7f">control_loop</a>, <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> lim );</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span>         <a class="code" href="classcontrol.html#a53f7eed55c4aa898fe1788396061f837">is_engaged</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613d">control_mode</a> <a class="code" href="classcontrol.html#ae81ad979458d80bd1ecd47febccd8796">get_mode</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">bool</span>         <a class="code" href="classcontrol.html#a53f7eed55c4aa898fe1788396061f837">is_engaged</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613d">control_mode</a> <a class="code" href="classcontrol.html#ae81ad979458d80bd1ecd47febccd8796">get_mode</a>();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a72d1d14a2342d2a7c4a0b61d2cfb27c6">disengage</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a72d1d14a2342d2a7c4a0b61d2cfb27c6">disengage</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#aa89e2447e7f66b5bb14653f60e80420a">switch_to_power_control</a>( int16_t power );</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#ad0a50a880063eefd3d78b68870d066c1">switch_to_current_control</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> current );</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a3e12438ce05a77ac4377b6f31712ae48">switch_to_velocity_control</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> <a class="code" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">velocity</a> );</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a6b8d24e8a7e65d71fa052665cf99108d">switch_to_position_control</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> position );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#aa89e2447e7f66b5bb14653f60e80420a">switch_to_power_control</a>( int16_t power );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#ad0a50a880063eefd3d78b68870d066c1">switch_to_current_control</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> current );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a3e12438ce05a77ac4377b6f31712ae48">switch_to_velocity_control</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> <a class="code" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">velocity</a> );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a6b8d24e8a7e65d71fa052665cf99108d">switch_to_position_control</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> position );</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#ae48a0027d9f391451c9bca4b961c2b86">position_irq</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> position );</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a7fddc6a3e35f6b72a992ae02e956133c">velocity_irq</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> <a class="code" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">velocity</a> );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a4ce56691ce0b9c353b2321b7f2977e4a">current_irq</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> current );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#ae48a0027d9f391451c9bca4b961c2b86">position_irq</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> position );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a7fddc6a3e35f6b72a992ae02e956133c">velocity_irq</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> <a class="code" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">velocity</a> );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcontrol.html#a4ce56691ce0b9c353b2321b7f2977e4a">current_irq</a>( std::chrono::milliseconds now, <span class="keywordtype">float</span> current );</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    int16_t <a class="code" href="classcontrol.html#a5a5f1c48fefab50c257c4afdf82ee7ef">get_power</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        int16_t <a class="code" href="classcontrol.html#a5a5f1c48fefab50c257c4afdf82ee7ef">get_power</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classcontrol.html#a6e6d38e68abd83842dcd25078aa7a6cd">get_desired_current</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classcontrol.html#a91eb445014df1928cff7ea8c641cf084">get_desired_velocity</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classcontrol.html#a4b8d545153a3fea744b09c8374a67e65">get_desired_position</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classcontrol.html#a6e6d38e68abd83842dcd25078aa7a6cd">get_desired_current</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classcontrol.html#a91eb445014df1928cff7ea8c641cf084">get_desired_velocity</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classcontrol.html#a4b8d545153a3fea744b09c8374a67e65">get_desired_position</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classctl_1_1pid__module.html">ctl::pid_module</a>&amp; ref_module( <a class="code" href="base_8hpp.html#a2d21811ce1f560323f48c16592782d7f">control_loop</a> );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classctl_1_1pid__module.html">ctl::pid_module</a>&amp; ref_module( <a class="code" href="base_8hpp.html#a2d21811ce1f560323f48c16592782d7f">control_loop</a> );</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span>         engaged_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613d">control_mode</a> state_   = <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dac9c9c146c630ca5ef9197c73c032f4a6">control_mode::POWER</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">bool</span>         engaged_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613d">control_mode</a> state_   = <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dac9c9c146c630ca5ef9197c73c032f4a6">control_mode::POWER</a>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">float</span> goal_position_ = 0.f;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">float</span> goal_position_ = 0.f;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_lims_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_lims_;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classctl_1_1pid__module.html">ctl::pid_module</a> position_pid_;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classctl_1_1pid__module.html">ctl::pid_module</a> position_pid_;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classctl_1_1pid__module.html">ctl::pid_module</a> velocity_pid_;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classctl_1_1pid__module.html">ctl::pid_module</a> velocity_pid_;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classctl_1_1pid__module.html">ctl::pid_module</a> current_pid_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classctl_1_1pid__module.html">ctl::pid_module</a> current_pid_;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    int16_t power_ = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        int16_t power_ = 0;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="abase_8hpp_html_a2d21811ce1f560323f48c16592782d7f"><div class="ttname"><a href="base_8hpp.html#a2d21811ce1f560323f48c16592782d7f">control_loop</a></div><div class="ttdeci">control_loop</div><div class="ttdef"><b>Definition:</b> base.hpp:39</div></div>
@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('control_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="control_8hpp.html">control.hpp</a></li>
-    <li class="footer">Generated on Sat Feb 11 2023 11:12:54 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Feb 11 2023 13:10:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

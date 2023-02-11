@@ -97,20 +97,20 @@ $(document).ready(function(){initNavTree('scaled_8hpp_source.html',''); initResi
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> T, <span class="keywordtype">int</span>8_t BitOffset &gt;</div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classscaled.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classscaled.html">scaled</a> : <span class="keyword">public</span> em::quantity&lt; scaled&lt; T, BitOffset &gt;, T &gt;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">static</span> constexpr int32_t multiplicator = 1 &lt;&lt; BitOffset;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">static</span> constexpr int32_t multiplicator = 1 &lt;&lt; BitOffset;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">using</span> em::quantity&lt; scaled&lt; T, BitOffset &gt;, T &gt;::quantity;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">using</span> em::quantity&lt; scaled&lt; T, BitOffset &gt;, T &gt;::quantity;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classscaled.html#aeb23f3d76e0db21a720204e85e555150">   16</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classscaled.html">scaled</a> <a class="code" href="classscaled.html#aeb23f3d76e0db21a720204e85e555150">from_float</a>( <span class="keywordtype">float</span> val )</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classscaled.html">scaled</a>{ val * multiplicator };</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classscaled.html#aeb23f3d76e0db21a720204e85e555150">   16</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classscaled.html">scaled</a> <a class="code" href="classscaled.html#aeb23f3d76e0db21a720204e85e555150">from_float</a>( <span class="keywordtype">float</span> val )</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classscaled.html">scaled</a>{ val * multiplicator };</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classscaled.html#ad0c137095775ae685c2fc049d1784dd2">   21</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classscaled.html#ad0c137095775ae685c2fc049d1784dd2">as_float</a>()</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( *this ) / multiplicator;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classscaled.html#ad0c137095775ae685c2fc049d1784dd2">   21</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classscaled.html#ad0c137095775ae685c2fc049d1784dd2">as_float</a>()</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( *this ) / multiplicator;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 <div class="ttc" id="aclassscaled_html"><div class="ttname"><a href="classscaled.html">scaled</a></div><div class="ttdef"><b>Definition:</b> scaled.hpp:10</div></div>
 <div class="ttc" id="aclassscaled_html_ad0c137095775ae685c2fc049d1784dd2"><div class="ttname"><a href="classscaled.html#ad0c137095775ae685c2fc049d1784dd2">scaled::as_float</a></div><div class="ttdeci">float as_float()</div><div class="ttdef"><b>Definition:</b> scaled.hpp:21</div></div>
@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('scaled_8hpp_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="scaled_8hpp.html">scaled.hpp</a></li>
-    <li class="footer">Generated on Sat Feb 11 2023 11:12:54 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Feb 11 2023 13:10:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
