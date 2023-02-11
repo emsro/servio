@@ -1,3 +1,4 @@
+#include "ctl/pid_module.hpp"
 
 #ifdef EMLABCPP_USE_NLOHMANN_JSON
 #include <nlohmann/json.hpp>
