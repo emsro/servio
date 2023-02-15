@@ -9,13 +9,17 @@
 class metrics
 {
 public:
-        metrics( std::chrono::milliseconds time, float position );
+        metrics( std::chrono::milliseconds time, float position, limits< float > position_range );
 
-        void  position_irq( std::chrono::milliseconds now, float position );
+        void set_position_range( limits< float > position_range );
+
+        void position_irq( std::chrono::milliseconds now, float position );
+
         float get_position() const
         {
                 return angle_;
         }
+
         float get_velocity() const
         {
                 return kalman::velocity( x_ );
@@ -32,6 +36,7 @@ private:
         kalman::observation_noise_covariance R_;
 
         float                    angle_;
+        kalman::state_range      sr_;
         float                    offset_ = 0.f;
         kalman::state            x_;
         kalman::state_covariance P_;

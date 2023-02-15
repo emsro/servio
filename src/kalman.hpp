@@ -103,23 +103,29 @@ inline auto& velocity( T& x )
         return x[1][0];
 }
 
+struct state_range
+{
+        float offset;
+        float size;
+};
+
 inline bool requires_offset( const float v )
 {
         return ( v < 0.4f * pi ) || ( 1.6f * pi < v );
 }
 
-inline float angle_mod( float v )
+inline float angle_mod( float v, state_range r )
 {
         if ( v < 0.f ) {
-                return angle_mod( v + 2.f * pi );
+                return angle_mod( v + r.size, r );
         }
-        return std::fmod( v, 2.f * pi );
+        return std::fmod( v - r.offset, r.size ) + r.offset;
 }
 
 template < typename T >
-inline void modify_angle( T& x, float val )
+inline void modify_angle( T& x, float val, state_range r )
 {
-        angle( x ) = angle_mod( angle( x ) + val );
+        angle( x ) = angle_mod( angle( x ) + val, r );
 }
 
 inline std::vector< state > simulate(
@@ -144,20 +150,21 @@ inline std::vector< state > simulate(
 
         std::vector< state > res;
 
-        float offset = 0.f;
+        state_range sr{ .offset = 0.f, .size = 2 * pi };
+        float       offset = 0.f;
         for ( observation z : observations ) {
-                modify_angle( z, +offset );
+                modify_angle( z, +offset, sr );
 
                 std::tie( x, P ) = kalman::predict( x, P, u, F, B, Q );
                 std::tie( x, P ) = kalman::update( x, P, z, H, R );
 
                 if ( requires_offset( angle( x ) ) ) {
-                        offset = angle_mod( offset + pi );
-                        modify_angle( x, +pi );
+                        offset = angle_mod( offset + pi, sr );
+                        modify_angle( x, +pi, sr );
                 }
 
                 res.push_back( x );
-                modify_angle( res.back(), -offset );
+                modify_angle( res.back(), -offset, sr );
         }
 
         return res;

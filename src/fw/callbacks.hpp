@@ -4,6 +4,8 @@
 #include "metrics.hpp"
 #include "stm32g4xx_hal.h"
 
+#pragma once
+
 namespace fw
 {
 

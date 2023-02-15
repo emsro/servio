@@ -1,6 +1,9 @@
 #include "control.hpp"
+#include "fw/callbacks.hpp"
 #include "fw/drivers/acquisition.hpp"
+#include "fw/drivers/hbridge.hpp"
 #include "fw/monitor.hpp"
+#include "fw/util.hpp"
 #include "indication.hpp"
 #include "metrics.hpp"
 
@@ -19,7 +22,7 @@ struct core
 
         core( std::chrono::milliseconds ms, acquisition& acqui )
           : ctl( ms, ctl::config{} )
-          , met( ms, acqui.get_position() )
+          , met( ms, acqui.get_position(), { 0.f, 2 * pi } )
           , ind( ms )
           , mon( ms, ctl, acqui, ind )
         {
@@ -27,7 +30,7 @@ struct core
         }
 };
 
-void setup_standard_callbacks( hbridge& hb, acquisition& acqui, control& ctl, metrics& met )
+inline void setup_standard_callbacks( hbridge& hb, acquisition& acqui, control& ctl, metrics& met )
 {
 
         hb.set_period_callback( acquisition_period_callback{ acqui, hb } );

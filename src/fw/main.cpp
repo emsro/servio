@@ -1,5 +1,4 @@
 #include "fw/board.hpp"
-#include "fw/callbacks.hpp"
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/core.hpp"
 #include "fw/dispatcher.hpp"
@@ -34,7 +33,7 @@ int main()
 
         fw::setup_standard_callbacks( *hbridge_ptr, *acquisition_ptr, cor.ctl, cor.met );
 
-        fw::cfg_dispatcher cfg_dis{ cfg, *acquisition_ptr, cor.ctl, cor.mon };
+        fw::cfg_dispatcher cfg_dis{ cfg, *acquisition_ptr, cor };
         cfg_dis.full_apply();
         brd::apply_config( cfg_dis );
 

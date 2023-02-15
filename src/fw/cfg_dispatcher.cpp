@@ -32,10 +32,14 @@ void cfg_dispatcher::apply( const cfg_key& key )
         switch ( key ) {
         case REVERSED:
                 break;
-        case POSITION_CONV_LOWER_SETPOINT_VALUE:
         case POSITION_CONV_LOWER_SETPOINT_ANGLE:
-        case POSITION_CONV_HIGHER_SETPOINT_VALUE:
         case POSITION_CONV_HIGHER_SETPOINT_ANGLE:
+                c.met.set_position_range(
+                    { map.get_val< POSITION_CONV_LOWER_SETPOINT_ANGLE >(),
+                      map.get_val< POSITION_CONV_HIGHER_SETPOINT_ANGLE >() } );
+                [[fallthrough]];
+        case POSITION_CONV_LOWER_SETPOINT_VALUE:
+        case POSITION_CONV_HIGHER_SETPOINT_VALUE:
                 acq.set_position_cfg(
                     map.get_val< POSITION_CONV_LOWER_SETPOINT_VALUE >(),
                     map.get_val< POSITION_CONV_LOWER_SETPOINT_ANGLE >(),
@@ -58,7 +62,7 @@ void cfg_dispatcher::apply( const cfg_key& key )
         case CONTROL_CURRENT_LOOP_P:
         case CONTROL_CURRENT_LOOP_I:
         case CONTROL_CURRENT_LOOP_D:
-                ctl.set_pid(
+                c.ctl.set_pid(
                     control_loop::CURRENT,
                     { map.get_val< CONTROL_CURRENT_LOOP_P >(),
                       map.get_val< CONTROL_CURRENT_LOOP_I >(),
@@ -66,7 +70,7 @@ void cfg_dispatcher::apply( const cfg_key& key )
                 break;
         case CONTROL_CURRENT_LIM_MIN:
         case CONTROL_CURRENT_LIM_MAX:
-                ctl.set_limits(
+                c.ctl.set_limits(
                     control_loop::CURRENT,
                     { map.get_val< CONTROL_CURRENT_LIM_MIN >(),
                       map.get_val< CONTROL_CURRENT_LIM_MAX >() } );
@@ -74,7 +78,7 @@ void cfg_dispatcher::apply( const cfg_key& key )
         case CONTROL_VELOCITY_LOOP_P:
         case CONTROL_VELOCITY_LOOP_I:
         case CONTROL_VELOCITY_LOOP_D:
-                ctl.set_pid(
+                c.ctl.set_pid(
                     control_loop::VELOCITY,
                     { map.get_val< CONTROL_VELOCITY_LOOP_P >(),
                       map.get_val< CONTROL_VELOCITY_LOOP_I >(),
@@ -82,7 +86,7 @@ void cfg_dispatcher::apply( const cfg_key& key )
                 break;
         case CONTROL_VELOCITY_LIM_MIN:
         case CONTROL_VELOCITY_LIM_MAX:
-                ctl.set_limits(
+                c.ctl.set_limits(
                     control_loop::VELOCITY,
                     { map.get_val< CONTROL_VELOCITY_LIM_MIN >(),
                       map.get_val< CONTROL_VELOCITY_LIM_MAX >() } );
@@ -90,7 +94,7 @@ void cfg_dispatcher::apply( const cfg_key& key )
         case CONTROL_POSITION_LOOP_P:
         case CONTROL_POSITION_LOOP_I:
         case CONTROL_POSITION_LOOP_D:
-                ctl.set_pid(
+                c.ctl.set_pid(
                     control_loop::POSITION,
                     { map.get_val< CONTROL_POSITION_LOOP_P >(),
                       map.get_val< CONTROL_POSITION_LOOP_I >(),
@@ -98,16 +102,16 @@ void cfg_dispatcher::apply( const cfg_key& key )
                 break;
         case CONTROL_POSITION_LIM_MIN:
         case CONTROL_POSITION_LIM_MAX:
-                ctl.set_limits(
+                c.ctl.set_limits(
                     control_loop::POSITION,
                     { map.get_val< CONTROL_POSITION_LIM_MIN >(),
                       map.get_val< CONTROL_POSITION_LIM_MAX >() } );
                 break;
         case MINIMUM_VOLTAGE:
-                m.set_minimum_voltage( map.get_val< MINIMUM_VOLTAGE >() );
+                c.mon.set_minimum_voltage( map.get_val< MINIMUM_VOLTAGE >() );
                 break;
         case MAXIMUM_TEMPERATURE:
-                m.set_maximum_temperature( map.get_val< MAXIMUM_TEMPERATURE >() );
+                c.mon.set_maximum_temperature( map.get_val< MAXIMUM_TEMPERATURE >() );
                 break;
         }
 }
