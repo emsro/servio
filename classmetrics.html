@@ -95,8 +95,10 @@ $(document).ready(function(){initNavTree('classmetrics.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac6154941d005fd50da15ce87686040cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetrics.html#ac6154941d005fd50da15ce87686040cb">metrics</a> (std::chrono::milliseconds time, float position)</td></tr>
-<tr class="separator:ac6154941d005fd50da15ce87686040cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c87466dc208889d2c943d111397ffcd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetrics.html#a6c87466dc208889d2c943d111397ffcd">metrics</a> (std::chrono::milliseconds time, float position, <a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt; position_range)</td></tr>
+<tr class="separator:a6c87466dc208889d2c943d111397ffcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1a38155ed3f17f9f5e35a74995c53e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e">set_position_range</a> (<a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt; position_range)</td></tr>
+<tr class="separator:a0a1a38155ed3f17f9f5e35a74995c53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf5fc9b56d1a795e78c2bbf5a915c663"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetrics.html#abf5fc9b56d1a795e78c2bbf5a915c663">position_irq</a> (std::chrono::milliseconds now, float position)</td></tr>
 <tr class="separator:abf5fc9b56d1a795e78c2bbf5a915c663"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad794bbf9caf8090d8fb7a88786accb14"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">get_position</a> () const</td></tr>
@@ -105,8 +107,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa62e43dda60977625c33477506b1fd31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac6154941d005fd50da15ce87686040cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6154941d005fd50da15ce87686040cb">&#9670;&nbsp;</a></span>metrics()</h2>
+<a id="a6c87466dc208889d2c943d111397ffcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c87466dc208889d2c943d111397ffcd">&#9670;&nbsp;</a></span>metrics()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -121,7 +123,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>position</em>&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>position_range</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -131,7 +139,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">kalman::angle()</a>.</p>
+<p class="reference">References <a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">kalman::angle()</a>, <a class="el" href="namespacekalman.html#a216390ea00a5dbed756bf6064c66a381">kalman::angle_mod()</a>, and <a class="el" href="classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e">set_position_range()</a>.</p>
 
 </div>
 </div>
@@ -214,7 +222,27 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">kalman::angle()</a>, <a class="el" href="namespacekalman.html#a6cc93d05251465608fabf61924de702c">kalman::angle_mod()</a>, <a class="el" href="namespacekalman.html#a7435a12aeaeef2bdb1f7ff3cd933fbc2">kalman::get_control_input_model()</a>, <a class="el" href="namespacekalman.html#a98d43da94a33f521229fbdb698ee11e3">kalman::get_process_noise_covariance()</a>, <a class="el" href="namespacekalman.html#a2b1764c7358bafe1a7dddab4e1989054">kalman::get_transition_model()</a>, <a class="el" href="namespacekalman.html#ac1e324238642152ffc14da125201a0de">kalman::modify_angle()</a>, <a class="el" href="base_8hpp.html#a1405970de248dafe731b9cc3c66f8bc4">pi</a>, <a class="el" href="namespacekalman.html#a5ce40b45ea8998e580042dae4ba09635">kalman::predict()</a>, <a class="el" href="namespacekalman.html#a5a2b5d3ba8a779b34bac50da51339c9f">kalman::requires_offset()</a>, and <a class="el" href="namespacekalman.html#a34319bc108a66f1a0ed345be44da0365">kalman::update()</a>.</p>
+<p class="reference">References <a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">kalman::angle()</a>, <a class="el" href="namespacekalman.html#a216390ea00a5dbed756bf6064c66a381">kalman::angle_mod()</a>, <a class="el" href="namespacekalman.html#a7435a12aeaeef2bdb1f7ff3cd933fbc2">kalman::get_control_input_model()</a>, <a class="el" href="namespacekalman.html#a98d43da94a33f521229fbdb698ee11e3">kalman::get_process_noise_covariance()</a>, <a class="el" href="namespacekalman.html#a2b1764c7358bafe1a7dddab4e1989054">kalman::get_transition_model()</a>, <a class="el" href="namespacekalman.html#a40a88d464735106d6e64504a1a928bb2">kalman::modify_angle()</a>, <a class="el" href="base_8hpp.html#a1405970de248dafe731b9cc3c66f8bc4">pi</a>, <a class="el" href="namespacekalman.html#a5ce40b45ea8998e580042dae4ba09635">kalman::predict()</a>, <a class="el" href="namespacekalman.html#a5a2b5d3ba8a779b34bac50da51339c9f">kalman::requires_offset()</a>, and <a class="el" href="namespacekalman.html#a34319bc108a66f1a0ed345be44da0365">kalman::update()</a>.</p>
+
+</div>
+</div>
+<a id="a0a1a38155ed3f17f9f5e35a74995c53e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1a38155ed3f17f9f5e35a74995c53e">&#9670;&nbsp;</a></span>set_position_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metrics::set_position_range </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>position_range</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacekalman.html#ab56d40aa62a765d02ac064f8e2f2512a">kalman::state_range::offset</a>, and <a class="el" href="namespacekalman.html#a99aa0fc8fd1682fd248e3e6ea91d13ed">kalman::state_range::size</a>.</p>
 
 </div>
 </div>
@@ -228,7 +256,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classmetrics.html">metrics</a></li>
-    <li class="footer">Generated on Sat Feb 11 2023 13:19:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Feb 16 2023 21:49:17 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('kalman_8hpp.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
@@ -104,6 +105,11 @@ $(document).ready(function(){initNavTree('kalman_8hpp.html',''); initResizable()
 </div>
 <p><a href="kalman_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:structkalman_1_1state__range"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#structkalman_1_1state__range">kalman::state_range</a></td></tr>
+<tr class="separator:structkalman_1_1state__range"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacekalman"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html">kalman</a></td></tr>
@@ -158,21 +164,51 @@ Functions</h2></td></tr>
 <tr class="separator:a4045bee00b1b7c1f3b36946e5ebb8565"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a2b5d3ba8a779b34bac50da51339c9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a5a2b5d3ba8a779b34bac50da51339c9f">kalman::requires_offset</a> (const float v)</td></tr>
 <tr class="separator:a5a2b5d3ba8a779b34bac50da51339c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cc93d05251465608fabf61924de702c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a6cc93d05251465608fabf61924de702c">kalman::angle_mod</a> (float v)</td></tr>
-<tr class="separator:a6cc93d05251465608fabf61924de702c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1e324238642152ffc14da125201a0de"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ac1e324238642152ffc14da125201a0de"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekalman.html#ac1e324238642152ffc14da125201a0de">kalman::modify_angle</a> (T &amp;x, float val)</td></tr>
-<tr class="separator:ac1e324238642152ffc14da125201a0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a216390ea00a5dbed756bf6064c66a381"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a216390ea00a5dbed756bf6064c66a381">kalman::angle_mod</a> (float v, state_range r)</td></tr>
+<tr class="separator:a216390ea00a5dbed756bf6064c66a381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40a88d464735106d6e64504a1a928bb2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a40a88d464735106d6e64504a1a928bb2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a40a88d464735106d6e64504a1a928bb2">kalman::modify_angle</a> (T &amp;x, float val, state_range r)</td></tr>
+<tr class="separator:a40a88d464735106d6e64504a1a928bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a210a7536c35318588fcd2dc40288fb75"><td class="memItemLeft" align="right" valign="top">std::vector&lt; state &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a210a7536c35318588fcd2dc40288fb75">kalman::simulate</a> (<a class="el" href="base_8hpp.html#a96ccd2c4ce19187beb5be679732d675a">sec_time</a> tdiff, float process_deviation, float observation_deviation, const std::vector&lt; observation &gt; &amp;observations)</td></tr>
 <tr class="separator:a210a7536c35318588fcd2dc40288fb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structkalman_1_1state__range" id="structkalman_1_1state__range"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structkalman_1_1state__range">&#9670;&nbsp;</a></span>kalman::state_range</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct kalman::state_range</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="ab56d40aa62a765d02ac064f8e2f2512a"></a>float</td>
+<td class="fieldname">
+offset</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a99aa0fc8fd1682fd248e3e6ea91d13ed"></a>float</td>
+<td class="fieldname">
+size</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="kalman_8hpp.html">kalman.hpp</a></li>
-    <li class="footer">Generated on Sat Feb 11 2023 13:19:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Feb 16 2023 21:49:17 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

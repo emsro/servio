@@ -40,6 +40,7 @@ var hierarchy =
       [ "scaled< T, BitOffset >", "classscaled.html", null ]
     ] ],
     [ "set_config", "structset__config.html", null ],
+    [ "kalman::state_range", "namespacekalman.html#structkalman_1_1state__range", null ],
     [ "temperature_converter", "classtemperature__converter.html", null ],
     [ "voltage_converter", "classvoltage__converter.html", null ]
 ];

@@ -1,5 +1,9 @@
 var kalman_8hpp =
 [
+    [ "state_range", "namespacekalman.html#structkalman_1_1state__range", [
+      [ "offset", "namespacekalman.html#ab56d40aa62a765d02ac064f8e2f2512a", null ],
+      [ "size", "namespacekalman.html#a99aa0fc8fd1682fd248e3e6ea91d13ed", null ]
+    ] ],
     [ "control_input", "kalman_8hpp.html#a29860c2887d99b7b441b4fea6677a29e", null ],
     [ "control_input_model", "kalman_8hpp.html#a5cfbf493eef29c305b290c2b167e4bce", null ],
     [ "innovation_covariance", "kalman_8hpp.html#a2c7d47c8c5a7d12f26d61b7818b1c2d9", null ],
@@ -12,13 +16,13 @@ var kalman_8hpp =
     [ "state_covariance", "kalman_8hpp.html#a0e377e28a6a36addfe5a14f353839f9c", null ],
     [ "state_transition_model", "kalman_8hpp.html#ad217468f6096ae44d4ee08729f3a053a", null ],
     [ "angle", "kalman_8hpp.html#a3c4a84673db045ce6801d83500cdd91e", null ],
-    [ "angle_mod", "kalman_8hpp.html#a6cc93d05251465608fabf61924de702c", null ],
+    [ "angle_mod", "kalman_8hpp.html#a216390ea00a5dbed756bf6064c66a381", null ],
     [ "get_control_input_model", "kalman_8hpp.html#a7435a12aeaeef2bdb1f7ff3cd933fbc2", null ],
     [ "get_observation_model", "kalman_8hpp.html#a57c71f193659ff2b34bdf2e7bd1d9c76", null ],
     [ "get_observation_noise_covariance", "kalman_8hpp.html#a7e3eb3854ea1e62172ae0ff1374342bc", null ],
     [ "get_process_noise_covariance", "kalman_8hpp.html#a98d43da94a33f521229fbdb698ee11e3", null ],
     [ "get_transition_model", "kalman_8hpp.html#a2b1764c7358bafe1a7dddab4e1989054", null ],
-    [ "modify_angle", "kalman_8hpp.html#ac1e324238642152ffc14da125201a0de", null ],
+    [ "modify_angle", "kalman_8hpp.html#a40a88d464735106d6e64504a1a928bb2", null ],
     [ "predict", "kalman_8hpp.html#a5ce40b45ea8998e580042dae4ba09635", null ],
     [ "requires_offset", "kalman_8hpp.html#a5a2b5d3ba8a779b34bac50da51339c9f", null ],
     [ "simulate", "kalman_8hpp.html#a210a7536c35318588fcd2dc40288fb75", null ],

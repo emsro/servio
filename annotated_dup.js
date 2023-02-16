@@ -21,6 +21,9 @@ var annotated_dup =
       [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
       [ "hal_check", "namespacefw.html#structfw_1_1hal__check", null ]
     ] ],
+    [ "kalman", "namespacekalman.html", [
+      [ "state_range", "namespacekalman.html#structkalman_1_1state__range", "namespacekalman_structkalman_1_1state__range_dup" ]
+    ] ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", "config_8hpp_structcfg__keyval" ],
     [ "command", "structcommand.html", "structcommand" ],
     [ "control", "classcontrol.html", "classcontrol" ],

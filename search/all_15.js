@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['m_249',['m',['../structfw_1_1cfg__dispatcher.html#aa1f62409052967e8dedeb2f004982d57',1,'fw::cfg_dispatcher']]],
   ['main_250',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
   ['main_2ecpp_251',['main.cpp',['../main_8cpp.html',1,'']]],
   ['map_252',['map',['../structfw_1_1cfg__dispatcher.html#acd4eceafa6aa5606d61423ff9ede0445',1,'fw::cfg_dispatcher']]],
@@ -16,11 +15,11 @@ var searchData=
   ['message_5fwith_5ffloat_262',['message_with_float',['../structmessage__with__float.html',1,'']]],
   ['messages_5fid_263',['messages_id',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717db',1,'protocol.hpp']]],
   ['met_264',['met',['../structfw_1_1core.html#a6d241e77bb00e9b86927ee74603a8b4a',1,'fw::core::met()'],['../structfw_1_1position__callback.html#a5829ee7a5efad37fed77a5fddc9c719c',1,'fw::position_callback::met()']]],
-  ['metrics_265',['metrics',['../classmetrics.html',1,'metrics'],['../classmetrics.html#ac6154941d005fd50da15ce87686040cb',1,'metrics::metrics()']]],
+  ['metrics_265',['metrics',['../classmetrics.html',1,'metrics'],['../classmetrics.html#a6c87466dc208889d2c943d111397ffcd',1,'metrics::metrics()']]],
   ['metrics_2ecpp_266',['metrics.cpp',['../metrics_8cpp.html',1,'']]],
   ['metrics_2ehpp_267',['metrics.hpp',['../metrics_8hpp.html',1,'']]],
   ['minimum_5fvoltage_268',['MINIMUM_VOLTAGE',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a4b3361306c52f3d715404f815b24eb99',1,'config.hpp']]],
-  ['modify_5fangle_269',['modify_angle',['../namespacekalman.html#ac1e324238642152ffc14da125201a0de',1,'kalman']]],
+  ['modify_5fangle_269',['modify_angle',['../namespacekalman.html#a40a88d464735106d6e64504a1a928bb2',1,'kalman']]],
   ['mon_270',['mon',['../structfw_1_1core.html#acb979d8e743e607e67107b716bd218d4',1,'fw::core']]],
   ['monitor_271',['monitor',['../classfw_1_1monitor.html',1,'fw::monitor'],['../classfw_1_1monitor.html#a3e49dd47b6b45441241e0ecbe92aa009',1,'fw::monitor::monitor()']]],
   ['monitor_2ehpp_272',['monitor.hpp',['../monitor_8hpp.html',1,'']]],
