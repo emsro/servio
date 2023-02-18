@@ -12,10 +12,10 @@ function(add_fwlib_test)
   target_compile_options(${A_TARGET} PRIVATE -DEMLABCPP_USE_NLOHMANN_JSON -O0
                                              -g)
   servio_compile_options(${A_TARGET})
+
+  add_test(NAME ${A_TARGET}_test COMMAND ${A_TARGET})
 endfunction()
 
 add_fwlib_test(TARGET kalman_utest)
 add_fwlib_test(TARGET control_utest)
-
-add_test(NAME kalman_test COMMAND kalman_utest)
-add_test(NAME control_test COMMAND control_utest)
+add_fwlib_test(TARGET metrics_utest)
