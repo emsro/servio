@@ -34,7 +34,7 @@ void metrics::position_irq( std::chrono::milliseconds now, float position )
         auto Q = kalman::get_process_noise_covariance( sdiff, process_deviation_ );
 
         kalman::control_input u{};
-        kalman::angle( u ) = 0.f;
+        u[0][0] = 0.f;
         kalman::observation z;
         kalman::angle( z ) = kalman::angle_mod( position + offset_, sr_ );
 
