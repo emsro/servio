@@ -14,7 +14,7 @@ include(cmake/flags.cmake)
 include(cmake/utils.cmake)
 
 servio_add_library(
-  TARGET servio_lib
+  TARGET serviolib
   INCLUDE src/
   SOURCES src/metrics.cpp src/control.cpp src/protocol.cpp src/indication.cpp
   LIBS emlabcpp
@@ -47,7 +47,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     REQUIRED GLOBAL)
 
   servio_add_library(
-    TARGET fw_lib
+    TARGET fwlib
     INCLUDE src/
     SOURCES src/fw/drivers/acquisition.cpp
             src/fw/drivers/comms.cpp
@@ -57,7 +57,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             src/fw/extra.cpp
             src/fw/globals.cpp
             src/fw/util.cpp
-    LIBS servio_lib
+    LIBS serviolib
          CMSIS::STM32::G431xx
          HAL::STM32::G4::ADC
          HAL::STM32::G4::ADCEx
@@ -71,10 +71,10 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     OPTS -Os)
 
   servio_add_library(
-    TARGET cfg_lib
+    TARGET cfglib
     INCLUDE src/
     SOURCES src/fw/cfg_dispatcher.cpp
-    LIBS servio_lib fw_lib
+    LIBS serviolib fwlib
     OPTS -O3)
 
   servio_add_board_library(
@@ -88,7 +88,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             boards/prototype2/extra.cpp
             boards/prototype2/iuart.cpp
             boards/prototype2/timers.cpp
-    LIBS cfg_lib servio_lib fw_lib
+    LIBS cfglib serviolib fwlib
     OPTS -Og)
 
   servio_add_board_executable(
