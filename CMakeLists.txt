@@ -5,29 +5,12 @@ project(servio C CXX ASM)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_C_STANDARD 99)
 
-include(cmake/flags.cmake)
-
 cmake_policy(SET CMP0077 NEW)
 option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 
-if(NOT TARGET emlabcpp)
-  if(SERVIO_EMLABCPP_SRC)
-    if(NOT IS_ABSOLUTE ${SERVIO_EMLABCPP_SRC})
-      set(SERVIO_EMLABCPP_SRC
-          "${CMAKE_CURRENT_SOURCE_DIR}/${SERVIO_EMLABCPP_SRC}")
-    endif()
-    add_subdirectory(${SERVIO_EMLABCPP_SRC} emlabcpp)
-  else()
-    include(FetchContent)
-    FetchContent_Declare(
-      emlabcpp
-      GIT_REPOSITORY https://github.com/koniarik/emlabcpp
-      GIT_TAG main)
-    FetchContent_MakeAvailable(emlabcpp)
-  endif()
-endif()
-target_compile_options(emlabcpp PRIVATE -Os)
+include(cmake/emlabcpp.cmake)
+include(cmake/flags.cmake)
 
 add_library(servio_lib STATIC src/metrics.cpp src/control.cpp src/protocol.cpp
                               src/indication.cpp)
@@ -36,13 +19,13 @@ target_link_libraries(servio_lib PUBLIC emlabcpp)
 servio_compile_options(servio_lib)
 target_compile_options(servio_lib PRIVATE -Os)
 
-if(${SERVIO_PLATFORM} STREQUAL "host")
+if (${SERVIO_PLATFORM} STREQUAL "host")
   include(CTest)
   enable_testing()
 
   add_subdirectory(tests)
 
-elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
+elseif (${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   set(CMAKE_CXX_FLAGS
       "${CMAKE_CXX_FLAGS}  -Fno-rtti -fno-exceptions -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard"
@@ -61,54 +44,62 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     HAL
     COMPONENTS STM32G4
     REQUIRED GLOBAL)
-    
-    add_library( cfg_lib STATIC
-      src/fw/cfg_dispatcher.cpp )
-    servio_compile_options(cfg_lib)
-    target_link_libraries(cfg_lib PUBLIC servio_lib
-             CMSIS::STM32::G431xx
-             HAL::STM32::G4::ADC
-             STM32::NoSys
-      )
-    target_compile_options(cfg_lib PRIVATE -O3)
 
-  function(servio_board_library)
-    cmake_parse_arguments(A "" "TARGET" "CUSTOM_FILES" ${ARGN})
+  add_library(
+    fw_lib STATIC
+    src/fw/drivers/acquisition.cpp
+    src/fw/drivers/comms.cpp
+    src/fw/drivers/debug_comms.cpp
+    src/fw/drivers/hbridge.cpp
+    src/fw/drivers/leds.cpp
+    src/fw/extra.cpp
+    src/fw/globals.cpp
+    src/fw/util.cpp)
+  servio_compile_options(fw_lib)
+  target_link_libraries(
+    fw_lib
+    PUBLIC servio_lib
+           CMSIS::STM32::G431xx
+           HAL::STM32::G4::ADC
+           HAL::STM32::G4::ADCEx
+           HAL::STM32::G4::DMA
+           HAL::STM32::G4::GPIO
+           HAL::STM32::G4::TIM
+           HAL::STM32::G4::TIMEx
+           HAL::STM32::G4::UART
+           HAL::STM32::G4::UARTEx
+           STM32::NoSys)
+  target_compile_options(fw_lib PRIVATE -Os)
 
-    add_library(
-      ${A_TARGET} STATIC
-      ${A_CUSTOM_FILES}
-      src/fw/drivers/acquisition.cpp
-      src/fw/drivers/comms.cpp
-      src/fw/drivers/debug_comms.cpp
-      src/fw/drivers/hbridge.cpp
-      src/fw/drivers/leds.cpp
-      src/fw/extra.cpp
-      src/fw/globals.cpp
-      src/fw/util.cpp)
+  add_library(cfg_lib STATIC src/fw/cfg_dispatcher.cpp)
+  servio_compile_options(cfg_lib)
+  target_link_libraries(cfg_lib PUBLIC servio_lib fw_lib)
+  target_compile_options(cfg_lib PRIVATE -O3)
+
+  function (servio_board_library)
+    cmake_parse_arguments(
+      A
+      ""
+      "TARGET"
+      "CUSTOM_FILES"
+      ${ARGN})
+
+    add_library(${A_TARGET} STATIC ${A_CUSTOM_FILES})
     servio_compile_options(${A_TARGET})
     target_link_libraries(
       ${A_TARGET}
       PUBLIC servio_lib
              cfg_lib
+             fw_lib
              CMSIS::STM32::G431xx
-             HAL::STM32::G4::ADC
-             HAL::STM32::G4::ADCEx
              HAL::STM32::G4::CORTEX
-             HAL::STM32::G4::DAC
-             HAL::STM32::G4::DMA
-             HAL::STM32::G4::GPIO
              HAL::STM32::G4::OPAMP
              HAL::STM32::G4::PWR
              HAL::STM32::G4::PWREx
              HAL::STM32::G4::RCC
              HAL::STM32::G4::RCCEx
-             HAL::STM32::G4::TIM
-             HAL::STM32::G4::TIMEx
-             HAL::STM32::G4::UART
-             HAL::STM32::G4::UARTEx
              STM32::NoSys)
-  endfunction()
+  endfunction ()
 
   servio_board_library(
     TARGET
@@ -133,6 +124,6 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     "${CMAKE_CURRENT_SOURCE_DIR}/ld/STM32G431KBTx_FLASH.ld")
   stm32_print_size_of_target(prototype2_fw)
 
-else()
+else ()
   message(FATAL_ERROR "unsupported platform ${SERVIO_PLATFORM}")
-endif()
+endif ()
