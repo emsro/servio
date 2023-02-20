@@ -47,37 +47,16 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     REQUIRED GLOBAL)
 
   servio_add_library(
-    TARGET fwlib
-    INCLUDE src/
-    SOURCES src/fw/drivers/acquisition.cpp
-            src/fw/drivers/comms.cpp
-            src/fw/drivers/debug_comms.cpp
-            src/fw/drivers/hbridge.cpp
-            src/fw/drivers/leds.cpp
-            src/fw/extra.cpp
-            src/fw/globals.cpp
-            src/fw/util.cpp
-    LIBS serviolib
-         CMSIS::STM32::G431xx
-         HAL::STM32::G4::ADC
-         HAL::STM32::G4::ADCEx
-         HAL::STM32::G4::DMA
-         HAL::STM32::G4::GPIO
-         HAL::STM32::G4::TIM
-         HAL::STM32::G4::TIMEx
-         HAL::STM32::G4::UART
-         HAL::STM32::G4::UARTEx
-         STM32::NoSys
-    OPTS -Os)
-
-  servio_add_library(
     TARGET cfglib
     INCLUDE src/
     SOURCES src/fw/cfg_dispatcher.cpp
-    LIBS serviolib fwlib
+    LIBS serviolib
+         CMSIS::STM32::G431xx
+         HAL::STM32::G4::ADC
+         STM32::NoSys
     OPTS -O3)
 
-  servio_add_board_library(
+  servio_add_library(
     TARGET prototype2_board
     SOURCES boards/prototype2/adc.cpp
             boards/prototype2/board.cpp
@@ -88,7 +67,31 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             boards/prototype2/extra.cpp
             boards/prototype2/iuart.cpp
             boards/prototype2/timers.cpp
-    LIBS cfglib serviolib fwlib
+            src/fw/drivers/acquisition.cpp
+            src/fw/drivers/comms.cpp
+            src/fw/drivers/debug_comms.cpp
+            src/fw/drivers/hbridge.cpp
+            src/fw/drivers/leds.cpp
+            src/fw/extra.cpp
+            src/fw/globals.cpp
+            src/fw/util.cpp
+    LIBS  serviolib cfglib
+         CMSIS::STM32::G431xx
+         HAL::STM32::G4::CORTEX
+         HAL::STM32::G4::OPAMP
+         HAL::STM32::G4::PWR
+         HAL::STM32::G4::PWREx
+         HAL::STM32::G4::RCC
+         HAL::STM32::G4::RCCEx
+         HAL::STM32::G4::ADC
+         HAL::STM32::G4::ADCEx
+         HAL::STM32::G4::DMA
+         HAL::STM32::G4::GPIO
+         HAL::STM32::G4::TIM
+         HAL::STM32::G4::TIMEx
+         HAL::STM32::G4::UART
+         HAL::STM32::G4::UARTEx
+         STM32::NoSys
     OPTS -Og)
 
   servio_add_board_executable(

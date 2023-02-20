@@ -9,25 +9,6 @@ function(servio_add_library)
 
 endfunction()
 
-function(servio_add_board_library)
-  cmake_parse_arguments(A "" "TARGET" "INCLUDE;SOURCES;LIBS;OPTS" ${ARGN})
-
-  servio_add_library(
-    TARGET ${A_TARGET}
-    INCLUDE ${A_INCLUDE}
-    SOURCES ${A_SOURCES}
-    LIBS ${A_LIBS}
-         CMSIS::STM32::G431xx
-         HAL::STM32::G4::CORTEX
-         HAL::STM32::G4::OPAMP
-         HAL::STM32::G4::PWR
-         HAL::STM32::G4::PWREx
-         HAL::STM32::G4::RCC
-         HAL::STM32::G4::RCCEx
-         STM32::NoSys
-    OPTS ${A_OPTS})
-endfunction()
-
 function(servio_add_board_executable)
   cmake_parse_arguments(A "" "TARGET;LINKER_SCRIPT" "INCLUDE;SOURCES;LIBS;OPTS"
                         ${ARGN})
