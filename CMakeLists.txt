@@ -51,9 +51,8 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     INCLUDE src/
     SOURCES src/fw/cfg_dispatcher.cpp
     LIBS serviolib
-         CMSIS::STM32::G431xx
-         HAL::STM32::G4::ADC
-         STM32::NoSys
+      CMSIS::STM32::G431xx
+      HAL::STM32::G4
     OPTS -O3)
 
   servio_add_library(
