@@ -21,6 +21,5 @@ function(servio_compile_options target)
             -Wnon-virtual-dtor
             -Wold-style-cast
             -Woverloaded-virtual
-            -fconcepts-diagnostics-depth=6
             >)
 endfunction()
