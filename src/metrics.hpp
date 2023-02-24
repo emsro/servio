@@ -27,7 +27,7 @@ public:
 
 private:
         // TODO: hardcoded constant is meh
-        float observation_deviation_ = 0.00005f;
+        float observation_deviation_ = 0.000005f;
         float process_deviation_     = 0.005f;
 
         std::chrono::milliseconds last_time_;
