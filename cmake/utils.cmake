@@ -1,7 +1,7 @@
 function(servio_add_library)
   cmake_parse_arguments(A "" "TARGET" "INCLUDE;SOURCES;LIBS;OPTS" ${ARGN})
 
-  add_library(${A_TARGET} STATIC ${A_SOURCES})
+  add_library(${A_TARGET} OBJECT ${A_SOURCES})
   target_include_directories(${A_TARGET} PUBLIC ${A_INCLUDE})
   servio_compile_options(${A_TARGET})
   target_link_libraries(${A_TARGET} PUBLIC ${A_LIBS})

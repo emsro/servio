@@ -50,10 +50,21 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     TARGET cfglib
     INCLUDE src/
     SOURCES src/fw/cfg_dispatcher.cpp
-    LIBS serviolib
-      CMSIS::STM32::G431xx
-      HAL::STM32::G4
+    LIBS serviolib CMSIS::STM32::G431xx HAL::STM32::G4
     OPTS -O3)
+
+  servio_add_library(
+    TARGET fwlib
+    SOURCES src/fw/drivers/acquisition.cpp
+            src/fw/drivers/comms.cpp
+            src/fw/drivers/debug_comms.cpp
+            src/fw/drivers/hbridge.cpp
+            src/fw/drivers/leds.cpp
+            src/fw/extra.cpp
+            src/fw/globals.cpp
+            src/fw/util.cpp
+    LIBS serviolib cfglib CMSIS::STM32::G431xx HAL::STM32::G4
+    OPTS -Og)
 
   servio_add_library(
     TARGET prototype2_board
@@ -66,37 +77,38 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             boards/prototype2/extra.cpp
             boards/prototype2/iuart.cpp
             boards/prototype2/timers.cpp
-            src/fw/drivers/acquisition.cpp
-            src/fw/drivers/comms.cpp
-            src/fw/drivers/debug_comms.cpp
-            src/fw/drivers/hbridge.cpp
-            src/fw/drivers/leds.cpp
-            src/fw/extra.cpp
-            src/fw/globals.cpp
-            src/fw/util.cpp
-    LIBS  serviolib cfglib
-         CMSIS::STM32::G431xx
-         HAL::STM32::G4::CORTEX
-         HAL::STM32::G4::OPAMP
-         HAL::STM32::G4::PWR
-         HAL::STM32::G4::PWREx
-         HAL::STM32::G4::RCC
-         HAL::STM32::G4::RCCEx
-         HAL::STM32::G4::ADC
-         HAL::STM32::G4::ADCEx
-         HAL::STM32::G4::DMA
-         HAL::STM32::G4::GPIO
-         HAL::STM32::G4::TIM
-         HAL::STM32::G4::TIMEx
-         HAL::STM32::G4::UART
-         HAL::STM32::G4::UARTEx
-         STM32::NoSys
+    LIBS serviolib cfglib CMSIS::STM32::G431xx HAL::STM32::G4
     OPTS -Og)
+
+  add_library(prototype2 STATIC)
+  target_link_libraries(
+    prototype2
+    PUBLIC prototype2_board
+           serviolib
+           cfglib
+           fwlib
+           STM32::NoSys)
+  target_link_libraries(prototype2 PRIVATE 
+           HAL::STM32::G4::CORTEX
+           HAL::STM32::G4::OPAMP
+           HAL::STM32::G4::PWR
+           HAL::STM32::G4::PWREx
+           HAL::STM32::G4::RCC
+           HAL::STM32::G4::RCCEx
+           HAL::STM32::G4::ADC
+           HAL::STM32::G4::ADCEx
+           HAL::STM32::G4::DMA
+           HAL::STM32::G4::GPIO
+           HAL::STM32::G4::TIM
+           HAL::STM32::G4::TIMEx
+           HAL::STM32::G4::UART
+           HAL::STM32::G4::UARTEx
+    )
 
   servio_add_board_executable(
     TARGET prototype2_fw
     SOURCES src/fw/main.cpp src/fw/it.cpp
-    LIBS prototype2_board
+    LIBS prototype2
     LINKER_SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/ld/STM32G431KBTx_FLASH.ld")
 
 else()
