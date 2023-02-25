@@ -2,6 +2,7 @@
 #include "fw/callbacks.hpp"
 #include "fw/drivers/acquisition.hpp"
 #include "fw/drivers/hbridge.hpp"
+#include "fw/drivers/leds.hpp"
 #include "fw/monitor.hpp"
 #include "fw/util.hpp"
 #include "indication.hpp"
@@ -27,6 +28,13 @@ struct core
           , mon( ms, ctl, acqui, ind )
         {
                 ind.tick( fw::ticks_ms() );
+        }
+
+        void tick( leds& leds, std::chrono::milliseconds now )
+        {
+                mon.tick( now );
+                ind.tick( now );
+                leds.update( ind.get_state() );
         }
 };
 

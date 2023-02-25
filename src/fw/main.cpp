@@ -57,8 +57,6 @@ int main()
                             fw::stop_exec();
                     } );
 
-                cor.mon.tick( fw::ticks_ms() );
-                cor.ind.tick( fw::ticks_ms() );
-                leds_ptr->update( cor.ind.get_state() );
+                cor.tick( *leds_ptr, fw::ticks_ms() );
         }
 }
