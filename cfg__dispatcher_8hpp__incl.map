@@ -1,13 +1,14 @@
 <map id="src/fw/cfg_dispatcher.hpp" name="src/fw/cfg_dispatcher.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="360,5,547,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="85,304,174,331"/>
-<area shape="rect" id="node3" href="$core_8hpp.html" title=" " alt="" coords="405,80,502,107"/>
-<area shape="rect" id="node6" href="$acquisition_8hpp.html" title=" " alt="" coords="437,229,608,256"/>
-<area shape="rect" id="node4" href="$control_8hpp.html" title=" " alt="" coords="23,229,118,256"/>
-<area shape="rect" id="node5" href="$callbacks_8hpp.html" title=" " alt="" coords="260,155,391,181"/>
-<area shape="rect" id="node7" href="$hbridge_8hpp.html" title=" " alt="" coords="142,229,290,256"/>
-<area shape="rect" id="node8" href="$util_8hpp.html" title=" " alt="" coords="256,304,347,331"/>
-<area shape="rect" id="node9" href="$metrics_8hpp.html" title=" " alt="" coords="315,229,413,256"/>
-<area shape="rect" id="node10" href="$monitor_8hpp.html" title=" " alt="" coords="517,155,635,181"/>
-<area shape="rect" id="node11" href="$indication_8hpp.html" title=" " alt="" coords="632,229,747,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="374,5,560,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="177,304,266,331"/>
+<area shape="rect" id="node3" href="$core_8hpp.html" title=" " alt="" coords="418,80,516,107"/>
+<area shape="rect" id="node6" href="$acquisition_8hpp.html" title=" " alt="" coords="438,229,608,256"/>
+<area shape="rect" id="node4" href="$control_8hpp.html" title=" " alt="" coords="22,229,117,256"/>
+<area shape="rect" id="node5" href="$callbacks_8hpp.html" title=" " alt="" coords="299,155,430,181"/>
+<area shape="rect" id="node7" href="$hbridge_8hpp.html" title=" " alt="" coords="265,229,413,256"/>
+<area shape="rect" id="node8" href="$util_8hpp.html" title=" " alt="" coords="411,304,502,331"/>
+<area shape="rect" id="node9" href="$metrics_8hpp.html" title=" " alt="" coords="142,229,240,256"/>
+<area shape="rect" id="node10" href="$leds_8hpp.html" title=" " alt="" coords="129,155,274,181"/>
+<area shape="rect" id="node11" href="$monitor_8hpp.html" title=" " alt="" coords="556,155,674,181"/>
+<area shape="rect" id="node12" href="$indication_8hpp.html" title=" " alt="" coords="632,229,747,256"/>
 </map>
