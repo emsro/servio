@@ -28,11 +28,9 @@ struct current_callback
 
         void operator()( uint32_t current, std::span< uint16_t > )
         {
-                std::chrono::milliseconds now{ HAL_GetTick() };
-
                 float c = conv.convert_current( current, hb.get_direction() );
 
-                ctl.current_irq( now, c );
+                ctl.current_irq( ticks_ms(), c );
                 hb.set_power( ctl.get_power() );
         }
 };
@@ -45,7 +43,7 @@ struct position_callback
 
         void operator()( uint32_t position )
         {
-                std::chrono::milliseconds now{ HAL_GetTick() };
+                std::chrono::milliseconds now = ticks_ms();
 
                 float p = conv.convert_position( position );
 
