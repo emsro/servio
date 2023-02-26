@@ -24,6 +24,10 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   include(CTest)
   enable_testing()
 
+  target_compile_options(
+    emlabcpp PUBLIC -DEMLABCPP_USE_LOGGING -DEMLABCPP_USE_NLOHMANN_JSON
+                    -DEMLABCPP_USE_TYPEID -DEMLABCPP_USE_GTEST)
+
   add_subdirectory(tests)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
@@ -81,29 +85,24 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     OPTS -Og)
 
   add_library(prototype2 STATIC)
+  target_link_libraries(prototype2 PUBLIC prototype2_board serviolib cfglib
+                                          fwlib STM32::NoSys)
   target_link_libraries(
     prototype2
-    PUBLIC prototype2_board
-           serviolib
-           cfglib
-           fwlib
-           STM32::NoSys)
-  target_link_libraries(prototype2 PRIVATE 
-           HAL::STM32::G4::CORTEX
-           HAL::STM32::G4::OPAMP
-           HAL::STM32::G4::PWR
-           HAL::STM32::G4::PWREx
-           HAL::STM32::G4::RCC
-           HAL::STM32::G4::RCCEx
-           HAL::STM32::G4::ADC
-           HAL::STM32::G4::ADCEx
-           HAL::STM32::G4::DMA
-           HAL::STM32::G4::GPIO
-           HAL::STM32::G4::TIM
-           HAL::STM32::G4::TIMEx
-           HAL::STM32::G4::UART
-           HAL::STM32::G4::UARTEx
-    )
+    PRIVATE HAL::STM32::G4::CORTEX
+            HAL::STM32::G4::OPAMP
+            HAL::STM32::G4::PWR
+            HAL::STM32::G4::PWREx
+            HAL::STM32::G4::RCC
+            HAL::STM32::G4::RCCEx
+            HAL::STM32::G4::ADC
+            HAL::STM32::G4::ADCEx
+            HAL::STM32::G4::DMA
+            HAL::STM32::G4::GPIO
+            HAL::STM32::G4::TIM
+            HAL::STM32::G4::TIMEx
+            HAL::STM32::G4::UART
+            HAL::STM32::G4::UARTEx)
 
   servio_add_board_executable(
     TARGET prototype2_fw
