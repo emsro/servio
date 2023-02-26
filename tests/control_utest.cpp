@@ -56,8 +56,7 @@ public:
                 ctl->velocity_irq( now, motor->velocity );
                 ctl->current_irq( now, motor->current );
 
-                EMLABCPP_INFO_LOG_VARS(
-                    power, motor->position(), motor->velocity, motor->current );
+                EMLABCPP_INFO_LOG_VARS( power, motor->position(), motor->velocity, motor->current );
         }
 
         std::chrono::microseconds         now = 0ms;

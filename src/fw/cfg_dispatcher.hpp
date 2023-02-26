@@ -9,8 +9,8 @@ namespace fw
 struct cfg_dispatcher
 {
 
-        cfg_map&     map;
-        core&        c;
+        cfg_map& map;
+        core&    c;
 
         void operator()( const cfg_keyval& kv )
         {
