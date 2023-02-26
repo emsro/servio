@@ -27,6 +27,7 @@ var annotated_dup =
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", "config_8hpp_structcfg__keyval" ],
     [ "command", "structcommand.html", "structcommand" ],
     [ "control", "classcontrol.html", "classcontrol" ],
+    [ "converter", "classconverter.html", "classconverter" ],
     [ "current_converter", "classcurrent__converter.html", "classcurrent__converter" ],
     [ "get_config_request", "structget__config__request.html", "structget__config__request" ],
     [ "get_config_response", "structget__config__response.html", "structget__config__response" ],

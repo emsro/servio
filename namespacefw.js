@@ -20,7 +20,7 @@ var namespacefw =
     [ "operator<<", "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e", null ],
     [ "operator<<", "namespacefw.html#aa77aaddd76d27d03433b9ced02d8a6f0", null ],
     [ "setup_leds_with_stop_callback", "namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1", null ],
-    [ "setup_standard_callbacks", "namespacefw.html#a7de90521979b7e15c9384d0e45456222", null ],
+    [ "setup_standard_callbacks", "namespacefw.html#a80edb23a86e32f7230a5eb32d0d3903f", null ],
     [ "stop_exec", "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021", null ],
     [ "ticks_ms", "namespacefw.html#a374c51e3b6ffdefff3e332856e34e8a8", null ],
     [ "STOP_CALLBACK", "namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3", null ]

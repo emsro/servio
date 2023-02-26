@@ -9,6 +9,9 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "control.hpp", "control_8hpp.html", [
       [ "control", "classcontrol.html", "classcontrol" ]
     ] ],
+    [ "converter.hpp", "converter_8hpp.html", [
+      [ "converter", "classconverter.html", "classconverter" ]
+    ] ],
     [ "indication.cpp", "indication_8cpp.html", null ],
     [ "indication.hpp", "indication_8hpp.html", "indication_8hpp" ],
     [ "kalman.hpp", "kalman_8hpp.html", "kalman_8hpp" ],

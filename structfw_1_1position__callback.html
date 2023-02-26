@@ -98,14 +98,14 @@ $(document).ready(function(){initNavTree('structfw_1_1position__callback.html','
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structfw_1_1position__callback__coll__graph.svg" width="174" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfw_1_1position__callback__coll__graph.svg" width="282" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a869edc823869c6df3950a00a3a352aab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1position__callback.html#a869edc823869c6df3950a00a3a352aab">operator()</a> (float position)</td></tr>
-<tr class="separator:a869edc823869c6df3950a00a3a352aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e0a28ed2c99d119dfac982e22b36fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1position__callback.html#a07e0a28ed2c99d119dfac982e22b36fd">operator()</a> (uint32_t position)</td></tr>
+<tr class="separator:a07e0a28ed2c99d119dfac982e22b36fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -113,10 +113,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:acd7de38edd1d7b137519b9016215a669"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5829ee7a5efad37fed77a5fddc9c719c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmetrics.html">metrics</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1position__callback.html#a5829ee7a5efad37fed77a5fddc9c719c">met</a></td></tr>
 <tr class="separator:a5829ee7a5efad37fed77a5fddc9c719c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667216c3b7583e1579cd5e293fd1c400"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classconverter.html">converter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1position__callback.html#a667216c3b7583e1579cd5e293fd1c400">conv</a></td></tr>
+<tr class="separator:a667216c3b7583e1579cd5e293fd1c400"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a869edc823869c6df3950a00a3a352aab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a869edc823869c6df3950a00a3a352aab">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a07e0a28ed2c99d119dfac982e22b36fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07e0a28ed2c99d119dfac982e22b36fd">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +129,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void fw::position_callback::operator() </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>position</em></td><td>)</td>
           <td></td>
         </tr>
@@ -139,11 +141,25 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">metrics::get_position()</a>, <a class="el" href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">metrics::get_velocity()</a>, <a class="el" href="structfw_1_1position__callback.html#a5829ee7a5efad37fed77a5fddc9c719c">met</a>, and <a class="el" href="classmetrics.html#abf5fc9b56d1a795e78c2bbf5a915c663">metrics::position_irq()</a>.</p>
+<p class="reference">References <a class="el" href="structfw_1_1position__callback.html#a667216c3b7583e1579cd5e293fd1c400">conv</a>, <a class="el" href="classconverter.html#afe113e985c85efd4101ef0601091ea19">converter::convert_position()</a>, <a class="el" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">metrics::get_position()</a>, <a class="el" href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">metrics::get_velocity()</a>, <a class="el" href="structfw_1_1position__callback.html#a5829ee7a5efad37fed77a5fddc9c719c">met</a>, and <a class="el" href="classmetrics.html#abf5fc9b56d1a795e78c2bbf5a915c663">metrics::position_irq()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a667216c3b7583e1579cd5e293fd1c400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a667216c3b7583e1579cd5e293fd1c400">&#9670;&nbsp;</a></span>conv</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classconverter.html">converter</a>&amp; fw::position_callback::conv</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="acd7de38edd1d7b137519b9016215a669"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd7de38edd1d7b137519b9016215a669">&#9670;&nbsp;</a></span>ctl</h2>
 
@@ -181,7 +197,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="structfw_1_1position__callback.html">position_callback</a></li>
-    <li class="footer">Generated on Sat Feb 25 2023 22:39:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Feb 26 2023 09:35:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -1,5 +1,6 @@
 <map id="fw::position_callback" name="fw::position_callback">
-<area shape="rect" id="node1" title=" " alt="" coords="9,95,166,121"/>
-<area shape="rect" id="node2" href="$classmetrics.html" title=" " alt="" coords="5,5,76,32"/>
-<area shape="rect" id="node3" href="$classcontrol.html" title=" " alt="" coords="101,5,167,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="70,95,227,121"/>
+<area shape="rect" id="node2" href="$classconverter.html" title=" " alt="" coords="5,5,89,32"/>
+<area shape="rect" id="node3" href="$classmetrics.html" title=" " alt="" coords="113,5,184,32"/>
+<area shape="rect" id="node4" href="$classcontrol.html" title=" " alt="" coords="209,5,275,32"/>
 </map>

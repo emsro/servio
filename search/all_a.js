@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['acq_18',['acq',['../structfw_1_1acquisition__period__callback.html#afbf04a6820ff8aea2c6da0ab198c0bee',1,'fw::acquisition_period_callback::acq()'],['../structfw_1_1cfg__dispatcher.html#ac8bbfcb8bcebb26cb760424c4e2da2f7',1,'fw::cfg_dispatcher::acq()']]],
+  ['acq_18',['acq',['../structfw_1_1acquisition__period__callback.html#afbf04a6820ff8aea2c6da0ab198c0bee',1,'fw::acquisition_period_callback']]],
   ['acquisition_19',['acquisition',['../classfw_1_1acquisition.html#a357bd496cbe6c83c01795624e0e36213',1,'fw::acquisition::acquisition()'],['../classfw_1_1acquisition.html',1,'fw::acquisition']]],
   ['acquisition_2ecpp_20',['acquisition.cpp',['../acquisition_8cpp.html',1,'']]],
   ['acquisition_2ehpp_21',['acquisition.hpp',['../acquisition_8hpp.html',1,'']]],

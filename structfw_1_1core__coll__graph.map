@@ -1,7 +1,8 @@
 <map id="fw::core" name="fw::core">
-<area shape="rect" id="node1" title=" " alt="" coords="182,95,254,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="234,95,306,121"/>
 <area shape="rect" id="node2" href="$classfw_1_1monitor.html" title=" " alt="" coords="5,5,100,32"/>
 <area shape="rect" id="node3" href="$classindication.html" title=" " alt="" coords="124,5,211,32"/>
 <area shape="rect" id="node4" href="$classmetrics.html" title=" " alt="" coords="235,5,305,32"/>
-<area shape="rect" id="node5" href="$classcontrol.html" title=" " alt="" coords="330,5,397,32"/>
+<area shape="rect" id="node5" href="$classconverter.html" title=" " alt="" coords="329,5,413,32"/>
+<area shape="rect" id="node6" href="$classcontrol.html" title=" " alt="" coords="438,5,505,32"/>
 </map>

@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['clear_5fstatus_569',['clear_status',['../classfw_1_1acquisition.html#a6a9e6e79c368266ef422a0fb2fdd0ce1',1,'fw::acquisition']]],
-  ['comms_570',['comms',['../classfw_1_1comms.html#a13fa399339e6458b86f924d66cd143ad',1,'fw::comms::comms()=default'],['../classfw_1_1comms.html#aae9c9a77e0c7bf8169e1afa4abc2021d',1,'fw::comms::comms(const comms &amp;)=delete'],['../classfw_1_1comms.html#ab824b741c165ecfd2d57f16ab9e30365',1,'fw::comms::comms(comms &amp;&amp;)=delete']]],
-  ['control_571',['control',['../classcontrol.html#a438d0927b342f5b0c1564636302862c6',1,'control']]],
-  ['convert_572',['convert',['../classcurrent__converter.html#af8ee6a671ab1c9dba0bddf9fa31363ad',1,'current_converter::convert()'],['../classposition__converter.html#a8dd0876bf0b68c3fd53600448ea9bd44',1,'position_converter::convert()'],['../classtemperature__converter.html#ae679a07cc2580eb49c02103d803a70a6',1,'temperature_converter::convert()'],['../classvoltage__converter.html#aec55e412a4bac44e226f4e743853c5ff',1,'voltage_converter::convert()']]],
-  ['core_573',['core',['../structfw_1_1core.html#ab731cf81cd99fdc6ce6867ed0583d3e4',1,'fw::core']]],
-  ['current_5fconverter_574',['current_converter',['../classcurrent__converter.html#a2b0b734b051bc88010f1a05cfc8b5102',1,'current_converter']]],
-  ['current_5firq_575',['current_irq',['../classcontrol.html#a4ce56691ce0b9c353b2321b7f2977e4a',1,'control']]]
+  ['clear_5fstatus_578',['clear_status',['../classfw_1_1acquisition.html#a6a9e6e79c368266ef422a0fb2fdd0ce1',1,'fw::acquisition']]],
+  ['comms_579',['comms',['../classfw_1_1comms.html#a13fa399339e6458b86f924d66cd143ad',1,'fw::comms::comms()=default'],['../classfw_1_1comms.html#aae9c9a77e0c7bf8169e1afa4abc2021d',1,'fw::comms::comms(const comms &amp;)=delete'],['../classfw_1_1comms.html#ab824b741c165ecfd2d57f16ab9e30365',1,'fw::comms::comms(comms &amp;&amp;)=delete']]],
+  ['control_580',['control',['../classcontrol.html#a438d0927b342f5b0c1564636302862c6',1,'control']]],
+  ['convert_581',['convert',['../classcurrent__converter.html#a295d7341ff2110bbd6a1d59b5036b012',1,'current_converter::convert()'],['../classposition__converter.html#abddb6f9f460d18cf995cecd97c0e2364',1,'position_converter::convert()'],['../classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085',1,'temperature_converter::convert()'],['../classvoltage__converter.html#aebd8ec998a9330d754a463858571701b',1,'voltage_converter::convert()']]],
+  ['convert_5fcurrent_582',['convert_current',['../classconverter.html#a8bf33e4a5c6de56c9d6c3210ff23e41d',1,'converter']]],
+  ['convert_5fposition_583',['convert_position',['../classconverter.html#afe113e985c85efd4101ef0601091ea19',1,'converter']]],
+  ['convert_5ftemp_584',['convert_temp',['../classconverter.html#ad0af0c9aef9c6aa7f8ae83bdce2030b5',1,'converter']]],
+  ['convert_5fvcc_585',['convert_vcc',['../classconverter.html#a9b8e8c8b5f461c994cf1e436c8bd2c37',1,'converter']]],
+  ['core_586',['core',['../structfw_1_1core.html#ab731cf81cd99fdc6ce6867ed0583d3e4',1,'fw::core']]],
+  ['current_5fconverter_587',['current_converter',['../classcurrent__converter.html#a2b0b734b051bc88010f1a05cfc8b5102',1,'current_converter']]],
+  ['current_5firq_588',['current_irq',['../classcontrol.html#a4ce56691ce0b9c353b2321b7f2977e4a',1,'control']]]
 ];
