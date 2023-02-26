@@ -16,7 +16,7 @@ struct dispatcher
         control&                  ctl;
         cfg_dispatcher&           cfg_disp;
         converter&                conv;
-        std::chrono::milliseconds now;
+        std::chrono::microseconds now;
 
         void handle_message( const switch_to_power_command& cmd )
         {

@@ -1,6 +1,6 @@
 #include "indication.hpp"
 
-bool indication::on_event( std::chrono::milliseconds now, const indication_event& e )
+bool indication::on_event( std::chrono::microseconds now, const indication_event& e )
 {
         switch ( e ) {
         case indication_event::VOLTAGE_LOW:
@@ -41,7 +41,7 @@ bool indication::on_event( std::chrono::milliseconds now, const indication_event
         return true;
 }
 
-void indication::tick( std::chrono::milliseconds now )
+void indication::tick( std::chrono::microseconds now )
 {
         tick_red( now );
 
@@ -59,7 +59,7 @@ void indication::tick( std::chrono::milliseconds now )
         }
 }
 
-void indication::tick_red( std::chrono::milliseconds now )
+void indication::tick_red( std::chrono::microseconds now )
 {
         if ( now < red_phase_ ) {
                 state_.red = false;
@@ -78,7 +78,7 @@ void indication::tick_red( std::chrono::milliseconds now )
                 return;
         }
 
-        std::chrono::milliseconds x = now % 100ms;
+        std::chrono::microseconds x = now % 100ms;
 
         state_.red = x < 50ms;
 }

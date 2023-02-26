@@ -12,8 +12,8 @@ TEST( Metrics, base )
 
         float                     angle    = 0.f;
         float                     velocity = 0.1f;
-        std::chrono::milliseconds t        = 0ms;
-        std::chrono::milliseconds tstep    = 10ms;
+        std::chrono::microseconds t        = 0ms;
+        std::chrono::microseconds tstep    = 10us;
 
         metrics met{ t, angle, { 0, 2 * pi } };
 

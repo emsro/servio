@@ -11,9 +11,9 @@ namespace fw
 
 void stop_exec();
 
-inline std::chrono::milliseconds ticks_ms()
+inline std::chrono::microseconds ticks_ms()
 {
-        return std::chrono::milliseconds{ HAL_GetTick() };
+        return std::chrono::microseconds{ HAL_GetTick() * 1000 };
 }
 
 template < typename... Components >

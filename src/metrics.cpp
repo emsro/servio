@@ -1,6 +1,6 @@
 #include "metrics.hpp"
 
-metrics::metrics( std::chrono::milliseconds time, float position, limits< float > position_range )
+metrics::metrics( std::chrono::microseconds time, float position, limits< float > position_range )
   : last_time_( time )
   , H_( kalman::get_observation_model() )
   , R_( kalman::get_observation_noise_covariance( observation_deviation_ ) )
@@ -17,13 +17,13 @@ void metrics::set_position_range( limits< float > position_range )
         sr_.size   = position_range.max - position_range.min;
 }
 
-void metrics::position_irq( std::chrono::milliseconds now, float position )
+void metrics::position_irq( std::chrono::microseconds now, float position )
 {
         if ( now == last_time_ ) {
                 return;
         }
 
-        std::chrono::milliseconds tdiff = now - last_time_;
+        std::chrono::microseconds tdiff = now - last_time_;
 
         auto sdiff = std::chrono::duration_cast< sec_time >( tdiff );
 

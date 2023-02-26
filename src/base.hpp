@@ -18,7 +18,6 @@ using protocol_position    = scaled< int32_t, 16 >;
 using protocol_voltage     = scaled< int32_t, 16 >;
 using protocol_temperature = scaled< int32_t, 16 >;
 
-// time in milliseconds
 using sec_time = std::chrono::duration< float >;
 
 template < typename T >

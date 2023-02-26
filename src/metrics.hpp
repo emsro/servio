@@ -9,11 +9,11 @@
 class metrics
 {
 public:
-        metrics( std::chrono::milliseconds time, float position, limits< float > position_range );
+        metrics( std::chrono::microseconds time, float position, limits< float > position_range );
 
         void set_position_range( limits< float > position_range );
 
-        void position_irq( std::chrono::milliseconds now, float position );
+        void position_irq( std::chrono::microseconds now, float position );
 
         float get_position() const
         {
@@ -30,7 +30,7 @@ private:
         float observation_deviation_ = 0.000005f;
         float process_deviation_     = 0.005f;
 
-        std::chrono::milliseconds last_time_;
+        std::chrono::microseconds last_time_;
 
         kalman::observation_model            H_;
         kalman::observation_noise_covariance R_;

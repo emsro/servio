@@ -43,7 +43,7 @@ struct position_callback
 
         void operator()( uint32_t position )
         {
-                std::chrono::milliseconds now = ticks_ms();
+                std::chrono::microseconds now = ticks_ms();
 
                 float p = conv.convert_position( position );
 

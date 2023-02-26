@@ -1,6 +1,8 @@
 #include "control.hpp"
 #include "motor.hpp"
 
+#include <emlabcpp/experimental/logging.h>
+#include <emlabcpp/experimental/logging/util.h>
 #include <emlabcpp/range.h>
 #include <gtest/gtest.h>
 
@@ -26,7 +28,7 @@ public:
                         },
                         .current_pid{
                             .p = 2048.f,
-                            .i = 512.f,
+                            .i = 0.512f,
                             .d = 1024.f,
                         },
                         .position_limits{
@@ -53,9 +55,12 @@ public:
                 ctl->position_irq( now, motor->position() );
                 ctl->velocity_irq( now, motor->velocity );
                 ctl->current_irq( now, motor->current );
+
+                EMLABCPP_INFO_LOG_VARS(
+                    power, motor->position(), motor->velocity, motor->current );
         }
 
-        std::chrono::milliseconds         now = 0ms;
+        std::chrono::microseconds         now = 0ms;
         std::optional< simple_motor_sim > motor;
         std::optional< control >          ctl;
 };

@@ -22,7 +22,7 @@ struct core
         indication ind;
         monitor    mon;
 
-        core( std::chrono::milliseconds ms, acquisition& acqui )
+        core( std::chrono::microseconds ms, acquisition& acqui )
           : ctl( ms, ctl::config{} )
           , conv()
           , met( ms, 0.f, { 0.f, 2 * pi } )
@@ -32,7 +32,7 @@ struct core
                 ind.tick( fw::ticks_ms() );
         }
 
-        void tick( leds& leds, std::chrono::milliseconds now )
+        void tick( leds& leds, std::chrono::microseconds now )
         {
                 mon.tick( now );
                 ind.tick( now );
