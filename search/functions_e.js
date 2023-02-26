@@ -31,9 +31,9 @@ var searchData=
   ['start_683',['start',['../classfw_1_1debug__comms.html#a76d84670331a8bb3b587bbb4baa38299',1,'fw::debug_comms::start()'],['../classfw_1_1acquisition.html#afd5472214381a4c3bfeb58fb780f012e',1,'fw::acquisition::start()'],['../classfw_1_1leds.html#a5ecdad84289337fad8fb641b94aa0289',1,'fw::leds::start()'],['../classfw_1_1hbridge.html#a0e184b0fdbc54d2f63b9ecc79661f53c',1,'fw::hbridge::start()'],['../classfw_1_1comms.html#a06e8bf851a9439dec92ad0e24042de9b',1,'fw::comms::start()']]],
   ['stop_5fexec_684',['stop_exec',['../namespacefw.html#a8e0b580f4dd8010ffb0db37533802021',1,'fw']]],
   ['svc_5fhandler_685',['SVC_Handler',['../it_8cpp.html#a3e5ddb3df0d62f2dc357e64a3f04a6ce',1,'it.cpp']]],
-  ['switch_5fto_5fcurrent_5fcontrol_686',['switch_to_current_control',['../classcontrol.html#ad0a50a880063eefd3d78b68870d066c1',1,'control']]],
-  ['switch_5fto_5fposition_5fcontrol_687',['switch_to_position_control',['../classcontrol.html#a6b8d24e8a7e65d71fa052665cf99108d',1,'control']]],
+  ['switch_5fto_5fcurrent_5fcontrol_686',['switch_to_current_control',['../classcontrol.html#a8400f1f0c97c9e24a78371a2573f42c5',1,'control']]],
+  ['switch_5fto_5fposition_5fcontrol_687',['switch_to_position_control',['../classcontrol.html#a707f76983d16c1282d6ea384bedb1be3',1,'control']]],
   ['switch_5fto_5fpower_5fcontrol_688',['switch_to_power_control',['../classcontrol.html#aa89e2447e7f66b5bb14653f60e80420a',1,'control']]],
-  ['switch_5fto_5fvelocity_5fcontrol_689',['switch_to_velocity_control',['../classcontrol.html#a3e12438ce05a77ac4377b6f31712ae48',1,'control']]],
+  ['switch_5fto_5fvelocity_5fcontrol_689',['switch_to_velocity_control',['../classcontrol.html#ad6ad90a315b034167a12e214b00f707b',1,'control']]],
   ['systick_5fhandler_690',['SysTick_Handler',['../it_8cpp.html#aafb8d3e0fd06464b1ee0ae1edbc3c7d6',1,'it.cpp']]]
 ];

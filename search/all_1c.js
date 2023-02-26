@@ -2,7 +2,7 @@ var searchData=
 [
   ['uart_421',['uart',['../classfw_1_1comms.html#a840a4c2e8713a24767192001fca045e9',1,'fw::comms::handles::uart()'],['../classfw_1_1debug__comms.html#a0c869d7a8470ce3fa856e9acd1afb941',1,'fw::debug_comms::handles::uart()']]],
   ['uart_5firq_422',['uart_irq',['../classfw_1_1comms.html#a63c946004a0c6ba281202c2879f725c2',1,'fw::comms::uart_irq()'],['../classfw_1_1debug__comms.html#a3b6673ba522b825dda092af7c1f2c842',1,'fw::debug_comms::uart_irq()']]],
-  ['update_423',['update',['../classctl_1_1pid__module.html#ac5eaa6fde73f1553f93bc3b2f3ca05ab',1,'ctl::pid_module::update()'],['../classfw_1_1leds.html#a03c2abcefc5a64034ae4170c9173cd28',1,'fw::leds::update()'],['../namespacekalman.html#a34319bc108a66f1a0ed345be44da0365',1,'kalman::update()']]],
+  ['update_423',['update',['../classctl_1_1pid__module.html#a0dac31717d11d1e5f0a55947749626b8',1,'ctl::pid_module::update()'],['../classfw_1_1leds.html#a03c2abcefc5a64034ae4170c9173cd28',1,'fw::leds::update()'],['../namespacekalman.html#a34319bc108a66f1a0ed345be44da0365',1,'kalman::update()']]],
   ['usagefault_5fhandler_424',['UsageFault_Handler',['../it_8cpp.html#a1d98923de2ed6b7309b66f9ba2971647',1,'it.cpp']]],
   ['use_5fhal_5fadc_5fregister_5fcallbacks_425',['USE_HAL_ADC_REGISTER_CALLBACKS',['../stm32g4xx__hal__conf_8h.html#acc33abd5393affd16cc4a1397839dfe4',1,'stm32g4xx_hal_conf.h']]],
   ['use_5fhal_5fcomp_5fregister_5fcallbacks_426',['USE_HAL_COMP_REGISTER_CALLBACKS',['../stm32g4xx__hal__conf_8h.html#a94f0f5f870b8e45eab42cfe77e4210ed',1,'stm32g4xx_hal_conf.h']]],

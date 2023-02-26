@@ -22,6 +22,6 @@ var namespacefw =
     [ "setup_leds_with_stop_callback", "namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1", null ],
     [ "setup_standard_callbacks", "namespacefw.html#a80edb23a86e32f7230a5eb32d0d3903f", null ],
     [ "stop_exec", "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021", null ],
-    [ "ticks_ms", "namespacefw.html#a374c51e3b6ffdefff3e332856e34e8a8", null ],
+    [ "ticks_ms", "namespacefw.html#a34194d13b8eb3917618a24854d56552b", null ],
     [ "STOP_CALLBACK", "namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3", null ]
 ];

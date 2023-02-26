@@ -52,15 +52,15 @@ var searchData=
   ['svc_5fhandler_390',['SVC_Handler',['../it_8cpp.html#a3e5ddb3df0d62f2dc357e64a3f04a6ce',1,'it.cpp']]],
   ['switch_5fto_5fcurrent_5fcommand_391',['switch_to_current_command',['../protocol_8hpp.html#adbdbc999a95c12dea4c8ec23b59cfe36',1,'protocol.hpp']]],
   ['switch_5fto_5fcurrent_5fcontrol_392',['SWITCH_TO_CURRENT_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dba7918aa3c75a0f26a2ae82bc79199c1a1',1,'protocol.hpp']]],
-  ['switch_5fto_5fcurrent_5fcontrol_393',['switch_to_current_control',['../classcontrol.html#ad0a50a880063eefd3d78b68870d066c1',1,'control']]],
+  ['switch_5fto_5fcurrent_5fcontrol_393',['switch_to_current_control',['../classcontrol.html#a8400f1f0c97c9e24a78371a2573f42c5',1,'control']]],
   ['switch_5fto_5fposition_5fcommand_394',['switch_to_position_command',['../protocol_8hpp.html#a584abed06c6101de7570d4a627c095e9',1,'protocol.hpp']]],
-  ['switch_5fto_5fposition_5fcontrol_395',['switch_to_position_control',['../classcontrol.html#a6b8d24e8a7e65d71fa052665cf99108d',1,'control']]],
+  ['switch_5fto_5fposition_5fcontrol_395',['switch_to_position_control',['../classcontrol.html#a707f76983d16c1282d6ea384bedb1be3',1,'control']]],
   ['switch_5fto_5fposition_5fcontrol_396',['SWITCH_TO_POSITION_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaf157f27d7d5afbfde6fb9bb05da46f22',1,'protocol.hpp']]],
   ['switch_5fto_5fpower_5fcommand_397',['switch_to_power_command',['../protocol_8hpp.html#a571e538e48018c69906649ed84ebf736',1,'protocol.hpp']]],
   ['switch_5fto_5fpower_5fcontrol_398',['switch_to_power_control',['../classcontrol.html#aa89e2447e7f66b5bb14653f60e80420a',1,'control']]],
   ['switch_5fto_5fpower_5fcontrol_399',['SWITCH_TO_POWER_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaa635eecbec826a268c7c4282c266d292',1,'protocol.hpp']]],
   ['switch_5fto_5fvelocity_5fcommand_400',['switch_to_velocity_command',['../protocol_8hpp.html#ae930371d326bd7c9b87253d7889c5a5b',1,'protocol.hpp']]],
-  ['switch_5fto_5fvelocity_5fcontrol_401',['switch_to_velocity_control',['../classcontrol.html#a3e12438ce05a77ac4377b6f31712ae48',1,'control']]],
+  ['switch_5fto_5fvelocity_5fcontrol_401',['switch_to_velocity_control',['../classcontrol.html#ad6ad90a315b034167a12e214b00f707b',1,'control']]],
   ['switch_5fto_5fvelocity_5fcontrol_402',['SWITCH_TO_VELOCITY_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaa8fad798c5d300a31b8cc8bb90e5dbd3',1,'protocol.hpp']]],
   ['systick_5fhandler_403',['SysTick_Handler',['../it_8cpp.html#aafb8d3e0fd06464b1ee0ae1edbc3c7d6',1,'it.cpp']]]
 ];
