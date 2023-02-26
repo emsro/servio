@@ -33,43 +33,23 @@ void acquisition::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
         switch ( adc_state_ ) {
         case READ_POSITION:
                 HAL_ADC_Stop_IT( &h_.adc );
-                position_ = pos_conver_.convert( HAL_ADC_GetValue( &h_.adc ) );
+                position_ = HAL_ADC_GetValue( &h_.adc );
                 if ( position_cb_ ) {
                         position_cb_( position_ );
                 }
                 break;
         case READ_VCC:
                 HAL_ADC_Stop_IT( &h_.adc );
-                vcc_ = volt_conver_.convert( HAL_ADC_GetValue( &h_.adc ) );
+                vcc_ = HAL_ADC_GetValue( &h_.adc );
                 break;
         case READ_TEMP:
                 HAL_ADC_Stop_IT( &h_.adc );
-                temp_ = temp_conver_.convert( HAL_ADC_GetValue( &h_.adc ) );
+                temp_ = HAL_ADC_GetValue( &h_.adc );
                 break;
         case READ_CURRENT:
                 break;
         }
         switch_adc_channel( READ_CURRENT );
-}
-void acquisition::set_position_cfg(
-    uint16_t low_value,
-    float    low_angle,
-    uint16_t high_value,
-    float    high_angle )
-{
-        pos_conver_ = position_converter{ low_value, low_angle, high_value, high_angle };
-}
-void acquisition::set_current_cfg( float scale, float offset )
-{
-        curr_conver_ = current_converter{ scale, offset };
-}
-void acquisition::set_temp_cfg( float scale, float offset )
-{
-        temp_conver_ = temperature_converter{ scale, offset };
-}
-void acquisition::set_vcc_cfg( float scale )
-{
-        volt_conver_ = voltage_converter{ scale };
 }
 
 void acquisition::start()
@@ -148,7 +128,7 @@ const acquisition::position_callback& acquisition::get_position_callback()
         return position_cb_;
 }
 
-void acquisition::period_elapsed_irq( int8_t power_direction )
+void acquisition::period_elapsed_irq()
 {
         HAL_StatusTypeDef res           = HAL_OK;
         std::size_t       next_buffer_i = ( current_sequence_i_ + 1 ) % current_sequences_.size();
@@ -177,13 +157,11 @@ void acquisition::period_elapsed_irq( int8_t power_direction )
                         status_.buffer_was_full = true;
                 }
 
-                em::view dview = em::view_n( &next_se.buffer[0], next_se.used );
+                std::span readings( &next_se.buffer[0], next_se.used );
 
-                current_ = em::avg( dview );
-                current_ = curr_conver_.convert( current_ );
-                current_ *= power_direction;
+                current_ = em::avg( readings );
                 if ( current_cb_ ) {
-                        current_cb_( current_ );
+                        current_cb_( current_, readings );
                 }
                 current_sequence_i_ = next_buffer_i;
 

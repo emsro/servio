@@ -11,7 +11,7 @@ public:
         {
         }
 
-        float convert( uint32_t val )
+        float convert( uint32_t val ) const
         {
                 return static_cast< float >( val ) * scale_ + offset_;
         }

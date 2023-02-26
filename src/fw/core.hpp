@@ -17,15 +17,17 @@ struct core
 {
 
         control    ctl;
+        converter  conv;
         metrics    met;
         indication ind;
         monitor    mon;
 
         core( std::chrono::milliseconds ms, acquisition& acqui )
           : ctl( ms, ctl::config{} )
-          , met( ms, acqui.get_position(), { 0.f, 2 * pi } )
+          , conv()
+          , met( ms, 0.f, { 0.f, 2 * pi } )
           , ind( ms )
-          , mon( ms, ctl, acqui, ind )
+          , mon( ms, ctl, acqui, ind, conv )
         {
                 ind.tick( fw::ticks_ms() );
         }
@@ -38,12 +40,17 @@ struct core
         }
 };
 
-inline void setup_standard_callbacks( hbridge& hb, acquisition& acqui, control& ctl, metrics& met )
+inline void setup_standard_callbacks(
+    hbridge&     hb,
+    acquisition& acqui,
+    control&     ctl,
+    metrics&     met,
+    converter&   conv )
 {
 
-        hb.set_period_callback( acquisition_period_callback{ acqui, hb } );
-        acqui.set_current_callback( current_callback{ hb, ctl } );
-        acqui.set_position_callback( position_callback{ ctl, met } );
+        hb.set_period_callback( acquisition_period_callback{ acqui } );
+        acqui.set_current_callback( current_callback{ hb, ctl, conv } );
+        acqui.set_position_callback( position_callback{ ctl, met, conv } );
 }
 
 }  // namespace fw

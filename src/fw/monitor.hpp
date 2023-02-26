@@ -1,4 +1,5 @@
 
+#include "converter.hpp"
 #include "fw/drivers/acquisition.hpp"
 #include "indication.hpp"
 
@@ -10,10 +11,16 @@ namespace fw
 class monitor
 {
 public:
-        monitor( std::chrono::milliseconds now, control& ctl, acquisition& acqui, indication& indi )
+        monitor(
+            std::chrono::milliseconds now,
+            const control&            ctl,
+            const acquisition&        acqui,
+            indication&               indi,
+            const converter&          conv )
           : ctl_( ctl )
           , acqui_( acqui )
           , indi_( indi )
+          , conv_( conv )
         {
                 indi_.on_event( now, indication_event::BOOTING );
         }
@@ -32,11 +39,13 @@ public:
         {
                 indi_.on_event( now, indication_event::HEARTBEAT );
 
-                if ( acqui_.get_vcc() < min_vcc_ ) {
+                float vcc = conv_.convert_vcc( acqui_.get_vcc() );
+                if ( vcc < min_vcc_ ) {
                         indi_.on_event( now, indication_event::VOLTAGE_LOW );
                 }
 
-                if ( acqui_.get_temp() > max_tmp_ ) {
+                float temp = conv_.convert_temp( acqui_.get_temp() );
+                if ( temp > max_tmp_ ) {
                         indi_.on_event( now, indication_event::TEMPERATURE_HIGH );
                 }
 
@@ -48,9 +57,10 @@ public:
         }
 
 private:
-        control&     ctl_;
-        acquisition& acqui_;
-        indication&  indi_;
+        const control&     ctl_;
+        const acquisition& acqui_;
+        indication&        indi_;
+        const converter&   conv_;
 
         float min_vcc_ = 0.f;
         float max_tmp_ = 90.f;

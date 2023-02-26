@@ -40,7 +40,7 @@ void cfg_dispatcher::apply( const cfg_key& key )
                 [[fallthrough]];
         case POSITION_CONV_LOWER_SETPOINT_VALUE:
         case POSITION_CONV_HIGHER_SETPOINT_VALUE:
-                acq.set_position_cfg(
+                c.conv.set_position_cfg(
                     map.get_val< POSITION_CONV_LOWER_SETPOINT_VALUE >(),
                     map.get_val< POSITION_CONV_LOWER_SETPOINT_ANGLE >(),
                     map.get_val< POSITION_CONV_HIGHER_SETPOINT_VALUE >(),
@@ -48,16 +48,16 @@ void cfg_dispatcher::apply( const cfg_key& key )
                 break;
         case CURRENT_CONV_SCALE:
         case CURRENT_CONV_OFFSET:
-                acq.set_current_cfg(
+                c.conv.set_current_cfg(
                     map.get_val< CURRENT_CONV_SCALE >(), map.get_val< CURRENT_CONV_OFFSET >() );
                 break;
         case TEMP_CONV_SCALE:
         case TEMP_CONV_OFFSET:
-                acq.set_temp_cfg(
+                c.conv.set_temp_cfg(
                     map.get_val< TEMP_CONV_SCALE >(), map.get_val< TEMP_CONV_OFFSET >() );
                 break;
         case VOLTAGE_CONV_SCALE:
-                acq.set_vcc_cfg( map.get_val< VOLTAGE_CONV_SCALE >() );
+                c.conv.set_vcc_cfg( map.get_val< VOLTAGE_CONV_SCALE >() );
                 break;
         case CONTROL_CURRENT_LOOP_P:
         case CONTROL_CURRENT_LOOP_I:

@@ -31,9 +31,9 @@ int main()
         fw::core cor{ fw::ticks_ms(), *acquisition_ptr };
         leds_ptr->update( cor.ind.get_state() );
 
-        fw::setup_standard_callbacks( *hbridge_ptr, *acquisition_ptr, cor.ctl, cor.met );
+        fw::setup_standard_callbacks( *hbridge_ptr, *acquisition_ptr, cor.ctl, cor.met, cor.conv );
 
-        fw::cfg_dispatcher cfg_dis{ cfg, *acquisition_ptr, cor };
+        fw::cfg_dispatcher cfg_dis{ cfg, cor };
         cfg_dis.full_apply();
         brd::apply_config( cfg_dis );
 
@@ -41,7 +41,14 @@ int main()
 
         cor.ind.on_event( fw::ticks_ms(), indication_event::INITIALIZED );
 
-        fw::dispatcher dis{ *comms_ptr, *acquisition_ptr, cor.ctl, cfg_dis, fw::ticks_ms() };
+        fw::dispatcher dis{
+            *comms_ptr,
+            *hbridge_ptr,
+            *acquisition_ptr,
+            cor.ctl,
+            cfg_dis,
+            cor.conv,
+            fw::ticks_ms() };
 
         while ( true ) {
                 em::match(

@@ -40,16 +40,6 @@ void control::set_limits( control_loop cl, limits< float > lim )
         }
 }
 
-bool control::is_engaged()
-{
-        return engaged_;
-}
-
-control_mode control::get_mode()
-{
-        return state_;
-}
-
 void control::disengage()
 {
         switch_to_power_control( 0 );

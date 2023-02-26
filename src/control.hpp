@@ -15,8 +15,14 @@ public:
         void set_pid( control_loop, ctl::pid_coefficients coeffs );
         void set_limits( control_loop, limits< float > lim );
 
-        bool         is_engaged();
-        control_mode get_mode();
+        bool is_engaged() const
+        {
+                return engaged_;
+        }
+        control_mode get_mode() const
+        {
+                return state_;
+        }
 
         void disengage();
 

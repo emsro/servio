@@ -12,7 +12,7 @@ public:
         {
         }
 
-        float convert( float input )
+        float convert( float input ) const
         {
                 return input * scale_ + offset_;
         }

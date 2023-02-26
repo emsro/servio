@@ -1,8 +1,3 @@
-#include "conversion/current.hpp"
-#include "conversion/position.hpp"
-#include "conversion/temperature.hpp"
-#include "conversion/voltage.hpp"
-
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/static_function.h>
 #include <emlabcpp/view.h>
@@ -52,8 +47,8 @@ public:
                 std::size_t used;
         };
 
-        using current_callback  = em::static_function< void( float ), 16 >;
-        using position_callback = em::static_function< void( float ), 16 >;
+        using current_callback = em::static_function< void( uint32_t, std::span< uint16_t > ), 16 >;
+        using position_callback = em::static_function< void( uint32_t ), 16 >;
 
         acquisition() = default;
 
@@ -63,18 +58,9 @@ public:
         void adc_conv_cplt_irq( ADC_HandleTypeDef* h );
         void adc_error_irq( ADC_HandleTypeDef* h );
         void dma_irq();
-        void period_elapsed_irq( int8_t power_direction );
+        void period_elapsed_irq();
 
         void start();
-
-        void set_position_cfg(
-            uint16_t low_value,
-            float    low_angle,
-            uint16_t high_value,
-            float    high_angle );
-        void set_current_cfg( float scale, float offset );
-        void set_temp_cfg( float scale, float offset );
-        void set_vcc_cfg( float scale );
 
         // Callback is called each time current measurement of one PWM pulse.
         // The callback gets average current during that pulse.
@@ -89,19 +75,19 @@ public:
         void                     set_position_callback( position_callback );
         const position_callback& get_position_callback();
 
-        float get_current() const
+        uint32_t get_current() const
         {
                 return current_;
         }
-        float get_position() const
+        uint32_t get_position() const
         {
                 return position_;
         }
-        float get_vcc() const
+        uint32_t get_vcc() const
         {
                 return vcc_;
         }
-        float get_temp() const
+        uint32_t get_temp() const
         {
                 return vcc_;
         }
@@ -126,10 +112,10 @@ private:
         current_callback  current_cb_;
         position_callback position_cb_;
 
-        float position_;
-        float temp_;
-        float vcc_;
-        float current_;
+        uint32_t position_;
+        uint32_t temp_;
+        uint32_t vcc_;
+        uint32_t current_;
 
         std::size_t                       period_i_           = 0;
         std::size_t                       current_sequence_i_ = 0;
@@ -138,11 +124,6 @@ private:
         handles    h_{};
         adc_states adc_state_  = READ_CURRENT;
         adc_states side_state_ = READ_POSITION;
-
-        position_converter    pos_conver_;
-        current_converter     curr_conver_;
-        temperature_converter temp_conver_;
-        voltage_converter     volt_conver_;
 };
 
 }  // namespace fw

@@ -18,7 +18,7 @@ public:
                 offset_          = lower_angle - lower_value * scale_;
         }
 
-        float convert( uint32_t val )
+        float convert( uint32_t val ) const
         {
                 return static_cast< float >( val ) * scale_ + offset_;
         }

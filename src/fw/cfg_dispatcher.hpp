@@ -1,6 +1,5 @@
 #include "config.hpp"
 #include "fw/core.hpp"
-#include "fw/drivers/acquisition.hpp"
 
 #pragma once
 
@@ -11,7 +10,6 @@ struct cfg_dispatcher
 {
 
         cfg_map&     map;
-        acquisition& acq;
         core&        c;
 
         void operator()( const cfg_keyval& kv )

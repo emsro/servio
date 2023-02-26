@@ -11,9 +11,11 @@ namespace fw
 struct dispatcher
 {
         comms&                    comm;
+        hbridge&                  hb;
         acquisition&              acquistion;
         control&                  ctl;
         cfg_dispatcher&           cfg_disp;
+        converter&                conv;
         std::chrono::milliseconds now;
 
         void handle_message( const switch_to_power_command& cmd )
@@ -38,22 +40,25 @@ struct dispatcher
 
         void handle_message( const get_current_command& )
         {
-                comm.send( get_current_response{ acquistion.get_current() } );
+                // TODO: add facade/adapter over conv/acqui?
+                comm.send( get_current_response{
+                    conv.convert_current( acquistion.get_current(), hb.get_direction() ) } );
         }
 
         void handle_message( const get_vcc_command& )
         {
-                comm.send( get_vcc_response{ acquistion.get_vcc() } );
+                comm.send( get_vcc_response{ conv.convert_vcc( acquistion.get_vcc() ) } );
         }
 
         void handle_message( const get_temp_command& )
         {
-                comm.send( get_temp_response{ acquistion.get_temp() } );
+                comm.send( get_temp_response{ conv.convert_temp( acquistion.get_temp() ) } );
         }
 
         void handle_message( const get_position_command& )
         {
-                comm.send( get_position_response{ acquistion.get_position() } );
+                comm.send(
+                    get_position_response{ conv.convert_position( acquistion.get_position() ) } );
         }
 
         void handle_message( const set_config& req )
