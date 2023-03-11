@@ -99,7 +99,7 @@ consteval cfg_map get_default_config()
             cfg_reg< CONTROL_CURRENT_LIM_MIN, float >{ -3.f },
             cfg_reg< CONTROL_CURRENT_LIM_MAX, float >{ 3.f },
             cfg_reg< CONTROL_VELOCITY_LOOP_P, float >{ 0.01f },
-            cfg_reg< CONTROL_VELOCITY_LOOP_I, float >{ 0.0000001f },
+            cfg_reg< CONTROL_VELOCITY_LOOP_I, float >{ 0.0000002f },
             cfg_reg< CONTROL_VELOCITY_LOOP_D, float >{ 0.f },
             cfg_reg< CONTROL_VELOCITY_LIM_MIN, float >{ -3.f },
             cfg_reg< CONTROL_VELOCITY_LIM_MAX, float >{ 3.f },
