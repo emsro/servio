@@ -22,12 +22,12 @@ struct simple_motor_sim
 
         float last_t = 0.;
 
-        void reset_time( std::chrono::microseconds now )
+        void reset_time( microseconds now )
         {
                 last_t = static_cast< float >( now.count() ) / 1000'000.f;
         }
 
-        void apply_power( std::chrono::microseconds now, int16_t p )
+        void apply_power( microseconds now, int16_t p )
         {
                 auto t = static_cast< float >( now.count() ) / 1000'000.f;
 

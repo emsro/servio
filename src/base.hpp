@@ -9,14 +9,29 @@
 
 namespace em = emlabcpp;
 
-using namespace std::chrono_literals;
-
 using protocol_power       = int16_t;
 using protocol_current     = scaled< int32_t, 16 >;
 using protocol_velocity    = scaled< int32_t, 16 >;
 using protocol_position    = scaled< int32_t, 16 >;
 using protocol_voltage     = scaled< int32_t, 16 >;
 using protocol_temperature = scaled< int32_t, 16 >;
+
+using microseconds = std::chrono::duration< uint32_t, std::micro >;
+
+constexpr microseconds operator""_s( unsigned long long int secs )
+{
+        return microseconds{ static_cast< uint32_t >( secs * 1'000'000u ) };
+}
+
+constexpr microseconds operator""_ms( unsigned long long int msecs )
+{
+        return microseconds{ static_cast< uint32_t >( msecs * 1'000u ) };
+}
+
+constexpr microseconds operator""_us( unsigned long long int usecs )
+{
+        return microseconds{ static_cast< uint32_t >( usecs ) };
+}
 
 using sec_time = std::chrono::duration< float >;
 

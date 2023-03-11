@@ -11,7 +11,7 @@ class ControlFixture : public ::testing::Test
 public:
         void SetUp()
         {
-                now = 0ms;
+                now = 0_ms;
                 motor.emplace();
                 ctl.emplace(
                     now,
@@ -59,7 +59,7 @@ public:
                 EMLABCPP_INFO_LOG_VARS( power, motor->position(), motor->velocity, motor->current );
         }
 
-        std::chrono::microseconds         now = 0ms;
+        microseconds                      now = 0_ms;
         std::optional< simple_motor_sim > motor;
         std::optional< control >          ctl;
 };
@@ -73,7 +73,7 @@ TEST_F( ControlFixture, current )
                 for ( std::size_t i : em::range( 100u ) ) {
                         std::ignore = i;
                         tick();
-                        now += 5ms;
+                        now += 5_ms;
                 }
 
                 EXPECT_NEAR( motor->current, curr, 0.005f );
@@ -90,7 +90,7 @@ TEST_F( ControlFixture, velocity )
                         std::ignore = i;
                         std::cout << *motor << std::endl;
                         tick();
-                        now += 5ms;
+                        now += 5_ms;
                 }
 
                 EXPECT_NEAR( motor->velocity, vel, 0.015f );
@@ -107,7 +107,7 @@ TEST_F( ControlFixture, position )
                         std::ignore = i;
                         std::cout << *motor << std::endl;
                         tick();
-                        now += 5ms;
+                        now += 5_ms;
                 }
 
                 EXPECT_NEAR( motor->position(), angle, 0.015f );

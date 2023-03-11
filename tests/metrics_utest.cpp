@@ -10,10 +10,10 @@ TEST( Metrics, base )
         float                             observation_deviation = 0.005f;
         std::normal_distribution< float > od{ 0, observation_deviation };
 
-        float                     angle    = 0.f;
-        float                     velocity = 0.1f;
-        std::chrono::microseconds t        = 0ms;
-        std::chrono::microseconds tstep    = 10us;
+        float        angle    = 0.f;
+        float        velocity = 0.1f;
+        microseconds t        = 0_ms;
+        microseconds tstep    = 10_ms;
 
         metrics met{ t, angle, { 0, 2 * pi } };
 
@@ -25,7 +25,7 @@ TEST( Metrics, base )
 
                 met.position_irq( t, angle );
 
-                if ( t < 200ms ) {  // we kinda ignore first 200ms
+                if ( t < 200_ms ) {  // we kinda ignore first 200ms
                         continue;
                 }
 

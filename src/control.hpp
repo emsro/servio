@@ -10,7 +10,7 @@ class control
 {
 
 public:
-        control( std::chrono::microseconds, ctl::config cfg );
+        control( microseconds, ctl::config cfg );
 
         void set_pid( control_loop, ctl::pid_coefficients coeffs );
         void set_limits( control_loop, limits< float > lim );
@@ -27,13 +27,13 @@ public:
         void disengage();
 
         void switch_to_power_control( int16_t power );
-        void switch_to_current_control( std::chrono::microseconds now, float current );
-        void switch_to_velocity_control( std::chrono::microseconds now, float velocity );
-        void switch_to_position_control( std::chrono::microseconds now, float position );
+        void switch_to_current_control( microseconds now, float current );
+        void switch_to_velocity_control( microseconds now, float velocity );
+        void switch_to_position_control( microseconds now, float position );
 
-        void position_irq( std::chrono::microseconds now, float position );
-        void velocity_irq( std::chrono::microseconds now, float velocity );
-        void current_irq( std::chrono::microseconds now, float current );
+        void position_irq( microseconds now, float position );
+        void velocity_irq( microseconds now, float velocity );
+        void current_irq( microseconds now, float current );
 
         int16_t get_power() const;
 

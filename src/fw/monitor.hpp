@@ -12,11 +12,11 @@ class monitor
 {
 public:
         monitor(
-            std::chrono::microseconds now,
-            const control&            ctl,
-            const acquisition&        acqui,
-            indication&               indi,
-            const converter&          conv )
+            microseconds              now,
+            const control&     ctl,
+            const acquisition& acqui,
+            indication&        indi,
+            const converter&   conv )
           : ctl_( ctl )
           , acqui_( acqui )
           , indi_( indi )
@@ -35,7 +35,7 @@ public:
                 max_tmp_ = temp;
         }
 
-        void tick( std::chrono::microseconds now )
+        void tick( microseconds now )
         {
                 indi_.on_event( now, indication_event::HEARTBEAT );
 

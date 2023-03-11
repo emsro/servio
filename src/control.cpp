@@ -3,7 +3,7 @@
 #include <emlabcpp/match.h>
 #include <emlabcpp/protocol/register_handler.h>
 
-control::control( std::chrono::microseconds now, ctl::config cfg )
+control::control( microseconds now, ctl::config cfg )
   : position_lims_( cfg.position_limits )
   , position_pid_( now, cfg.position_pid, cfg.velocity_limits )
   , velocity_pid_( now, cfg.velocity_pid, cfg.current_limits )
@@ -52,7 +52,7 @@ void control::switch_to_power_control( int16_t power )
         power_   = power;
         engaged_ = true;
 }
-void control::switch_to_current_control( std::chrono::microseconds, float current )
+void control::switch_to_current_control( microseconds, float current )
 {
         if ( current >= 0.f ) {
                 position_pid_.set_output( infty );
@@ -64,14 +64,14 @@ void control::switch_to_current_control( std::chrono::microseconds, float curren
         state_   = control_mode::CURRENT;
         engaged_ = true;
 }
-void control::switch_to_velocity_control( std::chrono::microseconds, float velocity )
+void control::switch_to_velocity_control( microseconds, float velocity )
 {
         state_ = control_mode::VELOCITY;
         velocity_pid_.reset_momentary_limit();
         position_pid_.set_output( velocity );
         engaged_ = true;
 }
-void control::switch_to_position_control( std::chrono::microseconds, float position )
+void control::switch_to_position_control( microseconds, float position )
 {
         state_ = control_mode::POSITION;
         velocity_pid_.reset_momentary_limit();
@@ -79,7 +79,7 @@ void control::switch_to_position_control( std::chrono::microseconds, float posit
         engaged_       = true;
 }
 
-void control::position_irq( std::chrono::microseconds now, float position )
+void control::position_irq( microseconds now, float position )
 {
         float coeff             = 1.f;
         auto [pos_min, pos_max] = position_lims_;
@@ -88,21 +88,24 @@ void control::position_irq( std::chrono::microseconds now, float position )
 
         if ( state_ == control_mode::POSITION ) {
                 position_pid_.update( now, position, goal_position_ );
+        } else {
+                position_pid_.reset( now, position );
         }
 }
 
-void control::velocity_irq( std::chrono::microseconds now, float velocity )
+void control::velocity_irq( microseconds now, float velocity )
 {
         if ( state_ == control_mode::POWER ) {
+                velocity_pid_.reset( now, velocity );
                 return;
         }
-
         velocity_pid_.update( now, velocity, position_pid_.get_output() );
 }
 
-void control::current_irq( std::chrono::microseconds now, float current )
+void control::current_irq( microseconds now, float current )
 {
         if ( state_ == control_mode::POWER ) {
+                current_pid_.reset( now, current );
                 return;
         }
 

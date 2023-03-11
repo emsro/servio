@@ -11,11 +11,6 @@ namespace fw
 
 void stop_exec();
 
-inline std::chrono::microseconds ticks_ms()
-{
-        return std::chrono::microseconds{ HAL_GetTick() * 1000 };
-}
-
 template < typename... Components >
 void multistart( Components&... comps )
 {

@@ -1,19 +1,19 @@
 #include "indication.hpp"
 
-bool indication::on_event( std::chrono::microseconds now, const indication_event& e )
+bool indication::on_event( microseconds now, const indication_event& e )
 {
         switch ( e ) {
         case indication_event::VOLTAGE_LOW:
                 if ( red_events_.full() ) {
                         return false;
                 }
-                red_events_.push_back( 100ms );
+                red_events_.push_back( 500_ms );
                 break;
         case indication_event::TEMPERATURE_HIGH:
                 if ( red_events_.full() ) {
                         return false;
                 }
-                red_events_.push_back( 200ms );
+                red_events_.push_back( 1000_ms );
                 break;
         case indication_event::HEARTBEAT:
                 green_step_ += 0.1f;
@@ -25,7 +25,7 @@ bool indication::on_event( std::chrono::microseconds now, const indication_event
                 green_offset_ = 0.f;
                 break;
         case indication_event::STUCK:
-                yellow_engaged_until_ = now + 50ms;
+                yellow_engaged_until_ = now + 50_ms;
                 break;
         case indication_event::BOOTING:
                 state_.blue = true;
@@ -35,13 +35,13 @@ bool indication::on_event( std::chrono::microseconds now, const indication_event
                 break;
         case indication_event::INCOMING_MESSAGE:
                 state_.blue        = true;
-                blue_disengage_at_ = now + 1ms;
+                blue_disengage_at_ = now + 1_ms;
                 break;
         }
         return true;
 }
 
-void indication::tick( std::chrono::microseconds now )
+void indication::tick( microseconds now )
 {
         tick_red( now );
 
@@ -59,7 +59,7 @@ void indication::tick( std::chrono::microseconds now )
         }
 }
 
-void indication::tick_red( std::chrono::microseconds now )
+void indication::tick_red( microseconds now )
 {
         if ( now < red_phase_ ) {
                 state_.red = false;
@@ -78,7 +78,7 @@ void indication::tick_red( std::chrono::microseconds now )
                 return;
         }
 
-        std::chrono::microseconds x = now % 100ms;
+        microseconds x = now % 500_ms;
 
-        state_.red = x < 50ms;
+        state_.red = x < 250_ms;
 }

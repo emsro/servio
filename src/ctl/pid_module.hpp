@@ -8,14 +8,14 @@
 namespace ctl
 {
 
-using pid              = em::pid< typename std::chrono::microseconds::rep >;
+using pid              = em::pid< typename microseconds::rep >;
 using pid_conf         = typename pid::config;
 using pid_coefficients = em::pid_coefficients;
 
 class pid_module
 {
 public:
-        pid_module( std::chrono::microseconds now, pid_coefficients coeffs, limits< float > limits )
+        pid_module( microseconds now, pid_coefficients coeffs, limits< float > limits )
           : momentary_lim_( limits )
           , config_lim_( limits )
           , pid_( now.count(), { coeffs, limits } )
@@ -65,7 +65,13 @@ public:
                 return pid_.get_desired();
         }
 
-        float update( std::chrono::microseconds now, float measured, float goal )
+        void reset( microseconds now, float val )
+        {
+                pid_.set_last_time( now.count() );
+                pid_.set_last_measured( val );
+        }
+
+        float update( microseconds now, float measured, float goal )
         {
                 return pid_.update( now.count(), measured, goal );
         }

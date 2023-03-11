@@ -35,15 +35,17 @@ enum class indication_event
 class indication
 {
 public:
-        indication( std::chrono::microseconds now )
+        indication( microseconds now )
           : last_tick_( now )
           , red_phase_( now )
+          , yellow_engaged_until_( 0_us )
+          , blue_disengage_at_( 0_us )
         {
         }
 
-        bool on_event( std::chrono::microseconds now, const indication_event& e );
+        bool on_event( microseconds now, const indication_event& e );
 
-        void tick( std::chrono::microseconds now );
+        void tick( microseconds now );
 
         const leds_vals& get_state() const
         {
@@ -51,20 +53,20 @@ public:
         }
 
 private:
-        void tick_red( std::chrono::microseconds now );
+        void tick_red( microseconds now );
 
-        leds_vals                 state_;
-        std::chrono::microseconds last_tick_;
+        leds_vals state_;
+        microseconds     last_tick_;
 
-        static constexpr std::chrono::microseconds                 red_window_ = 1s;
-        std::chrono::microseconds                                  red_phase_;
-        em::static_circular_buffer< std::chrono::microseconds, 2 > red_events_;
+        static constexpr microseconds                 red_window_ = 5_s;
+        microseconds                                  red_phase_;
+        em::static_circular_buffer< microseconds, 2 > red_events_;
 
         float green_i_      = 0.f;
         float green_step_   = 0.f;
         float green_offset_ = 0.f;
 
-        std::chrono::microseconds yellow_engaged_until_;
+        microseconds yellow_engaged_until_;
 
-        std::chrono::microseconds blue_disengage_at_;
+        microseconds blue_disengage_at_;
 };

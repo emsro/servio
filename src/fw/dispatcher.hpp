@@ -10,13 +10,13 @@ namespace fw
 
 struct dispatcher
 {
-        comms&                    comm;
-        hbridge&                  hb;
-        acquisition&              acquistion;
-        control&                  ctl;
-        cfg_dispatcher&           cfg_disp;
-        converter&                conv;
-        std::chrono::microseconds now;
+        comms&          comm;
+        hbridge&        hb;
+        acquisition&    acquistion;
+        control&        ctl;
+        cfg_dispatcher& cfg_disp;
+        converter&      conv;
+        microseconds           now;
 
         void handle_message( const switch_to_power_command& cmd )
         {
