@@ -12,7 +12,7 @@ class monitor
 {
 public:
         monitor(
-            microseconds              now,
+            microseconds       now,
             const control&     ctl,
             const acquisition& acqui,
             indication&        indi,

@@ -17,7 +17,7 @@ bool setup_hbridge_timers( fw::hbridge::handles& h )
         h.timer.Instance               = TIM1;
         h.timer.Init.Prescaler         = 0;
         h.timer.Init.CounterMode       = TIM_COUNTERMODE_UP;
-        h.timer.Init.Period            = std::numeric_limits< uint16_t >::max() / 4;
+        h.timer.Init.Period            = std::numeric_limits< uint16_t >::max() / 2;
         h.timer.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
         h.timer.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
@@ -118,6 +118,44 @@ bool setup_adc_timer( fw::acquisition::handles& h )
         oc.OCFastMode = TIM_OCFAST_DISABLE;
 
         __HAL_RCC_TIM4_CLK_ENABLE();
+
+        if ( HAL_TIM_OC_Init( &h.tim ) != HAL_OK ) {
+                fw::stop_exec();
+        }
+
+        if ( HAL_TIMEx_MasterConfigSynchronization( &h.tim, &mc ) != HAL_OK ) {
+                fw::stop_exec();
+        }
+
+        if ( HAL_TIM_OC_ConfigChannel( &h.tim, &oc, h.tim_channel ) != HAL_OK ) {
+                fw::stop_exec();
+        }
+
+        return true;
+}
+
+bool setup_clock_timer( fw::clock::handles& h )
+{
+        h.tim.Instance               = TIM2;
+        h.tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1e6 );
+        h.tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
+        h.tim.Init.Period            = std::numeric_limits< uint32_t >::max();
+        h.tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
+        h.tim.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+
+        h.tim_channel = TIM_CHANNEL_1;
+
+        TIM_MasterConfigTypeDef mc{};
+        mc.MasterOutputTrigger = TIM_TRGO_UPDATE;
+        mc.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
+
+        TIM_OC_InitTypeDef oc{};
+        oc.OCMode     = TIM_OCMODE_TIMING;
+        oc.Pulse      = h.tim.Init.Period - 1;
+        oc.OCPolarity = TIM_OCPOLARITY_HIGH;
+        oc.OCFastMode = TIM_OCFAST_DISABLE;
+
+        __HAL_RCC_TIM2_CLK_ENABLE();
 
         if ( HAL_TIM_OC_Init( &h.tim ) != HAL_OK ) {
                 fw::stop_exec();

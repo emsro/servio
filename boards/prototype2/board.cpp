@@ -11,9 +11,11 @@ bool setup_hbridge_timers( fw::hbridge::handles& );
 bool setup_iuart( fw::comms::handles& );
 bool setup_leds_gpio( fw::leds::handles& );
 bool setup_leds_timer( fw::leds::handles& );
-void setup_clock();
+void setup_clk();
+bool setup_clock_timer( fw::clock::handles& );
 void setup_extra();
 
+fw::clock       CLOCK{};
 fw::acquisition ACQUISITION{};
 fw::comms       COMMS{};
 fw::debug_comms DEBUG_COMMS{};
@@ -79,7 +81,15 @@ namespace brd
 void setup_board()
 {
         fw::hal_check{} << HAL_Init();
-        setup_clock();
+        setup_clk();
+}
+
+fw::clock* setup_clock()
+{
+        if ( !CLOCK.setup( setup_clock_timer ) ) {
+                return nullptr;
+        }
+        return &CLOCK;
 }
 
 fw::acquisition* setup_acquisition()

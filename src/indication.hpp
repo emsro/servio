@@ -55,8 +55,8 @@ public:
 private:
         void tick_red( microseconds now );
 
-        leds_vals state_;
-        microseconds     last_tick_;
+        leds_vals    state_;
+        microseconds last_tick_;
 
         static constexpr microseconds                 red_window_ = 5_s;
         microseconds                                  red_phase_;
