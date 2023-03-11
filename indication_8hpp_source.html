@@ -124,46 +124,49 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classindication.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classindication.html">indication</a></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classindication.html#a6835cd6cd40f7a0118dae78e01ac804c">   38</a></span>&#160;        <a class="code" href="classindication.html#a6835cd6cd40f7a0118dae78e01ac804c">indication</a>( std::chrono::microseconds now )</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classindication.html#adb09ac11f7b5843bc12fb2d72c5c6a61">   38</a></span>&#160;        <a class="code" href="classindication.html#adb09ac11f7b5843bc12fb2d72c5c6a61">indication</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now )</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;          : last_tick_( now )</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          , red_phase_( now )</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classindication.html#a7169192360ba4896b572f44da61d052c">on_event</a>( std::chrono::microseconds now, <span class="keyword">const</span> <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14">indication_event</a>&amp; e );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          , yellow_engaged_until_( 0_us )</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          , blue_disengage_at_( 0_us )</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classindication.html#a686d5038eb4ecbf8d437f3421a013ec6">tick</a>( std::chrono::microseconds now );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <span class="keyword">const</span> <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14">indication_event</a>&amp; e );</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classindication.html#a206462581ba11b4eb1a930f57d753865">   48</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="base_8hpp.html#structleds__vals">leds_vals</a>&amp; <a class="code" href="classindication.html#a206462581ba11b4eb1a930f57d753865">get_state</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">return</span> state_;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> tick_red( std::chrono::microseconds now );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="base_8hpp.html#structleds__vals">leds_vals</a>                 state_;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        std::chrono::microseconds last_tick_;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">static</span> constexpr std::chrono::microseconds                 red_window_ = 1s;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        std::chrono::microseconds                                  red_phase_;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        em::static_circular_buffer&lt; std::chrono::microseconds, 2 &gt; red_events_;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">float</span> green_i_      = 0.f;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">float</span> green_step_   = 0.f;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">float</span> green_offset_ = 0.f;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        std::chrono::microseconds yellow_engaged_until_;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classindication.html#aaeefb4a81531e0fd82015a1c4711acd6">tick</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classindication.html#a206462581ba11b4eb1a930f57d753865">   50</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="base_8hpp.html#structleds__vals">leds_vals</a>&amp; <a class="code" href="classindication.html#a206462581ba11b4eb1a930f57d753865">get_state</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> state_;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> tick_red( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="base_8hpp.html#structleds__vals">leds_vals</a>    state_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> last_tick_;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">static</span> constexpr <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a>                 red_window_ = 5_s;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a>                                  red_phase_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        em::static_circular_buffer&lt; microseconds, 2 &gt; red_events_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">float</span> green_i_      = 0.f;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">float</span> green_step_   = 0.f;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">float</span> green_offset_ = 0.f;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::chrono::microseconds blue_disengage_at_;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> yellow_engaged_until_;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> blue_disengage_at_;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div></div>
-<div class="ttc" id="abase_8hpp_html_structleds__vals"><div class="ttname"><a href="base_8hpp.html#structleds__vals">leds_vals</a></div><div class="ttdef"><b>Definition:</b> base.hpp:45</div></div>
+<div class="ttc" id="abase_8hpp_html_a3e15423b6a0f2e36799532b4c8f699f5"><div class="ttname"><a href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:19</div></div>
+<div class="ttc" id="abase_8hpp_html_structleds__vals"><div class="ttname"><a href="base_8hpp.html#structleds__vals">leds_vals</a></div><div class="ttdef"><b>Definition:</b> base.hpp:60</div></div>
 <div class="ttc" id="aclassindication_html"><div class="ttname"><a href="classindication.html">indication</a></div><div class="ttdef"><b>Definition:</b> indication.hpp:36</div></div>
-<div class="ttc" id="aclassindication_html_a206462581ba11b4eb1a930f57d753865"><div class="ttname"><a href="classindication.html#a206462581ba11b4eb1a930f57d753865">indication::get_state</a></div><div class="ttdeci">const leds_vals &amp; get_state() const</div><div class="ttdef"><b>Definition:</b> indication.hpp:48</div></div>
-<div class="ttc" id="aclassindication_html_a6835cd6cd40f7a0118dae78e01ac804c"><div class="ttname"><a href="classindication.html#a6835cd6cd40f7a0118dae78e01ac804c">indication::indication</a></div><div class="ttdeci">indication(std::chrono::microseconds now)</div><div class="ttdef"><b>Definition:</b> indication.hpp:38</div></div>
-<div class="ttc" id="aclassindication_html_a686d5038eb4ecbf8d437f3421a013ec6"><div class="ttname"><a href="classindication.html#a686d5038eb4ecbf8d437f3421a013ec6">indication::tick</a></div><div class="ttdeci">void tick(std::chrono::microseconds now)</div><div class="ttdef"><b>Definition:</b> indication.cpp:44</div></div>
-<div class="ttc" id="aclassindication_html_a7169192360ba4896b572f44da61d052c"><div class="ttname"><a href="classindication.html#a7169192360ba4896b572f44da61d052c">indication::on_event</a></div><div class="ttdeci">bool on_event(std::chrono::microseconds now, const indication_event &amp;e)</div><div class="ttdef"><b>Definition:</b> indication.cpp:3</div></div>
+<div class="ttc" id="aclassindication_html_a206462581ba11b4eb1a930f57d753865"><div class="ttname"><a href="classindication.html#a206462581ba11b4eb1a930f57d753865">indication::get_state</a></div><div class="ttdeci">const leds_vals &amp; get_state() const</div><div class="ttdef"><b>Definition:</b> indication.hpp:50</div></div>
+<div class="ttc" id="aclassindication_html_a5d2366017e3656288041d65c5ee6cdf3"><div class="ttname"><a href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">indication::on_event</a></div><div class="ttdeci">bool on_event(microseconds now, const indication_event &amp;e)</div><div class="ttdef"><b>Definition:</b> indication.cpp:3</div></div>
+<div class="ttc" id="aclassindication_html_aaeefb4a81531e0fd82015a1c4711acd6"><div class="ttname"><a href="classindication.html#aaeefb4a81531e0fd82015a1c4711acd6">indication::tick</a></div><div class="ttdeci">void tick(microseconds now)</div><div class="ttdef"><b>Definition:</b> indication.cpp:44</div></div>
+<div class="ttc" id="aclassindication_html_adb09ac11f7b5843bc12fb2d72c5c6a61"><div class="ttname"><a href="classindication.html#adb09ac11f7b5843bc12fb2d72c5c6a61">indication::indication</a></div><div class="ttdeci">indication(microseconds now)</div><div class="ttdef"><b>Definition:</b> indication.hpp:38</div></div>
 <div class="ttc" id="aindication_8hpp_html_a7677f74725e84ed8805a28f45332ff14"><div class="ttname"><a href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14">indication_event</a></div><div class="ttdeci">indication_event</div><div class="ttdef"><b>Definition:</b> indication.hpp:22</div></div>
 <div class="ttc" id="aindication_8hpp_html_a7677f74725e84ed8805a28f45332ff14a0d895a0a05a7cce9b2c0c8bb252f78cc"><div class="ttname"><a href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a0d895a0a05a7cce9b2c0c8bb252f78cc">indication_event::HEARTBEAT</a></div><div class="ttdeci">@ HEARTBEAT</div></div>
 <div class="ttc" id="aindication_8hpp_html_a7677f74725e84ed8805a28f45332ff14a1e4bd5080731650a78fd41dc75d98582"><div class="ttname"><a href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a1e4bd5080731650a78fd41dc75d98582">indication_event::INCOMING_MESSAGE</a></div><div class="ttdeci">@ INCOMING_MESSAGE</div></div>
@@ -180,7 +183,7 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="indication_8hpp.html">indication.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 11 2023 13:18:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 11 2023 22:47:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -8,6 +8,7 @@ var namespacefw =
     [ "dispatcher", "structfw_1_1dispatcher.html", "structfw_1_1dispatcher" ],
     [ "acquisition_status", "namespacefw.html#structfw_1_1acquisition__status", "namespacefw_structfw_1_1acquisition__status_dup" ],
     [ "acquisition", "classfw_1_1acquisition.html", "classfw_1_1acquisition" ],
+    [ "clock", "classfw_1_1clock.html", "classfw_1_1clock" ],
     [ "comms", "classfw_1_1comms.html", "classfw_1_1comms" ],
     [ "debug_comms", "classfw_1_1debug__comms.html", "classfw_1_1debug__comms" ],
     [ "hbridge", "classfw_1_1hbridge.html", "classfw_1_1hbridge" ],
@@ -20,8 +21,7 @@ var namespacefw =
     [ "operator<<", "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e", null ],
     [ "operator<<", "namespacefw.html#aa77aaddd76d27d03433b9ced02d8a6f0", null ],
     [ "setup_leds_with_stop_callback", "namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1", null ],
-    [ "setup_standard_callbacks", "namespacefw.html#a80edb23a86e32f7230a5eb32d0d3903f", null ],
+    [ "setup_standard_callbacks", "namespacefw.html#a6628839efe737ec62f8dd7a85cee03db", null ],
     [ "stop_exec", "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021", null ],
-    [ "ticks_ms", "namespacefw.html#a34194d13b8eb3917618a24854d56552b", null ],
     [ "STOP_CALLBACK", "namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3", null ]
 ];

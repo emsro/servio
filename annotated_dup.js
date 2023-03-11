@@ -13,6 +13,7 @@ var annotated_dup =
       [ "dispatcher", "structfw_1_1dispatcher.html", "structfw_1_1dispatcher" ],
       [ "acquisition_status", "namespacefw.html#structfw_1_1acquisition__status", "namespacefw_structfw_1_1acquisition__status_dup" ],
       [ "acquisition", "classfw_1_1acquisition.html", "classfw_1_1acquisition" ],
+      [ "clock", "classfw_1_1clock.html", "classfw_1_1clock" ],
       [ "comms", "classfw_1_1comms.html", "classfw_1_1comms" ],
       [ "debug_comms", "classfw_1_1debug__comms.html", "classfw_1_1debug__comms" ],
       [ "hbridge", "classfw_1_1hbridge.html", "classfw_1_1hbridge" ],

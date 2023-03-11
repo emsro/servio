@@ -7,6 +7,7 @@ var base_8hpp =
       [ "yellow", "base_8hpp.html#ab037c26da9e6b738c8bba763ac4a347d", null ]
     ] ],
     [ "limits", "base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c", null ],
+    [ "microseconds", "base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5", null ],
     [ "protocol_current", "base_8hpp.html#a918c8b836c9acdbd90b1e33c9d8314c4", null ],
     [ "protocol_position", "base_8hpp.html#ac7e10763f07f6428342004cd836e5e3a", null ],
     [ "protocol_power", "base_8hpp.html#a5e3255eae0a79b5877f016bc0b8a664f", null ],
@@ -25,6 +26,9 @@ var base_8hpp =
       [ "VELOCITY", "base_8hpp.html#ab11c51b7742a144ec8f0089eb023613da7b4354bded455eb379e3c764806cda7b", null ],
       [ "POSITION", "base_8hpp.html#ab11c51b7742a144ec8f0089eb023613da90b4ba73224408e82ade8a072a3712c1", null ]
     ] ],
+    [ "operator\"\"_ms", "base_8hpp.html#aaed340fe38e4b3ae6297ee38af463785", null ],
+    [ "operator\"\"_s", "base_8hpp.html#aea553b2ea3e90e5da26dd78d20a6bdbb", null ],
+    [ "operator\"\"_us", "base_8hpp.html#a9f1db53db04ed209cc93765097b65328", null ],
     [ "infty", "base_8hpp.html#aec3fd2a11257b6fbfe32084f877fafca", null ],
     [ "pi", "base_8hpp.html#a1405970de248dafe731b9cc3c66f8bc4", null ]
 ];

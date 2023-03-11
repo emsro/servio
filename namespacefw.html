@@ -111,6 +111,8 @@ Classes</h2></td></tr>
 <tr class="separator:structfw_1_1acquisition__status"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html">acquisition</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1clock.html">clock</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1comms.html">comms</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1debug__comms.html">debug_comms</a></td></tr>
@@ -135,12 +137,10 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:acff2051fff6f79ebbfe80b750bd77be1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1leds.html">leds</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">setup_leds_with_stop_callback</a> ()</td></tr>
 <tr class="separator:acff2051fff6f79ebbfe80b750bd77be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80edb23a86e32f7230a5eb32d0d3903f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a80edb23a86e32f7230a5eb32d0d3903f">setup_standard_callbacks</a> (<a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;hb, <a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;acqui, <a class="el" href="classcontrol.html">control</a> &amp;ctl, <a class="el" href="classmetrics.html">metrics</a> &amp;met, <a class="el" href="classconverter.html">converter</a> &amp;conv)</td></tr>
-<tr class="separator:a80edb23a86e32f7230a5eb32d0d3903f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6628839efe737ec62f8dd7a85cee03db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a6628839efe737ec62f8dd7a85cee03db">setup_standard_callbacks</a> (<a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;hb, <a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;acqui, <a class="el" href="classfw_1_1clock.html">clock</a> &amp;clk, <a class="el" href="classcontrol.html">control</a> &amp;ctl, <a class="el" href="classmetrics.html">metrics</a> &amp;met, const <a class="el" href="classconverter.html">converter</a> &amp;conv)</td></tr>
+<tr class="separator:a6628839efe737ec62f8dd7a85cee03db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0b580f4dd8010ffb0db37533802021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a> ()</td></tr>
 <tr class="separator:a8e0b580f4dd8010ffb0db37533802021"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34194d13b8eb3917618a24854d56552b"><td class="memItemLeft" align="right" valign="top">std::chrono::microseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a34194d13b8eb3917618a24854d56552b">ticks_ms</a> ()</td></tr>
-<tr class="separator:a34194d13b8eb3917618a24854d56552b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac05d95b2aaa02b49156b63e48e57b69a"><td class="memTemplParams" colspan="2">template&lt;typename... Components&gt; </td></tr>
 <tr class="memitem:ac05d95b2aaa02b49156b63e48e57b69a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefw.html#ac05d95b2aaa02b49156b63e48e57b69a">multistart</a> (Components &amp;... comps)</td></tr>
 <tr class="separator:ac05d95b2aaa02b49156b63e48e57b69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -345,8 +345,8 @@ template&lt;typename... Components&gt; </div>
 
 </div>
 </div>
-<a id="a80edb23a86e32f7230a5eb32d0d3903f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80edb23a86e32f7230a5eb32d0d3903f">&#9670;&nbsp;</a></span>setup_standard_callbacks()</h2>
+<a id="a6628839efe737ec62f8dd7a85cee03db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6628839efe737ec62f8dd7a85cee03db">&#9670;&nbsp;</a></span>setup_standard_callbacks()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,6 +369,12 @@ template&lt;typename... Components&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classfw_1_1clock.html">clock</a> &amp;&#160;</td>
+          <td class="paramname"><em>clk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="classcontrol.html">control</a> &amp;&#160;</td>
           <td class="paramname"><em>ctl</em>, </td>
         </tr>
@@ -381,7 +387,7 @@ template&lt;typename... Components&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classconverter.html">converter</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classconverter.html">converter</a> &amp;&#160;</td>
           <td class="paramname"><em>conv</em>&#160;</td>
         </tr>
         <tr>
@@ -420,31 +426,6 @@ template&lt;typename... Components&gt; </div>
 
 </div>
 </div>
-<a id="a34194d13b8eb3917618a24854d56552b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34194d13b8eb3917618a24854d56552b">&#9670;&nbsp;</a></span>ticks_ms()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::microseconds fw::ticks_ms </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a2911addbbf2c32e3c0bbd374e6698ee3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2911addbbf2c32e3c0bbd374e6698ee3">&#9670;&nbsp;</a></span>STOP_CALLBACK</h2>
@@ -466,7 +447,7 @@ template&lt;typename... Components&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li>
-    <li class="footer">Generated on Sat Mar 11 2023 13:18:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 11 2023 22:47:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -98,11 +98,11 @@ $(document).ready(function(){initNavTree('metrics_8hpp_source.html',''); initRes
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classmetrics.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmetrics.html">metrics</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classmetrics.html#aed281199d70091e29e8254aec2fb297d">metrics</a>( std::chrono::microseconds time, <span class="keywordtype">float</span> position, <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_range );</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classmetrics.html#a0abe3e4ecf0484ad696124398a891683">metrics</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> time, <span class="keywordtype">float</span> position, <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_range );</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e">set_position_range</a>( <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_range );</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmetrics.html#a25acf10b02bdfbbb73e59f3a7ade2c55">position_irq</a>( std::chrono::microseconds now, <span class="keywordtype">float</span> position );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmetrics.html#a6998476ebd787b4c66aec862cec0e313">position_irq</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <span class="keywordtype">float</span> position );</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">   18</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">get_position</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">        </span>{</div>
@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('metrics_8hpp_source.html',''); initRes
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">float</span> observation_deviation_ = 0.000005f;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">float</span> process_deviation_     = 0.005f;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::chrono::microseconds last_time_;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> last_time_;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="namespacekalman.html#ad73bc14d9ae4d49d14781f2402637839">kalman::observation_model</a>            H_;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="namespacekalman.html#ad8331048b8638fb9e36b4d5bd59112bb">kalman::observation_noise_covariance</a> R_;</div>
@@ -131,13 +131,14 @@ $(document).ready(function(){initNavTree('metrics_8hpp_source.html',''); initRes
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">kalman::state_covariance</a> P_;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div></div>
-<div class="ttc" id="abase_8hpp_html_a486dfef0b192c734eed01e9d3fa6995c"><div class="ttname"><a href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a></div><div class="ttdeci">em::min_max&lt; T &gt; limits</div><div class="ttdef"><b>Definition:</b> base.hpp:24</div></div>
+<div class="ttc" id="abase_8hpp_html_a3e15423b6a0f2e36799532b4c8f699f5"><div class="ttname"><a href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:19</div></div>
+<div class="ttc" id="abase_8hpp_html_a486dfef0b192c734eed01e9d3fa6995c"><div class="ttname"><a href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a></div><div class="ttdeci">em::min_max&lt; T &gt; limits</div><div class="ttdef"><b>Definition:</b> base.hpp:39</div></div>
 <div class="ttc" id="aclassmetrics_html"><div class="ttname"><a href="classmetrics.html">metrics</a></div><div class="ttdef"><b>Definition:</b> metrics.hpp:10</div></div>
 <div class="ttc" id="aclassmetrics_html_a0a1a38155ed3f17f9f5e35a74995c53e"><div class="ttname"><a href="classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e">metrics::set_position_range</a></div><div class="ttdeci">void set_position_range(limits&lt; float &gt; position_range)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:14</div></div>
-<div class="ttc" id="aclassmetrics_html_a25acf10b02bdfbbb73e59f3a7ade2c55"><div class="ttname"><a href="classmetrics.html#a25acf10b02bdfbbb73e59f3a7ade2c55">metrics::position_irq</a></div><div class="ttdeci">void position_irq(std::chrono::microseconds now, float position)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:20</div></div>
+<div class="ttc" id="aclassmetrics_html_a0abe3e4ecf0484ad696124398a891683"><div class="ttname"><a href="classmetrics.html#a0abe3e4ecf0484ad696124398a891683">metrics::metrics</a></div><div class="ttdeci">metrics(microseconds time, float position, limits&lt; float &gt; position_range)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:3</div></div>
+<div class="ttc" id="aclassmetrics_html_a6998476ebd787b4c66aec862cec0e313"><div class="ttname"><a href="classmetrics.html#a6998476ebd787b4c66aec862cec0e313">metrics::position_irq</a></div><div class="ttdeci">void position_irq(microseconds now, float position)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:20</div></div>
 <div class="ttc" id="aclassmetrics_html_aa62e43dda60977625c33477506b1fd31"><div class="ttname"><a href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">metrics::get_velocity</a></div><div class="ttdeci">float get_velocity() const</div><div class="ttdef"><b>Definition:</b> metrics.hpp:23</div></div>
 <div class="ttc" id="aclassmetrics_html_ad794bbf9caf8090d8fb7a88786accb14"><div class="ttname"><a href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">metrics::get_position</a></div><div class="ttdeci">float get_position() const</div><div class="ttdef"><b>Definition:</b> metrics.hpp:18</div></div>
-<div class="ttc" id="aclassmetrics_html_aed281199d70091e29e8254aec2fb297d"><div class="ttname"><a href="classmetrics.html#aed281199d70091e29e8254aec2fb297d">metrics::metrics</a></div><div class="ttdeci">metrics(std::chrono::microseconds time, float position, limits&lt; float &gt; position_range)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:3</div></div>
 <div class="ttc" id="akalman_8hpp_html"><div class="ttname"><a href="kalman_8hpp.html">kalman.hpp</a></div></div>
 <div class="ttc" id="anamespacekalman_html_a0e377e28a6a36addfe5a14f353839f9c"><div class="ttname"><a href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">kalman::state_covariance</a></div><div class="ttdeci">em::matrix&lt; 2, 2 &gt; state_covariance</div><div class="ttdef"><b>Definition:</b> kalman.hpp:13</div></div>
 <div class="ttc" id="anamespacekalman_html_a4045bee00b1b7c1f3b36946e5ebb8565"><div class="ttname"><a href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">kalman::velocity</a></div><div class="ttdeci">auto &amp; velocity(T &amp;x)</div><div class="ttdef"><b>Definition:</b> kalman.hpp:101</div></div>
@@ -151,7 +152,7 @@ $(document).ready(function(){initNavTree('metrics_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="metrics_8hpp.html">metrics.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 11 2023 13:18:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 11 2023 22:47:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

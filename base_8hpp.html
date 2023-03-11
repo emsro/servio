@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('base_8hpp.html',''); initResizable(); 
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">base.hpp File Reference</div>  </div>
@@ -127,6 +128,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a4dce310f4658124a6c0208427c906732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b687c5c788edb4ab2c266e93a1dbf57"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_8hpp.html#a5b687c5c788edb4ab2c266e93a1dbf57">protocol_temperature</a> = <a class="el" href="classscaled.html">scaled</a>&lt; int32_t, 16 &gt;</td></tr>
 <tr class="separator:a5b687c5c788edb4ab2c266e93a1dbf57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e15423b6a0f2e36799532b4c8f699f5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> = std::chrono::duration&lt; uint32_t, std::micro &gt;</td></tr>
+<tr class="separator:a3e15423b6a0f2e36799532b4c8f699f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96ccd2c4ce19187beb5be679732d675a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_8hpp.html#a96ccd2c4ce19187beb5be679732d675a">sec_time</a> = std::chrono::duration&lt; float &gt;</td></tr>
 <tr class="separator:a96ccd2c4ce19187beb5be679732d675a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a486dfef0b192c734eed01e9d3fa6995c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -155,6 +158,15 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a2d21811ce1f560323f48c16592782d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aea553b2ea3e90e5da26dd78d20a6bdbb"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_8hpp.html#aea553b2ea3e90e5da26dd78d20a6bdbb">operator&quot;&quot;_s</a> (unsigned long long int secs)</td></tr>
+<tr class="separator:aea553b2ea3e90e5da26dd78d20a6bdbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaed340fe38e4b3ae6297ee38af463785"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_8hpp.html#aaed340fe38e4b3ae6297ee38af463785">operator&quot;&quot;_ms</a> (unsigned long long int msecs)</td></tr>
+<tr class="separator:aaed340fe38e4b3ae6297ee38af463785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f1db53db04ed209cc93765097b65328"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_8hpp.html#a9f1db53db04ed209cc93765097b65328">operator&quot;&quot;_us</a> (unsigned long long int usecs)</td></tr>
+<tr class="separator:a9f1db53db04ed209cc93765097b65328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -216,6 +228,20 @@ template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a> =  em::min_max&lt; T &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e15423b6a0f2e36799532b4c8f699f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e15423b6a0f2e36799532b4c8f699f5">&#9670;&nbsp;</a></span>microseconds</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> =  std::chrono::duration&lt; uint32_t, std::micro &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -376,6 +402,85 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aaed340fe38e4b3ae6297ee38af463785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaed340fe38e4b3ae6297ee38af463785">&#9670;&nbsp;</a></span>operator&quot;&quot;_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> operator&quot;&quot;_ms </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long int&#160;</td>
+          <td class="paramname"><em>msecs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea553b2ea3e90e5da26dd78d20a6bdbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea553b2ea3e90e5da26dd78d20a6bdbb">&#9670;&nbsp;</a></span>operator&quot;&quot;_s()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> operator&quot;&quot;_s </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long int&#160;</td>
+          <td class="paramname"><em>secs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f1db53db04ed209cc93765097b65328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f1db53db04ed209cc93765097b65328">&#9670;&nbsp;</a></span>operator&quot;&quot;_us()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> operator&quot;&quot;_us </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long int&#160;</td>
+          <td class="paramname"><em>usecs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="aec3fd2a11257b6fbfe32084f877fafca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec3fd2a11257b6fbfe32084f877fafca">&#9670;&nbsp;</a></span>infty</h2>
@@ -427,7 +532,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="base_8hpp.html">base.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 11 2023 13:18:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 11 2023 22:47:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

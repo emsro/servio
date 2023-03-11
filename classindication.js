@@ -1,7 +1,7 @@
 var classindication =
 [
-    [ "indication", "classindication.html#a6835cd6cd40f7a0118dae78e01ac804c", null ],
+    [ "indication", "classindication.html#adb09ac11f7b5843bc12fb2d72c5c6a61", null ],
     [ "get_state", "classindication.html#a206462581ba11b4eb1a930f57d753865", null ],
-    [ "on_event", "classindication.html#a7169192360ba4896b572f44da61d052c", null ],
-    [ "tick", "classindication.html#a686d5038eb4ecbf8d437f3421a013ec6", null ]
+    [ "on_event", "classindication.html#a5d2366017e3656288041d65c5ee6cdf3", null ],
+    [ "tick", "classindication.html#aaeefb4a81531e0fd82015a1c4711acd6", null ]
 ];

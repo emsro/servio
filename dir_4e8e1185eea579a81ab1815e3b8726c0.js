@@ -18,6 +18,13 @@ var dir_4e8e1185eea579a81ab1815e3b8726c0 =
       ] ],
       [ "current_sequence", "structfw_1_1acquisition_1_1current__sequence.html", "structfw_1_1acquisition_1_1current__sequence" ]
     ] ],
+    [ "clock.hpp", "clock_8hpp.html", [
+      [ "clock", "classfw_1_1clock.html", "classfw_1_1clock" ],
+      [ "handles", "classfw_1_1clock.html#structfw_1_1clock_1_1handles", [
+        [ "tim", "classfw_1_1clock.html#ac3232092fb6bb961dfdeef036104a6f4", null ],
+        [ "tim_channel", "classfw_1_1clock.html#a7795641a57d1aec603daea4996d6bbf6", null ]
+      ] ]
+    ] ],
     [ "comms.cpp", "comms_8cpp.html", null ],
     [ "comms.hpp", "comms_8hpp.html", [
       [ "comms", "classfw_1_1comms.html", "classfw_1_1comms" ],
