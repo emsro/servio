@@ -1,5 +1,6 @@
 #include "metrics.hpp"
 
+#include <emlabcpp/experimental/logging/util.h>
 #include <gtest/gtest.h>
 #include <random>
 
@@ -13,7 +14,7 @@ TEST( Metrics, base )
         float        angle    = 0.f;
         float        velocity = 0.1f;
         microseconds t        = 0_ms;
-        microseconds tstep    = 10_ms;
+        microseconds tstep    = 10_us;
 
         metrics met{ t, angle, { 0, 2 * pi } };
 
@@ -29,7 +30,9 @@ TEST( Metrics, base )
                         continue;
                 }
 
-                EXPECT_NEAR( met.get_position(), angle, 0.01 ) << "t: " << t.count() << ", "
-                                                               << "i: " << i;
+                EMLABCPP_INFO_LOG_VARS( met.get_position(), angle, t );
+                EXPECT_NEAR( met.get_position(), angle, 0.01 )
+                    << "t: " << t.count() / 1000.f << ", "
+                    << "i: " << i;
         }
 }
