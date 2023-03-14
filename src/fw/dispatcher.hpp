@@ -42,23 +42,23 @@ struct dispatcher
         {
                 // TODO: add facade/adapter over conv/acqui?
                 comm.send( get_current_response{
-                    conv.convert_current( acquistion.get_current(), hb.get_direction() ) } );
+                    conv.current.convert( acquistion.get_current() ) * hb.get_direction() } );
         }
 
         void handle_message( const get_vcc_command& )
         {
-                comm.send( get_vcc_response{ conv.convert_vcc( acquistion.get_vcc() ) } );
+                comm.send( get_vcc_response{ conv.vcc.convert( acquistion.get_vcc() ) } );
         }
 
         void handle_message( const get_temp_command& )
         {
-                comm.send( get_temp_response{ conv.convert_temp( acquistion.get_temp() ) } );
+                comm.send( get_temp_response{ conv.temp.convert( acquistion.get_temp() ) } );
         }
 
         void handle_message( const get_position_command& )
         {
                 comm.send(
-                    get_position_response{ conv.convert_position( acquistion.get_position() ) } );
+                    get_position_response{ conv.position.convert( acquistion.get_position() ) } );
         }
 
         void handle_message( const set_config& req )

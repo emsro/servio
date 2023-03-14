@@ -31,7 +31,7 @@ struct current_callback
 
         void operator()( uint32_t current, std::span< uint16_t > )
         {
-                float c = conv.convert_current( current, hb.get_direction() );
+                float c = conv.current.convert( current ) * hb.get_direction();
 
                 ctl.current_irq( clk.get_us(), c );
                 hb.set_power( ctl.get_power() );
@@ -50,7 +50,7 @@ struct position_callback
         {
                 microseconds now = clk.get_us();
 
-                float p = conv.convert_position( position );
+                float p = conv.position.convert( position );
 
                 met.position_irq( now, p );
                 ctl.position_irq( now, met.get_position() );

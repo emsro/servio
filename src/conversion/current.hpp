@@ -12,9 +12,9 @@ public:
         {
         }
 
-        float convert( float input ) const
+        float convert( uint32_t input ) const
         {
-                return input * scale_ + offset_;
+                return static_cast< float >( input ) * scale_ + offset_;
         }
 
 private:

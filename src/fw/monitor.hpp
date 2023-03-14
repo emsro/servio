@@ -39,12 +39,12 @@ public:
         {
                 indi_.on_event( now, indication_event::HEARTBEAT );
 
-                float vcc = conv_.convert_vcc( acqui_.get_vcc() );
+                float vcc = conv_.vcc.convert( acqui_.get_vcc() );
                 if ( vcc < min_vcc_ ) {
                         indi_.on_event( now, indication_event::VOLTAGE_LOW );
                 }
 
-                float temp = conv_.convert_temp( acqui_.get_temp() );
+                float temp = conv_.temp.convert( acqui_.get_temp() );
                 if ( temp > max_tmp_ ) {
                         indi_.on_event( now, indication_event::TEMPERATURE_HIGH );
                 }
