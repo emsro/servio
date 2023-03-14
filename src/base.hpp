@@ -17,6 +17,8 @@ using protocol_voltage     = scaled< int32_t, 16 >;
 using protocol_temperature = scaled< int32_t, 16 >;
 
 using microseconds = std::chrono::duration< uint32_t, std::micro >;
+using milliseconds = std::chrono::duration< uint32_t, std::milli >;
+using seconds = std::chrono::duration< uint32_t>;
 
 constexpr microseconds operator""_s( unsigned long long int secs )
 {
