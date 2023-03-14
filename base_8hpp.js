@@ -8,6 +8,7 @@ var base_8hpp =
     ] ],
     [ "limits", "base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c", null ],
     [ "microseconds", "base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5", null ],
+    [ "milliseconds", "base_8hpp.html#a0478dbefd4a0ca0d9e55b6becbf851f2", null ],
     [ "protocol_current", "base_8hpp.html#a918c8b836c9acdbd90b1e33c9d8314c4", null ],
     [ "protocol_position", "base_8hpp.html#ac7e10763f07f6428342004cd836e5e3a", null ],
     [ "protocol_power", "base_8hpp.html#a5e3255eae0a79b5877f016bc0b8a664f", null ],
@@ -15,6 +16,7 @@ var base_8hpp =
     [ "protocol_velocity", "base_8hpp.html#a37b7c873093719e043013e7ffbbfde8e", null ],
     [ "protocol_voltage", "base_8hpp.html#a4dce310f4658124a6c0208427c906732", null ],
     [ "sec_time", "base_8hpp.html#a96ccd2c4ce19187beb5be679732d675a", null ],
+    [ "seconds", "base_8hpp.html#a478df403455b92cc09d6535d185b78fd", null ],
     [ "control_loop", "base_8hpp.html#a2d21811ce1f560323f48c16592782d7f", [
       [ "CURRENT", "base_8hpp.html#a2d21811ce1f560323f48c16592782d7faa2770969c827f0f2910f6179418462df", null ],
       [ "VELOCITY", "base_8hpp.html#a2d21811ce1f560323f48c16592782d7fa7b4354bded455eb379e3c764806cda7b", null ],

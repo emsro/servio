@@ -10,7 +10,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
       [ "control", "classcontrol.html", "classcontrol" ]
     ] ],
     [ "converter.hpp", "converter_8hpp.html", [
-      [ "converter", "classconverter.html", "classconverter" ]
+      [ "converter", "structconverter.html", "structconverter" ]
     ] ],
     [ "indication.cpp", "indication_8cpp.html", null ],
     [ "indication.hpp", "indication_8hpp.html", "indication_8hpp" ],

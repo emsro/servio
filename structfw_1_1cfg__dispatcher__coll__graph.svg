@@ -85,8 +85,8 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classconverter.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="243,-134.5 243,-153.5 306,-153.5 306,-134.5 243,-134.5"/>
+<g id="a_node6"><a xlink:href="structconverter.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="red" points="243,-134.5 243,-153.5 306,-153.5 306,-134.5 243,-134.5"/>
 <text text-anchor="middle" x="274.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">converter</text>
 </a>
 </g>
@@ -98,18 +98,18 @@
 <polygon fill="#9a32cd" stroke="#9a32cd" points="254.38,-130.39 264.25,-134.23 258.93,-125.07 254.38,-130.39"/>
 <text text-anchor="middle" x="254" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> conv</text>
 </g>
-<!-- Node7 -->
+<!-- Node11 -->
 <g id="node7" class="node">
-<title>Node7</title>
+<title>Node11</title>
 <g id="a_node7"><a xlink:href="classcontrol.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="324.5,-134.5 324.5,-153.5 374.5,-153.5 374.5,-134.5 324.5,-134.5"/>
 <text text-anchor="middle" x="349.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">control</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node2 -->
+<!-- Node11&#45;&gt;Node2 -->
 <g id="edge6" class="edge">
-<title>Node7&#45;&gt;Node2</title>
+<title>Node11&#45;&gt;Node2</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M323.79,-129.68C308.72,-122.07 289.23,-112.57 271.5,-105 255.72,-98.26 237.63,-91.56 223.41,-86.52"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="322.49,-132.94 332.98,-134.36 325.66,-126.7 322.49,-132.94"/>
 <text text-anchor="middle" x="302.5" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> ctl</text>

@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"structpacket__def.html#a6a8940ecd9f06ef6da58fe8e59358e86":[11,0,15,3],
+"structpacket__def.html#ab2b9bbadb65ad16c9befe8ade687f073":[11,0,15,4],
 "structpacket__def.html#aeccc80bbdc41cb1ea3bf4342dc5fb5fc":[11,0,15,0],
 "structpacket__def.html#affcf3f23659d8bc522becfee3550093e":[11,0,15,2],
 "structset__config.html":[11,0,18],

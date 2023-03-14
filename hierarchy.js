@@ -11,7 +11,7 @@ var hierarchy =
     [ "fw::comms", "classfw_1_1comms.html", null ],
     [ "ctl::config", "namespacectl.html#structctl_1_1config", null ],
     [ "control", "classcontrol.html", null ],
-    [ "converter", "classconverter.html", null ],
+    [ "converter", "structconverter.html", null ],
     [ "fw::core", "structfw_1_1core.html", null ],
     [ "fw::current_callback", "structfw_1_1current__callback.html", null ],
     [ "current_converter", "classcurrent__converter.html", null ],

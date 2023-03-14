@@ -1,7 +1,11 @@
 <map id="fw::current_callback" name="fw::current_callback">
-<area shape="rect" id="node1" title=" " alt="" coords="136,95,287,121"/>
-<area shape="rect" id="node2" href="$classfw_1_1clock.html" title=" " alt="" coords="5,5,84,32"/>
-<area shape="rect" id="node3" href="$classfw_1_1hbridge.html" title=" " alt="" coords="109,5,202,32"/>
-<area shape="rect" id="node4" href="$classconverter.html" title=" " alt="" coords="227,5,311,32"/>
-<area shape="rect" id="node5" href="$classcontrol.html" title=" " alt="" coords="335,5,402,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="184,184,335,211"/>
+<area shape="rect" id="node2" href="$classfw_1_1clock.html" title=" " alt="" coords="68,95,147,121"/>
+<area shape="rect" id="node3" href="$classfw_1_1hbridge.html" title=" " alt="" coords="171,95,265,121"/>
+<area shape="rect" id="node4" href="$structconverter.html" title=" " alt="" coords="289,95,373,121"/>
+<area shape="rect" id="node5" href="$classvoltage__converter.html" title=" " alt="" coords="5,5,145,32"/>
+<area shape="rect" id="node6" href="$classposition__converter.html" title=" " alt="" coords="169,5,312,32"/>
+<area shape="rect" id="node7" href="$classtemperature__converter.html" title=" " alt="" coords="336,5,508,32"/>
+<area shape="rect" id="node8" href="$classcurrent__converter.html" title=" " alt="" coords="532,5,669,32"/>
+<area shape="rect" id="node9" href="$classcontrol.html" title=" " alt="" coords="398,95,465,121"/>
 </map>

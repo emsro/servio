@@ -1,12 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"namespacectl.html#aafaa848d5ed73333863c1852ce3bca95":[12,0,1,1,0,0,2],
-"namespacectl.html#structctl_1_1config":[12,0,1,1,0,0],
-"namespacefw.html":[10,0,2],
-"namespacefw.html#a1bbd86673200da7abcf665f3e7f02f91":[10,0,2,16],
-"namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3":[10,0,2,23],
-"namespacefw.html#a61e31aee7594c31cc25e2fa29c805d70":[12,0,1,2,0,1,0,0],
-"namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e":[10,0,2,18],
 "namespacefw.html#a6628839efe737ec62f8dd7a85cee03db":[10,0,2,21],
 "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021":[10,0,2,22],
 "namespacefw.html#aa77aaddd76d27d03433b9ced02d8a6f0":[10,0,2,19],
@@ -181,6 +174,15 @@ var NAVTREEINDEX2 =
 "stm32g4xx__hal__conf_8h_source.html":[12,0,1,16],
 "structcommand.html":[11,0,4],
 "structcommand.html#a6499a055c2d3f7ad4dff901721439601":[11,0,4,0],
+"structconverter.html":[11,0,6],
+"structconverter.html#a0d60b4625fddd045ab2e189723cdab10":[11,0,6,0],
+"structconverter.html#a20d98451d8e0423cae03e88681840f9f":[11,0,6,5],
+"structconverter.html#a8cb1044de319e60167cd89fe01a96d05":[11,0,6,4],
+"structconverter.html#a96a6c5a43d6b71202650791f0ec934df":[11,0,6,7],
+"structconverter.html#ab01dc0a727450978f3889486cd8c4a1c":[11,0,6,3],
+"structconverter.html#ab6612787f2717b51ed761b4d2cfbcc0e":[11,0,6,2],
+"structconverter.html#ac9870ea936ec13c39637d9c93827755a":[11,0,6,6],
+"structconverter.html#af04f35b463d4eca1bbf0eb1d1dde06e1":[11,0,6,1],
 "structfw_1_1acquisition_1_1current__sequence.html":[11,0,1,7,0],
 "structfw_1_1acquisition_1_1current__sequence.html#a2db024a2a79a2a64e2662e83998dac38":[11,0,1,7,0,0],
 "structfw_1_1acquisition_1_1current__sequence.html#a3699cad154f0998dd01e00d890fcfe96":[11,0,1,7,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "structmessage__with__float.html#a005170113a6154891021de878347e1a7":[11,0,13,0],
 "structmessage__with__float.html#aec838c5f46e210230829b1d778bf4478":[11,0,13,1],
 "structpacket__def.html":[11,0,15],
-"structpacket__def.html#a551e938bb198e6be4be831dab8893300":[11,0,15,1],
-"structpacket__def.html#a6a8940ecd9f06ef6da58fe8e59358e86":[11,0,15,3],
-"structpacket__def.html#ab2b9bbadb65ad16c9befe8ade687f073":[11,0,15,4]
+"structpacket__def.html#a551e938bb198e6be4be831dab8893300":[11,0,15,1]
 };

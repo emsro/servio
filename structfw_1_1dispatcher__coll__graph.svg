@@ -101,8 +101,8 @@
 <!-- Node10 -->
 <g id="node7" class="node">
 <title>Node10</title>
-<g id="a_node7"><a xlink:href="classconverter.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="305.5,-201.5 305.5,-220.5 368.5,-220.5 368.5,-201.5 305.5,-201.5"/>
+<g id="a_node7"><a xlink:href="structconverter.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="red" points="305.5,-201.5 305.5,-220.5 368.5,-220.5 368.5,-201.5 305.5,-201.5"/>
 <text text-anchor="middle" x="337" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">converter</text>
 </a>
 </g>
@@ -121,25 +121,25 @@
 <polygon fill="#9a32cd" stroke="#9a32cd" points="342.86,-190.73 341.45,-201.23 349.1,-193.9 342.86,-190.73"/>
 <text text-anchor="middle" x="369.5" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00"> conv</text>
 </g>
-<!-- Node11 -->
+<!-- Node15 -->
 <g id="node8" class="node">
-<title>Node11</title>
+<title>Node15</title>
 <g id="a_node8"><a xlink:href="classcontrol.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="391,-201.5 391,-220.5 441,-220.5 441,-201.5 391,-201.5"/>
 <text text-anchor="middle" x="416" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">control</text>
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node1 -->
+<!-- Node15&#45;&gt;Node1 -->
 <g id="edge9" class="edge">
-<title>Node11&#45;&gt;Node1</title>
+<title>Node15&#45;&gt;Node1</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M424.49,-192.21C436.87,-163.45 455.82,-106.02 431,-67 403.63,-23.98 341.94,-12.96 300.13,-10.67"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="421.26,-190.87 420.32,-201.42 427.63,-193.76 421.26,-190.87"/>
 <text text-anchor="middle" x="452" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> ctl</text>
 </g>
-<!-- Node11&#45;&gt;Node6 -->
+<!-- Node15&#45;&gt;Node6 -->
 <g id="edge7" class="edge">
-<title>Node11&#45;&gt;Node6</title>
+<title>Node15&#45;&gt;Node6</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M403.9,-192.9C394.96,-180.27 383.17,-163.6 376.11,-153.63"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="401.16,-195.09 409.8,-201.23 406.88,-191.05 401.16,-195.09"/>
 <text text-anchor="middle" x="404" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00"> ctl</text>
