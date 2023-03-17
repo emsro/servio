@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: fw::acquisition_period_callback Struct Reference</title>
+<title>servio: period_cb_interface Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('structfw_1_1acquisition__period__callback.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classperiod__cb__interface.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -85,36 +85,32 @@ $(document).ready(function(){initNavTree('structfw_1_1acquisition__period__callb
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structfw_1_1acquisition__period__callback-members.html">List of all members</a>  </div>
+<a href="classperiod__cb__interface-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">fw::acquisition_period_callback Struct Reference</div>  </div>
+<div class="title">period_cb_interface Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="callbacks_8hpp_source.html">callbacks.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="base_8hpp_source.html">base.hpp</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for fw::acquisition_period_callback:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for period_cb_interface:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structfw_1_1acquisition__period__callback__coll__graph.svg" width="174" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classperiod__cb__interface__inherit__graph.svg" width="526" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a03f830450f506f1991c242dabec268c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1acquisition__period__callback.html#a03f830450f506f1991c242dabec268c4">operator()</a> ()</td></tr>
-<tr class="separator:a03f830450f506f1991c242dabec268c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:afbf04a6820ff8aea2c6da0ab198c0bee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1acquisition__period__callback.html#afbf04a6820ff8aea2c6da0ab198c0bee">acq</a></td></tr>
-<tr class="separator:afbf04a6820ff8aea2c6da0ab198c0bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e8602d0fabae44129c0ccdee4763b37"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classperiod__cb__interface.html#a0e8602d0fabae44129c0ccdee4763b37">on_period</a> ()=0</td></tr>
+<tr class="separator:a0e8602d0fabae44129c0ccdee4763b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61028ef4ddee1c5024405e8b590c741f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classperiod__cb__interface.html#a61028ef4ddee1c5024405e8b590c741f">~period_cb_interface</a> ()=default</td></tr>
+<tr class="separator:a61028ef4ddee1c5024405e8b590c741f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a03f830450f506f1991c242dabec268c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03f830450f506f1991c242dabec268c4">&#9670;&nbsp;</a></span>operator()()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a61028ef4ddee1c5024405e8b590c741f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61028ef4ddee1c5024405e8b590c741f">&#9670;&nbsp;</a></span>~period_cb_interface()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,7 +119,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void fw::acquisition_period_callback::operator() </td>
+          <td class="memname">virtual period_cb_interface::~period_cb_interface </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -131,40 +127,51 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structfw_1_1acquisition__period__callback.html#afbf04a6820ff8aea2c6da0ab198c0bee">acq</a>, and <a class="el" href="classfw_1_1acquisition.html#a7e2f9cd2908cd2665a183a32cb29885d">fw::acquisition::period_elapsed_irq()</a>.</p>
-
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="afbf04a6820ff8aea2c6da0ab198c0bee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbf04a6820ff8aea2c6da0ab198c0bee">&#9670;&nbsp;</a></span>acq</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0e8602d0fabae44129c0ccdee4763b37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e8602d0fabae44129c0ccdee4763b37">&#9670;&nbsp;</a></span>on_period()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfw_1_1acquisition.html">acquisition</a>&amp; fw::acquisition_period_callback::acq</td>
+          <td class="memname">virtual void period_cb_interface::on_period </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classfw_1_1acquisition__period__callback.html#a1860da610e1bb2745d5be3380489127f">fw::acquisition_period_callback</a>, <a class="el" href="structempty__period__cb.html#ad887e76f41640375e8b56fdc6f548630">empty_period_cb</a>, and <a class="el" href="structperiod__cb.html#afe55863bb776b1ace0bc04d3082675c1">period_cb&lt; Callable &gt;</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/fw/<a class="el" href="callbacks_8hpp_source.html">callbacks.hpp</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/<a class="el" href="base_8hpp_source.html">base.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="structfw_1_1acquisition__period__callback.html">acquisition_period_callback</a></li>
-    <li class="footer">Generated on Fri Mar 17 2023 21:59:02 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="classperiod__cb__interface.html">period_cb_interface</a></li>
+    <li class="footer">Generated on Fri Mar 17 2023 22:37:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

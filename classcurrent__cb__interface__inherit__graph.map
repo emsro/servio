@@ -1,5 +1,6 @@
 <map id="current_cb_interface" name="current_cb_interface">
-<area shape="rect" id="node1" title=" " alt="" coords="108,5,263,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="195,5,349,32"/>
 <area shape="rect" id="node2" href="$structcurrent__cb.html" title=" " alt="" coords="5,80,179,107"/>
-<area shape="rect" id="node3" href="$classfw_1_1current__callback.html" title=" " alt="" coords="203,80,354,107"/>
+<area shape="rect" id="node3" href="$structempty__current__cb.html" title=" " alt="" coords="203,80,341,107"/>
+<area shape="rect" id="node4" href="$classfw_1_1current__callback.html" title=" " alt="" coords="366,80,517,107"/>
 </map>

@@ -12,7 +12,7 @@ var classfw_1_1acquisition =
       [ "tim_channel", "classfw_1_1acquisition.html#aef2cd45789e6fc9030b84b9d9d6c1cfd", null ],
       [ "vcc_chconf", "classfw_1_1acquisition.html#af371d3c9aeb1b1a64f829e58c73cb67e", null ]
     ] ],
-    [ "acquisition", "classfw_1_1acquisition.html#a357bd496cbe6c83c01795624e0e36213", null ],
+    [ "acquisition", "classfw_1_1acquisition.html#afa7f011bc53c452eacc40b06ca5f3917", null ],
     [ "adc_conv_cplt_irq", "classfw_1_1acquisition.html#a48e242d088580366fe80e0d01971c95a", null ],
     [ "adc_error_irq", "classfw_1_1acquisition.html#a418a8349e1bbfde6ad6416d3ee55875c", null ],
     [ "adc_irq", "classfw_1_1acquisition.html#ac4a173c3db73c5ad55acf156edde8e3f", null ],

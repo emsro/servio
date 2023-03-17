@@ -1,6 +1,6 @@
 var namespacefw =
 [
-    [ "acquisition_period_callback", "structfw_1_1acquisition__period__callback.html", "structfw_1_1acquisition__period__callback" ],
+    [ "acquisition_period_callback", "classfw_1_1acquisition__period__callback.html", "classfw_1_1acquisition__period__callback" ],
     [ "current_callback", "classfw_1_1current__callback.html", "classfw_1_1current__callback" ],
     [ "position_callback", "classfw_1_1position__callback.html", "classfw_1_1position__callback" ],
     [ "cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", "structfw_1_1cfg__dispatcher" ],

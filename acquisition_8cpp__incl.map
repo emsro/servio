@@ -1,13 +1,12 @@
 <map id="src/fw/drivers/acquisition.cpp" name="src/fw/drivers/acquisition.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="144,5,355,32"/>
-<area shape="rect" id="node2" href="$acquisition_8hpp.html" title=" " alt="" coords="339,80,528,107"/>
-<area shape="rect" id="node11" href="$util_8hpp.html" title=" " alt="" coords="73,80,164,107"/>
-<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="262,162,343,189"/>
-<area shape="rect" id="node6" title=" " alt="" coords="602,155,779,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="803,162,1002,189"/>
-<area shape="rect" id="node8" title=" " alt="" coords="367,162,499,189"/>
-<area shape="rect" id="node9" title=" " alt="" coords="524,162,577,189"/>
-<area shape="rect" id="node10" title=" " alt="" coords="103,162,238,189"/>
-<area shape="rect" id="node4" title=" " alt="" coords="232,244,299,271"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,244,171,271"/>
+<area shape="rect" id="node1" title=" " alt="" coords="76,5,286,32"/>
+<area shape="rect" id="node2" href="$acquisition_8hpp.html" title=" " alt="" coords="205,80,394,107"/>
+<area shape="rect" id="node10" href="$util_8hpp.html" title=" " alt="" coords="54,80,145,107"/>
+<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="226,162,307,189"/>
+<area shape="rect" id="node6" title=" " alt="" coords="331,155,508,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="532,162,664,189"/>
+<area shape="rect" id="node8" title=" " alt="" coords="689,162,742,189"/>
+<area shape="rect" id="node9" title=" " alt="" coords="67,162,202,189"/>
+<area shape="rect" id="node4" title=" " alt="" coords="18,244,85,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="146,244,312,271"/>
 </map>

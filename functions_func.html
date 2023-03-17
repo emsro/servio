@@ -87,7 +87,10 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <h3><a id="index_a"></a>- a -</h3><ul>
 <li>acquisition()
-: <a class="el" href="classfw_1_1acquisition.html#a357bd496cbe6c83c01795624e0e36213">fw::acquisition</a>
+: <a class="el" href="classfw_1_1acquisition.html#afa7f011bc53c452eacc40b06ca5f3917">fw::acquisition</a>
+</li>
+<li>acquisition_period_callback()
+: <a class="el" href="classfw_1_1acquisition__period__callback.html#a8f2aeb79d6a9a77a7ff11c5a70012278">fw::acquisition_period_callback</a>
 </li>
 <li>adc_conv_cplt_irq()
 : <a class="el" href="classfw_1_1acquisition.html#a48e242d088580366fe80e0d01971c95a">fw::acquisition</a>
@@ -214,7 +217,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">ctl::pid_module</a>
 </li>
 <li>get_period_callback()
-: <a class="el" href="classfw_1_1hbridge.html#a415e5cf0eb99d0903aea6ad8ebc8e8e2">fw::hbridge</a>
+: <a class="el" href="classfw_1_1hbridge.html#a219f0626a5c84d06530c5d6df9031424">fw::hbridge</a>
 </li>
 <li>get_position()
 : <a class="el" href="classfw_1_1acquisition.html#aab62ea818930316a5e6036deb5ddd7d8">fw::acquisition</a>
@@ -252,7 +255,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="structfw_1_1dispatcher.html#adfec5a727d37a9025b542d360893dc84">fw::dispatcher</a>
 </li>
 <li>hbridge()
-: <a class="el" href="classfw_1_1hbridge.html#af0775a7876f122312c18b298c823d77a">fw::hbridge</a>
+: <a class="el" href="classfw_1_1hbridge.html#abc3d72116d7720beba4951d5bb740c3d">fw::hbridge</a>
 </li>
 </ul>
 
@@ -288,19 +291,26 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>on_current()
 : <a class="el" href="structcurrent__cb.html#ae4927ffcdd4a91ee9f7b47dd71b61252">current_cb&lt; Callable &gt;</a>
 , <a class="el" href="classcurrent__cb__interface.html#a66cba6fe6649c6df7ca564a72cff9f3b">current_cb_interface</a>
-, <a class="el" href="classfw_1_1current__callback.html#a78e00709b3041dafba6cd55dce97314a">fw::current_callback</a>
+, <a class="el" href="structempty__current__cb.html#a57d28852dc48fce29d1a9465caf8f41c">empty_current_cb</a>
+, <a class="el" href="classfw_1_1current__callback.html#a788b717485e1c3682cd114f0222f16cb">fw::current_callback</a>
 </li>
 <li>on_event()
 : <a class="el" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">indication</a>
 </li>
+<li>on_period()
+: <a class="el" href="structempty__period__cb.html#ad887e76f41640375e8b56fdc6f548630">empty_period_cb</a>
+, <a class="el" href="classfw_1_1acquisition__period__callback.html#a1860da610e1bb2745d5be3380489127f">fw::acquisition_period_callback</a>
+, <a class="el" href="structperiod__cb.html#afe55863bb776b1ace0bc04d3082675c1">period_cb&lt; Callable &gt;</a>
+, <a class="el" href="classperiod__cb__interface.html#a0e8602d0fabae44129c0ccdee4763b37">period_cb_interface</a>
+</li>
 <li>on_position()
-: <a class="el" href="classfw_1_1position__callback.html#af966b423fe9787b60c01adc54555d620">fw::position_callback</a>
+: <a class="el" href="structempty__position__cb.html#aace933d547a175dc43eb851da020beb8">empty_position_cb</a>
+, <a class="el" href="classfw_1_1position__callback.html#a22e5c2a039e6026b090e54f2a56513d0">fw::position_callback</a>
 , <a class="el" href="structposition__cb.html#a7b09b3cccb1e712fb86bb0b27e711a5a">position_cb&lt; Callable &gt;</a>
 , <a class="el" href="classposition__cb__interface.html#a036665f222ea296788f23a6e147a9a15">position_cb_interface</a>
 </li>
 <li>operator()()
-: <a class="el" href="structfw_1_1acquisition__period__callback.html#a03f830450f506f1991c242dabec268c4">fw::acquisition_period_callback</a>
-, <a class="el" href="structfw_1_1cfg__dispatcher.html#a73b6b66b6d1a61b1dce607496b65e4d4">fw::cfg_dispatcher</a>
+: <a class="el" href="structfw_1_1cfg__dispatcher.html#a73b6b66b6d1a61b1dce607496b65e4d4">fw::cfg_dispatcher</a>
 </li>
 <li>operator=()
 : <a class="el" href="classfw_1_1clock.html#ac8eec0b7cd1efccb1b6676ec472ad1e9">fw::clock</a>
@@ -312,6 +322,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
+<li>period_cb()
+: <a class="el" href="structperiod__cb.html#ab6cad5355652a0423219388c9473fb8c">period_cb&lt; Callable &gt;</a>
+</li>
 <li>period_elapsed_irq()
 : <a class="el" href="classfw_1_1acquisition.html#a7e2f9cd2908cd2665a183a32cb29885d">fw::acquisition</a>
 </li>
@@ -386,7 +399,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classctl_1_1pid__module.html#aee7ffa9937102c6f25f5fc0acd998513">ctl::pid_module</a>
 </li>
 <li>set_period_callback()
-: <a class="el" href="classfw_1_1hbridge.html#a04ce5446d9e6b64b85ed2e5c82a54fd2">fw::hbridge</a>
+: <a class="el" href="classfw_1_1hbridge.html#a9bd7b19236a31e78be3cde64a28c244b">fw::hbridge</a>
 </li>
 <li>set_pid()
 : <a class="el" href="classcontrol.html#a89721e40ebe007563bc70e1242ce941f">control</a>
@@ -497,6 +510,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>~current_cb_interface()
 : <a class="el" href="classcurrent__cb__interface.html#afa5479f450a072d17789895d571dae58">current_cb_interface</a>
 </li>
+<li>~period_cb_interface()
+: <a class="el" href="classperiod__cb__interface.html#a61028ef4ddee1c5024405e8b590c741f">period_cb_interface</a>
+</li>
 <li>~position_cb_interface()
 : <a class="el" href="classposition__cb__interface.html#a455c5689809e2c4850157fcf562c63db">position_cb_interface</a>
 </li>
@@ -506,7 +522,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 17 2023 21:59:02 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 17 2023 22:37:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

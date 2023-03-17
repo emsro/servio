@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['get_5fconfig_5frequest_518',['get_config_request',['../structget__config__request.html',1,'']]],
-  ['get_5fconfig_5fresponse_519',['get_config_response',['../structget__config__response.html',1,'']]],
-  ['getter_520',['getter',['../structgetter.html',1,'']]]
+  ['empty_5fcurrent_5fcb_521',['empty_current_cb',['../structempty__current__cb.html',1,'']]],
+  ['empty_5fperiod_5fcb_522',['empty_period_cb',['../structempty__period__cb.html',1,'']]],
+  ['empty_5fposition_5fcb_523',['empty_position_cb',['../structempty__position__cb.html',1,'']]]
 ];

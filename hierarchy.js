@@ -1,7 +1,6 @@
 var hierarchy =
 [
     [ "fw::acquisition", "classfw_1_1acquisition.html", null ],
-    [ "fw::acquisition_period_callback", "structfw_1_1acquisition__period__callback.html", null ],
     [ "fw::acquisition_status", "namespacefw.html#structfw_1_1acquisition__status", null ],
     [ "fw::cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", null ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", null ],
@@ -15,6 +14,7 @@ var hierarchy =
     [ "fw::core", "structfw_1_1core.html", null ],
     [ "current_cb_interface", "classcurrent__cb__interface.html", [
       [ "current_cb< Callable >", "structcurrent__cb.html", null ],
+      [ "empty_current_cb", "structempty__current__cb.html", null ],
       [ "fw::current_callback", "classfw_1_1current__callback.html", null ]
     ] ],
     [ "current_converter", "classcurrent__converter.html", null ],
@@ -39,8 +39,14 @@ var hierarchy =
     [ "metrics", "classmetrics.html", null ],
     [ "fw::monitor", "classfw_1_1monitor.html", null ],
     [ "packet_def", "structpacket__def.html", null ],
+    [ "period_cb_interface", "classperiod__cb__interface.html", [
+      [ "empty_period_cb", "structempty__period__cb.html", null ],
+      [ "fw::acquisition_period_callback", "classfw_1_1acquisition__period__callback.html", null ],
+      [ "period_cb< Callable >", "structperiod__cb.html", null ]
+    ] ],
     [ "ctl::pid_module", "classctl_1_1pid__module.html", null ],
     [ "position_cb_interface", "classposition__cb__interface.html", [
+      [ "empty_position_cb", "structempty__position__cb.html", null ],
       [ "fw::position_callback", "classfw_1_1position__callback.html", null ],
       [ "position_cb< Callable >", "structposition__cb.html", null ]
     ] ],
