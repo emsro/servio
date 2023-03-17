@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5":[10,0,1,4],
 "namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1":[10,0,1,3],
 "namespacectl.html#a3d55b5c4569a6d2ae3aba339917347d0":[12,0,1,1,0,0,1],
 "namespacectl.html#a42c41625e334582523c4f5be94bddb8a":[12,0,1,1,0,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "structget__config__request.html#a35b16f104112f985c20c4cfd3d0241be":[11,0,10,0],
 "structget__config__request.html#aa676ee73c49ec894b9d2074b8b317a5e":[11,0,10,1],
 "structget__config__response.html":[11,0,11],
-"structget__config__response.html#a2da37a3e37067afa258205b1d7caf10e":[11,0,11,0],
-"structget__config__response.html#aa5f56edb14979b1eaf63c919adb0e60e":[11,0,11,1]
+"structget__config__response.html#a2da37a3e37067afa258205b1d7caf10e":[11,0,11,0]
 };
