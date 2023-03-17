@@ -39,6 +39,8 @@ bool setup_adc( fw::acquisition::handles& h )
         h.adc.Init.Overrun               = ADC_OVR_DATA_PRESERVED;
         h.adc.Init.OversamplingMode      = DISABLE;
 
+        h.adc_irqn = ADC1_2_IRQn;
+
         ADC_MultiModeTypeDef mmode{};
 
         mmode.Mode = ADC_MODE_INDEPENDENT;
@@ -50,7 +52,7 @@ bool setup_adc( fw::acquisition::handles& h )
         for ( ADC_ChannelConfTypeDef* chconf :
               { &h.current_chconf, &h.position_chconf, &h.vcc_chconf, &h.temp_chconf } ) {
                 chconf->Rank         = ADC_REGULAR_RANK_1;
-                chconf->SamplingTime = ADC_SAMPLETIME_247CYCLES_5;
+                chconf->SamplingTime = ADC_SAMPLETIME_92CYCLES_5;
                 chconf->SingleDiff   = ADC_SINGLE_ENDED;
                 chconf->OffsetNumber = ADC_OFFSET_NONE;
                 chconf->Offset       = 0;
@@ -99,8 +101,8 @@ bool setup_adc( fw::acquisition::handles& h )
 
         __HAL_LINKDMA( ( &h.adc ), DMA_Handle, h.dma );
 
-        HAL_NVIC_SetPriority( ADC1_2_IRQn, 0, 0 );
-        HAL_NVIC_EnableIRQ( ADC1_2_IRQn );
+        HAL_NVIC_SetPriority( h.adc_irqn, 0, 0 );
+        HAL_NVIC_EnableIRQ( h.adc_irqn );
 
         return true;
 }

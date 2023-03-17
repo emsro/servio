@@ -17,7 +17,7 @@ bool setup_hbridge_timers( fw::hbridge::handles& h )
         h.timer.Instance               = TIM1;
         h.timer.Init.Prescaler         = 0;
         h.timer.Init.CounterMode       = TIM_COUNTERMODE_UP;
-        h.timer.Init.Period            = std::numeric_limits< uint16_t >::max() / 2;
+        h.timer.Init.Period            = std::numeric_limits< uint16_t >::max() / 4;
         h.timer.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
         h.timer.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
@@ -101,7 +101,7 @@ bool setup_adc_timer( fw::acquisition::handles& h )
         h.tim.Instance               = TIM4;
         h.tim.Init.Prescaler         = 0;
         h.tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
-        h.tim.Init.Period            = 512;
+        h.tim.Init.Period            = 256;
         h.tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
         h.tim.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
