@@ -25,7 +25,7 @@ public:
 
         void set_pid( pid_coefficients coeff )
         {
-                pid_.set_pid( coeff );
+                pid_.cfg.coefficients = coeff;
         }
 
         void set_config_limit( limits< float > lim )
@@ -42,12 +42,12 @@ public:
 
         float get_output() const
         {
-                return pid_.get_output();
+                return pid_.output;
         }
 
         void set_output( float val )
         {
-                pid_.set_output( val );
+                em::update_output( pid_, val );
         }
 
         void reset_momentary_limit()
@@ -57,33 +57,36 @@ public:
 
         limits< float > get_limits()
         {
-                return pid_.get_limits();
-        }
-
-        float get_desired() const
-        {
-                return pid_.get_desired();
+                return pid_.cfg.limits;
         }
 
         void reset( microseconds now, float val )
         {
-                pid_.set_last_time( now.count() );
-                pid_.set_last_measured( val );
+                pid_.last_time     = now.count();
+                pid_.last_measured = val;
         }
 
         float update( microseconds now, float measured, float goal )
         {
-                return pid_.update( now.count(), measured, goal );
+                last_goal_ = goal;
+                return em::update( pid_, now.count(), measured, goal );
+        }
+
+        float get_desired() const
+        {
+                return last_goal_;
         }
 
 private:
         void update_limit()
         {
-                pid_.set_limits(
-                    std::max( momentary_lim_.min, config_lim_.min ),
-                    std::min( momentary_lim_.max, config_lim_.max ) );
+                update_limits(
+                    pid_,
+                    { std::max( momentary_lim_.min, config_lim_.min ),
+                      std::min( momentary_lim_.max, config_lim_.max ) } );
         }
 
+        float           last_goal_ = 0.f;
         limits< float > momentary_lim_;
         limits< float > config_lim_;
         pid             pid_;
