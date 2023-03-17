@@ -32,7 +32,7 @@ int main()
         fw::core cor{ clock_ptr->get_us(), *acquisition_ptr, *clock_ptr };
         leds_ptr->update( cor.ind.get_state() );
 
-        fw::setup_standard_callbacks(
+        fw::standard_callbacks cbs(
             *hbridge_ptr, *acquisition_ptr, *clock_ptr, cor.ctl, cor.met, cor.conv );
 
         fw::cfg_dispatcher cfg_dis{ cfg, cor };

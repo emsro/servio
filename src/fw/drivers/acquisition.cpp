@@ -34,9 +34,7 @@ void acquisition::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
         case READ_POSITION:
                 HAL_ADC_Stop_IT( &h_.adc );
                 position_ = HAL_ADC_GetValue( &h_.adc );
-                if ( position_cb_ ) {
-                        position_cb_( position_ );
-                }
+                position_cb_->on_position( position_ );
                 break;
         case READ_VCC:
                 HAL_ADC_Stop_IT( &h_.adc );
@@ -57,13 +55,13 @@ void acquisition::start()
         HAL_TIM_OC_Start( &h_.tim, h_.tim_channel );
 }
 
-void acquisition::set_current_callback( current_callback f )
+void acquisition::set_current_callback( current_cb_interface& cb )
 {
-        current_cb_ = std::move( f );
+        current_cb_ = &cb;
 }
-const acquisition::current_callback& acquisition::get_current_callback()
+current_cb_interface& acquisition::get_current_callback()
 {
-        return current_cb_;
+        return *current_cb_;
 }
 
 void acquisition::switch_adc_channel( adc_states state )
@@ -106,8 +104,8 @@ acquisition::adc_states acquisition::next_side_state( adc_states inpt )
         case READ_POSITION:
                 return READ_VCC;
         case READ_VCC:
-                // this skips the temp reading, turns out that for some reason READ_TEMP is much
-                // slower
+                // TODO: this skips the temp reading, turns out that for some reason READ_TEMP is
+                // much slower
                 //            return READ_TEMP;
                 return READ_POSITION;
         case READ_TEMP:
@@ -118,14 +116,13 @@ acquisition::adc_states acquisition::next_side_state( adc_states inpt )
         return READ_POSITION;
 }
 
-// TODO: this is dangerous during the IRQs, fix that!
-void acquisition::set_position_callback( position_callback cb )
+void acquisition::set_position_callback( position_cb_interface& cb )
 {
-        position_cb_ = std::move( cb );
+        position_cb_ = &cb;
 }
-const acquisition::position_callback& acquisition::get_position_callback()
+position_cb_interface& acquisition::get_position_callback()
 {
-        return position_cb_;
+        return *position_cb_;
 }
 
 void acquisition::period_elapsed_irq()
@@ -160,9 +157,7 @@ void acquisition::period_elapsed_irq()
                 std::span readings( &next_se.buffer[0], next_se.used );
 
                 current_ = em::avg( readings );
-                if ( current_cb_ ) {
-                        current_cb_( current_, readings );
-                }
+                current_cb_->on_current( current_, readings );
                 current_sequence_i_ = next_buffer_i;
 
                 side_state_ = next_side_state( side_state_ );

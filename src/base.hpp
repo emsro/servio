@@ -18,7 +18,7 @@ using protocol_temperature = scaled< int32_t, 16 >;
 
 using microseconds = std::chrono::duration< uint32_t, std::micro >;
 using milliseconds = std::chrono::duration< uint32_t, std::milli >;
-using seconds = std::chrono::duration< uint32_t>;
+using seconds      = std::chrono::duration< uint32_t >;
 
 constexpr microseconds operator""_s( unsigned long long int secs )
 {
@@ -64,4 +64,50 @@ struct leds_vals
         bool    blue;
         uint8_t yellow;
         uint8_t green;
+};
+
+class current_cb_interface
+{
+public:
+        virtual void on_current( uint32_t current, std::span< uint16_t > profile ) = 0;
+        virtual ~current_cb_interface()                                            = default;
+};
+
+template < typename Callable >
+struct current_cb : public current_cb_interface
+{
+        current_cb( Callable cb )
+          : cb( std::move( cb ) )
+        {
+        }
+
+        void on_current( uint32_t current, std::span< uint16_t > profile )
+        {
+                cb( current, profile );
+        }
+
+        Callable cb;
+};
+
+class position_cb_interface
+{
+public:
+        virtual void on_position( uint32_t pos ) = 0;
+        virtual ~position_cb_interface()         = default;
+};
+
+template < typename Callable >
+struct position_cb : public position_cb_interface
+{
+        position_cb( Callable cb )
+          : cb( std::move( cb ) )
+        {
+        }
+
+        virtual void on_position( uint32_t pos )
+        {
+                cb( pos );
+        }
+
+        Callable cb;
 };

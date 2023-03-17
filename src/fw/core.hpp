@@ -40,18 +40,27 @@ struct core
         }
 };
 
-inline void setup_standard_callbacks(
-    hbridge&         hb,
-    acquisition&     acqui,
-    clock&           clk,
-    control&         ctl,
-    metrics&         met,
-    const converter& conv )
+struct standard_callbacks
 {
+        standard_callbacks(
+            hbridge&         hb,
+            acquisition&     acqui,
+            clock&           clk,
+            control&         ctl,
+            metrics&         met,
+            const converter& conv )
+          : period_cb( acqui )
+          , current_cb( hb, ctl, clk, conv )
+          , pos_cb( ctl, met, clk, conv )
+        {
+                hb.set_period_callback( acquisition_period_callback{ acqui } );
+                acqui.set_current_callback( current_cb );
+                acqui.set_position_callback( pos_cb );
+        }
 
-        hb.set_period_callback( acquisition_period_callback{ acqui } );
-        acqui.set_current_callback( current_callback{ hb, ctl, clk, conv } );
-        acqui.set_position_callback( position_callback{ ctl, met, clk, conv } );
-}
+        acquisition_period_callback period_cb;
+        current_callback            current_cb;
+        position_callback           pos_cb;
+};
 
 }  // namespace fw

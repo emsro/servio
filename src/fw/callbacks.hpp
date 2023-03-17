@@ -21,41 +21,59 @@ struct acquisition_period_callback
         }
 };
 
-struct current_callback
+class current_callback : public current_cb_interface
 {
-        hbridge& hb;
-        control& ctl;
-        clock&   clk;
-
-        const converter& conv;
-
-        void operator()( uint32_t current, std::span< uint16_t > )
+public:
+        current_callback( hbridge& hb, control& ctl, clock& clk, const converter& conv )
+          : hb_( hb )
+          , ctl_( ctl )
+          , clk_( clk )
+          , conv_( conv )
         {
-                float c = conv.current.convert( current ) * hb.get_direction();
-
-                ctl.current_irq( clk.get_us(), c );
-                hb.set_power( ctl.get_power() );
         }
+
+        void on_current( uint32_t current, std::span< uint16_t > )
+        {
+                float c = conv_.current.convert( current ) * hb_.get_direction();
+
+                ctl_.current_irq( clk_.get_us(), c );
+                hb_.set_power( ctl_.get_power() );
+        }
+
+private:
+        hbridge&         hb_;
+        control&         ctl_;
+        clock&           clk_;
+        const converter& conv_;
 };
 
-struct position_callback
+class position_callback : public position_cb_interface
 {
-        control& ctl;
-        metrics& met;
-        clock&   clk;
-
-        const converter& conv;
-
-        void operator()( uint32_t position )
+public:
+        position_callback( control& ctl, metrics& met, clock& clk, const converter& conv )
+          : ctl_( ctl )
+          , met_( met )
+          , clk_( clk )
+          , conv_( conv )
         {
-                microseconds now = clk.get_us();
-
-                float p = conv.position.convert( position );
-
-                met.position_irq( now, p );
-                ctl.position_irq( now, met.get_position() );
-                ctl.velocity_irq( now, met.get_velocity() );
         }
+
+        void on_position( uint32_t position )
+        {
+                microseconds now = clk_.get_us();
+
+                float p = conv_.position.convert( position );
+
+                met_.position_irq( now, p );
+                ctl_.position_irq( now, met_.get_position() );
+                ctl_.velocity_irq( now, met_.get_velocity() );
+        }
+
+private:
+        control&         ctl_;
+        metrics&         met_;
+        clock&           clk_;
+        const converter& conv_;
 };
 
 }  // namespace fw

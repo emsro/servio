@@ -1,3 +1,5 @@
+#include "base.hpp"
+
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/static_function.h>
 #include <emlabcpp/view.h>
@@ -30,6 +32,7 @@ public:
         struct handles
         {
                 ADC_HandleTypeDef      adc;
+                IRQn_Type              adc_irqn;
                 DMA_HandleTypeDef      dma;
                 TIM_HandleTypeDef      tim;
                 uint32_t               tim_channel;
@@ -47,9 +50,6 @@ public:
                 std::size_t used;
         };
 
-        using current_callback = em::static_function< void( uint32_t, std::span< uint16_t > ), 16 >;
-        using position_callback = em::static_function< void( uint32_t ), 16 >;
-
         acquisition() = default;
 
         bool setup( em::function_view< bool( handles& ) > );
@@ -65,15 +65,15 @@ public:
         // Callback is called each time current measurement of one PWM pulse.
         // The callback gets average current during that pulse.
         // (Does not happen every pulse!)
-        void                    set_current_callback( current_callback );
-        const current_callback& get_current_callback();
+        void                  set_current_callback( current_cb_interface& );
+        current_cb_interface& get_current_callback();
 
         // Access last measured current reading
         em::view< const uint16_t* > get_current_reading() const;
 
         // Callback is called each time new position is read, the argument is the position
-        void                     set_position_callback( position_callback );
-        const position_callback& get_position_callback();
+        void                   set_position_callback( position_cb_interface& );
+        position_cb_interface& get_position_callback();
 
         uint32_t get_current() const
         {
@@ -109,8 +109,8 @@ private:
 
         acquisition_status status_;
 
-        current_callback  current_cb_;
-        position_callback position_cb_;
+        current_cb_interface*  current_cb_;
+        position_cb_interface* position_cb_;
 
         uint32_t position_;
         uint32_t temp_;
