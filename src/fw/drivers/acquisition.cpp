@@ -4,6 +4,17 @@
 
 namespace fw
 {
+namespace
+{
+        empty_position_cb EMPTY_POSITION_CB;
+        empty_current_cb  EMPTY_CURRENT_CB;
+}  // namespace
+
+acquisition::acquisition()
+  : current_cb_( &EMPTY_CURRENT_CB )
+  , position_cb_( &EMPTY_POSITION_CB )
+{
+}
 
 bool acquisition::setup( em::function_view< bool( handles& ) > setup_f )
 {

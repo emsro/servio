@@ -53,7 +53,7 @@ struct standard_callbacks
           , current_cb( hb, ctl, clk, conv )
           , pos_cb( ctl, met, clk, conv )
         {
-                hb.set_period_callback( acquisition_period_callback{ acqui } );
+                hb.set_period_callback( period_cb );
                 acqui.set_current_callback( current_cb );
                 acqui.set_position_callback( pos_cb );
         }

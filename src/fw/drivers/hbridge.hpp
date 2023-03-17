@@ -2,7 +2,6 @@
 #include "fw/util.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
-#include <emlabcpp/static_function.h>
 #include <span>
 
 #pragma once
@@ -21,9 +20,7 @@ public:
                 uint32_t          mc2_channel;
         };
 
-        using period_callback = em::static_function< void(), 16 >;
-
-        hbridge() = default;
+        hbridge();
 
         // driver is non-movable and non-copyable
         hbridge( const hbridge& )            = delete;
@@ -36,8 +33,8 @@ public:
         void timer_period_irq();
         void timer_irq();
 
-        void                   set_period_callback( period_callback );
-        const period_callback& get_period_callback();
+        void                 set_period_callback( period_cb_interface& );
+        period_cb_interface& get_period_callback();
 
         // Sets the power that hbridge should generate to the motor.
         // Input range is lineary interpolated based on:
@@ -51,13 +48,13 @@ public:
 
         // starts the timers
         void start();
-        
+
         void stop();
 
 private:
-        period_callback period_cb_;
-        uint32_t        timer_max_ = 0;
-        handles         h_{};
+        period_cb_interface* period_cb_;
+        uint32_t             timer_max_ = 0;
+        handles              h_{};
 };
 
 }  // namespace fw

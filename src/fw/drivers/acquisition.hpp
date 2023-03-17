@@ -1,7 +1,6 @@
 #include "base.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
-#include <emlabcpp/static_function.h>
 #include <emlabcpp/view.h>
 #include <span>
 #include <stm32g4xx_hal.h>
@@ -50,7 +49,7 @@ public:
                 std::size_t used;
         };
 
-        acquisition() = default;
+        acquisition();
 
         bool setup( em::function_view< bool( handles& ) > );
 

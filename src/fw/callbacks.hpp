@@ -11,14 +11,21 @@
 namespace fw
 {
 
-struct acquisition_period_callback
+class acquisition_period_callback : public period_cb_interface
 {
-        acquisition& acq;
-
-        void operator()()
+public:
+        acquisition_period_callback( acquisition& acq )
+          : acq_( acq )
         {
-                acq.period_elapsed_irq();
         }
+
+        virtual void on_period()
+        {
+                acq_.period_elapsed_irq();
+        }
+
+private:
+        acquisition& acq_;
 };
 
 class current_callback : public current_cb_interface
@@ -32,7 +39,7 @@ public:
         {
         }
 
-        void on_current( uint32_t current, std::span< uint16_t > )
+        virtual void on_current( uint32_t current, std::span< uint16_t > )
         {
                 float c = conv_.current.convert( current ) * hb_.get_direction();
 
@@ -58,7 +65,7 @@ public:
         {
         }
 
-        void on_position( uint32_t position )
+        virtual void on_position( uint32_t position )
         {
                 microseconds now = clk_.get_us();
 

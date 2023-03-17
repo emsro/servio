@@ -3,6 +3,16 @@
 namespace fw
 {
 
+namespace
+{
+        empty_period_cb EMPTY_PERIOD_CB;
+}
+
+hbridge::hbridge()
+  : period_cb_( &EMPTY_PERIOD_CB )
+{
+}
+
 bool hbridge::setup( em::function_view< bool( handles& ) > setup_f )
 {
 
@@ -17,9 +27,7 @@ bool hbridge::setup( em::function_view< bool( handles& ) > setup_f )
 
 void hbridge::timer_period_irq()
 {
-        if ( period_cb_ ) {
-                period_cb_();
-        }
+        period_cb_->on_period();
 }
 
 void hbridge::timer_irq()
@@ -39,14 +47,14 @@ void hbridge::stop()
         HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc2_channel );
 }
 
-void hbridge::set_period_callback( period_callback cb )
+void hbridge::set_period_callback( period_cb_interface& cb )
 {
-        period_cb_ = std::move( cb );
+        period_cb_ = &cb;
 }
 
-const hbridge::period_callback& hbridge::get_period_callback()
+period_cb_interface& hbridge::get_period_callback()
 {
-        return period_cb_;
+        return *period_cb_;
 }
 
 void hbridge::set_power( int16_t power )
