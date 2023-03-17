@@ -33,6 +33,12 @@ void hbridge::start()
         HAL_TIM_PWM_Start_IT( &h_.timer, h_.mc2_channel );
 }
 
+void hbridge::stop()
+{
+        HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc1_channel );
+        HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc2_channel );
+}
+
 void hbridge::set_period_callback( period_callback cb )
 {
         period_cb_ = std::move( cb );

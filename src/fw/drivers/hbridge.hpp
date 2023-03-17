@@ -51,6 +51,8 @@ public:
 
         // starts the timers
         void start();
+        
+        void stop();
 
 private:
         period_callback period_cb_;
