@@ -85,7 +85,6 @@ $(document).ready(function(){initNavTree('classfw_1_1acquisition.html',''); init
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classfw_1_1acquisition-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -101,13 +100,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structfw_1_1acquisition_1_1handles"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#structfw_1_1acquisition_1_1handles">handles</a></td></tr>
 <tr class="separator:structfw_1_1acquisition_1_1handles"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:af37bc4ab7f4e1797ccdfae09466ab4a7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#af37bc4ab7f4e1797ccdfae09466ab4a7">current_callback</a> = em::static_function&lt; void(uint32_t, std::span&lt; uint16_t &gt;), 16 &gt;</td></tr>
-<tr class="separator:af37bc4ab7f4e1797ccdfae09466ab4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad222a29f3a93d955484ff8d6f65cba59"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#ad222a29f3a93d955484ff8d6f65cba59">position_callback</a> = em::static_function&lt; void(uint32_t), 16 &gt;</td></tr>
-<tr class="separator:ad222a29f3a93d955484ff8d6f65cba59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -127,16 +119,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7e2f9cd2908cd2665a183a32cb29885d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd5472214381a4c3bfeb58fb780f012e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#afd5472214381a4c3bfeb58fb780f012e">start</a> ()</td></tr>
 <tr class="separator:afd5472214381a4c3bfeb58fb780f012e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acce976c2a6963b87836c05d89974a2c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#acce976c2a6963b87836c05d89974a2c3">set_current_callback</a> (<a class="el" href="classfw_1_1acquisition.html#af37bc4ab7f4e1797ccdfae09466ab4a7">current_callback</a>)</td></tr>
-<tr class="separator:acce976c2a6963b87836c05d89974a2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a536f4562afaaff156fd5b4829a395c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classfw_1_1acquisition.html#af37bc4ab7f4e1797ccdfae09466ab4a7">current_callback</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#a6a536f4562afaaff156fd5b4829a395c">get_current_callback</a> ()</td></tr>
-<tr class="separator:a6a536f4562afaaff156fd5b4829a395c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a556a3ead8791cc96a59648381f4b835a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#a556a3ead8791cc96a59648381f4b835a">set_current_callback</a> (<a class="el" href="classcurrent__cb__interface.html">current_cb_interface</a> &amp;)</td></tr>
+<tr class="separator:a556a3ead8791cc96a59648381f4b835a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49472f3d135f86550969fe80ea8d0322"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcurrent__cb__interface.html">current_cb_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#a49472f3d135f86550969fe80ea8d0322">get_current_callback</a> ()</td></tr>
+<tr class="separator:a49472f3d135f86550969fe80ea8d0322"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a1e4d07f634db7d5349a03129c3dd93"><td class="memItemLeft" align="right" valign="top">em::view&lt; const uint16_t * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#a4a1e4d07f634db7d5349a03129c3dd93">get_current_reading</a> () const</td></tr>
 <tr class="separator:a4a1e4d07f634db7d5349a03129c3dd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49f596ed7a9f8e020f0cf1da687fe157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#a49f596ed7a9f8e020f0cf1da687fe157">set_position_callback</a> (<a class="el" href="classfw_1_1acquisition.html#ad222a29f3a93d955484ff8d6f65cba59">position_callback</a>)</td></tr>
-<tr class="separator:a49f596ed7a9f8e020f0cf1da687fe157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1eddf489636002fee495582d4b77082"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classfw_1_1acquisition.html#ad222a29f3a93d955484ff8d6f65cba59">position_callback</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#ac1eddf489636002fee495582d4b77082">get_position_callback</a> ()</td></tr>
-<tr class="separator:ac1eddf489636002fee495582d4b77082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b849dfcdb228b08b5465d4b798b6cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#a27b849dfcdb228b08b5465d4b798b6cb">set_position_callback</a> (<a class="el" href="classposition__cb__interface.html">position_cb_interface</a> &amp;)</td></tr>
+<tr class="separator:a27b849dfcdb228b08b5465d4b798b6cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a279f69ad8243f301efd85017301a5832"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classposition__cb__interface.html">position_cb_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#a279f69ad8243f301efd85017301a5832">get_position_callback</a> ()</td></tr>
+<tr class="separator:a279f69ad8243f301efd85017301a5832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e6c27f1186f1e2febd005a4dfff6619"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#a2e6c27f1186f1e2febd005a4dfff6619">get_current</a> () const</td></tr>
 <tr class="separator:a2e6c27f1186f1e2febd005a4dfff6619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab62ea818930316a5e6036deb5ddd7d8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1acquisition.html#aab62ea818930316a5e6036deb5ddd7d8">get_position</a> () const</td></tr>
@@ -168,6 +160,12 @@ Public Member Functions</h2></td></tr>
 <a id="ad28805e424959bcdc890d303f961a73d"></a>ADC_HandleTypeDef</td>
 <td class="fieldname">
 adc</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a358bf8265f4311d4a9729ac0c73fd23c"></a>IRQn_Type</td>
+<td class="fieldname">
+adc_irqn</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -216,35 +214,6 @@ vcc_chconf</td>
 
 </div>
 </div>
-<h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="af37bc4ab7f4e1797ccdfae09466ab4a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af37bc4ab7f4e1797ccdfae09466ab4a7">&#9670;&nbsp;</a></span>current_callback</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classfw_1_1acquisition.html#af37bc4ab7f4e1797ccdfae09466ab4a7">fw::acquisition::current_callback</a> =  em::static_function&lt; void( uint32_t, std::span&lt; uint16_t &gt; ), 16 &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad222a29f3a93d955484ff8d6f65cba59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad222a29f3a93d955484ff8d6f65cba59">&#9670;&nbsp;</a></span>position_callback</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classfw_1_1acquisition.html#ad222a29f3a93d955484ff8d6f65cba59">fw::acquisition::position_callback</a> =  em::static_function&lt; void( uint32_t ), 16 &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a357bd496cbe6c83c01795624e0e36213"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a357bd496cbe6c83c01795624e0e36213">&#9670;&nbsp;</a></span>acquisition()</h2>
@@ -288,7 +257,7 @@ vcc_chconf</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classfw_1_1acquisition.html#ad28805e424959bcdc890d303f961a73d">fw::acquisition::handles::adc</a>.</p>
+<p class="reference">References <a class="el" href="classfw_1_1acquisition.html#ad28805e424959bcdc890d303f961a73d">fw::acquisition::handles::adc</a>, and <a class="el" href="classposition__cb__interface.html#a036665f222ea296788f23a6e147a9a15">position_cb_interface::on_position()</a>.</p>
 
 </div>
 </div>
@@ -400,14 +369,14 @@ vcc_chconf</td>
 
 </div>
 </div>
-<a id="a6a536f4562afaaff156fd5b4829a395c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a536f4562afaaff156fd5b4829a395c">&#9670;&nbsp;</a></span>get_current_callback()</h2>
+<a id="a49472f3d135f86550969fe80ea8d0322"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49472f3d135f86550969fe80ea8d0322">&#9670;&nbsp;</a></span>get_current_callback()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classfw_1_1acquisition.html#af37bc4ab7f4e1797ccdfae09466ab4a7">acquisition::current_callback</a> &amp; fw::acquisition::get_current_callback </td>
+          <td class="memname"><a class="el" href="classcurrent__cb__interface.html">current_cb_interface</a> &amp; fw::acquisition::get_current_callback </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -461,14 +430,14 @@ vcc_chconf</td>
 
 </div>
 </div>
-<a id="ac1eddf489636002fee495582d4b77082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1eddf489636002fee495582d4b77082">&#9670;&nbsp;</a></span>get_position_callback()</h2>
+<a id="a279f69ad8243f301efd85017301a5832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a279f69ad8243f301efd85017301a5832">&#9670;&nbsp;</a></span>get_position_callback()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classfw_1_1acquisition.html#ad222a29f3a93d955484ff8d6f65cba59">acquisition::position_callback</a> &amp; fw::acquisition::get_position_callback </td>
+          <td class="memname"><a class="el" href="classposition__cb__interface.html">position_cb_interface</a> &amp; fw::acquisition::get_position_callback </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -568,12 +537,12 @@ vcc_chconf</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classfw_1_1acquisition.html#ad28805e424959bcdc890d303f961a73d">fw::acquisition::handles::adc</a>, <a class="el" href="structfw_1_1acquisition_1_1current__sequence.html#a2db024a2a79a2a64e2662e83998dac38">fw::acquisition::current_sequence::buffer</a>, <a class="el" href="structfw_1_1acquisition_1_1current__sequence.html#a3699cad154f0998dd01e00d890fcfe96">fw::acquisition::current_sequence::buffer_size</a>, <a class="el" href="namespacefw.html#a61e31aee7594c31cc25e2fa29c805d70">fw::acquisition_status::buffer_was_full</a>, <a class="el" href="classfw_1_1acquisition.html#ae06c9f1f85308b7f439bb1b7baeb19e6">fw::acquisition::handles::dma</a>, <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">fw::stop_exec()</a>, and <a class="el" href="structfw_1_1acquisition_1_1current__sequence.html#a382e9f85c0d67dc390e9b320d1859b3e">fw::acquisition::current_sequence::used</a>.</p>
+<p class="reference">References <a class="el" href="classfw_1_1acquisition.html#ad28805e424959bcdc890d303f961a73d">fw::acquisition::handles::adc</a>, <a class="el" href="structfw_1_1acquisition_1_1current__sequence.html#a2db024a2a79a2a64e2662e83998dac38">fw::acquisition::current_sequence::buffer</a>, <a class="el" href="structfw_1_1acquisition_1_1current__sequence.html#a3699cad154f0998dd01e00d890fcfe96">fw::acquisition::current_sequence::buffer_size</a>, <a class="el" href="namespacefw.html#a61e31aee7594c31cc25e2fa29c805d70">fw::acquisition_status::buffer_was_full</a>, <a class="el" href="classfw_1_1acquisition.html#ae06c9f1f85308b7f439bb1b7baeb19e6">fw::acquisition::handles::dma</a>, <a class="el" href="classcurrent__cb__interface.html#a66cba6fe6649c6df7ca564a72cff9f3b">current_cb_interface::on_current()</a>, <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">fw::stop_exec()</a>, and <a class="el" href="structfw_1_1acquisition_1_1current__sequence.html#a382e9f85c0d67dc390e9b320d1859b3e">fw::acquisition::current_sequence::used</a>.</p>
 
 </div>
 </div>
-<a id="acce976c2a6963b87836c05d89974a2c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acce976c2a6963b87836c05d89974a2c3">&#9670;&nbsp;</a></span>set_current_callback()</h2>
+<a id="a556a3ead8791cc96a59648381f4b835a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a556a3ead8791cc96a59648381f4b835a">&#9670;&nbsp;</a></span>set_current_callback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -581,8 +550,8 @@ vcc_chconf</td>
         <tr>
           <td class="memname">void fw::acquisition::set_current_callback </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classfw_1_1acquisition.html#af37bc4ab7f4e1797ccdfae09466ab4a7">current_callback</a>&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classcurrent__cb__interface.html">current_cb_interface</a> &amp;&#160;</td>
+          <td class="paramname"><em>cb</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -590,8 +559,8 @@ vcc_chconf</td>
 
 </div>
 </div>
-<a id="a49f596ed7a9f8e020f0cf1da687fe157"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49f596ed7a9f8e020f0cf1da687fe157">&#9670;&nbsp;</a></span>set_position_callback()</h2>
+<a id="a27b849dfcdb228b08b5465d4b798b6cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b849dfcdb228b08b5465d4b798b6cb">&#9670;&nbsp;</a></span>set_position_callback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -599,7 +568,7 @@ vcc_chconf</td>
         <tr>
           <td class="memname">void fw::acquisition::set_position_callback </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classfw_1_1acquisition.html#ad222a29f3a93d955484ff8d6f65cba59">position_callback</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classposition__cb__interface.html">position_cb_interface</a> &amp;&#160;</td>
           <td class="paramname"><em>cb</em></td><td>)</td>
           <td></td>
         </tr>
@@ -655,7 +624,7 @@ vcc_chconf</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="classfw_1_1acquisition.html">acquisition</a></li>
-    <li class="footer">Generated on Tue Mar 14 2023 22:44:51 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 17 2023 21:17:34 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

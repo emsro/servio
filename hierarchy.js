@@ -13,7 +13,10 @@ var hierarchy =
     [ "control", "classcontrol.html", null ],
     [ "converter", "structconverter.html", null ],
     [ "fw::core", "structfw_1_1core.html", null ],
-    [ "fw::current_callback", "structfw_1_1current__callback.html", null ],
+    [ "current_cb_interface", "classcurrent__cb__interface.html", [
+      [ "current_cb< Callable >", "structcurrent__cb.html", null ],
+      [ "fw::current_callback", "classfw_1_1current__callback.html", null ]
+    ] ],
     [ "current_converter", "classcurrent__converter.html", null ],
     [ "fw::acquisition::current_sequence", "structfw_1_1acquisition_1_1current__sequence.html", null ],
     [ "fw::debug_comms", "classfw_1_1debug__comms.html", null ],
@@ -37,12 +40,16 @@ var hierarchy =
     [ "fw::monitor", "classfw_1_1monitor.html", null ],
     [ "packet_def", "structpacket__def.html", null ],
     [ "ctl::pid_module", "classctl_1_1pid__module.html", null ],
-    [ "fw::position_callback", "structfw_1_1position__callback.html", null ],
+    [ "position_cb_interface", "classposition__cb__interface.html", [
+      [ "fw::position_callback", "classfw_1_1position__callback.html", null ],
+      [ "position_cb< Callable >", "structposition__cb.html", null ]
+    ] ],
     [ "position_converter", "classposition__converter.html", null ],
     [ "emlabcpp::quantity", null, [
       [ "scaled< T, BitOffset >", "classscaled.html", null ]
     ] ],
     [ "set_config", "structset__config.html", null ],
+    [ "fw::standard_callbacks", "structfw_1_1standard__callbacks.html", null ],
     [ "kalman::state_range", "namespacekalman.html#structkalman_1_1state__range", null ],
     [ "temperature_converter", "classtemperature__converter.html", null ],
     [ "voltage_converter", "classvoltage__converter.html", null ]

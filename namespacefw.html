@@ -97,13 +97,15 @@ $(document).ready(function(){initNavTree('namespacefw.html',''); initResizable()
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1acquisition__period__callback.html">acquisition_period_callback</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1current__callback.html">current_callback</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1current__callback.html">current_callback</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1position__callback.html">position_callback</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1position__callback.html">position_callback</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1cfg__dispatcher.html">cfg_dispatcher</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1core.html">core</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1standard__callbacks.html">standard_callbacks</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1dispatcher.html">dispatcher</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,8 +139,6 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:acff2051fff6f79ebbfe80b750bd77be1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1leds.html">leds</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">setup_leds_with_stop_callback</a> ()</td></tr>
 <tr class="separator:acff2051fff6f79ebbfe80b750bd77be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6628839efe737ec62f8dd7a85cee03db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a6628839efe737ec62f8dd7a85cee03db">setup_standard_callbacks</a> (<a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;hb, <a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;acqui, <a class="el" href="classfw_1_1clock.html">clock</a> &amp;clk, <a class="el" href="classcontrol.html">control</a> &amp;ctl, <a class="el" href="classmetrics.html">metrics</a> &amp;met, const <a class="el" href="structconverter.html">converter</a> &amp;conv)</td></tr>
-<tr class="separator:a6628839efe737ec62f8dd7a85cee03db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0b580f4dd8010ffb0db37533802021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a> ()</td></tr>
 <tr class="separator:a8e0b580f4dd8010ffb0db37533802021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac05d95b2aaa02b49156b63e48e57b69a"><td class="memTemplParams" colspan="2">template&lt;typename... Components&gt; </td></tr>
@@ -345,68 +345,6 @@ template&lt;typename... Components&gt; </div>
 
 </div>
 </div>
-<a id="a6628839efe737ec62f8dd7a85cee03db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6628839efe737ec62f8dd7a85cee03db">&#9670;&nbsp;</a></span>setup_standard_callbacks()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fw::setup_standard_callbacks </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;&#160;</td>
-          <td class="paramname"><em>hb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;&#160;</td>
-          <td class="paramname"><em>acqui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classfw_1_1clock.html">clock</a> &amp;&#160;</td>
-          <td class="paramname"><em>clk</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classcontrol.html">control</a> &amp;&#160;</td>
-          <td class="paramname"><em>ctl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classmetrics.html">metrics</a> &amp;&#160;</td>
-          <td class="paramname"><em>met</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structconverter.html">converter</a> &amp;&#160;</td>
-          <td class="paramname"><em>conv</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="classfw_1_1acquisition.html#acce976c2a6963b87836c05d89974a2c3">fw::acquisition::set_current_callback()</a>, <a class="el" href="classfw_1_1hbridge.html#a04ce5446d9e6b64b85ed2e5c82a54fd2">fw::hbridge::set_period_callback()</a>, and <a class="el" href="classfw_1_1acquisition.html#a49f596ed7a9f8e020f0cf1da687fe157">fw::acquisition::set_position_callback()</a>.</p>
-
-</div>
-</div>
 <a id="a8e0b580f4dd8010ffb0db37533802021"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e0b580f4dd8010ffb0db37533802021">&#9670;&nbsp;</a></span>stop_exec()</h2>
 
@@ -447,7 +385,7 @@ template&lt;typename... Components&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li>
-    <li class="footer">Generated on Tue Mar 14 2023 22:44:51 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 17 2023 21:17:34 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

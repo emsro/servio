@@ -8,6 +8,7 @@ var dir_4e8e1185eea579a81ab1815e3b8726c0 =
       [ "acquisition", "classfw_1_1acquisition.html", "classfw_1_1acquisition" ],
       [ "handles", "classfw_1_1acquisition.html#structfw_1_1acquisition_1_1handles", [
         [ "adc", "classfw_1_1acquisition.html#ad28805e424959bcdc890d303f961a73d", null ],
+        [ "adc_irqn", "classfw_1_1acquisition.html#a358bf8265f4311d4a9729ac0c73fd23c", null ],
         [ "current_chconf", "classfw_1_1acquisition.html#a9b6bc14586c6ce681d73f3f308839bea", null ],
         [ "dma", "classfw_1_1acquisition.html#ae06c9f1f85308b7f439bb1b7baeb19e6", null ],
         [ "position_chconf", "classfw_1_1acquisition.html#ad76ede638046a9629c157005beeafc37", null ],

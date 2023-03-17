@@ -1,19 +1,19 @@
 <map id="src/fw/dispatcher.hpp" name="src/fw/dispatcher.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="486,5,645,32"/>
-<area shape="rect" id="node2" href="$control_8hpp.html" title=" " alt="" coords="215,229,310,256"/>
-<area shape="rect" id="node7" href="$acquisition_8hpp.html" title=" " alt="" coords="540,229,711,256"/>
-<area shape="rect" id="node13" href="$comms_8hpp.html" title=" " alt="" coords="743,229,889,256"/>
-<area shape="rect" id="node15" href="$cfg__dispatcher_8hpp.html" title=" " alt="" coords="425,80,588,107"/>
-<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="255,468,337,495"/>
-<area shape="rect" id="node4" href="$ctl_2config_8hpp.html" title=" " alt="" coords="5,311,115,338"/>
-<area shape="rect" id="node5" href="$pid__module_8hpp.html" title=" " alt="" coords="112,393,259,420"/>
-<area shape="rect" id="node6" title=" " alt="" coords="139,311,207,338"/>
-<area shape="rect" id="node8" title=" " alt="" coords="727,304,905,345"/>
-<area shape="rect" id="node9" title=" " alt="" coords="929,311,1127,338"/>
-<area shape="rect" id="node10" title=" " alt="" coords="334,311,466,338"/>
-<area shape="rect" id="node11" title=" " alt="" coords="491,311,544,338"/>
-<area shape="rect" id="node12" title=" " alt="" coords="569,311,703,338"/>
-<area shape="rect" id="node14" href="$protocol_8hpp.html" title=" " alt="" coords="723,393,826,420"/>
-<area shape="rect" id="node16" title=" " alt="" coords="361,155,450,181"/>
-<area shape="rect" id="node17" href="$core_8hpp.html" title=" " alt="" coords="474,155,571,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="317,5,476,32"/>
+<area shape="rect" id="node2" href="$control_8hpp.html" title=" " alt="" coords="40,229,135,256"/>
+<area shape="rect" id="node7" href="$acquisition_8hpp.html" title=" " alt="" coords="371,229,542,256"/>
+<area shape="rect" id="node13" href="$comms_8hpp.html" title=" " alt="" coords="721,229,867,256"/>
+<area shape="rect" id="node15" href="$cfg__dispatcher_8hpp.html" title=" " alt="" coords="257,80,419,107"/>
+<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="227,468,308,495"/>
+<area shape="rect" id="node4" href="$ctl_2config_8hpp.html" title=" " alt="" coords="129,311,238,338"/>
+<area shape="rect" id="node5" href="$pid__module_8hpp.html" title=" " alt="" coords="110,393,257,420"/>
+<area shape="rect" id="node6" title=" " alt="" coords="36,311,104,338"/>
+<area shape="rect" id="node8" title=" " alt="" coords="705,304,883,345"/>
+<area shape="rect" id="node9" title=" " alt="" coords="907,311,1105,338"/>
+<area shape="rect" id="node10" title=" " alt="" coords="391,311,523,338"/>
+<area shape="rect" id="node11" title=" " alt="" coords="262,311,315,338"/>
+<area shape="rect" id="node12" title=" " alt="" coords="547,311,681,338"/>
+<area shape="rect" id="node14" href="$protocol_8hpp.html" title=" " alt="" coords="740,393,843,420"/>
+<area shape="rect" id="node16" title=" " alt="" coords="192,155,281,181"/>
+<area shape="rect" id="node17" href="$core_8hpp.html" title=" " alt="" coords="305,155,403,181"/>
 </map>

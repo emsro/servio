@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>adc
 : <a class="el" href="classfw_1_1acquisition.html#ad28805e424959bcdc890d303f961a73d">fw::acquisition::handles</a>
 </li>
+<li>adc_irqn
+: <a class="el" href="classfw_1_1acquisition.html#a358bf8265f4311d4a9729ac0c73fd23c">fw::acquisition::handles</a>
+</li>
 </ul>
 
 
@@ -124,30 +127,29 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>c
 : <a class="el" href="structfw_1_1cfg__dispatcher.html#ab01a4cc1c67315d2b8382f2cc95797cc">fw::cfg_dispatcher</a>
 </li>
+<li>cb
+: <a class="el" href="structcurrent__cb.html#a9049b14c9ab4cbd1ad3abf2d3fae5c72">current_cb&lt; Callable &gt;</a>
+, <a class="el" href="structposition__cb.html#aa0145272fcb1f76bd9abe848f174d1a9">position_cb&lt; Callable &gt;</a>
+</li>
 <li>cfg_disp
 : <a class="el" href="structfw_1_1dispatcher.html#a64062389efe7fe57f45c591f7d608afc">fw::dispatcher</a>
-</li>
-<li>clk
-: <a class="el" href="structfw_1_1current__callback.html#a7824c7e47d8f4baae85fe027d3d2ce75">fw::current_callback</a>
-, <a class="el" href="structfw_1_1position__callback.html#a135a757b213ce47804417f33f3e614ee">fw::position_callback</a>
 </li>
 <li>comm
 : <a class="el" href="structfw_1_1dispatcher.html#a776a554b6c7b9e01a98687935bddfe2a">fw::dispatcher</a>
 </li>
 <li>conv
 : <a class="el" href="structfw_1_1core.html#abc566d8179ef5cb93fea9ac9d3fe320e">fw::core</a>
-, <a class="el" href="structfw_1_1current__callback.html#aca4803d692148d21a94c2c7aed0d9291">fw::current_callback</a>
 , <a class="el" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">fw::dispatcher</a>
-, <a class="el" href="structfw_1_1position__callback.html#a667216c3b7583e1579cd5e293fd1c400">fw::position_callback</a>
 </li>
 <li>ctl
 : <a class="el" href="structfw_1_1core.html#aeac12e186ecf2f435927ffa1b905c26c">fw::core</a>
-, <a class="el" href="structfw_1_1current__callback.html#ab8f1a264719763f4e1124beb3cfb7b19">fw::current_callback</a>
 , <a class="el" href="structfw_1_1dispatcher.html#a15cf4f98017315abc2a188bbef019777">fw::dispatcher</a>
-, <a class="el" href="structfw_1_1position__callback.html#acd7de38edd1d7b137519b9016215a669">fw::position_callback</a>
 </li>
 <li>current
 : <a class="el" href="structconverter.html#a8cb1044de319e60167cd89fe01a96d05">converter</a>
+</li>
+<li>current_cb
+: <a class="el" href="structfw_1_1standard__callbacks.html#a61a07b07b4cc092408c40f4f22d29584">fw::standard_callbacks</a>
 </li>
 <li>current_chconf
 : <a class="el" href="classfw_1_1acquisition.html#a9b6bc14586c6ce681d73f3f308839bea">fw::acquisition::handles</a>
@@ -187,8 +189,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 <h3><a id="index_h"></a>- h -</h3><ul>
 <li>hb
-: <a class="el" href="structfw_1_1current__callback.html#a210b68a36b0ff8734c1902dc7546e32e">fw::current_callback</a>
-, <a class="el" href="structfw_1_1dispatcher.html#a7c345ee7500a1b6a1f141f01d7f7f9d3">fw::dispatcher</a>
+: <a class="el" href="structfw_1_1dispatcher.html#a7c345ee7500a1b6a1f141f01d7f7f9d3">fw::dispatcher</a>
 </li>
 </ul>
 
@@ -229,7 +230,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </li>
 <li>met
 : <a class="el" href="structfw_1_1core.html#a6d241e77bb00e9b86927ee74603a8b4a">fw::core</a>
-, <a class="el" href="structfw_1_1position__callback.html#a5829ee7a5efad37fed77a5fddc9c719c">fw::position_callback</a>
 </li>
 <li>mon
 : <a class="el" href="structfw_1_1core.html#acb979d8e743e607e67107b716bd218d4">fw::core</a>
@@ -257,6 +257,12 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
+<li>period_cb
+: <a class="el" href="structfw_1_1standard__callbacks.html#aa12aff92c8b5a265dbee2117cd90279e">fw::standard_callbacks</a>
+</li>
+<li>pos_cb
+: <a class="el" href="structfw_1_1standard__callbacks.html#ae64b77e1162ca5a6357f97aa9682bf1b">fw::standard_callbacks</a>
+</li>
 <li>position
 : <a class="el" href="structconverter.html#a20d98451d8e0423cae03e88681840f9f">converter</a>
 </li>
@@ -368,7 +374,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Mar 14 2023 22:44:51 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 17 2023 21:17:35 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

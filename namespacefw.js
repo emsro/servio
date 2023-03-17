@@ -1,10 +1,11 @@
 var namespacefw =
 [
     [ "acquisition_period_callback", "structfw_1_1acquisition__period__callback.html", "structfw_1_1acquisition__period__callback" ],
-    [ "current_callback", "structfw_1_1current__callback.html", "structfw_1_1current__callback" ],
-    [ "position_callback", "structfw_1_1position__callback.html", "structfw_1_1position__callback" ],
+    [ "current_callback", "classfw_1_1current__callback.html", "classfw_1_1current__callback" ],
+    [ "position_callback", "classfw_1_1position__callback.html", "classfw_1_1position__callback" ],
     [ "cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", "structfw_1_1cfg__dispatcher" ],
     [ "core", "structfw_1_1core.html", "structfw_1_1core" ],
+    [ "standard_callbacks", "structfw_1_1standard__callbacks.html", "structfw_1_1standard__callbacks" ],
     [ "dispatcher", "structfw_1_1dispatcher.html", "structfw_1_1dispatcher" ],
     [ "acquisition_status", "namespacefw.html#structfw_1_1acquisition__status", "namespacefw_structfw_1_1acquisition__status_dup" ],
     [ "acquisition", "classfw_1_1acquisition.html", "classfw_1_1acquisition" ],
@@ -21,7 +22,6 @@ var namespacefw =
     [ "operator<<", "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e", null ],
     [ "operator<<", "namespacefw.html#aa77aaddd76d27d03433b9ced02d8a6f0", null ],
     [ "setup_leds_with_stop_callback", "namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1", null ],
-    [ "setup_standard_callbacks", "namespacefw.html#a6628839efe737ec62f8dd7a85cee03db", null ],
     [ "stop_exec", "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021", null ],
     [ "STOP_CALLBACK", "namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3", null ]
 ];

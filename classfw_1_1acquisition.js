@@ -3,6 +3,7 @@ var classfw_1_1acquisition =
     [ "current_sequence", "structfw_1_1acquisition_1_1current__sequence.html", "structfw_1_1acquisition_1_1current__sequence" ],
     [ "handles", "classfw_1_1acquisition.html#structfw_1_1acquisition_1_1handles", [
       [ "adc", "classfw_1_1acquisition.html#ad28805e424959bcdc890d303f961a73d", null ],
+      [ "adc_irqn", "classfw_1_1acquisition.html#a358bf8265f4311d4a9729ac0c73fd23c", null ],
       [ "current_chconf", "classfw_1_1acquisition.html#a9b6bc14586c6ce681d73f3f308839bea", null ],
       [ "dma", "classfw_1_1acquisition.html#ae06c9f1f85308b7f439bb1b7baeb19e6", null ],
       [ "position_chconf", "classfw_1_1acquisition.html#ad76ede638046a9629c157005beeafc37", null ],
@@ -11,8 +12,6 @@ var classfw_1_1acquisition =
       [ "tim_channel", "classfw_1_1acquisition.html#aef2cd45789e6fc9030b84b9d9d6c1cfd", null ],
       [ "vcc_chconf", "classfw_1_1acquisition.html#af371d3c9aeb1b1a64f829e58c73cb67e", null ]
     ] ],
-    [ "current_callback", "classfw_1_1acquisition.html#af37bc4ab7f4e1797ccdfae09466ab4a7", null ],
-    [ "position_callback", "classfw_1_1acquisition.html#ad222a29f3a93d955484ff8d6f65cba59", null ],
     [ "acquisition", "classfw_1_1acquisition.html#a357bd496cbe6c83c01795624e0e36213", null ],
     [ "adc_conv_cplt_irq", "classfw_1_1acquisition.html#a48e242d088580366fe80e0d01971c95a", null ],
     [ "adc_error_irq", "classfw_1_1acquisition.html#a418a8349e1bbfde6ad6416d3ee55875c", null ],
@@ -20,16 +19,16 @@ var classfw_1_1acquisition =
     [ "clear_status", "classfw_1_1acquisition.html#a6a9e6e79c368266ef422a0fb2fdd0ce1", null ],
     [ "dma_irq", "classfw_1_1acquisition.html#a00fdf74bd952cb693dafd591ee026ad9", null ],
     [ "get_current", "classfw_1_1acquisition.html#a2e6c27f1186f1e2febd005a4dfff6619", null ],
-    [ "get_current_callback", "classfw_1_1acquisition.html#a6a536f4562afaaff156fd5b4829a395c", null ],
+    [ "get_current_callback", "classfw_1_1acquisition.html#a49472f3d135f86550969fe80ea8d0322", null ],
     [ "get_current_reading", "classfw_1_1acquisition.html#a4a1e4d07f634db7d5349a03129c3dd93", null ],
     [ "get_position", "classfw_1_1acquisition.html#aab62ea818930316a5e6036deb5ddd7d8", null ],
-    [ "get_position_callback", "classfw_1_1acquisition.html#ac1eddf489636002fee495582d4b77082", null ],
+    [ "get_position_callback", "classfw_1_1acquisition.html#a279f69ad8243f301efd85017301a5832", null ],
     [ "get_status", "classfw_1_1acquisition.html#ac191166ed5d13ac61508de936ea5434b", null ],
     [ "get_temp", "classfw_1_1acquisition.html#a6c5fbc1d2140a20da14c332aa29df2a0", null ],
     [ "get_vcc", "classfw_1_1acquisition.html#affdf38278c9187e8e480061f620f1781", null ],
     [ "period_elapsed_irq", "classfw_1_1acquisition.html#a7e2f9cd2908cd2665a183a32cb29885d", null ],
-    [ "set_current_callback", "classfw_1_1acquisition.html#acce976c2a6963b87836c05d89974a2c3", null ],
-    [ "set_position_callback", "classfw_1_1acquisition.html#a49f596ed7a9f8e020f0cf1da687fe157", null ],
+    [ "set_current_callback", "classfw_1_1acquisition.html#a556a3ead8791cc96a59648381f4b835a", null ],
+    [ "set_position_callback", "classfw_1_1acquisition.html#a27b849dfcdb228b08b5465d4b798b6cb", null ],
     [ "setup", "classfw_1_1acquisition.html#a0075ff7b9e0ec8fc9bda2bd64fa697f7", null ],
     [ "start", "classfw_1_1acquisition.html#afd5472214381a4c3bfeb58fb780f012e", null ]
 ];

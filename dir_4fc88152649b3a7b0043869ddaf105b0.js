@@ -4,14 +4,17 @@ var dir_4fc88152649b3a7b0043869ddaf105b0 =
     [ "board.hpp", "board_8hpp.html", "board_8hpp" ],
     [ "callbacks.hpp", "callbacks_8hpp.html", [
       [ "acquisition_period_callback", "structfw_1_1acquisition__period__callback.html", "structfw_1_1acquisition__period__callback" ],
-      [ "current_callback", "structfw_1_1current__callback.html", "structfw_1_1current__callback" ],
-      [ "position_callback", "structfw_1_1position__callback.html", "structfw_1_1position__callback" ]
+      [ "current_callback", "classfw_1_1current__callback.html", "classfw_1_1current__callback" ],
+      [ "position_callback", "classfw_1_1position__callback.html", "classfw_1_1position__callback" ]
     ] ],
     [ "cfg_dispatcher.cpp", "cfg__dispatcher_8cpp.html", "cfg__dispatcher_8cpp" ],
     [ "cfg_dispatcher.hpp", "cfg__dispatcher_8hpp.html", [
       [ "cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", "structfw_1_1cfg__dispatcher" ]
     ] ],
-    [ "core.hpp", "core_8hpp.html", "core_8hpp" ],
+    [ "core.hpp", "core_8hpp.html", [
+      [ "core", "structfw_1_1core.html", "structfw_1_1core" ],
+      [ "standard_callbacks", "structfw_1_1standard__callbacks.html", "structfw_1_1standard__callbacks" ]
+    ] ],
     [ "dispatcher.hpp", "dispatcher_8hpp.html", [
       [ "dispatcher", "structfw_1_1dispatcher.html", "structfw_1_1dispatcher" ]
     ] ],
