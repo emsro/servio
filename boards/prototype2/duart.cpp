@@ -78,7 +78,7 @@ bool setup_duart( fw::debug_comms::handles& h )
         HAL_NVIC_SetPriority( DMA1_Channel2_IRQn, 1, 0 );
         HAL_NVIC_EnableIRQ( DMA1_Channel2_IRQn );
 
-        HAL_NVIC_SetPriority( USART1_IRQn, 0, 0 );
+        HAL_NVIC_SetPriority( USART1_IRQn, 1, 0 );
         HAL_NVIC_EnableIRQ( USART1_IRQn );
 
         if ( HAL_DMA_Init( &h.tx_dma ) != HAL_OK ) {

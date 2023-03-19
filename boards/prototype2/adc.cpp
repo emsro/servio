@@ -66,7 +66,7 @@ bool setup_adc( fw::acquisition::handles& h )
         h.dma.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
         h.dma.Init.MemDataAlignment    = DMA_MDATAALIGN_HALFWORD;
         h.dma.Init.Mode                = DMA_NORMAL;
-        h.dma.Init.Priority            = DMA_PRIORITY_LOW;  // TODO: check different priorty
+        h.dma.Init.Priority            = DMA_PRIORITY_VERY_HIGH;  // TODO: check different priorty
 
         GPIO_InitTypeDef gpio_c{};
         gpio_c.Pin  = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3;

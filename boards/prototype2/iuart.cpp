@@ -60,7 +60,7 @@ bool setup_iuart( fw::comms::handles& res )
         HAL_NVIC_SetPriority( DMA1_Channel4_IRQn, 1, 0 );
         HAL_NVIC_EnableIRQ( DMA1_Channel4_IRQn );
 
-        HAL_NVIC_SetPriority( USART2_IRQn, 0, 0 );
+        HAL_NVIC_SetPriority( USART2_IRQn, 1, 0 );
         HAL_NVIC_EnableIRQ( USART2_IRQn );
 
         if ( HAL_DMA_Init( &res.tx_dma ) != HAL_OK ) {
