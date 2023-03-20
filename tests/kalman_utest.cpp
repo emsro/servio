@@ -43,8 +43,8 @@ TEST( Kalman, base )
         std::mt19937       gen{ rd() };
 
         sec_time tdiff{ 0.1f };
-        float    process_deviation     = 0.000005f;
-        float    observation_deviation = 0.0005f;
+        float    process_deviation     = 0.0005f;
+        float    observation_deviation = 0.000005f;
 
         std::normal_distribution< float > od{ 0, observation_deviation };
 
@@ -54,7 +54,7 @@ TEST( Kalman, base )
         float                              angle = 0.f;
 
         for ( std::size_t i = 0; i < 1000; i++ ) {
-                angle += 0.05f + od( gen );
+                angle += 0.05f;
                 angle              = kalman::angle_mod( angle, sr );
                 kalman::angle( z ) = angle;
                 zs.push_back( z );
@@ -68,7 +68,6 @@ TEST( Kalman, base )
                 if ( i < 100u ) {
                         continue;
                 }
-                // TODO: finish this /o\..
-                //        EXPECT_EQ(kalman::angle(states[i]), kalman::angle(zs[i]));
+                EXPECT_NEAR( kalman::velocity( states[i] ), 0.5, 0.01 );
         }
 }
