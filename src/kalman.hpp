@@ -109,9 +109,9 @@ struct state_range
         float size;
 };
 
-inline bool requires_offset( const float v )
+constexpr bool requires_offset( const float v, const state_range& r )
 {
-        return ( v < 0.4f * pi ) || ( 1.6f * pi < v );
+        return ( v < r.offset + 0.1f * r.size ) || ( r.offset + 0.8f * r.size < v );
 }
 
 inline float angle_mod( float v, state_range r )
@@ -132,7 +132,8 @@ inline std::vector< state > simulate(
     sec_time                          tdiff,
     float                             process_deviation,
     float                             observation_deviation,
-    const std::vector< observation >& observations )
+    const std::vector< observation >& observations,
+    state_range                       sr )
 {
         state_transition_model       F = get_transition_model( tdiff );
         control_input_model          B = get_control_input_model( tdiff );
@@ -150,15 +151,14 @@ inline std::vector< state > simulate(
 
         std::vector< state > res;
 
-        state_range sr{ .offset = 0.f, .size = 2 * pi };
-        float       offset = 0.f;
+        float offset = 0.f;
         for ( observation z : observations ) {
                 modify_angle( z, +offset, sr );
 
                 std::tie( x, P ) = kalman::predict( x, P, u, F, B, Q );
                 std::tie( x, P ) = kalman::update( x, P, z, H, R );
 
-                if ( requires_offset( angle( x ) ) ) {
+                if ( requires_offset( angle( x ), sr ) ) {
                         offset = angle_mod( offset + pi, sr );
                         modify_angle( x, +pi, sr );
                 }

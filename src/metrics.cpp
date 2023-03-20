@@ -41,7 +41,7 @@ void metrics::position_irq( microseconds now, float position )
         std::tie( x_, P_ ) = kalman::predict( x_, P_, u, F, B, Q );
         std::tie( x_, P_ ) = kalman::update( x_, P_, z, H_, R_ );
 
-        if ( kalman::requires_offset( kalman::angle( x_ ) ) ) {
+        if ( kalman::requires_offset( kalman::angle( x_ ), sr_ ) ) {
                 offset_ = kalman::angle_mod( offset_ + pi, sr_ );
                 kalman::modify_angle( x_, pi, sr_ );
         }
