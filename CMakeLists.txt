@@ -111,5 +111,5 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     LINKER_SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/ld/STM32G431KBTx_FLASH.ld")
 
 else()
-  message(FATAL_ERROR "unsupported platform ${SERVIO_PLATFORM}")
+  message(WARNING "unsupported platform ${SERVIO_PLATFORM}")
 endif()
