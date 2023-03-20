@@ -24,8 +24,8 @@ var kalman_8hpp =
     [ "get_transition_model", "kalman_8hpp.html#a2b1764c7358bafe1a7dddab4e1989054", null ],
     [ "modify_angle", "kalman_8hpp.html#a40a88d464735106d6e64504a1a928bb2", null ],
     [ "predict", "kalman_8hpp.html#a5ce40b45ea8998e580042dae4ba09635", null ],
-    [ "requires_offset", "kalman_8hpp.html#a5a2b5d3ba8a779b34bac50da51339c9f", null ],
-    [ "simulate", "kalman_8hpp.html#a210a7536c35318588fcd2dc40288fb75", null ],
+    [ "requires_offset", "kalman_8hpp.html#a6d24f860613d669dfde9489beaf338cb", null ],
+    [ "simulate", "kalman_8hpp.html#a0e8b902801916fce0cce782d51709c81", null ],
     [ "update", "kalman_8hpp.html#a34319bc108a66f1a0ed345be44da0365", null ],
     [ "velocity", "kalman_8hpp.html#a4045bee00b1b7c1f3b36946e5ebb8565", null ]
 ];

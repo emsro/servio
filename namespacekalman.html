@@ -144,15 +144,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a4045bee00b1b7c1f3b36946e5ebb8565"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a4045bee00b1b7c1f3b36946e5ebb8565"><td class="memTemplItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">velocity</a> (T &amp;x)</td></tr>
 <tr class="separator:a4045bee00b1b7c1f3b36946e5ebb8565"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a2b5d3ba8a779b34bac50da51339c9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a5a2b5d3ba8a779b34bac50da51339c9f">requires_offset</a> (const float v)</td></tr>
-<tr class="separator:a5a2b5d3ba8a779b34bac50da51339c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d24f860613d669dfde9489beaf338cb"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a6d24f860613d669dfde9489beaf338cb">requires_offset</a> (const float v, const <a class="el" href="namespacekalman.html#structkalman_1_1state__range">state_range</a> &amp;r)</td></tr>
+<tr class="separator:a6d24f860613d669dfde9489beaf338cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a216390ea00a5dbed756bf6064c66a381"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a216390ea00a5dbed756bf6064c66a381">angle_mod</a> (float v, <a class="el" href="namespacekalman.html#structkalman_1_1state__range">state_range</a> r)</td></tr>
 <tr class="separator:a216390ea00a5dbed756bf6064c66a381"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40a88d464735106d6e64504a1a928bb2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a40a88d464735106d6e64504a1a928bb2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a40a88d464735106d6e64504a1a928bb2">modify_angle</a> (T &amp;x, float val, <a class="el" href="namespacekalman.html#structkalman_1_1state__range">state_range</a> r)</td></tr>
 <tr class="separator:a40a88d464735106d6e64504a1a928bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a210a7536c35318588fcd2dc40288fb75"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacekalman.html#ab9e6385bb2dcf1772e1b307f181db938">state</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a210a7536c35318588fcd2dc40288fb75">simulate</a> (<a class="el" href="base_8hpp.html#a96ccd2c4ce19187beb5be679732d675a">sec_time</a> tdiff, float process_deviation, float observation_deviation, const std::vector&lt; <a class="el" href="namespacekalman.html#af5cff5e9fec3a001b5e862e24701e86b">observation</a> &gt; &amp;observations)</td></tr>
-<tr class="separator:a210a7536c35318588fcd2dc40288fb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e8b902801916fce0cce782d51709c81"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacekalman.html#ab9e6385bb2dcf1772e1b307f181db938">state</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a0e8b902801916fce0cce782d51709c81">simulate</a> (<a class="el" href="base_8hpp.html#a96ccd2c4ce19187beb5be679732d675a">sec_time</a> tdiff, float process_deviation, float observation_deviation, const std::vector&lt; <a class="el" href="namespacekalman.html#af5cff5e9fec3a001b5e862e24701e86b">observation</a> &gt; &amp;observations, <a class="el" href="namespacekalman.html#structkalman_1_1state__range">state_range</a> sr)</td></tr>
+<tr class="separator:a0e8b902801916fce0cce782d51709c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structkalman_1_1state__range" id="structkalman_1_1state__range"></a>
@@ -653,8 +653,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a5a2b5d3ba8a779b34bac50da51339c9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a2b5d3ba8a779b34bac50da51339c9f">&#9670;&nbsp;</a></span>requires_offset()</h2>
+<a id="a6d24f860613d669dfde9489beaf338cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d24f860613d669dfde9489beaf338cb">&#9670;&nbsp;</a></span>requires_offset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -663,26 +663,36 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool kalman::requires_offset </td>
+          <td class="memname">constexpr bool kalman::requires_offset </td>
           <td>(</td>
           <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="namespacekalman.html#structkalman_1_1state__range">state_range</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="base_8hpp.html#a1405970de248dafe731b9cc3c66f8bc4">pi</a>.</p>
+<p class="reference">References <a class="el" href="namespacekalman.html#ab56d40aa62a765d02ac064f8e2f2512a">kalman::state_range::offset</a>, and <a class="el" href="namespacekalman.html#a99aa0fc8fd1682fd248e3e6ea91d13ed">kalman::state_range::size</a>.</p>
 
 </div>
 </div>
-<a id="a210a7536c35318588fcd2dc40288fb75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a210a7536c35318588fcd2dc40288fb75">&#9670;&nbsp;</a></span>simulate()</h2>
+<a id="a0e8b902801916fce0cce782d51709c81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e8b902801916fce0cce782d51709c81">&#9670;&nbsp;</a></span>simulate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -712,7 +722,13 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; <a class="el" href="namespacekalman.html#af5cff5e9fec3a001b5e862e24701e86b">observation</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>observations</em>&#160;</td>
+          <td class="paramname"><em>observations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacekalman.html#structkalman_1_1state__range">state_range</a>&#160;</td>
+          <td class="paramname"><em>sr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -727,7 +743,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">angle()</a>, <a class="el" href="namespacekalman.html#a216390ea00a5dbed756bf6064c66a381">angle_mod()</a>, <a class="el" href="namespacekalman.html#a7435a12aeaeef2bdb1f7ff3cd933fbc2">get_control_input_model()</a>, <a class="el" href="namespacekalman.html#a57c71f193659ff2b34bdf2e7bd1d9c76">get_observation_model()</a>, <a class="el" href="namespacekalman.html#a7e3eb3854ea1e62172ae0ff1374342bc">get_observation_noise_covariance()</a>, <a class="el" href="namespacekalman.html#a98d43da94a33f521229fbdb698ee11e3">get_process_noise_covariance()</a>, <a class="el" href="namespacekalman.html#a2b1764c7358bafe1a7dddab4e1989054">get_transition_model()</a>, <a class="el" href="namespacekalman.html#a40a88d464735106d6e64504a1a928bb2">modify_angle()</a>, <a class="el" href="namespacekalman.html#ab56d40aa62a765d02ac064f8e2f2512a">kalman::state_range::offset</a>, <a class="el" href="base_8hpp.html#a1405970de248dafe731b9cc3c66f8bc4">pi</a>, <a class="el" href="namespacekalman.html#a5ce40b45ea8998e580042dae4ba09635">predict()</a>, <a class="el" href="namespacekalman.html#a5a2b5d3ba8a779b34bac50da51339c9f">requires_offset()</a>, <a class="el" href="namespacekalman.html#a34319bc108a66f1a0ed345be44da0365">update()</a>, and <a class="el" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">velocity()</a>.</p>
+<p class="reference">References <a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">angle()</a>, <a class="el" href="namespacekalman.html#a216390ea00a5dbed756bf6064c66a381">angle_mod()</a>, <a class="el" href="namespacekalman.html#a7435a12aeaeef2bdb1f7ff3cd933fbc2">get_control_input_model()</a>, <a class="el" href="namespacekalman.html#a57c71f193659ff2b34bdf2e7bd1d9c76">get_observation_model()</a>, <a class="el" href="namespacekalman.html#a7e3eb3854ea1e62172ae0ff1374342bc">get_observation_noise_covariance()</a>, <a class="el" href="namespacekalman.html#a98d43da94a33f521229fbdb698ee11e3">get_process_noise_covariance()</a>, <a class="el" href="namespacekalman.html#a2b1764c7358bafe1a7dddab4e1989054">get_transition_model()</a>, <a class="el" href="namespacekalman.html#a40a88d464735106d6e64504a1a928bb2">modify_angle()</a>, <a class="el" href="base_8hpp.html#a1405970de248dafe731b9cc3c66f8bc4">pi</a>, <a class="el" href="namespacekalman.html#a5ce40b45ea8998e580042dae4ba09635">predict()</a>, <a class="el" href="namespacekalman.html#a6d24f860613d669dfde9489beaf338cb">requires_offset()</a>, <a class="el" href="namespacekalman.html#a34319bc108a66f1a0ed345be44da0365">update()</a>, and <a class="el" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">velocity()</a>.</p>
 
 </div>
 </div>
@@ -819,7 +835,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacekalman.html">kalman</a></li>
-    <li class="footer">Generated on Mon Mar 20 2023 22:49:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Mar 20 2023 22:55:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -27,7 +27,7 @@ var searchData=
   ['setup_5fhbridge_730',['setup_hbridge',['../namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2',1,'brd']]],
   ['setup_5fleds_731',['setup_leds',['../namespacebrd.html#a8519578452e3aafee624c12984dc01b1',1,'brd']]],
   ['setup_5fleds_5fwith_5fstop_5fcallback_732',['setup_leds_with_stop_callback',['../namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1',1,'fw']]],
-  ['simulate_733',['simulate',['../namespacekalman.html#a210a7536c35318588fcd2dc40288fb75',1,'kalman']]],
+  ['simulate_733',['simulate',['../namespacekalman.html#a0e8b902801916fce0cce782d51709c81',1,'kalman']]],
   ['standard_5fcallbacks_734',['standard_callbacks',['../structfw_1_1standard__callbacks.html#a96c0f5bfb43d31ded810ffe5b4f17a72',1,'fw::standard_callbacks']]],
   ['start_735',['start',['../classfw_1_1leds.html#a5ecdad84289337fad8fb641b94aa0289',1,'fw::leds::start()'],['../classfw_1_1hbridge.html#a0e184b0fdbc54d2f63b9ecc79661f53c',1,'fw::hbridge::start()'],['../classfw_1_1debug__comms.html#a76d84670331a8bb3b587bbb4baa38299',1,'fw::debug_comms::start()'],['../classfw_1_1comms.html#a06e8bf851a9439dec92ad0e24042de9b',1,'fw::comms::start()'],['../classfw_1_1acquisition.html#afd5472214381a4c3bfeb58fb780f012e',1,'fw::acquisition::start()']]],
   ['stop_736',['stop',['../classfw_1_1hbridge.html#ac1371a2c18af9180668cab632c6dadf6',1,'fw::hbridge']]],
