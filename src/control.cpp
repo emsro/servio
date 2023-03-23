@@ -81,7 +81,7 @@ void control::switch_to_position_control( microseconds, float position )
 
 void control::position_irq( microseconds now, float position )
 {
-        float coeff             = 1.f;
+        float coeff             = 5.f;
         auto [pos_min, pos_max] = position_lims_;
         position_pid_.set_momentary_limit(
             { coeff * ( -position + pos_min ), coeff * ( -position + pos_max ) } );
