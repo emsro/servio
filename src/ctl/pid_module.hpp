@@ -77,6 +77,11 @@ public:
                 return last_goal_;
         }
 
+        float get_measured() const
+        {
+                return pid_.last_measured;
+        }
+
 private:
         void update_limit()
         {
