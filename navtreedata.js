@@ -118,9 +118,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "acquisition_8cpp.html",
-"classmetrics.html",
-"namespacebrd.html#af9d4cb6efc481f0a7b35e14808c32694",
-"structfw_1_1standard__callbacks.html#a96c0f5bfb43d31ded810ffe5b4f17a72"
+"classindication.html#adb09ac11f7b5843bc12fb2d72c5c6a61",
+"namespacebrd.html#a8519578452e3aafee624c12984dc01b1",
+"structfw_1_1standard__callbacks.html#a61a07b07b4cc092408c40f4f22d29584"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

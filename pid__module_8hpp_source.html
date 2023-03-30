@@ -166,22 +166,27 @@ $(document).ready(function(){initNavTree('pid__module_8hpp_source.html',''); ini
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">return</span> last_goal_;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">void</span> update_limit()</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                update_limits(</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    pid_,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    { std::max( momentary_lim_.min, config_lim_.min ),</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                      std::min( momentary_lim_.max, config_lim_.max ) } );</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">float</span>           last_goal_ = 0.f;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> momentary_lim_;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> config_lim_;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">pid</a>             pid_;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}  <span class="comment">// namespace ctl</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a74555c2bf8a8dead21aa99f76e579afb">   80</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classctl_1_1pid__module.html#a74555c2bf8a8dead21aa99f76e579afb">get_measured</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">return</span> pid_.last_measured;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">void</span> update_limit()</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                update_limits(</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    pid_,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    { std::max( momentary_lim_.min, config_lim_.min ),</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                      std::min( momentary_lim_.max, config_lim_.max ) } );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">float</span>           last_goal_ = 0.f;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> momentary_lim_;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> config_lim_;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">pid</a>             pid_;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}  <span class="comment">// namespace ctl</span></div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="abase_8hpp_html_a3e15423b6a0f2e36799532b4c8f699f5"><div class="ttname"><a href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:19</div></div>
 <div class="ttc" id="abase_8hpp_html_a486dfef0b192c734eed01e9d3fa6995c"><div class="ttname"><a href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a></div><div class="ttdeci">em::min_max&lt; T &gt; limits</div><div class="ttdef"><b>Definition:</b> base.hpp:41</div></div>
@@ -192,6 +197,7 @@ $(document).ready(function(){initNavTree('pid__module_8hpp_source.html',''); ini
 <div class="ttc" id="aclassctl_1_1pid__module_html_a594cc33dcfda834bb2d349f8d19deefe"><div class="ttname"><a href="classctl_1_1pid__module.html#a594cc33dcfda834bb2d349f8d19deefe">ctl::pid_module::update</a></div><div class="ttdeci">float update(microseconds now, float measured, float goal)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:69</div></div>
 <div class="ttc" id="aclassctl_1_1pid__module_html_a5eca057c309bafa9383d64fac5a96bd2"><div class="ttname"><a href="classctl_1_1pid__module.html#a5eca057c309bafa9383d64fac5a96bd2">ctl::pid_module::set_config_limit</a></div><div class="ttdeci">void set_config_limit(limits&lt; float &gt; lim)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:31</div></div>
 <div class="ttc" id="aclassctl_1_1pid__module_html_a67728b44ddefd68b162ca78f26482c2c"><div class="ttname"><a href="classctl_1_1pid__module.html#a67728b44ddefd68b162ca78f26482c2c">ctl::pid_module::reset_momentary_limit</a></div><div class="ttdeci">void reset_momentary_limit()</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:53</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_a74555c2bf8a8dead21aa99f76e579afb"><div class="ttname"><a href="classctl_1_1pid__module.html#a74555c2bf8a8dead21aa99f76e579afb">ctl::pid_module::get_measured</a></div><div class="ttdeci">float get_measured() const</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:80</div></div>
 <div class="ttc" id="aclassctl_1_1pid__module_html_a8c9eea91f786b3e1917e8a8e7cbeb4c4"><div class="ttname"><a href="classctl_1_1pid__module.html#a8c9eea91f786b3e1917e8a8e7cbeb4c4">ctl::pid_module::get_limits</a></div><div class="ttdeci">limits&lt; float &gt; get_limits()</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:58</div></div>
 <div class="ttc" id="aclassctl_1_1pid__module_html_a9d7e7ad3a1bf3a1783ee8d7ff43b5146"><div class="ttname"><a href="classctl_1_1pid__module.html#a9d7e7ad3a1bf3a1783ee8d7ff43b5146">ctl::pid_module::get_desired</a></div><div class="ttdeci">float get_desired() const</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:75</div></div>
 <div class="ttc" id="aclassctl_1_1pid__module_html_aa670c5f3213b0c085faa5a6e0758d43e"><div class="ttname"><a href="classctl_1_1pid__module.html#aa670c5f3213b0c085faa5a6e0758d43e">ctl::pid_module::set_pid</a></div><div class="ttdeci">void set_pid(pid_coefficients coeff)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:26</div></div>
@@ -209,7 +215,7 @@ $(document).ready(function(){initNavTree('pid__module_8hpp_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_233c030500f292fc400d319d0c2e99f0.html">ctl</a></li><li class="navelem"><a class="el" href="pid__module_8hpp.html">pid_module.hpp</a></li>
-    <li class="footer">Generated on Mon Mar 20 2023 23:10:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Mar 30 2023 08:07:46 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

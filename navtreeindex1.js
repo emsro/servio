@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"classindication.html#adb09ac11f7b5843bc12fb2d72c5c6a61":[11,0,16,0],
 "classmetrics.html":[11,0,19],
 "classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e":[11,0,19,4],
 "classmetrics.html#a0abe3e4ecf0484ad696124398a891683":[11,0,19,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "namespacebrd.html#a383835cb418f3a5885b56943e4159618":[10,0,0,0],
 "namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e":[10,0,0,2],
 "namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902":[10,0,0,5],
-"namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2":[10,0,0,6],
-"namespacebrd.html#a8519578452e3aafee624c12984dc01b1":[10,0,0,7]
+"namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2":[10,0,0,6]
 };
