@@ -2,6 +2,7 @@
 #include "drivers/acquisition.hpp"
 #include "drivers/comms.hpp"
 #include "fw/cfg_dispatcher.hpp"
+#include "fw/conversion.hpp"
 
 #pragma once
 
@@ -12,7 +13,7 @@ struct dispatcher
 {
         comms&          comm;
         hbridge&        hb;
-        acquisition&    acquistion;
+        acquisition&    acquis;
         control&        ctl;
         cfg_dispatcher& cfg_disp;
         converter&      conv;
@@ -40,25 +41,24 @@ struct dispatcher
 
         void handle_message( const get_current_command& )
         {
-                // TODO: add facade/adapter over conv/acqui?
-                comm.send( get_current_response{
-                    conv.current.convert( acquistion.get_current() ) * hb.get_direction() } );
+                float curr = current( conv, acquis, hb );
+                comm.send( get_current_response{ curr } );
         }
 
         void handle_message( const get_vcc_command& )
         {
-                comm.send( get_vcc_response{ conv.vcc.convert( acquistion.get_vcc() ) } );
+                comm.send( get_vcc_response{ conv.vcc.convert( acquis.get_vcc() ) } );
         }
 
         void handle_message( const get_temp_command& )
         {
-                comm.send( get_temp_response{ conv.temp.convert( acquistion.get_temp() ) } );
+                comm.send( get_temp_response{ conv.temp.convert( acquis.get_temp() ) } );
         }
 
         void handle_message( const get_position_command& )
         {
-                comm.send(
-                    get_position_response{ conv.position.convert( acquistion.get_position() ) } );
+                float pos = position( conv, acquis );
+                comm.send( get_position_response{ pos } );
         }
 
         void handle_message( const set_config& req )

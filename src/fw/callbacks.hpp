@@ -3,6 +3,7 @@
 #include "drivers/acquisition.hpp"
 #include "drivers/clock.hpp"
 #include "drivers/hbridge.hpp"
+#include "fw/conversion.hpp"
 #include "metrics.hpp"
 #include "stm32g4xx_hal.h"
 
@@ -39,9 +40,9 @@ public:
         {
         }
 
-        virtual void on_current( uint32_t current, std::span< uint16_t > )
+        virtual void on_current( uint32_t curr, std::span< uint16_t > )
         {
-                float c = conv_.current.convert( current ) * hb_.get_direction();
+                float c = current( conv_, curr, hb_ );
 
                 ctl_.current_irq( clk_.get_us(), c );
                 hb_.set_power( ctl_.get_power() );
