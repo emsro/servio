@@ -106,8 +106,8 @@ consteval cfg_map get_default_config()
             cfg_reg< CONTROL_POSITION_LOOP_P, float >{ 1.f },
             cfg_reg< CONTROL_POSITION_LOOP_I, float >{ 0.f },
             cfg_reg< CONTROL_POSITION_LOOP_D, float >{ 0.f },
-            cfg_reg< CONTROL_POSITION_LIM_MIN, float >{ -10.f },
-            cfg_reg< CONTROL_POSITION_LIM_MAX, float >{ 10.f },
+            cfg_reg< CONTROL_POSITION_LIM_MIN, float >{ 0.f },
+            cfg_reg< CONTROL_POSITION_LIM_MAX, float >{ 2 * pi },
             cfg_reg< MINIMUM_VOLTAGE, float >{ 6.f },
             cfg_reg< MAXIMUM_TEMPERATURE, float >{ 80.f },
         };
