@@ -30,9 +30,9 @@
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M68.25,-62.98C84.87,-54.85 107.3,-44.69 128,-38 156.73,-28.71 190.1,-21.86 215.84,-17.38"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="66.59,-59.9 59.2,-67.49 69.71,-66.16 66.59,-59.9"/>
-<text text-anchor="middle" x="155" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00"> acquistion</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M73.74,-63.74C94.28,-55.8 122.02,-45.58 147,-38 170.34,-30.92 196.88,-24.41 218.15,-19.56"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="72.32,-60.54 64.28,-67.43 74.86,-67.06 72.32,-60.54"/>
+<text text-anchor="middle" x="164.5" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00"> acquis</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">

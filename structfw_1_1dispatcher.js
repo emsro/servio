@@ -10,7 +10,7 @@ var structfw_1_1dispatcher =
     [ "handle_message", "structfw_1_1dispatcher.html#ac60140296583cd71dee1417c25ee6112", null ],
     [ "handle_message", "structfw_1_1dispatcher.html#adfec5a727d37a9025b542d360893dc84", null ],
     [ "handle_message", "structfw_1_1dispatcher.html#a7615e3abf85894787bca450b2230fea4", null ],
-    [ "acquistion", "structfw_1_1dispatcher.html#a4f07ca6a998a8db5f31e43dcb9c5dcaa", null ],
+    [ "acquis", "structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421", null ],
     [ "cfg_disp", "structfw_1_1dispatcher.html#a64062389efe7fe57f45c591f7d608afc", null ],
     [ "comm", "structfw_1_1dispatcher.html#a776a554b6c7b9e01a98687935bddfe2a", null ],
     [ "conv", "structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0", null ],

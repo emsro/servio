@@ -139,6 +139,12 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:acff2051fff6f79ebbfe80b750bd77be1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1leds.html">leds</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">setup_leds_with_stop_callback</a> ()</td></tr>
 <tr class="separator:acff2051fff6f79ebbfe80b750bd77be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1cba619dcd67049ddf6fe4ee33499fd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">current</a> (const <a class="el" href="structconverter.html">converter</a> &amp;conv, uint32_t raw_current, const <a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;hb)</td></tr>
+<tr class="separator:ab1cba619dcd67049ddf6fe4ee33499fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64eab76f1b3079c437cf48bbd5501d5c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a64eab76f1b3079c437cf48bbd5501d5c">current</a> (const <a class="el" href="structconverter.html">converter</a> &amp;conv, const <a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;acqui, const <a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;hb)</td></tr>
+<tr class="separator:a64eab76f1b3079c437cf48bbd5501d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7da1ac117da9c2c331f8a30bec04c465"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">position</a> (const <a class="el" href="structconverter.html">converter</a> &amp;conv, const <a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;acqui)</td></tr>
+<tr class="separator:a7da1ac117da9c2c331f8a30bec04c465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0b580f4dd8010ffb0db37533802021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a> ()</td></tr>
 <tr class="separator:a8e0b580f4dd8010ffb0db37533802021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac05d95b2aaa02b49156b63e48e57b69a"><td class="memTemplParams" colspan="2">template&lt;typename... Components&gt; </td></tr>
@@ -222,6 +228,94 @@ buffer_was_full</td>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a64eab76f1b3079c437cf48bbd5501d5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64eab76f1b3079c437cf48bbd5501d5c">&#9670;&nbsp;</a></span>current() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fw::current </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structconverter.html">converter</a> &amp;&#160;</td>
+          <td class="paramname"><em>conv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;&#160;</td>
+          <td class="paramname"><em>acqui</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;&#160;</td>
+          <td class="paramname"><em>hb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">current()</a>, and <a class="el" href="classfw_1_1acquisition.html#a2e6c27f1186f1e2febd005a4dfff6619">fw::acquisition::get_current()</a>.</p>
+
+</div>
+</div>
+<a id="ab1cba619dcd67049ddf6fe4ee33499fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1cba619dcd67049ddf6fe4ee33499fd">&#9670;&nbsp;</a></span>current() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fw::current </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structconverter.html">converter</a> &amp;&#160;</td>
+          <td class="paramname"><em>conv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>raw_current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;&#160;</td>
+          <td class="paramname"><em>hb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classcurrent__converter.html#a0e8459100b0ecd154d81ff68d1c78bfa">current_converter::convert()</a>, <a class="el" href="structconverter.html#a8cb1044de319e60167cd89fe01a96d05">converter::current</a>, and <a class="el" href="classfw_1_1hbridge.html#ac38464e5478083c11269d41c07c83edb">fw::hbridge::get_direction()</a>.</p>
+
+</div>
+</div>
 <a id="ac05d95b2aaa02b49156b63e48e57b69a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac05d95b2aaa02b49156b63e48e57b69a">&#9670;&nbsp;</a></span>multistart()</h2>
 
@@ -318,6 +412,44 @@ template&lt;typename... Components&gt; </div>
 
 </div>
 </div>
+<a id="a7da1ac117da9c2c331f8a30bec04c465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7da1ac117da9c2c331f8a30bec04c465">&#9670;&nbsp;</a></span>position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fw::position </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structconverter.html">converter</a> &amp;&#160;</td>
+          <td class="paramname"><em>conv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;&#160;</td>
+          <td class="paramname"><em>acqui</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classposition__converter.html#abddb6f9f460d18cf995cecd97c0e2364">position_converter::convert()</a>, <a class="el" href="classfw_1_1acquisition.html#aab62ea818930316a5e6036deb5ddd7d8">fw::acquisition::get_position()</a>, and <a class="el" href="structconverter.html#a20d98451d8e0423cae03e88681840f9f">converter::position</a>.</p>
+
+</div>
+</div>
 <a id="acff2051fff6f79ebbfe80b750bd77be1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acff2051fff6f79ebbfe80b750bd77be1">&#9670;&nbsp;</a></span>setup_leds_with_stop_callback()</h2>
 
@@ -385,7 +517,7 @@ template&lt;typename... Components&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li>
-    <li class="footer">Generated on Thu Mar 30 2023 08:07:47 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Apr 1 2023 10:28:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

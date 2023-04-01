@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['acquisition_18',['acquisition',['../classfw_1_1acquisition.html#afa7f011bc53c452eacc40b06ca5f3917',1,'fw::acquisition::acquisition()'],['../classfw_1_1acquisition.html',1,'fw::acquisition']]],
-  ['acquisition_2ecpp_19',['acquisition.cpp',['../acquisition_8cpp.html',1,'']]],
-  ['acquisition_2ehpp_20',['acquisition.hpp',['../acquisition_8hpp.html',1,'']]],
-  ['acquisition_5fperiod_5fcallback_21',['acquisition_period_callback',['../classfw_1_1acquisition__period__callback.html#a8f2aeb79d6a9a77a7ff11c5a70012278',1,'fw::acquisition_period_callback::acquisition_period_callback()'],['../classfw_1_1acquisition__period__callback.html',1,'fw::acquisition_period_callback']]],
-  ['acquisition_5fstatus_22',['acquisition_status',['../namespacefw.html#structfw_1_1acquisition__status',1,'fw']]],
-  ['acquistion_23',['acquistion',['../structfw_1_1dispatcher.html#a4f07ca6a998a8db5f31e43dcb9c5dcaa',1,'fw::dispatcher']]],
+  ['acquis_18',['acquis',['../structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421',1,'fw::dispatcher']]],
+  ['acquisition_19',['acquisition',['../classfw_1_1acquisition.html#afa7f011bc53c452eacc40b06ca5f3917',1,'fw::acquisition::acquisition()'],['../classfw_1_1acquisition.html',1,'fw::acquisition']]],
+  ['acquisition_2ecpp_20',['acquisition.cpp',['../acquisition_8cpp.html',1,'']]],
+  ['acquisition_2ehpp_21',['acquisition.hpp',['../acquisition_8hpp.html',1,'']]],
+  ['acquisition_5fperiod_5fcallback_22',['acquisition_period_callback',['../classfw_1_1acquisition__period__callback.html#a8f2aeb79d6a9a77a7ff11c5a70012278',1,'fw::acquisition_period_callback::acquisition_period_callback()'],['../classfw_1_1acquisition__period__callback.html',1,'fw::acquisition_period_callback']]],
+  ['acquisition_5fstatus_23',['acquisition_status',['../namespacefw.html#structfw_1_1acquisition__status',1,'fw']]],
   ['adc_24',['adc',['../classfw_1_1acquisition.html#ad28805e424959bcdc890d303f961a73d',1,'fw::acquisition::handles']]],
   ['adc_5fconv_5fcplt_5firq_25',['adc_conv_cplt_irq',['../classfw_1_1acquisition.html#a48e242d088580366fe80e0d01971c95a',1,'fw::acquisition']]],
   ['adc_5ferror_5firq_26',['adc_error_irq',['../classfw_1_1acquisition.html#a418a8349e1bbfde6ad6416d3ee55875c',1,'fw::acquisition']]],

@@ -18,9 +18,12 @@ var namespacefw =
     [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "hal_check", "namespacefw.html#structfw_1_1hal__check", null ],
     [ "handler", "namespacefw.html#a1bbd86673200da7abcf665f3e7f02f91", null ],
+    [ "current", "namespacefw.html#a64eab76f1b3079c437cf48bbd5501d5c", null ],
+    [ "current", "namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd", null ],
     [ "multistart", "namespacefw.html#ac05d95b2aaa02b49156b63e48e57b69a", null ],
     [ "operator<<", "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e", null ],
     [ "operator<<", "namespacefw.html#aa77aaddd76d27d03433b9ced02d8a6f0", null ],
+    [ "position", "namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465", null ],
     [ "setup_leds_with_stop_callback", "namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1", null ],
     [ "stop_exec", "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021", null ],
     [ "STOP_CALLBACK", "namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3", null ]
