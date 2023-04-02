@@ -1,3 +1,5 @@
+#include "emlabcpp/defer.h"
+
 #include <array>
 #include <iostream>
 
@@ -22,6 +24,9 @@ struct simple_motor_sim
 
         float last_t = 0.;
 
+        static constexpr float static_friction_vel   = 0.02f;
+        static constexpr float static_friction_force = 0.7f;
+
         void reset_time( microseconds now )
         {
                 last_t = static_cast< float >( now.count() ) / 1000'000.f;
@@ -37,18 +42,28 @@ struct simple_motor_sim
                 if ( t_diff == 0.f ) {
                         return;
                 }
+                em::defer d{ [&] {
+                        last_t = t;
+                } };
 
                 current = power_to_current( p );
 
+                float force = current * 2.5f;
+
+                if ( velocity < static_friction_vel ) {
+                        if ( force < static_friction_force ) {
+                                velocity = 0.f;
+                                return;
+                        }
+                }
+
                 // let's simplify current into accel
-                float acc = current * 2.5f - resistance( current );
+                float acc = force - resistance( velocity );
 
                 velocity += acc * t_diff;
 
                 float angle_change = velocity * t_diff;
                 pos_vec            = rotate_vec( pos_vec, angle_change );
-
-                last_t = t;
         }
 
         float position() const
@@ -56,10 +71,9 @@ struct simple_motor_sim
                 return std::atan2( pos_vec[1], pos_vec[0] );
         }
 
-        float resistance( float current ) const
+        float resistance( float vel ) const
         {
-                std::ignore = current;
-                return velocity * 0.01f;
+                return vel * 0.01f;
         }
 
         float power_to_current( int16_t p ) const
