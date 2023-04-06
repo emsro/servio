@@ -33,8 +33,10 @@ enum cfg_key : uint16_t
         CONTROL_POSITION_LOOP_D             = 0x58,
         CONTROL_POSITION_LIM_MIN            = 0x5c,
         CONTROL_POSITION_LIM_MAX            = 0x60,
-        MINIMUM_VOLTAGE                     = 0x64,
-        MAXIMUM_TEMPERATURE                 = 0x68,
+        CONTROL_STATIC_FRICTION_SCALE       = 0x64,
+        CONTROL_STATIC_FRICTION_DECAY       = 0x68,
+        MINIMUM_VOLTAGE                     = 0x6c,
+        MAXIMUM_TEMPERATURE                 = 0x70,
 };
 
 template < auto Key, typename T >
@@ -69,6 +71,8 @@ using cfg_map = em::protocol::register_map<
     cfg_reg< CONTROL_POSITION_LOOP_D, float >,
     cfg_reg< CONTROL_POSITION_LIM_MIN, float >,
     cfg_reg< CONTROL_POSITION_LIM_MAX, float >,
+    cfg_reg< CONTROL_STATIC_FRICTION_SCALE, float >,
+    cfg_reg< CONTROL_STATIC_FRICTION_DECAY, float >,
     cfg_reg< MINIMUM_VOLTAGE, float >,
     cfg_reg< MAXIMUM_TEMPERATURE, float > >;
 
@@ -108,6 +112,8 @@ consteval cfg_map get_default_config()
             cfg_reg< CONTROL_POSITION_LOOP_D, float >{ 0.f },
             cfg_reg< CONTROL_POSITION_LIM_MIN, float >{ 0.f },
             cfg_reg< CONTROL_POSITION_LIM_MAX, float >{ 2 * pi },
+            cfg_reg< CONTROL_STATIC_FRICTION_SCALE, float >{ 2.f },
+            cfg_reg< CONTROL_STATIC_FRICTION_DECAY, float >{ 0.2f },
             cfg_reg< MINIMUM_VOLTAGE, float >{ 6.f },
             cfg_reg< MAXIMUM_TEMPERATURE, float >{ 80.f },
         };

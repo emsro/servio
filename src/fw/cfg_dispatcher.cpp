@@ -107,6 +107,12 @@ void cfg_dispatcher::apply( const cfg_key& key )
                     { map.get_val< CONTROL_POSITION_LIM_MIN >(),
                       map.get_val< CONTROL_POSITION_LIM_MAX >() } );
                 break;
+        case CONTROL_STATIC_FRICTION_SCALE:
+        case CONTROL_STATIC_FRICTION_DECAY:
+                c.ctl.set_static_friction(
+                    map.get_val< CONTROL_STATIC_FRICTION_SCALE >(),
+                    map.get_val< CONTROL_STATIC_FRICTION_DECAY >() );
+                break;
         case MINIMUM_VOLTAGE:
                 c.mon.set_minimum_voltage( map.get_val< MINIMUM_VOLTAGE >() );
                 break;

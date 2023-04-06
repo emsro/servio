@@ -1,5 +1,6 @@
 #include "base.hpp"
 #include "ctl/config.hpp"
+#include "ctl/linear_transition_regulator.hpp"
 #include "ctl/pid_module.hpp"
 
 #include <variant>
@@ -14,6 +15,7 @@ public:
 
         void set_pid( control_loop, ctl::pid_coefficients coeffs );
         void set_limits( control_loop, limits< float > lim );
+        void set_static_friction( float scale, float decay );
 
         bool is_engaged() const
         {
@@ -56,8 +58,7 @@ private:
         ctl::pid_module position_pid_;
         ctl::pid_module velocity_pid_;
 
-        microseconds current_scale_last_;
-        float        current_scale_ = 1.f;
+        ctl::linear_transition_regulator current_scale_regl_;
 
         ctl::pid_module current_pid_;
 

@@ -7,12 +7,13 @@ control::control( microseconds now, ctl::config cfg )
   : position_lims_( cfg.position_limits )
   , position_pid_( now, cfg.position_pid, cfg.velocity_limits )
   , velocity_pid_( now, cfg.velocity_pid, cfg.current_limits )
-  , current_scale_last_( now )
+  , current_scale_regl_{ .low_point = 1.f, .high_point = 2.f, .last_time = now }
   , current_pid_(
         now,
         cfg.current_pid,
         { std::numeric_limits< int16_t >::lowest(), std::numeric_limits< int16_t >::max() } )
 {
+        set_static_friction( cfg.static_friction_scale, cfg.static_friction_decay );
 }
 
 ctl::pid_module& control::ref_module( control_loop cl )
@@ -39,6 +40,11 @@ void control::set_limits( control_loop cl, limits< float > lim )
         } else {
                 position_lims_ = lim;
         }
+}
+
+void control::set_static_friction( float scale, float decay )
+{
+        current_scale_regl_.set_config( scale, decay );
 }
 
 void control::disengage()
@@ -82,11 +88,7 @@ void control::switch_to_position_control( microseconds, float position )
 
 void control::moving_irq( microseconds now, bool is_moving )
 {
-        auto  tdiff         = now - current_scale_last_;
-        float dir           = is_moving ? -1.f : 1.f;
-        float step          = 0.00001f * tdiff.count();
-        current_scale_      = std::clamp( current_scale_ + dir * step, 1.f, 2.f );
-        current_scale_last_ = now;
+        current_scale_regl_.update( now, is_moving );
 }
 
 void control::position_irq( microseconds now, float position )
@@ -119,7 +121,7 @@ void control::current_irq( microseconds now, float current )
                 return;
         }
 
-        float desired_curr        = velocity_pid_.get_output() * current_scale_;
+        float desired_curr        = velocity_pid_.get_output() * current_scale_regl_.state;
         auto [max_curr, min_curr] = velocity_pid_.get_limits();
         desired_curr              = std::clamp( desired_curr, max_curr, min_curr );
         float fpower              = current_pid_.update( now, current, desired_curr );

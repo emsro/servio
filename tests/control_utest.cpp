@@ -44,6 +44,8 @@ public:
                             -10.f,
                             10.f,
                         },
+                        .static_friction_scale = 2.f,
+                        .static_friction_decay = 1.f,
                     } );
         }
 
