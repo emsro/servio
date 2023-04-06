@@ -35,6 +35,7 @@ var hierarchy =
     [ "indication", "classindication.html", null ],
     [ "fw::leds", "classfw_1_1leds.html", null ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", null ],
+    [ "ctl::linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", null ],
     [ "message_with_float< ID, ProtocolType >", "structmessage__with__float.html", null ],
     [ "metrics", "classmetrics.html", null ],
     [ "fw::monitor", "classfw_1_1monitor.html", null ],

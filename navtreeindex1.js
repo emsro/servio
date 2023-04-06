@@ -201,6 +201,8 @@ var NAVTREEINDEX1 =
 "leds_8cpp.html":[12,0,1,2,0,9],
 "leds_8hpp.html":[12,0,1,2,0,10],
 "leds_8hpp_source.html":[12,0,1,2,0,10],
+"linear__transition__regulator_8hpp.html":[12,0,1,1,1],
+"linear__transition__regulator_8hpp_source.html":[12,0,1,1,1],
 "main_8cpp.html":[12,0,1,2,12],
 "main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[12,0,1,2,12,0],
 "md_doc_adr_0001_record_architecture_decisions.html":[1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md41":[9,0],
 "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md42":[9,1],
 "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md43":[9,2],
-"md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md44":[9,3],
-"metrics_8cpp.html":[12,0,1,12],
-"metrics_8hpp.html":[12,0,1,13]
+"md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md44":[9,3]
 };
