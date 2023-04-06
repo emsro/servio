@@ -73,7 +73,7 @@ public:
                 float p = conv_.position.convert( position );
 
                 met_.position_irq( now, p );
-                ctl_.moving_irq( met_.is_moving() );
+                ctl_.moving_irq( now, met_.is_moving() );
                 ctl_.position_irq( now, met_.get_position() );
                 ctl_.velocity_irq( now, met_.get_velocity() );
         }

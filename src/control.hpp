@@ -31,7 +31,7 @@ public:
         void switch_to_velocity_control( microseconds now, float velocity );
         void switch_to_position_control( microseconds now, float position );
 
-        void moving_irq( bool is_moving );
+        void moving_irq( microseconds now, bool is_moving );
 
         void position_irq( microseconds now, float position );
         void velocity_irq( microseconds now, float velocity );
@@ -56,7 +56,8 @@ private:
         ctl::pid_module position_pid_;
         ctl::pid_module velocity_pid_;
 
-        float current_scale_ = 1.f;
+        microseconds current_scale_last_;
+        float        current_scale_ = 1.f;
 
         ctl::pid_module current_pid_;
 

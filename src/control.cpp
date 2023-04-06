@@ -7,6 +7,7 @@ control::control( microseconds now, ctl::config cfg )
   : position_lims_( cfg.position_limits )
   , position_pid_( now, cfg.position_pid, cfg.velocity_limits )
   , velocity_pid_( now, cfg.velocity_pid, cfg.current_limits )
+  , current_scale_last_( now )
   , current_pid_(
         now,
         cfg.current_pid,
@@ -79,11 +80,13 @@ void control::switch_to_position_control( microseconds, float position )
         engaged_       = true;
 }
 
-void control::moving_irq( bool is_moving )
+void control::moving_irq( microseconds now, bool is_moving )
 {
-        float dir      = is_moving ? -1.f : 1.f;
-        float step     = 0.001f;
-        current_scale_ = std::clamp( current_scale_ + dir * step, 1.f, 2.f );
+        auto  tdiff         = now - current_scale_last_;
+        float dir           = is_moving ? -1.f : 1.f;
+        float step          = 0.00001f * tdiff.count();
+        current_scale_      = std::clamp( current_scale_ + dir * step, 1.f, 2.f );
+        current_scale_last_ = now;
 }
 
 void control::position_irq( microseconds now, float position )
