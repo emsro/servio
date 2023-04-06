@@ -3,6 +3,7 @@
 metrics::metrics( microseconds time, float position, limits< float > position_range )
   : last_time_( time )
   , pv_kal_( position )
+  , st_dec_( position )
 {
         set_position_range( position_range );
 }
@@ -14,6 +15,11 @@ float metrics::get_position() const
 float metrics::get_velocity() const
 {
         return pv_kal_.get_velocity();
+}
+
+bool metrics::is_moving() const
+{
+        return !st_dec_.is_static;
 }
 
 void metrics::set_position_range( limits< float > position_range )
@@ -32,6 +38,7 @@ void metrics::position_irq( microseconds now, float position )
         auto sdiff = std::chrono::duration_cast< sec_time >( tdiff );
 
         pv_kal_.update( sdiff, position );
+        st_dec_.update( position );
 
         last_time_ = now;
 }

@@ -79,6 +79,13 @@ void control::switch_to_position_control( microseconds, float position )
         engaged_       = true;
 }
 
+void control::moving_irq( bool is_moving )
+{
+        float dir      = is_moving ? -1.f : 1.f;
+        float step     = 0.001f;
+        current_scale_ = std::clamp( current_scale_ + dir * step, 1.f, 2.f );
+}
+
 void control::position_irq( microseconds now, float position )
 {
         float coeff             = 5.f;
@@ -109,8 +116,11 @@ void control::current_irq( microseconds now, float current )
                 return;
         }
 
-        float fpower = current_pid_.update( now, current, velocity_pid_.get_output() );
-        power_       = static_cast< int16_t >( fpower );
+        float desired_curr        = velocity_pid_.get_output() * current_scale_;
+        auto [max_curr, min_curr] = velocity_pid_.get_limits();
+        desired_curr              = std::clamp( desired_curr, max_curr, min_curr );
+        float fpower              = current_pid_.update( now, current, desired_curr );
+        power_                    = static_cast< int16_t >( fpower );
 }
 
 int16_t control::get_power() const

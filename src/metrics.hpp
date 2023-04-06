@@ -1,5 +1,6 @@
 #include "base.hpp"
 #include "mtr/posvel_kalman.hpp"
+#include "static_detector.hpp"
 
 #include <array>
 #include <tuple>
@@ -15,6 +16,8 @@ public:
 
         void position_irq( microseconds now, float position );
 
+        bool is_moving() const;
+
         float get_position() const;
 
         float get_velocity() const;
@@ -22,4 +25,5 @@ public:
 private:
         microseconds       last_time_;
         mtr::posvel_kalman pv_kal_;
+        static_detector    st_dec_;
 };

@@ -85,7 +85,7 @@ public:
 private:
         void update_limit()
         {
-                update_limits(
+                em::update_limits(
                     pid_,
                     { std::max( momentary_lim_.min, config_lim_.min ),
                       std::min( momentary_lim_.max, config_lim_.max ) } );
