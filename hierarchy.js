@@ -51,6 +51,7 @@ var hierarchy =
       [ "position_cb< Callable >", "structposition__cb.html", null ]
     ] ],
     [ "position_converter", "classposition__converter.html", null ],
+    [ "mtr::posvel_kalman", "structmtr_1_1posvel__kalman.html", null ],
     [ "emlabcpp::quantity", null, [
       [ "scaled< T, BitOffset >", "classscaled.html", null ]
     ] ],

@@ -119,8 +119,8 @@ var NAVTREEINDEX =
 [
 "acquisition_8cpp.html",
 "classindication.html#adb09ac11f7b5843bc12fb2d72c5c6a61",
-"namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce",
-"structfw_1_1dispatcher.html#a7c345ee7500a1b6a1f141f01d7f7f9d3"
+"monitor_8hpp_source.html",
+"structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

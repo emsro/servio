@@ -12,5 +12,6 @@ var namespaces_dup =
     ] ],
     [ "ctl", "namespacectl.html", "namespacectl" ],
     [ "fw", "namespacefw.html", "namespacefw" ],
-    [ "kalman", "namespacekalman.html", "namespacekalman" ]
+    [ "kalman", "namespacekalman.html", "namespacekalman" ],
+    [ "mtr", "namespacemtr.html", "namespacemtr" ]
 ];

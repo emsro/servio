@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['set_5fconfig_928',['SET_CONFIG',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dba14eeb0c5d9f641c9eb9e2d2242f9b0a2',1,'protocol.hpp']]],
-  ['stuck_929',['STUCK',['../indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a95578e7a8d44d9a1445fe38369bd36a6',1,'indication.hpp']]],
-  ['switch_5fto_5fcurrent_5fcontrol_930',['SWITCH_TO_CURRENT_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dba7918aa3c75a0f26a2ae82bc79199c1a1',1,'protocol.hpp']]],
-  ['switch_5fto_5fposition_5fcontrol_931',['SWITCH_TO_POSITION_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaf157f27d7d5afbfde6fb9bb05da46f22',1,'protocol.hpp']]],
-  ['switch_5fto_5fpower_5fcontrol_932',['SWITCH_TO_POWER_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaa635eecbec826a268c7c4282c266d292',1,'protocol.hpp']]],
-  ['switch_5fto_5fvelocity_5fcontrol_933',['SWITCH_TO_VELOCITY_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaa8fad798c5d300a31b8cc8bb90e5dbd3',1,'protocol.hpp']]]
+  ['set_5fconfig_951',['SET_CONFIG',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dba14eeb0c5d9f641c9eb9e2d2242f9b0a2',1,'protocol.hpp']]],
+  ['stuck_952',['STUCK',['../indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a95578e7a8d44d9a1445fe38369bd36a6',1,'indication.hpp']]],
+  ['switch_5fto_5fcurrent_5fcontrol_953',['SWITCH_TO_CURRENT_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dba7918aa3c75a0f26a2ae82bc79199c1a1',1,'protocol.hpp']]],
+  ['switch_5fto_5fposition_5fcontrol_954',['SWITCH_TO_POSITION_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaf157f27d7d5afbfde6fb9bb05da46f22',1,'protocol.hpp']]],
+  ['switch_5fto_5fpower_5fcontrol_955',['SWITCH_TO_POWER_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaa635eecbec826a268c7c4282c266d292',1,'protocol.hpp']]],
+  ['switch_5fto_5fvelocity_5fcontrol_956',['SWITCH_TO_VELOCITY_CONTROL',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dbaa8fad798c5d300a31b8cc8bb90e5dbd3',1,'protocol.hpp']]]
 ];
