@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"structfw_1_1dispatcher.html#a1aeaf775cbbba54d1b721ade0086e847":[11,0,1,6,5],
+"structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421":[11,0,1,6,10],
+"structfw_1_1dispatcher.html#a3b8d6f9ee97b05586ff51438e6ea8753":[11,0,1,6,2],
+"structfw_1_1dispatcher.html#a3f75fd972f0430328deb90c1c5ff9f3b":[11,0,1,6,1],
 "structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700":[11,0,1,6,16],
 "structfw_1_1dispatcher.html#a64062389efe7fe57f45c591f7d608afc":[11,0,1,6,11],
 "structfw_1_1dispatcher.html#a7615e3abf85894787bca450b2230fea4":[11,0,1,6,9],
@@ -62,6 +66,12 @@ var NAVTREEINDEX3 =
 "structset__config.html#a10702e2fa717ee763b2783d12d3bf9f4":[11,0,28,0],
 "structset__config.html#a35c58eb449f8cef7c7bc1dd750e4dfa6":[11,0,28,2],
 "structset__config.html#afd848a7d9e7ba244d9ab2dc32d2af3eb":[11,0,28,1],
+"structstatic__detector.html":[11,0,29],
+"structstatic__detector.html#a0a62d84d2e2290c43c6501cb96191cfa":[11,0,29,1],
+"structstatic__detector.html#a302170582bc6f3b82e0386ed82922e1a":[11,0,29,4],
+"structstatic__detector.html#a31dc743974dfea543804f170591da790":[11,0,29,2],
+"structstatic__detector.html#a82cc33e17832453cfcd633a6f4a5dd3d":[11,0,29,0],
+"structstatic__detector.html#ad7262861060d61260f3a4f4fdc0ea633":[11,0,29,3],
 "temperature_8hpp.html":[12,0,1,0,2],
 "temperature_8hpp_source.html":[12,0,1,0,2],
 "util_8cpp.html":[12,0,1,2,14],

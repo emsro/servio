@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['scaled_2ehpp_619',['scaled.hpp',['../scaled_8hpp.html',1,'']]],
-  ['stm32g4xx_5fhal_5fconf_2eh_620',['stm32g4xx_hal_conf.h',['../stm32g4xx__hal__conf_8h.html',1,'']]]
+  ['scaled_2ehpp_627',['scaled.hpp',['../scaled_8hpp.html',1,'']]],
+  ['static_5fdetector_2ehpp_628',['static_detector.hpp',['../static__detector_8hpp.html',1,'']]],
+  ['stm32g4xx_5fhal_5fconf_2eh_629',['stm32g4xx_hal_conf.h',['../stm32g4xx__hal__conf_8h.html',1,'']]]
 ];

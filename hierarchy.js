@@ -58,6 +58,7 @@ var hierarchy =
     [ "set_config", "structset__config.html", null ],
     [ "fw::standard_callbacks", "structfw_1_1standard__callbacks.html", null ],
     [ "kalman::state_range", "namespacekalman.html#structkalman_1_1state__range", null ],
+    [ "static_detector", "structstatic__detector.html", null ],
     [ "temperature_converter", "classtemperature__converter.html", null ],
     [ "voltage_converter", "classvoltage__converter.html", null ]
 ];

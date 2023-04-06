@@ -101,6 +101,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0a1a38155ed3f17f9f5e35a74995c53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6998476ebd787b4c66aec862cec0e313"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetrics.html#a6998476ebd787b4c66aec862cec0e313">position_irq</a> (<a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, float position)</td></tr>
 <tr class="separator:a6998476ebd787b4c66aec862cec0e313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1652cf9662c52857e68d548bbbc833ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetrics.html#a1652cf9662c52857e68d548bbbc833ae">is_moving</a> () const</td></tr>
+<tr class="separator:a1652cf9662c52857e68d548bbbc833ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad794bbf9caf8090d8fb7a88786accb14"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">get_position</a> () const</td></tr>
 <tr class="separator:ad794bbf9caf8090d8fb7a88786accb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa62e43dda60977625c33477506b1fd31"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">get_velocity</a> () const</td></tr>
@@ -182,6 +184,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a1652cf9662c52857e68d548bbbc833ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1652cf9662c52857e68d548bbbc833ae">&#9670;&nbsp;</a></span>is_moving()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool metrics::is_moving </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structstatic__detector.html#a31dc743974dfea543804f170591da790">static_detector::is_static</a>.</p>
+
+</div>
+</div>
 <a id="a6998476ebd787b4c66aec862cec0e313"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6998476ebd787b4c66aec862cec0e313">&#9670;&nbsp;</a></span>position_irq()</h2>
 
@@ -208,7 +229,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">fw::position()</a>, and <a class="el" href="structmtr_1_1posvel__kalman.html#afa7fdfbafbaa78762335da2c0dc4b734">mtr::posvel_kalman::update()</a>.</p>
+<p class="reference">References <a class="el" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">fw::position()</a>, <a class="el" href="structstatic__detector.html#a0a62d84d2e2290c43c6501cb96191cfa">static_detector::update()</a>, and <a class="el" href="structmtr_1_1posvel__kalman.html#afa7fdfbafbaa78762335da2c0dc4b734">mtr::posvel_kalman::update()</a>.</p>
 
 </div>
 </div>
@@ -242,7 +263,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classmetrics.html">metrics</a></li>
-    <li class="footer">Generated on Thu Apr 6 2023 09:28:03 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Apr 6 2023 10:04:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

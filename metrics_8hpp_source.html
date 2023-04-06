@@ -89,48 +89,55 @@ $(document).ready(function(){initNavTree('metrics_8hpp_source.html',''); initRes
 <div class="contents">
 <a href="metrics_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">base.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="posvel__kalman_8hpp.html">mtr/posvel_kalman.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classmetrics.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmetrics.html">metrics</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classmetrics.html#a0abe3e4ecf0484ad696124398a891683">metrics</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> time, <span class="keywordtype">float</span> <a class="code" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">position</a>, <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_range );</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e">set_position_range</a>( <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_range );</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmetrics.html#a6998476ebd787b4c66aec862cec0e313">position_irq</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <span class="keywordtype">float</span> <a class="code" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">position</a> );</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">get_position</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">get_velocity</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a>       last_time_;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="structmtr_1_1posvel__kalman.html">mtr::posvel_kalman</a> pv_kal_;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__detector_8hpp.html">static_detector.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classmetrics.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmetrics.html">metrics</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classmetrics.html#a0abe3e4ecf0484ad696124398a891683">metrics</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> time, <span class="keywordtype">float</span> <a class="code" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">position</a>, <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_range );</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e">set_position_range</a>( <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_range );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmetrics.html#a6998476ebd787b4c66aec862cec0e313">position_irq</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <span class="keywordtype">float</span> <a class="code" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">position</a> );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classmetrics.html#a1652cf9662c52857e68d548bbbc833ae">is_moving</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">get_position</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">get_velocity</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a>       last_time_;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="structmtr_1_1posvel__kalman.html">mtr::posvel_kalman</a> pv_kal_;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="structstatic__detector.html">static_detector</a>    st_dec_;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="abase_8hpp_html_a3e15423b6a0f2e36799532b4c8f699f5"><div class="ttname"><a href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:19</div></div>
 <div class="ttc" id="abase_8hpp_html_a486dfef0b192c734eed01e9d3fa6995c"><div class="ttname"><a href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a></div><div class="ttdeci">em::min_max&lt; T &gt; limits</div><div class="ttdef"><b>Definition:</b> base.hpp:41</div></div>
-<div class="ttc" id="aclassmetrics_html"><div class="ttname"><a href="classmetrics.html">metrics</a></div><div class="ttdef"><b>Definition:</b> metrics.hpp:10</div></div>
-<div class="ttc" id="aclassmetrics_html_a0a1a38155ed3f17f9f5e35a74995c53e"><div class="ttname"><a href="classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e">metrics::set_position_range</a></div><div class="ttdeci">void set_position_range(limits&lt; float &gt; position_range)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:19</div></div>
+<div class="ttc" id="aclassmetrics_html"><div class="ttname"><a href="classmetrics.html">metrics</a></div><div class="ttdef"><b>Definition:</b> metrics.hpp:11</div></div>
+<div class="ttc" id="aclassmetrics_html_a0a1a38155ed3f17f9f5e35a74995c53e"><div class="ttname"><a href="classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e">metrics::set_position_range</a></div><div class="ttdeci">void set_position_range(limits&lt; float &gt; position_range)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:25</div></div>
 <div class="ttc" id="aclassmetrics_html_a0abe3e4ecf0484ad696124398a891683"><div class="ttname"><a href="classmetrics.html#a0abe3e4ecf0484ad696124398a891683">metrics::metrics</a></div><div class="ttdeci">metrics(microseconds time, float position, limits&lt; float &gt; position_range)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:3</div></div>
-<div class="ttc" id="aclassmetrics_html_a6998476ebd787b4c66aec862cec0e313"><div class="ttname"><a href="classmetrics.html#a6998476ebd787b4c66aec862cec0e313">metrics::position_irq</a></div><div class="ttdeci">void position_irq(microseconds now, float position)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:24</div></div>
-<div class="ttc" id="aclassmetrics_html_aa62e43dda60977625c33477506b1fd31"><div class="ttname"><a href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">metrics::get_velocity</a></div><div class="ttdeci">float get_velocity() const</div><div class="ttdef"><b>Definition:</b> metrics.cpp:14</div></div>
-<div class="ttc" id="aclassmetrics_html_ad794bbf9caf8090d8fb7a88786accb14"><div class="ttname"><a href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">metrics::get_position</a></div><div class="ttdeci">float get_position() const</div><div class="ttdef"><b>Definition:</b> metrics.cpp:10</div></div>
+<div class="ttc" id="aclassmetrics_html_a1652cf9662c52857e68d548bbbc833ae"><div class="ttname"><a href="classmetrics.html#a1652cf9662c52857e68d548bbbc833ae">metrics::is_moving</a></div><div class="ttdeci">bool is_moving() const</div><div class="ttdef"><b>Definition:</b> metrics.cpp:20</div></div>
+<div class="ttc" id="aclassmetrics_html_a6998476ebd787b4c66aec862cec0e313"><div class="ttname"><a href="classmetrics.html#a6998476ebd787b4c66aec862cec0e313">metrics::position_irq</a></div><div class="ttdeci">void position_irq(microseconds now, float position)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:30</div></div>
+<div class="ttc" id="aclassmetrics_html_aa62e43dda60977625c33477506b1fd31"><div class="ttname"><a href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">metrics::get_velocity</a></div><div class="ttdeci">float get_velocity() const</div><div class="ttdef"><b>Definition:</b> metrics.cpp:15</div></div>
+<div class="ttc" id="aclassmetrics_html_ad794bbf9caf8090d8fb7a88786accb14"><div class="ttname"><a href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">metrics::get_position</a></div><div class="ttdeci">float get_position() const</div><div class="ttdef"><b>Definition:</b> metrics.cpp:11</div></div>
 <div class="ttc" id="anamespacefw_html_a7da1ac117da9c2c331f8a30bec04c465"><div class="ttname"><a href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">fw::position</a></div><div class="ttdeci">float position(const converter &amp;conv, const acquisition &amp;acqui)</div><div class="ttdef"><b>Definition:</b> conversion.hpp:20</div></div>
 <div class="ttc" id="aposvel__kalman_8hpp_html"><div class="ttname"><a href="posvel__kalman_8hpp.html">posvel_kalman.hpp</a></div></div>
+<div class="ttc" id="astatic__detector_8hpp_html"><div class="ttname"><a href="static__detector_8hpp.html">static_detector.hpp</a></div></div>
 <div class="ttc" id="astructmtr_1_1posvel__kalman_html"><div class="ttname"><a href="structmtr_1_1posvel__kalman.html">mtr::posvel_kalman</a></div><div class="ttdef"><b>Definition:</b> posvel_kalman.hpp:9</div></div>
+<div class="ttc" id="astructstatic__detector_html"><div class="ttname"><a href="structstatic__detector.html">static_detector</a></div><div class="ttdef"><b>Definition:</b> static_detector.hpp:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="metrics_8hpp.html">metrics.hpp</a></li>
-    <li class="footer">Generated on Thu Apr 6 2023 09:28:03 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Apr 6 2023 10:04:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

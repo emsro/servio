@@ -25,5 +25,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "scaled.hpp", "scaled_8hpp.html", [
       [ "scaled", "classscaled.html", "classscaled" ]
     ] ],
+    [ "static_detector.hpp", "static__detector_8hpp.html", [
+      [ "static_detector", "structstatic__detector.html", "structstatic__detector" ]
+    ] ],
     [ "stm32g4xx_hal_conf.h", "stm32g4xx__hal__conf_8h.html", "stm32g4xx__hal__conf_8h" ]
 ];

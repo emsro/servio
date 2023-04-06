@@ -54,6 +54,7 @@ var annotated_dup =
     [ "position_converter", "classposition__converter.html", "classposition__converter" ],
     [ "scaled", "classscaled.html", "classscaled" ],
     [ "set_config", "structset__config.html", "structset__config" ],
+    [ "static_detector", "structstatic__detector.html", "structstatic__detector" ],
     [ "temperature_converter", "classtemperature__converter.html", "classtemperature__converter" ],
     [ "voltage_converter", "classvoltage__converter.html", "classvoltage__converter" ]
 ];

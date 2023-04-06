@@ -12,5 +12,7 @@ var searchData=
   ['innovation_5fcovariance_251',['innovation_covariance',['../namespacekalman.html#a2c7d47c8c5a7d12f26d61b7818b1c2d9',1,'kalman']]],
   ['instruction_5fcache_5fenable_252',['INSTRUCTION_CACHE_ENABLE',['../stm32g4xx__hal__conf_8h.html#a3379989d46599c7e19a43f42e9145a4a',1,'stm32g4xx_hal_conf.h']]],
   ['is_5fengaged_253',['is_engaged',['../classcontrol.html#a41287e00d9c3989566355ad58b520710',1,'control']]],
-  ['it_2ecpp_254',['it.cpp',['../it_8cpp.html',1,'']]]
+  ['is_5fmoving_254',['is_moving',['../classmetrics.html#a1652cf9662c52857e68d548bbbc833ae',1,'metrics']]],
+  ['is_5fstatic_255',['is_static',['../structstatic__detector.html#a31dc743974dfea543804f170591da790',1,'static_detector']]],
+  ['it_2ecpp_256',['it.cpp',['../it_8cpp.html',1,'']]]
 ];
