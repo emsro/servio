@@ -15,7 +15,7 @@ var searchData=
   ['message_5fwith_5ffloat_291',['message_with_float',['../structmessage__with__float.html',1,'']]],
   ['messages_5fid_292',['messages_id',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717db',1,'protocol.hpp']]],
   ['met_293',['met',['../structfw_1_1core.html#a6d241e77bb00e9b86927ee74603a8b4a',1,'fw::core']]],
-  ['metrics_294',['metrics',['../classmetrics.html',1,'metrics'],['../classmetrics.html#a0abe3e4ecf0484ad696124398a891683',1,'metrics::metrics()']]],
+  ['metrics_294',['metrics',['../classmetrics.html#a0abe3e4ecf0484ad696124398a891683',1,'metrics::metrics()'],['../classmetrics.html',1,'metrics']]],
   ['metrics_2ecpp_295',['metrics.cpp',['../metrics_8cpp.html',1,'']]],
   ['metrics_2ehpp_296',['metrics.hpp',['../metrics_8hpp.html',1,'']]],
   ['microseconds_297',['microseconds',['../base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5',1,'base.hpp']]],
@@ -25,9 +25,10 @@ var searchData=
   ['mon_301',['mon',['../structfw_1_1core.html#acb979d8e743e607e67107b716bd218d4',1,'fw::core']]],
   ['monitor_302',['monitor',['../classfw_1_1monitor.html',1,'fw::monitor'],['../classfw_1_1monitor.html#ab9305eb5087b24d47d8eb806d8e9a207',1,'fw::monitor::monitor()']]],
   ['monitor_2ehpp_303',['monitor.hpp',['../monitor_8hpp.html',1,'']]],
-  ['moving_5firq_304',['moving_irq',['../classcontrol.html#a7d7ed2f19eb7b2d9468483c2d98197d5',1,'control']]],
-  ['msg_305',['msg',['../structset__config.html#a35c58eb449f8cef7c7bc1dd750e4dfa6',1,'set_config::msg()'],['../structget__config__response.html#aa5f56edb14979b1eaf63c919adb0e60e',1,'get_config_response::msg()'],['../config_8hpp.html#a47c4f5d88721c7f2a6ba1393476be862',1,'cfg_keyval::msg()']]],
-  ['msg_5fcallback_306',['msg_callback',['../classfw_1_1comms.html#a48fe7a305892ddb49b3407e32d94def4',1,'fw::comms']]],
-  ['mtr_307',['mtr',['../namespacemtr.html',1,'']]],
-  ['multistart_308',['multistart',['../namespacefw.html#ac05d95b2aaa02b49156b63e48e57b69a',1,'fw']]]
+  ['moving_5fdetection_5fstep_304',['MOVING_DETECTION_STEP',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6ad50e3785962b7a54c1b56332a94d02d1',1,'config.hpp']]],
+  ['moving_5firq_305',['moving_irq',['../classcontrol.html#a7d7ed2f19eb7b2d9468483c2d98197d5',1,'control']]],
+  ['msg_306',['msg',['../structset__config.html#a35c58eb449f8cef7c7bc1dd750e4dfa6',1,'set_config::msg()'],['../structget__config__response.html#aa5f56edb14979b1eaf63c919adb0e60e',1,'get_config_response::msg()'],['../config_8hpp.html#a47c4f5d88721c7f2a6ba1393476be862',1,'cfg_keyval::msg()']]],
+  ['msg_5fcallback_307',['msg_callback',['../classfw_1_1comms.html#a48fe7a305892ddb49b3407e32d94def4',1,'fw::comms']]],
+  ['mtr_308',['mtr',['../namespacemtr.html',1,'']]],
+  ['multistart_309',['multistart',['../namespacefw.html#ac05d95b2aaa02b49156b63e48e57b69a',1,'fw']]]
 ];
