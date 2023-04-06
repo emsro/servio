@@ -119,6 +119,9 @@ void cfg_dispatcher::apply( const cfg_key& key )
         case MAXIMUM_TEMPERATURE:
                 c.mon.set_maximum_temperature( map.get_val< MAXIMUM_TEMPERATURE >() );
                 break;
+        case MOVING_DETECTION_STEP:
+                c.met.set_moving_step( map.get_val< MOVING_DETECTION_STEP >() );
+                break;
         }
 }
 }  // namespace fw

@@ -3,7 +3,7 @@
 
 struct static_detector
 {
-        float tolerance = 0.05f;
+        float step = 0.05f;
         float last_pos;
         bool  is_static = true;
 
@@ -12,10 +12,15 @@ struct static_detector
         {
         }
 
+        void set_step( float stp )
+        {
+                step = stp;
+        }
+
         void update( float position )
         {
                 // TODO: this won't work around 360<->0 wobble
-                if ( std::abs( position - last_pos ) < tolerance ) {
+                if ( std::abs( position - last_pos ) < step ) {
                         is_static = true;
                         return;
                 }

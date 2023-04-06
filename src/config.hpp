@@ -37,6 +37,7 @@ enum cfg_key : uint16_t
         CONTROL_STATIC_FRICTION_DECAY       = 0x68,
         MINIMUM_VOLTAGE                     = 0x6c,
         MAXIMUM_TEMPERATURE                 = 0x70,
+        MOVING_DETECTION_STEP               = 0x74,
 };
 
 template < auto Key, typename T >
@@ -74,7 +75,8 @@ using cfg_map = em::protocol::register_map<
     cfg_reg< CONTROL_STATIC_FRICTION_SCALE, float >,
     cfg_reg< CONTROL_STATIC_FRICTION_DECAY, float >,
     cfg_reg< MINIMUM_VOLTAGE, float >,
-    cfg_reg< MAXIMUM_TEMPERATURE, float > >;
+    cfg_reg< MAXIMUM_TEMPERATURE, float >,
+    cfg_reg< MOVING_DETECTION_STEP, float > >;
 
 using cfg_value_message = typename cfg_map::message_type;
 
@@ -116,5 +118,6 @@ consteval cfg_map get_default_config()
             cfg_reg< CONTROL_STATIC_FRICTION_DECAY, float >{ 0.2f },
             cfg_reg< MINIMUM_VOLTAGE, float >{ 6.f },
             cfg_reg< MAXIMUM_TEMPERATURE, float >{ 80.f },
+            cfg_reg< MOVING_DETECTION_STEP, float >{ 0.05f },
         };
 }

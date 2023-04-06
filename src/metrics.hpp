@@ -13,6 +13,7 @@ public:
         metrics( microseconds time, float position, limits< float > position_range );
 
         void set_position_range( limits< float > position_range );
+        void set_moving_step( float step );
 
         void position_irq( microseconds now, float position );
 
