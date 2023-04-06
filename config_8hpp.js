@@ -4,7 +4,7 @@ var config_8hpp =
       [ "key", "config_8hpp.html#a7e1b4963cd8853783479f72a0c2fc073", null ],
       [ "msg", "config_8hpp.html#a47c4f5d88721c7f2a6ba1393476be862", null ]
     ] ],
-    [ "cfg_map", "config_8hpp.html#acf84e545a545e52bf7eb690b7d90d577", null ],
+    [ "cfg_map", "config_8hpp.html#aa511e21a97bdd585b5e5eddd24dc5e37", null ],
     [ "cfg_reg", "config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e", null ],
     [ "cfg_value_message", "config_8hpp.html#ac5e70fc82e3c7cc847dbb8c917d336e4", null ],
     [ "cfg_key", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6", [
@@ -33,6 +33,8 @@ var config_8hpp =
       [ "CONTROL_POSITION_LOOP_D", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a320e4444416841c21c421e471316b0c4", null ],
       [ "CONTROL_POSITION_LIM_MIN", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a3022947989a65a9cf817cc9ca0ed0e3d", null ],
       [ "CONTROL_POSITION_LIM_MAX", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a8d9054e0f71aeb6017b5e5ba987c3ffd", null ],
+      [ "CONTROL_STATIC_FRICTION_SCALE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a553bac71be671a7b00fa646736007c1c", null ],
+      [ "CONTROL_STATIC_FRICTION_DECAY", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6aa1954437f0023c3550d564cb197fc5af", null ],
       [ "MINIMUM_VOLTAGE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a4b3361306c52f3d715404f815b24eb99", null ],
       [ "MAXIMUM_TEMPERATURE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a2865279ffdc6266db7215e0151d2974d", null ]
     ] ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"classindication.html#a5d2366017e3656288041d65c5ee6cdf3":[11,0,17,2],
 "classindication.html#aaeefb4a81531e0fd82015a1c4711acd6":[11,0,17,3],
 "classindication.html#adb09ac11f7b5843bc12fb2d72c5c6a61":[11,0,17,0],
 "classmetrics.html":[11,0,20],
@@ -38,11 +39,12 @@ var NAVTREEINDEX1 =
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a0f0f3bcec7b759b010db79cde99ffac6":[12,0,1,5,4,3],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a1cf7319c67dd460005c299e8b20a10e1":[12,0,1,5,4,7],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a20bbab031560df5c5b7ce3ca399dd5a9":[12,0,1,5,4,4],
-"config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a2865279ffdc6266db7215e0151d2974d":[12,0,1,5,4,26],
+"config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a2865279ffdc6266db7215e0151d2974d":[12,0,1,5,4,28],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a3022947989a65a9cf817cc9ca0ed0e3d":[12,0,1,5,4,23],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a320e4444416841c21c421e471316b0c4":[12,0,1,5,4,22],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a3f481ea537d3750cc482fa823a6715c6":[12,0,1,5,4,14],
-"config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a4b3361306c52f3d715404f815b24eb99":[12,0,1,5,4,25],
+"config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a4b3361306c52f3d715404f815b24eb99":[12,0,1,5,4,27],
+"config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a553bac71be671a7b00fa646736007c1c":[12,0,1,5,4,25],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a732ec7aa145dfb9cb69bf3962988dfef":[12,0,1,5,4,12],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a76e72afa4f8d540bba69263a712a52d6":[12,0,1,5,4,6],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a798fbc724ee0215f5da0754ef66b5bcb":[12,0,1,5,4,0],
@@ -52,6 +54,7 @@ var NAVTREEINDEX1 =
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a8d9054e0f71aeb6017b5e5ba987c3ffd":[12,0,1,5,4,24],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a8edeac400bd150801d25c73b719dc202":[12,0,1,5,4,2],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a9c3eeb7a8298e1a0a3cb2cff2bd1dd84":[12,0,1,5,4,11],
+"config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6aa1954437f0023c3550d564cb197fc5af":[12,0,1,5,4,26],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6aaf35d0ca16d06d524a5bc92f92633089":[12,0,1,5,4,10],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6ab015c1824c663ed3fcb336e0c5204d3b":[12,0,1,5,4,5],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6ab56e1a213b354b760e5463656efaad04":[12,0,1,5,4,8],
@@ -63,9 +66,9 @@ var NAVTREEINDEX1 =
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6aed5bf2c290d71bf267f3bd27c90b37ee":[12,0,1,5,4,21],
 "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6af302b91ed1f49912b7998401b5204864":[12,0,1,5,4,9],
 "config_8hpp.html#a7e1b4963cd8853783479f72a0c2fc073":[12,0,1,5,0,0],
+"config_8hpp.html#aa511e21a97bdd585b5e5eddd24dc5e37":[12,0,1,5,1],
 "config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e":[12,0,1,5,2],
 "config_8hpp.html#ac5e70fc82e3c7cc847dbb8c917d336e4":[12,0,1,5,3],
-"config_8hpp.html#acf84e545a545e52bf7eb690b7d90d577":[12,0,1,5,1],
 "config_8hpp.html#ae12fd96fc9e7230dfa70d78ca9e20964":[12,0,1,5,5],
 "config_8hpp.html#structcfg__keyval":[12,0,1,5,0],
 "config_8hpp_source.html":[12,0,1,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md38":[8,2],
 "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md39":[8,3],
 "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html":[9],
-"md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md41":[9,0],
-"md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md42":[9,1],
-"md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md43":[9,2],
-"md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md44":[9,3]
+"md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md41":[9,0]
 };
