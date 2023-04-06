@@ -24,8 +24,8 @@ struct simple_motor_sim
 
         float last_t = 0.;
 
-        static constexpr float static_friction_vel   = 0.02f;
-        static constexpr float static_friction_force = 0.7f;
+        float static_friction_vel   = 0.02f;
+        float static_friction_force = 0.7f;
 
         void reset_time( microseconds now )
         {
@@ -50,8 +50,8 @@ struct simple_motor_sim
 
                 float force = current * 2.5f;
 
-                if ( velocity < static_friction_vel ) {
-                        if ( force < static_friction_force ) {
+                if ( std::abs( velocity ) < static_friction_vel ) {
+                        if ( std::abs( force ) < static_friction_force ) {
                                 velocity = 0.f;
                                 return;
                         }

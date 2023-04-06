@@ -13,6 +13,7 @@ public:
         {
                 now = 0_ms;
                 motor.emplace();
+                motor->static_friction_force = 0.f;
                 ctl.emplace(
                     now,
                     ctl::config{
@@ -88,7 +89,6 @@ TEST_F( ControlFixture, velocity )
 
                 for ( std::size_t i : em::range( 200u ) ) {
                         std::ignore = i;
-                        std::cout << *motor << std::endl;
                         tick();
                         now += 5_ms;
                 }
@@ -105,7 +105,6 @@ TEST_F( ControlFixture, position )
 
                 for ( std::size_t i : em::range( 500u ) ) {
                         std::ignore = i;
-                        std::cout << *motor << std::endl;
                         tick();
                         now += 5_ms;
                 }
