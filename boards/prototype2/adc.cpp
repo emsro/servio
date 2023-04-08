@@ -71,7 +71,7 @@ bool setup_adc( fw::acquisition::handles& h, adc_cfg cfg )
         h.dma.Init.Mode                = DMA_NORMAL;
         h.dma.Init.Priority            = cfg.dma.priority;
 
-        for ( const adc_pch& ch : { cfg.current, cfg.position, cfg.vcc, cfg.temp } ) {
+        for ( const pinch_cfg& ch : { cfg.current, cfg.position, cfg.vcc, cfg.temp } ) {
                 if ( ch.pin == 0 || ch.port == nullptr ) {
                         continue;
                 }

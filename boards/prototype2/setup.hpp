@@ -12,11 +12,12 @@ struct dma_cfg
         uint32_t             priority;
 };
 
-struct adc_pch
+struct pinch_cfg
 {
         uint32_t      channel;
         uint32_t      pin;
         GPIO_TypeDef* port;
+        uint8_t       alternate = 0x0;
 };
 
 struct adc_cfg
@@ -24,10 +25,10 @@ struct adc_cfg
         ADC_TypeDef* adc_instance;
         uint32_t     adc_irq_priority;
         dma_cfg      dma;
-        adc_pch      current;
-        adc_pch      position;
-        adc_pch      vcc;
-        adc_pch      temp;
+        pinch_cfg    current;
+        pinch_cfg    position;
+        pinch_cfg    vcc;
+        pinch_cfg    temp;
 };
 
 bool setup_adc( fw::acquisition::handles&, adc_cfg cfg );
@@ -60,7 +61,18 @@ struct duart_cfg
 };
 
 bool setup_duart( fw::debug_comms::handles&, duart_cfg cfg );
-bool setup_hbridge_timers( fw::hbridge::handles& );
+
+struct hb_timer_cfg
+{
+        TIM_TypeDef* timer_instance;
+        uint16_t     period;
+        IRQn_Type    irq;
+        uint32_t     irq_priority;
+        pinch_cfg    mc1;
+        pinch_cfg    mc2;
+};
+
+bool setup_hbridge_timers( fw::hbridge::handles&, hb_timer_cfg cfg );
 bool setup_iuart( fw::comms::handles& );
 bool setup_leds_gpio( fw::leds::handles& );
 bool setup_leds_timer( fw::leds::handles& );

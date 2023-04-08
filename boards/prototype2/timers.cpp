@@ -12,18 +12,18 @@ namespace brd
 // MC_1 is connected to PA8 on CH1
 // MC_2 is connected to PA9 on CH2
 
-bool setup_hbridge_timers( fw::hbridge::handles& h )
+bool setup_hbridge_timers( fw::hbridge::handles& h, hb_timer_cfg cfg )
 {
 
-        h.timer.Instance               = TIM1;
+        h.timer.Instance               = cfg.timer_instance;
         h.timer.Init.Prescaler         = 0;
         h.timer.Init.CounterMode       = TIM_COUNTERMODE_UP;
-        h.timer.Init.Period            = std::numeric_limits< uint16_t >::max() / 8;
+        h.timer.Init.Period            = cfg.period;
         h.timer.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
         h.timer.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
-        h.mc1_channel = TIM_CHANNEL_1;
-        h.mc2_channel = TIM_CHANNEL_2;
+        h.mc1_channel = cfg.mc1.channel;
+        h.mc2_channel = cfg.mc2.channel;
 
         TIM_MasterConfigTypeDef mc{};
         mc.MasterOutputTrigger  = TIM_TRGO_RESET;
@@ -42,16 +42,15 @@ bool setup_hbridge_timers( fw::hbridge::handles& h )
 
         GPIO_InitTypeDef gpioa{};
 
-        gpioa.Pin       = GPIO_PIN_8 | GPIO_PIN_9;
-        gpioa.Mode      = GPIO_MODE_AF_PP;
-        gpioa.Pull      = GPIO_NOPULL;
-        gpioa.Speed     = GPIO_SPEED_FREQ_LOW;
-        gpioa.Alternate = GPIO_AF6_TIM1;
+        for ( const pinch_cfg& pc : { cfg.mc1, cfg.mc2 } ) {
+                gpioa.Pin       = pc.pin;
+                gpioa.Mode      = GPIO_MODE_AF_PP;
+                gpioa.Pull      = GPIO_NOPULL;
+                gpioa.Speed     = GPIO_SPEED_FREQ_LOW;
+                gpioa.Alternate = pc.alternate;
 
-        __HAL_RCC_TIM1_CLK_ENABLE();
-        __HAL_RCC_GPIOA_CLK_ENABLE();
-
-        HAL_GPIO_Init( GPIOA, &gpioa );
+                HAL_GPIO_Init( pc.port, &gpioa );
+        }
 
         if ( HAL_TIM_PWM_Init( &h.timer ) != HAL_OK ) {
                 fw::stop_exec();
@@ -91,8 +90,8 @@ bool setup_hbridge_timers( fw::hbridge::handles& h )
                 fw::stop_exec();
         }
 
-        HAL_NVIC_SetPriority( TIM1_UP_TIM16_IRQn, 0, 0 );
-        HAL_NVIC_EnableIRQ( TIM1_UP_TIM16_IRQn );
+        HAL_NVIC_SetPriority( cfg.irq, cfg.irq_priority, 0 );
+        HAL_NVIC_EnableIRQ( cfg.irq );
 
         return true;
 }

@@ -105,25 +105,25 @@ fw::acquisition* setup_acquisition()
                                        .priority     = DMA_PRIORITY_VERY_HIGH,
                                    },
                                .current =
-                                   adc_pch{
+                                   pinch_cfg{
                                        .channel = ADC_CHANNEL_4,
                                        .pin     = GPIO_PIN_3,
                                        .port    = GPIOA,
                                    },
                                .position =
-                                   adc_pch{
+                                   pinch_cfg{
                                        .channel = ADC_CHANNEL_1,
                                        .pin     = GPIO_PIN_0,
                                        .port    = GPIOA,
                                    },
                                .vcc =
-                                   adc_pch{
+                                   pinch_cfg{
                                        .channel = ADC_CHANNEL_2,
                                        .pin     = GPIO_PIN_1,
                                        .port    = GPIOA,
                                    },
                                .temp =
-                                   adc_pch{
+                                   pinch_cfg{
                                        .channel = ADC_CHANNEL_TEMPSENSOR_ADC1,
                                        .pin     = 0,
                                        .port    = nullptr,
@@ -145,7 +145,30 @@ fw::acquisition* setup_acquisition()
 fw::hbridge* setup_hbridge()
 {
         auto setup_f = []( fw::hbridge::handles& h ) {
-                bool res = setup_hbridge_timers( h );
+                __HAL_RCC_TIM1_CLK_ENABLE();
+                __HAL_RCC_GPIOA_CLK_ENABLE();
+                bool res = setup_hbridge_timers(
+                    h,
+                    hb_timer_cfg{
+                        .timer_instance = TIM1,
+                        .period         = std::numeric_limits< uint16_t >::max() / 8,
+                        .irq            = TIM1_UP_TIM16_IRQn,
+                        .irq_priority   = 0,
+                        .mc1 =
+                            pinch_cfg{
+                                .channel   = TIM_CHANNEL_1,
+                                .pin       = GPIO_PIN_8,
+                                .port      = GPIOA,
+                                .alternate = GPIO_AF6_TIM1,
+                            },
+                        .mc2 =
+                            pinch_cfg{
+                                .channel   = TIM_CHANNEL_2,
+                                .pin       = GPIO_PIN_9,
+                                .port      = GPIOA,
+                                .alternate = GPIO_AF6_TIM1,
+                            },
+                    } );
 
                 fw::hal_check{} << HAL_TIM_RegisterCallback(
                     &h.timer, HAL_TIM_PERIOD_ELAPSED_CB_ID, []( TIM_HandleTypeDef* ) {
