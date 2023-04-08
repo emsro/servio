@@ -48,7 +48,7 @@ struct simple_motor_sim
 
                 current = power_to_current( p );
 
-                float force = current * 2.5f;
+                float force = current * 15.f;
 
                 if ( std::abs( velocity ) < static_friction_vel ) {
                         if ( std::abs( force ) < static_friction_force ) {
