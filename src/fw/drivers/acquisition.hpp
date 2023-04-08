@@ -31,7 +31,6 @@ public:
         struct handles
         {
                 ADC_HandleTypeDef      adc;
-                IRQn_Type              adc_irqn;
                 DMA_HandleTypeDef      dma;
                 TIM_HandleTypeDef      tim;
                 uint32_t               tim_channel;

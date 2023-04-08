@@ -1,19 +1,10 @@
 
 #include "fw/board.hpp"
 
+#include "setup.hpp"
+
 namespace brd
 {
-
-bool setup_adc( fw::acquisition::handles& );
-bool setup_adc_timer( fw::acquisition::handles& );
-bool setup_duart( fw::debug_comms::handles& );
-bool setup_hbridge_timers( fw::hbridge::handles& );
-bool setup_iuart( fw::comms::handles& );
-bool setup_leds_gpio( fw::leds::handles& );
-bool setup_leds_timer( fw::leds::handles& );
-void setup_clk();
-bool setup_clock_timer( fw::clock::handles& );
-void setup_extra();
 
 fw::clock       CLOCK{};
 fw::acquisition ACQUISITION{};
@@ -95,7 +86,46 @@ fw::clock* setup_clock()
 fw::acquisition* setup_acquisition()
 {
         auto acq_setup = []( fw::acquisition::handles& h ) {
-                return setup_adc( h ) && setup_adc_timer( h );
+                __HAL_RCC_DMAMUX1_CLK_ENABLE();
+                __HAL_RCC_DMA1_CLK_ENABLE();
+                __HAL_RCC_ADC12_CLK_ENABLE();
+                __HAL_RCC_GPIOA_CLK_ENABLE();
+                return setup_adc(
+                           h,
+                           adc_cfg{
+                               .adc_instance = ADC1,
+                               .dma =
+                                   dma_cfg{
+                                       .instance = DMA1_Channel1,
+                                       .irq      = DMA1_Channel1_IRQn,
+                                       .request  = DMA_REQUEST_ADC1,
+                                   },
+                               .current =
+                                   adc_pch{
+                                       .channel = ADC_CHANNEL_4,
+                                       .pin     = GPIO_PIN_3,
+                                       .port    = GPIOA,
+                                   },
+                               .position =
+                                   adc_pch{
+                                       .channel = ADC_CHANNEL_1,
+                                       .pin     = GPIO_PIN_0,
+                                       .port    = GPIOA,
+                                   },
+                               .vcc =
+                                   adc_pch{
+                                       .channel = ADC_CHANNEL_2,
+                                       .pin     = GPIO_PIN_1,
+                                       .port    = GPIOA,
+                                   },
+                               .temp =
+                                   adc_pch{
+                                       .channel = ADC_CHANNEL_TEMPSENSOR_ADC1,
+                                       .pin     = 0,
+                                       .port    = nullptr,
+                                   },
+                           } ) &&
+                       setup_adc_timer( h );
         };
         if ( !ACQUISITION.setup( acq_setup ) ) {
                 return nullptr;
