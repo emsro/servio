@@ -86,10 +86,11 @@ fw::clock* setup_clock()
 fw::acquisition* setup_acquisition()
 {
         auto acq_setup = []( fw::acquisition::handles& h ) {
-                __HAL_RCC_DMAMUX1_CLK_ENABLE();
-                __HAL_RCC_DMA1_CLK_ENABLE();
                 __HAL_RCC_ADC12_CLK_ENABLE();
+                __HAL_RCC_DMA1_CLK_ENABLE();
+                __HAL_RCC_DMAMUX1_CLK_ENABLE();
                 __HAL_RCC_GPIOA_CLK_ENABLE();
+                __HAL_RCC_TIM4_CLK_ENABLE();
                 return setup_adc(
                            h,
                            adc_cfg{
@@ -99,8 +100,8 @@ fw::acquisition* setup_acquisition()
                                    dma_cfg{
                                        .instance     = DMA1_Channel1,
                                        .irq          = DMA1_Channel1_IRQn,
-                                       .request      = DMA_REQUEST_ADC1,
                                        .irq_priority = 0,
+                                       .request      = DMA_REQUEST_ADC1,
                                    },
                                .current =
                                    adc_pch{
@@ -127,7 +128,12 @@ fw::acquisition* setup_acquisition()
                                        .port    = nullptr,
                                    },
                            } ) &&
-                       setup_adc_timer( h );
+                       setup_adc_timer(
+                           h,
+                           adc_timer_cfg{
+                               .timer_instance = TIM4,
+                               .channel        = TIM_CHANNEL_1,
+                           } );
         };
         if ( !ACQUISITION.setup( acq_setup ) ) {
                 return nullptr;

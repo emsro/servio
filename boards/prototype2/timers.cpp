@@ -1,4 +1,5 @@
 #include "fw/board.hpp"
+#include "setup.hpp"
 
 #include <cstdlib>
 #include <cstring>
@@ -96,16 +97,16 @@ bool setup_hbridge_timers( fw::hbridge::handles& h )
         return true;
 }
 
-bool setup_adc_timer( fw::acquisition::handles& h )
+bool setup_adc_timer( fw::acquisition::handles& h, adc_timer_cfg cfg )
 {
-        h.tim.Instance               = TIM4;
+        h.tim.Instance               = cfg.timer_instance;
         h.tim.Init.Prescaler         = 0;
         h.tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
         h.tim.Init.Period            = 256;
         h.tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
         h.tim.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
-        h.tim_channel = TIM_CHANNEL_1;
+        h.tim_channel = cfg.channel;
 
         TIM_MasterConfigTypeDef mc{};
         mc.MasterOutputTrigger = TIM_TRGO_UPDATE;
@@ -116,8 +117,6 @@ bool setup_adc_timer( fw::acquisition::handles& h )
         oc.Pulse      = h.tim.Init.Period / 2;
         oc.OCPolarity = TIM_OCPOLARITY_HIGH;
         oc.OCFastMode = TIM_OCFAST_DISABLE;
-
-        __HAL_RCC_TIM4_CLK_ENABLE();
 
         if ( HAL_TIM_OC_Init( &h.tim ) != HAL_OK ) {
                 fw::stop_exec();

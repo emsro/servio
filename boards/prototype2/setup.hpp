@@ -29,8 +29,14 @@ struct adc_cfg
         adc_pch      temp;
 };
 
+struct adc_timer_cfg
+{
+        TIM_TypeDef* timer_instance;
+        uint32_t     channel;
+};
+
 bool setup_adc( fw::acquisition::handles&, adc_cfg cfg );
-bool setup_adc_timer( fw::acquisition::handles& );
+bool setup_adc_timer( fw::acquisition::handles&, adc_timer_cfg cfg );
 bool setup_duart( fw::debug_comms::handles& );
 bool setup_hbridge_timers( fw::hbridge::handles& );
 bool setup_iuart( fw::comms::handles& );
