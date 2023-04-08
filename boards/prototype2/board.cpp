@@ -93,12 +93,14 @@ fw::acquisition* setup_acquisition()
                 return setup_adc(
                            h,
                            adc_cfg{
-                               .adc_instance = ADC1,
+                               .adc_instance     = ADC1,
+                               .adc_irq_priority = 0,
                                .dma =
                                    dma_cfg{
-                                       .instance = DMA1_Channel1,
-                                       .irq      = DMA1_Channel1_IRQn,
-                                       .request  = DMA_REQUEST_ADC1,
+                                       .instance     = DMA1_Channel1,
+                                       .irq          = DMA1_Channel1_IRQn,
+                                       .request      = DMA_REQUEST_ADC1,
+                                       .irq_priority = 0,
                                    },
                                .current =
                                    adc_pch{

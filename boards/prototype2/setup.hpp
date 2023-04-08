@@ -7,6 +7,7 @@ struct dma_cfg
 {
         DMA_Channel_TypeDef* instance;
         IRQn_Type            irq;
+        uint32_t             irq_priority;
         uint32_t             request;
 };
 
@@ -20,6 +21,7 @@ struct adc_pch
 struct adc_cfg
 {
         ADC_TypeDef* adc_instance;
+        uint32_t     adc_irq_priority;
         dma_cfg      dma;
         adc_pch      current;
         adc_pch      position;

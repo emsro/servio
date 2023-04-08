@@ -94,7 +94,7 @@ bool setup_adc( fw::acquisition::handles& h, adc_cfg cfg )
                 fw::stop_exec();
         }
 
-        HAL_NVIC_SetPriority( cfg.dma.irq, 0, 0 );
+        HAL_NVIC_SetPriority( cfg.dma.irq, cfg.dma.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.dma.irq );
 
         if ( HAL_DMA_Init( &h.dma ) != HAL_OK ) {
@@ -103,7 +103,7 @@ bool setup_adc( fw::acquisition::handles& h, adc_cfg cfg )
 
         __HAL_LINKDMA( ( &h.adc ), DMA_Handle, h.dma );
 
-        HAL_NVIC_SetPriority( ADC1_2_IRQn, 0, 0 );
+        HAL_NVIC_SetPriority( ADC1_2_IRQn, cfg.dma.adc_irq_priority, 0 );
         HAL_NVIC_EnableIRQ( ADC1_2_IRQn );
 
         return true;
