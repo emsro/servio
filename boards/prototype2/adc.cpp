@@ -69,7 +69,7 @@ bool setup_adc( fw::acquisition::handles& h, adc_cfg cfg )
         h.dma.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
         h.dma.Init.MemDataAlignment    = DMA_MDATAALIGN_HALFWORD;
         h.dma.Init.Mode                = DMA_NORMAL;
-        h.dma.Init.Priority            = DMA_PRIORITY_VERY_HIGH;  // TODO: check different priorty
+        h.dma.Init.Priority            = cfg.dma.priority;
 
         for ( const adc_pch& ch : { cfg.current, cfg.position, cfg.vcc, cfg.temp } ) {
                 if ( ch.pin == 0 || ch.port == nullptr ) {

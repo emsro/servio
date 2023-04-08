@@ -102,6 +102,7 @@ fw::acquisition* setup_acquisition()
                                        .irq          = DMA1_Channel1_IRQn,
                                        .irq_priority = 0,
                                        .request      = DMA_REQUEST_ADC1,
+                                       .priority     = DMA_PRIORITY_VERY_HIGH,
                                    },
                                .current =
                                    adc_pch{
@@ -174,7 +175,47 @@ fw::comms* setup_comms()
 fw::debug_comms* setup_debug_comms()
 {
         auto setup_f = []( fw::debug_comms::handles& h ) {
-                bool res = setup_duart( h );
+                __HAL_RCC_DMA1_CLK_ENABLE();
+                __HAL_RCC_DMAMUX1_CLK_ENABLE();
+                __HAL_RCC_GPIOA_CLK_ENABLE();
+                __HAL_RCC_GPIOB_CLK_ENABLE();
+                __HAL_RCC_USART1_CLK_ENABLE();
+                bool res = setup_duart(
+                    h,
+                    duart_cfg{
+                        .uart_instance = USART1,
+                        .baudrate      = 460800,
+                        .irq           = USART1_IRQn,
+                        .irq_priority  = 1,
+                        .rx =
+                            pin_cfg{
+                                .pin       = GPIO_PIN_10,
+                                .port      = GPIOA,
+                                .alternate = GPIO_AF7_USART1,
+                            },
+                        .rx_dma =
+                            dma_cfg{
+                                .instance     = DMA1_Channel2,
+                                .irq          = DMA1_Channel2_IRQn,
+                                .irq_priority = 1,
+                                .request      = DMA_REQUEST_USART1_RX,
+                                .priority     = DMA_PRIORITY_LOW,
+                            },
+                        .tx =
+                            pin_cfg{
+                                .pin       = GPIO_PIN_6,
+                                .port      = GPIOB,
+                                .alternate = GPIO_AF7_USART1,
+                            },
+                        .tx_dma =
+                            dma_cfg{
+                                .instance     = DMA1_Channel5,
+                                .irq          = DMA1_Channel5_IRQn,
+                                .irq_priority = 1,
+                                .request      = DMA_REQUEST_USART1_TX,
+                                .priority     = DMA_PRIORITY_LOW,
+                            },
+                    } );
                 fw::hal_check{} << HAL_UART_RegisterCallback(
                     &h.uart, HAL_UART_RX_COMPLETE_CB_ID, []( UART_HandleTypeDef* huart ) {
                             DEBUG_COMMS.rx_cplt_irq( huart );
