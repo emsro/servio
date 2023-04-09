@@ -37,7 +37,6 @@ var dir_4e8e1185eea579a81ab1815e3b8726c0 =
     [ "debug_comms.hpp", "debug__comms_8hpp.html", [
       [ "debug_comms", "classfw_1_1debug__comms.html", "classfw_1_1debug__comms" ],
       [ "handles", "classfw_1_1debug__comms.html#structfw_1_1debug__comms_1_1handles", [
-        [ "rx_dma", "classfw_1_1debug__comms.html#a348667fcd306676ee8e39d5c997b1769", null ],
         [ "tx_dma", "classfw_1_1debug__comms.html#a858348bf5f4568d419ae2b9265232b2c", null ],
         [ "uart", "classfw_1_1debug__comms.html#a0c869d7a8470ce3fa856e9acd1afb941", null ]
       ] ]

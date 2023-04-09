@@ -1,7 +1,6 @@
 var classfw_1_1debug__comms =
 [
     [ "handles", "classfw_1_1debug__comms.html#structfw_1_1debug__comms_1_1handles", [
-      [ "rx_dma", "classfw_1_1debug__comms.html#a348667fcd306676ee8e39d5c997b1769", null ],
       [ "tx_dma", "classfw_1_1debug__comms.html#a858348bf5f4568d419ae2b9265232b2c", null ],
       [ "uart", "classfw_1_1debug__comms.html#a0c869d7a8470ce3fa856e9acd1afb941", null ]
     ] ],
@@ -12,7 +11,6 @@ var classfw_1_1debug__comms =
     [ "operator=", "classfw_1_1debug__comms.html#abe707ca14b622a59068e4131a27eea4a", null ],
     [ "receive", "classfw_1_1debug__comms.html#a0d670518f3249829a6d714ef1f5fa396", null ],
     [ "rx_cplt_irq", "classfw_1_1debug__comms.html#a5d5e6dca57a8cbf7ef29de08294042e4", null ],
-    [ "rx_dma_irq", "classfw_1_1debug__comms.html#a17c9693bd5eafa497612580df7a8ce50", null ],
     [ "setup", "classfw_1_1debug__comms.html#ab6e2f34dc3a5ff2e8848f0f443d1b160", null ],
     [ "start", "classfw_1_1debug__comms.html#a76d84670331a8bb3b587bbb4baa38299", null ],
     [ "transmit", "classfw_1_1debug__comms.html#ade33cd968ae887b401d90d11f0b010ac", null ],

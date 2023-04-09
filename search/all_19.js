@@ -10,7 +10,5 @@ var searchData=
   ['reset_380',['reset',['../classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136',1,'ctl::pid_module']]],
   ['reset_5fmomentary_5flimit_381',['reset_momentary_limit',['../classctl_1_1pid__module.html#a67728b44ddefd68b162ca78f26482c2c',1,'ctl::pid_module']]],
   ['reversed_382',['REVERSED',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a798fbc724ee0215f5da0754ef66b5bcb',1,'config.hpp']]],
-  ['rx_5fcplt_5firq_383',['rx_cplt_irq',['../classfw_1_1comms.html#a9e4415ae6b86a9bac85b5ba2b3b39ab4',1,'fw::comms::rx_cplt_irq()'],['../classfw_1_1debug__comms.html#a5d5e6dca57a8cbf7ef29de08294042e4',1,'fw::debug_comms::rx_cplt_irq()']]],
-  ['rx_5fdma_384',['rx_dma',['../classfw_1_1debug__comms.html#a348667fcd306676ee8e39d5c997b1769',1,'fw::debug_comms::handles']]],
-  ['rx_5fdma_5firq_385',['rx_dma_irq',['../classfw_1_1debug__comms.html#a17c9693bd5eafa497612580df7a8ce50',1,'fw::debug_comms']]]
+  ['rx_5fcplt_5firq_383',['rx_cplt_irq',['../classfw_1_1comms.html#a9e4415ae6b86a9bac85b5ba2b3b39ab4',1,'fw::comms::rx_cplt_irq()'],['../classfw_1_1debug__comms.html#a5d5e6dca57a8cbf7ef29de08294042e4',1,'fw::debug_comms::rx_cplt_irq()']]]
 ];
