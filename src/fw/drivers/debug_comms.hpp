@@ -19,7 +19,6 @@ public:
         {
                 UART_HandleTypeDef uart;
                 DMA_HandleTypeDef  tx_dma;
-                DMA_HandleTypeDef  rx_dma;
         };
 
         debug_comms() = default;
@@ -32,7 +31,6 @@ public:
         bool setup( em::function_view< bool( handles& ) > setup_f );
 
         void tx_dma_irq();
-        void rx_dma_irq();
         void uart_irq();
         void rx_cplt_irq( UART_HandleTypeDef* huart );
 

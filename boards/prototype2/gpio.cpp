@@ -1,4 +1,5 @@
 #include "fw/drivers/leds.hpp"
+#include "setup.hpp"
 
 namespace brd
 {
@@ -8,19 +9,17 @@ namespace brd
 //  PF1 - G
 //  PB0 - G
 //  PB5 - Y
-bool setup_leds_gpio( fw::leds::handles& h )
+bool setup_leds_gpio( fw::leds::handles& h, leds_gpio_cfg cfg )
 {
-        h.red_peripheral  = GPIOF;
-        h.red_pin         = GPIO_PIN_0;
-        h.blue_peripheral = GPIOF;
-        h.blue_pin        = GPIO_PIN_1;
-
-        GPIO_InitTypeDef init;
-        init.Pin   = h.red_pin | h.blue_pin;
-        init.Mode  = GPIO_MODE_OUTPUT_PP;
-        init.Pull  = GPIO_NOPULL;
-        init.Speed = GPIO_SPEED_FREQ_LOW;
-        HAL_GPIO_Init( GPIOF, &init );
+        for ( const pin_cfg pc : { cfg.red, cfg.blue } ) {
+                GPIO_InitTypeDef init;
+                init.Pin       = pc.pin;
+                init.Mode      = GPIO_MODE_OUTPUT_PP;
+                init.Pull      = GPIO_NOPULL;
+                init.Speed     = GPIO_SPEED_FREQ_LOW;
+                init.Alternate = pc.alternate;
+                HAL_GPIO_Init( pc.port, &init );
+        }
 
         return true;
 }

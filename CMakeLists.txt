@@ -77,9 +77,8 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             boards/prototype2/gpio.cpp
             boards/prototype2/clock.cpp
             boards/prototype2/config.cpp
-            boards/prototype2/duart.cpp
+            boards/prototype2/uart.cpp
             boards/prototype2/extra.cpp
-            boards/prototype2/iuart.cpp
             boards/prototype2/timers.cpp
     LIBS serviolib cfglib CMSIS::STM32::G431xx HAL::STM32::G4
     OPTS -Og)

@@ -18,11 +18,6 @@ void debug_comms::tx_dma_irq()
         HAL_DMA_IRQHandler( &h_.tx_dma );
 }
 
-void debug_comms::rx_dma_irq()
-{
-        HAL_DMA_IRQHandler( &h_.rx_dma );
-}
-
 void debug_comms::uart_irq()
 {
         HAL_UART_IRQHandler( &h_.uart );

@@ -40,16 +40,15 @@ bool setup_hbridge_timers( fw::hbridge::handles& h, hb_timer_cfg cfg )
         oc_config.OCIdleState  = TIM_OCIDLESTATE_RESET;
         oc_config.OCNIdleState = TIM_OCNIDLESTATE_RESET;
 
-        GPIO_InitTypeDef gpioa{};
-
         for ( const pinch_cfg& pc : { cfg.mc1, cfg.mc2 } ) {
-                gpioa.Pin       = pc.pin;
-                gpioa.Mode      = GPIO_MODE_AF_PP;
-                gpioa.Pull      = GPIO_NOPULL;
-                gpioa.Speed     = GPIO_SPEED_FREQ_LOW;
-                gpioa.Alternate = pc.alternate;
+                GPIO_InitTypeDef gpio_itd{};
+                gpio_itd.Pin       = pc.pin;
+                gpio_itd.Mode      = GPIO_MODE_AF_PP;
+                gpio_itd.Pull      = GPIO_NOPULL;
+                gpio_itd.Speed     = GPIO_SPEED_FREQ_LOW;
+                gpio_itd.Alternate = pc.alternate;
 
-                HAL_GPIO_Init( pc.port, &gpioa );
+                HAL_GPIO_Init( pc.port, &gpio_itd );
         }
 
         if ( HAL_TIM_PWM_Init( &h.timer ) != HAL_OK ) {
@@ -170,9 +169,9 @@ bool setup_clock_timer( fw::clock::handles& h )
         return true;
 }
 
-bool setup_leds_timer( fw::leds::handles& h )
+bool setup_leds_timer( fw::leds::handles& h, leds_timer_cfg cfg )
 {
-        h.tim.Instance               = TIM3;
+        h.tim.Instance               = cfg.timer_instance;
         h.tim.Init.Prescaler         = 0;
         h.tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
         h.tim.Init.Period            = 65535;
@@ -184,8 +183,8 @@ bool setup_leds_timer( fw::leds::handles& h )
         smc.MasterOutputTrigger = TIM_TRGO_RESET;
         smc.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
 
-        h.yellow_channel = TIM_CHANNEL_2;
-        h.green_channel  = TIM_CHANNEL_3;
+        h.yellow_channel = cfg.yellow.channel;
+        h.green_channel  = cfg.green.channel;
 
         TIM_OC_InitTypeDef chc;
 
@@ -194,17 +193,17 @@ bool setup_leds_timer( fw::leds::handles& h )
         chc.OCPolarity = TIM_OCPOLARITY_HIGH;
         chc.OCFastMode = TIM_OCFAST_DISABLE;
 
-        GPIO_InitTypeDef gp_cf;
-        gp_cf.Pin       = GPIO_PIN_0 | GPIO_PIN_5;
-        gp_cf.Mode      = GPIO_MODE_AF_PP;
-        gp_cf.Pull      = GPIO_NOPULL;
-        gp_cf.Speed     = GPIO_SPEED_FREQ_LOW;
-        gp_cf.Alternate = GPIO_AF2_TIM3;
+        for ( const pinch_cfg& pc : { cfg.yellow, cfg.green } ) {
+                GPIO_InitTypeDef gpio_itd{};
 
-        __HAL_RCC_GPIOB_CLK_ENABLE();
-        __HAL_RCC_TIM3_CLK_ENABLE();
+                gpio_itd.Pin       = pc.pin;
+                gpio_itd.Mode      = GPIO_MODE_AF_PP;
+                gpio_itd.Pull      = GPIO_NOPULL;
+                gpio_itd.Speed     = GPIO_SPEED_FREQ_LOW;
+                gpio_itd.Alternate = pc.alternate;
 
-        HAL_GPIO_Init( GPIOB, &gp_cf );
+                HAL_GPIO_Init( pc.port, &gpio_itd );
+        }
 
         if ( HAL_TIM_PWM_Init( &h.tim ) != HAL_OK ) {
                 fw::stop_exec();

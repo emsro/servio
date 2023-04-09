@@ -37,11 +37,6 @@ void USART1_IRQHandler( void )
         brd::DEBUG_COMMS.uart_irq();
 }
 
-void DMA1_Channel2_IRQHandler( void )
-{
-        brd::DEBUG_COMMS.rx_dma_irq();
-}
-
 void DMA1_Channel5_IRQHandler( void )
 {
         brd::DEBUG_COMMS.tx_dma_irq();
@@ -187,7 +182,39 @@ fw::hbridge* setup_hbridge()
 fw::comms* setup_comms()
 {
         auto comms_setup = []( fw::comms::handles& h ) {
-                return setup_iuart( h );
+                __HAL_RCC_DMAMUX1_CLK_ENABLE();
+                __HAL_RCC_DMA1_CLK_ENABLE();
+                __HAL_RCC_USART2_CLK_ENABLE();
+                __HAL_RCC_GPIOB_CLK_ENABLE();
+                return setup_uart(
+                    h.uart,
+                    h.tx_dma,
+                    uart_cfg{
+                        .uart_instance = USART2,
+                        .baudrate      = 115200,
+                        .irq           = USART2_IRQn,
+                        .irq_priority  = 1,
+                        .rx =
+                            pin_cfg{
+                                .pin       = GPIO_PIN_4,
+                                .port      = GPIOB,
+                                .alternate = GPIO_AF7_USART2,
+                            },
+                        .tx =
+                            pin_cfg{
+                                .pin       = GPIO_PIN_3,
+                                .port      = GPIOB,
+                                .alternate = GPIO_AF7_USART2,
+                            },
+                        .tx_dma =
+                            dma_cfg{
+                                .instance     = DMA1_Channel4,
+                                .irq          = DMA1_Channel4_IRQn,
+                                .irq_priority = 1,
+                                .request      = DMA_REQUEST_USART2_TX,
+                                .priority     = DMA_PRIORITY_LOW,
+                            },
+                    } );
         };
         if ( !COMMS.setup( comms_setup ) ) {
                 return nullptr;
@@ -203,9 +230,10 @@ fw::debug_comms* setup_debug_comms()
                 __HAL_RCC_GPIOA_CLK_ENABLE();
                 __HAL_RCC_GPIOB_CLK_ENABLE();
                 __HAL_RCC_USART1_CLK_ENABLE();
-                bool res = setup_duart(
-                    h,
-                    duart_cfg{
+                bool res = setup_uart(
+                    h.uart,
+                    h.tx_dma,
+                    uart_cfg{
                         .uart_instance = USART1,
                         .baudrate      = 460800,
                         .irq           = USART1_IRQn,
@@ -215,14 +243,6 @@ fw::debug_comms* setup_debug_comms()
                                 .pin       = GPIO_PIN_10,
                                 .port      = GPIOA,
                                 .alternate = GPIO_AF7_USART1,
-                            },
-                        .rx_dma =
-                            dma_cfg{
-                                .instance     = DMA1_Channel2,
-                                .irq          = DMA1_Channel2_IRQn,
-                                .irq_priority = 1,
-                                .request      = DMA_REQUEST_USART1_RX,
-                                .priority     = DMA_PRIORITY_LOW,
                             },
                         .tx =
                             pin_cfg{
@@ -256,7 +276,42 @@ fw::debug_comms* setup_debug_comms()
 fw::leds* setup_leds()
 {
         auto setup_f = []( fw::leds::handles& h ) {
-                return setup_leds_gpio( h ) && setup_leds_timer( h );
+                __HAL_RCC_GPIOF_CLK_ENABLE();
+                __HAL_RCC_GPIOB_CLK_ENABLE();
+                __HAL_RCC_TIM3_CLK_ENABLE();
+                return setup_leds_gpio(
+                           h,
+                           leds_gpio_cfg{
+                               .red =
+                                   pin_cfg{
+                                       .pin  = GPIO_PIN_0,
+                                       .port = GPIOF,
+                                   },
+                               .blue =
+                                   pin_cfg{
+                                       .pin  = GPIO_PIN_1,
+                                       .port = GPIOF,
+                                   },
+                           } ) &&
+                       setup_leds_timer(
+                           h,
+                           leds_timer_cfg{
+                               .timer_instance = TIM3,
+                               .yellow =
+                                   pinch_cfg{
+                                       .channel   = TIM_CHANNEL_2,
+                                       .pin       = GPIO_PIN_5,
+                                       .port      = GPIOB,
+                                       .alternate = GPIO_AF2_TIM3,
+                                   },
+                               .green =
+                                   pinch_cfg{
+                                       .channel   = TIM_CHANNEL_3,
+                                       .pin       = GPIO_PIN_0,
+                                       .port      = GPIOB,
+                                       .alternate = GPIO_AF2_TIM3,
+                                   },
+                           } );
         };
 
         if ( !LEDS.setup( setup_f ) ) {
