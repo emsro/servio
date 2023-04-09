@@ -62,5 +62,3 @@ This is key motivation for this architecture, step by step tuning of the current
 
 
 The downside is, that if problem manifets in wokr with upstream loop, it might not be immediatly obvious where the problem is: is the upstream loop tuned incorrectly, or is one of the downstream loops incorrectly tunned? In a way that did not manifested in downstream tests?
-
-

@@ -21,7 +21,7 @@ Limits for all three variables should be configurable by the sure, that is:
  - maximum and minimum current
  - maximum and minimum velocity
  - maximum and minimum position
- 
+
 Those limits should be configured in the units of those variables:
  - A
  - rad/s
@@ -34,4 +34,3 @@ That is: Current control should also respect position and velocity limits.
 ## Consequences
 
 This will complicate the control loop design, mostly because only thing that can enforce velocity limits is velocity control loop, which might not be active in case only current control is necessary.
-

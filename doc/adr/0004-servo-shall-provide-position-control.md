@@ -24,4 +24,3 @@ The input is in radians.
 ## Consequences
 
 Given the decision, position control is one of the modes that has to be designed, tested, and verified that it works.
-

@@ -27,4 +27,3 @@ The input is in radians per second.
 ## Consequences
 
 Given the decision, velocity control is one of the modes that has to be designed, tested, and verified that it works.
-
