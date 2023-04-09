@@ -22,7 +22,7 @@ with section("parse"):
                                       'OPTS': '+',
                                       'SOURCES': '+',
                                       'TARGET': 1},
-                          'pargs': {'flags': [], 'nargs': '*'}}} 
+                          'pargs': {'flags': [], 'nargs': '*'}}}
 
   # Override configurations per-command where available
   override_spec = {}
@@ -255,4 +255,3 @@ with section("misc"):
   # A dictionary containing any per-command configuration overrides. Currently
   # only `command_case` is supported.
   per_command = {}
-

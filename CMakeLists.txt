@@ -45,10 +45,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     CMSIS
     COMPONENTS STM32G4
     REQUIRED GLOBAL)
-  find_package(
-    HAL
-    COMPONENTS STM32G4
-    REQUIRED GLOBAL)
+  find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
   servio_add_library(
     TARGET cfglib
