@@ -90,7 +90,13 @@ struct leds_timer_cfg
 
 bool setup_leds_timer( fw::leds::handles&, leds_timer_cfg cfg );
 void setup_clk();
-bool setup_clock_timer( fw::clock::handles& );
-void setup_extra();
+
+struct clock_timer_cfg
+{
+        TIM_TypeDef* timer_instance;
+        uint32_t     channel;
+};
+
+bool setup_clock_timer( fw::clock::handles&, clock_timer_cfg cfg );
 
 }  // namespace brd

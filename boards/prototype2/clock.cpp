@@ -75,11 +75,6 @@ void setup_clk()
         pInit.HSI48CalibrationValue = 32;
 
         HAL_RCCEx_CRSConfig( &pInit );
-
-        /* GPIO Ports Clock Enable */
-        __HAL_RCC_GPIOF_CLK_ENABLE();
-        __HAL_RCC_GPIOA_CLK_ENABLE();
-        __HAL_RCC_GPIOB_CLK_ENABLE();
 }
 
 }  // namespace brd

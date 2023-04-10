@@ -72,7 +72,17 @@ void setup_board()
 
 fw::clock* setup_clock()
 {
-        if ( !CLOCK.setup( setup_clock_timer ) ) {
+        auto clk_setup = []( fw::clock::handles& h ) {
+                __HAL_RCC_TIM2_CLK_ENABLE();
+                return setup_clock_timer(
+                    h,
+                    clock_timer_cfg{
+                        .timer_instance = TIM2,
+                        .channel        = TIM_CHANNEL_1,
+                    } );
+        };
+
+        if ( !CLOCK.setup( clk_setup ) ) {
                 return nullptr;
         }
         return &CLOCK;

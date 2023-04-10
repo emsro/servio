@@ -131,16 +131,16 @@ bool setup_adc_timer( fw::acquisition::handles& h, adc_timer_cfg cfg )
         return true;
 }
 
-bool setup_clock_timer( fw::clock::handles& h )
+bool setup_clock_timer( fw::clock::handles& h, clock_timer_cfg cfg )
 {
-        h.tim.Instance               = TIM2;
+        h.tim.Instance               = cfg.timer_instance;
         h.tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1e6 );
         h.tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
         h.tim.Init.Period            = std::numeric_limits< uint32_t >::max();
         h.tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
         h.tim.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
-        h.tim_channel = TIM_CHANNEL_1;
+        h.tim_channel = cfg.channel;
 
         TIM_MasterConfigTypeDef mc{};
         mc.MasterOutputTrigger = TIM_TRGO_UPDATE;
@@ -151,8 +151,6 @@ bool setup_clock_timer( fw::clock::handles& h )
         oc.Pulse      = h.tim.Init.Period - 1;
         oc.OCPolarity = TIM_OCPOLARITY_HIGH;
         oc.OCFastMode = TIM_OCFAST_DISABLE;
-
-        __HAL_RCC_TIM2_CLK_ENABLE();
 
         if ( HAL_TIM_OC_Init( &h.tim ) != HAL_OK ) {
                 fw::stop_exec();
