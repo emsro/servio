@@ -15,11 +15,11 @@ struct posvel_kalman
         static constexpr kalman::observation_noise_covariance R =
             kalman::get_observation_noise_covariance( observation_deviation_ );
 
-        float               angle;
+        float               angle{};
         kalman::state_range st_range = { .offset = 0.f, .size = 0.f };
 
-        kalman::state            x;
-        kalman::state_covariance P;
+        kalman::state            x{};
+        kalman::state_covariance P{};
 
         float offset = 0.f;
 
