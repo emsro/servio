@@ -44,7 +44,7 @@ public:
                             -10.f,
                             10.f,
                         },
-                        .static_friction_scale = 2.f,
+                        .static_friction_scale = 1.f,
                         .static_friction_decay = 1.f,
                     } );
         }
@@ -70,7 +70,7 @@ public:
 TEST_F( ControlFixture, current )
 {
 
-        for ( float curr : { 1.f, 2.f, -1.f, 0.f, 1.f } ) {
+        for ( float curr : { 0.1f, 0.2f, -0.1f, 0.f, 0.1f } ) {
                 ctl->switch_to_current_control( now, curr );
 
                 for ( std::size_t i : em::range( 100u ) ) {
