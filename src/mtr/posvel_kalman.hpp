@@ -23,9 +23,10 @@ struct posvel_kalman
 
         float offset = 0.f;
 
-        posvel_kalman( float position )
+        posvel_kalman( float position, limits< float > position_range )
           : angle( position )
         {
+                set_position_range( position_range );
                 kalman::angle( x ) = kalman::angle_mod( position, st_range );
         }
 

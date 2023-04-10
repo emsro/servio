@@ -2,7 +2,7 @@
 
 metrics::metrics( microseconds time, float position, limits< float > position_range )
   : last_time_( time )
-  , pv_kal_( position )
+  , pv_kal_( position, position_range )
   , st_dec_( position )
 {
         set_position_range( position_range );
