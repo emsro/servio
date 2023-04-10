@@ -105,8 +105,8 @@ $(document).ready(function(){initNavTree('structmtr_1_1posvel__kalman.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa89279daf9e996e9a655c9d2a0fd9da4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtr_1_1posvel__kalman.html#aa89279daf9e996e9a655c9d2a0fd9da4">posvel_kalman</a> (float position)</td></tr>
-<tr class="separator:aa89279daf9e996e9a655c9d2a0fd9da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa95764f304d39579b8ded73a41aee92e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtr_1_1posvel__kalman.html#aa95764f304d39579b8ded73a41aee92e">posvel_kalman</a> (float position, <a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt; position_range)</td></tr>
+<tr class="separator:aa95764f304d39579b8ded73a41aee92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affc06cd5ec360b3808dcd868a36a4545"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtr_1_1posvel__kalman.html#affc06cd5ec360b3808dcd868a36a4545">set_position_range</a> (<a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt; position_range)</td></tr>
 <tr class="separator:affc06cd5ec360b3808dcd868a36a4545"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6573c98a95f3b84a2ee1a1d3b7d7527f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtr_1_1posvel__kalman.html#a6573c98a95f3b84a2ee1a1d3b7d7527f">get_position</a> () const</td></tr>
@@ -141,8 +141,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a1e25384dd356da6059aa963789154de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa89279daf9e996e9a655c9d2a0fd9da4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa89279daf9e996e9a655c9d2a0fd9da4">&#9670;&nbsp;</a></span>posvel_kalman()</h2>
+<a id="aa95764f304d39579b8ded73a41aee92e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa95764f304d39579b8ded73a41aee92e">&#9670;&nbsp;</a></span>posvel_kalman()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,8 +154,18 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">mtr::posvel_kalman::posvel_kalman </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>position</em></td><td>)</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a>&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>position_range</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -165,7 +175,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">kalman::angle()</a>, <a class="el" href="namespacekalman.html#a216390ea00a5dbed756bf6064c66a381">kalman::angle_mod()</a>, <a class="el" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">fw::position()</a>, <a class="el" href="structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93">st_range</a>, and <a class="el" href="structmtr_1_1posvel__kalman.html#aec12b38e1697467577656e09dda03019">x</a>.</p>
+<p class="reference">References <a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">kalman::angle()</a>, <a class="el" href="namespacekalman.html#a216390ea00a5dbed756bf6064c66a381">kalman::angle_mod()</a>, <a class="el" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">fw::position()</a>, <a class="el" href="structmtr_1_1posvel__kalman.html#affc06cd5ec360b3808dcd868a36a4545">set_position_range()</a>, <a class="el" href="structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93">st_range</a>, and <a class="el" href="structmtr_1_1posvel__kalman.html#aec12b38e1697467577656e09dda03019">x</a>.</p>
 
 </div>
 </div>
@@ -462,7 +472,7 @@ Static Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemtr.html">mtr</a></li><li class="navelem"><a class="el" href="structmtr_1_1posvel__kalman.html">posvel_kalman</a></li>
-    <li class="footer">Generated on Mon Apr 10 2023 09:04:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Apr 10 2023 21:31:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

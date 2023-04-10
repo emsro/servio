@@ -29,7 +29,7 @@ var searchData=
   ['position_5firq_354',['position_irq',['../classmetrics.html#a6998476ebd787b4c66aec862cec0e313',1,'metrics::position_irq()'],['../classcontrol.html#adf5f8c72d0829b7d3c2d8ef09de39789',1,'control::position_irq()']]],
   ['position_5flimits_355',['position_limits',['../namespacectl.html#aafaa848d5ed73333863c1852ce3bca95',1,'ctl::config']]],
   ['position_5fpid_356',['position_pid',['../namespacectl.html#a8a7ee8b41237dc1f6e7c7732cc2be632',1,'ctl::config']]],
-  ['posvel_5fkalman_357',['posvel_kalman',['../structmtr_1_1posvel__kalman.html',1,'mtr::posvel_kalman'],['../structmtr_1_1posvel__kalman.html#aa89279daf9e996e9a655c9d2a0fd9da4',1,'mtr::posvel_kalman::posvel_kalman()']]],
+  ['posvel_5fkalman_357',['posvel_kalman',['../structmtr_1_1posvel__kalman.html',1,'mtr::posvel_kalman'],['../structmtr_1_1posvel__kalman.html#aa95764f304d39579b8ded73a41aee92e',1,'mtr::posvel_kalman::posvel_kalman()']]],
   ['posvel_5fkalman_2ehpp_358',['posvel_kalman.hpp',['../posvel__kalman_8hpp.html',1,'']]],
   ['power_359',['POWER',['../base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dac9c9c146c630ca5ef9197c73c032f4a6',1,'base.hpp']]],
   ['predict_360',['predict',['../namespacekalman.html#a5ce40b45ea8998e580042dae4ba09635',1,'kalman']]],

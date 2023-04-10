@@ -193,18 +193,18 @@ $(document).ready(function(){initNavTree('config_8hpp_source.html',''); initResi
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_CURRENT_LOOP_D, float &gt;</a>{ 0.f },</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_CURRENT_LIM_MIN, float &gt;</a>{ -3.f },</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_CURRENT_LIM_MAX, float &gt;</a>{ 3.f },</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_VELOCITY_LOOP_P, float &gt;</a>{ 0.1f },</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_VELOCITY_LOOP_I, float &gt;</a>{ 0.0000005f },</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_VELOCITY_LOOP_P, float &gt;</a>{ 0.05f },</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_VELOCITY_LOOP_I, float &gt;</a>{ 0.0000002f },</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_VELOCITY_LOOP_D, float &gt;</a>{ 0.0f },</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_VELOCITY_LIM_MIN, float &gt;</a>{ -3.f },</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_VELOCITY_LIM_MAX, float &gt;</a>{ 3.f },</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_POSITION_LOOP_P, float &gt;</a>{ 1.f },</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_POSITION_LOOP_I, float &gt;</a>{ 0.f },</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_POSITION_LOOP_D, float &gt;</a>{ 0.f },</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_POSITION_LIM_MIN, float &gt;</a>{ 0.f },</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_POSITION_LIM_MAX, float &gt;</a>{ 2 * <a class="code" href="base_8hpp.html#a1405970de248dafe731b9cc3c66f8bc4">pi</a> },</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_POSITION_LIM_MIN, float &gt;</a>{ 0.1f },</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_POSITION_LIM_MAX, float &gt;</a>{ 2 * <a class="code" href="base_8hpp.html#a1405970de248dafe731b9cc3c66f8bc4">pi</a> - 0.1f },</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_STATIC_FRICTION_SCALE, float &gt;</a>{ 2.f },</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_STATIC_FRICTION_DECAY, float &gt;</a>{ 0.2f },</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; CONTROL_STATIC_FRICTION_DECAY, float &gt;</a>{ 1.f },</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; MINIMUM_VOLTAGE, float &gt;</a>{ 6.f },</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; MAXIMUM_TEMPERATURE, float &gt;</a>{ 80.f },</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e">cfg_reg&lt; MOVING_DETECTION_STEP, float &gt;</a>{ 0.05f },</div>
@@ -256,7 +256,7 @@ $(document).ready(function(){initNavTree('config_8hpp_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="config_8hpp.html">config.hpp</a></li>
-    <li class="footer">Generated on Mon Apr 10 2023 09:04:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Apr 10 2023 21:31:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
