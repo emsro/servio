@@ -88,12 +88,6 @@ void kset( CB& cb, const Val& v )
 
 void apply_config( em::function_view< void( const cfg_keyval& ) > f )
 {
-        kset< cfg_key::POSITION_CONV_LOWER_SETPOINT_VALUE >( f, static_cast< uint16_t >( 0u ) );
-        kset< cfg_key::POSITION_CONV_LOWER_SETPOINT_ANGLE >( f, 0.f );
-        kset< cfg_key::POSITION_CONV_HIGHER_SETPOINT_VALUE >( f, static_cast< uint16_t >( 4096u ) );
-        kset< cfg_key::POSITION_CONV_HIGHER_SETPOINT_ANGLE >(
-            f, 240.f * std::numbers::pi_v< float > / 180.f );
-
         static constexpr float r_shunt = 0.043f;
         static constexpr float gain    = 100.f;
         off_scale curr_cfg = calculate_current_conversion( 3.3f, 0, 1 << 12, r_shunt, gain );
