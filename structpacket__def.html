@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('structpacket__def.html',''); initResiz
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structpacket__def__coll__graph.svg" width="186" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structpacket__def__coll__graph.svg" width="198" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -107,30 +107,30 @@ $(document).ready(function(){initNavTree('structpacket__def.html',''); initResiz
 Public Types</h2></td></tr>
 <tr class="memitem:a551e938bb198e6be4be831dab8893300"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpacket__def.html#a551e938bb198e6be4be831dab8893300">size_type</a> = uint16_t</td></tr>
 <tr class="separator:a551e938bb198e6be4be831dab8893300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeccc80bbdc41cb1ea3bf4342dc5fb5fc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpacket__def.html#aeccc80bbdc41cb1ea3bf4342dc5fb5fc">checksum_type</a> = uint8_t</td></tr>
-<tr class="separator:aeccc80bbdc41cb1ea3bf4342dc5fb5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8abbe4465098eec212239da09609a42"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpacket__def.html#ab8abbe4465098eec212239da09609a42">checksum_type</a> = std::byte</td></tr>
+<tr class="separator:ab8abbe4465098eec212239da09609a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:affcf3f23659d8bc522becfee3550093e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structpacket__def.html#aeccc80bbdc41cb1ea3bf4342dc5fb5fc">checksum_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpacket__def.html#affcf3f23659d8bc522becfee3550093e">get_checksum</a> (const em::view&lt; const uint8_t * &gt; msg)</td></tr>
-<tr class="separator:affcf3f23659d8bc522becfee3550093e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc2bcb2695044d78b1fdaf521115907f"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structpacket__def.html#ab8abbe4465098eec212239da09609a42">checksum_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpacket__def.html#afc2bcb2695044d78b1fdaf521115907f">get_checksum</a> (const em::view&lt; const std::byte * &gt; msg)</td></tr>
+<tr class="separator:afc2bcb2695044d78b1fdaf521115907f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a6a8940ecd9f06ef6da58fe8e59358e86"><td class="memItemLeft" align="right" valign="top">static constexpr std::endian&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpacket__def.html#a6a8940ecd9f06ef6da58fe8e59358e86">endianess</a> = std::endian::little</td></tr>
 <tr class="separator:a6a8940ecd9f06ef6da58fe8e59358e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2b9bbadb65ad16c9befe8ade687f073"><td class="memItemLeft" align="right" valign="top">static constexpr std::array&lt; uint8_t, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpacket__def.html#ab2b9bbadb65ad16c9befe8ade687f073">prefix</a> = { 0x98, 0xb7, 0xb0, 0x1f }</td></tr>
-<tr class="separator:ab2b9bbadb65ad16c9befe8ade687f073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be51236a1416966e79518c2211e1e7b"><td class="memItemLeft" align="right" valign="top">static constexpr std::array&lt; std::byte, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpacket__def.html#a3be51236a1416966e79518c2211e1e7b">prefix</a> = em::bytes( 0x98, 0xb7, 0xb0, 0x1f )</td></tr>
+<tr class="separator:a3be51236a1416966e79518c2211e1e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="aeccc80bbdc41cb1ea3bf4342dc5fb5fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeccc80bbdc41cb1ea3bf4342dc5fb5fc">&#9670;&nbsp;</a></span>checksum_type</h2>
+<a id="ab8abbe4465098eec212239da09609a42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8abbe4465098eec212239da09609a42">&#9670;&nbsp;</a></span>checksum_type</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structpacket__def.html#aeccc80bbdc41cb1ea3bf4342dc5fb5fc">packet_def::checksum_type</a> =  uint8_t</td>
+          <td class="memname">using <a class="el" href="structpacket__def.html#ab8abbe4465098eec212239da09609a42">packet_def::checksum_type</a> =  std::byte</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -152,8 +152,8 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="affcf3f23659d8bc522becfee3550093e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affcf3f23659d8bc522becfee3550093e">&#9670;&nbsp;</a></span>get_checksum()</h2>
+<a id="afc2bcb2695044d78b1fdaf521115907f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2bcb2695044d78b1fdaf521115907f">&#9670;&nbsp;</a></span>get_checksum()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,9 +162,9 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr <a class="el" href="structpacket__def.html#aeccc80bbdc41cb1ea3bf4342dc5fb5fc">checksum_type</a> packet_def::get_checksum </td>
+          <td class="memname">static constexpr <a class="el" href="structpacket__def.html#ab8abbe4465098eec212239da09609a42">checksum_type</a> packet_def::get_checksum </td>
           <td>(</td>
-          <td class="paramtype">const em::view&lt; const uint8_t * &gt;&#160;</td>
+          <td class="paramtype">const em::view&lt; const std::byte * &gt;&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -201,8 +201,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab2b9bbadb65ad16c9befe8ade687f073"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2b9bbadb65ad16c9befe8ade687f073">&#9670;&nbsp;</a></span>prefix</h2>
+<a id="a3be51236a1416966e79518c2211e1e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3be51236a1416966e79518c2211e1e7b">&#9670;&nbsp;</a></span>prefix</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,7 +211,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::array&lt; uint8_t, 4 &gt; packet_def::prefix = { 0x98, 0xb7, 0xb0, 0x1f }</td>
+          <td class="memname">constexpr std::array&lt; std::byte, 4 &gt; packet_def::prefix = em::bytes( 0x98, 0xb7, 0xb0, 0x1f )</td>
         </tr>
       </table>
   </td>
@@ -232,7 +232,7 @@ Static Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structpacket__def.html">packet_def</a></li>
-    <li class="footer">Generated on Mon Apr 10 2023 21:31:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Apr 23 2023 21:31:19 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

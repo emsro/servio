@@ -9,11 +9,11 @@ var classfw_1_1debug__comms =
     [ "debug_comms", "classfw_1_1debug__comms.html#a468b91007e8c35c23e6e3ab7ee833e8c", null ],
     [ "operator=", "classfw_1_1debug__comms.html#a10e1f69434a6b79b8b4335d9745eacb1", null ],
     [ "operator=", "classfw_1_1debug__comms.html#abe707ca14b622a59068e4131a27eea4a", null ],
-    [ "receive", "classfw_1_1debug__comms.html#a0d670518f3249829a6d714ef1f5fa396", null ],
+    [ "receive", "classfw_1_1debug__comms.html#a703a695a9076fada2eb1d6a8469a67d3", null ],
     [ "rx_cplt_irq", "classfw_1_1debug__comms.html#a5d5e6dca57a8cbf7ef29de08294042e4", null ],
     [ "setup", "classfw_1_1debug__comms.html#ab6e2f34dc3a5ff2e8848f0f443d1b160", null ],
     [ "start", "classfw_1_1debug__comms.html#a76d84670331a8bb3b587bbb4baa38299", null ],
-    [ "transmit", "classfw_1_1debug__comms.html#ade33cd968ae887b401d90d11f0b010ac", null ],
+    [ "transmit", "classfw_1_1debug__comms.html#a1d875d46ba1d028110710b87d96e1bf5", null ],
     [ "tx_dma_irq", "classfw_1_1debug__comms.html#aca51fedf6357a5fc1c769df300bdf3cf", null ],
     [ "uart_irq", "classfw_1_1debug__comms.html#a3b6673ba522b825dda092af7c1f2c842", null ]
 ];

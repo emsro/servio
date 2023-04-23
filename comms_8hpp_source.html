@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('comms_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classfw_1_1comms.html#structfw_1_1comms_1_1handles">handles</a> h_;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        uint8_t rx_byte_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::byte rx_byte_;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="protocol_8hpp.html#ac1b97aebecaef97fbbebe9bb77e7b4ef">servo_endpoint</a> ep_;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
@@ -159,17 +159,17 @@ $(document).ready(function(){initNavTree('comms_8hpp_source.html',''); initResiz
 <div class="ttc" id="aclassfw_1_1comms_html_structfw_1_1comms_1_1handles"><div class="ttname"><a href="classfw_1_1comms.html#structfw_1_1comms_1_1handles">fw::comms::handles</a></div><div class="ttdef"><b>Definition:</b> comms.hpp:16</div></div>
 <div class="ttc" id="anamespacefw_html"><div class="ttname"><a href="namespacefw.html">fw</a></div><div class="ttdef"><b>Definition:</b> board.hpp:27</div></div>
 <div class="ttc" id="aprotocol_8hpp_html"><div class="ttname"><a href="protocol_8hpp.html">protocol.hpp</a></div></div>
-<div class="ttc" id="aprotocol_8hpp_html_a1bddbd1cb5cb2ae2e6f323429c7bd5b5"><div class="ttname"><a href="protocol_8hpp.html#a1bddbd1cb5cb2ae2e6f323429c7bd5b5">master_to_servo_message</a></div><div class="ttdeci">typename master_to_servo_packet::message_type master_to_servo_message</div><div class="ttdef"><b>Definition:</b> protocol.hpp:129</div></div>
+<div class="ttc" id="aprotocol_8hpp_html_a1bddbd1cb5cb2ae2e6f323429c7bd5b5"><div class="ttname"><a href="protocol_8hpp.html#a1bddbd1cb5cb2ae2e6f323429c7bd5b5">master_to_servo_message</a></div><div class="ttdeci">typename master_to_servo_packet::message_type master_to_servo_message</div><div class="ttdef"><b>Definition:</b> protocol.hpp:130</div></div>
 <div class="ttc" id="aprotocol_8hpp_html_a84f3643ead2482dca6d9d2edce3d45c2"><div class="ttname"><a href="protocol_8hpp.html#a84f3643ead2482dca6d9d2edce3d45c2">servo_to_master_variant</a></div><div class="ttdeci">typename em::protocol::traits_for&lt; servo_to_master_group &gt;::value_type servo_to_master_variant</div><div class="ttdef"><b>Definition:</b> protocol.hpp:110</div></div>
-<div class="ttc" id="aprotocol_8hpp_html_ac1b97aebecaef97fbbebe9bb77e7b4ef"><div class="ttname"><a href="protocol_8hpp.html#ac1b97aebecaef97fbbebe9bb77e7b4ef">servo_endpoint</a></div><div class="ttdeci">em::protocol::endpoint&lt; master_to_servo_packet, servo_to_master_packet &gt; servo_endpoint</div><div class="ttdef"><b>Definition:</b> protocol.hpp:134</div></div>
-<div class="ttc" id="aprotocol_8hpp_html_ad363d7e33baa263b5d6979233f83ba72"><div class="ttname"><a href="protocol_8hpp.html#ad363d7e33baa263b5d6979233f83ba72">servo_to_master_message</a></div><div class="ttdeci">typename servo_to_master_packet::message_type servo_to_master_message</div><div class="ttdef"><b>Definition:</b> protocol.hpp:132</div></div>
+<div class="ttc" id="aprotocol_8hpp_html_ac1b97aebecaef97fbbebe9bb77e7b4ef"><div class="ttname"><a href="protocol_8hpp.html#ac1b97aebecaef97fbbebe9bb77e7b4ef">servo_endpoint</a></div><div class="ttdeci">em::protocol::endpoint&lt; master_to_servo_packet, servo_to_master_packet &gt; servo_endpoint</div><div class="ttdef"><b>Definition:</b> protocol.hpp:135</div></div>
+<div class="ttc" id="aprotocol_8hpp_html_ad363d7e33baa263b5d6979233f83ba72"><div class="ttname"><a href="protocol_8hpp.html#ad363d7e33baa263b5d6979233f83ba72">servo_to_master_message</a></div><div class="ttdeci">typename servo_to_master_packet::message_type servo_to_master_message</div><div class="ttdef"><b>Definition:</b> protocol.hpp:133</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_4e8e1185eea579a81ab1815e3b8726c0.html">drivers</a></li><li class="navelem"><a class="el" href="comms_8hpp.html">comms.hpp</a></li>
-    <li class="footer">Generated on Mon Apr 10 2023 21:31:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Apr 23 2023 21:31:19 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
