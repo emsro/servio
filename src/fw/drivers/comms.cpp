@@ -51,7 +51,7 @@ comms::get_message()
 void comms::start()
 {
         // TODO: return value ignored
-        HAL_UART_Receive_IT( &h_.uart, &rx_byte_, 1 );
+        HAL_UART_Receive_IT( &h_.uart, reinterpret_cast< uint8_t* >( &rx_byte_ ), 1 );
 }
 
 void comms::send( const servo_to_master_variant& var )
@@ -63,7 +63,10 @@ void comms::send( const servo_to_master_variant& var )
         static_assert( servo_to_master_message::capacity < std::numeric_limits< uint16_t >::max() );
         // TODO: problematic cast
         // TODO: return value ignored
-        HAL_UART_Transmit_DMA( &h_.uart, omsg_.begin(), static_cast< uint16_t >( omsg_.size() ) );
+        HAL_UART_Transmit_DMA(
+            &h_.uart,
+            reinterpret_cast< uint8_t* >( omsg_.begin() ),
+            static_cast< uint16_t >( omsg_.size() ) );
 }
 
 }  // namespace fw

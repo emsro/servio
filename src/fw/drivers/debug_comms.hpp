@@ -36,16 +36,16 @@ public:
 
         void start();
 
-        void transmit( std::span< const uint8_t > );
+        void transmit( std::span< const std::byte > );
 
-        em::static_vector< uint8_t, 32 > receive( std::size_t size = 32 );
+        em::static_vector< std::byte, 32 > receive( std::size_t size = 32 );
 
 private:
         handles h_;
 
-        uint8_t                                    ibyte_;
-        em::static_circular_buffer< uint8_t, 128 > idata_buffer_{};
-        std::array< uint8_t, 128 >                 odata_buffer_{};
+        std::byte                                    ibyte_;
+        em::static_circular_buffer< std::byte, 128 > idata_buffer_{};
+        std::array< std::byte, 128 >                 odata_buffer_{};
 };
 
 }  // namespace fw

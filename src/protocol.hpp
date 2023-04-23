@@ -111,17 +111,18 @@ using servo_to_master_variant =
 
 struct packet_def
 {
-        static constexpr std::endian              endianess = std::endian::little;
-        static constexpr std::array< uint8_t, 4 > prefix    = { 0x98, 0xb7, 0xb0, 0x1f };
-        using size_type                                     = uint16_t;
-        using checksum_type                                 = uint8_t;
+        static constexpr std::endian                endianess = std::endian::little;
+        static constexpr std::array< std::byte, 4 > prefix    = em::bytes( 0x98, 0xb7, 0xb0, 0x1f );
+        using size_type                                       = uint16_t;
+        using checksum_type                                   = std::byte;
 
-        static constexpr checksum_type get_checksum( const em::view< const uint8_t* > msg )
+        static constexpr checksum_type get_checksum( const em::view< const std::byte* > msg )
         {
-                uint8_t init = 0x0;
-                return em::accumulate( msg, init, [&]( uint8_t accum, uint8_t val ) -> uint8_t {
-                        return accum ^ val;
-                } );
+                const std::byte init{ 0x0 };
+                return em::accumulate(
+                    msg, init, [&]( std::byte accum, std::byte val ) -> std::byte {
+                            return accum ^ val;
+                    } );
         }
 };
 

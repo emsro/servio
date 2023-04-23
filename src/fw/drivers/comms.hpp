@@ -43,7 +43,7 @@ public:
 private:
         handles h_;
 
-        uint8_t rx_byte_;
+        std::byte rx_byte_;
 
         servo_endpoint ep_;
 
