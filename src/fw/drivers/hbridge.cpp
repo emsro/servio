@@ -25,8 +25,11 @@ bool hbridge::setup( em::function_view< bool( handles& ) > setup_f )
         return res;
 }
 
-void hbridge::timer_period_irq()
+void hbridge::timer_period_irq( TIM_HandleTypeDef* h )
 {
+        if ( h != &h_.timer ) {
+                return;
+        }
         period_cb_->on_period();
 }
 

@@ -30,7 +30,7 @@ public:
 
         bool setup( em::function_view< bool( handles& ) > );
 
-        void timer_period_irq();
+        void timer_period_irq( TIM_HandleTypeDef* );
         void timer_irq();
 
         void                 set_period_callback( period_cb_interface& );

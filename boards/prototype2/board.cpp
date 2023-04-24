@@ -51,6 +51,15 @@ void ADC1_2_IRQHandler()
         brd::ACQUISITION.adc_irq();
 }
 
+void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
+{
+        brd::HBRIDGE.timer_period_irq( h );
+}
+
+void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
+{
+        brd::DEBUG_COMMS.rx_cplt_irq( h );
+}
 void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
         brd::ACQUISITION.adc_conv_cplt_irq( h );
@@ -175,11 +184,6 @@ fw::hbridge* setup_hbridge()
                             },
                     } );
 
-                fw::hal_check{} << HAL_TIM_RegisterCallback(
-                    &h.timer, HAL_TIM_PERIOD_ELAPSED_CB_ID, []( TIM_HandleTypeDef* ) {
-                            HBRIDGE.timer_period_irq();
-                    } );
-
                 return res;
         };
         if ( !HBRIDGE.setup( setup_f ) ) {
@@ -268,10 +272,6 @@ fw::debug_comms* setup_debug_comms()
                                 .request      = DMA_REQUEST_USART1_TX,
                                 .priority     = DMA_PRIORITY_LOW,
                             },
-                    } );
-                fw::hal_check{} << HAL_UART_RegisterCallback(
-                    &h.uart, HAL_UART_RX_COMPLETE_CB_ID, []( UART_HandleTypeDef* huart ) {
-                            DEBUG_COMMS.rx_cplt_irq( huart );
                     } );
                 return res;
         };
