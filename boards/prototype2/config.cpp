@@ -101,5 +101,31 @@ void apply_config( em::function_view< void( const cfg_keyval& ) > f )
         // TODO: fix this
         kset< cfg_key::VOLTAGE_CONV_SCALE >( f, 0.f );
 }
+}  // namespace brd
+
+extern "C" {
+extern int _config_start;
+extern int _config_end;
+}
+
+namespace brd
+{
+em::view< std::byte* > page( uint32_t i )
+{
+        return em::view_n(
+            reinterpret_cast< std::byte* >( &_config_start ) + i * FLASH_PAGE_SIZE,
+            FLASH_PAGE_SIZE );
+}
+
+std::array< em::view< std::byte* >, 4 > PERSISTENT_BLOCKS{
+    page( 0 ),
+    page( 1 ),
+    page( 2 ),
+    page( 3 ) };
+
+em::view< const em::view< std::byte* >* > get_persistent_pages()
+{
+        return PERSISTENT_BLOCKS;
+}
 
 }  // namespace brd

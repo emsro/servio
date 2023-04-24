@@ -30,7 +30,7 @@ void cfg_dispatcher::full_apply()
 void cfg_dispatcher::apply( const cfg_key& key )
 {
         switch ( key ) {
-        case REVERSED:
+        case MODEL:
                 break;
         case POSITION_CONV_LOWER_SETPOINT_ANGLE:
         case POSITION_CONV_HIGHER_SETPOINT_ANGLE:

@@ -12,6 +12,8 @@
 namespace brd
 {
 
+em::view< const em::view< std::byte* >* > get_persistent_pages();
+
 void             apply_config( em::function_view< void( const cfg_keyval& ) > f );
 void             setup_board();
 fw::clock*       setup_clock();
