@@ -4,11 +4,11 @@ var config_8hpp =
       [ "key", "config_8hpp.html#a7e1b4963cd8853783479f72a0c2fc073", null ],
       [ "msg", "config_8hpp.html#a47c4f5d88721c7f2a6ba1393476be862", null ]
     ] ],
-    [ "cfg_map", "config_8hpp.html#aef1d1b97c8ac29c6a5d4f9940abc0c7e", null ],
+    [ "cfg_map", "config_8hpp.html#aaacdd9293dc9c5f81f665ec35daf0a4a", null ],
     [ "cfg_reg", "config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e", null ],
     [ "cfg_value_message", "config_8hpp.html#ac5e70fc82e3c7cc847dbb8c917d336e4", null ],
     [ "cfg_key", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6", [
-      [ "REVERSED", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a798fbc724ee0215f5da0754ef66b5bcb", null ],
+      [ "MODEL", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a536a1f6ce30489b6a9ebc993d206e32a", null ],
       [ "POSITION_CONV_LOWER_SETPOINT_VALUE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6abab5c8e9dd93d572fb34e191db4108c2", null ],
       [ "POSITION_CONV_LOWER_SETPOINT_ANGLE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a8edeac400bd150801d25c73b719dc202", null ],
       [ "POSITION_CONV_HIGHER_SETPOINT_VALUE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a0f0f3bcec7b759b010db79cde99ffac6", null ],

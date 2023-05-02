@@ -113,8 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0a3fb873529967b2ec220e076ab98786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a916f9410cc0dbd57d571d06eb13e48f6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1hbridge.html#a916f9410cc0dbd57d571d06eb13e48f6">setup</a> (em::function_view&lt; bool(<a class="el" href="classfw_1_1hbridge.html#structfw_1_1hbridge_1_1handles">handles</a> &amp;) &gt;)</td></tr>
 <tr class="separator:a916f9410cc0dbd57d571d06eb13e48f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7184b65866e0e54472d9efc0da773a00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1hbridge.html#a7184b65866e0e54472d9efc0da773a00">timer_period_irq</a> ()</td></tr>
-<tr class="separator:a7184b65866e0e54472d9efc0da773a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cac2ad4bddcc451b3017e22e520fc68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1hbridge.html#a3cac2ad4bddcc451b3017e22e520fc68">timer_period_irq</a> (TIM_HandleTypeDef *)</td></tr>
+<tr class="separator:a3cac2ad4bddcc451b3017e22e520fc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a398e589bae748416b7e89cca6029e538"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1hbridge.html#a398e589bae748416b7e89cca6029e538">timer_irq</a> ()</td></tr>
 <tr class="separator:a398e589bae748416b7e89cca6029e538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bd7b19236a31e78be3cde64a28c244b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1hbridge.html#a9bd7b19236a31e78be3cde64a28c244b">set_period_callback</a> (<a class="el" href="classperiod__cb__interface.html">period_cb_interface</a> &amp;)</td></tr>
@@ -440,8 +440,8 @@ timer</td>
 
 </div>
 </div>
-<a id="a7184b65866e0e54472d9efc0da773a00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7184b65866e0e54472d9efc0da773a00">&#9670;&nbsp;</a></span>timer_period_irq()</h2>
+<a id="a3cac2ad4bddcc451b3017e22e520fc68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cac2ad4bddcc451b3017e22e520fc68">&#9670;&nbsp;</a></span>timer_period_irq()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -449,13 +449,14 @@ timer</td>
         <tr>
           <td class="memname">void fw::hbridge::timer_period_irq </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">TIM_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classperiod__cb__interface.html#a0e8602d0fabae44129c0ccdee4763b37">period_cb_interface::on_period()</a>.</p>
+<p class="reference">References <a class="el" href="classperiod__cb__interface.html#a0e8602d0fabae44129c0ccdee4763b37">period_cb_interface::on_period()</a>, and <a class="el" href="classfw_1_1hbridge.html#afc25ddbfff43cfad76b96c743891130d">fw::hbridge::handles::timer</a>.</p>
 
 </div>
 </div>
@@ -469,7 +470,7 @@ timer</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="classfw_1_1hbridge.html">hbridge</a></li>
-    <li class="footer">Generated on Sun Apr 23 2023 21:31:19 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 2 2023 19:45:41 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

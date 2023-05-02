@@ -18,5 +18,5 @@ var classfw_1_1hbridge =
     [ "start", "classfw_1_1hbridge.html#a0e184b0fdbc54d2f63b9ecc79661f53c", null ],
     [ "stop", "classfw_1_1hbridge.html#ac1371a2c18af9180668cab632c6dadf6", null ],
     [ "timer_irq", "classfw_1_1hbridge.html#a398e589bae748416b7e89cca6029e538", null ],
-    [ "timer_period_irq", "classfw_1_1hbridge.html#a7184b65866e0e54472d9efc0da773a00", null ]
+    [ "timer_period_irq", "classfw_1_1hbridge.html#a3cac2ad4bddcc451b3017e22e520fc68", null ]
 ];

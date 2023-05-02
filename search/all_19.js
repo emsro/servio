@@ -9,6 +9,5 @@ var searchData=
   ['requires_5foffset_379',['requires_offset',['../namespacekalman.html#a6d24f860613d669dfde9489beaf338cb',1,'kalman']]],
   ['reset_380',['reset',['../classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136',1,'ctl::pid_module']]],
   ['reset_5fmomentary_5flimit_381',['reset_momentary_limit',['../classctl_1_1pid__module.html#a67728b44ddefd68b162ca78f26482c2c',1,'ctl::pid_module']]],
-  ['reversed_382',['REVERSED',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a798fbc724ee0215f5da0754ef66b5bcb',1,'config.hpp']]],
-  ['rx_5fcplt_5firq_383',['rx_cplt_irq',['../classfw_1_1comms.html#a9e4415ae6b86a9bac85b5ba2b3b39ab4',1,'fw::comms::rx_cplt_irq()'],['../classfw_1_1debug__comms.html#a5d5e6dca57a8cbf7ef29de08294042e4',1,'fw::debug_comms::rx_cplt_irq()']]]
+  ['rx_5fcplt_5firq_382',['rx_cplt_irq',['../classfw_1_1comms.html#a9e4415ae6b86a9bac85b5ba2b3b39ab4',1,'fw::comms::rx_cplt_irq()'],['../classfw_1_1debug__comms.html#a5d5e6dca57a8cbf7ef29de08294042e4',1,'fw::debug_comms::rx_cplt_irq()']]]
 ];

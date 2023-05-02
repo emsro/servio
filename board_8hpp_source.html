@@ -101,30 +101,32 @@ $(document).ready(function(){initNavTree('board_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacebrd.html">   12</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacebrd.html">brd</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">   15</a></span>&#160;<span class="keywordtype">void</span>             <a class="code" href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">apply_config</a>( em::function_view&lt; <span class="keywordtype">void</span>( <span class="keyword">const</span> <a class="code" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>&amp; ) &gt; f );</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">   16</a></span>&#160;<span class="keywordtype">void</span>             <a class="code" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">setup_board</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespacebrd.html#af9d4cb6efc481f0a7b35e14808c32694">   17</a></span>&#160;<a class="code" href="classfw_1_1clock.html">fw::clock</a>*       <a class="code" href="namespacebrd.html#af9d4cb6efc481f0a7b35e14808c32694">setup_clock</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">   18</a></span>&#160;<a class="code" href="classfw_1_1acquisition.html">fw::acquisition</a>* <a class="code" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">setup_acquisition</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">   19</a></span>&#160;<a class="code" href="classfw_1_1hbridge.html">fw::hbridge</a>*     <a class="code" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">setup_hbridge</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">   20</a></span>&#160;<a class="code" href="classfw_1_1comms.html">fw::comms</a>*       <a class="code" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">setup_comms</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">   21</a></span>&#160;<a class="code" href="classfw_1_1debug__comms.html">fw::debug_comms</a>* <a class="code" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">setup_debug_comms</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">   22</a></span>&#160;<a class="code" href="classfw_1_1leds.html">fw::leds</a>*        <a class="code" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">setup_leds</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}  <span class="comment">// namespace brd</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacebrd.html#a10b7301a400b364d44492e591ab1c89f">   15</a></span>&#160;em::view&lt; const em::view&lt; std::byte* &gt;* &gt; <a class="code" href="namespacebrd.html#a10b7301a400b364d44492e591ab1c89f">get_persistent_pages</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">   17</a></span>&#160;<span class="keywordtype">void</span>             <a class="code" href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">apply_config</a>( em::function_view&lt; <span class="keywordtype">void</span>( <span class="keyword">const</span> <a class="code" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>&amp; ) &gt; f );</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">   18</a></span>&#160;<span class="keywordtype">void</span>             <a class="code" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">setup_board</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacebrd.html#af9d4cb6efc481f0a7b35e14808c32694">   19</a></span>&#160;<a class="code" href="classfw_1_1clock.html">fw::clock</a>*       <a class="code" href="namespacebrd.html#af9d4cb6efc481f0a7b35e14808c32694">setup_clock</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">   20</a></span>&#160;<a class="code" href="classfw_1_1acquisition.html">fw::acquisition</a>* <a class="code" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">setup_acquisition</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">   21</a></span>&#160;<a class="code" href="classfw_1_1hbridge.html">fw::hbridge</a>*     <a class="code" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">setup_hbridge</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">   22</a></span>&#160;<a class="code" href="classfw_1_1comms.html">fw::comms</a>*       <a class="code" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">setup_comms</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">   23</a></span>&#160;<a class="code" href="classfw_1_1debug__comms.html">fw::debug_comms</a>* <a class="code" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">setup_debug_comms</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">   24</a></span>&#160;<a class="code" href="classfw_1_1leds.html">fw::leds</a>*        <a class="code" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">setup_leds</a>();</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespacefw.html">   26</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw.html">fw</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">   28</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classfw_1_1leds.html">leds</a>* <a class="code" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">setup_leds_with_stop_callback</a>()</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}  <span class="comment">// namespace brd</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespacefw.html">   28</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw.html">fw</a></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classfw_1_1leds.html">leds</a>* leds_ptr = <a class="code" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">brd::setup_leds</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span> ( leds_ptr != <span class="keyword">nullptr</span> ) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3">STOP_CALLBACK</a> = [leds_ptr] {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        leds_ptr-&gt;<a class="code" href="classfw_1_1leds.html#a9fba8745bbfca7ded22d54f4b6422b74">force_red_led</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                };</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> leds_ptr;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}  <span class="comment">// namespace fw</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">   30</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classfw_1_1leds.html">leds</a>* <a class="code" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">setup_leds_with_stop_callback</a>()</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classfw_1_1leds.html">leds</a>* leds_ptr = <a class="code" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">brd::setup_leds</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> ( leds_ptr != <span class="keyword">nullptr</span> ) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3">STOP_CALLBACK</a> = [leds_ptr] {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        leds_ptr-&gt;<a class="code" href="classfw_1_1leds.html#a9fba8745bbfca7ded22d54f4b6422b74">force_red_led</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> leds_ptr;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}  <span class="comment">// namespace fw</span></div>
 <div class="ttc" id="aacquisition_8hpp_html"><div class="ttname"><a href="acquisition_8hpp.html">acquisition.hpp</a></div></div>
 <div class="ttc" id="aclassfw_1_1acquisition_html"><div class="ttname"><a href="classfw_1_1acquisition.html">fw::acquisition</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:21</div></div>
 <div class="ttc" id="aclassfw_1_1clock_html"><div class="ttname"><a href="classfw_1_1clock.html">fw::clock</a></div><div class="ttdef"><b>Definition:</b> clock.hpp:12</div></div>
@@ -142,6 +144,7 @@ $(document).ready(function(){initNavTree('board_8hpp_source.html',''); initResiz
 <div class="ttc" id="aleds_8hpp_html"><div class="ttname"><a href="leds_8hpp.html">leds.hpp</a></div></div>
 <div class="ttc" id="anamespacebrd_html"><div class="ttname"><a href="namespacebrd.html">brd</a></div><div class="ttdef"><b>Definition:</b> board.hpp:13</div></div>
 <div class="ttc" id="anamespacebrd_html_a087fa49ff66d40e71e5f0e380bf7d8ce"><div class="ttname"><a href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">brd::setup_comms</a></div><div class="ttdeci">fw::comms * setup_comms()</div></div>
+<div class="ttc" id="anamespacebrd_html_a10b7301a400b364d44492e591ab1c89f"><div class="ttname"><a href="namespacebrd.html#a10b7301a400b364d44492e591ab1c89f">brd::get_persistent_pages</a></div><div class="ttdeci">em::view&lt; const em::view&lt; std::byte * &gt; * &gt; get_persistent_pages()</div></div>
 <div class="ttc" id="anamespacebrd_html_a383835cb418f3a5885b56943e4159618"><div class="ttname"><a href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">brd::apply_config</a></div><div class="ttdeci">void apply_config(em::function_view&lt; void(const cfg_keyval &amp;) &gt; f)</div></div>
 <div class="ttc" id="anamespacebrd_html_a72ff84e491fb17723a0a882bcb62918e"><div class="ttname"><a href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">brd::setup_board</a></div><div class="ttdeci">void setup_board()</div></div>
 <div class="ttc" id="anamespacebrd_html_a7deb1bf6e85b91fe852b5f9c4e839902"><div class="ttname"><a href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">brd::setup_debug_comms</a></div><div class="ttdeci">fw::debug_comms * setup_debug_comms()</div></div>
@@ -149,16 +152,16 @@ $(document).ready(function(){initNavTree('board_8hpp_source.html',''); initResiz
 <div class="ttc" id="anamespacebrd_html_a8519578452e3aafee624c12984dc01b1"><div class="ttname"><a href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">brd::setup_leds</a></div><div class="ttdeci">fw::leds * setup_leds()</div></div>
 <div class="ttc" id="anamespacebrd_html_af9d4cb6efc481f0a7b35e14808c32694"><div class="ttname"><a href="namespacebrd.html#af9d4cb6efc481f0a7b35e14808c32694">brd::setup_clock</a></div><div class="ttdeci">fw::clock * setup_clock()</div></div>
 <div class="ttc" id="anamespacebrd_html_affb7bb25d62335f866ca96e7bf84397a"><div class="ttname"><a href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">brd::setup_acquisition</a></div><div class="ttdeci">fw::acquisition * setup_acquisition()</div></div>
-<div class="ttc" id="anamespacefw_html"><div class="ttname"><a href="namespacefw.html">fw</a></div><div class="ttdef"><b>Definition:</b> board.hpp:27</div></div>
+<div class="ttc" id="anamespacefw_html"><div class="ttname"><a href="namespacefw.html">fw</a></div><div class="ttdef"><b>Definition:</b> board.hpp:29</div></div>
 <div class="ttc" id="anamespacefw_html_a2911addbbf2c32e3c0bbd374e6698ee3"><div class="ttname"><a href="namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3">fw::STOP_CALLBACK</a></div><div class="ttdeci">em::static_function&lt; void(), 16 &gt; STOP_CALLBACK</div><div class="ttdef"><b>Definition:</b> globals.cpp:6</div></div>
-<div class="ttc" id="anamespacefw_html_acff2051fff6f79ebbfe80b750bd77be1"><div class="ttname"><a href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">fw::setup_leds_with_stop_callback</a></div><div class="ttdeci">leds * setup_leds_with_stop_callback()</div><div class="ttdef"><b>Definition:</b> board.hpp:28</div></div>
+<div class="ttc" id="anamespacefw_html_acff2051fff6f79ebbfe80b750bd77be1"><div class="ttname"><a href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">fw::setup_leds_with_stop_callback</a></div><div class="ttdeci">leds * setup_leds_with_stop_callback()</div><div class="ttdef"><b>Definition:</b> board.hpp:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="board_8hpp.html">board.hpp</a></li>
-    <li class="footer">Generated on Sun Apr 23 2023 21:31:19 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 2 2023 19:45:41 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
