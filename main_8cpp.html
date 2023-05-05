@@ -89,7 +89,8 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="board_8hpp_source.html">fw/board.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="default_8hpp_source.html">cfg/default.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="board_8hpp_source.html">fw/board.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cfg__dispatcher_8hpp_source.html">fw/cfg_dispatcher.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="core_8hpp_source.html">fw/core.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dispatcher_8hpp_source.html">fw/dispatcher.hpp</a>&quot;</code><br />
@@ -105,7 +106,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="2030" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="2062" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -130,7 +131,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">brd::apply_config()</a>, <a class="el" href="structfw_1_1cfg__dispatcher.html#afabdb6e774eadc76d457a9ea20c526ef">fw::cfg_dispatcher::full_apply()</a>, <a class="el" href="config_8hpp.html#ae12fd96fc9e7230dfa70d78ca9e20964">get_default_config()</a>, <a class="el" href="classfw_1_1comms.html#a1d113b0183216f9026691a443d0c173e">fw::comms::get_message()</a>, <a class="el" href="classfw_1_1clock.html#a71e0ee20ca495f752a20b900b43e4fc2">fw::clock::get_us()</a>, <a class="el" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a1e4bd5080731650a78fd41dc75d98582">INCOMING_MESSAGE</a>, <a class="el" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14adee5f03c2c4e73657824e028494b18c0">INITIALIZED</a>, <a class="el" href="namespacefw.html#ac05d95b2aaa02b49156b63e48e57b69a">fw::multistart()</a>, <a class="el" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">brd::setup_acquisition()</a>, <a class="el" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">brd::setup_board()</a>, <a class="el" href="namespacebrd.html#af9d4cb6efc481f0a7b35e14808c32694">brd::setup_clock()</a>, <a class="el" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">brd::setup_comms()</a>, <a class="el" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">brd::setup_debug_comms()</a>, <a class="el" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">brd::setup_hbridge()</a>, <a class="el" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">fw::setup_leds_with_stop_callback()</a>, <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">fw::stop_exec()</a>, and <a class="el" href="classfw_1_1leds.html#a03c2abcefc5a64034ae4170c9173cd28">fw::leds::update()</a>.</p>
+<p class="reference">References <a class="el" href="namespacebrd.html#a383835cb418f3a5885b56943e4159618">brd::apply_config()</a>, <a class="el" href="namespacecfg.html#aee982b4948ebe7b4807cbb84f181eaee">cfg::get_default_config()</a>, <a class="el" href="classfw_1_1comms.html#a1d113b0183216f9026691a443d0c173e">fw::comms::get_message()</a>, <a class="el" href="classfw_1_1clock.html#a71e0ee20ca495f752a20b900b43e4fc2">fw::clock::get_us()</a>, <a class="el" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a1e4bd5080731650a78fd41dc75d98582">INCOMING_MESSAGE</a>, <a class="el" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14adee5f03c2c4e73657824e028494b18c0">INITIALIZED</a>, <a class="el" href="namespacefw.html#ac05d95b2aaa02b49156b63e48e57b69a">fw::multistart()</a>, <a class="el" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">brd::setup_acquisition()</a>, <a class="el" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">brd::setup_board()</a>, <a class="el" href="namespacebrd.html#af9d4cb6efc481f0a7b35e14808c32694">brd::setup_clock()</a>, <a class="el" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">brd::setup_comms()</a>, <a class="el" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">brd::setup_debug_comms()</a>, <a class="el" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">brd::setup_hbridge()</a>, <a class="el" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">fw::setup_leds_with_stop_callback()</a>, <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">fw::stop_exec()</a>, and <a class="el" href="classfw_1_1leds.html#a03c2abcefc5a64034ae4170c9173cd28">fw::leds::update()</a>.</p>
 
 </div>
 </div>
@@ -140,7 +141,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Tue May 2 2023 19:45:41 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri May 5 2023 18:55:34 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -11,6 +11,7 @@ var namespaces_dup =
       [ "setup_hbridge", "namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2", null ],
       [ "setup_leds", "namespacebrd.html#a8519578452e3aafee624c12984dc01b1", null ]
     ] ],
+    [ "cfg", "namespacecfg.html", "namespacecfg" ],
     [ "ctl", "namespacectl.html", "namespacectl" ],
     [ "fw", "namespacefw.html", "namespacefw" ],
     [ "kalman", "namespacekalman.html", "namespacekalman" ],

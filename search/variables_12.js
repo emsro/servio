@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['value_886',['value',['../structmessage__with__float.html#aec838c5f46e210230829b1d778bf4478',1,'message_with_float::value()'],['../structgetter.html#afdbd18f20dce484997f11dbf935235d0',1,'getter::value()']]],
-  ['vcc_887',['vcc',['../structconverter.html#a96a6c5a43d6b71202650791f0ec934df',1,'converter']]],
-  ['vcc_5fchconf_888',['vcc_chconf',['../classfw_1_1acquisition.html#af371d3c9aeb1b1a64f829e58c73cb67e',1,'fw::acquisition::handles']]],
-  ['velocity_5flimits_889',['velocity_limits',['../namespacectl.html#a20ed600b5a9c9a30f83df677768e46a4',1,'ctl::config']]],
-  ['velocity_5fpid_890',['velocity_pid',['../namespacectl.html#a767ce52998c9c33836b3348656f6c9a5',1,'ctl::config']]]
+  ['uart_920',['uart',['../classfw_1_1comms.html#a840a4c2e8713a24767192001fca045e9',1,'fw::comms::handles::uart()'],['../classfw_1_1debug__comms.html#a0c869d7a8470ce3fa856e9acd1afb941',1,'fw::debug_comms::handles::uart()']]],
+  ['used_921',['used',['../structfw_1_1acquisition_1_1current__sequence.html#a382e9f85c0d67dc390e9b320d1859b3e',1,'fw::acquisition::current_sequence']]]
 ];

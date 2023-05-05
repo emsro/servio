@@ -1,5 +1,6 @@
 var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
+    [ "cfg", "dir_1e869ebbc6cce176ee0dbb76743ac339.html", "dir_1e869ebbc6cce176ee0dbb76743ac339" ],
     [ "conversion", "dir_22e3beccf9f956a3c7bfcabae9a0dde0.html", "dir_22e3beccf9f956a3c7bfcabae9a0dde0" ],
     [ "ctl", "dir_233c030500f292fc400d319d0c2e99f0.html", "dir_233c030500f292fc400d319d0c2e99f0" ],
     [ "fw", "dir_4fc88152649b3a7b0043869ddaf105b0.html", "dir_4fc88152649b3a7b0043869ddaf105b0" ],
@@ -13,6 +14,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "converter.hpp", "converter_8hpp.html", [
       [ "converter", "structconverter.html", "structconverter" ]
     ] ],
+    [ "gitversion.h", "gitversion_8h.html", "gitversion_8h" ],
     [ "indication.cpp", "indication_8cpp.html", "indication_8cpp" ],
     [ "indication.hpp", "indication_8hpp.html", "indication_8hpp" ],
     [ "kalman.hpp", "kalman_8hpp.html", "kalman_8hpp" ],

@@ -4,9 +4,10 @@ var config_8hpp =
       [ "key", "config_8hpp.html#a7e1b4963cd8853783479f72a0c2fc073", null ],
       [ "msg", "config_8hpp.html#a47c4f5d88721c7f2a6ba1393476be862", null ]
     ] ],
-    [ "cfg_map", "config_8hpp.html#aaacdd9293dc9c5f81f665ec35daf0a4a", null ],
+    [ "cfg_map", "config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3", null ],
     [ "cfg_reg", "config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e", null ],
     [ "cfg_value_message", "config_8hpp.html#ac5e70fc82e3c7cc847dbb8c917d336e4", null ],
+    [ "model_name", "config_8hpp.html#a6fe1bfcf6fa825ff4ed7e7465cfee94c", null ],
     [ "cfg_key", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6", [
       [ "MODEL", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a536a1f6ce30489b6a9ebc993d206e32a", null ],
       [ "POSITION_CONV_LOWER_SETPOINT_VALUE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6abab5c8e9dd93d572fb34e191db4108c2", null ],
@@ -38,6 +39,5 @@ var config_8hpp =
       [ "MINIMUM_VOLTAGE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a4b3361306c52f3d715404f815b24eb99", null ],
       [ "MAXIMUM_TEMPERATURE", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a2865279ffdc6266db7215e0151d2974d", null ],
       [ "MOVING_DETECTION_STEP", "config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6ad50e3785962b7a54c1b56332a94d02d1", null ]
-    ] ],
-    [ "get_default_config", "config_8hpp.html#ae12fd96fc9e7230dfa70d78ca9e20964", null ]
+    ] ]
 ];

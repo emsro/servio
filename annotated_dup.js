@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "cfg", "namespacecfg.html", [
+      [ "payload", "namespacecfg.html#structcfg_1_1payload", "namespacecfg_structcfg_1_1payload_dup" ]
+    ] ],
     [ "ctl", "namespacectl.html", [
       [ "config", "namespacectl.html#structctl_1_1config", "namespacectl_structctl_1_1config_dup" ],
       [ "linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", "structctl_1_1linear__transition__regulator" ],

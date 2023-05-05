@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['temp_878',['temp',['../structconverter.html#ac9870ea936ec13c39637d9c93827755a',1,'converter']]],
-  ['temp_5fchconf_879',['temp_chconf',['../classfw_1_1acquisition.html#ada060e555adde81722de49db81b0fa21',1,'fw::acquisition::handles']]],
-  ['tim_880',['tim',['../classfw_1_1acquisition.html#a6533013a6bd06289dcb91278bb68211f',1,'fw::acquisition::handles::tim()'],['../classfw_1_1clock.html#ac3232092fb6bb961dfdeef036104a6f4',1,'fw::clock::handles::tim()'],['../classfw_1_1leds.html#a75ed487ae52029ff33defc03bd611c6b',1,'fw::leds::handles::tim()']]],
-  ['tim_5fchannel_881',['tim_channel',['../classfw_1_1acquisition.html#aef2cd45789e6fc9030b84b9d9d6c1cfd',1,'fw::acquisition::handles::tim_channel()'],['../classfw_1_1clock.html#a7795641a57d1aec603daea4996d6bbf6',1,'fw::clock::handles::tim_channel()']]],
-  ['timer_882',['timer',['../classfw_1_1hbridge.html#afc25ddbfff43cfad76b96c743891130d',1,'fw::hbridge::handles']]],
-  ['tx_5fdma_883',['tx_dma',['../classfw_1_1comms.html#a9112c6d7b7c23078ed254d2fc1728b83',1,'fw::comms::handles::tx_dma()'],['../classfw_1_1debug__comms.html#a858348bf5f4568d419ae2b9265232b2c',1,'fw::debug_comms::handles::tx_dma()']]]
+  ['size_907',['size',['../namespacekalman.html#a99aa0fc8fd1682fd248e3e6ea91d13ed',1,'kalman::state_range']]],
+  ['st_5frange_908',['st_range',['../structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93',1,'mtr::posvel_kalman']]],
+  ['state_909',['state',['../structctl_1_1linear__transition__regulator.html#abd008b5d8cc0e9ff4e7def2679256128',1,'ctl::linear_transition_regulator']]],
+  ['static_5ffriction_5fdecay_910',['static_friction_decay',['../namespacectl.html#aa8b65f8e2a55f5686de048e8e5f97553',1,'ctl::config']]],
+  ['static_5ffriction_5fscale_911',['static_friction_scale',['../namespacectl.html#a8a1a11d62853e312be5ca343ed1076ac',1,'ctl::config']]],
+  ['step_912',['step',['../structstatic__detector.html#aa925ce327d8982149e5610123b726b85',1,'static_detector']]],
+  ['stop_5fcallback_913',['STOP_CALLBACK',['../namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3',1,'fw']]]
 ];
