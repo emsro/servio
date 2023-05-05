@@ -1,3 +1,4 @@
+#include "cfg/default.hpp"
 #include "fw/board.hpp"
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/core.hpp"
@@ -13,7 +14,7 @@
 
 int main()
 {
-        cfg_map cfg = get_default_config();
+        cfg_map cfg = cfg::get_default_config();
 
         brd::setup_board();
 
