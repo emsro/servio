@@ -9,14 +9,36 @@ cmake_policy(SET CMP0077 NEW)
 option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 
+find_file(
+  GITDIR
+  NAMES .git
+  PATHS ${CMAKE_CURRENT_SOURCE_DIR}
+  NO_DEFAULT_PATH)
+set(SERVIO_GIT_DIR
+    ${GITDIR}
+    CACHE STRING "Git head tracking file")
+
 include(cmake/emlabcpp.cmake)
 include(cmake/flags.cmake)
 include(cmake/utils.cmake)
+
+# got inspired from:
+# https://stackoverflow.com/questions/1435953/how-can-i-pass-git-sha1-to-compiler-as-definition-using-cmake
+
+find_program(GIT_SCM git REQUIRED)
+add_custom_command(
+  OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/gitrevision.o
+  COMMAND ${GIT_SCM} describe --tags >> gitrevision
+  COMMAND ld -r -b binary -o ${CMAKE_CURRENT_BINARY_DIR}/gitrevision.o
+          gitrevision
+  DEPENDS ${SERVIO_GIT_DIR}/logs/HEAD
+  VERBATIM)
 
 servio_add_library(
   TARGET serviolib
   INCLUDE src/
   SOURCES src/metrics.cpp src/control.cpp src/protocol.cpp src/indication.cpp
+          src/cfg/storage.cpp ${CMAKE_CURRENT_BINARY_DIR}/gitrevision.o
   LIBS emlabcpp
   OPTS -Os)
 
@@ -33,7 +55,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   set(CMAKE_CXX_FLAGS
-      "${CMAKE_CXX_FLAGS}  -Fno-rtti -fno-exceptions -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard"
+      "${CMAKE_CXX_FLAGS} -fsingle-precision-constant  -Fno-rtti -fno-exceptions -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard"
   )
   set(CMAKE_C_FLAGS
       "${CMAKE_C_FLAGS} -fsingle-precision-constant -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16  -mfloat-abi=hard"
@@ -98,6 +120,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             HAL::STM32::G4::TIMEx
             HAL::STM32::G4::UART
             HAL::STM32::G4::UARTEx)
+  target_compile_options(prototype2 PRIVATE -Os)
 
   servio_add_board_executable(
     TARGET prototype2_fw
