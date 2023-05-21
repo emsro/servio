@@ -50,6 +50,10 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
     emlabcpp PUBLIC -DEMLABCPP_USE_LOGGING -DEMLABCPP_USE_NLOHMANN_JSON
                     -DEMLABCPP_USE_TYPEID -DEMLABCPP_USE_GTEST)
 
+  add_executable(config src/host/config.cpp)
+  target_link_libraries(config PRIVATE serviolib)
+  servio_compile_options(config)
+
   add_subdirectory(tests)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")

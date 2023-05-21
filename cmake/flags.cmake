@@ -9,14 +9,17 @@ function(servio_compile_options target)
             -Wunused
             -Wnull-dereference
             -Wformat=2
-            # -Wduplicated-cond -Wlogical-op -Wuseless-cast -Wlifetime
+            -Wduplicated-cond
+            -Wlogical-op # -Wlifetime
             -Wunreachable-code
             -Wsign-conversion
             -Wdouble-promotion
             -Wno-psabi
             -Wno-format-nonliteral
+            -Wno-null-dereference
             $<$<COMPILE_LANGUAGE:CXX>:
             -Wconversion
+            -Wuseless-cast
             # -Wcast-align ## can't get rid of it at certain places
             -Wnon-virtual-dtor
             -Wold-style-cast

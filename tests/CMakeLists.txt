@@ -8,8 +8,8 @@ function(add_fwlib_test)
   target_link_libraries(${A_TARGET} GTest::GTest serviolib gtest_main
                         nlohmann_json::nlohmann_json Boost::program_options)
   target_include_directories(${A_TARGET} PRIVATE ./include/)
-  target_compile_options(${A_TARGET} PRIVATE -DEMLABCPP_USE_NLOHMANN_JSON -O0
-                                             -g)
+  target_compile_options(${A_TARGET} PRIVATE -DEMLABCPP_USE_NLOHMANN_JSON
+                                             -DEMLABCPP_USE_LOGGING -O0 -g)
   servio_compile_options(${A_TARGET})
 
   add_test(NAME ${A_TARGET}_test COMMAND ${A_TARGET})
@@ -18,3 +18,4 @@ endfunction()
 add_fwlib_test(TARGET kalman_utest)
 add_fwlib_test(TARGET control_utest)
 add_fwlib_test(TARGET metrics_utest)
+add_fwlib_test(TARGET cfg_storage_utest)

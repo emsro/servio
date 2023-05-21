@@ -1,6 +1,6 @@
+#include "cfg/default.hpp"
 #include "fw/board.hpp"
 
-#include <emlabcpp/protocol/register_handler.h>
 #include <numbers>
 
 namespace brd
@@ -78,28 +78,28 @@ constexpr off_scale calculate_temp_conversion()
         return { .offset = 30 - cal1 * scale, .scale = scale };
 }
 
-using handler = em::protocol::register_handler< cfg_map >;
-
-template < auto ID, typename CB, typename Val >
-void kset( CB& cb, const Val& v )
+consteval cfg_map generate_config()
 {
-        cb( cfg_keyval{ .key = ID, .msg = handler::serialize< ID >( v ) } );
+        cfg_map res = cfg::get_default_config();
+
+        const float r_shunt  = 0.043f;
+        const float gain     = 100.f;
+        off_scale   curr_cfg = calculate_current_conversion( 3.3f, 0, 1 << 12, r_shunt, gain );
+        res.set_val< cfg_key::CURRENT_CONV_SCALE >( curr_cfg.scale );
+        res.set_val< cfg_key::CURRENT_CONV_OFFSET >( curr_cfg.offset );
+
+        return res;
 }
 
-void apply_config( em::function_view< void( const cfg_keyval& ) > f )
+cfg_map get_config()
 {
-        static constexpr float r_shunt = 0.043f;
-        static constexpr float gain    = 100.f;
-        off_scale curr_cfg = calculate_current_conversion( 3.3f, 0, 1 << 12, r_shunt, gain );
-        kset< cfg_key::CURRENT_CONV_SCALE >( f, curr_cfg.scale );
-        kset< cfg_key::CURRENT_CONV_OFFSET >( f, curr_cfg.offset );
+        cfg_map res = generate_config();
 
         off_scale temp_cfg = calculate_temp_conversion();
-        kset< cfg_key::TEMP_CONV_SCALE >( f, temp_cfg.scale );
-        kset< cfg_key::TEMP_CONV_OFFSET >( f, temp_cfg.offset );
+        res.set_val< cfg_key::TEMP_CONV_SCALE >( temp_cfg.scale );
+        res.set_val< cfg_key::TEMP_CONV_OFFSET >( temp_cfg.offset );
 
-        // TODO: fix this
-        kset< cfg_key::VOLTAGE_CONV_SCALE >( f, 0.f );
+        return res;
 }
 }  // namespace brd
 
