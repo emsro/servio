@@ -67,7 +67,7 @@ calculate_current_conversion( float v_max, float v_min, float steps, float r_shu
 //
 //
 
-constexpr off_scale calculate_temp_conversion()
+off_scale calculate_temp_conversion()
 {
         auto cal1 = static_cast< float >( *TEMPSENSOR_CAL1_ADDR );
         auto cal2 = static_cast< float >( *TEMPSENSOR_CAL2_ADDR );
