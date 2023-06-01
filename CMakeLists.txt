@@ -9,49 +9,37 @@ cmake_policy(SET CMP0077 NEW)
 option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 
-find_file(
-  GITDIR
-  NAMES .git
-  PATHS ${CMAKE_CURRENT_SOURCE_DIR}
-  NO_DEFAULT_PATH)
-set(SERVIO_GIT_DIR
-    ${GITDIR}
-    CACHE STRING "Git head tracking file")
-
 include(cmake/emlabcpp.cmake)
 include(cmake/flags.cmake)
 include(cmake/utils.cmake)
-
-# got inspired from:
-# https://stackoverflow.com/questions/1435953/how-can-i-pass-git-sha1-to-compiler-as-definition-using-cmake
-
-find_program(GIT_SCM git REQUIRED)
-add_custom_command(
-  OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/gitrevision.o
-  COMMAND ${GIT_SCM} describe --tags >> gitrevision
-  COMMAND ld -r -b binary -o ${CMAKE_CURRENT_BINARY_DIR}/gitrevision.o
-          gitrevision
-  DEPENDS ${SERVIO_GIT_DIR}/logs/HEAD
-  VERBATIM)
+# include(cmake/gitversion.cmake) # is not fine tuned yet
 
 servio_add_library(
   TARGET serviolib
   INCLUDE src/
   SOURCES src/metrics.cpp src/control.cpp src/protocol.cpp src/indication.cpp
-          src/cfg/storage.cpp ${CMAKE_CURRENT_BINARY_DIR}/gitrevision.o
+          src/cfg/storage.cpp
   LIBS emlabcpp
   OPTS -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
+  find_package(Protobuf REQUIRED)
+
   include(CTest)
   enable_testing()
+
+  protobuf_generate_cpp(proto_srcs proto_hdrs src/iface/io.proto)
 
   target_compile_options(
     emlabcpp PUBLIC -DEMLABCPP_USE_LOGGING -DEMLABCPP_USE_NLOHMANN_JSON
                     -DEMLABCPP_USE_TYPEID -DEMLABCPP_USE_GTEST)
 
+  add_library(proto STATIC ${proto_srcs})
+  target_include_directories(proto PUBLIC ${proto_hdrs})
+  target_link_libraries(proto PUBLIC ${Protobuf_LIBRARIES})
+
   add_executable(config src/host/config.cpp)
-  target_link_libraries(config PRIVATE serviolib)
+  target_link_libraries(config PRIVATE serviolib proto)
   servio_compile_options(config)
 
   add_subdirectory(tests)
@@ -67,10 +55,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   stm32_fetch_hal(G4)
   stm32_fetch_cmsis(G4)
-  find_package(
-    CMSIS
-    COMPONENTS STM32G4
-    REQUIRED GLOBAL)
+  find_package(CMSIS COMPONENTS STM32G4 REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
   servio_add_library(
