@@ -9,8 +9,10 @@ var searchData=
   ['limits_283',['limits',['../base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c',1,'base.hpp']]],
   ['linear_5ftransition_5fregulator_284',['linear_transition_regulator',['../structctl_1_1linear__transition__regulator.html',1,'ctl']]],
   ['linear_5ftransition_5fregulator_2ehpp_285',['linear_transition_regulator.hpp',['../linear__transition__regulator_8hpp.html',1,'']]],
-  ['low_5fpoint_286',['low_point',['../structctl_1_1linear__transition__regulator.html#a73f794b5ebc281211247d87a6157dc8f',1,'ctl::linear_transition_regulator']]],
-  ['lse_5fstartup_5ftimeout_287',['LSE_STARTUP_TIMEOUT',['../stm32g4xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32g4xx_hal_conf.h']]],
-  ['lse_5fvalue_288',['LSE_VALUE',['../stm32g4xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d',1,'stm32g4xx_hal_conf.h']]],
-  ['lsi_5fvalue_289',['LSI_VALUE',['../stm32g4xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9',1,'stm32g4xx_hal_conf.h']]]
+  ['load_286',['load',['../namespacecfg.html#a9de7d450f3a4a26d1e137a4a4e5a9368',1,'cfg']]],
+  ['load_5fconfig_287',['load_config',['../config_8cpp.html#a19208b9ed08ac2b208fae759f695a6c7',1,'config.cpp']]],
+  ['low_5fpoint_288',['low_point',['../structctl_1_1linear__transition__regulator.html#a73f794b5ebc281211247d87a6157dc8f',1,'ctl::linear_transition_regulator']]],
+  ['lse_5fstartup_5ftimeout_289',['LSE_STARTUP_TIMEOUT',['../stm32g4xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32g4xx_hal_conf.h']]],
+  ['lse_5fvalue_290',['LSE_VALUE',['../stm32g4xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d',1,'stm32g4xx_hal_conf.h']]],
+  ['lsi_5fvalue_291',['LSI_VALUE',['../stm32g4xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9',1,'stm32g4xx_hal_conf.h']]]
 ];

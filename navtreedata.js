@@ -97,7 +97,8 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Typedefs", "functions_type.html", null ]
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -119,8 +120,8 @@ var NAVTREEINDEX =
 [
 "acquisition_8cpp.html",
 "classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e",
-"md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md34",
-"storage_8hpp_source.html"
+"md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md29",
+"storage_8hpp.html#a4fb297374feb61dbad9526f5212e1eff"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

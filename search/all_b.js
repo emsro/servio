@@ -13,8 +13,7 @@ var searchData=
   ['angle_30',['angle',['../structmtr_1_1posvel__kalman.html#a7c83249422002ac5d54fe3bc57217f2f',1,'mtr::posvel_kalman::angle()'],['../namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e',1,'kalman::angle(T &amp;x)']]],
   ['angle_5fmod_31',['angle_mod',['../namespacekalman.html#a216390ea00a5dbed756bf6064c66a381',1,'kalman']]],
   ['apply_32',['apply',['../structfw_1_1cfg__dispatcher.html#a0002caf837323cd3cf3536483088b49b',1,'fw::cfg_dispatcher']]],
-  ['apply_5fconfig_33',['apply_config',['../namespacebrd.html#a383835cb418f3a5885b56943e4159618',1,'brd']]],
-  ['architecture_20decision_20records_34',['Architecture Decision Records',['../index.html',1,'']]],
-  ['as_5ffloat_35',['as_float',['../classscaled.html#ad0c137095775ae685c2fc049d1784dd2',1,'scaled']]],
-  ['assert_5fparam_36',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32g4xx_hal_conf.h']]]
+  ['architecture_20decision_20records_33',['Architecture Decision Records',['../index.html',1,'']]],
+  ['as_5ffloat_34',['as_float',['../classscaled.html#ad0c137095775ae685c2fc049d1784dd2',1,'scaled']]],
+  ['assert_5fparam_35',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32g4xx_hal_conf.h']]]
 ];

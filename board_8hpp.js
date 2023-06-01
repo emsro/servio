@@ -1,6 +1,6 @@
 var board_8hpp =
 [
-    [ "apply_config", "board_8hpp.html#a383835cb418f3a5885b56943e4159618", null ],
+    [ "get_config", "board_8hpp.html#a10ac5b886764fca055e1e7f4e7d335db", null ],
     [ "get_persistent_pages", "board_8hpp.html#a10b7301a400b364d44492e591ab1c89f", null ],
     [ "setup_acquisition", "board_8hpp.html#affb7bb25d62335f866ca96e7bf84397a", null ],
     [ "setup_board", "board_8hpp.html#a72ff84e491fb17723a0a882bcb62918e", null ],

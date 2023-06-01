@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('storage_8cpp.html',''); initResizable(
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="storage_8cpp__incl.svg" width="608" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="storage_8cpp__incl.svg" width="687" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -112,6 +112,8 @@ Namespaces</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:a5036c7cff4140fb420d16450928ff8f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a5036c7cff4140fb420d16450928ff8f8">cfg::handler</a> = em::cfg::handler&lt; payload, <a class="el" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>, std::endian::native &gt;</td></tr>
 <tr class="separator:a5036c7cff4140fb420d16450928ff8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54fb00f081c5f7b6b501ebd795a4ad1a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a">cfg::reghandler</a> = em::protocol::register_handler&lt; <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &gt;</td></tr>
+<tr class="separator:a54fb00f081c5f7b6b501ebd795a4ad1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -123,8 +125,10 @@ Functions</h2></td></tr>
 <tr class="separator:a27fb9256d3f5822df90c3a2296a9531b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8b28b0ab16c3b0bf545c39e6fb142e4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; page &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#ab8b28b0ab16c3b0bf545c39e6fb142e4">cfg::find_latest_page</a> (em::view&lt; const page * &gt; pages)</td></tr>
 <tr class="separator:ab8b28b0ab16c3b0bf545c39e6fb142e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e1f8b2916c76e8b100d152e5aadcef7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a3e1f8b2916c76e8b100d152e5aadcef7">cfg::store</a> (page p, const payload &amp;pl, const <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;m)</td></tr>
-<tr class="separator:a3e1f8b2916c76e8b100d152e5aadcef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb297374feb61dbad9526f5212e1eff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a4fb297374feb61dbad9526f5212e1eff">cfg::store</a> (const payload &amp;pl, const <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;m, em::function_view&lt; bool(std::size_t, uint64_t) &gt; writer)</td></tr>
+<tr class="separator:a4fb297374feb61dbad9526f5212e1eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de7d450f3a4a26d1e137a4a4e5a9368"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a9de7d450f3a4a26d1e137a4a4e5a9368">cfg::load</a> (page p, em::function_view&lt; bool(const payload &amp;) &gt; pl_cb, <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;m)</td></tr>
+<tr class="separator:a9de7d450f3a4a26d1e137a4a4e5a9368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -132,7 +136,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1e869ebbc6cce176ee0dbb76743ac339.html">cfg</a></li><li class="navelem"><a class="el" href="storage_8cpp.html">storage.cpp</a></li>
-    <li class="footer">Generated on Fri May 5 2023 18:55:34 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Jun 1 2023 19:54:37 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

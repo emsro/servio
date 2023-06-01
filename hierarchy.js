@@ -40,7 +40,7 @@ var hierarchy =
     [ "metrics", "classmetrics.html", null ],
     [ "fw::monitor", "classfw_1_1monitor.html", null ],
     [ "packet_def", "structpacket__def.html", null ],
-    [ "cfg::payload", "namespacecfg.html#structcfg_1_1payload", null ],
+    [ "cfg::payload", "structcfg_1_1payload.html", null ],
     [ "period_cb_interface", "classperiod__cb__interface.html", [
       [ "empty_period_cb", "structempty__period__cb.html", null ],
       [ "fw::acquisition_period_callback", "classfw_1_1acquisition__period__callback.html", null ],

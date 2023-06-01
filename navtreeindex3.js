@@ -1,6 +1,16 @@
 var NAVTREEINDEX3 =
 {
+"storage_8hpp.html#a4fb297374feb61dbad9526f5212e1eff":[12,0,1,0,2,7],
+"storage_8hpp.html#a8c4bca10aa98ae305a1f2f5163b318c7":[12,0,1,0,2,4],
+"storage_8hpp.html#a9de7d450f3a4a26d1e137a4a4e5a9368":[12,0,1,0,2,6],
+"storage_8hpp.html#ab8b28b0ab16c3b0bf545c39e6fb142e4":[12,0,1,0,2,2],
+"storage_8hpp.html#abf089918bd1398ef078ba761770419d4":[12,0,1,0,2,5],
+"storage_8hpp.html#aed406326772f09a5c90eb2c62bab0062":[12,0,1,0,2,1],
 "storage_8hpp_source.html":[12,0,1,0,2],
+"structcfg_1_1payload.html":[11,0,0,0],
+"structcfg_1_1payload.html#a3abc72d179aa82ee807ff02534a31dfb":[11,0,0,0,0],
+"structcfg_1_1payload.html#a93dce0ffb50e8c5e892984e983b79d07":[11,0,0,0,2],
+"structcfg_1_1payload.html#ab180a919db5ca931b11b649c33de3001":[11,0,0,0,1],
 "structcommand.html":[11,0,6],
 "structcommand.html#a6499a055c2d3f7ad4dff901721439601":[11,0,6,0],
 "structconverter.html":[11,0,8],

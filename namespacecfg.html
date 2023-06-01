@@ -94,13 +94,15 @@ $(document).ready(function(){initNavTree('namespacecfg.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:structcfg_1_1payload"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#structcfg_1_1payload">payload</a></td></tr>
-<tr class="separator:structcfg_1_1payload"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcfg_1_1payload.html">payload</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a5036c7cff4140fb420d16450928ff8f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a5036c7cff4140fb420d16450928ff8f8">handler</a> = em::cfg::handler&lt; <a class="el" href="namespacecfg.html#structcfg_1_1payload">payload</a>, <a class="el" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>, std::endian::native &gt;</td></tr>
+<tr class="memitem:a5036c7cff4140fb420d16450928ff8f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a5036c7cff4140fb420d16450928ff8f8">handler</a> = em::cfg::handler&lt; <a class="el" href="structcfg_1_1payload.html">payload</a>, <a class="el" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>, std::endian::native &gt;</td></tr>
 <tr class="separator:a5036c7cff4140fb420d16450928ff8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54fb00f081c5f7b6b501ebd795a4ad1a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a">reghandler</a> = em::protocol::register_handler&lt; <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &gt;</td></tr>
+<tr class="separator:a54fb00f081c5f7b6b501ebd795a4ad1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed406326772f09a5c90eb2c62bab0062"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> = em::view&lt; std::byte * &gt;</td></tr>
 <tr class="separator:aed406326772f09a5c90eb2c62bab0062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -116,41 +118,11 @@ Functions</h2></td></tr>
 <tr class="separator:a27fb9256d3f5822df90c3a2296a9531b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8b28b0ab16c3b0bf545c39e6fb142e4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#ab8b28b0ab16c3b0bf545c39e6fb142e4">find_latest_page</a> (em::view&lt; const <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> * &gt; pages)</td></tr>
 <tr class="separator:ab8b28b0ab16c3b0bf545c39e6fb142e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e1f8b2916c76e8b100d152e5aadcef7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a3e1f8b2916c76e8b100d152e5aadcef7">store</a> (<a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> p, const <a class="el" href="namespacecfg.html#structcfg_1_1payload">payload</a> &amp;pl, const <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;m)</td></tr>
-<tr class="separator:a3e1f8b2916c76e8b100d152e5aadcef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac391acb142cd4317090b5d326bd4dbea"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#ac391acb142cd4317090b5d326bd4dbea">find_lastest_page</a> (em::view&lt; const <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> * &gt; pages)</td></tr>
-<tr class="separator:ac391acb142cd4317090b5d326bd4dbea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb297374feb61dbad9526f5212e1eff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a4fb297374feb61dbad9526f5212e1eff">store</a> (const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;pl, const <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;m, em::function_view&lt; bool(std::size_t, uint64_t) &gt; writer)</td></tr>
+<tr class="separator:a4fb297374feb61dbad9526f5212e1eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de7d450f3a4a26d1e137a4a4e5a9368"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a9de7d450f3a4a26d1e137a4a4e5a9368">load</a> (<a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> p, em::function_view&lt; bool(const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;) &gt; pl_cb, <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;m)</td></tr>
+<tr class="separator:a9de7d450f3a4a26d1e137a4a4e5a9368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="structcfg_1_1payload" id="structcfg_1_1payload"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structcfg_1_1payload">&#9670;&nbsp;</a></span>cfg::payload</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct cfg::payload</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="ab180a919db5ca931b11b649c33de3001"></a>string_buffer&lt; 16 &gt;</td>
-<td class="fieldname">
-git_ver</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a93dce0ffb50e8c5e892984e983b79d07"></a>uint32_t</td>
-<td class="fieldname">
-id</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a5036c7cff4140fb420d16450928ff8f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5036c7cff4140fb420d16450928ff8f8">&#9670;&nbsp;</a></span>handler</h2>
@@ -159,7 +131,7 @@ id</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacecfg.html#a5036c7cff4140fb420d16450928ff8f8">cfg::handler</a> = typedef em::cfg::handler&lt; <a class="el" href="namespacecfg.html#structcfg_1_1payload">payload</a>, <a class="el" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>, std::endian::native &gt;</td>
+          <td class="memname">using <a class="el" href="namespacecfg.html#a5036c7cff4140fb420d16450928ff8f8">cfg::handler</a> = typedef em::cfg::handler&lt; <a class="el" href="structcfg_1_1payload.html">payload</a>, <a class="el" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>, std::endian::native &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -180,25 +152,21 @@ id</td>
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ac391acb142cd4317090b5d326bd4dbea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac391acb142cd4317090b5d326bd4dbea">&#9670;&nbsp;</a></span>find_lastest_page()</h2>
+<a id="a54fb00f081c5f7b6b501ebd795a4ad1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54fb00f081c5f7b6b501ebd795a4ad1a">&#9670;&nbsp;</a></span>reghandler</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt; <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> &gt; cfg::find_lastest_page </td>
-          <td>(</td>
-          <td class="paramtype">em::view&lt; const <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> * &gt;&#160;</td>
-          <td class="paramname"><em>pages</em></td><td>)</td>
-          <td></td>
+          <td class="memname">using <a class="el" href="namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a">cfg::reghandler</a> = typedef em::protocol::register_handler&lt; <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ab8b28b0ab16c3b0bf545c39e6fb142e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab8b28b0ab16c3b0bf545c39e6fb142e4">&#9670;&nbsp;</a></span>find_latest_page()</h2>
 
@@ -271,6 +239,8 @@ id</td>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">References <a class="el" href="namespacecfg.html#a9de7d450f3a4a26d1e137a4a4e5a9368">load()</a>.</p>
+
 </div>
 </div>
 <a id="aee982b4948ebe7b4807cbb84f181eaee"></a>
@@ -292,14 +262,14 @@ id</td>
 
 </div>
 </div>
-<a id="a3e1f8b2916c76e8b100d152e5aadcef7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e1f8b2916c76e8b100d152e5aadcef7">&#9670;&nbsp;</a></span>store()</h2>
+<a id="a9de7d450f3a4a26d1e137a4a4e5a9368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9de7d450f3a4a26d1e137a4a4e5a9368">&#9670;&nbsp;</a></span>load()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool cfg::store </td>
+          <td class="memname">bool cfg::load </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a>&#160;</td>
           <td class="paramname"><em>p</em>, </td>
@@ -307,13 +277,13 @@ id</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacecfg.html#structcfg_1_1payload">payload</a> &amp;&#160;</td>
-          <td class="paramname"><em>pl</em>, </td>
+          <td class="paramtype">em::function_view&lt; bool(const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;) &gt;&#160;</td>
+          <td class="paramname"><em>pl_cb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;&#160;</td>
           <td class="paramname"><em>m</em>&#160;</td>
         </tr>
         <tr>
@@ -324,6 +294,44 @@ id</td>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">References <a class="el" href="config_8hpp.html#a7e1b4963cd8853783479f72a0c2fc073">cfg_keyval::key</a>, and <a class="el" href="config_8hpp.html#a47c4f5d88721c7f2a6ba1393476be862">cfg_keyval::msg</a>.</p>
+
+</div>
+</div>
+<a id="a4fb297374feb61dbad9526f5212e1eff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fb297374feb61dbad9526f5212e1eff">&#9670;&nbsp;</a></span>store()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cfg::store </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">em::function_view&lt; bool(std::size_t, uint64_t) &gt;&#160;</td>
+          <td class="paramname"><em>writer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="config_8hpp.html#a7e1b4963cd8853783479f72a0c2fc073">cfg_keyval::key</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -332,7 +340,7 @@ id</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecfg.html">cfg</a></li>
-    <li class="footer">Generated on Fri May 5 2023 18:55:34 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Jun 1 2023 19:54:37 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

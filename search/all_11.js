@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['get_148',['get',['../structfw_1_1cfg__dispatcher.html#a2657b48de86c14e6bd213f2ff2cc646b',1,'fw::cfg_dispatcher']]],
-  ['get_5fchecksum_149',['get_checksum',['../structpacket__def.html#afc2bcb2695044d78b1fdaf521115907f',1,'packet_def']]],
-  ['get_5fconfig_150',['GET_CONFIG',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dba151e9cc2a1f78680c582dc0cf2878054',1,'protocol.hpp']]],
+  ['get_147',['get',['../structfw_1_1cfg__dispatcher.html#a2657b48de86c14e6bd213f2ff2cc646b',1,'fw::cfg_dispatcher']]],
+  ['get_5fchecksum_148',['get_checksum',['../structpacket__def.html#afc2bcb2695044d78b1fdaf521115907f',1,'packet_def']]],
+  ['get_5fconfig_149',['GET_CONFIG',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dba151e9cc2a1f78680c582dc0cf2878054',1,'protocol.hpp']]],
+  ['get_5fconfig_150',['get_config',['../namespacebrd.html#a10ac5b886764fca055e1e7f4e7d335db',1,'brd']]],
   ['get_5fconfig_5frequest_151',['get_config_request',['../structget__config__request.html',1,'']]],
   ['get_5fconfig_5fresponse_152',['get_config_response',['../structget__config__response.html',1,'']]],
   ['get_5fcontrol_5finput_5fmodel_153',['get_control_input_model',['../namespacekalman.html#a7435a12aeaeef2bdb1f7ff3cd933fbc2',1,'kalman']]],
@@ -49,7 +50,7 @@ var searchData=
   ['get_5fvcc_5fresponse_194',['get_vcc_response',['../protocol_8hpp.html#a495b05af5c677fb55cf4eb0ad2820029',1,'protocol.hpp']]],
   ['get_5fvelocity_195',['get_velocity',['../structmtr_1_1posvel__kalman.html#a896006d06626bd709efea7994d475d83',1,'mtr::posvel_kalman::get_velocity()'],['../classmetrics.html#aa62e43dda60977625c33477506b1fd31',1,'metrics::get_velocity()']]],
   ['getter_196',['getter',['../structgetter.html',1,'']]],
-  ['git_5fver_197',['git_ver',['../namespacecfg.html#ab180a919db5ca931b11b649c33de3001',1,'cfg::payload']]],
+  ['git_5fver_197',['git_ver',['../structcfg_1_1payload.html#ab180a919db5ca931b11b649c33de3001',1,'cfg::payload']]],
   ['gitrevision_198',['GITREVISION',['../gitversion_8h.html#a3e1cd734eacc00fc1af852375d4db41c',1,'gitversion.h']]],
   ['gitversion_2eh_199',['gitversion.h',['../gitversion_8h.html',1,'']]],
   ['globals_2ecpp_200',['globals.cpp',['../globals_8cpp.html',1,'']]],
