@@ -13,6 +13,7 @@ include(cmake/emlabcpp.cmake)
 include(cmake/flags.cmake)
 include(cmake/utils.cmake)
 # include(cmake/gitversion.cmake) # is not fine tuned yet
+include(cmake/nanopb.cmake)
 
 servio_add_library(
   TARGET serviolib
@@ -58,6 +59,11 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   find_package(CMSIS COMPONENTS STM32G4 REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
+  nanopb_generate_cpp(proto_srcs proto_hdrs src/iface/io.proto)
+
+  add_library(proto STATIC ${proto_srcs} ${proto_hdrs})
+  target_link_libraries(proto PUBLIC nanopb_lib)
+
   servio_add_library(
     TARGET cfglib
     INCLUDE src/
@@ -75,7 +81,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             src/fw/extra.cpp
             src/fw/globals.cpp
             src/fw/util.cpp
-    LIBS serviolib cfglib CMSIS::STM32::G431xx HAL::STM32::G4
+    LIBS serviolib cfglib proto CMSIS::STM32::G431xx HAL::STM32::G4
     OPTS -Og)
 
   servio_add_library(
