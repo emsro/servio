@@ -108,32 +108,3 @@ using servo_to_master_group = em::protocol::tag_group<
     get_config_response >;
 using servo_to_master_variant =
     typename em::protocol::traits_for< servo_to_master_group >::value_type;
-
-struct packet_def
-{
-        static constexpr std::endian                endianess = std::endian::little;
-        static constexpr std::array< std::byte, 4 > prefix    = em::bytes( 0x98, 0xb7, 0xb0, 0x1f );
-        using size_type                                       = uint16_t;
-        using checksum_type                                   = std::byte;
-
-        static constexpr checksum_type get_checksum( const em::view< const std::byte* > msg )
-        {
-                const std::byte init{ 0x0 };
-                return em::accumulate(
-                    msg, init, [&]( std::byte accum, std::byte val ) -> std::byte {
-                            return accum ^ val;
-                    } );
-        }
-};
-
-using master_to_servo_packet  = em::protocol::packet< packet_def, master_to_servo_group >;
-using master_to_servo_message = typename master_to_servo_packet::message_type;
-
-using servo_to_master_packet  = em::protocol::packet< packet_def, servo_to_master_group >;
-using servo_to_master_message = typename servo_to_master_packet::message_type;
-
-using servo_endpoint  = em::protocol::endpoint< master_to_servo_packet, servo_to_master_packet >;
-using master_endpoint = em::protocol::endpoint< servo_to_master_packet, master_to_servo_packet >;
-
-extern template class em::protocol::endpoint< master_to_servo_packet, servo_to_master_packet >;
-extern template class em::protocol::endpoint< servo_to_master_packet, master_to_servo_packet >;

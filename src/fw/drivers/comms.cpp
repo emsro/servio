@@ -1,5 +1,6 @@
 #include "fw/drivers/comms.hpp"
 
+#include "emlabcpp/experimental/cobs.h"
 #include "fw/util.hpp"
 
 namespace fw
@@ -26,26 +27,19 @@ void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
                 return;
         }
 
-        ep_.insert( em::view_n( &rx_byte_, 1 ) );
+        ibuffer_.push_back( rx_byte_ );
         start();
 }
 
-std::variant< std::monostate, master_to_servo_variant, em::protocol::error_record >
-comms::get_message()
+std::tuple< bool, em::view< std::byte* > > comms::load_message( em::view< std::byte* > data )
 {
-        using return_type =
-            std::variant< std::monostate, master_to_servo_variant, em::protocol::error_record >;
-        return em::match(
-            ep_.get_value(),
-            []( std::size_t ) -> return_type {
-                    return std::monostate{};
-            },
-            []( master_to_servo_variant var ) -> return_type {
-                    return var;
-            },
-            []( em::protocol::error_record err ) -> return_type {
-                    return err;
-            } );
+        auto cobv = em::cobs_decode_view( em::view{ ibuffer_ } );
+
+        if ( cobv.size() > data.size() ) {
+                return { false, em::view< std::byte* >{} };
+        }
+        copy( cobv, data.begin() );
+        return { true, em::view_n( data.begin(), cobv.size() ) };
 }
 
 void comms::start()
@@ -54,19 +48,23 @@ void comms::start()
         HAL_UART_Receive_IT( &h_.uart, reinterpret_cast< uint8_t* >( &rx_byte_ ), 1 );
 }
 
-void comms::send( const servo_to_master_variant& var )
+void comms::send( em::view< std::byte* > data )
 {
         while ( !( HAL_UART_GetState( &h_.uart ) & HAL_UART_STATE_READY ) ) {
                 asm( "nop" );
         }
-        omsg_ = ep_.serialize( var );
-        static_assert( servo_to_master_message::capacity < std::numeric_limits< uint16_t >::max() );
+
+        auto [succ, used] = em::encode_cobs( data, otmp_ );
+        if ( !succ ) {
+                return;
+        }
+
         // TODO: problematic cast
         // TODO: return value ignored
         HAL_UART_Transmit_DMA(
             &h_.uart,
-            reinterpret_cast< uint8_t* >( omsg_.begin() ),
-            static_cast< uint16_t >( omsg_.size() ) );
+            reinterpret_cast< uint8_t* >( otmp_.begin() ),
+            static_cast< uint16_t >( used.size() ) );
 }
 
 }  // namespace fw

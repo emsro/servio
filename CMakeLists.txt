@@ -29,15 +29,16 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   include(CTest)
   enable_testing()
 
-  protobuf_generate_cpp(proto_srcs proto_hdrs src/iface/io.proto)
+  protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS src/iface/io.proto)
+  get_filename_component(PROTO_HDRS_DIR ${PROTO_HDRS} DIRECTORY)
 
   target_compile_options(
     emlabcpp PUBLIC -DEMLABCPP_USE_LOGGING -DEMLABCPP_USE_NLOHMANN_JSON
                     -DEMLABCPP_USE_TYPEID -DEMLABCPP_USE_GTEST)
 
-  add_library(proto STATIC ${proto_srcs})
-  target_include_directories(proto PUBLIC ${proto_hdrs})
+  add_library(proto STATIC ${PROTO_SRCS} ${proto_hrds})
   target_link_libraries(proto PUBLIC ${Protobuf_LIBRARIES})
+  target_include_directories(proto PUBLIC ${PROTO_HDRS_DIR})
 
   add_executable(config src/host/config.cpp)
   target_link_libraries(config PRIVATE serviolib proto)
@@ -59,9 +60,9 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   find_package(CMSIS COMPONENTS STM32G4 REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
-  nanopb_generate_cpp(proto_srcs proto_hdrs src/iface/io.proto)
+  nanopb_generate_cpp(PROTO_SRCS PROTO_HDRS src/iface/io.proto)
 
-  add_library(proto STATIC ${proto_srcs} ${proto_hdrs})
+  add_library(proto STATIC ${PROTO_SRCS} ${PROTO_HDRS})
   target_link_libraries(proto PUBLIC nanopb_lib)
 
   servio_add_library(

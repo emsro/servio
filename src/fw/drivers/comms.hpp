@@ -1,6 +1,7 @@
 #include "protocol.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
+#include <emlabcpp/static_circular_buffer.h>
 #include <emlabcpp/static_function.h>
 #include <stm32g4xx_hal.h>
 
@@ -8,6 +9,8 @@
 
 namespace fw
 {
+
+constexpr std::size_t comm_buff_size = 128;
 
 class comms
 {
@@ -17,8 +20,6 @@ public:
                 UART_HandleTypeDef uart;
                 DMA_HandleTypeDef  tx_dma;
         };
-
-        using msg_callback = em::static_function< void( const master_to_servo_message& ), 16 >;
 
         comms() = default;
 
@@ -33,21 +34,19 @@ public:
         void uart_irq();
         void rx_cplt_irq( UART_HandleTypeDef* huart );
 
-        std::variant< std::monostate, master_to_servo_variant, em::protocol::error_record >
-        get_message();
+        std::tuple< bool, em::view< std::byte* > > load_message( em::view< std::byte* > data );
 
         void start();
 
-        void send( const servo_to_master_variant& var );
+        void send( em::view< std::byte* > data );
 
 private:
         handles h_;
 
-        std::byte rx_byte_;
+        std::byte                                    rx_byte_;
+        em::static_circular_buffer< std::byte, 256 > ibuffer_;
 
-        servo_endpoint ep_;
-
-        servo_to_master_message omsg_;
+        std::array< std::byte, comm_buff_size > otmp_;
 };
 
 }  // namespace fw
