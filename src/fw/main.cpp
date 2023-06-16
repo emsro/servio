@@ -65,19 +65,21 @@ int main()
                     cfg_dis,
                     cor.conv,
                     clock_ptr->get_us() };
-                em::match(
-                    comms_ptr->get_message(),
-                    []( std::monostate ) {},
-                    [&]( const master_to_servo_variant& var ) {
-                            em::match( var, [&]< typename T >( const T& item ) {
-                                    dis.handle_message( item );
+                /*
+                        em::match(
+                            comms_ptr->get_message(),
+                            []( std::monostate ) {},
+                            [&]( const master_to_servo_variant& var ) {
+                                    em::match( var, [&]< typename T >( const T& item ) {
+                                            dis.handle_message( item );
+                                    } );
+                                    cor.ind.on_event(
+                                        clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
+                            },
+                            [&]( const em::protocol::error_record& ) {
+                                    fw::stop_exec();
                             } );
-                            cor.ind.on_event(
-                                clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
-                    },
-                    [&]( const em::protocol::error_record& ) {
-                            fw::stop_exec();
-                    } );
+                    */
 
                 cor.tick( *leds_ptr, clock_ptr->get_us() );
         }

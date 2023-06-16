@@ -1,7 +1,68 @@
+
 syntax = "proto3";
 
 package servio;
 
-message switch_to_power_cmd{
-	int32 power = 1;
+enum mode{
+	MODE_POWER = 0;
+	MODE_CURRENT = 1;
+	MODE_VELOCITY = 2;
+	MODE_POSITION = 3;
+}
+
+enum property{
+	PROPERTY_CURRENT = 0;
+	PROPERTY_VCC = 1;
+	PROPERTY_TEMP = 2;
+	PROPERTY_POSITION = 3;
+}
+
+enum status{
+	STATUS_SUCCESS = 0;
+}
+
+message host_to_servio{
+
+	message switch_to{
+		mode mod = 1;
+		float val = 2;
+	};
+
+	message get_property{
+		property prop = 1;
+	};
+
+	message set_config{
+		uint32 key = 1;
+		bytes msg = 2;
+	};
+
+	message get_config{
+		uint32 key = 1;
+	};
+
+	oneof pld{
+		switch_to swtch = 1;
+		get_property get_prop = 2;
+		set_config set_cfg = 3;
+		get_config get_cfg = 4;
+	};
+};
+
+message servio_to_host{
+
+	message get_property{
+		float val = 1;
+	}
+
+	message get_config{
+		uint32 key = 1;
+		bytes msg = 2;
+	}
+
+	status stat = 1;
+	oneof pld{
+		get_property get_prop = 2;
+		get_config get_cfg = 3;
+	};
 };
