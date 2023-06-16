@@ -42,6 +42,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   add_executable(config src/host/config.cpp)
   target_link_libraries(config PRIVATE serviolib proto)
   servio_compile_options(config)
+  target_compile_options(config PRIVATE -Og -g)
 
   add_subdirectory(tests)
 
