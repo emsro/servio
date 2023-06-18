@@ -111,89 +111,90 @@ $(document).ready(function(){initNavTree('dispatcher_8hpp_source.html',''); init
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">   22</a></span>&#160;        <a class="code" href="structconverter.html">converter</a>&amp;      <a class="code" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">conv</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">   23</a></span>&#160;        <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a>    <a class="code" href="structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">now</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#ab530543c4d553be7582c4f63bec8b139">   25</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#ab530543c4d553be7582c4f63bec8b139">reply</a>( servio_to_host&amp; msg )</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#a05c585cd34da0c94dbf2bfeae2714233">   25</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#a05c585cd34da0c94dbf2bfeae2714233">reply</a>( ServioToHost&amp; msg )</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                uint8_t      buffer[64];</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                pb_ostream_t stream = pb_ostream_from_buffer( buffer, <span class="keyword">sizeof</span>( buffer ) );</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                pb_encode( &amp;stream, servio_to_host_fields, &amp;msg );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                pb_encode( &amp;stream, ServioToHost_fields, &amp;msg );</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="structfw_1_1dispatcher.html#a776a554b6c7b9e01a98687935bddfe2a">comm</a>.<a class="code" href="classfw_1_1comms.html#a3516de44fb35b9c5a57e825c0b07510a">send</a>(</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    em::view_n( <span class="keyword">reinterpret_cast&lt;</span> std::byte* <span class="keyword">&gt;</span>( buffer ), stream.bytes_written ) );</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#afb200983c30e54cc521248ba776c09de">   35</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#afb200983c30e54cc521248ba776c09de">reply_get_prop</a>( <span class="keywordtype">float</span> val )</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#acb881fa4f0b471433e0fa5f5c2c88da6">   35</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#acb881fa4f0b471433e0fa5f5c2c88da6">reply_get_property</a>( <span class="keywordtype">float</span> val )</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                servio_to_host msg;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                msg.get_prop.val = val;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                msg.which_pld    = servio_to_host_get_prop_tag;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="structfw_1_1dispatcher.html#ab530543c4d553be7582c4f63bec8b139">reply</a>( msg );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#a0dc8eefcfc9b35c49c0e9770f11e69ad">   43</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#a0dc8eefcfc9b35c49c0e9770f11e69ad">handle_message</a>( <span class="keyword">const</span> host_to_servio&amp; msg )</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">switch</span> ( msg.which_pld ) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">case</span> host_to_servio_swtch_tag:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        <a class="code" href="structfw_1_1dispatcher.html#a0dc8eefcfc9b35c49c0e9770f11e69ad">handle_message</a>( msg.swtch );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">case</span> host_to_servio_get_prop_tag:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <a class="code" href="structfw_1_1dispatcher.html#a0dc8eefcfc9b35c49c0e9770f11e69ad">handle_message</a>( msg.get_prop );</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">case</span> host_to_servio_set_cfg_tag:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        <a class="code" href="structfw_1_1dispatcher.html#a0dc8eefcfc9b35c49c0e9770f11e69ad">handle_message</a>( msg.set_cfg );</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">case</span> host_to_servio_get_cfg_tag:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <a class="code" href="structfw_1_1dispatcher.html#a0dc8eefcfc9b35c49c0e9770f11e69ad">handle_message</a>( msg.get_cfg );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="comment">// TODO: add default switch case for an error</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#a0da4c0e358ecf95af6ad615f2d4a2f82">   62</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#a0da4c0e358ecf95af6ad615f2d4a2f82">handle_message</a>( <span class="keyword">const</span> host_to_servio_switch_to&amp; msg )</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">switch</span> ( msg.mod ) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">case</span> MODE_POWER:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        <a class="code" href="namespacectl.html">ctl</a>.switch_to_power_control( <span class="keyword">static_cast&lt;</span> int16_t <span class="keyword">&gt;</span>( msg.val ) );</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">case</span> MODE_CURRENT:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        <a class="code" href="namespacectl.html">ctl</a>.switch_to_current_control( <a class="code" href="structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">now</a>, msg.val );</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">case</span> MODE_VELOCITY:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <a class="code" href="namespacectl.html">ctl</a>.switch_to_velocity_control( <a class="code" href="structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">now</a>, msg.val );</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">case</span> MODE_POSITION:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        <a class="code" href="namespacectl.html">ctl</a>.switch_to_position_control( <a class="code" href="structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">now</a>, msg.val );</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="comment">// TODO: add default switch case for an error</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#ae70aba9ced1f5904c8be199a20c41d15">   81</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#ae70aba9ced1f5904c8be199a20c41d15">handle_message</a>( <span class="keyword">const</span> host_to_servio_get_property&amp; msg )</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordtype">float</span> val;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">switch</span> ( msg.prop ) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">case</span> PROPERTY_CURRENT:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        val = <a class="code" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">current</a>( <a class="code" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">conv</a>, <a class="code" href="structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421">acquis</a>, <a class="code" href="structfw_1_1dispatcher.html#a7c345ee7500a1b6a1f141f01d7f7f9d3">hb</a> );</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">case</span> PROPERTY_VCC:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        val = <a class="code" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">conv</a>.<a class="code" href="structconverter.html#a96a6c5a43d6b71202650791f0ec934df">vcc</a>.<a class="code" href="classvoltage__converter.html#aebd8ec998a9330d754a463858571701b">convert</a>( <a class="code" href="structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421">acquis</a>.<a class="code" href="classfw_1_1acquisition.html#affdf38278c9187e8e480061f620f1781">get_vcc</a>() );</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">case</span> PROPERTY_TEMP:</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        val = <a class="code" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">conv</a>.<a class="code" href="structconverter.html#ac9870ea936ec13c39637d9c93827755a">temp</a>.<a class="code" href="classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085">convert</a>( <a class="code" href="structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421">acquis</a>.<a class="code" href="classfw_1_1acquisition.html#a6c5fbc1d2140a20da14c332aa29df2a0">get_temp</a>() );</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">case</span> PROPERTY_POSITION:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        val = <a class="code" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">position</a>( <a class="code" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">conv</a>, <a class="code" href="structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421">acquis</a> );</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="comment">// TODO: add default switch case for an error</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <a class="code" href="structfw_1_1dispatcher.html#afb200983c30e54cc521248ba776c09de">reply_get_prop</a>( val );</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#a0dc8eefcfc9b35c49c0e9770f11e69ad">handle_message</a>( <span class="keyword">const</span> host_to_servio_set_config&amp; req );</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#a0dc8eefcfc9b35c49c0e9770f11e69ad">handle_message</a>( <span class="keyword">const</span> host_to_servio_get_config&amp; req );</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}  <span class="comment">// namespace fw</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                ServioToHost msg;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                msg.stat               = STATUS_SUCCESS;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                msg.get_property.value = val;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                msg.which_pld          = ServioToHost_get_property_tag;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="structfw_1_1dispatcher.html#a05c585cd34da0c94dbf2bfeae2714233">reply</a>( msg );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#ad06e8ab4570fbb49211a53a92338ce25">   44</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#ad06e8ab4570fbb49211a53a92338ce25">handle_message</a>( <span class="keyword">const</span> HostToServio&amp; msg )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">switch</span> ( msg.which_pld ) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">case</span> HostToServio_set_mode_tag:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        <a class="code" href="structfw_1_1dispatcher.html#ad06e8ab4570fbb49211a53a92338ce25">handle_message</a>( msg.set_mode );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">case</span> HostToServio_get_property_tag:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        <a class="code" href="structfw_1_1dispatcher.html#ad06e8ab4570fbb49211a53a92338ce25">handle_message</a>( msg.get_property );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">case</span> HostToServio_set_config_tag:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        <a class="code" href="structfw_1_1dispatcher.html#ad06e8ab4570fbb49211a53a92338ce25">handle_message</a>( msg.set_config );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">case</span> HostToServio_get_config_tag:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        <a class="code" href="structfw_1_1dispatcher.html#ad06e8ab4570fbb49211a53a92338ce25">handle_message</a>( msg.get_config );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="comment">// TODO: add default switch case for an error</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#ae2cf8b95691e8b47e26af88c49df1dfc">   63</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#ae2cf8b95691e8b47e26af88c49df1dfc">handle_message</a>( <span class="keyword">const</span> HostToServio_SetMode&amp; msg )</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">switch</span> ( msg.mode ) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">case</span> MODE_POWER:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <a class="code" href="namespacectl.html">ctl</a>.switch_to_power_control( <span class="keyword">static_cast&lt;</span> int16_t <span class="keyword">&gt;</span>( msg.goal ) );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">case</span> MODE_CURRENT:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        <a class="code" href="namespacectl.html">ctl</a>.switch_to_current_control( <a class="code" href="structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">now</a>, msg.goal );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">case</span> MODE_VELOCITY:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <a class="code" href="namespacectl.html">ctl</a>.switch_to_velocity_control( <a class="code" href="structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">now</a>, msg.goal );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">case</span> MODE_POSITION:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <a class="code" href="namespacectl.html">ctl</a>.switch_to_position_control( <a class="code" href="structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">now</a>, msg.goal );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="comment">// TODO: add default switch case for an error</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structfw_1_1dispatcher.html#a0446800c08bf9e8eadbf1258d2ba52a1">   82</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#a0446800c08bf9e8eadbf1258d2ba52a1">handle_message</a>( <span class="keyword">const</span> HostToServio_GetProperty&amp; msg )</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordtype">float</span> val;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">switch</span> ( msg.property ) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">case</span> PROPERTY_CURRENT:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        val = <a class="code" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">current</a>( <a class="code" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">conv</a>, <a class="code" href="structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421">acquis</a>, <a class="code" href="structfw_1_1dispatcher.html#a7c345ee7500a1b6a1f141f01d7f7f9d3">hb</a> );</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">case</span> PROPERTY_VCC:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        val = <a class="code" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">conv</a>.<a class="code" href="structconverter.html#a96a6c5a43d6b71202650791f0ec934df">vcc</a>.<a class="code" href="classvoltage__converter.html#aebd8ec998a9330d754a463858571701b">convert</a>( <a class="code" href="structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421">acquis</a>.<a class="code" href="classfw_1_1acquisition.html#affdf38278c9187e8e480061f620f1781">get_vcc</a>() );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">case</span> PROPERTY_TEMP:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        val = <a class="code" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">conv</a>.<a class="code" href="structconverter.html#ac9870ea936ec13c39637d9c93827755a">temp</a>.<a class="code" href="classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085">convert</a>( <a class="code" href="structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421">acquis</a>.<a class="code" href="classfw_1_1acquisition.html#a6c5fbc1d2140a20da14c332aa29df2a0">get_temp</a>() );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">case</span> PROPERTY_POSITION:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        val = <a class="code" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">position</a>( <a class="code" href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">conv</a>, <a class="code" href="structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421">acquis</a> );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="comment">// TODO: add default switch case for an error</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <a class="code" href="structfw_1_1dispatcher.html#acb881fa4f0b471433e0fa5f5c2c88da6">reply_get_property</a>( val );</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#ad06e8ab4570fbb49211a53a92338ce25">handle_message</a>( <span class="keyword">const</span> Config&amp; req );</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structfw_1_1dispatcher.html#ad06e8ab4570fbb49211a53a92338ce25">handle_message</a>( <span class="keyword">const</span> HostToServio_GetConfig&amp; req );</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}  <span class="comment">// namespace fw</span></div>
 <div class="ttc" id="aacquisition_8hpp_html"><div class="ttname"><a href="acquisition_8hpp.html">acquisition.hpp</a></div></div>
 <div class="ttc" id="abase_8hpp_html_a3e15423b6a0f2e36799532b4c8f699f5"><div class="ttname"><a href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:19</div></div>
 <div class="ttc" id="acfg__dispatcher_8hpp_html"><div class="ttname"><a href="cfg__dispatcher_8hpp.html">cfg_dispatcher.hpp</a></div></div>
@@ -218,25 +219,25 @@ $(document).ready(function(){initNavTree('dispatcher_8hpp_source.html',''); init
 <div class="ttc" id="astructconverter_html_ac9870ea936ec13c39637d9c93827755a"><div class="ttname"><a href="structconverter.html#ac9870ea936ec13c39637d9c93827755a">converter::temp</a></div><div class="ttdeci">temperature_converter temp</div><div class="ttdef"><b>Definition:</b> converter.hpp:33</div></div>
 <div class="ttc" id="astructfw_1_1cfg__dispatcher_html"><div class="ttname"><a href="structfw_1_1cfg__dispatcher.html">fw::cfg_dispatcher</a></div><div class="ttdef"><b>Definition:</b> cfg_dispatcher.hpp:10</div></div>
 <div class="ttc" id="astructfw_1_1dispatcher_html"><div class="ttname"><a href="structfw_1_1dispatcher.html">fw::dispatcher</a></div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:16</div></div>
-<div class="ttc" id="astructfw_1_1dispatcher_html_a0da4c0e358ecf95af6ad615f2d4a2f82"><div class="ttname"><a href="structfw_1_1dispatcher.html#a0da4c0e358ecf95af6ad615f2d4a2f82">fw::dispatcher::handle_message</a></div><div class="ttdeci">void handle_message(const host_to_servio_switch_to &amp;msg)</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:62</div></div>
-<div class="ttc" id="astructfw_1_1dispatcher_html_a0dc8eefcfc9b35c49c0e9770f11e69ad"><div class="ttname"><a href="structfw_1_1dispatcher.html#a0dc8eefcfc9b35c49c0e9770f11e69ad">fw::dispatcher::handle_message</a></div><div class="ttdeci">void handle_message(const host_to_servio &amp;msg)</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:43</div></div>
+<div class="ttc" id="astructfw_1_1dispatcher_html_a0446800c08bf9e8eadbf1258d2ba52a1"><div class="ttname"><a href="structfw_1_1dispatcher.html#a0446800c08bf9e8eadbf1258d2ba52a1">fw::dispatcher::handle_message</a></div><div class="ttdeci">void handle_message(const HostToServio_GetProperty &amp;msg)</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:82</div></div>
+<div class="ttc" id="astructfw_1_1dispatcher_html_a05c585cd34da0c94dbf2bfeae2714233"><div class="ttname"><a href="structfw_1_1dispatcher.html#a05c585cd34da0c94dbf2bfeae2714233">fw::dispatcher::reply</a></div><div class="ttdeci">void reply(ServioToHost &amp;msg)</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:25</div></div>
 <div class="ttc" id="astructfw_1_1dispatcher_html_a15cf4f98017315abc2a188bbef019777"><div class="ttname"><a href="structfw_1_1dispatcher.html#a15cf4f98017315abc2a188bbef019777">fw::dispatcher::ctl</a></div><div class="ttdeci">control &amp; ctl</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:20</div></div>
 <div class="ttc" id="astructfw_1_1dispatcher_html_a267028ba650fa2c33babbdf9f209f421"><div class="ttname"><a href="structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421">fw::dispatcher::acquis</a></div><div class="ttdeci">acquisition &amp; acquis</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:19</div></div>
 <div class="ttc" id="astructfw_1_1dispatcher_html_a5d0815a7b50f52ffe1b8ef2a4a74c700"><div class="ttname"><a href="structfw_1_1dispatcher.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">fw::dispatcher::now</a></div><div class="ttdeci">microseconds now</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:23</div></div>
 <div class="ttc" id="astructfw_1_1dispatcher_html_a64062389efe7fe57f45c591f7d608afc"><div class="ttname"><a href="structfw_1_1dispatcher.html#a64062389efe7fe57f45c591f7d608afc">fw::dispatcher::cfg_disp</a></div><div class="ttdeci">cfg_dispatcher &amp; cfg_disp</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:21</div></div>
 <div class="ttc" id="astructfw_1_1dispatcher_html_a776a554b6c7b9e01a98687935bddfe2a"><div class="ttname"><a href="structfw_1_1dispatcher.html#a776a554b6c7b9e01a98687935bddfe2a">fw::dispatcher::comm</a></div><div class="ttdeci">comms &amp; comm</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:17</div></div>
 <div class="ttc" id="astructfw_1_1dispatcher_html_a7c345ee7500a1b6a1f141f01d7f7f9d3"><div class="ttname"><a href="structfw_1_1dispatcher.html#a7c345ee7500a1b6a1f141f01d7f7f9d3">fw::dispatcher::hb</a></div><div class="ttdeci">hbridge &amp; hb</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:18</div></div>
-<div class="ttc" id="astructfw_1_1dispatcher_html_ab530543c4d553be7582c4f63bec8b139"><div class="ttname"><a href="structfw_1_1dispatcher.html#ab530543c4d553be7582c4f63bec8b139">fw::dispatcher::reply</a></div><div class="ttdeci">void reply(servio_to_host &amp;msg)</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:25</div></div>
 <div class="ttc" id="astructfw_1_1dispatcher_html_ac7282035a48db732bb3abfbfb69467d0"><div class="ttname"><a href="structfw_1_1dispatcher.html#ac7282035a48db732bb3abfbfb69467d0">fw::dispatcher::conv</a></div><div class="ttdeci">converter &amp; conv</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:22</div></div>
-<div class="ttc" id="astructfw_1_1dispatcher_html_ae70aba9ced1f5904c8be199a20c41d15"><div class="ttname"><a href="structfw_1_1dispatcher.html#ae70aba9ced1f5904c8be199a20c41d15">fw::dispatcher::handle_message</a></div><div class="ttdeci">void handle_message(const host_to_servio_get_property &amp;msg)</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:81</div></div>
-<div class="ttc" id="astructfw_1_1dispatcher_html_afb200983c30e54cc521248ba776c09de"><div class="ttname"><a href="structfw_1_1dispatcher.html#afb200983c30e54cc521248ba776c09de">fw::dispatcher::reply_get_prop</a></div><div class="ttdeci">void reply_get_prop(float val)</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:35</div></div>
+<div class="ttc" id="astructfw_1_1dispatcher_html_acb881fa4f0b471433e0fa5f5c2c88da6"><div class="ttname"><a href="structfw_1_1dispatcher.html#acb881fa4f0b471433e0fa5f5c2c88da6">fw::dispatcher::reply_get_property</a></div><div class="ttdeci">void reply_get_property(float val)</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:35</div></div>
+<div class="ttc" id="astructfw_1_1dispatcher_html_ad06e8ab4570fbb49211a53a92338ce25"><div class="ttname"><a href="structfw_1_1dispatcher.html#ad06e8ab4570fbb49211a53a92338ce25">fw::dispatcher::handle_message</a></div><div class="ttdeci">void handle_message(const HostToServio &amp;msg)</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:44</div></div>
+<div class="ttc" id="astructfw_1_1dispatcher_html_ae2cf8b95691e8b47e26af88c49df1dfc"><div class="ttname"><a href="structfw_1_1dispatcher.html#ae2cf8b95691e8b47e26af88c49df1dfc">fw::dispatcher::handle_message</a></div><div class="ttdeci">void handle_message(const HostToServio_SetMode &amp;msg)</div><div class="ttdef"><b>Definition:</b> dispatcher.hpp:63</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dispatcher_8hpp.html">dispatcher.hpp</a></li>
-    <li class="footer">Generated on Sun Jun 18 2023 17:33:42 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jun 18 2023 17:59:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
