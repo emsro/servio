@@ -101,14 +101,14 @@ Classes</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:a5036c7cff4140fb420d16450928ff8f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a5036c7cff4140fb420d16450928ff8f8">handler</a> = em::cfg::handler&lt; <a class="el" href="structcfg_1_1payload.html">payload</a>, <a class="el" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>, std::endian::native &gt;</td></tr>
 <tr class="separator:a5036c7cff4140fb420d16450928ff8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54fb00f081c5f7b6b501ebd795a4ad1a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a">reghandler</a> = em::protocol::register_handler&lt; <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &gt;</td></tr>
+<tr class="memitem:a54fb00f081c5f7b6b501ebd795a4ad1a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a">reghandler</a> = em::protocol::register_handler&lt; <a class="el" href="config_8hpp.html#ad12076c2b0b05fdf3fd96b13a34686cc">cfg_map</a> &gt;</td></tr>
 <tr class="separator:a54fb00f081c5f7b6b501ebd795a4ad1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed406326772f09a5c90eb2c62bab0062"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> = em::view&lt; std::byte * &gt;</td></tr>
 <tr class="separator:aed406326772f09a5c90eb2c62bab0062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aee982b4948ebe7b4807cbb84f181eaee"><td class="memItemLeft" align="right" valign="top">consteval <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#aee982b4948ebe7b4807cbb84f181eaee">get_default_config</a> ()</td></tr>
+<tr class="memitem:aee982b4948ebe7b4807cbb84f181eaee"><td class="memItemLeft" align="right" valign="top">consteval <a class="el" href="config_8hpp.html#ad12076c2b0b05fdf3fd96b13a34686cc">cfg_map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#aee982b4948ebe7b4807cbb84f181eaee">get_default_config</a> ()</td></tr>
 <tr class="separator:aee982b4948ebe7b4807cbb84f181eaee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf089918bd1398ef078ba761770419d4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#abf089918bd1398ef078ba761770419d4">find_unused_page</a> (em::view&lt; const <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> * &gt; pages)</td></tr>
 <tr class="separator:abf089918bd1398ef078ba761770419d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,9 +118,9 @@ Functions</h2></td></tr>
 <tr class="separator:a27fb9256d3f5822df90c3a2296a9531b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8b28b0ab16c3b0bf545c39e6fb142e4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#ab8b28b0ab16c3b0bf545c39e6fb142e4">find_latest_page</a> (em::view&lt; const <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> * &gt; pages)</td></tr>
 <tr class="separator:ab8b28b0ab16c3b0bf545c39e6fb142e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fb297374feb61dbad9526f5212e1eff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a4fb297374feb61dbad9526f5212e1eff">store</a> (const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;pl, const <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;m, em::function_view&lt; bool(std::size_t, uint64_t) &gt; writer)</td></tr>
+<tr class="memitem:a4fb297374feb61dbad9526f5212e1eff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a4fb297374feb61dbad9526f5212e1eff">store</a> (const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;pl, const <a class="el" href="config_8hpp.html#ad12076c2b0b05fdf3fd96b13a34686cc">cfg_map</a> &amp;m, em::function_view&lt; bool(std::size_t, uint64_t) &gt; writer)</td></tr>
 <tr class="separator:a4fb297374feb61dbad9526f5212e1eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9de7d450f3a4a26d1e137a4a4e5a9368"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a9de7d450f3a4a26d1e137a4a4e5a9368">load</a> (<a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> p, em::function_view&lt; bool(const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;) &gt; pl_cb, <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;m)</td></tr>
+<tr class="memitem:a9de7d450f3a4a26d1e137a4a4e5a9368"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a9de7d450f3a4a26d1e137a4a4e5a9368">load</a> (<a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> p, em::function_view&lt; bool(const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;) &gt; pl_cb, <a class="el" href="config_8hpp.html#ad12076c2b0b05fdf3fd96b13a34686cc">cfg_map</a> &amp;m)</td></tr>
 <tr class="separator:a9de7d450f3a4a26d1e137a4a4e5a9368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -159,7 +159,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a">cfg::reghandler</a> = typedef em::protocol::register_handler&lt; <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &gt;</td>
+          <td class="memname">using <a class="el" href="namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a">cfg::reghandler</a> = typedef em::protocol::register_handler&lt; <a class="el" href="config_8hpp.html#ad12076c2b0b05fdf3fd96b13a34686cc">cfg_map</a> &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -250,7 +250,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">consteval <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> cfg::get_default_config </td>
+          <td class="memname">consteval <a class="el" href="config_8hpp.html#ad12076c2b0b05fdf3fd96b13a34686cc">cfg_map</a> cfg::get_default_config </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -283,7 +283,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="config_8hpp.html#ad12076c2b0b05fdf3fd96b13a34686cc">cfg_map</a> &amp;&#160;</td>
           <td class="paramname"><em>m</em>&#160;</td>
         </tr>
         <tr>
@@ -313,7 +313,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="config_8hpp.html#ad12076c2b0b05fdf3fd96b13a34686cc">cfg_map</a> &amp;&#160;</td>
           <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>
@@ -340,7 +340,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecfg.html">cfg</a></li>
-    <li class="footer">Generated on Sun Jun 18 2023 11:14:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jun 18 2023 16:37:14 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

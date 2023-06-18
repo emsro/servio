@@ -1,23 +1,11 @@
 var searchData=
 [
-  ['control_5fcurrent_5flim_5fmax_978',['CONTROL_CURRENT_LIM_MAX',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a3f481ea537d3750cc482fa823a6715c6',1,'config.hpp']]],
-  ['control_5fcurrent_5flim_5fmin_979',['CONTROL_CURRENT_LIM_MIN',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6ac2252c7f2cba437a87ef8de44bb9dc17',1,'config.hpp']]],
-  ['control_5fcurrent_5floop_5fd_980',['CONTROL_CURRENT_LOOP_D',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a732ec7aa145dfb9cb69bf3962988dfef',1,'config.hpp']]],
-  ['control_5fcurrent_5floop_5fi_981',['CONTROL_CURRENT_LOOP_I',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a9c3eeb7a8298e1a0a3cb2cff2bd1dd84',1,'config.hpp']]],
-  ['control_5fcurrent_5floop_5fp_982',['CONTROL_CURRENT_LOOP_P',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6aaf35d0ca16d06d524a5bc92f92633089',1,'config.hpp']]],
-  ['control_5fposition_5flim_5fmax_983',['CONTROL_POSITION_LIM_MAX',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a8d9054e0f71aeb6017b5e5ba987c3ffd',1,'config.hpp']]],
-  ['control_5fposition_5flim_5fmin_984',['CONTROL_POSITION_LIM_MIN',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a3022947989a65a9cf817cc9ca0ed0e3d',1,'config.hpp']]],
-  ['control_5fposition_5floop_5fd_985',['CONTROL_POSITION_LOOP_D',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a320e4444416841c21c421e471316b0c4',1,'config.hpp']]],
-  ['control_5fposition_5floop_5fi_986',['CONTROL_POSITION_LOOP_I',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6aed5bf2c290d71bf267f3bd27c90b37ee',1,'config.hpp']]],
-  ['control_5fposition_5floop_5fp_987',['CONTROL_POSITION_LOOP_P',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a877a1e654d337b634c6af8203a74d544',1,'config.hpp']]],
-  ['control_5fstatic_5ffriction_5fdecay_988',['CONTROL_STATIC_FRICTION_DECAY',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6aa1954437f0023c3550d564cb197fc5af',1,'config.hpp']]],
-  ['control_5fstatic_5ffriction_5fscale_989',['CONTROL_STATIC_FRICTION_SCALE',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a553bac71be671a7b00fa646736007c1c',1,'config.hpp']]],
-  ['control_5fvelocity_5flim_5fmax_990',['CONTROL_VELOCITY_LIM_MAX',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6ad1ba7d8773bb85006bb0594dc56ee357',1,'config.hpp']]],
-  ['control_5fvelocity_5flim_5fmin_991',['CONTROL_VELOCITY_LIM_MIN',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6ad8a2139aa4df97b8358d0ecc0553b5a0',1,'config.hpp']]],
-  ['control_5fvelocity_5floop_5fd_992',['CONTROL_VELOCITY_LOOP_D',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6ac1cbc41437e39e3adbfdab140c87d82b',1,'config.hpp']]],
-  ['control_5fvelocity_5floop_5fi_993',['CONTROL_VELOCITY_LOOP_I',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a79bd91cdf170d983aa9debbaf9e1ff4c',1,'config.hpp']]],
-  ['control_5fvelocity_5floop_5fp_994',['CONTROL_VELOCITY_LOOP_P',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a877be4aeeab5048dfca2f5f18483c269',1,'config.hpp']]],
-  ['current_995',['CURRENT',['../base_8hpp.html#ab11c51b7742a144ec8f0089eb023613daa2770969c827f0f2910f6179418462df',1,'CURRENT():&#160;base.hpp'],['../base_8hpp.html#a2d21811ce1f560323f48c16592782d7faa2770969c827f0f2910f6179418462df',1,'CURRENT():&#160;base.hpp']]],
-  ['current_5fconv_5foffset_996',['CURRENT_CONV_OFFSET',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6a76e72afa4f8d540bba69263a712a52d6',1,'config.hpp']]],
-  ['current_5fconv_5fscale_997',['CURRENT_CONV_SCALE',['../config_8hpp.html#a51416eb1847d34a425c4e89f2ebfa8d6ab015c1824c663ed3fcb336e0c5204d3b',1,'config.hpp']]]
+  ['current_978',['CURRENT',['../base_8hpp.html#ab11c51b7742a144ec8f0089eb023613daa2770969c827f0f2910f6179418462df',1,'CURRENT():&#160;base.hpp'],['../base_8hpp.html#a2d21811ce1f560323f48c16592782d7faa2770969c827f0f2910f6179418462df',1,'CURRENT():&#160;base.hpp']]],
+  ['current_5fconv_5foffset_979',['CURRENT_CONV_OFFSET',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a76e72afa4f8d540bba69263a712a52d6',1,'config.hpp']]],
+  ['current_5fconv_5fscale_980',['CURRENT_CONV_SCALE',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ab015c1824c663ed3fcb336e0c5204d3b',1,'config.hpp']]],
+  ['current_5flim_5fmax_981',['CURRENT_LIM_MAX',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a3ebea74b85ecf9b7147f828d58a2f255',1,'config.hpp']]],
+  ['current_5flim_5fmin_982',['CURRENT_LIM_MIN',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a08349ba77e12ed6afd592f259bbe2a5f',1,'config.hpp']]],
+  ['current_5floop_5fd_983',['CURRENT_LOOP_D',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ab304e3960d0b32293a2b9138acce1bec',1,'config.hpp']]],
+  ['current_5floop_5fi_984',['CURRENT_LOOP_I',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2aede49740d2f23df1ec9b4f4048acbcde',1,'config.hpp']]],
+  ['current_5floop_5fp_985',['CURRENT_LOOP_P',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a60537b2c5ef58b27fdc56bbd37fd9e9b',1,'config.hpp']]]
 ];

@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html":[7],
 "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md31":[7,0],
 "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md32":[7,1],
 "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md33":[7,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "storage_8hpp.html#a9de7d450f3a4a26d1e137a4a4e5a9368":[12,0,1,0,2,6],
 "storage_8hpp.html#ab8b28b0ab16c3b0bf545c39e6fb142e4":[12,0,1,0,2,2],
 "storage_8hpp.html#abf089918bd1398ef078ba761770419d4":[12,0,1,0,2,5],
-"storage_8hpp.html#aed406326772f09a5c90eb2c62bab0062":[12,0,1,0,2,1],
-"storage_8hpp_source.html":[12,0,1,0,2]
+"storage_8hpp.html#aed406326772f09a5c90eb2c62bab0062":[12,0,1,0,2,1]
 };
