@@ -23,7 +23,7 @@ BreakBeforeBinaryOperators: false
 BreakBeforeBraces: Custom
 BreakStringLiterals: false
 # Control of individual brace wrapping cases
-BraceWrapping: {
+BraceWrapping:
     AfterClass: 'true'
     AfterControlStatement: 'false'
     AfterEnum : 'true'
@@ -34,8 +34,6 @@ BraceWrapping: {
     BeforeCatch : 'true'
     BeforeElse : 'false'
     IndentBraces : 'false'
-}
-MaxEmptyLinesToKeep: 2
 BreakBeforeTernaryOperators: false
 BreakConstructorInitializersBeforeComma: true
 ColumnLimit:    100
@@ -82,4 +80,7 @@ IncludeCategories:
     Priority: 3
   - Regex:   '.\*'
     Priority: 1
+---
+Language: Proto
+BasedOnStyle: Google
 ...

@@ -3,91 +3,117 @@ syntax = "proto3";
 
 package servio;
 
-enum Mode{
-	MODE_POWER = 0;
-	MODE_CURRENT = 1;
-	MODE_VELOCITY = 2;
-	MODE_POSITION = 3;
+// Control modes that can be commanded to the servo.
+enum Mode {
+  MODE_POWER = 0;
+  MODE_CURRENT = 1;
+  MODE_VELOCITY = 2;
+  MODE_POSITION = 3;
 }
 
-enum Property{
-	PROPERTY_CURRENT = 0;
-	PROPERTY_VCC = 1;
-	PROPERTY_TEMP = 2;
-	PROPERTY_POSITION = 3;
+// Properties that can be queried from the servo.
+enum Property {
+  PROPERTY_CURRENT = 0;
+  PROPERTY_VCC = 1;
+  PROPERTY_TEMP = 2;
+  PROPERTY_POSITION = 3;
 }
 
-enum Status{
-	STATUS_SUCCESS = 0;
+// Status used in the reply message.
+enum Status {
+  STATUS_SUCCESS = 0;
 }
 
+// Config message represents all configuration options for the servio, one
+// instance of this message represnets one value of any of the configuration
+// fields.
 message Config {
-oneof pld{
-	string model = 1;
-	uint32 position_conv_lower_setpoint_value = 2;
-	float position_conv_lower_setpoint_angle = 3;
-	uint32 position_conv_higher_setpoint_value = 4;
-	float position_conv_higher_setpoint_angle = 5;
-	float current_conv_scale = 6;
-	float current_conv_offset = 7;
-	float temp_conv_scale = 8;
-	float temp_conv_offset = 9;
-	float voltage_conv_scale = 10;
-	float current_loop_p = 11;
-	float current_loop_i = 12;
-	float current_loop_d = 13;
-	float current_lim_min = 14;
-	float current_lim_max = 15;
-	float velocity_loop_p = 16;
-	float velocity_loop_i = 17;
-	float velocity_loop_d = 18;
-	float velocity_lim_min = 19;
-	float velocity_lim_max = 20;
-	float position_loop_p = 21;
-	float position_loop_i = 22;
-	float position_loop_d = 23;
-	float position_lim_min = 24;
-	float position_lim_max = 25;
-	float static_friction_scale = 26;
-	float static_friction_decay = 27;
-	float minimum_voltage = 28;
-	float maximum_temperature = 29;
-	float moving_detection_step = 30;
+  oneof pld {
+    // String identifying the model of servo, used for debugging purposes.
+    string model = 1;
+
+    // Position conversion uses two setpoints (lower/higher) to setup a
+    // conversion from the range of measuring sensor to real angle (in radians).
+    uint32 position_conv_lower_setpoint_value =
+        2;  // value on sensor at lower setpoint
+    float position_conv_lower_setpoint_angle = 3;  // angle at lower setpoint
+    uint32 position_conv_higher_setpoint_value =
+        4;  // value on sensor at higher setpoint
+    float position_conv_higher_setpoint_angle = 5;  // angle at higher setpoing
+
+    // Current conversion uses simple linear formula: x = y * scale + offset, to
+    // convert from mesured value via ADC to real currrent.
+    float current_conv_scale = 6;
+    float current_conv_offset = 7;
+
+    // Temperature conversion uses simple linear formula: x = y * scale +
+    // offset, to convert from mesured value via ADC to real currrent. Note that
+    // this refers to internal temperature of the MCU.
+    float temp_conv_scale = 8;
+    float temp_conv_offset = 9;
+
+    // Converts voltage from measured value into real value by scaling it with
+    // provided scale.
+    float voltage_conv_scale = 10;
+
+    // PID connfiguration parameters for current control loop
+    float current_loop_p = 11;
+    float current_loop_i = 12;
+    float current_loop_d = 13;
+
+    // Current control loop limits (in A)
+    float current_lim_min = 14;
+    float current_lim_max = 15;
+
+    float velocity_loop_p = 16;
+    float velocity_loop_i = 17;
+    float velocity_loop_d = 18;
+    float velocity_lim_min = 19;
+    float velocity_lim_max = 20;
+    float position_loop_p = 21;
+    float position_loop_i = 22;
+    float position_loop_d = 23;
+    float position_lim_min = 24;
+    float position_lim_max = 25;
+    float static_friction_scale = 26;
+    float static_friction_decay = 27;
+    float minimum_voltage = 28;
+    float maximum_temperature = 29;
+    float moving_detection_step = 30;
+  }
 }
-}
 
-message HostToServio{
+message HostToServio {
+  message SetMode {
+    Mode mode = 1;
+    float goal = 2;
+  };
 
-	message SetMode{
-		Mode mode = 1;
-		float goal = 2;
-	};
+  message GetProperty {
+    Property property = 1;
+  };
 
-	message GetProperty{
-		Property property = 1;
-	};
+  message GetConfig {
+    uint32 key = 1;
+  };
 
-	message GetConfig{
-		uint32 key = 1;
-	};
-
-	oneof pld{
-		SetMode set_mode = 1;
-		GetProperty get_property = 2;
-		Config set_config = 3;
-		GetConfig get_config = 4;
-	};
+  oneof pld {
+    SetMode set_mode = 1;
+    GetProperty get_property = 2;
+    Config set_config = 3;
+    GetConfig get_config = 4;
+  };
 };
 
-message ServioToHost{
+message ServioToHost {
+  message GetProperty {
+    Property property = 1;
+    float value = 2;
+  }
 
-	message GetProperty{
-		float value = 1;
-	}
-
-	Status stat = 1;
-	oneof pld{
-		GetProperty get_property = 2;
-		Config get_config = 3;
-	};
+  Status stat = 1;
+  oneof pld {
+    GetProperty get_property = 2;
+    Config get_config = 3;
+  };
 };
