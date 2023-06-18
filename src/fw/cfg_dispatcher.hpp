@@ -12,8 +12,6 @@ struct cfg_dispatcher
         cfg_map& map;
         core&    c;
 
-        cfg_value_message get( const cfg_key& key );
-
         template < cfg_key key, typename T >
         void set( const T& item )
         {

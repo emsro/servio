@@ -90,8 +90,7 @@ message servio_to_host{
 	}
 
 	message get_config{
-		uint32 key = 1;
-		bytes msg = 2;
+	config cfg = 1;
 	}
 
 	status stat = 1;

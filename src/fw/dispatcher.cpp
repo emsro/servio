@@ -1,0 +1,128 @@
+#include "fw/dispatcher.hpp"
+
+namespace fw
+{
+template < typename Cfg, typename UnaryFunction >
+void map_cfg( uint32_t key, Cfg& cfg, UnaryFunction&& f )
+{
+        switch ( key ) {
+        case config_model_tag:
+                f.template operator()< MODEL >( cfg.model );
+                break;
+        case config_position_conv_lower_setpoint_value_tag:
+                f.template operator()< POSITION_CONV_LOWER_SETPOINT_VALUE >(
+                    cfg.position_conv_lower_setpoint_value );
+                break;
+        case config_position_conv_lower_setpoint_angle_tag:
+                f.template operator()< POSITION_CONV_LOWER_SETPOINT_ANGLE >(
+                    cfg.position_conv_lower_setpoint_angle );
+                break;
+        case config_position_conv_higher_setpoint_value_tag:
+                f.template operator()< POSITION_CONV_HIGHER_SETPOINT_VALUE >(
+                    cfg.position_conv_higher_setpoint_value );
+                break;
+        case config_position_conv_higher_setpoint_angle_tag:
+                f.template operator()< POSITION_CONV_HIGHER_SETPOINT_ANGLE >(
+                    cfg.position_conv_higher_setpoint_angle );
+                break;
+        case config_current_conv_scale_tag:
+                f.template operator()< CURRENT_CONV_SCALE >( cfg.current_conv_scale );
+                break;
+        case config_current_conv_offset_tag:
+                f.template operator()< CURRENT_CONV_OFFSET >( cfg.current_conv_offset );
+                break;
+        case config_temp_conv_scale_tag:
+                f.template operator()< TEMP_CONV_SCALE >( cfg.temp_conv_scale );
+                break;
+        case config_temp_conv_offset_tag:
+                f.template operator()< TEMP_CONV_OFFSET >( cfg.temp_conv_offset );
+                break;
+        case config_voltage_conv_scale_tag:
+                f.template operator()< VOLTAGE_CONV_SCALE >( cfg.voltage_conv_scale );
+                break;
+        case config_current_loop_p_tag:
+                f.template operator()< CURRENT_LOOP_P >( cfg.current_loop_p );
+                break;
+        case config_current_loop_i_tag:
+                f.template operator()< CURRENT_LOOP_I >( cfg.current_loop_i );
+                break;
+        case config_current_loop_d_tag:
+                f.template operator()< CURRENT_LOOP_D >( cfg.current_loop_d );
+                break;
+        case config_current_lim_min_tag:
+                f.template operator()< CURRENT_LIM_MIN >( cfg.current_lim_min );
+                break;
+        case config_current_lim_max_tag:
+                f.template operator()< CURRENT_LIM_MAX >( cfg.current_lim_max );
+                break;
+        case config_velocity_loop_p_tag:
+                f.template operator()< VELOCITY_LOOP_P >( cfg.velocity_loop_p );
+                break;
+        case config_velocity_loop_i_tag:
+                f.template operator()< VELOCITY_LOOP_I >( cfg.velocity_loop_i );
+                break;
+        case config_velocity_loop_d_tag:
+                f.template operator()< VELOCITY_LOOP_D >( cfg.velocity_loop_d );
+                break;
+        case config_velocity_lim_min_tag:
+                f.template operator()< VELOCITY_LIM_MIN >( cfg.velocity_lim_min );
+                break;
+        case config_velocity_lim_max_tag:
+                f.template operator()< VELOCITY_LIM_MAX >( cfg.velocity_lim_max );
+                break;
+        case config_position_loop_p_tag:
+                f.template operator()< POSITION_LOOP_P >( cfg.position_loop_p );
+                break;
+        case config_position_loop_i_tag:
+                f.template operator()< POSITION_LOOP_I >( cfg.position_loop_i );
+                break;
+        case config_position_loop_d_tag:
+                f.template operator()< POSITION_LOOP_D >( cfg.position_loop_d );
+                break;
+        case config_position_lim_min_tag:
+                f.template operator()< POSITION_LIM_MIN >( cfg.position_lim_min );
+                break;
+        case config_position_lim_max_tag:
+                f.template operator()< POSITION_LIM_MAX >( cfg.position_lim_max );
+                break;
+        case config_static_friction_scale_tag:
+                f.template operator()< STATIC_FRICTION_SCALE >( cfg.static_friction_scale );
+                break;
+        case config_static_friction_decay_tag:
+                f.template operator()< STATIC_FRICTION_DECAY >( cfg.static_friction_decay );
+                break;
+        case config_minimum_voltage_tag:
+                f.template operator()< MINIMUM_VOLTAGE >( cfg.minimum_voltage );
+                break;
+        case config_maximum_temperature_tag:
+                f.template operator()< MAXIMUM_TEMPERATURE >( cfg.maximum_temperature );
+                break;
+        case config_moving_detection_step_tag:
+                f.template operator()< MOVING_DETECTION_STEP >( cfg.moving_detection_step );
+                break;
+        }
+}
+
+void dispatcher::handle_message( const host_to_servio_set_config& req )
+{
+        map_cfg( req.cfg.which_pld, req.cfg, [&]< cfg_key K >( auto& val ) {
+                cfg_disp.set< K >( val );
+        } );
+}
+
+void dispatcher::handle_message( const host_to_servio_get_config& req )
+{
+        servio_to_host msg;
+        map_cfg( req.key, msg.get_cfg.cfg, [&]< cfg_key K, typename T >( T& val ) {
+                if constexpr ( std::same_as< typename cfg_map::reg_value_type< K >, model_name > ) {
+                        const model_name& n = cfg_disp.map.get_val< K >();
+                        std::strncpy( val, n.data(), std::min( n.size(), sizeof( val ) ) );
+                } else {
+                        val = cfg_disp.map.get_val< K >();
+                }
+        } );
+        msg.which_pld = servio_to_host_get_cfg_tag;
+        reply( msg );
+}
+
+}  // namespace fw

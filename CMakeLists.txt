@@ -69,10 +69,10 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   target_include_directories(proto PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 
   servio_add_library(
-    TARGET cfglib
+    TARGET dispatchlib
     INCLUDE src/
-    SOURCES src/fw/cfg_dispatcher.cpp
-    LIBS serviolib CMSIS::STM32::G431xx HAL::STM32::G4
+    SOURCES src/fw/dispatcher.cpp src/fw/cfg_dispatcher.cpp
+    LIBS serviolib proto CMSIS::STM32::G431xx HAL::STM32::G4
     OPTS -O3)
 
   servio_add_library(
@@ -85,7 +85,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             src/fw/extra.cpp
             src/fw/globals.cpp
             src/fw/util.cpp
-    LIBS serviolib cfglib proto CMSIS::STM32::G431xx HAL::STM32::G4
+    LIBS serviolib dispatchlib proto CMSIS::STM32::G431xx HAL::STM32::G4
     OPTS -Og)
 
   servio_add_library(
@@ -97,12 +97,12 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             boards/prototype2/config.cpp
             boards/prototype2/uart.cpp
             boards/prototype2/timers.cpp
-    LIBS serviolib cfglib CMSIS::STM32::G431xx HAL::STM32::G4
+    LIBS serviolib dispatchlib CMSIS::STM32::G431xx HAL::STM32::G4
     OPTS -Og)
 
   add_library(prototype2 STATIC)
-  target_link_libraries(prototype2 PUBLIC prototype2_board serviolib cfglib
-                                          fwlib STM32::Nano)
+  target_link_libraries(prototype2 PUBLIC prototype2_board serviolib
+                                          dispatchlib fwlib STM32::Nano)
   target_link_libraries(
     prototype2
     PRIVATE HAL::STM32::G4::CORTEX

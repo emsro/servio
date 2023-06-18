@@ -7,11 +7,6 @@ namespace fw
 
 using handler = em::protocol::register_handler< cfg_map >;
 
-cfg_value_message cfg_dispatcher::get( const cfg_key& key )
-{
-        return handler::select( map, key );
-}
-
 void cfg_dispatcher::full_apply()
 {
         for ( cfg_key key : map.get_keys() ) {

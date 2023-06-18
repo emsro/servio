@@ -46,9 +46,6 @@ using cfg_reg = em::protocol::register_pair< Key, T >;
 
 using model_name = em::string_buffer< 32 >;
 
-// TODO: that string type and all of this is pretty random /o\...
-using cfg_val = std::variant< em::string_buffer< 32 >, float, uint32_t >;
-
 // TODO: write a check for reg_map that confirms that config values does not
 // overlap
 using cfg_map = em::protocol::register_map<
