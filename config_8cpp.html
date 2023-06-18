@@ -90,28 +90,30 @@ $(document).ready(function(){initNavTree('config_8cpp.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;config.hpp&quot;</code><br />
+<code>#include &quot;io.pb.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="protocol_8hpp_source.html">protocol.hpp</a>&quot;</code><br />
 <code>#include &lt;boost/asio.hpp&gt;</code><br />
 <code>#include &lt;boost/asio/serial_port.hpp&gt;</code><br />
+<code>#include &lt;emlabcpp/experimental/cobs.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for config.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="config_8cpp__incl.svg" width="978" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="config_8cpp__incl.svg" width="983" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a19208b9ed08ac2b208fae759f695a6c7"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8cpp.html#a19208b9ed08ac2b208fae759f695a6c7">load_config</a> (boost::asio::serial_port &amp;port, <a class="el" href="protocol_8hpp.html#a91a4b1dd82f6a7c05212278e1d2794f3">master_endpoint</a> &amp;ep)</td></tr>
-<tr class="separator:a19208b9ed08ac2b208fae759f695a6c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a620c158472a56f4ac7aded2922d31767"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8cpp.html#a620c158472a56f4ac7aded2922d31767">load_config</a> (boost::asio::serial_port &amp;port)</td></tr>
+<tr class="separator:a620c158472a56f4ac7aded2922d31767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a19208b9ed08ac2b208fae759f695a6c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19208b9ed08ac2b208fae759f695a6c7">&#9670;&nbsp;</a></span>load_config()</h2>
+<a id="a620c158472a56f4ac7aded2922d31767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a620c158472a56f4ac7aded2922d31767">&#9670;&nbsp;</a></span>load_config()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -120,18 +122,8 @@ Functions</h2></td></tr>
           <td class="memname">boost::asio::awaitable&lt; <a class="el" href="config_8hpp.html#a8fefbc309d626b6a760c74ad07210aa3">cfg_map</a> &gt; load_config </td>
           <td>(</td>
           <td class="paramtype">boost::asio::serial_port &amp;&#160;</td>
-          <td class="paramname"><em>port</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>port</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="protocol_8hpp.html#a91a4b1dd82f6a7c05212278e1d2794f3">master_endpoint</a> &amp;&#160;</td>
-          <td class="paramname"><em>ep</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -164,7 +156,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="config_8cpp.html#a19208b9ed08ac2b208fae759f695a6c7">load_config()</a>.</p>
+<p class="reference">References <a class="el" href="config_8cpp.html#a620c158472a56f4ac7aded2922d31767">load_config()</a>.</p>
 
 </div>
 </div>
@@ -174,7 +166,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_84e79ac80b913c2fb5b9e077744e9498.html">host</a></li><li class="navelem"><a class="el" href="config_8cpp.html">config.cpp</a></li>
-    <li class="footer">Generated on Fri Jun 2 2023 06:38:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jun 18 2023 11:14:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -50,7 +50,6 @@ var annotated_dup =
     [ "leds_vals", "base_8hpp.html#structleds__vals", "base_8hpp_structleds__vals" ],
     [ "message_with_float", "structmessage__with__float.html", "structmessage__with__float" ],
     [ "metrics", "classmetrics.html", "classmetrics" ],
-    [ "packet_def", "structpacket__def.html", "structpacket__def" ],
     [ "period_cb", "structperiod__cb.html", "structperiod__cb" ],
     [ "period_cb_interface", "classperiod__cb__interface.html", "classperiod__cb__interface" ],
     [ "position_cb", "structposition__cb.html", "structposition__cb" ],

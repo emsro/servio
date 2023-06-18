@@ -26,5 +26,6 @@ var namespacefw =
     [ "position", "namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465", null ],
     [ "setup_leds_with_stop_callback", "namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1", null ],
     [ "stop_exec", "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021", null ],
+    [ "comm_buff_size", "namespacefw.html#aa2b2cca69c016b9186f0f4ffe08a20a1", null ],
     [ "STOP_CALLBACK", "namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3", null ]
 ];

@@ -26,13 +26,7 @@ var dir_4e8e1185eea579a81ab1815e3b8726c0 =
       ] ]
     ] ],
     [ "comms.cpp", "comms_8cpp.html", null ],
-    [ "comms.hpp", "comms_8hpp.html", [
-      [ "comms", "classfw_1_1comms.html", "classfw_1_1comms" ],
-      [ "handles", "classfw_1_1comms.html#structfw_1_1comms_1_1handles", [
-        [ "tx_dma", "classfw_1_1comms.html#a9112c6d7b7c23078ed254d2fc1728b83", null ],
-        [ "uart", "classfw_1_1comms.html#a840a4c2e8713a24767192001fca045e9", null ]
-      ] ]
-    ] ],
+    [ "comms.hpp", "comms_8hpp.html", "comms_8hpp" ],
     [ "debug_comms.cpp", "debug__comms_8cpp.html", null ],
     [ "debug_comms.hpp", "debug__comms_8hpp.html", [
       [ "debug_comms", "classfw_1_1debug__comms.html", "classfw_1_1debug__comms" ],
