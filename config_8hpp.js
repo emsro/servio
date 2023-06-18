@@ -6,7 +6,6 @@ var config_8hpp =
     ] ],
     [ "cfg_map", "config_8hpp.html#ad12076c2b0b05fdf3fd96b13a34686cc", null ],
     [ "cfg_reg", "config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e", null ],
-    [ "cfg_val", "config_8hpp.html#a531477d954240e55082261c5d7bd7663", null ],
     [ "cfg_value_message", "config_8hpp.html#ac5e70fc82e3c7cc847dbb8c917d336e4", null ],
     [ "model_name", "config_8hpp.html#a6fe1bfcf6fa825ff4ed7e7465cfee94c", null ],
     [ "cfg_key", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2", [

@@ -16,6 +16,7 @@ var dir_4fc88152649b3a7b0043869ddaf105b0 =
       [ "core", "structfw_1_1core.html", "structfw_1_1core" ],
       [ "standard_callbacks", "structfw_1_1standard__callbacks.html", "structfw_1_1standard__callbacks" ]
     ] ],
+    [ "dispatcher.cpp", "dispatcher_8cpp.html", "dispatcher_8cpp" ],
     [ "dispatcher.hpp", "dispatcher_8hpp.html", [
       [ "dispatcher", "structfw_1_1dispatcher.html", "structfw_1_1dispatcher" ]
     ] ],
