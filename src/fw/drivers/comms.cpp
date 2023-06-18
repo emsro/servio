@@ -1,6 +1,5 @@
 #include "fw/drivers/comms.hpp"
 
-#include "emlabcpp/experimental/cobs.h"
 #include "fw/util.hpp"
 
 namespace fw
@@ -27,19 +26,33 @@ void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
                 return;
         }
 
-        ibuffer_.push_back( rx_byte_ );
+        if ( rx_byte_ == std::byte{ 0 } ) {
+                isizes_.push_back( current_size_ );
+                current_size_ = 0;
+                cd_           = em::cobs_decoder{};
+        } else {
+                current_size_ += 1;
+                ibuffer_.push_back( cd_.iter( rx_byte_ ) );
+        }
         start();
 }
 
 std::tuple< bool, em::view< std::byte* > > comms::load_message( em::view< std::byte* > data )
 {
-        auto cobv = em::cobs_decode_view( em::view{ ibuffer_ } );
-
-        if ( cobv.size() > data.size() ) {
+        if ( isizes_.empty() ) {
+                return { false, {} };
+        }
+        if ( isizes_.front() > data.size() ) {
                 return { false, em::view< std::byte* >{} };
         }
-        copy( cobv, data.begin() );
-        return { true, em::view_n( data.begin(), cobv.size() ) };
+        uint16_t size  = isizes_.take_front();
+        em::view dview = em::view_n( data.begin(), size );
+
+        for ( std::byte& b : dview ) {
+                b = ibuffer_.take_front();
+        }
+
+        return { true, em::view_n( data.begin(), size ) };
 }
 
 void comms::start()

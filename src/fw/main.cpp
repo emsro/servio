@@ -10,6 +10,7 @@
 #include <emlabcpp/iterators/numeric.h>
 #include <emlabcpp/match.h>
 #include <emlabcpp/pid.h>
+#include <pb_decode.h>
 #include <string>
 
 int main()
@@ -24,7 +25,7 @@ int main()
                 auto check_f = [&]( const cfg::payload& ) {
                         return true;
                 };
-                bool cfg_loaded = cfg::load( p.value(), check_f, cfg );
+                bool cfg_loaded = cfg::load( *p, check_f, cfg );
 
                 if ( !cfg_loaded ) {
                         fw::stop_exec();
@@ -56,30 +57,36 @@ int main()
 
         cor.ind.on_event( clock_ptr->get_us(), indication_event::INITIALIZED );
 
+        std::array< std::byte, 128 > imsg;
+
         while ( true ) {
                 fw::dispatcher dis{
-                    *comms_ptr,
-                    *hbridge_ptr,
-                    *acquisition_ptr,
-                    cor.ctl,
-                    cfg_dis,
-                    cor.conv,
-                    clock_ptr->get_us() };
-                /*
-                        em::match(
-                            comms_ptr->get_message(),
-                            []( std::monostate ) {},
-                            [&]( const master_to_servo_variant& var ) {
-                                    em::match( var, [&]< typename T >( const T& item ) {
-                                            dis.handle_message( item );
-                                    } );
-                                    cor.ind.on_event(
-                                        clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
-                            },
-                            [&]( const em::protocol::error_record& ) {
-                                    fw::stop_exec();
-                            } );
-                    */
+                    .comm     = *comms_ptr,
+                    .hb       = *hbridge_ptr,
+                    .acquis   = *acquisition_ptr,
+                    .ctl      = cor.ctl,
+                    .cfg_disp = cfg_dis,
+                    .conv     = cor.conv,
+                    .now      = clock_ptr->get_us() };
+
+                auto [lsucc, ldata] = comms_ptr->load_message( imsg );
+
+                if ( !lsucc ) {
+                        fw::stop_exec();
+                }
+
+                host_to_servio msg;
+                pb_istream_t   stream = pb_istream_from_buffer(
+                    reinterpret_cast< uint8_t* >( ldata.begin() ), ldata.size() );
+                bool status = pb_decode( &stream, host_to_servio_fields, &msg );
+                if ( !status ) {
+                        // TODO: well, this is aggresive
+                        fw::stop_exec();
+                }
+
+                dis.handle_message( msg );
+
+                cor.ind.on_event( clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
 
                 cor.tick( *leds_ptr, clock_ptr->get_us() );
         }

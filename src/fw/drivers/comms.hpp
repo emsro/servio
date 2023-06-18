@@ -1,5 +1,6 @@
 #include "protocol.hpp"
 
+#include <emlabcpp/experimental/cobs.h>
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/static_circular_buffer.h>
 #include <emlabcpp/static_function.h>
@@ -43,8 +44,11 @@ public:
 private:
         handles h_;
 
+        uint16_t                                     current_size_ = 0;
+        em::cobs_decoder                             cd_;
         std::byte                                    rx_byte_;
         em::static_circular_buffer< std::byte, 256 > ibuffer_;
+        em::static_circular_buffer< uint16_t, 8 >    isizes_;
 
         std::array< std::byte, comm_buff_size > otmp_;
 };

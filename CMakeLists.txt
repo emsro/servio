@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.24)
 
 project(servio C CXX ASM)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_C_STANDARD 99)
 
@@ -34,9 +35,9 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 
   target_compile_options(
     emlabcpp PUBLIC -DEMLABCPP_USE_LOGGING -DEMLABCPP_USE_NLOHMANN_JSON
-                    -DEMLABCPP_USE_TYPEID -DEMLABCPP_USE_GTEST)
+                    -DEMLABCPP_USE_GTEST)
 
-  add_library(proto STATIC ${PROTO_SRCS} ${proto_hrds})
+  add_library(proto STATIC ${PROTO_SRCS})
   target_link_libraries(proto PUBLIC ${Protobuf_LIBRARIES})
   target_include_directories(proto PUBLIC ${PROTO_HDRS_DIR})
 
@@ -65,6 +66,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   add_library(proto STATIC ${PROTO_SRCS} ${PROTO_HDRS})
   target_link_libraries(proto PUBLIC nanopb_lib)
+  target_include_directories(proto PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 
   servio_add_library(
     TARGET cfglib
@@ -100,7 +102,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   add_library(prototype2 STATIC)
   target_link_libraries(prototype2 PUBLIC prototype2_board serviolib cfglib
-                                          fwlib STM32::NoSys)
+                                          fwlib STM32::Nano)
   target_link_libraries(
     prototype2
     PRIVATE HAL::STM32::G4::CORTEX

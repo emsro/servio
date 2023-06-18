@@ -1,1 +1,5 @@
-servio.host_to_servio.set_config.msg	max_size:16
+* anonymous_oneof:true
+* mangle_names:M_STRIP_PACKAGE
+* long_names:false
+host_to_servio.set_config.msg	max_size:16
+servio_to_host.get_config.msg	max_size:64
