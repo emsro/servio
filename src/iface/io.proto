@@ -3,25 +3,25 @@ syntax = "proto3";
 
 package servio;
 
-enum mode{
+enum Mode{
 	MODE_POWER = 0;
 	MODE_CURRENT = 1;
 	MODE_VELOCITY = 2;
 	MODE_POSITION = 3;
 }
 
-enum property{
+enum Property{
 	PROPERTY_CURRENT = 0;
 	PROPERTY_VCC = 1;
 	PROPERTY_TEMP = 2;
 	PROPERTY_POSITION = 3;
 }
 
-enum status{
+enum Status{
 	STATUS_SUCCESS = 0;
 }
 
-message config {
+message Config {
 oneof pld{
 	string model = 1;
 	uint32 position_conv_lower_setpoint_value = 2;
@@ -56,46 +56,38 @@ oneof pld{
 }
 }
 
-message host_to_servio{
+message HostToServio{
 
-	message switch_to{
-		mode mod = 1;
-		float val = 2;
+	message SetMode{
+		Mode mode = 1;
+		float goal = 2;
 	};
 
-	message get_property{
-		property prop = 1;
+	message GetProperty{
+		Property property = 1;
 	};
 
-	message set_config{
-		config cfg = 1;
-	};
-
-	message get_config{
+	message GetConfig{
 		uint32 key = 1;
 	};
 
 	oneof pld{
-		switch_to swtch = 1;
-		get_property get_prop = 2;
-		set_config set_cfg = 3;
-		get_config get_cfg = 4;
+		SetMode set_mode = 1;
+		GetProperty get_property = 2;
+		Config set_config = 3;
+		GetConfig get_config = 4;
 	};
 };
 
-message servio_to_host{
+message ServioToHost{
 
-	message get_property{
-		float val = 1;
+	message GetProperty{
+		float value = 1;
 	}
 
-	message get_config{
-	config cfg = 1;
-	}
-
-	status stat = 1;
+	Status stat = 1;
 	oneof pld{
-		get_property get_prop = 2;
-		get_config get_cfg = 3;
+		GetProperty get_property = 2;
+		Config get_config = 3;
 	};
 };

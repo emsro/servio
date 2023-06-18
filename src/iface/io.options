@@ -1,4 +1,4 @@
 * anonymous_oneof:true
 * mangle_names:M_STRIP_PACKAGE
 * long_names:false
-config.model	max_length:30
+Config.model	max_length:30

@@ -11,8 +11,8 @@ boost::asio::awaitable< cfg_map > load_config( boost::asio::serial_port& port )
 {
         cfg_map cmap;
         for ( cfg_key k : cmap.get_keys() ) {
-                servio::host_to_servio msg;
-                msg.mutable_get_cfg()->set_key( k );
+                servio::HostToServio msg;
+                msg.mutable_get_config()->set_key( k );
 
                 std::array< std::byte, 1024 > buffer;
                 std::size_t                   size = msg.ByteSizeLong();

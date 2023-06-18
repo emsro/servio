@@ -22,66 +22,67 @@ struct dispatcher
         converter&      conv;
         microseconds    now;
 
-        void reply( servio_to_host& msg )
+        void reply( ServioToHost& msg )
         {
                 uint8_t      buffer[64];
                 pb_ostream_t stream = pb_ostream_from_buffer( buffer, sizeof( buffer ) );
-                pb_encode( &stream, servio_to_host_fields, &msg );
+                pb_encode( &stream, ServioToHost_fields, &msg );
 
                 comm.send(
                     em::view_n( reinterpret_cast< std::byte* >( buffer ), stream.bytes_written ) );
         }
 
-        void reply_get_prop( float val )
+        void reply_get_property( float val )
         {
-                servio_to_host msg;
-                msg.get_prop.val = val;
-                msg.which_pld    = servio_to_host_get_prop_tag;
+                ServioToHost msg;
+                msg.stat               = STATUS_SUCCESS;
+                msg.get_property.value = val;
+                msg.which_pld          = ServioToHost_get_property_tag;
                 reply( msg );
         }
 
-        void handle_message( const host_to_servio& msg )
+        void handle_message( const HostToServio& msg )
         {
                 switch ( msg.which_pld ) {
-                case host_to_servio_swtch_tag:
-                        handle_message( msg.swtch );
+                case HostToServio_set_mode_tag:
+                        handle_message( msg.set_mode );
                         break;
-                case host_to_servio_get_prop_tag:
-                        handle_message( msg.get_prop );
+                case HostToServio_get_property_tag:
+                        handle_message( msg.get_property );
                         break;
-                case host_to_servio_set_cfg_tag:
-                        handle_message( msg.set_cfg );
+                case HostToServio_set_config_tag:
+                        handle_message( msg.set_config );
                         break;
-                case host_to_servio_get_cfg_tag:
-                        handle_message( msg.get_cfg );
+                case HostToServio_get_config_tag:
+                        handle_message( msg.get_config );
                         break;
                 }
                 // TODO: add default switch case for an error
         }
 
-        void handle_message( const host_to_servio_switch_to& msg )
+        void handle_message( const HostToServio_SetMode& msg )
         {
-                switch ( msg.mod ) {
+                switch ( msg.mode ) {
                 case MODE_POWER:
-                        ctl.switch_to_power_control( static_cast< int16_t >( msg.val ) );
+                        ctl.switch_to_power_control( static_cast< int16_t >( msg.goal ) );
                         break;
                 case MODE_CURRENT:
-                        ctl.switch_to_current_control( now, msg.val );
+                        ctl.switch_to_current_control( now, msg.goal );
                         break;
                 case MODE_VELOCITY:
-                        ctl.switch_to_velocity_control( now, msg.val );
+                        ctl.switch_to_velocity_control( now, msg.goal );
                         break;
                 case MODE_POSITION:
-                        ctl.switch_to_position_control( now, msg.val );
+                        ctl.switch_to_position_control( now, msg.goal );
                         break;
                 }
                 // TODO: add default switch case for an error
         }
 
-        void handle_message( const host_to_servio_get_property& msg )
+        void handle_message( const HostToServio_GetProperty& msg )
         {
                 float val;
-                switch ( msg.prop ) {
+                switch ( msg.property ) {
                 case PROPERTY_CURRENT:
                         val = current( conv, acquis, hb );
                         break;
@@ -96,12 +97,12 @@ struct dispatcher
                         break;
                 }
                 // TODO: add default switch case for an error
-                reply_get_prop( val );
+                reply_get_property( val );
         }
 
-        void handle_message( const host_to_servio_set_config& req );
+        void handle_message( const Config& req );
 
-        void handle_message( const host_to_servio_get_config& req );
+        void handle_message( const HostToServio_GetConfig& req );
 };
 
 }  // namespace fw

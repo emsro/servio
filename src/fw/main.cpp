@@ -75,10 +75,10 @@ int main()
                         fw::stop_exec();
                 }
 
-                host_to_servio msg;
-                pb_istream_t   stream = pb_istream_from_buffer(
+                HostToServio msg;
+                pb_istream_t stream = pb_istream_from_buffer(
                     reinterpret_cast< uint8_t* >( ldata.begin() ), ldata.size() );
-                bool status = pb_decode( &stream, host_to_servio_fields, &msg );
+                bool status = pb_decode( &stream, HostToServio_fields, &msg );
                 if ( !status ) {
                         // TODO: well, this is aggresive
                         fw::stop_exec();
