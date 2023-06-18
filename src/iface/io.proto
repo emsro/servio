@@ -1,22 +1,22 @@
-
 syntax = "proto3";
 
 package servio;
 
-// Control modes that can be commanded to the servo.
+// Control modes that can be commanded to the servo. In context of each mode the
+// provided value has units documented here.
 enum Mode {
-  MODE_POWER = 0;
-  MODE_CURRENT = 1;
-  MODE_VELOCITY = 2;
-  MODE_POSITION = 3;
+  MODE_POWER = 0;     // -1.0...1.0, sign represents direction
+  MODE_CURRENT = 1;   // in A, sign represents direction
+  MODE_VELOCITY = 2;  // in rad/s
+  MODE_POSITION = 3;  // in rad
 }
 
 // Properties that can be queried from the servo.
 enum Property {
-  PROPERTY_CURRENT = 0;
-  PROPERTY_VCC = 1;
-  PROPERTY_TEMP = 2;
-  PROPERTY_POSITION = 3;
+  PROPERTY_CURRENT = 0;   // A
+  PROPERTY_VCC = 1;       // V
+  PROPERTY_TEMP = 2;      // C
+  PROPERTY_POSITION = 3;  // rad
 }
 
 // Status used in the reply message.
@@ -34,11 +34,10 @@ message Config {
 
     // Position conversion uses two setpoints (lower/higher) to setup a
     // conversion from the range of measuring sensor to real angle (in radians).
-    uint32 position_conv_lower_setpoint_value =
-        2;  // value on sensor at lower setpoint
-    float position_conv_lower_setpoint_angle = 3;  // angle at lower setpoint
+    uint32 position_conv_lower_setpoint_value = 2;  // sensor at lower setpoint
+    float position_conv_lower_setpoint_angle = 3;   // angle at lower setpoint
     uint32 position_conv_higher_setpoint_value =
-        4;  // value on sensor at higher setpoint
+        4;                                          // sensor at higher setpoint
     float position_conv_higher_setpoint_angle = 5;  // angle at higher setpoing
 
     // Current conversion uses simple linear formula: x = y * scale + offset, to
@@ -56,7 +55,7 @@ message Config {
     // provided scale.
     float voltage_conv_scale = 10;
 
-    // PID connfiguration parameters for current control loop
+    // PID configuration parameters for current control loop
     float current_loop_p = 11;
     float current_loop_i = 12;
     float current_loop_d = 13;
@@ -65,55 +64,84 @@ message Config {
     float current_lim_min = 14;
     float current_lim_max = 15;
 
+    // PID configuration parameters for velocity control loop
     float velocity_loop_p = 16;
     float velocity_loop_i = 17;
     float velocity_loop_d = 18;
+
+    // Velocity control loop limits (in rad/s)
     float velocity_lim_min = 19;
     float velocity_lim_max = 20;
+
+    // PID configuration parameters for position control loop
     float position_loop_p = 21;
     float position_loop_i = 22;
     float position_loop_d = 23;
+
+    // Position control loop limits (in rad)
     float position_lim_min = 24;
     float position_lim_max = 25;
+
+    // Outside of the normal functionality of the control loops, the current
+    // desired by velocity loop will be scaled by `static_friction_scale` in
+    // case the servo detects that it is not moving. This is here to give the
+    // servo a necessary kick from non-moving position. Decay specifies how fast
+    // that scale disappears after servo starts moving. `moving_detection_step`
+    // configurs how much shall servo move for it to be considered moving.
     float static_friction_scale = 26;
     float static_friction_decay = 27;
+    float moving_detection_step = 30;  // in rad
+
+    // Sets limits for monitored values, these wont affect the servo, the servo
+    // will just signal with leds that values are outside of desired range.
     float minimum_voltage = 28;
     float maximum_temperature = 29;
-    float moving_detection_step = 30;
   }
 }
 
+// Message sent from the host to the servo, represents a group of messages, out
+// of which only one is sent.
 message HostToServio {
+  // Switches the servo to desired mode and sets control loops to achieve
+  // desired goal value. Units are documented in `Mode` enum documentation.
   message SetMode {
     Mode mode = 1;
     float goal = 2;
   };
 
+  // Queries the server for desired property. Units are documented in `Property`
+  // enum documentation.
   message GetProperty {
     Property property = 1;
   };
 
+  // Returns one config value identified by key
   message GetConfig {
     uint32 key = 1;
   };
 
+  // Contains one of the available messages
   oneof pld {
-    SetMode set_mode = 1;
-    GetProperty get_property = 2;
-    Config set_config = 3;
-    GetConfig get_config = 4;
+    SetMode set_mode = 1;          // changes mode
+    GetProperty get_property = 2;  // queries property
+    Config set_config = 3;         // sets config value based on Config content
+    GetConfig get_config = 4;      // retrivies config vlaue
   };
 };
 
+// Reply message sent by the servo
 message ServioToHost {
+  // Reply with queried property, contains the enum with desired property and
+  // value
   message GetProperty {
     Property property = 1;
     float value = 2;
   }
 
+  // Each reply contains status enum
   Status stat = 1;
   oneof pld {
-    GetProperty get_property = 2;
-    Config get_config = 3;
+    GetProperty get_property = 2;  // reply for get property command
+    Config get_config = 3;         // reply for get config command
   };
 };

@@ -62,9 +62,16 @@ struct dispatcher
 
         void handle_message( const HostToServio_SetMode& msg )
         {
+                float val;
                 switch ( msg.mode ) {
                 case MODE_POWER:
-                        ctl.switch_to_power_control( static_cast< int16_t >( msg.goal ) );
+                        val = em::map_range< float, float >(
+                            msg.goal,
+                            -1.0f,
+                            1.0f,
+                            std::numeric_limits< int16_t >::lowest(),
+                            std::numeric_limits< int16_t >::max() );
+                        ctl.switch_to_power_control( static_cast< int16_t >( val ) );
                         break;
                 case MODE_CURRENT:
                         ctl.switch_to_current_control( now, msg.goal );
