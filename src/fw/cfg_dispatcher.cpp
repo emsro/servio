@@ -1,5 +1,3 @@
-
-
 #include "fw/cfg_dispatcher.hpp"
 
 #include <emlabcpp/protocol/register_handler.h>
@@ -12,12 +10,6 @@ using handler = em::protocol::register_handler< cfg_map >;
 cfg_value_message cfg_dispatcher::get( const cfg_key& key )
 {
         return handler::select( map, key );
-}
-
-void cfg_dispatcher::set( const cfg_key& key, const cfg_value_message& msg )
-{
-        handler::insert( map, key, msg );
-        apply( key );
 }
 
 void cfg_dispatcher::full_apply()
@@ -59,59 +51,56 @@ void cfg_dispatcher::apply( const cfg_key& key )
         case VOLTAGE_CONV_SCALE:
                 c.conv.set_vcc_cfg( map.get_val< VOLTAGE_CONV_SCALE >() );
                 break;
-        case CONTROL_CURRENT_LOOP_P:
-        case CONTROL_CURRENT_LOOP_I:
-        case CONTROL_CURRENT_LOOP_D:
+        case CURRENT_LOOP_P:
+        case CURRENT_LOOP_I:
+        case CURRENT_LOOP_D:
                 c.ctl.set_pid(
                     control_loop::CURRENT,
-                    { map.get_val< CONTROL_CURRENT_LOOP_P >(),
-                      map.get_val< CONTROL_CURRENT_LOOP_I >(),
-                      map.get_val< CONTROL_CURRENT_LOOP_D >() } );
+                    { map.get_val< CURRENT_LOOP_P >(),
+                      map.get_val< CURRENT_LOOP_I >(),
+                      map.get_val< CURRENT_LOOP_D >() } );
                 break;
-        case CONTROL_CURRENT_LIM_MIN:
-        case CONTROL_CURRENT_LIM_MAX:
+        case CURRENT_LIM_MIN:
+        case CURRENT_LIM_MAX:
                 c.ctl.set_limits(
                     control_loop::CURRENT,
-                    { map.get_val< CONTROL_CURRENT_LIM_MIN >(),
-                      map.get_val< CONTROL_CURRENT_LIM_MAX >() } );
+                    { map.get_val< CURRENT_LIM_MIN >(), map.get_val< CURRENT_LIM_MAX >() } );
                 break;
-        case CONTROL_VELOCITY_LOOP_P:
-        case CONTROL_VELOCITY_LOOP_I:
-        case CONTROL_VELOCITY_LOOP_D:
+        case VELOCITY_LOOP_P:
+        case VELOCITY_LOOP_I:
+        case VELOCITY_LOOP_D:
                 c.ctl.set_pid(
                     control_loop::VELOCITY,
-                    { map.get_val< CONTROL_VELOCITY_LOOP_P >(),
-                      map.get_val< CONTROL_VELOCITY_LOOP_I >(),
-                      map.get_val< CONTROL_VELOCITY_LOOP_D >() } );
+                    { map.get_val< VELOCITY_LOOP_P >(),
+                      map.get_val< VELOCITY_LOOP_I >(),
+                      map.get_val< VELOCITY_LOOP_D >() } );
                 break;
-        case CONTROL_VELOCITY_LIM_MIN:
-        case CONTROL_VELOCITY_LIM_MAX:
+        case VELOCITY_LIM_MIN:
+        case VELOCITY_LIM_MAX:
                 c.ctl.set_limits(
                     control_loop::VELOCITY,
-                    { map.get_val< CONTROL_VELOCITY_LIM_MIN >(),
-                      map.get_val< CONTROL_VELOCITY_LIM_MAX >() } );
+                    { map.get_val< VELOCITY_LIM_MIN >(), map.get_val< VELOCITY_LIM_MAX >() } );
                 break;
-        case CONTROL_POSITION_LOOP_P:
-        case CONTROL_POSITION_LOOP_I:
-        case CONTROL_POSITION_LOOP_D:
+        case POSITION_LOOP_P:
+        case POSITION_LOOP_I:
+        case POSITION_LOOP_D:
                 c.ctl.set_pid(
                     control_loop::POSITION,
-                    { map.get_val< CONTROL_POSITION_LOOP_P >(),
-                      map.get_val< CONTROL_POSITION_LOOP_I >(),
-                      map.get_val< CONTROL_POSITION_LOOP_D >() } );
+                    { map.get_val< POSITION_LOOP_P >(),
+                      map.get_val< POSITION_LOOP_I >(),
+                      map.get_val< POSITION_LOOP_D >() } );
                 break;
-        case CONTROL_POSITION_LIM_MIN:
-        case CONTROL_POSITION_LIM_MAX:
+        case POSITION_LIM_MIN:
+        case POSITION_LIM_MAX:
                 c.ctl.set_limits(
                     control_loop::POSITION,
-                    { map.get_val< CONTROL_POSITION_LIM_MIN >(),
-                      map.get_val< CONTROL_POSITION_LIM_MAX >() } );
+                    { map.get_val< POSITION_LIM_MIN >(), map.get_val< POSITION_LIM_MAX >() } );
                 break;
-        case CONTROL_STATIC_FRICTION_SCALE:
-        case CONTROL_STATIC_FRICTION_DECAY:
+        case STATIC_FRICTION_SCALE:
+        case STATIC_FRICTION_DECAY:
                 c.ctl.set_static_friction(
-                    map.get_val< CONTROL_STATIC_FRICTION_SCALE >(),
-                    map.get_val< CONTROL_STATIC_FRICTION_DECAY >() );
+                    map.get_val< STATIC_FRICTION_SCALE >(),
+                    map.get_val< STATIC_FRICTION_DECAY >() );
                 break;
         case MINIMUM_VOLTAGE:
                 c.mon.set_minimum_voltage( map.get_val< MINIMUM_VOLTAGE >() );

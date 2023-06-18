@@ -12,14 +12,14 @@ struct cfg_dispatcher
         cfg_map& map;
         core&    c;
 
-        void operator()( const cfg_keyval& kv )
-        {
-                set( kv.key, kv.msg );
-        }
-
         cfg_value_message get( const cfg_key& key );
 
-        void set( const cfg_key& key, const cfg_value_message& msg );
+        template < cfg_key key, typename T >
+        void set( const T& item )
+        {
+                map.set_val< key >( item );
+                apply( key );
+        }
 
         void full_apply();
 

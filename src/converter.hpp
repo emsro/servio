@@ -1,4 +1,3 @@
-
 #include "conversion/current.hpp"
 #include "conversion/position.hpp"
 #include "conversion/temperature.hpp"
@@ -9,9 +8,9 @@
 struct converter
 {
         void set_position_cfg(
-            uint16_t low_value,
+            uint32_t low_value,
             float    low_angle,
-            uint16_t high_value,
+            uint32_t high_value,
             float    high_angle )
         {
                 position = position_converter{ low_value, low_angle, high_value, high_angle };

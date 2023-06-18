@@ -101,9 +101,104 @@ struct dispatcher
 
         void handle_message( const host_to_servio_set_config& req )
         {
-                cfg_value_message msg( em::view_n(
-                    reinterpret_cast< const std::byte* >( req.msg.bytes ), req.msg.size ) );
-                cfg_disp.set( static_cast< cfg_key >( req.key ), msg );
+                switch ( req.cfg.which_pld ) {
+                case config_model_tag:
+                        cfg_disp.set< MODEL >( req.cfg.model );
+                        break;
+                case config_position_conv_lower_setpoint_value_tag:
+                        // TODO: add error check
+                        cfg_disp.set< POSITION_CONV_LOWER_SETPOINT_VALUE >(
+                            req.cfg.position_conv_lower_setpoint_value );
+                        break;
+                case config_position_conv_lower_setpoint_angle_tag:
+                        cfg_disp.set< POSITION_CONV_LOWER_SETPOINT_ANGLE >(
+                            req.cfg.position_conv_lower_setpoint_angle );
+                        break;
+                case config_position_conv_higher_setpoint_value_tag:
+                        // TODO: add error check
+                        cfg_disp.set< POSITION_CONV_HIGHER_SETPOINT_VALUE >(
+                            req.cfg.position_conv_higher_setpoint_value );
+                        break;
+                case config_position_conv_higher_setpoint_angle_tag:
+                        cfg_disp.set< POSITION_CONV_HIGHER_SETPOINT_ANGLE >(
+                            req.cfg.position_conv_higher_setpoint_angle );
+                        break;
+                case config_current_conv_scale_tag:
+                        cfg_disp.set< CURRENT_CONV_SCALE >( req.cfg.current_conv_scale );
+                        break;
+                case config_current_conv_offset_tag:
+                        cfg_disp.set< CURRENT_CONV_OFFSET >( req.cfg.current_conv_offset );
+                        break;
+                case config_temp_conv_scale_tag:
+                        cfg_disp.set< TEMP_CONV_SCALE >( req.cfg.temp_conv_scale );
+                        break;
+                case config_temp_conv_offset_tag:
+                        cfg_disp.set< TEMP_CONV_OFFSET >( req.cfg.temp_conv_offset );
+                        break;
+                case config_voltage_conv_scale_tag:
+                        cfg_disp.set< VOLTAGE_CONV_SCALE >( req.cfg.voltage_conv_scale );
+                        break;
+                case config_current_loop_p_tag:
+                        cfg_disp.set< CURRENT_LOOP_P >( req.cfg.current_loop_p );
+                        break;
+                case config_current_loop_i_tag:
+                        cfg_disp.set< CURRENT_LOOP_I >( req.cfg.current_loop_i );
+                        break;
+                case config_current_loop_d_tag:
+                        cfg_disp.set< CURRENT_LOOP_D >( req.cfg.current_loop_d );
+                        break;
+                case config_current_lim_min_tag:
+                        cfg_disp.set< CURRENT_LIM_MIN >( req.cfg.current_lim_min );
+                        break;
+                case config_current_lim_max_tag:
+                        cfg_disp.set< CURRENT_LIM_MAX >( req.cfg.current_lim_max );
+                        break;
+                case config_velocity_loop_p_tag:
+                        cfg_disp.set< VELOCITY_LOOP_P >( req.cfg.velocity_loop_p );
+                        break;
+                case config_velocity_loop_i_tag:
+                        cfg_disp.set< VELOCITY_LOOP_I >( req.cfg.velocity_loop_i );
+                        break;
+                case config_velocity_loop_d_tag:
+                        cfg_disp.set< VELOCITY_LOOP_D >( req.cfg.velocity_loop_d );
+                        break;
+                case config_velocity_lim_min_tag:
+                        cfg_disp.set< VELOCITY_LIM_MIN >( req.cfg.velocity_lim_min );
+                        break;
+                case config_velocity_lim_max_tag:
+                        cfg_disp.set< VELOCITY_LIM_MAX >( req.cfg.velocity_lim_max );
+                        break;
+                case config_position_loop_p_tag:
+                        cfg_disp.set< POSITION_LOOP_P >( req.cfg.position_loop_p );
+                        break;
+                case config_position_loop_i_tag:
+                        cfg_disp.set< POSITION_LOOP_I >( req.cfg.position_loop_i );
+                        break;
+                case config_position_loop_d_tag:
+                        cfg_disp.set< POSITION_LOOP_D >( req.cfg.position_loop_d );
+                        break;
+                case config_position_lim_min_tag:
+                        cfg_disp.set< POSITION_LIM_MIN >( req.cfg.position_lim_min );
+                        break;
+                case config_position_lim_max_tag:
+                        cfg_disp.set< POSITION_LIM_MAX >( req.cfg.position_lim_max );
+                        break;
+                case config_static_friction_scale_tag:
+                        cfg_disp.set< STATIC_FRICTION_SCALE >( req.cfg.static_friction_scale );
+                        break;
+                case config_static_friction_decay_tag:
+                        cfg_disp.set< STATIC_FRICTION_DECAY >( req.cfg.static_friction_decay );
+                        break;
+                case config_minimum_voltage_tag:
+                        cfg_disp.set< MINIMUM_VOLTAGE >( req.cfg.minimum_voltage );
+                        break;
+                case config_maximum_temperature_tag:
+                        cfg_disp.set< MAXIMUM_TEMPERATURE >( req.cfg.maximum_temperature );
+                        break;
+                case config_moving_detection_step_tag:
+                        cfg_disp.set< MOVING_DETECTION_STEP >( req.cfg.moving_detection_step );
+                        break;
+                }
         }
 
         void handle_message( const host_to_servio_get_config& req )

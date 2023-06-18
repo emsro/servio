@@ -21,6 +21,41 @@ enum status{
 	STATUS_SUCCESS = 0;
 }
 
+message config {
+oneof pld{
+	string model = 1;
+	uint32 position_conv_lower_setpoint_value = 2;
+	float position_conv_lower_setpoint_angle = 3;
+	uint32 position_conv_higher_setpoint_value = 4;
+	float position_conv_higher_setpoint_angle = 5;
+	float current_conv_scale = 6;
+	float current_conv_offset = 7;
+	float temp_conv_scale = 8;
+	float temp_conv_offset = 9;
+	float voltage_conv_scale = 10;
+	float current_loop_p = 11;
+	float current_loop_i = 12;
+	float current_loop_d = 13;
+	float current_lim_min = 14;
+	float current_lim_max = 15;
+	float velocity_loop_p = 16;
+	float velocity_loop_i = 17;
+	float velocity_loop_d = 18;
+	float velocity_lim_min = 19;
+	float velocity_lim_max = 20;
+	float position_loop_p = 21;
+	float position_loop_i = 22;
+	float position_loop_d = 23;
+	float position_lim_min = 24;
+	float position_lim_max = 25;
+	float static_friction_scale = 26;
+	float static_friction_decay = 27;
+	float minimum_voltage = 28;
+	float maximum_temperature = 29;
+	float moving_detection_step = 30;
+}
+}
+
 message host_to_servio{
 
 	message switch_to{
@@ -33,8 +68,7 @@ message host_to_servio{
 	};
 
 	message set_config{
-		uint32 key = 1;
-		bytes msg = 2;
+		config cfg = 1;
 	};
 
 	message get_config{
