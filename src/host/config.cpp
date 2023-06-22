@@ -15,8 +15,6 @@ boost::asio::awaitable< void > load_config( boost::asio::serial_port& port )
         for ( int i = 0; i < desc->field_count(); i++ ) {
                 const google::protobuf::FieldDescriptor* field = desc->field( i );
 
-                EMLABCPP_INFO_LOG( "Querying ", field->full_name() );
-
                 servio::HostToServio msg;
                 msg.mutable_get_config()->set_key( static_cast< uint32_t >( field->number() ) );
 
@@ -29,9 +27,11 @@ boost::asio::awaitable< void > load_config( boost::asio::serial_port& port )
                         auto [succ, ser_msg] =
                             em::encode_cobs( em::view_n( buffer.data(), size ), msg_buffer );
 
+                        msg_buffer[ser_msg.size()] = std::byte{ 0 };  // TODO: well this is unsafe
+
                         co_await async_write(
                             port,
-                            boost::asio::buffer( ser_msg.begin(), ser_msg.size() ),
+                            boost::asio::buffer( ser_msg.begin(), ser_msg.size() + 1 ),
                             boost::asio::use_awaitable );
                 }
 
@@ -49,7 +49,7 @@ boost::asio::awaitable< void > load_config( boost::asio::serial_port& port )
 
                 servio::ServioToHost reply;
                 reply.ParseFromArray( deser_msg.begin(), static_cast< int >( deser_msg.size() ) );
-                EMLABCPP_INFO_LOG( "Got ", reply.DebugString() );
+                EMLABCPP_INFO_LOG( "Got ", reply.get_config().ShortDebugString() );
         }
 }
 int main( int argc, char* argv[] )
@@ -57,7 +57,7 @@ int main( int argc, char* argv[] )
 
         boost::asio::io_context  context;
         boost::asio::serial_port port{ context, argv[1] };
-
+        port.set_option( boost::asio::serial_port_base::baud_rate( 115200 ) );
         co_spawn( context, load_config( port ), boost::asio::detached );
 
         context.run();

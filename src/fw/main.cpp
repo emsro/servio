@@ -75,6 +75,10 @@ int main()
                         fw::stop_exec();
                 }
 
+                if ( ldata.empty() ) {
+                        continue;
+                }
+
                 HostToServio msg;
                 pb_istream_t stream = pb_istream_from_buffer(
                     reinterpret_cast< uint8_t* >( ldata.begin() ), ldata.size() );

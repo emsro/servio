@@ -27,9 +27,12 @@ void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
         }
 
         if ( rx_byte_ == std::byte{ 0 } ) {
-                isizes_.push_back( current_size_ );
+                isizes_.push_back( current_size_ - 1 );
                 current_size_ = 0;
-                cd_           = em::cobs_decoder{};
+        } else if ( current_size_ == 0 ) {
+                current_size_ += 1;
+                // TODO: add this as constructor to decoder
+                cd_ = em::cobs_decoder{ static_cast< uint8_t >( rx_byte_ ) };
         } else {
                 current_size_ += 1;
                 ibuffer_.push_back( cd_.iter( rx_byte_ ) );
@@ -40,7 +43,7 @@ void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
 std::tuple< bool, em::view< std::byte* > > comms::load_message( em::view< std::byte* > data )
 {
         if ( isizes_.empty() ) {
-                return { false, {} };
+                return { true, {} };
         }
         if ( isizes_.front() > data.size() ) {
                 return { false, em::view< std::byte* >{} };
@@ -71,13 +74,15 @@ void comms::send( em::view< std::byte* > data )
         if ( !succ ) {
                 return;
         }
+        // TODO: this might fial
+        otmp_[used.size()] = std::byte{ 0 };
 
         // TODO: problematic cast
         // TODO: return value ignored
         HAL_UART_Transmit_DMA(
             &h_.uart,
             reinterpret_cast< uint8_t* >( otmp_.begin() ),
-            static_cast< uint16_t >( used.size() ) );
+            static_cast< uint16_t >( used.size() + 1 ) );
 }
 
 }  // namespace fw

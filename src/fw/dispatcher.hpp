@@ -26,7 +26,11 @@ struct dispatcher
         {
                 uint8_t      buffer[64];
                 pb_ostream_t stream = pb_ostream_from_buffer( buffer, sizeof( buffer ) );
-                pb_encode( &stream, ServioToHost_fields, &msg );
+                bool         res    = pb_encode( &stream, ServioToHost_fields, &msg );
+                if ( !res ) {
+                        // TODO: well this is aggresive
+                        fw::stop_exec();
+                }
 
                 comm.send(
                     em::view_n( reinterpret_cast< std::byte* >( buffer ), stream.bytes_written ) );
@@ -56,6 +60,9 @@ struct dispatcher
                 case HostToServio_get_config_tag:
                         handle_message( msg.get_config );
                         break;
+                default:
+                        // TODO: well, this is aggresive
+                        fw::stop_exec();
                 }
                 // TODO: add default switch case for an error
         }

@@ -1,4 +1,3 @@
-
 #include "fw/board.hpp"
 
 #include "setup.hpp"
@@ -58,6 +57,7 @@ void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
 
 void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
 {
+        brd::COMMS.rx_cplt_irq( h );
         brd::DEBUG_COMMS.rx_cplt_irq( h );
 }
 void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
