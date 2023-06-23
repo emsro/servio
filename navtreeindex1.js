@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"classindication.html#aaeefb4a81531e0fd82015a1c4711acd6":[11,0,18,3],
+"classindication.html#adb09ac11f7b5843bc12fb2d72c5c6a61":[11,0,18,0],
+"classmetrics.html":[11,0,21],
+"classmetrics.html#a0a1a38155ed3f17f9f5e35a74995c53e":[11,0,21,6],
 "classmetrics.html#a0abe3e4ecf0484ad696124398a891683":[11,0,21,0],
 "classmetrics.html#a1652cf9662c52857e68d548bbbc833ae":[11,0,21,3],
 "classmetrics.html#a6998476ebd787b4c66aec862cec0e313":[11,0,21,4],
@@ -30,9 +34,11 @@ var NAVTREEINDEX1 =
 "comms_8hpp.html":[12,0,1,3,0,4],
 "comms_8hpp.html#aa2b2cca69c016b9186f0f4ffe08a20a1":[12,0,1,3,0,4,2],
 "comms_8hpp_source.html":[12,0,1,3,0,4],
-"config_8cpp.html":[12,0,1,4,0],
-"config_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[12,0,1,4,0,1],
-"config_8cpp.html#ab8e6a38d5ddfec2e6007bfde92f00901":[12,0,1,4,0,0],
+"config_8cpp.html":[12,0,1,4,0,0],
+"config_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[12,0,1,4,0,0,1],
+"config_8cpp.html#a23443364b27b21ad0f355c7f1f2c8fd7":[12,0,1,4,0,0,0],
+"config_8cpp.html#a4abafebb65ad39a76ecac31918047341":[12,0,1,4,0,0,2],
+"config_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc":[12,0,1,4,0,0,3],
 "config_8hpp.html":[12,0,1,7],
 "config_8hpp.html#a47c4f5d88721c7f2a6ba1393476be862":[12,0,1,7,0,1],
 "config_8hpp.html#a6fe1bfcf6fa825ff4ed7e7465cfee94c":[12,0,1,7,4],
@@ -102,6 +108,7 @@ var NAVTREEINDEX1 =
 "dir_4fc88152649b3a7b0043869ddaf105b0.html":[12,0,1,3],
 "dir_52d5c93d1a27df9f60d01a37fbb92cbd.html":[12,0,1,5],
 "dir_68267d1309a1af8e8297ef4c3efbcdba.html":[12,0,1],
+"dir_6c74e2a7b85de5032c860caf8881cebf.html":[12,0,1,4,0],
 "dir_84e79ac80b913c2fb5b9e077744e9498.html":[12,0,1,4],
 "dir_9a897557d0cbd6e5d9a83e76c8d50360.html":[12,0,0,0],
 "dir_e68e8157741866f444e17edd764ebbae.html":[12,0,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX1 =
 "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md18":[4,2],
 "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md19":[4,3],
 "md_doc_adr_0005_servo_shall_provide_velocity_control.html":[5],
-"md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md21":[5,0],
-"md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md22":[5,1],
-"md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md23":[5,2],
-"md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md24":[5,3],
-"md_doc_adr_0006_servo_shall_provide_current_control.html":[6],
-"md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md26":[6,0],
-"md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md27":[6,1],
-"md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md28":[6,2]
+"md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md21":[5,0]
 };
