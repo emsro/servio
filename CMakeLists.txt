@@ -42,11 +42,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   target_link_libraries(proto PUBLIC ${Protobuf_LIBRARIES})
   target_include_directories(proto PUBLIC ${PROTO_HDRS_DIR})
 
-  add_executable(config src/host/config.cpp)
-  target_link_libraries(config PRIVATE serviolib proto)
-  servio_compile_options(config)
-  target_compile_options(config PRIVATE -Og -g)
-
+  add_subdirectory(src/host)
   add_subdirectory(tests)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
