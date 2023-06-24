@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['get_5fcmd_138',['get_cmd',['../namespacehost.html#a9547714e96ad8795e2843bd6101d0281',1,'host']]],
   ['get_5fconfig_139',['GET_CONFIG',['../protocol_8hpp.html#a9fe239f040a4f52225c7db24b6f717dba151e9cc2a1f78680c582dc0cf2878054',1,'protocol.hpp']]],
   ['get_5fconfig_140',['get_config',['../namespacebrd.html#a10ac5b886764fca055e1e7f4e7d335db',1,'brd']]],
   ['get_5fconfig_5frequest_141',['get_config_request',['../structget__config__request.html',1,'']]],

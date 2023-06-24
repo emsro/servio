@@ -17,8 +17,12 @@ var namespaces_dup =
     [ "host", "namespacehost.html", [
       [ "async_cobs_read", "namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944", null ],
       [ "async_cobs_write", "namespacehost.html#ab1f9b2447852b1472ee4583385f03c25", null ],
-      [ "load_config", "namespacehost.html#a23443364b27b21ad0f355c7f1f2c8fd7", null ],
-      [ "query_config", "namespacehost.html#a4abafebb65ad39a76ecac31918047341", null ]
+      [ "get_cmd", "namespacehost.html#a9547714e96ad8795e2843bd6101d0281", null ],
+      [ "load_config", "namespacehost.html#ad2e17bdaed64d1f43702f8fa67d9de40", null ],
+      [ "load_config_field", "namespacehost.html#a4db5ca56edefb9afa751c123059ea70e", null ],
+      [ "print_configs", "namespacehost.html#a4922b139e8ef029fb89d958324cd3229", null ],
+      [ "print_configs_json", "namespacehost.html#aa95b9cb3fa60fad1d01e4c287f10de5d", null ],
+      [ "query_cmd", "namespacehost.html#a8f558c9849d130286b595ae32c931a4d", null ]
     ] ],
     [ "kalman", "namespacekalman.html", "namespacekalman" ],
     [ "mtr", "namespacemtr.html", "namespacemtr" ]
