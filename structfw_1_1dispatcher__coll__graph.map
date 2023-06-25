@@ -1,10 +1,9 @@
 <map id="fw::dispatcher" name="fw::dispatcher">
-<area shape="rect" id="node1" title=" " alt="" coords="293,273,405,300"/>
+<area shape="rect" id="node1" title=" " alt="" coords="219,273,331,300"/>
 <area shape="rect" id="node2" href="$classfw_1_1acquisition.html" title=" " alt="" coords="5,184,120,211"/>
-<area shape="rect" id="node3" href="$classfw_1_1comms.html" title=" " alt="" coords="145,184,237,211"/>
-<area shape="rect" id="node4" href="$classfw_1_1hbridge.html" title=" " alt="" coords="261,184,355,211"/>
-<area shape="rect" id="node5" href="$structfw_1_1cfg__dispatcher.html" title=" " alt="" coords="429,184,568,211"/>
-<area shape="rect" id="node6" href="$structfw_1_1core.html" title=" " alt="" coords="463,95,535,121"/>
-<area shape="rect" id="node7" href="$structconverter.html" title=" " alt="" coords="413,5,497,32"/>
-<area shape="rect" id="node8" href="$classcontrol.html" title=" " alt="" coords="527,5,593,32"/>
+<area shape="rect" id="node3" href="$classfw_1_1hbridge.html" title=" " alt="" coords="144,184,237,211"/>
+<area shape="rect" id="node4" href="$structfw_1_1cfg__dispatcher.html" title=" " alt="" coords="312,184,451,211"/>
+<area shape="rect" id="node5" href="$structfw_1_1core.html" title=" " alt="" coords="345,95,417,121"/>
+<area shape="rect" id="node6" href="$structconverter.html" title=" " alt="" coords="295,5,379,32"/>
+<area shape="rect" id="node7" href="$classcontrol.html" title=" " alt="" coords="409,5,476,32"/>
 </map>
