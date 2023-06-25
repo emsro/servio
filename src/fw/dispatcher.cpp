@@ -108,6 +108,9 @@ void dispatcher::handle_message( const Config& req )
         map_cfg( req.which_pld, req, [&]< cfg_key K >( auto& val ) {
                 cfg_disp.set< K >( val );
         } );
+        ServioToHost msg;
+        msg.which_pld = ServioToHost_set_config_tag;
+        reply( msg );
 }
 
 void dispatcher::handle_message( const HostToServio_GetConfig& req )
@@ -116,6 +119,7 @@ void dispatcher::handle_message( const HostToServio_GetConfig& req )
         map_cfg( req.key, msg.get_config, [&]< cfg_key K, typename T >( T& val ) {
                 if constexpr ( std::same_as< typename cfg_map::reg_value_type< K >, model_name > ) {
                         const model_name& n = cfg_disp.map.get_val< K >();
+                        // TODO: well, dis is bug to happen
                         std::strncpy( val, n.data(), std::min( n.size(), sizeof( val ) ) );
                 } else {
                         val = cfg_disp.map.get_val< K >();

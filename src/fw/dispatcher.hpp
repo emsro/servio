@@ -22,7 +22,7 @@ struct dispatcher
         converter&      conv;
         microseconds    now;
 
-        void reply( ServioToHost& msg )
+        void reply( const ServioToHost& msg )
         {
                 uint8_t      buffer[64];
                 pb_ostream_t stream = pb_ostream_from_buffer( buffer, sizeof( buffer ) );
@@ -91,6 +91,9 @@ struct dispatcher
                         break;
                 }
                 // TODO: add default switch case for an error
+                ServioToHost rep;
+                rep.which_pld = ServioToHost_set_mode_tag;
+                reply( rep );
         }
 
         void handle_message( const HostToServio_GetProperty& msg )
