@@ -98,8 +98,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a25bcbd75c4d91e73f6cbc9f0fa58d944"><td class="memTemplParams" colspan="2">template&lt;typename Port &gt; </td></tr>
 <tr class="memitem:a25bcbd75c4d91e73f6cbc9f0fa58d944"><td class="memTemplItemLeft" align="right" valign="top">boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">async_cobs_read</a> (Port &amp;port, em::view&lt; std::byte * &gt; buffer)</td></tr>
 <tr class="separator:a25bcbd75c4d91e73f6cbc9f0fa58d944"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4db5ca56edefb9afa751c123059ea70e"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; servio::Config &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a4db5ca56edefb9afa751c123059ea70e">load_config_field</a> (boost::asio::serial_port &amp;port, uint32_t item_number)</td></tr>
-<tr class="separator:a4db5ca56edefb9afa751c123059ea70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ce469c3901611701f899ebb9b1a141"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; servio::ServioToHost &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a88ce469c3901611701f899ebb9b1a141">exchange</a> (boost::asio::serial_port &amp;port, const servio::HostToServio &amp;msg)</td></tr>
+<tr class="separator:a88ce469c3901611701f899ebb9b1a141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d5997c5dee2cb64216812f9f0de3595"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; servio::Config &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a9d5997c5dee2cb64216812f9f0de3595">load_config_field</a> (boost::asio::serial_port &amp;port, const google::protobuf::FieldDescriptor *field)</td></tr>
+<tr class="separator:a9d5997c5dee2cb64216812f9f0de3595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf0ac7222b99599e6856e31289fe58d"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a8cf0ac7222b99599e6856e31289fe58d">set_config_field</a> (boost::asio::serial_port &amp;port, const servio::Config &amp;cfg)</td></tr>
+<tr class="separator:a8cf0ac7222b99599e6856e31289fe58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2e17bdaed64d1f43702f8fa67d9de40"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; std::vector&lt; servio::Config &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#ad2e17bdaed64d1f43702f8fa67d9de40">load_config</a> (boost::asio::serial_port &amp;port)</td></tr>
 <tr class="separator:ad2e17bdaed64d1f43702f8fa67d9de40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4922b139e8ef029fb89d958324cd3229"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a4922b139e8ef029fb89d958324cd3229">print_configs</a> (const std::vector&lt; servio::Config &gt; out)</td></tr>
@@ -110,6 +114,8 @@ Functions</h2></td></tr>
 <tr class="separator:a8f558c9849d130286b595ae32c931a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9547714e96ad8795e2843bd6101d0281"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a9547714e96ad8795e2843bd6101d0281">get_cmd</a> (boost::asio::serial_port &amp;port, const std::string &amp;name, bool json)</td></tr>
 <tr class="separator:a9547714e96ad8795e2843bd6101d0281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f438a3def3d79c6d26cf92113b26c8a"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a4f438a3def3d79c6d26cf92113b26c8a">set_cmd</a> (boost::asio::serial_port &amp;port, const std::string &amp;name, std::string value)</td></tr>
+<tr class="separator:a4f438a3def3d79c6d26cf92113b26c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a25bcbd75c4d91e73f6cbc9f0fa58d944"></a>
@@ -172,6 +178,36 @@ template&lt;typename Port &gt; </div>
 
 </div>
 </div>
+<a id="a88ce469c3901611701f899ebb9b1a141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ce469c3901611701f899ebb9b1a141">&#9670;&nbsp;</a></span>exchange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::asio::awaitable&lt; servio::ServioToHost &gt; host::exchange </td>
+          <td>(</td>
+          <td class="paramtype">boost::asio::serial_port &amp;&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const servio::HostToServio &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">async_cobs_read()</a>, and <a class="el" href="namespacehost.html#ab1f9b2447852b1472ee4583385f03c25">async_cobs_write()</a>.</p>
+
+</div>
+</div>
 <a id="a9547714e96ad8795e2843bd6101d0281"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9547714e96ad8795e2843bd6101d0281">&#9670;&nbsp;</a></span>get_cmd()</h2>
 
@@ -204,7 +240,7 @@ template&lt;typename Port &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacehost.html#a4db5ca56edefb9afa751c123059ea70e">load_config_field()</a>, <a class="el" href="namespacehost.html#a4922b139e8ef029fb89d958324cd3229">print_configs()</a>, and <a class="el" href="namespacehost.html#aa95b9cb3fa60fad1d01e4c287f10de5d">print_configs_json()</a>.</p>
+<p class="reference">References <a class="el" href="namespacehost.html#a9d5997c5dee2cb64216812f9f0de3595">load_config_field()</a>, <a class="el" href="namespacehost.html#a4922b139e8ef029fb89d958324cd3229">print_configs()</a>, and <a class="el" href="namespacehost.html#aa95b9cb3fa60fad1d01e4c287f10de5d">print_configs_json()</a>.</p>
 
 </div>
 </div>
@@ -224,12 +260,12 @@ template&lt;typename Port &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacehost.html#a4db5ca56edefb9afa751c123059ea70e">load_config_field()</a>.</p>
+<p class="reference">References <a class="el" href="namespacehost.html#a9d5997c5dee2cb64216812f9f0de3595">load_config_field()</a>.</p>
 
 </div>
 </div>
-<a id="a4db5ca56edefb9afa751c123059ea70e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4db5ca56edefb9afa751c123059ea70e">&#9670;&nbsp;</a></span>load_config_field()</h2>
+<a id="a9d5997c5dee2cb64216812f9f0de3595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d5997c5dee2cb64216812f9f0de3595">&#9670;&nbsp;</a></span>load_config_field()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,8 +279,8 @@ template&lt;typename Port &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>item_number</em>&#160;</td>
+          <td class="paramtype">const google::protobuf::FieldDescriptor *&#160;</td>
+          <td class="paramname"><em>field</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -254,7 +290,7 @@ template&lt;typename Port &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">async_cobs_read()</a>, and <a class="el" href="namespacehost.html#ab1f9b2447852b1472ee4583385f03c25">async_cobs_write()</a>.</p>
+<p class="reference">References <a class="el" href="namespacehost.html#a88ce469c3901611701f899ebb9b1a141">exchange()</a>.</p>
 
 </div>
 </div>
@@ -324,13 +360,79 @@ template&lt;typename Port &gt; </div>
 
 </div>
 </div>
+<a id="a4f438a3def3d79c6d26cf92113b26c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f438a3def3d79c6d26cf92113b26c8a">&#9670;&nbsp;</a></span>set_cmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::asio::awaitable&lt; void &gt; host::set_cmd </td>
+          <td>(</td>
+          <td class="paramtype">boost::asio::serial_port &amp;&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacehost.html#a88ce469c3901611701f899ebb9b1a141">exchange()</a>.</p>
+
+</div>
+</div>
+<a id="a8cf0ac7222b99599e6856e31289fe58d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf0ac7222b99599e6856e31289fe58d">&#9670;&nbsp;</a></span>set_config_field()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::asio::awaitable&lt; void &gt; host::set_config_field </td>
+          <td>(</td>
+          <td class="paramtype">boost::asio::serial_port &amp;&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const servio::Config &amp;&#160;</td>
+          <td class="paramname"><em>cfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacehost.html#a88ce469c3901611701f899ebb9b1a141">exchange()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacehost.html">host</a></li>
-    <li class="footer">Generated on Sat Jun 24 2023 06:48:02 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jun 25 2023 15:24:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

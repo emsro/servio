@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_7ecurrent_5fcb_5finterface_855',['~current_cb_interface',['../classcurrent__cb__interface.html#afa5479f450a072d17789895d571dae58',1,'current_cb_interface']]],
-  ['_7eperiod_5fcb_5finterface_856',['~period_cb_interface',['../classperiod__cb__interface.html#a61028ef4ddee1c5024405e8b590c741f',1,'period_cb_interface']]],
-  ['_7eposition_5fcb_5finterface_857',['~position_cb_interface',['../classposition__cb__interface.html#a455c5689809e2c4850157fcf562c63db',1,'position_cb_interface']]]
+  ['velocity_858',['velocity',['../namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565',1,'kalman']]],
+  ['velocity_5firq_859',['velocity_irq',['../classcontrol.html#a833ad5ec20acd80a38fd8593e21f45d3',1,'control']]],
+  ['voltage_5fconverter_860',['voltage_converter',['../classvoltage__converter.html#aa68adcd5401740fc89d0342384e556e7',1,'voltage_converter']]]
 ];
