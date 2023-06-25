@@ -23,8 +23,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "metrics.hpp", "metrics_8hpp.html", [
       [ "metrics", "classmetrics.html", "classmetrics" ]
     ] ],
-    [ "protocol.cpp", "protocol_8cpp.html", null ],
-    [ "protocol.hpp", "protocol_8hpp.html", "protocol_8hpp" ],
     [ "scaled.hpp", "scaled_8hpp.html", [
       [ "scaled", "classscaled.html", "classscaled" ]
     ] ],

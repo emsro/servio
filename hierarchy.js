@@ -6,7 +6,6 @@ var hierarchy =
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", null ],
     [ "fw::check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "fw::clock", "classfw_1_1clock.html", null ],
-    [ "command< ID >", "structcommand.html", null ],
     [ "fw::comms", "classfw_1_1comms.html", null ],
     [ "ctl::config", "namespacectl.html#structctl_1_1config", null ],
     [ "control", "classcontrol.html", null ],
@@ -21,9 +20,6 @@ var hierarchy =
     [ "fw::acquisition::current_sequence", "structfw_1_1acquisition_1_1current__sequence.html", null ],
     [ "fw::debug_comms", "classfw_1_1debug__comms.html", null ],
     [ "fw::dispatcher", "structfw_1_1dispatcher.html", null ],
-    [ "get_config_request", "structget__config__request.html", null ],
-    [ "get_config_response", "structget__config__response.html", null ],
-    [ "getter< ID, T >", "structgetter.html", null ],
     [ "fw::hal_check", "namespacefw.html#structfw_1_1hal__check", null ],
     [ "fw::acquisition::handles", "classfw_1_1acquisition.html#structfw_1_1acquisition_1_1handles", null ],
     [ "fw::clock::handles", "classfw_1_1clock.html#structfw_1_1clock_1_1handles", null ],
@@ -36,7 +32,6 @@ var hierarchy =
     [ "fw::leds", "classfw_1_1leds.html", null ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", null ],
     [ "ctl::linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", null ],
-    [ "message_with_float< ID, ProtocolType >", "structmessage__with__float.html", null ],
     [ "metrics", "classmetrics.html", null ],
     [ "fw::monitor", "classfw_1_1monitor.html", null ],
     [ "cfg::payload", "structcfg_1_1payload.html", null ],
@@ -56,7 +51,6 @@ var hierarchy =
     [ "emlabcpp::quantity", null, [
       [ "scaled< T, BitOffset >", "classscaled.html", null ]
     ] ],
-    [ "set_config", "structset__config.html", null ],
     [ "fw::standard_callbacks", "structfw_1_1standard__callbacks.html", null ],
     [ "kalman::state_range", "namespacekalman.html#structkalman_1_1state__range", null ],
     [ "static_detector", "structstatic__detector.html", null ],

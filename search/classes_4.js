@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['get_5fconfig_5frequest_583',['get_config_request',['../structget__config__request.html',1,'']]],
-  ['get_5fconfig_5fresponse_584',['get_config_response',['../structget__config__response.html',1,'']]],
-  ['getter_585',['getter',['../structgetter.html',1,'']]]
+  ['hal_5fcheck_546',['hal_check',['../namespacefw.html#structfw_1_1hal__check',1,'fw']]],
+  ['handles_547',['handles',['../classfw_1_1acquisition.html#structfw_1_1acquisition_1_1handles',1,'fw::acquisition::handles'],['../classfw_1_1clock.html#structfw_1_1clock_1_1handles',1,'fw::clock::handles'],['../classfw_1_1comms.html#structfw_1_1comms_1_1handles',1,'fw::comms::handles'],['../classfw_1_1debug__comms.html#structfw_1_1debug__comms_1_1handles',1,'fw::debug_comms::handles'],['../classfw_1_1hbridge.html#structfw_1_1hbridge_1_1handles',1,'fw::hbridge::handles'],['../classfw_1_1leds.html#structfw_1_1leds_1_1handles',1,'fw::leds::handles']]],
+  ['hbridge_548',['hbridge',['../classfw_1_1hbridge.html',1,'fw']]]
 ];

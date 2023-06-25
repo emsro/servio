@@ -120,7 +120,7 @@ var NAVTREEINDEX =
 "acquisition_8cpp.html",
 "classindication.html#aaeefb4a81531e0fd82015a1c4711acd6",
 "md_doc_adr_0004_servo_shall_provide_position_control.html",
-"stm32g4xx__hal__conf_8h.html#ad048ac737242c2c2cb9f4a72953d10ce"
+"structcfg_1_1payload.html#a3abc72d179aa82ee807ff02534a31dfb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

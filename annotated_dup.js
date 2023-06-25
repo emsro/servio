@@ -34,7 +34,6 @@ var annotated_dup =
       [ "posvel_kalman", "structmtr_1_1posvel__kalman.html", "structmtr_1_1posvel__kalman" ]
     ] ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", "config_8hpp_structcfg__keyval" ],
-    [ "command", "structcommand.html", "structcommand" ],
     [ "control", "classcontrol.html", "classcontrol" ],
     [ "converter", "structconverter.html", "structconverter" ],
     [ "current_cb", "structcurrent__cb.html", "structcurrent__cb" ],
@@ -43,12 +42,8 @@ var annotated_dup =
     [ "empty_current_cb", "structempty__current__cb.html", "structempty__current__cb" ],
     [ "empty_period_cb", "structempty__period__cb.html", "structempty__period__cb" ],
     [ "empty_position_cb", "structempty__position__cb.html", "structempty__position__cb" ],
-    [ "get_config_request", "structget__config__request.html", "structget__config__request" ],
-    [ "get_config_response", "structget__config__response.html", "structget__config__response" ],
-    [ "getter", "structgetter.html", "structgetter" ],
     [ "indication", "classindication.html", "classindication" ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", "base_8hpp_structleds__vals" ],
-    [ "message_with_float", "structmessage__with__float.html", "structmessage__with__float" ],
     [ "metrics", "classmetrics.html", "classmetrics" ],
     [ "period_cb", "structperiod__cb.html", "structperiod__cb" ],
     [ "period_cb_interface", "classperiod__cb__interface.html", "classperiod__cb__interface" ],
@@ -56,7 +51,6 @@ var annotated_dup =
     [ "position_cb_interface", "classposition__cb__interface.html", "classposition__cb__interface" ],
     [ "position_converter", "classposition__converter.html", "classposition__converter" ],
     [ "scaled", "classscaled.html", "classscaled" ],
-    [ "set_config", "structset__config.html", "structset__config" ],
     [ "static_detector", "structstatic__detector.html", "structstatic__detector" ],
     [ "temperature_converter", "classtemperature__converter.html", "classtemperature__converter" ],
     [ "voltage_converter", "classvoltage__converter.html", "classvoltage__converter" ]
