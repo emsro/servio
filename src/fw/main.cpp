@@ -4,7 +4,6 @@
 #include "fw/core.hpp"
 #include "fw/dispatcher.hpp"
 #include "fw/globals.hpp"
-#include "protocol.hpp"
 
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/iterators/numeric.h>

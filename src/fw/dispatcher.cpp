@@ -125,8 +125,9 @@ void dispatcher::handle_message( const HostToServio_GetConfig& req )
                         val = cfg_disp.map.get_val< K >();
                 }
         } );
-        msg.get_config.which_pld = req.key;
-        msg.which_pld            = ServioToHost_get_config_tag;
+        msg.get_config.which_pld =
+            static_cast< uint16_t >( req.key );  // TODO: well this is not ideal
+        msg.which_pld = ServioToHost_get_config_tag;
         reply( msg );
 }
 

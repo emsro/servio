@@ -2,7 +2,6 @@
 
 #include "host/async_cobs.h"
 #include "io.pb.h"
-#include "protocol.hpp"
 
 #include <boost/asio.hpp>
 #include <boost/asio/serial_port.hpp>

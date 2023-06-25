@@ -20,8 +20,7 @@ include(cmake/nanopb.cmake)
 servio_add_library(
   TARGET serviolib
   INCLUDE src/
-  SOURCES src/metrics.cpp src/control.cpp src/protocol.cpp src/indication.cpp
-          src/cfg/storage.cpp
+  SOURCES src/metrics.cpp src/control.cpp src/indication.cpp src/cfg/storage.cpp
   LIBS emlabcpp
   OPTS -Os)
 

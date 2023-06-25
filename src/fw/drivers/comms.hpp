@@ -1,12 +1,11 @@
-#include "protocol.hpp"
-
 #include <emlabcpp/experimental/cobs.h>
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/static_circular_buffer.h>
-#include <emlabcpp/static_function.h>
 #include <stm32g4xx_hal.h>
 
 #pragma once
+
+namespace em = emlabcpp;
 
 namespace fw
 {
