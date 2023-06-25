@@ -88,7 +88,7 @@ int main()
                         fw::stop_exec();
                 }
 
-                ServioToHost reply = dis.handle_message( msg );
+                ServioToHost reply = handle_message( dis, msg );
 
                 std::byte buffer[ServioToHost_size];
                 auto [esucc, data] = fw::encode( buffer, reply );
