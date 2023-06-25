@@ -1,8 +1,8 @@
 #include "control.hpp"
-#include "drivers/acquisition.hpp"
-#include "drivers/comms.hpp"
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/conversion.hpp"
+#include "fw/drivers/acquisition.hpp"
+#include "fw/drivers/hbridge.hpp"
 
 #include <io.pb.h>
 
