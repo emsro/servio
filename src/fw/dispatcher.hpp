@@ -13,12 +13,13 @@ namespace fw
 
 struct dispatcher
 {
-        hbridge&        hb;
-        acquisition&    acquis;
-        control&        ctl;
-        cfg_dispatcher& cfg_disp;
-        converter&      conv;
-        microseconds    now;
+        hbridge&                                        hb;
+        acquisition&                                    acquis;
+        control&                                        ctl;
+        cfg_dispatcher&                                 cfg_disp;
+        em::function_view< bool( const cfg_map& cfg ) > cfg_writer;
+        converter&                                      conv;
+        microseconds                                    now;
 };
 
 ServioToHost handle_message( dispatcher& dis, const HostToServio& msg );

@@ -8,6 +8,7 @@ namespace fw
 
 bool decode( em::view< std::byte* > data, HostToServio& msg )
 {
+        // TODO: stream has error string that can be reported!
         pb_istream_t stream =
             pb_istream_from_buffer( reinterpret_cast< uint8_t* >( data.begin() ), data.size() );
         bool status = pb_decode( &stream, HostToServio_fields, &msg );

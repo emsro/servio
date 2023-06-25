@@ -91,6 +91,24 @@ ServioToHost handle_message( const cfg_dispatcher& cfg_disp, const HostToServio_
         return msg;
 }
 
+ServioToHost handle_message(
+    const cfg_dispatcher& cfg_disp,
+    const auto&           cfg_writer,
+    const HostToServio_CommitConfig& )
+{
+        std::ignore = cfg_disp;
+
+        bool succ = cfg_writer( cfg_disp.map );
+        if ( !succ ) {
+                // TODO: well, this is aggresive
+                fw::stop_exec();
+        }
+
+        ServioToHost msg;
+        msg.which_pld = ServioToHost_commit_config_tag;
+        return msg;
+}
+
 ServioToHost handle_message( dispatcher& dis, const HostToServio& msg )
 {
         switch ( msg.which_pld ) {
@@ -102,6 +120,8 @@ ServioToHost handle_message( dispatcher& dis, const HostToServio& msg )
                 return handle_message( dis.cfg_disp, msg.set_config );
         case HostToServio_get_config_tag:
                 return handle_message( dis.cfg_disp, msg.get_config );
+        case HostToServio_commit_config_tag:
+                return handle_message( dis.cfg_disp, dis.cfg_writer, msg.commit_config );
         default:
                 // TODO: well, this is aggresive
                 fw::stop_exec();

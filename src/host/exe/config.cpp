@@ -41,6 +41,7 @@ load_config_field( boost::asio::serial_port& port, const google::protobuf::Field
 
         servio::ServioToHost reply = co_await exchange( port, msg );
         co_return reply.get_config();
+        // TODO: check reply state;
 }
 
 boost::asio::awaitable< void >
@@ -103,6 +104,16 @@ boost::asio::awaitable< void > query_cmd( boost::asio::serial_port& port, bool j
         } else {
                 print_configs( out );
         }
+}
+
+boost::asio::awaitable< void > commit_cmd( boost::asio::serial_port& port )
+{
+        servio::HostToServio msg;
+        *msg.mutable_commit_config() = servio::HostToServio::CommitConfig{};
+
+        servio::ServioToHost reply = co_await exchange( port, msg );
+        std::ignore                = reply;
+        // TODO: check reply state;
 }
 
 boost::asio::awaitable< void >
@@ -222,6 +233,14 @@ int main( int argc, char* argv[] )
                     context,
                     host::set_cmd( opt_port.value(), field, value ),
                     boost::asio::detached );
+        } );
+
+        cli.command( "commit" )
+            .desc( "Tells the servo to store the configuration into persistent config" );
+        cli.opt( &device, "d device", "/dev/ttyUSB0" ).desc( "Device to use" );
+        cli.opt( &baudrate, "b baudrate", 115200 ).desc( "Baudrate for communication" );
+        cli.action( [&]( Dim::Cli& ) {
+                co_spawn( context, host::commit_cmd( opt_port.value() ), boost::asio::detached );
         } );
 
         if ( !cli.parse( static_cast< std::size_t >( argc ), argv ) ) {

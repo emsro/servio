@@ -12,19 +12,40 @@
 #include <emlabcpp/pid.h>
 #include <string>
 
+bool store_config( const cfg::page& page, const cfg::payload& pld, const cfg_map& cfg )
+{
+        const std::byte* start      = page.begin();
+        uint32_t         start_addr = reinterpret_cast< uint32_t >( start );
+
+        HAL_FLASH_Unlock();
+
+        auto f = [&]( std::size_t offset, uint64_t val ) -> bool {
+                HAL_StatusTypeDef status =
+                    HAL_FLASH_Program( FLASH_TYPEPROGRAM_DOUBLEWORD, start_addr + offset, val );
+                return status == HAL_OK;
+        };
+
+        bool succ = cfg::store( pld, cfg, f );
+
+        HAL_FLASH_Lock();
+
+        return succ;
+}
+
 int main()
 {
         brd::setup_board();
 
         cfg_map cfg = brd::get_config();
 
-        em::view                   pages = brd::get_persistent_pages();
-        std::optional< cfg::page > p     = cfg::find_latest_page( pages );
-        if ( p.has_value() ) {
+        em::view                   pages     = brd::get_persistent_pages();
+        std::optional< cfg::page > last_page = cfg::find_latest_page( pages );
+        cfg::payload               last_cfg_payload{ .git_ver = "", .id = 0 };
+        if ( last_page.has_value() ) {
                 auto check_f = [&]( const cfg::payload& ) {
                         return true;
                 };
-                bool cfg_loaded = cfg::load( *p, check_f, cfg );
+                bool cfg_loaded = cfg::load( *last_page, check_f, cfg );
 
                 if ( !cfg_loaded ) {
                         fw::stop_exec();
@@ -61,13 +82,29 @@ int main()
         while ( true ) {
                 cor.tick( *leds_ptr, clock_ptr->get_us() );
 
+                std::optional< cfg::page > opt_page = cfg::find_next_page( pages );
+
+                if ( !opt_page ) {
+                        // TODO: well this is aggresive /o\...
+                        fw::stop_exec();
+                }
+
+                auto write_config = [&]( const cfg_map& cfg ) -> bool {
+                        cfg::payload pld{
+                            .git_ver = "",  // TODO: << fix this
+                            .id      = last_cfg_payload.id + 1,
+                        };
+                        return store_config( *opt_page, pld, cfg );
+                };
+
                 fw::dispatcher dis{
-                    .hb       = *hbridge_ptr,
-                    .acquis   = *acquisition_ptr,
-                    .ctl      = cor.ctl,
-                    .cfg_disp = cfg_dis,
-                    .conv     = cor.conv,
-                    .now      = clock_ptr->get_us() };
+                    .hb         = *hbridge_ptr,
+                    .acquis     = *acquisition_ptr,
+                    .ctl        = cor.ctl,
+                    .cfg_disp   = cfg_dis,
+                    .cfg_writer = write_config,
+                    .conv       = cor.conv,
+                    .now        = clock_ptr->get_us() };
 
                 auto [lsucc, ldata] = comms_ptr->load_message( imsg );
 

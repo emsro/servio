@@ -104,16 +104,17 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
                                           dispatchlib fwlib STM32::Nano)
   target_link_libraries(
     prototype2
-    PRIVATE HAL::STM32::G4::CORTEX
+    PRIVATE HAL::STM32::G4::FLASH
+            HAL::STM32::G4::ADC
+            HAL::STM32::G4::ADCEx
+            HAL::STM32::G4::CORTEX
+            HAL::STM32::G4::DMA
+            HAL::STM32::G4::GPIO
             HAL::STM32::G4::OPAMP
             HAL::STM32::G4::PWR
             HAL::STM32::G4::PWREx
             HAL::STM32::G4::RCC
             HAL::STM32::G4::RCCEx
-            HAL::STM32::G4::ADC
-            HAL::STM32::G4::ADCEx
-            HAL::STM32::G4::DMA
-            HAL::STM32::G4::GPIO
             HAL::STM32::G4::TIM
             HAL::STM32::G4::TIMEx
             HAL::STM32::G4::UART

@@ -120,12 +120,18 @@ message HostToServio {
     uint32 key = 1;
   };
 
+  // Commands the servo to store the current configuration into memory. Note
+  // that this is severly limited by the MCUs flash and it's write limit. (10k
+  // for STM32G431)
+  message CommitConfig {};
+
   // Contains one of the available messages
   oneof pld {
     SetMode set_mode = 1;          // changes mode
     GetProperty get_property = 2;  // queries property
     Config set_config = 3;         // sets config value based on Config content
     GetConfig get_config = 4;      // retrivies config vlaue
+    CommitConfig commit_config = 5;  // commits current config
   };
 };
 
@@ -136,16 +142,17 @@ message ServioToHost {
   message GetProperty {
     Property property = 1;
     float value = 2;
-  }
+  };
 
-  message NoneReply {}
+  message NullReply {};
 
   // Each reply contains status enum
   Status stat = 1;
   oneof pld {
-    NoneReply set_mode = 2;        // reply for set mode
-    GetProperty get_property = 3;  // reply for get property command
-    NoneReply set_config = 4;      // reply for set_config
-    Config get_config = 5;         // reply for get config command
+    NullReply set_mode = 2;
+    GetProperty get_property = 3;
+    NullReply set_config = 4;
+    Config get_config = 5;
+    NullReply commit_config = 6;
   };
 };
