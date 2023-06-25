@@ -20,6 +20,8 @@ var namespacefw =
     [ "handler", "namespacefw.html#a1bbd86673200da7abcf665f3e7f02f91", null ],
     [ "current", "namespacefw.html#a64eab76f1b3079c437cf48bbd5501d5c", null ],
     [ "current", "namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd", null ],
+    [ "decode", "namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76", null ],
+    [ "encode", "namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc", null ],
     [ "map_cfg", "namespacefw.html#ad943f4c362e1f40802cd65bf76d87775", null ],
     [ "multistart", "namespacefw.html#ac05d95b2aaa02b49156b63e48e57b69a", null ],
     [ "operator<<", "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e", null ],

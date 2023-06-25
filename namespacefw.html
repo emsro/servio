@@ -148,6 +148,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ad943f4c362e1f40802cd65bf76d87775"><td class="memTemplParams" colspan="2">template&lt;typename Cfg , typename UnaryFunction &gt; </td></tr>
 <tr class="memitem:ad943f4c362e1f40802cd65bf76d87775"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefw.html#ad943f4c362e1f40802cd65bf76d87775">map_cfg</a> (uint32_t key, Cfg &amp;cfg, UnaryFunction &amp;&amp;f)</td></tr>
 <tr class="separator:ad943f4c362e1f40802cd65bf76d87775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad87d2b13282640562c4ff917a3fb7d76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76">decode</a> (em::view&lt; std::byte * &gt; data, HostToServio &amp;msg)</td></tr>
+<tr class="memdesc:ad87d2b13282640562c4ff917a3fb7d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">decodes a bytes from data to HostToServio message, returns true on success  <a href="namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76">More...</a><br /></td></tr>
+<tr class="separator:ad87d2b13282640562c4ff917a3fb7d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e6e4a4b2d63a55fdc7c36ea8cf601dc"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc">encode</a> (em::view&lt; std::byte * &gt; data, const ServioToHost &amp;msg)</td></tr>
+<tr class="memdesc:a1e6e4a4b2d63a55fdc7c36ea8cf601dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">encodes a ServioToHost message to bytes, returns succes bool and subset of data that contains the serialized message  <a href="namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc">More...</a><br /></td></tr>
+<tr class="separator:a1e6e4a4b2d63a55fdc7c36ea8cf601dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0b580f4dd8010ffb0db37533802021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a> ()</td></tr>
 <tr class="separator:a8e0b580f4dd8010ffb0db37533802021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac05d95b2aaa02b49156b63e48e57b69a"><td class="memTemplParams" colspan="2">template&lt;typename... Components&gt; </td></tr>
@@ -318,6 +324,66 @@ buffer_was_full</td>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="classcurrent__converter.html#a0e8459100b0ecd154d81ff68d1c78bfa">current_converter::convert()</a>, <a class="el" href="structconverter.html#a8cb1044de319e60167cd89fe01a96d05">converter::current</a>, and <a class="el" href="classfw_1_1hbridge.html#ac38464e5478083c11269d41c07c83edb">fw::hbridge::get_direction()</a>.</p>
+
+</div>
+</div>
+<a id="ad87d2b13282640562c4ff917a3fb7d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad87d2b13282640562c4ff917a3fb7d76">&#9670;&nbsp;</a></span>decode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool fw::decode </td>
+          <td>(</td>
+          <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HostToServio &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>decodes a bytes from data to HostToServio message, returns true on success </p>
+
+</div>
+</div>
+<a id="a1e6e4a4b2d63a55fdc7c36ea8cf601dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e6e4a4b2d63a55fdc7c36ea8cf601dc">&#9670;&nbsp;</a></span>encode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt; fw::encode </td>
+          <td>(</td>
+          <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ServioToHost &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>encodes a ServioToHost message to bytes, returns succes bool and subset of data that contains the serialized message </p>
 
 </div>
 </div>
@@ -582,7 +648,7 @@ template&lt;typename... Components&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li>
-    <li class="footer">Generated on Sun Jun 25 2023 16:39:47 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jun 25 2023 17:47:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

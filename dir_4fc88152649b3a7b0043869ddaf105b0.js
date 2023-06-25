@@ -28,6 +28,8 @@ var dir_4fc88152649b3a7b0043869ddaf105b0 =
     [ "monitor.hpp", "monitor_8hpp.html", [
       [ "monitor", "classfw_1_1monitor.html", "classfw_1_1monitor" ]
     ] ],
+    [ "servio_pb.cpp", "servio__pb_8cpp.html", "servio__pb_8cpp" ],
+    [ "servio_pb.hpp", "servio__pb_8hpp.html", "servio__pb_8hpp" ],
     [ "util.cpp", "util_8cpp.html", "util_8cpp" ],
     [ "util.hpp", "util_8hpp.html", "util_8hpp" ]
 ];

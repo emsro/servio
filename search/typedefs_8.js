@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reghandler_930',['reghandler',['../namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a',1,'cfg']]]
+  ['reghandler_937',['reghandler',['../namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a',1,'cfg']]]
 ];
