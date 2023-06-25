@@ -3,9 +3,7 @@
 #include "drivers/comms.hpp"
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/conversion.hpp"
-
-#include <io.pb.h>
-#include <pb_encode.h>
+#include "fw/servio_pb.hpp"
 
 #pragma once
 
@@ -24,16 +22,14 @@ struct dispatcher
 
         void reply( const ServioToHost& msg )
         {
-                uint8_t      buffer[64];
-                pb_ostream_t stream = pb_ostream_from_buffer( buffer, sizeof( buffer ) );
-                bool         res    = pb_encode( &stream, ServioToHost_fields, &msg );
-                if ( !res ) {
+                std::byte buffer[64];
+                auto [succ, data] = encode( buffer, msg );
+                if ( !succ ) {
                         // TODO: well this is aggresive
                         fw::stop_exec();
                 }
 
-                comm.send(
-                    em::view_n( reinterpret_cast< std::byte* >( buffer ), stream.bytes_written ) );
+                comm.send( data );
         }
 
         void reply_get_property( float val )

@@ -4,12 +4,12 @@
 #include "fw/core.hpp"
 #include "fw/dispatcher.hpp"
 #include "fw/globals.hpp"
+#include "fw/servio_pb.hpp"
 
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/iterators/numeric.h>
 #include <emlabcpp/match.h>
 #include <emlabcpp/pid.h>
-#include <pb_decode.h>
 #include <string>
 
 int main()
@@ -79,10 +79,8 @@ int main()
                 }
 
                 HostToServio msg;
-                pb_istream_t stream = pb_istream_from_buffer(
-                    reinterpret_cast< uint8_t* >( ldata.begin() ), ldata.size() );
-                bool status = pb_decode( &stream, HostToServio_fields, &msg );
-                if ( !status ) {
+                bool         succ = fw::decode( ldata, msg );
+                if ( !succ ) {
                         // TODO: well, this is aggresive
                         fw::stop_exec();
                 }

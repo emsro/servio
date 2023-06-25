@@ -83,6 +83,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             src/fw/extra.cpp
             src/fw/globals.cpp
             src/fw/util.cpp
+            src/fw/servio_pb.cpp
     LIBS serviolib dispatchlib proto CMSIS::STM32::G431xx HAL::STM32::G4
     OPTS -Og)
 
