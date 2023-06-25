@@ -85,7 +85,8 @@ $(document).ready(function(){initNavTree('dispatcher_8hpp.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">dispatcher.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -95,13 +96,13 @@ $(document).ready(function(){initNavTree('dispatcher_8hpp.html',''); initResizab
 <code>#include &quot;<a class="el" href="comms_8hpp_source.html">drivers/comms.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cfg__dispatcher_8hpp_source.html">fw/cfg_dispatcher.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="conversion_8hpp_source.html">fw/conversion.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="servio__pb_8hpp_source.html">fw/servio_pb.hpp</a>&quot;</code><br />
+<code>#include &lt;io.pb.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for dispatcher.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="dispatcher_8hpp__incl.svg" width="1540" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="dispatcher_8hpp__incl.svg" width="1510" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -109,21 +110,88 @@ $(document).ready(function(){initNavTree('dispatcher_8hpp.html',''); initResizab
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1dispatcher.html">fw::dispatcher</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structfw_1_1dispatcher"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#structfw_1_1dispatcher">fw::dispatcher</a></td></tr>
+<tr class="separator:structfw_1_1dispatcher"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacefw"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html">fw</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad775dfc81f5ea33fcc4d3d661c31ac3c"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#ad775dfc81f5ea33fcc4d3d661c31ac3c">fw::handle_message</a> (dispatcher &amp;dis, const HostToServio &amp;msg)</td></tr>
+<tr class="separator:ad775dfc81f5ea33fcc4d3d661c31ac3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structfw_1_1dispatcher" id="structfw_1_1dispatcher"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structfw_1_1dispatcher">&#9670;&nbsp;</a></span>fw::dispatcher</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct fw::dispatcher</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for fw::dispatcher:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfw_1_1dispatcher__coll__graph.svg" width="504" height="306"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a267028ba650fa2c33babbdf9f209f421"></a><a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;</td>
+<td class="fieldname">
+acquis</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a64062389efe7fe57f45c591f7d608afc"></a><a class="el" href="structfw_1_1cfg__dispatcher.html">cfg_dispatcher</a> &amp;</td>
+<td class="fieldname">
+cfg_disp</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ac7282035a48db732bb3abfbfb69467d0"></a><a class="el" href="structconverter.html">converter</a> &amp;</td>
+<td class="fieldname">
+conv</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a15cf4f98017315abc2a188bbef019777"></a><a class="el" href="classcontrol.html">control</a> &amp;</td>
+<td class="fieldname">
+ctl</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a7c345ee7500a1b6a1f141f01d7f7f9d3"></a><a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;</td>
+<td class="fieldname">
+hb</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a5d0815a7b50f52ffe1b8ef2a4a74c700"></a><a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></td>
+<td class="fieldname">
+now</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dispatcher_8hpp.html">dispatcher.hpp</a></li>
-    <li class="footer">Generated on Sun Jun 25 2023 18:02:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jun 25 2023 18:14:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

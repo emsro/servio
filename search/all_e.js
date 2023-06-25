@@ -10,7 +10,7 @@ var searchData=
   ['default_2ehpp_116',['default.hpp',['../default_8hpp.html',1,'']]],
   ['disengage_117',['disengage',['../classcontrol.html#a72d1d14a2342d2a7c4a0b61d2cfb27c6',1,'control']]],
   ['disengaged_118',['DISENGAGED',['../indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14afeffe8e712a5ce9a0cedef11c364fa74',1,'indication.hpp']]],
-  ['dispatcher_119',['dispatcher',['../structfw_1_1dispatcher.html',1,'fw']]],
+  ['dispatcher_119',['dispatcher',['../namespacefw.html#structfw_1_1dispatcher',1,'fw']]],
   ['dispatcher_2ecpp_120',['dispatcher.cpp',['../dispatcher_8cpp.html',1,'']]],
   ['dispatcher_2ehpp_121',['dispatcher.hpp',['../dispatcher_8hpp.html',1,'']]],
   ['dma_122',['dma',['../classfw_1_1acquisition.html#ae06c9f1f85308b7f439bb1b7baeb19e6',1,'fw::acquisition::handles']]],

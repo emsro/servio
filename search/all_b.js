@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['acquis_20',['acquis',['../structfw_1_1dispatcher.html#a267028ba650fa2c33babbdf9f209f421',1,'fw::dispatcher']]],
+  ['acquis_20',['acquis',['../namespacefw.html#a267028ba650fa2c33babbdf9f209f421',1,'fw::dispatcher']]],
   ['acquisition_21',['acquisition',['../classfw_1_1acquisition.html#afa7f011bc53c452eacc40b06ca5f3917',1,'fw::acquisition::acquisition()'],['../classfw_1_1acquisition.html',1,'fw::acquisition']]],
   ['acquisition_2ecpp_22',['acquisition.cpp',['../acquisition_8cpp.html',1,'']]],
   ['acquisition_2ehpp_23',['acquisition.hpp',['../acquisition_8hpp.html',1,'']]],

@@ -15,7 +15,7 @@ var annotated_dup =
       [ "cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", "structfw_1_1cfg__dispatcher" ],
       [ "core", "structfw_1_1core.html", "structfw_1_1core" ],
       [ "standard_callbacks", "structfw_1_1standard__callbacks.html", "structfw_1_1standard__callbacks" ],
-      [ "dispatcher", "structfw_1_1dispatcher.html", "structfw_1_1dispatcher" ],
+      [ "dispatcher", "namespacefw.html#structfw_1_1dispatcher", "namespacefw_structfw_1_1dispatcher_dup" ],
       [ "acquisition_status", "namespacefw.html#structfw_1_1acquisition__status", "namespacefw_structfw_1_1acquisition__status_dup" ],
       [ "acquisition", "classfw_1_1acquisition.html", "classfw_1_1acquisition" ],
       [ "clock", "classfw_1_1clock.html", "classfw_1_1clock" ],

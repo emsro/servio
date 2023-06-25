@@ -17,14 +17,13 @@ var dir_4fc88152649b3a7b0043869ddaf105b0 =
       [ "standard_callbacks", "structfw_1_1standard__callbacks.html", "structfw_1_1standard__callbacks" ]
     ] ],
     [ "dispatcher.cpp", "dispatcher_8cpp.html", "dispatcher_8cpp" ],
-    [ "dispatcher.hpp", "dispatcher_8hpp.html", [
-      [ "dispatcher", "structfw_1_1dispatcher.html", "structfw_1_1dispatcher" ]
-    ] ],
+    [ "dispatcher.hpp", "dispatcher_8hpp.html", "dispatcher_8hpp" ],
     [ "extra.cpp", "extra_8cpp.html", "extra_8cpp" ],
     [ "globals.cpp", "globals_8cpp.html", "globals_8cpp" ],
     [ "globals.hpp", "globals_8hpp.html", null ],
     [ "it.cpp", "it_8cpp.html", "it_8cpp" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
+    [ "map_cfg.hpp", "map__cfg_8hpp.html", "map__cfg_8hpp" ],
     [ "monitor.hpp", "monitor_8hpp.html", [
       [ "monitor", "classfw_1_1monitor.html", "classfw_1_1monitor" ]
     ] ],

@@ -19,7 +19,7 @@ var hierarchy =
     [ "current_converter", "classcurrent__converter.html", null ],
     [ "fw::acquisition::current_sequence", "structfw_1_1acquisition_1_1current__sequence.html", null ],
     [ "fw::debug_comms", "classfw_1_1debug__comms.html", null ],
-    [ "fw::dispatcher", "structfw_1_1dispatcher.html", null ],
+    [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
     [ "fw::hal_check", "namespacefw.html#structfw_1_1hal__check", null ],
     [ "fw::acquisition::handles", "classfw_1_1acquisition.html#structfw_1_1acquisition_1_1handles", null ],
     [ "fw::clock::handles", "classfw_1_1clock.html#structfw_1_1clock_1_1handles", null ],

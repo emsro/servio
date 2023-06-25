@@ -91,12 +91,13 @@ $(document).ready(function(){initNavTree('dispatcher_8cpp.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="dispatcher_8hpp_source.html">fw/dispatcher.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="map__cfg_8hpp_source.html">fw/map_cfg.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for dispatcher.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="dispatcher_8cpp__incl.svg" width="835" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="dispatcher_8cpp__incl.svg" width="771" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -107,9 +108,16 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad943f4c362e1f40802cd65bf76d87775"><td class="memTemplParams" colspan="2">template&lt;typename Cfg , typename UnaryFunction &gt; </td></tr>
-<tr class="memitem:ad943f4c362e1f40802cd65bf76d87775"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefw.html#ad943f4c362e1f40802cd65bf76d87775">fw::map_cfg</a> (uint32_t key, Cfg &amp;cfg, UnaryFunction &amp;&amp;f)</td></tr>
-<tr class="separator:ad943f4c362e1f40802cd65bf76d87775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad520058d8cd1c93d9c447a7e5038ca5f"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#ad520058d8cd1c93d9c447a7e5038ca5f">fw::handle_message</a> (<a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <a class="el" href="classcontrol.html">control</a> &amp;ctl, const HostToServio_SetMode &amp;msg)</td></tr>
+<tr class="separator:ad520058d8cd1c93d9c447a7e5038ca5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ed53498f123857843c8c0718527f610"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a9ed53498f123857843c8c0718527f610">fw::handle_message</a> (const <a class="el" href="structconverter.html">converter</a> &amp;conv, const acquisition &amp;acquis, const hbridge &amp;hb, const HostToServio_GetProperty &amp;msg)</td></tr>
+<tr class="separator:a9ed53498f123857843c8c0718527f610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c108f5f673b7f5606fb3753085fa97"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a22c108f5f673b7f5606fb3753085fa97">fw::handle_message</a> (cfg_dispatcher &amp;cfg_disp, const Config &amp;req)</td></tr>
+<tr class="separator:a22c108f5f673b7f5606fb3753085fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12edc98c652ee65f41746fc5e9f95daf"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a12edc98c652ee65f41746fc5e9f95daf">fw::handle_message</a> (const cfg_dispatcher &amp;cfg_disp, const HostToServio_GetConfig &amp;req)</td></tr>
+<tr class="separator:a12edc98c652ee65f41746fc5e9f95daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad775dfc81f5ea33fcc4d3d661c31ac3c"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#ad775dfc81f5ea33fcc4d3d661c31ac3c">fw::handle_message</a> (dispatcher &amp;dis, const HostToServio &amp;msg)</td></tr>
+<tr class="separator:ad775dfc81f5ea33fcc4d3d661c31ac3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -117,7 +125,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dispatcher_8cpp.html">dispatcher.cpp</a></li>
-    <li class="footer">Generated on Sun Jun 25 2023 18:02:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jun 25 2023 18:14:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
