@@ -56,11 +56,12 @@ int main()
 
         cor.ind.on_event( clock_ptr->get_us(), indication_event::INITIALIZED );
 
-        std::array< std::byte, 128 > imsg;
+        std::byte imsg[HostToServio_size];
 
         while ( true ) {
+                cor.tick( *leds_ptr, clock_ptr->get_us() );
+
                 fw::dispatcher dis{
-                    .comm     = *comms_ptr,
                     .hb       = *hbridge_ptr,
                     .acquis   = *acquisition_ptr,
                     .ctl      = cor.ctl,
@@ -78,6 +79,8 @@ int main()
                         continue;
                 }
 
+                cor.ind.on_event( clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
+
                 HostToServio msg;
                 bool         succ = fw::decode( ldata, msg );
                 if ( !succ ) {
@@ -85,10 +88,15 @@ int main()
                         fw::stop_exec();
                 }
 
-                dis.handle_message( msg );
+                ServioToHost reply = dis.handle_message( msg );
 
-                cor.ind.on_event( clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
+                std::byte buffer[ServioToHost_size];
+                auto [esucc, data] = fw::encode( buffer, reply );
+                if ( !esucc ) {
+                        // TODO: well this is aggresive
+                        fw::stop_exec();
+                }
 
-                cor.tick( *leds_ptr, clock_ptr->get_us() );
+                comms_ptr->send( data );
         }
 }

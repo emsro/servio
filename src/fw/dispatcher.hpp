@@ -12,7 +12,6 @@ namespace fw
 
 struct dispatcher
 {
-        comms&          comm;
         hbridge&        hb;
         acquisition&    acquis;
         control&        ctl;
@@ -20,50 +19,26 @@ struct dispatcher
         converter&      conv;
         microseconds    now;
 
-        void reply( const ServioToHost& msg )
-        {
-                std::byte buffer[64];
-                auto [succ, data] = encode( buffer, msg );
-                if ( !succ ) {
-                        // TODO: well this is aggresive
-                        fw::stop_exec();
-                }
-
-                comm.send( data );
-        }
-
-        void reply_get_property( float val )
-        {
-                ServioToHost msg;
-                msg.stat               = STATUS_SUCCESS;
-                msg.get_property.value = val;
-                msg.which_pld          = ServioToHost_get_property_tag;
-                reply( msg );
-        }
-
-        void handle_message( const HostToServio& msg )
+        ServioToHost handle_message( const HostToServio& msg )
         {
                 switch ( msg.which_pld ) {
                 case HostToServio_set_mode_tag:
-                        handle_message( msg.set_mode );
-                        break;
+                        return handle_message( msg.set_mode );
                 case HostToServio_get_property_tag:
-                        handle_message( msg.get_property );
-                        break;
+                        return handle_message( msg.get_property );
                 case HostToServio_set_config_tag:
-                        handle_message( msg.set_config );
-                        break;
+                        return handle_message( msg.set_config );
                 case HostToServio_get_config_tag:
-                        handle_message( msg.get_config );
-                        break;
+                        return handle_message( msg.get_config );
                 default:
                         // TODO: well, this is aggresive
                         fw::stop_exec();
                 }
                 // TODO: add default switch case for an error
+                return {};
         }
 
-        void handle_message( const HostToServio_SetMode& msg )
+        ServioToHost handle_message( const HostToServio_SetMode& msg )
         {
                 float val;
                 switch ( msg.mode ) {
@@ -89,10 +64,10 @@ struct dispatcher
                 // TODO: add default switch case for an error
                 ServioToHost rep;
                 rep.which_pld = ServioToHost_set_mode_tag;
-                reply( rep );
+                return rep;
         }
 
-        void handle_message( const HostToServio_GetProperty& msg )
+        ServioToHost handle_message( const HostToServio_GetProperty& msg )
         {
                 float val;
                 switch ( msg.property ) {
@@ -110,12 +85,16 @@ struct dispatcher
                         break;
                 }
                 // TODO: add default switch case for an error
-                reply_get_property( val );
+                ServioToHost repl;
+                repl.stat               = STATUS_SUCCESS;
+                repl.get_property.value = val;
+                repl.which_pld          = ServioToHost_get_property_tag;
+                return repl;
         }
 
-        void handle_message( const Config& req );
+        ServioToHost handle_message( const Config& req );
 
-        void handle_message( const HostToServio_GetConfig& req );
+        ServioToHost handle_message( const HostToServio_GetConfig& req );
 };
 
 }  // namespace fw

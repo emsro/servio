@@ -103,17 +103,17 @@ void map_cfg( uint32_t key, Cfg& cfg, UnaryFunction&& f )
         }
 }
 
-void dispatcher::handle_message( const Config& req )
+ServioToHost dispatcher::handle_message( const Config& req )
 {
         map_cfg( req.which_pld, req, [&]< cfg_key K >( auto& val ) {
                 cfg_disp.set< K >( val );
         } );
         ServioToHost msg;
         msg.which_pld = ServioToHost_set_config_tag;
-        reply( msg );
+        return msg;
 }
 
-void dispatcher::handle_message( const HostToServio_GetConfig& req )
+ServioToHost dispatcher::handle_message( const HostToServio_GetConfig& req )
 {
         ServioToHost msg;
         map_cfg( req.key, msg.get_config, [&]< cfg_key K, typename T >( T& val ) {
@@ -128,7 +128,7 @@ void dispatcher::handle_message( const HostToServio_GetConfig& req )
         msg.get_config.which_pld =
             static_cast< uint16_t >( req.key );  // TODO: well this is not ideal
         msg.which_pld = ServioToHost_get_config_tag;
-        reply( msg );
+        return msg;
 }
 
 }  // namespace fw
