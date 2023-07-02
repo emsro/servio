@@ -5,6 +5,8 @@
 
 #pragma once
 
+namespace em = emlabcpp;
+
 namespace host
 {
 
