@@ -78,9 +78,10 @@ ServioToHost handle_message( const cfg_dispatcher& cfg_disp, const HostToServio_
         ServioToHost msg;
         map_cfg( req.key, msg.get_config, [&]< cfg_key K, typename T >( T& val ) {
                 if constexpr ( std::same_as< typename cfg_map::reg_value_type< K >, model_name > ) {
+                        std::memset( val, '\0', sizeof( val ) );
                         const model_name& n = cfg_disp.map.get_val< K >();
                         // TODO: well, dis is bug to happen
-                        std::strncpy( val, n.data(), std::min( n.size(), sizeof( val ) ) );
+                        std::strncpy( val, n.data(), std::min( n.size() + 1, sizeof( val ) - 1 ) );
                 } else {
                         val = cfg_disp.map.get_val< K >();
                 }
