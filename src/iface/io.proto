@@ -123,7 +123,12 @@ message HostToServio {
   // Commands the servo to store the current configuration into memory. Note
   // that this is severly limited by the MCUs flash and it's write limit. (10k
   // for STM32G431)
-  message CommitConfig {};
+  message CommitConfig {
+    // The key argument here is not necessary, but last time we tried this
+    // nanopb failed to parse an empty message. TODO: report this as a bug to
+    // nanopb
+    uint32 key = 1;
+  };
 
   // Contains one of the available messages
   oneof pld {
