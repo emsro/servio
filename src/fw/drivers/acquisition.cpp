@@ -148,7 +148,9 @@ void acquisition::period_elapsed_irq()
                     reinterpret_cast< uint32_t* >( &next_se.buffer ),
                     current_sequence::buffer_size );
                 if ( res != HAL_OK ) {
-                        stop_exec();
+                        status_.start_failed = true;
+                } else {
+                        period_i_ += 1;
                 }
         } else {
                 next_se.used = current_sequence::buffer_size - __HAL_DMA_GET_COUNTER( &h_.dma );
@@ -174,9 +176,8 @@ void acquisition::period_elapsed_irq()
                 side_state_ = next_side_state( side_state_ );
                 switch_adc_channel( side_state_ );
                 start_simple_reading();
+                period_i_ += 1;
         }
-
-        period_i_ += 1;
 }
 
 em::view< const uint16_t* > acquisition::get_current_reading() const

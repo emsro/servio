@@ -14,6 +14,7 @@ namespace fw
 
 struct acquisition_status
 {
+        bool start_failed    = false;
         bool buffer_was_full = false;
 };
 
