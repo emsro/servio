@@ -8,7 +8,7 @@ var searchData=
   ['booting_44',['BOOTING',['../indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14ad32cbe23a48d1576416d9eb314876c6d',1,'indication.hpp']]],
   ['brd_45',['brd',['../namespacebrd.html',1,'']]],
   ['buffer_46',['buffer',['../structfw_1_1acquisition_1_1current__sequence.html#a2db024a2a79a2a64e2662e83998dac38',1,'fw::acquisition::current_sequence']]],
-  ['buffer_5fsize_47',['buffer_size',['../structfw_1_1acquisition_1_1current__sequence.html#a3699cad154f0998dd01e00d890fcfe96',1,'fw::acquisition::current_sequence::buffer_size()'],['../config_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc',1,'buffer_size():&#160;config.cpp']]],
+  ['buffer_5fsize_47',['buffer_size',['../structfw_1_1acquisition_1_1current__sequence.html#a3699cad154f0998dd01e00d890fcfe96',1,'fw::acquisition::current_sequence::buffer_size()'],['../serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc',1,'buffer_size():&#160;serial.cpp']]],
   ['buffer_5fwas_5ffull_48',['buffer_was_full',['../namespacefw.html#a61e31aee7594c31cc25e2fa29c805d70',1,'fw::acquisition_status']]],
   ['busfault_5fhandler_49',['BusFault_Handler',['../it_8cpp.html#a850cefb17a977292ae5eb4cafa9976c3',1,'it.cpp']]]
 ];
