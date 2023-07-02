@@ -1,5 +1,12 @@
 var NAVTREEINDEX3 =
 {
+"stm32g4xx__hal__conf_8h.html#ac3dd74314ed62ac8575e2f9f48b3ac48":[12,0,1,19,29],
+"stm32g4xx__hal__conf_8h.html#ac5104af8fa310ea51facc7949116192e":[12,0,1,19,14],
+"stm32g4xx__hal__conf_8h.html#ac783fa1f8bcc0d8f9291cd1b6774411a":[12,0,1,19,4],
+"stm32g4xx__hal__conf_8h.html#ac79983d623c7f760c5077618a453561b":[12,0,1,19,78],
+"stm32g4xx__hal__conf_8h.html#acc33abd5393affd16cc4a1397839dfe4":[12,0,1,19,51],
+"stm32g4xx__hal__conf_8h.html#acc401aa182284795b055f6531e734b9a":[12,0,1,19,19],
+"stm32g4xx__hal__conf_8h.html#ad048ac737242c2c2cb9f4a72953d10ce":[12,0,1,19,80],
 "stm32g4xx__hal__conf_8h.html#ad18182e565b6900ed99874235c42bc05":[12,0,1,19,7],
 "stm32g4xx__hal__conf_8h.html#adf2c524ff7f06b1d339e3173839fddec":[12,0,1,19,39],
 "stm32g4xx__hal__conf_8h.html#ae27809d4959b9fd5b5d974e3e1c77d2e":[12,0,1,19,50],

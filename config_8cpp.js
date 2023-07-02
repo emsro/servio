@@ -1,5 +1,6 @@
 var config_8cpp =
 [
+    [ "commit_cmd", "config_8cpp.html#a0a92a9000fc8ea96711fd9626c5d610c", null ],
     [ "exchange", "config_8cpp.html#a88ce469c3901611701f899ebb9b1a141", null ],
     [ "get_cmd", "config_8cpp.html#a9547714e96ad8795e2843bd6101d0281", null ],
     [ "load_config", "config_8cpp.html#ad2e17bdaed64d1f43702f8fa67d9de40", null ],

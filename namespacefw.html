@@ -153,6 +153,8 @@ Functions</h2></td></tr>
 <tr class="separator:a22c108f5f673b7f5606fb3753085fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12edc98c652ee65f41746fc5e9f95daf"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a12edc98c652ee65f41746fc5e9f95daf">handle_message</a> (const <a class="el" href="structfw_1_1cfg__dispatcher.html">cfg_dispatcher</a> &amp;cfg_disp, const HostToServio_GetConfig &amp;req)</td></tr>
 <tr class="separator:a12edc98c652ee65f41746fc5e9f95daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca00d343acd2b6de4c45a060c5b51b4b"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#aca00d343acd2b6de4c45a060c5b51b4b">handle_message</a> (const <a class="el" href="structfw_1_1cfg__dispatcher.html">cfg_dispatcher</a> &amp;cfg_disp, const auto &amp;cfg_writer, const HostToServio_CommitConfig &amp;)</td></tr>
+<tr class="separator:aca00d343acd2b6de4c45a060c5b51b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad775dfc81f5ea33fcc4d3d661c31ac3c"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#ad775dfc81f5ea33fcc4d3d661c31ac3c">handle_message</a> (<a class="el" href="namespacefw.html#structfw_1_1dispatcher">dispatcher</a> &amp;dis, const HostToServio &amp;msg)</td></tr>
 <tr class="separator:ad775dfc81f5ea33fcc4d3d661c31ac3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad943f4c362e1f40802cd65bf76d87775"><td class="memTemplParams" colspan="2">template&lt;typename Cfg , typename UnaryFunction &gt; </td></tr>
@@ -216,6 +218,12 @@ cfg_disp</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
+<a id="abc087d1dd69318217d8092079298b283"></a>function_view&lt; bool(const <a class="el" href="config_8hpp.html#ad12076c2b0b05fdf3fd96b13a34686cc">cfg_map</a> &amp;cfg) &gt;</td>
+<td class="fieldname">
+cfg_writer</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
 <a id="ac7282035a48db732bb3abfbfb69467d0"></a><a class="el" href="structconverter.html">converter</a> &amp;</td>
 <td class="fieldname">
 conv</td>
@@ -260,6 +268,12 @@ now</td>
 <a id="a61e31aee7594c31cc25e2fa29c805d70"></a>bool</td>
 <td class="fieldname">
 buffer_was_full</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a75786f9e4ba0e490745d57d30f16ff73"></a>bool</td>
+<td class="fieldname">
+start_failed</td>
 <td class="fielddoc">
 </td></tr>
 </table>
@@ -459,7 +473,7 @@ buffer_was_full</td>
 </div>
 </div>
 <a id="a22c108f5f673b7f5606fb3753085fa97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22c108f5f673b7f5606fb3753085fa97">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c108f5f673b7f5606fb3753085fa97">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -488,8 +502,44 @@ buffer_was_full</td>
 
 </div>
 </div>
+<a id="aca00d343acd2b6de4c45a060c5b51b4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca00d343acd2b6de4c45a060c5b51b4b">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServioToHost fw::handle_message </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structfw_1_1cfg__dispatcher.html">cfg_dispatcher</a> &amp;&#160;</td>
+          <td class="paramname"><em>cfg_disp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const auto &amp;&#160;</td>
+          <td class="paramname"><em>cfg_writer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const HostToServio_CommitConfig &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structfw_1_1cfg__dispatcher.html#acd4eceafa6aa5606d61423ff9ede0445">fw::cfg_dispatcher::map</a>, and <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec()</a>.</p>
+
+</div>
+</div>
 <a id="a12edc98c652ee65f41746fc5e9f95daf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12edc98c652ee65f41746fc5e9f95daf">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a12edc98c652ee65f41746fc5e9f95daf">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -519,7 +569,7 @@ buffer_was_full</td>
 </div>
 </div>
 <a id="a9ed53498f123857843c8c0718527f610"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ed53498f123857843c8c0718527f610">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed53498f123857843c8c0718527f610">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -561,7 +611,7 @@ buffer_was_full</td>
 </div>
 </div>
 <a id="ad775dfc81f5ea33fcc4d3d661c31ac3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad775dfc81f5ea33fcc4d3d661c31ac3c">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[4/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad775dfc81f5ea33fcc4d3d661c31ac3c">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -586,12 +636,12 @@ buffer_was_full</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacefw.html#a267028ba650fa2c33babbdf9f209f421">fw::dispatcher::acquis</a>, <a class="el" href="namespacefw.html#a64062389efe7fe57f45c591f7d608afc">fw::dispatcher::cfg_disp</a>, <a class="el" href="namespacefw.html#ac7282035a48db732bb3abfbfb69467d0">fw::dispatcher::conv</a>, <a class="el" href="namespacefw.html#a15cf4f98017315abc2a188bbef019777">fw::dispatcher::ctl</a>, <a class="el" href="namespacefw.html#a7c345ee7500a1b6a1f141f01d7f7f9d3">fw::dispatcher::hb</a>, <a class="el" href="namespacefw.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">fw::dispatcher::now</a>, and <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec()</a>.</p>
+<p class="reference">References <a class="el" href="namespacefw.html#a267028ba650fa2c33babbdf9f209f421">fw::dispatcher::acquis</a>, <a class="el" href="namespacefw.html#a64062389efe7fe57f45c591f7d608afc">fw::dispatcher::cfg_disp</a>, <a class="el" href="namespacefw.html#abc087d1dd69318217d8092079298b283">fw::dispatcher::cfg_writer</a>, <a class="el" href="namespacefw.html#ac7282035a48db732bb3abfbfb69467d0">fw::dispatcher::conv</a>, <a class="el" href="namespacefw.html#a15cf4f98017315abc2a188bbef019777">fw::dispatcher::ctl</a>, <a class="el" href="namespacefw.html#a7c345ee7500a1b6a1f141f01d7f7f9d3">fw::dispatcher::hb</a>, <a class="el" href="namespacefw.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">fw::dispatcher::now</a>, and <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec()</a>.</p>
 
 </div>
 </div>
 <a id="ad520058d8cd1c93d9c447a7e5038ca5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad520058d8cd1c93d9c447a7e5038ca5f">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad520058d8cd1c93d9c447a7e5038ca5f">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -885,7 +935,7 @@ template&lt;typename... Components&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li>
-    <li class="footer">Generated on Sun Jun 25 2023 18:16:42 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 2 2023 19:53:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

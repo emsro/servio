@@ -23,6 +23,7 @@ var namespacefw =
     [ "decode", "namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76", null ],
     [ "encode", "namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc", null ],
     [ "handle_message", "namespacefw.html#a22c108f5f673b7f5606fb3753085fa97", null ],
+    [ "handle_message", "namespacefw.html#aca00d343acd2b6de4c45a060c5b51b4b", null ],
     [ "handle_message", "namespacefw.html#a12edc98c652ee65f41746fc5e9f95daf", null ],
     [ "handle_message", "namespacefw.html#a9ed53498f123857843c8c0718527f610", null ],
     [ "handle_message", "namespacefw.html#ad775dfc81f5ea33fcc4d3d661c31ac3c", null ],

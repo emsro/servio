@@ -112,6 +112,8 @@ Functions</h2></td></tr>
 <tr class="separator:aa95b9cb3fa60fad1d01e4c287f10de5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f558c9849d130286b595ae32c931a4d"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a8f558c9849d130286b595ae32c931a4d">query_cmd</a> (boost::asio::serial_port &amp;port, bool json)</td></tr>
 <tr class="separator:a8f558c9849d130286b595ae32c931a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a92a9000fc8ea96711fd9626c5d610c"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a0a92a9000fc8ea96711fd9626c5d610c">commit_cmd</a> (boost::asio::serial_port &amp;port)</td></tr>
+<tr class="separator:a0a92a9000fc8ea96711fd9626c5d610c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9547714e96ad8795e2843bd6101d0281"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a9547714e96ad8795e2843bd6101d0281">get_cmd</a> (boost::asio::serial_port &amp;port, const std::string &amp;name, bool json)</td></tr>
 <tr class="separator:a9547714e96ad8795e2843bd6101d0281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f438a3def3d79c6d26cf92113b26c8a"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a4f438a3def3d79c6d26cf92113b26c8a">set_cmd</a> (boost::asio::serial_port &amp;port, const std::string &amp;name, std::string value)</td></tr>
@@ -175,6 +177,26 @@ template&lt;typename Port &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a92a9000fc8ea96711fd9626c5d610c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a92a9000fc8ea96711fd9626c5d610c">&#9670;&nbsp;</a></span>commit_cmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::asio::awaitable&lt; void &gt; host::commit_cmd </td>
+          <td>(</td>
+          <td class="paramtype">boost::asio::serial_port &amp;&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacehost.html#a88ce469c3901611701f899ebb9b1a141">exchange()</a>.</p>
 
 </div>
 </div>
@@ -432,7 +454,7 @@ template&lt;typename Port &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacehost.html">host</a></li>
-    <li class="footer">Generated on Sun Jun 25 2023 18:16:42 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 2 2023 19:53:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
