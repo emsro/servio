@@ -11,13 +11,11 @@ namespace host
 template < typename Port >
 boost::asio::awaitable< void > async_cobs_write( Port& port, em::view< std::byte* > msg )
 {
-        EMLABCPP_INFO_LOG( "Input has ", msg.size(), " bytes" );
         std::vector< std::byte > msg_buffer( msg.size() * 2, std::byte{ 0 } );
         auto [succ, ser_msg] = em::encode_cobs( msg, em::data_view( msg_buffer ) );
 
         msg_buffer[ser_msg.size()] = std::byte{ 0 };  // TODO: well this is unsafe
 
-        EMLABCPP_INFO_LOG( "Writing ", ser_msg.size() + 1, " bytes" );
         co_await async_write(
             port,
             boost::asio::buffer( ser_msg.begin(), ser_msg.size() + 1 ),

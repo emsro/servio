@@ -109,7 +109,7 @@ boost::asio::awaitable< void > query_cmd( boost::asio::serial_port& port, bool j
 boost::asio::awaitable< void > commit_cmd( boost::asio::serial_port& port )
 {
         servio::HostToServio msg;
-        *msg.mutable_commit_config() = servio::HostToServio::CommitConfig{};
+        msg.mutable_commit_config()->set_key( 42 );
 
         servio::ServioToHost reply = co_await exchange( port, msg );
         std::ignore                = reply;
