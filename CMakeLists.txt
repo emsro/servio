@@ -25,7 +25,7 @@ servio_add_library(
   OPTS -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
-  include(cmake/dimcli.cmake)
+  include(cmake/args.cmake)
 
   find_package(Protobuf REQUIRED)
 
