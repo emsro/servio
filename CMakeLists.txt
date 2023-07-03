@@ -17,34 +17,10 @@ include(cmake/utils.cmake)
 # include(cmake/gitversion.cmake) # is not fine tuned yet
 include(cmake/nanopb.cmake)
 
-servio_add_library(
-  TARGET serviolib
-  INCLUDE src/
-  SOURCES src/metrics.cpp src/control.cpp src/indication.cpp src/cfg/storage.cpp
-  LIBS emlabcpp
-  OPTS -Os)
-
 if(${SERVIO_PLATFORM} STREQUAL "host")
-  include(cmake/args.cmake)
-
-  find_package(Protobuf REQUIRED)
-
-  include(CTest)
-  enable_testing()
-
-  protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS src/iface/io.proto)
-  get_filename_component(PROTO_HDRS_DIR ${PROTO_HDRS} DIRECTORY)
-
   target_compile_options(
     emlabcpp PUBLIC -DEMLABCPP_USE_LOGGING -DEMLABCPP_USE_NLOHMANN_JSON
                     -DEMLABCPP_USE_GTEST)
-
-  add_library(proto STATIC ${PROTO_SRCS})
-  target_link_libraries(proto PUBLIC ${Protobuf_LIBRARIES})
-  target_include_directories(proto PUBLIC ${PROTO_HDRS_DIR})
-
-  add_subdirectory(src/host)
-  add_subdirectory(tests)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
@@ -54,38 +30,30 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   set(CMAKE_C_FLAGS
       "${CMAKE_C_FLAGS} -fsingle-precision-constant -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16  -mfloat-abi=hard"
   )
+endif()
+
+add_subdirectory(src)
+
+if(${SERVIO_PLATFORM} STREQUAL "host")
+
+  include(cmake/args.cmake)
+
+  include(CTest)
+  enable_testing()
+  add_subdirectory(src/host)
+  add_subdirectory(tests)
+
+elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   stm32_fetch_hal(G4)
   stm32_fetch_cmsis(G4)
-  find_package(CMSIS COMPONENTS STM32G4 REQUIRED GLOBAL)
+  find_package(
+    CMSIS
+    COMPONENTS STM32G4
+    REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
-  nanopb_generate_cpp(PROTO_SRCS PROTO_HDRS src/iface/io.proto)
-
-  add_library(proto STATIC ${PROTO_SRCS} ${PROTO_HDRS})
-  target_link_libraries(proto PUBLIC nanopb_lib)
-  target_include_directories(proto PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
-
-  servio_add_library(
-    TARGET dispatchlib
-    INCLUDE src/
-    SOURCES src/fw/dispatcher.cpp src/fw/cfg_dispatcher.cpp
-    LIBS serviolib proto CMSIS::STM32::G431xx HAL::STM32::G4
-    OPTS -O3)
-
-  servio_add_library(
-    TARGET fwlib
-    SOURCES src/fw/drivers/acquisition.cpp
-            src/fw/drivers/comms.cpp
-            src/fw/drivers/debug_comms.cpp
-            src/fw/drivers/hbridge.cpp
-            src/fw/drivers/leds.cpp
-            src/fw/extra.cpp
-            src/fw/globals.cpp
-            src/fw/util.cpp
-            src/fw/servio_pb.cpp
-    LIBS serviolib dispatchlib proto CMSIS::STM32::G431xx HAL::STM32::G4
-    OPTS -Og)
+  add_subdirectory(src/fw)
 
   servio_add_library(
     TARGET prototype2_board
@@ -96,12 +64,12 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
             boards/prototype2/config.cpp
             boards/prototype2/uart.cpp
             boards/prototype2/timers.cpp
-    LIBS serviolib dispatchlib CMSIS::STM32::G431xx HAL::STM32::G4
-    OPTS -Og)
+    LIBS serviolib CMSIS::STM32::G431xx HAL::STM32::G4
+    OPTS -Os)
 
   add_library(prototype2 STATIC)
-  target_link_libraries(prototype2 PUBLIC prototype2_board serviolib
-                                          dispatchlib fwlib STM32::Nano)
+  target_link_libraries(prototype2 PUBLIC prototype2_board serviolib fwlib
+                                          STM32::Nano)
   target_link_libraries(
     prototype2
     PRIVATE HAL::STM32::G4::FLASH
