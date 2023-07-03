@@ -52,4 +52,21 @@ set_config_field( boost::asio::serial_port& port, const servio::Config& cfg )
         // TODO: expect reply.stat == SUCCES
 }
 
+boost::asio::awaitable< std::vector< servio::Config > >
+load_full_config( boost::asio::serial_port& port )
+{
+        const google::protobuf::OneofDescriptor* desc =
+            servio::Config::GetDescriptor()->oneof_decl( 0 );
+
+        std::vector< servio::Config > out;
+        for ( int i = 0; i < desc->field_count(); i++ ) {
+                const google::protobuf::FieldDescriptor* field = desc->field( i );
+
+                servio::Config cfg = co_await load_config_field( port, field );
+
+                out.push_back( cfg );
+        }
+        co_return out;
+}
+
 }  // namespace host
