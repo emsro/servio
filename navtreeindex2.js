@@ -170,9 +170,10 @@ var NAVTREEINDEX2 =
 "scaled_8hpp_source.html":[12,0,1,17],
 "serial_8cpp.html":[12,0,1,4,2],
 "serial_8cpp.html#a88ce469c3901611701f899ebb9b1a141":[12,0,1,4,2,0],
-"serial_8cpp.html#a8cf0ac7222b99599e6856e31289fe58d":[12,0,1,4,2,2],
+"serial_8cpp.html#a8cf0ac7222b99599e6856e31289fe58d":[12,0,1,4,2,3],
 "serial_8cpp.html#a9d5997c5dee2cb64216812f9f0de3595":[12,0,1,4,2,1],
-"serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc":[12,0,1,4,2,3],
+"serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc":[12,0,1,4,2,4],
+"serial_8cpp.html#ae8d16aea211d17d4111e173ef2dd1c72":[12,0,1,4,2,2],
 "serial_8hpp.html":[12,0,1,4,3],
 "serial_8hpp.html#a88ce469c3901611701f899ebb9b1a141":[12,0,1,4,3,0],
 "serial_8hpp.html#a8cf0ac7222b99599e6856e31289fe58d":[12,0,1,4,3,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "stm32g4xx__hal__conf_8h.html#aa51881ed9e9d2aaa7d6f0d598d723e46":[12,0,1,19,56],
 "stm32g4xx__hal__conf_8h.html#aa6072569e577101fd96d7cde376ac9bc":[12,0,1,19,25],
 "stm32g4xx__hal__conf_8h.html#aa7b55bb272fe393bd5fa8c6aa7fc90ce":[12,0,1,19,24],
-"stm32g4xx__hal__conf_8h.html#aa9b5a3a425901e097de70092dbe31e0f":[12,0,1,19,6],
-"stm32g4xx__hal__conf_8h.html#aaa8c76e274d0f6dd2cefb5d0b17fbc37":[12,0,1,19,44]
+"stm32g4xx__hal__conf_8h.html#aa9b5a3a425901e097de70092dbe31e0f":[12,0,1,19,6]
 };
