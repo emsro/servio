@@ -1,3 +1,5 @@
+include(FetchContent)
+
 FetchContent_Declare(
   nanopb
   GIT_REPOSITORY https://github.com/nanopb/nanopb.git
