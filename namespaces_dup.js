@@ -22,6 +22,7 @@ var namespaces_dup =
       [ "get_cmd", "namespacehost.html#a9547714e96ad8795e2843bd6101d0281", null ],
       [ "load_config_field", "namespacehost.html#a9d5997c5dee2cb64216812f9f0de3595", null ],
       [ "load_full_config", "namespacehost.html#ae8d16aea211d17d4111e173ef2dd1c72", null ],
+      [ "parse_cli", "namespacehost.html#a510d9c368fd6d74f7b6a79280890c631", null ],
       [ "print_configs", "namespacehost.html#a4922b139e8ef029fb89d958324cd3229", null ],
       [ "print_configs_json", "namespacehost.html#aa95b9cb3fa60fad1d01e4c287f10de5d", null ],
       [ "query_cmd", "namespacehost.html#a8f558c9849d130286b595ae32c931a4d", null ],

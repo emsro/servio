@@ -28,6 +28,9 @@ var NAVTREEINDEX1 =
 "classvoltage__converter.html":[11,0,25],
 "classvoltage__converter.html#aa68adcd5401740fc89d0342384e556e7":[11,0,25,0],
 "classvoltage__converter.html#aebd8ec998a9330d754a463858571701b":[11,0,25,1],
+"cli_8hpp.html":[12,0,1,4,2],
+"cli_8hpp.html#a510d9c368fd6d74f7b6a79280890c631":[12,0,1,4,2,0],
+"cli_8hpp_source.html":[12,0,1,4,2],
 "clock_8hpp.html":[12,0,1,3,0,2],
 "clock_8hpp_source.html":[12,0,1,3,0,2],
 "comms_8cpp.html":[12,0,1,3,0,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md2":[1,1],
 "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md3":[1,2],
 "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md4":[1,3],
-"md_doc_adr_0002_project_shall_be_writen_with_c_20.html":[2],
-"md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md6":[2,0],
-"md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md7":[2,1],
-"md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md8":[2,2]
+"md_doc_adr_0002_project_shall_be_writen_with_c_20.html":[2]
 };
