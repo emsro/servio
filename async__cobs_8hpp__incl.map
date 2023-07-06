@@ -1,7 +1,10 @@
 <map id="src/host/async_cobs.hpp" name="src/host/async_cobs.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="139,5,319,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,87,61,114"/>
-<area shape="rect" id="node3" title=" " alt="" coords="85,87,203,114"/>
-<area shape="rect" id="node4" title=" " alt="" coords="227,80,405,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="429,87,491,114"/>
+<area shape="rect" id="node1" title=" " alt="" coords="239,5,419,32"/>
+<area shape="rect" id="node2" href="$exceptions_8hpp.html" title=" " alt="" coords="13,87,166,114"/>
+<area shape="rect" id="node5" title=" " alt="" coords="191,87,247,114"/>
+<area shape="rect" id="node6" title=" " alt="" coords="271,87,388,114"/>
+<area shape="rect" id="node7" title=" " alt="" coords="413,80,590,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="614,87,677,114"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,72,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="97,169,183,196"/>
 </map>

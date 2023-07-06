@@ -20,6 +20,14 @@ var hierarchy =
     [ "fw::acquisition::current_sequence", "structfw_1_1acquisition_1_1current__sequence.html", null ],
     [ "fw::debug_comms", "classfw_1_1debug__comms.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
+    [ "std::exception", null, [
+      [ "host::servio_exception", "structhost_1_1servio__exception.html", [
+        [ "host::parse_error", "structhost_1_1parse__error.html", null ],
+        [ "host::reply_error", "structhost_1_1reply__error.html", null ],
+        [ "host::serialize_error", "structhost_1_1serialize__error.html", null ],
+        [ "host::status_error", "structhost_1_1status__error.html", null ]
+      ] ]
+    ] ],
     [ "fw::hal_check", "namespacefw.html#structfw_1_1hal__check", null ],
     [ "fw::acquisition::handles", "classfw_1_1acquisition.html#structfw_1_1acquisition_1_1handles", null ],
     [ "fw::clock::handles", "classfw_1_1clock.html#structfw_1_1clock_1_1handles", null ],

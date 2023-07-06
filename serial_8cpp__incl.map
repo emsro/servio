@@ -1,12 +1,13 @@
 <map id="src/host/serial.cpp" name="src/host/serial.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="411,5,551,32"/>
-<area shape="rect" id="node2" href="$serial_8hpp.html" title=" " alt="" coords="197,80,315,107"/>
-<area shape="rect" id="node6" href="$async__cobs_8hpp.html" title=" " alt="" coords="403,80,560,107"/>
-<area shape="rect" id="node10" title=" " alt="" coords="585,80,717,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,162,72,189"/>
-<area shape="rect" id="node4" title=" " alt="" coords="312,162,429,189"/>
-<area shape="rect" id="node5" title=" " alt="" coords="97,162,287,189"/>
-<area shape="rect" id="node7" title=" " alt="" coords="453,162,509,189"/>
-<area shape="rect" id="node8" title=" " alt="" coords="534,155,711,196"/>
-<area shape="rect" id="node9" title=" " alt="" coords="735,162,798,189"/>
+<area shape="rect" id="node1" title=" " alt="" coords="447,5,587,32"/>
+<area shape="rect" id="node2" href="$serial_8hpp.html" title=" " alt="" coords="153,80,271,107"/>
+<area shape="rect" id="node6" href="$async__cobs_8hpp.html" title=" " alt="" coords="497,80,655,107"/>
+<area shape="rect" id="node7" href="$exceptions_8hpp.html" title=" " alt="" coords="383,162,537,189"/>
+<area shape="rect" id="node11" title=" " alt="" coords="679,80,811,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="191,244,257,271"/>
+<area shape="rect" id="node4" title=" " alt="" coords="243,162,360,189"/>
+<area shape="rect" id="node5" title=" " alt="" coords="27,162,218,189"/>
+<area shape="rect" id="node8" title=" " alt="" coords="561,162,617,189"/>
+<area shape="rect" id="node9" title=" " alt="" coords="642,155,819,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="843,162,906,189"/>
 </map>

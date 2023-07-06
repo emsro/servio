@@ -27,6 +27,13 @@ var annotated_dup =
       [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
       [ "hal_check", "namespacefw.html#structfw_1_1hal__check", null ]
     ] ],
+    [ "host", "namespacehost.html", [
+      [ "servio_exception", "structhost_1_1servio__exception.html", null ],
+      [ "reply_error", "structhost_1_1reply__error.html", "structhost_1_1reply__error" ],
+      [ "status_error", "structhost_1_1status__error.html", "structhost_1_1status__error" ],
+      [ "serialize_error", "structhost_1_1serialize__error.html", "structhost_1_1serialize__error" ],
+      [ "parse_error", "structhost_1_1parse__error.html", "structhost_1_1parse__error" ]
+    ] ],
     [ "kalman", "namespacekalman.html", [
       [ "state_range", "namespacekalman.html#structkalman_1_1state__range", "namespacekalman_structkalman_1_1state__range_dup" ]
     ] ],
