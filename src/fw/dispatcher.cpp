@@ -57,7 +57,7 @@ ServioToHost handle_message(
         }
         // TODO: add default switch case for an error
         ServioToHost repl;
-        repl.stat               = STATUS_SUCCESS;
+        repl.status             = STATUS_SUCCESS;
         repl.get_property.value = val;
         repl.which_pld          = ServioToHost_get_property_tag;
         return repl;

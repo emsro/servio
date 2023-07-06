@@ -1,6 +1,7 @@
 #include "host/serial.hpp"
 
 #include "host/async_cobs.hpp"
+#include "host/exceptions.hpp"
 
 #include <emlabcpp/view.h>
 
@@ -13,10 +14,13 @@ namespace host
 boost::asio::awaitable< servio::ServioToHost >
 exchange( boost::asio::serial_port& port, const servio::HostToServio& msg )
 {
+        EMLABCPP_INFO_LOG( "Sending: ", msg.DebugString() );
         {
                 std::size_t              size = msg.ByteSizeLong();
                 std::vector< std::byte > buffer( size, std::byte{ 0 } );
-                msg.SerializeToArray( buffer.data(), static_cast< int >( size ) );
+                if ( !msg.SerializeToArray( buffer.data(), static_cast< int >( size ) ) ) {
+                        throw serialize_error{ "failed to serliaze host to servio message" };
+                }
 
                 co_await async_cobs_write( port, em::view_n( buffer.data(), size ) );
         }
@@ -25,7 +29,15 @@ exchange( boost::asio::serial_port& port, const servio::HostToServio& msg )
         em::view< std::byte* > deser_msg = co_await async_cobs_read( port, reply_buffer );
 
         servio::ServioToHost reply;
-        reply.ParseFromArray( deser_msg.begin(), static_cast< int >( deser_msg.size() ) );
+        if ( !reply.ParseFromArray( deser_msg.begin(), static_cast< int >( deser_msg.size() ) ) ) {
+                throw parse_error{ "failed to parse servio to host message from incoming data" };
+        }
+
+        EMLABCPP_INFO_LOG( "Reply: ", reply.DebugString() );
+
+        if ( reply.status() != servio::STATUS_SUCCESS ) {
+                throw status_error{ reply.status() };
+        }
 
         co_return reply;
 }
@@ -37,8 +49,10 @@ load_config_field( boost::asio::serial_port& port, const google::protobuf::Field
         msg.mutable_get_config()->set_key( static_cast< uint32_t >( field->number() ) );
 
         servio::ServioToHost reply = co_await exchange( port, msg );
+        if ( !reply.has_get_config() ) {
+                throw reply_error{ "reply does not contain get_config as it should" };
+        }
         co_return reply.get_config();
-        // TODO: check reply state;
 }
 
 boost::asio::awaitable< void >
@@ -48,8 +62,9 @@ set_config_field( boost::asio::serial_port& port, const servio::Config& cfg )
         *msg.mutable_set_config() = cfg;
 
         servio::ServioToHost reply = co_await exchange( port, msg );
-
-        // TODO: expect reply.stat == SUCCES
+        if ( !reply.has_set_config() ) {
+                throw reply_error{ "reply does not contain set_config as it should" };
+        }
 }
 
 boost::asio::awaitable< std::vector< servio::Config > >

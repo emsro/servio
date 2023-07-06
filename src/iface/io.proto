@@ -152,7 +152,7 @@ message ServioToHost {
   message NullReply {};
 
   // Each reply contains status enum
-  Status stat = 1;
+  Status status = 1;
   oneof pld {
     NullReply set_mode = 2;
     GetProperty get_property = 3;
