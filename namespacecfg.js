@@ -10,5 +10,5 @@ var namespacecfg =
     [ "find_unused_page", "namespacecfg.html#abf089918bd1398ef078ba761770419d4", null ],
     [ "get_default_config", "namespacecfg.html#aee982b4948ebe7b4807cbb84f181eaee", null ],
     [ "load", "namespacecfg.html#a9de7d450f3a4a26d1e137a4a4e5a9368", null ],
-    [ "store", "namespacecfg.html#a4fb297374feb61dbad9526f5212e1eff", null ]
+    [ "store", "namespacecfg.html#a41c88df89c60656fbefbe60067584bad", null ]
 ];

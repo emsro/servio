@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['handle_5fmessage_736',['handle_message',['../namespacefw.html#ad520058d8cd1c93d9c447a7e5038ca5f',1,'fw::handle_message(microseconds now, control &amp;ctl, const HostToServio_SetMode &amp;msg)'],['../namespacefw.html#a9ed53498f123857843c8c0718527f610',1,'fw::handle_message(const converter &amp;conv, const acquisition &amp;acquis, const hbridge &amp;hb, const HostToServio_GetProperty &amp;msg)'],['../namespacefw.html#a22c108f5f673b7f5606fb3753085fa97',1,'fw::handle_message(cfg_dispatcher &amp;cfg_disp, const Config &amp;req)'],['../namespacefw.html#a12edc98c652ee65f41746fc5e9f95daf',1,'fw::handle_message(const cfg_dispatcher &amp;cfg_disp, const HostToServio_GetConfig &amp;req)'],['../namespacefw.html#aca00d343acd2b6de4c45a060c5b51b4b',1,'fw::handle_message(const cfg_dispatcher &amp;cfg_disp, const auto &amp;cfg_writer, const HostToServio_CommitConfig &amp;)'],['../namespacefw.html#ad775dfc81f5ea33fcc4d3d661c31ac3c',1,'fw::handle_message(dispatcher &amp;dis, const HostToServio &amp;msg)']]],
-  ['hardfault_5fhandler_737',['HardFault_Handler',['../it_8cpp.html#a2bffc10d5bd4106753b7c30e86903bea',1,'it.cpp']]],
-  ['hbridge_738',['hbridge',['../classfw_1_1hbridge.html#abc3d72116d7720beba4951d5bb740c3d',1,'fw::hbridge::hbridge()'],['../classfw_1_1hbridge.html#aace561de9676efcea6b2270dd9204ded',1,'fw::hbridge::hbridge(const hbridge &amp;)=delete'],['../classfw_1_1hbridge.html#ad414713a0b7dc866781f245972674af3',1,'fw::hbridge::hbridge(hbridge &amp;&amp;)=delete']]]
+  ['handle_5fclear_5fconfig_746',['handle_clear_config',['../namespacefw.html#adb9ba6229ac5d318dd2fc074d8f3bfa5',1,'fw']]],
+  ['handle_5fcommit_5fconfig_747',['handle_commit_config',['../namespacefw.html#a8ede28207610e3bab4ad88077c3027fc',1,'fw']]],
+  ['handle_5fget_5fconfig_748',['handle_get_config',['../namespacefw.html#af064d3a1a717d0536df3a9f9aa0e712b',1,'fw']]],
+  ['handle_5fget_5fproperty_749',['handle_get_property',['../namespacefw.html#adc930bacabc0b0a025c26ede3b5dc9fb',1,'fw']]],
+  ['handle_5fmessage_750',['handle_message',['../namespacefw.html#ad775dfc81f5ea33fcc4d3d661c31ac3c',1,'fw']]],
+  ['handle_5fset_5fconfig_751',['handle_set_config',['../namespacefw.html#ae47759362df98aea1a40bfcb71d7536a',1,'fw']]],
+  ['handle_5fset_5fmode_752',['handle_set_mode',['../namespacefw.html#a57c7860f5c702e7a1129a8dc07859c70',1,'fw']]],
+  ['hardfault_5fhandler_753',['HardFault_Handler',['../it_8cpp.html#a2bffc10d5bd4106753b7c30e86903bea',1,'it.cpp']]],
+  ['hbridge_754',['hbridge',['../classfw_1_1hbridge.html#abc3d72116d7720beba4951d5bb740c3d',1,'fw::hbridge::hbridge()'],['../classfw_1_1hbridge.html#aace561de9676efcea6b2270dd9204ded',1,'fw::hbridge::hbridge(const hbridge &amp;)=delete'],['../classfw_1_1hbridge.html#ad414713a0b7dc866781f245972674af3',1,'fw::hbridge::hbridge(hbridge &amp;&amp;)=delete']]]
 ];

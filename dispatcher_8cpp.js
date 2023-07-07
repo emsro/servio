@@ -1,9 +1,12 @@
 var dispatcher_8cpp =
 [
-    [ "handle_message", "dispatcher_8cpp.html#a22c108f5f673b7f5606fb3753085fa97", null ],
-    [ "handle_message", "dispatcher_8cpp.html#aca00d343acd2b6de4c45a060c5b51b4b", null ],
-    [ "handle_message", "dispatcher_8cpp.html#a12edc98c652ee65f41746fc5e9f95daf", null ],
-    [ "handle_message", "dispatcher_8cpp.html#a9ed53498f123857843c8c0718527f610", null ],
+    [ "copy_string_to", "dispatcher_8cpp.html#aa9827b3a052ca9db4d230c0c439f7319", null ],
+    [ "error_msg", "dispatcher_8cpp.html#a23fc4234292273ffabe5f85953f2713a", null ],
+    [ "handle_clear_config", "dispatcher_8cpp.html#adb9ba6229ac5d318dd2fc074d8f3bfa5", null ],
+    [ "handle_commit_config", "dispatcher_8cpp.html#a8ede28207610e3bab4ad88077c3027fc", null ],
+    [ "handle_get_config", "dispatcher_8cpp.html#af064d3a1a717d0536df3a9f9aa0e712b", null ],
+    [ "handle_get_property", "dispatcher_8cpp.html#adc930bacabc0b0a025c26ede3b5dc9fb", null ],
     [ "handle_message", "dispatcher_8cpp.html#ad775dfc81f5ea33fcc4d3d661c31ac3c", null ],
-    [ "handle_message", "dispatcher_8cpp.html#ad520058d8cd1c93d9c447a7e5038ca5f", null ]
+    [ "handle_set_config", "dispatcher_8cpp.html#ae47759362df98aea1a40bfcb71d7536a", null ],
+    [ "handle_set_mode", "dispatcher_8cpp.html#a57c7860f5c702e7a1129a8dc07859c70", null ]
 ];

@@ -8,7 +8,6 @@ var classcontrol =
     [ "get_desired_velocity", "classcontrol.html#a91eb445014df1928cff7ea8c641cf084", null ],
     [ "get_mode", "classcontrol.html#a384b9afb33dfa242ddfb76388bcbaf82", null ],
     [ "get_power", "classcontrol.html#a5a5f1c48fefab50c257c4afdf82ee7ef", null ],
-    [ "is_engaged", "classcontrol.html#a41287e00d9c3989566355ad58b520710", null ],
     [ "moving_irq", "classcontrol.html#a7d7ed2f19eb7b2d9468483c2d98197d5", null ],
     [ "position_irq", "classcontrol.html#adf5f8c72d0829b7d3c2d8ef09de39789", null ],
     [ "set_limits", "classcontrol.html#aa8e61e5cd2701933862464ba56e70dc9", null ],

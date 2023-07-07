@@ -103,8 +103,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa8e61e5cd2701933862464ba56e70dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab71089395707e68c375189c35c79e0a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol.html#ab71089395707e68c375189c35c79e0a1">set_static_friction</a> (float scale, float decay)</td></tr>
 <tr class="separator:ab71089395707e68c375189c35c79e0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41287e00d9c3989566355ad58b520710"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol.html#a41287e00d9c3989566355ad58b520710">is_engaged</a> () const</td></tr>
-<tr class="separator:a41287e00d9c3989566355ad58b520710"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a384b9afb33dfa242ddfb76388bcbaf82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613d">control_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol.html#a384b9afb33dfa242ddfb76388bcbaf82">get_mode</a> () const</td></tr>
 <tr class="separator:a384b9afb33dfa242ddfb76388bcbaf82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72d1d14a2342d2a7c4a0b61d2cfb27c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol.html#a72d1d14a2342d2a7c4a0b61d2cfb27c6">disengage</a> ()</td></tr>
@@ -190,7 +188,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">fw::current()</a>, <a class="el" href="classctl_1_1pid__module.html#a8c9eea91f786b3e1917e8a8e7cbeb4c4">ctl::pid_module::get_limits()</a>, <a class="el" href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">ctl::pid_module::get_output()</a>, <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dac9c9c146c630ca5ef9197c73c032f4a6">POWER</a>, <a class="el" href="classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136">ctl::pid_module::reset()</a>, <a class="el" href="structctl_1_1linear__transition__regulator.html#abd008b5d8cc0e9ff4e7def2679256128">ctl::linear_transition_regulator::state</a>, and <a class="el" href="classctl_1_1pid__module.html#a594cc33dcfda834bb2d349f8d19deefe">ctl::pid_module::update()</a>.</p>
+<p class="reference">References <a class="el" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">fw::current()</a>, <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74">DISENGAGED</a>, <a class="el" href="classctl_1_1pid__module.html#a8c9eea91f786b3e1917e8a8e7cbeb4c4">ctl::pid_module::get_limits()</a>, <a class="el" href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">ctl::pid_module::get_output()</a>, <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dac9c9c146c630ca5ef9197c73c032f4a6">POWER</a>, <a class="el" href="classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136">ctl::pid_module::reset()</a>, <a class="el" href="structctl_1_1linear__transition__regulator.html#abd008b5d8cc0e9ff4e7def2679256128">ctl::linear_transition_regulator::state</a>, and <a class="el" href="classctl_1_1pid__module.html#a594cc33dcfda834bb2d349f8d19deefe">ctl::pid_module::update()</a>.</p>
 
 </div>
 </div>
@@ -209,7 +207,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classcontrol.html#aa89e2447e7f66b5bb14653f60e80420a">switch_to_power_control()</a>.</p>
+<p class="reference">References <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74">DISENGAGED</a>.</p>
 
 </div>
 </div>
@@ -308,31 +306,6 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a41287e00d9c3989566355ad58b520710"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41287e00d9c3989566355ad58b520710">&#9670;&nbsp;</a></span>is_engaged()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool control::is_engaged </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -623,7 +596,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">ctl::pid_module::get_output()</a>, <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dac9c9c146c630ca5ef9197c73c032f4a6">POWER</a>, <a class="el" href="classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136">ctl::pid_module::reset()</a>, <a class="el" href="classctl_1_1pid__module.html#a594cc33dcfda834bb2d349f8d19deefe">ctl::pid_module::update()</a>, and <a class="el" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">kalman::velocity()</a>.</p>
+<p class="reference">References <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74">DISENGAGED</a>, <a class="el" href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">ctl::pid_module::get_output()</a>, <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dac9c9c146c630ca5ef9197c73c032f4a6">POWER</a>, <a class="el" href="classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136">ctl::pid_module::reset()</a>, <a class="el" href="classctl_1_1pid__module.html#a594cc33dcfda834bb2d349f8d19deefe">ctl::pid_module::update()</a>, and <a class="el" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">kalman::velocity()</a>.</p>
 
 </div>
 </div>
@@ -637,7 +610,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classcontrol.html">control</a></li>
-    <li class="footer">Generated on Thu Jul 6 2023 20:03:28 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Jul 7 2023 17:53:46 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

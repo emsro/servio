@@ -18,12 +18,6 @@ var base_8hpp =
     [ "limits", "base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c", null ],
     [ "microseconds", "base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5", null ],
     [ "milliseconds", "base_8hpp.html#a0478dbefd4a0ca0d9e55b6becbf851f2", null ],
-    [ "protocol_current", "base_8hpp.html#a918c8b836c9acdbd90b1e33c9d8314c4", null ],
-    [ "protocol_position", "base_8hpp.html#ac7e10763f07f6428342004cd836e5e3a", null ],
-    [ "protocol_power", "base_8hpp.html#a5e3255eae0a79b5877f016bc0b8a664f", null ],
-    [ "protocol_temperature", "base_8hpp.html#a5b687c5c788edb4ab2c266e93a1dbf57", null ],
-    [ "protocol_velocity", "base_8hpp.html#a37b7c873093719e043013e7ffbbfde8e", null ],
-    [ "protocol_voltage", "base_8hpp.html#a4dce310f4658124a6c0208427c906732", null ],
     [ "sec_time", "base_8hpp.html#a96ccd2c4ce19187beb5be679732d675a", null ],
     [ "seconds", "base_8hpp.html#a97fe881f96d6e7005e440f25a7f47937", null ],
     [ "control_loop", "base_8hpp.html#a2d21811ce1f560323f48c16592782d7f", [
@@ -32,6 +26,7 @@ var base_8hpp =
       [ "POSITION", "base_8hpp.html#a2d21811ce1f560323f48c16592782d7fa90b4ba73224408e82ade8a072a3712c1", null ]
     ] ],
     [ "control_mode", "base_8hpp.html#ab11c51b7742a144ec8f0089eb023613d", [
+      [ "DISENGAGED", "base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74", null ],
       [ "POWER", "base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dac9c9c146c630ca5ef9197c73c032f4a6", null ],
       [ "CURRENT", "base_8hpp.html#ab11c51b7742a144ec8f0089eb023613daa2770969c827f0f2910f6179418462df", null ],
       [ "VELOCITY", "base_8hpp.html#ab11c51b7742a144ec8f0089eb023613da7b4354bded455eb379e3c764806cda7b", null ],

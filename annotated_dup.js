@@ -30,7 +30,7 @@ var annotated_dup =
     [ "host", "namespacehost.html", [
       [ "servio_exception", "structhost_1_1servio__exception.html", null ],
       [ "reply_error", "structhost_1_1reply__error.html", "structhost_1_1reply__error" ],
-      [ "status_error", "structhost_1_1status__error.html", "structhost_1_1status__error" ],
+      [ "error_exception", "structhost_1_1error__exception.html", "structhost_1_1error__exception" ],
       [ "serialize_error", "structhost_1_1serialize__error.html", "structhost_1_1serialize__error" ],
       [ "parse_error", "structhost_1_1parse__error.html", "structhost_1_1parse__error" ]
     ] ],

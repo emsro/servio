@@ -22,10 +22,10 @@ var hierarchy =
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
     [ "std::exception", null, [
       [ "host::servio_exception", "structhost_1_1servio__exception.html", [
+        [ "host::error_exception", "structhost_1_1error__exception.html", null ],
         [ "host::parse_error", "structhost_1_1parse__error.html", null ],
         [ "host::reply_error", "structhost_1_1reply__error.html", null ],
-        [ "host::serialize_error", "structhost_1_1serialize__error.html", null ],
-        [ "host::status_error", "structhost_1_1status__error.html", null ]
+        [ "host::serialize_error", "structhost_1_1serialize__error.html", null ]
       ] ]
     ] ],
     [ "fw::hal_check", "namespacefw.html#structfw_1_1hal__check", null ],

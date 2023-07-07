@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14adecfbda91cde2e00e1e04c4c97cb1b86">TEMPERATURE_HIGH</a>,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a0d895a0a05a7cce9b2c0c8bb252f78cc">HEARTBEAT</a>,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a91fc31ffb68f72532b0ab7f28f24db85">ENGAGED</a>,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14afeffe8e712a5ce9a0cedef11c364fa74">DISENGAGED</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74">DISENGAGED</a>,</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a95578e7a8d44d9a1445fe38369bd36a6">STUCK</a>,  <span class="comment">// can&#39;t detect this yet</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14ad32cbe23a48d1576416d9eb314876c6d">BOOTING</a>,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14adee5f03c2c4e73657824e028494b18c0">INITIALIZED</a>,</div>
@@ -160,8 +160,9 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> blue_disengage_at_;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div></div>
-<div class="ttc" id="abase_8hpp_html_a3e15423b6a0f2e36799532b4c8f699f5"><div class="ttname"><a href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:19</div></div>
-<div class="ttc" id="abase_8hpp_html_structleds__vals"><div class="ttname"><a href="base_8hpp.html#structleds__vals">leds_vals</a></div><div class="ttdef"><b>Definition:</b> base.hpp:62</div></div>
+<div class="ttc" id="abase_8hpp_html_a3e15423b6a0f2e36799532b4c8f699f5"><div class="ttname"><a href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:12</div></div>
+<div class="ttc" id="abase_8hpp_html_ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74"><div class="ttname"><a href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74">control_mode::DISENGAGED</a></div><div class="ttdeci">@ DISENGAGED</div></div>
+<div class="ttc" id="abase_8hpp_html_structleds__vals"><div class="ttname"><a href="base_8hpp.html#structleds__vals">leds_vals</a></div><div class="ttdef"><b>Definition:</b> base.hpp:56</div></div>
 <div class="ttc" id="aclassindication_html"><div class="ttname"><a href="classindication.html">indication</a></div><div class="ttdef"><b>Definition:</b> indication.hpp:36</div></div>
 <div class="ttc" id="aclassindication_html_a206462581ba11b4eb1a930f57d753865"><div class="ttname"><a href="classindication.html#a206462581ba11b4eb1a930f57d753865">indication::get_state</a></div><div class="ttdeci">const leds_vals &amp; get_state() const</div><div class="ttdef"><b>Definition:</b> indication.hpp:50</div></div>
 <div class="ttc" id="aclassindication_html_a5d2366017e3656288041d65c5ee6cdf3"><div class="ttname"><a href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">indication::on_event</a></div><div class="ttdeci">bool on_event(microseconds now, const indication_event &amp;e)</div><div class="ttdef"><b>Definition:</b> indication.cpp:5</div></div>
@@ -176,14 +177,13 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="ttc" id="aindication_8hpp_html_a7677f74725e84ed8805a28f45332ff14ad32cbe23a48d1576416d9eb314876c6d"><div class="ttname"><a href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14ad32cbe23a48d1576416d9eb314876c6d">indication_event::BOOTING</a></div><div class="ttdeci">@ BOOTING</div></div>
 <div class="ttc" id="aindication_8hpp_html_a7677f74725e84ed8805a28f45332ff14adecfbda91cde2e00e1e04c4c97cb1b86"><div class="ttname"><a href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14adecfbda91cde2e00e1e04c4c97cb1b86">indication_event::TEMPERATURE_HIGH</a></div><div class="ttdeci">@ TEMPERATURE_HIGH</div></div>
 <div class="ttc" id="aindication_8hpp_html_a7677f74725e84ed8805a28f45332ff14adee5f03c2c4e73657824e028494b18c0"><div class="ttname"><a href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14adee5f03c2c4e73657824e028494b18c0">indication_event::INITIALIZED</a></div><div class="ttdeci">@ INITIALIZED</div></div>
-<div class="ttc" id="aindication_8hpp_html_a7677f74725e84ed8805a28f45332ff14afeffe8e712a5ce9a0cedef11c364fa74"><div class="ttname"><a href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14afeffe8e712a5ce9a0cedef11c364fa74">indication_event::DISENGAGED</a></div><div class="ttdeci">@ DISENGAGED</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="indication_8hpp.html">indication.hpp</a></li>
-    <li class="footer">Generated on Thu Jul 6 2023 20:03:28 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Jul 7 2023 17:53:46 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
