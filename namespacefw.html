@@ -151,8 +151,10 @@ Functions</h2></td></tr>
 <tr class="separator:a23fc4234292273ffabe5f85953f2713a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57c7860f5c702e7a1129a8dc07859c70"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a57c7860f5c702e7a1129a8dc07859c70">handle_set_mode</a> (<a class="el" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <a class="el" href="classcontrol.html">control</a> &amp;ctl, const Mode &amp;msg)</td></tr>
 <tr class="separator:a57c7860f5c702e7a1129a8dc07859c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc930bacabc0b0a025c26ede3b5dc9fb"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#adc930bacabc0b0a025c26ede3b5dc9fb">handle_get_property</a> (const <a class="el" href="structconverter.html">converter</a> &amp;conv, const <a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;acquis, const <a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;hb, const HostToServio_GetProperty &amp;msg)</td></tr>
-<tr class="separator:adc930bacabc0b0a025c26ede3b5dc9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1553464d8123837732a7bad780da65df"><td class="memItemLeft" align="right" valign="top">Mode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a1553464d8123837732a7bad780da65df">get_mode</a> (const <a class="el" href="classcontrol.html">control</a> &amp;ctl)</td></tr>
+<tr class="separator:a1553464d8123837732a7bad780da65df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a709c479e42581628b22bc409de4c5b73"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a709c479e42581628b22bc409de4c5b73">handle_get_property</a> (const <a class="el" href="classcontrol.html">control</a> &amp;ctl, const <a class="el" href="structconverter.html">converter</a> &amp;conv, const <a class="el" href="classfw_1_1acquisition.html">acquisition</a> &amp;acquis, const <a class="el" href="classfw_1_1hbridge.html">hbridge</a> &amp;hb, const HostToServio_GetProperty &amp;msg)</td></tr>
+<tr class="separator:a709c479e42581628b22bc409de4c5b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae47759362df98aea1a40bfcb71d7536a"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#ae47759362df98aea1a40bfcb71d7536a">handle_set_config</a> (<a class="el" href="structfw_1_1cfg__dispatcher.html">cfg_dispatcher</a> &amp;cfg_disp, const Config &amp;req)</td></tr>
 <tr class="separator:ae47759362df98aea1a40bfcb71d7536a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af064d3a1a717d0536df3a9f9aa0e712b"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#af064d3a1a717d0536df3a9f9aa0e712b">handle_get_config</a> (const <a class="el" href="structfw_1_1cfg__dispatcher.html">cfg_dispatcher</a> &amp;cfg_disp, const HostToServio_GetConfig &amp;req)</td></tr>
@@ -532,6 +534,26 @@ start_failed</td>
 
 </div>
 </div>
+<a id="a1553464d8123837732a7bad780da65df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1553464d8123837732a7bad780da65df">&#9670;&nbsp;</a></span>get_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mode fw::get_mode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcontrol.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>ctl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613daa2770969c827f0f2910f6179418462df">CURRENT</a>, <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74">DISENGAGED</a>, <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613da90b4ba73224408e82ade8a072a3712c1">POSITION</a>, <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dac9c9c146c630ca5ef9197c73c032f4a6">POWER</a>, and <a class="el" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613da7b4354bded455eb379e3c764806cda7b">VELOCITY</a>.</p>
+
+</div>
+</div>
 <a id="adb9ba6229ac5d318dd2fc074d8f3bfa5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb9ba6229ac5d318dd2fc074d8f3bfa5">&#9670;&nbsp;</a></span>handle_clear_config()</h2>
 
@@ -612,8 +634,8 @@ start_failed</td>
 
 </div>
 </div>
-<a id="adc930bacabc0b0a025c26ede3b5dc9fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc930bacabc0b0a025c26ede3b5dc9fb">&#9670;&nbsp;</a></span>handle_get_property()</h2>
+<a id="a709c479e42581628b22bc409de4c5b73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a709c479e42581628b22bc409de4c5b73">&#9670;&nbsp;</a></span>handle_get_property()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -621,6 +643,12 @@ start_failed</td>
         <tr>
           <td class="memname">ServioToHost fw::handle_get_property </td>
           <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcontrol.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>ctl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="structconverter.html">converter</a> &amp;&#160;</td>
           <td class="paramname"><em>conv</em>, </td>
         </tr>
@@ -650,7 +678,7 @@ start_failed</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085">temperature_converter::convert()</a>, <a class="el" href="classvoltage__converter.html#aebd8ec998a9330d754a463858571701b">voltage_converter::convert()</a>, <a class="el" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">current()</a>, <a class="el" href="namespacefw.html#a23fc4234292273ffabe5f85953f2713a">error_msg()</a>, <a class="el" href="classfw_1_1acquisition.html#a6c5fbc1d2140a20da14c332aa29df2a0">fw::acquisition::get_temp()</a>, <a class="el" href="classfw_1_1acquisition.html#affdf38278c9187e8e480061f620f1781">fw::acquisition::get_vcc()</a>, <a class="el" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">position()</a>, <a class="el" href="structconverter.html#ac9870ea936ec13c39637d9c93827755a">converter::temp</a>, and <a class="el" href="structconverter.html#a96a6c5a43d6b71202650791f0ec934df">converter::vcc</a>.</p>
+<p class="reference">References <a class="el" href="classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085">temperature_converter::convert()</a>, <a class="el" href="classvoltage__converter.html#aebd8ec998a9330d754a463858571701b">voltage_converter::convert()</a>, <a class="el" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">current()</a>, <a class="el" href="namespacefw.html#a23fc4234292273ffabe5f85953f2713a">error_msg()</a>, <a class="el" href="namespacefw.html#a1553464d8123837732a7bad780da65df">get_mode()</a>, <a class="el" href="classfw_1_1acquisition.html#a6c5fbc1d2140a20da14c332aa29df2a0">fw::acquisition::get_temp()</a>, <a class="el" href="classfw_1_1acquisition.html#affdf38278c9187e8e480061f620f1781">fw::acquisition::get_vcc()</a>, <a class="el" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">position()</a>, <a class="el" href="structconverter.html#ac9870ea936ec13c39637d9c93827755a">converter::temp</a>, and <a class="el" href="structconverter.html#a96a6c5a43d6b71202650791f0ec934df">converter::vcc</a>.</p>
 
 </div>
 </div>
@@ -680,7 +708,7 @@ start_failed</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacefw.html#a267028ba650fa2c33babbdf9f209f421">fw::dispatcher::acquis</a>, <a class="el" href="namespacefw.html#a64062389efe7fe57f45c591f7d608afc">fw::dispatcher::cfg_disp</a>, <a class="el" href="namespacefw.html#a520b3be865d264d703b435b5c4e08fbb">fw::dispatcher::cfg_writer</a>, <a class="el" href="namespacefw.html#ac7282035a48db732bb3abfbfb69467d0">fw::dispatcher::conv</a>, <a class="el" href="namespacefw.html#a15cf4f98017315abc2a188bbef019777">fw::dispatcher::ctl</a>, <a class="el" href="namespacefw.html#a23fc4234292273ffabe5f85953f2713a">error_msg()</a>, <a class="el" href="namespacefw.html#adb9ba6229ac5d318dd2fc074d8f3bfa5">handle_clear_config()</a>, <a class="el" href="namespacefw.html#a8ede28207610e3bab4ad88077c3027fc">handle_commit_config()</a>, <a class="el" href="namespacefw.html#af064d3a1a717d0536df3a9f9aa0e712b">handle_get_config()</a>, <a class="el" href="namespacefw.html#adc930bacabc0b0a025c26ede3b5dc9fb">handle_get_property()</a>, <a class="el" href="namespacefw.html#ae47759362df98aea1a40bfcb71d7536a">handle_set_config()</a>, <a class="el" href="namespacefw.html#a57c7860f5c702e7a1129a8dc07859c70">handle_set_mode()</a>, <a class="el" href="namespacefw.html#a7c345ee7500a1b6a1f141f01d7f7f9d3">fw::dispatcher::hb</a>, and <a class="el" href="namespacefw.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">fw::dispatcher::now</a>.</p>
+<p class="reference">References <a class="el" href="namespacefw.html#a267028ba650fa2c33babbdf9f209f421">fw::dispatcher::acquis</a>, <a class="el" href="namespacefw.html#a64062389efe7fe57f45c591f7d608afc">fw::dispatcher::cfg_disp</a>, <a class="el" href="namespacefw.html#a520b3be865d264d703b435b5c4e08fbb">fw::dispatcher::cfg_writer</a>, <a class="el" href="namespacefw.html#ac7282035a48db732bb3abfbfb69467d0">fw::dispatcher::conv</a>, <a class="el" href="namespacefw.html#a15cf4f98017315abc2a188bbef019777">fw::dispatcher::ctl</a>, <a class="el" href="namespacefw.html#a23fc4234292273ffabe5f85953f2713a">error_msg()</a>, <a class="el" href="namespacefw.html#adb9ba6229ac5d318dd2fc074d8f3bfa5">handle_clear_config()</a>, <a class="el" href="namespacefw.html#a8ede28207610e3bab4ad88077c3027fc">handle_commit_config()</a>, <a class="el" href="namespacefw.html#af064d3a1a717d0536df3a9f9aa0e712b">handle_get_config()</a>, <a class="el" href="namespacefw.html#a709c479e42581628b22bc409de4c5b73">handle_get_property()</a>, <a class="el" href="namespacefw.html#ae47759362df98aea1a40bfcb71d7536a">handle_set_config()</a>, <a class="el" href="namespacefw.html#a57c7860f5c702e7a1129a8dc07859c70">handle_set_mode()</a>, <a class="el" href="namespacefw.html#a7c345ee7500a1b6a1f141f01d7f7f9d3">fw::dispatcher::hb</a>, and <a class="el" href="namespacefw.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">fw::dispatcher::now</a>.</p>
 
 </div>
 </div>
@@ -1011,7 +1039,7 @@ template&lt;typename... Components&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li>
-    <li class="footer">Generated on Fri Jul 7 2023 17:53:46 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Jul 7 2023 20:03:17 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"stm32g4xx__hal__conf_8h.html#a623fbdaf1b7f928d848ccdfb7cc48429":[12,0,1,19,5],
+"stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21":[12,0,1,19,0],
 "stm32g4xx__hal__conf_8h.html#a6552186102a1131b2849ac55a582945d":[12,0,1,19,10],
 "stm32g4xx__hal__conf_8h.html#a6879802837c27d8761d8a8fdab626891":[12,0,1,19,79],
 "stm32g4xx__hal__conf_8h.html#a68c6c7c633e6cb378824020ef00a5701":[12,0,1,19,77],

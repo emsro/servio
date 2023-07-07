@@ -14,7 +14,7 @@ var searchData=
   ['get_5fdirection_159',['get_direction',['../classfw_1_1hbridge.html#ac38464e5478083c11269d41c07c83edb',1,'fw::hbridge']]],
   ['get_5flimits_160',['get_limits',['../classctl_1_1pid__module.html#a8c9eea91f786b3e1917e8a8e7cbeb4c4',1,'ctl::pid_module']]],
   ['get_5fmeasured_161',['get_measured',['../classctl_1_1pid__module.html#a74555c2bf8a8dead21aa99f76e579afb',1,'ctl::pid_module']]],
-  ['get_5fmode_162',['get_mode',['../classcontrol.html#a384b9afb33dfa242ddfb76388bcbaf82',1,'control']]],
+  ['get_5fmode_162',['get_mode',['../classcontrol.html#a384b9afb33dfa242ddfb76388bcbaf82',1,'control::get_mode()'],['../namespacefw.html#a1553464d8123837732a7bad780da65df',1,'fw::get_mode()']]],
   ['get_5fobservation_5fmodel_163',['get_observation_model',['../namespacekalman.html#a57c71f193659ff2b34bdf2e7bd1d9c76',1,'kalman']]],
   ['get_5fobservation_5fnoise_5fcovariance_164',['get_observation_noise_covariance',['../namespacekalman.html#a7e3eb3854ea1e62172ae0ff1374342bc',1,'kalman']]],
   ['get_5foutput_165',['get_output',['../classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f',1,'ctl::pid_module']]],
