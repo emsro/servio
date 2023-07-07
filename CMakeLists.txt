@@ -14,6 +14,7 @@ option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 include(cmake/emlabcpp.cmake)
 include(cmake/flags.cmake)
 include(cmake/utils.cmake)
+include(cmake/magic_enum.cmake)
 # include(cmake/gitversion.cmake) # is not fine tuned yet
 include(cmake/nanopb.cmake)
 

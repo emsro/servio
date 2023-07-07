@@ -47,8 +47,17 @@ boost::asio::awaitable< void > query_cmd( boost::asio::serial_port& port, bool j
 boost::asio::awaitable< void > commit_cmd( boost::asio::serial_port& port )
 {
         servio::HostToServio msg;
-        msg.mutable_commit_config()->set_key( 42 );
+        msg.mutable_commit_config()->set_nothing( 0 );
 
+        servio::ServioToHost reply = co_await exchange( port, msg );
+        std::ignore                = reply;
+        // TODO: check reply state;
+}
+
+boost::asio::awaitable< void > clear_cmd( boost::asio::serial_port& port )
+{
+        servio::HostToServio msg;
+        msg.mutable_clear_config()->set_nothing( 0 );
         servio::ServioToHost reply = co_await exchange( port, msg );
         std::ignore                = reply;
         // TODO: check reply state;
@@ -194,6 +203,16 @@ int main( int argc, char* argv[] )
                     setup_port();
                     co_spawn(
                         context, host::commit_cmd( opt_port.value() ), boost::asio::detached );
+            } );
+        args::Command clear(
+            commands,
+            "clear",
+            "tells the servo to clear latest store config",
+            [&]( args::Subparser& parser ) {
+                    parser.Parse();
+
+                    setup_port();
+                    co_spawn( context, host::clear_cmd( opt_port.value() ), boost::asio::detached );
             } );
 
         int res = host::parse_cli( parser, argc, argv );

@@ -17,7 +17,7 @@ struct dispatcher
         acquisition&                                    acquis;
         control&                                        ctl;
         cfg_dispatcher&                                 cfg_disp;
-        em::function_view< bool( const cfg_map& cfg ) > cfg_writer;
+        em::function_view< bool( const cfg_map* cfg ) > cfg_writer;
         converter&                                      conv;
         microseconds                                    now;
 };

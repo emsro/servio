@@ -9,7 +9,7 @@ using handler = em::protocol::register_handler< cfg_map >;
 
 void cfg_dispatcher::full_apply()
 {
-        for ( cfg_key key : map.get_keys() ) {
+        for ( cfg_key key : cfg_map::keys ) {
                 apply( key );
         }
 }
@@ -18,6 +18,8 @@ void cfg_dispatcher::apply( const cfg_key& key )
 {
         switch ( key ) {
         case MODEL:
+                break;
+        case ID:
                 break;
         case POSITION_CONV_LOWER_SETPOINT_ANGLE:
         case POSITION_CONV_HIGHER_SETPOINT_ANGLE:

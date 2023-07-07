@@ -2,26 +2,34 @@ syntax = "proto3";
 
 package servio;
 
-// Control modes that can be commanded to the servo. In context of each mode the
-// provided value has units documented here.
-enum Mode {
-  MODE_POWER = 0;     // -1.0...1.0, sign represents direction
-  MODE_CURRENT = 1;   // in A, sign represents direction
-  MODE_VELOCITY = 2;  // in rad/s
-  MODE_POSITION = 3;  // in rad
+message NullMsg {
+  // The nothing argument here is not necessary, but last time we tried this
+  // nanopb failed to parse an empty message. TODO: report this as a bug to
+  // nanopb
+  uint32 nothing = 1;
+};
+
+// Control modes of the servo, the name of field represetns mode name and value
+// represents the adequate control variable.
+message Mode {
+  oneof pld {
+    NullMsg disengaged = 1;  // servo is actively driving the motor
+    float power = 2;         // -1.0...1.0, sign represents direction
+    float current = 3;       // in A, sign represents direction
+    float velocity = 4;      // in rad/s
+    float position = 5;      // in rad
+  }
 }
 
 // Properties that can be queried from the servo.
-enum Property {
-  PROPERTY_CURRENT = 0;   // A
-  PROPERTY_VCC = 1;       // V
-  PROPERTY_TEMP = 2;      // C
-  PROPERTY_POSITION = 3;  // rad
-}
-
-// Status used in the reply message.
-enum Status {
-  STATUS_SUCCESS = 0;
+message Property {
+  oneof pld {
+    Mode mode = 1;
+    float current = 2;   // A
+    float vcc = 3;       // V
+    float temp = 4;      // C
+    float position = 5;  // rad
+  }
 }
 
 // Config message represents all configuration options for the servio, one
@@ -32,55 +40,57 @@ message Config {
     // String identifying the model of servo, used for debugging purposes.
     string model = 1;
 
+    uint32 id = 2;
+
     // Position conversion uses two setpoints (lower/higher) to setup a
     // conversion from the range of measuring sensor to real angle (in radians).
-    uint32 position_conv_lower_setpoint_value = 2;  // sensor at lower setpoint
-    float position_conv_lower_setpoint_angle = 3;   // angle at lower setpoint
+    uint32 position_conv_lower_setpoint_value = 10;  // sensor at lower setpoint
+    float position_conv_lower_setpoint_angle = 11;   // angle at lower setpoint
     uint32 position_conv_higher_setpoint_value =
-        4;                                          // sensor at higher setpoint
-    float position_conv_higher_setpoint_angle = 5;  // angle at higher setpoing
+        12;  // sensor at higher setpoint
+    float position_conv_higher_setpoint_angle = 13;  // angle at higher setpoing
 
     // Current conversion uses simple linear formula: x = y * scale + offset, to
     // convert from mesured value via ADC to real currrent.
-    float current_conv_scale = 6;
-    float current_conv_offset = 7;
+    float current_conv_scale = 14;
+    float current_conv_offset = 15;
 
     // Temperature conversion uses simple linear formula: x = y * scale +
     // offset, to convert from mesured value via ADC to real currrent. Note that
     // this refers to internal temperature of the MCU.
-    float temp_conv_scale = 8;
-    float temp_conv_offset = 9;
+    float temp_conv_scale = 16;
+    float temp_conv_offset = 17;
 
     // Converts voltage from measured value into real value by scaling it with
     // provided scale.
-    float voltage_conv_scale = 10;
+    float voltage_conv_scale = 18;
 
     // PID configuration parameters for current control loop
-    float current_loop_p = 11;
-    float current_loop_i = 12;
-    float current_loop_d = 13;
+    float current_loop_p = 30;
+    float current_loop_i = 31;
+    float current_loop_d = 32;
 
     // Current control loop limits (in A)
-    float current_lim_min = 14;
-    float current_lim_max = 15;
+    float current_lim_min = 33;
+    float current_lim_max = 34;
 
     // PID configuration parameters for velocity control loop
-    float velocity_loop_p = 16;
-    float velocity_loop_i = 17;
-    float velocity_loop_d = 18;
+    float velocity_loop_p = 40;
+    float velocity_loop_i = 41;
+    float velocity_loop_d = 42;
 
     // Velocity control loop limits (in rad/s)
-    float velocity_lim_min = 19;
-    float velocity_lim_max = 20;
+    float velocity_lim_min = 43;
+    float velocity_lim_max = 44;
 
     // PID configuration parameters for position control loop
-    float position_loop_p = 21;
-    float position_loop_i = 22;
-    float position_loop_d = 23;
+    float position_loop_p = 50;
+    float position_loop_i = 51;
+    float position_loop_d = 52;
 
     // Position control loop limits (in rad)
-    float position_lim_min = 24;
-    float position_lim_max = 25;
+    float position_lim_min = 53;
+    float position_lim_max = 54;
 
     // Outside of the normal functionality of the control loops, the current
     // desired by velocity loop will be scaled by `static_friction_scale` in
@@ -88,31 +98,24 @@ message Config {
     // servo a necessary kick from non-moving position. Decay specifies how fast
     // that scale disappears after servo starts moving. `moving_detection_step`
     // configurs how much shall servo move for it to be considered moving.
-    float static_friction_scale = 26;
-    float static_friction_decay = 27;
-    float moving_detection_step = 30;  // in rad
+    float static_friction_scale = 60;
+    float static_friction_decay = 61;
+    float moving_detection_step = 62;  // in rad
 
     // Sets limits for monitored values, these wont affect the servo, the servo
     // will just signal with leds that values are outside of desired range.
-    float minimum_voltage = 28;
-    float maximum_temperature = 29;
+    float minimum_voltage = 65;
+    float maximum_temperature = 66;
   }
 }
 
 // Message sent from the host to the servo, represents a group of messages, out
 // of which only one is sent.
 message HostToServio {
-  // Switches the servo to desired mode and sets control loops to achieve
-  // desired goal value. Units are documented in `Mode` enum documentation.
-  message SetMode {
-    Mode mode = 1;
-    float goal = 2;
-  };
-
   // Queries the server for desired property. Units are documented in `Property`
   // enum documentation.
   message GetProperty {
-    Property property = 1;
+    uint32 field_id = 1;  // field id of the property
   };
 
   // Returns one config value identified by key
@@ -120,44 +123,30 @@ message HostToServio {
     uint32 key = 1;
   };
 
-  // Commands the servo to store the current configuration into memory. Note
-  // that this is severly limited by the MCUs flash and it's write limit. (10k
-  // for STM32G431)
-  message CommitConfig {
-    // The key argument here is not necessary, but last time we tried this
-    // nanopb failed to parse an empty message. TODO: report this as a bug to
-    // nanopb
-    uint32 key = 1;
-  };
-
   // Contains one of the available messages
   oneof pld {
-    SetMode set_mode = 1;          // changes mode
+    Mode set_mode = 1;             // changes mode
     GetProperty get_property = 2;  // queries property
     Config set_config = 3;         // sets config value based on Config content
     GetConfig get_config = 4;      // retrivies config vlaue
-    CommitConfig commit_config = 5;  // commits current config
+    NullMsg commit_config = 5;     // commits current config into the memory
+    NullMsg clear_config = 6;      // clears stored config
   };
+};
+
+message ErrorMsg {
+  string msg = 1;
 };
 
 // Reply message sent by the servo
 message ServioToHost {
-  // Reply with queried property, contains the enum with desired property and
-  // value
-  message GetProperty {
-    Property property = 1;
-    float value = 2;
-  };
-
-  message NullReply {};
-
-  // Each reply contains status enum
-  Status status = 1;
   oneof pld {
-    NullReply set_mode = 2;
-    GetProperty get_property = 3;
-    NullReply set_config = 4;
+    ErrorMsg error = 1;
+    NullMsg set_mode = 2;
+    Property get_property = 3;
+    NullMsg set_config = 4;
     Config get_config = 5;
-    NullReply commit_config = 6;
+    NullMsg commit_config = 6;
+    NullMsg clear_config = 7;
   };
 };

@@ -26,19 +26,19 @@ struct reply_error : servio_exception
         const char* msg;
 };
 
-struct status_error : servio_exception
+struct error_exception : servio_exception
 {
+        error_exception( servio::ErrorMsg msg )
+          : msg( msg )
+        {
+        }
+
         virtual const char* what() const noexcept
         {
-                return status_string.c_str();
+                return msg.msg().c_str();
         }
 
-        status_error( servio::Status status )
-          : status_string( servio::Status_Name( status ) )
-        {
-        }
-
-        std::string status_string;
+        servio::ErrorMsg msg;
 };
 
 struct serialize_error : servio_exception

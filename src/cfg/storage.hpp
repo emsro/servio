@@ -30,7 +30,7 @@ std::optional< page > find_latest_page( em::view< const page* > pages );
 
 bool store(
     const payload&                                     pl,
-    const cfg_map&                                     m,
+    const cfg_map*                                     m,
     em::function_view< bool( std::size_t, uint64_t ) > writer );
 
 bool load( page p, em::function_view< bool( const payload& ) > pl_cb, cfg_map& m );

@@ -95,13 +95,11 @@ using reghandler = em::protocol::register_handler< cfg_map >;
 
 bool store(
     const payload&                                     pl,
-    const cfg_map&                                     m,
+    const cfg_map*                                     m,
     em::function_view< bool( std::size_t, uint64_t ) > writer )
 {
 
         static constexpr std::size_t N = cfg_map::registers_count;
-
-        std::array keys = m.get_keys();
 
         constexpr std::size_t buffer_n =
             em::ceil_to( N * sizeof( cfg_keyval ) + 128, sizeof( uint64_t ) );
@@ -110,10 +108,11 @@ bool store(
         bool success = handler::store(
             buffer,
             pl,
-            // keys.size(),
-            2,
+            m != nullptr ? cfg_map::keys.size() : 0,
             [&]( std::size_t i ) -> cfg_keyval {
-                    return cfg_keyval{ .key = keys[i], .msg = reghandler::select( m, keys[i] ) };
+                    return cfg_keyval{
+                        .key = cfg_map::keys[i],
+                        .msg = reghandler::select( *m, cfg_map::keys[i] ) };
             },
             chcksum_f );
 

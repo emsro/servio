@@ -40,7 +40,7 @@ TEST( CFG, storage )
                 std::memcpy( &p[addr], &val, sizeof( uint64_t ) );
                 return true;
         };
-        bool success = cfg::store( pl, cm, writer );
+        bool success = cfg::store( pl, &cm, writer );
         EXPECT_TRUE( success );
 
         tmp = cfg::find_unused_page( pages );

@@ -17,10 +17,6 @@ public:
         void set_limits( control_loop, limits< float > lim );
         void set_static_friction( float scale, float decay );
 
-        bool is_engaged() const
-        {
-                return engaged_;
-        }
         control_mode get_mode() const
         {
                 return state_;
@@ -48,8 +44,7 @@ public:
 private:
         ctl::pid_module& ref_module( control_loop );
 
-        bool         engaged_ = false;
-        control_mode state_   = control_mode::POWER;
+        control_mode state_ = control_mode::POWER;
 
         float goal_position_ = 0.f;
 

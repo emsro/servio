@@ -12,6 +12,9 @@ void map_cfg( uint32_t key, Cfg& cfg, UnaryFunction&& f )
         case Config_model_tag:
                 f.template operator()< MODEL >( cfg.model );
                 break;
+        case Config_id_tag:
+                f.template operator()< ID >( cfg.id );
+                break;
         case Config_position_conv_lower_setpoint_value_tag:
                 f.template operator()< POSITION_CONV_LOWER_SETPOINT_VALUE >(
                     cfg.position_conv_lower_setpoint_value );

@@ -12,7 +12,7 @@
 #include <emlabcpp/pid.h>
 #include <string>
 
-bool store_config( const cfg::page& page, const cfg::payload& pld, const cfg_map& cfg )
+bool store_config( const cfg::page& page, const cfg::payload& pld, const cfg_map* cfg )
 {
         const std::byte* start      = page.begin();
         uint32_t         start_addr = reinterpret_cast< uint32_t >( start );
@@ -87,7 +87,7 @@ int main()
                         fw::stop_exec();
                 }
 
-                auto write_config = [&]( const cfg_map& cfg ) -> bool {
+                auto write_config = [&]( const cfg_map* cfg ) -> bool {
                         cfg::payload pld{
                             .git_ver = "",  // TODO: << fix this
                             .id      = last_cfg_payload.id + 1,

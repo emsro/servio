@@ -49,15 +49,14 @@ void control::set_static_friction( float scale, float decay )
 
 void control::disengage()
 {
-        switch_to_power_control( 0 );
-        engaged_ = false;
+        state_ = control_mode::DISENGAGED;
+        power_ = 0;
 }
 
 void control::switch_to_power_control( int16_t power )
 {
-        state_   = control_mode::POWER;
-        power_   = power;
-        engaged_ = true;
+        state_ = control_mode::POWER;
+        power_ = power;
 }
 void control::switch_to_current_control( microseconds, float current )
 {
@@ -68,22 +67,19 @@ void control::switch_to_current_control( microseconds, float current )
                 position_pid_.set_output( -infty );
                 velocity_pid_.set_momentary_limit( { current, infty } );
         }
-        state_   = control_mode::CURRENT;
-        engaged_ = true;
+        state_ = control_mode::CURRENT;
 }
 void control::switch_to_velocity_control( microseconds, float velocity )
 {
         state_ = control_mode::VELOCITY;
         velocity_pid_.reset_momentary_limit();
         position_pid_.set_output( velocity );
-        engaged_ = true;
 }
 void control::switch_to_position_control( microseconds, float position )
 {
         state_ = control_mode::POSITION;
         velocity_pid_.reset_momentary_limit();
         goal_position_ = position;
-        engaged_       = true;
 }
 
 void control::moving_irq( microseconds now, bool is_moving )
@@ -107,7 +103,7 @@ void control::position_irq( microseconds now, float position )
 
 void control::velocity_irq( microseconds now, float velocity )
 {
-        if ( state_ == control_mode::POWER ) {
+        if ( state_ == control_mode::POWER || state_ == control_mode::DISENGAGED ) {
                 velocity_pid_.reset( now, velocity );
                 return;
         }
@@ -116,7 +112,7 @@ void control::velocity_irq( microseconds now, float velocity )
 
 void control::current_irq( microseconds now, float current )
 {
-        if ( state_ == control_mode::POWER ) {
+        if ( state_ == control_mode::POWER || state_ == control_mode::DISENGAGED ) {
                 current_pid_.reset( now, current );
                 return;
         }

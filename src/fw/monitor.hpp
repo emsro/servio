@@ -1,4 +1,3 @@
-
 #include "converter.hpp"
 #include "fw/drivers/acquisition.hpp"
 #include "indication.hpp"
@@ -49,7 +48,7 @@ public:
                         indi_.on_event( now, indication_event::TEMPERATURE_HIGH );
                 }
 
-                if ( ctl_.is_engaged() ) {
+                if ( ctl_.get_mode() != control_mode::DISENGAGED ) {
                         indi_.on_event( now, indication_event::ENGAGED );
                 } else {
                         indi_.on_event( now, indication_event::DISENGAGED );

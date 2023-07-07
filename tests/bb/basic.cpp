@@ -5,32 +5,16 @@
 #include <filesystem>
 #include <gtest/gtest.h>
 
-namespace host
+boost::asio::awaitable< void > test_properties_querying( boost::asio::serial_port& port )
 {
-boost::asio::awaitable< float >
-load_property( boost::asio::serial_port& port, servio::Property prop )
-{
-        servio::HostToServio hts;
-        hts.mutable_get_property()->set_property( prop );
-        servio::ServioToHost sth = co_await exchange( port, hts );
-        if ( !sth.has_get_property() ) {
-                throw reply_error{ "reply does not contain get_property as it should" };
-        }
-        co_return sth.get_property().value();
-}
-}  // namespace host
+        const google::protobuf::OneofDescriptor* desc =
+            servio::Property::GetDescriptor()->oneof_decl( 0 );
 
-boost::asio::awaitable< void > test_properties( boost::asio::serial_port& port )
-{
-        // TODO: this is kinda it, as the load_property error checking is enough
-        float current = co_await host::load_property( port, servio::PROPERTY_CURRENT );
-        EXPECT_NE( current, 0.f );
-        float vcc = co_await host::load_property( port, servio::PROPERTY_VCC );
-        EXPECT_NE( vcc, 0.f );
-        float temp = co_await host::load_property( port, servio::PROPERTY_TEMP );
-        EXPECT_NE( temp, 0.f );
-        float position = co_await host::load_property( port, servio::PROPERTY_POSITION );
-        EXPECT_NE( position, 0.f );
+        for ( int i = 0; i < desc->field_count(); i++ ) {
+                const google::protobuf::FieldDescriptor* field = desc->field( i );
+                servio::Property prop = co_await host::load_property( port, field );
+                EXPECT_EQ( static_cast< int >( prop.pld_case() ), field->number() );
+        }
 }
 
 using test_signature = boost::asio::awaitable< void >( boost::asio::serial_port& );
@@ -93,7 +77,8 @@ int main( int argc, char** argv )
                 return res;
         }
 
-        register_test( "properties", device.Get(), baudrate.Get(), test_properties );
+        register_test(
+            "properties_querying", device.Get(), baudrate.Get(), test_properties_querying );
 
         return RUN_ALL_TESTS();
 }
