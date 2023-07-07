@@ -17,6 +17,42 @@ boost::asio::awaitable< void > test_properties_querying( boost::asio::serial_por
         }
 }
 
+boost::asio::awaitable< void > check_mode( boost::asio::serial_port& port, servio::Mode m )
+{
+        servio::HostToServio hts;
+        *hts.mutable_set_mode()  = m;
+        servio::ServioToHost sth = co_await host::exchange( port, hts );
+
+        EXPECT_TRUE( sth.has_set_mode() );
+
+        servio::Property prop = co_await host::load_property( port, servio::Property::kMode );
+        EXPECT_TRUE( prop.has_mode() );
+        EXPECT_EQ( prop.mode().pld_case(), m.pld_case() );
+}
+
+boost::asio::awaitable< void > test_modes( boost::asio::serial_port& port )
+{
+        servio::Mode m;
+
+        m.mutable_disengaged();
+        co_await check_mode( port, m );
+
+        m.set_power( 0 );
+        co_await check_mode( port, m );
+
+        m.set_current( 0 );
+        co_await check_mode( port, m );
+
+        m.set_velocity( 0 );
+        co_await check_mode( port, m );
+
+        m.set_position( 0 );
+        co_await check_mode( port, m );
+
+        m.mutable_disengaged();
+        co_await check_mode( port, m );
+}
+
 using test_signature = boost::asio::awaitable< void >( boost::asio::serial_port& );
 
 struct bb_test_case : ::testing::Test
@@ -79,6 +115,7 @@ int main( int argc, char** argv )
 
         register_test(
             "properties_querying", device.Get(), baudrate.Get(), test_properties_querying );
+        register_test( "modes", device.Get(), baudrate.Get(), test_modes );
 
         return RUN_ALL_TESTS();
 }
