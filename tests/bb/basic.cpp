@@ -44,7 +44,7 @@ boost::asio::awaitable< void > test_modes( boost::asio::serial_port& port )
 {
         servio::Mode m;
 
-        m.mutable_disengaged()->set_nothing( 12 );
+        m.mutable_disengaged();
         co_await check_mode( port, m );
 
         m.set_power( 0 );
@@ -59,7 +59,7 @@ boost::asio::awaitable< void > test_modes( boost::asio::serial_port& port )
         m.set_position( 0 );
         co_await check_mode( port, m );
 
-        m.mutable_disengaged()->set_nothing( 12 );
+        m.mutable_disengaged();
         co_await check_mode( port, m );
 }
 

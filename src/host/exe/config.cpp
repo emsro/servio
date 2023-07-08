@@ -48,7 +48,7 @@ boost::asio::awaitable< void > query_cmd( boost::asio::serial_port& port, bool j
 boost::asio::awaitable< void > commit_cmd( boost::asio::serial_port& port )
 {
         servio::HostToServio msg;
-        msg.mutable_commit_config()->set_nothing( 42 );
+        msg.mutable_commit_config();
 
         servio::ServioToHost reply = co_await exchange( port, msg );
         std::ignore                = reply;
@@ -58,7 +58,7 @@ boost::asio::awaitable< void > commit_cmd( boost::asio::serial_port& port )
 boost::asio::awaitable< void > clear_cmd( boost::asio::serial_port& port )
 {
         servio::HostToServio msg;
-        msg.mutable_clear_config()->set_nothing( 42 );
+        msg.mutable_clear_config();
         servio::ServioToHost reply = co_await exchange( port, msg );
         std::ignore                = reply;
         // TODO: check reply state;

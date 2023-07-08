@@ -2,12 +2,7 @@ syntax = "proto3";
 
 package servio;
 
-message NullMsg {
-  // The nothing argument here is not necessary, but last time we tried this
-  // nanopb failed to parse an empty message. TODO: report this as a bug to
-  // nanopb
-  uint32 nothing = 1;
-};
+message NullMsg {};
 
 // Control modes of the servo, the name of field represetns mode name and value
 // represents the adequate control variable.
