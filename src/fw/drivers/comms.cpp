@@ -30,12 +30,12 @@ void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
                 isizes_.push_back( current_size_ - 1 );
                 current_size_ = 0;
         } else if ( current_size_ == 0 ) {
+                cd_ = em::cobs_decoder{ rx_byte_ };
                 current_size_ += 1;
-                // TODO: add this as constructor to decoder
-                cd_ = em::cobs_decoder{ static_cast< uint8_t >( rx_byte_ ) };
         } else {
                 current_size_ += 1;
-                ibuffer_.push_back( cd_.iter( rx_byte_ ) );
+                std::byte b = cd_.iter( rx_byte_ );
+                ibuffer_.push_back( b );
         }
         start();
 }
@@ -55,7 +55,7 @@ std::tuple< bool, em::view< std::byte* > > comms::load_message( em::view< std::b
                 b = ibuffer_.take_front();
         }
 
-        return { true, em::view_n( data.begin(), size ) };
+        return { true, dview };
 }
 
 void comms::start()

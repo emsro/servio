@@ -116,10 +116,10 @@ int main()
 
                 cor.ind.on_event( clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
 
-                HostToServio msg;
+                HostToServio msg  = {};
                 bool         succ = fw::decode( ldata, msg );
 
-                ServioToHost reply;
+                ServioToHost reply = {};
                 if ( !succ ) {
                         reply = fw::error_msg( "invalid message" );
                 } else {

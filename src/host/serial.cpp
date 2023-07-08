@@ -46,6 +46,7 @@ boost::asio::awaitable< servio::ServioToHost >
 exchange( boost::asio::serial_port& port, const servio::HostToServio& msg )
 {
         co_await write( port, msg );
+
         try {
                 servio::ServioToHost reply = co_await read( port );
                 co_return reply;

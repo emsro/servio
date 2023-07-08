@@ -27,7 +27,8 @@ void print_configs_json( const std::vector< servio::Config > out )
                          std::string{ ",\n " },
                          [&]( const servio::Config& cfg ) {
                                  std::string tmp;
-                                 google::protobuf::util::MessageToJsonString( cfg, &tmp, ops );
+                                 std::ignore =
+                                     google::protobuf::util::MessageToJsonString( cfg, &tmp, ops );
                                  return tmp;
                          } )
                   << "]" << std::endl;
@@ -47,7 +48,7 @@ boost::asio::awaitable< void > query_cmd( boost::asio::serial_port& port, bool j
 boost::asio::awaitable< void > commit_cmd( boost::asio::serial_port& port )
 {
         servio::HostToServio msg;
-        msg.mutable_commit_config()->set_nothing( 0 );
+        msg.mutable_commit_config()->set_nothing( 42 );
 
         servio::ServioToHost reply = co_await exchange( port, msg );
         std::ignore                = reply;
@@ -57,7 +58,7 @@ boost::asio::awaitable< void > commit_cmd( boost::asio::serial_port& port )
 boost::asio::awaitable< void > clear_cmd( boost::asio::serial_port& port )
 {
         servio::HostToServio msg;
-        msg.mutable_clear_config()->set_nothing( 0 );
+        msg.mutable_clear_config()->set_nothing( 42 );
         servio::ServioToHost reply = co_await exchange( port, msg );
         std::ignore                = reply;
         // TODO: check reply state;
@@ -94,6 +95,11 @@ set_cmd( boost::asio::serial_port& port, const std::string& name, std::string va
         const FD* field = desc->FindFieldByName( name );
         if ( field == nullptr ) {
                 std::cerr << "Failed to find config field " << name << std::endl;
+                co_return;
+        }
+
+        if ( field->is_repeated() ) {
+                std::cerr << "Config field is repeated, which is not supported" << std::endl;
                 co_return;
         }
 
