@@ -12,9 +12,18 @@
 #include <emlabcpp/pid.h>
 #include <string>
 
-bool store_config( const cfg::page& page, const cfg::payload& pld, const cfg_map* cfg )
+bool store_config(
+    const em::view< const cfg::page* > pages,
+    const cfg::payload&                pld,
+    const cfg_map*                     cfg )
 {
-        const std::byte* start      = page.begin();
+        std::optional< cfg::page > opt_page = cfg::find_next_page( pages );
+
+        if ( !opt_page ) {
+                return false;
+        }
+
+        const std::byte* start      = opt_page->begin();
         uint32_t         start_addr = reinterpret_cast< uint32_t >( start );
 
         auto f = [&]( std::size_t offset, uint64_t val ) -> bool {
@@ -80,19 +89,12 @@ int main()
         while ( true ) {
                 cor.tick( *leds_ptr, clock_ptr->get_us() );
 
-                std::optional< cfg::page > opt_page = cfg::find_next_page( pages );
-
-                if ( !opt_page ) {
-                        // TODO: well this is aggresive /o\...
-                        fw::stop_exec();
-                }
-
                 auto write_config = [&]( const cfg_map* cfg ) -> bool {
                         cfg::payload pld{
                             .git_ver = "",  // TODO: << fix this
                             .id      = last_cfg_payload.id + 1,
                         };
-                        return store_config( *opt_page, pld, cfg );
+                        return store_config( pages, pld, cfg );
                 };
 
                 fw::dispatcher dis{
