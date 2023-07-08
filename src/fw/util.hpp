@@ -1,10 +1,8 @@
-#include <chrono>
-#include <emlabcpp/algorithm.h>
+#include <algorithm>
+#include <cstring>
 #include <stm32g4xx_hal.h>
 
 #pragma once
-
-namespace em = emlabcpp;
 
 namespace fw
 {
@@ -15,6 +13,12 @@ template < typename... Components >
 void multistart( Components&... comps )
 {
         ( comps.start(), ... );
+}
+
+void copy_string_to( const char* str, std::size_t size, auto& target )
+{
+        std::memset( target, '\0', sizeof( target ) );
+        std::strncpy( target, str, std::min( size, sizeof( target ) - 1 ) );
 }
 
 struct check_bool

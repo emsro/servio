@@ -8,6 +8,8 @@ namespace em = emlabcpp;
 namespace fw
 {
 
+ServioToHost error_msg( const char* msg );
+
 /// decodes a bytes from data to HostToServio message, returns true on success
 bool decode( em::view< std::byte* > data, HostToServio& msg );
 

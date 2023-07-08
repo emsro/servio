@@ -1,10 +1,23 @@
 #include "fw/servio_pb.hpp"
 
+#include "fw/util.hpp"
+
 #include <pb_decode.h>
 #include <pb_encode.h>
 
 namespace fw
 {
+
+ServioToHost error_msg( const char* msg )
+{
+        ErrorMsg err_msg;
+        copy_string_to( msg, strlen( msg ), err_msg.msg );
+
+        ServioToHost reply;
+        reply.error     = err_msg;
+        reply.which_pld = ServioToHost_error_tag;
+        return reply;
+}
 
 bool decode( em::view< std::byte* > data, HostToServio& msg )
 {

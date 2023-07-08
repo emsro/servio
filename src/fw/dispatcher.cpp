@@ -1,26 +1,10 @@
 #include "fw/dispatcher.hpp"
 
 #include "fw/map_cfg.hpp"
+#include "fw/servio_pb.hpp"
 
 namespace fw
 {
-
-void copy_string_to( const char* str, std::size_t size, auto& target )
-{
-        std::memset( target, '\0', sizeof( target ) );
-        std::strncpy( target, str, std::min( size, sizeof( target ) ) - 1 );
-}
-
-ServioToHost error_msg( const char* msg )
-{
-        ErrorMsg err_msg;
-        copy_string_to( msg, strlen( msg ), err_msg.msg );
-
-        ServioToHost reply;
-        reply.error     = err_msg;
-        reply.which_pld = ServioToHost_error_tag;
-        return reply;
-}
 
 ServioToHost handle_set_mode( microseconds now, control& ctl, const Mode& msg )
 {

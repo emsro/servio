@@ -118,12 +118,13 @@ int main()
 
                 HostToServio msg;
                 bool         succ = fw::decode( ldata, msg );
-                if ( !succ ) {
-                        // TODO: well, this is aggresive
-                        fw::stop_exec();
-                }
 
-                ServioToHost reply = handle_message( dis, msg );
+                ServioToHost reply;
+                if ( !succ ) {
+                        reply = fw::error_msg( "invalid message" );
+                } else {
+                        reply = handle_message( dis, msg );
+                }
 
                 std::byte buffer[ServioToHost_size];
                 auto [esucc, data] = fw::encode( buffer, reply );
