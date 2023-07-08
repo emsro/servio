@@ -97,22 +97,25 @@ $(document).ready(function(){initNavTree('servio__pb_8hpp_source.html',''); init
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw.html">fw</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76">decode</a>( em::view&lt; std::byte* &gt; data, HostToServio&amp; msg );</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;std::tuple&lt; bool, em::view&lt; std::byte* &gt; &gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<a class="code" href="namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc">encode</a>( em::view&lt; std::byte* &gt; data, <span class="keyword">const</span> ServioToHost&amp; msg );</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}  <span class="comment">// namespace fw</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;ServioToHost <a class="code" href="namespacefw.html#a23fc4234292273ffabe5f85953f2713a">error_msg</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* msg );</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76">decode</a>( em::view&lt; std::byte* &gt; data, HostToServio&amp; msg );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;std::tuple&lt; bool, em::view&lt; std::byte* &gt; &gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<a class="code" href="namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc">encode</a>( em::view&lt; std::byte* &gt; data, <span class="keyword">const</span> ServioToHost&amp; msg );</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}  <span class="comment">// namespace fw</span></div>
 <div class="ttc" id="anamespacefw_html"><div class="ttname"><a href="namespacefw.html">fw</a></div><div class="ttdef"><b>Definition:</b> board.hpp:29</div></div>
-<div class="ttc" id="anamespacefw_html_a1e6e4a4b2d63a55fdc7c36ea8cf601dc"><div class="ttname"><a href="namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc">fw::encode</a></div><div class="ttdeci">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt; encode(em::view&lt; std::byte * &gt; data, const ServioToHost &amp;msg)</div><div class="ttdoc">encodes a ServioToHost message to bytes, returns succes bool and subset of data that contains the ser...</div><div class="ttdef"><b>Definition:</b> servio_pb.cpp:19</div></div>
-<div class="ttc" id="anamespacefw_html_ad87d2b13282640562c4ff917a3fb7d76"><div class="ttname"><a href="namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76">fw::decode</a></div><div class="ttdeci">bool decode(em::view&lt; std::byte * &gt; data, HostToServio &amp;msg)</div><div class="ttdoc">decodes a bytes from data to HostToServio message, returns true on success</div><div class="ttdef"><b>Definition:</b> servio_pb.cpp:9</div></div>
+<div class="ttc" id="anamespacefw_html_a1e6e4a4b2d63a55fdc7c36ea8cf601dc"><div class="ttname"><a href="namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc">fw::encode</a></div><div class="ttdeci">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt; encode(em::view&lt; std::byte * &gt; data, const ServioToHost &amp;msg)</div><div class="ttdoc">encodes a ServioToHost message to bytes, returns succes bool and subset of data that contains the ser...</div><div class="ttdef"><b>Definition:</b> servio_pb.cpp:32</div></div>
+<div class="ttc" id="anamespacefw_html_a23fc4234292273ffabe5f85953f2713a"><div class="ttname"><a href="namespacefw.html#a23fc4234292273ffabe5f85953f2713a">fw::error_msg</a></div><div class="ttdeci">ServioToHost error_msg(const char *msg)</div><div class="ttdef"><b>Definition:</b> servio_pb.cpp:11</div></div>
+<div class="ttc" id="anamespacefw_html_ad87d2b13282640562c4ff917a3fb7d76"><div class="ttname"><a href="namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76">fw::decode</a></div><div class="ttdeci">bool decode(em::view&lt; std::byte * &gt; data, HostToServio &amp;msg)</div><div class="ttdoc">decodes a bytes from data to HostToServio message, returns true on success</div><div class="ttdef"><b>Definition:</b> servio_pb.cpp:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="servio__pb_8hpp.html">servio_pb.hpp</a></li>
-    <li class="footer">Generated on Fri Jul 7 2023 20:03:17 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jul 8 2023 10:40:56 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

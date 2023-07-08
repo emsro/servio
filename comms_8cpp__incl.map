@@ -1,11 +1,11 @@
 <map id="src/fw/drivers/comms.cpp" name="src/fw/drivers/comms.cpp">
 <area shape="rect" id="node1" title=" " alt="" coords="496,5,684,32"/>
 <area shape="rect" id="node2" href="$comms_8hpp.html" title=" " alt="" coords="416,80,583,107"/>
-<area shape="rect" id="node7" href="$util_8hpp.html" title=" " alt="" coords="699,80,790,107"/>
+<area shape="rect" id="node7" href="$util_8hpp.html" title=" " alt="" coords="703,80,794,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,155,183,196"/>
 <area shape="rect" id="node4" title=" " alt="" coords="207,155,384,196"/>
 <area shape="rect" id="node5" title=" " alt="" coords="409,155,590,196"/>
 <area shape="rect" id="node6" title=" " alt="" coords="615,162,749,189"/>
-<area shape="rect" id="node8" title=" " alt="" coords="774,162,841,189"/>
-<area shape="rect" id="node9" title=" " alt="" coords="865,162,1030,189"/>
+<area shape="rect" id="node8" title=" " alt="" coords="774,162,859,189"/>
+<area shape="rect" id="node9" title=" " alt="" coords="883,162,950,189"/>
 </map>

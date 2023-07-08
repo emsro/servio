@@ -119,7 +119,7 @@ var NAVTREEINDEX =
 [
 "acquisition_8cpp.html",
 "classmetrics.html#a6998476ebd787b4c66aec862cec0e313",
-"md_doc_adr_0001_record_architecture_decisions.html#autotoc_md2",
+"md_doc_adr_0001_record_architecture_decisions.html#autotoc_md4",
 "stm32g4xx__hal__conf_8h.html#a623fbdaf1b7f928d848ccdfb7cc48429"
 ];
 

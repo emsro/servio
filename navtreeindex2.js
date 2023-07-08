@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"md_doc_adr_0001_record_architecture_decisions.html#autotoc_md2":[1,1],
-"md_doc_adr_0001_record_architecture_decisions.html#autotoc_md3":[1,2],
 "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md4":[1,3],
 "md_doc_adr_0002_project_shall_be_writen_with_c_20.html":[2],
 "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md6":[2,0],
@@ -210,9 +208,11 @@ var NAVTREEINDEX2 =
 "serial_8hpp_source.html":[12,0,1,4,5],
 "servio__pb_8cpp.html":[12,0,1,3,16],
 "servio__pb_8cpp.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc":[12,0,1,3,16,1],
+"servio__pb_8cpp.html#a23fc4234292273ffabe5f85953f2713a":[12,0,1,3,16,2],
 "servio__pb_8cpp.html#ad87d2b13282640562c4ff917a3fb7d76":[12,0,1,3,16,0],
 "servio__pb_8hpp.html":[12,0,1,3,17],
 "servio__pb_8hpp.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc":[12,0,1,3,17,1],
+"servio__pb_8hpp.html#a23fc4234292273ffabe5f85953f2713a":[12,0,1,3,17,2],
 "servio__pb_8hpp.html#ad87d2b13282640562c4ff917a3fb7d76":[12,0,1,3,17,0],
 "servio__pb_8hpp_source.html":[12,0,1,3,17],
 "static__detector_8hpp.html":[12,0,1,18],

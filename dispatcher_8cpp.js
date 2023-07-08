@@ -1,7 +1,5 @@
 var dispatcher_8cpp =
 [
-    [ "copy_string_to", "dispatcher_8cpp.html#aa9827b3a052ca9db4d230c0c439f7319", null ],
-    [ "error_msg", "dispatcher_8cpp.html#a23fc4234292273ffabe5f85953f2713a", null ],
     [ "get_mode", "dispatcher_8cpp.html#a1553464d8123837732a7bad780da65df", null ],
     [ "handle_clear_config", "dispatcher_8cpp.html#adb9ba6229ac5d318dd2fc074d8f3bfa5", null ],
     [ "handle_commit_config", "dispatcher_8cpp.html#a8ede28207610e3bab4ad88077c3027fc", null ],
