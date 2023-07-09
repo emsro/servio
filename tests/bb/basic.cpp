@@ -1,3 +1,4 @@
+#include "bb_test_case.hpp"
 #include "host/cli.hpp"
 #include "host/exceptions.hpp"
 #include "host/serial.hpp"
@@ -15,7 +16,8 @@ bool operator==( const Message& lh, const Message& rh )
 }
 }  // namespace google::protobuf
 
-boost::asio::awaitable< void > test_properties_querying( boost::asio::serial_port& port )
+boost::asio::awaitable< void >
+test_properties_querying( boost::asio::io_context&, boost::asio::serial_port& port )
 {
         const google::protobuf::OneofDescriptor* desc =
             servio::Property::GetDescriptor()->oneof_decl( 0 );
@@ -40,7 +42,8 @@ boost::asio::awaitable< void > check_mode( boost::asio::serial_port& port, servi
         EXPECT_EQ( prop.mode().pld_case(), m.pld_case() );
 }
 
-boost::asio::awaitable< void > test_modes( boost::asio::serial_port& port )
+boost::asio::awaitable< void >
+test_modes( boost::asio::io_context&, boost::asio::serial_port& port )
 {
         servio::Mode m;
 
@@ -133,7 +136,8 @@ servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servi
         return ::testing::AssertionSuccess();
 }
 
-boost::asio::awaitable< void > test_config( boost::asio::serial_port& port )
+boost::asio::awaitable< void >
+test_config( boost::asio::io_context&, boost::asio::serial_port& port )
 {
         const std::vector< servio::Config > cfg_vec = co_await host::load_full_config( port );
         std::map< servio::Config::PldCase, servio::Config > istate_map;
@@ -165,49 +169,6 @@ boost::asio::awaitable< void > test_config( boost::asio::serial_port& port )
         }
 }
 
-using test_signature = boost::asio::awaitable< void >( boost::asio::serial_port& );
-
-struct bb_test_case : ::testing::Test
-{
-        bb_test_case(
-            std::filesystem::path           device,
-            unsigned                        baudrate,
-            std::function< test_signature > test )
-          : port( context, device )
-          , test( test )
-        {
-                port.set_option( boost::asio::serial_port_base::baud_rate( baudrate ) );
-        }
-
-        void TestBody() final
-        {
-                std::exception_ptr excep_ptr;
-                co_spawn( port.get_executor(), test( port ), [&]( std::exception_ptr ptr ) {
-                        excep_ptr = ptr;
-                } );
-                context.run();
-
-                if ( excep_ptr ) {
-                        std::rethrow_exception( excep_ptr );
-                }
-        }
-
-        boost::asio::io_context         context;
-        boost::asio::serial_port        port;
-        std::function< test_signature > test;
-};
-
-void register_test(
-    const char*                     name,
-    std::filesystem::path           device,
-    unsigned                        baudrate,
-    std::function< test_signature > test )
-{
-        ::testing::RegisterTest( "blackbox", name, nullptr, nullptr, __FILE__, __LINE__, [=] {
-                return new bb_test_case( device, baudrate, test );
-        } );
-}
-
 int main( int argc, char** argv )
 {
         ::testing::InitGoogleTest( &argc, argv );
@@ -225,10 +186,14 @@ int main( int argc, char** argv )
                 return res;
         }
 
-        register_test(
-            "properties_querying", device.Get(), baudrate.Get(), test_properties_querying );
-        register_test( "modes", device.Get(), baudrate.Get(), test_modes );
-        register_test( "config", device.Get(), baudrate.Get(), test_config );
+        tests::bb::register_test(
+            "basic",
+            "properties_querying",
+            device.Get(),
+            baudrate.Get(),
+            test_properties_querying );
+        tests::bb::register_test( "basic", "modes", device.Get(), baudrate.Get(), test_modes );
+        tests::bb::register_test( "basic", "config", device.Get(), baudrate.Get(), test_config );
 
         return RUN_ALL_TESTS();
 }
