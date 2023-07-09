@@ -5,7 +5,7 @@ package servio;
 message NullMsg {};
 
 // Control modes of the servo, the name of field represetns mode name and value
-// represents the adequate control variable.
+// represents the goal value for that mode.
 message Mode {
   oneof pld {
     NullMsg disengaged = 1;  // servo is actively driving the motor
@@ -16,7 +16,8 @@ message Mode {
   }
 }
 
-// Properties that can be queried from the servo.
+// Properties that can be queried from the servo. Reply represents current value
+// of that property.
 message Property {
   oneof pld {
     Mode mode = 1;
