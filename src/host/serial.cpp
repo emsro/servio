@@ -65,7 +65,7 @@ boost::asio::awaitable< servio::Config >
 load_config_field( boost::asio::serial_port& port, const google::protobuf::FieldDescriptor* field )
 {
         servio::HostToServio msg;
-        msg.mutable_get_config()->set_key( static_cast< uint32_t >( field->number() ) );
+        msg.mutable_get_config()->set_field_id( static_cast< uint32_t >( field->number() ) );
 
         servio::ServioToHost reply = co_await exchange( port, msg );
         if ( !reply.has_get_config() ) {

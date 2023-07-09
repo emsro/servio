@@ -1,11 +1,10 @@
-#include "config.hpp"
-
-#include "host/cli.hpp"
 #include "host/serial.hpp"
 
 #include <boost/asio.hpp>
-#include <boost/asio/serial_port.hpp>
+#include <emlabcpp/algorithm.h>
 #include <google/protobuf/util/json_util.h>
+
+namespace em = emlabcpp;
 
 namespace host
 {
@@ -52,7 +51,6 @@ boost::asio::awaitable< void > commit_cmd( boost::asio::serial_port& port )
 
         servio::ServioToHost reply = co_await exchange( port, msg );
         std::ignore                = reply;
-        // TODO: check reply state;
 }
 
 boost::asio::awaitable< void > clear_cmd( boost::asio::serial_port& port )
@@ -61,7 +59,6 @@ boost::asio::awaitable< void > clear_cmd( boost::asio::serial_port& port )
         msg.mutable_clear_config();
         servio::ServioToHost reply = co_await exchange( port, msg );
         std::ignore                = reply;
-        // TODO: check reply state;
 }
 
 boost::asio::awaitable< void >
@@ -133,97 +130,6 @@ set_cmd( boost::asio::serial_port& port, const std::string& name, std::string va
 
         servio::ServioToHost reply = co_await exchange( port, msg );
         std::ignore                = reply;
-        // TODO: check reply status
 }
 
 }  // namespace host
-
-int main( int argc, char* argv[] )
-{
-
-        boost::asio::io_context                   context;
-        std::optional< boost::asio::serial_port > opt_port;
-
-        args::ArgumentParser parser( "Utility to configure servio" );
-
-        args::Group arguments(
-            "arguments", args::Group::Validators::DontCare, args::Options::Global );
-
-        args::HelpFlag help( arguments, "help", "Display this help menu", { 'h', "help" } );
-        args::ValueFlag< std::filesystem::path > device(
-            arguments, "device", "Device to use", { 'd', "device" }, "/dev/ttyUSB0" );
-        args::ValueFlag< unsigned > baudrate(
-            arguments, "baudrate", "Baudrate for communication", { 'b', "baudrate" }, 115200 );
-
-        auto setup_port = [&] {
-                opt_port.emplace( context, device.Get() );
-                opt_port->set_option( boost::asio::serial_port_base::baud_rate( baudrate.Get() ) );
-        };
-
-        args::GlobalOptions globals( parser, arguments );
-
-        args::Group   commands( parser, "commands" );
-        args::Command query(
-            commands, "query", "list all config options", [&]( args::Subparser& parser ) {
-                    args::Flag json( parser, "json", "Enable json output", { 'j', "json" } );
-                    parser.Parse();
-
-                    setup_port();
-                    co_spawn(
-                        context, host::query_cmd( opt_port.value(), json ), boost::asio::detached );
-            } );
-        args::Command get(
-            commands, "get", "loads specific configuration option", [&]( args::Subparser& parser ) {
-                    args::Flag json( parser, "json", "Enable json output", { 'j', "json" } );
-                    args::Positional< std::string > field(
-                        parser, "field", "Name of the field to get", args::Options::Required );
-                    parser.Parse();
-
-                    setup_port();
-                    co_spawn(
-                        context,
-                        host::get_cmd( opt_port.value(), field.Get(), json ),
-                        boost::asio::detached );
-            } );
-        args::Command set(
-            commands, "set", "sets specific configuration option", [&]( args::Subparser& parser ) {
-                    args::Positional< std::string > field(
-                        parser, "field", "Name of the field to set", args::Options::Required );
-                    args::Positional< std::string > value(
-                        parser, "value", "Value to set", args::Options::Required );
-                    parser.Parse();
-
-                    setup_port();
-                    co_spawn(
-                        context,
-                        host::set_cmd( opt_port.value(), field.Get(), value.Get() ),
-                        boost::asio::detached );
-            } );
-        args::Command commit(
-            commands,
-            "commit",
-            "tell the servo to store it's current configuration into persistent memory",
-            [&]( args::Subparser& parser ) {
-                    parser.Parse();
-
-                    setup_port();
-                    co_spawn(
-                        context, host::commit_cmd( opt_port.value() ), boost::asio::detached );
-            } );
-        args::Command clear(
-            commands,
-            "clear",
-            "tells the servo to clear latest store config",
-            [&]( args::Subparser& parser ) {
-                    parser.Parse();
-
-                    setup_port();
-                    co_spawn( context, host::clear_cmd( opt_port.value() ), boost::asio::detached );
-            } );
-
-        int res = host::parse_cli( parser, argc, argv );
-
-        context.run();
-
-        return res;
-}

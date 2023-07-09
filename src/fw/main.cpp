@@ -123,8 +123,13 @@ int main()
 
                 ServioToHost reply = {};
                 if ( !succ ) {
+                        // TODO: this is problematic in case the reply is not ment for this
+                        // device... imagine that multiple servos spam the BUS with "invalid
+                        // message"
                         reply = fw::error_msg( "invalid message" );
                 } else {
+                        // TODO: check whenver id equals to currently configured id, or group id
+                        // equals to currently configured group id
                         reply = handle_message( dis, msg );
                 }
 

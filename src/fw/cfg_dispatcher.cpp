@@ -21,6 +21,8 @@ void cfg_dispatcher::apply( const cfg_key& key )
                 break;
         case ID:
                 break;
+        case GROUP_ID:
+                break;
         case POSITION_CONV_LOWER_SETPOINT_ANGLE:
         case POSITION_CONV_HIGHER_SETPOINT_ANGLE:
                 c.met.set_position_range(

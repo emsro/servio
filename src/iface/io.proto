@@ -37,6 +37,7 @@ message Config {
     string model = 1;
 
     uint32 id = 2;
+    uint32 group_id = 3;
 
     // Position conversion uses two setpoints (lower/higher) to setup a
     // conversion from the range of measuring sensor to real angle (in radians).
@@ -105,28 +106,37 @@ message Config {
   }
 }
 
+// Query the servo for desired property. field_id refers to the protobuf id of
+// fields in Property message, more information there.
+message GetProperty {
+  uint32 field_id = 1;  // field id of the property
+};
+
+// Query the servo for desired configuration value. field_id refers to the
+// protobuf id of fields in Config message, more information there.
+message GetConfig {
+  uint32 field_id = 1;
+};
+
 // Message sent from the host to the servo, represents a group of messages, out
 // of which only one is sent.
 message HostToServio {
-  // Queries the server for desired property. Units are documented in `Property`
-  // enum documentation.
-  message GetProperty {
-    uint32 field_id = 1;  // field id of the property
-  };
-
-  // Returns one config value identified by key
-  message GetConfig {
-    uint32 key = 1;
+  // specify id of target device or devices
+  oneof ids {
+    // id of target servo, device will always send a reply
+    uint32 id = 1;
+    // id of target servos, the servi will never send a reply
+    uint32 group_id = 2;
   };
 
   // Contains one of the available messages
   oneof pld {
-    Mode set_mode = 1;             // changes mode
-    GetProperty get_property = 2;  // queries property
-    Config set_config = 3;         // sets config value based on Config content
-    GetConfig get_config = 4;      // retrivies config vlaue
-    NullMsg commit_config = 5;     // commits current config into the memory
-    NullMsg clear_config = 6;      // clears stored config
+    Mode set_mode = 11;             // changes mode
+    GetProperty get_property = 12;  // queries property
+    Config set_config = 13;         // sets config value based on Config content
+    GetConfig get_config = 14;      // retrivies config vlaue
+    NullMsg commit_config = 15;     // commits current config into the memory
+    NullMsg clear_config = 16;      // clears stored config
   };
 };
 
@@ -136,13 +146,14 @@ message ErrorMsg {
 
 // Reply message sent by the servo
 message ServioToHost {
+  uint32 id = 1;
   oneof pld {
-    ErrorMsg error = 1;
-    NullMsg set_mode = 2;
-    Property get_property = 3;
-    NullMsg set_config = 4;
-    Config get_config = 5;
-    NullMsg commit_config = 6;
-    NullMsg clear_config = 7;
+    ErrorMsg error = 10;
+    NullMsg set_mode = 11;
+    Property get_property = 12;
+    NullMsg set_config = 13;
+    Config get_config = 14;
+    NullMsg commit_config = 15;
+    NullMsg clear_config = 16;
   };
 };

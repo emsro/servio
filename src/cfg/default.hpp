@@ -9,7 +9,8 @@ consteval cfg_map get_default_config()
 {
         return cfg_map{
             cfg_reg< MODEL, model_name >{ "no model" },
-            cfg_reg< ID, uint32_t >{ 1 },
+            cfg_reg< ID, uint32_t >{ 0 },
+            cfg_reg< GROUP_ID, uint32_t >{ 0 },
             cfg_reg< POSITION_CONV_LOWER_SETPOINT_VALUE, uint32_t >{ 0 },
             cfg_reg< POSITION_CONV_LOWER_SETPOINT_ANGLE, float >{ 0.f },
             cfg_reg< POSITION_CONV_HIGHER_SETPOINT_VALUE, uint32_t >{ 4096 },

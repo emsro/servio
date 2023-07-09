@@ -32,9 +32,8 @@ ServioToHost handle_set_mode( microseconds now, control& ctl, const Mode& msg )
                 ctl.switch_to_position_control( now, msg.position );
                 break;
         default:
-                return error_msg( "Got unknown mode" );
+                return error_msg( "got unknown mode" );
         }
-        // TODO: add default switch case for an error
         ServioToHost rep;
         rep.which_pld = ServioToHost_set_mode_tag;
         return rep;
@@ -68,11 +67,11 @@ Mode get_mode( const control& ctl )
 }
 
 ServioToHost handle_get_property(
-    const control&                  ctl,
-    const converter&                conv,
-    const acquisition&              acquis,
-    const hbridge&                  hb,
-    const HostToServio_GetProperty& msg )
+    const control&     ctl,
+    const converter&   conv,
+    const acquisition& acquis,
+    const hbridge&     hb,
+    const GetProperty& msg )
 {
         Property prop;
         prop.which_pld = static_cast< pb_size_t >( msg.field_id );
@@ -93,7 +92,7 @@ ServioToHost handle_get_property(
                 prop.position = position( conv, acquis );
                 break;
         default:
-                return error_msg( "Got unknown property" );
+                return error_msg( "got unknown property" );
         }
         ServioToHost repl;
         repl.get_property = prop;
@@ -103,27 +102,34 @@ ServioToHost handle_get_property(
 
 ServioToHost handle_set_config( cfg_dispatcher& cfg_disp, const Config& req )
 {
-        map_cfg( req.which_pld, req, [&]< cfg_key K >( auto& val ) {
+        bool key_found = map_cfg( req.which_pld, req, [&]< cfg_key K >( auto& val ) {
                 cfg_disp.set< K >( val );
         } );
+        if ( !key_found ) {
+                return error_msg( "unknown key" );
+        }
         ServioToHost msg;
         msg.which_pld = ServioToHost_set_config_tag;
         return msg;
 }
 
-ServioToHost handle_get_config( const cfg_dispatcher& cfg_disp, const HostToServio_GetConfig& req )
+ServioToHost handle_get_config( const cfg_dispatcher& cfg_disp, const GetConfig& req )
 {
         ServioToHost msg;
-        map_cfg( req.key, msg.get_config, [&]< cfg_key K, typename T >( T& val ) {
-                if constexpr ( K == MODEL ) {
-                        const model_name& n = cfg_disp.map.get_val< K >();
-                        copy_string_to( n.data(), n.size(), val );
-                } else {
-                        val = cfg_disp.map.get_val< K >();
-                }
-        } );
+        bool         key_found =
+            map_cfg( req.field_id, msg.get_config, [&]< cfg_key K, typename T >( T& val ) {
+                    if constexpr ( K == MODEL ) {
+                            const model_name& n = cfg_disp.map.get_val< K >();
+                            copy_string_to( n.data(), n.size(), val );
+                    } else {
+                            val = cfg_disp.map.get_val< K >();
+                    }
+            } );
+        if ( !key_found ) {
+                return error_msg( "unknown key" );
+        }
         msg.get_config.which_pld =
-            static_cast< uint16_t >( req.key );  // TODO: well this is not ideal
+            static_cast< uint16_t >( req.field_id );  // TODO: well this is not ideal
         msg.which_pld = ServioToHost_get_config_tag;
         return msg;
 }
@@ -133,7 +139,7 @@ ServioToHost handle_commit_config( const cfg_dispatcher& cfg_disp, const auto& c
 
         bool succ = cfg_writer( &cfg_disp.map );
         if ( !succ ) {
-                return error_msg( "Commit failed" );
+                return error_msg( "commit failed" );
         }
 
         ServioToHost msg;
@@ -146,7 +152,7 @@ ServioToHost handle_clear_config( const auto& cfg_writer )
 
         bool succ = cfg_writer( nullptr );
         if ( !succ ) {
-                return error_msg( "Clear failed" );
+                return error_msg( "clear failed" );
         }
 
         ServioToHost msg;

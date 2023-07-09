@@ -11,6 +11,7 @@ enum cfg_key : uint32_t
 {
         MODEL                               = 1,
         ID                                  = 2,
+        GROUP_ID                            = 3,
         POSITION_CONV_LOWER_SETPOINT_VALUE  = 10,
         POSITION_CONV_LOWER_SETPOINT_ANGLE  = 11,
         POSITION_CONV_HIGHER_SETPOINT_VALUE = 12,
@@ -53,6 +54,7 @@ using cfg_map = em::protocol::register_map<
     std::endian::little,
     cfg_reg< MODEL, model_name >,
     cfg_reg< ID, uint32_t >,
+    cfg_reg< GROUP_ID, uint32_t >,
     cfg_reg< POSITION_CONV_LOWER_SETPOINT_VALUE, uint32_t >,
     cfg_reg< POSITION_CONV_LOWER_SETPOINT_ANGLE, float >,
     cfg_reg< POSITION_CONV_HIGHER_SETPOINT_VALUE, uint32_t >,

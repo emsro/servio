@@ -6,14 +6,18 @@ namespace fw
 {
 
 template < typename Cfg, typename UnaryFunction >
-void map_cfg( uint32_t key, Cfg& cfg, UnaryFunction&& f )
+[[nodiscard]] bool map_cfg( uint32_t key, Cfg& cfg, UnaryFunction&& f )
 {
+        bool found_key = true;
         switch ( key ) {
         case Config_model_tag:
                 f.template operator()< MODEL >( cfg.model );
                 break;
         case Config_id_tag:
                 f.template operator()< ID >( cfg.id );
+                break;
+        case Config_group_id_tag:
+                f.template operator()< GROUP_ID >( cfg.group_id );
                 break;
         case Config_position_conv_lower_setpoint_value_tag:
                 f.template operator()< POSITION_CONV_LOWER_SETPOINT_VALUE >(
@@ -106,8 +110,10 @@ void map_cfg( uint32_t key, Cfg& cfg, UnaryFunction&& f )
         case Config_moving_detection_step_tag:
                 f.template operator()< MOVING_DETECTION_STEP >( cfg.moving_detection_step );
                 break;
+        default:
+                found_key = false;
         }
-        // TODO: handle a missing key
+        return found_key;
 }
 
 }  // namespace fw
