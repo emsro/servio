@@ -1,18 +1,14 @@
 var searchData=
 [
-  ['parse_5fcli_784',['parse_cli',['../namespacehost.html#a510d9c368fd6d74f7b6a79280890c631',1,'host']]],
-  ['parse_5ferror_785',['parse_error',['../structhost_1_1parse__error.html#aa69dd6bdfa2d469f6b6da1df41d51bb7',1,'host::parse_error']]],
-  ['pendsv_5fhandler_786',['PendSV_Handler',['../it_8cpp.html#a6303e1f258cbdc1f970ce579cc015623',1,'it.cpp']]],
-  ['period_5fcb_787',['period_cb',['../structperiod__cb.html#ab6cad5355652a0423219388c9473fb8c',1,'period_cb']]],
-  ['period_5felapsed_5firq_788',['period_elapsed_irq',['../classfw_1_1acquisition.html#a7e2f9cd2908cd2665a183a32cb29885d',1,'fw::acquisition']]],
-  ['pid_5fmodule_789',['pid_module',['../classctl_1_1pid__module.html#a2279f448e594ffdd1e7c9c333b544eea',1,'ctl::pid_module']]],
-  ['position_790',['position',['../namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465',1,'fw']]],
-  ['position_5fcallback_791',['position_callback',['../classfw_1_1position__callback.html#a585d553eb7cef5b96a00910413d52161',1,'fw::position_callback']]],
-  ['position_5fcb_792',['position_cb',['../structposition__cb.html#a336aad8a16d006865d958f358204d39d',1,'position_cb']]],
-  ['position_5fconverter_793',['position_converter',['../classposition__converter.html#abefd3e7f4743206444dc1b640a3f8113',1,'position_converter']]],
-  ['position_5firq_794',['position_irq',['../classcontrol.html#adf5f8c72d0829b7d3c2d8ef09de39789',1,'control::position_irq()'],['../classmetrics.html#a6998476ebd787b4c66aec862cec0e313',1,'metrics::position_irq()']]],
-  ['posvel_5fkalman_795',['posvel_kalman',['../structmtr_1_1posvel__kalman.html#aa95764f304d39579b8ded73a41aee92e',1,'mtr::posvel_kalman']]],
-  ['predict_796',['predict',['../namespacekalman.html#a5ce40b45ea8998e580042dae4ba09635',1,'kalman']]],
-  ['print_5fconfigs_797',['print_configs',['../namespacehost.html#a4922b139e8ef029fb89d958324cd3229',1,'host']]],
-  ['print_5fconfigs_5fjson_798',['print_configs_json',['../namespacehost.html#aa95b9cb3fa60fad1d01e4c287f10de5d',1,'host']]]
+  ['on_5fcurrent_782',['on_current',['../structcurrent__cb.html#ae4927ffcdd4a91ee9f7b47dd71b61252',1,'current_cb::on_current()'],['../structempty__current__cb.html#a57d28852dc48fce29d1a9465caf8f41c',1,'empty_current_cb::on_current()'],['../classfw_1_1current__callback.html#a4d77bf299881b00bd86e100f4dfaf426',1,'fw::current_callback::on_current()'],['../classcurrent__cb__interface.html#a66cba6fe6649c6df7ca564a72cff9f3b',1,'current_cb_interface::on_current()']]],
+  ['on_5fevent_783',['on_event',['../classindication.html#a5d2366017e3656288041d65c5ee6cdf3',1,'indication']]],
+  ['on_5fperiod_784',['on_period',['../classperiod__cb__interface.html#a0e8602d0fabae44129c0ccdee4763b37',1,'period_cb_interface::on_period()'],['../structperiod__cb.html#afe55863bb776b1ace0bc04d3082675c1',1,'period_cb::on_period()'],['../structempty__period__cb.html#ad887e76f41640375e8b56fdc6f548630',1,'empty_period_cb::on_period()'],['../classfw_1_1acquisition__period__callback.html#a1860da610e1bb2745d5be3380489127f',1,'fw::acquisition_period_callback::on_period()']]],
+  ['on_5fposition_785',['on_position',['../structempty__position__cb.html#aace933d547a175dc43eb851da020beb8',1,'empty_position_cb::on_position()'],['../classfw_1_1position__callback.html#a22e5c2a039e6026b090e54f2a56513d0',1,'fw::position_callback::on_position()'],['../structposition__cb.html#a7b09b3cccb1e712fb86bb0b27e711a5a',1,'position_cb::on_position()'],['../classposition__cb__interface.html#a036665f222ea296788f23a6e147a9a15',1,'position_cb_interface::on_position()']]],
+  ['operator_20delete_786',['operator delete',['../extra_8cpp.html#a149518e20a1b454d72fccbfee74bcbe6',1,'operator delete(void *, std::align_val_t) noexcept:&#160;extra.cpp'],['../extra_8cpp.html#a431f73a68eece5dd7f718706ccc0571f',1,'operator delete(void *) noexcept:&#160;extra.cpp'],['../extra_8cpp.html#a4ffe175164f6a598280c8924ac102ea8',1,'operator delete(void *, std::size_t) noexcept:&#160;extra.cpp']]],
+  ['operator_20new_787',['operator new',['../extra_8cpp.html#a5cd82d55d8ab13547bf6dcf39120362d',1,'operator new(std::size_t, std::align_val_t):&#160;extra.cpp'],['../extra_8cpp.html#a1414bcdb34c39ce82fc84bc8d5287966',1,'operator new(std::size_t):&#160;extra.cpp']]],
+  ['operator_22_22_5fms_788',['operator&quot;&quot;_ms',['../base_8hpp.html#aaed340fe38e4b3ae6297ee38af463785',1,'base.hpp']]],
+  ['operator_22_22_5fs_789',['operator&quot;&quot;_s',['../base_8hpp.html#aea553b2ea3e90e5da26dd78d20a6bdbb',1,'base.hpp']]],
+  ['operator_22_22_5fus_790',['operator&quot;&quot;_us',['../base_8hpp.html#a9f1db53db04ed209cc93765097b65328',1,'base.hpp']]],
+  ['operator_3c_3c_791',['operator&lt;&lt;',['../namespacefw.html#aa77aaddd76d27d03433b9ced02d8a6f0',1,'fw::operator&lt;&lt;(hal_check, HAL_StatusTypeDef s)'],['../namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e',1,'fw::operator&lt;&lt;(const check_bool &amp;, bool val)']]],
+  ['operator_3d_792',['operator=',['../classfw_1_1hbridge.html#a0a3fb873529967b2ec220e076ab98786',1,'fw::hbridge::operator=(hbridge &amp;&amp;)=delete'],['../classfw_1_1hbridge.html#a82d8b9e38c7a878c87d6f11d28f0c73a',1,'fw::hbridge::operator=(const hbridge &amp;)=delete'],['../classfw_1_1debug__comms.html#abe707ca14b622a59068e4131a27eea4a',1,'fw::debug_comms::operator=(debug_comms &amp;&amp;)=delete'],['../classfw_1_1debug__comms.html#a10e1f69434a6b79b8b4335d9745eacb1',1,'fw::debug_comms::operator=(const debug_comms &amp;)=delete'],['../classfw_1_1comms.html#ad6e730a55f373f45762192e85d903f39',1,'fw::comms::operator=(comms &amp;&amp;)=delete'],['../classfw_1_1comms.html#a97655ce508e97fdab006e0a437f225c8',1,'fw::comms::operator=(const comms &amp;)=delete'],['../classfw_1_1clock.html#a0b809c20cd0497a6daffaaf83ac1baed',1,'fw::clock::operator=(clock &amp;&amp;)=delete'],['../classfw_1_1clock.html#ac8eec0b7cd1efccb1b6676ec472ad1e9',1,'fw::clock::operator=(const clock &amp;)=delete']]]
 ];

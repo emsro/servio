@@ -16,12 +16,11 @@ var namespacehost =
     [ "load_property", "namespacehost.html#a9280b34adb4b596af301ff28627a7a07", null ],
     [ "load_property", "namespacehost.html#ac4f49ee022547d3956fe3e4f03dbe00d", null ],
     [ "load_property", "namespacehost.html#a6b7a1bbf53bf84227b8627af9e5acb50", null ],
+    [ "parse_args", "namespacehost.html#adab3ca662c2d0dd26fc11bc27348d22c", null ],
     [ "parse_cli", "namespacehost.html#a510d9c368fd6d74f7b6a79280890c631", null ],
-    [ "print_configs", "namespacehost.html#a4922b139e8ef029fb89d958324cd3229", null ],
-    [ "print_configs_json", "namespacehost.html#aa95b9cb3fa60fad1d01e4c287f10de5d", null ],
     [ "query_cmd", "namespacehost.html#a8f558c9849d130286b595ae32c931a4d", null ],
     [ "read", "namespacehost.html#a6fe460d4ed1f42069ba758c8ead1f75c", null ],
     [ "set_cmd", "namespacehost.html#a4f438a3def3d79c6d26cf92113b26c8a", null ],
     [ "set_config_field", "namespacehost.html#a8cf0ac7222b99599e6856e31289fe58d", null ],
-    [ "write", "namespacehost.html#abd2bf8d57ccdfd0075e8b3d68d2a2dd2", null ]
+    [ "write", "namespacehost.html#a07de010a2eadc4818630655f1690b53f", null ]
 ];

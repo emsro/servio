@@ -6,5 +6,6 @@ var namespacefw_structfw_1_1dispatcher_dup =
     [ "conv", "namespacefw.html#ac7282035a48db732bb3abfbfb69467d0", null ],
     [ "ctl", "namespacefw.html#a15cf4f98017315abc2a188bbef019777", null ],
     [ "hb", "namespacefw.html#a7c345ee7500a1b6a1f141f01d7f7f9d3", null ],
+    [ "met", "namespacefw.html#a1eaa563bf53d1b1210bda5d8a68ef0c8", null ],
     [ "now", "namespacefw.html#a5d0815a7b50f52ffe1b8ef2a4a74c700", null ]
 ];

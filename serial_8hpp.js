@@ -8,5 +8,5 @@ var serial_8hpp =
     [ "load_property", "serial_8hpp.html#a6b7a1bbf53bf84227b8627af9e5acb50", null ],
     [ "read", "serial_8hpp.html#a6fe460d4ed1f42069ba758c8ead1f75c", null ],
     [ "set_config_field", "serial_8hpp.html#a8cf0ac7222b99599e6856e31289fe58d", null ],
-    [ "write", "serial_8hpp.html#abd2bf8d57ccdfd0075e8b3d68d2a2dd2", null ]
+    [ "write", "serial_8hpp.html#a07de010a2eadc4818630655f1690b53f", null ]
 ];

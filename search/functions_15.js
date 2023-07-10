@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['_7ecurrent_5fcb_5finterface_870',['~current_cb_interface',['../classcurrent__cb__interface.html#afa5479f450a072d17789895d571dae58',1,'current_cb_interface']]],
-  ['_7eperiod_5fcb_5finterface_871',['~period_cb_interface',['../classperiod__cb__interface.html#a61028ef4ddee1c5024405e8b590c741f',1,'period_cb_interface']]],
-  ['_7eposition_5fcb_5finterface_872',['~position_cb_interface',['../classposition__cb__interface.html#a455c5689809e2c4850157fcf562c63db',1,'position_cb_interface']]]
+  ['what_878',['what',['../structhost_1_1reply__error.html#a7030f67bb08a9af59900ef78490f024f',1,'host::reply_error::what()'],['../structhost_1_1error__exception.html#ac239e5a9f576b871c2f062ec03766d27',1,'host::error_exception::what()'],['../structhost_1_1serialize__error.html#a681442f0fa88bb5982ccbccb891b2d40',1,'host::serialize_error::what()'],['../structhost_1_1parse__error.html#a6ef7b9e4506b7fb550c592ed9e4224ed',1,'host::parse_error::what()']]],
+  ['write_879',['write',['../namespacehost.html#a07de010a2eadc4818630655f1690b53f',1,'host']]]
 ];

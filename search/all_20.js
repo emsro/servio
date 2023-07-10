@@ -1,5 +1,20 @@
 var searchData=
 [
-  ['what_538',['what',['../structhost_1_1reply__error.html#a7030f67bb08a9af59900ef78490f024f',1,'host::reply_error::what()'],['../structhost_1_1error__exception.html#ac239e5a9f576b871c2f062ec03766d27',1,'host::error_exception::what()'],['../structhost_1_1serialize__error.html#a681442f0fa88bb5982ccbccb891b2d40',1,'host::serialize_error::what()'],['../structhost_1_1parse__error.html#a6ef7b9e4506b7fb550c592ed9e4224ed',1,'host::parse_error::what()']]],
-  ['write_539',['write',['../namespacehost.html#abd2bf8d57ccdfd0075e8b3d68d2a2dd2',1,'host']]]
+  ['vcc_526',['vcc',['../structconverter.html#a96a6c5a43d6b71202650791f0ec934df',1,'converter']]],
+  ['vcc_5fchconf_527',['vcc_chconf',['../classfw_1_1acquisition.html#af371d3c9aeb1b1a64f829e58c73cb67e',1,'fw::acquisition::handles']]],
+  ['vdd_5fvalue_528',['VDD_VALUE',['../stm32g4xx__hal__conf_8h.html#aae550dad9f96d52cfce5e539adadbbb4',1,'stm32g4xx_hal_conf.h']]],
+  ['velocity_529',['VELOCITY',['../base_8hpp.html#ab11c51b7742a144ec8f0089eb023613da7b4354bded455eb379e3c764806cda7b',1,'VELOCITY():&#160;base.hpp'],['../base_8hpp.html#a2d21811ce1f560323f48c16592782d7fa7b4354bded455eb379e3c764806cda7b',1,'VELOCITY():&#160;base.hpp']]],
+  ['velocity_530',['velocity',['../namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565',1,'kalman']]],
+  ['velocity_5firq_531',['velocity_irq',['../classcontrol.html#a833ad5ec20acd80a38fd8593e21f45d3',1,'control']]],
+  ['velocity_5flim_5fmax_532',['VELOCITY_LIM_MAX',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a870b335414dcd36aad41aacec5edc526',1,'config.hpp']]],
+  ['velocity_5flim_5fmin_533',['VELOCITY_LIM_MIN',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a86ac9382362ad9f5b3d73d4c0c3891d2',1,'config.hpp']]],
+  ['velocity_5flimits_534',['velocity_limits',['../namespacectl.html#a20ed600b5a9c9a30f83df677768e46a4',1,'ctl::config']]],
+  ['velocity_5floop_5fd_535',['VELOCITY_LOOP_D',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ab662fe7b08664ddf3fd2ad9e5d59cd7e',1,'config.hpp']]],
+  ['velocity_5floop_5fi_536',['VELOCITY_LOOP_I',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a2941811ad0b0ffac93d7f1f2dfb6976e',1,'config.hpp']]],
+  ['velocity_5floop_5fp_537',['VELOCITY_LOOP_P',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a1f27607ac6d6a11ecfb811edd933cea8',1,'config.hpp']]],
+  ['velocity_5fpid_538',['velocity_pid',['../namespacectl.html#a767ce52998c9c33836b3348656f6c9a5',1,'ctl::config']]],
+  ['voltage_2ehpp_539',['voltage.hpp',['../voltage_8hpp.html',1,'']]],
+  ['voltage_5fconv_5fscale_540',['VOLTAGE_CONV_SCALE',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2af302b91ed1f49912b7998401b5204864',1,'config.hpp']]],
+  ['voltage_5fconverter_541',['voltage_converter',['../classvoltage__converter.html#aa68adcd5401740fc89d0342384e556e7',1,'voltage_converter::voltage_converter()'],['../classvoltage__converter.html',1,'voltage_converter']]],
+  ['voltage_5flow_542',['VOLTAGE_LOW',['../indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a1ebe303c3b179265bbac9ab1f3219826',1,'indication.hpp']]]
 ];
