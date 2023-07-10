@@ -68,6 +68,7 @@ Mode get_mode( const control& ctl )
 
 ServioToHost handle_get_property(
     const control&     ctl,
+    const metrics&     met,
     const converter&   conv,
     const acquisition& acquis,
     const hbridge&     hb,
@@ -90,6 +91,9 @@ ServioToHost handle_get_property(
                 break;
         case Property_position_tag:
                 prop.position = position( conv, acquis );
+                break;
+        case Property_velocity_tag:
+                prop.velocity = met.get_velocity();
                 break;
         default:
                 return error_msg( "got unknown property" );
@@ -167,7 +171,7 @@ ServioToHost handle_message( dispatcher& dis, const HostToServio& msg )
                 return handle_set_mode( dis.now, dis.ctl, msg.set_mode );
         case HostToServio_get_property_tag:
                 return handle_get_property(
-                    dis.ctl, dis.conv, dis.acquis, dis.hb, msg.get_property );
+                    dis.ctl, dis.met, dis.conv, dis.acquis, dis.hb, msg.get_property );
         case HostToServio_set_config_tag:
                 return handle_set_config( dis.cfg_disp, msg.set_config );
         case HostToServio_get_config_tag:

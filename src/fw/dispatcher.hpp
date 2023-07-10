@@ -16,6 +16,7 @@ struct dispatcher
         hbridge&                                        hb;
         acquisition&                                    acquis;
         control&                                        ctl;
+        metrics&                                        met;
         cfg_dispatcher&                                 cfg_disp;
         em::function_view< bool( const cfg_map* cfg ) > cfg_writer;
         converter&                                      conv;

@@ -12,8 +12,12 @@ namespace host
 {
 
 boost::asio::awaitable< void >
-write( boost::asio::serial_port& port, const servio::HostToServio& msg )
+write( boost::asio::serial_port& port, const servio::HostToServio& payload )
 {
+        servio::HostToServioFrame msg;
+        msg.set_id( 0 );
+        *msg.mutable_payload() = payload;
+
         std::size_t              size = msg.ByteSizeLong();
         std::vector< std::byte > buffer( size, std::byte{ 0 } );
         if ( !msg.SerializeToArray( buffer.data(), static_cast< int >( size ) ) ) {
@@ -28,18 +32,18 @@ boost::asio::awaitable< servio::ServioToHost > read( boost::asio::serial_port& p
         std::array< std::byte, buffer_size > reply_buffer;
         em::view< std::byte* > deser_msg = co_await async_cobs_read( port, reply_buffer );
 
-        servio::ServioToHost reply;
+        servio::ServioToHostFrame reply;
         if ( !reply.ParseFromArray(
                  deser_msg.begin(), static_cast< int >( deser_msg.size() - 1 ) ) ) {
                 EMLABCPP_ERROR_LOG( "Failed to parse message: ", deser_msg );
                 throw parse_error{ "failed to parse servio to host message from incoming data" };
         }
 
-        if ( reply.has_error() ) {
-                throw error_exception{ reply.error() };
+        if ( reply.payload().has_error() ) {
+                throw error_exception{ reply.payload().error() };
         }
 
-        co_return reply;
+        co_return reply.payload();
 }
 
 boost::asio::awaitable< servio::ServioToHost >

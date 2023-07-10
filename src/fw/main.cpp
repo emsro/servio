@@ -84,7 +84,7 @@ int main()
 
         cor.ind.on_event( clock_ptr->get_us(), indication_event::INITIALIZED );
 
-        std::byte imsg[HostToServio_size];
+        std::byte imsg[HostToServioFrame_size];
 
         while ( true ) {
                 cor.tick( *leds_ptr, clock_ptr->get_us() );
@@ -101,6 +101,7 @@ int main()
                     .hb         = *hbridge_ptr,
                     .acquis     = *acquisition_ptr,
                     .ctl        = cor.ctl,
+                    .met        = cor.met,
                     .cfg_disp   = cfg_dis,
                     .cfg_writer = write_config,
                     .conv       = cor.conv,
@@ -118,22 +119,24 @@ int main()
 
                 cor.ind.on_event( clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
 
-                HostToServio msg  = {};
-                bool         succ = fw::decode( ldata, msg );
+                HostToServioFrame msg  = {};
+                bool              succ = fw::decode( ldata, msg );
 
-                ServioToHost reply = {};
+                ServioToHostFrame reply = {};
+                reply.id          = msg.id;  // well the right side is not legal as msg.id is union
+                reply.has_payload = true;
                 if ( !succ ) {
                         // TODO: this is problematic in case the reply is not ment for this
                         // device... imagine that multiple servos spam the BUS with "invalid
                         // message"
-                        reply = fw::error_msg( "invalid message" );
+                        reply.payload = fw::error_msg( "invalid message" );
                 } else {
                         // TODO: check whenver id equals to currently configured id, or group id
                         // equals to currently configured group id
-                        reply = handle_message( dis, msg );
+                        reply.payload = handle_message( dis, msg.payload );
                 }
 
-                std::byte buffer[ServioToHost_size];
+                std::byte buffer[ServioToHostFrame_size];
                 auto [esucc, data] = fw::encode( buffer, reply );
                 if ( !esucc ) {
                         // TODO: well this is aggresive

@@ -8,33 +8,40 @@ namespace em = emlabcpp;
 
 namespace host
 {
-
-void print_configs( const std::vector< servio::Config > out )
+namespace
 {
-        std::cout << em::joined( out, std::string{ "\n" }, [&]( const servio::Config& cfg ) {
-                return cfg.ShortDebugString();
-        } ) << std::endl;
-}
+        void print_configs( const std::vector< servio::Config > out )
+        {
+                std::cout << em::joined(
+                                 out,
+                                 std::string{ "\n" },
+                                 [&]( const servio::Config& cfg ) {
+                                         return cfg.ShortDebugString();
+                                 } )
+                          << std::endl;
+        }
 
-void print_configs_json( const std::vector< servio::Config > out )
-{
-        google::protobuf::util::JsonPrintOptions ops;
-        ops.preserve_proto_field_names = true;
-        std::cout << "["
-                  << em::joined(
-                         em::view( out ),
-                         std::string{ ",\n " },
-                         [&]( const servio::Config& cfg ) {
-                                 std::string tmp;
-                                 std::ignore =
-                                     google::protobuf::util::MessageToJsonString( cfg, &tmp, ops );
-                                 return tmp;
-                         } )
-                  << "]" << std::endl;
-}
+        void print_configs_json( const std::vector< servio::Config > out )
+        {
+                google::protobuf::util::JsonPrintOptions ops;
+                ops.preserve_proto_field_names = true;
+                std::cout << "["
+                          << em::joined(
+                                 em::view( out ),
+                                 std::string{ ",\n " },
+                                 [&]( const servio::Config& cfg ) {
+                                         std::string tmp;
+                                         std::ignore = google::protobuf::util::MessageToJsonString(
+                                             cfg, &tmp, ops );
+                                         return tmp;
+                                 } )
+                          << "]" << std::endl;
+        }
+}  // namespace
 
 boost::asio::awaitable< void > query_cmd( boost::asio::serial_port& port, bool json )
 {
+        EMLABCPP_INFO_LOG( "querying" );
         std::vector< servio::Config > out = co_await load_full_config( port );
 
         if ( json ) {

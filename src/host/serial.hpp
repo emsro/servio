@@ -10,7 +10,7 @@ namespace host
 
 /// Writes a reply to servo port
 boost::asio::awaitable< void >
-write( boost::asio::serial_port& port, const servio::HostToServio& msg );
+write( boost::asio::serial_port& port, const servio::HostToServio& payload );
 
 /// Reads a reply from servo over port
 boost::asio::awaitable< servio::ServioToHost > read( boost::asio::serial_port& port );

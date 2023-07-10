@@ -1,5 +1,7 @@
 #include "host/cli.hpp"
 #include "host/config_cmds.hpp"
+#include "host/serial.hpp"
+#include "io.pb.h"
 
 #include <emlabcpp/algorithm.h>
 #include <filesystem>
@@ -72,13 +74,70 @@ bool cfg_commands(
         return cont( parser );
 }
 
-bool pool_cmd(
+boost::asio::awaitable< void > pool_cmd(
+    boost::asio::io_context&,
+    boost::asio::serial_port&                               port,
+    std::vector< const google::protobuf::FieldDescriptor* > fields )
+{
+
+        while ( true ) {
+                std::vector< std::string > vals;
+                for ( const google::protobuf::FieldDescriptor* field : fields ) {
+                        servio::Property repl = co_await host::load_property( port, field );
+
+                        // TODO: this is quite a hack
+                        std::string s = repl.ShortDebugString();
+                        s             = s.substr( s.find( ':' ) + 1 );
+                        vals.push_back( s );
+                }
+                std::cout << em::joined( vals, std::string{ "," } ) << std::endl;
+        }
+}
+
+boost::asio::awaitable< void > pool_cmd(
+    boost::asio::io_context&   context,
+    boost::asio::serial_port&  port,
+    std::vector< std::string > properties )
+{
+        if ( properties.empty() ) {
+                std::cout << "got an empty property list, not pooling" << std::endl;
+                co_return;
+        }
+
+        std::vector< const google::protobuf::FieldDescriptor* > fields;
+        for ( const std::string& prop : properties ) {
+                const google::protobuf::Descriptor* desc = servio::Property::GetDescriptor();
+
+                const google::protobuf::FieldDescriptor* field = desc->FindFieldByName( prop );
+                if ( field == nullptr ) {
+                        std::cerr << "Failed to find property: " << prop << std::endl;
+                        co_return;
+                }
+                fields.push_back( field );
+        }
+        co_await pool_cmd( context, port, fields );
+}
+
+bool pool_commands(
     boost::asio::io_context&                       context,
     boost::asio::serial_port&                      port,
     std::function< bool( args::ArgumentParser& ) > cont )
 {
-        args::ArgumentParser parser( "pool the servo for property" );
-        return cont( parser );
+        args::ArgumentParser               parser( "pool the servo for properties" );
+        args::ValueFlagList< std::string > properties(
+            parser,
+            "properties",
+            "Properties to pool for, use repeatedly for multiple properties",
+            { 'p', "property" } );
+
+        bool succ = cont( parser );
+        if ( !succ ) {
+                return false;
+        }
+
+        co_spawn( context, pool_cmd( context, port, properties.Get() ), boost::asio::detached );
+
+        return true;
 }
 
 int main( int argc, char* argv[] )
@@ -92,7 +151,7 @@ int main( int argc, char* argv[] )
         using command_type = std::function< command_sig >;
 
         std::unordered_map< std::string, command_type > cmd_map{
-            { "cfg", cfg_commands }, { "pool", pool_cmd } };
+            { "cfg", cfg_commands }, { "pool", pool_commands } };
 
         std::vector< std::string > cmd_vec =
             em::map_f< std::vector< std::string > >( cmd_map, []( const auto& pair ) {

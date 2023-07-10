@@ -25,6 +25,7 @@ message Property {
     float vcc = 3;       // V
     float temp = 4;      // C
     float position = 5;  // rad
+    float velocity = 6;  // rad/s
   }
 }
 
@@ -121,14 +122,6 @@ message GetConfig {
 // Message sent from the host to the servo, represents a group of messages, out
 // of which only one is sent.
 message HostToServio {
-  // specify id of target device or devices
-  oneof ids {
-    // id of target servo, device will always send a reply
-    uint32 id = 1;
-    // id of target servos, the servi will never send a reply
-    uint32 group_id = 2;
-  };
-
   // Contains one of the available messages
   oneof pld {
     Mode set_mode = 11;             // changes mode
@@ -140,13 +133,24 @@ message HostToServio {
   };
 };
 
+message HostToServioFrame {
+  // specify id of target device or devices
+  oneof ids {
+    // id of target servo, device will always send a reply
+    uint32 id = 1;
+    // id of target servos, the servi will never send a reply
+    uint32 group_id = 2;
+  };
+
+  HostToServio payload = 10;
+};
+
 message ErrorMsg {
   string msg = 1;
 };
 
 // Reply message sent by the servo
 message ServioToHost {
-  uint32 id = 1;
   oneof pld {
     ErrorMsg error = 10;
     NullMsg set_mode = 11;
@@ -156,4 +160,9 @@ message ServioToHost {
     NullMsg commit_config = 15;
     NullMsg clear_config = 16;
   };
+};
+
+message ServioToHostFrame {
+  uint32 id = 1;
+  ServioToHost payload = 10;
 };
