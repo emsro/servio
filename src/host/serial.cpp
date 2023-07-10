@@ -14,7 +14,7 @@ namespace host
 boost::asio::awaitable< void >
 write( boost::asio::serial_port& port, const servio::HostToServio& payload )
 {
-        servio::HostToServioFrame msg;
+        servio::HostToServioPacket msg;
         msg.set_id( 0 );
         *msg.mutable_payload() = payload;
 
@@ -32,7 +32,7 @@ boost::asio::awaitable< servio::ServioToHost > read( boost::asio::serial_port& p
         std::array< std::byte, buffer_size > reply_buffer;
         em::view< std::byte* > deser_msg = co_await async_cobs_read( port, reply_buffer );
 
-        servio::ServioToHostFrame reply;
+        servio::ServioToHostPacket reply;
         if ( !reply.ParseFromArray(
                  deser_msg.begin(), static_cast< int >( deser_msg.size() - 1 ) ) ) {
                 EMLABCPP_ERROR_LOG( "Failed to parse message: ", deser_msg );
@@ -66,7 +66,7 @@ exchange( boost::asio::serial_port& port, const servio::HostToServio& msg )
 }
 
 boost::asio::awaitable< servio::Config >
-load_config_field( boost::asio::serial_port& port, const google::protobuf::FieldDescriptor* field )
+get_config_field( boost::asio::serial_port& port, const google::protobuf::FieldDescriptor* field )
 {
         servio::HostToServio msg;
         msg.mutable_get_config()->set_field_id( static_cast< uint32_t >( field->number() ) );
@@ -91,7 +91,7 @@ set_config_field( boost::asio::serial_port& port, const servio::Config& cfg )
 }
 
 boost::asio::awaitable< std::vector< servio::Config > >
-load_full_config( boost::asio::serial_port& port )
+get_full_config( boost::asio::serial_port& port )
 {
         const google::protobuf::OneofDescriptor* desc =
             servio::Config::GetDescriptor()->oneof_decl( 0 );
@@ -100,7 +100,7 @@ load_full_config( boost::asio::serial_port& port )
         for ( int i = 0; i < desc->field_count(); i++ ) {
                 const google::protobuf::FieldDescriptor* field = desc->field( i );
 
-                servio::Config cfg = co_await load_config_field( port, field );
+                servio::Config cfg = co_await get_config_field( port, field );
 
                 out.push_back( cfg );
         }
@@ -108,7 +108,7 @@ load_full_config( boost::asio::serial_port& port )
 }
 
 boost::asio::awaitable< servio::Property >
-load_property( boost::asio::serial_port& port, uint32_t field_id )
+get_property( boost::asio::serial_port& port, uint32_t field_id )
 {
         servio::HostToServio hts;
         hts.mutable_get_property()->set_field_id( field_id );
@@ -120,15 +120,62 @@ load_property( boost::asio::serial_port& port, uint32_t field_id )
 }
 
 boost::asio::awaitable< servio::Property >
-load_property( boost::asio::serial_port& port, servio::Property::PldCase field_id )
+get_property( boost::asio::serial_port& port, servio::Property::PldCase field_id )
 {
-        return load_property( port, static_cast< uint32_t >( field_id ) );
+        return get_property( port, static_cast< uint32_t >( field_id ) );
 }
 
 boost::asio::awaitable< servio::Property >
-load_property( boost::asio::serial_port& port, const google::protobuf::FieldDescriptor* field )
+get_property( boost::asio::serial_port& port, const google::protobuf::FieldDescriptor* field )
 {
-        return load_property( port, static_cast< uint32_t >( field->number() ) );
+        return get_property( port, static_cast< uint32_t >( field->number() ) );
+}
+
+/// TODO: error checking for the getters
+boost::asio::awaitable< float > get_property_current( boost::asio::serial_port& port )
+{
+        servio::Property prop = co_await get_property( port, servio::Property::kCurrent );
+        co_return prop.current();
+}
+boost::asio::awaitable< float > get_property_position( boost::asio::serial_port& port )
+{
+        servio::Property prop = co_await get_property( port, servio::Property::kPosition );
+        co_return prop.position();
+}
+boost::asio::awaitable< float > get_property_velocity( boost::asio::serial_port& port )
+{
+        servio::Property prop = co_await get_property( port, servio::Property::kVelocity );
+        co_return prop.velocity();
+}
+
+boost::asio::awaitable< void > set_mode( boost::asio::serial_port& port, servio::Mode mode )
+{
+        servio::HostToServio hts;
+        *hts.mutable_set_mode() = mode;
+
+        co_await exchange( port, hts );
+}
+
+boost::asio::awaitable< void > set_mode_disengaged( boost::asio::serial_port& port )
+{
+        servio::Mode m;
+        m.mutable_disengaged();
+
+        co_await set_mode( port, m );
+}
+
+boost::asio::awaitable< void > set_mode_position( boost::asio::serial_port& port, float angle )
+{
+        servio::Mode m;
+        m.set_position( angle );
+        co_await set_mode( port, m );
+}
+
+boost::asio::awaitable< void > set_mode_current( boost::asio::serial_port& port, float curr )
+{
+        servio::Mode m;
+        m.set_current( curr );
+        co_await set_mode( port, m );
 }
 
 }  // namespace host

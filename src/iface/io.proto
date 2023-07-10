@@ -133,7 +133,10 @@ message HostToServio {
   };
 };
 
-message HostToServioFrame {
+// Packet version of HostToServio that shall be used in case the underlying
+// transport mechanism does not support addressing of the devices and multiple
+// devices share a bus
+message HostToServioPacket {
   // specify id of target device or devices
   oneof ids {
     // id of target servo, device will always send a reply
@@ -162,7 +165,9 @@ message ServioToHost {
   };
 };
 
-message ServioToHostFrame {
+// Reply message sent by the servo, version for buses that natively does not
+// support addressing.
+message ServioToHostPacket {
   uint32 id = 1;
   ServioToHost payload = 10;
 };

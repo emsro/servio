@@ -84,7 +84,7 @@ int main()
 
         cor.ind.on_event( clock_ptr->get_us(), indication_event::INITIALIZED );
 
-        std::byte imsg[HostToServioFrame_size];
+        std::byte imsg[HostToServioPacket_size];
 
         while ( true ) {
                 cor.tick( *leds_ptr, clock_ptr->get_us() );
@@ -119,10 +119,10 @@ int main()
 
                 cor.ind.on_event( clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
 
-                HostToServioFrame msg  = {};
-                bool              succ = fw::decode( ldata, msg );
+                HostToServioPacket msg  = {};
+                bool               succ = fw::decode( ldata, msg );
 
-                ServioToHostFrame reply = {};
+                ServioToHostPacket reply = {};
                 reply.id          = msg.id;  // well the right side is not legal as msg.id is union
                 reply.has_payload = true;
                 if ( !succ ) {
@@ -136,7 +136,7 @@ int main()
                         reply.payload = handle_message( dis, msg.payload );
                 }
 
-                std::byte buffer[ServioToHostFrame_size];
+                std::byte buffer[ServioToHostPacket_size];
                 auto [esucc, data] = fw::encode( buffer, reply );
                 if ( !esucc ) {
                         // TODO: well this is aggresive

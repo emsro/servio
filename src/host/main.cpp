@@ -6,72 +6,72 @@
 #include <emlabcpp/algorithm.h>
 #include <filesystem>
 
-args::Flag json_flag( args::Group& g )
+namespace em = emlabcpp;
+
+void json_flag( CLI::App* app, bool& flag )
 {
-        return args::Flag( g, "json", "Enable json output", { 'j', "json" } );
+        app->add_flag( "-j,--json", flag, "Enable json output" );
 }
 
-args::Positional< std::string > field_pos( args::Group& g )
+void field_option( CLI::App* app, std::string& field )
 {
-        return args::Positional< std::string >(
-            g, "field", "Name of the field to get", args::Options::Required );
+        app->add_option( "field", field, "Field name" );
 }
 
-bool cfg_commands(
-    boost::asio::io_context&                       context,
-    boost::asio::serial_port&                      port,
-    std::function< bool( args::ArgumentParser& ) > cont )
+struct cfg_opts
 {
-        args::ArgumentParser parser( "cfg args" );
-        args::Group          commands( parser, "commands" );
-        args::Command        query(
-            commands, "query", "list all config options", [&]( args::Subparser& parser ) {
-                    args::Flag json = json_flag( parser );
-                    parser.Parse();
+        bool        json  = false;
+        std::string field = "";
+        std::string value = "";
+};
 
-                    co_spawn( context, host::query_cmd( port, json ), boost::asio::detached );
-            } );
-        args::Command get(
-            commands, "get", "loads specific configuration option", [&]( args::Subparser& parser ) {
-                    args::Flag                      json  = json_flag( parser );
-                    args::Positional< std::string > field = field_pos( parser );
-                    parser.Parse();
+void cfg_def(
+    CLI::App&                                    app,
+    boost::asio::io_context&                     context,
+    std::unique_ptr< boost::asio::serial_port >& port_ptr )
+{
+        auto data = std::make_shared< cfg_opts >();
 
-                    co_spawn(
-                        context, host::get_cmd( port, field.Get(), json ), boost::asio::detached );
-            } );
-        args::Command set(
-            commands, "set", "sets specific configuration option", [&]( args::Subparser& parser ) {
-                    args::Positional< std::string > field = field_pos( parser );
-                    args::Positional< std::string > value(
-                        parser, "value", "Value to set", args::Options::Required );
-                    parser.Parse();
+        auto cfg = app.add_subcommand( "cfg", "configuration commands" );
 
-                    co_spawn(
-                        context,
-                        host::set_cmd( port, field.Get(), value.Get() ),
-                        boost::asio::detached );
-            } );
-        args::Command commit(
-            commands,
-            "commit",
-            "tell the servo to store it's current configuration into persistent memory",
-            [&]( args::Subparser& parser ) {
-                    parser.Parse();
+        auto query = cfg->add_subcommand( "query", "list all config options from the servo" );
+        json_flag( query, data->json );
+        query->callback( [&port_ptr, data, &context] {
+                co_spawn(
+                    context, host::cfg_query_cmd( *port_ptr, data->json ), boost::asio::detached );
+        } );
 
-                    co_spawn( context, host::commit_cmd( port ), boost::asio::detached );
-            } );
-        args::Command clear(
-            commands,
-            "clear",
-            "tells the servo to clear latest store config",
-            [&]( args::Subparser& parser ) {
-                    parser.Parse();
+        auto get = cfg->add_subcommand( "get", "retrivies a configuration option from the servo" );
+        field_option( get, data->field );
+        json_flag( get, data->json );
+        get->callback( [&port_ptr, data, &context] {
+                co_spawn(
+                    context,
+                    host::cfg_get_cmd( *port_ptr, data->field, data->json ),
+                    boost::asio::detached );
+        } );
 
-                    co_spawn( context, host::clear_cmd( port ), boost::asio::detached );
-            } );
+        auto set =
+            cfg->add_subcommand( "set", "sets a configuration option to value in the servo" );
+        field_option( set, data->field );
+        set->add_option( "value", data->value, "Value to set" );
+        set->callback( [&port_ptr, data, &context] {
+                co_spawn(
+                    context,
+                    host::cfg_set_cmd( *port_ptr, data->field, data->value ),
+                    boost::asio::detached );
+        } );
 
-        return cont( parser );
+        auto commit = cfg->add_subcommand(
+            "commit", "stores the current configuration of servo in its persistent memory" );
+        commit->callback( [&port_ptr, &context] {
+                co_spawn( context, host::cfg_commit_cmd( *port_ptr ), boost::asio::detached );
+        } );
+
+        auto clear = cfg->add_subcommand( "clear", "clear latest store config from the servo" );
+        clear->callback( [&port_ptr, &context] {
+                co_spawn( context, host::cfg_clear_cmd( *port_ptr ), boost::asio::detached );
+        } );
 }
 
 boost::asio::awaitable< void > pool_cmd(
@@ -83,7 +83,7 @@ boost::asio::awaitable< void > pool_cmd(
         while ( true ) {
                 std::vector< std::string > vals;
                 for ( const google::protobuf::FieldDescriptor* field : fields ) {
-                        servio::Property repl = co_await host::load_property( port, field );
+                        servio::Property repl = co_await host::get_property( port, field );
 
                         // TODO: this is quite a hack
                         std::string s = repl.ShortDebugString();
@@ -118,82 +118,79 @@ boost::asio::awaitable< void > pool_cmd(
         co_await pool_cmd( context, port, fields );
 }
 
-bool pool_commands(
-    boost::asio::io_context&                       context,
-    boost::asio::serial_port&                      port,
-    std::function< bool( args::ArgumentParser& ) > cont )
+void pool_def(
+    CLI::App&                                    app,
+    boost::asio::io_context&                     context,
+    std::unique_ptr< boost::asio::serial_port >& port_ptr )
 {
-        args::ArgumentParser               parser( "pool the servo for properties" );
-        args::ValueFlagList< std::string > properties(
-            parser,
-            "properties",
-            "Properties to pool for, use repeatedly for multiple properties",
-            { 'p', "property" } );
+        auto data = std::make_shared< std::vector< std::string > >();
 
-        bool succ = cont( parser );
-        if ( !succ ) {
-                return false;
-        }
+        auto pool = app.add_subcommand( "pool", "pool the servo for properties" );
+        pool->add_option( "properties", *data, "properties to pool" );
+        pool->callback( [&port_ptr, data, &context] {
+                co_spawn( context, pool_cmd( context, *port_ptr, *data ), boost::asio::detached );
+        } );
+}
 
-        co_spawn( context, pool_cmd( context, port, properties.Get() ), boost::asio::detached );
+struct mode_opts
+{
+        float current;
+        float angle;
+};
 
-        return true;
+void mode_def(
+    CLI::App&                                    app,
+    boost::asio::io_context&                     context,
+    std::unique_ptr< boost::asio::serial_port >& port_ptr )
+{
+        auto data = std::make_shared< mode_opts >();
+
+        auto mode = app.add_subcommand( "mode", "switch the servo to mode" );
+
+        auto disengaged = mode->add_subcommand( "disengaged", "disengaged mode" );
+        disengaged->callback( [&port_ptr, &context] {
+                co_spawn( context, host::set_mode_disengaged( *port_ptr ), boost::asio::detached );
+        } );
+
+        auto current = mode->add_subcommand( "current", "current mode" );
+        current->add_option( "current", data->current, "goal current" );
+        current->callback( [&port_ptr, data, &context] {
+                co_spawn(
+                    context,
+                    host::set_mode_current( *port_ptr, data->current ),
+                    boost::asio::detached );
+        } );
+
+        auto position = mode->add_subcommand( "position", "position mode" );
+        position->add_option( "angle", data->angle, "goal angle" );
+        position->callback( [&port_ptr, data, &context] {
+                co_spawn(
+                    context,
+                    host::set_mode_position( *port_ptr, data->angle ),
+                    boost::asio::detached );
+        } );
 }
 
 int main( int argc, char* argv[] )
 {
 
-        using command_sig = bool(
-            boost::asio::io_context&,
-            boost::asio::serial_port&,
-            std::function< bool( args::ArgumentParser& ) > );
+        CLI::App app{ "Servio utility" };
 
-        using command_type = std::function< command_sig >;
+        host::common_cli cli;
+        cli.setup( app );
 
-        std::unordered_map< std::string, command_type > cmd_map{
-            { "cfg", cfg_commands }, { "pool", pool_commands } };
+        cfg_def( app, cli.context, cli.port_ptr );
+        pool_def( app, cli.context, cli.port_ptr );
+        mode_def( app, cli.context, cli.port_ptr );
 
-        std::vector< std::string > cmd_vec =
-            em::map_f< std::vector< std::string > >( cmd_map, []( const auto& pair ) {
-                    return pair.first;
-            } );
-        std::string cmd_list = em::joined( cmd_vec, std::string{ "," } );
-
-        args::ArgumentParser parser( "Servio utility" );
-
-        args::HelpFlag help( parser, "help", "Display this help menu", { 'h', "help" } );
-        args::ValueFlag< std::filesystem::path > device(
-            parser, "device", "Device to use", { 'd', "device" }, "/dev/ttyUSB0" );
-        args::ValueFlag< unsigned > baudrate(
-            parser, "baudrate", "Baudrate for communication", { 'b', "baudrate" }, 115200 );
-        args::MapPositional< std::string, command_type > command(
-            parser, "command", "Commands to execute: " + cmd_list, cmd_map );
-        command.KickOut( true );
-
-        parser.Prog( argv[0] );
-        std::vector< std::string > vec( argv + 1, argv + argc );
-        em::view                   dview = em::data_view( vec );
-        const std::string*         next  = host::parse_args( parser, dview );
-
-        if ( !command ) {
-                return 0;
+        try {
+                app.parse( argc, argv );
+        }
+        catch ( const CLI::ParseError& e ) {
+                return app.exit( e );
         }
 
-        boost::asio::io_context  context;
-        boost::asio::serial_port port( context, device.Get() );
-        port.set_option( boost::asio::serial_port_base::baud_rate( baudrate.Get() ) );
-
-        auto cont_f = [&]( args::ArgumentParser& parser ) -> bool {
-                parser.Prog( argv[0] );
-                return host::parse_args( parser, em::view( next, dview.end() ) ) != nullptr;
-        };
-
-        bool succ = args::get( command )( context, port, cont_f );
-        if ( !succ ) {
-                return 1;
-        }
-
-        context.run();
+        cli.context.run();
 
         return 0;
 }

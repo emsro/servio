@@ -1,42 +1,34 @@
-#include <args.hxx>
-#include <emlabcpp/view.h>
+#include <CLI/CLI.hpp>
+#include <boost/asio.hpp>
+#include <boost/asio/serial_port.hpp>
 
 #pragma once
-
-namespace em = emlabcpp;
 
 namespace host
 {
 
-inline const std::string*
-parse_args( args::ArgumentParser& parser, em::view< const std::string* > args )
+struct common_cli
 {
-        try {
-                return parser.ParseArgs( args );
-        }
-        catch ( const args::Completion& e ) {
-                std::cout << e.what();
-                return args.end();
-        }
-        catch ( const args::Help& ) {
-                std::cout << parser;
-                return args.end();
-        }
-        catch ( const args::ParseError& e ) {
-                std::cerr << e.what() << std::endl;
-                std::cerr << parser;
-                return nullptr;
-        }
-}
 
-inline int parse_cli( args::ArgumentParser& parser, int argc, char* argv[] )
-{
-        std::vector< std::string > vec( argv + 1, argv + argc );
-        parser.Prog( argv[0] );
-        if ( parse_args( parser, em::data_view( vec ) ) == nullptr ) {
-                return 1;
+        std::filesystem::path                       device   = "/dev/ttyUSB0";
+        unsigned                                    baudrate = 115200;
+        boost::asio::io_context                     context{};
+        std::unique_ptr< boost::asio::serial_port > port_ptr{};
+
+        void setup( CLI::App& app )
+        {
+                app.add_option( "-d,--device", device, "device to use" )
+                    ->envname( "SERVIO_DEVICE" )
+                    ->check( CLI::ExistingFile )
+                    ->capture_default_str();
+                app.add_option( "-b,--baudrate", baudrate, "baudrate for communication" )
+                    ->envname( "SERVIO_BAUDRATE" )
+                    ->capture_default_str();
+                app.parse_complete_callback( [&] {
+                        port_ptr = std::make_unique< boost::asio::serial_port >(
+                            context, device, baudrate );
+                } );
         }
-        return 0;
-}
+};
 
 }  // namespace host

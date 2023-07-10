@@ -24,7 +24,7 @@ test_properties_querying( boost::asio::io_context&, boost::asio::serial_port& po
 
         for ( int i = 0; i < desc->field_count(); i++ ) {
                 const google::protobuf::FieldDescriptor* field = desc->field( i );
-                servio::Property prop = co_await host::load_property( port, field );
+                servio::Property prop = co_await host::get_property( port, field );
                 EXPECT_EQ( static_cast< int >( prop.pld_case() ), field->number() );
         }
 }
@@ -37,7 +37,7 @@ boost::asio::awaitable< void > check_mode( boost::asio::serial_port& port, servi
 
         EXPECT_TRUE( sth.has_set_mode() );
 
-        servio::Property prop = co_await host::load_property( port, servio::Property::kMode );
+        servio::Property prop = co_await host::get_property( port, servio::Property::kMode );
         EXPECT_TRUE( prop.has_mode() );
         EXPECT_EQ( prop.mode().pld_case(), m.pld_case() );
 }
@@ -139,7 +139,7 @@ servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servi
 boost::asio::awaitable< void >
 test_config( boost::asio::io_context&, boost::asio::serial_port& port )
 {
-        const std::vector< servio::Config > cfg_vec = co_await host::load_full_config( port );
+        const std::vector< servio::Config > cfg_vec = co_await host::get_full_config( port );
         std::map< servio::Config::PldCase, servio::Config > istate_map;
         for ( servio::Config cfg : cfg_vec ) {
                 istate_map[cfg.pld_case()] = cfg;
@@ -156,14 +156,14 @@ test_config( boost::asio::io_context&, boost::asio::serial_port& port )
                 co_await host::set_config_field( port, val );
 
                 EXPECT_TRUE(
-                    cmp_cfg_state( istate_map, key, co_await host::load_full_config( port ) ) );
+                    cmp_cfg_state( istate_map, key, co_await host::get_full_config( port ) ) );
 
                 EMLABCPP_INFO_LOG(
                     "Setting original value: ", istate_map.at( key ).ShortDebugString() );
                 co_await host::set_config_field( port, istate_map.at( key ) );
 
                 const std::vector< servio::Config > new_cfg_vec =
-                    co_await host::load_full_config( port );
+                    co_await host::get_full_config( port );
 
                 EXPECT_EQ( cfg_vec, new_cfg_vec );
         }
@@ -173,27 +173,20 @@ int main( int argc, char** argv )
 {
         ::testing::InitGoogleTest( &argc, argv );
 
-        args::ArgumentParser parser( "basic black box tests" );
-        args::HelpFlag       help( parser, "help", "Display this help menu", { 'h', "help" } );
+        CLI::App         app{ "basic black box tests" };
+        host::common_cli cli;
+        cli.setup( app );
 
-        args::ValueFlag< std::filesystem::path > device(
-            parser, "device", "Device to use", { 'd', "device" }, "/dev/ttyUSB0" );
-        args::ValueFlag< unsigned > baudrate(
-            parser, "baudrate", "Baudrate for communication", { 'b', "baudrate" }, 115200 );
-
-        int res = host::parse_cli( parser, argc, argv );
-        if ( res != 0 ) {
-                return res;
+        try {
+                app.parse( argc, argv );
+        }
+        catch ( const CLI::ParseError& e ) {
+                return app.exit( e );
         }
 
-        tests::bb::register_test(
-            "basic",
-            "properties_querying",
-            device.Get(),
-            baudrate.Get(),
-            test_properties_querying );
-        tests::bb::register_test( "basic", "modes", device.Get(), baudrate.Get(), test_modes );
-        tests::bb::register_test( "basic", "config", device.Get(), baudrate.Get(), test_config );
+        tests::bb::register_test( "basic", "properties_querying", cli, test_properties_querying );
+        tests::bb::register_test( "basic", "modes", cli, test_modes );
+        tests::bb::register_test( "basic", "config", cli, test_config );
 
         return RUN_ALL_TESTS();
 }

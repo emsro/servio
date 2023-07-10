@@ -39,10 +39,9 @@ namespace
         }
 }  // namespace
 
-boost::asio::awaitable< void > query_cmd( boost::asio::serial_port& port, bool json )
+boost::asio::awaitable< void > cfg_query_cmd( boost::asio::serial_port& port, bool json )
 {
-        EMLABCPP_INFO_LOG( "querying" );
-        std::vector< servio::Config > out = co_await load_full_config( port );
+        std::vector< servio::Config > out = co_await get_full_config( port );
 
         if ( json ) {
                 print_configs_json( out );
@@ -51,7 +50,7 @@ boost::asio::awaitable< void > query_cmd( boost::asio::serial_port& port, bool j
         }
 }
 
-boost::asio::awaitable< void > commit_cmd( boost::asio::serial_port& port )
+boost::asio::awaitable< void > cfg_commit_cmd( boost::asio::serial_port& port )
 {
         servio::HostToServio msg;
         msg.mutable_commit_config();
@@ -60,7 +59,7 @@ boost::asio::awaitable< void > commit_cmd( boost::asio::serial_port& port )
         std::ignore                = reply;
 }
 
-boost::asio::awaitable< void > clear_cmd( boost::asio::serial_port& port )
+boost::asio::awaitable< void > cfg_clear_cmd( boost::asio::serial_port& port )
 {
         servio::HostToServio msg;
         msg.mutable_clear_config();
@@ -69,7 +68,7 @@ boost::asio::awaitable< void > clear_cmd( boost::asio::serial_port& port )
 }
 
 boost::asio::awaitable< void >
-get_cmd( boost::asio::serial_port& port, const std::string& name, bool json )
+cfg_get_cmd( boost::asio::serial_port& port, const std::string& name, bool json )
 {
         const google::protobuf::Descriptor* desc = servio::Config::GetDescriptor();
 
@@ -79,7 +78,7 @@ get_cmd( boost::asio::serial_port& port, const std::string& name, bool json )
                 co_return;
         }
 
-        servio::Config cfg = co_await load_config_field( port, field );
+        servio::Config cfg = co_await get_config_field( port, field );
 
         if ( json ) {
                 print_configs_json( { cfg } );
@@ -89,9 +88,8 @@ get_cmd( boost::asio::serial_port& port, const std::string& name, bool json )
 }
 
 boost::asio::awaitable< void >
-set_cmd( boost::asio::serial_port& port, const std::string& name, std::string value )
+cfg_set_cmd( boost::asio::serial_port& port, const std::string& name, std::string value )
 {
-        std::cout << "setting " << name << " to: " << value << std::endl;
 
         const google::protobuf::Descriptor* desc = servio::Config::GetDescriptor();
 
