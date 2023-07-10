@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"kalman_8hpp.html#a98d43da94a33f521229fbdb698ee11e3":[12,0,1,14,17],
 "kalman_8hpp.html#aa06b341b7242ae4d2e6499f4b66e1e5a":[12,0,1,14,4],
 "kalman_8hpp.html#ab9e6385bb2dcf1772e1b307f181db938":[12,0,1,14,9],
 "kalman_8hpp.html#ad217468f6096ae44d4ee08729f3a053a":[12,0,1,14,11],
@@ -164,7 +165,8 @@ var NAVTREEINDEX2 =
 "namespacehost.html#ac4a6dc335cc6d690655b1689859ebccc":[10,0,4,8],
 "namespacehost.html#ac54f61fc375c7c6716db7790bf3c5582":[10,0,4,19],
 "namespacehost.html#ac5f897334e4a466b2631fdc3e8bd5aac":[10,0,4,18],
-"namespacehost.html#afbbd9ae17fc28c3112fc15a38f2e6f04":[10,0,4,28],
+"namespacehost.html#ac9e5db09445cba7106cfa09dc3f5a317":[10,0,4,28],
+"namespacehost.html#afbbd9ae17fc28c3112fc15a38f2e6f04":[10,0,4,29],
 "namespacekalman.html":[10,0,5],
 "namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c":[10,0,5,10],
 "namespacekalman.html#a0e8b902801916fce0cce782d51709c81":[10,0,5,22],
@@ -227,8 +229,9 @@ var NAVTREEINDEX2 =
 "serial_8cpp.html#aa45566ad35183e60250de4a994e121bd":[12,0,1,4,6,1],
 "serial_8cpp.html#ac54f61fc375c7c6716db7790bf3c5582":[12,0,1,4,6,6],
 "serial_8cpp.html#ac5f897334e4a466b2631fdc3e8bd5aac":[12,0,1,4,6,5],
-"serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc":[12,0,1,4,6,16],
-"serial_8cpp.html#afbbd9ae17fc28c3112fc15a38f2e6f04":[12,0,1,4,6,15],
+"serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc":[12,0,1,4,6,17],
+"serial_8cpp.html#ac9e5db09445cba7106cfa09dc3f5a317":[12,0,1,4,6,15],
+"serial_8cpp.html#afbbd9ae17fc28c3112fc15a38f2e6f04":[12,0,1,4,6,16],
 "serial_8hpp.html":[12,0,1,4,7],
 "serial_8hpp.html#a03287d14431b87669cb6917763056669":[12,0,1,4,7,14],
 "serial_8hpp.html#a0b1e497a05ad81bcb1596f75e0f775f6":[12,0,1,4,7,13],
@@ -245,9 +248,6 @@ var NAVTREEINDEX2 =
 "serial_8hpp.html#aa45566ad35183e60250de4a994e121bd":[12,0,1,4,7,1],
 "serial_8hpp.html#ac54f61fc375c7c6716db7790bf3c5582":[12,0,1,4,7,6],
 "serial_8hpp.html#ac5f897334e4a466b2631fdc3e8bd5aac":[12,0,1,4,7,5],
-"serial_8hpp.html#afbbd9ae17fc28c3112fc15a38f2e6f04":[12,0,1,4,7,15],
-"serial_8hpp_source.html":[12,0,1,4,7],
-"servio__pb_8cpp.html":[12,0,1,3,16],
-"servio__pb_8cpp.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc":[12,0,1,3,16,2],
-"servio__pb_8cpp.html#a23fc4234292273ffabe5f85953f2713a":[12,0,1,3,16,4]
+"serial_8hpp.html#ac9e5db09445cba7106cfa09dc3f5a317":[12,0,1,4,7,15],
+"serial_8hpp.html#afbbd9ae17fc28c3112fc15a38f2e6f04":[12,0,1,4,7,16]
 };

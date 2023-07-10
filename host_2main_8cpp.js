@@ -7,7 +7,8 @@ var host_2main_8cpp =
     ] ],
     [ "mode_opts", "host_2main_8cpp.html#structmode__opts", [
       [ "angle", "host_2main_8cpp.html#af0a1e266e72eaf80a93810658a5a4d5a", null ],
-      [ "current", "host_2main_8cpp.html#a8f3bbbae3be9e0361d5e76091103a4d6", null ]
+      [ "current", "host_2main_8cpp.html#a8f3bbbae3be9e0361d5e76091103a4d6", null ],
+      [ "velocity", "host_2main_8cpp.html#a37b0618dd0cdb335c34e1eebeaca904c", null ]
     ] ],
     [ "cfg_def", "host_2main_8cpp.html#a00a2c282636e72103261bb33d7b1d377", null ],
     [ "field_option", "host_2main_8cpp.html#a609afc62bca9be9a810eed93ddf9d614", null ],

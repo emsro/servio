@@ -119,8 +119,8 @@ var NAVTREEINDEX =
 [
 "acquisition_8cpp.html",
 "classmetrics.html#a6998476ebd787b4c66aec862cec0e313",
-"kalman_8hpp.html#aa06b341b7242ae4d2e6499f4b66e1e5a",
-"servio__pb_8cpp.html#a9669eb3d780d48e4c36792111dae6047"
+"kalman_8hpp.html#a98d43da94a33f521229fbdb698ee11e3",
+"serial_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

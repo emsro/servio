@@ -28,5 +28,6 @@ var namespacehost =
     [ "set_mode_current", "namespacehost.html#a0c0bae4d9f75eb6fffa91dccbeb27d8f", null ],
     [ "set_mode_disengaged", "namespacehost.html#a0b1e497a05ad81bcb1596f75e0f775f6", null ],
     [ "set_mode_position", "namespacehost.html#a03287d14431b87669cb6917763056669", null ],
+    [ "set_mode_velocity", "namespacehost.html#ac9e5db09445cba7106cfa09dc3f5a317", null ],
     [ "write", "namespacehost.html#afbbd9ae17fc28c3112fc15a38f2e6f04", null ]
 ];
