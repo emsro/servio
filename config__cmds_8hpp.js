@@ -1,8 +1,8 @@
 var config__cmds_8hpp =
 [
-    [ "clear_cmd", "config__cmds_8hpp.html#a8b2fbbb1a72142d319eb8b272bb5fc9a", null ],
-    [ "commit_cmd", "config__cmds_8hpp.html#a0a92a9000fc8ea96711fd9626c5d610c", null ],
-    [ "get_cmd", "config__cmds_8hpp.html#a9547714e96ad8795e2843bd6101d0281", null ],
-    [ "query_cmd", "config__cmds_8hpp.html#a8f558c9849d130286b595ae32c931a4d", null ],
-    [ "set_cmd", "config__cmds_8hpp.html#a4f438a3def3d79c6d26cf92113b26c8a", null ]
+    [ "cfg_clear_cmd", "config__cmds_8hpp.html#ac4a6dc335cc6d690655b1689859ebccc", null ],
+    [ "cfg_commit_cmd", "config__cmds_8hpp.html#a9bcf5f119894ec0aed6f6ca3fd61a91e", null ],
+    [ "cfg_get_cmd", "config__cmds_8hpp.html#a415cab07a8445ad269bd343954f48541", null ],
+    [ "cfg_query_cmd", "config__cmds_8hpp.html#a9973d6f72a836a5e3c0b90444f083b04", null ],
+    [ "cfg_set_cmd", "config__cmds_8hpp.html#ac268f4e132a1131d3632e56649cfbdcc", null ]
 ];

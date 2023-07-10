@@ -4,8 +4,10 @@ var hierarchy =
     [ "fw::acquisition_status", "namespacefw.html#structfw_1_1acquisition__status", null ],
     [ "fw::cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", null ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", null ],
+    [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", null ],
     [ "fw::check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "fw::clock", "classfw_1_1clock.html", null ],
+    [ "host::common_cli", "structhost_1_1common__cli.html", null ],
     [ "fw::comms", "classfw_1_1comms.html", null ],
     [ "ctl::config", "namespacectl.html#structctl_1_1config", null ],
     [ "control", "classcontrol.html", null ],
@@ -41,6 +43,7 @@ var hierarchy =
     [ "leds_vals", "base_8hpp.html#structleds__vals", null ],
     [ "ctl::linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", null ],
     [ "metrics", "classmetrics.html", null ],
+    [ "mode_opts", "host_2main_8cpp.html#structmode__opts", null ],
     [ "fw::monitor", "classfw_1_1monitor.html", null ],
     [ "cfg::payload", "structcfg_1_1payload.html", null ],
     [ "period_cb_interface", "classperiod__cb__interface.html", [

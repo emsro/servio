@@ -1,7 +1,9 @@
 var dir_84e79ac80b913c2fb5b9e077744e9498 =
 [
     [ "async_cobs.hpp", "async__cobs_8hpp.html", "async__cobs_8hpp" ],
-    [ "cli.hpp", "cli_8hpp.html", "cli_8hpp" ],
+    [ "cli.hpp", "cli_8hpp.html", [
+      [ "common_cli", "structhost_1_1common__cli.html", "structhost_1_1common__cli" ]
+    ] ],
     [ "config_cmds.cpp", "config__cmds_8cpp.html", "config__cmds_8cpp" ],
     [ "config_cmds.hpp", "config__cmds_8hpp.html", "config__cmds_8hpp" ],
     [ "exceptions.hpp", "exceptions_8hpp.html", [

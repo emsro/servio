@@ -28,6 +28,7 @@ var annotated_dup =
       [ "hal_check", "namespacefw.html#structfw_1_1hal__check", null ]
     ] ],
     [ "host", "namespacehost.html", [
+      [ "common_cli", "structhost_1_1common__cli.html", "structhost_1_1common__cli" ],
       [ "servio_exception", "structhost_1_1servio__exception.html", null ],
       [ "reply_error", "structhost_1_1reply__error.html", "structhost_1_1reply__error" ],
       [ "error_exception", "structhost_1_1error__exception.html", "structhost_1_1error__exception" ],
@@ -41,6 +42,7 @@ var annotated_dup =
       [ "posvel_kalman", "structmtr_1_1posvel__kalman.html", "structmtr_1_1posvel__kalman" ]
     ] ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", "config_8hpp_structcfg__keyval" ],
+    [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", "host_2main_8cpp_structcfg__opts" ],
     [ "control", "classcontrol.html", "classcontrol" ],
     [ "converter", "structconverter.html", "structconverter" ],
     [ "current_cb", "structcurrent__cb.html", "structcurrent__cb" ],
@@ -52,6 +54,7 @@ var annotated_dup =
     [ "indication", "classindication.html", "classindication" ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", "base_8hpp_structleds__vals" ],
     [ "metrics", "classmetrics.html", "classmetrics" ],
+    [ "mode_opts", "host_2main_8cpp.html#structmode__opts", "host_2main_8cpp_structmode__opts" ],
     [ "period_cb", "structperiod__cb.html", "structperiod__cb" ],
     [ "period_cb_interface", "classperiod__cb__interface.html", "classperiod__cb__interface" ],
     [ "position_cb", "structposition__cb.html", "structposition__cb" ],

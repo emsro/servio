@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('host_2main_8cpp.html',''); initResizab
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">main.cpp File Reference</div>  </div>
@@ -100,51 +101,133 @@ $(document).ready(function(){initNavTree('host_2main_8cpp.html',''); initResizab
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="host_2main_8cpp__incl.svg" width="959" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="host_2main_8cpp__incl.svg" width="839" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:structcfg__opts"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#structcfg__opts">cfg_opts</a></td></tr>
+<tr class="separator:structcfg__opts"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structmode__opts"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#structmode__opts">mode_opts</a></td></tr>
+<tr class="separator:structmode__opts"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0e5b185c7bbb7e753af1ae71f9be3790"><td class="memItemLeft" align="right" valign="top">args::Flag&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#a0e5b185c7bbb7e753af1ae71f9be3790">json_flag</a> (args::Group &amp;g)</td></tr>
-<tr class="separator:a0e5b185c7bbb7e753af1ae71f9be3790"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab03e0f0008b5088ae2025c608c2223be"><td class="memItemLeft" align="right" valign="top">args::Positional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#ab03e0f0008b5088ae2025c608c2223be">field_pos</a> (args::Group &amp;g)</td></tr>
-<tr class="separator:ab03e0f0008b5088ae2025c608c2223be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af999231ec546fbcd8bb1fe256b0ab35a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#af999231ec546fbcd8bb1fe256b0ab35a">cfg_commands</a> (boost::asio::io_context &amp;context, boost::asio::serial_port &amp;port, std::function&lt; bool(args::ArgumentParser &amp;) &gt; cont)</td></tr>
-<tr class="separator:af999231ec546fbcd8bb1fe256b0ab35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d93c59ef9ede0471a059005f9bb96ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#a2d93c59ef9ede0471a059005f9bb96ae">json_flag</a> (CLI::App *app, bool &amp;flag)</td></tr>
+<tr class="separator:a2d93c59ef9ede0471a059005f9bb96ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a609afc62bca9be9a810eed93ddf9d614"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#a609afc62bca9be9a810eed93ddf9d614">field_option</a> (CLI::App *app, std::string &amp;field)</td></tr>
+<tr class="separator:a609afc62bca9be9a810eed93ddf9d614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a2c282636e72103261bb33d7b1d377"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#a00a2c282636e72103261bb33d7b1d377">cfg_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;context, std::unique_ptr&lt; boost::asio::serial_port &gt; &amp;port_ptr)</td></tr>
+<tr class="separator:a00a2c282636e72103261bb33d7b1d377"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e39e6e887d7160d5d198e625a588431"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#a6e39e6e887d7160d5d198e625a588431">pool_cmd</a> (boost::asio::io_context &amp;, boost::asio::serial_port &amp;port, std::vector&lt; const google::protobuf::FieldDescriptor * &gt; fields)</td></tr>
 <tr class="separator:a6e39e6e887d7160d5d198e625a588431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc5345387b22f6ece8040ca08bdf53a"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#acdc5345387b22f6ece8040ca08bdf53a">pool_cmd</a> (boost::asio::io_context &amp;context, boost::asio::serial_port &amp;port, std::vector&lt; std::string &gt; properties)</td></tr>
 <tr class="separator:acdc5345387b22f6ece8040ca08bdf53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b0c2de5796f1dadcdd96900f3db3df6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#a9b0c2de5796f1dadcdd96900f3db3df6">pool_commands</a> (boost::asio::io_context &amp;context, boost::asio::serial_port &amp;port, std::function&lt; bool(args::ArgumentParser &amp;) &gt; cont)</td></tr>
-<tr class="separator:a9b0c2de5796f1dadcdd96900f3db3df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab420b9f87a519690469563f41c3f05ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#ab420b9f87a519690469563f41c3f05ad">pool_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;context, std::unique_ptr&lt; boost::asio::serial_port &gt; &amp;port_ptr)</td></tr>
+<tr class="separator:ab420b9f87a519690469563f41c3f05ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a078744b9ee294c2a2f41458e08cb1424"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#a078744b9ee294c2a2f41458e08cb1424">mode_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;context, std::unique_ptr&lt; boost::asio::serial_port &gt; &amp;port_ptr)</td></tr>
+<tr class="separator:a078744b9ee294c2a2f41458e08cb1424"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="host_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="af999231ec546fbcd8bb1fe256b0ab35a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af999231ec546fbcd8bb1fe256b0ab35a">&#9670;&nbsp;</a></span>cfg_commands()</h2>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structcfg__opts" id="structcfg__opts"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structcfg__opts">&#9670;&nbsp;</a></span>cfg_opts</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool cfg_commands </td>
+          <td class="memname">struct cfg_opts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for cfg_opts:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structcfg__opts__coll__graph.svg" width="150" height="232"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="afb706de6d862c5dc33f2dcad24126b22"></a>string</td>
+<td class="fieldname">
+field</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a71c6ac05fd948d87db3316cc1e4e2ea4"></a>bool</td>
+<td class="fieldname">
+json</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a2c44eb31fa1d94fb9b3c3a9e3f31c539"></a>string</td>
+<td class="fieldname">
+value</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structmode__opts" id="structmode__opts"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmode__opts">&#9670;&nbsp;</a></span>mode_opts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mode_opts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="af0a1e266e72eaf80a93810658a5a4d5a"></a>float</td>
+<td class="fieldname">
+angle</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a8f3bbbae3be9e0361d5e76091103a4d6"></a>float</td>
+<td class="fieldname">
+current</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a00a2c282636e72103261bb33d7b1d377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a2c282636e72103261bb33d7b1d377">&#9670;&nbsp;</a></span>cfg_def()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cfg_def </td>
           <td>(</td>
+          <td class="paramtype">CLI::App &amp;&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">boost::asio::io_context &amp;&#160;</td>
           <td class="paramname"><em>context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">boost::asio::serial_port &amp;&#160;</td>
-          <td class="paramname"><em>port</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::function&lt; bool(args::ArgumentParser &amp;) &gt;&#160;</td>
-          <td class="paramname"><em>cont</em>&#160;</td>
+          <td class="paramtype">std::unique_ptr&lt; boost::asio::serial_port &gt; &amp;&#160;</td>
+          <td class="paramname"><em>port_ptr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -154,40 +237,60 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacehost.html#a8b2fbbb1a72142d319eb8b272bb5fc9a">host::clear_cmd()</a>, <a class="el" href="namespacehost.html#a0a92a9000fc8ea96711fd9626c5d610c">host::commit_cmd()</a>, <a class="el" href="host_2main_8cpp.html#ab03e0f0008b5088ae2025c608c2223be">field_pos()</a>, <a class="el" href="namespacehost.html#a9547714e96ad8795e2843bd6101d0281">host::get_cmd()</a>, <a class="el" href="host_2main_8cpp.html#a0e5b185c7bbb7e753af1ae71f9be3790">json_flag()</a>, <a class="el" href="namespacehost.html#a8f558c9849d130286b595ae32c931a4d">host::query_cmd()</a>, and <a class="el" href="namespacehost.html#a4f438a3def3d79c6d26cf92113b26c8a">host::set_cmd()</a>.</p>
+<p class="reference">References <a class="el" href="namespacehost.html#ac4a6dc335cc6d690655b1689859ebccc">host::cfg_clear_cmd()</a>, <a class="el" href="namespacehost.html#a9bcf5f119894ec0aed6f6ca3fd61a91e">host::cfg_commit_cmd()</a>, <a class="el" href="namespacehost.html#a415cab07a8445ad269bd343954f48541">host::cfg_get_cmd()</a>, <a class="el" href="namespacehost.html#a9973d6f72a836a5e3c0b90444f083b04">host::cfg_query_cmd()</a>, <a class="el" href="namespacehost.html#ac268f4e132a1131d3632e56649cfbdcc">host::cfg_set_cmd()</a>, <a class="el" href="host_2main_8cpp.html#a609afc62bca9be9a810eed93ddf9d614">field_option()</a>, and <a class="el" href="host_2main_8cpp.html#a2d93c59ef9ede0471a059005f9bb96ae">json_flag()</a>.</p>
 
 </div>
 </div>
-<a id="ab03e0f0008b5088ae2025c608c2223be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab03e0f0008b5088ae2025c608c2223be">&#9670;&nbsp;</a></span>field_pos()</h2>
+<a id="a609afc62bca9be9a810eed93ddf9d614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a609afc62bca9be9a810eed93ddf9d614">&#9670;&nbsp;</a></span>field_option()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">args::Positional&lt; std::string &gt; field_pos </td>
+          <td class="memname">void field_option </td>
           <td>(</td>
-          <td class="paramtype">args::Group &amp;&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
+          <td class="paramtype">CLI::App *&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>field</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a0e5b185c7bbb7e753af1ae71f9be3790"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e5b185c7bbb7e753af1ae71f9be3790">&#9670;&nbsp;</a></span>json_flag()</h2>
+<a id="a2d93c59ef9ede0471a059005f9bb96ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d93c59ef9ede0471a059005f9bb96ae">&#9670;&nbsp;</a></span>json_flag()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">args::Flag json_flag </td>
+          <td class="memname">void json_flag </td>
           <td>(</td>
-          <td class="paramtype">args::Group &amp;&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
+          <td class="paramtype">CLI::App *&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -220,7 +323,43 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="host_2main_8cpp.html#af999231ec546fbcd8bb1fe256b0ab35a">cfg_commands()</a>, <a class="el" href="namespacehost.html#adab3ca662c2d0dd26fc11bc27348d22c">host::parse_args()</a>, and <a class="el" href="host_2main_8cpp.html#a9b0c2de5796f1dadcdd96900f3db3df6">pool_commands()</a>.</p>
+<p class="reference">References <a class="el" href="host_2main_8cpp.html#a00a2c282636e72103261bb33d7b1d377">cfg_def()</a>, <a class="el" href="structhost_1_1common__cli.html#a4069a66d37489ce0a202b56e7a46cecd">host::common_cli::context</a>, <a class="el" href="host_2main_8cpp.html#a078744b9ee294c2a2f41458e08cb1424">mode_def()</a>, <a class="el" href="host_2main_8cpp.html#ab420b9f87a519690469563f41c3f05ad">pool_def()</a>, <a class="el" href="structhost_1_1common__cli.html#a836377542a89aecdfd537894e9567998">host::common_cli::port_ptr</a>, and <a class="el" href="structhost_1_1common__cli.html#af2451a182808f2667ce3fdfdd6ab04f0">host::common_cli::setup()</a>.</p>
+
+</div>
+</div>
+<a id="a078744b9ee294c2a2f41458e08cb1424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a078744b9ee294c2a2f41458e08cb1424">&#9670;&nbsp;</a></span>mode_def()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mode_def </td>
+          <td>(</td>
+          <td class="paramtype">CLI::App &amp;&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::asio::io_context &amp;&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; boost::asio::serial_port &gt; &amp;&#160;</td>
+          <td class="paramname"><em>port_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">fw::current()</a>, <a class="el" href="namespacefw.html#a7da1ac117da9c2c331f8a30bec04c465">fw::position()</a>, <a class="el" href="namespacehost.html#a0c0bae4d9f75eb6fffa91dccbeb27d8f">host::set_mode_current()</a>, <a class="el" href="namespacehost.html#a0b1e497a05ad81bcb1596f75e0f775f6">host::set_mode_disengaged()</a>, and <a class="el" href="namespacehost.html#a03287d14431b87669cb6917763056669">host::set_mode_position()</a>.</p>
 
 </div>
 </div>
@@ -256,7 +395,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacehost.html#a6b7a1bbf53bf84227b8627af9e5acb50">host::load_property()</a>.</p>
+<p class="reference">References <a class="el" href="namespacehost.html#ac5f897334e4a466b2631fdc3e8bd5aac">host::get_property()</a>.</p>
 
 </div>
 </div>
@@ -296,29 +435,29 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9b0c2de5796f1dadcdd96900f3db3df6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b0c2de5796f1dadcdd96900f3db3df6">&#9670;&nbsp;</a></span>pool_commands()</h2>
+<a id="ab420b9f87a519690469563f41c3f05ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab420b9f87a519690469563f41c3f05ad">&#9670;&nbsp;</a></span>pool_def()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool pool_commands </td>
+          <td class="memname">void pool_def </td>
           <td>(</td>
+          <td class="paramtype">CLI::App &amp;&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">boost::asio::io_context &amp;&#160;</td>
           <td class="paramname"><em>context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">boost::asio::serial_port &amp;&#160;</td>
-          <td class="paramname"><em>port</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::function&lt; bool(args::ArgumentParser &amp;) &gt;&#160;</td>
-          <td class="paramname"><em>cont</em>&#160;</td>
+          <td class="paramtype">std::unique_ptr&lt; boost::asio::serial_port &gt; &amp;&#160;</td>
+          <td class="paramname"><em>port_ptr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -338,7 +477,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_84e79ac80b913c2fb5b9e077744e9498.html">host</a></li><li class="navelem"><a class="el" href="host_2main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Mon Jul 10 2023 13:10:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Jul 10 2023 20:45:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
