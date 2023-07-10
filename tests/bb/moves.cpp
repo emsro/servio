@@ -10,9 +10,7 @@ test_current( boost::asio::io_context& io, boost::asio::serial_port& port )
 {
         boost::asio::steady_timer t( io, std::chrono::milliseconds( 100 ) );
 
-        servio::HostToServio hts;
-        hts.mutable_set_mode()->set_position( 0.1f );
-        co_await host::exchange( port, hts );
+        co_await host::set_mode_position( port, 0.1f );
 
         for ( float curr : { 0.2f, 0.0f, 0.3f } ) {
                 co_await host::set_mode_current( port, curr );
@@ -23,6 +21,8 @@ test_current( boost::asio::io_context& io, boost::asio::serial_port& port )
 
                 EXPECT_EQ( curr, current );
         }
+
+        co_await host::set_mode_disengaged( port );
 }
 
 boost::asio::awaitable< void >
@@ -40,6 +40,8 @@ test_position( boost::asio::io_context& io, boost::asio::serial_port& port )
 
                 EXPECT_EQ( pos, position );
         }
+
+        co_await host::set_mode_disengaged( port );
 }
 
 int main( int argc, char** argv )

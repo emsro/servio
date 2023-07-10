@@ -31,15 +31,10 @@ test_properties_querying( boost::asio::io_context&, boost::asio::serial_port& po
 
 boost::asio::awaitable< void > check_mode( boost::asio::serial_port& port, servio::Mode m )
 {
-        servio::HostToServio hts;
-        *hts.mutable_set_mode()  = m;
-        servio::ServioToHost sth = co_await host::exchange( port, hts );
+        co_await host::set_mode( port, m );
 
-        EXPECT_TRUE( sth.has_set_mode() );
-
-        servio::Property prop = co_await host::get_property( port, servio::Property::kMode );
-        EXPECT_TRUE( prop.has_mode() );
-        EXPECT_EQ( prop.mode().pld_case(), m.pld_case() );
+        servio::Mode repl = co_await host::get_property_mode( port );
+        EXPECT_EQ( repl.pld_case(), m.pld_case() );
 }
 
 boost::asio::awaitable< void >

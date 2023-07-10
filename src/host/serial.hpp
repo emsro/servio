@@ -40,9 +40,10 @@ get_property( boost::asio::serial_port& port, servio::Property::PldCase field_id
 boost::asio::awaitable< servio::Property >
 get_property( boost::asio::serial_port& port, const google::protobuf::FieldDescriptor* field );
 
-boost::asio::awaitable< float > get_property_current( boost::asio::serial_port& port );
-boost::asio::awaitable< float > get_property_position( boost::asio::serial_port& port );
-boost::asio::awaitable< float > get_property_velocity( boost::asio::serial_port& port );
+boost::asio::awaitable< servio::Mode > get_property_mode( boost::asio::serial_port& port );
+boost::asio::awaitable< float >        get_property_current( boost::asio::serial_port& port );
+boost::asio::awaitable< float >        get_property_position( boost::asio::serial_port& port );
+boost::asio::awaitable< float >        get_property_velocity( boost::asio::serial_port& port );
 
 boost::asio::awaitable< void > set_mode( boost::asio::serial_port& port, servio::Mode mode );
 

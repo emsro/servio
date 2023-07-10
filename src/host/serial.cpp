@@ -132,6 +132,12 @@ get_property( boost::asio::serial_port& port, const google::protobuf::FieldDescr
 }
 
 /// TODO: error checking for the getters
+boost::asio::awaitable< servio::Mode > get_property_mode( boost::asio::serial_port& port )
+{
+        servio::Property prop = co_await get_property( port, servio::Property::kMode );
+        co_return prop.mode();
+}
+
 boost::asio::awaitable< float > get_property_current( boost::asio::serial_port& port )
 {
         servio::Property prop = co_await get_property( port, servio::Property::kCurrent );
