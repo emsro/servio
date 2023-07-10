@@ -13,6 +13,7 @@ var namespacehost =
     [ "cfg_get_cmd", "namespacehost.html#a415cab07a8445ad269bd343954f48541", null ],
     [ "cfg_query_cmd", "namespacehost.html#a9973d6f72a836a5e3c0b90444f083b04", null ],
     [ "cfg_set_cmd", "namespacehost.html#ac268f4e132a1131d3632e56649cfbdcc", null ],
+    [ "device_opt", "namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97", null ],
     [ "exchange", "namespacehost.html#a88ce469c3901611701f899ebb9b1a141", null ],
     [ "get_config_field", "namespacehost.html#aa45566ad35183e60250de4a994e121bd", null ],
     [ "get_full_config", "namespacehost.html#a3224b1b88234bcb41a709567bbba8ef1", null ],

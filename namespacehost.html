@@ -114,6 +114,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a25bcbd75c4d91e73f6cbc9f0fa58d944"><td class="memTemplParams" colspan="2">template&lt;typename Port &gt; </td></tr>
 <tr class="memitem:a25bcbd75c4d91e73f6cbc9f0fa58d944"><td class="memTemplItemLeft" align="right" valign="top">boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">async_cobs_read</a> (Port &amp;port, em::view&lt; std::byte * &gt; buffer)</td></tr>
 <tr class="separator:a25bcbd75c4d91e73f6cbc9f0fa58d944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5992b69a9b4498c24f684e9423fbf97"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97">device_opt</a> (CLI::App &amp;app, std::filesystem::path &amp;device)</td></tr>
+<tr class="separator:ac5992b69a9b4498c24f684e9423fbf97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9973d6f72a836a5e3c0b90444f083b04"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a9973d6f72a836a5e3c0b90444f083b04">cfg_query_cmd</a> (boost::asio::serial_port &amp;port, bool json)</td></tr>
 <tr class="separator:a9973d6f72a836a5e3c0b90444f083b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bcf5f119894ec0aed6f6ca3fd61a91e"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a9bcf5f119894ec0aed6f6ca3fd61a91e">cfg_commit_cmd</a> (boost::asio::serial_port &amp;port)</td></tr>
@@ -368,6 +370,34 @@ template&lt;typename Port &gt; </div>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="namespacehost.html#a88ce469c3901611701f899ebb9b1a141">exchange()</a>.</p>
+
+</div>
+</div>
+<a id="ac5992b69a9b4498c24f684e9423fbf97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5992b69a9b4498c24f684e9423fbf97">&#9670;&nbsp;</a></span>device_opt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CLI::Option* host::device_opt </td>
+          <td>(</td>
+          <td class="paramtype">CLI::App &amp;&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>device</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -861,7 +891,7 @@ template&lt;typename Port &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacehost.html">host</a></li>
-    <li class="footer">Generated on Mon Jul 10 2023 21:15:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Jul 10 2023 23:07:22 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

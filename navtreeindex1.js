@@ -23,6 +23,7 @@ var NAVTREEINDEX1 =
 "classvoltage__converter.html#aa68adcd5401740fc89d0342384e556e7":[11,0,28,0],
 "classvoltage__converter.html#aebd8ec998a9330d754a463858571701b":[11,0,28,1],
 "cli_8hpp.html":[12,0,1,4,1],
+"cli_8hpp.html#ac5992b69a9b4498c24f684e9423fbf97":[12,0,1,4,1,1],
 "cli_8hpp_source.html":[12,0,1,4,1],
 "clock_8hpp.html":[12,0,1,3,0,2],
 "clock_8hpp_source.html":[12,0,1,3,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "kalman_8hpp.html#a5ce40b45ea8998e580042dae4ba09635":[12,0,1,14,20],
 "kalman_8hpp.html#a5cfbf493eef29c305b290c2b167e4bce":[12,0,1,14,2],
 "kalman_8hpp.html#a6d24f860613d669dfde9489beaf338cb":[12,0,1,14,21],
-"kalman_8hpp.html#a7435a12aeaeef2bdb1f7ff3cd933fbc2":[12,0,1,14,14],
-"kalman_8hpp.html#a7e3eb3854ea1e62172ae0ff1374342bc":[12,0,1,14,16]
+"kalman_8hpp.html#a7435a12aeaeef2bdb1f7ff3cd933fbc2":[12,0,1,14,14]
 };
