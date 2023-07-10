@@ -48,7 +48,6 @@ boost::asio::awaitable< float >        get_property_velocity( boost::asio::seria
 boost::asio::awaitable< void > set_mode( boost::asio::serial_port& port, servio::Mode mode );
 
 boost::asio::awaitable< void > set_mode_disengaged( boost::asio::serial_port& port );
-
 boost::asio::awaitable< void > set_mode_position( boost::asio::serial_port& port, float angle );
 boost::asio::awaitable< void > set_mode_velocity( boost::asio::serial_port& port, float vel );
 boost::asio::awaitable< void > set_mode_current( boost::asio::serial_port& port, float curr );

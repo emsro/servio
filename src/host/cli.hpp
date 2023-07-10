@@ -7,6 +7,13 @@
 namespace host
 {
 
+CLI::Option* device_opt( CLI::App& app, std::filesystem::path& device )
+{
+        return app.add_option( "-d,--device", device, "device to use" )
+            ->envname( "SERVIO_DEVICE" )
+            ->check( CLI::ExistingFile );
+}
+
 struct common_cli
 {
 
@@ -17,10 +24,7 @@ struct common_cli
 
         void setup( CLI::App& app )
         {
-                app.add_option( "-d,--device", device, "device to use" )
-                    ->envname( "SERVIO_DEVICE" )
-                    ->check( CLI::ExistingFile )
-                    ->capture_default_str();
+                device_opt( app, device )->capture_default_str();
                 app.add_option( "-b,--baudrate", baudrate, "baudrate for communication" )
                     ->envname( "SERVIO_BAUDRATE" )
                     ->capture_default_str();
