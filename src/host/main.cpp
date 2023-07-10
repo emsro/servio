@@ -136,6 +136,7 @@ struct mode_opts
 {
         float current;
         float angle;
+        float velocity;
 };
 
 void mode_def(
@@ -167,6 +168,15 @@ void mode_def(
                 co_spawn(
                     context,
                     host::set_mode_position( *port_ptr, data->angle ),
+                    boost::asio::detached );
+        } );
+
+        auto velocity = mode->add_subcommand( "velocity", "velocity mode" );
+        velocity->add_option( "velocity", data->velocity, "goal velocity" );
+        velocity->callback( [&port_ptr, data, &context] {
+                co_spawn(
+                    context,
+                    host::set_mode_velocity( *port_ptr, data->velocity ),
                     boost::asio::detached );
         } );
 }

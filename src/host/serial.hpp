@@ -49,7 +49,7 @@ boost::asio::awaitable< void > set_mode( boost::asio::serial_port& port, servio:
 boost::asio::awaitable< void > set_mode_disengaged( boost::asio::serial_port& port );
 
 boost::asio::awaitable< void > set_mode_position( boost::asio::serial_port& port, float angle );
-
+boost::asio::awaitable< void > set_mode_velocity( boost::asio::serial_port& port, float vel );
 boost::asio::awaitable< void > set_mode_current( boost::asio::serial_port& port, float curr );
 
 }  // namespace host

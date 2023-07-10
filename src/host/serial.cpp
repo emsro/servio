@@ -171,6 +171,13 @@ boost::asio::awaitable< void > set_mode_position( boost::asio::serial_port& port
         co_await set_mode( port, m );
 }
 
+boost::asio::awaitable< void > set_mode_velocity( boost::asio::serial_port& port, float vel )
+{
+        servio::Mode m;
+        m.set_velocity( vel );
+        co_await set_mode( port, m );
+}
+
 boost::asio::awaitable< void > set_mode_current( boost::asio::serial_port& port, float curr )
 {
         servio::Mode m;
