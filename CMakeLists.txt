@@ -37,7 +37,6 @@ add_subdirectory(src)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
-  include(cmake/args.cmake)
   include(cmake/cli11.cmake)
 
   include(CTest)

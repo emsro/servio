@@ -25,9 +25,9 @@ add_fwlib_test(TARGET cfg_storage_utest)
 add_fwlib_test(TARGET cfg_utest)
 
 add_executable(bb_basic bb/basic.cpp)
-target_link_libraries(bb_basic PRIVATE hostlib args GTest::GTest)
+target_link_libraries(bb_basic PRIVATE hostlib GTest::GTest)
 servio_compile_options(bb_basic)
 
 add_executable(bb_moves bb/moves.cpp)
-target_link_libraries(bb_moves PRIVATE hostlib args GTest::GTest)
+target_link_libraries(bb_moves PRIVATE hostlib GTest::GTest)
 servio_compile_options(bb_moves)
