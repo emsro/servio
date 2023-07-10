@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"serial_8hpp.html#ac5f897334e4a466b2631fdc3e8bd5aac":[12,0,1,4,7,5],
+"serial_8hpp.html#ac9e5db09445cba7106cfa09dc3f5a317":[12,0,1,4,7,16],
+"serial_8hpp.html#afbbd9ae17fc28c3112fc15a38f2e6f04":[12,0,1,4,7,17],
 "serial_8hpp_source.html":[12,0,1,4,7],
 "servio__pb_8cpp.html":[12,0,1,3,16],
 "servio__pb_8cpp.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc":[12,0,1,3,16,2],

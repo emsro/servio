@@ -20,6 +20,7 @@ var namespacehost =
     [ "get_property", "namespacehost.html#a1c6a5c8c82911693f92b3b744ede4865", null ],
     [ "get_property", "namespacehost.html#ac5f897334e4a466b2631fdc3e8bd5aac", null ],
     [ "get_property_current", "namespacehost.html#ac54f61fc375c7c6716db7790bf3c5582", null ],
+    [ "get_property_mode", "namespacehost.html#a29a5403ae3a8c17445a5a8b055997a62", null ],
     [ "get_property_position", "namespacehost.html#a8d93a2add4e5015a0e944a8c71ab3f8a", null ],
     [ "get_property_velocity", "namespacehost.html#a64bf59633c23bab767bd3ede367a56ed", null ],
     [ "read", "namespacehost.html#a6fe460d4ed1f42069ba758c8ead1f75c", null ],
