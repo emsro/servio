@@ -33,7 +33,8 @@ void acquisition::adc_irq()
 void acquisition::adc_error_irq( ADC_HandleTypeDef* h )
 {
         std::ignore = h;
-        stop_exec();
+        // TODO: well this was aggresive, convert to a flag
+        // stop_exec();
 }
 
 void acquisition::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
