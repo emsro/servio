@@ -118,13 +118,14 @@ $(document).ready(function(){initNavTree('cli_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    -&gt;envname( <span class="stringliteral">&quot;SERVIO_BAUDRATE&quot;</span> )</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    -&gt;capture_default_str();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                app.parse_complete_callback( [&amp;] {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        <a class="code" href="structhost_1_1common__cli.html#a836377542a89aecdfd537894e9567998">port_ptr</a> = std::make_unique&lt; boost::asio::serial_port &gt;(</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                            <a class="code" href="structhost_1_1common__cli.html#a4069a66d37489ce0a202b56e7a46cecd">context</a>, <a class="code" href="structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924">device</a>, <a class="code" href="structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb">baudrate</a> );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                } );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}  <span class="comment">// namespace host</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        <a class="code" href="structhost_1_1common__cli.html#a836377542a89aecdfd537894e9567998">port_ptr</a> = std::make_unique&lt; boost::asio::serial_port &gt;( <a class="code" href="structhost_1_1common__cli.html#a4069a66d37489ce0a202b56e7a46cecd">context</a>, <a class="code" href="structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924">device</a> );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        <a class="code" href="structhost_1_1common__cli.html#a836377542a89aecdfd537894e9567998">port_ptr</a>-&gt;set_option(</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            boost::asio::serial_port_base::baud_rate( <a class="code" href="structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb">baudrate</a> ) );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                } );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}  <span class="comment">// namespace host</span></div>
 <div class="ttc" id="anamespacehost_html"><div class="ttname"><a href="namespacehost.html">host</a></div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:13</div></div>
 <div class="ttc" id="anamespacehost_html_ac5992b69a9b4498c24f684e9423fbf97"><div class="ttname"><a href="namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97">host::device_opt</a></div><div class="ttdeci">CLI::Option * device_opt(CLI::App &amp;app, std::filesystem::path &amp;device)</div><div class="ttdef"><b>Definition:</b> cli.hpp:10</div></div>
 <div class="ttc" id="astructhost_1_1common__cli_html"><div class="ttname"><a href="structhost_1_1common__cli.html">host::common_cli</a></div><div class="ttdef"><b>Definition:</b> cli.hpp:18</div></div>
@@ -139,7 +140,7 @@ $(document).ready(function(){initNavTree('cli_8hpp_source.html',''); initResizab
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_84e79ac80b913c2fb5b9e077744e9498.html">host</a></li><li class="navelem"><a class="el" href="cli_8hpp.html">cli.hpp</a></li>
-    <li class="footer">Generated on Tue Jul 11 2023 21:05:51 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Jul 12 2023 21:17:30 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

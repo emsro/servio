@@ -119,34 +119,36 @@ $(document).ready(function(){initNavTree('async__cobs_8hpp_source.html',''); ini
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        msg_buffer[ser_msg.size()] = std::byte{ 0 };</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        co_await async_write(</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            port,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            boost::asio::buffer( ser_msg.begin(), ser_msg.size() + 1 ),</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            boost::asio::use_awaitable );</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> Port &gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;boost::asio::awaitable&lt; em::view&lt; std::byte* &gt; &gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">   41</a></span>&#160;<a class="code" href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">async_cobs_read</a>( Port&amp; port, em::view&lt; std::byte* &gt; buffer )</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::vector&lt; uint8_t &gt; reply_raw_buffer;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::size_t            n = co_await async_read_until(</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            port, boost::asio::dynamic_buffer( reply_raw_buffer ), 0, boost::asio::use_awaitable );</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">auto</span> [rsucc, deser_msg] = em::decode_cobs(</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            em::view_n( <span class="keyword">reinterpret_cast&lt;</span> std::byte* <span class="keyword">&gt;</span>( reply_raw_buffer.data() ), n ), buffer );</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> ( !rsucc ) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="structhost_1_1parse__error.html">parse_error</a>{ <span class="stringliteral">&quot;failed to parse cobs&quot;</span> };</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        co_return deser_msg;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}  <span class="comment">// namespace host</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        EMLABCPP_DEBUG_LOG( <span class="stringliteral">&quot;Writing: &quot;</span>, ser_msg );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        co_await async_write(</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            port,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            boost::asio::buffer( ser_msg.begin(), ser_msg.size() + 1 ),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            boost::asio::use_awaitable );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> Port &gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;boost::asio::awaitable&lt; em::view&lt; std::byte* &gt; &gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">   43</a></span>&#160;<a class="code" href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">async_cobs_read</a>( Port&amp; port, em::view&lt; std::byte* &gt; buffer )</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::vector&lt; uint8_t &gt; reply_raw_buffer;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::size_t            n = co_await async_read_until(</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            port, boost::asio::dynamic_buffer( reply_raw_buffer ), 0, boost::asio::use_awaitable );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">auto</span> [rsucc, deser_msg] = em::decode_cobs(</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            em::view_n( <span class="keyword">reinterpret_cast&lt;</span> std::byte* <span class="keyword">&gt;</span>( reply_raw_buffer.data() ), n ), buffer );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> ( !rsucc ) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="structhost_1_1parse__error.html">parse_error</a>{ <span class="stringliteral">&quot;failed to parse cobs&quot;</span> };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        co_return deser_msg;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}  <span class="comment">// namespace host</span></div>
 <div class="ttc" id="aexceptions_8hpp_html"><div class="ttname"><a href="exceptions_8hpp.html">exceptions.hpp</a></div></div>
 <div class="ttc" id="anamespacehost_html"><div class="ttname"><a href="namespacehost.html">host</a></div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:13</div></div>
-<div class="ttc" id="anamespacehost_html_a25bcbd75c4d91e73f6cbc9f0fa58d944"><div class="ttname"><a href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">host::async_cobs_read</a></div><div class="ttdeci">boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt; async_cobs_read(Port &amp;port, em::view&lt; std::byte * &gt; buffer)</div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:41</div></div>
+<div class="ttc" id="anamespacehost_html_a25bcbd75c4d91e73f6cbc9f0fa58d944"><div class="ttname"><a href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">host::async_cobs_read</a></div><div class="ttdeci">boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt; async_cobs_read(Port &amp;port, em::view&lt; std::byte * &gt; buffer)</div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:43</div></div>
 <div class="ttc" id="anamespacehost_html_ab1f9b2447852b1472ee4583385f03c25"><div class="ttname"><a href="namespacehost.html#ab1f9b2447852b1472ee4583385f03c25">host::async_cobs_write</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; async_cobs_write(Port &amp;port, em::view&lt; std::byte * &gt; msg)</div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:16</div></div>
 <div class="ttc" id="astructhost_1_1parse__error_html"><div class="ttname"><a href="structhost_1_1parse__error.html">host::parse_error</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:60</div></div>
 <div class="ttc" id="astructhost_1_1serialize__error_html"><div class="ttname"><a href="structhost_1_1serialize__error.html">host::serialize_error</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:45</div></div>
@@ -156,7 +158,7 @@ $(document).ready(function(){initNavTree('async__cobs_8hpp_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_84e79ac80b913c2fb5b9e077744e9498.html">host</a></li><li class="navelem"><a class="el" href="async__cobs_8hpp.html">async_cobs.hpp</a></li>
-    <li class="footer">Generated on Tue Jul 11 2023 21:05:51 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Jul 12 2023 21:17:30 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
