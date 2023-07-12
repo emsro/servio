@@ -29,8 +29,9 @@ struct common_cli
                     ->envname( "SERVIO_BAUDRATE" )
                     ->capture_default_str();
                 app.parse_complete_callback( [&] {
-                        port_ptr = std::make_unique< boost::asio::serial_port >(
-                            context, device, baudrate );
+                        port_ptr = std::make_unique< boost::asio::serial_port >( context, device );
+                        port_ptr->set_option(
+                            boost::asio::serial_port_base::baud_rate( baudrate ) );
                 } );
         }
 };
