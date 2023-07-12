@@ -30,6 +30,8 @@ boost::asio::awaitable< void > async_cobs_write( Port& port, em::view< std::byte
 
         msg_buffer[ser_msg.size()] = std::byte{ 0 };
 
+        EMLABCPP_DEBUG_LOG( "Writing: ", ser_msg );
+
         co_await async_write(
             port,
             boost::asio::buffer( ser_msg.begin(), ser_msg.size() + 1 ),

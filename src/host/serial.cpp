@@ -20,6 +20,7 @@ write( boost::asio::serial_port& port, const servio::HostToServio& payload )
 
         std::size_t              size = msg.ByteSizeLong();
         std::vector< std::byte > buffer( size, std::byte{ 0 } );
+        EMLABCPP_DEBUG_LOG( "Sending: ", msg.ShortDebugString() );
         if ( !msg.SerializeToArray( buffer.data(), static_cast< int >( size ) ) ) {
                 throw serialize_error{ "failed to serliaze host to servio message" };
         }
@@ -38,6 +39,7 @@ boost::asio::awaitable< servio::ServioToHost > read( boost::asio::serial_port& p
                 EMLABCPP_ERROR_LOG( "Failed to parse message: ", deser_msg );
                 throw parse_error{ "failed to parse servio to host message from incoming data" };
         }
+        EMLABCPP_DEBUG_LOG( "Got: ", reply.ShortDebugString() );
 
         if ( reply.payload().has_error() ) {
                 throw error_exception{ reply.payload().error() };
