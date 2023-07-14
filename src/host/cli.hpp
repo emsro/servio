@@ -14,6 +14,12 @@ CLI::Option* device_opt( CLI::App& app, std::filesystem::path& device )
             ->check( CLI::ExistingFile );
 }
 
+CLI::Option* baudrate_opt( CLI::App& app, unsigned& baudrate )
+{
+        return app.add_option( "-b,--baudrate", baudrate, "baudrate for communication" )
+            ->envname( "SERVIO_BAUDRATE" );
+}
+
 struct common_cli
 {
 
@@ -25,9 +31,7 @@ struct common_cli
         void setup( CLI::App& app )
         {
                 device_opt( app, device )->capture_default_str();
-                app.add_option( "-b,--baudrate", baudrate, "baudrate for communication" )
-                    ->envname( "SERVIO_BAUDRATE" )
-                    ->capture_default_str();
+                baudrate_opt( app, baudrate )->capture_default_str();
                 app.parse_complete_callback( [&] {
                         port_ptr = std::make_unique< boost::asio::serial_port >( context, device );
                         port_ptr->set_option(
