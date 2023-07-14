@@ -45,9 +45,11 @@ async_cobs_read( Port& port, em::view< std::byte* > buffer )
         std::vector< uint8_t > reply_raw_buffer;
         std::size_t            n = co_await async_read_until(
             port, boost::asio::dynamic_buffer( reply_raw_buffer ), 0, boost::asio::use_awaitable );
+        em::view< std::byte* > dview =
+            em::view_n( reinterpret_cast< std::byte* >( reply_raw_buffer.data() ), n );
+        EMLABCPP_DEBUG_LOG( "Reading: ", dview );
 
-        auto [rsucc, deser_msg] = em::decode_cobs(
-            em::view_n( reinterpret_cast< std::byte* >( reply_raw_buffer.data() ), n ), buffer );
+        auto [rsucc, deser_msg] = em::decode_cobs( dview, buffer );
 
         if ( !rsucc ) {
                 throw parse_error{ "failed to parse cobs" };

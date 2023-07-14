@@ -75,6 +75,8 @@ get_config_field( boost::asio::serial_port& port, const google::protobuf::FieldD
 
         servio::ServioToHost reply = co_await exchange( port, msg );
         if ( !reply.has_get_config() ) {
+                EMLABCPP_ERROR_LOG(
+                    "Expected message with get_config, instead got: ", reply.ShortDebugString() );
                 throw reply_error{ "reply does not contain get_config as it should" };
         }
         co_return reply.get_config();
@@ -116,6 +118,8 @@ get_property( boost::asio::serial_port& port, uint32_t field_id )
         hts.mutable_get_property()->set_field_id( field_id );
         servio::ServioToHost sth = co_await exchange( port, hts );
         if ( !sth.has_get_property() ) {
+                EMLABCPP_ERROR_LOG(
+                    "Expected message with get_property, instead got: ", sth.ShortDebugString() );
                 throw reply_error{ "reply does not contain get_property as it should" };
         }
         co_return sth.get_property();

@@ -32,6 +32,10 @@ struct common_cli
                         port_ptr = std::make_unique< boost::asio::serial_port >( context, device );
                         port_ptr->set_option(
                             boost::asio::serial_port_base::baud_rate( baudrate ) );
+                        int res = ::tcflush( port_ptr->lowest_layer().native_handle(), TCIOFLUSH );
+                        if ( res != 0 ) {
+                                std::cerr << "Failed to flush serial buffer" << std::endl;
+                        }
                 } );
         }
 };
