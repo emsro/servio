@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['limits_1016',['limits',['../base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c',1,'base.hpp']]]
+  ['limits_1018',['limits',['../base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c',1,'base.hpp']]]
 ];
