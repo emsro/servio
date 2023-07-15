@@ -1,10 +1,12 @@
-#include "config.hpp"
-#include "fw/util.hpp"
+#include "fw/drv/callbacks.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <span>
+#include <stm32g4xx_hal.h>
 
 #pragma once
+
+namespace em = emlabcpp;
 
 namespace fw::drv
 {

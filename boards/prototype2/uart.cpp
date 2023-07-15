@@ -1,3 +1,4 @@
+#include "fw/util.hpp"
 #include "setup.hpp"
 
 #include <cstdlib>

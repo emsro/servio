@@ -1,4 +1,5 @@
 #include "base.hpp"
+#include "fw/drv/callbacks.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/view.h>

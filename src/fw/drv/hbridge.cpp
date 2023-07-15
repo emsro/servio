@@ -1,5 +1,7 @@
 #include "hbridge.hpp"
 
+#include <emlabcpp/algorithm.h>
+
 namespace fw::drv
 {
 

@@ -12,7 +12,7 @@
 namespace fw
 {
 
-class acquisition_period_callback : public period_cb_interface
+class acquisition_period_callback : public drv::period_cb_interface
 {
 public:
         acquisition_period_callback( drv::acquisition& acq )
@@ -29,7 +29,7 @@ private:
         drv::acquisition& acq_;
 };
 
-class current_callback : public current_cb_interface
+class current_callback : public drv::current_cb_interface
 {
 public:
         current_callback( drv::hbridge& hb, control& ctl, drv::clock& clk, const converter& conv )
@@ -55,7 +55,7 @@ private:
         const converter& conv_;
 };
 
-class position_callback : public position_cb_interface
+class position_callback : public drv::position_cb_interface
 {
 public:
         position_callback( control& ctl, metrics& met, drv::clock& clk, const converter& conv )
