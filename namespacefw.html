@@ -153,16 +153,23 @@ Functions</h2></td></tr>
 <tr class="separator:adb9ba6229ac5d318dd2fc074d8f3bfa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad775dfc81f5ea33fcc4d3d661c31ac3c"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#ad775dfc81f5ea33fcc4d3d661c31ac3c">handle_message</a> (<a class="el" href="namespacefw.html#structfw_1_1dispatcher">dispatcher</a> &amp;dis, const HostToServio &amp;msg)</td></tr>
 <tr class="separator:ad775dfc81f5ea33fcc4d3d661c31ac3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412d66629b1ab2256779303bc71b949d"><td class="memTemplParams" colspan="2">template&lt;typename InputType , typename OutputType , typename Handle &gt; </td></tr>
+<tr class="memitem:a412d66629b1ab2256779303bc71b949d"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefw.html#a412d66629b1ab2256779303bc71b949d">process_message</a> (em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer, Handle &amp;&amp;h)</td></tr>
+<tr class="separator:a412d66629b1ab2256779303bc71b949d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7128ae64b1384c772cc0d8381118f7e8"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a7128ae64b1384c772cc0d8381118f7e8">handle_message</a> (<a class="el" href="namespacefw.html#structfw_1_1dispatcher">dispatcher</a> &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
+<tr class="separator:a7128ae64b1384c772cc0d8381118f7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4186d649ed945108aedc1e9f0c6a16b"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#aa4186d649ed945108aedc1e9f0c6a16b">handle_message_packet</a> (<a class="el" href="namespacefw.html#structfw_1_1dispatcher">dispatcher</a> &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
+<tr class="separator:aa4186d649ed945108aedc1e9f0c6a16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc468c13da3b6d289cf87dc34806b356"><td class="memTemplParams" colspan="2">template&lt;typename Cfg , typename UnaryFunction &gt; </td></tr>
 <tr class="memitem:adc468c13da3b6d289cf87dc34806b356"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefw.html#adc468c13da3b6d289cf87dc34806b356">map_cfg</a> (uint32_t key, Cfg &amp;cfg, UnaryFunction &amp;&amp;f)</td></tr>
 <tr class="separator:adc468c13da3b6d289cf87dc34806b356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23fc4234292273ffabe5f85953f2713a"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a23fc4234292273ffabe5f85953f2713a">error_msg</a> (const char *msg)</td></tr>
 <tr class="separator:a23fc4234292273ffabe5f85953f2713a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad87d2b13282640562c4ff917a3fb7d76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76">decode</a> (em::view&lt; std::byte * &gt; data, HostToServio &amp;msg)</td></tr>
-<tr class="memdesc:ad87d2b13282640562c4ff917a3fb7d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">decodes a bytes from data to HostToServio message, returns true on success  <a href="namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76">More...</a><br /></td></tr>
-<tr class="separator:ad87d2b13282640562c4ff917a3fb7d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9669eb3d780d48e4c36792111dae6047"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a9669eb3d780d48e4c36792111dae6047">decode</a> (em::view&lt; std::byte * &gt; data, HostToServioPacket &amp;msg)</td></tr>
-<tr class="separator:a9669eb3d780d48e4c36792111dae6047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8316fa0b789f65911005cdb427b8cab0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a8316fa0b789f65911005cdb427b8cab0">decode</a> (em::view&lt; const std::byte * &gt; data, HostToServio &amp;msg)</td></tr>
+<tr class="memdesc:a8316fa0b789f65911005cdb427b8cab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">decodes a bytes from data to HostToServio message, returns true on success  <a href="namespacefw.html#a8316fa0b789f65911005cdb427b8cab0">More...</a><br /></td></tr>
+<tr class="separator:a8316fa0b789f65911005cdb427b8cab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8a9990f215a0f592e13e70469c1cf48"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#af8a9990f215a0f592e13e70469c1cf48">decode</a> (em::view&lt; const std::byte * &gt; data, HostToServioPacket &amp;msg)</td></tr>
+<tr class="separator:af8a9990f215a0f592e13e70469c1cf48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e6e4a4b2d63a55fdc7c36ea8cf601dc"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc">encode</a> (em::view&lt; std::byte * &gt; data, const ServioToHost &amp;msg)</td></tr>
 <tr class="memdesc:a1e6e4a4b2d63a55fdc7c36ea8cf601dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">encodes a ServioToHost message to bytes, returns succes bool and subset of data that contains the serialized message  <a href="namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc">More...</a><br /></td></tr>
 <tr class="separator:a1e6e4a4b2d63a55fdc7c36ea8cf601dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -425,8 +432,8 @@ now</td>
 
 </div>
 </div>
-<a id="ad87d2b13282640562c4ff917a3fb7d76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad87d2b13282640562c4ff917a3fb7d76">&#9670;&nbsp;</a></span>decode() <span class="overload">[1/2]</span></h2>
+<a id="a8316fa0b789f65911005cdb427b8cab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8316fa0b789f65911005cdb427b8cab0">&#9670;&nbsp;</a></span>decode() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -434,7 +441,7 @@ now</td>
         <tr>
           <td class="memname">bool fw::decode </td>
           <td>(</td>
-          <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
+          <td class="paramtype">em::view&lt; const std::byte * &gt;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
@@ -455,8 +462,8 @@ now</td>
 
 </div>
 </div>
-<a id="a9669eb3d780d48e4c36792111dae6047"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9669eb3d780d48e4c36792111dae6047">&#9670;&nbsp;</a></span>decode() <span class="overload">[2/2]</span></h2>
+<a id="af8a9990f215a0f592e13e70469c1cf48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a9990f215a0f592e13e70469c1cf48">&#9670;&nbsp;</a></span>decode() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -464,7 +471,7 @@ now</td>
         <tr>
           <td class="memname">bool fw::decode </td>
           <td>(</td>
-          <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
+          <td class="paramtype">em::view&lt; const std::byte * &gt;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
@@ -716,7 +723,7 @@ now</td>
 </div>
 </div>
 <a id="ad775dfc81f5ea33fcc4d3d661c31ac3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad775dfc81f5ea33fcc4d3d661c31ac3c">&#9670;&nbsp;</a></span>handle_message()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad775dfc81f5ea33fcc4d3d661c31ac3c">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -742,6 +749,76 @@ now</td>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="namespacefw.html#add29d7f2c0e81c6d29daf5d451491aa3">fw::dispatcher::acquis</a>, <a class="el" href="namespacefw.html#a64062389efe7fe57f45c591f7d608afc">fw::dispatcher::cfg_disp</a>, <a class="el" href="namespacefw.html#a520b3be865d264d703b435b5c4e08fbb">fw::dispatcher::cfg_writer</a>, <a class="el" href="namespacefw.html#ac7282035a48db732bb3abfbfb69467d0">fw::dispatcher::conv</a>, <a class="el" href="namespacefw.html#a15cf4f98017315abc2a188bbef019777">fw::dispatcher::ctl</a>, <a class="el" href="namespacefw.html#a23fc4234292273ffabe5f85953f2713a">error_msg()</a>, <a class="el" href="namespacefw.html#adb9ba6229ac5d318dd2fc074d8f3bfa5">handle_clear_config()</a>, <a class="el" href="namespacefw.html#a8ede28207610e3bab4ad88077c3027fc">handle_commit_config()</a>, <a class="el" href="namespacefw.html#a92496e4c5ebdd1e79c198bdcc25774ae">handle_get_config()</a>, <a class="el" href="namespacefw.html#a8be8bad9a85ff741b5b5469b050008d0">handle_get_property()</a>, <a class="el" href="namespacefw.html#ae47759362df98aea1a40bfcb71d7536a">handle_set_config()</a>, <a class="el" href="namespacefw.html#a57c7860f5c702e7a1129a8dc07859c70">handle_set_mode()</a>, <a class="el" href="namespacefw.html#a1e47271b17da64b24e74fe8637c41e64">fw::dispatcher::hb</a>, <a class="el" href="namespacefw.html#a1eaa563bf53d1b1210bda5d8a68ef0c8">fw::dispatcher::met</a>, and <a class="el" href="namespacefw.html#a5d0815a7b50f52ffe1b8ef2a4a74c700">fw::dispatcher::now</a>.</p>
+
+</div>
+</div>
+<a id="a7128ae64b1384c772cc0d8381118f7e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7128ae64b1384c772cc0d8381118f7e8">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt; fw::handle_message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefw.html#structfw_1_1dispatcher">dispatcher</a> &amp;&#160;</td>
+          <td class="paramname"><em>dis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">em::view&lt; const std::byte * &gt;&#160;</td>
+          <td class="paramname"><em>input_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
+          <td class="paramname"><em>output_buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4186d649ed945108aedc1e9f0c6a16b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4186d649ed945108aedc1e9f0c6a16b">&#9670;&nbsp;</a></span>handle_message_packet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt; fw::handle_message_packet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefw.html#structfw_1_1dispatcher">dispatcher</a> &amp;&#160;</td>
+          <td class="paramname"><em>dis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">em::view&lt; const std::byte * &gt;&#160;</td>
+          <td class="paramname"><em>input_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
+          <td class="paramname"><em>output_buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacefw.html#a7128ae64b1384c772cc0d8381118f7e8">handle_message()</a>.</p>
 
 </div>
 </div>
@@ -983,6 +1060,44 @@ template&lt;typename... Components&gt; </div>
 
 </div>
 </div>
+<a id="a412d66629b1ab2256779303bc71b949d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412d66629b1ab2256779303bc71b949d">&#9670;&nbsp;</a></span>process_message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputType , typename OutputType , typename Handle &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; bool, em::view&lt; std::byte* &gt; &gt; fw::process_message </td>
+          <td>(</td>
+          <td class="paramtype">em::view&lt; const std::byte * &gt;&#160;</td>
+          <td class="paramname"><em>input_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
+          <td class="paramname"><em>output_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Handle &amp;&amp;&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacefw.html#a8316fa0b789f65911005cdb427b8cab0">decode()</a>, and <a class="el" href="namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc">encode()</a>.</p>
+
+</div>
+</div>
 <a id="abe885b15f2c73abe512dafdfca01deb4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe885b15f2c73abe512dafdfca01deb4">&#9670;&nbsp;</a></span>setup_leds_with_stop_callback()</h2>
 
@@ -1050,7 +1165,7 @@ template&lt;typename... Components&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li>
-    <li class="footer">Generated on Sat Jul 15 2023 08:42:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jul 15 2023 09:35:37 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

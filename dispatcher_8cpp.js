@@ -6,6 +6,9 @@ var dispatcher_8cpp =
     [ "handle_get_config", "dispatcher_8cpp.html#a92496e4c5ebdd1e79c198bdcc25774ae", null ],
     [ "handle_get_property", "dispatcher_8cpp.html#a8be8bad9a85ff741b5b5469b050008d0", null ],
     [ "handle_message", "dispatcher_8cpp.html#ad775dfc81f5ea33fcc4d3d661c31ac3c", null ],
+    [ "handle_message", "dispatcher_8cpp.html#a7128ae64b1384c772cc0d8381118f7e8", null ],
+    [ "handle_message_packet", "dispatcher_8cpp.html#aa4186d649ed945108aedc1e9f0c6a16b", null ],
     [ "handle_set_config", "dispatcher_8cpp.html#ae47759362df98aea1a40bfcb71d7536a", null ],
-    [ "handle_set_mode", "dispatcher_8cpp.html#a57c7860f5c702e7a1129a8dc07859c70", null ]
+    [ "handle_set_mode", "dispatcher_8cpp.html#a57c7860f5c702e7a1129a8dc07859c70", null ],
+    [ "process_message", "dispatcher_8cpp.html#a412d66629b1ab2256779303bc71b949d", null ]
 ];

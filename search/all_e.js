@@ -6,7 +6,7 @@ var searchData=
   ['debug_5fcomms_2ehpp_127',['debug_comms.hpp',['../debug__comms_8hpp.html',1,'']]],
   ['debugmon_5fhandler_128',['DebugMon_Handler',['../it_8cpp.html#adbdfb05858cc36fc520974df37ec3cb0',1,'it.cpp']]],
   ['decay_129',['decay',['../structctl_1_1linear__transition__regulator.html#a1f26b5947c03ffc4b5b124b29cbabd59',1,'ctl::linear_transition_regulator']]],
-  ['decode_130',['decode',['../namespacefw.html#a9669eb3d780d48e4c36792111dae6047',1,'fw::decode(em::view&lt; std::byte * &gt; data, HostToServioPacket &amp;msg)'],['../namespacefw.html#ad87d2b13282640562c4ff917a3fb7d76',1,'fw::decode(em::view&lt; std::byte * &gt; data, HostToServio &amp;msg)']]],
+  ['decode_130',['decode',['../namespacefw.html#af8a9990f215a0f592e13e70469c1cf48',1,'fw::decode(em::view&lt; const std::byte * &gt; data, HostToServioPacket &amp;msg)'],['../namespacefw.html#a8316fa0b789f65911005cdb427b8cab0',1,'fw::decode(em::view&lt; const std::byte * &gt; data, HostToServio &amp;msg)']]],
   ['default_2ehpp_131',['default.hpp',['../default_8hpp.html',1,'']]],
   ['device_132',['device',['../structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924',1,'host::common_cli']]],
   ['device_5fopt_133',['device_opt',['../namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97',1,'host']]],
