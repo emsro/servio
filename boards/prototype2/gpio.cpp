@@ -1,4 +1,4 @@
-#include "fw/drivers/leds.hpp"
+#include "fw/drv/leds.hpp"
 #include "setup.hpp"
 
 namespace brd
@@ -9,7 +9,7 @@ namespace brd
 //  PF1 - G
 //  PB0 - G
 //  PB5 - Y
-bool setup_leds_gpio( fw::leds::handles&, leds_gpio_cfg cfg )
+bool setup_leds_gpio( fw::drv::leds::handles&, leds_gpio_cfg cfg )
 {
         for ( const pin_cfg pc : { cfg.red, cfg.blue } ) {
                 GPIO_InitTypeDef init;

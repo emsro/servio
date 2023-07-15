@@ -41,6 +41,7 @@ bool store_config(
 
 int main()
 {
+
         brd::setup_board();
 
         cfg_map cfg = brd::get_config();
@@ -59,15 +60,14 @@ int main()
                 }
         }
 
-        fw::clock*       clock_ptr       = brd::setup_clock();
-        fw::leds*        leds_ptr        = fw::setup_leds_with_stop_callback();
-        fw::acquisition* acquisition_ptr = brd::setup_acquisition();
-        fw::hbridge*     hbridge_ptr     = brd::setup_hbridge();
-        fw::comms*       comms_ptr       = brd::setup_comms();
-        fw::debug_comms* debug_comms_ptr = brd::setup_debug_comms();
+        fw::drv::clock*       clock_ptr       = brd::setup_clock();
+        fw::drv::leds*        leds_ptr        = fw::setup_leds_with_stop_callback();
+        fw::drv::acquisition* acquisition_ptr = brd::setup_acquisition();
+        fw::drv::hbridge*     hbridge_ptr     = brd::setup_hbridge();
+        fw::drv::comms*       comms_ptr       = brd::setup_comms();
 
         if ( clock_ptr == nullptr || acquisition_ptr == nullptr || hbridge_ptr == nullptr ||
-             comms_ptr == nullptr || debug_comms_ptr == nullptr || leds_ptr == nullptr ) {
+             comms_ptr == nullptr || leds_ptr == nullptr ) {
                 fw::stop_exec();
         }
 
@@ -80,7 +80,7 @@ int main()
         fw::cfg_dispatcher cfg_dis{ cfg, cor };
         cfg_dis.full_apply();
 
-        fw::multistart( *leds_ptr, *acquisition_ptr, *hbridge_ptr, *comms_ptr, *debug_comms_ptr );
+        fw::multistart( *leds_ptr, *acquisition_ptr, *hbridge_ptr, *comms_ptr );
 
         cor.ind.on_event( clock_ptr->get_us(), indication_event::INITIALIZED );
 

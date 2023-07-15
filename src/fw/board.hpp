@@ -1,10 +1,10 @@
 #include "config.hpp"
-#include "fw/drivers/acquisition.hpp"
-#include "fw/drivers/clock.hpp"
-#include "fw/drivers/comms.hpp"
-#include "fw/drivers/debug_comms.hpp"
-#include "fw/drivers/hbridge.hpp"
-#include "fw/drivers/leds.hpp"
+#include "fw/drv/acquisition.hpp"
+#include "fw/drv/clock.hpp"
+#include "fw/drv/comms.hpp"
+#include "fw/drv/debug_comms.hpp"
+#include "fw/drv/hbridge.hpp"
+#include "fw/drv/leds.hpp"
 #include "globals.hpp"
 
 #pragma once
@@ -15,21 +15,21 @@ namespace brd
 em::view< const em::view< std::byte* >* > get_persistent_pages();
 cfg_map                                   get_config();
 
-void             setup_board();
-fw::clock*       setup_clock();
-fw::acquisition* setup_acquisition();
-fw::hbridge*     setup_hbridge();
-fw::comms*       setup_comms();
-fw::debug_comms* setup_debug_comms();
-fw::leds*        setup_leds();
+void                  setup_board();
+fw::drv::clock*       setup_clock();
+fw::drv::acquisition* setup_acquisition();
+fw::drv::hbridge*     setup_hbridge();
+fw::drv::comms*       setup_comms();
+fw::drv::debug_comms* setup_debug_comms();
+fw::drv::leds*        setup_leds();
 
 }  // namespace brd
 
 namespace fw
 {
-inline leds* setup_leds_with_stop_callback()
+inline drv::leds* setup_leds_with_stop_callback()
 {
-        leds* leds_ptr = brd::setup_leds();
+        drv::leds* leds_ptr = brd::setup_leds();
         if ( leds_ptr != nullptr ) {
                 STOP_CALLBACK = [leds_ptr] {
                         leds_ptr->force_red_led();

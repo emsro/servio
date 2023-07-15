@@ -1,8 +1,8 @@
-#include "fw/drivers/leds.hpp"
+#include "fw/drv/leds.hpp"
 
 #include <emlabcpp/algorithm.h>
 
-namespace fw
+namespace fw::drv
 {
 
 bool leds::setup( em::function_view< bool( handles& ) > setup_f )
@@ -41,4 +41,4 @@ void leds::update( const leds_vals& leds )
         __HAL_TIM_SET_COMPARE( &h_.tim, h_.green_channel, green_val );
 }
 
-}  // namespace fw
+}  // namespace fw::drv

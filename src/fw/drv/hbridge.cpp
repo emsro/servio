@@ -1,6 +1,6 @@
 #include "hbridge.hpp"
 
-namespace fw
+namespace fw::drv
 {
 
 namespace
@@ -93,4 +93,4 @@ int8_t hbridge::get_direction() const
                    -1;
 }
 
-}  // namespace fw
+}  // namespace fw::drv

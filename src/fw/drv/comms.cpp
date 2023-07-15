@@ -1,8 +1,8 @@
-#include "fw/drivers/comms.hpp"
+#include "fw/drv/comms.hpp"
 
 #include "fw/util.hpp"
 
-namespace fw
+namespace fw::drv
 {
 
 bool comms::setup( em::function_view< bool( handles& ) > setup_f )
@@ -85,4 +85,4 @@ void comms::send( em::view< std::byte* > data )
             static_cast< uint16_t >( used.size() + 1 ) );
 }
 
-}  // namespace fw
+}  // namespace fw::drv

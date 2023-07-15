@@ -1,4 +1,3 @@
-
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/static_circular_buffer.h>
 #include <emlabcpp/static_vector.h>
@@ -9,7 +8,7 @@
 
 namespace em = emlabcpp;
 
-namespace fw
+namespace fw::drv
 {
 
 class debug_comms
@@ -48,4 +47,4 @@ private:
         std::array< std::byte, 128 >                 odata_buffer_{};
 };
 
-}  // namespace fw
+}  // namespace fw::drv

@@ -1,8 +1,8 @@
 #include "control.hpp"
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/conversion.hpp"
-#include "fw/drivers/acquisition.hpp"
-#include "fw/drivers/hbridge.hpp"
+#include "fw/drv/acquisition.hpp"
+#include "fw/drv/hbridge.hpp"
 
 #include <io.pb.h>
 
@@ -13,8 +13,8 @@ namespace fw
 
 struct dispatcher
 {
-        hbridge&                                        hb;
-        acquisition&                                    acquis;
+        drv::hbridge&                                   hb;
+        drv::acquisition&                               acquis;
         control&                                        ctl;
         metrics&                                        met;
         cfg_dispatcher&                                 cfg_disp;

@@ -6,7 +6,7 @@
 
 #pragma once
 
-namespace fw
+namespace fw::drv
 {
 
 class hbridge
@@ -57,4 +57,4 @@ private:
         handles              h_{};
 };
 
-}  // namespace fw
+}  // namespace fw::drv

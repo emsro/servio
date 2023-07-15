@@ -2,11 +2,11 @@ servio_add_library(
   TARGET fwlib
   SOURCES cfg_dispatcher.cpp
           dispatcher.cpp
-          drivers/acquisition.cpp
-          drivers/comms.cpp
-          drivers/debug_comms.cpp
-          drivers/hbridge.cpp
-          drivers/leds.cpp
+          drv/acquisition.cpp
+          drv/comms.cpp
+          drv/debug_comms.cpp
+          drv/hbridge.cpp
+          drv/leds.cpp
           extra.cpp
           globals.cpp
           servio_pb.cpp

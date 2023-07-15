@@ -1,8 +1,8 @@
 #include "control.hpp"
 #include "converter.hpp"
-#include "drivers/acquisition.hpp"
-#include "drivers/clock.hpp"
-#include "drivers/hbridge.hpp"
+#include "drv/acquisition.hpp"
+#include "drv/clock.hpp"
+#include "drv/hbridge.hpp"
 #include "fw/conversion.hpp"
 #include "metrics.hpp"
 #include "stm32g4xx_hal.h"
@@ -15,7 +15,7 @@ namespace fw
 class acquisition_period_callback : public period_cb_interface
 {
 public:
-        acquisition_period_callback( acquisition& acq )
+        acquisition_period_callback( drv::acquisition& acq )
           : acq_( acq )
         {
         }
@@ -26,13 +26,13 @@ public:
         }
 
 private:
-        acquisition& acq_;
+        drv::acquisition& acq_;
 };
 
 class current_callback : public current_cb_interface
 {
 public:
-        current_callback( hbridge& hb, control& ctl, clock& clk, const converter& conv )
+        current_callback( drv::hbridge& hb, control& ctl, drv::clock& clk, const converter& conv )
           : hb_( hb )
           , ctl_( ctl )
           , clk_( clk )
@@ -49,16 +49,16 @@ public:
         }
 
 private:
-        hbridge&         hb_;
+        drv::hbridge&    hb_;
         control&         ctl_;
-        clock&           clk_;
+        drv::clock&      clk_;
         const converter& conv_;
 };
 
 class position_callback : public position_cb_interface
 {
 public:
-        position_callback( control& ctl, metrics& met, clock& clk, const converter& conv )
+        position_callback( control& ctl, metrics& met, drv::clock& clk, const converter& conv )
           : ctl_( ctl )
           , met_( met )
           , clk_( clk )
@@ -81,7 +81,7 @@ public:
 private:
         control&         ctl_;
         metrics&         met_;
-        clock&           clk_;
+        drv::clock&      clk_;
         const converter& conv_;
 };
 

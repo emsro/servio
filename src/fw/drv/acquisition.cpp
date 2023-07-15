@@ -1,8 +1,8 @@
-#include "fw/drivers/acquisition.hpp"
+#include "fw/drv/acquisition.hpp"
 
 #include "fw/util.hpp"
 
-namespace fw
+namespace fw::drv
 {
 namespace
 {
@@ -187,4 +187,4 @@ em::view< const uint16_t* > acquisition::get_current_reading() const
         return em::view_n( &se.buffer[0], se.used );
 }
 
-}  // namespace fw
+}  // namespace fw::drv

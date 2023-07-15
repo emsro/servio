@@ -9,7 +9,7 @@
 
 namespace em = emlabcpp;  // I hate this
 
-namespace fw
+namespace fw::drv
 {
 
 struct acquisition_status
@@ -125,4 +125,4 @@ private:
         adc_states side_state_ = READ_POSITION;
 };
 
-}  // namespace fw
+}  // namespace fw::drv

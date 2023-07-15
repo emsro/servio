@@ -8,7 +8,7 @@
 
 namespace em = emlabcpp;
 
-namespace fw
+namespace fw::drv
 {
 
 class leds
@@ -43,4 +43,4 @@ private:
         handles h_;
 };
 
-}  // namespace fw
+}  // namespace fw::drv

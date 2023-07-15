@@ -67,12 +67,12 @@ Mode get_mode( const control& ctl )
 }
 
 ServioToHost handle_get_property(
-    const control&     ctl,
-    const metrics&     met,
-    const converter&   conv,
-    const acquisition& acquis,
-    const hbridge&     hb,
-    const GetProperty& msg )
+    const control&          ctl,
+    const metrics&          met,
+    const converter&        conv,
+    const drv::acquisition& acquis,
+    const drv::hbridge&     hb,
+    const GetProperty&      msg )
 {
         Property prop;
         prop.which_pld = static_cast< pb_size_t >( msg.field_id );

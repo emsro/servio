@@ -5,12 +5,12 @@
 namespace brd
 {
 
-fw::clock       CLOCK{};
-fw::acquisition ACQUISITION{};
-fw::comms       COMMS{};
-fw::debug_comms DEBUG_COMMS{};
-fw::hbridge     HBRIDGE{};
-fw::leds        LEDS;
+fw::drv::clock       CLOCK{};
+fw::drv::acquisition ACQUISITION{};
+fw::drv::comms       COMMS{};
+fw::drv::debug_comms DEBUG_COMMS{};
+fw::drv::hbridge     HBRIDGE{};
+fw::drv::leds        LEDS;
 
 }  // namespace brd
 
@@ -79,9 +79,9 @@ void setup_board()
         setup_clk();
 }
 
-fw::clock* setup_clock()
+fw::drv::clock* setup_clock()
 {
-        auto clk_setup = []( fw::clock::handles& h ) {
+        auto clk_setup = []( fw::drv::clock::handles& h ) {
                 __HAL_RCC_TIM2_CLK_ENABLE();
                 return setup_clock_timer(
                     h,
@@ -97,9 +97,9 @@ fw::clock* setup_clock()
         return &CLOCK;
 }
 
-fw::acquisition* setup_acquisition()
+fw::drv::acquisition* setup_acquisition()
 {
-        auto acq_setup = []( fw::acquisition::handles& h ) {
+        auto acq_setup = []( fw::drv::acquisition::handles& h ) {
                 __HAL_RCC_ADC12_CLK_ENABLE();
                 __HAL_RCC_DMA1_CLK_ENABLE();
                 __HAL_RCC_DMAMUX1_CLK_ENABLE();
@@ -156,9 +156,9 @@ fw::acquisition* setup_acquisition()
         return &ACQUISITION;
 }
 
-fw::hbridge* setup_hbridge()
+fw::drv::hbridge* setup_hbridge()
 {
-        auto setup_f = []( fw::hbridge::handles& h ) {
+        auto setup_f = []( fw::drv::hbridge::handles& h ) {
                 __HAL_RCC_TIM1_CLK_ENABLE();
                 __HAL_RCC_GPIOA_CLK_ENABLE();
                 bool res = setup_hbridge_timers(
@@ -193,9 +193,9 @@ fw::hbridge* setup_hbridge()
         return &HBRIDGE;
 }
 
-fw::comms* setup_comms()
+fw::drv::comms* setup_comms()
 {
-        auto comms_setup = []( fw::comms::handles& h ) {
+        auto comms_setup = []( fw::drv::comms::handles& h ) {
                 __HAL_RCC_DMAMUX1_CLK_ENABLE();
                 __HAL_RCC_DMA1_CLK_ENABLE();
                 __HAL_RCC_USART2_CLK_ENABLE();
@@ -236,9 +236,9 @@ fw::comms* setup_comms()
         return &COMMS;
 }
 
-fw::debug_comms* setup_debug_comms()
+fw::drv::debug_comms* setup_debug_comms()
 {
-        auto setup_f = []( fw::debug_comms::handles& h ) {
+        auto setup_f = []( fw::drv::debug_comms::handles& h ) {
                 __HAL_RCC_DMA1_CLK_ENABLE();
                 __HAL_RCC_DMAMUX1_CLK_ENABLE();
                 __HAL_RCC_GPIOA_CLK_ENABLE();
@@ -283,9 +283,9 @@ fw::debug_comms* setup_debug_comms()
         return &DEBUG_COMMS;
 }
 
-fw::leds* setup_leds()
+fw::drv::leds* setup_leds()
 {
-        auto setup_f = []( fw::leds::handles& h ) {
+        auto setup_f = []( fw::drv::leds::handles& h ) {
                 __HAL_RCC_GPIOF_CLK_ENABLE();
                 __HAL_RCC_GPIOB_CLK_ENABLE();
                 __HAL_RCC_TIM3_CLK_ENABLE();

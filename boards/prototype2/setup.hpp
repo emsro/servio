@@ -31,7 +31,7 @@ struct adc_cfg
         pinch_cfg    temp;
 };
 
-bool setup_adc( fw::acquisition::handles&, adc_cfg cfg );
+bool setup_adc( fw::drv::acquisition::handles&, adc_cfg cfg );
 
 struct adc_timer_cfg
 {
@@ -39,7 +39,7 @@ struct adc_timer_cfg
         uint32_t     channel;
 };
 
-bool setup_adc_timer( fw::acquisition::handles&, adc_timer_cfg cfg );
+bool setup_adc_timer( fw::drv::acquisition::handles&, adc_timer_cfg cfg );
 
 struct pin_cfg
 {
@@ -71,7 +71,7 @@ struct hb_timer_cfg
         pinch_cfg    mc2;
 };
 
-bool setup_hbridge_timers( fw::hbridge::handles&, hb_timer_cfg cfg );
+bool setup_hbridge_timers( fw::drv::hbridge::handles&, hb_timer_cfg cfg );
 
 struct leds_gpio_cfg
 {
@@ -79,7 +79,7 @@ struct leds_gpio_cfg
         pin_cfg blue;
 };
 
-bool setup_leds_gpio( fw::leds::handles&, leds_gpio_cfg cfg );
+bool setup_leds_gpio( fw::drv::leds::handles&, leds_gpio_cfg cfg );
 
 struct leds_timer_cfg
 {
@@ -88,7 +88,7 @@ struct leds_timer_cfg
         pinch_cfg    green;
 };
 
-bool setup_leds_timer( fw::leds::handles&, leds_timer_cfg cfg );
+bool setup_leds_timer( fw::drv::leds::handles&, leds_timer_cfg cfg );
 void setup_clk();
 
 struct clock_timer_cfg
@@ -97,6 +97,6 @@ struct clock_timer_cfg
         uint32_t     channel;
 };
 
-bool setup_clock_timer( fw::clock::handles&, clock_timer_cfg cfg );
+bool setup_clock_timer( fw::drv::clock::handles&, clock_timer_cfg cfg );
 
 }  // namespace brd

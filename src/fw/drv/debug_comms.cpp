@@ -1,11 +1,11 @@
-#include "fw/drivers/debug_comms.hpp"
+#include "fw/drv/debug_comms.hpp"
 
 #include "fw/util.hpp"
 
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/iterators/numeric.h>
 
-namespace fw
+namespace fw::drv
 {
 
 bool debug_comms::setup( em::function_view< bool( handles& ) > setup_f )
@@ -69,4 +69,4 @@ void debug_comms::rx_cplt_irq( UART_HandleTypeDef* huart )
         start();
 }
 
-}  // namespace fw
+}  // namespace fw::drv

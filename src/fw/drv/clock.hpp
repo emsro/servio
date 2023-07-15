@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace fw
+namespace fw::drv
 {
 
 class clock
@@ -40,4 +40,4 @@ private:
         handles h_;
 };
 
-}  // namespace fw
+}  // namespace fw::drv

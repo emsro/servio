@@ -12,7 +12,7 @@ namespace brd
 // MC_1 is connected to PA8 on CH1
 // MC_2 is connected to PA9 on CH2
 
-bool setup_hbridge_timers( fw::hbridge::handles& h, hb_timer_cfg cfg )
+bool setup_hbridge_timers( fw::drv::hbridge::handles& h, hb_timer_cfg cfg )
 {
 
         h.timer.Instance               = cfg.timer_instance;
@@ -95,7 +95,7 @@ bool setup_hbridge_timers( fw::hbridge::handles& h, hb_timer_cfg cfg )
         return true;
 }
 
-bool setup_adc_timer( fw::acquisition::handles& h, adc_timer_cfg cfg )
+bool setup_adc_timer( fw::drv::acquisition::handles& h, adc_timer_cfg cfg )
 {
         h.tim.Instance               = cfg.timer_instance;
         h.tim.Init.Prescaler         = 0;
@@ -131,7 +131,7 @@ bool setup_adc_timer( fw::acquisition::handles& h, adc_timer_cfg cfg )
         return true;
 }
 
-bool setup_clock_timer( fw::clock::handles& h, clock_timer_cfg cfg )
+bool setup_clock_timer( fw::drv::clock::handles& h, clock_timer_cfg cfg )
 {
         h.tim.Instance               = cfg.timer_instance;
         h.tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1e6 );
@@ -167,7 +167,7 @@ bool setup_clock_timer( fw::clock::handles& h, clock_timer_cfg cfg )
         return true;
 }
 
-bool setup_leds_timer( fw::leds::handles& h, leds_timer_cfg cfg )
+bool setup_leds_timer( fw::drv::leds::handles& h, leds_timer_cfg cfg )
 {
         h.tim.Instance               = cfg.timer_instance;
         h.tim.Init.Prescaler         = 0;

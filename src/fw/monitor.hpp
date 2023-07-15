@@ -1,5 +1,5 @@
 #include "converter.hpp"
-#include "fw/drivers/acquisition.hpp"
+#include "fw/drv/acquisition.hpp"
 #include "indication.hpp"
 
 #pragma once
@@ -11,11 +11,11 @@ class monitor
 {
 public:
         monitor(
-            microseconds       now,
-            const control&     ctl,
-            const acquisition& acqui,
-            indication&        indi,
-            const converter&   conv )
+            microseconds            now,
+            const control&          ctl,
+            const drv::acquisition& acqui,
+            indication&             indi,
+            const converter&        conv )
           : ctl_( ctl )
           , acqui_( acqui )
           , indi_( indi )
@@ -56,10 +56,10 @@ public:
         }
 
 private:
-        const control&     ctl_;
-        const acquisition& acqui_;
-        indication&        indi_;
-        const converter&   conv_;
+        const control&          ctl_;
+        const drv::acquisition& acqui_;
+        indication&             indi_;
+        const converter&        conv_;
 
         float min_vcc_ = 0.f;
         float max_tmp_ = 90.f;
