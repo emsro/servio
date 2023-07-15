@@ -1,8 +1,9 @@
 <map id="src/fw/drv/hbridge.cpp" name="src/fw/drv/hbridge.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="161,5,326,32"/>
-<area shape="rect" id="node2" href="$hbridge_8hpp.html" title=" " alt="" coords="194,80,293,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,162,95,189"/>
-<area shape="rect" id="node4" href="$util_8hpp.html" title=" " alt="" coords="119,162,210,189"/>
-<area shape="rect" id="node5" title=" " alt="" coords="235,155,412,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="437,162,490,189"/>
+<area shape="rect" id="node1" title=" " alt="" coords="255,5,420,32"/>
+<area shape="rect" id="node2" href="$hbridge_8hpp.html" title=" " alt="" coords="211,80,309,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="333,80,499,107"/>
+<area shape="rect" id="node3" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="5,162,160,189"/>
+<area shape="rect" id="node4" title=" " alt="" coords="113,244,167,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="235,155,413,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="437,162,571,189"/>
 </map>

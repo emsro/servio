@@ -13,10 +13,10 @@ var hierarchy =
     [ "control", "classcontrol.html", null ],
     [ "converter", "structconverter.html", null ],
     [ "fw::core", "structfw_1_1core.html", null ],
-    [ "current_cb_interface", "classcurrent__cb__interface.html", [
-      [ "current_cb< Callable >", "structcurrent__cb.html", null ],
-      [ "empty_current_cb", "structempty__current__cb.html", null ],
-      [ "fw::current_callback", "classfw_1_1current__callback.html", null ]
+    [ "fw::drv::current_cb_interface", "classfw_1_1drv_1_1current__cb__interface.html", [
+      [ "fw::current_callback", "classfw_1_1current__callback.html", null ],
+      [ "fw::drv::current_cb< Callable >", "structfw_1_1drv_1_1current__cb.html", null ],
+      [ "fw::drv::empty_current_cb", "structfw_1_1drv_1_1empty__current__cb.html", null ]
     ] ],
     [ "current_converter", "classcurrent__converter.html", null ],
     [ "fw::drv::acquisition::current_sequence", "structfw_1_1drv_1_1acquisition_1_1current__sequence.html", null ],
@@ -46,16 +46,16 @@ var hierarchy =
     [ "mode_opts", "host_2main_8cpp.html#structmode__opts", null ],
     [ "fw::monitor", "classfw_1_1monitor.html", null ],
     [ "cfg::payload", "structcfg_1_1payload.html", null ],
-    [ "period_cb_interface", "classperiod__cb__interface.html", [
-      [ "empty_period_cb", "structempty__period__cb.html", null ],
+    [ "fw::drv::period_cb_interface", "classfw_1_1drv_1_1period__cb__interface.html", [
       [ "fw::acquisition_period_callback", "classfw_1_1acquisition__period__callback.html", null ],
-      [ "period_cb< Callable >", "structperiod__cb.html", null ]
+      [ "fw::drv::empty_period_cb", "structfw_1_1drv_1_1empty__period__cb.html", null ],
+      [ "fw::drv::period_cb< Callable >", "structfw_1_1drv_1_1period__cb.html", null ]
     ] ],
     [ "ctl::pid_module", "classctl_1_1pid__module.html", null ],
-    [ "position_cb_interface", "classposition__cb__interface.html", [
-      [ "empty_position_cb", "structempty__position__cb.html", null ],
-      [ "fw::position_callback", "classfw_1_1position__callback.html", null ],
-      [ "position_cb< Callable >", "structposition__cb.html", null ]
+    [ "fw::drv::position_cb_interface", "classfw_1_1drv_1_1position__cb__interface.html", [
+      [ "fw::drv::empty_position_cb", "structfw_1_1drv_1_1empty__position__cb.html", null ],
+      [ "fw::drv::position_cb< Callable >", "structfw_1_1drv_1_1position__cb.html", null ],
+      [ "fw::position_callback", "classfw_1_1position__callback.html", null ]
     ] ],
     [ "position_converter", "classposition__converter.html", null ],
     [ "mtr::posvel_kalman", "structmtr_1_1posvel__kalman.html", null ],

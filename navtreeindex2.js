@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"kalman_8hpp.html#a3c4a84673db045ce6801d83500cdd91e":[12,0,1,14,12],
+"kalman_8hpp.html#a4045bee00b1b7c1f3b36946e5ebb8565":[12,0,1,14,24],
 "kalman_8hpp.html#a40a88d464735106d6e64504a1a928bb2":[12,0,1,14,19],
 "kalman_8hpp.html#a57c71f193659ff2b34bdf2e7bd1d9c76":[12,0,1,14,15],
 "kalman_8hpp.html#a5ce40b45ea8998e580042dae4ba09635":[12,0,1,14,20],
@@ -16,9 +18,9 @@ var NAVTREEINDEX2 =
 "kalman_8hpp.html#aee77e3ba89eb600013e17d3467583701":[12,0,1,14,8],
 "kalman_8hpp.html#af5cff5e9fec3a001b5e862e24701e86b":[12,0,1,14,5],
 "kalman_8hpp_source.html":[12,0,1,14],
-"leds_8cpp.html":[12,0,1,3,0,9],
-"leds_8hpp.html":[12,0,1,3,0,10],
-"leds_8hpp_source.html":[12,0,1,3,0,10],
+"leds_8cpp.html":[12,0,1,3,0,10],
+"leds_8hpp.html":[12,0,1,3,0,11],
+"leds_8hpp_source.html":[12,0,1,3,0,11],
 "linear__transition__regulator_8hpp.html":[12,0,1,2,1],
 "linear__transition__regulator_8hpp_source.html":[12,0,1,2,1],
 "map__cfg_8hpp.html":[12,0,1,3,14],
@@ -150,7 +152,7 @@ var NAVTREEINDEX2 =
 "namespacefw.html#structfw_1_1hal__check":[12,0,1,3,19,1],
 "namespacefw_1_1drv.html":[10,0,3,0],
 "namespacefw_1_1drv.html#a14fbc9ffa08fd7ba33393bd9e82f4379":[12,0,1,3,0,1,0,1],
-"namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490":[10,0,3,0,7],
+"namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490":[10,0,3,0,16],
 "namespacefw_1_1drv.html#af977b5a7be96a3a0cb62991781d4398a":[12,0,1,3,0,1,0,0],
 "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status":[12,0,1,3,0,1,0],
 "namespacehost.html":[10,0,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc":[12,0,1,4,6,18],
 "serial_8cpp.html#ac9e5db09445cba7106cfa09dc3f5a317":[12,0,1,4,6,16],
 "serial_8cpp.html#afbbd9ae17fc28c3112fc15a38f2e6f04":[12,0,1,4,6,17],
-"serial_8hpp.html":[12,0,1,4,7],
-"serial_8hpp.html#a03287d14431b87669cb6917763056669":[12,0,1,4,7,15],
-"serial_8hpp.html#a0b1e497a05ad81bcb1596f75e0f775f6":[12,0,1,4,7,14]
+"serial_8hpp.html":[12,0,1,4,7]
 };

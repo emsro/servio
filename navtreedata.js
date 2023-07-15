@@ -118,10 +118,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "acquisition_8cpp.html",
-"classmetrics.html#a6998476ebd787b4c66aec862cec0e313",
-"kalman_8hpp.html#a40a88d464735106d6e64504a1a928bb2",
-"serial_8hpp.html#a0c0bae4d9f75eb6fffa91dccbeb27d8f",
-"util_8hpp.html#aa9827b3a052ca9db4d230c0c439f7319"
+"classindication.html#aaeefb4a81531e0fd82015a1c4711acd6",
+"kalman_8hpp.html#a3c4a84673db045ce6801d83500cdd91e",
+"serial_8hpp.html#a03287d14431b87669cb6917763056669",
+"util_8hpp.html#a8e0b580f4dd8010ffb0db37533802021"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
