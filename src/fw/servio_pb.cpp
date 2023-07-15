@@ -19,19 +19,19 @@ ServioToHost error_msg( const char* msg )
         return reply;
 }
 
-bool decode( em::view< std::byte* > data, HostToServio& msg )
+bool decode( em::view< const std::byte* > data, HostToServio& msg )
 {
         // TODO: stream has error string that can be reported!
-        pb_istream_t stream =
-            pb_istream_from_buffer( reinterpret_cast< uint8_t* >( data.begin() ), data.size() );
+        pb_istream_t stream = pb_istream_from_buffer(
+            reinterpret_cast< const uint8_t* >( data.begin() ), data.size() );
         bool status = pb_decode( &stream, HostToServio_fields, &msg );
         return status;
 }
-bool decode( em::view< std::byte* > data, HostToServioPacket& msg )
+bool decode( em::view< const std::byte* > data, HostToServioPacket& msg )
 {
         // TODO: stream has error string that can be reported!
-        pb_istream_t stream =
-            pb_istream_from_buffer( reinterpret_cast< uint8_t* >( data.begin() ), data.size() );
+        pb_istream_t stream = pb_istream_from_buffer(
+            reinterpret_cast< const uint8_t* >( data.begin() ), data.size() );
         bool status = pb_decode( &stream, HostToServioPacket_fields, &msg );
         return status;
 }

@@ -137,14 +137,7 @@ message HostToServio {
 // transport mechanism does not support addressing of the devices and multiple
 // devices share a bus
 message HostToServioPacket {
-  // specify id of target device or devices
-  oneof ids {
-    // id of target servo, device will always send a reply
-    uint32 id = 1;
-    // id of target servos, the servi will never send a reply
-    uint32 group_id = 2;
-  };
-
+  uint32 id = 1;
   HostToServio payload = 10;
 };
 

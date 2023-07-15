@@ -25,4 +25,14 @@ struct dispatcher
 
 ServioToHost handle_message( dispatcher& dis, const HostToServio& msg );
 
+std::tuple< bool, em::view< std::byte* > > handle_message(
+    dispatcher&                  dis,
+    em::view< const std::byte* > input_data,
+    em::view< std::byte* >       output_buffer );
+
+std::tuple< bool, em::view< std::byte* > > handle_message_packet(
+    dispatcher&                  dis,
+    em::view< const std::byte* > input_data,
+    em::view< std::byte* >       output_buffer );
+
 }  // namespace fw

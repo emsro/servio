@@ -84,7 +84,8 @@ int main()
 
         cor.ind.on_event( clock_ptr->get_us(), indication_event::INITIALIZED );
 
-        std::byte imsg[HostToServioPacket_size];
+        std::byte input_buffer[HostToServioPacket_size];
+        std::byte output_buffer[ServioToHostPacket_size];
 
         while ( true ) {
                 cor.tick( *leds_ptr, clock_ptr->get_us() );
@@ -107,7 +108,7 @@ int main()
                     .conv       = cor.conv,
                     .now        = clock_ptr->get_us() };
 
-                auto [lsucc, ldata] = comms_ptr->load_message( imsg );
+                auto [lsucc, ldata] = comms_ptr->load_message( input_buffer );
 
                 if ( !lsucc ) {
                         fw::stop_exec();
@@ -119,30 +120,12 @@ int main()
 
                 cor.ind.on_event( clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
 
-                HostToServioPacket msg  = {};
-                bool               succ = fw::decode( ldata, msg );
+                auto [succ, odata] = fw::handle_message_packet( dis, ldata, output_buffer );
 
-                ServioToHostPacket reply = {};
-                reply.id          = msg.id;  // well the right side is not legal as msg.id is union
-                reply.has_payload = true;
                 if ( !succ ) {
-                        // TODO: this is problematic in case the reply is not ment for this
-                        // device... imagine that multiple servos spam the BUS with "invalid
-                        // message"
-                        reply.payload = fw::error_msg( "invalid message" );
+                        // TODO: what now?
                 } else {
-                        // TODO: check whenver id equals to currently configured id, or group id
-                        // equals to currently configured group id
-                        reply.payload = handle_message( dis, msg.payload );
+                        comms_ptr->send( odata );
                 }
-
-                std::byte buffer[ServioToHostPacket_size];
-                auto [esucc, data] = fw::encode( buffer, reply );
-                if ( !esucc ) {
-                        // TODO: well this is aggresive
-                        fw::stop_exec();
-                }
-
-                comms_ptr->send( data );
         }
 }

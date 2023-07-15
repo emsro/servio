@@ -11,8 +11,8 @@ namespace fw
 ServioToHost error_msg( const char* msg );
 
 /// decodes a bytes from data to HostToServio message, returns true on success
-bool decode( em::view< std::byte* > data, HostToServio& msg );
-bool decode( em::view< std::byte* > data, HostToServioPacket& msg );
+bool decode( em::view< const std::byte* > data, HostToServio& msg );
+bool decode( em::view< const std::byte* > data, HostToServioPacket& msg );
 
 /// encodes a ServioToHost message to bytes, returns succes bool and subset of data that contains
 /// the serialized message

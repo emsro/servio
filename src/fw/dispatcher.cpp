@@ -186,4 +186,57 @@ ServioToHost handle_message( dispatcher& dis, const HostToServio& msg )
         return {};
 }
 
+template < typename InputType, typename OutputType, typename Handle >
+std::tuple< bool, em::view< std::byte* > > process_message(
+    em::view< const std::byte* > input_data,
+    em::view< std::byte* >       output_buffer,
+    Handle&&                     h )
+{
+        InputType inpt;
+        bool      succ = decode( input_data, inpt );
+        if ( !succ ) {
+                return { false, {} };
+        }
+
+        std::optional< OutputType > opt_res = h( inpt );
+        if ( !opt_res.has_value() ) {
+                return { false, {} };
+        }
+
+        return encode( output_buffer, *opt_res );
+}
+
+std::tuple< bool, em::view< std::byte* > > handle_message(
+    dispatcher&                  dis,
+    em::view< const std::byte* > input_data,
+    em::view< std::byte* >       output_buffer )
+{
+        return process_message< HostToServio, ServioToHost >(
+            input_data, output_buffer, [&dis]( const HostToServio& msg ) {
+                    return handle_message( dis, msg );
+            } );
+}
+
+std::tuple< bool, em::view< std::byte* > > handle_message_packet(
+    dispatcher&                  dis,
+    em::view< const std::byte* > input_data,
+    em::view< std::byte* >       output_buffer )
+{
+        return process_message< HostToServioPacket, ServioToHostPacket >(
+            input_data,
+            output_buffer,
+            [&dis]( const HostToServioPacket& msg ) -> std::optional< ServioToHostPacket > {
+                    // TODO: check whenver id equals to currently configured id, or group id
+                    // equals to currently configured group id
+                    if ( !msg.has_payload ) {
+                            return std::nullopt;
+                    }
+                    ServioToHostPacket res;
+                    res.id          = msg.id;
+                    res.has_payload = true;
+                    res.payload     = handle_message( dis, msg.payload );
+                    return res;
+            } );
+}
+
 }  // namespace fw
