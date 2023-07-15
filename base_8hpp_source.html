@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('base_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classcurrent__cb__interface.html">   63</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcurrent__cb__interface.html">current_cb_interface</a></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classcurrent__cb__interface.html#a66cba6fe6649c6df7ca564a72cff9f3b">   66</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcurrent__cb__interface.html#a66cba6fe6649c6df7ca564a72cff9f3b">on_current</a>( uint32_t <a class="code" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">current</a>, std::span&lt; uint16_t &gt; profile ) = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classcurrent__cb__interface.html#a66cba6fe6649c6df7ca564a72cff9f3b">   66</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcurrent__cb__interface.html#a66cba6fe6649c6df7ca564a72cff9f3b">on_current</a>( uint32_t <a class="code" href="namespacefw.html#aca40e9512538f1dc60d913483211ee19">current</a>, std::span&lt; uint16_t &gt; profile ) = 0;</div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classcurrent__cb__interface.html#afa5479f450a072d17789895d571dae58">   67</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classcurrent__cb__interface.html#afa5479f450a072d17789895d571dae58">~current_cb_interface</a>()                                            = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
@@ -164,9 +164,9 @@ $(document).ready(function(){initNavTree('base_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structcurrent__cb.html#ae4927ffcdd4a91ee9f7b47dd71b61252">   78</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structcurrent__cb.html#ae4927ffcdd4a91ee9f7b47dd71b61252">on_current</a>( uint32_t <a class="code" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">current</a>, std::span&lt; uint16_t &gt; profile )</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structcurrent__cb.html#ae4927ffcdd4a91ee9f7b47dd71b61252">   78</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structcurrent__cb.html#ae4927ffcdd4a91ee9f7b47dd71b61252">on_current</a>( uint32_t <a class="code" href="namespacefw.html#aca40e9512538f1dc60d913483211ee19">current</a>, std::span&lt; uint16_t &gt; profile )</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="structcurrent__cb.html#a9049b14c9ab4cbd1ad3abf2d3fae5c72">cb</a>( <a class="code" href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">current</a>, profile );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="structcurrent__cb.html#a9049b14c9ab4cbd1ad3abf2d3fae5c72">cb</a>( <a class="code" href="namespacefw.html#aca40e9512538f1dc60d913483211ee19">current</a>, profile );</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structcurrent__cb.html#a9049b14c9ab4cbd1ad3abf2d3fae5c72">   83</a></span>&#160;        Callable <a class="code" href="structcurrent__cb.html#a9049b14c9ab4cbd1ad3abf2d3fae5c72">cb</a>;</div>
@@ -266,7 +266,7 @@ $(document).ready(function(){initNavTree('base_8hpp_source.html',''); initResiza
 <div class="ttc" id="aclassposition__cb__interface_html"><div class="ttname"><a href="classposition__cb__interface.html">position_cb_interface</a></div><div class="ttdef"><b>Definition:</b> base.hpp:94</div></div>
 <div class="ttc" id="aclassposition__cb__interface_html_a036665f222ea296788f23a6e147a9a15"><div class="ttname"><a href="classposition__cb__interface.html#a036665f222ea296788f23a6e147a9a15">position_cb_interface::on_position</a></div><div class="ttdeci">virtual void on_position(uint32_t pos)=0</div></div>
 <div class="ttc" id="aclassposition__cb__interface_html_a455c5689809e2c4850157fcf562c63db"><div class="ttname"><a href="classposition__cb__interface.html#a455c5689809e2c4850157fcf562c63db">position_cb_interface::~position_cb_interface</a></div><div class="ttdeci">virtual ~position_cb_interface()=default</div></div>
-<div class="ttc" id="anamespacefw_html_ab1cba619dcd67049ddf6fe4ee33499fd"><div class="ttname"><a href="namespacefw.html#ab1cba619dcd67049ddf6fe4ee33499fd">fw::current</a></div><div class="ttdeci">float current(const converter &amp;conv, uint32_t raw_current, const hbridge &amp;hb)</div><div class="ttdef"><b>Definition:</b> conversion.hpp:11</div></div>
+<div class="ttc" id="anamespacefw_html_aca40e9512538f1dc60d913483211ee19"><div class="ttname"><a href="namespacefw.html#aca40e9512538f1dc60d913483211ee19">fw::current</a></div><div class="ttdeci">float current(const converter &amp;conv, uint32_t raw_current, const drv::hbridge &amp;hb)</div><div class="ttdef"><b>Definition:</b> conversion.hpp:10</div></div>
 <div class="ttc" id="ascaled_8hpp_html"><div class="ttname"><a href="scaled_8hpp.html">scaled.hpp</a></div></div>
 <div class="ttc" id="astructcurrent__cb_html"><div class="ttname"><a href="structcurrent__cb.html">current_cb</a></div><div class="ttdef"><b>Definition:</b> base.hpp:72</div></div>
 <div class="ttc" id="astructcurrent__cb_html_a433716963b6726b66de1831e6ec2e47b"><div class="ttname"><a href="structcurrent__cb.html#a433716963b6726b66de1831e6ec2e47b">current_cb::current_cb</a></div><div class="ttdeci">current_cb(Callable cb)</div><div class="ttdef"><b>Definition:</b> base.hpp:73</div></div>
@@ -292,7 +292,7 @@ $(document).ready(function(){initNavTree('base_8hpp_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="base_8hpp.html">base.hpp</a></li>
-    <li class="footer">Generated on Fri Jul 14 2023 06:33:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jul 15 2023 08:42:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

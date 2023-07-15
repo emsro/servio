@@ -91,12 +91,12 @@ $(document).ready(function(){initNavTree('board_8hpp.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;config.hpp&quot;</code><br />
-<code>#include &quot;<a class="el" href="acquisition_8hpp_source.html">fw/drivers/acquisition.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="clock_8hpp_source.html">fw/drivers/clock.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="comms_8hpp_source.html">fw/drivers/comms.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="debug__comms_8hpp_source.html">fw/drivers/debug_comms.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="hbridge_8hpp_source.html">fw/drivers/hbridge.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="leds_8hpp_source.html">fw/drivers/leds.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="acquisition_8hpp_source.html">fw/drv/acquisition.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="clock_8hpp_source.html">fw/drv/clock.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="comms_8hpp_source.html">fw/drv/comms.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="debug__comms_8hpp_source.html">fw/drv/debug_comms.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hbridge_8hpp_source.html">fw/drv/hbridge.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="leds_8hpp_source.html">fw/drv/leds.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="globals_8hpp_source.html">globals.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.hpp:</div>
@@ -124,20 +124,20 @@ Functions</h2></td></tr>
 <tr class="separator:a10ac5b886764fca055e1e7f4e7d335db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72ff84e491fb17723a0a882bcb62918e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e">brd::setup_board</a> ()</td></tr>
 <tr class="separator:a72ff84e491fb17723a0a882bcb62918e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9d4cb6efc481f0a7b35e14808c32694"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1clock.html">fw::clock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#af9d4cb6efc481f0a7b35e14808c32694">brd::setup_clock</a> ()</td></tr>
-<tr class="separator:af9d4cb6efc481f0a7b35e14808c32694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affb7bb25d62335f866ca96e7bf84397a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1acquisition.html">fw::acquisition</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#affb7bb25d62335f866ca96e7bf84397a">brd::setup_acquisition</a> ()</td></tr>
-<tr class="separator:affb7bb25d62335f866ca96e7bf84397a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a819eafbbe048c5c78601b7d38112f9c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1hbridge.html">fw::hbridge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a819eafbbe048c5c78601b7d38112f9c2">brd::setup_hbridge</a> ()</td></tr>
-<tr class="separator:a819eafbbe048c5c78601b7d38112f9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a087fa49ff66d40e71e5f0e380bf7d8ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1comms.html">fw::comms</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a087fa49ff66d40e71e5f0e380bf7d8ce">brd::setup_comms</a> ()</td></tr>
-<tr class="separator:a087fa49ff66d40e71e5f0e380bf7d8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7deb1bf6e85b91fe852b5f9c4e839902"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1debug__comms.html">fw::debug_comms</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a7deb1bf6e85b91fe852b5f9c4e839902">brd::setup_debug_comms</a> ()</td></tr>
-<tr class="separator:a7deb1bf6e85b91fe852b5f9c4e839902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8519578452e3aafee624c12984dc01b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1leds.html">fw::leds</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a8519578452e3aafee624c12984dc01b1">brd::setup_leds</a> ()</td></tr>
-<tr class="separator:a8519578452e3aafee624c12984dc01b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acff2051fff6f79ebbfe80b750bd77be1"><td class="memItemLeft" align="right" valign="top">leds *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#acff2051fff6f79ebbfe80b750bd77be1">fw::setup_leds_with_stop_callback</a> ()</td></tr>
-<tr class="separator:acff2051fff6f79ebbfe80b750bd77be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f31062563433ec440d1710f154c070f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1clock.html">fw::drv::clock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a1f31062563433ec440d1710f154c070f">brd::setup_clock</a> ()</td></tr>
+<tr class="separator:a1f31062563433ec440d1710f154c070f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a120d03934cab8b62fea3d539d670b7df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1acquisition.html">fw::drv::acquisition</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a120d03934cab8b62fea3d539d670b7df">brd::setup_acquisition</a> ()</td></tr>
+<tr class="separator:a120d03934cab8b62fea3d539d670b7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee7e154b17046753379822909acf76b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1hbridge.html">fw::drv::hbridge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#aee7e154b17046753379822909acf76b7">brd::setup_hbridge</a> ()</td></tr>
+<tr class="separator:aee7e154b17046753379822909acf76b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d0e8fd20728c218b949617ce264110"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1comms.html">fw::drv::comms</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#ad7d0e8fd20728c218b949617ce264110">brd::setup_comms</a> ()</td></tr>
+<tr class="separator:ad7d0e8fd20728c218b949617ce264110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b367123c5a8ab3249badfeaf2cb1c68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1debug__comms.html">fw::drv::debug_comms</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a2b367123c5a8ab3249badfeaf2cb1c68">brd::setup_debug_comms</a> ()</td></tr>
+<tr class="separator:a2b367123c5a8ab3249badfeaf2cb1c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837c3a3e087b5b0903684d3c45da1e20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a837c3a3e087b5b0903684d3c45da1e20">brd::setup_leds</a> ()</td></tr>
+<tr class="separator:a837c3a3e087b5b0903684d3c45da1e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe885b15f2c73abe512dafdfca01deb4"><td class="memItemLeft" align="right" valign="top">drv::leds *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#abe885b15f2c73abe512dafdfca01deb4">fw::setup_leds_with_stop_callback</a> ()</td></tr>
+<tr class="separator:abe885b15f2c73abe512dafdfca01deb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -145,7 +145,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="board_8hpp.html">board.hpp</a></li>
-    <li class="footer">Generated on Fri Jul 14 2023 06:33:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jul 15 2023 08:42:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

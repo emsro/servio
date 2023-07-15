@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: src/fw/drivers/leds.hpp File Reference</title>
+<title>servio: src/fw/drv/leds.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,68 +107,70 @@ $(document).ready(function(){initNavTree('leds_8hpp.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1leds.html">fw::leds</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structfw_1_1leds_1_1handles"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1leds.html#structfw_1_1leds_1_1handles">fw::leds::handles</a></td></tr>
-<tr class="separator:structfw_1_1leds_1_1handles"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structfw_1_1drv_1_1leds_1_1handles"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">fw::drv::leds::handles</a></td></tr>
+<tr class="separator:structfw_1_1drv_1_1leds_1_1handles"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacefw"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html">fw</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacefw_1_1drv"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html">fw::drv</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="structfw_1_1leds_1_1handles" id="structfw_1_1leds_1_1handles"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structfw_1_1leds_1_1handles">&#9670;&nbsp;</a></span>fw::leds::handles</h2>
+<a name="structfw_1_1drv_1_1leds_1_1handles" id="structfw_1_1drv_1_1leds_1_1handles"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structfw_1_1drv_1_1leds_1_1handles">&#9670;&nbsp;</a></span>fw::drv::leds::handles</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct fw::leds::handles</td>
+          <td class="memname">struct fw::drv::leds::handles</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a9fce93e166a44330c97e84442c529605"></a>GPIO_TypeDef *</td>
+<a id="a57757fc7fbc905f3f5613d0664743093"></a>GPIO_TypeDef *</td>
 <td class="fieldname">
 blue_peripheral</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aab96ce6f66e62a593bc38d626aa5836c"></a>uint16_t</td>
+<a id="a4fa6389783cf8f977762ec5831f4450c"></a>uint16_t</td>
 <td class="fieldname">
 blue_pin</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a3e5db544093118c0670d7df53c4633bb"></a>uint32_t</td>
+<a id="a9e8a5be7dcc2e89850e6388805b63931"></a>uint32_t</td>
 <td class="fieldname">
 green_channel</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a35e97e02cf0bd4087f3f6e9ee0ec12ab"></a>GPIO_TypeDef *</td>
+<a id="ae149868d7aede7a0eab15992cae88b02"></a>GPIO_TypeDef *</td>
 <td class="fieldname">
 red_peripheral</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aa89fd6d85d44fb77ab78e8912ff4c8a7"></a>uint16_t</td>
+<a id="a126d1b92687cb5af30c1130b2e9313b8"></a>uint16_t</td>
 <td class="fieldname">
 red_pin</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a75ed487ae52029ff33defc03bd611c6b"></a>TIM_HandleTypeDef</td>
+<a id="a20d4ec26dff4a79b88c299e83c16d51e"></a>TIM_HandleTypeDef</td>
 <td class="fieldname">
 tim</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="af2638a10805db6ae2c967604a27cc0c0"></a>uint32_t</td>
+<a id="a469231ede0a8a84e894695a5d7e2c066"></a>uint32_t</td>
 <td class="fieldname">
 yellow_channel</td>
 <td class="fielddoc">
@@ -182,8 +184,8 @@ yellow_channel</td>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_4e8e1185eea579a81ab1815e3b8726c0.html">drivers</a></li><li class="navelem"><a class="el" href="leds_8hpp.html">leds.hpp</a></li>
-    <li class="footer">Generated on Fri Jul 14 2023 06:33:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="leds_8hpp.html">leds.hpp</a></li>
+    <li class="footer">Generated on Sat Jul 15 2023 08:42:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

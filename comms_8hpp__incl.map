@@ -1,5 +1,5 @@
-<map id="src/fw/drivers/comms.hpp" name="src/fw/drivers/comms.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="302,5,491,32"/>
+<map id="src/fw/drv/comms.hpp" name="src/fw/drv/comms.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="314,5,479,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,183,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="207,80,384,121"/>
 <area shape="rect" id="node4" title=" " alt="" coords="409,80,590,121"/>

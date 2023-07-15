@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classfw_1_1comms.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classfw_1_1drv_1_1leds.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,30 +84,23 @@ $(document).ready(function(){initNavTree('classfw_1_1comms.html',''); initResiza
 
 <div class="header">
   <div class="headertitle">
-<div class="title">fw::comms Member List</div>  </div>
+<div class="title">fw::drv::leds Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classfw_1_1comms.html">fw::comms</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classfw_1_1comms.html#a13fa399339e6458b86f924d66cd143ad">comms</a>()=default</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfw_1_1comms.html#aae9c9a77e0c7bf8169e1afa4abc2021d">comms</a>(const comms &amp;)=delete</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfw_1_1comms.html#ab824b741c165ecfd2d57f16ab9e30365">comms</a>(comms &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfw_1_1comms.html#a9477ad94d24f393c42fc4439bc7087c7">load_message</a>(em::view&lt; std::byte * &gt; data)</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfw_1_1comms.html#a97655ce508e97fdab006e0a437f225c8">operator=</a>(const comms &amp;)=delete</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfw_1_1comms.html#ad6e730a55f373f45762192e85d903f39">operator=</a>(comms &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfw_1_1comms.html#a9e4415ae6b86a9bac85b5ba2b3b39ab4">rx_cplt_irq</a>(UART_HandleTypeDef *huart)</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfw_1_1comms.html#a3516de44fb35b9c5a57e825c0b07510a">send</a>(em::view&lt; std::byte * &gt; data)</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfw_1_1comms.html#a3823cf20a4cd75bcc58aedf1db2bd05d">setup</a>(em::function_view&lt; bool(handles &amp;) &gt;)</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfw_1_1comms.html#a06e8bf851a9439dec92ad0e24042de9b">start</a>()</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfw_1_1comms.html#a622a12b88e2b1a46980b1f1b6be9513b">tx_dma_irq</a>()</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfw_1_1comms.html#a63c946004a0c6ba281202c2879f725c2">uart_irq</a>()</td><td class="entry"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfw_1_1drv_1_1leds.html#a48f0b62d250bad03766510a85d493fac">force_red_led</a>()</td><td class="entry"><a class="el" href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classfw_1_1drv_1_1leds.html#ac6debb7ddbd94b96fca19053eeeacfc6">leds</a>()=default</td><td class="entry"><a class="el" href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfw_1_1drv_1_1leds.html#a85338d2b39bbcda198af2cdecf772bea">setup</a>(em::function_view&lt; bool(handles &amp;) &gt; setup_f)</td><td class="entry"><a class="el" href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classfw_1_1drv_1_1leds.html#ac51161a6b5d5a8d7c1f85c8c8e4d6e37">start</a>()</td><td class="entry"><a class="el" href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfw_1_1drv_1_1leds.html#accff29bb7d50c89396e048db4eca917e">update</a>(const leds_vals &amp;leds)</td><td class="entry"><a class="el" href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jul 14 2023 06:33:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jul 15 2023 08:42:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: src/fw/drivers/debug_comms.hpp Source File</title>
+<title>servio: src/fw/drv/debug_comms.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,81 +87,80 @@ $(document).ready(function(){initNavTree('debug__comms_8hpp_source.html',''); in
 <div class="title">debug_comms.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="debug__comms_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/static_circular_buffer.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/static_vector.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;span&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stm32g4xx_hal.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>em = emlabcpp;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw.html">fw</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classfw_1_1debug__comms.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfw_1_1debug__comms.html">debug_comms</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classfw_1_1debug__comms.html">   18</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="classfw_1_1debug__comms.html#structfw_1_1debug__comms_1_1handles">handles</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classfw_1_1debug__comms.html#a0c869d7a8470ce3fa856e9acd1afb941">   20</a></span>&#160;                UART_HandleTypeDef <a class="code" href="classfw_1_1debug__comms.html#a0c869d7a8470ce3fa856e9acd1afb941">uart</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classfw_1_1debug__comms.html#a858348bf5f4568d419ae2b9265232b2c">   21</a></span>&#160;                DMA_HandleTypeDef  <a class="code" href="classfw_1_1debug__comms.html#a858348bf5f4568d419ae2b9265232b2c">tx_dma</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        };</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classfw_1_1debug__comms.html#a1f302f5bc9032c433aeadfc5fca72292">   24</a></span>&#160;        <a class="code" href="classfw_1_1debug__comms.html#a1f302f5bc9032c433aeadfc5fca72292">debug_comms</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classfw_1_1debug__comms.html#a90eb1e4fccfc205f9b77a605cef638b1">   26</a></span>&#160;        <a class="code" href="classfw_1_1debug__comms.html#a90eb1e4fccfc205f9b77a605cef638b1">debug_comms</a>( <span class="keyword">const</span> <a class="code" href="classfw_1_1debug__comms.html">debug_comms</a>&amp; )            = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classfw_1_1debug__comms.html#a468b91007e8c35c23e6e3ab7ee833e8c">   27</a></span>&#160;        <a class="code" href="classfw_1_1debug__comms.html#a468b91007e8c35c23e6e3ab7ee833e8c">debug_comms</a>( <a class="code" href="classfw_1_1debug__comms.html">debug_comms</a>&amp;&amp; )                 = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classfw_1_1debug__comms.html#a10e1f69434a6b79b8b4335d9745eacb1">   28</a></span>&#160;        <a class="code" href="classfw_1_1debug__comms.html">debug_comms</a>&amp; <a class="code" href="classfw_1_1debug__comms.html#a10e1f69434a6b79b8b4335d9745eacb1">operator=</a>( <span class="keyword">const</span> <a class="code" href="classfw_1_1debug__comms.html">debug_comms</a>&amp; ) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classfw_1_1debug__comms.html#abe707ca14b622a59068e4131a27eea4a">   29</a></span>&#160;        <a class="code" href="classfw_1_1debug__comms.html">debug_comms</a>&amp; <a class="code" href="classfw_1_1debug__comms.html#abe707ca14b622a59068e4131a27eea4a">operator=</a>( <a class="code" href="classfw_1_1debug__comms.html">debug_comms</a>&amp;&amp; )      = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classfw_1_1debug__comms.html#ab6e2f34dc3a5ff2e8848f0f443d1b160">setup</a>( em::function_view&lt; <span class="keywordtype">bool</span>( <a class="code" href="classfw_1_1debug__comms.html#structfw_1_1debug__comms_1_1handles">handles</a>&amp; ) &gt; setup_f );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1debug__comms.html#aca51fedf6357a5fc1c769df300bdf3cf">tx_dma_irq</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1debug__comms.html#a3b6673ba522b825dda092af7c1f2c842">uart_irq</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1debug__comms.html#a5d5e6dca57a8cbf7ef29de08294042e4">rx_cplt_irq</a>( UART_HandleTypeDef* huart );</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1debug__comms.html#a76d84670331a8bb3b587bbb4baa38299">start</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1debug__comms.html#a1d875d46ba1d028110710b87d96e1bf5">transmit</a>( std::span&lt; const std::byte &gt; );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        em::static_vector&lt; std::byte, 32 &gt; <a class="code" href="classfw_1_1debug__comms.html#a703a695a9076fada2eb1d6a8469a67d3">receive</a>( std::size_t size = 32 );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classfw_1_1debug__comms.html#structfw_1_1debug__comms_1_1handles">handles</a> h_;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::byte                                    ibyte_;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        em::static_circular_buffer&lt; std::byte, 128 &gt; idata_buffer_{};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::array&lt; std::byte, 128 &gt;                 odata_buffer_{};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}  <span class="comment">// namespace fw</span></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html"><div class="ttname"><a href="classfw_1_1debug__comms.html">fw::debug_comms</a></div><div class="ttdef"><b>Definition:</b> debug_comms.hpp:16</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a0c869d7a8470ce3fa856e9acd1afb941"><div class="ttname"><a href="classfw_1_1debug__comms.html#a0c869d7a8470ce3fa856e9acd1afb941">fw::debug_comms::handles::uart</a></div><div class="ttdeci">UART_HandleTypeDef uart</div><div class="ttdef"><b>Definition:</b> debug_comms.hpp:20</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a10e1f69434a6b79b8b4335d9745eacb1"><div class="ttname"><a href="classfw_1_1debug__comms.html#a10e1f69434a6b79b8b4335d9745eacb1">fw::debug_comms::operator=</a></div><div class="ttdeci">debug_comms &amp; operator=(const debug_comms &amp;)=delete</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a1d875d46ba1d028110710b87d96e1bf5"><div class="ttname"><a href="classfw_1_1debug__comms.html#a1d875d46ba1d028110710b87d96e1bf5">fw::debug_comms::transmit</a></div><div class="ttdeci">void transmit(std::span&lt; const std::byte &gt;)</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:26</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a1f302f5bc9032c433aeadfc5fca72292"><div class="ttname"><a href="classfw_1_1debug__comms.html#a1f302f5bc9032c433aeadfc5fca72292">fw::debug_comms::debug_comms</a></div><div class="ttdeci">debug_comms()=default</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a3b6673ba522b825dda092af7c1f2c842"><div class="ttname"><a href="classfw_1_1debug__comms.html#a3b6673ba522b825dda092af7c1f2c842">fw::debug_comms::uart_irq</a></div><div class="ttdeci">void uart_irq()</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:21</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a468b91007e8c35c23e6e3ab7ee833e8c"><div class="ttname"><a href="classfw_1_1debug__comms.html#a468b91007e8c35c23e6e3ab7ee833e8c">fw::debug_comms::debug_comms</a></div><div class="ttdeci">debug_comms(debug_comms &amp;&amp;)=delete</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a5d5e6dca57a8cbf7ef29de08294042e4"><div class="ttname"><a href="classfw_1_1debug__comms.html#a5d5e6dca57a8cbf7ef29de08294042e4">fw::debug_comms::rx_cplt_irq</a></div><div class="ttdeci">void rx_cplt_irq(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:62</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a703a695a9076fada2eb1d6a8469a67d3"><div class="ttname"><a href="classfw_1_1debug__comms.html#a703a695a9076fada2eb1d6a8469a67d3">fw::debug_comms::receive</a></div><div class="ttdeci">em::static_vector&lt; std::byte, 32 &gt; receive(std::size_t size=32)</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:44</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a76d84670331a8bb3b587bbb4baa38299"><div class="ttname"><a href="classfw_1_1debug__comms.html#a76d84670331a8bb3b587bbb4baa38299">fw::debug_comms::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:57</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a858348bf5f4568d419ae2b9265232b2c"><div class="ttname"><a href="classfw_1_1debug__comms.html#a858348bf5f4568d419ae2b9265232b2c">fw::debug_comms::handles::tx_dma</a></div><div class="ttdeci">DMA_HandleTypeDef tx_dma</div><div class="ttdef"><b>Definition:</b> debug_comms.hpp:21</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_a90eb1e4fccfc205f9b77a605cef638b1"><div class="ttname"><a href="classfw_1_1debug__comms.html#a90eb1e4fccfc205f9b77a605cef638b1">fw::debug_comms::debug_comms</a></div><div class="ttdeci">debug_comms(const debug_comms &amp;)=delete</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_ab6e2f34dc3a5ff2e8848f0f443d1b160"><div class="ttname"><a href="classfw_1_1debug__comms.html#ab6e2f34dc3a5ff2e8848f0f443d1b160">fw::debug_comms::setup</a></div><div class="ttdeci">bool setup(em::function_view&lt; bool(handles &amp;) &gt; setup_f)</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:11</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_abe707ca14b622a59068e4131a27eea4a"><div class="ttname"><a href="classfw_1_1debug__comms.html#abe707ca14b622a59068e4131a27eea4a">fw::debug_comms::operator=</a></div><div class="ttdeci">debug_comms &amp; operator=(debug_comms &amp;&amp;)=delete</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_aca51fedf6357a5fc1c769df300bdf3cf"><div class="ttname"><a href="classfw_1_1debug__comms.html#aca51fedf6357a5fc1c769df300bdf3cf">fw::debug_comms::tx_dma_irq</a></div><div class="ttdeci">void tx_dma_irq()</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:16</div></div>
-<div class="ttc" id="aclassfw_1_1debug__comms_html_structfw_1_1debug__comms_1_1handles"><div class="ttname"><a href="classfw_1_1debug__comms.html#structfw_1_1debug__comms_1_1handles">fw::debug_comms::handles</a></div><div class="ttdef"><b>Definition:</b> debug_comms.hpp:19</div></div>
-<div class="ttc" id="anamespacefw_html"><div class="ttname"><a href="namespacefw.html">fw</a></div><div class="ttdef"><b>Definition:</b> board.hpp:29</div></div>
+<a href="debug__comms_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/static_circular_buffer.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/static_vector.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;span&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stm32g4xx_hal.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>em = emlabcpp;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw_1_1drv.html">fw::drv</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1debug__comms.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfw_1_1drv_1_1debug__comms.html">debug_comms</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1debug__comms.html">   17</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="classfw_1_1drv_1_1debug__comms.html#structfw_1_1drv_1_1debug__comms_1_1handles">handles</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1debug__comms.html#a78e44c2186c0db57e8164d3d1b9817f6">   19</a></span>&#160;                UART_HandleTypeDef <a class="code" href="classfw_1_1drv_1_1debug__comms.html#a78e44c2186c0db57e8164d3d1b9817f6">uart</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1debug__comms.html#a80d4ba8836fcf5d14973db9211fbbe8b">   20</a></span>&#160;                DMA_HandleTypeDef  <a class="code" href="classfw_1_1drv_1_1debug__comms.html#a80d4ba8836fcf5d14973db9211fbbe8b">tx_dma</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1debug__comms.html#a4b3c608462cbe938d4ddf3e993323ce6">   23</a></span>&#160;        <a class="code" href="classfw_1_1drv_1_1debug__comms.html#a4b3c608462cbe938d4ddf3e993323ce6">debug_comms</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1debug__comms.html#a8c71376f43e0be3d99b03efeec28ef40">   25</a></span>&#160;        <a class="code" href="classfw_1_1drv_1_1debug__comms.html#a8c71376f43e0be3d99b03efeec28ef40">debug_comms</a>( <span class="keyword">const</span> <a class="code" href="classfw_1_1drv_1_1debug__comms.html">debug_comms</a>&amp; )            = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1debug__comms.html#ab771adeb27d0b6d10e2dff2ecb1c9033">   26</a></span>&#160;        <a class="code" href="classfw_1_1drv_1_1debug__comms.html#ab771adeb27d0b6d10e2dff2ecb1c9033">debug_comms</a>( <a class="code" href="classfw_1_1drv_1_1debug__comms.html">debug_comms</a>&amp;&amp; )                 = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1debug__comms.html#a742471ea094fe694275fd7cd4a2287c1">   27</a></span>&#160;        <a class="code" href="classfw_1_1drv_1_1debug__comms.html">debug_comms</a>&amp; <a class="code" href="classfw_1_1drv_1_1debug__comms.html#a742471ea094fe694275fd7cd4a2287c1">operator=</a>( <span class="keyword">const</span> <a class="code" href="classfw_1_1drv_1_1debug__comms.html">debug_comms</a>&amp; ) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1debug__comms.html#ac655226e1b0e6f888ad6ba22f91b52ad">   28</a></span>&#160;        <a class="code" href="classfw_1_1drv_1_1debug__comms.html">debug_comms</a>&amp; <a class="code" href="classfw_1_1drv_1_1debug__comms.html#ac655226e1b0e6f888ad6ba22f91b52ad">operator=</a>( <a class="code" href="classfw_1_1drv_1_1debug__comms.html">debug_comms</a>&amp;&amp; )      = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classfw_1_1drv_1_1debug__comms.html#adbc6ea20981c99cb383f74032eee87d6">setup</a>( em::function_view&lt; <span class="keywordtype">bool</span>( <a class="code" href="classfw_1_1drv_1_1debug__comms.html#structfw_1_1drv_1_1debug__comms_1_1handles">handles</a>&amp; ) &gt; setup_f );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1debug__comms.html#a3e1adc6abdd4a0f90dd894241fc9fcc4">tx_dma_irq</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1debug__comms.html#aa78e6551f8e1e19fadca3f2c1b518de5">uart_irq</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1debug__comms.html#a8279ac3a8c8ed63e1e7a5b04c0189c1c">rx_cplt_irq</a>( UART_HandleTypeDef* huart );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1debug__comms.html#a3459314cf8a36581a599093070cf939e">start</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1debug__comms.html#a8752331e241d9894c0538a346953698d">transmit</a>( std::span&lt; const std::byte &gt; );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        em::static_vector&lt; std::byte, 32 &gt; <a class="code" href="classfw_1_1drv_1_1debug__comms.html#a0775568899e355ebb7fa0752c01809a4">receive</a>( std::size_t size = 32 );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classfw_1_1drv_1_1debug__comms.html#structfw_1_1drv_1_1debug__comms_1_1handles">handles</a> h_;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::byte                                    ibyte_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        em::static_circular_buffer&lt; std::byte, 128 &gt; idata_buffer_{};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        std::array&lt; std::byte, 128 &gt;                 odata_buffer_{};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}  <span class="comment">// namespace fw::drv</span></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html">fw::drv::debug_comms</a></div><div class="ttdef"><b>Definition:</b> debug_comms.hpp:15</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_a0775568899e355ebb7fa0752c01809a4"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#a0775568899e355ebb7fa0752c01809a4">fw::drv::debug_comms::receive</a></div><div class="ttdeci">em::static_vector&lt; std::byte, 32 &gt; receive(std::size_t size=32)</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:44</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_a3459314cf8a36581a599093070cf939e"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#a3459314cf8a36581a599093070cf939e">fw::drv::debug_comms::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:57</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_a3e1adc6abdd4a0f90dd894241fc9fcc4"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#a3e1adc6abdd4a0f90dd894241fc9fcc4">fw::drv::debug_comms::tx_dma_irq</a></div><div class="ttdeci">void tx_dma_irq()</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:16</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_a4b3c608462cbe938d4ddf3e993323ce6"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#a4b3c608462cbe938d4ddf3e993323ce6">fw::drv::debug_comms::debug_comms</a></div><div class="ttdeci">debug_comms()=default</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_a742471ea094fe694275fd7cd4a2287c1"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#a742471ea094fe694275fd7cd4a2287c1">fw::drv::debug_comms::operator=</a></div><div class="ttdeci">debug_comms &amp; operator=(const debug_comms &amp;)=delete</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_a78e44c2186c0db57e8164d3d1b9817f6"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#a78e44c2186c0db57e8164d3d1b9817f6">fw::drv::debug_comms::handles::uart</a></div><div class="ttdeci">UART_HandleTypeDef uart</div><div class="ttdef"><b>Definition:</b> debug_comms.hpp:19</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_a80d4ba8836fcf5d14973db9211fbbe8b"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#a80d4ba8836fcf5d14973db9211fbbe8b">fw::drv::debug_comms::handles::tx_dma</a></div><div class="ttdeci">DMA_HandleTypeDef tx_dma</div><div class="ttdef"><b>Definition:</b> debug_comms.hpp:20</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_a8279ac3a8c8ed63e1e7a5b04c0189c1c"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#a8279ac3a8c8ed63e1e7a5b04c0189c1c">fw::drv::debug_comms::rx_cplt_irq</a></div><div class="ttdeci">void rx_cplt_irq(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:62</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_a8752331e241d9894c0538a346953698d"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#a8752331e241d9894c0538a346953698d">fw::drv::debug_comms::transmit</a></div><div class="ttdeci">void transmit(std::span&lt; const std::byte &gt;)</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:26</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_a8c71376f43e0be3d99b03efeec28ef40"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#a8c71376f43e0be3d99b03efeec28ef40">fw::drv::debug_comms::debug_comms</a></div><div class="ttdeci">debug_comms(const debug_comms &amp;)=delete</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_aa78e6551f8e1e19fadca3f2c1b518de5"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#aa78e6551f8e1e19fadca3f2c1b518de5">fw::drv::debug_comms::uart_irq</a></div><div class="ttdeci">void uart_irq()</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:21</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_ab771adeb27d0b6d10e2dff2ecb1c9033"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#ab771adeb27d0b6d10e2dff2ecb1c9033">fw::drv::debug_comms::debug_comms</a></div><div class="ttdeci">debug_comms(debug_comms &amp;&amp;)=delete</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_ac655226e1b0e6f888ad6ba22f91b52ad"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#ac655226e1b0e6f888ad6ba22f91b52ad">fw::drv::debug_comms::operator=</a></div><div class="ttdeci">debug_comms &amp; operator=(debug_comms &amp;&amp;)=delete</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_adbc6ea20981c99cb383f74032eee87d6"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#adbc6ea20981c99cb383f74032eee87d6">fw::drv::debug_comms::setup</a></div><div class="ttdeci">bool setup(em::function_view&lt; bool(handles &amp;) &gt; setup_f)</div><div class="ttdef"><b>Definition:</b> debug_comms.cpp:11</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1debug__comms_html_structfw_1_1drv_1_1debug__comms_1_1handles"><div class="ttname"><a href="classfw_1_1drv_1_1debug__comms.html#structfw_1_1drv_1_1debug__comms_1_1handles">fw::drv::debug_comms::handles</a></div><div class="ttdef"><b>Definition:</b> debug_comms.hpp:18</div></div>
+<div class="ttc" id="anamespacefw_1_1drv_html"><div class="ttname"><a href="namespacefw_1_1drv.html">fw::drv</a></div><div class="ttdef"><b>Definition:</b> acquisition.cpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_4e8e1185eea579a81ab1815e3b8726c0.html">drivers</a></li><li class="navelem"><a class="el" href="debug__comms_8hpp.html">debug_comms.hpp</a></li>
-    <li class="footer">Generated on Fri Jul 14 2023 06:33:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="debug__comms_8hpp.html">debug_comms.hpp</a></li>
+    <li class="footer">Generated on Sat Jul 15 2023 08:42:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

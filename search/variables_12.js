@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['temp_993',['temp',['../structconverter.html#ac9870ea936ec13c39637d9c93827755a',1,'converter']]],
-  ['temp_5fchconf_994',['temp_chconf',['../classfw_1_1acquisition.html#ada060e555adde81722de49db81b0fa21',1,'fw::acquisition::handles']]],
-  ['tim_995',['tim',['../classfw_1_1acquisition.html#a6533013a6bd06289dcb91278bb68211f',1,'fw::acquisition::handles::tim()'],['../classfw_1_1clock.html#ac3232092fb6bb961dfdeef036104a6f4',1,'fw::clock::handles::tim()'],['../classfw_1_1leds.html#a75ed487ae52029ff33defc03bd611c6b',1,'fw::leds::handles::tim()']]],
-  ['tim_5fchannel_996',['tim_channel',['../classfw_1_1acquisition.html#aef2cd45789e6fc9030b84b9d9d6c1cfd',1,'fw::acquisition::handles::tim_channel()'],['../classfw_1_1clock.html#a7795641a57d1aec603daea4996d6bbf6',1,'fw::clock::handles::tim_channel()']]],
-  ['timer_997',['timer',['../classfw_1_1hbridge.html#afc25ddbfff43cfad76b96c743891130d',1,'fw::hbridge::handles']]],
-  ['tx_5fdma_998',['tx_dma',['../classfw_1_1comms.html#a9112c6d7b7c23078ed254d2fc1728b83',1,'fw::comms::handles::tx_dma()'],['../classfw_1_1debug__comms.html#a858348bf5f4568d419ae2b9265232b2c',1,'fw::debug_comms::handles::tx_dma()']]]
+  ['temp_995',['temp',['../structconverter.html#ac9870ea936ec13c39637d9c93827755a',1,'converter']]],
+  ['temp_5fchconf_996',['temp_chconf',['../classfw_1_1drv_1_1acquisition.html#abd6cd34812d53a5b317b13f13f9f954e',1,'fw::drv::acquisition::handles']]],
+  ['tim_997',['tim',['../classfw_1_1drv_1_1acquisition.html#ae1109c0ff7fa737bafa1dc77573d16ec',1,'fw::drv::acquisition::handles::tim()'],['../classfw_1_1drv_1_1clock.html#a502c7d75a0fcfb6d421cb649bfadba24',1,'fw::drv::clock::handles::tim()'],['../classfw_1_1drv_1_1leds.html#a20d4ec26dff4a79b88c299e83c16d51e',1,'fw::drv::leds::handles::tim()']]],
+  ['tim_5fchannel_998',['tim_channel',['../classfw_1_1drv_1_1acquisition.html#ae2302feb24d1ba636bc13e0f0178a4b0',1,'fw::drv::acquisition::handles::tim_channel()'],['../classfw_1_1drv_1_1clock.html#a6f2d5af8fbf8f3f3fc9d71e2e08e5519',1,'fw::drv::clock::handles::tim_channel()']]],
+  ['timer_999',['timer',['../classfw_1_1drv_1_1hbridge.html#adafc47d8ad22b33a43f5f64ea23571d4',1,'fw::drv::hbridge::handles']]],
+  ['tx_5fdma_1000',['tx_dma',['../classfw_1_1drv_1_1comms.html#aefc2e79d8e64cc2f47c9fe837a52ef3e',1,'fw::drv::comms::handles::tx_dma()'],['../classfw_1_1drv_1_1debug__comms.html#a80d4ba8836fcf5d14973db9211fbbe8b',1,'fw::drv::debug_comms::handles::tx_dma()']]]
 ];

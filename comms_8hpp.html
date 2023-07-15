@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: src/fw/drivers/comms.hpp File Reference</title>
+<title>servio: src/fw/drv/comms.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,43 +108,45 @@ $(document).ready(function(){initNavTree('comms_8hpp.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1comms.html">fw::comms</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1comms.html">fw::drv::comms</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structfw_1_1comms_1_1handles"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1comms.html#structfw_1_1comms_1_1handles">fw::comms::handles</a></td></tr>
-<tr class="separator:structfw_1_1comms_1_1handles"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structfw_1_1drv_1_1comms_1_1handles"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1comms.html#structfw_1_1drv_1_1comms_1_1handles">fw::drv::comms::handles</a></td></tr>
+<tr class="separator:structfw_1_1drv_1_1comms_1_1handles"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacefw"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html">fw</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacefw_1_1drv"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html">fw::drv</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa2b2cca69c016b9186f0f4ffe08a20a1"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#aa2b2cca69c016b9186f0f4ffe08a20a1">fw::comm_buff_size</a> = 128</td></tr>
-<tr class="separator:aa2b2cca69c016b9186f0f4ffe08a20a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabef94de8eb8d0c86cb545f41a023490"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490">fw::drv::comm_buff_size</a> = 128</td></tr>
+<tr class="separator:aabef94de8eb8d0c86cb545f41a023490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="structfw_1_1comms_1_1handles" id="structfw_1_1comms_1_1handles"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structfw_1_1comms_1_1handles">&#9670;&nbsp;</a></span>fw::comms::handles</h2>
+<a name="structfw_1_1drv_1_1comms_1_1handles" id="structfw_1_1drv_1_1comms_1_1handles"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structfw_1_1drv_1_1comms_1_1handles">&#9670;&nbsp;</a></span>fw::drv::comms::handles</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct fw::comms::handles</td>
+          <td class="memname">struct fw::drv::comms::handles</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a9112c6d7b7c23078ed254d2fc1728b83"></a>DMA_HandleTypeDef</td>
+<a id="aefc2e79d8e64cc2f47c9fe837a52ef3e"></a>DMA_HandleTypeDef</td>
 <td class="fieldname">
 tx_dma</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a840a4c2e8713a24767192001fca045e9"></a>UART_HandleTypeDef</td>
+<a id="a1162853c9089c6a4723bbc77dc461981"></a>UART_HandleTypeDef</td>
 <td class="fieldname">
 uart</td>
 <td class="fielddoc">
@@ -158,8 +160,8 @@ uart</td>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_4e8e1185eea579a81ab1815e3b8726c0.html">drivers</a></li><li class="navelem"><a class="el" href="comms_8hpp.html">comms.hpp</a></li>
-    <li class="footer">Generated on Fri Jul 14 2023 06:33:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="comms_8hpp.html">comms.hpp</a></li>
+    <li class="footer">Generated on Sat Jul 15 2023 08:42:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -37,8 +37,8 @@
 <g id="node7" class="node">
 <title>Node8</title>
 <g id="a_node7"><a xlink:href="acquisition_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="755.5,-123.5 755.5,-142.5 897.5,-142.5 897.5,-123.5 755.5,-123.5"/>
-<text text-anchor="middle" x="826.5" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw/drivers/acquisition.hpp</text>
+<polygon fill="white" stroke="black" points="764.5,-123.5 764.5,-142.5 888.5,-142.5 888.5,-123.5 764.5,-123.5"/>
+<text text-anchor="middle" x="826.5" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw/drv/acquisition.hpp</text>
 </a>
 </g>
 </g>
@@ -52,8 +52,8 @@
 <g id="node13" class="node">
 <title>Node19</title>
 <g id="a_node13"><a xlink:href="hbridge_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="917,-123.5 917,-142.5 1042,-142.5 1042,-123.5 917,-123.5"/>
-<text text-anchor="middle" x="979.5" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw/drivers/hbridge.hpp</text>
+<polygon fill="white" stroke="black" points="926,-123.5 926,-142.5 1033,-142.5 1033,-123.5 926,-123.5"/>
+<text text-anchor="middle" x="979.5" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw/drv/hbridge.hpp</text>
 </a>
 </g>
 </g>

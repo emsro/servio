@@ -37,8 +37,8 @@
 <g id="node7" class="node">
 <title>Node8</title>
 <g id="a_node7"><a xlink:href="acquisition_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="837,-67.5 837,-86.5 979,-86.5 979,-67.5 837,-67.5"/>
-<text text-anchor="middle" x="908" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw/drivers/acquisition.hpp</text>
+<polygon fill="white" stroke="black" points="846,-67.5 846,-86.5 970,-86.5 970,-67.5 846,-67.5"/>
+<text text-anchor="middle" x="908" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw/drv/acquisition.hpp</text>
 </a>
 </g>
 </g>

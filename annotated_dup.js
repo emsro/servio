@@ -9,6 +9,15 @@ var annotated_dup =
       [ "pid_module", "classctl_1_1pid__module.html", "classctl_1_1pid__module" ]
     ] ],
     [ "fw", "namespacefw.html", [
+      [ "drv", "namespacefw_1_1drv.html", [
+        [ "acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", "namespacefw_1_1drv_structfw_1_1drv_1_1acquisition__status_dup" ],
+        [ "acquisition", "classfw_1_1drv_1_1acquisition.html", "classfw_1_1drv_1_1acquisition" ],
+        [ "clock", "classfw_1_1drv_1_1clock.html", "classfw_1_1drv_1_1clock" ],
+        [ "comms", "classfw_1_1drv_1_1comms.html", "classfw_1_1drv_1_1comms" ],
+        [ "debug_comms", "classfw_1_1drv_1_1debug__comms.html", "classfw_1_1drv_1_1debug__comms" ],
+        [ "hbridge", "classfw_1_1drv_1_1hbridge.html", "classfw_1_1drv_1_1hbridge" ],
+        [ "leds", "classfw_1_1drv_1_1leds.html", "classfw_1_1drv_1_1leds" ]
+      ] ],
       [ "acquisition_period_callback", "classfw_1_1acquisition__period__callback.html", "classfw_1_1acquisition__period__callback" ],
       [ "current_callback", "classfw_1_1current__callback.html", "classfw_1_1current__callback" ],
       [ "position_callback", "classfw_1_1position__callback.html", "classfw_1_1position__callback" ],
@@ -16,13 +25,6 @@ var annotated_dup =
       [ "core", "structfw_1_1core.html", "structfw_1_1core" ],
       [ "standard_callbacks", "structfw_1_1standard__callbacks.html", "structfw_1_1standard__callbacks" ],
       [ "dispatcher", "namespacefw.html#structfw_1_1dispatcher", "namespacefw_structfw_1_1dispatcher_dup" ],
-      [ "acquisition_status", "namespacefw.html#structfw_1_1acquisition__status", "namespacefw_structfw_1_1acquisition__status_dup" ],
-      [ "acquisition", "classfw_1_1acquisition.html", "classfw_1_1acquisition" ],
-      [ "clock", "classfw_1_1clock.html", "classfw_1_1clock" ],
-      [ "comms", "classfw_1_1comms.html", "classfw_1_1comms" ],
-      [ "debug_comms", "classfw_1_1debug__comms.html", "classfw_1_1debug__comms" ],
-      [ "hbridge", "classfw_1_1hbridge.html", "classfw_1_1hbridge" ],
-      [ "leds", "classfw_1_1leds.html", "classfw_1_1leds" ],
       [ "monitor", "classfw_1_1monitor.html", "classfw_1_1monitor" ],
       [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
       [ "hal_check", "namespacefw.html#structfw_1_1hal__check", null ]
