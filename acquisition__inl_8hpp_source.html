@@ -91,189 +91,189 @@ $(document).ready(function(){initNavTree('acquisition__inl_8hpp_source.html','')
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw_1_1drv.html">fw::drv</a></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        empty_value_cb        EMPTY_VALUE_CB;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        empty_adc_detailed_cb EMPTY_ADC_DETAILED_CB;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}  <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#ade4dd204f01175bc13e4376742d7fe20">   12</a></span>&#160;<a class="code" href="classfw_1_1drv_1_1acquisition.html#ade4dd204f01175bc13e4376742d7fe20">acquisition&lt; N &gt;::acquisition</a>()</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  : detailed_cb_( &amp;EMPTY_ADC_DETAILED_CB )</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">for</span> ( <a class="code" href="classfw_1_1drv_1_1value__cb__interface.html">value_cb_interface</a>*&amp; ptr : brief_cbs_ ) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                ptr = &amp;EMPTY_VALUE_CB;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a73b6ceb7fd44f06f7ddf493669085b32">   21</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a73b6ceb7fd44f06f7ddf493669085b32">acquisition&lt; N &gt;::setup</a>( em::function_view&lt; <span class="keywordtype">bool</span>( <a class="code" href="classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles">handles</a>&amp; ) &gt; setup_f )</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> setup_f( h_ );</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a2d2a49163533878d4d20d05dc1bd62d0">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a2d2a49163533878d4d20d05dc1bd62d0">acquisition&lt; N &gt;::adc_irq</a>()</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        HAL_ADC_IRQHandler( &amp;h_.adc );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#aa80345f8cb346e2d9204146b41ebf892">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#aa80345f8cb346e2d9204146b41ebf892">acquisition&lt; N &gt;::adc_error_irq</a>( ADC_HandleTypeDef* h )</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        std::ignore = h;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// TODO: well this was aggresive, convert to a flag</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// stop_exec();</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a648ef1c6f4184c0da675ee3a16f84fd5">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a648ef1c6f4184c0da675ee3a16f84fd5">acquisition&lt; N &gt;::adc_conv_cplt_irq</a>( ADC_HandleTypeDef* h )</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> ( h != &amp;h_.adc ) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">// TODO: call callbacks properly</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> ( channel_index_ != detailed_chid ) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                HAL_ADC_Stop_IT( &amp;h_.adc );</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                vals_[channel_index_] = HAL_ADC_GetValue( &amp;h_.adc );</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                brief_cbs_[channel_index_]-&gt;on_value_irq( vals_[channel_index_] );</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        switch_channel( detailed_chid );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#aebfa1a863c73a3d91cbfd686536e5c2a">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#aebfa1a863c73a3d91cbfd686536e5c2a">acquisition&lt; N &gt;::dma_irq</a>()</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        HAL_DMA_IRQHandler( &amp;h_.dma );</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a0f0f848a970587f1fa54eaca9e9e8ff8">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a0f0f848a970587f1fa54eaca9e9e8ff8">acquisition&lt; N &gt;::on_period_irq</a>()</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        HAL_StatusTypeDef res           = HAL_OK;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        std::size_t       next_buffer_i = ( detailed_sequence_i_ + 1 ) % detailed_sequences_.size();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html">detailed_sequence</a>&amp; next_se      = detailed_sequences_[next_buffer_i];</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> ( period_i_ % 2 == 0 ) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                res = HAL_ADC_Start_DMA(</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    &amp;h_.adc,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keyword">reinterpret_cast&lt;</span> uint32_t* <span class="keyword">&gt;</span>( &amp;next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#af4c7a1a5c395183a7c6191dea5be3c51">buffer</a> ),</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <a class="code" href="serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc">detailed_sequence::buffer_size</a> );</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">if</span> ( res != HAL_OK ) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        status_.start_failed = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        period_i_ += 1;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2">used</a> = <a class="code" href="serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc">detailed_sequence::buffer_size</a> - __HAL_DMA_GET_COUNTER( &amp;h_.dma );</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="comment">// For some reason the Stop is necessary to call even thou the ADC should&#39;ve</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="comment">// finished by now</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                res = HAL_ADC_Stop_DMA( &amp;h_.adc );</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">if</span> ( res != HAL_OK ) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        <a class="code" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">if</span> ( next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2">used</a> == 0 ) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        <a class="code" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">if</span> ( next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2">used</a> == <a class="code" href="serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc">detailed_sequence::buffer_size</a> ) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        status_.buffer_was_full = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                }</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#ade4dd204f01175bc13e4376742d7fe20">    7</a></span>&#160;<a class="code" href="classfw_1_1drv_1_1acquisition.html#ade4dd204f01175bc13e4376742d7fe20">acquisition&lt; N &gt;::acquisition</a>()</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keyword">static</span> <a class="code" href="structfw_1_1drv_1_1empty__value__cb.html">empty_value_cb</a>        EMPTY_VALUE_CB;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">static</span> <a class="code" href="structfw_1_1drv_1_1empty__adc__detailed__cb.html">empty_adc_detailed_cb</a> EMPTY_ADC_DETAILED_CB;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        detailed_cb_ = &amp;EMPTY_ADC_DETAILED_CB;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">for</span> ( <a class="code" href="classfw_1_1drv_1_1value__cb__interface.html">value_cb_interface</a>*&amp; ptr : brief_cbs_ ) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                ptr = &amp;EMPTY_VALUE_CB;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a73b6ceb7fd44f06f7ddf493669085b32">   19</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a73b6ceb7fd44f06f7ddf493669085b32">acquisition&lt; N &gt;::setup</a>( em::function_view&lt; <span class="keywordtype">bool</span>( <a class="code" href="classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles">handles</a>&amp; ) &gt; setup_f )</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> setup_f( h_ );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a2d2a49163533878d4d20d05dc1bd62d0">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a2d2a49163533878d4d20d05dc1bd62d0">acquisition&lt; N &gt;::adc_irq</a>()</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        HAL_ADC_IRQHandler( &amp;h_.adc );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#aa80345f8cb346e2d9204146b41ebf892">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#aa80345f8cb346e2d9204146b41ebf892">acquisition&lt; N &gt;::adc_error_irq</a>( ADC_HandleTypeDef* h )</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::ignore = h;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// TODO: well this was aggresive, convert to a flag</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// stop_exec();</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a648ef1c6f4184c0da675ee3a16f84fd5">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a648ef1c6f4184c0da675ee3a16f84fd5">acquisition&lt; N &gt;::adc_conv_cplt_irq</a>( ADC_HandleTypeDef* h )</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> ( h != &amp;h_.adc ) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">// TODO: call callbacks properly</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> ( channel_index_ != detailed_chid ) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                HAL_ADC_Stop_IT( &amp;h_.adc );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                vals_[channel_index_] = HAL_ADC_GetValue( &amp;h_.adc );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                brief_cbs_[channel_index_]-&gt;on_value_irq( vals_[channel_index_] );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        switch_channel( detailed_chid );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#aebfa1a863c73a3d91cbfd686536e5c2a">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#aebfa1a863c73a3d91cbfd686536e5c2a">acquisition&lt; N &gt;::dma_irq</a>()</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        HAL_DMA_IRQHandler( &amp;h_.dma );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a0f0f848a970587f1fa54eaca9e9e8ff8">   62</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a0f0f848a970587f1fa54eaca9e9e8ff8">acquisition&lt; N &gt;::on_period_irq</a>()</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        HAL_StatusTypeDef res           = HAL_OK;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">const</span> std::size_t next_buffer_i = ( detailed_sequence_i_ + 1 ) % detailed_sequences_.size();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html">detailed_sequence</a>&amp; next_se      = detailed_sequences_[next_buffer_i];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> ( period_i_ % 2 == 0 ) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                res = HAL_ADC_Start_DMA(</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    &amp;h_.adc,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <span class="keyword">reinterpret_cast&lt;</span> uint32_t* <span class="keyword">&gt;</span>( &amp;next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#af4c7a1a5c395183a7c6191dea5be3c51">buffer</a> ),</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <a class="code" href="serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc">detailed_sequence::buffer_size</a> );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">if</span> ( res != HAL_OK ) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        status_.start_failed = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        period_i_ += 1;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2">used</a> = <a class="code" href="serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc">detailed_sequence::buffer_size</a> - __HAL_DMA_GET_COUNTER( &amp;h_.dma );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="comment">// For some reason the Stop is necessary to call even thou the ADC should&#39;ve</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="comment">// finished by now</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                res = HAL_ADC_Stop_DMA( &amp;h_.adc );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordflow">if</span> ( res != HAL_OK ) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        <a class="code" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">if</span> ( next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2">used</a> == 0 ) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        <a class="code" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span> ( next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2">used</a> == <a class="code" href="serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc">detailed_sequence::buffer_size</a> ) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        status_.buffer_was_full = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keyword">const</span> std::span readings( &amp;next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#af4c7a1a5c395183a7c6191dea5be3c51">buffer</a>[0], next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2">used</a> );</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                std::span readings( &amp;next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#af4c7a1a5c395183a7c6191dea5be3c51">buffer</a>[0], next_se.<a class="code" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2">used</a> );</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                vals_[detailed_chid] = em::avg( readings );</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                detailed_cb_-&gt;on_value_irq( vals_[detailed_chid], readings );</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                detailed_sequence_i_ = next_buffer_i;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                brief_index_ = ( brief_index_ + 1 ) % h_.chconfs.size();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                brief_index_ = brief_index_ == 0 ? 1 : brief_index_;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                switch_channel( brief_index_ );</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                start_brief_reading();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                period_i_ += 1;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a5cf29e6efb3734f6b22f2470778ff35b">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a5cf29e6efb3734f6b22f2470778ff35b">acquisition&lt; N &gt;::start</a>()</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        HAL_TIM_OC_Start( &amp;h_.tim, h_.tim_channel );</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a157ba97aa9eabba2113fe6d188581a07">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a157ba97aa9eabba2113fe6d188581a07">acquisition&lt; N &gt;::set_detailed_callback</a>( <a class="code" href="classfw_1_1drv_1_1adc__detailed__cb__interface.html">adc_detailed_cb_interface</a>&amp; cb )</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        detailed_cb_ = &amp;cb;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a1980a4f5c0b5bfa357781bf42292a3fc">  122</a></span>&#160;<a class="code" href="classfw_1_1drv_1_1adc__detailed__cb__interface.html">adc_detailed_cb_interface</a>&amp; <a class="code" href="classfw_1_1drv_1_1acquisition.html#a1980a4f5c0b5bfa357781bf42292a3fc">acquisition&lt; N &gt;::get_detailed_callback</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> *detailed_cb_;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a7af70cc9679126df910fa7b3161b538d">  128</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a7af70cc9679126df910fa7b3161b538d">acquisition&lt; N &gt;::set_brief_callback</a>( std::size_t i, <a class="code" href="classfw_1_1drv_1_1value__cb__interface.html">value_cb_interface</a>&amp; cb )</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        brief_cbs_[i] = &amp;cb;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a5156f5df2d0e2c8213b634acfc569b6f">  134</a></span>&#160;<a class="code" href="classfw_1_1drv_1_1value__cb__interface.html">value_cb_interface</a>&amp; <a class="code" href="classfw_1_1drv_1_1acquisition.html#a5156f5df2d0e2c8213b634acfc569b6f">acquisition&lt; N &gt;::get_brief_callback</a>( std::size_t i )<span class="keyword"> const</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">return</span> *brief_cbs_[i];</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a099cc1a906b1460a049796a6726584bf">  140</a></span>&#160;uint32_t <a class="code" href="classfw_1_1drv_1_1acquisition.html#a099cc1a906b1460a049796a6726584bf">acquisition&lt; N &gt;::get_val</a>( std::size_t i )<span class="keyword"> const</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> vals_[i];</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html">acquisition&lt; N &gt;::switch_channel</a>( std::size_t chid )</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        HAL_StatusTypeDef res = HAL_ADC_ConfigChannel( &amp;h_.adc, &amp;h_.chconfs[chid] );</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">if</span> ( res != HAL_OK ) {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <a class="code" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a>();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        channel_index_ = chid;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">void</span> acquisition&lt; N &gt;::start_brief_reading()</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        HAL_StatusTypeDef res = HAL_ADC_Start_IT( &amp;h_.adc );</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">if</span> ( res != HAL_OK ) {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <a class="code" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a>();</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}  <span class="comment">// namespace fw::drv</span></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html">fw::drv::acquisition</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:26</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a099cc1a906b1460a049796a6726584bf"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a099cc1a906b1460a049796a6726584bf">fw::drv::acquisition::get_val</a></div><div class="ttdeci">uint32_t get_val(std::size_t i) const</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:140</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a0f0f848a970587f1fa54eaca9e9e8ff8"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a0f0f848a970587f1fa54eaca9e9e8ff8">fw::drv::acquisition::on_period_irq</a></div><div class="ttdeci">void on_period_irq() override</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:64</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a157ba97aa9eabba2113fe6d188581a07"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a157ba97aa9eabba2113fe6d188581a07">fw::drv::acquisition::set_detailed_callback</a></div><div class="ttdeci">void set_detailed_callback(adc_detailed_cb_interface &amp;)</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:116</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a1980a4f5c0b5bfa357781bf42292a3fc"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a1980a4f5c0b5bfa357781bf42292a3fc">fw::drv::acquisition::get_detailed_callback</a></div><div class="ttdeci">adc_detailed_cb_interface &amp; get_detailed_callback() const</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:122</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a2d2a49163533878d4d20d05dc1bd62d0"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a2d2a49163533878d4d20d05dc1bd62d0">fw::drv::acquisition::adc_irq</a></div><div class="ttdeci">void adc_irq()</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:27</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a5156f5df2d0e2c8213b634acfc569b6f"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a5156f5df2d0e2c8213b634acfc569b6f">fw::drv::acquisition::get_brief_callback</a></div><div class="ttdeci">value_cb_interface &amp; get_brief_callback(std::size_t i) const</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:134</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a5cf29e6efb3734f6b22f2470778ff35b"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a5cf29e6efb3734f6b22f2470778ff35b">fw::drv::acquisition::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:110</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a648ef1c6f4184c0da675ee3a16f84fd5"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a648ef1c6f4184c0da675ee3a16f84fd5">fw::drv::acquisition::adc_conv_cplt_irq</a></div><div class="ttdeci">void adc_conv_cplt_irq(ADC_HandleTypeDef *h)</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:41</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a73b6ceb7fd44f06f7ddf493669085b32"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a73b6ceb7fd44f06f7ddf493669085b32">fw::drv::acquisition::setup</a></div><div class="ttdeci">bool setup(em::function_view&lt; bool(handles &amp;) &gt;)</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:21</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a7af70cc9679126df910fa7b3161b538d"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a7af70cc9679126df910fa7b3161b538d">fw::drv::acquisition::set_brief_callback</a></div><div class="ttdeci">void set_brief_callback(std::size_t i, value_cb_interface &amp;)</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:128</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_aa80345f8cb346e2d9204146b41ebf892"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#aa80345f8cb346e2d9204146b41ebf892">fw::drv::acquisition::adc_error_irq</a></div><div class="ttdeci">void adc_error_irq(ADC_HandleTypeDef *h)</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:33</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_ade4dd204f01175bc13e4376742d7fe20"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#ade4dd204f01175bc13e4376742d7fe20">fw::drv::acquisition::acquisition</a></div><div class="ttdeci">acquisition()</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:12</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_aebfa1a863c73a3d91cbfd686536e5c2a"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#aebfa1a863c73a3d91cbfd686536e5c2a">fw::drv::acquisition::dma_irq</a></div><div class="ttdeci">void dma_irq()</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:58</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_structfw_1_1drv_1_1acquisition_1_1handles"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles">fw::drv::acquisition::handles</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:32</div></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                vals_[detailed_chid] = em::avg( readings );</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                detailed_cb_-&gt;on_value_irq( vals_[detailed_chid], readings );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                detailed_sequence_i_ = next_buffer_i;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                brief_index_ = ( brief_index_ + 1 ) % h_.chconfs.size();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                brief_index_ = brief_index_ == 0 ? 1 : brief_index_;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                switch_channel( brief_index_ );</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                start_brief_reading();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                period_i_ += 1;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a5cf29e6efb3734f6b22f2470778ff35b">  108</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a5cf29e6efb3734f6b22f2470778ff35b">acquisition&lt; N &gt;::start</a>()</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        HAL_TIM_OC_Start( &amp;h_.tim, h_.tim_channel );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a157ba97aa9eabba2113fe6d188581a07">  114</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a157ba97aa9eabba2113fe6d188581a07">acquisition&lt; N &gt;::set_detailed_callback</a>( <a class="code" href="classfw_1_1drv_1_1adc__detailed__cb__interface.html">adc_detailed_cb_interface</a>&amp; cb )</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        detailed_cb_ = &amp;cb;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a1980a4f5c0b5bfa357781bf42292a3fc">  120</a></span>&#160;<a class="code" href="classfw_1_1drv_1_1adc__detailed__cb__interface.html">adc_detailed_cb_interface</a>&amp; <a class="code" href="classfw_1_1drv_1_1acquisition.html#a1980a4f5c0b5bfa357781bf42292a3fc">acquisition&lt; N &gt;::get_detailed_callback</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> *detailed_cb_;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a7af70cc9679126df910fa7b3161b538d">  126</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html#a7af70cc9679126df910fa7b3161b538d">acquisition&lt; N &gt;::set_brief_callback</a>( std::size_t i, <a class="code" href="classfw_1_1drv_1_1value__cb__interface.html">value_cb_interface</a>&amp; cb )</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        brief_cbs_[i] = &amp;cb;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a5156f5df2d0e2c8213b634acfc569b6f">  132</a></span>&#160;<a class="code" href="classfw_1_1drv_1_1value__cb__interface.html">value_cb_interface</a>&amp; <a class="code" href="classfw_1_1drv_1_1acquisition.html#a5156f5df2d0e2c8213b634acfc569b6f">acquisition&lt; N &gt;::get_brief_callback</a>( std::size_t i )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">return</span> *brief_cbs_[i];</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1acquisition.html#a099cc1a906b1460a049796a6726584bf">  138</a></span>&#160;uint32_t <a class="code" href="classfw_1_1drv_1_1acquisition.html#a099cc1a906b1460a049796a6726584bf">acquisition&lt; N &gt;::get_val</a>( std::size_t i )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">return</span> vals_[i];</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html">acquisition&lt; N &gt;::switch_channel</a>( std::size_t chid )</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keyword">const</span> HAL_StatusTypeDef res = HAL_ADC_ConfigChannel( &amp;h_.adc, &amp;h_.chconfs[chid] );</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">if</span> ( res != HAL_OK ) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <a class="code" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a>();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        channel_index_ = chid;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keywordtype">void</span> acquisition&lt; N &gt;::start_brief_reading()</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keyword">const</span> HAL_StatusTypeDef res = HAL_ADC_Start_IT( &amp;h_.adc );</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span> ( res != HAL_OK ) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <a class="code" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a>();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}  <span class="comment">// namespace fw::drv</span></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html">fw::drv::acquisition</a></div><div class="ttdoc">TODO: rename this to better name /o...</div><div class="ttdef"><b>Definition:</b> acquisition.hpp:40</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a099cc1a906b1460a049796a6726584bf"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a099cc1a906b1460a049796a6726584bf">fw::drv::acquisition::get_val</a></div><div class="ttdeci">uint32_t get_val(std::size_t i) const</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:138</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a0f0f848a970587f1fa54eaca9e9e8ff8"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a0f0f848a970587f1fa54eaca9e9e8ff8">fw::drv::acquisition::on_period_irq</a></div><div class="ttdeci">void on_period_irq() override</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:62</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a157ba97aa9eabba2113fe6d188581a07"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a157ba97aa9eabba2113fe6d188581a07">fw::drv::acquisition::set_detailed_callback</a></div><div class="ttdeci">void set_detailed_callback(adc_detailed_cb_interface &amp;)</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:114</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a1980a4f5c0b5bfa357781bf42292a3fc"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a1980a4f5c0b5bfa357781bf42292a3fc">fw::drv::acquisition::get_detailed_callback</a></div><div class="ttdeci">adc_detailed_cb_interface &amp; get_detailed_callback() const</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:120</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a2d2a49163533878d4d20d05dc1bd62d0"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a2d2a49163533878d4d20d05dc1bd62d0">fw::drv::acquisition::adc_irq</a></div><div class="ttdeci">void adc_irq()</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:25</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a5156f5df2d0e2c8213b634acfc569b6f"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a5156f5df2d0e2c8213b634acfc569b6f">fw::drv::acquisition::get_brief_callback</a></div><div class="ttdeci">value_cb_interface &amp; get_brief_callback(std::size_t i) const</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:132</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a5cf29e6efb3734f6b22f2470778ff35b"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a5cf29e6efb3734f6b22f2470778ff35b">fw::drv::acquisition::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:108</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a648ef1c6f4184c0da675ee3a16f84fd5"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a648ef1c6f4184c0da675ee3a16f84fd5">fw::drv::acquisition::adc_conv_cplt_irq</a></div><div class="ttdeci">void adc_conv_cplt_irq(ADC_HandleTypeDef *h)</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:39</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a73b6ceb7fd44f06f7ddf493669085b32"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a73b6ceb7fd44f06f7ddf493669085b32">fw::drv::acquisition::setup</a></div><div class="ttdeci">bool setup(em::function_view&lt; bool(handles &amp;) &gt;)</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:19</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a7af70cc9679126df910fa7b3161b538d"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a7af70cc9679126df910fa7b3161b538d">fw::drv::acquisition::set_brief_callback</a></div><div class="ttdeci">void set_brief_callback(std::size_t i, value_cb_interface &amp;)</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:126</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_aa80345f8cb346e2d9204146b41ebf892"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#aa80345f8cb346e2d9204146b41ebf892">fw::drv::acquisition::adc_error_irq</a></div><div class="ttdeci">void adc_error_irq(ADC_HandleTypeDef *h)</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:31</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_ade4dd204f01175bc13e4376742d7fe20"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#ade4dd204f01175bc13e4376742d7fe20">fw::drv::acquisition::acquisition</a></div><div class="ttdeci">acquisition()</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:7</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_aebfa1a863c73a3d91cbfd686536e5c2a"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#aebfa1a863c73a3d91cbfd686536e5c2a">fw::drv::acquisition::dma_irq</a></div><div class="ttdeci">void dma_irq()</div><div class="ttdef"><b>Definition:</b> acquisition_inl.hpp:56</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_structfw_1_1drv_1_1acquisition_1_1handles"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles">fw::drv::acquisition::handles</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:48</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1adc__detailed__cb__interface_html"><div class="ttname"><a href="classfw_1_1drv_1_1adc__detailed__cb__interface.html">fw::drv::adc_detailed_cb_interface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:10</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1value__cb__interface_html"><div class="ttname"><a href="classfw_1_1drv_1_1value__cb__interface.html">fw::drv::value_cb_interface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:17</div></div>
 <div class="ttc" id="anamespacefw_1_1drv_html"><div class="ttname"><a href="namespacefw_1_1drv.html">fw::drv</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:16</div></div>
 <div class="ttc" id="anamespacefw_html_a8e0b580f4dd8010ffb0db37533802021"><div class="ttname"><a href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">fw::stop_exec</a></div><div class="ttdeci">void stop_exec()</div><div class="ttdef"><b>Definition:</b> util.cpp:8</div></div>
 <div class="ttc" id="aserial_8cpp_html_ac714a2b4f10a1cb64f44a5517819e9cc"><div class="ttname"><a href="serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc">buffer_size</a></div><div class="ttdeci">constexpr std::size_t buffer_size</div><div class="ttdef"><b>Definition:</b> serial.cpp:9</div></div>
-<div class="ttc" id="astructfw_1_1drv_1_1acquisition_1_1detailed__sequence_html"><div class="ttname"><a href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html">fw::drv::acquisition::detailed_sequence</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:41</div></div>
-<div class="ttc" id="astructfw_1_1drv_1_1acquisition_1_1detailed__sequence_html_a8b479caaf7f8f1e06f3a4eb4f4292ec2"><div class="ttname"><a href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2">fw::drv::acquisition::detailed_sequence::used</a></div><div class="ttdeci">std::size_t used</div><div class="ttdef"><b>Definition:</b> acquisition.hpp:44</div></div>
-<div class="ttc" id="astructfw_1_1drv_1_1acquisition_1_1detailed__sequence_html_af4c7a1a5c395183a7c6191dea5be3c51"><div class="ttname"><a href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#af4c7a1a5c395183a7c6191dea5be3c51">fw::drv::acquisition::detailed_sequence::buffer</a></div><div class="ttdeci">uint16_t buffer[buffer_size]</div><div class="ttdef"><b>Definition:</b> acquisition.hpp:43</div></div>
+<div class="ttc" id="astructfw_1_1drv_1_1acquisition_1_1detailed__sequence_html"><div class="ttname"><a href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html">fw::drv::acquisition::detailed_sequence</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:57</div></div>
+<div class="ttc" id="astructfw_1_1drv_1_1acquisition_1_1detailed__sequence_html_a8b479caaf7f8f1e06f3a4eb4f4292ec2"><div class="ttname"><a href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2">fw::drv::acquisition::detailed_sequence::used</a></div><div class="ttdeci">std::size_t used</div><div class="ttdef"><b>Definition:</b> acquisition.hpp:60</div></div>
+<div class="ttc" id="astructfw_1_1drv_1_1acquisition_1_1detailed__sequence_html_af4c7a1a5c395183a7c6191dea5be3c51"><div class="ttname"><a href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#af4c7a1a5c395183a7c6191dea5be3c51">fw::drv::acquisition::detailed_sequence::buffer</a></div><div class="ttdeci">uint16_t buffer[buffer_size]</div><div class="ttdef"><b>Definition:</b> acquisition.hpp:59</div></div>
+<div class="ttc" id="astructfw_1_1drv_1_1empty__adc__detailed__cb_html"><div class="ttname"><a href="structfw_1_1drv_1_1empty__adc__detailed__cb.html">fw::drv::empty_adc_detailed_cb</a></div><div class="ttdef"><b>Definition:</b> callbacks.hpp:31</div></div>
+<div class="ttc" id="astructfw_1_1drv_1_1empty__value__cb_html"><div class="ttname"><a href="structfw_1_1drv_1_1empty__value__cb.html">fw::drv::empty_value_cb</a></div><div class="ttdef"><b>Definition:</b> callbacks.hpp:58</div></div>
 <div class="ttc" id="autil_8hpp_html"><div class="ttname"><a href="util_8hpp.html">util.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -281,7 +281,7 @@ $(document).ready(function(){initNavTree('acquisition__inl_8hpp_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="acquisition__inl_8hpp.html">acquisition_inl.hpp</a></li>
-    <li class="footer">Generated on Sun Jul 16 2023 21:45:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 22:42:35 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

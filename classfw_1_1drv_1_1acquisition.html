@@ -93,6 +93,9 @@ $(document).ready(function(){initNavTree('classfw_1_1drv_1_1acquisition.html',''
 </div><!--header-->
 <div class="contents">
 
+<p>TODO: rename this to better name /o...  
+ <a href="classfw_1_1drv_1_1acquisition.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="acquisition_8hpp_source.html">acquisition.hpp</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for fw::drv::acquisition&lt; N &gt;:</div>
@@ -161,7 +164,18 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a37612c6507d01a33de687b6f425d5164"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1acquisition.html#a37612c6507d01a33de687b6f425d5164">detailed_chid</a> = 0</td></tr>
 <tr class="separator:a37612c6507d01a33de687b6f425d5164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;std::size_t N&gt;<br />
+class fw::drv::acquisition&lt; N &gt;</h3>
+
+<p>TODO: rename this to better name /o... </p>
+<p>Pooler to get values from ADC, works with multiple channels in following way:</p><ul>
+<li>first channel (id=0) is detailed</li>
+<li>other channels are brief</li>
+</ul>
+<p>The detailed channel is scanned via DMA and ADC, the scan starts on one each <code>on_period_irq</code>, scans multiple values and ends on another call to <code>on_period_irq</code>. The brief channels are always scanned after the detailed one (between the ending on_period call and the next one), however, for brief channels we take only one measurement.</p>
+<p>The idea for servio use case is: one period we do detailed measurements of current and second period we just measure one of the other channels, to give CPU time for other stuff </p>
+</div><hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structfw_1_1drv_1_1acquisition_1_1handles" id="structfw_1_1drv_1_1acquisition_1_1handles"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structfw_1_1drv_1_1acquisition_1_1handles">&#9670;&nbsp;</a></span>fw::drv::acquisition::handles</h2>
 
@@ -585,7 +599,7 @@ template&lt;std::size_t N&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="namespacefw_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="classfw_1_1drv_1_1acquisition.html">acquisition</a></li>
-    <li class="footer">Generated on Sun Jul 16 2023 21:45:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 22:42:35 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

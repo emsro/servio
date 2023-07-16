@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1clock.html#a098a5006f09e3a87133a30dfc38f73d4">   27</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classfw_1_1drv_1_1clock.html#a098a5006f09e3a87133a30dfc38f73d4">setup</a>( em::function_view&lt; <span class="keywordtype">bool</span>( <a class="code" href="classfw_1_1drv_1_1clock.html#structfw_1_1drv_1_1clock_1_1handles">handles</a>&amp; ) &gt; setup_f )</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordtype">bool</span> res = setup_f( h_ );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> res = setup_f( h_ );</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                HAL_TIM_OC_Start( &amp;h_.<a class="code" href="classfw_1_1drv_1_1clock.html#a502c7d75a0fcfb6d421cb649bfadba24">tim</a>, h_.<a class="code" href="classfw_1_1drv_1_1clock.html#a6f2d5af8fbf8f3f3fc9d71e2e08e5519">tim_channel</a> );</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="clock_8hpp.html">clock.hpp</a></li>
-    <li class="footer">Generated on Sun Jul 16 2023 21:45:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 22:42:35 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

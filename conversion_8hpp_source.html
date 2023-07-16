@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('conversion_8hpp_source.html',''); init
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespacefw.html#aca40e9512538f1dc60d913483211ee19">    9</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="namespacefw.html#aca40e9512538f1dc60d913483211ee19">current</a>( <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp; conv, uint32_t raw_current, <span class="keyword">const</span> <a class="code" href="classfw_1_1drv_1_1hbridge.html">drv::hbridge</a>&amp; hb )</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">return</span> conv.<a class="code" href="structconverter.html#a8cb1044de319e60167cd89fe01a96d05">current</a>.<a class="code" href="classcurrent__converter.html#a0e8459100b0ecd154d81ff68d1c78bfa">convert</a>( raw_current ) * hb.<a class="code" href="classfw_1_1drv_1_1hbridge.html#af546a3f277b3ab7bbba8278eb75f437b">get_direction</a>();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">return</span> conv.<a class="code" href="structconverter.html#a8cb1044de319e60167cd89fe01a96d05">current</a>.<a class="code" href="classcurrent__converter.html#a0e8459100b0ecd154d81ff68d1c78bfa">convert</a>( raw_current ) * <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( hb.<a class="code" href="classfw_1_1drv_1_1hbridge.html#af546a3f277b3ab7bbba8278eb75f437b">get_direction</a>() );</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span></div>
@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('conversion_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="conversion_8hpp.html">conversion.hpp</a></li>
-    <li class="footer">Generated on Sun Jul 16 2023 21:45:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 22:42:35 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
