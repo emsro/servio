@@ -1,7 +1,6 @@
 #include "control.hpp"
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/conversion.hpp"
-#include "fw/drv/acquisition.hpp"
 #include "fw/drv/hbridge.hpp"
 
 #include <io.pb.h>
@@ -14,7 +13,10 @@ namespace fw
 struct dispatcher
 {
         drv::hbridge&                                   hb;
-        drv::acquisition&                               acquis;
+        const drv::position_interface&                  pos_drv;
+        const drv::current_interface&                   curr_drv;
+        const drv::vcc_interface&                       vcc_drv;
+        const drv::temperature_interface&               temp_drv;
         control&                                        ctl;
         metrics&                                        met;
         cfg_dispatcher&                                 cfg_disp;

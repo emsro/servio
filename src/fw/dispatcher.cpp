@@ -67,12 +67,15 @@ Mode get_mode( const control& ctl )
 }
 
 ServioToHost handle_get_property(
-    const control&          ctl,
-    const metrics&          met,
-    const converter&        conv,
-    const drv::acquisition& acquis,
-    const drv::hbridge&     hb,
-    const GetProperty&      msg )
+    const control&                    ctl,
+    const metrics&                    met,
+    const converter&                  conv,
+    const drv::position_interface&    pos_drv,
+    const drv::current_interface&     curr_drv,
+    const drv::vcc_interface&         vcc_drv,
+    const drv::temperature_interface& temp_drv,
+    const drv::hbridge&               hb,
+    const GetProperty&                msg )
 {
         Property prop;
         prop.which_pld = static_cast< pb_size_t >( msg.field_id );
@@ -81,16 +84,16 @@ ServioToHost handle_get_property(
                 prop.mode = get_mode( ctl );
                 break;
         case Property_current_tag:
-                prop.current = current( conv, acquis, hb );
+                prop.current = current( conv, curr_drv, hb );
                 break;
         case Property_vcc_tag:
-                prop.vcc = conv.vcc.convert( acquis.get_vcc() );
+                prop.vcc = conv.vcc.convert( vcc_drv.get_vcc() );
                 break;
         case Property_temp_tag:
-                prop.temp = conv.temp.convert( acquis.get_temp() );
+                prop.temp = conv.temp.convert( temp_drv.get_temperature() );
                 break;
         case Property_position_tag:
-                prop.position = position( conv, acquis );
+                prop.position = position( conv, pos_drv );
                 break;
         case Property_velocity_tag:
                 prop.velocity = met.get_velocity();
@@ -171,7 +174,15 @@ ServioToHost handle_message( dispatcher& dis, const HostToServio& msg )
                 return handle_set_mode( dis.now, dis.ctl, msg.set_mode );
         case HostToServio_get_property_tag:
                 return handle_get_property(
-                    dis.ctl, dis.met, dis.conv, dis.acquis, dis.hb, msg.get_property );
+                    dis.ctl,
+                    dis.met,
+                    dis.conv,
+                    dis.pos_drv,
+                    dis.curr_drv,
+                    dis.vcc_drv,
+                    dis.temp_drv,
+                    dis.hb,
+                    msg.get_property );
         case HostToServio_set_config_tag:
                 return handle_set_config( dis.cfg_disp, msg.set_config );
         case HostToServio_get_config_tag:

@@ -1,4 +1,5 @@
 #include "fw/board.hpp"
+#include "fw/drv/acquisition.hpp"
 
 namespace brd
 {

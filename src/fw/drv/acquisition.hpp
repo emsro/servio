@@ -1,5 +1,6 @@
 #include "base.hpp"
 #include "fw/drv/callbacks.hpp"
+#include "fw/drv/interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/view.h>
@@ -19,7 +20,11 @@ struct acquisition_status
         bool buffer_was_full = false;
 };
 
-class acquisition
+class acquisition : public position_interface,
+                    public current_interface,
+                    public vcc_interface,
+                    public temperature_interface,
+                    public period_cb_interface
 {
         enum adc_states
         {
@@ -58,38 +63,35 @@ public:
         void adc_conv_cplt_irq( ADC_HandleTypeDef* h );
         void adc_error_irq( ADC_HandleTypeDef* h );
         void dma_irq();
-        void period_elapsed_irq();
+        void on_period_irq();
 
         void start();
 
         // Callback is called each time current measurement of one PWM pulse.
         // The callback gets average current during that pulse.
         // (Does not happen every pulse!)
-        void                  set_current_callback( current_cb_interface& );
-        current_cb_interface& get_current_callback();
-
-        // Access last measured current reading
-        em::view< const uint16_t* > get_current_reading() const;
+        void                  set_current_callback( current_cb_interface& ) override;
+        current_cb_interface& get_current_callback() const override;
 
         // Callback is called each time new position is read, the argument is the position
-        void                   set_position_callback( position_cb_interface& );
-        position_cb_interface& get_position_callback();
+        void                   set_position_callback( position_cb_interface& ) override;
+        position_cb_interface& get_position_callback() const override;
 
-        uint32_t get_current() const
+        uint32_t get_current() const override
         {
                 return current_;
         }
-        uint32_t get_position() const
+        uint32_t get_position() const override
         {
                 return position_;
         }
-        uint32_t get_vcc() const
+        uint32_t get_vcc() const override
         {
                 return vcc_;
         }
-        uint32_t get_temp() const
+        uint32_t get_temperature() const override
         {
-                return vcc_;
+                return temp_;
         }
 
         const acquisition_status& get_status() const

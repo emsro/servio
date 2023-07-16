@@ -1,5 +1,6 @@
 #include "fw/board.hpp"
 
+#include "fw/drv/acquisition.hpp"
 #include "fw/util.hpp"
 #include "setup.hpp"
 
@@ -330,6 +331,40 @@ fw::drv::leds* setup_leds()
         }
 
         return &LEDS;
+}
+
+void start_callback( core_drivers& cdrv )
+{
+        if ( cdrv.position != nullptr ) {
+                // this implies that acquisition is OK
+                ACQUISITION.start();
+        }
+        if ( cdrv.hbridge != nullptr ) {
+                cdrv.hbridge->start();
+        }
+        if ( cdrv.comms != nullptr ) {
+                cdrv.comms->start();
+        }
+        if ( cdrv.leds != nullptr ) {
+                cdrv.leds->start();
+        }
+}
+
+core_drivers setup_core_drivers()
+{
+        fw::drv::acquisition* acquis = setup_acquisition();
+        return core_drivers{
+            .clock       = setup_clock(),
+            .position    = acquis,
+            .current     = acquis,
+            .vcc         = acquis,
+            .temperature = acquis,
+            .period_cb   = acquis,
+            .hbridge     = setup_hbridge(),
+            .comms       = setup_comms(),
+            .leds        = setup_leds(),
+            .start_cb    = start_callback,
+        };
 }
 
 }  // namespace brd

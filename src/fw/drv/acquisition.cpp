@@ -46,7 +46,7 @@ void acquisition::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
         case READ_POSITION:
                 HAL_ADC_Stop_IT( &h_.adc );
                 position_ = HAL_ADC_GetValue( &h_.adc );
-                position_cb_->on_position( position_ );
+                position_cb_->on_position_irq( position_ );
                 break;
         case READ_VCC:
                 HAL_ADC_Stop_IT( &h_.adc );
@@ -71,7 +71,7 @@ void acquisition::set_current_callback( current_cb_interface& cb )
 {
         current_cb_ = &cb;
 }
-current_cb_interface& acquisition::get_current_callback()
+current_cb_interface& acquisition::get_current_callback() const
 {
         return *current_cb_;
 }
@@ -132,12 +132,12 @@ void acquisition::set_position_callback( position_cb_interface& cb )
 {
         position_cb_ = &cb;
 }
-position_cb_interface& acquisition::get_position_callback()
+position_cb_interface& acquisition::get_position_callback() const
 {
         return *position_cb_;
 }
 
-void acquisition::period_elapsed_irq()
+void acquisition::on_period_irq()
 {
         HAL_StatusTypeDef res           = HAL_OK;
         std::size_t       next_buffer_i = ( current_sequence_i_ + 1 ) % current_sequences_.size();
@@ -171,7 +171,7 @@ void acquisition::period_elapsed_irq()
                 std::span readings( &next_se.buffer[0], next_se.used );
 
                 current_ = em::avg( readings );
-                current_cb_->on_current( current_, readings );
+                current_cb_->on_current_irq( current_, readings );
                 current_sequence_i_ = next_buffer_i;
 
                 side_state_ = next_side_state( side_state_ );
@@ -179,12 +179,6 @@ void acquisition::period_elapsed_irq()
                 start_simple_reading();
                 period_i_ += 1;
         }
-}
-
-em::view< const uint16_t* > acquisition::get_current_reading() const
-{
-        const current_sequence& se = current_sequences_[current_sequence_i_];
-        return em::view_n( &se.buffer[0], se.used );
 }
 
 }  // namespace fw::drv

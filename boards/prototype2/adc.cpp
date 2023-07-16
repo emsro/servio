@@ -1,4 +1,5 @@
 #include "fw/board.hpp"
+#include "fw/drv/acquisition.hpp"
 #include "fw/util.hpp"
 #include "setup.hpp"
 

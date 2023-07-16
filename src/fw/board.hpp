@@ -1,5 +1,4 @@
 #include "config.hpp"
-#include "fw/drv/acquisition.hpp"
 #include "fw/drv/clock.hpp"
 #include "fw/drv/comms.hpp"
 #include "fw/drv/debug_comms.hpp"
@@ -9,32 +8,55 @@
 
 #pragma once
 
+// TODO: eeeehe, this si not exactly right folder for this namespace
 namespace brd
 {
+
+/// TODO: maybe move to references and make setup function return an optional?
+struct core_drivers
+{
+        fw::drv::clock*                 clock;
+        fw::drv::position_interface*    position;
+        fw::drv::current_interface*     current;
+        fw::drv::vcc_interface*         vcc;
+        fw::drv::temperature_interface* temperature;
+        fw::drv::period_cb_interface*   period_cb;  // TODO: maybe imrpove naming here?
+        fw::drv::hbridge*               hbridge;
+        fw::drv::comms*                 comms;
+        fw::drv::leds*                  leds;
+        void ( *start_cb )( core_drivers& );
+
+        auto tie()
+        {
+                return em::decompose( *this );
+        }
+
+        bool any_uninitialized()
+        {
+                return em::any_of( tie(), []( const auto ptr ) {
+                        return ptr == nullptr;
+                } );
+        }
+};
 
 em::view< const em::view< std::byte* >* > get_persistent_pages();
 cfg_map                                   get_config();
 
-void                  setup_board();
-fw::drv::clock*       setup_clock();
-fw::drv::acquisition* setup_acquisition();
-fw::drv::hbridge*     setup_hbridge();
-fw::drv::comms*       setup_comms();
+void setup_board();
+
 fw::drv::debug_comms* setup_debug_comms();
-fw::drv::leds*        setup_leds();
+core_drivers          setup_core_drivers();
 
 }  // namespace brd
 
 namespace fw
 {
-inline drv::leds* setup_leds_with_stop_callback()
+inline void install_stop_callback( drv::leds* leds_ptr )
 {
-        drv::leds* leds_ptr = brd::setup_leds();
         if ( leds_ptr != nullptr ) {
                 STOP_CALLBACK = [leds_ptr] {
                         leds_ptr->force_red_led();
                 };
         }
-        return leds_ptr;
 };
 }  // namespace fw

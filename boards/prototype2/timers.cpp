@@ -135,7 +135,7 @@ bool setup_adc_timer( fw::drv::acquisition::handles& h, adc_timer_cfg cfg )
 bool setup_clock_timer( fw::drv::clock::handles& h, clock_timer_cfg cfg )
 {
         h.tim.Instance               = cfg.timer_instance;
-        h.tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1e6 );
+        h.tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1'000'000 );
         h.tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
         h.tim.Init.Period            = std::numeric_limits< uint32_t >::max();
         h.tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;

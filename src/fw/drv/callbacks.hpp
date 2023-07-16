@@ -1,3 +1,5 @@
+#include "fw/drv/interfaces.hpp"
+
 #include <cstdint>
 #include <span>
 
@@ -5,27 +7,6 @@
 
 namespace fw::drv
 {
-
-class current_cb_interface
-{
-public:
-        virtual void on_current( uint32_t current, std::span< uint16_t > profile ) = 0;
-        virtual ~current_cb_interface()                                            = default;
-};
-
-class position_cb_interface
-{
-public:
-        virtual void on_position( uint32_t pos ) = 0;
-        virtual ~position_cb_interface()         = default;
-};
-
-class period_cb_interface
-{
-public:
-        virtual void on_period()       = 0;
-        virtual ~period_cb_interface() = default;
-};
 
 template < typename Callable >
 struct current_cb : public current_cb_interface
@@ -35,7 +16,7 @@ struct current_cb : public current_cb_interface
         {
         }
 
-        void on_current( uint32_t current, std::span< uint16_t > profile )
+        void on_current_irq( uint32_t current, std::span< uint16_t > profile )
         {
                 cb( current, profile );
         }
@@ -45,7 +26,7 @@ struct current_cb : public current_cb_interface
 
 struct empty_current_cb : public current_cb_interface
 {
-        void on_current( uint32_t, std::span< uint16_t > )
+        void on_current_irq( uint32_t, std::span< uint16_t > )
         {
         }
 };
@@ -58,7 +39,7 @@ struct position_cb : public position_cb_interface
         {
         }
 
-        virtual void on_position( uint32_t pos )
+        virtual void on_position_irq( uint32_t pos )
         {
                 cb( pos );
         }
@@ -68,7 +49,7 @@ struct position_cb : public position_cb_interface
 
 struct empty_position_cb : public position_cb_interface
 {
-        virtual void on_position( uint32_t )
+        virtual void on_position_irq( uint32_t )
         {
         }
 };
@@ -81,7 +62,7 @@ struct period_cb : public period_cb_interface
         {
         }
 
-        virtual void on_period()
+        virtual void on_period_irq()
         {
                 cb();
         }
@@ -91,7 +72,7 @@ struct period_cb : public period_cb_interface
 
 struct empty_period_cb : public period_cb_interface
 {
-        virtual void on_period()
+        virtual void on_period_irq()
         {
         }
 };

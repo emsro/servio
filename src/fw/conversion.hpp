@@ -1,5 +1,4 @@
 #include "converter.hpp"
-#include "fw/drv/acquisition.hpp"
 #include "fw/drv/hbridge.hpp"
 
 #pragma once
@@ -11,14 +10,16 @@ inline float current( const converter& conv, uint32_t raw_current, const drv::hb
 {
         return conv.current.convert( raw_current ) * hb.get_direction();
 }
-inline float current( const converter& conv, const drv::acquisition& acqui, const drv::hbridge& hb )
+
+inline float
+current( const converter& conv, const drv::current_interface& curr_drv, const drv::hbridge& hb )
 {
-        return current( conv, acqui.get_current(), hb );
+        return current( conv, curr_drv.get_current(), hb );
 }
 
-inline float position( const converter& conv, const drv::acquisition& acqui )
+inline float position( const converter& conv, const drv::position_interface& pos_drv )
 {
-        return conv.position.convert( acqui.get_position() );
+        return conv.position.convert( pos_drv.get_position() );
 }
 
 }  // namespace fw

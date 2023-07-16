@@ -1,6 +1,5 @@
 #include "control.hpp"
 #include "converter.hpp"
-#include "drv/acquisition.hpp"
 #include "drv/clock.hpp"
 #include "drv/hbridge.hpp"
 #include "fw/conversion.hpp"
@@ -11,23 +10,6 @@
 
 namespace fw
 {
-
-class acquisition_period_callback : public drv::period_cb_interface
-{
-public:
-        acquisition_period_callback( drv::acquisition& acq )
-          : acq_( acq )
-        {
-        }
-
-        virtual void on_period()
-        {
-                acq_.period_elapsed_irq();
-        }
-
-private:
-        drv::acquisition& acq_;
-};
 
 class current_callback : public drv::current_cb_interface
 {
@@ -40,7 +22,7 @@ public:
         {
         }
 
-        virtual void on_current( uint32_t curr, std::span< uint16_t > )
+        virtual void on_current_irq( uint32_t curr, std::span< uint16_t > )
         {
                 float c = current( conv_, curr, hb_ );
 
@@ -66,7 +48,7 @@ public:
         {
         }
 
-        virtual void on_position( uint32_t position )
+        virtual void on_position_irq( uint32_t position )
         {
                 microseconds now = clk_.get_us();
 

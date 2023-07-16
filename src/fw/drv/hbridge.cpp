@@ -32,7 +32,7 @@ void hbridge::timer_period_irq( TIM_HandleTypeDef* h )
         if ( h != &h_.timer ) {
                 return;
         }
-        period_cb_->on_period();
+        period_cb_->on_period_irq();
 }
 
 void hbridge::timer_irq()

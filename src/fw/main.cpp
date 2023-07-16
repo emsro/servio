@@ -48,7 +48,8 @@ int main()
 
         em::view                   pages     = brd::get_persistent_pages();
         std::optional< cfg::page > last_page = cfg::find_latest_page( pages );
-        cfg::payload               last_cfg_payload{ .git_ver = "", .id = 0 };
+        // TODO: move the config logic into separate stuff so it can be used in tests
+        cfg::payload last_cfg_payload{ .git_ver = "", .id = 0 };
         if ( last_page.has_value() ) {
                 auto check_f = [&]( const cfg::payload& ) {
                         return true;
@@ -60,35 +61,37 @@ int main()
                 }
         }
 
-        fw::drv::clock*       clock_ptr       = brd::setup_clock();
-        fw::drv::leds*        leds_ptr        = fw::setup_leds_with_stop_callback();
-        fw::drv::acquisition* acquisition_ptr = brd::setup_acquisition();
-        fw::drv::hbridge*     hbridge_ptr     = brd::setup_hbridge();
-        fw::drv::comms*       comms_ptr       = brd::setup_comms();
+        brd::core_drivers cdrv = brd::setup_core_drivers();
 
-        if ( clock_ptr == nullptr || acquisition_ptr == nullptr || hbridge_ptr == nullptr ||
-             comms_ptr == nullptr || leds_ptr == nullptr ) {
+        if ( cdrv.any_uninitialized() ) {
                 fw::stop_exec();
         }
 
-        fw::core cor{ clock_ptr->get_us(), *acquisition_ptr, *clock_ptr };
-        leds_ptr->update( cor.ind.get_state() );
+        fw::core cor{ cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock };
+        cdrv.leds->update( cor.ind.get_state() );
 
         fw::standard_callbacks cbs(
-            *hbridge_ptr, *acquisition_ptr, *clock_ptr, cor.ctl, cor.met, cor.conv );
+            *cdrv.hbridge,
+            *cdrv.clock,
+            *cdrv.position,
+            *cdrv.current,
+            *cdrv.period_cb,
+            cor.ctl,
+            cor.met,
+            cor.conv );
 
         fw::cfg_dispatcher cfg_dis{ cfg, cor };
         cfg_dis.full_apply();
 
-        fw::multistart( *leds_ptr, *acquisition_ptr, *hbridge_ptr, *comms_ptr );
+        cdrv.start_cb( cdrv );
 
-        cor.ind.on_event( clock_ptr->get_us(), indication_event::INITIALIZED );
+        cor.ind.on_event( cdrv.clock->get_us(), indication_event::INITIALIZED );
 
         std::byte input_buffer[HostToServioPacket_size];
         std::byte output_buffer[ServioToHostPacket_size];
 
         while ( true ) {
-                cor.tick( *leds_ptr, clock_ptr->get_us() );
+                cor.tick( *cdrv.leds, cdrv.clock->get_us() );
 
                 auto write_config = [&]( const cfg_map* cfg ) -> bool {
                         cfg::payload pld{
@@ -99,16 +102,19 @@ int main()
                 };
 
                 fw::dispatcher dis{
-                    .hb         = *hbridge_ptr,
-                    .acquis     = *acquisition_ptr,
+                    .hb         = *cdrv.hbridge,
+                    .pos_drv    = *cdrv.position,
+                    .curr_drv   = *cdrv.current,
+                    .vcc_drv    = *cdrv.vcc,
+                    .temp_drv   = *cdrv.temperature,
                     .ctl        = cor.ctl,
                     .met        = cor.met,
                     .cfg_disp   = cfg_dis,
                     .cfg_writer = write_config,
                     .conv       = cor.conv,
-                    .now        = clock_ptr->get_us() };
+                    .now        = cdrv.clock->get_us() };
 
-                auto [lsucc, ldata] = comms_ptr->load_message( input_buffer );
+                auto [lsucc, ldata] = cdrv.comms->load_message( input_buffer );
 
                 if ( !lsucc ) {
                         fw::stop_exec();
@@ -118,14 +124,14 @@ int main()
                         continue;
                 }
 
-                cor.ind.on_event( clock_ptr->get_us(), indication_event::INCOMING_MESSAGE );
+                cor.ind.on_event( cdrv.clock->get_us(), indication_event::INCOMING_MESSAGE );
 
                 auto [succ, odata] = fw::handle_message_packet( dis, ldata, output_buffer );
 
                 if ( !succ ) {
                         // TODO: what now?
                 } else {
-                        comms_ptr->send( odata );
+                        cdrv.comms->send( odata );
                 }
         }
 }
