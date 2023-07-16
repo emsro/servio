@@ -14,6 +14,60 @@ fw::drv::debug_comms DEBUG_COMMS{};
 fw::drv::hbridge     HBRIDGE{};
 fw::drv::leds        LEDS;
 
+struct : fw::drv::vcc_interface
+{
+        uint32_t get_vcc() const override
+        {
+                // TODO: well, the hardcoded constant is not ideal
+                return ACQUISITION.get_val( 1 );
+        }
+} VCC;
+
+struct : fw::drv::temperature_interface
+{
+        uint32_t get_temperature() const override
+        {
+                // TODO: well, the hardcoded constant is not ideal
+                return ACQUISITION.get_val( 2 );
+        }
+} TEMPERATURE;
+
+struct : fw::drv::position_interface
+{
+        uint32_t get_position() const override
+        {
+                // TODO: well, the hardcoded constant is not ideal
+                return ACQUISITION.get_val( 3 );
+        }
+
+        void set_position_callback( fw::drv::position_cb_interface& cb )
+        {
+                ACQUISITION.set_brief_callback( 3, cb );
+        }
+        fw::drv::position_cb_interface& get_position_callback() const
+        {
+                return ACQUISITION.get_brief_callback( 3 );
+        }
+} POSITION;
+
+struct : fw::drv::current_interface
+{
+        uint32_t get_current() const override
+        {
+                // TODO: well, the hardcoded constant is not ideal
+                return ACQUISITION.get_val( 0 );
+        }
+
+        void set_current_callback( fw::drv::current_cb_interface& cb )
+        {
+                ACQUISITION.set_detailed_callback( cb );
+        }
+        fw::drv::current_cb_interface& get_current_callback() const
+        {
+                return ACQUISITION.get_detailed_callback();
+        }
+} CURRENT;
+
 }  // namespace brd
 
 extern "C" {
@@ -355,10 +409,10 @@ core_drivers setup_core_drivers()
         fw::drv::acquisition* acquis = setup_acquisition();
         return core_drivers{
             .clock       = setup_clock(),
-            .position    = acquis,
-            .current     = acquis,
-            .vcc         = acquis,
-            .temperature = acquis,
+            .position    = acquis == nullptr ? nullptr : &POSITION,
+            .current     = acquis == nullptr ? nullptr : &CURRENT,
+            .vcc         = acquis == nullptr ? nullptr : &VCC,
+            .temperature = acquis == nullptr ? nullptr : &TEMPERATURE,
             .period_cb   = acquis,
             .hbridge     = setup_hbridge(),
             .comms       = setup_comms(),

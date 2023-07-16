@@ -21,11 +21,7 @@ struct acquisition_status
         bool buffer_was_full = false;
 };
 
-class acquisition : public position_interface,
-                    public current_interface,
-                    public vcc_interface,
-                    public temperature_interface,
-                    public period_cb_interface
+class acquisition : public period_cb_interface
 {
 public:
         static constexpr std::size_t chan_n        = 4;
@@ -55,35 +51,19 @@ public:
         void adc_conv_cplt_irq( ADC_HandleTypeDef* h );
         void adc_error_irq( ADC_HandleTypeDef* h );
         void dma_irq();
-        void on_period_irq();
+        void on_period_irq() override;
 
         void start();
 
-        // Callback is called each time current measurement of one PWM pulse.
-        // The callback gets average current during that pulse.
-        // (Does not happen every pulse!)
-        void                  set_current_callback( current_cb_interface& ) override;
-        current_cb_interface& get_current_callback() const override;
+        void                       set_detailed_callback( adc_detailed_cb_interface& );
+        adc_detailed_cb_interface& get_detailed_callback() const;
 
-        // Callback is called each time new position is read, the argument is the position
-        void                   set_position_callback( position_cb_interface& ) override;
-        position_cb_interface& get_position_callback() const override;
+        void                set_brief_callback( std::size_t i, value_cb_interface& );
+        value_cb_interface& get_brief_callback( std::size_t i ) const;
 
-        uint32_t get_current() const override
+        uint32_t get_val( std::size_t i ) const
         {
-                return vals_[0];
-        }
-        uint32_t get_position() const override
-        {
-                return vals_[1];
-        }
-        uint32_t get_vcc() const override
-        {
-                return vals_[2];
-        }
-        uint32_t get_temperature() const override
-        {
-                return vals_[3];
+                return vals_[i];
         }
 
         const acquisition_status& get_status() const
@@ -102,10 +82,10 @@ private:
 
         acquisition_status status_;
 
-        current_cb_interface*  current_cb_;
-        position_cb_interface* position_cb_;
-
-        std::array< uint32_t, chan_n > vals_;
+        adc_detailed_cb_interface* detailed_cb_;
+        // note: brief_cbs_[0] is never used as that is detailed one
+        std::array< value_cb_interface*, chan_n > brief_cbs_;
+        std::array< uint32_t, chan_n >            vals_;
 
         std::size_t                        period_i_            = 0;
         std::size_t                        detailed_sequence_i_ = 0;

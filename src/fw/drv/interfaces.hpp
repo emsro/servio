@@ -6,19 +6,22 @@
 namespace fw::drv
 {
 
-class current_cb_interface
+class adc_detailed_cb_interface
 {
 public:
-        virtual void on_current_irq( uint32_t current, std::span< uint16_t > profile ) = 0;
-        virtual ~current_cb_interface()                                                = default;
+        virtual void on_value_irq( uint32_t val, std::span< uint16_t > profile ) = 0;
+        virtual ~adc_detailed_cb_interface()                                     = default;
 };
 
-class position_cb_interface
+class value_cb_interface
 {
 public:
-        virtual void on_position_irq( uint32_t pos ) = 0;
-        virtual ~position_cb_interface()             = default;
+        virtual void on_value_irq( uint32_t val ) = 0;
+        virtual ~value_cb_interface()             = default;
 };
+
+using current_cb_interface  = adc_detailed_cb_interface;
+using position_cb_interface = value_cb_interface;
 
 class period_cb_interface
 {
@@ -26,6 +29,7 @@ public:
         virtual void on_period_irq()   = 0;
         virtual ~period_cb_interface() = default;
 };
+
 class position_interface
 {
 public:

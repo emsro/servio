@@ -49,16 +49,21 @@ bool setup_adc( fw::drv::acquisition::handles& h, adc_cfg cfg )
 
         mmode.Mode = ADC_MODE_INDEPENDENT;
 
-        // TODO: we are ignoring temp
-        // cfg.temp.channel
-        for ( uint32_t channel : { cfg.current.channel, cfg.position.channel, cfg.vcc.channel } ) {
+        for ( uint32_t channel : {
+                  cfg.current.channel,
+                  cfg.vcc.channel,
+                  cfg.temp.channel,
+                  cfg.position.channel,
+              } ) {
                 h.chconfs.push_back( ADC_ChannelConfTypeDef{
-                    .Channel      = channel,
-                    .Rank         = ADC_REGULAR_RANK_1,
-                    .SamplingTime = ADC_SAMPLETIME_92CYCLES_5,
-                    .SingleDiff   = ADC_SINGLE_ENDED,
-                    .OffsetNumber = ADC_OFFSET_NONE,
-                    .Offset       = 0,
+                    .Channel          = channel,
+                    .Rank             = ADC_REGULAR_RANK_1,
+                    .SamplingTime     = ADC_SAMPLETIME_92CYCLES_5,
+                    .SingleDiff       = ADC_SINGLE_ENDED,
+                    .OffsetNumber     = ADC_OFFSET_NONE,
+                    .Offset           = 0,
+                    .OffsetSign       = 0,
+                    .OffsetSaturation = DISABLE,
                 } );
         }
 
@@ -72,7 +77,7 @@ bool setup_adc( fw::drv::acquisition::handles& h, adc_cfg cfg )
         h.dma.Init.Mode                = DMA_NORMAL;
         h.dma.Init.Priority            = cfg.dma.priority;
 
-        for ( const pinch_cfg& ch : { cfg.current, cfg.position, cfg.vcc, cfg.temp } ) {
+        for ( const pinch_cfg& ch : { cfg.current, cfg.vcc, cfg.temp, cfg.position } ) {
                 if ( ch.pin == 0 || ch.port == nullptr ) {
                         continue;
                 }

@@ -22,7 +22,7 @@ public:
         {
         }
 
-        virtual void on_current_irq( uint32_t curr, std::span< uint16_t > )
+        virtual void on_value_irq( uint32_t curr, std::span< uint16_t > )
         {
                 float c = current( conv_, curr, hb_ );
 
@@ -48,7 +48,7 @@ public:
         {
         }
 
-        virtual void on_position_irq( uint32_t position )
+        virtual void on_value_irq( uint32_t position )
         {
                 microseconds now = clk_.get_us();
 
