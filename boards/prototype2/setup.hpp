@@ -4,6 +4,8 @@
 namespace brd
 {
 
+using acquisition_type = fw::drv::acquisition< 4 >;
+
 struct dma_cfg
 {
         DMA_Channel_TypeDef* instance;
@@ -32,7 +34,7 @@ struct adc_cfg
         pinch_cfg    temp;
 };
 
-bool setup_adc( fw::drv::acquisition::handles&, adc_cfg cfg );
+bool setup_adc( acquisition_type::handles&, adc_cfg cfg );
 
 struct adc_timer_cfg
 {
@@ -40,7 +42,7 @@ struct adc_timer_cfg
         uint32_t     channel;
 };
 
-bool setup_adc_timer( fw::drv::acquisition::handles&, adc_timer_cfg cfg );
+bool setup_adc_timer( acquisition_type::handles&, adc_timer_cfg cfg );
 
 struct pin_cfg
 {

@@ -21,7 +21,7 @@ namespace brd
 ///   circ_current - PA2 - IN3
 ///   low_side_current - PA3 - IN4
 ///
-bool setup_adc( fw::drv::acquisition::handles& h, adc_cfg cfg )
+bool setup_adc( acquisition_type::handles& h, adc_cfg cfg )
 {
         if ( cfg.adc_instance != ADC1 && cfg.adc_instance != ADC2 ) {
                 // this function relies a lot on the fact that adc can be either ADC1 or ADC2

@@ -21,10 +21,11 @@ struct acquisition_status
         bool buffer_was_full = false;
 };
 
+template < std::size_t N >
 class acquisition : public period_cb_interface
 {
 public:
-        static constexpr std::size_t chan_n        = 4;
+        static constexpr std::size_t chan_n        = N;
         static constexpr std::size_t detailed_chid = 0;
 
         struct handles
@@ -61,10 +62,7 @@ public:
         void                set_brief_callback( std::size_t i, value_cb_interface& );
         value_cb_interface& get_brief_callback( std::size_t i ) const;
 
-        uint32_t get_val( std::size_t i ) const
-        {
-                return vals_[i];
-        }
+        uint32_t get_val( std::size_t i ) const;
 
         const acquisition_status& get_status() const
         {
@@ -97,3 +95,5 @@ private:
 };
 
 }  // namespace fw::drv
+
+#include "acquisition_inl.hpp"

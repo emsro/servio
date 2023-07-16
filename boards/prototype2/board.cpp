@@ -8,7 +8,7 @@ namespace brd
 {
 
 fw::drv::clock       CLOCK{};
-fw::drv::acquisition ACQUISITION{};
+acquisition_type     ACQUISITION{};
 fw::drv::comms       COMMS{};
 fw::drv::debug_comms DEBUG_COMMS{};
 fw::drv::hbridge     HBRIDGE{};
@@ -153,9 +153,9 @@ fw::drv::clock* setup_clock()
         return &CLOCK;
 }
 
-fw::drv::acquisition* setup_acquisition()
+acquisition_type* setup_acquisition()
 {
-        auto acq_setup = []( fw::drv::acquisition::handles& h ) {
+        auto acq_setup = []( acquisition_type::handles& h ) {
                 __HAL_RCC_ADC12_CLK_ENABLE();
                 __HAL_RCC_DMA1_CLK_ENABLE();
                 __HAL_RCC_DMAMUX1_CLK_ENABLE();
@@ -406,7 +406,7 @@ void start_callback( core_drivers& cdrv )
 
 core_drivers setup_core_drivers()
 {
-        fw::drv::acquisition* acquis = setup_acquisition();
+        acquisition_type* acquis = setup_acquisition();
         return core_drivers{
             .clock       = setup_clock(),
             .position    = acquis == nullptr ? nullptr : &POSITION,

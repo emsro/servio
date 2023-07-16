@@ -1,5 +1,3 @@
-#include "fw/drv/acquisition.hpp"
-
 #include "fw/util.hpp"
 
 namespace fw::drv
@@ -10,7 +8,8 @@ namespace
         empty_adc_detailed_cb EMPTY_ADC_DETAILED_CB;
 }  // namespace
 
-acquisition::acquisition()
+template < std::size_t N >
+acquisition< N >::acquisition()
   : detailed_cb_( &EMPTY_ADC_DETAILED_CB )
 {
         for ( value_cb_interface*& ptr : brief_cbs_ ) {
@@ -18,28 +17,28 @@ acquisition::acquisition()
         }
 }
 
-bool acquisition::setup( em::function_view< bool( handles& ) > setup_f )
+template < std::size_t N >
+bool acquisition< N >::setup( em::function_view< bool( handles& ) > setup_f )
 {
         return setup_f( h_ );
 }
-void acquisition::dma_irq()
-{
-        HAL_DMA_IRQHandler( &h_.dma );
-}
 
-void acquisition::adc_irq()
+template < std::size_t N >
+void acquisition< N >::adc_irq()
 {
         HAL_ADC_IRQHandler( &h_.adc );
 }
 
-void acquisition::adc_error_irq( ADC_HandleTypeDef* h )
+template < std::size_t N >
+void acquisition< N >::adc_error_irq( ADC_HandleTypeDef* h )
 {
         std::ignore = h;
         // TODO: well this was aggresive, convert to a flag
         // stop_exec();
 }
 
-void acquisition::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
+template < std::size_t N >
+void acquisition< N >::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
 {
         if ( h != &h_.adc ) {
                 return;
@@ -55,47 +54,14 @@ void acquisition::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
         switch_channel( detailed_chid );
 }
 
-void acquisition::start()
+template < std::size_t N >
+void acquisition< N >::dma_irq()
 {
-        HAL_TIM_OC_Start( &h_.tim, h_.tim_channel );
+        HAL_DMA_IRQHandler( &h_.dma );
 }
 
-void acquisition::set_detailed_callback( adc_detailed_cb_interface& cb )
-{
-        detailed_cb_ = &cb;
-}
-adc_detailed_cb_interface& acquisition::get_detailed_callback() const
-{
-        return *detailed_cb_;
-}
-
-void acquisition::switch_channel( std::size_t chid )
-{
-        HAL_StatusTypeDef res = HAL_ADC_ConfigChannel( &h_.adc, &h_.chconfs[chid] );
-        if ( res != HAL_OK ) {
-                stop_exec();
-        }
-        channel_index_ = chid;
-}
-void acquisition::start_brief_reading()
-{
-        HAL_StatusTypeDef res = HAL_ADC_Start_IT( &h_.adc );
-        if ( res != HAL_OK ) {
-                stop_exec();
-        }
-}
-
-void acquisition::set_brief_callback( std::size_t i, value_cb_interface& cb )
-{
-        brief_cbs_[i] = &cb;
-}
-
-value_cb_interface& acquisition::get_brief_callback( std::size_t i ) const
-{
-        return *brief_cbs_[i];
-}
-
-void acquisition::on_period_irq()
+template < std::size_t N >
+void acquisition< N >::on_period_irq()
 {
         HAL_StatusTypeDef res           = HAL_OK;
         std::size_t       next_buffer_i = ( detailed_sequence_i_ + 1 ) % detailed_sequences_.size();
@@ -137,6 +103,61 @@ void acquisition::on_period_irq()
                 switch_channel( brief_index_ );
                 start_brief_reading();
                 period_i_ += 1;
+        }
+}
+
+template < std::size_t N >
+void acquisition< N >::start()
+{
+        HAL_TIM_OC_Start( &h_.tim, h_.tim_channel );
+}
+
+template < std::size_t N >
+void acquisition< N >::set_detailed_callback( adc_detailed_cb_interface& cb )
+{
+        detailed_cb_ = &cb;
+}
+
+template < std::size_t N >
+adc_detailed_cb_interface& acquisition< N >::get_detailed_callback() const
+{
+        return *detailed_cb_;
+}
+
+template < std::size_t N >
+void acquisition< N >::set_brief_callback( std::size_t i, value_cb_interface& cb )
+{
+        brief_cbs_[i] = &cb;
+}
+
+template < std::size_t N >
+value_cb_interface& acquisition< N >::get_brief_callback( std::size_t i ) const
+{
+        return *brief_cbs_[i];
+}
+
+template < std::size_t N >
+uint32_t acquisition< N >::get_val( std::size_t i ) const
+{
+        return vals_[i];
+}
+
+template < std::size_t N >
+void acquisition< N >::switch_channel( std::size_t chid )
+{
+        HAL_StatusTypeDef res = HAL_ADC_ConfigChannel( &h_.adc, &h_.chconfs[chid] );
+        if ( res != HAL_OK ) {
+                stop_exec();
+        }
+        channel_index_ = chid;
+}
+
+template < std::size_t N >
+void acquisition< N >::start_brief_reading()
+{
+        HAL_StatusTypeDef res = HAL_ADC_Start_IT( &h_.adc );
+        if ( res != HAL_OK ) {
+                stop_exec();
         }
 }
 

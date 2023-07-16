@@ -96,7 +96,7 @@ bool setup_hbridge_timers( fw::drv::hbridge::handles& h, hb_timer_cfg cfg )
         return true;
 }
 
-bool setup_adc_timer( fw::drv::acquisition::handles& h, adc_timer_cfg cfg )
+bool setup_adc_timer( acquisition_type::handles& h, adc_timer_cfg cfg )
 {
         h.tim.Instance               = cfg.timer_instance;
         h.tim.Init.Prescaler         = 0;
