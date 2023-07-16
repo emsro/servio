@@ -6,7 +6,7 @@ var searchData=
   ['cfg_5fget_5fcmd_749',['cfg_get_cmd',['../namespacehost.html#a415cab07a8445ad269bd343954f48541',1,'host']]],
   ['cfg_5fquery_5fcmd_750',['cfg_query_cmd',['../namespacehost.html#a9973d6f72a836a5e3c0b90444f083b04',1,'host']]],
   ['cfg_5fset_5fcmd_751',['cfg_set_cmd',['../namespacehost.html#ac268f4e132a1131d3632e56649cfbdcc',1,'host']]],
-  ['clear_5fstatus_752',['clear_status',['../classfw_1_1drv_1_1acquisition.html#a91e9d4b6b7d1c70744931ba0876920df',1,'fw::drv::acquisition']]],
+  ['clear_5fstatus_752',['clear_status',['../classfw_1_1drv_1_1acquisition.html#a667c3bf4264ac6b17e945d1efbaef859',1,'fw::drv::acquisition']]],
   ['clock_753',['clock',['../classfw_1_1drv_1_1clock.html#ab50085af20daae2cc74a51524ed0310c',1,'fw::drv::clock::clock()=default'],['../classfw_1_1drv_1_1clock.html#ae2a2d3e67305da316543756a31420c26',1,'fw::drv::clock::clock(clock &amp;&amp;)=delete'],['../classfw_1_1drv_1_1clock.html#a5c34e8f7ff7c2e79239f9b1b81772067',1,'fw::drv::clock::clock(const clock &amp;)=delete']]],
   ['comms_754',['comms',['../classfw_1_1drv_1_1comms.html#a793dd622a8dfcd9ed879f8c88f24743a',1,'fw::drv::comms::comms(comms &amp;&amp;)=delete'],['../classfw_1_1drv_1_1comms.html#a23746de8f61e40dc48da7f1cfbea8d00',1,'fw::drv::comms::comms(const comms &amp;)=delete'],['../classfw_1_1drv_1_1comms.html#a8aa92e5eaf23260c0ebf7087673d58c2',1,'fw::drv::comms::comms()=default']]],
   ['control_755',['control',['../classcontrol.html#a87b46cf1786ff7aa079a825f53404865',1,'control']]],

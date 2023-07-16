@@ -1,6 +1,6 @@
 var structfw_1_1drv_1_1acquisition_1_1detailed__sequence =
 [
-    [ "buffer", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#aab84c36a99ccb5493f8c73e7cff2266a", null ],
-    [ "buffer_size", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a862610468ee489dbaa594fc7192ebf8b", null ],
-    [ "used", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a9a7dfc39fe74c0fe9c80c1cfc0e26d46", null ]
+    [ "buffer", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#af4c7a1a5c395183a7c6191dea5be3c51", null ],
+    [ "buffer_size", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a09378c573aec048a9851f0a27521820f", null ],
+    [ "used", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2", null ]
 ];

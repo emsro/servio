@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"it_8cpp.html#aafb8d3e0fd06464b1ee0ae1edbc3c7d6":[12,0,1,3,12,7],
 "it_8cpp.html#adbdfb05858cc36fc520974df37ec3cb0":[12,0,1,3,12,1],
 "kalman_8hpp.html":[12,0,1,14],
 "kalman_8hpp.html#a0e377e28a6a36addfe5a14f353839f9c":[12,0,1,14,10],
@@ -160,15 +161,15 @@ var NAVTREEINDEX2 =
 "namespacefw.html#structfw_1_1hal__check":[12,0,1,3,19,1],
 "namespacefw_1_1drv.html":[10,0,3,0],
 "namespacefw_1_1drv.html#a12e3863a064c39cc743a29202dcca663":[10,0,3,0,23],
-"namespacefw_1_1drv.html#a14fbc9ffa08fd7ba33393bd9e82f4379":[12,0,1,3,0,1,0,1],
+"namespacefw_1_1drv.html#a14fbc9ffa08fd7ba33393bd9e82f4379":[12,0,1,3,0,0,0,1],
 "namespacefw_1_1drv.html#a53f5067b8a0647454a03fc912a7e1266":[10,0,3,0,25],
 "namespacefw_1_1drv.html#a6eaf1fbd19d91c8c14dd188cfbf972ec":[10,0,3,0,24],
 "namespacefw_1_1drv.html#aab47d8f9464d5e9fa03a9a1fba9cbaad":[10,0,3,0,22],
 "namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490":[10,0,3,0,26],
 "namespacefw_1_1drv.html#aedba374016375efa23fdf6c85b471127":[10,0,3,0,20],
 "namespacefw_1_1drv.html#af03024374505b5a8e6a74ece9a0037df":[10,0,3,0,21],
-"namespacefw_1_1drv.html#af977b5a7be96a3a0cb62991781d4398a":[12,0,1,3,0,1,0,0],
-"namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status":[12,0,1,3,0,1,0],
+"namespacefw_1_1drv.html#af977b5a7be96a3a0cb62991781d4398a":[12,0,1,3,0,0,0,0],
+"namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status":[12,0,1,3,0,0,0],
 "namespacehost.html":[10,0,4],
 "namespacehost.html#a03287d14431b87669cb6917763056669":[10,0,4,30],
 "namespacehost.html#a0b1e497a05ad81bcb1596f75e0f775f6":[10,0,4,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "serial_8cpp.html#a0b1e497a05ad81bcb1596f75e0f775f6":[12,0,1,4,6,14],
 "serial_8cpp.html#a0c0bae4d9f75eb6fffa91dccbeb27d8f":[12,0,1,4,6,13],
 "serial_8cpp.html#a1c6a5c8c82911693f92b3b744ede4865":[12,0,1,4,6,4],
-"serial_8cpp.html#a29a5403ae3a8c17445a5a8b055997a62":[12,0,1,4,6,7],
-"serial_8cpp.html#a3224b1b88234bcb41a709567bbba8ef1":[12,0,1,4,6,2]
+"serial_8cpp.html#a29a5403ae3a8c17445a5a8b055997a62":[12,0,1,4,6,7]
 };

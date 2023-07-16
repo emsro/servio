@@ -21,7 +21,7 @@ var hierarchy =
     [ "current_converter", "classcurrent__converter.html", null ],
     [ "fw::drv::current_interface", "classfw_1_1drv_1_1current__interface.html", null ],
     [ "fw::drv::debug_comms", "classfw_1_1drv_1_1debug__comms.html", null ],
-    [ "fw::drv::acquisition::detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", null ],
+    [ "fw::drv::acquisition< N >::detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
     [ "std::exception", null, [
       [ "host::servio_exception", "structhost_1_1servio__exception.html", [
@@ -32,7 +32,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "fw::hal_check", "namespacefw.html#structfw_1_1hal__check", null ],
-    [ "fw::drv::acquisition::handles", "classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles", null ],
+    [ "fw::drv::acquisition< N >::handles", "classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles", null ],
     [ "fw::drv::clock::handles", "classfw_1_1drv_1_1clock.html#structfw_1_1drv_1_1clock_1_1handles", null ],
     [ "fw::drv::comms::handles", "classfw_1_1drv_1_1comms.html#structfw_1_1drv_1_1comms_1_1handles", null ],
     [ "fw::drv::debug_comms::handles", "classfw_1_1drv_1_1debug__comms.html#structfw_1_1drv_1_1debug__comms_1_1handles", null ],
@@ -48,7 +48,7 @@ var hierarchy =
     [ "fw::monitor", "classfw_1_1monitor.html", null ],
     [ "cfg::payload", "structcfg_1_1payload.html", null ],
     [ "fw::drv::period_cb_interface", "classfw_1_1drv_1_1period__cb__interface.html", [
-      [ "fw::drv::acquisition", "classfw_1_1drv_1_1acquisition.html", null ],
+      [ "fw::drv::acquisition< N >", "classfw_1_1drv_1_1acquisition.html", null ],
       [ "fw::drv::empty_period_cb", "structfw_1_1drv_1_1empty__period__cb.html", null ],
       [ "fw::drv::period_cb< Callable >", "structfw_1_1drv_1_1period__cb.html", null ]
     ] ],

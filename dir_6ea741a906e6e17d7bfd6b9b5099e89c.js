@@ -1,6 +1,5 @@
 var dir_6ea741a906e6e17d7bfd6b9b5099e89c =
 [
-    [ "acquisition.cpp", "acquisition_8cpp.html", null ],
     [ "acquisition.hpp", "acquisition_8hpp.html", [
       [ "acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", [
         [ "buffer_was_full", "namespacefw_1_1drv.html#af977b5a7be96a3a0cb62991781d4398a", null ],
@@ -8,14 +7,15 @@ var dir_6ea741a906e6e17d7bfd6b9b5099e89c =
       ] ],
       [ "acquisition", "classfw_1_1drv_1_1acquisition.html", "classfw_1_1drv_1_1acquisition" ],
       [ "handles", "classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles", [
-        [ "adc", "classfw_1_1drv_1_1acquisition.html#a5bfd0911733a2c824b38491e68ff7543", null ],
-        [ "chconfs", "classfw_1_1drv_1_1acquisition.html#aee10c8796c8fdd313395eb3c6cf9f396", null ],
-        [ "dma", "classfw_1_1drv_1_1acquisition.html#a3ba51c29dc3ed773184033167357e93d", null ],
-        [ "tim", "classfw_1_1drv_1_1acquisition.html#ae1109c0ff7fa737bafa1dc77573d16ec", null ],
-        [ "tim_channel", "classfw_1_1drv_1_1acquisition.html#ae2302feb24d1ba636bc13e0f0178a4b0", null ]
+        [ "adc", "classfw_1_1drv_1_1acquisition.html#a1b911588544e521aa5387231326da14c", null ],
+        [ "chconfs", "classfw_1_1drv_1_1acquisition.html#aee02860e0c820c6f8878a5d78155bfcd", null ],
+        [ "dma", "classfw_1_1drv_1_1acquisition.html#a61071a80f4cb0ada21f454c121bbd652", null ],
+        [ "tim", "classfw_1_1drv_1_1acquisition.html#a06b952e90bf52108d721f99feec98019", null ],
+        [ "tim_channel", "classfw_1_1drv_1_1acquisition.html#a9b4ad58bb686c44e825a0d43aaaf7db2", null ]
       ] ],
       [ "detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence" ]
     ] ],
+    [ "acquisition_inl.hpp", "acquisition__inl_8hpp.html", null ],
     [ "callbacks.hpp", "drv_2callbacks_8hpp.html", "drv_2callbacks_8hpp" ],
     [ "clock.hpp", "clock_8hpp.html", [
       [ "clock", "classfw_1_1drv_1_1clock.html", "classfw_1_1drv_1_1clock" ],
