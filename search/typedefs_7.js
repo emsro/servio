@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['page_1054',['page',['../namespacecfg.html#aed406326772f09a5c90eb2c62bab0062',1,'cfg']]],
-  ['pid_1055',['pid',['../namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6',1,'ctl']]],
-  ['pid_5fcoefficients_1056',['pid_coefficients',['../namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1',1,'ctl']]],
-  ['pid_5fconf_1057',['pid_conf',['../namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5',1,'ctl']]],
-  ['process_5fnoise_5fcovariance_1058',['process_noise_covariance',['../namespacekalman.html#aee77e3ba89eb600013e17d3467583701',1,'kalman']]]
+  ['observation_1067',['observation',['../namespacekalman.html#af5cff5e9fec3a001b5e862e24701e86b',1,'kalman']]],
+  ['observation_5fmodel_1068',['observation_model',['../namespacekalman.html#ad73bc14d9ae4d49d14781f2402637839',1,'kalman']]],
+  ['observation_5fnoise_5fcovariance_1069',['observation_noise_covariance',['../namespacekalman.html#ad8331048b8638fb9e36b4d5bd59112bb',1,'kalman']]]
 ];

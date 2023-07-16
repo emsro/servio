@@ -1,6 +1,11 @@
 var hierarchy =
 [
     [ "fw::drv::acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", null ],
+    [ "fw::drv::adc_detailed_cb_interface", "classfw_1_1drv_1_1adc__detailed__cb__interface.html", [
+      [ "fw::current_callback", "classfw_1_1current__callback.html", null ],
+      [ "fw::drv::adc_detailed_cb< Callable >", "structfw_1_1drv_1_1adc__detailed__cb.html", null ],
+      [ "fw::drv::empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", null ]
+    ] ],
     [ "fw::cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", null ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", null ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", null ],
@@ -13,15 +18,8 @@ var hierarchy =
     [ "converter", "structconverter.html", null ],
     [ "fw::core", "structfw_1_1core.html", null ],
     [ "brd::core_drivers", "structbrd_1_1core__drivers.html", null ],
-    [ "fw::drv::current_cb_interface", "classfw_1_1drv_1_1current__cb__interface.html", [
-      [ "fw::current_callback", "classfw_1_1current__callback.html", null ],
-      [ "fw::drv::current_cb< Callable >", "structfw_1_1drv_1_1current__cb.html", null ],
-      [ "fw::drv::empty_current_cb", "structfw_1_1drv_1_1empty__current__cb.html", null ]
-    ] ],
     [ "current_converter", "classcurrent__converter.html", null ],
-    [ "fw::drv::current_interface", "classfw_1_1drv_1_1current__interface.html", [
-      [ "fw::drv::acquisition", "classfw_1_1drv_1_1acquisition.html", null ]
-    ] ],
+    [ "fw::drv::current_interface", "classfw_1_1drv_1_1current__interface.html", null ],
     [ "fw::drv::debug_comms", "classfw_1_1drv_1_1debug__comms.html", null ],
     [ "fw::drv::acquisition::detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
@@ -55,15 +53,8 @@ var hierarchy =
       [ "fw::drv::period_cb< Callable >", "structfw_1_1drv_1_1period__cb.html", null ]
     ] ],
     [ "ctl::pid_module", "classctl_1_1pid__module.html", null ],
-    [ "fw::drv::position_cb_interface", "classfw_1_1drv_1_1position__cb__interface.html", [
-      [ "fw::drv::empty_position_cb", "structfw_1_1drv_1_1empty__position__cb.html", null ],
-      [ "fw::drv::position_cb< Callable >", "structfw_1_1drv_1_1position__cb.html", null ],
-      [ "fw::position_callback", "classfw_1_1position__callback.html", null ]
-    ] ],
     [ "position_converter", "classposition__converter.html", null ],
-    [ "fw::drv::position_interface", "classfw_1_1drv_1_1position__interface.html", [
-      [ "fw::drv::acquisition", "classfw_1_1drv_1_1acquisition.html", null ]
-    ] ],
+    [ "fw::drv::position_interface", "classfw_1_1drv_1_1position__interface.html", null ],
     [ "mtr::posvel_kalman", "structmtr_1_1posvel__kalman.html", null ],
     [ "emlabcpp::quantity", null, [
       [ "scaled< T, BitOffset >", "classscaled.html", null ]
@@ -72,11 +63,12 @@ var hierarchy =
     [ "kalman::state_range", "namespacekalman.html#structkalman_1_1state__range", null ],
     [ "static_detector", "structstatic__detector.html", null ],
     [ "temperature_converter", "classtemperature__converter.html", null ],
-    [ "fw::drv::temperature_interface", "classfw_1_1drv_1_1temperature__interface.html", [
-      [ "fw::drv::acquisition", "classfw_1_1drv_1_1acquisition.html", null ]
+    [ "fw::drv::temperature_interface", "classfw_1_1drv_1_1temperature__interface.html", null ],
+    [ "fw::drv::value_cb_interface", "classfw_1_1drv_1_1value__cb__interface.html", [
+      [ "fw::drv::empty_value_cb", "structfw_1_1drv_1_1empty__value__cb.html", null ],
+      [ "fw::drv::value_cb< Callable >", "structfw_1_1drv_1_1value__cb.html", null ],
+      [ "fw::position_callback", "classfw_1_1position__callback.html", null ]
     ] ],
-    [ "fw::drv::vcc_interface", "classfw_1_1drv_1_1vcc__interface.html", [
-      [ "fw::drv::acquisition", "classfw_1_1drv_1_1acquisition.html", null ]
-    ] ],
+    [ "fw::drv::vcc_interface", "classfw_1_1drv_1_1vcc__interface.html", null ],
     [ "voltage_converter", "classvoltage__converter.html", null ]
 ];

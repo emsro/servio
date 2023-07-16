@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['limits_1047',['limits',['../base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c',1,'base.hpp']]]
+  ['kalman_5fgain_1062',['kalman_gain',['../namespacekalman.html#aa06b341b7242ae4d2e6499f4b66e1e5a',1,'kalman']]]
 ];

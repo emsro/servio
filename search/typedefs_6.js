@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['observation_1051',['observation',['../namespacekalman.html#af5cff5e9fec3a001b5e862e24701e86b',1,'kalman']]],
-  ['observation_5fmodel_1052',['observation_model',['../namespacekalman.html#ad73bc14d9ae4d49d14781f2402637839',1,'kalman']]],
-  ['observation_5fnoise_5fcovariance_1053',['observation_noise_covariance',['../namespacekalman.html#ad8331048b8638fb9e36b4d5bd59112bb',1,'kalman']]]
+  ['microseconds_1064',['microseconds',['../base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5',1,'base.hpp']]],
+  ['milliseconds_1065',['milliseconds',['../base_8hpp.html#a0478dbefd4a0ca0d9e55b6becbf851f2',1,'base.hpp']]],
+  ['model_5fname_1066',['model_name',['../config_8hpp.html#a6fe1bfcf6fa825ff4ed7e7465cfee94c',1,'config.hpp']]]
 ];

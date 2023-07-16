@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kalman_5fgain_1046',['kalman_gain',['../namespacekalman.html#aa06b341b7242ae4d2e6499f4b66e1e5a',1,'kalman']]]
+  ['innovation_5fcovariance_1061',['innovation_covariance',['../namespacekalman.html#a2c7d47c8c5a7d12f26d61b7818b1c2d9',1,'kalman']]]
 ];
