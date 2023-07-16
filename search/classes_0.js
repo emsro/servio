@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['acquisition_578',['acquisition',['../classfw_1_1drv_1_1acquisition.html',1,'fw::drv']]],
-  ['acquisition_5fperiod_5fcallback_579',['acquisition_period_callback',['../classfw_1_1acquisition__period__callback.html',1,'fw']]],
-  ['acquisition_5fstatus_580',['acquisition_status',['../namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status',1,'fw::drv']]]
+  ['acquisition_588',['acquisition',['../classfw_1_1drv_1_1acquisition.html',1,'fw::drv']]],
+  ['acquisition_5fstatus_589',['acquisition_status',['../namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status',1,'fw::drv']]]
 ];

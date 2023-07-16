@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('classfw_1_1drv_1_1position__cb__interf
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="drv_2callbacks_8hpp_source.html">callbacks.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="interfaces_8hpp_source.html">interfaces.hpp</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for fw::drv::position_cb_interface:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -103,8 +103,8 @@ $(document).ready(function(){initNavTree('classfw_1_1drv_1_1position__cb__interf
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a52538eb661252720e8c04b111976bc26"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1position__cb__interface.html#a52538eb661252720e8c04b111976bc26">on_position</a> (uint32_t pos)=0</td></tr>
-<tr class="separator:a52538eb661252720e8c04b111976bc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbb385538ccbf1d4c92827c787860c28"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1position__cb__interface.html#adbb385538ccbf1d4c92827c787860c28">on_position_irq</a> (uint32_t pos)=0</td></tr>
+<tr class="separator:adbb385538ccbf1d4c92827c787860c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39b3efea9b5241801826cfd038b4a7e4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1position__cb__interface.html#a39b3efea9b5241801826cfd038b4a7e4">~position_cb_interface</a> ()=default</td></tr>
 <tr class="separator:a39b3efea9b5241801826cfd038b4a7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -135,8 +135,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a52538eb661252720e8c04b111976bc26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52538eb661252720e8c04b111976bc26">&#9670;&nbsp;</a></span>on_position()</h2>
+<a id="adbb385538ccbf1d4c92827c787860c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbb385538ccbf1d4c92827c787860c28">&#9670;&nbsp;</a></span>on_position_irq()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,7 +145,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void fw::drv::position_cb_interface::on_position </td>
+          <td class="memname">virtual void fw::drv::position_cb_interface::on_position_irq </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>pos</em></td><td>)</td>
@@ -159,12 +159,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="structfw_1_1drv_1_1empty__position__cb.html#a8577a5be0a4923a38568c2aba3c27533">fw::drv::empty_position_cb</a>, <a class="el" href="classfw_1_1position__callback.html#a22e5c2a039e6026b090e54f2a56513d0">fw::position_callback</a>, and <a class="el" href="structfw_1_1drv_1_1position__cb.html#aeffad23831d32b90941f13cc949fe05d">fw::drv::position_cb&lt; Callable &gt;</a>.</p>
+<p>Implemented in <a class="el" href="structfw_1_1drv_1_1empty__position__cb.html#a28aef82ced6d363530680f252e9473cc">fw::drv::empty_position_cb</a>, <a class="el" href="classfw_1_1position__callback.html#a2ba3c29512eb371da46bd94ba6757f00">fw::position_callback</a>, and <a class="el" href="structfw_1_1drv_1_1position__cb.html#a19b405b05286e892911bb27c79a4deb7">fw::drv::position_cb&lt; Callable &gt;</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/fw/drv/<a class="el" href="drv_2callbacks_8hpp_source.html">callbacks.hpp</a></li>
+<li>src/fw/drv/<a class="el" href="interfaces_8hpp_source.html">interfaces.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -172,7 +172,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="namespacefw_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="classfw_1_1drv_1_1position__cb__interface.html">position_cb_interface</a></li>
-    <li class="footer">Generated on Sat Jul 15 2023 10:05:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 19:46:09 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

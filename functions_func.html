@@ -89,9 +89,6 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>acquisition()
 : <a class="el" href="classfw_1_1drv_1_1acquisition.html#aa2d9f63de441b641c0281b2da5a6acee">fw::drv::acquisition</a>
 </li>
-<li>acquisition_period_callback()
-: <a class="el" href="classfw_1_1acquisition__period__callback.html#a24505b61311e07062efff31614a473e6">fw::acquisition_period_callback</a>
-</li>
 <li>adc_conv_cplt_irq()
 : <a class="el" href="classfw_1_1drv_1_1acquisition.html#a1ed79fb5be7b3041820c7861ee98de97">fw::drv::acquisition</a>
 </li>
@@ -100,6 +97,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </li>
 <li>adc_irq()
 : <a class="el" href="classfw_1_1drv_1_1acquisition.html#ae0067c5fc91ef6511895895e64a09936">fw::drv::acquisition</a>
+</li>
+<li>any_uninitialized()
+: <a class="el" href="structbrd_1_1core__drivers.html#ae81f7592f3f5e12d60d133c987e5cff4">brd::core_drivers</a>
 </li>
 <li>apply()
 : <a class="el" href="structfw_1_1cfg__dispatcher.html#a0002caf837323cd3cf3536483088b49b">fw::cfg_dispatcher</a>
@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 , <a class="el" href="classvoltage__converter.html#aebd8ec998a9330d754a463858571701b">voltage_converter</a>
 </li>
 <li>core()
-: <a class="el" href="structfw_1_1core.html#a7cd28b44df42af48d026d7f8ef50be26">fw::core</a>
+: <a class="el" href="structfw_1_1core.html#a9e0669fc34d0b48482b8379f6684896f">fw::core</a>
 </li>
 <li>current_callback()
 : <a class="el" href="classfw_1_1current__callback.html#a7d8175467c437bab6329ef2800ff9b0d">fw::current_callback</a>
@@ -182,13 +182,12 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>get_current()
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a5ab2b1164a4dca0d93e89db6daee8520">fw::drv::acquisition</a>
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a1d87c029ffcd26943749e920f59adad8">fw::drv::acquisition</a>
+, <a class="el" href="classfw_1_1drv_1_1current__interface.html#a4f8506aa339f5b822049e99d21e90524">fw::drv::current_interface</a>
 </li>
 <li>get_current_callback()
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a79216fc7d9c1b5f53b951b32d4d32b17">fw::drv::acquisition</a>
-</li>
-<li>get_current_reading()
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#af4f4fe222a0864d846ca431d2dc2a327">fw::drv::acquisition</a>
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a182c228860e237ce140b371ef1a618a0">fw::drv::acquisition</a>
+, <a class="el" href="classfw_1_1drv_1_1current__interface.html#a5528b073ef792eb91409025ba2de52a0">fw::drv::current_interface</a>
 </li>
 <li>get_desired()
 : <a class="el" href="classctl_1_1pid__module.html#a9d7e7ad3a1bf3a1783ee8d7ff43b5146">ctl::pid_module</a>
@@ -221,12 +220,14 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classfw_1_1drv_1_1hbridge.html#af2e34260a5e0c81f84361ac23c0f80af">fw::drv::hbridge</a>
 </li>
 <li>get_position()
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a69ec62febd30b584cd0046e968f01ddc">fw::drv::acquisition</a>
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a088d3ad1cd515b8c5266ff4d8dac18fd">fw::drv::acquisition</a>
+, <a class="el" href="classfw_1_1drv_1_1position__interface.html#a33515acf316750f3812e35a557420cbf">fw::drv::position_interface</a>
 , <a class="el" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">metrics</a>
 , <a class="el" href="structmtr_1_1posvel__kalman.html#a6573c98a95f3b84a2ee1a1d3b7d7527f">mtr::posvel_kalman</a>
 </li>
 <li>get_position_callback()
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a5671cbb5a002cc782f8b68f6ce710533">fw::drv::acquisition</a>
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a07d4031c278de5c89631a7660cf69013">fw::drv::acquisition</a>
+, <a class="el" href="classfw_1_1drv_1_1position__interface.html#ad12db81363c06eecca4425a10441462c">fw::drv::position_interface</a>
 </li>
 <li>get_power()
 : <a class="el" href="classcontrol.html#a5a5f1c48fefab50c257c4afdf82ee7ef">control</a>
@@ -237,14 +238,16 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>get_status()
 : <a class="el" href="classfw_1_1drv_1_1acquisition.html#a84a0ce7ec869f281f13abc475eb0e269">fw::drv::acquisition</a>
 </li>
-<li>get_temp()
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a4b761ff60be85afa1a07bb9730044371">fw::drv::acquisition</a>
+<li>get_temperature()
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a567bb87e8a8d4ba96c4dadacd4076c79">fw::drv::acquisition</a>
+, <a class="el" href="classfw_1_1drv_1_1temperature__interface.html#ab75c19d96e11f2a9173ea339e7fd125b">fw::drv::temperature_interface</a>
 </li>
 <li>get_us()
 : <a class="el" href="classfw_1_1drv_1_1clock.html#a1a278edfd532a098e6af2131040636c6">fw::drv::clock</a>
 </li>
 <li>get_vcc()
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a82552304ce2bf35bd17e08f7e08fbb38">fw::drv::acquisition</a>
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#afecbd9dfaf22400112473f9abd029105">fw::drv::acquisition</a>
+, <a class="el" href="classfw_1_1drv_1_1vcc__interface.html#a98a02980973aef27b0629d2c0db513e1">fw::drv::vcc_interface</a>
 </li>
 <li>get_velocity()
 : <a class="el" href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">metrics</a>
@@ -285,7 +288,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classmetrics.html#a0abe3e4ecf0484ad696124398a891683">metrics</a>
 </li>
 <li>monitor()
-: <a class="el" href="classfw_1_1monitor.html#a855f6202e1aa6d45e8af2ff489b6c0d9">fw::monitor</a>
+: <a class="el" href="classfw_1_1monitor.html#a5b86af746138e2c852514bb0b18259b0">fw::monitor</a>
 </li>
 <li>moving_irq()
 : <a class="el" href="classcontrol.html#a7d7ed2f19eb7b2d9468483c2d98197d5">control</a>
@@ -294,26 +297,26 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
-<li>on_current()
-: <a class="el" href="classfw_1_1current__callback.html#a4d77bf299881b00bd86e100f4dfaf426">fw::current_callback</a>
-, <a class="el" href="structfw_1_1drv_1_1current__cb.html#a4fbb8de62c4040090ab6cdbcef6859a4">fw::drv::current_cb&lt; Callable &gt;</a>
-, <a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#a4b2bcab5e90503a631f85e6d6e1af74f">fw::drv::current_cb_interface</a>
-, <a class="el" href="structfw_1_1drv_1_1empty__current__cb.html#a9ed4b784e5ad67d58a4f9c73d783e6fb">fw::drv::empty_current_cb</a>
+<li>on_current_irq()
+: <a class="el" href="classfw_1_1current__callback.html#aa6218b2565b7c6352ba7c1be180efb7f">fw::current_callback</a>
+, <a class="el" href="structfw_1_1drv_1_1current__cb.html#a87629308169421f1e76f5433efd64b08">fw::drv::current_cb&lt; Callable &gt;</a>
+, <a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#a3806af396639de18977479db3f72fe32">fw::drv::current_cb_interface</a>
+, <a class="el" href="structfw_1_1drv_1_1empty__current__cb.html#ac04379807b49f413aa662ca34ae44a31">fw::drv::empty_current_cb</a>
 </li>
 <li>on_event()
 : <a class="el" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">indication</a>
 </li>
-<li>on_period()
-: <a class="el" href="classfw_1_1acquisition__period__callback.html#a1860da610e1bb2745d5be3380489127f">fw::acquisition_period_callback</a>
-, <a class="el" href="structfw_1_1drv_1_1empty__period__cb.html#a0a94f04adb9e517f5fff15900bf97ff9">fw::drv::empty_period_cb</a>
-, <a class="el" href="structfw_1_1drv_1_1period__cb.html#a0307f435ed438fb47f470b8a1a4d8f00">fw::drv::period_cb&lt; Callable &gt;</a>
-, <a class="el" href="classfw_1_1drv_1_1period__cb__interface.html#aa22915405d2f7bc9f962a77b338bd59b">fw::drv::period_cb_interface</a>
+<li>on_period_irq()
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#ac8088a6ba231f3513ec872401a98625c">fw::drv::acquisition</a>
+, <a class="el" href="structfw_1_1drv_1_1empty__period__cb.html#a9f3cbe1feb027902d8265eb2d37dcf5b">fw::drv::empty_period_cb</a>
+, <a class="el" href="structfw_1_1drv_1_1period__cb.html#ae3d950e134ef61d373fa3e3228699781">fw::drv::period_cb&lt; Callable &gt;</a>
+, <a class="el" href="classfw_1_1drv_1_1period__cb__interface.html#a62e069dee30fdd41b5918e4f1f824428">fw::drv::period_cb_interface</a>
 </li>
-<li>on_position()
-: <a class="el" href="structfw_1_1drv_1_1empty__position__cb.html#a8577a5be0a4923a38568c2aba3c27533">fw::drv::empty_position_cb</a>
-, <a class="el" href="structfw_1_1drv_1_1position__cb.html#aeffad23831d32b90941f13cc949fe05d">fw::drv::position_cb&lt; Callable &gt;</a>
-, <a class="el" href="classfw_1_1drv_1_1position__cb__interface.html#a52538eb661252720e8c04b111976bc26">fw::drv::position_cb_interface</a>
-, <a class="el" href="classfw_1_1position__callback.html#a22e5c2a039e6026b090e54f2a56513d0">fw::position_callback</a>
+<li>on_position_irq()
+: <a class="el" href="structfw_1_1drv_1_1empty__position__cb.html#a28aef82ced6d363530680f252e9473cc">fw::drv::empty_position_cb</a>
+, <a class="el" href="structfw_1_1drv_1_1position__cb.html#a19b405b05286e892911bb27c79a4deb7">fw::drv::position_cb&lt; Callable &gt;</a>
+, <a class="el" href="classfw_1_1drv_1_1position__cb__interface.html#adbb385538ccbf1d4c92827c787860c28">fw::drv::position_cb_interface</a>
+, <a class="el" href="classfw_1_1position__callback.html#a2ba3c29512eb371da46bd94ba6757f00">fw::position_callback</a>
 </li>
 <li>operator=()
 : <a class="el" href="classfw_1_1drv_1_1clock.html#aaef93f7e494948066829a529aec7ea56">fw::drv::clock</a>
@@ -330,9 +333,6 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </li>
 <li>period_cb()
 : <a class="el" href="structfw_1_1drv_1_1period__cb.html#a0f1ede8d2e1ec4f1a32848d0c90e4ae9">fw::drv::period_cb&lt; Callable &gt;</a>
-</li>
-<li>period_elapsed_irq()
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a7a499dcd2bef58625f52b285acc032ca">fw::drv::acquisition</a>
 </li>
 <li>pid_module()
 : <a class="el" href="classctl_1_1pid__module.html#a2279f448e594ffdd1e7c9c333b544eea">ctl::pid_module</a>
@@ -393,7 +393,8 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classctl_1_1pid__module.html#a5eca057c309bafa9383d64fac5a96bd2">ctl::pid_module</a>
 </li>
 <li>set_current_callback()
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a309467d055087904343d231d7cfa38b9">fw::drv::acquisition</a>
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a361a3e3063a9e50b090f5e35ee9e5786">fw::drv::acquisition</a>
+, <a class="el" href="classfw_1_1drv_1_1current__interface.html#a1f0eef646e5acbfee5100de3624bee6d">fw::drv::current_interface</a>
 </li>
 <li>set_current_cfg()
 : <a class="el" href="structconverter.html#a0d60b4625fddd045ab2e189723cdab10">converter</a>
@@ -424,7 +425,8 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 , <a class="el" href="classctl_1_1pid__module.html#aa670c5f3213b0c085faa5a6e0758d43e">ctl::pid_module</a>
 </li>
 <li>set_position_callback()
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a0aa5a991c49e535c9439c65332ef9288">fw::drv::acquisition</a>
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a62d290c66e6a75de34f40a837eb32071">fw::drv::acquisition</a>
+, <a class="el" href="classfw_1_1drv_1_1position__interface.html#a441bce6ec0d67986cb5ca8b38350e2ea">fw::drv::position_interface</a>
 </li>
 <li>set_position_cfg()
 : <a class="el" href="structconverter.html#a2e14af5169c4cef7df1fb88cc224cbae">converter</a>
@@ -458,7 +460,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 , <a class="el" href="structhost_1_1common__cli.html#af2451a182808f2667ce3fdfdd6ab04f0">host::common_cli</a>
 </li>
 <li>standard_callbacks()
-: <a class="el" href="structfw_1_1standard__callbacks.html#a4685a83e6749cf6cf6ac110185983be2">fw::standard_callbacks</a>
+: <a class="el" href="structfw_1_1standard__callbacks.html#a88af612e1a1e9942b49e14c3df95d192">fw::standard_callbacks</a>
 </li>
 <li>start()
 : <a class="el" href="classfw_1_1drv_1_1acquisition.html#a5451beab320351d01ffa0c26d45ad5ee">fw::drv::acquisition</a>
@@ -496,6 +498,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="structfw_1_1core.html#a57543933eed83d7ed0276599df4337a1">fw::core</a>
 , <a class="el" href="classfw_1_1monitor.html#aed411b0911f06988f4be391baffd6b56">fw::monitor</a>
 , <a class="el" href="classindication.html#aaeefb4a81531e0fd82015a1c4711acd6">indication</a>
+</li>
+<li>tie()
+: <a class="el" href="structbrd_1_1core__drivers.html#ada8d3f72ce5d682d0f226c83e180526f">brd::core_drivers</a>
 </li>
 <li>timer_irq()
 : <a class="el" href="classfw_1_1drv_1_1hbridge.html#a81f5420bda4e9e1c27e2c9406807de0a">fw::drv::hbridge</a>
@@ -552,11 +557,23 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>~current_cb_interface()
 : <a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#abe3e1455bf81506c13d558955b1e83b5">fw::drv::current_cb_interface</a>
 </li>
+<li>~current_interface()
+: <a class="el" href="classfw_1_1drv_1_1current__interface.html#a9b599bd94cdaa3ff09efd04e841f3c1d">fw::drv::current_interface</a>
+</li>
 <li>~period_cb_interface()
 : <a class="el" href="classfw_1_1drv_1_1period__cb__interface.html#a048ab0f9abf965f668835bbda19c0ce8">fw::drv::period_cb_interface</a>
 </li>
 <li>~position_cb_interface()
 : <a class="el" href="classfw_1_1drv_1_1position__cb__interface.html#a39b3efea9b5241801826cfd038b4a7e4">fw::drv::position_cb_interface</a>
+</li>
+<li>~position_interface()
+: <a class="el" href="classfw_1_1drv_1_1position__interface.html#a91c95c4eeec698cf387c56d817c72cb0">fw::drv::position_interface</a>
+</li>
+<li>~temperature_interface()
+: <a class="el" href="classfw_1_1drv_1_1temperature__interface.html#a0807b24abc918fdf42aa8adf2818699d">fw::drv::temperature_interface</a>
+</li>
+<li>~vcc_interface()
+: <a class="el" href="classfw_1_1drv_1_1vcc__interface.html#a7cb5317f4ea30b3e6c6c400ffb003ae2">fw::drv::vcc_interface</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -564,7 +581,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Jul 15 2023 10:05:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 19:46:09 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

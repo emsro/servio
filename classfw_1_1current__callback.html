@@ -113,8 +113,8 @@ $(document).ready(function(){initNavTree('classfw_1_1current__callback.html','')
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7d8175467c437bab6329ef2800ff9b0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1current__callback.html#a7d8175467c437bab6329ef2800ff9b0d">current_callback</a> (<a class="el" href="classfw_1_1drv_1_1hbridge.html">drv::hbridge</a> &amp;hb, <a class="el" href="classcontrol.html">control</a> &amp;ctl, <a class="el" href="classfw_1_1drv_1_1clock.html">drv::clock</a> &amp;clk, const <a class="el" href="structconverter.html">converter</a> &amp;conv)</td></tr>
 <tr class="separator:a7d8175467c437bab6329ef2800ff9b0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d77bf299881b00bd86e100f4dfaf426"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1current__callback.html#a4d77bf299881b00bd86e100f4dfaf426">on_current</a> (uint32_t curr, std::span&lt; uint16_t &gt;)</td></tr>
-<tr class="separator:a4d77bf299881b00bd86e100f4dfaf426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6218b2565b7c6352ba7c1be180efb7f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1current__callback.html#aa6218b2565b7c6352ba7c1be180efb7f">on_current_irq</a> (uint32_t curr, std::span&lt; uint16_t &gt;)</td></tr>
+<tr class="separator:aa6218b2565b7c6352ba7c1be180efb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classfw_1_1drv_1_1current__cb__interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfw_1_1drv_1_1current__cb__interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfw_1_1drv_1_1current__cb__interface.html">fw::drv::current_cb_interface</a></td></tr>
 <tr class="memitem:abe3e1455bf81506c13d558955b1e83b5 inherit pub_methods_classfw_1_1drv_1_1current__cb__interface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#abe3e1455bf81506c13d558955b1e83b5">~current_cb_interface</a> ()=default</td></tr>
 <tr class="separator:abe3e1455bf81506c13d558955b1e83b5 inherit pub_methods_classfw_1_1drv_1_1current__cb__interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,8 +169,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4d77bf299881b00bd86e100f4dfaf426"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d77bf299881b00bd86e100f4dfaf426">&#9670;&nbsp;</a></span>on_current()</h2>
+<a id="aa6218b2565b7c6352ba7c1be180efb7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6218b2565b7c6352ba7c1be180efb7f">&#9670;&nbsp;</a></span>on_current_irq()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +179,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void fw::current_callback::on_current </td>
+          <td class="memname">virtual void fw::current_callback::on_current_irq </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>curr</em>, </td>
@@ -203,7 +203,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#a4b2bcab5e90503a631f85e6d6e1af74f">fw::drv::current_cb_interface</a>.</p>
+<p>Implements <a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#a3806af396639de18977479db3f72fe32">fw::drv::current_cb_interface</a>.</p>
 
 <p class="reference">References <a class="el" href="namespacefw.html#aca40e9512538f1dc60d913483211ee19">fw::current()</a>, <a class="el" href="classcontrol.html#a4b52b39807bc8e9b1ac8c0264538ed43">control::current_irq()</a>, <a class="el" href="classcontrol.html#a5a5f1c48fefab50c257c4afdf82ee7ef">control::get_power()</a>, <a class="el" href="classfw_1_1drv_1_1clock.html#a1a278edfd532a098e6af2131040636c6">fw::drv::clock::get_us()</a>, and <a class="el" href="classfw_1_1drv_1_1hbridge.html#abd1f4fa65bb97c78dd3872e022517e1a">fw::drv::hbridge::set_power()</a>.</p>
 
@@ -218,7 +218,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="classfw_1_1current__callback.html">current_callback</a></li>
-    <li class="footer">Generated on Sat Jul 15 2023 10:05:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 19:46:09 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

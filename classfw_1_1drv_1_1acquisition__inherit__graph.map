@@ -1,0 +1,8 @@
+<map id="fw::drv::acquisition" name="fw::drv::acquisition">
+<area shape="rect" id="node1" title=" " alt="" coords="243,107,385,133"/>
+<area shape="rect" id="node2" href="$classfw_1_1drv_1_1position__interface.html" title=" " alt="" coords="5,5,195,32"/>
+<area shape="rect" id="node3" href="$classfw_1_1drv_1_1current__interface.html" title=" " alt="" coords="9,56,191,83"/>
+<area shape="rect" id="node4" href="$classfw_1_1drv_1_1vcc__interface.html" title=" " alt="" coords="21,107,179,133"/>
+<area shape="rect" id="node5" href="$classfw_1_1drv_1_1temperature__interface.html" title=" " alt="" coords="23,158,177,199"/>
+<area shape="rect" id="node6" href="$classfw_1_1drv_1_1period__cb__interface.html" title=" " alt="" coords="33,223,167,265"/>
+</map>

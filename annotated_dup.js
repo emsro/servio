@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "brd", "namespacebrd.html", [
+      [ "core_drivers", "structbrd_1_1core__drivers.html", "structbrd_1_1core__drivers" ]
+    ] ],
     [ "cfg", "namespacecfg.html", [
       [ "payload", "structcfg_1_1payload.html", "structcfg_1_1payload" ]
     ] ],
@@ -12,9 +15,6 @@ var annotated_dup =
       [ "drv", "namespacefw_1_1drv.html", [
         [ "acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", "namespacefw_1_1drv_structfw_1_1drv_1_1acquisition__status_dup" ],
         [ "acquisition", "classfw_1_1drv_1_1acquisition.html", "classfw_1_1drv_1_1acquisition" ],
-        [ "current_cb_interface", "classfw_1_1drv_1_1current__cb__interface.html", "classfw_1_1drv_1_1current__cb__interface" ],
-        [ "position_cb_interface", "classfw_1_1drv_1_1position__cb__interface.html", "classfw_1_1drv_1_1position__cb__interface" ],
-        [ "period_cb_interface", "classfw_1_1drv_1_1period__cb__interface.html", "classfw_1_1drv_1_1period__cb__interface" ],
         [ "current_cb", "structfw_1_1drv_1_1current__cb.html", "structfw_1_1drv_1_1current__cb" ],
         [ "empty_current_cb", "structfw_1_1drv_1_1empty__current__cb.html", "structfw_1_1drv_1_1empty__current__cb" ],
         [ "position_cb", "structfw_1_1drv_1_1position__cb.html", "structfw_1_1drv_1_1position__cb" ],
@@ -25,9 +25,15 @@ var annotated_dup =
         [ "comms", "classfw_1_1drv_1_1comms.html", "classfw_1_1drv_1_1comms" ],
         [ "debug_comms", "classfw_1_1drv_1_1debug__comms.html", "classfw_1_1drv_1_1debug__comms" ],
         [ "hbridge", "classfw_1_1drv_1_1hbridge.html", "classfw_1_1drv_1_1hbridge" ],
+        [ "current_cb_interface", "classfw_1_1drv_1_1current__cb__interface.html", "classfw_1_1drv_1_1current__cb__interface" ],
+        [ "position_cb_interface", "classfw_1_1drv_1_1position__cb__interface.html", "classfw_1_1drv_1_1position__cb__interface" ],
+        [ "period_cb_interface", "classfw_1_1drv_1_1period__cb__interface.html", "classfw_1_1drv_1_1period__cb__interface" ],
+        [ "position_interface", "classfw_1_1drv_1_1position__interface.html", "classfw_1_1drv_1_1position__interface" ],
+        [ "vcc_interface", "classfw_1_1drv_1_1vcc__interface.html", "classfw_1_1drv_1_1vcc__interface" ],
+        [ "temperature_interface", "classfw_1_1drv_1_1temperature__interface.html", "classfw_1_1drv_1_1temperature__interface" ],
+        [ "current_interface", "classfw_1_1drv_1_1current__interface.html", "classfw_1_1drv_1_1current__interface" ],
         [ "leds", "classfw_1_1drv_1_1leds.html", "classfw_1_1drv_1_1leds" ]
       ] ],
-      [ "acquisition_period_callback", "classfw_1_1acquisition__period__callback.html", "classfw_1_1acquisition__period__callback" ],
       [ "current_callback", "classfw_1_1current__callback.html", "classfw_1_1current__callback" ],
       [ "position_callback", "classfw_1_1position__callback.html", "classfw_1_1position__callback" ],
       [ "cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", "structfw_1_1cfg__dispatcher" ],

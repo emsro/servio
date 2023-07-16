@@ -1,10 +1,13 @@
 <map id="fw::dispatcher" name="fw::dispatcher">
-<area shape="rect" id="node1" title=" " alt="" coords="202,273,314,300"/>
-<area shape="rect" id="node2" href="$classfw_1_1drv_1_1hbridge.html" title=" " alt="" coords="5,184,127,211"/>
-<area shape="rect" id="node3" href="$structfw_1_1cfg__dispatcher.html" title=" " alt="" coords="258,184,397,211"/>
-<area shape="rect" id="node4" href="$structfw_1_1core.html" title=" " alt="" coords="281,95,353,121"/>
-<area shape="rect" id="node5" href="$classmetrics.html" title=" " alt="" coords="160,5,231,32"/>
-<area shape="rect" id="node6" href="$structconverter.html" title=" " alt="" coords="256,5,340,32"/>
-<area shape="rect" id="node7" href="$classcontrol.html" title=" " alt="" coords="366,5,433,32"/>
-<area shape="rect" id="node8" href="$classfw_1_1drv_1_1acquisition.html" title=" " alt="" coords="472,184,615,211"/>
+<area shape="rect" id="node1" title=" " alt="" coords="633,224,745,251"/>
+<area shape="rect" id="node2" href="$classfw_1_1drv_1_1current__interface.html" title=" " alt="" coords="333,5,515,32"/>
+<area shape="rect" id="node3" href="$classfw_1_1drv_1_1temperature__interface.html" title=" " alt="" coords="347,57,501,98"/>
+<area shape="rect" id="node4" href="$classfw_1_1drv_1_1position__interface.html" title=" " alt="" coords="329,123,519,149"/>
+<area shape="rect" id="node5" href="$classfw_1_1drv_1_1hbridge.html" title=" " alt="" coords="363,173,485,200"/>
+<area shape="rect" id="node6" href="$structfw_1_1cfg__dispatcher.html" title=" " alt="" coords="355,339,493,365"/>
+<area shape="rect" id="node7" href="$structfw_1_1core.html" title=" " alt="" coords="173,339,245,365"/>
+<area shape="rect" id="node8" href="$classmetrics.html" title=" " alt="" coords="12,311,83,337"/>
+<area shape="rect" id="node9" href="$structconverter.html" title=" " alt="" coords="5,227,89,253"/>
+<area shape="rect" id="node10" href="$classcontrol.html" title=" " alt="" coords="14,380,81,407"/>
+<area shape="rect" id="node11" href="$classfw_1_1drv_1_1vcc__interface.html" title=" " alt="" coords="345,463,503,489"/>
 </map>

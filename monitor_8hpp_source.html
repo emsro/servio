@@ -88,86 +88,90 @@ $(document).ready(function(){initNavTree('monitor_8hpp_source.html',''); initRes
 </div><!--header-->
 <div class="contents">
 <a href="monitor_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="converter_8hpp.html">converter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="acquisition_8hpp.html">fw/drv/acquisition.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="indication_8hpp.html">indication.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw.html">fw</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classfw_1_1monitor.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfw_1_1monitor.html">monitor</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classfw_1_1monitor.html#a855f6202e1aa6d45e8af2ff489b6c0d9">   13</a></span>&#160;        <a class="code" href="classfw_1_1monitor.html#a855f6202e1aa6d45e8af2ff489b6c0d9">monitor</a>(</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a>            now,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keyword">const</span> <a class="code" href="classcontrol.html">control</a>&amp;          <a class="code" href="namespacectl.html">ctl</a>,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">const</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html">drv::acquisition</a>&amp; acqui,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="classindication.html">indication</a>&amp;             indi,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp;        conv )</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="indication_8hpp.html">indication.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw.html">fw</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classfw_1_1monitor.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfw_1_1monitor.html">monitor</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classfw_1_1monitor.html#a5b86af746138e2c852514bb0b18259b0">   12</a></span>&#160;        <a class="code" href="classfw_1_1monitor.html#a5b86af746138e2c852514bb0b18259b0">monitor</a>(</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a>                      now,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keyword">const</span> <a class="code" href="classcontrol.html">control</a>&amp;                    <a class="code" href="namespacectl.html">ctl</a>,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keyword">const</span> <a class="code" href="classfw_1_1drv_1_1vcc__interface.html">drv::vcc_interface</a>&amp;         vcc_drv,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">const</span> <a class="code" href="classfw_1_1drv_1_1temperature__interface.html">drv::temperature_interface</a>&amp; temp_drv,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="classindication.html">indication</a>&amp;                       indi,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp;                  conv )</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          : ctl_( <a class="code" href="namespacectl.html">ctl</a> )</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;          , acqui_( acqui )</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;          , indi_( indi )</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;          , conv_( conv )</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14ad32cbe23a48d1576416d9eb314876c6d">indication_event::BOOTING</a> );</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classfw_1_1monitor.html#a53f22374d2b2cf400c46c417d219418c">   27</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1monitor.html#a53f22374d2b2cf400c46c417d219418c">set_minimum_voltage</a>( <span class="keywordtype">float</span> vcc )</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                min_vcc_ = vcc;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classfw_1_1monitor.html#a2d29495be700e893735dde399227b426">   32</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1monitor.html#a2d29495be700e893735dde399227b426">set_maximum_temperature</a>( <span class="keywordtype">float</span> temp )</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                max_tmp_ = temp;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classfw_1_1monitor.html#aed411b0911f06988f4be391baffd6b56">   37</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1monitor.html#aed411b0911f06988f4be391baffd6b56">tick</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now )</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a0d895a0a05a7cce9b2c0c8bb252f78cc">indication_event::HEARTBEAT</a> );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordtype">float</span> vcc = conv_.<a class="code" href="structconverter.html#a96a6c5a43d6b71202650791f0ec934df">vcc</a>.<a class="code" href="classvoltage__converter.html#aebd8ec998a9330d754a463858571701b">convert</a>( acqui_.<a class="code" href="classfw_1_1drv_1_1acquisition.html#a82552304ce2bf35bd17e08f7e08fbb38">get_vcc</a>() );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">if</span> ( vcc &lt; min_vcc_ ) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a1ebe303c3b179265bbac9ab1f3219826">indication_event::VOLTAGE_LOW</a> );</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordtype">float</span> temp = conv_.<a class="code" href="structconverter.html#ac9870ea936ec13c39637d9c93827755a">temp</a>.<a class="code" href="classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085">convert</a>( acqui_.<a class="code" href="classfw_1_1drv_1_1acquisition.html#a4b761ff60be85afa1a07bb9730044371">get_temp</a>() );</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">if</span> ( temp &gt; max_tmp_ ) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14adecfbda91cde2e00e1e04c4c97cb1b86">indication_event::TEMPERATURE_HIGH</a> );</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">if</span> ( ctl_.<a class="code" href="classcontrol.html#a384b9afb33dfa242ddfb76388bcbaf82">get_mode</a>() != <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74">control_mode::DISENGAGED</a> ) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a91fc31ffb68f72532b0ab7f28f24db85">indication_event::ENGAGED</a> );</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14afeffe8e712a5ce9a0cedef11c364fa74">indication_event::DISENGAGED</a> );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">const</span> <a class="code" href="classcontrol.html">control</a>&amp;          ctl_;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">const</span> <a class="code" href="classfw_1_1drv_1_1acquisition.html">drv::acquisition</a>&amp; acqui_;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classindication.html">indication</a>&amp;             indi_;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp;        conv_;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">float</span> min_vcc_ = 0.f;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">float</span> max_tmp_ = 90.f;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;          , indi_( indi )</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;          , vcc_drv_( vcc_drv )</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;          , temp_drv_( temp_drv )</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;          , conv_( conv )</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14ad32cbe23a48d1576416d9eb314876c6d">indication_event::BOOTING</a> );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classfw_1_1monitor.html#a53f22374d2b2cf400c46c417d219418c">   28</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1monitor.html#a53f22374d2b2cf400c46c417d219418c">set_minimum_voltage</a>( <span class="keywordtype">float</span> vcc )</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                min_vcc_ = vcc;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classfw_1_1monitor.html#a2d29495be700e893735dde399227b426">   33</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1monitor.html#a2d29495be700e893735dde399227b426">set_maximum_temperature</a>( <span class="keywordtype">float</span> temp )</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                max_tmp_ = temp;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classfw_1_1monitor.html#aed411b0911f06988f4be391baffd6b56">   38</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1monitor.html#aed411b0911f06988f4be391baffd6b56">tick</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now )</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a0d895a0a05a7cce9b2c0c8bb252f78cc">indication_event::HEARTBEAT</a> );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="comment">// TODO: check that this works</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordtype">float</span> vcc = conv_.<a class="code" href="structconverter.html#a96a6c5a43d6b71202650791f0ec934df">vcc</a>.<a class="code" href="classvoltage__converter.html#aebd8ec998a9330d754a463858571701b">convert</a>( vcc_drv_.<a class="code" href="classfw_1_1drv_1_1vcc__interface.html#a98a02980973aef27b0629d2c0db513e1">get_vcc</a>() );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">if</span> ( vcc &lt; min_vcc_ ) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a1ebe303c3b179265bbac9ab1f3219826">indication_event::VOLTAGE_LOW</a> );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="comment">// TODO: check that this works</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordtype">float</span> temp = conv_.<a class="code" href="structconverter.html#ac9870ea936ec13c39637d9c93827755a">temp</a>.<a class="code" href="classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085">convert</a>( temp_drv_.<a class="code" href="classfw_1_1drv_1_1temperature__interface.html#ab75c19d96e11f2a9173ea339e7fd125b">get_temperature</a>() );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span> ( temp &gt; max_tmp_ ) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14adecfbda91cde2e00e1e04c4c97cb1b86">indication_event::TEMPERATURE_HIGH</a> );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">if</span> ( ctl_.<a class="code" href="classcontrol.html#a384b9afb33dfa242ddfb76388bcbaf82">get_mode</a>() != <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74">control_mode::DISENGAGED</a> ) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a91fc31ffb68f72532b0ab7f28f24db85">indication_event::ENGAGED</a> );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        indi_.<a class="code" href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">on_event</a>( now, <a class="code" href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14afeffe8e712a5ce9a0cedef11c364fa74">indication_event::DISENGAGED</a> );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">const</span> <a class="code" href="classcontrol.html">control</a>&amp;                    ctl_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classindication.html">indication</a>&amp;                       indi_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">const</span> <a class="code" href="classfw_1_1drv_1_1vcc__interface.html">drv::vcc_interface</a>&amp;         vcc_drv_;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">const</span> <a class="code" href="classfw_1_1drv_1_1temperature__interface.html">drv::temperature_interface</a>&amp; temp_drv_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp;                  conv_;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}  <span class="comment">// namespace fw</span></div>
-<div class="ttc" id="aacquisition_8hpp_html"><div class="ttname"><a href="acquisition_8hpp.html">acquisition.hpp</a></div></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">float</span> min_vcc_ = 0.f;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">float</span> max_tmp_ = 90.f;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}  <span class="comment">// namespace fw</span></div>
 <div class="ttc" id="abase_8hpp_html_a3e15423b6a0f2e36799532b4c8f699f5"><div class="ttname"><a href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:12</div></div>
 <div class="ttc" id="abase_8hpp_html_ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74"><div class="ttname"><a href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74">control_mode::DISENGAGED</a></div><div class="ttdeci">@ DISENGAGED</div></div>
 <div class="ttc" id="aclasscontrol_html"><div class="ttname"><a href="classcontrol.html">control</a></div><div class="ttdef"><b>Definition:</b> control.hpp:11</div></div>
 <div class="ttc" id="aclasscontrol_html_a384b9afb33dfa242ddfb76388bcbaf82"><div class="ttname"><a href="classcontrol.html#a384b9afb33dfa242ddfb76388bcbaf82">control::get_mode</a></div><div class="ttdeci">control_mode get_mode() const</div><div class="ttdef"><b>Definition:</b> control.hpp:20</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html">fw::drv::acquisition</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:23</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a4b761ff60be85afa1a07bb9730044371"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a4b761ff60be85afa1a07bb9730044371">fw::drv::acquisition::get_temp</a></div><div class="ttdeci">uint32_t get_temp() const</div><div class="ttdef"><b>Definition:</b> acquisition.hpp:90</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1acquisition_html_a82552304ce2bf35bd17e08f7e08fbb38"><div class="ttname"><a href="classfw_1_1drv_1_1acquisition.html#a82552304ce2bf35bd17e08f7e08fbb38">fw::drv::acquisition::get_vcc</a></div><div class="ttdeci">uint32_t get_vcc() const</div><div class="ttdef"><b>Definition:</b> acquisition.hpp:86</div></div>
-<div class="ttc" id="aclassfw_1_1monitor_html"><div class="ttname"><a href="classfw_1_1monitor.html">fw::monitor</a></div><div class="ttdef"><b>Definition:</b> monitor.hpp:11</div></div>
-<div class="ttc" id="aclassfw_1_1monitor_html_a2d29495be700e893735dde399227b426"><div class="ttname"><a href="classfw_1_1monitor.html#a2d29495be700e893735dde399227b426">fw::monitor::set_maximum_temperature</a></div><div class="ttdeci">void set_maximum_temperature(float temp)</div><div class="ttdef"><b>Definition:</b> monitor.hpp:32</div></div>
-<div class="ttc" id="aclassfw_1_1monitor_html_a53f22374d2b2cf400c46c417d219418c"><div class="ttname"><a href="classfw_1_1monitor.html#a53f22374d2b2cf400c46c417d219418c">fw::monitor::set_minimum_voltage</a></div><div class="ttdeci">void set_minimum_voltage(float vcc)</div><div class="ttdef"><b>Definition:</b> monitor.hpp:27</div></div>
-<div class="ttc" id="aclassfw_1_1monitor_html_a855f6202e1aa6d45e8af2ff489b6c0d9"><div class="ttname"><a href="classfw_1_1monitor.html#a855f6202e1aa6d45e8af2ff489b6c0d9">fw::monitor::monitor</a></div><div class="ttdeci">monitor(microseconds now, const control &amp;ctl, const drv::acquisition &amp;acqui, indication &amp;indi, const converter &amp;conv)</div><div class="ttdef"><b>Definition:</b> monitor.hpp:13</div></div>
-<div class="ttc" id="aclassfw_1_1monitor_html_aed411b0911f06988f4be391baffd6b56"><div class="ttname"><a href="classfw_1_1monitor.html#aed411b0911f06988f4be391baffd6b56">fw::monitor::tick</a></div><div class="ttdeci">void tick(microseconds now)</div><div class="ttdef"><b>Definition:</b> monitor.hpp:37</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1temperature__interface_html"><div class="ttname"><a href="classfw_1_1drv_1_1temperature__interface.html">fw::drv::temperature_interface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:46</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1temperature__interface_html_ab75c19d96e11f2a9173ea339e7fd125b"><div class="ttname"><a href="classfw_1_1drv_1_1temperature__interface.html#ab75c19d96e11f2a9173ea339e7fd125b">fw::drv::temperature_interface::get_temperature</a></div><div class="ttdeci">virtual uint32_t get_temperature() const =0</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1vcc__interface_html"><div class="ttname"><a href="classfw_1_1drv_1_1vcc__interface.html">fw::drv::vcc_interface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:39</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1vcc__interface_html_a98a02980973aef27b0629d2c0db513e1"><div class="ttname"><a href="classfw_1_1drv_1_1vcc__interface.html#a98a02980973aef27b0629d2c0db513e1">fw::drv::vcc_interface::get_vcc</a></div><div class="ttdeci">virtual uint32_t get_vcc() const =0</div></div>
+<div class="ttc" id="aclassfw_1_1monitor_html"><div class="ttname"><a href="classfw_1_1monitor.html">fw::monitor</a></div><div class="ttdef"><b>Definition:</b> monitor.hpp:10</div></div>
+<div class="ttc" id="aclassfw_1_1monitor_html_a2d29495be700e893735dde399227b426"><div class="ttname"><a href="classfw_1_1monitor.html#a2d29495be700e893735dde399227b426">fw::monitor::set_maximum_temperature</a></div><div class="ttdeci">void set_maximum_temperature(float temp)</div><div class="ttdef"><b>Definition:</b> monitor.hpp:33</div></div>
+<div class="ttc" id="aclassfw_1_1monitor_html_a53f22374d2b2cf400c46c417d219418c"><div class="ttname"><a href="classfw_1_1monitor.html#a53f22374d2b2cf400c46c417d219418c">fw::monitor::set_minimum_voltage</a></div><div class="ttdeci">void set_minimum_voltage(float vcc)</div><div class="ttdef"><b>Definition:</b> monitor.hpp:28</div></div>
+<div class="ttc" id="aclassfw_1_1monitor_html_a5b86af746138e2c852514bb0b18259b0"><div class="ttname"><a href="classfw_1_1monitor.html#a5b86af746138e2c852514bb0b18259b0">fw::monitor::monitor</a></div><div class="ttdeci">monitor(microseconds now, const control &amp;ctl, const drv::vcc_interface &amp;vcc_drv, const drv::temperature_interface &amp;temp_drv, indication &amp;indi, const converter &amp;conv)</div><div class="ttdef"><b>Definition:</b> monitor.hpp:12</div></div>
+<div class="ttc" id="aclassfw_1_1monitor_html_aed411b0911f06988f4be391baffd6b56"><div class="ttname"><a href="classfw_1_1monitor.html#aed411b0911f06988f4be391baffd6b56">fw::monitor::tick</a></div><div class="ttdeci">void tick(microseconds now)</div><div class="ttdef"><b>Definition:</b> monitor.hpp:38</div></div>
 <div class="ttc" id="aclassindication_html"><div class="ttname"><a href="classindication.html">indication</a></div><div class="ttdef"><b>Definition:</b> indication.hpp:36</div></div>
 <div class="ttc" id="aclassindication_html_a5d2366017e3656288041d65c5ee6cdf3"><div class="ttname"><a href="classindication.html#a5d2366017e3656288041d65c5ee6cdf3">indication::on_event</a></div><div class="ttdeci">bool on_event(microseconds now, const indication_event &amp;e)</div><div class="ttdef"><b>Definition:</b> indication.cpp:5</div></div>
 <div class="ttc" id="aclasstemperature__converter_html_acc2a683b59b89be21ed4945f3d343085"><div class="ttname"><a href="classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085">temperature_converter::convert</a></div><div class="ttdeci">float convert(uint32_t val) const</div><div class="ttdef"><b>Definition:</b> temperature.hpp:14</div></div>
@@ -181,7 +185,7 @@ $(document).ready(function(){initNavTree('monitor_8hpp_source.html',''); initRes
 <div class="ttc" id="aindication_8hpp_html_a7677f74725e84ed8805a28f45332ff14adecfbda91cde2e00e1e04c4c97cb1b86"><div class="ttname"><a href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14adecfbda91cde2e00e1e04c4c97cb1b86">indication_event::TEMPERATURE_HIGH</a></div><div class="ttdeci">@ TEMPERATURE_HIGH</div></div>
 <div class="ttc" id="aindication_8hpp_html_a7677f74725e84ed8805a28f45332ff14afeffe8e712a5ce9a0cedef11c364fa74"><div class="ttname"><a href="indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14afeffe8e712a5ce9a0cedef11c364fa74">indication_event::DISENGAGED</a></div><div class="ttdeci">@ DISENGAGED</div></div>
 <div class="ttc" id="anamespacectl_html"><div class="ttname"><a href="namespacectl.html">ctl</a></div><div class="ttdef"><b>Definition:</b> config.hpp:10</div></div>
-<div class="ttc" id="anamespacefw_html"><div class="ttname"><a href="namespacefw.html">fw</a></div><div class="ttdef"><b>Definition:</b> board.hpp:29</div></div>
+<div class="ttc" id="anamespacefw_html"><div class="ttname"><a href="namespacefw.html">fw</a></div><div class="ttdef"><b>Definition:</b> board.hpp:53</div></div>
 <div class="ttc" id="astructconverter_html"><div class="ttname"><a href="structconverter.html">converter</a></div><div class="ttdef"><b>Definition:</b> converter.hpp:9</div></div>
 <div class="ttc" id="astructconverter_html_a96a6c5a43d6b71202650791f0ec934df"><div class="ttname"><a href="structconverter.html#a96a6c5a43d6b71202650791f0ec934df">converter::vcc</a></div><div class="ttdeci">voltage_converter vcc</div><div class="ttdef"><b>Definition:</b> converter.hpp:34</div></div>
 <div class="ttc" id="astructconverter_html_ac9870ea936ec13c39637d9c93827755a"><div class="ttname"><a href="structconverter.html#ac9870ea936ec13c39637d9c93827755a">converter::temp</a></div><div class="ttdeci">temperature_converter temp</div><div class="ttdef"><b>Definition:</b> converter.hpp:33</div></div>
@@ -191,7 +195,7 @@ $(document).ready(function(){initNavTree('monitor_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="monitor_8hpp.html">monitor.hpp</a></li>
-    <li class="footer">Generated on Sat Jul 15 2023 10:05:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 19:46:09 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

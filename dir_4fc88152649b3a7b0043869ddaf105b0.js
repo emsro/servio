@@ -3,7 +3,6 @@ var dir_4fc88152649b3a7b0043869ddaf105b0 =
     [ "drv", "dir_6ea741a906e6e17d7bfd6b9b5099e89c.html", "dir_6ea741a906e6e17d7bfd6b9b5099e89c" ],
     [ "board.hpp", "board_8hpp.html", "board_8hpp" ],
     [ "callbacks.hpp", "callbacks_8hpp.html", [
-      [ "acquisition_period_callback", "classfw_1_1acquisition__period__callback.html", "classfw_1_1acquisition__period__callback" ],
       [ "current_callback", "classfw_1_1current__callback.html", "classfw_1_1current__callback" ],
       [ "position_callback", "classfw_1_1position__callback.html", "classfw_1_1position__callback" ]
     ] ],

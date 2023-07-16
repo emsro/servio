@@ -20,9 +20,6 @@ var dir_6ea741a906e6e17d7bfd6b9b5099e89c =
       [ "current_sequence", "structfw_1_1drv_1_1acquisition_1_1current__sequence.html", "structfw_1_1drv_1_1acquisition_1_1current__sequence" ]
     ] ],
     [ "callbacks.hpp", "drv_2callbacks_8hpp.html", [
-      [ "current_cb_interface", "classfw_1_1drv_1_1current__cb__interface.html", "classfw_1_1drv_1_1current__cb__interface" ],
-      [ "position_cb_interface", "classfw_1_1drv_1_1position__cb__interface.html", "classfw_1_1drv_1_1position__cb__interface" ],
-      [ "period_cb_interface", "classfw_1_1drv_1_1period__cb__interface.html", "classfw_1_1drv_1_1period__cb__interface" ],
       [ "current_cb", "structfw_1_1drv_1_1current__cb.html", "structfw_1_1drv_1_1current__cb" ],
       [ "empty_current_cb", "structfw_1_1drv_1_1empty__current__cb.html", "structfw_1_1drv_1_1empty__current__cb" ],
       [ "position_cb", "structfw_1_1drv_1_1position__cb.html", "structfw_1_1drv_1_1position__cb" ],
@@ -55,6 +52,15 @@ var dir_6ea741a906e6e17d7bfd6b9b5099e89c =
         [ "mc2_channel", "classfw_1_1drv_1_1hbridge.html#afbb32d4a47c247f3f9919d8d3acf1514", null ],
         [ "timer", "classfw_1_1drv_1_1hbridge.html#adafc47d8ad22b33a43f5f64ea23571d4", null ]
       ] ]
+    ] ],
+    [ "interfaces.hpp", "interfaces_8hpp.html", [
+      [ "current_cb_interface", "classfw_1_1drv_1_1current__cb__interface.html", "classfw_1_1drv_1_1current__cb__interface" ],
+      [ "position_cb_interface", "classfw_1_1drv_1_1position__cb__interface.html", "classfw_1_1drv_1_1position__cb__interface" ],
+      [ "period_cb_interface", "classfw_1_1drv_1_1period__cb__interface.html", "classfw_1_1drv_1_1period__cb__interface" ],
+      [ "position_interface", "classfw_1_1drv_1_1position__interface.html", "classfw_1_1drv_1_1position__interface" ],
+      [ "vcc_interface", "classfw_1_1drv_1_1vcc__interface.html", "classfw_1_1drv_1_1vcc__interface" ],
+      [ "temperature_interface", "classfw_1_1drv_1_1temperature__interface.html", "classfw_1_1drv_1_1temperature__interface" ],
+      [ "current_interface", "classfw_1_1drv_1_1current__interface.html", "classfw_1_1drv_1_1current__interface" ]
     ] ],
     [ "leds.cpp", "leds_8cpp.html", null ],
     [ "leds.hpp", "leds_8hpp.html", [

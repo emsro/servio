@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('classfw_1_1drv_1_1current__cb__interfa
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="drv_2callbacks_8hpp_source.html">callbacks.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="interfaces_8hpp_source.html">interfaces.hpp</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for fw::drv::current_cb_interface:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -103,8 +103,8 @@ $(document).ready(function(){initNavTree('classfw_1_1drv_1_1current__cb__interfa
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4b2bcab5e90503a631f85e6d6e1af74f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#a4b2bcab5e90503a631f85e6d6e1af74f">on_current</a> (uint32_t <a class="el" href="namespacefw.html#aca40e9512538f1dc60d913483211ee19">current</a>, std::span&lt; uint16_t &gt; profile)=0</td></tr>
-<tr class="separator:a4b2bcab5e90503a631f85e6d6e1af74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3806af396639de18977479db3f72fe32"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#a3806af396639de18977479db3f72fe32">on_current_irq</a> (uint32_t <a class="el" href="namespacefw.html#aca40e9512538f1dc60d913483211ee19">current</a>, std::span&lt; uint16_t &gt; profile)=0</td></tr>
+<tr class="separator:a3806af396639de18977479db3f72fe32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe3e1455bf81506c13d558955b1e83b5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#abe3e1455bf81506c13d558955b1e83b5">~current_cb_interface</a> ()=default</td></tr>
 <tr class="separator:abe3e1455bf81506c13d558955b1e83b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -135,8 +135,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4b2bcab5e90503a631f85e6d6e1af74f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b2bcab5e90503a631f85e6d6e1af74f">&#9670;&nbsp;</a></span>on_current()</h2>
+<a id="a3806af396639de18977479db3f72fe32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3806af396639de18977479db3f72fe32">&#9670;&nbsp;</a></span>on_current_irq()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,7 +145,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void fw::drv::current_cb_interface::on_current </td>
+          <td class="memname">virtual void fw::drv::current_cb_interface::on_current_irq </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>current</em>, </td>
@@ -169,12 +169,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="structfw_1_1drv_1_1empty__current__cb.html#a9ed4b784e5ad67d58a4f9c73d783e6fb">fw::drv::empty_current_cb</a>, <a class="el" href="structfw_1_1drv_1_1current__cb.html#a4fbb8de62c4040090ab6cdbcef6859a4">fw::drv::current_cb&lt; Callable &gt;</a>, and <a class="el" href="classfw_1_1current__callback.html#a4d77bf299881b00bd86e100f4dfaf426">fw::current_callback</a>.</p>
+<p>Implemented in <a class="el" href="structfw_1_1drv_1_1empty__current__cb.html#ac04379807b49f413aa662ca34ae44a31">fw::drv::empty_current_cb</a>, <a class="el" href="structfw_1_1drv_1_1current__cb.html#a87629308169421f1e76f5433efd64b08">fw::drv::current_cb&lt; Callable &gt;</a>, and <a class="el" href="classfw_1_1current__callback.html#aa6218b2565b7c6352ba7c1be180efb7f">fw::current_callback</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/fw/drv/<a class="el" href="drv_2callbacks_8hpp_source.html">callbacks.hpp</a></li>
+<li>src/fw/drv/<a class="el" href="interfaces_8hpp_source.html">interfaces.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -182,7 +182,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="namespacefw_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="classfw_1_1drv_1_1current__cb__interface.html">current_cb_interface</a></li>
-    <li class="footer">Generated on Sat Jul 15 2023 10:05:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 19:46:09 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
