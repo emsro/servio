@@ -49,17 +49,17 @@ bool setup_adc( fw::drv::acquisition::handles& h, adc_cfg cfg )
 
         mmode.Mode = ADC_MODE_INDEPENDENT;
 
-        h.current_chconf.Channel  = cfg.current.channel;
-        h.position_chconf.Channel = cfg.position.channel;
-        h.vcc_chconf.Channel      = cfg.vcc.channel;
-        h.temp_chconf.Channel     = cfg.temp.channel;
-        for ( ADC_ChannelConfTypeDef* chconf :
-              { &h.current_chconf, &h.position_chconf, &h.vcc_chconf, &h.temp_chconf } ) {
-                chconf->Rank         = ADC_REGULAR_RANK_1;
-                chconf->SamplingTime = ADC_SAMPLETIME_92CYCLES_5;
-                chconf->SingleDiff   = ADC_SINGLE_ENDED;
-                chconf->OffsetNumber = ADC_OFFSET_NONE;
-                chconf->Offset       = 0;
+        // TODO: we are ignoring temp
+        // cfg.temp.channel
+        for ( uint32_t channel : { cfg.current.channel, cfg.position.channel, cfg.vcc.channel } ) {
+                h.chconfs.push_back( ADC_ChannelConfTypeDef{
+                    .Channel      = channel,
+                    .Rank         = ADC_REGULAR_RANK_1,
+                    .SamplingTime = ADC_SAMPLETIME_92CYCLES_5,
+                    .SingleDiff   = ADC_SINGLE_ENDED,
+                    .OffsetNumber = ADC_OFFSET_NONE,
+                    .Offset       = 0,
+                } );
         }
 
         h.dma.Instance                 = cfg.dma.instance;
@@ -91,7 +91,7 @@ bool setup_adc( fw::drv::acquisition::handles& h, adc_cfg cfg )
                 fw::stop_exec();
         }
 
-        if ( HAL_ADC_ConfigChannel( &h.adc, &h.current_chconf ) != HAL_OK ) {
+        if ( HAL_ADC_ConfigChannel( &h.adc, &h.chconfs[0] ) != HAL_OK ) {
                 fw::stop_exec();
         }
 

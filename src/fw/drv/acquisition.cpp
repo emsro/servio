@@ -42,24 +42,17 @@ void acquisition::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
         if ( h != &h_.adc ) {
                 return;
         }
-        switch ( adc_state_ ) {
-        case READ_POSITION:
+        // TODO: call callbacks properly
+
+        if ( channel_index_ != detailed_chid ) {
                 HAL_ADC_Stop_IT( &h_.adc );
-                position_ = HAL_ADC_GetValue( &h_.adc );
-                position_cb_->on_position_irq( position_ );
-                break;
-        case READ_VCC:
-                HAL_ADC_Stop_IT( &h_.adc );
-                vcc_ = HAL_ADC_GetValue( &h_.adc );
-                break;
-        case READ_TEMP:
-                HAL_ADC_Stop_IT( &h_.adc );
-                temp_ = HAL_ADC_GetValue( &h_.adc );
-                break;
-        case READ_CURRENT:
-                break;
+                vals_[channel_index_] = HAL_ADC_GetValue( &h_.adc );
+                if ( channel_index_ == 1 ) {
+                        position_cb_->on_position_irq( vals_[channel_index_] );
+                }
         }
-        switch_adc_channel( READ_CURRENT );
+
+        switch_channel( detailed_chid );
 }
 
 void acquisition::start()
@@ -76,56 +69,20 @@ current_cb_interface& acquisition::get_current_callback() const
         return *current_cb_;
 }
 
-void acquisition::switch_adc_channel( adc_states state )
+void acquisition::switch_channel( std::size_t chid )
 {
-        ADC_ChannelConfTypeDef* chconf;
-        switch ( state ) {
-        case READ_POSITION:
-                chconf = &h_.position_chconf;
-                break;
-        case READ_VCC:
-                chconf = &h_.vcc_chconf;
-                break;
-        case READ_TEMP:
-                chconf = &h_.temp_chconf;
-                break;
-        case READ_CURRENT:
-                chconf = &h_.current_chconf;
-                break;
-        default:
-                stop_exec();
-                return;
-        }
-        HAL_StatusTypeDef res = HAL_ADC_ConfigChannel( &h_.adc, chconf );
+        HAL_StatusTypeDef res = HAL_ADC_ConfigChannel( &h_.adc, &h_.chconfs[chid] );
         if ( res != HAL_OK ) {
                 stop_exec();
         }
-        adc_state_ = state;
+        channel_index_ = chid;
 }
-void acquisition::start_simple_reading()
+void acquisition::start_brief_reading()
 {
         HAL_StatusTypeDef res = HAL_ADC_Start_IT( &h_.adc );
         if ( res != HAL_OK ) {
                 stop_exec();
         }
-}
-
-acquisition::adc_states acquisition::next_side_state( adc_states inpt )
-{
-        switch ( inpt ) {
-        case READ_POSITION:
-                return READ_VCC;
-        case READ_VCC:
-                // TODO: this skips the temp reading, turns out that for some reason READ_TEMP is
-                // much slower
-                //            return READ_TEMP;
-                return READ_POSITION;
-        case READ_TEMP:
-                return READ_POSITION;
-        case READ_CURRENT:
-                stop_exec();
-        }
-        return READ_POSITION;
 }
 
 void acquisition::set_position_callback( position_cb_interface& cb )
@@ -140,21 +97,21 @@ position_cb_interface& acquisition::get_position_callback() const
 void acquisition::on_period_irq()
 {
         HAL_StatusTypeDef res           = HAL_OK;
-        std::size_t       next_buffer_i = ( current_sequence_i_ + 1 ) % current_sequences_.size();
-        current_sequence& next_se       = current_sequences_[next_buffer_i];
+        std::size_t       next_buffer_i = ( detailed_sequence_i_ + 1 ) % detailed_sequences_.size();
+        detailed_sequence& next_se      = detailed_sequences_[next_buffer_i];
 
         if ( period_i_ % 2 == 0 ) {
                 res = HAL_ADC_Start_DMA(
                     &h_.adc,
                     reinterpret_cast< uint32_t* >( &next_se.buffer ),
-                    current_sequence::buffer_size );
+                    detailed_sequence::buffer_size );
                 if ( res != HAL_OK ) {
                         status_.start_failed = true;
                 } else {
                         period_i_ += 1;
                 }
         } else {
-                next_se.used = current_sequence::buffer_size - __HAL_DMA_GET_COUNTER( &h_.dma );
+                next_se.used = detailed_sequence::buffer_size - __HAL_DMA_GET_COUNTER( &h_.dma );
                 // For some reason the Stop is necessary to call even thou the ADC should've
                 // finished by now
                 res = HAL_ADC_Stop_DMA( &h_.adc );
@@ -164,19 +121,20 @@ void acquisition::on_period_irq()
                 if ( next_se.used == 0 ) {
                         stop_exec();
                 }
-                if ( next_se.used == current_sequence::buffer_size ) {
+                if ( next_se.used == detailed_sequence::buffer_size ) {
                         status_.buffer_was_full = true;
                 }
 
                 std::span readings( &next_se.buffer[0], next_se.used );
 
-                current_ = em::avg( readings );
-                current_cb_->on_current_irq( current_, readings );
-                current_sequence_i_ = next_buffer_i;
+                vals_[detailed_chid] = em::avg( readings );
+                current_cb_->on_current_irq( vals_[detailed_chid], readings );
+                detailed_sequence_i_ = next_buffer_i;
 
-                side_state_ = next_side_state( side_state_ );
-                switch_adc_channel( side_state_ );
-                start_simple_reading();
+                brief_index_ = ( brief_index_ + 1 ) % h_.chconfs.size();
+                brief_index_ = brief_index_ == 0 ? 1 : brief_index_;
+                switch_channel( brief_index_ );
+                start_brief_reading();
                 period_i_ += 1;
         }
 }

@@ -3,6 +3,7 @@
 #include "fw/drv/interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
+#include <emlabcpp/static_vector.h>
 #include <emlabcpp/view.h>
 #include <span>
 #include <stm32g4xx_hal.h>
@@ -26,29 +27,20 @@ class acquisition : public position_interface,
                     public temperature_interface,
                     public period_cb_interface
 {
-        enum adc_states
-        {
-                READ_POSITION,
-                READ_VCC,
-                READ_TEMP,
-                READ_CURRENT
-        };
-
 public:
+        static constexpr std::size_t chan_n        = 4;
+        static constexpr std::size_t detailed_chid = 0;
+
         struct handles
         {
-                ADC_HandleTypeDef      adc;
-                DMA_HandleTypeDef      dma;
-                TIM_HandleTypeDef      tim;
-                uint32_t               tim_channel;
-                ADC_ChannelConfTypeDef current_chconf;
-                ADC_ChannelConfTypeDef position_chconf;
-                ADC_ChannelConfTypeDef vcc_chconf;
-                ADC_ChannelConfTypeDef temp_chconf;
+                ADC_HandleTypeDef                                   adc;
+                DMA_HandleTypeDef                                   dma;
+                TIM_HandleTypeDef                                   tim;
+                uint32_t                                            tim_channel;
+                em::static_vector< ADC_ChannelConfTypeDef, chan_n > chconfs;
         };
 
-        // seqeunce of current measurements from adc
-        struct current_sequence
+        struct detailed_sequence
         {
                 static constexpr std::size_t buffer_size = 128;
                 alignas( uint32_t ) uint16_t buffer[buffer_size];
@@ -79,19 +71,19 @@ public:
 
         uint32_t get_current() const override
         {
-                return current_;
+                return vals_[0];
         }
         uint32_t get_position() const override
         {
-                return position_;
+                return vals_[1];
         }
         uint32_t get_vcc() const override
         {
-                return vcc_;
+                return vals_[2];
         }
         uint32_t get_temperature() const override
         {
-                return temp_;
+                return vals_[3];
         }
 
         const acquisition_status& get_status() const
@@ -105,27 +97,23 @@ public:
         }
 
 private:
-        void       switch_adc_channel( adc_states );
-        adc_states next_side_state( adc_states );
-        void       start_simple_reading();
+        void switch_channel( std::size_t i );
+        void start_brief_reading();
 
         acquisition_status status_;
 
         current_cb_interface*  current_cb_;
         position_cb_interface* position_cb_;
 
-        uint32_t position_;
-        uint32_t temp_;
-        uint32_t vcc_;
-        uint32_t current_;
+        std::array< uint32_t, chan_n > vals_;
 
-        std::size_t                       period_i_           = 0;
-        std::size_t                       current_sequence_i_ = 0;
-        std::array< current_sequence, 2 > current_sequences_{};
+        std::size_t                        period_i_            = 0;
+        std::size_t                        detailed_sequence_i_ = 0;
+        std::array< detailed_sequence, 2 > detailed_sequences_{};
 
-        handles    h_{};
-        adc_states adc_state_  = READ_CURRENT;
-        adc_states side_state_ = READ_POSITION;
+        handles     h_{};
+        std::size_t channel_index_ = 0;
+        std::size_t brief_index_   = 1;
 };
 
 }  // namespace fw::drv
