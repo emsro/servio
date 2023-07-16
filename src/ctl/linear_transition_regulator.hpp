@@ -1,4 +1,3 @@
-
 namespace ctl
 {
 
@@ -20,9 +19,9 @@ struct linear_transition_regulator
 
         void update( microseconds now, bool is_moving )
         {
-                auto  tdiff = now - last_time;
-                float dir   = is_moving ? -1.f : 1.f;
-                float step  = decay * static_cast< float >( tdiff.count() );
+                const auto  tdiff = now - last_time;
+                const float dir   = is_moving ? -1.f : 1.f;
+                const float step  = decay * static_cast< float >( tdiff.count() );
 
                 state     = std::clamp( state + dir * step, low_point, high_point );
                 last_time = now;

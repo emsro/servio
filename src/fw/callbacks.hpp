@@ -22,9 +22,9 @@ public:
         {
         }
 
-        virtual void on_value_irq( uint32_t curr, std::span< uint16_t > )
+        void on_value_irq( uint32_t curr, std::span< uint16_t > ) override
         {
-                float c = current( conv_, curr, hb_ );
+                const float c = current( conv_, curr, hb_ );
 
                 ctl_.current_irq( clk_.get_us(), c );
                 hb_.set_power( ctl_.get_power() );
@@ -48,11 +48,11 @@ public:
         {
         }
 
-        virtual void on_value_irq( uint32_t position )
+        void on_value_irq( uint32_t position ) override
         {
-                microseconds now = clk_.get_us();
+                const microseconds now = clk_.get_us();
 
-                float p = conv_.position.convert( position );
+                const float p = conv_.position.convert( position );
 
                 met_.position_irq( now, p );
                 ctl_.moving_irq( now, met_.is_moving() );

@@ -8,7 +8,7 @@ namespace fw
 
 inline float current( const converter& conv, uint32_t raw_current, const drv::hbridge& hb )
 {
-        return conv.current.convert( raw_current ) * hb.get_direction();
+        return conv.current.convert( raw_current ) * static_cast< float >( hb.get_direction() );
 }
 
 inline float

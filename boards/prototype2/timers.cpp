@@ -212,7 +212,7 @@ bool setup_leds_timer( fw::drv::leds::handles& h, leds_timer_cfg cfg )
                 fw::stop_exec();
         }
 
-        for ( uint32_t chan : { h.yellow_channel, h.green_channel } ) {
+        for ( const uint32_t chan : { h.yellow_channel, h.green_channel } ) {
                 if ( HAL_TIM_PWM_ConfigChannel( &h.tim, &chc, chan ) != HAL_OK ) {
                         fw::stop_exec();
                 }

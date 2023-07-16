@@ -18,7 +18,7 @@ hbridge::hbridge()
 bool hbridge::setup( em::function_view< bool( handles& ) > setup_f )
 {
 
-        bool res = setup_f( h_ );
+        const bool res = setup_f( h_ );
 
         timer_max_ = h_.timer.Init.Period;
 
@@ -67,7 +67,7 @@ void hbridge::set_power( int16_t power )
 
         // TODO: again, casts can potentially produce an error?
         if ( power > 0 ) {
-                int32_t val = em::map_range< int32_t, int32_t >(
+                const auto val = em::map_range< int32_t, int32_t >(
                     power,
                     0,
                     std::numeric_limits< int16_t >::max(),
@@ -76,7 +76,7 @@ void hbridge::set_power( int16_t power )
                 __HAL_TIM_SET_COMPARE( &h_.timer, h_.mc1_channel, static_cast< uint32_t >( val ) );
                 __HAL_TIM_SET_COMPARE( &h_.timer, h_.mc2_channel, 0 );
         } else {
-                int32_t val = em::map_range< int32_t, int32_t >(
+                const auto val = em::map_range< int32_t, int32_t >(
                     power,
                     0,
                     std::numeric_limits< int16_t >::lowest(),

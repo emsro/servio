@@ -34,7 +34,7 @@ void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
                 current_size_ += 1;
         } else {
                 current_size_ += 1;
-                std::byte b = cd_.iter( rx_byte_ );
+                const std::byte b = cd_.iter( rx_byte_ );
                 ibuffer_.push_back( b );
         }
         start();
@@ -48,8 +48,8 @@ std::tuple< bool, em::view< std::byte* > > comms::load_message( em::view< std::b
         if ( isizes_.front() > data.size() ) {
                 return { false, em::view< std::byte* >{} };
         }
-        uint16_t size  = isizes_.take_front();
-        em::view dview = em::view_n( data.begin(), size );
+        const uint16_t size  = isizes_.take_front();
+        em::view       dview = em::view_n( data.begin(), size );
 
         for ( std::byte& b : dview ) {
                 b = ibuffer_.take_front();

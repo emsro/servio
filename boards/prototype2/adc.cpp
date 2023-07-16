@@ -49,7 +49,7 @@ bool setup_adc( acquisition_type::handles& h, adc_cfg cfg )
 
         mmode.Mode = ADC_MODE_INDEPENDENT;
 
-        for ( uint32_t channel : {
+        for ( const uint32_t channel : {
                   cfg.current.channel,
                   cfg.vcc.channel,
                   cfg.temp.channel,

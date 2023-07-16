@@ -15,6 +15,6 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   add_library(proto STATIC ${PROTO_SRCS} ${PROTO_HDRS})
   target_link_libraries(proto PUBLIC nanopb_lib)
-  target_include_directories(proto PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+  target_include_directories(proto SYSTEM PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 
 endif()

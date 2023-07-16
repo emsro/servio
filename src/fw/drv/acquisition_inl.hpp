@@ -2,16 +2,14 @@
 
 namespace fw::drv
 {
-namespace
-{
-        empty_value_cb        EMPTY_VALUE_CB;
-        empty_adc_detailed_cb EMPTY_ADC_DETAILED_CB;
-}  // namespace
 
 template < std::size_t N >
 acquisition< N >::acquisition()
-  : detailed_cb_( &EMPTY_ADC_DETAILED_CB )
 {
+        static empty_value_cb        EMPTY_VALUE_CB;
+        static empty_adc_detailed_cb EMPTY_ADC_DETAILED_CB;
+
+        detailed_cb_ = &EMPTY_ADC_DETAILED_CB;
         for ( value_cb_interface*& ptr : brief_cbs_ ) {
                 ptr = &EMPTY_VALUE_CB;
         }
@@ -64,7 +62,7 @@ template < std::size_t N >
 void acquisition< N >::on_period_irq()
 {
         HAL_StatusTypeDef res           = HAL_OK;
-        std::size_t       next_buffer_i = ( detailed_sequence_i_ + 1 ) % detailed_sequences_.size();
+        const std::size_t next_buffer_i = ( detailed_sequence_i_ + 1 ) % detailed_sequences_.size();
         detailed_sequence& next_se      = detailed_sequences_[next_buffer_i];
 
         if ( period_i_ % 2 == 0 ) {
@@ -92,7 +90,7 @@ void acquisition< N >::on_period_irq()
                         status_.buffer_was_full = true;
                 }
 
-                std::span readings( &next_se.buffer[0], next_se.used );
+                const std::span readings( &next_se.buffer[0], next_se.used );
 
                 vals_[detailed_chid] = em::avg( readings );
                 detailed_cb_->on_value_irq( vals_[detailed_chid], readings );
@@ -145,7 +143,7 @@ uint32_t acquisition< N >::get_val( std::size_t i ) const
 template < std::size_t N >
 void acquisition< N >::switch_channel( std::size_t chid )
 {
-        HAL_StatusTypeDef res = HAL_ADC_ConfigChannel( &h_.adc, &h_.chconfs[chid] );
+        const HAL_StatusTypeDef res = HAL_ADC_ConfigChannel( &h_.adc, &h_.chconfs[chid] );
         if ( res != HAL_OK ) {
                 stop_exec();
         }
@@ -155,7 +153,7 @@ void acquisition< N >::switch_channel( std::size_t chid )
 template < std::size_t N >
 void acquisition< N >::start_brief_reading()
 {
-        HAL_StatusTypeDef res = HAL_ADC_Start_IT( &h_.adc );
+        const HAL_StatusTypeDef res = HAL_ADC_Start_IT( &h_.adc );
         if ( res != HAL_OK ) {
                 stop_exec();
         }

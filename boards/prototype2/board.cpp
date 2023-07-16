@@ -40,11 +40,11 @@ struct : fw::drv::position_interface
                 return ACQUISITION.get_val( 3 );
         }
 
-        void set_position_callback( fw::drv::position_cb_interface& cb )
+        void set_position_callback( fw::drv::position_cb_interface& cb ) override
         {
                 ACQUISITION.set_brief_callback( 3, cb );
         }
-        fw::drv::position_cb_interface& get_position_callback() const
+        fw::drv::position_cb_interface& get_position_callback() const override
         {
                 return ACQUISITION.get_brief_callback( 3 );
         }
@@ -58,11 +58,11 @@ struct : fw::drv::current_interface
                 return ACQUISITION.get_val( 0 );
         }
 
-        void set_current_callback( fw::drv::current_cb_interface& cb )
+        void set_current_callback( fw::drv::current_cb_interface& cb ) override
         {
                 ACQUISITION.set_detailed_callback( cb );
         }
-        fw::drv::current_cb_interface& get_current_callback() const
+        fw::drv::current_cb_interface& get_current_callback() const override
         {
                 return ACQUISITION.get_detailed_callback();
         }
@@ -217,7 +217,7 @@ fw::drv::hbridge* setup_hbridge()
         auto setup_f = []( fw::drv::hbridge::handles& h ) {
                 __HAL_RCC_TIM1_CLK_ENABLE();
                 __HAL_RCC_GPIOA_CLK_ENABLE();
-                bool res = setup_hbridge_timers(
+                const bool res = setup_hbridge_timers(
                     h,
                     hb_timer_cfg{
                         .timer_instance = TIM1,
@@ -300,7 +300,7 @@ fw::drv::debug_comms* setup_debug_comms()
                 __HAL_RCC_GPIOA_CLK_ENABLE();
                 __HAL_RCC_GPIOB_CLK_ENABLE();
                 __HAL_RCC_USART1_CLK_ENABLE();
-                bool res = setup_uart(
+                const bool res = setup_uart(
                     h.uart,
                     h.tx_dma,
                     uart_cfg{

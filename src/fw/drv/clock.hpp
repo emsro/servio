@@ -26,7 +26,7 @@ public:
 
         bool setup( em::function_view< bool( handles& ) > setup_f )
         {
-                bool res = setup_f( h_ );
+                const bool res = setup_f( h_ );
                 HAL_TIM_OC_Start( &h_.tim, h_.tim_channel );
                 return res;
         }

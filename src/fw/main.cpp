@@ -24,17 +24,17 @@ bool store_config(
         }
 
         const std::byte* start      = opt_page->begin();
-        uint32_t         start_addr = reinterpret_cast< uint32_t >( start );
+        auto             start_addr = reinterpret_cast< uint32_t >( start );
 
         auto f = [&]( std::size_t offset, uint64_t val ) -> bool {
                 HAL_FLASH_Unlock();
-                HAL_StatusTypeDef status =
+                const HAL_StatusTypeDef status =
                     HAL_FLASH_Program( FLASH_TYPEPROGRAM_DOUBLEWORD, start_addr + offset, val );
                 HAL_FLASH_Lock();
                 return status == HAL_OK;
         };
 
-        bool succ = cfg::store( pld, cfg, f );
+        const bool succ = cfg::store( pld, cfg, f );
 
         return succ;
 }
@@ -54,7 +54,7 @@ int main()
                 auto check_f = [&]( const cfg::payload& ) {
                         return true;
                 };
-                bool cfg_loaded = cfg::load( *last_page, check_f, cfg );
+                const bool cfg_loaded = cfg::load( *last_page, check_f, cfg );
 
                 if ( !cfg_loaded ) {
                         fw::stop_exec();
@@ -70,7 +70,7 @@ int main()
         fw::core cor{ cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock };
         cdrv.leds->update( cor.ind.get_state() );
 
-        fw::standard_callbacks cbs(
+        const fw::standard_callbacks cbs(
             *cdrv.hbridge,
             *cdrv.clock,
             *cdrv.position,
@@ -94,7 +94,7 @@ int main()
                 cor.tick( *cdrv.leds, cdrv.clock->get_us() );
 
                 auto write_config = [&]( const cfg_map* cfg ) -> bool {
-                        cfg::payload pld{
+                        const cfg::payload pld{
                             .git_ver = "",  // TODO: << fix this
                             .id      = last_cfg_payload.id + 1,
                         };

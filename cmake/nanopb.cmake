@@ -17,4 +17,4 @@ add_library(
   nanopb_lib STATIC
   ${nanopb_SOURCE_DIR}/pb_common.c ${nanopb_SOURCE_DIR}/pb_encode.c
   ${nanopb_SOURCE_DIR}/pb_decode.c)
-target_include_directories(nanopb_lib PUBLIC ${NANOPB_INCLUDE_DIRS})
+target_include_directories(nanopb_lib SYSTEM PUBLIC ${NANOPB_INCLUDE_DIRS})

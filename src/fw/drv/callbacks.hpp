@@ -16,7 +16,7 @@ struct adc_detailed_cb : public adc_detailed_cb_interface
         {
         }
 
-        void on_value_irq( uint32_t val, std::span< uint16_t > profile )
+        void on_value_irq( uint32_t val, std::span< uint16_t > profile ) override
         {
                 cb( val, profile );
         }
@@ -29,7 +29,7 @@ using current_cb = adc_detailed_cb< Callable >;
 
 struct empty_adc_detailed_cb : public adc_detailed_cb_interface
 {
-        void on_value_irq( uint32_t, std::span< uint16_t > )
+        void on_value_irq( uint32_t, std::span< uint16_t > ) override
         {
         }
 };
@@ -44,7 +44,7 @@ struct value_cb : public value_cb_interface
         {
         }
 
-        virtual void on_value_irq( uint32_t pos )
+        void on_value_irq( uint32_t pos ) override
         {
                 cb( pos );
         }
@@ -56,7 +56,7 @@ using position_cb = value_cb< Callable >;
 
 struct empty_value_cb : public value_cb_interface
 {
-        virtual void on_value_irq( uint32_t )
+        void on_value_irq( uint32_t ) override
         {
         }
 };
@@ -71,7 +71,7 @@ struct period_cb : public period_cb_interface
         {
         }
 
-        virtual void on_period_irq()
+        void on_period_irq() override
         {
                 cb();
         }
@@ -81,7 +81,7 @@ struct period_cb : public period_cb_interface
 
 struct empty_period_cb : public period_cb_interface
 {
-        virtual void on_period_irq()
+        void on_period_irq() override
         {
         }
 };

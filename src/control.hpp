@@ -17,7 +17,7 @@ public:
         void set_limits( control_loop, limits< float > lim );
         void set_static_friction( float scale, float decay );
 
-        control_mode get_mode() const
+        [[nodiscard]] control_mode get_mode() const
         {
                 return state_;
         }

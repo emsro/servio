@@ -69,10 +69,10 @@ calculate_current_conversion( float v_max, float v_min, float steps, float r_shu
 
 off_scale calculate_temp_conversion()
 {
-        auto cal1 = static_cast< float >( *TEMPSENSOR_CAL1_ADDR );
-        auto cal2 = static_cast< float >( *TEMPSENSOR_CAL2_ADDR );
+        const auto cal1 = static_cast< float >( *TEMPSENSOR_CAL1_ADDR );
+        const auto cal2 = static_cast< float >( *TEMPSENSOR_CAL2_ADDR );
 
-        float scale =
+        const float scale =
             static_cast< float >( TEMPSENSOR_CAL2_TEMP - TEMPSENSOR_CAL1_TEMP ) / ( cal2 - cal1 );
 
         return { .offset = 30 - cal1 * scale, .scale = scale };
@@ -82,9 +82,9 @@ consteval cfg_map generate_config()
 {
         cfg_map res = cfg::get_default_config();
 
-        const float r_shunt  = 0.043f;
-        const float gain     = 100.f;
-        off_scale   curr_cfg = calculate_current_conversion( 3.3f, 0, 1 << 12, r_shunt, gain );
+        const float     r_shunt  = 0.043f;
+        const float     gain     = 100.f;
+        const off_scale curr_cfg = calculate_current_conversion( 3.3f, 0, 1 << 12, r_shunt, gain );
         res.set_val< cfg_key::CURRENT_CONV_SCALE >( curr_cfg.scale );
         res.set_val< cfg_key::CURRENT_CONV_OFFSET >( curr_cfg.offset );
 
@@ -95,7 +95,7 @@ cfg_map get_config()
 {
         cfg_map res = generate_config();
 
-        off_scale temp_cfg = calculate_temp_conversion();
+        const off_scale temp_cfg = calculate_temp_conversion();
         res.set_val< cfg_key::TEMP_CONV_SCALE >( temp_cfg.scale );
         res.set_val< cfg_key::TEMP_CONV_OFFSET >( temp_cfg.offset );
 

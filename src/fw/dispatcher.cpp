@@ -109,7 +109,7 @@ ServioToHost handle_get_property(
 
 ServioToHost handle_set_config( cfg_dispatcher& cfg_disp, const Config& req )
 {
-        bool key_found = map_cfg( req.which_pld, req, [&]< cfg_key K >( auto& val ) {
+        const bool key_found = map_cfg( req.which_pld, req, [&]< cfg_key K >( auto& val ) {
                 cfg_disp.set< K >( val );
         } );
         if ( !key_found ) {
@@ -123,7 +123,7 @@ ServioToHost handle_set_config( cfg_dispatcher& cfg_disp, const Config& req )
 ServioToHost handle_get_config( const cfg_dispatcher& cfg_disp, const GetConfig& req )
 {
         ServioToHost msg;
-        bool         key_found =
+        const bool   key_found =
             map_cfg( req.field_id, msg.get_config, [&]< cfg_key K, typename T >( T& val ) {
                     if constexpr ( K == MODEL ) {
                             const model_name& n = cfg_disp.map.get_val< K >();
@@ -144,7 +144,7 @@ ServioToHost handle_get_config( const cfg_dispatcher& cfg_disp, const GetConfig&
 ServioToHost handle_commit_config( const cfg_dispatcher& cfg_disp, const auto& cfg_writer )
 {
 
-        bool succ = cfg_writer( &cfg_disp.map );
+        const bool succ = cfg_writer( &cfg_disp.map );
         if ( !succ ) {
                 return error_msg( "commit failed" );
         }
@@ -157,7 +157,7 @@ ServioToHost handle_commit_config( const cfg_dispatcher& cfg_disp, const auto& c
 ServioToHost handle_clear_config( const auto& cfg_writer )
 {
 
-        bool succ = cfg_writer( nullptr );
+        const bool succ = cfg_writer( nullptr );
         if ( !succ ) {
                 return error_msg( "clear failed" );
         }
@@ -203,8 +203,8 @@ std::tuple< bool, em::view< std::byte* > > process_message(
     em::view< std::byte* >       output_buffer,
     Handle&&                     h )
 {
-        InputType inpt;
-        bool      succ = decode( input_data, inpt );
+        InputType  inpt;
+        const bool succ = decode( input_data, inpt );
         if ( !succ ) {
                 return { false, {} };
         }

@@ -24,7 +24,7 @@ bool decode( em::view< const std::byte* > data, HostToServio& msg )
         // TODO: stream has error string that can be reported!
         pb_istream_t stream = pb_istream_from_buffer(
             reinterpret_cast< const uint8_t* >( data.begin() ), data.size() );
-        bool status = pb_decode( &stream, HostToServio_fields, &msg );
+        const bool status = pb_decode( &stream, HostToServio_fields, &msg );
         return status;
 }
 bool decode( em::view< const std::byte* > data, HostToServioPacket& msg )
@@ -32,7 +32,7 @@ bool decode( em::view< const std::byte* > data, HostToServioPacket& msg )
         // TODO: stream has error string that can be reported!
         pb_istream_t stream = pb_istream_from_buffer(
             reinterpret_cast< const uint8_t* >( data.begin() ), data.size() );
-        bool status = pb_decode( &stream, HostToServioPacket_fields, &msg );
+        const bool status = pb_decode( &stream, HostToServioPacket_fields, &msg );
         return status;
 }
 
@@ -41,7 +41,7 @@ encode( em::view< std::byte* > data, const ServioToHost& msg )
 {
         pb_ostream_t stream =
             pb_ostream_from_buffer( reinterpret_cast< uint8_t* >( data.begin() ), data.size() );
-        bool res = pb_encode( &stream, ServioToHost_fields, &msg );
+        const bool res = pb_encode( &stream, ServioToHost_fields, &msg );
 
         return { res, em::view_n( data.begin(), stream.bytes_written ) };
 }
@@ -51,7 +51,7 @@ encode( em::view< std::byte* > data, const ServioToHostPacket& msg )
 {
         pb_ostream_t stream =
             pb_ostream_from_buffer( reinterpret_cast< uint8_t* >( data.begin() ), data.size() );
-        bool res = pb_encode( &stream, ServioToHostPacket_fields, &msg );
+        const bool res = pb_encode( &stream, ServioToHostPacket_fields, &msg );
 
         return { res, em::view_n( data.begin(), stream.bytes_written ) };
 }

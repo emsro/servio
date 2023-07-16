@@ -5,6 +5,7 @@
 
 namespace em = emlabcpp;
 
+// TODO: well the namspace is worng here and it needs some cleanup
 namespace kalman
 {
 
@@ -67,8 +68,8 @@ constexpr std::tuple< state, state_covariance > predict(
     const control_input_model&      B,
     const process_noise_covariance& Q )
 {
-        state            x = F * x_prev + B * u;
-        state_covariance P = F * P_prev * em::transpose( F ) + Q;
+        const state            x = F * x_prev + B * u;
+        const state_covariance P = F * P_prev * em::transpose( F ) + Q;
 
         return { x, P };
 }
@@ -81,13 +82,13 @@ constexpr std::tuple< state, state_covariance > update(
     const observation_noise_covariance& R )
 {
 
-        innovation_covariance S = H * P_prev * em::transpose( H ) + R;
-        kalman_gain           K = P_prev * em::transpose( H ) * em::inverse( S );
+        const innovation_covariance S = H * P_prev * em::transpose( H ) + R;
+        const kalman_gain           K = P_prev * em::transpose( H ) * em::inverse( S );
 
-        em::identity_matrix< 2 > I;
+        constexpr em::identity_matrix< 2 > I;
 
-        state            x = ( I - K * H ) * x_prev + K * z;
-        state_covariance P = ( I - K * H ) * P_prev;
+        const state            x = ( I - K * H ) * x_prev + K * z;
+        const state_covariance P = ( I - K * H ) * P_prev;
 
         return { x, P };
 }
@@ -135,11 +136,12 @@ inline std::vector< state > simulate(
     const std::vector< observation >& observations,
     state_range                       sr )
 {
-        state_transition_model       F = get_transition_model( tdiff );
-        control_input_model          B = get_control_input_model( tdiff );
-        process_noise_covariance     Q = get_process_noise_covariance( tdiff, process_deviation );
-        observation_model            H = get_observation_model();
-        observation_noise_covariance R = get_observation_noise_covariance( observation_deviation );
+        const state_transition_model   F = get_transition_model( tdiff );
+        const control_input_model      B = get_control_input_model( tdiff );
+        const process_noise_covariance Q = get_process_noise_covariance( tdiff, process_deviation );
+        const observation_model        H = get_observation_model();
+        const observation_noise_covariance R =
+            get_observation_noise_covariance( observation_deviation );
 
         state x;
         angle( x )    = angle( observations[0] );
