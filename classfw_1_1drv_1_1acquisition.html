@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('classfw_1_1drv_1_1acquisition.html',''
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classfw_1_1drv_1_1acquisition-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">fw::drv::acquisition Class Reference</div>  </div>
@@ -112,7 +113,7 @@ $(document).ready(function(){initNavTree('classfw_1_1drv_1_1acquisition.html',''
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1drv_1_1acquisition_1_1current__sequence.html">current_sequence</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html">detailed_sequence</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structfw_1_1drv_1_1acquisition_1_1handles"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles">handles</a></td></tr>
 <tr class="separator:structfw_1_1drv_1_1acquisition_1_1handles"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,6 +171,13 @@ Public Member Functions</h2></td></tr>
 <tr class="inherit_header pub_methods_classfw_1_1drv_1_1period__cb__interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfw_1_1drv_1_1period__cb__interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfw_1_1drv_1_1period__cb__interface.html">fw::drv::period_cb_interface</a></td></tr>
 <tr class="memitem:a048ab0f9abf965f668835bbda19c0ce8 inherit pub_methods_classfw_1_1drv_1_1period__cb__interface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1period__cb__interface.html#a048ab0f9abf965f668835bbda19c0ce8">~period_cb_interface</a> ()=default</td></tr>
 <tr class="separator:a048ab0f9abf965f668835bbda19c0ce8 inherit pub_methods_classfw_1_1drv_1_1period__cb__interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a2daa2b69be3a4700565fa4c7981f4b3f"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1acquisition.html#a2daa2b69be3a4700565fa4c7981f4b3f">chan_n</a> = 4</td></tr>
+<tr class="separator:a2daa2b69be3a4700565fa4c7981f4b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74629d4730ed297b77af1d7655a9c07e"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1acquisition.html#a74629d4730ed297b77af1d7655a9c07e">detailed_chid</a> = 0</td></tr>
+<tr class="separator:a74629d4730ed297b77af1d7655a9c07e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structfw_1_1drv_1_1acquisition_1_1handles" id="structfw_1_1drv_1_1acquisition_1_1handles"></a>
@@ -192,27 +200,15 @@ adc</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a0c0def56c4bd9ea44335b7bcfd6572c9"></a>ADC_ChannelConfTypeDef</td>
+<a id="aee10c8796c8fdd313395eb3c6cf9f396"></a>static_vector&lt; ADC_ChannelConfTypeDef, <a class="el" href="classfw_1_1drv_1_1acquisition.html#a2daa2b69be3a4700565fa4c7981f4b3f">chan_n</a> &gt;</td>
 <td class="fieldname">
-current_chconf</td>
+chconfs</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
 <a id="a3ba51c29dc3ed773184033167357e93d"></a>DMA_HandleTypeDef</td>
 <td class="fieldname">
 dma</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a43116a9771474ec67c7cddbbc1b8ab24"></a>ADC_ChannelConfTypeDef</td>
-<td class="fieldname">
-position_chconf</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="abd6cd34812d53a5b317b13f13f9f954e"></a>ADC_ChannelConfTypeDef</td>
-<td class="fieldname">
-temp_chconf</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -225,12 +221,6 @@ tim</td>
 <a id="ae2302feb24d1ba636bc13e0f0178a4b0"></a>uint32_t</td>
 <td class="fieldname">
 tim_channel</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a356f53491490ae06445e414fd5746235"></a>ADC_ChannelConfTypeDef</td>
-<td class="fieldname">
-vcc_chconf</td>
 <td class="fielddoc">
 </td></tr>
 </table>
@@ -272,7 +262,7 @@ vcc_chconf</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classfw_1_1drv_1_1acquisition.html#a5bfd0911733a2c824b38491e68ff7543">fw::drv::acquisition::handles::adc</a>, and <a class="el" href="classfw_1_1drv_1_1position__cb__interface.html#adbb385538ccbf1d4c92827c787860c28">fw::drv::position_cb_interface::on_position_irq()</a>.</p>
+<p class="reference">References <a class="el" href="classfw_1_1drv_1_1acquisition.html#a5bfd0911733a2c824b38491e68ff7543">fw::drv::acquisition::handles::adc</a>, <a class="el" href="classfw_1_1drv_1_1acquisition.html#a74629d4730ed297b77af1d7655a9c07e">detailed_chid</a>, and <a class="el" href="classfw_1_1drv_1_1position__cb__interface.html#adbb385538ccbf1d4c92827c787860c28">fw::drv::position_cb_interface::on_position_irq()</a>.</p>
 
 </div>
 </div>
@@ -569,7 +559,7 @@ vcc_chconf</td>
 
 <p>Implements <a class="el" href="classfw_1_1drv_1_1period__cb__interface.html#a62e069dee30fdd41b5918e4f1f824428">fw::drv::period_cb_interface</a>.</p>
 
-<p class="reference">References <a class="el" href="classfw_1_1drv_1_1acquisition.html#a5bfd0911733a2c824b38491e68ff7543">fw::drv::acquisition::handles::adc</a>, <a class="el" href="structfw_1_1drv_1_1acquisition_1_1current__sequence.html#aaf8c45c3d1eb6e0899f2c21b2d916a03">fw::drv::acquisition::current_sequence::buffer</a>, <a class="el" href="structfw_1_1drv_1_1acquisition_1_1current__sequence.html#a29a9a5255469481a27ff5732d3775917">fw::drv::acquisition::current_sequence::buffer_size</a>, <a class="el" href="namespacefw_1_1drv.html#af977b5a7be96a3a0cb62991781d4398a">fw::drv::acquisition_status::buffer_was_full</a>, <a class="el" href="classfw_1_1drv_1_1acquisition.html#a3ba51c29dc3ed773184033167357e93d">fw::drv::acquisition::handles::dma</a>, <a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#a3806af396639de18977479db3f72fe32">fw::drv::current_cb_interface::on_current_irq()</a>, <a class="el" href="namespacefw_1_1drv.html#a14fbc9ffa08fd7ba33393bd9e82f4379">fw::drv::acquisition_status::start_failed</a>, <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">fw::stop_exec()</a>, and <a class="el" href="structfw_1_1drv_1_1acquisition_1_1current__sequence.html#ae9d3253fc3a17d0ff471b68195ea12d4">fw::drv::acquisition::current_sequence::used</a>.</p>
+<p class="reference">References <a class="el" href="classfw_1_1drv_1_1acquisition.html#a5bfd0911733a2c824b38491e68ff7543">fw::drv::acquisition::handles::adc</a>, <a class="el" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#aab84c36a99ccb5493f8c73e7cff2266a">fw::drv::acquisition::detailed_sequence::buffer</a>, <a class="el" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a862610468ee489dbaa594fc7192ebf8b">fw::drv::acquisition::detailed_sequence::buffer_size</a>, <a class="el" href="namespacefw_1_1drv.html#af977b5a7be96a3a0cb62991781d4398a">fw::drv::acquisition_status::buffer_was_full</a>, <a class="el" href="classfw_1_1drv_1_1acquisition.html#aee10c8796c8fdd313395eb3c6cf9f396">fw::drv::acquisition::handles::chconfs</a>, <a class="el" href="classfw_1_1drv_1_1acquisition.html#a74629d4730ed297b77af1d7655a9c07e">detailed_chid</a>, <a class="el" href="classfw_1_1drv_1_1acquisition.html#a3ba51c29dc3ed773184033167357e93d">fw::drv::acquisition::handles::dma</a>, <a class="el" href="classfw_1_1drv_1_1current__cb__interface.html#a3806af396639de18977479db3f72fe32">fw::drv::current_cb_interface::on_current_irq()</a>, <a class="el" href="namespacefw_1_1drv.html#a14fbc9ffa08fd7ba33393bd9e82f4379">fw::drv::acquisition_status::start_failed</a>, <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">fw::stop_exec()</a>, and <a class="el" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a9a7dfc39fe74c0fe9c80c1cfc0e26d46">fw::drv::acquisition::detailed_sequence::used</a>.</p>
 
 </div>
 </div>
@@ -666,6 +656,51 @@ vcc_chconf</td>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2daa2b69be3a4700565fa4c7981f4b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2daa2b69be3a4700565fa4c7981f4b3f">&#9670;&nbsp;</a></span>chan_n</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::size_t fw::drv::acquisition::chan_n = 4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74629d4730ed297b77af1d7655a9c07e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74629d4730ed297b77af1d7655a9c07e">&#9670;&nbsp;</a></span>detailed_chid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::size_t fw::drv::acquisition::detailed_chid = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/fw/drv/<a class="el" href="acquisition_8hpp_source.html">acquisition.hpp</a></li>
 <li>src/fw/drv/<a class="el" href="acquisition_8cpp.html">acquisition.cpp</a></li>
@@ -676,7 +711,7 @@ vcc_chconf</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="namespacefw_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="classfw_1_1drv_1_1acquisition.html">acquisition</a></li>
-    <li class="footer">Generated on Sun Jul 16 2023 19:46:09 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 20:26:52 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

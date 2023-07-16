@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('acquisition_8hpp.html',''); initResiza
 <code>#include &quot;<a class="el" href="drv_2callbacks_8hpp_source.html">fw/drv/callbacks.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="interfaces_8hpp_source.html">fw/drv/interfaces.hpp</a>&quot;</code><br />
 <code>#include &lt;emlabcpp/experimental/function_view.h&gt;</code><br />
+<code>#include &lt;emlabcpp/static_vector.h&gt;</code><br />
 <code>#include &lt;emlabcpp/view.h&gt;</code><br />
 <code>#include &lt;span&gt;</code><br />
 <code>#include &lt;stm32g4xx_hal.h&gt;</code><br />
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('acquisition_8hpp.html',''); initResiza
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="acquisition_8hpp__incl.svg" width="1390" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="acquisition_8hpp__incl.svg" width="1606" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -116,7 +117,7 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structfw_1_1drv_1_1acquisition_1_1handles"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles">fw::drv::acquisition::handles</a></td></tr>
 <tr class="separator:structfw_1_1drv_1_1acquisition_1_1handles"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1drv_1_1acquisition_1_1current__sequence.html">fw::drv::acquisition::current_sequence</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html">fw::drv::acquisition::detailed_sequence</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -176,27 +177,15 @@ adc</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a0c0def56c4bd9ea44335b7bcfd6572c9"></a>ADC_ChannelConfTypeDef</td>
+<a id="aee10c8796c8fdd313395eb3c6cf9f396"></a>static_vector&lt; ADC_ChannelConfTypeDef, <a class="el" href="classfw_1_1drv_1_1acquisition.html#a2daa2b69be3a4700565fa4c7981f4b3f">chan_n</a> &gt;</td>
 <td class="fieldname">
-current_chconf</td>
+chconfs</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
 <a id="a3ba51c29dc3ed773184033167357e93d"></a>DMA_HandleTypeDef</td>
 <td class="fieldname">
 dma</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a43116a9771474ec67c7cddbbc1b8ab24"></a>ADC_ChannelConfTypeDef</td>
-<td class="fieldname">
-position_chconf</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="abd6cd34812d53a5b317b13f13f9f954e"></a>ADC_ChannelConfTypeDef</td>
-<td class="fieldname">
-temp_chconf</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -211,12 +200,6 @@ tim</td>
 tim_channel</td>
 <td class="fielddoc">
 </td></tr>
-<tr><td class="fieldtype">
-<a id="a356f53491490ae06445e414fd5746235"></a>ADC_ChannelConfTypeDef</td>
-<td class="fieldname">
-vcc_chconf</td>
-<td class="fielddoc">
-</td></tr>
 </table>
 
 </div>
@@ -227,7 +210,7 @@ vcc_chconf</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="acquisition_8hpp.html">acquisition.hpp</a></li>
-    <li class="footer">Generated on Sun Jul 16 2023 19:46:09 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 20:26:52 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

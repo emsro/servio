@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['value_1032',['value',['../host_2main_8cpp.html#a2c44eb31fa1d94fb9b3c3a9e3f31c539',1,'cfg_opts']]],
-  ['vcc_1033',['vcc',['../structconverter.html#a96a6c5a43d6b71202650791f0ec934df',1,'converter::vcc()'],['../structbrd_1_1core__drivers.html#a9d3f063518926fb9db47504556d7078c',1,'brd::core_drivers::vcc()']]],
-  ['vcc_5fchconf_1034',['vcc_chconf',['../classfw_1_1drv_1_1acquisition.html#a356f53491490ae06445e414fd5746235',1,'fw::drv::acquisition::handles']]],
-  ['vcc_5fdrv_1035',['vcc_drv',['../namespacefw.html#aa5671e537a215129708b898fa3188aac',1,'fw::dispatcher']]],
-  ['velocity_1036',['velocity',['../host_2main_8cpp.html#a37b0618dd0cdb335c34e1eebeaca904c',1,'mode_opts']]],
-  ['velocity_5flimits_1037',['velocity_limits',['../namespacectl.html#a20ed600b5a9c9a30f83df677768e46a4',1,'ctl::config']]],
-  ['velocity_5fpid_1038',['velocity_pid',['../namespacectl.html#a767ce52998c9c33836b3348656f6c9a5',1,'ctl::config']]]
+  ['value_1030',['value',['../host_2main_8cpp.html#a2c44eb31fa1d94fb9b3c3a9e3f31c539',1,'cfg_opts']]],
+  ['vcc_1031',['vcc',['../structconverter.html#a96a6c5a43d6b71202650791f0ec934df',1,'converter::vcc()'],['../structbrd_1_1core__drivers.html#a9d3f063518926fb9db47504556d7078c',1,'brd::core_drivers::vcc()']]],
+  ['vcc_5fdrv_1032',['vcc_drv',['../namespacefw.html#aa5671e537a215129708b898fa3188aac',1,'fw::dispatcher']]],
+  ['velocity_1033',['velocity',['../host_2main_8cpp.html#a37b0618dd0cdb335c34e1eebeaca904c',1,'mode_opts']]],
+  ['velocity_5flimits_1034',['velocity_limits',['../namespacectl.html#a20ed600b5a9c9a30f83df677768e46a4',1,'ctl::config']]],
+  ['velocity_5fpid_1035',['velocity_pid',['../namespacectl.html#a767ce52998c9c33836b3348656f6c9a5',1,'ctl::config']]]
 ];

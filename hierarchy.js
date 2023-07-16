@@ -22,8 +22,8 @@ var hierarchy =
     [ "fw::drv::current_interface", "classfw_1_1drv_1_1current__interface.html", [
       [ "fw::drv::acquisition", "classfw_1_1drv_1_1acquisition.html", null ]
     ] ],
-    [ "fw::drv::acquisition::current_sequence", "structfw_1_1drv_1_1acquisition_1_1current__sequence.html", null ],
     [ "fw::drv::debug_comms", "classfw_1_1drv_1_1debug__comms.html", null ],
+    [ "fw::drv::acquisition::detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
     [ "std::exception", null, [
       [ "host::servio_exception", "structhost_1_1servio__exception.html", [

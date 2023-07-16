@@ -1,9 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"serial_8cpp.html#a8cf0ac7222b99599e6856e31289fe58d":[12,0,1,4,6,11],
-"serial_8cpp.html#a8d93a2add4e5015a0e944a8c71ab3f8a":[12,0,1,4,6,8],
-"serial_8cpp.html#aa45566ad35183e60250de4a994e121bd":[12,0,1,4,6,1],
-"serial_8cpp.html#ac54f61fc375c7c6716db7790bf3c5582":[12,0,1,4,6,6],
 "serial_8cpp.html#ac5f897334e4a466b2631fdc3e8bd5aac":[12,0,1,4,6,5],
 "serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc":[12,0,1,4,6,18],
 "serial_8cpp.html#ac9e5db09445cba7106cfa09dc3f5a317":[12,0,1,4,6,16],
@@ -194,10 +190,10 @@ var NAVTREEINDEX3 =
 "structfw_1_1core.html#abc566d8179ef5cb93fea9ac9d3fe320e":[11,0,3,4,2],
 "structfw_1_1core.html#acb979d8e743e607e67107b716bd218d4":[11,0,3,4,6],
 "structfw_1_1core.html#aeac12e186ecf2f435927ffa1b905c26c":[11,0,3,4,3],
-"structfw_1_1drv_1_1acquisition_1_1current__sequence.html":[11,0,3,0,1,0],
-"structfw_1_1drv_1_1acquisition_1_1current__sequence.html#a29a9a5255469481a27ff5732d3775917":[11,0,3,0,1,0,1],
-"structfw_1_1drv_1_1acquisition_1_1current__sequence.html#aaf8c45c3d1eb6e0899f2c21b2d916a03":[11,0,3,0,1,0,0],
-"structfw_1_1drv_1_1acquisition_1_1current__sequence.html#ae9d3253fc3a17d0ff471b68195ea12d4":[11,0,3,0,1,0,2],
+"structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html":[11,0,3,0,1,0],
+"structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a862610468ee489dbaa594fc7192ebf8b":[11,0,3,0,1,0,1],
+"structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a9a7dfc39fe74c0fe9c80c1cfc0e26d46":[11,0,3,0,1,0,2],
+"structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#aab84c36a99ccb5493f8c73e7cff2266a":[11,0,3,0,1,0,0],
 "structfw_1_1drv_1_1current__cb.html":[11,0,3,0,2],
 "structfw_1_1drv_1_1current__cb.html#a1c1f4fdda5b0efc3691f2393c5fe499e":[11,0,3,0,2,2],
 "structfw_1_1drv_1_1current__cb.html#a87629308169421f1e76f5433efd64b08":[11,0,3,0,2,1],
@@ -249,5 +245,9 @@ var NAVTREEINDEX3 =
 "structmtr_1_1posvel__kalman.html#a4141acd92c9489dd4b50f962d84963e7":[11,0,6,0,7],
 "structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93":[11,0,6,0,12],
 "structmtr_1_1posvel__kalman.html#a6573c98a95f3b84a2ee1a1d3b7d7527f":[11,0,6,0,1],
-"structmtr_1_1posvel__kalman.html#a6d4724336026cb13c11d404ce8bcd399":[11,0,6,0,10]
+"structmtr_1_1posvel__kalman.html#a6d4724336026cb13c11d404ce8bcd399":[11,0,6,0,10],
+"structmtr_1_1posvel__kalman.html#a7c83249422002ac5d54fe3bc57217f2f":[11,0,6,0,5],
+"structmtr_1_1posvel__kalman.html#a896006d06626bd709efea7994d475d83":[11,0,6,0,2],
+"structmtr_1_1posvel__kalman.html#a9f661b0c2e22680a683c77ef8b726148":[11,0,6,0,6],
+"structmtr_1_1posvel__kalman.html#aa95764f304d39579b8ded73a41aee92e":[11,0,6,0,0]
 };

@@ -1,15 +1,12 @@
 var classfw_1_1drv_1_1acquisition =
 [
-    [ "current_sequence", "structfw_1_1drv_1_1acquisition_1_1current__sequence.html", "structfw_1_1drv_1_1acquisition_1_1current__sequence" ],
+    [ "detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence" ],
     [ "handles", "classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles", [
       [ "adc", "classfw_1_1drv_1_1acquisition.html#a5bfd0911733a2c824b38491e68ff7543", null ],
-      [ "current_chconf", "classfw_1_1drv_1_1acquisition.html#a0c0def56c4bd9ea44335b7bcfd6572c9", null ],
+      [ "chconfs", "classfw_1_1drv_1_1acquisition.html#aee10c8796c8fdd313395eb3c6cf9f396", null ],
       [ "dma", "classfw_1_1drv_1_1acquisition.html#a3ba51c29dc3ed773184033167357e93d", null ],
-      [ "position_chconf", "classfw_1_1drv_1_1acquisition.html#a43116a9771474ec67c7cddbbc1b8ab24", null ],
-      [ "temp_chconf", "classfw_1_1drv_1_1acquisition.html#abd6cd34812d53a5b317b13f13f9f954e", null ],
       [ "tim", "classfw_1_1drv_1_1acquisition.html#ae1109c0ff7fa737bafa1dc77573d16ec", null ],
-      [ "tim_channel", "classfw_1_1drv_1_1acquisition.html#ae2302feb24d1ba636bc13e0f0178a4b0", null ],
-      [ "vcc_chconf", "classfw_1_1drv_1_1acquisition.html#a356f53491490ae06445e414fd5746235", null ]
+      [ "tim_channel", "classfw_1_1drv_1_1acquisition.html#ae2302feb24d1ba636bc13e0f0178a4b0", null ]
     ] ],
     [ "acquisition", "classfw_1_1drv_1_1acquisition.html#aa2d9f63de441b641c0281b2da5a6acee", null ],
     [ "adc_conv_cplt_irq", "classfw_1_1drv_1_1acquisition.html#a1ed79fb5be7b3041820c7861ee98de97", null ],
@@ -28,5 +25,7 @@ var classfw_1_1drv_1_1acquisition =
     [ "set_current_callback", "classfw_1_1drv_1_1acquisition.html#a361a3e3063a9e50b090f5e35ee9e5786", null ],
     [ "set_position_callback", "classfw_1_1drv_1_1acquisition.html#a62d290c66e6a75de34f40a837eb32071", null ],
     [ "setup", "classfw_1_1drv_1_1acquisition.html#a2d88b7bf644d2a53d1beee5e3e6aa93f", null ],
-    [ "start", "classfw_1_1drv_1_1acquisition.html#a5451beab320351d01ffa0c26d45ad5ee", null ]
+    [ "start", "classfw_1_1drv_1_1acquisition.html#a5451beab320351d01ffa0c26d45ad5ee", null ],
+    [ "chan_n", "classfw_1_1drv_1_1acquisition.html#a2daa2b69be3a4700565fa4c7981f4b3f", null ],
+    [ "detailed_chid", "classfw_1_1drv_1_1acquisition.html#a74629d4730ed297b77af1d7655a9c07e", null ]
 ];

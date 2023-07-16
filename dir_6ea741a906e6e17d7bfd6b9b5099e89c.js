@@ -9,15 +9,12 @@ var dir_6ea741a906e6e17d7bfd6b9b5099e89c =
       [ "acquisition", "classfw_1_1drv_1_1acquisition.html", "classfw_1_1drv_1_1acquisition" ],
       [ "handles", "classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles", [
         [ "adc", "classfw_1_1drv_1_1acquisition.html#a5bfd0911733a2c824b38491e68ff7543", null ],
-        [ "current_chconf", "classfw_1_1drv_1_1acquisition.html#a0c0def56c4bd9ea44335b7bcfd6572c9", null ],
+        [ "chconfs", "classfw_1_1drv_1_1acquisition.html#aee10c8796c8fdd313395eb3c6cf9f396", null ],
         [ "dma", "classfw_1_1drv_1_1acquisition.html#a3ba51c29dc3ed773184033167357e93d", null ],
-        [ "position_chconf", "classfw_1_1drv_1_1acquisition.html#a43116a9771474ec67c7cddbbc1b8ab24", null ],
-        [ "temp_chconf", "classfw_1_1drv_1_1acquisition.html#abd6cd34812d53a5b317b13f13f9f954e", null ],
         [ "tim", "classfw_1_1drv_1_1acquisition.html#ae1109c0ff7fa737bafa1dc77573d16ec", null ],
-        [ "tim_channel", "classfw_1_1drv_1_1acquisition.html#ae2302feb24d1ba636bc13e0f0178a4b0", null ],
-        [ "vcc_chconf", "classfw_1_1drv_1_1acquisition.html#a356f53491490ae06445e414fd5746235", null ]
+        [ "tim_channel", "classfw_1_1drv_1_1acquisition.html#ae2302feb24d1ba636bc13e0f0178a4b0", null ]
       ] ],
-      [ "current_sequence", "structfw_1_1drv_1_1acquisition_1_1current__sequence.html", "structfw_1_1drv_1_1acquisition_1_1current__sequence" ]
+      [ "detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence" ]
     ] ],
     [ "callbacks.hpp", "drv_2callbacks_8hpp.html", [
       [ "current_cb", "structfw_1_1drv_1_1current__cb.html", "structfw_1_1drv_1_1current__cb" ],

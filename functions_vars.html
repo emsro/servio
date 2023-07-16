@@ -110,10 +110,10 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 : <a class="el" href="classfw_1_1drv_1_1leds.html#a4fa6389783cf8f977762ec5831f4450c">fw::drv::leds::handles</a>
 </li>
 <li>buffer
-: <a class="el" href="structfw_1_1drv_1_1acquisition_1_1current__sequence.html#aaf8c45c3d1eb6e0899f2c21b2d916a03">fw::drv::acquisition::current_sequence</a>
+: <a class="el" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#aab84c36a99ccb5493f8c73e7cff2266a">fw::drv::acquisition::detailed_sequence</a>
 </li>
 <li>buffer_size
-: <a class="el" href="structfw_1_1drv_1_1acquisition_1_1current__sequence.html#a29a9a5255469481a27ff5732d3775917">fw::drv::acquisition::current_sequence</a>
+: <a class="el" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a862610468ee489dbaa594fc7192ebf8b">fw::drv::acquisition::detailed_sequence</a>
 </li>
 <li>buffer_was_full
 : <a class="el" href="namespacefw_1_1drv.html#af977b5a7be96a3a0cb62991781d4398a">fw::drv::acquisition_status</a>
@@ -135,6 +135,12 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </li>
 <li>cfg_writer
 : <a class="el" href="namespacefw.html#a520b3be865d264d703b435b5c4e08fbb">fw::dispatcher</a>
+</li>
+<li>chan_n
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a2daa2b69be3a4700565fa4c7981f4b3f">fw::drv::acquisition</a>
+</li>
+<li>chconfs
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#aee10c8796c8fdd313395eb3c6cf9f396">fw::drv::acquisition::handles</a>
 </li>
 <li>clock
 : <a class="el" href="structbrd_1_1core__drivers.html#a242e78a54e495b285f3a7d6db7b53eee">brd::core_drivers</a>
@@ -164,9 +170,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>current_cb
 : <a class="el" href="structfw_1_1standard__callbacks.html#a61a07b07b4cc092408c40f4f22d29584">fw::standard_callbacks</a>
 </li>
-<li>current_chconf
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a0c0def56c4bd9ea44335b7bcfd6572c9">fw::drv::acquisition::handles</a>
-</li>
 <li>current_limits
 : <a class="el" href="namespacectl.html#a42c41625e334582523c4f5be94bddb8a">ctl::config</a>
 </li>
@@ -179,6 +182,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>decay
 : <a class="el" href="structctl_1_1linear__transition__regulator.html#a1f26b5947c03ffc4b5b124b29cbabd59">ctl::linear_transition_regulator</a>
+</li>
+<li>detailed_chid
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a74629d4730ed297b77af1d7655a9c07e">fw::drv::acquisition</a>
 </li>
 <li>device
 : <a class="el" href="structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924">host::common_cli</a>
@@ -333,9 +339,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 : <a class="el" href="structbrd_1_1core__drivers.html#a1c3bd827be7fc76a92060d215f4e69fd">brd::core_drivers</a>
 , <a class="el" href="structconverter.html#a20d98451d8e0423cae03e88681840f9f">converter</a>
 </li>
-<li>position_chconf
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a43116a9771474ec67c7cddbbc1b8ab24">fw::drv::acquisition::handles</a>
-</li>
 <li>position_limits
 : <a class="el" href="namespacectl.html#aafaa848d5ed73333863c1852ce3bca95">ctl::config</a>
 </li>
@@ -396,9 +399,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>temp
 : <a class="el" href="structconverter.html#ac9870ea936ec13c39637d9c93827755a">converter</a>
 </li>
-<li>temp_chconf
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#abd6cd34812d53a5b317b13f13f9f954e">fw::drv::acquisition::handles</a>
-</li>
 <li>temp_drv
 : <a class="el" href="namespacefw.html#ae4b23065cb1b197a5d9d515e9f303560">fw::dispatcher</a>
 </li>
@@ -430,7 +430,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 , <a class="el" href="classfw_1_1drv_1_1debug__comms.html#a78e44c2186c0db57e8164d3d1b9817f6">fw::drv::debug_comms::handles</a>
 </li>
 <li>used
-: <a class="el" href="structfw_1_1drv_1_1acquisition_1_1current__sequence.html#ae9d3253fc3a17d0ff471b68195ea12d4">fw::drv::acquisition::current_sequence</a>
+: <a class="el" href="structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a9a7dfc39fe74c0fe9c80c1cfc0e26d46">fw::drv::acquisition::detailed_sequence</a>
 </li>
 </ul>
 
@@ -442,9 +442,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>vcc
 : <a class="el" href="structbrd_1_1core__drivers.html#a9d3f063518926fb9db47504556d7078c">brd::core_drivers</a>
 , <a class="el" href="structconverter.html#a96a6c5a43d6b71202650791f0ec934df">converter</a>
-</li>
-<li>vcc_chconf
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a356f53491490ae06445e414fd5746235">fw::drv::acquisition::handles</a>
 </li>
 <li>vcc_drv
 : <a class="el" href="namespacefw.html#aa5671e537a215129708b898fa3188aac">fw::dispatcher</a>
@@ -481,7 +478,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Jul 16 2023 19:46:09 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 16 2023 20:26:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

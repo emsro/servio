@@ -1,9 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"structmtr_1_1posvel__kalman.html#a7c83249422002ac5d54fe3bc57217f2f":[11,0,6,0,5],
-"structmtr_1_1posvel__kalman.html#a896006d06626bd709efea7994d475d83":[11,0,6,0,2],
-"structmtr_1_1posvel__kalman.html#a9f661b0c2e22680a683c77ef8b726148":[11,0,6,0,6],
-"structmtr_1_1posvel__kalman.html#aa95764f304d39579b8ded73a41aee92e":[11,0,6,0,0],
 "structmtr_1_1posvel__kalman.html#ab0505210bdd0c266a1cb0c3cebc5fa45":[11,0,6,0,9],
 "structmtr_1_1posvel__kalman.html#aec12b38e1697467577656e09dda03019":[11,0,6,0,13],
 "structmtr_1_1posvel__kalman.html#afa7fdfbafbaa78762335da2c0dc4b734":[11,0,6,0,4],

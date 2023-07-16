@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['c_951',['c',['../structfw_1_1cfg__dispatcher.html#ab01a4cc1c67315d2b8382f2cc95797cc',1,'fw::cfg_dispatcher']]],
-  ['cb_952',['cb',['../structfw_1_1drv_1_1current__cb.html#a1c1f4fdda5b0efc3691f2393c5fe499e',1,'fw::drv::current_cb::cb()'],['../structfw_1_1drv_1_1position__cb.html#a0c2adb7c1228b9e5a0e3ce8c9dd2ff8d',1,'fw::drv::position_cb::cb()'],['../structfw_1_1drv_1_1period__cb.html#a8d5c4ceb149708e41170b7834fd8d77c',1,'fw::drv::period_cb::cb()']]],
-  ['cfg_5fdisp_953',['cfg_disp',['../namespacefw.html#a64062389efe7fe57f45c591f7d608afc',1,'fw::dispatcher']]],
-  ['cfg_5fwriter_954',['cfg_writer',['../namespacefw.html#a520b3be865d264d703b435b5c4e08fbb',1,'fw::dispatcher']]],
+  ['c_949',['c',['../structfw_1_1cfg__dispatcher.html#ab01a4cc1c67315d2b8382f2cc95797cc',1,'fw::cfg_dispatcher']]],
+  ['cb_950',['cb',['../structfw_1_1drv_1_1current__cb.html#a1c1f4fdda5b0efc3691f2393c5fe499e',1,'fw::drv::current_cb::cb()'],['../structfw_1_1drv_1_1position__cb.html#a0c2adb7c1228b9e5a0e3ce8c9dd2ff8d',1,'fw::drv::position_cb::cb()'],['../structfw_1_1drv_1_1period__cb.html#a8d5c4ceb149708e41170b7834fd8d77c',1,'fw::drv::period_cb::cb()']]],
+  ['cfg_5fdisp_951',['cfg_disp',['../namespacefw.html#a64062389efe7fe57f45c591f7d608afc',1,'fw::dispatcher']]],
+  ['cfg_5fwriter_952',['cfg_writer',['../namespacefw.html#a520b3be865d264d703b435b5c4e08fbb',1,'fw::dispatcher']]],
+  ['chan_5fn_953',['chan_n',['../classfw_1_1drv_1_1acquisition.html#a2daa2b69be3a4700565fa4c7981f4b3f',1,'fw::drv::acquisition']]],
+  ['chconfs_954',['chconfs',['../classfw_1_1drv_1_1acquisition.html#aee10c8796c8fdd313395eb3c6cf9f396',1,'fw::drv::acquisition::handles']]],
   ['clock_955',['clock',['../structbrd_1_1core__drivers.html#a242e78a54e495b285f3a7d6db7b53eee',1,'brd::core_drivers']]],
   ['comm_5fbuff_5fsize_956',['comm_buff_size',['../namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490',1,'fw::drv']]],
   ['comms_957',['comms',['../structbrd_1_1core__drivers.html#aa4e957c6f9ae21bf5f1b6312cb049217',1,'brd::core_drivers']]],
@@ -13,7 +15,6 @@ var searchData=
   ['curr_5fdrv_961',['curr_drv',['../namespacefw.html#a0d4dfe25fc85e5ed80db45b40fd89b12',1,'fw::dispatcher']]],
   ['current_962',['current',['../structconverter.html#a8cb1044de319e60167cd89fe01a96d05',1,'converter::current()'],['../structbrd_1_1core__drivers.html#a3c37d6e686dd5a988ed88ba9020f4618',1,'brd::core_drivers::current()'],['../host_2main_8cpp.html#a8f3bbbae3be9e0361d5e76091103a4d6',1,'mode_opts::current()']]],
   ['current_5fcb_963',['current_cb',['../structfw_1_1standard__callbacks.html#a61a07b07b4cc092408c40f4f22d29584',1,'fw::standard_callbacks']]],
-  ['current_5fchconf_964',['current_chconf',['../classfw_1_1drv_1_1acquisition.html#a0c0def56c4bd9ea44335b7bcfd6572c9',1,'fw::drv::acquisition::handles']]],
-  ['current_5flimits_965',['current_limits',['../namespacectl.html#a42c41625e334582523c4f5be94bddb8a',1,'ctl::config']]],
-  ['current_5fpid_966',['current_pid',['../namespacectl.html#a3d55b5c4569a6d2ae3aba339917347d0',1,'ctl::config']]]
+  ['current_5flimits_964',['current_limits',['../namespacectl.html#a42c41625e334582523c4f5be94bddb8a',1,'ctl::config']]],
+  ['current_5fpid_965',['current_pid',['../namespacectl.html#a3d55b5c4569a6d2ae3aba339917347d0',1,'ctl::config']]]
 ];
