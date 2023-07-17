@@ -89,7 +89,8 @@ void control::moving_irq( microseconds now, bool is_moving )
 
 void control::position_irq( microseconds now, float position )
 {
-        float coeff             = 2.f;
+        // TODO: well, this ought ot be configurable
+        const float coeff       = 2.f;
         auto [pos_min, pos_max] = position_lims_;
         position_pid_.set_momentary_limit(
             { coeff * ( -position + pos_min ), coeff * ( -position + pos_max ) } );

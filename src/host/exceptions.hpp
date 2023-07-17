@@ -18,7 +18,7 @@ struct reply_error : servio_exception
         {
         }
 
-        virtual const char* what() const noexcept
+        const char* what() const noexcept
         {
                 return msg;
         }
@@ -33,7 +33,7 @@ struct error_exception : servio_exception
         {
         }
 
-        virtual const char* what() const noexcept
+        const char* what() const noexcept
         {
                 return msg.msg().c_str();
         }
@@ -48,7 +48,7 @@ struct serialize_error : servio_exception
         {
         }
 
-        virtual const char* what() const noexcept
+        const char* what() const noexcept
         {
                 return msg;
         }
@@ -63,7 +63,7 @@ struct parse_error : servio_exception
         {
         }
 
-        virtual const char* what() const noexcept
+        const char* what() const noexcept
         {
                 return msg;
         }

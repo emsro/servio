@@ -19,8 +19,9 @@ namespace
                 std::fill( buffer.begin(), buffer.end(), std::byte{ 0xAA } );
 
                 while ( !data.empty() ) {
-                        std::span< std::byte > tmp = data.subspan( 0, std::min( n, data.size() ) );
-                        for ( std::size_t i : em::range( tmp.size() ) ) {
+                        const std::span< std::byte > tmp =
+                            data.subspan( 0, std::min( n, data.size() ) );
+                        for ( const std::size_t i : em::range( tmp.size() ) ) {
                                 buffer[i] ^= tmp[i];
                         }
                         data = data.subspan( tmp.size() );
@@ -53,7 +54,7 @@ namespace
 std::optional< page > find_unused_page( em::view< const page* > pages )
 {
         auto iter = em::find_if( pages, [&]( const page& p ) {
-                em::cfg::load_result lr = handler::load(
+                const em::cfg::load_result lr = handler::load(
                     p,
                     [&]( const payload& ) -> bool {
                             return false;
@@ -119,7 +120,7 @@ bool store(
         if ( !success ) {
                 return false;
         }
-        for ( std::size_t i : em::range( buffer.size() / sizeof( uint64_t ) ) ) {
+        for ( const std::size_t i : em::range( buffer.size() / sizeof( uint64_t ) ) ) {
                 const std::size_t j = ( buffer.size() / sizeof( uint64_t ) ) - 1 - i;
 
                 uint64_t word;
@@ -137,7 +138,7 @@ bool load( page p, em::function_view< bool( const payload& ) > pl_cb, cfg_map& m
             p,
             pl_cb,
             [&]( const cfg_keyval& kv ) -> bool {
-                    std::optional opt_err = reghandler::insert( m, kv.key, kv.msg );
+                    const std::optional opt_err = reghandler::insert( m, kv.key, kv.msg );
                     return !opt_err.has_value();
             },
             chcksum_f );

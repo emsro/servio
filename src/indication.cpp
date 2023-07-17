@@ -45,7 +45,7 @@ bool indication::on_event( microseconds now, const indication_event& e )
 
 float sin_approx( float x )
 {
-        float x3 = x * x * x;
+        const float x3 = x * x * x;
         return x - x3 / 6.f + ( x3 * x * x ) / 120.f;
 }
 
@@ -53,9 +53,9 @@ void indication::tick( microseconds now )
 {
         tick_red( now );
 
-        green_i_        = std::fmod( green_i_ + green_step_, 2 * pi );
-        float green_val = ( sin_approx( green_i_ ) + 1.f ) / 2.f + green_offset_;
-        state_.green    = static_cast< uint8_t >(
+        green_i_              = std::fmod( green_i_ + green_step_, 2 * pi );
+        const float green_val = ( sin_approx( green_i_ ) + 1.f ) / 2.f + green_offset_;
+        state_.green          = static_cast< uint8_t >(
             em::map_range< float, float >( green_val, 0.f, 2.f, 0.f, 255.f ) );
 
         green_step_ = 0.f;
@@ -86,7 +86,7 @@ void indication::tick_red( microseconds now )
                 return;
         }
 
-        microseconds x = now % 500_ms;
+        const microseconds x = now % 500_ms;
 
         state_.red = x < 250_ms;
 }

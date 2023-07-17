@@ -38,7 +38,7 @@ void metrics::position_irq( microseconds now, float position )
                 return;
         }
 
-        microseconds tdiff = now - last_time_;
+        const microseconds tdiff = now - last_time_;
 
         auto sdiff = std::chrono::duration_cast< sec_time >( tdiff );
 
