@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('async__cobs_8hpp_source.html',''); ini
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> Port &gt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacehost.html#ab1f9b2447852b1472ee4583385f03c25">   16</a></span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespacehost.html#ab1f9b2447852b1472ee4583385f03c25">async_cobs_write</a>( Port&amp; port, em::view&lt; std::byte* &gt; msg )</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacehost.html#af4a7e0c207697fa7f7007e339a9bd077">   16</a></span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespacehost.html#af4a7e0c207697fa7f7007e339a9bd077">async_cobs_write</a>( Port&amp; port, em::view&lt; const std::byte* &gt; msg )</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment">// why +16? because for small messages *2 is not enough</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        std::vector&lt; std::byte &gt; msg_buffer( msg.size() * 2 + 16, std::byte{ 0 } );</div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('async__cobs_8hpp_source.html',''); ini
 <div class="ttc" id="aexceptions_8hpp_html"><div class="ttname"><a href="exceptions_8hpp.html">exceptions.hpp</a></div></div>
 <div class="ttc" id="anamespacehost_html"><div class="ttname"><a href="namespacehost.html">host</a></div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:13</div></div>
 <div class="ttc" id="anamespacehost_html_a25bcbd75c4d91e73f6cbc9f0fa58d944"><div class="ttname"><a href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">host::async_cobs_read</a></div><div class="ttdeci">boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt; async_cobs_read(Port &amp;port, em::view&lt; std::byte * &gt; buffer)</div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:43</div></div>
-<div class="ttc" id="anamespacehost_html_ab1f9b2447852b1472ee4583385f03c25"><div class="ttname"><a href="namespacehost.html#ab1f9b2447852b1472ee4583385f03c25">host::async_cobs_write</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; async_cobs_write(Port &amp;port, em::view&lt; std::byte * &gt; msg)</div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:16</div></div>
+<div class="ttc" id="anamespacehost_html_af4a7e0c207697fa7f7007e339a9bd077"><div class="ttname"><a href="namespacehost.html#af4a7e0c207697fa7f7007e339a9bd077">host::async_cobs_write</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; async_cobs_write(Port &amp;port, em::view&lt; const std::byte * &gt; msg)</div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:16</div></div>
 <div class="ttc" id="astructhost_1_1parse__error_html"><div class="ttname"><a href="structhost_1_1parse__error.html">host::parse_error</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:60</div></div>
 <div class="ttc" id="astructhost_1_1serialize__error_html"><div class="ttname"><a href="structhost_1_1serialize__error.html">host::serialize_error</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('async__cobs_8hpp_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_84e79ac80b913c2fb5b9e077744e9498.html">host</a></li><li class="navelem"><a class="el" href="async__cobs_8hpp.html">async_cobs.hpp</a></li>
-    <li class="footer">Generated on Mon Jul 17 2023 06:07:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue Jul 18 2023 15:47:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

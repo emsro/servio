@@ -7,7 +7,7 @@ var namespacehost =
     [ "serialize_error", "structhost_1_1serialize__error.html", "structhost_1_1serialize__error" ],
     [ "parse_error", "structhost_1_1parse__error.html", "structhost_1_1parse__error" ],
     [ "async_cobs_read", "namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944", null ],
-    [ "async_cobs_write", "namespacehost.html#ab1f9b2447852b1472ee4583385f03c25", null ],
+    [ "async_cobs_write", "namespacehost.html#af4a7e0c207697fa7f7007e339a9bd077", null ],
     [ "baudrate_opt", "namespacehost.html#a2f24da7c62c9382666f594042cc47fbb", null ],
     [ "cfg_clear_cmd", "namespacehost.html#ac4a6dc335cc6d690655b1689859ebccc", null ],
     [ "cfg_commit_cmd", "namespacehost.html#a9bcf5f119894ec0aed6f6ca3fd61a91e", null ],

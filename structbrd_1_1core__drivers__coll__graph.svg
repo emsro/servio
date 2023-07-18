@@ -21,34 +21,34 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classfw_1_1drv_1_1clock.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="31,-328.5 31,-347.5 111,-347.5 111,-328.5 31,-328.5"/>
-<text text-anchor="middle" x="71" y="-335.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw::drv::clock</text>
+<g id="a_node2"><a xlink:href="classfw_1_1drv_1_1cobs__uart.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="20.5,-328.5 20.5,-347.5 121.5,-347.5 121.5,-328.5 20.5,-328.5"/>
+<text text-anchor="middle" x="71" y="-335.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw::drv::cobs_uart</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M121.38,-335.28C153.46,-331.28 194.62,-321.69 224,-299 261.76,-269.82 281.02,-212.6 287.47,-189.76"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="120.86,-331.82 111.31,-336.39 121.63,-338.77 120.86,-331.82"/>
-<text text-anchor="middle" x="192" y="-330" font-family="Helvetica,sans-Serif" font-size="10.00"> clock</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M131.58,-333.85C161.83,-329.16 197.66,-319.35 224,-299 261.76,-269.82 281.02,-212.6 287.47,-189.76"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="130.97,-330.4 121.56,-335.26 131.95,-337.34 130.97,-330.4"/>
+<text text-anchor="middle" x="192" y="-330" font-family="Helvetica,sans-Serif" font-size="10.00"> comms</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classfw_1_1drv_1_1comms.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="26,-290.5 26,-309.5 116,-309.5 116,-290.5 26,-290.5"/>
-<text text-anchor="middle" x="71" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw::drv::comms</text>
+<g id="a_node3"><a xlink:href="classfw_1_1drv_1_1clock.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="31,-290.5 31,-309.5 111,-309.5 111,-290.5 31,-290.5"/>
+<text text-anchor="middle" x="71" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw::drv::clock</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M126.19,-292.72C156.76,-286.72 194.61,-275.98 224,-257 251.81,-239.04 274.37,-205.93 284.39,-189.61"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="125.32,-289.33 116.12,-294.58 126.59,-296.21 125.32,-289.33"/>
-<text text-anchor="middle" x="192" y="-287" font-family="Helvetica,sans-Serif" font-size="10.00"> comms</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M121.41,-293.64C152.74,-287.84 193.06,-276.98 224,-257 251.81,-239.04 274.37,-205.93 284.39,-189.61"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="120.4,-290.26 111.15,-295.42 121.6,-297.15 120.4,-290.26"/>
+<text text-anchor="middle" x="192" y="-287" font-family="Helvetica,sans-Serif" font-size="10.00"> clock</text>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">

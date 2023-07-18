@@ -108,9 +108,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab1f9b2447852b1472ee4583385f03c25"><td class="memTemplParams" colspan="2">template&lt;typename Port &gt; </td></tr>
-<tr class="memitem:ab1f9b2447852b1472ee4583385f03c25"><td class="memTemplItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehost.html#ab1f9b2447852b1472ee4583385f03c25">async_cobs_write</a> (Port &amp;port, em::view&lt; std::byte * &gt; msg)</td></tr>
-<tr class="separator:ab1f9b2447852b1472ee4583385f03c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a7e0c207697fa7f7007e339a9bd077"><td class="memTemplParams" colspan="2">template&lt;typename Port &gt; </td></tr>
+<tr class="memitem:af4a7e0c207697fa7f7007e339a9bd077"><td class="memTemplItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehost.html#af4a7e0c207697fa7f7007e339a9bd077">async_cobs_write</a> (Port &amp;port, em::view&lt; const std::byte * &gt; msg)</td></tr>
+<tr class="separator:af4a7e0c207697fa7f7007e339a9bd077"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25bcbd75c4d91e73f6cbc9f0fa58d944"><td class="memTemplParams" colspan="2">template&lt;typename Port &gt; </td></tr>
 <tr class="memitem:a25bcbd75c4d91e73f6cbc9f0fa58d944"><td class="memTemplItemLeft" align="right" valign="top">boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944">async_cobs_read</a> (Port &amp;port, em::view&lt; std::byte * &gt; buffer)</td></tr>
 <tr class="separator:a25bcbd75c4d91e73f6cbc9f0fa58d944"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,8 +203,8 @@ template&lt;typename Port &gt; </div>
 
 </div>
 </div>
-<a id="ab1f9b2447852b1472ee4583385f03c25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1f9b2447852b1472ee4583385f03c25">&#9670;&nbsp;</a></span>async_cobs_write()</h2>
+<a id="af4a7e0c207697fa7f7007e339a9bd077"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a7e0c207697fa7f7007e339a9bd077">&#9670;&nbsp;</a></span>async_cobs_write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,7 +220,7 @@ template&lt;typename Port &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
+          <td class="paramtype">em::view&lt; const std::byte * &gt;&#160;</td>
           <td class="paramname"><em>msg</em>&#160;</td>
         </tr>
         <tr>
@@ -911,7 +911,7 @@ template&lt;typename Port &gt; </div>
 
 <p>Writes a reply to servo port. </p>
 
-<p class="reference">References <a class="el" href="namespacehost.html#ab1f9b2447852b1472ee4583385f03c25">async_cobs_write()</a>.</p>
+<p class="reference">References <a class="el" href="namespacehost.html#af4a7e0c207697fa7f7007e339a9bd077">async_cobs_write()</a>.</p>
 
 </div>
 </div>
@@ -921,7 +921,7 @@ template&lt;typename Port &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacehost.html">host</a></li>
-    <li class="footer">Generated on Mon Jul 17 2023 06:07:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue Jul 18 2023 15:47:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

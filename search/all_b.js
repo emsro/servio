@@ -19,5 +19,5 @@ var searchData=
   ['assert_5fparam_36',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32g4xx_hal_conf.h']]],
   ['async_5fcobs_2ehpp_37',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],
   ['async_5fcobs_5fread_38',['async_cobs_read',['../namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944',1,'host']]],
-  ['async_5fcobs_5fwrite_39',['async_cobs_write',['../namespacehost.html#ab1f9b2447852b1472ee4583385f03c25',1,'host']]]
+  ['async_5fcobs_5fwrite_39',['async_cobs_write',['../namespacehost.html#af4a7e0c207697fa7f7007e339a9bd077',1,'host']]]
 ];

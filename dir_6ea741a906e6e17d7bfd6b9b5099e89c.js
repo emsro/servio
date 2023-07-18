@@ -24,16 +24,8 @@ var dir_6ea741a906e6e17d7bfd6b9b5099e89c =
         [ "tim_channel", "classfw_1_1drv_1_1clock.html#a6f2d5af8fbf8f3f3fc9d71e2e08e5519", null ]
       ] ]
     ] ],
-    [ "comms.cpp", "comms_8cpp.html", null ],
-    [ "comms.hpp", "comms_8hpp.html", "comms_8hpp" ],
-    [ "debug_comms.cpp", "debug__comms_8cpp.html", null ],
-    [ "debug_comms.hpp", "debug__comms_8hpp.html", [
-      [ "debug_comms", "classfw_1_1drv_1_1debug__comms.html", "classfw_1_1drv_1_1debug__comms" ],
-      [ "handles", "classfw_1_1drv_1_1debug__comms.html#structfw_1_1drv_1_1debug__comms_1_1handles", [
-        [ "tx_dma", "classfw_1_1drv_1_1debug__comms.html#a80d4ba8836fcf5d14973db9211fbbe8b", null ],
-        [ "uart", "classfw_1_1drv_1_1debug__comms.html#a78e44c2186c0db57e8164d3d1b9817f6", null ]
-      ] ]
-    ] ],
+    [ "cobs_uart.cpp", "cobs__uart_8cpp.html", null ],
+    [ "cobs_uart.hpp", "cobs__uart_8hpp.html", "cobs__uart_8hpp" ],
     [ "hbridge.cpp", "hbridge_8cpp.html", null ],
     [ "hbridge.hpp", "hbridge_8hpp.html", [
       [ "hbridge", "classfw_1_1drv_1_1hbridge.html", "classfw_1_1drv_1_1hbridge" ],

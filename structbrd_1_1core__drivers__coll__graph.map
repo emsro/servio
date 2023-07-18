@@ -1,7 +1,7 @@
 <map id="brd::core_drivers" name="brd::core_drivers">
 <area shape="rect" id="node1" title="TODO: maybe move to references and make setup function return an optional?" alt="" coords="328,216,459,243"/>
-<area shape="rect" id="node2" href="$classfw_1_1drv_1_1clock.html" title=" " alt="" coords="47,5,153,32"/>
-<area shape="rect" id="node3" href="$classfw_1_1drv_1_1comms.html" title=" " alt="" coords="40,56,160,83"/>
+<area shape="rect" id="node2" href="$classfw_1_1drv_1_1cobs__uart.html" title=" " alt="" coords="33,5,167,32"/>
+<area shape="rect" id="node3" href="$classfw_1_1drv_1_1clock.html" title=" " alt="" coords="47,56,153,83"/>
 <area shape="rect" id="node4" href="$classfw_1_1drv_1_1current__interface.html" title=" " alt="" coords="9,107,191,133"/>
 <area shape="rect" id="node5" href="$classfw_1_1drv_1_1leds.html" title=" " alt="" coords="51,157,149,184"/>
 <area shape="rect" id="node6" href="$classfw_1_1drv_1_1temperature__interface.html" title=" " alt="" coords="23,209,177,250"/>

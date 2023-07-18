@@ -3,7 +3,7 @@ var structbrd_1_1core__drivers =
     [ "any_uninitialized", "structbrd_1_1core__drivers.html#ae81f7592f3f5e12d60d133c987e5cff4", null ],
     [ "tie", "structbrd_1_1core__drivers.html#ada8d3f72ce5d682d0f226c83e180526f", null ],
     [ "clock", "structbrd_1_1core__drivers.html#a242e78a54e495b285f3a7d6db7b53eee", null ],
-    [ "comms", "structbrd_1_1core__drivers.html#aa4e957c6f9ae21bf5f1b6312cb049217", null ],
+    [ "comms", "structbrd_1_1core__drivers.html#a642c9d91d2d9be409f8b9a9a33157b4a", null ],
     [ "current", "structbrd_1_1core__drivers.html#a3c37d6e686dd5a988ed88ba9020f4618", null ],
     [ "hbridge", "structbrd_1_1core__drivers.html#abb43e077c11a09b7293897e539a81c27", null ],
     [ "leds", "structbrd_1_1core__drivers.html#a66bf7751771b67fe4ea7498c42665938", null ],
