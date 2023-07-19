@@ -6,8 +6,6 @@ var NAVTREEINDEX0 =
 "acquisition__inl_8hpp_source.html":[12,0,1,3,0,1],
 "annotated.html":[11,0],
 "async__cobs_8hpp.html":[12,0,1,4,0],
-"async__cobs_8hpp.html#a25bcbd75c4d91e73f6cbc9f0fa58d944":[12,0,1,4,0,0],
-"async__cobs_8hpp.html#af4a7e0c207697fa7f7007e339a9bd077":[12,0,1,4,0,1],
 "async__cobs_8hpp_source.html":[12,0,1,4,0],
 "base_8hpp.html":[12,0,1,6],
 "base_8hpp.html#a0478dbefd4a0ca0d9e55b6becbf851f2":[12,0,1,6,3],
@@ -137,6 +135,7 @@ var NAVTREEINDEX0 =
 "classfw_1_1drv_1_1clock.html#structfw_1_1drv_1_1clock_1_1handles":[12,0,1,3,0,3,1],
 "classfw_1_1drv_1_1clock.html#structfw_1_1drv_1_1clock_1_1handles":[11,0,3,0,8,0],
 "classfw_1_1drv_1_1cobs__uart.html":[11,0,3,0,9],
+"classfw_1_1drv_1_1cobs__uart.html#a00e524b7ba1bb8c27b2f4b62146b7e6f":[11,0,3,0,9,11],
 "classfw_1_1drv_1_1cobs__uart.html#a29644edb1c40f72ffaf8ccdd6b8c1e01":[11,0,3,0,9,1],
 "classfw_1_1drv_1_1cobs__uart.html#a332a473c8b7a6038ca6c8df861aa0640":[11,0,3,0,9,0,1],
 "classfw_1_1drv_1_1cobs__uart.html#a332a473c8b7a6038ca6c8df861aa0640":[12,0,1,3,0,5,1,1],
@@ -148,10 +147,10 @@ var NAVTREEINDEX0 =
 "classfw_1_1drv_1_1cobs__uart.html#ab003b5adf6390c0c4fbec93bdebb6be8":[11,0,3,0,9,3],
 "classfw_1_1drv_1_1cobs__uart.html#ac2dbb70280abe604ce9ae81e1e7267da":[11,0,3,0,9,6],
 "classfw_1_1drv_1_1cobs__uart.html#ad541cabd35bc98135e2c3e07157a51bf":[11,0,3,0,9,10],
-"classfw_1_1drv_1_1cobs__uart.html#adbc8d83440f18fdc7c63444e8b710ca8":[11,0,3,0,9,11],
+"classfw_1_1drv_1_1cobs__uart.html#adbc8d83440f18fdc7c63444e8b710ca8":[11,0,3,0,9,12],
 "classfw_1_1drv_1_1cobs__uart.html#add59880fd0e7ebffd6f478a33b4b2eab":[11,0,3,0,9,0,0],
 "classfw_1_1drv_1_1cobs__uart.html#add59880fd0e7ebffd6f478a33b4b2eab":[12,0,1,3,0,5,1,0],
-"classfw_1_1drv_1_1cobs__uart.html#ae41fa7d033f5b2687ebadbcdcab5f390":[11,0,3,0,9,12],
+"classfw_1_1drv_1_1cobs__uart.html#ae41fa7d033f5b2687ebadbcdcab5f390":[11,0,3,0,9,13],
 "classfw_1_1drv_1_1cobs__uart.html#afdcad5b2078d820ef5d8c39bbff3f1eb":[11,0,3,0,9,8],
 "classfw_1_1drv_1_1cobs__uart.html#structfw_1_1drv_1_1cobs__uart_1_1handles":[11,0,3,0,9,0],
 "classfw_1_1drv_1_1cobs__uart.html#structfw_1_1drv_1_1cobs__uart_1_1handles":[12,0,1,3,0,5,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "classscaled.html":[11,0,17],
 "classscaled.html#ad0c137095775ae685c2fc049d1784dd2":[11,0,17,0],
 "classscaled.html#aeb23f3d76e0db21a720204e85e555150":[11,0,17,1],
-"classtemperature__converter.html":[11,0,19]
+"classtemperature__converter.html":[11,0,19],
+"classtemperature__converter.html#a74c5cb71f05f917c785ecbdf8b748b7d":[11,0,19,0]
 };

@@ -214,8 +214,8 @@
 <!-- Node16 -->
 <g id="node9" class="node">
 <title>Node16</title>
-<g id="a_node9"><a xlink:href="current_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="red" points="1179,-62 1179,-81 1307,-81 1307,-62 1179,-62"/>
+<g id="a_node9"><a xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1179,-62 1179,-81 1307,-81 1307,-62 1179,-62"/>
 <text text-anchor="middle" x="1243" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">conversion/current.hpp</text>
 </a>
 </g>
@@ -229,8 +229,8 @@
 <!-- Node17 -->
 <g id="node10" class="node">
 <title>Node17</title>
-<g id="a_node10"><a xlink:href="position_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="red" points="1325.5,-62 1325.5,-81 1458.5,-81 1458.5,-62 1325.5,-62"/>
+<g id="a_node10"><a xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1325.5,-62 1325.5,-81 1458.5,-81 1458.5,-62 1325.5,-62"/>
 <text text-anchor="middle" x="1392" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">conversion/position.hpp</text>
 </a>
 </g>
@@ -244,8 +244,8 @@
 <!-- Node18 -->
 <g id="node11" class="node">
 <title>Node18</title>
-<g id="a_node11"><a xlink:href="temperature_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="856.5,-62 856.5,-81 1011.5,-81 1011.5,-62 856.5,-62"/>
+<g id="a_node11"><a xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="856.5,-62 856.5,-81 1011.5,-81 1011.5,-62 856.5,-62"/>
 <text text-anchor="middle" x="934" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">conversion/temperature.hpp</text>
 </a>
 </g>
@@ -259,8 +259,8 @@
 <!-- Node19 -->
 <g id="node12" class="node">
 <title>Node19</title>
-<g id="a_node12"><a xlink:href="voltage_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1029.5,-62 1029.5,-81 1160.5,-81 1160.5,-62 1029.5,-62"/>
+<g id="a_node12"><a xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1029.5,-62 1029.5,-81 1160.5,-81 1160.5,-62 1029.5,-62"/>
 <text text-anchor="middle" x="1095" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">conversion/voltage.hpp</text>
 </a>
 </g>

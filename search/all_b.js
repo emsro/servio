@@ -18,6 +18,6 @@ var searchData=
   ['as_5ffloat_35',['as_float',['../classscaled.html#ad0c137095775ae685c2fc049d1784dd2',1,'scaled']]],
   ['assert_5fparam_36',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32g4xx_hal_conf.h']]],
   ['async_5fcobs_2ehpp_37',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],
-  ['async_5fcobs_5fread_38',['async_cobs_read',['../namespacehost.html#a25bcbd75c4d91e73f6cbc9f0fa58d944',1,'host']]],
-  ['async_5fcobs_5fwrite_39',['async_cobs_write',['../namespacehost.html#af4a7e0c207697fa7f7007e339a9bd077',1,'host']]]
+  ['async_5fread_38',['async_read',['../structhost_1_1cobs__port.html#a41b3a139c6d26709c43d4aa52edd8b10',1,'host::cobs_port']]],
+  ['async_5fwrite_39',['async_write',['../structhost_1_1cobs__port.html#a474f7e7c9b5aad02965c83ae728f7fcd',1,'host::cobs_port']]]
 ];

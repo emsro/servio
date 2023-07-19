@@ -44,6 +44,7 @@ var annotated_dup =
       [ "hal_check", "namespacefw.html#structfw_1_1hal__check", null ]
     ] ],
     [ "host", "namespacehost.html", [
+      [ "cobs_port", "structhost_1_1cobs__port.html", "structhost_1_1cobs__port" ],
       [ "common_cli", "structhost_1_1common__cli.html", "structhost_1_1common__cli" ],
       [ "servio_exception", "structhost_1_1servio__exception.html", null ],
       [ "reply_error", "structhost_1_1reply__error.html", "structhost_1_1reply__error" ],

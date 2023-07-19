@@ -118,10 +118,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "acquisition_8hpp.html",
-"classtemperature__converter.html#a74c5cb71f05f917c785ecbdf8b748b7d",
-"kalman_8hpp.html#ad217468f6096ae44d4ee08729f3a053a",
-"serial_8hpp.html#a5e06f12eaefc65d3e8fac139c1adc6ef",
-"temperature_8hpp_source.html"
+"classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085",
+"kalman_8hpp.html#ad73bc14d9ae4d49d14781f2402637839",
+"serial_8hpp.html#ac27277a0709fec611287ddf8b71fe5de",
+"structstatic__detector.html#aa925ce327d8982149e5610123b726b85"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

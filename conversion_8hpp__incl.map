@@ -2,10 +2,10 @@
 <area shape="rect" id="node1" title=" " alt="" coords="683,5,845,32"/>
 <area shape="rect" id="node2" href="$converter_8hpp.html" title=" " alt="" coords="450,80,561,107"/>
 <area shape="rect" id="node7" href="$hbridge_8hpp.html" title=" " alt="" coords="953,80,1095,107"/>
-<area shape="rect" id="node3" href="$current_8hpp.html" title=" " alt="" coords="5,162,176,189"/>
-<area shape="rect" id="node4" href="$position_8hpp.html" title=" " alt="" coords="201,162,378,189"/>
-<area shape="rect" id="node5" href="$temperature_8hpp.html" title=" " alt="" coords="402,162,609,189"/>
-<area shape="rect" id="node6" href="$voltage_8hpp.html" title=" " alt="" coords="633,162,807,189"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,162,176,189"/>
+<area shape="rect" id="node4" title=" " alt="" coords="201,162,378,189"/>
+<area shape="rect" id="node5" title=" " alt="" coords="402,162,609,189"/>
+<area shape="rect" id="node6" title=" " alt="" coords="633,162,807,189"/>
 <area shape="rect" id="node8" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="832,162,987,189"/>
 <area shape="rect" id="node9" title=" " alt="" coords="940,244,993,271"/>
 <area shape="rect" id="node10" title=" " alt="" coords="1062,155,1239,196"/>

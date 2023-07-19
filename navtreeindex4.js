@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"structstatic__detector.html#aa925ce327d8982149e5610123b726b85":[11,0,18,5],
+"structstatic__detector.html#ad7262861060d61260f3a4f4fdc0ea633":[11,0,18,4],
+"temperature_8hpp.html":[12,0,1,1,2],
 "temperature_8hpp_source.html":[12,0,1,1,2],
 "util_8cpp.html":[12,0,1,3,18],
 "util_8cpp.html#a8e0b580f4dd8010ffb0db37533802021":[12,0,1,3,18,0],
