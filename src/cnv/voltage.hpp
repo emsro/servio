@@ -1,5 +1,7 @@
-
 #pragma once
+
+namespace cnv
+{
 
 class voltage_converter
 {
@@ -17,3 +19,5 @@ public:
 private:
         float scale_;
 };
+
+}  // namespace cnv

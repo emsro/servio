@@ -1,7 +1,9 @@
-
 #include <cstdint>
 
 #pragma once
+
+namespace cnv
+{
 
 class current_converter
 {
@@ -21,3 +23,5 @@ private:
         float offset_;
         float scale_;
 };
+
+}  // namespace cnv

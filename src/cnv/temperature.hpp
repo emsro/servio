@@ -1,6 +1,7 @@
-
-
 #pragma once
+
+namespace cnv
+{
 
 class temperature_converter
 {
@@ -20,3 +21,5 @@ private:
         float scale_;
         float offset_;
 };
+
+}  // namespace cnv

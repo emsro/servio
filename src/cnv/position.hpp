@@ -2,6 +2,9 @@
 
 #pragma once
 
+namespace cnv
+{
+
 class position_converter
 {
 public:
@@ -26,3 +29,5 @@ private:
         float scale_;
         float offset_;
 };
+
+}  // namespace cnv
