@@ -7,12 +7,12 @@
 namespace brd
 {
 
-fw::drv::clock       CLOCK{};
-acquisition_type     ACQUISITION{};
-fw::drv::comms       COMMS{};
-fw::drv::debug_comms DEBUG_COMMS{};
-fw::drv::hbridge     HBRIDGE{};
-fw::drv::leds        LEDS;
+fw::drv::clock     CLOCK{};
+acquisition_type   ACQUISITION{};
+fw::drv::cobs_uart COMMS{};
+fw::drv::cobs_uart DEBUG_COMMS{};
+fw::drv::hbridge   HBRIDGE{};
+fw::drv::leds      LEDS;
 
 struct : fw::drv::vcc_interface
 {
@@ -111,6 +111,11 @@ void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
         brd::HBRIDGE.timer_period_irq( h );
 }
 
+void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
+{
+        brd::COMMS.tx_cplt_irq( h );
+        brd::DEBUG_COMMS.tx_cplt_irq( h );
+}
 void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
 {
         brd::COMMS.rx_cplt_irq( h );
@@ -249,9 +254,9 @@ fw::drv::hbridge* setup_hbridge()
         return &HBRIDGE;
 }
 
-fw::drv::comms* setup_comms()
+fw::drv::cobs_uart* setup_comms()
 {
-        auto comms_setup = []( fw::drv::comms::handles& h ) {
+        auto comms_setup = []( fw::drv::cobs_uart::handles& h ) {
                 __HAL_RCC_DMAMUX1_CLK_ENABLE();
                 __HAL_RCC_DMA1_CLK_ENABLE();
                 __HAL_RCC_USART2_CLK_ENABLE();
@@ -292,9 +297,9 @@ fw::drv::comms* setup_comms()
         return &COMMS;
 }
 
-fw::drv::debug_comms* setup_debug_comms()
+fw::drv::cobs_uart* setup_debug_comms()
 {
-        auto setup_f = []( fw::drv::debug_comms::handles& h ) {
+        auto setup_f = []( fw::drv::cobs_uart::handles& h ) {
                 __HAL_RCC_DMA1_CLK_ENABLE();
                 __HAL_RCC_DMAMUX1_CLK_ENABLE();
                 __HAL_RCC_GPIOA_CLK_ENABLE();
