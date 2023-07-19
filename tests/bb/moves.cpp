@@ -5,8 +5,7 @@
 
 #include <gtest/gtest.h>
 
-boost::asio::awaitable< void >
-test_current( boost::asio::io_context& io, boost::asio::serial_port& port )
+boost::asio::awaitable< void > test_current( boost::asio::io_context& io, host::cobs_port& port )
 {
 
         co_await host::set_mode_position( port, 0.2f );
@@ -25,8 +24,7 @@ test_current( boost::asio::io_context& io, boost::asio::serial_port& port )
         co_await host::set_mode_disengaged( port );
 }
 
-boost::asio::awaitable< void >
-test_position( boost::asio::io_context& io, boost::asio::serial_port& port )
+boost::asio::awaitable< void > test_position( boost::asio::io_context& io, host::cobs_port& port )
 {
 
         for ( float pos : { pi / 4, pi * 3 / 2, pi } ) {

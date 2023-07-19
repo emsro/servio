@@ -26,9 +26,9 @@ struct cfg_opts
 };
 
 void cfg_def(
-    CLI::App&                                    app,
-    boost::asio::io_context&                     context,
-    std::unique_ptr< boost::asio::serial_port >& port_ptr )
+    CLI::App&                           app,
+    boost::asio::io_context&            context,
+    std::unique_ptr< host::cobs_port >& port_ptr )
 {
         auto data = std::make_shared< cfg_opts >();
 
@@ -76,7 +76,7 @@ void cfg_def(
 
 boost::asio::awaitable< void > pool_cmd(
     boost::asio::io_context&,
-    boost::asio::serial_port&                               port,
+    host::cobs_port&                                        port,
     std::vector< const google::protobuf::FieldDescriptor* > fields )
 {
 
@@ -96,7 +96,7 @@ boost::asio::awaitable< void > pool_cmd(
 
 boost::asio::awaitable< void > pool_cmd(
     boost::asio::io_context&   context,
-    boost::asio::serial_port&  port,
+    host::cobs_port&           port,
     std::vector< std::string > properties )
 {
         if ( properties.empty() ) {
@@ -119,9 +119,9 @@ boost::asio::awaitable< void > pool_cmd(
 }
 
 void pool_def(
-    CLI::App&                                    app,
-    boost::asio::io_context&                     context,
-    std::unique_ptr< boost::asio::serial_port >& port_ptr )
+    CLI::App&                           app,
+    boost::asio::io_context&            context,
+    std::unique_ptr< host::cobs_port >& port_ptr )
 {
         auto data = std::make_shared< std::vector< std::string > >();
 
@@ -140,9 +140,9 @@ struct mode_opts
 };
 
 void mode_def(
-    CLI::App&                                    app,
-    boost::asio::io_context&                     context,
-    std::unique_ptr< boost::asio::serial_port >& port_ptr )
+    CLI::App&                           app,
+    boost::asio::io_context&            context,
+    std::unique_ptr< host::cobs_port >& port_ptr )
 {
         auto data = std::make_shared< mode_opts >();
 

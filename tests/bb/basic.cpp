@@ -17,7 +17,7 @@ bool operator==( const Message& lh, const Message& rh )
 }  // namespace google::protobuf
 
 boost::asio::awaitable< void >
-test_properties_querying( boost::asio::io_context&, boost::asio::serial_port& port )
+test_properties_querying( boost::asio::io_context&, host::cobs_port& port )
 {
         const google::protobuf::OneofDescriptor* desc =
             servio::Property::GetDescriptor()->oneof_decl( 0 );
@@ -29,7 +29,7 @@ test_properties_querying( boost::asio::io_context&, boost::asio::serial_port& po
         }
 }
 
-boost::asio::awaitable< void > check_mode( boost::asio::serial_port& port, servio::Mode m )
+boost::asio::awaitable< void > check_mode( host::cobs_port& port, servio::Mode m )
 {
         co_await host::set_mode( port, m );
 
@@ -37,8 +37,7 @@ boost::asio::awaitable< void > check_mode( boost::asio::serial_port& port, servi
         EXPECT_EQ( repl.pld_case(), m.pld_case() );
 }
 
-boost::asio::awaitable< void >
-test_modes( boost::asio::io_context&, boost::asio::serial_port& port )
+boost::asio::awaitable< void > test_modes( boost::asio::io_context&, host::cobs_port& port )
 {
         servio::Mode m;
 
@@ -131,8 +130,7 @@ servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servi
         return ::testing::AssertionSuccess();
 }
 
-boost::asio::awaitable< void >
-test_config( boost::asio::io_context&, boost::asio::serial_port& port )
+boost::asio::awaitable< void > test_config( boost::asio::io_context&, host::cobs_port& port )
 {
         const std::vector< servio::Config > cfg_vec = co_await host::get_full_config( port );
         std::map< servio::Config::PldCase, servio::Config > istate_map;

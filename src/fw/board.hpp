@@ -1,7 +1,6 @@
 #include "config.hpp"
 #include "fw/drv/clock.hpp"
-#include "fw/drv/comms.hpp"
-#include "fw/drv/debug_comms.hpp"
+#include "fw/drv/cobs_uart.hpp"
 #include "fw/drv/hbridge.hpp"
 #include "fw/drv/leds.hpp"
 #include "globals.hpp"
@@ -22,7 +21,7 @@ struct core_drivers
         fw::drv::temperature_interface* temperature;
         fw::drv::period_cb_interface*   period_cb;  // TODO: maybe imrpove naming here?
         fw::drv::hbridge*               hbridge;
-        fw::drv::comms*                 comms;
+        fw::drv::cobs_uart*             comms;
         fw::drv::leds*                  leds;
         void ( *start_cb )( core_drivers& );
 
@@ -44,8 +43,8 @@ cfg_map                                   get_config();
 
 void setup_board();
 
-fw::drv::debug_comms* setup_debug_comms();
-core_drivers          setup_core_drivers();
+fw::drv::cobs_uart* setup_debug_comms();
+core_drivers        setup_core_drivers();
 
 }  // namespace brd
 

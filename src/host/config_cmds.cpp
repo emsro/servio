@@ -39,7 +39,7 @@ namespace
         }
 }  // namespace
 
-boost::asio::awaitable< void > cfg_query_cmd( boost::asio::serial_port& port, bool json )
+boost::asio::awaitable< void > cfg_query_cmd( cobs_port& port, bool json )
 {
         std::vector< servio::Config > out = co_await get_full_config( port );
 
@@ -50,7 +50,7 @@ boost::asio::awaitable< void > cfg_query_cmd( boost::asio::serial_port& port, bo
         }
 }
 
-boost::asio::awaitable< void > cfg_commit_cmd( boost::asio::serial_port& port )
+boost::asio::awaitable< void > cfg_commit_cmd( cobs_port& port )
 {
         servio::HostToServio msg;
         msg.mutable_commit_config();
@@ -59,7 +59,7 @@ boost::asio::awaitable< void > cfg_commit_cmd( boost::asio::serial_port& port )
         std::ignore                = reply;
 }
 
-boost::asio::awaitable< void > cfg_clear_cmd( boost::asio::serial_port& port )
+boost::asio::awaitable< void > cfg_clear_cmd( cobs_port& port )
 {
         servio::HostToServio msg;
         msg.mutable_clear_config();
@@ -67,8 +67,7 @@ boost::asio::awaitable< void > cfg_clear_cmd( boost::asio::serial_port& port )
         std::ignore                = reply;
 }
 
-boost::asio::awaitable< void >
-cfg_get_cmd( boost::asio::serial_port& port, const std::string& name, bool json )
+boost::asio::awaitable< void > cfg_get_cmd( cobs_port& port, const std::string& name, bool json )
 {
         const google::protobuf::Descriptor* desc = servio::Config::GetDescriptor();
 
@@ -88,7 +87,7 @@ cfg_get_cmd( boost::asio::serial_port& port, const std::string& name, bool json 
 }
 
 boost::asio::awaitable< void >
-cfg_set_cmd( boost::asio::serial_port& port, const std::string& name, std::string value )
+cfg_set_cmd( cobs_port& port, const std::string& name, std::string value )
 {
 
         const google::protobuf::Descriptor* desc = servio::Config::GetDescriptor();

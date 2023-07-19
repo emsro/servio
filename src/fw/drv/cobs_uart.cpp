@@ -1,26 +1,26 @@
-#include "fw/drv/comms.hpp"
+#include "fw/drv/cobs_uart.hpp"
 
 #include "fw/util.hpp"
 
 namespace fw::drv
 {
 
-bool comms::setup( em::function_view< bool( handles& ) > setup_f )
+bool cobs_uart::setup( em::function_view< bool( handles& ) > setup_f )
 {
         return setup_f( h_ );
 }
 
-void comms::tx_dma_irq()
+void cobs_uart::tx_dma_irq()
 {
         HAL_DMA_IRQHandler( &h_.tx_dma );
 }
 
-void comms::uart_irq()
+void cobs_uart::uart_irq()
 {
         HAL_UART_IRQHandler( &h_.uart );
 }
 
-void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
+void cobs_uart::rx_cplt_irq( UART_HandleTypeDef* huart )
 {
         if ( huart != &h_.uart ) {
                 return;
@@ -40,7 +40,15 @@ void comms::rx_cplt_irq( UART_HandleTypeDef* huart )
         start();
 }
 
-std::tuple< bool, em::view< std::byte* > > comms::load_message( em::view< std::byte* > data )
+void cobs_uart::tx_cplt_irq( UART_HandleTypeDef* huart )
+{
+        if ( huart != &h_.uart ) {
+                return;
+        }
+        tx_done_ = true;
+}
+
+std::tuple< bool, em::view< std::byte* > > cobs_uart::load_message( em::view< std::byte* > data )
 {
         if ( isizes_.empty() ) {
                 return { true, {} };
@@ -58,31 +66,37 @@ std::tuple< bool, em::view< std::byte* > > comms::load_message( em::view< std::b
         return { true, dview };
 }
 
-void comms::start()
+void cobs_uart::start()
 {
         // TODO: return value ignored
-        HAL_UART_Receive_IT( &h_.uart, reinterpret_cast< uint8_t* >( &rx_byte_ ), 1 );
+        hal_check{} << HAL_UART_Receive_IT(
+            &h_.uart, reinterpret_cast< uint8_t* >( &rx_byte_ ), 1 );
 }
 
-void comms::send( em::view< std::byte* > data )
+bool cobs_uart::send( em::view< const std::byte* > data )
 {
-        while ( !( HAL_UART_GetState( &h_.uart ) & HAL_UART_STATE_READY ) ) {
+        // TODO: well, timeout would be better
+        while ( !tx_done_ ) {
                 asm( "nop" );
         }
 
         auto [succ, used] = em::encode_cobs( data, otmp_ );
         if ( !succ ) {
-                return;
+                return false;
         }
         // TODO: this might fial
         otmp_[used.size()] = std::byte{ 0 };
 
+        tx_done_ = false;
+
         // TODO: problematic cast
         // TODO: return value ignored
-        HAL_UART_Transmit_DMA(
+        hal_check{} << HAL_UART_Transmit_DMA(
             &h_.uart,
             reinterpret_cast< uint8_t* >( otmp_.begin() ),
             static_cast< uint16_t >( used.size() + 1 ) );
+
+        return true;
 }
 
 }  // namespace fw::drv

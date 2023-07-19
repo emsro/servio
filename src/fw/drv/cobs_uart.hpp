@@ -12,7 +12,7 @@ namespace fw::drv
 
 constexpr std::size_t comm_buff_size = 128;
 
-class comms
+class cobs_uart
 {
 public:
         struct handles
@@ -21,28 +21,30 @@ public:
                 DMA_HandleTypeDef  tx_dma;
         };
 
-        comms() = default;
+        cobs_uart() = default;
 
-        comms( const comms& )            = delete;
-        comms( comms&& )                 = delete;
-        comms& operator=( const comms& ) = delete;
-        comms& operator=( comms&& )      = delete;
+        cobs_uart( const cobs_uart& )            = delete;
+        cobs_uart( cobs_uart&& )                 = delete;
+        cobs_uart& operator=( const cobs_uart& ) = delete;
+        cobs_uart& operator=( cobs_uart&& )      = delete;
 
         bool setup( em::function_view< bool( handles& ) > );
 
         void tx_dma_irq();
         void uart_irq();
         void rx_cplt_irq( UART_HandleTypeDef* huart );
+        void tx_cplt_irq( UART_HandleTypeDef* huart );
 
         std::tuple< bool, em::view< std::byte* > > load_message( em::view< std::byte* > data );
 
         void start();
 
-        void send( em::view< std::byte* > data );
+        bool send( em::view< const std::byte* > data );
 
 private:
         handles h_;
 
+        volatile bool                                tx_done_      = true;
         uint16_t                                     current_size_ = 0;
         em::cobs_decoder                             cd_;
         std::byte                                    rx_byte_;

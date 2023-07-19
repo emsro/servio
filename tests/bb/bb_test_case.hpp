@@ -10,8 +10,7 @@
 namespace tests::bb
 {
 
-using test_signature =
-    boost::asio::awaitable< void >( boost::asio::io_context&, boost::asio::serial_port& );
+using test_signature = boost::asio::awaitable< void >( boost::asio::io_context&, host::cobs_port& );
 
 struct bb_test_case : ::testing::Test
 {
