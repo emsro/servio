@@ -1,11 +1,11 @@
 <map id="src/fw/monitor.hpp" name="src/fw/monitor.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="617,5,759,32"/>
-<area shape="rect" id="node2" href="$converter_8hpp.html" title=" " alt="" coords="450,80,561,107"/>
-<area shape="rect" id="node7" href="$indication_8hpp.html" title=" " alt="" coords="815,80,929,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,162,176,189"/>
-<area shape="rect" id="node4" title=" " alt="" coords="201,162,378,189"/>
-<area shape="rect" id="node5" title=" " alt="" coords="402,162,609,189"/>
-<area shape="rect" id="node6" title=" " alt="" coords="633,162,807,189"/>
-<area shape="rect" id="node8" href="$base_8hpp.html" title=" " alt="" coords="831,162,913,189"/>
-<area shape="rect" id="node9" title=" " alt="" coords="937,155,1119,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="461,5,603,32"/>
+<area shape="rect" id="node2" href="$converter_8hpp.html" title=" " alt="" coords="330,80,441,107"/>
+<area shape="rect" id="node7" href="$indication_8hpp.html" title=" " alt="" coords="623,80,737,107"/>
+<area shape="rect" id="node3" href="$current_8hpp.html" title=" " alt="" coords="5,162,128,189"/>
+<area shape="rect" id="node4" href="$position_8hpp.html" title=" " alt="" coords="153,162,282,189"/>
+<area shape="rect" id="node5" href="$temperature_8hpp.html" title=" " alt="" coords="306,162,465,189"/>
+<area shape="rect" id="node6" href="$voltage_8hpp.html" title=" " alt="" coords="489,162,615,189"/>
+<area shape="rect" id="node8" href="$base_8hpp.html" title=" " alt="" coords="639,162,721,189"/>
+<area shape="rect" id="node9" title=" " alt="" coords="745,155,927,196"/>
 </map>

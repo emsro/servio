@@ -87,38 +87,42 @@ $(document).ready(function(){initNavTree('temperature_8hpp_source.html',''); ini
 <div class="title">temperature.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="temperature_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="temperature_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classtemperature__converter.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtemperature__converter.html">temperature_converter</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classtemperature__converter.html#a74c5cb71f05f917c785ecbdf8b748b7d">    8</a></span>&#160;        <a class="code" href="classtemperature__converter.html#a74c5cb71f05f917c785ecbdf8b748b7d">temperature_converter</a>( <span class="keywordtype">float</span> scale = 1.f, <span class="keywordtype">float</span> offset = 0.f )</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;          : scale_( scale )</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;          , offset_( offset )</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085">   14</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085">convert</a>( uint32_t val )<span class="keyword"> const</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( val ) * scale_ + offset_;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">float</span> scale_;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">float</span> offset_;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="ttc" id="aclasstemperature__converter_html"><div class="ttname"><a href="classtemperature__converter.html">temperature_converter</a></div><div class="ttdef"><b>Definition:</b> temperature.hpp:6</div></div>
-<div class="ttc" id="aclasstemperature__converter_html_a74c5cb71f05f917c785ecbdf8b748b7d"><div class="ttname"><a href="classtemperature__converter.html#a74c5cb71f05f917c785ecbdf8b748b7d">temperature_converter::temperature_converter</a></div><div class="ttdeci">temperature_converter(float scale=1.f, float offset=0.f)</div><div class="ttdef"><b>Definition:</b> temperature.hpp:8</div></div>
-<div class="ttc" id="aclasstemperature__converter_html_acc2a683b59b89be21ed4945f3d343085"><div class="ttname"><a href="classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085">temperature_converter::convert</a></div><div class="ttdeci">float convert(uint32_t val) const</div><div class="ttdef"><b>Definition:</b> temperature.hpp:14</div></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecnv.html">cnv</a></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classcnv_1_1temperature__converter.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcnv_1_1temperature__converter.html">temperature_converter</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classcnv_1_1temperature__converter.html#afa8efd5eb29cd590adffdbf5bb2fc512">    9</a></span>&#160;        <a class="code" href="classcnv_1_1temperature__converter.html#afa8efd5eb29cd590adffdbf5bb2fc512">temperature_converter</a>( <span class="keywordtype">float</span> scale = 1.f, <span class="keywordtype">float</span> offset = 0.f )</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;          : scale_( scale )</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;          , offset_( offset )</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classcnv_1_1temperature__converter.html#a153edd12d267403f066c82af55486810">   15</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classcnv_1_1temperature__converter.html#a153edd12d267403f066c82af55486810">convert</a>( uint32_t val )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( val ) * scale_ + offset_;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">float</span> scale_;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">float</span> offset_;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}  <span class="comment">// namespace cnv</span></div>
+<div class="ttc" id="aclasscnv_1_1temperature__converter_html"><div class="ttname"><a href="classcnv_1_1temperature__converter.html">cnv::temperature_converter</a></div><div class="ttdef"><b>Definition:</b> temperature.hpp:7</div></div>
+<div class="ttc" id="aclasscnv_1_1temperature__converter_html_a153edd12d267403f066c82af55486810"><div class="ttname"><a href="classcnv_1_1temperature__converter.html#a153edd12d267403f066c82af55486810">cnv::temperature_converter::convert</a></div><div class="ttdeci">float convert(uint32_t val) const</div><div class="ttdef"><b>Definition:</b> temperature.hpp:15</div></div>
+<div class="ttc" id="aclasscnv_1_1temperature__converter_html_afa8efd5eb29cd590adffdbf5bb2fc512"><div class="ttname"><a href="classcnv_1_1temperature__converter.html#afa8efd5eb29cd590adffdbf5bb2fc512">cnv::temperature_converter::temperature_converter</a></div><div class="ttdeci">temperature_converter(float scale=1.f, float offset=0.f)</div><div class="ttdef"><b>Definition:</b> temperature.hpp:9</div></div>
+<div class="ttc" id="anamespacecnv_html"><div class="ttname"><a href="namespacecnv.html">cnv</a></div><div class="ttdef"><b>Definition:</b> current.hpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6185f3a156e0baa9ffebb847f82d024e.html">cnv</a></li><li class="navelem"><a class="el" href="temperature_8hpp.html">temperature.hpp</a></li>
-    <li class="footer">Generated on Wed Jul 19 2023 20:25:43 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Jul 19 2023 20:25:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

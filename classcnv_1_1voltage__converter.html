@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: current_converter Class Reference</title>
+<title>servio: cnv::voltage_converter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classcurrent__converter.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classcnv_1_1voltage__converter.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -85,24 +85,24 @@ $(document).ready(function(){initNavTree('classcurrent__converter.html',''); ini
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classcurrent__converter-members.html">List of all members</a>  </div>
+<a href="classcnv_1_1voltage__converter-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">current_converter Class Reference</div>  </div>
+<div class="title">cnv::voltage_converter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="current_8hpp_source.html">current.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="voltage_8hpp_source.html">voltage.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2b0b734b051bc88010f1a05cfc8b5102"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurrent__converter.html#a2b0b734b051bc88010f1a05cfc8b5102">current_converter</a> (float scale=1.f, float offset=0.f)</td></tr>
-<tr class="separator:a2b0b734b051bc88010f1a05cfc8b5102"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e8459100b0ecd154d81ff68d1c78bfa"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurrent__converter.html#a0e8459100b0ecd154d81ff68d1c78bfa">convert</a> (uint32_t input) const</td></tr>
-<tr class="separator:a0e8459100b0ecd154d81ff68d1c78bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad76228fb7420a0d59734bc75c00adb45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcnv_1_1voltage__converter.html#ad76228fb7420a0d59734bc75c00adb45">voltage_converter</a> (float scale=1.f)</td></tr>
+<tr class="separator:ad76228fb7420a0d59734bc75c00adb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c434de66ff2b8553b9bdeb399185b6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcnv_1_1voltage__converter.html#af5c434de66ff2b8553b9bdeb399185b6">convert</a> (uint32_t val) const</td></tr>
+<tr class="separator:af5c434de66ff2b8553b9bdeb399185b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2b0b734b051bc88010f1a05cfc8b5102"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b0b734b051bc88010f1a05cfc8b5102">&#9670;&nbsp;</a></span>current_converter()</h2>
+<a id="ad76228fb7420a0d59734bc75c00adb45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad76228fb7420a0d59734bc75c00adb45">&#9670;&nbsp;</a></span>voltage_converter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -111,21 +111,11 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">current_converter::current_converter </td>
+          <td class="memname">cnv::voltage_converter::voltage_converter </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>scale</em> = <code>1.f</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>scale</em> = <code>1.f</code></td><td>)</td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>offset</em> = <code>0.f</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -138,8 +128,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0e8459100b0ecd154d81ff68d1c78bfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e8459100b0ecd154d81ff68d1c78bfa">&#9670;&nbsp;</a></span>convert()</h2>
+<a id="af5c434de66ff2b8553b9bdeb399185b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c434de66ff2b8553b9bdeb399185b6">&#9670;&nbsp;</a></span>convert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,10 +138,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float current_converter::convert </td>
+          <td class="memname">float cnv::voltage_converter::convert </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -165,15 +155,15 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/cnv/<a class="el" href="current_8hpp_source.html">current.hpp</a></li>
+<li>src/cnv/<a class="el" href="voltage_8hpp_source.html">voltage.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="classcurrent__converter.html">current_converter</a></li>
-    <li class="footer">Generated on Wed Jul 19 2023 20:25:43 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="namespacecnv.html">cnv</a></li><li class="navelem"><a class="el" href="classcnv_1_1voltage__converter.html">voltage_converter</a></li>
+    <li class="footer">Generated on Wed Jul 19 2023 20:25:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

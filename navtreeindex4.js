@@ -1,7 +1,8 @@
 var NAVTREEINDEX4 =
 {
-"structstatic__detector.html#aa925ce327d8982149e5610123b726b85":[11,0,18,5],
-"structstatic__detector.html#ad7262861060d61260f3a4f4fdc0ea633":[11,0,18,4],
+"structstatic__detector.html#a82cc33e17832453cfcd633a6f4a5dd3d":[11,0,17,0],
+"structstatic__detector.html#aa925ce327d8982149e5610123b726b85":[11,0,17,5],
+"structstatic__detector.html#ad7262861060d61260f3a4f4fdc0ea633":[11,0,17,4],
 "temperature_8hpp.html":[12,0,1,1,2],
 "temperature_8hpp_source.html":[12,0,1,1,2],
 "util_8cpp.html":[12,0,1,3,18],

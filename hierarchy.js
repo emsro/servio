@@ -19,7 +19,7 @@ var hierarchy =
     [ "converter", "structconverter.html", null ],
     [ "fw::core", "structfw_1_1core.html", null ],
     [ "brd::core_drivers", "structbrd_1_1core__drivers.html", null ],
-    [ "current_converter", "classcurrent__converter.html", null ],
+    [ "cnv::current_converter", "classcnv_1_1current__converter.html", null ],
     [ "fw::drv::current_interface", "classfw_1_1drv_1_1current__interface.html", null ],
     [ "fw::drv::acquisition< N >::detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
@@ -52,7 +52,7 @@ var hierarchy =
       [ "fw::drv::period_cb< Callable >", "structfw_1_1drv_1_1period__cb.html", null ]
     ] ],
     [ "ctl::pid_module", "classctl_1_1pid__module.html", null ],
-    [ "position_converter", "classposition__converter.html", null ],
+    [ "cnv::position_converter", "classcnv_1_1position__converter.html", null ],
     [ "fw::drv::position_interface", "classfw_1_1drv_1_1position__interface.html", null ],
     [ "mtr::posvel_kalman", "structmtr_1_1posvel__kalman.html", null ],
     [ "emlabcpp::quantity", null, [
@@ -61,7 +61,7 @@ var hierarchy =
     [ "fw::standard_callbacks", "structfw_1_1standard__callbacks.html", null ],
     [ "kalman::state_range", "namespacekalman.html#structkalman_1_1state__range", null ],
     [ "static_detector", "structstatic__detector.html", null ],
-    [ "temperature_converter", "classtemperature__converter.html", null ],
+    [ "cnv::temperature_converter", "classcnv_1_1temperature__converter.html", null ],
     [ "fw::drv::temperature_interface", "classfw_1_1drv_1_1temperature__interface.html", null ],
     [ "fw::drv::value_cb_interface", "classfw_1_1drv_1_1value__cb__interface.html", [
       [ "fw::drv::empty_value_cb", "structfw_1_1drv_1_1empty__value__cb.html", null ],
@@ -69,5 +69,5 @@ var hierarchy =
       [ "fw::position_callback", "classfw_1_1position__callback.html", null ]
     ] ],
     [ "fw::drv::vcc_interface", "classfw_1_1drv_1_1vcc__interface.html", null ],
-    [ "voltage_converter", "classvoltage__converter.html", null ]
+    [ "cnv::voltage_converter", "classcnv_1_1voltage__converter.html", null ]
 ];

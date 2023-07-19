@@ -1,9 +1,9 @@
 var NAVTREEINDEX1 =
 {
-"classtemperature__converter.html#acc2a683b59b89be21ed4945f3d343085":[11,0,19,1],
-"classvoltage__converter.html":[11,0,20],
-"classvoltage__converter.html#aa68adcd5401740fc89d0342384e556e7":[11,0,20,0],
-"classvoltage__converter.html#aebd8ec998a9330d754a463858571701b":[11,0,20,1],
+"classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14":[11,0,14,1],
+"classscaled.html":[11,0,16],
+"classscaled.html#ad0c137095775ae685c2fc049d1784dd2":[11,0,16,0],
+"classscaled.html#aeb23f3d76e0db21a720204e85e555150":[11,0,16,1],
 "cli_8hpp.html":[12,0,1,4,1],
 "cli_8hpp.html#a2f24da7c62c9382666f594042cc47fbb":[12,0,1,4,1,1],
 "cli_8hpp.html#ac5992b69a9b4498c24f684e9423fbf97":[12,0,1,4,1,2],

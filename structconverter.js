@@ -4,8 +4,8 @@ var structconverter =
     [ "set_position_cfg", "structconverter.html#a2e14af5169c4cef7df1fb88cc224cbae", null ],
     [ "set_temp_cfg", "structconverter.html#ab6612787f2717b51ed761b4d2cfbcc0e", null ],
     [ "set_vcc_cfg", "structconverter.html#ab01dc0a727450978f3889486cd8c4a1c", null ],
-    [ "current", "structconverter.html#a8cb1044de319e60167cd89fe01a96d05", null ],
-    [ "position", "structconverter.html#a20d98451d8e0423cae03e88681840f9f", null ],
-    [ "temp", "structconverter.html#ac9870ea936ec13c39637d9c93827755a", null ],
-    [ "vcc", "structconverter.html#a96a6c5a43d6b71202650791f0ec934df", null ]
+    [ "current", "structconverter.html#ac1234d3e39c471cdd9175dd99b1f07bd", null ],
+    [ "position", "structconverter.html#a47741f2b095ad25e51d733f2a9e47e5e", null ],
+    [ "temp", "structconverter.html#ae852a343d1d2c1a77b82527ffbfd51c7", null ],
+    [ "vcc", "structconverter.html#a291c4e6e7ed023b62116ab676174aaf1", null ]
 ];

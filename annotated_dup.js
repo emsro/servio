@@ -6,6 +6,12 @@ var annotated_dup =
     [ "cfg", "namespacecfg.html", [
       [ "payload", "structcfg_1_1payload.html", "structcfg_1_1payload" ]
     ] ],
+    [ "cnv", "namespacecnv.html", [
+      [ "current_converter", "classcnv_1_1current__converter.html", "classcnv_1_1current__converter" ],
+      [ "position_converter", "classcnv_1_1position__converter.html", "classcnv_1_1position__converter" ],
+      [ "temperature_converter", "classcnv_1_1temperature__converter.html", "classcnv_1_1temperature__converter" ],
+      [ "voltage_converter", "classcnv_1_1voltage__converter.html", "classcnv_1_1voltage__converter" ]
+    ] ],
     [ "ctl", "namespacectl.html", [
       [ "config", "namespacectl.html#structctl_1_1config", "namespacectl_structctl_1_1config_dup" ],
       [ "linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", "structctl_1_1linear__transition__regulator" ],
@@ -62,14 +68,10 @@ var annotated_dup =
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", "host_2main_8cpp_structcfg__opts" ],
     [ "control", "classcontrol.html", "classcontrol" ],
     [ "converter", "structconverter.html", "structconverter" ],
-    [ "current_converter", "classcurrent__converter.html", "classcurrent__converter" ],
     [ "indication", "classindication.html", "classindication" ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", "base_8hpp_structleds__vals" ],
     [ "metrics", "classmetrics.html", "classmetrics" ],
     [ "mode_opts", "host_2main_8cpp.html#structmode__opts", "host_2main_8cpp_structmode__opts" ],
-    [ "position_converter", "classposition__converter.html", "classposition__converter" ],
     [ "scaled", "classscaled.html", "classscaled" ],
-    [ "static_detector", "structstatic__detector.html", "structstatic__detector" ],
-    [ "temperature_converter", "classtemperature__converter.html", "classtemperature__converter" ],
-    [ "voltage_converter", "classvoltage__converter.html", "classvoltage__converter" ]
+    [ "static_detector", "structstatic__detector.html", "structstatic__detector" ]
 ];

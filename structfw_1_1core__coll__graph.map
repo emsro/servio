@@ -1,12 +1,12 @@
 <map id="fw::core" name="fw::core">
-<area shape="rect" id="node1" title=" " alt="" coords="234,184,306,211"/>
-<area shape="rect" id="node2" href="$classfw_1_1monitor.html" title=" " alt="" coords="5,95,100,121"/>
-<area shape="rect" id="node3" href="$classindication.html" title=" " alt="" coords="124,95,211,121"/>
-<area shape="rect" id="node4" href="$classmetrics.html" title=" " alt="" coords="235,95,305,121"/>
-<area shape="rect" id="node5" href="$structconverter.html" title=" " alt="" coords="329,95,413,121"/>
-<area shape="rect" id="node6" href="$classvoltage__converter.html" title=" " alt="" coords="45,5,185,32"/>
-<area shape="rect" id="node7" href="$classposition__converter.html" title=" " alt="" coords="209,5,352,32"/>
-<area shape="rect" id="node8" href="$classtemperature__converter.html" title=" " alt="" coords="376,5,548,32"/>
-<area shape="rect" id="node9" href="$classcurrent__converter.html" title=" " alt="" coords="572,5,709,32"/>
-<area shape="rect" id="node10" href="$classcontrol.html" title=" " alt="" coords="438,95,505,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="492,107,564,133"/>
+<area shape="rect" id="node2" href="$classfw_1_1monitor.html" title=" " alt="" coords="313,5,408,32"/>
+<area shape="rect" id="node3" href="$classindication.html" title=" " alt="" coords="317,56,404,83"/>
+<area shape="rect" id="node4" href="$classmetrics.html" title=" " alt="" coords="325,107,396,133"/>
+<area shape="rect" id="node5" href="$structconverter.html" title=" " alt="" coords="319,157,403,184"/>
+<area shape="rect" id="node6" href="$classcnv_1_1temperature__converter.html" title=" " alt="" coords="5,81,208,108"/>
+<area shape="rect" id="node7" href="$classcnv_1_1voltage__converter.html" title=" " alt="" coords="21,132,192,159"/>
+<area shape="rect" id="node8" href="$classcnv_1_1position__converter.html" title=" " alt="" coords="20,183,193,209"/>
+<area shape="rect" id="node9" href="$classcnv_1_1current__converter.html" title=" " alt="" coords="23,233,190,260"/>
+<area shape="rect" id="node10" href="$classcontrol.html" title=" " alt="" coords="327,208,394,235"/>
 </map>

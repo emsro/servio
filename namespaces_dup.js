@@ -2,6 +2,7 @@ var namespaces_dup =
 [
     [ "brd", "namespacebrd.html", "namespacebrd" ],
     [ "cfg", "namespacecfg.html", "namespacecfg" ],
+    [ "cnv", "namespacecnv.html", "namespacecnv" ],
     [ "ctl", "namespacectl.html", "namespacectl" ],
     [ "fw", "namespacefw.html", "namespacefw" ],
     [ "host", "namespacehost.html", "namespacehost" ],
