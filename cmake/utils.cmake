@@ -18,7 +18,7 @@ function(servio_add_board_executable)
   servio_compile_options(${A_TARGET})
   target_link_libraries(${A_TARGET} PUBLIC ${A_LIBS})
   target_compile_options(${A_TARGET} PRIVATE ${A_OPTS})
+  target_link_options(${A_TARGET} PRIVATE -Wl,--print-memory-usage)
 
   stm32_add_linker_script(${A_TARGET} PRIVATE ${A_LINKER_SCRIPT})
-  stm32_print_size_of_target(${A_TARGET})
 endfunction()
