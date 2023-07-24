@@ -3,7 +3,9 @@ include(FetchContent)
 FetchContent_Declare(
   nanopb
   GIT_REPOSITORY https://github.com/nanopb/nanopb.git
-  GIT_TAG 0.4.7)
+  GIT_TAG 0.4.7
+  GIT_SHALLOW TRUE
+  GIT_PROGRESS TRUE)
 FetchContent_GetProperties(nanopb)
 if(NOT nanopb_POPULATED)
   FetchContent_Populate(nanopb)
