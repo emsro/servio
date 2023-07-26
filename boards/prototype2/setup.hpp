@@ -46,7 +46,7 @@ bool setup_adc_timer( acquisition_type::handles&, adc_timer_cfg cfg );
 
 struct pin_cfg
 {
-        uint32_t      pin;
+        uint16_t      pin;
         GPIO_TypeDef* port;
         uint8_t       alternate = 0x0;
 };
