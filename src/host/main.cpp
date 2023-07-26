@@ -90,7 +90,7 @@ boost::asio::awaitable< void > pool_cmd(
                         s             = s.substr( s.find( ':' ) + 1 );
                         vals.push_back( s );
                 }
-                std::cout << em::joined( vals, std::string{ "," } ) << std::endl;
+                std::cout << em::joined( vals, std::string{ "\t" } ) << std::endl;
         }
 }
 

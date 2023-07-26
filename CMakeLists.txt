@@ -74,6 +74,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   target_link_libraries(
     prototype2
     PRIVATE HAL::STM32::G4::FLASH
+            HAL::STM32::G4::FLASHEx
             HAL::STM32::G4::ADC
             HAL::STM32::G4::ADCEx
             HAL::STM32::G4::CORTEX

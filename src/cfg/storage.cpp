@@ -36,11 +36,13 @@ namespace
                 std::optional< page > candidate    = std::nullopt;
                 uint32_t              candidate_id = 0;
                 for ( const page& p : pages ) {
+                        EMLABCPP_DEBUG_LOG( "Checking page: ", p.begin(), " ", p.end() );
                         std::ignore = handler::load(
                             p,
                             [&]( const payload& pl ) -> bool {
                                     if ( !candidate.has_value() || cmp_f( candidate_id, pl.id ) ) {
-                                            candidate = p;
+                                            candidate    = p;
+                                            candidate_id = pl.id;
                                     }
                                     return false;
                             },
@@ -54,6 +56,7 @@ namespace
 std::optional< page > find_unused_page( em::view< const page* > pages )
 {
         auto iter = em::find_if( pages, [&]( const page& p ) {
+                EMLABCPP_DEBUG_LOG( "Unused trying page: ", p.begin(), " ", p.end() );
                 const em::cfg::load_result lr = handler::load(
                     p,
                     [&]( const payload& ) -> bool {
@@ -66,12 +69,14 @@ std::optional< page > find_unused_page( em::view< const page* > pages )
         if ( iter == pages.end() ) {
                 return std::nullopt;
         }
+        EMLABCPP_DEBUG_LOG( "Got unused page: ", iter->begin(), " ", iter->end() );
         return *iter;
 }
 
 std::optional< page > find_oldest_page( em::view< const page* > pages )
 {
         return find_cmp_page( pages, [&]( uint32_t candidate_id, uint32_t page_id ) {
+                EMLABCPP_DEBUG_LOG( "Ids: ", candidate_id, " ", page_id );
                 return page_id < candidate_id;
         } );
 }
@@ -120,12 +125,18 @@ bool store(
         if ( !success ) {
                 return false;
         }
-        for ( const std::size_t i : em::range( buffer.size() / sizeof( uint64_t ) ) ) {
-                const std::size_t j = ( buffer.size() / sizeof( uint64_t ) ) - 1 - i;
+
+        constexpr std::size_t write_n = buffer.size() / sizeof( uint64_t );
+        for ( const std::size_t i : em::range( write_n ) ) {
+                const std::size_t j = write_n - 1 - i;
 
                 uint64_t word;
                 std::memcpy( &word, buffer.data() + j * sizeof( uint64_t ), sizeof( uint64_t ) );
-                success |= writer( j * sizeof( uint64_t ), word );
+                success = writer( j * sizeof( uint64_t ), word );
+
+                if ( !success ) {
+                        break;
+                }
         }
 
         return success;

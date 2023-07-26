@@ -5,8 +5,10 @@
 #include "fw/dispatcher.hpp"
 #include "fw/globals.hpp"
 #include "fw/servio_pb.hpp"
+#include "load_persistent_config.hpp"
 
 #include <emlabcpp/algorithm.h>
+#include <emlabcpp/defer.h>
 #include <emlabcpp/iterators/numeric.h>
 #include <emlabcpp/match.h>
 #include <emlabcpp/pid.h>
@@ -23,14 +25,42 @@ bool store_config(
                 return false;
         }
 
+        if ( HAL_FLASH_Unlock() != HAL_OK ) {
+                fw::stop_exec();
+        }
+        em::defer d = [] {
+                if ( HAL_FLASH_Lock() != HAL_OK ) {
+                        fw::stop_exec();
+                }
+        };
+
         const std::byte* start      = opt_page->begin();
         auto             start_addr = reinterpret_cast< uint32_t >( start );
 
+        FLASH_EraseInitTypeDef erase_cfg{
+            .TypeErase = FLASH_TYPEERASE_PAGES,
+            .Banks     = FLASH_BANK_1,                                   // eeeeh, study this?
+            .Page      = ( start_addr - FLASH_BASE ) / FLASH_PAGE_SIZE,  // this is hardcoded
+                                                                         // too mcuh
+
+            .NbPages = 1,
+        };
+
+        uint32_t          erase_err;
+        HAL_StatusTypeDef status = HAL_FLASHEx_Erase( &erase_cfg, &erase_err );
+        if ( status != HAL_OK ) {
+                fw::stop_exec();
+        }
+        if ( erase_err != 0xFFFFFFFF ) {
+                fw::stop_exec();
+        }
+
         auto f = [&]( std::size_t offset, uint64_t val ) -> bool {
-                HAL_FLASH_Unlock();
                 const HAL_StatusTypeDef status =
                     HAL_FLASH_Program( FLASH_TYPEPROGRAM_DOUBLEWORD, start_addr + offset, val );
-                HAL_FLASH_Lock();
+                if ( status != HAL_OK ) {
+                        fw::stop_exec();
+                }
                 return status == HAL_OK;
         };
 
@@ -46,20 +76,9 @@ int main()
 
         cfg_map cfg = brd::get_config();
 
-        em::view                   pages     = brd::get_persistent_pages();
-        std::optional< cfg::page > last_page = cfg::find_latest_page( pages );
-        // TODO: move the config logic into separate stuff so it can be used in tests
-        cfg::payload last_cfg_payload{ .git_ver = "", .id = 0 };
-        if ( last_page.has_value() ) {
-                auto check_f = [&]( const cfg::payload& ) {
-                        return true;
-                };
-                const bool cfg_loaded = cfg::load( *last_page, check_f, cfg );
+        em::view pages = brd::get_persistent_pages();
 
-                if ( !cfg_loaded ) {
-                        fw::stop_exec();
-                }
-        }
+        cfg::payload last_cfg_payload = load_persistent_config( pages, cfg );
 
         brd::core_drivers cdrv = brd::setup_core_drivers();
 
@@ -91,6 +110,7 @@ int main()
         std::byte output_buffer[ServioToHostPacket_size];
 
         while ( true ) {
+
                 cor.tick( *cdrv.leds, cdrv.clock->get_us() );
 
                 auto write_config = [&]( const cfg_map* cfg ) -> bool {
@@ -98,7 +118,11 @@ int main()
                             .git_ver = "",  // TODO: << fix this
                             .id      = last_cfg_payload.id + 1,
                         };
-                        return store_config( pages, pld, cfg );
+                        bool succ = store_config( pages, pld, cfg );
+                        if ( succ ) {
+                                last_cfg_payload = pld;
+                        }
+                        return succ;
                 };
 
                 fw::dispatcher dis{

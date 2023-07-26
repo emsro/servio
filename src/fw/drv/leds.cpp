@@ -1,5 +1,7 @@
 #include "fw/drv/leds.hpp"
 
+#include "fw/util.hpp"
+
 #include <emlabcpp/algorithm.h>
 
 namespace fw::drv
@@ -23,6 +25,7 @@ void leds::start()
 
 void leds::update( const leds_vals& leds )
 {
+
         if ( !red_forced_ ) {
                 HAL_GPIO_WritePin(
                     h_.red_peripheral, h_.red_pin, leds.red ? GPIO_PIN_SET : GPIO_PIN_RESET );

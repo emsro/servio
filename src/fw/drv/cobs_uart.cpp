@@ -33,9 +33,11 @@ void cobs_uart::rx_cplt_irq( UART_HandleTypeDef* huart )
                 cd_ = em::cobs_decoder{ rx_byte_ };
                 current_size_ += 1;
         } else {
-                current_size_ += 1;
-                const std::byte b = cd_.iter( rx_byte_ );
-                ibuffer_.push_back( b );
+                const std::optional< std::byte > b = cd_.iter( rx_byte_ );
+                if ( b.has_value() ) {
+                        current_size_ += 1;
+                        ibuffer_.push_back( *b );
+                }
         }
         start();
 }
