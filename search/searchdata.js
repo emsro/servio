@@ -5,10 +5,10 @@ var indexSectionsWithContent =
   2: "bcfhkm",
   3: "0abcdeghiklmprstuv",
   4: "abcdefghijlmnoprstuvw~",
-  5: "_abcdfghijklmnoprstuvxy",
+  5: "_abcdefghijklmnoprstuvxy",
   6: "cehiklmoprs",
-  7: "ci",
-  8: "bcdeghimpstv",
+  7: "cis",
+  8: "bcdeghimnpstv",
   9: "o",
   10: "adehilptuv",
   11: "123456789a"

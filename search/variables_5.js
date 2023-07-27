@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['field_983',['field',['../host_2main_8cpp.html#afb706de6d862c5dc33f2dcad24126b22',1,'cfg_opts']]]
+  ['empty_5fbuffer_999',['empty_buffer',['../namespacefw_1_1drv.html#ad3ea819532719ec233e997164573338d',1,'fw::drv::acquisition_status']]]
 ];

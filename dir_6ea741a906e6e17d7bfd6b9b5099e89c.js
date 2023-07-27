@@ -3,7 +3,8 @@ var dir_6ea741a906e6e17d7bfd6b9b5099e89c =
     [ "acquisition.hpp", "acquisition_8hpp.html", [
       [ "acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", [
         [ "buffer_was_full", "namespacefw_1_1drv.html#af977b5a7be96a3a0cb62991781d4398a", null ],
-        [ "start_failed", "namespacefw_1_1drv.html#a14fbc9ffa08fd7ba33393bd9e82f4379", null ]
+        [ "empty_buffer", "namespacefw_1_1drv.html#ad3ea819532719ec233e997164573338d", null ],
+        [ "hal_start_failed", "namespacefw_1_1drv.html#ad927f231af470539ea6d821de90683a8", null ]
       ] ],
       [ "acquisition", "classfw_1_1drv_1_1acquisition.html", "classfw_1_1drv_1_1acquisition" ],
       [ "handles", "classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles", [

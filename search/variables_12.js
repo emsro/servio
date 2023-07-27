@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['temp_1036',['temp',['../structconverter.html#ae852a343d1d2c1a77b82527ffbfd51c7',1,'converter']]],
-  ['temp_5fdrv_1037',['temp_drv',['../namespacefw.html#ae4b23065cb1b197a5d9d515e9f303560',1,'fw::dispatcher']]],
-  ['temperature_1038',['temperature',['../structbrd_1_1core__drivers.html#a4edff498aa846f21a20a5041dde828f5',1,'brd::core_drivers']]],
-  ['tim_1039',['tim',['../classfw_1_1drv_1_1acquisition.html#a06b952e90bf52108d721f99feec98019',1,'fw::drv::acquisition::handles::tim()'],['../classfw_1_1drv_1_1clock.html#a502c7d75a0fcfb6d421cb649bfadba24',1,'fw::drv::clock::handles::tim()'],['../classfw_1_1drv_1_1leds.html#a20d4ec26dff4a79b88c299e83c16d51e',1,'fw::drv::leds::handles::tim()']]],
-  ['tim_5fchannel_1040',['tim_channel',['../classfw_1_1drv_1_1acquisition.html#a9b4ad58bb686c44e825a0d43aaaf7db2',1,'fw::drv::acquisition::handles::tim_channel()'],['../classfw_1_1drv_1_1clock.html#a6f2d5af8fbf8f3f3fc9d71e2e08e5519',1,'fw::drv::clock::handles::tim_channel()']]],
-  ['timer_1041',['timer',['../classfw_1_1drv_1_1hbridge.html#adafc47d8ad22b33a43f5f64ea23571d4',1,'fw::drv::hbridge::handles']]],
-  ['tx_5fdma_1042',['tx_dma',['../classfw_1_1drv_1_1cobs__uart.html#add59880fd0e7ebffd6f478a33b4b2eab',1,'fw::drv::cobs_uart::handles']]]
+  ['size_1045',['size',['../namespacekalman.html#a99aa0fc8fd1682fd248e3e6ea91d13ed',1,'kalman::state_range']]],
+  ['st_5frange_1046',['st_range',['../structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93',1,'mtr::posvel_kalman']]],
+  ['start_5fcb_1047',['start_cb',['../structbrd_1_1core__drivers.html#a1230450fbeade566da0ddc32fe5656a4',1,'brd::core_drivers']]],
+  ['state_1048',['state',['../structctl_1_1linear__transition__regulator.html#abd008b5d8cc0e9ff4e7def2679256128',1,'ctl::linear_transition_regulator']]],
+  ['static_5ffriction_5fdecay_1049',['static_friction_decay',['../namespacectl.html#aa8b65f8e2a55f5686de048e8e5f97553',1,'ctl::config']]],
+  ['static_5ffriction_5fscale_1050',['static_friction_scale',['../namespacectl.html#a8a1a11d62853e312be5ca343ed1076ac',1,'ctl::config']]],
+  ['step_1051',['step',['../structstatic__detector.html#aa925ce327d8982149e5610123b726b85',1,'static_detector']]],
+  ['stop_5fcallback_1052',['STOP_CALLBACK',['../namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3',1,'fw']]]
 ];

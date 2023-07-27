@@ -1,13 +1,14 @@
 <map id="fw::dispatcher" name="fw::dispatcher">
-<area shape="rect" id="node1" title=" " alt="" coords="633,224,745,251"/>
-<area shape="rect" id="node2" href="$classfw_1_1drv_1_1current__interface.html" title=" " alt="" coords="333,5,515,32"/>
-<area shape="rect" id="node3" href="$classfw_1_1drv_1_1temperature__interface.html" title=" " alt="" coords="347,57,501,98"/>
-<area shape="rect" id="node4" href="$classfw_1_1drv_1_1position__interface.html" title=" " alt="" coords="329,123,519,149"/>
-<area shape="rect" id="node5" href="$classfw_1_1drv_1_1hbridge.html" title=" " alt="" coords="363,173,485,200"/>
-<area shape="rect" id="node6" href="$structfw_1_1cfg__dispatcher.html" title=" " alt="" coords="355,339,493,365"/>
-<area shape="rect" id="node7" href="$structfw_1_1core.html" title=" " alt="" coords="173,339,245,365"/>
-<area shape="rect" id="node8" href="$classmetrics.html" title=" " alt="" coords="12,311,83,337"/>
-<area shape="rect" id="node9" href="$structconverter.html" title=" " alt="" coords="5,227,89,253"/>
-<area shape="rect" id="node10" href="$classcontrol.html" title=" " alt="" coords="14,380,81,407"/>
-<area shape="rect" id="node11" href="$classfw_1_1drv_1_1vcc__interface.html" title=" " alt="" coords="345,463,503,489"/>
+<area shape="rect" id="node1" title=" " alt="" coords="736,232,848,259"/>
+<area shape="rect" id="node2" href="$classfw_1_1drv_1_1pwm__motor__interface.html" title=" " alt="" coords="451,107,602,149"/>
+<area shape="rect" id="node3" href="$classfw_1_1drv_1_1driver__interface.html" title=" " alt="" coords="173,115,348,141"/>
+<area shape="rect" id="node4" href="$classfw_1_1drv_1_1current__interface.html" title=" " alt="" coords="435,173,618,200"/>
+<area shape="rect" id="node5" href="$classfw_1_1drv_1_1temperature__interface.html" title=" " alt="" coords="450,225,603,266"/>
+<area shape="rect" id="node6" href="$classfw_1_1drv_1_1position__interface.html" title=" " alt="" coords="432,5,621,32"/>
+<area shape="rect" id="node12" href="$classfw_1_1drv_1_1vcc__interface.html" title=" " alt="" coords="447,56,606,83"/>
+<area shape="rect" id="node7" href="$structfw_1_1cfg__dispatcher.html" title=" " alt="" coords="457,420,596,447"/>
+<area shape="rect" id="node8" href="$structfw_1_1core.html" title=" " alt="" coords="225,420,297,447"/>
+<area shape="rect" id="node9" href="$classmetrics.html" title=" " alt="" coords="12,392,83,419"/>
+<area shape="rect" id="node10" href="$structconverter.html" title=" " alt="" coords="5,308,89,335"/>
+<area shape="rect" id="node11" href="$classcontrol.html" title=" " alt="" coords="14,461,81,488"/>
 </map>

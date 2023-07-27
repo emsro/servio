@@ -19,6 +19,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "indication.cpp", "indication_8cpp.html", "indication_8cpp" ],
     [ "indication.hpp", "indication_8hpp.html", "indication_8hpp" ],
     [ "kalman.hpp", "kalman_8hpp.html", "kalman_8hpp" ],
+    [ "load_persistent_config.hpp", "load__persistent__config_8hpp.html", "load__persistent__config_8hpp" ],
     [ "metrics.cpp", "metrics_8cpp.html", null ],
     [ "metrics.hpp", "metrics_8hpp.html", [
       [ "metrics", "classmetrics.html", "classmetrics" ]
@@ -29,5 +30,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "static_detector.hpp", "static__detector_8hpp.html", [
       [ "static_detector", "structstatic__detector.html", "structstatic__detector" ]
     ] ],
+    [ "status_category.hpp", "status__category_8hpp.html", "status__category_8hpp" ],
     [ "stm32g4xx_hal_conf.h", "stm32g4xx__hal__conf_8h.html", "stm32g4xx__hal__conf_8h" ]
 ];

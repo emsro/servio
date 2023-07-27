@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['size_1027',['size',['../namespacekalman.html#a99aa0fc8fd1682fd248e3e6ea91d13ed',1,'kalman::state_range']]],
-  ['st_5frange_1028',['st_range',['../structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93',1,'mtr::posvel_kalman']]],
-  ['start_5fcb_1029',['start_cb',['../structbrd_1_1core__drivers.html#a1230450fbeade566da0ddc32fe5656a4',1,'brd::core_drivers']]],
-  ['start_5ffailed_1030',['start_failed',['../namespacefw_1_1drv.html#a14fbc9ffa08fd7ba33393bd9e82f4379',1,'fw::drv::acquisition_status']]],
-  ['state_1031',['state',['../structctl_1_1linear__transition__regulator.html#abd008b5d8cc0e9ff4e7def2679256128',1,'ctl::linear_transition_regulator']]],
-  ['static_5ffriction_5fdecay_1032',['static_friction_decay',['../namespacectl.html#aa8b65f8e2a55f5686de048e8e5f97553',1,'ctl::config']]],
-  ['static_5ffriction_5fscale_1033',['static_friction_scale',['../namespacectl.html#a8a1a11d62853e312be5ca343ed1076ac',1,'ctl::config']]],
-  ['step_1034',['step',['../structstatic__detector.html#aa925ce327d8982149e5610123b726b85',1,'static_detector']]],
-  ['stop_5fcallback_1035',['STOP_CALLBACK',['../namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3',1,'fw']]]
+  ['r_1040',['R',['../structmtr_1_1posvel__kalman.html#a1e25384dd356da6059aa963789154de6',1,'mtr::posvel_kalman']]],
+  ['read_5fbuffer_1041',['read_buffer',['../structhost_1_1cobs__port.html#a87f97a9ff41290fec2db57502fa1161e',1,'host::cobs_port']]],
+  ['red_1042',['red',['../base_8hpp.html#a4e05b7efad734e1e42e9c84710ab847a',1,'leds_vals']]],
+  ['red_5fperipheral_1043',['red_peripheral',['../classfw_1_1drv_1_1leds.html#ae149868d7aede7a0eab15992cae88b02',1,'fw::drv::leds::handles']]],
+  ['red_5fpin_1044',['red_pin',['../classfw_1_1drv_1_1leds.html#a126d1b92687cb5af30c1130b2e9313b8',1,'fw::drv::leds::handles']]]
 ];

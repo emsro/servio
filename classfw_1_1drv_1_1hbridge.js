@@ -10,6 +10,7 @@ var classfw_1_1drv_1_1hbridge =
     [ "hbridge", "classfw_1_1drv_1_1hbridge.html#a8b32b0599ed01745a680b586c5b13666", null ],
     [ "get_direction", "classfw_1_1drv_1_1hbridge.html#af546a3f277b3ab7bbba8278eb75f437b", null ],
     [ "get_period_callback", "classfw_1_1drv_1_1hbridge.html#af2e34260a5e0c81f84361ac23c0f80af", null ],
+    [ "get_status", "classfw_1_1drv_1_1hbridge.html#ad14fca08850e7f8bf7ec2683af1f5b32", null ],
     [ "operator=", "classfw_1_1drv_1_1hbridge.html#a162bcf8e67cc16989b829e7d05d537a0", null ],
     [ "operator=", "classfw_1_1drv_1_1hbridge.html#adc26a1fe82fad37323cf2a2abb85ddaf", null ],
     [ "set_period_callback", "classfw_1_1drv_1_1hbridge.html#a77020a88320b789fbf32dce2824cb5bb", null ],

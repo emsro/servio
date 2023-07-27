@@ -133,6 +133,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>set_period_callback()
 : <a class="el" href="classfw_1_1drv_1_1hbridge.html#a77020a88320b789fbf32dce2824cb5bb">fw::drv::hbridge</a>
+, <a class="el" href="classfw_1_1drv_1_1period__interface.html#aaeedc2b6d48a9f90bf29f0800df894b7">fw::drv::period_interface</a>
 </li>
 <li>set_pid()
 : <a class="el" href="classcontrol.html#a89721e40ebe007563bc70e1242ce941f">control</a>
@@ -150,6 +151,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>set_power()
 : <a class="el" href="classfw_1_1drv_1_1hbridge.html#abd1f4fa65bb97c78dd3872e022517e1a">fw::drv::hbridge</a>
+, <a class="el" href="classfw_1_1drv_1_1pwm__motor__interface.html#a0bd8a509be4725249ec12ab19e114387">fw::drv::pwm_motor_interface</a>
 </li>
 <li>set_static_friction()
 : <a class="el" href="classcontrol.html#ab71089395707e68c375189c35c79e0a1">control</a>
@@ -178,19 +180,17 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 : <a class="el" href="structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93">mtr::posvel_kalman</a>
 </li>
 <li>standard_callbacks()
-: <a class="el" href="structfw_1_1standard__callbacks.html#a88af612e1a1e9942b49e14c3df95d192">fw::standard_callbacks</a>
+: <a class="el" href="structfw_1_1standard__callbacks.html#ab895b4d89b7bef3eafd732089101c12c">fw::standard_callbacks</a>
 </li>
 <li>start()
 : <a class="el" href="classfw_1_1drv_1_1acquisition.html#a5cf29e6efb3734f6b22f2470778ff35b">fw::drv::acquisition&lt; N &gt;</a>
 , <a class="el" href="classfw_1_1drv_1_1cobs__uart.html#ad541cabd35bc98135e2c3e07157a51bf">fw::drv::cobs_uart</a>
 , <a class="el" href="classfw_1_1drv_1_1hbridge.html#acf02c9cd4e801b1c7731aad6583deb7e">fw::drv::hbridge</a>
 , <a class="el" href="classfw_1_1drv_1_1leds.html#ac51161a6b5d5a8d7c1f85c8c8e4d6e37">fw::drv::leds</a>
+, <a class="el" href="classfw_1_1drv_1_1period__interface.html#acfd846e6bfea2797da67eeab4728bb72">fw::drv::period_interface</a>
 </li>
 <li>start_cb
 : <a class="el" href="structbrd_1_1core__drivers.html#a1230450fbeade566da0ddc32fe5656a4">brd::core_drivers</a>
-</li>
-<li>start_failed
-: <a class="el" href="namespacefw_1_1drv.html#a14fbc9ffa08fd7ba33393bd9e82f4379">fw::drv::acquisition_status</a>
 </li>
 <li>state
 : <a class="el" href="structctl_1_1linear__transition__regulator.html#abd008b5d8cc0e9ff4e7def2679256128">ctl::linear_transition_regulator</a>
@@ -204,11 +204,15 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <li>static_friction_scale
 : <a class="el" href="namespacectl.html#a8a1a11d62853e312be5ca343ed1076ac">ctl::config</a>
 </li>
+<li>status()
+: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a264e72b72cbe87916f17dc3560b534f4">fw::drv::acquisition&lt; N &gt;</a>
+</li>
 <li>step
 : <a class="el" href="structstatic__detector.html#aa925ce327d8982149e5610123b726b85">static_detector</a>
 </li>
 <li>stop()
 : <a class="el" href="classfw_1_1drv_1_1hbridge.html#a2ec9dec77ecc0e2783a0540a19030ff3">fw::drv::hbridge</a>
+, <a class="el" href="classfw_1_1drv_1_1period__interface.html#ad5187b2e576267da5c36b31d67f940cb">fw::drv::period_interface</a>
 </li>
 <li>switch_to_current_control()
 : <a class="el" href="classcontrol.html#a372d39c20df78d13688f148b481bd720">control</a>
@@ -228,7 +232,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Jul 19 2023 20:25:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Jul 27 2023 20:09:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

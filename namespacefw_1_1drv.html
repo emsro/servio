@@ -86,6 +86,8 @@ $(document).ready(function(){initNavTree('namespacefw_1_1drv.html',''); initResi
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">fw::drv Namespace Reference</div>  </div>
@@ -95,7 +97,6 @@ $(document).ready(function(){initNavTree('namespacefw_1_1drv.html',''); initResi
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:structfw_1_1drv_1_1acquisition__status"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status">acquisition_status</a></td></tr>
-<tr class="memdesc:structfw_1_1drv_1_1acquisition__status"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO: these are not checked anywhere..  <a href="namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status">More...</a><br /></td></tr>
 <tr class="separator:structfw_1_1drv_1_1acquisition__status"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1acquisition.html">acquisition</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO: rename this to better name /o...  <a href="classfw_1_1drv_1_1acquisition.html#details">More...</a><br /></td></tr>
@@ -123,6 +124,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1value__cb__interface.html">value_cb_interface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1period__cb__interface.html">period_cb_interface</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1driver__interface.html">driver_interface</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1period__interface.html">period_interface</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1pwm__motor__interface.html">pwm_motor_interface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1position__interface.html">position_interface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,6 +159,23 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a53f5067b8a0647454a03fc912a7e1266"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html#a53f5067b8a0647454a03fc912a7e1266">position_cb_interface</a> = <a class="el" href="classfw_1_1drv_1_1value__cb__interface.html">value_cb_interface</a></td></tr>
 <tr class="separator:a53f5067b8a0647454a03fc912a7e1266"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a310d54183a29c4ef02a46fdd562568b5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5">status</a> { <br />
+&#160;&#160;<a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5aaa2fa3fb4786079a4f8107ea393d609e">NOMINAL</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5ab1e8be77909d8da5ccba956985936ccc">DATA_ACQUISITION_ERROR</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5a4f205711bb37f64ee96e3c7517c49121">DATA_ACQUISITION_CRITICAL_ERROR</a>
+<br />
+ }</td></tr>
+<tr class="separator:a310d54183a29c4ef02a46fdd562568b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4be8c6c901fc0c7125140a5da8aa3133"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="status__category_8hpp.html#a76c3eb15e84bd5cd57c56a53aa63fe4d">status_category</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html#a4be8c6c901fc0c7125140a5da8aa3133">status_category_of</a> (<a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5">status</a> <a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5">status</a>)</td></tr>
+<tr class="separator:a4be8c6c901fc0c7125140a5da8aa3133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:aabef94de8eb8d0c86cb545f41a023490"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490">comm_buff_size</a> = 128</td></tr>
@@ -169,8 +193,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>TODO: these are not checked anywhere.. </p>
-</div><table class="fieldtable">
+<div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
 <a id="af977b5a7be96a3a0cb62991781d4398a"></a>bool</td>
@@ -179,9 +202,15 @@ buffer_was_full</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a14fbc9ffa08fd7ba33393bd9e82f4379"></a>bool</td>
+<a id="ad3ea819532719ec233e997164573338d"></a>bool</td>
 <td class="fieldname">
-start_failed</td>
+empty_buffer</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ad927f231af470539ea6d821de90683a8"></a>bool</td>
+<td class="fieldname">
+hal_start_failed</td>
 <td class="fielddoc">
 </td></tr>
 </table>
@@ -277,6 +306,63 @@ template&lt;typename Callable &gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a310d54183a29c4ef02a46fdd562568b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a310d54183a29c4ef02a46fdd562568b5">&#9670;&nbsp;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5">fw::drv::status</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a310d54183a29c4ef02a46fdd562568b5aaa2fa3fb4786079a4f8107ea393d609e"></a>NOMINAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a310d54183a29c4ef02a46fdd562568b5ab1e8be77909d8da5ccba956985936ccc"></a>DATA_ACQUISITION_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a310d54183a29c4ef02a46fdd562568b5a4f205711bb37f64ee96e3c7517c49121"></a>DATA_ACQUISITION_CRITICAL_ERROR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a4be8c6c901fc0c7125140a5da8aa3133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4be8c6c901fc0c7125140a5da8aa3133">&#9670;&nbsp;</a></span>status_category_of()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="status__category_8hpp.html#a76c3eb15e84bd5cd57c56a53aa63fe4d">status_category</a> fw::drv::status_category_of </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5">status</a>&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5a4f205711bb37f64ee96e3c7517c49121">DATA_ACQUISITION_CRITICAL_ERROR</a>, <a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5ab1e8be77909d8da5ccba956985936ccc">DATA_ACQUISITION_ERROR</a>, <a class="el" href="status__category_8hpp.html#a76c3eb15e84bd5cd57c56a53aa63fe4da0021017005f0e5134b204c2e69d3d4ed">DEGRADED</a>, <a class="el" href="status__category_8hpp.html#a76c3eb15e84bd5cd57c56a53aa63fe4dac5666694e05e08a4ae3ab497591042fa">INOPERABLE</a>, <a class="el" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5aaa2fa3fb4786079a4f8107ea393d609e">NOMINAL</a>, and <a class="el" href="status__category_8hpp.html#a76c3eb15e84bd5cd57c56a53aa63fe4daaa2fa3fb4786079a4f8107ea393d609e">NOMINAL</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="aabef94de8eb8d0c86cb545f41a023490"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aabef94de8eb8d0c86cb545f41a023490">&#9670;&nbsp;</a></span>comm_buff_size</h2>
@@ -306,7 +392,7 @@ template&lt;typename Callable &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="namespacefw_1_1drv.html">drv</a></li>
-    <li class="footer">Generated on Wed Jul 19 2023 20:25:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Jul 27 2023 20:09:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

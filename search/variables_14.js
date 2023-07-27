@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['value_1045',['value',['../host_2main_8cpp.html#a2c44eb31fa1d94fb9b3c3a9e3f31c539',1,'cfg_opts']]],
-  ['vcc_1046',['vcc',['../structconverter.html#a291c4e6e7ed023b62116ab676174aaf1',1,'converter::vcc()'],['../structbrd_1_1core__drivers.html#a9d3f063518926fb9db47504556d7078c',1,'brd::core_drivers::vcc()']]],
-  ['vcc_5fdrv_1047',['vcc_drv',['../namespacefw.html#aa5671e537a215129708b898fa3188aac',1,'fw::dispatcher']]],
-  ['velocity_1048',['velocity',['../host_2main_8cpp.html#a37b0618dd0cdb335c34e1eebeaca904c',1,'mode_opts']]],
-  ['velocity_5flimits_1049',['velocity_limits',['../namespacectl.html#a20ed600b5a9c9a30f83df677768e46a4',1,'ctl::config']]],
-  ['velocity_5fpid_1050',['velocity_pid',['../namespacectl.html#a767ce52998c9c33836b3348656f6c9a5',1,'ctl::config']]]
+  ['uart_1060',['uart',['../classfw_1_1drv_1_1cobs__uart.html#a332a473c8b7a6038ca6c8df861aa0640',1,'fw::drv::cobs_uart::handles']]],
+  ['used_1061',['used',['../structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2',1,'fw::drv::acquisition::detailed_sequence']]]
 ];

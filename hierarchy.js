@@ -20,9 +20,20 @@ var hierarchy =
     [ "fw::core", "structfw_1_1core.html", null ],
     [ "brd::core_drivers", "structbrd_1_1core__drivers.html", null ],
     [ "cnv::current_converter", "classcnv_1_1current__converter.html", null ],
-    [ "fw::drv::current_interface", "classfw_1_1drv_1_1current__interface.html", null ],
     [ "fw::drv::acquisition< N >::detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
+    [ "fw::drv::driver_interface", "classfw_1_1drv_1_1driver__interface.html", [
+      [ "fw::drv::current_interface", "classfw_1_1drv_1_1current__interface.html", null ],
+      [ "fw::drv::period_interface", "classfw_1_1drv_1_1period__interface.html", [
+        [ "fw::drv::hbridge", "classfw_1_1drv_1_1hbridge.html", null ]
+      ] ],
+      [ "fw::drv::position_interface", "classfw_1_1drv_1_1position__interface.html", null ],
+      [ "fw::drv::pwm_motor_interface", "classfw_1_1drv_1_1pwm__motor__interface.html", [
+        [ "fw::drv::hbridge", "classfw_1_1drv_1_1hbridge.html", null ]
+      ] ],
+      [ "fw::drv::temperature_interface", "classfw_1_1drv_1_1temperature__interface.html", null ],
+      [ "fw::drv::vcc_interface", "classfw_1_1drv_1_1vcc__interface.html", null ]
+    ] ],
     [ "std::exception", null, [
       [ "host::servio_exception", "structhost_1_1servio__exception.html", [
         [ "host::error_exception", "structhost_1_1error__exception.html", null ],
@@ -37,7 +48,6 @@ var hierarchy =
     [ "fw::drv::cobs_uart::handles", "classfw_1_1drv_1_1cobs__uart.html#structfw_1_1drv_1_1cobs__uart_1_1handles", null ],
     [ "fw::drv::hbridge::handles", "classfw_1_1drv_1_1hbridge.html#structfw_1_1drv_1_1hbridge_1_1handles", null ],
     [ "fw::drv::leds::handles", "classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles", null ],
-    [ "fw::drv::hbridge", "classfw_1_1drv_1_1hbridge.html", null ],
     [ "indication", "classindication.html", null ],
     [ "fw::drv::leds", "classfw_1_1drv_1_1leds.html", null ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", null ],
@@ -53,7 +63,6 @@ var hierarchy =
     ] ],
     [ "ctl::pid_module", "classctl_1_1pid__module.html", null ],
     [ "cnv::position_converter", "classcnv_1_1position__converter.html", null ],
-    [ "fw::drv::position_interface", "classfw_1_1drv_1_1position__interface.html", null ],
     [ "mtr::posvel_kalman", "structmtr_1_1posvel__kalman.html", null ],
     [ "emlabcpp::quantity", null, [
       [ "scaled< T, BitOffset >", "classscaled.html", null ]
@@ -62,12 +71,10 @@ var hierarchy =
     [ "kalman::state_range", "namespacekalman.html#structkalman_1_1state__range", null ],
     [ "static_detector", "structstatic__detector.html", null ],
     [ "cnv::temperature_converter", "classcnv_1_1temperature__converter.html", null ],
-    [ "fw::drv::temperature_interface", "classfw_1_1drv_1_1temperature__interface.html", null ],
     [ "fw::drv::value_cb_interface", "classfw_1_1drv_1_1value__cb__interface.html", [
       [ "fw::drv::empty_value_cb", "structfw_1_1drv_1_1empty__value__cb.html", null ],
       [ "fw::drv::value_cb< Callable >", "structfw_1_1drv_1_1value__cb.html", null ],
       [ "fw::position_callback", "classfw_1_1position__callback.html", null ]
     ] ],
-    [ "fw::drv::vcc_interface", "classfw_1_1drv_1_1vcc__interface.html", null ],
     [ "cnv::voltage_converter", "classcnv_1_1voltage__converter.html", null ]
 ];

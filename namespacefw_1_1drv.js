@@ -14,6 +14,9 @@ var namespacefw_1_1drv =
     [ "adc_detailed_cb_interface", "classfw_1_1drv_1_1adc__detailed__cb__interface.html", "classfw_1_1drv_1_1adc__detailed__cb__interface" ],
     [ "value_cb_interface", "classfw_1_1drv_1_1value__cb__interface.html", "classfw_1_1drv_1_1value__cb__interface" ],
     [ "period_cb_interface", "classfw_1_1drv_1_1period__cb__interface.html", "classfw_1_1drv_1_1period__cb__interface" ],
+    [ "driver_interface", "classfw_1_1drv_1_1driver__interface.html", "classfw_1_1drv_1_1driver__interface" ],
+    [ "period_interface", "classfw_1_1drv_1_1period__interface.html", "classfw_1_1drv_1_1period__interface" ],
+    [ "pwm_motor_interface", "classfw_1_1drv_1_1pwm__motor__interface.html", "classfw_1_1drv_1_1pwm__motor__interface" ],
     [ "position_interface", "classfw_1_1drv_1_1position__interface.html", "classfw_1_1drv_1_1position__interface" ],
     [ "vcc_interface", "classfw_1_1drv_1_1vcc__interface.html", "classfw_1_1drv_1_1vcc__interface" ],
     [ "temperature_interface", "classfw_1_1drv_1_1temperature__interface.html", "classfw_1_1drv_1_1temperature__interface" ],
@@ -25,5 +28,11 @@ var namespacefw_1_1drv =
     [ "empty_position_cb", "namespacefw_1_1drv.html#a12e3863a064c39cc743a29202dcca663", null ],
     [ "position_cb", "namespacefw_1_1drv.html#a6eaf1fbd19d91c8c14dd188cfbf972ec", null ],
     [ "position_cb_interface", "namespacefw_1_1drv.html#a53f5067b8a0647454a03fc912a7e1266", null ],
+    [ "status", "namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5", [
+      [ "NOMINAL", "namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5aaa2fa3fb4786079a4f8107ea393d609e", null ],
+      [ "DATA_ACQUISITION_ERROR", "namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5ab1e8be77909d8da5ccba956985936ccc", null ],
+      [ "DATA_ACQUISITION_CRITICAL_ERROR", "namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5a4f205711bb37f64ee96e3c7517c49121", null ]
+    ] ],
+    [ "status_category_of", "namespacefw_1_1drv.html#a4be8c6c901fc0c7125140a5da8aa3133", null ],
     [ "comm_buff_size", "namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490", null ]
 ];
