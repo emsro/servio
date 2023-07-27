@@ -1,3 +1,5 @@
+#include "status_category.hpp"
+
 #include <cstdint>
 #include <span>
 
@@ -30,36 +32,79 @@ public:
         virtual ~period_cb_interface() = default;
 };
 
-class position_interface
+enum class status
+{
+        NOMINAL,
+        DATA_ACQUISITION_ERROR,
+        DATA_ACQUISITION_CRITICAL_ERROR,
+};
+
+constexpr status_category status_category_of( status status )
+{
+        switch ( status ) {
+        case status::NOMINAL:
+                return status_category::NOMINAL;
+        case status::DATA_ACQUISITION_ERROR:
+                return status_category::DEGRADED;
+        case status::DATA_ACQUISITION_CRITICAL_ERROR:
+                return status_category::INOPERABLE;
+        }
+};
+
+class driver_interface
+{
+public:
+        virtual status get_status() const = 0;
+        virtual void   clear_status( status ){};
+        virtual ~driver_interface() = default;
+};
+
+class period_interface : public driver_interface
+{
+public:
+        // TODO: maybe the void wor start/end is not a great idea?
+        virtual void                 start()                                     = 0;
+        virtual void                 stop()                                      = 0;
+        virtual void                 set_period_callback( period_cb_interface& ) = 0;
+        virtual period_cb_interface& get_period_callback()                       = 0;
+};
+
+class pwm_motor_interface : public driver_interface
+{
+public:
+        virtual void   set_power( int16_t )  = 0;
+        virtual int8_t get_direction() const = 0;
+};
+
+class position_interface : public driver_interface
 {
 public:
         virtual uint32_t               get_position() const                            = 0;
         virtual void                   set_position_callback( position_cb_interface& ) = 0;
         virtual position_cb_interface& get_position_callback() const                   = 0;
-        virtual ~position_interface()                                                  = default;
 };
 
-class vcc_interface
+class vcc_interface : public driver_interface
+
 {
 public:
         virtual uint32_t get_vcc() const = 0;
-        virtual ~vcc_interface()         = default;
 };
 
-class temperature_interface
+class temperature_interface : public driver_interface
+
 {
 public:
         virtual uint32_t get_temperature() const = 0;
-        virtual ~temperature_interface()         = default;
 };
 
-class current_interface
+class current_interface : public driver_interface
+
 {
 public:
         virtual uint32_t              get_current() const                           = 0;
         virtual void                  set_current_callback( current_cb_interface& ) = 0;
         virtual current_cb_interface& get_current_callback() const                  = 0;
-        virtual ~current_interface()                                                = default;
 };
 
 }  // namespace fw::drv

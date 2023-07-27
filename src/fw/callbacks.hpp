@@ -1,7 +1,6 @@
 #include "control.hpp"
 #include "converter.hpp"
 #include "drv/clock.hpp"
-#include "drv/hbridge.hpp"
 #include "fw/conversion.hpp"
 #include "metrics.hpp"
 #include "stm32g4xx_hal.h"
@@ -14,8 +13,12 @@ namespace fw
 class current_callback : public drv::current_cb_interface
 {
 public:
-        current_callback( drv::hbridge& hb, control& ctl, drv::clock& clk, const converter& conv )
-          : hb_( hb )
+        current_callback(
+            drv::pwm_motor_interface& motor,
+            control&                  ctl,
+            drv::clock&               clk,
+            const converter&          conv )
+          : motor_( motor )
           , ctl_( ctl )
           , clk_( clk )
           , conv_( conv )
@@ -24,17 +27,17 @@ public:
 
         void on_value_irq( uint32_t curr, std::span< uint16_t > ) override
         {
-                const float c = current( conv_, curr, hb_ );
+                const float c = current( conv_, curr, motor_ );
 
                 ctl_.current_irq( clk_.get_us(), c );
-                hb_.set_power( ctl_.get_power() );
+                motor_.set_power( ctl_.get_power() );
         }
 
 private:
-        drv::hbridge&    hb_;
-        control&         ctl_;
-        drv::clock&      clk_;
-        const converter& conv_;
+        drv::pwm_motor_interface& motor_;
+        control&                  ctl_;
+        drv::clock&               clk_;
+        const converter&          conv_;
 };
 
 class position_callback : public drv::position_cb_interface

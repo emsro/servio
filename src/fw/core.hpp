@@ -1,6 +1,5 @@
 #include "control.hpp"
 #include "fw/callbacks.hpp"
-#include "fw/drv/hbridge.hpp"
 #include "fw/drv/leds.hpp"
 #include "fw/monitor.hpp"
 #include "fw/util.hpp"
@@ -46,7 +45,8 @@ struct core
 struct standard_callbacks
 {
         standard_callbacks(
-            drv::hbridge&             hb,
+            drv::pwm_motor_interface& motor,
+            drv::period_interface&    period,
             drv::clock&               clk,
             drv::position_interface&  pos_drv,
             drv::current_interface&   curr_drv,
@@ -54,10 +54,10 @@ struct standard_callbacks
             control&                  ctl,
             metrics&                  met,
             const converter&          conv )
-          : current_cb( hb, ctl, clk, conv )
+          : current_cb( motor, ctl, clk, conv )
           , pos_cb( ctl, met, clk, conv )
         {
-                hb.set_period_callback( period_cb );
+                period.set_period_callback( period_cb );
                 curr_drv.set_current_callback( current_cb );
                 pos_drv.set_position_callback( pos_cb );
         }

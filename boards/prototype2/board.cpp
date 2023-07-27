@@ -16,6 +16,11 @@ fw::drv::leds      LEDS;
 
 struct : fw::drv::vcc_interface
 {
+        fw::drv::status get_status() const
+        {
+                return fw::drv::status::NOMINAL;
+        }
+
         uint32_t get_vcc() const override
         {
                 // TODO: well, the hardcoded constant is not ideal
@@ -25,6 +30,11 @@ struct : fw::drv::vcc_interface
 
 struct : fw::drv::temperature_interface
 {
+        fw::drv::status get_status() const
+        {
+                return fw::drv::status::NOMINAL;
+        }
+
         uint32_t get_temperature() const override
         {
                 // TODO: well, the hardcoded constant is not ideal
@@ -34,6 +44,11 @@ struct : fw::drv::temperature_interface
 
 struct : fw::drv::position_interface
 {
+        fw::drv::status get_status() const
+        {
+                return fw::drv::status::NOMINAL;
+        }
+
         uint32_t get_position() const override
         {
                 // TODO: well, the hardcoded constant is not ideal
@@ -52,6 +67,26 @@ struct : fw::drv::position_interface
 
 struct : fw::drv::current_interface
 {
+        fw::drv::status get_status() const override
+        {
+                fw::drv::status res = fw::drv::status::NOMINAL;
+                const auto&     as  = ACQUISITION.status();
+                if ( as.hal_start_failed ) {
+                        res = fw::drv::status::DATA_ACQUISITION_CRITICAL_ERROR;
+                } else if ( as.buffer_was_full || as.empty_buffer ) {
+                        res = fw::drv::status::DATA_ACQUISITION_ERROR;
+                }
+                return res;
+        }
+
+        void clear_status( fw::drv::status status ) override
+        {
+                if ( status == fw::drv::status::DATA_ACQUISITION_ERROR ) {
+                        ACQUISITION.status().buffer_was_full = false;
+                        ACQUISITION.status().empty_buffer    = false;
+                }
+        }
+
         uint32_t get_current() const override
         {
                 // TODO: well, the hardcoded constant is not ideal
@@ -398,8 +433,8 @@ void start_callback( core_drivers& cdrv )
                 // this implies that acquisition is OK
                 ACQUISITION.start();
         }
-        if ( cdrv.hbridge != nullptr ) {
-                cdrv.hbridge->start();
+        if ( cdrv.motor != nullptr ) {
+                HBRIDGE.start();
         }
         if ( cdrv.comms != nullptr ) {
                 cdrv.comms->start();
@@ -411,6 +446,7 @@ void start_callback( core_drivers& cdrv )
 
 core_drivers setup_core_drivers()
 {
+        fw::drv::hbridge* hb     = setup_hbridge();
         acquisition_type* acquis = setup_acquisition();
         return core_drivers{
             .clock       = setup_clock(),
@@ -419,7 +455,8 @@ core_drivers setup_core_drivers()
             .vcc         = acquis == nullptr ? nullptr : &VCC,
             .temperature = acquis == nullptr ? nullptr : &TEMPERATURE,
             .period_cb   = acquis,
-            .hbridge     = setup_hbridge(),
+            .motor       = hb,
+            .period      = hb,
             .comms       = setup_comms(),
             .leds        = setup_leds(),
             .start_cb    = start_callback,

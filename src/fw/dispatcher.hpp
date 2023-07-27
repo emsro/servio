@@ -1,7 +1,6 @@
 #include "control.hpp"
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/conversion.hpp"
-#include "fw/drv/hbridge.hpp"
 
 #include <io.pb.h>
 
@@ -12,7 +11,7 @@ namespace fw
 
 struct dispatcher
 {
-        drv::hbridge&                                   hb;
+        drv::pwm_motor_interface&                       motor;
         const drv::position_interface&                  pos_drv;
         const drv::current_interface&                   curr_drv;
         const drv::vcc_interface&                       vcc_drv;

@@ -44,7 +44,7 @@ void acquisition< N >::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
         // TODO: call callbacks properly
 
         if ( channel_index_ != detailed_chid ) {
-                HAL_ADC_Stop_IT( &h_.adc );
+                std::ignore           = HAL_ADC_Stop_IT( &h_.adc );
                 vals_[channel_index_] = HAL_ADC_GetValue( &h_.adc );
                 brief_cbs_[channel_index_]->on_value_irq( vals_[channel_index_] );
         }
@@ -70,10 +70,10 @@ void acquisition< N >::on_period_irq()
                     &h_.adc,
                     reinterpret_cast< uint32_t* >( &next_se.buffer ),
                     detailed_sequence::buffer_size );
-                if ( res != HAL_OK ) {
-                        status_.start_failed = true;
-                } else {
+                if ( res == HAL_OK ) {
                         period_i_ += 1;
+                } else {
+                        status_.hal_start_failed = true;
                 }
         } else {
                 next_se.used = detailed_sequence::buffer_size - __HAL_DMA_GET_COUNTER( &h_.dma );
@@ -84,7 +84,7 @@ void acquisition< N >::on_period_irq()
                         stop_exec();
                 }
                 if ( next_se.used == 0 ) {
-                        stop_exec();
+                        status_.empty_buffer = true;
                 }
                 if ( next_se.used == detailed_sequence::buffer_size ) {
                         status_.buffer_was_full = true;
@@ -107,7 +107,7 @@ void acquisition< N >::on_period_irq()
 template < std::size_t N >
 void acquisition< N >::start()
 {
-        HAL_TIM_OC_Start( &h_.tim, h_.tim_channel );
+        std::ignore = HAL_TIM_OC_Start( &h_.tim, h_.tim_channel );
 }
 
 template < std::size_t N >
@@ -138,6 +138,18 @@ template < std::size_t N >
 uint32_t acquisition< N >::get_val( std::size_t i ) const
 {
         return vals_[i];
+}
+
+template < std::size_t N >
+const acquisition_status& acquisition< N >::status() const
+{
+        return status_;
+}
+
+template < std::size_t N >
+acquisition_status& acquisition< N >::status()
+{
+        return status_;
 }
 
 template < std::size_t N >

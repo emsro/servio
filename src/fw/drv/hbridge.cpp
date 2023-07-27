@@ -1,5 +1,7 @@
 #include "hbridge.hpp"
 
+#include "fw/drv/callbacks.hpp"
+
 #include <emlabcpp/algorithm.h>
 
 namespace fw::drv
@@ -42,14 +44,14 @@ void hbridge::timer_irq()
 
 void hbridge::start()
 {
-        HAL_TIM_PWM_Start_IT( &h_.timer, h_.mc1_channel );
-        HAL_TIM_PWM_Start_IT( &h_.timer, h_.mc2_channel );
+        std::ignore = HAL_TIM_PWM_Start_IT( &h_.timer, h_.mc1_channel );
+        std::ignore = HAL_TIM_PWM_Start_IT( &h_.timer, h_.mc2_channel );
 }
 
 void hbridge::stop()
 {
-        HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc1_channel );
-        HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc2_channel );
+        std::ignore = HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc1_channel );
+        std::ignore = HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc2_channel );
 }
 
 void hbridge::set_period_callback( period_cb_interface& cb )

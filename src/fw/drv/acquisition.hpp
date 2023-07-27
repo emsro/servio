@@ -15,11 +15,11 @@ namespace em = emlabcpp;  // TODO: I hate this
 namespace fw::drv
 {
 
-/// TODO: these are not checked anywhere..
 struct acquisition_status
 {
-        bool start_failed    = false;
-        bool buffer_was_full = false;
+        bool hal_start_failed = false;
+        bool buffer_was_full  = false;
+        bool empty_buffer     = false;
 };
 
 /// TODO: rename this to better name /o\...
@@ -28,13 +28,14 @@ struct acquisition_status
 /// - first channel (id=0) is detailed
 /// - other channels are brief
 ///
-/// The detailed channel is scanned via DMA and ADC, the scan starts on one each `on_period_irq`,
-/// scans multiple values and ends on another call to `on_period_irq`. The brief channels are always
-/// scanned after the detailed one (between the ending on_period call and the next one), however,
-/// for brief channels we take only one measurement.
+/// The detailed channel is scanned via DMA and ADC, the scan starts on one each
+/// `on_period_irq`, scans multiple values and ends on another call to `on_period_irq`. The
+/// brief channels are always scanned after the detailed one (between the ending on_period
+/// call and the next one), however, for brief channels we take only one measurement.
 ///
-/// The idea for servio use case is: one period we do detailed measurements of current and second
-/// period we just measure one of the other channels, to give CPU time for other stuff
+/// The idea for servio use case is: one period we do detailed measurements of current and
+/// second period we just measure one of the other channels, to give CPU time for other
+/// stuff
 template < std::size_t N >
 class acquisition : public period_cb_interface
 {
@@ -80,15 +81,8 @@ public:
 
         uint32_t get_val( std::size_t i ) const;
 
-        const acquisition_status& get_status() const
-        {
-                return status_;
-        }
-
-        void clear_status()
-        {
-                status_ = acquisition_status{};
-        }
+        const acquisition_status& status() const;
+        acquisition_status&       status();
 
 private:
         void switch_channel( std::size_t i );

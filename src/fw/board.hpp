@@ -1,7 +1,7 @@
 #include "config.hpp"
 #include "fw/drv/clock.hpp"
 #include "fw/drv/cobs_uart.hpp"
-#include "fw/drv/hbridge.hpp"
+#include "fw/drv/interfaces.hpp"
 #include "fw/drv/leds.hpp"
 #include "globals.hpp"
 
@@ -20,7 +20,8 @@ struct core_drivers
         fw::drv::vcc_interface*         vcc;
         fw::drv::temperature_interface* temperature;
         fw::drv::period_cb_interface*   period_cb;  // TODO: maybe imrpove naming here?
-        fw::drv::hbridge*               hbridge;
+        fw::drv::pwm_motor_interface*   motor;
+        fw::drv::period_interface*      period;
         fw::drv::cobs_uart*             comms;
         fw::drv::leds*                  leds;
         void ( *start_cb )( core_drivers& );

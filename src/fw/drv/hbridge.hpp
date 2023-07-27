@@ -1,4 +1,4 @@
-#include "fw/drv/callbacks.hpp"
+#include "fw/drv/interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <span>
@@ -11,7 +11,7 @@ namespace em = emlabcpp;
 namespace fw::drv
 {
 
-class hbridge
+class hbridge : public pwm_motor_interface, public period_interface
 {
 public:
         // HAL handles used by the driver
@@ -52,6 +52,11 @@ public:
         void start();
 
         void stop();
+
+        status get_status() const
+        {
+                return status::NOMINAL;
+        };
 
 private:
         period_cb_interface* period_cb_;

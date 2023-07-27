@@ -74,7 +74,7 @@ ServioToHost handle_get_property(
     const drv::current_interface&     curr_drv,
     const drv::vcc_interface&         vcc_drv,
     const drv::temperature_interface& temp_drv,
-    const drv::hbridge&               hb,
+    const drv::pwm_motor_interface&   motor,
     const GetProperty&                msg )
 {
         Property prop;
@@ -84,7 +84,7 @@ ServioToHost handle_get_property(
                 prop.mode = get_mode( ctl );
                 break;
         case Property_current_tag:
-                prop.current = current( conv, curr_drv, hb );
+                prop.current = current( conv, curr_drv, motor );
                 break;
         case Property_vcc_tag:
                 prop.vcc = conv.vcc.convert( vcc_drv.get_vcc() );
@@ -181,7 +181,7 @@ ServioToHost handle_message( dispatcher& dis, const HostToServio& msg )
                     dis.curr_drv,
                     dis.vcc_drv,
                     dis.temp_drv,
-                    dis.hb,
+                    dis.motor,
                     msg.get_property );
         case HostToServio_set_config_tag:
                 return handle_set_config( dis.cfg_disp, msg.set_config );

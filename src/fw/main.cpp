@@ -90,7 +90,8 @@ int main()
         cdrv.leds->update( cor.ind.get_state() );
 
         const fw::standard_callbacks cbs(
-            *cdrv.hbridge,
+            *cdrv.motor,
+            *cdrv.period,
             *cdrv.clock,
             *cdrv.position,
             *cdrv.current,
@@ -122,11 +123,16 @@ int main()
                         if ( succ ) {
                                 last_cfg_payload = pld;
                         }
+                        if ( cdrv.current->get_status() ==
+                             fw::drv::status::DATA_ACQUISITION_ERROR ) {
+                                cdrv.current->clear_status(
+                                    fw::drv::status::DATA_ACQUISITION_ERROR );
+                        }
                         return succ;
                 };
 
                 fw::dispatcher dis{
-                    .hb         = *cdrv.hbridge,
+                    .motor      = *cdrv.motor,
                     .pos_drv    = *cdrv.position,
                     .curr_drv   = *cdrv.current,
                     .vcc_drv    = *cdrv.vcc,
