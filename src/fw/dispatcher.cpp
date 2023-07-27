@@ -67,15 +67,15 @@ Mode get_mode( const control& ctl )
 }
 
 ServioToHost handle_get_property(
-    const control&                    ctl,
-    const metrics&                    met,
-    const converter&                  conv,
-    const drv::position_interface&    pos_drv,
-    const drv::current_interface&     curr_drv,
-    const drv::vcc_interface&         vcc_drv,
-    const drv::temperature_interface& temp_drv,
-    const drv::pwm_motor_interface&   motor,
-    const GetProperty&                msg )
+    const control&               ctl,
+    const metrics&               met,
+    const converter&             conv,
+    const position_interface&    pos_drv,
+    const current_interface&     curr_drv,
+    const vcc_interface&         vcc_drv,
+    const temperature_interface& temp_drv,
+    const pwm_motor_interface&   motor,
+    const GetProperty&           msg )
 {
         Property prop;
         prop.which_pld = static_cast< pb_size_t >( msg.field_id );

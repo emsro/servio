@@ -11,11 +11,11 @@ namespace fw
 
 struct dispatcher
 {
-        drv::pwm_motor_interface&                       motor;
-        const drv::position_interface&                  pos_drv;
-        const drv::current_interface&                   curr_drv;
-        const drv::vcc_interface&                       vcc_drv;
-        const drv::temperature_interface&               temp_drv;
+        pwm_motor_interface&                            motor;
+        const position_interface&                       pos_drv;
+        const current_interface&                        curr_drv;
+        const vcc_interface&                            vcc_drv;
+        const temperature_interface&                    temp_drv;
         control&                                        ctl;
         metrics&                                        met;
         cfg_dispatcher&                                 cfg_disp;

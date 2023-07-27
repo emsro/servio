@@ -10,12 +10,12 @@ class monitor
 {
 public:
         monitor(
-            microseconds                      now,
-            const control&                    ctl,
-            const drv::vcc_interface&         vcc_drv,
-            const drv::temperature_interface& temp_drv,
-            indication&                       indi,
-            const converter&                  conv )
+            microseconds                 now,
+            const control&               ctl,
+            const vcc_interface&         vcc_drv,
+            const temperature_interface& temp_drv,
+            indication&                  indi,
+            const converter&             conv )
           : ctl_( ctl )
           , indi_( indi )
           , vcc_drv_( vcc_drv )
@@ -59,11 +59,11 @@ public:
         }
 
 private:
-        const control&                    ctl_;
-        indication&                       indi_;
-        const drv::vcc_interface&         vcc_drv_;
-        const drv::temperature_interface& temp_drv_;
-        const converter&                  conv_;
+        const control&               ctl_;
+        indication&                  indi_;
+        const vcc_interface&         vcc_drv_;
+        const temperature_interface& temp_drv_;
+        const converter&             conv_;
 
         float min_vcc_ = 0.f;
         float max_tmp_ = 90.f;

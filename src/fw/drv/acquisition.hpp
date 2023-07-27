@@ -1,6 +1,6 @@
 #include "base.hpp"
+#include "drv_interfaces.hpp"
 #include "fw/drv/callbacks.hpp"
-#include "fw/drv/interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/static_vector.h>

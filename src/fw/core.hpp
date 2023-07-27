@@ -21,10 +21,10 @@ struct core
         monitor    mon;
 
         core(
-            microseconds                      now,
-            const drv::vcc_interface&         vcc_drv,
-            const drv::temperature_interface& temp_drv,
-            drv::clock&                       clk )
+            microseconds                 now,
+            const vcc_interface&         vcc_drv,
+            const temperature_interface& temp_drv,
+            drv::clock&                  clk )
           : ctl( now, ctl::config{} )
           , conv()
           , met( now, 0.f, { 0.f, 2 * pi } )
@@ -45,15 +45,15 @@ struct core
 struct standard_callbacks
 {
         standard_callbacks(
-            drv::pwm_motor_interface& motor,
-            drv::period_interface&    period,
-            drv::clock&               clk,
-            drv::position_interface&  pos_drv,
-            drv::current_interface&   curr_drv,
-            drv::period_cb_interface& period_cb,
-            control&                  ctl,
-            metrics&                  met,
-            const converter&          conv )
+            pwm_motor_interface& motor,
+            period_interface&    period,
+            drv::clock&          clk,
+            position_interface&  pos_drv,
+            current_interface&   curr_drv,
+            period_cb_interface& period_cb,
+            control&             ctl,
+            metrics&             met,
+            const converter&     conv )
           : current_cb( motor, ctl, clk, conv )
           , pos_cb( ctl, met, clk, conv )
         {

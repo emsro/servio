@@ -1,7 +1,7 @@
 #include "config.hpp"
+#include "drv_interfaces.hpp"
 #include "fw/drv/clock.hpp"
 #include "fw/drv/cobs_uart.hpp"
-#include "fw/drv/interfaces.hpp"
 #include "fw/drv/leds.hpp"
 #include "globals.hpp"
 
@@ -14,16 +14,16 @@ namespace brd
 /// TODO: maybe move to references and make setup function return an optional?
 struct core_drivers
 {
-        fw::drv::clock*                 clock;
-        fw::drv::position_interface*    position;
-        fw::drv::current_interface*     current;
-        fw::drv::vcc_interface*         vcc;
-        fw::drv::temperature_interface* temperature;
-        fw::drv::period_cb_interface*   period_cb;  // TODO: maybe imrpove naming here?
-        fw::drv::pwm_motor_interface*   motor;
-        fw::drv::period_interface*      period;
-        fw::drv::cobs_uart*             comms;
-        fw::drv::leds*                  leds;
+        fw::drv::clock*        clock;
+        position_interface*    position;
+        current_interface*     current;
+        vcc_interface*         vcc;
+        temperature_interface* temperature;
+        period_cb_interface*   period_cb;  // TODO: maybe imrpove naming here?
+        pwm_motor_interface*   motor;
+        period_interface*      period;
+        fw::drv::cobs_uart*    comms;
+        fw::drv::leds*         leds;
         void ( *start_cb )( core_drivers& );
 
         auto tie()

@@ -123,10 +123,8 @@ int main()
                         if ( succ ) {
                                 last_cfg_payload = pld;
                         }
-                        if ( cdrv.current->get_status() ==
-                             fw::drv::status::DATA_ACQUISITION_ERROR ) {
-                                cdrv.current->clear_status(
-                                    fw::drv::status::DATA_ACQUISITION_ERROR );
+                        if ( cdrv.current->get_status() == status::DATA_ACQUISITION_ERROR ) {
+                                cdrv.current->clear_status( status::DATA_ACQUISITION_ERROR );
                         }
                         return succ;
                 };

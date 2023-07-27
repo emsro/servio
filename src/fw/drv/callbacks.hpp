@@ -1,4 +1,4 @@
-#include "fw/drv/interfaces.hpp"
+#include "drv_interfaces.hpp"
 
 #include <cstdint>
 #include <span>

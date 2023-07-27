@@ -5,9 +5,6 @@
 
 #pragma once
 
-namespace fw::drv
-{
-
 class adc_detailed_cb_interface
 {
 public:
@@ -106,5 +103,3 @@ public:
         virtual void                  set_current_callback( current_cb_interface& ) = 0;
         virtual current_cb_interface& get_current_callback() const                  = 0;
 };
-
-}  // namespace fw::drv

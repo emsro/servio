@@ -10,14 +10,14 @@
 namespace fw
 {
 
-class current_callback : public drv::current_cb_interface
+class current_callback : public current_cb_interface
 {
 public:
         current_callback(
-            drv::pwm_motor_interface& motor,
-            control&                  ctl,
-            drv::clock&               clk,
-            const converter&          conv )
+            pwm_motor_interface& motor,
+            control&             ctl,
+            drv::clock&          clk,
+            const converter&     conv )
           : motor_( motor )
           , ctl_( ctl )
           , clk_( clk )
@@ -34,13 +34,13 @@ public:
         }
 
 private:
-        drv::pwm_motor_interface& motor_;
-        control&                  ctl_;
-        drv::clock&               clk_;
-        const converter&          conv_;
+        pwm_motor_interface& motor_;
+        control&             ctl_;
+        drv::clock&          clk_;
+        const converter&     conv_;
 };
 
-class position_callback : public drv::position_cb_interface
+class position_callback : public position_cb_interface
 {
 public:
         position_callback( control& ctl, metrics& met, drv::clock& clk, const converter& conv )

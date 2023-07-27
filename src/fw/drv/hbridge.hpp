@@ -1,4 +1,4 @@
-#include "fw/drv/interfaces.hpp"
+#include "drv_interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <span>
