@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('hbridge_8hpp_source.html',''); initRes
 <div class="title">hbridge.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="hbridge_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="interfaces_8hpp.html">fw/drv/interfaces.hpp</a>&quot;</span></div>
+<a href="hbridge_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;span&gt;</span></div>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('hbridge_8hpp_source.html',''); initRes
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw_1_1drv.html">fw::drv</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1hbridge.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfw_1_1drv_1_1hbridge.html">hbridge</a> : <span class="keyword">public</span> <a class="code" href="classfw_1_1drv_1_1pwm__motor__interface.html">pwm_motor_interface</a>, <span class="keyword">public</span> <a class="code" href="classfw_1_1drv_1_1period__interface.html">period_interface</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1hbridge.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfw_1_1drv_1_1hbridge.html">hbridge</a> : <span class="keyword">public</span> <a class="code" href="classpwm__motor__interface.html">pwm_motor_interface</a>, <span class="keyword">public</span> <a class="code" href="classperiod__interface.html">period_interface</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">// HAL handles used by the driver</span></div>
@@ -124,8 +124,8 @@ $(document).ready(function(){initNavTree('hbridge_8hpp_source.html',''); initRes
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1hbridge.html#aa67a1774894dfc05d4ef5ae2c89ba8b8">timer_period_irq</a>( TIM_HandleTypeDef* );</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1hbridge.html#a81f5420bda4e9e1c27e2c9406807de0a">timer_irq</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span>                 <a class="code" href="classfw_1_1drv_1_1hbridge.html#a77020a88320b789fbf32dce2824cb5bb">set_period_callback</a>( <a class="code" href="classfw_1_1drv_1_1period__cb__interface.html">period_cb_interface</a>&amp; );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classfw_1_1drv_1_1period__cb__interface.html">period_cb_interface</a>&amp; <a class="code" href="classfw_1_1drv_1_1hbridge.html#af2e34260a5e0c81f84361ac23c0f80af">get_period_callback</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span>                 <a class="code" href="classfw_1_1drv_1_1hbridge.html#a77020a88320b789fbf32dce2824cb5bb">set_period_callback</a>( <a class="code" href="classperiod__cb__interface.html">period_cb_interface</a>&amp; );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classperiod__cb__interface.html">period_cb_interface</a>&amp; <a class="code" href="classfw_1_1drv_1_1hbridge.html#af2e34260a5e0c81f84361ac23c0f80af">get_period_callback</a>();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">// Sets the power that hbridge should generate to the motor.</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// Input range is lineary interpolated based on:</span></div>
@@ -142,13 +142,13 @@ $(document).ready(function(){initNavTree('hbridge_8hpp_source.html',''); initRes
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1hbridge.html#a2ec9dec77ecc0e2783a0540a19030ff3">stop</a>();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1hbridge.html#ad14fca08850e7f8bf7ec2683af1f5b32">   56</a></span>&#160;        <a class="code" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5">status</a> <a class="code" href="classfw_1_1drv_1_1hbridge.html#ad14fca08850e7f8bf7ec2683af1f5b32">get_status</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1hbridge.html#ad14fca08850e7f8bf7ec2683af1f5b32">   56</a></span>&#160;        <a class="code" href="drv__interfaces_8hpp.html#a015eb90e0de9f16e87bd149d4b9ce959">status</a> <a class="code" href="classfw_1_1drv_1_1hbridge.html#ad14fca08850e7f8bf7ec2683af1f5b32">get_status</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5aaa2fa3fb4786079a4f8107ea393d609e">status::NOMINAL</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="drv__interfaces_8hpp.html#a015eb90e0de9f16e87bd149d4b9ce959aaa2fa3fb4786079a4f8107ea393d609e">status::NOMINAL</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        };</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classfw_1_1drv_1_1period__cb__interface.html">period_cb_interface</a>* period_cb_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classperiod__cb__interface.html">period_cb_interface</a>* period_cb_;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        uint32_t             timer_max_ = 0;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        handles              h_{};</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
@@ -174,20 +174,20 @@ $(document).ready(function(){initNavTree('hbridge_8hpp_source.html',''); initRes
 <div class="ttc" id="aclassfw_1_1drv_1_1hbridge_html_af546a3f277b3ab7bbba8278eb75f437b"><div class="ttname"><a href="classfw_1_1drv_1_1hbridge.html#af546a3f277b3ab7bbba8278eb75f437b">fw::drv::hbridge::get_direction</a></div><div class="ttdeci">int8_t get_direction() const</div><div class="ttdef"><b>Definition:</b> hbridge.cpp:92</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1hbridge_html_afbb32d4a47c247f3f9919d8d3acf1514"><div class="ttname"><a href="classfw_1_1drv_1_1hbridge.html#afbb32d4a47c247f3f9919d8d3acf1514">fw::drv::hbridge::handles::mc2_channel</a></div><div class="ttdeci">uint32_t mc2_channel</div><div class="ttdef"><b>Definition:</b> hbridge.hpp:22</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1hbridge_html_structfw_1_1drv_1_1hbridge_1_1handles"><div class="ttname"><a href="classfw_1_1drv_1_1hbridge.html#structfw_1_1drv_1_1hbridge_1_1handles">fw::drv::hbridge::handles</a></div><div class="ttdef"><b>Definition:</b> hbridge.hpp:19</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1period__cb__interface_html"><div class="ttname"><a href="classfw_1_1drv_1_1period__cb__interface.html">fw::drv::period_cb_interface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:29</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1period__interface_html"><div class="ttname"><a href="classfw_1_1drv_1_1period__interface.html">fw::drv::period_interface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:63</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1pwm__motor__interface_html"><div class="ttname"><a href="classfw_1_1drv_1_1pwm__motor__interface.html">fw::drv::pwm_motor_interface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:73</div></div>
-<div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
+<div class="ttc" id="aclassperiod__cb__interface_html"><div class="ttname"><a href="classperiod__cb__interface.html">period_cb_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:26</div></div>
+<div class="ttc" id="aclassperiod__interface_html"><div class="ttname"><a href="classperiod__interface.html">period_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:60</div></div>
+<div class="ttc" id="aclasspwm__motor__interface_html"><div class="ttname"><a href="classpwm__motor__interface.html">pwm_motor_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:70</div></div>
+<div class="ttc" id="adrv__interfaces_8hpp_html"><div class="ttname"><a href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a></div></div>
+<div class="ttc" id="adrv__interfaces_8hpp_html_a015eb90e0de9f16e87bd149d4b9ce959"><div class="ttname"><a href="drv__interfaces_8hpp.html#a015eb90e0de9f16e87bd149d4b9ce959">status</a></div><div class="ttdeci">status</div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:33</div></div>
+<div class="ttc" id="adrv__interfaces_8hpp_html_a015eb90e0de9f16e87bd149d4b9ce959aaa2fa3fb4786079a4f8107ea393d609e"><div class="ttname"><a href="drv__interfaces_8hpp.html#a015eb90e0de9f16e87bd149d4b9ce959aaa2fa3fb4786079a4f8107ea393d609e">status::NOMINAL</a></div><div class="ttdeci">@ NOMINAL</div></div>
 <div class="ttc" id="anamespacefw_1_1drv_html"><div class="ttname"><a href="namespacefw_1_1drv.html">fw::drv</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:16</div></div>
-<div class="ttc" id="anamespacefw_1_1drv_html_a310d54183a29c4ef02a46fdd562568b5"><div class="ttname"><a href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5">fw::drv::status</a></div><div class="ttdeci">status</div><div class="ttdef"><b>Definition:</b> interfaces.hpp:36</div></div>
-<div class="ttc" id="anamespacefw_1_1drv_html_a310d54183a29c4ef02a46fdd562568b5aaa2fa3fb4786079a4f8107ea393d609e"><div class="ttname"><a href="namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5aaa2fa3fb4786079a4f8107ea393d609e">fw::drv::status::NOMINAL</a></div><div class="ttdeci">@ NOMINAL</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="hbridge_8hpp.html">hbridge.hpp</a></li>
-    <li class="footer">Generated on Thu Jul 27 2023 20:09:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Jul 28 2023 05:56:30 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

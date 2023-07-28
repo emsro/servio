@@ -1,7 +1,7 @@
 var hierarchy =
 [
     [ "fw::drv::acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", null ],
-    [ "fw::drv::adc_detailed_cb_interface", "classfw_1_1drv_1_1adc__detailed__cb__interface.html", [
+    [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", [
       [ "fw::current_callback", "classfw_1_1current__callback.html", null ],
       [ "fw::drv::adc_detailed_cb< Callable >", "structfw_1_1drv_1_1adc__detailed__cb.html", null ],
       [ "fw::drv::empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", null ]
@@ -22,17 +22,17 @@ var hierarchy =
     [ "cnv::current_converter", "classcnv_1_1current__converter.html", null ],
     [ "fw::drv::acquisition< N >::detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
-    [ "fw::drv::driver_interface", "classfw_1_1drv_1_1driver__interface.html", [
-      [ "fw::drv::current_interface", "classfw_1_1drv_1_1current__interface.html", null ],
-      [ "fw::drv::period_interface", "classfw_1_1drv_1_1period__interface.html", [
+    [ "driver_interface", "classdriver__interface.html", [
+      [ "current_interface", "classcurrent__interface.html", null ],
+      [ "period_interface", "classperiod__interface.html", [
         [ "fw::drv::hbridge", "classfw_1_1drv_1_1hbridge.html", null ]
       ] ],
-      [ "fw::drv::position_interface", "classfw_1_1drv_1_1position__interface.html", null ],
-      [ "fw::drv::pwm_motor_interface", "classfw_1_1drv_1_1pwm__motor__interface.html", [
+      [ "position_interface", "classposition__interface.html", null ],
+      [ "pwm_motor_interface", "classpwm__motor__interface.html", [
         [ "fw::drv::hbridge", "classfw_1_1drv_1_1hbridge.html", null ]
       ] ],
-      [ "fw::drv::temperature_interface", "classfw_1_1drv_1_1temperature__interface.html", null ],
-      [ "fw::drv::vcc_interface", "classfw_1_1drv_1_1vcc__interface.html", null ]
+      [ "temperature_interface", "classtemperature__interface.html", null ],
+      [ "vcc_interface", "classvcc__interface.html", null ]
     ] ],
     [ "std::exception", null, [
       [ "host::servio_exception", "structhost_1_1servio__exception.html", [
@@ -56,7 +56,7 @@ var hierarchy =
     [ "mode_opts", "host_2main_8cpp.html#structmode__opts", null ],
     [ "fw::monitor", "classfw_1_1monitor.html", null ],
     [ "cfg::payload", "structcfg_1_1payload.html", null ],
-    [ "fw::drv::period_cb_interface", "classfw_1_1drv_1_1period__cb__interface.html", [
+    [ "period_cb_interface", "classperiod__cb__interface.html", [
       [ "fw::drv::acquisition< N >", "classfw_1_1drv_1_1acquisition.html", null ],
       [ "fw::drv::empty_period_cb", "structfw_1_1drv_1_1empty__period__cb.html", null ],
       [ "fw::drv::period_cb< Callable >", "structfw_1_1drv_1_1period__cb.html", null ]
@@ -71,7 +71,7 @@ var hierarchy =
     [ "kalman::state_range", "namespacekalman.html#structkalman_1_1state__range", null ],
     [ "static_detector", "structstatic__detector.html", null ],
     [ "cnv::temperature_converter", "classcnv_1_1temperature__converter.html", null ],
-    [ "fw::drv::value_cb_interface", "classfw_1_1drv_1_1value__cb__interface.html", [
+    [ "value_cb_interface", "classvalue__cb__interface.html", [
       [ "fw::drv::empty_value_cb", "structfw_1_1drv_1_1empty__value__cb.html", null ],
       [ "fw::drv::value_cb< Callable >", "structfw_1_1drv_1_1value__cb.html", null ],
       [ "fw::position_callback", "classfw_1_1position__callback.html", null ]

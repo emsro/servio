@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['data_5facquisition_5fcritical_5ferror_131',['DATA_ACQUISITION_CRITICAL_ERROR',['../namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5a4f205711bb37f64ee96e3c7517c49121',1,'fw::drv']]],
-  ['data_5facquisition_5ferror_132',['DATA_ACQUISITION_ERROR',['../namespacefw_1_1drv.html#a310d54183a29c4ef02a46fdd562568b5ab1e8be77909d8da5ccba956985936ccc',1,'fw::drv']]],
+  ['data_5facquisition_5fcritical_5ferror_131',['DATA_ACQUISITION_CRITICAL_ERROR',['../drv__interfaces_8hpp.html#a015eb90e0de9f16e87bd149d4b9ce959a4f205711bb37f64ee96e3c7517c49121',1,'drv_interfaces.hpp']]],
+  ['data_5facquisition_5ferror_132',['DATA_ACQUISITION_ERROR',['../drv__interfaces_8hpp.html#a015eb90e0de9f16e87bd149d4b9ce959ab1e8be77909d8da5ccba956985936ccc',1,'drv_interfaces.hpp']]],
   ['data_5fcache_5fenable_133',['DATA_CACHE_ENABLE',['../stm32g4xx__hal__conf_8h.html#a5b4c32a40cf49b06c0d761e385949a6b',1,'stm32g4xx_hal_conf.h']]],
   ['debugmon_5fhandler_134',['DebugMon_Handler',['../it_8cpp.html#adbdfb05858cc36fc520974df37ec3cb0',1,'it.cpp']]],
   ['decay_135',['decay',['../structctl_1_1linear__transition__regulator.html#a1f26b5947c03ffc4b5b124b29cbabd59',1,'ctl::linear_transition_regulator']]],
@@ -19,5 +19,6 @@ var searchData=
   ['dispatcher_2ehpp_147',['dispatcher.hpp',['../dispatcher_8hpp.html',1,'']]],
   ['dma_148',['dma',['../classfw_1_1drv_1_1acquisition.html#a61071a80f4cb0ada21f454c121bbd652',1,'fw::drv::acquisition::handles']]],
   ['dma_5firq_149',['dma_irq',['../classfw_1_1drv_1_1acquisition.html#aebfa1a863c73a3d91cbfd686536e5c2a',1,'fw::drv::acquisition']]],
-  ['driver_5finterface_150',['driver_interface',['../classfw_1_1drv_1_1driver__interface.html',1,'fw::drv']]]
+  ['driver_5finterface_150',['driver_interface',['../classdriver__interface.html',1,'']]],
+  ['drv_5finterfaces_2ehpp_151',['drv_interfaces.hpp',['../drv__interfaces_8hpp.html',1,'']]]
 ];

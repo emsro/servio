@@ -30,16 +30,6 @@ var annotated_dup =
         [ "clock", "classfw_1_1drv_1_1clock.html", "classfw_1_1drv_1_1clock" ],
         [ "cobs_uart", "classfw_1_1drv_1_1cobs__uart.html", "classfw_1_1drv_1_1cobs__uart" ],
         [ "hbridge", "classfw_1_1drv_1_1hbridge.html", "classfw_1_1drv_1_1hbridge" ],
-        [ "adc_detailed_cb_interface", "classfw_1_1drv_1_1adc__detailed__cb__interface.html", "classfw_1_1drv_1_1adc__detailed__cb__interface" ],
-        [ "value_cb_interface", "classfw_1_1drv_1_1value__cb__interface.html", "classfw_1_1drv_1_1value__cb__interface" ],
-        [ "period_cb_interface", "classfw_1_1drv_1_1period__cb__interface.html", "classfw_1_1drv_1_1period__cb__interface" ],
-        [ "driver_interface", "classfw_1_1drv_1_1driver__interface.html", "classfw_1_1drv_1_1driver__interface" ],
-        [ "period_interface", "classfw_1_1drv_1_1period__interface.html", "classfw_1_1drv_1_1period__interface" ],
-        [ "pwm_motor_interface", "classfw_1_1drv_1_1pwm__motor__interface.html", "classfw_1_1drv_1_1pwm__motor__interface" ],
-        [ "position_interface", "classfw_1_1drv_1_1position__interface.html", "classfw_1_1drv_1_1position__interface" ],
-        [ "vcc_interface", "classfw_1_1drv_1_1vcc__interface.html", "classfw_1_1drv_1_1vcc__interface" ],
-        [ "temperature_interface", "classfw_1_1drv_1_1temperature__interface.html", "classfw_1_1drv_1_1temperature__interface" ],
-        [ "current_interface", "classfw_1_1drv_1_1current__interface.html", "classfw_1_1drv_1_1current__interface" ],
         [ "leds", "classfw_1_1drv_1_1leds.html", "classfw_1_1drv_1_1leds" ]
       ] ],
       [ "current_callback", "classfw_1_1current__callback.html", "classfw_1_1current__callback" ],
@@ -67,14 +57,24 @@ var annotated_dup =
     [ "mtr", "namespacemtr.html", [
       [ "posvel_kalman", "structmtr_1_1posvel__kalman.html", "structmtr_1_1posvel__kalman" ]
     ] ],
+    [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", "classadc__detailed__cb__interface" ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", "config_8hpp_structcfg__keyval" ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", "host_2main_8cpp_structcfg__opts" ],
     [ "control", "classcontrol.html", "classcontrol" ],
     [ "converter", "structconverter.html", "structconverter" ],
+    [ "current_interface", "classcurrent__interface.html", "classcurrent__interface" ],
+    [ "driver_interface", "classdriver__interface.html", "classdriver__interface" ],
     [ "indication", "classindication.html", "classindication" ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", "base_8hpp_structleds__vals" ],
     [ "metrics", "classmetrics.html", "classmetrics" ],
     [ "mode_opts", "host_2main_8cpp.html#structmode__opts", "host_2main_8cpp_structmode__opts" ],
+    [ "period_cb_interface", "classperiod__cb__interface.html", "classperiod__cb__interface" ],
+    [ "period_interface", "classperiod__interface.html", "classperiod__interface" ],
+    [ "position_interface", "classposition__interface.html", "classposition__interface" ],
+    [ "pwm_motor_interface", "classpwm__motor__interface.html", "classpwm__motor__interface" ],
     [ "scaled", "classscaled.html", "classscaled" ],
-    [ "static_detector", "structstatic__detector.html", "structstatic__detector" ]
+    [ "static_detector", "structstatic__detector.html", "structstatic__detector" ],
+    [ "temperature_interface", "classtemperature__interface.html", "classtemperature__interface" ],
+    [ "value_cb_interface", "classvalue__cb__interface.html", "classvalue__cb__interface" ],
+    [ "vcc_interface", "classvcc__interface.html", "classvcc__interface" ]
 ];

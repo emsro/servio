@@ -36,9 +36,9 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="interfaces_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="468.5,-112.5 468.5,-131.5 587.5,-131.5 587.5,-112.5 468.5,-112.5"/>
-<text text-anchor="middle" x="528" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw/drv/interfaces.hpp</text>
+<g id="a_node8"><a xlink:href="drv__interfaces_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="474.5,-112.5 474.5,-131.5 581.5,-131.5 581.5,-112.5 474.5,-112.5"/>
+<text text-anchor="middle" x="528" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">drv_interfaces.hpp</text>
 </a>
 </g>
 </g>

@@ -1,6 +1,6 @@
 var conversion_8hpp =
 [
-    [ "current", "conversion_8hpp.html#acec7fa2a10e429f38593b53a5da61398", null ],
-    [ "current", "conversion_8hpp.html#a54a30af56f215d811b1e0ae1daef9949", null ],
-    [ "position", "conversion_8hpp.html#aa2680f60d53deb60244141a89ae61c9a", null ]
+    [ "current", "conversion_8hpp.html#abfdeea0ed7e40d697fd716b4b2516e40", null ],
+    [ "current", "conversion_8hpp.html#a7e7cbc374e051e0fb53cc8b3e1cfbd64", null ],
+    [ "position", "conversion_8hpp.html#a68cda65999636fd7381dcc85911c1a4e", null ]
 ];
