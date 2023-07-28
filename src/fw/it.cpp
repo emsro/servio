@@ -2,6 +2,8 @@
 
 #include <stm32g4xx_hal.h>
 
+// NOLINTBEGIN
+
 extern "C" void SysTick_Handler()
 {
         HAL_IncTick();
@@ -53,3 +55,5 @@ extern "C" void DebugMon_Handler( void )
 extern "C" void PendSV_Handler( void )
 {
 }
+
+// NOLINTEND

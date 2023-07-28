@@ -8,7 +8,7 @@ namespace cnv
 class current_converter
 {
 public:
-        current_converter( float scale = 1.f, float offset = 0.f )
+        current_converter( float scale = 1.F, float offset = 0.F )
           : offset_( offset )
           , scale_( scale )
         {

@@ -23,74 +23,74 @@ using observation_noise_covariance = em::matrix< 1, 1 >;
 
 constexpr state_transition_model get_transition_model( sec_time tdiff )
 {
-        state_transition_model F;
-        F[0] = { 1.f, tdiff.count() };
-        F[1] = { 0, 1.f };
-        return F;
+        state_transition_model f;
+        f[0] = { 1.F, tdiff.count() };
+        f[1] = { 0, 1.F };
+        return f;
 }
 
 constexpr control_input_model get_control_input_model( sec_time tdiff )
 {
-        control_input_model B;
-        B[0] = { 0.f * tdiff.count() * tdiff.count() };
-        B[1] = { tdiff.count() };
-        return B;
+        control_input_model b;
+        b[0] = { 0.F * tdiff.count() * tdiff.count() };
+        b[1] = { tdiff.count() };
+        return b;
 }
 
 constexpr process_noise_covariance
 get_process_noise_covariance( sec_time tdiff, float standard_deviation )
 {
-        auto B = get_control_input_model( tdiff );
+        auto b = get_control_input_model( tdiff );
 
-        return B * em::transpose( B ) * ( standard_deviation * standard_deviation );
+        return b * em::transpose( b ) * ( standard_deviation * standard_deviation );
 }
 
 constexpr observation_model get_observation_model()
 {
-        observation_model H;
-        H[0] = { 1.f, 0.f };
-        return H;
+        observation_model h;
+        h[0] = { 1.F, 0.F };
+        return h;
 }
 
 constexpr observation_noise_covariance
 get_observation_noise_covariance( float observation_deviation )
 {
-        observation_noise_covariance R;
-        R[0][0] = observation_deviation * observation_deviation;
-        return R;
+        observation_noise_covariance r;
+        r[0][0] = observation_deviation * observation_deviation;
+        return r;
 }
 
 constexpr std::tuple< state, state_covariance > predict(
     const state&                    x_prev,
-    const state_covariance&         P_prev,
+    const state_covariance&         p_prev,
     const control_input&            u,
-    const state_transition_model&   F,
-    const control_input_model&      B,
-    const process_noise_covariance& Q )
+    const state_transition_model&   f,
+    const control_input_model&      b,
+    const process_noise_covariance& q )
 {
-        const state            x = F * x_prev + B * u;
-        const state_covariance P = F * P_prev * em::transpose( F ) + Q;
+        const state            x = f * x_prev + b * u;
+        const state_covariance p = f * p_prev * em::transpose( f ) + q;
 
-        return { x, P };
+        return { x, p };
 }
 
 constexpr std::tuple< state, state_covariance > update(
     const state&                        x_prev,
-    const state_covariance&             P_prev,
+    const state_covariance&             p_prev,
     const observation&                  z,
-    const observation_model&            H,
-    const observation_noise_covariance& R )
+    const observation_model&            h,
+    const observation_noise_covariance& r )
 {
 
-        const innovation_covariance S = H * P_prev * em::transpose( H ) + R;
-        const kalman_gain           K = P_prev * em::transpose( H ) * em::inverse( S );
+        const innovation_covariance s = h * p_prev * em::transpose( h ) + r;
+        const kalman_gain           k = p_prev * em::transpose( h ) * em::inverse( s );
 
-        constexpr em::identity_matrix< 2 > I;
+        constexpr em::identity_matrix< 2 > i;
 
-        const state            x = ( I - K * H ) * x_prev + K * z;
-        const state_covariance P = ( I - K * H ) * P_prev;
+        const state            x = ( i - k * h ) * x_prev + k * z;
+        const state_covariance p = ( i - k * h ) * p_prev;
 
-        return { x, P };
+        return { x, p };
 }
 
 template < typename T >
@@ -112,13 +112,13 @@ struct state_range
 
 constexpr bool requires_offset( const float v, const state_range& r )
 {
-        return ( v < r.offset + 0.1f * r.size ) || ( r.offset + 0.8f * r.size < v );
+        return ( v < r.offset + 0.1F * r.size ) || ( r.offset + 0.8F * r.size < v );
 }
 
 inline float angle_mod( float v, state_range r )
 {
-        if ( v < 0.f ) {
-                return angle_mod( v + r.size, r );
+        while ( v < 0.F ) {
+                v += r.size;
         }
         return std::fmod( v - r.offset, r.size ) + r.offset;
 }
@@ -136,29 +136,29 @@ inline std::vector< state > simulate(
     const std::vector< observation >& observations,
     state_range                       sr )
 {
-        const state_transition_model   F = get_transition_model( tdiff );
-        const control_input_model      B = get_control_input_model( tdiff );
-        const process_noise_covariance Q = get_process_noise_covariance( tdiff, process_deviation );
-        const observation_model        H = get_observation_model();
-        const observation_noise_covariance R =
+        const state_transition_model   f = get_transition_model( tdiff );
+        const control_input_model      b = get_control_input_model( tdiff );
+        const process_noise_covariance q = get_process_noise_covariance( tdiff, process_deviation );
+        const observation_model        h = get_observation_model();
+        const observation_noise_covariance r =
             get_observation_noise_covariance( observation_deviation );
 
         state x;
         angle( x )    = angle( observations[0] );
-        velocity( x ) = 0.f;
-        state_covariance P;
+        velocity( x ) = 0.F;
+        state_covariance p;
 
         control_input u;
-        angle( u ) = 0.f;
+        angle( u ) = 0.F;
 
         std::vector< state > res;
 
-        float offset = 0.f;
+        float offset = 0.F;
         for ( observation z : observations ) {
                 modify_angle( z, +offset, sr );
 
-                std::tie( x, P ) = kalman::predict( x, P, u, F, B, Q );
-                std::tie( x, P ) = kalman::update( x, P, z, H, R );
+                std::tie( x, p ) = kalman::predict( x, p, u, f, b, q );
+                std::tie( x, p ) = kalman::update( x, p, z, h, r );
 
                 if ( requires_offset( angle( x ), sr ) ) {
                         offset = angle_mod( offset + pi, sr );

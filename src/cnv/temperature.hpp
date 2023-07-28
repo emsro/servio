@@ -6,7 +6,7 @@ namespace cnv
 class temperature_converter
 {
 public:
-        temperature_converter( float scale = 1.f, float offset = 0.f )
+        temperature_converter( float scale = 1.F, float offset = 0.F )
           : scale_( scale )
           , offset_( offset )
         {

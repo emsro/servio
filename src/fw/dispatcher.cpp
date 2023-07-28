@@ -16,8 +16,8 @@ ServioToHost handle_set_mode( microseconds now, control& ctl, const Mode& msg )
         case Mode_power_tag:
                 val = em::map_range< float, float >(
                     msg.power,
-                    -1.0f,
-                    1.0f,
+                    -1.0F,
+                    1.0F,
                     std::numeric_limits< int16_t >::lowest(),
                     std::numeric_limits< int16_t >::max() );
                 ctl.switch_to_power_control( static_cast< int16_t >( val ) );

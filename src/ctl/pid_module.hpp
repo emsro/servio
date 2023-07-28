@@ -55,7 +55,7 @@ public:
                 set_momentary_limit( { -infty, infty } );
         }
 
-        limits< float > get_limits()
+        limits< float > get_limits() const
         {
                 return pid_.cfg.limits;
         }
@@ -91,7 +91,7 @@ private:
                       std::min( momentary_lim_.max, config_lim_.max ) } );
         }
 
-        float           last_goal_ = 0.f;
+        float           last_goal_ = 0.F;
         limits< float > momentary_lim_;
         limits< float > config_lim_;
         pid             pid_;

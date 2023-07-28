@@ -8,20 +8,20 @@ namespace mtr
 struct posvel_kalman
 {
         // TODO: hardcoded constant is meh
-        static constexpr float observation_deviation_ = 0.000005f;
-        static constexpr float process_deviation_     = 0.005f;
+        static constexpr float observation_deviation = 0.000005F;
+        static constexpr float process_deviation     = 0.005F;
 
-        static constexpr kalman::observation_model            H = kalman::get_observation_model();
-        static constexpr kalman::observation_noise_covariance R =
-            kalman::get_observation_noise_covariance( observation_deviation_ );
+        static constexpr kalman::observation_model            h = kalman::get_observation_model();
+        static constexpr kalman::observation_noise_covariance r =
+            kalman::get_observation_noise_covariance( observation_deviation );
 
         float               angle{};
-        kalman::state_range st_range = { .offset = 0.f, .size = 0.f };
+        kalman::state_range st_range = { .offset = 0.F, .size = 0.F };
 
         kalman::state            x{};
         kalman::state_covariance P{};
 
-        float offset = 0.f;
+        float offset = 0.F;
 
         posvel_kalman( float position, limits< float > position_range )
           : angle( position )
@@ -50,17 +50,17 @@ struct posvel_kalman
         {
                 // TODO: this is kinda non ideal, the sdiff should be stable in the system and
                 // computed only once
-                auto F = kalman::get_transition_model( sdiff );
-                auto B = kalman::get_control_input_model( sdiff );
-                auto Q = kalman::get_process_noise_covariance( sdiff, process_deviation_ );
+                auto f = kalman::get_transition_model( sdiff );
+                auto b = kalman::get_control_input_model( sdiff );
+                auto q = kalman::get_process_noise_covariance( sdiff, process_deviation );
 
                 kalman::control_input u{};
-                u[0][0] = 0.f;
+                u[0][0] = 0.F;
                 kalman::observation z;
                 kalman::angle( z ) = kalman::angle_mod( position + offset, st_range );
 
-                std::tie( x, P ) = kalman::predict( x, P, u, F, B, Q );
-                std::tie( x, P ) = kalman::update( x, P, z, H, R );
+                std::tie( x, P ) = kalman::predict( x, P, u, f, b, q );
+                std::tie( x, P ) = kalman::update( x, P, z, h, r );
 
                 if ( kalman::requires_offset( kalman::angle( x ), st_range ) ) {
                         offset = kalman::angle_mod( offset + pi, st_range );

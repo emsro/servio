@@ -58,13 +58,13 @@ private:
         leds_vals    state_;
         microseconds last_tick_;
 
-        static constexpr microseconds                 red_window_ = 5_s;
+        static constexpr microseconds                 red_window = 5_s;
         microseconds                                  red_phase_;
         em::static_circular_buffer< microseconds, 2 > red_events_;
 
-        float green_i_      = 0.f;
-        float green_step_   = 0.f;
-        float green_offset_ = 0.f;
+        float green_i_      = 0.F;
+        float green_step_   = 0.F;
+        float green_offset_ = 0.F;
 
         microseconds yellow_engaged_until_;
 

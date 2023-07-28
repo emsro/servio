@@ -65,8 +65,8 @@ private:
         const temperature_interface& temp_drv_;
         const converter&             conv_;
 
-        float min_vcc_ = 0.f;
-        float max_tmp_ = 90.f;
+        float min_vcc_ = 0.F;
+        float max_tmp_ = 90.F;
 };
 
 }  // namespace fw

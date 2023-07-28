@@ -27,7 +27,7 @@ struct core
             drv::clock&                  clk )
           : ctl( now, ctl::config{} )
           , conv()
-          , met( now, 0.f, { 0.f, 2 * pi } )
+          , met( now, 0.F, { 0.F, 2 * pi } )
           , ind( now )
           , mon( now, ctl, vcc_drv, temp_drv, ind, conv )
         {

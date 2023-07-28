@@ -12,11 +12,11 @@ struct cfg_dispatcher
         cfg_map& map;
         core&    c;
 
-        template < cfg_key key, typename T >
+        template < cfg_key Key, typename T >
         void set( const T& item )
         {
-                map.set_val< key >( item );
-                apply( key );
+                map.set_val< Key >( item );
+                apply( Key );
         }
 
         void full_apply();

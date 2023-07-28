@@ -1,3 +1,5 @@
+#include "config.hpp"
+
 #include <io.pb.h>
 
 #pragma once

@@ -1,4 +1,5 @@
 #include "cfg/storage.hpp"
+#include "fw/util.hpp"
 
 #pragma once
 

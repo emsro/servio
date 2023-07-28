@@ -46,7 +46,7 @@ private:
 
         control_mode state_ = control_mode::POWER;
 
-        float goal_position_ = 0.f;
+        float goal_position_ = 0.F;
 
         limits< float > position_lims_;
 

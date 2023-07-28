@@ -75,14 +75,14 @@ void indication::tick_red( microseconds now )
         }
 
         if ( red_events_.empty() ) {
-                red_phase_ += red_window_;
+                red_phase_ += red_window;
                 return;
         }
 
         if ( red_events_.front() > now ) {
                 red_events_.pop_front();
                 state_.red = false;
-                red_phase_ += red_window_;
+                red_phase_ += red_window;
                 return;
         }
 

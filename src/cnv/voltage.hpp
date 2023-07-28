@@ -6,7 +6,7 @@ namespace cnv
 class voltage_converter
 {
 public:
-        voltage_converter( float scale = 1.f )
+        voltage_converter( float scale = 1.F )
           : scale_( scale )
         {
         }

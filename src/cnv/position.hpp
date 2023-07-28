@@ -10,9 +10,9 @@ class position_converter
 public:
         position_converter(
             uint32_t lower_value  = 0,
-            float    lower_angle  = 0.f,
+            float    lower_angle  = 0.F,
             uint32_t higher_value = 4096,
-            float    higher_angle = 3.141592f )
+            float    higher_angle = 3.141592F )
         {
                 const int   val_diff   = static_cast< int >( higher_value - lower_value );
                 const float angle_diff = higher_angle - lower_angle;

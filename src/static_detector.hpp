@@ -1,9 +1,10 @@
+#include <cmath>
 
 #pragma once
 
 struct static_detector
 {
-        float step = 0.05f;
+        float step = 0.05F;
         float last_pos;
         bool  is_static = true;
 
