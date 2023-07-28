@@ -108,9 +108,9 @@ servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servi
 {
 
         for ( const servio::Config& cfg : new_state ) {
-                servio::Config::PldCase key = cfg.pld_case();
+                const servio::Config::PldCase key = cfg.pld_case();
 
-                bool are_equal = cfg == initial.at( key );
+                const bool are_equal = cfg == initial.at( key );
                 if ( key == tested_field ) {
                         if ( are_equal ) {
                                 return ::testing::AssertionFailure()
@@ -134,7 +134,7 @@ boost::asio::awaitable< void > test_config( boost::asio::io_context&, host::cobs
 {
         const std::vector< servio::Config > cfg_vec = co_await host::get_full_config( port );
         std::map< servio::Config::PldCase, servio::Config > istate_map;
-        for ( servio::Config cfg : cfg_vec ) {
+        for ( const servio::Config& cfg : cfg_vec ) {
                 istate_map[cfg.pld_case()] = cfg;
         }
 

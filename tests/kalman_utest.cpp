@@ -6,13 +6,8 @@
 TEST( Kalman, predict )
 {
 
-        std::random_device rd{};
-        std::mt19937       gen{ rd() };
-
-        sec_time tdiff{ 1.f };
-        float    process_deviation = 0.005f;
-
-        std::normal_distribution< float > od{ 0, process_deviation };
+        const sec_time tdiff{ 1.f };
+        const float    process_deviation = 0.005f;
 
         kalman::state                    x{};
         kalman::state_covariance         P{};
@@ -28,7 +23,8 @@ TEST( Kalman, predict )
         kalman::angle( x )    = 0.f;
         kalman::velocity( x ) = velocity;
 
-        for ( std::size_t i = 0; i < count; i++ ) {
+        for ( const std::size_t i : em::range( count ) ) {
+                std::ignore      = i;
                 std::tie( x, P ) = kalman::predict( x, P, u, F, B, Q );
         }
 
@@ -39,21 +35,17 @@ TEST( Kalman, predict )
 TEST( Kalman, base )
 {
 
-        std::random_device rd{};
-        std::mt19937       gen{ rd() };
-
-        sec_time tdiff{ 0.1f };
-        float    process_deviation     = 0.0005f;
-        float    observation_deviation = 0.000005f;
-
-        std::normal_distribution< float > od{ 0, observation_deviation };
+        const sec_time tdiff{ 0.1f };
+        const float    process_deviation     = 0.0005f;
+        const float    observation_deviation = 0.000005f;
 
         std::vector< kalman::observation > zs;
         kalman::observation                z{};
-        kalman::state_range                sr{ .offset = 0.f, .size = 2 * pi };
+        const kalman::state_range          sr{ .offset = 0.f, .size = 2 * pi };
         float                              angle = 0.f;
 
-        for ( std::size_t i = 0; i < 1000; i++ ) {
+        for ( const std::size_t i : em::range( 1000u ) ) {
+                std::ignore = i;
                 angle += 0.05f;
                 angle              = kalman::angle_mod( angle, sr );
                 kalman::angle( z ) = angle;
