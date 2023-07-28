@@ -35,25 +35,25 @@ public:
         void timer_period_irq( TIM_HandleTypeDef* );
         void timer_irq();
 
-        void                 set_period_callback( period_cb_interface& );
-        period_cb_interface& get_period_callback();
+        void                 set_period_callback( period_cb_interface& ) override;
+        period_cb_interface& get_period_callback() override;
 
         // Sets the power that hbridge should generate to the motor.
         // Input range is lineary interpolated based on:
         //  - limits<int16_t>::lower is full reverse
         //  - 0 is nothing
         //  - limits<int16_t>::max is full forward
-        void set_power( int16_t );
+        void set_power( int16_t ) override;
 
         // returns either -1 or 1 based on direction last set to power
-        int8_t get_direction() const;
+        int8_t get_direction() const override;
 
         // starts the timers
-        void start();
+        void start() override;
 
-        void stop();
+        void stop() override;
 
-        status get_status() const
+        status get_status() const override
         {
                 return status::NOMINAL;
         };

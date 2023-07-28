@@ -66,8 +66,8 @@ public:
         bool setup( em::function_view< bool( handles& ) > );
 
         void adc_irq();
-        void adc_conv_cplt_irq( ADC_HandleTypeDef* h );
-        void adc_error_irq( ADC_HandleTypeDef* h );
+        void adc_conv_cplt_irq( ADC_HandleTypeDef* );
+        void adc_error_irq( ADC_HandleTypeDef* );
         void dma_irq();
         void on_period_irq() override;
 
@@ -76,16 +76,16 @@ public:
         void                       set_detailed_callback( adc_detailed_cb_interface& );
         adc_detailed_cb_interface& get_detailed_callback() const;
 
-        void                set_brief_callback( std::size_t i, value_cb_interface& );
-        value_cb_interface& get_brief_callback( std::size_t i ) const;
+        void                set_brief_callback( std::size_t chid, value_cb_interface& );
+        value_cb_interface& get_brief_callback( std::size_t chid ) const;
 
-        uint32_t get_val( std::size_t i ) const;
+        uint32_t get_val( std::size_t chid ) const;
 
         const acquisition_status& status() const;
         acquisition_status&       status();
 
 private:
-        void switch_channel( std::size_t i );
+        void switch_channel( std::size_t chid );
         void start_brief_reading();
 
         acquisition_status status_;

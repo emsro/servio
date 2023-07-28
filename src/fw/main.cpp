@@ -28,7 +28,7 @@ bool store_config(
         if ( HAL_FLASH_Unlock() != HAL_OK ) {
                 fw::stop_exec();
         }
-        em::defer d = [] {
+        const em::defer d = [] {
                 if ( HAL_FLASH_Lock() != HAL_OK ) {
                         fw::stop_exec();
                 }
@@ -46,8 +46,8 @@ bool store_config(
             .NbPages = 1,
         };
 
-        uint32_t          erase_err;
-        HAL_StatusTypeDef status = HAL_FLASHEx_Erase( &erase_cfg, &erase_err );
+        uint32_t                erase_err;
+        const HAL_StatusTypeDef status = HAL_FLASHEx_Erase( &erase_cfg, &erase_err );
         if ( status != HAL_OK ) {
                 fw::stop_exec();
         }
@@ -119,7 +119,7 @@ int main()
                             .git_ver = "",  // TODO: << fix this
                             .id      = last_cfg_payload.id + 1,
                         };
-                        bool succ = store_config( pages, pld, cfg );
+                        const bool succ = store_config( pages, pld, cfg );
                         if ( succ ) {
                                 last_cfg_payload = pld;
                         }

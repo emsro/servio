@@ -36,9 +36,9 @@ struct hal_check
 {
 };
 
-inline void operator<<( hal_check, HAL_StatusTypeDef s )
+inline void operator<<( hal_check, HAL_StatusTypeDef status )
 {
-        if ( s != HAL_OK ) {
+        if ( status != HAL_OK ) {
                 stop_exec();
         }
 }

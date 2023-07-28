@@ -6,12 +6,12 @@ namespace fw::drv
 template < std::size_t N >
 acquisition< N >::acquisition()
 {
-        static empty_value_cb        EMPTY_VALUE_CB;
-        static empty_adc_detailed_cb EMPTY_ADC_DETAILED_CB;
+        static empty_value_cb        value_cb;
+        static empty_adc_detailed_cb adc_detailed_cb;
 
-        detailed_cb_ = &EMPTY_ADC_DETAILED_CB;
+        detailed_cb_ = &adc_detailed_cb;
         for ( value_cb_interface*& ptr : brief_cbs_ ) {
-                ptr = &EMPTY_VALUE_CB;
+                ptr = &value_cb;
         }
 }
 
@@ -123,21 +123,21 @@ adc_detailed_cb_interface& acquisition< N >::get_detailed_callback() const
 }
 
 template < std::size_t N >
-void acquisition< N >::set_brief_callback( std::size_t i, value_cb_interface& cb )
+void acquisition< N >::set_brief_callback( std::size_t chid, value_cb_interface& cb )
 {
-        brief_cbs_[i] = &cb;
+        brief_cbs_[chid] = &cb;
 }
 
 template < std::size_t N >
-value_cb_interface& acquisition< N >::get_brief_callback( std::size_t i ) const
+value_cb_interface& acquisition< N >::get_brief_callback( std::size_t chid ) const
 {
-        return *brief_cbs_[i];
+        return *brief_cbs_[chid];
 }
 
 template < std::size_t N >
-uint32_t acquisition< N >::get_val( std::size_t i ) const
+uint32_t acquisition< N >::get_val( std::size_t chid ) const
 {
-        return vals_[i];
+        return vals_[chid];
 }
 
 template < std::size_t N >

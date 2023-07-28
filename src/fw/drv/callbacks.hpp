@@ -11,8 +11,8 @@ namespace fw::drv
 template < typename Callable >
 struct adc_detailed_cb : public adc_detailed_cb_interface
 {
-        adc_detailed_cb( Callable cb )
-          : cb( std::move( cb ) )
+        adc_detailed_cb( Callable callback )
+          : cb( std::move( callback ) )
         {
         }
 
@@ -39,8 +39,8 @@ using empty_current_cb = empty_adc_detailed_cb;
 template < typename Callable >
 struct value_cb : public value_cb_interface
 {
-        value_cb( Callable cb )
-          : cb( std::move( cb ) )
+        value_cb( Callable callback )
+          : cb( std::move( callback ) )
         {
         }
 
@@ -66,8 +66,8 @@ using empty_position_cb = empty_value_cb;
 template < typename Callable >
 struct period_cb : public period_cb_interface
 {
-        period_cb( Callable cb )
-          : cb( std::move( cb ) )
+        period_cb( Callable callback )
+          : cb( std::move( callback ) )
         {
         }
 
