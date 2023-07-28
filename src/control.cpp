@@ -121,7 +121,7 @@ void control::current_irq( microseconds now, float current )
         float desired_curr        = velocity_pid_.get_output() * current_scale_regl_.state;
         auto [max_curr, min_curr] = velocity_pid_.get_limits();
         desired_curr              = std::clamp( desired_curr, max_curr, min_curr );
-        float fpower              = current_pid_.update( now, current, desired_curr );
+        const float fpower        = current_pid_.update( now, current, desired_curr );
         power_                    = static_cast< int16_t >( fpower );
 }
 

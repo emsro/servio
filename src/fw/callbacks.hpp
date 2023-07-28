@@ -3,7 +3,8 @@
 #include "drv/clock.hpp"
 #include "fw/conversion.hpp"
 #include "metrics.hpp"
-#include "stm32g4xx_hal.h"
+
+#include <stm32g4xx_hal.h>
 
 #pragma once
 

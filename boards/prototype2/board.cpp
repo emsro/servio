@@ -14,11 +14,11 @@ fw::drv::cobs_uart DEBUG_COMMS{};
 fw::drv::hbridge   HBRIDGE{};
 fw::drv::leds      LEDS;
 
-struct : fw::drv::vcc_interface
+struct : vcc_interface
 {
-        fw::drv::status get_status() const
+        status get_status() const override
         {
-                return fw::drv::status::NOMINAL;
+                return status::NOMINAL;
         }
 
         uint32_t get_vcc() const override
@@ -28,11 +28,11 @@ struct : fw::drv::vcc_interface
         }
 } VCC;
 
-struct : fw::drv::temperature_interface
+struct : temperature_interface
 {
-        fw::drv::status get_status() const
+        status get_status() const override
         {
-                return fw::drv::status::NOMINAL;
+                return status::NOMINAL;
         }
 
         uint32_t get_temperature() const override
@@ -42,11 +42,11 @@ struct : fw::drv::temperature_interface
         }
 } TEMPERATURE;
 
-struct : fw::drv::position_interface
+struct : position_interface
 {
-        fw::drv::status get_status() const
+        status get_status() const override
         {
-                return fw::drv::status::NOMINAL;
+                return status::NOMINAL;
         }
 
         uint32_t get_position() const override
@@ -55,33 +55,33 @@ struct : fw::drv::position_interface
                 return ACQUISITION.get_val( 3 );
         }
 
-        void set_position_callback( fw::drv::position_cb_interface& cb ) override
+        void set_position_callback( position_cb_interface& cb ) override
         {
                 ACQUISITION.set_brief_callback( 3, cb );
         }
-        fw::drv::position_cb_interface& get_position_callback() const override
+        position_cb_interface& get_position_callback() const override
         {
                 return ACQUISITION.get_brief_callback( 3 );
         }
 } POSITION;
 
-struct : fw::drv::current_interface
+struct : current_interface
 {
-        fw::drv::status get_status() const override
+        status get_status() const override
         {
-                fw::drv::status res = fw::drv::status::NOMINAL;
-                const auto&     as  = ACQUISITION.status();
+                status      res = status::NOMINAL;
+                const auto& as  = ACQUISITION.status();
                 if ( as.hal_start_failed ) {
-                        res = fw::drv::status::DATA_ACQUISITION_CRITICAL_ERROR;
+                        res = status::DATA_ACQUISITION_CRITICAL_ERROR;
                 } else if ( as.buffer_was_full || as.empty_buffer ) {
-                        res = fw::drv::status::DATA_ACQUISITION_ERROR;
+                        res = status::DATA_ACQUISITION_ERROR;
                 }
                 return res;
         }
 
-        void clear_status( fw::drv::status status ) override
+        void clear_status( status status ) override
         {
-                if ( status == fw::drv::status::DATA_ACQUISITION_ERROR ) {
+                if ( status == status::DATA_ACQUISITION_ERROR ) {
                         ACQUISITION.status().buffer_was_full = false;
                         ACQUISITION.status().empty_buffer    = false;
                 }
@@ -93,11 +93,11 @@ struct : fw::drv::current_interface
                 return ACQUISITION.get_val( 0 );
         }
 
-        void set_current_callback( fw::drv::current_cb_interface& cb ) override
+        void set_current_callback( current_cb_interface& cb ) override
         {
                 ACQUISITION.set_detailed_callback( cb );
         }
-        fw::drv::current_cb_interface& get_current_callback() const override
+        current_cb_interface& get_current_callback() const override
         {
                 return ACQUISITION.get_detailed_callback();
         }

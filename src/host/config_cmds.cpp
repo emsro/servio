@@ -10,7 +10,7 @@ namespace host
 {
 namespace
 {
-        void print_configs( const std::vector< servio::Config > out )
+        void print_configs( const std::vector< servio::Config >& out )
         {
                 std::cout << em::joined(
                                  out,
@@ -21,7 +21,7 @@ namespace
                           << std::endl;
         }
 
-        void print_configs_json( const std::vector< servio::Config > out )
+        void print_configs_json( const std::vector< servio::Config >& out )
         {
                 google::protobuf::util::JsonPrintOptions ops;
                 ops.preserve_proto_field_names = true;
