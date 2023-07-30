@@ -34,7 +34,7 @@ public:
 
         void start();
 
-        void force_red_led();
+        void force_red_led() const;
 
         void update( const leds_vals& leds );
 

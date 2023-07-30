@@ -55,7 +55,7 @@ namespace
 
 std::optional< page > find_unused_page( em::view< const page* > pages )
 {
-        auto iter = em::find_if( pages, [&]( const page& p ) {
+        const page* iter = em::find_if( pages, [&]( const page& p ) {
                 EMLABCPP_DEBUG_LOG( "Unused trying page: ", p.begin(), " ", p.end() );
                 const em::cfg::load_result lr = handler::load(
                     p,
@@ -105,10 +105,10 @@ bool store(
     em::function_view< bool( std::size_t, uint64_t ) > writer )
 {
 
-        static constexpr std::size_t N = cfg_map::registers_count;
+        static constexpr std::size_t n = cfg_map::registers_count;
 
         constexpr std::size_t buffer_n =
-            em::ceil_to( N * sizeof( cfg_keyval ) + 128, sizeof( uint64_t ) );
+            em::ceil_to( n * sizeof( cfg_keyval ) + 128, sizeof( uint64_t ) );
         std::array< std::byte, buffer_n > buffer;
 
         bool success = handler::store(

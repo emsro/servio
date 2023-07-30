@@ -20,11 +20,11 @@ ctl::pid_module& control::ref_module( control_loop cl )
 {
         if ( cl == control_loop::CURRENT ) {
                 return current_pid_;
-        } else if ( cl == control_loop::VELOCITY ) {
-                return velocity_pid_;
-        } else {
-                return position_pid_;
         }
+        if ( cl == control_loop::VELOCITY ) {
+                return velocity_pid_;
+        }
+        return position_pid_;
 }
 
 void control::set_pid( control_loop cl, ctl::pid_coefficients coeffs )

@@ -12,7 +12,7 @@ bool leds::setup( em::function_view< bool( handles& ) > setup_f )
         return setup_f( h_ );
 }
 
-void leds::force_red_led()
+void leds::force_red_led() const
 {
         HAL_GPIO_WritePin( h_.red_peripheral, h_.red_pin, GPIO_PIN_SET );
 }
