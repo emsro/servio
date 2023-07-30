@@ -171,7 +171,10 @@ namespace brd
 
 void setup_board()
 {
-        fw::hal_check{} << HAL_Init();
+        // TODO: change the API to return bool
+        if ( HAL_Init() != HAL_OK ) {
+                fw::stop_exec();
+        }
         setup_clk();
 }
 
@@ -448,6 +451,8 @@ core_drivers setup_core_drivers()
 {
         fw::drv::hbridge* hb     = setup_hbridge();
         acquisition_type* acquis = setup_acquisition();
+        fw::drv::leds*    leds   = setup_leds();
+        fw::install_stop_callback( leds );
         return core_drivers{
             .clock       = setup_clock(),
             .position    = acquis == nullptr ? nullptr : &POSITION,
@@ -458,7 +463,7 @@ core_drivers setup_core_drivers()
             .motor       = hb,
             .period      = hb,
             .comms       = setup_comms(),
-            .leds        = setup_leds(),
+            .leds        = leds,
             .start_cb    = start_callback,
         };
 }

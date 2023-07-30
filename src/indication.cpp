@@ -18,13 +18,13 @@ bool indication::on_event( microseconds now, const indication_event& e )
                 red_events_.push_back( 1000_ms );
                 break;
         case indication_event::HEARTBEAT:
-                green_step_ += 0.1f;
+                green_step_ += 0.1F;
                 break;
         case indication_event::ENGAGED:
-                green_offset_ = 0.5f;
+                green_offset_ = 0.5F;
                 break;
         case indication_event::DISENGAGED:
-                green_offset_ = 0.f;
+                green_offset_ = 0.F;
                 break;
         case indication_event::STUCK:
                 yellow_engaged_until_ = now + 50_ms;
@@ -46,7 +46,7 @@ bool indication::on_event( microseconds now, const indication_event& e )
 float sin_approx( float x )
 {
         const float x3 = x * x * x;
-        return x - x3 / 6.f + ( x3 * x * x ) / 120.f;
+        return x - x3 / 6.F + ( x3 * x * x ) / 120.F;
 }
 
 void indication::tick( microseconds now )
@@ -54,13 +54,13 @@ void indication::tick( microseconds now )
         tick_red( now );
 
         green_i_              = std::fmod( green_i_ + green_step_, 2 * pi );
-        const float green_val = ( sin_approx( green_i_ ) + 1.f ) / 2.f + green_offset_;
+        const float green_val = ( sin_approx( green_i_ ) + 1.F ) / 2.F + green_offset_;
         state_.green          = static_cast< uint8_t >(
-            em::map_range< float, float >( green_val, 0.f, 2.f, 0.f, 255.f ) );
+            em::map_range< float, float >( green_val, 0.F, 2.F, 0.F, 255.F ) );
 
-        green_step_ = 0.f;
+        green_step_ = 0.F;
 
-        state_.yellow = now < yellow_engaged_until_ ? 255u : 0u;
+        state_.yellow = now < yellow_engaged_until_ ? 255U : 0U;
 
         if ( now > blue_disengage_at_ ) {
                 state_.blue = false;

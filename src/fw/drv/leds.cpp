@@ -38,11 +38,11 @@ void leds::update( const leds_vals& leds )
         const auto               per   = static_cast< uint16_t >( h_.tim.Init.Period );
 
         const uint16_t yellow_val =
-            em::map_range< uint8_t, uint16_t >( leds.yellow, 0u, u_max, 0u, per );
+            em::map_range< uint8_t, uint16_t >( leds.yellow, 0U, u_max, 0U, per );
         __HAL_TIM_SET_COMPARE( &h_.tim, h_.yellow_channel, yellow_val );
 
         const uint16_t green_val =
-            em::map_range< uint8_t, uint16_t >( leds.green, 0u, u_max, 0u, per );
+            em::map_range< uint8_t, uint16_t >( leds.green, 0U, u_max, 0U, per );
         __HAL_TIM_SET_COMPARE( &h_.tim, h_.green_channel, green_val );
 }
 

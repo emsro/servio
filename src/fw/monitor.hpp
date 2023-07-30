@@ -1,4 +1,6 @@
+#include "control.hpp"
 #include "converter.hpp"
+#include "drv_interfaces.hpp"
 #include "indication.hpp"
 
 #pragma once

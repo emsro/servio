@@ -82,9 +82,9 @@ consteval cfg_map generate_config()
 {
         cfg_map res = cfg::get_default_config();
 
-        const float     r_shunt  = 0.043f;
-        const float     gain     = 100.f;
-        const off_scale curr_cfg = calculate_current_conversion( 3.3f, 0, 1 << 12, r_shunt, gain );
+        const float     r_shunt  = 0.043F;
+        const float     gain     = 100.F;
+        const off_scale curr_cfg = calculate_current_conversion( 3.3F, 0, 1 << 12, r_shunt, gain );
         res.set_val< cfg_key::CURRENT_CONV_SCALE >( curr_cfg.scale );
         res.set_val< cfg_key::CURRENT_CONV_OFFSET >( curr_cfg.offset );
 

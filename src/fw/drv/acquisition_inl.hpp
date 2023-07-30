@@ -1,5 +1,9 @@
 #include "fw/util.hpp"
 
+#pragma once
+
+#include "acquisition.hpp"
+
 namespace fw::drv
 {
 

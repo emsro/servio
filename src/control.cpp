@@ -7,7 +7,7 @@ control::control( microseconds now, ctl::config cfg )
   : position_lims_( cfg.position_limits )
   , position_pid_( now, cfg.position_pid, cfg.velocity_limits )
   , velocity_pid_( now, cfg.velocity_pid, cfg.current_limits )
-  , current_scale_regl_{ .low_point = 1.f, .high_point = 2.f, .last_time = now }
+  , current_scale_regl_{ .low_point = 1.F, .high_point = 2.F, .last_time = now }
   , current_pid_(
         now,
         cfg.current_pid,
@@ -60,7 +60,7 @@ void control::switch_to_power_control( int16_t power )
 }
 void control::switch_to_current_control( microseconds, float current )
 {
-        if ( current >= 0.f ) {
+        if ( current >= 0.F ) {
                 position_pid_.set_output( infty );
                 velocity_pid_.set_momentary_limit( { -infty, current } );
         } else {
@@ -90,7 +90,7 @@ void control::moving_irq( microseconds now, bool is_moving )
 void control::position_irq( microseconds now, float position )
 {
         // TODO: well, this ought ot be configurable
-        const float coeff       = 2.f;
+        const float coeff       = 2.F;
         auto [pos_min, pos_max] = position_lims_;
         position_pid_.set_momentary_limit(
             { coeff * ( -position + pos_min ), coeff * ( -position + pos_max ) } );

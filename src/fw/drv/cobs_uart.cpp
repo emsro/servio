@@ -71,8 +71,7 @@ std::tuple< bool, em::view< std::byte* > > cobs_uart::load_message( em::view< st
 void cobs_uart::start()
 {
         // TODO: return value ignored
-        hal_check{} << HAL_UART_Receive_IT(
-            &h_.uart, reinterpret_cast< uint8_t* >( &rx_byte_ ), 1 );
+        std::ignore = HAL_UART_Receive_IT( &h_.uart, reinterpret_cast< uint8_t* >( &rx_byte_ ), 1 );
 }
 
 bool cobs_uart::send( em::view< const std::byte* > data )
@@ -93,7 +92,7 @@ bool cobs_uart::send( em::view< const std::byte* > data )
 
         // TODO: problematic cast
         // TODO: return value ignored
-        hal_check{} << HAL_UART_Transmit_DMA(
+        std::ignore = HAL_UART_Transmit_DMA(
             &h_.uart,
             reinterpret_cast< uint8_t* >( otmp_.begin() ),
             static_cast< uint16_t >( used.size() + 1 ) );
