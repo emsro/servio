@@ -39,8 +39,7 @@ var annotated_dup =
       [ "standard_callbacks", "structfw_1_1standard__callbacks.html", "structfw_1_1standard__callbacks" ],
       [ "dispatcher", "namespacefw.html#structfw_1_1dispatcher", "namespacefw_structfw_1_1dispatcher_dup" ],
       [ "monitor", "classfw_1_1monitor.html", "classfw_1_1monitor" ],
-      [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
-      [ "hal_check", "namespacefw.html#structfw_1_1hal__check", null ]
+      [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ]
     ] ],
     [ "host", "namespacehost.html", [
       [ "cobs_port", "structhost_1_1cobs__port.html", "structhost_1_1cobs__port" ],

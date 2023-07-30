@@ -117,8 +117,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structfw_1_1check__bool"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#structfw_1_1check__bool">check_bool</a></td></tr>
 <tr class="separator:structfw_1_1check__bool"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structfw_1_1hal__check"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#structfw_1_1hal__check">hal_check</a></td></tr>
-<tr class="separator:structfw_1_1hal__check"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -182,8 +180,6 @@ Functions</h2></td></tr>
 <tr class="separator:aa9827b3a052ca9db4d230c0c439f7319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63ae6e6b6964e56f358aa0727ebe568e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e">operator&lt;&lt;</a> (const <a class="el" href="namespacefw.html#structfw_1_1check__bool">check_bool</a> &amp;, bool val)</td></tr>
 <tr class="separator:a63ae6e6b6964e56f358aa0727ebe568e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa77aaddd76d27d03433b9ced02d8a6f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#aa77aaddd76d27d03433b9ced02d8a6f0">operator&lt;&lt;</a> (<a class="el" href="namespacefw.html#structfw_1_1hal__check">hal_check</a>, HAL_StatusTypeDef s)</td></tr>
-<tr class="separator:aa77aaddd76d27d03433b9ced02d8a6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -290,20 +286,6 @@ vcc_drv</td>
       <table class="memname">
         <tr>
           <td class="memname">struct fw::check_bool</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div>
-</div>
-</div>
-<a name="structfw_1_1hal__check" id="structfw_1_1hal__check"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structfw_1_1hal__check">&#9670;&nbsp;</a></span>fw::hal_check</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct fw::hal_check</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1009,7 +991,7 @@ template&lt;typename... Components&gt; </div>
 </div>
 </div>
 <a id="a63ae6e6b6964e56f358aa0727ebe568e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63ae6e6b6964e56f358aa0727ebe568e">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ae6e6b6964e56f358aa0727ebe568e">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1028,44 +1010,6 @@ template&lt;typename... Components&gt; </div>
           <td></td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>val</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec()</a>.</p>
-
-</div>
-</div>
-<a id="aa77aaddd76d27d03433b9ced02d8a6f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa77aaddd76d27d03433b9ced02d8a6f0">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fw::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacefw.html#structfw_1_1hal__check">hal_check</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HAL_StatusTypeDef&#160;</td>
-          <td class="paramname"><em>s</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1200,7 +1144,7 @@ template&lt;typename InputType , typename OutputType , typename Handle &gt; </di
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li>
-    <li class="footer">Generated on Fri Jul 28 2023 05:56:30 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 30 2023 17:13:19 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

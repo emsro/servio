@@ -67,7 +67,7 @@
 <g id="node5" class="node">
 <title>Node13</title>
 <g id="a_node5"><a xlink:href="static__detector_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="228.5,-0.5 228.5,-19.5 338.5,-19.5 338.5,-0.5 228.5,-0.5"/>
+<polygon fill="white" stroke="red" points="228.5,-0.5 228.5,-19.5 338.5,-19.5 338.5,-0.5 228.5,-0.5"/>
 <text text-anchor="middle" x="283.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">static_detector.hpp</text>
 </a>
 </g>
@@ -78,33 +78,33 @@
 <path fill="none" stroke="midnightblue" d="M283.5,-56.08C283.5,-49.01 283.5,-38.86 283.5,-29.99"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="287,-29.75 283.5,-19.75 280,-29.75 287,-29.75"/>
 </g>
-<!-- Node14 -->
+<!-- Node15 -->
 <g id="node6" class="node">
-<title>Node14</title>
+<title>Node15</title>
 <g id="a_node6"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="356.5,-0.5 356.5,-19.5 398.5,-19.5 398.5,-0.5 356.5,-0.5"/>
 <text text-anchor="middle" x="377.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">array</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node14 -->
+<!-- Node2&#45;&gt;Node15 -->
 <g id="edge5" class="edge">
-<title>Node2&#45;&gt;Node14</title>
+<title>Node2&#45;&gt;Node15</title>
 <path fill="none" stroke="midnightblue" d="M298.6,-56.32C313.4,-47.82 336.19,-34.73 353.48,-24.8"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="355.51,-27.67 362.43,-19.65 352.02,-21.6 355.51,-27.67"/>
 </g>
-<!-- Node15 -->
+<!-- Node16 -->
 <g id="node7" class="node">
-<title>Node15</title>
+<title>Node16</title>
 <g id="a_node7"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="417,-0.5 417,-19.5 458,-19.5 458,-0.5 417,-0.5"/>
 <text text-anchor="middle" x="437.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">tuple</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node15 -->
+<!-- Node2&#45;&gt;Node16 -->
 <g id="edge6" class="edge">
-<title>Node2&#45;&gt;Node15</title>
+<title>Node2&#45;&gt;Node16</title>
 <path fill="none" stroke="midnightblue" d="M307.9,-56.44C334.76,-47.03 377.97,-31.87 407.03,-21.68"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="408.39,-24.92 416.67,-18.3 406.07,-18.31 408.39,-24.92"/>
 </g>

@@ -68,7 +68,7 @@ var searchData=
   ['current_5fcb_5finterface_118',['current_cb_interface',['../drv__interfaces_8hpp.html#a504fadece69fa247e85ef52a17f62db7',1,'drv_interfaces.hpp']]],
   ['current_5fconv_5foffset_119',['CURRENT_CONV_OFFSET',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a76e72afa4f8d540bba69263a712a52d6',1,'config.hpp']]],
   ['current_5fconv_5fscale_120',['CURRENT_CONV_SCALE',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ab015c1824c663ed3fcb336e0c5204d3b',1,'config.hpp']]],
-  ['current_5fconverter_121',['current_converter',['../classcnv_1_1current__converter.html',1,'cnv::current_converter'],['../classcnv_1_1current__converter.html#a1a53d2a111628d79196f197c68074de7',1,'cnv::current_converter::current_converter()']]],
+  ['current_5fconverter_121',['current_converter',['../classcnv_1_1current__converter.html',1,'cnv::current_converter'],['../classcnv_1_1current__converter.html#ae04ad56d1a1f1867db021baf231066dd',1,'cnv::current_converter::current_converter()']]],
   ['current_5finterface_122',['current_interface',['../classcurrent__interface.html',1,'']]],
   ['current_5firq_123',['current_irq',['../classcontrol.html#a4b52b39807bc8e9b1ac8c0264538ed43',1,'control']]],
   ['current_5flim_5fmax_124',['CURRENT_LIM_MAX',['../config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a3ebea74b85ecf9b7147f828d58a2f255',1,'config.hpp']]],

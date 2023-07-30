@@ -42,7 +42,6 @@ var hierarchy =
         [ "host::serialize_error", "structhost_1_1serialize__error.html", null ]
       ] ]
     ] ],
-    [ "fw::hal_check", "namespacefw.html#structfw_1_1hal__check", null ],
     [ "fw::drv::acquisition< N >::handles", "classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles", null ],
     [ "fw::drv::clock::handles", "classfw_1_1drv_1_1clock.html#structfw_1_1drv_1_1clock_1_1handles", null ],
     [ "fw::drv::cobs_uart::handles", "classfw_1_1drv_1_1cobs__uart.html#structfw_1_1drv_1_1cobs__uart_1_1handles", null ],

@@ -134,10 +134,10 @@ Functions</h2></td></tr>
 <tr class="separator:a57c71f193659ff2b34bdf2e7bd1d9c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e3eb3854ea1e62172ae0ff1374342bc"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekalman.html#ad8331048b8638fb9e36b4d5bd59112bb">observation_noise_covariance</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a7e3eb3854ea1e62172ae0ff1374342bc">get_observation_noise_covariance</a> (float observation_deviation)</td></tr>
 <tr class="separator:a7e3eb3854ea1e62172ae0ff1374342bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ce40b45ea8998e580042dae4ba09635"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; <a class="el" href="namespacekalman.html#ab9e6385bb2dcf1772e1b307f181db938">state</a>, <a class="el" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">state_covariance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a5ce40b45ea8998e580042dae4ba09635">predict</a> (const <a class="el" href="namespacekalman.html#ab9e6385bb2dcf1772e1b307f181db938">state</a> &amp;x_prev, const <a class="el" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">state_covariance</a> &amp;P_prev, const <a class="el" href="namespacekalman.html#a29860c2887d99b7b441b4fea6677a29e">control_input</a> &amp;u, const <a class="el" href="namespacekalman.html#ad217468f6096ae44d4ee08729f3a053a">state_transition_model</a> &amp;F, const <a class="el" href="namespacekalman.html#a5cfbf493eef29c305b290c2b167e4bce">control_input_model</a> &amp;B, const <a class="el" href="namespacekalman.html#aee77e3ba89eb600013e17d3467583701">process_noise_covariance</a> &amp;Q)</td></tr>
-<tr class="separator:a5ce40b45ea8998e580042dae4ba09635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34319bc108a66f1a0ed345be44da0365"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; <a class="el" href="namespacekalman.html#ab9e6385bb2dcf1772e1b307f181db938">state</a>, <a class="el" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">state_covariance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a34319bc108a66f1a0ed345be44da0365">update</a> (const <a class="el" href="namespacekalman.html#ab9e6385bb2dcf1772e1b307f181db938">state</a> &amp;x_prev, const <a class="el" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">state_covariance</a> &amp;P_prev, const <a class="el" href="namespacekalman.html#af5cff5e9fec3a001b5e862e24701e86b">observation</a> &amp;z, const <a class="el" href="namespacekalman.html#ad73bc14d9ae4d49d14781f2402637839">observation_model</a> &amp;H, const <a class="el" href="namespacekalman.html#ad8331048b8638fb9e36b4d5bd59112bb">observation_noise_covariance</a> &amp;R)</td></tr>
-<tr class="separator:a34319bc108a66f1a0ed345be44da0365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae72958a7ad293730cc0e83c9303cb518"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; <a class="el" href="namespacekalman.html#ab9e6385bb2dcf1772e1b307f181db938">state</a>, <a class="el" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">state_covariance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#ae72958a7ad293730cc0e83c9303cb518">predict</a> (const <a class="el" href="namespacekalman.html#ab9e6385bb2dcf1772e1b307f181db938">state</a> &amp;x_prev, const <a class="el" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">state_covariance</a> &amp;p_prev, const <a class="el" href="namespacekalman.html#a29860c2887d99b7b441b4fea6677a29e">control_input</a> &amp;u, const <a class="el" href="namespacekalman.html#ad217468f6096ae44d4ee08729f3a053a">state_transition_model</a> &amp;f, const <a class="el" href="namespacekalman.html#a5cfbf493eef29c305b290c2b167e4bce">control_input_model</a> &amp;b, const <a class="el" href="namespacekalman.html#aee77e3ba89eb600013e17d3467583701">process_noise_covariance</a> &amp;q)</td></tr>
+<tr class="separator:ae72958a7ad293730cc0e83c9303cb518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c1d59cbac6fa4fcb0999a990a0134ff"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; <a class="el" href="namespacekalman.html#ab9e6385bb2dcf1772e1b307f181db938">state</a>, <a class="el" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">state_covariance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a6c1d59cbac6fa4fcb0999a990a0134ff">update</a> (const <a class="el" href="namespacekalman.html#ab9e6385bb2dcf1772e1b307f181db938">state</a> &amp;x_prev, const <a class="el" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">state_covariance</a> &amp;p_prev, const <a class="el" href="namespacekalman.html#af5cff5e9fec3a001b5e862e24701e86b">observation</a> &amp;z, const <a class="el" href="namespacekalman.html#ad73bc14d9ae4d49d14781f2402637839">observation_model</a> &amp;h, const <a class="el" href="namespacekalman.html#ad8331048b8638fb9e36b4d5bd59112bb">observation_noise_covariance</a> &amp;r)</td></tr>
+<tr class="separator:a6c1d59cbac6fa4fcb0999a990a0134ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c4a84673db045ce6801d83500cdd91e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3c4a84673db045ce6801d83500cdd91e"><td class="memTemplItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">angle</a> (T &amp;x)</td></tr>
 <tr class="separator:a3c4a84673db045ce6801d83500cdd91e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -593,8 +593,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a5ce40b45ea8998e580042dae4ba09635"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ce40b45ea8998e580042dae4ba09635">&#9670;&nbsp;</a></span>predict()</h2>
+<a id="ae72958a7ad293730cc0e83c9303cb518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae72958a7ad293730cc0e83c9303cb518">&#9670;&nbsp;</a></span>predict()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -612,7 +612,7 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">state_covariance</a> &amp;&#160;</td>
-          <td class="paramname"><em>P_prev</em>, </td>
+          <td class="paramname"><em>p_prev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -624,19 +624,19 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespacekalman.html#ad217468f6096ae44d4ee08729f3a053a">state_transition_model</a> &amp;&#160;</td>
-          <td class="paramname"><em>F</em>, </td>
+          <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespacekalman.html#a5cfbf493eef29c305b290c2b167e4bce">control_input_model</a> &amp;&#160;</td>
-          <td class="paramname"><em>B</em>, </td>
+          <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespacekalman.html#aee77e3ba89eb600013e17d3467583701">process_noise_covariance</a> &amp;&#160;</td>
-          <td class="paramname"><em>Q</em>&#160;</td>
+          <td class="paramname"><em>q</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -743,12 +743,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">angle()</a>, <a class="el" href="namespacekalman.html#a216390ea00a5dbed756bf6064c66a381">angle_mod()</a>, <a class="el" href="namespacekalman.html#a7435a12aeaeef2bdb1f7ff3cd933fbc2">get_control_input_model()</a>, <a class="el" href="namespacekalman.html#a57c71f193659ff2b34bdf2e7bd1d9c76">get_observation_model()</a>, <a class="el" href="namespacekalman.html#a7e3eb3854ea1e62172ae0ff1374342bc">get_observation_noise_covariance()</a>, <a class="el" href="namespacekalman.html#a98d43da94a33f521229fbdb698ee11e3">get_process_noise_covariance()</a>, <a class="el" href="namespacekalman.html#a2b1764c7358bafe1a7dddab4e1989054">get_transition_model()</a>, <a class="el" href="namespacekalman.html#a40a88d464735106d6e64504a1a928bb2">modify_angle()</a>, <a class="el" href="base_8hpp.html#a1405970de248dafe731b9cc3c66f8bc4">pi</a>, <a class="el" href="namespacekalman.html#a5ce40b45ea8998e580042dae4ba09635">predict()</a>, <a class="el" href="namespacekalman.html#a6d24f860613d669dfde9489beaf338cb">requires_offset()</a>, <a class="el" href="namespacekalman.html#a34319bc108a66f1a0ed345be44da0365">update()</a>, and <a class="el" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">velocity()</a>.</p>
+<p class="reference">References <a class="el" href="namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e">angle()</a>, <a class="el" href="namespacekalman.html#a216390ea00a5dbed756bf6064c66a381">angle_mod()</a>, <a class="el" href="namespacekalman.html#a7435a12aeaeef2bdb1f7ff3cd933fbc2">get_control_input_model()</a>, <a class="el" href="namespacekalman.html#a57c71f193659ff2b34bdf2e7bd1d9c76">get_observation_model()</a>, <a class="el" href="namespacekalman.html#a7e3eb3854ea1e62172ae0ff1374342bc">get_observation_noise_covariance()</a>, <a class="el" href="namespacekalman.html#a98d43da94a33f521229fbdb698ee11e3">get_process_noise_covariance()</a>, <a class="el" href="namespacekalman.html#a2b1764c7358bafe1a7dddab4e1989054">get_transition_model()</a>, <a class="el" href="namespacekalman.html#a40a88d464735106d6e64504a1a928bb2">modify_angle()</a>, <a class="el" href="base_8hpp.html#a1405970de248dafe731b9cc3c66f8bc4">pi</a>, <a class="el" href="namespacekalman.html#ae72958a7ad293730cc0e83c9303cb518">predict()</a>, <a class="el" href="namespacekalman.html#a6d24f860613d669dfde9489beaf338cb">requires_offset()</a>, <a class="el" href="namespacekalman.html#a6c1d59cbac6fa4fcb0999a990a0134ff">update()</a>, and <a class="el" href="namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565">velocity()</a>.</p>
 
 </div>
 </div>
-<a id="a34319bc108a66f1a0ed345be44da0365"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34319bc108a66f1a0ed345be44da0365">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a6c1d59cbac6fa4fcb0999a990a0134ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c1d59cbac6fa4fcb0999a990a0134ff">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -766,7 +766,7 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespacekalman.html#a0e377e28a6a36addfe5a14f353839f9c">state_covariance</a> &amp;&#160;</td>
-          <td class="paramname"><em>P_prev</em>, </td>
+          <td class="paramname"><em>p_prev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -778,13 +778,13 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespacekalman.html#ad73bc14d9ae4d49d14781f2402637839">observation_model</a> &amp;&#160;</td>
-          <td class="paramname"><em>H</em>, </td>
+          <td class="paramname"><em>h</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespacekalman.html#ad8331048b8638fb9e36b4d5bd59112bb">observation_noise_covariance</a> &amp;&#160;</td>
-          <td class="paramname"><em>R</em>&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -835,7 +835,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacekalman.html">kalman</a></li>
-    <li class="footer">Generated on Fri Jul 28 2023 05:56:30 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jul 30 2023 17:13:19 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
