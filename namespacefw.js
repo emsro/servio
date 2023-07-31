@@ -35,5 +35,6 @@ var namespacefw =
     [ "position", "namespacefw.html#a68cda65999636fd7381dcc85911c1a4e", null ],
     [ "process_message", "namespacefw.html#a412d66629b1ab2256779303bc71b949d", null ],
     [ "stop_exec", "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021", null ],
+    [ "store_persistent_config", "namespacefw.html#a9e64102096982ac98d0262b48ec1b090", null ],
     [ "STOP_CALLBACK", "namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3", null ]
 ];

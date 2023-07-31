@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"structhost_1_1reply__error.html#a6b2308a59dd5d6d70e2d8d5315e890f5":[11,0,5,3,2],
+"structhost_1_1reply__error.html#a8bd89d0e3018bcbeef6fc7ef9ed27bdc":[11,0,5,3,0],
+"structhost_1_1serialize__error.html":[11,0,5,5],
+"structhost_1_1serialize__error.html#a126abfcada27298f4f8c1693d7fe7109":[11,0,5,5,0],
 "structhost_1_1serialize__error.html#a8080a04a1673f69cc10a55e395098546":[11,0,5,5,1],
 "structhost_1_1serialize__error.html#ab701ed16d059b758f3c7ef207391113a":[11,0,5,5,2],
 "structhost_1_1servio__exception.html":[11,0,5,2],
@@ -27,14 +31,14 @@ var NAVTREEINDEX4 =
 "structstatic__detector.html#ad7262861060d61260f3a4f4fdc0ea633":[11,0,24,4],
 "temperature_8hpp.html":[12,0,1,1,2],
 "temperature_8hpp_source.html":[12,0,1,1,2],
-"util_8cpp.html":[12,0,1,3,18],
-"util_8cpp.html#a8e0b580f4dd8010ffb0db37533802021":[12,0,1,3,18,0],
-"util_8hpp.html":[12,0,1,3,19],
-"util_8hpp.html#a63ae6e6b6964e56f358aa0727ebe568e":[12,0,1,3,19,3],
-"util_8hpp.html#a8e0b580f4dd8010ffb0db37533802021":[12,0,1,3,19,4],
-"util_8hpp.html#aa9827b3a052ca9db4d230c0c439f7319":[12,0,1,3,19,1],
-"util_8hpp.html#ac05d95b2aaa02b49156b63e48e57b69a":[12,0,1,3,19,2],
-"util_8hpp_source.html":[12,0,1,3,19],
+"util_8cpp.html":[12,0,1,3,19],
+"util_8cpp.html#a8e0b580f4dd8010ffb0db37533802021":[12,0,1,3,19,0],
+"util_8hpp.html":[12,0,1,3,20],
+"util_8hpp.html#a63ae6e6b6964e56f358aa0727ebe568e":[12,0,1,3,20,3],
+"util_8hpp.html#a8e0b580f4dd8010ffb0db37533802021":[12,0,1,3,20,4],
+"util_8hpp.html#aa9827b3a052ca9db4d230c0c439f7319":[12,0,1,3,20,1],
+"util_8hpp.html#ac05d95b2aaa02b49156b63e48e57b69a":[12,0,1,3,20,2],
+"util_8hpp_source.html":[12,0,1,3,20],
 "voltage_8hpp.html":[12,0,1,1,3],
 "voltage_8hpp_source.html":[12,0,1,1,3]
 };

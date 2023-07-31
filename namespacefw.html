@@ -171,6 +171,8 @@ Functions</h2></td></tr>
 <tr class="separator:a1e6e4a4b2d63a55fdc7c36ea8cf601dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcc6bed4622d21748754e7bbb7e49a26"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#abcc6bed4622d21748754e7bbb7e49a26">encode</a> (em::view&lt; std::byte * &gt; data, const ServioToHostPacket &amp;msg)</td></tr>
 <tr class="separator:abcc6bed4622d21748754e7bbb7e49a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e64102096982ac98d0262b48ec1b090"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a9e64102096982ac98d0262b48ec1b090">store_persistent_config</a> (const em::view&lt; const <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">cfg::page</a> * &gt; pages, const <a class="el" href="structcfg_1_1payload.html">cfg::payload</a> &amp;pld, const <a class="el" href="config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f">cfg_map</a> *cfg)</td></tr>
+<tr class="separator:a9e64102096982ac98d0262b48ec1b090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0b580f4dd8010ffb0db37533802021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec</a> ()</td></tr>
 <tr class="separator:a8e0b580f4dd8010ffb0db37533802021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac05d95b2aaa02b49156b63e48e57b69a"><td class="memTemplParams" colspan="2">template&lt;typename... Components&gt; </td></tr>
@@ -1123,6 +1125,50 @@ template&lt;typename InputType , typename OutputType , typename Handle &gt; </di
 
 </div>
 </div>
+<a id="a9e64102096982ac98d0262b48ec1b090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e64102096982ac98d0262b48ec1b090">&#9670;&nbsp;</a></span>store_persistent_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool fw::store_persistent_config </td>
+          <td>(</td>
+          <td class="paramtype">const em::view&lt; const <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">cfg::page</a> * &gt;&#160;</td>
+          <td class="paramname"><em>pages</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcfg_1_1payload.html">cfg::payload</a> &amp;&#160;</td>
+          <td class="paramname"><em>pld</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f">cfg_map</a> *&#160;</td>
+          <td class="paramname"><em>cfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacecfg.html#a27fb9256d3f5822df90c3a2296a9531b">cfg::find_next_page()</a>, <a class="el" href="namespacefw.html#a8e0b580f4dd8010ffb0db37533802021">stop_exec()</a>, and <a class="el" href="namespacecfg.html#a41c88df89c60656fbefbe60067584bad">cfg::store()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a2911addbbf2c32e3c0bbd374e6698ee3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2911addbbf2c32e3c0bbd374e6698ee3">&#9670;&nbsp;</a></span>STOP_CALLBACK</h2>
@@ -1144,7 +1190,7 @@ template&lt;typename InputType , typename OutputType , typename Handle &gt; </di
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li>
-    <li class="footer">Generated on Sun Jul 30 2023 18:08:43 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Jul 31 2023 07:18:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

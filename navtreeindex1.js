@@ -178,7 +178,6 @@ var NAVTREEINDEX1 =
 "functions_y.html":[11,3,0,23],
 "functions_~.html":[11,3,0,24],
 "fw_2main_8cpp.html":[12,0,1,3,13],
-"fw_2main_8cpp.html#ade8cf71380b391c468ec53ba5d4a5077":[12,0,1,3,13,1],
 "fw_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[12,0,1,3,13,0],
 "gitversion_8h.html":[12,0,1,12],
 "gitversion_8h.html#a3e1cd734eacc00fc1af852375d4db41c":[12,0,1,12,2],
@@ -217,8 +216,8 @@ var NAVTREEINDEX1 =
 "host_2main_8cpp.html#afb706de6d862c5dc33f2dcad24126b22":[12,0,1,4,5,0,0],
 "host_2main_8cpp.html#structcfg__opts":[12,0,1,4,5,0],
 "host_2main_8cpp.html#structmode__opts":[12,0,1,4,5,1],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "indication_8cpp.html":[12,0,1,13],
 "indication_8cpp.html#a6fc3517bdd4f977e0ab6ce2abfe20116":[12,0,1,13,0],
 "indication_8hpp.html":[12,0,1,14],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "kalman_8hpp.html#a216390ea00a5dbed756bf6064c66a381":[12,0,1,15,13],
 "kalman_8hpp.html#a29860c2887d99b7b441b4fea6677a29e":[12,0,1,15,1],
 "kalman_8hpp.html#a2b1764c7358bafe1a7dddab4e1989054":[12,0,1,15,18],
-"kalman_8hpp.html#a2c7d47c8c5a7d12f26d61b7818b1c2d9":[12,0,1,15,3]
+"kalman_8hpp.html#a2c7d47c8c5a7d12f26d61b7818b1c2d9":[12,0,1,15,3],
+"kalman_8hpp.html#a3c4a84673db045ce6801d83500cdd91e":[12,0,1,15,12]
 };

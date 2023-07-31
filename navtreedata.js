@@ -119,9 +119,9 @@ var NAVTREEINDEX =
 [
 "acquisition_8hpp.html",
 "classpwm__motor__interface.html",
-"kalman_8hpp.html#a3c4a84673db045ce6801d83500cdd91e",
+"kalman_8hpp.html#a4045bee00b1b7c1f3b36946e5ebb8565",
 "serial_8cpp.html#acd62038e28f8e158e365506bd2e34420",
-"structhost_1_1serialize__error.html#a8080a04a1673f69cc10a55e395098546"
+"structhost_1_1reply__error.html#a6b2308a59dd5d6d70e2d8d5315e890f5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
