@@ -15,7 +15,6 @@ include(cmake/emlabcpp.cmake)
 include(cmake/flags.cmake)
 include(cmake/utils.cmake)
 include(cmake/magic_enum.cmake)
-# include(cmake/gitversion.cmake) # is not fine tuned yet
 include(cmake/nanopb.cmake)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
@@ -32,6 +31,8 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
       "${CMAKE_C_FLAGS} -fsingle-precision-constant -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16  -mfloat-abi=hard"
   )
 endif()
+
+include(cmake/cmake-git-version-tracking.cmake)
 
 add_subdirectory(src)
 
