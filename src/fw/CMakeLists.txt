@@ -6,6 +6,7 @@ servio_add_library(
           drv/hbridge.cpp
           drv/leds.cpp
           extra.cpp
+          store_persistent_config.cpp
           globals.cpp
           servio_pb.cpp
           util.cpp

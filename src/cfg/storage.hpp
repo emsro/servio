@@ -13,6 +13,7 @@ namespace cfg
 struct payload
 {
         em::string_buffer< 16 > git_ver;
+        em::string_buffer< 32 > git_date;
         uint32_t                id;
 
         friend constexpr auto operator<=>( const payload&, const payload& ) = default;

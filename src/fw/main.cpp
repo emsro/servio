@@ -47,10 +47,16 @@ int main()
 
                 auto write_config = [&]( const cfg_map* cfg ) -> bool {
                         const cfg::payload pld{
-                            .git_ver = git::Describe(),
-                            .id      = last_cfg_payload.id + 1,
+                            .git_ver  = git::Describe(),
+                            .git_date = git::CommitDate(),
+                            .id       = last_cfg_payload.id + 1,
                         };
-                        const bool succ = fw::store_persistent_config( pages, pld, cfg );
+                        std::optional< cfg::page > opt_page = cfg::find_next_page( pages );
+
+                        if ( !opt_page ) {
+                                return false;
+                        }
+                        const bool succ = fw::store_persistent_config( *opt_page, pld, cfg );
                         if ( succ ) {
                                 last_cfg_payload = pld;
                         }
