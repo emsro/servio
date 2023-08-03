@@ -91,19 +91,19 @@ $(document).ready(function(){initNavTree('md_doc_adr_0005_servo_shall_provide_ve
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Date: 2023-01-15</p>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md24"></a>
 Status</h1>
 <p>Accepted</p>
 <p>Parent of <a class="el" href="md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html">7. Chained control loops architecture shall be used</a></p>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md25"></a>
 Context</h1>
 <p>The project represents firmware for servomotors, these however have various forms of modes. That is, what exactly the input specifies and what is the servo trying to achieve.</p>
-<h1><a class="anchor" id="autotoc_md23"></a>
+<h1><a class="anchor" id="autotoc_md26"></a>
 Decision</h1>
 <p>We agreed to provide angular velocity control. In this mode, the servomotor gets desired angular velocity as an input.</p>
 <p>The system assumes that the motor output shaft is connected in appropiate manner to the currently used position sensor. The system should be able to provide estimates of current angular velocity based on the mentioned position sensor. Velocity control shall provide bi-directional control of the motor, so that the shaft angular velocity remains at desired value.</p>
 <p>The input is in radians per second.</p>
-<h1><a class="anchor" id="autotoc_md24"></a>
+<h1><a class="anchor" id="autotoc_md27"></a>
 Consequences</h1>
 <p>Given the decision, velocity control is one of the modes that has to be designed, tested, and verified that it works. </p>
 </div></div><!-- contents -->
@@ -112,7 +112,7 @@ Consequences</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Aug 3 2023 10:11:30 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Aug 3 2023 10:13:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

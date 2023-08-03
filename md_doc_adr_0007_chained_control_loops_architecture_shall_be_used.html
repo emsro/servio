@@ -91,17 +91,17 @@ $(document).ready(function(){initNavTree('md_doc_adr_0007_chained_control_loops_
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Date: 2023-01-15</p>
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1><a class="anchor" id="autotoc_md34"></a>
 Status</h1>
 <p>Accepted</p>
 <p>Child of <a class="el" href="md_doc_adr_0003_stm32g4_is_the_first_platform.html">3. STM32G4 is the first platform</a></p>
 <p>Child of <a class="el" href="md_doc_adr_0005_servo_shall_provide_velocity_control.html">5. Servo shall provide velocity control</a></p>
 <p>Child of <a class="el" href="md_doc_adr_0006_servo_shall_provide_current_control.html">6. Servo shall provide current control</a></p>
-<h1><a class="anchor" id="autotoc_md32"></a>
+<h1><a class="anchor" id="autotoc_md35"></a>
 Context</h1>
 <p>The internal architecture of the servomotor affects the characteristics of the system, and mostly should be clearly defined and understood. This is high-level design principle, does not have to directly reflect the implementation. (That is, any implementation that is practically equivalent to this is considered valid)</p>
 <p>For the sake of this ADR, we assume that we can measure position,velocity,current, and that we can control the motor with power percentage as an input. (-100...100%)</p>
-<h1><a class="anchor" id="autotoc_md33"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 Decision</h1>
 <p>Based on previous decisions, we have three main control modes: position, velocity, and current control. All three represent a form of control that, in the end, affects the power value based on current values of sensory input.</p>
 <p>There are multiple ways these free control modes can be supported by one system, in our case, we decided to have one control loop and chain those loop:</p>
@@ -124,7 +124,7 @@ Decision</h1>
 </ul>
 <p>For this concept, we shall use the terminology of upstream loop and downstream loop: Upstream loop controls the downstream loop to create the desired effect, directly or undirectly.</p>
 <p>The usage of control loops also implies that we have three separate loops that have to be tuned up.</p>
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md37"></a>
 Consequences</h1>
 <p>The positive outcome of this architecture should be following property:</p>
 <p>If downstream control loop is properly tuned up, tuning the upstream loop should be simpler.</p>
@@ -136,7 +136,7 @@ Consequences</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Aug 3 2023 10:11:30 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Aug 3 2023 10:13:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

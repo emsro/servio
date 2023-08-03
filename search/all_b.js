@@ -14,10 +14,9 @@ var searchData=
   ['angle_5fmod_31',['angle_mod',['../namespacekalman.html#a216390ea00a5dbed756bf6064c66a381',1,'kalman']]],
   ['any_5funinitialized_32',['any_uninitialized',['../structbrd_1_1core__drivers.html#ae81f7592f3f5e12d60d133c987e5cff4',1,'brd::core_drivers']]],
   ['apply_33',['apply',['../structfw_1_1cfg__dispatcher.html#a0002caf837323cd3cf3536483088b49b',1,'fw::cfg_dispatcher']]],
-  ['architecture_20decision_20records_34',['Architecture Decision Records',['../index.html',1,'']]],
-  ['as_5ffloat_35',['as_float',['../classscaled.html#ad0c137095775ae685c2fc049d1784dd2',1,'scaled']]],
-  ['assert_5fparam_36',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32g4xx_hal_conf.h']]],
-  ['async_5fcobs_2ehpp_37',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],
-  ['async_5fread_38',['async_read',['../structhost_1_1cobs__port.html#a41b3a139c6d26709c43d4aa52edd8b10',1,'host::cobs_port']]],
-  ['async_5fwrite_39',['async_write',['../structhost_1_1cobs__port.html#a474f7e7c9b5aad02965c83ae728f7fcd',1,'host::cobs_port']]]
+  ['as_5ffloat_34',['as_float',['../classscaled.html#ad0c137095775ae685c2fc049d1784dd2',1,'scaled']]],
+  ['assert_5fparam_35',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32g4xx_hal_conf.h']]],
+  ['async_5fcobs_2ehpp_36',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],
+  ['async_5fread_37',['async_read',['../structhost_1_1cobs__port.html#a41b3a139c6d26709c43d4aa52edd8b10',1,'host::cobs_port']]],
+  ['async_5fwrite_38',['async_write',['../structhost_1_1cobs__port.html#a474f7e7c9b5aad02965c83ae728f7fcd',1,'host::cobs_port']]]
 ];
