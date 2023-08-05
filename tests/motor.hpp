@@ -73,7 +73,7 @@ struct simple_motor_sim
 
         float resistance( float vel ) const
         {
-                return vel * 0.01f;
+                return std::min( 0.05f, vel );
         }
 
         float power_to_current( int16_t p ) const

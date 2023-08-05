@@ -42,20 +42,28 @@ public:
         float get_desired_position() const;
 
 private:
-        ctl::pid_module& ref_module( control_loop );
+        limits< float > get_current_limits() const;
+        ctl::pid&       ref_module( control_loop );
 
         control_mode state_ = control_mode::POWER;
 
-        float goal_position_ = 0.F;
-
         limits< float > position_lims_;
+        float           position_goal_;
+        ctl::pid        position_pid_;
 
-        ctl::pid_module position_pid_;
-        ctl::pid_module velocity_pid_;
+        limits< float > velocity_lims_;
+        float           velocity_goal_;
+        ctl::pid        velocity_pid_;
 
+        struct
+        {
+                limits< float > config_lims{ -infty, infty };
+                limits< float > pos_derived_lims{ -infty, infty };
+                limits< float > vel_derived_lims{ -infty, infty };
+        } current_lims_;
+        float                            current_goal_;
         ctl::linear_transition_regulator current_scale_regl_;
-
-        ctl::pid_module current_pid_;
+        ctl::pid                         current_pid_;
 
         int16_t power_ = 0;
 };

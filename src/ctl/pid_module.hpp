@@ -1,4 +1,3 @@
-
 #include "base.hpp"
 
 #include <emlabcpp/pid.h>
@@ -16,11 +15,9 @@ class pid_module
 {
 public:
         pid_module( microseconds now, pid_coefficients coeffs, limits< float > limits )
-          : momentary_lim_( limits )
-          , config_lim_( limits )
-          , pid_( now.count(), { coeffs, limits } )
+          : pid_( now.count(), { coeffs, limits } )
         {
-                update_limit();
+                set_config_limit( limits );
         }
 
         void set_pid( pid_coefficients coeff )
@@ -30,14 +27,7 @@ public:
 
         void set_config_limit( limits< float > lim )
         {
-                config_lim_ = lim;
-                update_limit();
-        }
-
-        void set_momentary_limit( limits< float > lim )
-        {
-                momentary_lim_ = lim;
-                update_limit();
+                em::update_limits( pid_, lim );
         }
 
         float get_output() const
@@ -48,11 +38,6 @@ public:
         void set_output( float val )
         {
                 em::update_output( pid_, val );
-        }
-
-        void reset_momentary_limit()
-        {
-                set_momentary_limit( { -infty, infty } );
         }
 
         limits< float > get_limits() const
@@ -66,15 +51,19 @@ public:
                 pid_.last_measured = val;
         }
 
-        float update( microseconds now, float measured, float goal )
+        float update( microseconds now, float measured )
         {
-                last_goal_ = goal;
-                return em::update( pid_, now.count(), measured, goal );
+                return em::update( pid_, now.count(), measured, goal_ );
         }
 
-        float get_desired() const
+        void set_goal( float g )
         {
-                return last_goal_;
+                goal_ = g;
+        }
+
+        float get_goal() const
+        {
+                return goal_;
         }
 
         float get_measured() const
@@ -83,18 +72,8 @@ public:
         }
 
 private:
-        void update_limit()
-        {
-                em::update_limits(
-                    pid_,
-                    { std::max( momentary_lim_.min, config_lim_.min ),
-                      std::min( momentary_lim_.max, config_lim_.max ) } );
-        }
-
-        float           last_goal_ = 0.F;
-        limits< float > momentary_lim_;
-        limits< float > config_lim_;
-        pid             pid_;
+        float goal_ = 0.F;
+        pid   pid_;
 };
 
 }  // namespace ctl

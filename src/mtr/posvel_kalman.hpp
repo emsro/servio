@@ -32,8 +32,8 @@ struct posvel_kalman
 
         void set_position_range( limits< float > position_range )
         {
-                st_range.offset = position_range.min;
-                st_range.size   = position_range.max - position_range.min;
+                st_range.offset = position_range.min();
+                st_range.size   = position_range.max() - position_range.min();
         }
 
         float get_position() const

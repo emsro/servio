@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - name: Install graphviz
-              run: sudo apt install graphviz
+              run: sudo apt install graphviz plantuml -y
 
             - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
               with:
