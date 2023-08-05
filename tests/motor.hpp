@@ -27,6 +27,13 @@ struct simple_motor_sim
         float static_friction_vel   = 0.02f;
         float static_friction_force = 0.7f;
 
+        simple_motor_sim() = default;
+
+        simple_motor_sim( float pos )
+        {
+                pos_vec = rotate_vec( pos_vec, pos );
+        }
+
         void reset_time( microseconds now )
         {
                 last_t = static_cast< float >( now.count() ) / 1000'000.f;
