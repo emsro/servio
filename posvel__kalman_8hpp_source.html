@@ -121,8 +121,8 @@ $(document).ready(function(){initNavTree('posvel__kalman_8hpp_source.html',''); 
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structmtr_1_1posvel__kalman.html#affc06cd5ec360b3808dcd868a36a4545">   33</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structmtr_1_1posvel__kalman.html#affc06cd5ec360b3808dcd868a36a4545">set_position_range</a>( <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_range )</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93">st_range</a>.<a class="code" href="namespacekalman.html#ab56d40aa62a765d02ac064f8e2f2512a">offset</a> = position_range.min;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <a class="code" href="structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93">st_range</a>.<a class="code" href="namespacekalman.html#a99aa0fc8fd1682fd248e3e6ea91d13ed">size</a>   = position_range.max - position_range.min;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93">st_range</a>.<a class="code" href="namespacekalman.html#ab56d40aa62a765d02ac064f8e2f2512a">offset</a> = position_range.min();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <a class="code" href="structmtr_1_1posvel__kalman.html#a4e37a7ba7e8a0e5c374afcd1bcda2d93">st_range</a>.<a class="code" href="namespacekalman.html#a99aa0fc8fd1682fd248e3e6ea91d13ed">size</a>   = position_range.max() - position_range.min();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structmtr_1_1posvel__kalman.html#a6573c98a95f3b84a2ee1a1d3b7d7527f">   39</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="structmtr_1_1posvel__kalman.html#a6573c98a95f3b84a2ee1a1d3b7d7527f">get_position</a>()<span class="keyword"> const</span></div>
@@ -209,7 +209,7 @@ $(document).ready(function(){initNavTree('posvel__kalman_8hpp_source.html',''); 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_52d5c93d1a27df9f60d01a37fbb92cbd.html">mtr</a></li><li class="navelem"><a class="el" href="posvel__kalman_8hpp.html">posvel_kalman.hpp</a></li>
-    <li class="footer">Generated on Thu Aug 3 2023 10:13:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Aug 9 2023 19:58:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

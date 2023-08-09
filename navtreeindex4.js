@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"structhost_1_1parse__error.html#aa69dd6bdfa2d469f6b6da1df41d51bb7":[12,0,5,6,0],
 "structhost_1_1parse__error.html#ae20fe8f83f19a1565317df9bb1bb0123":[12,0,5,6,2],
 "structhost_1_1reply__error.html":[12,0,5,3],
 "structhost_1_1reply__error.html#a6575f5c25f69a86e5e0490f272c08d1d":[12,0,5,3,1],

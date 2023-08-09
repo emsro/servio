@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"serial_8cpp.html#ac76aa810d2266c4958fbc6b8fb72f270":[13,0,1,4,6,7],
 "serial_8cpp.html#acd62038e28f8e158e365506bd2e34420":[13,0,1,4,6,1],
 "serial_8cpp.html#ae9e922ebfa25c20bfa5e01799c1620d8":[13,0,1,4,6,14],
 "serial_8cpp.html#aeddd9b50cf66e5231c6dd276b4ad93dc":[13,0,1,4,6,8],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "structhost_1_1error__exception.html#ad977b58d2968f47a268f4269cc5ca80f":[12,0,5,4,2],
 "structhost_1_1error__exception.html#aed5ca3f5b12c177e2e653e0842eefcad":[12,0,5,4,1],
 "structhost_1_1parse__error.html":[12,0,5,6],
-"structhost_1_1parse__error.html#a865bf916e955af3a3352f63bb9f2e995":[12,0,5,6,1]
+"structhost_1_1parse__error.html#a865bf916e955af3a3352f63bb9f2e995":[12,0,5,6,1],
+"structhost_1_1parse__error.html#aa69dd6bdfa2d469f6b6da1df41d51bb7":[12,0,5,6,0]
 };

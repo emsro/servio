@@ -119,10 +119,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "acquisition_8hpp.html",
-"classpwm__motor__interface.html",
-"kalman_8hpp.html#a3c4a84673db045ce6801d83500cdd91e",
-"serial_8cpp.html#ac76aa810d2266c4958fbc6b8fb72f270",
-"structhost_1_1parse__error.html#aa69dd6bdfa2d469f6b6da1df41d51bb7"
+"classpwm__motor__interface.html#a4900bfa8ae49e01677af15e877f64f77",
+"kalman_8hpp.html#a4045bee00b1b7c1f3b36946e5ebb8565",
+"serial_8cpp.html#acd62038e28f8e158e365506bd2e34420",
+"structhost_1_1parse__error.html#ae20fe8f83f19a1565317df9bb1bb0123"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

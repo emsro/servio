@@ -87,127 +87,104 @@ $(document).ready(function(){initNavTree('pid__module_8hpp_source.html',''); ini
 <div class="title">pid_module.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="pid__module_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">base.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/pid.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacectl.html">ctl</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">   11</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">pid</a>              = em::pid&lt; typename microseconds::rep &gt;;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5">   12</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5">pid_conf</a>         = <span class="keyword">typename</span> pid::config;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">   13</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a> = <a class="code" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">em::pid_coefficients</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classctl_1_1pid__module.html">pid_module</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a2279f448e594ffdd1e7c9c333b544eea">   18</a></span>&#160;        <a class="code" href="classctl_1_1pid__module.html#a2279f448e594ffdd1e7c9c333b544eea">pid_module</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <a class="code" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a> coeffs, <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a> )</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          : momentary_lim_( <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a> )</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;          , config_lim_( <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a> )</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;          , pid_( now.count(), { coeffs, <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a> } )</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                update_limit();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#aa670c5f3213b0c085faa5a6e0758d43e">   26</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#aa670c5f3213b0c085faa5a6e0758d43e">set_pid</a>( <a class="code" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a> coeff )</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                pid_.cfg.coefficients = coeff;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a5eca057c309bafa9383d64fac5a96bd2">   31</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#a5eca057c309bafa9383d64fac5a96bd2">set_config_limit</a>( <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> lim )</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                config_lim_ = lim;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                update_limit();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a146847a5d4fab5f3f83587be78e86f60">   37</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#a146847a5d4fab5f3f83587be78e86f60">set_momentary_limit</a>( <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> lim )</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                momentary_lim_ = lim;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                update_limit();</div>
+<a href="pid__module_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">base.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/pid.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacectl.html">ctl</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">   10</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">pid</a>              = em::pid&lt; typename microseconds::rep &gt;;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5">   11</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5">pid_conf</a>         = <span class="keyword">typename</span> pid::config;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">   12</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a> = <a class="code" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">em::pid_coefficients</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classctl_1_1pid__module.html">pid_module</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a2279f448e594ffdd1e7c9c333b544eea">   17</a></span>&#160;        <a class="code" href="classctl_1_1pid__module.html#a2279f448e594ffdd1e7c9c333b544eea">pid_module</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <a class="code" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a> coeffs, <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a> )</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;          : pid_( now.count(), { coeffs, <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a> } )</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <a class="code" href="classctl_1_1pid__module.html#a5eca057c309bafa9383d64fac5a96bd2">set_config_limit</a>( <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a> );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#aa670c5f3213b0c085faa5a6e0758d43e">   23</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#aa670c5f3213b0c085faa5a6e0758d43e">set_pid</a>( <a class="code" href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">pid_coefficients</a> coeff )</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                pid_.cfg.coefficients = coeff;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a5eca057c309bafa9383d64fac5a96bd2">   28</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#a5eca057c309bafa9383d64fac5a96bd2">set_config_limit</a>( <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> lim )</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                em::update_limits( pid_, lim );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">   33</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">get_output</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">return</span> pid_.output;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#aee7ffa9937102c6f25f5fc0acd998513">   38</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#aee7ffa9937102c6f25f5fc0acd998513">set_output</a>( <span class="keywordtype">float</span> val )</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                em::update_output( pid_, val );</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">   43</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">get_output</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#ac565d04171e81ea0da5689731e345648">   43</a></span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> <a class="code" href="classctl_1_1pid__module.html#ac565d04171e81ea0da5689731e345648">get_limits</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">return</span> pid_.output;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">return</span> pid_.cfg.limits;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#aee7ffa9937102c6f25f5fc0acd998513">   48</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#aee7ffa9937102c6f25f5fc0acd998513">set_output</a>( <span class="keywordtype">float</span> val )</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136">   48</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136">reset</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <span class="keywordtype">float</span> val )</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                em::update_output( pid_, val );</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a67728b44ddefd68b162ca78f26482c2c">   53</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#a67728b44ddefd68b162ca78f26482c2c">reset_momentary_limit</a>()</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <a class="code" href="classctl_1_1pid__module.html#a146847a5d4fab5f3f83587be78e86f60">set_momentary_limit</a>( { -<a class="code" href="base_8hpp.html#aec3fd2a11257b6fbfe32084f877fafca">infty</a>, <a class="code" href="base_8hpp.html#aec3fd2a11257b6fbfe32084f877fafca">infty</a> } );</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#ac565d04171e81ea0da5689731e345648">   58</a></span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> <a class="code" href="classctl_1_1pid__module.html#ac565d04171e81ea0da5689731e345648">get_limits</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span> pid_.cfg.limits;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136">   63</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136">reset</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <span class="keywordtype">float</span> val )</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                pid_.last_time     = now.count();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                pid_.last_measured = val;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                pid_.last_time     = now.count();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                pid_.last_measured = val;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a26bcedbacef81014f424dcad0cb65e7d">   54</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classctl_1_1pid__module.html#a26bcedbacef81014f424dcad0cb65e7d">update</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <span class="keywordtype">float</span> measured )</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacekalman.html#a6c1d59cbac6fa4fcb0999a990a0134ff">em::update</a>( pid_, now.count(), measured, goal_ );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a87338c3449ebc48015fbc7c768c7565b">   59</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctl_1_1pid__module.html#a87338c3449ebc48015fbc7c768c7565b">set_goal</a>( <span class="keywordtype">float</span> g )</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                goal_ = g;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a199454ef871e8bde08ae89cc561a3af0">   64</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classctl_1_1pid__module.html#a199454ef871e8bde08ae89cc561a3af0">get_goal</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">return</span> goal_;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a594cc33dcfda834bb2d349f8d19deefe">   69</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classctl_1_1pid__module.html#a594cc33dcfda834bb2d349f8d19deefe">update</a>( <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now, <span class="keywordtype">float</span> measured, <span class="keywordtype">float</span> goal )</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                last_goal_ = goal;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacekalman.html#a6c1d59cbac6fa4fcb0999a990a0134ff">em::update</a>( pid_, now.count(), measured, goal );</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a9d7e7ad3a1bf3a1783ee8d7ff43b5146">   75</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classctl_1_1pid__module.html#a9d7e7ad3a1bf3a1783ee8d7ff43b5146">get_desired</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">return</span> last_goal_;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a74555c2bf8a8dead21aa99f76e579afb">   80</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classctl_1_1pid__module.html#a74555c2bf8a8dead21aa99f76e579afb">get_measured</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">return</span> pid_.last_measured;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">void</span> update_limit()</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                em::update_limits(</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    pid_,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    { std::max( momentary_lim_.min, config_lim_.min ),</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                      std::min( momentary_lim_.max, config_lim_.max ) } );</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">float</span>           last_goal_ = 0.F;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> momentary_lim_;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> config_lim_;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">pid</a>             pid_;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}  <span class="comment">// namespace ctl</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classctl_1_1pid__module.html#a74555c2bf8a8dead21aa99f76e579afb">   69</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classctl_1_1pid__module.html#a74555c2bf8a8dead21aa99f76e579afb">get_measured</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">return</span> pid_.last_measured;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">float</span> goal_ = 0.F;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">pid</a>   pid_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}  <span class="comment">// namespace ctl</span></div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="abase_8hpp_html_a3e15423b6a0f2e36799532b4c8f699f5"><div class="ttname"><a href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:12</div></div>
 <div class="ttc" id="abase_8hpp_html_a486dfef0b192c734eed01e9d3fa6995c"><div class="ttname"><a href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits</a></div><div class="ttdeci">em::min_max&lt; T &gt; limits</div><div class="ttdef"><b>Definition:</b> base.hpp:34</div></div>
-<div class="ttc" id="abase_8hpp_html_aec3fd2a11257b6fbfe32084f877fafca"><div class="ttname"><a href="base_8hpp.html#aec3fd2a11257b6fbfe32084f877fafca">infty</a></div><div class="ttdeci">static constexpr float infty</div><div class="ttdef"><b>Definition:</b> base.hpp:36</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html"><div class="ttname"><a href="classctl_1_1pid__module.html">ctl::pid_module</a></div><div class="ttdef"><b>Definition:</b> pid_module.hpp:16</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_a146847a5d4fab5f3f83587be78e86f60"><div class="ttname"><a href="classctl_1_1pid__module.html#a146847a5d4fab5f3f83587be78e86f60">ctl::pid_module::set_momentary_limit</a></div><div class="ttdeci">void set_momentary_limit(limits&lt; float &gt; lim)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:37</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_a2279f448e594ffdd1e7c9c333b544eea"><div class="ttname"><a href="classctl_1_1pid__module.html#a2279f448e594ffdd1e7c9c333b544eea">ctl::pid_module::pid_module</a></div><div class="ttdeci">pid_module(microseconds now, pid_coefficients coeffs, limits&lt; float &gt; limits)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:18</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_a594cc33dcfda834bb2d349f8d19deefe"><div class="ttname"><a href="classctl_1_1pid__module.html#a594cc33dcfda834bb2d349f8d19deefe">ctl::pid_module::update</a></div><div class="ttdeci">float update(microseconds now, float measured, float goal)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:69</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_a5eca057c309bafa9383d64fac5a96bd2"><div class="ttname"><a href="classctl_1_1pid__module.html#a5eca057c309bafa9383d64fac5a96bd2">ctl::pid_module::set_config_limit</a></div><div class="ttdeci">void set_config_limit(limits&lt; float &gt; lim)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:31</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_a67728b44ddefd68b162ca78f26482c2c"><div class="ttname"><a href="classctl_1_1pid__module.html#a67728b44ddefd68b162ca78f26482c2c">ctl::pid_module::reset_momentary_limit</a></div><div class="ttdeci">void reset_momentary_limit()</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:53</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_a74555c2bf8a8dead21aa99f76e579afb"><div class="ttname"><a href="classctl_1_1pid__module.html#a74555c2bf8a8dead21aa99f76e579afb">ctl::pid_module::get_measured</a></div><div class="ttdeci">float get_measured() const</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:80</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_a9d7e7ad3a1bf3a1783ee8d7ff43b5146"><div class="ttname"><a href="classctl_1_1pid__module.html#a9d7e7ad3a1bf3a1783ee8d7ff43b5146">ctl::pid_module::get_desired</a></div><div class="ttdeci">float get_desired() const</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:75</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_aa670c5f3213b0c085faa5a6e0758d43e"><div class="ttname"><a href="classctl_1_1pid__module.html#aa670c5f3213b0c085faa5a6e0758d43e">ctl::pid_module::set_pid</a></div><div class="ttdeci">void set_pid(pid_coefficients coeff)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:26</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_ac565d04171e81ea0da5689731e345648"><div class="ttname"><a href="classctl_1_1pid__module.html#ac565d04171e81ea0da5689731e345648">ctl::pid_module::get_limits</a></div><div class="ttdeci">limits&lt; float &gt; get_limits() const</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:58</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_acf6c6512b2db329c8f1555231fd96136"><div class="ttname"><a href="classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136">ctl::pid_module::reset</a></div><div class="ttdeci">void reset(microseconds now, float val)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:63</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_adc61125c18ab19893f1b744a6f03bf4f"><div class="ttname"><a href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">ctl::pid_module::get_output</a></div><div class="ttdeci">float get_output() const</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:43</div></div>
-<div class="ttc" id="aclassctl_1_1pid__module_html_aee7ffa9937102c6f25f5fc0acd998513"><div class="ttname"><a href="classctl_1_1pid__module.html#aee7ffa9937102c6f25f5fc0acd998513">ctl::pid_module::set_output</a></div><div class="ttdeci">void set_output(float val)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:48</div></div>
-<div class="ttc" id="anamespacectl_html"><div class="ttname"><a href="namespacectl.html">ctl</a></div><div class="ttdef"><b>Definition:</b> config.hpp:10</div></div>
-<div class="ttc" id="anamespacectl_html_a1e8151ad6bf30ab3431d58a8d87950b6"><div class="ttname"><a href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">ctl::pid</a></div><div class="ttdeci">em::pid&lt; typename microseconds::rep &gt; pid</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:11</div></div>
-<div class="ttc" id="anamespacectl_html_a254eee5cc344e1590ae9434a7073d1b5"><div class="ttname"><a href="namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5">ctl::pid_conf</a></div><div class="ttdeci">typename pid::config pid_conf</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:12</div></div>
-<div class="ttc" id="anamespacectl_html_a31369f8fd89ca0fd4d2bf8970a4653d1"><div class="ttname"><a href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">ctl::pid_coefficients</a></div><div class="ttdeci">em::pid_coefficients pid_coefficients</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:13</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html"><div class="ttname"><a href="classctl_1_1pid__module.html">ctl::pid_module</a></div><div class="ttdef"><b>Definition:</b> pid_module.hpp:15</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_a199454ef871e8bde08ae89cc561a3af0"><div class="ttname"><a href="classctl_1_1pid__module.html#a199454ef871e8bde08ae89cc561a3af0">ctl::pid_module::get_goal</a></div><div class="ttdeci">float get_goal() const</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:64</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_a2279f448e594ffdd1e7c9c333b544eea"><div class="ttname"><a href="classctl_1_1pid__module.html#a2279f448e594ffdd1e7c9c333b544eea">ctl::pid_module::pid_module</a></div><div class="ttdeci">pid_module(microseconds now, pid_coefficients coeffs, limits&lt; float &gt; limits)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:17</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_a26bcedbacef81014f424dcad0cb65e7d"><div class="ttname"><a href="classctl_1_1pid__module.html#a26bcedbacef81014f424dcad0cb65e7d">ctl::pid_module::update</a></div><div class="ttdeci">float update(microseconds now, float measured)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:54</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_a5eca057c309bafa9383d64fac5a96bd2"><div class="ttname"><a href="classctl_1_1pid__module.html#a5eca057c309bafa9383d64fac5a96bd2">ctl::pid_module::set_config_limit</a></div><div class="ttdeci">void set_config_limit(limits&lt; float &gt; lim)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:28</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_a74555c2bf8a8dead21aa99f76e579afb"><div class="ttname"><a href="classctl_1_1pid__module.html#a74555c2bf8a8dead21aa99f76e579afb">ctl::pid_module::get_measured</a></div><div class="ttdeci">float get_measured() const</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:69</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_a87338c3449ebc48015fbc7c768c7565b"><div class="ttname"><a href="classctl_1_1pid__module.html#a87338c3449ebc48015fbc7c768c7565b">ctl::pid_module::set_goal</a></div><div class="ttdeci">void set_goal(float g)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:59</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_aa670c5f3213b0c085faa5a6e0758d43e"><div class="ttname"><a href="classctl_1_1pid__module.html#aa670c5f3213b0c085faa5a6e0758d43e">ctl::pid_module::set_pid</a></div><div class="ttdeci">void set_pid(pid_coefficients coeff)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:23</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_ac565d04171e81ea0da5689731e345648"><div class="ttname"><a href="classctl_1_1pid__module.html#ac565d04171e81ea0da5689731e345648">ctl::pid_module::get_limits</a></div><div class="ttdeci">limits&lt; float &gt; get_limits() const</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:43</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_acf6c6512b2db329c8f1555231fd96136"><div class="ttname"><a href="classctl_1_1pid__module.html#acf6c6512b2db329c8f1555231fd96136">ctl::pid_module::reset</a></div><div class="ttdeci">void reset(microseconds now, float val)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:48</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_adc61125c18ab19893f1b744a6f03bf4f"><div class="ttname"><a href="classctl_1_1pid__module.html#adc61125c18ab19893f1b744a6f03bf4f">ctl::pid_module::get_output</a></div><div class="ttdeci">float get_output() const</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:33</div></div>
+<div class="ttc" id="aclassctl_1_1pid__module_html_aee7ffa9937102c6f25f5fc0acd998513"><div class="ttname"><a href="classctl_1_1pid__module.html#aee7ffa9937102c6f25f5fc0acd998513">ctl::pid_module::set_output</a></div><div class="ttdeci">void set_output(float val)</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:38</div></div>
+<div class="ttc" id="anamespacectl_html"><div class="ttname"><a href="namespacectl.html">ctl</a></div><div class="ttdef"><b>Definition:</b> config.hpp:12</div></div>
+<div class="ttc" id="anamespacectl_html_a1e8151ad6bf30ab3431d58a8d87950b6"><div class="ttname"><a href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">ctl::pid</a></div><div class="ttdeci">em::pid&lt; typename microseconds::rep &gt; pid</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:10</div></div>
+<div class="ttc" id="anamespacectl_html_a254eee5cc344e1590ae9434a7073d1b5"><div class="ttname"><a href="namespacectl.html#a254eee5cc344e1590ae9434a7073d1b5">ctl::pid_conf</a></div><div class="ttdeci">typename pid::config pid_conf</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:11</div></div>
+<div class="ttc" id="anamespacectl_html_a31369f8fd89ca0fd4d2bf8970a4653d1"><div class="ttname"><a href="namespacectl.html#a31369f8fd89ca0fd4d2bf8970a4653d1">ctl::pid_coefficients</a></div><div class="ttdeci">em::pid_coefficients pid_coefficients</div><div class="ttdef"><b>Definition:</b> pid_module.hpp:12</div></div>
 <div class="ttc" id="anamespacekalman_html_a6c1d59cbac6fa4fcb0999a990a0134ff"><div class="ttname"><a href="namespacekalman.html#a6c1d59cbac6fa4fcb0999a990a0134ff">kalman::update</a></div><div class="ttdeci">constexpr std::tuple&lt; state, state_covariance &gt; update(const state &amp;x_prev, const state_covariance &amp;p_prev, const observation &amp;z, const observation_model &amp;h, const observation_noise_covariance &amp;r)</div><div class="ttdef"><b>Definition:</b> kalman.hpp:77</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -215,7 +192,7 @@ $(document).ready(function(){initNavTree('pid__module_8hpp_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_233c030500f292fc400d319d0c2e99f0.html">ctl</a></li><li class="navelem"><a class="el" href="pid__module_8hpp.html">pid_module.hpp</a></li>
-    <li class="footer">Generated on Thu Aug 3 2023 10:13:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Aug 9 2023 19:58:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

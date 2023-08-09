@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"classpwm__motor__interface.html":[12,0,22],
 "classpwm__motor__interface.html#a4900bfa8ae49e01677af15e877f64f77":[12,0,22,1],
 "classpwm__motor__interface.html#a756bd7b598e43f7a457c583af982c321":[12,0,22,0],
 "classscaled.html":[12,0,23],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "kalman_8hpp.html#a216390ea00a5dbed756bf6064c66a381":[13,0,1,15,13],
 "kalman_8hpp.html#a29860c2887d99b7b441b4fea6677a29e":[13,0,1,15,1],
 "kalman_8hpp.html#a2b1764c7358bafe1a7dddab4e1989054":[13,0,1,15,18],
-"kalman_8hpp.html#a2c7d47c8c5a7d12f26d61b7818b1c2d9":[13,0,1,15,3]
+"kalman_8hpp.html#a2c7d47c8c5a7d12f26d61b7818b1c2d9":[13,0,1,15,3],
+"kalman_8hpp.html#a3c4a84673db045ce6801d83500cdd91e":[13,0,1,15,12]
 };
