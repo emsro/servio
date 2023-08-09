@@ -48,11 +48,11 @@ private:
         control_mode state_ = control_mode::POWER;
 
         limits< float > position_lims_;
-        float           position_goal_;
+        float           position_goal_ = 0.f;
         ctl::pid        position_pid_;
 
         limits< float > velocity_lims_;
-        float           velocity_goal_;
+        float           velocity_goal_ = 0.f;
         ctl::pid        velocity_pid_;
 
         struct
@@ -61,7 +61,7 @@ private:
                 limits< float > pos_derived_lims{ -infty, infty };
                 limits< float > vel_derived_lims{ -infty, infty };
         } current_lims_;
-        float                            current_goal_;
+        float                            current_goal_ = 0.f;
         ctl::linear_transition_regulator current_scale_regl_;
         ctl::pid                         current_pid_;
 
