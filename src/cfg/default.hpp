@@ -31,7 +31,7 @@ consteval cfg_map get_default_config()
             cfg_reg< VELOCITY_LIM_MIN, float >{ -3.F },
             cfg_reg< VELOCITY_LIM_MAX, float >{ 3.F },
             cfg_reg< POSITION_LOOP_P, float >{ 0.2F },
-            cfg_reg< POSITION_LOOP_I, float >{ 0.0000002F },
+            cfg_reg< POSITION_LOOP_I, float >{ 0.00000002F },
             cfg_reg< POSITION_LOOP_D, float >{ 0.F },
             cfg_reg< POSITION_LIM_MIN, float >{ 0.1F },
             cfg_reg< POSITION_LIM_MAX, float >{ 2 * pi - 0.1F },
