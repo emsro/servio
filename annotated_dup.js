@@ -59,6 +59,7 @@ var annotated_dup =
     [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", "classadc__detailed__cb__interface" ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", "config_8hpp_structcfg__keyval" ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", "host_2main_8cpp_structcfg__opts" ],
+    [ "clk_interface", "classclk__interface.html", "classclk__interface" ],
     [ "control", "classcontrol.html", "classcontrol" ],
     [ "converter", "structconverter.html", "structconverter" ],
     [ "current_interface", "classcurrent__interface.html", "classcurrent__interface" ],

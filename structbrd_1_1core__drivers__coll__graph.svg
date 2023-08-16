@@ -143,9 +143,9 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classfw_1_1drv_1_1clock.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classclk__interface.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="154,-76.5 154,-95.5 234,-95.5 234,-76.5 154,-76.5"/>
-<text text-anchor="middle" x="194" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw::drv::clock</text>
+<text text-anchor="middle" x="194" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">clk_interface</text>
 </a>
 </g>
 </g>

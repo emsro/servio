@@ -4,6 +4,7 @@ var drv__interfaces_8hpp =
     [ "value_cb_interface", "classvalue__cb__interface.html", "classvalue__cb__interface" ],
     [ "period_cb_interface", "classperiod__cb__interface.html", "classperiod__cb__interface" ],
     [ "driver_interface", "classdriver__interface.html", "classdriver__interface" ],
+    [ "clk_interface", "classclk__interface.html", "classclk__interface" ],
     [ "period_interface", "classperiod__interface.html", "classperiod__interface" ],
     [ "pwm_motor_interface", "classpwm__motor__interface.html", "classpwm__motor__interface" ],
     [ "position_interface", "classposition__interface.html", "classposition__interface" ],

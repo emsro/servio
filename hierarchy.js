@@ -10,7 +10,9 @@ var hierarchy =
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", null ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", null ],
     [ "fw::check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
-    [ "fw::drv::clock", "classfw_1_1drv_1_1clock.html", null ],
+    [ "clk_interface", "classclk__interface.html", [
+      [ "fw::drv::clock", "classfw_1_1drv_1_1clock.html", null ]
+    ] ],
     [ "host::cobs_port", "structhost_1_1cobs__port.html", null ],
     [ "fw::drv::cobs_uart", "classfw_1_1drv_1_1cobs__uart.html", null ],
     [ "host::common_cli", "structhost_1_1common__cli.html", null ],
