@@ -1,6 +1,5 @@
 #include "control.hpp"
 #include "converter.hpp"
-#include "drv/clock.hpp"
 #include "fw/conversion.hpp"
 #include "metrics.hpp"
 
@@ -17,7 +16,7 @@ public:
         current_callback(
             pwm_motor_interface& motor,
             control&             ctl,
-            drv::clock&          clk,
+            clk_interface&       clk,
             const converter&     conv )
           : motor_( motor )
           , ctl_( ctl )
@@ -37,14 +36,14 @@ public:
 private:
         pwm_motor_interface& motor_;
         control&             ctl_;
-        drv::clock&          clk_;
+        clk_interface&       clk_;
         const converter&     conv_;
 };
 
 class position_callback : public position_cb_interface
 {
 public:
-        position_callback( control& ctl, metrics& met, drv::clock& clk, const converter& conv )
+        position_callback( control& ctl, metrics& met, clk_interface& clk, const converter& conv )
           : ctl_( ctl )
           , met_( met )
           , clk_( clk )
@@ -67,7 +66,7 @@ public:
 private:
         control&         ctl_;
         metrics&         met_;
-        drv::clock&      clk_;
+        clk_interface&   clk_;
         const converter& conv_;
 };
 

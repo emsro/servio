@@ -24,7 +24,7 @@ struct core
             microseconds                 now,
             const vcc_interface&         vcc_drv,
             const temperature_interface& temp_drv,
-            drv::clock&                  clk )
+            clk_interface&               clk )
           : ctl( now, ctl::config{} )
           , conv()
           , met( now, 0.F, { 0.F, 2 * pi } )
@@ -46,7 +46,7 @@ struct standard_callbacks
 {
         standard_callbacks(
             pwm_motor_interface& motor,
-            drv::clock&          clk,
+            clk_interface&       clk,
             control&             ctl,
             metrics&             met,
             const converter&     conv )

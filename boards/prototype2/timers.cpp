@@ -132,16 +132,16 @@ bool setup_adc_timer( acquisition_type::handles& h, adc_timer_cfg cfg )
         return true;
 }
 
-bool setup_clock_timer( fw::drv::clock::handles& h, clock_timer_cfg cfg )
+bool setup_clock_timer( TIM_HandleTypeDef& tim, uint32_t& channel, clock_timer_cfg cfg )
 {
-        h.tim.Instance               = cfg.timer_instance;
-        h.tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1'000'000 );
-        h.tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
-        h.tim.Init.Period            = std::numeric_limits< uint32_t >::max();
-        h.tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
-        h.tim.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+        tim.Instance               = cfg.timer_instance;
+        tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1'000'000 );
+        tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
+        tim.Init.Period            = std::numeric_limits< uint32_t >::max();
+        tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
+        tim.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
-        h.tim_channel = cfg.channel;
+        channel = cfg.channel;
 
         TIM_MasterConfigTypeDef mc{};
         mc.MasterOutputTrigger = TIM_TRGO_UPDATE;
@@ -149,19 +149,19 @@ bool setup_clock_timer( fw::drv::clock::handles& h, clock_timer_cfg cfg )
 
         TIM_OC_InitTypeDef oc{};
         oc.OCMode     = TIM_OCMODE_TIMING;
-        oc.Pulse      = h.tim.Init.Period - 1;
+        oc.Pulse      = tim.Init.Period - 1;
         oc.OCPolarity = TIM_OCPOLARITY_HIGH;
         oc.OCFastMode = TIM_OCFAST_DISABLE;
 
-        if ( HAL_TIM_OC_Init( &h.tim ) != HAL_OK ) {
+        if ( HAL_TIM_OC_Init( &tim ) != HAL_OK ) {
                 fw::stop_exec();
         }
 
-        if ( HAL_TIMEx_MasterConfigSynchronization( &h.tim, &mc ) != HAL_OK ) {
+        if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK ) {
                 fw::stop_exec();
         }
 
-        if ( HAL_TIM_OC_ConfigChannel( &h.tim, &oc, h.tim_channel ) != HAL_OK ) {
+        if ( HAL_TIM_OC_ConfigChannel( &tim, &oc, channel ) != HAL_OK ) {
                 fw::stop_exec();
         }
 

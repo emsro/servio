@@ -1,6 +1,5 @@
 #include "config.hpp"
 #include "drv_interfaces.hpp"
-#include "fw/drv/clock.hpp"
 #include "fw/drv/cobs_uart.hpp"
 #include "fw/drv/leds.hpp"
 #include "globals.hpp"
@@ -14,17 +13,17 @@ namespace brd
 /// TODO: maybe move to references and make setup function return an optional?
 struct core_drivers
 {
-        fw::drv::clock*        clock;
-        position_interface*    position;
-        current_interface*     current;
-        vcc_interface*         vcc;
-        temperature_interface* temperature;
-        period_cb_interface*   period_cb;  // TODO: maybe imrpove naming here?
-        pwm_motor_interface*   motor;
-        period_interface*      period;
-        fw::drv::cobs_uart*    comms;
-        fw::drv::leds*         leds;
-        void ( *start_cb )( core_drivers& );
+        clk_interface*                             clock;
+        position_interface*                        position;
+        current_interface*                         current;
+        vcc_interface*                             vcc;
+        temperature_interface*                     temperature;
+        period_cb_interface*                       period_cb;  // TODO: maybe imrpove naming here?
+        pwm_motor_interface*                       motor;
+        period_interface*                          period;
+        fw::drv::cobs_uart*                        comms;
+        fw::drv::leds*                             leds;
+        em::function_view< void( core_drivers& ) > start_cb;
 
         auto tie()
         {
@@ -33,8 +32,13 @@ struct core_drivers
 
         bool any_uninitialized()
         {
-                return em::any_of( tie(), []( const auto ptr ) {
-                        return ptr == nullptr;
+                return em::any_of( tie(), []< typename T >( const T ptr ) {
+                        if constexpr ( std::is_pointer_v< T > ) {
+                                return ptr == nullptr;
+                        } else {
+                                std::ignore = ptr;
+                                return false;
+                        }
                 } );
         }
 };

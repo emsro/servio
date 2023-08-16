@@ -101,6 +101,6 @@ struct clock_timer_cfg
         uint32_t     channel;
 };
 
-bool setup_clock_timer( fw::drv::clock::handles&, clock_timer_cfg cfg );
+bool setup_clock_timer( TIM_HandleTypeDef& tim, uint32_t& channel, clock_timer_cfg cfg );
 
 }  // namespace brd

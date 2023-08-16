@@ -1,4 +1,5 @@
 #include "base.hpp"
+#include "drv_interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <stm32g4xx_hal.h>
@@ -8,7 +9,7 @@
 namespace fw::drv
 {
 
-class clock
+class clock : public clk_interface
 {
 public:
         struct handles
@@ -24,14 +25,14 @@ public:
         clock& operator=( const clock& ) = delete;
         clock& operator=( clock&& )      = delete;
 
-        bool setup( em::function_view< bool( handles& ) > setup_f )
+        bool setup( em::function_view< bool( TIM_HandleTypeDef&, uint32_t& ) > setup_f )
         {
-                const bool res = setup_f( h_ );
+                const bool res = setup_f( h_.tim, h_.tim_channel );
                 HAL_TIM_OC_Start( &h_.tim, h_.tim_channel );
                 return res;
         }
 
-        microseconds get_us()
+        microseconds get_us() override
         {
                 return microseconds{ __HAL_TIM_GET_COUNTER( &h_.tim ) };
         }

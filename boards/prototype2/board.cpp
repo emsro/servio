@@ -1,6 +1,7 @@
 #include "fw/board.hpp"
 
 #include "fw/drv/acquisition.hpp"
+#include "fw/drv/clock.hpp"
 #include "fw/util.hpp"
 #include "setup.hpp"
 
@@ -180,10 +181,11 @@ void setup_board()
 
 fw::drv::clock* setup_clock()
 {
-        auto clk_setup = []( fw::drv::clock::handles& h ) {
+        auto clk_setup = []( TIM_HandleTypeDef& tim, uint32_t& chan ) {
                 __HAL_RCC_TIM2_CLK_ENABLE();
                 return setup_clock_timer(
-                    h,
+                    tim,
+                    chan,
                     clock_timer_cfg{
                         .timer_instance = TIM2,
                         .channel        = TIM_CHANNEL_1,
@@ -447,12 +449,18 @@ void start_callback( core_drivers& cdrv )
         }
 }
 
+microseconds get_clock_time()
+{
+        return CLOCK.get_us();
+}
+
 core_drivers setup_core_drivers()
 {
         fw::drv::hbridge* hb     = setup_hbridge();
         acquisition_type* acquis = setup_acquisition();
         fw::drv::leds*    leds   = setup_leds();
         fw::install_stop_callback( leds );
+
         return core_drivers{
             .clock       = setup_clock(),
             .position    = acquis == nullptr ? nullptr : &POSITION,

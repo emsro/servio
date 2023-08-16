@@ -1,3 +1,4 @@
+#include "base.hpp"
 #include "status_category.hpp"
 
 #include <cstdint>
@@ -54,6 +55,13 @@ public:
         virtual status get_status() const = 0;
         virtual void   clear_status( status ){};
         virtual ~driver_interface() = default;
+};
+
+class clk_interface
+{
+public:
+        virtual microseconds get_us() = 0;
+        virtual ~clk_interface()      = default;
 };
 
 class period_interface : public driver_interface
