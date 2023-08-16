@@ -50,7 +50,7 @@ void cobs_uart::tx_cplt_irq( UART_HandleTypeDef* huart )
         tx_done_ = true;
 }
 
-std::tuple< bool, em::view< std::byte* > > cobs_uart::load_message( em::view< std::byte* > data )
+com_res cobs_uart::load_message( em::view< std::byte* > data )
 {
         if ( isizes_.empty() ) {
                 return { true, {} };

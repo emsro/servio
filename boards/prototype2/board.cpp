@@ -2,6 +2,7 @@
 
 #include "fw/drv/acquisition.hpp"
 #include "fw/drv/clock.hpp"
+#include "fw/drv/cobs_uart.hpp"
 #include "fw/util.hpp"
 #include "setup.hpp"
 
@@ -294,7 +295,7 @@ fw::drv::hbridge* setup_hbridge()
         return &HBRIDGE;
 }
 
-fw::drv::cobs_uart* setup_comms()
+com_interface* setup_comms()
 {
         auto comms_setup = []( fw::drv::cobs_uart::handles& h ) {
                 __HAL_RCC_DMAMUX1_CLK_ENABLE();
@@ -337,7 +338,7 @@ fw::drv::cobs_uart* setup_comms()
         return &COMMS;
 }
 
-fw::drv::cobs_uart* setup_debug_comms()
+com_interface* setup_debug_comms()
 {
         auto setup_f = []( fw::drv::cobs_uart::handles& h ) {
                 __HAL_RCC_DMA1_CLK_ENABLE();

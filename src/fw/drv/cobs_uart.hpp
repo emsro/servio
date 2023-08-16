@@ -1,3 +1,5 @@
+#include "drv_interfaces.hpp"
+
 #include <emlabcpp/experimental/cobs.h>
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/static_circular_buffer.h>
@@ -12,7 +14,7 @@ namespace fw::drv
 
 constexpr std::size_t comm_buff_size = 128;
 
-class cobs_uart
+class cobs_uart : public com_interface
 {
 public:
         struct handles
@@ -35,7 +37,7 @@ public:
         void rx_cplt_irq( UART_HandleTypeDef* huart );
         void tx_cplt_irq( UART_HandleTypeDef* huart );
 
-        std::tuple< bool, em::view< std::byte* > > load_message( em::view< std::byte* > data );
+        com_res load_message( em::view< std::byte* > data );
 
         void start();
 

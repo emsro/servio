@@ -1,6 +1,5 @@
 #include "config.hpp"
 #include "drv_interfaces.hpp"
-#include "fw/drv/cobs_uart.hpp"
 #include "fw/drv/leds.hpp"
 #include "globals.hpp"
 
@@ -21,7 +20,7 @@ struct core_drivers
         period_cb_interface*                       period_cb;  // TODO: maybe imrpove naming here?
         pwm_motor_interface*                       motor;
         period_interface*                          period;
-        fw::drv::cobs_uart*                        comms;
+        com_interface*                             comms;
         fw::drv::leds*                             leds;
         em::function_view< void( core_drivers& ) > start_cb;
 
@@ -48,8 +47,8 @@ cfg_map                                   get_config();
 
 void setup_board();
 
-fw::drv::cobs_uart* setup_debug_comms();
-core_drivers        setup_core_drivers();
+com_interface* setup_debug_comms();
+core_drivers   setup_core_drivers();
 
 }  // namespace brd
 
