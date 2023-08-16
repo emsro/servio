@@ -1,8 +1,5 @@
 var annotated_dup =
 [
-    [ "brd", "namespacebrd.html", [
-      [ "core_drivers", "structbrd_1_1core__drivers.html", "structbrd_1_1core__drivers" ]
-    ] ],
     [ "cfg", "namespacecfg.html", [
       [ "payload", "structcfg_1_1payload.html", "structcfg_1_1payload" ]
     ] ],
@@ -64,6 +61,7 @@ var annotated_dup =
     [ "com_res", "drv__interfaces_8hpp.html#structcom__res", "drv__interfaces_8hpp_structcom__res" ],
     [ "control", "classcontrol.html", "classcontrol" ],
     [ "converter", "structconverter.html", "structconverter" ],
+    [ "core_drivers", "structcore__drivers.html", "structcore__drivers" ],
     [ "current_interface", "classcurrent__interface.html", "classcurrent__interface" ],
     [ "driver_interface", "classdriver__interface.html", "classdriver__interface" ],
     [ "indication", "classindication.html", "classindication" ],

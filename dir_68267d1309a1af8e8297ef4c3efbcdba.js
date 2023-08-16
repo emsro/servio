@@ -7,6 +7,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "host", "dir_84e79ac80b913c2fb5b9e077744e9498.html", "dir_84e79ac80b913c2fb5b9e077744e9498" ],
     [ "mtr", "dir_52d5c93d1a27df9f60d01a37fbb92cbd.html", "dir_52d5c93d1a27df9f60d01a37fbb92cbd" ],
     [ "base.hpp", "base_8hpp.html", "base_8hpp" ],
+    [ "brd.hpp", "brd_8hpp.html", "brd_8hpp" ],
     [ "config.hpp", "config_8hpp.html", "config_8hpp" ],
     [ "control.cpp", "control_8cpp.html", null ],
     [ "control.hpp", "control_8hpp.html", [
@@ -14,6 +15,9 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     ] ],
     [ "converter.hpp", "converter_8hpp.html", [
       [ "converter", "structconverter.html", "structconverter" ]
+    ] ],
+    [ "core_drivers.hpp", "core__drivers_8hpp.html", [
+      [ "core_drivers", "structcore__drivers.html", "structcore__drivers" ]
     ] ],
     [ "drv_interfaces.hpp", "drv__interfaces_8hpp.html", "drv__interfaces_8hpp" ],
     [ "gitversion.h", "gitversion_8h.html", "gitversion_8h" ],

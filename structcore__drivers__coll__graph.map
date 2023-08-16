@@ -1,5 +1,5 @@
-<map id="brd::core_drivers" name="brd::core_drivers">
-<area shape="rect" id="node1" title="TODO: maybe move to references and make setup function return an optional?" alt="" coords="481,233,612,260"/>
+<map id="core_drivers" name="core_drivers">
+<area shape="rect" id="node1" title=" " alt="" coords="481,233,584,260"/>
 <area shape="rect" id="node2" href="$classpwm__motor__interface.html" title=" " alt="" coords="181,5,347,32"/>
 <area shape="rect" id="node3" href="$classdriver__interface.html" title=" " alt="" coords="5,133,131,160"/>
 <area shape="rect" id="node7" href="$classvcc__interface.html" title=" " alt="" coords="209,56,319,83"/>

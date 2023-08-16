@@ -23,7 +23,7 @@ var hierarchy =
     [ "control", "classcontrol.html", null ],
     [ "converter", "structconverter.html", null ],
     [ "fw::core", "structfw_1_1core.html", null ],
-    [ "brd::core_drivers", "structbrd_1_1core__drivers.html", null ],
+    [ "core_drivers", "structcore__drivers.html", null ],
     [ "cnv::current_converter", "classcnv_1_1current__converter.html", null ],
     [ "fw::drv::acquisition< N >::detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
