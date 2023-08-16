@@ -92,7 +92,7 @@ consteval cfg_map generate_config()
         return res;
 }
 
-cfg_map get_config()
+cfg_map get_default_config()
 {
         cfg_map res = generate_config();
 

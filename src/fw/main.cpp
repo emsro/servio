@@ -1,3 +1,5 @@
+#include "brd.hpp"
+#include "core_drivers.hpp"
 #include "fw/board.hpp"
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/core.hpp"
@@ -13,13 +15,13 @@ int main()
 
         brd::setup_board();
 
-        cfg_map cfg = brd::get_config();
+        cfg_map cfg = brd::get_default_config();
 
         em::view pages = brd::get_persistent_pages();
 
         cfg::payload last_cfg_payload = load_persistent_config( pages, cfg );
 
-        brd::core_drivers cdrv = brd::setup_core_drivers();
+        core_drivers cdrv = brd::setup_core_drivers();
 
         if ( cdrv.any_uninitialized() ) {
                 fw::stop_exec();

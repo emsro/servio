@@ -1,5 +1,5 @@
-#include "fw/board.hpp"
-
+#include "brd.hpp"
+#include "core_drivers.hpp"
 #include "fw/drv/acquisition.hpp"
 #include "fw/drv/clock.hpp"
 #include "fw/drv/cobs_uart.hpp"

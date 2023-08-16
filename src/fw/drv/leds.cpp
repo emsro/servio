@@ -19,8 +19,8 @@ void leds::force_red_led()
 
 void leds::start()
 {
-        HAL_TIM_PWM_Start( &h_.tim, h_.yellow_channel );
-        HAL_TIM_PWM_Start( &h_.tim, h_.green_channel );
+        std::ignore = HAL_TIM_PWM_Start( &h_.tim, h_.yellow_channel );
+        std::ignore = HAL_TIM_PWM_Start( &h_.tim, h_.green_channel );
 }
 
 void leds::update( const leds_vals& leds )
