@@ -1,11 +1,12 @@
 <map id="src/fw/drv/cobs_uart.cpp" name="src/fw/drv/cobs_uart.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="569,5,747,32"/>
-<area shape="rect" id="node2" href="$cobs__uart_8hpp.html" title=" " alt="" coords="421,80,578,107"/>
-<area shape="rect" id="node7" href="$util_8hpp.html" title=" " alt="" coords="771,80,862,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,183,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="207,155,384,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="409,155,590,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="615,162,749,189"/>
-<area shape="rect" id="node8" title=" " alt="" coords="774,162,859,189"/>
-<area shape="rect" id="node9" title=" " alt="" coords="883,162,950,189"/>
+<area shape="rect" id="node1" title=" " alt="" coords="634,5,813,32"/>
+<area shape="rect" id="node2" href="$cobs__uart_8hpp.html" title=" " alt="" coords="486,80,643,107"/>
+<area shape="rect" id="node8" href="$util_8hpp.html" title=" " alt="" coords="938,80,1029,107"/>
+<area shape="rect" id="node3" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="5,162,148,189"/>
+<area shape="rect" id="node4" title=" " alt="" coords="172,155,349,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="373,155,551,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="575,155,757,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="781,162,916,189"/>
+<area shape="rect" id="node9" title=" " alt="" coords="941,162,1026,189"/>
+<area shape="rect" id="node10" title=" " alt="" coords="1050,162,1117,189"/>
 </map>

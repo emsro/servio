@@ -7,7 +7,7 @@ var classfw_1_1drv_1_1cobs__uart =
     [ "cobs_uart", "classfw_1_1drv_1_1cobs__uart.html#a29644edb1c40f72ffaf8ccdd6b8c1e01", null ],
     [ "cobs_uart", "classfw_1_1drv_1_1cobs__uart.html#a825311352fc5f88e015740b955fa60b8", null ],
     [ "cobs_uart", "classfw_1_1drv_1_1cobs__uart.html#ab003b5adf6390c0c4fbec93bdebb6be8", null ],
-    [ "load_message", "classfw_1_1drv_1_1cobs__uart.html#a56653395f408886d3758f0c6092bd187", null ],
+    [ "load_message", "classfw_1_1drv_1_1cobs__uart.html#a899664a30e74ffe78cc2fa34e488a7b8", null ],
     [ "operator=", "classfw_1_1drv_1_1cobs__uart.html#a9efc4669f3a93a218cdde1987243d146", null ],
     [ "operator=", "classfw_1_1drv_1_1cobs__uart.html#ac2dbb70280abe604ce9ae81e1e7267da", null ],
     [ "rx_cplt_irq", "classfw_1_1drv_1_1cobs__uart.html#a66459f05a2a6376a7c58768a1b54746f", null ],

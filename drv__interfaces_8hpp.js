@@ -4,6 +4,11 @@ var drv__interfaces_8hpp =
     [ "value_cb_interface", "classvalue__cb__interface.html", "classvalue__cb__interface" ],
     [ "period_cb_interface", "classperiod__cb__interface.html", "classperiod__cb__interface" ],
     [ "driver_interface", "classdriver__interface.html", "classdriver__interface" ],
+    [ "com_res", "drv__interfaces_8hpp.html#structcom__res", [
+      [ "success", "drv__interfaces_8hpp.html#a61ae0100cc7a35254e22cc1f707add46", null ],
+      [ "used_data", "drv__interfaces_8hpp.html#a76a63a44af9fe036b46b04bca13e9a67", null ]
+    ] ],
+    [ "com_interface", "classcom__interface.html", "classcom__interface" ],
     [ "clk_interface", "classclk__interface.html", "classclk__interface" ],
     [ "period_interface", "classperiod__interface.html", "classperiod__interface" ],
     [ "pwm_motor_interface", "classpwm__motor__interface.html", "classpwm__motor__interface" ],

@@ -14,7 +14,10 @@ var hierarchy =
       [ "fw::drv::clock", "classfw_1_1drv_1_1clock.html", null ]
     ] ],
     [ "host::cobs_port", "structhost_1_1cobs__port.html", null ],
-    [ "fw::drv::cobs_uart", "classfw_1_1drv_1_1cobs__uart.html", null ],
+    [ "com_interface", "classcom__interface.html", [
+      [ "fw::drv::cobs_uart", "classfw_1_1drv_1_1cobs__uart.html", null ]
+    ] ],
+    [ "com_res", "drv__interfaces_8hpp.html#structcom__res", null ],
     [ "host::common_cli", "structhost_1_1common__cli.html", null ],
     [ "ctl::config", "namespacectl.html#structctl_1_1config", null ],
     [ "control", "classcontrol.html", null ],

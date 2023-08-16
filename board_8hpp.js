@@ -6,5 +6,5 @@ var board_8hpp =
     [ "install_stop_callback", "board_8hpp.html#a46e4966525b27a43c27be5d063696e1a", null ],
     [ "setup_board", "board_8hpp.html#a72ff84e491fb17723a0a882bcb62918e", null ],
     [ "setup_core_drivers", "board_8hpp.html#a002f07411dacd8fe0b24e9e7fc66001a", null ],
-    [ "setup_debug_comms", "board_8hpp.html#a95645820be98cf4b7fc316558ab0746a", null ]
+    [ "setup_debug_comms", "board_8hpp.html#a8e87d50631b2133c43828a38d73ec46f", null ]
 ];
