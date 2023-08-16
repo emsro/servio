@@ -53,7 +53,9 @@ var hierarchy =
     [ "fw::drv::hbridge::handles", "classfw_1_1drv_1_1hbridge.html#structfw_1_1drv_1_1hbridge_1_1handles", null ],
     [ "fw::drv::leds::handles", "classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles", null ],
     [ "indication", "classindication.html", null ],
-    [ "fw::drv::leds", "classfw_1_1drv_1_1leds.html", null ],
+    [ "leds_interface", "classleds__interface.html", [
+      [ "fw::drv::leds", "classfw_1_1drv_1_1leds.html", null ]
+    ] ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", null ],
     [ "ctl::linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", null ],
     [ "metrics", "classmetrics.html", null ],

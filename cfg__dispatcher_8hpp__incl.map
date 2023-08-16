@@ -1,12 +1,11 @@
 <map id="src/fw/cfg_dispatcher.hpp" name="src/fw/cfg_dispatcher.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="137,5,324,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="127,80,216,107"/>
-<area shape="rect" id="node3" href="$core_8hpp.html" title=" " alt="" coords="240,80,338,107"/>
-<area shape="rect" id="node4" href="$control_8hpp.html" title=" " alt="" coords="23,229,118,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="134,5,321,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="124,80,214,107"/>
+<area shape="rect" id="node3" href="$core_8hpp.html" title=" " alt="" coords="238,80,335,107"/>
+<area shape="rect" id="node4" href="$control_8hpp.html" title=" " alt="" coords="42,229,136,256"/>
 <area shape="rect" id="node5" href="$callbacks_8hpp.html" title=" " alt="" coords="24,155,154,181"/>
-<area shape="rect" id="node6" href="$metrics_8hpp.html" title=" " alt="" coords="142,229,241,256"/>
-<area shape="rect" id="node7" href="$leds_8hpp.html" title=" " alt="" coords="424,155,546,181"/>
-<area shape="rect" id="node8" href="$monitor_8hpp.html" title=" " alt="" coords="230,155,348,181"/>
-<area shape="rect" id="node9" href="$indication_8hpp.html" title=" " alt="" coords="297,229,412,256"/>
-<area shape="rect" id="node10" href="$util_8hpp.html" title=" " alt="" coords="570,155,661,181"/>
+<area shape="rect" id="node6" href="$metrics_8hpp.html" title=" " alt="" coords="184,229,282,256"/>
+<area shape="rect" id="node7" href="$monitor_8hpp.html" title=" " alt="" coords="179,155,298,181"/>
+<area shape="rect" id="node8" href="$indication_8hpp.html" title=" " alt="" coords="317,229,432,256"/>
+<area shape="rect" id="node9" href="$util_8hpp.html" title=" " alt="" coords="424,155,514,181"/>
 </map>

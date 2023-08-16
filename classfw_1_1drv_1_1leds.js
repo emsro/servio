@@ -10,7 +10,7 @@ var classfw_1_1drv_1_1leds =
       [ "yellow_channel", "classfw_1_1drv_1_1leds.html#a469231ede0a8a84e894695a5d7e2c066", null ]
     ] ],
     [ "leds", "classfw_1_1drv_1_1leds.html#ac6debb7ddbd94b96fca19053eeeacfc6", null ],
-    [ "force_red_led", "classfw_1_1drv_1_1leds.html#a48314c81bf6588cce32880964ad975c7", null ],
+    [ "force_red_led", "classfw_1_1drv_1_1leds.html#a48f0b62d250bad03766510a85d493fac", null ],
     [ "setup", "classfw_1_1drv_1_1leds.html#a85338d2b39bbcda198af2cdecf772bea", null ],
     [ "start", "classfw_1_1drv_1_1leds.html#ac51161a6b5d5a8d7c1f85c8c8e4d6e37", null ],
     [ "update", "classfw_1_1drv_1_1leds.html#accff29bb7d50c89396e048db4eca917e", null ]

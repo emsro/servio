@@ -5,7 +5,7 @@ var structbrd_1_1core__drivers =
     [ "clock", "structbrd_1_1core__drivers.html#a147ba78b9d4f507148f491a4737f8206", null ],
     [ "comms", "structbrd_1_1core__drivers.html#ad228f1c742691706b5331afaa4b353b6", null ],
     [ "current", "structbrd_1_1core__drivers.html#a08abd0ec7c9db9a8933112d6b6dd8b9a", null ],
-    [ "leds", "structbrd_1_1core__drivers.html#a66bf7751771b67fe4ea7498c42665938", null ],
+    [ "leds", "structbrd_1_1core__drivers.html#ac98c2c92e209d17cd1429cbdf5c3bd17", null ],
     [ "motor", "structbrd_1_1core__drivers.html#a2317d153142d23be56c3d764c918fd8d", null ],
     [ "period", "structbrd_1_1core__drivers.html#a48a514ba5e7b7d8587ac3f9d7a0c71b3", null ],
     [ "period_cb", "structbrd_1_1core__drivers.html#a83d4b8e95eb635aff3b2b7632e02540b", null ],

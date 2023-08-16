@@ -88,67 +88,70 @@ $(document).ready(function(){initNavTree('leds_8hpp_source.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 <a href="leds_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">base.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stm32g4xx_hal.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>em = emlabcpp;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw_1_1drv.html">fw::drv</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfw_1_1drv_1_1leds.html">leds</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html">   17</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">handles</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#ae149868d7aede7a0eab15992cae88b02">   19</a></span>&#160;                GPIO_TypeDef* <a class="code" href="classfw_1_1drv_1_1leds.html#ae149868d7aede7a0eab15992cae88b02">red_peripheral</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a126d1b92687cb5af30c1130b2e9313b8">   20</a></span>&#160;                uint16_t      <a class="code" href="classfw_1_1drv_1_1leds.html#a126d1b92687cb5af30c1130b2e9313b8">red_pin</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a57757fc7fbc905f3f5613d0664743093">   22</a></span>&#160;                GPIO_TypeDef* <a class="code" href="classfw_1_1drv_1_1leds.html#a57757fc7fbc905f3f5613d0664743093">blue_peripheral</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a4fa6389783cf8f977762ec5831f4450c">   23</a></span>&#160;                uint16_t      <a class="code" href="classfw_1_1drv_1_1leds.html#a4fa6389783cf8f977762ec5831f4450c">blue_pin</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a20d4ec26dff4a79b88c299e83c16d51e">   25</a></span>&#160;                TIM_HandleTypeDef <a class="code" href="classfw_1_1drv_1_1leds.html#a20d4ec26dff4a79b88c299e83c16d51e">tim</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a469231ede0a8a84e894695a5d7e2c066">   27</a></span>&#160;                uint32_t <a class="code" href="classfw_1_1drv_1_1leds.html#a469231ede0a8a84e894695a5d7e2c066">yellow_channel</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a9e8a5be7dcc2e89850e6388805b63931">   28</a></span>&#160;                uint32_t <a class="code" href="classfw_1_1drv_1_1leds.html#a9e8a5be7dcc2e89850e6388805b63931">green_channel</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#ac6debb7ddbd94b96fca19053eeeacfc6">   31</a></span>&#160;        <a class="code" href="classfw_1_1drv_1_1leds.html#ac6debb7ddbd94b96fca19053eeeacfc6">leds</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classfw_1_1drv_1_1leds.html#a85338d2b39bbcda198af2cdecf772bea">setup</a>( em::function_view&lt; <span class="keywordtype">bool</span>( <a class="code" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">handles</a>&amp; ) &gt; setup_f );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1leds.html#ac51161a6b5d5a8d7c1f85c8c8e4d6e37">start</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1leds.html#a48314c81bf6588cce32880964ad975c7">force_red_led</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1leds.html#accff29bb7d50c89396e048db4eca917e">update</a>( <span class="keyword">const</span> <a class="code" href="base_8hpp.html#structleds__vals">leds_vals</a>&amp; <a class="code" href="classfw_1_1drv_1_1leds.html">leds</a> );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">bool</span>    red_forced_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">handles</a> h_;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}  <span class="comment">// namespace fw::drv</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stm32g4xx_hal.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>em = emlabcpp;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefw_1_1drv.html">fw::drv</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfw_1_1drv_1_1leds.html">leds</a> : <span class="keyword">public</span> <a class="code" href="classleds__interface.html">leds_interface</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html">   18</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">handles</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#ae149868d7aede7a0eab15992cae88b02">   20</a></span>&#160;                GPIO_TypeDef* <a class="code" href="classfw_1_1drv_1_1leds.html#ae149868d7aede7a0eab15992cae88b02">red_peripheral</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a126d1b92687cb5af30c1130b2e9313b8">   21</a></span>&#160;                uint16_t      <a class="code" href="classfw_1_1drv_1_1leds.html#a126d1b92687cb5af30c1130b2e9313b8">red_pin</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a57757fc7fbc905f3f5613d0664743093">   23</a></span>&#160;                GPIO_TypeDef* <a class="code" href="classfw_1_1drv_1_1leds.html#a57757fc7fbc905f3f5613d0664743093">blue_peripheral</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a4fa6389783cf8f977762ec5831f4450c">   24</a></span>&#160;                uint16_t      <a class="code" href="classfw_1_1drv_1_1leds.html#a4fa6389783cf8f977762ec5831f4450c">blue_pin</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a20d4ec26dff4a79b88c299e83c16d51e">   26</a></span>&#160;                TIM_HandleTypeDef <a class="code" href="classfw_1_1drv_1_1leds.html#a20d4ec26dff4a79b88c299e83c16d51e">tim</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a469231ede0a8a84e894695a5d7e2c066">   28</a></span>&#160;                uint32_t <a class="code" href="classfw_1_1drv_1_1leds.html#a469231ede0a8a84e894695a5d7e2c066">yellow_channel</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#a9e8a5be7dcc2e89850e6388805b63931">   29</a></span>&#160;                uint32_t <a class="code" href="classfw_1_1drv_1_1leds.html#a9e8a5be7dcc2e89850e6388805b63931">green_channel</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classfw_1_1drv_1_1leds.html#ac6debb7ddbd94b96fca19053eeeacfc6">   32</a></span>&#160;        <a class="code" href="classfw_1_1drv_1_1leds.html#ac6debb7ddbd94b96fca19053eeeacfc6">leds</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classfw_1_1drv_1_1leds.html#a85338d2b39bbcda198af2cdecf772bea">setup</a>( em::function_view&lt; <span class="keywordtype">bool</span>( <a class="code" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">handles</a>&amp; ) &gt; setup_f );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1leds.html#ac51161a6b5d5a8d7c1f85c8c8e4d6e37">start</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1leds.html#a48f0b62d250bad03766510a85d493fac">force_red_led</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1leds.html#accff29bb7d50c89396e048db4eca917e">update</a>( <span class="keyword">const</span> <a class="code" href="base_8hpp.html#structleds__vals">leds_vals</a>&amp; <a class="code" href="classfw_1_1drv_1_1leds.html">leds</a> );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">bool</span>    red_forced_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">handles</a> h_;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}  <span class="comment">// namespace fw::drv</span></div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="abase_8hpp_html_structleds__vals"><div class="ttname"><a href="base_8hpp.html#structleds__vals">leds_vals</a></div><div class="ttdef"><b>Definition:</b> base.hpp:56</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1leds_html"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a></div><div class="ttdef"><b>Definition:</b> leds.hpp:15</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a126d1b92687cb5af30c1130b2e9313b8"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a126d1b92687cb5af30c1130b2e9313b8">fw::drv::leds::handles::red_pin</a></div><div class="ttdeci">uint16_t red_pin</div><div class="ttdef"><b>Definition:</b> leds.hpp:20</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a20d4ec26dff4a79b88c299e83c16d51e"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a20d4ec26dff4a79b88c299e83c16d51e">fw::drv::leds::handles::tim</a></div><div class="ttdeci">TIM_HandleTypeDef tim</div><div class="ttdef"><b>Definition:</b> leds.hpp:25</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a469231ede0a8a84e894695a5d7e2c066"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a469231ede0a8a84e894695a5d7e2c066">fw::drv::leds::handles::yellow_channel</a></div><div class="ttdeci">uint32_t yellow_channel</div><div class="ttdef"><b>Definition:</b> leds.hpp:27</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a48314c81bf6588cce32880964ad975c7"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a48314c81bf6588cce32880964ad975c7">fw::drv::leds::force_red_led</a></div><div class="ttdeci">void force_red_led() const</div><div class="ttdef"><b>Definition:</b> leds.cpp:15</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a4fa6389783cf8f977762ec5831f4450c"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a4fa6389783cf8f977762ec5831f4450c">fw::drv::leds::handles::blue_pin</a></div><div class="ttdeci">uint16_t blue_pin</div><div class="ttdef"><b>Definition:</b> leds.hpp:23</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a57757fc7fbc905f3f5613d0664743093"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a57757fc7fbc905f3f5613d0664743093">fw::drv::leds::handles::blue_peripheral</a></div><div class="ttdeci">GPIO_TypeDef * blue_peripheral</div><div class="ttdef"><b>Definition:</b> leds.hpp:22</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1leds_html"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a></div><div class="ttdef"><b>Definition:</b> leds.hpp:16</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a126d1b92687cb5af30c1130b2e9313b8"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a126d1b92687cb5af30c1130b2e9313b8">fw::drv::leds::handles::red_pin</a></div><div class="ttdeci">uint16_t red_pin</div><div class="ttdef"><b>Definition:</b> leds.hpp:21</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a20d4ec26dff4a79b88c299e83c16d51e"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a20d4ec26dff4a79b88c299e83c16d51e">fw::drv::leds::handles::tim</a></div><div class="ttdeci">TIM_HandleTypeDef tim</div><div class="ttdef"><b>Definition:</b> leds.hpp:26</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a469231ede0a8a84e894695a5d7e2c066"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a469231ede0a8a84e894695a5d7e2c066">fw::drv::leds::handles::yellow_channel</a></div><div class="ttdeci">uint32_t yellow_channel</div><div class="ttdef"><b>Definition:</b> leds.hpp:28</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a48f0b62d250bad03766510a85d493fac"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a48f0b62d250bad03766510a85d493fac">fw::drv::leds::force_red_led</a></div><div class="ttdeci">void force_red_led()</div><div class="ttdef"><b>Definition:</b> leds.cpp:15</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a4fa6389783cf8f977762ec5831f4450c"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a4fa6389783cf8f977762ec5831f4450c">fw::drv::leds::handles::blue_pin</a></div><div class="ttdeci">uint16_t blue_pin</div><div class="ttdef"><b>Definition:</b> leds.hpp:24</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a57757fc7fbc905f3f5613d0664743093"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a57757fc7fbc905f3f5613d0664743093">fw::drv::leds::handles::blue_peripheral</a></div><div class="ttdeci">GPIO_TypeDef * blue_peripheral</div><div class="ttdef"><b>Definition:</b> leds.hpp:23</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a85338d2b39bbcda198af2cdecf772bea"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a85338d2b39bbcda198af2cdecf772bea">fw::drv::leds::setup</a></div><div class="ttdeci">bool setup(em::function_view&lt; bool(handles &amp;) &gt; setup_f)</div><div class="ttdef"><b>Definition:</b> leds.cpp:10</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a9e8a5be7dcc2e89850e6388805b63931"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a9e8a5be7dcc2e89850e6388805b63931">fw::drv::leds::handles::green_channel</a></div><div class="ttdeci">uint32_t green_channel</div><div class="ttdef"><b>Definition:</b> leds.hpp:28</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_a9e8a5be7dcc2e89850e6388805b63931"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#a9e8a5be7dcc2e89850e6388805b63931">fw::drv::leds::handles::green_channel</a></div><div class="ttdeci">uint32_t green_channel</div><div class="ttdef"><b>Definition:</b> leds.hpp:29</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1leds_html_ac51161a6b5d5a8d7c1f85c8c8e4d6e37"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#ac51161a6b5d5a8d7c1f85c8c8e4d6e37">fw::drv::leds::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> leds.cpp:20</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1leds_html_ac6debb7ddbd94b96fca19053eeeacfc6"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#ac6debb7ddbd94b96fca19053eeeacfc6">fw::drv::leds::leds</a></div><div class="ttdeci">leds()=default</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1leds_html_accff29bb7d50c89396e048db4eca917e"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#accff29bb7d50c89396e048db4eca917e">fw::drv::leds::update</a></div><div class="ttdeci">void update(const leds_vals &amp;leds)</div><div class="ttdef"><b>Definition:</b> leds.cpp:26</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_ae149868d7aede7a0eab15992cae88b02"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#ae149868d7aede7a0eab15992cae88b02">fw::drv::leds::handles::red_peripheral</a></div><div class="ttdeci">GPIO_TypeDef * red_peripheral</div><div class="ttdef"><b>Definition:</b> leds.hpp:19</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_structfw_1_1drv_1_1leds_1_1handles"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">fw::drv::leds::handles</a></div><div class="ttdef"><b>Definition:</b> leds.hpp:18</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_ae149868d7aede7a0eab15992cae88b02"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#ae149868d7aede7a0eab15992cae88b02">fw::drv::leds::handles::red_peripheral</a></div><div class="ttdeci">GPIO_TypeDef * red_peripheral</div><div class="ttdef"><b>Definition:</b> leds.hpp:20</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1leds_html_structfw_1_1drv_1_1leds_1_1handles"><div class="ttname"><a href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">fw::drv::leds::handles</a></div><div class="ttdef"><b>Definition:</b> leds.hpp:19</div></div>
+<div class="ttc" id="aclassleds__interface_html"><div class="ttname"><a href="classleds__interface.html">leds_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:76</div></div>
+<div class="ttc" id="adrv__interfaces_8hpp_html"><div class="ttname"><a href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a></div></div>
 <div class="ttc" id="anamespacefw_1_1drv_html"><div class="ttname"><a href="namespacefw_1_1drv.html">fw::drv</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -156,7 +159,7 @@ $(document).ready(function(){initNavTree('leds_8hpp_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="leds_8hpp.html">leds.hpp</a></li>
-    <li class="footer">Generated on Wed Aug 16 2023 20:42:30 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Aug 16 2023 21:09:37 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

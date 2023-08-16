@@ -9,6 +9,7 @@ var drv__interfaces_8hpp =
       [ "used_data", "drv__interfaces_8hpp.html#a76a63a44af9fe036b46b04bca13e9a67", null ]
     ] ],
     [ "com_interface", "classcom__interface.html", "classcom__interface" ],
+    [ "leds_interface", "classleds__interface.html", "classleds__interface" ],
     [ "clk_interface", "classclk__interface.html", "classclk__interface" ],
     [ "period_interface", "classperiod__interface.html", "classperiod__interface" ],
     [ "pwm_motor_interface", "classpwm__motor__interface.html", "classpwm__motor__interface" ],

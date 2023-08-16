@@ -28,7 +28,7 @@ var namespacefw =
     [ "handle_message_packet", "namespacefw.html#aa4186d649ed945108aedc1e9f0c6a16b", null ],
     [ "handle_set_config", "namespacefw.html#ae47759362df98aea1a40bfcb71d7536a", null ],
     [ "handle_set_mode", "namespacefw.html#a57c7860f5c702e7a1129a8dc07859c70", null ],
-    [ "install_stop_callback", "namespacefw.html#a46e4966525b27a43c27be5d063696e1a", null ],
+    [ "install_stop_callback", "namespacefw.html#a2087d37db7f763e7f33ab3c6598c6369", null ],
     [ "map_cfg", "namespacefw.html#adc468c13da3b6d289cf87dc34806b356", null ],
     [ "multistart", "namespacefw.html#ac05d95b2aaa02b49156b63e48e57b69a", null ],
     [ "operator<<", "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e", null ],

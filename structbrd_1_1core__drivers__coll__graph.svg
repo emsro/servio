@@ -143,17 +143,17 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classfw_1_1drv_1_1leds.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="157,-76.5 157,-95.5 231,-95.5 231,-76.5 157,-76.5"/>
-<text text-anchor="middle" x="194" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw::drv::leds</text>
+<g id="a_node5"><a xlink:href="classleds__interface.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="151,-76.5 151,-95.5 237,-95.5 237,-76.5 151,-76.5"/>
+<text text-anchor="middle" x="194" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">leds_interface</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node1 -->
 <g id="edge4" class="edge">
 <title>Node5&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M241.08,-91.24C270.42,-95.98 308.51,-104.81 339,-121 363.35,-133.93 385.74,-157.88 397.13,-171.28"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="241.5,-87.76 231.09,-89.72 240.45,-94.68 241.5,-87.76"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M247.43,-92.3C275.77,-97.26 310.67,-105.96 339,-121 363.35,-133.93 385.74,-157.88 397.13,-171.28"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="247.74,-88.81 237.31,-90.64 246.61,-95.72 247.74,-88.81"/>
 <text text-anchor="middle" x="307" y="-124" font-family="Helvetica,sans-Serif" font-size="10.00"> leds</text>
 </g>
 <!-- Node6 -->

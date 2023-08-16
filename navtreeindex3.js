@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"scaled_8hpp_source.html":[13,0,1,19],
+"serial_8cpp.html":[13,0,1,4,6],
+"serial_8cpp.html#a373cb37ec24fa4d2cea789e37beaa34d":[13,0,1,4,6,13],
+"serial_8cpp.html#a5ca34f82be162a6aa6232ac7e3109260":[13,0,1,4,6,0],
+"serial_8cpp.html#a5e8732c807fd343891a41fa568e7f31a":[13,0,1,4,6,16],
 "serial_8cpp.html#a644fde8b6f79a38ff95953d6ac1bb6cf":[13,0,1,4,6,9],
 "serial_8cpp.html#a69d6ccb3e5043c62e5736fdf95b4f3a0":[13,0,1,4,6,17],
 "serial_8cpp.html#a78a7968917c35688e7d3d4edd60a4058":[13,0,1,4,6,5],
@@ -171,10 +176,10 @@ var NAVTREEINDEX3 =
 "structbrd_1_1core__drivers.html#a2317d153142d23be56c3d764c918fd8d":[12,0,0,0,6],
 "structbrd_1_1core__drivers.html#a3a59d47370a547979a839cfde6e07537":[12,0,0,0,9],
 "structbrd_1_1core__drivers.html#a48a514ba5e7b7d8587ac3f9d7a0c71b3":[12,0,0,0,7],
-"structbrd_1_1core__drivers.html#a66bf7751771b67fe4ea7498c42665938":[12,0,0,0,5],
 "structbrd_1_1core__drivers.html#a83d4b8e95eb635aff3b2b7632e02540b":[12,0,0,0,8],
 "structbrd_1_1core__drivers.html#a9a818bb9231b506fce7f55ac60e398d9":[12,0,0,0,10],
 "structbrd_1_1core__drivers.html#ac7954ebab221d784da31fdb384968255":[12,0,0,0,11],
+"structbrd_1_1core__drivers.html#ac98c2c92e209d17cd1429cbdf5c3bd17":[12,0,0,0,5],
 "structbrd_1_1core__drivers.html#ad228f1c742691706b5331afaa4b353b6":[12,0,0,0,3],
 "structbrd_1_1core__drivers.html#ada8d3f72ce5d682d0f226c83e180526f":[12,0,0,0,1],
 "structbrd_1_1core__drivers.html#adae94e3a4f710464423964f019ce13a4":[12,0,0,0,12],
@@ -209,11 +214,11 @@ var NAVTREEINDEX3 =
 "structfw_1_1cfg__dispatcher.html#afabdb6e774eadc76d457a9ea20c526ef":[12,0,4,3,1],
 "structfw_1_1core.html":[12,0,4,4],
 "structfw_1_1core.html#a11846b173a15cd9a40d4ad5e4962d877":[12,0,4,4,4],
-"structfw_1_1core.html#a57543933eed83d7ed0276599df4337a1":[12,0,4,4,1],
 "structfw_1_1core.html#a6d241e77bb00e9b86927ee74603a8b4a":[12,0,4,4,5],
 "structfw_1_1core.html#abc566d8179ef5cb93fea9ac9d3fe320e":[12,0,4,4,2],
 "structfw_1_1core.html#aca40db7c380fc522ab0c06513299c37b":[12,0,4,4,0],
 "structfw_1_1core.html#acb979d8e743e607e67107b716bd218d4":[12,0,4,4,6],
+"structfw_1_1core.html#ada23a2334c3c9f97af5201aedcea0803":[12,0,4,4,1],
 "structfw_1_1core.html#aeac12e186ecf2f435927ffa1b905c26c":[12,0,4,4,3],
 "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html":[12,0,4,0,1,0],
 "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a09378c573aec048a9851f0a27521820f":[12,0,4,0,1,0,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX3 =
 "structfw_1_1standard__callbacks.html#ae64b77e1162ca5a6357f97aa9682bf1b":[12,0,4,5,3],
 "structhost_1_1cobs__port.html":[12,0,5,0],
 "structhost_1_1cobs__port.html#a2dc6e749750ebacbe674611e1c3d08bb":[12,0,5,0,0],
-"structhost_1_1cobs__port.html#a41b3a139c6d26709c43d4aa52edd8b10":[12,0,5,0,1],
-"structhost_1_1cobs__port.html#a474f7e7c9b5aad02965c83ae728f7fcd":[12,0,5,0,2],
-"structhost_1_1cobs__port.html#a83f7d603af542096dd102b76048285f4":[12,0,5,0,3],
-"structhost_1_1cobs__port.html#a87f97a9ff41290fec2db57502fa1161e":[12,0,5,0,4],
-"structhost_1_1common__cli.html":[12,0,5,1],
-"structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924":[12,0,5,1,3]
+"structhost_1_1cobs__port.html#a41b3a139c6d26709c43d4aa52edd8b10":[12,0,5,0,1]
 };

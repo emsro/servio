@@ -67,6 +67,7 @@ var annotated_dup =
     [ "current_interface", "classcurrent__interface.html", "classcurrent__interface" ],
     [ "driver_interface", "classdriver__interface.html", "classdriver__interface" ],
     [ "indication", "classindication.html", "classindication" ],
+    [ "leds_interface", "classleds__interface.html", "classleds__interface" ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", "base_8hpp_structleds__vals" ],
     [ "metrics", "classmetrics.html", "classmetrics" ],
     [ "mode_opts", "host_2main_8cpp.html#structmode__opts", "host_2main_8cpp_structmode__opts" ],
