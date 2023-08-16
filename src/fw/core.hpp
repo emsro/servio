@@ -1,6 +1,5 @@
 #include "control.hpp"
 #include "fw/callbacks.hpp"
-#include "fw/drv/leds.hpp"
 #include "fw/monitor.hpp"
 #include "fw/util.hpp"
 #include "indication.hpp"
@@ -34,7 +33,7 @@ struct core
                 ind.tick( clk.get_us() );
         }
 
-        void tick( drv::leds& leds, microseconds now )
+        void tick( leds_interface& leds, microseconds now )
         {
                 mon.tick( now );
                 ind.tick( now );

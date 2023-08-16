@@ -2,6 +2,7 @@
 #include "fw/cfg_dispatcher.hpp"
 #include "fw/conversion.hpp"
 
+#include <emlabcpp/experimental/function_view.h>
 #include <io.pb.h>
 
 #pragma once

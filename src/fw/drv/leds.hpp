@@ -1,4 +1,5 @@
 #include "base.hpp"
+#include "drv_interfaces.hpp"
 
 #include <cstdint>
 #include <emlabcpp/experimental/function_view.h>
@@ -11,7 +12,7 @@ namespace em = emlabcpp;
 namespace fw::drv
 {
 
-class leds
+class leds : public leds_interface
 {
 public:
         struct handles
@@ -34,7 +35,7 @@ public:
 
         void start();
 
-        void force_red_led() const;
+        void force_red_led();
 
         void update( const leds_vals& leds );
 

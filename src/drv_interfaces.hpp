@@ -72,6 +72,15 @@ public:
         virtual ~com_interface()                                    = default;
 };
 
+class leds_interface
+{
+public:
+        virtual void start()                         = 0;
+        virtual void force_red_led()                 = 0;
+        virtual void update( const leds_vals& leds ) = 0;
+        virtual ~leds_interface()                    = default;
+};
+
 class clk_interface
 {
 public:

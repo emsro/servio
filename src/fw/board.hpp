@@ -1,7 +1,8 @@
 #include "config.hpp"
 #include "drv_interfaces.hpp"
-#include "fw/drv/leds.hpp"
 #include "globals.hpp"
+
+#include <emlabcpp/experimental/function_view.h>
 
 #pragma once
 
@@ -21,7 +22,7 @@ struct core_drivers
         pwm_motor_interface*                       motor;
         period_interface*                          period;
         com_interface*                             comms;
-        fw::drv::leds*                             leds;
+        leds_interface*                            leds;
         em::function_view< void( core_drivers& ) > start_cb;
 
         auto tie()
@@ -54,7 +55,7 @@ core_drivers   setup_core_drivers();
 
 namespace fw
 {
-inline void install_stop_callback( drv::leds* leds_ptr )
+inline void install_stop_callback( leds_interface* leds_ptr )
 {
         if ( leds_ptr != nullptr ) {
                 STOP_CALLBACK = [leds_ptr] {
