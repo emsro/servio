@@ -11,8 +11,7 @@ var annotated_dup =
     ] ],
     [ "ctl", "namespacectl.html", [
       [ "config", "namespacectl.html#structctl_1_1config", "namespacectl_structctl_1_1config_dup" ],
-      [ "linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", "structctl_1_1linear__transition__regulator" ],
-      [ "pid_module", "classctl_1_1pid__module.html", "classctl_1_1pid__module" ]
+      [ "linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", "structctl_1_1linear__transition__regulator" ]
     ] ],
     [ "fw", "namespacefw.html", [
       [ "drv", "namespacefw_1_1drv.html", [
@@ -29,7 +28,6 @@ var annotated_dup =
         [ "hbridge", "classfw_1_1drv_1_1hbridge.html", "classfw_1_1drv_1_1hbridge" ],
         [ "leds", "classfw_1_1drv_1_1leds.html", "classfw_1_1drv_1_1leds" ]
       ] ],
-      [ "cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", "structfw_1_1cfg__dispatcher" ],
       [ "dispatcher", "namespacefw.html#structfw_1_1dispatcher", "namespacefw_structfw_1_1dispatcher_dup" ],
       [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ]
     ] ],
@@ -49,6 +47,7 @@ var annotated_dup =
       [ "posvel_kalman", "structmtr_1_1posvel__kalman.html", "structmtr_1_1posvel__kalman" ]
     ] ],
     [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", "classadc__detailed__cb__interface" ],
+    [ "cfg_dispatcher", "structcfg__dispatcher.html", "structcfg__dispatcher" ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", "config_8hpp_structcfg__keyval" ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", "host_2main_8cpp_structcfg__opts" ],
     [ "clk_interface", "classclk__interface.html", "classclk__interface" ],

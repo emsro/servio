@@ -1,10 +1,8 @@
 var namespacefw =
 [
     [ "drv", "namespacefw_1_1drv.html", "namespacefw_1_1drv" ],
-    [ "cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", "structfw_1_1cfg__dispatcher" ],
     [ "dispatcher", "namespacefw.html#structfw_1_1dispatcher", "namespacefw_structfw_1_1dispatcher_dup" ],
     [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
-    [ "handler", "namespacefw.html#a1bbd86673200da7abcf665f3e7f02f91", null ],
     [ "copy_string_to", "namespacefw.html#aa9827b3a052ca9db4d230c0c439f7319", null ],
     [ "decode", "namespacefw.html#a8316fa0b789f65911005cdb427b8cab0", null ],
     [ "decode", "namespacefw.html#af8a9990f215a0f592e13e70469c1cf48", null ],
@@ -27,6 +25,5 @@ var namespacefw =
     [ "operator<<", "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e", null ],
     [ "process_message", "namespacefw.html#a412d66629b1ab2256779303bc71b949d", null ],
     [ "stop_exec", "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021", null ],
-    [ "store_persistent_config", "namespacefw.html#a395c6a8eff260c9a1435fba0702dc9ad", null ],
-    [ "STOP_CALLBACK", "namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3", null ]
+    [ "store_persistent_config", "namespacefw.html#a395c6a8eff260c9a1435fba0702dc9ad", null ]
 ];

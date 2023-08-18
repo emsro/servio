@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('callbacks_8hpp_source.html',''); initR
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classcurrent__callback.html#a1c0ddb55bbd216ca63c9481a0b85fa45">   25</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcurrent__callback.html#a1c0ddb55bbd216ca63c9481a0b85fa45">on_value_irq</a>( uint32_t curr, std::span&lt; uint16_t &gt; )<span class="keyword"> override</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classcurrent__callback.html#a1c0ddb55bbd216ca63c9481a0b85fa45">   25</a></span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> <a class="code" href="classcurrent__callback.html#a1c0ddb55bbd216ca63c9481a0b85fa45">on_value_irq</a>( uint32_t curr, std::span&lt; uint16_t &gt; )<span class="keyword"> override</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">float</span> c = <a class="code" href="namespacecnv.html#a7becf8591a2b4df156538fdae8b3cb9c">cnv::current</a>( conv_, curr, motor_ );</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('callbacks_8hpp_source.html',''); initR
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classposition__callback.html#ad4790c5c7c98695a3564eafda862ad44">   51</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classposition__callback.html#ad4790c5c7c98695a3564eafda862ad44">on_value_irq</a>( uint32_t <a class="code" href="namespacecnv.html#a968d9975238ef02ac6257b739f7b7f71">position</a> )<span class="keyword"> override</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classposition__callback.html#ad4790c5c7c98695a3564eafda862ad44">   51</a></span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> <a class="code" href="classposition__callback.html#ad4790c5c7c98695a3564eafda862ad44">on_value_irq</a>( uint32_t <a class="code" href="namespacecnv.html#a968d9975238ef02ac6257b739f7b7f71">position</a> )<span class="keyword"> override</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keyword">const</span> <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now = clk_.<a class="code" href="classclk__interface.html#a81d58e4230b7b324f887b9ca7a0e295b">get_us</a>();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('callbacks_8hpp_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="callbacks_8hpp.html">callbacks.hpp</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 06:18:37 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 18 2023 19:23:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

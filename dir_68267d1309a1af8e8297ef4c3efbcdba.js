@@ -12,6 +12,10 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
       [ "current_callback", "classcurrent__callback.html", "classcurrent__callback" ],
       [ "position_callback", "classposition__callback.html", "classposition__callback" ]
     ] ],
+    [ "cfg_dispatcher.cpp", "cfg__dispatcher_8cpp.html", "cfg__dispatcher_8cpp" ],
+    [ "cfg_dispatcher.hpp", "cfg__dispatcher_8hpp.html", [
+      [ "cfg_dispatcher", "structcfg__dispatcher.html", "structcfg__dispatcher" ]
+    ] ],
     [ "config.hpp", "config_8hpp.html", "config_8hpp" ],
     [ "control.cpp", "control_8cpp.html", null ],
     [ "control.hpp", "control_8hpp.html", [
@@ -28,6 +32,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     ] ],
     [ "drv_interfaces.hpp", "drv__interfaces_8hpp.html", "drv__interfaces_8hpp" ],
     [ "gitversion.h", "gitversion_8h.html", "gitversion_8h" ],
+    [ "globals.cpp", "globals_8cpp.html", "globals_8cpp" ],
+    [ "globals.hpp", "globals_8hpp.html", "globals_8hpp" ],
     [ "indication.cpp", "indication_8cpp.html", "indication_8cpp" ],
     [ "indication.hpp", "indication_8hpp.html", "indication_8hpp" ],
     [ "kalman.hpp", "kalman_8hpp.html", "kalman_8hpp" ],

@@ -6,7 +6,7 @@ var hierarchy =
       [ "fw::drv::adc_detailed_cb< Callable >", "structfw_1_1drv_1_1adc__detailed__cb.html", null ],
       [ "fw::drv::empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", null ]
     ] ],
-    [ "fw::cfg_dispatcher", "structfw_1_1cfg__dispatcher.html", null ],
+    [ "cfg_dispatcher", "structcfg__dispatcher.html", null ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", null ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", null ],
     [ "fw::check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
@@ -67,7 +67,6 @@ var hierarchy =
       [ "fw::drv::empty_period_cb", "structfw_1_1drv_1_1empty__period__cb.html", null ],
       [ "fw::drv::period_cb< Callable >", "structfw_1_1drv_1_1period__cb.html", null ]
     ] ],
-    [ "ctl::pid_module", "classctl_1_1pid__module.html", null ],
     [ "cnv::position_converter", "classcnv_1_1position__converter.html", null ],
     [ "mtr::posvel_kalman", "structmtr_1_1posvel__kalman.html", null ],
     [ "emlabcpp::quantity", null, [

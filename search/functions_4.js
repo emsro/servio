@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['encode_809',['encode',['../namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc',1,'fw::encode(em::view&lt; std::byte * &gt; data, const ServioToHost &amp;msg)'],['../namespacefw.html#abcc6bed4622d21748754e7bbb7e49a26',1,'fw::encode(em::view&lt; std::byte * &gt; data, const ServioToHostPacket &amp;msg)']]],
-  ['error_5fexception_810',['error_exception',['../structhost_1_1error__exception.html#aa864e320d757530253664486a5828b5e',1,'host::error_exception']]],
-  ['error_5fmsg_811',['error_msg',['../namespacefw.html#a23fc4234292273ffabe5f85953f2713a',1,'fw']]],
-  ['exchange_812',['exchange',['../namespacehost.html#a5ca34f82be162a6aa6232ac7e3109260',1,'host']]]
+  ['debugmon_5fhandler_798',['DebugMon_Handler',['../it_8cpp.html#adbdfb05858cc36fc520974df37ec3cb0',1,'it.cpp']]],
+  ['decode_799',['decode',['../namespacefw.html#a8316fa0b789f65911005cdb427b8cab0',1,'fw::decode(em::view&lt; const std::byte * &gt; data, HostToServio &amp;msg)'],['../namespacefw.html#af8a9990f215a0f592e13e70469c1cf48',1,'fw::decode(em::view&lt; const std::byte * &gt; data, HostToServioPacket &amp;msg)']]],
+  ['device_5fopt_800',['device_opt',['../namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97',1,'host']]],
+  ['disengage_801',['disengage',['../classcontrol.html#a72d1d14a2342d2a7c4a0b61d2cfb27c6',1,'control']]],
+  ['dma_5firq_802',['dma_irq',['../classfw_1_1drv_1_1acquisition.html#aebfa1a863c73a3d91cbfd686536e5c2a',1,'fw::drv::acquisition']]]
 ];

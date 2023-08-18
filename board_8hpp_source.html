@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('board_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespacefw.html#a2087d37db7f763e7f33ab3c6598c6369">    9</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacefw.html#a2087d37db7f763e7f33ab3c6598c6369">install_stop_callback</a>( <a class="code" href="classleds__interface.html">leds_interface</a>* leds_ptr )</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">if</span> ( leds_ptr != <span class="keyword">nullptr</span> ) {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                <a class="code" href="namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3">STOP_CALLBACK</a> = [leds_ptr] {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                <a class="code" href="globals_8cpp.html#a9bc29146b8028f52a604a236111db23b">STOP_CALLBACK</a> = [leds_ptr] {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                        leds_ptr-&gt;<a class="code" href="classleds__interface.html#ab4ce5a7b84a5e01df3584ee528dd9da4">force_red_led</a>();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                };</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
@@ -107,17 +107,17 @@ $(document).ready(function(){initNavTree('board_8hpp_source.html',''); initResiz
 <div class="ttc" id="aclassleds__interface_html"><div class="ttname"><a href="classleds__interface.html">leds_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:76</div></div>
 <div class="ttc" id="aclassleds__interface_html_ab4ce5a7b84a5e01df3584ee528dd9da4"><div class="ttname"><a href="classleds__interface.html#ab4ce5a7b84a5e01df3584ee528dd9da4">leds_interface::force_red_led</a></div><div class="ttdeci">virtual void force_red_led()=0</div></div>
 <div class="ttc" id="adrv__interfaces_8hpp_html"><div class="ttname"><a href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a></div></div>
+<div class="ttc" id="aglobals_8cpp_html_a9bc29146b8028f52a604a236111db23b"><div class="ttname"><a href="globals_8cpp.html#a9bc29146b8028f52a604a236111db23b">STOP_CALLBACK</a></div><div class="ttdeci">em::static_function&lt; void(), 16 &gt; STOP_CALLBACK</div><div class="ttdef"><b>Definition:</b> globals.cpp:3</div></div>
 <div class="ttc" id="aglobals_8hpp_html"><div class="ttname"><a href="globals_8hpp.html">globals.hpp</a></div></div>
 <div class="ttc" id="anamespacefw_html"><div class="ttname"><a href="namespacefw.html">fw</a></div><div class="ttdef"><b>Definition:</b> board.hpp:8</div></div>
 <div class="ttc" id="anamespacefw_html_a2087d37db7f763e7f33ab3c6598c6369"><div class="ttname"><a href="namespacefw.html#a2087d37db7f763e7f33ab3c6598c6369">fw::install_stop_callback</a></div><div class="ttdeci">void install_stop_callback(leds_interface *leds_ptr)</div><div class="ttdef"><b>Definition:</b> board.hpp:9</div></div>
-<div class="ttc" id="anamespacefw_html_a2911addbbf2c32e3c0bbd374e6698ee3"><div class="ttname"><a href="namespacefw.html#a2911addbbf2c32e3c0bbd374e6698ee3">fw::STOP_CALLBACK</a></div><div class="ttdeci">em::static_function&lt; void(), 16 &gt; STOP_CALLBACK</div><div class="ttdef"><b>Definition:</b> globals.cpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="board_8hpp.html">board.hpp</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 06:18:37 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 18 2023 19:23:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

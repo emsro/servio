@@ -126,17 +126,17 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="structfw_1_1cfg__dispatcher.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="294,-62.44 294,-81.44 398,-81.44 398,-62.44 294,-62.44"/>
-<text text-anchor="middle" x="346" y="-69.44" font-family="Helvetica,sans-Serif" font-size="10.00">fw::cfg_dispatcher</text>
+<g id="a_node6"><a xlink:href="structcfg__dispatcher.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="302,-62.44 302,-81.44 390,-81.44 390,-62.44 302,-62.44"/>
+<text text-anchor="middle" x="346" y="-69.44" font-family="Helvetica,sans-Serif" font-size="10.00">cfg_dispatcher</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node1 -->
 <g id="edge7" class="edge">
 <title>Node6&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M408.4,-65.92C431.7,-66.58 457.32,-71.19 477,-84.94 516.34,-112.44 530.45,-173.58 534.56,-197.29"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="408.26,-62.41 398.24,-65.86 408.22,-69.41 408.26,-62.41"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M400.34,-65.83C425.62,-65.63 455.02,-69.58 477,-84.94 516.34,-112.44 530.45,-173.58 534.56,-197.29"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="400.05,-62.34 390.16,-66.13 400.25,-69.34 400.05,-62.34"/>
 <text text-anchor="middle" x="452" y="-87.94" font-family="Helvetica,sans-Serif" font-size="10.00"> cfg_disp</text>
 </g>
 <!-- Node7 -->
@@ -151,7 +151,7 @@
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge8" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M202.49,-71.94C227.32,-71.94 263.95,-71.94 293.85,-71.94"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M202.64,-71.94C229.72,-71.94 270.73,-71.94 301.79,-71.94"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="202.3,-68.44 192.3,-71.94 202.3,-75.44 202.3,-68.44"/>
 <text text-anchor="middle" x="251.5" y="-74.94" font-family="Helvetica,sans-Serif" font-size="10.00"> c</text>
 </g>

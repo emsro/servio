@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['field_5foption_813',['field_option',['../host_2main_8cpp.html#a609afc62bca9be9a810eed93ddf9d614',1,'main.cpp']]],
-  ['find_5flatest_5fpage_814',['find_latest_page',['../namespacecfg.html#ab8b28b0ab16c3b0bf545c39e6fb142e4',1,'cfg']]],
-  ['find_5fnext_5fpage_815',['find_next_page',['../namespacecfg.html#a27fb9256d3f5822df90c3a2296a9531b',1,'cfg']]],
-  ['find_5foldest_5fpage_816',['find_oldest_page',['../namespacecfg.html#a8c4bca10aa98ae305a1f2f5163b318c7',1,'cfg']]],
-  ['find_5funused_5fpage_817',['find_unused_page',['../namespacecfg.html#abf089918bd1398ef078ba761770419d4',1,'cfg']]],
-  ['force_5fred_5fled_818',['force_red_led',['../classleds__interface.html#ab4ce5a7b84a5e01df3584ee528dd9da4',1,'leds_interface::force_red_led()'],['../classfw_1_1drv_1_1leds.html#a48f0b62d250bad03766510a85d493fac',1,'fw::drv::leds::force_red_led()']]],
-  ['from_5ffloat_819',['from_float',['../classscaled.html#aeb23f3d76e0db21a720204e85e555150',1,'scaled']]],
-  ['full_5fapply_820',['full_apply',['../structfw_1_1cfg__dispatcher.html#afabdb6e774eadc76d457a9ea20c526ef',1,'fw::cfg_dispatcher']]]
+  ['encode_803',['encode',['../namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc',1,'fw::encode(em::view&lt; std::byte * &gt; data, const ServioToHost &amp;msg)'],['../namespacefw.html#abcc6bed4622d21748754e7bbb7e49a26',1,'fw::encode(em::view&lt; std::byte * &gt; data, const ServioToHostPacket &amp;msg)']]],
+  ['error_5fexception_804',['error_exception',['../structhost_1_1error__exception.html#aa864e320d757530253664486a5828b5e',1,'host::error_exception']]],
+  ['error_5fmsg_805',['error_msg',['../namespacefw.html#a23fc4234292273ffabe5f85953f2713a',1,'fw']]],
+  ['exchange_806',['exchange',['../namespacehost.html#a5ca34f82be162a6aa6232ac7e3109260',1,'host']]]
 ];
