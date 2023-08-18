@@ -1,5 +1,6 @@
 #include "fw/dispatcher.hpp"
 
+#include "cnv/utils.hpp"
 #include "fw/map_cfg.hpp"
 #include "fw/servio_pb.hpp"
 
@@ -84,7 +85,7 @@ ServioToHost handle_get_property(
                 prop.mode = get_mode( ctl );
                 break;
         case Property_current_tag:
-                prop.current = current( conv, curr_drv, motor );
+                prop.current = cnv::current( conv, curr_drv, motor );
                 break;
         case Property_vcc_tag:
                 prop.vcc = conv.vcc.convert( vcc_drv.get_vcc() );
@@ -93,7 +94,7 @@ ServioToHost handle_get_property(
                 prop.temp = conv.temp.convert( temp_drv.get_temperature() );
                 break;
         case Property_position_tag:
-                prop.position = position( conv, pos_drv );
+                prop.position = cnv::position( conv, pos_drv );
                 break;
         case Property_velocity_tag:
                 prop.velocity = met.get_velocity();

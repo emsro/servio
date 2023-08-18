@@ -1,14 +1,11 @@
+#include "cnv/utils.hpp"
 #include "control.hpp"
 #include "converter.hpp"
-#include "fw/conversion.hpp"
 #include "metrics.hpp"
 
 #include <stm32g4xx_hal.h>
 
 #pragma once
-
-namespace fw
-{
 
 class current_callback : public current_cb_interface
 {
@@ -27,7 +24,7 @@ public:
 
         void on_value_irq( uint32_t curr, std::span< uint16_t > ) override
         {
-                const float c = current( conv_, curr, motor_ );
+                const float c = cnv::current( conv_, curr, motor_ );
 
                 ctl_.current_irq( clk_.get_us(), c );
                 motor_.set_power( ctl_.get_power() );
@@ -69,5 +66,3 @@ private:
         clk_interface&   clk_;
         const converter& conv_;
 };
-
-}  // namespace fw

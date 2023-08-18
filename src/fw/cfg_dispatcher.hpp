@@ -1,5 +1,5 @@
 #include "config.hpp"
-#include "fw/core.hpp"
+#include "core.hpp"
 
 #pragma once
 

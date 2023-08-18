@@ -1,14 +1,15 @@
 #include "brd.hpp"
+#include "core.hpp"
 #include "core_drivers.hpp"
 #include "fw/board.hpp"
 #include "fw/cfg_dispatcher.hpp"
-#include "fw/core.hpp"
 #include "fw/dispatcher.hpp"
 #include "fw/globals.hpp"
 #include "fw/servio_pb.hpp"
 #include "fw/store_persistent_config.hpp"
 #include "git.h"
 #include "load_persistent_config.hpp"
+#include "standard_callbacks.hpp"
 
 int main()
 {
@@ -27,10 +28,10 @@ int main()
                 fw::stop_exec();
         }
 
-        fw::core cor{ cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock };
+        core cor{ cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock };
         cdrv.leds->update( cor.ind.get_state() );
 
-        fw::standard_callbacks cbs( *cdrv.motor, *cdrv.clock, cor.ctl, cor.met, cor.conv );
+        standard_callbacks cbs( *cdrv.motor, *cdrv.clock, cor.ctl, cor.met, cor.conv );
         cbs.set_callbacks( *cdrv.period, *cdrv.period_cb, *cdrv.position, *cdrv.current );
 
         fw::cfg_dispatcher cfg_dis{ cfg, cor };

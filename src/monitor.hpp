@@ -5,9 +5,6 @@
 
 #pragma once
 
-namespace fw
-{
-
 class monitor
 {
 public:
@@ -70,5 +67,3 @@ private:
         float min_vcc_ = 0.F;
         float max_tmp_ = 90.F;
 };
-
-}  // namespace fw
