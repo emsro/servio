@@ -17,7 +17,7 @@ var dir_6ea741a906e6e17d7bfd6b9b5099e89c =
       [ "detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence" ]
     ] ],
     [ "acquisition_inl.hpp", "acquisition__inl_8hpp.html", null ],
-    [ "callbacks.hpp", "drv_2callbacks_8hpp.html", "drv_2callbacks_8hpp" ],
+    [ "callbacks.hpp", "fw_2drv_2callbacks_8hpp.html", "fw_2drv_2callbacks_8hpp" ],
     [ "clock.hpp", "clock_8hpp.html", [
       [ "clock", "classfw_1_1drv_1_1clock.html", "classfw_1_1drv_1_1clock" ],
       [ "handles", "classfw_1_1drv_1_1clock.html#structfw_1_1drv_1_1clock_1_1handles", [

@@ -2,7 +2,7 @@ var hierarchy =
 [
     [ "fw::drv::acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", null ],
     [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", [
-      [ "fw::current_callback", "classfw_1_1current__callback.html", null ],
+      [ "current_callback", "classcurrent__callback.html", null ],
       [ "fw::drv::adc_detailed_cb< Callable >", "structfw_1_1drv_1_1adc__detailed__cb.html", null ],
       [ "fw::drv::empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", null ]
     ] ],
@@ -22,7 +22,7 @@ var hierarchy =
     [ "ctl::config", "namespacectl.html#structctl_1_1config", null ],
     [ "control", "classcontrol.html", null ],
     [ "converter", "structconverter.html", null ],
-    [ "fw::core", "structfw_1_1core.html", null ],
+    [ "core", "structcore.html", null ],
     [ "core_drivers", "structcore__drivers.html", null ],
     [ "cnv::current_converter", "classcnv_1_1current__converter.html", null ],
     [ "fw::drv::acquisition< N >::detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", null ],
@@ -60,7 +60,7 @@ var hierarchy =
     [ "ctl::linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", null ],
     [ "metrics", "classmetrics.html", null ],
     [ "mode_opts", "host_2main_8cpp.html#structmode__opts", null ],
-    [ "fw::monitor", "classfw_1_1monitor.html", null ],
+    [ "monitor", "classmonitor.html", null ],
     [ "cfg::payload", "structcfg_1_1payload.html", null ],
     [ "period_cb_interface", "classperiod__cb__interface.html", [
       [ "fw::drv::acquisition< N >", "classfw_1_1drv_1_1acquisition.html", null ],
@@ -73,14 +73,14 @@ var hierarchy =
     [ "emlabcpp::quantity", null, [
       [ "scaled< T, BitOffset >", "classscaled.html", null ]
     ] ],
-    [ "fw::standard_callbacks", "structfw_1_1standard__callbacks.html", null ],
+    [ "standard_callbacks", "structstandard__callbacks.html", null ],
     [ "kalman::state_range", "namespacekalman.html#structkalman_1_1state__range", null ],
     [ "static_detector", "structstatic__detector.html", null ],
     [ "cnv::temperature_converter", "classcnv_1_1temperature__converter.html", null ],
     [ "value_cb_interface", "classvalue__cb__interface.html", [
       [ "fw::drv::empty_value_cb", "structfw_1_1drv_1_1empty__value__cb.html", null ],
       [ "fw::drv::value_cb< Callable >", "structfw_1_1drv_1_1value__cb.html", null ],
-      [ "fw::position_callback", "classfw_1_1position__callback.html", null ]
+      [ "position_callback", "classposition__callback.html", null ]
     ] ],
     [ "cnv::voltage_converter", "classcnv_1_1voltage__converter.html", null ]
 ];

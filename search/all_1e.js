@@ -38,5 +38,6 @@ var searchData=
   ['used_584',['used',['../structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html#a8b479caaf7f8f1e06f3a4eb4f4292ec2',1,'fw::drv::acquisition::detailed_sequence']]],
   ['used_5fdata_585',['used_data',['../drv__interfaces_8hpp.html#a76a63a44af9fe036b46b04bca13e9a67',1,'com_res']]],
   ['util_2ecpp_586',['util.cpp',['../util_8cpp.html',1,'']]],
-  ['util_2ehpp_587',['util.hpp',['../util_8hpp.html',1,'']]]
+  ['util_2ehpp_587',['util.hpp',['../util_8hpp.html',1,'']]],
+  ['utils_2ehpp_588',['utils.hpp',['../utils_8hpp.html',1,'']]]
 ];

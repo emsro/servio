@@ -21,9 +21,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classfw_1_1current__callback.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="181.5,-99 181.5,-118 294.5,-118 294.5,-99 181.5,-99"/>
-<text text-anchor="middle" x="238" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">fw::current_callback</text>
+<g id="a_node2"><a xlink:href="classcurrent__callback.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="189.5,-99 189.5,-118 286.5,-118 286.5,-99 189.5,-99"/>
+<text text-anchor="middle" x="238" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">current_callback</text>
 </a>
 </g>
 </g>

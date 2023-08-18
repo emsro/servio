@@ -1,9 +1,9 @@
 <map id="fw::cfg_dispatcher" name="fw::cfg_dispatcher">
-<area shape="rect" id="node1" title=" " alt="" coords="201,184,339,211"/>
-<area shape="rect" id="node2" href="$structfw_1_1core.html" title=" " alt="" coords="234,95,306,121"/>
-<area shape="rect" id="node3" href="$classfw_1_1monitor.html" title=" " alt="" coords="5,5,100,32"/>
-<area shape="rect" id="node4" href="$classindication.html" title=" " alt="" coords="124,5,211,32"/>
-<area shape="rect" id="node5" href="$classmetrics.html" title=" " alt="" coords="235,5,305,32"/>
-<area shape="rect" id="node6" href="$structconverter.html" title=" " alt="" coords="329,5,413,32"/>
-<area shape="rect" id="node7" href="$classcontrol.html" title=" " alt="" coords="438,5,505,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="179,184,318,211"/>
+<area shape="rect" id="node2" href="$structcore.html" title=" " alt="" coords="223,95,274,121"/>
+<area shape="rect" id="node3" href="$classindication.html" title=" " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node4" href="$classmonitor.html" title=" " alt="" coords="116,5,189,32"/>
+<area shape="rect" id="node5" href="$classmetrics.html" title=" " alt="" coords="213,5,284,32"/>
+<area shape="rect" id="node6" href="$structconverter.html" title=" " alt="" coords="308,5,392,32"/>
+<area shape="rect" id="node7" href="$classcontrol.html" title=" " alt="" coords="417,5,483,32"/>
 </map>

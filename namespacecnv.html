@@ -84,7 +84,8 @@ $(document).ready(function(){initNavTree('namespacecnv.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">cnv Namespace Reference</div>  </div>
 </div><!--header-->
@@ -100,14 +101,150 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcnv_1_1voltage__converter.html">voltage_converter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a7becf8591a2b4df156538fdae8b3cb9c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecnv.html#a7becf8591a2b4df156538fdae8b3cb9c">current</a> (const <a class="el" href="structconverter.html">converter</a> &amp;conv, uint32_t raw_current, const <a class="el" href="classpwm__motor__interface.html">pwm_motor_interface</a> &amp;motor)</td></tr>
+<tr class="separator:a7becf8591a2b4df156538fdae8b3cb9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16715d94f12a6c27f4d390a8d53da822"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecnv.html#a16715d94f12a6c27f4d390a8d53da822">current</a> (const <a class="el" href="structconverter.html">converter</a> &amp;conv, const <a class="el" href="classcurrent__interface.html">current_interface</a> &amp;curr_drv, const <a class="el" href="classpwm__motor__interface.html">pwm_motor_interface</a> &amp;motor)</td></tr>
+<tr class="separator:a16715d94f12a6c27f4d390a8d53da822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968d9975238ef02ac6257b739f7b7f71"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecnv.html#a968d9975238ef02ac6257b739f7b7f71">position</a> (const <a class="el" href="structconverter.html">converter</a> &amp;conv, const <a class="el" href="classposition__interface.html">position_interface</a> &amp;pos_drv)</td></tr>
+<tr class="separator:a968d9975238ef02ac6257b739f7b7f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a16715d94f12a6c27f4d390a8d53da822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16715d94f12a6c27f4d390a8d53da822">&#9670;&nbsp;</a></span>current() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float cnv::current </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structconverter.html">converter</a> &amp;&#160;</td>
+          <td class="paramname"><em>conv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcurrent__interface.html">current_interface</a> &amp;&#160;</td>
+          <td class="paramname"><em>curr_drv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classpwm__motor__interface.html">pwm_motor_interface</a> &amp;&#160;</td>
+          <td class="paramname"><em>motor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacecnv.html#a7becf8591a2b4df156538fdae8b3cb9c">current()</a>, and <a class="el" href="classcurrent__interface.html#ae5beaf5071e919008384037c3ee31b73">current_interface::get_current()</a>.</p>
+
+</div>
+</div>
+<a id="a7becf8591a2b4df156538fdae8b3cb9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7becf8591a2b4df156538fdae8b3cb9c">&#9670;&nbsp;</a></span>current() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float cnv::current </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structconverter.html">converter</a> &amp;&#160;</td>
+          <td class="paramname"><em>conv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>raw_current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classpwm__motor__interface.html">pwm_motor_interface</a> &amp;&#160;</td>
+          <td class="paramname"><em>motor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classcnv_1_1current__converter.html#a26ab4250dd19d8bf50f6761a2013cc82">cnv::current_converter::convert()</a>, <a class="el" href="structconverter.html#ac1234d3e39c471cdd9175dd99b1f07bd">converter::current</a>, and <a class="el" href="classpwm__motor__interface.html#a756bd7b598e43f7a457c583af982c321">pwm_motor_interface::get_direction()</a>.</p>
+
+</div>
+</div>
+<a id="a968d9975238ef02ac6257b739f7b7f71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968d9975238ef02ac6257b739f7b7f71">&#9670;&nbsp;</a></span>position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float cnv::position </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structconverter.html">converter</a> &amp;&#160;</td>
+          <td class="paramname"><em>conv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classposition__interface.html">position_interface</a> &amp;&#160;</td>
+          <td class="paramname"><em>pos_drv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classcnv_1_1position__converter.html#afa01f666d0e833ffb8497f28b2076677">cnv::position_converter::convert()</a>, <a class="el" href="classposition__interface.html#a9fac675d23d12be5c33f15f4e37946b4">position_interface::get_position()</a>, and <a class="el" href="structconverter.html#a47741f2b095ad25e51d733f2a9e47e5e">converter::position</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecnv.html">cnv</a></li>
-    <li class="footer">Generated on Wed Aug 16 2023 21:25:30 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 18 2023 06:18:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -9,6 +9,7 @@ var dir_6185f3a156e0baa9ffebb847f82d024e =
     [ "temperature.hpp", "temperature_8hpp.html", [
       [ "temperature_converter", "classcnv_1_1temperature__converter.html", "classcnv_1_1temperature__converter" ]
     ] ],
+    [ "utils.hpp", "utils_8hpp.html", "utils_8hpp" ],
     [ "voltage.hpp", "voltage_8hpp.html", [
       [ "voltage_converter", "classcnv_1_1voltage__converter.html", "classcnv_1_1voltage__converter" ]
     ] ]

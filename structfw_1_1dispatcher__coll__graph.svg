@@ -142,17 +142,17 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="structfw_1_1core.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="red" points="146,-62.44 146,-81.44 200,-81.44 200,-62.44 146,-62.44"/>
-<text text-anchor="middle" x="173" y="-69.44" font-family="Helvetica,sans-Serif" font-size="10.00">fw::core</text>
+<g id="a_node7"><a xlink:href="structcore.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="red" points="154,-62.44 154,-81.44 192,-81.44 192,-62.44 154,-62.44"/>
+<text text-anchor="middle" x="173" y="-69.44" font-family="Helvetica,sans-Serif" font-size="10.00">core</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge8" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M210.55,-71.94C234.82,-71.94 267.02,-71.94 293.82,-71.94"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="210.34,-68.44 200.34,-71.94 210.34,-75.44 210.34,-68.44"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M202.49,-71.94C227.32,-71.94 263.95,-71.94 293.85,-71.94"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="202.3,-68.44 192.3,-71.94 202.3,-75.44 202.3,-68.44"/>
 <text text-anchor="middle" x="251.5" y="-74.94" font-family="Helvetica,sans-Serif" font-size="10.00"> c</text>
 </g>
 <!-- Node10 -->
@@ -174,7 +174,7 @@
 <!-- Node10&#45;&gt;Node7 -->
 <g id="edge9" class="edge">
 <title>Node10&#45;&gt;Node7</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M66.53,-89.08C71.34,-87.53 76.27,-86.1 81,-84.94 102.55,-79.68 127.53,-76.3 145.85,-74.31"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M66.53,-89.08C71.34,-87.53 76.27,-86.1 81,-84.94 105.81,-78.88 135.15,-75.32 153.67,-73.5"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="65.24,-85.82 56.89,-92.35 67.49,-92.45 65.24,-85.82"/>
 <text text-anchor="middle" x="94.5" y="-87.94" font-family="Helvetica,sans-Serif" font-size="10.00"> met</text>
 </g>
@@ -220,7 +220,7 @@
 <!-- Node16&#45;&gt;Node7 -->
 <g id="edge11" class="edge">
 <title>Node16&#45;&gt;Node7</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M66.69,-43.25C91.03,-49.88 123.24,-58.66 145.61,-64.75"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M66.79,-43.28C94.26,-50.76 131.74,-60.97 153.75,-66.97"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="67.37,-39.81 56.8,-40.56 65.53,-46.56 67.37,-39.81"/>
 <text text-anchor="middle" x="94.5" y="-56.94" font-family="Helvetica,sans-Serif" font-size="10.00"> ctl</text>
 </g>

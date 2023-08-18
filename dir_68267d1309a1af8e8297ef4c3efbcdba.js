@@ -8,6 +8,10 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "mtr", "dir_52d5c93d1a27df9f60d01a37fbb92cbd.html", "dir_52d5c93d1a27df9f60d01a37fbb92cbd" ],
     [ "base.hpp", "base_8hpp.html", "base_8hpp" ],
     [ "brd.hpp", "brd_8hpp.html", "brd_8hpp" ],
+    [ "callbacks.hpp", "callbacks_8hpp.html", [
+      [ "current_callback", "classcurrent__callback.html", "classcurrent__callback" ],
+      [ "position_callback", "classposition__callback.html", "classposition__callback" ]
+    ] ],
     [ "config.hpp", "config_8hpp.html", "config_8hpp" ],
     [ "control.cpp", "control_8cpp.html", null ],
     [ "control.hpp", "control_8hpp.html", [
@@ -15,6 +19,9 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     ] ],
     [ "converter.hpp", "converter_8hpp.html", [
       [ "converter", "structconverter.html", "structconverter" ]
+    ] ],
+    [ "core.hpp", "core_8hpp.html", [
+      [ "core", "structcore.html", "structcore" ]
     ] ],
     [ "core_drivers.hpp", "core__drivers_8hpp.html", [
       [ "core_drivers", "structcore__drivers.html", "structcore__drivers" ]
@@ -29,8 +36,14 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "metrics.hpp", "metrics_8hpp.html", [
       [ "metrics", "classmetrics.html", "classmetrics" ]
     ] ],
+    [ "monitor.hpp", "monitor_8hpp.html", [
+      [ "monitor", "classmonitor.html", "classmonitor" ]
+    ] ],
     [ "scaled.hpp", "scaled_8hpp.html", [
       [ "scaled", "classscaled.html", "classscaled" ]
+    ] ],
+    [ "standard_callbacks.hpp", "standard__callbacks_8hpp.html", [
+      [ "standard_callbacks", "structstandard__callbacks.html", "structstandard__callbacks" ]
     ] ],
     [ "static_detector.hpp", "static__detector_8hpp.html", [
       [ "static_detector", "structstatic__detector.html", "structstatic__detector" ]
