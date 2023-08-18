@@ -86,7 +86,7 @@ void control::moving_irq( microseconds now, bool is_moving )
         current_scale_regl_.update( now, is_moving );
 }
 
-void control::position_irq( microseconds now, float position )
+[[gnu::flatten]] void control::position_irq( microseconds now, float position )
 {
         if ( state_ == control_mode::POSITION ) {
                 em::update( position_pid_, now.count(), position, position_goal_ );
@@ -95,7 +95,7 @@ void control::position_irq( microseconds now, float position )
         }
 }
 
-void control::velocity_irq( microseconds now, float velocity )
+[[gnu::flatten]] void control::velocity_irq( microseconds now, float velocity )
 {
         if ( state_ == control_mode::VELOCITY ) {
                 em::update( velocity_pid_, now.count(), velocity, velocity_goal_ );
@@ -104,7 +104,7 @@ void control::velocity_irq( microseconds now, float velocity )
         }
 }
 
-void control::current_irq( microseconds now, float current )
+[[gnu::flatten]] void control::current_irq( microseconds now, float current )
 {
         if ( state_ == control_mode::DISENGAGED || state_ == control_mode::POWER ) {
                 em::reset( current_pid_, now.count(), current );

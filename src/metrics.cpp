@@ -18,21 +18,7 @@ void metrics::set_moving_step( float step )
         st_dec_.set_step( step );
 }
 
-float metrics::get_position() const
-{
-        return pv_kal_.get_position();
-}
-float metrics::get_velocity() const
-{
-        return pv_kal_.get_velocity();
-}
-
-bool metrics::is_moving() const
-{
-        return !st_dec_.is_static;
-}
-
-void metrics::position_irq( microseconds now, float position )
+[[gnu::flatten]] void metrics::position_irq( microseconds now, float position )
 {
         if ( now == last_time_ ) {
                 return;
