@@ -134,11 +134,11 @@ void DMA1_Channel5_IRQHandler( void )
         brd::DEBUG_COMMS.tx_dma_irq();
 }
 
-void DMA1_Channel1_IRQHandler()
+[[gnu::flatten]] void DMA1_Channel1_IRQHandler()
 {
         brd::ACQUISITION.dma_irq();
 }
-void ADC1_2_IRQHandler()
+[[gnu::flatten]] void ADC1_2_IRQHandler()
 {
         brd::ACQUISITION.adc_irq();
 }
@@ -153,16 +153,16 @@ void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
         brd::COMMS.tx_cplt_irq( h );
         brd::DEBUG_COMMS.tx_cplt_irq( h );
 }
-void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
+[[gnu::flatten]] void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
 {
         brd::COMMS.rx_cplt_irq( h );
         brd::DEBUG_COMMS.rx_cplt_irq( h );
 }
-void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
+[[gnu::flatten]] void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
         brd::ACQUISITION.adc_conv_cplt_irq( h );
 }
-void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
+[[gnu::flatten]] void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
 {
         brd::ACQUISITION.adc_error_irq( h );
 }

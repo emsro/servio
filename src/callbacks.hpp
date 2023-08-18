@@ -22,7 +22,7 @@ public:
         {
         }
 
-        void on_value_irq( uint32_t curr, std::span< uint16_t > ) override
+        [[gnu::flatten]] void on_value_irq( uint32_t curr, std::span< uint16_t > ) override
         {
                 const float c = cnv::current( conv_, curr, motor_ );
 
@@ -48,7 +48,7 @@ public:
         {
         }
 
-        void on_value_irq( uint32_t position ) override
+        [[gnu::flatten]] void on_value_irq( uint32_t position ) override
         {
                 const microseconds now = clk_.get_us();
 

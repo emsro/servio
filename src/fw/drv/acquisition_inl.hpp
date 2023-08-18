@@ -26,13 +26,13 @@ bool acquisition< N >::setup( em::function_view< bool( handles& ) > setup_f )
 }
 
 template < std::size_t N >
-void acquisition< N >::adc_irq()
+[[gnu::flatten]] void acquisition< N >::adc_irq()
 {
         HAL_ADC_IRQHandler( &h_.adc );
 }
 
 template < std::size_t N >
-void acquisition< N >::adc_error_irq( ADC_HandleTypeDef* h )
+[[gnu::flatten]] void acquisition< N >::adc_error_irq( ADC_HandleTypeDef* h )
 {
         std::ignore = h;
         // TODO: well this was aggresive, convert to a flag
@@ -40,7 +40,7 @@ void acquisition< N >::adc_error_irq( ADC_HandleTypeDef* h )
 }
 
 template < std::size_t N >
-void acquisition< N >::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
+[[gnu::flatten]] void acquisition< N >::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
 {
         if ( h != &h_.adc ) {
                 return;
@@ -57,13 +57,13 @@ void acquisition< N >::adc_conv_cplt_irq( ADC_HandleTypeDef* h )
 }
 
 template < std::size_t N >
-void acquisition< N >::dma_irq()
+[[gnu::flatten]] void acquisition< N >::dma_irq()
 {
         HAL_DMA_IRQHandler( &h_.dma );
 }
 
 template < std::size_t N >
-void acquisition< N >::on_period_irq()
+[[gnu::flatten]] void acquisition< N >::on_period_irq()
 {
         HAL_StatusTypeDef res           = HAL_OK;
         const std::size_t next_buffer_i = ( detailed_sequence_i_ + 1 ) % detailed_sequences_.size();
@@ -109,7 +109,7 @@ void acquisition< N >::on_period_irq()
 }
 
 template < std::size_t N >
-void acquisition< N >::start()
+[[gnu::flatten]] void acquisition< N >::start()
 {
         std::ignore = HAL_TIM_OC_Start( &h_.tim, h_.tim_channel );
 }
@@ -157,7 +157,7 @@ acquisition_status& acquisition< N >::status()
 }
 
 template < std::size_t N >
-void acquisition< N >::switch_channel( std::size_t chid )
+[[gnu::flatten]] void acquisition< N >::switch_channel( std::size_t chid )
 {
         const HAL_StatusTypeDef res = HAL_ADC_ConfigChannel( &h_.adc, &h_.chconfs[chid] );
         if ( res != HAL_OK ) {
@@ -167,7 +167,7 @@ void acquisition< N >::switch_channel( std::size_t chid )
 }
 
 template < std::size_t N >
-void acquisition< N >::start_brief_reading()
+[[gnu::flatten]] void acquisition< N >::start_brief_reading()
 {
         const HAL_StatusTypeDef res = HAL_ADC_Start_IT( &h_.adc );
         if ( res != HAL_OK ) {

@@ -10,46 +10,6 @@ bool cobs_uart::setup( em::function_view< bool( handles& ) > setup_f )
         return setup_f( h_ );
 }
 
-void cobs_uart::tx_dma_irq()
-{
-        HAL_DMA_IRQHandler( &h_.tx_dma );
-}
-
-void cobs_uart::uart_irq()
-{
-        HAL_UART_IRQHandler( &h_.uart );
-}
-
-void cobs_uart::rx_cplt_irq( UART_HandleTypeDef* huart )
-{
-        if ( huart != &h_.uart ) {
-                return;
-        }
-
-        if ( rx_byte_ == std::byte{ 0 } ) {
-                isizes_.push_back( current_size_ - 1 );
-                current_size_ = 0;
-        } else if ( current_size_ == 0 ) {
-                cd_ = em::cobs_decoder{ rx_byte_ };
-                current_size_ += 1;
-        } else {
-                const std::optional< std::byte > b = cd_.iter( rx_byte_ );
-                if ( b.has_value() ) {
-                        current_size_ += 1;
-                        ibuffer_.push_back( *b );
-                }
-        }
-        start();
-}
-
-void cobs_uart::tx_cplt_irq( UART_HandleTypeDef* huart )
-{
-        if ( huart != &h_.uart ) {
-                return;
-        }
-        tx_done_ = true;
-}
-
 com_res cobs_uart::load_message( em::view< std::byte* > data )
 {
         if ( isizes_.empty() ) {
@@ -66,12 +26,6 @@ com_res cobs_uart::load_message( em::view< std::byte* > data )
         }
 
         return { true, dview };
-}
-
-void cobs_uart::start()
-{
-        // TODO: return value ignored
-        std::ignore = HAL_UART_Receive_IT( &h_.uart, reinterpret_cast< uint8_t* >( &rx_byte_ ), 1 );
 }
 
 bool cobs_uart::send( em::view< const std::byte* > data )

@@ -64,4 +64,17 @@ private:
         handles              h_{};
 };
 
+inline void hbridge::timer_period_irq( TIM_HandleTypeDef* h )
+{
+        if ( h != &h_.timer ) {
+                return;
+        }
+        period_cb_->on_period_irq();
+}
+
+inline void hbridge::timer_irq()
+{
+        HAL_TIM_IRQHandler( &h_.timer );
+}
+
 }  // namespace fw::drv

@@ -29,19 +29,6 @@ bool hbridge::setup( em::function_view< bool( handles& ) > setup_f )
         return res;
 }
 
-void hbridge::timer_period_irq( TIM_HandleTypeDef* h )
-{
-        if ( h != &h_.timer ) {
-                return;
-        }
-        period_cb_->on_period_irq();
-}
-
-void hbridge::timer_irq()
-{
-        HAL_TIM_IRQHandler( &h_.timer );
-}
-
 void hbridge::start()
 {
         std::ignore = HAL_TIM_PWM_Start_IT( &h_.timer, h_.mc1_channel );
