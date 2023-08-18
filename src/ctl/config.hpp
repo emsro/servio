@@ -1,4 +1,4 @@
-#include "ctl/pid_module.hpp"
+#include <emlabcpp/pid.h>
 
 #ifdef EMLABCPP_USE_NLOHMANN_JSON
 #include <nlohmann/json.hpp>
@@ -10,6 +10,10 @@
 
 namespace ctl
 {
+
+using pid              = em::pid< typename microseconds::rep >;
+using pid_conf         = typename pid::config;
+using pid_coefficients = em::pid_coefficients;
 
 struct config
 {

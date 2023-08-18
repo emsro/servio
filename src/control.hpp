@@ -1,8 +1,8 @@
 #include "base.hpp"
 #include "ctl/config.hpp"
 #include "ctl/linear_transition_regulator.hpp"
-#include "ctl/pid_module.hpp"
 
+#include <emlabcpp/pid.h>
 #include <variant>
 
 #pragma once

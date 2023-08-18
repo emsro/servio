@@ -1,9 +1,6 @@
-#include "fw/cfg_dispatcher.hpp"
+#include "cfg_dispatcher.hpp"
 
 #include <emlabcpp/protocol/register_handler.h>
-
-namespace fw
-{
 
 using handler = em::protocol::register_handler< cfg_map >;
 
@@ -110,4 +107,3 @@ void cfg_dispatcher::apply( const cfg_key& key )
                 break;
         }
 }
-}  // namespace fw

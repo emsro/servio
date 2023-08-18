@@ -1,14 +1,14 @@
 #include "util.hpp"
 
-#include "fw/globals.hpp"
+#include "globals.hpp"
 
 namespace fw
 {
 
 void stop_exec()
 {
-        if ( fw::STOP_CALLBACK ) {
-                fw::STOP_CALLBACK();
+        if ( STOP_CALLBACK ) {
+                STOP_CALLBACK();
         }
         __asm__( "BKPT" );
         while ( true ) {

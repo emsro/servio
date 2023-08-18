@@ -3,9 +3,6 @@
 
 #pragma once
 
-namespace fw
-{
-
 struct cfg_dispatcher
 {
 
@@ -23,5 +20,3 @@ struct cfg_dispatcher
 
         void apply( const cfg_key& key );
 };
-
-}  // namespace fw

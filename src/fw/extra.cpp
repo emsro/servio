@@ -37,3 +37,25 @@ void operator delete( void*, std::align_val_t ) noexcept
 {
         fw::stop_exec();
 }
+
+extern "C" {
+
+int _getpid( void )
+{
+        return 1;
+}
+
+void _kill( int )
+{
+        while ( 1 ) {
+                asm( "nop" );
+        }
+}
+
+void _exit( int )
+{
+        while ( 1 ) {
+                asm( "nop" );
+        }
+}
+}

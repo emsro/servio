@@ -1,5 +1,5 @@
+#include "cfg_dispatcher.hpp"
 #include "control.hpp"
-#include "fw/cfg_dispatcher.hpp"
 #include "fw/util.hpp"
 
 #include <emlabcpp/experimental/function_view.h>

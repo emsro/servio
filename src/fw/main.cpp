@@ -1,10 +1,9 @@
 #include "brd.hpp"
+#include "cfg_dispatcher.hpp"
 #include "core.hpp"
 #include "core_drivers.hpp"
 #include "fw/board.hpp"
-#include "fw/cfg_dispatcher.hpp"
 #include "fw/dispatcher.hpp"
-#include "fw/globals.hpp"
 #include "fw/servio_pb.hpp"
 #include "fw/store_persistent_config.hpp"
 #include "git.h"
@@ -34,7 +33,7 @@ int main()
         standard_callbacks cbs( *cdrv.motor, *cdrv.clock, cor.ctl, cor.met, cor.conv );
         cbs.set_callbacks( *cdrv.period, *cdrv.period_cb, *cdrv.position, *cdrv.current );
 
-        fw::cfg_dispatcher cfg_dis{ cfg, cor };
+        cfg_dispatcher cfg_dis{ cfg, cor };
         cfg_dis.full_apply();
 
         cdrv.start_cb( cdrv );
