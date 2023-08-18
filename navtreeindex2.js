@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"it_8cpp.html#a6ad7a5e3ee69cb6db6a6b9111ba898bc":[13,0,1,3,5,4],
-"it_8cpp.html#a850cefb17a977292ae5eb4cafa9976c3":[13,0,1,3,5,0],
 "it_8cpp.html#aafb8d3e0fd06464b1ee0ae1edbc3c7d6":[13,0,1,3,5,7],
 "it_8cpp.html#adbdfb05858cc36fc520974df37ec3cb0":[13,0,1,3,5,1],
 "kalman_8hpp.html":[13,0,1,23],
@@ -30,9 +28,9 @@ var NAVTREEINDEX2 =
 "kalman_8hpp.html#aee77e3ba89eb600013e17d3467583701":[13,0,1,23,8],
 "kalman_8hpp.html#af5cff5e9fec3a001b5e862e24701e86b":[13,0,1,23,5],
 "kalman_8hpp_source.html":[13,0,1,23],
-"leds_8cpp.html":[13,0,1,3,0,9],
-"leds_8hpp.html":[13,0,1,3,0,10],
-"leds_8hpp_source.html":[13,0,1,3,0,10],
+"leds_8cpp.html":[13,0,1,3,0,8],
+"leds_8hpp.html":[13,0,1,3,0,9],
+"leds_8hpp_source.html":[13,0,1,3,0,9],
 "linear__transition__regulator_8hpp.html":[13,0,1,2,1],
 "linear__transition__regulator_8hpp_source.html":[13,0,1,2,1],
 "load__persistent__config_8hpp.html":[13,0,1,24],
@@ -249,5 +247,7 @@ var NAVTREEINDEX2 =
 "serial_8cpp.html#a78a7968917c35688e7d3d4edd60a4058":[13,0,1,4,6,5],
 "serial_8cpp.html#a8828d7c3f317cb7be11193458f14c91e":[13,0,1,4,6,3],
 "serial_8cpp.html#aaa4d7fe642ca2cc6d84cd34c4b1f53ec":[13,0,1,4,6,6],
-"serial_8cpp.html#ab08f26af1cf35a9a9b55cb45de5bdc44":[13,0,1,4,6,15]
+"serial_8cpp.html#ab08f26af1cf35a9a9b55cb45de5bdc44":[13,0,1,4,6,15],
+"serial_8cpp.html#ac1836e108dfddfc90f5888ebfcd5c736":[13,0,1,4,6,4],
+"serial_8cpp.html#ac27277a0709fec611287ddf8b71fe5de":[13,0,1,4,6,11]
 };
