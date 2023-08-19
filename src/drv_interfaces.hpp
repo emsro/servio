@@ -2,6 +2,7 @@
 #include "status_category.hpp"
 
 #include <cstdint>
+#include <emlabcpp/result.h>
 #include <span>
 
 #pragma once
@@ -66,10 +67,10 @@ struct com_res
 class com_interface
 {
 public:
-        virtual void    start()                                     = 0;
-        virtual bool    send( em::view< const std::byte* > data )   = 0;
-        virtual com_res load_message( em::view< std::byte* > data ) = 0;
-        virtual ~com_interface()                                    = default;
+        virtual void       start()                                     = 0;
+        virtual em::result send( em::view< const std::byte* > data )   = 0;
+        virtual com_res    load_message( em::view< std::byte* > data ) = 0;
+        virtual ~com_interface()                                       = default;
 };
 
 class leds_interface

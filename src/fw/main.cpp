@@ -98,7 +98,8 @@ int main()
                 if ( !succ ) {
                         // TODO: what now?
                 } else {
-                        cdrv.comms->send( odata );
+                        // TODO: this should not be ignored
+                        std::ignore = cdrv.comms->send( odata );
                 }
         }
 }

@@ -41,7 +41,7 @@ public:
 
         void start();
 
-        bool send( em::view< const std::byte* > data );
+        em::result send( em::view< const std::byte* > data );
 
 private:
         handles h_;

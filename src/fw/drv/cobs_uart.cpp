@@ -28,7 +28,7 @@ com_res cobs_uart::load_message( em::view< std::byte* > data )
         return { true, dview };
 }
 
-bool cobs_uart::send( em::view< const std::byte* > data )
+em::result cobs_uart::send( em::view< const std::byte* > data )
 {
         // TODO: well, timeout would be better
         while ( !tx_done_ ) {
@@ -37,7 +37,7 @@ bool cobs_uart::send( em::view< const std::byte* > data )
 
         auto [succ, used] = em::encode_cobs( data, otmp_ );
         if ( !succ ) {
-                return false;
+                return em::ERROR;
         }
         // TODO: this might fial
         otmp_[used.size()] = std::byte{ 0 };
@@ -51,7 +51,7 @@ bool cobs_uart::send( em::view< const std::byte* > data )
             reinterpret_cast< uint8_t* >( otmp_.begin() ),
             static_cast< uint16_t >( used.size() + 1 ) );
 
-        return true;
+        return em::SUCCESS;
 }
 
 }  // namespace fw::drv
