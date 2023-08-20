@@ -6,17 +6,17 @@
 
 struct core_drivers
 {
-        clk_interface*                             clock;
-        position_interface*                        position;
-        current_interface*                         current;
-        vcc_interface*                             vcc;
-        temperature_interface*                     temperature;
-        period_cb_interface*                       period_cb;  // TODO: maybe imrpove naming here?
-        pwm_motor_interface*                       motor;
-        period_interface*                          period;
-        com_interface*                             comms;
-        leds_interface*                            leds;
-        em::function_view< void( core_drivers& ) > start_cb;
+        clk_interface*         clock;
+        position_interface*    position;
+        current_interface*     current;
+        vcc_interface*         vcc;
+        temperature_interface* temperature;
+        period_cb_interface*   period_cb;  // TODO: maybe imrpove naming here?
+        pwm_motor_interface*   motor;
+        period_interface*      period;
+        com_interface*         comms;
+        leds_interface*        leds;
+        em::function_view< em::result( core_drivers& ) > start_cb;
 
         auto tie()
         {

@@ -1,6 +1,6 @@
 #include "brd.hpp"
 #include "core_drivers.hpp"
-#include "fw/drv/acquisition.hpp"
+#include "fw/drv/adc_pooler.hpp"
 #include "fw/drv/clock.hpp"
 #include "fw/drv/cobs_uart.hpp"
 #include "fw/util.hpp"
@@ -8,25 +8,56 @@
 
 namespace brd
 {
+enum chan_ids
+{
+        CURRENT_CHANNEL,
+        POSITION_CHANNEL,
+        VCC_CHANNEL,
+        TEMP_CHANNEL,
+};
 
-fw::drv::clock     CLOCK{};
-acquisition_type   ACQUISITION{};
-fw::drv::cobs_uart COMMS{};
-fw::drv::cobs_uart DEBUG_COMMS{};
-fw::drv::hbridge   HBRIDGE{};
-fw::drv::leds      LEDS;
+struct adc_set
+{
+        // TODO: only some of the adc channels require callback infrastructure
+
+        using id_type = chan_ids;
+
+        fw::drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >  current;
+        fw::drv::adc_channel_with_callback< POSITION_CHANNEL > position;
+        fw::drv::adc_channel< VCC_CHANNEL >                    vcc;
+        fw::drv::adc_channel< TEMP_CHANNEL >                   temp;
+
+        auto tie()
+        {
+                return std::tie( current, position, vcc, temp );
+        }
+};
+
+fw::drv::clock                 CLOCK{};
+fw::drv::adc_pooler< adc_set > ADC_POOLER{};
+fw::drv::cobs_uart             COMMS{};
+fw::drv::cobs_uart             DEBUG_COMMS{};
+fw::drv::hbridge               HBRIDGE{};
+fw::drv::leds                  LEDS;
+
+struct : period_cb_interface
+{
+        void on_period_irq()
+        {
+                ADC_POOLER.on_period_irq();
+        }
+} PERIOD_CB;
 
 struct : vcc_interface
 {
         status get_status() const override
         {
-                return status::NOMINAL;
+                return ADC_POOLER->vcc.get_status();
         }
 
         uint32_t get_vcc() const override
         {
-                // TODO: well, the hardcoded constant is not ideal
-                return ACQUISITION.get_val( 1 );
+                return ADC_POOLER->vcc.last_value;
         }
 } VCC;
 
@@ -34,13 +65,12 @@ struct : temperature_interface
 {
         status get_status() const override
         {
-                return status::NOMINAL;
+                return ADC_POOLER->temp.get_status();
         }
 
         uint32_t get_temperature() const override
         {
-                // TODO: well, the hardcoded constant is not ideal
-                return ACQUISITION.get_val( 2 );
+                return ADC_POOLER->temp.last_value;
         }
 } TEMPERATURE;
 
@@ -48,22 +78,21 @@ struct : position_interface
 {
         status get_status() const override
         {
-                return status::NOMINAL;
+                return ADC_POOLER->position.get_status();
         }
 
         uint32_t get_position() const override
         {
-                // TODO: well, the hardcoded constant is not ideal
-                return ACQUISITION.get_val( 3 );
+                return ADC_POOLER->position.last_value;
         }
 
         void set_position_callback( position_cb_interface& cb ) override
         {
-                ACQUISITION.set_brief_callback( 3, cb );
+                ADC_POOLER->position.callback = &cb;
         }
         position_cb_interface& get_position_callback() const override
         {
-                return ACQUISITION.get_brief_callback( 3 );
+                return *ADC_POOLER->position.callback;
         }
 } POSITION;
 
@@ -71,37 +100,26 @@ struct : current_interface
 {
         status get_status() const override
         {
-                status      res = status::NOMINAL;
-                const auto& as  = ACQUISITION.status();
-                if ( as.hal_start_failed ) {
-                        res = status::DATA_ACQUISITION_CRITICAL_ERROR;
-                } else if ( as.buffer_was_full || as.empty_buffer ) {
-                        res = status::DATA_ACQUISITION_ERROR;
-                }
-                return res;
+                return ADC_POOLER->current.get_status();
         }
 
-        void clear_status( status status ) override
+        void clear_status() override
         {
-                if ( status == status::DATA_ACQUISITION_ERROR ) {
-                        ACQUISITION.status().buffer_was_full = false;
-                        ACQUISITION.status().empty_buffer    = false;
-                }
+                ADC_POOLER->current.clear_status();
         }
 
         uint32_t get_current() const override
         {
-                // TODO: well, the hardcoded constant is not ideal
-                return ACQUISITION.get_val( 0 );
+                return ADC_POOLER->current.last_value;
         }
 
         void set_current_callback( current_cb_interface& cb ) override
         {
-                ACQUISITION.set_detailed_callback( cb );
+                ADC_POOLER->current.callback = &cb;
         }
         current_cb_interface& get_current_callback() const override
         {
-                return ACQUISITION.get_detailed_callback();
+                return *ADC_POOLER->current.callback;
         }
 } CURRENT;
 
@@ -136,11 +154,11 @@ void DMA1_Channel5_IRQHandler( void )
 
 [[gnu::flatten]] void DMA1_Channel1_IRQHandler()
 {
-        brd::ACQUISITION.dma_irq();
+        brd::ADC_POOLER.dma_irq();
 }
 [[gnu::flatten]] void ADC1_2_IRQHandler()
 {
-        brd::ACQUISITION.adc_irq();
+        brd::ADC_POOLER.adc_irq();
 }
 
 void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
@@ -160,11 +178,11 @@ void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
 }
 [[gnu::flatten]] void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
-        brd::ACQUISITION.adc_conv_cplt_irq( h );
+        brd::ADC_POOLER.adc_conv_cplt_irq( h );
 }
 [[gnu::flatten]] void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
 {
-        brd::ACQUISITION.adc_error_irq( h );
+        brd::ADC_POOLER.adc_error_irq( h );
 }
 }
 
@@ -199,63 +217,84 @@ fw::drv::clock* setup_clock()
         return &CLOCK;
 }
 
-acquisition_type* setup_acquisition()
+auto ADC_SEQUENCE = std::array{
+    CURRENT_CHANNEL,
+    POSITION_CHANNEL,
+    CURRENT_CHANNEL,
+    VCC_CHANNEL,
+    CURRENT_CHANNEL,
+    POSITION_CHANNEL,
+    CURRENT_CHANNEL,
+    TEMP_CHANNEL,
+};
+
+fw::drv::adc_pooler< adc_set >* setup_adc_pooler()
 {
-        auto acq_setup = []( acquisition_type::handles& h ) {
+        auto acq_setup = []( ADC_HandleTypeDef& adc,
+                             DMA_HandleTypeDef& dma,
+                             TIM_HandleTypeDef& tim,
+                             uint32_t&          tim_channel ) -> em::result {
                 __HAL_RCC_ADC12_CLK_ENABLE();
                 __HAL_RCC_DMA1_CLK_ENABLE();
                 __HAL_RCC_DMAMUX1_CLK_ENABLE();
                 __HAL_RCC_GPIOA_CLK_ENABLE();
                 __HAL_RCC_TIM4_CLK_ENABLE();
-                return setup_adc(
-                           h,
-                           adc_cfg{
-                               .adc_instance     = ADC1,
-                               .adc_irq_priority = 0,
-                               .dma =
-                                   dma_cfg{
-                                       .instance     = DMA1_Channel1,
-                                       .irq          = DMA1_Channel1_IRQn,
-                                       .irq_priority = 0,
-                                       .request      = DMA_REQUEST_ADC1,
-                                       .priority     = DMA_PRIORITY_VERY_HIGH,
-                                   },
-                               .current =
-                                   pinch_cfg{
-                                       .channel = ADC_CHANNEL_4,
-                                       .pin     = GPIO_PIN_3,
-                                       .port    = GPIOA,
-                                   },
-                               .position =
-                                   pinch_cfg{
-                                       .channel = ADC_CHANNEL_1,
-                                       .pin     = GPIO_PIN_0,
-                                       .port    = GPIOA,
-                                   },
-                               .vcc =
-                                   pinch_cfg{
-                                       .channel = ADC_CHANNEL_2,
-                                       .pin     = GPIO_PIN_1,
-                                       .port    = GPIOA,
-                                   },
-                               .temp =
-                                   pinch_cfg{
-                                       .channel = ADC_CHANNEL_TEMPSENSOR_ADC1,
-                                       .pin     = 0,
-                                       .port    = nullptr,
-                                   },
-                           } ) &&
-                       setup_adc_timer(
-                           h,
-                           adc_timer_cfg{
-                               .timer_instance = TIM4,
-                               .channel        = TIM_CHANNEL_1,
-                           } );
+                setup_adc_channel(
+                    ADC_POOLER->current.chconf,
+                    pinch_cfg{
+                        .channel = ADC_CHANNEL_4,
+                        .pin     = GPIO_PIN_3,
+                        .port    = GPIOA,
+                    } );
+                setup_adc_channel(
+                    ADC_POOLER->position.chconf,
+                    pinch_cfg{
+                        .channel = ADC_CHANNEL_1,
+                        .pin     = GPIO_PIN_0,
+                        .port    = GPIOA,
+                    } );
+                setup_adc_channel(
+                    ADC_POOLER->vcc.chconf,
+                    pinch_cfg{
+                        .channel = ADC_CHANNEL_2,
+                        .pin     = GPIO_PIN_1,
+                        .port    = GPIOA,
+                    } );
+                setup_adc_channel(
+                    ADC_POOLER->temp.chconf,
+                    pinch_cfg{
+                        .channel = ADC_CHANNEL_TEMPSENSOR_ADC1,
+                        .pin     = 0,
+                        .port    = nullptr,
+                    } );
+                return em::worst_of(
+                    setup_adc(
+                        adc,
+                        dma,
+                        adc_cfg{
+                            .adc_instance     = ADC1,
+                            .adc_irq_priority = 0,
+                            .dma =
+                                dma_cfg{
+                                    .instance     = DMA1_Channel1,
+                                    .irq          = DMA1_Channel1_IRQn,
+                                    .irq_priority = 0,
+                                    .request      = DMA_REQUEST_ADC1,
+                                    .priority     = DMA_PRIORITY_VERY_HIGH,
+                                },
+                        } ),
+                    setup_adc_timer(
+                        tim,
+                        tim_channel,
+                        adc_timer_cfg{
+                            .timer_instance = TIM4,
+                            .channel        = TIM_CHANNEL_1,
+                        } ) );
         };
-        if ( !ACQUISITION.setup( acq_setup ) ) {
+        if ( ADC_POOLER.setup( ADC_SEQUENCE, acq_setup ) != em::SUCCESS ) {
                 return nullptr;
         }
-        return &ACQUISITION;
+        return &ADC_POOLER;
 }
 
 fw::drv::hbridge* setup_hbridge()
@@ -433,11 +472,14 @@ fw::drv::leds* setup_leds()
         return &LEDS;
 }
 
-void start_callback( core_drivers& cdrv )
+em::result start_callback( core_drivers& cdrv )
 {
+
         if ( cdrv.position != nullptr ) {
-                // this implies that acquisition is OK
-                ACQUISITION.start();
+                // this implies that adC_poolerition is OK
+                if ( ADC_POOLER.start() != em::SUCCESS ) {
+                        return em::ERROR;
+                }
         }
         if ( cdrv.motor != nullptr ) {
                 HBRIDGE.start();
@@ -448,6 +490,8 @@ void start_callback( core_drivers& cdrv )
         if ( cdrv.leds != nullptr ) {
                 cdrv.leds->start();
         }
+
+        return em::SUCCESS;
 }
 
 microseconds get_clock_time()
@@ -457,18 +501,18 @@ microseconds get_clock_time()
 
 core_drivers setup_core_drivers()
 {
-        fw::drv::hbridge* hb     = setup_hbridge();
-        acquisition_type* acquis = setup_acquisition();
-        fw::drv::leds*    leds   = setup_leds();
+        fw::drv::hbridge*               hb         = setup_hbridge();
+        fw::drv::adc_pooler< adc_set >* adC_pooler = setup_adc_pooler();
+        fw::drv::leds*                  leds       = setup_leds();
         fw::install_stop_callback( leds );
 
         return core_drivers{
             .clock       = setup_clock(),
-            .position    = acquis == nullptr ? nullptr : &POSITION,
-            .current     = acquis == nullptr ? nullptr : &CURRENT,
-            .vcc         = acquis == nullptr ? nullptr : &VCC,
-            .temperature = acquis == nullptr ? nullptr : &TEMPERATURE,
-            .period_cb   = acquis,
+            .position    = adC_pooler == nullptr ? nullptr : &POSITION,
+            .current     = adC_pooler == nullptr ? nullptr : &CURRENT,
+            .vcc         = adC_pooler == nullptr ? nullptr : &VCC,
+            .temperature = adC_pooler == nullptr ? nullptr : &TEMPERATURE,
+            .period_cb   = adC_pooler == nullptr ? nullptr : &PERIOD_CB,
             .motor       = hb,
             .period      = hb,
             .comms       = setup_comms(),

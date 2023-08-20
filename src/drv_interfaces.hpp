@@ -1,5 +1,5 @@
 #include "base.hpp"
-#include "status_category.hpp"
+#include "status.hpp"
 
 #include <cstdint>
 #include <emlabcpp/result.h>
@@ -31,30 +31,11 @@ public:
         virtual ~period_cb_interface() = default;
 };
 
-enum class status
-{
-        NOMINAL,
-        DATA_ACQUISITION_ERROR,
-        DATA_ACQUISITION_CRITICAL_ERROR,
-};
-
-constexpr status_category status_category_of( status status )
-{
-        switch ( status ) {
-        case status::NOMINAL:
-                return status_category::NOMINAL;
-        case status::DATA_ACQUISITION_ERROR:
-                return status_category::DEGRADED;
-        case status::DATA_ACQUISITION_CRITICAL_ERROR:
-                return status_category::INOPERABLE;
-        }
-};
-
 class driver_interface
 {
 public:
         virtual status get_status() const = 0;
-        virtual void   clear_status( status ){};
+        virtual void   clear_status(){};
         virtual ~driver_interface() = default;
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 
-enum class status_category
+enum class [[nodiscard]] status
 {
         NOMINAL,
         DEGRADED,

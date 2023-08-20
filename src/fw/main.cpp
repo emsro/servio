@@ -36,7 +36,7 @@ int main()
         cfg_dispatcher cfg_dis{ cfg, cor };
         cfg_dis.full_apply();
 
-        cdrv.start_cb( cdrv );
+        std::ignore = cdrv.start_cb( cdrv );
 
         cor.ind.on_event( cdrv.clock->get_us(), indication_event::INITIALIZED );
 
@@ -62,8 +62,8 @@ int main()
                         if ( succ ) {
                                 last_cfg_payload = pld;
                         }
-                        if ( cdrv.current->get_status() == status::DATA_ACQUISITION_ERROR ) {
-                                cdrv.current->clear_status( status::DATA_ACQUISITION_ERROR );
+                        if ( cdrv.current->get_status() == status::DEGRADED ) {
+                                cdrv.current->clear_status();
                         }
                         return succ;
                 };

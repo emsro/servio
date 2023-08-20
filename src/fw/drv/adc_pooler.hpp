@@ -1,37 +1,247 @@
+#include "fw/drv/callbacks.hpp"
+
+#include <stm32g4xx_hal.h>
+
 #pragma once
 
 namespace fw::drv
 {
+inline empty_adc_detailed_cb EMPTY_ADC_DETAILED_CALLBACK;
 
+template < auto ID, std::size_t N >
 struct detailed_adc_channel
 {
+        static constexpr auto id = ID;
+
+        alignas( uint32_t ) uint16_t buffer[N];
+        std::size_t used;
+
+        uint32_t                   last_value;
+        ADC_ChannelConfTypeDef     chconf;
+        adc_detailed_cb_interface* callback = &EMPTY_ADC_DETAILED_CALLBACK;
+
+        bool config_channel_error = false;
+        bool start_error          = false;
+        bool stop_error           = false;
+
+        bool no_samples_error       = false;
+        bool samples_overflow_error = false;
+
+        status get_status() const
+        {
+                if ( config_channel_error || start_error || stop_error ) {
+                        return status::INOPERABLE;
+                }
+                if ( no_samples_error || samples_overflow_error ) {
+                        return status::DEGRADED;
+                }
+                return status::NOMINAL;
+        }
+
+        void clear_status()
+        {
+                no_samples_error       = false;
+                samples_overflow_error = false;
+        }
+
+        void period_start( ADC_HandleTypeDef& h )
+        {
+                if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK ) {
+                        config_channel_error = true;
+                }
+                if ( HAL_ADC_Start_DMA( &h, reinterpret_cast< uint32_t* >( &buffer ), N ) !=
+                     HAL_OK ) {
+                        start_error = true;
+                }
+        }
+
+        [[gnu::flatten]] void period_stop( ADC_HandleTypeDef& h )
+        {
+                used = N - __HAL_DMA_GET_COUNTER( h.DMA_Handle );
+                if ( HAL_ADC_Stop_DMA( &h ) != HAL_OK ) {
+                        stop_error = true;
+                }
+                if ( used == 0 ) {
+                        no_samples_error = true;
+
+                } else if ( used == N ) {
+                        samples_overflow_error = false;
+                }
+
+                const std::span readings( std::data( buffer ), used );
+
+                last_value = em::avg( readings );
+                callback->on_value_irq( last_value, readings );
+        }
+
+        void conv_cplt( ADC_HandleTypeDef& )
+        {
+        }
 };
 
+inline empty_value_cb EMPTY_ADC_CALLBACK;
+
+template < auto ID >
 struct adc_channel
 {
+        static constexpr auto id = ID;
+
+        uint32_t               last_value;
+        ADC_ChannelConfTypeDef chconf;
+
+        bool config_channel_error = false;
+        bool start_error          = false;
+        bool stop_error           = false;
+
+        status get_status() const
+        {
+                if ( config_channel_error || start_error || stop_error ) {
+                        return status::INOPERABLE;
+                }
+                return status::NOMINAL;
+        }
+
+        void period_start( ADC_HandleTypeDef& h )
+        {
+                if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK ) {
+                        config_channel_error = true;
+                }
+                if ( HAL_ADC_Start_IT( &h ) != HAL_OK ) {
+                        start_error = true;
+                }
+        }
+
+        void period_stop( ADC_HandleTypeDef& )
+        {
+        }
+
+        void conv_cplt( ADC_HandleTypeDef& h )
+        {
+                // is this necessary?
+                if ( HAL_ADC_Stop_IT( &h ) != HAL_OK ) {
+                        stop_error = true;
+                }
+                last_value = HAL_ADC_GetValue( &h );
+        }
 };
 
-enum chan_ids
+template < auto ID >
+struct adc_channel_with_callback : adc_channel< ID >
 {
-        CURRENT_CHANNEL,
-        POSITION_CHANNEL,
-        VCC_CHANNEL,
-        TEMP_CHANNEL,
+        value_cb_interface* callback = &EMPTY_ADC_CALLBACK;
+
+        void conv_cplt( ADC_HandleTypeDef& h )
+        {
+                adc_channel< ID >::conv_cplt( h );
+                callback->on_value_irq( this->last_value );
+        }
 };
 
-struct adc_config
-{
-        detailed_adc_channel< CURRENT_CHANNEL, 128 > current_channel;
-        add_channel< POSITION_CHANNEL >              position;
-        add_channel< VCC_CHANNEL >                   vcc;
-        add_channel< TEMP_CHANNEL >                  temp;
-
-        em::view< const chan_ids* > sequence;
-};
-
-template < typename Cfg = adc_config >
+template < typename Set >
 struct adc_pooler
 {
+        using id_type = typename Set::id_type;
+
+        adc_pooler() = default;
+
+        em::result setup(
+            em::view< const id_type* >    seq,
+            em::function_view< em::result(
+                ADC_HandleTypeDef& adc,
+                DMA_HandleTypeDef& dma,
+                TIM_HandleTypeDef& tim,
+                uint32_t&          tim_channel ) > setup_f )
+        {
+                sequence_ = seq;
+                return setup_f( adc_, dma_, tim_, tim_channel_ );
+        }
+
+        em::result start()
+        {
+                if ( HAL_TIM_OC_Start( &tim_, tim_channel_ ) != HAL_OK ) {
+                        return em::ERROR;
+                }
+                return em::SUCCESS;
+        }
+
+        Set* operator->()
+        {
+                return &set_;
+        }
+        Set& operator*()
+        {
+                return set_;
+        }
+
+        void adc_irq()
+        {
+                HAL_ADC_IRQHandler( &adc_ );
+        }
+
+        void dma_irq()
+        {
+                HAL_DMA_IRQHandler( &dma_ );
+        }
+
+        void adc_error_irq( ADC_HandleTypeDef* h )
+        {
+                if ( h != &adc_ ) {
+                        return;
+                }
+                std::ignore = h;
+                // TODO: convert this into flag
+        }
+
+        [[gnu::flatten]] void adc_conv_cplt_irq( ADC_HandleTypeDef* h )
+        {
+                if ( h != &adc_ ) {
+                        return;
+                }
+                const auto active_id = sequence_[sequence_i_];
+                with( active_id, [&]( auto& item ) {
+                        // TODO: error handling?
+                        item.conv_cplt( adc_ );
+                } );
+        }
+
+        [[gnu::flatten]] void on_period_irq()
+        {
+                auto active_id = sequence_[sequence_i_];
+
+                with( active_id, [&]( auto& item ) {
+                        // TODO: error handling?
+                        item.period_stop( adc_ );
+                } );
+
+                sequence_i_ = ( sequence_i_ + 1 ) % sequence_.size();
+                active_id   = sequence_[sequence_i_];
+
+                with( active_id, [&]( auto& item ) {
+                        // TODO: error handling?
+                        item.period_start( adc_ );
+                } );
+        }
+
+private:
+        void with( id_type set_id, auto&& f )
+        {
+                // TODO: error handling?
+                em::for_each( set_.tie(), [&]< typename T >( T& item ) {
+                        if ( T::id == set_id ) {
+                                f( item );
+                        }
+                } );
+        }
+
+        ADC_HandleTypeDef adc_;
+        DMA_HandleTypeDef dma_;
+        TIM_HandleTypeDef tim_;
+        uint32_t          tim_channel_;
+
+        std::size_t sequence_i_ = 0;
+
+        em::view< const id_type* > sequence_;
+        Set                        set_;
 };
 
 }  // namespace fw::drv

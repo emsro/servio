@@ -1,12 +1,9 @@
 #include "fw/board.hpp"
-#include "fw/drv/acquisition.hpp"
 #include "fw/drv/hbridge.hpp"  // tehse are actually a bad sign TODO
 #include "fw/drv/leds.hpp"
 
 namespace brd
 {
-
-using acquisition_type = fw::drv::acquisition< 4 >;
 
 struct dma_cfg
 {
@@ -30,13 +27,10 @@ struct adc_cfg
         ADC_TypeDef* adc_instance;
         uint32_t     adc_irq_priority;
         dma_cfg      dma;
-        pinch_cfg    current;
-        pinch_cfg    position;
-        pinch_cfg    vcc;
-        pinch_cfg    temp;
 };
 
-bool setup_adc( acquisition_type::handles&, adc_cfg cfg );
+em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );
+void       setup_adc_channel( ADC_ChannelConfTypeDef& channel, pinch_cfg cfg );
 
 struct adc_timer_cfg
 {
@@ -44,7 +38,7 @@ struct adc_timer_cfg
         uint32_t     channel;
 };
 
-bool setup_adc_timer( acquisition_type::handles&, adc_timer_cfg cfg );
+em::result setup_adc_timer( TIM_HandleTypeDef& tim, uint32_t& tim_channel, adc_timer_cfg cfg );
 
 struct pin_cfg
 {
