@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['empty_5fbuffer_1006',['empty_buffer',['../namespacefw_1_1drv.html#ad3ea819532719ec233e997164573338d',1,'fw::drv::acquisition_status']]]
+  ['empty_5fadc_5fcallback_1000',['EMPTY_ADC_CALLBACK',['../namespacefw_1_1drv.html#a276b77a74a170ade5959393d429187ca',1,'fw::drv']]],
+  ['empty_5fadc_5fdetailed_5fcallback_1001',['EMPTY_ADC_DETAILED_CALLBACK',['../namespacefw_1_1drv.html#a3b4bea0c9e12385bcecef61b17dcc18f',1,'fw::drv']]]
 ];

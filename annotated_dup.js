@@ -15,8 +15,10 @@ var annotated_dup =
     ] ],
     [ "fw", "namespacefw.html", [
       [ "drv", "namespacefw_1_1drv.html", [
-        [ "acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", "namespacefw_1_1drv_structfw_1_1drv_1_1acquisition__status_dup" ],
-        [ "acquisition", "classfw_1_1drv_1_1acquisition.html", "classfw_1_1drv_1_1acquisition" ],
+        [ "detailed_adc_channel", "structfw_1_1drv_1_1detailed__adc__channel.html", "structfw_1_1drv_1_1detailed__adc__channel" ],
+        [ "adc_channel", "structfw_1_1drv_1_1adc__channel.html", "structfw_1_1drv_1_1adc__channel" ],
+        [ "adc_channel_with_callback", "structfw_1_1drv_1_1adc__channel__with__callback.html", "structfw_1_1drv_1_1adc__channel__with__callback" ],
+        [ "adc_pooler", "structfw_1_1drv_1_1adc__pooler.html", "structfw_1_1drv_1_1adc__pooler" ],
         [ "adc_detailed_cb", "structfw_1_1drv_1_1adc__detailed__cb.html", "structfw_1_1drv_1_1adc__detailed__cb" ],
         [ "empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", "structfw_1_1drv_1_1empty__adc__detailed__cb" ],
         [ "value_cb", "structfw_1_1drv_1_1value__cb.html", "structfw_1_1drv_1_1value__cb" ],

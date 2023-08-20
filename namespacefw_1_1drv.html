@@ -94,10 +94,13 @@ $(document).ready(function(){initNavTree('namespacefw_1_1drv.html',''); initResi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:structfw_1_1drv_1_1acquisition__status"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status">acquisition_status</a></td></tr>
-<tr class="separator:structfw_1_1drv_1_1acquisition__status"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1acquisition.html">acquisition</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO: rename this to better name /o...  <a href="classfw_1_1drv_1_1acquisition.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1drv_1_1detailed__adc__channel.html">detailed_adc_channel</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1drv_1_1adc__channel.html">adc_channel</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1drv_1_1adc__channel__with__callback.html">adc_channel_with_callback</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1drv_1_1adc__pooler.html">adc_pooler</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfw_1_1drv_1_1adc__detailed__cb.html">adc_detailed_cb</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,45 +138,13 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a3b4bea0c9e12385bcecef61b17dcc18f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfw_1_1drv_1_1empty__adc__detailed__cb.html">empty_adc_detailed_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html#a3b4bea0c9e12385bcecef61b17dcc18f">EMPTY_ADC_DETAILED_CALLBACK</a></td></tr>
+<tr class="separator:a3b4bea0c9e12385bcecef61b17dcc18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a276b77a74a170ade5959393d429187ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfw_1_1drv_1_1empty__value__cb.html">empty_value_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html#a276b77a74a170ade5959393d429187ca">EMPTY_ADC_CALLBACK</a></td></tr>
+<tr class="separator:a276b77a74a170ade5959393d429187ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabef94de8eb8d0c86cb545f41a023490"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490">comm_buff_size</a> = 128</td></tr>
 <tr class="separator:aabef94de8eb8d0c86cb545f41a023490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="structfw_1_1drv_1_1acquisition__status" id="structfw_1_1drv_1_1acquisition__status"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structfw_1_1drv_1_1acquisition__status">&#9670;&nbsp;</a></span>fw::drv::acquisition_status</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct fw::drv::acquisition_status</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="af977b5a7be96a3a0cb62991781d4398a"></a>bool</td>
-<td class="fieldname">
-buffer_was_full</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="ad3ea819532719ec233e997164573338d"></a>bool</td>
-<td class="fieldname">
-empty_buffer</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="ad927f231af470539ea6d821de90683a8"></a>bool</td>
-<td class="fieldname">
-hal_start_failed</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="aedba374016375efa23fdf6c85b471127"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedba374016375efa23fdf6c85b471127">&#9670;&nbsp;</a></span>current_cb</h2>
@@ -258,13 +229,57 @@ template&lt;typename Callable &gt; </div>
 
 </div>
 </div>
+<a id="a276b77a74a170ade5959393d429187ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a276b77a74a170ade5959393d429187ca">&#9670;&nbsp;</a></span>EMPTY_ADC_CALLBACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfw_1_1drv_1_1empty__value__cb.html">empty_value_cb</a> fw::drv::EMPTY_ADC_CALLBACK</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b4bea0c9e12385bcecef61b17dcc18f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b4bea0c9e12385bcecef61b17dcc18f">&#9670;&nbsp;</a></span>EMPTY_ADC_DETAILED_CALLBACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfw_1_1drv_1_1empty__adc__detailed__cb.html">empty_adc_detailed_cb</a> fw::drv::EMPTY_ADC_DETAILED_CALLBACK</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="namespacefw_1_1drv.html">drv</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 20:00:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Aug 20 2023 10:55:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

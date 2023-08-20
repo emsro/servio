@@ -89,6 +89,10 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>c
 : <a class="el" href="structcfg__dispatcher.html#ab557af4265f498c2d08bf7bc2872d7e2">cfg_dispatcher</a>
 </li>
+<li>callback
+: <a class="el" href="structfw_1_1drv_1_1adc__channel__with__callback.html#a74e735c64f204873857411f01922a81b">fw::drv::adc_channel_with_callback&lt; ID &gt;</a>
+, <a class="el" href="structfw_1_1drv_1_1detailed__adc__channel.html#a2765a68eb8b6fdb1ed0601caab75df4e">fw::drv::detailed_adc_channel&lt; ID, N &gt;</a>
+</li>
 <li>cb
 : <a class="el" href="structfw_1_1drv_1_1adc__detailed__cb.html#a5d0d0a9ce3404ef18511fd3fb37eade7">fw::drv::adc_detailed_cb&lt; Callable &gt;</a>
 , <a class="el" href="structfw_1_1drv_1_1period__cb.html#a8d5c4ceb149708e41170b7834fd8d77c">fw::drv::period_cb&lt; Callable &gt;</a>
@@ -100,18 +104,17 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>cfg_writer
 : <a class="el" href="namespacefw.html#a520b3be865d264d703b435b5c4e08fbb">fw::dispatcher</a>
 </li>
-<li>chan_n
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#a188b612421f98e29332220df19d75849">fw::drv::acquisition&lt; N &gt;</a>
-</li>
-<li>chconfs
-: <a class="el" href="classfw_1_1drv_1_1acquisition.html#aee02860e0c820c6f8878a5d78155bfcd">fw::drv::acquisition&lt; N &gt;::handles</a>
+<li>chconf
+: <a class="el" href="structfw_1_1drv_1_1adc__channel.html#ad0258a5a64c41fe6c40447d30b79cf42">fw::drv::adc_channel&lt; ID &gt;</a>
+, <a class="el" href="structfw_1_1drv_1_1detailed__adc__channel.html#a65f1fb345325c310d4f59e70ff6bf21c">fw::drv::detailed_adc_channel&lt; ID, N &gt;</a>
 </li>
 <li>clear_status()
-: <a class="el" href="classdriver__interface.html#ade10ff708e40c3dd06f85478f97b7f0c">driver_interface</a>
+: <a class="el" href="classdriver__interface.html#a74c9bc04d41f143e16b46b4eceeb5a2c">driver_interface</a>
+, <a class="el" href="structfw_1_1drv_1_1detailed__adc__channel.html#ad7a72a6b2d34c3ff1000cfe74e26881a">fw::drv::detailed_adc_channel&lt; ID, N &gt;</a>
 </li>
 <li>clock
 : <a class="el" href="structcore__drivers.html#a6e9dbb9b1e5b8d8b377c318edddb620f">core_drivers</a>
-, <a class="el" href="classfw_1_1drv_1_1clock.html#a5c34e8f7ff7c2e79239f9b1b81772067">fw::drv::clock</a>
+, <a class="el" href="classfw_1_1drv_1_1clock.html#ab50085af20daae2cc74a51524ed0310c">fw::drv::clock</a>
 </li>
 <li>cobs_port()
 : <a class="el" href="structhost_1_1cobs__port.html#a2dc6e749750ebacbe674611e1c3d08bb">host::cobs_port</a>
@@ -122,6 +125,10 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>comms
 : <a class="el" href="structcore__drivers.html#afbfadb080278407f31a8efeca7fb998c">core_drivers</a>
 </li>
+<li>config_channel_error
+: <a class="el" href="structfw_1_1drv_1_1adc__channel.html#afd847cc92833269edc1fa14584e55021">fw::drv::adc_channel&lt; ID &gt;</a>
+, <a class="el" href="structfw_1_1drv_1_1detailed__adc__channel.html#a316f715cde771e689d946183c794475a">fw::drv::detailed_adc_channel&lt; ID, N &gt;</a>
+</li>
 <li>context
 : <a class="el" href="structhost_1_1common__cli.html#a4069a66d37489ce0a202b56e7a46cecd">host::common_cli</a>
 </li>
@@ -131,6 +138,11 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>conv
 : <a class="el" href="structcore.html#aede3af32deaca79e3c55266c302f56c3">core</a>
 , <a class="el" href="namespacefw.html#ac7282035a48db732bb3abfbfb69467d0">fw::dispatcher</a>
+</li>
+<li>conv_cplt()
+: <a class="el" href="structfw_1_1drv_1_1adc__channel.html#aa6bdd02ed10f00148953fc63c1eef3a5">fw::drv::adc_channel&lt; ID &gt;</a>
+, <a class="el" href="structfw_1_1drv_1_1adc__channel__with__callback.html#a3bd6ee1448a93f964afd50e9274e8faa">fw::drv::adc_channel_with_callback&lt; ID &gt;</a>
+, <a class="el" href="structfw_1_1drv_1_1detailed__adc__channel.html#a755a3ded139e7f065f2104feda955b32">fw::drv::detailed_adc_channel&lt; ID, N &gt;</a>
 </li>
 <li>convert()
 : <a class="el" href="classcnv_1_1current__converter.html#a26ab4250dd19d8bf50f6761a2013cc82">cnv::current_converter</a>
@@ -177,7 +189,7 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Aug 18 2023 20:00:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Aug 20 2023 10:55:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

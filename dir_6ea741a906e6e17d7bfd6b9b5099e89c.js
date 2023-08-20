@@ -1,22 +1,6 @@
 var dir_6ea741a906e6e17d7bfd6b9b5099e89c =
 [
-    [ "acquisition.hpp", "acquisition_8hpp.html", [
-      [ "acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", [
-        [ "buffer_was_full", "namespacefw_1_1drv.html#af977b5a7be96a3a0cb62991781d4398a", null ],
-        [ "empty_buffer", "namespacefw_1_1drv.html#ad3ea819532719ec233e997164573338d", null ],
-        [ "hal_start_failed", "namespacefw_1_1drv.html#ad927f231af470539ea6d821de90683a8", null ]
-      ] ],
-      [ "acquisition", "classfw_1_1drv_1_1acquisition.html", "classfw_1_1drv_1_1acquisition" ],
-      [ "handles", "classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles", [
-        [ "adc", "classfw_1_1drv_1_1acquisition.html#a1b911588544e521aa5387231326da14c", null ],
-        [ "chconfs", "classfw_1_1drv_1_1acquisition.html#aee02860e0c820c6f8878a5d78155bfcd", null ],
-        [ "dma", "classfw_1_1drv_1_1acquisition.html#a61071a80f4cb0ada21f454c121bbd652", null ],
-        [ "tim", "classfw_1_1drv_1_1acquisition.html#a06b952e90bf52108d721f99feec98019", null ],
-        [ "tim_channel", "classfw_1_1drv_1_1acquisition.html#a9b4ad58bb686c44e825a0d43aaaf7db2", null ]
-      ] ],
-      [ "detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence" ]
-    ] ],
-    [ "acquisition_inl.hpp", "acquisition__inl_8hpp.html", null ],
+    [ "adc_pooler.hpp", "adc__pooler_8hpp.html", "adc__pooler_8hpp" ],
     [ "callbacks.hpp", "fw_2drv_2callbacks_8hpp.html", "fw_2drv_2callbacks_8hpp" ],
     [ "clock.hpp", "clock_8hpp.html", [
       [ "clock", "classfw_1_1drv_1_1clock.html", "classfw_1_1drv_1_1clock" ],

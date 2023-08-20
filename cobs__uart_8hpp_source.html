@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfw_1_1drv_1_1cobs__uart.html#ad541cabd35bc98135e2c3e07157a51bf">start</a>();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classfw_1_1drv_1_1cobs__uart.html#afdcad5b2078d820ef5d8c39bbff3f1eb">send</a>( em::view&lt; const std::byte* &gt; data );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        em::result <a class="code" href="classfw_1_1drv_1_1cobs__uart.html#ae1df312ac663c5e3461c6e11a687b710">send</a>( em::view&lt; const std::byte* &gt; data );</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classfw_1_1drv_1_1cobs__uart.html#structfw_1_1drv_1_1cobs__uart_1_1handles">handles</a> h_;</div>
@@ -192,7 +192,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}  <span class="comment">// namespace fw::drv</span></div>
-<div class="ttc" id="aclasscom__interface_html"><div class="ttname"><a href="classcom__interface.html">com_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:67</div></div>
+<div class="ttc" id="aclasscom__interface_html"><div class="ttname"><a href="classcom__interface.html">com_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:49</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1cobs__uart_html"><div class="ttname"><a href="classfw_1_1drv_1_1cobs__uart.html">fw::drv::cobs_uart</a></div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:18</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1cobs__uart_html_a00e524b7ba1bb8c27b2f4b62146b7e6f"><div class="ttname"><a href="classfw_1_1drv_1_1cobs__uart.html#a00e524b7ba1bb8c27b2f4b62146b7e6f">fw::drv::cobs_uart::tx_cplt_irq</a></div><div class="ttdeci">void tx_cplt_irq(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:97</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1cobs__uart_html_a29644edb1c40f72ffaf8ccdd6b8c1e01"><div class="ttname"><a href="classfw_1_1drv_1_1cobs__uart.html#a29644edb1c40f72ffaf8ccdd6b8c1e01">fw::drv::cobs_uart::cobs_uart</a></div><div class="ttdeci">cobs_uart()=default</div></div>
@@ -207,12 +207,12 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="ttc" id="aclassfw_1_1drv_1_1cobs__uart_html_ad541cabd35bc98135e2c3e07157a51bf"><div class="ttname"><a href="classfw_1_1drv_1_1cobs__uart.html#ad541cabd35bc98135e2c3e07157a51bf">fw::drv::cobs_uart::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:69</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1cobs__uart_html_adbc8d83440f18fdc7c63444e8b710ca8"><div class="ttname"><a href="classfw_1_1drv_1_1cobs__uart.html#adbc8d83440f18fdc7c63444e8b710ca8">fw::drv::cobs_uart::tx_dma_irq</a></div><div class="ttdeci">void tx_dma_irq()</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:59</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1cobs__uart_html_add59880fd0e7ebffd6f478a33b4b2eab"><div class="ttname"><a href="classfw_1_1drv_1_1cobs__uart.html#add59880fd0e7ebffd6f478a33b4b2eab">fw::drv::cobs_uart::handles::tx_dma</a></div><div class="ttdeci">DMA_HandleTypeDef tx_dma</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:23</div></div>
+<div class="ttc" id="aclassfw_1_1drv_1_1cobs__uart_html_ae1df312ac663c5e3461c6e11a687b710"><div class="ttname"><a href="classfw_1_1drv_1_1cobs__uart.html#ae1df312ac663c5e3461c6e11a687b710">fw::drv::cobs_uart::send</a></div><div class="ttdeci">em::result send(em::view&lt; const std::byte * &gt; data)</div><div class="ttdef"><b>Definition:</b> cobs_uart.cpp:31</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1cobs__uart_html_ae41fa7d033f5b2687ebadbcdcab5f390"><div class="ttname"><a href="classfw_1_1drv_1_1cobs__uart.html#ae41fa7d033f5b2687ebadbcdcab5f390">fw::drv::cobs_uart::uart_irq</a></div><div class="ttdeci">void uart_irq()</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:64</div></div>
-<div class="ttc" id="aclassfw_1_1drv_1_1cobs__uart_html_afdcad5b2078d820ef5d8c39bbff3f1eb"><div class="ttname"><a href="classfw_1_1drv_1_1cobs__uart.html#afdcad5b2078d820ef5d8c39bbff3f1eb">fw::drv::cobs_uart::send</a></div><div class="ttdeci">bool send(em::view&lt; const std::byte * &gt; data)</div><div class="ttdef"><b>Definition:</b> cobs_uart.cpp:31</div></div>
 <div class="ttc" id="aclassfw_1_1drv_1_1cobs__uart_html_structfw_1_1drv_1_1cobs__uart_1_1handles"><div class="ttname"><a href="classfw_1_1drv_1_1cobs__uart.html#structfw_1_1drv_1_1cobs__uart_1_1handles">fw::drv::cobs_uart::handles</a></div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:21</div></div>
 <div class="ttc" id="adrv__interfaces_8hpp_html"><div class="ttname"><a href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a></div></div>
-<div class="ttc" id="adrv__interfaces_8hpp_html_structcom__res"><div class="ttname"><a href="drv__interfaces_8hpp.html#structcom__res">com_res</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:61</div></div>
-<div class="ttc" id="anamespacefw_1_1drv_html"><div class="ttname"><a href="namespacefw_1_1drv.html">fw::drv</a></div><div class="ttdef"><b>Definition:</b> acquisition.hpp:16</div></div>
+<div class="ttc" id="adrv__interfaces_8hpp_html_structcom__res"><div class="ttname"><a href="drv__interfaces_8hpp.html#structcom__res">com_res</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:43</div></div>
+<div class="ttc" id="anamespacefw_1_1drv_html"><div class="ttname"><a href="namespacefw_1_1drv.html">fw::drv</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:8</div></div>
 <div class="ttc" id="anamespacefw_1_1drv_html_aabef94de8eb8d0c86cb545f41a023490"><div class="ttname"><a href="namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490">fw::drv::comm_buff_size</a></div><div class="ttdeci">constexpr std::size_t comm_buff_size</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -220,7 +220,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="cobs__uart_8hpp.html">cobs_uart.hpp</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 20:00:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Aug 20 2023 10:55:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

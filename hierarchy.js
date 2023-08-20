@@ -1,11 +1,14 @@
 var hierarchy =
 [
-    [ "fw::drv::acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", null ],
+    [ "fw::drv::adc_channel< ID >", "structfw_1_1drv_1_1adc__channel.html", [
+      [ "fw::drv::adc_channel_with_callback< ID >", "structfw_1_1drv_1_1adc__channel__with__callback.html", null ]
+    ] ],
     [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", [
       [ "current_callback", "classcurrent__callback.html", null ],
       [ "fw::drv::adc_detailed_cb< Callable >", "structfw_1_1drv_1_1adc__detailed__cb.html", null ],
       [ "fw::drv::empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", null ]
     ] ],
+    [ "fw::drv::adc_pooler< Set >", "structfw_1_1drv_1_1adc__pooler.html", null ],
     [ "cfg_dispatcher", "structcfg__dispatcher.html", null ],
     [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", null ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", null ],
@@ -25,7 +28,7 @@ var hierarchy =
     [ "core", "structcore.html", null ],
     [ "core_drivers", "structcore__drivers.html", null ],
     [ "cnv::current_converter", "classcnv_1_1current__converter.html", null ],
-    [ "fw::drv::acquisition< N >::detailed_sequence", "structfw_1_1drv_1_1acquisition_1_1detailed__sequence.html", null ],
+    [ "fw::drv::detailed_adc_channel< ID, N >", "structfw_1_1drv_1_1detailed__adc__channel.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
     [ "driver_interface", "classdriver__interface.html", [
       [ "current_interface", "classcurrent__interface.html", null ],
@@ -47,7 +50,6 @@ var hierarchy =
         [ "host::serialize_error", "structhost_1_1serialize__error.html", null ]
       ] ]
     ] ],
-    [ "fw::drv::acquisition< N >::handles", "classfw_1_1drv_1_1acquisition.html#structfw_1_1drv_1_1acquisition_1_1handles", null ],
     [ "fw::drv::clock::handles", "classfw_1_1drv_1_1clock.html#structfw_1_1drv_1_1clock_1_1handles", null ],
     [ "fw::drv::cobs_uart::handles", "classfw_1_1drv_1_1cobs__uart.html#structfw_1_1drv_1_1cobs__uart_1_1handles", null ],
     [ "fw::drv::hbridge::handles", "classfw_1_1drv_1_1hbridge.html#structfw_1_1drv_1_1hbridge_1_1handles", null ],
@@ -63,7 +65,6 @@ var hierarchy =
     [ "monitor", "classmonitor.html", null ],
     [ "cfg::payload", "structcfg_1_1payload.html", null ],
     [ "period_cb_interface", "classperiod__cb__interface.html", [
-      [ "fw::drv::acquisition< N >", "classfw_1_1drv_1_1acquisition.html", null ],
       [ "fw::drv::empty_period_cb", "structfw_1_1drv_1_1empty__period__cb.html", null ],
       [ "fw::drv::period_cb< Callable >", "structfw_1_1drv_1_1period__cb.html", null ]
     ] ],

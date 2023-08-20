@@ -1,9 +1,10 @@
 <map id="src/drv_interfaces.hpp" name="src/drv_interfaces.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="465,5,632,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="492,5,659,32"/>
 <area shape="rect" id="node2" href="$base_8hpp.html" title=" " alt="" coords="328,80,409,107"/>
 <area shape="rect" id="node5" title=" " alt="" coords="506,155,573,181"/>
-<area shape="rect" id="node8" href="$status__category_8hpp.html" title=" " alt="" coords="530,80,682,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="706,80,759,107"/>
+<area shape="rect" id="node8" href="$status_8hpp.html" title=" " alt="" coords="530,80,621,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="645,80,783,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="807,80,861,107"/>
 <area shape="rect" id="node3" href="$scaled_8hpp.html" title=" " alt="" coords="5,155,97,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="122,155,189,181"/>
 <area shape="rect" id="node6" title=" " alt="" coords="213,155,378,181"/>

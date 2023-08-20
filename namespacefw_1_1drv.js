@@ -1,7 +1,9 @@
 var namespacefw_1_1drv =
 [
-    [ "acquisition_status", "namespacefw_1_1drv.html#structfw_1_1drv_1_1acquisition__status", "namespacefw_1_1drv_structfw_1_1drv_1_1acquisition__status_dup" ],
-    [ "acquisition", "classfw_1_1drv_1_1acquisition.html", "classfw_1_1drv_1_1acquisition" ],
+    [ "detailed_adc_channel", "structfw_1_1drv_1_1detailed__adc__channel.html", "structfw_1_1drv_1_1detailed__adc__channel" ],
+    [ "adc_channel", "structfw_1_1drv_1_1adc__channel.html", "structfw_1_1drv_1_1adc__channel" ],
+    [ "adc_channel_with_callback", "structfw_1_1drv_1_1adc__channel__with__callback.html", "structfw_1_1drv_1_1adc__channel__with__callback" ],
+    [ "adc_pooler", "structfw_1_1drv_1_1adc__pooler.html", "structfw_1_1drv_1_1adc__pooler" ],
     [ "adc_detailed_cb", "structfw_1_1drv_1_1adc__detailed__cb.html", "structfw_1_1drv_1_1adc__detailed__cb" ],
     [ "empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", "structfw_1_1drv_1_1empty__adc__detailed__cb" ],
     [ "value_cb", "structfw_1_1drv_1_1value__cb.html", "structfw_1_1drv_1_1value__cb" ],
@@ -16,5 +18,7 @@ var namespacefw_1_1drv =
     [ "empty_current_cb", "namespacefw_1_1drv.html#aab47d8f9464d5e9fa03a9a1fba9cbaad", null ],
     [ "empty_position_cb", "namespacefw_1_1drv.html#a12e3863a064c39cc743a29202dcca663", null ],
     [ "position_cb", "namespacefw_1_1drv.html#a6eaf1fbd19d91c8c14dd188cfbf972ec", null ],
-    [ "comm_buff_size", "namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490", null ]
+    [ "comm_buff_size", "namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490", null ],
+    [ "EMPTY_ADC_CALLBACK", "namespacefw_1_1drv.html#a276b77a74a170ade5959393d429187ca", null ],
+    [ "EMPTY_ADC_DETAILED_CALLBACK", "namespacefw_1_1drv.html#a3b4bea0c9e12385bcecef61b17dcc18f", null ]
 ];
