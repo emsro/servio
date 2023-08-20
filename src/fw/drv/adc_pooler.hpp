@@ -144,16 +144,13 @@ struct adc_pooler
 
         adc_pooler() = default;
 
-        em::result setup(
-            em::view< const id_type* >    seq,
-            em::function_view< em::result(
-                ADC_HandleTypeDef& adc,
-                DMA_HandleTypeDef& dma,
-                TIM_HandleTypeDef& tim,
-                uint32_t&          tim_channel ) > setup_f )
+        adc_pooler* setup( em::view< const id_type* > seq, auto&& setup_f )
         {
+                if ( setup_f( adc_, dma_, tim_, tim_channel_ ) != em::SUCCESS ) {
+                        return nullptr;
+                }
                 sequence_ = seq;
-                return setup_f( adc_, dma_, tim_, tim_channel_ );
+                return this;
         }
 
         em::result start()
@@ -209,7 +206,6 @@ struct adc_pooler
                 auto active_id = sequence_[sequence_i_];
 
                 with( active_id, [&]( auto& item ) {
-                        // TODO: error handling?
                         item.period_stop( adc_ );
                 } );
 
@@ -217,15 +213,13 @@ struct adc_pooler
                 active_id   = sequence_[sequence_i_];
 
                 with( active_id, [&]( auto& item ) {
-                        // TODO: error handling?
                         item.period_start( adc_ );
                 } );
         }
 
 private:
-        void with( id_type set_id, auto&& f )
+        [[gnu::flatten]] void with( id_type set_id, auto&& f )
         {
-                // TODO: error handling?
                 em::for_each( set_.tie(), [&]< typename T >( T& item ) {
                         if ( T::id == set_id ) {
                                 f( item );

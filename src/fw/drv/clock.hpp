@@ -25,11 +25,15 @@ public:
         clock& operator=( const clock& ) = delete;
         clock& operator=( clock&& )      = delete;
 
-        bool setup( em::function_view< bool( TIM_HandleTypeDef&, uint32_t& ) > setup_f )
+        clock* setup( auto&& setup_f )
         {
-                const bool res = setup_f( h_.tim, h_.tim_channel );
-                HAL_TIM_OC_Start( &h_.tim, h_.tim_channel );
-                return res;
+                if ( setup_f( h_.tim, h_.tim_channel ) != em::SUCCESS ) {
+                        return nullptr;
+                }
+                if ( HAL_TIM_OC_Start( &h_.tim, h_.tim_channel ) != HAL_OK ) {
+                        return nullptr;
+                }
+                return this;
         }
 
         microseconds get_us() override

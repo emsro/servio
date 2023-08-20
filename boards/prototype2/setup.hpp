@@ -58,7 +58,7 @@ struct uart_cfg
         dma_cfg        tx_dma;
 };
 
-bool setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg );
+em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg );
 
 struct hb_timer_cfg
 {
@@ -70,7 +70,7 @@ struct hb_timer_cfg
         pinch_cfg    mc2;
 };
 
-bool setup_hbridge_timers( fw::drv::hbridge::handles&, hb_timer_cfg cfg );
+em::result setup_hbridge_timers( fw::drv::hbridge::handles&, hb_timer_cfg cfg );
 
 struct leds_gpio_cfg
 {
@@ -78,7 +78,7 @@ struct leds_gpio_cfg
         pin_cfg blue;
 };
 
-bool setup_leds_gpio( fw::drv::leds::handles&, leds_gpio_cfg cfg );
+em::result setup_leds_gpio( fw::drv::leds::handles&, leds_gpio_cfg cfg );
 
 struct leds_timer_cfg
 {
@@ -87,8 +87,8 @@ struct leds_timer_cfg
         pinch_cfg    green;
 };
 
-bool setup_leds_timer( fw::drv::leds::handles&, leds_timer_cfg cfg );
-void setup_clk();
+em::result setup_leds_timer( fw::drv::leds::handles&, leds_timer_cfg cfg );
+void       setup_clk();
 
 struct clock_timer_cfg
 {
@@ -96,6 +96,6 @@ struct clock_timer_cfg
         uint32_t     channel;
 };
 
-bool setup_clock_timer( TIM_HandleTypeDef& tim, uint32_t& channel, clock_timer_cfg cfg );
+em::result setup_clock_timer( TIM_HandleTypeDef& tim, uint32_t& channel, clock_timer_cfg cfg );
 
 }  // namespace brd

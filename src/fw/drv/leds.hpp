@@ -31,7 +31,13 @@ public:
 
         leds() = default;
 
-        bool setup( em::function_view< bool( handles& ) > setup_f );
+        leds* setup( auto&& setup_f )
+        {
+                if ( setup_f( h_ ) != em::SUCCESS ) {
+                        return nullptr;
+                }
+                return this;
+        }
 
         void start();
 

@@ -1,4 +1,5 @@
 #include "drv_interfaces.hpp"
+#include "fw/drv/callbacks.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <span>
@@ -11,6 +12,8 @@ namespace em = emlabcpp;
 namespace fw::drv
 {
 
+inline empty_period_cb EMPTY_PERIOD_CB;
+
 class hbridge : public pwm_motor_interface, public period_interface
 {
 public:
@@ -22,7 +25,10 @@ public:
                 uint32_t          mc2_channel;
         };
 
-        hbridge();
+        hbridge()
+          : period_cb_( &EMPTY_PERIOD_CB )
+        {
+        }
 
         // driver is non-movable and non-copyable
         hbridge( const hbridge& )            = delete;
@@ -30,10 +36,32 @@ public:
         hbridge& operator=( const hbridge& ) = delete;
         hbridge& operator=( hbridge&& )      = delete;
 
-        bool setup( em::function_view< bool( handles& ) > );
+        hbridge* setup( auto&& setup_f )
+        {
 
-        void timer_period_irq( TIM_HandleTypeDef* );
-        void timer_irq();
+                if ( setup_f( h_ ) != em::SUCCESS ) {
+                        return nullptr;
+                }
+
+                timer_max_ = h_.timer.Init.Period;
+
+                set_power( 0 );
+
+                return this;
+        }
+
+        void timer_period_irq( TIM_HandleTypeDef* h )
+        {
+                if ( h != &h_.timer ) {
+                        return;
+                }
+                period_cb_->on_period_irq();
+        }
+
+        void timer_irq()
+        {
+                HAL_TIM_IRQHandler( &h_.timer );
+        }
 
         void                 set_period_callback( period_cb_interface& ) override;
         period_cb_interface& get_period_callback() override;
@@ -63,18 +91,5 @@ private:
         uint32_t             timer_max_ = 0;
         handles              h_{};
 };
-
-inline void hbridge::timer_period_irq( TIM_HandleTypeDef* h )
-{
-        if ( h != &h_.timer ) {
-                return;
-        }
-        period_cb_->on_period_irq();
-}
-
-inline void hbridge::timer_irq()
-{
-        HAL_TIM_IRQHandler( &h_.timer );
-}
 
 }  // namespace fw::drv

@@ -9,7 +9,7 @@ namespace brd
 //  PF1 - G
 //  PB0 - G
 //  PB5 - Y
-bool setup_leds_gpio( fw::drv::leds::handles& h, leds_gpio_cfg cfg )
+em::result setup_leds_gpio( fw::drv::leds::handles& h, leds_gpio_cfg cfg )
 {
         for ( const pin_cfg pc : { cfg.red, cfg.blue } ) {
                 GPIO_InitTypeDef init;
@@ -27,7 +27,7 @@ bool setup_leds_gpio( fw::drv::leds::handles& h, leds_gpio_cfg cfg )
         h.blue_peripheral = cfg.blue.port;
         h.blue_pin        = cfg.blue.pin;
 
-        return true;
+        return em::SUCCESS;
 }
 
 }  // namespace brd

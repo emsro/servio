@@ -13,7 +13,7 @@ namespace brd
 // MC_1 is connected to PA8 on CH1
 // MC_2 is connected to PA9 on CH2
 
-bool setup_hbridge_timers( fw::drv::hbridge::handles& h, hb_timer_cfg cfg )
+em::result setup_hbridge_timers( fw::drv::hbridge::handles& h, hb_timer_cfg cfg )
 {
 
         h.timer.Instance               = cfg.timer_instance;
@@ -93,7 +93,7 @@ bool setup_hbridge_timers( fw::drv::hbridge::handles& h, hb_timer_cfg cfg )
         HAL_NVIC_SetPriority( cfg.irq, cfg.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.irq );
 
-        return true;
+        return em::SUCCESS;
 }
 
 em::result setup_adc_timer( TIM_HandleTypeDef& tim, uint32_t& tim_channel, adc_timer_cfg cfg )
@@ -132,7 +132,7 @@ em::result setup_adc_timer( TIM_HandleTypeDef& tim, uint32_t& tim_channel, adc_t
         return em::SUCCESS;
 }
 
-bool setup_clock_timer( TIM_HandleTypeDef& tim, uint32_t& channel, clock_timer_cfg cfg )
+em::result setup_clock_timer( TIM_HandleTypeDef& tim, uint32_t& channel, clock_timer_cfg cfg )
 {
         tim.Instance               = cfg.timer_instance;
         tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1'000'000 );
@@ -165,10 +165,10 @@ bool setup_clock_timer( TIM_HandleTypeDef& tim, uint32_t& channel, clock_timer_c
                 fw::stop_exec();
         }
 
-        return true;
+        return em::SUCCESS;
 }
 
-bool setup_leds_timer( fw::drv::leds::handles& h, leds_timer_cfg cfg )
+em::result setup_leds_timer( fw::drv::leds::handles& h, leds_timer_cfg cfg )
 {
         h.tim.Instance               = cfg.timer_instance;
         h.tim.Init.Prescaler         = 0;
@@ -218,7 +218,7 @@ bool setup_leds_timer( fw::drv::leds::handles& h, leds_timer_cfg cfg )
                 }
         }
 
-        return true;
+        return em::SUCCESS;
 }
 
 }  // namespace brd

@@ -5,11 +5,6 @@
 namespace fw::drv
 {
 
-bool cobs_uart::setup( em::function_view< bool( handles& ) > setup_f )
-{
-        return setup_f( h_ );
-}
-
 com_res cobs_uart::load_message( em::view< std::byte* > data )
 {
         if ( isizes_.empty() ) {

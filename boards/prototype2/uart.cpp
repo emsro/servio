@@ -9,7 +9,7 @@ namespace brd
 // RX to PA10
 // TX to PB6
 
-bool setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg )
+em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg )
 {
         uart.Instance                    = cfg.uart_instance;
         uart.Init.BaudRate               = cfg.baudrate;
@@ -80,7 +80,7 @@ bool setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg c
                 fw::stop_exec();
         }
 
-        return true;
+        return em::SUCCESS;
 }
 
 }  // namespace brd

@@ -48,7 +48,7 @@ struct com_res
 class com_interface
 {
 public:
-        virtual void       start()                                     = 0;
+        virtual em::result start()                                     = 0;
         virtual em::result send( em::view< const std::byte* > data )   = 0;
         virtual com_res    load_message( em::view< std::byte* > data ) = 0;
         virtual ~com_interface()                                       = default;
@@ -57,7 +57,6 @@ public:
 class leds_interface
 {
 public:
-        virtual void start()                         = 0;
         virtual void force_red_led()                 = 0;
         virtual void update( const leds_vals& leds ) = 0;
         virtual ~leds_interface()                    = default;
@@ -73,7 +72,6 @@ public:
 class period_interface : public driver_interface
 {
 public:
-        // TODO: maybe the void wor start/end is not a great idea?
         virtual void                 start()                                     = 0;
         virtual void                 stop()                                      = 0;
         virtual void                 set_period_callback( period_cb_interface& ) = 0;
@@ -96,21 +94,18 @@ public:
 };
 
 class vcc_interface : public driver_interface
-
 {
 public:
         virtual uint32_t get_vcc() const = 0;
 };
 
 class temperature_interface : public driver_interface
-
 {
 public:
         virtual uint32_t get_temperature() const = 0;
 };
 
 class current_interface : public driver_interface
-
 {
 public:
         virtual uint32_t              get_current() const                           = 0;

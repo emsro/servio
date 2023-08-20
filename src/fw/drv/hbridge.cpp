@@ -1,33 +1,9 @@
 #include "hbridge.hpp"
 
-#include "fw/drv/callbacks.hpp"
-
 #include <emlabcpp/algorithm.h>
 
 namespace fw::drv
 {
-
-namespace
-{
-        empty_period_cb EMPTY_PERIOD_CB;
-}
-
-hbridge::hbridge()
-  : period_cb_( &EMPTY_PERIOD_CB )
-{
-}
-
-bool hbridge::setup( em::function_view< bool( handles& ) > setup_f )
-{
-
-        const bool res = setup_f( h_ );
-
-        timer_max_ = h_.timer.Init.Period;
-
-        set_power( 0 );
-
-        return res;
-}
 
 void hbridge::start()
 {
@@ -54,26 +30,27 @@ period_cb_interface& hbridge::get_period_callback()
 void hbridge::set_power( int16_t power )
 {
 
+        int32_t mc1_val = 0;
+        int32_t mc2_val = 0;
+
         // TODO: again, casts can potentially produce an error?
         if ( power > 0 ) {
-                const auto val = em::map_range< int32_t, int32_t >(
+                mc1_val = em::map_range< int32_t, int32_t >(
                     power,
                     0,
                     std::numeric_limits< int16_t >::max(),
                     0,
                     static_cast< int32_t >( timer_max_ ) );
-                __HAL_TIM_SET_COMPARE( &h_.timer, h_.mc1_channel, static_cast< uint32_t >( val ) );
-                __HAL_TIM_SET_COMPARE( &h_.timer, h_.mc2_channel, 0 );
         } else {
-                const auto val = em::map_range< int32_t, int32_t >(
+                mc2_val = em::map_range< int32_t, int32_t >(
                     power,
                     0,
                     std::numeric_limits< int16_t >::lowest(),
                     0,
                     static_cast< int32_t >( timer_max_ ) );
-                __HAL_TIM_SET_COMPARE( &h_.timer, h_.mc1_channel, 0 );
-                __HAL_TIM_SET_COMPARE( &h_.timer, h_.mc2_channel, static_cast< uint32_t >( val ) );
         }
+        __HAL_TIM_SET_COMPARE( &h_.timer, h_.mc1_channel, static_cast< uint32_t >( mc1_val ) );
+        __HAL_TIM_SET_COMPARE( &h_.timer, h_.mc2_channel, static_cast< uint32_t >( mc2_val ) );
 }
 
 int8_t hbridge::get_direction() const
