@@ -77,9 +77,8 @@ public:
         int8_t get_direction() const override;
 
         // starts the timers
-        void start() override;
-
-        void stop() override;
+        em::result start() override;
+        em::result stop() override;
 
         status get_status() const override
         {

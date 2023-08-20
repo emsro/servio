@@ -36,7 +36,9 @@ int main()
         cfg_dispatcher cfg_dis{ cfg, cor };
         cfg_dis.full_apply();
 
-        std::ignore = cdrv.start_cb( cdrv );
+        if ( cdrv.start_cb( cdrv ) != em::SUCCESS ) {
+                fw::stop_exec();
+        }
 
         cor.ind.on_event( cdrv.clock->get_us(), indication_event::INITIALIZED );
 
@@ -98,8 +100,9 @@ int main()
                 if ( !succ ) {
                         // TODO: what now?
                 } else {
-                        // TODO: this should not be ignored
-                        std::ignore = cdrv.comms->send( odata );
+                        if ( cdrv.comms->send( odata ) != em::SUCCESS ) {
+                                fw::stop_exec();
+                        }
                 }
         }
 }

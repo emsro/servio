@@ -72,8 +72,8 @@ public:
 class period_interface : public driver_interface
 {
 public:
-        virtual void                 start()                                     = 0;
-        virtual void                 stop()                                      = 0;
+        virtual em::result           start()                                     = 0;
+        virtual em::result           stop()                                      = 0;
         virtual void                 set_period_callback( period_cb_interface& ) = 0;
         virtual period_cb_interface& get_period_callback()                       = 0;
 };

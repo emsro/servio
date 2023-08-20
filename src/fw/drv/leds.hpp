@@ -39,7 +39,7 @@ public:
                 return this;
         }
 
-        void start();
+        em::result start();
 
         void force_red_led();
 

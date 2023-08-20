@@ -16,7 +16,7 @@ struct bb_test_case : ::testing::Test
 {
         bb_test_case( host::common_cli& cli, std::function< test_signature > test )
           : cli( cli )
-          , test( test )
+          , test( std::move( test ) )
         {
         }
 
@@ -26,7 +26,7 @@ struct bb_test_case : ::testing::Test
                 std::exception_ptr excep_ptr;
                 co_spawn(
                     cli.context, test( cli.context, *cli.port_ptr ), [&]( std::exception_ptr ptr ) {
-                            excep_ptr = ptr;
+                            excep_ptr = std::move( ptr );
                     } );
                 cli.context.run();
 
@@ -39,14 +39,20 @@ struct bb_test_case : ::testing::Test
         std::function< test_signature > test;
 };
 
-void register_test(
+inline void register_test(
     const std::string&              fixture_name,
     const std::string&              name,
     host::common_cli&               cli,
     std::function< test_signature > test )
 {
         ::testing::RegisterTest(
-            fixture_name.c_str(), name.c_str(), nullptr, nullptr, __FILE__, __LINE__, [&cli, test] {
+            fixture_name.c_str(),
+            name.c_str(),
+            nullptr,
+            nullptr,
+            __FILE__,
+            __LINE__,
+            [&cli, test = std::move( test )] {
                     return new bb_test_case( cli, test );
             } );
 }

@@ -20,9 +20,9 @@ void field_option( CLI::App* app, std::string& field )
 
 struct cfg_opts
 {
-        bool        json  = false;
-        std::string field = "";
-        std::string value = "";
+        bool        json = false;
+        std::string field;
+        std::string value;
 };
 
 void cfg_def(
@@ -32,16 +32,16 @@ void cfg_def(
 {
         auto data = std::make_shared< cfg_opts >();
 
-        auto cfg = app.add_subcommand( "cfg", "configuration commands" );
+        auto* cfg = app.add_subcommand( "cfg", "configuration commands" );
 
-        auto query = cfg->add_subcommand( "query", "list all config options from the servo" );
+        auto* query = cfg->add_subcommand( "query", "list all config options from the servo" );
         json_flag( query, data->json );
         query->callback( [&port_ptr, data, &context] {
                 co_spawn(
                     context, host::cfg_query_cmd( *port_ptr, data->json ), boost::asio::detached );
         } );
 
-        auto get = cfg->add_subcommand( "get", "retrivies a configuration option from the servo" );
+        auto* get = cfg->add_subcommand( "get", "retrivies a configuration option from the servo" );
         field_option( get, data->field );
         json_flag( get, data->json );
         get->callback( [&port_ptr, data, &context] {
@@ -51,7 +51,7 @@ void cfg_def(
                     boost::asio::detached );
         } );
 
-        auto set =
+        auto* set =
             cfg->add_subcommand( "set", "sets a configuration option to value in the servo" );
         field_option( set, data->field );
         set->add_option( "value", data->value, "Value to set" );
@@ -62,13 +62,13 @@ void cfg_def(
                     boost::asio::detached );
         } );
 
-        auto commit = cfg->add_subcommand(
+        auto* commit = cfg->add_subcommand(
             "commit", "stores the current configuration of servo in its persistent memory" );
         commit->callback( [&port_ptr, &context] {
                 co_spawn( context, host::cfg_commit_cmd( *port_ptr ), boost::asio::detached );
         } );
 
-        auto clear = cfg->add_subcommand( "clear", "clear latest store config from the servo" );
+        auto* clear = cfg->add_subcommand( "clear", "clear latest store config from the servo" );
         clear->callback( [&port_ptr, &context] {
                 co_spawn( context, host::cfg_clear_cmd( *port_ptr ), boost::asio::detached );
         } );
@@ -125,7 +125,7 @@ void pool_def(
 {
         auto data = std::make_shared< std::vector< std::string > >();
 
-        auto pool = app.add_subcommand( "pool", "pool the servo for properties" );
+        auto* pool = app.add_subcommand( "pool", "pool the servo for properties" );
         pool->add_option( "properties", *data, "properties to pool" );
         pool->callback( [&port_ptr, data, &context] {
                 co_spawn( context, pool_cmd( context, *port_ptr, *data ), boost::asio::detached );
@@ -146,14 +146,14 @@ void mode_def(
 {
         auto data = std::make_shared< mode_opts >();
 
-        auto mode = app.add_subcommand( "mode", "switch the servo to mode" );
+        auto* mode = app.add_subcommand( "mode", "switch the servo to mode" );
 
-        auto disengaged = mode->add_subcommand( "disengaged", "disengaged mode" );
+        auto* disengaged = mode->add_subcommand( "disengaged", "disengaged mode" );
         disengaged->callback( [&port_ptr, &context] {
                 co_spawn( context, host::set_mode_disengaged( *port_ptr ), boost::asio::detached );
         } );
 
-        auto current = mode->add_subcommand( "current", "current mode" );
+        auto* current = mode->add_subcommand( "current", "current mode" );
         current->add_option( "current", data->current, "goal current" );
         current->callback( [&port_ptr, data, &context] {
                 co_spawn(
@@ -162,7 +162,7 @@ void mode_def(
                     boost::asio::detached );
         } );
 
-        auto position = mode->add_subcommand( "position", "position mode" );
+        auto* position = mode->add_subcommand( "position", "position mode" );
         position->add_option( "angle", data->angle, "goal angle" );
         position->callback( [&port_ptr, data, &context] {
                 co_spawn(
@@ -171,7 +171,7 @@ void mode_def(
                     boost::asio::detached );
         } );
 
-        auto velocity = mode->add_subcommand( "velocity", "velocity mode" );
+        auto* velocity = mode->add_subcommand( "velocity", "velocity mode" );
         velocity->add_option( "velocity", data->velocity, "goal velocity" );
         velocity->callback( [&port_ptr, data, &context] {
                 co_spawn(

@@ -40,11 +40,12 @@ em::result cobs_uart::send( em::view< const std::byte* > data )
         tx_done_ = false;
 
         // TODO: problematic cast
-        // TODO: return value ignored
-        std::ignore = HAL_UART_Transmit_DMA(
-            &h_.uart,
-            reinterpret_cast< uint8_t* >( otmp_.begin() ),
-            static_cast< uint16_t >( used.size() + 1 ) );
+        if ( HAL_UART_Transmit_DMA(
+                 &h_.uart,
+                 reinterpret_cast< uint8_t* >( otmp_.begin() ),
+                 static_cast< uint16_t >( used.size() + 1 ) ) != HAL_OK ) {
+                return em::ERROR;
+        }
 
         return em::SUCCESS;
 }

@@ -92,8 +92,8 @@ cfg_set_cmd( cobs_port& port, const std::string& name, std::string value )
 
         const google::protobuf::Descriptor* desc = servio::Config::GetDescriptor();
 
-        using FD        = google::protobuf::FieldDescriptor;
-        const FD* field = desc->FindFieldByName( name );
+        using field_desc        = google::protobuf::FieldDescriptor;
+        const field_desc* field = desc->FindFieldByName( name );
         if ( field == nullptr ) {
                 std::cerr << "Failed to find config field " << name << std::endl;
                 co_return;
@@ -105,19 +105,19 @@ cfg_set_cmd( cobs_port& port, const std::string& name, std::string value )
         }
 
         switch ( field->cpp_type() ) {
-        case FD::CPPTYPE_INT32:
-        case FD::CPPTYPE_INT64:
-        case FD::CPPTYPE_UINT32:
-        case FD::CPPTYPE_UINT64:
-        case FD::CPPTYPE_FLOAT:
-        case FD::CPPTYPE_DOUBLE:
+        case field_desc::CPPTYPE_INT32:
+        case field_desc::CPPTYPE_INT64:
+        case field_desc::CPPTYPE_UINT32:
+        case field_desc::CPPTYPE_UINT64:
+        case field_desc::CPPTYPE_FLOAT:
+        case field_desc::CPPTYPE_DOUBLE:
                 break;
-        case FD::CPPTYPE_BOOL:
-        case FD::CPPTYPE_ENUM:
-        case FD::CPPTYPE_STRING:
+        case field_desc::CPPTYPE_BOOL:
+        case field_desc::CPPTYPE_ENUM:
+        case field_desc::CPPTYPE_STRING:
                 value = "\"" + value + "\"";
                 break;
-        case FD::CPPTYPE_MESSAGE:
+        case field_desc::CPPTYPE_MESSAGE:
                 throw std::exception{};  // TODO: improve this
         }
 

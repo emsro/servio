@@ -113,8 +113,8 @@ void control::moving_irq( microseconds now, bool is_moving )
 
         float desired_curr = get_desired_current();
 
-        limits< float > lims = get_current_limits();
-        desired_curr         = clamp( desired_curr, lims );
+        const limits< float > lims = get_current_limits();
+        desired_curr               = clamp( desired_curr, lims );
 
         const float fpower = em::update( current_pid_, now.count(), current, desired_curr );
         power_             = static_cast< int16_t >( fpower );
@@ -138,7 +138,7 @@ float control::get_desired_current() const
         case control_mode::POSITION:
                 return position_pid_.output * current_scale_regl_.state;
         }
-        return 0.f;
+        return 0.F;
 }
 
 float control::get_desired_velocity() const

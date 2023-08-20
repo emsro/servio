@@ -62,7 +62,7 @@ boost::asio::awaitable< void > test_modes( boost::asio::io_context&, host::cobs_
 
 servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servio::Config item )
 {
-        using FD                                 = google::protobuf::FieldDescriptor;
+        using field_desc                         = google::protobuf::FieldDescriptor;
         const google::protobuf::Reflection* refl = servio::Config::GetReflection();
 
         if ( field->is_repeated() ) {
@@ -70,32 +70,32 @@ servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servi
         }
 
         switch ( field->cpp_type() ) {
-        case FD::CPPTYPE_INT32:
+        case field_desc::CPPTYPE_INT32:
                 refl->SetInt32( &item, field, refl->GetInt32( item, field ) + 1 );
                 break;
-        case FD::CPPTYPE_INT64:
+        case field_desc::CPPTYPE_INT64:
                 refl->SetInt64( &item, field, refl->GetInt64( item, field ) + 1 );
                 break;
-        case FD::CPPTYPE_UINT32:
+        case field_desc::CPPTYPE_UINT32:
                 refl->SetUInt32( &item, field, refl->GetUInt32( item, field ) + 1 );
                 break;
-        case FD::CPPTYPE_UINT64:
+        case field_desc::CPPTYPE_UINT64:
                 refl->SetUInt64( &item, field, refl->GetUInt64( item, field ) + 1 );
                 break;
-        case FD::CPPTYPE_FLOAT:
-                refl->SetFloat( &item, field, refl->GetFloat( item, field ) + 1.f );
+        case field_desc::CPPTYPE_FLOAT:
+                refl->SetFloat( &item, field, refl->GetFloat( item, field ) + 1.F );
                 break;
-        case FD::CPPTYPE_DOUBLE:
+        case field_desc::CPPTYPE_DOUBLE:
                 refl->SetDouble( &item, field, refl->GetDouble( item, field ) + 1.0 );
                 break;
-        case FD::CPPTYPE_BOOL:
+        case field_desc::CPPTYPE_BOOL:
                 refl->SetBool( &item, field, !refl->GetBool( item, field ) );
                 break;
-        case FD::CPPTYPE_STRING:
+        case field_desc::CPPTYPE_STRING:
                 refl->SetString( &item, field, refl->GetString( item, field ) + "a" );
                 break;
-        case FD::CPPTYPE_ENUM:
-        case FD::CPPTYPE_MESSAGE:
+        case field_desc::CPPTYPE_ENUM:
+        case field_desc::CPPTYPE_MESSAGE:
                 throw std::exception{};  // TODO: improve this
         }
         return item;

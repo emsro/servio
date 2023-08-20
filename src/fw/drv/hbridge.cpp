@@ -5,16 +5,26 @@
 namespace fw::drv
 {
 
-void hbridge::start()
+em::result hbridge::start()
 {
-        std::ignore = HAL_TIM_PWM_Start_IT( &h_.timer, h_.mc1_channel );
-        std::ignore = HAL_TIM_PWM_Start_IT( &h_.timer, h_.mc2_channel );
+        if ( HAL_TIM_PWM_Start_IT( &h_.timer, h_.mc1_channel ) != HAL_OK ) {
+                return em::ERROR;
+        }
+        if ( HAL_TIM_PWM_Start_IT( &h_.timer, h_.mc2_channel ) != HAL_OK ) {
+                return em::ERROR;
+        }
+        return em::SUCCESS;
 }
 
-void hbridge::stop()
+em::result hbridge::stop()
 {
-        std::ignore = HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc1_channel );
-        std::ignore = HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc2_channel );
+        if ( HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc1_channel ) != HAL_OK ) {
+                return em::ERROR;
+        }
+        if ( HAL_TIM_PWM_Stop_IT( &h_.timer, h_.mc2_channel ) != HAL_OK ) {
+                return em::ERROR;
+        }
+        return em::SUCCESS;
 }
 
 void hbridge::set_period_callback( period_cb_interface& cb )

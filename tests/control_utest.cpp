@@ -6,46 +6,46 @@
 #include <emlabcpp/range.h>
 #include <gtest/gtest.h>
 
-class ControlFixture : public ::testing::Test
+class control_fixture : public ::testing::Test
 {
 public:
-        void SetUp()
+        void SetUp() override
         {
                 now = 0_ms;
                 motor.emplace();
-                motor->static_friction_force = 0.f;
+                motor->static_friction_force = 0.F;
                 ctl.emplace(
                     now,
                     ctl::config{
                         .position_pid{
-                            .p = 0.03f,
-                            .i = 0.0f,
-                            .d = 0.05f,
+                            .p = 0.03F,
+                            .i = 0.0F,
+                            .d = 0.05F,
                         },
                         .velocity_pid{
-                            .p = 16.f,
-                            .i = 0.0005f,
-                            .d = 4.f,
+                            .p = 16.F,
+                            .i = 0.0005F,
+                            .d = 4.F,
                         },
                         .current_pid{
-                            .p = 2048.f,
-                            .i = 0.512f,
-                            .d = 1024.f,
+                            .p = 2048.F,
+                            .i = 0.512F,
+                            .d = 1024.F,
                         },
                         .position_limits{
-                            -10.f,
-                            10.f,
+                            -10.F,
+                            10.F,
                         },
                         .velocity_limits{
-                            -10.f,
-                            10.f,
+                            -10.F,
+                            10.F,
                         },
                         .current_limits{
-                            -3.f,
-                            3.f,
+                            -3.F,
+                            3.F,
                         },
-                        .static_friction_scale = 1.f,
-                        .static_friction_decay = 1.f,
+                        .static_friction_scale = 1.F,
+                        .static_friction_decay = 1.F,
                     } );
         }
 
@@ -68,10 +68,10 @@ public:
         std::optional< control >          ctl;
 };
 
-TEST_F( ControlFixture, current )
+TEST_F( control_fixture, current )
 {
 
-        for ( float curr : { 0.1f, 0.2f, -0.1f, 0.f, 0.1f } ) {
+        for ( float curr : { 0.1F, 0.2F, -0.1F, 0.F, 0.1F } ) {
                 ctl->switch_to_current_control( now, curr );
 
                 for ( std::size_t i : em::range( 100u ) ) {
@@ -80,14 +80,14 @@ TEST_F( ControlFixture, current )
                         now += 5_ms;
                 }
 
-                EXPECT_NEAR( motor->current, curr, 0.005f );
+                EXPECT_NEAR( motor->current, curr, 0.005F );
         }
 }
 
-TEST_F( ControlFixture, velocity )
+TEST_F( control_fixture, velocity )
 {
 
-        for ( float vel : { 1.f, 2.f, -1.f, 0.f, 1.f } ) {
+        for ( float vel : { 1.F, 2.F, -1.F, 0.F, 1.F } ) {
                 ctl->switch_to_velocity_control( now, vel );
 
                 for ( std::size_t i : em::range( 200u ) ) {
@@ -96,15 +96,15 @@ TEST_F( ControlFixture, velocity )
                         now += 5_ms;
                 }
 
-                EXPECT_NEAR( motor->velocity, vel, 0.015f );
+                EXPECT_NEAR( motor->velocity, vel, 0.015F );
         }
 }
 
 // TODO: eeeeh, this should be fixed
-TEST_F( ControlFixture, DISABLED_position )
+TEST_F( control_fixture, DISABLED_position )
 {
 
-        for ( float angle : { 1.f, 2.f, 1.f, -1.f } ) {
+        for ( float angle : { 1.F, 2.F, 1.F, -1.F } ) {
                 ctl->switch_to_position_control( now, angle );
 
                 for ( std::size_t i : em::range( 700u ) ) {
@@ -113,6 +113,6 @@ TEST_F( ControlFixture, DISABLED_position )
                         now += 5_ms;
                 }
 
-                EXPECT_NEAR( motor->position(), angle, 0.015f );
+                EXPECT_NEAR( motor->position(), angle, 0.015F );
         }
 }

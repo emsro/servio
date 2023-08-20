@@ -444,13 +444,19 @@ em::result start_callback( core_drivers& cdrv )
                 }
         }
         if ( cdrv.motor != nullptr ) {
-                HBRIDGE.start();
+                if ( HBRIDGE.start() != em::SUCCESS ) {
+                        return em::ERROR;
+                }
         }
         if ( cdrv.comms != nullptr ) {
-                std::ignore = cdrv.comms->start();
+                if ( COMMS.start() != em::SUCCESS ) {
+                        return em::ERROR;
+                }
         }
         if ( cdrv.leds != nullptr ) {
-                LEDS.start();
+                if ( LEDS.start() != em::SUCCESS ) {
+                        return em::ERROR;
+                }
         }
 
         return em::SUCCESS;

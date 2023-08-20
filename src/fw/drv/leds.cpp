@@ -12,10 +12,15 @@ void leds::force_red_led()
         HAL_GPIO_WritePin( h_.red_peripheral, h_.red_pin, GPIO_PIN_SET );
 }
 
-void leds::start()
+em::result leds::start()
 {
-        std::ignore = HAL_TIM_PWM_Start( &h_.tim, h_.yellow_channel );
-        std::ignore = HAL_TIM_PWM_Start( &h_.tim, h_.green_channel );
+        if ( HAL_TIM_PWM_Start( &h_.tim, h_.yellow_channel ) != HAL_OK ) {
+                return em::ERROR;
+        }
+        if ( HAL_TIM_PWM_Start( &h_.tim, h_.green_channel ) != HAL_OK ) {
+                return em::ERROR;
+        }
+        return em::SUCCESS;
 }
 
 void leds::update( const leds_vals& leds )

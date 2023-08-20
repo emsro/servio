@@ -18,7 +18,7 @@ struct reply_error : servio_exception
         {
         }
 
-        const char* what() const noexcept
+        const char* what() const noexcept override
         {
                 return msg;
         }
@@ -29,11 +29,11 @@ struct reply_error : servio_exception
 struct error_exception : servio_exception
 {
         error_exception( servio::ErrorMsg msg )
-          : msg( msg )
+          : msg( std::move( msg ) )
         {
         }
 
-        const char* what() const noexcept
+        const char* what() const noexcept override
         {
                 return msg.msg().c_str();
         }
@@ -48,7 +48,7 @@ struct serialize_error : servio_exception
         {
         }
 
-        const char* what() const noexcept
+        const char* what() const noexcept override
         {
                 return msg;
         }
@@ -63,7 +63,7 @@ struct parse_error : servio_exception
         {
         }
 
-        const char* what() const noexcept
+        const char* what() const noexcept override
         {
                 return msg;
         }
