@@ -15,9 +15,9 @@ var classfw_1_1drv_1_1hbridge =
     [ "operator=", "classfw_1_1drv_1_1hbridge.html#adc26a1fe82fad37323cf2a2abb85ddaf", null ],
     [ "set_period_callback", "classfw_1_1drv_1_1hbridge.html#af788a4934f36338f76be2b8eb3cbecde", null ],
     [ "set_power", "classfw_1_1drv_1_1hbridge.html#ac3116bb26105bdac31713ba920a745ff", null ],
-    [ "setup", "classfw_1_1drv_1_1hbridge.html#a9019df4a4520692adcbadb1214df5aa9", null ],
-    [ "start", "classfw_1_1drv_1_1hbridge.html#a22fe3b9d084c01eeff85058697f4f2d2", null ],
-    [ "stop", "classfw_1_1drv_1_1hbridge.html#a1e4c60e2145c0f0628ba1a1014a998cc", null ],
+    [ "setup", "classfw_1_1drv_1_1hbridge.html#a78f063ddcdcc15d3db95633b4f4a7704", null ],
+    [ "start", "classfw_1_1drv_1_1hbridge.html#a450cdb77ad1544e780e006c18d95d838", null ],
+    [ "stop", "classfw_1_1drv_1_1hbridge.html#a527c0961a0ca73c700a72608c2560265", null ],
     [ "timer_irq", "classfw_1_1drv_1_1hbridge.html#a81f5420bda4e9e1c27e2c9406807de0a", null ],
-    [ "timer_period_irq", "classfw_1_1drv_1_1hbridge.html#aa67a1774894dfc05d4ef5ae2c89ba8b8", null ]
+    [ "timer_period_irq", "classfw_1_1drv_1_1hbridge.html#a65c1106be909679e27a22db46b934021", null ]
 ];

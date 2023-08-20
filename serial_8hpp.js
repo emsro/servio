@@ -17,5 +17,5 @@ var serial_8hpp =
     [ "set_mode_disengaged", "serial_8hpp.html#ae9e922ebfa25c20bfa5e01799c1620d8", null ],
     [ "set_mode_position", "serial_8hpp.html#ab08f26af1cf35a9a9b55cb45de5bdc44", null ],
     [ "set_mode_velocity", "serial_8hpp.html#a5e8732c807fd343891a41fa568e7f31a", null ],
-    [ "write", "serial_8hpp.html#a69d6ccb3e5043c62e5736fdf95b4f3a0", null ]
+    [ "write", "serial_8hpp.html#af9be3784e3377e2c068ec80ec06ea580", null ]
 ];

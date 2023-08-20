@@ -17,6 +17,6 @@ var serial_8cpp =
     [ "set_mode_disengaged", "serial_8cpp.html#ae9e922ebfa25c20bfa5e01799c1620d8", null ],
     [ "set_mode_position", "serial_8cpp.html#ab08f26af1cf35a9a9b55cb45de5bdc44", null ],
     [ "set_mode_velocity", "serial_8cpp.html#a5e8732c807fd343891a41fa568e7f31a", null ],
-    [ "write", "serial_8cpp.html#a69d6ccb3e5043c62e5736fdf95b4f3a0", null ],
+    [ "write", "serial_8cpp.html#af9be3784e3377e2c068ec80ec06ea580", null ],
     [ "buffer_size", "serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc", null ]
 ];

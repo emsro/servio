@@ -10,5 +10,5 @@ var classfw_1_1drv_1_1clock =
     [ "get_us", "classfw_1_1drv_1_1clock.html#a9f8c56c82bae397a44cfe4a461319407", null ],
     [ "operator=", "classfw_1_1drv_1_1clock.html#a8e6135142f234fd2a772790c7df9c740", null ],
     [ "operator=", "classfw_1_1drv_1_1clock.html#aaef93f7e494948066829a529aec7ea56", null ],
-    [ "setup", "classfw_1_1drv_1_1clock.html#a2df5148c85f03562b0b154b2debc98ab", null ]
+    [ "setup", "classfw_1_1drv_1_1clock.html#ab5d15fdf67db44270c667fcb60c51f8a", null ]
 ];

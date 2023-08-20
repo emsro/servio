@@ -111,10 +111,10 @@ $(document).ready(function(){initNavTree('classperiod__interface.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0a64f4d13ec2f490a19c3bfe2e4136bc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classperiod__interface.html#a0a64f4d13ec2f490a19c3bfe2e4136bc">start</a> ()=0</td></tr>
-<tr class="separator:a0a64f4d13ec2f490a19c3bfe2e4136bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3beb4b1dc50d1a1b21ddb26c5e2081d6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classperiod__interface.html#a3beb4b1dc50d1a1b21ddb26c5e2081d6">stop</a> ()=0</td></tr>
-<tr class="separator:a3beb4b1dc50d1a1b21ddb26c5e2081d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b77d23dee056a44d5a340bb20c20c27"><td class="memItemLeft" align="right" valign="top">virtual em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classperiod__interface.html#a5b77d23dee056a44d5a340bb20c20c27">start</a> ()=0</td></tr>
+<tr class="separator:a5b77d23dee056a44d5a340bb20c20c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fcb3954e1006b139feb8df28f363bfb"><td class="memItemLeft" align="right" valign="top">virtual em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classperiod__interface.html#a8fcb3954e1006b139feb8df28f363bfb">stop</a> ()=0</td></tr>
+<tr class="separator:a8fcb3954e1006b139feb8df28f363bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8a9c2ceef4177841a16c1d6fb655f87"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classperiod__interface.html#af8a9c2ceef4177841a16c1d6fb655f87">set_period_callback</a> (<a class="el" href="classperiod__cb__interface.html">period_cb_interface</a> &amp;)=0</td></tr>
 <tr class="separator:af8a9c2ceef4177841a16c1d6fb655f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a322351314bdc7ed2b88af11b3d8fb2f2"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classperiod__cb__interface.html">period_cb_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classperiod__interface.html#a322351314bdc7ed2b88af11b3d8fb2f2">get_period_callback</a> ()=0</td></tr>
@@ -183,8 +183,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0a64f4d13ec2f490a19c3bfe2e4136bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a64f4d13ec2f490a19c3bfe2e4136bc">&#9670;&nbsp;</a></span>start()</h2>
+<a id="a5b77d23dee056a44d5a340bb20c20c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b77d23dee056a44d5a340bb20c20c27">&#9670;&nbsp;</a></span>start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +193,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void period_interface::start </td>
+          <td class="memname">virtual em::result period_interface::start </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -206,12 +206,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classfw_1_1drv_1_1hbridge.html#a22fe3b9d084c01eeff85058697f4f2d2">fw::drv::hbridge</a>.</p>
+<p>Implemented in <a class="el" href="classfw_1_1drv_1_1hbridge.html#a450cdb77ad1544e780e006c18d95d838">fw::drv::hbridge</a>.</p>
 
 </div>
 </div>
-<a id="a3beb4b1dc50d1a1b21ddb26c5e2081d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3beb4b1dc50d1a1b21ddb26c5e2081d6">&#9670;&nbsp;</a></span>stop()</h2>
+<a id="a8fcb3954e1006b139feb8df28f363bfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fcb3954e1006b139feb8df28f363bfb">&#9670;&nbsp;</a></span>stop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,7 +220,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void period_interface::stop </td>
+          <td class="memname">virtual em::result period_interface::stop </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -233,7 +233,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classfw_1_1drv_1_1hbridge.html#a1e4c60e2145c0f0628ba1a1014a998cc">fw::drv::hbridge</a>.</p>
+<p>Implemented in <a class="el" href="classfw_1_1drv_1_1hbridge.html#a527c0961a0ca73c700a72608c2560265">fw::drv::hbridge</a>.</p>
 
 </div>
 </div>
@@ -246,7 +246,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classperiod__interface.html">period_interface</a></li>
-    <li class="footer">Generated on Sun Aug 20 2023 10:55:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Aug 20 2023 18:49:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

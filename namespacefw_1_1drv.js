@@ -20,5 +20,6 @@ var namespacefw_1_1drv =
     [ "position_cb", "namespacefw_1_1drv.html#a6eaf1fbd19d91c8c14dd188cfbf972ec", null ],
     [ "comm_buff_size", "namespacefw_1_1drv.html#aabef94de8eb8d0c86cb545f41a023490", null ],
     [ "EMPTY_ADC_CALLBACK", "namespacefw_1_1drv.html#a276b77a74a170ade5959393d429187ca", null ],
-    [ "EMPTY_ADC_DETAILED_CALLBACK", "namespacefw_1_1drv.html#a3b4bea0c9e12385bcecef61b17dcc18f", null ]
+    [ "EMPTY_ADC_DETAILED_CALLBACK", "namespacefw_1_1drv.html#a3b4bea0c9e12385bcecef61b17dcc18f", null ],
+    [ "EMPTY_PERIOD_CB", "namespacefw_1_1drv.html#aef998b83bf00bc2024118726468ef44a", null ]
 ];

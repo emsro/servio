@@ -120,10 +120,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc__pooler_8hpp.html",
-"config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2",
+"config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a001479a58fb44c39a29b20d565081a68",
 "load__persistent__config_8hpp.html#a3a149128fa43dfaaa7eb8953672ce13d",
-"servio__pb_8hpp.html#a23fc4234292273ffabe5f85953f2713a",
-"structhost_1_1parse__error.html"
+"servio__pb_8hpp.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc",
+"structhost_1_1error__exception.html#ad977b58d2968f47a268f4269cc5ca80f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

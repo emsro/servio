@@ -11,7 +11,7 @@ var classfw_1_1drv_1_1leds =
     ] ],
     [ "leds", "classfw_1_1drv_1_1leds.html#ac6debb7ddbd94b96fca19053eeeacfc6", null ],
     [ "force_red_led", "classfw_1_1drv_1_1leds.html#a48f0b62d250bad03766510a85d493fac", null ],
-    [ "setup", "classfw_1_1drv_1_1leds.html#a85338d2b39bbcda198af2cdecf772bea", null ],
-    [ "start", "classfw_1_1drv_1_1leds.html#ac51161a6b5d5a8d7c1f85c8c8e4d6e37", null ],
+    [ "setup", "classfw_1_1drv_1_1leds.html#ad6c17a1a2461ae00c5a6340a88b1525d", null ],
+    [ "start", "classfw_1_1drv_1_1leds.html#af01deed59f0330b03b0ede33bfe30e88", null ],
     [ "update", "classfw_1_1drv_1_1leds.html#accff29bb7d50c89396e048db4eca917e", null ]
 ];

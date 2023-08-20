@@ -12,8 +12,8 @@ var classfw_1_1drv_1_1cobs__uart =
     [ "operator=", "classfw_1_1drv_1_1cobs__uart.html#ac2dbb70280abe604ce9ae81e1e7267da", null ],
     [ "rx_cplt_irq", "classfw_1_1drv_1_1cobs__uart.html#a66459f05a2a6376a7c58768a1b54746f", null ],
     [ "send", "classfw_1_1drv_1_1cobs__uart.html#ae1df312ac663c5e3461c6e11a687b710", null ],
-    [ "setup", "classfw_1_1drv_1_1cobs__uart.html#a465af14d62477d3b21e095ad6b3d16bd", null ],
-    [ "start", "classfw_1_1drv_1_1cobs__uart.html#ad541cabd35bc98135e2c3e07157a51bf", null ],
+    [ "setup", "classfw_1_1drv_1_1cobs__uart.html#a0ae8d10df0f7e76460f144e3fbcb5d0a", null ],
+    [ "start", "classfw_1_1drv_1_1cobs__uart.html#a3bc98c01839873878129e5662d3fa588", null ],
     [ "tx_cplt_irq", "classfw_1_1drv_1_1cobs__uart.html#a00e524b7ba1bb8c27b2f4b62146b7e6f", null ],
     [ "tx_dma_irq", "classfw_1_1drv_1_1cobs__uart.html#adbc8d83440f18fdc7c63444e8b710ca8", null ],
     [ "uart_irq", "classfw_1_1drv_1_1cobs__uart.html#ae41fa7d033f5b2687ebadbcdcab5f390", null ]

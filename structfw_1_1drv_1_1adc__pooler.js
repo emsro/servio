@@ -9,6 +9,6 @@ var structfw_1_1drv_1_1adc__pooler =
     [ "on_period_irq", "structfw_1_1drv_1_1adc__pooler.html#a78e012ef94044450850c98f413c96c57", null ],
     [ "operator*", "structfw_1_1drv_1_1adc__pooler.html#a05554dee821d0b7717b262418b735580", null ],
     [ "operator->", "structfw_1_1drv_1_1adc__pooler.html#ad7ffab6cd49b2bb9a6953f6cf2b4eefc", null ],
-    [ "setup", "structfw_1_1drv_1_1adc__pooler.html#a63eeed46dee4cbdcad1bf6f3fa907e7b", null ],
+    [ "setup", "structfw_1_1drv_1_1adc__pooler.html#a9f42025a375a7e04a8b5a8010d43fafa", null ],
     [ "start", "structfw_1_1drv_1_1adc__pooler.html#a7693baa408a19f4bb7417abd2e31f734", null ]
 ];

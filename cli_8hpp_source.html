@@ -97,14 +97,14 @@ $(document).ready(function(){initNavTree('cli_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacehost.html">host</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97">   11</a></span>&#160;CLI::Option* <a class="code" href="namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97">device_opt</a>( CLI::App&amp; app, std::filesystem::path&amp; device )</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97">   11</a></span>&#160;<span class="keyword">inline</span> CLI::Option* <a class="code" href="namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97">device_opt</a>( CLI::App&amp; app, std::filesystem::path&amp; device )</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">return</span> app.add_option( <span class="stringliteral">&quot;-d,--device&quot;</span>, device, <span class="stringliteral">&quot;device to use&quot;</span> )</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            -&gt;envname( <span class="stringliteral">&quot;SERVIO_DEVICE&quot;</span> )</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            -&gt;check( CLI::ExistingFile );</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacehost.html#a2f24da7c62c9382666f594042cc47fbb">   18</a></span>&#160;CLI::Option* <a class="code" href="namespacehost.html#a2f24da7c62c9382666f594042cc47fbb">baudrate_opt</a>( CLI::App&amp; app, <span class="keywordtype">unsigned</span>&amp; baudrate )</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacehost.html#a2f24da7c62c9382666f594042cc47fbb">   18</a></span>&#160;<span class="keyword">inline</span> CLI::Option* <a class="code" href="namespacehost.html#a2f24da7c62c9382666f594042cc47fbb">baudrate_opt</a>( CLI::App&amp; app, <span class="keywordtype">unsigned</span>&amp; baudrate )</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> app.add_option( <span class="stringliteral">&quot;-b,--baudrate&quot;</span>, baudrate, <span class="stringliteral">&quot;baudrate for communication&quot;</span> )</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            -&gt;envname( <span class="stringliteral">&quot;SERVIO_BAUDRATE&quot;</span> );</div>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('cli_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="namespacehost.html#a2f24da7c62c9382666f594042cc47fbb">baudrate_opt</a>( app, <a class="code" href="structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb">baudrate</a> )-&gt;capture_default_str();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                app.parse_complete_callback( [&amp;] {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <a class="code" href="structhost_1_1common__cli.html#a14da1acdb9fa005b522effbeaf8cda8b">port_ptr</a> = std::make_unique&lt; cobs_port &gt;( <a class="code" href="structhost_1_1common__cli.html#a4069a66d37489ce0a202b56e7a46cecd">context</a>, <a class="code" href="structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924">device</a>, <a class="code" href="structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb">baudrate</a> );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <span class="keywordtype">int</span> res =</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> res =</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                            ::tcflush( <a class="code" href="structhost_1_1common__cli.html#a14da1acdb9fa005b522effbeaf8cda8b">port_ptr</a>-&gt;port.lowest_layer().native_handle(), TCIOFLUSH );</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        <span class="keywordflow">if</span> ( res != 0 ) {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to flush serial buffer&quot;</span> &lt;&lt; std::endl;</div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('cli_8hpp_source.html',''); initResizab
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_84e79ac80b913c2fb5b9e077744e9498.html">host</a></li><li class="navelem"><a class="el" href="cli_8hpp.html">cli.hpp</a></li>
-    <li class="footer">Generated on Sun Aug 20 2023 10:55:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Aug 20 2023 18:49:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

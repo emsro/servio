@@ -137,11 +137,11 @@ $(document).ready(function(){initNavTree('control_8hpp_source.html',''); initRes
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613d">control_mode</a> state_ = <a class="code" href="base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dac9c9c146c630ca5ef9197c73c032f4a6">control_mode::POWER</a>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> position_lims_;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">float</span>           position_goal_ = 0.f;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">float</span>           position_goal_ = 0.F;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">ctl::pid</a>        position_pid_;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> velocity_lims_;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">float</span>           velocity_goal_ = 0.f;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">float</span>           velocity_goal_ = 0.F;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">ctl::pid</a>        velocity_pid_;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">struct</span></div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('control_8hpp_source.html',''); initRes
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> pos_derived_lims{ -<a class="code" href="base_8hpp.html#aec3fd2a11257b6fbfe32084f877fafca">infty</a>, <a class="code" href="base_8hpp.html#aec3fd2a11257b6fbfe32084f877fafca">infty</a> };</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="base_8hpp.html#a486dfef0b192c734eed01e9d3fa6995c">limits&lt; float &gt;</a> vel_derived_lims{ -<a class="code" href="base_8hpp.html#aec3fd2a11257b6fbfe32084f877fafca">infty</a>, <a class="code" href="base_8hpp.html#aec3fd2a11257b6fbfe32084f877fafca">infty</a> };</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        } current_lims_;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">float</span>                            current_goal_ = 0.f;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">float</span>                            current_goal_ = 0.F;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="structctl_1_1linear__transition__regulator.html">ctl::linear_transition_regulator</a> current_scale_regl_;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="namespacectl.html#a1e8151ad6bf30ab3431d58a8d87950b6">ctl::pid</a>                         current_pid_;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('control_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="control_8hpp.html">control.hpp</a></li>
-    <li class="footer">Generated on Sun Aug 20 2023 10:55:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Aug 20 2023 18:49:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

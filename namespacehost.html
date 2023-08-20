@@ -124,9 +124,9 @@ Functions</h2></td></tr>
 <tr class="separator:adec47a29afb594099ac5886260bc99a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed039d76afc12a05c1d8896fb12531f5"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#aed039d76afc12a05c1d8896fb12531f5">cfg_set_cmd</a> (<a class="el" href="structhost_1_1cobs__port.html">cobs_port</a> &amp;port, const std::string &amp;name, std::string value)</td></tr>
 <tr class="separator:aed039d76afc12a05c1d8896fb12531f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d6ccb3e5043c62e5736fdf95b4f3a0"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a69d6ccb3e5043c62e5736fdf95b4f3a0">write</a> (<a class="el" href="structhost_1_1cobs__port.html">cobs_port</a> &amp;port, const servio::HostToServio &amp;payget)</td></tr>
-<tr class="memdesc:a69d6ccb3e5043c62e5736fdf95b4f3a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a reply to servo port.  <a href="namespacehost.html#a69d6ccb3e5043c62e5736fdf95b4f3a0">More...</a><br /></td></tr>
-<tr class="separator:a69d6ccb3e5043c62e5736fdf95b4f3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9be3784e3377e2c068ec80ec06ea580"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#af9be3784e3377e2c068ec80ec06ea580">write</a> (<a class="el" href="structhost_1_1cobs__port.html">cobs_port</a> &amp;port, const servio::HostToServio &amp;payload)</td></tr>
+<tr class="memdesc:af9be3784e3377e2c068ec80ec06ea580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a reply to servo port.  <a href="namespacehost.html#af9be3784e3377e2c068ec80ec06ea580">More...</a><br /></td></tr>
+<tr class="separator:af9be3784e3377e2c068ec80ec06ea580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4b67bbd51d1b2f8b9ab20bf2fc42c32"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; servio::ServioToHost &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#af4b67bbd51d1b2f8b9ab20bf2fc42c32">read</a> (<a class="el" href="structhost_1_1cobs__port.html">cobs_port</a> &amp;port)</td></tr>
 <tr class="memdesc:af4b67bbd51d1b2f8b9ab20bf2fc42c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a reply from servo over port.  <a href="namespacehost.html#af4b67bbd51d1b2f8b9ab20bf2fc42c32">More...</a><br /></td></tr>
 <tr class="separator:af4b67bbd51d1b2f8b9ab20bf2fc42c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,6 +174,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">CLI::Option* host::baudrate_opt </td>
@@ -193,6 +196,11 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -344,6 +352,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">CLI::Option* host::device_opt </td>
@@ -363,6 +374,11 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -395,7 +411,7 @@ Functions</h2></td></tr>
 
 <p>Exchanges messages with the servo over port. </p>
 
-<p class="reference">References <a class="el" href="structhost_1_1error__exception.html#ad977b58d2968f47a268f4269cc5ca80f">host::error_exception::msg</a>, <a class="el" href="namespacehost.html#af4b67bbd51d1b2f8b9ab20bf2fc42c32">read()</a>, and <a class="el" href="namespacehost.html#a69d6ccb3e5043c62e5736fdf95b4f3a0">write()</a>.</p>
+<p class="reference">References <a class="el" href="structhost_1_1error__exception.html#ad977b58d2968f47a268f4269cc5ca80f">host::error_exception::msg</a>, <a class="el" href="namespacehost.html#af4b67bbd51d1b2f8b9ab20bf2fc42c32">read()</a>, and <a class="el" href="namespacehost.html#af9be3784e3377e2c068ec80ec06ea580">write()</a>.</p>
 
 </div>
 </div>
@@ -819,8 +835,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a69d6ccb3e5043c62e5736fdf95b4f3a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69d6ccb3e5043c62e5736fdf95b4f3a0">&#9670;&nbsp;</a></span>write()</h2>
+<a id="af9be3784e3377e2c068ec80ec06ea580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9be3784e3377e2c068ec80ec06ea580">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -857,7 +873,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacehost.html">host</a></li>
-    <li class="footer">Generated on Sun Aug 20 2023 10:55:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Aug 20 2023 18:49:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

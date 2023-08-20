@@ -119,10 +119,10 @@ Classes</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac6debb7ddbd94b96fca19053eeeacfc6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1leds.html#ac6debb7ddbd94b96fca19053eeeacfc6">leds</a> ()=default</td></tr>
 <tr class="separator:ac6debb7ddbd94b96fca19053eeeacfc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85338d2b39bbcda198af2cdecf772bea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1leds.html#a85338d2b39bbcda198af2cdecf772bea">setup</a> (em::function_view&lt; bool(<a class="el" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">handles</a> &amp;) &gt; setup_f)</td></tr>
-<tr class="separator:a85338d2b39bbcda198af2cdecf772bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac51161a6b5d5a8d7c1f85c8c8e4d6e37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1leds.html#ac51161a6b5d5a8d7c1f85c8c8e4d6e37">start</a> ()</td></tr>
-<tr class="separator:ac51161a6b5d5a8d7c1f85c8c8e4d6e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c17a1a2461ae00c5a6340a88b1525d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1leds.html">leds</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1leds.html#ad6c17a1a2461ae00c5a6340a88b1525d">setup</a> (auto &amp;&amp;setup_f)</td></tr>
+<tr class="separator:ad6c17a1a2461ae00c5a6340a88b1525d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01deed59f0330b03b0ede33bfe30e88"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1leds.html#af01deed59f0330b03b0ede33bfe30e88">start</a> ()</td></tr>
+<tr class="separator:af01deed59f0330b03b0ede33bfe30e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48f0b62d250bad03766510a85d493fac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1leds.html#a48f0b62d250bad03766510a85d493fac">force_red_led</a> ()</td></tr>
 <tr class="separator:a48f0b62d250bad03766510a85d493fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accff29bb7d50c89396e048db4eca917e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfw_1_1drv_1_1leds.html#accff29bb7d50c89396e048db4eca917e">update</a> (const <a class="el" href="base_8hpp.html#structleds__vals">leds_vals</a> &amp;<a class="el" href="classfw_1_1drv_1_1leds.html">leds</a>)</td></tr>
@@ -247,26 +247,8 @@ yellow_channel</td>
 
 </div>
 </div>
-<a id="a85338d2b39bbcda198af2cdecf772bea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85338d2b39bbcda198af2cdecf772bea">&#9670;&nbsp;</a></span>setup()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool fw::drv::leds::setup </td>
-          <td>(</td>
-          <td class="paramtype">em::function_view&lt; bool(<a class="el" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">handles</a> &amp;) &gt;&#160;</td>
-          <td class="paramname"><em>setup_f</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac51161a6b5d5a8d7c1f85c8c8e4d6e37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac51161a6b5d5a8d7c1f85c8c8e4d6e37">&#9670;&nbsp;</a></span>start()</h2>
+<a id="ad6c17a1a2461ae00c5a6340a88b1525d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c17a1a2461ae00c5a6340a88b1525d">&#9670;&nbsp;</a></span>setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,20 +257,36 @@ yellow_channel</td>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void fw::drv::leds::start </td>
+          <td class="memname"><a class="el" href="classfw_1_1drv_1_1leds.html">leds</a>* fw::drv::leds::setup </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>setup_f</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classleds__interface.html#a92b464586098cbc1f0d385aa563963c0">leds_interface</a>.</p>
+</div>
+</div>
+<a id="af01deed59f0330b03b0ede33bfe30e88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af01deed59f0330b03b0ede33bfe30e88">&#9670;&nbsp;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">em::result fw::drv::leds::start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="classfw_1_1drv_1_1leds.html#a9e8a5be7dcc2e89850e6388805b63931">fw::drv::leds::handles::green_channel</a>, <a class="el" href="classfw_1_1drv_1_1leds.html#a20d4ec26dff4a79b88c299e83c16d51e">fw::drv::leds::handles::tim</a>, and <a class="el" href="classfw_1_1drv_1_1leds.html#a469231ede0a8a84e894695a5d7e2c066">fw::drv::leds::handles::yellow_channel</a>.</p>
 
@@ -334,7 +332,7 @@ yellow_channel</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefw.html">fw</a></li><li class="navelem"><a class="el" href="namespacefw_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="classfw_1_1drv_1_1leds.html">leds</a></li>
-    <li class="footer">Generated on Sun Aug 20 2023 10:55:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Aug 20 2023 18:49:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
