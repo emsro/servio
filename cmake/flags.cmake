@@ -24,5 +24,6 @@ function(servio_compile_options target)
             -Wnon-virtual-dtor
             -Wold-style-cast
             -Woverloaded-virtual
+            -Wno-mismatched-new-delete # triggers false positive on coroutines
             >)
 endfunction()
