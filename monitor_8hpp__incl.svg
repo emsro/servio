@@ -96,7 +96,7 @@
 <!-- Node10 -->
 <g id="node5" class="node">
 <title>Node10</title>
-<g id="a_node5"><a xlink:href="ctl_2config_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="config_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="593,-118 593,-137 675,-137 675,-118 593,-118"/>
 <text text-anchor="middle" x="634" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">ctl/config.hpp</text>
 </a>

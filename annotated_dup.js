@@ -1,6 +1,7 @@
 var annotated_dup =
 [
     [ "cfg", "namespacecfg.html", [
+      [ "keyval", "namespacecfg.html#structcfg_1_1keyval", "namespacecfg_structcfg_1_1keyval_dup" ],
       [ "payload", "structcfg_1_1payload.html", "structcfg_1_1payload" ]
     ] ],
     [ "cnv", "namespacecnv.html", [
@@ -50,7 +51,6 @@ var annotated_dup =
     ] ],
     [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", "classadc__detailed__cb__interface" ],
     [ "cfg_dispatcher", "structcfg__dispatcher.html", "structcfg__dispatcher" ],
-    [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", "config_8hpp_structcfg__keyval" ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", "host_2main_8cpp_structcfg__opts" ],
     [ "clk_interface", "classclk__interface.html", "classclk__interface" ],
     [ "com_interface", "classcom__interface.html", "classcom__interface" ],

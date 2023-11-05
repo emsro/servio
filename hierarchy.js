@@ -10,7 +10,6 @@ var hierarchy =
     ] ],
     [ "fw::drv::adc_pooler< Set >", "structfw_1_1drv_1_1adc__pooler.html", null ],
     [ "cfg_dispatcher", "structcfg__dispatcher.html", null ],
-    [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", null ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", null ],
     [ "fw::check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "clk_interface", "classclk__interface.html", [
@@ -55,6 +54,7 @@ var hierarchy =
     [ "fw::drv::hbridge::handles", "classfw_1_1drv_1_1hbridge.html#structfw_1_1drv_1_1hbridge_1_1handles", null ],
     [ "fw::drv::leds::handles", "classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles", null ],
     [ "indication", "classindication.html", null ],
+    [ "cfg::keyval", "namespacecfg.html#structcfg_1_1keyval", null ],
     [ "leds_interface", "classleds__interface.html", [
       [ "fw::drv::leds", "classfw_1_1drv_1_1leds.html", null ]
     ] ],

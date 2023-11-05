@@ -2,7 +2,7 @@ var dispatcher_8hpp =
 [
     [ "dispatcher", "namespacefw.html#structfw_1_1dispatcher", [
       [ "cfg_disp", "namespacefw.html#a64062389efe7fe57f45c591f7d608afc", null ],
-      [ "cfg_writer", "namespacefw.html#a520b3be865d264d703b435b5c4e08fbb", null ],
+      [ "cfg_writer", "namespacefw.html#a2f3ade09d2883144f9045274e50d9b26", null ],
       [ "conv", "namespacefw.html#ac7282035a48db732bb3abfbfb69467d0", null ],
       [ "ctl", "namespacefw.html#a15cf4f98017315abc2a188bbef019777", null ],
       [ "curr_drv", "namespacefw.html#adb739a1e6262e3007514377294eafcc9", null ],

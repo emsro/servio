@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('namespacecfg.html',''); initResizable(
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">cfg Namespace Reference</div>  </div>
@@ -94,22 +95,106 @@ $(document).ready(function(){initNavTree('namespacecfg.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:structcfg_1_1keyval"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#structcfg_1_1keyval">keyval</a></td></tr>
+<tr class="separator:structcfg_1_1keyval"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcfg_1_1payload.html">payload</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a5036c7cff4140fb420d16450928ff8f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a5036c7cff4140fb420d16450928ff8f8">handler</a> = em::cfg::handler&lt; <a class="el" href="structcfg_1_1payload.html">payload</a>, <a class="el" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>, std::endian::native &gt;</td></tr>
-<tr class="separator:a5036c7cff4140fb420d16450928ff8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54fb00f081c5f7b6b501ebd795a4ad1a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a">reghandler</a> = em::protocol::register_handler&lt; <a class="el" href="config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f">cfg_map</a> &gt;</td></tr>
-<tr class="separator:a54fb00f081c5f7b6b501ebd795a4ad1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf71bd824fb87e8155f5795938b23a2c"><td class="memTemplParams" colspan="2">template&lt;auto Key, typename T &gt; </td></tr>
+<tr class="memitem:abf71bd824fb87e8155f5795938b23a2c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a> = em::protocol::register_pair&lt; Key, T &gt;</td></tr>
+<tr class="separator:abf71bd824fb87e8155f5795938b23a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a019f82131412b3a841ddba4c9ab3d762"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a019f82131412b3a841ddba4c9ab3d762">model_name</a> = em::string_buffer&lt; 32 &gt;</td></tr>
+<tr class="separator:a019f82131412b3a841ddba4c9ab3d762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf848925254b2853ca8e0df752409448"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> = em::protocol::register_map&lt; std::endian::little, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda57d30f3c649befbfd10ce24091d6556f">MODEL</a>, <a class="el" href="namespacecfg.html#a019f82131412b3a841ddba4c9ab3d762">model_name</a> &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda2815c40b79c2f0c294aac0af044aec20">ID</a>, uint32_t &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda9c51707c641520f29847ac11eb4f87e6">GROUP_ID</a>, uint32_t &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdab917ee63ccf3e57e240e0bbfac279ed3">POSITION_CONV_LOWER_SETPOINT_VALUE</a>, uint32_t &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda9fb0eebfdc583e5106517d7b2f890e68">POSITION_CONV_LOWER_SETPOINT_ANGLE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda55080a837046c9cbf3b315954d00ce7d">POSITION_CONV_HIGHER_SETPOINT_VALUE</a>, uint32_t &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdab98ff1b6facbaf6fe2e6da8beeec245e">POSITION_CONV_HIGHER_SETPOINT_ANGLE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdae349c9c41d37957694adf5f99d6254a5">CURRENT_CONV_SCALE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda88b516d3107c98727f77009cb5738cd4">CURRENT_CONV_OFFSET</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda94d5f916f7f744eda7ce87e9c993276d">TEMP_CONV_SCALE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda125da01ad5a305cdcf2e3cfe8c430e3f">TEMP_CONV_OFFSET</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdaded00fe852542aff5fdc81aa6b471720">VOLTAGE_CONV_SCALE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda910f5bcc230f87bc43bb90449ae657fe">CURRENT_LOOP_P</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda5eb798f299120169b047779e901aaf69">CURRENT_LOOP_I</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda8b211ca44a3eb9291e2a4d4cb5761f06">CURRENT_LOOP_D</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda5a9199b1c0b5ad46b7ceaa44cb82b641">CURRENT_LIM_MIN</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda908e2c0a5c7cff662c413a8ee2c71ea5">CURRENT_LIM_MAX</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda98887f0a6e6d4245b82c68b2e5d8677d">VELOCITY_LOOP_P</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda904be6f17a4e5e0b136dc448af67cfee">VELOCITY_LOOP_I</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdabec38fdb4c70a5281a658b7abc155747">VELOCITY_LOOP_D</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda3903bab3f15756a8882a058116dac709">VELOCITY_LIM_MIN</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda4b85d3031c87f30dc9b04e7631acd2e9">VELOCITY_LIM_MAX</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdafca42f49af4454168cc4b7da5875bb68">POSITION_LOOP_P</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdae33a75f9c5444e664ea7ac891fe7cebb">POSITION_LOOP_I</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda6b6a9167e5d50d8c641579b328f2d4e1">POSITION_LOOP_D</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdaa9b3bcda55ce8f03e57083397acd7481">POSITION_LIM_MIN</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda70e9dd9a004958285211db9af1e0f300">POSITION_LIM_MAX</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda7f3cbfeeead75126625635a3022170c0">STATIC_FRICTION_SCALE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda283a6d139d230e1ce400ff6ca8b7a714">STATIC_FRICTION_DECAY</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdaf8d73816a59869f757a8dc31275cd4f0">MINIMUM_VOLTAGE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda1b8cf2e8fd9cc7b2cd13202e550d3e23">MAXIMUM_TEMPERATURE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda29deeb389f9e0680a6f016aca429e37b">MOVING_DETECTION_STEP</a>, float &gt; &gt;</td></tr>
+<tr class="separator:acf848925254b2853ca8e0df752409448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ac65e119dcc70d661d0299de620673"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#ae6ac65e119dcc70d661d0299de620673">value_message</a> = typename map::message_type</td></tr>
+<tr class="separator:ae6ac65e119dcc70d661d0299de620673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2276c764586a8373fef6fb02b7368a49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a2276c764586a8373fef6fb02b7368a49">handler</a> = em::cfg::handler&lt; <a class="el" href="structcfg_1_1payload.html">payload</a>, <a class="el" href="namespacecfg.html#structcfg_1_1keyval">keyval</a>, std::endian::native &gt;</td></tr>
+<tr class="separator:a2276c764586a8373fef6fb02b7368a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe3b38b8e2e914b20a052349e0a1ec56"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#abe3b38b8e2e914b20a052349e0a1ec56">reghandler</a> = em::protocol::register_handler&lt; <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> &gt;</td></tr>
+<tr class="separator:abe3b38b8e2e914b20a052349e0a1ec56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed406326772f09a5c90eb2c62bab0062"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> = em::view&lt; std::byte * &gt;</td></tr>
 <tr class="separator:aed406326772f09a5c90eb2c62bab0062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a5723f91bc600c3126c420bb6f1fe91bd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bd">key</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda57d30f3c649befbfd10ce24091d6556f">MODEL</a> = 1
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda2815c40b79c2f0c294aac0af044aec20">ID</a> = 2
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda9c51707c641520f29847ac11eb4f87e6">GROUP_ID</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdab917ee63ccf3e57e240e0bbfac279ed3">POSITION_CONV_LOWER_SETPOINT_VALUE</a> = 10
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda9fb0eebfdc583e5106517d7b2f890e68">POSITION_CONV_LOWER_SETPOINT_ANGLE</a> = 11
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda55080a837046c9cbf3b315954d00ce7d">POSITION_CONV_HIGHER_SETPOINT_VALUE</a> = 12
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdab98ff1b6facbaf6fe2e6da8beeec245e">POSITION_CONV_HIGHER_SETPOINT_ANGLE</a> = 13
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdae349c9c41d37957694adf5f99d6254a5">CURRENT_CONV_SCALE</a> = 14
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda88b516d3107c98727f77009cb5738cd4">CURRENT_CONV_OFFSET</a> = 15
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda94d5f916f7f744eda7ce87e9c993276d">TEMP_CONV_SCALE</a> = 16
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda125da01ad5a305cdcf2e3cfe8c430e3f">TEMP_CONV_OFFSET</a> = 17
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdaded00fe852542aff5fdc81aa6b471720">VOLTAGE_CONV_SCALE</a> = 18
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda910f5bcc230f87bc43bb90449ae657fe">CURRENT_LOOP_P</a> = 30
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda5eb798f299120169b047779e901aaf69">CURRENT_LOOP_I</a> = 31
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda8b211ca44a3eb9291e2a4d4cb5761f06">CURRENT_LOOP_D</a> = 32
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda5a9199b1c0b5ad46b7ceaa44cb82b641">CURRENT_LIM_MIN</a> = 33
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda908e2c0a5c7cff662c413a8ee2c71ea5">CURRENT_LIM_MAX</a> = 34
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda98887f0a6e6d4245b82c68b2e5d8677d">VELOCITY_LOOP_P</a> = 40
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda904be6f17a4e5e0b136dc448af67cfee">VELOCITY_LOOP_I</a> = 41
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdabec38fdb4c70a5281a658b7abc155747">VELOCITY_LOOP_D</a> = 42
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda3903bab3f15756a8882a058116dac709">VELOCITY_LIM_MIN</a> = 43
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda4b85d3031c87f30dc9b04e7631acd2e9">VELOCITY_LIM_MAX</a> = 44
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdafca42f49af4454168cc4b7da5875bb68">POSITION_LOOP_P</a> = 50
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdae33a75f9c5444e664ea7ac891fe7cebb">POSITION_LOOP_I</a> = 51
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda6b6a9167e5d50d8c641579b328f2d4e1">POSITION_LOOP_D</a> = 52
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdaa9b3bcda55ce8f03e57083397acd7481">POSITION_LIM_MIN</a> = 53
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda70e9dd9a004958285211db9af1e0f300">POSITION_LIM_MAX</a> = 54
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda7f3cbfeeead75126625635a3022170c0">STATIC_FRICTION_SCALE</a> = 60
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda283a6d139d230e1ce400ff6ca8b7a714">STATIC_FRICTION_DECAY</a> = 61
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdaf8d73816a59869f757a8dc31275cd4f0">MINIMUM_VOLTAGE</a> = 62
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda1b8cf2e8fd9cc7b2cd13202e550d3e23">MAXIMUM_TEMPERATURE</a> = 65
+, <br />
+&#160;&#160;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda29deeb389f9e0680a6f016aca429e37b">MOVING_DETECTION_STEP</a> = 66
+<br />
+ }</td></tr>
+<tr class="separator:a5723f91bc600c3126c420bb6f1fe91bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aee982b4948ebe7b4807cbb84f181eaee"><td class="memItemLeft" align="right" valign="top">consteval <a class="el" href="config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f">cfg_map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#aee982b4948ebe7b4807cbb84f181eaee">get_default_config</a> ()</td></tr>
-<tr class="separator:aee982b4948ebe7b4807cbb84f181eaee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e59289c825b451d8748919c22f5d687"><td class="memItemLeft" align="right" valign="top">consteval <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a4e59289c825b451d8748919c22f5d687">get_default_config</a> ()</td></tr>
+<tr class="separator:a4e59289c825b451d8748919c22f5d687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a1d345842086b902925afb333ab102b"><td class="memTemplParams" colspan="2">template&lt;key key&gt; </td></tr>
+<tr class="memitem:a2a1d345842086b902925afb333ab102b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacecfg.html#structcfg_1_1keyval">keyval</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a2a1d345842086b902925afb333ab102b">make_keyval</a> (auto val)</td></tr>
+<tr class="separator:a2a1d345842086b902925afb333ab102b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf089918bd1398ef078ba761770419d4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#abf089918bd1398ef078ba761770419d4">find_unused_page</a> (em::view&lt; const <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> * &gt; pages)</td></tr>
 <tr class="separator:abf089918bd1398ef078ba761770419d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c4bca10aa98ae305a1f2f5163b318c7"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a8c4bca10aa98ae305a1f2f5163b318c7">find_oldest_page</a> (em::view&lt; const <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> * &gt; pages)</td></tr>
@@ -118,20 +203,78 @@ Functions</h2></td></tr>
 <tr class="separator:a27fb9256d3f5822df90c3a2296a9531b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8b28b0ab16c3b0bf545c39e6fb142e4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#ab8b28b0ab16c3b0bf545c39e6fb142e4">find_latest_page</a> (em::view&lt; const <a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> * &gt; pages)</td></tr>
 <tr class="separator:ab8b28b0ab16c3b0bf545c39e6fb142e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41c88df89c60656fbefbe60067584bad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a41c88df89c60656fbefbe60067584bad">store</a> (const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;pl, const <a class="el" href="config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f">cfg_map</a> *m, em::function_view&lt; bool(std::size_t, uint64_t) &gt; writer)</td></tr>
-<tr class="separator:a41c88df89c60656fbefbe60067584bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9de7d450f3a4a26d1e137a4a4e5a9368"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a9de7d450f3a4a26d1e137a4a4e5a9368">load</a> (<a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> p, em::function_view&lt; bool(const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;) &gt; pl_cb, <a class="el" href="config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f">cfg_map</a> &amp;m)</td></tr>
-<tr class="separator:a9de7d450f3a4a26d1e137a4a4e5a9368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d3609c97e0145ae7f948982a8cb99c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a39d3609c97e0145ae7f948982a8cb99c">store</a> (const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;pl, const <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> *m, em::function_view&lt; bool(std::size_t, uint64_t) &gt; writer)</td></tr>
+<tr class="separator:a39d3609c97e0145ae7f948982a8cb99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b1439f18e7c98badea079af6a94d80d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a8b1439f18e7c98badea079af6a94d80d">load</a> (<a class="el" href="namespacecfg.html#aed406326772f09a5c90eb2c62bab0062">page</a> p, em::function_view&lt; bool(const <a class="el" href="structcfg_1_1payload.html">payload</a> &amp;) &gt; pl_cb, <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> &amp;m)</td></tr>
+<tr class="separator:a8b1439f18e7c98badea079af6a94d80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a5036c7cff4140fb420d16450928ff8f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5036c7cff4140fb420d16450928ff8f8">&#9670;&nbsp;</a></span>handler</h2>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structcfg_1_1keyval" id="structcfg_1_1keyval"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structcfg_1_1keyval">&#9670;&nbsp;</a></span>cfg::keyval</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacecfg.html#a5036c7cff4140fb420d16450928ff8f8">cfg::handler</a> = typedef em::cfg::handler&lt; <a class="el" href="structcfg_1_1payload.html">payload</a>, <a class="el" href="config_8hpp.html#structcfg__keyval">cfg_keyval</a>, std::endian::native &gt;</td>
+          <td class="memname">struct cfg::keyval</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="ade8d376c5edc9f138ff502663ee5b37b"></a><a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bd">key</a></td>
+<td class="fieldname">
+key</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aff1d70f4db5396ee3b4bc662e6b0d5e7"></a><a class="el" href="namespacecfg.html#ae6ac65e119dcc70d661d0299de620673">value_message</a></td>
+<td class="fieldname">
+msg</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a2276c764586a8373fef6fb02b7368a49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2276c764586a8373fef6fb02b7368a49">&#9670;&nbsp;</a></span>handler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecfg.html#a2276c764586a8373fef6fb02b7368a49">cfg::handler</a> = typedef em::cfg::handler&lt; <a class="el" href="structcfg_1_1payload.html">payload</a>, <a class="el" href="namespacecfg.html#structcfg_1_1keyval">keyval</a>, std::endian::native &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf848925254b2853ca8e0df752409448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf848925254b2853ca8e0df752409448">&#9670;&nbsp;</a></span>map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">cfg::map</a> = typedef em::protocol::register_map&lt; std::endian::little, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda57d30f3c649befbfd10ce24091d6556f">MODEL</a>, <a class="el" href="namespacecfg.html#a019f82131412b3a841ddba4c9ab3d762">model_name</a> &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda2815c40b79c2f0c294aac0af044aec20">ID</a>, uint32_t &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda9c51707c641520f29847ac11eb4f87e6">GROUP_ID</a>, uint32_t &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdab917ee63ccf3e57e240e0bbfac279ed3">POSITION_CONV_LOWER_SETPOINT_VALUE</a>, uint32_t &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda9fb0eebfdc583e5106517d7b2f890e68">POSITION_CONV_LOWER_SETPOINT_ANGLE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda55080a837046c9cbf3b315954d00ce7d">POSITION_CONV_HIGHER_SETPOINT_VALUE</a>, uint32_t &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdab98ff1b6facbaf6fe2e6da8beeec245e">POSITION_CONV_HIGHER_SETPOINT_ANGLE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdae349c9c41d37957694adf5f99d6254a5">CURRENT_CONV_SCALE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda88b516d3107c98727f77009cb5738cd4">CURRENT_CONV_OFFSET</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda94d5f916f7f744eda7ce87e9c993276d">TEMP_CONV_SCALE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda125da01ad5a305cdcf2e3cfe8c430e3f">TEMP_CONV_OFFSET</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdaded00fe852542aff5fdc81aa6b471720">VOLTAGE_CONV_SCALE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda910f5bcc230f87bc43bb90449ae657fe">CURRENT_LOOP_P</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda5eb798f299120169b047779e901aaf69">CURRENT_LOOP_I</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda8b211ca44a3eb9291e2a4d4cb5761f06">CURRENT_LOOP_D</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda5a9199b1c0b5ad46b7ceaa44cb82b641">CURRENT_LIM_MIN</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda908e2c0a5c7cff662c413a8ee2c71ea5">CURRENT_LIM_MAX</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda98887f0a6e6d4245b82c68b2e5d8677d">VELOCITY_LOOP_P</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda904be6f17a4e5e0b136dc448af67cfee">VELOCITY_LOOP_I</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdabec38fdb4c70a5281a658b7abc155747">VELOCITY_LOOP_D</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda3903bab3f15756a8882a058116dac709">VELOCITY_LIM_MIN</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda4b85d3031c87f30dc9b04e7631acd2e9">VELOCITY_LIM_MAX</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdafca42f49af4454168cc4b7da5875bb68">POSITION_LOOP_P</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdae33a75f9c5444e664ea7ac891fe7cebb">POSITION_LOOP_I</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda6b6a9167e5d50d8c641579b328f2d4e1">POSITION_LOOP_D</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdaa9b3bcda55ce8f03e57083397acd7481">POSITION_LIM_MIN</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda70e9dd9a004958285211db9af1e0f300">POSITION_LIM_MAX</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda7f3cbfeeead75126625635a3022170c0">STATIC_FRICTION_SCALE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda283a6d139d230e1ce400ff6ca8b7a714">STATIC_FRICTION_DECAY</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdaf8d73816a59869f757a8dc31275cd4f0">MINIMUM_VOLTAGE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda1b8cf2e8fd9cc7b2cd13202e550d3e23">MAXIMUM_TEMPERATURE</a>, float &gt;, <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">reg</a>&lt; <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda29deeb389f9e0680a6f016aca429e37b">MOVING_DETECTION_STEP</a>, float &gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a019f82131412b3a841ddba4c9ab3d762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a019f82131412b3a841ddba4c9ab3d762">&#9670;&nbsp;</a></span>model_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecfg.html#a019f82131412b3a841ddba4c9ab3d762">cfg::model_name</a> = typedef em::string_buffer&lt; 32 &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -152,17 +295,96 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a54fb00f081c5f7b6b501ebd795a4ad1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54fb00f081c5f7b6b501ebd795a4ad1a">&#9670;&nbsp;</a></span>reghandler</h2>
+<a id="abf71bd824fb87e8155f5795938b23a2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf71bd824fb87e8155f5795938b23a2c">&#9670;&nbsp;</a></span>reg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto Key, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c">cfg::reg</a> = typedef em::protocol::register_pair&lt; Key, T &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe3b38b8e2e914b20a052349e0a1ec56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe3b38b8e2e914b20a052349e0a1ec56">&#9670;&nbsp;</a></span>reghandler</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacecfg.html#a54fb00f081c5f7b6b501ebd795a4ad1a">cfg::reghandler</a> = typedef em::protocol::register_handler&lt; <a class="el" href="config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f">cfg_map</a> &gt;</td>
+          <td class="memname">using <a class="el" href="namespacecfg.html#abe3b38b8e2e914b20a052349e0a1ec56">cfg::reghandler</a> = typedef em::protocol::register_handler&lt; <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6ac65e119dcc70d661d0299de620673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6ac65e119dcc70d661d0299de620673">&#9670;&nbsp;</a></span>value_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecfg.html#ae6ac65e119dcc70d661d0299de620673">cfg::value_message</a> = typedef typename map::message_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a5723f91bc600c3126c420bb6f1fe91bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5723f91bc600c3126c420bb6f1fe91bd">&#9670;&nbsp;</a></span>key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bd">cfg::key</a> : uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda57d30f3c649befbfd10ce24091d6556f"></a>MODEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda2815c40b79c2f0c294aac0af044aec20"></a>ID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda9c51707c641520f29847ac11eb4f87e6"></a>GROUP_ID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bdab917ee63ccf3e57e240e0bbfac279ed3"></a>POSITION_CONV_LOWER_SETPOINT_VALUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda9fb0eebfdc583e5106517d7b2f890e68"></a>POSITION_CONV_LOWER_SETPOINT_ANGLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda55080a837046c9cbf3b315954d00ce7d"></a>POSITION_CONV_HIGHER_SETPOINT_VALUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bdab98ff1b6facbaf6fe2e6da8beeec245e"></a>POSITION_CONV_HIGHER_SETPOINT_ANGLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bdae349c9c41d37957694adf5f99d6254a5"></a>CURRENT_CONV_SCALE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda88b516d3107c98727f77009cb5738cd4"></a>CURRENT_CONV_OFFSET&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda94d5f916f7f744eda7ce87e9c993276d"></a>TEMP_CONV_SCALE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda125da01ad5a305cdcf2e3cfe8c430e3f"></a>TEMP_CONV_OFFSET&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bdaded00fe852542aff5fdc81aa6b471720"></a>VOLTAGE_CONV_SCALE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda910f5bcc230f87bc43bb90449ae657fe"></a>CURRENT_LOOP_P&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda5eb798f299120169b047779e901aaf69"></a>CURRENT_LOOP_I&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda8b211ca44a3eb9291e2a4d4cb5761f06"></a>CURRENT_LOOP_D&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda5a9199b1c0b5ad46b7ceaa44cb82b641"></a>CURRENT_LIM_MIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda908e2c0a5c7cff662c413a8ee2c71ea5"></a>CURRENT_LIM_MAX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda98887f0a6e6d4245b82c68b2e5d8677d"></a>VELOCITY_LOOP_P&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda904be6f17a4e5e0b136dc448af67cfee"></a>VELOCITY_LOOP_I&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bdabec38fdb4c70a5281a658b7abc155747"></a>VELOCITY_LOOP_D&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda3903bab3f15756a8882a058116dac709"></a>VELOCITY_LIM_MIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda4b85d3031c87f30dc9b04e7631acd2e9"></a>VELOCITY_LIM_MAX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bdafca42f49af4454168cc4b7da5875bb68"></a>POSITION_LOOP_P&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bdae33a75f9c5444e664ea7ac891fe7cebb"></a>POSITION_LOOP_I&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda6b6a9167e5d50d8c641579b328f2d4e1"></a>POSITION_LOOP_D&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bdaa9b3bcda55ce8f03e57083397acd7481"></a>POSITION_LIM_MIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda70e9dd9a004958285211db9af1e0f300"></a>POSITION_LIM_MAX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda7f3cbfeeead75126625635a3022170c0"></a>STATIC_FRICTION_SCALE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda283a6d139d230e1ce400ff6ca8b7a714"></a>STATIC_FRICTION_DECAY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bdaf8d73816a59869f757a8dc31275cd4f0"></a>MINIMUM_VOLTAGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda1b8cf2e8fd9cc7b2cd13202e550d3e23"></a>MAXIMUM_TEMPERATURE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5723f91bc600c3126c420bb6f1fe91bda29deeb389f9e0680a6f016aca429e37b"></a>MOVING_DETECTION_STEP&#160;</td><td class="fielddoc"></td></tr>
+</table>
 
 </div>
 </div>
@@ -239,18 +461,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacecfg.html#a9de7d450f3a4a26d1e137a4a4e5a9368">load()</a>.</p>
+<p class="reference">References <a class="el" href="namespacecfg.html#a8b1439f18e7c98badea079af6a94d80d">load()</a>.</p>
 
 </div>
 </div>
-<a id="aee982b4948ebe7b4807cbb84f181eaee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee982b4948ebe7b4807cbb84f181eaee">&#9670;&nbsp;</a></span>get_default_config()</h2>
+<a id="a4e59289c825b451d8748919c22f5d687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e59289c825b451d8748919c22f5d687">&#9670;&nbsp;</a></span>get_default_config()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">consteval <a class="el" href="config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f">cfg_map</a> cfg::get_default_config </td>
+          <td class="memname">consteval <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> cfg::get_default_config </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -262,8 +484,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9de7d450f3a4a26d1e137a4a4e5a9368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9de7d450f3a4a26d1e137a4a4e5a9368">&#9670;&nbsp;</a></span>load()</h2>
+<a id="a8b1439f18e7c98badea079af6a94d80d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b1439f18e7c98badea079af6a94d80d">&#9670;&nbsp;</a></span>load()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,7 +505,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f">cfg_map</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> &amp;&#160;</td>
           <td class="paramname"><em>m</em>&#160;</td>
         </tr>
         <tr>
@@ -294,12 +516,34 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="config_8hpp.html#a7e1b4963cd8853783479f72a0c2fc073">cfg_keyval::key</a>, and <a class="el" href="config_8hpp.html#a47c4f5d88721c7f2a6ba1393476be862">cfg_keyval::msg</a>.</p>
+<p class="reference">References <a class="el" href="namespacecfg.html#ade8d376c5edc9f138ff502663ee5b37b">cfg::keyval::key</a>, and <a class="el" href="namespacecfg.html#aff1d70f4db5396ee3b4bc662e6b0d5e7">cfg::keyval::msg</a>.</p>
 
 </div>
 </div>
-<a id="a41c88df89c60656fbefbe60067584bad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41c88df89c60656fbefbe60067584bad">&#9670;&nbsp;</a></span>store()</h2>
+<a id="a2a1d345842086b902925afb333ab102b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a1d345842086b902925afb333ab102b">&#9670;&nbsp;</a></span>make_keyval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;key key&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecfg.html#structcfg_1_1keyval">keyval</a> cfg::make_keyval </td>
+          <td>(</td>
+          <td class="paramtype">auto&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacecfg.html#ade8d376c5edc9f138ff502663ee5b37b">cfg::keyval::key</a>.</p>
+
+</div>
+</div>
+<a id="a39d3609c97e0145ae7f948982a8cb99c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d3609c97e0145ae7f948982a8cb99c">&#9670;&nbsp;</a></span>store()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -313,7 +557,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f">cfg_map</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> *&#160;</td>
           <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>
@@ -330,7 +574,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="config_8hpp.html#a7e1b4963cd8853783479f72a0c2fc073">cfg_keyval::key</a>.</p>
+<p class="reference">References <a class="el" href="namespacecfg.html#ade8d376c5edc9f138ff502663ee5b37b">cfg::keyval::key</a>.</p>
 
 </div>
 </div>
@@ -340,7 +584,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecfg.html">cfg</a></li>
-    <li class="footer">Generated on Sun Oct 22 2023 19:23:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Nov 5 2023 13:23:10 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

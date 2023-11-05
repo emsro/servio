@@ -87,7 +87,9 @@ var NAVTREE =
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ]
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -110,7 +112,6 @@ var NAVTREE =
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
-        [ "Enumerator", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -120,10 +121,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc__pooler_8hpp.html",
-"config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a001479a58fb44c39a29b20d565081a68",
-"load__persistent__config_8hpp.html#a3a149128fa43dfaaa7eb8953672ce13d",
-"servio__pb_8hpp.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc",
-"structhost_1_1error__exception.html#ad977b58d2968f47a268f4269cc5ca80f"
+"config__cmds_8cpp.html#a03c8e02ec348bbd169b46cb1fa708907",
+"map_8hpp.html#ae6ac65e119dcc70d661d0299de620673",
+"serial_8cpp.html#a78a7968917c35688e7d3d4edd60a4058",
+"structfw_1_1drv_1_1detailed__adc__channel.html#a2b62694762ff73322646f35f7acdd171"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,7 +1,7 @@
 var namespaces_dup =
 [
     [ "brd", "namespacebrd.html", [
-      [ "get_default_config", "namespacebrd.html#aea27cf7daccda79fab54b984c2c05f92", null ],
+      [ "get_default_config", "namespacebrd.html#a5cca53f4659c5b709c0d8c07aba8cd60", null ],
       [ "get_persistent_pages", "namespacebrd.html#a10b7301a400b364d44492e591ab1c89f", null ],
       [ "setup_board", "namespacebrd.html#a72ff84e491fb17723a0a882bcb62918e", null ],
       [ "setup_core_drivers", "namespacebrd.html#a002f07411dacd8fe0b24e9e7fc66001a", null ],

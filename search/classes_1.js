@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['cfg_5fdispatcher_620',['cfg_dispatcher',['../structcfg__dispatcher.html',1,'']]],
-  ['cfg_5fkeyval_621',['cfg_keyval',['../config_8hpp.html#structcfg__keyval',1,'']]],
+  ['cfg_5fdispatcher_621',['cfg_dispatcher',['../structcfg__dispatcher.html',1,'']]],
   ['cfg_5fopts_622',['cfg_opts',['../host_2main_8cpp.html#structcfg__opts',1,'']]],
   ['check_5fbool_623',['check_bool',['../namespacefw.html#structfw_1_1check__bool',1,'fw']]],
   ['clk_5finterface_624',['clk_interface',['../classclk__interface.html',1,'']]],

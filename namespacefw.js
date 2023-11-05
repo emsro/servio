@@ -25,5 +25,5 @@ var namespacefw =
     [ "operator<<", "namespacefw.html#a63ae6e6b6964e56f358aa0727ebe568e", null ],
     [ "process_message", "namespacefw.html#a412d66629b1ab2256779303bc71b949d", null ],
     [ "stop_exec", "namespacefw.html#a8e0b580f4dd8010ffb0db37533802021", null ],
-    [ "store_persistent_config", "namespacefw.html#a395c6a8eff260c9a1435fba0702dc9ad", null ]
+    [ "store_persistent_config", "namespacefw.html#a6b0f10021501aeac5a4c1654755378dd", null ]
 ];

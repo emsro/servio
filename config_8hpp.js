@@ -1,45 +1,16 @@
 var config_8hpp =
 [
-    [ "cfg_keyval", "config_8hpp.html#structcfg__keyval", [
-      [ "key", "config_8hpp.html#a7e1b4963cd8853783479f72a0c2fc073", null ],
-      [ "msg", "config_8hpp.html#a47c4f5d88721c7f2a6ba1393476be862", null ]
+    [ "config", "namespacectl.html#structctl_1_1config", [
+      [ "current_limits", "namespacectl.html#a42c41625e334582523c4f5be94bddb8a", null ],
+      [ "current_pid", "namespacectl.html#a3d55b5c4569a6d2ae3aba339917347d0", null ],
+      [ "position_limits", "namespacectl.html#aafaa848d5ed73333863c1852ce3bca95", null ],
+      [ "position_pid", "namespacectl.html#a8a7ee8b41237dc1f6e7c7732cc2be632", null ],
+      [ "static_friction_decay", "namespacectl.html#aa8b65f8e2a55f5686de048e8e5f97553", null ],
+      [ "static_friction_scale", "namespacectl.html#a8a1a11d62853e312be5ca343ed1076ac", null ],
+      [ "velocity_limits", "namespacectl.html#a20ed600b5a9c9a30f83df677768e46a4", null ],
+      [ "velocity_pid", "namespacectl.html#a767ce52998c9c33836b3348656f6c9a5", null ]
     ] ],
-    [ "cfg_map", "config_8hpp.html#a548c51bc7b4a694da0d10f8b9d568c0f", null ],
-    [ "cfg_reg", "config_8hpp.html#aace2760d0b8aba5c69c14319560ed67e", null ],
-    [ "cfg_value_message", "config_8hpp.html#ac5e70fc82e3c7cc847dbb8c917d336e4", null ],
-    [ "model_name", "config_8hpp.html#a6fe1bfcf6fa825ff4ed7e7465cfee94c", null ],
-    [ "cfg_key", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2", [
-      [ "MODEL", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a536a1f6ce30489b6a9ebc993d206e32a", null ],
-      [ "ID", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a001479a58fb44c39a29b20d565081a68", null ],
-      [ "GROUP_ID", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a6ea47e0a5cdb6a3419983fdeba473b46", null ],
-      [ "POSITION_CONV_LOWER_SETPOINT_VALUE", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2abab5c8e9dd93d572fb34e191db4108c2", null ],
-      [ "POSITION_CONV_LOWER_SETPOINT_ANGLE", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a8edeac400bd150801d25c73b719dc202", null ],
-      [ "POSITION_CONV_HIGHER_SETPOINT_VALUE", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a0f0f3bcec7b759b010db79cde99ffac6", null ],
-      [ "POSITION_CONV_HIGHER_SETPOINT_ANGLE", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a20bbab031560df5c5b7ce3ca399dd5a9", null ],
-      [ "CURRENT_CONV_SCALE", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ab015c1824c663ed3fcb336e0c5204d3b", null ],
-      [ "CURRENT_CONV_OFFSET", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a76e72afa4f8d540bba69263a712a52d6", null ],
-      [ "TEMP_CONV_SCALE", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a1cf7319c67dd460005c299e8b20a10e1", null ],
-      [ "TEMP_CONV_OFFSET", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ab56e1a213b354b760e5463656efaad04", null ],
-      [ "VOLTAGE_CONV_SCALE", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2af302b91ed1f49912b7998401b5204864", null ],
-      [ "CURRENT_LOOP_P", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a60537b2c5ef58b27fdc56bbd37fd9e9b", null ],
-      [ "CURRENT_LOOP_I", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2aede49740d2f23df1ec9b4f4048acbcde", null ],
-      [ "CURRENT_LOOP_D", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ab304e3960d0b32293a2b9138acce1bec", null ],
-      [ "CURRENT_LIM_MIN", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a08349ba77e12ed6afd592f259bbe2a5f", null ],
-      [ "CURRENT_LIM_MAX", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a3ebea74b85ecf9b7147f828d58a2f255", null ],
-      [ "VELOCITY_LOOP_P", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a1f27607ac6d6a11ecfb811edd933cea8", null ],
-      [ "VELOCITY_LOOP_I", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a2941811ad0b0ffac93d7f1f2dfb6976e", null ],
-      [ "VELOCITY_LOOP_D", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ab662fe7b08664ddf3fd2ad9e5d59cd7e", null ],
-      [ "VELOCITY_LIM_MIN", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a86ac9382362ad9f5b3d73d4c0c3891d2", null ],
-      [ "VELOCITY_LIM_MAX", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a870b335414dcd36aad41aacec5edc526", null ],
-      [ "POSITION_LOOP_P", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2afc1c9d8b78c8f2ec3de26d47ae92b31d", null ],
-      [ "POSITION_LOOP_I", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ad9aac5df503ad6cb4f6e7a36860f181f", null ],
-      [ "POSITION_LOOP_D", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a8c277a026fd6bef93accb4793ac425c9", null ],
-      [ "POSITION_LIM_MIN", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a90c9d5c89bf9f8ce6f4edc87ec00cfd7", null ],
-      [ "POSITION_LIM_MAX", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a34388167f1a2dfa5380e68dc09f6222c", null ],
-      [ "STATIC_FRICTION_SCALE", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ab1672738e98a72c7d3bedb6ca717f72e", null ],
-      [ "STATIC_FRICTION_DECAY", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2af1ccd55c917db84aab5ac778629ca497", null ],
-      [ "MINIMUM_VOLTAGE", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a4b3361306c52f3d715404f815b24eb99", null ],
-      [ "MAXIMUM_TEMPERATURE", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2a2865279ffdc6266db7215e0151d2974d", null ],
-      [ "MOVING_DETECTION_STEP", "config_8hpp.html#aa9c33841cf52c704a89636a3ef7ba5e2ad50e3785962b7a54c1b56332a94d02d1", null ]
-    ] ]
+    [ "pid", "config_8hpp.html#a1e8151ad6bf30ab3431d58a8d87950b6", null ],
+    [ "pid_coefficients", "config_8hpp.html#a31369f8fd89ca0fd4d2bf8970a4653d1", null ],
+    [ "pid_conf", "config_8hpp.html#a254eee5cc344e1590ae9434a7073d1b5", null ]
 ];

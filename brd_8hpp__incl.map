@@ -1,10 +1,12 @@
 <map id="src/brd.hpp" name="src/brd.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="273,5,368,32"/>
-<area shape="rect" id="node2" href="$config_8hpp.html" title=" " alt="" coords="179,80,268,107"/>
-<area shape="rect" id="node6" href="$core__drivers_8hpp.html" title=" " alt="" coords="458,80,589,107"/>
-<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="216,244,297,271"/>
-<area shape="rect" id="node4" title=" " alt="" coords="28,155,205,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="230,155,427,196"/>
-<area shape="rect" id="node7" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="452,162,595,189"/>
-<area shape="rect" id="node8" title=" " alt="" coords="619,155,796,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="508,5,603,32"/>
+<area shape="rect" id="node2" href="$map_8hpp.html" title=" " alt="" coords="296,80,399,107"/>
+<area shape="rect" id="node8" href="$core__drivers_8hpp.html" title=" " alt="" coords="803,80,934,107"/>
+<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="391,244,472,271"/>
+<area shape="rect" id="node4" href="$key_8hpp.html" title=" " alt="" coords="33,162,128,189"/>
+<area shape="rect" id="node5" title=" " alt="" coords="152,155,329,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="354,155,551,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="575,155,773,196"/>
+<area shape="rect" id="node9" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="797,162,940,189"/>
+<area shape="rect" id="node10" title=" " alt="" coords="964,155,1141,196"/>
 </map>

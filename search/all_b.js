@@ -12,7 +12,7 @@ var searchData=
   ['angle_32',['angle',['../host_2main_8cpp.html#af0a1e266e72eaf80a93810658a5a4d5a',1,'mode_opts::angle()'],['../structmtr_1_1posvel__kalman.html#a7c83249422002ac5d54fe3bc57217f2f',1,'mtr::posvel_kalman::angle()'],['../namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e',1,'kalman::angle(T &amp;x)']]],
   ['angle_5fmod_33',['angle_mod',['../namespacekalman.html#a216390ea00a5dbed756bf6064c66a381',1,'kalman']]],
   ['any_5funinitialized_34',['any_uninitialized',['../structcore__drivers.html#a82c2875dbd9ed986ae3e8f1293f9340f',1,'core_drivers']]],
-  ['apply_35',['apply',['../structcfg__dispatcher.html#ac22572da1dd44b80256c0a396b09bfe8',1,'cfg_dispatcher']]],
+  ['apply_35',['apply',['../structcfg__dispatcher.html#aa7b8ce6ad9c5489ed0c6bb5bf5c61b37',1,'cfg_dispatcher']]],
   ['as_5ffloat_36',['as_float',['../classscaled.html#ad0c137095775ae685c2fc049d1784dd2',1,'scaled']]],
   ['assert_5fparam_37',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32g4xx_hal_conf.h']]],
   ['async_5fcobs_2ehpp_38',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],

@@ -16,7 +16,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "cfg_dispatcher.hpp", "cfg__dispatcher_8hpp.html", [
       [ "cfg_dispatcher", "structcfg__dispatcher.html", "structcfg__dispatcher" ]
     ] ],
-    [ "config.hpp", "config_8hpp.html", "config_8hpp" ],
     [ "control.cpp", "control_8cpp.html", null ],
     [ "control.hpp", "control_8hpp.html", [
       [ "control", "classcontrol.html", "classcontrol" ]
