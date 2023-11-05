@@ -6,7 +6,7 @@
 namespace cfg
 {
 
-using handler = em::cfg::handler< payload, cfg_keyval, std::endian::native >;
+using handler = em::cfg::handler< payload, keyval, std::endian::native >;
 
 namespace
 {
@@ -46,7 +46,7 @@ namespace
                                     }
                                     return false;
                             },
-                            [&]( const cfg_keyval& ) {},
+                            [&]( const keyval& ) {},
                             chcksum_f );
                 }
                 return candidate;
@@ -62,7 +62,7 @@ std::optional< page > find_unused_page( em::view< const page* > pages )
                     [&]( const payload& ) -> bool {
                             return false;
                     },
-                    [&]( const cfg_keyval& ) {},
+                    [&]( const keyval& ) {},
                     chcksum_f );
                 return lr == em::cfg::load_result::DESERIALIZATION_ERROR;
         } );
@@ -97,28 +97,27 @@ std::optional< page > find_latest_page( em::view< const page* > pages )
         } );
 }
 
-using reghandler = em::protocol::register_handler< cfg_map >;
+using reghandler = em::protocol::register_handler< map >;
 
 bool store(
     const payload&                                     pl,
-    const cfg_map*                                     m,
+    const map*                                         m,
     em::function_view< bool( std::size_t, uint64_t ) > writer )
 {
 
-        static constexpr std::size_t n = cfg_map::registers_count;
+        static constexpr std::size_t n = map::registers_count;
 
         constexpr std::size_t buffer_n =
-            em::ceil_to( n * sizeof( cfg_keyval ) + 128, sizeof( uint64_t ) );
+            em::ceil_to( n * sizeof( keyval ) + 128, sizeof( uint64_t ) );
         std::array< std::byte, buffer_n > buffer;
 
         bool success = handler::store(
             buffer,
             pl,
-            m != nullptr ? cfg_map::keys.size() : 0,
-            [&]( std::size_t i ) -> cfg_keyval {
-                    return cfg_keyval{
-                        .key = cfg_map::keys[i],
-                        .msg = reghandler::select( *m, cfg_map::keys[i] ) };
+            m != nullptr ? map::keys.size() : 0,
+            [&]( std::size_t i ) -> keyval {
+                    return keyval{
+                        .key = map::keys[i], .msg = reghandler::select( *m, map::keys[i] ) };
             },
             chcksum_f );
 
@@ -142,13 +141,13 @@ bool store(
         return success;
 }
 
-bool load( page p, em::function_view< bool( const payload& ) > pl_cb, cfg_map& m )
+bool load( page p, em::function_view< bool( const payload& ) > pl_cb, map& m )
 {
 
         const em::cfg::load_result lr = handler::load(
             p,
             pl_cb,
-            [&]( const cfg_keyval& kv ) -> bool {
+            [&]( const keyval& kv ) -> bool {
                     const std::optional opt_err = reghandler::insert( m, kv.key, kv.msg );
                     return !opt_err.has_value();
             },

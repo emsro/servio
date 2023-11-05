@@ -33,7 +33,7 @@ TEST( CFG, storage )
         EXPECT_EQ( tmp.value(), pages[0] );
 
         cfg::payload pl;
-        cfg_map      cm = cfg::get_default_config();
+        cfg::map     cm = cfg::get_default_config();
 
         auto p      = tmp.value();
         auto writer = [&]( std::size_t addr, uint64_t val ) -> bool {

@@ -17,6 +17,7 @@ function(servio_compile_options target)
             -Wno-psabi
             -Wno-format-nonliteral
             -Wno-null-dereference
+            -Wno-missing-field-initializers
             $<$<COMPILE_LANGUAGE:CXX>:
             -Wconversion
             -Wuseless-cast

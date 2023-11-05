@@ -15,7 +15,7 @@ int main()
 
         brd::setup_board();
 
-        cfg_map cfg = brd::get_default_config();
+        cfg::map cfg = brd::get_default_config();
 
         em::view pages = brd::get_persistent_pages();
 
@@ -49,7 +49,7 @@ int main()
 
                 cor.tick( *cdrv.leds, cdrv.clock->get_us() );
 
-                auto write_config = [&]( const cfg_map* cfg ) -> bool {
+                auto write_config = [&]( const cfg::map* cfg ) -> bool {
                         const cfg::payload pld{
                             .git_ver  = git::Describe(),
                             .git_date = git::CommitDate(),

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "config.hpp"
+#include "cfg/map.hpp"
 #include "core_drivers.hpp"
 
 namespace brd
@@ -11,7 +11,7 @@ namespace brd
 em::view< const em::view< std::byte* >* > get_persistent_pages();
 
 /// Returns default configuration for servo for the board
-cfg_map get_default_config();
+cfg::map get_default_config();
 
 /// Initial setup call for the board
 void setup_board();

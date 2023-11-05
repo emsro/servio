@@ -1,4 +1,3 @@
-#include "config.hpp"
 #include "drv_interfaces.hpp"
 #include "globals.hpp"
 

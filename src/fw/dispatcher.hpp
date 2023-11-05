@@ -12,17 +12,17 @@ namespace fw
 
 struct dispatcher
 {
-        pwm_motor_interface&                            motor;
-        const position_interface&                       pos_drv;
-        const current_interface&                        curr_drv;
-        const vcc_interface&                            vcc_drv;
-        const temperature_interface&                    temp_drv;
-        control&                                        ctl;
-        metrics&                                        met;
-        cfg_dispatcher&                                 cfg_disp;
-        em::function_view< bool( const cfg_map* cfg ) > cfg_writer;
-        converter&                                      conv;
-        microseconds                                    now;
+        pwm_motor_interface&                             motor;
+        const position_interface&                        pos_drv;
+        const current_interface&                         curr_drv;
+        const vcc_interface&                             vcc_drv;
+        const temperature_interface&                     temp_drv;
+        control&                                         ctl;
+        metrics&                                         met;
+        cfg_dispatcher&                                  cfg_disp;
+        em::function_view< bool( const cfg::map* cfg ) > cfg_writer;
+        converter&                                       conv;
+        microseconds                                     now;
 };
 
 ServioToHost handle_message( dispatcher& dis, const HostToServio& msg );

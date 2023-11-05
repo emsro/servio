@@ -9,7 +9,7 @@
 namespace fw
 {
 
-bool store_persistent_config( const cfg::page& page, const cfg::payload& pld, const cfg_map* cfg )
+bool store_persistent_config( const cfg::page& page, const cfg::payload& pld, const cfg::map* cfg )
 {
 
         if ( HAL_FLASH_Unlock() != HAL_OK ) {

@@ -5,7 +5,7 @@
 
 using page = em::view< std::byte* >;
 
-inline cfg::payload load_persistent_config( em::view< const page* > pages, cfg_map& cfg )
+inline cfg::payload load_persistent_config( em::view< const page* > pages, cfg::map& cfg )
 {
         std::optional< cfg::page > last_page = cfg::find_latest_page( pages );
 

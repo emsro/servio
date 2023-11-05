@@ -1,4 +1,4 @@
-#include "config.hpp"
+#include "cfg/key.hpp"
 #include "io.pb.h"
 
 #include <gtest/gtest.h>
@@ -6,7 +6,7 @@
 
 TEST( CFG, ids )
 {
-        const auto cfg_key_entries = magic_enum::enum_entries< cfg_key >();
+        const auto cfg_key_entries = magic_enum::enum_entries< cfg::key >();
         const auto proto_entries   = magic_enum::enum_entries< servio::Config::PldCase >();
 
         std::set< uint32_t > cfg_ids;
