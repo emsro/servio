@@ -7,13 +7,13 @@ var namespacehost =
     [ "error_exception", "structhost_1_1error__exception.html", "structhost_1_1error__exception" ],
     [ "serialize_error", "structhost_1_1serialize__error.html", "structhost_1_1serialize__error" ],
     [ "parse_error", "structhost_1_1parse__error.html", "structhost_1_1parse__error" ],
-    [ "baudrate_opt", "namespacehost.html#a2f24da7c62c9382666f594042cc47fbb", null ],
+    [ "baudrate_opt", "namespacehost.html#a02aff288d9bbcebf7617820251136787", null ],
     [ "cfg_clear_cmd", "namespacehost.html#a0f165d57465c31dac7b26d6d9a110603", null ],
     [ "cfg_commit_cmd", "namespacehost.html#a03c8e02ec348bbd169b46cb1fa708907", null ],
     [ "cfg_get_cmd", "namespacehost.html#adec47a29afb594099ac5886260bc99a0", null ],
     [ "cfg_query_cmd", "namespacehost.html#aa4a9fdf5b1e51f6e02e12697d247f6dc", null ],
     [ "cfg_set_cmd", "namespacehost.html#aed039d76afc12a05c1d8896fb12531f5", null ],
-    [ "device_opt", "namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97", null ],
+    [ "device_opt", "namespacehost.html#a1775c8c4fffab96ad3ff448f7d47d18c", null ],
     [ "exchange", "namespacehost.html#a5ca34f82be162a6aa6232ac7e3109260", null ],
     [ "get_config_field", "namespacehost.html#acd62038e28f8e158e365506bd2e34420", null ],
     [ "get_full_config", "namespacehost.html#ac2b65213d576e70f5807d51056d01da2", null ],
@@ -31,5 +31,6 @@ var namespacehost =
     [ "set_mode_disengaged", "namespacehost.html#ae9e922ebfa25c20bfa5e01799c1620d8", null ],
     [ "set_mode_position", "namespacehost.html#ab08f26af1cf35a9a9b55cb45de5bdc44", null ],
     [ "set_mode_velocity", "namespacehost.html#a5e8732c807fd343891a41fa568e7f31a", null ],
+    [ "verbose_opt", "namespacehost.html#aea4962fd63a1d7648099e25490bf42e5", null ],
     [ "write", "namespacehost.html#af9be3784e3377e2c068ec80ec06ea580", null ]
 ];

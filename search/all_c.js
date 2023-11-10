@@ -2,7 +2,7 @@ var searchData=
 [
   ['base_2ehpp_41',['base.hpp',['../base_8hpp.html',1,'']]],
   ['baudrate_42',['baudrate',['../structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb',1,'host::common_cli']]],
-  ['baudrate_5fopt_43',['baudrate_opt',['../namespacehost.html#a2f24da7c62c9382666f594042cc47fbb',1,'host']]],
+  ['baudrate_5fopt_43',['baudrate_opt',['../namespacehost.html#a02aff288d9bbcebf7617820251136787',1,'host']]],
   ['blue_44',['blue',['../base_8hpp.html#a51017d246d02f245608d9ffda556ddd8',1,'leds_vals']]],
   ['blue_5fperipheral_45',['blue_peripheral',['../classfw_1_1drv_1_1leds.html#a57757fc7fbc905f3f5613d0664743093',1,'fw::drv::leds::handles']]],
   ['blue_5fpin_46',['blue_pin',['../classfw_1_1drv_1_1leds.html#a4fa6389783cf8f977762ec5831f4450c',1,'fw::drv::leds::handles']]],

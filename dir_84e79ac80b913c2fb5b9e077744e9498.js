@@ -3,6 +3,7 @@ var dir_84e79ac80b913c2fb5b9e077744e9498 =
     [ "async_cobs.hpp", "async__cobs_8hpp.html", [
       [ "cobs_port", "structhost_1_1cobs__port.html", "structhost_1_1cobs__port" ]
     ] ],
+    [ "cli.cpp", "cli_8cpp.html", "cli_8cpp" ],
     [ "cli.hpp", "cli_8hpp.html", "cli_8hpp" ],
     [ "config_cmds.cpp", "config__cmds_8cpp.html", "config__cmds_8cpp" ],
     [ "config_cmds.hpp", "config__cmds_8hpp.html", "config__cmds_8hpp" ],

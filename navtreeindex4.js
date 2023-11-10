@@ -1,5 +1,11 @@
 var NAVTREEINDEX4 =
 {
+"structfw_1_1drv_1_1adc__pooler.html#ad7ffab6cd49b2bb9a6953f6cf2b4eefc":[12,0,3,0,3,8],
+"structfw_1_1drv_1_1adc__pooler.html#ae4229636df9d30031b100bd2c73fb506":[12,0,3,0,3,0],
+"structfw_1_1drv_1_1detailed__adc__channel.html":[12,0,3,0,0],
+"structfw_1_1drv_1_1detailed__adc__channel.html#a01659cdcc772b50ed6f090deb421687f":[12,0,3,0,0,15],
+"structfw_1_1drv_1_1detailed__adc__channel.html#a0ad4a5e5d21f096a1461e82b0bed0fea":[12,0,3,0,0,11],
+"structfw_1_1drv_1_1detailed__adc__channel.html#a2765a68eb8b6fdb1ed0601caab75df4e":[12,0,3,0,0,6],
 "structfw_1_1drv_1_1detailed__adc__channel.html#a2b62694762ff73322646f35f7acdd171":[12,0,3,0,0,9],
 "structfw_1_1drv_1_1detailed__adc__channel.html#a316f715cde771e689d946183c794475a":[12,0,3,0,0,8],
 "structfw_1_1drv_1_1detailed__adc__channel.html#a479d1c891ee546fd859aed90396ea802":[12,0,3,0,0,3],

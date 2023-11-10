@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['baudrate_5fopt_781',['baudrate_opt',['../namespacehost.html#a2f24da7c62c9382666f594042cc47fbb',1,'host']]],
-  ['busfault_5fhandler_782',['BusFault_Handler',['../it_8cpp.html#a850cefb17a977292ae5eb4cafa9976c3',1,'it.cpp']]]
+  ['baudrate_5fopt_784',['baudrate_opt',['../namespacehost.html#a02aff288d9bbcebf7617820251136787',1,'host']]],
+  ['busfault_5fhandler_785',['BusFault_Handler',['../it_8cpp.html#a850cefb17a977292ae5eb4cafa9976c3',1,'it.cpp']]]
 ];

@@ -110,10 +110,12 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac5992b69a9b4498c24f684e9423fbf97"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97">device_opt</a> (CLI::App &amp;app, std::filesystem::path &amp;device)</td></tr>
-<tr class="separator:ac5992b69a9b4498c24f684e9423fbf97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f24da7c62c9382666f594042cc47fbb"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a2f24da7c62c9382666f594042cc47fbb">baudrate_opt</a> (CLI::App &amp;app, unsigned &amp;baudrate)</td></tr>
-<tr class="separator:a2f24da7c62c9382666f594042cc47fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea4962fd63a1d7648099e25490bf42e5"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#aea4962fd63a1d7648099e25490bf42e5">verbose_opt</a> (CLI::App &amp;app, bool &amp;val)</td></tr>
+<tr class="separator:aea4962fd63a1d7648099e25490bf42e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1775c8c4fffab96ad3ff448f7d47d18c"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a1775c8c4fffab96ad3ff448f7d47d18c">device_opt</a> (CLI::App &amp;app, std::filesystem::path &amp;device)</td></tr>
+<tr class="separator:a1775c8c4fffab96ad3ff448f7d47d18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02aff288d9bbcebf7617820251136787"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a02aff288d9bbcebf7617820251136787">baudrate_opt</a> (CLI::App &amp;app, unsigned &amp;baudrate)</td></tr>
+<tr class="separator:a02aff288d9bbcebf7617820251136787"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4a9fdf5b1e51f6e02e12697d247f6dc"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#aa4a9fdf5b1e51f6e02e12697d247f6dc">cfg_query_cmd</a> (<a class="el" href="structhost_1_1cobs__port.html">cobs_port</a> &amp;port, bool json)</td></tr>
 <tr class="separator:aa4a9fdf5b1e51f6e02e12697d247f6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03c8e02ec348bbd169b46cb1fa708907"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a03c8e02ec348bbd169b46cb1fa708907">cfg_commit_cmd</a> (<a class="el" href="structhost_1_1cobs__port.html">cobs_port</a> &amp;port)</td></tr>
@@ -169,17 +171,14 @@ Functions</h2></td></tr>
 <tr class="separator:a373cb37ec24fa4d2cea789e37beaa34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a2f24da7c62c9382666f594042cc47fbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f24da7c62c9382666f594042cc47fbb">&#9670;&nbsp;</a></span>baudrate_opt()</h2>
+<a id="a02aff288d9bbcebf7617820251136787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02aff288d9bbcebf7617820251136787">&#9670;&nbsp;</a></span>baudrate_opt()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CLI::Option* host::baudrate_opt </td>
+          <td class="memname">CLI::Option * host::baudrate_opt </td>
           <td>(</td>
           <td class="paramtype">CLI::App &amp;&#160;</td>
           <td class="paramname"><em>app</em>, </td>
@@ -196,11 +195,6 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -347,17 +341,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac5992b69a9b4498c24f684e9423fbf97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5992b69a9b4498c24f684e9423fbf97">&#9670;&nbsp;</a></span>device_opt()</h2>
+<a id="a1775c8c4fffab96ad3ff448f7d47d18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1775c8c4fffab96ad3ff448f7d47d18c">&#9670;&nbsp;</a></span>device_opt()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CLI::Option* host::device_opt </td>
+          <td class="memname">CLI::Option * host::device_opt </td>
           <td>(</td>
           <td class="paramtype">CLI::App &amp;&#160;</td>
           <td class="paramname"><em>app</em>, </td>
@@ -374,11 +365,6 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -835,6 +821,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aea4962fd63a1d7648099e25490bf42e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea4962fd63a1d7648099e25490bf42e5">&#9670;&nbsp;</a></span>verbose_opt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CLI::Option * host::verbose_opt </td>
+          <td>(</td>
+          <td class="paramtype">CLI::App &amp;&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af9be3784e3377e2c068ec80ec06ea580"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9be3784e3377e2c068ec80ec06ea580">&#9670;&nbsp;</a></span>write()</h2>
 
@@ -873,7 +887,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacehost.html">host</a></li>
-    <li class="footer">Generated on Sun Nov 5 2023 13:23:10 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Nov 10 2023 19:22:28 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

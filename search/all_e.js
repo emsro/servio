@@ -8,7 +8,7 @@ var searchData=
   ['degraded_137',['DEGRADED',['../status_8hpp.html#a015eb90e0de9f16e87bd149d4b9ce959a0021017005f0e5134b204c2e69d3d4ed',1,'status.hpp']]],
   ['detailed_5fadc_5fchannel_138',['detailed_adc_channel',['../structfw_1_1drv_1_1detailed__adc__channel.html',1,'fw::drv']]],
   ['device_139',['device',['../structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924',1,'host::common_cli']]],
-  ['device_5fopt_140',['device_opt',['../namespacehost.html#ac5992b69a9b4498c24f684e9423fbf97',1,'host']]],
+  ['device_5fopt_140',['device_opt',['../namespacehost.html#a1775c8c4fffab96ad3ff448f7d47d18c',1,'host']]],
   ['disengage_141',['disengage',['../classcontrol.html#a72d1d14a2342d2a7c4a0b61d2cfb27c6',1,'control']]],
   ['disengaged_142',['DISENGAGED',['../indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14afeffe8e712a5ce9a0cedef11c364fa74',1,'DISENGAGED():&#160;indication.hpp'],['../base_8hpp.html#ab11c51b7742a144ec8f0089eb023613dafeffe8e712a5ce9a0cedef11c364fa74',1,'DISENGAGED():&#160;base.hpp']]],
   ['dispatcher_143',['dispatcher',['../namespacefw.html#structfw_1_1dispatcher',1,'fw']]],

@@ -1,6 +1,7 @@
 var cli_8hpp =
 [
     [ "common_cli", "structhost_1_1common__cli.html", "structhost_1_1common__cli" ],
-    [ "baudrate_opt", "cli_8hpp.html#a2f24da7c62c9382666f594042cc47fbb", null ],
-    [ "device_opt", "cli_8hpp.html#ac5992b69a9b4498c24f684e9423fbf97", null ]
+    [ "baudrate_opt", "cli_8hpp.html#a02aff288d9bbcebf7617820251136787", null ],
+    [ "device_opt", "cli_8hpp.html#a1775c8c4fffab96ad3ff448f7d47d18c", null ],
+    [ "verbose_opt", "cli_8hpp.html#aea4962fd63a1d7648099e25490bf42e5", null ]
 ];
