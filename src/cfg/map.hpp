@@ -55,6 +55,7 @@ using map = em::protocol::register_map<
     reg< MOVING_DETECTION_STEP, float > >;
 
 using value_message = typename map::message_type;
+using value_variant = std::variant< model_name, uint32_t, float >;
 
 struct keyval
 {

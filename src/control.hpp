@@ -11,7 +11,7 @@ class control
 {
 
 public:
-        control( microseconds, ctl::config cfg );
+        control( microseconds, ctl::config cfg = {} );
 
         void set_pid( control_loop, ctl::pid_coefficients coeffs );
         void set_limits( control_loop, limits< float > lim );

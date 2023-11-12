@@ -37,6 +37,7 @@ void control::set_limits( control_loop cl, limits< float > lim )
 {
         switch ( cl ) {
         case control_loop::CURRENT:
+                current_lims_.config_lims = lim;
                 em::update_limits( velocity_pid_, lim );
                 em::update_limits( position_pid_, lim );
                 break;

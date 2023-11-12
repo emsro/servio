@@ -1,4 +1,4 @@
-#include "cfg_dispatcher.hpp"
+#include "cfg/dispatcher.hpp"
 #include "control.hpp"
 #include "fw/util.hpp"
 
@@ -19,7 +19,7 @@ struct dispatcher
         const temperature_interface&                     temp_drv;
         control&                                         ctl;
         metrics&                                         met;
-        cfg_dispatcher&                                  cfg_disp;
+        cfg::dispatcher&                                 cfg_disp;
         em::function_view< bool( const cfg::map* cfg ) > cfg_writer;
         converter&                                       conv;
         microseconds                                     now;

@@ -108,7 +108,7 @@ ServioToHost handle_get_property(
         return repl;
 }
 
-ServioToHost handle_set_config( cfg_dispatcher& cfg_disp, const Config& req )
+ServioToHost handle_set_config( cfg::dispatcher& cfg_disp, const Config& req )
 {
         const bool key_found = map_cfg( req.which_pld, req, [&]< cfg::key K >( auto& val ) {
                 cfg_disp.set< K >( val );
@@ -121,16 +121,16 @@ ServioToHost handle_set_config( cfg_dispatcher& cfg_disp, const Config& req )
         return msg;
 }
 
-ServioToHost handle_get_config( const cfg_dispatcher& cfg_disp, const GetConfig& req )
+ServioToHost handle_get_config( const cfg::dispatcher& cfg_disp, const GetConfig& req )
 {
         ServioToHost msg;
         const bool   key_found =
             map_cfg( req.field_id, msg.get_config, [&]< cfg::key K, typename T >( T& val ) {
                     if constexpr ( K == cfg::MODEL ) {
-                            const cfg::model_name& n = cfg_disp.map.get_val< K >();
+                            const cfg::model_name& n = cfg_disp.m.get_val< K >();
                             copy_string_to( n.data(), n.size(), val );
                     } else {
-                            val = cfg_disp.map.get_val< K >();
+                            val = cfg_disp.m.get_val< K >();
                     }
             } );
         if ( !key_found ) {
@@ -142,10 +142,10 @@ ServioToHost handle_get_config( const cfg_dispatcher& cfg_disp, const GetConfig&
         return msg;
 }
 
-ServioToHost handle_commit_config( const cfg_dispatcher& cfg_disp, const auto& cfg_writer )
+ServioToHost handle_commit_config( const cfg::dispatcher& cfg_disp, const auto& cfg_writer )
 {
 
-        const bool succ = cfg_writer( &cfg_disp.map );
+        const bool succ = cfg_writer( &cfg_disp.m );
         if ( !succ ) {
                 return error_msg( "commit failed" );
         }

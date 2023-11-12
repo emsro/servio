@@ -1,5 +1,5 @@
 #include "brd.hpp"
-#include "cfg_dispatcher.hpp"
+#include "cfg/dispatcher.hpp"
 #include "core.hpp"
 #include "core_drivers.hpp"
 #include "fw/board.hpp"
@@ -33,7 +33,7 @@ int main()
         standard_callbacks cbs( *cdrv.motor, *cdrv.clock, cor.ctl, cor.met, cor.conv );
         cbs.set_callbacks( *cdrv.period, *cdrv.period_cb, *cdrv.position, *cdrv.current );
 
-        cfg_dispatcher cfg_dis{ cfg, cor };
+        cfg::dispatcher cfg_dis{ cfg, cor };
         cfg_dis.full_apply();
 
         if ( cdrv.start_cb( cdrv ) != em::SUCCESS ) {
