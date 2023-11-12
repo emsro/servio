@@ -21,19 +21,19 @@ void dispatcher::apply( const key& key )
         case ID:
         case GROUP_ID:
                 break;
-        case POSITION_CONV_LOWER_SETPOINT_ANGLE:
-        case POSITION_CONV_HIGHER_SETPOINT_ANGLE:
+        case POSITION_CONV_LOW_ANGLE:
+        case POSITION_CONV_HIGH_ANGLE:
                 c.met.set_position_range(
-                    { m.get_val< POSITION_CONV_LOWER_SETPOINT_ANGLE >(),
-                      m.get_val< POSITION_CONV_HIGHER_SETPOINT_ANGLE >() } );
+                    { m.get_val< POSITION_CONV_LOW_ANGLE >(),
+                      m.get_val< POSITION_CONV_HIGH_ANGLE >() } );
                 [[fallthrough]];
-        case POSITION_CONV_LOWER_SETPOINT_VALUE:
-        case POSITION_CONV_HIGHER_SETPOINT_VALUE:
+        case POSITION_CONV_LOW_VALUE:
+        case POSITION_CONV_HIGH_VALUE:
                 c.conv.set_position_cfg(
-                    m.get_val< POSITION_CONV_LOWER_SETPOINT_VALUE >(),
-                    m.get_val< POSITION_CONV_LOWER_SETPOINT_ANGLE >(),
-                    m.get_val< POSITION_CONV_HIGHER_SETPOINT_VALUE >(),
-                    m.get_val< POSITION_CONV_HIGHER_SETPOINT_ANGLE >() );
+                    m.get_val< POSITION_CONV_LOW_VALUE >(),
+                    m.get_val< POSITION_CONV_LOW_ANGLE >(),
+                    m.get_val< POSITION_CONV_HIGH_VALUE >(),
+                    m.get_val< POSITION_CONV_HIGH_ANGLE >() );
                 break;
         case CURRENT_CONV_SCALE:
         case CURRENT_CONV_OFFSET:

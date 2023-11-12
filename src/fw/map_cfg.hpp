@@ -22,19 +22,19 @@ template < typename Cfg, typename UnaryFunction >
                 f.template operator()< cfg::GROUP_ID >( cfg.group_id );
                 break;
         case Config_position_conv_lower_setpoint_value_tag:
-                f.template operator()< cfg::POSITION_CONV_LOWER_SETPOINT_VALUE >(
+                f.template operator()< cfg::POSITION_CONV_LOW_VALUE >(
                     cfg.position_conv_lower_setpoint_value );
                 break;
         case Config_position_conv_lower_setpoint_angle_tag:
-                f.template operator()< cfg::POSITION_CONV_LOWER_SETPOINT_ANGLE >(
+                f.template operator()< cfg::POSITION_CONV_LOW_ANGLE >(
                     cfg.position_conv_lower_setpoint_angle );
                 break;
         case Config_position_conv_higher_setpoint_value_tag:
-                f.template operator()< cfg::POSITION_CONV_HIGHER_SETPOINT_VALUE >(
+                f.template operator()< cfg::POSITION_CONV_HIGH_VALUE >(
                     cfg.position_conv_higher_setpoint_value );
                 break;
         case Config_position_conv_higher_setpoint_angle_tag:
-                f.template operator()< cfg::POSITION_CONV_HIGHER_SETPOINT_ANGLE >(
+                f.template operator()< cfg::POSITION_CONV_HIGH_ANGLE >(
                     cfg.position_conv_higher_setpoint_angle );
                 break;
         case Config_current_conv_scale_tag:
