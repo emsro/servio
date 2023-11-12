@@ -2,8 +2,8 @@ var dir_4fc88152649b3a7b0043869ddaf105b0 =
 [
     [ "drv", "dir_6ea741a906e6e17d7bfd6b9b5099e89c.html", "dir_6ea741a906e6e17d7bfd6b9b5099e89c" ],
     [ "board.hpp", "board_8hpp.html", "board_8hpp" ],
-    [ "dispatcher.cpp", "dispatcher_8cpp.html", "dispatcher_8cpp" ],
-    [ "dispatcher.hpp", "dispatcher_8hpp.html", "dispatcher_8hpp" ],
+    [ "dispatcher.cpp", "fw_2dispatcher_8cpp.html", "fw_2dispatcher_8cpp" ],
+    [ "dispatcher.hpp", "fw_2dispatcher_8hpp.html", "fw_2dispatcher_8hpp" ],
     [ "extra.cpp", "extra_8cpp.html", "extra_8cpp" ],
     [ "it.cpp", "it_8cpp.html", "it_8cpp" ],
     [ "main.cpp", "fw_2main_8cpp.html", "fw_2main_8cpp" ],

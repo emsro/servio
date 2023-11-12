@@ -1,6 +1,6 @@
 var classcontrol =
 [
-    [ "control", "classcontrol.html#a87b46cf1786ff7aa079a825f53404865", null ],
+    [ "control", "classcontrol.html#ad689d28d57d8eef4ec1c9e97040c3614", null ],
     [ "current_irq", "classcontrol.html#a4b52b39807bc8e9b1ac8c0264538ed43", null ],
     [ "disengage", "classcontrol.html#a72d1d14a2342d2a7c4a0b61d2cfb27c6", null ],
     [ "get_desired_current", "classcontrol.html#a6e6d38e68abd83842dcd25078aa7a6cd", null ],

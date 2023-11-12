@@ -95,6 +95,8 @@ $(document).ready(function(){initNavTree('namespacecfg.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcfg_1_1dispatcher.html">dispatcher</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structcfg_1_1keyval"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#structcfg_1_1keyval">keyval</a></td></tr>
 <tr class="separator:structcfg_1_1keyval"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcfg_1_1payload.html">payload</a></td></tr>
@@ -111,6 +113,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:acf848925254b2853ca8e0df752409448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6ac65e119dcc70d661d0299de620673"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#ae6ac65e119dcc70d661d0299de620673">value_message</a> = typename map::message_type</td></tr>
 <tr class="separator:ae6ac65e119dcc70d661d0299de620673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1f5061ae92fac96b6c05402cb75aef8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#ad1f5061ae92fac96b6c05402cb75aef8">value_variant</a> = std::variant&lt; <a class="el" href="namespacecfg.html#a019f82131412b3a841ddba4c9ab3d762">model_name</a>, uint32_t, float &gt;</td></tr>
+<tr class="separator:ad1f5061ae92fac96b6c05402cb75aef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2276c764586a8373fef6fb02b7368a49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a2276c764586a8373fef6fb02b7368a49">handler</a> = em::cfg::handler&lt; <a class="el" href="structcfg_1_1payload.html">payload</a>, <a class="el" href="namespacecfg.html#structcfg_1_1keyval">keyval</a>, std::endian::native &gt;</td></tr>
 <tr class="separator:a2276c764586a8373fef6fb02b7368a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe3b38b8e2e914b20a052349e0a1ec56"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#abe3b38b8e2e914b20a052349e0a1ec56">reghandler</a> = em::protocol::register_handler&lt; <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> &gt;</td></tr>
@@ -192,6 +196,8 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a4e59289c825b451d8748919c22f5d687"><td class="memItemLeft" align="right" valign="top">consteval <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a4e59289c825b451d8748919c22f5d687">get_default_config</a> ()</td></tr>
 <tr class="separator:a4e59289c825b451d8748919c22f5d687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6811fad3058c0ddbf3576778455ec62d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a6811fad3058c0ddbf3576778455ec62d">apply</a> (<a class="el" href="classcontrol.html">control</a> &amp;ctl, const <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> &amp;m, const <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bd">key</a> &amp;<a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bd">key</a>)</td></tr>
+<tr class="separator:a6811fad3058c0ddbf3576778455ec62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a1d345842086b902925afb333ab102b"><td class="memTemplParams" colspan="2">template&lt;key key&gt; </td></tr>
 <tr class="memitem:a2a1d345842086b902925afb333ab102b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacecfg.html#structcfg_1_1keyval">keyval</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecfg.html#a2a1d345842086b902925afb333ab102b">make_keyval</a> (auto val)</td></tr>
 <tr class="separator:a2a1d345842086b902925afb333ab102b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,6 +345,20 @@ template&lt;auto Key, typename T &gt; </div>
 
 </div>
 </div>
+<a id="ad1f5061ae92fac96b6c05402cb75aef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1f5061ae92fac96b6c05402cb75aef8">&#9670;&nbsp;</a></span>value_variant</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecfg.html#ad1f5061ae92fac96b6c05402cb75aef8">cfg::value_variant</a> = typedef std::variant&lt; <a class="el" href="namespacecfg.html#a019f82131412b3a841ddba4c9ab3d762">model_name</a>, uint32_t, float &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a5723f91bc600c3126c420bb6f1fe91bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5723f91bc600c3126c420bb6f1fe91bd">&#9670;&nbsp;</a></span>key</h2>
@@ -389,6 +409,42 @@ template&lt;auto Key, typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a6811fad3058c0ddbf3576778455ec62d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6811fad3058c0ddbf3576778455ec62d">&#9670;&nbsp;</a></span>apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cfg::apply </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcontrol.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>ctl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacecfg.html#acf848925254b2853ca8e0df752409448">map</a> &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bd">key</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="base_8hpp.html#a2d21811ce1f560323f48c16592782d7faa2770969c827f0f2910f6179418462df">CURRENT</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda908e2c0a5c7cff662c413a8ee2c71ea5">CURRENT_LIM_MAX</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda5a9199b1c0b5ad46b7ceaa44cb82b641">CURRENT_LIM_MIN</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda8b211ca44a3eb9291e2a4d4cb5761f06">CURRENT_LOOP_D</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda5eb798f299120169b047779e901aaf69">CURRENT_LOOP_I</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda910f5bcc230f87bc43bb90449ae657fe">CURRENT_LOOP_P</a>, <a class="el" href="base_8hpp.html#a2d21811ce1f560323f48c16592782d7fa90b4ba73224408e82ade8a072a3712c1">POSITION</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda70e9dd9a004958285211db9af1e0f300">POSITION_LIM_MAX</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdaa9b3bcda55ce8f03e57083397acd7481">POSITION_LIM_MIN</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda6b6a9167e5d50d8c641579b328f2d4e1">POSITION_LOOP_D</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdae33a75f9c5444e664ea7ac891fe7cebb">POSITION_LOOP_I</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdafca42f49af4454168cc4b7da5875bb68">POSITION_LOOP_P</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda283a6d139d230e1ce400ff6ca8b7a714">STATIC_FRICTION_DECAY</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda7f3cbfeeead75126625635a3022170c0">STATIC_FRICTION_SCALE</a>, <a class="el" href="base_8hpp.html#a2d21811ce1f560323f48c16592782d7fa7b4354bded455eb379e3c764806cda7b">VELOCITY</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda4b85d3031c87f30dc9b04e7631acd2e9">VELOCITY_LIM_MAX</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda3903bab3f15756a8882a058116dac709">VELOCITY_LIM_MIN</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bdabec38fdb4c70a5281a658b7abc155747">VELOCITY_LOOP_D</a>, <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda904be6f17a4e5e0b136dc448af67cfee">VELOCITY_LOOP_I</a>, and <a class="el" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda98887f0a6e6d4245b82c68b2e5d8677d">VELOCITY_LOOP_P</a>.</p>
+
+</div>
+</div>
 <a id="ab8b28b0ab16c3b0bf545c39e6fb142e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab8b28b0ab16c3b0bf545c39e6fb142e4">&#9670;&nbsp;</a></span>find_latest_page()</h2>
 
@@ -584,7 +640,7 @@ template&lt;key key&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecfg.html">cfg</a></li>
-    <li class="footer">Generated on Fri Nov 10 2023 19:22:56 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Nov 12 2023 09:16:10 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

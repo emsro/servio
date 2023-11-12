@@ -8,5 +8,6 @@ var map_8hpp =
     [ "model_name", "map_8hpp.html#a019f82131412b3a841ddba4c9ab3d762", null ],
     [ "reg", "map_8hpp.html#abf71bd824fb87e8155f5795938b23a2c", null ],
     [ "value_message", "map_8hpp.html#ae6ac65e119dcc70d661d0299de620673", null ],
+    [ "value_variant", "map_8hpp.html#ad1f5061ae92fac96b6c05402cb75aef8", null ],
     [ "make_keyval", "map_8hpp.html#a2a1d345842086b902925afb333ab102b", null ]
 ];

@@ -1,5 +1,6 @@
 var namespacecfg =
 [
+    [ "dispatcher", "structcfg_1_1dispatcher.html", "structcfg_1_1dispatcher" ],
     [ "keyval", "namespacecfg.html#structcfg_1_1keyval", "namespacecfg_structcfg_1_1keyval_dup" ],
     [ "payload", "structcfg_1_1payload.html", "structcfg_1_1payload" ],
     [ "handler", "namespacecfg.html#a2276c764586a8373fef6fb02b7368a49", null ],
@@ -9,6 +10,7 @@ var namespacecfg =
     [ "reg", "namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c", null ],
     [ "reghandler", "namespacecfg.html#abe3b38b8e2e914b20a052349e0a1ec56", null ],
     [ "value_message", "namespacecfg.html#ae6ac65e119dcc70d661d0299de620673", null ],
+    [ "value_variant", "namespacecfg.html#ad1f5061ae92fac96b6c05402cb75aef8", null ],
     [ "key", "namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bd", [
       [ "MODEL", "namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda57d30f3c649befbfd10ce24091d6556f", null ],
       [ "ID", "namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda2815c40b79c2f0c294aac0af044aec20", null ],
@@ -43,6 +45,7 @@ var namespacecfg =
       [ "MAXIMUM_TEMPERATURE", "namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda1b8cf2e8fd9cc7b2cd13202e550d3e23", null ],
       [ "MOVING_DETECTION_STEP", "namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda29deeb389f9e0680a6f016aca429e37b", null ]
     ] ],
+    [ "apply", "namespacecfg.html#a6811fad3058c0ddbf3576778455ec62d", null ],
     [ "find_latest_page", "namespacecfg.html#ab8b28b0ab16c3b0bf545c39e6fb142e4", null ],
     [ "find_next_page", "namespacecfg.html#a27fb9256d3f5822df90c3a2296a9531b", null ],
     [ "find_oldest_page", "namespacecfg.html#a8c4bca10aa98ae305a1f2f5163b318c7", null ],

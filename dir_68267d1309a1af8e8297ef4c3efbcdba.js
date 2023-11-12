@@ -12,10 +12,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
       [ "current_callback", "classcurrent__callback.html", "classcurrent__callback" ],
       [ "position_callback", "classposition__callback.html", "classposition__callback" ]
     ] ],
-    [ "cfg_dispatcher.cpp", "cfg__dispatcher_8cpp.html", "cfg__dispatcher_8cpp" ],
-    [ "cfg_dispatcher.hpp", "cfg__dispatcher_8hpp.html", [
-      [ "cfg_dispatcher", "structcfg__dispatcher.html", "structcfg__dispatcher" ]
-    ] ],
     [ "control.cpp", "control_8cpp.html", null ],
     [ "control.hpp", "control_8hpp.html", [
       [ "control", "classcontrol.html", "classcontrol" ]

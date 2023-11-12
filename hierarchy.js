@@ -9,7 +9,6 @@ var hierarchy =
       [ "fw::drv::empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", null ]
     ] ],
     [ "fw::drv::adc_pooler< Set >", "structfw_1_1drv_1_1adc__pooler.html", null ],
-    [ "cfg_dispatcher", "structcfg__dispatcher.html", null ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", null ],
     [ "fw::check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "clk_interface", "classclk__interface.html", [
@@ -28,6 +27,7 @@ var hierarchy =
     [ "core_drivers", "structcore__drivers.html", null ],
     [ "cnv::current_converter", "classcnv_1_1current__converter.html", null ],
     [ "fw::drv::detailed_adc_channel< ID, N >", "structfw_1_1drv_1_1detailed__adc__channel.html", null ],
+    [ "cfg::dispatcher", "structcfg_1_1dispatcher.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
     [ "driver_interface", "classdriver__interface.html", [
       [ "current_interface", "classcurrent__interface.html", null ],
