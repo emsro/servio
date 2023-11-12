@@ -43,6 +43,7 @@ public:
 
 private:
         limits< float > get_current_limits() const;
+        limits< float > get_velocity_limits() const;
         ctl::pid&       ref_module( control_loop );
 
         control_mode state_ = control_mode::POWER;
@@ -51,14 +52,17 @@ private:
         float           position_goal_ = 0.F;
         ctl::pid        position_pid_;
 
-        limits< float > velocity_lims_;
-        float           velocity_goal_ = 0.F;
-        ctl::pid        velocity_pid_;
-
         struct
         {
                 limits< float > config_lims{ -infty, infty };
                 limits< float > pos_derived_lims{ -infty, infty };
+        } velocity_lims_;
+        float    velocity_goal_ = 0.F;
+        ctl::pid velocity_pid_;
+
+        struct
+        {
+                limits< float > config_lims{ -infty, infty };
                 limits< float > vel_derived_lims{ -infty, infty };
         } current_lims_;
         float                            current_goal_ = 0.F;

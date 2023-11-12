@@ -1,5 +1,7 @@
 #include "control.hpp"
 
+#include "base.hpp"
+
 #include <emlabcpp/match.h>
 #include <emlabcpp/protocol/register_handler.h>
 
@@ -42,7 +44,7 @@ void control::set_limits( control_loop cl, limits< float > lim )
                 em::update_limits( position_pid_, lim );
                 break;
         case control_loop::VELOCITY:
-                velocity_lims_ = lim;
+                velocity_lims_.config_lims = lim;
                 break;
         case control_loop::POSITION:
                 position_lims_ = lim;
@@ -69,17 +71,17 @@ void control::switch_to_power_control( int16_t power )
 void control::switch_to_current_control( microseconds, float current )
 {
         state_        = control_mode::CURRENT;
-        current_goal_ = current;
+        current_goal_ = clamp( current, current_lims_.config_lims );
 }
 void control::switch_to_velocity_control( microseconds, float velocity )
 {
         state_         = control_mode::VELOCITY;
-        velocity_goal_ = velocity;
+        velocity_goal_ = clamp( velocity, velocity_lims_.config_lims );
 }
 void control::switch_to_position_control( microseconds, float position )
 {
         state_         = control_mode::POSITION;
-        position_goal_ = position;
+        position_goal_ = clamp( position, position_lims_ );
 }
 
 void control::moving_irq( microseconds now, bool is_moving )
@@ -89,6 +91,11 @@ void control::moving_irq( microseconds now, bool is_moving )
 
 [[gnu::flatten]] void control::position_irq( microseconds now, float position )
 {
+        limits< float >& vlims = velocity_lims_.pos_derived_lims;
+        const float      c     = 1.f;
+        vlims.max()            = c * ( position_lims_.max() - position );
+        vlims.min()            = c * ( position_lims_.min() - position );
+
         if ( state_ == control_mode::POSITION ) {
                 em::update( position_pid_, now.count(), position, position_goal_ );
         } else {
@@ -98,8 +105,15 @@ void control::moving_irq( microseconds now, bool is_moving )
 
 [[gnu::flatten]] void control::velocity_irq( microseconds now, float velocity )
 {
+        limits< float >  vlims = get_velocity_limits();
+        limits< float >& clims = current_lims_.vel_derived_lims;
+        const float      c     = 1.f;
+        clims.max()            = c * ( vlims.max() - velocity );
+        clims.min()            = c * ( vlims.min() - velocity );
+
         if ( state_ == control_mode::VELOCITY ) {
-                em::update( velocity_pid_, now.count(), velocity, velocity_goal_ );
+                float goal = clamp( velocity_goal_, get_velocity_limits() );
+                em::update( velocity_pid_, now.count(), velocity, goal );
         } else {
                 em::reset( velocity_pid_, now.count(), velocity );
         }
@@ -154,8 +168,10 @@ float control::get_desired_position() const
 
 limits< float > control::get_current_limits() const
 {
-        return em::intersection(
-            current_lims_.config_lims,
-            current_lims_.pos_derived_lims,
-            current_lims_.vel_derived_lims );
+        return em::intersection( current_lims_.config_lims, current_lims_.vel_derived_lims );
+}
+
+limits< float > control::get_velocity_limits() const
+{
+        return em::intersection( velocity_lims_.config_lims, velocity_lims_.pos_derived_lims );
 }
