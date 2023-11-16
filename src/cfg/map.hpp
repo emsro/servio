@@ -63,12 +63,12 @@ struct keyval
         value_message msg;
 };
 
-template < key key >
+template < key Key >
 keyval make_keyval( auto val )
 {
         return {
-            .key = key,
-            .msg = em::protocol::register_handler< map >::serialize< key >( val ),
+            .key = Key,
+            .msg = em::protocol::register_handler< map >::serialize< Key >( val ),
         };
 }
 
