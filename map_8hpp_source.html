@@ -152,12 +152,12 @@ $(document).ready(function(){initNavTree('map_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="namespacecfg.html#aff1d70f4db5396ee3b4bc662e6b0d5e7">   63</a></span>&#160;        <a class="code" href="namespacecfg.html#ae6ac65e119dcc70d661d0299de620673">value_message</a> <a class="code" href="namespacecfg.html#aff1d70f4db5396ee3b4bc662e6b0d5e7">msg</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span> &lt; key key &gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span> &lt; key Key &gt;</div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="namespacecfg.html#a2a1d345842086b902925afb333ab102b">   67</a></span>&#160;<a class="code" href="namespacecfg.html#structcfg_1_1keyval">keyval</a> <a class="code" href="namespacecfg.html#a2a1d345842086b902925afb333ab102b">make_keyval</a>( <span class="keyword">auto</span> val )</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            .<a class="code" href="namespacecfg.html#ade8d376c5edc9f138ff502663ee5b37b">key</a> = <a class="code" href="namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bd">key</a>,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            .msg = em::protocol::register_handler&lt; map &gt;::serialize&lt; key &gt;( val ),</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            .<a class="code" href="namespacecfg.html#ade8d376c5edc9f138ff502663ee5b37b">key</a> = Key,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            .msg = em::protocol::register_handler&lt; map &gt;::serialize&lt; Key &gt;( val ),</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        };</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('map_8hpp_source.html',''); initResizab
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1e869ebbc6cce176ee0dbb76743ac339.html">cfg</a></li><li class="navelem"><a class="el" href="map_8hpp.html">map.hpp</a></li>
-    <li class="footer">Generated on Sun Nov 12 2023 19:01:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Nov 16 2023 20:48:15 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
