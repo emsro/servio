@@ -92,7 +92,7 @@ void control::moving_irq( microseconds now, bool is_moving )
 [[gnu::flatten]] void control::position_irq( microseconds now, float position )
 {
         limits< float >& vlims = velocity_lims_.pos_derived_lims;
-        const float      c     = 1.f;
+        const float      c     = 2.f;
         vlims.max()            = c * ( position_lims_.max() - position );
         vlims.min()            = c * ( position_lims_.min() - position );
 
@@ -107,12 +107,12 @@ void control::moving_irq( microseconds now, bool is_moving )
 {
         limits< float >  vlims = get_velocity_limits();
         limits< float >& clims = current_lims_.vel_derived_lims;
-        const float      c     = 1.f;
+        const float      c     = 2.f;
         clims.max()            = c * ( vlims.max() - velocity );
         clims.min()            = c * ( vlims.min() - velocity );
 
         if ( state_ == control_mode::VELOCITY ) {
-                float goal = clamp( velocity_goal_, get_velocity_limits() );
+                float goal = clamp( velocity_goal_, vlims );
                 em::update( velocity_pid_, now.count(), velocity, goal );
         } else {
                 em::reset( velocity_pid_, now.count(), velocity );
