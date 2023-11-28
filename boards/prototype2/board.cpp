@@ -362,7 +362,7 @@ em::result debug_comms_setup( fw::drv::cobs_uart::handles& h )
             h.tx_dma,
             uart_cfg{
                 .uart_instance = USART1,
-                .baudrate      = 115200,
+                .baudrate      = 460800,
                 .irq           = USART1_IRQn,
                 .irq_priority  = 1,
                 .rx =
