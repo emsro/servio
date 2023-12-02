@@ -82,6 +82,10 @@ template < typename Cfg, typename UnaryFunction >
         case Config_velocity_lim_max_tag:
                 f.template operator()< cfg::VELOCITY_LIM_MAX >( cfg.velocity_lim_max );
                 break;
+        case Config_velocity_to_current_lim_scale_tag:
+                f.template operator()< cfg::VELOCITY_TO_CURR_LIM_SCALE >(
+                    cfg.velocity_to_current_lim_scale );
+                breal;
         case Config_position_loop_p_tag:
                 f.template operator()< cfg::POSITION_LOOP_P >( cfg.position_loop_p );
                 break;
@@ -96,6 +100,10 @@ template < typename Cfg, typename UnaryFunction >
                 break;
         case Config_position_lim_max_tag:
                 f.template operator()< cfg::POSITION_LIM_MAX >( cfg.position_lim_max );
+                break;
+        case Config_position_to_velocity_lim_scale_tag:
+                f.template operator()< cfg::POSITION_TO_VEL_LIM_SCALE >(
+                    cfg.position_to_velocity_lim_scale );
                 break;
         case Config_static_friction_scale_tag:
                 f.template operator()< cfg::STATIC_FRICTION_SCALE >( cfg.static_friction_scale );

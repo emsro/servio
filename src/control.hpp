@@ -3,6 +3,7 @@
 #include "ctl/linear_transition_regulator.hpp"
 
 #include <emlabcpp/pid.h>
+#include <limits>
 #include <variant>
 
 #pragma once
@@ -16,11 +17,8 @@ public:
         void set_pid( control_loop, ctl::pid_coefficients coeffs );
         void set_limits( control_loop, limits< float > lim );
         void set_static_friction( float scale, float decay );
-
-        [[nodiscard]] control_mode get_mode() const
-        {
-                return state_;
-        }
+        void set_pos_to_vel_lim_scale( float scale );
+        void set_vel_to_curr_lim_scale( float scale );
 
         void disengage();
 
@@ -41,6 +39,11 @@ public:
         float get_desired_velocity() const;
         float get_desired_position() const;
 
+        [[nodiscard]] control_mode get_mode() const
+        {
+                return state_;
+        }
+
 private:
         limits< float > get_current_limits() const;
         limits< float > get_velocity_limits() const;
@@ -51,6 +54,7 @@ private:
         limits< float > position_lims_;
         float           position_goal_ = 0.F;
         ctl::pid        position_pid_;
+        float           position_to_velocity_lim_scale_ = std::numeric_limits< float >::max();
 
         struct
         {
@@ -59,6 +63,7 @@ private:
         } velocity_lims_;
         float    velocity_goal_ = 0.F;
         ctl::pid velocity_pid_;
+        float    velocity_to_current_lim_scale_ = std::numeric_limits< float >::max();
 
         struct
         {

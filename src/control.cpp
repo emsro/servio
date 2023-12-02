@@ -52,6 +52,16 @@ void control::set_limits( control_loop cl, limits< float > lim )
         }
 }
 
+void control::set_pos_to_vel_lim_scale( float scale )
+{
+        position_to_velocity_lim_scale_ = scale;
+}
+
+void control::set_vel_to_curr_lim_scale( float scale )
+{
+        velocity_to_current_lim_scale_ = scale;
+}
+
 void control::set_static_friction( float scale, float decay )
 {
         current_scale_regl_.set_config( scale, decay );
@@ -94,9 +104,9 @@ void control::moving_irq( microseconds now, bool is_moving )
 [[gnu::flatten]] void control::position_irq( microseconds now, float position )
 {
         limits< float >& vlims = velocity_lims_.pos_derived_lims;
-        const float      c     = 2.f;
-        vlims.max()            = c * ( position_lims_.max() - position );
-        vlims.min()            = c * ( position_lims_.min() - position );
+
+        vlims.max() = position_to_velocity_lim_scale_ * ( position_lims_.max() - position );
+        vlims.min() = position_to_velocity_lim_scale_ * ( position_lims_.min() - position );
 
         if ( state_ == control_mode::POSITION ) {
                 em::update( position_pid_, now.count(), position, position_goal_ );
@@ -109,9 +119,8 @@ void control::moving_irq( microseconds now, bool is_moving )
 {
         limits< float >  vlims = get_velocity_limits();
         limits< float >& clims = current_lims_.vel_derived_lims;
-        const float      c     = 2.f;
-        clims.max()            = c * ( vlims.max() - velocity );
-        clims.min()            = c * ( vlims.min() - velocity );
+        clims.max()            = velocity_to_current_lim_scale_ * ( vlims.max() - velocity );
+        clims.min()            = velocity_to_current_lim_scale_ * ( vlims.min() - velocity );
 
         if ( state_ == control_mode::VELOCITY ) {
                 float goal = clamp( velocity_goal_, vlims );

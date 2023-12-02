@@ -81,6 +81,9 @@ message Config {
     float velocity_lim_min = 43;
     float velocity_lim_max = 44;
 
+    // Velocity limits are handled by scaling down current, this affects the scale.
+    float velocity_to_current_lim_scale = 45;
+
     // PID configuration parameters for position control loop
     float position_loop_p = 50;
     float position_loop_i = 51;
@@ -89,6 +92,9 @@ message Config {
     // Position control loop limits (in rad)
     float position_lim_min = 53;
     float position_lim_max = 54;
+
+    // Position limits are handled by scaling down velocity, this affects the scale.
+    float position_to_velocity_lim_scale = 55;
 
     // Outside of the normal functionality of the control loops, the current
     // desired by velocity loop will be scaled by `static_friction_scale` in

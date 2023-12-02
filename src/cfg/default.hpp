@@ -1,3 +1,4 @@
+#include "cfg/key.hpp"
 #include "cfg/map.hpp"
 
 #pragma once
@@ -30,11 +31,13 @@ consteval map get_default_config()
             reg< VELOCITY_LOOP_D, float >{ 0.02F },
             reg< VELOCITY_LIM_MIN, float >{ -3.F },
             reg< VELOCITY_LIM_MAX, float >{ 3.F },
+            reg< VELOCITY_TO_CURR_LIM_SCALE, float >{ 2.F },
             reg< POSITION_LOOP_P, float >{ 0.2F },
             reg< POSITION_LOOP_I, float >{ 0.00000002F },
             reg< POSITION_LOOP_D, float >{ 0.F },
             reg< POSITION_LIM_MIN, float >{ 0.1F },
             reg< POSITION_LIM_MAX, float >{ 2 * pi - 0.1F },
+            reg< POSITION_TO_VEL_LIM_SCALE, float >{ 2.F },
             reg< STATIC_FRICTION_SCALE, float >{ 3.F },
             reg< STATIC_FRICTION_DECAY, float >{ 1.F },
             reg< MINIMUM_VOLTAGE, float >{ 6.F },

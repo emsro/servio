@@ -1,5 +1,7 @@
 #include "cfg/dispatcher.hpp"
 
+#include "cfg/key.hpp"
+
 #include <emlabcpp/protocol/register_handler.h>
 
 using handler = em::protocol::register_handler< cfg::map >;
@@ -97,6 +99,9 @@ void apply( control& ctl, const map& m, const key& key )
                     control_loop::VELOCITY,
                     { m.get_val< VELOCITY_LIM_MIN >(), m.get_val< VELOCITY_LIM_MAX >() } );
                 break;
+        case VELOCITY_TO_CURR_LIM_SCALE:
+                ctl.set_vel_to_curr_lim_scale( m.get_val< VELOCITY_TO_CURR_LIM_SCALE >() );
+                break;
         case POSITION_LOOP_P:
         case POSITION_LOOP_I:
         case POSITION_LOOP_D:
@@ -111,6 +116,9 @@ void apply( control& ctl, const map& m, const key& key )
                 ctl.set_limits(
                     control_loop::POSITION,
                     { m.get_val< POSITION_LIM_MIN >(), m.get_val< POSITION_LIM_MAX >() } );
+                break;
+        case POSITION_TO_VEL_LIM_SCALE:
+                ctl.set_pos_to_vel_lim_scale( m.get_val< POSITION_TO_VEL_LIM_SCALE >() );
                 break;
         case STATIC_FRICTION_SCALE:
         case STATIC_FRICTION_DECAY:
