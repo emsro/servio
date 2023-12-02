@@ -85,7 +85,7 @@ template < typename Cfg, typename UnaryFunction >
         case Config_velocity_to_current_lim_scale_tag:
                 f.template operator()< cfg::VELOCITY_TO_CURR_LIM_SCALE >(
                     cfg.velocity_to_current_lim_scale );
-                breal;
+                break;
         case Config_position_loop_p_tag:
                 f.template operator()< cfg::POSITION_LOOP_P >( cfg.position_loop_p );
                 break;
