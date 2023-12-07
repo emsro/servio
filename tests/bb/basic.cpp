@@ -165,8 +165,10 @@ boost::asio::awaitable< void > test_config( boost::asio::io_context&, host::cobs
 int main( int argc, char** argv )
 {
         ::testing::InitGoogleTest( &argc, argv );
+        bool powerless = false;
 
-        CLI::App         app{ "basic black box tests" };
+        CLI::App app{ "basic black box tests" };
+        host::powerless_flag( app, powerless );
         host::common_cli cli;
         cli.setup( app );
 

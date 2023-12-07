@@ -44,10 +44,11 @@ boost::asio::awaitable< void > test_position( boost::asio::io_context& io, host:
 
 int main( int argc, char** argv )
 {
-        //        em::DEBUG_LOGGER.set_option( em::set_stdout( true ) );
         ::testing::InitGoogleTest( &argc, argv );
+        bool powerless = false;
 
-        CLI::App         app{ "black box tests with basic moves" };
+        CLI::App app{ "black box tests with basic moves" };
+        host::powerless_flag( app, powerless );
         host::common_cli cli;
         cli.setup( app );
 
@@ -58,8 +59,10 @@ int main( int argc, char** argv )
                 return app.exit( e );
         }
 
-        tests::bb::register_test( "moves", "current", cli, test_current );
-        tests::bb::register_test( "moves", "position", cli, test_position );
+        if ( !powerless ) {
+                tests::bb::register_test( "moves", "current", cli, test_current );
+                tests::bb::register_test( "moves", "position", cli, test_position );
+        }
 
         return RUN_ALL_TESTS();
 }
