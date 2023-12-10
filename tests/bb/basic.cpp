@@ -166,9 +166,11 @@ int main( int argc, char** argv )
 {
         ::testing::InitGoogleTest( &argc, argv );
         bool powerless = false;
+        bool verbose   = false;
 
         CLI::App app{ "basic black box tests" };
         host::powerless_flag( app, powerless );
+        host::verbose_opt( app, verbose );
         host::common_cli cli;
         cli.setup( app );
 
@@ -177,6 +179,10 @@ int main( int argc, char** argv )
         }
         catch ( const CLI::ParseError& e ) {
                 return app.exit( e );
+        }
+
+        if ( verbose ) {
+                em::DEBUG_LOGGER.set_option( em::set_stdout( true ) );
         }
 
         tests::bb::register_test( "basic", "properties_querying", cli, test_properties_querying );
