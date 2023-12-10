@@ -24,6 +24,7 @@ var namespacehost =
     [ "get_property_mode", "namespacehost.html#ac76aa810d2266c4958fbc6b8fb72f270", null ],
     [ "get_property_position", "namespacehost.html#aeddd9b50cf66e5231c6dd276b4ad93dc", null ],
     [ "get_property_velocity", "namespacehost.html#a644fde8b6f79a38ff95953d6ac1bb6cf", null ],
+    [ "powerless_flag", "namespacehost.html#a8a5e3416256eb99ad773ce348a557917", null ],
     [ "read", "namespacehost.html#af4b67bbd51d1b2f8b9ab20bf2fc42c32", null ],
     [ "set_config_field", "namespacehost.html#ac27277a0709fec611287ddf8b71fe5de", null ],
     [ "set_mode", "namespacehost.html#af2efc11653594fd2b5f004ebc2bf68f1", null ],

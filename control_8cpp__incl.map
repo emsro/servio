@@ -1,11 +1,12 @@
 <map id="src/control.cpp" name="src/control.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="515,5,632,32"/>
-<area shape="rect" id="node2" href="$control_8hpp.html" title=" " alt="" coords="283,87,378,114"/>
-<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="427,259,509,285"/>
-<area shape="rect" id="node8" title=" " alt="" coords="557,87,699,114"/>
-<area shape="rect" id="node9" title=" " alt="" coords="724,80,921,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="599,5,716,32"/>
+<area shape="rect" id="node2" href="$control_8hpp.html" title=" " alt="" coords="345,87,439,114"/>
+<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="511,259,593,285"/>
+<area shape="rect" id="node9" title=" " alt="" coords="641,87,783,114"/>
+<area shape="rect" id="node10" title=" " alt="" coords="808,80,1005,121"/>
 <area shape="rect" id="node4" href="$config_8hpp.html" title=" " alt="" coords="5,177,115,203"/>
 <area shape="rect" id="node5" title=" " alt="" coords="45,259,168,285"/>
 <area shape="rect" id="node6" href="$linear__transition__regulator_8hpp.html" title=" " alt="" coords="190,169,338,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="362,177,430,203"/>
+<area shape="rect" id="node7" title=" " alt="" coords="363,177,421,203"/>
+<area shape="rect" id="node8" title=" " alt="" coords="446,177,514,203"/>
 </map>
