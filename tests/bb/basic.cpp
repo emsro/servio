@@ -190,7 +190,7 @@ int main( int argc, char** argv )
         tests::bb::register_test(
             "basic", "properties_querying", cli, test_properties_querying, 1s );
         tests::bb::register_test( "basic", "modes", cli, test_modes, 1s );
-        tests::bb::register_test( "basic", "config", cli, test_config, 1s );
+        tests::bb::register_test( "basic", "config", cli, test_config, 10s );
 
         return RUN_ALL_TESTS();
 }

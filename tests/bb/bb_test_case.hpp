@@ -1,6 +1,7 @@
 #include "host/cli.hpp"
 
 #include <boost/asio.hpp>
+#include <boost/asio/awaitable.hpp>
 #include <boost/asio/serial_port.hpp>
 #include <chrono>
 #include <filesystem>
@@ -29,8 +30,14 @@ struct bb_test_case : ::testing::Test
         {
                 cli.context.restart();
                 std::exception_ptr excep_ptr;
+                bool               finished = false;
                 co_spawn(
-                    cli.context, test( cli.context, *cli.port_ptr ), [&]( std::exception_ptr ptr ) {
+                    cli.context,
+                    [&]() -> boost::asio::awaitable< void > {
+                            co_await test( cli.context, *cli.port_ptr );
+                            finished = true;
+                    },
+                    [&]( std::exception_ptr ptr ) {
                             excep_ptr = std::move( ptr );
                     } );
                 cli.context.run_for( timeout );
@@ -38,6 +45,7 @@ struct bb_test_case : ::testing::Test
                 if ( excep_ptr ) {
                         std::rethrow_exception( excep_ptr );
                 }
+                EXPECT_TRUE( finished ) << "Test failed to finish in time, timeout: " << timeout;
         }
 
         host::common_cli&               cli;
