@@ -2,6 +2,7 @@
 
 #include <boost/asio.hpp>
 #include <boost/asio/serial_port.hpp>
+#include <chrono>
 #include <filesystem>
 #include <gtest/gtest.h>
 
@@ -14,9 +15,13 @@ using test_signature = boost::asio::awaitable< void >( boost::asio::io_context&,
 
 struct bb_test_case : ::testing::Test
 {
-        bb_test_case( host::common_cli& cli, std::function< test_signature > test )
+        bb_test_case(
+            host::common_cli&               cli,
+            std::function< test_signature > test,
+            std::chrono::milliseconds       timeout )
           : cli( cli )
           , test( std::move( test ) )
+          , timeout( timeout )
         {
         }
 
@@ -28,7 +33,7 @@ struct bb_test_case : ::testing::Test
                     cli.context, test( cli.context, *cli.port_ptr ), [&]( std::exception_ptr ptr ) {
                             excep_ptr = std::move( ptr );
                     } );
-                cli.context.run();
+                cli.context.run_for( timeout );
 
                 if ( excep_ptr ) {
                         std::rethrow_exception( excep_ptr );
@@ -37,13 +42,15 @@ struct bb_test_case : ::testing::Test
 
         host::common_cli&               cli;
         std::function< test_signature > test;
+        std::chrono::milliseconds       timeout;
 };
 
 inline void register_test(
     const std::string&              fixture_name,
     const std::string&              name,
     host::common_cli&               cli,
-    std::function< test_signature > test )
+    std::function< test_signature > test,
+    std::chrono::milliseconds       timeout )
 {
         ::testing::RegisterTest(
             fixture_name.c_str(),
@@ -52,8 +59,8 @@ inline void register_test(
             nullptr,
             __FILE__,
             __LINE__,
-            [&cli, test = std::move( test )] {
-                    return new bb_test_case( cli, test );
+            [&cli, test = std::move( test ), timeout] {
+                    return new bb_test_case( cli, test, timeout );
             } );
 }
 

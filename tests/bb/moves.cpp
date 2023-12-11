@@ -44,6 +44,8 @@ boost::asio::awaitable< void > test_position( boost::asio::io_context& io, host:
 
 int main( int argc, char** argv )
 {
+        using namespace std::chrono_literals;
+
         ::testing::InitGoogleTest( &argc, argv );
         bool powerless = false;
 
@@ -60,8 +62,8 @@ int main( int argc, char** argv )
         }
 
         if ( !powerless ) {
-                tests::bb::register_test( "moves", "current", cli, test_current );
-                tests::bb::register_test( "moves", "position", cli, test_position );
+                tests::bb::register_test( "moves", "current", cli, test_current, 1s );
+                tests::bb::register_test( "moves", "position", cli, test_position, 1s );
         }
 
         return RUN_ALL_TESTS();

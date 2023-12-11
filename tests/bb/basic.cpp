@@ -164,6 +164,8 @@ boost::asio::awaitable< void > test_config( boost::asio::io_context&, host::cobs
 
 int main( int argc, char** argv )
 {
+        using namespace std::chrono_literals;
+
         ::testing::InitGoogleTest( &argc, argv );
         bool powerless = false;
         bool verbose   = false;
@@ -185,9 +187,10 @@ int main( int argc, char** argv )
                 em::DEBUG_LOGGER.set_option( em::set_stdout( true ) );
         }
 
-        tests::bb::register_test( "basic", "properties_querying", cli, test_properties_querying );
-        tests::bb::register_test( "basic", "modes", cli, test_modes );
-        tests::bb::register_test( "basic", "config", cli, test_config );
+        tests::bb::register_test(
+            "basic", "properties_querying", cli, test_properties_querying, 1s );
+        tests::bb::register_test( "basic", "modes", cli, test_modes, 1s );
+        tests::bb::register_test( "basic", "config", cli, test_config, 1s );
 
         return RUN_ALL_TESTS();
 }
