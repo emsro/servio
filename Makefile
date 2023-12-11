@@ -20,6 +20,11 @@ build_g4:
 	cmake -Bbuild/g4 -DSERVIO_PLATFORM=stm32g4 -DCMAKE_TOOLCHAIN_FILE=stm32-cmake/cmake/stm32_gcc.cmake ${BUILD_ARGS}
 	cmake --build build/g4 -j 4
 
+build_h5:
+	mkdir -p build/h5
+	cmake -Bbuild/h5 -DSERVIO_PLATFORM=stm32h5 -DCMAKE_TOOLCHAIN_FILE=stm32-cmake/cmake/stm32_gcc.cmake ${BUILD_ARGS}
+	cmake --build build/h5 -j 4
+
 test: build_host
 	cd build/host && ctest -T Test --output-on-failure
 

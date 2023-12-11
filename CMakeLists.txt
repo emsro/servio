@@ -23,13 +23,20 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
                     -DEMLABCPP_USE_GTEST)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
-
   set(CMAKE_CXX_FLAGS
       "${CMAKE_CXX_FLAGS} -fsingle-precision-constant  -Fno-rtti -fno-exceptions -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard"
   )
   set(CMAKE_C_FLAGS
       "${CMAKE_C_FLAGS} -fsingle-precision-constant -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16  -mfloat-abi=hard"
   )
+elseif(${SERVIO_PLATFORM} STREQUAL "stm32g5")
+  set(SERVIO_SHARED_FLAGS
+      "-fsingle-precision-constant -gdwarf-2 -mcpu=cortex-m33 -mfpu=fpv5-d16  -mfloat-abi=hard"
+  )
+  set(CMAKE_CXX_FLAGS
+      "${CMAKE_CXX_FLAGS} ${SERVIO_SHARED_FLAGS} -Fno-rtti -fno-exceptions -gdwarf-2"
+  )
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SERVIO_SHARED_FLAGS}")
 endif()
 
 include(cmake/cmake-git-version-tracking.cmake)
@@ -55,19 +62,11 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
-  add_subdirectory(src/fw)
+  add_subdirectory(boards/prototype2)
+  target_link_libraries(prototype2_board PUBLIC CMSIS::STM32::G431xx
+                                                HAL::STM32::G4)
 
-  servio_add_library(
-    TARGET prototype2_board
-    SOURCES boards/prototype2/adc.cpp
-            boards/prototype2/board.cpp
-            boards/prototype2/gpio.cpp
-            boards/prototype2/clock.cpp
-            boards/prototype2/config.cpp
-            boards/prototype2/uart.cpp
-            boards/prototype2/timers.cpp
-    LIBS serviolib CMSIS::STM32::G431xx HAL::STM32::G4
-    OPTS -Os)
+  add_subdirectory(src/fw)
 
   add_library(prototype2 STATIC)
   target_link_libraries(prototype2 PUBLIC prototype2_board serviolib fwlib
@@ -97,6 +96,13 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     SOURCES src/fw/main.cpp src/fw/it.cpp
     LIBS prototype2
     LINKER_SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/ld/STM32G431KBTx_FLASH.ld")
+
+elseif(${SERVIO_PLATFORM} STREQUAL "stm32g5")
+
+  stm32_fetch_hal(H5)
+  stm32_fetch_cmsis(H5)
+  find_package(CMSIS COMPONENTS STM32H5 REQUIRED GLOBAL)
+  find_package(HAL COMPONENTS STM32H5 REQUIRED GLOBAL)
 
 else()
   message(WARNING "unsupported platform ${SERVIO_PLATFORM}")
