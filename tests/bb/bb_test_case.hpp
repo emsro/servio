@@ -45,7 +45,8 @@ struct bb_test_case : ::testing::Test
                 if ( excep_ptr ) {
                         std::rethrow_exception( excep_ptr );
                 }
-                EXPECT_TRUE( finished ) << "Test failed to finish in time, timeout: " << timeout;
+                EXPECT_TRUE( finished )
+                    << "Test failed to finish in time, timeout: " << timeout.count() << "s";
         }
 
         host::common_cli&               cli;
