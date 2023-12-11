@@ -32,6 +32,10 @@ boost::asio::awaitable< servio::ServioToHost > read( cobs_port& port )
         std::array< std::byte, buffer_size > reply_buffer;
         em::view< std::byte* >               deser_msg = co_await port.async_read( reply_buffer );
 
+        if ( deser_msg.empty() ) {
+                throw reply_error{ "Got an empty reply" };
+        }
+
         servio::ServioToHostPacket reply;
         if ( !reply.ParseFromArray(
                  deser_msg.begin(), static_cast< int >( deser_msg.size() - 1 ) ) ) {
