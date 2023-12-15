@@ -10,7 +10,8 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   target_include_directories(proto SYSTEM PUBLIC ${PROTO_HDRS_DIR})
   set_target_properties(proto PROPERTIES CXX_CLANG_TIDY "")
 
-elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
+elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4" OR ${SERVIO_PLATFORM} STREQUAL
+                                                "stm32h5")
 
   nanopb_generate_cpp(PROTO_SRCS PROTO_HDRS io.proto)
 

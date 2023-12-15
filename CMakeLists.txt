@@ -97,12 +97,47 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     LIBS prototype2
     LINKER_SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/ld/STM32G431KBTx_FLASH.ld")
 
-elseif(${SERVIO_PLATFORM} STREQUAL "stm32g5")
+elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
   stm32_fetch_hal(H5)
   stm32_fetch_cmsis(H5)
   find_package(CMSIS COMPONENTS STM32H5 REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32H5 REQUIRED GLOBAL)
+
+  add_subdirectory(boards/prototype2)
+  target_link_libraries(prototype2_board PUBLIC CMSIS::STM32::H503xx
+                                                HAL::STM32::H5)
+
+  add_subdirectory(src/fw)
+
+  add_library(prototype2 STATIC)
+  target_link_libraries(prototype2 PUBLIC prototype2_board serviolib fwlib
+                                          STM32::Nano)
+  target_link_libraries(
+    prototype2
+    PRIVATE HAL::STM32::H5::FLASH
+            HAL::STM32::H5::FLASHEx
+            HAL::STM32::H5::ADC
+            HAL::STM32::H5::ADCEx
+            HAL::STM32::H5::CORTEX
+            HAL::STM32::H5::DMA
+            HAL::STM32::H5::GPIO
+            HAL::STM32::H5::OPAMP
+            HAL::STM32::H5::PWR
+            HAL::STM32::H5::PWREx
+            HAL::STM32::H5::RCC
+            HAL::STM32::H5::RCCEx
+            HAL::STM32::H5::TIM
+            HAL::STM32::H5::TIMEx
+            HAL::STM32::H5::UART
+            HAL::STM32::H5::UARTEx)
+  target_compile_options(prototype2 PRIVATE -Os)
+
+  servio_add_board_executable(
+    TARGET prototype2_fw
+    SOURCES src/fw/main.cpp src/fw/it.cpp
+    LIBS prototype2
+    LINKER_SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/ld/STM32H503xx_FLASH.ld")
 
 else()
   message(WARNING "unsupported platform ${SERVIO_PLATFORM}")
