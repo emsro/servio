@@ -50,5 +50,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
       [ "static_detector", "structstatic__detector.html", "structstatic__detector" ]
     ] ],
     [ "status.hpp", "status_8hpp.html", "status_8hpp" ],
-    [ "stm32g4xx_hal_conf.h", "stm32g4xx__hal__conf_8h.html", "stm32g4xx__hal__conf_8h" ]
+    [ "stm32g4xx_hal_conf.h", "stm32g4xx__hal__conf_8h.html", "stm32g4xx__hal__conf_8h" ],
+    [ "stm32h5xx_hal_conf.h", "stm32h5xx__hal__conf_8h.html", "stm32h5xx__hal__conf_8h" ]
 ];

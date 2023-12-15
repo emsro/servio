@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "ciks",
   8: "bcdeghimnpstv",
   9: "o",
-  10: "adehilptuv",
+  10: "acdehilptuv",
   11: "123456789s"
 };
 
