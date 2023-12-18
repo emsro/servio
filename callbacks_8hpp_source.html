@@ -91,70 +91,69 @@ $(document).ready(function(){initNavTree('callbacks_8hpp_source.html',''); initR
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="control_8hpp.html">control.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="converter_8hpp.html">converter.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="metrics_8hpp.html">metrics.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stm32g4xx_hal.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classcurrent__callback.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcurrent__callback.html">current_callback</a> : <span class="keyword">public</span> <a class="code" href="classadc__detailed__cb__interface.html">current_cb_interface</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classcurrent__callback.html#af36fd4f1d14527f4f77eb6c700fce67a">   13</a></span>&#160;        <a class="code" href="classcurrent__callback.html#af36fd4f1d14527f4f77eb6c700fce67a">current_callback</a>(</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="classpwm__motor__interface.html">pwm_motor_interface</a>&amp; motor,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="classcontrol.html">control</a>&amp;             <a class="code" href="namespacectl.html">ctl</a>,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classclk__interface.html">clk_interface</a>&amp;       clk,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp;     conv )</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;          : motor_( motor )</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          , ctl_( <a class="code" href="namespacectl.html">ctl</a> )</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;          , clk_( clk )</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;          , conv_( conv )</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classcurrent__callback.html#a1c0ddb55bbd216ca63c9481a0b85fa45">   25</a></span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> <a class="code" href="classcurrent__callback.html#a1c0ddb55bbd216ca63c9481a0b85fa45">on_value_irq</a>( uint32_t curr, std::span&lt; uint16_t &gt; )<span class="keyword"> override</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">float</span> c = <a class="code" href="namespacecnv.html#a7becf8591a2b4df156538fdae8b3cb9c">cnv::current</a>( conv_, curr, motor_ );</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                ctl_.<a class="code" href="classcontrol.html#a4b52b39807bc8e9b1ac8c0264538ed43">current_irq</a>( clk_.<a class="code" href="classclk__interface.html#a81d58e4230b7b324f887b9ca7a0e295b">get_us</a>(), c );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                motor_.<a class="code" href="classpwm__motor__interface.html#a4900bfa8ae49e01677af15e877f64f77">set_power</a>( ctl_.<a class="code" href="classcontrol.html#a5a5f1c48fefab50c257c4afdf82ee7ef">get_power</a>() );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classpwm__motor__interface.html">pwm_motor_interface</a>&amp; motor_;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classcontrol.html">control</a>&amp;             ctl_;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classclk__interface.html">clk_interface</a>&amp;       clk_;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp;     conv_;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classposition__callback.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classposition__callback.html">position_callback</a> : <span class="keyword">public</span> <a class="code" href="classvalue__cb__interface.html">position_cb_interface</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classposition__callback.html#a7c7bd8b2dbb8a0223fc0f1a292e643c2">   43</a></span>&#160;        <a class="code" href="classposition__callback.html#a7c7bd8b2dbb8a0223fc0f1a292e643c2">position_callback</a>( <a class="code" href="classcontrol.html">control</a>&amp; <a class="code" href="namespacectl.html">ctl</a>, <a class="code" href="classmetrics.html">metrics</a>&amp; met, <a class="code" href="classclk__interface.html">clk_interface</a>&amp; clk, <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp; conv )</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;          : ctl_( <a class="code" href="namespacectl.html">ctl</a> )</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;          , met_( met )</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;          , clk_( clk )</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;          , conv_( conv )</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classposition__callback.html#ad4790c5c7c98695a3564eafda862ad44">   51</a></span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> <a class="code" href="classposition__callback.html#ad4790c5c7c98695a3564eafda862ad44">on_value_irq</a>( uint32_t <a class="code" href="namespacecnv.html#a968d9975238ef02ac6257b739f7b7f71">position</a> )<span class="keyword"> override</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keyword">const</span> <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now = clk_.<a class="code" href="classclk__interface.html#a81d58e4230b7b324f887b9ca7a0e295b">get_us</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">float</span> p = conv_.<a class="code" href="structconverter.html#a47741f2b095ad25e51d733f2a9e47e5e">position</a>.<a class="code" href="classcnv_1_1position__converter.html#afa01f666d0e833ffb8497f28b2076677">convert</a>( <a class="code" href="namespacecnv.html#a968d9975238ef02ac6257b739f7b7f71">position</a> );</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                met_.<a class="code" href="classmetrics.html#a6998476ebd787b4c66aec862cec0e313">position_irq</a>( now, p );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                ctl_.<a class="code" href="classcontrol.html#a7d7ed2f19eb7b2d9468483c2d98197d5">moving_irq</a>( now, met_.<a class="code" href="classmetrics.html#a1652cf9662c52857e68d548bbbc833ae">is_moving</a>() );</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                ctl_.<a class="code" href="classcontrol.html#adf5f8c72d0829b7d3c2d8ef09de39789">position_irq</a>( now, met_.<a class="code" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">get_position</a>() );</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                ctl_.<a class="code" href="classcontrol.html#a833ad5ec20acd80a38fd8593e21f45d3">velocity_irq</a>( now, met_.<a class="code" href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">get_velocity</a>() );</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classcontrol.html">control</a>&amp;         ctl_;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classmetrics.html">metrics</a>&amp;         met_;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classclk__interface.html">clk_interface</a>&amp;   clk_;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp; conv_;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;platform.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classcurrent__callback.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcurrent__callback.html">current_callback</a> : <span class="keyword">public</span> <a class="code" href="classadc__detailed__cb__interface.html">current_cb_interface</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classcurrent__callback.html#af36fd4f1d14527f4f77eb6c700fce67a">   12</a></span>&#160;        <a class="code" href="classcurrent__callback.html#af36fd4f1d14527f4f77eb6c700fce67a">current_callback</a>(</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <a class="code" href="classpwm__motor__interface.html">pwm_motor_interface</a>&amp; motor,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="classcontrol.html">control</a>&amp;             <a class="code" href="namespacectl.html">ctl</a>,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="classclk__interface.html">clk_interface</a>&amp;       clk,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp;     conv )</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;          : motor_( motor )</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;          , ctl_( <a class="code" href="namespacectl.html">ctl</a> )</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          , clk_( clk )</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;          , conv_( conv )</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classcurrent__callback.html#a1c0ddb55bbd216ca63c9481a0b85fa45">   24</a></span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> <a class="code" href="classcurrent__callback.html#a1c0ddb55bbd216ca63c9481a0b85fa45">on_value_irq</a>( uint32_t curr, std::span&lt; uint16_t &gt; )<span class="keyword"> override</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">float</span> c = <a class="code" href="namespacecnv.html#a7becf8591a2b4df156538fdae8b3cb9c">cnv::current</a>( conv_, curr, motor_ );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                ctl_.<a class="code" href="classcontrol.html#a4b52b39807bc8e9b1ac8c0264538ed43">current_irq</a>( clk_.<a class="code" href="classclk__interface.html#a81d58e4230b7b324f887b9ca7a0e295b">get_us</a>(), c );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                motor_.<a class="code" href="classpwm__motor__interface.html#a4900bfa8ae49e01677af15e877f64f77">set_power</a>( ctl_.<a class="code" href="classcontrol.html#a5a5f1c48fefab50c257c4afdf82ee7ef">get_power</a>() );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classpwm__motor__interface.html">pwm_motor_interface</a>&amp; motor_;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classcontrol.html">control</a>&amp;             ctl_;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classclk__interface.html">clk_interface</a>&amp;       clk_;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp;     conv_;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classposition__callback.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="classposition__callback.html">position_callback</a> : <span class="keyword">public</span> <a class="code" href="classvalue__cb__interface.html">position_cb_interface</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classposition__callback.html#a7c7bd8b2dbb8a0223fc0f1a292e643c2">   42</a></span>&#160;        <a class="code" href="classposition__callback.html#a7c7bd8b2dbb8a0223fc0f1a292e643c2">position_callback</a>( <a class="code" href="classcontrol.html">control</a>&amp; <a class="code" href="namespacectl.html">ctl</a>, <a class="code" href="classmetrics.html">metrics</a>&amp; met, <a class="code" href="classclk__interface.html">clk_interface</a>&amp; clk, <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp; conv )</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;          : ctl_( <a class="code" href="namespacectl.html">ctl</a> )</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;          , met_( met )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;          , clk_( clk )</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;          , conv_( conv )</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classposition__callback.html#ad4790c5c7c98695a3564eafda862ad44">   50</a></span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> <a class="code" href="classposition__callback.html#ad4790c5c7c98695a3564eafda862ad44">on_value_irq</a>( uint32_t <a class="code" href="namespacecnv.html#a968d9975238ef02ac6257b739f7b7f71">position</a> )<span class="keyword"> override</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keyword">const</span> <a class="code" href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a> now = clk_.<a class="code" href="classclk__interface.html#a81d58e4230b7b324f887b9ca7a0e295b">get_us</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">float</span> p = conv_.<a class="code" href="structconverter.html#a47741f2b095ad25e51d733f2a9e47e5e">position</a>.<a class="code" href="classcnv_1_1position__converter.html#afa01f666d0e833ffb8497f28b2076677">convert</a>( <a class="code" href="namespacecnv.html#a968d9975238ef02ac6257b739f7b7f71">position</a> );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                met_.<a class="code" href="classmetrics.html#a6998476ebd787b4c66aec862cec0e313">position_irq</a>( now, p );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                ctl_.<a class="code" href="classcontrol.html#a7d7ed2f19eb7b2d9468483c2d98197d5">moving_irq</a>( now, met_.<a class="code" href="classmetrics.html#a1652cf9662c52857e68d548bbbc833ae">is_moving</a>() );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                ctl_.<a class="code" href="classcontrol.html#adf5f8c72d0829b7d3c2d8ef09de39789">position_irq</a>( now, met_.<a class="code" href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">get_position</a>() );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                ctl_.<a class="code" href="classcontrol.html#a833ad5ec20acd80a38fd8593e21f45d3">velocity_irq</a>( now, met_.<a class="code" href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">get_velocity</a>() );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classcontrol.html">control</a>&amp;         ctl_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classmetrics.html">metrics</a>&amp;         met_;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classclk__interface.html">clk_interface</a>&amp;   clk_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">const</span> <a class="code" href="structconverter.html">converter</a>&amp; conv_;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
 <div class="ttc" id="abase_8hpp_html_a3e15423b6a0f2e36799532b4c8f699f5"><div class="ttname"><a href="base_8hpp.html#a3e15423b6a0f2e36799532b4c8f699f5">microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:12</div></div>
 <div class="ttc" id="aclassadc__detailed__cb__interface_html"><div class="ttname"><a href="classadc__detailed__cb__interface.html">adc_detailed_cb_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:11</div></div>
 <div class="ttc" id="aclassclk__interface_html"><div class="ttname"><a href="classclk__interface.html">clk_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:66</div></div>
@@ -166,17 +165,17 @@ $(document).ready(function(){initNavTree('callbacks_8hpp_source.html',''); initR
 <div class="ttc" id="aclasscontrol_html_a7d7ed2f19eb7b2d9468483c2d98197d5"><div class="ttname"><a href="classcontrol.html#a7d7ed2f19eb7b2d9468483c2d98197d5">control::moving_irq</a></div><div class="ttdeci">void moving_irq(microseconds now, bool is_moving)</div><div class="ttdef"><b>Definition:</b> control.cpp:99</div></div>
 <div class="ttc" id="aclasscontrol_html_a833ad5ec20acd80a38fd8593e21f45d3"><div class="ttname"><a href="classcontrol.html#a833ad5ec20acd80a38fd8593e21f45d3">control::velocity_irq</a></div><div class="ttdeci">void velocity_irq(microseconds now, float velocity)</div><div class="ttdef"><b>Definition:</b> control.cpp:118</div></div>
 <div class="ttc" id="aclasscontrol_html_adf5f8c72d0829b7d3c2d8ef09de39789"><div class="ttname"><a href="classcontrol.html#adf5f8c72d0829b7d3c2d8ef09de39789">control::position_irq</a></div><div class="ttdeci">void position_irq(microseconds now, float position)</div><div class="ttdef"><b>Definition:</b> control.cpp:104</div></div>
-<div class="ttc" id="aclasscurrent__callback_html"><div class="ttname"><a href="classcurrent__callback.html">current_callback</a></div><div class="ttdef"><b>Definition:</b> callbacks.hpp:11</div></div>
-<div class="ttc" id="aclasscurrent__callback_html_a1c0ddb55bbd216ca63c9481a0b85fa45"><div class="ttname"><a href="classcurrent__callback.html#a1c0ddb55bbd216ca63c9481a0b85fa45">current_callback::on_value_irq</a></div><div class="ttdeci">void on_value_irq(uint32_t curr, std::span&lt; uint16_t &gt;) override</div><div class="ttdef"><b>Definition:</b> callbacks.hpp:25</div></div>
-<div class="ttc" id="aclasscurrent__callback_html_af36fd4f1d14527f4f77eb6c700fce67a"><div class="ttname"><a href="classcurrent__callback.html#af36fd4f1d14527f4f77eb6c700fce67a">current_callback::current_callback</a></div><div class="ttdeci">current_callback(pwm_motor_interface &amp;motor, control &amp;ctl, clk_interface &amp;clk, const converter &amp;conv)</div><div class="ttdef"><b>Definition:</b> callbacks.hpp:13</div></div>
+<div class="ttc" id="aclasscurrent__callback_html"><div class="ttname"><a href="classcurrent__callback.html">current_callback</a></div><div class="ttdef"><b>Definition:</b> callbacks.hpp:10</div></div>
+<div class="ttc" id="aclasscurrent__callback_html_a1c0ddb55bbd216ca63c9481a0b85fa45"><div class="ttname"><a href="classcurrent__callback.html#a1c0ddb55bbd216ca63c9481a0b85fa45">current_callback::on_value_irq</a></div><div class="ttdeci">void on_value_irq(uint32_t curr, std::span&lt; uint16_t &gt;) override</div><div class="ttdef"><b>Definition:</b> callbacks.hpp:24</div></div>
+<div class="ttc" id="aclasscurrent__callback_html_af36fd4f1d14527f4f77eb6c700fce67a"><div class="ttname"><a href="classcurrent__callback.html#af36fd4f1d14527f4f77eb6c700fce67a">current_callback::current_callback</a></div><div class="ttdeci">current_callback(pwm_motor_interface &amp;motor, control &amp;ctl, clk_interface &amp;clk, const converter &amp;conv)</div><div class="ttdef"><b>Definition:</b> callbacks.hpp:12</div></div>
 <div class="ttc" id="aclassmetrics_html"><div class="ttname"><a href="classmetrics.html">metrics</a></div><div class="ttdef"><b>Definition:</b> metrics.hpp:11</div></div>
 <div class="ttc" id="aclassmetrics_html_a1652cf9662c52857e68d548bbbc833ae"><div class="ttname"><a href="classmetrics.html#a1652cf9662c52857e68d548bbbc833ae">metrics::is_moving</a></div><div class="ttdeci">bool is_moving() const</div><div class="ttdef"><b>Definition:</b> metrics.hpp:41</div></div>
 <div class="ttc" id="aclassmetrics_html_a6998476ebd787b4c66aec862cec0e313"><div class="ttname"><a href="classmetrics.html#a6998476ebd787b4c66aec862cec0e313">metrics::position_irq</a></div><div class="ttdeci">void position_irq(microseconds now, float position)</div><div class="ttdef"><b>Definition:</b> metrics.cpp:21</div></div>
 <div class="ttc" id="aclassmetrics_html_aa62e43dda60977625c33477506b1fd31"><div class="ttname"><a href="classmetrics.html#aa62e43dda60977625c33477506b1fd31">metrics::get_velocity</a></div><div class="ttdeci">float get_velocity() const</div><div class="ttdef"><b>Definition:</b> metrics.hpp:36</div></div>
 <div class="ttc" id="aclassmetrics_html_ad794bbf9caf8090d8fb7a88786accb14"><div class="ttname"><a href="classmetrics.html#ad794bbf9caf8090d8fb7a88786accb14">metrics::get_position</a></div><div class="ttdeci">float get_position() const</div><div class="ttdef"><b>Definition:</b> metrics.hpp:32</div></div>
-<div class="ttc" id="aclassposition__callback_html"><div class="ttname"><a href="classposition__callback.html">position_callback</a></div><div class="ttdef"><b>Definition:</b> callbacks.hpp:41</div></div>
-<div class="ttc" id="aclassposition__callback_html_a7c7bd8b2dbb8a0223fc0f1a292e643c2"><div class="ttname"><a href="classposition__callback.html#a7c7bd8b2dbb8a0223fc0f1a292e643c2">position_callback::position_callback</a></div><div class="ttdeci">position_callback(control &amp;ctl, metrics &amp;met, clk_interface &amp;clk, const converter &amp;conv)</div><div class="ttdef"><b>Definition:</b> callbacks.hpp:43</div></div>
-<div class="ttc" id="aclassposition__callback_html_ad4790c5c7c98695a3564eafda862ad44"><div class="ttname"><a href="classposition__callback.html#ad4790c5c7c98695a3564eafda862ad44">position_callback::on_value_irq</a></div><div class="ttdeci">void on_value_irq(uint32_t position) override</div><div class="ttdef"><b>Definition:</b> callbacks.hpp:51</div></div>
+<div class="ttc" id="aclassposition__callback_html"><div class="ttname"><a href="classposition__callback.html">position_callback</a></div><div class="ttdef"><b>Definition:</b> callbacks.hpp:40</div></div>
+<div class="ttc" id="aclassposition__callback_html_a7c7bd8b2dbb8a0223fc0f1a292e643c2"><div class="ttname"><a href="classposition__callback.html#a7c7bd8b2dbb8a0223fc0f1a292e643c2">position_callback::position_callback</a></div><div class="ttdeci">position_callback(control &amp;ctl, metrics &amp;met, clk_interface &amp;clk, const converter &amp;conv)</div><div class="ttdef"><b>Definition:</b> callbacks.hpp:42</div></div>
+<div class="ttc" id="aclassposition__callback_html_ad4790c5c7c98695a3564eafda862ad44"><div class="ttname"><a href="classposition__callback.html#ad4790c5c7c98695a3564eafda862ad44">position_callback::on_value_irq</a></div><div class="ttdeci">void on_value_irq(uint32_t position) override</div><div class="ttdef"><b>Definition:</b> callbacks.hpp:50</div></div>
 <div class="ttc" id="aclasspwm__motor__interface_html"><div class="ttname"><a href="classpwm__motor__interface.html">pwm_motor_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:82</div></div>
 <div class="ttc" id="aclasspwm__motor__interface_html_a4900bfa8ae49e01677af15e877f64f77"><div class="ttname"><a href="classpwm__motor__interface.html#a4900bfa8ae49e01677af15e877f64f77">pwm_motor_interface::set_power</a></div><div class="ttdeci">virtual void set_power(int16_t)=0</div></div>
 <div class="ttc" id="aclassvalue__cb__interface_html"><div class="ttname"><a href="classvalue__cb__interface.html">value_cb_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:18</div></div>
@@ -195,7 +194,7 @@ $(document).ready(function(){initNavTree('callbacks_8hpp_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="callbacks_8hpp.html">callbacks.hpp</a></li>
-    <li class="footer">Generated on Fri Dec 15 2023 10:38:49 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 18 2023 07:03:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

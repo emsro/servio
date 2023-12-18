@@ -82,16 +82,16 @@
 <g id="node17" class="node">
 <title>Node34</title>
 <g id="a_node17"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="779,-123.5 779,-142.5 880,-142.5 880,-123.5 779,-123.5"/>
-<text text-anchor="middle" x="829.5" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">stm32g4xx_hal.h</text>
+<polygon fill="white" stroke="#bfbfbf" points="778.5,-123.5 778.5,-142.5 858.5,-142.5 858.5,-123.5 778.5,-123.5"/>
+<text text-anchor="middle" x="818.5" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">platform.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node34 -->
 <g id="edge21" class="edge">
 <title>Node1&#45;&gt;Node34</title>
-<path fill="none" stroke="midnightblue" d="M461.09,-182.05C528.67,-174.01 652.41,-159 768.63,-143.09"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="769.34,-146.53 778.77,-141.7 768.39,-139.59 769.34,-146.53"/>
+<path fill="none" stroke="midnightblue" d="M461.16,-182.57C528.83,-175.11 652.66,-160.76 768.33,-143.11"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="769.07,-146.53 778.42,-141.55 768,-139.61 769.07,-146.53"/>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
@@ -256,8 +256,8 @@
 <!-- Node26&#45;&gt;Node30 -->
 <g id="edge18" class="edge">
 <title>Node26&#45;&gt;Node30</title>
-<path fill="none" stroke="midnightblue" d="M760.7,-124.86C764.01,-124.23 767.32,-123.6 770.5,-123 855.8,-106.84 877.48,-104.6 962.5,-87 968.22,-85.82 974.21,-84.53 980.14,-83.22"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="981,-86.61 990,-81.02 979.48,-79.78 981,-86.61"/>
+<path fill="none" stroke="midnightblue" d="M760.65,-124.7C763.64,-124.12 766.62,-123.55 769.5,-123 855.21,-106.62 877.05,-104.64 962.5,-87 968.22,-85.82 974.21,-84.53 980.14,-83.22"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="981,-86.62 990,-81.02 979.48,-79.79 981,-86.62"/>
 </g>
 <!-- Node32 -->
 <g id="node15" class="node">

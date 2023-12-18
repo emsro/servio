@@ -10,8 +10,7 @@ var indexSectionsWithContent =
   7: "ciks",
   8: "bcdeghimnpstv",
   9: "o",
-  10: "acdehilptuv",
-  11: "123456789s"
+  10: "123456789s"
 };
 
 var indexSectionNames =
@@ -26,8 +25,7 @@ var indexSectionNames =
   7: "enums",
   8: "enumvalues",
   9: "related",
-  10: "defines",
-  11: "pages"
+  10: "pages"
 };
 
 var indexSectionLabels =
@@ -42,7 +40,6 @@ var indexSectionLabels =
   7: "Enumerations",
   8: "Enumerator",
   9: "Friends",
-  10: "Macros",
-  11: "Pages"
+  10: "Pages"
 };
 

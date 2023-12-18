@@ -107,12 +107,11 @@ var NAVTREE =
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
+        [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Enumerations", "globals_enum.html", null ]
       ] ]
     ] ]
   ] ]
@@ -122,10 +121,9 @@ var NAVTREEINDEX =
 [
 "adc__pooler_8hpp.html",
 "clock_8hpp_source.html",
-"key_8hpp.html#a5723f91bc600c3126c420bb6f1fe91bda8b211ca44a3eb9291e2a4d4cb5761f06",
-"namespacekalman.html#a4045bee00b1b7c1f3b36946e5ebb8565",
-"stm32h5xx__hal__conf_8h.html#a99add5b89bfdd24b832d1a0d03dc0bd3",
-"utils_8hpp_source.html"
+"leds_8hpp_source.html",
+"namespacemembers_enum.html",
+"structmtr_1_1posvel__kalman.html#aa95764f304d39579b8ded73a41aee92e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
