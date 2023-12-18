@@ -2,8 +2,7 @@
 #include "control.hpp"
 #include "converter.hpp"
 #include "metrics.hpp"
-
-#include <stm32g4xx_hal.h>
+#include "platform.hpp"
 
 #pragma once
 

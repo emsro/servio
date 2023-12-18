@@ -1,9 +1,9 @@
 #include "base.hpp"
 #include "drv_interfaces.hpp"
+#include "platform.hpp"
 
 #include <cstdint>
 #include <emlabcpp/experimental/function_view.h>
-#include <stm32g4xx_hal.h>
 
 #pragma once
 

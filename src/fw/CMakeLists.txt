@@ -8,5 +8,5 @@ servio_add_library(
           store_persistent_config.cpp
           servio_pb.cpp
           util.cpp
-  LIBS serviolib proto
+  LIBS serviolib proto platform
   OPTS -Os)

@@ -32,10 +32,6 @@ void setup_adc_channel( ADC_ChannelConfTypeDef& channel, pinch_cfg cfg )
 
 em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg )
 {
-        if ( cfg.adc_instance != ADC1 && cfg.adc_instance != ADC2 ) {
-                // this function relies a lot on the fact that adc can be either ADC1 or ADC2
-                return em::ERROR;
-        }
 
         adc.Instance                   = cfg.adc_instance;
         adc.Init.ClockPrescaler        = ADC_CLOCK_SYNC_PCLK_DIV2;

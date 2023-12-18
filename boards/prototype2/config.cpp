@@ -1,8 +1,8 @@
 #include "cfg/default.hpp"
 #include "fw/board.hpp"
+#include "platform.hpp"
 
 #include <numbers>
-#include <stm32g4xx_hal.h>
 
 namespace brd
 {

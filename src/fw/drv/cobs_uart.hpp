@@ -1,9 +1,9 @@
 #include "drv_interfaces.hpp"
+#include "platform.hpp"
 
 #include <emlabcpp/experimental/cobs.h>
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/static_circular_buffer.h>
-#include <stm32g4xx_hal.h>
 
 #pragma once
 

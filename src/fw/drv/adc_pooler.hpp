@@ -1,6 +1,5 @@
 #include "fw/drv/callbacks.hpp"
-
-#include <stm32g4xx_hal.h>
+#include "platform.hpp"
 
 #pragma once
 

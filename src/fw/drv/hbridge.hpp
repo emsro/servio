@@ -1,9 +1,9 @@
 #include "drv_interfaces.hpp"
 #include "fw/drv/callbacks.hpp"
+#include "platform.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <span>
-#include <stm32g4xx_hal.h>
 
 #pragma once
 

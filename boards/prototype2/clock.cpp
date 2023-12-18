@@ -1,10 +1,9 @@
 #include "fw/board.hpp"
 #include "fw/util.hpp"
+#include "platform.hpp"
 
 #include <cassert>
 #include <cstdlib>
-#include <stm32g4xx.h>
-#include <stm32g4xx_hal.h>
 
 namespace brd
 {

@@ -62,33 +62,13 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
+  add_subdirectory(platforms/stm32g4)
   add_subdirectory(boards/prototype2)
-  target_link_libraries(prototype2_board PUBLIC CMSIS::STM32::G431xx
-                                                HAL::STM32::G4)
-
   add_subdirectory(src/fw)
 
   add_library(prototype2 STATIC)
   target_link_libraries(prototype2 PUBLIC prototype2_board serviolib fwlib
                                           STM32::Nano)
-  target_link_libraries(
-    prototype2
-    PRIVATE HAL::STM32::G4::FLASH
-            HAL::STM32::G4::FLASHEx
-            HAL::STM32::G4::ADC
-            HAL::STM32::G4::ADCEx
-            HAL::STM32::G4::CORTEX
-            HAL::STM32::G4::DMA
-            HAL::STM32::G4::GPIO
-            HAL::STM32::G4::OPAMP
-            HAL::STM32::G4::PWR
-            HAL::STM32::G4::PWREx
-            HAL::STM32::G4::RCC
-            HAL::STM32::G4::RCCEx
-            HAL::STM32::G4::TIM
-            HAL::STM32::G4::TIMEx
-            HAL::STM32::G4::UART
-            HAL::STM32::G4::UARTEx)
   target_compile_options(prototype2 PRIVATE -Os)
 
   servio_add_board_executable(
@@ -104,39 +84,18 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   find_package(CMSIS COMPONENTS STM32H5 REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32H5 REQUIRED GLOBAL)
 
-  add_subdirectory(boards/prototype2)
-  target_link_libraries(prototype2_board PUBLIC CMSIS::STM32::H503xx
-                                                HAL::STM32::H5)
-
+  add_subdirectory(platforms/stm32h5)
+  add_subdirectory(boards/proto3)
   add_subdirectory(src/fw)
 
-  add_library(prototype2 STATIC)
-  target_link_libraries(prototype2 PUBLIC prototype2_board serviolib fwlib
-                                          STM32::Nano)
-  target_link_libraries(
-    prototype2
-    PRIVATE HAL::STM32::H5::FLASH
-            HAL::STM32::H5::FLASHEx
-            HAL::STM32::H5::ADC
-            HAL::STM32::H5::ADCEx
-            HAL::STM32::H5::CORTEX
-            HAL::STM32::H5::DMA
-            HAL::STM32::H5::GPIO
-            HAL::STM32::H5::OPAMP
-            HAL::STM32::H5::PWR
-            HAL::STM32::H5::PWREx
-            HAL::STM32::H5::RCC
-            HAL::STM32::H5::RCCEx
-            HAL::STM32::H5::TIM
-            HAL::STM32::H5::TIMEx
-            HAL::STM32::H5::UART
-            HAL::STM32::H5::UARTEx)
-  target_compile_options(prototype2 PRIVATE -Os)
+  add_library(proto3 STATIC)
+  target_link_libraries(proto3 PUBLIC proto3_board serviolib fwlib STM32::Nano)
+  target_compile_options(proto3 PRIVATE -Os)
 
   servio_add_board_executable(
-    TARGET prototype2_fw
+    TARGET proto3_fw
     SOURCES src/fw/main.cpp src/fw/it.cpp
-    LIBS prototype2
+    LIBS proto3
     LINKER_SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/ld/STM32H503xx_FLASH.ld")
 
 else()
