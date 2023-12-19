@@ -1,18 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"structmtr_1_1posvel__kalman.html#aa95764f304d39579b8ded73a41aee92e":[12,0,6,0,0],
-"structmtr_1_1posvel__kalman.html#ab0505210bdd0c266a1cb0c3cebc5fa45":[12,0,6,0,9],
-"structmtr_1_1posvel__kalman.html#aec12b38e1697467577656e09dda03019":[12,0,6,0,13],
-"structmtr_1_1posvel__kalman.html#afa7fdfbafbaa78762335da2c0dc4b734":[12,0,6,0,4],
-"structmtr_1_1posvel__kalman.html#affc06cd5ec360b3808dcd868a36a4545":[12,0,6,0,3],
-"structstandard__callbacks.html":[12,0,31],
-"structstandard__callbacks.html#a55f4afd0254e81edd20f18bc69122029":[12,0,31,0],
-"structstandard__callbacks.html#a9611642955ac0f76606f2ff0fd1ed78a":[12,0,31,2],
-"structstandard__callbacks.html#a9bb28decbcdc0e5ef3591ebfdcfb432e":[12,0,31,1],
-"structstandard__callbacks.html#ab51d61814c737706f234c965f4908bba":[12,0,31,3],
-"structstatic__detector.html":[12,0,32],
-"structstatic__detector.html#a0a62d84d2e2290c43c6501cb96191cfa":[12,0,32,2],
-"structstatic__detector.html#a31dc743974dfea543804f170591da790":[12,0,32,3],
 "structstatic__detector.html#a42bded9dcd662a356921eefbe008f639":[12,0,32,1],
 "structstatic__detector.html#a82cc33e17832453cfcd633a6f4a5dd3d":[12,0,32,0],
 "structstatic__detector.html#aa925ce327d8982149e5610123b726b85":[12,0,32,5],
