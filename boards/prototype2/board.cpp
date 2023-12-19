@@ -1,5 +1,6 @@
 #include "brd.hpp"
 #include "core_drivers.hpp"
+#include "emlabcpp/result.h"
 #include "fw/drv/adc_pooler.hpp"
 #include "fw/drv/clock.hpp"
 #include "fw/drv/cobs_uart.hpp"
@@ -189,13 +190,14 @@ void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
 namespace brd
 {
 
-void setup_board()
+em::result setup_board()
 {
-        // TODO: change the API to return bool
         if ( HAL_Init() != HAL_OK ) {
-                fw::stop_exec();
+                return em::ERROR;
         }
         setup_clk();
+
+        return em::SUCCESS;
 }
 
 em::result clock_setup( TIM_HandleTypeDef& tim, uint32_t& chan )

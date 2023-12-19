@@ -2,10 +2,12 @@
 #include "cfg/dispatcher.hpp"
 #include "core.hpp"
 #include "core_drivers.hpp"
+#include "emlabcpp/result.h"
 #include "fw/board.hpp"
 #include "fw/dispatcher.hpp"
 #include "fw/servio_pb.hpp"
 #include "fw/store_persistent_config.hpp"
+#include "fw/util.hpp"
 #include "git.h"
 #include "load_persistent_config.hpp"
 #include "standard_callbacks.hpp"
@@ -13,7 +15,9 @@
 int main()
 {
 
-        brd::setup_board();
+        if ( brd::setup_board() != em::SUCCESS ) {
+                fw::stop_exec();
+        }
 
         cfg::map cfg = brd::get_default_config();
 

@@ -1,5 +1,6 @@
 servio_add_library(
   TARGET prototype2_board
+  INCLUDE ../
   SOURCES adc.cpp
           board.cpp
           gpio.cpp

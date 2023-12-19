@@ -29,9 +29,11 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   set(CMAKE_C_FLAGS
       "${CMAKE_C_FLAGS} -fsingle-precision-constant -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16  -mfloat-abi=hard"
   )
-elseif(${SERVIO_PLATFORM} STREQUAL "stm32g5")
+elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
+  # TODO: these should not be necessary, MCU-related info should be provided by
+  # stm32-cmake targets like HAL::STM32::H5
   set(SERVIO_SHARED_FLAGS
-      "-fsingle-precision-constant -gdwarf-2 -mcpu=cortex-m33 -mfpu=fpv5-d16  -mfloat-abi=hard"
+      "-fsingle-precision-constant -gdwarf-2 -mcpu=cortex-m33 -mfpu=fpv4-sp-d16  -mfloat-abi=hard"
   )
   set(CMAKE_CXX_FLAGS
       "${CMAKE_CXX_FLAGS} ${SERVIO_SHARED_FLAGS} -Fno-rtti -fno-exceptions -gdwarf-2"
