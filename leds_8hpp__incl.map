@@ -1,15 +1,16 @@
 <map id="src/fw/drv/leds.hpp" name="src/fw/drv/leds.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="374,5,518,32"/>
-<area shape="rect" id="node2" href="$base_8hpp.html" title=" " alt="" coords="217,169,299,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="505,244,571,271"/>
-<area shape="rect" id="node8" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="375,87,517,114"/>
-<area shape="rect" id="node12" title=" " alt="" coords="542,87,649,114"/>
-<area shape="rect" id="node13" title=" " alt="" coords="673,80,851,121"/>
-<area shape="rect" id="node3" href="$scaled_8hpp.html" title=" " alt="" coords="108,244,200,271"/>
-<area shape="rect" id="node4" title=" " alt="" coords="225,244,291,271"/>
-<area shape="rect" id="node6" title=" " alt="" coords="315,244,481,271"/>
-<area shape="rect" id="node7" title=" " alt="" coords="5,244,84,271"/>
-<area shape="rect" id="node9" href="$status_8hpp.html" title=" " alt="" coords="665,169,755,196"/>
-<area shape="rect" id="node10" title=" " alt="" coords="374,169,513,196"/>
-<area shape="rect" id="node11" title=" " alt="" coords="537,169,590,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="707,5,851,32"/>
+<area shape="rect" id="node2" href="$base_8hpp.html" title=" " alt="" coords="255,169,336,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="506,244,573,271"/>
+<area shape="rect" id="node8" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="431,87,573,114"/>
+<area shape="rect" id="node12" href="$platform_8hpp.html" title=" " alt="" coords="817,87,923,114"/>
+<area shape="rect" id="node14" title=" " alt="" coords="948,80,1125,121"/>
+<area shape="rect" id="node3" href="$scaled_8hpp.html" title=" " alt="" coords="5,244,97,271"/>
+<area shape="rect" id="node4" title=" " alt="" coords="122,244,189,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="213,244,378,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="403,244,481,271"/>
+<area shape="rect" id="node9" href="$status_8hpp.html" title=" " alt="" coords="489,169,579,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="603,169,742,196"/>
+<area shape="rect" id="node11" title=" " alt="" coords="411,169,465,196"/>
+<area shape="rect" id="node13" title=" " alt="" coords="835,169,905,196"/>
 </map>

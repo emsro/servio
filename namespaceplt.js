@@ -1,0 +1,24 @@
+var namespaceplt =
+[
+    [ "dma_cfg", "namespaceplt.html#structplt_1_1dma__cfg", "namespaceplt_structplt_1_1dma__cfg_dup" ],
+    [ "pinch_cfg", "namespaceplt.html#structplt_1_1pinch__cfg", "namespaceplt_structplt_1_1pinch__cfg_dup" ],
+    [ "adc_cfg", "namespaceplt.html#structplt_1_1adc__cfg", "namespaceplt_structplt_1_1adc__cfg_dup" ],
+    [ "adc_timer_cfg", "namespaceplt.html#structplt_1_1adc__timer__cfg", "namespaceplt_structplt_1_1adc__timer__cfg_dup" ],
+    [ "pin_cfg", "namespaceplt.html#structplt_1_1pin__cfg", "namespaceplt_structplt_1_1pin__cfg_dup" ],
+    [ "uart_cfg", "namespaceplt.html#structplt_1_1uart__cfg", "namespaceplt_structplt_1_1uart__cfg_dup" ],
+    [ "hb_timer_cfg", "namespaceplt.html#structplt_1_1hb__timer__cfg", "namespaceplt_structplt_1_1hb__timer__cfg_dup" ],
+    [ "leds_gpio_cfg", "namespaceplt.html#structplt_1_1leds__gpio__cfg", "namespaceplt_structplt_1_1leds__gpio__cfg_dup" ],
+    [ "leds_timer_cfg", "namespaceplt.html#structplt_1_1leds__timer__cfg", "namespaceplt_structplt_1_1leds__timer__cfg_dup" ],
+    [ "clock_timer_cfg", "namespaceplt.html#structplt_1_1clock__timer__cfg", "namespaceplt_structplt_1_1clock__timer__cfg_dup" ],
+    [ "cfg_erase", "namespaceplt.html#afaa1b1c76bcbc89be0ff2594a4901cc0", null ],
+    [ "cfg_write", "namespaceplt.html#aeceefa6383a460eca3bf112da12ea8f6", null ],
+    [ "setup_adc", "namespaceplt.html#a9ef2c142a47b16b1adcbaf8afa7bf183", null ],
+    [ "setup_adc_channel", "namespaceplt.html#aedfc86fbf9a20d968ff57f3e8a3be8dd", null ],
+    [ "setup_adc_timer", "namespaceplt.html#ae11f6e5da976f3f1ee5a5620e00f89c6", null ],
+    [ "setup_clk", "namespaceplt.html#a7b3d4718f19db76388a82c3d55e83886", null ],
+    [ "setup_clock_timer", "namespaceplt.html#af1262cf6fb55b7aed8756b2385a686cb", null ],
+    [ "setup_hbridge_timers", "namespaceplt.html#a15d03ab8966b2ec2f5707d6446d7cbe7", null ],
+    [ "setup_leds_gpio", "namespaceplt.html#ad0f9bf648d4c760f06f3fcef1a1775bb", null ],
+    [ "setup_leds_timer", "namespaceplt.html#add346d16771606ac46df3b98d22eb531", null ],
+    [ "setup_uart", "namespaceplt.html#af1500de34f5161fe6ee7ed518a422388", null ]
+];

@@ -108,8 +108,8 @@
 <!-- Node35 -->
 <g id="node7" class="node">
 <title>Node35</title>
-<g id="a_node7"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="135.5,-56.5 135.5,-75.5 215.5,-75.5 215.5,-56.5 135.5,-56.5"/>
+<g id="a_node7"><a xlink:href="platform_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="red" points="135.5,-56.5 135.5,-75.5 215.5,-75.5 215.5,-56.5 135.5,-56.5"/>
 <text text-anchor="middle" x="175.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">platform.hpp</text>
 </a>
 </g>

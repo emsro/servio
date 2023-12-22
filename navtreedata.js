@@ -99,7 +99,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
@@ -107,11 +107,12 @@ var NAVTREE =
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
+        [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ]
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -120,10 +121,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc__pooler_8hpp.html",
-"config_8hpp.html#a254eee5cc344e1590ae9434a7073d1b5",
-"map_8hpp.html",
-"scaled_8hpp_source.html",
-"structstatic__detector.html#a42bded9dcd662a356921eefbe008f639"
+"classvalue__cb__interface.html#a98579ea89dd7cea060f6e0c79f3fdc70",
+"indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14adecfbda91cde2e00e1e04c4c97cb1b86",
+"namespacecfg.html#a27fb9256d3f5822df90c3a2296a9531b",
+"platforms_2stm32h5_2setup_8hpp.html#ad0f9bf648d4c760f06f3fcef1a1775bb",
+"stm32h5xx__hal__conf_8h.html#a560b53001fb58138f7da15dbda8f58a6",
+"structmtr_1_1posvel__kalman.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

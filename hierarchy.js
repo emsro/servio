@@ -1,19 +1,29 @@
 var hierarchy =
 [
+    [ "brd::adc_cfg", "namespacebrd.html#structbrd_1_1adc__cfg", null ],
+    [ "plt::adc_cfg", "namespaceplt.html#structplt_1_1adc__cfg", null ],
     [ "fw::drv::adc_channel< ID >", "structfw_1_1drv_1_1adc__channel.html", [
+      [ "fw::drv::adc_channel_with_callback< POSITION_CHANNEL >", "structfw_1_1drv_1_1adc__channel__with__callback.html", null ],
       [ "fw::drv::adc_channel_with_callback< ID >", "structfw_1_1drv_1_1adc__channel__with__callback.html", null ]
     ] ],
+    [ "fw::drv::adc_channel< TEMP_CHANNEL >", "structfw_1_1drv_1_1adc__channel.html", null ],
+    [ "fw::drv::adc_channel< VCC_CHANNEL >", "structfw_1_1drv_1_1adc__channel.html", null ],
     [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", [
       [ "current_callback", "classcurrent__callback.html", null ],
       [ "fw::drv::adc_detailed_cb< Callable >", "structfw_1_1drv_1_1adc__detailed__cb.html", null ],
       [ "fw::drv::empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", null ]
     ] ],
     [ "fw::drv::adc_pooler< Set >", "structfw_1_1drv_1_1adc__pooler.html", null ],
+    [ "brd::adc_set", "structbrd_1_1adc__set.html", null ],
+    [ "brd::adc_timer_cfg", "namespacebrd.html#structbrd_1_1adc__timer__cfg", null ],
+    [ "plt::adc_timer_cfg", "namespaceplt.html#structplt_1_1adc__timer__cfg", null ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", null ],
     [ "fw::check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "clk_interface", "classclk__interface.html", [
       [ "fw::drv::clock", "classfw_1_1drv_1_1clock.html", null ]
     ] ],
+    [ "brd::clock_timer_cfg", "namespacebrd.html#structbrd_1_1clock__timer__cfg", null ],
+    [ "plt::clock_timer_cfg", "namespaceplt.html#structplt_1_1clock__timer__cfg", null ],
     [ "host::cobs_port", "structhost_1_1cobs__port.html", null ],
     [ "com_interface", "classcom__interface.html", [
       [ "fw::drv::cobs_uart", "classfw_1_1drv_1_1cobs__uart.html", null ]
@@ -27,8 +37,11 @@ var hierarchy =
     [ "core_drivers", "structcore__drivers.html", null ],
     [ "cnv::current_converter", "classcnv_1_1current__converter.html", null ],
     [ "fw::drv::detailed_adc_channel< ID, N >", "structfw_1_1drv_1_1detailed__adc__channel.html", null ],
+    [ "fw::drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >", "structfw_1_1drv_1_1detailed__adc__channel.html", null ],
     [ "cfg::dispatcher", "structcfg_1_1dispatcher.html", null ],
     [ "fw::dispatcher", "namespacefw.html#structfw_1_1dispatcher", null ],
+    [ "brd::dma_cfg", "namespacebrd.html#structbrd_1_1dma__cfg", null ],
+    [ "plt::dma_cfg", "namespaceplt.html#structplt_1_1dma__cfg", null ],
     [ "driver_interface", "classdriver__interface.html", [
       [ "current_interface", "classcurrent__interface.html", null ],
       [ "period_interface", "classperiod__interface.html", [
@@ -53,30 +66,44 @@ var hierarchy =
     [ "fw::drv::cobs_uart::handles", "classfw_1_1drv_1_1cobs__uart.html#structfw_1_1drv_1_1cobs__uart_1_1handles", null ],
     [ "fw::drv::hbridge::handles", "classfw_1_1drv_1_1hbridge.html#structfw_1_1drv_1_1hbridge_1_1handles", null ],
     [ "fw::drv::leds::handles", "classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles", null ],
+    [ "brd::hb_timer_cfg", "namespacebrd.html#structbrd_1_1hb__timer__cfg", null ],
+    [ "plt::hb_timer_cfg", "namespaceplt.html#structplt_1_1hb__timer__cfg", null ],
     [ "indication", "classindication.html", null ],
     [ "cfg::keyval", "namespacecfg.html#structcfg_1_1keyval", null ],
+    [ "brd::leds_gpio_cfg", "namespacebrd.html#structbrd_1_1leds__gpio__cfg", null ],
+    [ "plt::leds_gpio_cfg", "namespaceplt.html#structplt_1_1leds__gpio__cfg", null ],
     [ "leds_interface", "classleds__interface.html", [
       [ "fw::drv::leds", "classfw_1_1drv_1_1leds.html", null ]
     ] ],
+    [ "brd::leds_timer_cfg", "namespacebrd.html#structbrd_1_1leds__timer__cfg", null ],
+    [ "plt::leds_timer_cfg", "namespaceplt.html#structplt_1_1leds__timer__cfg", null ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", null ],
     [ "ctl::linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", null ],
     [ "metrics", "classmetrics.html", null ],
     [ "mode_opts", "host_2main_8cpp.html#structmode__opts", null ],
     [ "monitor", "classmonitor.html", null ],
+    [ "brd::off_scale", "namespacebrd.html#structbrd_1_1off__scale", null ],
     [ "cfg::payload", "structcfg_1_1payload.html", null ],
     [ "period_cb_interface", "classperiod__cb__interface.html", [
       [ "fw::drv::empty_period_cb", "structfw_1_1drv_1_1empty__period__cb.html", null ],
       [ "fw::drv::period_cb< Callable >", "structfw_1_1drv_1_1period__cb.html", null ]
     ] ],
+    [ "brd::pin_cfg", "namespacebrd.html#structbrd_1_1pin__cfg", null ],
+    [ "plt::pin_cfg", "namespaceplt.html#structplt_1_1pin__cfg", null ],
+    [ "brd::pinch_cfg", "namespacebrd.html#structbrd_1_1pinch__cfg", null ],
+    [ "plt::pinch_cfg", "namespaceplt.html#structplt_1_1pinch__cfg", null ],
     [ "cnv::position_converter", "classcnv_1_1position__converter.html", null ],
     [ "mtr::posvel_kalman", "structmtr_1_1posvel__kalman.html", null ],
     [ "emlabcpp::quantity", null, [
       [ "scaled< T, BitOffset >", "classscaled.html", null ]
     ] ],
+    [ "brd::setpoint", "namespacebrd.html#structbrd_1_1setpoint", null ],
     [ "standard_callbacks", "structstandard__callbacks.html", null ],
     [ "kalman::state_range", "namespacekalman.html#structkalman_1_1state__range", null ],
     [ "static_detector", "structstatic__detector.html", null ],
     [ "cnv::temperature_converter", "classcnv_1_1temperature__converter.html", null ],
+    [ "brd::uart_cfg", "namespacebrd.html#structbrd_1_1uart__cfg", null ],
+    [ "plt::uart_cfg", "namespaceplt.html#structplt_1_1uart__cfg", null ],
     [ "value_cb_interface", "classvalue__cb__interface.html", [
       [ "fw::drv::empty_value_cb", "structfw_1_1drv_1_1empty__value__cb.html", null ],
       [ "fw::drv::value_cb< Callable >", "structfw_1_1drv_1_1value__cb.html", null ],

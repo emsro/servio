@@ -1,0 +1,12 @@
+<map id="boards/prototype2/config.cpp" name="boards/prototype2/config.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="265,5,475,32"/>
+<area shape="rect" id="node2" href="$default_8hpp.html" title=" " alt="" coords="38,80,158,107"/>
+<area shape="rect" id="node5" href="$board_8hpp.html" title=" " alt="" coords="251,80,358,107"/>
+<area shape="rect" id="node8" href="$platform_8hpp.html" title=" " alt="" coords="382,80,489,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="513,80,592,107"/>
+<area shape="rect" id="node3" href="$key_8hpp.html" title=" " alt="" coords="5,229,100,256"/>
+<area shape="rect" id="node4" href="$map_8hpp.html" title=" " alt="" coords="47,155,149,181"/>
+<area shape="rect" id="node6" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="173,155,316,181"/>
+<area shape="rect" id="node7" href="$globals_8hpp.html" title=" " alt="" coords="340,155,437,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="461,155,532,181"/>
+</map>

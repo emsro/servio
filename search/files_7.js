@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['hbridge_2ecpp_640',['hbridge.cpp',['../hbridge_8cpp.html',1,'']]],
-  ['hbridge_2ehpp_641',['hbridge.hpp',['../hbridge_8hpp.html',1,'']]]
+  ['hal_2ehpp_893',['hal.hpp',['../stm32g4_2hal_8hpp.html',1,'(Global Namespace)'],['../stm32h5_2hal_8hpp.html',1,'(Global Namespace)']]],
+  ['hbridge_2ecpp_894',['hbridge.cpp',['../hbridge_8cpp.html',1,'']]],
+  ['hbridge_2ehpp_895',['hbridge.hpp',['../hbridge_8hpp.html',1,'']]]
 ];
