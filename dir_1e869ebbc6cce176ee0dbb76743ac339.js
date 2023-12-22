@@ -5,6 +5,7 @@ var dir_1e869ebbc6cce176ee0dbb76743ac339 =
     [ "dispatcher.hpp", "cfg_2dispatcher_8hpp.html", "cfg_2dispatcher_8hpp" ],
     [ "key.hpp", "key_8hpp.html", "key_8hpp" ],
     [ "map.hpp", "map_8hpp.html", "map_8hpp" ],
+    [ "math.hpp", "math_8hpp.html", "math_8hpp" ],
     [ "storage.cpp", "storage_8cpp.html", "storage_8cpp" ],
     [ "storage.hpp", "storage_8hpp.html", "storage_8hpp" ]
 ];

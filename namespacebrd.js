@@ -15,10 +15,24 @@ var namespacebrd =
     [ "clock_timer_cfg", "namespacebrd.html#structbrd_1_1clock__timer__cfg", "namespacebrd_structbrd_1_1clock__timer__cfg_dup" ],
     [ "page", "namespacebrd.html#a37589bdd1e57d6f9e4c4d9d9ab44ee66", null ],
     [ "chan_ids", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3", [
-      [ "CURRENT_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3a2363287a56215ecc917c108e5617be42", null ],
-      [ "POSITION_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3a6346d2c2e6a3091a06a713b9840c051f", null ],
-      [ "VCC_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3aadd31d76655df3204e33497bcc23e8dc", null ],
-      [ "TEMP_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3aadc8cd6bc67be2752c043abdd981eec1", null ]
+      [ "CURRENT_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3a5bbec12f382df1f3137d00883a81ec46", null ],
+      [ "POSITION_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ae1deef931d03405aa3d23b1b05dcb997", null ],
+      [ "VCC_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ad3691b7a5f7bd25c5a750c984b3d0b3f", null ],
+      [ "TEMP_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3af8e9da2a99ae3c6090b47abe0665583a", null ],
+      [ "CURRENT_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3a5bbec12f382df1f3137d00883a81ec46", null ],
+      [ "POSITION_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ae1deef931d03405aa3d23b1b05dcb997", null ],
+      [ "VCC_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ad3691b7a5f7bd25c5a750c984b3d0b3f", null ],
+      [ "TEMP_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3af8e9da2a99ae3c6090b47abe0665583a", null ]
+    ] ],
+    [ "chan_ids", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3", [
+      [ "CURRENT_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3a5bbec12f382df1f3137d00883a81ec46", null ],
+      [ "POSITION_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ae1deef931d03405aa3d23b1b05dcb997", null ],
+      [ "VCC_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ad3691b7a5f7bd25c5a750c984b3d0b3f", null ],
+      [ "TEMP_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3af8e9da2a99ae3c6090b47abe0665583a", null ],
+      [ "CURRENT_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3a5bbec12f382df1f3137d00883a81ec46", null ],
+      [ "POSITION_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ae1deef931d03405aa3d23b1b05dcb997", null ],
+      [ "VCC_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ad3691b7a5f7bd25c5a750c984b3d0b3f", null ],
+      [ "TEMP_CHANNEL", "namespacebrd.html#a5eac53856f52e55f5605a641a2642de3af8e9da2a99ae3c6090b47abe0665583a", null ]
     ] ],
     [ "adc_pooler_setup", "namespacebrd.html#a364b83030d42f9af6932c5488af855af", null ],
     [ "calculate_current_conversion", "namespacebrd.html#ab580dac592e0af64cfc3954ba70ee728", null ],
@@ -33,6 +47,7 @@ var namespacebrd =
     [ "hbridge_setup", "namespacebrd.html#ad6f5e6327d8f5914e94f84b749bd2788", null ],
     [ "leds_setup", "namespacebrd.html#ad35a0ee8d5c9d0421c676ebcf9d72f41", null ],
     [ "page", "namespacebrd.html#a5ba049b3751cdbe65d9546fb5429789d", null ],
+    [ "page_at", "namespacebrd.html#aec29754b0cd2c31ed9c5b516b42255a7", null ],
     [ "setup_adc", "namespacebrd.html#ad8f944f46629a3408f31c61281867bc5", null ],
     [ "setup_adc_channel", "namespacebrd.html#a00b99305c638e513f917392a2ef8b58f", null ],
     [ "setup_adc_timer", "namespacebrd.html#a71c1b07c2041c587e3b779b98a6fdb2c", null ],
@@ -55,7 +70,7 @@ var namespacebrd =
     [ "HBRIDGE", "namespacebrd.html#a40613bcc8cc16ce1bf0761b31ffe32d1", null ],
     [ "LEDS", "namespacebrd.html#a37ecf1d595557b50945b3b1643216fa4", null ],
     [ "PERIOD_CB", "namespacebrd.html#a5eb8b962dbbf8882e5ba5dba1c07b1b7", null ],
-    [ "PERSISTENT_BLOCKS", "namespacebrd.html#a6cc290dceb50a8ffa6caf2be2cff1c93", null ],
+    [ "PERSISTENT_BLOCKS", "namespacebrd.html#a37516eabd3996a47db1ce1dce338206e", null ],
     [ "POSITION", "namespacebrd.html#a67b17082dfd2c5b0f74dda6bf8c48574", null ],
     [ "TEMPERATURE", "namespacebrd.html#a77800049958ad0a8b5ced84c9110fd45", null ],
     [ "VCC", "namespacebrd.html#a4d34f97fe15cc2ea3aa3fd3b424c635b", null ]

@@ -84,8 +84,11 @@ $(document).ready(function(){initNavTree('proto3_2board_8cpp.html',''); initResi
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">board.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -93,44 +96,145 @@ $(document).ready(function(){initNavTree('proto3_2board_8cpp.html',''); initResi
 <div class="textblock"><code>#include &quot;<a class="el" href="brd_8hpp_source.html">brd.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="default_8hpp_source.html">cfg/default.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="core__drivers_8hpp_source.html">core_drivers.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="adc__pooler_8hpp_source.html">fw/drv/adc_pooler.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="clock_8hpp_source.html">fw/drv/clock.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cobs__uart_8hpp_source.html">fw/drv/cobs_uart.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hbridge_8hpp_source.html">fw/drv/hbridge.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="leds_8hpp_source.html">fw/drv/leds.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="platform_8hpp_source.html">platform.hpp</a>&quot;</code><br />
+<code>#include &quot;setup.hpp&quot;</code><br />
 <code>#include &lt;emlabcpp/result.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="proto3_2board_8cpp__incl.svg" width="623" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="proto3_2board_8cpp__incl.svg" width="1532" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbrd_1_1adc__set.html">brd::adc_set</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacebrd"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html">brd</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a5eac53856f52e55f5605a641a2642de3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a5eac53856f52e55f5605a641a2642de3">brd::chan_ids</a> { <br />
+&#160;&#160;<a class="el" href="namespacebrd.html#a5eac53856f52e55f5605a641a2642de3a5bbec12f382df1f3137d00883a81ec46">brd::CURRENT_CHANNEL</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ae1deef931d03405aa3d23b1b05dcb997">brd::POSITION_CHANNEL</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ad3691b7a5f7bd25c5a750c984b3d0b3f">brd::VCC_CHANNEL</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacebrd.html#a5eac53856f52e55f5605a641a2642de3af8e9da2a99ae3c6090b47abe0665583a">brd::TEMP_CHANNEL</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacebrd.html#a5eac53856f52e55f5605a641a2642de3a5bbec12f382df1f3137d00883a81ec46">brd::CURRENT_CHANNEL</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ae1deef931d03405aa3d23b1b05dcb997">brd::POSITION_CHANNEL</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacebrd.html#a5eac53856f52e55f5605a641a2642de3ad3691b7a5f7bd25c5a750c984b3d0b3f">brd::VCC_CHANNEL</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacebrd.html#a5eac53856f52e55f5605a641a2642de3af8e9da2a99ae3c6090b47abe0665583a">brd::TEMP_CHANNEL</a>
+<br />
+ }</td></tr>
+<tr class="separator:a5eac53856f52e55f5605a641a2642de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6fc0880202e38be65dec8aaa3afd441c"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a6fc0880202e38be65dec8aaa3afd441c">brd::setup_board</a> ()</td></tr>
 <tr class="memdesc:a6fc0880202e38be65dec8aaa3afd441c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial setup call for the board.  <a href="namespacebrd.html#a6fc0880202e38be65dec8aaa3afd441c">More...</a><br /></td></tr>
 <tr class="separator:a6fc0880202e38be65dec8aaa3afd441c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac395ef2cb0f9c5b81ec184898cf1d33d"><td class="memItemLeft" align="right" valign="top">em::view&lt; const <a class="el" href="load__persistent__config_8hpp.html#a3a149128fa43dfaaa7eb8953672ce13d">page</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#ac395ef2cb0f9c5b81ec184898cf1d33d">brd::get_persistent_pages</a> ()</td></tr>
-<tr class="memdesc:ac395ef2cb0f9c5b81ec184898cf1d33d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pages that shall be used for persistent configuration.  <a href="namespacebrd.html#ac395ef2cb0f9c5b81ec184898cf1d33d">More...</a><br /></td></tr>
-<tr class="separator:ac395ef2cb0f9c5b81ec184898cf1d33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a002f07411dacd8fe0b24e9e7fc66001a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcore__drivers.html">core_drivers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a002f07411dacd8fe0b24e9e7fc66001a">brd::setup_core_drivers</a> ()</td></tr>
 <tr class="memdesc:a002f07411dacd8fe0b24e9e7fc66001a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize all core drivers for the servo.  <a href="namespacebrd.html#a002f07411dacd8fe0b24e9e7fc66001a">More...</a><br /></td></tr>
 <tr class="separator:a002f07411dacd8fe0b24e9e7fc66001a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cca53f4659c5b709c0d8c07aba8cd60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecfg.html#a23fbe2a054eed66e19a252ae4bd5a354">cfg::map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a5cca53f4659c5b709c0d8c07aba8cd60">brd::get_default_config</a> ()</td></tr>
 <tr class="memdesc:a5cca53f4659c5b709c0d8c07aba8cd60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns default configuration for servo for the board.  <a href="namespacebrd.html#a5cca53f4659c5b709c0d8c07aba8cd60">More...</a><br /></td></tr>
 <tr class="separator:a5cca53f4659c5b709c0d8c07aba8cd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec29754b0cd2c31ed9c5b516b42255a7"><td class="memItemLeft" align="right" valign="top">em::view&lt; std::byte * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#aec29754b0cd2c31ed9c5b516b42255a7">brd::page_at</a> (uint32_t i)</td></tr>
+<tr class="separator:aec29754b0cd2c31ed9c5b516b42255a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac395ef2cb0f9c5b81ec184898cf1d33d"><td class="memItemLeft" align="right" valign="top">em::view&lt; const <a class="el" href="load__persistent__config_8hpp.html#a3a149128fa43dfaaa7eb8953672ce13d">page</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#ac395ef2cb0f9c5b81ec184898cf1d33d">brd::get_persistent_pages</a> ()</td></tr>
+<tr class="memdesc:ac395ef2cb0f9c5b81ec184898cf1d33d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pages that shall be used for persistent configuration.  <a href="namespacebrd.html#ac395ef2cb0f9c5b81ec184898cf1d33d">More...</a><br /></td></tr>
+<tr class="separator:ac395ef2cb0f9c5b81ec184898cf1d33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a906f7ef6acab4815e6b77b601dac50e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto3_2board_8cpp.html#a906f7ef6acab4815e6b77b601dac50e7">_config_start</a></td></tr>
+<tr class="separator:a906f7ef6acab4815e6b77b601dac50e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9c4570b264e5103deb948e89f713529"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto3_2board_8cpp.html#ab9c4570b264e5103deb948e89f713529">_config_end</a></td></tr>
+<tr class="separator:ab9c4570b264e5103deb948e89f713529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be2264f22731b75b2e539e6e736a25c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1clock.html">fw::drv::clock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a3be2264f22731b75b2e539e6e736a25c">brd::CLOCK</a> {}</td></tr>
+<tr class="separator:a3be2264f22731b75b2e539e6e736a25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab2771319b4d0b9e125668d5ca22485"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfw_1_1drv_1_1adc__pooler.html">fw::drv::adc_pooler</a>&lt; adc_set &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a8ab2771319b4d0b9e125668d5ca22485">brd::ADC_POOLER</a> {}</td></tr>
+<tr class="separator:a8ab2771319b4d0b9e125668d5ca22485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaafe006db932b731656b8941cb41a6fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1cobs__uart.html">fw::drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#aaafe006db932b731656b8941cb41a6fd">brd::COMMS</a> {}</td></tr>
+<tr class="separator:aaafe006db932b731656b8941cb41a6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd90c38add468c35121387f09554c4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1cobs__uart.html">fw::drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a0cd90c38add468c35121387f09554c4f">brd::DEBUG_COMMS</a> {}</td></tr>
+<tr class="separator:a0cd90c38add468c35121387f09554c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40613bcc8cc16ce1bf0761b31ffe32d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1hbridge.html">fw::drv::hbridge</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a40613bcc8cc16ce1bf0761b31ffe32d1">brd::HBRIDGE</a> {}</td></tr>
+<tr class="separator:a40613bcc8cc16ce1bf0761b31ffe32d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ecf1d595557b50945b3b1643216fa4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfw_1_1drv_1_1leds.html">fw::drv::leds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a37ecf1d595557b50945b3b1643216fa4">brd::LEDS</a></td></tr>
+<tr class="separator:a37ecf1d595557b50945b3b1643216fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37516eabd3996a47db1ce1dce338206e"><td class="memItemLeft" align="right" valign="top">std::array&lt; em::view&lt; std::byte * &gt;, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a37516eabd3996a47db1ce1dce338206e">brd::PERSISTENT_BLOCKS</a> { page_at( 0 ) }</td></tr>
+<tr class="separator:a37516eabd3996a47db1ce1dce338206e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ab9c4570b264e5103deb948e89f713529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9c4570b264e5103deb948e89f713529">&#9670;&nbsp;</a></span>_config_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _config_end</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a906f7ef6acab4815e6b77b601dac50e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a906f7ef6acab4815e6b77b601dac50e7">&#9670;&nbsp;</a></span>_config_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _config_start</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_a47cf8fbb969c5e34ebaabe5c7c25d94.html">proto3</a></li><li class="navelem"><a class="el" href="proto3_2board_8cpp.html">board.cpp</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 06:48:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Dec 22 2023 07:13:40 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

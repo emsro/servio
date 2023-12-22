@@ -57,13 +57,14 @@ var platforms_2stm32h5_2setup_8hpp =
       [ "channel", "namespaceplt.html#a4f42a96a800d06571e716ccd3f8a2426", null ],
       [ "timer_instance", "namespaceplt.html#a2dec41c5352e12c2c7940c7520458f31", null ]
     ] ],
+    [ "get_default_config", "platforms_2stm32h5_2setup_8hpp.html#a30cc78be1d058fa7a23259440dcf7042", null ],
     [ "setup_adc", "platforms_2stm32h5_2setup_8hpp.html#a9ef2c142a47b16b1adcbaf8afa7bf183", null ],
     [ "setup_adc_channel", "platforms_2stm32h5_2setup_8hpp.html#aedfc86fbf9a20d968ff57f3e8a3be8dd", null ],
     [ "setup_adc_timer", "platforms_2stm32h5_2setup_8hpp.html#ae11f6e5da976f3f1ee5a5620e00f89c6", null ],
-    [ "setup_clk", "platforms_2stm32h5_2setup_8hpp.html#a7b3d4718f19db76388a82c3d55e83886", null ],
+    [ "setup_clk", "platforms_2stm32h5_2setup_8hpp.html#acd29c533d9d5a045f2d6735bf70027ec", null ],
     [ "setup_clock_timer", "platforms_2stm32h5_2setup_8hpp.html#af1262cf6fb55b7aed8756b2385a686cb", null ],
     [ "setup_hbridge_timers", "platforms_2stm32h5_2setup_8hpp.html#a15d03ab8966b2ec2f5707d6446d7cbe7", null ],
-    [ "setup_leds_gpio", "platforms_2stm32h5_2setup_8hpp.html#ad0f9bf648d4c760f06f3fcef1a1775bb", null ],
+    [ "setup_leds_gpio", "platforms_2stm32h5_2setup_8hpp.html#a716020e23e9a41d46a9bbfc65b3de31d", null ],
     [ "setup_leds_timer", "platforms_2stm32h5_2setup_8hpp.html#add346d16771606ac46df3b98d22eb531", null ],
     [ "setup_uart", "platforms_2stm32h5_2setup_8hpp.html#af1500de34f5161fe6ee7ed518a422388", null ]
 ];

@@ -83,6 +83,7 @@ var hierarchy =
     [ "mode_opts", "host_2main_8cpp.html#structmode__opts", null ],
     [ "monitor", "classmonitor.html", null ],
     [ "brd::off_scale", "namespacebrd.html#structbrd_1_1off__scale", null ],
+    [ "cfg::off_scale", "namespacecfg.html#structcfg_1_1off__scale", null ],
     [ "cfg::payload", "structcfg_1_1payload.html", null ],
     [ "period_cb_interface", "classperiod__cb__interface.html", [
       [ "fw::drv::empty_period_cb", "structfw_1_1drv_1_1empty__period__cb.html", null ],

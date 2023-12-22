@@ -2,6 +2,7 @@ var namespacecfg =
 [
     [ "dispatcher", "structcfg_1_1dispatcher.html", "structcfg_1_1dispatcher" ],
     [ "keyval", "namespacecfg.html#structcfg_1_1keyval", "namespacecfg_structcfg_1_1keyval_dup" ],
+    [ "off_scale", "namespacecfg.html#structcfg_1_1off__scale", "namespacecfg_structcfg_1_1off__scale_dup" ],
     [ "payload", "structcfg_1_1payload.html", "structcfg_1_1payload" ],
     [ "handler", "namespacecfg.html#a2276c764586a8373fef6fb02b7368a49", null ],
     [ "map", "namespacecfg.html#a23fbe2a054eed66e19a252ae4bd5a354", null ],
@@ -48,6 +49,7 @@ var namespacecfg =
       [ "MOVING_DETECTION_STEP", "namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bda29deeb389f9e0680a6f016aca429e37b", null ]
     ] ],
     [ "apply", "namespacecfg.html#a6811fad3058c0ddbf3576778455ec62d", null ],
+    [ "calculate_current_conversion", "namespacecfg.html#ac66bc469e3244eaace2a0d056ad1440b", null ],
     [ "find_latest_page", "namespacecfg.html#ab8b28b0ab16c3b0bf545c39e6fb142e4", null ],
     [ "find_next_page", "namespacecfg.html#a27fb9256d3f5822df90c3a2296a9531b", null ],
     [ "find_oldest_page", "namespacecfg.html#a8c4bca10aa98ae305a1f2f5163b318c7", null ],

@@ -18,6 +18,7 @@ var annotated_dup =
     [ "cfg", "namespacecfg.html", [
       [ "dispatcher", "structcfg_1_1dispatcher.html", "structcfg_1_1dispatcher" ],
       [ "keyval", "namespacecfg.html#structcfg_1_1keyval", "namespacecfg_structcfg_1_1keyval_dup" ],
+      [ "off_scale", "namespacecfg.html#structcfg_1_1off__scale", "namespacecfg_structcfg_1_1off__scale_dup" ],
       [ "payload", "structcfg_1_1payload.html", "structcfg_1_1payload" ]
     ] ],
     [ "cnv", "namespacecnv.html", [
