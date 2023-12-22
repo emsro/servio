@@ -1,7 +1,13 @@
 servio_add_library(
   TARGET platform
   INCLUDE ../inc/ ./
-  SOURCES adc.cpp platform.cpp
+  SOURCES adc.cpp
+          platform.cpp
+          clock.cpp
+          uart.cpp
+          config.cpp
+          gpio.cpp
+          timers.cpp
   LIBS serviolib
   OPTS -Os)
 

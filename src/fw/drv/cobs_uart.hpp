@@ -19,8 +19,8 @@ class cobs_uart : public com_interface
 public:
         struct handles
         {
-                UART_HandleTypeDef uart;
-                DMA_HandleTypeDef  tx_dma;
+                UART_HandleTypeDef uart   = {};
+                DMA_HandleTypeDef  tx_dma = {};
         };
 
         cobs_uart() = default;

@@ -16,7 +16,7 @@ struct detailed_adc_channel
         std::size_t used;
 
         uint32_t                   last_value;
-        ADC_ChannelConfTypeDef     chconf;
+        ADC_ChannelConfTypeDef     chconf   = {};
         adc_detailed_cb_interface* callback = &EMPTY_ADC_DETAILED_CALLBACK;
 
         bool config_channel_error = false;
@@ -86,7 +86,7 @@ struct adc_channel
         static constexpr auto id = ID;
 
         uint32_t               last_value;
-        ADC_ChannelConfTypeDef chconf;
+        ADC_ChannelConfTypeDef chconf = {};
 
         bool config_channel_error = false;
         bool start_error          = false;
@@ -226,9 +226,9 @@ private:
                 } );
         }
 
-        ADC_HandleTypeDef adc_;
-        DMA_HandleTypeDef dma_;
-        TIM_HandleTypeDef tim_;
+        ADC_HandleTypeDef adc_ = {};
+        DMA_HandleTypeDef dma_ = {};
+        TIM_HandleTypeDef tim_ = {};
         uint32_t          tim_channel_;
 
         std::size_t sequence_i_ = 0;

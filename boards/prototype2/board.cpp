@@ -19,8 +19,6 @@ enum chan_ids
 
 struct adc_set
 {
-        // TODO: only some of the adc channels require callback infrastructure
-
         using id_type = chan_ids;
 
         fw::drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >  current;

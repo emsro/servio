@@ -1,3 +1,4 @@
+#include "emlabcpp/result.h"
 #include "fw/board.hpp"
 #include "fw/util.hpp"
 #include "platform.hpp"
@@ -8,7 +9,7 @@
 namespace brd
 {
 
-void setup_clk()
+em::result setup_clk()
 {
 
         __HAL_RCC_SYSCFG_CLK_ENABLE();
@@ -49,7 +50,7 @@ void setup_clk()
         RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
         if ( HAL_RCC_ClockConfig( &RCC_ClkInitStruct, FLASH_LATENCY_2 ) != HAL_OK ) {
-                fw::stop_exec();
+                return em::ERROR;
         }
         /** Initializes the peripherals clocks
          */
@@ -62,7 +63,7 @@ void setup_clk()
         PeriphClkInit.UsbClockSelection    = RCC_USBCLKSOURCE_PLL;
         PeriphClkInit.Adc12ClockSelection  = RCC_ADC12CLKSOURCE_SYSCLK;
         if ( HAL_RCCEx_PeriphCLKConfig( &PeriphClkInit ) != HAL_OK ) {
-                fw::stop_exec();
+                return em::ERROR;
         }
         /** Configures CRS
          */
@@ -74,6 +75,8 @@ void setup_clk()
         pInit.HSI48CalibrationValue = 32;
 
         HAL_RCCEx_CRSConfig( &pInit );
+
+        return em::SUCCESS;
 }
 
 }  // namespace brd

@@ -1,6 +1,9 @@
+#include "cfg/map.hpp"
 #include "fw/board.hpp"
 #include "fw/drv/hbridge.hpp"  // tehse are actually a bad sign TODO
 #include "fw/drv/leds.hpp"
+
+#include <memory>
 
 namespace plt
 {
@@ -29,16 +32,11 @@ struct adc_cfg
         dma_cfg      dma;
 };
 
-em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );
-void       setup_adc_channel( ADC_ChannelConfTypeDef& channel, pinch_cfg cfg );
-
 struct adc_timer_cfg
 {
         TIM_TypeDef* timer_instance;
         uint32_t     channel;
 };
-
-em::result setup_adc_timer( TIM_HandleTypeDef& tim, uint32_t& tim_channel, adc_timer_cfg cfg );
 
 struct pin_cfg
 {
@@ -58,8 +56,6 @@ struct uart_cfg
         dma_cfg        tx_dma;
 };
 
-em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg );
-
 struct hb_timer_cfg
 {
         TIM_TypeDef* timer_instance;
@@ -70,15 +66,11 @@ struct hb_timer_cfg
         pinch_cfg    mc2;
 };
 
-em::result setup_hbridge_timers( fw::drv::hbridge::handles&, hb_timer_cfg cfg );
-
 struct leds_gpio_cfg
 {
         pin_cfg red;
         pin_cfg blue;
 };
-
-em::result setup_leds_gpio( fw::drv::leds::handles&, leds_gpio_cfg cfg );
 
 struct leds_timer_cfg
 {
@@ -87,14 +79,27 @@ struct leds_timer_cfg
         pinch_cfg    green;
 };
 
-em::result setup_leds_timer( fw::drv::leds::handles&, leds_timer_cfg cfg );
-void       setup_clk();
-
 struct clock_timer_cfg
 {
         TIM_TypeDef* timer_instance;
         uint32_t     channel;
 };
+
+cfg::map get_default_config();
+
+em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );
+void       setup_adc_channel( ADC_ChannelConfTypeDef& channel, pinch_cfg cfg );
+
+em::result setup_adc_timer( TIM_HandleTypeDef& tim, uint32_t& tim_channel, adc_timer_cfg cfg );
+
+em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg );
+
+em::result setup_hbridge_timers( fw::drv::hbridge::handles&, hb_timer_cfg cfg );
+
+em::result setup_leds_gpio( fw::drv::leds::handles&, leds_gpio_cfg cfg );
+
+em::result setup_leds_timer( fw::drv::leds::handles&, leds_timer_cfg cfg );
+em::result setup_clk();
 
 em::result setup_clock_timer( TIM_HandleTypeDef& tim, uint32_t& channel, clock_timer_cfg cfg );
 
