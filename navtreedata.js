@@ -81,6 +81,18 @@ var NAVTREE =
       [ "Decision", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md46", null ],
       [ "Consequences", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md47", null ]
     ] ],
+    [ "10. STM32H5 is the main platform", "md_doc_adr_0010_stm32h5_is_the_main_platform.html", [
+      [ "Status", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md49", null ],
+      [ "Context", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md50", null ],
+      [ "Decision", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md51", null ],
+      [ "Consequences", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md52", null ]
+    ] ],
+    [ "11. Modular control loop architecture shall be used", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html", [
+      [ "Status", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md54", null ],
+      [ "Context", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md55", null ],
+      [ "Decision", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md56", null ],
+      [ "Consequences", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md57", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -123,10 +135,10 @@ var NAVTREEINDEX =
 "adc__pooler_8hpp.html",
 "cli_8cpp.html",
 "kalman_8hpp.html#aee77e3ba89eb600013e17d3467583701",
-"namespacecfg.html#structcfg_1_1off__scale",
-"position_8hpp.html",
-"stm32h5xx__hal__conf_8h.html#a4a459bcaa046998e6939fc66b0831e96",
-"structhost_1_1serialize__error.html"
+"namespacecfg.html#abf089918bd1398ef078ba761770419d4",
+"platforms_2stm32h5_2setup_8hpp.html#acd29c533d9d5a045f2d6735bf70027ec",
+"stm32h5xx__hal__conf_8h.html#a2df8b2975927ef19a2c2bd3f84c57dd3",
+"structhost_1_1error__exception.html#aa864e320d757530253664486a5828b5e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
