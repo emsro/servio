@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['metrics_805',['metrics',['../classmetrics.html',1,'']]],
-  ['mode_5fopts_806',['mode_opts',['../host_2main_8cpp.html#structmode__opts',1,'']]],
-  ['monitor_807',['monitor',['../classmonitor.html',1,'']]]
+  ['metrics_802',['metrics',['../classmetrics.html',1,'']]],
+  ['mode_5fopts_803',['mode_opts',['../host_2main_8cpp.html#structmode__opts',1,'']]],
+  ['monitor_804',['monitor',['../classmonitor.html',1,'']]]
 ];

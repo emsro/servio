@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"structhost_1_1serialize__error.html":[12,0,5,5],
+"structhost_1_1serialize__error.html#a126abfcada27298f4f8c1693d7fe7109":[12,0,5,5,0],
+"structhost_1_1serialize__error.html#a5e17f48af1ce3dbed0ce55eb0373495d":[12,0,5,5,1],
+"structhost_1_1serialize__error.html#ab701ed16d059b758f3c7ef207391113a":[12,0,5,5,2],
 "structhost_1_1servio__exception.html":[12,0,5,2],
 "structmtr_1_1posvel__kalman.html":[12,0,7,0],
 "structmtr_1_1posvel__kalman.html#a078850b84a9a7c764714015acfd51e2b":[12,0,7,0,7],

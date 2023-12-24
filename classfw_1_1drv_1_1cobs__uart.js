@@ -10,7 +10,5 @@ var classfw_1_1drv_1_1cobs__uart =
     [ "send", "classfw_1_1drv_1_1cobs__uart.html#ae0b73a87fc1db2ae51a7657646eb4d21", null ],
     [ "setup", "classfw_1_1drv_1_1cobs__uart.html#a0edec0d4c90d007f107e92358fa09580", null ],
     [ "start", "classfw_1_1drv_1_1cobs__uart.html#a5cd468b9b15686b56d4a9b702d7c8282", null ],
-    [ "tx_cplt_irq", "classfw_1_1drv_1_1cobs__uart.html#a00e524b7ba1bb8c27b2f4b62146b7e6f", null ],
-    [ "tx_dma_irq", "classfw_1_1drv_1_1cobs__uart.html#adbc8d83440f18fdc7c63444e8b710ca8", null ],
-    [ "uart_irq", "classfw_1_1drv_1_1cobs__uart.html#ae41fa7d033f5b2687ebadbcdcab5f390", null ]
+    [ "tx_cplt_irq", "classfw_1_1drv_1_1cobs__uart.html#a00e524b7ba1bb8c27b2f4b62146b7e6f", null ]
 ];
