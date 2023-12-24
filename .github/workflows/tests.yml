@@ -6,7 +6,7 @@ jobs:
     test:
         runs-on: ubuntu-latest
         container:
-            image: ghcr.io/emsro/build-env
+            image: ghcr.io/emsro/build-env:latest
             credentials:
                 username: ${{ github.actor }}
                 password: ${{ secrets.github_token }}
