@@ -43,14 +43,60 @@ fw::drv::leds      LEDS;
 }  // namespace brd
 
 extern "C" {
+
+void ADC1_IRQHandler()
+{
+        HAL_ADC_IRQHandler( &brd::ADC_HANDLE );
 }
 
-// timer allocation:
-// TIM1 - hbridge
-// TIM3 - encoder
-// TIM2 - leds, clock
-// TIM6 - adc?
-// TIM7
+void TIM1_UP_IRQHandler()
+{
+        HAL_TIM_IRQHandler( &brd::TIM1_HANDLE );
+}
+
+void USART2_IRQHandler()
+{
+        HAL_UART_IRQHandler( &brd::UART2_HANDLE );
+}
+
+void USART1_IRQHandler()
+{
+        HAL_UART_IRQHandler( &brd::UART1_HANDLE );
+}
+
+// TODO: are DMA interrupts missing?
+}
+
+extern "C" {
+
+void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
+{
+        brd::HBRIDGE.timer_period_irq( h );
+}
+
+void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
+{
+        brd::COMMS.tx_cplt_irq( h );
+        brd::DEBUG_COMMS.tx_cplt_irq( h );
+}
+
+void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
+{
+        brd::COMMS.rx_cplt_irq( h );
+        brd::DEBUG_COMMS.rx_cplt_irq( h );
+}
+
+void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
+{
+        fw::drv::ADC_POOLER.adc_conv_cplt_irq( h );
+}
+
+void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
+{
+        fw::drv::ADC_POOLER.adc_error_irq( h );
+}
+}
+
 
 namespace brd
 {

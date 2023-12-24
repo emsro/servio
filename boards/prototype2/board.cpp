@@ -33,36 +33,38 @@ extern "C" {
 
 void TIM1_UP_TIM16_IRQHandler()
 {
-        brd::HBRIDGE.timer_irq();
+        HAL_TIM_IRQHandler( &brd::TIM1_HANDLE );
 }
 
-void USART2_IRQHandler( void )
+void USART2_IRQHandler()
 {
-        brd::COMMS.uart_irq();
+        HAL_UART_IRQHandler( &brd::UART2_HANDLE );
 }
 
-void DMA1_Channel4_IRQHandler( void )
+void DMA1_Channel4_IRQHandler()
 {
-        brd::COMMS.tx_dma_irq();
+        // TODO: is this needed?
+        HAL_DMA_IRQHandler( &brd::UART2_DMA_HANDLE );
 }
 
-void USART1_IRQHandler( void )
+void USART1_IRQHandler()
 {
-        brd::DEBUG_COMMS.uart_irq();
+        HAL_UART_IRQHandler( &brd::UART1_HANDLE );
 }
 
-void DMA1_Channel5_IRQHandler( void )
+void DMA1_Channel5_IRQHandler()
 {
-        brd::DEBUG_COMMS.tx_dma_irq();
+        // TODO: is this needed?
+        HAL_DMA_IRQHandler( &brd::UART1_DMA_HANDLE );
 }
 
 [[gnu::flatten]] void DMA1_Channel1_IRQHandler()
 {
-        fw::drv::ADC_POOLER.dma_irq();
+        HAL_DMA_IRQHandler( &brd::ADC_DMA_HANDLE );
 }
 [[gnu::flatten]] void ADC1_2_IRQHandler()
 {
-        fw::drv::ADC_POOLER.adc_irq();
+        HAL_ADC_IRQHandler( &brd::ADC_HANDLE );
 }
 
 void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )

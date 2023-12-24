@@ -33,7 +33,3 @@ clang-format:
 
 cmake-format:
 	find ./ ${FIND_FILTER} \( -iname "*CMakeLists.txt" -o -iname "*.cmake" \) | xargs cmake-format -i
-
-clang-tidy:
-	cmake -Bbuild/ctidy -DSERVIO_PLATFORM=host -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_CXX_CLANG_TIDY=clang-tidy ${BUILD_ARGS}
-	cmake --build build/ctidy

@@ -31,16 +31,6 @@ public:
                 return this;
         }
 
-        void tx_dma_irq()
-        {
-                HAL_DMA_IRQHandler( tx_dma_ );
-        }
-
-        void uart_irq()
-        {
-                HAL_UART_IRQHandler( uart_ );
-        }
-
         void rx_cplt_irq( UART_HandleTypeDef* huart )
         {
                 if ( huart != uart_ ) {

@@ -49,11 +49,6 @@ public:
                 period_cb_->on_period_irq();
         }
 
-        void timer_irq()
-        {
-                HAL_TIM_IRQHandler( tim_ );
-        }
-
         void                 set_period_callback( period_cb_interface& ) override;
         period_cb_interface& get_period_callback() override;
 

@@ -171,16 +171,6 @@ struct adc_pooler
                 return set_;
         }
 
-        void adc_irq()
-        {
-                HAL_ADC_IRQHandler( adc_ );
-        }
-
-        void dma_irq()
-        {
-                HAL_DMA_IRQHandler( dma_ );
-        }
-
         void adc_error_irq( ADC_HandleTypeDef* h )
         {
                 if ( h != adc_ ) {
