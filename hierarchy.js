@@ -14,16 +14,12 @@ var hierarchy =
       [ "fw::drv::empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", null ]
     ] ],
     [ "fw::drv::adc_pooler< Set >", "structfw_1_1drv_1_1adc__pooler.html", null ],
-    [ "brd::adc_set", "structbrd_1_1adc__set.html", null ],
-    [ "brd::adc_timer_cfg", "namespacebrd.html#structbrd_1_1adc__timer__cfg", null ],
-    [ "plt::adc_timer_cfg", "namespaceplt.html#structplt_1_1adc__timer__cfg", null ],
+    [ "fw::drv::adc_set", "structfw_1_1drv_1_1adc__set.html", null ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", null ],
     [ "fw::check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "clk_interface", "classclk__interface.html", [
       [ "fw::drv::clock", "classfw_1_1drv_1_1clock.html", null ]
     ] ],
-    [ "brd::clock_timer_cfg", "namespacebrd.html#structbrd_1_1clock__timer__cfg", null ],
-    [ "plt::clock_timer_cfg", "namespaceplt.html#structplt_1_1clock__timer__cfg", null ],
     [ "host::cobs_port", "structhost_1_1cobs__port.html", null ],
     [ "com_interface", "classcom__interface.html", [
       [ "fw::drv::cobs_uart", "classfw_1_1drv_1_1cobs__uart.html", null ]
@@ -62,15 +58,10 @@ var hierarchy =
         [ "host::serialize_error", "structhost_1_1serialize__error.html", null ]
       ] ]
     ] ],
-    [ "fw::drv::clock::handles", "classfw_1_1drv_1_1clock.html#structfw_1_1drv_1_1clock_1_1handles", null ],
-    [ "fw::drv::cobs_uart::handles", "classfw_1_1drv_1_1cobs__uart.html#structfw_1_1drv_1_1cobs__uart_1_1handles", null ],
-    [ "fw::drv::hbridge::handles", "classfw_1_1drv_1_1hbridge.html#structfw_1_1drv_1_1hbridge_1_1handles", null ],
-    [ "fw::drv::leds::handles", "classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles", null ],
     [ "brd::hb_timer_cfg", "namespacebrd.html#structbrd_1_1hb__timer__cfg", null ],
     [ "plt::hb_timer_cfg", "namespaceplt.html#structplt_1_1hb__timer__cfg", null ],
     [ "indication", "classindication.html", null ],
     [ "cfg::keyval", "namespacecfg.html#structcfg_1_1keyval", null ],
-    [ "brd::leds_gpio_cfg", "namespacebrd.html#structbrd_1_1leds__gpio__cfg", null ],
     [ "plt::leds_gpio_cfg", "namespaceplt.html#structplt_1_1leds__gpio__cfg", null ],
     [ "leds_interface", "classleds__interface.html", [
       [ "fw::drv::leds", "classfw_1_1drv_1_1leds.html", null ]
@@ -89,10 +80,8 @@ var hierarchy =
       [ "fw::drv::empty_period_cb", "structfw_1_1drv_1_1empty__period__cb.html", null ],
       [ "fw::drv::period_cb< Callable >", "structfw_1_1drv_1_1period__cb.html", null ]
     ] ],
-    [ "brd::pin_cfg", "namespacebrd.html#structbrd_1_1pin__cfg", null ],
-    [ "plt::pin_cfg", "namespaceplt.html#structplt_1_1pin__cfg", null ],
-    [ "brd::pinch_cfg", "namespacebrd.html#structbrd_1_1pinch__cfg", null ],
-    [ "plt::pinch_cfg", "namespaceplt.html#structplt_1_1pinch__cfg", null ],
+    [ "fw::drv::pin_cfg", "namespacefw_1_1drv.html#structfw_1_1drv_1_1pin__cfg", null ],
+    [ "fw::drv::pinch_cfg", "namespacefw_1_1drv.html#structfw_1_1drv_1_1pinch__cfg", null ],
     [ "cnv::position_converter", "classcnv_1_1position__converter.html", null ],
     [ "mtr::posvel_kalman", "structmtr_1_1posvel__kalman.html", null ],
     [ "emlabcpp::quantity", null, [

@@ -99,7 +99,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", "functions_vars" ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
@@ -121,12 +121,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc__pooler_8hpp.html",
-"classperiod__interface.html#a5b77d23dee056a44d5a340bb20c20c27",
-"indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14a0d895a0a05a7cce9b2c0c8bb252f78cc",
-"namespacebrd.html#aec281dba49bc56b18f637152be994a96",
-"namespaceplt.html#a9592208b579ca071ede66cc0af7a8b58",
-"stm32g4xx__hal__conf_8h.html#a74cae3ff25398b4a06a579a7164a8518",
-"structfw_1_1drv_1_1adc__channel.html#aa6bdd02ed10f00148953fc63c1eef3a5"
+"classvalue__cb__interface.html#a98579ea89dd7cea060f6e0c79f3fdc70",
+"kalman_8hpp.html#ad73bc14d9ae4d49d14781f2402637839",
+"namespacecfg.html#aed406326772f09a5c90eb2c62bab0062",
+"platforms_2stm32h5_2timers_8cpp.html#ab1c3c446b31805a650406ff6dc1dcbfe",
+"stm32h5xx__hal__conf_8h.html#a54badbcdb096ce802d2eed981cbbc31a",
+"structhost_1_1servio__exception.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

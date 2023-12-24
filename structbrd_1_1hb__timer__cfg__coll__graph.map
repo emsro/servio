@@ -1,4 +1,4 @@
 <map id="brd::hb_timer_cfg" name="brd::hb_timer_cfg">
 <area shape="rect" id="node1" title=" " alt="" coords="5,109,141,136"/>
-<area shape="rect" id="node2" href="$namespacebrd.html#structbrd_1_1pinch__cfg" title=" " alt="" coords="17,5,130,32"/>
+<area shape="rect" id="node2" href="$namespacefw_1_1drv.html#structfw_1_1drv_1_1pinch__cfg" title=" " alt="" coords="6,5,141,32"/>
 </map>

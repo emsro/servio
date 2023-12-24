@@ -1,19 +1,13 @@
 var annotated_dup =
 [
     [ "brd", "namespacebrd.html", [
-      [ "adc_set", "structbrd_1_1adc__set.html", "structbrd_1_1adc__set" ],
       [ "off_scale", "namespacebrd.html#structbrd_1_1off__scale", "namespacebrd_structbrd_1_1off__scale_dup" ],
       [ "setpoint", "namespacebrd.html#structbrd_1_1setpoint", "namespacebrd_structbrd_1_1setpoint_dup" ],
       [ "dma_cfg", "namespacebrd.html#structbrd_1_1dma__cfg", "namespacebrd_structbrd_1_1dma__cfg_dup" ],
-      [ "pinch_cfg", "namespacebrd.html#structbrd_1_1pinch__cfg", "namespacebrd_structbrd_1_1pinch__cfg_dup" ],
       [ "adc_cfg", "namespacebrd.html#structbrd_1_1adc__cfg", "namespacebrd_structbrd_1_1adc__cfg_dup" ],
-      [ "adc_timer_cfg", "namespacebrd.html#structbrd_1_1adc__timer__cfg", "namespacebrd_structbrd_1_1adc__timer__cfg_dup" ],
-      [ "pin_cfg", "namespacebrd.html#structbrd_1_1pin__cfg", "namespacebrd_structbrd_1_1pin__cfg_dup" ],
       [ "uart_cfg", "namespacebrd.html#structbrd_1_1uart__cfg", "namespacebrd_structbrd_1_1uart__cfg_dup" ],
       [ "hb_timer_cfg", "namespacebrd.html#structbrd_1_1hb__timer__cfg", "namespacebrd_structbrd_1_1hb__timer__cfg_dup" ],
-      [ "leds_gpio_cfg", "namespacebrd.html#structbrd_1_1leds__gpio__cfg", "namespacebrd_structbrd_1_1leds__gpio__cfg_dup" ],
-      [ "leds_timer_cfg", "namespacebrd.html#structbrd_1_1leds__timer__cfg", "namespacebrd_structbrd_1_1leds__timer__cfg_dup" ],
-      [ "clock_timer_cfg", "namespacebrd.html#structbrd_1_1clock__timer__cfg", "namespacebrd_structbrd_1_1clock__timer__cfg_dup" ]
+      [ "leds_timer_cfg", "namespacebrd.html#structbrd_1_1leds__timer__cfg", "namespacebrd_structbrd_1_1leds__timer__cfg_dup" ]
     ] ],
     [ "cfg", "namespacecfg.html", [
       [ "dispatcher", "structcfg_1_1dispatcher.html", "structcfg_1_1dispatcher" ],
@@ -37,6 +31,7 @@ var annotated_dup =
         [ "adc_channel", "structfw_1_1drv_1_1adc__channel.html", "structfw_1_1drv_1_1adc__channel" ],
         [ "adc_channel_with_callback", "structfw_1_1drv_1_1adc__channel__with__callback.html", "structfw_1_1drv_1_1adc__channel__with__callback" ],
         [ "adc_pooler", "structfw_1_1drv_1_1adc__pooler.html", "structfw_1_1drv_1_1adc__pooler" ],
+        [ "adc_set", "structfw_1_1drv_1_1adc__set.html", "structfw_1_1drv_1_1adc__set" ],
         [ "adc_detailed_cb", "structfw_1_1drv_1_1adc__detailed__cb.html", "structfw_1_1drv_1_1adc__detailed__cb" ],
         [ "empty_adc_detailed_cb", "structfw_1_1drv_1_1empty__adc__detailed__cb.html", "structfw_1_1drv_1_1empty__adc__detailed__cb" ],
         [ "value_cb", "structfw_1_1drv_1_1value__cb.html", "structfw_1_1drv_1_1value__cb" ],
@@ -45,6 +40,8 @@ var annotated_dup =
         [ "empty_period_cb", "structfw_1_1drv_1_1empty__period__cb.html", "structfw_1_1drv_1_1empty__period__cb" ],
         [ "clock", "classfw_1_1drv_1_1clock.html", "classfw_1_1drv_1_1clock" ],
         [ "cobs_uart", "classfw_1_1drv_1_1cobs__uart.html", "classfw_1_1drv_1_1cobs__uart" ],
+        [ "pin_cfg", "namespacefw_1_1drv.html#structfw_1_1drv_1_1pin__cfg", "namespacefw_1_1drv_structfw_1_1drv_1_1pin__cfg_dup" ],
+        [ "pinch_cfg", "namespacefw_1_1drv.html#structfw_1_1drv_1_1pinch__cfg", "namespacefw_1_1drv_structfw_1_1drv_1_1pinch__cfg_dup" ],
         [ "hbridge", "classfw_1_1drv_1_1hbridge.html", "classfw_1_1drv_1_1hbridge" ],
         [ "leds", "classfw_1_1drv_1_1leds.html", "classfw_1_1drv_1_1leds" ]
       ] ],
@@ -68,15 +65,11 @@ var annotated_dup =
     ] ],
     [ "plt", "namespaceplt.html", [
       [ "dma_cfg", "namespaceplt.html#structplt_1_1dma__cfg", "namespaceplt_structplt_1_1dma__cfg_dup" ],
-      [ "pinch_cfg", "namespaceplt.html#structplt_1_1pinch__cfg", "namespaceplt_structplt_1_1pinch__cfg_dup" ],
       [ "adc_cfg", "namespaceplt.html#structplt_1_1adc__cfg", "namespaceplt_structplt_1_1adc__cfg_dup" ],
-      [ "adc_timer_cfg", "namespaceplt.html#structplt_1_1adc__timer__cfg", "namespaceplt_structplt_1_1adc__timer__cfg_dup" ],
-      [ "pin_cfg", "namespaceplt.html#structplt_1_1pin__cfg", "namespaceplt_structplt_1_1pin__cfg_dup" ],
       [ "uart_cfg", "namespaceplt.html#structplt_1_1uart__cfg", "namespaceplt_structplt_1_1uart__cfg_dup" ],
       [ "hb_timer_cfg", "namespaceplt.html#structplt_1_1hb__timer__cfg", "namespaceplt_structplt_1_1hb__timer__cfg_dup" ],
       [ "leds_gpio_cfg", "namespaceplt.html#structplt_1_1leds__gpio__cfg", "namespaceplt_structplt_1_1leds__gpio__cfg_dup" ],
-      [ "leds_timer_cfg", "namespaceplt.html#structplt_1_1leds__timer__cfg", "namespaceplt_structplt_1_1leds__timer__cfg_dup" ],
-      [ "clock_timer_cfg", "namespaceplt.html#structplt_1_1clock__timer__cfg", "namespaceplt_structplt_1_1clock__timer__cfg_dup" ]
+      [ "leds_timer_cfg", "namespaceplt.html#structplt_1_1leds__timer__cfg", "namespaceplt_structplt_1_1leds__timer__cfg_dup" ]
     ] ],
     [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", "classadc__detailed__cb__interface" ],
     [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", "host_2main_8cpp_structcfg__opts" ],

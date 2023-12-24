@@ -1,4 +1,4 @@
 var platforms_2stm32h5_2gpio_8cpp =
 [
-    [ "setup_leds_gpio", "platforms_2stm32h5_2gpio_8cpp.html#a716020e23e9a41d46a9bbfc65b3de31d", null ]
+    [ "setup_gpio", "platforms_2stm32h5_2gpio_8cpp.html#a9e199f57cebf2a36b5edce04e3cfe587", null ]
 ];

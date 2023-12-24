@@ -90,7 +90,8 @@ $(document).ready(function(){initNavTree('platforms_2stm32h5_2timers_8cpp.html',
 <div class="title">timers.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="board_8hpp_source.html">fw/board.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;emlabcpp/result.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="board_8hpp_source.html">fw/board.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8hpp_source.html">fw/util.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="platforms_2stm32h5_2setup_8hpp_source.html">setup.hpp</a>&quot;</code><br />
 <code>#include &lt;cstdlib&gt;</code><br />
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('platforms_2stm32h5_2timers_8cpp.html',
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="platforms_2stm32h5_2timers_8cpp__incl.svg" width="859" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="platforms_2stm32h5_2timers_8cpp__incl.svg" width="714" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -113,14 +114,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a15d03ab8966b2ec2f5707d6446d7cbe7"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplt.html#a15d03ab8966b2ec2f5707d6446d7cbe7">plt::setup_hbridge_timers</a> (<a class="el" href="classfw_1_1drv_1_1hbridge.html#structfw_1_1drv_1_1hbridge_1_1handles">fw::drv::hbridge::handles</a> &amp;, hb_timer_cfg cfg)</td></tr>
-<tr class="separator:a15d03ab8966b2ec2f5707d6446d7cbe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae11f6e5da976f3f1ee5a5620e00f89c6"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplt.html#ae11f6e5da976f3f1ee5a5620e00f89c6">plt::setup_adc_timer</a> (TIM_HandleTypeDef &amp;tim, uint32_t &amp;tim_channel, adc_timer_cfg cfg)</td></tr>
-<tr class="separator:ae11f6e5da976f3f1ee5a5620e00f89c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1262cf6fb55b7aed8756b2385a686cb"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplt.html#af1262cf6fb55b7aed8756b2385a686cb">plt::setup_clock_timer</a> (TIM_HandleTypeDef &amp;tim, uint32_t &amp;channel, clock_timer_cfg cfg)</td></tr>
-<tr class="separator:af1262cf6fb55b7aed8756b2385a686cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add346d16771606ac46df3b98d22eb531"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplt.html#add346d16771606ac46df3b98d22eb531">plt::setup_leds_timer</a> (<a class="el" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">fw::drv::leds::handles</a> &amp;, leds_timer_cfg cfg)</td></tr>
-<tr class="separator:add346d16771606ac46df3b98d22eb531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c3c446b31805a650406ff6dc1dcbfe"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplt.html#ab1c3c446b31805a650406ff6dc1dcbfe">plt::setup_hbridge_timers</a> (TIM_HandleTypeDef &amp;tim, hb_timer_cfg cfg)</td></tr>
+<tr class="separator:ab1c3c446b31805a650406ff6dc1dcbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165896580676e6d5ceffae6f91f4315f"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplt.html#a165896580676e6d5ceffae6f91f4315f">plt::setup_adc_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
+<tr class="separator:a165896580676e6d5ceffae6f91f4315f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5398d6acc4eb5457ed62aff746d0e06b"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplt.html#a5398d6acc4eb5457ed62aff746d0e06b">plt::setup_clock_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
+<tr class="separator:a5398d6acc4eb5457ed62aff746d0e06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a973bfdd40b2ed984587cbf575b9aacc8"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplt.html#a973bfdd40b2ed984587cbf575b9aacc8">plt::setup_leds_channel</a> (TIM_HandleTypeDef *tim, <a class="el" href="namespacefw_1_1drv.html#structfw_1_1drv_1_1pinch__cfg">fw::drv::pinch_cfg</a> cfg)</td></tr>
+<tr class="separator:a973bfdd40b2ed984587cbf575b9aacc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -128,7 +129,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c2729ddf18bab012de856b523eb05d8f.html">platforms</a></li><li class="navelem"><a class="el" href="dir_1cc8c4813128778d9b39aa6264111594.html">stm32h5</a></li><li class="navelem"><a class="el" href="platforms_2stm32h5_2timers_8cpp.html">timers.cpp</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 07:13:40 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Dec 24 2023 15:09:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

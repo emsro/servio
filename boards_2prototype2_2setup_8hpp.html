@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('boards_2prototype2_2setup_8hpp.html','
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="board_8hpp_source.html">fw/board.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="defs_8hpp_source.html">fw/drv/defs.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hbridge_8hpp_source.html">fw/drv/hbridge.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="leds_8hpp_source.html">fw/drv/leds.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -99,7 +100,7 @@ $(document).ready(function(){initNavTree('boards_2prototype2_2setup_8hpp.html','
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="boards_2prototype2_2setup_8hpp__incl.svg" width="899" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="boards_2prototype2_2setup_8hpp__incl.svg" width="1043" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -109,24 +110,14 @@ $(document).ready(function(){initNavTree('boards_2prototype2_2setup_8hpp.html','
 Classes</h2></td></tr>
 <tr class="memitem:structbrd_1_1dma__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#structbrd_1_1dma__cfg">brd::dma_cfg</a></td></tr>
 <tr class="separator:structbrd_1_1dma__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structbrd_1_1pinch__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#structbrd_1_1pinch__cfg">brd::pinch_cfg</a></td></tr>
-<tr class="separator:structbrd_1_1pinch__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structbrd_1_1adc__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#structbrd_1_1adc__cfg">brd::adc_cfg</a></td></tr>
 <tr class="separator:structbrd_1_1adc__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structbrd_1_1adc__timer__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#structbrd_1_1adc__timer__cfg">brd::adc_timer_cfg</a></td></tr>
-<tr class="separator:structbrd_1_1adc__timer__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structbrd_1_1pin__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#structbrd_1_1pin__cfg">brd::pin_cfg</a></td></tr>
-<tr class="separator:structbrd_1_1pin__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structbrd_1_1uart__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#structbrd_1_1uart__cfg">brd::uart_cfg</a></td></tr>
 <tr class="separator:structbrd_1_1uart__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structbrd_1_1hb__timer__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#structbrd_1_1hb__timer__cfg">brd::hb_timer_cfg</a></td></tr>
 <tr class="separator:structbrd_1_1hb__timer__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structbrd_1_1leds__gpio__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#structbrd_1_1leds__gpio__cfg">brd::leds_gpio_cfg</a></td></tr>
-<tr class="separator:structbrd_1_1leds__gpio__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structbrd_1_1leds__timer__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#structbrd_1_1leds__timer__cfg">brd::leds_timer_cfg</a></td></tr>
 <tr class="separator:structbrd_1_1leds__timer__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structbrd_1_1clock__timer__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#structbrd_1_1clock__timer__cfg">brd::clock_timer_cfg</a></td></tr>
-<tr class="separator:structbrd_1_1clock__timer__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -137,22 +128,24 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ad8f944f46629a3408f31c61281867bc5"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#ad8f944f46629a3408f31c61281867bc5">brd::setup_adc</a> (ADC_HandleTypeDef &amp;adc, DMA_HandleTypeDef &amp;dma, adc_cfg cfg)</td></tr>
 <tr class="separator:ad8f944f46629a3408f31c61281867bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00b99305c638e513f917392a2ef8b58f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a00b99305c638e513f917392a2ef8b58f">brd::setup_adc_channel</a> (ADC_ChannelConfTypeDef &amp;channel, pinch_cfg cfg)</td></tr>
-<tr class="separator:a00b99305c638e513f917392a2ef8b58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71c1b07c2041c587e3b779b98a6fdb2c"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a71c1b07c2041c587e3b779b98a6fdb2c">brd::setup_adc_timer</a> (TIM_HandleTypeDef &amp;tim, uint32_t &amp;tim_channel, adc_timer_cfg cfg)</td></tr>
-<tr class="separator:a71c1b07c2041c587e3b779b98a6fdb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab12115b9aa59da10a9900d3f178bf74f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#ab12115b9aa59da10a9900d3f178bf74f">brd::setup_adc_channel</a> (ADC_ChannelConfTypeDef &amp;channel, <a class="el" href="namespacefw_1_1drv.html#structfw_1_1drv_1_1pinch__cfg">fw::drv::pinch_cfg</a> cfg)</td></tr>
+<tr class="separator:ab12115b9aa59da10a9900d3f178bf74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcfd759c13ea20d3380627db4a04405b"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#abcfd759c13ea20d3380627db4a04405b">brd::setup_adc_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
+<tr class="separator:abcfd759c13ea20d3380627db4a04405b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec281dba49bc56b18f637152be994a96"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#aec281dba49bc56b18f637152be994a96">brd::setup_uart</a> (UART_HandleTypeDef &amp;uart, DMA_HandleTypeDef &amp;tx_dma, uart_cfg cfg)</td></tr>
 <tr class="separator:aec281dba49bc56b18f637152be994a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2134b96da02a27276302b544fca6cd8"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#af2134b96da02a27276302b544fca6cd8">brd::setup_hbridge_timers</a> (<a class="el" href="classfw_1_1drv_1_1hbridge.html#structfw_1_1drv_1_1hbridge_1_1handles">fw::drv::hbridge::handles</a> &amp;, hb_timer_cfg cfg)</td></tr>
-<tr class="separator:af2134b96da02a27276302b544fca6cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ef8b97584252f922210496ea9e67e88"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a4ef8b97584252f922210496ea9e67e88">brd::setup_leds_gpio</a> (<a class="el" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">fw::drv::leds::handles</a> &amp;h, leds_gpio_cfg cfg)</td></tr>
-<tr class="separator:a4ef8b97584252f922210496ea9e67e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a828b6c8c0d34d98318b3bd4c4cd820d0"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a828b6c8c0d34d98318b3bd4c4cd820d0">brd::setup_leds_timer</a> (<a class="el" href="classfw_1_1drv_1_1leds.html#structfw_1_1drv_1_1leds_1_1handles">fw::drv::leds::handles</a> &amp;, leds_timer_cfg cfg)</td></tr>
-<tr class="separator:a828b6c8c0d34d98318b3bd4c4cd820d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bcb4f21c5d82cfed4bb89797083711b"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a8bcb4f21c5d82cfed4bb89797083711b">brd::setup_hbridge_timers</a> (TIM_HandleTypeDef &amp;tim, hb_timer_cfg cfg)</td></tr>
+<tr class="separator:a8bcb4f21c5d82cfed4bb89797083711b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa8a0aa8d2283f05f4df1025df04ef8"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#acaa8a0aa8d2283f05f4df1025df04ef8">brd::setup_gpio</a> (const <a class="el" href="namespacefw_1_1drv.html#structfw_1_1drv_1_1pin__cfg">fw::drv::pin_cfg</a> &amp;cfg)</td></tr>
+<tr class="separator:acaa8a0aa8d2283f05f4df1025df04ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8e0c710b8338b584f931c7d68b223b"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#aee8e0c710b8338b584f931c7d68b223b">brd::setup_leds_channel</a> (TIM_HandleTypeDef &amp;tim, <a class="el" href="namespacefw_1_1drv.html#structfw_1_1drv_1_1pinch__cfg">fw::drv::pinch_cfg</a> cfg)</td></tr>
+<tr class="separator:aee8e0c710b8338b584f931c7d68b223b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35df30b532c769a1710a7831b468cd8"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#ae35df30b532c769a1710a7831b468cd8">brd::setup_leds_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
+<tr class="separator:ae35df30b532c769a1710a7831b468cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9296e32249a8960071d5cdded23d94b0"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a9296e32249a8960071d5cdded23d94b0">brd::setup_clk</a> ()</td></tr>
 <tr class="separator:a9296e32249a8960071d5cdded23d94b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19de0f70af58e9859a9b935858d19270"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a19de0f70af58e9859a9b935858d19270">brd::setup_clock_timer</a> (TIM_HandleTypeDef &amp;tim, uint32_t &amp;channel, clock_timer_cfg cfg)</td></tr>
-<tr class="separator:a19de0f70af58e9859a9b935858d19270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0487eb4a18519a538e24eaf8dd0d1b91"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebrd.html#a0487eb4a18519a538e24eaf8dd0d1b91">brd::setup_clock_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
+<tr class="separator:a0487eb4a18519a538e24eaf8dd0d1b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structbrd_1_1dma__cfg" id="structbrd_1_1dma__cfg"></a>
@@ -202,47 +195,6 @@ request</td>
 
 </div>
 </div>
-<a name="structbrd_1_1pinch__cfg" id="structbrd_1_1pinch__cfg"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structbrd_1_1pinch__cfg">&#9670;&nbsp;</a></span>brd::pinch_cfg</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct brd::pinch_cfg</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a10b08d02683d422969de9a3f0438671b"></a>uint8_t</td>
-<td class="fieldname">
-alternate</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a18f6f6bcd7a6a3d24aad9e774f5725ca"></a>uint32_t</td>
-<td class="fieldname">
-channel</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="aa0625b9e2627f4673b7f02b424e7a855"></a>uint32_t</td>
-<td class="fieldname">
-pin</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="afcff2545f3b00b978157daa74bc5f829"></a>GPIO_TypeDef *</td>
-<td class="fieldname">
-port</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <a name="structbrd_1_1adc__cfg" id="structbrd_1_1adc__cfg"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structbrd_1_1adc__cfg">&#9670;&nbsp;</a></span>brd::adc_cfg</h2>
 
@@ -286,70 +238,6 @@ dma</td>
 
 </div>
 </div>
-<a name="structbrd_1_1adc__timer__cfg" id="structbrd_1_1adc__timer__cfg"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structbrd_1_1adc__timer__cfg">&#9670;&nbsp;</a></span>brd::adc_timer_cfg</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct brd::adc_timer_cfg</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a1eeb3eb302ea2f27dda7ff6088fd247e"></a>uint32_t</td>
-<td class="fieldname">
-channel</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="aed71fdc7de5387540b17c84441da5d10"></a>TIM_TypeDef *</td>
-<td class="fieldname">
-timer_instance</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="structbrd_1_1pin__cfg" id="structbrd_1_1pin__cfg"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structbrd_1_1pin__cfg">&#9670;&nbsp;</a></span>brd::pin_cfg</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct brd::pin_cfg</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a9129e3c1f4a943bc9560c9fca273f060"></a>uint8_t</td>
-<td class="fieldname">
-alternate</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a314641b169e27ef77659db2aab970eec"></a>uint16_t</td>
-<td class="fieldname">
-pin</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="ab7457dbbc706866e30590e5f59b84990"></a>GPIO_TypeDef *</td>
-<td class="fieldname">
-port</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <a name="structbrd_1_1uart__cfg" id="structbrd_1_1uart__cfg"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structbrd_1_1uart__cfg">&#9670;&nbsp;</a></span>brd::uart_cfg</h2>
 
@@ -366,7 +254,7 @@ port</td>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structbrd_1_1uart__cfg__coll__graph.svg" width="240" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structbrd_1_1uart__cfg__coll__graph.svg" width="262" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
@@ -390,13 +278,13 @@ irq_priority</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a57341a45c5bca9bf981b3476754843e9"></a><a class="el" href="namespacebrd.html#structbrd_1_1pin__cfg">pin_cfg</a></td>
+<a id="acbe69582703d17ba594872844303ea5f"></a>pin_cfg</td>
 <td class="fieldname">
 rx</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="af0faf847b16a9ae83dd759f12a4e08f9"></a><a class="el" href="namespacebrd.html#structbrd_1_1pin__cfg">pin_cfg</a></td>
+<a id="a9b49f58e02374a4e77d60c25be3e7bc7"></a>pin_cfg</td>
 <td class="fieldname">
 tx</td>
 <td class="fielddoc">
@@ -451,13 +339,13 @@ irq_priority</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a084413555f25b85db54d1e3efe6a9d9b"></a><a class="el" href="namespacebrd.html#structbrd_1_1pinch__cfg">pinch_cfg</a></td>
+<a id="a164773ad0992db8765cd39a2f76833fe"></a>pinch_cfg</td>
 <td class="fieldname">
 mc1</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="af46f7f7ab72ac5223e5cc5a232ed1c71"></a><a class="el" href="namespacebrd.html#structbrd_1_1pinch__cfg">pinch_cfg</a></td>
+<a id="a97f7ae08093b423c7b65f890c40d28c1"></a>pinch_cfg</td>
 <td class="fieldname">
 mc2</td>
 <td class="fielddoc">
@@ -478,43 +366,6 @@ timer_instance</td>
 
 </div>
 </div>
-<a name="structbrd_1_1leds__gpio__cfg" id="structbrd_1_1leds__gpio__cfg"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structbrd_1_1leds__gpio__cfg">&#9670;&nbsp;</a></span>brd::leds_gpio_cfg</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct brd::leds_gpio_cfg</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Collaboration diagram for brd::leds_gpio_cfg:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structbrd_1_1leds__gpio__cfg__coll__graph.svg" width="151" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="ac66091731706c7281054c210b52f4298"></a><a class="el" href="namespacebrd.html#structbrd_1_1pin__cfg">pin_cfg</a></td>
-<td class="fieldname">
-blue</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a2e0a71a85cb6379de8b3963acccb3eea"></a><a class="el" href="namespacebrd.html#structbrd_1_1pin__cfg">pin_cfg</a></td>
-<td class="fieldname">
-red</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <a name="structbrd_1_1leds__timer__cfg" id="structbrd_1_1leds__timer__cfg"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structbrd_1_1leds__timer__cfg">&#9670;&nbsp;</a></span>brd::leds_timer_cfg</h2>
 
@@ -526,18 +377,18 @@ red</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Collaboration diagram for brd::leds_timer_cfg:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div class="textblock"></div><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Collaboration diagram for brd::leds_timer_cfg:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="structbrd_1_1leds__timer__cfg__coll__graph.svg" width="158" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a628f2b3f1e6aa712e506cc19d3502610"></a><a class="el" href="namespacebrd.html#structbrd_1_1pinch__cfg">pinch_cfg</a></td>
+<a id="aa1161a02a86342bd05c1aa86f40090b0"></a>pinch_cfg</td>
 <td class="fieldname">
 green</td>
 <td class="fielddoc">
@@ -549,38 +400,9 @@ timer_instance</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a82bf34faeb43e57d9f502a0483e46a8e"></a><a class="el" href="namespacebrd.html#structbrd_1_1pinch__cfg">pinch_cfg</a></td>
+<a id="a57e107b5b9c3157b230f435d42b0678c"></a>pinch_cfg</td>
 <td class="fieldname">
 yellow</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="structbrd_1_1clock__timer__cfg" id="structbrd_1_1clock__timer__cfg"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structbrd_1_1clock__timer__cfg">&#9670;&nbsp;</a></span>brd::clock_timer_cfg</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct brd::clock_timer_cfg</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="ac2d0e6e5a4019ed66b1032c1799a4f03"></a>uint32_t</td>
-<td class="fieldname">
-channel</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a0247da4c3fe7e3d2a0b4c55e3ad2c696"></a>TIM_TypeDef *</td>
-<td class="fieldname">
-timer_instance</td>
 <td class="fielddoc">
 </td></tr>
 </table>
@@ -593,7 +415,7 @@ timer_instance</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_9c7b6321351e0c9c590a284afe984bb8.html">prototype2</a></li><li class="navelem"><a class="el" href="boards_2prototype2_2setup_8hpp.html">setup.hpp</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 07:13:40 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Dec 24 2023 15:09:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

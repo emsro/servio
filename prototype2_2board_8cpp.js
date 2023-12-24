@@ -1,32 +1,18 @@
 var prototype2_2board_8cpp =
 [
-    [ "adc_set", "structbrd_1_1adc__set.html", "structbrd_1_1adc__set" ],
-    [ "chan_ids", "prototype2_2board_8cpp.html#a5eac53856f52e55f5605a641a2642de3", [
-      [ "CURRENT_CHANNEL", "prototype2_2board_8cpp.html#a5eac53856f52e55f5605a641a2642de3a5bbec12f382df1f3137d00883a81ec46", null ],
-      [ "POSITION_CHANNEL", "prototype2_2board_8cpp.html#a5eac53856f52e55f5605a641a2642de3ae1deef931d03405aa3d23b1b05dcb997", null ],
-      [ "VCC_CHANNEL", "prototype2_2board_8cpp.html#a5eac53856f52e55f5605a641a2642de3ad3691b7a5f7bd25c5a750c984b3d0b3f", null ],
-      [ "TEMP_CHANNEL", "prototype2_2board_8cpp.html#a5eac53856f52e55f5605a641a2642de3af8e9da2a99ae3c6090b47abe0665583a", null ],
-      [ "CURRENT_CHANNEL", "prototype2_2board_8cpp.html#a5eac53856f52e55f5605a641a2642de3a5bbec12f382df1f3137d00883a81ec46", null ],
-      [ "POSITION_CHANNEL", "prototype2_2board_8cpp.html#a5eac53856f52e55f5605a641a2642de3ae1deef931d03405aa3d23b1b05dcb997", null ],
-      [ "VCC_CHANNEL", "prototype2_2board_8cpp.html#a5eac53856f52e55f5605a641a2642de3ad3691b7a5f7bd25c5a750c984b3d0b3f", null ],
-      [ "TEMP_CHANNEL", "prototype2_2board_8cpp.html#a5eac53856f52e55f5605a641a2642de3af8e9da2a99ae3c6090b47abe0665583a", null ]
-    ] ],
     [ "ADC1_2_IRQHandler", "prototype2_2board_8cpp.html#aff4af6b741ab43c7784e08e0e2e50586", null ],
-    [ "adc_pooler_setup", "prototype2_2board_8cpp.html#a364b83030d42f9af6932c5488af855af", null ],
-    [ "clock_setup", "prototype2_2board_8cpp.html#a5c76cab17bb44a3585a8c66c6921fb9d", null ],
-    [ "comms_setup", "prototype2_2board_8cpp.html#a8948aaea7bec814ef780b723e9850750", null ],
-    [ "debug_comms_setup", "prototype2_2board_8cpp.html#a4bf7cdfacff387a700d77eb867e1ee6c", null ],
+    [ "adc_pooler_setup", "prototype2_2board_8cpp.html#aeab9c3e58130fe678be6317674202596", null ],
+    [ "comms_setup", "prototype2_2board_8cpp.html#a344aad245be3df82f6efac9f147ad855", null ],
     [ "DMA1_Channel1_IRQHandler", "prototype2_2board_8cpp.html#abd49de55f82b1a0be3edaaf34dbe4b14", null ],
     [ "DMA1_Channel4_IRQHandler", "prototype2_2board_8cpp.html#a9b75ef44037d7ed50a1078c024ae853a", null ],
     [ "DMA1_Channel5_IRQHandler", "prototype2_2board_8cpp.html#abd16b3391557c4a3a8020d675e2c452f", null ],
-    [ "get_clock_time", "prototype2_2board_8cpp.html#ab92f87dab06eb7f8f61260eaab7b0dee", null ],
     [ "HAL_ADC_ConvCpltCallback", "prototype2_2board_8cpp.html#a14eed1aeca4fd0404c553698e9370c85", null ],
     [ "HAL_ADC_ErrorCallback", "prototype2_2board_8cpp.html#a6540ad5da39d6ceff72603fe4fd2fc1a", null ],
     [ "HAL_TIM_PeriodElapsedCallback", "prototype2_2board_8cpp.html#a641bc903b980920fddc6954a40e4ec51", null ],
     [ "HAL_UART_RxCpltCallback", "prototype2_2board_8cpp.html#a84719ef5a2750117d3d1b6e105d8f148", null ],
     [ "HAL_UART_TxCpltCallback", "prototype2_2board_8cpp.html#a94a249281eebfa3bd9aa3f979cc9f03d", null ],
-    [ "hbridge_setup", "prototype2_2board_8cpp.html#ad6f5e6327d8f5914e94f84b749bd2788", null ],
-    [ "leds_setup", "prototype2_2board_8cpp.html#ad35a0ee8d5c9d0421c676ebcf9d72f41", null ],
+    [ "hbridge_setup", "prototype2_2board_8cpp.html#a3c796edd71ad5c7e1b655dbea3b90a72", null ],
+    [ "leds_setup", "prototype2_2board_8cpp.html#a950a3bee1642710af5cc77d9a64dedfc", null ],
     [ "setup_board", "prototype2_2board_8cpp.html#a6fc0880202e38be65dec8aaa3afd441c", null ],
     [ "setup_core_drivers", "prototype2_2board_8cpp.html#a002f07411dacd8fe0b24e9e7fc66001a", null ],
     [ "setup_debug_comms", "prototype2_2board_8cpp.html#ac8c9e92e49424a9bee745a61d383912d", null ],
@@ -34,10 +20,5 @@ var prototype2_2board_8cpp =
     [ "TIM1_UP_TIM16_IRQHandler", "prototype2_2board_8cpp.html#a9895c719dd7dc3d711d91dc0523f0696", null ],
     [ "USART1_IRQHandler", "prototype2_2board_8cpp.html#a7139cd4baabbbcbab0c1fe6d7d4ae1cc", null ],
     [ "USART2_IRQHandler", "prototype2_2board_8cpp.html#a0ca6fd0e6f77921dd1123539857ba0a8", null ],
-    [ "ADC_SEQUENCE", "prototype2_2board_8cpp.html#a2987537fc9617b14bdf57344630ebeff", null ],
-    [ "CURRENT", "prototype2_2board_8cpp.html#a022e211f686b05615d7fcf5a3aa23702", null ],
-    [ "PERIOD_CB", "prototype2_2board_8cpp.html#a5eb8b962dbbf8882e5ba5dba1c07b1b7", null ],
-    [ "POSITION", "prototype2_2board_8cpp.html#a67b17082dfd2c5b0f74dda6bf8c48574", null ],
-    [ "TEMPERATURE", "prototype2_2board_8cpp.html#a77800049958ad0a8b5ced84c9110fd45", null ],
-    [ "VCC", "prototype2_2board_8cpp.html#a4d34f97fe15cc2ea3aa3fd3b424c635b", null ]
+    [ "TIM3_HANDLE", "prototype2_2board_8cpp.html#a22a288c8136aa5888b1327b7111b3f62", null ]
 ];

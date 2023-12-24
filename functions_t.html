@@ -87,8 +87,8 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 
 <h3><a id="index_t"></a>- t -</h3><ul>
 <li>temp
-: <a class="el" href="structbrd_1_1adc__set.html#a00a002683db665d4da4cd58d7ff3ea12">brd::adc_set</a>
-, <a class="el" href="structconverter.html#ae852a343d1d2c1a77b82527ffbfd51c7">converter</a>
+: <a class="el" href="structconverter.html#ae852a343d1d2c1a77b82527ffbfd51c7">converter</a>
+, <a class="el" href="structfw_1_1drv_1_1adc__set.html#a559077783b463a392535068b633c18af">fw::drv::adc_set</a>
 </li>
 <li>temp_drv
 : <a class="el" href="namespacefw.html#a87bcef8f32df9157b2403535a3d7b59f">fw::dispatcher</a>
@@ -105,26 +105,12 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 , <a class="el" href="classmonitor.html#ac8bd18a479eaa665182b120e884db66c">monitor</a>
 </li>
 <li>tie()
-: <a class="el" href="structbrd_1_1adc__set.html#a360ca32c853f324700cf024db6c1325c">brd::adc_set</a>
-, <a class="el" href="structcore__drivers.html#a9ca166bc9a57890c00ddf5dc6f7fd5ef">core_drivers</a>
-</li>
-<li>tim
-: <a class="el" href="classfw_1_1drv_1_1clock.html#a502c7d75a0fcfb6d421cb649bfadba24">fw::drv::clock::handles</a>
-, <a class="el" href="classfw_1_1drv_1_1leds.html#a20d4ec26dff4a79b88c299e83c16d51e">fw::drv::leds::handles</a>
-</li>
-<li>tim_channel
-: <a class="el" href="classfw_1_1drv_1_1clock.html#a6f2d5af8fbf8f3f3fc9d71e2e08e5519">fw::drv::clock::handles</a>
-</li>
-<li>timer
-: <a class="el" href="classfw_1_1drv_1_1hbridge.html#adafc47d8ad22b33a43f5f64ea23571d4">fw::drv::hbridge::handles</a>
+: <a class="el" href="structcore__drivers.html#a9ca166bc9a57890c00ddf5dc6f7fd5ef">core_drivers</a>
+, <a class="el" href="structfw_1_1drv_1_1adc__set.html#aa0d1e7c011e2431773f684eb4997df7a">fw::drv::adc_set</a>
 </li>
 <li>timer_instance
-: <a class="el" href="namespacebrd.html#aed71fdc7de5387540b17c84441da5d10">brd::adc_timer_cfg</a>
-, <a class="el" href="namespacebrd.html#a0247da4c3fe7e3d2a0b4c55e3ad2c696">brd::clock_timer_cfg</a>
-, <a class="el" href="namespacebrd.html#a20b7458c2ad796a01df797b996471ee7">brd::hb_timer_cfg</a>
+: <a class="el" href="namespacebrd.html#a20b7458c2ad796a01df797b996471ee7">brd::hb_timer_cfg</a>
 , <a class="el" href="namespacebrd.html#a7d9a12070e3c374cc5144118057ef9d6">brd::leds_timer_cfg</a>
-, <a class="el" href="namespaceplt.html#ac47f6b06e0c5c6dae7ddd7e4a8162d09">plt::adc_timer_cfg</a>
-, <a class="el" href="namespaceplt.html#a2dec41c5352e12c2c7940c7520458f31">plt::clock_timer_cfg</a>
 , <a class="el" href="namespaceplt.html#aafe754f02114fd71b2923c9c85bdd2a6">plt::hb_timer_cfg</a>
 , <a class="el" href="namespaceplt.html#a158cf1d670ffad922215d839263a6713">plt::leds_timer_cfg</a>
 </li>
@@ -135,15 +121,14 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 : <a class="el" href="classfw_1_1drv_1_1hbridge.html#a65c1106be909679e27a22db46b934021">fw::drv::hbridge</a>
 </li>
 <li>tx
-: <a class="el" href="namespacebrd.html#af0faf847b16a9ae83dd759f12a4e08f9">brd::uart_cfg</a>
-, <a class="el" href="namespaceplt.html#a04a16babe95cdea616ed4ecab60b0b38">plt::uart_cfg</a>
+: <a class="el" href="namespacebrd.html#a9b49f58e02374a4e77d60c25be3e7bc7">brd::uart_cfg</a>
+, <a class="el" href="namespaceplt.html#a4e6a411e5c263193d8e920631622bbd6">plt::uart_cfg</a>
 </li>
 <li>tx_cplt_irq()
 : <a class="el" href="classfw_1_1drv_1_1cobs__uart.html#a00e524b7ba1bb8c27b2f4b62146b7e6f">fw::drv::cobs_uart</a>
 </li>
 <li>tx_dma
 : <a class="el" href="namespacebrd.html#abba7b519685338500748b3a0ca97d908">brd::uart_cfg</a>
-, <a class="el" href="classfw_1_1drv_1_1cobs__uart.html#add59880fd0e7ebffd6f478a33b4b2eab">fw::drv::cobs_uart::handles</a>
 , <a class="el" href="namespaceplt.html#a4583b5e3e097484b5f4b113cca0c5b96">plt::uart_cfg</a>
 </li>
 <li>tx_dma_irq()
@@ -155,7 +140,7 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Dec 22 2023 07:13:40 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Dec 24 2023 15:09:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

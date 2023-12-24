@@ -21,9 +21,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="namespacebrd.html#structbrd_1_1pinch__cfg" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="8.5,-78.5 8.5,-97.5 93.5,-97.5 93.5,-78.5 8.5,-78.5"/>
-<text text-anchor="middle" x="51" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">brd::pinch_cfg</text>
+<g id="a_node2"><a xlink:href="namespacefw_1_1drv.html#structfw_1_1drv_1_1pinch__cfg" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="0.5,-78.5 0.5,-97.5 101.5,-97.5 101.5,-78.5 0.5,-78.5"/>
+<text text-anchor="middle" x="51" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">fw::drv::pinch_cfg</text>
 </a>
 </g>
 </g>
