@@ -4,9 +4,9 @@ Date: 2023-01-15
 
 ## Status
 
-Accepted
-
 Parent of [7. Chained control loops architecture shall be used](0007-chained-control-loops-architecture-shall-be-used.md)
+
+Superceded by [10. STM32H5 is the main platform](0010-stm32h5-is-the-main-platform.md)
 
 ## Context
 

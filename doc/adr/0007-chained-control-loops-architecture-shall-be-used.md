@@ -4,13 +4,13 @@ Date: 2023-01-15
 
 ## Status
 
-Accepted
-
 Child of [3. STM32G4 is the first platform](0003-stm32g4-is-the-first-platform.md)
 
 Child of [5. Servo shall provide velocity control](0005-servo-shall-provide-velocity-control.md)
 
 Child of [6. Servo shall provide current control](0006-servo-shall-provide-current-control.md)
+
+Superceded by [11. Modular control loop architecture shall be used](0011-modular-control-loop-architecture-shall-be-used.md)
 
 ## Context
 
