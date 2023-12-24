@@ -18,6 +18,8 @@ The servo can communicate and send/receive messages, has full feedback loops, an
 We maintain `Dockerfile` with a setup that can install dependencies of the project and compile the code.
 Use that to install adequate packages in your system, or you can just use that docker file.
 
+`Dockerfile` is stored in this repository: https://github.com/emsro/build-env
+
 # Build
 
 `cmake` is used as build system, however the setup is not trivial.
