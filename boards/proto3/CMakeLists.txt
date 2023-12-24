@@ -13,6 +13,7 @@ target_link_libraries(
           HAL::STM32::H5::ADCEx
           HAL::STM32::H5::CORTEX
           HAL::STM32::H5::DMA
+          HAL::STM32::H5::DMAEx
           HAL::STM32::H5::GPIO
           HAL::STM32::H5::OPAMP
           HAL::STM32::H5::PWR

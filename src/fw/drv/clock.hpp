@@ -12,12 +12,6 @@ namespace fw::drv
 class clock : public clk_interface
 {
 public:
-        struct handles
-        {
-                TIM_HandleTypeDef tim;
-                uint32_t          tim_channel;
-        };
-
         clock() = default;
 
         clock( const clock& )            = delete;
@@ -25,24 +19,20 @@ public:
         clock& operator=( const clock& ) = delete;
         clock& operator=( clock&& )      = delete;
 
-        clock* setup( auto&& setup_f )
+        clock* setup( TIM_HandleTypeDef* tim )
         {
-                if ( setup_f( h_.tim, h_.tim_channel ) != em::SUCCESS ) {
-                        return nullptr;
-                }
-                if ( HAL_TIM_OC_Start( &h_.tim, h_.tim_channel ) != HAL_OK ) {
-                        return nullptr;
-                }
+                tim_ = tim;
+                __HAL_TIM_ENABLE( tim_ );
                 return this;
         }
 
         microseconds get_us() override
         {
-                return microseconds{ __HAL_TIM_GET_COUNTER( &h_.tim ) };
+                return microseconds{ __HAL_TIM_GET_COUNTER( tim_ ) };
         }
 
 private:
-        handles h_;
+        TIM_HandleTypeDef* tim_;
 };
 
 }  // namespace fw::drv

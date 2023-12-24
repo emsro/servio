@@ -17,12 +17,6 @@ constexpr std::size_t comm_buff_size = 128;
 class cobs_uart : public com_interface
 {
 public:
-        struct handles
-        {
-                UART_HandleTypeDef uart   = {};
-                DMA_HandleTypeDef  tx_dma = {};
-        };
-
         cobs_uart() = default;
 
         cobs_uart( const cobs_uart& )            = delete;
@@ -30,27 +24,26 @@ public:
         cobs_uart& operator=( const cobs_uart& ) = delete;
         cobs_uart& operator=( cobs_uart&& )      = delete;
 
-        cobs_uart* setup( auto&& setup_f )
+        cobs_uart* setup( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma )
         {
-                if ( setup_f( h_ ) != em::SUCCESS ) {
-                        return nullptr;
-                }
+                uart_   = &uart;
+                tx_dma_ = &tx_dma;
                 return this;
         }
 
         void tx_dma_irq()
         {
-                HAL_DMA_IRQHandler( &h_.tx_dma );
+                HAL_DMA_IRQHandler( tx_dma_ );
         }
 
         void uart_irq()
         {
-                HAL_UART_IRQHandler( &h_.uart );
+                HAL_UART_IRQHandler( uart_ );
         }
 
         void rx_cplt_irq( UART_HandleTypeDef* huart )
         {
-                if ( huart != &h_.uart ) {
+                if ( huart != uart_ ) {
                         return;
                 }
 
@@ -72,27 +65,28 @@ public:
 
         void tx_cplt_irq( UART_HandleTypeDef* huart )
         {
-                if ( huart != &h_.uart ) {
+                if ( huart != uart_ ) {
                         return;
                 }
                 tx_done_ = true;
         }
 
-        com_res load_message( em::view< std::byte* > data );
+        com_res load_message( em::view< std::byte* > data ) override;
 
-        em::result start()
+        em::result start() override
         {
-                if ( HAL_UART_Receive_IT(
-                         &h_.uart, reinterpret_cast< uint8_t* >( &rx_byte_ ), 1 ) != HAL_OK ) {
+                if ( HAL_UART_Receive_IT( uart_, reinterpret_cast< uint8_t* >( &rx_byte_ ), 1 ) !=
+                     HAL_OK ) {
                         return em::ERROR;
                 }
                 return em::SUCCESS;
         }
 
-        em::result send( em::view< const std::byte* > data );
+        em::result send( em::view< const std::byte* > data ) override;
 
 private:
-        handles h_;
+        UART_HandleTypeDef* uart_   = {};
+        DMA_HandleTypeDef*  tx_dma_ = {};
 
         volatile bool                                tx_done_      = true;
         uint16_t                                     current_size_ = 0;

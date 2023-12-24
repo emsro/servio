@@ -1,5 +1,6 @@
 #include "base.hpp"
 #include "drv_interfaces.hpp"
+#include "fw/drv/defs.hpp"
 #include "platform.hpp"
 
 #include <cstdint>
@@ -15,39 +16,39 @@ namespace fw::drv
 class leds : public leds_interface
 {
 public:
-        struct handles
-        {
-                GPIO_TypeDef* red_peripheral;
-                uint16_t      red_pin;
-
-                GPIO_TypeDef* blue_peripheral;
-                uint16_t      blue_pin;
-
-                TIM_HandleTypeDef tim;
-
-                uint32_t yellow_channel;
-                uint32_t green_channel;
-        };
-
         leds() = default;
 
-        leds* setup( auto&& setup_f )
+        leds* setup(
+            pin_cfg            red,
+            pin_cfg            blue,
+            TIM_HandleTypeDef& tim,
+            pinch_cfg          yellow,
+            pinch_cfg          green )
         {
-                if ( setup_f( h_ ) != em::SUCCESS ) {
-                        return nullptr;
-                }
+                red_    = red;
+                blue_   = blue;
+                tim_    = &tim;
+                yellow_ = yellow;
+                green_  = green;
                 return this;
         }
 
         em::result start();
 
-        void force_red_led();
+        void force_red_led() override;
 
-        void update( const leds_vals& leds );
+        void update( const leds_vals& leds ) override;
 
 private:
-        bool    red_forced_ = false;
-        handles h_;
+        bool red_forced_ = false;
+
+        pin_cfg red_;
+        pin_cfg blue_;
+
+        TIM_HandleTypeDef* tim_;
+
+        pinch_cfg yellow_;
+        pinch_cfg green_;
 };
 
 }  // namespace fw::drv

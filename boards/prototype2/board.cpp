@@ -1,126 +1,31 @@
 #include "brd.hpp"
 #include "core_drivers.hpp"
 #include "emlabcpp/result.h"
-#include "fw/drv/adc_pooler.hpp"
+#include "fw/drv/adc_pooler_def.hpp"
 #include "fw/drv/clock.hpp"
 #include "fw/drv/cobs_uart.hpp"
+#include "fw/drv/leds.hpp"
 #include "fw/util.hpp"
 #include "setup.hpp"
 
 namespace brd
 {
-enum chan_ids
-{
-        CURRENT_CHANNEL,
-        POSITION_CHANNEL,
-        VCC_CHANNEL,
-        TEMP_CHANNEL,
-};
 
-struct adc_set
-{
-        using id_type = chan_ids;
-
-        fw::drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >  current;
-        fw::drv::adc_channel_with_callback< POSITION_CHANNEL > position;
-        fw::drv::adc_channel< VCC_CHANNEL >                    vcc;
-        fw::drv::adc_channel< TEMP_CHANNEL >                   temp;
-
-        auto tie()
-        {
-                return std::tie( current, position, vcc, temp );
-        }
-};
-
-fw::drv::clock                 CLOCK{};
-fw::drv::adc_pooler< adc_set > ADC_POOLER{};
-fw::drv::cobs_uart             COMMS{};
-fw::drv::cobs_uart             DEBUG_COMMS{};
-fw::drv::hbridge               HBRIDGE{};
-fw::drv::leds                  LEDS;
-
-struct : period_cb_interface
-{
-        void on_period_irq()
-        {
-                ADC_POOLER.on_period_irq();
-        }
-} PERIOD_CB;
-
-struct : vcc_interface
-{
-        status get_status() const override
-        {
-                return ADC_POOLER->vcc.get_status();
-        }
-
-        uint32_t get_vcc() const override
-        {
-                return ADC_POOLER->vcc.last_value;
-        }
-} VCC;
-
-struct : temperature_interface
-{
-        status get_status() const override
-        {
-                return ADC_POOLER->temp.get_status();
-        }
-
-        uint32_t get_temperature() const override
-        {
-                return ADC_POOLER->temp.last_value;
-        }
-} TEMPERATURE;
-
-struct : position_interface
-{
-        status get_status() const override
-        {
-                return ADC_POOLER->position.get_status();
-        }
-
-        uint32_t get_position() const override
-        {
-                return ADC_POOLER->position.last_value;
-        }
-
-        void set_position_callback( position_cb_interface& cb ) override
-        {
-                ADC_POOLER->position.callback = &cb;
-        }
-        position_cb_interface& get_position_callback() const override
-        {
-                return *ADC_POOLER->position.callback;
-        }
-} POSITION;
-
-struct : current_interface
-{
-        status get_status() const override
-        {
-                return ADC_POOLER->current.get_status();
-        }
-
-        void clear_status() override
-        {
-                ADC_POOLER->current.clear_status();
-        }
-
-        uint32_t get_current() const override
-        {
-                return ADC_POOLER->current.last_value;
-        }
-
-        void set_current_callback( current_cb_interface& cb ) override
-        {
-                ADC_POOLER->current.callback = &cb;
-        }
-        current_cb_interface& get_current_callback() const override
-        {
-                return *ADC_POOLER->current.callback;
-        }
-} CURRENT;
+ADC_HandleTypeDef  ADC_HANDLE{};
+DMA_HandleTypeDef  ADC_DMA_HANDLE{};
+TIM_HandleTypeDef  ADC_TIM_HANDLE{};
+TIM_HandleTypeDef  TIM2_HANDLE{};
+fw::drv::clock     CLOCK{};
+UART_HandleTypeDef UART2_HANDLE{};
+DMA_HandleTypeDef  UART2_DMA_HANDLE{};
+fw::drv::cobs_uart COMMS{};
+UART_HandleTypeDef UART1_HANDLE{};
+DMA_HandleTypeDef  UART1_DMA_HANDLE{};
+fw::drv::cobs_uart DEBUG_COMMS{};
+TIM_HandleTypeDef  TIM1_HANDLE{};
+fw::drv::hbridge   HBRIDGE{};
+TIM_HandleTypeDef  TIM3_HANDLE{};
+fw::drv::leds      LEDS{};
 
 }  // namespace brd
 
@@ -153,11 +58,11 @@ void DMA1_Channel5_IRQHandler( void )
 
 [[gnu::flatten]] void DMA1_Channel1_IRQHandler()
 {
-        brd::ADC_POOLER.dma_irq();
+        fw::drv::ADC_POOLER.dma_irq();
 }
 [[gnu::flatten]] void ADC1_2_IRQHandler()
 {
-        brd::ADC_POOLER.adc_irq();
+        fw::drv::ADC_POOLER.adc_irq();
 }
 
 void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
@@ -177,11 +82,11 @@ void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
 }
 [[gnu::flatten]] void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
-        brd::ADC_POOLER.adc_conv_cplt_irq( h );
+        fw::drv::ADC_POOLER.adc_conv_cplt_irq( h );
 }
 [[gnu::flatten]] void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
 {
-        brd::ADC_POOLER.adc_error_irq( h );
+        fw::drv::ADC_POOLER.adc_error_irq( h );
 }
 }
 
@@ -198,34 +103,7 @@ em::result setup_board()
         return em::SUCCESS;
 }
 
-em::result clock_setup( TIM_HandleTypeDef& tim, uint32_t& chan )
-{
-        __HAL_RCC_TIM2_CLK_ENABLE();
-        return setup_clock_timer(
-            tim,
-            chan,
-            clock_timer_cfg{
-                .timer_instance = TIM2,
-                .channel        = TIM_CHANNEL_1,
-            } );
-}
-
-auto ADC_SEQUENCE = std::array{
-    CURRENT_CHANNEL,
-    POSITION_CHANNEL,
-    CURRENT_CHANNEL,
-    VCC_CHANNEL,
-    CURRENT_CHANNEL,
-    POSITION_CHANNEL,
-    CURRENT_CHANNEL,
-    TEMP_CHANNEL,
-};
-
-em::result adc_pooler_setup(
-    ADC_HandleTypeDef& adc,
-    DMA_HandleTypeDef& dma,
-    TIM_HandleTypeDef& tim,
-    uint32_t&          tim_channel )
+fw::drv::adc_pooler< fw::drv::adc_set >* adc_pooler_setup()
 {
         __HAL_RCC_ADC12_CLK_ENABLE();
         __HAL_RCC_DMA1_CLK_ENABLE();
@@ -233,37 +111,37 @@ em::result adc_pooler_setup(
         __HAL_RCC_GPIOA_CLK_ENABLE();
         __HAL_RCC_TIM4_CLK_ENABLE();
         setup_adc_channel(
-            ADC_POOLER->current.chconf,
-            pinch_cfg{
+            fw::drv::ADC_POOLER->current.chconf,
+            fw::drv::pinch_cfg{
                 .channel = ADC_CHANNEL_4,
                 .pin     = GPIO_PIN_3,
                 .port    = GPIOA,
             } );
         setup_adc_channel(
-            ADC_POOLER->position.chconf,
-            pinch_cfg{
+            fw::drv::ADC_POOLER->position.chconf,
+            fw::drv::pinch_cfg{
                 .channel = ADC_CHANNEL_1,
                 .pin     = GPIO_PIN_0,
                 .port    = GPIOA,
             } );
         setup_adc_channel(
-            ADC_POOLER->vcc.chconf,
-            pinch_cfg{
+            fw::drv::ADC_POOLER->vcc.chconf,
+            fw::drv::pinch_cfg{
                 .channel = ADC_CHANNEL_2,
                 .pin     = GPIO_PIN_1,
                 .port    = GPIOA,
             } );
         setup_adc_channel(
-            ADC_POOLER->temp.chconf,
-            pinch_cfg{
+            fw::drv::ADC_POOLER->temp.chconf,
+            fw::drv::pinch_cfg{
                 .channel = ADC_CHANNEL_TEMPSENSOR_ADC1,
                 .pin     = 0,
                 .port    = nullptr,
             } );
-        return em::worst_of(
+        em::result res = em::worst_of(
             setup_adc(
-                adc,
-                dma,
+                ADC_HANDLE,
+                ADC_DMA_HANDLE,
                 adc_cfg{
                     .adc_instance     = ADC1,
                     .adc_irq_priority = 0,
@@ -276,162 +154,170 @@ em::result adc_pooler_setup(
                             .priority     = DMA_PRIORITY_VERY_HIGH,
                         },
                 } ),
-            setup_adc_timer(
-                tim,
-                tim_channel,
-                adc_timer_cfg{
-                    .timer_instance = TIM4,
-                    .channel        = TIM_CHANNEL_1,
-                } ) );
+            setup_adc_timer( ADC_TIM_HANDLE, TIM4 ) );
+
+        if ( res != em::SUCCESS ) {
+                return nullptr;
+        }
+
+        return fw::drv::ADC_POOLER.setup(
+            fw::drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, ADC_TIM_HANDLE );
 }
 
-em::result hbridge_setup( fw::drv::hbridge::handles& h )
+fw::drv::hbridge* hbridge_setup()
 {
         __HAL_RCC_TIM1_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();
-        return setup_hbridge_timers(
-            h,
-            hb_timer_cfg{
-                .timer_instance = TIM1,
-                .period         = std::numeric_limits< uint16_t >::max() / 8,
-                .irq            = TIM1_UP_TIM16_IRQn,
-                .irq_priority   = 0,
-                .mc1 =
-                    pinch_cfg{
-                        .channel   = TIM_CHANNEL_1,
-                        .pin       = GPIO_PIN_8,
-                        .port      = GPIOA,
-                        .alternate = GPIO_AF6_TIM1,
-                    },
-                .mc2 =
-                    pinch_cfg{
-                        .channel   = TIM_CHANNEL_2,
-                        .pin       = GPIO_PIN_9,
-                        .port      = GPIOA,
-                        .alternate = GPIO_AF6_TIM1,
-                    },
-            } );
+        hb_timer_cfg cfg{
+            .timer_instance = TIM1,
+            .period         = std::numeric_limits< uint16_t >::max() / 8,
+            .irq            = TIM1_UP_TIM16_IRQn,
+            .irq_priority   = 0,
+            .mc1 =
+                fw::drv::pinch_cfg{
+                    .channel   = TIM_CHANNEL_1,
+                    .pin       = GPIO_PIN_8,
+                    .port      = GPIOA,
+                    .alternate = GPIO_AF6_TIM1,
+                },
+            .mc2 =
+                fw::drv::pinch_cfg{
+                    .channel   = TIM_CHANNEL_2,
+                    .pin       = GPIO_PIN_9,
+                    .port      = GPIOA,
+                    .alternate = GPIO_AF6_TIM1,
+                },
+        };
+        if ( setup_hbridge_timers( TIM1_HANDLE, cfg ) != em::SUCCESS ) {
+                return nullptr;
+        }
+
+        return HBRIDGE.setup( &TIM1_HANDLE, cfg.mc1.channel, cfg.mc2.channel );
 }
 
-em::result comms_setup( fw::drv::cobs_uart::handles& h )
+fw::drv::cobs_uart* comms_setup()
 {
         __HAL_RCC_DMAMUX1_CLK_ENABLE();
         __HAL_RCC_DMA1_CLK_ENABLE();
         __HAL_RCC_USART2_CLK_ENABLE();
         __HAL_RCC_GPIOB_CLK_ENABLE();
-        return setup_uart(
-            h.uart,
-            h.tx_dma,
-            uart_cfg{
-                .uart_instance = USART2,
-                .baudrate      = 115200,
-                .irq           = USART2_IRQn,
-                .irq_priority  = 1,
-                .rx =
-                    pin_cfg{
-                        .pin       = GPIO_PIN_4,
-                        .port      = GPIOB,
-                        .alternate = GPIO_AF7_USART2,
-                    },
-                .tx =
-                    pin_cfg{
-                        .pin       = GPIO_PIN_3,
-                        .port      = GPIOB,
-                        .alternate = GPIO_AF7_USART2,
-                    },
-                .tx_dma =
-                    dma_cfg{
-                        .instance     = DMA1_Channel4,
-                        .irq          = DMA1_Channel4_IRQn,
-                        .irq_priority = 1,
-                        .request      = DMA_REQUEST_USART2_TX,
-                        .priority     = DMA_PRIORITY_LOW,
-                    },
-            } );
+
+        uart_cfg cfg{
+            .uart_instance = USART2,
+            .baudrate      = 115200,
+            .irq           = USART2_IRQn,
+            .irq_priority  = 1,
+            .rx =
+                fw::drv::pin_cfg{
+                    .pin       = GPIO_PIN_4,
+                    .port      = GPIOB,
+                    .alternate = GPIO_AF7_USART2,
+                },
+            .tx =
+                fw::drv::pin_cfg{
+                    .pin       = GPIO_PIN_3,
+                    .port      = GPIOB,
+                    .alternate = GPIO_AF7_USART2,
+                },
+            .tx_dma =
+                dma_cfg{
+                    .instance     = DMA1_Channel4,
+                    .irq          = DMA1_Channel4_IRQn,
+                    .irq_priority = 1,
+                    .request      = DMA_REQUEST_USART2_TX,
+                    .priority     = DMA_PRIORITY_LOW,
+                },
+        };
+
+        if ( setup_uart( UART2_HANDLE, UART2_DMA_HANDLE, cfg ) != em::SUCCESS ) {
+                return nullptr;
+        }
+
+        return COMMS.setup( UART2_HANDLE, UART2_DMA_HANDLE );
 }
 
-em::result debug_comms_setup( fw::drv::cobs_uart::handles& h )
+com_interface* setup_debug_comms()
 {
         __HAL_RCC_DMA1_CLK_ENABLE();
         __HAL_RCC_DMAMUX1_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();
         __HAL_RCC_GPIOB_CLK_ENABLE();
         __HAL_RCC_USART1_CLK_ENABLE();
-        return setup_uart(
-            h.uart,
-            h.tx_dma,
-            uart_cfg{
-                .uart_instance = USART1,
-                .baudrate      = 460800,
-                .irq           = USART1_IRQn,
-                .irq_priority  = 1,
-                .rx =
-                    pin_cfg{
-                        .pin       = GPIO_PIN_10,
-                        .port      = GPIOA,
-                        .alternate = GPIO_AF7_USART1,
-                    },
-                .tx =
-                    pin_cfg{
-                        .pin       = GPIO_PIN_6,
-                        .port      = GPIOB,
-                        .alternate = GPIO_AF7_USART1,
-                    },
-                .tx_dma =
-                    dma_cfg{
-                        .instance     = DMA1_Channel5,
-                        .irq          = DMA1_Channel5_IRQn,
-                        .irq_priority = 1,
-                        .request      = DMA_REQUEST_USART1_TX,
-                        .priority     = DMA_PRIORITY_LOW,
-                    },
-            } );
+
+        uart_cfg cfg{
+            .uart_instance = USART1,
+            .baudrate      = 460800,
+            .irq           = USART1_IRQn,
+            .irq_priority  = 1,
+            .rx =
+                fw::drv::pin_cfg{
+                    .pin       = GPIO_PIN_10,
+                    .port      = GPIOA,
+                    .alternate = GPIO_AF7_USART1,
+                },
+            .tx =
+                fw::drv::pin_cfg{
+                    .pin       = GPIO_PIN_6,
+                    .port      = GPIOB,
+                    .alternate = GPIO_AF7_USART1,
+                },
+            .tx_dma =
+                dma_cfg{
+                    .instance     = DMA1_Channel5,
+                    .irq          = DMA1_Channel5_IRQn,
+                    .irq_priority = 1,
+                    .request      = DMA_REQUEST_USART1_TX,
+                    .priority     = DMA_PRIORITY_LOW,
+                },
+        };
+
+        if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != em::SUCCESS ) {
+                return nullptr;
+        }
+
+        return DEBUG_COMMS.setup( UART1_HANDLE, UART1_DMA_HANDLE );
 }
 
-com_interface* setup_debug_comms()
-{
-        return DEBUG_COMMS.setup( debug_comms_setup );
-}
 
-em::result leds_setup( fw::drv::leds::handles& h )
+fw::drv::leds* leds_setup()
 {
         __HAL_RCC_GPIOF_CLK_ENABLE();
         __HAL_RCC_GPIOB_CLK_ENABLE();
         __HAL_RCC_TIM3_CLK_ENABLE();
-        return em::worst_of(
-            setup_leds_gpio(
-                h,
-                leds_gpio_cfg{
-                    .red =
-                        pin_cfg{
-                            .pin  = GPIO_PIN_0,
-                            .port = GPIOF,
-                        },
-                    .blue =
-                        pin_cfg{
-                            .pin  = GPIO_PIN_1,
-                            .port = GPIOF,
-                        },
-                } ),
-            setup_leds_timer(
-                h,
-                leds_timer_cfg{
-                    .timer_instance = TIM3,
-                    .yellow =
-                        pinch_cfg{
-                            .channel   = TIM_CHANNEL_2,
-                            .pin       = GPIO_PIN_5,
-                            .port      = GPIOB,
-                            .alternate = GPIO_AF2_TIM3,
-                        },
-                    .green =
-                        pinch_cfg{
-                            .channel   = TIM_CHANNEL_3,
-                            .pin       = GPIO_PIN_0,
-                            .port      = GPIOB,
-                            .alternate = GPIO_AF2_TIM3,
-                        },
-                } ) );
+
+        fw::drv::pin_cfg red{
+            .pin  = GPIO_PIN_0,
+            .port = GPIOF,
+        };
+        fw::drv::pin_cfg blue{
+            .pin  = GPIO_PIN_1,
+            .port = GPIOF,
+        };
+        fw::drv::pinch_cfg yellow{
+            .channel   = TIM_CHANNEL_2,
+            .pin       = GPIO_PIN_5,
+            .port      = GPIOB,
+            .alternate = GPIO_AF2_TIM3,
+        };
+        fw::drv::pinch_cfg green{
+            .channel   = TIM_CHANNEL_3,
+            .pin       = GPIO_PIN_0,
+            .port      = GPIOB,
+            .alternate = GPIO_AF2_TIM3,
+        };
+
+        em::result res = em::worst_of(
+            setup_gpio( red ),
+            setup_gpio( blue ),
+            setup_leds_timer( TIM3_HANDLE, TIM3 ),
+            setup_leds_channel( TIM3_HANDLE, yellow ),
+            setup_leds_channel( TIM3_HANDLE, green ) );
+
+        if ( res == em::SUCCESS ) {
+                return LEDS.setup( red, blue, TIM3_HANDLE, yellow, green );
+        }
+
+        return nullptr;
 }
 
 em::result start_callback( core_drivers& cdrv )
@@ -439,7 +325,7 @@ em::result start_callback( core_drivers& cdrv )
 
         if ( cdrv.position != nullptr ) {
                 // this implies that adc_poolerition is OK
-                if ( ADC_POOLER.start() != em::SUCCESS ) {
+                if ( fw::drv::ADC_POOLER.start() != em::SUCCESS ) {
                         return em::ERROR;
                 }
         }
@@ -462,29 +348,29 @@ em::result start_callback( core_drivers& cdrv )
         return em::SUCCESS;
 }
 
-microseconds get_clock_time()
-{
-        return CLOCK.get_us();
-}
-
 core_drivers setup_core_drivers()
 {
-        fw::drv::hbridge*               hb = HBRIDGE.setup( hbridge_setup );
-        fw::drv::adc_pooler< adc_set >* adc_pooler =
-            ADC_POOLER.setup( ADC_SEQUENCE, adc_pooler_setup );
-        fw::drv::leds* leds = LEDS.setup( leds_setup );
+        __HAL_RCC_TIM2_CLK_ENABLE();
+        if ( setup_clock_timer( TIM2_HANDLE, TIM2 ) != em::SUCCESS ) {
+                fw::stop_exec();  // TODO: better error handling
+        }
+
+        fw::drv::hbridge* hb = hbridge_setup();
+
+        auto*          adc_pooler = adc_pooler_setup();
+        fw::drv::leds* leds       = leds_setup();
         fw::install_stop_callback( leds );
 
         return core_drivers{
-            .clock       = CLOCK.setup( clock_setup ),
-            .position    = adc_pooler == nullptr ? nullptr : &POSITION,
-            .current     = adc_pooler == nullptr ? nullptr : &CURRENT,
-            .vcc         = adc_pooler == nullptr ? nullptr : &VCC,
-            .temperature = adc_pooler == nullptr ? nullptr : &TEMPERATURE,
-            .period_cb   = adc_pooler == nullptr ? nullptr : &PERIOD_CB,
+            .clock       = CLOCK.setup( &TIM2_HANDLE ),
+            .position    = adc_pooler == nullptr ? nullptr : &fw::drv::ADC_POSITION,
+            .current     = adc_pooler == nullptr ? nullptr : &fw::drv::ADC_CURRENT,
+            .vcc         = adc_pooler == nullptr ? nullptr : &fw::drv::ADC_VCC,
+            .temperature = adc_pooler == nullptr ? nullptr : &fw::drv::ADC_TEMPERATURE,
+            .period_cb   = adc_pooler == nullptr ? nullptr : &fw::drv::ADC_PERIOD_CB,
             .motor       = hb,
             .period      = hb,
-            .comms       = COMMS.setup( comms_setup ),
+            .comms       = comms_setup(),
             .leds        = leds,
             .start_cb    = start_callback,
         };

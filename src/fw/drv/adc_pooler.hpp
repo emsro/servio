@@ -143,20 +143,22 @@ struct adc_pooler
 
         adc_pooler() = default;
 
-        adc_pooler* setup( em::view< const id_type* > seq, auto&& setup_f )
+        adc_pooler* setup(
+            em::view< const id_type* > seq,
+            ADC_HandleTypeDef&         adc,
+            DMA_HandleTypeDef&         dma,
+            TIM_HandleTypeDef&         tim )
         {
-                if ( setup_f( adc_, dma_, tim_, tim_channel_ ) != em::SUCCESS ) {
-                        return nullptr;
-                }
+                adc_      = &adc;
+                dma_      = &dma;
+                tim_      = &tim;
                 sequence_ = seq;
                 return this;
         }
 
         em::result start()
         {
-                if ( HAL_TIM_OC_Start( &tim_, tim_channel_ ) != HAL_OK ) {
-                        return em::ERROR;
-                }
+                __HAL_TIM_ENABLE( tim_ );
                 return em::SUCCESS;
         }
 
@@ -171,17 +173,17 @@ struct adc_pooler
 
         void adc_irq()
         {
-                HAL_ADC_IRQHandler( &adc_ );
+                HAL_ADC_IRQHandler( adc_ );
         }
 
         void dma_irq()
         {
-                HAL_DMA_IRQHandler( &dma_ );
+                HAL_DMA_IRQHandler( dma_ );
         }
 
         void adc_error_irq( ADC_HandleTypeDef* h )
         {
-                if ( h != &adc_ ) {
+                if ( h != adc_ ) {
                         return;
                 }
                 std::ignore = h;
@@ -190,13 +192,13 @@ struct adc_pooler
 
         [[gnu::flatten]] void adc_conv_cplt_irq( ADC_HandleTypeDef* h )
         {
-                if ( h != &adc_ ) {
+                if ( h != adc_ ) {
                         return;
                 }
                 const auto active_id = sequence_[sequence_i_];
                 with( active_id, [&]( auto& item ) {
                         // TODO: error handling?
-                        item.conv_cplt( adc_ );
+                        item.conv_cplt( *adc_ );
                 } );
         }
 
@@ -205,14 +207,14 @@ struct adc_pooler
                 auto active_id = sequence_[sequence_i_];
 
                 with( active_id, [&]( auto& item ) {
-                        item.period_stop( adc_ );
+                        item.period_stop( *adc_ );
                 } );
 
                 sequence_i_ = ( sequence_i_ + 1 ) % sequence_.size();
                 active_id   = sequence_[sequence_i_];
 
                 with( active_id, [&]( auto& item ) {
-                        item.period_start( adc_ );
+                        item.period_start( *adc_ );
                 } );
         }
 
@@ -226,10 +228,9 @@ private:
                 } );
         }
 
-        ADC_HandleTypeDef adc_ = {};
-        DMA_HandleTypeDef dma_ = {};
-        TIM_HandleTypeDef tim_ = {};
-        uint32_t          tim_channel_;
+        ADC_HandleTypeDef* adc_ = {};
+        DMA_HandleTypeDef* dma_ = {};
+        TIM_HandleTypeDef* tim_ = {};
 
         std::size_t sequence_i_ = 0;
 

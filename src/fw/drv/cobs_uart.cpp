@@ -41,7 +41,7 @@ em::result cobs_uart::send( em::view< const std::byte* > data )
 
         // TODO: problematic cast
         if ( HAL_UART_Transmit_DMA(
-                 &h_.uart,
+                 uart_,
                  reinterpret_cast< uint8_t* >( otmp_.begin() ),
                  static_cast< uint16_t >( used.size() + 1 ) ) != HAL_OK ) {
                 return em::ERROR;

@@ -48,9 +48,6 @@ em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart
         HAL_GPIO_Init( cfg.rx.port, &rx_init );
         HAL_GPIO_Init( cfg.tx.port, &tx_init );
 
-        HAL_NVIC_SetPriority( cfg.tx_dma.irq, cfg.tx_dma.irq_priority, 0 );
-        HAL_NVIC_EnableIRQ( cfg.tx_dma.irq );
-
         HAL_NVIC_SetPriority( cfg.irq, cfg.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.irq );
 

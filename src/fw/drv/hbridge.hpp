@@ -17,14 +17,6 @@ inline empty_period_cb EMPTY_PERIOD_CB;
 class hbridge : public pwm_motor_interface, public period_interface
 {
 public:
-        // HAL handles used by the driver
-        struct handles
-        {
-                TIM_HandleTypeDef timer;
-                uint32_t          mc1_channel;
-                uint32_t          mc2_channel;
-        };
-
         hbridge()
           : period_cb_( &EMPTY_PERIOD_CB )
         {
@@ -36,14 +28,13 @@ public:
         hbridge& operator=( const hbridge& ) = delete;
         hbridge& operator=( hbridge&& )      = delete;
 
-        hbridge* setup( auto&& setup_f )
+        hbridge* setup( TIM_HandleTypeDef* tim, uint32_t mc1_channel, uint32_t mc2_channel )
         {
+                tim_         = tim;
+                mc1_channel_ = mc1_channel;
+                mc2_channel_ = mc2_channel;
 
-                if ( setup_f( h_ ) != em::SUCCESS ) {
-                        return nullptr;
-                }
-
-                timer_max_ = h_.timer.Init.Period;
+                timer_max_ = tim_->Init.Period;
 
                 set_power( 0 );
 
@@ -52,7 +43,7 @@ public:
 
         void timer_period_irq( TIM_HandleTypeDef* h )
         {
-                if ( h != &h_.timer ) {
+                if ( h != tim_ ) {
                         return;
                 }
                 period_cb_->on_period_irq();
@@ -60,7 +51,7 @@ public:
 
         void timer_irq()
         {
-                HAL_TIM_IRQHandler( &h_.timer );
+                HAL_TIM_IRQHandler( tim_ );
         }
 
         void                 set_period_callback( period_cb_interface& ) override;
@@ -87,8 +78,10 @@ public:
 
 private:
         period_cb_interface* period_cb_;
-        uint32_t             timer_max_ = 0;
-        handles              h_{};
+        uint32_t             timer_max_   = 0;
+        TIM_HandleTypeDef*   tim_         = {};
+        uint32_t             mc1_channel_ = 0;
+        uint32_t             mc2_channel_ = 0;
 };
 
 }  // namespace fw::drv

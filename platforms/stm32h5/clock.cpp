@@ -12,8 +12,6 @@ namespace plt
 em::result setup_clk()
 {
 
-        HAL_PWREx_DisableUCPDDeadBattery();
-
         RCC_OscInitTypeDef       RCC_OscInitStruct = {};
         RCC_ClkInitTypeDef       RCC_ClkInitStruct = {};
         RCC_PeriphCLKInitTypeDef PeriphClkInit     = {};

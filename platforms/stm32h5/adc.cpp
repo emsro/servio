@@ -5,7 +5,7 @@
 namespace plt
 {
 
-void setup_adc_channel( ADC_ChannelConfTypeDef& channel, pinch_cfg cfg )
+void setup_adc_channel( ADC_ChannelConfTypeDef& channel, fw::drv::pinch_cfg cfg )
 {
         channel = ADC_ChannelConfTypeDef{
             .Channel      = cfg.channel,
@@ -29,7 +29,7 @@ void setup_adc_channel( ADC_ChannelConfTypeDef& channel, pinch_cfg cfg )
 em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg )
 {
         adc.Instance                  = cfg.adc_instance;
-        adc.Init.ClockPrescaler       = ADC_CLOCK_SYNC_PCLK_DIV2;
+        adc.Init.ClockPrescaler       = ADC_CLOCK_ASYNC_DIV1;
         adc.Init.Resolution           = ADC_RESOLUTION_12B;
         adc.Init.DataAlign            = ADC_DATAALIGN_RIGHT;
         adc.Init.ScanConvMode         = ADC_SCAN_DISABLE;
@@ -39,24 +39,33 @@ em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cf
         adc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_RISING;
         adc.Init.Overrun              = ADC_OVR_DATA_PRESERVED;
 
-        dma.Instance       = cfg.dma.instance;
-        dma.Init.Request   = cfg.dma.request;
-        dma.Init.Direction = DMA_PERIPH_TO_MEMORY;
-        dma.Init.Mode      = DMA_NORMAL;
-        dma.Init.Priority  = cfg.dma.priority;
+        dma.Instance                   = cfg.dma.instance;
+        dma.Init.Request               = cfg.dma.request;
+        dma.Init.Direction             = DMA_PERIPH_TO_MEMORY;
+        dma.Init.SrcInc                = DMA_SINC_FIXED;
+        dma.Init.DestInc               = DMA_DINC_FIXED;
+        dma.Init.SrcDataWidth          = DMA_SRC_DATAWIDTH_BYTE;
+        dma.Init.DestDataWidth         = DMA_DEST_DATAWIDTH_BYTE;
+        dma.Init.SrcBurstLength        = 1;
+        dma.Init.DestBurstLength       = 1;
+        dma.Init.TransferAllocatedPort = DMA_SRC_ALLOCATED_PORT0 | DMA_DEST_ALLOCATED_PORT0;
+        dma.Init.TransferEventMode     = DMA_TCEM_BLOCK_TRANSFER;
+        dma.Init.Mode                  = DMA_NORMAL;
+        dma.Init.Priority              = cfg.dma.priority;
 
         if ( HAL_ADC_Init( &adc ) != HAL_OK ) {
-                fw::stop_exec();
+                return em::ERROR;
         }
 
-        HAL_NVIC_SetPriority( cfg.dma.irq, cfg.dma.irq_priority, 0 );
-        HAL_NVIC_EnableIRQ( cfg.dma.irq );
-
         if ( HAL_DMA_Init( &dma ) != HAL_OK ) {
-                fw::stop_exec();
+                return em::ERROR;
         }
 
         __HAL_LINKDMA( ( &adc ), DMA_Handle, dma );
+
+        if ( HAL_DMA_ConfigChannelAttributes( &dma, DMA_CHANNEL_NPRIV ) != HAL_OK ) {
+                return em::ERROR;
+        }
 
         HAL_NVIC_SetPriority( ADC1_IRQn, cfg.adc_irq_priority, 0 );
         HAL_NVIC_EnableIRQ( ADC1_IRQn );

@@ -7,7 +7,7 @@
 namespace brd
 {
 
-void setup_adc_channel( ADC_ChannelConfTypeDef& channel, pinch_cfg cfg )
+void setup_adc_channel( ADC_ChannelConfTypeDef& channel, fw::drv::pinch_cfg cfg )
 {
         channel = ADC_ChannelConfTypeDef{
             .Channel      = cfg.channel,
