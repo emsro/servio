@@ -18,11 +18,10 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
-            - name: Test
-              run: make test
+            - run: git config --global --add safe.directory /__w/servio/servio
 
-            - name: Test under address sanitizer
-              run: make test SANITIZER=address
+            - run: make test
 
-            - name: Test under undefined sanitizer
-              run: make test SANITIZER=undefined
+            - run: make test SANITIZER=address
+
+            - run: make test SANITIZER=undefined
