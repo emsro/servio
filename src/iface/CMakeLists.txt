@@ -1,14 +1,14 @@
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
-  find_package(Protobuf REQUIRED)
+  find_package(Protobuf CONFIG REQUIRED)
 
-  protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS io.proto)
-  get_filename_component(PROTO_HDRS_DIR ${PROTO_HDRS} DIRECTORY)
+  add_library(proto io.proto)
+  target_link_libraries(proto PUBLIC protobuf::libprotobuf)
+  set(PROTO_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/generated")
+  target_include_directories(proto
+                             PUBLIC "$<BUILD_INTERFACE:${PROTO_BINARY_DIR}>")
 
-  add_library(proto STATIC ${PROTO_SRCS})
-  target_link_libraries(proto PUBLIC ${Protobuf_LIBRARIES})
-  target_include_directories(proto SYSTEM PUBLIC ${PROTO_HDRS_DIR})
-  set_target_properties(proto PROPERTIES CXX_CLANG_TIDY "")
+  protobuf_generate(TARGET proto PROTOC_OUT_DIR "${PROTO_BINARY_DIR}")
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4" OR ${SERVIO_PLATFORM} STREQUAL
                                                 "stm32h5")
