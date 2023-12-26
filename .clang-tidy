@@ -1,58 +1,57 @@
 ---
 Checks: >
-  -*,
-  bugprone*,-bugprone-easily-swappable-parameters,-bugprone-macro-parentheses,-bugprone-exception-escape,-bugprone-unchecked-optional-access,
-  concurrency*,
-  modernize*,-modernize-use-trailing-return-type,-modernize-avoid-c-arrays,-modernize-use-nullptr,-modernize-use-nodiscard,
-  misc*,
-  performance*,
-  portability*,
-  readability*,-readability-named-parameter,-readability-magic-numbers,-readability-identifier-length,-readability-suspicious-call-argument,
+    -*,
+    bugprone*,-bugprone-easily-swappable-parameters,-bugprone-macro-parentheses,-bugprone-exception-escape,-bugprone-unchecked-optional-access,
+    concurrency*,
+    modernize*,-modernize-use-trailing-return-type,-modernize-avoid-c-arrays,-modernize-use-nullptr,-modernize-use-nodiscard,
+    misc*,
+    performance*,
+    portability*,
+    readability*,-readability-named-parameter,-readability-magic-numbers,-readability-identifier-length,-readability-suspicious-call-argument,
 WarningsAsErrors: true
-HeaderFilterRegex: '.*'
+HeaderFilterRegex: .*
 AnalyzeTemporaryDtors: true
-FormatStyle:     file
+FormatStyle: file
 CheckOptions:
-  - key:             readability-function-cognitive-complexity.IgnoreMacros
-    value: true
-  - key:             readability-identifier-naming.IgnoreFailedSplit
-    value: '0'
-  - key:             readability-identifier-naming.ClassCase
-    value: lower_case
-  - key:             readability-identifier-naming.ClassConstantCase
-    value: lower_case
-  - key:             readability-identifier-naming.ClassMemberCase
-    value: lower_case
-  - key:             readability-identifier-naming.PrivateMemberSuffix
-    value: '_'
-  - key:             readability-identifier-naming.EnumCase
-    value: lower_case
-  - key:             readability-identifier-naming.FunctionCase
-    value: lower_case
-  - key:             readability-identifier-naming.GlobalConstantCase
-    value: lower_case
-  - key:             readability-identifier-naming.GlobalVariableCase
-    value: UPPER_CASE
-  - key:             readability-identifier-naming.GlobalPointerCase
-    value: UPPER_CASE
-  - key:             readability-identifier-naming.GlobalFunctionCase
-    value: lower_case
-  - key:             readability-identifier-naming.MethodCase
-    value: lower_case
-  - key:             readability-identifier-naming.NamespaceCase
-    value: lower_case
-  - key:             readability-identifier-naming.ParameterCase
-    value: lower_case
-  - key:             readability-identifier-naming.StructCase
-    value: lower_case
-  - key:             readability-identifier-naming.TemplateParameterCase
-    value: CamelCase
-  - key:             readability-identifier-naming.TypeAliasCase
-    value: lower_case
-  - key:             readability-identifier-naming.UnionCase
-    value: lower_case
-  - key:             readability-identifier-naming.VariableCase
-    value: lower_case
-  - key:             misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
-    value: '1'
-...
+    - key: readability-function-cognitive-complexity.IgnoreMacros
+      value: true
+    - key: readability-identifier-naming.IgnoreFailedSplit
+      value: '0'
+    - key: readability-identifier-naming.ClassCase
+      value: lower_case
+    - key: readability-identifier-naming.ClassConstantCase
+      value: lower_case
+    - key: readability-identifier-naming.ClassMemberCase
+      value: lower_case
+    - key: readability-identifier-naming.PrivateMemberSuffix
+      value: _
+    - key: readability-identifier-naming.EnumCase
+      value: lower_case
+    - key: readability-identifier-naming.FunctionCase
+      value: lower_case
+    - key: readability-identifier-naming.GlobalConstantCase
+      value: lower_case
+    - key: readability-identifier-naming.GlobalVariableCase
+      value: UPPER_CASE
+    - key: readability-identifier-naming.GlobalPointerCase
+      value: UPPER_CASE
+    - key: readability-identifier-naming.GlobalFunctionCase
+      value: lower_case
+    - key: readability-identifier-naming.MethodCase
+      value: lower_case
+    - key: readability-identifier-naming.NamespaceCase
+      value: lower_case
+    - key: readability-identifier-naming.ParameterCase
+      value: lower_case
+    - key: readability-identifier-naming.StructCase
+      value: lower_case
+    - key: readability-identifier-naming.TemplateParameterCase
+      value: CamelCase
+    - key: readability-identifier-naming.TypeAliasCase
+      value: lower_case
+    - key: readability-identifier-naming.UnionCase
+      value: lower_case
+    - key: readability-identifier-naming.VariableCase
+      value: lower_case
+    - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
+      value: '1'

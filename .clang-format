@@ -15,7 +15,7 @@ AllowShortIfStatementsOnASingleLine: false
 AllowShortLoopsOnASingleLine: false
 AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: true
-BasedOnStyle:  Google
+BasedOnStyle: Google
 BinPackArguments: false
 BinPackParameters: false
 BreakBeforeBinaryOperators: false
@@ -26,18 +26,18 @@ BreakStringLiterals: false
 BraceWrapping:
     AfterClass: 'true'
     AfterControlStatement: 'false'
-    AfterEnum : 'true'
-    AfterFunction : 'true'
-    AfterNamespace : 'true'
-    AfterStruct : 'true'
-    AfterUnion : 'true'
-    BeforeCatch : 'true'
-    BeforeElse : 'false'
-    IndentBraces : 'false'
+    AfterEnum: 'true'
+    AfterFunction: 'true'
+    AfterNamespace: 'true'
+    AfterStruct: 'true'
+    AfterUnion: 'true'
+    BeforeCatch: 'true'
+    BeforeElse: 'false'
+    IndentBraces: 'false'
 MaxEmptyLinesToKeep: 2
 BreakBeforeTernaryOperators: false
 BreakConstructorInitializersBeforeComma: true
-ColumnLimit:    100
+ColumnLimit: 100
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ConstructorInitializerIndentWidth: 2
 ContinuationIndentWidth: 4
@@ -46,7 +46,7 @@ DerivePointerBinding: false
 ExperimentalAutoDetectBinPacking: false
 IndentCaseLabels: false
 IndentFunctionDeclarationAfterType: false
-IndentWidth:     8
+IndentWidth: 8
 KeepEmptyLinesAtTheStartOfBlocks: true
 Language: Cpp
 NamespaceIndentation: Inner
@@ -66,18 +66,17 @@ SpaceAfterControlStatementKeyword: true
 SpaceBeforeAssignmentOperators: true
 SpaceInEmptyParentheses: false
 SpacesBeforeTrailingComments: 2
-SpacesInAngles:  true
+SpacesInAngles: true
 SpacesInCStyleCastParentheses: false
 SpacesInParentheses: true
 SpacesInSquareBrackets: false
-Standard:        c++20
-TabWidth:        4
-UseTab:          Never
+Standard: c++20
+TabWidth: 4
+UseTab: Never
 IncludeCategories:
-  - Regex:   '^"'
-    Priority: 2
-  - Regex:   '^<'
-    Priority: 3
-  - Regex:   '.\*'
-    Priority: 1
-...
+    - Regex: ^"
+      Priority: 2
+    - Regex: ^<
+      Priority: 3
+    - Regex: .\*
+      Priority: 1
