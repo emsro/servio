@@ -1,3 +1,4 @@
+---
 name: tests
 
 on: [push]
@@ -13,10 +14,11 @@ jobs:
 
         defaults:
             run:
-                shell:
-                    bash
+                shell: bash
         steps:
             - uses: actions/checkout@v3
+              with:
+                  submodules: recursive
 
             - run: git config --global --add safe.directory /__w/servio/servio
 
