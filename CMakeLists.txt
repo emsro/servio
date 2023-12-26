@@ -77,7 +77,8 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     TARGET prototype2_fw
     SOURCES src/fw/main.cpp src/fw/it.cpp
     LIBS prototype2
-    LINKER_SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/ld/STM32G431KBTx_FLASH.ld")
+    LINKER_SCRIPT
+      "${CMAKE_CURRENT_SOURCE_DIR}/platforms/stm32g4/STM32G431KBTx_FLASH.ld")
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
@@ -98,7 +99,8 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
     TARGET proto3_fw
     SOURCES src/fw/main.cpp src/fw/it.cpp
     LIBS proto3
-    LINKER_SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/ld/STM32H503xx_FLASH.ld")
+    LINKER_SCRIPT
+      "${CMAKE_CURRENT_SOURCE_DIR}/platforms/stm32g4/STM32H503xx_FLASH.ld")
 
 else()
   message(WARNING "unsupported platform ${SERVIO_PLATFORM}")
