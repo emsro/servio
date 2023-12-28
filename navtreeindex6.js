@@ -1,5 +1,10 @@
 var NAVTREEINDEX6 =
 {
+"structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb":[14,0,5,1,1],
+"structhost_1_1common__cli.html#a4069a66d37489ce0a202b56e7a46cecd":[14,0,5,1,2],
+"structhost_1_1common__cli.html#af2451a182808f2667ce3fdfdd6ab04f0":[14,0,5,1,0],
+"structhost_1_1error__exception.html":[14,0,5,4],
+"structhost_1_1error__exception.html#a1e02d0ea79ce4c8944a69610f86117e9":[14,0,5,4,1],
 "structhost_1_1error__exception.html#aa864e320d757530253664486a5828b5e":[14,0,5,4,0],
 "structhost_1_1error__exception.html#ad977b58d2968f47a268f4269cc5ca80f":[14,0,5,4,2],
 "structhost_1_1parse__error.html":[14,0,5,6],

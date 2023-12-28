@@ -46,6 +46,7 @@ var annotated_dup =
         [ "leds", "classfw_1_1drv_1_1leds.html", "classfw_1_1drv_1_1leds" ]
       ] ],
       [ "dispatcher", "namespacefw.html#structfw_1_1dispatcher", "namespacefw_structfw_1_1dispatcher_dup" ],
+      [ "persistent_config_writer", "structfw_1_1persistent__config__writer.html", "structfw_1_1persistent__config__writer" ],
       [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ]
     ] ],
     [ "host", "namespacehost.html", [

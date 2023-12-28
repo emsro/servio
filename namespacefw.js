@@ -2,6 +2,7 @@ var namespacefw =
 [
     [ "drv", "namespacefw_1_1drv.html", "namespacefw_1_1drv" ],
     [ "dispatcher", "namespacefw.html#structfw_1_1dispatcher", "namespacefw_structfw_1_1dispatcher_dup" ],
+    [ "persistent_config_writer", "structfw_1_1persistent__config__writer.html", "structfw_1_1persistent__config__writer" ],
     [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "copy_string_to", "namespacefw.html#aa9827b3a052ca9db4d230c0c439f7319", null ],
     [ "decode", "namespacefw.html#a8316fa0b789f65911005cdb427b8cab0", null ],

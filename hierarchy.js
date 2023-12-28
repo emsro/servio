@@ -80,6 +80,7 @@ var hierarchy =
       [ "fw::drv::empty_period_cb", "structfw_1_1drv_1_1empty__period__cb.html", null ],
       [ "fw::drv::period_cb< Callable >", "structfw_1_1drv_1_1period__cb.html", null ]
     ] ],
+    [ "fw::persistent_config_writer", "structfw_1_1persistent__config__writer.html", null ],
     [ "fw::drv::pin_cfg", "namespacefw_1_1drv.html#structfw_1_1drv_1_1pin__cfg", null ],
     [ "fw::drv::pinch_cfg", "namespacefw_1_1drv.html#structfw_1_1drv_1_1pinch__cfg", null ],
     [ "cnv::position_converter", "classcnv_1_1position__converter.html", null ],

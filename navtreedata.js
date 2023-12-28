@@ -135,10 +135,10 @@ var NAVTREEINDEX =
 "adc__pooler_8hpp.html",
 "cli_8cpp.html",
 "kalman_8hpp.html#aee77e3ba89eb600013e17d3467583701",
-"namespacecfg.html#abf089918bd1398ef078ba761770419d4",
+"namespacecfg.html#abe3b38b8e2e914b20a052349e0a1ec56",
 "platforms_2stm32h5_2setup_8hpp.html#acd29c533d9d5a045f2d6735bf70027ec",
 "stm32h5xx__hal__conf_8h.html#a2df8b2975927ef19a2c2bd3f84c57dd3",
-"structhost_1_1error__exception.html#aa864e320d757530253664486a5828b5e"
+"structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
