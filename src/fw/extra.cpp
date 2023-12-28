@@ -47,14 +47,14 @@ int _getpid( void )
 
 void _kill( int )
 {
-        while ( 1 ) {
+        while ( true ) {
                 asm( "nop" );
         }
 }
 
 void _exit( int )
 {
-        while ( 1 ) {
+        while ( true ) {
                 asm( "nop" );
         }
 }

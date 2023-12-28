@@ -1,5 +1,6 @@
 #include "store_persistent_config.hpp"
 
+#include "git.h"
 #include "platform.hpp"
 #include "util.hpp"
 
@@ -33,6 +34,29 @@ bool store_persistent_config( const cfg::page& page, const cfg::payload& pld, co
 
         const bool succ = cfg::store( pld, cfg, f );
 
+        return succ;
+}
+
+bool persistent_config_writer::operator()( const cfg::map* cfg )
+{
+        const cfg::payload pld{
+            .git_ver  = git::Describe(),
+            .git_date = git::CommitDate(),
+            .id       = last_payload.id + 1,
+        };
+        const cfg::page* page = cfg::find_next_page( pages );
+
+        if ( page == nullptr ) {
+                return false;
+        }
+        const bool succ = fw::store_persistent_config( *page, pld, cfg );
+        if ( succ ) {
+                last_payload = pld;
+        }
+        // TODO: why is this happening?
+        if ( current_iface.get_status() == status::DEGRADED ) {
+                current_iface.clear_status();
+        }
         return succ;
 }
 

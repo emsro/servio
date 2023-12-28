@@ -8,7 +8,6 @@
 #include "fw/servio_pb.hpp"
 #include "fw/store_persistent_config.hpp"
 #include "fw/util.hpp"
-#include "git.h"
 #include "load_persistent_config.hpp"
 #include "standard_callbacks.hpp"
 
@@ -21,7 +20,7 @@ int main()
 
         cfg::map cfg = brd::get_default_config();
 
-        em::view pages = brd::get_persistent_pages();
+        em::view< const brd::page* > pages = brd::get_persistent_pages();
 
         cfg::payload last_cfg_payload = load_persistent_config( pages, cfg );
 
@@ -53,26 +52,7 @@ int main()
 
                 cor.tick( *cdrv.leds, cdrv.clock->get_us() );
 
-                auto write_config = [&]( const cfg::map* cfg ) -> bool {
-                        const cfg::payload pld{
-                            .git_ver  = git::Describe(),
-                            .git_date = git::CommitDate(),
-                            .id       = last_cfg_payload.id + 1,
-                        };
-                        std::optional< cfg::page > opt_page = cfg::find_next_page( pages );
-
-                        if ( !opt_page ) {
-                                return false;
-                        }
-                        const bool succ = fw::store_persistent_config( *opt_page, pld, cfg );
-                        if ( succ ) {
-                                last_cfg_payload = pld;
-                        }
-                        if ( cdrv.current->get_status() == status::DEGRADED ) {
-                                cdrv.current->clear_status();
-                        }
-                        return succ;
-                };
+                fw::persistent_config_writer cfg_writer{ last_cfg_payload, pages, *cdrv.current };
 
                 fw::dispatcher dis{
                     .motor      = *cdrv.motor,
@@ -83,7 +63,7 @@ int main()
                     .ctl        = cor.ctl,
                     .met        = cor.met,
                     .cfg_disp   = cfg_dis,
-                    .cfg_writer = write_config,
+                    .cfg_writer = cfg_writer,
                     .conv       = cor.conv,
                     .now        = cdrv.clock->get_us() };
 
@@ -102,7 +82,7 @@ int main()
                 auto [succ, odata] = fw::handle_message_packet( dis, ldata, output_buffer );
 
                 if ( !succ ) {
-                        // TODO: what now?
+                        fw::stop_exec();
                 } else {
                         if ( cdrv.comms->send( odata ) != em::SUCCESS ) {
                                 fw::stop_exec();

@@ -31,17 +31,17 @@ namespace
         }
 
         template < typename CmpFunction >
-        std::optional< page > find_cmp_page( em::view< const page* > pages, CmpFunction&& cmp_f )
+        const page* find_cmp_page( em::view< const page* > pages, CmpFunction&& cmp_f )
         {
-                std::optional< page > candidate    = std::nullopt;
-                uint32_t              candidate_id = 0;
+                const page* candidate    = nullptr;
+                uint32_t    candidate_id = 0;
                 for ( const page& p : pages ) {
                         EMLABCPP_DEBUG_LOG( "Checking page: ", p.begin(), " ", p.end() );
                         std::ignore = handler::load(
                             p,
                             [&]( const payload& pl ) -> bool {
-                                    if ( !candidate.has_value() || cmp_f( candidate_id, pl.id ) ) {
-                                            candidate    = p;
+                                    if ( candidate == nullptr || cmp_f( candidate_id, pl.id ) ) {
+                                            candidate    = &p;
                                             candidate_id = pl.id;
                                     }
                                     return false;
@@ -53,7 +53,7 @@ namespace
         }
 }  // namespace
 
-std::optional< page > find_unused_page( em::view< const page* > pages )
+const page* find_unused_page( em::view< const page* > pages )
 {
         const page* iter = em::find_if( pages, [&]( const page& p ) {
                 EMLABCPP_DEBUG_LOG( "Unused trying page: ", p.begin(), " ", p.end() );
@@ -67,13 +67,13 @@ std::optional< page > find_unused_page( em::view< const page* > pages )
                 return lr == em::cfg::load_result::DESERIALIZATION_ERROR;
         } );
         if ( iter == pages.end() ) {
-                return std::nullopt;
+                return nullptr;
         }
         EMLABCPP_DEBUG_LOG( "Got unused page: ", iter->begin(), " ", iter->end() );
-        return *iter;
+        return &*iter;
 }
 
-std::optional< page > find_oldest_page( em::view< const page* > pages )
+const page* find_oldest_page( em::view< const page* > pages )
 {
         return find_cmp_page( pages, [&]( uint32_t candidate_id, uint32_t page_id ) {
                 EMLABCPP_DEBUG_LOG( "Ids: ", candidate_id, " ", page_id );
@@ -81,16 +81,16 @@ std::optional< page > find_oldest_page( em::view< const page* > pages )
         } );
 }
 
-std::optional< page > find_next_page( em::view< const page* > pages )
+const page* find_next_page( em::view< const page* > pages )
 {
-        std::optional< page > opt_res = find_unused_page( pages );
-        if ( opt_res.has_value() ) {
-                return *opt_res;
+        const page* res = find_unused_page( pages );
+        if ( res != nullptr ) {
+                return res;
         }
         return find_oldest_page( pages );
 }
 
-std::optional< page > find_latest_page( em::view< const page* > pages )
+const page* find_latest_page( em::view< const page* > pages )
 {
         return find_cmp_page( pages, [&]( uint32_t candidate_id, uint32_t page_id ) {
                 return page_id > candidate_id;

@@ -7,10 +7,10 @@ using page = em::view< std::byte* >;
 
 inline cfg::payload load_persistent_config( em::view< const page* > pages, cfg::map& cfg )
 {
-        std::optional< cfg::page > last_page = cfg::find_latest_page( pages );
+        const cfg::page* last_page = cfg::find_latest_page( pages );
 
         cfg::payload res{ .git_ver = "", .git_date = "", .id = 0 };
-        if ( last_page.has_value() ) {
+        if ( last_page != nullptr ) {
                 auto check_f = [&]( const cfg::payload& payload ) {
                         res = payload;
                         return true;

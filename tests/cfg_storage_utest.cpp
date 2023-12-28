@@ -22,20 +22,21 @@ TEST( CFG, storage )
                 return em::view{ p };
         } );
 
-        std::optional< cfg::page > tmp;
+        const cfg::page* tmp = nullptr;
+
         tmp = cfg::find_unused_page( pages );
-        EXPECT_EQ( tmp.value(), pages[0] );
+        EXPECT_EQ( *tmp, pages[0] );
 
         tmp = cfg::find_oldest_page( pages );
-        EXPECT_FALSE( tmp.has_value() );
+        EXPECT_EQ( tmp, nullptr );
 
         tmp = cfg::find_next_page( pages );
-        EXPECT_EQ( tmp.value(), pages[0] );
+        EXPECT_EQ( *tmp, pages[0] );
 
         cfg::payload pl;
         cfg::map     cm = cfg::get_default_config();
 
-        auto p      = tmp.value();
+        auto p      = *tmp;
         auto writer = [&]( std::size_t addr, uint64_t val ) -> bool {
                 std::memcpy( &p[addr], &val, sizeof( uint64_t ) );
                 return true;
@@ -44,13 +45,13 @@ TEST( CFG, storage )
         EXPECT_TRUE( success );
 
         tmp = cfg::find_unused_page( pages );
-        EXPECT_NE( tmp.value(), pages[0] );
+        EXPECT_NE( *tmp, pages[0] );
 
         tmp = cfg::find_oldest_page( pages );
-        EXPECT_EQ( tmp.value(), pages[0] );
+        EXPECT_EQ( *tmp, pages[0] );
 
         tmp = cfg::find_next_page( pages );
-        EXPECT_EQ( tmp.value(), pages[1] );
+        EXPECT_EQ( *tmp, pages[1] );
 
         auto pl_check = [&]( const cfg::payload& pll ) -> bool {
                 return pl == pll;

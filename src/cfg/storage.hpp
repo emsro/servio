@@ -21,13 +21,13 @@ struct payload
 
 using page = em::view< std::byte* >;
 
-std::optional< page > find_unused_page( em::view< const page* > pages );
+const page* find_unused_page( em::view< const page* > pages );
 
-std::optional< page > find_oldest_page( em::view< const page* > pages );
+const page* find_oldest_page( em::view< const page* > pages );
 
-std::optional< page > find_next_page( em::view< const page* > pages );
+const page* find_next_page( em::view< const page* > pages );
 
-std::optional< page > find_latest_page( em::view< const page* > pages );
+const page* find_latest_page( em::view< const page* > pages );
 
 bool store(
     const payload&                                     pl,
