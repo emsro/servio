@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"structhost_1_1cobs__port.html#a87f97a9ff41290fec2db57502fa1161e":[14,0,5,0,4],
+"structhost_1_1common__cli.html":[14,0,5,1],
+"structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924":[14,0,5,1,3],
+"structhost_1_1common__cli.html#a14da1acdb9fa005b522effbeaf8cda8b":[14,0,5,1,4],
 "structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb":[14,0,5,1,1],
 "structhost_1_1common__cli.html#a4069a66d37489ce0a202b56e7a46cecd":[14,0,5,1,2],
 "structhost_1_1common__cli.html#af2451a182808f2667ce3fdfdd6ab04f0":[14,0,5,1,0],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"platforms_2stm32h5_2setup_8hpp.html#a9e199f57cebf2a36b5edce04e3cfe587":[15,0,2,2,6,12],
+"platforms_2stm32h5_2setup_8hpp.html#a9ef2c142a47b16b1adcbaf8afa7bf183":[15,0,2,2,6,7],
+"platforms_2stm32h5_2setup_8hpp.html#aa645c9b5fc06e9948107b4f1f1fad8e1":[15,0,2,2,6,8],
+"platforms_2stm32h5_2setup_8hpp.html#ab1c3c446b31805a650406ff6dc1dcbfe":[15,0,2,2,6,13],
 "platforms_2stm32h5_2setup_8hpp.html#acd29c533d9d5a045f2d6735bf70027ec":[15,0,2,2,6,10],
 "platforms_2stm32h5_2setup_8hpp.html#af1500de34f5161fe6ee7ed518a422388":[15,0,2,2,6,15],
 "platforms_2stm32h5_2setup_8hpp_source.html":[15,0,2,2,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "stm32h5xx__hal__conf_8h.html#a13fc0d5e7bb925385c0cc0772ba6a391":[15,0,2,2,7,65],
 "stm32h5xx__hal__conf_8h.html#a167269406e73327b95c3bb7b9cfe6d89":[15,0,2,2,7,53],
 "stm32h5xx__hal__conf_8h.html#a19999766418b0224871f732d800841c6":[15,0,2,2,7,24],
-"stm32h5xx__hal__conf_8h.html#a1bdc791c35b20c7188b3d74fd6c30ebf":[15,0,2,2,7,81],
-"stm32h5xx__hal__conf_8h.html#a23382b8f04b3e6db2c59dfa1ef5ea4a2":[15,0,2,2,7,52],
-"stm32h5xx__hal__conf_8h.html#a295e6f0566fcb7f9fcf1fe1a179e7771":[15,0,2,2,7,25],
-"stm32h5xx__hal__conf_8h.html#a2a5c5e3af52a068a158078c130345cf0":[15,0,2,2,7,48],
-"stm32h5xx__hal__conf_8h.html#a2c51d4e89cd75f4629092d46ca26a750":[15,0,2,2,7,89]
+"stm32h5xx__hal__conf_8h.html#a1bdc791c35b20c7188b3d74fd6c30ebf":[15,0,2,2,7,81]
 };

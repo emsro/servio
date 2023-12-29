@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"stm32h5xx__hal__conf_8h.html#a23382b8f04b3e6db2c59dfa1ef5ea4a2":[15,0,2,2,7,52],
+"stm32h5xx__hal__conf_8h.html#a295e6f0566fcb7f9fcf1fe1a179e7771":[15,0,2,2,7,25],
+"stm32h5xx__hal__conf_8h.html#a2a5c5e3af52a068a158078c130345cf0":[15,0,2,2,7,48],
+"stm32h5xx__hal__conf_8h.html#a2c51d4e89cd75f4629092d46ca26a750":[15,0,2,2,7,89],
 "stm32h5xx__hal__conf_8h.html#a2df8b2975927ef19a2c2bd3f84c57dd3":[15,0,2,2,7,26],
 "stm32h5xx__hal__conf_8h.html#a341aab546270845c3de00697b9a8f08e":[15,0,2,2,7,21],
 "stm32h5xx__hal__conf_8h.html#a34a796bea8a48187716b99c6f14b14f2":[15,0,2,2,7,77],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "structhost_1_1cobs__port.html#a2dc6e749750ebacbe674611e1c3d08bb":[14,0,5,0,0],
 "structhost_1_1cobs__port.html#a41b3a139c6d26709c43d4aa52edd8b10":[14,0,5,0,1],
 "structhost_1_1cobs__port.html#a474f7e7c9b5aad02965c83ae728f7fcd":[14,0,5,0,2],
-"structhost_1_1cobs__port.html#a83f7d603af542096dd102b76048285f4":[14,0,5,0,3],
-"structhost_1_1cobs__port.html#a87f97a9ff41290fec2db57502fa1161e":[14,0,5,0,4],
-"structhost_1_1common__cli.html":[14,0,5,1],
-"structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924":[14,0,5,1,3],
-"structhost_1_1common__cli.html#a14da1acdb9fa005b522effbeaf8cda8b":[14,0,5,1,4]
+"structhost_1_1cobs__port.html#a83f7d603af542096dd102b76048285f4":[14,0,5,0,3]
 };
