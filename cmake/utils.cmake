@@ -6,7 +6,16 @@ macro(servio_add_library)
   servio_compile_options(${A_TARGET})
   target_link_libraries(${A_TARGET} PUBLIC ${A_LIBS})
   target_compile_options(${A_TARGET} PRIVATE ${A_OPTS})
+endmacro()
 
+macro(servio_add_executable)
+  cmake_parse_arguments(A "" "TARGET" "INCLUDE;SOURCES;LIBS;OPTS" ${ARGN})
+
+  add_executable(${A_TARGET} ${A_SOURCES})
+  target_include_directories(${A_TARGET} PUBLIC ${A_INCLUDE})
+  servio_compile_options(${A_TARGET})
+  target_link_libraries(${A_TARGET} PUBLIC ${A_LIBS})
+  target_compile_options(${A_TARGET} PRIVATE ${A_OPTS})
 endmacro()
 
 macro(servio_add_board_executable)

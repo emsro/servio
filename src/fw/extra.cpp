@@ -40,6 +40,9 @@ void operator delete( void*, std::align_val_t ) noexcept
 
 extern "C" {
 
+// TODO: have to re-think this, we should not block inside a loop coz that might mean hbridge is
+// still active - find a decent way to disable hbridge AND than switch to infinite loop
+
 int _getpid( void )
 {
         return 1;
@@ -57,5 +60,22 @@ void _exit( int )
         while ( true ) {
                 asm( "nop" );
         }
+}
+
+int _write( int, char*, int )
+{
+        return -1;
+}
+int _read()
+{
+        return -1;
+}
+int _close()
+{
+        return -1;
+}
+int _lseek()
+{
+        return -1;
 }
 }
