@@ -5,6 +5,9 @@
 #include "metrics.hpp"
 #include "monitor.hpp"
 
+namespace servio
+{
+
 struct core
 {
 
@@ -35,3 +38,5 @@ struct core
                 leds.update( ind.get_state() );
         }
 };
+
+}  // namespace servio

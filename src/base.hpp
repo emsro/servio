@@ -7,6 +7,9 @@
 
 #pragma once
 
+namespace servio
+{
+
 namespace em = emlabcpp;
 
 using microseconds = std::chrono::duration< uint32_t, std::micro >;
@@ -59,3 +62,5 @@ struct leds_vals
         uint8_t yellow;
         uint8_t green;
 };
+
+}  // namespace servio

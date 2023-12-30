@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace cfg
+namespace servio::cfg
 {
 
 enum key : uint32_t

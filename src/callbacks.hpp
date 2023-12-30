@@ -6,6 +6,9 @@
 
 #pragma once
 
+namespace servio
+{
+
 class current_callback : public current_cb_interface
 {
 public:
@@ -65,3 +68,5 @@ private:
         clk_interface&   clk_;
         const converter& conv_;
 };
+
+}  // namespace servio

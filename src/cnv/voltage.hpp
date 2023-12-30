@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace cnv
+namespace servio::cnv
 {
 
 class voltage_converter
@@ -22,4 +22,4 @@ private:
         float scale_;
 };
 
-}  // namespace cnv
+}  // namespace servio::cnv

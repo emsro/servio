@@ -6,7 +6,7 @@
 
 #pragma once
 
-namespace scmdio
+namespace servio::scmdio
 {
 
 /// Writes a reply to servo port
@@ -49,4 +49,4 @@ boost::asio::awaitable< void > set_mode_position( cobs_port& port, float angle )
 boost::asio::awaitable< void > set_mode_velocity( cobs_port& port, float vel );
 boost::asio::awaitable< void > set_mode_current( cobs_port& port, float curr );
 
-}  // namespace scmdio
+}  // namespace servio::scmdio

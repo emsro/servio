@@ -4,7 +4,7 @@
 #include "fw/map_cfg.hpp"
 #include "fw/servio_pb.hpp"
 
-namespace fw
+namespace servio::fw
 {
 
 ServioToHost handle_set_mode( microseconds now, control& ctl, const Mode& msg )
@@ -251,4 +251,4 @@ std::tuple< bool, em::view< std::byte* > > handle_message_packet(
             } );
 }
 
-}  // namespace fw
+}  // namespace servio::fw

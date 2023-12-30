@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 
-namespace brd
+namespace servio::brd
 {
 
 // RX to PA10
@@ -83,4 +83,4 @@ em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart
         return em::SUCCESS;
 }
 
-}  // namespace brd
+}  // namespace servio::brd

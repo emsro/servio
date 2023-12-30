@@ -1,7 +1,9 @@
-
 #include <emlabcpp/quantity.h>
 
 #pragma once
+
+namespace servio
+{
 
 namespace em = emlabcpp;
 
@@ -23,3 +25,5 @@ public:
                 return static_cast< float >( *this ) / multiplicator;
         }
 };
+
+}  // namespace servio

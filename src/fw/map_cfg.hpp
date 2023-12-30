@@ -4,7 +4,7 @@
 
 #pragma once
 
-namespace fw
+namespace servio::fw
 {
 
 template < typename Cfg, typename UnaryFunction >
@@ -126,4 +126,4 @@ template < typename Cfg, typename UnaryFunction >
         return found_key;
 }
 
-}  // namespace fw
+}  // namespace servio::fw

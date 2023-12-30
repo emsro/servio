@@ -6,7 +6,7 @@
 #include <cassert>
 #include <cstdlib>
 
-namespace brd
+namespace servio::brd
 {
 
 em::result setup_clk()
@@ -79,4 +79,4 @@ em::result setup_clk()
         return em::SUCCESS;
 }
 
-}  // namespace brd
+}  // namespace servio::brd

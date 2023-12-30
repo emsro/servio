@@ -4,7 +4,7 @@
 
 #pragma once
 
-namespace scmdio
+namespace servio::scmdio
 {
 
 struct servio_exception : std::exception
@@ -71,4 +71,4 @@ struct parse_error : servio_exception
         const char* msg;
 };
 
-}  // namespace scmdio
+}  // namespace servio::scmdio

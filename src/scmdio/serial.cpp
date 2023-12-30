@@ -8,7 +8,7 @@
 // TODO: there might be a better way of obtaining this?
 constexpr std::size_t buffer_size = 1024;
 
-namespace scmdio
+namespace servio::scmdio
 {
 
 boost::asio::awaitable< void > write( cobs_port& port, const servio::HostToServio& payload )
@@ -197,4 +197,4 @@ boost::asio::awaitable< void > set_mode_current( cobs_port& port, float curr )
         co_await set_mode( port, m );
 }
 
-}  // namespace scmdio
+}  // namespace servio::scmdio

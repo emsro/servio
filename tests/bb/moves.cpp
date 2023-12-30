@@ -5,6 +5,9 @@
 
 #include <gtest/gtest.h>
 
+namespace servio::tests::bb
+{
+
 boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio::cobs_port& port )
 {
 
@@ -42,6 +45,8 @@ boost::asio::awaitable< void > test_position( boost::asio::io_context& io, scmdi
         co_await scmdio::set_mode_disengaged( port );
 }
 
+}  // namespace servio::tests::bb
+
 int main( int argc, char** argv )
 {
         using namespace std::chrono_literals;
@@ -50,8 +55,8 @@ int main( int argc, char** argv )
         bool powerless = false;
 
         CLI::App app{ "black box tests with basic moves" };
-        scmdio::powerless_flag( app, powerless );
-        scmdio::common_cli cli;
+        servio::scmdio::powerless_flag( app, powerless );
+        servio::scmdio::common_cli cli;
         cli.setup( app );
 
         try {
@@ -62,8 +67,10 @@ int main( int argc, char** argv )
         }
 
         if ( !powerless ) {
-                tests::bb::register_test( "moves", "current", cli, test_current, 1s );
-                tests::bb::register_test( "moves", "position", cli, test_position, 1s );
+                servio::tests::bb::register_test(
+                    "moves", "current", cli, servio::tests::bb::test_current, 1s );
+                servio::tests::bb::register_test(
+                    "moves", "position", cli, servio::tests::bb::test_position, 1s );
         }
 
         return RUN_ALL_TESTS();

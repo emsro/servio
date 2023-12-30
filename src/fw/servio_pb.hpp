@@ -5,7 +5,7 @@
 
 namespace em = emlabcpp;
 
-namespace fw
+namespace servio::fw
 {
 
 ServioToHost error_msg( const char* msg );
@@ -21,4 +21,4 @@ encode( em::view< std::byte* > data, const ServioToHost& msg );
 std::tuple< bool, em::view< std::byte* > >
 encode( em::view< std::byte* > data, const ServioToHostPacket& msg );
 
-}  // namespace fw
+}  // namespace servio::fw

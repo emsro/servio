@@ -4,6 +4,9 @@
 
 #pragma once
 
+namespace servio
+{
+
 struct standard_callbacks
 {
         standard_callbacks(
@@ -31,3 +34,5 @@ struct standard_callbacks
         current_callback  current_cb;
         position_callback pos_cb;
 };
+
+}  // namespace servio

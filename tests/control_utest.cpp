@@ -6,6 +6,9 @@
 #include <emlabcpp/range.h>
 #include <gtest/gtest.h>
 
+namespace servio::tests
+{
+
 class control_fixture : public ::testing::Test
 {
 public:
@@ -116,3 +119,5 @@ TEST_F( control_fixture, DISABLED_position )
                 EXPECT_NEAR( motor->position(), angle, 0.015F );
         }
 }
+
+}  // namespace servio::tests

@@ -13,6 +13,9 @@ std::ostream& operator<<( std::ostream& os, const std::byte& b )
 }
 }  // namespace std
 
+namespace servio::tests
+{
+
 TEST( CFG, storage )
 {
         EMLABCPP_INFO_LOG( "wololo" );
@@ -60,3 +63,5 @@ TEST( CFG, storage )
 
         EXPECT_EQ( cfg::get_default_config(), cm );
 }
+
+}  // namespace servio::tests

@@ -3,7 +3,7 @@
 #include "fw/drv/hbridge.hpp"  // tehse are actually a bad sign TODO
 #include "fw/drv/leds.hpp"
 
-namespace brd
+namespace servio::brd
 {
 
 struct dma_cfg
@@ -69,4 +69,4 @@ void setup_clk();
 
 em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 
-}  // namespace brd
+}  // namespace servio::brd

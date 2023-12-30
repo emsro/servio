@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace cnv
+namespace servio::cnv
 {
 
 class temperature_converter
@@ -24,4 +24,4 @@ private:
         float offset_;
 };
 
-}  // namespace cnv
+}  // namespace servio::cnv

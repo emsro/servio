@@ -6,7 +6,7 @@
 
 #pragma once
 
-namespace scmdio
+namespace servio::scmdio
 {
 
 CLI::Option* verbose_opt( CLI::App& app, bool& val );
@@ -28,4 +28,4 @@ struct common_cli
         void setup( CLI::App& app );
 };
 
-}  // namespace scmdio
+}  // namespace servio::scmdio

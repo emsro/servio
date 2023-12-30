@@ -3,7 +3,7 @@
 #include "cfg/map.hpp"
 #include "core_drivers.hpp"
 
-namespace brd
+namespace servio::brd
 {
 /// An API that has to be implemented by each board variation.
 
@@ -24,4 +24,4 @@ core_drivers setup_core_drivers();
 /// Initialize debug interface
 com_interface* setup_debug_comms();
 
-}  // namespace brd
+}  // namespace servio::brd

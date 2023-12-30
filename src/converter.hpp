@@ -5,6 +5,9 @@
 
 #pragma once
 
+namespace servio
+{
+
 struct converter
 {
         void set_position_cfg(
@@ -33,3 +36,5 @@ struct converter
         cnv::temperature_converter temp;
         cnv::voltage_converter     vcc;
 };
+
+}  // namespace servio

@@ -100,7 +100,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
     SOURCES src/fw/main.cpp src/fw/it.cpp
     LIBS proto3
     LINKER_SCRIPT
-      "${CMAKE_CURRENT_SOURCE_DIR}/platforms/stm32g4/STM32H503xx_FLASH.ld")
+      "${CMAKE_CURRENT_SOURCE_DIR}/platforms/stm32h5/STM32H503xx_FLASH.ld")
 
 else()
   message(WARNING "unsupported platform ${SERVIO_PLATFORM}")

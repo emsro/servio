@@ -7,7 +7,7 @@
 
 namespace em = emlabcpp;
 
-namespace cfg
+namespace servio::cfg
 {
 
 struct payload
@@ -36,4 +36,4 @@ bool store(
 
 bool load( page p, em::function_view< bool( const payload& ) > pl_cb, map& m );
 
-}  // namespace cfg
+}  // namespace servio::cfg

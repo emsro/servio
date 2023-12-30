@@ -1,5 +1,8 @@
 #include "metrics.hpp"
 
+namespace servio
+{
+
 metrics::metrics( microseconds time, float position, limits< float > position_range )
   : last_time_( time )
   , pv_kal_( position, position_range )
@@ -33,3 +36,5 @@ void metrics::set_moving_step( float step )
 
         last_time_ = now;
 }
+
+}  // namespace servio

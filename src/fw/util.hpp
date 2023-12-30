@@ -3,7 +3,7 @@
 
 #pragma once
 
-namespace fw
+namespace servio::fw
 {
 
 void stop_exec();
@@ -31,4 +31,4 @@ inline void operator<<( const check_bool&, bool val )
         }
 }
 
-}  // namespace fw
+}  // namespace servio::fw

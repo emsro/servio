@@ -4,6 +4,9 @@
 #include <gtest/gtest.h>
 #include <random>
 
+namespace servio::tests
+{
+
 TEST( Metrics, base )
 {
         std::random_device                rd{};
@@ -36,3 +39,5 @@ TEST( Metrics, base )
                     << "i: " << i;
         }
 }
+
+}  // namespace servio::tests

@@ -4,10 +4,10 @@
 
 #include <emlabcpp/protocol/register_handler.h>
 
-using handler = em::protocol::register_handler< cfg::map >;
-
-namespace cfg
+namespace servio::cfg
 {
+
+using handler = em::protocol::register_handler< map >;
 
 void dispatcher::full_apply()
 {
@@ -62,7 +62,7 @@ void dispatcher::apply( const key& key )
         default:
                 break;
         }
-        ::cfg::apply( c.ctl, m, key );
+        ::servio::cfg::apply( c.ctl, m, key );
 }
 
 void apply( control& ctl, const map& m, const key& key )
@@ -130,4 +130,4 @@ void apply( control& ctl, const map& m, const key& key )
         }
 }
 
-}  // namespace cfg
+}  // namespace servio::cfg

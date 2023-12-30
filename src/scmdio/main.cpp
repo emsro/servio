@@ -8,7 +8,7 @@
 
 namespace em = emlabcpp;
 
-namespace scmdio
+namespace servio::scmdio
 {
 
 void json_flag( CLI::App* app, bool& flag )
@@ -177,19 +177,19 @@ void mode_def(
         } );
 }
 
-}  // namespace scmdio
+}  // namespace servio::scmdio
 
 int main( int argc, char* argv[] )
 {
 
         CLI::App app{ "Servio utility" };
 
-        scmdio::common_cli cli;
+        servio::scmdio::common_cli cli;
         cli.setup( app );
 
-        scmdio::cfg_def( app, cli.context, cli.port_ptr );
-        scmdio::pool_def( app, cli.context, cli.port_ptr );
-        scmdio::mode_def( app, cli.context, cli.port_ptr );
+        servio::scmdio::cfg_def( app, cli.context, cli.port_ptr );
+        servio::scmdio::pool_def( app, cli.context, cli.port_ptr );
+        servio::scmdio::mode_def( app, cli.context, cli.port_ptr );
 
         try {
                 app.parse( argc, argv );

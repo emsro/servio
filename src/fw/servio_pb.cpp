@@ -5,7 +5,7 @@
 #include <pb_decode.h>
 #include <pb_encode.h>
 
-namespace fw
+namespace servio::fw
 {
 
 ServioToHost error_msg( const char* msg )
@@ -56,4 +56,4 @@ encode( em::view< std::byte* > data, const ServioToHostPacket& msg )
         return { res, em::view_n( data.begin(), stream.bytes_written ) };
 }
 
-}  // namespace fw
+}  // namespace servio::fw

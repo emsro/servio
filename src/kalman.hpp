@@ -3,11 +3,11 @@
 
 #pragma once
 
-namespace em = emlabcpp;
-
 // TODO: well the namspace is worng here and it needs some cleanup
-namespace kalman
+namespace servio::kalman
 {
+
+namespace em = emlabcpp;
 
 using state                        = em::matrix< 2, 1 >;
 using state_transition_model       = em::matrix< 2, 2 >;
@@ -172,4 +172,4 @@ inline std::vector< state > simulate(
         return res;
 }
 
-}  // namespace kalman
+}  // namespace servio::kalman

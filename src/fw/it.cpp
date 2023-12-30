@@ -11,35 +11,35 @@ extern "C" void SysTick_Handler()
 extern "C" void NMI_Handler( void )
 {
         while ( true ) {
-                fw::stop_exec();
+                servio::fw::stop_exec();
         }
 }
 
 extern "C" void HardFault_Handler( void )
 {
         while ( true ) {
-                fw::stop_exec();
+                servio::fw::stop_exec();
         }
 }
 
 extern "C" void MemManage_Handler( void )
 {
         while ( true ) {
-                fw::stop_exec();
+                servio::fw::stop_exec();
         }
 }
 
 extern "C" void BusFault_Handler( void )
 {
         while ( true ) {
-                fw::stop_exec();
+                servio::fw::stop_exec();
         }
 }
 
 extern "C" void UsageFault_Handler( void )
 {
         while ( true ) {
-                fw::stop_exec();
+                servio::fw::stop_exec();
         }
 }
 

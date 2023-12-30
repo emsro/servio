@@ -7,7 +7,7 @@
 
 #pragma once
 
-namespace fw
+namespace servio::fw
 {
 
 struct dispatcher
@@ -37,4 +37,4 @@ std::tuple< bool, em::view< std::byte* > > handle_message_packet(
     em::view< const std::byte* > input_data,
     em::view< std::byte* >       output_buffer );
 
-}  // namespace fw
+}  // namespace servio::fw

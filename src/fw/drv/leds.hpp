@@ -10,7 +10,7 @@
 
 namespace em = emlabcpp;
 
-namespace fw::drv
+namespace servio::fw::drv
 {
 
 class leds : public leds_interface
@@ -51,4 +51,4 @@ private:
         pinch_cfg green_;
 };
 
-}  // namespace fw::drv
+}  // namespace servio::fw::drv

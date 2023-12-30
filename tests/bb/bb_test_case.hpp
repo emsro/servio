@@ -9,7 +9,7 @@
 
 #pragma once
 
-namespace tests::bb
+namespace servio::tests::bb
 {
 
 using test_signature =
@@ -74,4 +74,4 @@ inline void register_test(
             } );
 }
 
-}  // namespace tests::bb
+}  // namespace servio::tests::bb

@@ -3,6 +3,9 @@
 #include <gtest/gtest.h>
 #include <random>
 
+namespace servio::tests
+{
+
 TEST( Kalman, predict )
 {
 
@@ -63,3 +66,5 @@ TEST( Kalman, base )
                 EXPECT_NEAR( kalman::velocity( states[i] ), 0.5F, 0.01F );
         }
 }
+
+}  // namespace servio::tests

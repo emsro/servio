@@ -3,7 +3,7 @@
 #include <emlabcpp/experimental/cfg/handler.h>
 #include <emlabcpp/protocol/register_handler.h>
 
-namespace cfg
+namespace servio::cfg
 {
 
 using handler = em::cfg::handler< payload, keyval, std::endian::native >;
@@ -156,4 +156,4 @@ bool load( page p, em::function_view< bool( const payload& ) > pl_cb, map& m )
         return lr == em::cfg::load_result::SUCCESS;
 }
 
-}  // namespace cfg
+}  // namespace servio::cfg

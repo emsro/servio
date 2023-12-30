@@ -3,7 +3,7 @@
 
 #pragma once
 
-namespace fw
+namespace servio::fw
 {
 inline void install_stop_callback( leds_interface* leds_ptr )
 {
@@ -13,4 +13,4 @@ inline void install_stop_callback( leds_interface* leds_ptr )
                 };
         }
 };
-}  // namespace fw
+}  // namespace servio::fw

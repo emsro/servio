@@ -5,7 +5,7 @@
 
 #include <numbers>
 
-namespace plt
+namespace servio::plt
 {
 
 // The formula asserted:
@@ -65,4 +65,4 @@ cfg::map get_default_config()
 
         return res;
 }
-}  // namespace plt
+}  // namespace servio::plt

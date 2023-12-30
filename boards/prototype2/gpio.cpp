@@ -1,7 +1,7 @@
 #include "fw/drv/leds.hpp"
 #include "setup.hpp"
 
-namespace brd
+namespace servio::brd
 {
 
 em::result setup_gpio( const fw::drv::pin_cfg& cfg )
@@ -18,4 +18,4 @@ em::result setup_gpio( const fw::drv::pin_cfg& cfg )
 }
 
 
-}  // namespace brd
+}  // namespace servio::brd

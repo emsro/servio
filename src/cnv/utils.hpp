@@ -3,7 +3,7 @@
 #include "converter.hpp"
 #include "drv_interfaces.hpp"
 
-namespace cnv
+namespace servio::cnv
 {
 inline float
 current( const converter& conv, uint32_t raw_current, const pwm_motor_interface& motor )
@@ -23,4 +23,4 @@ inline float position( const converter& conv, const position_interface& pos_drv 
 {
         return conv.position.convert( pos_drv.get_position() );
 }
-}  // namespace cnv
+}  // namespace servio::cnv

@@ -2,6 +2,9 @@
 
 #include <cmath>
 
+namespace servio
+{
+
 bool indication::on_event( microseconds now, const indication_event& e )
 {
         switch ( e ) {
@@ -90,3 +93,5 @@ void indication::tick_red( microseconds now )
 
         state_.red = x < 250_ms;
 }
+
+}  // namespace servio

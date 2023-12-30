@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace scmdio
+namespace servio::scmdio
 {
 
 boost::asio::awaitable< void > cfg_query_cmd( cobs_port& port, bool json );
@@ -19,4 +19,4 @@ boost::asio::awaitable< void > cfg_get_cmd( cobs_port& port, const std::string& 
 boost::asio::awaitable< void >
 cfg_set_cmd( cobs_port& port, const std::string& name, std::string value );
 
-}  // namespace scmdio
+}  // namespace servio::scmdio

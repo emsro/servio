@@ -9,7 +9,7 @@
 
 namespace em = emlabcpp;
 
-namespace cfg
+namespace servio::cfg
 {
 
 template < auto Key, typename T >
@@ -74,4 +74,4 @@ keyval make_keyval( auto val )
         };
 }
 
-}  // namespace cfg
+}  // namespace servio::cfg

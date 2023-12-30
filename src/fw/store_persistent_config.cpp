@@ -8,7 +8,7 @@
 #include <emlabcpp/defer.h>
 
 
-namespace fw
+namespace servio::fw
 {
 
 bool store_persistent_config( const cfg::page& page, const cfg::payload& pld, const cfg::map* cfg )
@@ -60,4 +60,4 @@ bool persistent_config_writer::operator()( const cfg::map* cfg )
         return succ;
 }
 
-}  // namespace fw
+}  // namespace servio::fw

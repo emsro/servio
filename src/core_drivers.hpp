@@ -4,6 +4,9 @@
 
 #include <emlabcpp/experimental/function_view.h>
 
+namespace servio
+{
+
 struct core_drivers
 {
         clk_interface*         clock;
@@ -35,3 +38,5 @@ struct core_drivers
                 } );
         }
 };
+
+}  // namespace servio

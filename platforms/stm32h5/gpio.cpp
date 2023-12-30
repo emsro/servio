@@ -2,7 +2,7 @@
 #include "fw/drv/leds.hpp"
 #include "setup.hpp"
 
-namespace plt
+namespace servio::plt
 {
 
 em::result setup_gpio( const fw::drv::pin_cfg& cfg )
@@ -18,4 +18,4 @@ em::result setup_gpio( const fw::drv::pin_cfg& cfg )
         return em::SUCCESS;
 }
 
-}  // namespace plt
+}  // namespace servio::plt

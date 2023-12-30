@@ -21,7 +21,7 @@ extern int _config_start;
 extern int _config_end;
 }
 
-namespace brd
+namespace servio::brd
 {
 
 ADC_HandleTypeDef ADC_HANDLE;
@@ -40,28 +40,28 @@ TIM_HandleTypeDef  TIM1_HANDLE = {};
 fw::drv::hbridge   HBRIDGE{};
 fw::drv::leds      LEDS;
 
-}  // namespace brd
+}  // namespace servio::brd
 
 extern "C" {
 
 void ADC1_IRQHandler()
 {
-        HAL_ADC_IRQHandler( &brd::ADC_HANDLE );
+        HAL_ADC_IRQHandler( &servio::brd::ADC_HANDLE );
 }
 
 void TIM1_UP_IRQHandler()
 {
-        HAL_TIM_IRQHandler( &brd::TIM1_HANDLE );
+        HAL_TIM_IRQHandler( &servio::brd::TIM1_HANDLE );
 }
 
 void USART2_IRQHandler()
 {
-        HAL_UART_IRQHandler( &brd::UART2_HANDLE );
+        HAL_UART_IRQHandler( &servio::brd::UART2_HANDLE );
 }
 
 void USART1_IRQHandler()
 {
-        HAL_UART_IRQHandler( &brd::UART1_HANDLE );
+        HAL_UART_IRQHandler( &servio::brd::UART1_HANDLE );
 }
 
 // TODO: are DMA interrupts missing?
@@ -71,34 +71,34 @@ extern "C" {
 
 void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
 {
-        brd::HBRIDGE.timer_period_irq( h );
+        servio::brd::HBRIDGE.timer_period_irq( h );
 }
 
 void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
 {
-        brd::COMMS.tx_cplt_irq( h );
-        brd::DEBUG_COMMS.tx_cplt_irq( h );
+        servio::brd::COMMS.tx_cplt_irq( h );
+        servio::brd::DEBUG_COMMS.tx_cplt_irq( h );
 }
 
 void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
 {
-        brd::COMMS.rx_cplt_irq( h );
-        brd::DEBUG_COMMS.rx_cplt_irq( h );
+        servio::brd::COMMS.rx_cplt_irq( h );
+        servio::brd::DEBUG_COMMS.rx_cplt_irq( h );
 }
 
 void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
-        fw::drv::ADC_POOLER.adc_conv_cplt_irq( h );
+        servio::fw::drv::ADC_POOLER.adc_conv_cplt_irq( h );
 }
 
 void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
 {
-        fw::drv::ADC_POOLER.adc_error_irq( h );
+        servio::fw::drv::ADC_POOLER.adc_error_irq( h );
 }
 }
 
 
-namespace brd
+namespace servio::brd
 {
 
 fw::drv::adc_pooler< fw::drv::adc_set >* adc_pooler_setup()
@@ -398,4 +398,4 @@ em::view< const page* > get_persistent_pages()
         return PERSISTENT_BLOCKS;
 }
 
-}  // namespace brd
+}  // namespace servio::brd

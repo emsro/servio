@@ -3,7 +3,7 @@
 
 #pragma once
 
-namespace cfg
+namespace servio::cfg
 {
 
 consteval map get_default_config()
@@ -45,4 +45,4 @@ consteval map get_default_config()
             reg< MOVING_DETECTION_STEP, float >{ 0.05F },
         };
 }
-}  // namespace cfg
+}  // namespace servio::cfg

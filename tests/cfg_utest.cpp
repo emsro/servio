@@ -4,6 +4,9 @@
 #include <gtest/gtest.h>
 #include <magic_enum.hpp>
 
+namespace servio::tests
+{
+
 TEST( CFG, ids )
 {
         const auto cfg_key_entries = magic_enum::enum_entries< cfg::key >();
@@ -26,3 +29,5 @@ TEST( CFG, ids )
 
         EXPECT_EQ( cfg_ids, proto_ids );
 }
+
+}  // namespace servio::tests

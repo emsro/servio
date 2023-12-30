@@ -7,6 +7,9 @@
 
 #pragma once
 
+namespace servio
+{
+
 class metrics
 {
 public:
@@ -42,3 +45,5 @@ inline bool metrics::is_moving() const
 {
         return !st_dec_.is_static;
 }
+
+}  // namespace servio

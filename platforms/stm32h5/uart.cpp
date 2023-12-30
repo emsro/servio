@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 
-namespace plt
+namespace servio::plt
 {
 
 // RX to PA10
@@ -76,4 +76,4 @@ em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart
         return em::SUCCESS;
 }
 
-}  // namespace plt
+}  // namespace servio::plt

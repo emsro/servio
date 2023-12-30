@@ -2,7 +2,7 @@
 
 #include "globals.hpp"
 
-namespace fw
+namespace servio::fw
 {
 
 void stop_exec()
@@ -16,4 +16,4 @@ void stop_exec()
         }
 }
 
-}  // namespace fw
+}  // namespace servio::fw

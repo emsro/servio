@@ -7,7 +7,7 @@
 #include <initializer_list>
 #include <limits>
 
-namespace brd
+namespace servio::brd
 {
 
 // MC_1 is connected to PA8 on CH1
@@ -192,4 +192,4 @@ em::result setup_leds_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         return em::SUCCESS;
 }
 
-}  // namespace brd
+}  // namespace servio::brd

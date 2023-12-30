@@ -9,7 +9,7 @@
 
 namespace em = emlabcpp;
 
-namespace scmdio
+namespace servio::scmdio
 {
 
 struct cobs_port
@@ -76,4 +76,4 @@ struct cobs_port
         }
 };
 
-}  // namespace scmdio
+}  // namespace servio::scmdio

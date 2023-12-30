@@ -4,7 +4,7 @@
 
 #include <cstdlib>
 
-namespace brd
+namespace servio::brd
 {
 
 void setup_adc_channel( ADC_ChannelConfTypeDef& channel, fw::drv::pinch_cfg cfg )
@@ -79,4 +79,4 @@ em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cf
         return em::SUCCESS;
 }
 
-}  // namespace brd
+}  // namespace servio::brd

@@ -8,7 +8,7 @@
 #include <initializer_list>
 #include <limits>
 
-namespace plt
+namespace servio::plt
 {
 
 em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
@@ -166,4 +166,4 @@ em::result setup_leds_channel( TIM_HandleTypeDef* tim, fw::drv::pinch_cfg cfg )
 }
 
 
-}  // namespace plt
+}  // namespace servio::plt

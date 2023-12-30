@@ -6,7 +6,7 @@
 #include <cassert>
 #include <cstdlib>
 
-namespace plt
+namespace servio::plt
 {
 
 em::result setup_clk()
@@ -57,4 +57,4 @@ em::result setup_clk()
         return em::SUCCESS;
 }
 
-}  // namespace plt
+}  // namespace servio::plt

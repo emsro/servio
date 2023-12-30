@@ -4,7 +4,7 @@
 
 #include <numbers>
 
-namespace brd
+namespace servio::brd
 {
 
 // TODO: move the formula into library
@@ -102,14 +102,14 @@ cfg::map get_default_config()
 
         return res;
 }
-}  // namespace brd
+}  // namespace servio::brd
 
 extern "C" {
 extern int _config_start;
 extern int _config_end;
 }
 
-namespace brd
+namespace servio::brd
 {
 em::view< std::byte* > page( uint32_t i )
 {
@@ -129,4 +129,4 @@ em::view< const em::view< std::byte* >* > get_persistent_pages()
         return PERSISTENT_BLOCKS;
 }
 
-}  // namespace brd
+}  // namespace servio::brd

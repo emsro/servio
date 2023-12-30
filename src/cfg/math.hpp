@@ -1,6 +1,6 @@
 #pragma once
 
-namespace cfg
+namespace servio::cfg
 {
 
 
@@ -36,4 +36,4 @@ calculate_current_conversion( float v_max, float v_min, float steps, float r_shu
 }
 
 
-}  // namespace cfg
+}  // namespace servio::cfg

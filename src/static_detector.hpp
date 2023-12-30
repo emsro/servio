@@ -2,6 +2,9 @@
 
 #pragma once
 
+namespace servio
+{
+
 struct static_detector
 {
         float step = 0.05F;
@@ -29,3 +32,5 @@ struct static_detector
                 last_pos  = position;
         }
 };
+
+}  // namespace servio

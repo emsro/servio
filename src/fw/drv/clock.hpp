@@ -6,7 +6,7 @@
 
 #pragma once
 
-namespace fw::drv
+namespace servio::fw::drv
 {
 
 class clock : public clk_interface
@@ -35,4 +35,4 @@ private:
         TIM_HandleTypeDef* tim_;
 };
 
-}  // namespace fw::drv
+}  // namespace servio::fw::drv

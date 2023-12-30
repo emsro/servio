@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace cnv
+namespace servio::cnv
 {
 
 class position_converter
@@ -30,4 +30,4 @@ private:
         float offset_;
 };
 
-}  // namespace cnv
+}  // namespace servio::cnv

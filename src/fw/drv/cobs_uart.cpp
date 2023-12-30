@@ -2,7 +2,7 @@
 
 #include "fw/util.hpp"
 
-namespace fw::drv
+namespace servio::fw::drv
 {
 
 com_res cobs_uart::load_message( em::view< std::byte* > data )
@@ -50,4 +50,4 @@ em::result cobs_uart::send( em::view< const std::byte* > data )
         return em::SUCCESS;
 }
 
-}  // namespace fw::drv
+}  // namespace servio::fw::drv

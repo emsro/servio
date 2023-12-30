@@ -1,7 +1,7 @@
 
 #include "scmdio/cli.hpp"
 
-namespace scmdio
+namespace servio::scmdio
 {
 
 CLI::Option* verbose_opt( CLI::App& app, bool& val )
@@ -44,4 +44,4 @@ void common_cli::setup( CLI::App& app )
         } );
 }
 
-}  // namespace scmdio
+}  // namespace servio::scmdio

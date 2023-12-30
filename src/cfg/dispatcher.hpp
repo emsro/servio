@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace cfg
+namespace servio::cfg
 {
 
 struct dispatcher
@@ -28,4 +28,4 @@ struct dispatcher
 
 void apply( control&, const map&, const key& key );
 
-}  // namespace cfg
+}  // namespace servio::cfg

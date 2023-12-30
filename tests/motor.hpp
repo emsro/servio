@@ -5,6 +5,9 @@
 
 #pragma once
 
+namespace servio::tests
+{
+
 using angle_vec = std::array< float, 2 >;
 
 inline angle_vec rotate_vec( const angle_vec& v, float angle )
@@ -99,3 +102,5 @@ inline std::ostream& operator<<( std::ostream& os, const simple_motor_sim& sim )
         return os << "\t" << sim.power << "\t" << sim.current << "\t" << sim.velocity << "\t"
                   << sim.position();
 }
+
+}  // namespace servio::tests

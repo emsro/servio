@@ -3,7 +3,7 @@
 
 #pragma once
 
-namespace fw::drv
+namespace servio::fw::drv
 {
 
 enum chan_ids
@@ -126,4 +126,4 @@ auto ADC_SEQUENCE = std::array{
 };
 
 
-}  // namespace fw::drv
+}  // namespace servio::fw::drv

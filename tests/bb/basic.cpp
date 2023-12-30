@@ -16,6 +16,9 @@ bool operator==( const Message& lh, const Message& rh )
 }
 }  // namespace google::protobuf
 
+namespace servio::tests::bb
+{
+
 boost::asio::awaitable< void >
 test_properties_querying( boost::asio::io_context&, scmdio::cobs_port& port )
 {
@@ -162,6 +165,8 @@ boost::asio::awaitable< void > test_config( boost::asio::io_context&, scmdio::co
         }
 }
 
+}  // namespace servio::tests::bb
+
 int main( int argc, char** argv )
 {
         using namespace std::chrono_literals;
@@ -171,9 +176,9 @@ int main( int argc, char** argv )
         bool verbose   = false;
 
         CLI::App app{ "basic black box tests" };
-        scmdio::powerless_flag( app, powerless );
-        scmdio::verbose_opt( app, verbose );
-        scmdio::common_cli cli;
+        servio::scmdio::powerless_flag( app, powerless );
+        servio::scmdio::verbose_opt( app, verbose );
+        servio::scmdio::common_cli cli;
         cli.setup( app );
 
         try {
@@ -187,10 +192,12 @@ int main( int argc, char** argv )
                 em::DEBUG_LOGGER.set_option( em::set_stdout( true ) );
         }
 
-        tests::bb::register_test(
-            "basic", "properties_querying", cli, test_properties_querying, 1s );
-        tests::bb::register_test( "basic", "modes", cli, test_modes, 1s );
-        tests::bb::register_test( "basic", "config", cli, test_config, 10s );
+        servio::tests::bb::register_test(
+            "basic", "properties_querying", cli, servio::tests::bb::test_properties_querying, 1s );
+        servio::tests::bb::register_test(
+            "basic", "modes", cli, servio::tests::bb::test_modes, 1s );
+        servio::tests::bb::register_test(
+            "basic", "config", cli, servio::tests::bb::test_config, 10s );
 
         return RUN_ALL_TESTS();
 }

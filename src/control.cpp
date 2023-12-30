@@ -5,6 +5,9 @@
 #include <emlabcpp/match.h>
 #include <emlabcpp/protocol/register_handler.h>
 
+namespace servio
+{
+
 control::control( microseconds now, ctl::config cfg )
   : position_lims_( cfg.position_limits )
   , position_pid_( now.count(), { cfg.position_pid, cfg.current_limits } )
@@ -186,3 +189,5 @@ limits< float > control::get_velocity_limits() const
 {
         return em::intersection( velocity_lims_.config_lims, velocity_lims_.pos_derived_lims );
 }
+
+}  // namespace servio

@@ -8,7 +8,7 @@
 #include "fw/util.hpp"
 #include "setup.hpp"
 
-namespace brd
+namespace servio::brd
 {
 
 ADC_HandleTypeDef  ADC_HANDLE{};
@@ -27,72 +27,72 @@ fw::drv::hbridge   HBRIDGE{};
 TIM_HandleTypeDef  TIM3_HANDLE{};
 fw::drv::leds      LEDS{};
 
-}  // namespace brd
+}  // namespace servio::brd
 
 extern "C" {
 
 void TIM1_UP_TIM16_IRQHandler()
 {
-        HAL_TIM_IRQHandler( &brd::TIM1_HANDLE );
+        HAL_TIM_IRQHandler( &servio::brd::TIM1_HANDLE );
 }
 
 void USART2_IRQHandler()
 {
-        HAL_UART_IRQHandler( &brd::UART2_HANDLE );
+        HAL_UART_IRQHandler( &servio::brd::UART2_HANDLE );
 }
 
 void DMA1_Channel4_IRQHandler()
 {
         // TODO: is this needed?
-        HAL_DMA_IRQHandler( &brd::UART2_DMA_HANDLE );
+        HAL_DMA_IRQHandler( &servio::brd::UART2_DMA_HANDLE );
 }
 
 void USART1_IRQHandler()
 {
-        HAL_UART_IRQHandler( &brd::UART1_HANDLE );
+        HAL_UART_IRQHandler( &servio::brd::UART1_HANDLE );
 }
 
 void DMA1_Channel5_IRQHandler()
 {
         // TODO: is this needed?
-        HAL_DMA_IRQHandler( &brd::UART1_DMA_HANDLE );
+        HAL_DMA_IRQHandler( &servio::brd::UART1_DMA_HANDLE );
 }
 
 [[gnu::flatten]] void DMA1_Channel1_IRQHandler()
 {
-        HAL_DMA_IRQHandler( &brd::ADC_DMA_HANDLE );
+        HAL_DMA_IRQHandler( &servio::brd::ADC_DMA_HANDLE );
 }
 [[gnu::flatten]] void ADC1_2_IRQHandler()
 {
-        HAL_ADC_IRQHandler( &brd::ADC_HANDLE );
+        HAL_ADC_IRQHandler( &servio::brd::ADC_HANDLE );
 }
 
 void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
 {
-        brd::HBRIDGE.timer_period_irq( h );
+        servio::brd::HBRIDGE.timer_period_irq( h );
 }
 
 void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
 {
-        brd::COMMS.tx_cplt_irq( h );
-        brd::DEBUG_COMMS.tx_cplt_irq( h );
+        servio::brd::COMMS.tx_cplt_irq( h );
+        servio::brd::DEBUG_COMMS.tx_cplt_irq( h );
 }
 [[gnu::flatten]] void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
 {
-        brd::COMMS.rx_cplt_irq( h );
-        brd::DEBUG_COMMS.rx_cplt_irq( h );
+        servio::brd::COMMS.rx_cplt_irq( h );
+        servio::brd::DEBUG_COMMS.rx_cplt_irq( h );
 }
 [[gnu::flatten]] void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
-        fw::drv::ADC_POOLER.adc_conv_cplt_irq( h );
+        servio::fw::drv::ADC_POOLER.adc_conv_cplt_irq( h );
 }
 [[gnu::flatten]] void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
 {
-        fw::drv::ADC_POOLER.adc_error_irq( h );
+        servio::fw::drv::ADC_POOLER.adc_error_irq( h );
 }
 }
 
-namespace brd
+namespace servio::brd
 {
 
 em::result setup_board()
@@ -378,4 +378,4 @@ core_drivers setup_core_drivers()
         };
 }
 
-}  // namespace brd
+}  // namespace servio::brd

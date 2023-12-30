@@ -9,7 +9,7 @@
 
 namespace em = emlabcpp;
 
-namespace fw::drv
+namespace servio::fw::drv
 {
 
 inline empty_period_cb EMPTY_PERIOD_CB;
@@ -79,4 +79,4 @@ private:
         uint32_t             mc2_channel_ = 0;
 };
 
-}  // namespace fw::drv
+}  // namespace servio::fw::drv

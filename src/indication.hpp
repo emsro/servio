@@ -4,6 +4,9 @@
 
 #pragma once
 
+namespace servio
+{
+
 // possible events:
 // - system stops itself due to un-expected error - red glows
 // - voltage too low - red blinks with 100ms interval for 100ms every 1s
@@ -70,3 +73,5 @@ private:
 
         microseconds blue_disengage_at_;
 };
+
+}  // namespace servio

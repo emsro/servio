@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace cnv
+namespace servio::cnv
 {
 
 class current_converter
@@ -24,4 +24,4 @@ private:
         float scale_;
 };
 
-}  // namespace cnv
+}  // namespace servio::cnv

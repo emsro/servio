@@ -8,7 +8,7 @@
 
 #pragma once
 
-namespace ctl
+namespace servio::ctl
 {
 
 using pid              = em::pid< typename microseconds::rep >;
@@ -29,13 +29,13 @@ struct config
         float static_friction_decay;
 };
 
-}  // namespace ctl
+}  // namespace servio::ctl
 
 #ifdef EMLABCPP_USE_NLOHMANN_JSON
 template <>
-struct nlohmann::adl_serializer< ctl::config >
+struct nlohmann::adl_serializer< servio::ctl::config >
 {
-        static void to_json( nlohmann::json& j, const ctl::config& cfg )
+        static void to_json( nlohmann::json& j, const servio::ctl::config& cfg )
         {
                 j["position_pid"]          = cfg.position_pid;
                 j["velocity_pid"]          = cfg.velocity_pid;
@@ -47,9 +47,9 @@ struct nlohmann::adl_serializer< ctl::config >
                 j["static_friction_decay"] = cfg.static_friction_decay;
         }
 
-        static ctl::config from_json( const nlohmann::json& j )
+        static servio::ctl::config from_json( const nlohmann::json& j )
         {
-                ctl::config cfg;
+                servio::ctl::config cfg;
                 cfg.position_pid          = j["position_pid"];
                 cfg.velocity_pid          = j["velocity_pid"];
                 cfg.current_pid           = j["current_pid"];

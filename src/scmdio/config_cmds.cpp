@@ -6,7 +6,7 @@
 
 namespace em = emlabcpp;
 
-namespace scmdio
+namespace servio::scmdio
 {
 namespace
 {
@@ -136,4 +136,4 @@ cfg_set_cmd( cobs_port& port, const std::string& name, std::string value )
         std::ignore                = reply;
 }
 
-}  // namespace scmdio
+}  // namespace servio::scmdio

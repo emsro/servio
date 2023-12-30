@@ -13,6 +13,7 @@
 
 int main()
 {
+        using namespace servio;
 
         if ( brd::setup_board() != em::SUCCESS ) {
                 fw::stop_exec();

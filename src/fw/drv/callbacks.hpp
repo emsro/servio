@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace fw::drv
+namespace servio::fw::drv
 {
 
 template < typename Callable >
@@ -86,4 +86,4 @@ struct empty_period_cb : public period_cb_interface
         }
 };
 
-}  // namespace fw::drv
+}  // namespace servio::fw::drv

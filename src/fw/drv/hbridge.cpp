@@ -2,7 +2,7 @@
 
 #include <emlabcpp/algorithm.h>
 
-namespace fw::drv
+namespace servio::fw::drv
 {
 
 em::result hbridge::start()
@@ -71,4 +71,4 @@ int8_t hbridge::get_direction() const
                    -1;
 }
 
-}  // namespace fw::drv
+}  // namespace servio::fw::drv

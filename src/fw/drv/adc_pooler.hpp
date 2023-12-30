@@ -3,7 +3,7 @@
 
 #pragma once
 
-namespace fw::drv
+namespace servio::fw::drv
 {
 inline empty_adc_detailed_cb EMPTY_ADC_DETAILED_CALLBACK;
 
@@ -228,4 +228,4 @@ private:
         Set                        set_;
 };
 
-}  // namespace fw::drv
+}  // namespace servio::fw::drv

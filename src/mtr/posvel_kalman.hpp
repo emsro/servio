@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace mtr
+namespace servio::mtr
 {
 
 struct posvel_kalman
@@ -71,4 +71,4 @@ struct posvel_kalman
         }
 };
 
-}  // namespace mtr
+}  // namespace servio::mtr

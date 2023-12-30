@@ -8,6 +8,9 @@
 
 #pragma once
 
+namespace servio
+{
+
 class control
 {
 
@@ -76,3 +79,5 @@ private:
 
         int16_t power_ = 0;
 };
+
+}  // namespace servio
