@@ -71,7 +71,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   add_library(prototype2 STATIC)
   target_link_libraries(prototype2 PUBLIC prototype2_board serviolib fwlib
-                                          ctllib STM32::Nano)
+                                          mtrlib ctllib STM32::Nano)
   target_compile_options(prototype2 PRIVATE -Os)
 
   servio_add_board_executable(

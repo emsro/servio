@@ -2,8 +2,8 @@
 
 #include "ctl/control.hpp"
 #include "indication.hpp"
-#include "metrics.hpp"
 #include "monitor.hpp"
+#include "mtr/metrics.hpp"
 
 namespace servio
 {
@@ -13,7 +13,7 @@ struct core
 
         ctl::control ctl;
         converter    conv;
-        metrics      met;
+        mtr::metrics met;
         indication   ind;
         monitor      mon;
 

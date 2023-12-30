@@ -1,6 +1,6 @@
 #include "callbacks.hpp"
 #include "ctl/control.hpp"
-#include "metrics.hpp"
+#include "mtr/metrics.hpp"
 
 #pragma once
 
@@ -13,7 +13,7 @@ struct standard_callbacks
             pwm_motor_interface& motor,
             clk_interface&       clk,
             ctl::control&        ctl,
-            metrics&             met,
+            mtr::metrics&        met,
             const converter&     conv )
           : current_cb( motor, ctl, clk, conv )
           , pos_cb( ctl, met, clk, conv )

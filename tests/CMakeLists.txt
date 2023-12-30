@@ -13,12 +13,12 @@ function(add_utest target)
     gtest_main
     serviolib
     ctllib
+    mtrlib
     nlohmann_json::nlohmann_json
     proto
     magic_enum)
 endfunction()
 
-add_utest(metrics_utest)
 add_utest(cfg_storage_utest)
 add_utest(cfg_utest)
 

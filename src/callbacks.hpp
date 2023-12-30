@@ -1,7 +1,7 @@
 #include "cnv/utils.hpp"
 #include "converter.hpp"
 #include "ctl/control.hpp"
-#include "metrics.hpp"
+#include "mtr/metrics.hpp"
 #include "platform.hpp"
 
 #pragma once
@@ -44,7 +44,7 @@ class position_callback : public position_cb_interface
 public:
         position_callback(
             ctl::control&    ctl,
-            metrics&         met,
+            mtr::metrics&    met,
             clk_interface&   clk,
             const converter& conv )
           : ctl_( ctl )
@@ -68,7 +68,7 @@ public:
 
 private:
         ctl::control&    ctl_;
-        metrics&         met_;
+        mtr::metrics&    met_;
         clk_interface&   clk_;
         const converter& conv_;
 };

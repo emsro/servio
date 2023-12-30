@@ -18,7 +18,7 @@ struct dispatcher
         const vcc_interface&                             vcc_drv;
         const temperature_interface&                     temp_drv;
         ctl::control&                                    ctl;
-        metrics&                                         met;
+        mtr::metrics&                                    met;
         cfg::dispatcher&                                 cfg_disp;
         em::function_view< bool( const cfg::map* cfg ) > cfg_writer;
         converter&                                       conv;

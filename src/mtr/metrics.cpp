@@ -1,6 +1,6 @@
 #include "metrics.hpp"
 
-namespace servio
+namespace servio::mtr
 {
 
 metrics::metrics( microseconds time, float position, limits< float > position_range )
@@ -37,4 +37,4 @@ void metrics::set_moving_step( float step )
         last_time_ = now;
 }
 
-}  // namespace servio
+}  // namespace servio::mtr
