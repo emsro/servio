@@ -1,5 +1,5 @@
-<map id="src/control.cpp" name="src/control.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="599,5,716,32"/>
+<map id="src/ctl/control.cpp" name="src/ctl/control.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="589,5,726,32"/>
 <area shape="rect" id="node2" href="$control_8hpp.html" title=" " alt="" coords="345,87,439,114"/>
 <area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="511,259,593,285"/>
 <area shape="rect" id="node9" title=" " alt="" coords="641,87,783,114"/>

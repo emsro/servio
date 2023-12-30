@@ -27,7 +27,7 @@ var hierarchy =
     [ "servio::com_res", "namespaceservio.html#structservio_1_1com__res", null ],
     [ "servio::scmdio::common_cli", "structservio_1_1scmdio_1_1common__cli.html", null ],
     [ "servio::ctl::config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", null ],
-    [ "servio::control", "classservio_1_1control.html", null ],
+    [ "servio::ctl::control", "classservio_1_1ctl_1_1control.html", null ],
     [ "servio::converter", "structservio_1_1converter.html", null ],
     [ "servio::core", "structservio_1_1core.html", null ],
     [ "servio::core_drivers", "structservio_1_1core__drivers.html", null ],
@@ -89,10 +89,14 @@ var hierarchy =
       [ "servio::scaled< T, BitOffset >", "classservio_1_1scaled.html", null ]
     ] ],
     [ "servio::brd::setpoint", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1setpoint", null ],
+    [ "servio::sim::simple_motor", "structservio_1_1sim_1_1simple__motor.html", null ],
     [ "servio::standard_callbacks", "structservio_1_1standard__callbacks.html", null ],
     [ "servio::klmn::state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", null ],
     [ "servio::static_detector", "structservio_1_1static__detector.html", null ],
     [ "servio::cnv::temperature_converter", "classservio_1_1cnv_1_1temperature__converter.html", null ],
+    [ "testing::Test", null, [
+      [ "servio::ctl::tests::control_fixture", "classservio_1_1ctl_1_1tests_1_1control__fixture.html", null ]
+    ] ],
     [ "servio::brd::uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", null ],
     [ "servio::plt::uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", null ],
     [ "servio::value_cb_interface", "classservio_1_1value__cb__interface.html", [

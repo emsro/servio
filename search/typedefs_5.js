@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['limits_1365',['limits',['../namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55',1,'servio']]]
+  ['kalman_5fgain_1404',['kalman_gain',['../namespaceservio_1_1klmn.html#af5efb0f3164d80b24e95734b34812cd7',1,'servio::klmn']]]
 ];

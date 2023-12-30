@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['adc_2ecpp_31',['adc.cpp',['../boards_2prototype2_2adc_8cpp.html',1,'(Global Namespace)'],['../platforms_2stm32h5_2adc_8cpp.html',1,'(Global Namespace)']]],
+  ['adc_2ecpp_31',['adc.cpp',['../platforms_2stm32h5_2adc_8cpp.html',1,'(Global Namespace)'],['../boards_2prototype2_2adc_8cpp.html',1,'(Global Namespace)']]],
   ['adc1_5f2_5firqhandler_32',['ADC1_2_IRQHandler',['../prototype2_2board_8cpp.html#aff4af6b741ab43c7784e08e0e2e50586',1,'board.cpp']]],
   ['adc1_5firqhandler_33',['ADC1_IRQHandler',['../proto3_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b',1,'board.cpp']]],
   ['adc_5fcfg_34',['adc_cfg',['../namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__cfg',1,'servio::brd::adc_cfg'],['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg',1,'servio::plt::adc_cfg']]],
@@ -16,7 +16,7 @@ var searchData=
   ['adc_5fdma_5fhandle_44',['ADC_DMA_HANDLE',['../namespaceservio_1_1brd.html#a2b0ceaa2337a3d916d52ba0fe6f823bc',1,'servio::brd']]],
   ['adc_5ferror_5firq_45',['adc_error_irq',['../structservio_1_1fw_1_1drv_1_1adc__pooler.html#a4a4352afec9da358da82c371b37b37c9',1,'servio::fw::drv::adc_pooler']]],
   ['adc_5fhandle_46',['ADC_HANDLE',['../namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e',1,'servio::brd']]],
-  ['adc_5finstance_47',['adc_instance',['../namespaceservio_1_1brd.html#a6e305a39d11b7de03020a9a6a299008b',1,'servio::brd::adc_cfg::adc_instance()'],['../namespaceservio_1_1plt.html#a7c17b619a35f4e0ff604967668babdb4',1,'servio::plt::adc_cfg::adc_instance()']]],
+  ['adc_5finstance_47',['adc_instance',['../namespaceservio_1_1plt.html#a7c17b619a35f4e0ff604967668babdb4',1,'servio::plt::adc_cfg::adc_instance()'],['../namespaceservio_1_1brd.html#a6e305a39d11b7de03020a9a6a299008b',1,'servio::brd::adc_cfg::adc_instance()']]],
   ['adc_5firq_5fpriority_48',['adc_irq_priority',['../namespaceservio_1_1brd.html#ad1ee92f9b8d2bb0815540c8fc791375b',1,'servio::brd::adc_cfg::adc_irq_priority()'],['../namespaceservio_1_1plt.html#a6a1b2270dd01143ff1bc38ba8cfd3020',1,'servio::plt::adc_cfg::adc_irq_priority()']]],
   ['adc_5fperiod_5fcb_49',['ADC_PERIOD_CB',['../namespaceservio_1_1fw_1_1drv.html#a63a0a608a0de0d0e1389374229d508fb',1,'servio::fw::drv']]],
   ['adc_5fpooler_50',['adc_pooler',['../structservio_1_1fw_1_1drv_1_1adc__pooler.html#a6aede59f0fd2b627ee95c47d54a8a958',1,'servio::fw::drv::adc_pooler']]],
@@ -33,13 +33,15 @@ var searchData=
   ['adc_5ftrigger_61',['adc_trigger',['../namespaceservio_1_1plt.html#a03cac8a5dbc15f966a3b411492fffb0d',1,'servio::plt::adc_cfg']]],
   ['adc_5fvcc_62',['ADC_VCC',['../namespaceservio_1_1fw_1_1drv.html#add2129269733ef9b5ac41a77f308d439',1,'servio::fw::drv']]],
   ['alternate_63',['alternate',['../namespaceservio_1_1fw_1_1drv.html#a32b3d2473a57ede8bb23fe4de869fb7b',1,'servio::fw::drv::pinch_cfg::alternate()'],['../namespaceservio_1_1fw_1_1drv.html#a0b533f566d8f959d7dda4b49e39939dc',1,'servio::fw::drv::pin_cfg::alternate()']]],
-  ['angle_64',['angle',['../namespaceservio_1_1scmdio.html#ae8ed943d565921113b58e844ec40d4fb',1,'servio::scmdio::mode_opts::angle()'],['../structservio_1_1mtr_1_1posvel__kalman.html#a2ac393ceac1eb1e6e7713a988a279147',1,'servio::mtr::posvel_kalman::angle()'],['../namespaceservio_1_1brd.html#acd03ee2c0ea8aca9e6c3580f0fa88137',1,'servio::brd::setpoint::angle()'],['../namespaceservio_1_1klmn.html#a6b85edb1c54956e9cd22ae24f3debbc5',1,'servio::klmn::angle(T &amp;x)']]],
+  ['angle_64',['angle',['../namespaceservio_1_1klmn.html#a6b85edb1c54956e9cd22ae24f3debbc5',1,'servio::klmn::angle()'],['../namespaceservio_1_1brd.html#acd03ee2c0ea8aca9e6c3580f0fa88137',1,'servio::brd::setpoint::angle()'],['../namespaceservio_1_1scmdio.html#ae8ed943d565921113b58e844ec40d4fb',1,'servio::scmdio::mode_opts::angle()'],['../structservio_1_1mtr_1_1posvel__kalman.html#a2ac393ceac1eb1e6e7713a988a279147',1,'servio::mtr::posvel_kalman::angle()']]],
   ['angle_5fmod_65',['angle_mod',['../namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f',1,'servio::klmn']]],
-  ['any_5funinitialized_66',['any_uninitialized',['../structservio_1_1core__drivers.html#ae709c8d23bfa6c76b458591d9181fa70',1,'servio::core_drivers']]],
-  ['apply_67',['apply',['../structservio_1_1cfg_1_1dispatcher.html#a45c428210df58df1a0f7f1ec458cb9bb',1,'servio::cfg::dispatcher::apply()'],['../namespaceservio_1_1cfg.html#a25e13f560982b44e09c3606311bcbe31',1,'servio::cfg::apply()']]],
-  ['as_5ffloat_68',['as_float',['../classservio_1_1scaled.html#af5717e2b09c98b0e4ec514a92674c6ab',1,'servio::scaled']]],
-  ['assert_5fparam_69',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32g4xx_hal_conf.h'],['../stm32h5xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32h5xx_hal_conf.h']]],
-  ['async_5fcobs_2ehpp_70',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],
-  ['async_5fread_71',['async_read',['../structservio_1_1scmdio_1_1cobs__port.html#af139b6dbdd9e506a3a5c0e4b9c624211',1,'servio::scmdio::cobs_port']]],
-  ['async_5fwrite_72',['async_write',['../structservio_1_1scmdio_1_1cobs__port.html#ab1d8918adfbec664a16b9079d48cfc9a',1,'servio::scmdio::cobs_port']]]
+  ['angle_5fvec_66',['angle_vec',['../namespaceservio_1_1sim.html#a496e8de9a9763267fda5eeaac8a92fa1',1,'servio::sim']]],
+  ['any_5funinitialized_67',['any_uninitialized',['../structservio_1_1core__drivers.html#ae709c8d23bfa6c76b458591d9181fa70',1,'servio::core_drivers']]],
+  ['apply_68',['apply',['../structservio_1_1cfg_1_1dispatcher.html#a45c428210df58df1a0f7f1ec458cb9bb',1,'servio::cfg::dispatcher::apply()'],['../namespaceservio_1_1cfg.html#a6b74b3216968308a4d01b9b8641cc711',1,'servio::cfg::apply()']]],
+  ['apply_5fpower_69',['apply_power',['../structservio_1_1sim_1_1simple__motor.html#aec8f40ee7aa37b07c3c055e53048cbfa',1,'servio::sim::simple_motor']]],
+  ['as_5ffloat_70',['as_float',['../classservio_1_1scaled.html#af5717e2b09c98b0e4ec514a92674c6ab',1,'servio::scaled']]],
+  ['assert_5fparam_71',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32g4xx_hal_conf.h'],['../stm32h5xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32h5xx_hal_conf.h']]],
+  ['async_5fcobs_2ehpp_72',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],
+  ['async_5fread_73',['async_read',['../structservio_1_1scmdio_1_1cobs__port.html#af139b6dbdd9e506a3a5c0e4b9c624211',1,'servio::scmdio::cobs_port']]],
+  ['async_5fwrite_74',['async_write',['../structservio_1_1scmdio_1_1cobs__port.html#ab1d8918adfbec664a16b9079d48cfc9a',1,'servio::scmdio::cobs_port']]]
 ];

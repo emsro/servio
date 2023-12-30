@@ -23,7 +23,11 @@ var annotated_dup =
         [ "voltage_converter", "classservio_1_1cnv_1_1voltage__converter.html", "classservio_1_1cnv_1_1voltage__converter" ]
       ] ],
       [ "ctl", "namespaceservio_1_1ctl.html", [
+        [ "tests", "namespaceservio_1_1ctl_1_1tests.html", [
+          [ "control_fixture", "classservio_1_1ctl_1_1tests_1_1control__fixture.html", "classservio_1_1ctl_1_1tests_1_1control__fixture" ]
+        ] ],
         [ "config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", "namespaceservio_1_1ctl_structservio_1_1ctl_1_1config_dup" ],
+        [ "control", "classservio_1_1ctl_1_1control.html", "classservio_1_1ctl_1_1control" ],
         [ "linear_transition_regulator", "structservio_1_1ctl_1_1linear__transition__regulator.html", "structservio_1_1ctl_1_1linear__transition__regulator" ]
       ] ],
       [ "fw", "namespaceservio_1_1fw.html", [
@@ -75,10 +79,12 @@ var annotated_dup =
         [ "cfg_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1cfg__opts_dup" ],
         [ "mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1mode__opts_dup" ]
       ] ],
+      [ "sim", "namespaceservio_1_1sim.html", [
+        [ "simple_motor", "structservio_1_1sim_1_1simple__motor.html", "structservio_1_1sim_1_1simple__motor" ]
+      ] ],
       [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
       [ "current_callback", "classservio_1_1current__callback.html", "classservio_1_1current__callback" ],
       [ "position_callback", "classservio_1_1position__callback.html", "classservio_1_1position__callback" ],
-      [ "control", "classservio_1_1control.html", "classservio_1_1control" ],
       [ "converter", "structservio_1_1converter.html", "structservio_1_1converter" ],
       [ "core", "structservio_1_1core.html", "structservio_1_1core" ],
       [ "core_drivers", "structservio_1_1core__drivers.html", "structservio_1_1core__drivers" ],

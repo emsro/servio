@@ -14,14 +14,10 @@ var namespaceservio =
     [ "mtr", "namespaceservio_1_1mtr.html", "namespaceservio_1_1mtr" ],
     [ "plt", "namespaceservio_1_1plt.html", "namespaceservio_1_1plt" ],
     [ "scmdio", "namespaceservio_1_1scmdio.html", "namespaceservio_1_1scmdio" ],
-    [ "tests", "namespaceservio_1_1tests.html", [
-      [ "TEST", "namespaceservio_1_1tests.html#a9288206f189064c4cadd3c454f0eae9f", null ],
-      [ "TEST", "namespaceservio_1_1tests.html#a4c2b426f7b295882f1eac203e6fb3adc", null ]
-    ] ],
+    [ "sim", "namespaceservio_1_1sim.html", "namespaceservio_1_1sim" ],
     [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
     [ "current_callback", "classservio_1_1current__callback.html", "classservio_1_1current__callback" ],
     [ "position_callback", "classservio_1_1position__callback.html", "classservio_1_1position__callback" ],
-    [ "control", "classservio_1_1control.html", "classservio_1_1control" ],
     [ "converter", "structservio_1_1converter.html", "structservio_1_1converter" ],
     [ "core", "structservio_1_1core.html", "structservio_1_1core" ],
     [ "core_drivers", "structservio_1_1core__drivers.html", "structservio_1_1core__drivers" ],

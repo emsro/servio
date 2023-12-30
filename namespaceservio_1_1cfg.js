@@ -48,7 +48,7 @@ var namespaceservio_1_1cfg =
       [ "MAXIMUM_TEMPERATURE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a31f81f3f8379662055edc0f05154c542", null ],
       [ "MOVING_DETECTION_STEP", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8df354e31764c98878c7f2a765111fc5", null ]
     ] ],
-    [ "apply", "namespaceservio_1_1cfg.html#a25e13f560982b44e09c3606311bcbe31", null ],
+    [ "apply", "namespaceservio_1_1cfg.html#a6b74b3216968308a4d01b9b8641cc711", null ],
     [ "calculate_current_conversion", "namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811", null ],
     [ "find_latest_page", "namespaceservio_1_1cfg.html#a8787135a705ae3b12e06d41bcf8c6c95", null ],
     [ "find_next_page", "namespaceservio_1_1cfg.html#ac90beba4f9ba45db1db48a6daebc5ff4", null ],

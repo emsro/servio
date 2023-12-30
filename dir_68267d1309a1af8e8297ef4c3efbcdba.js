@@ -7,14 +7,11 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "klmn", "dir_9dddf5cf0927eef839735694c66ca8bc.html", "dir_9dddf5cf0927eef839735694c66ca8bc" ],
     [ "mtr", "dir_52d5c93d1a27df9f60d01a37fbb92cbd.html", "dir_52d5c93d1a27df9f60d01a37fbb92cbd" ],
     [ "scmdio", "dir_d4b5d0c37e91718ad53ded7871cea291.html", "dir_d4b5d0c37e91718ad53ded7871cea291" ],
+    [ "sim", "dir_5ba998bec3831bd658c4991b03a0da20.html", "dir_5ba998bec3831bd658c4991b03a0da20" ],
     [ "base.hpp", "base_8hpp.html", "base_8hpp" ],
     [ "callbacks.hpp", "callbacks_8hpp.html", [
       [ "current_callback", "classservio_1_1current__callback.html", "classservio_1_1current__callback" ],
       [ "position_callback", "classservio_1_1position__callback.html", "classservio_1_1position__callback" ]
-    ] ],
-    [ "control.cpp", "control_8cpp.html", null ],
-    [ "control.hpp", "control_8hpp.html", [
-      [ "control", "classservio_1_1control.html", "classservio_1_1control" ]
     ] ],
     [ "converter.hpp", "converter_8hpp.html", [
       [ "converter", "structservio_1_1converter.html", "structservio_1_1converter" ]
