@@ -23,9 +23,9 @@ var base_8hpp =
       [ "VELOCITY", "base_8hpp.html#afc974abf6039d6442e90374ac7b74be9a7b4354bded455eb379e3c764806cda7b", null ],
       [ "POSITION", "base_8hpp.html#afc974abf6039d6442e90374ac7b74be9a90b4ba73224408e82ade8a072a3712c1", null ]
     ] ],
-    [ "operator\"\"_ms", "base_8hpp.html#a492bd58e72d7b3b68e1f6b26a1588d81", null ],
-    [ "operator\"\"_s", "base_8hpp.html#a381f999384719facd93ca4e5778e85a0", null ],
-    [ "operator\"\"_us", "base_8hpp.html#a8b49e8ac8975f209d89f963b7e5518df", null ],
+    [ "operator\"\"_ms", "base_8hpp.html#af7fb1870e027a6f6576164c72d18bc73", null ],
+    [ "operator\"\"_s", "base_8hpp.html#a9cc4a2727af86eed775de91ae7e0ac23", null ],
+    [ "operator\"\"_us", "base_8hpp.html#add4105476cecfe3e11bbbde64b4e7922", null ],
     [ "infty", "base_8hpp.html#a0a32b7da24f35e9d57adbab46fa02c1c", null ],
     [ "pi", "base_8hpp.html#a20c15193768c59a28a88e172aba5ab20", null ]
 ];

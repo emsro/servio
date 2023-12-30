@@ -6,6 +6,11 @@ var namespaceservio =
     [ "ctl", "namespaceservio_1_1ctl.html", "namespaceservio_1_1ctl" ],
     [ "fw", "namespaceservio_1_1fw.html", "namespaceservio_1_1fw" ],
     [ "kalman", "namespaceservio_1_1kalman.html", "namespaceservio_1_1kalman" ],
+    [ "literals", "namespaceservio_1_1literals.html", [
+      [ "operator\"\"_ms", "namespaceservio_1_1literals.html#af7fb1870e027a6f6576164c72d18bc73", null ],
+      [ "operator\"\"_s", "namespaceservio_1_1literals.html#a9cc4a2727af86eed775de91ae7e0ac23", null ],
+      [ "operator\"\"_us", "namespaceservio_1_1literals.html#add4105476cecfe3e11bbbde64b4e7922", null ]
+    ] ],
     [ "mtr", "namespaceservio_1_1mtr.html", "namespaceservio_1_1mtr" ],
     [ "plt", "namespaceservio_1_1plt.html", "namespaceservio_1_1plt" ],
     [ "scmdio", "namespaceservio_1_1scmdio.html", "namespaceservio_1_1scmdio" ],
@@ -73,9 +78,6 @@ var namespaceservio =
       [ "INOPERABLE", "namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788ac5666694e05e08a4ae3ab497591042fa", null ]
     ] ],
     [ "load_persistent_config", "namespaceservio.html#a6eea484f055913925a2cfb0b92185031", null ],
-    [ "operator\"\"_ms", "namespaceservio.html#a492bd58e72d7b3b68e1f6b26a1588d81", null ],
-    [ "operator\"\"_s", "namespaceservio.html#a381f999384719facd93ca4e5778e85a0", null ],
-    [ "operator\"\"_us", "namespaceservio.html#a8b49e8ac8975f209d89f963b7e5518df", null ],
     [ "sin_approx", "namespaceservio.html#aa42f0345929b73541ef4b32f01e483df", null ],
     [ "infty", "namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c", null ],
     [ "pi", "namespaceservio.html#a20c15193768c59a28a88e172aba5ab20", null ],

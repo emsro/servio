@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['last_5fpayload_1267',['last_payload',['../structservio_1_1fw_1_1persistent__config__writer.html#aa9f1351c4802c8c08c215b622d37a5e4',1,'servio::fw::persistent_config_writer']]],
-  ['last_5fpos_1268',['last_pos',['../structservio_1_1static__detector.html#a216e6cadf6e28fe9f614ad0ff241f6f2',1,'servio::static_detector']]],
-  ['last_5ftime_1269',['last_time',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a7293429062afa7c5f3851f7d495eb8d1',1,'servio::ctl::linear_transition_regulator']]],
-  ['last_5fvalue_1270',['last_value',['../structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html#a70c5a12af8b2905a4361c7f47cd471f5',1,'servio::fw::drv::detailed_adc_channel::last_value()'],['../structservio_1_1fw_1_1drv_1_1adc__channel.html#a880b8819817c1308e6d77349c37a8a53',1,'servio::fw::drv::adc_channel::last_value()']]],
-  ['leds_1271',['leds',['../structservio_1_1core__drivers.html#ac23c824b5a677060ebe0ac03ac639399',1,'servio::core_drivers']]],
-  ['leds_1272',['LEDS',['../namespaceservio_1_1brd.html#a2cc71feb6d0307dc8549d43ac63ab185',1,'servio::brd']]],
-  ['low_5fpoint_1273',['low_point',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a678d5f4c5423a504124660c634013463',1,'servio::ctl::linear_transition_regulator']]]
+  ['last_5fpayload_1269',['last_payload',['../structservio_1_1fw_1_1persistent__config__writer.html#aa9f1351c4802c8c08c215b622d37a5e4',1,'servio::fw::persistent_config_writer']]],
+  ['last_5fpos_1270',['last_pos',['../structservio_1_1static__detector.html#a216e6cadf6e28fe9f614ad0ff241f6f2',1,'servio::static_detector']]],
+  ['last_5ftime_1271',['last_time',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a7293429062afa7c5f3851f7d495eb8d1',1,'servio::ctl::linear_transition_regulator']]],
+  ['last_5fvalue_1272',['last_value',['../structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html#a70c5a12af8b2905a4361c7f47cd471f5',1,'servio::fw::drv::detailed_adc_channel::last_value()'],['../structservio_1_1fw_1_1drv_1_1adc__channel.html#a880b8819817c1308e6d77349c37a8a53',1,'servio::fw::drv::adc_channel::last_value()']]],
+  ['leds_1273',['leds',['../structservio_1_1core__drivers.html#ac23c824b5a677060ebe0ac03ac639399',1,'servio::core_drivers']]],
+  ['leds_1274',['LEDS',['../namespaceservio_1_1brd.html#a2cc71feb6d0307dc8549d43ac63ab185',1,'servio::brd']]],
+  ['low_5fpoint_1275',['low_point',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a678d5f4c5423a504124660c634013463',1,'servio::ctl::linear_transition_regulator']]]
 ];
