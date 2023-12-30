@@ -1,8 +1,8 @@
 #pragma once
 
 #include "ctl/control.hpp"
-#include "indication.hpp"
-#include "monitor.hpp"
+#include "mon/indication.hpp"
+#include "mon/monitor.hpp"
 #include "mtr/metrics.hpp"
 
 namespace servio
@@ -11,11 +11,11 @@ namespace servio
 struct core
 {
 
-        ctl::control   ctl;
-        cnv::converter conv;
-        mtr::metrics   met;
-        indication     ind;
-        monitor        mon;
+        ctl::control    ctl;
+        cnv::converter  conv;
+        mtr::metrics    met;
+        mon::indication ind;
+        mon::monitor    mon;
 
         core(
             microseconds                 now,

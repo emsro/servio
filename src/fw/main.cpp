@@ -44,7 +44,7 @@ int main()
                 fw::stop_exec();
         }
 
-        cor.ind.on_event( cdrv.clock->get_us(), indication_event::INITIALIZED );
+        cor.ind.on_event( cdrv.clock->get_us(), mon::indication_event::INITIALIZED );
 
         std::byte input_buffer[HostToServioPacket_size];
         std::byte output_buffer[ServioToHostPacket_size];
@@ -78,7 +78,7 @@ int main()
                         continue;
                 }
 
-                cor.ind.on_event( cdrv.clock->get_us(), indication_event::INCOMING_MESSAGE );
+                cor.ind.on_event( cdrv.clock->get_us(), mon::indication_event::INCOMING_MESSAGE );
 
                 auto [succ, odata] = fw::handle_message_packet( dis, ldata, output_buffer );
 

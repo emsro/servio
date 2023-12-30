@@ -69,9 +69,17 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   add_subdirectory(src)
   add_subdirectory(src/fw)
 
+  # THe fact that dependencies to sublibs are only here is unpleasant
   add_library(prototype2 STATIC)
-  target_link_libraries(prototype2 PUBLIC prototype2_board serviolib fwlib
-                                          mtrlib ctllib STM32::Nano)
+  target_link_libraries(
+    prototype2
+    PUBLIC prototype2_board
+           serviolib
+           fwlib
+           monlib
+           mtrlib
+           ctllib
+           STM32::Nano)
   target_compile_options(prototype2 PRIVATE -Os)
 
   servio_add_board_executable(

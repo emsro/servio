@@ -4,7 +4,7 @@
 
 #pragma once
 
-namespace servio
+namespace servio::mon
 {
 
 // possible events:
@@ -74,4 +74,4 @@ private:
         microseconds blue_disengage_at_;
 };
 
-}  // namespace servio
+}  // namespace servio::mon

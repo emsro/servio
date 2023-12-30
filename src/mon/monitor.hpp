@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace servio
+namespace servio::mon
 {
 
 class monitor
@@ -71,4 +71,4 @@ private:
         float max_tmp_ = 90.F;
 };
 
-}  // namespace servio
+}  // namespace servio::mon
