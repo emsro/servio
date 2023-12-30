@@ -13,5 +13,5 @@ var searchData=
   ['scmdio_884',['scmdio',['../namespaceservio_1_1scmdio.html',1,'servio']]],
   ['servio_885',['servio',['../namespaceservio.html',1,'']]],
   ['sim_886',['sim',['../namespaceservio_1_1sim.html',1,'servio']]],
-  ['tests_887',['tests',['../namespaceservio_1_1ctl_1_1tests.html',1,'servio::ctl::tests'],['../namespaceservio_1_1klmn_1_1tests.html',1,'servio::klmn::tests']]]
+  ['tests_887',['tests',['../namespaceservio_1_1ctl_1_1tests.html',1,'servio::ctl::tests'],['../namespaceservio_1_1klmn_1_1tests.html',1,'servio::klmn::tests'],['../namespaceservio_1_1tests.html',1,'servio::tests']]]
 ];

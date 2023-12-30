@@ -28,10 +28,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "indication.cpp", "indication_8cpp.html", "indication_8cpp" ],
     [ "indication.hpp", "indication_8hpp.html", "indication_8hpp" ],
     [ "load_persistent_config.hpp", "load__persistent__config_8hpp.html", "load__persistent__config_8hpp" ],
-    [ "metrics.cpp", "metrics_8cpp.html", null ],
-    [ "metrics.hpp", "metrics_8hpp.html", [
-      [ "metrics", "classservio_1_1metrics.html", "classservio_1_1metrics" ]
-    ] ],
     [ "monitor.hpp", "monitor_8hpp.html", [
       [ "monitor", "classservio_1_1monitor.html", "classservio_1_1monitor" ]
     ] ],

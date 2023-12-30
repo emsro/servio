@@ -15,6 +15,9 @@ var namespaceservio =
     [ "plt", "namespaceservio_1_1plt.html", "namespaceservio_1_1plt" ],
     [ "scmdio", "namespaceservio_1_1scmdio.html", "namespaceservio_1_1scmdio" ],
     [ "sim", "namespaceservio_1_1sim.html", "namespaceservio_1_1sim" ],
+    [ "tests", "namespaceservio_1_1tests.html", [
+      [ "TEST", "namespaceservio_1_1tests.html#a33d21d81b99c4c32dbe3b13ce052ebd2", null ]
+    ] ],
     [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
     [ "current_callback", "classservio_1_1current__callback.html", "classservio_1_1current__callback" ],
     [ "position_callback", "classservio_1_1position__callback.html", "classservio_1_1position__callback" ],
@@ -36,7 +39,6 @@ var namespaceservio =
     [ "temperature_interface", "classservio_1_1temperature__interface.html", "classservio_1_1temperature__interface" ],
     [ "current_interface", "classservio_1_1current__interface.html", "classservio_1_1current__interface" ],
     [ "indication", "classservio_1_1indication.html", "classservio_1_1indication" ],
-    [ "metrics", "classservio_1_1metrics.html", "classservio_1_1metrics" ],
     [ "monitor", "classservio_1_1monitor.html", "classservio_1_1monitor" ],
     [ "scaled", "classservio_1_1scaled.html", "classservio_1_1scaled" ],
     [ "standard_callbacks", "structservio_1_1standard__callbacks.html", "structservio_1_1standard__callbacks" ],

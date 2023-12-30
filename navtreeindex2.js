@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a5ece52fe10c8b9738a0215916df9f5c1":[15,0,3,0,3,0,12],
 "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a6183f0e09601674ae8d6d20492813423":[15,0,3,0,3,0,24],
 "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a62ab6a965f4c3bf5ccc7865227d7aada":[15,0,3,0,3,0,23],
 "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a635506dbfa2d898483e0c7996a60d7f4":[15,0,3,0,3,0,9],
@@ -102,11 +103,13 @@ var NAVTREEINDEX2 =
 "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md55":[12,1],
 "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md56":[12,2],
 "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md57":[12,3],
-"metrics_8cpp.html":[15,0,3,19],
-"metrics_8hpp.html":[15,0,3,20],
-"metrics_8hpp_source.html":[15,0,3,20],
-"monitor_8hpp.html":[15,0,3,21],
-"monitor_8hpp_source.html":[15,0,3,21],
+"metrics_8cpp.html":[15,0,3,5,1],
+"metrics_8hpp.html":[15,0,3,5,2],
+"metrics_8hpp_source.html":[15,0,3,5,2],
+"metrics__utest_8cpp.html":[15,0,3,5,0,0],
+"metrics__utest_8cpp.html#a33d21d81b99c4c32dbe3b13ce052ebd2":[15,0,3,5,0,0,0],
+"monitor_8hpp.html":[15,0,3,19],
+"monitor_8hpp_source.html":[15,0,3,19],
 "motor_8hpp.html":[15,0,3,7,0],
 "motor_8hpp.html#a01cd0103c0e6d6fc4939ef7094480615":[15,0,3,7,0,2],
 "motor_8hpp.html#a496e8de9a9763267fda5eeaac8a92fa1":[15,0,3,7,0,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "namespaceservio_1_1brd.html#ad0ad08d9b484f13472524c3ca4119067":[15,0,0,1,3,0,0],
 "namespaceservio_1_1brd.html#ad1ee92f9b8d2bb0815540c8fc791375b":[15,0,0,1,5,1,1],
 "namespaceservio_1_1brd.html#ad3461a2b66a48bb2ff01731378427b6e":[13,0,0,0,44],
-"namespaceservio_1_1brd.html#ad41a6a8b9a50b5dae419f1df748163e7":[15,0,0,1,5,3,4],
-"namespaceservio_1_1brd.html#addcb00188aacbda8352cbd4ddbe7d3e9":[13,0,0,0,24],
-"namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef":[13,0,0,0,46],
-"namespaceservio_1_1brd.html#ae97e490293c865d59424bd7f41b75628":[15,0,0,1,5,3,5]
+"namespaceservio_1_1brd.html#ad41a6a8b9a50b5dae419f1df748163e7":[15,0,0,1,5,3,4]
 };

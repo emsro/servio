@@ -1,12 +1,12 @@
 <map id="servio::core" name="servio::core">
-<area shape="rect" id="node1" title=" " alt="" coords="515,211,613,238"/>
-<area shape="rect" id="node2" href="$structservio_1_1converter.html" title=" " alt="" coords="295,110,427,137"/>
+<area shape="rect" id="node1" title=" " alt="" coords="527,211,625,238"/>
+<area shape="rect" id="node2" href="$structservio_1_1converter.html" title=" " alt="" coords="301,110,433,137"/>
 <area shape="rect" id="node3" href="$classservio_1_1cnv_1_1current__converter.html" title=" " alt="" coords="23,5,169,47"/>
 <area shape="rect" id="node4" href="$classservio_1_1cnv_1_1position__converter.html" title=" " alt="" coords="20,71,172,112"/>
 <area shape="rect" id="node5" href="$classservio_1_1cnv_1_1temperature__converter.html" title=" " alt="" coords="5,136,187,177"/>
 <area shape="rect" id="node6" href="$classservio_1_1cnv_1_1voltage__converter.html" title=" " alt="" coords="21,201,171,243"/>
-<area shape="rect" id="node7" href="$classservio_1_1monitor.html" title=" " alt="" coords="301,161,422,187"/>
-<area shape="rect" id="node8" href="$classservio_1_1ctl_1_1control.html" title=" " alt="" coords="292,211,431,238"/>
-<area shape="rect" id="node9" href="$classservio_1_1indication.html" title=" " alt="" coords="294,262,429,289"/>
-<area shape="rect" id="node10" href="$classservio_1_1metrics.html" title=" " alt="" coords="302,313,421,339"/>
+<area shape="rect" id="node7" href="$classservio_1_1monitor.html" title=" " alt="" coords="307,161,428,187"/>
+<area shape="rect" id="node8" href="$classservio_1_1mtr_1_1metrics.html" title=" " alt="" coords="292,211,443,238"/>
+<area shape="rect" id="node9" href="$classservio_1_1ctl_1_1control.html" title=" " alt="" coords="298,262,437,289"/>
+<area shape="rect" id="node10" href="$classservio_1_1indication.html" title=" " alt="" coords="300,313,435,339"/>
 </map>

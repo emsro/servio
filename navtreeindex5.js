@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"stm32g4xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9":[15,0,2,1,2,48],
+"stm32g4xx__hal__conf_8h.html#a4a459bcaa046998e6939fc66b0831e96":[15,0,2,1,2,62],
+"stm32g4xx__hal__conf_8h.html#a4c6fab687afc7ba4469b1b2d34472358":[15,0,2,1,2,81],
+"stm32g4xx__hal__conf_8h.html#a52b8d9123261d716ad98a5c3db52c2ed":[15,0,2,1,2,12],
+"stm32g4xx__hal__conf_8h.html#a54badbcdb096ce802d2eed981cbbc31a":[15,0,2,1,2,70],
 "stm32g4xx__hal__conf_8h.html#a5b148dcae2bf8f576fc69a349794df4c":[15,0,2,1,2,63],
 "stm32g4xx__hal__conf_8h.html#a5b1d544516151cd8a18af91e3e1f336b":[15,0,2,1,2,31],
 "stm32g4xx__hal__conf_8h.html#a5b4c32a40cf49b06c0d761e385949a6b":[15,0,2,1,2,1],
@@ -221,8 +226,8 @@ var NAVTREEINDEX5 =
 "structservio_1_1converter.html#ab49462c7869f285f9fb1bfe00bd58cd7":[14,0,0,13,0],
 "structservio_1_1core.html":[14,0,0,14],
 "structservio_1_1core.html#a17557356f87f4bfa8d55ee59c04b4f97":[14,0,0,14,2],
-"structservio_1_1core.html#a2e475958bb4bd5718ae4ee98c9f88ceb":[14,0,0,14,5],
 "structservio_1_1core.html#a8a01fd29312353a01e25b4f24862e878":[14,0,0,14,1],
+"structservio_1_1core.html#a9c5bb4e1be52516d276e12a251f8578f":[14,0,0,14,5],
 "structservio_1_1core.html#a9f738bcfb132d327bb40a4bb475756fb":[14,0,0,14,4],
 "structservio_1_1core.html#ab674766def01c2c6e553de01d2409bf2":[14,0,0,14,3],
 "structservio_1_1core.html#acdf2e684b79807fa0816a10e4c16f256":[14,0,0,14,6],
@@ -244,10 +249,5 @@ var NAVTREEINDEX5 =
 "structservio_1_1ctl_1_1linear__transition__regulator.html":[14,0,0,3,3],
 "structservio_1_1ctl_1_1linear__transition__regulator.html#a678d5f4c5423a504124660c634013463":[14,0,0,3,3,5],
 "structservio_1_1ctl_1_1linear__transition__regulator.html#a7293429062afa7c5f3851f7d495eb8d1":[14,0,0,3,3,4],
-"structservio_1_1ctl_1_1linear__transition__regulator.html#a79dd5adc577a77d349ec011aca62c6d0":[14,0,0,3,3,2],
-"structservio_1_1ctl_1_1linear__transition__regulator.html#a7bb3e3cb9898faf10fa49a4e9a03efdc":[14,0,0,3,3,1],
-"structservio_1_1ctl_1_1linear__transition__regulator.html#a8f84eb64d139440f87b13310f211b08f":[14,0,0,3,3,3],
-"structservio_1_1ctl_1_1linear__transition__regulator.html#ab8c6b8492b17a9e82a5ee831438708ae":[14,0,0,3,3,0],
-"structservio_1_1ctl_1_1linear__transition__regulator.html#aecb19b527ceb961ed007cbbd7ed5aca0":[14,0,0,3,3,6],
-"structservio_1_1fw_1_1drv_1_1adc__channel.html":[14,0,0,4,0,1]
+"structservio_1_1ctl_1_1linear__transition__regulator.html#a79dd5adc577a77d349ec011aca62c6d0":[14,0,0,3,3,2]
 };

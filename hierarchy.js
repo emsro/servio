@@ -70,7 +70,7 @@ var hierarchy =
     [ "servio::plt::leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", null ],
     [ "servio::leds_vals", "namespaceservio.html#structservio_1_1leds__vals", null ],
     [ "servio::ctl::linear_transition_regulator", "structservio_1_1ctl_1_1linear__transition__regulator.html", null ],
-    [ "servio::metrics", "classservio_1_1metrics.html", null ],
+    [ "servio::mtr::metrics", "classservio_1_1mtr_1_1metrics.html", null ],
     [ "servio::scmdio::mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", null ],
     [ "servio::monitor", "classservio_1_1monitor.html", null ],
     [ "servio::brd::off_scale", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1off__scale", null ],

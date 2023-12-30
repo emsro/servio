@@ -5,7 +5,7 @@ var namespaceservio_1_1fw_structservio_1_1fw_1_1dispatcher_dup =
     [ "conv", "namespaceservio_1_1fw.html#a0e02386ea67f64a2d046fdb27da82cfd", null ],
     [ "ctl", "namespaceservio_1_1fw.html#a654be9a42faf474da4a4cdbed2035d52", null ],
     [ "curr_drv", "namespaceservio_1_1fw.html#aefef61b2868d447727291de889da21ac", null ],
-    [ "met", "namespaceservio_1_1fw.html#a217aa2fce2a3ae360fd529c4f4563554", null ],
+    [ "met", "namespaceservio_1_1fw.html#af28626be71bbadc097c16ead52c66245", null ],
     [ "motor", "namespaceservio_1_1fw.html#a67cc197abb83ee7f4a80a905ba8410dc", null ],
     [ "now", "namespaceservio_1_1fw.html#a1d44d56bfdc41655b85711880948a147", null ],
     [ "pos_drv", "namespaceservio_1_1fw.html#a93a47c250f3e532ddb0ad24b0b8d03b9", null ],

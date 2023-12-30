@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: Member List</title>
+<title>servio: src/mtr/tests/metrics_utest.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classservio_1_1metrics.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('metrics__utest_8cpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -83,26 +83,45 @@ $(document).ready(function(){initNavTree('classservio_1_1metrics.html',''); init
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">servio::metrics Member List</div>  </div>
+<div class="title">metrics_utest.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is the complete list of members for <a class="el" href="classservio_1_1metrics.html">servio::metrics</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classservio_1_1metrics.html#a4dcd78783f82d0fb2f46773c9741d038">get_position</a>() const</td><td class="entry"><a class="el" href="classservio_1_1metrics.html">servio::metrics</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classservio_1_1metrics.html#a7446be158bffc65bc6543c77c67aac82">get_velocity</a>() const</td><td class="entry"><a class="el" href="classservio_1_1metrics.html">servio::metrics</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classservio_1_1metrics.html#a5bb5536cf3c433b97d4f15831c9fd2c9">is_moving</a>() const</td><td class="entry"><a class="el" href="classservio_1_1metrics.html">servio::metrics</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classservio_1_1metrics.html#a3ca7440266b984edb580117234d6699e">metrics</a>(microseconds time, float position, limits&lt; float &gt; position_range)</td><td class="entry"><a class="el" href="classservio_1_1metrics.html">servio::metrics</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classservio_1_1metrics.html#a82071f2385f820ea36bf9bd12b56a82b">position_irq</a>(microseconds now, float position)</td><td class="entry"><a class="el" href="classservio_1_1metrics.html">servio::metrics</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classservio_1_1metrics.html#a25a4322ed4b2812bceb9e9a3e1b633a3">set_moving_step</a>(float step)</td><td class="entry"><a class="el" href="classservio_1_1metrics.html">servio::metrics</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classservio_1_1metrics.html#a7cd660d9d67430d6721f29b3fe134716">set_position_range</a>(limits&lt; float &gt; position_range)</td><td class="entry"><a class="el" href="classservio_1_1metrics.html">servio::metrics</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<div class="textblock"><code>#include &quot;<a class="el" href="metrics_8hpp_source.html">mtr/metrics.hpp</a>&quot;</code><br />
+<code>#include &lt;emlabcpp/experimental/logging/util.h&gt;</code><br />
+<code>#include &lt;gtest/gtest.h&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for metrics_utest.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="metrics__utest_8cpp__incl.svg" width="879" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceservio"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html">servio</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceservio_1_1tests"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1tests.html">servio::tests</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a33d21d81b99c4c32dbe3b13ce052ebd2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1tests.html#a33d21d81b99c4c32dbe3b13ce052ebd2">servio::tests::TEST</a> (Metrics, base)</td></tr>
+<tr class="separator:a33d21d81b99c4c32dbe3b13ce052ebd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Dec 30 2023 19:42:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_52d5c93d1a27df9f60d01a37fbb92cbd.html">mtr</a></li><li class="navelem"><a class="el" href="dir_e20dd7a692433958ab8b3e0305536337.html">tests</a></li><li class="navelem"><a class="el" href="metrics__utest_8cpp.html">metrics_utest.cpp</a></li>
+    <li class="footer">Generated on Sat Dec 30 2023 20:42:26 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
