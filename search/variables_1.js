@@ -14,5 +14,5 @@ var searchData=
   ['adc_5ftrigger_1218',['adc_trigger',['../namespaceplt.html#a589dc26e4990ce09b166ca96e807bc56',1,'plt::adc_cfg']]],
   ['adc_5fvcc_1219',['ADC_VCC',['../namespacefw_1_1drv.html#ade1bfc1db9e87ee1014f496e53cbd6fd',1,'fw::drv']]],
   ['alternate_1220',['alternate',['../namespacefw_1_1drv.html#a76baa2a33c2fccb835d8035d72264e41',1,'fw::drv::pin_cfg::alternate()'],['../namespacefw_1_1drv.html#a25e43ef936987bb543595e56c9945bef',1,'fw::drv::pinch_cfg::alternate()']]],
-  ['angle_1221',['angle',['../namespacebrd.html#a82093fe3a15103109843d8fe44360c28',1,'brd::setpoint::angle()'],['../host_2main_8cpp.html#af0a1e266e72eaf80a93810658a5a4d5a',1,'mode_opts::angle()'],['../structmtr_1_1posvel__kalman.html#a7c83249422002ac5d54fe3bc57217f2f',1,'mtr::posvel_kalman::angle()']]]
+  ['angle_1221',['angle',['../namespacebrd.html#a82093fe3a15103109843d8fe44360c28',1,'brd::setpoint::angle()'],['../structmtr_1_1posvel__kalman.html#a7c83249422002ac5d54fe3bc57217f2f',1,'mtr::posvel_kalman::angle()'],['../namespacescmdio.html#a16969bc11f18868c6b035c25822fb46f',1,'scmdio::mode_opts::angle()']]]
 ];

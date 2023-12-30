@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: src/host/cli.hpp Source File</title>
+<title>servio: src/scmdio/cli.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,54 +89,54 @@ $(document).ready(function(){initNavTree('cli_8hpp_source.html',''); initResizab
 <div class="contents">
 <a href="cli_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="async__cobs_8hpp.html">host/async_cobs.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="async__cobs_8hpp.html">scmdio/async_cobs.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;CLI/CLI.hpp&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacehost.html">host</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacescmdio.html">scmdio</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;CLI::Option* <a class="code" href="namespacehost.html#aea4962fd63a1d7648099e25490bf42e5">verbose_opt</a>( CLI::App&amp; app, <span class="keywordtype">bool</span>&amp; val );</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;CLI::Option* <a class="code" href="namespacescmdio.html#a3d9d65e568c20bcd02ab6e755b130ab1">verbose_opt</a>( CLI::App&amp; app, <span class="keywordtype">bool</span>&amp; val );</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;CLI::Option* <a class="code" href="namespacehost.html#a1775c8c4fffab96ad3ff448f7d47d18c">device_opt</a>( CLI::App&amp; app, std::filesystem::path&amp; device );</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;CLI::Option* <a class="code" href="namespacescmdio.html#ad24b9258154f5e71ff4e568a632f2f2d">device_opt</a>( CLI::App&amp; app, std::filesystem::path&amp; device );</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;CLI::Option* <a class="code" href="namespacehost.html#a02aff288d9bbcebf7617820251136787">baudrate_opt</a>( CLI::App&amp; app, <span class="keywordtype">unsigned</span>&amp; baudrate );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;CLI::Option* <a class="code" href="namespacescmdio.html#a95be61b8f956622258e724702fa9c600">baudrate_opt</a>( CLI::App&amp; app, <span class="keywordtype">unsigned</span>&amp; baudrate );</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;CLI::Option* <a class="code" href="namespacehost.html#a8a5e3416256eb99ad773ce348a557917">powerless_flag</a>( CLI::App&amp; app, <span class="keywordtype">bool</span>&amp; is_powerless );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;CLI::Option* <a class="code" href="namespacescmdio.html#a18f29ac36059ebe43cd500f0c22350e4">powerless_flag</a>( CLI::App&amp; app, <span class="keywordtype">bool</span>&amp; is_powerless );</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structhost_1_1common__cli.html">   20</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structhost_1_1common__cli.html">common_cli</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structscmdio_1_1common__cli.html">   20</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structscmdio_1_1common__cli.html">common_cli</a></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924">   23</a></span>&#160;        std::filesystem::path        <a class="code" href="structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924">device</a>   = <span class="stringliteral">&quot;/dev/ttyUSB0&quot;</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb">   24</a></span>&#160;        <span class="keywordtype">unsigned</span>                     <a class="code" href="structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb">baudrate</a> = 115200;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structhost_1_1common__cli.html#a4069a66d37489ce0a202b56e7a46cecd">   25</a></span>&#160;        boost::asio::io_context      <a class="code" href="structhost_1_1common__cli.html#a4069a66d37489ce0a202b56e7a46cecd">context</a>{};</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structhost_1_1common__cli.html#a14da1acdb9fa005b522effbeaf8cda8b">   26</a></span>&#160;        std::unique_ptr&lt; cobs_port &gt; <a class="code" href="structhost_1_1common__cli.html#a14da1acdb9fa005b522effbeaf8cda8b">port_ptr</a>{};</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structscmdio_1_1common__cli.html#a9ef0c34c292c16e52de85404a93cafbe">   23</a></span>&#160;        std::filesystem::path        <a class="code" href="structscmdio_1_1common__cli.html#a9ef0c34c292c16e52de85404a93cafbe">device</a>   = <span class="stringliteral">&quot;/dev/ttyUSB0&quot;</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structscmdio_1_1common__cli.html#ac80a28c49e838d2e6027bc70a95c4853">   24</a></span>&#160;        <span class="keywordtype">unsigned</span>                     <a class="code" href="structscmdio_1_1common__cli.html#ac80a28c49e838d2e6027bc70a95c4853">baudrate</a> = 115200;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structscmdio_1_1common__cli.html#a7e5887987fefb8df19a0c1cd3e497d37">   25</a></span>&#160;        boost::asio::io_context      <a class="code" href="structscmdio_1_1common__cli.html#a7e5887987fefb8df19a0c1cd3e497d37">context</a>{};</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structscmdio_1_1common__cli.html#a9ec650a3c219d78b2f787faf678710c1">   26</a></span>&#160;        std::unique_ptr&lt; cobs_port &gt; <a class="code" href="structscmdio_1_1common__cli.html#a9ec650a3c219d78b2f787faf678710c1">port_ptr</a>{};</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structhost_1_1common__cli.html#af2451a182808f2667ce3fdfdd6ab04f0">setup</a>( CLI::App&amp; app );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structscmdio_1_1common__cli.html#aa9807cea7a67fb9e1e6319d4ad4c090b">setup</a>( CLI::App&amp; app );</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}  <span class="comment">// namespace host</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}  <span class="comment">// namespace scmdio</span></div>
 <div class="ttc" id="aasync__cobs_8hpp_html"><div class="ttname"><a href="async__cobs_8hpp.html">async_cobs.hpp</a></div></div>
-<div class="ttc" id="anamespacehost_html"><div class="ttname"><a href="namespacehost.html">host</a></div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:13</div></div>
-<div class="ttc" id="anamespacehost_html_a02aff288d9bbcebf7617820251136787"><div class="ttname"><a href="namespacehost.html#a02aff288d9bbcebf7617820251136787">host::baudrate_opt</a></div><div class="ttdeci">CLI::Option * baudrate_opt(CLI::App &amp;app, unsigned &amp;baudrate)</div><div class="ttdef"><b>Definition:</b> cli.cpp:19</div></div>
-<div class="ttc" id="anamespacehost_html_a1775c8c4fffab96ad3ff448f7d47d18c"><div class="ttname"><a href="namespacehost.html#a1775c8c4fffab96ad3ff448f7d47d18c">host::device_opt</a></div><div class="ttdeci">CLI::Option * device_opt(CLI::App &amp;app, std::filesystem::path &amp;device)</div><div class="ttdef"><b>Definition:</b> cli.cpp:12</div></div>
-<div class="ttc" id="anamespacehost_html_a8a5e3416256eb99ad773ce348a557917"><div class="ttname"><a href="namespacehost.html#a8a5e3416256eb99ad773ce348a557917">host::powerless_flag</a></div><div class="ttdeci">CLI::Option * powerless_flag(CLI::App &amp;app, bool &amp;is_powerless)</div><div class="ttdef"><b>Definition:</b> cli.cpp:25</div></div>
-<div class="ttc" id="anamespacehost_html_aea4962fd63a1d7648099e25490bf42e5"><div class="ttname"><a href="namespacehost.html#aea4962fd63a1d7648099e25490bf42e5">host::verbose_opt</a></div><div class="ttdeci">CLI::Option * verbose_opt(CLI::App &amp;app, bool &amp;val)</div><div class="ttdef"><b>Definition:</b> cli.cpp:7</div></div>
-<div class="ttc" id="astructhost_1_1common__cli_html"><div class="ttname"><a href="structhost_1_1common__cli.html">host::common_cli</a></div><div class="ttdef"><b>Definition:</b> cli.hpp:21</div></div>
-<div class="ttc" id="astructhost_1_1common__cli_html_a0d145299712d68546c59cbf15993c924"><div class="ttname"><a href="structhost_1_1common__cli.html#a0d145299712d68546c59cbf15993c924">host::common_cli::device</a></div><div class="ttdeci">std::filesystem::path device</div><div class="ttdef"><b>Definition:</b> cli.hpp:23</div></div>
-<div class="ttc" id="astructhost_1_1common__cli_html_a14da1acdb9fa005b522effbeaf8cda8b"><div class="ttname"><a href="structhost_1_1common__cli.html#a14da1acdb9fa005b522effbeaf8cda8b">host::common_cli::port_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; cobs_port &gt; port_ptr</div><div class="ttdef"><b>Definition:</b> cli.hpp:26</div></div>
-<div class="ttc" id="astructhost_1_1common__cli_html_a3d2d202c84a1ff071bd81d7b9fd171bb"><div class="ttname"><a href="structhost_1_1common__cli.html#a3d2d202c84a1ff071bd81d7b9fd171bb">host::common_cli::baudrate</a></div><div class="ttdeci">unsigned baudrate</div><div class="ttdef"><b>Definition:</b> cli.hpp:24</div></div>
-<div class="ttc" id="astructhost_1_1common__cli_html_a4069a66d37489ce0a202b56e7a46cecd"><div class="ttname"><a href="structhost_1_1common__cli.html#a4069a66d37489ce0a202b56e7a46cecd">host::common_cli::context</a></div><div class="ttdeci">boost::asio::io_context context</div><div class="ttdef"><b>Definition:</b> cli.hpp:25</div></div>
-<div class="ttc" id="astructhost_1_1common__cli_html_af2451a182808f2667ce3fdfdd6ab04f0"><div class="ttname"><a href="structhost_1_1common__cli.html#af2451a182808f2667ce3fdfdd6ab04f0">host::common_cli::setup</a></div><div class="ttdeci">void setup(CLI::App &amp;app)</div><div class="ttdef"><b>Definition:</b> cli.cpp:33</div></div>
+<div class="ttc" id="anamespacescmdio_html"><div class="ttname"><a href="namespacescmdio.html">scmdio</a></div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:13</div></div>
+<div class="ttc" id="anamespacescmdio_html_a18f29ac36059ebe43cd500f0c22350e4"><div class="ttname"><a href="namespacescmdio.html#a18f29ac36059ebe43cd500f0c22350e4">scmdio::powerless_flag</a></div><div class="ttdeci">CLI::Option * powerless_flag(CLI::App &amp;app, bool &amp;is_powerless)</div><div class="ttdef"><b>Definition:</b> cli.cpp:25</div></div>
+<div class="ttc" id="anamespacescmdio_html_a3d9d65e568c20bcd02ab6e755b130ab1"><div class="ttname"><a href="namespacescmdio.html#a3d9d65e568c20bcd02ab6e755b130ab1">scmdio::verbose_opt</a></div><div class="ttdeci">CLI::Option * verbose_opt(CLI::App &amp;app, bool &amp;val)</div><div class="ttdef"><b>Definition:</b> cli.cpp:7</div></div>
+<div class="ttc" id="anamespacescmdio_html_a95be61b8f956622258e724702fa9c600"><div class="ttname"><a href="namespacescmdio.html#a95be61b8f956622258e724702fa9c600">scmdio::baudrate_opt</a></div><div class="ttdeci">CLI::Option * baudrate_opt(CLI::App &amp;app, unsigned &amp;baudrate)</div><div class="ttdef"><b>Definition:</b> cli.cpp:19</div></div>
+<div class="ttc" id="anamespacescmdio_html_ad24b9258154f5e71ff4e568a632f2f2d"><div class="ttname"><a href="namespacescmdio.html#ad24b9258154f5e71ff4e568a632f2f2d">scmdio::device_opt</a></div><div class="ttdeci">CLI::Option * device_opt(CLI::App &amp;app, std::filesystem::path &amp;device)</div><div class="ttdef"><b>Definition:</b> cli.cpp:12</div></div>
+<div class="ttc" id="astructscmdio_1_1common__cli_html"><div class="ttname"><a href="structscmdio_1_1common__cli.html">scmdio::common_cli</a></div><div class="ttdef"><b>Definition:</b> cli.hpp:21</div></div>
+<div class="ttc" id="astructscmdio_1_1common__cli_html_a7e5887987fefb8df19a0c1cd3e497d37"><div class="ttname"><a href="structscmdio_1_1common__cli.html#a7e5887987fefb8df19a0c1cd3e497d37">scmdio::common_cli::context</a></div><div class="ttdeci">boost::asio::io_context context</div><div class="ttdef"><b>Definition:</b> cli.hpp:25</div></div>
+<div class="ttc" id="astructscmdio_1_1common__cli_html_a9ec650a3c219d78b2f787faf678710c1"><div class="ttname"><a href="structscmdio_1_1common__cli.html#a9ec650a3c219d78b2f787faf678710c1">scmdio::common_cli::port_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; cobs_port &gt; port_ptr</div><div class="ttdef"><b>Definition:</b> cli.hpp:26</div></div>
+<div class="ttc" id="astructscmdio_1_1common__cli_html_a9ef0c34c292c16e52de85404a93cafbe"><div class="ttname"><a href="structscmdio_1_1common__cli.html#a9ef0c34c292c16e52de85404a93cafbe">scmdio::common_cli::device</a></div><div class="ttdeci">std::filesystem::path device</div><div class="ttdef"><b>Definition:</b> cli.hpp:23</div></div>
+<div class="ttc" id="astructscmdio_1_1common__cli_html_aa9807cea7a67fb9e1e6319d4ad4c090b"><div class="ttname"><a href="structscmdio_1_1common__cli.html#aa9807cea7a67fb9e1e6319d4ad4c090b">scmdio::common_cli::setup</a></div><div class="ttdeci">void setup(CLI::App &amp;app)</div><div class="ttdef"><b>Definition:</b> cli.cpp:33</div></div>
+<div class="ttc" id="astructscmdio_1_1common__cli_html_ac80a28c49e838d2e6027bc70a95c4853"><div class="ttname"><a href="structscmdio_1_1common__cli.html#ac80a28c49e838d2e6027bc70a95c4853">scmdio::common_cli::baudrate</a></div><div class="ttdeci">unsigned baudrate</div><div class="ttdef"><b>Definition:</b> cli.hpp:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_84e79ac80b913c2fb5b9e077744e9498.html">host</a></li><li class="navelem"><a class="el" href="cli_8hpp.html">cli.hpp</a></li>
-    <li class="footer">Generated on Fri Dec 29 2023 15:07:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="cli_8hpp.html">cli.hpp</a></li>
+    <li class="footer">Generated on Sat Dec 30 2023 13:51:14 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

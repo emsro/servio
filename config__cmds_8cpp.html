@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: src/host/config_cmds.cpp File Reference</title>
+<title>servio: src/scmdio/config_cmds.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('config__cmds_8cpp.html',''); initResiz
 <div class="title">config_cmds.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="serial_8hpp_source.html">host/serial.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="serial_8hpp_source.html">scmdio/serial.hpp</a>&quot;</code><br />
 <code>#include &lt;boost/asio.hpp&gt;</code><br />
 <code>#include &lt;emlabcpp/algorithm.h&gt;</code><br />
 <code>#include &lt;google/protobuf/util/json_util.h&gt;</code><br />
@@ -99,35 +99,35 @@ $(document).ready(function(){initNavTree('config__cmds_8cpp.html',''); initResiz
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="config__cmds_8cpp__incl.svg" width="942" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="config__cmds_8cpp__incl.svg" width="960" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespacehost"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html">host</a></td></tr>
+<tr class="memitem:namespacescmdio"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescmdio.html">scmdio</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa4a9fdf5b1e51f6e02e12697d247f6dc"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#aa4a9fdf5b1e51f6e02e12697d247f6dc">host::cfg_query_cmd</a> (cobs_port &amp;port, bool json)</td></tr>
-<tr class="separator:aa4a9fdf5b1e51f6e02e12697d247f6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03c8e02ec348bbd169b46cb1fa708907"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a03c8e02ec348bbd169b46cb1fa708907">host::cfg_commit_cmd</a> (cobs_port &amp;port)</td></tr>
-<tr class="separator:a03c8e02ec348bbd169b46cb1fa708907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f165d57465c31dac7b26d6d9a110603"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#a0f165d57465c31dac7b26d6d9a110603">host::cfg_clear_cmd</a> (cobs_port &amp;port)</td></tr>
-<tr class="separator:a0f165d57465c31dac7b26d6d9a110603"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adec47a29afb594099ac5886260bc99a0"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#adec47a29afb594099ac5886260bc99a0">host::cfg_get_cmd</a> (cobs_port &amp;port, const std::string &amp;name, bool json)</td></tr>
-<tr class="separator:adec47a29afb594099ac5886260bc99a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed039d76afc12a05c1d8896fb12531f5"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehost.html#aed039d76afc12a05c1d8896fb12531f5">host::cfg_set_cmd</a> (cobs_port &amp;port, const std::string &amp;name, std::string value)</td></tr>
-<tr class="separator:aed039d76afc12a05c1d8896fb12531f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a135f995a843997c8a032374725377b5e"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescmdio.html#a135f995a843997c8a032374725377b5e">scmdio::cfg_query_cmd</a> (cobs_port &amp;port, bool json)</td></tr>
+<tr class="separator:a135f995a843997c8a032374725377b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad087420c344259ba318d4ddf2198eac0"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescmdio.html#ad087420c344259ba318d4ddf2198eac0">scmdio::cfg_commit_cmd</a> (cobs_port &amp;port)</td></tr>
+<tr class="separator:ad087420c344259ba318d4ddf2198eac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac83ba2b3b5b4f4d509cedef5a9df5d20"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescmdio.html#ac83ba2b3b5b4f4d509cedef5a9df5d20">scmdio::cfg_clear_cmd</a> (cobs_port &amp;port)</td></tr>
+<tr class="separator:ac83ba2b3b5b4f4d509cedef5a9df5d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a904653e6ec0ed11d422cf6d61f9ac"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescmdio.html#a22a904653e6ec0ed11d422cf6d61f9ac">scmdio::cfg_get_cmd</a> (cobs_port &amp;port, const std::string &amp;name, bool json)</td></tr>
+<tr class="separator:a22a904653e6ec0ed11d422cf6d61f9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51ba08606d0f8ef88d948f160e3a4848"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescmdio.html#a51ba08606d0f8ef88d948f160e3a4848">scmdio::cfg_set_cmd</a> (cobs_port &amp;port, const std::string &amp;name, std::string value)</td></tr>
+<tr class="separator:a51ba08606d0f8ef88d948f160e3a4848"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_84e79ac80b913c2fb5b9e077744e9498.html">host</a></li><li class="navelem"><a class="el" href="config__cmds_8cpp.html">config_cmds.cpp</a></li>
-    <li class="footer">Generated on Fri Dec 29 2023 15:07:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="config__cmds_8cpp.html">config_cmds.cpp</a></li>
+    <li class="footer">Generated on Sat Dec 30 2023 13:51:14 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

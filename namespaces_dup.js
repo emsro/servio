@@ -5,8 +5,8 @@ var namespaces_dup =
     [ "cnv", "namespacecnv.html", "namespacecnv" ],
     [ "ctl", "namespacectl.html", "namespacectl" ],
     [ "fw", "namespacefw.html", "namespacefw" ],
-    [ "host", "namespacehost.html", "namespacehost" ],
     [ "kalman", "namespacekalman.html", "namespacekalman" ],
     [ "mtr", "namespacemtr.html", "namespacemtr" ],
-    [ "plt", "namespaceplt.html", "namespaceplt" ]
+    [ "plt", "namespaceplt.html", "namespaceplt" ],
+    [ "scmdio", "namespacescmdio.html", "namespacescmdio" ]
 ];

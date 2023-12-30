@@ -12,6 +12,6 @@ var searchData=
   ['any_5funinitialized_967',['any_uninitialized',['../structcore__drivers.html#a82c2875dbd9ed986ae3e8f1293f9340f',1,'core_drivers']]],
   ['apply_968',['apply',['../structcfg_1_1dispatcher.html#ae5531bb05cd13d8abef0e541df85588e',1,'cfg::dispatcher::apply()'],['../namespacecfg.html#a6811fad3058c0ddbf3576778455ec62d',1,'cfg::apply()']]],
   ['as_5ffloat_969',['as_float',['../classscaled.html#ad0c137095775ae685c2fc049d1784dd2',1,'scaled']]],
-  ['async_5fread_970',['async_read',['../structhost_1_1cobs__port.html#a41b3a139c6d26709c43d4aa52edd8b10',1,'host::cobs_port']]],
-  ['async_5fwrite_971',['async_write',['../structhost_1_1cobs__port.html#a474f7e7c9b5aad02965c83ae728f7fcd',1,'host::cobs_port']]]
+  ['async_5fread_970',['async_read',['../structscmdio_1_1cobs__port.html#aff9b2a88db20f3b86fe37d53e211527f',1,'scmdio::cobs_port']]],
+  ['async_5fwrite_971',['async_write',['../structscmdio_1_1cobs__port.html#a25ddbd0ea16c608b82d113f6cfd881ce',1,'scmdio::cobs_port']]]
 ];

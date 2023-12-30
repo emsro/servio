@@ -49,15 +49,6 @@ var annotated_dup =
       [ "persistent_config_writer", "structfw_1_1persistent__config__writer.html", "structfw_1_1persistent__config__writer" ],
       [ "check_bool", "namespacefw.html#structfw_1_1check__bool", null ]
     ] ],
-    [ "host", "namespacehost.html", [
-      [ "cobs_port", "structhost_1_1cobs__port.html", "structhost_1_1cobs__port" ],
-      [ "common_cli", "structhost_1_1common__cli.html", "structhost_1_1common__cli" ],
-      [ "servio_exception", "structhost_1_1servio__exception.html", null ],
-      [ "reply_error", "structhost_1_1reply__error.html", "structhost_1_1reply__error" ],
-      [ "error_exception", "structhost_1_1error__exception.html", "structhost_1_1error__exception" ],
-      [ "serialize_error", "structhost_1_1serialize__error.html", "structhost_1_1serialize__error" ],
-      [ "parse_error", "structhost_1_1parse__error.html", "structhost_1_1parse__error" ]
-    ] ],
     [ "kalman", "namespacekalman.html", [
       [ "state_range", "namespacekalman.html#structkalman_1_1state__range", "namespacekalman_structkalman_1_1state__range_dup" ]
     ] ],
@@ -72,8 +63,18 @@ var annotated_dup =
       [ "leds_gpio_cfg", "namespaceplt.html#structplt_1_1leds__gpio__cfg", "namespaceplt_structplt_1_1leds__gpio__cfg_dup" ],
       [ "leds_timer_cfg", "namespaceplt.html#structplt_1_1leds__timer__cfg", "namespaceplt_structplt_1_1leds__timer__cfg_dup" ]
     ] ],
+    [ "scmdio", "namespacescmdio.html", [
+      [ "cobs_port", "structscmdio_1_1cobs__port.html", "structscmdio_1_1cobs__port" ],
+      [ "common_cli", "structscmdio_1_1common__cli.html", "structscmdio_1_1common__cli" ],
+      [ "servio_exception", "structscmdio_1_1servio__exception.html", null ],
+      [ "reply_error", "structscmdio_1_1reply__error.html", "structscmdio_1_1reply__error" ],
+      [ "error_exception", "structscmdio_1_1error__exception.html", "structscmdio_1_1error__exception" ],
+      [ "serialize_error", "structscmdio_1_1serialize__error.html", "structscmdio_1_1serialize__error" ],
+      [ "parse_error", "structscmdio_1_1parse__error.html", "structscmdio_1_1parse__error" ],
+      [ "cfg_opts", "namespacescmdio.html#structscmdio_1_1cfg__opts", "namespacescmdio_structscmdio_1_1cfg__opts_dup" ],
+      [ "mode_opts", "namespacescmdio.html#structscmdio_1_1mode__opts", "namespacescmdio_structscmdio_1_1mode__opts_dup" ]
+    ] ],
     [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", "classadc__detailed__cb__interface" ],
-    [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", "host_2main_8cpp_structcfg__opts" ],
     [ "clk_interface", "classclk__interface.html", "classclk__interface" ],
     [ "com_interface", "classcom__interface.html", "classcom__interface" ],
     [ "com_res", "drv__interfaces_8hpp.html#structcom__res", "drv__interfaces_8hpp_structcom__res" ],
@@ -88,7 +89,6 @@ var annotated_dup =
     [ "leds_interface", "classleds__interface.html", "classleds__interface" ],
     [ "leds_vals", "base_8hpp.html#structleds__vals", "base_8hpp_structleds__vals" ],
     [ "metrics", "classmetrics.html", "classmetrics" ],
-    [ "mode_opts", "host_2main_8cpp.html#structmode__opts", "host_2main_8cpp_structmode__opts" ],
     [ "monitor", "classmonitor.html", "classmonitor" ],
     [ "period_cb_interface", "classperiod__cb__interface.html", "classperiod__cb__interface" ],
     [ "period_interface", "classperiod__interface.html", "classperiod__interface" ],

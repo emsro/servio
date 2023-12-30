@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: src/host/config_cmds.hpp Source File</title>
+<title>servio: src/scmdio/config_cmds.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,42 +87,42 @@ $(document).ready(function(){initNavTree('config__cmds_8hpp_source.html',''); in
 <div class="title">config_cmds.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="config__cmds_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="async__cobs_8hpp.html">host/async_cobs.hpp</a>&quot;</span></div>
+<a href="config__cmds_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="async__cobs_8hpp.html">scmdio/async_cobs.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;boost/asio.hpp&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;boost/asio/serial_port.hpp&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacehost.html">host</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacescmdio.html">scmdio</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespacehost.html#aa4a9fdf5b1e51f6e02e12697d247f6dc">cfg_query_cmd</a>( cobs_port&amp; port, <span class="keywordtype">bool</span> json );</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespacescmdio.html#a135f995a843997c8a032374725377b5e">cfg_query_cmd</a>( cobs_port&amp; port, <span class="keywordtype">bool</span> json );</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespacehost.html#a03c8e02ec348bbd169b46cb1fa708907">cfg_commit_cmd</a>( cobs_port&amp; port );</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespacescmdio.html#ad087420c344259ba318d4ddf2198eac0">cfg_commit_cmd</a>( cobs_port&amp; port );</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespacehost.html#a0f165d57465c31dac7b26d6d9a110603">cfg_clear_cmd</a>( cobs_port&amp; port );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespacescmdio.html#ac83ba2b3b5b4f4d509cedef5a9df5d20">cfg_clear_cmd</a>( cobs_port&amp; port );</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespacehost.html#adec47a29afb594099ac5886260bc99a0">cfg_get_cmd</a>( cobs_port&amp; port, <span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">bool</span> json );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespacescmdio.html#a22a904653e6ec0ed11d422cf6d61f9ac">cfg_get_cmd</a>( cobs_port&amp; port, <span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">bool</span> json );</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;boost::asio::awaitable&lt; void &gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="namespacehost.html#aed039d76afc12a05c1d8896fb12531f5">cfg_set_cmd</a>( cobs_port&amp; port, <span class="keyword">const</span> std::string&amp; name, std::string value );</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="namespacescmdio.html#a51ba08606d0f8ef88d948f160e3a4848">cfg_set_cmd</a>( cobs_port&amp; port, <span class="keyword">const</span> std::string&amp; name, std::string value );</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}  <span class="comment">// namespace host</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}  <span class="comment">// namespace scmdio</span></div>
 <div class="ttc" id="aasync__cobs_8hpp_html"><div class="ttname"><a href="async__cobs_8hpp.html">async_cobs.hpp</a></div></div>
-<div class="ttc" id="anamespacehost_html"><div class="ttname"><a href="namespacehost.html">host</a></div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:13</div></div>
-<div class="ttc" id="anamespacehost_html_a03c8e02ec348bbd169b46cb1fa708907"><div class="ttname"><a href="namespacehost.html#a03c8e02ec348bbd169b46cb1fa708907">host::cfg_commit_cmd</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; cfg_commit_cmd(cobs_port &amp;port)</div><div class="ttdef"><b>Definition:</b> config_cmds.cpp:53</div></div>
-<div class="ttc" id="anamespacehost_html_a0f165d57465c31dac7b26d6d9a110603"><div class="ttname"><a href="namespacehost.html#a0f165d57465c31dac7b26d6d9a110603">host::cfg_clear_cmd</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; cfg_clear_cmd(cobs_port &amp;port)</div><div class="ttdef"><b>Definition:</b> config_cmds.cpp:62</div></div>
-<div class="ttc" id="anamespacehost_html_aa4a9fdf5b1e51f6e02e12697d247f6dc"><div class="ttname"><a href="namespacehost.html#aa4a9fdf5b1e51f6e02e12697d247f6dc">host::cfg_query_cmd</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; cfg_query_cmd(cobs_port &amp;port, bool json)</div><div class="ttdef"><b>Definition:</b> config_cmds.cpp:42</div></div>
-<div class="ttc" id="anamespacehost_html_adec47a29afb594099ac5886260bc99a0"><div class="ttname"><a href="namespacehost.html#adec47a29afb594099ac5886260bc99a0">host::cfg_get_cmd</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; cfg_get_cmd(cobs_port &amp;port, const std::string &amp;name, bool json)</div><div class="ttdef"><b>Definition:</b> config_cmds.cpp:70</div></div>
-<div class="ttc" id="anamespacehost_html_aed039d76afc12a05c1d8896fb12531f5"><div class="ttname"><a href="namespacehost.html#aed039d76afc12a05c1d8896fb12531f5">host::cfg_set_cmd</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; cfg_set_cmd(cobs_port &amp;port, const std::string &amp;name, std::string value)</div><div class="ttdef"><b>Definition:</b> config_cmds.cpp:90</div></div>
+<div class="ttc" id="anamespacescmdio_html"><div class="ttname"><a href="namespacescmdio.html">scmdio</a></div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:13</div></div>
+<div class="ttc" id="anamespacescmdio_html_a135f995a843997c8a032374725377b5e"><div class="ttname"><a href="namespacescmdio.html#a135f995a843997c8a032374725377b5e">scmdio::cfg_query_cmd</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; cfg_query_cmd(cobs_port &amp;port, bool json)</div><div class="ttdef"><b>Definition:</b> config_cmds.cpp:42</div></div>
+<div class="ttc" id="anamespacescmdio_html_a22a904653e6ec0ed11d422cf6d61f9ac"><div class="ttname"><a href="namespacescmdio.html#a22a904653e6ec0ed11d422cf6d61f9ac">scmdio::cfg_get_cmd</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; cfg_get_cmd(cobs_port &amp;port, const std::string &amp;name, bool json)</div><div class="ttdef"><b>Definition:</b> config_cmds.cpp:70</div></div>
+<div class="ttc" id="anamespacescmdio_html_a51ba08606d0f8ef88d948f160e3a4848"><div class="ttname"><a href="namespacescmdio.html#a51ba08606d0f8ef88d948f160e3a4848">scmdio::cfg_set_cmd</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; cfg_set_cmd(cobs_port &amp;port, const std::string &amp;name, std::string value)</div><div class="ttdef"><b>Definition:</b> config_cmds.cpp:90</div></div>
+<div class="ttc" id="anamespacescmdio_html_ac83ba2b3b5b4f4d509cedef5a9df5d20"><div class="ttname"><a href="namespacescmdio.html#ac83ba2b3b5b4f4d509cedef5a9df5d20">scmdio::cfg_clear_cmd</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; cfg_clear_cmd(cobs_port &amp;port)</div><div class="ttdef"><b>Definition:</b> config_cmds.cpp:62</div></div>
+<div class="ttc" id="anamespacescmdio_html_ad087420c344259ba318d4ddf2198eac0"><div class="ttname"><a href="namespacescmdio.html#ad087420c344259ba318d4ddf2198eac0">scmdio::cfg_commit_cmd</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; cfg_commit_cmd(cobs_port &amp;port)</div><div class="ttdef"><b>Definition:</b> config_cmds.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_84e79ac80b913c2fb5b9e077744e9498.html">host</a></li><li class="navelem"><a class="el" href="config__cmds_8hpp.html">config_cmds.hpp</a></li>
-    <li class="footer">Generated on Fri Dec 29 2023 15:07:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="config__cmds_8hpp.html">config_cmds.hpp</a></li>
+    <li class="footer">Generated on Sat Dec 30 2023 13:51:14 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

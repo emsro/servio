@@ -15,17 +15,17 @@ var hierarchy =
     ] ],
     [ "fw::drv::adc_pooler< Set >", "structfw_1_1drv_1_1adc__pooler.html", null ],
     [ "fw::drv::adc_set", "structfw_1_1drv_1_1adc__set.html", null ],
-    [ "cfg_opts", "host_2main_8cpp.html#structcfg__opts", null ],
+    [ "scmdio::cfg_opts", "namespacescmdio.html#structscmdio_1_1cfg__opts", null ],
     [ "fw::check_bool", "namespacefw.html#structfw_1_1check__bool", null ],
     [ "clk_interface", "classclk__interface.html", [
       [ "fw::drv::clock", "classfw_1_1drv_1_1clock.html", null ]
     ] ],
-    [ "host::cobs_port", "structhost_1_1cobs__port.html", null ],
+    [ "scmdio::cobs_port", "structscmdio_1_1cobs__port.html", null ],
     [ "com_interface", "classcom__interface.html", [
       [ "fw::drv::cobs_uart", "classfw_1_1drv_1_1cobs__uart.html", null ]
     ] ],
     [ "com_res", "drv__interfaces_8hpp.html#structcom__res", null ],
-    [ "host::common_cli", "structhost_1_1common__cli.html", null ],
+    [ "scmdio::common_cli", "structscmdio_1_1common__cli.html", null ],
     [ "ctl::config", "namespacectl.html#structctl_1_1config", null ],
     [ "control", "classcontrol.html", null ],
     [ "converter", "structconverter.html", null ],
@@ -51,11 +51,11 @@ var hierarchy =
       [ "vcc_interface", "classvcc__interface.html", null ]
     ] ],
     [ "std::exception", null, [
-      [ "host::servio_exception", "structhost_1_1servio__exception.html", [
-        [ "host::error_exception", "structhost_1_1error__exception.html", null ],
-        [ "host::parse_error", "structhost_1_1parse__error.html", null ],
-        [ "host::reply_error", "structhost_1_1reply__error.html", null ],
-        [ "host::serialize_error", "structhost_1_1serialize__error.html", null ]
+      [ "scmdio::servio_exception", "structscmdio_1_1servio__exception.html", [
+        [ "scmdio::error_exception", "structscmdio_1_1error__exception.html", null ],
+        [ "scmdio::parse_error", "structscmdio_1_1parse__error.html", null ],
+        [ "scmdio::reply_error", "structscmdio_1_1reply__error.html", null ],
+        [ "scmdio::serialize_error", "structscmdio_1_1serialize__error.html", null ]
       ] ]
     ] ],
     [ "brd::hb_timer_cfg", "namespacebrd.html#structbrd_1_1hb__timer__cfg", null ],
@@ -71,7 +71,7 @@ var hierarchy =
     [ "leds_vals", "base_8hpp.html#structleds__vals", null ],
     [ "ctl::linear_transition_regulator", "structctl_1_1linear__transition__regulator.html", null ],
     [ "metrics", "classmetrics.html", null ],
-    [ "mode_opts", "host_2main_8cpp.html#structmode__opts", null ],
+    [ "scmdio::mode_opts", "namespacescmdio.html#structscmdio_1_1mode__opts", null ],
     [ "monitor", "classmonitor.html", null ],
     [ "brd::off_scale", "namespacebrd.html#structbrd_1_1off__scale", null ],
     [ "cfg::off_scale", "namespacecfg.html#structcfg_1_1off__scale", null ],

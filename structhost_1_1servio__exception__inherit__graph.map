@@ -1,8 +1,0 @@
-<map id="host::servio_exception" name="host::servio_exception">
-<area shape="rect" id="node1" title=" " alt="" coords="249,80,418,107"/>
-<area shape="rect" id="node3" href="$structhost_1_1error__exception.html" title=" " alt="" coords="5,155,165,181"/>
-<area shape="rect" id="node4" href="$structhost_1_1parse__error.html" title=" " alt="" coords="190,155,322,181"/>
-<area shape="rect" id="node5" href="$structhost_1_1reply__error.html" title=" " alt="" coords="346,155,475,181"/>
-<area shape="rect" id="node6" href="$structhost_1_1serialize__error.html" title=" " alt="" coords="499,155,650,181"/>
-<area shape="rect" id="node2" title=" " alt="" coords="276,5,391,32"/>
-</map>

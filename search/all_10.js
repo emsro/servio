@@ -1,8 +1,8 @@
 var searchData=
 [
   ['drv_219',['drv',['../namespacefw_1_1drv.html',1,'fw']]],
-  ['field_220',['field',['../host_2main_8cpp.html#afb706de6d862c5dc33f2dcad24126b22',1,'cfg_opts']]],
-  ['field_5foption_221',['field_option',['../host_2main_8cpp.html#a609afc62bca9be9a810eed93ddf9d614',1,'main.cpp']]],
+  ['field_220',['field',['../namespacescmdio.html#aed79f70c94efc1960048338853422979',1,'scmdio::cfg_opts']]],
+  ['field_5foption_221',['field_option',['../namespacescmdio.html#a8cad69d3378772d8020a1e9b7202cc95',1,'scmdio']]],
   ['find_5flatest_5fpage_222',['find_latest_page',['../namespacecfg.html#a8b6148aa9c429a83cad73a5736a5fa86',1,'cfg']]],
   ['find_5fnext_5fpage_223',['find_next_page',['../namespacecfg.html#a3b9b49866d2eba9a98d5e4a0f0ca1526',1,'cfg']]],
   ['find_5foldest_5fpage_224',['find_oldest_page',['../namespacecfg.html#aa1f349948687ba0606bb6a254d35e595',1,'cfg']]],

@@ -33,13 +33,13 @@ var searchData=
   ['adc_5ftrigger_63',['adc_trigger',['../namespaceplt.html#a589dc26e4990ce09b166ca96e807bc56',1,'plt::adc_cfg']]],
   ['adc_5fvcc_64',['ADC_VCC',['../namespacefw_1_1drv.html#ade1bfc1db9e87ee1014f496e53cbd6fd',1,'fw::drv']]],
   ['alternate_65',['alternate',['../namespacefw_1_1drv.html#a25e43ef936987bb543595e56c9945bef',1,'fw::drv::pinch_cfg::alternate()'],['../namespacefw_1_1drv.html#a76baa2a33c2fccb835d8035d72264e41',1,'fw::drv::pin_cfg::alternate()']]],
-  ['angle_66',['angle',['../structmtr_1_1posvel__kalman.html#a7c83249422002ac5d54fe3bc57217f2f',1,'mtr::posvel_kalman::angle()'],['../host_2main_8cpp.html#af0a1e266e72eaf80a93810658a5a4d5a',1,'mode_opts::angle()'],['../namespacebrd.html#a82093fe3a15103109843d8fe44360c28',1,'brd::setpoint::angle()'],['../namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e',1,'kalman::angle(T &amp;x)']]],
+  ['angle_66',['angle',['../namespacescmdio.html#a16969bc11f18868c6b035c25822fb46f',1,'scmdio::mode_opts::angle()'],['../structmtr_1_1posvel__kalman.html#a7c83249422002ac5d54fe3bc57217f2f',1,'mtr::posvel_kalman::angle()'],['../namespacebrd.html#a82093fe3a15103109843d8fe44360c28',1,'brd::setpoint::angle()'],['../namespacekalman.html#a3c4a84673db045ce6801d83500cdd91e',1,'kalman::angle(T &amp;x)']]],
   ['angle_5fmod_67',['angle_mod',['../namespacekalman.html#a216390ea00a5dbed756bf6064c66a381',1,'kalman']]],
   ['any_5funinitialized_68',['any_uninitialized',['../structcore__drivers.html#a82c2875dbd9ed986ae3e8f1293f9340f',1,'core_drivers']]],
   ['apply_69',['apply',['../structcfg_1_1dispatcher.html#ae5531bb05cd13d8abef0e541df85588e',1,'cfg::dispatcher::apply()'],['../namespacecfg.html#a6811fad3058c0ddbf3576778455ec62d',1,'cfg::apply()']]],
   ['as_5ffloat_70',['as_float',['../classscaled.html#ad0c137095775ae685c2fc049d1784dd2',1,'scaled']]],
   ['assert_5fparam_71',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32g4xx_hal_conf.h'],['../stm32h5xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32h5xx_hal_conf.h']]],
   ['async_5fcobs_2ehpp_72',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],
-  ['async_5fread_73',['async_read',['../structhost_1_1cobs__port.html#a41b3a139c6d26709c43d4aa52edd8b10',1,'host::cobs_port']]],
-  ['async_5fwrite_74',['async_write',['../structhost_1_1cobs__port.html#a474f7e7c9b5aad02965c83ae728f7fcd',1,'host::cobs_port']]]
+  ['async_5fread_73',['async_read',['../structscmdio_1_1cobs__port.html#aff9b2a88db20f3b86fe37d53e211527f',1,'scmdio::cobs_port']]],
+  ['async_5fwrite_74',['async_write',['../structscmdio_1_1cobs__port.html#a25ddbd0ea16c608b82d113f6cfd881ce',1,'scmdio::cobs_port']]]
 ];

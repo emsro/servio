@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['cfg_5fopts_780',['cfg_opts',['../host_2main_8cpp.html#structcfg__opts',1,'']]],
+  ['cfg_5fopts_780',['cfg_opts',['../namespacescmdio.html#structscmdio_1_1cfg__opts',1,'scmdio']]],
   ['check_5fbool_781',['check_bool',['../namespacefw.html#structfw_1_1check__bool',1,'fw']]],
   ['clk_5finterface_782',['clk_interface',['../classclk__interface.html',1,'']]],
   ['clock_783',['clock',['../classfw_1_1drv_1_1clock.html',1,'fw::drv']]],
-  ['cobs_5fport_784',['cobs_port',['../structhost_1_1cobs__port.html',1,'host']]],
+  ['cobs_5fport_784',['cobs_port',['../structscmdio_1_1cobs__port.html',1,'scmdio']]],
   ['cobs_5fuart_785',['cobs_uart',['../classfw_1_1drv_1_1cobs__uart.html',1,'fw::drv']]],
   ['com_5finterface_786',['com_interface',['../classcom__interface.html',1,'']]],
   ['com_5fres_787',['com_res',['../drv__interfaces_8hpp.html#structcom__res',1,'']]],
-  ['common_5fcli_788',['common_cli',['../structhost_1_1common__cli.html',1,'host']]],
+  ['common_5fcli_788',['common_cli',['../structscmdio_1_1common__cli.html',1,'scmdio']]],
   ['config_789',['config',['../namespacectl.html#structctl_1_1config',1,'ctl']]],
   ['control_790',['control',['../classcontrol.html',1,'']]],
   ['converter_791',['converter',['../structconverter.html',1,'']]],
