@@ -1,5 +1,8 @@
 var dir_6185f3a156e0baa9ffebb847f82d024e =
 [
+    [ "converter.hpp", "converter_8hpp.html", [
+      [ "converter", "structservio_1_1cnv_1_1converter.html", "structservio_1_1cnv_1_1converter" ]
+    ] ],
     [ "current.hpp", "current_8hpp.html", [
       [ "current_converter", "classservio_1_1cnv_1_1current__converter.html", "classservio_1_1cnv_1_1current__converter" ]
     ] ],

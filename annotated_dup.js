@@ -17,6 +17,7 @@ var annotated_dup =
         [ "payload", "structservio_1_1cfg_1_1payload.html", "structservio_1_1cfg_1_1payload" ]
       ] ],
       [ "cnv", "namespaceservio_1_1cnv.html", [
+        [ "converter", "structservio_1_1cnv_1_1converter.html", "structservio_1_1cnv_1_1converter" ],
         [ "current_converter", "classservio_1_1cnv_1_1current__converter.html", "classservio_1_1cnv_1_1current__converter" ],
         [ "position_converter", "classservio_1_1cnv_1_1position__converter.html", "classservio_1_1cnv_1_1position__converter" ],
         [ "temperature_converter", "classservio_1_1cnv_1_1temperature__converter.html", "classservio_1_1cnv_1_1temperature__converter" ],
@@ -59,7 +60,8 @@ var annotated_dup =
       ] ],
       [ "mtr", "namespaceservio_1_1mtr.html", [
         [ "metrics", "classservio_1_1mtr_1_1metrics.html", "classservio_1_1mtr_1_1metrics" ],
-        [ "posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", "structservio_1_1mtr_1_1posvel__kalman" ]
+        [ "posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", "structservio_1_1mtr_1_1posvel__kalman" ],
+        [ "static_detector", "structservio_1_1mtr_1_1static__detector.html", "structservio_1_1mtr_1_1static__detector" ]
       ] ],
       [ "plt", "namespaceservio_1_1plt.html", [
         [ "dma_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1dma__cfg_dup" ],
@@ -86,7 +88,6 @@ var annotated_dup =
       [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
       [ "current_callback", "classservio_1_1current__callback.html", "classservio_1_1current__callback" ],
       [ "position_callback", "classservio_1_1position__callback.html", "classservio_1_1position__callback" ],
-      [ "converter", "structservio_1_1converter.html", "structservio_1_1converter" ],
       [ "core", "structservio_1_1core.html", "structservio_1_1core" ],
       [ "core_drivers", "structservio_1_1core__drivers.html", "structservio_1_1core__drivers" ],
       [ "adc_detailed_cb_interface", "classservio_1_1adc__detailed__cb__interface.html", "classservio_1_1adc__detailed__cb__interface" ],
@@ -105,8 +106,6 @@ var annotated_dup =
       [ "current_interface", "classservio_1_1current__interface.html", "classservio_1_1current__interface" ],
       [ "indication", "classservio_1_1indication.html", "classservio_1_1indication" ],
       [ "monitor", "classservio_1_1monitor.html", "classservio_1_1monitor" ],
-      [ "scaled", "classservio_1_1scaled.html", "classservio_1_1scaled" ],
-      [ "standard_callbacks", "structservio_1_1standard__callbacks.html", "structservio_1_1standard__callbacks" ],
-      [ "static_detector", "structservio_1_1static__detector.html", "structservio_1_1static__detector" ]
+      [ "standard_callbacks", "structservio_1_1standard__callbacks.html", "structservio_1_1standard__callbacks" ]
     ] ]
 ];

@@ -13,9 +13,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
       [ "current_callback", "classservio_1_1current__callback.html", "classservio_1_1current__callback" ],
       [ "position_callback", "classservio_1_1position__callback.html", "classservio_1_1position__callback" ]
     ] ],
-    [ "converter.hpp", "converter_8hpp.html", [
-      [ "converter", "structservio_1_1converter.html", "structservio_1_1converter" ]
-    ] ],
     [ "core.hpp", "core_8hpp.html", [
       [ "core", "structservio_1_1core.html", "structservio_1_1core" ]
     ] ],
@@ -27,18 +24,11 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "globals.hpp", "globals_8hpp.html", null ],
     [ "indication.cpp", "indication_8cpp.html", "indication_8cpp" ],
     [ "indication.hpp", "indication_8hpp.html", "indication_8hpp" ],
-    [ "load_persistent_config.hpp", "load__persistent__config_8hpp.html", "load__persistent__config_8hpp" ],
     [ "monitor.hpp", "monitor_8hpp.html", [
       [ "monitor", "classservio_1_1monitor.html", "classservio_1_1monitor" ]
     ] ],
-    [ "scaled.hpp", "scaled_8hpp.html", [
-      [ "scaled", "classservio_1_1scaled.html", "classservio_1_1scaled" ]
-    ] ],
     [ "standard_callbacks.hpp", "standard__callbacks_8hpp.html", [
       [ "standard_callbacks", "structservio_1_1standard__callbacks.html", "structservio_1_1standard__callbacks" ]
-    ] ],
-    [ "static_detector.hpp", "static__detector_8hpp.html", [
-      [ "static_detector", "structservio_1_1static__detector.html", "structservio_1_1static__detector" ]
     ] ],
     [ "status.hpp", "status_8hpp.html", "status_8hpp" ]
 ];

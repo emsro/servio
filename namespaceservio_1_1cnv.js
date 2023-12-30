@@ -1,5 +1,6 @@
 var namespaceservio_1_1cnv =
 [
+    [ "converter", "structservio_1_1cnv_1_1converter.html", "structservio_1_1cnv_1_1converter" ],
     [ "current_converter", "classservio_1_1cnv_1_1current__converter.html", "classservio_1_1cnv_1_1current__converter" ],
     [ "position_converter", "classservio_1_1cnv_1_1position__converter.html", "classservio_1_1cnv_1_1position__converter" ],
     [ "temperature_converter", "classservio_1_1cnv_1_1temperature__converter.html", "classservio_1_1cnv_1_1temperature__converter" ],

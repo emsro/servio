@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('metrics_8hpp_source.html',''); initRes
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="namespaceservio.html#a3326422369b08bcfa28412944542a889">microseconds</a>       last_time_;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="structservio_1_1mtr_1_1posvel__kalman.html">mtr::posvel_kalman</a> pv_kal_;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="structservio_1_1static__detector.html">static_detector</a>    st_dec_;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="structservio_1_1mtr_1_1static__detector.html">static_detector</a>    st_dec_;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classservio_1_1mtr_1_1metrics.html#a7e40c0fd2f0bfc3bd4878f3808a4e614">   35</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classservio_1_1mtr_1_1metrics.html#a7e40c0fd2f0bfc3bd4878f3808a4e614">metrics::get_position</a>()<span class="keyword"> const</span></div>
@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('metrics_8hpp_source.html',''); initRes
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classservio_1_1mtr_1_1metrics.html#a5ecbdefc8370d0a38f6a7f7ef619bc5b">   44</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classservio_1_1mtr_1_1metrics.html#a5ecbdefc8370d0a38f6a7f7ef619bc5b">metrics::is_moving</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> !st_dec_.<a class="code" href="structservio_1_1static__detector.html#a2832ace9b2ffd78d724aae414530dd06">is_static</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> !st_dec_.<a class="code" href="structservio_1_1mtr_1_1static__detector.html#a4fddc254997d1edbd8ca28eee21a2701">is_static</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}  <span class="comment">// namespace servio::mtr</span></div>
@@ -147,22 +147,22 @@ $(document).ready(function(){initNavTree('metrics_8hpp_source.html',''); initRes
 <div class="ttc" id="aclassservio_1_1mtr_1_1metrics_html_af7fa2837c9d35bd0d7600bd6b87c051e"><div class="ttname"><a href="classservio_1_1mtr_1_1metrics.html#af7fa2837c9d35bd0d7600bd6b87c051e">servio::mtr::metrics::get_velocity</a></div><div class="ttdeci">float get_velocity() const</div><div class="ttdef"><b>Definition:</b> metrics.hpp:39</div></div>
 <div class="ttc" id="anamespaceservio_1_1cnv_html_a460da0e04b2db0180432fb4bee5c9a99"><div class="ttname"><a href="namespaceservio_1_1cnv.html#a460da0e04b2db0180432fb4bee5c9a99">servio::cnv::position</a></div><div class="ttdeci">float position(const converter &amp;conv, const position_interface &amp;pos_drv)</div><div class="ttdef"><b>Definition:</b> utils.hpp:22</div></div>
 <div class="ttc" id="anamespaceservio_1_1mtr_html"><div class="ttname"><a href="namespaceservio_1_1mtr.html">servio::mtr</a></div><div class="ttdef"><b>Definition:</b> metrics.cpp:4</div></div>
-<div class="ttc" id="anamespaceservio_html_a3326422369b08bcfa28412944542a889"><div class="ttname"><a href="namespaceservio.html#a3326422369b08bcfa28412944542a889">servio::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:15</div></div>
-<div class="ttc" id="anamespaceservio_html_a7f7743aa58139aab9b7d4db0cde30f55"><div class="ttname"><a href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">servio::limits</a></div><div class="ttdeci">em::min_max&lt; T &gt; limits</div><div class="ttdef"><b>Definition:</b> base.hpp:42</div></div>
+<div class="ttc" id="anamespaceservio_html_a3326422369b08bcfa28412944542a889"><div class="ttname"><a href="namespaceservio.html#a3326422369b08bcfa28412944542a889">servio::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:14</div></div>
+<div class="ttc" id="anamespaceservio_html_a7f7743aa58139aab9b7d4db0cde30f55"><div class="ttname"><a href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">servio::limits</a></div><div class="ttdeci">em::min_max&lt; T &gt; limits</div><div class="ttdef"><b>Definition:</b> base.hpp:41</div></div>
 <div class="ttc" id="aposvel__kalman_8hpp_html"><div class="ttname"><a href="posvel__kalman_8hpp.html">posvel_kalman.hpp</a></div></div>
 <div class="ttc" id="astatic__detector_8hpp_html"><div class="ttname"><a href="static__detector_8hpp.html">static_detector.hpp</a></div></div>
 <div class="ttc" id="astructservio_1_1mtr_1_1posvel__kalman_html"><div class="ttname"><a href="structservio_1_1mtr_1_1posvel__kalman.html">servio::mtr::posvel_kalman</a></div><div class="ttdef"><b>Definition:</b> posvel_kalman.hpp:9</div></div>
 <div class="ttc" id="astructservio_1_1mtr_1_1posvel__kalman_html_a03d4dca7f879c0a59c1c10ad04de4abe"><div class="ttname"><a href="structservio_1_1mtr_1_1posvel__kalman.html#a03d4dca7f879c0a59c1c10ad04de4abe">servio::mtr::posvel_kalman::get_position</a></div><div class="ttdeci">float get_position() const</div><div class="ttdef"><b>Definition:</b> posvel_kalman.hpp:39</div></div>
 <div class="ttc" id="astructservio_1_1mtr_1_1posvel__kalman_html_aa0019a86b1ce9b64903967e121138fc2"><div class="ttname"><a href="structservio_1_1mtr_1_1posvel__kalman.html#aa0019a86b1ce9b64903967e121138fc2">servio::mtr::posvel_kalman::get_velocity</a></div><div class="ttdeci">float get_velocity() const</div><div class="ttdef"><b>Definition:</b> posvel_kalman.hpp:44</div></div>
-<div class="ttc" id="astructservio_1_1static__detector_html"><div class="ttname"><a href="structservio_1_1static__detector.html">servio::static_detector</a></div><div class="ttdef"><b>Definition:</b> static_detector.hpp:9</div></div>
-<div class="ttc" id="astructservio_1_1static__detector_html_a2832ace9b2ffd78d724aae414530dd06"><div class="ttname"><a href="structservio_1_1static__detector.html#a2832ace9b2ffd78d724aae414530dd06">servio::static_detector::is_static</a></div><div class="ttdeci">bool is_static</div><div class="ttdef"><b>Definition:</b> static_detector.hpp:12</div></div>
+<div class="ttc" id="astructservio_1_1mtr_1_1static__detector_html"><div class="ttname"><a href="structservio_1_1mtr_1_1static__detector.html">servio::mtr::static_detector</a></div><div class="ttdef"><b>Definition:</b> static_detector.hpp:9</div></div>
+<div class="ttc" id="astructservio_1_1mtr_1_1static__detector_html_a4fddc254997d1edbd8ca28eee21a2701"><div class="ttname"><a href="structservio_1_1mtr_1_1static__detector.html#a4fddc254997d1edbd8ca28eee21a2701">servio::mtr::static_detector::is_static</a></div><div class="ttdeci">bool is_static</div><div class="ttdef"><b>Definition:</b> static_detector.hpp:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_52d5c93d1a27df9f60d01a37fbb92cbd.html">mtr</a></li><li class="navelem"><a class="el" href="metrics_8hpp.html">metrics.hpp</a></li>
-    <li class="footer">Generated on Sat Dec 30 2023 20:42:26 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Dec 30 2023 22:19:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

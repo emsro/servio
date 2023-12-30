@@ -1,5 +1,5 @@
-<map id="servio::converter" name="servio::converter">
-<area shape="rect" id="node1" title=" " alt="" coords="292,111,424,138"/>
+<map id="servio::cnv::converter" name="servio::cnv::converter">
+<area shape="rect" id="node1" title=" " alt="" coords="292,111,455,138"/>
 <area shape="rect" id="node2" href="$classservio_1_1cnv_1_1current__converter.html" title=" " alt="" coords="23,5,169,47"/>
 <area shape="rect" id="node3" href="$classservio_1_1cnv_1_1position__converter.html" title=" " alt="" coords="20,71,172,112"/>
 <area shape="rect" id="node4" href="$classservio_1_1cnv_1_1temperature__converter.html" title=" " alt="" coords="5,136,187,177"/>
