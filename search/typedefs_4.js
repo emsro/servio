@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kalman_5fgain_1354',['kalman_gain',['../namespaceservio_1_1kalman.html#ae38e41b02e1733a044fd49df75cdb32b',1,'servio::kalman']]]
+  ['kalman_5fgain_1364',['kalman_gain',['../namespaceservio_1_1klmn.html#af5efb0f3164d80b24e95734b34812cd7',1,'servio::klmn']]]
 ];

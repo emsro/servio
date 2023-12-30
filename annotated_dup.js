@@ -50,8 +50,8 @@ var annotated_dup =
         [ "persistent_config_writer", "structservio_1_1fw_1_1persistent__config__writer.html", "structservio_1_1fw_1_1persistent__config__writer" ],
         [ "check_bool", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool", null ]
       ] ],
-      [ "kalman", "namespaceservio_1_1kalman.html", [
-        [ "state_range", "namespaceservio_1_1kalman.html#structservio_1_1kalman_1_1state__range", "namespaceservio_1_1kalman_structservio_1_1kalman_1_1state__range_dup" ]
+      [ "klmn", "namespaceservio_1_1klmn.html", [
+        [ "state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", "namespaceservio_1_1klmn_structservio_1_1klmn_1_1state__range_dup" ]
       ] ],
       [ "mtr", "namespaceservio_1_1mtr.html", [
         [ "posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", "structservio_1_1mtr_1_1posvel__kalman" ]

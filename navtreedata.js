@@ -132,11 +132,11 @@ var NAVTREEINDEX =
 [
 "adc__pooler_8hpp.html",
 "cli_8hpp.html",
-"key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3abff3384d9bd6bd5cfc1de004c7243356",
-"namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3204e245ff3b67e47f6293f07ad604d5",
-"namespaceservio_1_1scmdio.html#acf90a9c7cf0c9e0f5124ae2e9da6e7e3",
-"stm32g4xx__hal__conf_8h.html#aad50606af6b514a16c643400572159b5",
-"structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html#a3d3a338d961aff2f66bfb21bc79f1970"
+"key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3ab025034ef4a6897674222cdf80c8c171",
+"namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1475199ec7c8f59508f313ac90d0b909",
+"namespaceservio_1_1scmdio.html#aadae4ecaa643b52e9ad3e03306ec12b5",
+"stm32g4xx__hal__conf_8h.html#a8d8be2d7e4ed5bfc7b64f60ba604c749",
+"structservio_1_1fw_1_1drv_1_1adc__pooler.html#ad4852f7a6a4cffab81990dd49cdffb47"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

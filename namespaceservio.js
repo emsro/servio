@@ -5,7 +5,7 @@ var namespaceservio =
     [ "cnv", "namespaceservio_1_1cnv.html", "namespaceservio_1_1cnv" ],
     [ "ctl", "namespaceservio_1_1ctl.html", "namespaceservio_1_1ctl" ],
     [ "fw", "namespaceservio_1_1fw.html", "namespaceservio_1_1fw" ],
-    [ "kalman", "namespaceservio_1_1kalman.html", "namespaceservio_1_1kalman" ],
+    [ "klmn", "namespaceservio_1_1klmn.html", "namespaceservio_1_1klmn" ],
     [ "literals", "namespaceservio_1_1literals.html", [
       [ "operator\"\"_ms", "namespaceservio_1_1literals.html#af7fb1870e027a6f6576164c72d18bc73", null ],
       [ "operator\"\"_s", "namespaceservio_1_1literals.html#a9cc4a2727af86eed775de91ae7e0ac23", null ],
@@ -14,6 +14,10 @@ var namespaceservio =
     [ "mtr", "namespaceservio_1_1mtr.html", "namespaceservio_1_1mtr" ],
     [ "plt", "namespaceservio_1_1plt.html", "namespaceservio_1_1plt" ],
     [ "scmdio", "namespaceservio_1_1scmdio.html", "namespaceservio_1_1scmdio" ],
+    [ "tests", "namespaceservio_1_1tests.html", [
+      [ "TEST", "namespaceservio_1_1tests.html#a9288206f189064c4cadd3c454f0eae9f", null ],
+      [ "TEST", "namespaceservio_1_1tests.html#a4c2b426f7b295882f1eac203e6fb3adc", null ]
+    ] ],
     [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
     [ "current_callback", "classservio_1_1current__callback.html", "classservio_1_1current__callback" ],
     [ "position_callback", "classservio_1_1position__callback.html", "classservio_1_1position__callback" ],

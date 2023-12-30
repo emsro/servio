@@ -4,6 +4,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "cnv", "dir_6185f3a156e0baa9ffebb847f82d024e.html", "dir_6185f3a156e0baa9ffebb847f82d024e" ],
     [ "ctl", "dir_233c030500f292fc400d319d0c2e99f0.html", "dir_233c030500f292fc400d319d0c2e99f0" ],
     [ "fw", "dir_4fc88152649b3a7b0043869ddaf105b0.html", "dir_4fc88152649b3a7b0043869ddaf105b0" ],
+    [ "klmn", "dir_9dddf5cf0927eef839735694c66ca8bc.html", "dir_9dddf5cf0927eef839735694c66ca8bc" ],
     [ "mtr", "dir_52d5c93d1a27df9f60d01a37fbb92cbd.html", "dir_52d5c93d1a27df9f60d01a37fbb92cbd" ],
     [ "scmdio", "dir_d4b5d0c37e91718ad53ded7871cea291.html", "dir_d4b5d0c37e91718ad53ded7871cea291" ],
     [ "base.hpp", "base_8hpp.html", "base_8hpp" ],
@@ -29,7 +30,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "globals.hpp", "globals_8hpp.html", null ],
     [ "indication.cpp", "indication_8cpp.html", "indication_8cpp" ],
     [ "indication.hpp", "indication_8hpp.html", "indication_8hpp" ],
-    [ "kalman.hpp", "kalman_8hpp.html", "kalman_8hpp" ],
     [ "load_persistent_config.hpp", "load__persistent__config_8hpp.html", "load__persistent__config_8hpp" ],
     [ "metrics.cpp", "metrics_8cpp.html", null ],
     [ "metrics.hpp", "metrics_8hpp.html", [

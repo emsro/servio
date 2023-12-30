@@ -90,7 +90,7 @@ var hierarchy =
     ] ],
     [ "servio::brd::setpoint", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1setpoint", null ],
     [ "servio::standard_callbacks", "structservio_1_1standard__callbacks.html", null ],
-    [ "servio::kalman::state_range", "namespaceservio_1_1kalman.html#structservio_1_1kalman_1_1state__range", null ],
+    [ "servio::klmn::state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", null ],
     [ "servio::static_detector", "structservio_1_1static__detector.html", null ],
     [ "servio::cnv::temperature_converter", "classservio_1_1cnv_1_1temperature__converter.html", null ],
     [ "servio::brd::uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", null ],
