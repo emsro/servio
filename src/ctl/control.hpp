@@ -8,7 +8,7 @@
 
 #pragma once
 
-namespace servio
+namespace servio::ctl
 {
 
 class control
@@ -80,4 +80,4 @@ private:
         int16_t power_ = 0;
 };
 
-}  // namespace servio
+}  // namespace servio::ctl

@@ -1,5 +1,5 @@
 #include "cfg/dispatcher.hpp"
-#include "control.hpp"
+#include "ctl/control.hpp"
 #include "fw/util.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
@@ -17,7 +17,7 @@ struct dispatcher
         const current_interface&                         curr_drv;
         const vcc_interface&                             vcc_drv;
         const temperature_interface&                     temp_drv;
-        control&                                         ctl;
+        ctl::control&                                    ctl;
         metrics&                                         met;
         cfg::dispatcher&                                 cfg_disp;
         em::function_view< bool( const cfg::map* cfg ) > cfg_writer;

@@ -65,7 +65,7 @@ void dispatcher::apply( const key& key )
         ::servio::cfg::apply( c.ctl, m, key );
 }
 
-void apply( control& ctl, const map& m, const key& key )
+void apply( ctl::control& ctl, const map& m, const key& key )
 {
 
         switch ( key ) {

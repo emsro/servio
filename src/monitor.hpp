@@ -1,5 +1,5 @@
-#include "control.hpp"
 #include "converter.hpp"
+#include "ctl/control.hpp"
 #include "drv_interfaces.hpp"
 #include "indication.hpp"
 
@@ -13,7 +13,7 @@ class monitor
 public:
         monitor(
             microseconds                 now,
-            const control&               ctl,
+            const ctl::control&          ctl,
             const vcc_interface&         vcc_drv,
             const temperature_interface& temp_drv,
             indication&                  indi,
@@ -61,7 +61,7 @@ public:
         }
 
 private:
-        const control&               ctl_;
+        const ctl::control&          ctl_;
         indication&                  indi_;
         const vcc_interface&         vcc_drv_;
         const temperature_interface& temp_drv_;

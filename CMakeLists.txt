@@ -43,14 +43,16 @@ endif()
 
 include(cmake/cmake-git-version-tracking.cmake)
 
-add_subdirectory(src)
-
 if(${SERVIO_PLATFORM} STREQUAL "host")
+
+  find_package(GTest REQUIRED)
 
   include(cmake/cli11.cmake)
 
   include(CTest)
   enable_testing()
+
+  add_subdirectory(src)
   add_subdirectory(src/scmdio)
   add_subdirectory(tests)
 
@@ -58,19 +60,18 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   stm32_fetch_hal(G4)
   stm32_fetch_cmsis(G4)
-  find_package(
-    CMSIS
-    COMPONENTS STM32G4
-    REQUIRED GLOBAL)
+  find_package(CMSIS COMPONENTS STM32G4 REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
   add_subdirectory(platforms/stm32g4)
   add_subdirectory(boards/prototype2)
+
+  add_subdirectory(src)
   add_subdirectory(src/fw)
 
   add_library(prototype2 STATIC)
   target_link_libraries(prototype2 PUBLIC prototype2_board serviolib fwlib
-                                          STM32::Nano)
+                                          ctllib STM32::Nano)
   target_compile_options(prototype2 PRIVATE -Os)
 
   servio_add_board_executable(

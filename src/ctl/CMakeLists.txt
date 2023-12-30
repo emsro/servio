@@ -1,18 +1,18 @@
 servio_add_library(
-  TARGET klmnlib
+  TARGET ctllib
   INCLUDE ../
-  SOURCES simulate.cpp
+  SOURCES control.cpp
   LIBS emlabcpp)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
   servio_add_test(
     TARGET
-    kalman_utest
+    control_utest
     SOURCES
-    tests/kalman_utest.cpp
+    tests/control_utest.cpp
     LIBS
-    klmnlib
+    ctllib
     GTest::GTest
     gtest_main)
 

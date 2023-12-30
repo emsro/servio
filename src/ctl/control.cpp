@@ -5,7 +5,7 @@
 #include <emlabcpp/match.h>
 #include <emlabcpp/protocol/register_handler.h>
 
-namespace servio
+namespace servio::ctl
 {
 
 control::control( microseconds now, ctl::config cfg )
@@ -190,4 +190,4 @@ limits< float > control::get_velocity_limits() const
         return em::intersection( velocity_lims_.config_lims, velocity_lims_.pos_derived_lims );
 }
 
-}  // namespace servio
+}  // namespace servio::ctl

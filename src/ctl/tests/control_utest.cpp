@@ -1,12 +1,12 @@
-#include "control.hpp"
-#include "motor.hpp"
+#include "ctl/control.hpp"
+#include "sim/motor.hpp"
 
 #include <emlabcpp/experimental/logging.h>
 #include <emlabcpp/experimental/logging/util.h>
 #include <emlabcpp/range.h>
 #include <gtest/gtest.h>
 
-namespace servio::tests
+namespace servio::ctl::tests
 {
 
 class control_fixture : public ::testing::Test
@@ -19,7 +19,7 @@ public:
                 motor->static_friction_force = 0.F;
                 ctl.emplace(
                     now,
-                    ctl::config{
+                    config{
                         .position_pid{
                             .p = 0.03F,
                             .i = 0.0F,
@@ -66,9 +66,9 @@ public:
                     power, motor->position(), motor->velocity, ctl->get_desired_current() );
         }
 
-        microseconds                      now = 0_ms;
-        std::optional< simple_motor_sim > motor;
-        std::optional< control >          ctl;
+        microseconds                       now = 0_ms;
+        std::optional< sim::simple_motor > motor;
+        std::optional< ctl::control >      ctl;
 };
 
 TEST_F( control_fixture, current )
@@ -120,4 +120,4 @@ TEST_F( control_fixture, DISABLED_position )
         }
 }
 
-}  // namespace servio::tests
+}  // namespace servio::ctl::tests

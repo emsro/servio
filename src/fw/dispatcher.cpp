@@ -7,7 +7,7 @@
 namespace servio::fw
 {
 
-ServioToHost handle_set_mode( microseconds now, control& ctl, const Mode& msg )
+ServioToHost handle_set_mode( microseconds now, ctl::control& ctl, const Mode& msg )
 {
         float val;
         switch ( msg.which_pld ) {
@@ -40,7 +40,7 @@ ServioToHost handle_set_mode( microseconds now, control& ctl, const Mode& msg )
         return rep;
 }
 
-Mode get_mode( const control& ctl )
+Mode get_mode( const ctl::control& ctl )
 {
         Mode res;
         switch ( ctl.get_mode() ) {
@@ -68,7 +68,7 @@ Mode get_mode( const control& ctl )
 }
 
 ServioToHost handle_get_property(
-    const control&               ctl,
+    const ctl::control&          ctl,
     const metrics&               met,
     const converter&             conv,
     const position_interface&    pos_drv,

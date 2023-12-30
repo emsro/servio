@@ -1,4 +1,3 @@
-find_package(GTest REQUIRED)
 find_package(nlohmann_json REQUIRED)
 
 function(add_utest target)
@@ -13,13 +12,12 @@ function(add_utest target)
     GTest::GTest
     gtest_main
     serviolib
+    ctllib
     nlohmann_json::nlohmann_json
     proto
-    klmnlib
     magic_enum)
 endfunction()
 
-add_utest(control_utest)
 add_utest(metrics_utest)
 add_utest(cfg_storage_utest)
 add_utest(cfg_utest)

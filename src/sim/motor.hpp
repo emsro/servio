@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace servio::tests
+namespace servio::sim
 {
 
 using angle_vec = std::array< float, 2 >;
@@ -18,7 +18,7 @@ inline angle_vec rotate_vec( const angle_vec& v, float angle )
         };
 }
 
-struct simple_motor_sim
+struct simple_motor
 {
         int16_t   power    = 0;
         float     current  = 0.F;
@@ -30,9 +30,9 @@ struct simple_motor_sim
         float static_friction_vel   = 0.02f;
         float static_friction_force = 0.7f;
 
-        simple_motor_sim() = default;
+        simple_motor() = default;
 
-        simple_motor_sim( float pos )
+        simple_motor( float pos )
         {
                 pos_vec = rotate_vec( pos_vec, pos );
         }
@@ -97,10 +97,10 @@ struct simple_motor_sim
         }
 };
 
-inline std::ostream& operator<<( std::ostream& os, const simple_motor_sim& sim )
+inline std::ostream& operator<<( std::ostream& os, const simple_motor& sim )
 {
         return os << "\t" << sim.power << "\t" << sim.current << "\t" << sim.velocity << "\t"
                   << sim.position();
 }
 
-}  // namespace servio::tests
+}  // namespace servio::sim
