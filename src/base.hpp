@@ -16,20 +16,25 @@ using microseconds = std::chrono::duration< uint32_t, std::micro >;
 using milliseconds = std::chrono::duration< uint32_t, std::milli >;
 using seconds      = std::chrono::duration< uint32_t >;
 
-constexpr microseconds operator""_s( unsigned long long int secs )
+namespace literals
 {
-        return microseconds{ static_cast< uint32_t >( secs * 1'000'000U ) };
-}
+        constexpr microseconds operator""_s( unsigned long long int secs )
+        {
+                return microseconds{ static_cast< uint32_t >( secs * 1'000'000U ) };
+        }
 
-constexpr microseconds operator""_ms( unsigned long long int msecs )
-{
-        return microseconds{ static_cast< uint32_t >( msecs * 1'000U ) };
-}
+        constexpr microseconds operator""_ms( unsigned long long int msecs )
+        {
+                return microseconds{ static_cast< uint32_t >( msecs * 1'000U ) };
+        }
 
-constexpr microseconds operator""_us( unsigned long long int usecs )
-{
-        return microseconds{ static_cast< uint32_t >( usecs ) };
-}
+        constexpr microseconds operator""_us( unsigned long long int usecs )
+        {
+                return microseconds{ static_cast< uint32_t >( usecs ) };
+        }
+}  // namespace literals
+
+using namespace literals;
 
 using sec_time = std::chrono::duration< float >;
 
