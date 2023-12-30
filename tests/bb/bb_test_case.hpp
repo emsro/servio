@@ -1,4 +1,4 @@
-#include "host/cli.hpp"
+#include "scmdio/cli.hpp"
 
 #include <boost/asio.hpp>
 #include <boost/asio/awaitable.hpp>
@@ -12,12 +12,13 @@
 namespace tests::bb
 {
 
-using test_signature = boost::asio::awaitable< void >( boost::asio::io_context&, host::cobs_port& );
+using test_signature =
+    boost::asio::awaitable< void >( boost::asio::io_context&, scmdio::cobs_port& );
 
 struct bb_test_case : ::testing::Test
 {
         bb_test_case(
-            host::common_cli&               cli,
+            scmdio::common_cli&             cli,
             std::function< test_signature > test,
             std::chrono::milliseconds       timeout )
           : cli( cli )
@@ -49,7 +50,7 @@ struct bb_test_case : ::testing::Test
                     << "Test failed to finish in time, timeout: " << timeout.count() << "s";
         }
 
-        host::common_cli&               cli;
+        scmdio::common_cli&             cli;
         std::function< test_signature > test;
         std::chrono::milliseconds       timeout;
 };
@@ -57,7 +58,7 @@ struct bb_test_case : ::testing::Test
 inline void register_test(
     const std::string&              fixture_name,
     const std::string&              name,
-    host::common_cli&               cli,
+    scmdio::common_cli&             cli,
     std::function< test_signature > test,
     std::chrono::milliseconds       timeout )
 {

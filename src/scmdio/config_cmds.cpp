@@ -1,4 +1,4 @@
-#include "host/serial.hpp"
+#include "scmdio/serial.hpp"
 
 #include <boost/asio.hpp>
 #include <emlabcpp/algorithm.h>
@@ -6,7 +6,7 @@
 
 namespace em = emlabcpp;
 
-namespace host
+namespace scmdio
 {
 namespace
 {
@@ -136,4 +136,4 @@ cfg_set_cmd( cobs_port& port, const std::string& name, std::string value )
         std::ignore                = reply;
 }
 
-}  // namespace host
+}  // namespace scmdio

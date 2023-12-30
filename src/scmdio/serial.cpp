@@ -1,14 +1,14 @@
-#include "host/serial.hpp"
+#include "scmdio/serial.hpp"
 
-#include "host/async_cobs.hpp"
-#include "host/exceptions.hpp"
+#include "scmdio/async_cobs.hpp"
+#include "scmdio/exceptions.hpp"
 
 #include <emlabcpp/view.h>
 
 // TODO: there might be a better way of obtaining this?
 constexpr std::size_t buffer_size = 1024;
 
-namespace host
+namespace scmdio
 {
 
 boost::asio::awaitable< void > write( cobs_port& port, const servio::HostToServio& payload )
@@ -197,4 +197,4 @@ boost::asio::awaitable< void > set_mode_current( cobs_port& port, float curr )
         co_await set_mode( port, m );
 }
 
-}  // namespace host
+}  // namespace scmdio

@@ -1,7 +1,7 @@
 #include "bb_test_case.hpp"
-#include "host/cli.hpp"
-#include "host/exceptions.hpp"
-#include "host/serial.hpp"
+#include "scmdio/cli.hpp"
+#include "scmdio/exceptions.hpp"
+#include "scmdio/serial.hpp"
 
 #include <emlabcpp/experimental/logging.h>
 #include <filesystem>
@@ -17,27 +17,27 @@ bool operator==( const Message& lh, const Message& rh )
 }  // namespace google::protobuf
 
 boost::asio::awaitable< void >
-test_properties_querying( boost::asio::io_context&, host::cobs_port& port )
+test_properties_querying( boost::asio::io_context&, scmdio::cobs_port& port )
 {
         const google::protobuf::OneofDescriptor* desc =
             servio::Property::GetDescriptor()->oneof_decl( 0 );
 
         for ( int i = 0; i < desc->field_count(); i++ ) {
                 const google::protobuf::FieldDescriptor* field = desc->field( i );
-                servio::Property prop = co_await host::get_property( port, field );
+                servio::Property prop = co_await scmdio::get_property( port, field );
                 EXPECT_EQ( static_cast< int >( prop.pld_case() ), field->number() );
         }
 }
 
-boost::asio::awaitable< void > check_mode( host::cobs_port& port, servio::Mode m )
+boost::asio::awaitable< void > check_mode( scmdio::cobs_port& port, servio::Mode m )
 {
-        co_await host::set_mode( port, m );
+        co_await scmdio::set_mode( port, m );
 
-        servio::Mode repl = co_await host::get_property_mode( port );
+        servio::Mode repl = co_await scmdio::get_property_mode( port );
         EXPECT_EQ( repl.pld_case(), m.pld_case() );
 }
 
-boost::asio::awaitable< void > test_modes( boost::asio::io_context&, host::cobs_port& port )
+boost::asio::awaitable< void > test_modes( boost::asio::io_context&, scmdio::cobs_port& port )
 {
         servio::Mode m;
 
@@ -130,9 +130,9 @@ servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servi
         return ::testing::AssertionSuccess();
 }
 
-boost::asio::awaitable< void > test_config( boost::asio::io_context&, host::cobs_port& port )
+boost::asio::awaitable< void > test_config( boost::asio::io_context&, scmdio::cobs_port& port )
 {
-        const std::vector< servio::Config > cfg_vec = co_await host::get_full_config( port );
+        const std::vector< servio::Config > cfg_vec = co_await scmdio::get_full_config( port );
         std::map< servio::Config::PldCase, servio::Config > istate_map;
         for ( const servio::Config& cfg : cfg_vec ) {
                 istate_map[cfg.pld_case()] = cfg;
@@ -146,17 +146,17 @@ boost::asio::awaitable< void > test_config( boost::asio::io_context&, host::cobs
 
                 servio::Config val = vary_value( field, istate_map[key] );
                 EMLABCPP_INFO_LOG( "Setting new value: ", val.ShortDebugString() );
-                co_await host::set_config_field( port, val );
+                co_await scmdio::set_config_field( port, val );
 
                 EXPECT_TRUE(
-                    cmp_cfg_state( istate_map, key, co_await host::get_full_config( port ) ) );
+                    cmp_cfg_state( istate_map, key, co_await scmdio::get_full_config( port ) ) );
 
                 EMLABCPP_INFO_LOG(
                     "Setting original value: ", istate_map.at( key ).ShortDebugString() );
-                co_await host::set_config_field( port, istate_map.at( key ) );
+                co_await scmdio::set_config_field( port, istate_map.at( key ) );
 
                 const std::vector< servio::Config > new_cfg_vec =
-                    co_await host::get_full_config( port );
+                    co_await scmdio::get_full_config( port );
 
                 EXPECT_EQ( cfg_vec, new_cfg_vec );
         }
@@ -171,9 +171,9 @@ int main( int argc, char** argv )
         bool verbose   = false;
 
         CLI::App app{ "basic black box tests" };
-        host::powerless_flag( app, powerless );
-        host::verbose_opt( app, verbose );
-        host::common_cli cli;
+        scmdio::powerless_flag( app, powerless );
+        scmdio::verbose_opt( app, verbose );
+        scmdio::common_cli cli;
         cli.setup( app );
 
         try {

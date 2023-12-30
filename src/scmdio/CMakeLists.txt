@@ -1,7 +1,7 @@
 servio_add_library(
-  TARGET hostlib
+  TARGET scmdiolib
   INCLUDE ../
   SOURCES serial.cpp config_cmds.cpp cli.cpp
   LIBS serviolib proto CLI11::CLI11)
 
-servio_add_executable(TARGET servio SOURCES main.cpp LIBS hostlib)
+servio_add_executable(TARGET scmdio SOURCES main.cpp LIBS scmdiolib)

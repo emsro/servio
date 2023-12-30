@@ -1,12 +1,12 @@
 
 
-#include "host/async_cobs.hpp"
+#include "scmdio/async_cobs.hpp"
 
 #include <CLI/CLI.hpp>
 
 #pragma once
 
-namespace host
+namespace scmdio
 {
 
 CLI::Option* verbose_opt( CLI::App& app, bool& val );
@@ -28,4 +28,4 @@ struct common_cli
         void setup( CLI::App& app );
 };
 
-}  // namespace host
+}  // namespace scmdio

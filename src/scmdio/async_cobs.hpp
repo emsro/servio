@@ -1,4 +1,4 @@
-#include "host/exceptions.hpp"
+#include "scmdio/exceptions.hpp"
 
 #include <array>
 #include <boost/asio.hpp>
@@ -9,7 +9,7 @@
 
 namespace em = emlabcpp;
 
-namespace host
+namespace scmdio
 {
 
 struct cobs_port
@@ -76,4 +76,4 @@ struct cobs_port
         }
 };
 
-}  // namespace host
+}  // namespace scmdio

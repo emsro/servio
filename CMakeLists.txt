@@ -51,7 +51,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 
   include(CTest)
   enable_testing()
-  add_subdirectory(src/host)
+  add_subdirectory(src/scmdio)
   add_subdirectory(tests)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")

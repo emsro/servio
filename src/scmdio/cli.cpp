@@ -1,7 +1,7 @@
 
-#include "host/cli.hpp"
+#include "scmdio/cli.hpp"
 
-namespace host
+namespace scmdio
 {
 
 CLI::Option* verbose_opt( CLI::App& app, bool& val )
@@ -44,4 +44,4 @@ void common_cli::setup( CLI::App& app )
         } );
 }
 
-}  // namespace host
+}  // namespace scmdio

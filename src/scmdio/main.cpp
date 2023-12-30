@@ -1,12 +1,15 @@
-#include "host/cli.hpp"
-#include "host/config_cmds.hpp"
-#include "host/serial.hpp"
 #include "io.pb.h"
+#include "scmdio/cli.hpp"
+#include "scmdio/config_cmds.hpp"
+#include "scmdio/serial.hpp"
 
 #include <emlabcpp/algorithm.h>
 #include <filesystem>
 
 namespace em = emlabcpp;
+
+namespace scmdio
+{
 
 void json_flag( CLI::App* app, bool& flag )
 {
@@ -26,9 +29,9 @@ struct cfg_opts
 };
 
 void cfg_def(
-    CLI::App&                           app,
-    boost::asio::io_context&            context,
-    std::unique_ptr< host::cobs_port >& port_ptr )
+    CLI::App&                     app,
+    boost::asio::io_context&      context,
+    std::unique_ptr< cobs_port >& port_ptr )
 {
         auto data = std::make_shared< cfg_opts >();
 
@@ -37,8 +40,7 @@ void cfg_def(
         auto* query = cfg->add_subcommand( "query", "list all config options from the servo" );
         json_flag( query, data->json );
         query->callback( [&port_ptr, data, &context] {
-                co_spawn(
-                    context, host::cfg_query_cmd( *port_ptr, data->json ), boost::asio::detached );
+                co_spawn( context, cfg_query_cmd( *port_ptr, data->json ), boost::asio::detached );
         } );
 
         auto* get = cfg->add_subcommand( "get", "retrivies a configuration option from the servo" );
@@ -47,7 +49,7 @@ void cfg_def(
         get->callback( [&port_ptr, data, &context] {
                 co_spawn(
                     context,
-                    host::cfg_get_cmd( *port_ptr, data->field, data->json ),
+                    cfg_get_cmd( *port_ptr, data->field, data->json ),
                     boost::asio::detached );
         } );
 
@@ -58,32 +60,32 @@ void cfg_def(
         set->callback( [&port_ptr, data, &context] {
                 co_spawn(
                     context,
-                    host::cfg_set_cmd( *port_ptr, data->field, data->value ),
+                    cfg_set_cmd( *port_ptr, data->field, data->value ),
                     boost::asio::detached );
         } );
 
         auto* commit = cfg->add_subcommand(
             "commit", "stores the current configuration of servo in its persistent memory" );
         commit->callback( [&port_ptr, &context] {
-                co_spawn( context, host::cfg_commit_cmd( *port_ptr ), boost::asio::detached );
+                co_spawn( context, cfg_commit_cmd( *port_ptr ), boost::asio::detached );
         } );
 
         auto* clear = cfg->add_subcommand( "clear", "clear latest store config from the servo" );
         clear->callback( [&port_ptr, &context] {
-                co_spawn( context, host::cfg_clear_cmd( *port_ptr ), boost::asio::detached );
+                co_spawn( context, cfg_clear_cmd( *port_ptr ), boost::asio::detached );
         } );
 }
 
 boost::asio::awaitable< void > pool_cmd(
     boost::asio::io_context&,
-    host::cobs_port&                                        port,
+    cobs_port&                                              port,
     std::vector< const google::protobuf::FieldDescriptor* > fields )
 {
 
         while ( true ) {
                 std::vector< std::string > vals;
                 for ( const google::protobuf::FieldDescriptor* field : fields ) {
-                        servio::Property repl = co_await host::get_property( port, field );
+                        servio::Property repl = co_await get_property( port, field );
 
                         // TODO: this is quite a hack
                         std::string s = repl.ShortDebugString();
@@ -94,10 +96,8 @@ boost::asio::awaitable< void > pool_cmd(
         }
 }
 
-boost::asio::awaitable< void > pool_cmd(
-    boost::asio::io_context&   context,
-    host::cobs_port&           port,
-    std::vector< std::string > properties )
+boost::asio::awaitable< void >
+pool_cmd( boost::asio::io_context& context, cobs_port& port, std::vector< std::string > properties )
 {
         if ( properties.empty() ) {
                 std::cout << "got an empty property list, not pooling" << std::endl;
@@ -119,9 +119,9 @@ boost::asio::awaitable< void > pool_cmd(
 }
 
 void pool_def(
-    CLI::App&                           app,
-    boost::asio::io_context&            context,
-    std::unique_ptr< host::cobs_port >& port_ptr )
+    CLI::App&                     app,
+    boost::asio::io_context&      context,
+    std::unique_ptr< cobs_port >& port_ptr )
 {
         auto data = std::make_shared< std::vector< std::string > >();
 
@@ -140,9 +140,9 @@ struct mode_opts
 };
 
 void mode_def(
-    CLI::App&                           app,
-    boost::asio::io_context&            context,
-    std::unique_ptr< host::cobs_port >& port_ptr )
+    CLI::App&                     app,
+    boost::asio::io_context&      context,
+    std::unique_ptr< cobs_port >& port_ptr )
 {
         auto data = std::make_shared< mode_opts >();
 
@@ -150,25 +150,21 @@ void mode_def(
 
         auto* disengaged = mode->add_subcommand( "disengaged", "disengaged mode" );
         disengaged->callback( [&port_ptr, &context] {
-                co_spawn( context, host::set_mode_disengaged( *port_ptr ), boost::asio::detached );
+                co_spawn( context, set_mode_disengaged( *port_ptr ), boost::asio::detached );
         } );
 
         auto* current = mode->add_subcommand( "current", "current mode" );
         current->add_option( "current", data->current, "goal current" );
         current->callback( [&port_ptr, data, &context] {
                 co_spawn(
-                    context,
-                    host::set_mode_current( *port_ptr, data->current ),
-                    boost::asio::detached );
+                    context, set_mode_current( *port_ptr, data->current ), boost::asio::detached );
         } );
 
         auto* position = mode->add_subcommand( "position", "position mode" );
         position->add_option( "angle", data->angle, "goal angle" );
         position->callback( [&port_ptr, data, &context] {
                 co_spawn(
-                    context,
-                    host::set_mode_position( *port_ptr, data->angle ),
-                    boost::asio::detached );
+                    context, set_mode_position( *port_ptr, data->angle ), boost::asio::detached );
         } );
 
         auto* velocity = mode->add_subcommand( "velocity", "velocity mode" );
@@ -176,22 +172,24 @@ void mode_def(
         velocity->callback( [&port_ptr, data, &context] {
                 co_spawn(
                     context,
-                    host::set_mode_velocity( *port_ptr, data->velocity ),
+                    set_mode_velocity( *port_ptr, data->velocity ),
                     boost::asio::detached );
         } );
 }
+
+}  // namespace scmdio
 
 int main( int argc, char* argv[] )
 {
 
         CLI::App app{ "Servio utility" };
 
-        host::common_cli cli;
+        scmdio::common_cli cli;
         cli.setup( app );
 
-        cfg_def( app, cli.context, cli.port_ptr );
-        pool_def( app, cli.context, cli.port_ptr );
-        mode_def( app, cli.context, cli.port_ptr );
+        scmdio::cfg_def( app, cli.context, cli.port_ptr );
+        scmdio::pool_def( app, cli.context, cli.port_ptr );
+        scmdio::mode_def( app, cli.context, cli.port_ptr );
 
         try {
                 app.parse( argc, argv );
