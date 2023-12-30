@@ -21,7 +21,7 @@ struct dispatcher
         mtr::metrics&                                    met;
         cfg::dispatcher&                                 cfg_disp;
         em::function_view< bool( const cfg::map* cfg ) > cfg_writer;
-        converter&                                       conv;
+        cnv::converter&                                  conv;
         microseconds                                     now;
 };
 

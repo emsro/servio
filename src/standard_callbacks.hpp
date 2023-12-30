@@ -10,11 +10,11 @@ namespace servio
 struct standard_callbacks
 {
         standard_callbacks(
-            pwm_motor_interface& motor,
-            clk_interface&       clk,
-            ctl::control&        ctl,
-            mtr::metrics&        met,
-            const converter&     conv )
+            pwm_motor_interface&  motor,
+            clk_interface&        clk,
+            ctl::control&         ctl,
+            mtr::metrics&         met,
+            const cnv::converter& conv )
           : current_cb( motor, ctl, clk, conv )
           , pos_cb( ctl, met, clk, conv )
         {

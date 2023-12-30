@@ -23,7 +23,7 @@ int main()
 
         em::view< const brd::page* > pages = brd::get_persistent_pages();
 
-        cfg::payload last_cfg_payload = load_persistent_config( pages, cfg );
+        cfg::payload last_cfg_payload = fw::load_persistent_config( pages, cfg );
 
         core_drivers cdrv = brd::setup_core_drivers();
 

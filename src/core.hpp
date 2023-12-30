@@ -11,11 +11,11 @@ namespace servio
 struct core
 {
 
-        ctl::control ctl;
-        converter    conv;
-        mtr::metrics met;
-        indication   ind;
-        monitor      mon;
+        ctl::control   ctl;
+        cnv::converter conv;
+        mtr::metrics   met;
+        indication     ind;
+        monitor        mon;
 
         core(
             microseconds                 now,

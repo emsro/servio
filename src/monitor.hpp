@@ -1,4 +1,4 @@
-#include "converter.hpp"
+#include "cnv/converter.hpp"
 #include "ctl/control.hpp"
 #include "drv_interfaces.hpp"
 #include "indication.hpp"
@@ -17,7 +17,7 @@ public:
             const vcc_interface&         vcc_drv,
             const temperature_interface& temp_drv,
             indication&                  indi,
-            const converter&             conv )
+            const cnv::converter&        conv )
           : ctl_( ctl )
           , indi_( indi )
           , vcc_drv_( vcc_drv )
@@ -65,7 +65,7 @@ private:
         indication&                  indi_;
         const vcc_interface&         vcc_drv_;
         const temperature_interface& temp_drv_;
-        const converter&             conv_;
+        const cnv::converter&        conv_;
 
         float min_vcc_ = 0.F;
         float max_tmp_ = 90.F;

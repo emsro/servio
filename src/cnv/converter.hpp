@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace servio
+namespace servio::cnv
 {
 
 struct converter
@@ -37,4 +37,4 @@ struct converter
         cnv::voltage_converter     vcc;
 };
 
-}  // namespace servio
+}  // namespace servio::cnv

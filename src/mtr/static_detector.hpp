@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace servio
+namespace servio::mtr
 {
 
 struct static_detector
@@ -33,4 +33,4 @@ struct static_detector
         }
 };
 
-}  // namespace servio
+}  // namespace servio::mtr

@@ -70,7 +70,7 @@ Mode get_mode( const ctl::control& ctl )
 ServioToHost handle_get_property(
     const ctl::control&          ctl,
     const mtr::metrics&          met,
-    const converter&             conv,
+    const cnv::converter&        conv,
     const position_interface&    pos_drv,
     const current_interface&     curr_drv,
     const vcc_interface&         vcc_drv,

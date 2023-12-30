@@ -1,5 +1,5 @@
+#include "cnv/converter.hpp"
 #include "cnv/utils.hpp"
-#include "converter.hpp"
 #include "ctl/control.hpp"
 #include "mtr/metrics.hpp"
 #include "platform.hpp"
@@ -13,10 +13,10 @@ class current_callback : public current_cb_interface
 {
 public:
         current_callback(
-            pwm_motor_interface& motor,
-            ctl::control&        ctl,
-            clk_interface&       clk,
-            const converter&     conv )
+            pwm_motor_interface&  motor,
+            ctl::control&         ctl,
+            clk_interface&        clk,
+            const cnv::converter& conv )
           : motor_( motor )
           , ctl_( ctl )
           , clk_( clk )
@@ -33,20 +33,20 @@ public:
         }
 
 private:
-        pwm_motor_interface& motor_;
-        ctl::control&        ctl_;
-        clk_interface&       clk_;
-        const converter&     conv_;
+        pwm_motor_interface&  motor_;
+        ctl::control&         ctl_;
+        clk_interface&        clk_;
+        const cnv::converter& conv_;
 };
 
 class position_callback : public position_cb_interface
 {
 public:
         position_callback(
-            ctl::control&    ctl,
-            mtr::metrics&    met,
-            clk_interface&   clk,
-            const converter& conv )
+            ctl::control&         ctl,
+            mtr::metrics&         met,
+            clk_interface&        clk,
+            const cnv::converter& conv )
           : ctl_( ctl )
           , met_( met )
           , clk_( clk )
@@ -67,10 +67,10 @@ public:
         }
 
 private:
-        ctl::control&    ctl_;
-        mtr::metrics&    met_;
-        clk_interface&   clk_;
-        const converter& conv_;
+        ctl::control&         ctl_;
+        mtr::metrics&         met_;
+        clk_interface&        clk_;
+        const cnv::converter& conv_;
 };
 
 }  // namespace servio

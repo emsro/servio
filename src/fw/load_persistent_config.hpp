@@ -3,7 +3,7 @@
 
 #pragma once
 
-namespace servio
+namespace servio::fw
 {
 
 using page = em::view< std::byte* >;
@@ -28,4 +28,4 @@ inline cfg::payload load_persistent_config( em::view< const page* > pages, cfg::
         return res;
 }
 
-}  // namespace servio
+}  // namespace servio::fw
