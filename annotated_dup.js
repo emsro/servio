@@ -58,6 +58,10 @@ var annotated_dup =
       [ "klmn", "namespaceservio_1_1klmn.html", [
         [ "state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", "namespaceservio_1_1klmn_structservio_1_1klmn_1_1state__range_dup" ]
       ] ],
+      [ "mon", "namespaceservio_1_1mon.html", [
+        [ "indication", "classservio_1_1mon_1_1indication.html", "classservio_1_1mon_1_1indication" ],
+        [ "monitor", "classservio_1_1mon_1_1monitor.html", "classservio_1_1mon_1_1monitor" ]
+      ] ],
       [ "mtr", "namespaceservio_1_1mtr.html", [
         [ "metrics", "classservio_1_1mtr_1_1metrics.html", "classservio_1_1mtr_1_1metrics" ],
         [ "posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", "structservio_1_1mtr_1_1posvel__kalman" ],
@@ -104,8 +108,6 @@ var annotated_dup =
       [ "vcc_interface", "classservio_1_1vcc__interface.html", "classservio_1_1vcc__interface" ],
       [ "temperature_interface", "classservio_1_1temperature__interface.html", "classservio_1_1temperature__interface" ],
       [ "current_interface", "classservio_1_1current__interface.html", "classservio_1_1current__interface" ],
-      [ "indication", "classservio_1_1indication.html", "classservio_1_1indication" ],
-      [ "monitor", "classservio_1_1monitor.html", "classservio_1_1monitor" ],
       [ "standard_callbacks", "structservio_1_1standard__callbacks.html", "structservio_1_1standard__callbacks" ]
     ] ]
 ];

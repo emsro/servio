@@ -6,7 +6,7 @@ var searchData=
   ['blue_77',['blue',['../namespaceservio_1_1plt.html#ab9d65b8e69271c6180a1f9cba4479ab9',1,'servio::plt::leds_gpio_cfg::blue()'],['../namespaceservio.html#aea051a3a8278bb73781905d787b09d49',1,'servio::leds_vals::blue()']]],
   ['board_2ecpp_78',['board.cpp',['../proto3_2board_8cpp.html',1,'(Global Namespace)'],['../prototype2_2board_8cpp.html',1,'(Global Namespace)']]],
   ['board_2ehpp_79',['board.hpp',['../board_8hpp.html',1,'']]],
-  ['booting_80',['BOOTING',['../namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3ad32cbe23a48d1576416d9eb314876c6d',1,'servio']]],
+  ['booting_80',['BOOTING',['../namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52ad32cbe23a48d1576416d9eb314876c6d',1,'servio::mon']]],
   ['brd_2ehpp_81',['brd.hpp',['../brd_8hpp.html',1,'']]],
   ['buffer_82',['buffer',['../structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html#a0fd68f0b08bfb2eb8d7f5304df3b3eed',1,'servio::fw::drv::detailed_adc_channel']]],
   ['buffer_5fsize_83',['buffer_size',['../serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc',1,'serial.cpp']]],

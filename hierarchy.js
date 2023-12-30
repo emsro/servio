@@ -60,7 +60,7 @@ var hierarchy =
     ] ],
     [ "servio::brd::hb_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1hb__timer__cfg", null ],
     [ "servio::plt::hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", null ],
-    [ "servio::indication", "classservio_1_1indication.html", null ],
+    [ "servio::mon::indication", "classservio_1_1mon_1_1indication.html", null ],
     [ "servio::cfg::keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", null ],
     [ "servio::plt::leds_gpio_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg", null ],
     [ "servio::leds_interface", "classservio_1_1leds__interface.html", [
@@ -72,7 +72,7 @@ var hierarchy =
     [ "servio::ctl::linear_transition_regulator", "structservio_1_1ctl_1_1linear__transition__regulator.html", null ],
     [ "servio::mtr::metrics", "classservio_1_1mtr_1_1metrics.html", null ],
     [ "servio::scmdio::mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", null ],
-    [ "servio::monitor", "classservio_1_1monitor.html", null ],
+    [ "servio::mon::monitor", "classservio_1_1mon_1_1monitor.html", null ],
     [ "servio::brd::off_scale", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1off__scale", null ],
     [ "servio::cfg::off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", null ],
     [ "servio::cfg::payload", "structservio_1_1cfg_1_1payload.html", null ],

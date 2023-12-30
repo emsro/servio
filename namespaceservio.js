@@ -11,6 +11,7 @@ var namespaceservio =
       [ "operator\"\"_s", "namespaceservio_1_1literals.html#a9cc4a2727af86eed775de91ae7e0ac23", null ],
       [ "operator\"\"_us", "namespaceservio_1_1literals.html#add4105476cecfe3e11bbbde64b4e7922", null ]
     ] ],
+    [ "mon", "namespaceservio_1_1mon.html", "namespaceservio_1_1mon" ],
     [ "mtr", "namespaceservio_1_1mtr.html", "namespaceservio_1_1mtr" ],
     [ "plt", "namespaceservio_1_1plt.html", "namespaceservio_1_1plt" ],
     [ "scmdio", "namespaceservio_1_1scmdio.html", "namespaceservio_1_1scmdio" ],
@@ -37,8 +38,6 @@ var namespaceservio =
     [ "vcc_interface", "classservio_1_1vcc__interface.html", "classservio_1_1vcc__interface" ],
     [ "temperature_interface", "classservio_1_1temperature__interface.html", "classservio_1_1temperature__interface" ],
     [ "current_interface", "classservio_1_1current__interface.html", "classservio_1_1current__interface" ],
-    [ "indication", "classservio_1_1indication.html", "classservio_1_1indication" ],
-    [ "monitor", "classservio_1_1monitor.html", "classservio_1_1monitor" ],
     [ "standard_callbacks", "structservio_1_1standard__callbacks.html", "structservio_1_1standard__callbacks" ],
     [ "current_cb_interface", "namespaceservio.html#aceccfb62e2eaa461c5f98ca9a54e1839", null ],
     [ "limits", "namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55", null ],
@@ -59,23 +58,11 @@ var namespaceservio =
       [ "VELOCITY", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a7b4354bded455eb379e3c764806cda7b", null ],
       [ "POSITION", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a90b4ba73224408e82ade8a072a3712c1", null ]
     ] ],
-    [ "indication_event", "namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3", [
-      [ "VOLTAGE_LOW", "namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3a1ebe303c3b179265bbac9ab1f3219826", null ],
-      [ "TEMPERATURE_HIGH", "namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3adecfbda91cde2e00e1e04c4c97cb1b86", null ],
-      [ "HEARTBEAT", "namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3a0d895a0a05a7cce9b2c0c8bb252f78cc", null ],
-      [ "ENGAGED", "namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3a91fc31ffb68f72532b0ab7f28f24db85", null ],
-      [ "DISENGAGED", "namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3afeffe8e712a5ce9a0cedef11c364fa74", null ],
-      [ "STUCK", "namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3a95578e7a8d44d9a1445fe38369bd36a6", null ],
-      [ "BOOTING", "namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3ad32cbe23a48d1576416d9eb314876c6d", null ],
-      [ "INITIALIZED", "namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3adee5f03c2c4e73657824e028494b18c0", null ],
-      [ "INCOMING_MESSAGE", "namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3a1e4bd5080731650a78fd41dc75d98582", null ]
-    ] ],
     [ "status", "namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788", [
       [ "NOMINAL", "namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788aaa2fa3fb4786079a4f8107ea393d609e", null ],
       [ "DEGRADED", "namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788a0021017005f0e5134b204c2e69d3d4ed", null ],
       [ "INOPERABLE", "namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788ac5666694e05e08a4ae3ab497591042fa", null ]
     ] ],
-    [ "sin_approx", "namespaceservio.html#aa42f0345929b73541ef4b32f01e483df", null ],
     [ "infty", "namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c", null ],
     [ "pi", "namespaceservio.html#a20c15193768c59a28a88e172aba5ab20", null ],
     [ "STOP_CALLBACK", "namespaceservio.html#a7da57f781cc59504821aec91b1b80995", null ]
