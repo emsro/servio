@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['json_1270',['json',['../namespacescmdio.html#aa77bb9f236cd1e52176d8af18f710a61',1,'scmdio::cfg_opts']]]
+  ['json_1265',['json',['../namespaceservio_1_1scmdio.html#a13d716f128c45b93d5d6eb1e6895ea80',1,'servio::scmdio::cfg_opts']]]
 ];

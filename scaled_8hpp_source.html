@@ -87,41 +87,46 @@ $(document).ready(function(){initNavTree('scaled_8hpp_source.html',''); initResi
 <div class="title">scaled.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="scaled_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/quantity.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>em = emlabcpp;</div>
+<a href="scaled_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/quantity.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio.html">servio</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> T, <span class="keywordtype">int</span>8_t BitOffset &gt;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classscaled.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classscaled.html">scaled</a> : <span class="keyword">public</span> em::quantity&lt; scaled&lt; T, BitOffset &gt;, T &gt;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">static</span> constexpr int32_t multiplicator = 1 &lt;&lt; BitOffset;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">using</span> em::quantity&lt; scaled&lt; T, BitOffset &gt;, T &gt;::quantity;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classscaled.html#aeb23f3d76e0db21a720204e85e555150">   16</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classscaled.html">scaled</a> <a class="code" href="classscaled.html#aeb23f3d76e0db21a720204e85e555150">from_float</a>( <span class="keywordtype">float</span> val )</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classscaled.html">scaled</a>{ val * multiplicator };</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classscaled.html#ad0c137095775ae685c2fc049d1784dd2">   21</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classscaled.html#ad0c137095775ae685c2fc049d1784dd2">as_float</a>()</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( *this ) / multiplicator;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="ttc" id="aclassscaled_html"><div class="ttname"><a href="classscaled.html">scaled</a></div><div class="ttdef"><b>Definition:</b> scaled.hpp:10</div></div>
-<div class="ttc" id="aclassscaled_html_ad0c137095775ae685c2fc049d1784dd2"><div class="ttname"><a href="classscaled.html#ad0c137095775ae685c2fc049d1784dd2">scaled::as_float</a></div><div class="ttdeci">float as_float()</div><div class="ttdef"><b>Definition:</b> scaled.hpp:21</div></div>
-<div class="ttc" id="aclassscaled_html_aeb23f3d76e0db21a720204e85e555150"><div class="ttname"><a href="classscaled.html#aeb23f3d76e0db21a720204e85e555150">scaled::from_float</a></div><div class="ttdeci">static scaled from_float(float val)</div><div class="ttdef"><b>Definition:</b> scaled.hpp:16</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>em = emlabcpp;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> T, <span class="keywordtype">int</span>8_t BitOffset &gt;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classservio_1_1scaled.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classservio_1_1scaled.html">scaled</a> : <span class="keyword">public</span> em::quantity&lt; scaled&lt; T, BitOffset &gt;, T &gt;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">static</span> constexpr int32_t multiplicator = 1 &lt;&lt; BitOffset;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">using</span> em::quantity&lt; scaled&lt; T, BitOffset &gt;, T &gt;::quantity;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classservio_1_1scaled.html#a2b84033820bd3dc2f8421c1f97492843">   18</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classservio_1_1scaled.html">scaled</a> <a class="code" href="classservio_1_1scaled.html#a2b84033820bd3dc2f8421c1f97492843">from_float</a>( <span class="keywordtype">float</span> val )</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classservio_1_1scaled.html">scaled</a>{ val * multiplicator };</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classservio_1_1scaled.html#af5717e2b09c98b0e4ec514a92674c6ab">   23</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classservio_1_1scaled.html#af5717e2b09c98b0e4ec514a92674c6ab">as_float</a>()</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( *this ) / multiplicator;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}  <span class="comment">// namespace servio</span></div>
+<div class="ttc" id="aclassservio_1_1scaled_html"><div class="ttname"><a href="classservio_1_1scaled.html">servio::scaled</a></div><div class="ttdef"><b>Definition:</b> scaled.hpp:12</div></div>
+<div class="ttc" id="aclassservio_1_1scaled_html_a2b84033820bd3dc2f8421c1f97492843"><div class="ttname"><a href="classservio_1_1scaled.html#a2b84033820bd3dc2f8421c1f97492843">servio::scaled::from_float</a></div><div class="ttdeci">static scaled from_float(float val)</div><div class="ttdef"><b>Definition:</b> scaled.hpp:18</div></div>
+<div class="ttc" id="aclassservio_1_1scaled_html_af5717e2b09c98b0e4ec514a92674c6ab"><div class="ttname"><a href="classservio_1_1scaled.html#af5717e2b09c98b0e4ec514a92674c6ab">servio::scaled::as_float</a></div><div class="ttdeci">float as_float()</div><div class="ttdef"><b>Definition:</b> scaled.hpp:23</div></div>
+<div class="ttc" id="anamespaceservio_html"><div class="ttname"><a href="namespaceservio.html">servio</a></div><div class="ttdef"><b>Definition:</b> brd.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="scaled_8hpp.html">scaled.hpp</a></li>
-    <li class="footer">Generated on Sat Dec 30 2023 13:51:14 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Dec 30 2023 14:23:21 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['last_5fpayload_1272',['last_payload',['../structfw_1_1persistent__config__writer.html#ac216641dfbc7f365e9badaaba60e01b4',1,'fw::persistent_config_writer']]],
-  ['last_5fpos_1273',['last_pos',['../structstatic__detector.html#ad7262861060d61260f3a4f4fdc0ea633',1,'static_detector']]],
-  ['last_5ftime_1274',['last_time',['../structctl_1_1linear__transition__regulator.html#aa5b8f952b80fd4943d158faceb2b44e4',1,'ctl::linear_transition_regulator']]],
-  ['last_5fvalue_1275',['last_value',['../structfw_1_1drv_1_1detailed__adc__channel.html#a53b1fefdfb3e46f35f34dd9166c0f292',1,'fw::drv::detailed_adc_channel::last_value()'],['../structfw_1_1drv_1_1adc__channel.html#ad6231ee3ed6ce744a51f0bc5d9e5857c',1,'fw::drv::adc_channel::last_value()']]],
-  ['leds_1276',['leds',['../structcore__drivers.html#a8875a0e238c95a45454fd1ca76d65675',1,'core_drivers']]],
-  ['leds_1277',['LEDS',['../namespacebrd.html#a37ecf1d595557b50945b3b1643216fa4',1,'brd']]],
-  ['low_5fpoint_1278',['low_point',['../structctl_1_1linear__transition__regulator.html#a73f794b5ebc281211247d87a6157dc8f',1,'ctl::linear_transition_regulator']]]
+  ['last_5fpayload_1267',['last_payload',['../structservio_1_1fw_1_1persistent__config__writer.html#aa9f1351c4802c8c08c215b622d37a5e4',1,'servio::fw::persistent_config_writer']]],
+  ['last_5fpos_1268',['last_pos',['../structservio_1_1static__detector.html#a216e6cadf6e28fe9f614ad0ff241f6f2',1,'servio::static_detector']]],
+  ['last_5ftime_1269',['last_time',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a7293429062afa7c5f3851f7d495eb8d1',1,'servio::ctl::linear_transition_regulator']]],
+  ['last_5fvalue_1270',['last_value',['../structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html#a70c5a12af8b2905a4361c7f47cd471f5',1,'servio::fw::drv::detailed_adc_channel::last_value()'],['../structservio_1_1fw_1_1drv_1_1adc__channel.html#a880b8819817c1308e6d77349c37a8a53',1,'servio::fw::drv::adc_channel::last_value()']]],
+  ['leds_1271',['leds',['../structservio_1_1core__drivers.html#ac23c824b5a677060ebe0ac03ac639399',1,'servio::core_drivers']]],
+  ['leds_1272',['LEDS',['../namespaceservio_1_1brd.html#a2cc71feb6d0307dc8549d43ac63ab185',1,'servio::brd']]],
+  ['low_5fpoint_1273',['low_point',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a678d5f4c5423a504124660c634013463',1,'servio::ctl::linear_transition_regulator']]]
 ];

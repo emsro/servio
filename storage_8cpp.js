@@ -1,11 +1,10 @@
 var storage_8cpp =
 [
-    [ "handler", "storage_8cpp.html#a2276c764586a8373fef6fb02b7368a49", null ],
-    [ "reghandler", "storage_8cpp.html#abe3b38b8e2e914b20a052349e0a1ec56", null ],
-    [ "find_latest_page", "storage_8cpp.html#a8b6148aa9c429a83cad73a5736a5fa86", null ],
-    [ "find_next_page", "storage_8cpp.html#a3b9b49866d2eba9a98d5e4a0f0ca1526", null ],
-    [ "find_oldest_page", "storage_8cpp.html#aa1f349948687ba0606bb6a254d35e595", null ],
-    [ "find_unused_page", "storage_8cpp.html#ab38995df019b7c499691fa9b15ccd209", null ],
-    [ "load", "storage_8cpp.html#a8b1439f18e7c98badea079af6a94d80d", null ],
-    [ "store", "storage_8cpp.html#a39d3609c97e0145ae7f948982a8cb99c", null ]
+    [ "reghandler", "storage_8cpp.html#a1c0059c37a0260639c1b3eb21d8c849e", null ],
+    [ "find_latest_page", "storage_8cpp.html#a8787135a705ae3b12e06d41bcf8c6c95", null ],
+    [ "find_next_page", "storage_8cpp.html#ac90beba4f9ba45db1db48a6daebc5ff4", null ],
+    [ "find_oldest_page", "storage_8cpp.html#ad27421ee699b93b2235fcf8d1c74298f", null ],
+    [ "find_unused_page", "storage_8cpp.html#a54ea7bfc67c10412d2f5ddb4435739ff", null ],
+    [ "load", "storage_8cpp.html#ad2944685956e09930ae90616bc178429", null ],
+    [ "store", "storage_8cpp.html#aa67b98724f717923471dc18c6e07db83", null ]
 ];

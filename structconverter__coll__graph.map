@@ -1,7 +1,0 @@
-<map id="converter" name="converter">
-<area shape="rect" id="node1" title=" " alt="" coords="313,81,397,108"/>
-<area shape="rect" id="node2" href="$classcnv_1_1temperature__converter.html" title=" " alt="" coords="5,5,208,32"/>
-<area shape="rect" id="node3" href="$classcnv_1_1voltage__converter.html" title=" " alt="" coords="21,56,192,83"/>
-<area shape="rect" id="node4" href="$classcnv_1_1position__converter.html" title=" " alt="" coords="20,107,193,133"/>
-<area shape="rect" id="node5" href="$classcnv_1_1current__converter.html" title=" " alt="" coords="23,157,190,184"/>
-</map>

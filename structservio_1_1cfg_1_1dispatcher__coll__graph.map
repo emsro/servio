@@ -1,0 +1,9 @@
+<map id="servio::cfg::dispatcher" name="servio::cfg::dispatcher">
+<area shape="rect" id="node1" title=" " alt="" coords="278,184,445,211"/>
+<area shape="rect" id="node2" href="$structservio_1_1core.html" title=" " alt="" coords="312,95,411,121"/>
+<area shape="rect" id="node3" href="$classservio_1_1control.html" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node4" href="$structservio_1_1converter.html" title=" " alt="" coords="145,5,277,32"/>
+<area shape="rect" id="node5" href="$classservio_1_1monitor.html" title=" " alt="" coords="301,5,422,32"/>
+<area shape="rect" id="node6" href="$classservio_1_1indication.html" title=" " alt="" coords="446,5,581,32"/>
+<area shape="rect" id="node7" href="$classservio_1_1metrics.html" title=" " alt="" coords="605,5,723,32"/>
+</map>

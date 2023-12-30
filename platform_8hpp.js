@@ -1,5 +1,5 @@
 var platform_8hpp =
 [
-    [ "cfg_erase", "platform_8hpp.html#afaa1b1c76bcbc89be0ff2594a4901cc0", null ],
-    [ "cfg_write", "platform_8hpp.html#aeceefa6383a460eca3bf112da12ea8f6", null ]
+    [ "cfg_erase", "platform_8hpp.html#a645e44622af5420d2d39234cf52d9f76", null ],
+    [ "cfg_write", "platform_8hpp.html#a9a3e631adec8c557b09b9caa0fa9cc2c", null ]
 ];

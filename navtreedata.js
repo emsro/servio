@@ -122,8 +122,6 @@ var NAVTREE =
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -133,12 +131,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc__pooler_8hpp.html",
-"cli_8cpp.html",
-"key_8hpp.html#a5723f91bc600c3126c420bb6f1fe91bda6660bc9febe3f57487d6ca6ecb4d361f",
-"namespacectl.html",
-"platforms_2stm32h5_2setup_8hpp.html#ab1c3c446b31805a650406ff6dc1dcbfe",
-"stm32h5xx__hal__conf_8h.html#a0bd9565011f8d7c7f33b420ffb920781",
-"structfw_1_1persistent__config__writer.html#adc05498b38003b33abb4957a4d537261"
+"cli_8hpp.html",
+"key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3abff3384d9bd6bd5cfc1de004c7243356",
+"namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2e2ed1aafb50d3868139a287ee15ed58",
+"namespaceservio_1_1scmdio.html#ad4eeda260fbde422b87e85ab46f2da0d",
+"stm32g4xx__hal__conf_8h.html#aae550dad9f96d52cfce5e539adadbbb4",
+"structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html#a489f428527f01c03a9160f9f3d46d532"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

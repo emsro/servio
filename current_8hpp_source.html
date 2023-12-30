@@ -91,19 +91,19 @@ $(document).ready(function(){initNavTree('current_8hpp_source.html',''); initRes
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespacecnv.html">    5</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecnv.html">cnv</a></div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespaceservio_1_1cnv.html">    5</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1cnv.html">servio::cnv</a></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classcnv_1_1current__converter.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcnv_1_1current__converter.html">current_converter</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classservio_1_1cnv_1_1current__converter.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classservio_1_1cnv_1_1current__converter.html">current_converter</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classcnv_1_1current__converter.html#ae04ad56d1a1f1867db021baf231066dd">   11</a></span>&#160;        <a class="code" href="classcnv_1_1current__converter.html#ae04ad56d1a1f1867db021baf231066dd">current_converter</a>( <span class="keywordtype">float</span> scale = 1.F, <span class="keywordtype">float</span> offset = 0.F )</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classservio_1_1cnv_1_1current__converter.html#a4da004259b0b0971d09f1b3f01aa4cc2">   11</a></span>&#160;        <a class="code" href="classservio_1_1cnv_1_1current__converter.html#a4da004259b0b0971d09f1b3f01aa4cc2">current_converter</a>( <span class="keywordtype">float</span> scale = 1.F, <span class="keywordtype">float</span> offset = 0.F )</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;          : offset_( offset )</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;          , scale_( scale )</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classcnv_1_1current__converter.html#a26ab4250dd19d8bf50f6761a2013cc82">   17</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classcnv_1_1current__converter.html#a26ab4250dd19d8bf50f6761a2013cc82">convert</a>( uint32_t input )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classservio_1_1cnv_1_1current__converter.html#af6a7ffd60b892ad8a51f9c2d071c8977">   17</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classservio_1_1cnv_1_1current__converter.html#af6a7ffd60b892ad8a51f9c2d071c8977">convert</a>( uint32_t input )<span class="keyword"> const</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( input ) * scale_ + offset_;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
@@ -113,18 +113,18 @@ $(document).ready(function(){initNavTree('current_8hpp_source.html',''); initRes
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">float</span> scale_;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}  <span class="comment">// namespace cnv</span></div>
-<div class="ttc" id="aclasscnv_1_1current__converter_html"><div class="ttname"><a href="classcnv_1_1current__converter.html">cnv::current_converter</a></div><div class="ttdef"><b>Definition:</b> current.hpp:9</div></div>
-<div class="ttc" id="aclasscnv_1_1current__converter_html_a26ab4250dd19d8bf50f6761a2013cc82"><div class="ttname"><a href="classcnv_1_1current__converter.html#a26ab4250dd19d8bf50f6761a2013cc82">cnv::current_converter::convert</a></div><div class="ttdeci">float convert(uint32_t input) const</div><div class="ttdef"><b>Definition:</b> current.hpp:17</div></div>
-<div class="ttc" id="aclasscnv_1_1current__converter_html_ae04ad56d1a1f1867db021baf231066dd"><div class="ttname"><a href="classcnv_1_1current__converter.html#ae04ad56d1a1f1867db021baf231066dd">cnv::current_converter::current_converter</a></div><div class="ttdeci">current_converter(float scale=1.F, float offset=0.F)</div><div class="ttdef"><b>Definition:</b> current.hpp:11</div></div>
-<div class="ttc" id="anamespacecnv_html"><div class="ttname"><a href="namespacecnv.html">cnv</a></div><div class="ttdef"><b>Definition:</b> current.hpp:6</div></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}  <span class="comment">// namespace servio::cnv</span></div>
+<div class="ttc" id="aclassservio_1_1cnv_1_1current__converter_html"><div class="ttname"><a href="classservio_1_1cnv_1_1current__converter.html">servio::cnv::current_converter</a></div><div class="ttdef"><b>Definition:</b> current.hpp:9</div></div>
+<div class="ttc" id="aclassservio_1_1cnv_1_1current__converter_html_a4da004259b0b0971d09f1b3f01aa4cc2"><div class="ttname"><a href="classservio_1_1cnv_1_1current__converter.html#a4da004259b0b0971d09f1b3f01aa4cc2">servio::cnv::current_converter::current_converter</a></div><div class="ttdeci">current_converter(float scale=1.F, float offset=0.F)</div><div class="ttdef"><b>Definition:</b> current.hpp:11</div></div>
+<div class="ttc" id="aclassservio_1_1cnv_1_1current__converter_html_af6a7ffd60b892ad8a51f9c2d071c8977"><div class="ttname"><a href="classservio_1_1cnv_1_1current__converter.html#af6a7ffd60b892ad8a51f9c2d071c8977">servio::cnv::current_converter::convert</a></div><div class="ttdeci">float convert(uint32_t input) const</div><div class="ttdef"><b>Definition:</b> current.hpp:17</div></div>
+<div class="ttc" id="anamespaceservio_1_1cnv_html"><div class="ttname"><a href="namespaceservio_1_1cnv.html">servio::cnv</a></div><div class="ttdef"><b>Definition:</b> current.hpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6185f3a156e0baa9ffebb847f82d024e.html">cnv</a></li><li class="navelem"><a class="el" href="current_8hpp.html">current.hpp</a></li>
-    <li class="footer">Generated on Sat Dec 30 2023 13:51:14 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Dec 30 2023 14:23:21 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

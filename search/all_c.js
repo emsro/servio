@@ -1,15 +1,14 @@
 var searchData=
 [
-  ['base_2ehpp_75',['base.hpp',['../base_8hpp.html',1,'']]],
-  ['baudrate_76',['baudrate',['../namespacebrd.html#a9146e3c1767ca3afdd0c2a66e33940c5',1,'brd::uart_cfg::baudrate()'],['../namespaceplt.html#ad828962f57e6ebd6c4aff40962865194',1,'plt::uart_cfg::baudrate()'],['../structscmdio_1_1common__cli.html#ac80a28c49e838d2e6027bc70a95c4853',1,'scmdio::common_cli::baudrate()']]],
-  ['baudrate_5fopt_77',['baudrate_opt',['../namespacescmdio.html#a95be61b8f956622258e724702fa9c600',1,'scmdio']]],
-  ['blue_78',['blue',['../namespaceplt.html#a77d51edcf190dc7cd4c4a72ee6362c06',1,'plt::leds_gpio_cfg::blue()'],['../base_8hpp.html#a51017d246d02f245608d9ffda556ddd8',1,'leds_vals::blue()']]],
-  ['board_2ecpp_79',['board.cpp',['../proto3_2board_8cpp.html',1,'(Global Namespace)'],['../prototype2_2board_8cpp.html',1,'(Global Namespace)']]],
-  ['board_2ehpp_80',['board.hpp',['../board_8hpp.html',1,'']]],
-  ['booting_81',['BOOTING',['../indication_8hpp.html#a7677f74725e84ed8805a28f45332ff14ad32cbe23a48d1576416d9eb314876c6d',1,'indication.hpp']]],
-  ['brd_82',['brd',['../namespacebrd.html',1,'']]],
-  ['brd_2ehpp_83',['brd.hpp',['../brd_8hpp.html',1,'']]],
-  ['buffer_84',['buffer',['../structfw_1_1drv_1_1detailed__adc__channel.html#a881c5b92ba23df83474b3be9117219cb',1,'fw::drv::detailed_adc_channel']]],
-  ['buffer_5fsize_85',['buffer_size',['../serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc',1,'serial.cpp']]],
-  ['busfault_5fhandler_86',['BusFault_Handler',['../it_8cpp.html#a850cefb17a977292ae5eb4cafa9976c3',1,'it.cpp']]]
+  ['base_2ehpp_73',['base.hpp',['../base_8hpp.html',1,'']]],
+  ['baudrate_74',['baudrate',['../namespaceservio_1_1brd.html#a4ad75e024e12ff5c1bb16069c851023d',1,'servio::brd::uart_cfg::baudrate()'],['../namespaceservio_1_1plt.html#a4a2f721279aeff0baecd4f733fd18e37',1,'servio::plt::uart_cfg::baudrate()'],['../structservio_1_1scmdio_1_1common__cli.html#a894c539777a60724c857e87ff1f05de9',1,'servio::scmdio::common_cli::baudrate()']]],
+  ['baudrate_5fopt_75',['baudrate_opt',['../namespaceservio_1_1scmdio.html#a6286d1246b1168d8fa9bd1b651b3752e',1,'servio::scmdio']]],
+  ['blue_76',['blue',['../namespaceservio_1_1plt.html#ab9d65b8e69271c6180a1f9cba4479ab9',1,'servio::plt::leds_gpio_cfg::blue()'],['../namespaceservio.html#aea051a3a8278bb73781905d787b09d49',1,'servio::leds_vals::blue()']]],
+  ['board_2ecpp_77',['board.cpp',['../proto3_2board_8cpp.html',1,'(Global Namespace)'],['../prototype2_2board_8cpp.html',1,'(Global Namespace)']]],
+  ['board_2ehpp_78',['board.hpp',['../board_8hpp.html',1,'']]],
+  ['booting_79',['BOOTING',['../namespaceservio.html#ad61ae4f4c2910cb80812607860c80fb3ad32cbe23a48d1576416d9eb314876c6d',1,'servio']]],
+  ['brd_2ehpp_80',['brd.hpp',['../brd_8hpp.html',1,'']]],
+  ['buffer_81',['buffer',['../structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html#a0fd68f0b08bfb2eb8d7f5304df3b3eed',1,'servio::fw::drv::detailed_adc_channel']]],
+  ['buffer_5fsize_82',['buffer_size',['../serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc',1,'serial.cpp']]],
+  ['busfault_5fhandler_83',['BusFault_Handler',['../it_8cpp.html#a850cefb17a977292ae5eb4cafa9976c3',1,'it.cpp']]]
 ];

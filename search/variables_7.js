@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['git_5fdate_1256',['git_date',['../structcfg_1_1payload.html#ab95b350499811897848489ba3c95b64c',1,'cfg::payload']]],
-  ['git_5fver_1257',['git_ver',['../structcfg_1_1payload.html#ab180a919db5ca931b11b649c33de3001',1,'cfg::payload']]],
-  ['gitrevision_1258',['GITREVISION',['../gitversion_8h.html#a3e1cd734eacc00fc1af852375d4db41c',1,'gitversion.h']]],
-  ['green_1259',['green',['../namespacebrd.html#aa1161a02a86342bd05c1aa86f40090b0',1,'brd::leds_timer_cfg::green()'],['../namespaceplt.html#a2c30aebc0d5ce0cbb55ecad7e2c71f27',1,'plt::leds_timer_cfg::green()'],['../base_8hpp.html#a4a478727398c65654c435816728fe4b3',1,'leds_vals::green()']]]
+  ['git_5fdate_1252',['git_date',['../structservio_1_1cfg_1_1payload.html#add5943dd37543f9556fc86254cc8bbc7',1,'servio::cfg::payload']]],
+  ['git_5fver_1253',['git_ver',['../structservio_1_1cfg_1_1payload.html#a7f168f4a3fccf8fd031f47e41ca73437',1,'servio::cfg::payload']]],
+  ['green_1254',['green',['../namespaceservio_1_1brd.html#a32e84da81b2b0b6c9c007f04c7ba628e',1,'servio::brd::leds_timer_cfg::green()'],['../namespaceservio_1_1plt.html#a26cab47c000cd09cc667f5d1862ac651',1,'servio::plt::leds_timer_cfg::green()'],['../namespaceservio.html#ae27a38e0dd1a2a1dfc79e4086915105f',1,'servio::leds_vals::green()']]]
 ];

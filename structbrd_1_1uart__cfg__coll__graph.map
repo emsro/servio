@@ -1,5 +1,0 @@
-<map id="brd::uart_cfg" name="brd::uart_cfg">
-<area shape="rect" id="node1" title=" " alt="" coords="75,109,179,136"/>
-<area shape="rect" id="node2" href="$namespacebrd.html#structbrd_1_1dma__cfg" title=" " alt="" coords="5,5,112,32"/>
-<area shape="rect" id="node3" href="$namespacefw_1_1drv.html#structfw_1_1drv_1_1pin__cfg" title=" " alt="" coords="137,5,255,32"/>
-</map>

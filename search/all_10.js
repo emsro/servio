@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['drv_219',['drv',['../namespacefw_1_1drv.html',1,'fw']]],
-  ['field_220',['field',['../namespacescmdio.html#aed79f70c94efc1960048338853422979',1,'scmdio::cfg_opts']]],
-  ['field_5foption_221',['field_option',['../namespacescmdio.html#a8cad69d3378772d8020a1e9b7202cc95',1,'scmdio']]],
-  ['find_5flatest_5fpage_222',['find_latest_page',['../namespacecfg.html#a8b6148aa9c429a83cad73a5736a5fa86',1,'cfg']]],
-  ['find_5fnext_5fpage_223',['find_next_page',['../namespacecfg.html#a3b9b49866d2eba9a98d5e4a0f0ca1526',1,'cfg']]],
-  ['find_5foldest_5fpage_224',['find_oldest_page',['../namespacecfg.html#aa1f349948687ba0606bb6a254d35e595',1,'cfg']]],
-  ['find_5funused_5fpage_225',['find_unused_page',['../namespacecfg.html#ab38995df019b7c499691fa9b15ccd209',1,'cfg']]],
-  ['force_5fred_5fled_226',['force_red_led',['../classleds__interface.html#ab4ce5a7b84a5e01df3584ee528dd9da4',1,'leds_interface::force_red_led()'],['../classfw_1_1drv_1_1leds.html#a23f1fbfb9ad725f43da176eef14cd744',1,'fw::drv::leds::force_red_led()']]],
-  ['from_5ffloat_227',['from_float',['../classscaled.html#aeb23f3d76e0db21a720204e85e555150',1,'scaled']]],
-  ['full_5fapply_228',['full_apply',['../structcfg_1_1dispatcher.html#ae25e69dac6fe5f56ccee9b0b48f4e360',1,'cfg::dispatcher']]],
-  ['fw_229',['fw',['../namespacefw.html',1,'']]]
+  ['field_212',['field',['../namespaceservio_1_1scmdio.html#a704ae1876459aaf7751ec6071b8f9585',1,'servio::scmdio::cfg_opts']]],
+  ['field_5foption_213',['field_option',['../namespaceservio_1_1scmdio.html#ad775904026fd4fb1d8f3a62288c7d3ab',1,'servio::scmdio']]],
+  ['find_5flatest_5fpage_214',['find_latest_page',['../namespaceservio_1_1cfg.html#a8787135a705ae3b12e06d41bcf8c6c95',1,'servio::cfg']]],
+  ['find_5fnext_5fpage_215',['find_next_page',['../namespaceservio_1_1cfg.html#ac90beba4f9ba45db1db48a6daebc5ff4',1,'servio::cfg']]],
+  ['find_5foldest_5fpage_216',['find_oldest_page',['../namespaceservio_1_1cfg.html#ad27421ee699b93b2235fcf8d1c74298f',1,'servio::cfg']]],
+  ['find_5funused_5fpage_217',['find_unused_page',['../namespaceservio_1_1cfg.html#a54ea7bfc67c10412d2f5ddb4435739ff',1,'servio::cfg']]],
+  ['force_5fred_5fled_218',['force_red_led',['../classservio_1_1leds__interface.html#aef41e70390c2df499a66c78705041b42',1,'servio::leds_interface::force_red_led()'],['../classservio_1_1fw_1_1drv_1_1leds.html#ae7fb32f83eb0ca114543056e11030fb1',1,'servio::fw::drv::leds::force_red_led()']]],
+  ['from_5ffloat_219',['from_float',['../classservio_1_1scaled.html#a2b84033820bd3dc2f8421c1f97492843',1,'servio::scaled']]],
+  ['full_5fapply_220',['full_apply',['../structservio_1_1cfg_1_1dispatcher.html#a1d801a08e9f4603b1b58dfca305a4ebc',1,'servio::cfg::dispatcher']]]
 ];

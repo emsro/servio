@@ -89,14 +89,14 @@ $(document).ready(function(){initNavTree('math_8hpp_source.html',''); initResiza
 <div class="contents">
 <a href="math_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecfg.html">cfg</a></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1cfg.html">servio::cfg</a></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespacecfg.html">    7</a></span>&#160;<span class="keyword">struct </span><a class="code" href="namespacecfg.html#structcfg_1_1off__scale">off_scale</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespaceservio_1_1cfg.html">    7</a></span>&#160;<span class="keyword">struct </span><a class="code" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale">off_scale</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespacecfg.html#a349f59deef10a07022237c733a010b6e">    9</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="namespacecfg.html#a349f59deef10a07022237c733a010b6e">offset</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacecfg.html#ad285504cdeefad0d3b60fb2473b7bad0">   10</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="namespacecfg.html#ad285504cdeefad0d3b60fb2473b7bad0">scale</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespaceservio_1_1cfg.html#adfaf4cc43f1f1e1d45b9306df55d3c08">    9</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="namespaceservio_1_1cfg.html#adfaf4cc43f1f1e1d45b9306df55d3c08">offset</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespaceservio_1_1cfg.html#a1e64cea163bc7cfbed23383830b2268e">   10</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="namespaceservio_1_1cfg.html#a1e64cea163bc7cfbed23383830b2268e">scale</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;};</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
@@ -115,29 +115,29 @@ $(document).ready(function(){initNavTree('math_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// offset = V_min / R_shunt</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// scale = (V_max - V_min) / (adc_steps * R_shunt * gain)</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;constexpr <a class="code" href="namespacecfg.html#structcfg_1_1off__scale">off_scale</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespacecfg.html#ac66bc469e3244eaace2a0d056ad1440b">   30</a></span>&#160;<a class="code" href="namespacecfg.html#ac66bc469e3244eaace2a0d056ad1440b">calculate_current_conversion</a>( <span class="keywordtype">float</span> v_max, <span class="keywordtype">float</span> v_min, <span class="keywordtype">float</span> steps, <span class="keywordtype">float</span> r_shunt, <span class="keywordtype">float</span> gain )</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;constexpr <a class="code" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale">off_scale</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811">   30</a></span>&#160;<a class="code" href="namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811">calculate_current_conversion</a>( <span class="keywordtype">float</span> v_max, <span class="keywordtype">float</span> v_min, <span class="keywordtype">float</span> steps, <span class="keywordtype">float</span> r_shunt, <span class="keywordtype">float</span> gain )</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            .<a class="code" href="namespacecfg.html#a349f59deef10a07022237c733a010b6e">offset</a> = v_min / r_shunt,                                <span class="comment">//</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            .<a class="code" href="namespaceservio_1_1cfg.html#adfaf4cc43f1f1e1d45b9306df55d3c08">offset</a> = v_min / r_shunt,                                <span class="comment">//</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            .scale  = ( v_max - v_min ) / ( steps * r_shunt * gain )  <span class="comment">//</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        };</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}  <span class="comment">// namespace cfg</span></div>
-<div class="ttc" id="anamespacecfg_html"><div class="ttname"><a href="namespacecfg.html">cfg</a></div><div class="ttdef"><b>Definition:</b> default.hpp:7</div></div>
-<div class="ttc" id="anamespacecfg_html_a349f59deef10a07022237c733a010b6e"><div class="ttname"><a href="namespacecfg.html#a349f59deef10a07022237c733a010b6e">cfg::off_scale::offset</a></div><div class="ttdeci">float offset</div><div class="ttdef"><b>Definition:</b> math.hpp:9</div></div>
-<div class="ttc" id="anamespacecfg_html_ac66bc469e3244eaace2a0d056ad1440b"><div class="ttname"><a href="namespacecfg.html#ac66bc469e3244eaace2a0d056ad1440b">cfg::calculate_current_conversion</a></div><div class="ttdeci">constexpr off_scale calculate_current_conversion(float v_max, float v_min, float steps, float r_shunt, float gain)</div><div class="ttdef"><b>Definition:</b> math.hpp:30</div></div>
-<div class="ttc" id="anamespacecfg_html_ad285504cdeefad0d3b60fb2473b7bad0"><div class="ttname"><a href="namespacecfg.html#ad285504cdeefad0d3b60fb2473b7bad0">cfg::off_scale::scale</a></div><div class="ttdeci">float scale</div><div class="ttdef"><b>Definition:</b> math.hpp:10</div></div>
-<div class="ttc" id="anamespacecfg_html_structcfg_1_1off__scale"><div class="ttname"><a href="namespacecfg.html#structcfg_1_1off__scale">cfg::off_scale</a></div><div class="ttdef"><b>Definition:</b> math.hpp:8</div></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}  <span class="comment">// namespace servio::cfg</span></div>
+<div class="ttc" id="anamespaceservio_1_1cfg_html"><div class="ttname"><a href="namespaceservio_1_1cfg.html">servio::cfg</a></div><div class="ttdef"><b>Definition:</b> default.hpp:7</div></div>
+<div class="ttc" id="anamespaceservio_1_1cfg_html_a1e64cea163bc7cfbed23383830b2268e"><div class="ttname"><a href="namespaceservio_1_1cfg.html#a1e64cea163bc7cfbed23383830b2268e">servio::cfg::off_scale::scale</a></div><div class="ttdeci">float scale</div><div class="ttdef"><b>Definition:</b> math.hpp:10</div></div>
+<div class="ttc" id="anamespaceservio_1_1cfg_html_a80a4e62e0bd44de593e5680623556811"><div class="ttname"><a href="namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811">servio::cfg::calculate_current_conversion</a></div><div class="ttdeci">constexpr off_scale calculate_current_conversion(float v_max, float v_min, float steps, float r_shunt, float gain)</div><div class="ttdef"><b>Definition:</b> math.hpp:30</div></div>
+<div class="ttc" id="anamespaceservio_1_1cfg_html_adfaf4cc43f1f1e1d45b9306df55d3c08"><div class="ttname"><a href="namespaceservio_1_1cfg.html#adfaf4cc43f1f1e1d45b9306df55d3c08">servio::cfg::off_scale::offset</a></div><div class="ttdeci">float offset</div><div class="ttdef"><b>Definition:</b> math.hpp:9</div></div>
+<div class="ttc" id="anamespaceservio_1_1cfg_html_structservio_1_1cfg_1_1off__scale"><div class="ttname"><a href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale">servio::cfg::off_scale</a></div><div class="ttdef"><b>Definition:</b> math.hpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1e869ebbc6cce176ee0dbb76743ac339.html">cfg</a></li><li class="navelem"><a class="el" href="math_8hpp.html">math.hpp</a></li>
-    <li class="footer">Generated on Sat Dec 30 2023 13:51:14 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Dec 30 2023 14:23:21 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

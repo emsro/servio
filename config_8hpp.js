@@ -1,16 +1,16 @@
 var config_8hpp =
 [
-    [ "config", "namespacectl.html#structctl_1_1config", [
-      [ "current_limits", "namespacectl.html#a42c41625e334582523c4f5be94bddb8a", null ],
-      [ "current_pid", "namespacectl.html#a3d55b5c4569a6d2ae3aba339917347d0", null ],
-      [ "position_limits", "namespacectl.html#aafaa848d5ed73333863c1852ce3bca95", null ],
-      [ "position_pid", "namespacectl.html#a8a7ee8b41237dc1f6e7c7732cc2be632", null ],
-      [ "static_friction_decay", "namespacectl.html#aa8b65f8e2a55f5686de048e8e5f97553", null ],
-      [ "static_friction_scale", "namespacectl.html#a8a1a11d62853e312be5ca343ed1076ac", null ],
-      [ "velocity_limits", "namespacectl.html#a20ed600b5a9c9a30f83df677768e46a4", null ],
-      [ "velocity_pid", "namespacectl.html#a767ce52998c9c33836b3348656f6c9a5", null ]
+    [ "config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", [
+      [ "current_limits", "namespaceservio_1_1ctl.html#a646e8f5b539f9c87c6efb543e03105c8", null ],
+      [ "current_pid", "namespaceservio_1_1ctl.html#ad4f05cf40ee9e9cf64b0c935db871865", null ],
+      [ "position_limits", "namespaceservio_1_1ctl.html#a0dfeb2e27a410283c4571d56517f0fa7", null ],
+      [ "position_pid", "namespaceservio_1_1ctl.html#a62f341597e4c0c32292b4bb4c2401376", null ],
+      [ "static_friction_decay", "namespaceservio_1_1ctl.html#a82bc794a9ee0b6dc71d35f7a9a34f0d5", null ],
+      [ "static_friction_scale", "namespaceservio_1_1ctl.html#a12d2d3c5170110791423a4c445b6612f", null ],
+      [ "velocity_limits", "namespaceservio_1_1ctl.html#ae2e474266fb6d232fcea1591e7d70407", null ],
+      [ "velocity_pid", "namespaceservio_1_1ctl.html#a2e67e78f924fe11eabb708084ffb4096", null ]
     ] ],
-    [ "pid", "config_8hpp.html#a1e8151ad6bf30ab3431d58a8d87950b6", null ],
-    [ "pid_coefficients", "config_8hpp.html#a31369f8fd89ca0fd4d2bf8970a4653d1", null ],
-    [ "pid_conf", "config_8hpp.html#a254eee5cc344e1590ae9434a7073d1b5", null ]
+    [ "pid", "config_8hpp.html#ab1ca795df93b505dddc7271740f2e3f0", null ],
+    [ "pid_coefficients", "config_8hpp.html#aa4cf1922c9ea312468fc30bb2f68d6c5", null ],
+    [ "pid_conf", "config_8hpp.html#affde5dbb6a289ceda28bc8544112be1c", null ]
 ];

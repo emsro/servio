@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['value_5fmessage_1380',['value_message',['../namespacecfg.html#ae6ac65e119dcc70d661d0299de620673',1,'cfg']]],
-  ['value_5fvariant_1381',['value_variant',['../namespacecfg.html#ad1f5061ae92fac96b6c05402cb75aef8',1,'cfg']]]
+  ['value_5fmessage_1375',['value_message',['../namespaceservio_1_1cfg.html#a8aede70f47a2a0b2a4eb2f0f9056d142',1,'servio::cfg']]],
+  ['value_5fvariant_1376',['value_variant',['../namespaceservio_1_1cfg.html#ac65406e6f8044530ad0c40c5669cda38',1,'servio::cfg']]]
 ];

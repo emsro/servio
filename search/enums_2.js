@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_1386',['key',['../namespacecfg.html#a5723f91bc600c3126c420bb6f1fe91bd',1,'cfg']]]
+  ['key_1381',['key',['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3',1,'servio::cfg']]]
 ];

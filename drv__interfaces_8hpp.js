@@ -1,22 +1,22 @@
 var drv__interfaces_8hpp =
 [
-    [ "adc_detailed_cb_interface", "classadc__detailed__cb__interface.html", "classadc__detailed__cb__interface" ],
-    [ "value_cb_interface", "classvalue__cb__interface.html", "classvalue__cb__interface" ],
-    [ "period_cb_interface", "classperiod__cb__interface.html", "classperiod__cb__interface" ],
-    [ "driver_interface", "classdriver__interface.html", "classdriver__interface" ],
-    [ "com_res", "drv__interfaces_8hpp.html#structcom__res", [
-      [ "success", "drv__interfaces_8hpp.html#a61ae0100cc7a35254e22cc1f707add46", null ],
-      [ "used_data", "drv__interfaces_8hpp.html#a76a63a44af9fe036b46b04bca13e9a67", null ]
+    [ "adc_detailed_cb_interface", "classservio_1_1adc__detailed__cb__interface.html", "classservio_1_1adc__detailed__cb__interface" ],
+    [ "value_cb_interface", "classservio_1_1value__cb__interface.html", "classservio_1_1value__cb__interface" ],
+    [ "period_cb_interface", "classservio_1_1period__cb__interface.html", "classservio_1_1period__cb__interface" ],
+    [ "driver_interface", "classservio_1_1driver__interface.html", "classservio_1_1driver__interface" ],
+    [ "com_res", "namespaceservio.html#structservio_1_1com__res", [
+      [ "success", "namespaceservio.html#ad5cfb648ae3b894cfd3950e9ba00f259", null ],
+      [ "used_data", "namespaceservio.html#a5bef2adab8e914fcc87eec7b0a33a567", null ]
     ] ],
-    [ "com_interface", "classcom__interface.html", "classcom__interface" ],
-    [ "leds_interface", "classleds__interface.html", "classleds__interface" ],
-    [ "clk_interface", "classclk__interface.html", "classclk__interface" ],
-    [ "period_interface", "classperiod__interface.html", "classperiod__interface" ],
-    [ "pwm_motor_interface", "classpwm__motor__interface.html", "classpwm__motor__interface" ],
-    [ "position_interface", "classposition__interface.html", "classposition__interface" ],
-    [ "vcc_interface", "classvcc__interface.html", "classvcc__interface" ],
-    [ "temperature_interface", "classtemperature__interface.html", "classtemperature__interface" ],
-    [ "current_interface", "classcurrent__interface.html", "classcurrent__interface" ],
-    [ "current_cb_interface", "drv__interfaces_8hpp.html#a504fadece69fa247e85ef52a17f62db7", null ],
-    [ "position_cb_interface", "drv__interfaces_8hpp.html#a782d096ce24bca8ee2cad5c5369cefc0", null ]
+    [ "com_interface", "classservio_1_1com__interface.html", "classservio_1_1com__interface" ],
+    [ "leds_interface", "classservio_1_1leds__interface.html", "classservio_1_1leds__interface" ],
+    [ "clk_interface", "classservio_1_1clk__interface.html", "classservio_1_1clk__interface" ],
+    [ "period_interface", "classservio_1_1period__interface.html", "classservio_1_1period__interface" ],
+    [ "pwm_motor_interface", "classservio_1_1pwm__motor__interface.html", "classservio_1_1pwm__motor__interface" ],
+    [ "position_interface", "classservio_1_1position__interface.html", "classservio_1_1position__interface" ],
+    [ "vcc_interface", "classservio_1_1vcc__interface.html", "classservio_1_1vcc__interface" ],
+    [ "temperature_interface", "classservio_1_1temperature__interface.html", "classservio_1_1temperature__interface" ],
+    [ "current_interface", "classservio_1_1current__interface.html", "classservio_1_1current__interface" ],
+    [ "current_cb_interface", "drv__interfaces_8hpp.html#aceccfb62e2eaa461c5f98ca9a54e1839", null ],
+    [ "position_cb_interface", "drv__interfaces_8hpp.html#a638f94cca8a42b24c6e86937c6a4a3d6", null ]
 ];

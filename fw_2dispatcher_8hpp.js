@@ -1,19 +1,19 @@
 var fw_2dispatcher_8hpp =
 [
-    [ "dispatcher", "namespacefw.html#structfw_1_1dispatcher", [
-      [ "cfg_disp", "namespacefw.html#a90acb65de053b0081a1b1207cd800648", null ],
-      [ "cfg_writer", "namespacefw.html#a2f3ade09d2883144f9045274e50d9b26", null ],
-      [ "conv", "namespacefw.html#ac7282035a48db732bb3abfbfb69467d0", null ],
-      [ "ctl", "namespacefw.html#a15cf4f98017315abc2a188bbef019777", null ],
-      [ "curr_drv", "namespacefw.html#adb739a1e6262e3007514377294eafcc9", null ],
-      [ "met", "namespacefw.html#a1eaa563bf53d1b1210bda5d8a68ef0c8", null ],
-      [ "motor", "namespacefw.html#a843d6d33976286cd887bdeeeed763166", null ],
-      [ "now", "namespacefw.html#a5d0815a7b50f52ffe1b8ef2a4a74c700", null ],
-      [ "pos_drv", "namespacefw.html#a53a3e5343fd0c0ddf523cd58c0913f5b", null ],
-      [ "temp_drv", "namespacefw.html#a87bcef8f32df9157b2403535a3d7b59f", null ],
-      [ "vcc_drv", "namespacefw.html#a47394c929a33348434deec5b9876bc28", null ]
+    [ "dispatcher", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher", [
+      [ "cfg_disp", "namespaceservio_1_1fw.html#a51dbe94d86aba2254c9116e07b3e381c", null ],
+      [ "cfg_writer", "namespaceservio_1_1fw.html#aeb851eece19778a49f0561bd8c16aea6", null ],
+      [ "conv", "namespaceservio_1_1fw.html#a0e02386ea67f64a2d046fdb27da82cfd", null ],
+      [ "ctl", "namespaceservio_1_1fw.html#a15fa76f56ac12006108deecd68e8b185", null ],
+      [ "curr_drv", "namespaceservio_1_1fw.html#aefef61b2868d447727291de889da21ac", null ],
+      [ "met", "namespaceservio_1_1fw.html#a217aa2fce2a3ae360fd529c4f4563554", null ],
+      [ "motor", "namespaceservio_1_1fw.html#a67cc197abb83ee7f4a80a905ba8410dc", null ],
+      [ "now", "namespaceservio_1_1fw.html#a1d44d56bfdc41655b85711880948a147", null ],
+      [ "pos_drv", "namespaceservio_1_1fw.html#a93a47c250f3e532ddb0ad24b0b8d03b9", null ],
+      [ "temp_drv", "namespaceservio_1_1fw.html#a947107888970ce01c103ec575fc76ccb", null ],
+      [ "vcc_drv", "namespaceservio_1_1fw.html#a0cb76e74fadfca5d1eda29af9cac6fd4", null ]
     ] ],
-    [ "handle_message", "fw_2dispatcher_8hpp.html#ad775dfc81f5ea33fcc4d3d661c31ac3c", null ],
-    [ "handle_message", "fw_2dispatcher_8hpp.html#a7128ae64b1384c772cc0d8381118f7e8", null ],
-    [ "handle_message_packet", "fw_2dispatcher_8hpp.html#aa4186d649ed945108aedc1e9f0c6a16b", null ]
+    [ "handle_message", "fw_2dispatcher_8hpp.html#ae3f53c1f676f5ce8a8cbdfa28bd99fea", null ],
+    [ "handle_message", "fw_2dispatcher_8hpp.html#a33fc58fbb70ef4b1cfdedbfcf6cde1b5", null ],
+    [ "handle_message_packet", "fw_2dispatcher_8hpp.html#abbeeb0878b9943ed0b50175ab321065d", null ]
 ];

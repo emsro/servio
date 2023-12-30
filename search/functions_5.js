@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['encode_1005',['encode',['../namespacefw.html#a1e6e4a4b2d63a55fdc7c36ea8cf601dc',1,'fw::encode(em::view&lt; std::byte * &gt; data, const ServioToHost &amp;msg)'],['../namespacefw.html#abcc6bed4622d21748754e7bbb7e49a26',1,'fw::encode(em::view&lt; std::byte * &gt; data, const ServioToHostPacket &amp;msg)']]],
-  ['error_5fexception_1006',['error_exception',['../structscmdio_1_1error__exception.html#a648825c9aef3f76a546092713d547999',1,'scmdio::error_exception']]],
-  ['error_5fmsg_1007',['error_msg',['../namespacefw.html#a23fc4234292273ffabe5f85953f2713a',1,'fw']]],
-  ['exchange_1008',['exchange',['../namespacescmdio.html#a9fad58ca2af5d104f34a6a50bd6beb41',1,'scmdio']]]
+  ['encode_1003',['encode',['../namespaceservio_1_1fw.html#a7a102b79eb575babfee714826b272862',1,'servio::fw::encode(em::view&lt; std::byte * &gt; data, const ServioToHost &amp;msg)'],['../namespaceservio_1_1fw.html#aefc985c9fc9111013a11bcff0452199e',1,'servio::fw::encode(em::view&lt; std::byte * &gt; data, const ServioToHostPacket &amp;msg)']]],
+  ['error_5fexception_1004',['error_exception',['../structservio_1_1scmdio_1_1error__exception.html#a4d2af2244c5a451ec061039fb18cc377',1,'servio::scmdio::error_exception']]],
+  ['error_5fmsg_1005',['error_msg',['../namespaceservio_1_1fw.html#a68b10983c43a8988f0421b90a7ad8adf',1,'servio::fw']]],
+  ['exchange_1006',['exchange',['../namespaceservio_1_1scmdio.html#a60883ef53953f3d5d906da6b735faad8',1,'servio::scmdio']]]
 ];

@@ -1,0 +1,5 @@
+<map id="servio::brd::uart_cfg" name="servio::brd::uart_cfg">
+<area shape="rect" id="node1" title=" " alt="" coords="99,109,251,136"/>
+<area shape="rect" id="node2" href="$namespaceservio_1_1brd.html#structservio_1_1brd_1_1dma__cfg" title=" " alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node3" href="$namespaceservio_1_1fw_1_1drv.html#structservio_1_1fw_1_1drv_1_1pin__cfg" title=" " alt="" coords="185,5,351,32"/>
+</map>

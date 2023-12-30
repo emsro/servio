@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['what_1194',['what',['../structscmdio_1_1reply__error.html#a64f4e79bead61fb5e3e63da3f259b6a8',1,'scmdio::reply_error::what()'],['../structscmdio_1_1error__exception.html#a2ffa6b1758402f81aa38eb1f17805170',1,'scmdio::error_exception::what()'],['../structscmdio_1_1serialize__error.html#aac81a5e44b2de8dda1ff2191fad02169',1,'scmdio::serialize_error::what()'],['../structscmdio_1_1parse__error.html#ae72d615def34de59ebd2403114517d15',1,'scmdio::parse_error::what()']]],
-  ['write_1195',['write',['../namespacescmdio.html#a8cb09c05b22e6bdcff6d9a40952a93f6',1,'scmdio']]]
+  ['what_1192',['what',['../structservio_1_1scmdio_1_1reply__error.html#a8a4d7d927975c6f801691ed5d2a96524',1,'servio::scmdio::reply_error::what()'],['../structservio_1_1scmdio_1_1error__exception.html#a3445760a35a70513bdc2a12d7a22e7fb',1,'servio::scmdio::error_exception::what()'],['../structservio_1_1scmdio_1_1serialize__error.html#a5faca67393e3f00a08feacf91998f2bc',1,'servio::scmdio::serialize_error::what()'],['../structservio_1_1scmdio_1_1parse__error.html#a97ba55054c4b1348136b8c2c167c10e0',1,'servio::scmdio::parse_error::what()']]],
+  ['write_1193',['write',['../namespaceservio_1_1scmdio.html#acf90a9c7cf0c9e0f5124ae2e9da6e7e3',1,'servio::scmdio']]]
 ];

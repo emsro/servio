@@ -1,13 +1,13 @@
 var map_8hpp =
 [
-    [ "keyval", "namespacecfg.html#structcfg_1_1keyval", [
-      [ "key", "namespacecfg.html#ade8d376c5edc9f138ff502663ee5b37b", null ],
-      [ "msg", "namespacecfg.html#aff1d70f4db5396ee3b4bc662e6b0d5e7", null ]
+    [ "keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", [
+      [ "key", "namespaceservio_1_1cfg.html#af0544dfab0920b3b31d6fdb7063445db", null ],
+      [ "msg", "namespaceservio_1_1cfg.html#a01c421b775e98f6e6f964f38d1a9bdc8", null ]
     ] ],
-    [ "map", "map_8hpp.html#a23fbe2a054eed66e19a252ae4bd5a354", null ],
-    [ "model_name", "map_8hpp.html#a019f82131412b3a841ddba4c9ab3d762", null ],
-    [ "reg", "map_8hpp.html#abf71bd824fb87e8155f5795938b23a2c", null ],
-    [ "value_message", "map_8hpp.html#ae6ac65e119dcc70d661d0299de620673", null ],
-    [ "value_variant", "map_8hpp.html#ad1f5061ae92fac96b6c05402cb75aef8", null ],
-    [ "make_keyval", "map_8hpp.html#a2a1d345842086b902925afb333ab102b", null ]
+    [ "map", "map_8hpp.html#a98eee67bc8174b65e3225bf2cadc29a7", null ],
+    [ "model_name", "map_8hpp.html#ac1b0cd7595545bccd65c21b9925a525d", null ],
+    [ "reg", "map_8hpp.html#a32b8c5eabc601575ebc6703e48d5a32f", null ],
+    [ "value_message", "map_8hpp.html#a8aede70f47a2a0b2a4eb2f0f9056d142", null ],
+    [ "value_variant", "map_8hpp.html#ac65406e6f8044530ad0c40c5669cda38", null ],
+    [ "make_keyval", "map_8hpp.html#a9d620c785f59bfb68d9bd89fd2038581", null ]
 ];

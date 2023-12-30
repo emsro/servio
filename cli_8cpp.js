@@ -1,7 +1,7 @@
 var cli_8cpp =
 [
-    [ "baudrate_opt", "cli_8cpp.html#a95be61b8f956622258e724702fa9c600", null ],
-    [ "device_opt", "cli_8cpp.html#ad24b9258154f5e71ff4e568a632f2f2d", null ],
-    [ "powerless_flag", "cli_8cpp.html#a18f29ac36059ebe43cd500f0c22350e4", null ],
-    [ "verbose_opt", "cli_8cpp.html#a3d9d65e568c20bcd02ab6e755b130ab1", null ]
+    [ "baudrate_opt", "cli_8cpp.html#a6286d1246b1168d8fa9bd1b651b3752e", null ],
+    [ "device_opt", "cli_8cpp.html#a06a1f0b93a4abc6c70b670a4c7fec45e", null ],
+    [ "powerless_flag", "cli_8cpp.html#a0f5027194b08215b948567a9932bcdbc", null ],
+    [ "verbose_opt", "cli_8cpp.html#a4315b1a080624a880dbed5a4fd269caf", null ]
 ];

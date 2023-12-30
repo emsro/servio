@@ -1,5 +1,5 @@
 var stm32h5_2platform_8cpp =
 [
-    [ "cfg_erase", "stm32h5_2platform_8cpp.html#afaa1b1c76bcbc89be0ff2594a4901cc0", null ],
-    [ "cfg_write", "stm32h5_2platform_8cpp.html#aeceefa6383a460eca3bf112da12ea8f6", null ]
+    [ "cfg_erase", "stm32h5_2platform_8cpp.html#a645e44622af5420d2d39234cf52d9f76", null ],
+    [ "cfg_write", "stm32h5_2platform_8cpp.html#a9a3e631adec8c557b09b9caa0fa9cc2c", null ]
 ];

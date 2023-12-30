@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['json_377',['json',['../namespacescmdio.html#aa77bb9f236cd1e52176d8af18f710a61',1,'scmdio::cfg_opts']]],
-  ['json_5fflag_378',['json_flag',['../namespacescmdio.html#a569cf66c54e518419fbe8c670e979e63',1,'scmdio']]]
+  ['json_367',['json',['../namespaceservio_1_1scmdio.html#a13d716f128c45b93d5d6eb1e6895ea80',1,'servio::scmdio::cfg_opts']]],
+  ['json_5fflag_368',['json_flag',['../namespaceservio_1_1scmdio.html#a9d0341f90de176f1fb8528b9d21bbf61',1,'servio::scmdio']]]
 ];

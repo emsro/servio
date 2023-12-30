@@ -1,8 +1,8 @@
 var math_8hpp =
 [
-    [ "off_scale", "namespacecfg.html#structcfg_1_1off__scale", [
-      [ "offset", "namespacecfg.html#a349f59deef10a07022237c733a010b6e", null ],
-      [ "scale", "namespacecfg.html#ad285504cdeefad0d3b60fb2473b7bad0", null ]
+    [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", [
+      [ "offset", "namespaceservio_1_1cfg.html#adfaf4cc43f1f1e1d45b9306df55d3c08", null ],
+      [ "scale", "namespaceservio_1_1cfg.html#a1e64cea163bc7cfbed23383830b2268e", null ]
     ] ],
-    [ "calculate_current_conversion", "math_8hpp.html#ac66bc469e3244eaace2a0d056ad1440b", null ]
+    [ "calculate_current_conversion", "math_8hpp.html#a80a4e62e0bd44de593e5680623556811", null ]
 ];

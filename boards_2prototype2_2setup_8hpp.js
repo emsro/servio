@@ -1,47 +1,47 @@
 var boards_2prototype2_2setup_8hpp =
 [
-    [ "dma_cfg", "namespacebrd.html#structbrd_1_1dma__cfg", [
-      [ "instance", "namespacebrd.html#abc24e3ae4fe1a0eb75bed4923111898f", null ],
-      [ "irq", "namespacebrd.html#aeaab80aebf88314b447f3c66386e4ffb", null ],
-      [ "irq_priority", "namespacebrd.html#a4e497e3b65e75ede89efcfc7d329b215", null ],
-      [ "priority", "namespacebrd.html#a35731a5d10c6e5fef6ab774dff300306", null ],
-      [ "request", "namespacebrd.html#ac6b9b984f652ecc4c855212cc8e92540", null ]
+    [ "dma_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1dma__cfg", [
+      [ "instance", "namespaceservio_1_1brd.html#affb3acc9f192d44ac13f9124b46c6c09", null ],
+      [ "irq", "namespaceservio_1_1brd.html#a8325a6c98fa7546715196693ca1b5462", null ],
+      [ "irq_priority", "namespaceservio_1_1brd.html#aad41f5f75ef1af11d1051cb7a9eb0a92", null ],
+      [ "priority", "namespaceservio_1_1brd.html#aa01c772c26a9879b042c09edc464d6d8", null ],
+      [ "request", "namespaceservio_1_1brd.html#a30b5430a286a0f580f7dc4a849c1fb33", null ]
     ] ],
-    [ "adc_cfg", "namespacebrd.html#structbrd_1_1adc__cfg", [
-      [ "adc_instance", "namespacebrd.html#a7b4a9c6c9ec9b4b1d4f449b0cf838b51", null ],
-      [ "adc_irq_priority", "namespacebrd.html#a73c59e765eb700d362da0a971c0ef24f", null ],
-      [ "dma", "namespacebrd.html#a7b799c15fa84b3c49c9451604968a64e", null ]
+    [ "adc_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__cfg", [
+      [ "adc_instance", "namespaceservio_1_1brd.html#a6e305a39d11b7de03020a9a6a299008b", null ],
+      [ "adc_irq_priority", "namespaceservio_1_1brd.html#ad1ee92f9b8d2bb0815540c8fc791375b", null ],
+      [ "dma", "namespaceservio_1_1brd.html#a5714c333d1db0736c5dfd3d659ff0778", null ]
     ] ],
-    [ "uart_cfg", "namespacebrd.html#structbrd_1_1uart__cfg", [
-      [ "baudrate", "namespacebrd.html#a9146e3c1767ca3afdd0c2a66e33940c5", null ],
-      [ "irq", "namespacebrd.html#a7c359a694aa77b8c4ae02074b934fc15", null ],
-      [ "irq_priority", "namespacebrd.html#a6f4d0e1ee8f00cdf3588c48fac87b90f", null ],
-      [ "rx", "namespacebrd.html#acbe69582703d17ba594872844303ea5f", null ],
-      [ "tx", "namespacebrd.html#a9b49f58e02374a4e77d60c25be3e7bc7", null ],
-      [ "tx_dma", "namespacebrd.html#abba7b519685338500748b3a0ca97d908", null ],
-      [ "uart_instance", "namespacebrd.html#a18c26c81d8f5a332a16fde2453cd2346", null ]
+    [ "uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", [
+      [ "baudrate", "namespaceservio_1_1brd.html#a4ad75e024e12ff5c1bb16069c851023d", null ],
+      [ "irq", "namespaceservio_1_1brd.html#af53c8d7af3580f2c1cf33c7d9e06fe1e", null ],
+      [ "irq_priority", "namespaceservio_1_1brd.html#a9002e5a4b3dcb1fd36ebd03bcd8d0457", null ],
+      [ "rx", "namespaceservio_1_1brd.html#a56e2892a5dd2f6f68b25a74fe0e8caed", null ],
+      [ "tx", "namespaceservio_1_1brd.html#a2623a61ded561238148eb079affa3450", null ],
+      [ "tx_dma", "namespaceservio_1_1brd.html#a01338e4236fb4d0a332a682635eabea7", null ],
+      [ "uart_instance", "namespaceservio_1_1brd.html#a5895fee6b6d24be701903dff24c37a64", null ]
     ] ],
-    [ "hb_timer_cfg", "namespacebrd.html#structbrd_1_1hb__timer__cfg", [
-      [ "irq", "namespacebrd.html#ad004e1881a50bdf08800e5eb7ece5cd0", null ],
-      [ "irq_priority", "namespacebrd.html#a2aa3724fbc7a694040027d6091779bfb", null ],
-      [ "mc1", "namespacebrd.html#a164773ad0992db8765cd39a2f76833fe", null ],
-      [ "mc2", "namespacebrd.html#a97f7ae08093b423c7b65f890c40d28c1", null ],
-      [ "period", "namespacebrd.html#a955a73164c6d98cd793b44cbe2db915e", null ],
-      [ "timer_instance", "namespacebrd.html#a20b7458c2ad796a01df797b996471ee7", null ]
+    [ "hb_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1hb__timer__cfg", [
+      [ "irq", "namespaceservio_1_1brd.html#a1e541240b58bf9a3b0b231322e97e8d8", null ],
+      [ "irq_priority", "namespaceservio_1_1brd.html#a5cc24e66248456657c38efaaa43e8cda", null ],
+      [ "mc1", "namespaceservio_1_1brd.html#ab14378226104ee2735928c6476ea937a", null ],
+      [ "mc2", "namespaceservio_1_1brd.html#aea5f2f665f379fc6839898861049cd28", null ],
+      [ "period", "namespaceservio_1_1brd.html#ad41a6a8b9a50b5dae419f1df748163e7", null ],
+      [ "timer_instance", "namespaceservio_1_1brd.html#ae97e490293c865d59424bd7f41b75628", null ]
     ] ],
-    [ "leds_timer_cfg", "namespacebrd.html#structbrd_1_1leds__timer__cfg", [
-      [ "green", "namespacebrd.html#aa1161a02a86342bd05c1aa86f40090b0", null ],
-      [ "timer_instance", "namespacebrd.html#a7d9a12070e3c374cc5144118057ef9d6", null ],
-      [ "yellow", "namespacebrd.html#a57e107b5b9c3157b230f435d42b0678c", null ]
+    [ "leds_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1leds__timer__cfg", [
+      [ "green", "namespaceservio_1_1brd.html#a32e84da81b2b0b6c9c007f04c7ba628e", null ],
+      [ "timer_instance", "namespaceservio_1_1brd.html#abb81ebaad8e98d9dac4d9419eb8349cb", null ],
+      [ "yellow", "namespaceservio_1_1brd.html#a5b3c829ad9cb29287323e5e5ecd4d2eb", null ]
     ] ],
-    [ "setup_adc", "boards_2prototype2_2setup_8hpp.html#ad8f944f46629a3408f31c61281867bc5", null ],
-    [ "setup_adc_channel", "boards_2prototype2_2setup_8hpp.html#ab12115b9aa59da10a9900d3f178bf74f", null ],
-    [ "setup_adc_timer", "boards_2prototype2_2setup_8hpp.html#abcfd759c13ea20d3380627db4a04405b", null ],
-    [ "setup_clk", "boards_2prototype2_2setup_8hpp.html#a9296e32249a8960071d5cdded23d94b0", null ],
-    [ "setup_clock_timer", "boards_2prototype2_2setup_8hpp.html#a0487eb4a18519a538e24eaf8dd0d1b91", null ],
-    [ "setup_gpio", "boards_2prototype2_2setup_8hpp.html#acaa8a0aa8d2283f05f4df1025df04ef8", null ],
-    [ "setup_hbridge_timers", "boards_2prototype2_2setup_8hpp.html#a8bcb4f21c5d82cfed4bb89797083711b", null ],
-    [ "setup_leds_channel", "boards_2prototype2_2setup_8hpp.html#aee8e0c710b8338b584f931c7d68b223b", null ],
-    [ "setup_leds_timer", "boards_2prototype2_2setup_8hpp.html#ae35df30b532c769a1710a7831b468cd8", null ],
-    [ "setup_uart", "boards_2prototype2_2setup_8hpp.html#aec281dba49bc56b18f637152be994a96", null ]
+    [ "setup_adc", "boards_2prototype2_2setup_8hpp.html#a6899a3f9d2b0715afe322fab084b0483", null ],
+    [ "setup_adc_channel", "boards_2prototype2_2setup_8hpp.html#aab908bf0416af7a1874359c5294ffbbc", null ],
+    [ "setup_adc_timer", "boards_2prototype2_2setup_8hpp.html#a1adccd58bc423db0db48b2b4ff6bbf6d", null ],
+    [ "setup_clk", "boards_2prototype2_2setup_8hpp.html#af375aef2289854552e3c6e5c3c16a5cb", null ],
+    [ "setup_clock_timer", "boards_2prototype2_2setup_8hpp.html#addcb00188aacbda8352cbd4ddbe7d3e9", null ],
+    [ "setup_gpio", "boards_2prototype2_2setup_8hpp.html#a32dbf7e02373de3773cab3343fff116f", null ],
+    [ "setup_hbridge_timers", "boards_2prototype2_2setup_8hpp.html#a0fe8bce4494ca56db71b5ccfdac9a52a", null ],
+    [ "setup_leds_channel", "boards_2prototype2_2setup_8hpp.html#a08d681364bb72de2b5103f4d7a8a6973", null ],
+    [ "setup_leds_timer", "boards_2prototype2_2setup_8hpp.html#a8d47462a1f7fce38cda0f512305746ba", null ],
+    [ "setup_uart", "boards_2prototype2_2setup_8hpp.html#ab330172ec900f8e5a967b042c5d0fefb", null ]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['reg_1373',['reg',['../namespacecfg.html#abf71bd824fb87e8155f5795938b23a2c',1,'cfg']]],
-  ['reghandler_1374',['reghandler',['../namespacecfg.html#abe3b38b8e2e914b20a052349e0a1ec56',1,'cfg']]]
+  ['reg_1368',['reg',['../namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f',1,'servio::cfg']]],
+  ['reghandler_1369',['reghandler',['../namespaceservio_1_1cfg.html#a1c0059c37a0260639c1b3eb21d8c849e',1,'servio::cfg']]]
 ];
