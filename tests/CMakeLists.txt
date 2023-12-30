@@ -15,10 +15,10 @@ function(add_utest target)
     serviolib
     nlohmann_json::nlohmann_json
     proto
+    klmnlib
     magic_enum)
 endfunction()
 
-add_utest(kalman_utest)
 add_utest(control_utest)
 add_utest(metrics_utest)
 add_utest(cfg_storage_utest)

@@ -7,3 +7,4 @@ servio_add_library(
   OPTS -Os)
 
 add_subdirectory(iface)
+add_subdirectory(klmn)
