@@ -9,6 +9,8 @@
 namespace servio::brd
 {
 
+namespace em = emlabcpp;
+
 em::result setup_clk()
 {
 

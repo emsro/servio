@@ -8,7 +8,7 @@ servio_add_library(
           config.cpp
           uart.cpp
           timers.cpp
-  LIBS serviolib platform
+  LIBS emlabcpp platform
   OPTS -Os)
 
 target_link_libraries(

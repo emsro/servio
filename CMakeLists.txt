@@ -53,7 +53,6 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   enable_testing()
 
   add_subdirectory(src)
-  add_subdirectory(src/scmdio)
   add_subdirectory(tests)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
@@ -67,16 +66,16 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   add_subdirectory(boards/prototype2)
 
   add_subdirectory(src)
-  add_subdirectory(src/fw)
 
   # THe fact that dependencies to sublibs are only here is unpleasant
   add_library(prototype2 STATIC)
   target_link_libraries(
     prototype2
     PUBLIC prototype2_board
-           serviolib
            fwlib
            monlib
+           corelib
+           cfglib
            mtrlib
            ctllib
            STM32::Nano)
@@ -98,7 +97,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
   add_subdirectory(platforms/stm32h5)
   add_subdirectory(boards/proto3)
-  add_subdirectory(src/fw)
+  add_subdirectory(src)
 
   add_library(proto3 STATIC)
   target_link_libraries(proto3 PUBLIC proto3_board serviolib fwlib STM32::Nano)

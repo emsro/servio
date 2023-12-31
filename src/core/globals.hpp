@@ -2,11 +2,11 @@
 
 #pragma once
 
-namespace servio
+namespace servio::core
 {
 
 namespace em = emlabcpp;
 
 extern em::static_function< void(), 16 > STOP_CALLBACK;
 
-}  // namespace servio
+}  // namespace servio::core

@@ -1,5 +1,5 @@
 #include "brd.hpp"
-#include "core_drivers.hpp"
+#include "core/drivers.hpp"
 #include "emlabcpp/result.h"
 #include "fw/drv/adc_pooler_def.hpp"
 #include "fw/drv/clock.hpp"
@@ -322,7 +322,7 @@ fw::drv::leds* leds_setup()
         return nullptr;
 }
 
-em::result start_callback( core_drivers& cdrv )
+em::result start_callback( core::drivers& cdrv )
 {
 
         if ( cdrv.position != nullptr ) {
@@ -350,7 +350,7 @@ em::result start_callback( core_drivers& cdrv )
         return em::SUCCESS;
 }
 
-core_drivers setup_core_drivers()
+core::drivers setup_core_drivers()
 {
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( setup_clock_timer( TIM2_HANDLE, TIM2 ) != em::SUCCESS ) {
@@ -363,7 +363,7 @@ core_drivers setup_core_drivers()
         fw::drv::leds* leds       = leds_setup();
         fw::install_stop_callback( leds );
 
-        return core_drivers{
+        return core::drivers{
             .clock       = CLOCK.setup( &TIM2_HANDLE ),
             .position    = adc_pooler == nullptr ? nullptr : &fw::drv::ADC_POSITION,
             .current     = adc_pooler == nullptr ? nullptr : &fw::drv::ADC_CURRENT,

@@ -18,5 +18,6 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4" OR ${SERVIO_PLATFORM} STREQUAL
   add_library(proto STATIC ${PROTO_SRCS} ${PROTO_HDRS})
   target_link_libraries(proto PUBLIC nanopb_lib platform)
   target_include_directories(proto SYSTEM PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+  target_compile_options(proto PRIVATE -Os)
 
 endif()

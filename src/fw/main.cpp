@@ -1,7 +1,7 @@
 #include "brd.hpp"
 #include "cfg/dispatcher.hpp"
-#include "core.hpp"
-#include "core_drivers.hpp"
+#include "core/core.hpp"
+#include "core/drivers.hpp"
 #include "emlabcpp/result.h"
 #include "fw/board.hpp"
 #include "fw/dispatcher.hpp"
@@ -24,16 +24,16 @@ int main()
 
         cfg::payload last_cfg_payload = fw::load_persistent_config( pages, cfg );
 
-        core_drivers cdrv = brd::setup_core_drivers();
+        core::drivers cdrv = brd::setup_core_drivers();
 
         if ( cdrv.any_uninitialized() ) {
                 fw::stop_exec();
         }
 
-        core cor{ cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock };
+        core::core cor{ cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock };
         cdrv.leds->update( cor.ind.get_state() );
 
-        standard_callbacks cbs( *cdrv.motor, *cdrv.clock, cor.ctl, cor.met, cor.conv );
+        core::standard_callbacks cbs( *cdrv.motor, *cdrv.clock, cor.ctl, cor.met, cor.conv );
         cbs.set_callbacks( *cdrv.period, *cdrv.period_cb, *cdrv.position, *cdrv.current );
 
         cfg::dispatcher cfg_dis{ cfg, cor };

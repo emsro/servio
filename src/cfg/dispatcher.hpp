@@ -1,7 +1,7 @@
 
 #include "cfg/key.hpp"
 #include "cfg/map.hpp"
-#include "core.hpp"
+#include "core/core.hpp"
 
 #pragma once
 
@@ -11,8 +11,8 @@ namespace servio::cfg
 struct dispatcher
 {
 
-        map&  m;
-        core& c;
+        map&        m;
+        core::core& c;
 
         template < key Key, typename T >
         void set( const T& item )

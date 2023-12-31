@@ -17,12 +17,23 @@ with section("parse"):
                                             'SOURCES': '+',
                                             'TARGET': 1},
                                 'pargs': {'flags': [], 'nargs': '*'}},
+  'servio_add_test': { 'kwargs': {         'LIBS': '+',
+                                  'INCLUDE':'+',
+                                            'SOURCES': '+',
+                                            'TARGET': 1},
+                                'pargs': {'flags': [], 'nargs': '*'}},
   'servio_add_library': { 'kwargs': { 'INCLUDE': '+',
                                       'LIBS': '+',
                                       'OPTS': '+',
                                       'SOURCES': '+',
                                       'TARGET': 1},
-                          'pargs': {'flags': [], 'nargs': '*'}}}
+                          'pargs': {'flags': [], 'nargs': '*'}},
+                         'add_host_bin': { 'kwargs': { 'LIBS': '+',
+                                'OPTS': '+',
+                                'SOURCES': '+',
+                                'TARGET': 1},
+                    'pargs': {'flags': [], 'nargs': '*'}}
+                         }
 
   # Override configurations per-command where available
   override_spec = {}

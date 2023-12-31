@@ -1,27 +1,5 @@
 find_package(nlohmann_json REQUIRED)
 
-function(add_utest target)
-  servio_add_test(
-    TARGET
-    ${target}
-    SOURCES
-    ${target}.cpp
-    INCLUDE
-    ./include/
-    LIBS
-    GTest::GTest
-    gtest_main
-    serviolib
-    ctllib
-    mtrlib
-    nlohmann_json::nlohmann_json
-    proto
-    magic_enum)
-endfunction()
-
-add_utest(cfg_storage_utest)
-add_utest(cfg_utest)
-
 function(add_btest)
   cmake_parse_arguments(A "" "TARGET" "ARGS;SOURCE" ${ARGN})
   add_executable(${A_TARGET} ${A_SOURCE})

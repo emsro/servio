@@ -6,7 +6,7 @@
 #include "mon/monitor.hpp"
 #include "mtr/metrics.hpp"
 
-namespace servio
+namespace servio::core
 {
 
 struct core
@@ -68,4 +68,4 @@ struct standard_callbacks
         position_callback pos_cb;
 };
 
-}  // namespace servio
+}  // namespace servio::core

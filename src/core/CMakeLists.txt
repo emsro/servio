@@ -1,6 +1,6 @@
 servio_add_library(
-  TARGET monlib
+  TARGET corelib
   INCLUDE ../
-  SOURCES indication.cpp
+  SOURCES globals.cpp
   LIBS emlabcpp
   OPTS -Os)

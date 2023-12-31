@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace servio
+namespace servio::core
 {
 
 class current_callback : public base::current_cb_interface
@@ -72,4 +72,4 @@ private:
         const cnv::converter& conv_;
 };
 
-}  // namespace servio
+}  // namespace servio::core

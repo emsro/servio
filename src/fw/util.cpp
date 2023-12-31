@@ -1,14 +1,14 @@
 #include "util.hpp"
 
-#include "globals.hpp"
+#include "core/globals.hpp"
 
 namespace servio::fw
 {
 
 void stop_exec()
 {
-        if ( STOP_CALLBACK ) {
-                STOP_CALLBACK();
+        if ( core::STOP_CALLBACK ) {
+                core::STOP_CALLBACK();
         }
         __asm__( "BKPT" );
         while ( true ) {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "cfg/map.hpp"
-#include "core_drivers.hpp"
+#include "core/drivers.hpp"
 
 namespace servio::brd
 {
@@ -19,7 +19,7 @@ cfg::map get_default_config();
 em::result setup_board();
 
 /// Initialize all core drivers for the servo
-core_drivers setup_core_drivers();
+core::drivers setup_core_drivers();
 
 /// Initialize debug interface
 base::com_interface* setup_debug_comms();
