@@ -31,7 +31,7 @@ struct adc_set
 
 fw::drv::adc_pooler< adc_set > ADC_POOLER{};
 
-struct : period_cb_interface
+struct : base::period_cb_interface
 {
         void on_period_irq() override
         {
@@ -39,9 +39,9 @@ struct : period_cb_interface
         }
 } ADC_PERIOD_CB;
 
-struct : vcc_interface
+struct : base::vcc_interface
 {
-        status get_status() const override
+        base::status get_status() const override
         {
                 return ADC_POOLER->vcc.get_status();
         }
@@ -52,9 +52,9 @@ struct : vcc_interface
         }
 } ADC_VCC;
 
-struct : temperature_interface
+struct : base::temperature_interface
 {
-        status get_status() const override
+        base::status get_status() const override
         {
                 return ADC_POOLER->temp.get_status();
         }
@@ -65,9 +65,9 @@ struct : temperature_interface
         }
 } ADC_TEMPERATURE;
 
-struct : position_interface
+struct : base::position_interface
 {
-        status get_status() const override
+        base::status get_status() const override
         {
                 return ADC_POOLER->position.get_status();
         }
@@ -77,19 +77,19 @@ struct : position_interface
                 return ADC_POOLER->position.last_value;
         }
 
-        void set_position_callback( position_cb_interface& cb ) override
+        void set_position_callback( base::position_cb_interface& cb ) override
         {
                 ADC_POOLER->position.callback = &cb;
         }
-        position_cb_interface& get_position_callback() const override
+        base::position_cb_interface& get_position_callback() const override
         {
                 return *ADC_POOLER->position.callback;
         }
 } ADC_POSITION;
 
-struct : current_interface
+struct : base::current_interface
 {
-        status get_status() const override
+        base::status get_status() const override
         {
                 return ADC_POOLER->current.get_status();
         }
@@ -104,11 +104,11 @@ struct : current_interface
                 return ADC_POOLER->current.last_value;
         }
 
-        void set_current_callback( current_cb_interface& cb ) override
+        void set_current_callback( base::current_cb_interface& cb ) override
         {
                 ADC_POOLER->current.callback = &cb;
         }
-        current_cb_interface& get_current_callback() const override
+        base::current_cb_interface& get_current_callback() const override
         {
                 return *ADC_POOLER->current.callback;
         }

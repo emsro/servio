@@ -1,6 +1,6 @@
 #pragma once
 
-namespace servio
+namespace servio::base
 {
 
 // TODO: analyze status system whenever it is finished and ready to use
@@ -11,4 +11,4 @@ enum class [[nodiscard]] status
         INOPERABLE,
 };
 
-}  // namespace servio
+}  // namespace servio::base

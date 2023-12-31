@@ -1,4 +1,4 @@
-#include "drv_interfaces.hpp"
+#include "base/drv_interfaces.hpp"
 #include "platform.hpp"
 
 #include <emlabcpp/experimental/cobs.h>
@@ -14,7 +14,7 @@ namespace servio::fw::drv
 
 constexpr std::size_t comm_buff_size = 128;
 
-class cobs_uart : public com_interface
+class cobs_uart : public base::com_interface
 {
 public:
         cobs_uart() = default;
@@ -61,7 +61,7 @@ public:
                 tx_done_ = true;
         }
 
-        com_res load_message( em::view< std::byte* > data ) override;
+        base::com_res load_message( em::view< std::byte* > data ) override;
 
         em::result start() override
         {

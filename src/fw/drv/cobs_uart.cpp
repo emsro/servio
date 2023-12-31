@@ -5,7 +5,7 @@
 namespace servio::fw::drv
 {
 
-com_res cobs_uart::load_message( em::view< std::byte* > data )
+base::com_res cobs_uart::load_message( em::view< std::byte* > data )
 {
         if ( isizes_.empty() ) {
                 return { true, {} };

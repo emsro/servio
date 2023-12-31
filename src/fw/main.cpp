@@ -9,7 +9,6 @@
 #include "fw/store_persistent_config.hpp"
 #include "fw/util.hpp"
 #include "load_persistent_config.hpp"
-#include "standard_callbacks.hpp"
 
 int main()
 {

@@ -7,7 +7,7 @@
 
 #pragma once
 
-namespace servio
+namespace servio::base
 {
 
 class adc_detailed_cb_interface
@@ -116,4 +116,4 @@ public:
         virtual current_cb_interface& get_current_callback() const                  = 0;
 };
 
-}  // namespace servio
+}  // namespace servio::base

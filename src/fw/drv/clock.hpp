@@ -1,5 +1,5 @@
-#include "base.hpp"
-#include "drv_interfaces.hpp"
+#include "base/base.hpp"
+#include "base/drv_interfaces.hpp"
 #include "platform.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
@@ -9,7 +9,7 @@
 namespace servio::fw::drv
 {
 
-class clock : public clk_interface
+class clock : public base::clk_interface
 {
 public:
         clock() = default;
@@ -26,9 +26,9 @@ public:
                 return this;
         }
 
-        microseconds get_us() override
+        base::microseconds get_us() override
         {
-                return microseconds{ __HAL_TIM_GET_COUNTER( tim_ ) };
+                return base::microseconds{ __HAL_TIM_GET_COUNTER( tim_ ) };
         }
 
 private:

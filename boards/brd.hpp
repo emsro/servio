@@ -22,6 +22,6 @@ em::result setup_board();
 core_drivers setup_core_drivers();
 
 /// Initialize debug interface
-com_interface* setup_debug_comms();
+base::com_interface* setup_debug_comms();
 
 }  // namespace servio::brd

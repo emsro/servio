@@ -9,6 +9,8 @@
 namespace servio::ctl::tests
 {
 
+using namespace base::literals;
+
 class control_fixture : public ::testing::Test
 {
 public:
@@ -66,7 +68,7 @@ public:
                     power, motor->position(), motor->velocity, ctl->get_desired_current() );
         }
 
-        microseconds                       now = 0_ms;
+        base::microseconds                 now = 0_ms;
         std::optional< sim::simple_motor > motor;
         std::optional< ctl::control >      ctl;
 };

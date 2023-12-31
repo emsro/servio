@@ -1,4 +1,3 @@
-
 #include <chrono>
 #include <cstdint>
 #include <emlabcpp/algorithm.h>
@@ -6,7 +5,7 @@
 
 #pragma once
 
-namespace servio
+namespace servio::base
 {
 
 namespace em = emlabcpp;
@@ -67,4 +66,4 @@ struct leds_vals
         uint8_t green;
 };
 
-}  // namespace servio
+}  // namespace servio::base

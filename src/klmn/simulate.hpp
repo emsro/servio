@@ -6,7 +6,7 @@ namespace servio::klmn
 {
 
 std::vector< state > simulate(
-    sec_time                          tdiff,
+    base::sec_time                    tdiff,
     float                             process_deviation,
     float                             observation_deviation,
     const std::vector< observation >& observations,

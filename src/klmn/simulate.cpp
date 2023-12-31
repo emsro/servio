@@ -5,7 +5,7 @@ namespace servio::klmn
 {
 
 std::vector< state > simulate(
-    sec_time                          tdiff,
+    base::sec_time                    tdiff,
     float                             process_deviation,
     float                             observation_deviation,
     const std::vector< observation >& observations,
@@ -36,8 +36,8 @@ std::vector< state > simulate(
                 std::tie( x, p ) = update( x, p, z, h, r );
 
                 if ( requires_offset( angle( x ), sr ) ) {
-                        offset = angle_mod( offset + pi, sr );
-                        modify_angle( x, +pi, sr );
+                        offset = angle_mod( offset + base::pi, sr );
+                        modify_angle( x, +base::pi, sr );
                 }
 
                 res.push_back( x );

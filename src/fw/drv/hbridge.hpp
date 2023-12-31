@@ -1,4 +1,4 @@
-#include "drv_interfaces.hpp"
+#include "base/drv_interfaces.hpp"
 #include "fw/drv/callbacks.hpp"
 #include "platform.hpp"
 
@@ -14,7 +14,7 @@ namespace servio::fw::drv
 
 inline empty_period_cb EMPTY_PERIOD_CB;
 
-class hbridge : public pwm_motor_interface, public period_interface
+class hbridge : public base::pwm_motor_interface, public base::period_interface
 {
 public:
         hbridge()
@@ -49,8 +49,8 @@ public:
                 period_cb_->on_period_irq();
         }
 
-        void                 set_period_callback( period_cb_interface& ) override;
-        period_cb_interface& get_period_callback() override;
+        void                       set_period_callback( base::period_cb_interface& ) override;
+        base::period_cb_interface& get_period_callback() override;
 
         // Sets the power that hbridge should generate to the motor.
         // Input range is lineary interpolated based on:
@@ -66,17 +66,17 @@ public:
         em::result start() override;
         em::result stop() override;
 
-        status get_status() const override
+        base::status get_status() const override
         {
-                return status::NOMINAL;
+                return base::status::NOMINAL;
         };
 
 private:
-        period_cb_interface* period_cb_;
-        uint32_t             timer_max_   = 0;
-        TIM_HandleTypeDef*   tim_         = {};
-        uint32_t             mc1_channel_ = 0;
-        uint32_t             mc2_channel_ = 0;
+        base::period_cb_interface* period_cb_;
+        uint32_t                   timer_max_   = 0;
+        TIM_HandleTypeDef*         tim_         = {};
+        uint32_t                   mc1_channel_ = 0;
+        uint32_t                   mc2_channel_ = 0;
 };
 
 }  // namespace servio::fw::drv

@@ -1,5 +1,5 @@
-#include "base.hpp"
-#include "drv_interfaces.hpp"
+#include "base/base.hpp"
+#include "base/drv_interfaces.hpp"
 #include "fw/drv/defs.hpp"
 #include "platform.hpp"
 
@@ -13,7 +13,7 @@ namespace em = emlabcpp;
 namespace servio::fw::drv
 {
 
-class leds : public leds_interface
+class leds : public base::leds_interface
 {
 public:
         leds() = default;
@@ -37,7 +37,7 @@ public:
 
         void force_red_led() override;
 
-        void update( const leds_vals& leds ) override;
+        void update( const base::leds_vals& leds ) override;
 
 private:
         bool red_forced_ = false;

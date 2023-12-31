@@ -1,24 +1,26 @@
 #pragma once
 
-#include "drv_interfaces.hpp"
+#include "base/drv_interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 
 namespace servio
 {
 
+namespace em = emlabcpp;
+
 struct core_drivers
 {
-        clk_interface*         clock;
-        position_interface*    position;
-        current_interface*     current;
-        vcc_interface*         vcc;
-        temperature_interface* temperature;
-        period_cb_interface*   period_cb;  // TODO: maybe imrpove naming here?
-        pwm_motor_interface*   motor;
-        period_interface*      period;
-        com_interface*         comms;
-        leds_interface*        leds;
+        base::clk_interface*         clock;
+        base::position_interface*    position;
+        base::current_interface*     current;
+        base::vcc_interface*         vcc;
+        base::temperature_interface* temperature;
+        base::period_cb_interface*   period_cb;  // TODO: maybe imrpove naming here?
+        base::pwm_motor_interface*   motor;
+        base::period_interface*      period;
+        base::com_interface*         comms;
+        base::leds_interface*        leds;
         em::function_view< em::result( core_drivers& ) > start_cb;
 
         auto tie()

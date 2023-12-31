@@ -1,6 +1,6 @@
-#include "base.hpp"
+#include "base/base.hpp"
 #include "mtr/posvel_kalman.hpp"
-#include "static_detector.hpp"
+#include "mtr/static_detector.hpp"
 
 #include <array>
 #include <tuple>
@@ -13,12 +13,12 @@ namespace servio::mtr
 class metrics
 {
 public:
-        metrics( microseconds time, float position, limits< float > position_range );
+        metrics( base::microseconds time, float position, base::limits< float > position_range );
 
-        void set_position_range( limits< float > position_range );
+        void set_position_range( base::limits< float > position_range );
         void set_moving_step( float step );
 
-        void position_irq( microseconds now, float position );
+        void position_irq( base::microseconds now, float position );
 
         bool is_moving() const;
 
@@ -27,7 +27,7 @@ public:
         float get_velocity() const;
 
 private:
-        microseconds       last_time_;
+        base::microseconds last_time_;
         mtr::posvel_kalman pv_kal_;
         static_detector    st_dec_;
 };

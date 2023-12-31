@@ -5,7 +5,7 @@
 namespace servio::mon
 {
 
-bool indication::on_event( microseconds now, const indication_event& e )
+bool indication::on_event( base::microseconds now, const indication_event& e )
 {
         switch ( e ) {
         case indication_event::VOLTAGE_LOW:
@@ -46,17 +46,21 @@ bool indication::on_event( microseconds now, const indication_event& e )
         return true;
 }
 
-float sin_approx( float x )
+namespace
 {
-        const float x3 = x * x * x;
-        return x - x3 / 6.F + ( x3 * x * x ) / 120.F;
-}
+        // TODO: move this somewhere else
+        float sin_approx( float x )
+        {
+                const float x3 = x * x * x;
+                return x - x3 / 6.F + ( x3 * x * x ) / 120.F;
+        }
+}  // namespace
 
-void indication::tick( microseconds now )
+void indication::tick( base::microseconds now )
 {
         tick_red( now );
 
-        green_i_              = std::fmod( green_i_ + green_step_, 2 * pi );
+        green_i_              = std::fmod( green_i_ + green_step_, 2 * base::pi );
         const float green_val = ( sin_approx( green_i_ ) + 1.F ) / 2.F + green_offset_;
         state_.green          = static_cast< uint8_t >(
             em::map_range< float, float >( green_val, 0.F, 2.F, 0.F, 255.F ) );
@@ -70,7 +74,7 @@ void indication::tick( microseconds now )
         }
 }
 
-void indication::tick_red( microseconds now )
+void indication::tick_red( base::microseconds now )
 {
         if ( now < red_phase_ ) {
                 state_.red = false;
@@ -89,7 +93,7 @@ void indication::tick_red( microseconds now )
                 return;
         }
 
-        const microseconds x = now % 500_ms;
+        const base::microseconds x = now % 500_ms;
 
         state_.red = x < 250_ms;
 }

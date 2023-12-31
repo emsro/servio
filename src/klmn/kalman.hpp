@@ -1,4 +1,4 @@
-#include "base.hpp"
+#include "base/base.hpp"
 #include "emlabcpp/experimental/matrix.h"
 
 #pragma once
@@ -20,7 +20,7 @@ using observation                  = em::matrix< 1, 1 >;
 using observation_model            = em::matrix< 1, 2 >;
 using observation_noise_covariance = em::matrix< 1, 1 >;
 
-constexpr state_transition_model get_transition_model( sec_time tdiff )
+constexpr state_transition_model get_transition_model( base::sec_time tdiff )
 {
         state_transition_model f;
         f[0] = { 1.F, tdiff.count() };
@@ -28,7 +28,7 @@ constexpr state_transition_model get_transition_model( sec_time tdiff )
         return f;
 }
 
-constexpr control_input_model get_control_input_model( sec_time tdiff )
+constexpr control_input_model get_control_input_model( base::sec_time tdiff )
 {
         control_input_model b;
         b[0] = { 0.F * tdiff.count() * tdiff.count() };
@@ -37,7 +37,7 @@ constexpr control_input_model get_control_input_model( sec_time tdiff )
 }
 
 constexpr process_noise_covariance
-get_process_noise_covariance( sec_time tdiff, float standard_deviation )
+get_process_noise_covariance( base::sec_time tdiff, float standard_deviation )
 {
         auto b = get_control_input_model( tdiff );
 

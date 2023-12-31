@@ -15,9 +15,9 @@ struct detailed_adc_channel
         alignas( uint32_t ) uint16_t buffer[N];
         std::size_t used;
 
-        uint32_t                   last_value;
-        ADC_ChannelConfTypeDef     chconf   = {};
-        adc_detailed_cb_interface* callback = &EMPTY_ADC_DETAILED_CALLBACK;
+        uint32_t                         last_value;
+        ADC_ChannelConfTypeDef           chconf   = {};
+        base::adc_detailed_cb_interface* callback = &EMPTY_ADC_DETAILED_CALLBACK;
 
         bool config_channel_error = false;
         bool start_error          = false;
@@ -26,15 +26,15 @@ struct detailed_adc_channel
         bool no_samples_error       = false;
         bool samples_overflow_error = false;
 
-        status get_status() const
+        base::status get_status() const
         {
                 if ( config_channel_error || start_error || stop_error ) {
-                        return status::INOPERABLE;
+                        return base::status::INOPERABLE;
                 }
                 if ( no_samples_error || samples_overflow_error ) {
-                        return status::DEGRADED;
+                        return base::status::DEGRADED;
                 }
-                return status::NOMINAL;
+                return base::status::NOMINAL;
         }
 
         void clear_status()
@@ -92,12 +92,12 @@ struct adc_channel
         bool start_error          = false;
         bool stop_error           = false;
 
-        status get_status() const
+        base::status get_status() const
         {
                 if ( config_channel_error || start_error || stop_error ) {
-                        return status::INOPERABLE;
+                        return base::status::INOPERABLE;
                 }
-                return status::NOMINAL;
+                return base::status::NOMINAL;
         }
 
         void period_start( ADC_HandleTypeDef& h )
@@ -127,7 +127,7 @@ struct adc_channel
 template < auto ID >
 struct adc_channel_with_callback : adc_channel< ID >
 {
-        value_cb_interface* callback = &EMPTY_ADC_CALLBACK;
+        base::value_cb_interface* callback = &EMPTY_ADC_CALLBACK;
 
         void conv_cplt( ADC_HandleTypeDef& h )
         {

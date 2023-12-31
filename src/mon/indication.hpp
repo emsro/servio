@@ -1,4 +1,4 @@
-#include "base.hpp"
+#include "base/base.hpp"
 
 #include <emlabcpp/static_circular_buffer.h>
 
@@ -6,6 +6,8 @@
 
 namespace servio::mon
 {
+
+namespace em = emlabcpp;
 
 // possible events:
 // - system stops itself due to un-expected error - red glows
@@ -35,10 +37,12 @@ enum class indication_event
         INCOMING_MESSAGE
 };
 
+using namespace base::literals;
+
 class indication
 {
 public:
-        indication( microseconds now )
+        indication( base::microseconds now )
           : last_tick_( now )
           , red_phase_( now )
           , yellow_engaged_until_( 0_us )
@@ -46,32 +50,32 @@ public:
         {
         }
 
-        bool on_event( microseconds now, const indication_event& e );
+        bool on_event( base::microseconds now, const indication_event& e );
 
-        void tick( microseconds now );
+        void tick( base::microseconds now );
 
-        const leds_vals& get_state() const
+        const base::leds_vals& get_state() const
         {
                 return state_;
         }
 
 private:
-        void tick_red( microseconds now );
+        void tick_red( base::microseconds now );
 
-        leds_vals    state_;
-        microseconds last_tick_;
+        base::leds_vals    state_;
+        base::microseconds last_tick_;
 
-        static constexpr microseconds                 red_window = 5_s;
-        microseconds                                  red_phase_;
-        em::static_circular_buffer< microseconds, 2 > red_events_;
+        static constexpr base::microseconds                 red_window = 5_s;
+        base::microseconds                                  red_phase_;
+        em::static_circular_buffer< base::microseconds, 2 > red_events_;
 
         float green_i_      = 0.F;
         float green_step_   = 0.F;
         float green_offset_ = 0.F;
 
-        microseconds yellow_engaged_until_;
+        base::microseconds yellow_engaged_until_;
 
-        microseconds blue_disengage_at_;
+        base::microseconds blue_disengage_at_;
 };
 
 }  // namespace servio::mon

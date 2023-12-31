@@ -23,7 +23,7 @@ em::result leds::start()
         return em::SUCCESS;
 }
 
-void leds::update( const leds_vals& leds )
+void leds::update( const base::leds_vals& leds )
 {
 
         if ( !red_forced_ ) {

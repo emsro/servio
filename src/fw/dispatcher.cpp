@@ -7,7 +7,7 @@
 namespace servio::fw
 {
 
-ServioToHost handle_set_mode( microseconds now, ctl::control& ctl, const Mode& msg )
+ServioToHost handle_set_mode( base::microseconds now, ctl::control& ctl, const Mode& msg )
 {
         float val;
         switch ( msg.which_pld ) {
@@ -44,22 +44,22 @@ Mode get_mode( const ctl::control& ctl )
 {
         Mode res;
         switch ( ctl.get_mode() ) {
-        case control_mode::DISENGAGED:
+        case base::control_mode::DISENGAGED:
                 res.which_pld = Mode_disengaged_tag;
                 break;
-        case control_mode::POWER:
+        case base::control_mode::POWER:
                 res.which_pld = Mode_power_tag;
                 res.power     = ctl.get_power();
                 break;
-        case control_mode::CURRENT:
+        case base::control_mode::CURRENT:
                 res.which_pld = Mode_current_tag;
                 res.current   = ctl.get_desired_current();
                 break;
-        case control_mode::VELOCITY:
+        case base::control_mode::VELOCITY:
                 res.which_pld = Mode_velocity_tag;
                 res.velocity  = ctl.get_desired_velocity();
                 break;
-        case control_mode::POSITION:
+        case base::control_mode::POSITION:
                 res.which_pld = Mode_position_tag;
                 res.position  = ctl.get_desired_position();
                 break;
@@ -68,15 +68,15 @@ Mode get_mode( const ctl::control& ctl )
 }
 
 ServioToHost handle_get_property(
-    const ctl::control&          ctl,
-    const mtr::metrics&          met,
-    const cnv::converter&        conv,
-    const position_interface&    pos_drv,
-    const current_interface&     curr_drv,
-    const vcc_interface&         vcc_drv,
-    const temperature_interface& temp_drv,
-    const pwm_motor_interface&   motor,
-    const GetProperty&           msg )
+    const ctl::control&                ctl,
+    const mtr::metrics&                met,
+    const cnv::converter&              conv,
+    const base::position_interface&    pos_drv,
+    const base::current_interface&     curr_drv,
+    const base::vcc_interface&         vcc_drv,
+    const base::temperature_interface& temp_drv,
+    const base::pwm_motor_interface&   motor,
+    const GetProperty&                 msg )
 {
         Property prop;
         prop.which_pld = static_cast< pb_size_t >( msg.field_id );

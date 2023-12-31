@@ -1,7 +1,7 @@
+#include "base/drv_interfaces.hpp"
 #include "cnv/converter.hpp"
 #include "ctl/control.hpp"
-#include "drv_interfaces.hpp"
-#include "indication.hpp"
+#include "mon/indication.hpp"
 
 #pragma once
 
@@ -12,12 +12,12 @@ class monitor
 {
 public:
         monitor(
-            microseconds                 now,
-            const ctl::control&          ctl,
-            const vcc_interface&         vcc_drv,
-            const temperature_interface& temp_drv,
-            indication&                  indi,
-            const cnv::converter&        conv )
+            base::microseconds                 now,
+            const ctl::control&                ctl,
+            const base::vcc_interface&         vcc_drv,
+            const base::temperature_interface& temp_drv,
+            indication&                        indi,
+            const cnv::converter&              conv )
           : ctl_( ctl )
           , indi_( indi )
           , vcc_drv_( vcc_drv )
@@ -37,7 +37,7 @@ public:
                 max_tmp_ = temp;
         }
 
-        void tick( microseconds now )
+        void tick( base::microseconds now )
         {
                 indi_.on_event( now, indication_event::HEARTBEAT );
 
@@ -53,7 +53,7 @@ public:
                         indi_.on_event( now, indication_event::TEMPERATURE_HIGH );
                 }
 
-                if ( ctl_.get_mode() != control_mode::DISENGAGED ) {
+                if ( ctl_.get_mode() != base::control_mode::DISENGAGED ) {
                         indi_.on_event( now, indication_event::ENGAGED );
                 } else {
                         indi_.on_event( now, indication_event::DISENGAGED );
@@ -61,11 +61,11 @@ public:
         }
 
 private:
-        const ctl::control&          ctl_;
-        indication&                  indi_;
-        const vcc_interface&         vcc_drv_;
-        const temperature_interface& temp_drv_;
-        const cnv::converter&        conv_;
+        const ctl::control&                ctl_;
+        indication&                        indi_;
+        const base::vcc_interface&         vcc_drv_;
+        const base::temperature_interface& temp_drv_;
+        const cnv::converter&              conv_;
 
         float min_vcc_ = 0.F;
         float max_tmp_ = 90.F;

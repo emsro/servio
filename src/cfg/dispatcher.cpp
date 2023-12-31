@@ -73,7 +73,7 @@ void apply( ctl::control& ctl, const map& m, const key& key )
         case CURRENT_LOOP_I:
         case CURRENT_LOOP_D:
                 ctl.set_pid(
-                    control_loop::CURRENT,
+                    base::control_loop::CURRENT,
                     { m.get_val< CURRENT_LOOP_P >(),
                       m.get_val< CURRENT_LOOP_I >(),
                       m.get_val< CURRENT_LOOP_D >() } );
@@ -81,14 +81,14 @@ void apply( ctl::control& ctl, const map& m, const key& key )
         case CURRENT_LIM_MIN:
         case CURRENT_LIM_MAX:
                 ctl.set_limits(
-                    control_loop::CURRENT,
+                    base::control_loop::CURRENT,
                     { m.get_val< CURRENT_LIM_MIN >(), m.get_val< CURRENT_LIM_MAX >() } );
                 break;
         case VELOCITY_LOOP_P:
         case VELOCITY_LOOP_I:
         case VELOCITY_LOOP_D:
                 ctl.set_pid(
-                    control_loop::VELOCITY,
+                    base::control_loop::VELOCITY,
                     { m.get_val< VELOCITY_LOOP_P >(),
                       m.get_val< VELOCITY_LOOP_I >(),
                       m.get_val< VELOCITY_LOOP_D >() } );
@@ -96,7 +96,7 @@ void apply( ctl::control& ctl, const map& m, const key& key )
         case VELOCITY_LIM_MIN:
         case VELOCITY_LIM_MAX:
                 ctl.set_limits(
-                    control_loop::VELOCITY,
+                    base::control_loop::VELOCITY,
                     { m.get_val< VELOCITY_LIM_MIN >(), m.get_val< VELOCITY_LIM_MAX >() } );
                 break;
         case VELOCITY_TO_CURR_LIM_SCALE:
@@ -106,7 +106,7 @@ void apply( ctl::control& ctl, const map& m, const key& key )
         case POSITION_LOOP_I:
         case POSITION_LOOP_D:
                 ctl.set_pid(
-                    control_loop::POSITION,
+                    base::control_loop::POSITION,
                     { m.get_val< POSITION_LOOP_P >(),
                       m.get_val< POSITION_LOOP_I >(),
                       m.get_val< POSITION_LOOP_D >() } );
@@ -114,7 +114,7 @@ void apply( ctl::control& ctl, const map& m, const key& key )
         case POSITION_LIM_MIN:
         case POSITION_LIM_MAX:
                 ctl.set_limits(
-                    control_loop::POSITION,
+                    base::control_loop::POSITION,
                     { m.get_val< POSITION_LIM_MIN >(), m.get_val< POSITION_LIM_MAX >() } );
                 break;
         case POSITION_TO_VEL_LIM_SCALE:

@@ -2,21 +2,20 @@
 #include "cnv/utils.hpp"
 #include "ctl/control.hpp"
 #include "mtr/metrics.hpp"
-#include "platform.hpp"
 
 #pragma once
 
 namespace servio
 {
 
-class current_callback : public current_cb_interface
+class current_callback : public base::current_cb_interface
 {
 public:
         current_callback(
-            pwm_motor_interface&  motor,
-            ctl::control&         ctl,
-            clk_interface&        clk,
-            const cnv::converter& conv )
+            base::pwm_motor_interface& motor,
+            ctl::control&              ctl,
+            base::clk_interface&       clk,
+            const cnv::converter&      conv )
           : motor_( motor )
           , ctl_( ctl )
           , clk_( clk )
@@ -33,19 +32,19 @@ public:
         }
 
 private:
-        pwm_motor_interface&  motor_;
-        ctl::control&         ctl_;
-        clk_interface&        clk_;
-        const cnv::converter& conv_;
+        base::pwm_motor_interface& motor_;
+        ctl::control&              ctl_;
+        base::clk_interface&       clk_;
+        const cnv::converter&      conv_;
 };
 
-class position_callback : public position_cb_interface
+class position_callback : public base::position_cb_interface
 {
 public:
         position_callback(
             ctl::control&         ctl,
             mtr::metrics&         met,
-            clk_interface&        clk,
+            base::clk_interface&  clk,
             const cnv::converter& conv )
           : ctl_( ctl )
           , met_( met )
@@ -56,7 +55,7 @@ public:
 
         [[gnu::flatten]] void on_value_irq( uint32_t position ) override
         {
-                const microseconds now = clk_.get_us();
+                const base::microseconds now = clk_.get_us();
 
                 const float p = conv_.position.convert( position );
 
@@ -69,7 +68,7 @@ public:
 private:
         ctl::control&         ctl_;
         mtr::metrics&         met_;
-        clk_interface&        clk_;
+        base::clk_interface&  clk_;
         const cnv::converter& conv_;
 };
 

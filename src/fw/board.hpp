@@ -1,11 +1,11 @@
-#include "drv_interfaces.hpp"
+#include "base/drv_interfaces.hpp"
 #include "globals.hpp"
 
 #pragma once
 
 namespace servio::fw
 {
-inline void install_stop_callback( leds_interface* leds_ptr )
+inline void install_stop_callback( base::leds_interface* leds_ptr )
 {
         if ( leds_ptr != nullptr ) {
                 STOP_CALLBACK = [leds_ptr] {

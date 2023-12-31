@@ -8,6 +8,8 @@
 namespace servio::sim
 {
 
+namespace em = emlabcpp;
+
 using angle_vec = std::array< float, 2 >;
 
 inline angle_vec rotate_vec( const angle_vec& v, float angle )
@@ -37,12 +39,12 @@ struct simple_motor
                 pos_vec = rotate_vec( pos_vec, pos );
         }
 
-        void reset_time( microseconds now )
+        void reset_time( base::microseconds now )
         {
                 last_t = static_cast< float >( now.count() ) / 1000'000.F;
         }
 
-        void apply_power( microseconds now, int16_t p )
+        void apply_power( base::microseconds now, int16_t p )
         {
                 auto t = static_cast< float >( now.count() ) / 1000'000.F;
 

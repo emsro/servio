@@ -1,5 +1,5 @@
+#include "base/drv_interfaces.hpp"
 #include "cfg/storage.hpp"
-#include "drv_interfaces.hpp"
 
 #pragma once
 
@@ -13,7 +13,7 @@ struct persistent_config_writer
         cfg::payload&                last_payload;
         em::view< const cfg::page* > pages;
 
-        current_interface& current_iface;
+        base::current_interface& current_iface;
 
         bool operator()( const cfg::map* cfg );
 };
