@@ -4,11 +4,11 @@ var namespaceservio_1_1fw_structservio_1_1fw_1_1dispatcher_dup =
     [ "cfg_writer", "namespaceservio_1_1fw.html#aeb851eece19778a49f0561bd8c16aea6", null ],
     [ "conv", "namespaceservio_1_1fw.html#ad2a1bb23a3d499d31985d56e0723d77a", null ],
     [ "ctl", "namespaceservio_1_1fw.html#a654be9a42faf474da4a4cdbed2035d52", null ],
-    [ "curr_drv", "namespaceservio_1_1fw.html#aefef61b2868d447727291de889da21ac", null ],
+    [ "curr_drv", "namespaceservio_1_1fw.html#a522b10bcca20e74a47f7aa33ce3499fb", null ],
     [ "met", "namespaceservio_1_1fw.html#af28626be71bbadc097c16ead52c66245", null ],
-    [ "motor", "namespaceservio_1_1fw.html#a67cc197abb83ee7f4a80a905ba8410dc", null ],
-    [ "now", "namespaceservio_1_1fw.html#a1d44d56bfdc41655b85711880948a147", null ],
-    [ "pos_drv", "namespaceservio_1_1fw.html#a93a47c250f3e532ddb0ad24b0b8d03b9", null ],
-    [ "temp_drv", "namespaceservio_1_1fw.html#a947107888970ce01c103ec575fc76ccb", null ],
-    [ "vcc_drv", "namespaceservio_1_1fw.html#a0cb76e74fadfca5d1eda29af9cac6fd4", null ]
+    [ "motor", "namespaceservio_1_1fw.html#ae9d643562c34f843729184924b71b31c", null ],
+    [ "now", "namespaceservio_1_1fw.html#a6d127f1291a9f192eedfea55ae8945f2", null ],
+    [ "pos_drv", "namespaceservio_1_1fw.html#ae3edc310cf1ba6d69304f476856ce00a", null ],
+    [ "temp_drv", "namespaceservio_1_1fw.html#ad306f812287329ca0a52ab0ad208be92", null ],
+    [ "vcc_drv", "namespaceservio_1_1fw.html#ab2cd0cbcb2200989e0705121cabb6843", null ]
 ];

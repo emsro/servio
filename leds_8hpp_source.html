@@ -87,8 +87,8 @@ $(document).ready(function(){initNavTree('leds_8hpp_source.html',''); initResiza
 <div class="title">leds.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="leds_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">base.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a>&quot;</span></div>
+<a href="leds_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">base/base.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drv__interfaces_8hpp.html">base/drv_interfaces.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="defs_8hpp.html">fw/drv/defs.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="platform_8hpp.html">platform.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('leds_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1fw_1_1drv.html">servio::fw::drv</a></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classservio_1_1fw_1_1drv_1_1leds.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classservio_1_1fw_1_1drv_1_1leds.html">leds</a> : <span class="keyword">public</span> <a class="code" href="classservio_1_1leds__interface.html">leds_interface</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classservio_1_1fw_1_1drv_1_1leds.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classservio_1_1fw_1_1drv_1_1leds.html">leds</a> : <span class="keyword">public</span> <a class="code" href="classservio_1_1base_1_1leds__interface.html">base::leds_interface</a></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classservio_1_1fw_1_1drv_1_1leds.html#a42f78bc673e4a16e47be730c18c81030">   19</a></span>&#160;        <a class="code" href="classservio_1_1fw_1_1drv_1_1leds.html#a42f78bc673e4a16e47be730c18c81030">leds</a>() = <span class="keywordflow">default</span>;</div>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('leds_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1fw_1_1drv_1_1leds.html#ae7fb32f83eb0ca114543056e11030fb1">force_red_led</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1fw_1_1drv_1_1leds.html#aaf51f59393589a3508950d7e8edb42e5">update</a>( <span class="keyword">const</span> <a class="code" href="namespaceservio.html#structservio_1_1leds__vals">leds_vals</a>&amp; <a class="code" href="classservio_1_1fw_1_1drv_1_1leds.html">leds</a> ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1fw_1_1drv_1_1leds.html#ab550c271cc9bbc706715780f802e6e6f">update</a>( <span class="keyword">const</span> <a class="code" href="namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals">base::leds_vals</a>&amp; <a class="code" href="classservio_1_1fw_1_1drv_1_1leds.html">leds</a> ) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">bool</span> red_forced_ = <span class="keyword">false</span>;</div>
@@ -142,19 +142,19 @@ $(document).ready(function(){initNavTree('leds_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}  <span class="comment">// namespace servio::fw::drv</span></div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div></div>
+<div class="ttc" id="aclassservio_1_1base_1_1leds__interface_html"><div class="ttname"><a href="classservio_1_1base_1_1leds__interface.html">servio::base::leds_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:61</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1leds_html"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1leds.html">servio::fw::drv::leds</a></div><div class="ttdef"><b>Definition:</b> leds.hpp:17</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1leds_html_a3fa59e2e03210a07006e1d77dfbcaa3e"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1leds.html#a3fa59e2e03210a07006e1d77dfbcaa3e">servio::fw::drv::leds::start</a></div><div class="ttdeci">em::result start()</div><div class="ttdef"><b>Definition:</b> leds.cpp:15</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1leds_html_a42f78bc673e4a16e47be730c18c81030"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1leds.html#a42f78bc673e4a16e47be730c18c81030">servio::fw::drv::leds::leds</a></div><div class="ttdeci">leds()=default</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1leds_html_a57e58289e01089e22846ca3336b4ee58"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1leds.html#a57e58289e01089e22846ca3336b4ee58">servio::fw::drv::leds::setup</a></div><div class="ttdeci">leds * setup(pin_cfg red, pin_cfg blue, TIM_HandleTypeDef &amp;tim, pinch_cfg yellow, pinch_cfg green)</div><div class="ttdef"><b>Definition:</b> leds.hpp:21</div></div>
-<div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1leds_html_aaf51f59393589a3508950d7e8edb42e5"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1leds.html#aaf51f59393589a3508950d7e8edb42e5">servio::fw::drv::leds::update</a></div><div class="ttdeci">void update(const leds_vals &amp;leds) override</div><div class="ttdef"><b>Definition:</b> leds.cpp:26</div></div>
+<div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1leds_html_ab550c271cc9bbc706715780f802e6e6f"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1leds.html#ab550c271cc9bbc706715780f802e6e6f">servio::fw::drv::leds::update</a></div><div class="ttdeci">void update(const base::leds_vals &amp;leds) override</div><div class="ttdef"><b>Definition:</b> leds.cpp:26</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1leds_html_ae7fb32f83eb0ca114543056e11030fb1"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1leds.html#ae7fb32f83eb0ca114543056e11030fb1">servio::fw::drv::leds::force_red_led</a></div><div class="ttdeci">void force_red_led() override</div><div class="ttdef"><b>Definition:</b> leds.cpp:10</div></div>
-<div class="ttc" id="aclassservio_1_1leds__interface_html"><div class="ttname"><a href="classservio_1_1leds__interface.html">servio::leds_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:61</div></div>
 <div class="ttc" id="adefs_8hpp_html"><div class="ttname"><a href="defs_8hpp.html">defs.hpp</a></div></div>
 <div class="ttc" id="adrv__interfaces_8hpp_html"><div class="ttname"><a href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a></div></div>
+<div class="ttc" id="anamespaceservio_1_1base_html_structservio_1_1base_1_1leds__vals"><div class="ttname"><a href="namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals">servio::base::leds_vals</a></div><div class="ttdef"><b>Definition:</b> base.hpp:62</div></div>
 <div class="ttc" id="anamespaceservio_1_1fw_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1fw_1_1drv.html">servio::fw::drv</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:7</div></div>
 <div class="ttc" id="anamespaceservio_1_1fw_1_1drv_html_structservio_1_1fw_1_1drv_1_1pin__cfg"><div class="ttname"><a href="namespaceservio_1_1fw_1_1drv.html#structservio_1_1fw_1_1drv_1_1pin__cfg">servio::fw::drv::pin_cfg</a></div><div class="ttdef"><b>Definition:</b> defs.hpp:9</div></div>
 <div class="ttc" id="anamespaceservio_1_1fw_1_1drv_html_structservio_1_1fw_1_1drv_1_1pinch__cfg"><div class="ttname"><a href="namespaceservio_1_1fw_1_1drv.html#structservio_1_1fw_1_1drv_1_1pinch__cfg">servio::fw::drv::pinch_cfg</a></div><div class="ttdef"><b>Definition:</b> defs.hpp:16</div></div>
-<div class="ttc" id="anamespaceservio_html_structservio_1_1leds__vals"><div class="ttname"><a href="namespaceservio.html#structservio_1_1leds__vals">servio::leds_vals</a></div><div class="ttdef"><b>Definition:</b> base.hpp:63</div></div>
 <div class="ttc" id="aplatform_8hpp_html"><div class="ttname"><a href="platform_8hpp.html">platform.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('leds_8hpp_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="leds_8hpp.html">leds.hpp</a></li>
-    <li class="footer">Generated on Sat Dec 30 2023 23:26:28 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Dec 31 2023 16:35:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

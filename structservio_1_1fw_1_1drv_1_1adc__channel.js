@@ -1,7 +1,7 @@
 var structservio_1_1fw_1_1drv_1_1adc__channel =
 [
     [ "conv_cplt", "structservio_1_1fw_1_1drv_1_1adc__channel.html#a0a2f23a7d776b08f25c433ed197f1a99", null ],
-    [ "get_status", "structservio_1_1fw_1_1drv_1_1adc__channel.html#a424dada7c78aea3a1152b7deede3db24", null ],
+    [ "get_status", "structservio_1_1fw_1_1drv_1_1adc__channel.html#a19186f38b53d1a7b4d3faed9578db1f4", null ],
     [ "period_start", "structservio_1_1fw_1_1drv_1_1adc__channel.html#a63cfcd4b619ce33d0d647debd8efd75c", null ],
     [ "period_stop", "structservio_1_1fw_1_1drv_1_1adc__channel.html#a0163fbda10792fed7d30f0f6b21597fd", null ],
     [ "chconf", "structservio_1_1fw_1_1drv_1_1adc__channel.html#a4dc5141e01c7cec9b12ee795b65d4871", null ],

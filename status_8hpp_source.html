@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: src/status.hpp Source File</title>
+<title>servio: src/base/status.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,30 +89,30 @@ $(document).ready(function(){initNavTree('status_8hpp_source.html',''); initResi
 <div class="contents">
 <a href="status_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio.html">servio</a></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1base.html">servio::base</a></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// TODO: analyze status system whenever it is finished and ready to use</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788">    7</a></span>&#160;<span class="keyword">enum class</span> [[nodiscard]] <a class="code" href="namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788">status</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84f">    7</a></span>&#160;<span class="keyword">enum class</span> [[nodiscard]] <a class="code" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84f">status</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788aaa2fa3fb4786079a4f8107ea393d609e">NOMINAL</a>,</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788a0021017005f0e5134b204c2e69d3d4ed">DEGRADED</a>,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788ac5666694e05e08a4ae3ab497591042fa">INOPERABLE</a>,</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84faaa2fa3fb4786079a4f8107ea393d609e">NOMINAL</a>,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84fa0021017005f0e5134b204c2e69d3d4ed">DEGRADED</a>,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84fac5666694e05e08a4ae3ab497591042fa">INOPERABLE</a>,</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}  <span class="comment">// namespace servio</span></div>
-<div class="ttc" id="anamespaceservio_html"><div class="ttname"><a href="namespaceservio.html">servio</a></div><div class="ttdef"><b>Definition:</b> brd.hpp:7</div></div>
-<div class="ttc" id="anamespaceservio_html_aa94b985e36e141fd17f3a16cd953d788"><div class="ttname"><a href="namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788">servio::status</a></div><div class="ttdeci">status</div><div class="ttdef"><b>Definition:</b> status.hpp:8</div></div>
-<div class="ttc" id="anamespaceservio_html_aa94b985e36e141fd17f3a16cd953d788a0021017005f0e5134b204c2e69d3d4ed"><div class="ttname"><a href="namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788a0021017005f0e5134b204c2e69d3d4ed">servio::status::DEGRADED</a></div><div class="ttdeci">@ DEGRADED</div></div>
-<div class="ttc" id="anamespaceservio_html_aa94b985e36e141fd17f3a16cd953d788aaa2fa3fb4786079a4f8107ea393d609e"><div class="ttname"><a href="namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788aaa2fa3fb4786079a4f8107ea393d609e">servio::status::NOMINAL</a></div><div class="ttdeci">@ NOMINAL</div></div>
-<div class="ttc" id="anamespaceservio_html_aa94b985e36e141fd17f3a16cd953d788ac5666694e05e08a4ae3ab497591042fa"><div class="ttname"><a href="namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788ac5666694e05e08a4ae3ab497591042fa">servio::status::INOPERABLE</a></div><div class="ttdeci">@ INOPERABLE</div></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}  <span class="comment">// namespace servio::base</span></div>
+<div class="ttc" id="anamespaceservio_1_1base_html"><div class="ttname"><a href="namespaceservio_1_1base.html">servio::base</a></div><div class="ttdef"><b>Definition:</b> base.hpp:9</div></div>
+<div class="ttc" id="anamespaceservio_1_1base_html_a5f9cb2507ae765f435474a3bb65bf84f"><div class="ttname"><a href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84f">servio::base::status</a></div><div class="ttdeci">status</div><div class="ttdef"><b>Definition:</b> status.hpp:8</div></div>
+<div class="ttc" id="anamespaceservio_1_1base_html_a5f9cb2507ae765f435474a3bb65bf84fa0021017005f0e5134b204c2e69d3d4ed"><div class="ttname"><a href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84fa0021017005f0e5134b204c2e69d3d4ed">servio::base::status::DEGRADED</a></div><div class="ttdeci">@ DEGRADED</div></div>
+<div class="ttc" id="anamespaceservio_1_1base_html_a5f9cb2507ae765f435474a3bb65bf84faaa2fa3fb4786079a4f8107ea393d609e"><div class="ttname"><a href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84faaa2fa3fb4786079a4f8107ea393d609e">servio::base::status::NOMINAL</a></div><div class="ttdeci">@ NOMINAL</div></div>
+<div class="ttc" id="anamespaceservio_1_1base_html_a5f9cb2507ae765f435474a3bb65bf84fac5666694e05e08a4ae3ab497591042fa"><div class="ttname"><a href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84fac5666694e05e08a4ae3ab497591042fa">servio::base::status::INOPERABLE</a></div><div class="ttdeci">@ INOPERABLE</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="status_8hpp.html">status.hpp</a></li>
-    <li class="footer">Generated on Sat Dec 30 2023 23:26:28 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0af1587c8378955de40f48b4bd1869f0.html">base</a></li><li class="navelem"><a class="el" href="status_8hpp.html">status.hpp</a></li>
+    <li class="footer">Generated on Sun Dec 31 2023 16:35:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

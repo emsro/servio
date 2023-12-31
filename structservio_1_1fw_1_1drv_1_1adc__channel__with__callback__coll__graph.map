@@ -1,5 +1,5 @@
 <map id="servio::fw::drv::adc_channel_with_callback&lt; ID &gt;" name="servio::fw::drv::adc_channel_with_callback&lt; ID &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="63,109,283,151"/>
+<area shape="rect" id="node1" title=" " alt="" coords="51,109,271,151"/>
 <area shape="rect" id="node2" href="$structservio_1_1fw_1_1drv_1_1adc__channel.html" title=" " alt="" coords="5,5,148,47"/>
-<area shape="rect" id="node3" href="$classservio_1_1value__cb__interface.html" title=" " alt="" coords="172,13,365,39"/>
+<area shape="rect" id="node3" href="$classservio_1_1base_1_1value__cb__interface.html" title=" " alt="" coords="172,5,317,47"/>
 </map>

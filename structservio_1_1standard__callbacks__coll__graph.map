@@ -1,7 +1,7 @@
 <map id="servio::standard_callbacks" name="servio::standard_callbacks">
-<area shape="rect" id="node1" title=" " alt="" coords="101,171,295,197"/>
-<area shape="rect" id="node2" href="$classservio_1_1position__callback.html" title=" " alt="" coords="5,81,188,108"/>
-<area shape="rect" id="node3" href="$classservio_1_1value__cb__interface.html" title=" " alt="" coords="16,5,177,32"/>
-<area shape="rect" id="node4" href="$classservio_1_1current__callback.html" title=" " alt="" coords="212,81,389,108"/>
-<area shape="rect" id="node5" href="$classservio_1_1adc__detailed__cb__interface.html" title=" " alt="" coords="223,5,378,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="115,171,309,197"/>
+<area shape="rect" id="node2" href="$classservio_1_1position__callback.html" title=" " alt="" coords="19,81,202,108"/>
+<area shape="rect" id="node3" href="$classservio_1_1base_1_1value__cb__interface.html" title=" " alt="" coords="5,5,205,32"/>
+<area shape="rect" id="node4" href="$classservio_1_1current__callback.html" title=" " alt="" coords="234,81,411,108"/>
+<area shape="rect" id="node5" href="$classservio_1_1base_1_1adc__detailed__cb__interface.html" title=" " alt="" coords="229,5,424,32"/>
 </map>

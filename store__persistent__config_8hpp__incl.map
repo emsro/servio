@@ -1,13 +1,13 @@
 <map id="src/fw/store_persistent_config.hpp" name="src/fw/store_persistent_config.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="185,5,355,47"/>
-<area shape="rect" id="node2" href="$storage_8hpp.html" title=" " alt="" coords="159,95,282,121"/>
-<area shape="rect" id="node8" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="416,177,559,203"/>
-<area shape="rect" id="node3" href="$map_8hpp.html" title=" " alt="" coords="88,177,191,203"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,259,183,300"/>
-<area shape="rect" id="node7" title=" " alt="" coords="215,169,392,211"/>
-<area shape="rect" id="node4" href="$base_8hpp.html" title=" " alt="" coords="245,266,327,293"/>
-<area shape="rect" id="node5" title=" " alt="" coords="291,348,358,375"/>
-<area shape="rect" id="node9" href="$status_8hpp.html" title=" " alt="" coords="402,266,493,293"/>
-<area shape="rect" id="node10" title=" " alt="" coords="517,266,655,293"/>
-<area shape="rect" id="node11" title=" " alt="" coords="679,266,733,293"/>
+<area shape="rect" id="node1" title=" " alt="" coords="331,5,501,47"/>
+<area shape="rect" id="node2" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="177,177,356,203"/>
+<area shape="rect" id="node8" href="$storage_8hpp.html" title=" " alt="" coords="437,95,560,121"/>
+<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="382,266,463,293"/>
+<area shape="rect" id="node4" title=" " alt="" coords="172,348,239,375"/>
+<area shape="rect" id="node5" href="$status_8hpp.html" title=" " alt="" coords="27,266,117,293"/>
+<area shape="rect" id="node6" title=" " alt="" coords="141,266,280,293"/>
+<area shape="rect" id="node7" title=" " alt="" coords="304,266,357,293"/>
+<area shape="rect" id="node9" href="$map_8hpp.html" title=" " alt="" coords="403,177,506,203"/>
+<area shape="rect" id="node10" title=" " alt="" coords="487,259,665,300"/>
+<area shape="rect" id="node11" title=" " alt="" coords="582,169,759,211"/>
 </map>

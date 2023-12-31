@@ -12,6 +12,5 @@ var namespaceservio_1_1mon =
       [ "BOOTING", "namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52ad32cbe23a48d1576416d9eb314876c6d", null ],
       [ "INITIALIZED", "namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52adee5f03c2c4e73657824e028494b18c0", null ],
       [ "INCOMING_MESSAGE", "namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a1e4bd5080731650a78fd41dc75d98582", null ]
-    ] ],
-    [ "sin_approx", "namespaceservio_1_1mon.html#a05b0570c91ff6eb55da2986405b24659", null ]
+    ] ]
 ];

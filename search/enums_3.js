@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['status_1428',['status',['../namespaceservio.html#aa94b985e36e141fd17f3a16cd953d788',1,'servio']]]
+  ['status_1424',['status',['../namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84f',1,'servio::base']]]
 ];

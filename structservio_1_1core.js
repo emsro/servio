@@ -1,7 +1,7 @@
 var structservio_1_1core =
 [
-    [ "core", "structservio_1_1core.html#ad61d428b7a63fe02dbe77a9488a7488b", null ],
-    [ "tick", "structservio_1_1core.html#a8a01fd29312353a01e25b4f24862e878", null ],
+    [ "core", "structservio_1_1core.html#ac42541f1f3f0c2cac903936f176f02c9", null ],
+    [ "tick", "structservio_1_1core.html#a1e8482a185dadf9a2d4c33b6511bd7ca", null ],
     [ "conv", "structservio_1_1core.html#a518dc6a3d999eace8a5e78967c44ae42", null ],
     [ "ctl", "structservio_1_1core.html#ab674766def01c2c6e553de01d2409bf2", null ],
     [ "ind", "structservio_1_1core.html#aa076f4a38fe9ad12924686055ab36176", null ],

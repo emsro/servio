@@ -87,8 +87,8 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div class="title">clock.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="clock_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">base.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a>&quot;</span></div>
+<a href="clock_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">base/base.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drv__interfaces_8hpp.html">base/drv_interfaces.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="platform_8hpp.html">platform.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.h&gt;</span></div>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1fw_1_1drv.html">servio::fw::drv</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classservio_1_1fw_1_1drv_1_1clock.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classservio_1_1fw_1_1drv_1_1clock.html">clock</a> : <span class="keyword">public</span> <a class="code" href="classservio_1_1clk__interface.html">clk_interface</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classservio_1_1fw_1_1drv_1_1clock.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classservio_1_1fw_1_1drv_1_1clock.html">clock</a> : <span class="keyword">public</span> <a class="code" href="classservio_1_1base_1_1clk__interface.html">base::clk_interface</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classservio_1_1fw_1_1drv_1_1clock.html#a8791d0bc78c94a4260eceba13cb79632">   15</a></span>&#160;        <a class="code" href="classservio_1_1fw_1_1drv_1_1clock.html#a8791d0bc78c94a4260eceba13cb79632">clock</a>() = <span class="keywordflow">default</span>;</div>
@@ -115,9 +115,9 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classservio_1_1fw_1_1drv_1_1clock.html#a27446966f660919fc89c7d781760c523">   29</a></span>&#160;        <a class="code" href="namespaceservio.html#a3326422369b08bcfa28412944542a889">microseconds</a> <a class="code" href="classservio_1_1fw_1_1drv_1_1clock.html#a27446966f660919fc89c7d781760c523">get_us</a>()<span class="keyword"> override</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classservio_1_1fw_1_1drv_1_1clock.html#ac048def754f50cc9c68afbc207faf28d">   29</a></span>&#160;        <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> <a class="code" href="classservio_1_1fw_1_1drv_1_1clock.html#ac048def754f50cc9c68afbc207faf28d">get_us</a>()<span class="keyword"> override</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespaceservio.html#a3326422369b08bcfa28412944542a889">microseconds</a>{ __HAL_TIM_GET_COUNTER( tim_ ) };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a>{ __HAL_TIM_GET_COUNTER( tim_ ) };</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">private</span>:</div>
@@ -126,18 +126,18 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}  <span class="comment">// namespace servio::fw::drv</span></div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div></div>
-<div class="ttc" id="aclassservio_1_1clk__interface_html"><div class="ttname"><a href="classservio_1_1clk__interface.html">servio::clk_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:69</div></div>
+<div class="ttc" id="aclassservio_1_1base_1_1clk__interface_html"><div class="ttname"><a href="classservio_1_1base_1_1clk__interface.html">servio::base::clk_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:69</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1clock_html"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1clock.html">servio::fw::drv::clock</a></div><div class="ttdef"><b>Definition:</b> clock.hpp:13</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1clock_html_a05b26b20438c1d2702a8accbdb2ee8de"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1clock.html#a05b26b20438c1d2702a8accbdb2ee8de">servio::fw::drv::clock::clock</a></div><div class="ttdeci">clock(const clock &amp;)=delete</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1clock_html_a2006f72c9aaae36dcc8eafc0451a25c1"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1clock.html#a2006f72c9aaae36dcc8eafc0451a25c1">servio::fw::drv::clock::operator=</a></div><div class="ttdeci">clock &amp; operator=(clock &amp;&amp;)=delete</div></div>
-<div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1clock_html_a27446966f660919fc89c7d781760c523"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1clock.html#a27446966f660919fc89c7d781760c523">servio::fw::drv::clock::get_us</a></div><div class="ttdeci">microseconds get_us() override</div><div class="ttdef"><b>Definition:</b> clock.hpp:29</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1clock_html_a8791d0bc78c94a4260eceba13cb79632"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1clock.html#a8791d0bc78c94a4260eceba13cb79632">servio::fw::drv::clock::clock</a></div><div class="ttdeci">clock()=default</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1clock_html_aaa8f1ab396e9d8b915cd48f034a0e00f"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1clock.html#aaa8f1ab396e9d8b915cd48f034a0e00f">servio::fw::drv::clock::setup</a></div><div class="ttdeci">clock * setup(TIM_HandleTypeDef *tim)</div><div class="ttdef"><b>Definition:</b> clock.hpp:22</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1clock_html_abd89d9bfcd750561a977fd5ae716bcd6"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1clock.html#abd89d9bfcd750561a977fd5ae716bcd6">servio::fw::drv::clock::operator=</a></div><div class="ttdeci">clock &amp; operator=(const clock &amp;)=delete</div></div>
+<div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1clock_html_ac048def754f50cc9c68afbc207faf28d"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1clock.html#ac048def754f50cc9c68afbc207faf28d">servio::fw::drv::clock::get_us</a></div><div class="ttdeci">base::microseconds get_us() override</div><div class="ttdef"><b>Definition:</b> clock.hpp:29</div></div>
 <div class="ttc" id="aclassservio_1_1fw_1_1drv_1_1clock_html_aff75c28604440f14e1f607eb506acf24"><div class="ttname"><a href="classservio_1_1fw_1_1drv_1_1clock.html#aff75c28604440f14e1f607eb506acf24">servio::fw::drv::clock::clock</a></div><div class="ttdeci">clock(clock &amp;&amp;)=delete</div></div>
 <div class="ttc" id="adrv__interfaces_8hpp_html"><div class="ttname"><a href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a></div></div>
+<div class="ttc" id="anamespaceservio_1_1base_html_af4c5a013d7d4941800fa600c4abe43ed"><div class="ttname"><a href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">servio::base::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:13</div></div>
 <div class="ttc" id="anamespaceservio_1_1fw_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1fw_1_1drv.html">servio::fw::drv</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:7</div></div>
-<div class="ttc" id="anamespaceservio_html_a3326422369b08bcfa28412944542a889"><div class="ttname"><a href="namespaceservio.html#a3326422369b08bcfa28412944542a889">servio::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:14</div></div>
 <div class="ttc" id="aplatform_8hpp_html"><div class="ttname"><a href="platform_8hpp.html">platform.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="dir_6ea741a906e6e17d7bfd6b9b5099e89c.html">drv</a></li><li class="navelem"><a class="el" href="clock_8hpp.html">clock.hpp</a></li>
-    <li class="footer">Generated on Sat Dec 30 2023 23:26:28 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Dec 31 2023 16:35:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

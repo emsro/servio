@@ -1,0 +1,10 @@
+<map id="servio::base::driver_interface" name="servio::base::driver_interface">
+<area shape="rect" id="node1" title=" " alt="" coords="5,169,152,211"/>
+<area shape="rect" id="node2" href="$classservio_1_1base_1_1current__interface.html" title=" " alt="" coords="221,5,375,47"/>
+<area shape="rect" id="node3" href="$classservio_1_1base_1_1period__interface.html" title=" " alt="" coords="223,71,373,112"/>
+<area shape="rect" id="node5" href="$classservio_1_1base_1_1position__interface.html" title=" " alt="" coords="217,136,379,177"/>
+<area shape="rect" id="node6" href="$classservio_1_1base_1_1pwm__motor__interface.html" title=" " alt="" coords="205,201,391,243"/>
+<area shape="rect" id="node7" href="$classservio_1_1base_1_1temperature__interface.html" title=" " alt="" coords="203,267,393,308"/>
+<area shape="rect" id="node8" href="$classservio_1_1base_1_1vcc__interface.html" title=" " alt="" coords="200,333,396,359"/>
+<area shape="rect" id="node4" href="$classservio_1_1fw_1_1drv_1_1hbridge.html" title=" " alt="" coords="444,143,613,170"/>
+</map>
