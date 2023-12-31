@@ -147,17 +147,17 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="structservio_1_1core.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="red" points="203,-64.63 203,-83.63 277,-83.63 277,-64.63 203,-64.63"/>
-<text text-anchor="middle" x="240" y="-71.63" font-family="Helvetica,sans-Serif" font-size="10.00">servio::core</text>
+<g id="a_node7"><a xlink:href="structservio_1_1core_1_1core.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="red" points="189.5,-64.63 189.5,-83.63 290.5,-83.63 290.5,-64.63 189.5,-64.63"/>
+<text text-anchor="middle" x="240" y="-71.63" font-family="Helvetica,sans-Serif" font-size="10.00">servio::core::core</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge8" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M287.22,-74.13C311.77,-74.13 342.27,-74.13 368.81,-74.13"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="287.09,-70.63 277.09,-74.13 287.09,-77.63 287.09,-70.63"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M300.85,-74.13C322.52,-74.13 347.03,-74.13 368.85,-74.13"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="300.79,-70.63 290.79,-74.13 300.79,-77.63 300.79,-70.63"/>
 <text text-anchor="middle" x="326.5" y="-77.13" font-family="Helvetica,sans-Serif" font-size="10.00"> c</text>
 </g>
 <!-- Node9 -->
@@ -179,7 +179,7 @@
 <!-- Node9&#45;&gt;Node7 -->
 <g id="edge9" class="edge">
 <title>Node9&#45;&gt;Node7</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M132.6,-86.76C156.68,-83.9 182.6,-80.82 202.83,-78.42"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M132.55,-86.76C151.59,-84.5 171.79,-82.11 189.42,-80.01"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="131.94,-83.31 122.42,-87.96 132.76,-90.26 131.94,-83.31"/>
 <text text-anchor="middle" x="153.5" y="-88.13" font-family="Helvetica,sans-Serif" font-size="10.00"> conv</text>
 </g>
@@ -225,7 +225,7 @@
 <!-- Node16&#45;&gt;Node7 -->
 <g id="edge11" class="edge">
 <title>Node16&#45;&gt;Node7</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M123.17,-53.85C149.72,-58.5 179.9,-63.78 202.8,-67.79"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M123.26,-53.86C144.89,-57.65 168.91,-61.86 189.44,-65.45"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="123.65,-50.38 113.2,-52.1 122.44,-57.27 123.65,-50.38"/>
 <text text-anchor="middle" x="153.5" y="-64.13" font-family="Helvetica,sans-Serif" font-size="10.00"> ctl</text>
 </g>

@@ -23,5 +23,7 @@ var searchData=
   ['dma1_5fchannel5_5firqhandler_195',['DMA1_Channel5_IRQHandler',['../prototype2_2board_8cpp.html#a8e3a6d7ba4b5da3ec8decb912bd80943',1,'board.cpp']]],
   ['dma_5fcfg_196',['dma_cfg',['../namespaceservio_1_1brd.html#structservio_1_1brd_1_1dma__cfg',1,'servio::brd::dma_cfg'],['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg',1,'servio::plt::dma_cfg']]],
   ['driver_5finterface_197',['driver_interface',['../classservio_1_1base_1_1driver__interface.html',1,'servio::base']]],
-  ['drv_5finterfaces_2ehpp_198',['drv_interfaces.hpp',['../drv__interfaces_8hpp.html',1,'']]]
+  ['drivers_198',['drivers',['../structservio_1_1core_1_1drivers.html',1,'servio::core']]],
+  ['drivers_2ehpp_199',['drivers.hpp',['../drivers_8hpp.html',1,'']]],
+  ['drv_5finterfaces_2ehpp_200',['drv_interfaces.hpp',['../drv__interfaces_8hpp.html',1,'']]]
 ];

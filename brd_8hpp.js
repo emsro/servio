@@ -4,6 +4,6 @@ var brd_8hpp =
     [ "get_default_config", "brd_8hpp.html#a2668116163a78a9f1c4b9993fce25530", null ],
     [ "get_persistent_pages", "brd_8hpp.html#a8280908fc72c736242061b0c1700738b", null ],
     [ "setup_board", "brd_8hpp.html#acf0eac3166e968f5cefe71de1f5d5ca8", null ],
-    [ "setup_core_drivers", "brd_8hpp.html#a1027c0b50787d58e22d5de797d813067", null ],
+    [ "setup_core_drivers", "brd_8hpp.html#a58f703e939140ddd318ba1e8202e6153", null ],
     [ "setup_debug_comms", "brd_8hpp.html#aaad7b603159b5b262bb9cc0733d85ddb", null ]
 ];

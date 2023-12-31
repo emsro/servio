@@ -9,7 +9,7 @@ var hierarchy =
     [ "servio::fw::drv::adc_channel< TEMP_CHANNEL >", "structservio_1_1fw_1_1drv_1_1adc__channel.html", null ],
     [ "servio::fw::drv::adc_channel< VCC_CHANNEL >", "structservio_1_1fw_1_1drv_1_1adc__channel.html", null ],
     [ "servio::base::adc_detailed_cb_interface", "classservio_1_1base_1_1adc__detailed__cb__interface.html", [
-      [ "servio::current_callback", "classservio_1_1current__callback.html", null ],
+      [ "servio::core::current_callback", "classservio_1_1core_1_1current__callback.html", null ],
       [ "servio::fw::drv::adc_detailed_cb< Callable >", "structservio_1_1fw_1_1drv_1_1adc__detailed__cb.html", null ],
       [ "servio::fw::drv::empty_adc_detailed_cb", "structservio_1_1fw_1_1drv_1_1empty__adc__detailed__cb.html", null ]
     ] ],
@@ -29,8 +29,7 @@ var hierarchy =
     [ "servio::ctl::config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", null ],
     [ "servio::ctl::control", "classservio_1_1ctl_1_1control.html", null ],
     [ "servio::cnv::converter", "structservio_1_1cnv_1_1converter.html", null ],
-    [ "servio::core", "structservio_1_1core.html", null ],
-    [ "servio::core_drivers", "structservio_1_1core__drivers.html", null ],
+    [ "servio::core::core", "structservio_1_1core_1_1core.html", null ],
     [ "servio::cnv::current_converter", "classservio_1_1cnv_1_1current__converter.html", null ],
     [ "servio::fw::drv::detailed_adc_channel< ID, N >", "structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html", null ],
     [ "servio::fw::drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >", "structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html", null ],
@@ -50,6 +49,7 @@ var hierarchy =
       [ "servio::base::temperature_interface", "classservio_1_1base_1_1temperature__interface.html", null ],
       [ "servio::base::vcc_interface", "classservio_1_1base_1_1vcc__interface.html", null ]
     ] ],
+    [ "servio::core::drivers", "structservio_1_1core_1_1drivers.html", null ],
     [ "std::exception", null, [
       [ "servio::scmdio::servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", [
         [ "servio::scmdio::error_exception", "structservio_1_1scmdio_1_1error__exception.html", null ],
@@ -87,7 +87,7 @@ var hierarchy =
     [ "servio::mtr::posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", null ],
     [ "servio::brd::setpoint", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1setpoint", null ],
     [ "servio::sim::simple_motor", "structservio_1_1sim_1_1simple__motor.html", null ],
-    [ "servio::standard_callbacks", "structservio_1_1standard__callbacks.html", null ],
+    [ "servio::core::standard_callbacks", "structservio_1_1core_1_1standard__callbacks.html", null ],
     [ "servio::klmn::state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", null ],
     [ "servio::mtr::static_detector", "structservio_1_1mtr_1_1static__detector.html", null ],
     [ "servio::cnv::temperature_converter", "classservio_1_1cnv_1_1temperature__converter.html", null ],
@@ -97,9 +97,9 @@ var hierarchy =
     [ "servio::brd::uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", null ],
     [ "servio::plt::uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", null ],
     [ "servio::base::value_cb_interface", "classservio_1_1base_1_1value__cb__interface.html", [
+      [ "servio::core::position_callback", "classservio_1_1core_1_1position__callback.html", null ],
       [ "servio::fw::drv::empty_value_cb", "structservio_1_1fw_1_1drv_1_1empty__value__cb.html", null ],
-      [ "servio::fw::drv::value_cb< Callable >", "structservio_1_1fw_1_1drv_1_1value__cb.html", null ],
-      [ "servio::position_callback", "classservio_1_1position__callback.html", null ]
+      [ "servio::fw::drv::value_cb< Callable >", "structservio_1_1fw_1_1drv_1_1value__cb.html", null ]
     ] ],
     [ "servio::cnv::voltage_converter", "classservio_1_1cnv_1_1voltage__converter.html", null ]
 ];

@@ -1,6 +1,6 @@
-<map id="src/core.hpp" name="src/core.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="339,5,441,32"/>
-<area shape="rect" id="node2" href="$callbacks_8hpp.html" title=" " alt="" coords="205,80,316,107"/>
+<map id="src/core/core.hpp" name="src/core/core.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="323,5,457,32"/>
+<area shape="rect" id="node2" href="$core_2callbacks_8hpp.html" title=" " alt="" coords="205,80,316,107"/>
 <area shape="rect" id="node7" href="$control_8hpp.html" title=" " alt="" coords="338,155,453,181"/>
 <area shape="rect" id="node8" href="$metrics_8hpp.html" title=" " alt="" coords="5,155,132,181"/>
 <area shape="rect" id="node9" href="$indication_8hpp.html" title=" " alt="" coords="578,155,725,181"/>

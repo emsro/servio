@@ -1,7 +1,7 @@
 <map id="boards/brd.hpp" name="boards/brd.hpp">
 <area shape="rect" id="node1" title=" " alt="" coords="504,5,623,32"/>
 <area shape="rect" id="node2" href="$map_8hpp.html" title=" " alt="" coords="296,80,399,107"/>
-<area shape="rect" id="node8" href="$core__drivers_8hpp.html" title=" " alt="" coords="821,80,951,107"/>
+<area shape="rect" id="node8" href="$drivers_8hpp.html" title=" " alt="" coords="823,80,949,107"/>
 <area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="383,244,499,271"/>
 <area shape="rect" id="node4" href="$key_8hpp.html" title=" " alt="" coords="33,162,128,189"/>
 <area shape="rect" id="node5" title=" " alt="" coords="152,155,329,196"/>

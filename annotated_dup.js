@@ -40,6 +40,13 @@ var annotated_dup =
         [ "temperature_converter", "classservio_1_1cnv_1_1temperature__converter.html", "classservio_1_1cnv_1_1temperature__converter" ],
         [ "voltage_converter", "classservio_1_1cnv_1_1voltage__converter.html", "classservio_1_1cnv_1_1voltage__converter" ]
       ] ],
+      [ "core", "namespaceservio_1_1core.html", [
+        [ "current_callback", "classservio_1_1core_1_1current__callback.html", "classservio_1_1core_1_1current__callback" ],
+        [ "position_callback", "classservio_1_1core_1_1position__callback.html", "classservio_1_1core_1_1position__callback" ],
+        [ "core", "structservio_1_1core_1_1core.html", "structservio_1_1core_1_1core" ],
+        [ "standard_callbacks", "structservio_1_1core_1_1standard__callbacks.html", "structservio_1_1core_1_1standard__callbacks" ],
+        [ "drivers", "structservio_1_1core_1_1drivers.html", "structservio_1_1core_1_1drivers" ]
+      ] ],
       [ "ctl", "namespaceservio_1_1ctl.html", [
         [ "tests", "namespaceservio_1_1ctl_1_1tests.html", [
           [ "control_fixture", "classservio_1_1ctl_1_1tests_1_1control__fixture.html", "classservio_1_1ctl_1_1tests_1_1control__fixture" ]
@@ -105,11 +112,6 @@ var annotated_dup =
       ] ],
       [ "sim", "namespaceservio_1_1sim.html", [
         [ "simple_motor", "structservio_1_1sim_1_1simple__motor.html", "structservio_1_1sim_1_1simple__motor" ]
-      ] ],
-      [ "current_callback", "classservio_1_1current__callback.html", "classservio_1_1current__callback" ],
-      [ "position_callback", "classservio_1_1position__callback.html", "classservio_1_1position__callback" ],
-      [ "core", "structservio_1_1core.html", "structservio_1_1core" ],
-      [ "standard_callbacks", "structservio_1_1standard__callbacks.html", "structservio_1_1standard__callbacks" ],
-      [ "core_drivers", "structservio_1_1core__drivers.html", "structservio_1_1core__drivers" ]
+      ] ]
     ] ]
 ];
