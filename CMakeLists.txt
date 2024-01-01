@@ -57,7 +57,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
   add_subdirectory(src/plt/stm32g4)
-  add_subdirectory(boards/prototype2)
+  add_subdirectory(src/brd/prototype2)
   add_subdirectory(src)
 
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
@@ -77,7 +77,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   find_package(HAL COMPONENTS STM32H5 REQUIRED GLOBAL)
 
   add_subdirectory(src/plt/stm32h5)
-  add_subdirectory(boards/proto3)
+  add_subdirectory(src/brd/proto3)
   add_subdirectory(src)
 
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
