@@ -62,23 +62,10 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
 
-  # THe fact that dependencies to sublibs are only here is unpleasant
-  add_library(prototype2 STATIC)
-  target_link_libraries(
-    prototype2
-    PUBLIC prototype2_board
-           fwlib
-           monlib
-           corelib
-           cfglib
-           mtrlib
-           ctllib)
-  target_compile_options(prototype2 PRIVATE -Os)
-
   servio_add_board_executable(
     TARGET prototype2_fw
     SOURCES src/fw/main.cpp src/fw/it.cpp
-    LIBS prototype2
+    LIBS prototype2_board serviolib
     LINKER_SCRIPT
       "${CMAKE_CURRENT_SOURCE_DIR}/src/plt/stm32g4/STM32G431KBTx_FLASH.ld")
 
@@ -95,23 +82,10 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
 
-  add_library(proto3 STATIC)
-  target_link_libraries(
-    proto3
-    PUBLIC proto3_board
-           fwlib
-           monlib
-           corelib
-           cfglib
-           mtrlib
-           ctllib
-           STM32::Nano)
-  target_compile_options(proto3 PRIVATE -Os)
-
   servio_add_board_executable(
     TARGET proto3_fw
     SOURCES src/fw/main.cpp src/fw/it.cpp
-    LIBS proto3
+    LIBS proto3_board serviolib
     LINKER_SCRIPT
       "${CMAKE_CURRENT_SOURCE_DIR}/src/plt/stm32h5/STM32H503xx_FLASH.ld")
 
