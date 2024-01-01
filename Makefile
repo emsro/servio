@@ -6,25 +6,29 @@ FIND_FILTER = -not \( -path ./build -prune \) -not \( -path ./stm32-cmake -prune
 
 BUILD_ARGS = -GNinja
 
+configure:
+	$(MAKE) configure_host
+	$(MAKE) configure_g4
+	$(MAKE) configure_h5
+
+configure_host:
+	cmake --preset "host_debug_cfg"
+configure_g4:
+	cmake --preset "stm32g4_debug_cfg"
+configure_h5:
+	cmake --preset "stm32h5_debug_cfg"
+
 build:
-	make build_host
-	make build_g4
-	make build_h5
+	$(MAKE) build_host
+	$(MAKE) build_g4
+	$(MAKE) build_h5
 
 build_host:
-	mkdir -p build/host
-	cmake -Bbuild/host -DSERVIO_PLATFORM=host ${BUILD_ARGS}
-	cmake --build build/host -j 4
-
+	cmake --build --preset "host_debug_build"
 build_g4:
-	mkdir -p build/g4
-	cmake -Bbuild/g4 -DSERVIO_PLATFORM=stm32g4 -DCMAKE_TOOLCHAIN_FILE=stm32-cmake/cmake/stm32_gcc.cmake ${BUILD_ARGS}
-	cmake --build build/g4 -j 4
-
+	cmake --build --preset "stm32g4_debug_build"
 build_h5:
-	mkdir -p build/h5
-	cmake -Bbuild/h5 -DSERVIO_PLATFORM=stm32h5 -DCMAKE_TOOLCHAIN_FILE=stm32-cmake/cmake/stm32_gcc.cmake ${BUILD_ARGS}
-	cmake --build build/h5 -j 4
+	cmake --build --preset "stm32h5_debug_build"
 
 test: build_host
 	cd build/host && ctest -T Test --output-on-failure
