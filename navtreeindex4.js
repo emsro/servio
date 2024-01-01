@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"namespaceservio_1_1plt.html#a1bce43d05d8019e634fc1046cac7c99a":[13,0,1,11,16],
 "namespaceservio_1_1plt.html#a26cab47c000cd09cc667f5d1862ac651":[15,0,2,10,2,6,5,0],
 "namespaceservio_1_1plt.html#a2fefd453402afb93ffd0696664e4fe05":[15,0,2,10,2,6,2,6],
 "namespaceservio_1_1plt.html#a4a2f721279aeff0baecd4f733fd18e37":[15,0,2,10,2,6,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "src_2plt_2stm32h5_2setup_8hpp.html#ab59156a4d6fbd15217a26dc5ebed8b64":[15,0,2,10,2,6,9],
 "src_2plt_2stm32h5_2setup_8hpp.html#ac196502acb654675c7db127deb9c4744":[15,0,2,10,2,6,14],
 "src_2plt_2stm32h5_2setup_8hpp.html#ad6b2eafaa6f1fbbaa3c70276bf8d1984":[15,0,2,10,2,6,8],
-"src_2plt_2stm32h5_2setup_8hpp.html#afa3ffb0666945381bc9735b671490daf":[15,0,2,10,2,6,11],
-"src_2plt_2stm32h5_2setup_8hpp_source.html":[15,0,2,10,2,6]
+"src_2plt_2stm32h5_2setup_8hpp.html#afa3ffb0666945381bc9735b671490daf":[15,0,2,10,2,6,11]
 };
