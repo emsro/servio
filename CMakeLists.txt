@@ -24,17 +24,11 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   set(CMAKE_CXX_FLAGS
-      "${CMAKE_CXX_FLAGS} -fsingle-precision-constant  -Fno-rtti -fno-exceptions -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard"
+      "${CMAKE_CXX_FLAGS} -fsingle-precision-constant  -Fno-rtti -fno-exceptions -gdwarf-2"
   )
-  set(CMAKE_C_FLAGS
-      "${CMAKE_C_FLAGS} -fsingle-precision-constant -gdwarf-2 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16  -mfloat-abi=hard"
-  )
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsingle-precision-constant -gdwarf-2")
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
-  # TODO: these should not be necessary, MCU-related info should be provided by
-  # stm32-cmake targets like HAL::STM32::H5
-  set(SERVIO_SHARED_FLAGS
-      "-fsingle-precision-constant -gdwarf-2 -mcpu=cortex-m33 -mfpu=fpv4-sp-d16  -mfloat-abi=hard"
-  )
+  set(SERVIO_SHARED_FLAGS "-fsingle-precision-constant -gdwarf-2")
   set(CMAKE_CXX_FLAGS
       "${CMAKE_CXX_FLAGS} ${SERVIO_SHARED_FLAGS} -Fno-rtti -fno-exceptions -gdwarf-2"
   )
@@ -52,6 +46,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   include(CTest)
   enable_testing()
 
+  add_subdirectory(src/plt/host)
   add_subdirectory(src)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
@@ -63,8 +58,9 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
   add_subdirectory(src/plt/stm32g4)
   add_subdirectory(boards/prototype2)
-
   add_subdirectory(src)
+
+  target_link_libraries(cmake_git_version_tracking PRIVATE platform)
 
   # THe fact that dependencies to sublibs are only here is unpleasant
   add_library(prototype2 STATIC)
@@ -76,8 +72,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
            corelib
            cfglib
            mtrlib
-           ctllib
-           STM32::Nano)
+           ctllib)
   target_compile_options(prototype2 PRIVATE -Os)
 
   servio_add_board_executable(
@@ -97,6 +92,8 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   add_subdirectory(src/plt/stm32h5)
   add_subdirectory(boards/proto3)
   add_subdirectory(src)
+
+  target_link_libraries(cmake_git_version_tracking PRIVATE platform)
 
   add_library(proto3 STATIC)
   target_link_libraries(

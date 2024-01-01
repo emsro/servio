@@ -9,6 +9,7 @@ BUILD_ARGS = -GNinja
 build:
 	make build_host
 	make build_g4
+	make build_h5
 
 build_host:
 	mkdir -p build/host

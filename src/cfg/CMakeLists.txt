@@ -2,7 +2,7 @@ servio_add_library(
   TARGET cfglib
   INCLUDE ../
   SOURCES storage.cpp dispatcher.cpp
-  LIBS emlabcpp
+  LIBS emlabcpp platform
   OPTS -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
