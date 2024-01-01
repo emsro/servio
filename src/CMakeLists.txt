@@ -14,6 +14,7 @@ target_link_libraries(serviolib INTERFACE monlib corelib cfglib mtrlib ctllib)
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
   add_subdirectory(scmdio)
+  target_link_libraries(serviolib INTERFACE scmdiolib)
   add_subdirectory(bb)
 
 else()
