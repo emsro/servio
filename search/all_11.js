@@ -37,8 +37,8 @@ var searchData=
   ['globals_2ecpp_265',['globals.cpp',['../globals_8cpp.html',1,'']]],
   ['globals_2ehpp_266',['globals.hpp',['../globals_8hpp.html',1,'']]],
   ['google_267',['google',['../namespacegoogle.html',1,'']]],
-  ['gpio_2ecpp_268',['gpio.cpp',['../src_2plt_2stm32h5_2gpio_8cpp.html',1,'(Global Namespace)'],['../boards_2prototype2_2gpio_8cpp.html',1,'(Global Namespace)']]],
-  ['green_269',['green',['../namespaceservio_1_1plt.html#a26cab47c000cd09cc667f5d1862ac651',1,'servio::plt::leds_timer_cfg::green()'],['../namespaceservio_1_1base.html#a2482ae2d4349b7d914b598e04ef6cff9',1,'servio::base::leds_vals::green()'],['../namespaceservio_1_1brd.html#a32e84da81b2b0b6c9c007f04c7ba628e',1,'servio::brd::leds_timer_cfg::green()']]],
+  ['gpio_2ecpp_268',['gpio.cpp',['../plt_2stm32h5_2gpio_8cpp.html',1,'(Global Namespace)'],['../brd_2prototype2_2gpio_8cpp.html',1,'(Global Namespace)']]],
+  ['green_269',['green',['../namespaceservio_1_1plt.html#a26cab47c000cd09cc667f5d1862ac651',1,'servio::plt::leds_timer_cfg::green()'],['../namespaceservio_1_1brd.html#a32e84da81b2b0b6c9c007f04c7ba628e',1,'servio::brd::leds_timer_cfg::green()'],['../namespaceservio_1_1base.html#a2482ae2d4349b7d914b598e04ef6cff9',1,'servio::base::leds_vals::green()']]],
   ['group_5fid_270',['GROUP_ID',['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab0267128c648c65666ba26bdeb685577',1,'servio::cfg']]],
   ['protobuf_271',['protobuf',['../namespacegoogle_1_1protobuf.html',1,'google']]]
 ];

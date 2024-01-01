@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['temperature_2ehpp_1007',['temperature.hpp',['../temperature_8hpp.html',1,'']]],
-  ['timers_2ecpp_1008',['timers.cpp',['../boards_2prototype2_2timers_8cpp.html',1,'(Global Namespace)'],['../src_2plt_2stm32h5_2timers_8cpp.html',1,'(Global Namespace)']]]
+  ['temperature_2ehpp_1006',['temperature.hpp',['../temperature_8hpp.html',1,'']]],
+  ['timers_2ecpp_1007',['timers.cpp',['../brd_2prototype2_2timers_8cpp.html',1,'(Global Namespace)'],['../plt_2stm32h5_2timers_8cpp.html',1,'(Global Namespace)']]]
 ];

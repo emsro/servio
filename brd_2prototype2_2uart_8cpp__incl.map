@@ -1,0 +1,12 @@
+<map id="src/brd/prototype2/uart.cpp" name="src/brd/prototype2/uart.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="279,5,420,47"/>
+<area shape="rect" id="node2" href="$util_8hpp.html" title=" " alt="" coords="103,95,193,121"/>
+<area shape="rect" id="node5" href="$brd_2prototype2_2setup_8hpp.html" title=" " alt="" coords="306,95,393,121"/>
+<area shape="rect" id="node10" title=" " alt="" coords="417,95,482,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,91,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="115,169,181,196"/>
+<area shape="rect" id="node6" href="$board_8hpp.html" title=" " alt="" coords="205,169,312,196"/>
+<area shape="rect" id="node7" href="$defs_8hpp.html" title=" " alt="" coords="420,244,543,271"/>
+<area shape="rect" id="node8" href="$hbridge_8hpp.html" title=" " alt="" coords="387,169,530,196"/>
+<area shape="rect" id="node9" href="$leds_8hpp.html" title=" " alt="" coords="554,169,675,196"/>
+</map>

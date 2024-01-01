@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['adc_2ecpp_31',['adc.cpp',['../src_2plt_2stm32h5_2adc_8cpp.html',1,'(Global Namespace)'],['../boards_2prototype2_2adc_8cpp.html',1,'(Global Namespace)']]],
+  ['adc_2ecpp_31',['adc.cpp',['../plt_2stm32h5_2adc_8cpp.html',1,'(Global Namespace)'],['../brd_2prototype2_2adc_8cpp.html',1,'(Global Namespace)']]],
   ['adc1_5f2_5firqhandler_32',['ADC1_2_IRQHandler',['../prototype2_2board_8cpp.html#aff4af6b741ab43c7784e08e0e2e50586',1,'board.cpp']]],
   ['adc1_5firqhandler_33',['ADC1_IRQHandler',['../proto3_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b',1,'board.cpp']]],
   ['adc_5fcfg_34',['adc_cfg',['../namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__cfg',1,'servio::brd::adc_cfg'],['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg',1,'servio::plt::adc_cfg']]],
