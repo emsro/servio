@@ -22,6 +22,8 @@ jobs:
 
             - run: git config --global --add safe.directory /__w/servio/servio
 
+            - run: make configure
+
             - run: make build
 
             - run: make test
