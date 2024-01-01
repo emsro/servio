@@ -10,6 +10,7 @@ add_subdirectory(cfg)
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
   add_subdirectory(scmdio)
+  add_subdirectory(bb)
 
 else()
 

@@ -16,7 +16,7 @@ bool operator==( const Message& lh, const Message& rh )
 }
 }  // namespace google::protobuf
 
-namespace servio::tests::bb
+namespace servio::bb
 {
 
 boost::asio::awaitable< void >
@@ -165,7 +165,7 @@ boost::asio::awaitable< void > test_config( boost::asio::io_context&, scmdio::co
         }
 }
 
-}  // namespace servio::tests::bb
+}  // namespace servio::bb
 
 int main( int argc, char** argv )
 {
@@ -192,12 +192,10 @@ int main( int argc, char** argv )
                 em::DEBUG_LOGGER.set_option( em::set_stdout( true ) );
         }
 
-        servio::tests::bb::register_test(
-            "basic", "properties_querying", cli, servio::tests::bb::test_properties_querying, 1s );
-        servio::tests::bb::register_test(
-            "basic", "modes", cli, servio::tests::bb::test_modes, 1s );
-        servio::tests::bb::register_test(
-            "basic", "config", cli, servio::tests::bb::test_config, 10s );
+        servio::bb::register_test(
+            "basic", "properties_querying", cli, servio::bb::test_properties_querying, 1s );
+        servio::bb::register_test( "basic", "modes", cli, servio::bb::test_modes, 1s );
+        servio::bb::register_test( "basic", "config", cli, servio::bb::test_config, 10s );
 
         return RUN_ALL_TESTS();
 }

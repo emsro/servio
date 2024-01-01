@@ -5,7 +5,7 @@
 
 #include <gtest/gtest.h>
 
-namespace servio::tests::bb
+namespace servio::bb
 {
 
 boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio::cobs_port& port )
@@ -45,7 +45,7 @@ boost::asio::awaitable< void > test_position( boost::asio::io_context& io, scmdi
         co_await scmdio::set_mode_disengaged( port );
 }
 
-}  // namespace servio::tests::bb
+}  // namespace servio::bb
 
 int main( int argc, char** argv )
 {
@@ -67,10 +67,9 @@ int main( int argc, char** argv )
         }
 
         if ( !powerless ) {
-                servio::tests::bb::register_test(
-                    "moves", "current", cli, servio::tests::bb::test_current, 1s );
-                servio::tests::bb::register_test(
-                    "moves", "position", cli, servio::tests::bb::test_position, 1s );
+                servio::bb::register_test( "moves", "current", cli, servio::bb::test_current, 1s );
+                servio::bb::register_test(
+                    "moves", "position", cli, servio::bb::test_position, 1s );
         }
 
         return RUN_ALL_TESTS();

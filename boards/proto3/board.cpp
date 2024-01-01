@@ -1,7 +1,7 @@
 
 #include "brd.hpp"
 #include "cfg/default.hpp"
-#include "core_drivers.hpp"
+#include "core/drivers.hpp"
 #include "fw/drv/adc_pooler_def.hpp"
 #include "fw/drv/clock.hpp"
 #include "fw/drv/cobs_uart.hpp"
@@ -230,7 +230,7 @@ fw::drv::cobs_uart* comms_setup()
         return COMMS.setup( UART2_HANDLE, UART2_DMA_HANDLE );
 }
 
-com_interface* setup_debug_comms()
+base::com_interface* setup_debug_comms()
 {
         __HAL_RCC_GPDMA1_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();
@@ -310,7 +310,7 @@ fw::drv::leds* leds_setup()
         return nullptr;
 }
 
-em::result start_callback( core_drivers& cdrv )
+em::result start_callback( core::drivers& cdrv )
 {
 
         if ( cdrv.position != nullptr ) {
@@ -348,7 +348,7 @@ em::result setup_board()
 }
 
 // TODO: well, this was kinda duplicated...
-core_drivers setup_core_drivers()
+core::drivers setup_core_drivers()
 {
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2 ) != em::SUCCESS ) {
@@ -361,7 +361,7 @@ core_drivers setup_core_drivers()
         fw::drv::leds* leds       = leds_setup();
         fw::install_stop_callback( leds );
 
-        return core_drivers{
+        return core::drivers{
             .clock       = CLOCK.setup( &TIM2_HANDLE ),
             .position    = adc_pooler == nullptr ? nullptr : &fw::drv::ADC_POSITION,
             .current     = adc_pooler == nullptr ? nullptr : &fw::drv::ADC_CURRENT,

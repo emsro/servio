@@ -4,7 +4,8 @@
 with section("parse"):
 
   # Specify structure for custom cmake functions
-  additional_commands = { 'servio_add_board_executable': { 'kwargs': { 'INCLUDE': '+',
+  additional_commands = {
+    'servio_add_board_executable': { 'kwargs': { 'INCLUDE': '+',
                                                'LIBS': '+',
                                                'LINKER_SCRIPT': 1,
                                                'OPTS': '+',
@@ -22,6 +23,12 @@ with section("parse"):
                                             'SOURCES': '+',
                                             'TARGET': 1},
                                 'pargs': {'flags': [], 'nargs': '*'}},
+  'servio_add_executable': { 'kwargs': { 'INCLUDE': '+',
+                                      'LIBS': '+',
+                                      'OPTS': '+',
+                                      'SOURCES': '+',
+                                      'TARGET': 1},
+                          'pargs': {'flags': [], 'nargs': '*'}},
   'servio_add_library': { 'kwargs': { 'INCLUDE': '+',
                                       'LIBS': '+',
                                       'OPTS': '+',

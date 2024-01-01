@@ -9,6 +9,8 @@
 namespace servio::plt
 {
 
+namespace em = emlabcpp;
+
 em::result setup_clk()
 {
 

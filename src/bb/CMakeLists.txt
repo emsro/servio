@@ -7,5 +7,5 @@ function(add_btest)
   servio_compile_options(${A_TARGET})
 endfunction()
 
-add_btest(TARGET basic_btest SOURCE bb/basic.cpp)
-add_btest(TARGET moves_btest SOURCE bb/moves.cpp)
+add_btest(TARGET basic_btest SOURCE basic.cpp)
+add_btest(TARGET moves_btest SOURCE moves.cpp)

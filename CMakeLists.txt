@@ -53,7 +53,6 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   enable_testing()
 
   add_subdirectory(src)
-  add_subdirectory(tests)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
 
@@ -62,7 +61,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   find_package(CMSIS COMPONENTS STM32G4 REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
-  add_subdirectory(platforms/stm32g4)
+  add_subdirectory(src/plt/stm32g4)
   add_subdirectory(boards/prototype2)
 
   add_subdirectory(src)
@@ -86,7 +85,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
     SOURCES src/fw/main.cpp src/fw/it.cpp
     LIBS prototype2
     LINKER_SCRIPT
-      "${CMAKE_CURRENT_SOURCE_DIR}/platforms/stm32g4/STM32G431KBTx_FLASH.ld")
+      "${CMAKE_CURRENT_SOURCE_DIR}/src/plt/stm32g4/STM32G431KBTx_FLASH.ld")
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
@@ -95,12 +94,21 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   find_package(CMSIS COMPONENTS STM32H5 REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32H5 REQUIRED GLOBAL)
 
-  add_subdirectory(platforms/stm32h5)
+  add_subdirectory(src/plt/stm32h5)
   add_subdirectory(boards/proto3)
   add_subdirectory(src)
 
   add_library(proto3 STATIC)
-  target_link_libraries(proto3 PUBLIC proto3_board serviolib fwlib STM32::Nano)
+  target_link_libraries(
+    proto3
+    PUBLIC proto3_board
+           fwlib
+           monlib
+           corelib
+           cfglib
+           mtrlib
+           ctllib
+           STM32::Nano)
   target_compile_options(proto3 PRIVATE -Os)
 
   servio_add_board_executable(
@@ -108,7 +116,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
     SOURCES src/fw/main.cpp src/fw/it.cpp
     LIBS proto3
     LINKER_SCRIPT
-      "${CMAKE_CURRENT_SOURCE_DIR}/platforms/stm32h5/STM32H503xx_FLASH.ld")
+      "${CMAKE_CURRENT_SOURCE_DIR}/src/plt/stm32h5/STM32H503xx_FLASH.ld")
 
 else()
   message(WARNING "unsupported platform ${SERVIO_PLATFORM}")
