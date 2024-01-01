@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['off_5fscale_841',['off_scale',['../namespaceservio_1_1brd.html#structservio_1_1brd_1_1off__scale',1,'servio::brd::off_scale'],['../namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale',1,'servio::cfg::off_scale']]]
+  ['metrics_861',['metrics',['../classservio_1_1mtr_1_1metrics.html',1,'servio::mtr']]],
+  ['mode_5fopts_862',['mode_opts',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts',1,'servio::scmdio']]],
+  ['monitor_863',['monitor',['../classservio_1_1mon_1_1monitor.html',1,'servio::mon']]]
 ];

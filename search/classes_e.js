@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uart_5fcfg_865',['uart_cfg',['../namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg',1,'servio::brd::uart_cfg'],['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg',1,'servio::plt::uart_cfg']]]
+  ['temperature_5fconverter_886',['temperature_converter',['../classservio_1_1cnv_1_1temperature__converter.html',1,'servio::cnv']]],
+  ['temperature_5finterface_887',['temperature_interface',['../classservio_1_1base_1_1temperature__interface.html',1,'servio::base']]]
 ];

@@ -33,7 +33,6 @@ var namespaceservio_1_1brd =
     [ "setup_leds_timer", "namespaceservio_1_1brd.html#a8d47462a1f7fce38cda0f512305746ba", null ],
     [ "setup_uart", "namespaceservio_1_1brd.html#ab330172ec900f8e5a967b042c5d0fefb", null ],
     [ "start_callback", "namespaceservio_1_1brd.html#aac2ab253dd62c8d22e7504bd106c6283", null ],
-    [ "start_callback", "namespaceservio_1_1brd.html#abe68072e2cdc06bad4d2e623929525bb", null ],
     [ "ADC_DMA_HANDLE", "namespaceservio_1_1brd.html#a2b0ceaa2337a3d916d52ba0fe6f823bc", null ],
     [ "ADC_HANDLE", "namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e", null ],
     [ "ADC_TIM_HANDLE", "namespaceservio_1_1brd.html#a3f1bce49bf6d1c2b0ab6be8bfc10219b", null ],

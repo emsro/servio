@@ -16,7 +16,7 @@ var proto3_2board_8cpp =
     [ "setup_board", "proto3_2board_8cpp.html#acf0eac3166e968f5cefe71de1f5d5ca8", null ],
     [ "setup_core_drivers", "proto3_2board_8cpp.html#a58f703e939140ddd318ba1e8202e6153", null ],
     [ "setup_debug_comms", "proto3_2board_8cpp.html#aaad7b603159b5b262bb9cc0733d85ddb", null ],
-    [ "start_callback", "proto3_2board_8cpp.html#abe68072e2cdc06bad4d2e623929525bb", null ],
+    [ "start_callback", "proto3_2board_8cpp.html#aac2ab253dd62c8d22e7504bd106c6283", null ],
     [ "TIM1_UP_IRQHandler", "proto3_2board_8cpp.html#ac13ffcf8c8dd96138053b8a854004583", null ],
     [ "USART1_IRQHandler", "proto3_2board_8cpp.html#a27fb9800d727337121da9525aca0b557", null ],
     [ "USART2_IRQHandler", "proto3_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba", null ],

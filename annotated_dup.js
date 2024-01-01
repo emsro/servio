@@ -18,6 +18,9 @@ var annotated_dup =
         [ "temperature_interface", "classservio_1_1base_1_1temperature__interface.html", "classservio_1_1base_1_1temperature__interface" ],
         [ "current_interface", "classservio_1_1base_1_1current__interface.html", "classservio_1_1base_1_1current__interface" ]
       ] ],
+      [ "bb", "namespaceservio_1_1bb.html", [
+        [ "bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", "structservio_1_1bb_1_1bb__test__case" ]
+      ] ],
       [ "brd", "namespaceservio_1_1brd.html", [
         [ "off_scale", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1off__scale", "namespaceservio_1_1brd_structservio_1_1brd_1_1off__scale_dup" ],
         [ "setpoint", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1setpoint", "namespaceservio_1_1brd_structservio_1_1brd_1_1setpoint_dup" ],

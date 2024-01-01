@@ -1,4 +1,4 @@
-<map id="platforms/stm32h5/hal.hpp" name="platforms/stm32h5/hal.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,204,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="37,80,172,107"/>
+<map id="src/plt/stm32h5/hal.hpp" name="src/plt/stm32h5/hal.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="25,80,160,107"/>
 </map>

@@ -1,20 +1,5 @@
 var searchData=
 [
-  ['base_870',['base',['../namespaceservio_1_1base.html',1,'servio']]],
-  ['brd_871',['brd',['../namespaceservio_1_1brd.html',1,'servio']]],
-  ['cfg_872',['cfg',['../namespaceservio_1_1cfg.html',1,'servio']]],
-  ['cnv_873',['cnv',['../namespaceservio_1_1cnv.html',1,'servio']]],
-  ['core_874',['core',['../namespaceservio_1_1core.html',1,'servio']]],
-  ['ctl_875',['ctl',['../namespaceservio_1_1ctl.html',1,'servio']]],
-  ['drv_876',['drv',['../namespaceservio_1_1fw_1_1drv.html',1,'servio::fw']]],
-  ['fw_877',['fw',['../namespaceservio_1_1fw.html',1,'servio']]],
-  ['klmn_878',['klmn',['../namespaceservio_1_1klmn.html',1,'servio']]],
-  ['literals_879',['literals',['../namespaceservio_1_1base_1_1literals.html',1,'servio::base']]],
-  ['mon_880',['mon',['../namespaceservio_1_1mon.html',1,'servio']]],
-  ['mtr_881',['mtr',['../namespaceservio_1_1mtr.html',1,'servio']]],
-  ['plt_882',['plt',['../namespaceservio_1_1plt.html',1,'servio']]],
-  ['scmdio_883',['scmdio',['../namespaceservio_1_1scmdio.html',1,'servio']]],
-  ['servio_884',['servio',['../namespaceservio.html',1,'']]],
-  ['sim_885',['sim',['../namespaceservio_1_1sim.html',1,'servio']]],
-  ['tests_886',['tests',['../namespaceservio_1_1ctl_1_1tests.html',1,'servio::ctl::tests'],['../namespaceservio_1_1klmn_1_1tests.html',1,'servio::klmn::tests'],['../namespaceservio_1_1mtr_1_1tests.html',1,'servio::mtr::tests'],['../namespaceservio_1_1tests.html',1,'servio::tests']]]
+  ['google_893',['google',['../namespacegoogle.html',1,'']]],
+  ['protobuf_894',['protobuf',['../namespacegoogle_1_1protobuf.html',1,'google']]]
 ];

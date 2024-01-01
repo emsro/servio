@@ -92,6 +92,7 @@ var hierarchy =
     [ "servio::mtr::static_detector", "structservio_1_1mtr_1_1static__detector.html", null ],
     [ "servio::cnv::temperature_converter", "classservio_1_1cnv_1_1temperature__converter.html", null ],
     [ "testing::Test", null, [
+      [ "servio::bb::bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", null ],
       [ "servio::ctl::tests::control_fixture", "classservio_1_1ctl_1_1tests_1_1control__fixture.html", null ]
     ] ],
     [ "servio::brd::uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", null ],

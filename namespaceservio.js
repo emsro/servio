@@ -1,6 +1,7 @@
 var namespaceservio =
 [
     [ "base", "namespaceservio_1_1base.html", "namespaceservio_1_1base" ],
+    [ "bb", "namespaceservio_1_1bb.html", "namespaceservio_1_1bb" ],
     [ "brd", "namespaceservio_1_1brd.html", "namespaceservio_1_1brd" ],
     [ "cfg", "namespaceservio_1_1cfg.html", "namespaceservio_1_1cfg" ],
     [ "cnv", "namespaceservio_1_1cnv.html", "namespaceservio_1_1cnv" ],
