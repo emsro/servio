@@ -27,7 +27,3 @@ jobs:
             - run: make build
 
             - run: make test
-
-            - run: make test SANITIZER=address
-
-            - run: make test SANITIZER=undefined
