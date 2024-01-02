@@ -4,18 +4,16 @@
 [![Tests](https://github.com/emsro/servio/actions/workflows/tests.yml/badge.svg)](https://github.com/emsro/servio/actions/workflows/tests.yml)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nlohmann/json/master/LICENSE.MIT)
 
-Open firmware for servomotors written in C++20.
-It is designed for small servos with DC motors and potentioemeters as encoders, the intent is that you can buy traditional RC servo and convert it to smart servo with servio hardware and firmware.
+Open firmware for DC servomotors written in C++20.
+The FW uses closed control loops, serial communication, and has automatized testing infrastructure.
 
-The servo can communicate and send/receive messages, has full feedback loops, and supports following control modes:
- - power - set % of power that should go to the DC motor
- - current - maintain desired current to flow throu the DC motor
- - velocity - maintain desired angular velocity
- - position - maintain desired position
+# Disclaimer
 
-# Install
+The project is in development state, beware that the code still might have problematic bugs.
 
-We maintain `Dockerfile` with a setup that can install dependencies of the project and compile the code.
+# Dependencies
+
+We maintain `Dockerfile` with installed dependencies for CI.
 Use that to install adequate packages in your system, or you can just use that docker file.
 
 `Dockerfile` is stored in this repository: https://github.com/emsro/build-env
@@ -24,23 +22,23 @@ Use that to install adequate packages in your system, or you can just use that d
 
 `cmake` is used as build system, however the setup is not trivial.
 We can't compile code for multiple platforms at the same time, hence the design is to use cmake multiple times, once for each platform.
-If you don't care about the details, you can just use `make build` in the root folder of the repository, which will correctly build for all platforms.
+If you don't care about the details, you can just use `make configure` followed by `make build` in the root folder of the repository, which will correctly build for all platforms.
 
-We use cmake variable called `SERVIO_PLATFORM` to tell cmake for which platform it shall compile in that run.
-So, for example:
-
+We use cmake presets with definitions of the builds for each platform. The presets contain the name of the platform in their name, so `stm32h5_debug_build` represents build for STM32H5, and it is used as so:
 ```
-cd build/host/
-cmake -DSERVIO_PLATFORM=host ../../
-make
+    cmake --preset "stm32h5_debug_cfg"
+    cmake --build --preset "stm32h5_debug_build"
 ```
-
-Commands cmake to compile stuff for host system (utilities and unit tests), but the following:
-
+`host_debug_build` represents build of stuff used on the host, and is used as so:
 ```
-cd build/host/
-cmake -DSERVIO_PLATFORM=stm32g4 -DCMAKE_TOOLCHAIN_FAIL=../../stm32-cmake/cmake/stm32_gcc.cmake ../../
-make
+	cmake --preset "host_debug_cfg"
+	cmake --build --preset "host_debug_build"
 ```
 
-Commands cmake to compile stuff for STM32G4 (the firmware itself), note that this time we had to specify toolchain.
+Under the hood, the presets use `SERVIO_PLATFORM` to setup which platform should be currently build and the cmake files in the project react accordingly.
+
+# Flashing
+
+To flash the firmware, find a openocd file for your platform (`src/plt/stm32g4/openocd.cfg` for STM32G4) and use it with openocd to flash  a firmware file into the device. See `make flash` target for inspiration.
+
+The pattern for naming the firmware is `<board_name>_fw.elf` and can be found in `build/<platform_name>`.

@@ -30,11 +30,8 @@ build_g4:
 build_h5:
 	cmake --build --preset "stm32h5_debug_build"
 
+flash:
+	openocd -f src/plt/stm32g4/openocd.cfg -c "program build/g4/prototype2_fw.elf verify reset exit"
+
 test: build_host
 	cd build/host && ctest -T Test --output-on-failure
-
-clang-format:
-	find ./ ${FIND_FILTER} \( -iname "*.h" -o -iname "*.cpp" -o -iname "*.hpp" \)  | xargs clang-format -i
-
-cmake-format:
-	find ./ ${FIND_FILTER} \( -iname "*CMakeLists.txt" -o -iname "*.cmake" \) | xargs cmake-format -i
