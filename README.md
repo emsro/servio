@@ -26,13 +26,13 @@ If you don't care about the details, you can just use `make configure` followed 
 
 We use cmake presets with definitions of the builds for each platform. The presets contain the name of the platform in their name, so `stm32h5_debug_build` represents build for STM32H5, and it is used as so:
 ```
-    cmake --preset "stm32h5_debug_cfg"
-    cmake --build --preset "stm32h5_debug_build"
+cmake --preset "stm32h5_debug_cfg"
+cmake --build --preset "stm32h5_debug_build"
 ```
 `host_debug_build` represents build of stuff used on the host, and is used as so:
 ```
-	cmake --preset "host_debug_cfg"
-	cmake --build --preset "host_debug_build"
+cmake --preset "host_debug_cfg"
+cmake --build --preset "host_debug_build"
 ```
 
 Under the hood, the presets use `SERVIO_PLATFORM` to setup which platform should be currently build and the cmake files in the project react accordingly.
