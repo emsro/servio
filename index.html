@@ -88,36 +88,33 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/emsro/servio/actions/workflows/tests.yml"><img src="https://github.com/emsro/servio/actions/workflows/tests.yml/badge.svg" alt="Tests" style="pointer-events: none;" class="inline"/></a> <a href="https://raw.githubusercontent.com/nlohmann/json/master/LICENSE.MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" style="pointer-events: none;" class="inline"/></a></p>
-<p>Open firmware for servomotors written in C++20. It is designed for small servos with DC motors and potentioemeters as encoders, the intent is that you can buy traditional RC servo and convert it to smart servo with servio hardware and firmware.</p>
-<p>The servo can communicate and send/receive messages, has full feedback loops, and supports following control modes:</p><ul>
-<li>power - set % of power that should go to the DC motor</li>
-<li>current - maintain desired current to flow throu the DC motor</li>
-<li>velocity - maintain desired angular velocity</li>
-<li>position - maintain desired position</li>
-</ul>
+<p>Open firmware for DC servomotors written in C++20. The FW uses closed control loops, serial communication, and has automatized testing infrastructure.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Install</h1>
-<p>We maintain <code>Dockerfile</code> with a setup that can install dependencies of the project and compile the code. Use that to install adequate packages in your system, or you can just use that docker file.</p>
-<p><code>Dockerfile</code> is stored in this repository: <a href="https://github.com/emsro/build-env">https://github.com/emsro/build-env</a></p>
+Disclaimer</h1>
+<p>The project is in development state, beware that the code still might have problematic bugs.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Dependencies</h1>
+<p>We maintain <code>Dockerfile</code> with installed dependencies for CI. Use that to install adequate packages in your system, or you can just use that docker file.</p>
+<p><code>Dockerfile</code> is stored in this repository: <a href="https://github.com/emsro/build-env">https://github.com/emsro/build-env</a></p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Build</h1>
-<p><code>cmake</code> is used as build system, however the setup is not trivial. We can't compile code for multiple platforms at the same time, hence the design is to use cmake multiple times, once for each platform. If you don't care about the details, you can just use <code>make build</code> in the root folder of the repository, which will correctly build for all platforms.</p>
-<p>We use cmake variable called <code>SERVIO_PLATFORM</code> to tell cmake for which platform it shall compile in that run. So, for example:</p>
-<div class="fragment"><div class="line">cd build/host/</div>
-<div class="line">cmake -DSERVIO_PLATFORM=host ../../</div>
-<div class="line">make</div>
-</div><!-- fragment --><p>Commands cmake to compile stuff for host system (utilities and unit tests), but the following:</p>
-<div class="fragment"><div class="line">cd build/host/</div>
-<div class="line">cmake -DSERVIO_PLATFORM=stm32g4 -DCMAKE_TOOLCHAIN_FAIL=../../stm32-cmake/cmake/stm32_gcc.cmake ../../</div>
-<div class="line">make</div>
-</div><!-- fragment --><p>Commands cmake to compile stuff for STM32G4 (the firmware itself), note that this time we had to specify toolchain. </p>
+<p><code>cmake</code> is used as build system, however the setup is not trivial. We can't compile code for multiple platforms at the same time, hence the design is to use cmake multiple times, once for each platform. If you don't care about the details, you can just use <code>make configure</code> followed by <code>make build</code> in the root folder of the repository, which will correctly build for all platforms.</p>
+<p>We use cmake presets with definitions of the builds for each platform. The presets contain the name of the platform in their name, so <code>stm32h5_debug_build</code> represents build for STM32H5, and it is used as so: </p><div class="fragment"><div class="line">cmake --preset &quot;stm32h5_debug_cfg&quot;</div>
+<div class="line">cmake --build --preset &quot;stm32h5_debug_build&quot;</div>
+</div><!-- fragment --><p> <code>host_debug_build</code> represents build of stuff used on the host, and is used as so: </p><div class="fragment"><div class="line">cmake --preset &quot;host_debug_cfg&quot;</div>
+<div class="line">cmake --build --preset &quot;host_debug_build&quot;</div>
+</div><!-- fragment --><p>Under the hood, the presets use <code>SERVIO_PLATFORM</code> to setup which platform should be currently build and the cmake files in the project react accordingly.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Flashing</h1>
+<p>To flash the firmware, find a openocd file for your platform (<code>src/plt/stm32g4/openocd.cfg</code> for STM32G4) and use it with openocd to flash a firmware file into the device. See <code>make flash</code> target for inspiration.</p>
+<p>The pattern for naming the firmware is <code>&lt;board_name&gt;_fw.elf</code> and can be found in <code>build/&lt;platform_name&gt;</code>. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jan 1 2024 17:09:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue Jan 2 2024 20:50:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
