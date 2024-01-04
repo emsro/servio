@@ -42,3 +42,10 @@ Under the hood, the presets use `SERVIO_PLATFORM` to setup which platform should
 To flash the firmware, find a openocd file for your platform (`src/plt/stm32g4/openocd.cfg` for STM32G4) and use it with openocd to flash  a firmware file into the device. See `make flash` target for inspiration.
 
 The pattern for naming the firmware is `<board_name>_fw.elf` and can be found in `build/<platform_name>`.
+
+# Usage
+
+After the firmware was fleshed, the servo should communicate over UART via the interface connector. The communication protocol is protobuf wrapped in COBS (Consistent Overhead Byte Stuffing
+) for framing.
+
+All our protobuf messages are in single file: `src/iface/io.proto` We recommend that you use that file to generate a bindings for your favourite language. All that is necessary is to use the proper protobuf message and wrap it in COBS.
