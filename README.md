@@ -48,4 +48,4 @@ The pattern for naming the firmware is `<board_name>_fw.elf` and can be found in
 After the firmware was fleshed, the servo should communicate over UART via the interface connector. The communication protocol is protobuf wrapped in COBS (Consistent Overhead Byte Stuffing
 ) for framing.
 
-All our protobuf messages are in single file: `src/iface/io.proto` We recommend that you use that file to generate a bindings for your favourite language. All that is necessary is to use the proper protobuf message and wrap it in COBS.
+All our protobuf messages are in single file: [src/iface/io.proto](src/iface/io.proto) We recommend that you use that file to generate a bindings for your favourite language. All that is necessary is to use the proper protobuf message and wrap it in COBS.
