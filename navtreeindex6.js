@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"structservio_1_1bb_1_1bb__test__case.html":[17,0,0,1,0],
+"structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107":[17,0,0,1,0,3],
 "structservio_1_1bb_1_1bb__test__case.html#a2a7ccbccec9e1f2dcd38957e510e5b98":[17,0,0,1,0,0],
 "structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f":[17,0,0,1,0,4],
 "structservio_1_1bb_1_1bb__test__case.html#a9acf368897e3c13cf03646706aa6b84e":[17,0,0,1,0,1],

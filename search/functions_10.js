@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['read_1181',['read',['../namespaceservio_1_1scmdio.html#a156170a954ed1534f90a35d8a25baed8',1,'servio::scmdio']]],
-  ['register_5ftest_1182',['register_test',['../namespaceservio_1_1bb.html#af96e2c93cab7c4829a6755ea8bcccff0',1,'servio::bb']]],
-  ['reply_5ferror_1183',['reply_error',['../structservio_1_1scmdio_1_1reply__error.html#ae7d0b43c5116c448b47f2f71c3e08b1d',1,'servio::scmdio::reply_error']]],
-  ['requires_5foffset_1184',['requires_offset',['../namespaceservio_1_1klmn.html#a451b033ac382e652c5e1571572f417f1',1,'servio::klmn']]],
-  ['reset_5ftime_1185',['reset_time',['../structservio_1_1sim_1_1simple__motor.html#a5563aeee83e892d124ea5b76324853de',1,'servio::sim::simple_motor']]],
-  ['resistance_1186',['resistance',['../structservio_1_1sim_1_1simple__motor.html#ade2481293d955630a63a394b11beeafc',1,'servio::sim::simple_motor']]],
-  ['rotate_5fvec_1187',['rotate_vec',['../namespaceservio_1_1sim.html#ae4e290055137b3e1d32c0322341caf6d',1,'servio::sim']]],
-  ['rx_5fcplt_5firq_1188',['rx_cplt_irq',['../classservio_1_1fw_1_1drv_1_1cobs__uart.html#ae1c565058da5029c4f0976e28f36f2ae',1,'servio::fw::drv::cobs_uart']]]
+  ['read_1183',['read',['../namespaceservio_1_1scmdio.html#a156170a954ed1534f90a35d8a25baed8',1,'servio::scmdio']]],
+  ['register_5ftest_1184',['register_test',['../namespaceservio_1_1bb.html#af96e2c93cab7c4829a6755ea8bcccff0',1,'servio::bb']]],
+  ['reply_5ferror_1185',['reply_error',['../structservio_1_1scmdio_1_1reply__error.html#ae7d0b43c5116c448b47f2f71c3e08b1d',1,'servio::scmdio::reply_error']]],
+  ['requires_5foffset_1186',['requires_offset',['../namespaceservio_1_1klmn.html#a451b033ac382e652c5e1571572f417f1',1,'servio::klmn']]],
+  ['reset_5ftime_1187',['reset_time',['../structservio_1_1sim_1_1simple__motor.html#a5563aeee83e892d124ea5b76324853de',1,'servio::sim::simple_motor']]],
+  ['resistance_1188',['resistance',['../structservio_1_1sim_1_1simple__motor.html#ade2481293d955630a63a394b11beeafc',1,'servio::sim::simple_motor']]],
+  ['rotate_5fvec_1189',['rotate_vec',['../namespaceservio_1_1sim.html#ae4e290055137b3e1d32c0322341caf6d',1,'servio::sim']]],
+  ['rx_5fcplt_5firq_1190',['rx_cplt_irq',['../classservio_1_1fw_1_1drv_1_1cobs__uart.html#ae1c565058da5029c4f0976e28f36f2ae',1,'servio::fw::drv::cobs_uart']]]
 ];
