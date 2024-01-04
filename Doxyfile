@@ -875,8 +875,6 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = README.md \
-                         boards/ \
-			 platforms/ \
                          src/ \
                          doc/ \
 
@@ -939,6 +937,7 @@ FILE_PATTERNS          = *.c \
                          *.md \
                          *.mm \
                          *.dox \
+                         *.proto \
                          *.py \
                          *.pyw \
                          *.f90 \
