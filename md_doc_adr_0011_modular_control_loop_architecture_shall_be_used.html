@@ -91,20 +91,20 @@ $(document).ready(function(){initNavTree('md_doc_adr_0011_modular_control_loop_a
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Date: 2023-12-24</p>
-<h1><a class="anchor" id="autotoc_md56"></a>
+<h1><a class="anchor" id="autotoc_md57"></a>
 Status</h1>
 <p>Accepted</p>
 <p>Supercedes <a class="el" href="md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html">7. Chained control loops architecture shall be used</a></p>
-<h1><a class="anchor" id="autotoc_md57"></a>
+<h1><a class="anchor" id="autotoc_md58"></a>
 Context</h1>
 <p>The internal architecture of the servomotor affects the characteristics of the system, and mostly should be clearly defined and understood. This is high-level design principle, does not have to directly reflect the implementation.</p>
 <p>For the sake of this ADR, we assume that we can measure position, velocity, current, and that we can control the motor with power percentage as an input. (-100...100%)</p>
-<h1><a class="anchor" id="autotoc_md58"></a>
+<h1><a class="anchor" id="autotoc_md59"></a>
 Decision</h1>
 <p>We want to use a modular approach for control loop architecture.</p>
 <p>Internal architecture of the servo should be organized into independent control modes, of which each is well defined and understood for the user.</p>
 <p>The concrete list of control modes is not defined by this architecture record.</p>
-<h1><a class="anchor" id="autotoc_md59"></a>
+<h1><a class="anchor" id="autotoc_md60"></a>
 Consequences</h1>
 <p>Making the architecture modular should govern the way we thinkg about it - instead one solution for each use case we should focus more on separate architecture designs for each control mode.</p>
 <p>By not specifying the list here we give ourselves a chance to easily introduce and get rid of control modes. (Note that ADR for the specific modules can always be added in the future) </p>
@@ -114,7 +114,7 @@ Consequences</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jan 2 2024 20:52:22 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Jan 4 2024 13:23:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

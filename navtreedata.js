@@ -29,71 +29,72 @@ var NAVTREE =
     [ "Dependencies", "index.html#autotoc_md2", null ],
     [ "Build", "index.html#autotoc_md3", null ],
     [ "Flashing", "index.html#autotoc_md4", null ],
+    [ "Usage", "index.html#autotoc_md5", null ],
     [ "1. Record architecture decisions", "md_doc_adr_0001_record_architecture_decisions.html", [
-      [ "Status", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md6", null ],
-      [ "Context", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md7", null ],
-      [ "Decision", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md8", null ],
-      [ "Consequences", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md9", null ]
+      [ "Status", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md7", null ],
+      [ "Context", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md8", null ],
+      [ "Decision", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md9", null ],
+      [ "Consequences", "md_doc_adr_0001_record_architecture_decisions.html#autotoc_md10", null ]
     ] ],
     [ "2. Project shall be writen with C++20", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html", [
-      [ "Status", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md11", null ],
-      [ "Context", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md12", null ],
-      [ "Decision", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md13", null ],
-      [ "Consequences", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md14", null ]
+      [ "Status", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md12", null ],
+      [ "Context", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md13", null ],
+      [ "Decision", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md14", null ],
+      [ "Consequences", "md_doc_adr_0002_project_shall_be_writen_with_c_20.html#autotoc_md15", null ]
     ] ],
     [ "3. STM32G4 is the first platform", "md_doc_adr_0003_stm32g4_is_the_first_platform.html", [
-      [ "Status", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md16", null ],
-      [ "Context", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md17", null ],
-      [ "Decision", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md18", null ],
-      [ "Consequences", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md19", null ]
+      [ "Status", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md17", null ],
+      [ "Context", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md18", null ],
+      [ "Decision", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md19", null ],
+      [ "Consequences", "md_doc_adr_0003_stm32g4_is_the_first_platform.html#autotoc_md20", null ]
     ] ],
     [ "4. Servo shall provide position control", "md_doc_adr_0004_servo_shall_provide_position_control.html", [
-      [ "Status", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md21", null ],
-      [ "Context", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md22", null ],
-      [ "Decision", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md23", null ],
-      [ "Consequences", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md24", null ]
+      [ "Status", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md22", null ],
+      [ "Context", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md23", null ],
+      [ "Decision", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md24", null ],
+      [ "Consequences", "md_doc_adr_0004_servo_shall_provide_position_control.html#autotoc_md25", null ]
     ] ],
     [ "5. Servo shall provide velocity control", "md_doc_adr_0005_servo_shall_provide_velocity_control.html", [
-      [ "Status", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md26", null ],
-      [ "Context", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md27", null ],
-      [ "Decision", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md28", null ],
-      [ "Consequences", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md29", null ]
+      [ "Status", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md27", null ],
+      [ "Context", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md28", null ],
+      [ "Decision", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md29", null ],
+      [ "Consequences", "md_doc_adr_0005_servo_shall_provide_velocity_control.html#autotoc_md30", null ]
     ] ],
     [ "6. Servo shall provide current control", "md_doc_adr_0006_servo_shall_provide_current_control.html", [
-      [ "Status", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md31", null ],
-      [ "Context", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md32", null ],
-      [ "Decision", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md33", null ],
-      [ "Consequences", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md34", null ]
+      [ "Status", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md32", null ],
+      [ "Context", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md33", null ],
+      [ "Decision", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md34", null ],
+      [ "Consequences", "md_doc_adr_0006_servo_shall_provide_current_control.html#autotoc_md35", null ]
     ] ],
     [ "7. Chained control loops architecture shall be used", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html", [
-      [ "Status", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md36", null ],
-      [ "Context", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md37", null ],
-      [ "Decision", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md38", null ],
-      [ "Consequences", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md39", null ]
+      [ "Status", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md37", null ],
+      [ "Context", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md38", null ],
+      [ "Decision", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md39", null ],
+      [ "Consequences", "md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html#autotoc_md40", null ]
     ] ],
     [ "8. CMake is the one only build system", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html", [
-      [ "Status", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md41", null ],
-      [ "Context", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md42", null ],
-      [ "Decision", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md43", null ],
-      [ "Consequences", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md44", null ]
+      [ "Status", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md42", null ],
+      [ "Context", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md43", null ],
+      [ "Decision", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md44", null ],
+      [ "Consequences", "md_doc_adr_0008_cmake_is_the_one_only_build_system.html#autotoc_md45", null ]
     ] ],
     [ "9. If servo in position, velocity, or current mode, limits for all three modes shall be respected at once", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html", [
-      [ "Status", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md46", null ],
-      [ "Context", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md47", null ],
-      [ "Decision", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md48", null ],
-      [ "Consequences", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md49", null ]
+      [ "Status", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md47", null ],
+      [ "Context", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md48", null ],
+      [ "Decision", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md49", null ],
+      [ "Consequences", "md_doc_adr_0009_if_servo_in_position_velocity_or_current_mode_limits_for_all_three_modes_shall_be_respected_at_once.html#autotoc_md50", null ]
     ] ],
     [ "10. STM32H5 is the main platform", "md_doc_adr_0010_stm32h5_is_the_main_platform.html", [
-      [ "Status", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md51", null ],
-      [ "Context", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md52", null ],
-      [ "Decision", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md53", null ],
-      [ "Consequences", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md54", null ]
+      [ "Status", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md52", null ],
+      [ "Context", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md53", null ],
+      [ "Decision", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md54", null ],
+      [ "Consequences", "md_doc_adr_0010_stm32h5_is_the_main_platform.html#autotoc_md55", null ]
     ] ],
     [ "11. Modular control loop architecture shall be used", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html", [
-      [ "Status", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md56", null ],
-      [ "Context", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md57", null ],
-      [ "Decision", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md58", null ],
-      [ "Consequences", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md59", null ]
+      [ "Status", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md57", null ],
+      [ "Context", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md58", null ],
+      [ "Decision", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md59", null ],
+      [ "Consequences", "md_doc_adr_0011_modular_control_loop_architecture_shall_be_used.html#autotoc_md60", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -133,13 +134,13 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"adc__pooler_8hpp.html",
-"classservio_1_1mon_1_1indication.html#a52da40ffe6c584824d5dac69c9d7a22f",
-"kalman_8hpp.html#ac2656c673261ab9f79dd300223947a4f",
-"namespaceservio_1_1brd.html#a676ee5c5fb5244cb243880c358a84b1f",
-"namespaceservio_1_1plt.html#a1215c0caf75e89e5beef894f76505b3f",
-"servio__pb_8hpp.html#a7a102b79eb575babfee714826b272862",
-"structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f"
+"",
+"classservio_1_1mon_1_1indication.html#a26ecc3736d0ec32e0a42f254baa5e739",
+"kalman_8hpp.html#aab9b4531c387d4264fe17a1341856597",
+"namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc",
+"namespaceservio_1_1plt.html#a03cac8a5dbc15f966a3b411492fffb0d",
+"servio__pb_8hpp.html#a68b10983c43a8988f0421b90a7ad8adf",
+"structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -91,17 +91,17 @@ $(document).ready(function(){initNavTree('md_doc_adr_0003_stm32g4_is_the_first_p
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Date: 2023-01-15</p>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Status</h1>
 <p>Parent of <a class="el" href="md_doc_adr_0007_chained_control_loops_architecture_shall_be_used.html">7. Chained control loops architecture shall be used</a></p>
 <p>Superceded by <a class="el" href="md_doc_adr_0010_stm32h5_is_the_main_platform.html">10. STM32H5 is the main platform</a></p>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 Context</h1>
 <p>The servio is firmware for servomotors, that firmware has to run on some MCU - platform. We have to pick one platform to begin with, which should have sufficient capabilities for the project and do not limit us during development. That is, we explicitly should not optimize price yet.</p>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Decision</h1>
 <p>We decided to pick STM32G4 series of MCUs given our positive previous experience with the platform, and the fact that we had multiple units in our inventory. It should also easily be overpowered for our use case.</p>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Consequences</h1>
 <p>The project will be developed on this platform, that is: the development experience on this platform will affect the entire development.</p>
 <p>There is good assumption that the project will (in the end) be developed in a way that has certain tailoring to the nuances of this platform. This can't be really avoided unless we decided to support yet another platform. However, we should still invest proper effort into minimizing that effect. </p>
@@ -111,7 +111,7 @@ Consequences</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jan 2 2024 20:52:22 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Jan 4 2024 13:23:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

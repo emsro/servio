@@ -107,14 +107,18 @@ Build</h1>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Flashing</h1>
 <p>To flash the firmware, find a openocd file for your platform (<code>src/plt/stm32g4/openocd.cfg</code> for STM32G4) and use it with openocd to flash a firmware file into the device. See <code>make flash</code> target for inspiration.</p>
-<p>The pattern for naming the firmware is <code>&lt;board_name&gt;_fw.elf</code> and can be found in <code>build/&lt;platform_name&gt;</code>. </p>
+<p>The pattern for naming the firmware is <code>&lt;board_name&gt;_fw.elf</code> and can be found in <code>build/&lt;platform_name&gt;</code>.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Usage</h1>
+<p>After the firmware was fleshed, the servo should communicate over UART via the interface connector. The communication protocol is protobuf wrapped in COBS (Consistent Overhead Byte Stuffing ) for framing.</p>
+<p>All our protobuf messages are in single file: <code>src/iface/io.proto</code> We recommend that you use that file to generate a bindings for your favourite language. All that is necessary is to use the proper protobuf message and wrap it in COBS. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jan 2 2024 20:52:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Jan 4 2024 13:23:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
