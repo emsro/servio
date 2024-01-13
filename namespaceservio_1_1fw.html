@@ -132,13 +132,13 @@ Functions</h2></td></tr>
 <tr class="separator:a01e7986f08e181e7ab28a0962c0de02b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3f53c1f676f5ce8a8cbdfa28bd99fea"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#ae3f53c1f676f5ce8a8cbdfa28bd99fea">handle_message</a> (<a class="el" href="namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher">dispatcher</a> &amp;dis, const HostToServio &amp;msg)</td></tr>
 <tr class="separator:ae3f53c1f676f5ce8a8cbdfa28bd99fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a856f30bcce1b70756917820791268afd"><td class="memTemplParams" colspan="2">template&lt;typename InputType , typename OutputType , typename Handle &gt; </td></tr>
-<tr class="memitem:a856f30bcce1b70756917820791268afd"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a856f30bcce1b70756917820791268afd">process_message</a> (em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer, Handle &amp;&amp;h)</td></tr>
-<tr class="separator:a856f30bcce1b70756917820791268afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33fc58fbb70ef4b1cfdedbfcf6cde1b5"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a33fc58fbb70ef4b1cfdedbfcf6cde1b5">handle_message</a> (<a class="el" href="namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher">dispatcher</a> &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
-<tr class="separator:a33fc58fbb70ef4b1cfdedbfcf6cde1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbeeb0878b9943ed0b50175ab321065d"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#abbeeb0878b9943ed0b50175ab321065d">handle_message_packet</a> (<a class="el" href="namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher">dispatcher</a> &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
-<tr class="separator:abbeeb0878b9943ed0b50175ab321065d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef7177bf7b33538307aa967e65274fd9"><td class="memTemplParams" colspan="2">template&lt;typename InputType , typename OutputType , typename Handle &gt; </td></tr>
+<tr class="memitem:aef7177bf7b33538307aa967e65274fd9"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#aef7177bf7b33538307aa967e65274fd9">process_message</a> (em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer, Handle &amp;&amp;h)</td></tr>
+<tr class="separator:aef7177bf7b33538307aa967e65274fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b2bdd32885a2db32522f11a3a73a0d9"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a5b2bdd32885a2db32522f11a3a73a0d9">handle_message</a> (<a class="el" href="namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher">dispatcher</a> &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
+<tr class="separator:a5b2bdd32885a2db32522f11a3a73a0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a958bf350bbe8b27b5db135c8b6ea0909"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a958bf350bbe8b27b5db135c8b6ea0909">handle_message_packet</a> (<a class="el" href="namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher">dispatcher</a> &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
+<tr class="separator:a958bf350bbe8b27b5db135c8b6ea0909"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e6a4fc23a613fa7fb33e7b42c7e83a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1cfg_1_1payload.html">cfg::payload</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a4e6a4fc23a613fa7fb33e7b42c7e83a3">load_persistent_config</a> (em::view&lt; const <a class="el" href="namespaceservio_1_1fw.html#a9ab9831a5a3afe24212ba9b5e3bca857">page</a> * &gt; pages, <a class="el" href="namespaceservio_1_1cfg.html#a98eee67bc8174b65e3225bf2cadc29a7">cfg::map</a> &amp;cfg)</td></tr>
 <tr class="separator:a4e6a4fc23a613fa7fb33e7b42c7e83a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e5cfea2793f02c9a7aa9fbd14e00120"><td class="memTemplParams" colspan="2">template&lt;typename Cfg , typename UnaryFunction &gt; </td></tr>
@@ -151,11 +151,11 @@ Functions</h2></td></tr>
 <tr class="separator:afd6e1ab5a28aac226cb1ead48fbca4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71a4c228f6742be91b7ca82c2fe62f20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a71a4c228f6742be91b7ca82c2fe62f20">decode</a> (em::view&lt; const std::byte * &gt; data, HostToServioPacket &amp;msg)</td></tr>
 <tr class="separator:a71a4c228f6742be91b7ca82c2fe62f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a102b79eb575babfee714826b272862"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a7a102b79eb575babfee714826b272862">encode</a> (em::view&lt; std::byte * &gt; data, const ServioToHost &amp;msg)</td></tr>
-<tr class="memdesc:a7a102b79eb575babfee714826b272862"><td class="mdescLeft">&#160;</td><td class="mdescRight">encodes a ServioToHost message to bytes, returns succes bool and subset of data that contains the serialized message  <a href="namespaceservio_1_1fw.html#a7a102b79eb575babfee714826b272862">More...</a><br /></td></tr>
-<tr class="separator:a7a102b79eb575babfee714826b272862"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefc985c9fc9111013a11bcff0452199e"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#aefc985c9fc9111013a11bcff0452199e">encode</a> (em::view&lt; std::byte * &gt; data, const ServioToHostPacket &amp;msg)</td></tr>
-<tr class="separator:aefc985c9fc9111013a11bcff0452199e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411b0581dfe8ec5fc253e12355b427d4"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::result, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a411b0581dfe8ec5fc253e12355b427d4">encode</a> (em::view&lt; std::byte * &gt; data, const ServioToHost &amp;msg)</td></tr>
+<tr class="memdesc:a411b0581dfe8ec5fc253e12355b427d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">encodes a ServioToHost message to bytes, returns succes bool and subset of data that contains the serialized message  <a href="namespaceservio_1_1fw.html#a411b0581dfe8ec5fc253e12355b427d4">More...</a><br /></td></tr>
+<tr class="separator:a411b0581dfe8ec5fc253e12355b427d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae68cb08248576183a30d3dbcec796a20"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::result, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#ae68cb08248576183a30d3dbcec796a20">encode</a> (em::view&lt; std::byte * &gt; data, const ServioToHostPacket &amp;msg)</td></tr>
+<tr class="separator:ae68cb08248576183a30d3dbcec796a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab36e52030344b4d8ae9775e4499c7f7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#ab36e52030344b4d8ae9775e4499c7f7e">store_persistent_config</a> (const <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">cfg::page</a> &amp;<a class="el" href="namespaceservio_1_1fw.html#a9ab9831a5a3afe24212ba9b5e3bca857">page</a>, const <a class="el" href="structservio_1_1cfg_1_1payload.html">cfg::payload</a> &amp;pld, const <a class="el" href="namespaceservio_1_1cfg.html#a98eee67bc8174b65e3225bf2cadc29a7">cfg::map</a> *cfg)</td></tr>
 <tr class="separator:ab36e52030344b4d8ae9775e4499c7f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16b95de16e9d3e2d29ea57b34bbf80da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">stop_exec</a> ()</td></tr>
@@ -382,14 +382,14 @@ vcc_drv</td>
 
 </div>
 </div>
-<a id="a7a102b79eb575babfee714826b272862"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a102b79eb575babfee714826b272862">&#9670;&nbsp;</a></span>encode() <span class="overload">[1/2]</span></h2>
+<a id="a411b0581dfe8ec5fc253e12355b427d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411b0581dfe8ec5fc253e12355b427d4">&#9670;&nbsp;</a></span>encode() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt; servio::fw::encode </td>
+          <td class="memname">std::tuple&lt; em::result, em::view&lt; std::byte * &gt; &gt; servio::fw::encode </td>
           <td>(</td>
           <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -412,14 +412,14 @@ vcc_drv</td>
 
 </div>
 </div>
-<a id="aefc985c9fc9111013a11bcff0452199e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefc985c9fc9111013a11bcff0452199e">&#9670;&nbsp;</a></span>encode() <span class="overload">[2/2]</span></h2>
+<a id="ae68cb08248576183a30d3dbcec796a20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae68cb08248576183a30d3dbcec796a20">&#9670;&nbsp;</a></span>encode() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt; servio::fw::encode </td>
+          <td class="memname">std::tuple&lt; em::result, em::view&lt; std::byte * &gt; &gt; servio::fw::encode </td>
           <td>(</td>
           <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -662,14 +662,14 @@ vcc_drv</td>
 
 </div>
 </div>
-<a id="a33fc58fbb70ef4b1cfdedbfcf6cde1b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33fc58fbb70ef4b1cfdedbfcf6cde1b5">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[2/2]</span></h2>
+<a id="a5b2bdd32885a2db32522f11a3a73a0d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b2bdd32885a2db32522f11a3a73a0d9">&#9670;&nbsp;</a></span>handle_message() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt; servio::fw::handle_message </td>
+          <td class="memname">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt; servio::fw::handle_message </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher">dispatcher</a> &amp;&#160;</td>
           <td class="paramname"><em>dis</em>, </td>
@@ -696,14 +696,14 @@ vcc_drv</td>
 
 </div>
 </div>
-<a id="abbeeb0878b9943ed0b50175ab321065d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbeeb0878b9943ed0b50175ab321065d">&#9670;&nbsp;</a></span>handle_message_packet()</h2>
+<a id="a958bf350bbe8b27b5db135c8b6ea0909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a958bf350bbe8b27b5db135c8b6ea0909">&#9670;&nbsp;</a></span>handle_message_packet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt; servio::fw::handle_message_packet </td>
+          <td class="memname">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt; servio::fw::handle_message_packet </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher">dispatcher</a> &amp;&#160;</td>
           <td class="paramname"><em>dis</em>, </td>
@@ -728,7 +728,7 @@ vcc_drv</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1fw.html#a33fc58fbb70ef4b1cfdedbfcf6cde1b5">handle_message()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1fw.html#a5b2bdd32885a2db32522f11a3a73a0d9">handle_message()</a>.</p>
 
 </div>
 </div>
@@ -960,8 +960,8 @@ template&lt;typename... Components&gt; </div>
 
 </div>
 </div>
-<a id="a856f30bcce1b70756917820791268afd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a856f30bcce1b70756917820791268afd">&#9670;&nbsp;</a></span>process_message()</h2>
+<a id="aef7177bf7b33538307aa967e65274fd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef7177bf7b33538307aa967e65274fd9">&#9670;&nbsp;</a></span>process_message()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -969,7 +969,7 @@ template&lt;typename... Components&gt; </div>
 template&lt;typename InputType , typename OutputType , typename Handle &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; bool, em::view&lt; std::byte* &gt; &gt; servio::fw::process_message </td>
+          <td class="memname">std::tuple&lt; em::outcome, em::view&lt; std::byte* &gt; &gt; servio::fw::process_message </td>
           <td>(</td>
           <td class="paramtype">em::view&lt; const std::byte * &gt;&#160;</td>
           <td class="paramname"><em>input_data</em>, </td>
@@ -994,7 +994,7 @@ template&lt;typename InputType , typename OutputType , typename Handle &gt; </di
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1fw.html#afd6e1ab5a28aac226cb1ead48fbca4f6">decode()</a>, and <a class="el" href="namespaceservio_1_1fw.html#a7a102b79eb575babfee714826b272862">encode()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1fw.html#afd6e1ab5a28aac226cb1ead48fbca4f6">decode()</a>, and <a class="el" href="namespaceservio_1_1fw.html#a411b0581dfe8ec5fc253e12355b427d4">encode()</a>.</p>
 
 </div>
 </div>
@@ -1059,7 +1059,7 @@ template&lt;typename InputType , typename OutputType , typename Handle &gt; </di
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1fw.html">fw</a></li>
-    <li class="footer">Generated on Thu Jan 4 2024 13:49:54 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jan 13 2024 18:05:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

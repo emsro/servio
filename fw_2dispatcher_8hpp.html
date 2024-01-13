@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('fw_2dispatcher_8hpp.html',''); initRes
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="cfg_2dispatcher_8hpp_source.html">cfg/dispatcher.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="control_8hpp_source.html">ctl/control.hpp</a>&quot;</code><br />
+<code>#include &quot;emlabcpp/outcome.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8hpp_source.html">fw/util.hpp</a>&quot;</code><br />
 <code>#include &lt;emlabcpp/experimental/function_view.h&gt;</code><br />
 <code>#include &lt;io.pb.h&gt;</code><br />
@@ -101,7 +102,7 @@ $(document).ready(function(){initNavTree('fw_2dispatcher_8hpp.html',''); initRes
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="fw_2dispatcher_8hpp__incl.svg" width="748" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="fw_2dispatcher_8hpp__incl.svg" width="932" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -123,10 +124,10 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ae3f53c1f676f5ce8a8cbdfa28bd99fea"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#ae3f53c1f676f5ce8a8cbdfa28bd99fea">servio::fw::handle_message</a> (dispatcher &amp;dis, const HostToServio &amp;msg)</td></tr>
 <tr class="separator:ae3f53c1f676f5ce8a8cbdfa28bd99fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33fc58fbb70ef4b1cfdedbfcf6cde1b5"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a33fc58fbb70ef4b1cfdedbfcf6cde1b5">servio::fw::handle_message</a> (dispatcher &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
-<tr class="separator:a33fc58fbb70ef4b1cfdedbfcf6cde1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbeeb0878b9943ed0b50175ab321065d"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#abbeeb0878b9943ed0b50175ab321065d">servio::fw::handle_message_packet</a> (dispatcher &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
-<tr class="separator:abbeeb0878b9943ed0b50175ab321065d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b2bdd32885a2db32522f11a3a73a0d9"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a5b2bdd32885a2db32522f11a3a73a0d9">servio::fw::handle_message</a> (dispatcher &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
+<tr class="separator:a5b2bdd32885a2db32522f11a3a73a0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a958bf350bbe8b27b5db135c8b6ea0909"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a958bf350bbe8b27b5db135c8b6ea0909">servio::fw::handle_message_packet</a> (dispatcher &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
+<tr class="separator:a958bf350bbe8b27b5db135c8b6ea0909"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1fw_1_1dispatcher" id="structservio_1_1fw_1_1dispatcher"></a>
@@ -226,7 +227,7 @@ vcc_drv</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="fw_2dispatcher_8hpp.html">dispatcher.hpp</a></li>
-    <li class="footer">Generated on Thu Jan 4 2024 13:49:54 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jan 13 2024 18:05:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
