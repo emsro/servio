@@ -29,10 +29,7 @@ const page* find_next_page( em::view< const page* > pages );
 
 const page* find_latest_page( em::view< const page* > pages );
 
-bool store(
-    const payload&                                     pl,
-    const map*                                         m,
-    em::function_view< bool( std::size_t, uint64_t ) > writer );
+std::tuple< bool, page > store( const payload& pl, const map* m, page buffer );
 
 bool load( page p, em::function_view< bool( const payload& ) > pl_cb, map& m );
 

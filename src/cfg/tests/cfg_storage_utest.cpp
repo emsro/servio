@@ -39,12 +39,8 @@ TEST( CFG, storage )
         cfg::payload pl;
         cfg::map     cm = cfg::get_default_config();
 
-        auto p      = *tmp;
-        auto writer = [&]( std::size_t addr, uint64_t val ) -> bool {
-                std::memcpy( &p[addr], &val, sizeof( uint64_t ) );
-                return true;
-        };
-        bool success = cfg::store( pl, &cm, writer );
+        auto p                 = *tmp;
+        auto [success, used_p] = cfg::store( pl, &cm, p );
         EXPECT_TRUE( success );
 
         tmp = cfg::find_unused_page( pages );

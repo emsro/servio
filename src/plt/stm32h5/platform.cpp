@@ -29,14 +29,27 @@ void cfg_erase( uint32_t start_addr )
         }
 }
 
-bool cfg_write( uint32_t addr, uint64_t val )
+bool cfg_write( uint32_t addr, std::span< std::byte > buffer )
 {
-        // TODO: is the enum correct?
-        const HAL_StatusTypeDef status = HAL_FLASH_Program( FLASH_TYPEPROGRAM_OB, addr, val );
-        if ( status != HAL_OK ) {
-                fw::stop_exec();
+        static constexpr std::size_t n = 128 / 8;
+        using dword                    = std::array< std::byte, n >;
+
+        while ( !buffer.empty() ) {
+                std::span< std::byte > tmp = buffer.subspan( 0, std::min( n, buffer.size() ) );
+
+                dword var{};
+                std::memcpy( var.data(), tmp.data(), tmp.size() );
+                const HAL_StatusTypeDef status = HAL_FLASH_Program(
+                    FLASH_TYPEPROGRAM_QUADWORD, addr, std::bit_cast< uint32_t >( var.data() ) );
+                if ( status != HAL_OK ) {
+                        fw::stop_exec();
+                }
+
+                buffer = buffer.subspan( tmp.size() );
+                addr += tmp.size();
         }
-        return status == HAL_OK;
+        // TODO: well, there is error handling to do
+        return true;
 }
 
 }  // namespace servio::plt

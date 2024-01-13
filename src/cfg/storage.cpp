@@ -99,19 +99,9 @@ const page* find_latest_page( em::view< const page* > pages )
 
 using reghandler = em::protocol::register_handler< map >;
 
-bool store(
-    const payload&                                     pl,
-    const map*                                         m,
-    em::function_view< bool( std::size_t, uint64_t ) > writer )
+std::tuple< bool, page > store( const payload& pl, const map* m, page buffer )
 {
-
-        static constexpr std::size_t n = map::registers_count;
-
-        constexpr std::size_t buffer_n =
-            em::ceil_to( n * sizeof( keyval ) + 128, sizeof( uint64_t ) );
-        std::array< std::byte, buffer_n > buffer;
-
-        bool success = handler::store(
+        return handler::store(
             buffer,
             pl,
             m != nullptr ? map::keys.size() : 0,
@@ -120,25 +110,6 @@ bool store(
                         .key = map::keys[i], .msg = reghandler::select( *m, map::keys[i] ) };
             },
             chcksum_f );
-
-        if ( !success ) {
-                return false;
-        }
-
-        constexpr std::size_t write_n = buffer.size() / sizeof( uint64_t );
-        for ( const std::size_t i : em::range( write_n ) ) {
-                const std::size_t j = write_n - 1 - i;
-
-                uint64_t word;
-                std::memcpy( &word, buffer.data() + j * sizeof( uint64_t ), sizeof( uint64_t ) );
-                success = writer( j * sizeof( uint64_t ), word );
-
-                if ( !success ) {
-                        break;
-                }
-        }
-
-        return success;
 }
 
 bool load( page p, em::function_view< bool( const payload& ) > pl_cb, map& m )

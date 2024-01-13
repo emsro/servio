@@ -3,8 +3,14 @@
 
 #include "fw/util.hpp"
 
+#include <bit>
+#include <cstring>
+#include <emlabcpp/algorithm.h>
+
 namespace servio::plt
 {
+
+namespace em = emlabcpp;
 
 void cfg_erase( uint32_t start_addr )
 {
@@ -25,14 +31,26 @@ void cfg_erase( uint32_t start_addr )
         }
 }
 
-bool cfg_write( uint32_t addr, uint64_t val )
+bool cfg_write( uint32_t addr, std::span< std::byte > buffer )
 {
-        const HAL_StatusTypeDef status =
-            HAL_FLASH_Program( FLASH_TYPEPROGRAM_DOUBLEWORD, addr, val );
-        if ( status != HAL_OK ) {
-                fw::stop_exec();
+        using dword = uint64_t;
+
+        while ( !buffer.empty() ) {
+                std::span< std::byte > tmp =
+                    buffer.first( std::min( sizeof( dword ), buffer.size() ) );
+                dword var = 0;
+                std::memcpy( &var, tmp.data(), tmp.size() );
+                const HAL_StatusTypeDef status =
+                    HAL_FLASH_Program( FLASH_TYPEPROGRAM_DOUBLEWORD, addr, var );
+                if ( status != HAL_OK ) {
+                        fw::stop_exec();
+                }
+
+                buffer = buffer.subspan( tmp.size() );
+                addr += tmp.size();
         }
-        return status == HAL_OK;
+        // TODO: well, there is error handling to do
+        return true;
 }
 
 }  // namespace servio::plt

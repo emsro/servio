@@ -2,7 +2,7 @@ servio_add_library(
   TARGET platform
   INCLUDE ../inc/ ./ ../../
   SOURCES platform.cpp
-  LIBS HAL::STM32::G4 CMSIS::STM32::G431xx STM32::Nano
+  LIBS emlabcpp HAL::STM32::G4 CMSIS::STM32::G431xx STM32::Nano
   OPTS -Os)
 
 target_link_libraries(
