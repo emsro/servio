@@ -57,5 +57,5 @@ var namespaceservio_1_1cfg =
     [ "get_default_config", "namespaceservio_1_1cfg.html#ab1b0accd80bacf405ee88cecdbb53768", null ],
     [ "load", "namespaceservio_1_1cfg.html#ad2944685956e09930ae90616bc178429", null ],
     [ "make_keyval", "namespaceservio_1_1cfg.html#a9d620c785f59bfb68d9bd89fd2038581", null ],
-    [ "store", "namespaceservio_1_1cfg.html#aa67b98724f717923471dc18c6e07db83", null ]
+    [ "store", "namespaceservio_1_1cfg.html#aadb91e63622df0e73a864a65468876f9", null ]
 ];

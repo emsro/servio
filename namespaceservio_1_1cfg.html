@@ -217,8 +217,8 @@ Functions</h2></td></tr>
 <tr class="separator:ac90beba4f9ba45db1db48a6daebc5ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8787135a705ae3b12e06d41bcf8c6c95"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a8787135a705ae3b12e06d41bcf8c6c95">find_latest_page</a> (em::view&lt; const <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> * &gt; pages)</td></tr>
 <tr class="separator:a8787135a705ae3b12e06d41bcf8c6c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa67b98724f717923471dc18c6e07db83"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#aa67b98724f717923471dc18c6e07db83">store</a> (const <a class="el" href="structservio_1_1cfg_1_1payload.html">payload</a> &amp;pl, const <a class="el" href="namespaceservio_1_1cfg.html#a98eee67bc8174b65e3225bf2cadc29a7">map</a> *m, em::function_view&lt; bool(std::size_t, uint64_t) &gt; writer)</td></tr>
-<tr class="separator:aa67b98724f717923471dc18c6e07db83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadb91e63622df0e73a864a65468876f9"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#aadb91e63622df0e73a864a65468876f9">store</a> (const <a class="el" href="structservio_1_1cfg_1_1payload.html">payload</a> &amp;pl, const <a class="el" href="namespaceservio_1_1cfg.html#a98eee67bc8174b65e3225bf2cadc29a7">map</a> *m, <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> buffer)</td></tr>
+<tr class="separator:aadb91e63622df0e73a864a65468876f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2944685956e09930ae90616bc178429"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ad2944685956e09930ae90616bc178429">load</a> (<a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> p, em::function_view&lt; bool(const <a class="el" href="structservio_1_1cfg_1_1payload.html">payload</a> &amp;) &gt; pl_cb, <a class="el" href="namespaceservio_1_1cfg.html#a98eee67bc8174b65e3225bf2cadc29a7">map</a> &amp;m)</td></tr>
 <tr class="separator:ad2944685956e09930ae90616bc178429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -693,14 +693,14 @@ template&lt;key Key&gt; </div>
 
 </div>
 </div>
-<a id="aa67b98724f717923471dc18c6e07db83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa67b98724f717923471dc18c6e07db83">&#9670;&nbsp;</a></span>store()</h2>
+<a id="aadb91e63622df0e73a864a65468876f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadb91e63622df0e73a864a65468876f9">&#9670;&nbsp;</a></span>store()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool servio::cfg::store </td>
+          <td class="memname">std::tuple&lt; bool, <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> &gt; servio::cfg::store </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structservio_1_1cfg_1_1payload.html">payload</a> &amp;&#160;</td>
           <td class="paramname"><em>pl</em>, </td>
@@ -714,8 +714,8 @@ template&lt;key Key&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">em::function_view&lt; bool(std::size_t, uint64_t) &gt;&#160;</td>
-          <td class="paramname"><em>writer</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a>&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -735,7 +735,7 @@ template&lt;key Key&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1cfg.html">cfg</a></li>
-    <li class="footer">Generated on Sat Jan 13 2024 18:05:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jan 13 2024 21:27:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

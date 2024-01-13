@@ -7,5 +7,5 @@ var storage_8hpp =
     [ "find_oldest_page", "storage_8hpp.html#ad27421ee699b93b2235fcf8d1c74298f", null ],
     [ "find_unused_page", "storage_8hpp.html#a54ea7bfc67c10412d2f5ddb4435739ff", null ],
     [ "load", "storage_8hpp.html#ad2944685956e09930ae90616bc178429", null ],
-    [ "store", "storage_8hpp.html#aa67b98724f717923471dc18c6e07db83", null ]
+    [ "store", "storage_8hpp.html#aadb91e63622df0e73a864a65468876f9", null ]
 ];

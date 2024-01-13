@@ -17,7 +17,7 @@ var searchData=
   ['cfg_5fset_5fcmd_102',['cfg_set_cmd',['../namespaceservio_1_1scmdio.html#a7cd98f3bc5c4f656559e6067f3b079e1',1,'servio::scmdio']]],
   ['cfg_5fstorage_5futest_2ecpp_103',['cfg_storage_utest.cpp',['../cfg__storage__utest_8cpp.html',1,'']]],
   ['cfg_5futest_2ecpp_104',['cfg_utest.cpp',['../cfg__utest_8cpp.html',1,'']]],
-  ['cfg_5fwrite_105',['cfg_write',['../namespaceservio_1_1plt.html#a9a3e631adec8c557b09b9caa0fa9cc2c',1,'servio::plt']]],
+  ['cfg_5fwrite_105',['cfg_write',['../namespaceservio_1_1plt.html#ab819c2568aa5dc1592d9f79774b1cf45',1,'servio::plt']]],
   ['cfg_5fwriter_106',['cfg_writer',['../namespaceservio_1_1fw.html#aeb851eece19778a49f0561bd8c16aea6',1,'servio::fw::dispatcher']]],
   ['chan_5fids_107',['chan_ids',['../namespaceservio_1_1fw_1_1drv.html#ade922119ab43123f6d90831c4e2c92d0',1,'servio::fw::drv']]],
   ['channel_108',['channel',['../namespaceservio_1_1fw_1_1drv.html#a1d7c443a15351ea0dda4355d060fea3c',1,'servio::fw::drv::pinch_cfg']]],

@@ -52,7 +52,7 @@ var searchData=
   ['static_5fdetector_1242',['static_detector',['../structservio_1_1mtr_1_1static__detector.html#a94c0f9e7e88fec7ad559c4860f95566a',1,'servio::mtr::static_detector']]],
   ['stop_1243',['stop',['../classservio_1_1fw_1_1drv_1_1hbridge.html#acf0d11cb10dcacedd424c5bf341bcc8d',1,'servio::fw::drv::hbridge::stop()'],['../classservio_1_1base_1_1period__interface.html#a80c24e3bdc4a5bf19ec84072b3f05ab1',1,'servio::base::period_interface::stop()']]],
   ['stop_5fexec_1244',['stop_exec',['../namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da',1,'servio::fw']]],
-  ['store_1245',['store',['../namespaceservio_1_1cfg.html#aa67b98724f717923471dc18c6e07db83',1,'servio::cfg']]],
+  ['store_1245',['store',['../namespaceservio_1_1cfg.html#aadb91e63622df0e73a864a65468876f9',1,'servio::cfg']]],
   ['store_5fpersistent_5fconfig_1246',['store_persistent_config',['../namespaceservio_1_1fw.html#ab36e52030344b4d8ae9775e4499c7f7e',1,'servio::fw']]],
   ['svc_5fhandler_1247',['SVC_Handler',['../it_8cpp.html#a3e5ddb3df0d62f2dc357e64a3f04a6ce',1,'it.cpp']]],
   ['switch_5fto_5fcurrent_5fcontrol_1248',['switch_to_current_control',['../classservio_1_1ctl_1_1control.html#afdd553d335089bbd6cdbf0083804727e',1,'servio::ctl::control']]],

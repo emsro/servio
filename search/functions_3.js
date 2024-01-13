@@ -9,7 +9,7 @@ var searchData=
   ['cfg_5fget_5fcmd_1046',['cfg_get_cmd',['../namespaceservio_1_1scmdio.html#a0316dca4208257cd70c10ba3808b6238',1,'servio::scmdio']]],
   ['cfg_5fquery_5fcmd_1047',['cfg_query_cmd',['../namespaceservio_1_1scmdio.html#a924cc37a67bd5a6d14afd76aea80ff4b',1,'servio::scmdio']]],
   ['cfg_5fset_5fcmd_1048',['cfg_set_cmd',['../namespaceservio_1_1scmdio.html#a7cd98f3bc5c4f656559e6067f3b079e1',1,'servio::scmdio']]],
-  ['cfg_5fwrite_1049',['cfg_write',['../namespaceservio_1_1plt.html#a9a3e631adec8c557b09b9caa0fa9cc2c',1,'servio::plt']]],
+  ['cfg_5fwrite_1049',['cfg_write',['../namespaceservio_1_1plt.html#ab819c2568aa5dc1592d9f79774b1cf45',1,'servio::plt']]],
   ['check_5fmode_1050',['check_mode',['../namespaceservio_1_1bb.html#aa19638a23c3029027a9205a6acc28248',1,'servio::bb']]],
   ['clear_5fstatus_1051',['clear_status',['../structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html#a1e7c2b3f4094d557b5f350ee189b76a5',1,'servio::fw::drv::detailed_adc_channel::clear_status()'],['../classservio_1_1base_1_1driver__interface.html#a7a6251b305566a53cb7c90129e445cc9',1,'servio::base::driver_interface::clear_status()']]],
   ['clock_1052',['clock',['../classservio_1_1fw_1_1drv_1_1clock.html#a8791d0bc78c94a4260eceba13cb79632',1,'servio::fw::drv::clock::clock()=default'],['../classservio_1_1fw_1_1drv_1_1clock.html#a05b26b20438c1d2702a8accbdb2ee8de',1,'servio::fw::drv::clock::clock(const clock &amp;)=delete'],['../classservio_1_1fw_1_1drv_1_1clock.html#aff75c28604440f14e1f607eb506acf24',1,'servio::fw::drv::clock::clock(clock &amp;&amp;)=delete']]],

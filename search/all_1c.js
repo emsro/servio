@@ -107,7 +107,7 @@ var searchData=
   ['stop_5fexec_663',['stop_exec',['../namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da',1,'servio::fw']]],
   ['storage_2ecpp_664',['storage.cpp',['../storage_8cpp.html',1,'']]],
   ['storage_2ehpp_665',['storage.hpp',['../storage_8hpp.html',1,'']]],
-  ['store_666',['store',['../namespaceservio_1_1cfg.html#aa67b98724f717923471dc18c6e07db83',1,'servio::cfg']]],
+  ['store_666',['store',['../namespaceservio_1_1cfg.html#aadb91e63622df0e73a864a65468876f9',1,'servio::cfg']]],
   ['store_5fpersistent_5fconfig_667',['store_persistent_config',['../namespaceservio_1_1fw.html#ab36e52030344b4d8ae9775e4499c7f7e',1,'servio::fw']]],
   ['store_5fpersistent_5fconfig_2ecpp_668',['store_persistent_config.cpp',['../store__persistent__config_8cpp.html',1,'']]],
   ['store_5fpersistent_5fconfig_2ehpp_669',['store_persistent_config.hpp',['../store__persistent__config_8hpp.html',1,'']]],

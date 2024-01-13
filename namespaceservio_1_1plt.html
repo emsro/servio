@@ -110,8 +110,8 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a645e44622af5420d2d39234cf52d9f76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a645e44622af5420d2d39234cf52d9f76">cfg_erase</a> (uint32_t start_addr)</td></tr>
 <tr class="separator:a645e44622af5420d2d39234cf52d9f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a3e631adec8c557b09b9caa0fa9cc2c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a9a3e631adec8c557b09b9caa0fa9cc2c">cfg_write</a> (uint32_t addr, uint64_t val)</td></tr>
-<tr class="separator:a9a3e631adec8c557b09b9caa0fa9cc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab819c2568aa5dc1592d9f79774b1cf45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#ab819c2568aa5dc1592d9f79774b1cf45">cfg_write</a> (uint32_t addr, std::span&lt; std::byte &gt; val)</td></tr>
+<tr class="separator:ab819c2568aa5dc1592d9f79774b1cf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6b2eafaa6f1fbbaa3c70276bf8d1984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#ad6b2eafaa6f1fbbaa3c70276bf8d1984">setup_adc_channel</a> (ADC_ChannelConfTypeDef &amp;channel, <a class="el" href="namespaceservio_1_1fw_1_1drv.html#structservio_1_1fw_1_1drv_1_1pinch__cfg">fw::drv::pinch_cfg</a> cfg)</td></tr>
 <tr class="separator:ad6b2eafaa6f1fbbaa3c70276bf8d1984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61d6b0c2150e342de64df4363ad4e8bc"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a61d6b0c2150e342de64df4363ad4e8bc">setup_adc</a> (ADC_HandleTypeDef &amp;adc, DMA_HandleTypeDef &amp;dma, <a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg">adc_cfg</a> cfg)</td></tr>
@@ -470,8 +470,8 @@ yellow</td>
 
 </div>
 </div>
-<a id="a9a3e631adec8c557b09b9caa0fa9cc2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a3e631adec8c557b09b9caa0fa9cc2c">&#9670;&nbsp;</a></span>cfg_write()</h2>
+<a id="ab819c2568aa5dc1592d9f79774b1cf45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab819c2568aa5dc1592d9f79774b1cf45">&#9670;&nbsp;</a></span>cfg_write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -485,7 +485,7 @@ yellow</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramtype">std::span&lt; std::byte &gt;&#160;</td>
           <td class="paramname"><em>val</em>&#160;</td>
         </tr>
         <tr>
@@ -804,7 +804,7 @@ yellow</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1plt.html">plt</a></li>
-    <li class="footer">Generated on Sat Jan 13 2024 18:05:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jan 13 2024 21:27:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
