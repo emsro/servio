@@ -1,5 +1,6 @@
 #include "fw/servio_pb.hpp"
 
+#include "emlabcpp/result.h"
 #include "fw/util.hpp"
 
 #include <pb_decode.h>
@@ -36,24 +37,24 @@ bool decode( em::view< const std::byte* > data, HostToServioPacket& msg )
         return status;
 }
 
-std::tuple< bool, em::view< std::byte* > >
+std::tuple< em::result, em::view< std::byte* > >
 encode( em::view< std::byte* > data, const ServioToHost& msg )
 {
         pb_ostream_t stream =
             pb_ostream_from_buffer( reinterpret_cast< uint8_t* >( data.begin() ), data.size() );
         const bool res = pb_encode( &stream, ServioToHost_fields, &msg );
 
-        return { res, em::view_n( data.begin(), stream.bytes_written ) };
+        return { em::result::from_bool( res ), em::view_n( data.begin(), stream.bytes_written ) };
 }
 
-std::tuple< bool, em::view< std::byte* > >
+std::tuple< em::result, em::view< std::byte* > >
 encode( em::view< std::byte* > data, const ServioToHostPacket& msg )
 {
         pb_ostream_t stream =
             pb_ostream_from_buffer( reinterpret_cast< uint8_t* >( data.begin() ), data.size() );
         const bool res = pb_encode( &stream, ServioToHostPacket_fields, &msg );
 
-        return { res, em::view_n( data.begin(), stream.bytes_written ) };
+        return { em::result::from_bool( res ), em::view_n( data.begin(), stream.bytes_written ) };
 }
 
 }  // namespace servio::fw

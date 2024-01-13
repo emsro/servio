@@ -1,3 +1,5 @@
+#include "emlabcpp/result.h"
+
 #include <emlabcpp/view.h>
 #include <io.pb.h>
 
@@ -16,9 +18,9 @@ bool decode( em::view< const std::byte* > data, HostToServioPacket& msg );
 
 /// encodes a ServioToHost message to bytes, returns succes bool and subset of data that contains
 /// the serialized message
-std::tuple< bool, em::view< std::byte* > >
+std::tuple< em::result, em::view< std::byte* > >
 encode( em::view< std::byte* > data, const ServioToHost& msg );
-std::tuple< bool, em::view< std::byte* > >
+std::tuple< em::result, em::view< std::byte* > >
 encode( em::view< std::byte* > data, const ServioToHostPacket& msg );
 
 }  // namespace servio::fw

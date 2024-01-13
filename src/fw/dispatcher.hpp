@@ -1,5 +1,6 @@
 #include "cfg/dispatcher.hpp"
 #include "ctl/control.hpp"
+#include "emlabcpp/outcome.h"
 #include "fw/util.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
@@ -27,12 +28,12 @@ struct dispatcher
 
 ServioToHost handle_message( dispatcher& dis, const HostToServio& msg );
 
-std::tuple< bool, em::view< std::byte* > > handle_message(
+std::tuple< em::outcome, em::view< std::byte* > > handle_message(
     dispatcher&                  dis,
     em::view< const std::byte* > input_data,
     em::view< std::byte* >       output_buffer );
 
-std::tuple< bool, em::view< std::byte* > > handle_message_packet(
+std::tuple< em::outcome, em::view< std::byte* > > handle_message_packet(
     dispatcher&                  dis,
     em::view< const std::byte* > input_data,
     em::view< std::byte* >       output_buffer );

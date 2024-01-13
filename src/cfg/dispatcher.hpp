@@ -24,6 +24,12 @@ struct dispatcher
         void full_apply();
 
         void apply( const key& key );
+
+        template < key Key >
+        const auto& get() const
+        {
+                return m.get_val< Key >();
+        }
 };
 
 void apply( ctl::control&, const map&, const key& key );

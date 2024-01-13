@@ -1,6 +1,8 @@
 #include "fw/dispatcher.hpp"
 
 #include "cnv/utils.hpp"
+#include "emlabcpp/outcome.h"
+#include "emlabcpp/result.h"
 #include "fw/map_cfg.hpp"
 #include "fw/servio_pb.hpp"
 
@@ -199,7 +201,7 @@ ServioToHost handle_message( dispatcher& dis, const HostToServio& msg )
 }
 
 template < typename InputType, typename OutputType, typename Handle >
-std::tuple< bool, em::view< std::byte* > > process_message(
+std::tuple< em::outcome, em::view< std::byte* > > process_message(
     em::view< const std::byte* > input_data,
     em::view< std::byte* >       output_buffer,
     Handle&&                     h )
@@ -207,29 +209,32 @@ std::tuple< bool, em::view< std::byte* > > process_message(
         InputType  inpt;
         const bool succ = decode( input_data, inpt );
         if ( !succ ) {
-                return { false, {} };
+                return { em::FAILURE, {} };
         }
 
-        std::optional< OutputType > opt_res = h( inpt );
-        if ( !opt_res.has_value() ) {
-                return { false, {} };
+        OutputType output;
+
+        em::outcome res = h( inpt, output );
+        if ( res != em::SUCCESS ) {
+                return { res, {} };
         }
 
-        return encode( output_buffer, *opt_res );
+        return encode( output_buffer, output );
 }
 
-std::tuple< bool, em::view< std::byte* > > handle_message(
+std::tuple< em::outcome, em::view< std::byte* > > handle_message(
     dispatcher&                  dis,
     em::view< const std::byte* > input_data,
     em::view< std::byte* >       output_buffer )
 {
         return process_message< HostToServio, ServioToHost >(
-            input_data, output_buffer, [&dis]( const HostToServio& msg ) {
-                    return handle_message( dis, msg );
+            input_data, output_buffer, [&dis]( const HostToServio& inpt, ServioToHost& out ) {
+                    out = handle_message( dis, inpt );
+                    return em::SUCCESS;
             } );
 }
 
-std::tuple< bool, em::view< std::byte* > > handle_message_packet(
+std::tuple< em::outcome, em::view< std::byte* > > handle_message_packet(
     dispatcher&                  dis,
     em::view< const std::byte* > input_data,
     em::view< std::byte* >       output_buffer )
@@ -237,17 +242,16 @@ std::tuple< bool, em::view< std::byte* > > handle_message_packet(
         return process_message< HostToServioPacket, ServioToHostPacket >(
             input_data,
             output_buffer,
-            [&dis]( const HostToServioPacket& msg ) -> std::optional< ServioToHostPacket > {
+            [&dis]( const HostToServioPacket& inpt, ServioToHostPacket& out ) -> em::outcome {
                     // TODO: check whenver id equals to currently configured id, or group id
                     // equals to currently configured group id
-                    if ( !msg.has_payload ) {
-                            return std::nullopt;
+                    if ( !inpt.has_payload ) {
+                            return em::ERROR;
                     }
-                    ServioToHostPacket res;
-                    res.id          = msg.id;
-                    res.has_payload = true;
-                    res.payload     = handle_message( dis, msg.payload );
-                    return res;
+                    out.id          = inpt.id;
+                    out.has_payload = true;
+                    out.payload     = handle_message( dis, inpt.payload );
+                    return em::SUCCESS;
             } );
 }
 

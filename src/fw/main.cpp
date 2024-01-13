@@ -81,12 +81,11 @@ int main()
 
                 auto [succ, odata] = fw::handle_message_packet( dis, ldata, output_buffer );
 
-                if ( !succ ) {
+                if ( succ == em::ERROR ) {
                         fw::stop_exec();
-                } else {
-                        if ( cdrv.comms->send( odata ) != em::SUCCESS ) {
-                                fw::stop_exec();
-                        }
+                }
+                if ( cdrv.comms->send( odata ) != em::SUCCESS ) {
+                        fw::stop_exec();
                 }
         }
 }
