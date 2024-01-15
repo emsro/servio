@@ -14,6 +14,6 @@ var searchData=
   ['handle_5fset_5fconfig_1128',['handle_set_config',['../namespaceservio_1_1fw.html#a4e9503b8a5659417d41556c80472ad4c',1,'servio::fw']]],
   ['handle_5fset_5fmode_1129',['handle_set_mode',['../namespaceservio_1_1fw.html#a677ad05ce4b297ac246595e7ecd06d9a',1,'servio::fw']]],
   ['hardfault_5fhandler_1130',['HardFault_Handler',['../it_8cpp.html#a2bffc10d5bd4106753b7c30e86903bea',1,'it.cpp']]],
-  ['hbridge_1131',['hbridge',['../classservio_1_1fw_1_1drv_1_1hbridge.html#ace5a7d298ada2ba6d946b39950cdcffc',1,'servio::fw::drv::hbridge::hbridge(const hbridge &amp;)=delete'],['../classservio_1_1fw_1_1drv_1_1hbridge.html#a131a2a28b7b91be041e71d1fb45e2ce2',1,'servio::fw::drv::hbridge::hbridge(hbridge &amp;&amp;)=delete'],['../classservio_1_1fw_1_1drv_1_1hbridge.html#a28d5b848077b9065be05d2223d7adb29',1,'servio::fw::drv::hbridge::hbridge()']]],
-  ['hbridge_5fsetup_1132',['hbridge_setup',['../namespaceservio_1_1brd.html#a45fe0499f9a99d8a4973d6f24d4ab075',1,'servio::brd']]]
+  ['hbridge_1131',['hbridge',['../classservio_1_1drv_1_1hbridge.html#a7c940c511f041ccec9838378700e8d86',1,'servio::drv::hbridge::hbridge(const hbridge &amp;)=delete'],['../classservio_1_1drv_1_1hbridge.html#a11b0a38a2f997cf5d8b685fdf387edee',1,'servio::drv::hbridge::hbridge(hbridge &amp;&amp;)=delete'],['../classservio_1_1drv_1_1hbridge.html#a67b3a565727c944e29d65716fc9a91ba',1,'servio::drv::hbridge::hbridge()']]],
+  ['hbridge_5fsetup_1132',['hbridge_setup',['../namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc',1,'servio::brd']]]
 ];

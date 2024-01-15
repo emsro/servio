@@ -1,6 +1,5 @@
 var namespaceservio_1_1fw =
 [
-    [ "drv", "namespaceservio_1_1fw_1_1drv.html", "namespaceservio_1_1fw_1_1drv" ],
     [ "dispatcher", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher", "namespaceservio_1_1fw_structservio_1_1fw_1_1dispatcher_dup" ],
     [ "persistent_config_writer", "structservio_1_1fw_1_1persistent__config__writer.html", "structservio_1_1fw_1_1persistent__config__writer" ],
     [ "check_bool", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool", null ],

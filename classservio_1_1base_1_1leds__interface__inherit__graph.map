@@ -1,4 +1,4 @@
 <map id="servio::base::leds_interface" name="servio::base::leds_interface">
-<area shape="rect" id="node1" title=" " alt="" coords="11,5,147,47"/>
-<area shape="rect" id="node2" href="$classservio_1_1fw_1_1drv_1_1leds.html" title=" " alt="" coords="5,95,152,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,141,47"/>
+<area shape="rect" id="node2" href="$classservio_1_1drv_1_1leds.html" title=" " alt="" coords="11,95,136,121"/>
 </map>

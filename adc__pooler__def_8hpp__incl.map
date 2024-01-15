@@ -1,6 +1,6 @@
-<map id="src/fw/drv/adc_pooler_def.hpp" name="src/fw/drv/adc_pooler_def.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="80,5,240,47"/>
-<area shape="rect" id="node2" href="$adc__pooler_8hpp.html" title=" " alt="" coords="78,95,242,121"/>
-<area shape="rect" id="node3" href="$fw_2drv_2callbacks_8hpp.html" title=" " alt="" coords="5,169,160,196"/>
-<area shape="rect" id="node4" href="$platform_8hpp.html" title=" " alt="" coords="184,169,291,196"/>
+<map id="src/drv/adc_pooler_def.hpp" name="src/drv/adc_pooler_def.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="75,5,216,47"/>
+<area shape="rect" id="node2" href="$adc__pooler_8hpp.html" title=" " alt="" coords="73,95,218,121"/>
+<area shape="rect" id="node3" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="5,169,141,196"/>
+<area shape="rect" id="node4" href="$platform_8hpp.html" title=" " alt="" coords="165,169,272,196"/>
 </map>

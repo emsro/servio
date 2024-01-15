@@ -93,11 +93,11 @@ $(document).ready(function(){initNavTree('prototype2_2board_8cpp.html',''); init
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="brd_8hpp_source.html">brd.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_8hpp_source.html">core/drivers.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="adc__pooler__def_8hpp_source.html">drv/adc_pooler_def.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="clock_8hpp_source.html">drv/clock.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cobs__uart_8hpp_source.html">drv/cobs_uart.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="leds_8hpp_source.html">drv/leds.hpp</a>&quot;</code><br />
 <code>#include &quot;emlabcpp/result.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="adc__pooler__def_8hpp_source.html">fw/drv/adc_pooler_def.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="clock_8hpp_source.html">fw/drv/clock.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="cobs__uart_8hpp_source.html">fw/drv/cobs_uart.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="leds_8hpp_source.html">fw/drv/leds.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8hpp_source.html">fw/util.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="brd_2prototype2_2setup_8hpp_source.html">setup.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('prototype2_2board_8cpp.html',''); init
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="prototype2_2board_8cpp__incl.svg" width="1660" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="prototype2_2board_8cpp__incl.svg" width="1606" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -145,17 +145,17 @@ Functions</h2></td></tr>
 <tr class="memitem:acf0eac3166e968f5cefe71de1f5d5ca8"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#acf0eac3166e968f5cefe71de1f5d5ca8">servio::brd::setup_board</a> ()</td></tr>
 <tr class="memdesc:acf0eac3166e968f5cefe71de1f5d5ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial setup call for the board.  <a href="namespaceservio_1_1brd.html#acf0eac3166e968f5cefe71de1f5d5ca8">More...</a><br /></td></tr>
 <tr class="separator:acf0eac3166e968f5cefe71de1f5d5ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fa5a7b67ef8924d8b06ef1a9507621d"><td class="memItemLeft" align="right" valign="top">fw::drv::adc_pooler&lt; fw::drv::adc_set &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a2fa5a7b67ef8924d8b06ef1a9507621d">servio::brd::adc_pooler_setup</a> ()</td></tr>
-<tr class="separator:a2fa5a7b67ef8924d8b06ef1a9507621d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45fe0499f9a99d8a4973d6f24d4ab075"><td class="memItemLeft" align="right" valign="top">fw::drv::hbridge *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a45fe0499f9a99d8a4973d6f24d4ab075">servio::brd::hbridge_setup</a> ()</td></tr>
-<tr class="separator:a45fe0499f9a99d8a4973d6f24d4ab075"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c22a0bc0638ea9a623178ed9ab7970b"><td class="memItemLeft" align="right" valign="top">fw::drv::cobs_uart *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9c22a0bc0638ea9a623178ed9ab7970b">servio::brd::comms_setup</a> ()</td></tr>
-<tr class="separator:a9c22a0bc0638ea9a623178ed9ab7970b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99340595767d8b9325d4473d593c7c33"><td class="memItemLeft" align="right" valign="top">drv::adc_pooler&lt; drv::adc_set &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a99340595767d8b9325d4473d593c7c33">servio::brd::adc_pooler_setup</a> ()</td></tr>
+<tr class="separator:a99340595767d8b9325d4473d593c7c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e933c86ae59b33c53a15dd89f58febc"><td class="memItemLeft" align="right" valign="top">drv::hbridge *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc">servio::brd::hbridge_setup</a> ()</td></tr>
+<tr class="separator:a7e933c86ae59b33c53a15dd89f58febc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee366d78fb4dd7ae0e84ee4a28665113"><td class="memItemLeft" align="right" valign="top">drv::cobs_uart *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#aee366d78fb4dd7ae0e84ee4a28665113">servio::brd::comms_setup</a> ()</td></tr>
+<tr class="separator:aee366d78fb4dd7ae0e84ee4a28665113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaad7b603159b5b262bb9cc0733d85ddb"><td class="memItemLeft" align="right" valign="top">base::com_interface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#aaad7b603159b5b262bb9cc0733d85ddb">servio::brd::setup_debug_comms</a> ()</td></tr>
 <tr class="memdesc:aaad7b603159b5b262bb9cc0733d85ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize debug interface.  <a href="namespaceservio_1_1brd.html#aaad7b603159b5b262bb9cc0733d85ddb">More...</a><br /></td></tr>
 <tr class="separator:aaad7b603159b5b262bb9cc0733d85ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4a4e5a1d7e32325aac5425f434968d7"><td class="memItemLeft" align="right" valign="top">fw::drv::leds *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#af4a4e5a1d7e32325aac5425f434968d7">servio::brd::leds_setup</a> ()</td></tr>
-<tr class="separator:af4a4e5a1d7e32325aac5425f434968d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8018a4a9a9bc9b1d4af53c14d646d4c8"><td class="memItemLeft" align="right" valign="top">drv::leds *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a8018a4a9a9bc9b1d4af53c14d646d4c8">servio::brd::leds_setup</a> ()</td></tr>
+<tr class="separator:a8018a4a9a9bc9b1d4af53c14d646d4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac2ab253dd62c8d22e7504bd106c6283"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#aac2ab253dd62c8d22e7504bd106c6283">servio::brd::start_callback</a> (core::drivers &amp;cdrv)</td></tr>
 <tr class="separator:aac2ab253dd62c8d22e7504bd106c6283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58f703e939140ddd318ba1e8202e6153"><td class="memItemLeft" align="right" valign="top">core::drivers&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a58f703e939140ddd318ba1e8202e6153">servio::brd::setup_core_drivers</a> ()</td></tr>
@@ -260,7 +260,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1fw_1_1drv.html#a57a1ebb5e2c3971a50a7aa4431bd25fa">servio::fw::drv::ADC_POOLER</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">servio::drv::ADC_POOLER</a>.</p>
 
 </div>
 </div>
@@ -280,7 +280,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1fw_1_1drv.html#a57a1ebb5e2c3971a50a7aa4431bd25fa">servio::fw::drv::ADC_POOLER</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">servio::drv::ADC_POOLER</a>.</p>
 
 </div>
 </div>
@@ -300,7 +300,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a73d245d44ce584896dcaf19c28e675e8">servio::brd::HBRIDGE</a>, and <a class="el" href="classservio_1_1fw_1_1drv_1_1hbridge.html#aeb5dd5b26bb59a080ba27152ad55301d">servio::fw::drv::hbridge::timer_period_irq()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">servio::brd::HBRIDGE</a>, and <a class="el" href="classservio_1_1drv_1_1hbridge.html#aba898e36f0927115d4f26073d9de3937">servio::drv::hbridge::timer_period_irq()</a>.</p>
 
 </div>
 </div>
@@ -320,7 +320,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a779a3ceb00806b8cdba18215754e4b0a">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#af780199bd08020627be1542751d5f60f">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="classservio_1_1fw_1_1drv_1_1cobs__uart.html#ae1c565058da5029c4f0976e28f36f2ae">servio::fw::drv::cobs_uart::rx_cplt_irq()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">servio::drv::cobs_uart::rx_cplt_irq()</a>.</p>
 
 </div>
 </div>
@@ -340,7 +340,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a779a3ceb00806b8cdba18215754e4b0a">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#af780199bd08020627be1542751d5f60f">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="classservio_1_1fw_1_1drv_1_1cobs__uart.html#a2dcd155bb40c3c42c56a12df5e556466">servio::fw::drv::cobs_uart::tx_cplt_irq()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">servio::drv::cobs_uart::tx_cplt_irq()</a>.</p>
 
 </div>
 </div>
@@ -407,7 +407,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5e799c239320254db95d54212428175b.html">brd</a></li><li class="navelem"><a class="el" href="dir_8e1e433d822186fb9a9e1e6d2f2ded72.html">prototype2</a></li><li class="navelem"><a class="el" href="prototype2_2board_8cpp.html">board.cpp</a></li>
-    <li class="footer">Generated on Sat Jan 13 2024 21:27:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Jan 15 2024 21:46:10 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

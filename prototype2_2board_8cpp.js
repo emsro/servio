@@ -1,8 +1,8 @@
 var prototype2_2board_8cpp =
 [
     [ "ADC1_2_IRQHandler", "prototype2_2board_8cpp.html#aff4af6b741ab43c7784e08e0e2e50586", null ],
-    [ "adc_pooler_setup", "prototype2_2board_8cpp.html#a2fa5a7b67ef8924d8b06ef1a9507621d", null ],
-    [ "comms_setup", "prototype2_2board_8cpp.html#a9c22a0bc0638ea9a623178ed9ab7970b", null ],
+    [ "adc_pooler_setup", "prototype2_2board_8cpp.html#a99340595767d8b9325d4473d593c7c33", null ],
+    [ "comms_setup", "prototype2_2board_8cpp.html#aee366d78fb4dd7ae0e84ee4a28665113", null ],
     [ "DMA1_Channel1_IRQHandler", "prototype2_2board_8cpp.html#abd49de55f82b1a0be3edaaf34dbe4b14", null ],
     [ "DMA1_Channel4_IRQHandler", "prototype2_2board_8cpp.html#a9cdc63af1166aec768f87546a48bec8d", null ],
     [ "DMA1_Channel5_IRQHandler", "prototype2_2board_8cpp.html#a8e3a6d7ba4b5da3ec8decb912bd80943", null ],
@@ -11,8 +11,8 @@ var prototype2_2board_8cpp =
     [ "HAL_TIM_PeriodElapsedCallback", "prototype2_2board_8cpp.html#a641bc903b980920fddc6954a40e4ec51", null ],
     [ "HAL_UART_RxCpltCallback", "prototype2_2board_8cpp.html#a84719ef5a2750117d3d1b6e105d8f148", null ],
     [ "HAL_UART_TxCpltCallback", "prototype2_2board_8cpp.html#a94a249281eebfa3bd9aa3f979cc9f03d", null ],
-    [ "hbridge_setup", "prototype2_2board_8cpp.html#a45fe0499f9a99d8a4973d6f24d4ab075", null ],
-    [ "leds_setup", "prototype2_2board_8cpp.html#af4a4e5a1d7e32325aac5425f434968d7", null ],
+    [ "hbridge_setup", "prototype2_2board_8cpp.html#a7e933c86ae59b33c53a15dd89f58febc", null ],
+    [ "leds_setup", "prototype2_2board_8cpp.html#a8018a4a9a9bc9b1d4af53c14d646d4c8", null ],
     [ "setup_board", "prototype2_2board_8cpp.html#acf0eac3166e968f5cefe71de1f5d5ca8", null ],
     [ "setup_core_drivers", "prototype2_2board_8cpp.html#a58f703e939140ddd318ba1e8202e6153", null ],
     [ "setup_debug_comms", "prototype2_2board_8cpp.html#aaad7b603159b5b262bb9cc0733d85ddb", null ],

@@ -21,9 +21,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="namespaceservio_1_1fw_1_1drv.html#structservio_1_1fw_1_1drv_1_1pinch__cfg" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="4.5,-78.5 4.5,-97.5 141.5,-97.5 141.5,-78.5 4.5,-78.5"/>
-<text text-anchor="middle" x="73" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::fw::drv::pinch_cfg</text>
+<g id="a_node2"><a xlink:href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="13,-78.5 13,-97.5 133,-97.5 133,-78.5 13,-78.5"/>
+<text text-anchor="middle" x="73" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::pinch_cfg</text>
 </a>
 </g>
 </g>

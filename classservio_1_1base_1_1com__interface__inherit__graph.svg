@@ -21,9 +21,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classservio_1_1fw_1_1drv_1_1cobs__uart.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="7.5,-0.5 7.5,-19.5 144.5,-19.5 144.5,-0.5 7.5,-0.5"/>
-<text text-anchor="middle" x="76" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::fw::drv::cobs_uart</text>
+<g id="a_node2"><a xlink:href="classservio_1_1drv_1_1cobs__uart.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="15.5,-0.5 15.5,-19.5 136.5,-19.5 136.5,-0.5 15.5,-0.5"/>
+<text text-anchor="middle" x="76" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::cobs_uart</text>
 </a>
 </g>
 </g>

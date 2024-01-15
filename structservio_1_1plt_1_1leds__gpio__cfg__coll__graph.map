@@ -1,4 +1,4 @@
 <map id="servio::plt::leds_gpio_cfg" name="servio::plt::leds_gpio_cfg">
 <area shape="rect" id="node1" title=" " alt="" coords="5,109,189,136"/>
-<area shape="rect" id="node2" href="$namespaceservio_1_1fw_1_1drv.html#structservio_1_1fw_1_1drv_1_1pin__cfg" title=" " alt="" coords="14,5,181,32"/>
+<area shape="rect" id="node2" href="$namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg" title=" " alt="" coords="25,5,170,32"/>
 </map>

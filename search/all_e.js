@@ -1,15 +1,15 @@
 var searchData=
 [
   ['data_5fcache_5fenable_181',['DATA_CACHE_ENABLE',['../stm32g4xx__hal__conf_8h.html#a5b4c32a40cf49b06c0d761e385949a6b',1,'stm32g4xx_hal_conf.h']]],
-  ['debug_5fcomms_182',['DEBUG_COMMS',['../namespaceservio_1_1brd.html#af780199bd08020627be1542751d5f60f',1,'servio::brd']]],
+  ['debug_5fcomms_182',['DEBUG_COMMS',['../namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5',1,'servio::brd']]],
   ['debugmon_5fhandler_183',['DebugMon_Handler',['../it_8cpp.html#adbdfb05858cc36fc520974df37ec3cb0',1,'it.cpp']]],
   ['decay_184',['decay',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a79dd5adc577a77d349ec011aca62c6d0',1,'servio::ctl::linear_transition_regulator']]],
   ['decode_185',['decode',['../namespaceservio_1_1fw.html#a71a4c228f6742be91b7ca82c2fe62f20',1,'servio::fw::decode(em::view&lt; const std::byte * &gt; data, HostToServioPacket &amp;msg)'],['../namespaceservio_1_1fw.html#afd6e1ab5a28aac226cb1ead48fbca4f6',1,'servio::fw::decode(em::view&lt; const std::byte * &gt; data, HostToServio &amp;msg)']]],
   ['default_2ehpp_186',['default.hpp',['../default_8hpp.html',1,'']]],
   ['defs_2ehpp_187',['defs.hpp',['../defs_8hpp.html',1,'']]],
   ['degraded_188',['DEGRADED',['../namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84fa0021017005f0e5134b204c2e69d3d4ed',1,'servio::base']]],
-  ['detailed_5fadc_5fchannel_189',['detailed_adc_channel',['../structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html',1,'servio::fw::drv']]],
-  ['detailed_5fadc_5fchannel_3c_20current_5fchannel_2c_20128_20_3e_190',['detailed_adc_channel&lt; CURRENT_CHANNEL, 128 &gt;',['../structservio_1_1fw_1_1drv_1_1detailed__adc__channel.html',1,'servio::fw::drv']]],
+  ['detailed_5fadc_5fchannel_189',['detailed_adc_channel',['../structservio_1_1drv_1_1detailed__adc__channel.html',1,'servio::drv']]],
+  ['detailed_5fadc_5fchannel_3c_20current_5fchannel_2c_20128_20_3e_190',['detailed_adc_channel&lt; CURRENT_CHANNEL, 128 &gt;',['../structservio_1_1drv_1_1detailed__adc__channel.html',1,'servio::drv']]],
   ['device_191',['device',['../structservio_1_1scmdio_1_1common__cli.html#a13d5cff164e350f1588d3f5d5dfe5380',1,'servio::scmdio::common_cli']]],
   ['device_5fopt_192',['device_opt',['../namespaceservio_1_1scmdio.html#a06a1f0b93a4abc6c70b670a4c7fec45e',1,'servio::scmdio']]],
   ['disengage_193',['disengage',['../classservio_1_1ctl_1_1control.html#aec94b1ea8cd631cb99d492c4ab86d201',1,'servio::ctl::control']]],

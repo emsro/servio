@@ -4,7 +4,7 @@ var searchData=
   ['read_544',['read',['../namespaceservio_1_1scmdio.html#a156170a954ed1534f90a35d8a25baed8',1,'servio::scmdio']]],
   ['read_5fbuffer_545',['read_buffer',['../structservio_1_1scmdio_1_1cobs__port.html#a3c0ff28427c4ac6cd78e1a315e5dfe3f',1,'servio::scmdio::cobs_port']]],
   ['readme_2emd_546',['README.md',['../README_8md.html',1,'(Global Namespace)'],['../doc_2adr_2README_8md.html',1,'(Global Namespace)']]],
-  ['red_547',['red',['../namespaceservio_1_1base.html#a05f5ed9d1dec54fb0ed7e537bf8c063a',1,'servio::base::leds_vals::red()'],['../namespaceservio_1_1plt.html#a1215c0caf75e89e5beef894f76505b3f',1,'servio::plt::leds_gpio_cfg::red()']]],
+  ['red_547',['red',['../namespaceservio_1_1base.html#a05f5ed9d1dec54fb0ed7e537bf8c063a',1,'servio::base::leds_vals::red()'],['../namespaceservio_1_1plt.html#a3f041bb8297fff525ea8012ba66633fe',1,'servio::plt::leds_gpio_cfg::red()']]],
   ['reg_548',['reg',['../namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f',1,'servio::cfg']]],
   ['reghandler_549',['reghandler',['../namespaceservio_1_1cfg.html#a1c0059c37a0260639c1b3eb21d8c849e',1,'servio::cfg']]],
   ['register_5ftest_550',['register_test',['../namespaceservio_1_1bb.html#af96e2c93cab7c4829a6755ea8bcccff0',1,'servio::bb']]],
@@ -14,6 +14,6 @@ var searchData=
   ['reset_5ftime_554',['reset_time',['../structservio_1_1sim_1_1simple__motor.html#a5563aeee83e892d124ea5b76324853de',1,'servio::sim::simple_motor']]],
   ['resistance_555',['resistance',['../structservio_1_1sim_1_1simple__motor.html#ade2481293d955630a63a394b11beeafc',1,'servio::sim::simple_motor']]],
   ['rotate_5fvec_556',['rotate_vec',['../namespaceservio_1_1sim.html#ae4e290055137b3e1d32c0322341caf6d',1,'servio::sim']]],
-  ['rx_557',['rx',['../namespaceservio_1_1plt.html#a8057273e167d2b55e5a0a96a1ca6f20c',1,'servio::plt::uart_cfg::rx()'],['../namespaceservio_1_1brd.html#a56e2892a5dd2f6f68b25a74fe0e8caed',1,'servio::brd::uart_cfg::rx()']]],
-  ['rx_5fcplt_5firq_558',['rx_cplt_irq',['../classservio_1_1fw_1_1drv_1_1cobs__uart.html#ae1c565058da5029c4f0976e28f36f2ae',1,'servio::fw::drv::cobs_uart']]]
+  ['rx_557',['rx',['../namespaceservio_1_1plt.html#a1688c8334710f32b004a657ad9014aa2',1,'servio::plt::uart_cfg::rx()'],['../namespaceservio_1_1brd.html#a5987a41f2e6ef4c86bc41bb9c6494ef9',1,'servio::brd::uart_cfg::rx()']]],
+  ['rx_5fcplt_5firq_558',['rx_cplt_irq',['../classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67',1,'servio::drv::cobs_uart']]]
 ];

@@ -92,15 +92,15 @@ $(document).ready(function(){initNavTree('plt_2stm32h5_2setup_8hpp.html',''); in
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="map_8hpp_source.html">cfg/map.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="defs_8hpp_source.html">drv/defs.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="board_8hpp_source.html">fw/board.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="defs_8hpp_source.html">fw/drv/defs.hpp</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for setup.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="plt_2stm32h5_2setup_8hpp__incl.svg" width="1282" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="plt_2stm32h5_2setup_8hpp__incl.svg" width="1266" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -134,18 +134,18 @@ Functions</h2></td></tr>
 <tr class="separator:a54207fdd13b8536cfecc8079e969056b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61d6b0c2150e342de64df4363ad4e8bc"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a61d6b0c2150e342de64df4363ad4e8bc">servio::plt::setup_adc</a> (ADC_HandleTypeDef &amp;adc, DMA_HandleTypeDef &amp;dma, adc_cfg cfg)</td></tr>
 <tr class="separator:a61d6b0c2150e342de64df4363ad4e8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6b2eafaa6f1fbbaa3c70276bf8d1984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#ad6b2eafaa6f1fbbaa3c70276bf8d1984">servio::plt::setup_adc_channel</a> (ADC_ChannelConfTypeDef &amp;channel, fw::drv::pinch_cfg cfg)</td></tr>
-<tr class="separator:ad6b2eafaa6f1fbbaa3c70276bf8d1984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f200642c04256949e23ea736bbd57e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a04f200642c04256949e23ea736bbd57e">servio::plt::setup_adc_channel</a> (ADC_ChannelConfTypeDef &amp;channel, drv::pinch_cfg cfg)</td></tr>
+<tr class="separator:a04f200642c04256949e23ea736bbd57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab59156a4d6fbd15217a26dc5ebed8b64"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#ab59156a4d6fbd15217a26dc5ebed8b64">servio::plt::setup_adc_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
 <tr class="separator:ab59156a4d6fbd15217a26dc5ebed8b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b7c8043898e10b87fa53fd5bb021d96"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a7b7c8043898e10b87fa53fd5bb021d96">servio::plt::setup_uart</a> (UART_HandleTypeDef &amp;uart, DMA_HandleTypeDef &amp;tx_dma, uart_cfg cfg)</td></tr>
 <tr class="separator:a7b7c8043898e10b87fa53fd5bb021d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a917cc285404ba1c9a62080f12567ad7c"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c">servio::plt::setup_hbridge_timers</a> (TIM_HandleTypeDef &amp;tim, hb_timer_cfg cfg)</td></tr>
 <tr class="separator:a917cc285404ba1c9a62080f12567ad7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bce43d05d8019e634fc1046cac7c99a"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a1bce43d05d8019e634fc1046cac7c99a">servio::plt::setup_gpio</a> (const fw::drv::pin_cfg &amp;cfg)</td></tr>
-<tr class="separator:a1bce43d05d8019e634fc1046cac7c99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac196502acb654675c7db127deb9c4744"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#ac196502acb654675c7db127deb9c4744">servio::plt::setup_leds_channel</a> (TIM_HandleTypeDef *tim, fw::drv::pinch_cfg cfg)</td></tr>
-<tr class="separator:ac196502acb654675c7db127deb9c4744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d1ffe876c5d8201cbbb029bb4e7e988"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a5d1ffe876c5d8201cbbb029bb4e7e988">servio::plt::setup_gpio</a> (const drv::pin_cfg &amp;cfg)</td></tr>
+<tr class="separator:a5d1ffe876c5d8201cbbb029bb4e7e988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25cf0c78aaa0a1eed2dda1c91f70fc0a"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a25cf0c78aaa0a1eed2dda1c91f70fc0a">servio::plt::setup_leds_channel</a> (TIM_HandleTypeDef *tim, drv::pinch_cfg cfg)</td></tr>
+<tr class="separator:a25cf0c78aaa0a1eed2dda1c91f70fc0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97b99f12fdb9bdec7f51c3a2fa1a63b8"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a97b99f12fdb9bdec7f51c3a2fa1a63b8">servio::plt::setup_clk</a> ()</td></tr>
 <tr class="separator:a97b99f12fdb9bdec7f51c3a2fa1a63b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa3ffb0666945381bc9735b671490daf"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#afa3ffb0666945381bc9735b671490daf">servio::plt::setup_clock_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
@@ -252,7 +252,7 @@ dma</td>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1plt_1_1uart__cfg__coll__graph.svg" width="352" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1plt_1_1uart__cfg__coll__graph.svg" width="331" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
@@ -276,13 +276,13 @@ irq_priority</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a8057273e167d2b55e5a0a96a1ca6f20c"></a>pin_cfg</td>
+<a id="a1688c8334710f32b004a657ad9014aa2"></a>pin_cfg</td>
 <td class="fieldname">
 rx</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="af8b0ee90decb22610f256d65d091bc0d"></a>pin_cfg</td>
+<a id="a9dd4647ad22e65f5bed71ae108f45679"></a>pin_cfg</td>
 <td class="fieldname">
 tx</td>
 <td class="fielddoc">
@@ -319,7 +319,7 @@ uart_instance</td>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1plt_1_1hb__timer__cfg__coll__graph.svg" width="194" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1plt_1_1hb__timer__cfg__coll__graph.svg" width="191" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
@@ -337,13 +337,13 @@ irq_priority</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="afae624fbd9648d47a88dd14922239ad8"></a>pinch_cfg</td>
+<a id="a10096e8dc0a12328bcda1c7ede9833f2"></a>pinch_cfg</td>
 <td class="fieldname">
 mc1</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ae4c82d45c58779f24f628b413e649b14"></a>pinch_cfg</td>
+<a id="a110537a82897a1ce2b2e04fdf0633152"></a>pinch_cfg</td>
 <td class="fieldname">
 mc2</td>
 <td class="fielddoc">
@@ -386,13 +386,13 @@ timer_instance</td>
 <table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="ab9d65b8e69271c6180a1f9cba4479ab9"></a>pin_cfg</td>
+<a id="a8e3ee77a1eecd0b200713232da8790fc"></a>pin_cfg</td>
 <td class="fieldname">
 blue</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a1215c0caf75e89e5beef894f76505b3f"></a>pin_cfg</td>
+<a id="a3f041bb8297fff525ea8012ba66633fe"></a>pin_cfg</td>
 <td class="fieldname">
 red</td>
 <td class="fielddoc">
@@ -423,7 +423,7 @@ red</td>
 <table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a26cab47c000cd09cc667f5d1862ac651"></a>pinch_cfg</td>
+<a id="a75103b3e408610a74d1c0299c6f17482"></a>pinch_cfg</td>
 <td class="fieldname">
 green</td>
 <td class="fielddoc">
@@ -435,7 +435,7 @@ timer_instance</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a7c19d1b05728b78252b48166c1d72a58"></a>pinch_cfg</td>
+<a id="a7cc4c6a6554cf5bc2eee93407aa1f371"></a>pinch_cfg</td>
 <td class="fieldname">
 yellow</td>
 <td class="fielddoc">
@@ -450,7 +450,7 @@ yellow</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ac1b950000007ef415966b2ee5669a0d.html">plt</a></li><li class="navelem"><a class="el" href="dir_f2088f76b3ac3723d91fa5f5a2a678d4.html">stm32h5</a></li><li class="navelem"><a class="el" href="plt_2stm32h5_2setup_8hpp.html">setup.hpp</a></li>
-    <li class="footer">Generated on Sat Jan 13 2024 21:27:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Jan 15 2024 21:46:10 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

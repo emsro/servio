@@ -1,6 +1,6 @@
 <map id="servio::base::value_cb_interface" name="servio::base::value_cb_interface">
 <area shape="rect" id="node1" title=" " alt="" coords="5,71,151,112"/>
-<area shape="rect" id="node2" href="$classservio_1_1core_1_1position__callback.html" title=" " alt="" coords="201,5,359,47"/>
-<area shape="rect" id="node3" href="$structservio_1_1fw_1_1drv_1_1empty__value__cb.html" title=" " alt="" coords="199,71,361,112"/>
-<area shape="rect" id="node4" href="$structservio_1_1fw_1_1drv_1_1value__cb.html" title=" " alt="" coords="202,136,358,177"/>
+<area shape="rect" id="node2" href="$classservio_1_1core_1_1position__callback.html" title=" " alt="" coords="199,5,357,47"/>
+<area shape="rect" id="node3" href="$structservio_1_1drv_1_1empty__value__cb.html" title=" " alt="" coords="208,71,348,112"/>
+<area shape="rect" id="node4" href="$structservio_1_1drv_1_1value__cb.html" title=" " alt="" coords="211,136,345,177"/>
 </map>
