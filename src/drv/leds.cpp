@@ -1,10 +1,10 @@
-#include "fw/drv/leds.hpp"
+#include "drv/leds.hpp"
 
 #include "fw/util.hpp"
 
 #include <emlabcpp/algorithm.h>
 
-namespace servio::fw::drv
+namespace servio::drv
 {
 
 void leds::force_red_led()
@@ -44,4 +44,4 @@ void leds::update( const base::leds_vals& leds )
         __HAL_TIM_SET_COMPARE( tim_, green_.channel, green_val );
 }
 
-}  // namespace servio::fw::drv
+}  // namespace servio::drv

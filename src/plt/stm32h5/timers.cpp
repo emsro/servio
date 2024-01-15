@@ -36,7 +36,7 @@ em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
         oc_config.OCIdleState  = TIM_OCIDLESTATE_RESET;
         oc_config.OCNIdleState = TIM_OCNIDLESTATE_RESET;
 
-        for ( const fw::drv::pinch_cfg& pc : { cfg.mc1, cfg.mc2 } ) {
+        for ( const drv::pinch_cfg& pc : { cfg.mc1, cfg.mc2 } ) {
                 GPIO_InitTypeDef gpio_itd{};
                 gpio_itd.Pin       = pc.pin;
                 gpio_itd.Mode      = GPIO_MODE_AF_PP;
@@ -139,7 +139,7 @@ em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         return em::SUCCESS;
 }
 
-em::result setup_leds_channel( TIM_HandleTypeDef* tim, fw::drv::pinch_cfg cfg )
+em::result setup_leds_channel( TIM_HandleTypeDef* tim, drv::pinch_cfg cfg )
 {
         GPIO_InitTypeDef gpio_itd{};
 

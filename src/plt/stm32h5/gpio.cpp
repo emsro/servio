@@ -1,11 +1,11 @@
+#include "drv/leds.hpp"
 #include "emlabcpp/result.h"
-#include "fw/drv/leds.hpp"
 #include "setup.hpp"
 
 namespace servio::plt
 {
 
-em::result setup_gpio( const fw::drv::pin_cfg& cfg )
+em::result setup_gpio( const drv::pin_cfg& cfg )
 {
         GPIO_InitTypeDef init;
         init.Pin       = cfg.pin;

@@ -1,11 +1,11 @@
+add_subdirectory(base)
+add_subdirectory(cfg)
+add_subdirectory(core)
+add_subdirectory(ctl)
 add_subdirectory(iface)
 add_subdirectory(klmn)
-add_subdirectory(base)
-add_subdirectory(ctl)
 add_subdirectory(mon)
 add_subdirectory(mtr)
-add_subdirectory(core)
-add_subdirectory(cfg)
 
 add_library(serviolib INTERFACE)
 
@@ -20,6 +20,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 else()
 
   add_subdirectory(fw)
-  target_link_libraries(serviolib INTERFACE fwlib)
+  add_subdirectory(drv)
+  target_link_libraries(serviolib INTERFACE fwlib drvlib)
 
 endif()

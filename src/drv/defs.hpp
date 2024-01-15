@@ -2,7 +2,7 @@
 
 #include "platform.hpp"
 
-namespace servio::fw::drv
+namespace servio::drv
 {
 
 struct pin_cfg
@@ -20,4 +20,4 @@ struct pinch_cfg
         uint8_t       alternate = 0x0;
 };
 
-}  // namespace servio::fw::drv
+}  // namespace servio::drv

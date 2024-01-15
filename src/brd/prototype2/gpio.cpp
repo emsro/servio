@@ -1,10 +1,10 @@
-#include "fw/drv/leds.hpp"
+#include "drv/leds.hpp"
 #include "setup.hpp"
 
 namespace servio::brd
 {
 
-em::result setup_gpio( const fw::drv::pin_cfg& cfg )
+em::result setup_gpio( const drv::pin_cfg& cfg )
 {
         GPIO_InitTypeDef init;
         init.Pin       = cfg.pin;

@@ -1,5 +1,5 @@
 #include "base/drv_interfaces.hpp"
-#include "fw/drv/callbacks.hpp"
+#include "drv/callbacks.hpp"
 #include "platform.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
@@ -9,7 +9,7 @@
 
 namespace em = emlabcpp;
 
-namespace servio::fw::drv
+namespace servio::drv
 {
 
 inline empty_period_cb EMPTY_PERIOD_CB;
@@ -79,4 +79,4 @@ private:
         uint32_t                   mc2_channel_ = 0;
 };
 
-}  // namespace servio::fw::drv
+}  // namespace servio::drv

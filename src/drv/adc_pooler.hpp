@@ -1,9 +1,9 @@
-#include "fw/drv/callbacks.hpp"
+#include "drv/callbacks.hpp"
 #include "platform.hpp"
 
 #pragma once
 
-namespace servio::fw::drv
+namespace servio::drv
 {
 inline empty_adc_detailed_cb EMPTY_ADC_DETAILED_CALLBACK;
 
@@ -228,4 +228,4 @@ private:
         Set                        set_;
 };
 
-}  // namespace servio::fw::drv
+}  // namespace servio::drv

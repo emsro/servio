@@ -1,9 +1,9 @@
 
-#include "fw/drv/adc_pooler.hpp"
+#include "drv/adc_pooler.hpp"
 
 #pragma once
 
-namespace servio::fw::drv
+namespace servio::drv
 {
 
 enum chan_ids
@@ -18,10 +18,10 @@ struct adc_set
 {
         using id_type = chan_ids;
 
-        fw::drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >  current;
-        fw::drv::adc_channel_with_callback< POSITION_CHANNEL > position;
-        fw::drv::adc_channel< VCC_CHANNEL >                    vcc;
-        fw::drv::adc_channel< TEMP_CHANNEL >                   temp;
+        drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >  current;
+        drv::adc_channel_with_callback< POSITION_CHANNEL > position;
+        drv::adc_channel< VCC_CHANNEL >                    vcc;
+        drv::adc_channel< TEMP_CHANNEL >                   temp;
 
         auto tie()
         {
@@ -29,7 +29,7 @@ struct adc_set
         }
 };
 
-fw::drv::adc_pooler< adc_set > ADC_POOLER{};
+drv::adc_pooler< adc_set > ADC_POOLER{};
 
 struct : base::period_cb_interface
 {
@@ -126,4 +126,4 @@ auto ADC_SEQUENCE = std::array{
 };
 
 
-}  // namespace servio::fw::drv
+}  // namespace servio::drv

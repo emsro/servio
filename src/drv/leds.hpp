@@ -1,6 +1,6 @@
 #include "base/base.hpp"
 #include "base/drv_interfaces.hpp"
-#include "fw/drv/defs.hpp"
+#include "drv/defs.hpp"
 #include "platform.hpp"
 
 #include <cstdint>
@@ -10,7 +10,7 @@
 
 namespace em = emlabcpp;
 
-namespace servio::fw::drv
+namespace servio::drv
 {
 
 class leds : public base::leds_interface
@@ -51,4 +51,4 @@ private:
         pinch_cfg green_;
 };
 
-}  // namespace servio::fw::drv
+}  // namespace servio::drv

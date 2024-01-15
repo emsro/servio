@@ -9,7 +9,7 @@
 
 namespace em = emlabcpp;
 
-namespace servio::fw::drv
+namespace servio::drv
 {
 
 constexpr std::size_t comm_buff_size = 128;
@@ -88,4 +88,4 @@ private:
         std::array< std::byte, comm_buff_size > otmp_;
 };
 
-}  // namespace servio::fw::drv
+}  // namespace servio::drv

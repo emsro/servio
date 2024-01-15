@@ -5,7 +5,7 @@
 namespace servio::plt
 {
 
-void setup_adc_channel( ADC_ChannelConfTypeDef& channel, fw::drv::pinch_cfg cfg )
+void setup_adc_channel( ADC_ChannelConfTypeDef& channel, drv::pinch_cfg cfg )
 {
         channel = ADC_ChannelConfTypeDef{
             .Channel      = cfg.channel,
