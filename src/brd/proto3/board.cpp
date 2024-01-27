@@ -97,7 +97,6 @@ void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
 }
 }
 
-
 namespace servio::brd
 {
 
@@ -152,13 +151,13 @@ drv::adc_pooler< drv::adc_set >* adc_pooler_setup()
                 } ),
             plt::setup_adc_timer( ADC_TIM_HANDLE, TIM6 ) );
 
-        if ( res != em::SUCCESS ) {
+        if ( res != em::SUCCESS )
                 return nullptr;
-        }
 
         return drv::ADC_POOLER.setup(
             drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, ADC_TIM_HANDLE );
 }
+
 // TODO: not ideal return type /o\..
 drv::hbridge* hbridge_setup()
 {
@@ -184,9 +183,8 @@ drv::hbridge* hbridge_setup()
                     .alternate = GPIO_AF14_TIM1,
                 },
         };
-        if ( plt::setup_hbridge_timers( TIM1_HANDLE, cfg ) != em::SUCCESS ) {
+        if ( plt::setup_hbridge_timers( TIM1_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
-        }
 
         return HBRIDGE.setup( &TIM1_HANDLE, cfg.mc1.channel, cfg.mc2.channel );
 }
@@ -223,9 +221,8 @@ drv::cobs_uart* comms_setup()
                 },
         };
 
-        if ( setup_uart( UART2_HANDLE, UART2_DMA_HANDLE, cfg ) != em::SUCCESS ) {
+        if ( setup_uart( UART2_HANDLE, UART2_DMA_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
-        }
 
         return COMMS.setup( UART2_HANDLE, UART2_DMA_HANDLE );
 }
@@ -262,9 +259,8 @@ base::com_interface* setup_debug_comms()
                 },
         };
 
-        if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != em::SUCCESS ) {
+        if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
-        }
 
         return DEBUG_COMMS.setup( UART1_HANDLE, UART1_DMA_HANDLE );
 }
@@ -303,9 +299,8 @@ drv::leds* leds_setup()
             plt::setup_leds_channel( &TIM2_HANDLE, yellow ),
             plt::setup_leds_channel( &TIM2_HANDLE, green ) );
 
-        if ( res == em::SUCCESS ) {
+        if ( res == em::SUCCESS )
                 return LEDS.setup( red, blue, TIM2_HANDLE, yellow, green );
-        }
 
         return nullptr;
 }
@@ -315,35 +310,29 @@ em::result start_callback( core::drivers& cdrv )
 
         if ( cdrv.position != nullptr ) {
                 // this implies that adc_poolerition is OK
-                if ( drv::ADC_POOLER.start() != em::SUCCESS ) {
+                if ( drv::ADC_POOLER.start() != em::SUCCESS )
                         return em::ERROR;
-                }
         }
         if ( cdrv.motor != nullptr ) {
-                if ( HBRIDGE.start() != em::SUCCESS ) {
+                if ( HBRIDGE.start() != em::SUCCESS )
                         return em::ERROR;
-                }
         }
         if ( cdrv.comms != nullptr ) {
-                if ( COMMS.start() != em::SUCCESS ) {
+                if ( COMMS.start() != em::SUCCESS )
                         return em::ERROR;
-                }
         }
         if ( cdrv.leds != nullptr ) {
-                if ( LEDS.start() != em::SUCCESS ) {
+                if ( LEDS.start() != em::SUCCESS )
                         return em::ERROR;
-                }
         }
 
         return em::SUCCESS;
 }
 
-
 em::result setup_board()
 {
-        if ( HAL_Init() != HAL_OK ) {
+        if ( HAL_Init() != HAL_OK )
                 return em::ERROR;
-        }
         return plt::setup_clk();
 }
 
@@ -351,9 +340,8 @@ em::result setup_board()
 core::drivers setup_core_drivers()
 {
         __HAL_RCC_TIM2_CLK_ENABLE();
-        if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2 ) != em::SUCCESS ) {
+        if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2 ) != em::SUCCESS )
                 fw::stop_exec();
-        }
 
         drv::hbridge* hb = hbridge_setup();
 
@@ -381,7 +369,6 @@ cfg::map get_default_config()
         return plt::get_default_config();
 }
 
-
 // TODO: this needs better placement
 // TODO: study this: https://github.com/littlefs-project/littlefs
 em::view< std::byte* > page_at( uint32_t i )
@@ -390,6 +377,7 @@ em::view< std::byte* > page_at( uint32_t i )
             reinterpret_cast< std::byte* >( &_config_start ) + i * FLASH_SECTOR_SIZE,
             FLASH_SECTOR_SIZE );
 }
+
 // TODO: one block is small, need more
 std::array< em::view< std::byte* >, 1 > PERSISTENT_BLOCKS{ page_at( 0 ) };
 

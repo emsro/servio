@@ -3,13 +3,11 @@
 namespace servio::cfg
 {
 
-
 struct off_scale
 {
         float offset;
         float scale;
 };
-
 
 // The formula asserted:
 //
@@ -34,6 +32,5 @@ calculate_current_conversion( float v_max, float v_min, float steps, float r_shu
             .scale  = ( v_max - v_min ) / ( steps * r_shunt * gain )  //
         };
 }
-
 
 }  // namespace servio::cfg

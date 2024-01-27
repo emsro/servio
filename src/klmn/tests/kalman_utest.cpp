@@ -60,9 +60,8 @@ TEST( Kalman, base )
         ASSERT_EQ( states.size(), zs.size() );
 
         for ( const std::size_t i : em::range( states.size() ) ) {
-                if ( i < 100U ) {
+                if ( i < 100U )
                         continue;
-                }
                 EXPECT_NEAR( velocity( states[i] ), 0.5F, 0.01F );
         }
 }

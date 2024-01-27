@@ -68,9 +68,8 @@ struct cobs_port
                 read_buffer.erase(
                     read_buffer.begin(), read_buffer.begin() + static_cast< long int >( n ) );
 
-                if ( !rsucc ) {
+                if ( !rsucc )
                         throw parse_error{ "failed to parse cobs" };
-                }
 
                 co_return deser_msg;
         }

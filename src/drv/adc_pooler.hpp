@@ -28,12 +28,10 @@ struct detailed_adc_channel
 
         base::status get_status() const
         {
-                if ( config_channel_error || start_error || stop_error ) {
+                if ( config_channel_error || start_error || stop_error )
                         return base::status::INOPERABLE;
-                }
-                if ( no_samples_error || samples_overflow_error ) {
+                if ( no_samples_error || samples_overflow_error )
                         return base::status::DEGRADED;
-                }
                 return base::status::NOMINAL;
         }
 
@@ -45,9 +43,8 @@ struct detailed_adc_channel
 
         void period_start( ADC_HandleTypeDef& h )
         {
-                if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK ) {
+                if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK )
                         config_channel_error = true;
-                }
                 if ( HAL_ADC_Start_DMA( &h, reinterpret_cast< uint32_t* >( &buffer ), N ) !=
                      HAL_OK ) {
                         start_error = true;
@@ -57,15 +54,13 @@ struct detailed_adc_channel
         [[gnu::flatten]] void period_stop( ADC_HandleTypeDef& h )
         {
                 used = N - __HAL_DMA_GET_COUNTER( h.DMA_Handle );
-                if ( HAL_ADC_Stop_DMA( &h ) != HAL_OK ) {
+                if ( HAL_ADC_Stop_DMA( &h ) != HAL_OK )
                         stop_error = true;
-                }
-                if ( used == 0 ) {
+                if ( used == 0 )
                         no_samples_error = true;
 
-                } else if ( used == N ) {
+                else if ( used == N )
                         samples_overflow_error = false;
-                }
 
                 const std::span readings( std::data( buffer ), used );
 
@@ -94,20 +89,17 @@ struct adc_channel
 
         base::status get_status() const
         {
-                if ( config_channel_error || start_error || stop_error ) {
+                if ( config_channel_error || start_error || stop_error )
                         return base::status::INOPERABLE;
-                }
                 return base::status::NOMINAL;
         }
 
         void period_start( ADC_HandleTypeDef& h )
         {
-                if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK ) {
+                if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK )
                         config_channel_error = true;
-                }
-                if ( HAL_ADC_Start_IT( &h ) != HAL_OK ) {
+                if ( HAL_ADC_Start_IT( &h ) != HAL_OK )
                         start_error = true;
-                }
         }
 
         void period_stop( ADC_HandleTypeDef& )
@@ -117,9 +109,8 @@ struct adc_channel
         void conv_cplt( ADC_HandleTypeDef& h )
         {
                 // is this necessary?
-                if ( HAL_ADC_Stop_IT( &h ) != HAL_OK ) {
+                if ( HAL_ADC_Stop_IT( &h ) != HAL_OK )
                         stop_error = true;
-                }
                 last_value = HAL_ADC_GetValue( &h );
         }
 };
@@ -166,6 +157,7 @@ struct adc_pooler
         {
                 return &set_;
         }
+
         Set& operator*()
         {
                 return set_;
@@ -173,18 +165,16 @@ struct adc_pooler
 
         void adc_error_irq( ADC_HandleTypeDef* h )
         {
-                if ( h != adc_ ) {
+                if ( h != adc_ )
                         return;
-                }
                 std::ignore = h;
                 // TODO: convert this into flag
         }
 
         [[gnu::flatten]] void adc_conv_cplt_irq( ADC_HandleTypeDef* h )
         {
-                if ( h != adc_ ) {
+                if ( h != adc_ )
                         return;
-                }
                 const auto active_id = sequence_[sequence_i_];
                 with( active_id, [&]( auto& item ) {
                         // TODO: error handling?
@@ -212,9 +202,8 @@ private:
         [[gnu::flatten]] void with( id_type set_id, auto&& f )
         {
                 em::for_each( set_.tie(), [&]< typename T >( T& item ) {
-                        if ( T::id == set_id ) {
+                        if ( T::id == set_id )
                                 f( item );
-                        }
                 } );
         }
 

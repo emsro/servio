@@ -25,12 +25,10 @@ control::control( base::microseconds now, ctl::config cfg )
 
 ctl::pid& control::ref_module( base::control_loop cl )
 {
-        if ( cl == base::control_loop::CURRENT ) {
+        if ( cl == base::control_loop::CURRENT )
                 return current_pid_;
-        }
-        if ( cl == base::control_loop::VELOCITY ) {
+        if ( cl == base::control_loop::VELOCITY )
                 return velocity_pid_;
-        }
         return position_pid_;
 }
 
@@ -38,6 +36,7 @@ void control::set_pid( base::control_loop cl, ctl::pid_coefficients coeffs )
 {
         ref_module( cl ).cfg.coefficients = coeffs;
 }
+
 void control::set_limits( base::control_loop cl, base::limits< float > lim )
 {
         switch ( cl ) {
@@ -81,17 +80,20 @@ void control::switch_to_power_control( int16_t power )
         state_ = base::control_mode::POWER;
         power_ = power;
 }
+
 void control::switch_to_current_control( base::microseconds, float current )
 {
         state_        = base::control_mode::CURRENT;
         current_goal_ = clamp( current, current_lims_.config_lims );
 }
+
 void control::switch_to_velocity_control( base::microseconds, float velocity )
 {
         state_              = base::control_mode::VELOCITY;
         velocity_goal_      = clamp( velocity, velocity_lims_.config_lims );
         velocity_pid_.i_sum = 0;
 }
+
 void control::switch_to_position_control( base::microseconds, float position )
 {
         state_              = base::control_mode::POSITION;
@@ -111,11 +113,10 @@ void control::moving_irq( base::microseconds now, bool is_moving )
         vlims.max() = position_to_velocity_lim_scale_ * ( position_lims_.max() - position );
         vlims.min() = position_to_velocity_lim_scale_ * ( position_lims_.min() - position );
 
-        if ( state_ == base::control_mode::POSITION ) {
+        if ( state_ == base::control_mode::POSITION )
                 em::update( position_pid_, now.count(), position, position_goal_ );
-        } else {
+        else
                 em::reset( position_pid_, now.count(), position );
-        }
 }
 
 [[gnu::flatten]] void control::velocity_irq( base::microseconds now, float velocity )

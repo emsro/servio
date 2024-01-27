@@ -43,21 +43,18 @@ public:
 
                 // TODO: check that this works
                 const float vcc = conv_.vcc.convert( vcc_drv_.get_vcc() );
-                if ( vcc < min_vcc_ ) {
+                if ( vcc < min_vcc_ )
                         indi_.on_event( now, indication_event::VOLTAGE_LOW );
-                }
 
                 // TODO: check that this works
                 const float temp = conv_.temp.convert( temp_drv_.get_temperature() );
-                if ( temp > max_tmp_ ) {
+                if ( temp > max_tmp_ )
                         indi_.on_event( now, indication_event::TEMPERATURE_HIGH );
-                }
 
-                if ( ctl_.get_mode() != base::control_mode::DISENGAGED ) {
+                if ( ctl_.get_mode() != base::control_mode::DISENGAGED )
                         indi_.on_event( now, indication_event::ENGAGED );
-                } else {
+                else
                         indi_.on_event( now, indication_event::DISENGAGED );
-                }
         }
 
 private:

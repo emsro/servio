@@ -43,9 +43,8 @@ public:
 
         void timer_period_irq( TIM_HandleTypeDef* h )
         {
-                if ( h != tim_ ) {
+                if ( h != tim_ )
                         return;
-                }
                 period_cb_->on_period_irq();
         }
 

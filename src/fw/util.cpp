@@ -7,13 +7,11 @@ namespace servio::fw
 
 void stop_exec()
 {
-        if ( core::STOP_CALLBACK ) {
+        if ( core::STOP_CALLBACK )
                 core::STOP_CALLBACK();
-        }
         __asm__( "BKPT" );
-        while ( true ) {
+        while ( true )
                 asm( "nop" );
-        }
 }
 
 }  // namespace servio::fw

@@ -115,9 +115,8 @@ ServioToHost handle_set_config( cfg::dispatcher& cfg_disp, const Config& req )
         const bool key_found = map_cfg( req.which_pld, req, [&]< cfg::key K >( auto& val ) {
                 cfg_disp.set< K >( val );
         } );
-        if ( !key_found ) {
+        if ( !key_found )
                 return error_msg( "unknown key" );
-        }
         ServioToHost msg;
         msg.which_pld = ServioToHost_set_config_tag;
         return msg;
@@ -135,9 +134,8 @@ ServioToHost handle_get_config( const cfg::dispatcher& cfg_disp, const GetConfig
                             val = cfg_disp.m.get_val< K >();
                     }
             } );
-        if ( !key_found ) {
+        if ( !key_found )
                 return error_msg( "unknown key" );
-        }
         msg.get_config.which_pld =
             static_cast< uint16_t >( req.field_id );  // TODO: well this is not ideal
         msg.which_pld = ServioToHost_get_config_tag;
@@ -148,9 +146,8 @@ ServioToHost handle_commit_config( const cfg::dispatcher& cfg_disp, const auto& 
 {
 
         const bool succ = cfg_writer( &cfg_disp.m );
-        if ( !succ ) {
+        if ( !succ )
                 return error_msg( "commit failed" );
-        }
 
         ServioToHost msg;
         msg.which_pld = ServioToHost_commit_config_tag;
@@ -161,9 +158,8 @@ ServioToHost handle_clear_config( const auto& cfg_writer )
 {
 
         const bool succ = cfg_writer( nullptr );
-        if ( !succ ) {
+        if ( !succ )
                 return error_msg( "clear failed" );
-        }
 
         ServioToHost msg;
         msg.which_pld = ServioToHost_commit_config_tag;
@@ -208,16 +204,14 @@ std::tuple< em::outcome, em::view< std::byte* > > process_message(
 {
         InputType  inpt;
         const bool succ = decode( input_data, inpt );
-        if ( !succ ) {
+        if ( !succ )
                 return { em::FAILURE, {} };
-        }
 
         OutputType output;
 
         em::outcome res = h( inpt, output );
-        if ( res != em::SUCCESS ) {
+        if ( res != em::SUCCESS )
                 return { res, {} };
-        }
 
         return encode( output_buffer, output );
 }
@@ -245,9 +239,8 @@ std::tuple< em::outcome, em::view< std::byte* > > handle_message_packet(
             [&dis]( const HostToServioPacket& inpt, ServioToHostPacket& out ) -> em::outcome {
                     // TODO: check whenver id equals to currently configured id, or group id
                     // equals to currently configured group id
-                    if ( !inpt.has_payload ) {
+                    if ( !inpt.has_payload )
                             return em::ERROR;
-                    }
                     out.id          = inpt.id;
                     out.has_payload = true;
                     out.payload     = handle_message( dis, inpt.payload );

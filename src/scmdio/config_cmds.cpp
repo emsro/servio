@@ -43,11 +43,10 @@ boost::asio::awaitable< void > cfg_query_cmd( cobs_port& port, bool json )
 {
         std::vector< servio::Config > out = co_await get_full_config( port );
 
-        if ( json ) {
+        if ( json )
                 print_configs_json( out );
-        } else {
+        else
                 print_configs( out );
-        }
 }
 
 boost::asio::awaitable< void > cfg_commit_cmd( cobs_port& port )
@@ -79,11 +78,10 @@ boost::asio::awaitable< void > cfg_get_cmd( cobs_port& port, const std::string& 
 
         servio::Config cfg = co_await get_config_field( port, field );
 
-        if ( json ) {
+        if ( json )
                 print_configs_json( { cfg } );
-        } else {
+        else
                 print_configs( { cfg } );
-        }
 }
 
 boost::asio::awaitable< void >
@@ -125,9 +123,8 @@ cfg_set_cmd( cobs_port& port, const std::string& name, std::string value )
 
         servio::Config cmsg;
         auto           status = google::protobuf::util::JsonStringToMessage( json, &cmsg );
-        if ( !status.ok() ) {
+        if ( !status.ok() )
                 throw std::exception{};  // TODO: improve
-        }
 
         servio::HostToServio msg;
         *msg.mutable_set_config() = cmsg;

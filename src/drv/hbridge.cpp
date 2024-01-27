@@ -7,23 +7,19 @@ namespace servio::drv
 
 em::result hbridge::start()
 {
-        if ( HAL_TIM_PWM_Start_IT( tim_, mc1_channel_ ) != HAL_OK ) {
+        if ( HAL_TIM_PWM_Start_IT( tim_, mc1_channel_ ) != HAL_OK )
                 return em::ERROR;
-        }
-        if ( HAL_TIM_PWM_Start_IT( tim_, mc2_channel_ ) != HAL_OK ) {
+        if ( HAL_TIM_PWM_Start_IT( tim_, mc2_channel_ ) != HAL_OK )
                 return em::ERROR;
-        }
         return em::SUCCESS;
 }
 
 em::result hbridge::stop()
 {
-        if ( HAL_TIM_PWM_Stop_IT( tim_, mc1_channel_ ) != HAL_OK ) {
+        if ( HAL_TIM_PWM_Stop_IT( tim_, mc1_channel_ ) != HAL_OK )
                 return em::ERROR;
-        }
-        if ( HAL_TIM_PWM_Stop_IT( tim_, mc2_channel_ ) != HAL_OK ) {
+        if ( HAL_TIM_PWM_Stop_IT( tim_, mc2_channel_ ) != HAL_OK )
                 return em::ERROR;
-        }
         return em::SUCCESS;
 }
 

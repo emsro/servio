@@ -42,9 +42,8 @@ bool cfg_write( uint32_t addr, std::span< std::byte > buffer )
                 std::memcpy( &var, tmp.data(), tmp.size() );
                 const HAL_StatusTypeDef status =
                     HAL_FLASH_Program( FLASH_TYPEPROGRAM_DOUBLEWORD, addr, var );
-                if ( status != HAL_OK ) {
+                if ( status != HAL_OK )
                         fw::stop_exec();
-                }
 
                 buffer = buffer.subspan( tmp.size() );
                 addr += tmp.size();

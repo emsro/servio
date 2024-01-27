@@ -17,5 +17,4 @@ em::result setup_gpio( const drv::pin_cfg& cfg )
         return em::SUCCESS;
 }
 
-
 }  // namespace servio::brd

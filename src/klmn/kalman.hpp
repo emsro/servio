@@ -97,6 +97,7 @@ inline auto& angle( T& x )
 {
         return x[0][0];
 }
+
 template < typename T >
 inline auto& velocity( T& x )
 {
@@ -116,9 +117,8 @@ constexpr bool requires_offset( const float v, const state_range& r )
 
 inline float angle_mod( float v, state_range r )
 {
-        while ( v < 0.F ) {
+        while ( v < 0.F )
                 v += r.size;
-        }
         return std::fmod( v - r.offset, r.size ) + r.offset;
 }
 

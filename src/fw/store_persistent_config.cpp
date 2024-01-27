@@ -7,20 +7,17 @@
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/defer.h>
 
-
 namespace servio::fw
 {
 
 bool store_persistent_config( const cfg::page& page, const cfg::payload& pld, const cfg::map* cfg )
 {
 
-        if ( HAL_FLASH_Unlock() != HAL_OK ) {
+        if ( HAL_FLASH_Unlock() != HAL_OK )
                 stop_exec();
-        }
         const em::defer d = [] {
-                if ( HAL_FLASH_Lock() != HAL_OK ) {
+                if ( HAL_FLASH_Lock() != HAL_OK )
                         stop_exec();
-                }
         };
 
         const std::byte* start      = page.begin();
@@ -48,17 +45,14 @@ bool persistent_config_writer::operator()( const cfg::map* cfg )
         };
         const cfg::page* page = cfg::find_next_page( pages );
 
-        if ( page == nullptr ) {
+        if ( page == nullptr )
                 return false;
-        }
         const bool succ = fw::store_persistent_config( *page, pld, cfg );
-        if ( succ ) {
+        if ( succ )
                 last_payload = pld;
-        }
         // TODO: why is this happening?
-        if ( current_iface.get_status() == base::status::DEGRADED ) {
+        if ( current_iface.get_status() == base::status::DEGRADED )
                 current_iface.clear_status();
-        }
         return succ;
 }
 

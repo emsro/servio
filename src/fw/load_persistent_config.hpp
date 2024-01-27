@@ -20,9 +20,8 @@ inline cfg::payload load_persistent_config( em::view< const page* > pages, cfg::
                 };
                 const bool cfg_loaded = cfg::load( *last_page, check_f, cfg );
 
-                if ( !cfg_loaded ) {
+                if ( !cfg_loaded )
                         fw::stop_exec();
-                }
         }
 
         return res;

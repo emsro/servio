@@ -15,7 +15,6 @@ struct dma_cfg
         uint32_t             priority;
 };
 
-
 struct adc_cfg
 {
         ADC_TypeDef* adc_instance;
@@ -65,7 +64,6 @@ em::result setup_leds_channel( TIM_HandleTypeDef& tim, drv::pinch_cfg cfg );
 em::result setup_leds_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 
 void setup_clk();
-
 
 em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 

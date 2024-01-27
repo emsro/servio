@@ -51,9 +51,8 @@ em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart
         HAL_NVIC_SetPriority( cfg.irq, cfg.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.irq );
 
-        if ( HAL_DMA_Init( &tx_dma ) != HAL_OK ) {
+        if ( HAL_DMA_Init( &tx_dma ) != HAL_OK )
                 fw::stop_exec();
-        }
 
         __HAL_LINKDMA( ( &uart ), hdmatx, tx_dma );
 
@@ -63,15 +62,12 @@ em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart
                 fw::stop_exec();
         }
 
-        if ( HAL_UARTEx_SetTxFifoThreshold( &uart, UART_TXFIFO_THRESHOLD_1_2 ) != HAL_OK ) {
+        if ( HAL_UARTEx_SetTxFifoThreshold( &uart, UART_TXFIFO_THRESHOLD_1_2 ) != HAL_OK )
                 fw::stop_exec();
-        }
-        if ( HAL_UARTEx_SetRxFifoThreshold( &uart, UART_RXFIFO_THRESHOLD_1_2 ) != HAL_OK ) {
+        if ( HAL_UARTEx_SetRxFifoThreshold( &uart, UART_RXFIFO_THRESHOLD_1_2 ) != HAL_OK )
                 fw::stop_exec();
-        }
-        if ( HAL_UARTEx_EnableFifoMode( &uart ) != HAL_OK ) {
+        if ( HAL_UARTEx_EnableFifoMode( &uart ) != HAL_OK )
                 fw::stop_exec();
-        }
 
         return em::SUCCESS;
 }

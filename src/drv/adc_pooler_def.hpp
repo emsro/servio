@@ -81,6 +81,7 @@ struct : base::position_interface
         {
                 ADC_POOLER->position.callback = &cb;
         }
+
         base::position_cb_interface& get_position_callback() const override
         {
                 return *ADC_POOLER->position.callback;
@@ -108,6 +109,7 @@ struct : base::current_interface
         {
                 ADC_POOLER->current.callback = &cb;
         }
+
         base::current_cb_interface& get_current_callback() const override
         {
                 return *ADC_POOLER->current.callback;
@@ -124,6 +126,5 @@ auto ADC_SEQUENCE = std::array{
     CURRENT_CHANNEL,
     TEMP_CHANNEL,
 };
-
 
 }  // namespace servio::drv

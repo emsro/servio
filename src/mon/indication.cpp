@@ -9,15 +9,13 @@ bool indication::on_event( base::microseconds now, const indication_event& e )
 {
         switch ( e ) {
         case indication_event::VOLTAGE_LOW:
-                if ( red_events_.full() ) {
+                if ( red_events_.full() )
                         return false;
-                }
                 red_events_.push_back( 500_ms );
                 break;
         case indication_event::TEMPERATURE_HIGH:
-                if ( red_events_.full() ) {
+                if ( red_events_.full() )
                         return false;
-                }
                 red_events_.push_back( 1000_ms );
                 break;
         case indication_event::HEARTBEAT:
@@ -69,9 +67,8 @@ void indication::tick( base::microseconds now )
 
         state_.yellow = now < yellow_engaged_until_ ? 255U : 0U;
 
-        if ( now > blue_disengage_at_ ) {
+        if ( now > blue_disengage_at_ )
                 state_.blue = false;
-        }
 }
 
 void indication::tick_red( base::microseconds now )

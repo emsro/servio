@@ -21,9 +21,8 @@ TEST( CFG, ids )
         std::set< uint32_t > proto_ids;
         for ( auto [val, name] : proto_entries ) {
                 std::ignore = name;
-                if ( val == servio::Config::PLD_NOT_SET ) {
+                if ( val == servio::Config::PLD_NOT_SET )
                         continue;
-                }
                 proto_ids.insert( val );
         }
 

@@ -19,9 +19,8 @@ void setup_adc_channel( ADC_ChannelConfTypeDef& channel, drv::pinch_cfg cfg )
             .OffsetSign   = 0,
         };
 
-        if ( cfg.port == nullptr ) {
+        if ( cfg.port == nullptr )
                 return;
-        }
         GPIO_InitTypeDef gpio_c{};
         gpio_c.Pin  = cfg.pin;
         gpio_c.Mode = GPIO_MODE_ANALOG;
@@ -53,23 +52,20 @@ em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cf
         dma.Init.Mode                = DMA_NORMAL;
         dma.Init.Priority            = cfg.dma.priority;
 
-        if ( HAL_ADC_Init( &adc ) != HAL_OK ) {
+        if ( HAL_ADC_Init( &adc ) != HAL_OK )
                 fw::stop_exec();
-        }
 
         ADC_MultiModeTypeDef mmode{};
         mmode.Mode = ADC_MODE_INDEPENDENT;
 
-        if ( HAL_ADCEx_MultiModeConfigChannel( &adc, &mmode ) != HAL_OK ) {
+        if ( HAL_ADCEx_MultiModeConfigChannel( &adc, &mmode ) != HAL_OK )
                 fw::stop_exec();
-        }
 
         HAL_NVIC_SetPriority( cfg.dma.irq, cfg.dma.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.dma.irq );
 
-        if ( HAL_DMA_Init( &dma ) != HAL_OK ) {
+        if ( HAL_DMA_Init( &dma ) != HAL_OK )
                 fw::stop_exec();
-        }
 
         __HAL_LINKDMA( ( &adc ), DMA_Handle, dma );
 

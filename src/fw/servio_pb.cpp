@@ -28,6 +28,7 @@ bool decode( em::view< const std::byte* > data, HostToServio& msg )
         const bool status = pb_decode( &stream, HostToServio_fields, &msg );
         return status;
 }
+
 bool decode( em::view< const std::byte* > data, HostToServioPacket& msg )
 {
         // TODO: stream has error string that can be reported!

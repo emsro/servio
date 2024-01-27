@@ -47,23 +47,19 @@ em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
                 HAL_GPIO_Init( pc.port, &gpio_itd );
         }
 
-        if ( HAL_TIM_PWM_Init( &tim ) != HAL_OK ) {
+        if ( HAL_TIM_PWM_Init( &tim ) != HAL_OK )
                 fw::stop_exec();
-        }
 
-        if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK ) {
+        if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK )
                 fw::stop_exec();
-        }
 
         __HAL_TIM_ENABLE_IT( &tim, TIM_IT_UPDATE );
 
-        if ( HAL_TIM_PWM_ConfigChannel( &tim, &oc_config, cfg.mc1.channel ) != HAL_OK ) {
+        if ( HAL_TIM_PWM_ConfigChannel( &tim, &oc_config, cfg.mc1.channel ) != HAL_OK )
                 fw::stop_exec();
-        }
 
-        if ( HAL_TIM_PWM_ConfigChannel( &tim, &oc_config, cfg.mc2.channel ) != HAL_OK ) {
+        if ( HAL_TIM_PWM_ConfigChannel( &tim, &oc_config, cfg.mc2.channel ) != HAL_OK )
                 fw::stop_exec();
-        }
 
         TIM_BreakDeadTimeConfigTypeDef break_dead_time_cfg{};
 
@@ -81,9 +77,8 @@ em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
         break_dead_time_cfg.Break2AFMode     = TIM_BREAK_AFMODE_INPUT;
         break_dead_time_cfg.AutomaticOutput  = TIM_AUTOMATICOUTPUT_DISABLE;
 
-        if ( HAL_TIMEx_ConfigBreakDeadTime( &tim, &break_dead_time_cfg ) != HAL_OK ) {
+        if ( HAL_TIMEx_ConfigBreakDeadTime( &tim, &break_dead_time_cfg ) != HAL_OK )
                 fw::stop_exec();
-        }
 
         HAL_NVIC_SetPriority( cfg.irq, cfg.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.irq );
@@ -104,13 +99,11 @@ em::result setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         mc.MasterOutputTrigger = TIM_TRGO_UPDATE;
         mc.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
 
-        if ( HAL_TIM_OC_Init( &tim ) != HAL_OK ) {
+        if ( HAL_TIM_OC_Init( &tim ) != HAL_OK )
                 fw::stop_exec();
-        }
 
-        if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK ) {
+        if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK )
                 fw::stop_exec();
-        }
 
         return em::SUCCESS;
 }
@@ -128,13 +121,11 @@ em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         mc.MasterOutputTrigger = TIM_TRGO_UPDATE;
         mc.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
 
-        if ( HAL_TIM_OC_Init( &tim ) != HAL_OK ) {
+        if ( HAL_TIM_OC_Init( &tim ) != HAL_OK )
                 return em::ERROR;
-        }
 
-        if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK ) {
+        if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK )
                 return em::ERROR;
-        }
 
         return em::SUCCESS;
 }
@@ -158,12 +149,10 @@ em::result setup_leds_channel( TIM_HandleTypeDef* tim, drv::pinch_cfg cfg )
         chc.OCPolarity = TIM_OCPOLARITY_HIGH;
         chc.OCFastMode = TIM_OCFAST_DISABLE;
 
-        if ( HAL_TIM_PWM_ConfigChannel( tim, &chc, cfg.channel ) != HAL_OK ) {
+        if ( HAL_TIM_PWM_ConfigChannel( tim, &chc, cfg.channel ) != HAL_OK )
                 return em::ERROR;
-        }
 
         return em::SUCCESS;
 }
-
 
 }  // namespace servio::plt

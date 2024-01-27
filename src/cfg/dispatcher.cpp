@@ -11,9 +11,8 @@ using handler = em::protocol::register_handler< map >;
 
 void dispatcher::full_apply()
 {
-        for ( const auto key : map::keys ) {
+        for ( const auto key : map::keys )
                 apply( key );
-        }
 }
 
 void dispatcher::apply( const key& key )

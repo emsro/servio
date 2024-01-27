@@ -24,9 +24,8 @@ void cfg_erase( uint32_t start_addr )
                 // TODO: maybe switch to better error handling?
                 fw::stop_exec();
         }
-        if ( erase_err != 0xFFFFFFFF ) {
+        if ( erase_err != 0xFFFFFFFF )
                 fw::stop_exec();
-        }
 }
 
 bool cfg_write( uint32_t addr, std::span< std::byte > buffer )
@@ -41,9 +40,8 @@ bool cfg_write( uint32_t addr, std::span< std::byte > buffer )
                 std::memcpy( var.data(), tmp.data(), tmp.size() );
                 const HAL_StatusTypeDef status = HAL_FLASH_Program(
                     FLASH_TYPEPROGRAM_QUADWORD, addr, std::bit_cast< uint32_t >( var.data() ) );
-                if ( status != HAL_OK ) {
+                if ( status != HAL_OK )
                         fw::stop_exec();
-                }
 
                 buffer = buffer.subspan( tmp.size() );
                 addr += tmp.size();

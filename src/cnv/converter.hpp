@@ -18,14 +18,17 @@ struct converter
         {
                 position = cnv::position_converter{ low_value, low_angle, high_value, high_angle };
         }
+
         void set_current_cfg( float scale, float offset )
         {
                 current = cnv::current_converter{ scale, offset };
         }
+
         void set_temp_cfg( float scale, float offset )
         {
                 temp = cnv::temperature_converter{ scale, offset };
         }
+
         void set_vcc_cfg( float scale )
         {
                 vcc = cnv::voltage_converter{ scale };

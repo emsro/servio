@@ -7,18 +7,15 @@ namespace servio::drv
 
 base::com_res cobs_uart::load_message( em::view< std::byte* > data )
 {
-        if ( isizes_.empty() ) {
+        if ( isizes_.empty() )
                 return { true, {} };
-        }
-        if ( isizes_.front() > data.size() ) {
+        if ( isizes_.front() > data.size() )
                 return { false, em::view< std::byte* >{} };
-        }
         const uint16_t size  = isizes_.take_front();
         em::view       dview = em::view_n( data.begin(), size );
 
-        for ( std::byte& b : dview ) {
+        for ( std::byte& b : dview )
                 b = ibuffer_.take_front();
-        }
 
         return { true, dview };
 }
@@ -26,14 +23,12 @@ base::com_res cobs_uart::load_message( em::view< std::byte* > data )
 em::result cobs_uart::send( em::view< const std::byte* > data )
 {
         // TODO: well, timeout would be better
-        while ( !tx_done_ ) {
+        while ( !tx_done_ )
                 asm( "nop" );
-        }
 
         auto [succ, used] = em::encode_cobs( data, otmp_ );
-        if ( !succ ) {
+        if ( !succ )
                 return em::ERROR;
-        }
         // TODO: this might fial
         otmp_[used.size()] = std::byte{ 0 };
 

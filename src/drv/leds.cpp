@@ -14,21 +14,18 @@ void leds::force_red_led()
 
 em::result leds::start()
 {
-        if ( HAL_TIM_PWM_Start( tim_, yellow_.channel ) != HAL_OK ) {
+        if ( HAL_TIM_PWM_Start( tim_, yellow_.channel ) != HAL_OK )
                 return em::ERROR;
-        }
-        if ( HAL_TIM_PWM_Start( tim_, green_.channel ) != HAL_OK ) {
+        if ( HAL_TIM_PWM_Start( tim_, green_.channel ) != HAL_OK )
                 return em::ERROR;
-        }
         return em::SUCCESS;
 }
 
 void leds::update( const base::leds_vals& leds )
 {
 
-        if ( !red_forced_ ) {
+        if ( !red_forced_ )
                 HAL_GPIO_WritePin( red_.port, red_.pin, leds.red ? GPIO_PIN_SET : GPIO_PIN_RESET );
-        }
 
         HAL_GPIO_WritePin( blue_.port, blue_.pin, leds.blue ? GPIO_PIN_SET : GPIO_PIN_RESET );
 

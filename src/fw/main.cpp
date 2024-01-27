@@ -14,9 +14,8 @@ int main()
 {
         using namespace servio;
 
-        if ( brd::setup_board() != em::SUCCESS ) {
+        if ( brd::setup_board() != em::SUCCESS )
                 fw::stop_exec();
-        }
 
         cfg::map cfg = brd::get_default_config();
 
@@ -26,9 +25,8 @@ int main()
 
         core::drivers cdrv = brd::setup_core_drivers();
 
-        if ( cdrv.any_uninitialized() ) {
+        if ( cdrv.any_uninitialized() )
                 fw::stop_exec();
-        }
 
         core::core cor{ cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock };
         cdrv.leds->update( cor.ind.get_state() );
@@ -39,9 +37,8 @@ int main()
         cfg::dispatcher cfg_dis{ cfg, cor };
         cfg_dis.full_apply();
 
-        if ( cdrv.start_cb( cdrv ) != em::SUCCESS ) {
+        if ( cdrv.start_cb( cdrv ) != em::SUCCESS )
                 fw::stop_exec();
-        }
 
         cor.ind.on_event( cdrv.clock->get_us(), mon::indication_event::INITIALIZED );
 
@@ -69,23 +66,19 @@ int main()
 
                 auto [lsucc, ldata] = cdrv.comms->load_message( input_buffer );
 
-                if ( !lsucc ) {
+                if ( !lsucc )
                         fw::stop_exec();
-                }
 
-                if ( ldata.empty() ) {
+                if ( ldata.empty() )
                         continue;
-                }
 
                 cor.ind.on_event( cdrv.clock->get_us(), mon::indication_event::INCOMING_MESSAGE );
 
                 auto [succ, odata] = fw::handle_message_packet( dis, ldata, output_buffer );
 
-                if ( succ == em::ERROR ) {
+                if ( succ == em::ERROR )
                         fw::stop_exec();
-                }
-                if ( cdrv.comms->send( odata ) != em::SUCCESS ) {
+                if ( cdrv.comms->send( odata ) != em::SUCCESS )
                         fw::stop_exec();
-                }
         }
 }

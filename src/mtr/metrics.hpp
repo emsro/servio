@@ -36,6 +36,7 @@ inline float metrics::get_position() const
 {
         return pv_kal_.get_position();
 }
+
 inline float metrics::get_velocity() const
 {
         return pv_kal_.get_velocity();

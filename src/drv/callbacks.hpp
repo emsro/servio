@@ -51,6 +51,7 @@ struct value_cb : public base::value_cb_interface
 
         Callable cb;
 };
+
 template < typename Callable >
 using position_cb = value_cb< Callable >;
 

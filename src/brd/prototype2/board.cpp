@@ -62,6 +62,7 @@ void DMA1_Channel5_IRQHandler()
 {
         HAL_DMA_IRQHandler( &servio::brd::ADC_DMA_HANDLE );
 }
+
 [[gnu::flatten]] void ADC1_2_IRQHandler()
 {
         HAL_ADC_IRQHandler( &servio::brd::ADC_HANDLE );
@@ -77,15 +78,18 @@ void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
         servio::brd::COMMS.tx_cplt_irq( h );
         servio::brd::DEBUG_COMMS.tx_cplt_irq( h );
 }
+
 [[gnu::flatten]] void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
 {
         servio::brd::COMMS.rx_cplt_irq( h );
         servio::brd::DEBUG_COMMS.rx_cplt_irq( h );
 }
+
 [[gnu::flatten]] void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
         servio::drv::ADC_POOLER.adc_conv_cplt_irq( h );
 }
+
 [[gnu::flatten]] void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
 {
         servio::drv::ADC_POOLER.adc_error_irq( h );
@@ -97,9 +101,8 @@ namespace servio::brd
 
 em::result setup_board()
 {
-        if ( HAL_Init() != HAL_OK ) {
+        if ( HAL_Init() != HAL_OK )
                 return em::ERROR;
-        }
         setup_clk();
 
         return em::SUCCESS;
@@ -158,9 +161,8 @@ drv::adc_pooler< drv::adc_set >* adc_pooler_setup()
                 } ),
             setup_adc_timer( ADC_TIM_HANDLE, TIM4 ) );
 
-        if ( res != em::SUCCESS ) {
+        if ( res != em::SUCCESS )
                 return nullptr;
-        }
 
         return drv::ADC_POOLER.setup(
             drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, ADC_TIM_HANDLE );
@@ -190,9 +192,8 @@ drv::hbridge* hbridge_setup()
                     .alternate = GPIO_AF6_TIM1,
                 },
         };
-        if ( setup_hbridge_timers( TIM1_HANDLE, cfg ) != em::SUCCESS ) {
+        if ( setup_hbridge_timers( TIM1_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
-        }
 
         return HBRIDGE.setup( &TIM1_HANDLE, cfg.mc1.channel, cfg.mc2.channel );
 }
@@ -231,9 +232,8 @@ drv::cobs_uart* comms_setup()
                 },
         };
 
-        if ( setup_uart( UART2_HANDLE, UART2_DMA_HANDLE, cfg ) != em::SUCCESS ) {
+        if ( setup_uart( UART2_HANDLE, UART2_DMA_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
-        }
 
         return COMMS.setup( UART2_HANDLE, UART2_DMA_HANDLE );
 }
@@ -273,13 +273,11 @@ base::com_interface* setup_debug_comms()
                 },
         };
 
-        if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != em::SUCCESS ) {
+        if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
-        }
 
         return DEBUG_COMMS.setup( UART1_HANDLE, UART1_DMA_HANDLE );
 }
-
 
 drv::leds* leds_setup()
 {
@@ -315,9 +313,8 @@ drv::leds* leds_setup()
             setup_leds_channel( TIM3_HANDLE, yellow ),
             setup_leds_channel( TIM3_HANDLE, green ) );
 
-        if ( res == em::SUCCESS ) {
+        if ( res == em::SUCCESS )
                 return LEDS.setup( red, blue, TIM3_HANDLE, yellow, green );
-        }
 
         return nullptr;
 }
@@ -327,24 +324,20 @@ em::result start_callback( core::drivers& cdrv )
 
         if ( cdrv.position != nullptr ) {
                 // this implies that adc_poolerition is OK
-                if ( drv::ADC_POOLER.start() != em::SUCCESS ) {
+                if ( drv::ADC_POOLER.start() != em::SUCCESS )
                         return em::ERROR;
-                }
         }
         if ( cdrv.motor != nullptr ) {
-                if ( HBRIDGE.start() != em::SUCCESS ) {
+                if ( HBRIDGE.start() != em::SUCCESS )
                         return em::ERROR;
-                }
         }
         if ( cdrv.comms != nullptr ) {
-                if ( COMMS.start() != em::SUCCESS ) {
+                if ( COMMS.start() != em::SUCCESS )
                         return em::ERROR;
-                }
         }
         if ( cdrv.leds != nullptr ) {
-                if ( LEDS.start() != em::SUCCESS ) {
+                if ( LEDS.start() != em::SUCCESS )
                         return em::ERROR;
-                }
         }
 
         return em::SUCCESS;
@@ -353,9 +346,8 @@ em::result start_callback( core::drivers& cdrv )
 core::drivers setup_core_drivers()
 {
         __HAL_RCC_TIM2_CLK_ENABLE();
-        if ( setup_clock_timer( TIM2_HANDLE, TIM2 ) != em::SUCCESS ) {
+        if ( setup_clock_timer( TIM2_HANDLE, TIM2 ) != em::SUCCESS )
                 fw::stop_exec();  // TODO: better error handling
-        }
 
         drv::hbridge* hb = hbridge_setup();
 

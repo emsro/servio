@@ -50,30 +50,31 @@ int _getpid( void )
 
 void _kill( int )
 {
-        while ( true ) {
+        while ( true )
                 asm( "nop" );
-        }
 }
 
 void _exit( int )
 {
-        while ( true ) {
+        while ( true )
                 asm( "nop" );
-        }
 }
 
 int _write( int, char*, int )
 {
         return -1;
 }
+
 int _read()
 {
         return -1;
 }
+
 int _close()
 {
         return -1;
 }
+
 int _lseek()
 {
         return -1;

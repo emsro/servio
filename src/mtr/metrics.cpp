@@ -23,9 +23,8 @@ void metrics::set_moving_step( float step )
 
 [[gnu::flatten]] void metrics::position_irq( base::microseconds now, float position )
 {
-        if ( now == last_time_ ) {
+        if ( now == last_time_ )
                 return;
-        }
 
         const base::microseconds tdiff = now - last_time_;
 

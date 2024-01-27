@@ -63,6 +63,7 @@ private:
                 base::limits< float > config_lims{ -base::infty, base::infty };
                 base::limits< float > pos_derived_lims{ -base::infty, base::infty };
         } velocity_lims_;
+
         float    velocity_goal_ = 0.F;
         ctl::pid velocity_pid_;
         float    velocity_to_current_lim_scale_ = std::numeric_limits< float >::max();
@@ -72,6 +73,7 @@ private:
                 base::limits< float > config_lims{ -base::infty, base::infty };
                 base::limits< float > vel_derived_lims{ -base::infty, base::infty };
         } current_lims_;
+
         float                            current_goal_ = 0.F;
         ctl::linear_transition_regulator current_scale_regl_;
         ctl::pid                         current_pid_;

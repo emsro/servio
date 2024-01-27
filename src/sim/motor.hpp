@@ -51,9 +51,8 @@ struct simple_motor
                 power              = p;
                 const float t_diff = t - last_t;
 
-                if ( t_diff == 0.F ) {
+                if ( t_diff == 0.F )
                         return;
-                }
                 const em::defer d{ [&] {
                         last_t = t;
                 } };

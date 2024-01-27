@@ -39,9 +39,8 @@ em::result setup_clk()
         RCC_OscInitStruct.PLL.PLLP            = RCC_PLLP_DIV2;
         RCC_OscInitStruct.PLL.PLLQ            = RCC_PLLQ_DIV2;
         RCC_OscInitStruct.PLL.PLLR            = RCC_PLLR_DIV2;
-        if ( HAL_RCC_OscConfig( &RCC_OscInitStruct ) != HAL_OK ) {
+        if ( HAL_RCC_OscConfig( &RCC_OscInitStruct ) != HAL_OK )
                 fw::stop_exec();
-        }
         /** Initializes the CPU, AHB and APB buses clocks
          */
         RCC_ClkInitStruct.ClockType =
@@ -51,9 +50,8 @@ em::result setup_clk()
         RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
         RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-        if ( HAL_RCC_ClockConfig( &RCC_ClkInitStruct, FLASH_LATENCY_2 ) != HAL_OK ) {
+        if ( HAL_RCC_ClockConfig( &RCC_ClkInitStruct, FLASH_LATENCY_2 ) != HAL_OK )
                 return em::ERROR;
-        }
         /** Initializes the peripherals clocks
          */
         PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1 | RCC_PERIPHCLK_USART2 |
@@ -64,9 +62,8 @@ em::result setup_clk()
         PeriphClkInit.I2c1ClockSelection   = RCC_I2C1CLKSOURCE_PCLK1;
         PeriphClkInit.UsbClockSelection    = RCC_USBCLKSOURCE_PLL;
         PeriphClkInit.Adc12ClockSelection  = RCC_ADC12CLKSOURCE_SYSCLK;
-        if ( HAL_RCCEx_PeriphCLKConfig( &PeriphClkInit ) != HAL_OK ) {
+        if ( HAL_RCCEx_PeriphCLKConfig( &PeriphClkInit ) != HAL_OK )
                 return em::ERROR;
-        }
         /** Configures CRS
          */
         pInit.Prescaler             = RCC_CRS_SYNC_DIV1;

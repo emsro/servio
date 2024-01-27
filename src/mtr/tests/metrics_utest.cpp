@@ -31,9 +31,8 @@ TEST( Metrics, base )
 
                 met.position_irq( t, angle );
 
-                if ( t < 200_ms ) {  // we kinda ignore first 200ms
+                if ( t < 200_ms )  // we kinda ignore first 200ms
                         continue;
-                }
 
                 EMLABCPP_INFO_LOG_VARS( met.get_position(), angle, t );
                 EXPECT_NEAR( met.get_position(), angle, 0.01 )

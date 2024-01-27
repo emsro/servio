@@ -26,9 +26,8 @@ struct check_bool
 
 inline void operator<<( const check_bool&, bool val )
 {
-        if ( !val ) {
+        if ( !val )
                 stop_exec();
-        }
 }
 
 }  // namespace servio::fw

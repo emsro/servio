@@ -38,9 +38,8 @@ void common_cli::setup( CLI::App& app )
                 port_ptr = std::make_unique< cobs_port >( context, device, baudrate );
                 const int res =
                     ::tcflush( port_ptr->port.lowest_layer().native_handle(), TCIOFLUSH );
-                if ( res != 0 ) {
+                if ( res != 0 )
                         std::cerr << "Failed to flush serial buffer" << std::endl;
-                }
         } );
 }
 

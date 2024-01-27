@@ -20,9 +20,8 @@ boost::asio::awaitable< void > write( cobs_port& port, const servio::HostToServi
         std::size_t              size = msg.ByteSizeLong();
         std::vector< std::byte > buffer( size, std::byte{ 0 } );
         EMLABCPP_DEBUG_LOG( "Sending: ", msg.ShortDebugString() );
-        if ( !msg.SerializeToArray( buffer.data(), static_cast< int >( size ) ) ) {
+        if ( !msg.SerializeToArray( buffer.data(), static_cast< int >( size ) ) )
                 throw serialize_error{ "failed to serliaze host to servio message" };
-        }
 
         co_await port.async_write( em::view_n( buffer.data(), size ) );
 }
@@ -32,9 +31,8 @@ boost::asio::awaitable< servio::ServioToHost > read( cobs_port& port )
         std::array< std::byte, buffer_size > reply_buffer;
         em::view< std::byte* >               deser_msg = co_await port.async_read( reply_buffer );
 
-        if ( deser_msg.empty() ) {
+        if ( deser_msg.empty() )
                 throw reply_error{ "Got an empty reply" };
-        }
 
         servio::ServioToHostPacket reply;
         if ( !reply.ParseFromArray(
@@ -44,9 +42,8 @@ boost::asio::awaitable< servio::ServioToHost > read( cobs_port& port )
         }
         EMLABCPP_DEBUG_LOG( "Got: ", reply.ShortDebugString() );
 
-        if ( reply.payload().has_error() ) {
+        if ( reply.payload().has_error() )
                 throw error_exception{ reply.payload().error() };
-        }
 
         co_return reply.payload();
 }
@@ -91,9 +88,8 @@ boost::asio::awaitable< void > set_config_field( cobs_port& port, const servio::
         *msg.mutable_set_config() = cfg;
 
         servio::ServioToHost reply = co_await exchange( port, msg );
-        if ( !reply.has_set_config() ) {
+        if ( !reply.has_set_config() )
                 throw reply_error{ "reply does not contain set_config as it should" };
-        }
 }
 
 boost::asio::awaitable< std::vector< servio::Config > > get_full_config( cobs_port& port )
@@ -149,11 +145,13 @@ boost::asio::awaitable< float > get_property_current( cobs_port& port )
         servio::Property prop = co_await get_property( port, servio::Property::kCurrent );
         co_return prop.current();
 }
+
 boost::asio::awaitable< float > get_property_position( cobs_port& port )
 {
         servio::Property prop = co_await get_property( port, servio::Property::kPosition );
         co_return prop.position();
 }
+
 boost::asio::awaitable< float > get_property_velocity( cobs_port& port )
 {
         servio::Property prop = co_await get_property( port, servio::Property::kVelocity );

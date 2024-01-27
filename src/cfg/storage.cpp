@@ -21,9 +21,8 @@ namespace
                 while ( !data.empty() ) {
                         const std::span< std::byte > tmp =
                             data.subspan( 0, std::min( n, data.size() ) );
-                        for ( const std::size_t i : em::range( tmp.size() ) ) {
+                        for ( const std::size_t i : em::range( tmp.size() ) )
                                 buffer[i] ^= tmp[i];
-                        }
                         data = data.subspan( tmp.size() );
                 }
                 std::memcpy( &res, buffer.data(), n );
@@ -66,9 +65,8 @@ const page* find_unused_page( em::view< const page* > pages )
                     chcksum_f );
                 return lr == em::cfg::load_result::DESERIALIZATION_ERROR;
         } );
-        if ( iter == pages.end() ) {
+        if ( iter == pages.end() )
                 return nullptr;
-        }
         EMLABCPP_DEBUG_LOG( "Got unused page: ", iter->begin(), " ", iter->end() );
         return &*iter;
 }
@@ -84,9 +82,8 @@ const page* find_oldest_page( em::view< const page* > pages )
 const page* find_next_page( em::view< const page* > pages )
 {
         const page* res = find_unused_page( pages );
-        if ( res != nullptr ) {
+        if ( res != nullptr )
                 return res;
-        }
         return find_oldest_page( pages );
 }
 

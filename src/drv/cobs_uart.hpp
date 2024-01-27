@@ -33,9 +33,8 @@ public:
 
         void rx_cplt_irq( UART_HandleTypeDef* huart )
         {
-                if ( huart != uart_ ) {
+                if ( huart != uart_ )
                         return;
-                }
 
                 if ( rx_byte_ == std::byte{ 0 } ) {
                         isizes_.push_back( current_size_ - 1 );
@@ -55,9 +54,8 @@ public:
 
         void tx_cplt_irq( UART_HandleTypeDef* huart )
         {
-                if ( huart != uart_ ) {
+                if ( huart != uart_ )
                         return;
-                }
                 tx_done_ = true;
         }
 

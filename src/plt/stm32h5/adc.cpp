@@ -17,15 +17,15 @@ void setup_adc_channel( ADC_ChannelConfTypeDef& channel, drv::pinch_cfg cfg )
             .OffsetSign   = 0,
         };
 
-        if ( cfg.port == nullptr ) {
+        if ( cfg.port == nullptr )
                 return;
-        }
         GPIO_InitTypeDef gpio_c{};
         gpio_c.Pin  = cfg.pin;
         gpio_c.Mode = GPIO_MODE_ANALOG;
         gpio_c.Pull = GPIO_NOPULL;
         HAL_GPIO_Init( cfg.port, &gpio_c );
 }
+
 em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg )
 {
         adc.Instance                  = cfg.adc_instance;
@@ -53,19 +53,16 @@ em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cf
         dma.Init.Mode                  = DMA_NORMAL;
         dma.Init.Priority              = cfg.dma.priority;
 
-        if ( HAL_ADC_Init( &adc ) != HAL_OK ) {
+        if ( HAL_ADC_Init( &adc ) != HAL_OK )
                 return em::ERROR;
-        }
 
-        if ( HAL_DMA_Init( &dma ) != HAL_OK ) {
+        if ( HAL_DMA_Init( &dma ) != HAL_OK )
                 return em::ERROR;
-        }
 
         __HAL_LINKDMA( ( &adc ), DMA_Handle, dma );
 
-        if ( HAL_DMA_ConfigChannelAttributes( &dma, DMA_CHANNEL_NPRIV ) != HAL_OK ) {
+        if ( HAL_DMA_ConfigChannelAttributes( &dma, DMA_CHANNEL_NPRIV ) != HAL_OK )
                 return em::ERROR;
-        }
 
         HAL_NVIC_SetPriority( ADC1_IRQn, cfg.adc_irq_priority, 0 );
         HAL_NVIC_EnableIRQ( ADC1_IRQn );

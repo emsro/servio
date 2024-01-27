@@ -68,9 +68,8 @@ servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servi
         using field_desc                         = google::protobuf::FieldDescriptor;
         const google::protobuf::Reflection* refl = servio::Config::GetReflection();
 
-        if ( field->is_repeated() ) {
+        if ( field->is_repeated() )
                 throw std::exception{};  // TODO: improve this
-        }
 
         switch ( field->cpp_type() ) {
         case field_desc::CPPTYPE_INT32:
@@ -120,13 +119,11 @@ servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servi
                                        << "The newly set key " << key
                                        << " is same as in initial setting";
                         }
-                } else {
-                        if ( !are_equal ) {
-                                return ::testing::AssertionFailure()
-                                       << "Field " << key
-                                       << " changed while only field that should've changed is "
-                                       << tested_field;
-                        }
+                } else if ( !are_equal ) {
+                        return ::testing::AssertionFailure()
+                               << "Field " << key
+                               << " changed while only field that should've changed is "
+                               << tested_field;
                 }
         }
 
@@ -137,9 +134,8 @@ boost::asio::awaitable< void > test_config( boost::asio::io_context&, scmdio::co
 {
         const std::vector< servio::Config > cfg_vec = co_await scmdio::get_full_config( port );
         std::map< servio::Config::PldCase, servio::Config > istate_map;
-        for ( const servio::Config& cfg : cfg_vec ) {
+        for ( const servio::Config& cfg : cfg_vec )
                 istate_map[cfg.pld_case()] = cfg;
-        }
 
         const google::protobuf::OneofDescriptor* desc =
             servio::Config::GetDescriptor()->oneof_decl( 0 );
@@ -188,9 +184,8 @@ int main( int argc, char** argv )
                 return app.exit( e );
         }
 
-        if ( verbose ) {
+        if ( verbose )
                 em::DEBUG_LOGGER.set_option( em::set_stdout( true ) );
-        }
 
         servio::bb::register_test(
             "basic", "properties_querying", cli, servio::bb::test_properties_querying, 1s );

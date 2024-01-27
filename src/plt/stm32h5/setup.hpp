@@ -14,7 +14,6 @@ struct dma_cfg
         uint32_t             priority;
 };
 
-
 struct adc_cfg
 {
         ADC_TypeDef* adc_instance;
