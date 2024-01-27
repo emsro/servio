@@ -170,52 +170,53 @@ $(document).ready(function(){initNavTree('adc__pooler__def_8hpp_source.html','')
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;position.callback = &amp;cb;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a0f79c1626ced70162e7dfb91fe18de92">base::position_cb_interface</a>&amp; get_position_callback()<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">return</span> *<a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;position.callback;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv.html#a3d87d21ffc72077e09ad988bf5f485ec">   88</a></span>&#160;} <a class="code" href="namespaceservio_1_1drv.html#a3d87d21ffc72077e09ad988bf5f485ec">ADC_POSITION</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;struct : <a class="code" href="classservio_1_1base_1_1current__interface.html">base::current_interface</a></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84f">base::status</a> get_status()<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;current.get_status();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> clear_status()<span class="keyword"> override</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;current.clear_status();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        uint32_t get_current()<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;current.last_value;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">void</span> set_current_callback( <a class="code" href="namespaceservio_1_1base.html#aa3eb6de3023e3094e34a3a3b7376a8c3">base::current_cb_interface</a>&amp; cb )<span class="keyword"> override</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;current.callback = &amp;cb;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#aa3eb6de3023e3094e34a3a3b7376a8c3">base::current_cb_interface</a>&amp; get_current_callback()<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">return</span> *<a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;current.callback;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv.html#a97b4b3a83a87dd5203d5c5b77b30847b">  115</a></span>&#160;} <a class="code" href="namespaceservio_1_1drv.html#a97b4b3a83a87dd5203d5c5b77b30847b">ADC_CURRENT</a>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c">  117</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c">ADC_SEQUENCE</a> = std::array{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa747e7a5e75119c45c2129e9112797e1b">CURRENT_CHANNEL</a>,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa5acb229675ac8a8e0058233120461f35">POSITION_CHANNEL</a>,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a0f79c1626ced70162e7dfb91fe18de92">base::position_cb_interface</a>&amp; get_position_callback()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">return</span> *<a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;position.callback;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv.html#a3d87d21ffc72077e09ad988bf5f485ec">   89</a></span>&#160;} <a class="code" href="namespaceservio_1_1drv.html#a3d87d21ffc72077e09ad988bf5f485ec">ADC_POSITION</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;struct : <a class="code" href="classservio_1_1base_1_1current__interface.html">base::current_interface</a></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84f">base::status</a> get_status()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;current.get_status();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> clear_status()<span class="keyword"> override</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;current.clear_status();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        uint32_t get_current()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;current.last_value;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">void</span> set_current_callback( <a class="code" href="namespaceservio_1_1base.html#aa3eb6de3023e3094e34a3a3b7376a8c3">base::current_cb_interface</a>&amp; cb )<span class="keyword"> override</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;current.callback = &amp;cb;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#aa3eb6de3023e3094e34a3a3b7376a8c3">base::current_cb_interface</a>&amp; get_current_callback()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">return</span> *<a class="code" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">ADC_POOLER</a>-&gt;current.callback;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv.html#a97b4b3a83a87dd5203d5c5b77b30847b">  117</a></span>&#160;} <a class="code" href="namespaceservio_1_1drv.html#a97b4b3a83a87dd5203d5c5b77b30847b">ADC_CURRENT</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c">  119</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c">ADC_SEQUENCE</a> = std::array{</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa747e7a5e75119c45c2129e9112797e1b">CURRENT_CHANNEL</a>,</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa5d4ed1e160240300ede5185d38cf2723">VCC_CHANNEL</a>,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa5acb229675ac8a8e0058233120461f35">POSITION_CHANNEL</a>,</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa747e7a5e75119c45c2129e9112797e1b">CURRENT_CHANNEL</a>,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa5acb229675ac8a8e0058233120461f35">POSITION_CHANNEL</a>,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa5d4ed1e160240300ede5185d38cf2723">VCC_CHANNEL</a>,</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa747e7a5e75119c45c2129e9112797e1b">CURRENT_CHANNEL</a>,</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa7088c90744202107459b09dcf730f610">TEMP_CHANNEL</a>,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa5acb229675ac8a8e0058233120461f35">POSITION_CHANNEL</a>,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa747e7a5e75119c45c2129e9112797e1b">CURRENT_CHANNEL</a>,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa7088c90744202107459b09dcf730f610">TEMP_CHANNEL</a>,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;};</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
 <div class="ttc" id="aadc__pooler_8hpp_html"><div class="ttname"><a href="adc__pooler_8hpp.html">adc_pooler.hpp</a></div></div>
 <div class="ttc" id="aclassservio_1_1base_1_1current__interface_html"><div class="ttname"><a href="classservio_1_1base_1_1current__interface.html">servio::base::current_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:112</div></div>
 <div class="ttc" id="aclassservio_1_1base_1_1period__cb__interface_html"><div class="ttname"><a href="classservio_1_1base_1_1period__cb__interface.html">servio::base::period_cb_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:31</div></div>
@@ -228,7 +229,7 @@ $(document).ready(function(){initNavTree('adc__pooler__def_8hpp_source.html','')
 <div class="ttc" id="anamespaceservio_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1drv.html">servio::drv</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:7</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html_a3d87d21ffc72077e09ad988bf5f485ec"><div class="ttname"><a href="namespaceservio_1_1drv.html#a3d87d21ffc72077e09ad988bf5f485ec">servio::drv::ADC_POSITION</a></div><div class="ttdeci">ADC_POSITION</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html_a70c95638ac814ac28330c9c21dadab02"><div class="ttname"><a href="namespaceservio_1_1drv.html#a70c95638ac814ac28330c9c21dadab02">servio::drv::ADC_TEMPERATURE</a></div><div class="ttdeci">ADC_TEMPERATURE</div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_html_a73c9d35c07a012f60e2c706c77e82f1c"><div class="ttname"><a href="namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c">servio::drv::ADC_SEQUENCE</a></div><div class="ttdeci">auto ADC_SEQUENCE</div><div class="ttdef"><b>Definition:</b> adc_pooler_def.hpp:117</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_html_a73c9d35c07a012f60e2c706c77e82f1c"><div class="ttname"><a href="namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c">servio::drv::ADC_SEQUENCE</a></div><div class="ttdeci">auto ADC_SEQUENCE</div><div class="ttdef"><b>Definition:</b> adc_pooler_def.hpp:119</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html_a97b4b3a83a87dd5203d5c5b77b30847b"><div class="ttname"><a href="namespaceservio_1_1drv.html#a97b4b3a83a87dd5203d5c5b77b30847b">servio::drv::ADC_CURRENT</a></div><div class="ttdeci">ADC_CURRENT</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html_a9c0891403afd1e3820e1192432e40f54"><div class="ttname"><a href="namespaceservio_1_1drv.html#a9c0891403afd1e3820e1192432e40f54">servio::drv::ADC_PERIOD_CB</a></div><div class="ttdeci">ADC_PERIOD_CB</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html_ab0e909fed28a806840cfa5c8fad40ffa"><div class="ttname"><a href="namespaceservio_1_1drv.html#ab0e909fed28a806840cfa5c8fad40ffa">servio::drv::ADC_VCC</a></div><div class="ttdeci">ADC_VCC</div></div>
@@ -240,7 +241,7 @@ $(document).ready(function(){initNavTree('adc__pooler__def_8hpp_source.html','')
 <div class="ttc" id="anamespaceservio_1_1drv_html_abbf0ab1dcfca79ccba89674e773fa2afa747e7a5e75119c45c2129e9112797e1b"><div class="ttname"><a href="namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa747e7a5e75119c45c2129e9112797e1b">servio::drv::CURRENT_CHANNEL</a></div><div class="ttdeci">@ CURRENT_CHANNEL</div><div class="ttdef"><b>Definition:</b> adc_pooler_def.hpp:11</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__channel__with__callback_html"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel__with__callback.html">servio::drv::adc_channel_with_callback&lt; POSITION_CHANNEL &gt;</a></div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__channel_html"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel.html">servio::drv::adc_channel&lt; VCC_CHANNEL &gt;</a></div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html">servio::drv::adc_pooler</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:141</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html">servio::drv::adc_pooler</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:132</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__set_html"><div class="ttname"><a href="structservio_1_1drv_1_1adc__set.html">servio::drv::adc_set</a></div><div class="ttdef"><b>Definition:</b> adc_pooler_def.hpp:18</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__set_html_a1efc6479152f809503f37ddfdc782685"><div class="ttname"><a href="structservio_1_1drv_1_1adc__set.html#a1efc6479152f809503f37ddfdc782685">servio::drv::adc_set::current</a></div><div class="ttdeci">drv::detailed_adc_channel&lt; CURRENT_CHANNEL, 128 &gt; current</div><div class="ttdef"><b>Definition:</b> adc_pooler_def.hpp:21</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__set_html_a31ba29ff9b6f05514c8d30d7059715e1"><div class="ttname"><a href="structservio_1_1drv_1_1adc__set.html#a31ba29ff9b6f05514c8d30d7059715e1">servio::drv::adc_set::vcc</a></div><div class="ttdeci">drv::adc_channel&lt; VCC_CHANNEL &gt; vcc</div><div class="ttdef"><b>Definition:</b> adc_pooler_def.hpp:23</div></div>
@@ -254,7 +255,7 @@ $(document).ready(function(){initNavTree('adc__pooler__def_8hpp_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="adc__pooler__def_8hpp.html">adc_pooler_def.hpp</a></li>
-    <li class="footer">Generated on Mon Jan 15 2024 21:46:10 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jan 27 2024 14:51:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
