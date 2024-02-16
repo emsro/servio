@@ -1,5 +1,14 @@
 var NAVTREEINDEX4 =
 {
+"namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673":[9,0,1,13,2,6,3,5],
+"namespaceservio_1_1plt.html#afa3ffb0666945381bc9735b671490daf":[7,0,1,12,15],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg":[9,0,1,13,2,6,1],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg":[9,0,1,13,2,6,0],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg":[9,0,1,13,2,6,3],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg":[9,0,1,13,2,6,4],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg":[9,0,1,13,2,6,5],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg":[9,0,1,13,2,6,2],
+"namespaceservio_1_1scmdio.html":[7,0,1,13],
 "namespaceservio_1_1scmdio.html#a0316dca4208257cd70c10ba3808b6238":[7,0,1,13,13],
 "namespaceservio_1_1scmdio.html#a06a1f0b93a4abc6c70b670a4c7fec45e":[7,0,1,13,16],
 "namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc":[7,0,1,13,33],
@@ -88,6 +97,9 @@ var NAVTREEINDEX4 =
 "position_8hpp_source.html":[9,0,1,4,2],
 "posvel__kalman_8hpp.html":[9,0,1,12,3],
 "posvel__kalman_8hpp_source.html":[9,0,1,12,3],
+"properties__test_8cpp.html":[9,0,1,1,4],
+"properties__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[9,0,1,1,4,0],
+"properties__test_8cpp.html#a55e689a164b2fcb5d85f51df39772710":[9,0,1,1,4,1],
 "proto3_2board_8cpp.html":[9,0,1,2,0,0],
 "proto3_2board_8cpp.html#a14eed1aeca4fd0404c553698e9370c85":[9,0,1,2,0,0,5],
 "proto3_2board_8cpp.html#a191cac90543a6fe4aa7a94e8134a184a":[9,0,1,2,0,0,32],
@@ -237,17 +249,5 @@ var NAVTREEINDEX4 =
 "stm32g4xx__hal__conf_8h.html#a19999766418b0224871f732d800841c6":[9,0,1,13,1,2,17],
 "stm32g4xx__hal__conf_8h.html#a1bdc791c35b20c7188b3d74fd6c30ebf":[9,0,1,13,1,2,61],
 "stm32g4xx__hal__conf_8h.html#a23382b8f04b3e6db2c59dfa1ef5ea4a2":[9,0,1,13,1,2,37],
-"stm32g4xx__hal__conf_8h.html#a23b44d213001aa23b5ae21215deac8fd":[9,0,1,13,1,2,28],
-"stm32g4xx__hal__conf_8h.html#a295e6f0566fcb7f9fcf1fe1a179e7771":[9,0,1,13,1,2,18],
-"stm32g4xx__hal__conf_8h.html#a2a5c5e3af52a068a158078c130345cf0":[9,0,1,13,1,2,33],
-"stm32g4xx__hal__conf_8h.html#a2c51d4e89cd75f4629092d46ca26a750":[9,0,1,13,1,2,66],
-"stm32g4xx__hal__conf_8h.html#a3379989d46599c7e19a43f42e9145a4a":[9,0,1,13,1,2,45],
-"stm32g4xx__hal__conf_8h.html#a34a796bea8a48187716b99c6f14b14f2":[9,0,1,13,1,2,58],
-"stm32g4xx__hal__conf_8h.html#a382744674caee964d227d41574fe2b73":[9,0,1,13,1,2,53],
-"stm32g4xx__hal__conf_8h.html#a3ff32c61925938f76fed5ad0041ab9a0":[9,0,1,13,1,2,16],
-"stm32g4xx__hal__conf_8h.html#a43bb2335641440326db0f05526c1bff9":[9,0,1,13,1,2,72],
-"stm32g4xx__hal__conf_8h.html#a450c131e38ad410884575918a021576f":[9,0,1,13,1,2,32],
-"stm32g4xx__hal__conf_8h.html#a476f1655c969ae57e89a74d98c75f43f":[9,0,1,13,1,2,3],
-"stm32g4xx__hal__conf_8h.html#a47f01e5e3f2edfa94bf74c08835f3875":[9,0,1,13,1,2,43],
-"stm32g4xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9":[9,0,1,13,1,2,48]
+"stm32g4xx__hal__conf_8h.html#a23b44d213001aa23b5ae21215deac8fd":[9,0,1,13,1,2,28]
 };

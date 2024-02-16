@@ -94,86 +94,97 @@ $(document).ready(function(){initNavTree('bb__test__case_8hpp_source.html',''); 
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;boost/asio/serial_port.hpp&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;filesystem&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;gtest/gtest.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1bb.html">servio::bb</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespaceservio_1_1bb.html#a6c6697661de5cf696a131b33a08c3779">   15</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceservio_1_1bb.html#a6c6697661de5cf696a131b33a08c3779">test_signature</a> =</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    boost::asio::awaitable&lt; void &gt;( boost::asio::io_context&amp;, <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a>&amp; );</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html">   18</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structservio_1_1bb_1_1bb__test__case.html">bb_test_case</a> : ::testing::Test</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html#a2a7ccbccec9e1f2dcd38957e510e5b98">   20</a></span>&#160;        <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a2a7ccbccec9e1f2dcd38957e510e5b98">bb_test_case</a>(</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="structservio_1_1scmdio_1_1common__cli.html">scmdio::common_cli</a>&amp;             <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            std::function&lt; test_signature &gt; <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">test</a>,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="namespaceservio_1_1base.html#a59393d9d594b4342881b7a6e2d61c96f">std::chrono::milliseconds</a>       <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a> )</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;          : <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>( <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a> )</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;          , <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">test</a>( std::move( <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">test</a> ) )</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;          , <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a>( <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a> )</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html#a9acf368897e3c13cf03646706aa6b84e">   30</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a9acf368897e3c13cf03646706aa6b84e">TestBody</a>() final</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>.<a class="code" href="structservio_1_1scmdio_1_1common__cli.html#a18286990d879f4c04c5d3f7eac60583c">context</a>.restart();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                std::exception_ptr excep_ptr;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordtype">bool</span>               finished = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                co_spawn(</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>.<a class="code" href="structservio_1_1scmdio_1_1common__cli.html#a18286990d879f4c04c5d3f7eac60583c">context</a>,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    [&amp;]() -&gt; boost::asio::awaitable&lt; void &gt; {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                            co_await test( cli.context, *cli.port_ptr );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                            finished = true;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    },</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    [&amp;]( std::exception_ptr ptr ) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                            excep_ptr = std::move( ptr );</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    } );</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>.<a class="code" href="structservio_1_1scmdio_1_1common__cli.html#a18286990d879f4c04c5d3f7eac60583c">context</a>.run_for( <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a> );</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">if</span> ( excep_ptr )</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        std::rethrow_exception( excep_ptr );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                EXPECT_TRUE( finished )</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;Test failed to finish in time, timeout: &quot;</span> &lt;&lt; <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a>.count() &lt;&lt; <span class="stringliteral">&quot;s&quot;</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">   52</a></span>&#160;        <a class="code" href="structservio_1_1scmdio_1_1common__cli.html">scmdio::common_cli</a>&amp;             <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">   53</a></span>&#160;        std::function&lt; test_signature &gt; <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">test</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">   54</a></span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a59393d9d594b4342881b7a6e2d61c96f">std::chrono::milliseconds</a>       <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespaceservio_1_1bb.html#af96e2c93cab7c4829a6755ea8bcccff0">   57</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1bb.html#af96e2c93cab7c4829a6755ea8bcccff0">register_test</a>(</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> std::string&amp;              fixture_name,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> std::string&amp;              name,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="structservio_1_1scmdio_1_1common__cli.html">scmdio::common_cli</a>&amp;             cli,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::function&lt; test_signature &gt; test,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="namespaceservio_1_1base.html#a59393d9d594b4342881b7a6e2d61c96f">std::chrono::milliseconds</a>       timeout )</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        ::testing::RegisterTest(</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            fixture_name.c_str(),</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            name.c_str(),</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            __FILE__,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            __LINE__,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            [&amp;cli, test = std::move( test ), timeout] {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    return new bb_test_case( cli, test, timeout );</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            } );</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}  <span class="comment">// namespace servio::bb</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;google/protobuf/util/message_differencer.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;gtest/gtest.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacegoogle.html">   13</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegoogle_1_1protobuf.html">google::protobuf</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacegoogle_1_1protobuf.html#a7d9dc03a0937665df6d59ad6f7b7f312">   15</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacegoogle_1_1protobuf.html#a7d9dc03a0937665df6d59ad6f7b7f312">operator==</a>( <span class="keyword">const</span> Message&amp; lh, <span class="keyword">const</span> Message&amp; rh )</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">return</span> util::MessageDifferencer::Equals( lh, rh );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}  <span class="comment">// namespace google::protobuf</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespaceservio_1_1bb.html">   21</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1bb.html">servio::bb</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceservio_1_1bb.html#a6c6697661de5cf696a131b33a08c3779">   24</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceservio_1_1bb.html#a6c6697661de5cf696a131b33a08c3779">test_signature</a> =</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    boost::asio::awaitable&lt; void &gt;( boost::asio::io_context&amp;, <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a>&amp; );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html">   27</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structservio_1_1bb_1_1bb__test__case.html">bb_test_case</a> : ::testing::Test</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html#a2a7ccbccec9e1f2dcd38957e510e5b98">   29</a></span>&#160;        <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a2a7ccbccec9e1f2dcd38957e510e5b98">bb_test_case</a>(</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="structservio_1_1scmdio_1_1common__cli.html">scmdio::common_cli</a>&amp;             <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            std::function&lt; test_signature &gt; <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">test</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="namespaceservio_1_1base.html#a59393d9d594b4342881b7a6e2d61c96f">std::chrono::milliseconds</a>       <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a> )</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;          : <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>( <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a> )</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          , <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">test</a>( std::move( <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">test</a> ) )</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;          , <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a>( <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a> )</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html#a9acf368897e3c13cf03646706aa6b84e">   39</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a9acf368897e3c13cf03646706aa6b84e">TestBody</a>() final</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>.<a class="code" href="structservio_1_1scmdio_1_1common__cli.html#a18286990d879f4c04c5d3f7eac60583c">context</a>.restart();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                std::exception_ptr excep_ptr;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordtype">bool</span>               finished = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                co_spawn(</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>.<a class="code" href="structservio_1_1scmdio_1_1common__cli.html#a18286990d879f4c04c5d3f7eac60583c">context</a>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    [&amp;]() -&gt; boost::asio::awaitable&lt; void &gt; {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                            co_await test( cli.context, *cli.port_ptr );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                            finished = true;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    },</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    [&amp;]( std::exception_ptr ptr ) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                            excep_ptr = std::move( ptr );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    } );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>.<a class="code" href="structservio_1_1scmdio_1_1common__cli.html#a18286990d879f4c04c5d3f7eac60583c">context</a>.run_for( <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a> );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">if</span> ( excep_ptr )</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        std::rethrow_exception( excep_ptr );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                EXPECT_TRUE( finished )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot;Test failed to finish in time, timeout: &quot;</span> &lt;&lt; <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a>.count() &lt;&lt; <span class="stringliteral">&quot;s&quot;</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">   61</a></span>&#160;        <a class="code" href="structservio_1_1scmdio_1_1common__cli.html">scmdio::common_cli</a>&amp;             <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">cli</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">   62</a></span>&#160;        std::function&lt; test_signature &gt; <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">test</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">   63</a></span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a59393d9d594b4342881b7a6e2d61c96f">std::chrono::milliseconds</a>       <a class="code" href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">timeout</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespaceservio_1_1bb.html#af96e2c93cab7c4829a6755ea8bcccff0">   66</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1bb.html#af96e2c93cab7c4829a6755ea8bcccff0">register_test</a>(</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> std::string&amp;              fixture_name,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> std::string&amp;              name,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="structservio_1_1scmdio_1_1common__cli.html">scmdio::common_cli</a>&amp;             cli,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::function&lt; test_signature &gt; test,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="namespaceservio_1_1base.html#a59393d9d594b4342881b7a6e2d61c96f">std::chrono::milliseconds</a>       timeout )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        ::testing::RegisterTest(</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            fixture_name.c_str(),</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            name.c_str(),</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            __FILE__,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            __LINE__,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            [&amp;cli, test = std::move( test ), timeout] {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    return new bb_test_case( cli, test, timeout );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            } );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}  <span class="comment">// namespace servio::bb</span></div>
 <div class="ttc" id="acli_8hpp_html"><div class="ttname"><a href="cli_8hpp.html">cli.hpp</a></div></div>
+<div class="ttc" id="anamespacegoogle_1_1protobuf_html"><div class="ttname"><a href="namespacegoogle_1_1protobuf.html">google::protobuf</a></div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:14</div></div>
+<div class="ttc" id="anamespacegoogle_1_1protobuf_html_a7d9dc03a0937665df6d59ad6f7b7f312"><div class="ttname"><a href="namespacegoogle_1_1protobuf.html#a7d9dc03a0937665df6d59ad6f7b7f312">google::protobuf::operator==</a></div><div class="ttdeci">bool operator==(const Message &amp;lh, const Message &amp;rh)</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:15</div></div>
 <div class="ttc" id="anamespaceservio_1_1base_html_a59393d9d594b4342881b7a6e2d61c96f"><div class="ttname"><a href="namespaceservio_1_1base.html#a59393d9d594b4342881b7a6e2d61c96f">servio::base::milliseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::milli &gt; milliseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:14</div></div>
-<div class="ttc" id="anamespaceservio_1_1bb_html"><div class="ttname"><a href="namespaceservio_1_1bb.html">servio::bb</a></div><div class="ttdef"><b>Definition:</b> basic.cpp:20</div></div>
-<div class="ttc" id="anamespaceservio_1_1bb_html_a6c6697661de5cf696a131b33a08c3779"><div class="ttname"><a href="namespaceservio_1_1bb.html#a6c6697661de5cf696a131b33a08c3779">servio::bb::test_signature</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt;(boost::asio::io_context &amp;, scmdio::cobs_port &amp;) test_signature</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:16</div></div>
-<div class="ttc" id="anamespaceservio_1_1bb_html_af96e2c93cab7c4829a6755ea8bcccff0"><div class="ttname"><a href="namespaceservio_1_1bb.html#af96e2c93cab7c4829a6755ea8bcccff0">servio::bb::register_test</a></div><div class="ttdeci">void register_test(const std::string &amp;fixture_name, const std::string &amp;name, scmdio::common_cli &amp;cli, std::function&lt; test_signature &gt; test, std::chrono::milliseconds timeout)</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:57</div></div>
-<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html">servio::bb::bb_test_case</a></div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:19</div></div>
-<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html_a0ca98012019603e8f74a014e6220c107"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">servio::bb::bb_test_case::test</a></div><div class="ttdeci">std::function&lt; test_signature &gt; test</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:53</div></div>
-<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html_a2a7ccbccec9e1f2dcd38957e510e5b98"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html#a2a7ccbccec9e1f2dcd38957e510e5b98">servio::bb::bb_test_case::bb_test_case</a></div><div class="ttdeci">bb_test_case(scmdio::common_cli &amp;cli, std::function&lt; test_signature &gt; test, std::chrono::milliseconds timeout)</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:20</div></div>
-<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html_a3f100ed3ab391da7a8b450166cb5ff2f"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">servio::bb::bb_test_case::timeout</a></div><div class="ttdeci">std::chrono::milliseconds timeout</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:54</div></div>
-<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html_a9acf368897e3c13cf03646706aa6b84e"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html#a9acf368897e3c13cf03646706aa6b84e">servio::bb::bb_test_case::TestBody</a></div><div class="ttdeci">void TestBody() final</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:30</div></div>
-<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html_aca535f939b0516dfcb611f6db152f475"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">servio::bb::bb_test_case::cli</a></div><div class="ttdeci">scmdio::common_cli &amp; cli</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:52</div></div>
+<div class="ttc" id="anamespaceservio_1_1bb_html"><div class="ttname"><a href="namespaceservio_1_1bb.html">servio::bb</a></div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:22</div></div>
+<div class="ttc" id="anamespaceservio_1_1bb_html_a6c6697661de5cf696a131b33a08c3779"><div class="ttname"><a href="namespaceservio_1_1bb.html#a6c6697661de5cf696a131b33a08c3779">servio::bb::test_signature</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt;(boost::asio::io_context &amp;, scmdio::cobs_port &amp;) test_signature</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:25</div></div>
+<div class="ttc" id="anamespaceservio_1_1bb_html_af96e2c93cab7c4829a6755ea8bcccff0"><div class="ttname"><a href="namespaceservio_1_1bb.html#af96e2c93cab7c4829a6755ea8bcccff0">servio::bb::register_test</a></div><div class="ttdeci">void register_test(const std::string &amp;fixture_name, const std::string &amp;name, scmdio::common_cli &amp;cli, std::function&lt; test_signature &gt; test, std::chrono::milliseconds timeout)</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:66</div></div>
+<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html">servio::bb::bb_test_case</a></div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:28</div></div>
+<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html_a0ca98012019603e8f74a014e6220c107"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107">servio::bb::bb_test_case::test</a></div><div class="ttdeci">std::function&lt; test_signature &gt; test</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:62</div></div>
+<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html_a2a7ccbccec9e1f2dcd38957e510e5b98"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html#a2a7ccbccec9e1f2dcd38957e510e5b98">servio::bb::bb_test_case::bb_test_case</a></div><div class="ttdeci">bb_test_case(scmdio::common_cli &amp;cli, std::function&lt; test_signature &gt; test, std::chrono::milliseconds timeout)</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:29</div></div>
+<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html_a3f100ed3ab391da7a8b450166cb5ff2f"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f">servio::bb::bb_test_case::timeout</a></div><div class="ttdeci">std::chrono::milliseconds timeout</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:63</div></div>
+<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html_a9acf368897e3c13cf03646706aa6b84e"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html#a9acf368897e3c13cf03646706aa6b84e">servio::bb::bb_test_case::TestBody</a></div><div class="ttdeci">void TestBody() final</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:39</div></div>
+<div class="ttc" id="astructservio_1_1bb_1_1bb__test__case_html_aca535f939b0516dfcb611f6db152f475"><div class="ttname"><a href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">servio::bb::bb_test_case::cli</a></div><div class="ttdeci">scmdio::common_cli &amp; cli</div><div class="ttdef"><b>Definition:</b> bb_test_case.hpp:61</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1cobs__port_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__port.html">servio::scmdio::cobs_port</a></div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:16</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1common__cli_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1common__cli.html">servio::scmdio::common_cli</a></div><div class="ttdef"><b>Definition:</b> cli.hpp:21</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1common__cli_html_a18286990d879f4c04c5d3f7eac60583c"><div class="ttname"><a href="structservio_1_1scmdio_1_1common__cli.html#a18286990d879f4c04c5d3f7eac60583c">servio::scmdio::common_cli::context</a></div><div class="ttdeci">boost::asio::io_context context</div><div class="ttdef"><b>Definition:</b> cli.hpp:25</div></div>
@@ -183,7 +194,7 @@ $(document).ready(function(){initNavTree('bb__test__case_8hpp_source.html',''); 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b5f1ff6edc0113562981516635a79dda.html">bb</a></li><li class="navelem"><a class="el" href="bb__test__case_8hpp.html">bb_test_case.hpp</a></li>
-    <li class="footer">Generated on Fri Feb 16 2024 21:37:35 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Feb 16 2024 22:21:58 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
