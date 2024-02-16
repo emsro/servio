@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"store__persistent__config_8hpp_source.html":[18,0,1,8,11],
 "structservio_1_1bb_1_1bb__test__case.html":[17,0,0,1,0],
 "structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107":[17,0,0,1,0,3],
 "structservio_1_1bb_1_1bb__test__case.html#a2a7ccbccec9e1f2dcd38957e510e5b98":[17,0,0,1,0,0],
@@ -216,5 +215,6 @@ var NAVTREEINDEX6 =
 "utils_8hpp.html#aacc77ecbce035e56513dcbdba3919ce5":[18,0,1,4,4,2],
 "utils_8hpp_source.html":[18,0,1,4,4],
 "voltage_8hpp.html":[18,0,1,4,5],
-"voltage_8hpp_source.html":[18,0,1,4,5]
+"voltage_8hpp_source.html":[18,0,1,4,5],
+"":[16,0,2]
 };

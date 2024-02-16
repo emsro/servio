@@ -1,6 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"servio__pb_8cpp.html#afd6e1ab5a28aac226cb1ead48fbca4f6":[18,0,1,8,8,0],
 "servio__pb_8hpp.html":[18,0,1,8,9],
 "servio__pb_8hpp.html#a411b0581dfe8ec5fc253e12355b427d4":[18,0,1,8,9,2],
 "servio__pb_8hpp.html#a68b10983c43a8988f0421b90a7ad8adf":[18,0,1,8,9,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX5 =
 "store__persistent__config_8cpp.html":[18,0,1,8,10],
 "store__persistent__config_8cpp.html#ab36e52030344b4d8ae9775e4499c7f7e":[18,0,1,8,10,0],
 "store__persistent__config_8hpp.html":[18,0,1,8,11],
-"store__persistent__config_8hpp.html#ab36e52030344b4d8ae9775e4499c7f7e":[18,0,1,8,11,1]
+"store__persistent__config_8hpp.html#ab36e52030344b4d8ae9775e4499c7f7e":[18,0,1,8,11,1],
+"store__persistent__config_8hpp_source.html":[18,0,1,8,11]
 };
