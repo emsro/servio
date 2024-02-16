@@ -6,6 +6,7 @@
 
 Open firmware for DC servomotors written in C++20.
 The FW uses closed control loops, serial communication, and has automatized testing infrastructure.
+More details in [Documentation](https://emsro.github.io/servio/index.html)
 
 # Disclaimer
 
