@@ -16,7 +16,8 @@ var namespaceservio =
     [ "scmdio", "namespaceservio_1_1scmdio.html", "namespaceservio_1_1scmdio" ],
     [ "sim", "namespaceservio_1_1sim.html", "namespaceservio_1_1sim" ],
     [ "tests", "namespaceservio_1_1tests.html", [
-      [ "TEST", "namespaceservio_1_1tests.html#a3e6929cefef8152843f6c981a7464e00", null ],
+      [ "TEST", "namespaceservio_1_1tests.html#ab13f735a06bbd448c82d5b45d20b76c3", null ],
+      [ "TEST", "namespaceservio_1_1tests.html#ac99e95fa19ba420426c1d8c070c4cb6b", null ],
       [ "TEST", "namespaceservio_1_1tests.html#a0469f257c284b92ef2aa143ccfdbe6f3", null ]
     ] ]
 ];

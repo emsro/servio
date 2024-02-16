@@ -38,10 +38,7 @@ var annotated_dup =
       ] ],
       [ "cnv", "namespaceservio_1_1cnv.html", [
         [ "converter", "structservio_1_1cnv_1_1converter.html", "structservio_1_1cnv_1_1converter" ],
-        [ "current_converter", "classservio_1_1cnv_1_1current__converter.html", "classservio_1_1cnv_1_1current__converter" ],
-        [ "position_converter", "classservio_1_1cnv_1_1position__converter.html", "classservio_1_1cnv_1_1position__converter" ],
-        [ "temperature_converter", "classservio_1_1cnv_1_1temperature__converter.html", "classservio_1_1cnv_1_1temperature__converter" ],
-        [ "voltage_converter", "classservio_1_1cnv_1_1voltage__converter.html", "classservio_1_1cnv_1_1voltage__converter" ]
+        [ "linear_converter", "structservio_1_1cnv_1_1linear__converter.html", "structservio_1_1cnv_1_1linear__converter" ]
       ] ],
       [ "core", "namespaceservio_1_1core.html", [
         [ "current_callback", "classservio_1_1core_1_1current__callback.html", "classservio_1_1core_1_1current__callback" ],

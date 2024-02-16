@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: servio::cnv::voltage_converter Class Reference</title>
+<title>servio: servio::cnv::linear_converter Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classservio_1_1cnv_1_1voltage__converter.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('structservio_1_1cnv_1_1linear__converter.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -85,51 +85,30 @@ $(document).ready(function(){initNavTree('classservio_1_1cnv_1_1voltage__convert
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classservio_1_1cnv_1_1voltage__converter-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="structservio_1_1cnv_1_1linear__converter-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">servio::cnv::voltage_converter Class Reference</div>  </div>
+<div class="title">servio::cnv::linear_converter Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="voltage_8hpp_source.html">voltage.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="linear__converter_8hpp_source.html">linear_converter.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a38cd905708e5cd3ea8ee9e3031749a81"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1cnv_1_1voltage__converter.html#a38cd905708e5cd3ea8ee9e3031749a81">voltage_converter</a> (float scale=1.F)</td></tr>
-<tr class="separator:a38cd905708e5cd3ea8ee9e3031749a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21c6177d3b927d6bf26f2fff5aa021de"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1cnv_1_1voltage__converter.html#a21c6177d3b927d6bf26f2fff5aa021de">convert</a> (uint32_t val) const</td></tr>
-<tr class="separator:a21c6177d3b927d6bf26f2fff5aa021de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a3b7bb8a83fedbf2c62c77ce383e86"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cnv_1_1linear__converter.html#a00a3b7bb8a83fedbf2c62c77ce383e86">convert</a> (uint32_t input) const</td></tr>
+<tr class="separator:a00a3b7bb8a83fedbf2c62c77ce383e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a2fe91b131620df1be422208c87188c15"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cnv_1_1linear__converter.html#a2fe91b131620df1be422208c87188c15">offset</a> = 0.F</td></tr>
+<tr class="separator:a2fe91b131620df1be422208c87188c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0150bfaf4610d45d2bf84ae88224970a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cnv_1_1linear__converter.html#a0150bfaf4610d45d2bf84ae88224970a">scale</a> = 0.F</td></tr>
+<tr class="separator:a0150bfaf4610d45d2bf84ae88224970a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a38cd905708e5cd3ea8ee9e3031749a81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38cd905708e5cd3ea8ee9e3031749a81">&#9670;&nbsp;</a></span>voltage_converter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">servio::cnv::voltage_converter::voltage_converter </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>scale</em> = <code>1.F</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a21c6177d3b927d6bf26f2fff5aa021de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21c6177d3b927d6bf26f2fff5aa021de">&#9670;&nbsp;</a></span>convert()</h2>
+<a id="a00a3b7bb8a83fedbf2c62c77ce383e86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a3b7bb8a83fedbf2c62c77ce383e86">&#9670;&nbsp;</a></span>convert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,10 +117,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float servio::cnv::voltage_converter::convert </td>
+          <td class="memname">float servio::cnv::linear_converter::convert </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -152,18 +131,49 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">References <a class="el" href="structservio_1_1cnv_1_1linear__converter.html#a2fe91b131620df1be422208c87188c15">offset</a>, and <a class="el" href="structservio_1_1cnv_1_1linear__converter.html#a0150bfaf4610d45d2bf84ae88224970a">scale</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/cnv/<a class="el" href="voltage_8hpp_source.html">voltage.hpp</a></li>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2fe91b131620df1be422208c87188c15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fe91b131620df1be422208c87188c15">&#9670;&nbsp;</a></span>offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float servio::cnv::linear_converter::offset = 0.F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0150bfaf4610d45d2bf84ae88224970a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0150bfaf4610d45d2bf84ae88224970a">&#9670;&nbsp;</a></span>scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float servio::cnv::linear_converter::scale = 0.F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>src/cnv/<a class="el" href="linear__converter_8hpp_source.html">linear_converter.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1cnv.html">cnv</a></li><li class="navelem"><a class="el" href="classservio_1_1cnv_1_1voltage__converter.html">voltage_converter</a></li>
-    <li class="footer">Generated on Fri Feb 16 2024 22:21:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1cnv.html">cnv</a></li><li class="navelem"><a class="el" href="structservio_1_1cnv_1_1linear__converter.html">linear_converter</a></li>
+    <li class="footer">Generated on Fri Feb 16 2024 22:44:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

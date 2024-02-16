@@ -1,7 +1,4 @@
 <map id="servio::cnv::converter" name="servio::cnv::converter">
-<area shape="rect" id="node1" title=" " alt="" coords="292,111,455,138"/>
-<area shape="rect" id="node2" href="$classservio_1_1cnv_1_1current__converter.html" title=" " alt="" coords="23,5,169,47"/>
-<area shape="rect" id="node3" href="$classservio_1_1cnv_1_1position__converter.html" title=" " alt="" coords="20,71,172,112"/>
-<area shape="rect" id="node4" href="$classservio_1_1cnv_1_1temperature__converter.html" title=" " alt="" coords="5,136,187,177"/>
-<area shape="rect" id="node5" href="$classservio_1_1cnv_1_1voltage__converter.html" title=" " alt="" coords="21,201,171,243"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,153,168,180"/>
+<area shape="rect" id="node2" href="$structservio_1_1cnv_1_1linear__converter.html" title=" " alt="" coords="18,5,155,47"/>
 </map>
