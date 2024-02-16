@@ -31,7 +31,7 @@ build_h5:
 	cmake --build --preset "stm32h5_debug_build"
 
 flash:
-	openocd -f src/plt/stm32g4/openocd.cfg -c "program build/g4/prototype2_fw.elf verify reset exit"
+	/usr/local/bin/openocd -f src/plt/stm32h5/openocd.cfg -c "program build/h5/proto3_fw.elf verify reset exit"
 
 test: build_host
 	cd build/host && ctest -T Test --output-on-failure
