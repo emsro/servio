@@ -5,63 +5,10 @@
 
 #include <emlabcpp/experimental/logging.h>
 #include <filesystem>
-#include <google/protobuf/util/message_differencer.h>
 #include <gtest/gtest.h>
-
-namespace google::protobuf
-{
-bool operator==( const Message& lh, const Message& rh )
-{
-        return util::MessageDifferencer::Equals( lh, rh );
-}
-}  // namespace google::protobuf
 
 namespace servio::bb
 {
-
-boost::asio::awaitable< void >
-test_properties_querying( boost::asio::io_context&, scmdio::cobs_port& port )
-{
-        const google::protobuf::OneofDescriptor* desc =
-            servio::Property::GetDescriptor()->oneof_decl( 0 );
-
-        for ( int i = 0; i < desc->field_count(); i++ ) {
-                const google::protobuf::FieldDescriptor* field = desc->field( i );
-                servio::Property prop = co_await scmdio::get_property( port, field );
-                EXPECT_EQ( static_cast< int >( prop.pld_case() ), field->number() );
-        }
-}
-
-boost::asio::awaitable< void > check_mode( scmdio::cobs_port& port, servio::Mode m )
-{
-        co_await scmdio::set_mode( port, m );
-
-        servio::Mode repl = co_await scmdio::get_property_mode( port );
-        EXPECT_EQ( repl.pld_case(), m.pld_case() );
-}
-
-boost::asio::awaitable< void > test_modes( boost::asio::io_context&, scmdio::cobs_port& port )
-{
-        servio::Mode m;
-
-        m.mutable_disengaged();
-        co_await check_mode( port, m );
-
-        m.set_power( 0 );
-        co_await check_mode( port, m );
-
-        m.set_current( 0 );
-        co_await check_mode( port, m );
-
-        m.set_velocity( 0 );
-        co_await check_mode( port, m );
-
-        m.set_position( 0 );
-        co_await check_mode( port, m );
-
-        m.mutable_disengaged();
-        co_await check_mode( port, m );
-}
 
 servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servio::Config item )
 {
@@ -165,16 +112,17 @@ boost::asio::awaitable< void > test_config( boost::asio::io_context&, scmdio::co
 
 int main( int argc, char** argv )
 {
+        using namespace servio;
         using namespace std::chrono_literals;
 
         ::testing::InitGoogleTest( &argc, argv );
         bool powerless = false;
         bool verbose   = false;
 
-        CLI::App app{ "basic black box tests" };
-        servio::scmdio::powerless_flag( app, powerless );
-        servio::scmdio::verbose_opt( app, verbose );
-        servio::scmdio::common_cli cli;
+        CLI::App app{ "config tests" };
+        scmdio::powerless_flag( app, powerless );
+        scmdio::verbose_opt( app, verbose );
+        scmdio::common_cli cli;
         cli.setup( app );
 
         try {
@@ -184,13 +132,7 @@ int main( int argc, char** argv )
                 return app.exit( e );
         }
 
-        if ( verbose )
-                em::DEBUG_LOGGER.set_option( em::set_stdout( true ) );
-
-        servio::bb::register_test(
-            "basic", "properties_querying", cli, servio::bb::test_properties_querying, 1s );
-        servio::bb::register_test( "basic", "modes", cli, servio::bb::test_modes, 1s );
-        servio::bb::register_test( "basic", "config", cli, servio::bb::test_config, 10s );
+        bb::register_test( "basic", "config", cli, bb::test_config, 10s );
 
         return RUN_ALL_TESTS();
 }

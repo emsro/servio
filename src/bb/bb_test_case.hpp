@@ -5,9 +5,18 @@
 #include <boost/asio/serial_port.hpp>
 #include <chrono>
 #include <filesystem>
+#include <google/protobuf/util/message_differencer.h>
 #include <gtest/gtest.h>
 
 #pragma once
+
+namespace google::protobuf
+{
+bool operator==( const Message& lh, const Message& rh )
+{
+        return util::MessageDifferencer::Equals( lh, rh );
+}
+}  // namespace google::protobuf
 
 namespace servio::bb
 {

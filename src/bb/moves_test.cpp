@@ -49,14 +49,15 @@ boost::asio::awaitable< void > test_position( boost::asio::io_context& io, scmdi
 
 int main( int argc, char** argv )
 {
+        using namespace servio;
         using namespace std::chrono_literals;
 
         ::testing::InitGoogleTest( &argc, argv );
         bool powerless = false;
 
         CLI::App app{ "black box tests with basic moves" };
-        servio::scmdio::powerless_flag( app, powerless );
-        servio::scmdio::common_cli cli;
+        scmdio::powerless_flag( app, powerless );
+        scmdio::common_cli cli;
         cli.setup( app );
 
         try {
@@ -67,9 +68,8 @@ int main( int argc, char** argv )
         }
 
         if ( !powerless ) {
-                servio::bb::register_test( "moves", "current", cli, servio::bb::test_current, 1s );
-                servio::bb::register_test(
-                    "moves", "position", cli, servio::bb::test_position, 1s );
+                bb::register_test( "moves", "current", cli, bb::test_current, 1s );
+                bb::register_test( "moves", "position", cli, bb::test_position, 1s );
         }
 
         return RUN_ALL_TESTS();

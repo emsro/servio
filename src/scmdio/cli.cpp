@@ -6,7 +6,11 @@ namespace servio::scmdio
 
 CLI::Option* verbose_opt( CLI::App& app, bool& val )
 {
-        return app.add_flag( "-v,--verbose", val, "verbosity" )->envname( "SERVIO_VERBOSE" );
+        return app.add_flag( "-v,--verbose", val, "verbosity" )
+            ->envname( "SERVIO_VERBOSE" )
+            ->each( []( const std::string& ) {
+                    em::DEBUG_LOGGER.set_option( em::set_stdout( true ) );
+            } );
 }
 
 CLI::Option* device_opt( CLI::App& app, std::filesystem::path& device )
