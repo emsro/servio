@@ -17,8 +17,6 @@ using reg = em::protocol::register_pair< Key, T >;
 
 using model_name = em::string_buffer< 32 >;
 
-// TODO: write a check for reg_map that confirms that config values does not
-// overlap
 using map = em::protocol::register_map<
     std::endian::little,
     reg< MODEL, model_name >,
