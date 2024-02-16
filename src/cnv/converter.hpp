@@ -1,7 +1,4 @@
-#include "cnv/current.hpp"
-#include "cnv/position.hpp"
-#include "cnv/temperature.hpp"
-#include "cnv/voltage.hpp"
+#include "cnv/linear_converter.hpp"
 
 #pragma once
 
@@ -16,28 +13,33 @@ struct converter
             uint32_t high_value,
             float    high_angle )
         {
-                position = cnv::position_converter{ low_value, low_angle, high_value, high_angle };
+                const int   val_diff   = static_cast< int >( high_value - low_value );
+                const float angle_diff = high_angle - low_angle;
+                position.scale         = angle_diff / static_cast< float >( val_diff );
+                position.offset = low_angle - static_cast< float >( low_value ) * position.scale;
         }
 
         void set_current_cfg( float scale, float offset )
         {
-                current = cnv::current_converter{ scale, offset };
+                current.offset = offset;
+                current.scale  = scale;
         }
 
         void set_temp_cfg( float scale, float offset )
         {
-                temp = cnv::temperature_converter{ scale, offset };
+                temp.offset = offset;
+                temp.scale  = scale;
         }
 
         void set_vcc_cfg( float scale )
         {
-                vcc = cnv::voltage_converter{ scale };
+                vcc.scale = scale;
         }
 
-        cnv::position_converter    position;
-        cnv::current_converter     current;
-        cnv::temperature_converter temp;
-        cnv::voltage_converter     vcc;
+        linear_converter position;
+        linear_converter current;
+        linear_converter temp;
+        linear_converter vcc;
 };
 
 }  // namespace servio::cnv
