@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: doc/adr/0011-modular-control-loop-architecture-shall-be-used.md File Reference</title>
+<title>servio: Position control mode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('0011-modular-control-loop-architecture-shall-be-used_8md.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_doc_reqs_control.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -82,18 +82,31 @@ $(document).ready(function(){initNavTree('0011-modular-control-loop-architecture
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">doc/adr/0011-modular-control-loop-architecture-shall-be-used.md File Reference</div>  </div>
+<div class="title">Position control mode </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p>Firmware shall have position control mode. In this mode, the goal is to achieve given position on controlled axis.</p>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Current control mode</h1>
+<p>Firmware shall have current control mode. In this mode, the goal is to achieve given current flowing throu a connected motor.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Velocity control mode</h1>
+<p>Firmware shall have velocity control mode. In this mode, the goal is to achieve given rotational velocity with controlled axis.</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Movement detection</h1>
+<p>Firmware shall have capability to detect whenever the controlled axis is moving or is stationary.</p>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Static friction compensation</h1>
+<p>The firmware shall have capability detect static friction and compensate for it for current and velocity control mode. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="0011-modular-control-loop-architecture-shall-be-used_8md.html">0011-modular-control-loop-architecture-shall-be-used.md</a></li>
-    <li class="footer">Generated on Fri Feb 16 2024 21:24:22 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Feb 16 2024 21:37:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

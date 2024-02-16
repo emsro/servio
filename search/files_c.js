@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['platform_2ecpp_989',['platform.cpp',['../stm32g4_2platform_8cpp.html',1,'(Global Namespace)'],['../stm32h5_2platform_8cpp.html',1,'(Global Namespace)']]],
-  ['platform_2ehpp_990',['platform.hpp',['../platform_8hpp.html',1,'']]],
-  ['position_2ehpp_991',['position.hpp',['../position_8hpp.html',1,'']]],
-  ['posvel_5fkalman_2ehpp_992',['posvel_kalman.hpp',['../posvel__kalman_8hpp.html',1,'']]]
+  ['readme_2emd_969',['README.md',['../README_8md.html',1,'']]]
 ];

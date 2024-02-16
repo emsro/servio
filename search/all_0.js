@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['0001_2drecord_2darchitecture_2ddecisions_2emd_0',['0001-record-architecture-decisions.md',['../0001-record-architecture-decisions_8md.html',1,'']]],
-  ['0002_2dproject_2dshall_2dbe_2dwriten_2dwith_2dc_2d20_2emd_1',['0002-project-shall-be-writen-with-c-20.md',['../0002-project-shall-be-writen-with-c-20_8md.html',1,'']]],
-  ['0003_2dstm32g4_2dis_2dthe_2dfirst_2dplatform_2emd_2',['0003-stm32g4-is-the-first-platform.md',['../0003-stm32g4-is-the-first-platform_8md.html',1,'']]],
-  ['0004_2dservo_2dshall_2dprovide_2dposition_2dcontrol_2emd_3',['0004-servo-shall-provide-position-control.md',['../0004-servo-shall-provide-position-control_8md.html',1,'']]],
-  ['0005_2dservo_2dshall_2dprovide_2dvelocity_2dcontrol_2emd_4',['0005-servo-shall-provide-velocity-control.md',['../0005-servo-shall-provide-velocity-control_8md.html',1,'']]],
-  ['0006_2dservo_2dshall_2dprovide_2dcurrent_2dcontrol_2emd_5',['0006-servo-shall-provide-current-control.md',['../0006-servo-shall-provide-current-control_8md.html',1,'']]],
-  ['0007_2dchained_2dcontrol_2dloops_2darchitecture_2dshall_2dbe_2dused_2emd_6',['0007-chained-control-loops-architecture-shall-be-used.md',['../0007-chained-control-loops-architecture-shall-be-used_8md.html',1,'']]],
-  ['0008_2dcmake_2dis_2dthe_2done_2donly_2dbuild_2dsystem_2emd_7',['0008-cmake-is-the-one-only-build-system.md',['../0008-cmake-is-the-one-only-build-system_8md.html',1,'']]],
-  ['0009_2dif_2dservo_2din_2dposition_2dvelocity_2dor_2dcurrent_2dmode_2dlimits_2dfor_2dall_2dthree_2dmodes_2dshall_2dbe_2drespected_2dat_2donce_2emd_8',['0009-if-servo-in-position-velocity-or-current-mode-limits-for-all-three-modes-shall-be-respected-at-once.md',['../0009-if-servo-in-position-velocity-or-current-mode-limits-for-all-three-modes-shall-be-respected-at-once_8md.html',1,'']]],
-  ['0010_2dstm32h5_2dis_2dthe_2dmain_2dplatform_2emd_9',['0010-stm32h5-is-the-main-platform.md',['../0010-stm32h5-is-the-main-platform_8md.html',1,'']]],
-  ['0011_2dmodular_2dcontrol_2dloop_2darchitecture_2dshall_2dbe_2dused_2emd_10',['0011-modular-control-loop-architecture-shall-be-used.md',['../0011-modular-control-loop-architecture-shall-be-used_8md.html',1,'']]]
+  ['_5fclose_0',['_close',['../extra_8cpp.html#ad26efdbfacf3ddbee142d421bf01272f',1,'extra.cpp']]],
+  ['_5fconfig_5fend_1',['_config_end',['../proto3_2board_8cpp.html#ab9c4570b264e5103deb948e89f713529',1,'_config_end():&#160;board.cpp'],['../brd_2prototype2_2config_8cpp.html#ab9c4570b264e5103deb948e89f713529',1,'_config_end():&#160;config.cpp']]],
+  ['_5fconfig_5fstart_2',['_config_start',['../proto3_2board_8cpp.html#a906f7ef6acab4815e6b77b601dac50e7',1,'_config_start():&#160;board.cpp'],['../brd_2prototype2_2config_8cpp.html#a906f7ef6acab4815e6b77b601dac50e7',1,'_config_start():&#160;config.cpp']]],
+  ['_5fexit_3',['_exit',['../extra_8cpp.html#a31dcaff181eaa6a8cfb484e35f23fb5f',1,'extra.cpp']]],
+  ['_5fgetpid_4',['_getpid',['../extra_8cpp.html#a945e539df8e0f66d3c73c533fe1968ee',1,'extra.cpp']]],
+  ['_5fkill_5',['_kill',['../extra_8cpp.html#a0ed15a34423726cf23f8dd30a0968dbb',1,'extra.cpp']]],
+  ['_5flseek_6',['_lseek',['../extra_8cpp.html#a9a33858e15f999352b72063439c5cffd',1,'extra.cpp']]],
+  ['_5fread_7',['_read',['../extra_8cpp.html#ae9a656c34f65fef4f3d0c975d252fe32',1,'extra.cpp']]],
+  ['_5fwrite_8',['_write',['../extra_8cpp.html#a1764b05ba713fd9473356dc1c1228989',1,'extra.cpp']]]
 ];
