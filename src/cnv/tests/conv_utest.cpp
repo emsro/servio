@@ -1,5 +1,7 @@
+#include "cnv/converter.hpp"
 #include "cnv/linear_converter.hpp"
 
+#include <cstdint>
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/range.h>
 #include <gtest/gtest.h>
@@ -32,6 +34,32 @@ TEST( cnv, linear )
                                 EXPECT_FLOAT_EQ( lc.convert( v ), expected );
                         }
                 }
+}
+
+TEST( cnv, converter )
+{
+        std::default_random_engine             e( 0 );
+        std::binomial_distribution< uint32_t > bd( ATTEMPT_N, 0.5F );
+        std::normal_distribution< float >      nd( 0.F, 1.F );
+
+        converter cnv;
+
+        for ( auto i : em::range( ATTEMPT_N ) ) {
+                uint32_t lv = bd( e );
+                float    la = nd( e );
+                uint32_t hv = bd( e );
+                float    ha = nd( e );
+                cnv.set_position_cfg( lv, la, hv, ha );
+
+                uint32_t v = bd( e );
+
+                if ( lv == hv )
+                        continue;
+
+                float expected = em::map_range< float, float >( v, lv, hv, la, ha );
+                EXPECT_NEAR( cnv.position.convert( v ), expected, 0.0001F )
+                    << v << " (" << lv << "," << hv << ") (" << la << "," << ha << ")";
+        }
 }
 
 }  // namespace servio::cnv::tests
