@@ -1,5 +1,14 @@
 var NAVTREEINDEX5 =
 {
+"stm32g4xx__hal__conf_8h.html#a2c51d4e89cd75f4629092d46ca26a750":[9,0,1,13,1,2,66],
+"stm32g4xx__hal__conf_8h.html#a3379989d46599c7e19a43f42e9145a4a":[9,0,1,13,1,2,45],
+"stm32g4xx__hal__conf_8h.html#a34a796bea8a48187716b99c6f14b14f2":[9,0,1,13,1,2,58],
+"stm32g4xx__hal__conf_8h.html#a382744674caee964d227d41574fe2b73":[9,0,1,13,1,2,53],
+"stm32g4xx__hal__conf_8h.html#a3ff32c61925938f76fed5ad0041ab9a0":[9,0,1,13,1,2,16],
+"stm32g4xx__hal__conf_8h.html#a43bb2335641440326db0f05526c1bff9":[9,0,1,13,1,2,72],
+"stm32g4xx__hal__conf_8h.html#a450c131e38ad410884575918a021576f":[9,0,1,13,1,2,32],
+"stm32g4xx__hal__conf_8h.html#a476f1655c969ae57e89a74d98c75f43f":[9,0,1,13,1,2,3],
+"stm32g4xx__hal__conf_8h.html#a47f01e5e3f2edfa94bf74c08835f3875":[9,0,1,13,1,2,43],
 "stm32g4xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9":[9,0,1,13,1,2,48],
 "stm32g4xx__hal__conf_8h.html#a4a459bcaa046998e6939fc66b0831e96":[9,0,1,13,1,2,62],
 "stm32g4xx__hal__conf_8h.html#a4c6fab687afc7ba4469b1b2d34472358":[9,0,1,13,1,2,81],
@@ -240,14 +249,5 @@ var NAVTREEINDEX5 =
 "structservio_1_1core_1_1core.html#a97642fb6f39a364a822dd6493a7030e6":[8,0,0,5,2,0],
 "structservio_1_1core_1_1core.html#aa794f5ead9b6c96372cf259e4b3d2dec":[8,0,0,5,2,4],
 "structservio_1_1core_1_1core.html#ac1d7318ed40f6e6de81b804e511566f7":[8,0,0,5,2,2],
-"structservio_1_1core_1_1core.html#ada6d34917171a93b984d8484a4d0b8d1":[8,0,0,5,2,6],
-"structservio_1_1core_1_1core.html#af79a219de96e8d0dfcf16ed14b8f8d0b":[8,0,0,5,2,5],
-"structservio_1_1core_1_1core.html#afb4d33e4c3c3089c49e225569db4b324":[8,0,0,5,2,1],
-"structservio_1_1core_1_1drivers.html":[8,0,0,5,4],
-"structservio_1_1core_1_1drivers.html#a0e43a8d2cf341426c1bf84185302fc78":[8,0,0,5,4,4],
-"structservio_1_1core_1_1drivers.html#a2089ace05a4a1effb3bd28a30242c4d3":[8,0,0,5,4,5],
-"structservio_1_1core_1_1drivers.html#a3b2125ffa0f5622ef761ad46c2b72fa4":[8,0,0,5,4,8],
-"structservio_1_1core_1_1drivers.html#a403dbd94d2a9816e80bed0a7886d3db4":[8,0,0,5,4,6],
-"structservio_1_1core_1_1drivers.html#a68bbd6f5b87258f7ca635a193957aefe":[8,0,0,5,4,11],
-"structservio_1_1core_1_1drivers.html#a6c5e23a1aba67486499f8adf4e2c0917":[8,0,0,5,4,12]
+"structservio_1_1core_1_1core.html#ada6d34917171a93b984d8484a4d0b8d1":[8,0,0,5,2,6]
 };

@@ -80,11 +80,11 @@ var NAVTREEINDEX =
 [
 "",
 "cli_8cpp.html#a0f5027194b08215b948567a9932bcdbc",
-"key_8hpp.html",
-"namespaceservio_1_1brd.html#structservio_1_1brd_1_1hb__timer__cfg",
-"namespaceservio_1_1scmdio.html#a06a1f0b93a4abc6c70b670a4c7fec45e",
-"stm32g4xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9",
-"structservio_1_1core_1_1drivers.html#a6d26ca408a056f7f0e5df3df4655add7"
+"kalman_8hpp.html#afea6216b903aa2cb07122c0a086643cd",
+"namespaceservio_1_1brd.html#af53c8d7af3580f2c1cf33c7d9e06fe1e",
+"namespaceservio_1_1plt.html#afa3ffb0666945381bc9735b671490daf",
+"stm32g4xx__hal__conf_8h.html#a2c51d4e89cd75f4629092d46ca26a750",
+"structservio_1_1core_1_1core.html#af79a219de96e8d0dfcf16ed14b8f8d0b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
