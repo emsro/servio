@@ -67,6 +67,9 @@ em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cf
         HAL_NVIC_SetPriority( ADC1_IRQn, cfg.adc_irq_priority, 0 );
         HAL_NVIC_EnableIRQ( ADC1_IRQn );
 
+        HAL_NVIC_SetPriority( cfg.dma.irq, cfg.dma.irq_priority, 0 );
+        HAL_NVIC_EnableIRQ( cfg.dma.irq );
+
         return em::SUCCESS;
 }
 

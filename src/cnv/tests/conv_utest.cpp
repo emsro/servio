@@ -45,6 +45,7 @@ TEST( cnv, converter )
         converter cnv;
 
         for ( auto i : em::range( ATTEMPT_N ) ) {
+                std::ignore = i;
                 uint32_t lv = bd( e );
                 float    la = nd( e );
                 uint32_t hv = bd( e );
@@ -56,7 +57,12 @@ TEST( cnv, converter )
                 if ( lv == hv )
                         continue;
 
-                float expected = em::map_range< float, float >( v, lv, hv, la, ha );
+                float expected = em::map_range< float, float >(
+                    static_cast< float >( v ),
+                    static_cast< float >( lv ),
+                    static_cast< float >( hv ),
+                    la,
+                    ha );
                 EXPECT_NEAR( cnv.position.convert( v ), expected, 0.0001F )
                     << v << " (" << lv << "," << hv << ") (" << la << "," << ha << ")";
         }

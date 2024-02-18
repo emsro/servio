@@ -9,6 +9,8 @@ namespace servio::plt
 
 struct dma_cfg
 {
+        IRQn_Type            irq;
+        uint32_t             irq_priority;
         DMA_Channel_TypeDef* instance;
         uint32_t             request;
         uint32_t             priority;

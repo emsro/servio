@@ -23,7 +23,7 @@ struct adc_set
         drv::adc_channel< VCC_CHANNEL >                    vcc;
         drv::adc_channel< TEMP_CHANNEL >                   temp;
 
-        auto tie()
+        [[gnu::flatten]] auto tie()
         {
                 return std::tie( current, position, vcc, temp );
         }

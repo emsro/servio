@@ -41,7 +41,7 @@ struct detailed_adc_channel
                 samples_overflow_error = false;
         }
 
-        void period_start( ADC_HandleTypeDef& h )
+        [[gnu::flatten]] void period_start( ADC_HandleTypeDef& h )
         {
                 if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK )
                         config_channel_error = true;
@@ -94,7 +94,7 @@ struct adc_channel
                 return base::status::NOMINAL;
         }
 
-        void period_start( ADC_HandleTypeDef& h )
+        [[gnu::flatten]] void period_start( ADC_HandleTypeDef& h )
         {
                 if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK )
                         config_channel_error = true;
@@ -106,7 +106,7 @@ struct adc_channel
         {
         }
 
-        void conv_cplt( ADC_HandleTypeDef& h )
+        [[gnu::flatten]] void conv_cplt( ADC_HandleTypeDef& h )
         {
                 // is this necessary?
                 if ( HAL_ADC_Stop_IT( &h ) != HAL_OK )
@@ -120,7 +120,7 @@ struct adc_channel_with_callback : adc_channel< ID >
 {
         base::value_cb_interface* callback = &EMPTY_ADC_CALLBACK;
 
-        void conv_cplt( ADC_HandleTypeDef& h )
+        [[gnu::flatten]] void conv_cplt( ADC_HandleTypeDef& h )
         {
                 adc_channel< ID >::conv_cplt( h );
                 callback->on_value_irq( this->last_value );

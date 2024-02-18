@@ -64,7 +64,20 @@ void USART1_IRQHandler()
         HAL_UART_IRQHandler( &servio::brd::UART1_HANDLE );
 }
 
-// TODO: are DMA interrupts missing?
+void GPDMA1_Channel0_IRQHandler()
+{
+        HAL_DMA_IRQHandler( &servio::brd::ADC_DMA_HANDLE );
+}
+
+void GPDMA1_Channel1_IRQHandler()
+{
+        HAL_DMA_IRQHandler( &servio::brd::UART2_DMA_HANDLE );
+}
+
+void GPDMA1_Channel2_IRQHandler()
+{
+        HAL_DMA_IRQHandler( &servio::brd::UART1_DMA_HANDLE );
+}
 }
 
 extern "C" {
@@ -144,9 +157,11 @@ drv::adc_pooler< drv::adc_set >* adc_pooler_setup()
                     .adc_trigger      = ADC_EXTERNALTRIG_T6_TRGO,
                     .dma =
                         plt::dma_cfg{
-                            .instance = GPDMA1_Channel0,
-                            .request  = GPDMA1_REQUEST_ADC1,
-                            .priority = DMA_HIGH_PRIORITY,
+                            .irq          = GPDMA1_Channel0_IRQn,
+                            .irq_priority = 0,
+                            .instance     = GPDMA1_Channel0,
+                            .request      = GPDMA1_REQUEST_ADC1,
+                            .priority     = DMA_HIGH_PRIORITY,
                         },
                 } ),
             plt::setup_adc_timer( ADC_TIM_HANDLE, TIM6 ) );
@@ -158,7 +173,6 @@ drv::adc_pooler< drv::adc_set >* adc_pooler_setup()
             drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, ADC_TIM_HANDLE );
 }
 
-// TODO: not ideal return type /o\..
 drv::hbridge* hbridge_setup()
 {
         __HAL_RCC_TIM1_CLK_ENABLE();
@@ -215,9 +229,11 @@ drv::cobs_uart* comms_setup()
                 },
             .tx_dma =
                 plt::dma_cfg{
-                    .instance = GPDMA1_Channel1,
-                    .request  = GPDMA1_REQUEST_USART2_TX,
-                    .priority = DMA_LOW_PRIORITY_LOW_WEIGHT,
+                    .irq          = GPDMA1_Channel1_IRQn,
+                    .irq_priority = 1,
+                    .instance     = GPDMA1_Channel1,
+                    .request      = GPDMA1_REQUEST_USART2_TX,
+                    .priority     = DMA_LOW_PRIORITY_LOW_WEIGHT,
                 },
         };
 
@@ -231,7 +247,6 @@ base::com_interface* setup_debug_comms()
 {
         __HAL_RCC_GPDMA1_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();
-        __HAL_RCC_GPIOB_CLK_ENABLE();
         __HAL_RCC_USART1_CLK_ENABLE();
 
         plt::uart_cfg cfg{
@@ -253,9 +268,11 @@ base::com_interface* setup_debug_comms()
                 },
             .tx_dma =
                 plt::dma_cfg{
-                    .instance = GPDMA1_Channel2,
-                    .request  = GPDMA1_REQUEST_USART1_TX,
-                    .priority = DMA_LOW_PRIORITY_LOW_WEIGHT,
+                    .irq          = GPDMA1_Channel2_IRQn,
+                    .irq_priority = 1,
+                    .instance     = GPDMA1_Channel2,
+                    .request      = GPDMA1_REQUEST_USART1_TX,
+                    .priority     = DMA_LOW_PRIORITY_LOW_WEIGHT,
                 },
         };
 
