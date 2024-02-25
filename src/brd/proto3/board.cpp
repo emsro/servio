@@ -99,6 +99,11 @@ void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
         servio::brd::DEBUG_COMMS.rx_cplt_irq( h );
 }
 
+void HAL_UART_ErrorCallback( UART_HandleTypeDef* h )
+{
+        servio::fw::stop_exec();
+}
+
 void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
         servio::drv::ADC_POOLER.adc_conv_cplt_irq( h );

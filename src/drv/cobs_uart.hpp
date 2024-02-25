@@ -12,8 +12,6 @@ namespace em = emlabcpp;
 namespace servio::drv
 {
 
-constexpr std::size_t comm_buff_size = 128;
-
 class cobs_uart : public base::com_interface
 {
 public:
@@ -83,7 +81,7 @@ private:
         em::static_circular_buffer< std::byte, 256 > ibuffer_;
         em::static_circular_buffer< uint16_t, 8 >    isizes_;
 
-        std::array< std::byte, comm_buff_size > otmp_;
+        std::array< std::byte, 128 > otmp_;
 };
 
 }  // namespace servio::drv
