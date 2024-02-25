@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"structservio_1_1core_1_1core.html":[8,0,0,5,2],
 "structservio_1_1core_1_1core.html#a2783edc02e723535534b6911cf26b3e8":[8,0,0,5,2,3],
 "structservio_1_1core_1_1core.html#a97642fb6f39a364a822dd6493a7030e6":[8,0,0,5,2,0],
 "structservio_1_1core_1_1core.html#aa794f5ead9b6c96372cf259e4b3d2dec":[8,0,0,5,2,4],

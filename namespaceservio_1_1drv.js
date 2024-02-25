@@ -34,7 +34,6 @@ var namespaceservio_1_1drv =
     [ "ADC_SEQUENCE", "namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c", null ],
     [ "ADC_TEMPERATURE", "namespaceservio_1_1drv.html#a70c95638ac814ac28330c9c21dadab02", null ],
     [ "ADC_VCC", "namespaceservio_1_1drv.html#ab0e909fed28a806840cfa5c8fad40ffa", null ],
-    [ "comm_buff_size", "namespaceservio_1_1drv.html#a78ba2883b8675eef9c802cc5c6e8bff1", null ],
     [ "EMPTY_ADC_CALLBACK", "namespaceservio_1_1drv.html#ab0f58f8aab9826fafb7c092dac28f6c3", null ],
     [ "EMPTY_ADC_DETAILED_CALLBACK", "namespaceservio_1_1drv.html#a641200efd9b8b191932945c86f78d9e0", null ],
     [ "EMPTY_PERIOD_CB", "namespaceservio_1_1drv.html#a2312e09db62ce5efa6d7aa8de3cef65d", null ]

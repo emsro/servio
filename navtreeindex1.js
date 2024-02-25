@@ -13,7 +13,6 @@ var NAVTREEINDEX1 =
 "clock_8hpp_source.html":[9,0,1,7,3],
 "cobs__uart_8cpp.html":[9,0,1,7,4],
 "cobs__uart_8hpp.html":[9,0,1,7,5],
-"cobs__uart_8hpp.html#a78ba2883b8675eef9c802cc5c6e8bff1":[9,0,1,7,5,1],
 "cobs__uart_8hpp_source.html":[9,0,1,7,5],
 "config_8hpp.html":[9,0,1,6,1],
 "config_8hpp.html#aa4cf1922c9ea312468fc30bb2f68d6c5":[9,0,1,6,1,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "kalman_8hpp.html#acbeaec773e12939afebddba25b5d3135":[9,0,1,10,1,9],
 "kalman_8hpp.html#ad3c38b4afcfc858dde73afeb79b4dbc1":[9,0,1,10,1,5],
 "kalman_8hpp.html#ae839380c658b06e259608b78e6f17203":[9,0,1,10,1,10],
-"kalman_8hpp.html#af4b8c2853673737d335f915148fc8bfe":[9,0,1,10,1,18]
+"kalman_8hpp.html#af4b8c2853673737d335f915148fc8bfe":[9,0,1,10,1,18],
+"kalman_8hpp.html#af5efb0f3164d80b24e95734b34812cd7":[9,0,1,10,1,4]
 };

@@ -11,6 +11,7 @@ var proto3_2board_8cpp =
     [ "HAL_ADC_ConvCpltCallback", "proto3_2board_8cpp.html#a14eed1aeca4fd0404c553698e9370c85", null ],
     [ "HAL_ADC_ErrorCallback", "proto3_2board_8cpp.html#a6540ad5da39d6ceff72603fe4fd2fc1a", null ],
     [ "HAL_TIM_PeriodElapsedCallback", "proto3_2board_8cpp.html#a641bc903b980920fddc6954a40e4ec51", null ],
+    [ "HAL_UART_ErrorCallback", "proto3_2board_8cpp.html#af9825e42db142e52d9cd233081c2d018", null ],
     [ "HAL_UART_RxCpltCallback", "proto3_2board_8cpp.html#a84719ef5a2750117d3d1b6e105d8f148", null ],
     [ "HAL_UART_TxCpltCallback", "proto3_2board_8cpp.html#a94a249281eebfa3bd9aa3f979cc9f03d", null ],
     [ "hbridge_setup", "proto3_2board_8cpp.html#a7e933c86ae59b33c53a15dd89f58febc", null ],
