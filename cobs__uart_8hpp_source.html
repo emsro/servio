@@ -111,82 +111,87 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#aa1b13d2180961b314892b095888dcd18">   22</a></span>&#160;        <a class="code" href="classservio_1_1drv_1_1cobs__uart.html">cobs_uart</a>&amp; <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#aa1b13d2180961b314892b095888dcd18">operator=</a>( <span class="keyword">const</span> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html">cobs_uart</a>&amp; ) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#a11a0825c431af9aa77508b42c7317f12">   23</a></span>&#160;        <a class="code" href="classservio_1_1drv_1_1cobs__uart.html">cobs_uart</a>&amp; <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a11a0825c431af9aa77508b42c7317f12">operator=</a>( <a class="code" href="classservio_1_1drv_1_1cobs__uart.html">cobs_uart</a>&amp;&amp; )      = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#a8d6f9c19377b966c56237d61e76985a0">   25</a></span>&#160;        <a class="code" href="classservio_1_1drv_1_1cobs__uart.html">cobs_uart</a>* <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a8d6f9c19377b966c56237d61e76985a0">setup</a>( UART_HandleTypeDef&amp; uart, DMA_HandleTypeDef&amp; tx_dma )</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                uart_   = &amp;uart;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                tx_dma_ = &amp;tx_dma;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classservio_1_1drv_1_1cobs__uart.html">cobs_uart</a>* <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a2412c39e4fe5c34f1b2032c02103a02c">setup</a>( UART_HandleTypeDef&amp; uart, DMA_HandleTypeDef&amp; tx_dma );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">rx_cplt_irq</a>( UART_HandleTypeDef* huart );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">tx_cplt_irq</a>( UART_HandleTypeDef* huart );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#structservio_1_1base_1_1com__res">base::com_res</a> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#aad13c26973d0673044f9b2cb34e35796">load_message</a>( em::view&lt; std::byte* &gt; data ) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">   32</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">rx_cplt_irq</a>( UART_HandleTypeDef* huart )</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">if</span> ( huart != uart_ )</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">if</span> ( rx_byte_ == std::byte{ 0 } ) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        isizes_.push_back( current_size_ - 1 );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        current_size_ = 0;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( current_size_ == 0 ) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        cd_ = em::cobs_decoder{ rx_byte_ };</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        current_size_ += 1;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <span class="keyword">const</span> std::optional&lt; std::byte &gt; b = cd_.iter( rx_byte_ );</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        <span class="keywordflow">if</span> ( b.has_value() ) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                current_size_ += 1;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                ibuffer_.push_back( *b );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                std::ignore = <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">start</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">   53</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">tx_cplt_irq</a>( UART_HandleTypeDef* huart )</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">if</span> ( huart != uart_ )</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                tx_done_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#structservio_1_1base_1_1com__res">base::com_res</a> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#aad13c26973d0673044f9b2cb34e35796">load_message</a>( em::view&lt; std::byte* &gt; data ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">start</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#aa8def388d6e54983524be8217315fde1">send</a>( em::view&lt; const std::byte* &gt; data ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        UART_HandleTypeDef* uart_   = {};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        DMA_HandleTypeDef*  tx_dma_ = {};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">volatile</span> <span class="keywordtype">bool</span>                                tx_done_      = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        uint16_t                                     current_size_ = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        em::cobs_decoder                             cd_;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::byte                                    rx_byte_;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        em::static_circular_buffer&lt; std::byte, 256 &gt; ibuffer_;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        em::static_circular_buffer&lt; uint16_t, 8 &gt;    isizes_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        std::array&lt; std::byte, 128 &gt; otmp_;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#a2412c39e4fe5c34f1b2032c02103a02c">   50</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html">cobs_uart</a>* <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a2412c39e4fe5c34f1b2032c02103a02c">cobs_uart::setup</a>( UART_HandleTypeDef&amp; uart, DMA_HandleTypeDef&amp; tx_dma )</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        uart_   = &amp;uart;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        tx_dma_ = &amp;tx_dma;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">   57</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">cobs_uart::rx_cplt_irq</a>( UART_HandleTypeDef* huart )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> ( huart != uart_ )</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">   62</a></span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">start</a>()<span class="keyword"> override</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">if</span> ( HAL_UART_Receive_IT( uart_, <span class="keyword">reinterpret_cast&lt;</span> uint8_t* <span class="keyword">&gt;</span>( &amp;rx_byte_ ), 1 ) !=</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                     HAL_OK ) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        <span class="keywordflow">return</span> em::ERROR;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> em::SUCCESS;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#aa8def388d6e54983524be8217315fde1">send</a>( em::view&lt; const std::byte* &gt; data ) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        UART_HandleTypeDef* uart_   = {};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        DMA_HandleTypeDef*  tx_dma_ = {};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">volatile</span> <span class="keywordtype">bool</span>                                tx_done_      = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        uint16_t                                     current_size_ = 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        em::cobs_decoder                             cd_;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        std::byte                                    rx_byte_;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        em::static_circular_buffer&lt; std::byte, 256 &gt; ibuffer_;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        em::static_circular_buffer&lt; uint16_t, 8 &gt;    isizes_;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        std::array&lt; std::byte, 128 &gt; otmp_;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> ( rx_byte_ == std::byte{ 0 } ) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                isizes_.push_back( current_size_ - 1 );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                current_size_ = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( current_size_ == 0 ) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                cd_ = em::cobs_decoder{ rx_byte_ };</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                current_size_ += 1;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keyword">const</span> std::optional&lt; std::byte &gt; b = cd_.iter( rx_byte_ );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">if</span> ( b.has_value() ) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        current_size_ += 1;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        ibuffer_.push_back( *b );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::ignore = <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">start</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">   78</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">cobs_uart::tx_cplt_irq</a>( UART_HandleTypeDef* huart )</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> ( huart != uart_ )</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        tx_done_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">   85</a></span>&#160;<span class="keyword">inline</span> em::result <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">cobs_uart::start</a>()</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> ( HAL_UART_Receive_IT( uart_, <span class="keyword">reinterpret_cast&lt;</span> uint8_t* <span class="keyword">&gt;</span>( &amp;rx_byte_ ), 1 ) != HAL_OK )</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">return</span> em::ERROR;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> em::SUCCESS;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
 <div class="ttc" id="aclassservio_1_1base_1_1com__interface_html"><div class="ttname"><a href="classservio_1_1base_1_1com__interface.html">servio::base::com_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:52</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html">servio::drv::cobs_uart</a></div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:16</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a11a0825c431af9aa77508b42c7317f12"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a11a0825c431af9aa77508b42c7317f12">servio::drv::cobs_uart::operator=</a></div><div class="ttdeci">cobs_uart &amp; operator=(cobs_uart &amp;&amp;)=delete</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a2412c39e4fe5c34f1b2032c02103a02c"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a2412c39e4fe5c34f1b2032c02103a02c">servio::drv::cobs_uart::setup</a></div><div class="ttdeci">cobs_uart * setup(UART_HandleTypeDef &amp;uart, DMA_HandleTypeDef &amp;tx_dma)</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:50</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a581630fd2a20b5efceb29f41209a4524"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a581630fd2a20b5efceb29f41209a4524">servio::drv::cobs_uart::cobs_uart</a></div><div class="ttdeci">cobs_uart()=default</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a640fcbdc07840b36a868426eec078e67"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">servio::drv::cobs_uart::rx_cplt_irq</a></div><div class="ttdeci">void rx_cplt_irq(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:32</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a640fcbdc07840b36a868426eec078e67"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">servio::drv::cobs_uart::rx_cplt_irq</a></div><div class="ttdeci">void rx_cplt_irq(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:57</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a66cb57d29f732fc6b2920d37634c2af2"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a66cb57d29f732fc6b2920d37634c2af2">servio::drv::cobs_uart::cobs_uart</a></div><div class="ttdeci">cobs_uart(cobs_uart &amp;&amp;)=delete</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a6b2f47a0d8cf83b1a7df2fb22d3f6044"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a6b2f47a0d8cf83b1a7df2fb22d3f6044">servio::drv::cobs_uart::cobs_uart</a></div><div class="ttdeci">cobs_uart(const cobs_uart &amp;)=delete</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a87725c3bc71d715123cc06293480bcf4"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">servio::drv::cobs_uart::start</a></div><div class="ttdeci">em::result start() override</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:62</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a8d6f9c19377b966c56237d61e76985a0"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a8d6f9c19377b966c56237d61e76985a0">servio::drv::cobs_uart::setup</a></div><div class="ttdeci">cobs_uart * setup(UART_HandleTypeDef &amp;uart, DMA_HandleTypeDef &amp;tx_dma)</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:25</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a87725c3bc71d715123cc06293480bcf4"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">servio::drv::cobs_uart::start</a></div><div class="ttdeci">em::result start() override</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:85</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_aa1b13d2180961b314892b095888dcd18"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#aa1b13d2180961b314892b095888dcd18">servio::drv::cobs_uart::operator=</a></div><div class="ttdeci">cobs_uart &amp; operator=(const cobs_uart &amp;)=delete</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_aa8def388d6e54983524be8217315fde1"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#aa8def388d6e54983524be8217315fde1">servio::drv::cobs_uart::send</a></div><div class="ttdeci">em::result send(em::view&lt; const std::byte * &gt; data) override</div><div class="ttdef"><b>Definition:</b> cobs_uart.cpp:23</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_aad13c26973d0673044f9b2cb34e35796"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#aad13c26973d0673044f9b2cb34e35796">servio::drv::cobs_uart::load_message</a></div><div class="ttdeci">base::com_res load_message(em::view&lt; std::byte * &gt; data) override</div><div class="ttdef"><b>Definition:</b> cobs_uart.cpp:8</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_afc279484fd7b6a321225475b82b9abcb"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">servio::drv::cobs_uart::tx_cplt_irq</a></div><div class="ttdeci">void tx_cplt_irq(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:53</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_afc279484fd7b6a321225475b82b9abcb"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">servio::drv::cobs_uart::tx_cplt_irq</a></div><div class="ttdeci">void tx_cplt_irq(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:78</div></div>
 <div class="ttc" id="adrv__interfaces_8hpp_html"><div class="ttname"><a href="drv__interfaces_8hpp.html">drv_interfaces.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1base_html_structservio_1_1base_1_1com__res"><div class="ttname"><a href="namespaceservio_1_1base.html#structservio_1_1base_1_1com__res">servio::base::com_res</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:46</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1drv.html">servio::drv</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:7</div></div>
@@ -197,7 +202,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="cobs__uart_8hpp.html">cobs_uart.hpp</a></li>
-    <li class="footer">Generated on Sun Feb 25 2024 20:22:46 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue Feb 27 2024 20:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -22,10 +22,10 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classservio_1_1core_1_1position__callback.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="145,-98.5 145,-128.5 264,-128.5 264,-98.5 145,-98.5"/>
-<text text-anchor="start" x="153" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::core::position</text>
-<text text-anchor="middle" x="204.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">_callback</text>
+<g id="a_node2"><a xlink:href="structservio_1_1base_1_1empty__value__cb.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="148,-98.5 148,-128.5 261,-128.5 261,-98.5 148,-98.5"/>
+<text text-anchor="start" x="156" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::base::empty</text>
+<text text-anchor="middle" x="204.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">_value_cb</text>
 </a>
 </g>
 </g>
@@ -38,26 +38,26 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="structservio_1_1drv_1_1empty__value__cb.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="152,-49.5 152,-79.5 257,-79.5 257,-49.5 152,-49.5"/>
-<text text-anchor="start" x="160" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::empty</text>
-<text text-anchor="middle" x="204.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">_value_cb</text>
+<g id="a_node3"><a xlink:href="structservio_1_1base_1_1value__cb.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="150,-49.5 150,-79.5 259,-79.5 259,-49.5 150,-49.5"/>
+<text text-anchor="start" x="158" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::base::value</text>
+<text text-anchor="middle" x="204.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">_cb&lt; Callable &gt;</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M119.59,-64.5C130.39,-64.5 141.48,-64.5 151.91,-64.5"/>
+<path fill="none" stroke="midnightblue" d="M119.41,-64.5C129.59,-64.5 140.03,-64.5 149.94,-64.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="119.35,-61 109.35,-64.5 119.35,-68 119.35,-61"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="structservio_1_1drv_1_1value__cb.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="154,-0.5 154,-30.5 255,-30.5 255,-0.5 154,-0.5"/>
-<text text-anchor="start" x="162" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::value</text>
-<text text-anchor="middle" x="204.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_cb&lt; Callable &gt;</text>
+<g id="a_node4"><a xlink:href="classservio_1_1core_1_1position__callback.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="145,-0.5 145,-30.5 264,-30.5 264,-0.5 145,-0.5"/>
+<text text-anchor="start" x="153" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::core::position</text>
+<text text-anchor="middle" x="204.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_callback</text>
 </a>
 </g>
 </g>

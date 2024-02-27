@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673":[9,0,1,13,2,6,3,5],
 "namespaceservio_1_1plt.html#afa3ffb0666945381bc9735b671490daf":[7,0,1,12,15],
 "namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg":[9,0,1,13,2,6,1],
 "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg":[9,0,1,13,2,6,0],
@@ -232,12 +231,12 @@ var NAVTREEINDEX4 =
 "simulate_8hpp_source.html":[9,0,1,10,3],
 "static__detector_8hpp.html":[9,0,1,12,4],
 "static__detector_8hpp_source.html":[9,0,1,12,4],
-"status_8hpp.html":[9,0,1,0,2],
-"status_8hpp.html#a5f9cb2507ae765f435474a3bb65bf84f":[9,0,1,0,2,0],
-"status_8hpp.html#a5f9cb2507ae765f435474a3bb65bf84fa0021017005f0e5134b204c2e69d3d4ed":[9,0,1,0,2,0,1],
-"status_8hpp.html#a5f9cb2507ae765f435474a3bb65bf84faaa2fa3fb4786079a4f8107ea393d609e":[9,0,1,0,2,0,0],
-"status_8hpp.html#a5f9cb2507ae765f435474a3bb65bf84fac5666694e05e08a4ae3ab497591042fa":[9,0,1,0,2,0,2],
-"status_8hpp_source.html":[9,0,1,0,2],
+"status_8hpp.html":[9,0,1,0,3],
+"status_8hpp.html#a5f9cb2507ae765f435474a3bb65bf84f":[9,0,1,0,3,0],
+"status_8hpp.html#a5f9cb2507ae765f435474a3bb65bf84fa0021017005f0e5134b204c2e69d3d4ed":[9,0,1,0,3,0,1],
+"status_8hpp.html#a5f9cb2507ae765f435474a3bb65bf84faaa2fa3fb4786079a4f8107ea393d609e":[9,0,1,0,3,0,0],
+"status_8hpp.html#a5f9cb2507ae765f435474a3bb65bf84fac5666694e05e08a4ae3ab497591042fa":[9,0,1,0,3,0,2],
+"status_8hpp_source.html":[9,0,1,0,3],
 "stm32g4_2hal_8hpp.html":[9,0,1,13,1,0],
 "stm32g4_2hal_8hpp_source.html":[9,0,1,13,1,0],
 "stm32g4_2platform_8cpp.html":[9,0,1,13,1,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX4 =
 "stm32g4xx__hal__conf_8h.html#a0e2ac47c259fc72ef188c0406a2af803":[9,0,1,13,1,2,71],
 "stm32g4xx__hal__conf_8h.html#a13fc0d5e7bb925385c0cc0772ba6a391":[9,0,1,13,1,2,49],
 "stm32g4xx__hal__conf_8h.html#a167269406e73327b95c3bb7b9cfe6d89":[9,0,1,13,1,2,38],
-"stm32g4xx__hal__conf_8h.html#a19999766418b0224871f732d800841c6":[9,0,1,13,1,2,17]
+"stm32g4xx__hal__conf_8h.html#a19999766418b0224871f732d800841c6":[9,0,1,13,1,2,17],
+"stm32g4xx__hal__conf_8h.html#a1bdc791c35b20c7188b3d74fd6c30ebf":[9,0,1,13,1,2,61]
 };

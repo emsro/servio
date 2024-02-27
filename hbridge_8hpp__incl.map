@@ -1,13 +1,10 @@
 <map id="src/drv/hbridge.hpp" name="src/drv/hbridge.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="481,5,628,32"/>
-<area shape="rect" id="node2" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="237,169,416,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="509,244,563,271"/>
-<area shape="rect" id="node8" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="381,87,517,114"/>
-<area shape="rect" id="node9" href="$platform_8hpp.html" title=" " alt="" coords="592,87,699,114"/>
-<area shape="rect" id="node11" title=" " alt="" coords="723,80,901,121"/>
-<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="334,244,415,271"/>
-<area shape="rect" id="node4" title=" " alt="" coords="341,319,408,345"/>
-<area shape="rect" id="node5" href="$status_8hpp.html" title=" " alt="" coords="5,244,96,271"/>
-<area shape="rect" id="node6" title=" " alt="" coords="120,244,259,271"/>
-<area shape="rect" id="node10" title=" " alt="" coords="643,169,714,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="235,5,381,32"/>
+<area shape="rect" id="node2" href="$base_2callbacks_8hpp.html" title=" " alt="" coords="5,87,152,114"/>
+<area shape="rect" id="node3" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="92,169,271,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="217,244,271,271"/>
+<area shape="rect" id="node6" href="$platform_8hpp.html" title=" " alt="" coords="345,87,452,114"/>
+<area shape="rect" id="node8" title=" " alt="" coords="477,80,654,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="80,244,147,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="397,169,467,196"/>
 </map>

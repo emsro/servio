@@ -5,22 +5,12 @@ var namespaceservio_1_1drv =
     [ "adc_channel_with_callback", "structservio_1_1drv_1_1adc__channel__with__callback.html", "structservio_1_1drv_1_1adc__channel__with__callback" ],
     [ "adc_pooler", "structservio_1_1drv_1_1adc__pooler.html", "structservio_1_1drv_1_1adc__pooler" ],
     [ "adc_set", "structservio_1_1drv_1_1adc__set.html", "structservio_1_1drv_1_1adc__set" ],
-    [ "adc_detailed_cb", "structservio_1_1drv_1_1adc__detailed__cb.html", "structservio_1_1drv_1_1adc__detailed__cb" ],
-    [ "empty_adc_detailed_cb", "structservio_1_1drv_1_1empty__adc__detailed__cb.html", "structservio_1_1drv_1_1empty__adc__detailed__cb" ],
-    [ "value_cb", "structservio_1_1drv_1_1value__cb.html", "structservio_1_1drv_1_1value__cb" ],
-    [ "empty_value_cb", "structservio_1_1drv_1_1empty__value__cb.html", "structservio_1_1drv_1_1empty__value__cb" ],
-    [ "period_cb", "structservio_1_1drv_1_1period__cb.html", "structservio_1_1drv_1_1period__cb" ],
-    [ "empty_period_cb", "structservio_1_1drv_1_1empty__period__cb.html", "structservio_1_1drv_1_1empty__period__cb" ],
     [ "clock", "classservio_1_1drv_1_1clock.html", "classservio_1_1drv_1_1clock" ],
     [ "cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", "classservio_1_1drv_1_1cobs__uart" ],
     [ "pin_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg", "namespaceservio_1_1drv_structservio_1_1drv_1_1pin__cfg_dup" ],
     [ "pinch_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg", "namespaceservio_1_1drv_structservio_1_1drv_1_1pinch__cfg_dup" ],
     [ "hbridge", "classservio_1_1drv_1_1hbridge.html", "classservio_1_1drv_1_1hbridge" ],
     [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ],
-    [ "current_cb", "namespaceservio_1_1drv.html#a6ff2c910edca830ab969ef837fab122e", null ],
-    [ "empty_current_cb", "namespaceservio_1_1drv.html#a00def74f3696dca3adc9744571b4435a", null ],
-    [ "empty_position_cb", "namespaceservio_1_1drv.html#a6acd0b565a5151d327a2011e398d8193", null ],
-    [ "position_cb", "namespaceservio_1_1drv.html#a7f5c753df5ad89c63ae2158b9612752e", null ],
     [ "chan_ids", "namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2af", [
       [ "CURRENT_CHANNEL", "namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa747e7a5e75119c45c2129e9112797e1b", null ],
       [ "POSITION_CHANNEL", "namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa5acb229675ac8a8e0058233120461f35", null ],
@@ -34,7 +24,7 @@ var namespaceservio_1_1drv =
     [ "ADC_SEQUENCE", "namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c", null ],
     [ "ADC_TEMPERATURE", "namespaceservio_1_1drv.html#a70c95638ac814ac28330c9c21dadab02", null ],
     [ "ADC_VCC", "namespaceservio_1_1drv.html#ab0e909fed28a806840cfa5c8fad40ffa", null ],
-    [ "EMPTY_ADC_CALLBACK", "namespaceservio_1_1drv.html#ab0f58f8aab9826fafb7c092dac28f6c3", null ],
-    [ "EMPTY_ADC_DETAILED_CALLBACK", "namespaceservio_1_1drv.html#a641200efd9b8b191932945c86f78d9e0", null ],
-    [ "EMPTY_PERIOD_CB", "namespaceservio_1_1drv.html#a2312e09db62ce5efa6d7aa8de3cef65d", null ]
+    [ "EMPTY_ADC_CALLBACK", "namespaceservio_1_1drv.html#a86a83240f878e1090630254fb4167045", null ],
+    [ "EMPTY_ADC_DETAILED_CALLBACK", "namespaceservio_1_1drv.html#aaba107aaacf2ba4c6922972d2b407719", null ],
+    [ "EMPTY_PERIOD_CB", "namespaceservio_1_1drv.html#aeb59da124b4539927efb44aaad59b044", null ]
 ];

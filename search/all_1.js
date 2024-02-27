@@ -11,7 +11,7 @@ var searchData=
   ['adc_5fchannel_5fwith_5fcallback_3c_20position_5fchannel_20_3e_17',['adc_channel_with_callback&lt; POSITION_CHANNEL &gt;',['../structservio_1_1drv_1_1adc__channel__with__callback.html',1,'servio::drv']]],
   ['adc_5fconv_5fcplt_5firq_18',['adc_conv_cplt_irq',['../structservio_1_1drv_1_1adc__pooler.html#a6e27aabd150211e20c317ffc246f5d5e',1,'servio::drv::adc_pooler']]],
   ['adc_5fcurrent_19',['ADC_CURRENT',['../namespaceservio_1_1drv.html#a97b4b3a83a87dd5203d5c5b77b30847b',1,'servio::drv']]],
-  ['adc_5fdetailed_5fcb_20',['adc_detailed_cb',['../structservio_1_1drv_1_1adc__detailed__cb.html#ac3cfabf2fc4f584c2e947d33e0ac8619',1,'servio::drv::adc_detailed_cb::adc_detailed_cb()'],['../structservio_1_1drv_1_1adc__detailed__cb.html',1,'servio::drv::adc_detailed_cb&lt; Callable &gt;']]],
+  ['adc_5fdetailed_5fcb_20',['adc_detailed_cb',['../structservio_1_1base_1_1adc__detailed__cb.html#a6f723e9cc2ffb467672c925a8dcae03c',1,'servio::base::adc_detailed_cb::adc_detailed_cb()'],['../structservio_1_1base_1_1adc__detailed__cb.html',1,'servio::base::adc_detailed_cb&lt; Callable &gt;']]],
   ['adc_5fdetailed_5fcb_5finterface_21',['adc_detailed_cb_interface',['../classservio_1_1base_1_1adc__detailed__cb__interface.html',1,'servio::base']]],
   ['adc_5fdma_5fhandle_22',['ADC_DMA_HANDLE',['../namespaceservio_1_1brd.html#a2b0ceaa2337a3d916d52ba0fe6f823bc',1,'servio::brd']]],
   ['adc_5ferror_5firq_23',['adc_error_irq',['../structservio_1_1drv_1_1adc__pooler.html#a774cee15e9567b519f2b0a117041ee56',1,'servio::drv::adc_pooler']]],

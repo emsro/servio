@@ -2,7 +2,6 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
 [
     [ "adc_pooler.hpp", "adc__pooler_8hpp.html", "adc__pooler_8hpp" ],
     [ "adc_pooler_def.hpp", "adc__pooler__def_8hpp.html", "adc__pooler__def_8hpp" ],
-    [ "callbacks.hpp", "drv_2callbacks_8hpp.html", "drv_2callbacks_8hpp" ],
     [ "clock.hpp", "clock_8hpp.html", [
       [ "clock", "classservio_1_1drv_1_1clock.html", "classservio_1_1drv_1_1clock" ]
     ] ],
