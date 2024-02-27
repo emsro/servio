@@ -1,11 +1,11 @@
-#include "drv/callbacks.hpp"
+#include "base/callbacks.hpp"
 #include "platform.hpp"
 
 #pragma once
 
 namespace servio::drv
 {
-inline empty_adc_detailed_cb EMPTY_ADC_DETAILED_CALLBACK;
+inline base::empty_adc_detailed_cb EMPTY_ADC_DETAILED_CALLBACK;
 
 template < auto ID, std::size_t N >
 struct detailed_adc_channel
@@ -73,7 +73,7 @@ struct detailed_adc_channel
         }
 };
 
-inline empty_value_cb EMPTY_ADC_CALLBACK;
+inline base::empty_value_cb EMPTY_ADC_CALLBACK;
 
 template < auto ID >
 struct adc_channel

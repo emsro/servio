@@ -1,5 +1,5 @@
+#include "base/callbacks.hpp"
 #include "base/drv_interfaces.hpp"
-#include "drv/callbacks.hpp"
 #include "platform.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
@@ -12,7 +12,7 @@ namespace em = emlabcpp;
 namespace servio::drv
 {
 
-inline empty_period_cb EMPTY_PERIOD_CB;
+inline base::empty_period_cb EMPTY_PERIOD_CB;
 
 class hbridge : public base::pwm_motor_interface, public base::period_interface
 {
