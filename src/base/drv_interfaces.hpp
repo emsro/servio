@@ -48,7 +48,7 @@ struct com_res
         em::view< std::byte* > used_data;
 };
 
-class com_interface
+class com_interface : public driver_interface
 {
 public:
         virtual em::result start()                                     = 0;
@@ -57,7 +57,7 @@ public:
         virtual ~com_interface()                                       = default;
 };
 
-class leds_interface
+class leds_interface : public driver_interface
 {
 public:
         virtual void force_red_led()                 = 0;

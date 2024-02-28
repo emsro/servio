@@ -101,7 +101,8 @@ void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
 
 void HAL_UART_ErrorCallback( UART_HandleTypeDef* h )
 {
-        servio::fw::stop_exec();
+        servio::brd::COMMS.err_irq( h );
+        servio::brd::DEBUG_COMMS.err_irq( h );
 }
 
 void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )

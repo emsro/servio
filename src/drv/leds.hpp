@@ -35,6 +35,11 @@ public:
 
         em::result start();
 
+        base::status get_status() const override
+        {
+                return base::status::NOMINAL;
+        }
+
         void force_red_led() override;
 
         void update( const base::leds_vals& leds ) override;
