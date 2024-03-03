@@ -50,9 +50,6 @@ bool persistent_config_writer::operator()( const cfg::map* cfg )
         const bool succ = fw::store_persistent_config( *page, pld, cfg );
         if ( succ )
                 last_payload = pld;
-        // TODO: why is this happening?
-        if ( current_iface.get_status() == base::status::DEGRADED )
-                current_iface.clear_status();
         return succ;
 }
 

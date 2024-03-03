@@ -16,29 +16,21 @@ namespace servio::drv
 class leds : public base::leds_interface
 {
 public:
-        leds() = default;
+        leds( TIM_HandleTypeDef& tim )
+          : tim_( &tim )
+        {
+        }
 
-        leds* setup(
-            pin_cfg            red,
-            pin_cfg            blue,
-            TIM_HandleTypeDef& tim,
-            pinch_cfg          yellow,
-            pinch_cfg          green )
+        leds* setup( pin_cfg red, pin_cfg blue, pinch_cfg yellow, pinch_cfg green )
         {
                 red_    = red;
                 blue_   = blue;
-                tim_    = &tim;
                 yellow_ = yellow;
                 green_  = green;
                 return this;
         }
 
         em::result start();
-
-        base::status get_status() const override
-        {
-                return base::status::NOMINAL;
-        }
 
         void force_red_led() override;
 

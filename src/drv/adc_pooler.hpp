@@ -1,4 +1,6 @@
 #include "base/callbacks.hpp"
+#include "base/sentry.hpp"
+#include "base/status.hpp"
 #include "platform.hpp"
 
 #pragma once
@@ -12,6 +14,8 @@ struct detailed_adc_channel
 {
         static constexpr auto id = ID;
 
+        base::sentry sentry_;
+
         alignas( uint32_t ) uint16_t buffer[N];
         std::size_t used;
 
@@ -19,20 +23,15 @@ struct detailed_adc_channel
         ADC_ChannelConfTypeDef           chconf   = {};
         base::adc_detailed_cb_interface* callback = &EMPTY_ADC_DETAILED_CALLBACK;
 
-        bool config_channel_error = false;
-        bool start_error          = false;
-        bool stop_error           = false;
-
         bool no_samples_error       = false;
         bool samples_overflow_error = false;
 
         base::status get_status() const
         {
-                if ( config_channel_error || start_error || stop_error )
-                        return base::status::INOPERABLE;
+                base::status s = base::status::NOMINAL;
                 if ( no_samples_error || samples_overflow_error )
-                        return base::status::DEGRADED;
-                return base::status::NOMINAL;
+                        s = base::status::DEGRADED;
+                return base::worst_of( { sentry_.get_status(), s } );
         }
 
         void clear_status()
@@ -44,10 +43,10 @@ struct detailed_adc_channel
         [[gnu::flatten]] void period_start( ADC_HandleTypeDef& h )
         {
                 if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK )
-                        config_channel_error = true;
+                        sentry_.set_inoperable();
                 if ( HAL_ADC_Start_DMA( &h, reinterpret_cast< uint32_t* >( &buffer ), N ) !=
                      HAL_OK ) {
-                        start_error = true;
+                        sentry_.set_inoperable();
                 }
         }
 
@@ -55,7 +54,7 @@ struct detailed_adc_channel
         {
                 used = N - __HAL_DMA_GET_COUNTER( h.DMA_Handle );
                 if ( HAL_ADC_Stop_DMA( &h ) != HAL_OK )
-                        stop_error = true;
+                        sentry_.set_inoperable();
                 if ( used == 0 )
                         no_samples_error = true;
 
@@ -80,26 +79,22 @@ struct adc_channel
 {
         static constexpr auto id = ID;
 
+        base::sentry sentry_;
+
         uint32_t               last_value;
         ADC_ChannelConfTypeDef chconf = {};
 
-        bool config_channel_error = false;
-        bool start_error          = false;
-        bool stop_error           = false;
-
         base::status get_status() const
         {
-                if ( config_channel_error || start_error || stop_error )
-                        return base::status::INOPERABLE;
-                return base::status::NOMINAL;
+                return base::worst_of( { sentry_.get_status(), base::status::NOMINAL } );
         }
 
         [[gnu::flatten]] void period_start( ADC_HandleTypeDef& h )
         {
                 if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK )
-                        config_channel_error = true;
+                        sentry_.set_inoperable();
                 if ( HAL_ADC_Start_IT( &h ) != HAL_OK )
-                        start_error = true;
+                        sentry_.set_inoperable();
         }
 
         void period_stop( ADC_HandleTypeDef& )
@@ -110,7 +105,7 @@ struct adc_channel
         {
                 // is this necessary?
                 if ( HAL_ADC_Stop_IT( &h ) != HAL_OK )
-                        stop_error = true;
+                        sentry_.set_inoperable();
                 last_value = HAL_ADC_GetValue( &h );
         }
 };
@@ -132,19 +127,16 @@ struct adc_pooler
 {
         using id_type = typename Set::id_type;
 
-        adc_pooler() = default;
-
-        adc_pooler* setup(
+        adc_pooler(
             em::view< const id_type* > seq,
             ADC_HandleTypeDef&         adc,
             DMA_HandleTypeDef&         dma,
             TIM_HandleTypeDef&         tim )
+          : adc_( &adc )
+          , dma_( &dma )
+          , tim_( &tim )
+          , sequence_( seq )
         {
-                adc_      = &adc;
-                dma_      = &dma;
-                tim_      = &tim;
-                sequence_ = seq;
-                return this;
         }
 
         em::result start()

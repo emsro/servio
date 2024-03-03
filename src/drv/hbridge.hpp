@@ -1,5 +1,6 @@
 #include "base/callbacks.hpp"
 #include "base/drv_interfaces.hpp"
+#include "base/sentry.hpp"
 #include "platform.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
@@ -17,8 +18,9 @@ inline base::empty_period_cb EMPTY_PERIOD_CB;
 class hbridge : public base::pwm_motor_interface, public base::period_interface
 {
 public:
-        hbridge()
+        hbridge( TIM_HandleTypeDef& tim )
           : period_cb_( &EMPTY_PERIOD_CB )
+          , tim_( tim )
         {
         }
 
@@ -28,13 +30,12 @@ public:
         hbridge& operator=( const hbridge& ) = delete;
         hbridge& operator=( hbridge&& )      = delete;
 
-        hbridge* setup( TIM_HandleTypeDef* tim, uint32_t mc1_channel, uint32_t mc2_channel )
+        hbridge* setup( uint32_t mc1_channel, uint32_t mc2_channel )
         {
-                tim_         = tim;
                 mc1_channel_ = mc1_channel;
                 mc2_channel_ = mc2_channel;
 
-                timer_max_ = tim_->Init.Period;
+                timer_max_ = tim_.Init.Period;
 
                 set_power( 0 );
 
@@ -43,7 +44,7 @@ public:
 
         void timer_period_irq( TIM_HandleTypeDef* h )
         {
-                if ( h != tim_ )
+                if ( h != &tim_ )
                         return;
                 period_cb_->on_period_irq();
         }
@@ -65,15 +66,10 @@ public:
         em::result start() override;
         em::result stop() override;
 
-        base::status get_status() const override
-        {
-                return base::status::NOMINAL;
-        };
-
 private:
         base::period_cb_interface* period_cb_;
-        uint32_t                   timer_max_   = 0;
-        TIM_HandleTypeDef*         tim_         = {};
+        uint32_t                   timer_max_ = 0;
+        TIM_HandleTypeDef&         tim_;
         uint32_t                   mc1_channel_ = 0;
         uint32_t                   mc2_channel_ = 0;
 };

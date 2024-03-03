@@ -34,12 +34,12 @@ public:
         virtual ~period_cb_interface() = default;
 };
 
-class driver_interface
+class observed_interface
 {
 public:
         virtual status get_status() const = 0;
         virtual void   clear_status(){};
-        virtual ~driver_interface() = default;
+        virtual ~observed_interface() = default;
 };
 
 struct com_res
@@ -48,7 +48,7 @@ struct com_res
         em::view< std::byte* > used_data;
 };
 
-class com_interface : public driver_interface
+class com_interface
 {
 public:
         virtual em::result start()                                     = 0;
@@ -57,7 +57,7 @@ public:
         virtual ~com_interface()                                       = default;
 };
 
-class leds_interface : public driver_interface
+class leds_interface
 {
 public:
         virtual void force_red_led()                 = 0;
@@ -72,48 +72,54 @@ public:
         virtual ~clk_interface()      = default;
 };
 
-class period_interface : public driver_interface
+class period_interface
 {
 public:
         virtual em::result           start()                                     = 0;
         virtual em::result           stop()                                      = 0;
         virtual void                 set_period_callback( period_cb_interface& ) = 0;
         virtual period_cb_interface& get_period_callback()                       = 0;
+        virtual ~period_interface()                                              = default;
 };
 
-class pwm_motor_interface : public driver_interface
+class pwm_motor_interface
 {
 public:
         virtual void   set_power( int16_t )  = 0;
         virtual int8_t get_direction() const = 0;
+        virtual ~pwm_motor_interface()       = default;
 };
 
-class position_interface : public driver_interface
+class position_interface
 {
 public:
         virtual uint32_t               get_position() const                            = 0;
         virtual void                   set_position_callback( position_cb_interface& ) = 0;
         virtual position_cb_interface& get_position_callback() const                   = 0;
+        virtual ~position_interface()                                                  = default;
 };
 
-class vcc_interface : public driver_interface
+class vcc_interface
 {
 public:
         virtual uint32_t get_vcc() const = 0;
+        virtual ~vcc_interface()         = default;
 };
 
-class temperature_interface : public driver_interface
+class temperature_interface
 {
 public:
         virtual uint32_t get_temperature() const = 0;
+        virtual ~temperature_interface()         = default;
 };
 
-class current_interface : public driver_interface
+class current_interface
 {
 public:
         virtual uint32_t              get_current() const                           = 0;
         virtual void                  set_current_callback( current_cb_interface& ) = 0;
         virtual current_cb_interface& get_current_callback() const                  = 0;
+        virtual ~current_interface()                                                = default;
 };
 
 }  // namespace servio::base

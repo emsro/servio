@@ -1,4 +1,5 @@
 
+#include "base/drv_interfaces.hpp"
 #include "drv/adc_pooler.hpp"
 
 #pragma once
@@ -14,14 +15,15 @@ enum chan_ids
         TEMP_CHANNEL,
 };
 
+template < auto& CentralSentry >
 struct adc_set
 {
         using id_type = chan_ids;
 
-        drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >  current;
-        drv::adc_channel_with_callback< POSITION_CHANNEL > position;
-        drv::adc_channel< VCC_CHANNEL >                    vcc;
-        drv::adc_channel< TEMP_CHANNEL >                   temp;
+        drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >  current{ CentralSentry };
+        drv::adc_channel_with_callback< POSITION_CHANNEL > position{ CentralSentry };
+        drv::adc_channel< VCC_CHANNEL >                    vcc{ CentralSentry };
+        drv::adc_channel< TEMP_CHANNEL >                   temp{ CentralSentry };
 
         [[gnu::flatten]] auto tie()
         {
@@ -29,92 +31,95 @@ struct adc_set
         }
 };
 
-drv::adc_pooler< adc_set > ADC_POOLER{};
-
-struct : base::period_cb_interface
+template < auto& AdcPooler >
+struct adc_pooler_period_cb : base::period_cb_interface
 {
         void on_period_irq() override
         {
-                ADC_POOLER.on_period_irq();
+                AdcPooler.on_period_irq();
         }
-} ADC_PERIOD_CB;
+};
 
-struct : base::vcc_interface
+template < auto& AdcPooler >
+struct adc_pooler_vcc : base::vcc_interface, base::observed_interface
 {
         base::status get_status() const override
         {
-                return ADC_POOLER->vcc.get_status();
+                return AdcPooler->vcc.get_status();
         }
 
         uint32_t get_vcc() const override
         {
-                return ADC_POOLER->vcc.last_value;
+                return AdcPooler->vcc.last_value;
         }
-} ADC_VCC;
+};
 
-struct : base::temperature_interface
+template < auto& AdcPooler >
+struct adc_pooler_temperature : base::temperature_interface, base::observed_interface
 {
         base::status get_status() const override
         {
-                return ADC_POOLER->temp.get_status();
+                return AdcPooler->temp.get_status();
         }
 
         uint32_t get_temperature() const override
         {
-                return ADC_POOLER->temp.last_value;
+                return AdcPooler->temp.last_value;
         }
-} ADC_TEMPERATURE;
+};
 
-struct : base::position_interface
+template < auto& AdcPooler >
+struct adc_pooler_position : base::position_interface, base::observed_interface
 {
         base::status get_status() const override
         {
-                return ADC_POOLER->position.get_status();
+                return AdcPooler->position.get_status();
         }
 
         uint32_t get_position() const override
         {
-                return ADC_POOLER->position.last_value;
+                return AdcPooler->position.last_value;
         }
 
         void set_position_callback( base::position_cb_interface& cb ) override
         {
-                ADC_POOLER->position.callback = &cb;
+                AdcPooler->position.callback = &cb;
         }
 
         base::position_cb_interface& get_position_callback() const override
         {
-                return *ADC_POOLER->position.callback;
+                return *AdcPooler->position.callback;
         }
-} ADC_POSITION;
+};
 
-struct : base::current_interface
+template < auto& AdcPooler >
+struct adc_pooler_current : base::current_interface, base::observed_interface
 {
         base::status get_status() const override
         {
-                return ADC_POOLER->current.get_status();
+                return AdcPooler->current.get_status();
         }
 
         void clear_status() override
         {
-                ADC_POOLER->current.clear_status();
+                AdcPooler->current.clear_status();
         }
 
         uint32_t get_current() const override
         {
-                return ADC_POOLER->current.last_value;
+                return AdcPooler->current.last_value;
         }
 
         void set_current_callback( base::current_cb_interface& cb ) override
         {
-                ADC_POOLER->current.callback = &cb;
+                AdcPooler->current.callback = &cb;
         }
 
         base::current_cb_interface& get_current_callback() const override
         {
-                return *ADC_POOLER->current.callback;
+                return *AdcPooler->current.callback;
         }
-} ADC_CURRENT;
+};
 
 auto ADC_SEQUENCE = std::array{
     CURRENT_CHANNEL,

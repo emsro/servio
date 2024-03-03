@@ -55,3 +55,5 @@ CheckOptions:
       value: lower_case
     - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
       value: '1'
+    - key: readability-braces-around-statements.ShortStatementLines
+      value: '2'

@@ -1,5 +1,7 @@
+#include "base/sentry.hpp"
 #include "brd.hpp"
 #include "core/drivers.hpp"
+#include "drv/adc_pooler.hpp"
 #include "drv/adc_pooler_def.hpp"
 #include "drv/clock.hpp"
 #include "drv/cobs_uart.hpp"
@@ -11,21 +13,33 @@
 namespace servio::brd
 {
 
-ADC_HandleTypeDef  ADC_HANDLE{};
-DMA_HandleTypeDef  ADC_DMA_HANDLE{};
-TIM_HandleTypeDef  ADC_TIM_HANDLE{};
+base::central_sentry CENTRAL_SENTRY;
+
+ADC_HandleTypeDef ADC_HANDLE{};
+DMA_HandleTypeDef ADC_DMA_HANDLE{};
+TIM_HandleTypeDef ADC_TIM_HANDLE{};
+
+using adc_pooler_type = drv::adc_pooler< drv::adc_set< CENTRAL_SENTRY > >;
+
+adc_pooler_type ADC_POOLER{ drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, ADC_TIM_HANDLE };
+drv::adc_pooler_period_cb< ADC_POOLER >   ADC_PERIOD_CB;
+drv::adc_pooler_vcc< ADC_POOLER >         ADC_VCC;
+drv::adc_pooler_temperature< ADC_POOLER > ADC_TEMPERATURE;
+drv::adc_pooler_position< ADC_POOLER >    ADC_POSITION;
+drv::adc_pooler_current< ADC_POOLER >     ADC_CURRENT;
+
 TIM_HandleTypeDef  TIM2_HANDLE{};
-drv::clock         CLOCK{};
+drv::clock         CLOCK{ TIM2_HANDLE };
 UART_HandleTypeDef UART2_HANDLE{};
 DMA_HandleTypeDef  UART2_DMA_HANDLE{};
-drv::cobs_uart     COMMS{};
+drv::cobs_uart     COMMS{ CENTRAL_SENTRY, UART2_HANDLE, UART2_DMA_HANDLE };
 UART_HandleTypeDef UART1_HANDLE{};
 DMA_HandleTypeDef  UART1_DMA_HANDLE{};
-drv::cobs_uart     DEBUG_COMMS{};
+drv::cobs_uart     DEBUG_COMMS{ CENTRAL_SENTRY, UART1_HANDLE, UART1_DMA_HANDLE };
 TIM_HandleTypeDef  TIM1_HANDLE{};
-drv::hbridge       HBRIDGE{};
+drv::hbridge       HBRIDGE{ TIM1_HANDLE };
 TIM_HandleTypeDef  TIM3_HANDLE{};
-drv::leds          LEDS{};
+drv::leds          LEDS{ TIM3_HANDLE };
 
 }  // namespace servio::brd
 
@@ -87,12 +101,12 @@ void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
 
 [[gnu::flatten]] void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
-        servio::drv::ADC_POOLER.adc_conv_cplt_irq( h );
+        servio::brd::ADC_POOLER.adc_conv_cplt_irq( h );
 }
 
 [[gnu::flatten]] void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
 {
-        servio::drv::ADC_POOLER.adc_error_irq( h );
+        servio::brd::ADC_POOLER.adc_error_irq( h );
 }
 }
 
@@ -108,7 +122,7 @@ em::result setup_board()
         return em::SUCCESS;
 }
 
-drv::adc_pooler< drv::adc_set >* adc_pooler_setup()
+adc_pooler_type* adc_pooler_setup()
 {
         __HAL_RCC_ADC12_CLK_ENABLE();
         __HAL_RCC_DMA1_CLK_ENABLE();
@@ -116,28 +130,28 @@ drv::adc_pooler< drv::adc_set >* adc_pooler_setup()
         __HAL_RCC_GPIOA_CLK_ENABLE();
         __HAL_RCC_TIM4_CLK_ENABLE();
         setup_adc_channel(
-            drv::ADC_POOLER->current.chconf,
+            ADC_POOLER->current.chconf,
             drv::pinch_cfg{
                 .channel = ADC_CHANNEL_4,
                 .pin     = GPIO_PIN_3,
                 .port    = GPIOA,
             } );
         setup_adc_channel(
-            drv::ADC_POOLER->position.chconf,
+            ADC_POOLER->position.chconf,
             drv::pinch_cfg{
                 .channel = ADC_CHANNEL_1,
                 .pin     = GPIO_PIN_0,
                 .port    = GPIOA,
             } );
         setup_adc_channel(
-            drv::ADC_POOLER->vcc.chconf,
+            ADC_POOLER->vcc.chconf,
             drv::pinch_cfg{
                 .channel = ADC_CHANNEL_2,
                 .pin     = GPIO_PIN_1,
                 .port    = GPIOA,
             } );
         setup_adc_channel(
-            drv::ADC_POOLER->temp.chconf,
+            ADC_POOLER->temp.chconf,
             drv::pinch_cfg{
                 .channel = ADC_CHANNEL_TEMPSENSOR_ADC1,
                 .pin     = 0,
@@ -164,8 +178,7 @@ drv::adc_pooler< drv::adc_set >* adc_pooler_setup()
         if ( res != em::SUCCESS )
                 return nullptr;
 
-        return drv::ADC_POOLER.setup(
-            drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, ADC_TIM_HANDLE );
+        return &ADC_POOLER;
 }
 
 drv::hbridge* hbridge_setup()
@@ -195,7 +208,7 @@ drv::hbridge* hbridge_setup()
         if ( setup_hbridge_timers( TIM1_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
 
-        return HBRIDGE.setup( &TIM1_HANDLE, cfg.mc1.channel, cfg.mc2.channel );
+        return HBRIDGE.setup( cfg.mc1.channel, cfg.mc2.channel );
 }
 
 drv::cobs_uart* comms_setup()
@@ -235,7 +248,7 @@ drv::cobs_uart* comms_setup()
         if ( setup_uart( UART2_HANDLE, UART2_DMA_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
 
-        return COMMS.setup( UART2_HANDLE, UART2_DMA_HANDLE );
+        return &COMMS;
 }
 
 base::com_interface* setup_debug_comms()
@@ -276,7 +289,7 @@ base::com_interface* setup_debug_comms()
         if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
 
-        return DEBUG_COMMS.setup( UART1_HANDLE, UART1_DMA_HANDLE );
+        return &DEBUG_COMMS;
 }
 
 drv::leds* leds_setup()
@@ -314,7 +327,7 @@ drv::leds* leds_setup()
             setup_leds_channel( TIM3_HANDLE, green ) );
 
         if ( res == em::SUCCESS )
-                return LEDS.setup( red, blue, TIM3_HANDLE, yellow, green );
+                return LEDS.setup( red, blue, yellow, green );
 
         return nullptr;
 }
@@ -324,7 +337,7 @@ em::result start_callback( core::drivers& cdrv )
 
         if ( cdrv.position != nullptr ) {
                 // this implies that adc_poolerition is OK
-                if ( drv::ADC_POOLER.start() != em::SUCCESS )
+                if ( ADC_POOLER.start() != em::SUCCESS )
                         return em::ERROR;
         }
         if ( cdrv.motor != nullptr ) {
@@ -356,12 +369,12 @@ core::drivers setup_core_drivers()
         fw::install_stop_callback( leds );
 
         return core::drivers{
-            .clock       = CLOCK.setup( &TIM2_HANDLE ),
-            .position    = adc_pooler == nullptr ? nullptr : &drv::ADC_POSITION,
-            .current     = adc_pooler == nullptr ? nullptr : &drv::ADC_CURRENT,
-            .vcc         = adc_pooler == nullptr ? nullptr : &drv::ADC_VCC,
-            .temperature = adc_pooler == nullptr ? nullptr : &drv::ADC_TEMPERATURE,
-            .period_cb   = adc_pooler == nullptr ? nullptr : &drv::ADC_PERIOD_CB,
+            .clock       = &CLOCK,
+            .position    = adc_pooler == nullptr ? nullptr : &ADC_POSITION,
+            .current     = adc_pooler == nullptr ? nullptr : &ADC_CURRENT,
+            .vcc         = adc_pooler == nullptr ? nullptr : &ADC_VCC,
+            .temperature = adc_pooler == nullptr ? nullptr : &ADC_TEMPERATURE,
+            .period_cb   = adc_pooler == nullptr ? nullptr : &ADC_PERIOD_CB,
             .motor       = hb,
             .period      = hb,
             .comms       = comms_setup(),
