@@ -1,7 +1,6 @@
 #include "drv/defs.hpp"
 #include "drv/hbridge.hpp"  // tehse are actually a bad sign TODO
 #include "drv/leds.hpp"
-#include "fw/board.hpp"
 
 namespace servio::brd
 {

@@ -1,5 +1,4 @@
 #include "base.hpp"
-#include "status.hpp"
 
 #include <cstdint>
 #include <emlabcpp/result.h>
@@ -32,14 +31,6 @@ class period_cb_interface
 public:
         virtual void on_period_irq()   = 0;
         virtual ~period_cb_interface() = default;
-};
-
-class observed_interface
-{
-public:
-        virtual status get_status() const = 0;
-        virtual void   clear_status(){};
-        virtual ~observed_interface() = default;
 };
 
 struct com_res
@@ -85,6 +76,7 @@ public:
 class pwm_motor_interface
 {
 public:
+        virtual void   force_stop()          = 0;
         virtual void   set_power( int16_t )  = 0;
         virtual int8_t get_direction() const = 0;
         virtual ~pwm_motor_interface()       = default;

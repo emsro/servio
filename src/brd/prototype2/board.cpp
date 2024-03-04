@@ -1,19 +1,31 @@
 #include "base/sentry.hpp"
 #include "brd.hpp"
 #include "core/drivers.hpp"
+#include "core/globals.hpp"
 #include "drv/adc_pooler.hpp"
 #include "drv/adc_pooler_def.hpp"
 #include "drv/clock.hpp"
 #include "drv/cobs_uart.hpp"
 #include "drv/leds.hpp"
 #include "emlabcpp/result.h"
+#include "fw/install_stop_callback.hpp"
 #include "fw/util.hpp"
 #include "setup.hpp"
 
 namespace servio::brd
 {
 
-base::central_sentry CENTRAL_SENTRY;
+TIM_HandleTypeDef TIM2_HANDLE{};
+drv::clock        CLOCK{ TIM2_HANDLE };
+
+std::array< base::record, 16 >  INOPERABLE_RECORDS;
+std::array< base::record, 128 > DEGRADED_RECORDS;
+
+base::central_sentry CENTRAL_SENTRY{
+    CLOCK,
+    INOPERABLE_RECORDS,
+    DEGRADED_RECORDS,
+    core::STOP_CALLBACK };
 
 ADC_HandleTypeDef ADC_HANDLE{};
 DMA_HandleTypeDef ADC_DMA_HANDLE{};
@@ -28,14 +40,12 @@ drv::adc_pooler_temperature< ADC_POOLER > ADC_TEMPERATURE;
 drv::adc_pooler_position< ADC_POOLER >    ADC_POSITION;
 drv::adc_pooler_current< ADC_POOLER >     ADC_CURRENT;
 
-TIM_HandleTypeDef  TIM2_HANDLE{};
-drv::clock         CLOCK{ TIM2_HANDLE };
 UART_HandleTypeDef UART2_HANDLE{};
 DMA_HandleTypeDef  UART2_DMA_HANDLE{};
-drv::cobs_uart     COMMS{ CENTRAL_SENTRY, UART2_HANDLE, UART2_DMA_HANDLE };
+drv::cobs_uart     COMMS{ "comms", CENTRAL_SENTRY, UART2_HANDLE, UART2_DMA_HANDLE };
 UART_HandleTypeDef UART1_HANDLE{};
 DMA_HandleTypeDef  UART1_DMA_HANDLE{};
-drv::cobs_uart     DEBUG_COMMS{ CENTRAL_SENTRY, UART1_HANDLE, UART1_DMA_HANDLE };
+drv::cobs_uart     DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, UART1_HANDLE, UART1_DMA_HANDLE };
 TIM_HandleTypeDef  TIM1_HANDLE{};
 drv::hbridge       HBRIDGE{ TIM1_HANDLE };
 TIM_HandleTypeDef  TIM3_HANDLE{};
@@ -366,7 +376,8 @@ core::drivers setup_core_drivers()
 
         auto*      adc_pooler = adc_pooler_setup();
         drv::leds* leds       = leds_setup();
-        fw::install_stop_callback( leds );
+        if ( hb != nullptr )
+                fw::install_stop_callback( core::STOP_CALLBACK, *hb, leds );
 
         return core::drivers{
             .clock       = &CLOCK,

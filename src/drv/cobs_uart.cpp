@@ -1,28 +1,11 @@
 #include "drv/cobs_uart.hpp"
 
 #include "base/base.hpp"
-#include "base/status.hpp"
 #include "emlabcpp/result.h"
 #include "fw/util.hpp"
 
 namespace servio::drv
 {
-
-base::status cobs_uart::get_status() const
-{
-
-        base::status error_status = base::status::NOMINAL;
-        if ( ( error_status_ & tolerable_errors ) != 0 )
-                error_status = base::status::DEGRADED;
-
-        return base::worst_of( { error_status, sentry_.get_status() } );
-}
-
-void cobs_uart::clear_status()
-{
-
-        error_status_ = error_status_ & ( ~tolerable_errors );
-}
 
 base::com_res cobs_uart::load_message( em::view< std::byte* > data )
 {

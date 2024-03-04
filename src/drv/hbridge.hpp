@@ -20,7 +20,7 @@ class hbridge : public base::pwm_motor_interface, public base::period_interface
 public:
         hbridge( TIM_HandleTypeDef& tim )
           : period_cb_( &EMPTY_PERIOD_CB )
-          , tim_( tim )
+          , tim_( &tim )
         {
         }
 
@@ -30,24 +30,11 @@ public:
         hbridge& operator=( const hbridge& ) = delete;
         hbridge& operator=( hbridge&& )      = delete;
 
-        hbridge* setup( uint32_t mc1_channel, uint32_t mc2_channel )
-        {
-                mc1_channel_ = mc1_channel;
-                mc2_channel_ = mc2_channel;
+        hbridge* setup( uint32_t mc1_channel, uint32_t mc2_channel );
 
-                timer_max_ = tim_.Init.Period;
+        void force_stop() override;
 
-                set_power( 0 );
-
-                return this;
-        }
-
-        void timer_period_irq( TIM_HandleTypeDef* h )
-        {
-                if ( h != &tim_ )
-                        return;
-                period_cb_->on_period_irq();
-        }
+        void timer_period_irq( TIM_HandleTypeDef* h );
 
         void                       set_period_callback( base::period_cb_interface& ) override;
         base::period_cb_interface& get_period_callback() override;
@@ -69,9 +56,28 @@ public:
 private:
         base::period_cb_interface* period_cb_;
         uint32_t                   timer_max_ = 0;
-        TIM_HandleTypeDef&         tim_;
+        TIM_HandleTypeDef*         tim_;
         uint32_t                   mc1_channel_ = 0;
         uint32_t                   mc2_channel_ = 0;
 };
+
+inline hbridge* hbridge::setup( uint32_t mc1_channel, uint32_t mc2_channel )
+{
+        mc1_channel_ = mc1_channel;
+        mc2_channel_ = mc2_channel;
+
+        timer_max_ = tim_->Init.Period;
+
+        set_power( 0 );
+
+        return this;
+}
+
+inline void hbridge::timer_period_irq( TIM_HandleTypeDef* h )
+{
+        if ( h != tim_ )
+                return;
+        period_cb_->on_period_irq();
+}
 
 }  // namespace servio::drv

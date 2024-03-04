@@ -1,8 +1,10 @@
 #include "cfg/map.hpp"
 #include "drv/defs.hpp"
-#include "fw/board.hpp"
 
+#include <emlabcpp/result.h>
 #include <memory>
+
+namespace em = emlabcpp;
 
 namespace servio::plt
 {

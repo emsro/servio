@@ -1,5 +1,4 @@
 #include "emlabcpp/result.h"
-#include "fw/board.hpp"
 #include "fw/util.hpp"
 #include "platform.hpp"
 

@@ -1,12 +1,23 @@
 #include "base/callbacks.hpp"
 #include "base/sentry.hpp"
-#include "base/status.hpp"
 #include "platform.hpp"
 
 #pragma once
 
 namespace servio::drv
 {
+
+enum adc_error_codes
+{
+        ADC_POOLER_ISTART_ERR       = 0x1,
+        ADC_POOLER_ISTOP_ERR        = 0x2,
+        ADC_POOLER_DSTART_ERR       = 0x3,
+        ADC_POOLER_DSTOP_ERR        = 0x4,
+        ADC_POOLER_CFG_ERR          = 0x5,
+        ADC_POOLER_NO_SAMPLES_ERR   = 0x6,
+        ADC_POOLER_SAMPLES_OVER_ERR = 0x7
+};
+
 inline base::empty_adc_detailed_cb EMPTY_ADC_DETAILED_CALLBACK;
 
 template < auto ID, std::size_t N >
@@ -23,30 +34,13 @@ struct detailed_adc_channel
         ADC_ChannelConfTypeDef           chconf   = {};
         base::adc_detailed_cb_interface* callback = &EMPTY_ADC_DETAILED_CALLBACK;
 
-        bool no_samples_error       = false;
-        bool samples_overflow_error = false;
-
-        base::status get_status() const
-        {
-                base::status s = base::status::NOMINAL;
-                if ( no_samples_error || samples_overflow_error )
-                        s = base::status::DEGRADED;
-                return base::worst_of( { sentry_.get_status(), s } );
-        }
-
-        void clear_status()
-        {
-                no_samples_error       = false;
-                samples_overflow_error = false;
-        }
-
         [[gnu::flatten]] void period_start( ADC_HandleTypeDef& h )
         {
                 if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK )
-                        sentry_.set_inoperable();
+                        sentry_.set_inoperable( ADC_POOLER_CFG_ERR, "hal cfg err", ID );
                 if ( HAL_ADC_Start_DMA( &h, reinterpret_cast< uint32_t* >( &buffer ), N ) !=
                      HAL_OK ) {
-                        sentry_.set_inoperable();
+                        sentry_.set_inoperable( ADC_POOLER_DSTART_ERR, "hal dstart err", ID );
                 }
         }
 
@@ -54,12 +48,11 @@ struct detailed_adc_channel
         {
                 used = N - __HAL_DMA_GET_COUNTER( h.DMA_Handle );
                 if ( HAL_ADC_Stop_DMA( &h ) != HAL_OK )
-                        sentry_.set_inoperable();
+                        sentry_.set_inoperable( ADC_POOLER_DSTOP_ERR, "hal dstop err", ID );
                 if ( used == 0 )
-                        no_samples_error = true;
-
+                        sentry_.set_degraded( ADC_POOLER_NO_SAMPLES_ERR, "no samples taken" );
                 else if ( used == N )
-                        samples_overflow_error = false;
+                        sentry_.set_degraded( ADC_POOLER_SAMPLES_OVER_ERR, "too many samples", N );
 
                 const std::span readings( std::data( buffer ), used );
 
@@ -84,17 +77,12 @@ struct adc_channel
         uint32_t               last_value;
         ADC_ChannelConfTypeDef chconf = {};
 
-        base::status get_status() const
-        {
-                return base::worst_of( { sentry_.get_status(), base::status::NOMINAL } );
-        }
-
         [[gnu::flatten]] void period_start( ADC_HandleTypeDef& h )
         {
                 if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK )
-                        sentry_.set_inoperable();
+                        sentry_.set_inoperable( ADC_POOLER_CFG_ERR, "hal cfg err", ID );
                 if ( HAL_ADC_Start_IT( &h ) != HAL_OK )
-                        sentry_.set_inoperable();
+                        sentry_.set_inoperable( ADC_POOLER_ISTART_ERR, "hal istart err", ID );
         }
 
         void period_stop( ADC_HandleTypeDef& )
@@ -105,7 +93,7 @@ struct adc_channel
         {
                 // is this necessary?
                 if ( HAL_ADC_Stop_IT( &h ) != HAL_OK )
-                        sentry_.set_inoperable();
+                        sentry_.set_inoperable( ADC_POOLER_ISTOP_ERR, "hal istop err", ID );
                 last_value = HAL_ADC_GetValue( &h );
         }
 };
@@ -113,6 +101,11 @@ struct adc_channel
 template < auto ID >
 struct adc_channel_with_callback : adc_channel< ID >
 {
+        adc_channel_with_callback( const char* id, base::central_sentry& central )
+          : adc_channel< ID >( { id, central } )
+        {
+        }
+
         base::value_cb_interface* callback = &EMPTY_ADC_CALLBACK;
 
         [[gnu::flatten]] void conv_cplt( ADC_HandleTypeDef& h )

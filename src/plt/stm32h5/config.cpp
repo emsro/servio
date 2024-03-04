@@ -1,6 +1,5 @@
 #include "cfg/default.hpp"
 #include "cfg/math.hpp"
-#include "fw/board.hpp"
 #include "platform.hpp"
 
 #include <numbers>

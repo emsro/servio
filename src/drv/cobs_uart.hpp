@@ -1,6 +1,5 @@
 #include "base/drv_interfaces.hpp"
 #include "base/sentry.hpp"
-#include "base/status.hpp"
 #include "platform.hpp"
 
 #include <emlabcpp/experimental/cobs.h>
@@ -15,10 +14,18 @@ namespace em = emlabcpp;
 namespace servio::drv
 {
 
-class cobs_uart : public base::com_interface, public base::observed_interface
+enum cobs_error_codes
 {
+        COBS_HAL_ERROR_IRQ_ERR = 0x1,
+        COBS_HAL_RX_START_ERR  = 0x2
+};
+
+class cobs_uart : public base::com_interface
+{
+
 public:
         cobs_uart(
+            const char*           id,
             base::central_sentry& central,
             UART_HandleTypeDef&   uart,
             DMA_HandleTypeDef&    tx_dma );
@@ -32,9 +39,6 @@ public:
         void tx_cplt_irq( UART_HandleTypeDef* huart );
         void err_irq( UART_HandleTypeDef* huart );
 
-        base::status get_status() const override;
-        void         clear_status() override;
-
         base::com_res load_message( em::view< std::byte* > data ) override;
 
         em::result start() override;
@@ -43,7 +47,7 @@ public:
 
 private:
         // we tolerate overrun, dma, frame, noise error - we can recover
-        static constexpr uint32_t tolerable_errors =
+        static constexpr uint32_t tolerable_hal_errors =
             HAL_UART_ERROR_ORE | HAL_UART_ERROR_DMA | HAL_UART_ERROR_FE | HAL_UART_ERROR_NE;
 
         base::sentry sentry_;
@@ -59,15 +63,14 @@ private:
         std::byte                                    rx_byte_;
         em::static_circular_buffer< std::byte, 256 > rx_buffer_;
         em::static_circular_buffer< uint16_t, 8 >    rx_sizes_;
-
-        uint32_t error_status_ = 0;
 };
 
 inline cobs_uart::cobs_uart(
+    const char*           id,
     base::central_sentry& central,
     UART_HandleTypeDef&   uart,
     DMA_HandleTypeDef&    tx_dma )
-  : sentry_( central )
+  : sentry_( id, central )
   , uart_( &uart )
   , tx_dma_( &tx_dma )
 {
@@ -92,7 +95,7 @@ inline void cobs_uart::rx_cplt_irq( UART_HandleTypeDef* huart )
                 }
         }
         if ( start() != em::SUCCESS )
-                sentry_.set_inoperable();
+                sentry_.set_inoperable( COBS_HAL_RX_START_ERR, "rx start" );
 }
 
 inline void cobs_uart::tx_cplt_irq( UART_HandleTypeDef* huart )
@@ -107,9 +110,11 @@ inline void cobs_uart::err_irq( UART_HandleTypeDef* huart )
         if ( huart != uart_ )
                 return;
 
-        error_status_ = HAL_UART_GetError( huart );
-        if ( ( error_status_ & ~tolerable_errors ) != 0 )
-                sentry_.set_inoperable();
+        uint32_t error_status = HAL_UART_GetError( huart );
+        if ( ( error_status & ~tolerable_hal_errors ) != 0 )
+                sentry_.set_inoperable( error_status << 1, "err irq" );
+        else if ( error_status != 0 )
+                sentry_.set_degraded( error_status << 1, "err irq" );
 }
 
 inline em::result cobs_uart::start()

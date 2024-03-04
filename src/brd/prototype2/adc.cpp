@@ -1,4 +1,3 @@
-#include "fw/board.hpp"
 #include "fw/util.hpp"
 #include "setup.hpp"
 

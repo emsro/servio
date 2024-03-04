@@ -1,5 +1,7 @@
 #include "hbridge.hpp"
 
+#include "emlabcpp/result.h"
+
 #include <emlabcpp/algorithm.h>
 
 namespace servio::drv
@@ -7,18 +9,22 @@ namespace servio::drv
 
 em::result hbridge::start()
 {
-        if ( HAL_TIM_PWM_Start_IT( &tim_, mc1_channel_ ) != HAL_OK )
+        if ( tim_ == nullptr )
                 return em::ERROR;
-        if ( HAL_TIM_PWM_Start_IT( &tim_, mc2_channel_ ) != HAL_OK )
+        if ( HAL_TIM_PWM_Start_IT( tim_, mc1_channel_ ) != HAL_OK )
+                return em::ERROR;
+        if ( HAL_TIM_PWM_Start_IT( tim_, mc2_channel_ ) != HAL_OK )
                 return em::ERROR;
         return em::SUCCESS;
 }
 
 em::result hbridge::stop()
 {
-        if ( HAL_TIM_PWM_Stop_IT( &tim_, mc1_channel_ ) != HAL_OK )
+        if ( tim_ == nullptr )
                 return em::ERROR;
-        if ( HAL_TIM_PWM_Stop_IT( &tim_, mc2_channel_ ) != HAL_OK )
+        if ( HAL_TIM_PWM_Stop_IT( tim_, mc1_channel_ ) != HAL_OK )
+                return em::ERROR;
+        if ( HAL_TIM_PWM_Stop_IT( tim_, mc2_channel_ ) != HAL_OK )
                 return em::ERROR;
         return em::SUCCESS;
 }
@@ -31,6 +37,15 @@ void hbridge::set_period_callback( base::period_cb_interface& cb )
 base::period_cb_interface& hbridge::get_period_callback()
 {
         return *period_cb_;
+}
+
+void hbridge::force_stop()
+{
+        if ( tim_ != nullptr ) {
+                __HAL_TIM_SET_COMPARE( tim_, mc1_channel_, 0u );
+                __HAL_TIM_SET_COMPARE( tim_, mc2_channel_, 0u );
+        }
+        tim_ = nullptr;
 }
 
 void hbridge::set_power( int16_t power )
@@ -55,14 +70,18 @@ void hbridge::set_power( int16_t power )
                     0,
                     static_cast< int32_t >( timer_max_ ) );
         }
-        __HAL_TIM_SET_COMPARE( &tim_, mc1_channel_, static_cast< uint32_t >( mc1_val ) );
-        __HAL_TIM_SET_COMPARE( &tim_, mc2_channel_, static_cast< uint32_t >( mc2_val ) );
+        if ( tim_ == nullptr )
+                return;
+        __HAL_TIM_SET_COMPARE( tim_, mc1_channel_, static_cast< uint32_t >( mc1_val ) );
+        __HAL_TIM_SET_COMPARE( tim_, mc2_channel_, static_cast< uint32_t >( mc2_val ) );
 }
 
 int8_t hbridge::get_direction() const
 {
-        return __HAL_TIM_GET_COMPARE( &tim_, mc1_channel_ ) >=
-                       __HAL_TIM_GET_COMPARE( &tim_, mc2_channel_ ) ?
+        if ( tim_ == nullptr )
+                return 1;
+        return __HAL_TIM_GET_COMPARE( tim_, mc1_channel_ ) >=
+                       __HAL_TIM_GET_COMPARE( tim_, mc2_channel_ ) ?
                    1 :
                    -1;
 }

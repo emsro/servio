@@ -1,5 +1,4 @@
 #include "cfg/default.hpp"
-#include "fw/board.hpp"
 #include "platform.hpp"
 
 #include <numbers>
