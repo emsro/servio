@@ -3,6 +3,7 @@ add_subdirectory(cfg)
 add_subdirectory(cnv)
 add_subdirectory(core)
 add_subdirectory(ctl)
+add_subdirectory(sntr)
 add_subdirectory(iface)
 add_subdirectory(klmn)
 add_subdirectory(mon)
@@ -10,7 +11,8 @@ add_subdirectory(mtr)
 
 add_library(serviolib INTERFACE)
 
-target_link_libraries(serviolib INTERFACE monlib corelib cfglib mtrlib ctllib)
+target_link_libraries(serviolib INTERFACE sntrlib monlib corelib cfglib mtrlib
+                                          ctllib)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 

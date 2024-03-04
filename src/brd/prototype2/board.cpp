@@ -1,4 +1,3 @@
-#include "base/sentry.hpp"
 #include "brd.hpp"
 #include "core/drivers.hpp"
 #include "core/globals.hpp"
@@ -11,6 +10,7 @@
 #include "fw/install_stop_callback.hpp"
 #include "fw/util.hpp"
 #include "setup.hpp"
+#include "sntr/central_sentry.hpp"
 
 namespace servio::brd
 {
@@ -18,10 +18,10 @@ namespace servio::brd
 TIM_HandleTypeDef TIM2_HANDLE{};
 drv::clock        CLOCK{ TIM2_HANDLE };
 
-std::array< base::record, 16 >  INOPERABLE_RECORDS;
-std::array< base::record, 128 > DEGRADED_RECORDS;
+std::array< sntr::record, 16 >  INOPERABLE_RECORDS;
+std::array< sntr::record, 128 > DEGRADED_RECORDS;
 
-base::central_sentry CENTRAL_SENTRY{
+sntr::central_sentry CENTRAL_SENTRY{
     CLOCK,
     INOPERABLE_RECORDS,
     DEGRADED_RECORDS,

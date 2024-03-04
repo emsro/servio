@@ -1,7 +1,7 @@
 #include "base/callbacks.hpp"
 #include "base/drv_interfaces.hpp"
-#include "base/sentry.hpp"
 #include "platform.hpp"
+#include "sntr/sentry.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <span>

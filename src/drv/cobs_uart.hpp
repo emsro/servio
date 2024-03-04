@@ -1,6 +1,6 @@
 #include "base/drv_interfaces.hpp"
-#include "base/sentry.hpp"
 #include "platform.hpp"
+#include "sntr/sentry.hpp"
 
 #include <emlabcpp/experimental/cobs.h>
 #include <emlabcpp/experimental/function_view.h>
@@ -26,7 +26,7 @@ class cobs_uart : public base::com_interface
 public:
         cobs_uart(
             const char*           id,
-            base::central_sentry& central,
+            sntr::central_sentry& central,
             UART_HandleTypeDef&   uart,
             DMA_HandleTypeDef&    tx_dma );
 
@@ -50,7 +50,7 @@ private:
         static constexpr uint32_t tolerable_hal_errors =
             HAL_UART_ERROR_ORE | HAL_UART_ERROR_DMA | HAL_UART_ERROR_FE | HAL_UART_ERROR_NE;
 
-        base::sentry sentry_;
+        sntr::sentry sentry_;
 
         UART_HandleTypeDef* uart_   = nullptr;
         DMA_HandleTypeDef*  tx_dma_ = nullptr;
@@ -67,7 +67,7 @@ private:
 
 inline cobs_uart::cobs_uart(
     const char*           id,
-    base::central_sentry& central,
+    sntr::central_sentry& central,
     UART_HandleTypeDef&   uart,
     DMA_HandleTypeDef&    tx_dma )
   : sentry_( id, central )

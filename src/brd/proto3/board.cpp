@@ -1,4 +1,3 @@
-#include "base/sentry.hpp"
 #include "brd.hpp"
 #include "cfg/default.hpp"
 #include "core/drivers.hpp"
@@ -12,6 +11,7 @@
 #include "fw/util.hpp"
 #include "platform.hpp"
 #include "setup.hpp"
+#include "sntr/central_sentry.hpp"
 
 #include <emlabcpp/result.h>
 
@@ -30,10 +30,10 @@ TIM_HandleTypeDef TIM2_HANDLE = {};
 drv::clock        CLOCK{ TIM2_HANDLE };
 drv::leds         LEDS{ TIM2_HANDLE };
 
-std::array< base::record, 16 >  INOPERABLE_RECORDS;
-std::array< base::record, 128 > DEGRADED_RECORDS;
+std::array< sntr::record, 16 >  INOPERABLE_RECORDS;
+std::array< sntr::record, 128 > DEGRADED_RECORDS;
 
-base::central_sentry CENTRAL_SENTRY{
+sntr::central_sentry CENTRAL_SENTRY{
     CLOCK,
     INOPERABLE_RECORDS,
     DEGRADED_RECORDS,

@@ -1,6 +1,6 @@
 #include "base/callbacks.hpp"
-#include "base/sentry.hpp"
 #include "platform.hpp"
+#include "sntr/sentry.hpp"
 
 #pragma once
 
@@ -25,7 +25,7 @@ struct detailed_adc_channel
 {
         static constexpr auto id = ID;
 
-        base::sentry sentry_;
+        sntr::sentry sentry_;
 
         alignas( uint32_t ) uint16_t buffer[N];
         std::size_t used;
@@ -72,7 +72,7 @@ struct adc_channel
 {
         static constexpr auto id = ID;
 
-        base::sentry sentry_;
+        sntr::sentry sentry_;
 
         uint32_t               last_value;
         ADC_ChannelConfTypeDef chconf = {};
@@ -101,7 +101,7 @@ struct adc_channel
 template < auto ID >
 struct adc_channel_with_callback : adc_channel< ID >
 {
-        adc_channel_with_callback( const char* id, base::central_sentry& central )
+        adc_channel_with_callback( const char* id, sntr::central_sentry& central )
           : adc_channel< ID >( { id, central } )
         {
         }
