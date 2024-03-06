@@ -36,6 +36,8 @@ public:
             const data_type& data );
 
 private:
+        void fire_inoperable();
+
         bool is_inoperable_ = false;
 
         base::clk_interface&        clk_;

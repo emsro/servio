@@ -31,6 +31,16 @@ central_sentry::central_sentry(
   , degr_buffer_( degr_buffer )
   , stop_callback_( stop_callback )
 {
+        if ( inop_buffer_.empty() )
+                fire_inoperable();
+        if ( degr_buffer_.empty() )
+                fire_inoperable();
+}
+
+void central_sentry::fire_inoperable()
+{
+        is_inoperable_ = true;
+        stop_callback_();
 }
 
 bool central_sentry::is_inoperable() const
@@ -44,15 +54,15 @@ void central_sentry::report_inoperable(
     const char*      emsg,
     const data_type& data )
 {
-        base::microseconds now = clk_.get_us();
-        is_inoperable_         = true;
-        record* target         = get_next_free( inop_buffer_, inop_i_ );
-        target->st             = record_state::SET;
-        target->tp             = now;
-        target->src            = src;
-        target->ecodes         = ecodes;
-        target->emsg           = emsg;
-        target->data           = data;
+        base::microseconds now    = clk_.get_us();
+        record*            target = get_next_free( inop_buffer_, inop_i_ );
+        target->st                = record_state::SET;
+        target->tp                = now;
+        target->src               = src;
+        target->ecodes            = ecodes;
+        target->emsg              = emsg;
+        target->data              = data;
+        fire_inoperable();
 }
 
 void central_sentry::report_degraded(
@@ -61,15 +71,14 @@ void central_sentry::report_degraded(
     const char*      emsg,
     const data_type& data )
 {
-        base::microseconds now = clk_.get_us();
-        is_inoperable_         = true;
-        record* target         = get_next_free( degr_buffer_, degr_i_ );
-        target->st             = record_state::SET;
-        target->tp             = now;
-        target->src            = src;
-        target->ecodes         = ecodes;
-        target->emsg           = emsg;
-        target->data           = data;
+        base::microseconds now    = clk_.get_us();
+        record*            target = get_next_free( degr_buffer_, degr_i_ );
+        target->st                = record_state::SET;
+        target->tp                = now;
+        target->src               = src;
+        target->ecodes            = ecodes;
+        target->emsg              = emsg;
+        target->data              = data;
 }
 
 }  // namespace servio::sntr

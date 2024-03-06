@@ -16,9 +16,9 @@ struct record
 {
         record_state       st = record_state::UNSET;
         base::microseconds tp;
-        const char*        src;
+        const char*        src = nullptr;
         ecode_set          ecodes;
-        const char*        emsg;
+        const char*        emsg = nullptr;
         data_type          data;
 };
 
