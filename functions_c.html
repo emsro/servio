@@ -98,6 +98,9 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 , <a class="el" href="structservio_1_1base_1_1period__cb.html#a55484958bbfcf9f79c2196a1c18f33e2">servio::base::period_cb&lt; Callable &gt;</a>
 , <a class="el" href="structservio_1_1base_1_1value__cb.html#ab1cb320e5f8fe1a30fb9a6d15eaa21e6">servio::base::value_cb&lt; Callable &gt;</a>
 </li>
+<li>central_sentry()
+: <a class="el" href="classservio_1_1sntr_1_1central__sentry.html#a7630895d06a2b6a11b02bb5b762e1b9c">servio::sntr::central_sentry</a>
+</li>
 <li>cfg_disp
 : <a class="el" href="namespaceservio_1_1fw.html#a51dbe94d86aba2254c9116e07b3e381c">servio::fw::dispatcher</a>
 </li>
@@ -111,29 +114,24 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 : <a class="el" href="structservio_1_1drv_1_1adc__channel.html#ad63d895784d81b6ae4949808c1413eb1">servio::drv::adc_channel&lt; ID &gt;</a>
 , <a class="el" href="structservio_1_1drv_1_1detailed__adc__channel.html#aa5a9e9d54db4b803c4488ede0bee5b4d">servio::drv::detailed_adc_channel&lt; ID, N &gt;</a>
 </li>
-<li>clear_status()
-: <a class="el" href="classservio_1_1base_1_1driver__interface.html#a7a6251b305566a53cb7c90129e445cc9">servio::base::driver_interface</a>
-, <a class="el" href="structservio_1_1drv_1_1detailed__adc__channel.html#a28380eb2cefbf1d37401abe9dadc4cd9">servio::drv::detailed_adc_channel&lt; ID, N &gt;</a>
-</li>
 <li>cli
 : <a class="el" href="structservio_1_1bb_1_1bb__test__case.html#aca535f939b0516dfcb611f6db152f475">servio::bb::bb_test_case</a>
 </li>
+<li>clk
+: <a class="el" href="structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#a38ee93bb84c13211165c5a91d370fc06">servio::sntr::tests::central_sentry_fixture</a>
+</li>
 <li>clock
 : <a class="el" href="structservio_1_1core_1_1drivers.html#af752448b0cd20948bdf8b167bb7e79a0">servio::core::drivers</a>
-, <a class="el" href="classservio_1_1drv_1_1clock.html#a5ad340f5efc1dbd7e43e0eb30eefa461">servio::drv::clock</a>
+, <a class="el" href="classservio_1_1drv_1_1clock.html#aa6c259b30ca78ab6552f6c8420183484">servio::drv::clock</a>
 </li>
 <li>cobs_port()
 : <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#aedbfedba7bc428e5990fb0a40b89ce33">servio::scmdio::cobs_port</a>
 </li>
 <li>cobs_uart()
-: <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a581630fd2a20b5efceb29f41209a4524">servio::drv::cobs_uart</a>
+: <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#ad86393c1c4bf6f268bace4230d86b700">servio::drv::cobs_uart</a>
 </li>
 <li>comms
 : <a class="el" href="structservio_1_1core_1_1drivers.html#a854fb8c2b8f5f799999afc201bbc6a92">servio::core::drivers</a>
-</li>
-<li>config_channel_error
-: <a class="el" href="structservio_1_1drv_1_1adc__channel.html#afffb12c6d4f3ca7761d06bbeee7ff646">servio::drv::adc_channel&lt; ID &gt;</a>
-, <a class="el" href="structservio_1_1drv_1_1detailed__adc__channel.html#af356a1e3ffa16282b12fb1143094a73a">servio::drv::detailed_adc_channel&lt; ID, N &gt;</a>
 </li>
 <li>context
 : <a class="el" href="structservio_1_1scmdio_1_1common__cli.html#a18286990d879f4c04c5d3f7eac60583c">servio::scmdio::common_cli</a>
@@ -167,7 +165,7 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>current
 : <a class="el" href="structservio_1_1cnv_1_1converter.html#af0b3af33edd48173a6d3bb19af86288f">servio::cnv::converter</a>
 , <a class="el" href="structservio_1_1core_1_1drivers.html#a0e43a8d2cf341426c1bf84185302fc78">servio::core::drivers</a>
-, <a class="el" href="structservio_1_1drv_1_1adc__set.html#a1efc6479152f809503f37ddfdc782685">servio::drv::adc_set</a>
+, <a class="el" href="structservio_1_1drv_1_1adc__set.html#a861c09c28c525c7b5ead66aef02dd754">servio::drv::adc_set&lt; CentralSentry &gt;</a>
 , <a class="el" href="namespaceservio_1_1scmdio.html#a5b48fe29c3252d8489d843328bae56cd">servio::scmdio::mode_opts</a>
 , <a class="el" href="structservio_1_1sim_1_1simple__motor.html#ac8bba22ad06d1276668f55a64266a850">servio::sim::simple_motor</a>
 </li>
@@ -195,7 +193,7 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Feb 27 2024 20:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Mar 6 2024 21:08:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -6,9 +6,7 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
       [ "clock", "classservio_1_1drv_1_1clock.html", "classservio_1_1drv_1_1clock" ]
     ] ],
     [ "cobs_uart.cpp", "cobs__uart_8cpp.html", null ],
-    [ "cobs_uart.hpp", "cobs__uart_8hpp.html", [
-      [ "cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", "classservio_1_1drv_1_1cobs__uart" ]
-    ] ],
+    [ "cobs_uart.hpp", "cobs__uart_8hpp.html", "cobs__uart_8hpp" ],
     [ "defs.hpp", "defs_8hpp.html", [
       [ "pin_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg", [
         [ "alternate", "namespaceservio_1_1drv.html#a3b5744acf3762f9fd7ff7cb9c8211640", null ],

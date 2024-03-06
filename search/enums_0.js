@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['chan_5fids_1448',['chan_ids',['../namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2af',1,'servio::drv']]],
-  ['control_5floop_1449',['control_loop',['../namespaceservio_1_1base.html#a52414739b3bb89a0cfbf750a4ea92826',1,'servio::base']]],
-  ['control_5fmode_1450',['control_mode',['../namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552e',1,'servio::base']]]
+  ['adc_5ferror_5fcodes_1549',['adc_error_codes',['../namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76b',1,'servio::drv']]]
 ];

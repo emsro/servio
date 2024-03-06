@@ -1,7 +1,7 @@
 var prototype2_2board_8cpp =
 [
     [ "ADC1_2_IRQHandler", "prototype2_2board_8cpp.html#aff4af6b741ab43c7784e08e0e2e50586", null ],
-    [ "adc_pooler_setup", "prototype2_2board_8cpp.html#a99340595767d8b9325d4473d593c7c33", null ],
+    [ "adc_pooler_setup", "prototype2_2board_8cpp.html#aff6bf773b950ff1a6a26be02ee4da8a5", null ],
     [ "comms_setup", "prototype2_2board_8cpp.html#aee366d78fb4dd7ae0e84ee4a28665113", null ],
     [ "DMA1_Channel1_IRQHandler", "prototype2_2board_8cpp.html#abd49de55f82b1a0be3edaaf34dbe4b14", null ],
     [ "DMA1_Channel4_IRQHandler", "prototype2_2board_8cpp.html#a9cdc63af1166aec768f87546a48bec8d", null ],

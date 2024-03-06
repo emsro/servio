@@ -12,7 +12,6 @@ var annotated_dup =
         [ "adc_detailed_cb_interface", "classservio_1_1base_1_1adc__detailed__cb__interface.html", "classservio_1_1base_1_1adc__detailed__cb__interface" ],
         [ "value_cb_interface", "classservio_1_1base_1_1value__cb__interface.html", "classservio_1_1base_1_1value__cb__interface" ],
         [ "period_cb_interface", "classservio_1_1base_1_1period__cb__interface.html", "classservio_1_1base_1_1period__cb__interface" ],
-        [ "driver_interface", "classservio_1_1base_1_1driver__interface.html", "classservio_1_1base_1_1driver__interface" ],
         [ "com_res", "namespaceservio_1_1base.html#structservio_1_1base_1_1com__res", "namespaceservio_1_1base_structservio_1_1base_1_1com__res_dup" ],
         [ "com_interface", "classservio_1_1base_1_1com__interface.html", "classservio_1_1base_1_1com__interface" ],
         [ "leds_interface", "classservio_1_1base_1_1leds__interface.html", "classservio_1_1base_1_1leds__interface" ],
@@ -67,6 +66,11 @@ var annotated_dup =
         [ "adc_channel_with_callback", "structservio_1_1drv_1_1adc__channel__with__callback.html", "structservio_1_1drv_1_1adc__channel__with__callback" ],
         [ "adc_pooler", "structservio_1_1drv_1_1adc__pooler.html", "structservio_1_1drv_1_1adc__pooler" ],
         [ "adc_set", "structservio_1_1drv_1_1adc__set.html", "structservio_1_1drv_1_1adc__set" ],
+        [ "adc_pooler_period_cb", "structservio_1_1drv_1_1adc__pooler__period__cb.html", "structservio_1_1drv_1_1adc__pooler__period__cb" ],
+        [ "adc_pooler_vcc", "structservio_1_1drv_1_1adc__pooler__vcc.html", "structservio_1_1drv_1_1adc__pooler__vcc" ],
+        [ "adc_pooler_temperature", "structservio_1_1drv_1_1adc__pooler__temperature.html", "structservio_1_1drv_1_1adc__pooler__temperature" ],
+        [ "adc_pooler_position", "structservio_1_1drv_1_1adc__pooler__position.html", "structservio_1_1drv_1_1adc__pooler__position" ],
+        [ "adc_pooler_current", "structservio_1_1drv_1_1adc__pooler__current.html", "structservio_1_1drv_1_1adc__pooler__current" ],
         [ "clock", "classservio_1_1drv_1_1clock.html", "classservio_1_1drv_1_1clock" ],
         [ "cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", "classservio_1_1drv_1_1cobs__uart" ],
         [ "pin_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg", "namespaceservio_1_1drv_structservio_1_1drv_1_1pin__cfg_dup" ],
@@ -112,6 +116,15 @@ var annotated_dup =
       ] ],
       [ "sim", "namespaceservio_1_1sim.html", [
         [ "simple_motor", "structservio_1_1sim_1_1simple__motor.html", "structservio_1_1sim_1_1simple__motor" ]
+      ] ],
+      [ "sntr", "namespaceservio_1_1sntr.html", [
+        [ "tests", "namespaceservio_1_1sntr_1_1tests.html", [
+          [ "test_clk", "structservio_1_1sntr_1_1tests_1_1test__clk.html", "structservio_1_1sntr_1_1tests_1_1test__clk" ],
+          [ "central_sentry_fixture", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture" ]
+        ] ],
+        [ "central_sentry", "classservio_1_1sntr_1_1central__sentry.html", "classservio_1_1sntr_1_1central__sentry" ],
+        [ "record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", "namespaceservio_1_1sntr_structservio_1_1sntr_1_1record_dup" ],
+        [ "sentry", "classservio_1_1sntr_1_1sentry.html", "classservio_1_1sntr_1_1sentry" ]
       ] ]
     ] ]
 ];

@@ -1,14 +1,13 @@
 <map id="servio::core::drivers" name="servio::core::drivers">
-<area shape="rect" id="node1" title=" " alt="" coords="537,298,688,325"/>
-<area shape="rect" id="node2" href="$classservio_1_1base_1_1period__interface.html" title=" " alt="" coords="227,5,378,47"/>
-<area shape="rect" id="node3" href="$classservio_1_1base_1_1driver__interface.html" title=" " alt="" coords="5,164,152,205"/>
-<area shape="rect" id="node5" href="$classservio_1_1base_1_1vcc__interface.html" title=" " alt="" coords="205,71,401,98"/>
-<area shape="rect" id="node6" href="$classservio_1_1base_1_1current__interface.html" title=" " alt="" coords="225,123,380,164"/>
-<area shape="rect" id="node7" href="$classservio_1_1base_1_1position__interface.html" title=" " alt="" coords="222,188,383,229"/>
-<area shape="rect" id="node9" href="$classservio_1_1base_1_1temperature__interface.html" title=" " alt="" coords="207,253,398,295"/>
-<area shape="rect" id="node10" href="$classservio_1_1base_1_1pwm__motor__interface.html" title=" " alt="" coords="209,319,396,360"/>
-<area shape="rect" id="node4" href="$classservio_1_1base_1_1period__cb__interface.html" title=" " alt="" coords="227,384,378,425"/>
-<area shape="rect" id="node8" href="$classservio_1_1base_1_1clk__interface.html" title=" " alt="" coords="206,450,399,477"/>
-<area shape="rect" id="node11" href="$classservio_1_1base_1_1com__interface.html" title=" " alt="" coords="201,501,404,527"/>
-<area shape="rect" id="node12" href="$classservio_1_1base_1_1leds__interface.html" title=" " alt="" coords="235,552,371,593"/>
+<area shape="rect" id="node1" title=" " alt="" coords="341,290,492,317"/>
+<area shape="rect" id="node2" href="$classservio_1_1base_1_1period__interface.html" title=" " alt="" coords="31,5,182,47"/>
+<area shape="rect" id="node3" href="$classservio_1_1base_1_1period__cb__interface.html" title=" " alt="" coords="31,71,182,112"/>
+<area shape="rect" id="node4" href="$classservio_1_1base_1_1vcc__interface.html" title=" " alt="" coords="9,137,205,163"/>
+<area shape="rect" id="node5" href="$classservio_1_1base_1_1current__interface.html" title=" " alt="" coords="29,188,184,229"/>
+<area shape="rect" id="node6" href="$classservio_1_1base_1_1position__interface.html" title=" " alt="" coords="26,253,187,295"/>
+<area shape="rect" id="node7" href="$classservio_1_1base_1_1clk__interface.html" title=" " alt="" coords="10,319,203,346"/>
+<area shape="rect" id="node8" href="$classservio_1_1base_1_1temperature__interface.html" title=" " alt="" coords="11,371,202,412"/>
+<area shape="rect" id="node9" href="$classservio_1_1base_1_1pwm__motor__interface.html" title=" " alt="" coords="13,436,200,477"/>
+<area shape="rect" id="node10" href="$classservio_1_1base_1_1com__interface.html" title=" " alt="" coords="5,502,208,529"/>
+<area shape="rect" id="node11" href="$classservio_1_1base_1_1leds__interface.html" title=" " alt="" coords="39,553,175,595"/>
 </map>

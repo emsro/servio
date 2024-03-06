@@ -15,7 +15,6 @@ var namespaceservio_1_1base =
     [ "adc_detailed_cb_interface", "classservio_1_1base_1_1adc__detailed__cb__interface.html", "classservio_1_1base_1_1adc__detailed__cb__interface" ],
     [ "value_cb_interface", "classservio_1_1base_1_1value__cb__interface.html", "classservio_1_1base_1_1value__cb__interface" ],
     [ "period_cb_interface", "classservio_1_1base_1_1period__cb__interface.html", "classservio_1_1base_1_1period__cb__interface" ],
-    [ "driver_interface", "classservio_1_1base_1_1driver__interface.html", "classservio_1_1base_1_1driver__interface" ],
     [ "com_res", "namespaceservio_1_1base.html#structservio_1_1base_1_1com__res", "namespaceservio_1_1base_structservio_1_1base_1_1com__res_dup" ],
     [ "com_interface", "classservio_1_1base_1_1com__interface.html", "classservio_1_1base_1_1com__interface" ],
     [ "leds_interface", "classservio_1_1base_1_1leds__interface.html", "classservio_1_1base_1_1leds__interface" ],
@@ -48,11 +47,6 @@ var namespaceservio_1_1base =
       [ "CURRENT", "namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552eaa2770969c827f0f2910f6179418462df", null ],
       [ "VELOCITY", "namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552ea7b4354bded455eb379e3c764806cda7b", null ],
       [ "POSITION", "namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552ea90b4ba73224408e82ade8a072a3712c1", null ]
-    ] ],
-    [ "status", "namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84f", [
-      [ "NOMINAL", "namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84faaa2fa3fb4786079a4f8107ea393d609e", null ],
-      [ "DEGRADED", "namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84fa0021017005f0e5134b204c2e69d3d4ed", null ],
-      [ "INOPERABLE", "namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84fac5666694e05e08a4ae3ab497591042fa", null ]
     ] ],
     [ "infty", "namespaceservio_1_1base.html#a7f4a3ba7fed463a696460a6301b36324", null ],
     [ "pi", "namespaceservio_1_1base.html#ac81788709117cdad254c7e43cedbf3a3", null ]

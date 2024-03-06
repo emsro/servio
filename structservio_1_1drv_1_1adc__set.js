@@ -1,9 +1,9 @@
 var structservio_1_1drv_1_1adc__set =
 [
-    [ "id_type", "structservio_1_1drv_1_1adc__set.html#a81c054d067829726542a9170a2d6707c", null ],
-    [ "tie", "structservio_1_1drv_1_1adc__set.html#a7a9d09d028a580607c5c4b9e44191cc9", null ],
-    [ "current", "structservio_1_1drv_1_1adc__set.html#a1efc6479152f809503f37ddfdc782685", null ],
-    [ "position", "structservio_1_1drv_1_1adc__set.html#abb7a7a182f704053c8e24df8bdfded96", null ],
-    [ "temp", "structservio_1_1drv_1_1adc__set.html#a725a21b6e4e43a23bb5634cb3b1b3fe1", null ],
-    [ "vcc", "structservio_1_1drv_1_1adc__set.html#a31ba29ff9b6f05514c8d30d7059715e1", null ]
+    [ "id_type", "structservio_1_1drv_1_1adc__set.html#a7d48d509a208286d21ef58f2e4d1ca9d", null ],
+    [ "tie", "structservio_1_1drv_1_1adc__set.html#a99078e18b1f82727ba944a4c63a3b4c1", null ],
+    [ "current", "structservio_1_1drv_1_1adc__set.html#a861c09c28c525c7b5ead66aef02dd754", null ],
+    [ "position", "structservio_1_1drv_1_1adc__set.html#a305f4318de5be63325c06537ba1ec025", null ],
+    [ "temp", "structservio_1_1drv_1_1adc__set.html#ac3c89f4a5398b4e3105132465ae834ac", null ],
+    [ "vcc", "structservio_1_1drv_1_1adc__set.html#aa7be664d550f427291bfbbe745cc99bd", null ]
 ];

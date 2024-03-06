@@ -1,6 +1,5 @@
 <map id="servio::drv::hbridge" name="servio::drv::hbridge">
-<area shape="rect" id="node1" title=" " alt="" coords="121,184,268,211"/>
-<area shape="rect" id="node2" href="$classservio_1_1base_1_1pwm__motor__interface.html" title=" " alt="" coords="5,95,192,136"/>
-<area shape="rect" id="node3" href="$classservio_1_1base_1_1driver__interface.html" title=" " alt="" coords="121,5,268,47"/>
-<area shape="rect" id="node4" href="$classservio_1_1base_1_1period__interface.html" title=" " alt="" coords="217,95,367,136"/>
+<area shape="rect" id="node1" title=" " alt="" coords="121,95,268,121"/>
+<area shape="rect" id="node2" href="$classservio_1_1base_1_1pwm__motor__interface.html" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node3" href="$classservio_1_1base_1_1period__interface.html" title=" " alt="" coords="217,5,367,47"/>
 </map>

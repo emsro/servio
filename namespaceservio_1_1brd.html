@@ -115,6 +115,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a7718b2b8ad07061e4449e50b08ccf825"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a7718b2b8ad07061e4449e50b08ccf825">page</a> = em::view&lt; std::byte * &gt;</td></tr>
 <tr class="memdesc:a7718b2b8ad07061e4449e50b08ccf825"><td class="mdescLeft">&#160;</td><td class="mdescRight">An API that has to be implemented by each board variation.  <a href="namespaceservio_1_1brd.html#a7718b2b8ad07061e4449e50b08ccf825">More...</a><br /></td></tr>
 <tr class="separator:a7718b2b8ad07061e4449e50b08ccf825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a958070df355afb0af5cd591aafa0449d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a958070df355afb0af5cd591aafa0449d">adc_pooler_type</a> = <a class="el" href="structservio_1_1drv_1_1adc__pooler.html">drv::adc_pooler</a>&lt; <a class="el" href="structservio_1_1drv_1_1adc__set.html">drv::adc_set</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43">CENTRAL_SENTRY</a> &gt; &gt;</td></tr>
+<tr class="separator:a958070df355afb0af5cd591aafa0449d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -133,8 +135,8 @@ Functions</h2></td></tr>
 <tr class="memitem:aaad7b603159b5b262bb9cc0733d85ddb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1base_1_1com__interface.html">base::com_interface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#aaad7b603159b5b262bb9cc0733d85ddb">setup_debug_comms</a> ()</td></tr>
 <tr class="memdesc:aaad7b603159b5b262bb9cc0733d85ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize debug interface.  <a href="namespaceservio_1_1brd.html#aaad7b603159b5b262bb9cc0733d85ddb">More...</a><br /></td></tr>
 <tr class="separator:aaad7b603159b5b262bb9cc0733d85ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99340595767d8b9325d4473d593c7c33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1adc__pooler.html">drv::adc_pooler</a>&lt; <a class="el" href="structservio_1_1drv_1_1adc__set.html">drv::adc_set</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a99340595767d8b9325d4473d593c7c33">adc_pooler_setup</a> ()</td></tr>
-<tr class="separator:a99340595767d8b9325d4473d593c7c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff6bf773b950ff1a6a26be02ee4da8a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1brd.html#a958070df355afb0af5cd591aafa0449d">adc_pooler_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#aff6bf773b950ff1a6a26be02ee4da8a5">adc_pooler_setup</a> ()</td></tr>
+<tr class="separator:aff6bf773b950ff1a6a26be02ee4da8a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e933c86ae59b33c53a15dd89f58febc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1hbridge.html">drv::hbridge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc">hbridge_setup</a> ()</td></tr>
 <tr class="separator:a7e933c86ae59b33c53a15dd89f58febc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee366d78fb4dd7ae0e84ee4a28665113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#aee366d78fb4dd7ae0e84ee4a28665113">comms_setup</a> ()</td></tr>
@@ -176,34 +178,52 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a191cac90543a6fe4aa7a94e8134a184a"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a> = {}</td></tr>
+<tr class="separator:a191cac90543a6fe4aa7a94e8134a184a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9374215c588b74922836fbf5ab2602ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1clock.html">drv::clock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a> { <a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a> }</td></tr>
+<tr class="separator:a9374215c588b74922836fbf5ab2602ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a9ba68956eb017a599db3ce8d3c109a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1leds.html">drv::leds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9a9ba68956eb017a599db3ce8d3c109a">LEDS</a> { <a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a> }</td></tr>
+<tr class="separator:a9a9ba68956eb017a599db3ce8d3c109a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6361cccb21edfbd0a060cf03dc67f2c3"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record">sntr::record</a>, 16 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a6361cccb21edfbd0a060cf03dc67f2c3">INOPERABLE_RECORDS</a></td></tr>
+<tr class="separator:a6361cccb21edfbd0a060cf03dc67f2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e9ac3d0caab29dfd8e900b69801727"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record">sntr::record</a>, 128 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a29e9ac3d0caab29dfd8e900b69801727">DEGRADED_RECORDS</a></td></tr>
+<tr class="separator:a29e9ac3d0caab29dfd8e900b69801727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b4664ac58b840d2e0f97c5cc2bcf43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1sntr_1_1central__sentry.html">sntr::central_sentry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43">CENTRAL_SENTRY</a></td></tr>
+<tr class="separator:ac9b4664ac58b840d2e0f97c5cc2bcf43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acebef877469ed3877cd3aed31f76525e"><td class="memItemLeft" align="right" valign="top">ADC_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e">ADC_HANDLE</a> {}</td></tr>
 <tr class="separator:acebef877469ed3877cd3aed31f76525e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b0ceaa2337a3d916d52ba0fe6f823bc"><td class="memItemLeft" align="right" valign="top">DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a2b0ceaa2337a3d916d52ba0fe6f823bc">ADC_DMA_HANDLE</a> {}</td></tr>
 <tr class="separator:a2b0ceaa2337a3d916d52ba0fe6f823bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f1bce49bf6d1c2b0ab6be8bfc10219b"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a3f1bce49bf6d1c2b0ab6be8bfc10219b">ADC_TIM_HANDLE</a> {}</td></tr>
 <tr class="separator:a3f1bce49bf6d1c2b0ab6be8bfc10219b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a191cac90543a6fe4aa7a94e8134a184a"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a> = {}</td></tr>
-<tr class="separator:a191cac90543a6fe4aa7a94e8134a184a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9374215c588b74922836fbf5ab2602ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1clock.html">drv::clock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a> {}</td></tr>
-<tr class="separator:a9374215c588b74922836fbf5ab2602ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991f10f53fec7bf1caa79b8438ed01c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1brd.html#a958070df355afb0af5cd591aafa0449d">adc_pooler_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> { <a class="el" href="namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c">drv::ADC_SEQUENCE</a>, <a class="el" href="namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e">ADC_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#a2b0ceaa2337a3d916d52ba0fe6f823bc">ADC_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#a3f1bce49bf6d1c2b0ab6be8bfc10219b">ADC_TIM_HANDLE</a> }</td></tr>
+<tr class="separator:a991f10f53fec7bf1caa79b8438ed01c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fd563d901e739e49f3a9b8754686117"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1adc__pooler__period__cb.html">drv::adc_pooler_period_cb</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9fd563d901e739e49f3a9b8754686117">ADC_PERIOD_CB</a></td></tr>
+<tr class="separator:a9fd563d901e739e49f3a9b8754686117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a426f85a0dea9eb2dd9aa43e5f98f91e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1adc__pooler__vcc.html">drv::adc_pooler_vcc</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a426f85a0dea9eb2dd9aa43e5f98f91e0">ADC_VCC</a></td></tr>
+<tr class="separator:a426f85a0dea9eb2dd9aa43e5f98f91e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae55e8a68c2ed7497673cd487d93c0ef4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1adc__pooler__temperature.html">drv::adc_pooler_temperature</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ae55e8a68c2ed7497673cd487d93c0ef4">ADC_TEMPERATURE</a></td></tr>
+<tr class="separator:ae55e8a68c2ed7497673cd487d93c0ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5f38137289f200368426a1f7298b834"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1adc__pooler__position.html">drv::adc_pooler_position</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ae5f38137289f200368426a1f7298b834">ADC_POSITION</a></td></tr>
+<tr class="separator:ae5f38137289f200368426a1f7298b834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23deb8d32711e253336fa079cbff2dde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1adc__pooler__current.html">drv::adc_pooler_current</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a23deb8d32711e253336fa079cbff2dde">ADC_CURRENT</a></td></tr>
+<tr class="separator:a23deb8d32711e253336fa079cbff2dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94b7ae930f330eca472cc2d8756805cd"><td class="memItemLeft" align="right" valign="top">UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">UART2_HANDLE</a> {}</td></tr>
 <tr class="separator:a94b7ae930f330eca472cc2d8756805cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdc13d41584a6eddafd9efdb67617940"><td class="memItemLeft" align="right" valign="top">DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940">UART2_DMA_HANDLE</a> {}</td></tr>
 <tr class="separator:abdc13d41584a6eddafd9efdb67617940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ed63463e203d8f35b52cb533ff25b36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">COMMS</a> {}</td></tr>
+<tr class="memitem:a9ed63463e203d8f35b52cb533ff25b36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">COMMS</a> { &quot;comms&quot;, CENTRAL_SENTRY, <a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">UART2_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940">UART2_DMA_HANDLE</a> }</td></tr>
 <tr class="separator:a9ed63463e203d8f35b52cb533ff25b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae003e88b83b7e7fad39fff209ffcc4ef"><td class="memItemLeft" align="right" valign="top">UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">UART1_HANDLE</a> {}</td></tr>
 <tr class="separator:ae003e88b83b7e7fad39fff209ffcc4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2466f2f0e86115fb9b4b1b0bd00b21c"><td class="memItemLeft" align="right" valign="top">DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c">UART1_DMA_HANDLE</a> {}</td></tr>
 <tr class="separator:ab2466f2f0e86115fb9b4b1b0bd00b21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7acc0f3dbfde0575a7230b2a53744d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">DEBUG_COMMS</a> {}</td></tr>
+<tr class="memitem:ad7acc0f3dbfde0575a7230b2a53744d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">DEBUG_COMMS</a> { &quot;dcomms&quot;, CENTRAL_SENTRY, <a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">UART1_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c">UART1_DMA_HANDLE</a> }</td></tr>
 <tr class="separator:ad7acc0f3dbfde0575a7230b2a53744d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bce2edc1a38d3055b24c79c9b7a24fc"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc">TIM1_HANDLE</a> = {}</td></tr>
 <tr class="separator:a5bce2edc1a38d3055b24c79c9b7a24fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a667b31fa6ec529d3b42f5d74755336db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1hbridge.html">drv::hbridge</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">HBRIDGE</a> {}</td></tr>
+<tr class="memitem:a667b31fa6ec529d3b42f5d74755336db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1hbridge.html">drv::hbridge</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">HBRIDGE</a> { <a class="el" href="namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc">TIM1_HANDLE</a> }</td></tr>
 <tr class="separator:a667b31fa6ec529d3b42f5d74755336db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a9ba68956eb017a599db3ce8d3c109a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1leds.html">drv::leds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9a9ba68956eb017a599db3ce8d3c109a">LEDS</a> {}</td></tr>
-<tr class="separator:a9a9ba68956eb017a599db3ce8d3c109a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29918e98b54be5dc695e54e37e23f295"><td class="memItemLeft" align="right" valign="top">std::array&lt; em::view&lt; std::byte * &gt;, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a29918e98b54be5dc695e54e37e23f295">PERSISTENT_BLOCKS</a> { <a class="el" href="namespaceservio_1_1brd.html#a9d6115db9e0f265bcf31a4f0726bee91">page_at</a>( 0 ) }</td></tr>
 <tr class="separator:a29918e98b54be5dc695e54e37e23f295"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3461a2b66a48bb2ff01731378427b6e"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ad3461a2b66a48bb2ff01731378427b6e">TIM3_HANDLE</a> {}</td></tr>
@@ -530,6 +550,20 @@ yellow</td>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a958070df355afb0af5cd591aafa0449d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a958070df355afb0af5cd591aafa0449d">&#9670;&nbsp;</a></span>adc_pooler_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structservio_1_1drv_1_1adc__pooler.html">drv::adc_pooler</a>&lt; <a class="el" href="structservio_1_1drv_1_1adc__set.html">drv::adc_set</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43">CENTRAL_SENTRY</a> &gt; &gt; <a class="el" href="namespaceservio_1_1brd.html#a958070df355afb0af5cd591aafa0449d">servio::brd::adc_pooler_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7718b2b8ad07061e4449e50b08ccf825"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7718b2b8ad07061e4449e50b08ccf825">&#9670;&nbsp;</a></span>page</h2>
 
@@ -547,14 +581,14 @@ yellow</td>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a99340595767d8b9325d4473d593c7c33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99340595767d8b9325d4473d593c7c33">&#9670;&nbsp;</a></span>adc_pooler_setup()</h2>
+<a id="aff6bf773b950ff1a6a26be02ee4da8a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff6bf773b950ff1a6a26be02ee4da8a5">&#9670;&nbsp;</a></span>adc_pooler_setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structservio_1_1drv_1_1adc__pooler.html">drv::adc_pooler</a>&lt; <a class="el" href="structservio_1_1drv_1_1adc__set.html">drv::adc_set</a> &gt; * servio::brd::adc_pooler_setup </td>
+          <td class="memname"><a class="el" href="namespaceservio_1_1brd.html#a958070df355afb0af5cd591aafa0449d">adc_pooler_type</a> * servio::brd::adc_pooler_setup </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -562,7 +596,7 @@ yellow</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a2b0ceaa2337a3d916d52ba0fe6f823bc">ADC_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e">ADC_HANDLE</a>, <a class="el" href="namespaceservio_1_1plt.html#a7c17b619a35f4e0ff604967668babdb4">servio::plt::adc_cfg::adc_instance</a>, <a class="el" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">servio::drv::ADC_POOLER</a>, <a class="el" href="namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c">servio::drv::ADC_SEQUENCE</a>, <a class="el" href="namespaceservio_1_1brd.html#a3f1bce49bf6d1c2b0ab6be8bfc10219b">ADC_TIM_HANDLE</a>, <a class="el" href="namespaceservio_1_1cnv.html#a156a6f743a9b5e967ec0092c2e38156b">servio::cnv::current()</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="namespaceservio_1_1cnv.html#aacc77ecbce035e56513dcbdba3919ce5">servio::cnv::position()</a>, <a class="el" href="namespaceservio_1_1plt.html#a61d6b0c2150e342de64df4363ad4e8bc">servio::plt::setup_adc()</a>, <a class="el" href="namespaceservio_1_1plt.html#a04f200642c04256949e23ea736bbd57e">servio::plt::setup_adc_channel()</a>, and <a class="el" href="namespaceservio_1_1plt.html#ab59156a4d6fbd15217a26dc5ebed8b64">servio::plt::setup_adc_timer()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a2b0ceaa2337a3d916d52ba0fe6f823bc">ADC_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e">ADC_HANDLE</a>, <a class="el" href="namespaceservio_1_1plt.html#a7c17b619a35f4e0ff604967668babdb4">servio::plt::adc_cfg::adc_instance</a>, <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a>, <a class="el" href="namespaceservio_1_1brd.html#a3f1bce49bf6d1c2b0ab6be8bfc10219b">ADC_TIM_HANDLE</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="namespaceservio_1_1plt.html#a61d6b0c2150e342de64df4363ad4e8bc">servio::plt::setup_adc()</a>, <a class="el" href="namespaceservio_1_1plt.html#a04f200642c04256949e23ea736bbd57e">servio::plt::setup_adc_channel()</a>, and <a class="el" href="namespaceservio_1_1plt.html#ab59156a4d6fbd15217a26dc5ebed8b64">servio::plt::setup_adc_timer()</a>.</p>
 
 </div>
 </div>
@@ -656,7 +690,7 @@ yellow</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">COMMS</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a2412c39e4fe5c34f1b2032c02103a02c">servio::drv::cobs_uart::setup()</a>, <a class="el" href="namespaceservio_1_1brd.html#ab330172ec900f8e5a967b042c5d0fefb">setup_uart()</a>, <a class="el" href="namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940">UART2_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">UART2_HANDLE</a>, and <a class="el" href="namespaceservio_1_1plt.html#a2fefd453402afb93ffd0696664e4fe05">servio::plt::uart_cfg::uart_instance</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">COMMS</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, <a class="el" href="namespaceservio_1_1brd.html#ab330172ec900f8e5a967b042c5d0fefb">setup_uart()</a>, <a class="el" href="namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940">UART2_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">UART2_HANDLE</a>, and <a class="el" href="namespaceservio_1_1plt.html#a2fefd453402afb93ffd0696664e4fe05">servio::plt::uart_cfg::uart_instance</a>.</p>
 
 </div>
 </div>
@@ -736,7 +770,7 @@ yellow</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ac5f0039f77b404546b45518637a509dc">servio::drv::pinch_cfg::channel</a>, <a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">HBRIDGE</a>, <a class="el" href="classservio_1_1drv_1_1hbridge.html#aac9fc26699479a22110e9547653ee4db">servio::drv::hbridge::setup()</a>, <a class="el" href="namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c">servio::plt::setup_hbridge_timers()</a>, <a class="el" href="namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc">TIM1_HANDLE</a>, and <a class="el" href="namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673">servio::plt::hb_timer_cfg::timer_instance</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ac5f0039f77b404546b45518637a509dc">servio::drv::pinch_cfg::channel</a>, <a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">HBRIDGE</a>, <a class="el" href="classservio_1_1drv_1_1hbridge.html#aaa818f0bff60de49f5f40e38223147f5">servio::drv::hbridge::setup()</a>, <a class="el" href="namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c">servio::plt::setup_hbridge_timers()</a>, <a class="el" href="namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc">TIM1_HANDLE</a>, and <a class="el" href="namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673">servio::plt::hb_timer_cfg::timer_instance</a>.</p>
 
 </div>
 </div>
@@ -755,7 +789,7 @@ yellow</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ac5f0039f77b404546b45518637a509dc">servio::drv::pinch_cfg::channel</a>, <a class="el" href="namespaceservio_1_1brd.html#a9a9ba68956eb017a599db3ce8d3c109a">LEDS</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, <a class="el" href="classservio_1_1drv_1_1leds.html#a55d01b1440aece876a627c05f1052f58">servio::drv::leds::setup()</a>, <a class="el" href="namespaceservio_1_1plt.html#a5d1ffe876c5d8201cbbb029bb4e7e988">servio::plt::setup_gpio()</a>, <a class="el" href="namespaceservio_1_1plt.html#a25cf0c78aaa0a1eed2dda1c91f70fc0a">servio::plt::setup_leds_channel()</a>, and <a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ac5f0039f77b404546b45518637a509dc">servio::drv::pinch_cfg::channel</a>, <a class="el" href="namespaceservio_1_1brd.html#a9a9ba68956eb017a599db3ce8d3c109a">LEDS</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, <a class="el" href="classservio_1_1drv_1_1leds.html#acb58ce267a2894b14e05f5b18998f86b">servio::drv::leds::setup()</a>, <a class="el" href="namespaceservio_1_1plt.html#a5d1ffe876c5d8201cbbb029bb4e7e988">servio::plt::setup_gpio()</a>, <a class="el" href="namespaceservio_1_1plt.html#a25cf0c78aaa0a1eed2dda1c91f70fc0a">servio::plt::setup_leds_channel()</a>, and <a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a>.</p>
 
 </div>
 </div>
@@ -987,7 +1021,7 @@ yellow</td>
 
 <p>Initialize all core drivers for the servo. </p>
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#a97b4b3a83a87dd5203d5c5b77b30847b">servio::drv::ADC_CURRENT</a>, <a class="el" href="namespaceservio_1_1drv.html#a9c0891403afd1e3820e1192432e40f54">servio::drv::ADC_PERIOD_CB</a>, <a class="el" href="namespaceservio_1_1brd.html#a99340595767d8b9325d4473d593c7c33">adc_pooler_setup()</a>, <a class="el" href="namespaceservio_1_1drv.html#a3d87d21ffc72077e09ad988bf5f485ec">servio::drv::ADC_POSITION</a>, <a class="el" href="namespaceservio_1_1drv.html#a70c95638ac814ac28330c9c21dadab02">servio::drv::ADC_TEMPERATURE</a>, <a class="el" href="namespaceservio_1_1drv.html#ab0e909fed28a806840cfa5c8fad40ffa">servio::drv::ADC_VCC</a>, <a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#af752448b0cd20948bdf8b167bb7e79a0">servio::core::drivers::clock</a>, <a class="el" href="namespaceservio_1_1brd.html#aee366d78fb4dd7ae0e84ee4a28665113">comms_setup()</a>, <a class="el" href="namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc">hbridge_setup()</a>, <a class="el" href="namespaceservio_1_1fw.html#a90c6409041553b7ee9c0c25e6c24005e">servio::fw::install_stop_callback()</a>, <a class="el" href="namespaceservio_1_1brd.html#a8018a4a9a9bc9b1d4af53c14d646d4c8">leds_setup()</a>, <a class="el" href="classservio_1_1drv_1_1clock.html#ad0d21402b75659c896856ff3d3f776f8">servio::drv::clock::setup()</a>, <a class="el" href="namespaceservio_1_1plt.html#afa3ffb0666945381bc9735b671490daf">servio::plt::setup_clock_timer()</a>, <a class="el" href="namespaceservio_1_1brd.html#aac2ab253dd62c8d22e7504bd106c6283">start_callback()</a>, <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>, and <a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a23deb8d32711e253336fa079cbff2dde">ADC_CURRENT</a>, <a class="el" href="namespaceservio_1_1brd.html#a9fd563d901e739e49f3a9b8754686117">ADC_PERIOD_CB</a>, <a class="el" href="namespaceservio_1_1brd.html#aff6bf773b950ff1a6a26be02ee4da8a5">adc_pooler_setup()</a>, <a class="el" href="namespaceservio_1_1brd.html#ae5f38137289f200368426a1f7298b834">ADC_POSITION</a>, <a class="el" href="namespaceservio_1_1brd.html#ae55e8a68c2ed7497673cd487d93c0ef4">ADC_TEMPERATURE</a>, <a class="el" href="namespaceservio_1_1brd.html#a426f85a0dea9eb2dd9aa43e5f98f91e0">ADC_VCC</a>, <a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#af752448b0cd20948bdf8b167bb7e79a0">servio::core::drivers::clock</a>, <a class="el" href="namespaceservio_1_1brd.html#aee366d78fb4dd7ae0e84ee4a28665113">comms_setup()</a>, <a class="el" href="namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc">hbridge_setup()</a>, <a class="el" href="namespaceservio_1_1fw.html#a15f1de6194e5350c0ae52ddafe5ae2d6">servio::fw::install_stop_callback()</a>, <a class="el" href="namespaceservio_1_1brd.html#a8018a4a9a9bc9b1d4af53c14d646d4c8">leds_setup()</a>, <a class="el" href="namespaceservio_1_1plt.html#afa3ffb0666945381bc9735b671490daf">servio::plt::setup_clock_timer()</a>, <a class="el" href="namespaceservio_1_1brd.html#aac2ab253dd62c8d22e7504bd106c6283">start_callback()</a>, <a class="el" href="namespaceservio_1_1core.html#a50e4044e788144d8dde6f5c10ce3326a">servio::core::STOP_CALLBACK</a>, <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>, and <a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a>.</p>
 
 </div>
 </div>
@@ -1008,7 +1042,7 @@ yellow</td>
 
 <p>Initialize debug interface. </p>
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">DEBUG_COMMS</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a2412c39e4fe5c34f1b2032c02103a02c">servio::drv::cobs_uart::setup()</a>, <a class="el" href="namespaceservio_1_1brd.html#ab330172ec900f8e5a967b042c5d0fefb">setup_uart()</a>, <a class="el" href="namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c">UART1_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">UART1_HANDLE</a>, and <a class="el" href="namespaceservio_1_1plt.html#a2fefd453402afb93ffd0696664e4fe05">servio::plt::uart_cfg::uart_instance</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">DEBUG_COMMS</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, <a class="el" href="namespaceservio_1_1brd.html#ab330172ec900f8e5a967b042c5d0fefb">setup_uart()</a>, <a class="el" href="namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c">UART1_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">UART1_HANDLE</a>, and <a class="el" href="namespaceservio_1_1plt.html#a2fefd453402afb93ffd0696664e4fe05">servio::plt::uart_cfg::uart_instance</a>.</p>
 
 </div>
 </div>
@@ -1174,11 +1208,25 @@ yellow</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ab7c5719379b6d47d37726a1713f8519e">servio::drv::ADC_POOLER</a>, <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">COMMS</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a854fb8c2b8f5f799999afc201bbc6a92">servio::core::drivers::comms</a>, <a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">HBRIDGE</a>, <a class="el" href="namespaceservio_1_1brd.html#a9a9ba68956eb017a599db3ce8d3c109a">LEDS</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a2089ace05a4a1effb3bd28a30242c4d3">servio::core::drivers::leds</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a403dbd94d2a9816e80bed0a7886d3db4">servio::core::drivers::motor</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#ab79824599b2c846730b781f3854ab70c">servio::core::drivers::position</a>, <a class="el" href="classservio_1_1drv_1_1leds.html#af876d35e30904d36099d8a2fc9c897c3">servio::drv::leds::start()</a>, <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">servio::drv::cobs_uart::start()</a>, and <a class="el" href="classservio_1_1drv_1_1hbridge.html#a2611d86cd6ca0b3bb3930ac9221a6b91">servio::drv::hbridge::start()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a>, <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">COMMS</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a854fb8c2b8f5f799999afc201bbc6a92">servio::core::drivers::comms</a>, <a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">HBRIDGE</a>, <a class="el" href="namespaceservio_1_1brd.html#a9a9ba68956eb017a599db3ce8d3c109a">LEDS</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a2089ace05a4a1effb3bd28a30242c4d3">servio::core::drivers::leds</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a403dbd94d2a9816e80bed0a7886d3db4">servio::core::drivers::motor</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#ab79824599b2c846730b781f3854ab70c">servio::core::drivers::position</a>, <a class="el" href="structservio_1_1drv_1_1adc__pooler.html#a6f088b3c4b20f74a15db3ee2ae496500">servio::drv::adc_pooler&lt; Set &gt;::start()</a>, <a class="el" href="classservio_1_1drv_1_1leds.html#af876d35e30904d36099d8a2fc9c897c3">servio::drv::leds::start()</a>, <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">servio::drv::cobs_uart::start()</a>, and <a class="el" href="classservio_1_1drv_1_1hbridge.html#a2611d86cd6ca0b3bb3930ac9221a6b91">servio::drv::hbridge::start()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a23deb8d32711e253336fa079cbff2dde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23deb8d32711e253336fa079cbff2dde">&#9670;&nbsp;</a></span>ADC_CURRENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structservio_1_1drv_1_1adc__pooler__current.html">drv::adc_pooler_current</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt; servio::brd::ADC_CURRENT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2b0ceaa2337a3d916d52ba0fe6f823bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b0ceaa2337a3d916d52ba0fe6f823bc">&#9670;&nbsp;</a></span>ADC_DMA_HANDLE</h2>
 
@@ -1207,6 +1255,62 @@ yellow</td>
 
 </div>
 </div>
+<a id="a9fd563d901e739e49f3a9b8754686117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fd563d901e739e49f3a9b8754686117">&#9670;&nbsp;</a></span>ADC_PERIOD_CB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structservio_1_1drv_1_1adc__pooler__period__cb.html">drv::adc_pooler_period_cb</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt; servio::brd::ADC_PERIOD_CB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a991f10f53fec7bf1caa79b8438ed01c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a991f10f53fec7bf1caa79b8438ed01c1">&#9670;&nbsp;</a></span>ADC_POOLER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceservio_1_1brd.html#a958070df355afb0af5cd591aafa0449d">adc_pooler_type</a> servio::brd::ADC_POOLER { <a class="el" href="namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c">drv::ADC_SEQUENCE</a>, <a class="el" href="namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e">ADC_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#a2b0ceaa2337a3d916d52ba0fe6f823bc">ADC_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#a3f1bce49bf6d1c2b0ab6be8bfc10219b">ADC_TIM_HANDLE</a> }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5f38137289f200368426a1f7298b834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5f38137289f200368426a1f7298b834">&#9670;&nbsp;</a></span>ADC_POSITION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structservio_1_1drv_1_1adc__pooler__position.html">drv::adc_pooler_position</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt; servio::brd::ADC_POSITION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae55e8a68c2ed7497673cd487d93c0ef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae55e8a68c2ed7497673cd487d93c0ef4">&#9670;&nbsp;</a></span>ADC_TEMPERATURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structservio_1_1drv_1_1adc__pooler__temperature.html">drv::adc_pooler_temperature</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt; servio::brd::ADC_TEMPERATURE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3f1bce49bf6d1c2b0ab6be8bfc10219b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f1bce49bf6d1c2b0ab6be8bfc10219b">&#9670;&nbsp;</a></span>ADC_TIM_HANDLE</h2>
 
@@ -1221,6 +1325,43 @@ yellow</td>
 
 </div>
 </div>
+<a id="a426f85a0dea9eb2dd9aa43e5f98f91e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a426f85a0dea9eb2dd9aa43e5f98f91e0">&#9670;&nbsp;</a></span>ADC_VCC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structservio_1_1drv_1_1adc__pooler__vcc.html">drv::adc_pooler_vcc</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt; servio::brd::ADC_VCC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac9b4664ac58b840d2e0f97c5cc2bcf43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b4664ac58b840d2e0f97c5cc2bcf43">&#9670;&nbsp;</a></span>CENTRAL_SENTRY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classservio_1_1sntr_1_1central__sentry.html">sntr::central_sentry</a> servio::brd::CENTRAL_SENTRY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a>,</div>
+<div class="line">    <a class="code" href="namespaceservio_1_1brd.html#a6361cccb21edfbd0a060cf03dc67f2c3">INOPERABLE_RECORDS</a>,</div>
+<div class="line">    <a class="code" href="namespaceservio_1_1brd.html#a29e9ac3d0caab29dfd8e900b69801727">DEGRADED_RECORDS</a>,</div>
+<div class="line">    <a class="code" href="namespaceservio_1_1core.html#a50e4044e788144d8dde6f5c10ce3326a">core::STOP_CALLBACK</a> }</div>
+<div class="ttc" id="anamespaceservio_1_1brd_html_a29e9ac3d0caab29dfd8e900b69801727"><div class="ttname"><a href="namespaceservio_1_1brd.html#a29e9ac3d0caab29dfd8e900b69801727">servio::brd::DEGRADED_RECORDS</a></div><div class="ttdeci">std::array&lt; sntr::record, 128 &gt; DEGRADED_RECORDS</div><div class="ttdef"><b>Definition:</b> board.cpp:34</div></div>
+<div class="ttc" id="anamespaceservio_1_1brd_html_a6361cccb21edfbd0a060cf03dc67f2c3"><div class="ttname"><a href="namespaceservio_1_1brd.html#a6361cccb21edfbd0a060cf03dc67f2c3">servio::brd::INOPERABLE_RECORDS</a></div><div class="ttdeci">std::array&lt; sntr::record, 16 &gt; INOPERABLE_RECORDS</div><div class="ttdef"><b>Definition:</b> board.cpp:33</div></div>
+<div class="ttc" id="anamespaceservio_1_1brd_html_a9374215c588b74922836fbf5ab2602ca"><div class="ttname"><a href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">servio::brd::CLOCK</a></div><div class="ttdeci">drv::clock CLOCK</div><div class="ttdef"><b>Definition:</b> board.cpp:30</div></div>
+<div class="ttc" id="anamespaceservio_1_1core_html_a50e4044e788144d8dde6f5c10ce3326a"><div class="ttname"><a href="namespaceservio_1_1core.html#a50e4044e788144d8dde6f5c10ce3326a">servio::core::STOP_CALLBACK</a></div><div class="ttdeci">em::static_function&lt; void(), 16 &gt; STOP_CALLBACK</div><div class="ttdef"><b>Definition:</b> globals.cpp:6</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a9374215c588b74922836fbf5ab2602ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9374215c588b74922836fbf5ab2602ca">&#9670;&nbsp;</a></span>CLOCK</h2>
 
@@ -1228,7 +1369,7 @@ yellow</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classservio_1_1drv_1_1clock.html">drv::clock</a> servio::brd::CLOCK {}</td>
+          <td class="memname"><a class="el" href="classservio_1_1drv_1_1clock.html">drv::clock</a> servio::brd::CLOCK { <a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a> }</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1242,7 +1383,7 @@ yellow</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a> servio::brd::COMMS {}</td>
+          <td class="memname"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a> servio::brd::COMMS { &quot;comms&quot;, CENTRAL_SENTRY, <a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">UART2_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940">UART2_DMA_HANDLE</a> }</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1256,7 +1397,21 @@ yellow</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a> servio::brd::DEBUG_COMMS {}</td>
+          <td class="memname"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a> servio::brd::DEBUG_COMMS { &quot;dcomms&quot;, CENTRAL_SENTRY, <a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">UART1_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c">UART1_DMA_HANDLE</a> }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29e9ac3d0caab29dfd8e900b69801727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29e9ac3d0caab29dfd8e900b69801727">&#9670;&nbsp;</a></span>DEGRADED_RECORDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt; <a class="el" href="namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record">sntr::record</a>, 128 &gt; servio::brd::DEGRADED_RECORDS</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1270,7 +1425,21 @@ yellow</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classservio_1_1drv_1_1hbridge.html">drv::hbridge</a> servio::brd::HBRIDGE {}</td>
+          <td class="memname"><a class="el" href="classservio_1_1drv_1_1hbridge.html">drv::hbridge</a> servio::brd::HBRIDGE { <a class="el" href="namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc">TIM1_HANDLE</a> }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6361cccb21edfbd0a060cf03dc67f2c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6361cccb21edfbd0a060cf03dc67f2c3">&#9670;&nbsp;</a></span>INOPERABLE_RECORDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt; <a class="el" href="namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record">sntr::record</a>, 16 &gt; servio::brd::INOPERABLE_RECORDS</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1284,7 +1453,7 @@ yellow</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classservio_1_1drv_1_1leds.html">drv::leds</a> servio::brd::LEDS {}</td>
+          <td class="memname"><a class="el" href="classservio_1_1drv_1_1leds.html">drv::leds</a> servio::brd::LEDS { <a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a> }</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1409,7 +1578,7 @@ yellow</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1brd.html">brd</a></li>
-    <li class="footer">Generated on Tue Feb 27 2024 20:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Mar 6 2024 21:08:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

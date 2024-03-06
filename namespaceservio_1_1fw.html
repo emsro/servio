@@ -108,8 +108,6 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a90c6409041553b7ee9c0c25e6c24005e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a90c6409041553b7ee9c0c25e6c24005e">install_stop_callback</a> (<a class="el" href="classservio_1_1base_1_1leds__interface.html">base::leds_interface</a> *leds_ptr)</td></tr>
-<tr class="separator:a90c6409041553b7ee9c0c25e6c24005e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a677ad05ce4b297ac246595e7ecd06d9a"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a677ad05ce4b297ac246595e7ecd06d9a">handle_set_mode</a> (<a class="el" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> now, <a class="el" href="classservio_1_1ctl_1_1control.html">ctl::control</a> &amp;ctl, const Mode &amp;msg)</td></tr>
 <tr class="separator:a677ad05ce4b297ac246595e7ecd06d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8829c4973b8ffe1b90c4976dd52f5ede"><td class="memItemLeft" align="right" valign="top">Mode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a8829c4973b8ffe1b90c4976dd52f5ede">get_mode</a> (const <a class="el" href="classservio_1_1ctl_1_1control.html">ctl::control</a> &amp;ctl)</td></tr>
@@ -133,6 +131,8 @@ Functions</h2></td></tr>
 <tr class="separator:a5b2bdd32885a2db32522f11a3a73a0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a958bf350bbe8b27b5db135c8b6ea0909"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a958bf350bbe8b27b5db135c8b6ea0909">handle_message_packet</a> (<a class="el" href="namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher">dispatcher</a> &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
 <tr class="separator:a958bf350bbe8b27b5db135c8b6ea0909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f1de6194e5350c0ae52ddafe5ae2d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a15f1de6194e5350c0ae52ddafe5ae2d6">install_stop_callback</a> (auto &amp;target, <a class="el" href="classservio_1_1base_1_1pwm__motor__interface.html">base::pwm_motor_interface</a> &amp;motor, <a class="el" href="classservio_1_1base_1_1leds__interface.html">base::leds_interface</a> *leds_ptr)</td></tr>
+<tr class="separator:a15f1de6194e5350c0ae52ddafe5ae2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e6a4fc23a613fa7fb33e7b42c7e83a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1cfg_1_1payload.html">cfg::payload</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a4e6a4fc23a613fa7fb33e7b42c7e83a3">load_persistent_config</a> (em::view&lt; const <a class="el" href="namespaceservio_1_1fw.html#a9ab9831a5a3afe24212ba9b5e3bca857">page</a> * &gt; pages, <a class="el" href="namespaceservio_1_1cfg.html#a98eee67bc8174b65e3225bf2cadc29a7">cfg::map</a> &amp;cfg)</td></tr>
 <tr class="separator:a4e6a4fc23a613fa7fb33e7b42c7e83a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e5cfea2793f02c9a7aa9fbd14e00120"><td class="memTemplParams" colspan="2">template&lt;typename Cfg , typename UnaryFunction &gt; </td></tr>
@@ -179,7 +179,7 @@ Functions</h2></td></tr>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1fw_1_1dispatcher__coll__graph.svg" width="959" height="567"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1fw_1_1dispatcher__coll__graph.svg" width="947" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
@@ -792,8 +792,8 @@ vcc_drv</td>
 
 </div>
 </div>
-<a id="a90c6409041553b7ee9c0c25e6c24005e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90c6409041553b7ee9c0c25e6c24005e">&#9670;&nbsp;</a></span>install_stop_callback()</h2>
+<a id="a15f1de6194e5350c0ae52ddafe5ae2d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15f1de6194e5350c0ae52ddafe5ae2d6">&#9670;&nbsp;</a></span>install_stop_callback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -804,9 +804,25 @@ vcc_drv</td>
         <tr>
           <td class="memname">void servio::fw::install_stop_callback </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classservio_1_1base_1_1leds__interface.html">base::leds_interface</a> *&#160;</td>
-          <td class="paramname"><em>leds_ptr</em></td><td>)</td>
+          <td class="paramtype">auto &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classservio_1_1base_1_1pwm__motor__interface.html">base::pwm_motor_interface</a> &amp;&#160;</td>
+          <td class="paramname"><em>motor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classservio_1_1base_1_1leds__interface.html">base::leds_interface</a> *&#160;</td>
+          <td class="paramname"><em>leds_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -816,7 +832,7 @@ vcc_drv</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classservio_1_1base_1_1leds__interface.html#a962943ed0f907d1def260385b4985de3">servio::base::leds_interface::force_red_led()</a>, and <a class="el" href="namespaceservio_1_1core.html#a50e4044e788144d8dde6f5c10ce3326a">servio::core::STOP_CALLBACK</a>.</p>
+<p class="reference">References <a class="el" href="classservio_1_1base_1_1leds__interface.html#a962943ed0f907d1def260385b4985de3">servio::base::leds_interface::force_red_led()</a>, and <a class="el" href="classservio_1_1base_1_1pwm__motor__interface.html#ac3033984e5c61695196a5d2094bd9c95">servio::base::pwm_motor_interface::force_stop()</a>.</p>
 
 </div>
 </div>
@@ -1053,7 +1069,7 @@ template&lt;typename InputType , typename OutputType , typename Handle &gt; </di
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1fw.html">fw</a></li>
-    <li class="footer">Generated on Tue Feb 27 2024 20:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Mar 6 2024 21:08:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

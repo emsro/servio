@@ -102,11 +102,17 @@ $(document).ready(function(){initNavTree('structservio_1_1drv_1_1adc__channel.ht
 <div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1drv_1_1adc__channel__inherit__graph.svg" width="432" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::drv::adc_channel&lt; ID &gt;:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1drv_1_1adc__channel__coll__graph.svg" width="190" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a62c925b9b71611cf9ef4ac3cb05501ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84f">base::status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1adc__channel.html#a62c925b9b71611cf9ef4ac3cb05501ce">get_status</a> () const</td></tr>
-<tr class="separator:a62c925b9b71611cf9ef4ac3cb05501ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addb153a7d723e9d1e935dd07fd456f01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1adc__channel.html#addb153a7d723e9d1e935dd07fd456f01">period_start</a> (ADC_HandleTypeDef &amp;h)</td></tr>
 <tr class="separator:addb153a7d723e9d1e935dd07fd456f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ce47e9badd775a7886272e30c6c1595"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1adc__channel.html#a0ce47e9badd775a7886272e30c6c1595">period_stop</a> (ADC_HandleTypeDef &amp;)</td></tr>
@@ -116,16 +122,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a3039bc56cfcb389d036fab08e9a91add"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1sntr_1_1sentry.html">sntr::sentry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1adc__channel.html#a3039bc56cfcb389d036fab08e9a91add">sentry_</a></td></tr>
+<tr class="separator:a3039bc56cfcb389d036fab08e9a91add"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31f781d219a2cc4489adcbaba591da95"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1adc__channel.html#a31f781d219a2cc4489adcbaba591da95">last_value</a></td></tr>
 <tr class="separator:a31f781d219a2cc4489adcbaba591da95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad63d895784d81b6ae4949808c1413eb1"><td class="memItemLeft" align="right" valign="top">ADC_ChannelConfTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1adc__channel.html#ad63d895784d81b6ae4949808c1413eb1">chconf</a> = {}</td></tr>
 <tr class="separator:ad63d895784d81b6ae4949808c1413eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afffb12c6d4f3ca7761d06bbeee7ff646"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1adc__channel.html#afffb12c6d4f3ca7761d06bbeee7ff646">config_channel_error</a> = false</td></tr>
-<tr class="separator:afffb12c6d4f3ca7761d06bbeee7ff646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fc7c7888d06087e3f9b891289bf0675"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1adc__channel.html#a2fc7c7888d06087e3f9b891289bf0675">start_error</a> = false</td></tr>
-<tr class="separator:a2fc7c7888d06087e3f9b891289bf0675"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dc210fbc3dd657cfea5e3445e20b6e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1adc__channel.html#a6dc210fbc3dd657cfea5e3445e20b6e3">stop_error</a> = false</td></tr>
-<tr class="separator:a6dc210fbc3dd657cfea5e3445e20b6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -159,36 +161,7 @@ template&lt;auto ID&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a31f781d219a2cc4489adcbaba591da95">servio::drv::adc_channel&lt; ID &gt;::last_value</a>, and <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a6dc210fbc3dd657cfea5e3445e20b6e3">servio::drv::adc_channel&lt; ID &gt;::stop_error</a>.</p>
-
-</div>
-</div>
-<a id="a62c925b9b71611cf9ef4ac3cb05501ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62c925b9b71611cf9ef4ac3cb05501ce">&#9670;&nbsp;</a></span>get_status()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;auto ID&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84f">base::status</a> <a class="el" href="structservio_1_1drv_1_1adc__channel.html">servio::drv::adc_channel</a>&lt; ID &gt;::get_status </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="structservio_1_1drv_1_1adc__channel.html#afffb12c6d4f3ca7761d06bbeee7ff646">servio::drv::adc_channel&lt; ID &gt;::config_channel_error</a>, <a class="el" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84fac5666694e05e08a4ae3ab497591042fa">servio::base::INOPERABLE</a>, <a class="el" href="namespaceservio_1_1base.html#a5f9cb2507ae765f435474a3bb65bf84faaa2fa3fb4786079a4f8107ea393d609e">servio::base::NOMINAL</a>, <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a2fc7c7888d06087e3f9b891289bf0675">servio::drv::adc_channel&lt; ID &gt;::start_error</a>, and <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a6dc210fbc3dd657cfea5e3445e20b6e3">servio::drv::adc_channel&lt; ID &gt;::stop_error</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76ba67cfd4666bbb4520dd6b5e03b09187e5">servio::drv::ADC_POOLER_ISTOP_ERR</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218">servio::cfg::ID</a>, <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a31f781d219a2cc4489adcbaba591da95">servio::drv::adc_channel&lt; ID &gt;::last_value</a>, <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a3039bc56cfcb389d036fab08e9a91add">servio::drv::adc_channel&lt; ID &gt;::sentry_</a>, and <a class="el" href="classservio_1_1sntr_1_1sentry.html#a437c915013d9d4560e80e431f4689f9b">servio::sntr::sentry::set_inoperable()</a>.</p>
 
 </div>
 </div>
@@ -218,7 +191,7 @@ template&lt;auto ID&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structservio_1_1drv_1_1adc__channel.html#ad63d895784d81b6ae4949808c1413eb1">servio::drv::adc_channel&lt; ID &gt;::chconf</a>, <a class="el" href="structservio_1_1drv_1_1adc__channel.html#afffb12c6d4f3ca7761d06bbeee7ff646">servio::drv::adc_channel&lt; ID &gt;::config_channel_error</a>, and <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a2fc7c7888d06087e3f9b891289bf0675">servio::drv::adc_channel&lt; ID &gt;::start_error</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76ba82611ec514648359b9bf369d982b0966">servio::drv::ADC_POOLER_CFG_ERR</a>, <a class="el" href="namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76baacba2c1922260f5b588d9ddf67536d82">servio::drv::ADC_POOLER_ISTART_ERR</a>, <a class="el" href="structservio_1_1drv_1_1adc__channel.html#ad63d895784d81b6ae4949808c1413eb1">servio::drv::adc_channel&lt; ID &gt;::chconf</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218">servio::cfg::ID</a>, <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a3039bc56cfcb389d036fab08e9a91add">servio::drv::adc_channel&lt; ID &gt;::sentry_</a>, and <a class="el" href="classservio_1_1sntr_1_1sentry.html#a437c915013d9d4560e80e431f4689f9b">servio::sntr::sentry::set_inoperable()</a>.</p>
 
 </div>
 </div>
@@ -267,22 +240,6 @@ template&lt;auto ID&gt; </div>
 
 </div>
 </div>
-<a id="afffb12c6d4f3ca7761d06bbeee7ff646"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afffb12c6d4f3ca7761d06bbeee7ff646">&#9670;&nbsp;</a></span>config_channel_error</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;auto ID&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="structservio_1_1drv_1_1adc__channel.html">servio::drv::adc_channel</a>&lt; ID &gt;::config_channel_error = false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a1d45d45089ded04cd0fda5ebaf60204b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d45d45089ded04cd0fda5ebaf60204b">&#9670;&nbsp;</a></span>id</h2>
 
@@ -323,8 +280,8 @@ template&lt;auto ID&gt; </div>
 
 </div>
 </div>
-<a id="a2fc7c7888d06087e3f9b891289bf0675"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fc7c7888d06087e3f9b891289bf0675">&#9670;&nbsp;</a></span>start_error</h2>
+<a id="a3039bc56cfcb389d036fab08e9a91add"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3039bc56cfcb389d036fab08e9a91add">&#9670;&nbsp;</a></span>sentry_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -332,23 +289,7 @@ template&lt;auto ID&gt; </div>
 template&lt;auto ID&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="structservio_1_1drv_1_1adc__channel.html">servio::drv::adc_channel</a>&lt; ID &gt;::start_error = false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6dc210fbc3dd657cfea5e3445e20b6e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dc210fbc3dd657cfea5e3445e20b6e3">&#9670;&nbsp;</a></span>stop_error</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;auto ID&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="structservio_1_1drv_1_1adc__channel.html">servio::drv::adc_channel</a>&lt; ID &gt;::stop_error = false</td>
+          <td class="memname"><a class="el" href="classservio_1_1sntr_1_1sentry.html">sntr::sentry</a> <a class="el" href="structservio_1_1drv_1_1adc__channel.html">servio::drv::adc_channel</a>&lt; ID &gt;::sentry_</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -364,7 +305,7 @@ template&lt;auto ID&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="structservio_1_1drv_1_1adc__channel.html">adc_channel</a></li>
-    <li class="footer">Generated on Tue Feb 27 2024 20:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Mar 6 2024 21:08:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

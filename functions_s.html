@@ -86,9 +86,6 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_s"></a>- s -</h3><ul>
-<li>samples_overflow_error
-: <a class="el" href="structservio_1_1drv_1_1detailed__adc__channel.html#a67bdf80b69dc91d80aff5874f1b6c1a7">servio::drv::detailed_adc_channel&lt; ID, N &gt;</a>
-</li>
 <li>scale
 : <a class="el" href="namespaceservio_1_1brd.html#a676ee5c5fb5244cb243880c358a84b1f">servio::brd::off_scale</a>
 , <a class="el" href="namespaceservio_1_1cfg.html#a1e64cea163bc7cfbed23383830b2268e">servio::cfg::off_scale</a>
@@ -97,6 +94,13 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <li>send()
 : <a class="el" href="classservio_1_1base_1_1com__interface.html#a42624039762d960b8c38efb50bdb4ea8">servio::base::com_interface</a>
 , <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#aa8def388d6e54983524be8217315fde1">servio::drv::cobs_uart</a>
+</li>
+<li>sentry()
+: <a class="el" href="classservio_1_1sntr_1_1sentry.html#a71294ab5645f681158c13959bc308250">servio::sntr::sentry</a>
+</li>
+<li>sentry_
+: <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a3039bc56cfcb389d036fab08e9a91add">servio::drv::adc_channel&lt; ID &gt;</a>
+, <a class="el" href="structservio_1_1drv_1_1detailed__adc__channel.html#a9490be83ec1d8ba30bd7648cab5f7a6e">servio::drv::detailed_adc_channel&lt; ID, N &gt;</a>
 </li>
 <li>serialize_error()
 : <a class="el" href="structservio_1_1scmdio_1_1serialize__error.html#a639afe6c00326057bccb4773d5b1e12e">servio::scmdio::serialize_error</a>
@@ -112,9 +116,16 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>set_current_callback()
 : <a class="el" href="classservio_1_1base_1_1current__interface.html#a17696406a2734bbb0ed43e68cddab08a">servio::base::current_interface</a>
+, <a class="el" href="structservio_1_1drv_1_1adc__pooler__current.html#af69e18ab70a9d283f374bb8ad5e4a670">servio::drv::adc_pooler_current&lt; AdcPooler &gt;</a>
 </li>
 <li>set_current_cfg()
 : <a class="el" href="structservio_1_1cnv_1_1converter.html#af7ee3d58b58d9b929537758e313fc731">servio::cnv::converter</a>
+</li>
+<li>set_degraded()
+: <a class="el" href="classservio_1_1sntr_1_1sentry.html#a976f75a13b7759a068057d77458a892a">servio::sntr::sentry</a>
+</li>
+<li>set_inoperable()
+: <a class="el" href="classservio_1_1sntr_1_1sentry.html#a437c915013d9d4560e80e431f4689f9b">servio::sntr::sentry</a>
 </li>
 <li>set_limits()
 : <a class="el" href="classservio_1_1ctl_1_1control.html#a2a35888a1b188cb33e5f212732ae7f72">servio::ctl::control</a>
@@ -140,6 +151,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>set_position_callback()
 : <a class="el" href="classservio_1_1base_1_1position__interface.html#a17106ae1459d3898107ea6cfdedb7416">servio::base::position_interface</a>
+, <a class="el" href="structservio_1_1drv_1_1adc__pooler__position.html#a38ba661fd6b5097a141ddac467d024a9">servio::drv::adc_pooler_position&lt; AdcPooler &gt;</a>
 </li>
 <li>set_position_cfg()
 : <a class="el" href="structservio_1_1cnv_1_1converter.html#af1c4c51d1f390a59c93aae386f80e321">servio::cnv::converter</a>
@@ -171,11 +183,8 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 : <a class="el" href="classservio_1_1ctl_1_1tests_1_1control__fixture.html#a3b27f3f5df007705211c5a1a1add2df1">servio::ctl::tests::control_fixture</a>
 </li>
 <li>setup()
-: <a class="el" href="structservio_1_1drv_1_1adc__pooler.html#a71a5a10e425394c2b820f697abf3d9f6">servio::drv::adc_pooler&lt; Set &gt;</a>
-, <a class="el" href="classservio_1_1drv_1_1clock.html#ad0d21402b75659c896856ff3d3f776f8">servio::drv::clock</a>
-, <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a2412c39e4fe5c34f1b2032c02103a02c">servio::drv::cobs_uart</a>
-, <a class="el" href="classservio_1_1drv_1_1hbridge.html#aac9fc26699479a22110e9547653ee4db">servio::drv::hbridge</a>
-, <a class="el" href="classservio_1_1drv_1_1leds.html#a55d01b1440aece876a627c05f1052f58">servio::drv::leds</a>
+: <a class="el" href="classservio_1_1drv_1_1hbridge.html#aaa818f0bff60de49f5f40e38223147f5">servio::drv::hbridge</a>
+, <a class="el" href="classservio_1_1drv_1_1leds.html#acb58ce267a2894b14e05f5b18998f86b">servio::drv::leds</a>
 , <a class="el" href="structservio_1_1scmdio_1_1common__cli.html#a8efad675885c5e667ff8dfa954e62149">servio::scmdio::common_cli</a>
 </li>
 <li>simple_motor()
@@ -183,6 +192,12 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>size
 : <a class="el" href="namespaceservio_1_1klmn.html#a6012e20714154f03136eb5812a2abef2">servio::klmn::state_range</a>
+</li>
+<li>src
+: <a class="el" href="namespaceservio_1_1sntr.html#ad7affdf6bdcd1d05412b08366280f0f3">servio::sntr::record</a>
+</li>
+<li>st
+: <a class="el" href="namespaceservio_1_1sntr.html#ab2bae1b01c0a067f1bb5eed8f6b6f38c">servio::sntr::record</a>
 </li>
 <li>st_range
 : <a class="el" href="structservio_1_1mtr_1_1posvel__kalman.html#a16bbaa07f34c05010375ecc1b35a4a04">servio::mtr::posvel_kalman</a>
@@ -200,10 +215,6 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>start_cb
 : <a class="el" href="structservio_1_1core_1_1drivers.html#a9cd6cc7fd26299a79490b17151efe206">servio::core::drivers</a>
-</li>
-<li>start_error
-: <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a2fc7c7888d06087e3f9b891289bf0675">servio::drv::adc_channel&lt; ID &gt;</a>
-, <a class="el" href="structservio_1_1drv_1_1detailed__adc__channel.html#aa0165761bbec76699d0ef7f6f0feec2c">servio::drv::detailed_adc_channel&lt; ID, N &gt;</a>
 </li>
 <li>state
 : <a class="el" href="structservio_1_1ctl_1_1linear__transition__regulator.html#aecb19b527ceb961ed007cbbd7ed5aca0">servio::ctl::linear_transition_regulator</a>
@@ -230,10 +241,6 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 : <a class="el" href="classservio_1_1base_1_1period__interface.html#a80c24e3bdc4a5bf19ec84072b3f05ab1">servio::base::period_interface</a>
 , <a class="el" href="classservio_1_1drv_1_1hbridge.html#ac6ff7accf723c388d176c3295598233c">servio::drv::hbridge</a>
 </li>
-<li>stop_error
-: <a class="el" href="structservio_1_1drv_1_1adc__channel.html#a6dc210fbc3dd657cfea5e3445e20b6e3">servio::drv::adc_channel&lt; ID &gt;</a>
-, <a class="el" href="structservio_1_1drv_1_1detailed__adc__channel.html#a151b4ff85b111a2500edf4fde927724f">servio::drv::detailed_adc_channel&lt; ID, N &gt;</a>
-</li>
 <li>success
 : <a class="el" href="namespaceservio_1_1base.html#a8a3b55c2479447258def9ef1599c572e">servio::base::com_res</a>
 </li>
@@ -255,7 +262,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Feb 27 2024 20:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Mar 6 2024 21:08:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
