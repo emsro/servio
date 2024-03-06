@@ -39,6 +39,8 @@ central_sentry::central_sentry(
 
 void central_sentry::fire_inoperable()
 {
+        if ( is_inoperable_ )
+                return;
         is_inoperable_ = true;
         stop_callback_();
 }

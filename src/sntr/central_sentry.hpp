@@ -21,6 +21,11 @@ public:
             std::span< record >         degr_buffer,
             em::function_view< void() > stop_callback );
 
+        central_sentry( const central_sentry& )            = delete;
+        central_sentry( central_sentry&& )                 = delete;
+        central_sentry& operator=( const central_sentry& ) = delete;
+        central_sentry& operator=( central_sentry&& )      = delete;
+
         bool is_inoperable() const;
 
         void report_inoperable(

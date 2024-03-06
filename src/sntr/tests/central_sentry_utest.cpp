@@ -5,6 +5,11 @@
 namespace servio::sntr::tests
 {
 
+static_assert( !std::is_copy_constructible_v< central_sentry > );
+static_assert( !std::is_move_constructible_v< central_sentry > );
+static_assert( !std::is_copy_assignable_v< central_sentry > );
+static_assert( !std::is_move_assignable_v< central_sentry > );
+
 struct test_clk : base::clk_interface
 {
         base::microseconds t{ 0 };
