@@ -143,5 +143,12 @@ TEST_F( sentry_fixture, insert_wrong_code )
 //              - that we can store degraded indefinetly
 //              - that inoperable won't get removed
 //      multiple sentries
+//      functionality to iterate sentries from central
+//      central can monitor sentries for degraded
+//              - multiple sentries
+//              - degrade -> undegraded + combinations of sentries
+//      destructor behavior of sentry
+//      turn internal err message into constants and use in tests
+//
 
 }  // namespace servio::sntr::tests
