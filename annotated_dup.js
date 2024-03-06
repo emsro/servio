@@ -120,7 +120,8 @@ var annotated_dup =
       [ "sntr", "namespaceservio_1_1sntr.html", [
         [ "tests", "namespaceservio_1_1sntr_1_1tests.html", [
           [ "test_clk", "structservio_1_1sntr_1_1tests_1_1test__clk.html", "structservio_1_1sntr_1_1tests_1_1test__clk" ],
-          [ "central_sentry_fixture", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture" ]
+          [ "central_sentry_fixture", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture" ],
+          [ "sentry_fixture", "structservio_1_1sntr_1_1tests_1_1sentry__fixture.html", "structservio_1_1sntr_1_1tests_1_1sentry__fixture" ]
         ] ],
         [ "central_sentry", "classservio_1_1sntr_1_1central__sentry.html", "classservio_1_1sntr_1_1central__sentry" ],
         [ "record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", "namespaceservio_1_1sntr_structservio_1_1sntr_1_1record_dup" ],

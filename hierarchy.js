@@ -20,6 +20,7 @@ var hierarchy =
     [ "servio::fw::check_bool", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool", null ],
     [ "servio::base::clk_interface", "classservio_1_1base_1_1clk__interface.html", [
       [ "servio::drv::clock", "classservio_1_1drv_1_1clock.html", null ],
+      [ "servio::sntr::tests::test_clk", "structservio_1_1sntr_1_1tests_1_1test__clk.html", null ],
       [ "servio::sntr::tests::test_clk", "structservio_1_1sntr_1_1tests_1_1test__clk.html", null ]
     ] ],
     [ "servio::scmdio::cobs_port", "structservio_1_1scmdio_1_1cobs__port.html", null ],
@@ -100,7 +101,8 @@ var hierarchy =
     [ "testing::Test", null, [
       [ "servio::bb::bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", null ],
       [ "servio::ctl::tests::control_fixture", "classservio_1_1ctl_1_1tests_1_1control__fixture.html", null ],
-      [ "servio::sntr::tests::central_sentry_fixture", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html", null ]
+      [ "servio::sntr::tests::central_sentry_fixture", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html", null ],
+      [ "servio::sntr::tests::sentry_fixture", "structservio_1_1sntr_1_1tests_1_1sentry__fixture.html", null ]
     ] ],
     [ "servio::brd::uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", null ],
     [ "servio::plt::uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", null ],

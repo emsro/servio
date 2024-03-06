@@ -110,8 +110,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a018efe296df579ffecd8294a292e3aa6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1sntr.html#a018efe296df579ffecd8294a292e3aa6">ecode_set</a> = std::bitset&lt; <a class="el" href="namespaceservio_1_1sntr.html#a9cd819b8dac7557532809cf4f1a1f073">max_eid</a>+1 &gt;</td></tr>
-<tr class="separator:a018efe296df579ffecd8294a292e3aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e757550b0df521aba61bc3e670bf01b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1sntr.html#a7e757550b0df521aba61bc3e670bf01b">ecode_set</a> = std::bitset&lt; <a class="el" href="namespaceservio_1_1sntr.html#a68fe6c51104df03058593fa89c8269fb">eid_bits</a> &gt;</td></tr>
+<tr class="separator:a7e757550b0df521aba61bc3e670bf01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add926447d5598770f0aea4c4ecc6c6a8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1sntr.html#add926447d5598770f0aea4c4ecc6c6a8">data_type</a> = std::variant&lt; std::monostate, uint32_t, std::bitset&lt; 32 &gt; &gt;</td></tr>
 <tr class="separator:add926447d5598770f0aea4c4ecc6c6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -129,8 +129,14 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a9cd819b8dac7557532809cf4f1a1f073"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1sntr.html#a9cd819b8dac7557532809cf4f1a1f073">max_eid</a> = 31</td></tr>
+<tr class="memitem:a9cd819b8dac7557532809cf4f1a1f073"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1sntr.html#a9cd819b8dac7557532809cf4f1a1f073">max_eid</a> = 29</td></tr>
 <tr class="separator:a9cd819b8dac7557532809cf4f1a1f073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab752fd85ad1241ac8d43aa365f39d86"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1sntr.html#aab752fd85ad1241ac8d43aa365f39d86">terminated_eid</a> = 30</td></tr>
+<tr class="separator:aab752fd85ad1241ac8d43aa365f39d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06bb191b3311daa89a373b1505dc285b"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1sntr.html#a06bb191b3311daa89a373b1505dc285b">forbidden_eid</a> = 31</td></tr>
+<tr class="separator:a06bb191b3311daa89a373b1505dc285b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68fe6c51104df03058593fa89c8269fb"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1sntr.html#a68fe6c51104df03058593fa89c8269fb">eid_bits</a> = std::max( <a class="el" href="namespaceservio_1_1sntr.html#aab752fd85ad1241ac8d43aa365f39d86">terminated_eid</a>, <a class="el" href="namespaceservio_1_1sntr.html#a06bb191b3311daa89a373b1505dc285b">forbidden_eid</a> ) + 1</td></tr>
+<tr class="separator:a68fe6c51104df03058593fa89c8269fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1sntr_1_1record" id="structservio_1_1sntr_1_1record"></a>
@@ -149,7 +155,7 @@ Variables</h2></td></tr>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1sntr_1_1record__coll__graph.svg" width="203" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1sntr_1_1record__coll__graph.svg" width="179" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
@@ -161,7 +167,7 @@ data</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aa1af3176cd7400d360dab5c59db9c79a"></a><a class="el" href="namespaceservio_1_1sntr.html#a018efe296df579ffecd8294a292e3aa6">ecode_set</a></td>
+<a id="aa1af3176cd7400d360dab5c59db9c79a"></a><a class="el" href="namespaceservio_1_1sntr.html#a7e757550b0df521aba61bc3e670bf01b">ecode_set</a></td>
 <td class="fieldname">
 ecodes</td>
 <td class="fielddoc">
@@ -209,14 +215,14 @@ tp</td>
 
 </div>
 </div>
-<a id="a018efe296df579ffecd8294a292e3aa6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a018efe296df579ffecd8294a292e3aa6">&#9670;&nbsp;</a></span>ecode_set</h2>
+<a id="a7e757550b0df521aba61bc3e670bf01b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e757550b0df521aba61bc3e670bf01b">&#9670;&nbsp;</a></span>ecode_set</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1sntr.html#a018efe296df579ffecd8294a292e3aa6">servio::sntr::ecode_set</a> = typedef std::bitset&lt; <a class="el" href="namespaceservio_1_1sntr.html#a9cd819b8dac7557532809cf4f1a1f073">max_eid</a> + 1 &gt;</td>
+          <td class="memname">using <a class="el" href="namespaceservio_1_1sntr.html#a7e757550b0df521aba61bc3e670bf01b">servio::sntr::ecode_set</a> = typedef std::bitset&lt; <a class="el" href="namespaceservio_1_1sntr.html#a68fe6c51104df03058593fa89c8269fb">eid_bits</a> &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -252,6 +258,50 @@ tp</td>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a68fe6c51104df03058593fa89c8269fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68fe6c51104df03058593fa89c8269fb">&#9670;&nbsp;</a></span>eid_bits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::size_t servio::sntr::eid_bits = std::max( <a class="el" href="namespaceservio_1_1sntr.html#aab752fd85ad1241ac8d43aa365f39d86">terminated_eid</a>, <a class="el" href="namespaceservio_1_1sntr.html#a06bb191b3311daa89a373b1505dc285b">forbidden_eid</a> ) + 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a06bb191b3311daa89a373b1505dc285b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06bb191b3311daa89a373b1505dc285b">&#9670;&nbsp;</a></span>forbidden_eid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::size_t servio::sntr::forbidden_eid = 31</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9cd819b8dac7557532809cf4f1a1f073"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9cd819b8dac7557532809cf4f1a1f073">&#9670;&nbsp;</a></span>max_eid</h2>
 
@@ -262,7 +312,29 @@ tp</td>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::size_t servio::sntr::max_eid = 31</td>
+          <td class="memname">constexpr std::size_t servio::sntr::max_eid = 29</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab752fd85ad1241ac8d43aa365f39d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab752fd85ad1241ac8d43aa365f39d86">&#9670;&nbsp;</a></span>terminated_eid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::size_t servio::sntr::terminated_eid = 30</td>
         </tr>
       </table>
   </td>
@@ -280,7 +352,7 @@ tp</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1sntr.html">sntr</a></li>
-    <li class="footer">Generated on Wed Mar 6 2024 21:10:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Mar 6 2024 21:55:22 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

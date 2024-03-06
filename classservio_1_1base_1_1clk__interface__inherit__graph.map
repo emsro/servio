@@ -1,5 +1,5 @@
 <map id="servio::base::clk_interface" name="servio::base::clk_interface">
-<area shape="rect" id="node1" title=" " alt="" coords="53,5,247,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="132,5,325,32"/>
 <area shape="rect" id="node2" href="$classservio_1_1drv_1_1clock.html" title=" " alt="" coords="5,87,137,114"/>
 <area shape="rect" id="node3" href="$structservio_1_1sntr_1_1tests_1_1test__clk.html" title=" " alt="" coords="161,80,296,121"/>
 </map>
