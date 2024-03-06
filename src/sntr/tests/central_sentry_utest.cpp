@@ -120,6 +120,9 @@ TEST_F( central_sentry_fixture, one_inop_insert )
         EXPECT_EQ( buffer_b[0].data, data );
 
         EXPECT_EQ( buffer_b[1].st, record_state::UNSET );
+
+        cs.report_degraded( src, ecodes, emsg, data );
+        EXPECT_TRUE( cs.is_inoperable() );
 }
 
 }  // namespace servio::sntr::tests
