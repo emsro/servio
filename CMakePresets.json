@@ -13,6 +13,19 @@
             }
         },
         {
+            "name": "host_asan_cfg",
+            "generator": "Ninja",
+            "binaryDir": "build/asan",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "SERVIO_PLATFORM": "host",
+                "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
+                "CMAKE_C_FLAGS": "-fsanitize=address",
+                "CMAKE_CXX_FLAGS": "-fsanitize=address"
+            }
+        },
+        {
             "name": "stm32g4_debug_cfg",
             "generator": "Ninja",
             "binaryDir": "build/g4/",
@@ -41,6 +54,10 @@
         {
             "name": "host_debug_build",
             "configurePreset": "host_debug_cfg"
+        },
+        {
+            "name": "host_asan_build",
+            "configurePreset": "host_asan_cfg"
         },
         {
             "name": "stm32g4_debug_build",
