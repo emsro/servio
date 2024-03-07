@@ -24,14 +24,11 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   set(CMAKE_CXX_FLAGS
-      "${CMAKE_CXX_FLAGS} -fsingle-precision-constant  -Fno-rtti -fno-exceptions -gdwarf-2"
-  )
+      "${CMAKE_CXX_FLAGS} -fsingle-precision-constant -gdwarf-2")
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsingle-precision-constant -gdwarf-2")
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   set(SERVIO_SHARED_FLAGS "-fsingle-precision-constant -gdwarf-2")
-  set(CMAKE_CXX_FLAGS
-      "${CMAKE_CXX_FLAGS} ${SERVIO_SHARED_FLAGS} -Fno-rtti -fno-exceptions -gdwarf-2"
-  )
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SERVIO_SHARED_FLAGS} -gdwarf-2")
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SERVIO_SHARED_FLAGS}")
 endif()
 
