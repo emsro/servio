@@ -149,6 +149,6 @@ TEST_F( sentry_fixture, insert_wrong_code )
 //              - degrade -> undegraded + combinations of sentries
 //      destructor behavior of sentry
 //      turn internal err message into constants and use in tests
-//
+//      enable sanitizers for tests
 
 }  // namespace servio::sntr::tests
