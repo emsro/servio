@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"globals_a.html":[9,1,0,1],
 "globals_b.html":[9,1,0,2],
 "globals_c.html":[9,1,0,3],
 "globals_d.html":[9,1,0,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "namespaceservio_1_1base_1_1literals.html":[7,0,1,0,0],
 "namespaceservio_1_1base_1_1literals.html#a074c68b8fb6e24366ae33ad73ebc45ea":[7,0,1,0,0,2],
 "namespaceservio_1_1base_1_1literals.html#a0a87b6e418a675e2aaa6d7d7e627e704":[7,0,1,0,0,0],
-"namespaceservio_1_1base_1_1literals.html#ad91b3148e4b6900c2ab4d30f5bae6298":[7,0,1,0,0,1]
+"namespaceservio_1_1base_1_1literals.html#ad91b3148e4b6900c2ab4d30f5bae6298":[7,0,1,0,0,1],
+"namespaceservio_1_1bb.html":[7,0,1,1]
 };
