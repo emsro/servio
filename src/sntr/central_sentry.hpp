@@ -1,7 +1,7 @@
 #pragma once
 
 #include "base/drv_interfaces.hpp"
-#include "sntr/base.hpp"
+#include "sntr/central_sentry_iface.hpp"
 #include "sntr/record.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
@@ -12,7 +12,7 @@ namespace em = emlabcpp;
 namespace servio::sntr
 {
 
-class central_sentry
+class central_sentry : public central_sentry_iface
 {
 public:
         central_sentry(
@@ -26,19 +26,19 @@ public:
         central_sentry& operator=( const central_sentry& ) = delete;
         central_sentry& operator=( central_sentry&& )      = delete;
 
-        bool is_inoperable() const;
+        bool is_inoperable() const override;
 
         void report_inoperable(
             const char*      src,
             ecode_set        ecodes,
             const char*      emsg,
-            const data_type& data );
+            const data_type& data ) override;
 
         void report_degraded(
             const char*      src,
             ecode_set        ecodes,
             const char*      emsg,
-            const data_type& data );
+            const data_type& data ) override;
 
 private:
         void fire_inoperable();

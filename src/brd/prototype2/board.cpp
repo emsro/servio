@@ -42,12 +42,12 @@ drv::adc_pooler_current< ADC_POOLER >     ADC_CURRENT;
 
 UART_HandleTypeDef UART2_HANDLE{};
 DMA_HandleTypeDef  UART2_DMA_HANDLE{};
-drv::cobs_uart     COMMS{ "comms", CENTRAL_SENTRY, UART2_HANDLE, UART2_DMA_HANDLE };
+drv::cobs_uart     COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART2_HANDLE, &UART2_DMA_HANDLE };
 UART_HandleTypeDef UART1_HANDLE{};
 DMA_HandleTypeDef  UART1_DMA_HANDLE{};
-drv::cobs_uart     DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, UART1_HANDLE, UART1_DMA_HANDLE };
+drv::cobs_uart     DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, &UART1_DMA_HANDLE };
 TIM_HandleTypeDef  TIM1_HANDLE{};
-drv::hbridge       HBRIDGE{ TIM1_HANDLE };
+drv::hbridge       HBRIDGE{ &TIM1_HANDLE };
 TIM_HandleTypeDef  TIM3_HANDLE{};
 drv::leds          LEDS{ TIM3_HANDLE };
 

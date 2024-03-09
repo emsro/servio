@@ -1,11 +1,11 @@
 #include "base/drv_interfaces.hpp"
+#include "drv/bits/cobs_rx_container.h"
 #include "platform.hpp"
 #include "sntr/sentry.hpp"
 
 #include <emlabcpp/experimental/cobs.h>
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/result.h>
-#include <emlabcpp/static_circular_buffer.h>
 
 #pragma once
 
@@ -25,10 +25,11 @@ class cobs_uart : public base::com_interface
 
 public:
         cobs_uart(
-            const char*           id,
-            sntr::central_sentry& central,
-            UART_HandleTypeDef&   uart,
-            DMA_HandleTypeDef&    tx_dma );
+            const char*                 id,
+            sntr::central_sentry_iface& central,
+            base::clk_interface&        clk,
+            UART_HandleTypeDef*         uart,
+            DMA_HandleTypeDef*          tx_dma );
 
         cobs_uart( const cobs_uart& )            = delete;
         cobs_uart( cobs_uart&& )                 = delete;
@@ -43,14 +44,15 @@ public:
 
         em::result start() override;
 
-        em::result send( em::view< const std::byte* > data ) override;
+        em::result send( em::view< const std::byte* > data, base::microseconds timeout ) override;
 
-private:
         // we tolerate overrun, dma, frame, noise error - we can recover
         static constexpr uint32_t tolerable_hal_errors =
             HAL_UART_ERROR_ORE | HAL_UART_ERROR_DMA | HAL_UART_ERROR_FE | HAL_UART_ERROR_NE;
 
-        sntr::sentry sentry_;
+private:
+        sntr::sentry         sentry_;
+        base::clk_interface& clk_;
 
         UART_HandleTypeDef* uart_   = nullptr;
         DMA_HandleTypeDef*  tx_dma_ = nullptr;
@@ -58,21 +60,20 @@ private:
         volatile bool                tx_done_ = true;
         std::array< std::byte, 128 > tx_buffer_;
 
-        uint16_t                                     received_size_ = 0;
-        em::cobs_decoder                             cobs_dec_;
-        std::byte                                    rx_byte_;
-        em::static_circular_buffer< std::byte, 256 > rx_buffer_;
-        em::static_circular_buffer< uint16_t, 8 >    rx_sizes_;
+        std::byte               rx_byte_;
+        bits::cobs_rx_container rx_;
 };
 
 inline cobs_uart::cobs_uart(
-    const char*           id,
-    sntr::central_sentry& central,
-    UART_HandleTypeDef&   uart,
-    DMA_HandleTypeDef&    tx_dma )
+    const char*                 id,
+    sntr::central_sentry_iface& central,
+    base::clk_interface&        clk,
+    UART_HandleTypeDef*         uart,
+    DMA_HandleTypeDef*          tx_dma )
   : sentry_( id, central )
-  , uart_( &uart )
-  , tx_dma_( &tx_dma )
+  , clk_( clk )
+  , uart_( uart )
+  , tx_dma_( tx_dma )
 {
 }
 
@@ -81,19 +82,8 @@ inline void cobs_uart::rx_cplt_irq( UART_HandleTypeDef* huart )
         if ( huart != uart_ )
                 return;
 
-        if ( rx_byte_ == std::byte{ 0 } ) {
-                rx_sizes_.push_back( received_size_ - 1 );
-                received_size_ = 0;
-        } else if ( received_size_ == 0 ) {
-                cobs_dec_ = em::cobs_decoder{ rx_byte_ };
-                received_size_ += 1;
-        } else {
-                const std::optional< std::byte > b = cobs_dec_.iter( rx_byte_ );
-                if ( b.has_value() ) {
-                        received_size_ += 1;
-                        rx_buffer_.push_back( *b );
-                }
-        }
+        bits::on_rx_cplt_irq( rx_, rx_byte_ );
+
         if ( start() != em::SUCCESS )
                 sentry_.set_inoperable( COBS_HAL_RX_START_ERR, "rx start" );
 }
@@ -119,6 +109,8 @@ inline void cobs_uart::err_irq( UART_HandleTypeDef* huart )
 
 inline em::result cobs_uart::start()
 {
+        if ( uart_ == nullptr )
+                return em::ERROR;
         if ( HAL_UART_Receive_IT( uart_, reinterpret_cast< uint8_t* >( &rx_byte_ ), 1 ) != HAL_OK )
                 return em::ERROR;
         return em::SUCCESS;

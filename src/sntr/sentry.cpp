@@ -1,10 +1,8 @@
 #include "sntr/sentry.hpp"
 
-#include "sntr/central_sentry.hpp"
-
 namespace servio::sntr
 {
-sentry::sentry( const char* source_id, central_sentry& central )
+sentry::sentry( const char* source_id, central_sentry_iface& central )
   : source_id_( source_id )
   , central_( central )
 {

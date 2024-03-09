@@ -101,7 +101,7 @@ struct adc_channel
 template < auto ID >
 struct adc_channel_with_callback : adc_channel< ID >
 {
-        adc_channel_with_callback( const char* id, sntr::central_sentry& central )
+        adc_channel_with_callback( const char* id, sntr::central_sentry_iface& central )
           : adc_channel< ID >( { id, central } )
         {
         }
@@ -162,7 +162,6 @@ struct adc_pooler
                         return;
                 const auto active_id = sequence_[sequence_i_];
                 with( active_id, [&]( auto& item ) {
-                        // TODO: error handling?
                         item.conv_cplt( *adc_ );
                 } );
         }

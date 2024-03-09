@@ -37,15 +37,21 @@ struct com_res
 {
         bool                   success;
         em::view< std::byte* > used_data;
+
+        operator std::tuple< bool&, em::view< std::byte* >& >()
+        {
+                return std::tie( success, used_data );
+        }
 };
 
 class com_interface
 {
 public:
-        virtual em::result start()                                     = 0;
-        virtual em::result send( em::view< const std::byte* > data )   = 0;
-        virtual com_res    load_message( em::view< std::byte* > data ) = 0;
-        virtual ~com_interface()                                       = default;
+        virtual em::result start() = 0;
+        virtual em::result
+                        send( em::view< const std::byte* > data, base::microseconds timeout ) = 0;
+        virtual com_res load_message( em::view< std::byte* > data )                           = 0;
+        virtual ~com_interface() = default;
 };
 
 class leds_interface

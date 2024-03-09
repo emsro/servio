@@ -15,6 +15,7 @@ std::byte OUTPUT_BUFFER[ServioToHostPacket_size];
 int main()
 {
         using namespace servio;
+        using namespace servio::base::literals;
 
         if ( brd::setup_board() != em::SUCCESS )
                 fw::stop_exec();
@@ -75,7 +76,7 @@ int main()
 
                 if ( succ == em::ERROR )
                         fw::stop_exec();
-                if ( cdrv.comms->send( odata ) != em::SUCCESS )
+                if ( cdrv.comms->send( odata, 100_ms ) != em::SUCCESS )
                         fw::stop_exec();
         }
 }

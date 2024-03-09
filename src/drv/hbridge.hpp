@@ -18,9 +18,9 @@ inline base::empty_period_cb EMPTY_PERIOD_CB;
 class hbridge : public base::pwm_motor_interface, public base::period_interface
 {
 public:
-        hbridge( TIM_HandleTypeDef& tim )
+        hbridge( TIM_HandleTypeDef* tim )
           : period_cb_( &EMPTY_PERIOD_CB )
-          , tim_( &tim )
+          , tim_( tim )
         {
         }
 

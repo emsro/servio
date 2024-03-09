@@ -7,7 +7,6 @@
 #include <magic_enum.hpp>
 #include <type_traits>
 #include <typeindex>
-#include <typeinfo>
 #include <variant>
 
 namespace servio::tests

@@ -30,6 +30,11 @@ namespace literals
         {
                 return microseconds{ static_cast< uint32_t >( usecs ) };
         }
+
+        constexpr std::byte operator""_b( unsigned long long int b )
+        {
+                return std::byte{ static_cast< uint8_t >( b ) };
+        }
 }  // namespace literals
 
 using namespace literals;
