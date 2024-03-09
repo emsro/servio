@@ -204,7 +204,7 @@ drv::hbridge* hbridge_setup()
         __HAL_RCC_GPIOB_CLK_ENABLE();
         plt::hb_timer_cfg cfg{
             .timer_instance = TIM1,
-            .period         = std::numeric_limits< uint16_t >::max() / 8,
+            .period         = std::numeric_limits< uint16_t >::max() / 2,
             .irq            = TIM1_UP_IRQn,
             .irq_priority   = 0,
             .mc1 =

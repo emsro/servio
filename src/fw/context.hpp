@@ -16,6 +16,11 @@ struct context
         core::core               core;
         core::standard_callbacks scbs;
         cfg::dispatcher          cfg_dis;
+
+        void tick()
+        {
+                core.tick( *cdrv.leds, cdrv.clock->get_us() );
+        }
 };
 
 context setup_context();

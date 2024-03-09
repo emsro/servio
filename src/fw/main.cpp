@@ -1,5 +1,5 @@
+#include "fw/context.hpp"
 #include "fw/servio_pb.hpp"
-#include "fw/setup.hpp"
 #include "fw/store_persistent_config.hpp"
 
 std::byte INPUT_BUFFER[HostToServioPacket_size];
@@ -15,8 +15,7 @@ int main()
 
         fw::context ctx = fw::setup_context();
         while ( true ) {
-
-                ctx.core.tick( *ctx.cdrv.leds, ctx.cdrv.clock->get_us() );
+                ctx.tick();
 
                 fw::persistent_config_writer cfg_writer{ ctx.cfg.last_payload, ctx.cfg.pages };
 

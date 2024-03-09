@@ -37,7 +37,9 @@ struct detailed_adc_channel
         [[gnu::flatten]] void period_start( ADC_HandleTypeDef& h )
         {
                 if ( HAL_ADC_ConfigChannel( &h, &chconf ) != HAL_OK )
-                        sentry_.set_inoperable( ADC_POOLER_CFG_ERR, "hal cfg err", ID );
+                        return;
+                // todo: re-enable this
+                // sentry_.set_inoperable( ADC_POOLER_CFG_ERR, "hal cfg err", ID );
                 if ( HAL_ADC_Start_DMA( &h, reinterpret_cast< uint32_t* >( &buffer ), N ) !=
                      HAL_OK ) {
                         sentry_.set_inoperable( ADC_POOLER_DSTART_ERR, "hal dstart err", ID );
