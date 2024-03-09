@@ -2,6 +2,7 @@ var namespaceservio_1_1sntr =
 [
     [ "tests", "namespaceservio_1_1sntr_1_1tests.html", "namespaceservio_1_1sntr_1_1tests" ],
     [ "central_sentry", "classservio_1_1sntr_1_1central__sentry.html", "classservio_1_1sntr_1_1central__sentry" ],
+    [ "central_sentry_iface", "structservio_1_1sntr_1_1central__sentry__iface.html", "structservio_1_1sntr_1_1central__sentry__iface" ],
     [ "record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", "namespaceservio_1_1sntr_structservio_1_1sntr_1_1record_dup" ],
     [ "sentry", "classservio_1_1sntr_1_1sentry.html", "classservio_1_1sntr_1_1sentry" ],
     [ "data_type", "namespaceservio_1_1sntr.html#add926447d5598770f0aea4c4ecc6c6a8", null ],

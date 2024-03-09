@@ -60,6 +60,8 @@ var NAVTREE =
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -79,13 +81,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc__pooler_8hpp.html",
-"classservio_1_1mon_1_1monitor.html",
-"globals_b.html",
-"namespaceservio_1_1bb.html#a55e689a164b2fcb5d85f51df39772710",
-"namespaceservio_1_1fw.html#aeb851eece19778a49f0561bd8c16aea6",
-"proto3_2board_8cpp.html#a9d6115db9e0f265bcf31a4f0726bee91",
-"stm32h5xx__hal__conf_8h.html#a450c131e38ad410884575918a021576f",
-"structservio_1_1drv_1_1detailed__adc__channel.html#af780e6e5c11f56ae70521efc5137259a"
+"classservio_1_1mon_1_1indication.html#a26ecc3736d0ec32e0a42f254baa5e739",
+"fw_2dispatcher_8hpp.html",
+"namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552ea90b4ba73224408e82ade8a072a3712c1",
+"namespaceservio_1_1fw.html#a360603de771fc0f6d7cb7bfa7caf6da8",
+"proto3_2board_8cpp.html#a2668116163a78a9f1c4b9993fce25530",
+"stm32g4xx__hal__conf_8h.html#aeafcff4f57440c60e64812dddd13e7cb",
+"structservio_1_1drv_1_1adc__pooler.html#a5f8465839a30b1db2cca7dc463bb327b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

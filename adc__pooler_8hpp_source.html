@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('adc__pooler_8hpp_source.html',''); ini
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">template</span> &lt; auto ID &gt;</div>
 <div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1adc__channel__with__callback.html">  102</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structservio_1_1drv_1_1adc__channel__with__callback.html">adc_channel_with_callback</a> : <a class="code" href="structservio_1_1drv_1_1adc__channel.html">adc_channel</a>&lt; ID &gt;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1adc__channel__with__callback.html#a2338ad217d922ea19028d8f30ed6883f">  104</a></span>&#160;        <a class="code" href="structservio_1_1drv_1_1adc__channel__with__callback.html#a2338ad217d922ea19028d8f30ed6883f">adc_channel_with_callback</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keywordtype">id</span>, <a class="code" href="classservio_1_1sntr_1_1central__sentry.html">sntr::central_sentry</a>&amp; central )</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1adc__channel__with__callback.html#ae6d10ad5eef195cf313251108c15efb9">  104</a></span>&#160;        <a class="code" href="structservio_1_1drv_1_1adc__channel__with__callback.html#ae6d10ad5eef195cf313251108c15efb9">adc_channel_with_callback</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keywordtype">id</span>, <a class="code" href="structservio_1_1sntr_1_1central__sentry__iface.html">sntr::central_sentry_iface</a>&amp; central )</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;          : <a class="code" href="structservio_1_1drv_1_1adc__channel.html">adc_channel</a>&lt; <a class="code" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218">ID</a> &gt;( { <a class="code" href="structservio_1_1drv_1_1adc__channel.html#a1d45d45089ded04cd0fda5ebaf60204b">id</a>, central } )</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
@@ -251,56 +251,54 @@ $(document).ready(function(){initNavTree('adc__pooler_8hpp_source.html',''); ini
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> active_id = sequence_[sequence_i_];</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                with( active_id, [&amp;]( <span class="keyword">auto</span>&amp; item ) {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        <span class="comment">// TODO: error handling?</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        item.conv_cplt( *adc_ );</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                } );</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1adc__pooler.html#af4303b8347974ca47f979e64733ed682">  170</a></span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> <a class="code" href="structservio_1_1drv_1_1adc__pooler.html#af4303b8347974ca47f979e64733ed682">on_period_irq</a>()</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keyword">auto</span> active_id = sequence_[sequence_i_];</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                with( active_id, [&amp;]( <span class="keyword">auto</span>&amp; item ) {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        item.period_stop( *adc_ );</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                } );</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                sequence_i_ = ( sequence_i_ + 1 ) % sequence_.size();</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                active_id   = sequence_[sequence_i_];</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                with( active_id, [&amp;]( <span class="keyword">auto</span>&amp; item ) {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                        item.period_start( *adc_ );</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                } );</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        }</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> with( <a class="code" href="structservio_1_1drv_1_1adc__pooler.html#ac5be031b859137067c988267ea81e3ef">id_type</a> set_id, <span class="keyword">auto</span>&amp;&amp; f )</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                em::for_each( set_.tie(), [&amp;]&lt; <span class="keyword">typename</span> T &gt;( T&amp; item ) {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                        if ( T::id == set_id )</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                                f( item );</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                } );</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        ADC_HandleTypeDef* adc_ = {};</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        DMA_HandleTypeDef* dma_ = {};</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        TIM_HandleTypeDef* tim_ = {};</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        std::size_t sequence_i_ = 0;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        em::view&lt; const id_type* &gt; sequence_;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        Set                        set_;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;};</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        item.conv_cplt( *adc_ );</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                } );</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1adc__pooler.html#af4303b8347974ca47f979e64733ed682">  169</a></span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> <a class="code" href="structservio_1_1drv_1_1adc__pooler.html#af4303b8347974ca47f979e64733ed682">on_period_irq</a>()</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keyword">auto</span> active_id = sequence_[sequence_i_];</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                with( active_id, [&amp;]( <span class="keyword">auto</span>&amp; item ) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                        item.period_stop( *adc_ );</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                } );</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                sequence_i_ = ( sequence_i_ + 1 ) % sequence_.size();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                active_id   = sequence_[sequence_i_];</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                with( active_id, [&amp;]( <span class="keyword">auto</span>&amp; item ) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                        item.period_start( *adc_ );</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                } );</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> with( <a class="code" href="structservio_1_1drv_1_1adc__pooler.html#ac5be031b859137067c988267ea81e3ef">id_type</a> set_id, <span class="keyword">auto</span>&amp;&amp; f )</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                em::for_each( set_.tie(), [&amp;]&lt; <span class="keyword">typename</span> T &gt;( T&amp; item ) {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                        if ( T::id == set_id )</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                                f( item );</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                } );</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        ADC_HandleTypeDef* adc_ = {};</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        DMA_HandleTypeDef* dma_ = {};</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        TIM_HandleTypeDef* tim_ = {};</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        std::size_t sequence_i_ = 0;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        em::view&lt; const id_type* &gt; sequence_;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        Set                        set_;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;};</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
 <div class="ttc" id="abase_2callbacks_8hpp_html"><div class="ttname"><a href="base_2callbacks_8hpp.html">callbacks.hpp</a></div></div>
 <div class="ttc" id="aclassservio_1_1base_1_1adc__detailed__cb__interface_html"><div class="ttname"><a href="classservio_1_1base_1_1adc__detailed__cb__interface.html">servio::base::adc_detailed_cb_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:13</div></div>
 <div class="ttc" id="aclassservio_1_1base_1_1adc__detailed__cb__interface_html_ae809fd0d731c8781b831a9931fac69eb"><div class="ttname"><a href="classservio_1_1base_1_1adc__detailed__cb__interface.html#ae809fd0d731c8781b831a9931fac69eb">servio::base::adc_detailed_cb_interface::on_value_irq</a></div><div class="ttdeci">virtual void on_value_irq(uint32_t val, std::span&lt; uint16_t &gt; profile)=0</div></div>
 <div class="ttc" id="aclassservio_1_1base_1_1value__cb__interface_html"><div class="ttname"><a href="classservio_1_1base_1_1value__cb__interface.html">servio::base::value_cb_interface</a></div><div class="ttdef"><b>Definition:</b> drv_interfaces.hpp:20</div></div>
 <div class="ttc" id="aclassservio_1_1base_1_1value__cb__interface_html_a66dab87b1b6389be9c57fba3191e45bc"><div class="ttname"><a href="classservio_1_1base_1_1value__cb__interface.html#a66dab87b1b6389be9c57fba3191e45bc">servio::base::value_cb_interface::on_value_irq</a></div><div class="ttdeci">virtual void on_value_irq(uint32_t val)=0</div></div>
-<div class="ttc" id="aclassservio_1_1sntr_1_1central__sentry_html"><div class="ttname"><a href="classservio_1_1sntr_1_1central__sentry.html">servio::sntr::central_sentry</a></div><div class="ttdef"><b>Definition:</b> central_sentry.hpp:16</div></div>
-<div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html">servio::sntr::sentry</a></div><div class="ttdef"><b>Definition:</b> sentry.hpp:13</div></div>
-<div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html_a437c915013d9d4560e80e431f4689f9b"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html#a437c915013d9d4560e80e431f4689f9b">servio::sntr::sentry::set_inoperable</a></div><div class="ttdeci">void set_inoperable(std::size_t eid, const char *emsg, const data_type &amp;data=std::monostate{})</div><div class="ttdef"><b>Definition:</b> sentry.cpp:15</div></div>
-<div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html_a976f75a13b7759a068057d77458a892a"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html#a976f75a13b7759a068057d77458a892a">servio::sntr::sentry::set_degraded</a></div><div class="ttdeci">void set_degraded(std::size_t eid, const char *emsg, const data_type &amp;data=std::monostate{})</div><div class="ttdef"><b>Definition:</b> sentry.cpp:23</div></div>
+<div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html">servio::sntr::sentry</a></div><div class="ttdef"><b>Definition:</b> sentry.hpp:12</div></div>
+<div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html_a437c915013d9d4560e80e431f4689f9b"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html#a437c915013d9d4560e80e431f4689f9b">servio::sntr::sentry::set_inoperable</a></div><div class="ttdeci">void set_inoperable(std::size_t eid, const char *emsg, const data_type &amp;data=std::monostate{})</div><div class="ttdef"><b>Definition:</b> sentry.cpp:13</div></div>
+<div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html_a976f75a13b7759a068057d77458a892a"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html#a976f75a13b7759a068057d77458a892a">servio::sntr::sentry::set_degraded</a></div><div class="ttdeci">void set_degraded(std::size_t eid, const char *emsg, const data_type &amp;data=std::monostate{})</div><div class="ttdef"><b>Definition:</b> sentry.cpp:21</div></div>
 <div class="ttc" id="anamespaceservio_1_1cfg_html_a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218"><div class="ttname"><a href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218">servio::cfg::ID</a></div><div class="ttdeci">@ ID</div><div class="ttdef"><b>Definition:</b> key.hpp:11</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1drv.html">servio::drv</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:8</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html_a86a83240f878e1090630254fb4167045"><div class="ttname"><a href="namespaceservio_1_1drv.html#a86a83240f878e1090630254fb4167045">servio::drv::EMPTY_ADC_CALLBACK</a></div><div class="ttdeci">base::empty_value_cb EMPTY_ADC_CALLBACK</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:68</div></div>
@@ -318,9 +316,9 @@ $(document).ready(function(){initNavTree('adc__pooler_8hpp_source.html',''); ini
 <div class="ttc" id="astructservio_1_1base_1_1empty__adc__detailed__cb_html"><div class="ttname"><a href="structservio_1_1base_1_1empty__adc__detailed__cb.html">servio::base::empty_adc_detailed_cb</a></div><div class="ttdef"><b>Definition:</b> callbacks.hpp:31</div></div>
 <div class="ttc" id="astructservio_1_1base_1_1empty__value__cb_html"><div class="ttname"><a href="structservio_1_1base_1_1empty__value__cb.html">servio::base::empty_value_cb</a></div><div class="ttdef"><b>Definition:</b> callbacks.hpp:59</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__channel__with__callback_html"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel__with__callback.html">servio::drv::adc_channel_with_callback</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:103</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1adc__channel__with__callback_html_a2338ad217d922ea19028d8f30ed6883f"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel__with__callback.html#a2338ad217d922ea19028d8f30ed6883f">servio::drv::adc_channel_with_callback::adc_channel_with_callback</a></div><div class="ttdeci">adc_channel_with_callback(const char *id, sntr::central_sentry &amp;central)</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:104</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__channel__with__callback_html_a6cdb21a4f42d451c4d95e98883a516c7"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel__with__callback.html#a6cdb21a4f42d451c4d95e98883a516c7">servio::drv::adc_channel_with_callback::callback</a></div><div class="ttdeci">base::value_cb_interface * callback</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:109</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__channel__with__callback_html_aa2a56859e698d1f54ea52da50f0e073c"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel__with__callback.html#aa2a56859e698d1f54ea52da50f0e073c">servio::drv::adc_channel_with_callback::conv_cplt</a></div><div class="ttdeci">void conv_cplt(ADC_HandleTypeDef &amp;h)</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:111</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1adc__channel__with__callback_html_ae6d10ad5eef195cf313251108c15efb9"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel__with__callback.html#ae6d10ad5eef195cf313251108c15efb9">servio::drv::adc_channel_with_callback::adc_channel_with_callback</a></div><div class="ttdeci">adc_channel_with_callback(const char *id, sntr::central_sentry_iface &amp;central)</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:104</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__channel_html"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel.html">servio::drv::adc_channel</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:72</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__channel_html_a0ce47e9badd775a7886272e30c6c1595"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel.html#a0ce47e9badd775a7886272e30c6c1595">servio::drv::adc_channel::period_stop</a></div><div class="ttdeci">void period_stop(ADC_HandleTypeDef &amp;)</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:88</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__channel_html_a1d45d45089ded04cd0fda5ebaf60204b"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel.html#a1d45d45089ded04cd0fda5ebaf60204b">servio::drv::adc_channel::id</a></div><div class="ttdeci">static constexpr auto id</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:73</div></div>
@@ -337,7 +335,7 @@ $(document).ready(function(){initNavTree('adc__pooler_8hpp_source.html',''); ini
 <div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html_a6f088b3c4b20f74a15db3ee2ae496500"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html#a6f088b3c4b20f74a15db3ee2ae496500">servio::drv::adc_pooler::start</a></div><div class="ttdeci">em::result start()</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:135</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html_a774cee15e9567b519f2b0a117041ee56"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html#a774cee15e9567b519f2b0a117041ee56">servio::drv::adc_pooler::adc_error_irq</a></div><div class="ttdeci">void adc_error_irq(ADC_HandleTypeDef *h)</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:151</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html_ac5be031b859137067c988267ea81e3ef"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html#ac5be031b859137067c988267ea81e3ef">servio::drv::adc_pooler::id_type</a></div><div class="ttdeci">typename Set::id_type id_type</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:121</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html_af4303b8347974ca47f979e64733ed682"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html#af4303b8347974ca47f979e64733ed682">servio::drv::adc_pooler::on_period_irq</a></div><div class="ttdeci">void on_period_irq()</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:170</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html_af4303b8347974ca47f979e64733ed682"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html#af4303b8347974ca47f979e64733ed682">servio::drv::adc_pooler::on_period_irq</a></div><div class="ttdeci">void on_period_irq()</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:169</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1detailed__adc__channel_html"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__adc__channel.html">servio::drv::detailed_adc_channel</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:25</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1detailed__adc__channel_html_a28affeaca4a5c845a683bbb13e507e92"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__adc__channel.html#a28affeaca4a5c845a683bbb13e507e92">servio::drv::detailed_adc_channel::conv_cplt</a></div><div class="ttdeci">void conv_cplt(ADC_HandleTypeDef &amp;)</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:63</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1detailed__adc__channel_html_a2f1899d4dfe2303bcd99436dac6023ae"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__adc__channel.html#a2f1899d4dfe2303bcd99436dac6023ae">servio::drv::detailed_adc_channel::callback</a></div><div class="ttdeci">base::adc_detailed_cb_interface * callback</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:35</div></div>
@@ -348,13 +346,14 @@ $(document).ready(function(){initNavTree('adc__pooler_8hpp_source.html',''); ini
 <div class="ttc" id="astructservio_1_1drv_1_1detailed__adc__channel_html_abb124331c9121663f28517ef1f770b12"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__adc__channel.html#abb124331c9121663f28517ef1f770b12">servio::drv::detailed_adc_channel::used</a></div><div class="ttdeci">std::size_t used</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:31</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1detailed__adc__channel_html_ad11f56dd273bd4dafc88de6dc9a91363"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__adc__channel.html#ad11f56dd273bd4dafc88de6dc9a91363">servio::drv::detailed_adc_channel::buffer</a></div><div class="ttdeci">uint16_t buffer[N]</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:30</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1detailed__adc__channel_html_af780e6e5c11f56ae70521efc5137259a"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__adc__channel.html#af780e6e5c11f56ae70521efc5137259a">servio::drv::detailed_adc_channel::period_stop</a></div><div class="ttdeci">void period_stop(ADC_HandleTypeDef &amp;h)</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:47</div></div>
+<div class="ttc" id="astructservio_1_1sntr_1_1central__sentry__iface_html"><div class="ttname"><a href="structservio_1_1sntr_1_1central__sentry__iface.html">servio::sntr::central_sentry_iface</a></div><div class="ttdef"><b>Definition:</b> central_sentry_iface.hpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="adc__pooler_8hpp.html">adc_pooler.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 7 2024 16:54:15 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 9 2024 14:03:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

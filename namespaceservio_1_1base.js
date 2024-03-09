@@ -1,6 +1,7 @@
 var namespaceservio_1_1base =
 [
     [ "literals", "namespaceservio_1_1base_1_1literals.html", [
+      [ "operator\"\"_b", "namespaceservio_1_1base_1_1literals.html#a55ed4f4fb78e8a1928a7a4b64752daa2", null ],
       [ "operator\"\"_ms", "namespaceservio_1_1base_1_1literals.html#a0a87b6e418a675e2aaa6d7d7e627e704", null ],
       [ "operator\"\"_s", "namespaceservio_1_1base_1_1literals.html#ad91b3148e4b6900c2ab4d30f5bae6298", null ],
       [ "operator\"\"_us", "namespaceservio_1_1base_1_1literals.html#a074c68b8fb6e24366ae33ad73ebc45ea", null ]
@@ -15,7 +16,7 @@ var namespaceservio_1_1base =
     [ "adc_detailed_cb_interface", "classservio_1_1base_1_1adc__detailed__cb__interface.html", "classservio_1_1base_1_1adc__detailed__cb__interface" ],
     [ "value_cb_interface", "classservio_1_1base_1_1value__cb__interface.html", "classservio_1_1base_1_1value__cb__interface" ],
     [ "period_cb_interface", "classservio_1_1base_1_1period__cb__interface.html", "classservio_1_1base_1_1period__cb__interface" ],
-    [ "com_res", "namespaceservio_1_1base.html#structservio_1_1base_1_1com__res", "namespaceservio_1_1base_structservio_1_1base_1_1com__res_dup" ],
+    [ "com_res", "structservio_1_1base_1_1com__res.html", "structservio_1_1base_1_1com__res" ],
     [ "com_interface", "classservio_1_1base_1_1com__interface.html", "classservio_1_1base_1_1com__interface" ],
     [ "leds_interface", "classservio_1_1base_1_1leds__interface.html", "classservio_1_1base_1_1leds__interface" ],
     [ "clk_interface", "classservio_1_1base_1_1clk__interface.html", "classservio_1_1base_1_1clk__interface" ],

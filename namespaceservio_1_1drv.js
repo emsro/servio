@@ -1,5 +1,7 @@
 var namespaceservio_1_1drv =
 [
+    [ "bits", "namespaceservio_1_1drv_1_1bits.html", "namespaceservio_1_1drv_1_1bits" ],
+    [ "tests", "namespaceservio_1_1drv_1_1tests.html", "namespaceservio_1_1drv_1_1tests" ],
     [ "detailed_adc_channel", "structservio_1_1drv_1_1detailed__adc__channel.html", "structservio_1_1drv_1_1detailed__adc__channel" ],
     [ "adc_channel", "structservio_1_1drv_1_1adc__channel.html", "structservio_1_1drv_1_1adc__channel" ],
     [ "adc_channel_with_callback", "structservio_1_1drv_1_1adc__channel__with__callback.html", "structservio_1_1drv_1_1adc__channel__with__callback" ],
@@ -35,6 +37,7 @@ var namespaceservio_1_1drv =
       [ "COBS_HAL_ERROR_IRQ_ERR", "namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0befaf5f7f7950a88404a4bd10072631d85bb", null ],
       [ "COBS_HAL_RX_START_ERR", "namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0befa81cfae8ee9b2ff6ffc3950754d2f5dea", null ]
     ] ],
+    [ "TEST", "namespaceservio_1_1drv.html#a9d4caa145e7a9eb34292a6ce97cce774", null ],
     [ "ADC_SEQUENCE", "namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c", null ],
     [ "EMPTY_ADC_CALLBACK", "namespaceservio_1_1drv.html#a86a83240f878e1090630254fb4167045", null ],
     [ "EMPTY_ADC_DETAILED_CALLBACK", "namespaceservio_1_1drv.html#aaba107aaacf2ba4c6922972d2b407719", null ],

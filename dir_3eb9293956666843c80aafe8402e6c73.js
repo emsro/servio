@@ -1,5 +1,7 @@
 var dir_3eb9293956666843c80aafe8402e6c73 =
 [
+    [ "bits", "dir_e7107a7cd49c6cff870a5eabc9e76a4a.html", "dir_e7107a7cd49c6cff870a5eabc9e76a4a" ],
+    [ "tests", "dir_26e34818c745abafa34d6ef482a48aa2.html", "dir_26e34818c745abafa34d6ef482a48aa2" ],
     [ "adc_pooler.hpp", "adc__pooler_8hpp.html", "adc__pooler_8hpp" ],
     [ "adc_pooler_def.hpp", "adc__pooler__def_8hpp.html", "adc__pooler__def_8hpp" ],
     [ "clock.hpp", "clock_8hpp.html", [

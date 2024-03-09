@@ -1,17 +1,18 @@
 var searchData=
 [
-  ['t_1499',['t',['../structservio_1_1sntr_1_1tests_1_1test__clk.html#a99108a70cd8abda3210ee5c0d8014501',1,'servio::sntr::tests::test_clk']]],
-  ['temp_1500',['temp',['../structservio_1_1cnv_1_1converter.html#a2e247fbcad8b7a3455893ce44fde1a6f',1,'servio::cnv::converter::temp()'],['../structservio_1_1drv_1_1adc__set.html#ac3c89f4a5398b4e3105132465ae834ac',1,'servio::drv::adc_set::temp()']]],
-  ['temp_5fdrv_1501',['temp_drv',['../namespaceservio_1_1fw.html#ad306f812287329ca0a52ab0ad208be92',1,'servio::fw::dispatcher']]],
-  ['temperature_1502',['temperature',['../structservio_1_1core_1_1drivers.html#a68bbd6f5b87258f7ca635a193957aefe',1,'servio::core::drivers']]],
-  ['terminated_5feid_1503',['terminated_eid',['../namespaceservio_1_1sntr.html#aab752fd85ad1241ac8d43aa365f39d86',1,'servio::sntr']]],
-  ['test_1504',['test',['../structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107',1,'servio::bb::bb_test_case']]],
-  ['tim1_5fhandle_1505',['TIM1_HANDLE',['../namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc',1,'servio::brd']]],
-  ['tim2_5fhandle_1506',['TIM2_HANDLE',['../namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a',1,'servio::brd']]],
-  ['tim3_5fhandle_1507',['TIM3_HANDLE',['../namespaceservio_1_1brd.html#ad3461a2b66a48bb2ff01731378427b6e',1,'servio::brd']]],
-  ['timeout_1508',['timeout',['../structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f',1,'servio::bb::bb_test_case']]],
-  ['timer_5finstance_1509',['timer_instance',['../namespaceservio_1_1plt.html#ac320b1f2637e8716b47834cec0877368',1,'servio::plt::leds_timer_cfg::timer_instance()'],['../namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673',1,'servio::plt::hb_timer_cfg::timer_instance()'],['../namespaceservio_1_1brd.html#abb81ebaad8e98d9dac4d9419eb8349cb',1,'servio::brd::leds_timer_cfg::timer_instance()'],['../namespaceservio_1_1brd.html#ae97e490293c865d59424bd7f41b75628',1,'servio::brd::hb_timer_cfg::timer_instance()']]],
-  ['tp_1510',['tp',['../namespaceservio_1_1sntr.html#a5a0543acdff09c6418d7268c3ac52583',1,'servio::sntr::record']]],
-  ['tx_1511',['tx',['../namespaceservio_1_1brd.html#a670661ec1658d03809a313c6678126b7',1,'servio::brd::uart_cfg::tx()'],['../namespaceservio_1_1plt.html#a9dd4647ad22e65f5bed71ae108f45679',1,'servio::plt::uart_cfg::tx()']]],
-  ['tx_5fdma_1512',['tx_dma',['../namespaceservio_1_1brd.html#a01338e4236fb4d0a332a682635eabea7',1,'servio::brd::uart_cfg::tx_dma()'],['../namespaceservio_1_1plt.html#a58ea661027d27b37be80791fb5f64068',1,'servio::plt::uart_cfg::tx_dma()']]]
+  ['t_1565',['t',['../structservio_1_1sntr_1_1tests_1_1test__clk.html#a99108a70cd8abda3210ee5c0d8014501',1,'servio::sntr::tests::test_clk']]],
+  ['temp_1566',['temp',['../structservio_1_1cnv_1_1converter.html#a2e247fbcad8b7a3455893ce44fde1a6f',1,'servio::cnv::converter::temp()'],['../structservio_1_1drv_1_1adc__set.html#ac3c89f4a5398b4e3105132465ae834ac',1,'servio::drv::adc_set::temp()']]],
+  ['temp_5fdrv_1567',['temp_drv',['../namespaceservio_1_1fw.html#ad306f812287329ca0a52ab0ad208be92',1,'servio::fw::dispatcher']]],
+  ['temperature_1568',['temperature',['../structservio_1_1core_1_1drivers.html#a68bbd6f5b87258f7ca635a193957aefe',1,'servio::core::drivers']]],
+  ['terminated_5feid_1569',['terminated_eid',['../namespaceservio_1_1sntr.html#aab752fd85ad1241ac8d43aa365f39d86',1,'servio::sntr']]],
+  ['test_1570',['test',['../structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107',1,'servio::bb::bb_test_case']]],
+  ['tim1_5fhandle_1571',['TIM1_HANDLE',['../namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc',1,'servio::brd']]],
+  ['tim2_5fhandle_1572',['TIM2_HANDLE',['../namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a',1,'servio::brd']]],
+  ['tim3_5fhandle_1573',['TIM3_HANDLE',['../namespaceservio_1_1brd.html#ad3461a2b66a48bb2ff01731378427b6e',1,'servio::brd']]],
+  ['timeout_1574',['timeout',['../structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f',1,'servio::bb::bb_test_case']]],
+  ['timer_5finstance_1575',['timer_instance',['../namespaceservio_1_1plt.html#ac320b1f2637e8716b47834cec0877368',1,'servio::plt::leds_timer_cfg::timer_instance()'],['../namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673',1,'servio::plt::hb_timer_cfg::timer_instance()'],['../namespaceservio_1_1brd.html#abb81ebaad8e98d9dac4d9419eb8349cb',1,'servio::brd::leds_timer_cfg::timer_instance()'],['../namespaceservio_1_1brd.html#ae97e490293c865d59424bd7f41b75628',1,'servio::brd::hb_timer_cfg::timer_instance()']]],
+  ['tolerable_5fhal_5ferrors_1576',['tolerable_hal_errors',['../classservio_1_1drv_1_1cobs__uart.html#a0cd97daa231dee9baf9963c1e7efbb00',1,'servio::drv::cobs_uart']]],
+  ['tp_1577',['tp',['../namespaceservio_1_1sntr.html#a5a0543acdff09c6418d7268c3ac52583',1,'servio::sntr::record']]],
+  ['tx_1578',['tx',['../namespaceservio_1_1brd.html#a670661ec1658d03809a313c6678126b7',1,'servio::brd::uart_cfg::tx()'],['../namespaceservio_1_1plt.html#a9dd4647ad22e65f5bed71ae108f45679',1,'servio::plt::uart_cfg::tx()']]],
+  ['tx_5fdma_1579',['tx_dma',['../namespaceservio_1_1brd.html#a01338e4236fb4d0a332a682635eabea7',1,'servio::brd::uart_cfg::tx_dma()'],['../namespaceservio_1_1plt.html#a58ea661027d27b37be80791fb5f64068',1,'servio::plt::uart_cfg::tx_dma()']]]
 ];

@@ -23,6 +23,7 @@ var base_2base_8hpp =
       [ "VELOCITY", "base_2base_8hpp.html#ac0310c43d6151b2926d5f4a7b986552ea7b4354bded455eb379e3c764806cda7b", null ],
       [ "POSITION", "base_2base_8hpp.html#ac0310c43d6151b2926d5f4a7b986552ea90b4ba73224408e82ade8a072a3712c1", null ]
     ] ],
+    [ "operator\"\"_b", "base_2base_8hpp.html#a55ed4f4fb78e8a1928a7a4b64752daa2", null ],
     [ "operator\"\"_ms", "base_2base_8hpp.html#a0a87b6e418a675e2aaa6d7d7e627e704", null ],
     [ "operator\"\"_s", "base_2base_8hpp.html#ad91b3148e4b6900c2ab4d30f5bae6298", null ],
     [ "operator\"\"_us", "base_2base_8hpp.html#a074c68b8fb6e24366ae33ad73ebc45ea", null ],

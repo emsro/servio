@@ -1,8 +1,9 @@
 <map id="src/sntr/sentry.hpp" name="src/sntr/sentry.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="197,5,338,32"/>
-<area shape="rect" id="node2" href="$sntr_2base_8hpp.html" title=" " alt="" coords="165,80,276,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="280,155,348,181"/>
-<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="5,155,121,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="78,229,145,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="197,155,255,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="134,5,275,32"/>
+<area shape="rect" id="node2" href="$sntr_2base_8hpp.html" title=" " alt="" coords="127,169,237,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="280,244,348,271"/>
+<area shape="rect" id="node7" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="133,80,277,121"/>
+<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="5,244,121,271"/>
+<area shape="rect" id="node4" title=" " alt="" coords="78,319,145,345"/>
+<area shape="rect" id="node5" title=" " alt="" coords="197,244,255,271"/>
 </map>

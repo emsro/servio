@@ -12,7 +12,7 @@ var annotated_dup =
         [ "adc_detailed_cb_interface", "classservio_1_1base_1_1adc__detailed__cb__interface.html", "classservio_1_1base_1_1adc__detailed__cb__interface" ],
         [ "value_cb_interface", "classservio_1_1base_1_1value__cb__interface.html", "classservio_1_1base_1_1value__cb__interface" ],
         [ "period_cb_interface", "classservio_1_1base_1_1period__cb__interface.html", "classservio_1_1base_1_1period__cb__interface" ],
-        [ "com_res", "namespaceservio_1_1base.html#structservio_1_1base_1_1com__res", "namespaceservio_1_1base_structservio_1_1base_1_1com__res_dup" ],
+        [ "com_res", "structservio_1_1base_1_1com__res.html", "structservio_1_1base_1_1com__res" ],
         [ "com_interface", "classservio_1_1base_1_1com__interface.html", "classservio_1_1base_1_1com__interface" ],
         [ "leds_interface", "classservio_1_1base_1_1leds__interface.html", "classservio_1_1base_1_1leds__interface" ],
         [ "clk_interface", "classservio_1_1base_1_1clk__interface.html", "classservio_1_1base_1_1clk__interface" ],
@@ -61,6 +61,18 @@ var annotated_dup =
         [ "linear_transition_regulator", "structservio_1_1ctl_1_1linear__transition__regulator.html", "structservio_1_1ctl_1_1linear__transition__regulator" ]
       ] ],
       [ "drv", "namespaceservio_1_1drv.html", [
+        [ "bits", "namespaceservio_1_1drv_1_1bits.html", [
+          [ "cobs_rx_container", "namespaceservio_1_1drv_1_1bits.html#structservio_1_1drv_1_1bits_1_1cobs__rx__container", "namespaceservio_1_1drv_1_1bits_structservio_1_1drv_1_1bits_1_1cobs__rx__container_dup" ]
+        ] ],
+        [ "tests", "namespaceservio_1_1drv_1_1tests.html", [
+          [ "utest", "structservio_1_1drv_1_1tests_1_1utest.html", "structservio_1_1drv_1_1tests_1_1utest" ],
+          [ "clock_test", "structservio_1_1drv_1_1tests_1_1clock__test.html", "structservio_1_1drv_1_1tests_1_1clock__test" ],
+          [ "comms_echo_test", "structservio_1_1drv_1_1tests_1_1comms__echo__test.html", "structservio_1_1drv_1_1tests_1_1comms__echo__test" ],
+          [ "comms_timeout_test", "structservio_1_1drv_1_1tests_1_1comms__timeout__test.html", "structservio_1_1drv_1_1tests_1_1comms__timeout__test" ],
+          [ "test_central_sentry", "structservio_1_1drv_1_1tests_1_1test__central__sentry.html", "structservio_1_1drv_1_1tests_1_1test__central__sentry" ],
+          [ "cobs_uart_rx_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test" ],
+          [ "cobs_uart_err_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test" ]
+        ] ],
         [ "detailed_adc_channel", "structservio_1_1drv_1_1detailed__adc__channel.html", "structservio_1_1drv_1_1detailed__adc__channel" ],
         [ "adc_channel", "structservio_1_1drv_1_1adc__channel.html", "structservio_1_1drv_1_1adc__channel" ],
         [ "adc_channel_with_callback", "structservio_1_1drv_1_1adc__channel__with__callback.html", "structservio_1_1drv_1_1adc__channel__with__callback" ],
@@ -124,6 +136,7 @@ var annotated_dup =
           [ "sentry_fixture", "structservio_1_1sntr_1_1tests_1_1sentry__fixture.html", "structservio_1_1sntr_1_1tests_1_1sentry__fixture" ]
         ] ],
         [ "central_sentry", "classservio_1_1sntr_1_1central__sentry.html", "classservio_1_1sntr_1_1central__sentry" ],
+        [ "central_sentry_iface", "structservio_1_1sntr_1_1central__sentry__iface.html", "structservio_1_1sntr_1_1central__sentry__iface" ],
         [ "record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", "namespaceservio_1_1sntr_structservio_1_1sntr_1_1record_dup" ],
         [ "sentry", "classservio_1_1sntr_1_1sentry.html", "classservio_1_1sntr_1_1sentry" ]
       ] ]
