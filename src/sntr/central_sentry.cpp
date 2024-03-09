@@ -1,7 +1,6 @@
 
 #include "sntr/central_sentry.hpp"
 
-#include "base/drv_interfaces.hpp"
 #include "sntr/base.hpp"
 #include "sntr/record.hpp"
 
@@ -22,7 +21,7 @@ namespace
 }  // namespace
 
 central_sentry::central_sentry(
-    base::clk_interface&        clk,
+    drv::clk_interface&         clk,
     std::span< record >         inop_buffer,
     std::span< record >         degr_buffer,
     em::function_view< void() > stop_callback )

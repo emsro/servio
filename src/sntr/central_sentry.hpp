@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/drv_interfaces.hpp"
+#include "drv/interfaces.hpp"
 #include "sntr/central_sentry_iface.hpp"
 #include "sntr/record.hpp"
 
@@ -16,7 +16,7 @@ class central_sentry : public central_sentry_iface
 {
 public:
         central_sentry(
-            base::clk_interface&        clk,
+            drv::clk_interface&         clk,
             std::span< record >         inop_buffer,
             std::span< record >         degr_buffer,
             em::function_view< void() > stop_callback );
@@ -45,7 +45,7 @@ private:
 
         bool is_inoperable_ = false;
 
-        base::clk_interface&        clk_;
+        drv::clk_interface&         clk_;
         std::span< record >         inop_buffer_;
         std::span< record >         degr_buffer_;
         em::function_view< void() > stop_callback_;

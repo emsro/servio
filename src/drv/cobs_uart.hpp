@@ -1,5 +1,5 @@
-#include "base/drv_interfaces.hpp"
 #include "drv/bits/cobs_rx_container.h"
+#include "drv/interfaces.hpp"
 #include "platform.hpp"
 #include "sntr/sentry.hpp"
 
@@ -20,14 +20,14 @@ enum cobs_error_codes
         COBS_HAL_RX_START_ERR  = 0x2
 };
 
-class cobs_uart : public base::com_interface
+class cobs_uart : public com_interface
 {
 
 public:
         cobs_uart(
             const char*                 id,
             sntr::central_sentry_iface& central,
-            base::clk_interface&        clk,
+            clk_interface&              clk,
             UART_HandleTypeDef*         uart,
             DMA_HandleTypeDef*          tx_dma );
 
@@ -40,7 +40,7 @@ public:
         void tx_cplt_irq( UART_HandleTypeDef* huart );
         void err_irq( UART_HandleTypeDef* huart );
 
-        base::com_res load_message( em::view< std::byte* > data ) override;
+        com_res load_message( em::view< std::byte* > data ) override;
 
         em::result start() override;
 
@@ -51,8 +51,8 @@ public:
             HAL_UART_ERROR_ORE | HAL_UART_ERROR_DMA | HAL_UART_ERROR_FE | HAL_UART_ERROR_NE;
 
 private:
-        sntr::sentry         sentry_;
-        base::clk_interface& clk_;
+        sntr::sentry   sentry_;
+        clk_interface& clk_;
 
         UART_HandleTypeDef* uart_   = nullptr;
         DMA_HandleTypeDef*  tx_dma_ = nullptr;
@@ -67,7 +67,7 @@ private:
 inline cobs_uart::cobs_uart(
     const char*                 id,
     sntr::central_sentry_iface& central,
-    base::clk_interface&        clk,
+    clk_interface&              clk,
     UART_HandleTypeDef*         uart,
     DMA_HandleTypeDef*          tx_dma )
   : sentry_( id, central )

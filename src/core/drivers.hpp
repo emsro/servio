@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/drv_interfaces.hpp"
+#include "drv/interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 
@@ -11,16 +11,16 @@ namespace em = emlabcpp;
 
 struct drivers
 {
-        base::clk_interface*                        clock;
-        base::position_interface*                   position;
-        base::current_interface*                    current;
-        base::vcc_interface*                        vcc;
-        base::temperature_interface*                temperature;
-        base::period_cb_interface*                  period_cb;  // TODO: maybe imrpove naming here?
-        base::pwm_motor_interface*                  motor;
-        base::period_interface*                     period;
-        base::com_interface*                        comms;
-        base::leds_interface*                       leds;
+        drv::clk_interface*                         clock;
+        drv::position_interface*                    position;
+        drv::current_interface*                     current;
+        drv::vcc_interface*                         vcc;
+        drv::temperature_interface*                 temperature;
+        drv::period_cb_interface*                   period_cb;  // TODO: maybe imrpove naming here?
+        drv::pwm_motor_interface*                   motor;
+        drv::period_interface*                      period;
+        drv::com_interface*                         comms;
+        drv::leds_interface*                        leds;
         em::function_view< em::result( drivers& ) > start_cb;
 
         auto tie()

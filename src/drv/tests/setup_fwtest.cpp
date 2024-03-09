@@ -1,6 +1,6 @@
 #include "drv/tests/setup_fwtest.hpp"
 
-#include "base/callbacks.hpp"
+#include "drv/callbacks.hpp"
 #include "drv/cobs_uart.hpp"
 #include "drv/hbridge.hpp"
 #include "drv/retainers.hpp"
@@ -49,7 +49,7 @@ void setup_utest(
 struct clock_test
 {
         em::testing::collector& coll;
-        base::clk_interface&    clk;
+        clk_interface&          clk;
 
         std::string_view name = "clock_test";
 
@@ -71,8 +71,8 @@ struct clock_test
 
 struct comms_echo_test
 {
-        base::com_interface& comms;
-        std::string_view     name = "comms_echo";
+        com_interface&   comms;
+        std::string_view name = "comms_echo";
 
         em::testing::test_coroutine run( auto&, em::testing::record& rec )
         {
@@ -90,8 +90,8 @@ struct comms_echo_test
 
 struct comms_timeout_test
 {
-        base::com_interface& comms;
-        std::string_view     name = "comms_timeout";
+        com_interface&   comms;
+        std::string_view name = "comms_timeout";
 
         em::testing::test_coroutine run( auto&, em::testing::record& rec )
         {
@@ -154,8 +154,8 @@ struct test_central_sentry : sntr::central_sentry_iface
 
 struct cobs_uart_rx_test
 {
-        base::clk_interface& clk;
-        std::string_view     name = "cobs_uart_rx";
+        clk_interface&   clk;
+        std::string_view name = "cobs_uart_rx";
 
         em::testing::test_coroutine run( auto&, em::testing::record& rec )
         {
@@ -174,8 +174,8 @@ struct cobs_uart_rx_test
 
 struct cobs_uart_err_test
 {
-        base::clk_interface& clk;
-        std::string_view     name = "cobs_uart_err";
+        clk_interface&   clk;
+        std::string_view name = "cobs_uart_err";
 
         em::testing::test_coroutine run( auto&, em::testing::record& rec )
         {
@@ -206,35 +206,35 @@ struct cobs_uart_err_test
 
 struct period_iface_test
 {
-        base::clk_interface&    clk;
-        base::period_interface& iface;
-        std::string_view        name = "period_iface";
+        clk_interface&    clk;
+        period_interface& iface;
+        std::string_view  name = "period_iface";
 
         em::testing::test_coroutine run( auto&, em::testing::record& rec )
         {
                 auto d = retain_callback( iface );
                 co_await rec.expect( iface.stop() == em::SUCCESS );
 
-                std::size_t     counter = 0;
-                base::period_cb pcb{ [&] {
+                std::size_t counter = 0;
+                period_cb   pcb{ [&] {
                         counter += 1;
                 } };
                 iface.set_period_callback( pcb );
                 co_await rec.expect( &iface.get_period_callback() == &pcb );
 
-                base::wait_for( clk, 10_ms );
+                wait_for( clk, 10_ms );
                 rec.expect( counter == 0 );
 
                 co_await rec.expect( iface.start() != em::SUCCESS );
-                base::wait_for( clk, 10_ms );
+                wait_for( clk, 10_ms );
                 rec.expect( counter != 0 );
         }
 };
 
 struct pwm_motor_test
 {
-        base::pwm_motor_interface& iface;
-        std::string_view           name = "pwm_motor";
+        pwm_motor_interface& iface;
+        std::string_view     name = "pwm_motor";
 
         // note: force_stop not tested, which is kinda mistake but it's also hard to test :)
         em::testing::test_coroutine run( auto&, em::testing::record& rec )
@@ -266,8 +266,8 @@ struct hbridge_test
 
                 auto d = retain_callback( hb );
 
-                std::size_t     counter = 0;
-                base::period_cb pcb{ [&] {
+                std::size_t counter = 0;
+                period_cb   pcb{ [&] {
                         counter += 1;
                 } };
                 hb.set_period_callback( pcb );
@@ -294,7 +294,7 @@ struct adc_pooler_test
 
 struct vcc_test
 {
-        base::vcc_interface&    iface;
+        vcc_interface&          iface;
         em::testing::collector& coll;
         std::string_view        name = "vcc_test";
 
@@ -310,9 +310,9 @@ struct vcc_test
 
 struct temperature_test
 {
-        base::temperature_interface& iface;
-        em::testing::collector&      coll;
-        std::string_view             name = "temp_test";
+        temperature_interface&  iface;
+        em::testing::collector& coll;
+        std::string_view        name = "temp_test";
 
         em::testing::test_coroutine run( auto&, em::testing::record& rec )
         {
@@ -326,40 +326,40 @@ struct temperature_test
 
 struct position_test
 {
-        base::position_interface& iface;
-        base::clk_interface&      clk;
-        em::testing::collector&   coll;
-        std::string_view          name = "pos_test";
+        position_interface&     iface;
+        clk_interface&          clk;
+        em::testing::collector& coll;
+        std::string_view        name = "pos_test";
 
         em::testing::test_coroutine run( auto&, em::testing::record& rec )
         {
                 em::defer d = retain_callback( iface );
 
                 std::optional< uint32_t > opt_pos = std::nullopt;
-                base::position_cb         pcb{ [&]( uint32_t pos ) {
+                position_cb               pcb{ [&]( uint32_t pos ) {
                         opt_pos = pos;
                 } };
                 iface.set_position_callback( pcb );
                 co_await rec.expect( &iface.get_position_callback() == &pcb );
 
-                base::wait_for( clk, 10_ms );
+                wait_for( clk, 10_ms );
 
                 rec.expect( opt_pos.has_value() );
         }
 };
 
 void setup_tests(
-    em::pmr::memory_resource&    mem,
-    em::testing::reactor&        reac,
-    em::testing::collector&      coll,
-    base::clk_interface&         clk,
-    base::com_interface&         comms,
-    base::period_interface&      period,
-    base::pwm_motor_interface&   pwm,
-    base::vcc_interface&         vcc,
-    base::temperature_interface& temp,
-    base::position_interface&    pos,
-    em::result&                  res )
+    em::pmr::memory_resource& mem,
+    em::testing::reactor&     reac,
+    em::testing::collector&   coll,
+    clk_interface&            clk,
+    com_interface&            comms,
+    period_interface&         period,
+    pwm_motor_interface&      pwm,
+    vcc_interface&            vcc,
+    temperature_interface&    temp,
+    position_interface&       pos,
+    em::result&               res )
 
 {
         setup_utest< clock_test >( mem, reac, res, coll, clk );

@@ -8,14 +8,14 @@
 namespace servio::core
 {
 
-class current_callback : public base::current_cb_interface
+class current_callback : public drv::current_cb_interface
 {
 public:
         current_callback(
-            base::pwm_motor_interface& motor,
-            ctl::control&              ctl,
-            base::clk_interface&       clk,
-            const cnv::converter&      conv )
+            drv::pwm_motor_interface& motor,
+            ctl::control&             ctl,
+            drv::clk_interface&       clk,
+            const cnv::converter&     conv )
           : motor_( motor )
           , ctl_( ctl )
           , clk_( clk )
@@ -32,19 +32,19 @@ public:
         }
 
 private:
-        base::pwm_motor_interface& motor_;
-        ctl::control&              ctl_;
-        base::clk_interface&       clk_;
-        const cnv::converter&      conv_;
+        drv::pwm_motor_interface& motor_;
+        ctl::control&             ctl_;
+        drv::clk_interface&       clk_;
+        const cnv::converter&     conv_;
 };
 
-class position_callback : public base::position_cb_interface
+class position_callback : public drv::position_cb_interface
 {
 public:
         position_callback(
             ctl::control&         ctl,
             mtr::metrics&         met,
-            base::clk_interface&  clk,
+            drv::clk_interface&   clk,
             const cnv::converter& conv )
           : ctl_( ctl )
           , met_( met )
@@ -68,7 +68,7 @@ public:
 private:
         ctl::control&         ctl_;
         mtr::metrics&         met_;
-        base::clk_interface&  clk_;
+        drv::clk_interface&   clk_;
         const cnv::converter& conv_;
 };
 

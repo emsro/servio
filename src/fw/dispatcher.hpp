@@ -13,11 +13,11 @@ namespace servio::fw
 
 struct dispatcher
 {
-        base::pwm_motor_interface&                       motor;
-        const base::position_interface&                  pos_drv;
-        const base::current_interface&                   curr_drv;
-        const base::vcc_interface&                       vcc_drv;
-        const base::temperature_interface&               temp_drv;
+        drv::pwm_motor_interface&                        motor;
+        const drv::position_interface&                   pos_drv;
+        const drv::current_interface&                    curr_drv;
+        const drv::vcc_interface&                        vcc_drv;
+        const drv::temperature_interface&                temp_drv;
         ctl::control&                                    ctl;
         mtr::metrics&                                    met;
         cfg::dispatcher&                                 cfg_disp;

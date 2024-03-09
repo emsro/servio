@@ -1,4 +1,4 @@
-#include "base/callbacks.hpp"
+#include "drv/callbacks.hpp"
 #include "platform.hpp"
 #include "sntr/sentry.hpp"
 
@@ -18,7 +18,7 @@ enum adc_error_codes
         ADC_POOLER_SAMPLES_OVER_ERR = 0x7
 };
 
-inline base::empty_adc_detailed_cb EMPTY_ADC_DETAILED_CALLBACK;
+inline empty_adc_detailed_cb EMPTY_ADC_DETAILED_CALLBACK;
 
 template < auto ID, std::size_t N >
 struct detailed_adc_channel
@@ -30,9 +30,9 @@ struct detailed_adc_channel
         alignas( uint32_t ) uint16_t buffer[N];
         std::size_t used;
 
-        uint32_t                         last_value;
-        ADC_ChannelConfTypeDef           chconf   = {};
-        base::adc_detailed_cb_interface* callback = &EMPTY_ADC_DETAILED_CALLBACK;
+        uint32_t                   last_value;
+        ADC_ChannelConfTypeDef     chconf   = {};
+        adc_detailed_cb_interface* callback = &EMPTY_ADC_DETAILED_CALLBACK;
 
         [[gnu::flatten]] void period_start( ADC_HandleTypeDef& h )
         {
@@ -65,7 +65,7 @@ struct detailed_adc_channel
         }
 };
 
-inline base::empty_value_cb EMPTY_ADC_CALLBACK;
+inline empty_value_cb EMPTY_ADC_CALLBACK;
 
 template < auto ID >
 struct adc_channel
@@ -106,7 +106,7 @@ struct adc_channel_with_callback : adc_channel< ID >
         {
         }
 
-        base::value_cb_interface* callback = &EMPTY_ADC_CALLBACK;
+        value_cb_interface* callback = &EMPTY_ADC_CALLBACK;
 
         [[gnu::flatten]] void conv_cplt( ADC_HandleTypeDef& h )
         {

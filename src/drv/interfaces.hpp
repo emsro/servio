@@ -1,4 +1,4 @@
-#include "base.hpp"
+#include "base/base.hpp"
 
 #include <cstdint>
 #include <emlabcpp/result.h>
@@ -6,7 +6,9 @@
 
 #pragma once
 
-namespace servio::base
+namespace em = emlabcpp;
+
+namespace servio::drv
 {
 
 class adc_detailed_cb_interface
@@ -57,21 +59,21 @@ public:
 class leds_interface
 {
 public:
-        virtual void force_red_led()                 = 0;
-        virtual void update( const leds_vals& leds ) = 0;
-        virtual ~leds_interface()                    = default;
+        virtual void force_red_led()                       = 0;
+        virtual void update( const base::leds_vals& leds ) = 0;
+        virtual ~leds_interface()                          = default;
 };
 
 class clk_interface
 {
 public:
-        virtual microseconds get_us() = 0;
-        virtual ~clk_interface()      = default;
+        virtual base::microseconds get_us() = 0;
+        virtual ~clk_interface()            = default;
 };
 
-inline void wait_for( clk_interface& clk, microseconds ms )
+inline void wait_for( clk_interface& clk, base::microseconds ms )
 {
-        microseconds end = clk.get_us() + ms;
+        base::microseconds end = clk.get_us() + ms;
         while ( end < clk.get_us() )
                 asm( "nop" );
 }
@@ -127,4 +129,4 @@ public:
         virtual ~current_interface()                                                = default;
 };
 
-}  // namespace servio::base
+}  // namespace servio::drv

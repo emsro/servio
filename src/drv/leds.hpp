@@ -1,6 +1,6 @@
 #include "base/base.hpp"
-#include "base/drv_interfaces.hpp"
 #include "drv/defs.hpp"
+#include "drv/interfaces.hpp"
 #include "platform.hpp"
 
 #include <cstdint>
@@ -13,7 +13,7 @@ namespace em = emlabcpp;
 namespace servio::drv
 {
 
-class leds : public base::leds_interface
+class leds : public leds_interface
 {
 public:
         leds( TIM_HandleTypeDef* tim )

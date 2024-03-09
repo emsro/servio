@@ -268,7 +268,7 @@ drv::cobs_uart* comms_setup()
         return &COMMS;
 }
 
-base::com_interface* setup_debug_comms()
+drv::com_interface* setup_debug_comms()
 {
         __HAL_RCC_GPDMA1_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();

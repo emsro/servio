@@ -47,7 +47,7 @@ int main()
 
                 cor.tick( *cdrv.leds, cdrv.clock->get_us() );
 
-                fw::persistent_config_writer cfg_writer{ last_cfg_payload, pages, *cdrv.current };
+                fw::persistent_config_writer cfg_writer{ last_cfg_payload, pages };
 
                 fw::dispatcher dis{
                     .motor      = *cdrv.motor,

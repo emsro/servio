@@ -19,10 +19,10 @@ struct core
         mon::monitor    mon;
 
         core(
-            base::microseconds                 now,
-            const base::vcc_interface&         vcc_drv,
-            const base::temperature_interface& temp_drv,
-            base::clk_interface&               clk )
+            base::microseconds                now,
+            const drv::vcc_interface&         vcc_drv,
+            const drv::temperature_interface& temp_drv,
+            drv::clk_interface&               clk )
           : ctl( now, ctl::config{} )
           , conv()
           , met( now, 0.F, { 0.F, 2 * base::pi } )
@@ -32,7 +32,7 @@ struct core
                 ind.tick( clk.get_us() );
         }
 
-        void tick( base::leds_interface& leds, base::microseconds now )
+        void tick( drv::leds_interface& leds, base::microseconds now )
         {
                 mon.tick( now );
                 ind.tick( now );
@@ -43,21 +43,21 @@ struct core
 struct standard_callbacks
 {
         standard_callbacks(
-            base::pwm_motor_interface& motor,
-            base::clk_interface&       clk,
-            ctl::control&              ctl,
-            mtr::metrics&              met,
-            const cnv::converter&      conv )
+            drv::pwm_motor_interface& motor,
+            drv::clk_interface&       clk,
+            ctl::control&             ctl,
+            mtr::metrics&             met,
+            const cnv::converter&     conv )
           : current_cb( motor, ctl, clk, conv )
           , pos_cb( ctl, met, clk, conv )
         {
         }
 
         void set_callbacks(
-            base::period_interface&    period,
-            base::period_cb_interface& period_cb,
-            base::position_interface&  pos_drv,
-            base::current_interface&   curr_drv )
+            drv::period_interface&    period,
+            drv::period_cb_interface& period_cb,
+            drv::position_interface&  pos_drv,
+            drv::current_interface&   curr_drv )
         {
                 period.set_period_callback( period_cb );
                 curr_drv.set_current_callback( current_cb );

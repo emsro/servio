@@ -1,6 +1,6 @@
-#include "base/drv_interfaces.hpp"
 #include "cnv/converter.hpp"
 #include "ctl/control.hpp"
+#include "drv/interfaces.hpp"
 #include "mon/indication.hpp"
 
 #pragma once
@@ -12,12 +12,12 @@ class monitor
 {
 public:
         monitor(
-            base::microseconds                 now,
-            const ctl::control&                ctl,
-            const base::vcc_interface&         vcc_drv,
-            const base::temperature_interface& temp_drv,
-            indication&                        indi,
-            const cnv::converter&              conv )
+            base::microseconds                now,
+            const ctl::control&               ctl,
+            const drv::vcc_interface&         vcc_drv,
+            const drv::temperature_interface& temp_drv,
+            indication&                       indi,
+            const cnv::converter&             conv )
           : ctl_( ctl )
           , indi_( indi )
           , vcc_drv_( vcc_drv )
@@ -58,11 +58,11 @@ public:
         }
 
 private:
-        const ctl::control&                ctl_;
-        indication&                        indi_;
-        const base::vcc_interface&         vcc_drv_;
-        const base::temperature_interface& temp_drv_;
-        const cnv::converter&              conv_;
+        const ctl::control&               ctl_;
+        indication&                       indi_;
+        const drv::vcc_interface&         vcc_drv_;
+        const drv::temperature_interface& temp_drv_;
+        const cnv::converter&             conv_;
 
         float min_vcc_ = 0.F;
         float max_tmp_ = 90.F;

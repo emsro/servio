@@ -1,5 +1,5 @@
 #include "base/base.hpp"
-#include "base/drv_interfaces.hpp"
+#include "drv/interfaces.hpp"
 #include "platform.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
@@ -9,7 +9,7 @@
 namespace servio::drv
 {
 
-class clock : public base::clk_interface
+class clock : public clk_interface
 {
 public:
         clock( TIM_HandleTypeDef& tim )

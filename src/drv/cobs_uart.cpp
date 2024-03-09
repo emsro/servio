@@ -7,7 +7,7 @@
 namespace servio::drv
 {
 
-base::com_res cobs_uart::load_message( em::view< std::byte* > data )
+com_res cobs_uart::load_message( em::view< std::byte* > data )
 {
         auto [res, used] = bits::load_message( rx_, data );
 
