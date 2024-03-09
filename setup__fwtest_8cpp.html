@@ -92,14 +92,17 @@ $(document).ready(function(){initNavTree('setup__fwtest_8cpp.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="setup__fwtest_8hpp_source.html">drv/tests/setup_fwtest.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="base_2callbacks_8hpp_source.html">base/callbacks.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cobs__uart_8hpp_source.html">drv/cobs_uart.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hbridge_8hpp_source.html">drv/hbridge.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="retainers_8hpp_source.html">drv/retainers.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="central__sentry__iface_8hpp_source.html">sntr/central_sentry_iface.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for setup_fwtest.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="setup__fwtest_8cpp__incl.svg" width="1619" height="306"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="setup__fwtest_8cpp__incl.svg" width="2204" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -119,6 +122,22 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html">servio::drv::tests::cobs_uart_err_test</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1period__iface__test.html">servio::drv::tests::period_iface_test</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1pwm__motor__test.html">servio::drv::tests::pwm_motor_test</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html">servio::drv::tests::hbridge_test</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1drv_1_1tests_1_1leds__test"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test">servio::drv::tests::leds_test</a></td></tr>
+<tr class="separator:structservio_1_1drv_1_1tests_1_1leds__test"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1drv_1_1tests_1_1adc__pooler__test"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test">servio::drv::tests::adc_pooler_test</a></td></tr>
+<tr class="separator:structservio_1_1drv_1_1tests_1_1adc__pooler__test"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1vcc__test.html">servio::drv::tests::vcc_test</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1temperature__test.html">servio::drv::tests::temperature_test</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1position__test.html">servio::drv::tests::position_test</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -134,16 +153,45 @@ Functions</h2></td></tr>
 <tr class="memitem:a6be320e66caa8920908e1f409f5ad0c0"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:a6be320e66caa8920908e1f409f5ad0c0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#a6be320e66caa8920908e1f409f5ad0c0">servio::drv::tests::setup_utest</a> (em::pmr::memory_resource &amp;mem, em::testing::reactor &amp;reac, em::result &amp;res, Args &amp;&amp;... args)</td></tr>
 <tr class="separator:a6be320e66caa8920908e1f409f5ad0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c25793c6469038642ea4e99e79aa270"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#a2c25793c6469038642ea4e99e79aa270">servio::drv::tests::setup_tests</a> (em::pmr::memory_resource &amp;mem, em::testing::reactor &amp;reac, em::testing::collector &amp;coll, base::clk_interface &amp;clk, base::com_interface &amp;comms, em::result &amp;res)</td></tr>
-<tr class="separator:a2c25793c6469038642ea4e99e79aa270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e6dc2dddabd4643b0a180b26957653f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#a4e6dc2dddabd4643b0a180b26957653f">servio::drv::tests::setup_tests</a> (em::pmr::memory_resource &amp;mem, em::testing::reactor &amp;reac, em::testing::collector &amp;coll, base::clk_interface &amp;clk, base::com_interface &amp;comms, base::period_interface &amp;period, base::pwm_motor_interface &amp;pwm, base::vcc_interface &amp;vcc, base::temperature_interface &amp;temp, base::position_interface &amp;pos, em::result &amp;res)</td></tr>
+<tr class="separator:a4e6dc2dddabd4643b0a180b26957653f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structservio_1_1drv_1_1tests_1_1leds__test" id="structservio_1_1drv_1_1tests_1_1leds__test"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1drv_1_1tests_1_1leds__test">&#9670;&nbsp;</a></span>servio::drv::tests::leds_test</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::drv::tests::leds_test</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div>
+</div>
+</div>
+<a name="structservio_1_1drv_1_1tests_1_1adc__pooler__test" id="structservio_1_1drv_1_1tests_1_1adc__pooler__test"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1drv_1_1tests_1_1adc__pooler__test">&#9670;&nbsp;</a></span>servio::drv::tests::adc_pooler_test</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::drv::tests::adc_pooler_test</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div>
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="dir_26e34818c745abafa34d6ef482a48aa2.html">tests</a></li><li class="navelem"><a class="el" href="setup__fwtest_8cpp.html">setup_fwtest.cpp</a></li>
-    <li class="footer">Generated on Sat Mar 9 2024 14:03:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 9 2024 16:53:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

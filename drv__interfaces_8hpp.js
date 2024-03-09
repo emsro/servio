@@ -14,5 +14,6 @@ var drv__interfaces_8hpp =
     [ "temperature_interface", "classservio_1_1base_1_1temperature__interface.html", "classservio_1_1base_1_1temperature__interface" ],
     [ "current_interface", "classservio_1_1base_1_1current__interface.html", "classservio_1_1base_1_1current__interface" ],
     [ "current_cb_interface", "drv__interfaces_8hpp.html#aa3eb6de3023e3094e34a3a3b7376a8c3", null ],
-    [ "position_cb_interface", "drv__interfaces_8hpp.html#a0f79c1626ced70162e7dfb91fe18de92", null ]
+    [ "position_cb_interface", "drv__interfaces_8hpp.html#a0f79c1626ced70162e7dfb91fe18de92", null ],
+    [ "wait_for", "drv__interfaces_8hpp.html#a21bfaaf04dde77dc8f02034d145fc00a", null ]
 ];

@@ -37,6 +37,9 @@ var namespaceservio_1_1drv =
       [ "COBS_HAL_ERROR_IRQ_ERR", "namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0befaf5f7f7950a88404a4bd10072631d85bb", null ],
       [ "COBS_HAL_RX_START_ERR", "namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0befa81cfae8ee9b2ff6ffc3950754d2f5dea", null ]
     ] ],
+    [ "retain_callback", "namespaceservio_1_1drv.html#ac605a677e33c57203921d1fc14e1b56a", null ],
+    [ "retain_callback", "namespaceservio_1_1drv.html#a1876626ceb138f57166f9440ee8af732", null ],
+    [ "retain_callback", "namespaceservio_1_1drv.html#a243b50f4ab7dbb470a3f9bc38f884521", null ],
     [ "TEST", "namespaceservio_1_1drv.html#a9d4caa145e7a9eb34292a6ce97cce774", null ],
     [ "ADC_SEQUENCE", "namespaceservio_1_1drv.html#a73c9d35c07a012f60e2c706c77e82f1c", null ],
     [ "EMPTY_ADC_CALLBACK", "namespaceservio_1_1drv.html#a86a83240f878e1090630254fb4167045", null ],

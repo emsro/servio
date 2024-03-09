@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"fw_2dispatcher_8cpp.html#aef7177bf7b33538307aa967e65274fd9":[9,0,1,8,0,10],
+"fw_2dispatcher_8cpp.html#afcff2f898a2b1245034c71b31cf1e0bd":[9,0,1,8,0,2],
 "fw_2dispatcher_8hpp.html":[9,0,1,8,1],
 "fw_2dispatcher_8hpp.html#a5b2bdd32885a2db32522f11a3a73a0d9":[9,0,1,8,1,2],
 "fw_2dispatcher_8hpp.html#a958bf350bbe8b27b5db135c8b6ea0909":[9,0,1,8,1,3],
@@ -9,8 +11,8 @@ var NAVTREEINDEX2 =
 "fw_2main_8cpp.html#ad1824a7aded7f0e6c49688e7ac14321c":[9,0,1,8,6,1],
 "fw_2main_8cpp.html#ae63f34c74ab660564e5401f65b0d4ffa":[9,0,1,8,6,2],
 "fw_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[9,0,1,8,6,0],
-"globals.html":[9,1,0,0],
 "globals.html":[9,1,0],
+"globals.html":[9,1,0,0],
 "globals_8cpp.html":[9,0,1,5,3],
 "globals_8cpp.html#a50e4044e788144d8dde6f5c10ce3326a":[9,0,1,5,3,0],
 "globals_8hpp.html":[9,0,1,5,4],
@@ -64,6 +66,9 @@ var NAVTREEINDEX2 =
 "install__stop__callback_8hpp.html#a15f1de6194e5350c0ae52ddafe5ae2d6":[9,0,1,8,3,0],
 "install__stop__callback_8hpp_source.html":[9,0,1,8,3],
 "io_8proto.html":[9,0,1,9,0],
+"is__powerless_8hpp.html":[9,0,1,7,1,1],
+"is__powerless_8hpp.html#ac8399bc29bb8a7c4c90c5b9bd6a859af":[9,0,1,7,1,1,0],
+"is__powerless_8hpp_source.html":[9,0,1,7,1,1],
 "it_8cpp.html":[9,0,1,8,4],
 "it_8cpp.html#a1d98923de2ed6b7309b66f9ba2971647":[9,0,1,8,4,8],
 "it_8cpp.html#a2bffc10d5bd4106753b7c30e86903bea":[9,0,1,8,4,2],
@@ -200,8 +205,8 @@ var NAVTREEINDEX2 =
 "namespacegoogle.html":[7,0,0],
 "namespacegoogle_1_1protobuf.html":[7,0,0,0],
 "namespacegoogle_1_1protobuf.html#a7d9dc03a0937665df6d59ad6f7b7f312":[7,0,0,0,0],
-"namespacemembers.html":[7,1,0],
 "namespacemembers.html":[7,1,0,0],
+"namespacemembers.html":[7,1,0],
 "namespacemembers_b.html":[7,1,0,1],
 "namespacemembers_c.html":[7,1,0,2],
 "namespacemembers_d.html":[7,1,0,3],
@@ -233,6 +238,7 @@ var NAVTREEINDEX2 =
 "namespaceservio_1_1base.html#a05f5ed9d1dec54fb0ed7e537bf8c063a":[9,0,1,0,0,0,2],
 "namespaceservio_1_1base.html#a0f79c1626ced70162e7dfb91fe18de92":[7,0,1,0,29],
 "namespaceservio_1_1base.html#a2047d85175b206297322ed2c0a6361fc":[7,0,1,0,28],
+"namespaceservio_1_1base.html#a21bfaaf04dde77dc8f02034d145fc00a":[7,0,1,0,34],
 "namespaceservio_1_1base.html#a2482ae2d4349b7d914b598e04ef6cff9":[9,0,1,0,0,0,1],
 "namespaceservio_1_1base.html#a3e5e15432ec57250250b13239ec98650":[7,0,1,0,25],
 "namespaceservio_1_1base.html#a52414739b3bb89a0cfbf750a4ea92826":[7,0,1,0,32],
@@ -243,11 +249,5 @@ var NAVTREEINDEX2 =
 "namespaceservio_1_1base.html#a6401eb8ea8fba126927fcb17bb507663":[9,0,1,0,0,0,0],
 "namespaceservio_1_1base.html#a686fe93967ffccf1c5f8620503a44215":[7,0,1,0,24],
 "namespaceservio_1_1base.html#a7f0faa48f2ea63277cd3d5a698cefb68":[7,0,1,0,30],
-"namespaceservio_1_1base.html#a7f4a3ba7fed463a696460a6301b36324":[7,0,1,0,34],
-"namespaceservio_1_1base.html#a866ad0e5c7cbd3727213d2b51bf2e9c6":[7,0,1,0,21],
-"namespaceservio_1_1base.html#aa3eb6de3023e3094e34a3a3b7376a8c3":[7,0,1,0,22],
-"namespaceservio_1_1base.html#ab509a1c00f94f485d922a25b8ae06971":[7,0,1,0,23],
-"namespaceservio_1_1base.html#abf3fe893e15d76d70f70862489fd606c":[9,0,1,0,0,0,3],
-"namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552e":[7,0,1,0,33],
-"namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552ea7b4354bded455eb379e3c764806cda7b":[7,0,1,0,33,3]
+"namespaceservio_1_1base.html#a7f4a3ba7fed463a696460a6301b36324":[7,0,1,0,35]
 };

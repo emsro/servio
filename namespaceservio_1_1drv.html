@@ -176,6 +176,12 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a1876626ceb138f57166f9440ee8af732"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a1876626ceb138f57166f9440ee8af732">retain_callback</a> (<a class="el" href="classservio_1_1base_1_1period__interface.html">servio::base::period_interface</a> &amp;period)</td></tr>
+<tr class="separator:a1876626ceb138f57166f9440ee8af732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac605a677e33c57203921d1fc14e1b56a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#ac605a677e33c57203921d1fc14e1b56a">retain_callback</a> (<a class="el" href="classservio_1_1base_1_1current__interface.html">servio::base::current_interface</a> &amp;curr_drv)</td></tr>
+<tr class="separator:ac605a677e33c57203921d1fc14e1b56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a243b50f4ab7dbb470a3f9bc38f884521"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a243b50f4ab7dbb470a3f9bc38f884521">retain_callback</a> (<a class="el" href="classservio_1_1base_1_1position__interface.html">servio::base::position_interface</a> &amp;pos_drv)</td></tr>
+<tr class="separator:a243b50f4ab7dbb470a3f9bc38f884521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d4caa145e7a9eb34292a6ce97cce774"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a9d4caa145e7a9eb34292a6ce97cce774">TEST</a> (COBS, cont)</td></tr>
 <tr class="separator:a9d4caa145e7a9eb34292a6ce97cce774"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -330,6 +336,90 @@ port</td>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ac605a677e33c57203921d1fc14e1b56a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac605a677e33c57203921d1fc14e1b56a">&#9670;&nbsp;</a></span>retain_callback() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto servio::drv::retain_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classservio_1_1base_1_1current__interface.html">servio::base::current_interface</a> &amp;&#160;</td>
+          <td class="paramname"><em>curr_drv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classservio_1_1base_1_1current__interface.html#aeb737f912ffa36aeeec93f5c6c0755d9">servio::base::current_interface::get_current_callback()</a>.</p>
+
+</div>
+</div>
+<a id="a1876626ceb138f57166f9440ee8af732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1876626ceb138f57166f9440ee8af732">&#9670;&nbsp;</a></span>retain_callback() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto servio::drv::retain_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classservio_1_1base_1_1period__interface.html">servio::base::period_interface</a> &amp;&#160;</td>
+          <td class="paramname"><em>period</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classservio_1_1base_1_1period__interface.html#ae9c7aefc30c17ae2e6080818f2d7c228">servio::base::period_interface::get_period_callback()</a>.</p>
+
+</div>
+</div>
+<a id="a243b50f4ab7dbb470a3f9bc38f884521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a243b50f4ab7dbb470a3f9bc38f884521">&#9670;&nbsp;</a></span>retain_callback() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto servio::drv::retain_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classservio_1_1base_1_1position__interface.html">servio::base::position_interface</a> &amp;&#160;</td>
+          <td class="paramname"><em>pos_drv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classservio_1_1base_1_1position__interface.html#aa305a0150051e88f76b5348189e65345">servio::base::position_interface::get_position_callback()</a>.</p>
+
+</div>
+</div>
 <a id="a9d4caa145e7a9eb34292a6ce97cce774"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d4caa145e7a9eb34292a6ce97cce774">&#9670;&nbsp;</a></span>TEST()</h2>
 
@@ -461,7 +551,7 @@ port</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li>
-    <li class="footer">Generated on Sat Mar 9 2024 14:03:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 9 2024 16:54:00 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

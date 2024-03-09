@@ -71,7 +71,15 @@ var annotated_dup =
           [ "comms_timeout_test", "structservio_1_1drv_1_1tests_1_1comms__timeout__test.html", "structservio_1_1drv_1_1tests_1_1comms__timeout__test" ],
           [ "test_central_sentry", "structservio_1_1drv_1_1tests_1_1test__central__sentry.html", "structservio_1_1drv_1_1tests_1_1test__central__sentry" ],
           [ "cobs_uart_rx_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test" ],
-          [ "cobs_uart_err_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test" ]
+          [ "cobs_uart_err_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test" ],
+          [ "period_iface_test", "structservio_1_1drv_1_1tests_1_1period__iface__test.html", "structservio_1_1drv_1_1tests_1_1period__iface__test" ],
+          [ "pwm_motor_test", "structservio_1_1drv_1_1tests_1_1pwm__motor__test.html", "structservio_1_1drv_1_1tests_1_1pwm__motor__test" ],
+          [ "hbridge_test", "structservio_1_1drv_1_1tests_1_1hbridge__test.html", "structservio_1_1drv_1_1tests_1_1hbridge__test" ],
+          [ "leds_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test", null ],
+          [ "adc_pooler_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test", null ],
+          [ "vcc_test", "structservio_1_1drv_1_1tests_1_1vcc__test.html", "structservio_1_1drv_1_1tests_1_1vcc__test" ],
+          [ "temperature_test", "structservio_1_1drv_1_1tests_1_1temperature__test.html", "structservio_1_1drv_1_1tests_1_1temperature__test" ],
+          [ "position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", "structservio_1_1drv_1_1tests_1_1position__test" ]
         ] ],
         [ "detailed_adc_channel", "structservio_1_1drv_1_1detailed__adc__channel.html", "structservio_1_1drv_1_1detailed__adc__channel" ],
         [ "adc_channel", "structservio_1_1drv_1_1adc__channel.html", "structservio_1_1drv_1_1adc__channel" ],

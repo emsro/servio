@@ -14,6 +14,7 @@ var hierarchy =
       [ "servio::core::current_callback", "classservio_1_1core_1_1current__callback.html", null ]
     ] ],
     [ "servio::drv::adc_pooler< Set >", "structservio_1_1drv_1_1adc__pooler.html", null ],
+    [ "servio::drv::tests::adc_pooler_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test", null ],
     [ "servio::drv::adc_set< CentralSentry >", "structservio_1_1drv_1_1adc__set.html", null ],
     [ "servio::sntr::central_sentry_iface", "structservio_1_1sntr_1_1central__sentry__iface.html", [
       [ "servio::drv::tests::test_central_sentry", "structservio_1_1drv_1_1tests_1_1test__central__sentry.html", null ],
@@ -62,12 +63,14 @@ var hierarchy =
     ] ],
     [ "servio::brd::hb_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1hb__timer__cfg", null ],
     [ "servio::plt::hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", null ],
+    [ "servio::drv::tests::hbridge_test", "structservio_1_1drv_1_1tests_1_1hbridge__test.html", null ],
     [ "servio::mon::indication", "classservio_1_1mon_1_1indication.html", null ],
     [ "servio::cfg::keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", null ],
     [ "servio::plt::leds_gpio_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg", null ],
     [ "servio::base::leds_interface", "classservio_1_1base_1_1leds__interface.html", [
       [ "servio::drv::leds", "classservio_1_1drv_1_1leds.html", null ]
     ] ],
+    [ "servio::drv::tests::leds_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test", null ],
     [ "servio::brd::leds_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1leds__timer__cfg", null ],
     [ "servio::plt::leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", null ],
     [ "servio::base::leds_vals", "namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals", null ],
@@ -84,6 +87,7 @@ var hierarchy =
       [ "servio::base::period_cb< Callable >", "structservio_1_1base_1_1period__cb.html", null ],
       [ "servio::drv::adc_pooler_period_cb< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__period__cb.html", null ]
     ] ],
+    [ "servio::drv::tests::period_iface_test", "structservio_1_1drv_1_1tests_1_1period__iface__test.html", null ],
     [ "servio::base::period_interface", "classservio_1_1base_1_1period__interface.html", [
       [ "servio::drv::hbridge", "classservio_1_1drv_1_1hbridge.html", null ]
     ] ],
@@ -93,10 +97,12 @@ var hierarchy =
     [ "servio::base::position_interface", "classservio_1_1base_1_1position__interface.html", [
       [ "servio::drv::adc_pooler_position< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__position.html", null ]
     ] ],
+    [ "servio::drv::tests::position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", null ],
     [ "servio::mtr::posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", null ],
     [ "servio::base::pwm_motor_interface", "classservio_1_1base_1_1pwm__motor__interface.html", [
       [ "servio::drv::hbridge", "classservio_1_1drv_1_1hbridge.html", null ]
     ] ],
+    [ "servio::drv::tests::pwm_motor_test", "structservio_1_1drv_1_1tests_1_1pwm__motor__test.html", null ],
     [ "servio::sntr::record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", null ],
     [ "servio::sntr::sentry", "classservio_1_1sntr_1_1sentry.html", null ],
     [ "servio::brd::setpoint", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1setpoint", null ],
@@ -107,6 +113,7 @@ var hierarchy =
     [ "servio::base::temperature_interface", "classservio_1_1base_1_1temperature__interface.html", [
       [ "servio::drv::adc_pooler_temperature< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__temperature.html", null ]
     ] ],
+    [ "servio::drv::tests::temperature_test", "structservio_1_1drv_1_1tests_1_1temperature__test.html", null ],
     [ "testing::Test", null, [
       [ "servio::bb::bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", null ],
       [ "servio::ctl::tests::control_fixture", "classservio_1_1ctl_1_1tests_1_1control__fixture.html", null ],
@@ -125,5 +132,6 @@ var hierarchy =
     ] ],
     [ "servio::base::vcc_interface", "classservio_1_1base_1_1vcc__interface.html", [
       [ "servio::drv::adc_pooler_vcc< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__vcc.html", null ]
-    ] ]
+    ] ],
+    [ "servio::drv::tests::vcc_test", "structservio_1_1drv_1_1tests_1_1vcc__test.html", null ]
 ];
