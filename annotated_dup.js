@@ -2,26 +2,7 @@ var annotated_dup =
 [
     [ "servio", "namespaceservio.html", [
       [ "base", "namespaceservio_1_1base.html", [
-        [ "leds_vals", "namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals", "namespaceservio_1_1base_structservio_1_1base_1_1leds__vals_dup" ],
-        [ "adc_detailed_cb", "structservio_1_1base_1_1adc__detailed__cb.html", "structservio_1_1base_1_1adc__detailed__cb" ],
-        [ "empty_adc_detailed_cb", "structservio_1_1base_1_1empty__adc__detailed__cb.html", "structservio_1_1base_1_1empty__adc__detailed__cb" ],
-        [ "value_cb", "structservio_1_1base_1_1value__cb.html", "structservio_1_1base_1_1value__cb" ],
-        [ "empty_value_cb", "structservio_1_1base_1_1empty__value__cb.html", "structservio_1_1base_1_1empty__value__cb" ],
-        [ "period_cb", "structservio_1_1base_1_1period__cb.html", "structservio_1_1base_1_1period__cb" ],
-        [ "empty_period_cb", "structservio_1_1base_1_1empty__period__cb.html", "structservio_1_1base_1_1empty__period__cb" ],
-        [ "adc_detailed_cb_interface", "classservio_1_1base_1_1adc__detailed__cb__interface.html", "classservio_1_1base_1_1adc__detailed__cb__interface" ],
-        [ "value_cb_interface", "classservio_1_1base_1_1value__cb__interface.html", "classservio_1_1base_1_1value__cb__interface" ],
-        [ "period_cb_interface", "classservio_1_1base_1_1period__cb__interface.html", "classservio_1_1base_1_1period__cb__interface" ],
-        [ "com_res", "structservio_1_1base_1_1com__res.html", "structservio_1_1base_1_1com__res" ],
-        [ "com_interface", "classservio_1_1base_1_1com__interface.html", "classservio_1_1base_1_1com__interface" ],
-        [ "leds_interface", "classservio_1_1base_1_1leds__interface.html", "classservio_1_1base_1_1leds__interface" ],
-        [ "clk_interface", "classservio_1_1base_1_1clk__interface.html", "classservio_1_1base_1_1clk__interface" ],
-        [ "period_interface", "classservio_1_1base_1_1period__interface.html", "classservio_1_1base_1_1period__interface" ],
-        [ "pwm_motor_interface", "classservio_1_1base_1_1pwm__motor__interface.html", "classservio_1_1base_1_1pwm__motor__interface" ],
-        [ "position_interface", "classservio_1_1base_1_1position__interface.html", "classservio_1_1base_1_1position__interface" ],
-        [ "vcc_interface", "classservio_1_1base_1_1vcc__interface.html", "classservio_1_1base_1_1vcc__interface" ],
-        [ "temperature_interface", "classservio_1_1base_1_1temperature__interface.html", "classservio_1_1base_1_1temperature__interface" ],
-        [ "current_interface", "classservio_1_1base_1_1current__interface.html", "classservio_1_1base_1_1current__interface" ]
+        [ "leds_vals", "namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals", "namespaceservio_1_1base_structservio_1_1base_1_1leds__vals_dup" ]
       ] ],
       [ "bb", "namespaceservio_1_1bb.html", [
         [ "bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", "structservio_1_1bb_1_1bb__test__case" ]
@@ -91,11 +72,30 @@ var annotated_dup =
         [ "adc_pooler_temperature", "structservio_1_1drv_1_1adc__pooler__temperature.html", "structservio_1_1drv_1_1adc__pooler__temperature" ],
         [ "adc_pooler_position", "structservio_1_1drv_1_1adc__pooler__position.html", "structservio_1_1drv_1_1adc__pooler__position" ],
         [ "adc_pooler_current", "structservio_1_1drv_1_1adc__pooler__current.html", "structservio_1_1drv_1_1adc__pooler__current" ],
+        [ "adc_detailed_cb", "structservio_1_1drv_1_1adc__detailed__cb.html", "structservio_1_1drv_1_1adc__detailed__cb" ],
+        [ "empty_adc_detailed_cb", "structservio_1_1drv_1_1empty__adc__detailed__cb.html", "structservio_1_1drv_1_1empty__adc__detailed__cb" ],
+        [ "value_cb", "structservio_1_1drv_1_1value__cb.html", "structservio_1_1drv_1_1value__cb" ],
+        [ "empty_value_cb", "structservio_1_1drv_1_1empty__value__cb.html", "structservio_1_1drv_1_1empty__value__cb" ],
+        [ "period_cb", "structservio_1_1drv_1_1period__cb.html", "structservio_1_1drv_1_1period__cb" ],
+        [ "empty_period_cb", "structservio_1_1drv_1_1empty__period__cb.html", "structservio_1_1drv_1_1empty__period__cb" ],
         [ "clock", "classservio_1_1drv_1_1clock.html", "classservio_1_1drv_1_1clock" ],
         [ "cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", "classservio_1_1drv_1_1cobs__uart" ],
         [ "pin_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg", "namespaceservio_1_1drv_structservio_1_1drv_1_1pin__cfg_dup" ],
         [ "pinch_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg", "namespaceservio_1_1drv_structservio_1_1drv_1_1pinch__cfg_dup" ],
         [ "hbridge", "classservio_1_1drv_1_1hbridge.html", "classservio_1_1drv_1_1hbridge" ],
+        [ "adc_detailed_cb_interface", "classservio_1_1drv_1_1adc__detailed__cb__interface.html", "classservio_1_1drv_1_1adc__detailed__cb__interface" ],
+        [ "value_cb_interface", "classservio_1_1drv_1_1value__cb__interface.html", "classservio_1_1drv_1_1value__cb__interface" ],
+        [ "period_cb_interface", "classservio_1_1drv_1_1period__cb__interface.html", "classservio_1_1drv_1_1period__cb__interface" ],
+        [ "com_res", "structservio_1_1drv_1_1com__res.html", "structservio_1_1drv_1_1com__res" ],
+        [ "com_interface", "classservio_1_1drv_1_1com__interface.html", "classservio_1_1drv_1_1com__interface" ],
+        [ "leds_interface", "classservio_1_1drv_1_1leds__interface.html", "classservio_1_1drv_1_1leds__interface" ],
+        [ "clk_interface", "classservio_1_1drv_1_1clk__interface.html", "classservio_1_1drv_1_1clk__interface" ],
+        [ "period_interface", "classservio_1_1drv_1_1period__interface.html", "classservio_1_1drv_1_1period__interface" ],
+        [ "pwm_motor_interface", "classservio_1_1drv_1_1pwm__motor__interface.html", "classservio_1_1drv_1_1pwm__motor__interface" ],
+        [ "position_interface", "classservio_1_1drv_1_1position__interface.html", "classservio_1_1drv_1_1position__interface" ],
+        [ "vcc_interface", "classservio_1_1drv_1_1vcc__interface.html", "classservio_1_1drv_1_1vcc__interface" ],
+        [ "temperature_interface", "classservio_1_1drv_1_1temperature__interface.html", "classservio_1_1drv_1_1temperature__interface" ],
+        [ "current_interface", "classservio_1_1drv_1_1current__interface.html", "classservio_1_1drv_1_1current__interface" ],
         [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ]
       ] ],
       [ "fw", "namespaceservio_1_1fw.html", [

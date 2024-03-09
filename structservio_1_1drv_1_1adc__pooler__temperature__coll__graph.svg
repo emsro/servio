@@ -22,9 +22,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classservio_1_1base_1_1temperature__interface.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="5.5,-67.5 5.5,-97.5 148.5,-97.5 148.5,-67.5 5.5,-67.5"/>
-<text text-anchor="start" x="13.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::base::temperature</text>
+<g id="a_node2"><a xlink:href="classservio_1_1drv_1_1temperature__interface.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="10,-67.5 10,-97.5 144,-97.5 144,-67.5 10,-67.5"/>
+<text text-anchor="start" x="18" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::temperature</text>
 <text text-anchor="middle" x="77" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_interface</text>
 </a>
 </g>

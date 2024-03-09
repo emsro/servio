@@ -15,7 +15,7 @@ var prototype2_2board_8cpp =
     [ "leds_setup", "prototype2_2board_8cpp.html#a8018a4a9a9bc9b1d4af53c14d646d4c8", null ],
     [ "setup_board", "prototype2_2board_8cpp.html#acf0eac3166e968f5cefe71de1f5d5ca8", null ],
     [ "setup_core_drivers", "prototype2_2board_8cpp.html#a58f703e939140ddd318ba1e8202e6153", null ],
-    [ "setup_debug_comms", "prototype2_2board_8cpp.html#aaad7b603159b5b262bb9cc0733d85ddb", null ],
+    [ "setup_debug_comms", "prototype2_2board_8cpp.html#a36c35a8f487c1bd2fa3d0713e55909c3", null ],
     [ "start_callback", "prototype2_2board_8cpp.html#aac2ab253dd62c8d22e7504bd106c6283", null ],
     [ "TIM1_UP_TIM16_IRQHandler", "prototype2_2board_8cpp.html#a9895c719dd7dc3d711d91dc0523f0696", null ],
     [ "USART1_IRQHandler", "prototype2_2board_8cpp.html#a27fb9800d727337121da9525aca0b557", null ],

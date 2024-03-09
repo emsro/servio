@@ -1,10 +1,10 @@
 <map id="servio::sntr::tests::central_sentry_fixture" name="servio::sntr::tests::central_sentry_fixture">
-<area shape="rect" id="node1" title=" " alt="" coords="560,122,732,163"/>
-<area shape="rect" id="node2" title=" " alt="" coords="333,5,434,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="314,57,453,98"/>
-<area shape="rect" id="node4" href="$namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record" title=" " alt="" coords="30,129,174,156"/>
-<area shape="rect" id="node5" title=" " alt="" coords="312,122,455,163"/>
-<area shape="rect" id="node6" title=" " alt="" coords="312,187,455,229"/>
-<area shape="rect" id="node7" href="$structservio_1_1sntr_1_1tests_1_1test__clk.html" title=" " alt="" coords="316,253,451,294"/>
-<area shape="rect" id="node8" href="$classservio_1_1base_1_1clk__interface.html" title=" " alt="" coords="5,260,199,287"/>
+<area shape="rect" id="node1" title=" " alt="" coords="549,122,721,163"/>
+<area shape="rect" id="node2" title=" " alt="" coords="322,5,423,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="303,57,442,98"/>
+<area shape="rect" id="node4" href="$namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record" title=" " alt="" coords="25,129,169,156"/>
+<area shape="rect" id="node5" title=" " alt="" coords="301,122,444,163"/>
+<area shape="rect" id="node6" title=" " alt="" coords="301,187,444,229"/>
+<area shape="rect" id="node7" href="$structservio_1_1sntr_1_1tests_1_1test__clk.html" title=" " alt="" coords="305,253,440,294"/>
+<area shape="rect" id="node8" href="$classservio_1_1drv_1_1clk__interface.html" title=" " alt="" coords="5,260,188,287"/>
 </map>

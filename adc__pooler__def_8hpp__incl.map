@@ -1,12 +1,8 @@
 <map id="src/drv/adc_pooler_def.hpp" name="src/drv/adc_pooler_def.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="210,5,351,47"/>
-<area shape="rect" id="node2" href="$drv__interfaces_8hpp.html" title=" " alt="" coords="310,244,489,271"/>
-<area shape="rect" id="node7" href="$adc__pooler_8hpp.html" title=" " alt="" coords="145,95,291,121"/>
-<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="524,319,605,345"/>
-<area shape="rect" id="node4" title=" " alt="" coords="290,393,357,420"/>
-<area shape="rect" id="node5" title=" " alt="" coords="361,319,499,345"/>
-<area shape="rect" id="node6" title=" " alt="" coords="182,319,235,345"/>
-<area shape="rect" id="node8" href="$base_2callbacks_8hpp.html" title=" " alt="" coords="199,169,346,196"/>
-<area shape="rect" id="node9" href="$platform_8hpp.html" title=" " alt="" coords="78,244,185,271"/>
-<area shape="rect" id="node10" href="$sentry_8hpp.html" title=" " alt="" coords="5,169,124,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="265,5,407,47"/>
+<area shape="rect" id="node2" href="$adc__pooler_8hpp.html" title=" " alt="" coords="209,95,354,121"/>
+<area shape="rect" id="node4" href="$interfaces_8hpp.html" title=" " alt="" coords="193,244,333,271"/>
+<area shape="rect" id="node3" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="5,169,141,196"/>
+<area shape="rect" id="node5" href="$platform_8hpp.html" title=" " alt="" coords="165,169,272,196"/>
+<area shape="rect" id="node6" href="$sentry_8hpp.html" title=" " alt="" coords="297,169,415,196"/>
 </map>

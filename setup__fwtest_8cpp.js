@@ -15,6 +15,6 @@ var setup__fwtest_8cpp =
     [ "vcc_test", "structservio_1_1drv_1_1tests_1_1vcc__test.html", "structservio_1_1drv_1_1tests_1_1vcc__test" ],
     [ "temperature_test", "structservio_1_1drv_1_1tests_1_1temperature__test.html", "structservio_1_1drv_1_1tests_1_1temperature__test" ],
     [ "position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", "structservio_1_1drv_1_1tests_1_1position__test" ],
-    [ "setup_tests", "setup__fwtest_8cpp.html#a4e6dc2dddabd4643b0a180b26957653f", null ],
+    [ "setup_tests", "setup__fwtest_8cpp.html#a5a8ae2e39f4e91a916deaac362d158ce", null ],
     [ "setup_utest", "setup__fwtest_8cpp.html#a6be320e66caa8920908e1f409f5ad0c0", null ]
 ];

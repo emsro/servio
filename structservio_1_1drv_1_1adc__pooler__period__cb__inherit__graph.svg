@@ -22,9 +22,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classservio_1_1base_1_1period__cb__interface.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="13.5,-67.5 13.5,-97.5 126.5,-97.5 126.5,-67.5 13.5,-67.5"/>
-<text text-anchor="start" x="21.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::base::period</text>
+<g id="a_node2"><a xlink:href="classservio_1_1drv_1_1period__cb__interface.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="18,-67.5 18,-97.5 122,-97.5 122,-67.5 18,-67.5"/>
+<text text-anchor="start" x="26" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::period</text>
 <text text-anchor="middle" x="70" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_cb_interface</text>
 </a>
 </g>

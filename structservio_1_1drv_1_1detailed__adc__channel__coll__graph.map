@@ -1,5 +1,5 @@
 <map id="servio::drv::detailed_adc_channel&lt; ID, N &gt;" name="servio::drv::detailed_adc_channel&lt; ID, N &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="111,109,283,151"/>
-<area shape="rect" id="node2" href="$classservio_1_1base_1_1adc__detailed__cb__interface.html" title=" " alt="" coords="5,5,197,47"/>
-<area shape="rect" id="node3" href="$classservio_1_1sntr_1_1sentry.html" title=" " alt="" coords="221,13,365,39"/>
+<area shape="rect" id="node1" title=" " alt="" coords="103,109,275,151"/>
+<area shape="rect" id="node2" href="$classservio_1_1drv_1_1adc__detailed__cb__interface.html" title=" " alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node3" href="$classservio_1_1sntr_1_1sentry.html" title=" " alt="" coords="211,13,355,39"/>
 </map>

@@ -4,7 +4,7 @@ var searchData=
   ['adc1_5firqhandler_1150',['ADC1_IRQHandler',['../proto3_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b',1,'board.cpp']]],
   ['adc_5fchannel_5fwith_5fcallback_1151',['adc_channel_with_callback',['../structservio_1_1drv_1_1adc__channel__with__callback.html#ae6d10ad5eef195cf313251108c15efb9',1,'servio::drv::adc_channel_with_callback']]],
   ['adc_5fconv_5fcplt_5firq_1152',['adc_conv_cplt_irq',['../structservio_1_1drv_1_1adc__pooler.html#a6e27aabd150211e20c317ffc246f5d5e',1,'servio::drv::adc_pooler']]],
-  ['adc_5fdetailed_5fcb_1153',['adc_detailed_cb',['../structservio_1_1base_1_1adc__detailed__cb.html#a6f723e9cc2ffb467672c925a8dcae03c',1,'servio::base::adc_detailed_cb']]],
+  ['adc_5fdetailed_5fcb_1153',['adc_detailed_cb',['../structservio_1_1drv_1_1adc__detailed__cb.html#ac3cfabf2fc4f584c2e947d33e0ac8619',1,'servio::drv::adc_detailed_cb']]],
   ['adc_5ferror_5firq_1154',['adc_error_irq',['../structservio_1_1drv_1_1adc__pooler.html#a774cee15e9567b519f2b0a117041ee56',1,'servio::drv::adc_pooler']]],
   ['adc_5fpooler_1155',['adc_pooler',['../structservio_1_1drv_1_1adc__pooler.html#a5f8465839a30b1db2cca7dc463bb327b',1,'servio::drv::adc_pooler']]],
   ['adc_5fpooler_5fsetup_1156',['adc_pooler_setup',['../namespaceservio_1_1brd.html#aff6bf773b950ff1a6a26be02ee4da8a5',1,'servio::brd']]],

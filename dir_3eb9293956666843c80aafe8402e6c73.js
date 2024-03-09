@@ -4,6 +4,7 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
     [ "tests", "dir_26e34818c745abafa34d6ef482a48aa2.html", "dir_26e34818c745abafa34d6ef482a48aa2" ],
     [ "adc_pooler.hpp", "adc__pooler_8hpp.html", "adc__pooler_8hpp" ],
     [ "adc_pooler_def.hpp", "adc__pooler__def_8hpp.html", "adc__pooler__def_8hpp" ],
+    [ "callbacks.hpp", "drv_2callbacks_8hpp.html", "drv_2callbacks_8hpp" ],
     [ "clock.hpp", "clock_8hpp.html", [
       [ "clock", "classservio_1_1drv_1_1clock.html", "classservio_1_1drv_1_1clock" ]
     ] ],
@@ -24,6 +25,7 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
     ] ],
     [ "hbridge.cpp", "hbridge_8cpp.html", null ],
     [ "hbridge.hpp", "hbridge_8hpp.html", "hbridge_8hpp" ],
+    [ "interfaces.hpp", "interfaces_8hpp.html", "interfaces_8hpp" ],
     [ "leds.cpp", "leds_8cpp.html", null ],
     [ "leds.hpp", "leds_8hpp.html", [
       [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ]

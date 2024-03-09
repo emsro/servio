@@ -27,7 +27,7 @@ var namespaceservio_1_1brd =
     [ "setup_clk", "namespaceservio_1_1brd.html#af375aef2289854552e3c6e5c3c16a5cb", null ],
     [ "setup_clock_timer", "namespaceservio_1_1brd.html#addcb00188aacbda8352cbd4ddbe7d3e9", null ],
     [ "setup_core_drivers", "namespaceservio_1_1brd.html#a58f703e939140ddd318ba1e8202e6153", null ],
-    [ "setup_debug_comms", "namespaceservio_1_1brd.html#aaad7b603159b5b262bb9cc0733d85ddb", null ],
+    [ "setup_debug_comms", "namespaceservio_1_1brd.html#a36c35a8f487c1bd2fa3d0713e55909c3", null ],
     [ "setup_gpio", "namespaceservio_1_1brd.html#aabe7ae83af846cbd60a93744ae3237ae", null ],
     [ "setup_hbridge_timers", "namespaceservio_1_1brd.html#a0fe8bce4494ca56db71b5ccfdac9a52a", null ],
     [ "setup_leds_channel", "namespaceservio_1_1brd.html#a0bfe1785c7671fbc6d1d8e62b760fd77", null ],
