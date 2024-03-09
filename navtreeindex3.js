@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"namespaceservio_1_1base.html#a6401eb8ea8fba126927fcb17bb507663":[9,0,1,0,0,0,0],
+"namespaceservio_1_1base.html#a7f0faa48f2ea63277cd3d5a698cefb68":[7,0,1,0,5],
 "namespaceservio_1_1base.html#a7f4a3ba7fed463a696460a6301b36324":[7,0,1,0,9],
 "namespaceservio_1_1base.html#abf3fe893e15d76d70f70862489fd606c":[9,0,1,0,0,0,3],
 "namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552e":[7,0,1,0,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "namespaceservio_1_1drv.html#afd65d5af9ac22738b2b92e662410d6a8":[9,0,1,7,8,1,2],
 "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg":[9,0,1,7,8,0],
 "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg":[9,0,1,7,8,1],
-"namespaceservio_1_1drv_1_1bits.html":[7,0,1,7,0],
-"namespaceservio_1_1drv_1_1bits.html#a706003385a8549ca44d3562df29231cd":[9,0,1,7,0,0,0,1],
-"namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4":[7,0,1,7,0,2]
+"namespaceservio_1_1drv_1_1bits.html":[7,0,1,7,0]
 };

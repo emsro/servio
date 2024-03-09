@@ -41,7 +41,7 @@ var hierarchy =
     [ "servio::drv::tests::comms_echo_test", "structservio_1_1drv_1_1tests_1_1comms__echo__test.html", null ],
     [ "servio::drv::tests::comms_timeout_test", "structservio_1_1drv_1_1tests_1_1comms__timeout__test.html", null ],
     [ "servio::ctl::config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", null ],
-    [ "servio::fw::context", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1context", null ],
+    [ "servio::fw::context", "structservio_1_1fw_1_1context.html", null ],
     [ "servio::ctl::control", "classservio_1_1ctl_1_1control.html", null ],
     [ "servio::cnv::converter", "structservio_1_1cnv_1_1converter.html", null ],
     [ "servio::core::core", "structservio_1_1core_1_1core.html", null ],

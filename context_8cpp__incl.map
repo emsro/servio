@@ -1,6 +1,6 @@
-<map id="src/fw/setup.cpp" name="src/fw/setup.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="193,5,320,32"/>
-<area shape="rect" id="node2" href="$fw_2setup_8hpp.html" title=" " alt="" coords="204,80,309,107"/>
+<map id="src/fw/context.cpp" name="src/fw/context.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="187,5,327,32"/>
+<area shape="rect" id="node2" href="$context_8hpp.html" title=" " alt="" coords="197,80,316,107"/>
 <area shape="rect" id="node7" href="$brd_8hpp.html" title=" " alt="" coords="47,229,143,256"/>
 <area shape="rect" id="node9" href="$util_8hpp.html" title=" " alt="" coords="466,229,557,256"/>
 <area shape="rect" id="node3" href="$cfg_2dispatcher_8hpp.html" title=" " alt="" coords="294,229,435,256"/>
