@@ -18,11 +18,7 @@ inline base::empty_period_cb EMPTY_PERIOD_CB;
 class hbridge : public base::pwm_motor_interface, public base::period_interface
 {
 public:
-        hbridge( TIM_HandleTypeDef* tim )
-          : period_cb_( &EMPTY_PERIOD_CB )
-          , tim_( tim )
-        {
-        }
+        hbridge( TIM_HandleTypeDef* tim );
 
         // driver is non-movable and non-copyable
         hbridge( const hbridge& )            = delete;
@@ -61,12 +57,21 @@ private:
         uint32_t                   mc2_channel_ = 0;
 };
 
+inline hbridge::hbridge( TIM_HandleTypeDef* tim )
+  : period_cb_( &EMPTY_PERIOD_CB )
+  , tim_( tim )
+{
+}
+
 inline hbridge* hbridge::setup( uint32_t mc1_channel, uint32_t mc2_channel )
 {
         mc1_channel_ = mc1_channel;
         mc2_channel_ = mc2_channel;
 
-        timer_max_ = tim_->Init.Period;
+        if ( tim_ != nullptr )
+                timer_max_ = tim_->Init.Period;
+        else
+                return nullptr;
 
         set_power( 0 );
 

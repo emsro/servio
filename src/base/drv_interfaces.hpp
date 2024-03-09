@@ -69,6 +69,13 @@ public:
         virtual ~clk_interface()      = default;
 };
 
+inline void wait_for( clk_interface& clk, microseconds ms )
+{
+        microseconds end = clk.get_us() + ms;
+        while ( end < clk.get_us() )
+                asm( "nop" );
+}
+
 class period_interface
 {
 public:

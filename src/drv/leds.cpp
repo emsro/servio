@@ -14,6 +14,8 @@ void leds::force_red_led()
 
 em::result leds::start()
 {
+        if ( tim_ == nullptr )
+                return em::ERROR;
         if ( HAL_TIM_PWM_Start( tim_, yellow_.channel ) != HAL_OK )
                 return em::ERROR;
         if ( HAL_TIM_PWM_Start( tim_, green_.channel ) != HAL_OK )

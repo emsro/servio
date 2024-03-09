@@ -16,8 +16,8 @@ namespace servio::drv
 class leds : public base::leds_interface
 {
 public:
-        leds( TIM_HandleTypeDef& tim )
-          : tim_( &tim )
+        leds( TIM_HandleTypeDef* tim )
+          : tim_( tim )
         {
         }
 
@@ -27,7 +27,7 @@ public:
                 blue_   = blue;
                 yellow_ = yellow;
                 green_  = green;
-                return this;
+                return tim_ != nullptr ? this : nullptr;
         }
 
         em::result start();

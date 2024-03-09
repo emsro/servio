@@ -28,7 +28,7 @@ namespace servio::brd
 
 TIM_HandleTypeDef TIM2_HANDLE = {};
 drv::clock        CLOCK{ TIM2_HANDLE };
-drv::leds         LEDS{ TIM2_HANDLE };
+drv::leds         LEDS{ &TIM2_HANDLE };
 
 std::array< sntr::record, 16 >  INOPERABLE_RECORDS;
 std::array< sntr::record, 128 > DEGRADED_RECORDS;

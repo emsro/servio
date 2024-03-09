@@ -49,7 +49,7 @@ drv::cobs_uart     DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, 
 TIM_HandleTypeDef  TIM1_HANDLE{};
 drv::hbridge       HBRIDGE{ &TIM1_HANDLE };
 TIM_HandleTypeDef  TIM3_HANDLE{};
-drv::leds          LEDS{ TIM3_HANDLE };
+drv::leds          LEDS{ &TIM3_HANDLE };
 
 }  // namespace servio::brd
 

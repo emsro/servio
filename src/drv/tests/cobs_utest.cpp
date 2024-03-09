@@ -45,7 +45,7 @@ TEST( COBS, cont )
                 EXPECT_TRUE( success );
 
                 auto data2 = em::data_view( msg );
-                EXPECT_EQ( data, data2 ) << data << "\n" << data2 << "\n";
+                EXPECT_EQ( data, data2 );
         }
 }
 
