@@ -58,11 +58,12 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   add_subdirectory(src)
 
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
+  target_link_libraries(fwlib PRIVATE prototype2_board)
 
   servio_add_board_executable(
     TARGET prototype2_fw
     SOURCES src/fw/main.cpp src/fw/it.cpp
-    LIBS prototype2_board serviolib
+    LIBS serviolib prototype2_board
     LINKER_SCRIPT
       "${CMAKE_CURRENT_SOURCE_DIR}/src/plt/stm32g4/STM32G431KBTx_FLASH.ld")
 
@@ -78,11 +79,12 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   add_subdirectory(src)
 
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
+  target_link_libraries(fwlib PRIVATE proto3_board)
 
   servio_add_board_executable(
     TARGET proto3_fw
     SOURCES src/fw/main.cpp src/fw/it.cpp
-    LIBS proto3_board serviolib
+    LIBS serviolib proto3_board
     LINKER_SCRIPT
       "${CMAKE_CURRENT_SOURCE_DIR}/src/plt/stm32h5/STM32H503xx_FLASH.ld")
 
