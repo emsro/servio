@@ -20,6 +20,7 @@ var hierarchy =
       [ "servio::drv::tests::test_central_sentry", "structservio_1_1drv_1_1tests_1_1test__central__sentry.html", null ],
       [ "servio::sntr::central_sentry", "classservio_1_1sntr_1_1central__sentry.html", null ]
     ] ],
+    [ "servio::fw::cfg_context", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1cfg__context", null ],
     [ "servio::scmdio::cfg_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__opts", null ],
     [ "servio::fw::check_bool", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool", null ],
     [ "servio::drv::clk_interface", "classservio_1_1drv_1_1clk__interface.html", [
@@ -40,6 +41,7 @@ var hierarchy =
     [ "servio::drv::tests::comms_echo_test", "structservio_1_1drv_1_1tests_1_1comms__echo__test.html", null ],
     [ "servio::drv::tests::comms_timeout_test", "structservio_1_1drv_1_1tests_1_1comms__timeout__test.html", null ],
     [ "servio::ctl::config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", null ],
+    [ "servio::fw::context", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1context", null ],
     [ "servio::ctl::control", "classservio_1_1ctl_1_1control.html", null ],
     [ "servio::cnv::converter", "structservio_1_1cnv_1_1converter.html", null ],
     [ "servio::core::core", "structservio_1_1core_1_1core.html", null ],

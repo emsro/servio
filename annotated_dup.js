@@ -99,7 +99,9 @@ var annotated_dup =
         [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ]
       ] ],
       [ "fw", "namespaceservio_1_1fw.html", [
+        [ "cfg_context", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1cfg__context", "namespaceservio_1_1fw_structservio_1_1fw_1_1cfg__context_dup" ],
         [ "dispatcher", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher", "namespaceservio_1_1fw_structservio_1_1fw_1_1dispatcher_dup" ],
+        [ "context", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1context", "namespaceservio_1_1fw_structservio_1_1fw_1_1context_dup" ],
         [ "persistent_config_writer", "structservio_1_1fw_1_1persistent__config__writer.html", "structservio_1_1fw_1_1persistent__config__writer" ],
         [ "check_bool", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool", null ]
       ] ],
