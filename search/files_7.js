@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['indication_2ecpp_1104',['indication.cpp',['../indication_8cpp.html',1,'']]],
-  ['indication_2ehpp_1105',['indication.hpp',['../indication_8hpp.html',1,'']]],
-  ['install_5fstop_5fcallback_2ehpp_1106',['install_stop_callback.hpp',['../install__stop__callback_8hpp.html',1,'']]],
-  ['interfaces_2ehpp_1107',['interfaces.hpp',['../interfaces_8hpp.html',1,'']]],
-  ['io_2eproto_1108',['io.proto',['../io_8proto.html',1,'']]],
-  ['is_5fpowerless_2ehpp_1109',['is_powerless.hpp',['../is__powerless_8hpp.html',1,'']]],
-  ['it_2ecpp_1110',['it.cpp',['../it_8cpp.html',1,'']]]
+  ['hal_2ehpp_1166',['hal.hpp',['../stm32g4_2hal_8hpp.html',1,'(Global Namespace)'],['../stm32h5_2hal_8hpp.html',1,'(Global Namespace)']]],
+  ['handle_5feptr_2ecpp_1167',['handle_eptr.cpp',['../handle__eptr_8cpp.html',1,'']]],
+  ['handle_5feptr_2ehpp_1168',['handle_eptr.hpp',['../handle__eptr_8hpp.html',1,'']]],
+  ['hbridge_2ecpp_1169',['hbridge.cpp',['../hbridge_8cpp.html',1,'']]],
+  ['hbridge_2ehpp_1170',['hbridge.hpp',['../hbridge_8hpp.html',1,'']]]
 ];

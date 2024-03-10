@@ -1,10 +1,11 @@
 var dir_d4b5d0c37e91718ad53ded7871cea291 =
 [
+    [ "async_cobs.cpp", "async__cobs_8cpp.html", null ],
     [ "async_cobs.hpp", "async__cobs_8hpp.html", [
       [ "cobs_port", "structservio_1_1scmdio_1_1cobs__port.html", "structservio_1_1scmdio_1_1cobs__port" ]
     ] ],
-    [ "cli.cpp", "cli_8cpp.html", "cli_8cpp" ],
-    [ "cli.hpp", "cli_8hpp.html", "cli_8hpp" ],
+    [ "cli.cpp", "scmdio_2cli_8cpp.html", "scmdio_2cli_8cpp" ],
+    [ "cli.hpp", "scmdio_2cli_8hpp.html", "scmdio_2cli_8hpp" ],
     [ "config_cmds.cpp", "config__cmds_8cpp.html", "config__cmds_8cpp" ],
     [ "config_cmds.hpp", "config__cmds_8hpp.html", "config__cmds_8hpp" ],
     [ "exceptions.hpp", "exceptions_8hpp.html", [

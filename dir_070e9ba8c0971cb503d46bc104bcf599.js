@@ -13,5 +13,8 @@ var dir_070e9ba8c0971cb503d46bc104bcf599 =
     [ "sentry.cpp", "sentry_8cpp.html", null ],
     [ "sentry.hpp", "sentry_8hpp.html", [
       [ "sentry", "classservio_1_1sntr_1_1sentry.html", "classservio_1_1sntr_1_1sentry" ]
+    ] ],
+    [ "test_central_sentry.hpp", "test__central__sentry_8hpp.html", [
+      [ "test_central_sentry", "structservio_1_1sntr_1_1test__central__sentry.html", "structservio_1_1sntr_1_1test__central__sentry" ]
     ] ]
 ];

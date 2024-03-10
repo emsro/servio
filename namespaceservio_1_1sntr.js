@@ -5,6 +5,7 @@ var namespaceservio_1_1sntr =
     [ "central_sentry_iface", "structservio_1_1sntr_1_1central__sentry__iface.html", "structservio_1_1sntr_1_1central__sentry__iface" ],
     [ "record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", "namespaceservio_1_1sntr_structservio_1_1sntr_1_1record_dup" ],
     [ "sentry", "classservio_1_1sntr_1_1sentry.html", "classservio_1_1sntr_1_1sentry" ],
+    [ "test_central_sentry", "structservio_1_1sntr_1_1test__central__sentry.html", "structservio_1_1sntr_1_1test__central__sentry" ],
     [ "data_type", "namespaceservio_1_1sntr.html#add926447d5598770f0aea4c4ecc6c6a8", null ],
     [ "ecode_set", "namespaceservio_1_1sntr.html#a7e757550b0df521aba61bc3e670bf01b", null ],
     [ "record_state", "namespaceservio_1_1sntr.html#a875fcd3a5d9ef6909df43ffc0b84d60e", [

@@ -8,6 +8,8 @@ var namespaceservio =
     [ "core", "namespaceservio_1_1core.html", "namespaceservio_1_1core" ],
     [ "ctl", "namespaceservio_1_1ctl.html", "namespaceservio_1_1ctl" ],
     [ "drv", "namespaceservio_1_1drv.html", "namespaceservio_1_1drv" ],
+    [ "ftest", "namespaceservio_1_1ftest.html", "namespaceservio_1_1ftest" ],
+    [ "ftester", "namespaceservio_1_1ftester.html", "namespaceservio_1_1ftester" ],
     [ "fw", "namespaceservio_1_1fw.html", "namespaceservio_1_1fw" ],
     [ "klmn", "namespaceservio_1_1klmn.html", "namespaceservio_1_1klmn" ],
     [ "mon", "namespaceservio_1_1mon.html", "namespaceservio_1_1mon" ],

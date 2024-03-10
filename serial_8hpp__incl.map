@@ -1,11 +1,9 @@
 <map id="src/scmdio/serial.hpp" name="src/scmdio/serial.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="374,5,534,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="16,244,82,271"/>
-<area shape="rect" id="node3" href="$async__cobs_8hpp.html" title=" " alt="" coords="304,80,480,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="592,162,709,189"/>
-<area shape="rect" id="node9" title=" " alt="" coords="555,80,746,107"/>
-<area shape="rect" id="node4" href="$exceptions_8hpp.html" title=" " alt="" coords="26,162,198,189"/>
-<area shape="rect" id="node5" title=" " alt="" coords="222,162,278,189"/>
-<area shape="rect" id="node7" title=" " alt="" coords="303,155,480,196"/>
-<area shape="rect" id="node8" title=" " alt="" coords="504,162,567,189"/>
+<area shape="rect" id="node1" title=" " alt="" coords="92,5,252,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,72,107"/>
+<area shape="rect" id="node3" href="$async__cobs_8hpp.html" title=" " alt="" coords="147,80,323,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="28,162,145,189"/>
+<area shape="rect" id="node7" title=" " alt="" coords="347,80,538,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="170,155,347,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="371,162,434,189"/>
 </map>

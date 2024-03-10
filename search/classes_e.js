@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['temp_5fcalib_5fcoeffs_1020',['temp_calib_coeffs',['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs',1,'servio::plt']]],
-  ['temperature_5finterface_1021',['temperature_interface',['../classservio_1_1drv_1_1temperature__interface.html',1,'servio::drv']]],
-  ['temperature_5ftest_1022',['temperature_test',['../structservio_1_1drv_1_1tests_1_1temperature__test.html',1,'servio::drv::tests']]],
-  ['test_5fcentral_5fsentry_1023',['test_central_sentry',['../structservio_1_1drv_1_1tests_1_1test__central__sentry.html',1,'servio::drv::tests']]],
-  ['test_5fclk_1024',['test_clk',['../structservio_1_1sntr_1_1tests_1_1test__clk.html',1,'servio::sntr::tests']]]
+  ['sentry_1068',['sentry',['../classservio_1_1sntr_1_1sentry.html',1,'servio::sntr']]],
+  ['sentry_5ffixture_1069',['sentry_fixture',['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html',1,'servio::sntr::tests']]],
+  ['serialize_5ferror_1070',['serialize_error',['../structservio_1_1scmdio_1_1serialize__error.html',1,'servio::scmdio']]],
+  ['servio_5fexception_1071',['servio_exception',['../structservio_1_1scmdio_1_1servio__exception.html',1,'servio::scmdio']]],
+  ['setpoint_1072',['setpoint',['../namespaceservio_1_1brd.html#structservio_1_1brd_1_1setpoint',1,'servio::brd']]],
+  ['simple_5fmotor_1073',['simple_motor',['../structservio_1_1sim_1_1simple__motor.html',1,'servio::sim']]],
+  ['standard_5fcallbacks_1074',['standard_callbacks',['../structservio_1_1core_1_1standard__callbacks.html',1,'servio::core']]],
+  ['state_5frange_1075',['state_range',['../namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range',1,'servio::klmn']]],
+  ['static_5fdetector_1076',['static_detector',['../structservio_1_1mtr_1_1static__detector.html',1,'servio::mtr']]]
 ];
