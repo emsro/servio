@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"stm32g4xx__hal__conf_8h.html#a7b38c01bd6621f3da5993d71eb5ff42e":[9,0,1,13,1,2,65],
+"stm32g4xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d":[9,0,1,13,1,2,47],
+"stm32g4xx__hal__conf_8h.html#a7c8601480b3c54ae1398a58d416fd202":[9,0,1,13,1,2,20],
+"stm32g4xx__hal__conf_8h.html#a80498b459859528918535b88fed54b28":[9,0,1,13,1,2,64],
 "stm32g4xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462":[9,0,1,13,1,2,46],
 "stm32g4xx__hal__conf_8h.html#a86165f80d6078719ee0715afe13febf5":[9,0,1,13,1,2,15],
 "stm32g4xx__hal__conf_8h.html#a877ae99e8c47a609ea97c888912bf75f":[9,0,1,13,1,2,22],
@@ -245,9 +249,5 @@ var NAVTREEINDEX6 =
 "structservio_1_1ctl_1_1linear__transition__regulator.html#a8f84eb64d139440f87b13310f211b08f":[8,0,0,6,3,3],
 "structservio_1_1ctl_1_1linear__transition__regulator.html#ab8c6b8492b17a9e82a5ee831438708ae":[8,0,0,6,3,0],
 "structservio_1_1ctl_1_1linear__transition__regulator.html#ad5bc779d2f951a81fb90c9c1a37748d3":[8,0,0,6,3,1],
-"structservio_1_1ctl_1_1linear__transition__regulator.html#aecb19b527ceb961ed007cbbd7ed5aca0":[8,0,0,6,3,6],
-"structservio_1_1drv_1_1adc__channel.html":[8,0,0,7,3],
-"structservio_1_1drv_1_1adc__channel.html#a0ce47e9badd775a7886272e30c6c1595":[8,0,0,7,3,2],
-"structservio_1_1drv_1_1adc__channel.html#a1d45d45089ded04cd0fda5ebaf60204b":[8,0,0,7,3,4],
-"structservio_1_1drv_1_1adc__channel.html#a3039bc56cfcb389d036fab08e9a91add":[8,0,0,7,3,6]
+"structservio_1_1ctl_1_1linear__transition__regulator.html#aecb19b527ceb961ed007cbbd7ed5aca0":[8,0,0,6,3,6]
 };

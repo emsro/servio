@@ -39,6 +39,10 @@ var plt_2stm32h5_2setup_8hpp =
       [ "timer_instance", "namespaceservio_1_1plt.html#ac320b1f2637e8716b47834cec0877368", null ],
       [ "yellow", "namespaceservio_1_1plt.html#a7cc4c6a6554cf5bc2eee93407aa1f371", null ]
     ] ],
+    [ "temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", [
+      [ "cal1", "namespaceservio_1_1plt.html#a59425b83be9afe0d27b552f409f4c7cf", null ],
+      [ "cal2", "namespaceservio_1_1plt.html#a73088cdd7b6754164af4b062382dc239", null ]
+    ] ],
     [ "get_default_config", "plt_2stm32h5_2setup_8hpp.html#a54207fdd13b8536cfecc8079e969056b", null ],
     [ "setup_adc", "plt_2stm32h5_2setup_8hpp.html#a61d6b0c2150e342de64df4363ad4e8bc", null ],
     [ "setup_adc_channel", "plt_2stm32h5_2setup_8hpp.html#a04f200642c04256949e23ea736bbd57e", null ],

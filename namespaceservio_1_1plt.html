@@ -85,7 +85,8 @@ $(document).ready(function(){initNavTree('namespaceservio_1_1plt.html',''); init
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">servio::plt Namespace Reference</div>  </div>
 </div><!--header-->
@@ -105,6 +106,8 @@ Classes</h2></td></tr>
 <tr class="separator:structservio_1_1plt_1_1leds__gpio__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1plt_1_1leds__timer__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg">leds_timer_cfg</a></td></tr>
 <tr class="separator:structservio_1_1plt_1_1leds__timer__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1plt_1_1temp__calib__coeffs"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs">temp_calib_coeffs</a></td></tr>
+<tr class="separator:structservio_1_1plt_1_1temp__calib__coeffs"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -136,6 +139,11 @@ Functions</h2></td></tr>
 <tr class="separator:a25cf0c78aaa0a1eed2dda1c91f70fc0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa3ffb0666945381bc9735b671490daf"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#afa3ffb0666945381bc9735b671490daf">setup_clock_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
 <tr class="separator:afa3ffb0666945381bc9735b671490daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a02f2e0e13537988c8b1ab01ed1c6bd87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs">temp_calib_coeffs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a02f2e0e13537988c8b1ab01ed1c6bd87">TEMP_CALIB_COEFFS</a></td></tr>
+<tr class="separator:a02f2e0e13537988c8b1ab01ed1c6bd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1plt_1_1dma__cfg" id="structservio_1_1plt_1_1dma__cfg"></a>
@@ -442,6 +450,35 @@ yellow</td>
 
 </div>
 </div>
+<a name="structservio_1_1plt_1_1temp__calib__coeffs" id="structservio_1_1plt_1_1temp__calib__coeffs"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1plt_1_1temp__calib__coeffs">&#9670;&nbsp;</a></span>servio::plt::temp_calib_coeffs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::plt::temp_calib_coeffs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a59425b83be9afe0d27b552f409f4c7cf"></a>float</td>
+<td class="fieldname">
+cal1</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a73088cdd7b6754164af4b062382dc239"></a>float</td>
+<td class="fieldname">
+cal2</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a9d808c8e4af01c8ace4848aef68ac0bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d808c8e4af01c8ace4848aef68ac0bf">&#9670;&nbsp;</a></span>calculate_temp_conversion()</h2>
@@ -458,7 +495,7 @@ yellow</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1cfg.html#adfaf4cc43f1f1e1d45b9306df55d3c08">servio::cfg::off_scale::offset</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1plt.html#a59425b83be9afe0d27b552f409f4c7cf">servio::plt::temp_calib_coeffs::cal1</a>, <a class="el" href="namespaceservio_1_1plt.html#a73088cdd7b6754164af4b062382dc239">servio::plt::temp_calib_coeffs::cal2</a>, and <a class="el" href="namespaceservio_1_1plt.html#a02f2e0e13537988c8b1ab01ed1c6bd87">TEMP_CALIB_COEFFS</a>.</p>
 
 </div>
 </div>
@@ -662,7 +699,7 @@ yellow</td>
 </div><div class="memdoc">
 <p>Initializes the peripherals clocks</p>
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1plt.html#a59425b83be9afe0d27b552f409f4c7cf">servio::plt::temp_calib_coeffs::cal1</a>, <a class="el" href="namespaceservio_1_1plt.html#a73088cdd7b6754164af4b062382dc239">servio::plt::temp_calib_coeffs::cal2</a>, <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>, and <a class="el" href="namespaceservio_1_1plt.html#a02f2e0e13537988c8b1ab01ed1c6bd87">TEMP_CALIB_COEFFS</a>.</p>
 
 </div>
 </div>
@@ -810,13 +847,28 @@ yellow</td>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a02f2e0e13537988c8b1ab01ed1c6bd87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02f2e0e13537988c8b1ab01ed1c6bd87">&#9670;&nbsp;</a></span>TEMP_CALIB_COEFFS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs">temp_calib_coeffs</a> servio::plt::TEMP_CALIB_COEFFS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1plt.html">plt</a></li>
-    <li class="footer">Generated on Sun Mar 10 2024 09:12:00 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Mar 10 2024 14:48:04 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

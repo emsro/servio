@@ -6,6 +6,7 @@ var namespaceservio_1_1plt =
     [ "hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1hb__timer__cfg_dup" ],
     [ "leds_gpio_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__gpio__cfg_dup" ],
     [ "leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__timer__cfg_dup" ],
+    [ "temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", "namespaceservio_1_1plt_structservio_1_1plt_1_1temp__calib__coeffs_dup" ],
     [ "calculate_temp_conversion", "namespaceservio_1_1plt.html#a9d808c8e4af01c8ace4848aef68ac0bf", null ],
     [ "cfg_erase", "namespaceservio_1_1plt.html#a645e44622af5420d2d39234cf52d9f76", null ],
     [ "cfg_write", "namespaceservio_1_1plt.html#ab819c2568aa5dc1592d9f79774b1cf45", null ],
@@ -19,5 +20,6 @@ var namespaceservio_1_1plt =
     [ "setup_gpio", "namespaceservio_1_1plt.html#a5d1ffe876c5d8201cbbb029bb4e7e988", null ],
     [ "setup_hbridge_timers", "namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c", null ],
     [ "setup_leds_channel", "namespaceservio_1_1plt.html#a25cf0c78aaa0a1eed2dda1c91f70fc0a", null ],
-    [ "setup_uart", "namespaceservio_1_1plt.html#a7b7c8043898e10b87fa53fd5bb021d96", null ]
+    [ "setup_uart", "namespaceservio_1_1plt.html#a7b7c8043898e10b87fa53fd5bb021d96", null ],
+    [ "TEMP_CALIB_COEFFS", "namespaceservio_1_1plt.html#a02f2e0e13537988c8b1ab01ed1c6bd87", null ]
 ];

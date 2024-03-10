@@ -123,7 +123,8 @@ var annotated_dup =
         [ "uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1uart__cfg_dup" ],
         [ "hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1hb__timer__cfg_dup" ],
         [ "leds_gpio_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__gpio__cfg_dup" ],
-        [ "leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__timer__cfg_dup" ]
+        [ "leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__timer__cfg_dup" ],
+        [ "temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", "namespaceservio_1_1plt_structservio_1_1plt_1_1temp__calib__coeffs_dup" ]
       ] ],
       [ "scmdio", "namespaceservio_1_1scmdio.html", [
         [ "cobs_port", "structservio_1_1scmdio_1_1cobs__port.html", "structservio_1_1scmdio_1_1cobs__port" ],
