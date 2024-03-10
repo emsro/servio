@@ -8,7 +8,7 @@ servio_add_library(
           config.cpp
           gpio.cpp
           timers.cpp
-  LIBS emlabcpp HAL::STM32::H5 CMSIS::STM32::H503xx STM32::Nano
+  LIBS emlabcpp HAL::STM32::H5 CMSIS::STM32::H503xx STM32::Nano STM32::NoSys
   OPTS -Os)
 
 target_link_libraries(

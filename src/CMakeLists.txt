@@ -27,10 +27,13 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   add_subdirectory(scmdio)
   target_link_libraries(serviolib INTERFACE scmdiolib)
   add_subdirectory(bb)
+  add_subdirectory(ftester)
 
 else()
 
   add_subdirectory(fw)
   target_link_libraries(serviolib INTERFACE fwlib)
+
+  add_subdirectory(ftest)
 
 endif()

@@ -20,8 +20,8 @@ else()
   servio_add_library(
     TARGET drv_testlib
     INCLUDE ../
-    SOURCES tests/setup_fwtest.cpp
-    LIBS drvlib proto
+    SOURCES tests/setup_drv.cpp
+    LIBS drvlib proto platform
     OPTS -Os)
 
 endif()
