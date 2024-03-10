@@ -26,15 +26,15 @@ namespace em = emlabcpp;
 enum class indication_event
 {
         //    ERROR,
-        VOLTAGE_LOW,
-        TEMPERATURE_HIGH,
-        HEARTBEAT,
-        ENGAGED,
-        DISENGAGED,
-        STUCK,  // can't detect this yet
-        BOOTING,
-        INITIALIZED,
-        INCOMING_MESSAGE
+        VOLTAGE_LOW      = 0,
+        TEMPERATURE_HIGH = 1,
+        HEARTBEAT        = 2,
+        ENGAGED          = 3,
+        DISENGAGED       = 4,
+        STUCK            = 5,  // can't detect this yet
+        BOOTING          = 6,
+        INITIALIZED      = 7,
+        INCOMING_MESSAGE = 8
 };
 
 using namespace base::literals;

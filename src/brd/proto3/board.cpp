@@ -41,10 +41,10 @@ sntr::central_sentry CENTRAL_SENTRY{
 
 ADC_HandleTypeDef ADC_HANDLE;
 DMA_HandleTypeDef ADC_DMA_HANDLE;
-TIM_HandleTypeDef ADC_TIM_HANDLE;
+TIM_HandleTypeDef TIM6_HANDLE;
 
 using adc_pooler_type = drv::adc_pooler< drv::adc_set< CENTRAL_SENTRY > >;
-adc_pooler_type ADC_POOLER{ drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, ADC_TIM_HANDLE };
+adc_pooler_type ADC_POOLER{ drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, TIM6_HANDLE };
 drv::adc_pooler_period_cb< ADC_POOLER >   ADC_PERIOD_CB;
 drv::adc_pooler_vcc< ADC_POOLER >         ADC_VCC;
 drv::adc_pooler_temperature< ADC_POOLER > ADC_TEMPERATURE;
@@ -190,7 +190,7 @@ adc_pooler_type* adc_pooler_setup()
                             .priority     = DMA_HIGH_PRIORITY,
                         },
                 } ),
-            plt::setup_adc_timer( ADC_TIM_HANDLE, TIM6 ) );
+            plt::setup_adc_timer( TIM6_HANDLE, TIM6 ) );
 
         if ( res != em::SUCCESS )
                 return nullptr;
@@ -311,7 +311,7 @@ drv::leds* leds_setup()
 {
         __HAL_RCC_GPIOC_CLK_ENABLE();
         __HAL_RCC_GPIOB_CLK_ENABLE();
-        __HAL_RCC_TIM3_CLK_ENABLE();
+        __HAL_RCC_TIM2_CLK_ENABLE();
 
         drv::pin_cfg red{
             .pin  = GPIO_PIN_13,

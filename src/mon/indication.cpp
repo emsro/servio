@@ -38,7 +38,7 @@ bool indication::on_event( base::microseconds now, const indication_event& e )
                 break;
         case indication_event::INCOMING_MESSAGE:
                 state_.blue        = true;
-                blue_disengage_at_ = now + 1_ms;
+                blue_disengage_at_ = now + 10_ms;
                 break;
         }
         return true;
@@ -83,7 +83,7 @@ void indication::tick_red( base::microseconds now )
                 return;
         }
 
-        if ( red_events_.front() > now ) {
+        if ( red_events_.front() + red_phase_ > now ) {
                 red_events_.pop_front();
                 state_.red = false;
                 red_phase_ += red_window;

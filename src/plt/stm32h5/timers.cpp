@@ -120,7 +120,7 @@ em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         mc.MasterOutputTrigger = TIM_TRGO_UPDATE;
         mc.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
 
-        if ( HAL_TIM_OC_Init( &tim ) != HAL_OK )
+        if ( HAL_TIM_PWM_Init( &tim ) != HAL_OK )
                 return em::ERROR;
 
         if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK )
