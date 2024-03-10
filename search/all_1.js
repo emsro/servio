@@ -52,13 +52,12 @@ var searchData=
   ['angle_5fmod_58',['angle_mod',['../namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f',1,'servio::klmn']]],
   ['angle_5fvec_59',['angle_vec',['../namespaceservio_1_1sim.html#a496e8de9a9763267fda5eeaac8a92fa1',1,'servio::sim']]],
   ['any_5funinitialized_60',['any_uninitialized',['../structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca',1,'servio::core::drivers']]],
-  ['aport_61',['aport',['../structservio_1_1ftester_1_1test__context.html#a1d23eaf71b825e8b812613babde1ca22',1,'servio::ftester::test_context']]],
-  ['apply_62',['apply',['../structservio_1_1cfg_1_1dispatcher.html#a45c428210df58df1a0f7f1ec458cb9bb',1,'servio::cfg::dispatcher::apply()'],['../namespaceservio_1_1cfg.html#a6b74b3216968308a4d01b9b8641cc711',1,'servio::cfg::apply()']]],
-  ['apply_5fpower_63',['apply_power',['../structservio_1_1sim_1_1simple__motor.html#af63c3c93468472d62db8c8a457362ee0',1,'servio::sim::simple_motor']]],
-  ['assert_5fparam_64',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32g4xx_hal_conf.h'],['../stm32h5xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32h5xx_hal_conf.h']]],
-  ['async_5fcobs_2ecpp_65',['async_cobs.cpp',['../async__cobs_8cpp.html',1,'']]],
-  ['async_5fcobs_2ehpp_66',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],
-  ['async_5fread_67',['async_read',['../structservio_1_1scmdio_1_1cobs__port.html#a753a34ede7c88a22216b2b05b54b15e4',1,'servio::scmdio::cobs_port']]],
-  ['async_5fwrite_68',['async_write',['../structservio_1_1scmdio_1_1cobs__port.html#ab1d8918adfbec664a16b9079d48cfc9a',1,'servio::scmdio::cobs_port']]],
-  ['attempt_5fn_69',['ATTEMPT_N',['../namespaceservio_1_1cnv_1_1tests.html#a51fc9b65a1f2fbfd9cf62801705adeb9',1,'servio::cnv::tests']]]
+  ['apply_61',['apply',['../structservio_1_1cfg_1_1dispatcher.html#a45c428210df58df1a0f7f1ec458cb9bb',1,'servio::cfg::dispatcher::apply()'],['../namespaceservio_1_1cfg.html#a6b74b3216968308a4d01b9b8641cc711',1,'servio::cfg::apply()']]],
+  ['apply_5fpower_62',['apply_power',['../structservio_1_1sim_1_1simple__motor.html#af63c3c93468472d62db8c8a457362ee0',1,'servio::sim::simple_motor']]],
+  ['assert_5fparam_63',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32g4xx_hal_conf.h'],['../stm32h5xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32h5xx_hal_conf.h']]],
+  ['async_5fcobs_2ecpp_64',['async_cobs.cpp',['../async__cobs_8cpp.html',1,'']]],
+  ['async_5fcobs_2ehpp_65',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],
+  ['async_5fread_66',['async_read',['../structservio_1_1scmdio_1_1cobs__port.html#a753a34ede7c88a22216b2b05b54b15e4',1,'servio::scmdio::cobs_port']]],
+  ['async_5fwrite_67',['async_write',['../structservio_1_1scmdio_1_1cobs__port.html#ab1d8918adfbec664a16b9079d48cfc9a',1,'servio::scmdio::cobs_port']]],
+  ['attempt_5fn_68',['ATTEMPT_N',['../namespaceservio_1_1cnv_1_1tests.html#a51fc9b65a1f2fbfd9cf62801705adeb9',1,'servio::cnv::tests']]]
 ];

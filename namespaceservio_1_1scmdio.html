@@ -116,8 +116,10 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a4315b1a080624a880dbed5a4fd269caf"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a4315b1a080624a880dbed5a4fd269caf">verbose_opt</a> (CLI::App &amp;app, bool &amp;val)</td></tr>
 <tr class="separator:a4315b1a080624a880dbed5a4fd269caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a1f0b93a4abc6c70b670a4c7fec45e"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a06a1f0b93a4abc6c70b670a4c7fec45e">device_opt</a> (CLI::App &amp;app, std::filesystem::path &amp;device)</td></tr>
-<tr class="separator:a06a1f0b93a4abc6c70b670a4c7fec45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b2b391dc07c1b8476d7f72e781a825"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a65b2b391dc07c1b8476d7f72e781a825">coms_opt</a> (CLI::App &amp;app, std::filesystem::path &amp;comms)</td></tr>
+<tr class="separator:a65b2b391dc07c1b8476d7f72e781a825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4fa41dcb7957c74dcc335d566c28eef"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ad4fa41dcb7957c74dcc335d566c28eef">dcoms_opt</a> (CLI::App &amp;app, std::filesystem::path &amp;comms)</td></tr>
+<tr class="separator:ad4fa41dcb7957c74dcc335d566c28eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6286d1246b1168d8fa9bd1b651b3752e"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a6286d1246b1168d8fa9bd1b651b3752e">baudrate_opt</a> (CLI::App &amp;app, unsigned &amp;baudrate)</td></tr>
 <tr class="separator:a6286d1246b1168d8fa9bd1b651b3752e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5027194b08215b948567a9932bcdbc"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc">powerless_flag</a> (CLI::App &amp;app, bool &amp;is_powerless)</td></tr>
@@ -476,14 +478,14 @@ velocity</td>
 
 </div>
 </div>
-<a id="a06a1f0b93a4abc6c70b670a4c7fec45e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06a1f0b93a4abc6c70b670a4c7fec45e">&#9670;&nbsp;</a></span>device_opt()</h2>
+<a id="a65b2b391dc07c1b8476d7f72e781a825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b2b391dc07c1b8476d7f72e781a825">&#9670;&nbsp;</a></span>coms_opt()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CLI::Option * servio::scmdio::device_opt </td>
+          <td class="memname">CLI::Option * servio::scmdio::coms_opt </td>
           <td>(</td>
           <td class="paramtype">CLI::App &amp;&#160;</td>
           <td class="paramname"><em>app</em>, </td>
@@ -492,7 +494,35 @@ velocity</td>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::filesystem::path &amp;&#160;</td>
-          <td class="paramname"><em>device</em>&#160;</td>
+          <td class="paramname"><em>comms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4fa41dcb7957c74dcc335d566c28eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4fa41dcb7957c74dcc335d566c28eef">&#9670;&nbsp;</a></span>dcoms_opt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CLI::Option * servio::scmdio::dcoms_opt </td>
+          <td>(</td>
+          <td class="paramtype">CLI::App &amp;&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>comms</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1252,7 +1282,7 @@ velocity</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1scmdio.html">scmdio</a></li>
-    <li class="footer">Generated on Sun Mar 10 2024 21:21:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Mar 10 2024 21:46:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

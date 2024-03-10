@@ -33,7 +33,7 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M70.5,-68.24C70.5,-56.41 70.5,-41.38 70.5,-30.58"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="67,-68.36 70.5,-78.36 74,-68.36 67,-68.36"/>
-<text text-anchor="middle" x="85" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00"> aport</text>
+<text text-anchor="middle" x="87.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00"> d_port</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">

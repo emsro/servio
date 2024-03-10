@@ -104,8 +104,8 @@ $(document).ready(function(){initNavTree('structservio_1_1ftester_1_1test__conte
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac733467b5938bd04518519d4b78c2c8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__context.html#ac733467b5938bd04518519d4b78c2c8a">test_context</a> (const std::string &amp;dev, uint32_t baudrate, const nlohmann::json &amp;input_json)</td></tr>
-<tr class="separator:ac733467b5938bd04518519d4b78c2c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02e731853a9f795d391b8e284ab08b2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__context.html#a02e731853a9f795d391b8e284ab08b2c">test_context</a> (const std::filesystem::path &amp;d_dev, uint32_t d_baudrate, const std::filesystem::path &amp;c_dev, uint32_t c_baudrate, const nlohmann::json &amp;input_json)</td></tr>
+<tr class="separator:a02e731853a9f795d391b8e284ab08b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2294c5d608ee12274195e918b590eaba"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
 <tr class="memitem:a2294c5d608ee12274195e918b590eaba"><td class="memTemplItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__context.html#a2294c5d608ee12274195e918b590eaba">write</a> (em::protocol::message&lt; N &gt; msg)</td></tr>
 <tr class="separator:a2294c5d608ee12274195e918b590eaba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,16 +114,18 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:acb00ebf352966339a336c89a87639bfe"><td class="memItemLeft" align="right" valign="top">boost::asio::io_context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__context.html#acb00ebf352966339a336c89a87639bfe">io_context</a></td></tr>
 <tr class="separator:acb00ebf352966339a336c89a87639bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d23eaf71b825e8b812613babde1ca22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">servio::scmdio::cobs_port</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__context.html#a1d23eaf71b825e8b812613babde1ca22">aport</a></td></tr>
-<tr class="separator:a1d23eaf71b825e8b812613babde1ca22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa78bcc93b4d2333b649b2b6ac10be065"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">servio::scmdio::cobs_port</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__context.html#aa78bcc93b4d2333b649b2b6ac10be065">d_port</a></td></tr>
+<tr class="separator:aa78bcc93b4d2333b649b2b6ac10be065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66437db9659d85bb6cb0b4633cf00848"><td class="memItemLeft" align="right" valign="top">boost::asio::serial_port&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__context.html#a66437db9659d85bb6cb0b4633cf00848">c_port</a></td></tr>
+<tr class="separator:a66437db9659d85bb6cb0b4633cf00848"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39e73e9ad98e086a13a970f8ecef857c"><td class="memItemLeft" align="right" valign="top">em::testing::collect_server&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__context.html#a39e73e9ad98e086a13a970f8ecef857c">col_serv</a></td></tr>
 <tr class="separator:a39e73e9ad98e086a13a970f8ecef857c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ff04bba60b2fc6b91e53b4ce3470267"><td class="memItemLeft" align="right" valign="top">em::testing::parameters_server&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__context.html#a1ff04bba60b2fc6b91e53b4ce3470267">par_serv</a></td></tr>
 <tr class="separator:a1ff04bba60b2fc6b91e53b4ce3470267"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac733467b5938bd04518519d4b78c2c8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac733467b5938bd04518519d4b78c2c8a">&#9670;&nbsp;</a></span>test_context()</h2>
+<a id="a02e731853a9f795d391b8e284ab08b2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02e731853a9f795d391b8e284ab08b2c">&#9670;&nbsp;</a></span>test_context()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,14 +136,26 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">servio::ftester::test_context::test_context </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>dev</em>, </td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>d_dev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>baudrate</em>, </td>
+          <td class="paramname"><em>d_baudrate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>c_dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>c_baudrate</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -198,14 +212,14 @@ template&lt;std::size_t N&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1d23eaf71b825e8b812613babde1ca22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d23eaf71b825e8b812613babde1ca22">&#9670;&nbsp;</a></span>aport</h2>
+<a id="a66437db9659d85bb6cb0b4633cf00848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66437db9659d85bb6cb0b4633cf00848">&#9670;&nbsp;</a></span>c_port</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">servio::scmdio::cobs_port</a> servio::ftester::test_context::aport</td>
+          <td class="memname">boost::asio::serial_port servio::ftester::test_context::c_port</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -220,6 +234,20 @@ template&lt;std::size_t N&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">em::testing::collect_server servio::ftester::test_context::col_serv</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa78bcc93b4d2333b649b2b6ac10be065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa78bcc93b4d2333b649b2b6ac10be065">&#9670;&nbsp;</a></span>d_port</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">servio::scmdio::cobs_port</a> servio::ftester::test_context::d_port</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -263,7 +291,7 @@ template&lt;std::size_t N&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1ftester.html">ftester</a></li><li class="navelem"><a class="el" href="structservio_1_1ftester_1_1test__context.html">test_context</a></li>
-    <li class="footer">Generated on Sun Mar 10 2024 21:21:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Mar 10 2024 21:46:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
