@@ -60,6 +60,14 @@ struct leds_timer_cfg
         drv::pinch_cfg green;
 };
 
+struct temp_calib_coeffs
+{
+        float cal1;
+        float cal2;
+};
+
+extern temp_calib_coeffs TEMP_CALIB_COEFFS;
+
 cfg::map get_default_config();
 
 em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );

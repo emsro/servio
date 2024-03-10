@@ -1,6 +1,7 @@
 #include "cfg/default.hpp"
 #include "cfg/math.hpp"
 #include "platform.hpp"
+#include "setup.hpp"
 
 #include <numbers>
 
@@ -29,10 +30,12 @@ namespace servio::plt
 //
 //
 
+temp_calib_coeffs TEMP_CALIB_COEFFS;
+
 cfg::off_scale calculate_temp_conversion()
 {
-        const auto cal1 = static_cast< float >( *TEMPSENSOR_CAL1_ADDR );
-        const auto cal2 = static_cast< float >( *TEMPSENSOR_CAL2_ADDR );
+        const auto cal1 = TEMP_CALIB_COEFFS.cal1;
+        const auto cal2 = TEMP_CALIB_COEFFS.cal2;
 
         const float scale =
             static_cast< float >( TEMPSENSOR_CAL2_TEMP - TEMPSENSOR_CAL1_TEMP ) / ( cal2 - cal1 );

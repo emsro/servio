@@ -102,35 +102,35 @@ void GPDMA1_Channel2_IRQHandler()
 
 extern "C" {
 
-void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
+[[gnu::flatten]] void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
 {
         servio::brd::HBRIDGE.timer_period_irq( h );
 }
 
-void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
+[[gnu::flatten]] void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
 {
         servio::brd::COMMS.tx_cplt_irq( h );
         servio::brd::DEBUG_COMMS.tx_cplt_irq( h );
 }
 
-void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
+[[gnu::flatten]] void HAL_UART_RxCpltCallback( UART_HandleTypeDef* h )
 {
         servio::brd::COMMS.rx_cplt_irq( h );
         servio::brd::DEBUG_COMMS.rx_cplt_irq( h );
 }
 
-void HAL_UART_ErrorCallback( UART_HandleTypeDef* h )
+[[gnu::flatten]] void HAL_UART_ErrorCallback( UART_HandleTypeDef* h )
 {
         servio::brd::COMMS.err_irq( h );
         servio::brd::DEBUG_COMMS.err_irq( h );
 }
 
-void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
+[[gnu::flatten]] void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* h )
 {
         servio::brd::ADC_POOLER.adc_conv_cplt_irq( h );
 }
 
-void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
+[[gnu::flatten]] void HAL_ADC_ErrorCallback( ADC_HandleTypeDef* h )
 {
         servio::brd::ADC_POOLER.adc_error_irq( h );
 }
@@ -166,10 +166,13 @@ adc_pooler_type* adc_pooler_setup()
                 .pin     = GPIO_PIN_7,
                 .port    = GPIOA,
             } );
+        // TODO: temperature sensors was set to a random unused channel. We can't use the internal
+        // temperature channel until the HAL get's cahnged:
+        // https://github.com/STMicroelectronics/stm32h5xx_hal_driver/issues/4
         plt::setup_adc_channel(
             ADC_POOLER->temp.chconf,
             drv::pinch_cfg{
-                .channel = ADC_CHANNEL_TEMPSENSOR,
+                .channel = ADC_CHANNEL_1,
                 .pin     = 0,
                 .port    = nullptr,
             } );
@@ -204,7 +207,7 @@ drv::hbridge* hbridge_setup()
         __HAL_RCC_GPIOB_CLK_ENABLE();
         plt::hb_timer_cfg cfg{
             .timer_instance = TIM1,
-            .period         = std::numeric_limits< uint16_t >::max() / 2,
+            .period         = std::numeric_limits< uint16_t >::max() / 8,
             .irq            = TIM1_UP_IRQn,
             .irq_priority   = 0,
             .mc1 =

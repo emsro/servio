@@ -10,7 +10,7 @@ void setup_adc_channel( ADC_ChannelConfTypeDef& channel, drv::pinch_cfg cfg )
         channel = ADC_ChannelConfTypeDef{
             .Channel      = cfg.channel,
             .Rank         = ADC_REGULAR_RANK_1,
-            .SamplingTime = ADC_SAMPLETIME_92CYCLES_5,
+            .SamplingTime = ADC_SAMPLETIME_47CYCLES_5,
             .SingleDiff   = ADC_SINGLE_ENDED,
             .OffsetNumber = ADC_OFFSET_NONE,
             .Offset       = 0,

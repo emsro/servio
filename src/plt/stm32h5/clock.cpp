@@ -1,6 +1,7 @@
 #include "emlabcpp/result.h"
 #include "fw/util.hpp"
 #include "platform.hpp"
+#include "setup.hpp"
 
 #include <cassert>
 #include <cstdlib>
@@ -59,6 +60,12 @@ em::result setup_clk()
         PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
         PeriphClkInit.AdcDacClockSelection = RCC_ADCDACCLKSOURCE_HSI;
         if ( HAL_RCCEx_PeriphCLKConfig( &PeriphClkInit ) != HAL_OK )
+                return em::ERROR;
+
+        TEMP_CALIB_COEFFS.cal1 = *TEMPSENSOR_CAL1_ADDR;
+        TEMP_CALIB_COEFFS.cal2 = *TEMPSENSOR_CAL2_ADDR;
+
+        if ( HAL_ICACHE_Enable() != HAL_OK )
                 return em::ERROR;
 
         return em::SUCCESS;
