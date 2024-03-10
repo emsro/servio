@@ -20,5 +20,6 @@ var prototype2_2board_8cpp =
     [ "TIM1_UP_TIM16_IRQHandler", "prototype2_2board_8cpp.html#a9895c719dd7dc3d711d91dc0523f0696", null ],
     [ "USART1_IRQHandler", "prototype2_2board_8cpp.html#a27fb9800d727337121da9525aca0b557", null ],
     [ "USART2_IRQHandler", "prototype2_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba", null ],
+    [ "ADC_TIM_HANDLE", "prototype2_2board_8cpp.html#a3f1bce49bf6d1c2b0ab6be8bfc10219b", null ],
     [ "TIM3_HANDLE", "prototype2_2board_8cpp.html#ad3461a2b66a48bb2ff01731378427b6e", null ]
 ];

@@ -115,15 +115,15 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52">   26</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52">indication_event</a></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">//    ERROR,</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a1ebe303c3b179265bbac9ab1f3219826">VOLTAGE_LOW</a>,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52adecfbda91cde2e00e1e04c4c97cb1b86">TEMPERATURE_HIGH</a>,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a0d895a0a05a7cce9b2c0c8bb252f78cc">HEARTBEAT</a>,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a91fc31ffb68f72532b0ab7f28f24db85">ENGAGED</a>,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52afeffe8e712a5ce9a0cedef11c364fa74">DISENGAGED</a>,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a95578e7a8d44d9a1445fe38369bd36a6">STUCK</a>,  <span class="comment">// can&#39;t detect this yet</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52ad32cbe23a48d1576416d9eb314876c6d">BOOTING</a>,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52adee5f03c2c4e73657824e028494b18c0">INITIALIZED</a>,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a1e4bd5080731650a78fd41dc75d98582">INCOMING_MESSAGE</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a1ebe303c3b179265bbac9ab1f3219826">VOLTAGE_LOW</a>      = 0,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52adecfbda91cde2e00e1e04c4c97cb1b86">TEMPERATURE_HIGH</a> = 1,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a0d895a0a05a7cce9b2c0c8bb252f78cc">HEARTBEAT</a>        = 2,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a91fc31ffb68f72532b0ab7f28f24db85">ENGAGED</a>          = 3,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52afeffe8e712a5ce9a0cedef11c364fa74">DISENGAGED</a>       = 4,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a95578e7a8d44d9a1445fe38369bd36a6">STUCK</a>            = 5,  <span class="comment">// can&#39;t detect this yet</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52ad32cbe23a48d1576416d9eb314876c6d">BOOTING</a>          = 6,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52adee5f03c2c4e73657824e028494b18c0">INITIALIZED</a>      = 7,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a1e4bd5080731650a78fd41dc75d98582">INCOMING_MESSAGE</a> = 8</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">using namespace </span>base::literals;</div>
@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a6b4a2e33ade41a94a8fb6b8af82a267.html">mon</a></li><li class="navelem"><a class="el" href="indication_8hpp.html">indication.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 9 2024 22:29:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Mar 10 2024 09:12:00 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

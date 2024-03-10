@@ -80,14 +80,14 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"adc__pooler_8hpp.html",
-"classservio_1_1mon_1_1indication.html#a792da4beab2f501b8954e8465232656c",
-"fw_2dispatcher_8cpp.html#ac01441501f411c8ccdf10543d8f484f7",
-"namespaceservio_1_1base.html#a6401eb8ea8fba126927fcb17bb507663",
-"namespaceservio_1_1drv_1_1bits.html#a706003385a8549ca44d3562df29231cd",
-"plt_2stm32h5_2setup_8hpp.html#a54207fdd13b8536cfecc8079e969056b",
-"stm32g4xx__hal__conf_8h.html#a87e069236d525956eb1ea0ca6dca6747",
-"structservio_1_1drv_1_1adc__channel.html#addb153a7d723e9d1e935dd07fd456f01"
+"",
+"classservio_1_1mon_1_1indication.html#a557bf20b4110f677522187b4166c0c1d",
+"fw_2dispatcher_8cpp.html#ab2c761e8195278086e17665878d5d382",
+"namespaceservio_1_1base.html#a59393d9d594b4342881b7a6e2d61c96f",
+"namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg",
+"plt_2stm32h5_2setup_8hpp.html#a04f200642c04256949e23ea736bbd57e",
+"stm32g4xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462",
+"structservio_1_1drv_1_1adc__channel.html#a31f781d219a2cc4489adcbaba591da95"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

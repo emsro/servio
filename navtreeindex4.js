@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg":[9,0,1,7,8,1],
+"namespaceservio_1_1drv_1_1bits.html":[7,0,1,7,0],
 "namespaceservio_1_1drv_1_1bits.html#a706003385a8549ca44d3562df29231cd":[9,0,1,7,0,0,0,1],
 "namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4":[7,0,1,7,0,2],
 "namespaceservio_1_1drv_1_1bits.html#a83f268c48b8dc33d9a7f4121b5e37261":[9,0,1,7,0,0,0,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "plt_2stm32h5_2config_8cpp.html#a9d808c8e4af01c8ace4848aef68ac0bf":[9,0,1,13,2,2,0],
 "plt_2stm32h5_2gpio_8cpp.html":[9,0,1,13,2,3],
 "plt_2stm32h5_2gpio_8cpp.html#a5d1ffe876c5d8201cbbb029bb4e7e988":[9,0,1,13,2,3,0],
-"plt_2stm32h5_2setup_8hpp.html":[9,0,1,13,2,6],
-"plt_2stm32h5_2setup_8hpp.html#a04f200642c04256949e23ea736bbd57e":[9,0,1,13,2,6,8],
-"plt_2stm32h5_2setup_8hpp.html#a25cf0c78aaa0a1eed2dda1c91f70fc0a":[9,0,1,13,2,6,14]
+"plt_2stm32h5_2setup_8hpp.html":[9,0,1,13,2,6]
 };

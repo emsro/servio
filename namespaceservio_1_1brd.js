@@ -55,6 +55,7 @@ var namespaceservio_1_1brd =
     [ "TIM1_HANDLE", "namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc", null ],
     [ "TIM2_HANDLE", "namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a", null ],
     [ "TIM3_HANDLE", "namespaceservio_1_1brd.html#ad3461a2b66a48bb2ff01731378427b6e", null ],
+    [ "TIM6_HANDLE", "namespaceservio_1_1brd.html#af2809e836bdf98c64f1024daeb658ba3", null ],
     [ "UART1_DMA_HANDLE", "namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c", null ],
     [ "UART1_HANDLE", "namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef", null ],
     [ "UART2_DMA_HANDLE", "namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940", null ],
