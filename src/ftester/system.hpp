@@ -65,13 +65,20 @@ em::result send( auto& ctx, em::protocol::channel_type channel, const auto& data
 struct test_context
 {
         boost::asio::io_context   io_context;
-        servio::scmdio::cobs_port aport;
+        servio::scmdio::cobs_port d_port;
+        boost::asio::serial_port  c_port;
 
         em::testing::collect_server    col_serv;
         em::testing::parameters_server par_serv;
 
-        test_context( const std::string& dev, uint32_t baudrate, const nlohmann::json& input_json )
-          : aport( io_context, dev, baudrate )
+        test_context(
+            const std::filesystem::path& d_dev,
+            uint32_t                     d_baudrate,
+            const std::filesystem::path& c_dev,
+            uint32_t                     c_baudrate,
+            const nlohmann::json&        input_json )
+          : d_port( io_context, d_dev, d_baudrate )
+          , c_port( io_context, c_dev )
           , col_serv(
                 em::testing::collect_channel,
                 em::pmr::new_delete_resource(),
@@ -86,12 +93,13 @@ struct test_context
                         return send( *this, chann, data );
                 } )
         {
+                c_port.set_option( boost::asio::serial_port_base::baud_rate( c_baudrate ) );
         }
 
         template < std::size_t N >
         boost::asio::awaitable< void > write( em::protocol::message< N > msg )
         {
-                co_await aport.async_write( msg );
+                co_await d_port.async_write( msg );
         }
 };
 
@@ -109,7 +117,8 @@ public:
                 } )
         {
 
-                co_spawn( ctx.io_context, read(), handle_eptr );
+                co_spawn( ctx.io_context, dread(), handle_eptr );
+                co_spawn( ctx.io_context, cread(), handle_eptr );
         }
 
         std::string suite_name() const
@@ -175,14 +184,13 @@ public:
         }
 
 private:
-        boost::asio::awaitable< void > read()
+        boost::asio::awaitable< void > dread()
         {
 
-                boost::asio::streambuf   buf;
                 std::vector< std::byte > buffer( 512, std::byte{ 0 } );
 
                 while ( true ) {
-                        em::view< std::byte* > data = co_await ctx_.aport.async_read( buffer );
+                        em::view< std::byte* > data = co_await ctx_.d_port.async_read( buffer );
 
                         em::outcome out = em::protocol::extract_multiplexed(
                             data,
@@ -194,6 +202,21 @@ private:
                             } );
 
                         system_failure_ |= out == em::ERROR;
+                }
+        }
+
+        boost::asio::awaitable< void > cread()
+        {
+                std::vector< std::byte > buffer( 512, std::byte{ 0 } );
+                while ( true ) {
+                        std::size_t n = co_await ctx_.c_port.async_read_some(
+                            boost::asio::buffer( buffer.data(), buffer.size() ),
+                            boost::asio::use_awaitable );
+
+                        co_await boost::asio::async_write(
+                            ctx_.c_port,
+                            boost::asio::buffer( buffer.data(), n ),
+                            boost::asio::use_awaitable );
                 }
         }
 

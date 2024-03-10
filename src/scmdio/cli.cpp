@@ -13,10 +13,17 @@ CLI::Option* verbose_opt( CLI::App& app, bool& val )
             } );
 }
 
-CLI::Option* device_opt( CLI::App& app, std::filesystem::path& device )
+CLI::Option* coms_opt( CLI::App& app, std::filesystem::path& comms )
 {
-        return app.add_option( "-d,--device", device, "device to use" )
-            ->envname( "SERVIO_DEVICE" )
+        return app.add_option( "-c,--comms", comms, "device for communication" )
+            ->envname( "SERVIO_COMMS" )
+            ->check( CLI::ExistingFile );
+}
+
+CLI::Option* dcoms_opt( CLI::App& app, std::filesystem::path& comms )
+{
+        return app.add_option( "-d,--dcomms", comms, "device for debug communication" )
+            ->envname( "SERVIO_DCOMMS" )
             ->check( CLI::ExistingFile );
 }
 
@@ -36,7 +43,7 @@ CLI::Option* powerless_flag( CLI::App& app, bool& is_powerless )
 
 void common_cli::setup( CLI::App& app )
 {
-        device_opt( app, device )->capture_default_str();
+        coms_opt( app, device )->capture_default_str();
         baudrate_opt( app, baudrate )->capture_default_str();
         app.parse_complete_callback( [&] {
                 port_ptr = std::make_unique< cobs_port >( context, device, baudrate );

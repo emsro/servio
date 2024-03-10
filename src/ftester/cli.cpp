@@ -6,7 +6,8 @@ namespace servio::ftester
 CLI::Option* ocfg_opt( CLI::App& app, std::optional< std::filesystem::path >& o_cfg )
 {
         return app
-            .add_option( "-c,--config", o_cfg, "Config file for openocd used to flash the device" )
+            .add_option(
+                "--ocd,--config", o_cfg, "Config file for openocd used to flash the device" )
             ->envname( "SERVIO_OPENOCD_CONFIG" )
             ->check( CLI::ExistingFile );
 }

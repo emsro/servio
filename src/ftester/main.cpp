@@ -88,7 +88,7 @@ int main( int argc, char* argv[] )
 
         nlohmann::json inpt;
         inpt["powerless"] = cfg.powerless;
-        ftester::test_context         ctx{ cfg.device, 460800, inpt };
+        ftester::test_context         ctx{ cfg.d_device, 460800, cfg.c_device, 460800, inpt };
         ftester::controller_interface ctl_iface{ ctx.col_serv };
         ftester::test_system          tsys{ ctx, ctl_iface };
 

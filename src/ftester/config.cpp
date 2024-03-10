@@ -13,7 +13,8 @@ config get_config( int argc, char* argv[] )
         CLI::App app( "Utility to run basic input-less tests" );
 
         scmdio::verbose_opt( app, cfg.verbose );
-        scmdio::device_opt( app, cfg.device );
+        scmdio::coms_opt( app, cfg.c_device );
+        scmdio::dcoms_opt( app, cfg.d_device );
         app.add_option( "-o,--output", cfg.output_dir, "Directory to use for storing results" );
         // TODO: well these are duplicated..
         scmdio::powerless_flag( app, cfg.powerless );

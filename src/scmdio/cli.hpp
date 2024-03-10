@@ -11,7 +11,8 @@ namespace servio::scmdio
 
 CLI::Option* verbose_opt( CLI::App& app, bool& val );
 
-CLI::Option* device_opt( CLI::App& app, std::filesystem::path& device );
+CLI::Option* coms_opt( CLI::App& app, std::filesystem::path& device );
+CLI::Option* dcoms_opt( CLI::App& app, std::filesystem::path& device );
 
 CLI::Option* baudrate_opt( CLI::App& app, unsigned& baudrate );
 
