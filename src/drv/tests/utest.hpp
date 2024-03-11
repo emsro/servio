@@ -25,9 +25,9 @@ struct utest : em::testing::test_interface
                 return item.name;
         }
 
-        em::testing::test_coroutine run( em::pmr::memory_resource& mem, em::testing::record& rec )
+        em::testing::coroutine< void > run( em::pmr::memory_resource& mem ) override
         {
-                return item.run( mem, rec );
+                return item.run( mem );
         }
 };
 
@@ -43,5 +43,7 @@ void setup_utest(
         res = em::testing::construct_test_unit< utest< T > >(
             mem, reac, std::forward< Args >( args )... );
 }
+
+namespace t = em::testing;
 
 }  // namespace servio::drv::tests

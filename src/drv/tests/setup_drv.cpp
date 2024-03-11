@@ -27,7 +27,7 @@ void setup_tests(
             *cdrv.temperature,
             *cdrv.position,
             res );
-        drv::tests::setup_impl_tests( mem, reac, *cdrv.clock, res );
+        drv::tests::setup_impl_tests( mem, reac, coll, *cdrv.clock, res );
 }
 
 }  // namespace servio::ftest
