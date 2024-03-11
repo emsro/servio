@@ -1,12 +1,11 @@
 var NAVTREEINDEX3 =
 {
-"moves__test_8cpp.html#a60d31cf0e65b8243e9e2d1349910e9ba":[9,0,1,1,3,1],
 "moves__test_8cpp.html#a880bcff5b36ca30cc19a181dea5d2752":[9,0,1,1,3,2],
 "namespacegoogle.html":[7,0,0],
 "namespacegoogle_1_1protobuf.html":[7,0,0,0],
 "namespacegoogle_1_1protobuf.html#a7d9dc03a0937665df6d59ad6f7b7f312":[7,0,0,0,0],
-"namespacemembers.html":[7,1,0,0],
 "namespacemembers.html":[7,1,0],
+"namespacemembers.html":[7,1,0,0],
 "namespacemembers_b.html":[7,1,0,1],
 "namespacemembers_c.html":[7,1,0,2],
 "namespacemembers_d.html":[7,1,0,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "namespaceservio_1_1ctl.html#affde5dbb6a289ceda28bc8544112be1c":[7,0,1,6,6],
 "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config":[9,0,1,6,1,0],
 "namespaceservio_1_1ctl_1_1tests.html":[7,0,1,6,0],
-"namespaceservio_1_1ctl_1_1tests.html#a1c030f06574191b8bf336e694ab01cf6":[7,0,1,6,0,2]
+"namespaceservio_1_1ctl_1_1tests.html#a1c030f06574191b8bf336e694ab01cf6":[7,0,1,6,0,2],
+"namespaceservio_1_1ctl_1_1tests.html#a431c1672fec99126e8a2a10ffa608902":[7,0,1,6,0,1]
 };

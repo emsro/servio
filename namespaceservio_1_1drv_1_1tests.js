@@ -15,7 +15,7 @@ var namespaceservio_1_1drv_1_1tests =
     [ "position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", "structservio_1_1drv_1_1tests_1_1position__test" ],
     [ "utest", "structservio_1_1drv_1_1tests_1_1utest.html", "structservio_1_1drv_1_1tests_1_1utest" ],
     [ "is_powerless", "namespaceservio_1_1drv_1_1tests.html#ac8399bc29bb8a7c4c90c5b9bd6a859af", null ],
-    [ "setup_impl_tests", "namespaceservio_1_1drv_1_1tests.html#aaf6da828717b115538cd82eba5708611", null ],
-    [ "setup_interface_tests", "namespaceservio_1_1drv_1_1tests.html#a18c8979a0d1d50a949756d52a357d7f3", null ],
+    [ "setup_impl_tests", "namespaceservio_1_1drv_1_1tests.html#a888f80568a5104217fdc2a15a135048b", null ],
+    [ "setup_interface_tests", "namespaceservio_1_1drv_1_1tests.html#a38f617e1636826d8d7fbd1ffa2cf082d", null ],
     [ "setup_utest", "namespaceservio_1_1drv_1_1tests.html#a6be320e66caa8920908e1f409f5ad0c0", null ]
 ];
