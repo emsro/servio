@@ -18,6 +18,11 @@ void sentry::set_inoperable( std::size_t eid, const char* emsg, const data_type&
                 report_inop( eid, emsg, data );
 }
 
+void sentry::set_inoperable_set( ecode_set set, const char* emsg, const data_type& data )
+{
+        central_.report_inoperable( source_id_, set, emsg, data );
+}
+
 void sentry::set_degraded( std::size_t eid, const char* emsg, const data_type& data )
 {
         if ( eid > max_eid ) {
@@ -26,6 +31,12 @@ void sentry::set_degraded( std::size_t eid, const char* emsg, const data_type& d
                 degr_ecode_.set( eid );
                 central_.report_degraded( source_id_, degr_ecode_, emsg, data );
         }
+}
+
+void sentry::set_degraded_set( ecode_set set, const char* emsg, const data_type& data )
+{
+        degr_ecode_ &= set;
+        central_.report_degraded( source_id_, degr_ecode_, emsg, data );
 }
 
 void sentry::unset_degraded( std::size_t eid )

@@ -47,12 +47,11 @@ public:
 
                 if ( j.contains( "metrics" ) ) {
                         for ( const nlohmann::json& m : j["metrics"] ) {
-                                EMLABCPP_INFO_LOG(
-                                    m["name"].get< std::string >(),
-                                    "\t",
-                                    m["value"],
-                                    " ",
-                                    m["unit"].get< std::string >() );
+                                auto k   = m["name"].get< std::string >();
+                                auto val = std::to_string( m["value"].get< int >() ) + " " +
+                                           m["unit"].get< std::string >();
+
+                                std::cout << std::format( "{:<30} {}", k, val ) << std::endl;
                         }
                 }
 

@@ -48,6 +48,11 @@ void hbridge::force_stop()
         tim_ = nullptr;
 }
 
+bool hbridge::is_stopped() const
+{
+        return tim_ == nullptr;
+}
+
 void hbridge::set_power( int16_t power )
 {
 

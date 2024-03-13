@@ -102,9 +102,9 @@ inline void cobs_uart::err_irq( UART_HandleTypeDef* huart )
 
         uint32_t error_status = HAL_UART_GetError( huart );
         if ( ( error_status & ~tolerable_hal_errors ) != 0 )
-                sentry_.set_inoperable( error_status << 1, "err irq" );
+                sentry_.set_inoperable_set( error_status << 1, "err irq" );
         else if ( error_status != 0 )
-                sentry_.set_degraded( error_status << 1, "err irq" );
+                sentry_.set_degraded_set( error_status << 1, "err irq" );
 }
 
 inline em::result cobs_uart::start()

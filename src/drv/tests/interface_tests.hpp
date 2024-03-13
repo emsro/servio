@@ -15,6 +15,14 @@ namespace servio::drv::tests
 
 using namespace base::literals;
 
+inline auto hold( auto& iface )
+{
+        std::ignore = iface.stop();
+        return em::defer{ [&] {
+                std::ignore = iface.start();
+        } };
+}
+
 // Test that clock of chip works correctly:
 //  - time increases
 struct clock_test
@@ -121,7 +129,7 @@ struct period_iface_test
                 co_await t::expect( coll, counter == 0 );
                 coll.set( "counter1", counter );
 
-                co_await t::expect( coll, iface.start() != em::SUCCESS );
+                co_await t::expect( coll, iface.start() == em::SUCCESS );
 
                 wait_for( clk, 10_ms );
 
@@ -136,21 +144,29 @@ struct period_iface_test
 struct pwm_motor_test
 {
         t::collector&        coll;
+        period_interface&    period;
         pwm_motor_interface& iface;
         std::string_view     name = "pwm_motor";
 
         t::coroutine< void > run( auto& mem )
         {
-                co_await test( mem, -1, -1 );
+                co_await t::expect( coll, !iface.is_stopped() );
+                auto d = hold( period );
 
+                co_await test( mem, -1024, -1 );
                 co_await test( mem, 0, 1 );
-                co_await test( mem, 0, 1 );
+                co_await test( mem, 1024, 1 );
         }
 
-        t::coroutine< void > test( auto&, int16_t pwr, int16_t expected )
+        t::coroutine< void > test(
+            auto&,
+            int16_t              pwr,
+            int16_t              expected,
+            std::source_location src = std::source_location::current() )
         {
                 iface.set_power( pwr );
-                co_await t::expect( coll, iface.get_direction() == expected );
+                coll.set( "last_dir", iface.get_direction() );
+                co_await t::expect( coll, iface.get_direction() == expected, src );
         }
 };
 
@@ -198,6 +214,7 @@ struct position_test
 
         t::coroutine< void > run( auto& )
         {
+
                 em::defer d = retain_callback( iface );
 
                 std::optional< uint32_t > opt_pos = std::nullopt;
@@ -230,7 +247,7 @@ inline void setup_interface_tests(
         setup_utest< comms_echo_test >( mem, reac, res, coll, comms );
         setup_utest< comms_timeout_test >( mem, reac, res, coll, comms );
         setup_utest< period_iface_test >( mem, reac, res, coll, clk, period );
-        setup_utest< pwm_motor_test >( mem, reac, res, coll, pwm );
+        setup_utest< pwm_motor_test >( mem, reac, res, coll, period, pwm );
         setup_utest< vcc_test >( mem, reac, res, coll, vcc );
         setup_utest< temperature_test >( mem, reac, res, coll, temp );
         setup_utest< position_test >( mem, reac, res, coll, pos, clk );

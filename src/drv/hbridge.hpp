@@ -29,6 +29,7 @@ public:
         hbridge* setup( uint32_t mc1_channel, uint32_t mc2_channel );
 
         void force_stop() override;
+        bool is_stopped() const override;
 
         void timer_period_irq( TIM_HandleTypeDef* h );
 

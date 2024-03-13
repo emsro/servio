@@ -23,8 +23,18 @@ public:
             const char*      emsg,
             const data_type& data = std::monostate{} );
 
+        void set_inoperable_set(
+            ecode_set        set,
+            const char*      emsg,
+            const data_type& data = std::monostate{} );
+
         void
         set_degraded( std::size_t eid, const char* emsg, const data_type& data = std::monostate{} );
+
+        void set_degraded_set(
+            ecode_set        set,
+            const char*      emsg,
+            const data_type& data = std::monostate{} );
 
         void unset_degraded( std::size_t eid );
 

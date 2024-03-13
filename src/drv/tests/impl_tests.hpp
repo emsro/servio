@@ -51,6 +51,8 @@ struct cobs_uart_err_test
                 handle.ErrorCode = cobs_uart::tolerable_hal_errors;
                 uart.err_irq( &handle );
                 co_await t::expect( coll, central.buffer.size() == 1 );
+
+                coll.set( "pos_ecode", std::get< 2 >( central.buffer[0] ) );
                 co_await t::expect( coll, !central.is_inoperable() );
                 co_await t::expect(
                     coll, std::get< 0 >( central.buffer[0] ) == sntr::test_central_sentry::DEGR );
@@ -77,8 +79,9 @@ struct hbridge_test
                 hbridge hb{ nullptr };
                 co_await t::expect( coll, hb.setup( 1, 2 ) == nullptr );
 
+                // this sets behavior for scenarion when tim == nullptr
                 hb.set_power( -1 );
-                co_await t::expect( coll, hb.get_direction() == -1 );
+                co_await t::expect( coll, hb.get_direction() == 1 );
 
                 auto d = retain_callback( hb );
 

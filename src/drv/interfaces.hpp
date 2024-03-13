@@ -92,6 +92,7 @@ class pwm_motor_interface
 {
 public:
         virtual void   force_stop()          = 0;
+        virtual bool   is_stopped() const    = 0;
         virtual void   set_power( int16_t )  = 0;
         virtual int8_t get_direction() const = 0;
         virtual ~pwm_motor_interface()       = default;
