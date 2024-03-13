@@ -8,5 +8,6 @@ var interface__tests_8hpp =
     [ "vcc_test", "structservio_1_1drv_1_1tests_1_1vcc__test.html", "structservio_1_1drv_1_1tests_1_1vcc__test" ],
     [ "temperature_test", "structservio_1_1drv_1_1tests_1_1temperature__test.html", "structservio_1_1drv_1_1tests_1_1temperature__test" ],
     [ "position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", "structservio_1_1drv_1_1tests_1_1position__test" ],
+    [ "hold", "interface__tests_8hpp.html#a510bb7381ec9be3c36a77e8794a75201", null ],
     [ "setup_interface_tests", "interface__tests_8hpp.html#a38f617e1636826d8d7fbd1ffa2cf082d", null ]
 ];

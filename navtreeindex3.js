@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"motor_8hpp.html#ae4e290055137b3e1d32c0322341caf6d":[9,0,1,17,0,3],
+"motor_8hpp_source.html":[9,0,1,17,0],
+"moves__test_8cpp.html":[9,0,1,1,3],
+"moves__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[9,0,1,1,3,0],
+"moves__test_8cpp.html#a60d31cf0e65b8243e9e2d1349910e9ba":[9,0,1,1,3,1],
 "moves__test_8cpp.html#a880bcff5b36ca30cc19a181dea5d2752":[9,0,1,1,3,2],
 "namespacegoogle.html":[7,0,0],
 "namespacegoogle_1_1protobuf.html":[7,0,0,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX3 =
 "namespaceservio_1_1ctl.html#ad28cc6cf69ba7444a608ef594a97bf03":[7,0,1,6,4],
 "namespaceservio_1_1ctl.html#ad4f05cf40ee9e9cf64b0c935db871865":[9,0,1,6,1,0,1],
 "namespaceservio_1_1ctl.html#adb27ea5d7a6ac888735d1541606c0db3":[9,0,1,6,1,0,2],
-"namespaceservio_1_1ctl.html#af3c52f4eb343739f5fc3ee18607a4529":[9,0,1,6,1,0,0],
-"namespaceservio_1_1ctl.html#affde5dbb6a289ceda28bc8544112be1c":[7,0,1,6,6],
-"namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config":[9,0,1,6,1,0],
-"namespaceservio_1_1ctl_1_1tests.html":[7,0,1,6,0],
-"namespaceservio_1_1ctl_1_1tests.html#a1c030f06574191b8bf336e694ab01cf6":[7,0,1,6,0,2],
-"namespaceservio_1_1ctl_1_1tests.html#a431c1672fec99126e8a2a10ffa608902":[7,0,1,6,0,1]
+"namespaceservio_1_1ctl.html#af3c52f4eb343739f5fc3ee18607a4529":[9,0,1,6,1,0,0]
 };
