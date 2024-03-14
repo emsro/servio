@@ -231,6 +231,36 @@ struct position_test
         }
 };
 
+// Test current iface
+//  - check that callback can be changed properly and that it is called
+struct current_iface_test
+{
+        t::collector&      coll;
+        current_interface& iface;
+        clk_interface&     clk;
+        std::string_view   name = "curr_test";
+
+        t::coroutine< void > run( auto& )
+        {
+
+                em::defer d = retain_callback( iface );
+
+                std::optional< uint32_t > opt_curr = std::nullopt;
+                std::span< uint16_t >     prof;
+                current_cb                ccb{ [&]( uint32_t curr, std::span< uint16_t > profile ) {
+                        opt_curr = curr;
+                        prof     = profile;
+                } };
+                iface.set_current_callback( ccb );
+                co_await t::expect( coll, &iface.get_current_callback() == &ccb );
+
+                wait_for( clk, 10_ms );
+
+                co_await t::expect( coll, opt_curr.has_value() );
+                co_await t::expect( coll, !prof.empty() );
+        }
+};
+
 inline void setup_interface_tests(
     em::pmr::memory_resource& mem,
     t::reactor&               reac,
@@ -242,6 +272,7 @@ inline void setup_interface_tests(
     vcc_interface&            vcc,
     temperature_interface&    temp,
     position_interface&       pos,
+    current_interface&        curr,
     em::result&               res )
 {
         setup_utest< clock_test >( mem, reac, res, coll, clk );
@@ -252,6 +283,7 @@ inline void setup_interface_tests(
         setup_utest< vcc_test >( mem, reac, res, coll, vcc );
         setup_utest< temperature_test >( mem, reac, res, coll, temp );
         setup_utest< position_test >( mem, reac, res, coll, pos, clk );
+        setup_utest< current_iface_test >( mem, reac, res, coll, curr, clk );
 }
 
 }  // namespace servio::drv::tests

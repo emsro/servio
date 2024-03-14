@@ -26,6 +26,7 @@ void setup_tests(
             *cdrv.vcc,
             *cdrv.temperature,
             *cdrv.position,
+            *cdrv.current,
             res );
         drv::tests::setup_impl_tests( mem, reac, coll, *cdrv.clock, res );
 }
