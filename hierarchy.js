@@ -49,6 +49,7 @@ var hierarchy =
     ] ],
     [ "servio::cnv::converter", "structservio_1_1cnv_1_1converter.html", null ],
     [ "servio::core::core", "structservio_1_1core_1_1core.html", null ],
+    [ "servio::drv::tests::current_iface_test", "structservio_1_1drv_1_1tests_1_1current__iface__test.html", null ],
     [ "servio::drv::current_interface", "classservio_1_1drv_1_1current__interface.html", [
       [ "servio::drv::adc_pooler_current< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__current.html", null ]
     ] ],

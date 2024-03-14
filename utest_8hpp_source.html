@@ -98,58 +98,53 @@ $(document).ready(function(){initNavTree('utest_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1drv_1_1tests.html">servio::drv::tests</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1utest.html">   13</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html">utest</a> : em::testing::test_interface</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">   15</a></span>&#160;        T <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">item</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">template</span> &lt; <span class="keyword">typename</span>... Args &gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1utest.html#ae6f93475b3e5bd7d1cffb70965d73fd8">   18</a></span>&#160;        <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#ae6f93475b3e5bd7d1cffb70965d73fd8">utest</a>( Args&amp;&amp;... args )</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          : <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">item</a>( std::forward&lt; Args &gt;( args )... )</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1utest.html#ad8d7a56ac4bbf8d11f96d238cbf6fe73">   23</a></span>&#160;        std::string_view <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#ad8d7a56ac4bbf8d11f96d238cbf6fe73">get_name</a>()<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">item</a>.name;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1utest.html#aaa6fc1838bcee03c28e040a000e4a5b6">   28</a></span>&#160;        em::testing::coroutine&lt; void &gt; <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#aaa6fc1838bcee03c28e040a000e4a5b6">run</a>( em::pmr::memory_resource&amp; mem )<span class="keyword"> override</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">item</a>.run( mem );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args &gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1tests.html#a6be320e66caa8920908e1f409f5ad0c0">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1drv_1_1tests.html#a6be320e66caa8920908e1f409f5ad0c0">setup_utest</a>(</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    em::pmr::memory_resource&amp; mem,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    em::testing::reactor&amp;     reac,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    em::result&amp;               res,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    Args&amp;&amp;... args )</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> ( res != em::SUCCESS )</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        res = em::testing::construct_test_unit&lt; utest&lt; T &gt; &gt;(</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            mem, reac, std::forward&lt; Args &gt;( args )... );</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span>t = em::testing;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}  <span class="comment">// namespace servio::drv::tests</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>t = em::testing;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1utest.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html">utest</a> : t::test_interface</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">   17</a></span>&#160;        T <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">item</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">template</span> &lt; <span class="keyword">typename</span>... Args &gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1utest.html#ae6f93475b3e5bd7d1cffb70965d73fd8">   20</a></span>&#160;        <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#ae6f93475b3e5bd7d1cffb70965d73fd8">utest</a>( Args&amp;&amp;... args )</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;          : <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">item</a>( std::forward&lt; Args &gt;( args )... )</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1utest.html#ad8d7a56ac4bbf8d11f96d238cbf6fe73">   25</a></span>&#160;        std::string_view <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#ad8d7a56ac4bbf8d11f96d238cbf6fe73">get_name</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">item</a>.name;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1utest.html#a1b1425a64045028e0fa57336c12a8521">   30</a></span>&#160;        t::coroutine&lt; void &gt; <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#a1b1425a64045028e0fa57336c12a8521">run</a>( em::pmr::memory_resource&amp; mem )<span class="keyword"> override</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">item</a>.run( mem );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args &gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1tests.html#a15cc7ab2613c55d5c1e1a68cb25922c6">   37</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1drv_1_1tests.html#a15cc7ab2613c55d5c1e1a68cb25922c6">setup_utest</a>( em::pmr::memory_resource&amp; mem, t::reactor&amp; reac, em::result&amp; res, Args&amp;&amp;... args )</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span> ( res != em::SUCCESS )</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        res = t::construct_test_unit&lt; utest&lt; T &gt; &gt;( mem, reac, std::forward&lt; Args &gt;( args )... );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}  <span class="comment">// namespace servio::drv::tests</span></div>
 <div class="ttc" id="anamespaceservio_1_1drv_1_1tests_html"><div class="ttname"><a href="namespaceservio_1_1drv_1_1tests.html">servio::drv::tests</a></div><div class="ttdef"><b>Definition:</b> impl_tests.hpp:15</div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_1_1tests_html_a6be320e66caa8920908e1f409f5ad0c0"><div class="ttname"><a href="namespaceservio_1_1drv_1_1tests.html#a6be320e66caa8920908e1f409f5ad0c0">servio::drv::tests::setup_utest</a></div><div class="ttdeci">void setup_utest(em::pmr::memory_resource &amp;mem, em::testing::reactor &amp;reac, em::result &amp;res, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> utest.hpp:35</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1utest_html"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1utest.html">servio::drv::tests::utest</a></div><div class="ttdef"><b>Definition:</b> utest.hpp:14</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1utest_html_a2294a0693963f568497bbe020d44d6d2"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">servio::drv::tests::utest::item</a></div><div class="ttdeci">T item</div><div class="ttdef"><b>Definition:</b> utest.hpp:15</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1utest_html_aaa6fc1838bcee03c28e040a000e4a5b6"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1utest.html#aaa6fc1838bcee03c28e040a000e4a5b6">servio::drv::tests::utest::run</a></div><div class="ttdeci">em::testing::coroutine&lt; void &gt; run(em::pmr::memory_resource &amp;mem) override</div><div class="ttdef"><b>Definition:</b> utest.hpp:28</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1utest_html_ad8d7a56ac4bbf8d11f96d238cbf6fe73"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1utest.html#ad8d7a56ac4bbf8d11f96d238cbf6fe73">servio::drv::tests::utest::get_name</a></div><div class="ttdeci">std::string_view get_name() const override</div><div class="ttdef"><b>Definition:</b> utest.hpp:23</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1utest_html_ae6f93475b3e5bd7d1cffb70965d73fd8"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1utest.html#ae6f93475b3e5bd7d1cffb70965d73fd8">servio::drv::tests::utest::utest</a></div><div class="ttdeci">utest(Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> utest.hpp:18</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_1_1tests_html_a15cc7ab2613c55d5c1e1a68cb25922c6"><div class="ttname"><a href="namespaceservio_1_1drv_1_1tests.html#a15cc7ab2613c55d5c1e1a68cb25922c6">servio::drv::tests::setup_utest</a></div><div class="ttdeci">void setup_utest(em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, em::result &amp;res, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> utest.hpp:37</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1utest_html"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1utest.html">servio::drv::tests::utest</a></div><div class="ttdef"><b>Definition:</b> utest.hpp:16</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1utest_html_a1b1425a64045028e0fa57336c12a8521"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1utest.html#a1b1425a64045028e0fa57336c12a8521">servio::drv::tests::utest::run</a></div><div class="ttdeci">t::coroutine&lt; void &gt; run(em::pmr::memory_resource &amp;mem) override</div><div class="ttdef"><b>Definition:</b> utest.hpp:30</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1utest_html_a2294a0693963f568497bbe020d44d6d2"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2">servio::drv::tests::utest::item</a></div><div class="ttdeci">T item</div><div class="ttdef"><b>Definition:</b> utest.hpp:17</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1utest_html_ad8d7a56ac4bbf8d11f96d238cbf6fe73"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1utest.html#ad8d7a56ac4bbf8d11f96d238cbf6fe73">servio::drv::tests::utest::get_name</a></div><div class="ttdeci">std::string_view get_name() const override</div><div class="ttdef"><b>Definition:</b> utest.hpp:25</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1utest_html_ae6f93475b3e5bd7d1cffb70965d73fd8"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1utest.html#ae6f93475b3e5bd7d1cffb70965d73fd8">servio::drv::tests::utest::utest</a></div><div class="ttdeci">utest(Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> utest.hpp:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="dir_26e34818c745abafa34d6ef482a48aa2.html">tests</a></li><li class="navelem"><a class="el" href="utest_8hpp.html">utest.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 14 2024 19:03:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Mar 14 2024 21:07:10 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

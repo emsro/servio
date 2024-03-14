@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"functions_vars.html":[8,3,2],
 "functions_vars.html":[8,3,2,0],
 "functions_vars_b.html":[8,3,2,1],
 "functions_vars_c.html":[8,3,2,2],
@@ -112,8 +111,8 @@ var NAVTREEINDEX2 =
 "install__stop__callback_8hpp.html#a6e64fab0feb5f6e1c618cb88e13298e9":[9,0,1,10,6,0],
 "install__stop__callback_8hpp_source.html":[9,0,1,10,6],
 "interface__tests_8hpp.html":[9,0,1,7,1,2],
-"interface__tests_8hpp.html#a38f617e1636826d8d7fbd1ffa2cf082d":[9,0,1,7,1,2,9],
-"interface__tests_8hpp.html#a510bb7381ec9be3c36a77e8794a75201":[9,0,1,7,1,2,8],
+"interface__tests_8hpp.html#a510bb7381ec9be3c36a77e8794a75201":[9,0,1,7,1,2,9],
+"interface__tests_8hpp.html#af183bf7a7d73ad07ab3f1025f64460f9":[9,0,1,7,1,2,10],
 "interface__tests_8hpp_source.html":[9,0,1,7,1,2],
 "interfaces_8hpp.html":[9,0,1,7,11],
 "interfaces_8hpp.html#a9a711333af5752c87e2f218cc0978504":[9,0,1,7,11,13],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "monitor_8hpp.html":[9,0,1,13,2],
 "monitor_8hpp_source.html":[9,0,1,13,2],
 "motor_8hpp.html":[9,0,1,17,0],
-"motor_8hpp.html#a01cd0103c0e6d6fc4939ef7094480615":[9,0,1,17,0,2]
+"motor_8hpp.html#a01cd0103c0e6d6fc4939ef7094480615":[9,0,1,17,0,2],
+"motor_8hpp.html#a496e8de9a9763267fda5eeaac8a92fa1":[9,0,1,17,0,1]
 };
