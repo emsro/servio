@@ -74,7 +74,7 @@ public:
 inline void wait_for( clk_interface& clk, base::microseconds ms )
 {
         base::microseconds end = clk.get_us() + ms;
-        while ( end < clk.get_us() )
+        while ( clk.get_us() < end )
                 asm( "nop" );
 }
 

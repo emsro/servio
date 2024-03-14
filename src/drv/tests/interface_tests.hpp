@@ -133,8 +133,9 @@ struct period_iface_test
 
                 wait_for( clk, 10_ms );
 
-                co_await t::expect( coll, counter != 0 );
+                co_await t::expect( coll, &iface.get_period_callback() == &pcb );
                 coll.set( "counter2", counter );
+                co_await t::expect( coll, counter != 0 );
         }
 };
 
