@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"motor_8hpp.html#a496e8de9a9763267fda5eeaac8a92fa1":[9,0,1,17,0,1],
 "motor_8hpp.html#ae4e290055137b3e1d32c0322341caf6d":[9,0,1,17,0,3],
 "motor_8hpp_source.html":[9,0,1,17,0],
 "moves__test_8cpp.html":[9,0,1,1,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "namespaceservio_1_1ctl.html#aa4cf1922c9ea312468fc30bb2f68d6c5":[7,0,1,6,5],
 "namespaceservio_1_1ctl.html#ad28cc6cf69ba7444a608ef594a97bf03":[7,0,1,6,4],
 "namespaceservio_1_1ctl.html#ad4f05cf40ee9e9cf64b0c935db871865":[9,0,1,6,1,0,1],
-"namespaceservio_1_1ctl.html#adb27ea5d7a6ac888735d1541606c0db3":[9,0,1,6,1,0,2],
-"namespaceservio_1_1ctl.html#af3c52f4eb343739f5fc3ee18607a4529":[9,0,1,6,1,0,0]
+"namespaceservio_1_1ctl.html#adb27ea5d7a6ac888735d1541606c0db3":[9,0,1,6,1,0,2]
 };

@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('interfaces_8hpp_source.html',''); init
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv.html#ae7a95461ce17f4716268e283b19ccf10">   74</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1drv.html#ae7a95461ce17f4716268e283b19ccf10">wait_for</a>( <a class="code" href="classservio_1_1drv_1_1clk__interface.html">clk_interface</a>&amp; clk, <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> ms )</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> end = clk.<a class="code" href="classservio_1_1drv_1_1clk__interface.html#a1f44f864df63c6afb617848158fc5ee3">get_us</a>() + ms;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">while</span> ( end &lt; clk.<a class="code" href="classservio_1_1drv_1_1clk__interface.html#a1f44f864df63c6afb617848158fc5ee3">get_us</a>() )</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">while</span> ( clk.<a class="code" href="classservio_1_1drv_1_1clk__interface.html#a1f44f864df63c6afb617848158fc5ee3">get_us</a>() &lt; end )</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">asm</span>( <span class="stringliteral">&quot;nop&quot;</span> );</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
@@ -284,7 +284,7 @@ $(document).ready(function(){initNavTree('interfaces_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="interfaces_8hpp.html">interfaces.hpp</a></li>
-    <li class="footer">Generated on Wed Mar 13 2024 22:06:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Mar 14 2024 19:03:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
