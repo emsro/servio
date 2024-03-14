@@ -1,5 +1,6 @@
 #pragma once
 
+#include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/coroutine.h>
 #include <emlabcpp/experimental/testing/interface.h>
 #include <emlabcpp/experimental/testing/reactor.h>
@@ -11,14 +12,67 @@ namespace servio::drv::tests
 
 namespace t = em::testing;
 
+struct collector
+{
+        t::collector& coll;
+        t::node_id    met_id;
+
+        collector( t::collector& coll )
+          : coll( coll )
+        {
+        }
+
+        operator t::collector&()
+        {
+                return coll;
+        }
+
+        t::collector* operator->()
+        {
+                return &coll;
+        }
+};
+
+struct utest_base : t::test_interface
+{
+        collector coll;
+
+        utest_base( t::collector& coll )
+          : coll( coll )
+        {
+        }
+
+        t::coroutine< void > setup( em::pmr::memory_resource& ) override
+        {
+                coll.met_id = co_await coll->set( "metrics", em::contiguous_container_type::ARRAY );
+        }
+};
+
+t::coroutine< void > store_metric(
+    em::pmr::memory_resource&,
+    collector&       coll,
+    std::string_view name,
+    auto&&           value,
+    std::string_view unit = "" )
+
+{
+        em::testing::node_id id =
+            co_await coll->append( coll.met_id, em::contiguous_container_type::OBJECT );
+        coll->set( id, "name", name );
+        coll->set( id, "unit", unit );
+        coll->set( id, "value", value );
+}
+
 template < typename T >
-struct utest : t::test_interface
+struct utest : utest_base
+
 {
         T item;
 
         template < typename... Args >
-        utest( Args&&... args )
-          : item( std::forward< Args >( args )... )
+        utest( t::collector& coll, Args&&... args )
+          : utest_base( coll )
+          , item( std::forward< Args >( args )... )
         {
         }
 
@@ -29,16 +83,22 @@ struct utest : t::test_interface
 
         t::coroutine< void > run( em::pmr::memory_resource& mem ) override
         {
-                return item.run( mem );
+                return item.run( mem, coll );
         }
 };
 
 template < typename T, typename... Args >
-void setup_utest( em::pmr::memory_resource& mem, t::reactor& reac, em::result& res, Args&&... args )
+void setup_utest(
+    em::pmr::memory_resource& mem,
+    t::reactor&               reac,
+    t::collector&             coll,
+    em::result&               res,
+    Args&&... args )
 {
         if ( res != em::SUCCESS )
                 return;
-        res = t::construct_test_unit< utest< T > >( mem, reac, std::forward< Args >( args )... );
+        res = t::construct_test_unit< utest< T > >(
+            mem, reac, coll, std::forward< Args >( args )... );
 }
 
 }  // namespace servio::drv::tests

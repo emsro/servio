@@ -18,11 +18,10 @@ using namespace base::literals;
 
 struct cobs_uart_rx_test
 {
-        t::collector&    coll;
         clk_interface&   clk;
         std::string_view name = "cobs_uart_rx";
 
-        t::coroutine< void > run( auto& )
+        t::coroutine< void > run( auto&, collector& coll )
         {
                 sntr::test_central_sentry central;
 
@@ -37,11 +36,10 @@ struct cobs_uart_rx_test
 
 struct cobs_uart_err_test
 {
-        t::collector&    coll;
         clk_interface&   clk;
         std::string_view name = "cobs_uart_err";
 
-        t::coroutine< void > run( auto& )
+        t::coroutine< void > run( auto&, collector& coll )
         {
                 sntr::test_central_sentry central;
                 UART_HandleTypeDef        handle;
@@ -52,7 +50,7 @@ struct cobs_uart_err_test
                 uart.err_irq( &handle );
                 co_await t::expect( coll, central.buffer.size() == 1 );
 
-                coll.set( "pos_ecode", std::get< 2 >( central.buffer[0] ) );
+                coll->set( "pos_ecode", std::get< 2 >( central.buffer[0] ) );
                 co_await t::expect( coll, !central.is_inoperable() );
                 co_await t::expect(
                     coll, std::get< 0 >( central.buffer[0] ) == sntr::test_central_sentry::DEGR );
@@ -71,10 +69,9 @@ struct cobs_uart_err_test
 
 struct hbridge_test
 {
-        t::collector&    coll;
         std::string_view name = "hbridge_test";
 
-        t::coroutine< void > run( auto& )
+        t::coroutine< void > run( auto&, collector& coll )
         {
                 hbridge hb{ nullptr };
                 co_await t::expect( coll, hb.setup( 1, 2 ) == nullptr );
@@ -119,9 +116,9 @@ inline void setup_impl_tests(
     em::result&               res )
 
 {
-        setup_utest< cobs_uart_rx_test >( mem, reac, res, coll, clk );
-        setup_utest< cobs_uart_err_test >( mem, reac, res, coll, clk );
-        setup_utest< hbridge_test >( mem, reac, res, coll );
+        setup_utest< cobs_uart_rx_test >( mem, reac, coll, res, clk );
+        setup_utest< cobs_uart_err_test >( mem, reac, coll, res, clk );
+        setup_utest< hbridge_test >( mem, reac, coll, res );
 }
 
 }  // namespace servio::drv::tests
