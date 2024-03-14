@@ -9,8 +9,10 @@ namespace em = emlabcpp;
 namespace servio::drv::tests
 {
 
+namespace t = em::testing;
+
 template < typename T >
-struct utest : em::testing::test_interface
+struct utest : t::test_interface
 {
         T item;
 
@@ -25,25 +27,18 @@ struct utest : em::testing::test_interface
                 return item.name;
         }
 
-        em::testing::coroutine< void > run( em::pmr::memory_resource& mem ) override
+        t::coroutine< void > run( em::pmr::memory_resource& mem ) override
         {
                 return item.run( mem );
         }
 };
 
 template < typename T, typename... Args >
-void setup_utest(
-    em::pmr::memory_resource& mem,
-    em::testing::reactor&     reac,
-    em::result&               res,
-    Args&&... args )
+void setup_utest( em::pmr::memory_resource& mem, t::reactor& reac, em::result& res, Args&&... args )
 {
         if ( res != em::SUCCESS )
                 return;
-        res = em::testing::construct_test_unit< utest< T > >(
-            mem, reac, std::forward< Args >( args )... );
+        res = t::construct_test_unit< utest< T > >( mem, reac, std::forward< Args >( args )... );
 }
-
-namespace t = em::testing;
 
 }  // namespace servio::drv::tests
