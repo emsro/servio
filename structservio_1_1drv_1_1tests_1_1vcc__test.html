@@ -104,21 +104,19 @@ $(document).ready(function(){initNavTree('structservio_1_1drv_1_1tests_1_1vcc__t
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7bbc735886a6f8d3edd707fa275c0cef"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1vcc__test.html#a7bbc735886a6f8d3edd707fa275c0cef">run</a> (auto &amp;)</td></tr>
-<tr class="separator:a7bbc735886a6f8d3edd707fa275c0cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a326a810b1f7b851eecffd397892f61cc"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1vcc__test.html#a326a810b1f7b851eecffd397892f61cc">run</a> (auto &amp;mem, <a class="el" href="structservio_1_1drv_1_1tests_1_1collector.html">collector</a> &amp;coll)</td></tr>
+<tr class="separator:a326a810b1f7b851eecffd397892f61cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a61e4dc40386f14012c1c8242e89c292e"><td class="memItemLeft" align="right" valign="top">t::collector &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1vcc__test.html#a61e4dc40386f14012c1c8242e89c292e">coll</a></td></tr>
-<tr class="separator:a61e4dc40386f14012c1c8242e89c292e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bdedff79b8b243cfbec3c9a02c22858"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1vcc__interface.html">vcc_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1vcc__test.html#a3bdedff79b8b243cfbec3c9a02c22858">iface</a></td></tr>
 <tr class="separator:a3bdedff79b8b243cfbec3c9a02c22858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3b773812e273e1854ec37f3d5234ed5"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1vcc__test.html#ae3b773812e273e1854ec37f3d5234ed5">name</a> = &quot;vcc_test&quot;</td></tr>
 <tr class="separator:ae3b773812e273e1854ec37f3d5234ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7bbc735886a6f8d3edd707fa275c0cef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bbc735886a6f8d3edd707fa275c0cef">&#9670;&nbsp;</a></span>run()</h2>
+<a id="a326a810b1f7b851eecffd397892f61cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a326a810b1f7b851eecffd397892f61cc">&#9670;&nbsp;</a></span>run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -130,8 +128,18 @@ Public Attributes</h2></td></tr>
           <td class="memname">t::coroutine&lt; void &gt; servio::drv::tests::vcc_test::run </td>
           <td>(</td>
           <td class="paramtype">auto &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>mem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1tests_1_1collector.html">collector</a> &amp;&#160;</td>
+          <td class="paramname"><em>coll</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -141,25 +149,11 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classservio_1_1drv_1_1vcc__interface.html#a6b5956a308349eb16242ab7dae8afb1d">servio::drv::vcc_interface::get_vcc()</a>.</p>
+<p class="reference">References <a class="el" href="classservio_1_1drv_1_1vcc__interface.html#a6b5956a308349eb16242ab7dae8afb1d">servio::drv::vcc_interface::get_vcc()</a>, and <a class="el" href="namespaceservio_1_1drv_1_1tests.html#a8eca28f19c55bda027eedd598c2da42d">servio::drv::tests::store_metric()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a61e4dc40386f14012c1c8242e89c292e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61e4dc40386f14012c1c8242e89c292e">&#9670;&nbsp;</a></span>coll</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">t::collector&amp; servio::drv::tests::vcc_test::coll</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a3bdedff79b8b243cfbec3c9a02c22858"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3bdedff79b8b243cfbec3c9a02c22858">&#9670;&nbsp;</a></span>iface</h2>
 
@@ -197,7 +191,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv_1_1tests.html">tests</a></li><li class="navelem"><a class="el" href="structservio_1_1drv_1_1tests_1_1vcc__test.html">vcc_test</a></li>
-    <li class="footer">Generated on Thu Mar 14 2024 21:07:10 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Mar 14 2024 21:37:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -33,6 +33,7 @@ var hierarchy =
     [ "servio::drv::bits::cobs_rx_container", "namespaceservio_1_1drv_1_1bits.html#structservio_1_1drv_1_1bits_1_1cobs__rx__container", null ],
     [ "servio::drv::tests::cobs_uart_err_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html", null ],
     [ "servio::drv::tests::cobs_uart_rx_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html", null ],
+    [ "servio::drv::tests::collector", "structservio_1_1drv_1_1tests_1_1collector.html", null ],
     [ "servio::drv::com_interface", "classservio_1_1drv_1_1com__interface.html", [
       [ "servio::drv::cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", null ]
     ] ],
@@ -131,7 +132,9 @@ var hierarchy =
     ] ],
     [ "servio::ftester::test_context", "structservio_1_1ftester_1_1test__context.html", null ],
     [ "em::testing::test_interface", null, [
-      [ "servio::drv::tests::utest< T >", "structservio_1_1drv_1_1tests_1_1utest.html", null ]
+      [ "servio::drv::tests::utest_base", "structservio_1_1drv_1_1tests_1_1utest__base.html", [
+        [ "servio::drv::tests::utest< T >", "structservio_1_1drv_1_1tests_1_1utest.html", null ]
+      ] ]
     ] ],
     [ "servio::ftester::test_system", "classservio_1_1ftester_1_1test__system.html", null ],
     [ "servio::ftest::testing_system", "structservio_1_1ftest_1_1testing__system.html", null ],

@@ -104,15 +104,13 @@ $(document).ready(function(){initNavTree('structservio_1_1drv_1_1tests_1_1pwm__m
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5f45d5159487da35572d51e9b0e070b9"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1pwm__motor__test.html#a5f45d5159487da35572d51e9b0e070b9">run</a> (auto &amp;mem)</td></tr>
-<tr class="separator:a5f45d5159487da35572d51e9b0e070b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a5d229ad61de46bd3c8ff32623139b6"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1pwm__motor__test.html#a1a5d229ad61de46bd3c8ff32623139b6">test</a> (auto &amp;, int16_t pwr, int16_t expected, std::source_location src=std::source_location::current())</td></tr>
-<tr class="separator:a1a5d229ad61de46bd3c8ff32623139b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3920b5cc400512c6f99e63ffa19e82ab"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1pwm__motor__test.html#a3920b5cc400512c6f99e63ffa19e82ab">test</a> (<a class="el" href="structservio_1_1drv_1_1tests_1_1collector.html">collector</a> &amp;coll, int16_t pwr, int16_t expected, std::source_location src=std::source_location::current())</td></tr>
+<tr class="separator:a3920b5cc400512c6f99e63ffa19e82ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accdca7080118179bee8d21ae997a845a"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1pwm__motor__test.html#accdca7080118179bee8d21ae997a845a">run</a> (auto &amp;, <a class="el" href="structservio_1_1drv_1_1tests_1_1collector.html">collector</a> &amp;coll)</td></tr>
+<tr class="separator:accdca7080118179bee8d21ae997a845a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7e2a484ae39b2711ba649fd29fb074b1"><td class="memItemLeft" align="right" valign="top">t::collector &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1pwm__motor__test.html#a7e2a484ae39b2711ba649fd29fb074b1">coll</a></td></tr>
-<tr class="separator:a7e2a484ae39b2711ba649fd29fb074b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad45a91ce8a51985476fd40e6fcabc31f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1period__interface.html">period_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1pwm__motor__test.html#ad45a91ce8a51985476fd40e6fcabc31f">period</a></td></tr>
 <tr class="separator:ad45a91ce8a51985476fd40e6fcabc31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fe0ddaba5e71544fa7b70a848ab2d06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1pwm__motor__interface.html">pwm_motor_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1pwm__motor__test.html#a0fe0ddaba5e71544fa7b70a848ab2d06">iface</a></td></tr>
@@ -121,8 +119,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:afbd14abb873245040b7e7437dc242330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5f45d5159487da35572d51e9b0e070b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f45d5159487da35572d51e9b0e070b9">&#9670;&nbsp;</a></span>run()</h2>
+<a id="accdca7080118179bee8d21ae997a845a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accdca7080118179bee8d21ae997a845a">&#9670;&nbsp;</a></span>run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,8 +132,18 @@ Public Attributes</h2></td></tr>
           <td class="memname">t::coroutine&lt; void &gt; servio::drv::tests::pwm_motor_test::run </td>
           <td>(</td>
           <td class="paramtype">auto &amp;&#160;</td>
-          <td class="paramname"><em>mem</em></td><td>)</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1tests_1_1collector.html">collector</a> &amp;&#160;</td>
+          <td class="paramname"><em>coll</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -149,8 +157,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1a5d229ad61de46bd3c8ff32623139b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a5d229ad61de46bd3c8ff32623139b6">&#9670;&nbsp;</a></span>test()</h2>
+<a id="a3920b5cc400512c6f99e63ffa19e82ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3920b5cc400512c6f99e63ffa19e82ab">&#9670;&nbsp;</a></span>test()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,10 +167,10 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">t::coroutine&lt; void &gt; servio::drv::tests::pwm_motor_test::test </td>
+          <td class="memname">auto servio::drv::tests::pwm_motor_test::test </td>
           <td>(</td>
-          <td class="paramtype">auto &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1tests_1_1collector.html">collector</a> &amp;&#160;</td>
+          <td class="paramname"><em>coll</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -200,20 +208,6 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7e2a484ae39b2711ba649fd29fb074b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e2a484ae39b2711ba649fd29fb074b1">&#9670;&nbsp;</a></span>coll</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">t::collector&amp; servio::drv::tests::pwm_motor_test::coll</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a0fe0ddaba5e71544fa7b70a848ab2d06"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0fe0ddaba5e71544fa7b70a848ab2d06">&#9670;&nbsp;</a></span>iface</h2>
 
@@ -265,7 +259,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv_1_1tests.html">tests</a></li><li class="navelem"><a class="el" href="structservio_1_1drv_1_1tests_1_1pwm__motor__test.html">pwm_motor_test</a></li>
-    <li class="footer">Generated on Thu Mar 14 2024 21:07:10 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Mar 14 2024 21:37:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

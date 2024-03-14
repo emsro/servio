@@ -60,6 +60,8 @@ var annotated_dup =
           [ "temperature_test", "structservio_1_1drv_1_1tests_1_1temperature__test.html", "structservio_1_1drv_1_1tests_1_1temperature__test" ],
           [ "position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", "structservio_1_1drv_1_1tests_1_1position__test" ],
           [ "current_iface_test", "structservio_1_1drv_1_1tests_1_1current__iface__test.html", "structservio_1_1drv_1_1tests_1_1current__iface__test" ],
+          [ "collector", "structservio_1_1drv_1_1tests_1_1collector.html", "structservio_1_1drv_1_1tests_1_1collector" ],
+          [ "utest_base", "structservio_1_1drv_1_1tests_1_1utest__base.html", "structservio_1_1drv_1_1tests_1_1utest__base" ],
           [ "utest", "structservio_1_1drv_1_1tests_1_1utest.html", "structservio_1_1drv_1_1tests_1_1utest" ]
         ] ],
         [ "detailed_adc_channel", "structservio_1_1drv_1_1detailed__adc__channel.html", "structservio_1_1drv_1_1detailed__adc__channel" ],
