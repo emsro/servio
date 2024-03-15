@@ -22,12 +22,27 @@ public:
         clock& operator=( const clock& ) = delete;
         clock& operator=( clock&& )      = delete;
 
+        void timer_period_irq( TIM_HandleTypeDef* h )
+        {
+                if ( h == &tim_ )
+                        time_s_ += 1;
+        }
+
         base::microseconds get_us() override
         {
-                return base::microseconds{ __HAL_TIM_GET_COUNTER( &tim_ ) };
+                uint64_t us;
+                uint64_t s;
+                do {
+                        s  = time_s_;
+                        us = __HAL_TIM_GET_COUNTER( &tim_ );
+                } while ( s != time_s_ );
+
+                uint64_t val = s * tim_.Init.Period + us;
+                return base::microseconds{ val };
         }
 
 private:
+        volatile uint64_t  time_s_ = 0;
         TIM_HandleTypeDef& tim_;
 };
 

@@ -42,6 +42,19 @@ struct clock_test
                 coll->set( 0, "t1", t1 );
                 coll->set( 0, "t2", t2 );
                 coll->set( 0, "wait cycles", wait_cycles );
+
+                base::microseconds now  = clk.get_us();
+                base::microseconds last = now;
+                base::microseconds end  = now + 2_s;
+                do {
+                        last = now;
+                        now  = clk.get_us();
+                        if ( last > now ) {
+                                coll->set( "last", last );
+                                coll->set( "now", now );
+                        }
+                        co_await t::expect( last <= now );
+                } while ( clk.get_us() < end );
         }
 };
 

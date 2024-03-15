@@ -84,6 +84,6 @@ em::result setup_leds_channel( TIM_HandleTypeDef* tim, drv::pinch_cfg cfg );
 
 em::result setup_clk();
 
-em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
+em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq );
 
 }  // namespace servio::plt

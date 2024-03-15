@@ -107,12 +107,12 @@ em::result setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         return em::SUCCESS;
 }
 
-em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
+em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq )
 {
         tim.Instance               = instance;
         tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1'000'000 );
         tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
-        tim.Init.Period            = std::numeric_limits< uint32_t >::max();
+        tim.Init.Period            = 1'000'000;
         tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
         tim.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
@@ -120,11 +120,19 @@ em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         mc.MasterOutputTrigger = TIM_TRGO_UPDATE;
         mc.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
 
+        __HAL_TIM_ENABLE_IT( &tim, TIM_IT_UPDATE );
+
         if ( HAL_TIM_PWM_Init( &tim ) != HAL_OK )
                 return em::ERROR;
 
         if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK )
                 return em::ERROR;
+
+        if ( HAL_TIM_Base_Start( &tim ) != HAL_OK )
+                return em::ERROR;
+
+        HAL_NVIC_SetPriority( irq, 0, 0 );
+        HAL_NVIC_EnableIRQ( irq );
 
         return em::SUCCESS;
 }

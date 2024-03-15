@@ -74,6 +74,11 @@ void TIM1_UP_IRQHandler()
         HAL_TIM_IRQHandler( &servio::brd::TIM1_HANDLE );
 }
 
+void TIM2_IRQHandler()
+{
+        HAL_TIM_IRQHandler( &servio::brd::TIM2_HANDLE );
+}
+
 void USART2_IRQHandler()
 {
         HAL_UART_IRQHandler( &servio::brd::UART2_HANDLE );
@@ -105,6 +110,7 @@ extern "C" {
 [[gnu::flatten]] void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef* h )
 {
         servio::brd::HBRIDGE.timer_period_irq( h );
+        servio::brd::CLOCK.timer_period_irq( h );
 }
 
 [[gnu::flatten]] void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
@@ -182,12 +188,12 @@ adc_pooler_type* adc_pooler_setup()
                 ADC_DMA_HANDLE,
                 plt::adc_cfg{
                     .adc_instance     = ADC1,
-                    .adc_irq_priority = 0,
+                    .adc_irq_priority = 1,
                     .adc_trigger      = ADC_EXTERNALTRIG_T6_TRGO,
                     .dma =
                         plt::dma_cfg{
                             .irq          = GPDMA1_Channel0_IRQn,
-                            .irq_priority = 0,
+                            .irq_priority = 1,
                             .instance     = GPDMA1_Channel0,
                             .request      = GPDMA1_REQUEST_ADC1,
                             .priority     = DMA_HIGH_PRIORITY,
@@ -209,7 +215,7 @@ drv::hbridge* hbridge_setup()
             .timer_instance = TIM1,
             .period         = std::numeric_limits< uint16_t >::max() / 8,
             .irq            = TIM1_UP_IRQn,
-            .irq_priority   = 0,
+            .irq_priority   = 1,
             .mc1 =
                 drv::pinch_cfg{
                     .channel   = TIM_CHANNEL_1,
@@ -242,7 +248,7 @@ drv::cobs_uart* comms_setup()
             .uart_instance = USART2,
             .baudrate      = 460800,
             .irq           = USART2_IRQn,
-            .irq_priority  = 1,
+            .irq_priority  = 2,
             .rx =
                 drv::pin_cfg{
                     .pin       = GPIO_PIN_15,
@@ -258,7 +264,7 @@ drv::cobs_uart* comms_setup()
             .tx_dma =
                 plt::dma_cfg{
                     .irq          = GPDMA1_Channel1_IRQn,
-                    .irq_priority = 1,
+                    .irq_priority = 2,
                     .instance     = GPDMA1_Channel1,
                     .request      = GPDMA1_REQUEST_USART2_TX,
                     .priority     = DMA_LOW_PRIORITY_LOW_WEIGHT,
@@ -281,7 +287,7 @@ drv::com_interface* setup_debug_comms()
             .uart_instance = USART1,
             .baudrate      = 460800,
             .irq           = USART1_IRQn,
-            .irq_priority  = 1,
+            .irq_priority  = 2,
             .rx =
                 drv::pin_cfg{
                     .pin       = GPIO_PIN_11,
@@ -297,7 +303,7 @@ drv::com_interface* setup_debug_comms()
             .tx_dma =
                 plt::dma_cfg{
                     .irq          = GPDMA1_Channel2_IRQn,
-                    .irq_priority = 1,
+                    .irq_priority = 2,
                     .instance     = GPDMA1_Channel2,
                     .request      = GPDMA1_REQUEST_USART1_TX,
                     .priority     = DMA_LOW_PRIORITY_LOW_WEIGHT,
@@ -385,7 +391,7 @@ em::result setup_board()
 core::drivers setup_core_drivers()
 {
         __HAL_RCC_TIM2_CLK_ENABLE();
-        if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2 ) != em::SUCCESS )
+        if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != em::SUCCESS )
                 fw::stop_exec();
 
         drv::hbridge* hb = hbridge_setup();
