@@ -25,24 +25,24 @@ public:
         void timer_period_irq( TIM_HandleTypeDef* h )
         {
                 if ( h == &tim_ )
-                        time_s_ += 1;
+                        irq_count_ += 1;
         }
 
         base::microseconds get_us() override
         {
                 uint64_t us;
-                uint64_t s;
+                uint64_t ic;
                 do {
-                        s  = time_s_;
+                        ic = irq_count_;
                         us = __HAL_TIM_GET_COUNTER( &tim_ );
-                } while ( s != time_s_ );
+                } while ( ic != irq_count_ );
 
-                uint64_t val = s * tim_.Init.Period + us;
+                uint64_t val = ic * tim_.Init.Period + us;
                 return base::microseconds{ val };
         }
 
 private:
-        volatile uint64_t  time_s_ = 0;
+        volatile uint64_t  irq_count_ = 0;
         TIM_HandleTypeDef& tim_;
 };
 
