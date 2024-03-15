@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('interface__tests_8hpp_source.html','')
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1clock__test.html#a74622ecf1f8f70affc74766051a0d48b">   34</a></span>&#160;        t::coroutine&lt; void &gt; <a class="code" href="structservio_1_1drv_1_1tests_1_1clock__test.html#a74622ecf1f8f70affc74766051a0d48b">run</a>( <span class="keyword">auto</span>&amp;, <a class="code" href="structservio_1_1drv_1_1tests_1_1collector.html">collector</a>&amp; coll )</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                std::size_t        wait_cycles = 10000;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                std::size_t        wait_cycles = 100;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> t1          = clk.<a class="code" href="classservio_1_1drv_1_1clk__interface.html#a1f44f864df63c6afb617848158fc5ee3">get_us</a>();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">for</span> ( std::size_t i = 0; i &lt; wait_cycles; i++ )</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <span class="keyword">asm</span>( <span class="stringliteral">&quot;nop&quot;</span> );</div>
@@ -464,7 +464,7 @@ $(document).ready(function(){initNavTree('interface__tests_8hpp_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="dir_26e34818c745abafa34d6ef482a48aa2.html">tests</a></li><li class="navelem"><a class="el" href="interface__tests_8hpp.html">interface_tests.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 15 2024 13:23:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 15 2024 13:23:42 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
