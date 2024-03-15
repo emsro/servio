@@ -19,7 +19,7 @@ bool indication::on_event( base::microseconds now, const indication_event& e )
                 red_events_.push_back( 1000_ms );
                 break;
         case indication_event::HEARTBEAT:
-                green_step_ += 0.01F;
+                green_step_ += 0.00001F;
                 break;
         case indication_event::ENGAGED:
                 green_offset_ = 0.5F;
@@ -59,7 +59,7 @@ void indication::tick( base::microseconds now )
         tick_red( now );
 
         green_i_              = std::fmod( green_i_ + green_step_, 2 * base::pi );
-        const float green_val = ( sin_approx( green_i_ ) + 1.F ) / 2.F + green_offset_;
+        const float green_val = ( sin_approx( green_i_ ) + 1.F ) / 4.F + green_offset_;
         state_.green          = static_cast< uint8_t >(
             em::map_range< float, float >( green_val, 0.F, 2.F, 0.F, 255.F ) );
 
