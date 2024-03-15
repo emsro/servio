@@ -122,6 +122,8 @@ em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         mc.MasterOutputTrigger = TIM_TRGO_UPDATE;
         mc.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
 
+        __HAL_TIM_UIFREMAP_ENABLE( &tim );
+
         if ( HAL_TIM_Base_Init( &tim ) != HAL_OK )
                 fw::stop_exec();
 
