@@ -15,7 +15,7 @@ enum class record_state
 struct record
 {
         record_state       st = record_state::UNSET;
-        base::microseconds tp;
+        base::microseconds tp{ 0 };
         const char*        src = nullptr;
         ecode_set          ecodes;
         const char*        emsg = nullptr;
