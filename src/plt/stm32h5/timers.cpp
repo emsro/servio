@@ -112,7 +112,7 @@ em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQ
         tim.Instance               = instance;
         tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1'000'000 );
         tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
-        tim.Init.Period            = 1'000'000;
+        tim.Init.Period            = 5'000;
         tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
         tim.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
@@ -121,6 +121,7 @@ em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQ
         mc.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
 
         __HAL_TIM_ENABLE_IT( &tim, TIM_IT_UPDATE );
+        __HAL_TIM_UIFREMAP_ENABLE( &tim );
 
         if ( HAL_TIM_PWM_Init( &tim ) != HAL_OK )
                 return em::ERROR;

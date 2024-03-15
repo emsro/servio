@@ -35,15 +35,16 @@ public:
                 do {
                         ic = irq_count_;
                         us = __HAL_TIM_GET_COUNTER( &tim_ );
-                } while ( ic != irq_count_ );
+                } while ( ic != irq_count_ || ( us & ( 1U << uif_bit ) ) != 0 );
 
                 uint64_t val = ic * tim_.Init.Period + us;
                 return base::microseconds{ val };
         }
 
 private:
-        volatile uint64_t  irq_count_ = 0;
-        TIM_HandleTypeDef& tim_;
+        static constexpr std::size_t uif_bit    = 31;
+        volatile uint64_t            irq_count_ = 0;
+        TIM_HandleTypeDef&           tim_;
 };
 
 }  // namespace servio::drv

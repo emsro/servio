@@ -19,7 +19,7 @@ bool indication::on_event( base::microseconds now, const indication_event& e )
                 red_events_.push_back( 1000_ms );
                 break;
         case indication_event::HEARTBEAT:
-                green_step_ += 0.1F;
+                green_step_ += 0.01F;
                 break;
         case indication_event::ENGAGED:
                 green_offset_ = 0.5F;

@@ -33,7 +33,7 @@ struct clock_test
 
         t::coroutine< void > run( auto&, collector& coll )
         {
-                std::size_t        wait_cycles = 10000;
+                std::size_t        wait_cycles = 100;
                 base::microseconds t1          = clk.get_us();
                 for ( std::size_t i = 0; i < wait_cycles; i++ )
                         asm( "nop" );
