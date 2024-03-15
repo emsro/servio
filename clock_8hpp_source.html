@@ -124,16 +124,16 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">do</span> {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        ic = irq_count_;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        us = __HAL_TIM_GET_COUNTER( &amp;tim_ );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                } <span class="keywordflow">while</span> ( ic != irq_count_ || ( us &amp; ( 1U &lt;&lt; uif_bit ) ) != 0 );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                } <span class="keywordflow">while</span> ( ic != irq_count_ || ( us &amp; uif_mask ) != 0 );</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                uint64_t val = ic * tim_.Init.Period + us;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a>{ val };</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">static</span> constexpr std::size_t uif_bit    = 31;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">volatile</span> uint64_t            irq_count_ = 0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        TIM_HandleTypeDef&amp;           tim_;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">static</span> constexpr uint64_t uif_mask   = 1U &lt;&lt; 31;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">volatile</span> uint64_t         irq_count_ = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        TIM_HandleTypeDef&amp;        tim_;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="clock_8hpp.html">clock.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 15 2024 13:23:42 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 15 2024 14:43:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
