@@ -7,10 +7,10 @@ var base_2base_8hpp =
       [ "yellow", "namespaceservio_1_1base.html#abf3fe893e15d76d70f70862489fd606c", null ]
     ] ],
     [ "limits", "base_2base_8hpp.html#a3e5e15432ec57250250b13239ec98650", null ],
-    [ "microseconds", "base_2base_8hpp.html#af4c5a013d7d4941800fa600c4abe43ed", null ],
-    [ "milliseconds", "base_2base_8hpp.html#a59393d9d594b4342881b7a6e2d61c96f", null ],
+    [ "microseconds", "base_2base_8hpp.html#a4ee4ba55bb220d445e17a921b54178e8", null ],
+    [ "milliseconds", "base_2base_8hpp.html#ab25676521e8e9d23787be15ff0ca7941", null ],
     [ "sec_time", "base_2base_8hpp.html#a7f0faa48f2ea63277cd3d5a698cefb68", null ],
-    [ "seconds", "base_2base_8hpp.html#afb9717f537669a31ae4e147ae598d4ff", null ],
+    [ "seconds", "base_2base_8hpp.html#a04691caeca128fa7604a500449a4f8b4", null ],
     [ "control_loop", "base_2base_8hpp.html#a52414739b3bb89a0cfbf750a4ea92826", [
       [ "CURRENT", "base_2base_8hpp.html#a52414739b3bb89a0cfbf750a4ea92826aa2770969c827f0f2910f6179418462df", null ],
       [ "VELOCITY", "base_2base_8hpp.html#a52414739b3bb89a0cfbf750a4ea92826a7b4354bded455eb379e3c764806cda7b", null ],

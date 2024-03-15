@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"namespaceservio_1_1ctl.html#af3c52f4eb343739f5fc3ee18607a4529":[9,0,1,6,1,0,0],
 "namespaceservio_1_1ctl.html#affde5dbb6a289ceda28bc8544112be1c":[7,0,1,6,6],
 "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config":[9,0,1,6,1,0],
 "namespaceservio_1_1ctl_1_1tests.html":[7,0,1,6,0],
@@ -192,6 +193,7 @@ var NAVTREEINDEX4 =
 "namespaceservio_1_1plt.html#a645e44622af5420d2d39234cf52d9f76":[7,0,1,14,8],
 "namespaceservio_1_1plt.html#a6a1b2270dd01143ff1bc38ba8cfd3020":[9,0,1,15,2,6,1,1],
 "namespaceservio_1_1plt.html#a6a38c6f90f09b7f4dd592ba5327a5a85":[9,0,1,15,2,6,3,0],
+"namespaceservio_1_1plt.html#a71520584fd9671ce414b8b5b8c653926":[7,0,1,14,16],
 "namespaceservio_1_1plt.html#a73088cdd7b6754164af4b062382dc239":[9,0,1,15,2,6,6,1],
 "namespaceservio_1_1plt.html#a75103b3e408610a74d1c0299c6f17482":[9,0,1,15,2,6,5,0],
 "namespaceservio_1_1plt.html#a79d3faed853bcee26c9f504a8cd30118":[9,0,1,15,2,6,2,1],
@@ -216,7 +218,6 @@ var NAVTREEINDEX4 =
 "namespaceservio_1_1plt.html#ac320b1f2637e8716b47834cec0877368":[9,0,1,15,2,6,5,1],
 "namespaceservio_1_1plt.html#ae634bafb995aba994e778d86113e6fcd":[9,0,1,15,2,6,0,0],
 "namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673":[9,0,1,15,2,6,3,5],
-"namespaceservio_1_1plt.html#afa3ffb0666945381bc9735b671490daf":[7,0,1,14,16],
 "namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg":[9,0,1,15,2,6,1],
 "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg":[9,0,1,15,2,6,0],
 "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg":[9,0,1,15,2,6,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "namespaceservio_1_1scmdio.html#a704ae1876459aaf7751ec6071b8f9585":[9,0,1,16,7,0,0],
 "namespaceservio_1_1scmdio.html#a7a6a4d2cb946a4d8e54396443a7b5b3a":[7,0,1,15,31],
 "namespaceservio_1_1scmdio.html#a7cd98f3bc5c4f656559e6067f3b079e1":[7,0,1,15,15],
-"namespaceservio_1_1scmdio.html#a88bec0d9c341b4f2b1918c8b06f82055":[7,0,1,15,28],
-"namespaceservio_1_1scmdio.html#a924cc37a67bd5a6d14afd76aea80ff4b":[7,0,1,15,14]
+"namespaceservio_1_1scmdio.html#a88bec0d9c341b4f2b1918c8b06f82055":[7,0,1,15,28]
 };

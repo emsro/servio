@@ -8,10 +8,10 @@ var namespaceservio_1_1base =
     ] ],
     [ "leds_vals", "namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals", "namespaceservio_1_1base_structservio_1_1base_1_1leds__vals_dup" ],
     [ "limits", "namespaceservio_1_1base.html#a3e5e15432ec57250250b13239ec98650", null ],
-    [ "microseconds", "namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed", null ],
-    [ "milliseconds", "namespaceservio_1_1base.html#a59393d9d594b4342881b7a6e2d61c96f", null ],
+    [ "microseconds", "namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8", null ],
+    [ "milliseconds", "namespaceservio_1_1base.html#ab25676521e8e9d23787be15ff0ca7941", null ],
     [ "sec_time", "namespaceservio_1_1base.html#a7f0faa48f2ea63277cd3d5a698cefb68", null ],
-    [ "seconds", "namespaceservio_1_1base.html#afb9717f537669a31ae4e147ae598d4ff", null ],
+    [ "seconds", "namespaceservio_1_1base.html#a04691caeca128fa7604a500449a4f8b4", null ],
     [ "control_loop", "namespaceservio_1_1base.html#a52414739b3bb89a0cfbf750a4ea92826", [
       [ "CURRENT", "namespaceservio_1_1base.html#a52414739b3bb89a0cfbf750a4ea92826aa2770969c827f0f2910f6179418462df", null ],
       [ "VELOCITY", "namespaceservio_1_1base.html#a52414739b3bb89a0cfbf750a4ea92826a7b4354bded455eb379e3c764806cda7b", null ],

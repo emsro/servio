@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('core_2callbacks_8hpp_source.html','');
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classservio_1_1core_1_1position__callback.html#a02116ee8cc9bd1143dc647458b06187d">   56</a></span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> <a class="code" href="classservio_1_1core_1_1position__callback.html#a02116ee8cc9bd1143dc647458b06187d">on_value_irq</a>( uint32_t <a class="code" href="namespaceservio_1_1cnv.html#a4595c096d855703d2ff1dbcb44c6ac62">position</a> )<span class="keyword"> override</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keyword">const</span> <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> now = clk_.<a class="code" href="classservio_1_1drv_1_1clk__interface.html#a1f44f864df63c6afb617848158fc5ee3">get_us</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keyword">const</span> <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> now = clk_.<a class="code" href="classservio_1_1drv_1_1clk__interface.html#a1f44f864df63c6afb617848158fc5ee3">get_us</a>();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">float</span> p = conv_.<a class="code" href="structservio_1_1cnv_1_1converter.html#a2ed3229b71607923715107fb0ba66590">position</a>.<a class="code" href="structservio_1_1cnv_1_1linear__converter.html#a00a3b7bb8a83fedbf2c62c77ce383e86">convert</a>( <a class="code" href="namespaceservio_1_1cnv.html#a4595c096d855703d2ff1dbcb44c6ac62">position</a> );</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('core_2callbacks_8hpp_source.html','');
 <div class="ttc" id="acontrol_8hpp_html"><div class="ttname"><a href="control_8hpp.html">control.hpp</a></div></div>
 <div class="ttc" id="aconverter_8hpp_html"><div class="ttname"><a href="converter_8hpp.html">converter.hpp</a></div></div>
 <div class="ttc" id="ametrics_8hpp_html"><div class="ttname"><a href="metrics_8hpp.html">metrics.hpp</a></div></div>
-<div class="ttc" id="anamespaceservio_1_1base_html_af4c5a013d7d4941800fa600c4abe43ed"><div class="ttname"><a href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">servio::base::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:13</div></div>
+<div class="ttc" id="anamespaceservio_1_1base_html_a4ee4ba55bb220d445e17a921b54178e8"><div class="ttname"><a href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">servio::base::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint64_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:13</div></div>
 <div class="ttc" id="anamespaceservio_1_1cnv_html_a4595c096d855703d2ff1dbcb44c6ac62"><div class="ttname"><a href="namespaceservio_1_1cnv.html#a4595c096d855703d2ff1dbcb44c6ac62">servio::cnv::position</a></div><div class="ttdeci">float position(const converter &amp;conv, const drv::position_interface &amp;pos_drv)</div><div class="ttdef"><b>Definition:</b> utils.hpp:22</div></div>
 <div class="ttc" id="anamespaceservio_1_1cnv_html_a80940f85bcf572efe925d1d3320a2414"><div class="ttname"><a href="namespaceservio_1_1cnv.html#a80940f85bcf572efe925d1d3320a2414">servio::cnv::current</a></div><div class="ttdeci">float current(const converter &amp;conv, uint32_t raw_current, const drv::pwm_motor_interface &amp;motor)</div><div class="ttdef"><b>Definition:</b> utils.hpp:9</div></div>
 <div class="ttc" id="anamespaceservio_1_1core_html"><div class="ttname"><a href="namespaceservio_1_1core.html">servio::core</a></div><div class="ttdef"><b>Definition:</b> callbacks.hpp:9</div></div>
@@ -202,7 +202,7 @@ $(document).ready(function(){initNavTree('core_2callbacks_8hpp_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a class="el" href="core_2callbacks_8hpp.html">callbacks.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 14 2024 21:37:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 15 2024 06:57:32 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('monitor_8hpp_source.html',''); initRes
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1monitor.html#aba66e900ccf7b0ff46a7ebdc01d3a822">   14</a></span>&#160;        <a class="code" href="classservio_1_1mon_1_1monitor.html#aba66e900ccf7b0ff46a7ebdc01d3a822">monitor</a>(</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a>                now,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a>                now,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">const</span> <a class="code" href="classservio_1_1ctl_1_1control.html">ctl::control</a>&amp;               ctl,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keyword">const</span> <a class="code" href="classservio_1_1drv_1_1vcc__interface.html">drv::vcc_interface</a>&amp;         vcc_drv,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">const</span> <a class="code" href="classservio_1_1drv_1_1temperature__interface.html">drv::temperature_interface</a>&amp; temp_drv,</div>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('monitor_8hpp_source.html',''); initRes
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                max_tmp_ = temp;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1monitor.html#aee944f7c9f437c2457386fbaff3608ab">   40</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1mon_1_1monitor.html#aee944f7c9f437c2457386fbaff3608ab">tick</a>( <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> now )</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1monitor.html#aee944f7c9f437c2457386fbaff3608ab">   40</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1mon_1_1monitor.html#aee944f7c9f437c2457386fbaff3608ab">tick</a>( <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> now )</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                indi_.<a class="code" href="classservio_1_1mon_1_1indication.html#a792da4beab2f501b8954e8465232656c">on_event</a>( now, <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a0d895a0a05a7cce9b2c0c8bb252f78cc">indication_event::HEARTBEAT</a> );</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
@@ -175,8 +175,8 @@ $(document).ready(function(){initNavTree('monitor_8hpp_source.html',''); initRes
 <div class="ttc" id="aconverter_8hpp_html"><div class="ttname"><a href="converter_8hpp.html">converter.hpp</a></div></div>
 <div class="ttc" id="aindication_8hpp_html"><div class="ttname"><a href="indication_8hpp.html">indication.hpp</a></div></div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
+<div class="ttc" id="anamespaceservio_1_1base_html_a4ee4ba55bb220d445e17a921b54178e8"><div class="ttname"><a href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">servio::base::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint64_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:13</div></div>
 <div class="ttc" id="anamespaceservio_1_1base_html_ac0310c43d6151b2926d5f4a7b986552eafeffe8e712a5ce9a0cedef11c364fa74"><div class="ttname"><a href="namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552eafeffe8e712a5ce9a0cedef11c364fa74">servio::base::control_mode::DISENGAGED</a></div><div class="ttdeci">@ DISENGAGED</div></div>
-<div class="ttc" id="anamespaceservio_1_1base_html_af4c5a013d7d4941800fa600c4abe43ed"><div class="ttname"><a href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">servio::base::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:13</div></div>
 <div class="ttc" id="anamespaceservio_1_1mon_html"><div class="ttname"><a href="namespaceservio_1_1mon.html">servio::mon</a></div><div class="ttdef"><b>Definition:</b> indication.cpp:6</div></div>
 <div class="ttc" id="anamespaceservio_1_1mon_html_af16397f3997f66e0f28c3409143cfc52a0d895a0a05a7cce9b2c0c8bb252f78cc"><div class="ttname"><a href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a0d895a0a05a7cce9b2c0c8bb252f78cc">servio::mon::indication_event::HEARTBEAT</a></div><div class="ttdeci">@ HEARTBEAT</div></div>
 <div class="ttc" id="anamespaceservio_1_1mon_html_af16397f3997f66e0f28c3409143cfc52a1ebe303c3b179265bbac9ab1f3219826"><div class="ttname"><a href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a1ebe303c3b179265bbac9ab1f3219826">servio::mon::indication_event::VOLTAGE_LOW</a></div><div class="ttdeci">@ VOLTAGE_LOW</div></div>
@@ -194,7 +194,7 @@ $(document).ready(function(){initNavTree('monitor_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a6b4a2e33ade41a94a8fb6b8af82a267.html">mon</a></li><li class="navelem"><a class="el" href="monitor_8hpp.html">monitor.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 14 2024 21:37:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 15 2024 06:57:32 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

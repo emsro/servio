@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">start</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a0f83b7b0b532927b29a19e9685f009e5">send</a>( em::view&lt; const std::byte* &gt; data, <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> timeout ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a0f83b7b0b532927b29a19e9685f009e5">send</a>( em::view&lt; const std::byte* &gt; data, <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> timeout ) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// we tolerate overrun, dma, frame, noise error - we can recover</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#a0cd97daa231dee9baf9963c1e7efbb00">   50</a></span>&#160;        <span class="keyword">static</span> constexpr uint32_t <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a0cd97daa231dee9baf9963c1e7efbb00">tolerable_hal_errors</a> =</div>
@@ -227,7 +227,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html_ace25bed8e6d931268c5fd8d0621dabe6"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html#ace25bed8e6d931268c5fd8d0621dabe6">servio::sntr::sentry::set_degraded_set</a></div><div class="ttdeci">void set_degraded_set(ecode_set set, const char *emsg, const data_type &amp;data=std::monostate{})</div><div class="ttdef"><b>Definition:</b> sentry.cpp:36</div></div>
 <div class="ttc" id="acobs__rx__container_8h_html"><div class="ttname"><a href="cobs__rx__container_8h.html">cobs_rx_container.h</a></div></div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
-<div class="ttc" id="anamespaceservio_1_1base_html_af4c5a013d7d4941800fa600c4abe43ed"><div class="ttname"><a href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">servio::base::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:13</div></div>
+<div class="ttc" id="anamespaceservio_1_1base_html_a4ee4ba55bb220d445e17a921b54178e8"><div class="ttname"><a href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">servio::base::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint64_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:13</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_1_1bits_html_a74cf7569d05ba86cd733572599f74aa4"><div class="ttname"><a href="namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4">servio::drv::bits::on_rx_cplt_irq</a></div><div class="ttdeci">void on_rx_cplt_irq(cobs_rx_container &amp;rx, std::byte inpt)</div><div class="ttdef"><b>Definition:</b> cobs_rx_container.h:19</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_1_1bits_html_structservio_1_1drv_1_1bits_1_1cobs__rx__container"><div class="ttname"><a href="namespaceservio_1_1drv_1_1bits.html#structservio_1_1drv_1_1bits_1_1cobs__rx__container">servio::drv::bits::cobs_rx_container</a></div><div class="ttdef"><b>Definition:</b> cobs_rx_container.h:12</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1drv.html">servio::drv</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:8</div></div>
@@ -244,7 +244,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="cobs__uart_8hpp.html">cobs_uart.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 14 2024 21:37:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 15 2024 06:57:32 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

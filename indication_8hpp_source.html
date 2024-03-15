@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1indication.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="classservio_1_1mon_1_1indication.html">indication</a></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1indication.html#a26ecc3736d0ec32e0a42f254baa5e739">   45</a></span>&#160;        <a class="code" href="classservio_1_1mon_1_1indication.html#a26ecc3736d0ec32e0a42f254baa5e739">indication</a>( <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> now )</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1indication.html#a26ecc3736d0ec32e0a42f254baa5e739">   45</a></span>&#160;        <a class="code" href="classservio_1_1mon_1_1indication.html#a26ecc3736d0ec32e0a42f254baa5e739">indication</a>( <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> now )</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;          : last_tick_( now )</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;          , red_phase_( now )</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;          , yellow_engaged_until_( 0_us )</div>
@@ -139,9 +139,9 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">bool</span> on_event( <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> now, <span class="keyword">const</span> <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52">indication_event</a>&amp; e );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">bool</span> on_event( <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> now, <span class="keyword">const</span> <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52">indication_event</a>&amp; e );</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> tick( <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> now );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> tick( <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> now );</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1indication.html#a557bf20b4110f677522187b4166c0c1d">   57</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals">base::leds_vals</a>&amp; <a class="code" href="classservio_1_1mon_1_1indication.html#a557bf20b4110f677522187b4166c0c1d">get_state</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">        </span>{</div>
@@ -149,22 +149,22 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> tick_red( <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> now );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> tick_red( <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> now );</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals">base::leds_vals</a>    state_;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> last_tick_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> last_tick_;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">static</span> constexpr <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a>                 red_window = 5_s;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a>                                  red_phase_;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">static</span> constexpr <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a>                 red_window = 5_s;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a>                                  red_phase_;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        em::static_circular_buffer&lt; base::microseconds, 2 &gt; red_events_;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">float</span> green_i_      = 0.F;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">float</span> green_step_   = 0.F;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">float</span> green_offset_ = 0.F;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> yellow_engaged_until_;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> yellow_engaged_until_;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">base::microseconds</a> blue_disengage_at_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> blue_disengage_at_;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}  <span class="comment">// namespace servio::mon</span></div>
@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="ttc" id="aclassservio_1_1mon_1_1indication_html"><div class="ttname"><a href="classservio_1_1mon_1_1indication.html">servio::mon::indication</a></div><div class="ttdef"><b>Definition:</b> indication.hpp:43</div></div>
 <div class="ttc" id="aclassservio_1_1mon_1_1indication_html_a26ecc3736d0ec32e0a42f254baa5e739"><div class="ttname"><a href="classservio_1_1mon_1_1indication.html#a26ecc3736d0ec32e0a42f254baa5e739">servio::mon::indication::indication</a></div><div class="ttdeci">indication(base::microseconds now)</div><div class="ttdef"><b>Definition:</b> indication.hpp:45</div></div>
 <div class="ttc" id="aclassservio_1_1mon_1_1indication_html_a557bf20b4110f677522187b4166c0c1d"><div class="ttname"><a href="classservio_1_1mon_1_1indication.html#a557bf20b4110f677522187b4166c0c1d">servio::mon::indication::get_state</a></div><div class="ttdeci">const base::leds_vals &amp; get_state() const</div><div class="ttdef"><b>Definition:</b> indication.hpp:57</div></div>
-<div class="ttc" id="anamespaceservio_1_1base_html_af4c5a013d7d4941800fa600c4abe43ed"><div class="ttname"><a href="namespaceservio_1_1base.html#af4c5a013d7d4941800fa600c4abe43ed">servio::base::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint32_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:13</div></div>
+<div class="ttc" id="anamespaceservio_1_1base_html_a4ee4ba55bb220d445e17a921b54178e8"><div class="ttname"><a href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">servio::base::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint64_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:13</div></div>
 <div class="ttc" id="anamespaceservio_1_1base_html_structservio_1_1base_1_1leds__vals"><div class="ttname"><a href="namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals">servio::base::leds_vals</a></div><div class="ttdef"><b>Definition:</b> base.hpp:67</div></div>
 <div class="ttc" id="anamespaceservio_1_1mon_html"><div class="ttname"><a href="namespaceservio_1_1mon.html">servio::mon</a></div><div class="ttdef"><b>Definition:</b> indication.cpp:6</div></div>
 <div class="ttc" id="anamespaceservio_1_1mon_html_af16397f3997f66e0f28c3409143cfc52"><div class="ttname"><a href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52">servio::mon::indication_event</a></div><div class="ttdeci">indication_event</div><div class="ttdef"><b>Definition:</b> indication.hpp:27</div></div>
@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a6b4a2e33ade41a94a8fb6b8af82a267.html">mon</a></li><li class="navelem"><a class="el" href="indication_8hpp.html">indication.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 14 2024 21:37:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 15 2024 06:57:32 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

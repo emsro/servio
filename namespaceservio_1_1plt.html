@@ -137,8 +137,8 @@ Functions</h2></td></tr>
 <tr class="separator:a917cc285404ba1c9a62080f12567ad7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25cf0c78aaa0a1eed2dda1c91f70fc0a"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a25cf0c78aaa0a1eed2dda1c91f70fc0a">setup_leds_channel</a> (TIM_HandleTypeDef *tim, <a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg">drv::pinch_cfg</a> cfg)</td></tr>
 <tr class="separator:a25cf0c78aaa0a1eed2dda1c91f70fc0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa3ffb0666945381bc9735b671490daf"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#afa3ffb0666945381bc9735b671490daf">setup_clock_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
-<tr class="separator:afa3ffb0666945381bc9735b671490daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71520584fd9671ce414b8b5b8c653926"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a71520584fd9671ce414b8b5b8c653926">setup_clock_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance, IRQn_Type irq)</td></tr>
+<tr class="separator:a71520584fd9671ce414b8b5b8c653926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -703,8 +703,8 @@ cal2</td>
 
 </div>
 </div>
-<a id="afa3ffb0666945381bc9735b671490daf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa3ffb0666945381bc9735b671490daf">&#9670;&nbsp;</a></span>setup_clock_timer()</h2>
+<a id="a71520584fd9671ce414b8b5b8c653926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71520584fd9671ce414b8b5b8c653926">&#9670;&nbsp;</a></span>setup_clock_timer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -719,7 +719,13 @@ cal2</td>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">TIM_TypeDef *&#160;</td>
-          <td class="paramname"><em>instance</em>&#160;</td>
+          <td class="paramname"><em>instance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IRQn_Type&#160;</td>
+          <td class="paramname"><em>irq</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -868,7 +874,7 @@ cal2</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1plt.html">plt</a></li>
-    <li class="footer">Generated on Thu Mar 14 2024 21:37:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 15 2024 06:57:32 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

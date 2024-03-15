@@ -23,6 +23,7 @@ var proto3_2board_8cpp =
     [ "setup_debug_comms", "proto3_2board_8cpp.html#a36c35a8f487c1bd2fa3d0713e55909c3", null ],
     [ "start_callback", "proto3_2board_8cpp.html#aac2ab253dd62c8d22e7504bd106c6283", null ],
     [ "TIM1_UP_IRQHandler", "proto3_2board_8cpp.html#ac13ffcf8c8dd96138053b8a854004583", null ],
+    [ "TIM2_IRQHandler", "proto3_2board_8cpp.html#a69ed77607e30e5935ea2d6994e94be10", null ],
     [ "USART1_IRQHandler", "proto3_2board_8cpp.html#a27fb9800d727337121da9525aca0b557", null ],
     [ "USART2_IRQHandler", "proto3_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba", null ],
     [ "_config_end", "proto3_2board_8cpp.html#ab9c4570b264e5103deb948e89f713529", null ],
