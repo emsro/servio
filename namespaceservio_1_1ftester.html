@@ -96,7 +96,9 @@ $(document).ready(function(){initNavTree('namespaceservio_1_1ftester.html',''); 
 Classes</h2></td></tr>
 <tr class="memitem:structservio_1_1ftester_1_1config"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config">config</a></td></tr>
 <tr class="separator:structservio_1_1ftester_1_1config"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1ftester_1_1gtest.html">gtest</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1joque__test.html">joque_test</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1ftester_1_1ftester__excp.html">ftester_excp</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1controller__interface.html">controller_interface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,6 +115,8 @@ Functions</h2></td></tr>
 <tr class="separator:a105df95d80da73ac8d6c61a0ed81d3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abafc9ebaf605802ca7b02a5592cf7a7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config">config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#abafc9ebaf605802ca7b02a5592cf7a7f">get_config</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:abafc9ebaf605802ca7b02a5592cf7a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d438ee4b74e9f2523c7489210eeeb65"><td class="memItemLeft" align="right" valign="top">joque::task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a4d438ee4b74e9f2523c7489210eeeb65">make_flash_task</a> (const std::filesystem::path &amp;firmware, const std::filesystem::path &amp;ocd_cfg, const joque::resource &amp;dev_res)</td></tr>
+<tr class="separator:a4d438ee4b74e9f2523c7489210eeeb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a545cc7dc041b95b87529ebff248997ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a545cc7dc041b95b87529ebff248997ad">flash_firmware</a> (const std::filesystem::path &amp;firmware, const std::filesystem::path &amp;ocdconf)</td></tr>
 <tr class="separator:a545cc7dc041b95b87529ebff248997ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a843d1ebeface228cb7f950468c97e8cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a843d1ebeface228cb7f950468c97e8cb">handle_eptr</a> (std::exception_ptr eptr)</td></tr>
@@ -140,9 +144,21 @@ Variables</h2></td></tr>
 <div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
+<a id="a9068c85a2b355f97abbdc5beb418b7dd"></a>uint32_t</td>
+<td class="fieldname">
+c_baudrate</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
 <a id="afa35dca7982260312c4bff22fc180eee"></a>path</td>
 <td class="fieldname">
 c_device</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ab3e6303bc5ee2f7e96e9196984c0cfb4"></a>uint32_t</td>
+<td class="fieldname">
+d_baudrate</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -296,6 +312,40 @@ verbose</td>
 
 </div>
 </div>
+<a id="a4d438ee4b74e9f2523c7489210eeeb65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d438ee4b74e9f2523c7489210eeeb65">&#9670;&nbsp;</a></span>make_flash_task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">joque::task servio::ftester::make_flash_task </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>firmware</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>ocd_cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const joque::resource &amp;&#160;</td>
+          <td class="paramname"><em>dev_res</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8eba53b84e68005583705b1565a54e39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8eba53b84e68005583705b1565a54e39">&#9670;&nbsp;</a></span>ocfg_opt()</h2>
 
@@ -391,7 +441,7 @@ verbose</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1ftester.html">ftester</a></li>
-    <li class="footer">Generated on Fri Mar 15 2024 15:28:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue Mar 19 2024 20:46:17 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

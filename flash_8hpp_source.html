@@ -90,22 +90,29 @@ $(document).ready(function(){initNavTree('flash_8hpp_source.html',''); initResiz
 <a href="flash_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;filesystem&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1ftester.html">servio::ftester</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1ftester.html#a545cc7dc041b95b87529ebff248997ad">flash_firmware</a>( <span class="keyword">const</span> std::filesystem::path&amp; firmware, <span class="keyword">const</span> std::filesystem::path&amp; ocdconf );</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}  <span class="comment">// namespace servio::ftester</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;joque/task.hpp&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1ftester.html">servio::ftester</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;joque::task <a class="code" href="namespaceservio_1_1ftester.html#a4d438ee4b74e9f2523c7489210eeeb65">make_flash_task</a>(</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">const</span> std::filesystem::path&amp; firmware,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">const</span> std::filesystem::path&amp; ocd_cfg,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">const</span> joque::resource&amp;       dev_res );</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1ftester.html#a545cc7dc041b95b87529ebff248997ad">flash_firmware</a>( <span class="keyword">const</span> std::filesystem::path&amp; firmware, <span class="keyword">const</span> std::filesystem::path&amp; ocdconf );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}  <span class="comment">// namespace servio::ftester</span></div>
 <div class="ttc" id="anamespaceservio_1_1ftester_html"><div class="ttname"><a href="namespaceservio_1_1ftester.html">servio::ftester</a></div><div class="ttdef"><b>Definition:</b> cli.cpp:4</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html_a545cc7dc041b95b87529ebff248997ad"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a545cc7dc041b95b87529ebff248997ad">servio::ftester::flash_firmware</a></div><div class="ttdeci">void flash_firmware(const std::filesystem::path &amp;firmware, const std::filesystem::path &amp;ocdconf)</div><div class="ttdef"><b>Definition:</b> flash.cpp:9</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_a4d438ee4b74e9f2523c7489210eeeb65"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a4d438ee4b74e9f2523c7489210eeeb65">servio::ftester::make_flash_task</a></div><div class="ttdeci">joque::task make_flash_task(const std::filesystem::path &amp;firmware, const std::filesystem::path &amp;ocd_cfg, const joque::resource &amp;dev_res)</div><div class="ttdef"><b>Definition:</b> flash.cpp:10</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_a545cc7dc041b95b87529ebff248997ad"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a545cc7dc041b95b87529ebff248997ad">servio::ftester::flash_firmware</a></div><div class="ttdeci">void flash_firmware(const std::filesystem::path &amp;firmware, const std::filesystem::path &amp;ocdconf)</div><div class="ttdef"><b>Definition:</b> flash.cpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="flash_8hpp.html">flash.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 15 2024 15:28:17 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue Mar 19 2024 20:46:17 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -62,6 +62,7 @@ var hierarchy =
     [ "servio::plt::dma_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg", null ],
     [ "servio::core::drivers", "structservio_1_1core_1_1drivers.html", null ],
     [ "std::exception", null, [
+      [ "servio::ftester::ftester_excp", "classservio_1_1ftester_1_1ftester__excp.html", null ],
       [ "servio::scmdio::servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", [
         [ "servio::scmdio::error_exception", "structservio_1_1scmdio_1_1error__exception.html", null ],
         [ "servio::scmdio::parse_error", "structservio_1_1scmdio_1_1parse__error.html", null ],
@@ -73,6 +74,7 @@ var hierarchy =
     [ "servio::plt::hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", null ],
     [ "servio::drv::tests::hbridge_test", "structservio_1_1drv_1_1tests_1_1hbridge__test.html", null ],
     [ "servio::mon::indication", "classservio_1_1mon_1_1indication.html", null ],
+    [ "servio::ftester::joque_test", "structservio_1_1ftester_1_1joque__test.html", null ],
     [ "servio::cfg::keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", null ],
     [ "servio::plt::leds_gpio_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg", null ],
     [ "servio::drv::leds_interface", "classservio_1_1drv_1_1leds__interface.html", [
@@ -126,7 +128,6 @@ var hierarchy =
     [ "testing::Test", null, [
       [ "servio::bb::bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", null ],
       [ "servio::ctl::tests::control_fixture", "classservio_1_1ctl_1_1tests_1_1control__fixture.html", null ],
-      [ "servio::ftester::gtest", "classservio_1_1ftester_1_1gtest.html", null ],
       [ "servio::sntr::tests::central_sentry_fixture", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html", null ],
       [ "servio::sntr::tests::sentry_fixture", "structservio_1_1sntr_1_1tests_1_1sentry__fixture.html", null ]
     ] ],

@@ -105,7 +105,8 @@ var annotated_dup =
       ] ],
       [ "ftester", "namespaceservio_1_1ftester.html", [
         [ "config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config", "namespaceservio_1_1ftester_structservio_1_1ftester_1_1config_dup" ],
-        [ "gtest", "classservio_1_1ftester_1_1gtest.html", "classservio_1_1ftester_1_1gtest" ],
+        [ "joque_test", "structservio_1_1ftester_1_1joque__test.html", "structservio_1_1ftester_1_1joque__test" ],
+        [ "ftester_excp", "classservio_1_1ftester_1_1ftester__excp.html", "classservio_1_1ftester_1_1ftester__excp" ],
         [ "controller_interface", "structservio_1_1ftester_1_1controller__interface.html", "structservio_1_1ftester_1_1controller__interface" ],
         [ "test_context", "structservio_1_1ftester_1_1test__context.html", "structservio_1_1ftester_1_1test__context" ],
         [ "test_system", "classservio_1_1ftester_1_1test__system.html", "classservio_1_1ftester_1_1test__system" ]

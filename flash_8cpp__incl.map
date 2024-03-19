@@ -1,7 +1,9 @@
 <map id="src/ftester/flash.cpp" name="src/ftester/flash.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="170,5,319,32"/>
-<area shape="rect" id="node2" href="$flash_8hpp.html" title=" " alt="" coords="5,87,132,114"/>
-<area shape="rect" id="node4" title=" " alt="" coords="156,80,333,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="358,87,422,114"/>
-<area shape="rect" id="node3" title=" " alt="" coords="23,169,114,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="307,5,456,32"/>
+<area shape="rect" id="node2" href="$flash_8hpp.html" title=" " alt="" coords="51,87,178,114"/>
+<area shape="rect" id="node5" title=" " alt="" coords="202,80,379,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="403,87,543,114"/>
+<area shape="rect" id="node7" title=" " alt="" coords="568,87,632,114"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,96,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="121,169,239,196"/>
 </map>
