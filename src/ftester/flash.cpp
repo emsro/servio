@@ -1,10 +1,28 @@
 #include "ftester/flash.hpp"
 
 #include <emlabcpp/experimental/logging.h>
+#include <joque/process.hpp>
 #include <thread>
 
 namespace servio::ftester
 {
+
+joque::task make_flash_task(
+    const std::filesystem::path& firmware,
+    const std::filesystem::path& ocd_cfg,
+    const joque::resource&       dev_res )
+{
+        return joque::task{
+            .job = joque::process::derive(
+                       "openocd",
+                       "-f",
+                       ocd_cfg,
+                       "-c",
+                       "program " + firmware.string() + " verify reset exit" )
+                       .add_input( firmware ),
+            .resources = { dev_res },
+        };
+}
 
 void flash_firmware( const std::filesystem::path& firmware, const std::filesystem::path& ocdconf )
 {

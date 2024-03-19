@@ -42,6 +42,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 
   find_package(GTest REQUIRED)
 
+  include(cmake/joque.cmake)
   include(cmake/cli11.cmake)
 
   include(CTest)
@@ -87,7 +88,6 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   add_subdirectory(src)
 
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
-  target_link_libraries(fwlib PRIVATE proto3_board)
 
   servio_add_board_executable(
     TARGET proto3_fw
@@ -97,7 +97,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
       "${CMAKE_CURRENT_SOURCE_DIR}/src/plt/stm32h5/STM32H503xx_FLASH.ld")
 
   servio_add_board_executable(
-    TARGET proto3_drv_test
+    TARGET proto3_drv_ftest
     SOURCES src/fw/it.cpp
     LIBS serviolib ftestlib drv_testlib proto3_board
     LINKER_SCRIPT

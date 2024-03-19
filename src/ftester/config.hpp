@@ -10,7 +10,9 @@ struct config
 {
         bool                                   verbose = false;
         std::filesystem::path                  c_device;
+        uint32_t                               c_baudrate = 115200;
         std::filesystem::path                  d_device;
+        uint32_t                               d_baudrate = 115200;
         std::optional< std::filesystem::path > output_dir = std::nullopt;
         bool                                   powerless  = false;
 

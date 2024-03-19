@@ -23,6 +23,23 @@ inline em::eabi_logger COM_LOGGER{
     { em::set_stdout{ false }, em::set_stderr{ false }, em::DEBUG_LOGGER_COLORS } };
 #define COM_LOG( chann, ... ) EMLABCPP_EABI_LOG_IMPL( COM_LOGGER, "com", chann, __VA_ARGS__ )
 
+class ftester_excp : std::exception
+{
+public:
+        ftester_excp( std::string m )
+          : msg_( std::move( m ) )
+        {
+        }
+
+        const char* what() const noexcept override
+        {
+                return msg_.c_str();
+        }
+
+private:
+        const std::string msg_;
+};
+
 struct controller_interface : em::testing::controller_interface
 {
         em::testing::collect_server& col_serv;
@@ -34,10 +51,10 @@ struct controller_interface : em::testing::controller_interface
 
         void on_result( const em::testing::test_result& res ) final
         {
-                EXPECT_PRED_FORMAT1( em::testing::gtest_predicate, res );
                 if ( em::testing::is_problematic( res.status ) ) {
                         std::cout << em::testing::data_tree_to_json( col_serv.get_tree() ).dump( 4 )
                                   << std::endl;
+                        throw ftester_excp{ "test failed" };
                 }
 
                 EMLABCPP_INFO_LOG( "Test finished" );
@@ -45,11 +62,11 @@ struct controller_interface : em::testing::controller_interface
 
         void on_error( const em::testing::error_variant& err ) final
         {
-                FAIL() << err;
-
                 std::stringstream ss;
                 ss << err;
                 EMLABCPP_ERROR_LOG( ss.str() );
+
+                throw ftester_excp{ "test failed" };
         }
 };
 

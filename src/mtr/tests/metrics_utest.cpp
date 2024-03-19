@@ -36,7 +36,7 @@ TEST( Metrics, base )
 
                 EMLABCPP_INFO_LOG_VARS( met.get_position(), angle, t );
                 EXPECT_NEAR( met.get_position(), angle, 0.01 )
-                    << "t: " << t.count() / 1000.0 << ", "
+                    << "t: " << static_cast< double >( t.count() ) / 1000.0 << ", "
                     << "i: " << i;
         }
 }
