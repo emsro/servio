@@ -75,6 +75,9 @@ struct comms_echo_test
                 std::array< std::byte, 6 > buffer2;
                 auto [load_res, used_data] = comms.load_message( buffer2 );
                 co_await t::expect( coll, load_res );
+                auto id = co_await coll->set( "data", em::contiguous_container_type::ARRAY );
+                for ( std::byte b : used_data )
+                        coll->append( id, static_cast< uint32_t >( b ) );
                 co_await t::expect( coll, used_data == em::view{ buffer } );
         }
 };

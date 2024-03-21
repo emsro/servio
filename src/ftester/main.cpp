@@ -14,6 +14,7 @@ struct joque_test
 {
         std::string                            name;
         em::testing::test_id                   tid;
+        controller_interface&                  iface;
         test_system&                           sys;
         std::optional< std::filesystem::path > output_dir;
 
@@ -25,6 +26,12 @@ struct joque_test
                 sys.clear();
 
                 sys.run_test( tid );
+
+                std::string ss = std::move( iface.errss ).str();
+                if ( !ss.empty() ) {
+                        joque::record_output( res, joque::output_chunk::ERROR, ss );
+                        res.retcode = 1;
+                }
 
                 nlohmann::json j = em::testing::data_tree_to_json( sys.get_collected() );
 
@@ -76,7 +83,8 @@ int main( int argc, char* argv[] )
 
         nlohmann::json inpt;
         inpt["powerless"] = cfg.powerless;
-        ftester::test_context         ctx{ cfg.d_device, 460800, cfg.c_device, 460800, inpt };
+        ftester::test_context ctx{
+            cfg.d_device, cfg.d_baudrate, cfg.c_device, cfg.c_baudrate, inpt };
         ftester::controller_interface ctl_iface{ ctx.col_serv };
         ftester::test_system          tsys{ ctx, ctl_iface };
 
@@ -90,7 +98,11 @@ int main( int argc, char* argv[] )
                 ts.tasks[sname] = joque::task{
                     .job =
                         ftester::joque_test{
-                            .name = sname, .tid = tid, .sys = tsys, .output_dir = cfg.output_dir },
+                            .name       = sname,
+                            .tid        = tid,
+                            .iface      = ctl_iface,
+                            .sys        = tsys,
+                            .output_dir = cfg.output_dir },
                     .resources = { dev },
                 };
         }

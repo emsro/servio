@@ -15,7 +15,7 @@ void handle_eptr( std::exception_ptr eptr )
                 EMLABCPP_ERROR_LOG( "Caught exception: '", e.what(), "'\n" );
         }
         catch ( ... ) {
-                EMLABCPP_ERROR_LOG( "Caught an unknown exception'\n" );
+                EMLABCPP_ERROR_LOG( "Caught an unknown exception\n" );
         }
 }
 }  // namespace servio::ftester

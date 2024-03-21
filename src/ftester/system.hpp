@@ -23,26 +23,10 @@ inline em::eabi_logger COM_LOGGER{
     { em::set_stdout{ false }, em::set_stderr{ false }, em::DEBUG_LOGGER_COLORS } };
 #define COM_LOG( chann, ... ) EMLABCPP_EABI_LOG_IMPL( COM_LOGGER, "com", chann, __VA_ARGS__ )
 
-class ftester_excp : std::exception
-{
-public:
-        ftester_excp( std::string m )
-          : msg_( std::move( m ) )
-        {
-        }
-
-        const char* what() const noexcept override
-        {
-                return msg_.c_str();
-        }
-
-private:
-        const std::string msg_;
-};
-
 struct controller_interface : em::testing::controller_interface
 {
         em::testing::collect_server& col_serv;
+        std::stringstream            errss;
 
         controller_interface( em::testing::collect_server& col_serv )
           : col_serv( col_serv )
@@ -51,22 +35,16 @@ struct controller_interface : em::testing::controller_interface
 
         void on_result( const em::testing::test_result& res ) final
         {
-                if ( em::testing::is_problematic( res.status ) ) {
-                        std::cout << em::testing::data_tree_to_json( col_serv.get_tree() ).dump( 4 )
-                                  << std::endl;
-                        throw ftester_excp{ "test failed" };
-                }
+                if ( em::testing::is_problematic( res.status ) )
+                        errss << em::testing::data_tree_to_json( col_serv.get_tree() ).dump( 4 )
+                              << "\n";
 
                 EMLABCPP_INFO_LOG( "Test finished" );
         }
 
         void on_error( const em::testing::error_variant& err ) final
         {
-                std::stringstream ss;
-                ss << err;
-                EMLABCPP_ERROR_LOG( ss.str() );
-
-                throw ftester_excp{ "test failed" };
+                errss << err;
         }
 };
 
@@ -229,6 +207,10 @@ private:
                         std::size_t n = co_await ctx_.c_port.async_read_some(
                             boost::asio::buffer( buffer.data(), buffer.size() ),
                             boost::asio::use_awaitable );
+
+                        std::cout << "replying: "
+                                  << em::view_n( reinterpret_cast< uint8_t* >( buffer.data() ), n )
+                                  << std::endl;
 
                         co_await boost::asio::async_write(
                             ctx_.c_port,
