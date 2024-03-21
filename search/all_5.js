@@ -17,8 +17,9 @@ var searchData=
   ['err_5firq_264',['err_irq',['../classservio_1_1drv_1_1cobs__uart.html#a1712f7ee5425ac6e5c1b12a209ffbbf1',1,'servio::drv::cobs_uart']]],
   ['error_5fexception_265',['error_exception',['../structservio_1_1scmdio_1_1error__exception.html#a4d2af2244c5a451ec061039fb18cc377',1,'servio::scmdio::error_exception::error_exception()'],['../structservio_1_1scmdio_1_1error__exception.html',1,'servio::scmdio::error_exception']]],
   ['error_5fmsg_266',['error_msg',['../namespaceservio_1_1fw.html#a68b10983c43a8988f0421b90a7ad8adf',1,'servio::fw']]],
-  ['exceptions_2ehpp_267',['exceptions.hpp',['../exceptions_8hpp.html',1,'']]],
-  ['exchange_268',['exchange',['../namespaceservio_1_1scmdio.html#a60883ef53953f3d5d906da6b735faad8',1,'servio::scmdio']]],
-  ['external_5fclock_5fvalue_269',['EXTERNAL_CLOCK_VALUE',['../stm32g4xx__hal__conf_8h.html#a8c47c935e91e70569098b41718558648',1,'EXTERNAL_CLOCK_VALUE():&#160;stm32g4xx_hal_conf.h'],['../stm32h5xx__hal__conf_8h.html#a8c47c935e91e70569098b41718558648',1,'EXTERNAL_CLOCK_VALUE():&#160;stm32h5xx_hal_conf.h']]],
-  ['extra_2ecpp_270',['extra.cpp',['../extra_8cpp.html',1,'']]]
+  ['errss_267',['errss',['../structservio_1_1ftester_1_1controller__interface.html#ac4a458ec90597482aed38e88c358cbf0',1,'servio::ftester::controller_interface']]],
+  ['exceptions_2ehpp_268',['exceptions.hpp',['../exceptions_8hpp.html',1,'']]],
+  ['exchange_269',['exchange',['../namespaceservio_1_1scmdio.html#a60883ef53953f3d5d906da6b735faad8',1,'servio::scmdio']]],
+  ['external_5fclock_5fvalue_270',['EXTERNAL_CLOCK_VALUE',['../stm32g4xx__hal__conf_8h.html#a8c47c935e91e70569098b41718558648',1,'EXTERNAL_CLOCK_VALUE():&#160;stm32g4xx_hal_conf.h'],['../stm32h5xx__hal__conf_8h.html#a8c47c935e91e70569098b41718558648',1,'EXTERNAL_CLOCK_VALUE():&#160;stm32h5xx_hal_conf.h']]],
+  ['extra_2ecpp_271',['extra.cpp',['../extra_8cpp.html',1,'']]]
 ];

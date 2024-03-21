@@ -62,7 +62,6 @@ var hierarchy =
     [ "servio::plt::dma_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg", null ],
     [ "servio::core::drivers", "structservio_1_1core_1_1drivers.html", null ],
     [ "std::exception", null, [
-      [ "servio::ftester::ftester_excp", "classservio_1_1ftester_1_1ftester__excp.html", null ],
       [ "servio::scmdio::servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", [
         [ "servio::scmdio::error_exception", "structservio_1_1scmdio_1_1error__exception.html", null ],
         [ "servio::scmdio::parse_error", "structservio_1_1scmdio_1_1parse__error.html", null ],
