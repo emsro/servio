@@ -22,5 +22,6 @@ var namespaceservio_1_1drv_1_1tests =
     [ "setup_impl_tests", "namespaceservio_1_1drv_1_1tests.html#a888f80568a5104217fdc2a15a135048b", null ],
     [ "setup_interface_tests", "namespaceservio_1_1drv_1_1tests.html#af183bf7a7d73ad07ab3f1025f64460f9", null ],
     [ "setup_utest", "namespaceservio_1_1drv_1_1tests.html#a38d4b8b48ea4855ef33c31b99f956ed1", null ],
+    [ "store_data", "namespaceservio_1_1drv_1_1tests.html#a24aaa524970b6138c2ab1294d01c8334", null ],
     [ "store_metric", "namespaceservio_1_1drv_1_1tests.html#a8eca28f19c55bda027eedd598c2da42d", null ]
 ];
