@@ -107,6 +107,10 @@ int main( int argc, char* argv[] )
                 };
         }
 
-        joque::exec_record* rec = joque::exec( ts ).run();
+        std::optional< joque::exec_record > rec = joque::exec( ts ).run();
+        if ( rec && cfg.output_dir ) {
+                std::ofstream os{ *cfg.output_dir / "res.json" };
+                os << nlohmann::json{ *rec }.dump();
+        }
         return rec->failed_count != 0;
 }
