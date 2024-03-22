@@ -1,6 +1,14 @@
 [submodule "stm32-cmake"]
-	path = stm32-cmake
+	path = dep/stm32-cmake
 	url = https://github.com/ObKo/stm32-cmake
 [submodule ".doxygen/doxygen-awesome-css"]
 	path = .doxygen/doxygen-awesome-css
 	url = https://github.com/jothepro/doxygen-awesome-css.git
+[submodule "dep/CLI11"]
+	path = dep/CLI11
+	url = https://github.com/CLIUtils/CLI11
+	branch = f4d0731cebb123ff0ace712c099dffbcd2c58e5a
+[submodule "dep/cmake-git-version-tracking"]
+	path = dep/cmake-git-version-tracking
+	url = https://github.com/andrew-hardin/cmake-git-version-tracking
+	branch = 6c0cb87
