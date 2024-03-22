@@ -12,3 +12,14 @@
 	path = dep/cmake-git-version-tracking
 	url = https://github.com/andrew-hardin/cmake-git-version-tracking
 	branch = 6c0cb87
+[submodule "dep/emlabcpp"]
+	path = dep/emlabcpp
+	url = https://github.com/koniarik/emlabcpp
+	branch = main
+[submodule "dep/joque"]
+	path = dep/joque
+	url = https://github.com/koniarik/joque
+	branch = main
+[submodule "dep/magic_enum"]
+	path = dep/magic_enum
+	url = https://github.com/Neargye/magic_enum

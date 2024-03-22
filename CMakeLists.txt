@@ -11,10 +11,12 @@ cmake_policy(SET CMP0077 NEW)
 option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 
-include(cmake/emlabcpp.cmake)
+add_subdirectory(dep/emlabcpp)
+add_subdirectory(dep/cmake-git-version-tracking)
+add_subdirectory(dep/magic_enum)
+
 include(cmake/flags.cmake)
 include(cmake/utils.cmake)
-include(cmake/magic_enum.cmake)
 include(cmake/nanopb.cmake)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
@@ -36,14 +38,12 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
 endif()
 
-include(cmake/cmake-git-version-tracking.cmake)
-
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
   find_package(GTest REQUIRED)
 
-  include(cmake/joque.cmake)
-  include(cmake/cli11.cmake)
+  add_subdirectory(dep/CLI11)
+  add_subdirectory(dep/joque)
 
   include(CTest)
   enable_testing()
@@ -58,6 +58,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32g4")
   find_package(CMSIS COMPONENTS STM32G4 REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32G4 REQUIRED GLOBAL)
 
+  target_compile_options(emlabcpp PUBLIC -Os)
   target_link_libraries(emlabcpp PRIVATE STM32::G4)
 
   add_subdirectory(src/plt/stm32g4)
@@ -81,6 +82,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   find_package(CMSIS COMPONENTS STM32H5 REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32H5 REQUIRED GLOBAL)
 
+  target_compile_options(emlabcpp PUBLIC -Os)
   target_link_libraries(emlabcpp PRIVATE STM32::H5)
 
   add_subdirectory(src/plt/stm32h5)

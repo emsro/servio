@@ -33,7 +33,7 @@
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "SERVIO_PLATFORM": "stm32g4",
-                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/stm32-cmake/cmake/stm32_gcc.cmake",
+                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/dep/stm32-cmake/cmake/stm32_gcc.cmake",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache"
             }
         },
@@ -45,7 +45,7 @@
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "SERVIO_PLATFORM": "stm32h5",
-                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/stm32-cmake/cmake/stm32_gcc.cmake",
+                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/dep/stm32-cmake/cmake/stm32_gcc.cmake",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache"
             }
         }
