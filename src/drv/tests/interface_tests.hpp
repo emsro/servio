@@ -67,22 +67,22 @@ struct comms_echo_test
         com_interface&   comms;
         std::string_view name = "comms_echo";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto& mem, collector& coll )
         {
                 std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };
                 em::result                 res = comms.send( buffer, 100_ms );
                 co_await t::expect( coll, res == em::SUCCESS );
 
-                wait_for( clk, 100_ms );
+                wait_for( clk, 10_ms );
 
                 std::array< std::byte, 6 > buffer2;
                 bool                       ready = false;
                 em::view< std::byte* >     v;
-                while ( !ready || v.size() == 0 )  // BLOCKING
+                while ( !ready )
                         std::tie( ready, v ) = comms.load_message( buffer2 );
-                auto id = co_await coll->set( "data", em::contiguous_container_type::ARRAY );
-                for ( std::byte b : v )
-                        coll->append( id, static_cast< uint32_t >( b ) );
+
+                store_data( mem, coll, "data", v );
+
                 co_await t::expect( coll, v == em::view{ buffer } );
         }
 };
@@ -94,10 +94,11 @@ struct comms_echo_test
 //  - send another message a while after it
 struct comms_timeout_test
 {
+        clk_interface&   clk;
         com_interface&   comms;
         std::string_view name = "comms_timeout";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto& mem, collector& coll )
         {
                 std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };
                 em::result                 res = comms.send( buffer, 1_us );
@@ -106,16 +107,21 @@ struct comms_timeout_test
                 res = comms.send( buffer, 1_us );
                 co_await t::expect( coll, res == em::ERROR );
 
-                bool                   ready = false;
-                em::view< std::byte* > v;
-                while ( !ready || v.size() == 0 )  // BLOCKING
-                        std::tie( ready, v ) = comms.load_message( buffer );
+                wait_for( clk, 10_ms );
 
                 res = comms.send( buffer, 100_ms );
                 co_await t::expect( coll, res != em::ERROR );
-                auto id = co_await coll->set( "data", em::contiguous_container_type::ARRAY );
-                for ( std::byte b : v )
-                        coll->append( id, static_cast< uint32_t >( b ) );
+
+                wait_for( clk, 10_ms );
+
+                std::array< std::byte, 6 > buffer2;
+                bool                       ready = false;
+                em::view< std::byte* >     v;
+                while ( !ready )
+                        std::tie( ready, v ) = comms.load_message( buffer2 );
+
+                store_data( mem, coll, "data", v );
+
                 co_await t::expect( coll, v == em::view{ buffer } );
         }
 };
@@ -299,7 +305,7 @@ inline void setup_interface_tests(
 {
         setup_utest< clock_test >( mem, reac, coll, res, clk );
         setup_utest< comms_echo_test >( mem, reac, coll, res, clk, comms );
-        setup_utest< comms_timeout_test >( mem, reac, coll, res, comms );
+        setup_utest< comms_timeout_test >( mem, reac, coll, res, clk, comms );
         setup_utest< period_iface_test >( mem, reac, coll, res, clk, period );
         setup_utest< pwm_motor_test >( mem, reac, coll, res, period, pwm );
         setup_utest< vcc_test >( mem, reac, coll, res, vcc );

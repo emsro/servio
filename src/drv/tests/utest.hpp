@@ -63,6 +63,14 @@ t::coroutine< void > store_metric(
         coll->set( id, "value", value );
 }
 
+t::coroutine< void >
+store_data( em::pmr::memory_resource&, collector& coll, std::string_view key, auto&& data )
+{
+        auto id = co_await coll->set( key, em::contiguous_container_type::ARRAY );
+        for ( auto b : data )
+                coll->append( id, b );
+}
+
 template < typename T >
 struct utest : utest_base
 

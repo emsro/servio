@@ -163,7 +163,7 @@ public:
         {
                 cont_.tick();
 
-                ctx_.io_context.run_for( 5ms );
+                ctx_.io_context.run_for( 1ms );
         }
 
         void clear()
@@ -203,14 +203,11 @@ private:
 
         boost::asio::awaitable< void > cread()
         {
-                std::vector< std::byte > buffer( 512, std::byte{ 0 } );
+                std::vector< std::byte > buffer( 8, std::byte{ 0 } );
                 while ( true ) {
                         std::size_t n = co_await ctx_.c_port.async_read_some(
                             boost::asio::buffer( buffer.data(), buffer.size() ),
                             boost::asio::use_awaitable );
-
-                        std::cout << "replying: " << em::convert_view_n< int >( buffer.data(), n )
-                                  << std::endl;
 
                         co_await boost::asio::async_write(
                             ctx_.c_port,
