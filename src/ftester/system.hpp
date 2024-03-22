@@ -3,6 +3,7 @@
 #include "ftester/handle_eptr.hpp"
 #include "scmdio/async_cobs.hpp"
 
+#include <emlabcpp/convert_view.h>
 #include <emlabcpp/experimental/logging/eabi_logger.h>
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/controller.h>
@@ -208,8 +209,7 @@ private:
                             boost::asio::buffer( buffer.data(), buffer.size() ),
                             boost::asio::use_awaitable );
 
-                        std::cout << "replying: "
-                                  << em::view_n( reinterpret_cast< uint8_t* >( buffer.data() ), n )
+                        std::cout << "replying: " << em::convert_view_n< int >( buffer.data(), n )
                                   << std::endl;
 
                         co_await boost::asio::async_write(

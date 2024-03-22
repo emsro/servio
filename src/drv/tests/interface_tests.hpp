@@ -63,6 +63,7 @@ struct clock_test
 //  - assumes that comms is connected in a way that echo goes back
 struct comms_echo_test
 {
+        clk_interface&   clk;
         com_interface&   comms;
         std::string_view name = "comms_echo";
 
@@ -72,13 +73,17 @@ struct comms_echo_test
                 em::result                 res = comms.send( buffer, 100_ms );
                 co_await t::expect( coll, res == em::SUCCESS );
 
+                wait_for( clk, 100_ms );
+
                 std::array< std::byte, 6 > buffer2;
-                auto [load_res, used_data] = comms.load_message( buffer2 );
-                co_await t::expect( coll, load_res );
+                bool                       ready = false;
+                em::view< std::byte* >     v;
+                while ( !ready || v.size() == 0 )  // BLOCKING
+                        std::tie( ready, v ) = comms.load_message( buffer2 );
                 auto id = co_await coll->set( "data", em::contiguous_container_type::ARRAY );
-                for ( std::byte b : used_data )
+                for ( std::byte b : v )
                         coll->append( id, static_cast< uint32_t >( b ) );
-                co_await t::expect( coll, used_data == em::view{ buffer } );
+                co_await t::expect( coll, v == em::view{ buffer } );
         }
 };
 
@@ -103,11 +108,15 @@ struct comms_timeout_test
 
                 bool                   ready = false;
                 em::view< std::byte* > v;
-                while ( !ready )
+                while ( !ready || v.size() == 0 )  // BLOCKING
                         std::tie( ready, v ) = comms.load_message( buffer );
 
                 res = comms.send( buffer, 100_ms );
                 co_await t::expect( coll, res != em::ERROR );
+                auto id = co_await coll->set( "data", em::contiguous_container_type::ARRAY );
+                for ( std::byte b : v )
+                        coll->append( id, static_cast< uint32_t >( b ) );
+                co_await t::expect( coll, v == em::view{ buffer } );
         }
 };
 
@@ -289,7 +298,7 @@ inline void setup_interface_tests(
     em::result&               res )
 {
         setup_utest< clock_test >( mem, reac, coll, res, clk );
-        setup_utest< comms_echo_test >( mem, reac, coll, res, comms );
+        setup_utest< comms_echo_test >( mem, reac, coll, res, clk, comms );
         setup_utest< comms_timeout_test >( mem, reac, coll, res, comms );
         setup_utest< period_iface_test >( mem, reac, coll, res, clk, period );
         setup_utest< pwm_motor_test >( mem, reac, coll, res, period, pwm );

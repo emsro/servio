@@ -1,4 +1,4 @@
-set(NANOPB_DIR ${CMAKE_SOURCE_DIR}/dep/nanopb/)
+set(NANOPB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dep/nanopb/)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${NANOPB_DIR}/extra)
 
 find_package(Nanopb REQUIRED)

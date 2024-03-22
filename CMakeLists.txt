@@ -38,6 +38,8 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
 endif()
 
+target_link_libraries(emlabcpp PUBLIC magic_enum)
+
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
   find_package(GTest REQUIRED)
