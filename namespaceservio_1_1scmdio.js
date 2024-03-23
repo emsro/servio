@@ -42,6 +42,6 @@ var namespaceservio_1_1scmdio =
     [ "set_mode_disengaged", "namespaceservio_1_1scmdio.html#a4e9426deae421f80fe767a13e789e6d3", null ],
     [ "set_mode_position", "namespaceservio_1_1scmdio.html#a9da5122fa9736ee8ca5c24ffca8674a9", null ],
     [ "set_mode_velocity", "namespaceservio_1_1scmdio.html#aa01b34a2e19a667f616be09279d6d92c", null ],
-    [ "verbose_opt", "namespaceservio_1_1scmdio.html#a4315b1a080624a880dbed5a4fd269caf", null ],
+    [ "verbose_opt", "namespaceservio_1_1scmdio.html#a614e955e6323363d48b78d51d038a1d9", null ],
     [ "write", "namespaceservio_1_1scmdio.html#acf90a9c7cf0c9e0f5124ae2e9da6e7e3", null ]
 ];

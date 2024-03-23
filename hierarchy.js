@@ -16,6 +16,7 @@ var hierarchy =
     [ "servio::drv::adc_pooler< Set >", "structservio_1_1drv_1_1adc__pooler.html", null ],
     [ "servio::drv::tests::adc_pooler_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test", null ],
     [ "servio::drv::adc_set< CentralSentry >", "structservio_1_1drv_1_1adc__set.html", null ],
+    [ "servio::mon::blinker", "structservio_1_1mon_1_1blinker.html", null ],
     [ "servio::sntr::central_sentry_iface", "structservio_1_1sntr_1_1central__sentry__iface.html", [
       [ "servio::sntr::central_sentry", "classservio_1_1sntr_1_1central__sentry.html", null ],
       [ "servio::sntr::test_central_sentry", "structservio_1_1sntr_1_1test__central__sentry.html", null ]
@@ -108,6 +109,7 @@ var hierarchy =
     ] ],
     [ "servio::drv::tests::position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", null ],
     [ "servio::mtr::posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", null ],
+    [ "servio::mon::pulser", "structservio_1_1mon_1_1pulser.html", null ],
     [ "servio::drv::pwm_motor_interface", "classservio_1_1drv_1_1pwm__motor__interface.html", [
       [ "servio::drv::hbridge", "classservio_1_1drv_1_1hbridge.html", null ]
     ] ],

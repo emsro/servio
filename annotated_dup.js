@@ -121,6 +121,8 @@ var annotated_dup =
         [ "state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", "namespaceservio_1_1klmn_structservio_1_1klmn_1_1state__range_dup" ]
       ] ],
       [ "mon", "namespaceservio_1_1mon.html", [
+        [ "blinker", "structservio_1_1mon_1_1blinker.html", "structservio_1_1mon_1_1blinker" ],
+        [ "pulser", "structservio_1_1mon_1_1pulser.html", "structservio_1_1mon_1_1pulser" ],
         [ "indication", "classservio_1_1mon_1_1indication.html", "classservio_1_1mon_1_1indication" ],
         [ "monitor", "classservio_1_1mon_1_1monitor.html", "classservio_1_1mon_1_1monitor" ]
       ] ],

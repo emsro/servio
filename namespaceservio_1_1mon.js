@@ -1,5 +1,7 @@
 var namespaceservio_1_1mon =
 [
+    [ "blinker", "structservio_1_1mon_1_1blinker.html", "structservio_1_1mon_1_1blinker" ],
+    [ "pulser", "structservio_1_1mon_1_1pulser.html", "structservio_1_1mon_1_1pulser" ],
     [ "indication", "classservio_1_1mon_1_1indication.html", "classservio_1_1mon_1_1indication" ],
     [ "monitor", "classservio_1_1mon_1_1monitor.html", "classservio_1_1mon_1_1monitor" ],
     [ "indication_event", "namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52", [
@@ -12,5 +14,8 @@ var namespaceservio_1_1mon =
       [ "BOOTING", "namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52ad32cbe23a48d1576416d9eb314876c6d", null ],
       [ "INITIALIZED", "namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52adee5f03c2c4e73657824e028494b18c0", null ],
       [ "INCOMING_MESSAGE", "namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a1e4bd5080731650a78fd41dc75d98582", null ]
-    ] ]
+    ] ],
+    [ "sin_approx", "namespaceservio_1_1mon.html#a05b0570c91ff6eb55da2986405b24659", null ],
+    [ "TEST", "namespaceservio_1_1mon.html#a4dad0c200c9396bb493a3a6d83613ac8", null ],
+    [ "TEST", "namespaceservio_1_1mon.html#a0d9dc6136f30746eb14c623d4ff48496", null ]
 ];
