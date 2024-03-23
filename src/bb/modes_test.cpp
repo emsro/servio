@@ -72,8 +72,8 @@ int main( int argc, char** argv )
         using namespace std::chrono_literals;
 
         ::testing::InitGoogleTest( &argc, argv );
-        bool powerless = false;
-        bool verbose   = false;
+        bool                  powerless = false;
+        std::optional< bool > verbose   = false;
 
         CLI::App app{ "modes related tests" };
         scmdio::powerless_flag( app, powerless );

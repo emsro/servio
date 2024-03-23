@@ -1,13 +1,10 @@
 #include "base/base.hpp"
-
-#include <emlabcpp/static_circular_buffer.h>
+#include "mon/effects.hpp"
 
 #pragma once
 
 namespace servio::mon
 {
-
-namespace em = emlabcpp;
 
 // possible events:
 // - system stops itself due to un-expected error - red glows
@@ -37,14 +34,11 @@ enum class indication_event
         INCOMING_MESSAGE = 8
 };
 
-using namespace base::literals;
-
 class indication
 {
 public:
         indication( base::microseconds now )
           : last_tick_( now )
-          , red_phase_( now )
           , yellow_engaged_until_( 0_us )
           , blue_disengage_at_( 0_us )
         {
@@ -60,18 +54,11 @@ public:
         }
 
 private:
-        void tick_red( base::microseconds now );
-
         base::leds_vals    state_;
         base::microseconds last_tick_;
 
-        static constexpr base::microseconds                 red_window = 5_s;
-        base::microseconds                                  red_phase_;
-        em::static_circular_buffer< base::microseconds, 2 > red_events_;
-
-        float green_i_      = 0.F;
-        float green_step_   = 0.F;
-        float green_offset_ = 0.F;
+        blinker red_bl_;
+        pulser  green_pu_;
 
         base::microseconds yellow_engaged_until_;
 

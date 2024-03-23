@@ -16,7 +16,7 @@ config get_config( int argc, char* argv[] )
         scmdio::coms_opt( app, cfg.c_device );
         scmdio::dcoms_opt( app, cfg.d_device );
         app.add_option( "-o,--output", cfg.output_dir, "Directory to use for storing results" );
-        // TODO: well these are duplicated..
+        app.add_option( "--input", cfg.input, "Input data" );
         scmdio::powerless_flag( app, cfg.powerless );
         CLI::Option* ocfg = ocfg_opt( app, cfg.openocd_config );
         firmware_opt( app, cfg.firmware, ocfg );

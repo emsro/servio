@@ -1,7 +1,5 @@
 #include "indication.hpp"
 
-#include <cmath>
-
 namespace servio::mon
 {
 
@@ -9,23 +7,20 @@ bool indication::on_event( base::microseconds now, const indication_event& e )
 {
         switch ( e ) {
         case indication_event::VOLTAGE_LOW:
-                if ( red_events_.full() )
-                        return false;
-                red_events_.push_back( 500_ms );
+                red_bl_.state[0] = true;
                 break;
         case indication_event::TEMPERATURE_HIGH:
-                if ( red_events_.full() )
-                        return false;
-                red_events_.push_back( 1000_ms );
+                red_bl_.state[1] = true;
+                red_bl_.state[2] = true;
                 break;
         case indication_event::HEARTBEAT:
-                green_step_ += 0.00001F;
+                green_pu_.val += 0.0000001F;
                 break;
         case indication_event::ENGAGED:
-                green_offset_ = 0.5F;
+                green_pu_.intensity = 1.0F;
                 break;
         case indication_event::DISENGAGED:
-                green_offset_ = 0.F;
+                green_pu_.intensity = 0.5F;
                 break;
         case indication_event::STUCK:
                 yellow_engaged_until_ = now + 50_ms;
@@ -44,55 +39,17 @@ bool indication::on_event( base::microseconds now, const indication_event& e )
         return true;
 }
 
-namespace
-{
-        // TODO: move this somewhere else
-        float sin_approx( float x )
-        {
-                const float x3 = x * x * x;
-                return x - x3 / 6.F + ( x3 * x * x ) / 120.F;
-        }
-}  // namespace
-
 void indication::tick( base::microseconds now )
 {
-        tick_red( now );
 
-        green_i_              = std::fmod( green_i_ + green_step_, 2 * base::pi );
-        const float green_val = ( sin_approx( green_i_ ) + 1.F ) / 4.F + green_offset_;
-        state_.green          = static_cast< uint8_t >(
-            em::map_range< float, float >( green_val, 0.F, 2.F, 0.F, 255.F ) );
+        state_.red = red_bl_.update( now );
 
-        green_step_ = 0.F;
+        state_.green = green_pu_.update();
 
         state_.yellow = now < yellow_engaged_until_ ? 255U : 0U;
 
         if ( now > blue_disengage_at_ )
                 state_.blue = false;
-}
-
-void indication::tick_red( base::microseconds now )
-{
-        if ( now < red_phase_ ) {
-                state_.red = false;
-                return;
-        }
-
-        if ( red_events_.empty() ) {
-                red_phase_ += red_window;
-                return;
-        }
-
-        if ( red_events_.front() + red_phase_ > now ) {
-                red_events_.pop_front();
-                state_.red = false;
-                red_phase_ += red_window;
-                return;
-        }
-
-        const base::microseconds x = now % 500_ms;
-
-        state_.red = x < 250_ms;
 }
 
 }  // namespace servio::mon

@@ -69,9 +69,22 @@ int main( int argc, char* argv[] )
         joque::resource dev;
         joque::task_set ts;
 
-        em::DEBUG_LOGGER.set_option( em::set_stdout( cfg.verbose ) );
-        ftester::COM_LOGGER.set_option( em::set_stdout( cfg.verbose ) );
-        em::INFO_LOGGER.set_option( em::set_stdout( cfg.verbose ) );
+        if ( cfg.verbose ) {
+                em::DEBUG_LOGGER.set_option( em::set_stdout( *cfg.verbose ) );
+                ftester::COM_LOGGER.set_option( em::set_stdout( *cfg.verbose ) );
+                em::INFO_LOGGER.set_option( em::set_stdout( *cfg.verbose ) );
+        }
+
+        if ( cfg.output_dir ) {
+                static std::ofstream comfile{ cfg.output_dir.value() / "com.log" };
+                servio::ftester::COM_LOGGER.set_option( em::set_ostream{ &comfile } );
+                static std::ofstream infofile{ cfg.output_dir.value() / "info.log" };
+                em::INFO_LOGGER.set_option( em::set_ostream{ &infofile } );
+                static std::ofstream debugfile{ cfg.output_dir.value() / "debug.log" };
+                em::DEBUG_LOGGER.set_option( em::set_ostream{ &debugfile } );
+                static std::ofstream errorfile{ cfg.output_dir.value() / "error.log" };
+                em::ERROR_LOGGER.set_option( em::set_ostream{ &errorfile } );
+        }
 
         if ( cfg.firmware.has_value() ) {
                 ts.tasks["flash"] = ftester::make_flash_task(
@@ -82,6 +95,11 @@ int main( int argc, char* argv[] )
         }
 
         nlohmann::json inpt;
+        if ( cfg.input ) {
+                std::ifstream f{ *cfg.input };
+                f >> inpt;
+                inpt = std::move( inpt[0] );
+        }
         inpt["powerless"] = cfg.powerless;
         ftester::test_context ctx{
             cfg.d_device, cfg.d_baudrate, cfg.c_device, cfg.c_baudrate, inpt };
