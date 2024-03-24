@@ -46,6 +46,7 @@ using limits = em::min_max< T >;
 
 static constexpr float infty = std::numeric_limits< float >::infinity();
 static constexpr float pi    = std::numbers::pi_v< float >;
+static constexpr float pipi  = 2.F * std::numbers::pi_v< float >;
 
 enum class control_mode
 {

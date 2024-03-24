@@ -14,7 +14,7 @@ bool indication::on_event( base::microseconds now, const indication_event& e )
                 red_bl_.state[2] = true;
                 break;
         case indication_event::HEARTBEAT:
-                green_pu_.val += 0.0000001F;
+                green_pu_.val += 0.00001F;
                 break;
         case indication_event::ENGAGED:
                 green_pu_.intensity = 1.0F;

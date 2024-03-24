@@ -32,11 +32,12 @@ float sin_approx( float x )
 
 uint8_t pulser::update()
 {
-        val = std::fmod( val, 2 * base::pi );
-        val = ( sin_approx( val - base::pi ) + 1.F ) / 2.F;
-        val *= intensity;
+        if ( val > base::pipi )
+                val -= base::pipi;
+        float v = ( sin_approx( val - base::pi ) + 1.F ) / 2.F;
+        v *= intensity;
 
-        return static_cast< uint8_t >( em::map_range( val, 0.F, 1.F, 0.F, 255.F ) );
+        return static_cast< uint8_t >( em::map_range( v, 0.F, 1.F, 0.F, 255.F ) );
 }
 
 }  // namespace servio::mon
