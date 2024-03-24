@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data_5ftype_1833',['data_type',['../namespaceservio_1_1sntr.html#add926447d5598770f0aea4c4ecc6c6a8',1,'servio::sntr']]]
+  ['data_5ftype_1836',['data_type',['../namespaceservio_1_1sntr.html#add926447d5598770f0aea4c4ecc6c6a8',1,'servio::sntr']]]
 ];

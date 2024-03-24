@@ -25,5 +25,6 @@ var namespaceservio_1_1base =
       [ "POSITION", "namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552ea90b4ba73224408e82ade8a072a3712c1", null ]
     ] ],
     [ "infty", "namespaceservio_1_1base.html#a7f4a3ba7fed463a696460a6301b36324", null ],
-    [ "pi", "namespaceservio_1_1base.html#ac81788709117cdad254c7e43cedbf3a3", null ]
+    [ "pi", "namespaceservio_1_1base.html#ac81788709117cdad254c7e43cedbf3a3", null ],
+    [ "pipi", "namespaceservio_1_1base.html#a023d8ec783023c905201589f195bdc53", null ]
 ];

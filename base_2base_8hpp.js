@@ -28,5 +28,6 @@ var base_2base_8hpp =
     [ "operator\"\"_s", "base_2base_8hpp.html#ad91b3148e4b6900c2ab4d30f5bae6298", null ],
     [ "operator\"\"_us", "base_2base_8hpp.html#a074c68b8fb6e24366ae33ad73ebc45ea", null ],
     [ "infty", "base_2base_8hpp.html#a7f4a3ba7fed463a696460a6301b36324", null ],
-    [ "pi", "base_2base_8hpp.html#ac81788709117cdad254c7e43cedbf3a3", null ]
+    [ "pi", "base_2base_8hpp.html#ac81788709117cdad254c7e43cedbf3a3", null ],
+    [ "pipi", "base_2base_8hpp.html#a023d8ec783023c905201589f195bdc53", null ]
 ];
