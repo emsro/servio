@@ -132,13 +132,12 @@ var hierarchy =
       [ "servio::sntr::tests::central_sentry_fixture", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html", null ],
       [ "servio::sntr::tests::sentry_fixture", "structservio_1_1sntr_1_1tests_1_1sentry__fixture.html", null ]
     ] ],
-    [ "servio::ftester::test_context", "structservio_1_1ftester_1_1test__context.html", null ],
     [ "em::testing::test_interface", null, [
       [ "servio::drv::tests::utest_base", "structservio_1_1drv_1_1tests_1_1utest__base.html", [
         [ "servio::drv::tests::utest< T >", "structservio_1_1drv_1_1tests_1_1utest.html", null ]
       ] ]
     ] ],
-    [ "servio::ftester::test_system", "classservio_1_1ftester_1_1test__system.html", null ],
+    [ "servio::ftester::test_system", "structservio_1_1ftester_1_1test__system.html", null ],
     [ "servio::ftest::testing_system", "structservio_1_1ftest_1_1testing__system.html", null ],
     [ "servio::brd::uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", null ],
     [ "servio::plt::uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", null ],
