@@ -27,94 +27,62 @@ inline em::eabi_logger COM_LOGGER{
 struct controller_interface : em::testing::controller_interface
 {
         em::testing::collect_server& col_serv;
-        std::stringstream            errss;
+        std::variant< std::monostate, em::testing::error_variant, em::testing::test_result > res =
+            std::monostate{};
 
         controller_interface( em::testing::collect_server& col_serv )
           : col_serv( col_serv )
         {
         }
 
-        void on_result( const em::testing::test_result& res ) final
+        void on_result( const em::testing::test_result& r ) final
         {
-                if ( em::testing::is_problematic( res.status ) )
-                        errss << em::testing::data_tree_to_json( col_serv.get_tree() ).dump( 4 )
-                              << "\n";
-
-                EMLABCPP_INFO_LOG( "Test finished" );
+                res = r;
         }
 
         void on_error( const em::testing::error_variant& err ) final
         {
-                errss << err;
+                res = err;
         }
 };
 
-em::result send( auto& ctx, em::protocol::channel_type channel, const auto& data )
+struct test_system
 {
-        COM_LOG( channel, "w: ", data );
-        auto msg = em::protocol::serialize_multiplexed( channel, data );
-        co_spawn( ctx.io_context, ctx.write( msg ), handle_eptr );
 
-        return em::SUCCESS;
-}
-
-struct test_context
-{
-        boost::asio::io_context   io_context;
-        servio::scmdio::cobs_port d_port;
-        boost::asio::serial_port  c_port;
-
-        em::testing::collect_server    col_serv;
-        em::testing::parameters_server par_serv;
-
-        test_context(
+        test_system(
             const std::filesystem::path& d_dev,
             uint32_t                     d_baudrate,
             const std::filesystem::path& c_dev,
             uint32_t                     c_baudrate,
             const nlohmann::json&        input_json )
-          : d_port( io_context, d_dev, d_baudrate )
-          , c_port( io_context, c_dev )
-          , col_serv(
+          : d_port_( io_context_, d_dev, d_baudrate )
+          , c_port_( io_context_, c_dev )
+          , col_serv_(
                 em::testing::collect_channel,
                 em::pmr::new_delete_resource(),
                 [this]( auto chann, const auto& data ) {
-                        return send( *this, chann, data );
+                        return send( chann, data );
                 } )
-          , par_serv(
+          , par_serv_(
                 em::testing::params_channel,
                 em::testing::json_to_data_tree( em::pmr::new_delete_resource(), input_json )
                     .value(),
                 [this]( auto chann, const auto& data ) {
-                        return send( *this, chann, data );
+                        return send( chann, data );
                 } )
-        {
-                c_port.set_option( boost::asio::serial_port_base::baud_rate( c_baudrate ) );
-        }
-
-        template < std::size_t N >
-        boost::asio::awaitable< void > write( em::protocol::message< N > msg )
-        {
-                co_await d_port.async_write( msg );
-        }
-};
-
-class test_system
-{
-public:
-        test_system( test_context& ctx, em::testing::controller_interface& iface )
-          : ctx_( ctx )
+          , col_iface_( col_serv_ )
           , cont_(
                 em::testing::core_channel,
                 em::pmr::new_delete_resource(),
-                iface,
+                col_iface_,
                 [this]( auto chann, const auto& data ) {
-                        return send( this->ctx_, chann, data );
+                        return send( chann, data );
                 } )
         {
+                c_port_.set_option( boost::asio::serial_port_base::baud_rate( c_baudrate ) );
 
-                co_spawn( ctx.io_context, dread(), handle_eptr );
-                co_spawn( ctx.io_context, cread(), handle_eptr );
+                co_spawn( io_context_, dread(), handle_eptr );
+                co_spawn( io_context_, cread(), handle_eptr );
         }
 
         std::string suite_name() const
@@ -151,42 +119,60 @@ public:
 
         const em::testing::data_tree& get_collected() const
         {
-                return ctx_.col_serv.get_tree();
-        }
-
-        bool test_result() const
-        {
-                return !system_failure_;
+                return col_serv_.get_tree();
         }
 
         void tick()
         {
                 cont_.tick();
 
-                ctx_.io_context.run_for( 1ms );
+                io_context_.run_for( 1ms );
         }
 
-        void clear()
-        {
-                ctx_.col_serv.clear();
-        }
-
-        void run_test( em::testing::test_id tid )
+        std::variant< em::testing::test_result, em::testing::error_variant >
+        run_test( em::testing::test_id tid )
         {
                 clear();
                 cont_.start_test( tid );
                 while ( cont_.is_test_running() && !system_failure_ )
                         tick();
+
+                if ( auto* ptr = std::get_if< em::testing::test_result >( &col_iface_.res ) )
+                        return *ptr;
+                if ( auto* ptr = std::get_if< em::testing::error_variant >( &col_iface_.res ) )
+                        return *ptr;
+                return {};
         }
 
 private:
+        void clear()
+        {
+                col_serv_.clear();
+                col_iface_.res = std::monostate{};
+        }
+
+        em::result send( em::protocol::channel_type channel, const auto& data )
+        {
+                COM_LOG( channel, "w: ", data );
+                auto msg = em::protocol::serialize_multiplexed( channel, data );
+                co_spawn( io_context_, write( msg ), handle_eptr );
+
+                return em::SUCCESS;
+        }
+
+        template < std::size_t N >
+        boost::asio::awaitable< void > write( em::protocol::message< N > msg )
+        {
+                co_await d_port_.async_write( msg );
+        }
+
         boost::asio::awaitable< void > dread()
         {
 
                 std::vector< std::byte > buffer( 512, std::byte{ 0 } );
 
                 while ( true ) {
-                        em::view< std::byte* > data = co_await ctx_.d_port.async_read( buffer );
+                        em::view< std::byte* > data = co_await d_port_.async_read( buffer );
 
                         em::outcome out = em::protocol::extract_multiplexed(
                             data,
@@ -194,7 +180,7 @@ private:
                                  std::span< const std::byte > data ) {
                                     COM_LOG( chid, "r: ", em::protocol::message< 128 >{ data } );
                                     return em::protocol::multiplexed_dispatch(
-                                        chid, data, cont_, ctx_.col_serv, ctx_.par_serv );
+                                        chid, data, cont_, col_serv_, par_serv_ );
                             } );
 
                         system_failure_ |= out == em::ERROR;
@@ -205,18 +191,27 @@ private:
         {
                 std::vector< std::byte > buffer( 8, std::byte{ 0 } );
                 while ( true ) {
-                        std::size_t n = co_await ctx_.c_port.async_read_some(
+                        std::size_t n = co_await c_port_.async_read_some(
                             boost::asio::buffer( buffer.data(), buffer.size() ),
                             boost::asio::use_awaitable );
 
                         co_await boost::asio::async_write(
-                            ctx_.c_port,
+                            c_port_,
                             boost::asio::buffer( buffer.data(), n ),
                             boost::asio::use_awaitable );
                 }
         }
 
-        test_context&           ctx_;
+private:
+        boost::asio::io_context   io_context_;
+        servio::scmdio::cobs_port d_port_;
+        boost::asio::serial_port  c_port_;
+
+        em::testing::collect_server    col_serv_;
+        em::testing::parameters_server par_serv_;
+
+        controller_interface col_iface_;
+
         em::testing::controller cont_;
         bool                    system_failure_ = false;
 };

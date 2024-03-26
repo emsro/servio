@@ -26,13 +26,12 @@ bool indication::on_event( base::microseconds now, const indication_event& e )
                 yellow_engaged_until_ = now + 50_ms;
                 break;
         case indication_event::BOOTING:
-                state_.blue = true;
+                blue_disengage_at_ = now + 10_s;
                 break;
         case indication_event::INITIALIZED:
-                state_.blue = false;
+                blue_disengage_at_ = now;
                 break;
         case indication_event::INCOMING_MESSAGE:
-                state_.blue        = true;
                 blue_disengage_at_ = now + 10_ms;
                 break;
         }
@@ -48,8 +47,7 @@ void indication::tick( base::microseconds now )
 
         state_.yellow = now < yellow_engaged_until_ ? 255U : 0U;
 
-        if ( now > blue_disengage_at_ )
-                state_.blue = false;
+        state_.blue = now < blue_disengage_at_;
 }
 
 }  // namespace servio::mon

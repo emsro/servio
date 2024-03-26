@@ -14,7 +14,6 @@ struct joque_test
 {
         std::string                            name;
         em::testing::test_id                   tid;
-        controller_interface&                  iface;
         test_system&                           sys;
         std::optional< std::filesystem::path > output_dir;
 
@@ -23,15 +22,18 @@ struct joque_test
                 joque::run_result res;
                 res.retcode = 0;
 
-                sys.clear();
-
-                sys.run_test( tid );
-
-                std::string ss = std::move( iface.errss ).str();
-                if ( !ss.empty() ) {
-                        joque::record_output( res, joque::output_chunk::ERROR, ss );
-                        res.retcode = 1;
-                }
+                em::match(
+                    sys.run_test( tid ),
+                    [&]( const em::testing::test_result& tres ) {
+                            if ( em::testing::is_problematic( tres.status ) )
+                                    res.retcode = 2;
+                    },
+                    [&]( const em::testing::error_variant& err ) {
+                            std::stringstream ss;
+                            ss << err;
+                            joque::record_output( res, joque::output_chunk::ERROR, ss.str() );
+                            res.retcode = 1;
+                    } );
 
                 nlohmann::json j = em::testing::data_tree_to_json( sys.get_collected() );
 
@@ -41,8 +43,8 @@ struct joque_test
                                 auto val = std::to_string( m["value"].get< int >() ) + " " +
                                            m["unit"].get< std::string >();
 
-                                std::cout << std::format( "{:<20} {:>20}: {}", "", k, val )
-                                          << std::endl;
+                                auto msg = std::format( "{:<20} {:>20}: {} \n", "", k, val );
+                                joque::record_output( res, joque::output_chunk::STANDARD, msg );
                         }
                 }
 
@@ -101,12 +103,8 @@ int main( int argc, char* argv[] )
                 inpt = std::move( inpt[0] );
         }
         inpt["powerless"] = cfg.powerless;
-        ftester::test_context ctx{
+        ftester::test_system tsys{
             cfg.d_device, cfg.d_baudrate, cfg.c_device, cfg.c_baudrate, inpt };
-        ftester::controller_interface ctl_iface{ ctx.col_serv };
-        ftester::test_system          tsys{ ctx, ctl_iface };
-
-        EMLABCPP_INFO_LOG( "Started initialization" );
 
         tsys.wait_for_init();
 
@@ -118,14 +116,15 @@ int main( int argc, char* argv[] )
                         ftester::joque_test{
                             .name       = sname,
                             .tid        = tid,
-                            .iface      = ctl_iface,
                             .sys        = tsys,
-                            .output_dir = cfg.output_dir },
+                            .output_dir = cfg.output_dir,
+                        },
                     .resources = { dev },
                 };
         }
 
-        std::optional< joque::exec_record > rec = joque::exec( ts ).run();
+        joque::print_exec_visitor           pvis{ false, true };
+        std::optional< joque::exec_record > rec = joque::exec( ts, 0, "", pvis ).run();
         if ( rec && cfg.output_dir ) {
                 std::ofstream os{ *cfg.output_dir / "res.json" };
                 os << nlohmann::json{ *rec }.dump();
