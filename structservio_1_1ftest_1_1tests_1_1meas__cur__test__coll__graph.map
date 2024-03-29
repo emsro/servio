@@ -1,14 +1,12 @@
 <map id="servio::ftest::tests::meas_cur_test" name="servio::ftest::tests::meas_cur_test">
-<area shape="rect" id="node1" title=" " alt="" coords="535,175,673,217"/>
-<area shape="rect" id="node2" href="$classservio_1_1drv_1_1pwm__motor__interface.html" title=" " alt="" coords="263,66,439,107"/>
-<area shape="rect" id="node3" href="$structservio_1_1core_1_1core.html" title=" " alt="" coords="284,132,419,159"/>
+<area shape="rect" id="node1" title=" " alt="" coords="505,125,644,166"/>
+<area shape="rect" id="node2" href="$classservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="260,81,416,108"/>
+<area shape="rect" id="node3" href="$structservio_1_1core_1_1core.html" title=" " alt="" coords="271,132,405,159"/>
 <area shape="rect" id="node4" href="$classservio_1_1mon_1_1monitor.html" title=" " alt="" coords="11,5,170,32"/>
 <area shape="rect" id="node5" href="$structservio_1_1cnv_1_1converter.html" title=" " alt="" coords="9,56,172,83"/>
 <area shape="rect" id="node6" href="$classservio_1_1mon_1_1indication.html" title=" " alt="" coords="5,107,176,133"/>
 <area shape="rect" id="node7" href="$classservio_1_1mtr_1_1metrics.html" title=" " alt="" coords="15,157,166,184"/>
 <area shape="rect" id="node8" href="$classservio_1_1ctl_1_1control.html" title=" " alt="" coords="21,208,160,235"/>
-<area shape="rect" id="node9" href="$classservio_1_1drv_1_1clk__interface.html" title=" " alt="" coords="260,183,443,209"/>
-<area shape="rect" id="node10" title=" " alt="" coords="289,233,414,260"/>
-<area shape="rect" id="node11" title=" " alt="" coords="7,259,174,301"/>
-<area shape="rect" id="node12" href="$classservio_1_1drv_1_1current__interface.html" title=" " alt="" coords="279,285,423,326"/>
+<area shape="rect" id="node9" title=" " alt="" coords="275,212,401,239"/>
+<area shape="rect" id="node10" title=" " alt="" coords="7,259,174,301"/>
 </map>

@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('testing__system_8hpp_source.html','');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structservio_1_1ftest_1_1testing__system.html">testing_system</a></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a6586fec4aaee7f48f359a6a28de328d8">   17</a></span>&#160;        <a class="code" href="classservio_1_1drv_1_1com__interface.html">drv::com_interface</a>&amp; <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a6586fec4aaee7f48f359a6a28de328d8">debug_comms</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a6586fec4aaee7f48f359a6a28de328d8">   17</a></span>&#160;        drv::com_interface&amp; <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a6586fec4aaee7f48f359a6a28de328d8">debug_comms</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#ae94f98c5ffdca9be15b1a8ba26334237">   19</a></span>&#160;        em::testing::reactor    <a class="code" href="structservio_1_1ftest_1_1testing__system.html#ae94f98c5ffdca9be15b1a8ba26334237">reactor</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a4baa4177b4ff17eb3f398116f5b4745b">   20</a></span>&#160;        em::testing::collector  <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a4baa4177b4ff17eb3f398116f5b4745b">collector</a>;</div>
@@ -113,11 +113,11 @@ $(document).ready(function(){initNavTree('testing__system_8hpp_source.html','');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">return</span> [<span class="keyword">this</span>]( uint16_t channel, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; data ) {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        <span class="keyword">auto</span> msg = em::protocol::serialize_multiplexed( channel, data );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        <span class="keywordflow">return</span> debug_comms.<a class="code" href="classservio_1_1drv_1_1com__interface.html#a948c1f4131201f8d1c6b6c99aa8c6599">send</a>( msg, 100_ms );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        <span class="keywordflow">return</span> debug_comms.send( msg, 100_ms );</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                };</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#afadb71d0df6b75539167d758a772a763">   31</a></span>&#160;        <a class="code" href="structservio_1_1ftest_1_1testing__system.html#afadb71d0df6b75539167d758a772a763">testing_system</a>( <a class="code" href="classservio_1_1drv_1_1com__interface.html">drv::com_interface</a>&amp; debug_comms, std::string_view name )</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#afadb71d0df6b75539167d758a772a763">   31</a></span>&#160;        <a class="code" href="structservio_1_1ftest_1_1testing__system.html#afadb71d0df6b75539167d758a772a763">testing_system</a>( drv::com_interface&amp; debug_comms, std::string_view name )</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;          : debug_comms( debug_comms )</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;          , reactor( em::testing::core_channel, name, send_cb() )</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          , <a class="code" href="structservio_1_1ftest_1_1collector.html">collector</a>( em::testing::collect_channel, send_cb() )</div>
@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('testing__system_8hpp_source.html','');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                reactor.tick();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                std::array&lt; std::byte, 128 &gt; tmp;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keyword">auto</span> [succ, data] = debug_comms.<a class="code" href="classservio_1_1drv_1_1com__interface.html#a5099ddd0e5914a694fd92fb0caa00410">load_message</a>( tmp );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keyword">auto</span> [succ, data] = debug_comms.load_message( tmp );</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">if</span> ( !succ )</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                std::ignore = em::protocol::extract_multiplexed(</div>
@@ -144,9 +144,6 @@ $(document).ready(function(){initNavTree('testing__system_8hpp_source.html','');
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}  <span class="comment">// namespace servio::ftest</span></div>
 <div class="ttc" id="abase_2base_8hpp_html"><div class="ttname"><a href="base_2base_8hpp.html">base.hpp</a></div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1com__interface_html"><div class="ttname"><a href="classservio_1_1drv_1_1com__interface.html">servio::drv::com_interface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:50</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1com__interface_html_a5099ddd0e5914a694fd92fb0caa00410"><div class="ttname"><a href="classservio_1_1drv_1_1com__interface.html#a5099ddd0e5914a694fd92fb0caa00410">servio::drv::com_interface::load_message</a></div><div class="ttdeci">virtual com_res load_message(em::view&lt; std::byte * &gt; data)=0</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1com__interface_html_a948c1f4131201f8d1c6b6c99aa8c6599"><div class="ttname"><a href="classservio_1_1drv_1_1com__interface.html#a948c1f4131201f8d1c6b6c99aa8c6599">servio::drv::com_interface::send</a></div><div class="ttdeci">virtual em::result send(em::view&lt; const std::byte * &gt; data, base::microseconds timeout)=0</div></div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1ftest_html"><div class="ttname"><a href="namespaceservio_1_1ftest.html">servio::ftest</a></div><div class="ttdef"><b>Definition:</b> tests.cpp:8</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1collector_html"><div class="ttname"><a href="structservio_1_1ftest_1_1collector.html">servio::ftest::collector</a></div><div class="ttdef"><b>Definition:</b> utest.hpp:21</div></div>
@@ -164,7 +161,7 @@ $(document).ready(function(){initNavTree('testing__system_8hpp_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="testing__system_8hpp.html">testing_system.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:06:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 29 2024 11:18:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -5,6 +5,6 @@ var namespaceservio_1_1ftest_1_1tests =
     [ "meas_cur_test", "structservio_1_1ftest_1_1tests_1_1meas__cur__test.html", "structservio_1_1ftest_1_1tests_1_1meas__cur__test" ],
     [ "meas_pos_test", "structservio_1_1ftest_1_1tests_1_1meas__pos__test.html", "structservio_1_1ftest_1_1tests_1_1meas__pos__test" ],
     [ "meas_vel_test", "structservio_1_1ftest_1_1tests_1_1meas__vel__test.html", "structservio_1_1ftest_1_1tests_1_1meas__vel__test" ],
-    [ "setup_ctl_test", "namespaceservio_1_1ftest_1_1tests.html#af68d49b9cf25e0750dfa084b90a349ce", null ],
-    [ "setup_meas_tests", "namespaceservio_1_1ftest_1_1tests.html#a344c86a9122fd7071dd833afe88c3d9a", null ]
+    [ "setup_ctl_test", "namespaceservio_1_1ftest_1_1tests.html#a37743b94976f59aeef4dce05f1cbee1c", null ],
+    [ "setup_meas_tests", "namespaceservio_1_1ftest_1_1tests.html#a2a3b3015b91b9022b345e77e4a086306", null ]
 ];

@@ -97,28 +97,28 @@ $(document).ready(function(){initNavTree('rewind_8hpp_source.html',''); initResi
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>em = emlabcpp;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1ftest.html#af989edad6c092ed293bb4d582bba5af6">rewind</a>(</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1ftest.html#a97093aca70c0365aaf5824d096603e98">rewind</a>(</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    core::core&amp;              cor,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    drv::clk_interface&amp;      iclk,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    drv::clk_iface&amp;          iclk,</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    drv::position_interface&amp; ipos,</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a>       timeout,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    em::min_max&lt; float &gt;     area,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">float</span>                    <a class="code" href="namespaceservio_1_1cnv.html#a80940f85bcf572efe925d1d3320a2414">current</a> );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">float</span>                    <a class="code" href="namespaceservio_1_1cnv.html#a81aa759bf010df60769d03a4fd7b47cc">current</a> );</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}  <span class="comment">// namespace servio::ftest</span></div>
 <div class="ttc" id="acore_8hpp_html"><div class="ttname"><a href="core_8hpp.html">core.hpp</a></div></div>
 <div class="ttc" id="adrivers_8hpp_html"><div class="ttname"><a href="drivers_8hpp.html">drivers.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1base_html_a4ee4ba55bb220d445e17a921b54178e8"><div class="ttname"><a href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">servio::base::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint64_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition:</b> base.hpp:13</div></div>
-<div class="ttc" id="anamespaceservio_1_1cnv_html_a80940f85bcf572efe925d1d3320a2414"><div class="ttname"><a href="namespaceservio_1_1cnv.html#a80940f85bcf572efe925d1d3320a2414">servio::cnv::current</a></div><div class="ttdeci">float current(const converter &amp;conv, uint32_t raw_current, const drv::pwm_motor_interface &amp;motor)</div><div class="ttdef"><b>Definition:</b> utils.hpp:9</div></div>
+<div class="ttc" id="anamespaceservio_1_1cnv_html_a81aa759bf010df60769d03a4fd7b47cc"><div class="ttname"><a href="namespaceservio_1_1cnv.html#a81aa759bf010df60769d03a4fd7b47cc">servio::cnv::current</a></div><div class="ttdeci">float current(const converter &amp;conv, uint32_t raw_current, const drv::pwm_motor_iface &amp;motor)</div><div class="ttdef"><b>Definition:</b> utils.hpp:9</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftest_html"><div class="ttname"><a href="namespaceservio_1_1ftest.html">servio::ftest</a></div><div class="ttdef"><b>Definition:</b> tests.cpp:8</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftest_html_af989edad6c092ed293bb4d582bba5af6"><div class="ttname"><a href="namespaceservio_1_1ftest.html#af989edad6c092ed293bb4d582bba5af6">servio::ftest::rewind</a></div><div class="ttdeci">void rewind(core::core &amp;cor, drv::clk_interface &amp;iclk, drv::position_interface &amp;ipos, base::microseconds timeout, em::min_max&lt; float &gt; area, float current)</div><div class="ttdef"><b>Definition:</b> rewind.cpp:7</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftest_html_a97093aca70c0365aaf5824d096603e98"><div class="ttname"><a href="namespaceservio_1_1ftest.html#a97093aca70c0365aaf5824d096603e98">servio::ftest::rewind</a></div><div class="ttdeci">void rewind(core::core &amp;cor, drv::clk_iface &amp;iclk, drv::position_interface &amp;ipos, base::microseconds timeout, em::min_max&lt; float &gt; area, float current)</div><div class="ttdef"><b>Definition:</b> rewind.cpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="rewind_8hpp.html">rewind.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:06:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 29 2024 11:18:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

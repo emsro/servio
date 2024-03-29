@@ -35,7 +35,7 @@ var searchData=
   ['is_5fpowerless_465',['is_powerless',['../namespaceservio_1_1ftest.html#a0c26a71fa7e66380d0d7781c77fe390a',1,'servio::ftest']]],
   ['is_5fpowerless_2ehpp_466',['is_powerless.hpp',['../is__powerless_8hpp.html',1,'']]],
   ['is_5fstatic_467',['is_static',['../structservio_1_1mtr_1_1static__detector.html#a4fddc254997d1edbd8ca28eee21a2701',1,'servio::mtr::static_detector']]],
-  ['is_5fstopped_468',['is_stopped',['../classservio_1_1drv_1_1pwm__motor__interface.html#a8576ef145ab537f189b649b9565e237e',1,'servio::drv::pwm_motor_interface::is_stopped()'],['../classservio_1_1drv_1_1hbridge.html#a1756b1fc5080d2f1d13d24a12e6f7a50',1,'servio::drv::hbridge::is_stopped()']]],
+  ['is_5fstopped_468',['is_stopped',['../classservio_1_1drv_1_1pwm__motor__iface.html#a3a2a6a7f1bc20ccf5dd073e94c97888f',1,'servio::drv::pwm_motor_iface::is_stopped()'],['../classservio_1_1drv_1_1hbridge.html#a1756b1fc5080d2f1d13d24a12e6f7a50',1,'servio::drv::hbridge::is_stopped()']]],
   ['it_2ecpp_469',['it.cpp',['../it_8cpp.html',1,'']]],
   ['item_470',['item',['../structservio_1_1ftest_1_1utest.html#afcff200b228a1e1b5e2f16c5658bb2c1',1,'servio::ftest::utest']]]
 ];

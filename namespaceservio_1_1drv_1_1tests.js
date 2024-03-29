@@ -15,6 +15,6 @@ var namespaceservio_1_1drv_1_1tests =
     [ "position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", "structservio_1_1drv_1_1tests_1_1position__test" ],
     [ "current_iface_test", "structservio_1_1drv_1_1tests_1_1current__iface__test.html", "structservio_1_1drv_1_1tests_1_1current__iface__test" ],
     [ "hold", "namespaceservio_1_1drv_1_1tests.html#a510bb7381ec9be3c36a77e8794a75201", null ],
-    [ "setup_impl_tests", "namespaceservio_1_1drv_1_1tests.html#a888f80568a5104217fdc2a15a135048b", null ],
-    [ "setup_interface_tests", "namespaceservio_1_1drv_1_1tests.html#af183bf7a7d73ad07ab3f1025f64460f9", null ]
+    [ "setup_impl_tests", "namespaceservio_1_1drv_1_1tests.html#af2f455639ad71860ac355cebccc47332", null ],
+    [ "setup_interface_tests", "namespaceservio_1_1drv_1_1tests.html#afae801b344f86c3503ff37dc2b0158aa", null ]
 ];

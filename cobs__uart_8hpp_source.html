@@ -109,14 +109,14 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0befa81cfae8ee9b2ff6ffc3950754d2f5dea">COBS_HAL_RX_START_ERR</a>  = 0x2</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0befa81cfae8ee9b2ff6ffc3950754d2f5dea">   21</a></span>&#160;};</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classservio_1_1drv_1_1cobs__uart.html">cobs_uart</a> : <span class="keyword">public</span> <a class="code" href="classservio_1_1drv_1_1com__interface.html">com_interface</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classservio_1_1drv_1_1cobs__uart.html">cobs_uart</a> : <span class="keyword">public</span> com_interface</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a06cb2a9737ca56c9e83a07025fd615c3">cobs_uart</a>(</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span>*                 <span class="keywordtype">id</span>,</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="structservio_1_1sntr_1_1central__sentry__iface.html">sntr::central_sentry_iface</a>&amp; central,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classservio_1_1drv_1_1clk__interface.html">clk_interface</a>&amp;              clk,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            clk_interface&amp;              clk,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            UART_HandleTypeDef*         uart,</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            DMA_HandleTypeDef*          tx_dma );</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classservio_1_1sntr_1_1sentry.html">sntr::sentry</a>   sentry_;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classservio_1_1drv_1_1clk__interface.html">clk_interface</a>&amp; clk_;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        clk_interface&amp; clk_;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        UART_HandleTypeDef* uart_   = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        DMA_HandleTypeDef*  tx_dma_ = <span class="keyword">nullptr</span>;</div>
@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1cobs__uart.html#a06cb2a9737ca56c9e83a07025fd615c3">   67</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classservio_1_1drv_1_1cobs__uart.html#a06cb2a9737ca56c9e83a07025fd615c3">cobs_uart::cobs_uart</a>(</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>*                 <span class="keywordtype">id</span>,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="structservio_1_1sntr_1_1central__sentry__iface.html">sntr::central_sentry_iface</a>&amp; central,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classservio_1_1drv_1_1clk__interface.html">clk_interface</a>&amp;              clk,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    clk_interface&amp;              clk,</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    UART_HandleTypeDef*         uart,</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    DMA_HandleTypeDef*          tx_dma )</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  : sentry_( id, central )</div>
@@ -206,7 +206,6 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1clk__interface_html"><div class="ttname"><a href="classservio_1_1drv_1_1clk__interface.html">servio::drv::clk_interface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:68</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html">servio::drv::cobs_uart</a></div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:24</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a06cb2a9737ca56c9e83a07025fd615c3"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a06cb2a9737ca56c9e83a07025fd615c3">servio::drv::cobs_uart::cobs_uart</a></div><div class="ttdeci">cobs_uart(const char *id, sntr::central_sentry_iface &amp;central, clk_interface &amp;clk, UART_HandleTypeDef *uart, DMA_HandleTypeDef *tx_dma)</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:67</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a07beae73bcccbeecd2aaede210e3199d"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a07beae73bcccbeecd2aaede210e3199d">servio::drv::cobs_uart::load_message</a></div><div class="ttdeci">com_res load_message(em::view&lt; std::byte * &gt; data) override</div><div class="ttdef"><b>Definition:</b> cobs_uart.cpp:10</div></div>
@@ -220,7 +219,6 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_a87725c3bc71d715123cc06293480bcf4"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">servio::drv::cobs_uart::start</a></div><div class="ttdeci">em::result start() override</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:110</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_aa1b13d2180961b314892b095888dcd18"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#aa1b13d2180961b314892b095888dcd18">servio::drv::cobs_uart::operator=</a></div><div class="ttdeci">cobs_uart &amp; operator=(const cobs_uart &amp;)=delete</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1cobs__uart_html_afc279484fd7b6a321225475b82b9abcb"><div class="ttname"><a href="classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">servio::drv::cobs_uart::tx_cplt_irq</a></div><div class="ttdeci">void tx_cplt_irq(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> cobs_uart.hpp:91</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1com__interface_html"><div class="ttname"><a href="classservio_1_1drv_1_1com__interface.html">servio::drv::com_interface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:50</div></div>
 <div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html">servio::sntr::sentry</a></div><div class="ttdef"><b>Definition:</b> sentry.hpp:12</div></div>
 <div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html_a437c915013d9d4560e80e431f4689f9b"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html#a437c915013d9d4560e80e431f4689f9b">servio::sntr::sentry::set_inoperable</a></div><div class="ttdeci">void set_inoperable(std::size_t eid, const char *emsg, const data_type &amp;data=std::monostate{})</div><div class="ttdef"><b>Definition:</b> sentry.cpp:13</div></div>
 <div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html_ac5c76e5ce0300fde1985e20c2e0d4ec3"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html#ac5c76e5ce0300fde1985e20c2e0d4ec3">servio::sntr::sentry::set_inoperable_set</a></div><div class="ttdeci">void set_inoperable_set(ecode_set set, const char *emsg, const data_type &amp;data=std::monostate{})</div><div class="ttdef"><b>Definition:</b> sentry.cpp:21</div></div>
@@ -244,7 +242,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="cobs__uart_8hpp.html">cobs_uart.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:06:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 29 2024 11:18:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
