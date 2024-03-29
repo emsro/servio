@@ -37,7 +37,9 @@ struct joque_test
 
                 nlohmann::json j = em::testing::data_tree_to_json( sys.get_collected() );
 
-                if ( j.contains( "metrics" ) ) {
+                if ( res.retcode != 0 ) {
+                        joque::record_output( res, joque::output_chunk::ERROR, j.dump( 2 ) );
+                } else if ( j.contains( "metrics" ) ) {
                         for ( const nlohmann::json& m : j["metrics"] ) {
                                 auto k   = m["name"].get< std::string >();
                                 auto val = std::to_string( m["value"].get< int >() ) + " " +

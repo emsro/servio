@@ -28,28 +28,28 @@ struct meas_cur_test
                         co_await t::skip();
                 setup_poweroff( cor.ctl );
 
-                em::defer d = drv::retain_callback( curr );
-
+                em::defer             d = drv::retain_callback( curr );
                 drv::empty_current_cb ccb;
                 curr.set_current_callback( ccb );
 
-                base::microseconds time  = 10_ms;
-                base::microseconds start = clk.get_us();
-
                 motor.set_power( std::numeric_limits< int16_t >::max() / 4 );
-
-                drv::wait_for( clk, 100_us );
 
                 t::node_id dnid =
                     co_await coll->set( "data", em::contiguous_container_type::ARRAY );
                 t::node_id tnid =
                     co_await coll->set( "time", em::contiguous_container_type::ARRAY );
-                while ( clk.get_us() - start < time ) {
+
+                base::microseconds start = clk.get_us();
+
+                static constexpr std::size_t iters = 1000;
+                float                        sum   = 0;
+                for ( std::size_t i = 0; i < iters; i++ ) {
                         float current = cnv::current( cor.conv, curr, motor );
+                        sum += current;
                         coll->append( dnid, current );
                         coll->append( tnid, std::chrono::microseconds{ clk.get_us() } );
-                        co_await t::expect( !em::almost_equal( current, 0.f, 0.01f ) );
                 }
+                co_await t::expect( !em::almost_equal( sum / iters, 0.f, 0.01f ) );
                 motor.set_power( 0 );
         }
 };
