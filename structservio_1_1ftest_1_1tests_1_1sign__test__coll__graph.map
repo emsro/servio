@@ -1,0 +1,15 @@
+<map id="servio::ftest::tests::sign_test" name="servio::ftest::tests::sign_test">
+<area shape="rect" id="node1" title=" " alt="" coords="535,155,673,196"/>
+<area shape="rect" id="node2" href="$classservio_1_1drv_1_1pwm__motor__interface.html" title=" " alt="" coords="263,5,439,47"/>
+<area shape="rect" id="node3" href="$classservio_1_1drv_1_1position__interface.html" title=" " alt="" coords="276,71,427,112"/>
+<area shape="rect" id="node4" href="$structservio_1_1core_1_1core.html" title=" " alt="" coords="284,137,419,163"/>
+<area shape="rect" id="node5" href="$classservio_1_1mon_1_1monitor.html" title=" " alt="" coords="11,10,170,37"/>
+<area shape="rect" id="node6" href="$structservio_1_1cnv_1_1converter.html" title=" " alt="" coords="9,61,172,87"/>
+<area shape="rect" id="node7" href="$classservio_1_1mon_1_1indication.html" title=" " alt="" coords="5,111,176,138"/>
+<area shape="rect" id="node8" href="$classservio_1_1mtr_1_1metrics.html" title=" " alt="" coords="15,162,166,189"/>
+<area shape="rect" id="node9" href="$classservio_1_1ctl_1_1control.html" title=" " alt="" coords="21,213,160,239"/>
+<area shape="rect" id="node10" href="$classservio_1_1drv_1_1clk__interface.html" title=" " alt="" coords="260,187,443,214"/>
+<area shape="rect" id="node11" title=" " alt="" coords="289,238,414,265"/>
+<area shape="rect" id="node12" title=" " alt="" coords="7,264,174,305"/>
+<area shape="rect" id="node13" href="$classservio_1_1drv_1_1current__interface.html" title=" " alt="" coords="279,289,423,331"/>
+</map>

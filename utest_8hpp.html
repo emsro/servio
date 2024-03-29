@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: src/drv/tests/utest.hpp File Reference</title>
+<title>servio: src/ftest/utest.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,7 +91,10 @@ $(document).ready(function(){initNavTree('utest_8hpp.html',''); initResizable();
 <div class="title">utest.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;emlabcpp/experimental/testing/collect.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="base_2base_8hpp_source.html">base/base.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="control_8hpp_source.html">ctl/control.hpp</a>&quot;</code><br />
+<code>#include &lt;emlabcpp/defer.h&gt;</code><br />
+<code>#include &lt;emlabcpp/experimental/testing/collect.h&gt;</code><br />
 <code>#include &lt;emlabcpp/experimental/testing/coroutine.h&gt;</code><br />
 <code>#include &lt;emlabcpp/experimental/testing/interface.h&gt;</code><br />
 <code>#include &lt;emlabcpp/experimental/testing/reactor.h&gt;</code><br />
@@ -100,7 +103,7 @@ $(document).ready(function(){initNavTree('utest_8hpp.html',''); initResizable();
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="utest_8hpp__incl.svg" width="792" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="utest_8hpp__incl.svg" width="1426" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -108,39 +111,39 @@ $(document).ready(function(){initNavTree('utest_8hpp.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1collector.html">servio::drv::tests::collector</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1collector.html">servio::ftest::collector</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1utest__base.html">servio::drv::tests::utest_base</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1utest__base.html">servio::ftest::utest_base</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1utest.html">servio::drv::tests::utest&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1utest.html">servio::ftest::utest&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceservio"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html">servio</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceservio_1_1drv"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html">servio::drv</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceservio_1_1drv_1_1tests"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html">servio::drv::tests</a></td></tr>
+<tr class="memitem:namespaceservio_1_1ftest"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html">servio::ftest</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8eca28f19c55bda027eedd598c2da42d"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#a8eca28f19c55bda027eedd598c2da42d">servio::drv::tests::store_metric</a> (em::pmr::memory_resource &amp;, collector &amp;coll, std::string_view name, auto &amp;&amp;value, std::string_view unit=&quot;&quot;)</td></tr>
-<tr class="separator:a8eca28f19c55bda027eedd598c2da42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24aaa524970b6138c2ab1294d01c8334"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#a24aaa524970b6138c2ab1294d01c8334">servio::drv::tests::store_data</a> (em::pmr::memory_resource &amp;, collector &amp;coll, std::string_view key, auto &amp;&amp;data)</td></tr>
-<tr class="separator:a24aaa524970b6138c2ab1294d01c8334"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38d4b8b48ea4855ef33c31b99f956ed1"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
-<tr class="memitem:a38d4b8b48ea4855ef33c31b99f956ed1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#a38d4b8b48ea4855ef33c31b99f956ed1">servio::drv::tests::setup_utest</a> (em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, t::collector &amp;coll, em::result &amp;res, Args &amp;&amp;... args)</td></tr>
-<tr class="separator:a38d4b8b48ea4855ef33c31b99f956ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab18de9cd5b1c78ef17ca2d05161a5f49"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#ab18de9cd5b1c78ef17ca2d05161a5f49">servio::ftest::store_metric</a> (em::pmr::memory_resource &amp;, collector &amp;coll, std::string_view name, auto &amp;&amp;value, std::string_view unit=&quot;&quot;)</td></tr>
+<tr class="separator:ab18de9cd5b1c78ef17ca2d05161a5f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dfe16db757d6a78214bea2bdb2f8d9f"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a2dfe16db757d6a78214bea2bdb2f8d9f">servio::ftest::store_data</a> (em::pmr::memory_resource &amp;, collector &amp;coll, std::string_view key, auto &amp;&amp;data)</td></tr>
+<tr class="separator:a2dfe16db757d6a78214bea2bdb2f8d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7987cf8b1ec20f510735e5435fd46931"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a7987cf8b1ec20f510735e5435fd46931">servio::ftest::setup_poweroff</a> (ctl::control &amp;ctl)</td></tr>
+<tr class="separator:a7987cf8b1ec20f510735e5435fd46931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f97f426e9aae07c3e9236ef0c7218a"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a77f97f426e9aae07c3e9236ef0c7218a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a77f97f426e9aae07c3e9236ef0c7218a">servio::ftest::setup_utest</a> (em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, t::collector &amp;coll, em::result &amp;res, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a77f97f426e9aae07c3e9236ef0c7218a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="dir_26e34818c745abafa34d6ef482a48aa2.html">tests</a></li><li class="navelem"><a class="el" href="utest_8hpp.html">utest.hpp</a></li>
-    <li class="footer">Generated on Tue Mar 26 2024 21:55:40 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="utest_8hpp.html">utest.hpp</a></li>
+    <li class="footer">Generated on Fri Mar 29 2024 10:18:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('testing__system_8hpp_source.html','');
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#afadb71d0df6b75539167d758a772a763">   31</a></span>&#160;        <a class="code" href="structservio_1_1ftest_1_1testing__system.html#afadb71d0df6b75539167d758a772a763">testing_system</a>( <a class="code" href="classservio_1_1drv_1_1com__interface.html">drv::com_interface</a>&amp; debug_comms, std::string_view name )</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;          : debug_comms( debug_comms )</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;          , reactor( em::testing::core_channel, name, send_cb() )</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          , collector( em::testing::collect_channel, send_cb() )</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          , <a class="code" href="structservio_1_1ftest_1_1collector.html">collector</a>( em::testing::collect_channel, send_cb() )</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;          , parameters( em::testing::params_channel, send_cb() )</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('testing__system_8hpp_source.html','');
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    data,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    [&amp;]( em::protocol::channel_type chid, std::span&lt; const std::byte &gt; data ) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                            <span class="keywordflow">return</span> em::protocol::multiplexed_dispatch(</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                chid, data, reactor, collector, parameters );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                chid, data, reactor, <a class="code" href="structservio_1_1ftest_1_1collector.html">collector</a>, parameters );</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    } );</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
@@ -148,7 +148,8 @@ $(document).ready(function(){initNavTree('testing__system_8hpp_source.html','');
 <div class="ttc" id="aclassservio_1_1drv_1_1com__interface_html_a5099ddd0e5914a694fd92fb0caa00410"><div class="ttname"><a href="classservio_1_1drv_1_1com__interface.html#a5099ddd0e5914a694fd92fb0caa00410">servio::drv::com_interface::load_message</a></div><div class="ttdeci">virtual com_res load_message(em::view&lt; std::byte * &gt; data)=0</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1com__interface_html_a948c1f4131201f8d1c6b6c99aa8c6599"><div class="ttname"><a href="classservio_1_1drv_1_1com__interface.html#a948c1f4131201f8d1c6b6c99aa8c6599">servio::drv::com_interface::send</a></div><div class="ttdeci">virtual em::result send(em::view&lt; const std::byte * &gt; data, base::microseconds timeout)=0</div></div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
-<div class="ttc" id="anamespaceservio_1_1ftest_html"><div class="ttname"><a href="namespaceservio_1_1ftest.html">servio::ftest</a></div><div class="ttdef"><b>Definition:</b> setup_drv.cpp:6</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftest_html"><div class="ttname"><a href="namespaceservio_1_1ftest.html">servio::ftest</a></div><div class="ttdef"><b>Definition:</b> tests.cpp:8</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1collector_html"><div class="ttname"><a href="structservio_1_1ftest_1_1collector.html">servio::ftest::collector</a></div><div class="ttdef"><b>Definition:</b> utest.hpp:21</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html">servio::ftest::testing_system</a></div><div class="ttdef"><b>Definition:</b> testing_system.hpp:16</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a32be723ba7ea665263188e8b3324c4a5"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a32be723ba7ea665263188e8b3324c4a5">servio::ftest::testing_system::send_cb</a></div><div class="ttdeci">auto send_cb()</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:23</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a39dbe14688296a9227481d3a84e13fa6"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a39dbe14688296a9227481d3a84e13fa6">servio::ftest::testing_system::tick</a></div><div class="ttdeci">void tick()</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:39</div></div>
@@ -163,7 +164,7 @@ $(document).ready(function(){initNavTree('testing__system_8hpp_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="testing__system_8hpp.html">testing_system.hpp</a></li>
-    <li class="footer">Generated on Tue Mar 26 2024 21:55:40 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 29 2024 10:18:54 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

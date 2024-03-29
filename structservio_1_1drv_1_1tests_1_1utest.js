@@ -1,7 +1,0 @@
-var structservio_1_1drv_1_1tests_1_1utest =
-[
-    [ "utest", "structservio_1_1drv_1_1tests_1_1utest.html#a19981e10e6bcfb59a1be1a22153373fb", null ],
-    [ "get_name", "structservio_1_1drv_1_1tests_1_1utest.html#ad8d7a56ac4bbf8d11f96d238cbf6fe73", null ],
-    [ "run", "structservio_1_1drv_1_1tests_1_1utest.html#a1b1425a64045028e0fa57336c12a8521", null ],
-    [ "item", "structservio_1_1drv_1_1tests_1_1utest.html#a2294a0693963f568497bbe020d44d6d2", null ]
-];
