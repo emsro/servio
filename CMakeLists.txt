@@ -88,24 +88,11 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   target_link_libraries(emlabcpp PRIVATE STM32::H5)
 
   add_subdirectory(src/plt/stm32h5)
-  add_subdirectory(src/brd/proto3)
-  add_subdirectory(src)
 
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
 
-  servio_add_board_executable(
-    TARGET proto3_fw
-    SOURCES src/fw/main.cpp src/fw/it.cpp
-    LIBS serviolib proto3_board
-    LINKER_SCRIPT
-      "${CMAKE_CURRENT_SOURCE_DIR}/src/plt/stm32h5/STM32H503xx_FLASH.ld")
-
-  servio_add_board_executable(
-    TARGET proto3_drv_ftest
-    SOURCES src/fw/it.cpp
-    LIBS serviolib ftestlib drv_testlib proto3_board
-    LINKER_SCRIPT
-      "${CMAKE_CURRENT_SOURCE_DIR}/src/plt/stm32h5/STM32H503xx_FLASH.ld")
+  add_subdirectory(src)
+  add_subdirectory(src/brd/proto3)
 
 else()
   message(WARNING "unsupported platform ${SERVIO_PLATFORM}")

@@ -16,12 +16,4 @@ else()
     SOURCES cobs_uart.cpp leds.cpp hbridge.cpp
     LIBS emlabcpp proto platform cmake_git_version_tracking
     OPTS -Os)
-
-  servio_add_library(
-    TARGET drv_testlib
-    INCLUDE ../
-    SOURCES tests/setup_drv.cpp
-    LIBS drvlib proto platform
-    OPTS -Os)
-
 endif()

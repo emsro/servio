@@ -3,7 +3,7 @@
 #include "drv/callbacks.hpp"
 #include "drv/interfaces.hpp"
 #include "drv/retainers.hpp"
-#include "drv/tests/utest.hpp"
+#include "ftest/utest.hpp"
 
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/coroutine.h>
@@ -31,7 +31,7 @@ struct clock_test
 
         std::string_view name = "clock_test";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto&, ftest::collector& coll )
         {
                 std::size_t        wait_cycles = 100;
                 base::microseconds t1          = clk.get_us();
@@ -63,11 +63,12 @@ struct clock_test
 //  - assumes that comms is connected in a way that echo goes back
 struct comms_echo_test
 {
-        clk_interface&   clk;
-        com_interface&   comms;
+        clk_interface& clk;
+        com_interface& comms;
+
         std::string_view name = "comms_echo";
 
-        t::coroutine< void > run( auto& mem, collector& coll )
+        t::coroutine< void > run( auto& mem, ftest::collector& coll )
         {
                 std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };
                 em::result                 res = comms.send( buffer, 100_ms );
@@ -94,11 +95,12 @@ struct comms_echo_test
 //  - send another message a while after it
 struct comms_timeout_test
 {
-        clk_interface&   clk;
-        com_interface&   comms;
+        clk_interface& clk;
+        com_interface& comms;
+
         std::string_view name = "comms_timeout";
 
-        t::coroutine< void > run( auto& mem, collector& coll )
+        t::coroutine< void > run( auto& mem, ftest::collector& coll )
         {
                 std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };
                 em::result                 res = comms.send( buffer, 1_us );
@@ -138,9 +140,10 @@ struct period_iface_test
 {
         clk_interface&    clk;
         period_interface& iface;
-        std::string_view  name = "period_iface";
 
-        t::coroutine< void > run( auto& mem, collector& coll )
+        std::string_view name = "period_iface";
+
+        t::coroutine< void > run( auto& mem, ftest::collector& coll )
         {
                 auto d = retain_callback( iface );
                 co_await t::expect( coll, iface.stop() == em::SUCCESS );
@@ -173,10 +176,11 @@ struct pwm_motor_test
 {
         period_interface&    period;
         pwm_motor_interface& iface;
-        std::string_view     name = "pwm_motor";
+
+        std::string_view name = "pwm_motor";
 
         auto test(
-            collector&           coll,
+            ftest::collector&    coll,
             int16_t              pwr,
             int16_t              expected,
             std::source_location src = std::source_location::current() )
@@ -186,7 +190,7 @@ struct pwm_motor_test
                 return t::expect( coll, iface.get_direction() == expected, src );
         }
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto&, ftest::collector& coll )
         {
                 co_await t::expect( coll, !iface.is_stopped() );
                 auto d = hold( period );
@@ -201,10 +205,11 @@ struct pwm_motor_test
 //  - just check that voltage is nonzero
 struct vcc_test
 {
-        vcc_interface&   iface;
+        vcc_interface& iface;
+
         std::string_view name = "vcc_test";
 
-        t::coroutine< void > run( auto& mem, collector& coll )
+        t::coroutine< void > run( auto& mem, ftest::collector& coll )
         {
                 uint32_t vcc = iface.get_vcc();
 
@@ -218,9 +223,10 @@ struct vcc_test
 struct temperature_test
 {
         temperature_interface& iface;
-        std::string_view       name = "temp_test";
 
-        t::coroutine< void > run( auto& mem, collector& coll )
+        std::string_view name = "temp_test";
+
+        t::coroutine< void > run( auto& mem, ftest::collector& coll )
         {
                 uint32_t temp = iface.get_temperature();
 
@@ -236,9 +242,10 @@ struct position_test
 {
         position_interface& iface;
         clk_interface&      clk;
-        std::string_view    name = "pos_test";
 
-        t::coroutine< void > run( auto& mem, collector& coll )
+        std::string_view name = "pos_test";
+
+        t::coroutine< void > run( auto& mem, ftest::collector& coll )
         {
 
                 em::defer d = retain_callback( iface );
@@ -263,9 +270,10 @@ struct current_iface_test
 {
         current_interface& iface;
         clk_interface&     clk;
-        std::string_view   name = "curr_test";
 
-        t::coroutine< void > run( auto& mem, collector& coll )
+        std::string_view name = "curr_test";
+
+        t::coroutine< void > run( auto& mem, ftest::collector& coll )
         {
 
                 em::defer d = retain_callback( iface );
@@ -303,15 +311,15 @@ inline void setup_interface_tests(
     current_interface&        curr,
     em::result&               res )
 {
-        setup_utest< clock_test >( mem, reac, coll, res, clk );
-        setup_utest< comms_echo_test >( mem, reac, coll, res, clk, comms );
-        setup_utest< comms_timeout_test >( mem, reac, coll, res, clk, comms );
-        setup_utest< period_iface_test >( mem, reac, coll, res, clk, period );
-        setup_utest< pwm_motor_test >( mem, reac, coll, res, period, pwm );
-        setup_utest< vcc_test >( mem, reac, coll, res, vcc );
-        setup_utest< temperature_test >( mem, reac, coll, res, temp );
-        setup_utest< position_test >( mem, reac, coll, res, pos, clk );
-        setup_utest< current_iface_test >( mem, reac, coll, res, curr, clk );
+        ftest::setup_utest< clock_test >( mem, reac, coll, res, clk );
+        ftest::setup_utest< comms_echo_test >( mem, reac, coll, res, clk, comms );
+        ftest::setup_utest< comms_timeout_test >( mem, reac, coll, res, clk, comms );
+        ftest::setup_utest< period_iface_test >( mem, reac, coll, res, clk, period );
+        ftest::setup_utest< pwm_motor_test >( mem, reac, coll, res, period, pwm );
+        ftest::setup_utest< vcc_test >( mem, reac, coll, res, vcc );
+        ftest::setup_utest< temperature_test >( mem, reac, coll, res, temp );
+        ftest::setup_utest< position_test >( mem, reac, coll, res, pos, clk );
+        ftest::setup_utest< current_iface_test >( mem, reac, coll, res, curr, clk );
 }
 
 }  // namespace servio::drv::tests

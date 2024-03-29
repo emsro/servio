@@ -1,5 +1,9 @@
 #pragma once
 
+#include "base/base.hpp"
+#include "ctl/control.hpp"
+
+#include <emlabcpp/defer.h>
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/coroutine.h>
 #include <emlabcpp/experimental/testing/interface.h>
@@ -7,10 +11,11 @@
 
 namespace em = emlabcpp;
 
-namespace servio::drv::tests
+namespace servio::ftest
 {
 
 namespace t = em::testing;
+using namespace base::literals;
 
 struct collector
 {
@@ -71,6 +76,13 @@ store_data( em::pmr::memory_resource&, collector& coll, std::string_view key, au
                 coll->append( id, b );
 }
 
+inline auto setup_poweroff( ctl::control& ctl )
+{
+        return em::defer{ [&] {
+                ctl.switch_to_power_control( 0 );
+        } };
+}
+
 template < typename T >
 struct utest : utest_base
 
@@ -109,4 +121,4 @@ void setup_utest(
             mem, reac, coll, std::forward< Args >( args )... );
 }
 
-}  // namespace servio::drv::tests
+}  // namespace servio::ftest

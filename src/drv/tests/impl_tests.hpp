@@ -5,7 +5,7 @@
 #include "drv/hbridge.hpp"
 #include "drv/interfaces.hpp"
 #include "drv/retainers.hpp"
-#include "drv/tests/utest.hpp"
+#include "ftest/utest.hpp"
 #include "sntr/test_central_sentry.hpp"
 
 #include <emlabcpp/experimental/testing/collect.h>
@@ -16,12 +16,15 @@ namespace servio::drv::tests
 
 using namespace base::literals;
 
+namespace t = em::testing;
+
 struct cobs_uart_rx_test
 {
-        clk_interface&   clk;
+        clk_interface& clk;
+
         std::string_view name = "cobs_uart_rx";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto&, ftest::collector& coll )
         {
                 sntr::test_central_sentry central;
 
@@ -36,10 +39,11 @@ struct cobs_uart_rx_test
 
 struct cobs_uart_err_test
 {
-        clk_interface&   clk;
+        clk_interface& clk;
+
         std::string_view name = "cobs_uart_err";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto&, ftest::collector& coll )
         {
                 sntr::test_central_sentry central;
                 UART_HandleTypeDef        handle;
@@ -71,7 +75,7 @@ struct hbridge_test
 {
         std::string_view name = "hbridge_test";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto&, ftest::collector& coll )
         {
                 hbridge hb{ nullptr };
                 co_await t::expect( coll, hb.setup( 1, 2 ) == nullptr );
@@ -116,9 +120,9 @@ inline void setup_impl_tests(
     em::result&               res )
 
 {
-        setup_utest< cobs_uart_rx_test >( mem, reac, coll, res, clk );
-        setup_utest< cobs_uart_err_test >( mem, reac, coll, res, clk );
-        setup_utest< hbridge_test >( mem, reac, coll, res );
+        ftest::setup_utest< cobs_uart_rx_test >( mem, reac, coll, res, clk );
+        ftest::setup_utest< cobs_uart_err_test >( mem, reac, coll, res, clk );
+        ftest::setup_utest< hbridge_test >( mem, reac, coll, res );
 }
 
 }  // namespace servio::drv::tests
