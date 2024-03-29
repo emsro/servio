@@ -13,8 +13,8 @@ var namespaceservio_1_1drv_1_1tests =
     [ "vcc_test", "structservio_1_1drv_1_1tests_1_1vcc__test.html", "structservio_1_1drv_1_1tests_1_1vcc__test" ],
     [ "temperature_test", "structservio_1_1drv_1_1tests_1_1temperature__test.html", "structservio_1_1drv_1_1tests_1_1temperature__test" ],
     [ "position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", "structservio_1_1drv_1_1tests_1_1position__test" ],
-    [ "current_iface_test", "structservio_1_1drv_1_1tests_1_1current__iface__test.html", "structservio_1_1drv_1_1tests_1_1current__iface__test" ],
+    [ "curr_iface_test", "structservio_1_1drv_1_1tests_1_1curr__iface__test.html", "structservio_1_1drv_1_1tests_1_1curr__iface__test" ],
     [ "hold", "namespaceservio_1_1drv_1_1tests.html#a510bb7381ec9be3c36a77e8794a75201", null ],
-    [ "setup_impl_tests", "namespaceservio_1_1drv_1_1tests.html#af2f455639ad71860ac355cebccc47332", null ],
-    [ "setup_interface_tests", "namespaceservio_1_1drv_1_1tests.html#afae801b344f86c3503ff37dc2b0158aa", null ]
+    [ "setup_iface_tests", "namespaceservio_1_1drv_1_1tests.html#aebf8dcac87ba52ee75df8c80a0df7f5a", null ],
+    [ "setup_impl_tests", "namespaceservio_1_1drv_1_1tests.html#af2f455639ad71860ac355cebccc47332", null ]
 ];

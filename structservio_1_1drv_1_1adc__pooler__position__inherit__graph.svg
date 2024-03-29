@@ -22,9 +22,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="14,-67.5 14,-86.5 118,-86.5 118,-67.5 14,-67.5"/>
-<text text-anchor="middle" x="66" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">position_interface</text>
+<g id="a_node2"><a xlink:href="classservio_1_1drv_1_1pos__iface.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="6,-67.5 6,-86.5 126,-86.5 126,-67.5 6,-67.5"/>
+<text text-anchor="middle" x="66" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::pos_iface</text>
 </a>
 </g>
 </g>

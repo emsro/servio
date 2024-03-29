@@ -119,7 +119,7 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1position__test.html">position_test</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1current__iface__test.html">current_iface_test</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1tests_1_1curr__iface__test.html">curr_iface_test</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -128,8 +128,8 @@ Functions</h2></td></tr>
 <tr class="separator:af2f455639ad71860ac355cebccc47332"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a510bb7381ec9be3c36a77e8794a75201"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#a510bb7381ec9be3c36a77e8794a75201">hold</a> (auto &amp;iface)</td></tr>
 <tr class="separator:a510bb7381ec9be3c36a77e8794a75201"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afae801b344f86c3503ff37dc2b0158aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#afae801b344f86c3503ff37dc2b0158aa">setup_interface_tests</a> (em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, t::collector &amp;coll, <a class="el" href="classservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;clk, <a class="el" href="classservio_1_1drv_1_1com__iface.html">com_iface</a> &amp;comms, period_interface &amp;period, pwm_motor_interface &amp;pwm, vcc_interface &amp;vcc, temperature_interface &amp;temp, position_interface &amp;pos, current_interface &amp;curr, em::result &amp;res)</td></tr>
-<tr class="separator:afae801b344f86c3503ff37dc2b0158aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebf8dcac87ba52ee75df8c80a0df7f5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1tests.html#aebf8dcac87ba52ee75df8c80a0df7f5a">setup_iface_tests</a> (em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, t::collector &amp;coll, <a class="el" href="classservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;clk, <a class="el" href="classservio_1_1drv_1_1com__iface.html">com_iface</a> &amp;comms, <a class="el" href="classservio_1_1drv_1_1period__iface.html">period_iface</a> &amp;period, <a class="el" href="classservio_1_1drv_1_1pwm__motor__iface.html">pwm_motor_iface</a> &amp;pwm, <a class="el" href="classservio_1_1drv_1_1vcc__iface.html">vcc_iface</a> &amp;vcc, <a class="el" href="classservio_1_1drv_1_1temp__iface.html">temp_iface</a> &amp;temp, <a class="el" href="classservio_1_1drv_1_1pos__iface.html">pos_iface</a> &amp;pos, <a class="el" href="classservio_1_1drv_1_1curr__iface.html">curr_iface</a> &amp;curr, em::result &amp;res)</td></tr>
+<tr class="separator:aebf8dcac87ba52ee75df8c80a0df7f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1drv_1_1tests_1_1leds__test" id="structservio_1_1drv_1_1tests_1_1leds__test"></a>
@@ -176,6 +176,102 @@ Functions</h2></td></tr>
           <td class="paramtype">auto &amp;&#160;</td>
           <td class="paramname"><em>iface</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aebf8dcac87ba52ee75df8c80a0df7f5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebf8dcac87ba52ee75df8c80a0df7f5a">&#9670;&nbsp;</a></span>setup_iface_tests()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void servio::drv::tests::setup_iface_tests </td>
+          <td>(</td>
+          <td class="paramtype">em::pmr::memory_resource &amp;&#160;</td>
+          <td class="paramname"><em>mem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">t::reactor &amp;&#160;</td>
+          <td class="paramname"><em>reac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">t::collector &amp;&#160;</td>
+          <td class="paramname"><em>coll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;&#160;</td>
+          <td class="paramname"><em>clk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1com__iface.html">com_iface</a> &amp;&#160;</td>
+          <td class="paramname"><em>comms</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1period__iface.html">period_iface</a> &amp;&#160;</td>
+          <td class="paramname"><em>period</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1pwm__motor__iface.html">pwm_motor_iface</a> &amp;&#160;</td>
+          <td class="paramname"><em>pwm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1vcc__iface.html">vcc_iface</a> &amp;&#160;</td>
+          <td class="paramname"><em>vcc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1temp__iface.html">temp_iface</a> &amp;&#160;</td>
+          <td class="paramname"><em>temp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1pos__iface.html">pos_iface</a> &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1curr__iface.html">curr_iface</a> &amp;&#160;</td>
+          <td class="paramname"><em>curr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">em::result &amp;&#160;</td>
+          <td class="paramname"><em>res</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -241,109 +337,13 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afae801b344f86c3503ff37dc2b0158aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afae801b344f86c3503ff37dc2b0158aa">&#9670;&nbsp;</a></span>setup_interface_tests()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void servio::drv::tests::setup_interface_tests </td>
-          <td>(</td>
-          <td class="paramtype">em::pmr::memory_resource &amp;&#160;</td>
-          <td class="paramname"><em>mem</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">t::reactor &amp;&#160;</td>
-          <td class="paramname"><em>reac</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">t::collector &amp;&#160;</td>
-          <td class="paramname"><em>coll</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;&#160;</td>
-          <td class="paramname"><em>clk</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1com__iface.html">com_iface</a> &amp;&#160;</td>
-          <td class="paramname"><em>comms</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">period_interface &amp;&#160;</td>
-          <td class="paramname"><em>period</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">pwm_motor_interface &amp;&#160;</td>
-          <td class="paramname"><em>pwm</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vcc_interface &amp;&#160;</td>
-          <td class="paramname"><em>vcc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">temperature_interface &amp;&#160;</td>
-          <td class="paramname"><em>temp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">position_interface &amp;&#160;</td>
-          <td class="paramname"><em>pos</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">current_interface &amp;&#160;</td>
-          <td class="paramname"><em>curr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">em::result &amp;&#160;</td>
-          <td class="paramname"><em>res</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv_1_1tests.html">tests</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:18:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Mar 29 2024 11:42:11 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

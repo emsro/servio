@@ -28,7 +28,7 @@ var searchData=
   ['converter_1063',['converter',['../structservio_1_1cnv_1_1converter.html',1,'servio::cnv']]],
   ['core_1064',['core',['../structservio_1_1core_1_1core.html',1,'servio::core']]],
   ['curr_5fiface_1065',['curr_iface',['../classservio_1_1drv_1_1curr__iface.html',1,'servio::drv']]],
-  ['current_5fcallback_1066',['current_callback',['../classservio_1_1core_1_1current__callback.html',1,'servio::core']]],
-  ['current_5fctl_5ftest_1067',['current_ctl_test',['../structservio_1_1ftest_1_1tests_1_1current__ctl__test.html',1,'servio::ftest::tests']]],
-  ['current_5fiface_5ftest_1068',['current_iface_test',['../structservio_1_1drv_1_1tests_1_1current__iface__test.html',1,'servio::drv::tests']]]
+  ['curr_5fiface_5ftest_1066',['curr_iface_test',['../structservio_1_1drv_1_1tests_1_1curr__iface__test.html',1,'servio::drv::tests']]],
+  ['current_5fcallback_1067',['current_callback',['../classservio_1_1core_1_1current__callback.html',1,'servio::core']]],
+  ['current_5fctl_5ftest_1068',['current_ctl_test',['../structservio_1_1ftest_1_1tests_1_1current__ctl__test.html',1,'servio::ftest::tests']]]
 ];

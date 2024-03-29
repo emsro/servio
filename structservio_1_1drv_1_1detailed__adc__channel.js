@@ -4,7 +4,7 @@ var structservio_1_1drv_1_1detailed__adc__channel =
     [ "period_start", "structservio_1_1drv_1_1detailed__adc__channel.html#a39a7fefb8fb21d6f6c600eead712b709", null ],
     [ "period_stop", "structservio_1_1drv_1_1detailed__adc__channel.html#af780e6e5c11f56ae70521efc5137259a", null ],
     [ "buffer", "structservio_1_1drv_1_1detailed__adc__channel.html#ad11f56dd273bd4dafc88de6dc9a91363", null ],
-    [ "callback", "structservio_1_1drv_1_1detailed__adc__channel.html#a904a30ffa397486bbfb8643c301982bc", null ],
+    [ "callback", "structservio_1_1drv_1_1detailed__adc__channel.html#a8f1914b87ea4418ae1db3c8d9c9bbd70", null ],
     [ "chconf", "structservio_1_1drv_1_1detailed__adc__channel.html#aa5a9e9d54db4b803c4488ede0bee5b4d", null ],
     [ "id", "structservio_1_1drv_1_1detailed__adc__channel.html#a24e5b39dc6623d19f69f68e993f5ea47", null ],
     [ "last_value", "structservio_1_1drv_1_1detailed__adc__channel.html#a9d54fc9b5453d429ca00fad5f1e17302", null ],

@@ -1,4 +1,6 @@
 <map id="servio::drv::value_cb_iface" name="servio::drv::value_cb_iface">
-<area shape="rect" id="node1" title=" " alt="" coords="17,5,152,47"/>
-<area shape="rect" id="node2" href="$classservio_1_1core_1_1position__callback.html" title=" " alt="" coords="5,95,164,136"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,140,112"/>
+<area shape="rect" id="node2" href="$classservio_1_1core_1_1position__callback.html" title=" " alt="" coords="188,5,347,47"/>
+<area shape="rect" id="node3" href="$structservio_1_1drv_1_1empty__value__cb.html" title=" " alt="" coords="197,71,337,112"/>
+<area shape="rect" id="node4" href="$structservio_1_1drv_1_1value__cb.html" title=" " alt="" coords="200,136,335,177"/>
 </map>
