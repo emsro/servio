@@ -16,9 +16,9 @@ struct current_ctl_test
 {
         t::parameters& params;
 
-        drv::clk_interface&       clk;
-        drv::current_interface&   curr;
-        drv::pwm_motor_interface& motor;
+        drv::clk_iface&       clk;
+        drv::curr_iface&      curr;
+        drv::pwm_motor_iface& motor;
 
         core::core& cor;
 
@@ -54,10 +54,10 @@ struct sign_test
 {
         t::parameters& params;
 
-        drv::clk_interface&       clk;
-        drv::current_interface&   curr;
-        drv::position_interface&  pos;
-        drv::pwm_motor_interface& motor;
+        drv::clk_iface&       clk;
+        drv::curr_iface&      curr;
+        drv::pos_iface&       pos;
+        drv::pwm_motor_iface& motor;
 
         core::core& cor;
 
@@ -100,10 +100,10 @@ inline void setup_ctl_test(
     t::reactor&               reac,
     t::collector&             coll,
     t::parameters&            params,
-    drv::clk_interface&       clk,
-    drv::pwm_motor_interface& motor,
-    drv::current_interface&   curr,
-    drv::position_interface&  pos,
+    drv::clk_iface&           clk,
+    drv::pwm_motor_iface&     motor,
+    drv::curr_iface&          curr,
+    drv::pos_iface&           pos,
     core::core&               cor,
     em::result&               res )
 {

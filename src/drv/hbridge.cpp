@@ -29,12 +29,12 @@ em::result hbridge::stop()
         return em::SUCCESS;
 }
 
-void hbridge::set_period_callback( period_cb_interface& cb )
+void hbridge::set_period_callback( period_cb_iface& cb )
 {
         period_cb_ = &cb;
 }
 
-period_cb_interface& hbridge::get_period_callback()
+period_cb_iface& hbridge::get_period_callback()
 {
         return *period_cb_;
 }

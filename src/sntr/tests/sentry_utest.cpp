@@ -11,7 +11,7 @@ static_assert( !std::is_move_constructible_v< sentry > );
 static_assert( !std::is_copy_assignable_v< sentry > );
 static_assert( !std::is_move_assignable_v< sentry > );
 
-struct test_clk : drv::clk_interface
+struct test_clk : drv::clk_iface
 {
         base::microseconds t{ 0 };
 

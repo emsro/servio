@@ -27,7 +27,7 @@ inline auto hold( auto& iface )
 //  - time increases
 struct clock_test
 {
-        clk_interface& clk;
+        clk_iface& clk;
 
         std::string_view name = "clock_test";
 
@@ -63,8 +63,8 @@ struct clock_test
 //  - assumes that comms is connected in a way that echo goes back
 struct comms_echo_test
 {
-        clk_interface& clk;
-        com_interface& comms;
+        clk_iface& clk;
+        com_iface& comms;
 
         std::string_view name = "comms_echo";
 
@@ -95,8 +95,8 @@ struct comms_echo_test
 //  - send another message a while after it
 struct comms_timeout_test
 {
-        clk_interface& clk;
-        com_interface& comms;
+        clk_iface& clk;
+        com_iface& comms;
 
         std::string_view name = "comms_timeout";
 
@@ -138,8 +138,8 @@ using namespace std::literals;
 //  - check that callback gets called
 struct period_iface_test
 {
-        clk_interface&    clk;
-        period_interface& iface;
+        clk_iface&    clk;
+        period_iface& iface;
 
         std::string_view name = "period_iface";
 
@@ -174,8 +174,8 @@ struct period_iface_test
 // note: force_stop not tested, which is kinda mistake but it's also hard to test :)
 struct pwm_motor_test
 {
-        period_interface&    period;
-        pwm_motor_interface& iface;
+        period_iface&    period;
+        pwm_motor_iface& iface;
 
         std::string_view name = "pwm_motor";
 
@@ -205,7 +205,7 @@ struct pwm_motor_test
 //  - just check that voltage is nonzero
 struct vcc_test
 {
-        vcc_interface& iface;
+        vcc_iface& iface;
 
         std::string_view name = "vcc_test";
 
@@ -222,7 +222,7 @@ struct vcc_test
 //  - just check that temp is nonzero
 struct temperature_test
 {
-        temperature_interface& iface;
+        temp_iface& iface;
 
         std::string_view name = "temp_test";
 
@@ -240,8 +240,8 @@ struct temperature_test
 //  - check that callback was called
 struct position_test
 {
-        position_interface& iface;
-        clk_interface&      clk;
+        pos_iface& iface;
+        clk_iface& clk;
 
         std::string_view name = "pos_test";
 
@@ -266,10 +266,10 @@ struct position_test
 
 // Test current iface
 //  - check that callback can be changed properly and that it is called
-struct current_iface_test
+struct curr_iface_test
 {
-        current_interface& iface;
-        clk_interface&     clk;
+        curr_iface& iface;
+        clk_iface&  clk;
 
         std::string_view name = "curr_test";
 
@@ -297,18 +297,18 @@ struct current_iface_test
         }
 };
 
-inline void setup_interface_tests(
+inline void setup_iface_tests(
     em::pmr::memory_resource& mem,
     t::reactor&               reac,
     t::collector&             coll,
-    clk_interface&            clk,
-    com_interface&            comms,
-    period_interface&         period,
-    pwm_motor_interface&      pwm,
-    vcc_interface&            vcc,
-    temperature_interface&    temp,
-    position_interface&       pos,
-    current_interface&        curr,
+    clk_iface&                clk,
+    com_iface&                comms,
+    period_iface&             period,
+    pwm_motor_iface&          pwm,
+    vcc_iface&                vcc,
+    temp_iface&               temp,
+    pos_iface&                pos,
+    curr_iface&               curr,
     em::result&               res )
 {
         ftest::setup_utest< clock_test >( mem, reac, coll, res, clk );
@@ -319,7 +319,7 @@ inline void setup_interface_tests(
         ftest::setup_utest< vcc_test >( mem, reac, coll, res, vcc );
         ftest::setup_utest< temperature_test >( mem, reac, coll, res, temp );
         ftest::setup_utest< position_test >( mem, reac, coll, res, pos, clk );
-        ftest::setup_utest< current_iface_test >( mem, reac, coll, res, curr, clk );
+        ftest::setup_utest< curr_iface_test >( mem, reac, coll, res, curr, clk );
 }
 
 }  // namespace servio::drv::tests

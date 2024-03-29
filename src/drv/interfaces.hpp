@@ -11,28 +11,28 @@ namespace em = emlabcpp;
 namespace servio::drv
 {
 
-class adc_detailed_cb_interface
+class detailed_cb_iface
 {
 public:
         virtual void on_value_irq( uint32_t val, std::span< uint16_t > profile ) = 0;
-        virtual ~adc_detailed_cb_interface()                                     = default;
+        virtual ~detailed_cb_iface()                                             = default;
 };
 
-class value_cb_interface
+class value_cb_iface
 {
 public:
         virtual void on_value_irq( uint32_t val ) = 0;
-        virtual ~value_cb_interface()             = default;
+        virtual ~value_cb_iface()                 = default;
 };
 
-using current_cb_interface  = adc_detailed_cb_interface;
-using position_cb_interface = value_cb_interface;
+using current_cb_iface  = detailed_cb_iface;
+using position_cb_iface = value_cb_iface;
 
-class period_cb_interface
+class period_cb_iface
 {
 public:
-        virtual void on_period_irq()   = 0;
-        virtual ~period_cb_interface() = default;
+        virtual void on_period_irq() = 0;
+        virtual ~period_cb_iface()   = default;
 };
 
 struct com_res
@@ -46,88 +46,88 @@ struct com_res
         }
 };
 
-class com_interface
+class com_iface
 {
 public:
         virtual em::result start() = 0;
         virtual em::result
                         send( em::view< const std::byte* > data, base::microseconds timeout ) = 0;
         virtual com_res load_message( em::view< std::byte* > data )                           = 0;
-        virtual ~com_interface() = default;
+        virtual ~com_iface() = default;
 };
 
-class leds_interface
+class leds_iface
 {
 public:
         virtual void force_red_led()                       = 0;
         virtual void update( const base::leds_vals& leds ) = 0;
-        virtual ~leds_interface()                          = default;
+        virtual ~leds_iface()                              = default;
 };
 
-class clk_interface
+class clk_iface
 {
 public:
         virtual base::microseconds get_us() = 0;
-        virtual ~clk_interface()            = default;
+        virtual ~clk_iface()                = default;
 };
 
-inline void wait_for( clk_interface& clk, base::microseconds ms )
+inline void wait_for( clk_iface& clk, base::microseconds ms )
 {
         base::microseconds end = clk.get_us() + ms;
         while ( clk.get_us() < end )
                 asm( "nop" );
 }
 
-class period_interface
+class period_iface
 {
 public:
-        virtual em::result           start()                                     = 0;
-        virtual em::result           stop()                                      = 0;
-        virtual void                 set_period_callback( period_cb_interface& ) = 0;
-        virtual period_cb_interface& get_period_callback()                       = 0;
-        virtual ~period_interface()                                              = default;
+        virtual em::result       start()                                 = 0;
+        virtual em::result       stop()                                  = 0;
+        virtual void             set_period_callback( period_cb_iface& ) = 0;
+        virtual period_cb_iface& get_period_callback()                   = 0;
+        virtual ~period_iface()                                          = default;
 };
 
-class pwm_motor_interface
+class pwm_motor_iface
 {
 public:
         virtual void   force_stop()          = 0;
         virtual bool   is_stopped() const    = 0;
         virtual void   set_power( int16_t )  = 0;
         virtual int8_t get_direction() const = 0;
-        virtual ~pwm_motor_interface()       = default;
+        virtual ~pwm_motor_iface()           = default;
 };
 
-class position_interface
+class pos_iface
 {
 public:
-        virtual uint32_t               get_position() const                            = 0;
-        virtual void                   set_position_callback( position_cb_interface& ) = 0;
-        virtual position_cb_interface& get_position_callback() const                   = 0;
-        virtual ~position_interface()                                                  = default;
+        virtual uint32_t           get_position() const                        = 0;
+        virtual void               set_position_callback( position_cb_iface& ) = 0;
+        virtual position_cb_iface& get_position_callback() const               = 0;
+        virtual ~pos_iface()                                                   = default;
 };
 
-class vcc_interface
+class vcc_iface
 {
 public:
         virtual uint32_t get_vcc() const = 0;
-        virtual ~vcc_interface()         = default;
+        virtual ~vcc_iface()             = default;
 };
 
-class temperature_interface
+class temp_iface
 {
 public:
         virtual uint32_t get_temperature() const = 0;
-        virtual ~temperature_interface()         = default;
+        virtual ~temp_iface()                    = default;
 };
 
-class current_interface
+class curr_iface
 {
 public:
-        virtual uint32_t              get_current() const                           = 0;
-        virtual void                  set_current_callback( current_cb_interface& ) = 0;
-        virtual current_cb_interface& get_current_callback() const                  = 0;
-        virtual ~current_interface()                                                = default;
+        virtual uint32_t          get_current() const                       = 0;
+        virtual void              set_current_callback( current_cb_iface& ) = 0;
+        virtual current_cb_iface& get_current_callback() const              = 0;
+        virtual ~curr_iface()                                               = default;
 };
 
 }  // namespace servio::drv

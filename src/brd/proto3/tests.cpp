@@ -17,7 +17,7 @@ void setup_tests(
     em::result&               res )
 
 {
-        drv::tests::setup_interface_tests(
+        drv::tests::setup_iface_tests(
             mem,
             reac,
             coll,

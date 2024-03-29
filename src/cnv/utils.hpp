@@ -6,20 +6,18 @@
 namespace servio::cnv
 {
 inline float
-current( const converter& conv, uint32_t raw_current, const drv::pwm_motor_interface& motor )
+current( const converter& conv, uint32_t raw_current, const drv::pwm_motor_iface& motor )
 {
         return conv.current.convert( raw_current ) * static_cast< float >( motor.get_direction() );
 }
 
-inline float current(
-    const converter&                conv,
-    const drv::current_interface&   curr_drv,
-    const drv::pwm_motor_interface& motor )
+inline float
+current( const converter& conv, const drv::curr_iface& curr_drv, const drv::pwm_motor_iface& motor )
 {
         return current( conv, curr_drv.get_current(), motor );
 }
 
-inline float position( const converter& conv, const drv::position_interface& pos_drv )
+inline float position( const converter& conv, const drv::pos_iface& pos_drv )
 {
         return conv.position.convert( pos_drv.get_position() );
 }

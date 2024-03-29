@@ -14,7 +14,7 @@ using namespace base::literals;
 
 struct testing_system
 {
-        drv::com_interface& debug_comms;
+        drv::com_iface& debug_comms;
 
         em::testing::reactor    reactor;
         em::testing::collector  collector;
@@ -28,7 +28,7 @@ struct testing_system
                 };
         }
 
-        testing_system( drv::com_interface& debug_comms, std::string_view name )
+        testing_system( drv::com_iface& debug_comms, std::string_view name )
           : debug_comms( debug_comms )
           , reactor( em::testing::core_channel, name, send_cb() )
           , collector( em::testing::collect_channel, send_cb() )

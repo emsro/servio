@@ -32,7 +32,7 @@ struct adc_set
 };
 
 template < auto& AdcPooler >
-struct adc_pooler_period_cb : period_cb_interface
+struct adc_pooler_period_cb : period_cb_iface
 {
         void on_period_irq() override
         {
@@ -41,7 +41,7 @@ struct adc_pooler_period_cb : period_cb_interface
 };
 
 template < auto& AdcPooler >
-struct adc_pooler_vcc : vcc_interface
+struct adc_pooler_vcc : vcc_iface
 {
         uint32_t get_vcc() const override
         {
@@ -50,7 +50,7 @@ struct adc_pooler_vcc : vcc_interface
 };
 
 template < auto& AdcPooler >
-struct adc_pooler_temperature : temperature_interface
+struct adc_pooler_temperature : temp_iface
 {
         uint32_t get_temperature() const override
         {
@@ -59,38 +59,38 @@ struct adc_pooler_temperature : temperature_interface
 };
 
 template < auto& AdcPooler >
-struct adc_pooler_position : position_interface
+struct adc_pooler_position : pos_iface
 {
         uint32_t get_position() const override
         {
                 return AdcPooler->position.last_value;
         }
 
-        void set_position_callback( position_cb_interface& cb ) override
+        void set_position_callback( position_cb_iface& cb ) override
         {
                 AdcPooler->position.callback = &cb;
         }
 
-        position_cb_interface& get_position_callback() const override
+        position_cb_iface& get_position_callback() const override
         {
                 return *AdcPooler->position.callback;
         }
 };
 
 template < auto& AdcPooler >
-struct adc_pooler_current : current_interface
+struct adc_pooler_current : curr_iface
 {
         uint32_t get_current() const override
         {
                 return AdcPooler->current.last_value;
         }
 
-        void set_current_callback( current_cb_interface& cb ) override
+        void set_current_callback( current_cb_iface& cb ) override
         {
                 AdcPooler->current.callback = &cb;
         }
 
-        current_cb_interface& get_current_callback() const override
+        current_cb_iface& get_current_callback() const override
         {
                 return *AdcPooler->current.callback;
         }

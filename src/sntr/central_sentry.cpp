@@ -21,7 +21,7 @@ namespace
 }  // namespace
 
 central_sentry::central_sentry(
-    drv::clk_interface&         clk,
+    drv::clk_iface&             clk,
     std::span< record >         inop_buffer,
     std::span< record >         degr_buffer,
     em::function_view< void() > stop_callback )

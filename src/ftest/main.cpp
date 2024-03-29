@@ -14,7 +14,7 @@ int main()
 
         fw::context ctx = fw::setup_context();
 
-        drv::com_interface* dbg_comms = brd::setup_debug_comms();
+        drv::com_iface* dbg_comms = brd::setup_debug_comms();
         if ( dbg_comms == nullptr || dbg_comms->start() != em::SUCCESS )
                 fw::stop_exec();
 

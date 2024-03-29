@@ -30,9 +30,9 @@ struct detailed_adc_channel
         alignas( uint32_t ) uint16_t buffer[N];
         std::size_t used;
 
-        uint32_t                   last_value;
-        ADC_ChannelConfTypeDef     chconf   = {};
-        adc_detailed_cb_interface* callback = &EMPTY_ADC_DETAILED_CALLBACK;
+        uint32_t               last_value;
+        ADC_ChannelConfTypeDef chconf   = {};
+        detailed_cb_iface*     callback = &EMPTY_ADC_DETAILED_CALLBACK;
 
         [[gnu::flatten]] void period_start( ADC_HandleTypeDef& h )
         {
@@ -108,7 +108,7 @@ struct adc_channel_with_callback : adc_channel< ID >
         {
         }
 
-        value_cb_interface* callback = &EMPTY_ADC_CALLBACK;
+        value_cb_iface* callback = &EMPTY_ADC_CALLBACK;
 
         [[gnu::flatten]] void conv_cplt( ADC_HandleTypeDef& h )
         {

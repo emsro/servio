@@ -16,7 +16,7 @@ class central_sentry : public central_sentry_iface
 {
 public:
         central_sentry(
-            drv::clk_interface&         clk,
+            drv::clk_iface&             clk,
             std::span< record >         inop_buffer,
             std::span< record >         degr_buffer,
             em::function_view< void() > stop_callback );
@@ -45,7 +45,7 @@ private:
 
         bool is_inoperable_ = false;
 
-        drv::clk_interface&         clk_;
+        drv::clk_iface&             clk_;
         std::span< record >         inop_buffer_;
         std::span< record >         degr_buffer_;
         em::function_view< void() > stop_callback_;

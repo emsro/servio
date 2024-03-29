@@ -15,10 +15,10 @@ struct meas_cur_test
 {
         t::parameters& params;
 
-        drv::clk_interface&       clk;
-        drv::current_interface&   curr;
-        drv::pwm_motor_interface& motor;
-        core::core&               cor;
+        drv::clk_iface&       clk;
+        drv::curr_iface&      curr;
+        drv::pwm_motor_iface& motor;
+        core::core&           cor;
 
         std::string_view name = "measure_current";
 
@@ -58,10 +58,10 @@ struct meas_pos_test
 {
         t::parameters& params;
 
-        drv::clk_interface&       clk;
-        drv::current_interface&   curr;
-        drv::pwm_motor_interface& motor;
-        core::core&               cor;
+        drv::clk_iface&       clk;
+        drv::curr_iface&      curr;
+        drv::pwm_motor_iface& motor;
+        core::core&           cor;
 
         std::string_view name = "measure_position";
 
@@ -94,10 +94,10 @@ struct meas_vel_test
 {
         t::parameters& params;
 
-        drv::clk_interface&       clk;
-        drv::current_interface&   curr;
-        drv::pwm_motor_interface& motor;
-        core::core&               cor;
+        drv::clk_iface&       clk;
+        drv::curr_iface&      curr;
+        drv::pwm_motor_iface& motor;
+        core::core&           cor;
 
         std::string_view name = "measure_vel";
 
@@ -136,9 +136,9 @@ inline void setup_meas_tests(
     t::reactor&               reac,
     t::collector&             coll,
     t::parameters&            params,
-    drv::clk_interface&       clk,
-    drv::pwm_motor_interface& motor,
-    drv::current_interface&   curr,
+    drv::clk_iface&           clk,
+    drv::pwm_motor_iface&     motor,
+    drv::curr_iface&          curr,
     core::core&               cor,
     em::result&               res )
 {

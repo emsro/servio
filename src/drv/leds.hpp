@@ -13,7 +13,7 @@ namespace em = emlabcpp;
 namespace servio::drv
 {
 
-class leds : public leds_interface
+class leds : public leds_iface
 {
 public:
         leds( TIM_HandleTypeDef* tim )

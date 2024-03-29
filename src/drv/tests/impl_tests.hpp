@@ -20,7 +20,7 @@ namespace t = em::testing;
 
 struct cobs_uart_rx_test
 {
-        clk_interface& clk;
+        clk_iface& clk;
 
         std::string_view name = "cobs_uart_rx";
 
@@ -39,7 +39,7 @@ struct cobs_uart_rx_test
 
 struct cobs_uart_err_test
 {
-        clk_interface& clk;
+        clk_iface& clk;
 
         std::string_view name = "cobs_uart_err";
 
@@ -116,7 +116,7 @@ inline void setup_impl_tests(
     em::pmr::memory_resource& mem,
     t::reactor&               reac,
     t::collector&             coll,
-    clk_interface&            clk,
+    clk_iface&                clk,
     em::result&               res )
 
 {

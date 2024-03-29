@@ -9,7 +9,7 @@ namespace em = emlabcpp;
 namespace servio::drv
 {
 
-inline auto retain_callback( period_interface& period )
+inline auto retain_callback( period_iface& period )
 {
         auto initial_cb_ptr = &period.get_period_callback();
         return em::defer{ [initial_cb_ptr, period_ptr = &period] {
@@ -17,7 +17,7 @@ inline auto retain_callback( period_interface& period )
         } };
 }
 
-inline auto retain_callback( current_interface& curr_drv )
+inline auto retain_callback( curr_iface& curr_drv )
 {
         auto initial_cb_ptr = &curr_drv.get_current_callback();
         return em::defer{ [initial_cb_ptr, curr_ptr = &curr_drv]() mutable {
@@ -25,7 +25,7 @@ inline auto retain_callback( current_interface& curr_drv )
         } };
 }
 
-inline auto retain_callback( position_interface& pos_drv )
+inline auto retain_callback( pos_iface& pos_drv )
 {
         auto initial_cb_ptr = &pos_drv.get_position_callback();
         return em::defer{ [initial_cb_ptr, pos_ptr = &pos_drv]() mutable {

@@ -20,14 +20,14 @@ enum cobs_error_codes
         COBS_HAL_RX_START_ERR  = 0x2
 };
 
-class cobs_uart : public com_interface
+class cobs_uart : public com_iface
 {
 
 public:
         cobs_uart(
             const char*                 id,
             sntr::central_sentry_iface& central,
-            clk_interface&              clk,
+            clk_iface&                  clk,
             UART_HandleTypeDef*         uart,
             DMA_HandleTypeDef*          tx_dma );
 
@@ -51,8 +51,8 @@ public:
             HAL_UART_ERROR_ORE | HAL_UART_ERROR_DMA | HAL_UART_ERROR_FE | HAL_UART_ERROR_NE;
 
 private:
-        sntr::sentry   sentry_;
-        clk_interface& clk_;
+        sntr::sentry sentry_;
+        clk_iface&   clk_;
 
         UART_HandleTypeDef* uart_   = nullptr;
         DMA_HandleTypeDef*  tx_dma_ = nullptr;
@@ -67,7 +67,7 @@ private:
 inline cobs_uart::cobs_uart(
     const char*                 id,
     sntr::central_sentry_iface& central,
-    clk_interface&              clk,
+    clk_iface&                  clk,
     UART_HandleTypeDef*         uart,
     DMA_HandleTypeDef*          tx_dma )
   : sentry_( id, central )

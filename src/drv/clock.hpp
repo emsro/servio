@@ -9,7 +9,7 @@
 namespace servio::drv
 {
 
-class clock : public clk_interface
+class clock : public clk_iface
 {
 public:
         clock( TIM_HandleTypeDef& tim )

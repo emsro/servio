@@ -4,10 +4,8 @@
 
 namespace servio::fw
 {
-inline void install_stop_callback(
-    auto&                     target,
-    drv::pwm_motor_interface& motor,
-    drv::leds_interface*      leds_ptr )
+inline void
+install_stop_callback( auto& target, drv::pwm_motor_iface& motor, drv::leds_iface* leds_ptr )
 {
         target = [&motor, leds_ptr] {
                 motor.force_stop();

@@ -261,7 +261,7 @@ drv::cobs_uart* comms_setup()
         return &COMMS;
 }
 
-drv::com_interface* setup_debug_comms()
+drv::com_iface* setup_debug_comms()
 {
         __HAL_RCC_DMA1_CLK_ENABLE();
         __HAL_RCC_DMAMUX1_CLK_ENABLE();

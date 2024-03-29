@@ -11,16 +11,17 @@ namespace em = emlabcpp;
 
 struct drivers
 {
-        drv::clk_interface*                         clock;
-        drv::position_interface*                    position;
-        drv::current_interface*                     current;
-        drv::vcc_interface*                         vcc;
-        drv::temperature_interface*                 temperature;
-        drv::period_cb_interface*                   period_cb;  // TODO: maybe imrpove naming here?
-        drv::pwm_motor_interface*                   motor;
-        drv::period_interface*                      period;
-        drv::com_interface*                         comms;
-        drv::leds_interface*                        leds;
+        drv::clk_iface*       clock;
+        drv::pos_iface*       position;
+        drv::curr_iface*      current;
+        drv::vcc_iface*       vcc;
+        drv::temp_iface*      temperature;
+        drv::period_cb_iface* period_cb;  // TODO: maybe imrpove naming here?
+        drv::pwm_motor_iface* motor;
+        drv::period_iface*    period;
+        drv::com_iface*       comms;
+        drv::leds_iface*      leds;
+
         em::function_view< em::result( drivers& ) > start_cb;
 
         auto tie()

@@ -70,15 +70,15 @@ Mode get_mode( const ctl::control& ctl )
 }
 
 ServioToHost handle_get_property(
-    const ctl::control&               ctl,
-    const mtr::metrics&               met,
-    const cnv::converter&             conv,
-    const drv::position_interface&    pos_drv,
-    const drv::current_interface&     curr_drv,
-    const drv::vcc_interface&         vcc_drv,
-    const drv::temperature_interface& temp_drv,
-    const drv::pwm_motor_interface&   motor,
-    const GetProperty&                msg )
+    const ctl::control&         ctl,
+    const mtr::metrics&         met,
+    const cnv::converter&       conv,
+    const drv::pos_iface&       pos_drv,
+    const drv::curr_iface&      curr_drv,
+    const drv::vcc_iface&       vcc_drv,
+    const drv::temp_iface&      temp_drv,
+    const drv::pwm_motor_iface& motor,
+    const GetProperty&          msg )
 {
         Property prop;
         prop.which_pld = static_cast< pb_size_t >( msg.field_id );
