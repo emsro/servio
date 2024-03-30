@@ -74,6 +74,8 @@ em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cf
 void       setup_adc_channel( ADC_ChannelConfTypeDef& channel, drv::pinch_cfg cfg );
 em::result setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 
+em::result setup_dac( DAC_HandleTypeDef& dac, const drv::pin_cfg& cfg );
+
 em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg );
 
 em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg );

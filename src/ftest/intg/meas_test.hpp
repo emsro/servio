@@ -22,7 +22,7 @@ struct meas_cur_test
 
         std::string_view name = "measure_current";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto&, uctx& ctx )
         {
                 if ( co_await is_powerless( params ) )
                         co_await t::skip();
@@ -32,22 +32,22 @@ struct meas_cur_test
                 drv::empty_current_cb ccb;
                 curr.set_current_callback( ccb );
 
-                motor.set_power( std::numeric_limits< int16_t >::max() / 4 );
+                motor.set_power( -std::numeric_limits< int16_t >::max() / 2 );
 
                 t::node_id dnid =
-                    co_await coll->set( "data", em::contiguous_container_type::ARRAY );
+                    co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
                 t::node_id tnid =
-                    co_await coll->set( "time", em::contiguous_container_type::ARRAY );
+                    co_await ctx.coll.set( "time", em::contiguous_container_type::ARRAY );
 
-                base::microseconds start = clk.get_us();
-
-                static constexpr std::size_t iters = 1000;
+                static constexpr std::size_t iters = 50;
                 float                        sum   = 0;
                 for ( std::size_t i = 0; i < iters; i++ ) {
                         float current = cnv::current( cor.conv, curr, motor );
                         sum += current;
-                        coll->append( dnid, current );
-                        coll->append( tnid, std::chrono::microseconds{ clk.get_us() } );
+                        // coll->append( dnid, current );
+                        ctx.coll.append( dnid, curr.get_current() );
+                        ctx.coll.append( tnid, std::chrono::microseconds{ clk.get_us() } );
+                        drv::wait_for( clk, 10_ms );
                 }
                 co_await t::expect( !em::almost_equal( sum / iters, 0.f, 0.01f ) );
                 motor.set_power( 0 );
@@ -65,7 +65,7 @@ struct meas_pos_test
 
         std::string_view name = "measure_position";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto&, uctx& ctx )
         {
                 if ( co_await is_powerless( params ) )
                         co_await t::skip();
@@ -85,8 +85,8 @@ struct meas_pos_test
 
                 float expected_angle_change = 0.f;
                 co_await t::expect( std::abs( start - end ) > expected_angle_change );
-                coll->set( "pos1", start );
-                coll->set( "pos2", end );
+                ctx.coll.set( "pos1", start );
+                ctx.coll.set( "pos2", end );
         }
 };
 
@@ -101,7 +101,7 @@ struct meas_vel_test
 
         std::string_view name = "measure_vel";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto&, uctx& ctx )
         {
                 if ( co_await is_powerless( params ) )
                         co_await t::skip();
@@ -111,15 +111,16 @@ struct meas_vel_test
                 drv::empty_current_cb ccb;
                 curr.set_current_callback( ccb );
 
-                t::node_id nid = co_await coll->set( "data", em::contiguous_container_type::ARRAY );
-                float      sum = 0.f;
+                t::node_id nid =
+                    co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
+                float       sum          = 0.f;
                 std::size_t measurements = 1024u;
 
                 motor.set_power( std::numeric_limits< int16_t >::max() / 2 );
 
                 for ( std::size_t i = 0; i < measurements; i++ ) {
                         float vel = cor.met.get_velocity();
-                        coll->append( nid, vel );
+                        ctx.coll.append( nid, vel );
                         sum += vel;
                 }
 
@@ -127,14 +128,14 @@ struct meas_vel_test
 
                 float average_velocity = sum / static_cast< float >( measurements );
                 co_await t::expect( !em::almost_equal( average_velocity, 0.f, 0.05f ) );
-                coll->set( "average velocity", average_velocity );
+                ctx.coll.set( "average velocity", average_velocity );
         }
 };
 
 inline void setup_meas_tests(
     em::pmr::memory_resource& mem,
     t::reactor&               reac,
-    t::collector&             coll,
+    uctx&                     ctx,
     t::parameters&            params,
     drv::clk_iface&           clk,
     drv::pwm_motor_iface&     motor,
@@ -142,9 +143,9 @@ inline void setup_meas_tests(
     core::core&               cor,
     em::result&               res )
 {
-        setup_utest< meas_vel_test >( mem, reac, coll, res, params, clk, curr, motor, cor );
-        setup_utest< meas_pos_test >( mem, reac, coll, res, params, clk, curr, motor, cor );
-        setup_utest< meas_cur_test >( mem, reac, coll, res, params, clk, curr, motor, cor );
+        setup_utest< meas_vel_test >( mem, reac, ctx, res, params, clk, curr, motor, cor );
+        setup_utest< meas_pos_test >( mem, reac, ctx, res, params, clk, curr, motor, cor );
+        setup_utest< meas_cur_test >( mem, reac, ctx, res, params, clk, curr, motor, cor );
 }
 
 }  // namespace servio::ftest::tests

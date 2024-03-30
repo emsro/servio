@@ -1,5 +1,6 @@
 #include "brd.hpp"
 #include "cfg/default.hpp"
+#include "cnv/setup.hpp"
 #include "core/drivers.hpp"
 #include "core/globals.hpp"
 #include "drv/adc_pooler_def.hpp"
@@ -51,6 +52,7 @@ drv::adc_pooler_temperature< ADC_POOLER > ADC_TEMPERATURE;
 drv::adc_pooler_position< ADC_POOLER >    ADC_POSITION;
 drv::adc_pooler_current< ADC_POOLER >     ADC_CURRENT;
 
+DAC_HandleTypeDef  DAC_HANDLE{};
 UART_HandleTypeDef UART2_HANDLE{};
 DMA_HandleTypeDef  UART2_DMA_HANDLE{};
 drv::cobs_uart     COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART2_HANDLE, &UART2_DMA_HANDLE };
@@ -213,7 +215,7 @@ drv::hbridge* hbridge_setup()
         __HAL_RCC_GPIOB_CLK_ENABLE();
         plt::hb_timer_cfg cfg{
             .timer_instance = TIM1,
-            .period         = std::numeric_limits< uint16_t >::max() / 8,
+            .period         = std::numeric_limits< uint16_t >::max() / 2,
             .irq            = TIM1_UP_IRQn,
             .irq_priority   = 1,
             .mc1 =
@@ -358,9 +360,8 @@ drv::leds* leds_setup()
 
 em::result start_callback( core::drivers& cdrv )
 {
-
         if ( cdrv.position != nullptr ) {
-                // this implies that adc_poolerition is OK
+                // this implies that adc_pooleri initialization is OK
                 if ( ADC_POOLER.start() != em::SUCCESS )
                         return em::ERROR;
         }
@@ -377,6 +378,18 @@ em::result start_callback( core::drivers& cdrv )
                         return em::ERROR;
         }
 
+        if ( HAL_DAC_Start( &DAC_HANDLE, DAC_CHANNEL_1 ) != HAL_OK )
+                return em::ERROR;
+
+        // TODO: it would kinda be better if during stop callback we would
+        // set this to `0` - disables hbridge
+        // or maybe during disengage too :)
+        if ( HAL_DAC_SetValue( &DAC_HANDLE, DAC_CHANNEL_1, DAC_ALIGN_8B_R, 255 ) != HAL_OK )
+                return em::ERROR;
+
+        if ( HAL_ICACHE_Enable() != HAL_OK )
+                return em::ERROR;
+
         return em::SUCCESS;
 }
 
@@ -392,6 +405,12 @@ core::drivers setup_core_drivers()
 {
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != em::SUCCESS )
+                fw::stop_exec();
+
+        __HAL_RCC_DAC1_CLK_ENABLE();
+        __HAL_RCC_GPIOA_CLK_ENABLE();
+        if ( plt::setup_dac( DAC_HANDLE, drv::pin_cfg{ .pin = GPIO_PIN_4, .port = GPIOA } ) !=
+             em::SUCCESS )
                 fw::stop_exec();
 
         drv::hbridge* hb = hbridge_setup();
@@ -416,9 +435,24 @@ core::drivers setup_core_drivers()
         };
 }
 
+consteval cnv::off_scale get_curr_coeff()
+{
+        // mirror scale: 1575 uA/A
+        // resistor: 1k
+        constexpr float gain = 1'575.F / 1'000'000.F;
+        return cnv::calc_current_conversion( 3.3F, 0.0F, 1 << 12, 1'000, gain );
+}
+
 cfg::map get_default_config()
 {
-        return plt::get_default_config();
+        cfg::map m = plt::get_default_config();
+
+        const cnv::off_scale curr_cfg = get_curr_coeff();
+
+        m.set_val< cfg::key::CURRENT_CONV_SCALE >( curr_cfg.scale );
+        m.set_val< cfg::key::CURRENT_CONV_OFFSET >( curr_cfg.offset );
+
+        return m;
 }
 
 // TODO: this needs better placement

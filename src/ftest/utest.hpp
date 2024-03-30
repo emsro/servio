@@ -17,63 +17,62 @@ namespace servio::ftest
 namespace t = em::testing;
 using namespace base::literals;
 
-struct collector
+struct uctx
 {
         t::collector& coll;
-        t::node_id    met_id;
+        t::node_id    met_id;  // TODO: this prevents pararell execution
 
-        collector( t::collector& coll )
+        em::function_view< void( std::span< const std::byte > ) > record;
+
+        uctx( t::collector& coll, em::function_view< void( std::span< const std::byte > ) > record )
           : coll( coll )
+          , record( record )
         {
         }
 
-        operator t::collector&()
+        auto expect( bool expr, std::source_location sl = std::source_location::current() )
         {
-                return coll;
-        }
-
-        t::collector* operator->()
-        {
-                return &coll;
+                return t::expect( coll, expr, sl );
         }
 };
 
 struct utest_base : t::test_interface
 {
-        collector coll;
+        uctx& ctx;
 
-        utest_base( t::collector& coll )
-          : coll( coll )
+        utest_base( uctx& ctx )
+          : ctx( ctx )
         {
         }
 
         t::coroutine< void > setup( em::pmr::memory_resource& ) override
         {
-                coll.met_id = co_await coll->set( "metrics", em::contiguous_container_type::ARRAY );
+                ctx.met_id =
+                    co_await ctx.coll.set( "metrics", em::contiguous_container_type::ARRAY );
         }
 };
 
 t::coroutine< void > store_metric(
     em::pmr::memory_resource&,
-    collector&       coll,
+    uctx&            ctx,
     std::string_view name,
     auto&&           value,
     std::string_view unit = "" )
 
 {
         em::testing::node_id id =
-            co_await coll->append( coll.met_id, em::contiguous_container_type::OBJECT );
-        coll->set( id, "name", name );
-        coll->set( id, "unit", unit );
-        coll->set( id, "value", value );
+            co_await ctx.coll.append( ctx.met_id, em::contiguous_container_type::OBJECT );
+        ctx.coll.set( id, "name", name );
+        ctx.coll.set( id, "unit", unit );
+        ctx.coll.set( id, "value", value );
 }
 
 t::coroutine< void >
-store_data( em::pmr::memory_resource&, collector& coll, std::string_view key, auto&& data )
+store_data( em::pmr::memory_resource&, uctx& ctx, std::string_view key, auto&& data )
 {
-        auto id = co_await coll->set( key, em::contiguous_container_type::ARRAY );
+        auto id = co_await ctx.coll.set( key, em::contiguous_container_type::ARRAY );
         for ( auto b : data )
-                coll->append( id, b );
+                ctx.coll.append( id, b );
 }
 
 inline auto setup_poweroff( ctl::control& ctl )
@@ -90,8 +89,8 @@ struct utest : utest_base
         T item;
 
         template < typename... Args >
-        utest( t::collector& coll, Args&&... args )
-          : utest_base( coll )
+        utest( uctx& ctx, Args&&... args )
+          : utest_base( ctx )
           , item( std::forward< Args >( args )... )
         {
         }
@@ -103,22 +102,21 @@ struct utest : utest_base
 
         t::coroutine< void > run( em::pmr::memory_resource& mem ) override
         {
-                return item.run( mem, coll );
+                return item.run( mem, ctx );
         }
 };
 
 template < typename T, typename... Args >
 void setup_utest(
     em::pmr::memory_resource& mem,
-    t::reactor&               reac,
-    t::collector&             coll,
+    t::reactor&               r,
+    uctx&                     ctx,
     em::result&               res,
     Args&&... args )
 {
         if ( res != em::SUCCESS )
                 return;
-        res = t::construct_test_unit< utest< T > >(
-            mem, reac, coll, std::forward< Args >( args )... );
+        res = t::construct_test_unit< utest< T > >( mem, r, ctx, std::forward< Args >( args )... );
 }
 
 }  // namespace servio::ftest

@@ -46,27 +46,31 @@ struct com_res
         }
 };
 
-class com_iface
+struct com_iface
 {
-public:
         virtual em::result start() = 0;
-        virtual em::result
-                        send( em::view< const std::byte* > data, base::microseconds timeout ) = 0;
-        virtual com_res load_message( em::view< std::byte* > data )                           = 0;
-        virtual ~com_iface() = default;
+        virtual em::result send(
+            std::span< const std::span< const std::byte > > data,
+            base::microseconds                              timeout )                    = 0;
+        virtual com_res recv( std::span< std::byte > data ) = 0;
+        virtual ~com_iface()                                = default;
 };
 
-class leds_iface
+em::result send( com_iface& iface, base::microseconds timeout, auto&... data )
 {
-public:
+        std::array< std::span< const std::byte >, sizeof...( data ) > b{ data... };
+        return iface.send( b, timeout );
+}
+
+struct leds_iface
+{
         virtual void force_red_led()                       = 0;
         virtual void update( const base::leds_vals& leds ) = 0;
         virtual ~leds_iface()                              = default;
 };
 
-class clk_iface
+struct clk_iface
 {
-public:
         virtual base::microseconds get_us() = 0;
         virtual ~clk_iface()                = default;
 };

@@ -2,6 +2,7 @@
 
 #include "core/core.hpp"
 #include "core/drivers.hpp"
+#include "ftest/utest.hpp"
 
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/parameters.h>
@@ -15,7 +16,7 @@ namespace servio::ftest
 void setup_tests(
     em::pmr::memory_resource& mem,
     em::testing::reactor&     reac,
-    em::testing::collector&   coll,
+    uctx&                     ctx,
     em::testing::parameters&  params,
     core::drivers&            cdrv,
     core::core&               core,

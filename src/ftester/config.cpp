@@ -20,6 +20,8 @@ config get_config( int argc, char* argv[] )
         scmdio::powerless_flag( app, cfg.powerless );
         CLI::Option* ocfg = ocfg_opt( app, cfg.openocd_config );
         firmware_opt( app, cfg.firmware, ocfg );
+        app.add_option( "--filter", cfg.filter, "Filter for tests" );
+
         try {
                 app.parse( argc, argv );
         }

@@ -31,17 +31,17 @@ struct clock_test
 
         std::string_view name = "clock_test";
 
-        t::coroutine< void > run( auto&, ftest::collector& coll )
+        t::coroutine< void > run( auto&, ftest::uctx& ctx )
         {
                 std::size_t        wait_cycles = 100;
                 base::microseconds t1          = clk.get_us();
                 for ( std::size_t i = 0; i < wait_cycles; i++ )
                         asm( "nop" );
                 base::microseconds t2 = clk.get_us();
-                co_await t::expect( coll, t2 > t1 );
-                coll->set( 0, "t1", t1 );
-                coll->set( 0, "t2", t2 );
-                coll->set( 0, "wait cycles", wait_cycles );
+                co_await ctx.expect( t2 > t1 );
+                ctx.coll.set( 0, "t1", t1 );
+                ctx.coll.set( 0, "t2", t2 );
+                ctx.coll.set( 0, "wait cycles", wait_cycles );
 
                 base::microseconds now  = clk.get_us();
                 base::microseconds last = now;
@@ -50,10 +50,10 @@ struct clock_test
                         last = now;
                         now  = clk.get_us();
                         if ( last > now ) {
-                                coll->set( "last", last );
-                                coll->set( "now", now );
+                                ctx.coll.set( "last", last );
+                                ctx.coll.set( "now", now );
                         }
-                        co_await t::expect( last <= now );
+                        co_await ctx.expect( last <= now );
                 } while ( clk.get_us() < end );
         }
 };
@@ -68,11 +68,11 @@ struct comms_echo_test
 
         std::string_view name = "comms_echo";
 
-        t::coroutine< void > run( auto& mem, ftest::collector& coll )
+        t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
                 std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };
-                em::result                 res = comms.send( buffer, 100_ms );
-                co_await t::expect( coll, res == em::SUCCESS );
+                em::result                 res = send( comms, 100_ms, buffer );
+                co_await ctx.expect( res == em::SUCCESS );
 
                 wait_for( clk, 10_ms );
 
@@ -80,11 +80,11 @@ struct comms_echo_test
                 bool                       ready = false;
                 em::view< std::byte* >     v;
                 while ( !ready )
-                        std::tie( ready, v ) = comms.load_message( buffer2 );
+                        std::tie( ready, v ) = comms.recv( buffer2 );
 
-                store_data( mem, coll, "data", v );
+                store_data( mem, ctx, "data", v );
 
-                co_await t::expect( coll, v == em::view{ buffer } );
+                co_await ctx.expect( v == em::view{ buffer } );
         }
 };
 
@@ -100,19 +100,19 @@ struct comms_timeout_test
 
         std::string_view name = "comms_timeout";
 
-        t::coroutine< void > run( auto& mem, ftest::collector& coll )
+        t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
                 std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };
-                em::result                 res = comms.send( buffer, 1_us );
-                co_await t::expect( coll, res == em::SUCCESS );
+                em::result                 res = send( comms, 1_us, buffer );
+                co_await ctx.expect( res == em::SUCCESS );
 
-                res = comms.send( buffer, 1_us );
-                co_await t::expect( coll, res == em::ERROR );
+                res = send( comms, 1_us, buffer );
+                co_await ctx.expect( res == em::ERROR );
 
                 wait_for( clk, 10_ms );
 
-                res = comms.send( buffer, 100_ms );
-                co_await t::expect( coll, res != em::ERROR );
+                res = send( comms, 100_ms, buffer );
+                co_await ctx.expect( res != em::ERROR );
 
                 wait_for( clk, 10_ms );
 
@@ -120,11 +120,11 @@ struct comms_timeout_test
                 bool                       ready = false;
                 em::view< std::byte* >     v;
                 while ( !ready )
-                        std::tie( ready, v ) = comms.load_message( buffer2 );
+                        std::tie( ready, v ) = comms.recv( buffer2 );
 
-                store_data( mem, coll, "data", v );
+                store_data( mem, ctx, "data", v );
 
-                co_await t::expect( coll, v == em::view{ buffer } );
+                co_await ctx.expect( v == em::view{ buffer } );
         }
 };
 
@@ -143,29 +143,29 @@ struct period_iface_test
 
         std::string_view name = "period_iface";
 
-        t::coroutine< void > run( auto& mem, ftest::collector& coll )
+        t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
                 auto d = retain_callback( iface );
-                co_await t::expect( coll, iface.stop() == em::SUCCESS );
+                co_await ctx.expect( iface.stop() == em::SUCCESS );
 
                 std::size_t counter = 0;
                 period_cb   pcb{ [&] {
                         counter += 1;
                 } };
                 iface.set_period_callback( pcb );
-                co_await t::expect( coll, &iface.get_period_callback() == &pcb );
+                co_await ctx.expect( &iface.get_period_callback() == &pcb );
 
                 wait_for( clk, 10_ms );
-                co_await t::expect( coll, counter == 0 );
-                coll->set( "counter1", counter );
+                co_await ctx.expect( counter == 0 );
+                ctx.coll.set( "counter1", counter );
 
-                co_await t::expect( coll, iface.start() == em::SUCCESS );
+                co_await ctx.expect( iface.start() == em::SUCCESS );
 
                 wait_for( clk, 10_ms );
 
-                co_await store_metric( mem, coll, "counter", counter );
-                co_await t::expect( coll, &iface.get_period_callback() == &pcb );
-                co_await t::expect( coll, counter != 0 );
+                co_await store_metric( mem, ctx, "counter", counter );
+                co_await ctx.expect( &iface.get_period_callback() == &pcb );
+                co_await ctx.expect( counter != 0 );
         }
 };
 
@@ -180,24 +180,24 @@ struct pwm_motor_test
         std::string_view name = "pwm_motor";
 
         auto test(
-            ftest::collector&    coll,
+            ftest::uctx&         ctx,
             int16_t              pwr,
             int16_t              expected,
             std::source_location src = std::source_location::current() )
         {
                 iface.set_power( pwr );
-                coll->set( "last_dir", iface.get_direction() );
-                return t::expect( coll, iface.get_direction() == expected, src );
+                ctx.coll.set( "last_dir", iface.get_direction() );
+                return ctx.expect( iface.get_direction() == expected, src );
         }
 
-        t::coroutine< void > run( auto&, ftest::collector& coll )
+        t::coroutine< void > run( auto&, ftest::uctx& ctx )
         {
-                co_await t::expect( coll, !iface.is_stopped() );
+                co_await ctx.expect( !iface.is_stopped() );
                 auto d = hold( period );
 
-                co_await test( coll, -1024, -1 );
-                co_await test( coll, 0, 1 );
-                co_await test( coll, 1024, 1 );
+                co_await test( ctx, -1024, -1 );
+                co_await test( ctx, 0, 1 );
+                co_await test( ctx, 1024, 1 );
         }
 };
 
@@ -209,12 +209,12 @@ struct vcc_test
 
         std::string_view name = "vcc_test";
 
-        t::coroutine< void > run( auto& mem, ftest::collector& coll )
+        t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
                 uint32_t vcc = iface.get_vcc();
 
-                co_await store_metric( mem, coll, "vcc", vcc );
-                co_await t::expect( coll, vcc != 0 );
+                co_await store_metric( mem, ctx, "vcc", vcc );
+                co_await ctx.expect( vcc != 0 );
         }
 };
 
@@ -226,12 +226,12 @@ struct temperature_test
 
         std::string_view name = "temp_test";
 
-        t::coroutine< void > run( auto& mem, ftest::collector& coll )
+        t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
                 uint32_t temp = iface.get_temperature();
 
-                co_await store_metric( mem, coll, "temp", temp );
-                co_await t::expect( coll, temp != 0 );
+                co_await store_metric( mem, ctx, "temp", temp );
+                co_await ctx.expect( temp != 0 );
         }
 };
 
@@ -245,7 +245,7 @@ struct position_test
 
         std::string_view name = "pos_test";
 
-        t::coroutine< void > run( auto& mem, ftest::collector& coll )
+        t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
 
                 em::defer d = retain_callback( iface );
@@ -255,12 +255,12 @@ struct position_test
                         opt_pos = pos;
                 } };
                 iface.set_position_callback( pcb );
-                co_await t::expect( coll, &iface.get_position_callback() == &pcb );
+                co_await ctx.expect( &iface.get_position_callback() == &pcb );
 
                 wait_for( clk, 10_ms );
 
-                co_await t::expect( coll, opt_pos.has_value() );
-                co_await store_metric( mem, coll, "pos", opt_pos.value() );
+                co_await ctx.expect( opt_pos.has_value() );
+                co_await store_metric( mem, ctx, "pos", opt_pos.value() );
         }
 };
 
@@ -273,9 +273,8 @@ struct curr_iface_test
 
         std::string_view name = "curr_test";
 
-        t::coroutine< void > run( auto& mem, ftest::collector& coll )
+        t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
-
                 em::defer d = retain_callback( iface );
 
                 std::optional< uint32_t > opt_curr = std::nullopt;
@@ -285,22 +284,22 @@ struct curr_iface_test
                         prof     = profile;
                 } };
                 iface.set_current_callback( ccb );
-                co_await t::expect( coll, &iface.get_current_callback() == &ccb );
+                co_await ctx.expect( &iface.get_current_callback() == &ccb );
 
                 wait_for( clk, 10_ms );
 
-                co_await store_metric( mem, coll, "prof size", prof.size() );
-                co_await t::expect( coll, !prof.empty() );
+                co_await store_metric( mem, ctx, "prof size", prof.size() );
+                co_await ctx.expect( !prof.empty() );
 
-                co_await t::expect( coll, opt_curr.has_value() );
-                co_await store_metric( mem, coll, "curr", opt_curr.value() );
+                co_await ctx.expect( opt_curr.has_value() );
+                co_await store_metric( mem, ctx, "curr", opt_curr.value() );
         }
 };
 
 inline void setup_iface_tests(
     em::pmr::memory_resource& mem,
     t::reactor&               reac,
-    t::collector&             coll,
+    ftest::uctx&              ctx,
     clk_iface&                clk,
     com_iface&                comms,
     period_iface&             period,
@@ -311,15 +310,15 @@ inline void setup_iface_tests(
     curr_iface&               curr,
     em::result&               res )
 {
-        ftest::setup_utest< clock_test >( mem, reac, coll, res, clk );
-        ftest::setup_utest< comms_echo_test >( mem, reac, coll, res, clk, comms );
-        ftest::setup_utest< comms_timeout_test >( mem, reac, coll, res, clk, comms );
-        ftest::setup_utest< period_iface_test >( mem, reac, coll, res, clk, period );
-        ftest::setup_utest< pwm_motor_test >( mem, reac, coll, res, period, pwm );
-        ftest::setup_utest< vcc_test >( mem, reac, coll, res, vcc );
-        ftest::setup_utest< temperature_test >( mem, reac, coll, res, temp );
-        ftest::setup_utest< position_test >( mem, reac, coll, res, pos, clk );
-        ftest::setup_utest< curr_iface_test >( mem, reac, coll, res, curr, clk );
+        ftest::setup_utest< clock_test >( mem, reac, ctx, res, clk );
+        ftest::setup_utest< comms_echo_test >( mem, reac, ctx, res, clk, comms );
+        ftest::setup_utest< comms_timeout_test >( mem, reac, ctx, res, clk, comms );
+        ftest::setup_utest< period_iface_test >( mem, reac, ctx, res, clk, period );
+        ftest::setup_utest< pwm_motor_test >( mem, reac, ctx, res, period, pwm );
+        ftest::setup_utest< vcc_test >( mem, reac, ctx, res, vcc );
+        ftest::setup_utest< temperature_test >( mem, reac, ctx, res, temp );
+        ftest::setup_utest< position_test >( mem, reac, ctx, res, pos, clk );
+        ftest::setup_utest< curr_iface_test >( mem, reac, ctx, res, curr, clk );
 }
 
 }  // namespace servio::drv::tests

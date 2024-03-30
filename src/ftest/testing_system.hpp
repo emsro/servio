@@ -1,5 +1,7 @@
 #include "base/base.hpp"
 #include "drv/interfaces.hpp"
+#include "ftest/utest.hpp"
+#include "ftester/base.hpp"
 
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/parameters.h>
@@ -20,11 +22,14 @@ struct testing_system
         em::testing::collector  collector;
         em::testing::parameters parameters;
 
+        em::static_function< void( std::span< const std::byte > ), 32 > ctx_cb;
+
+        uctx ctx;
+
         auto send_cb()
         {
                 return [this]( uint16_t channel, const auto& data ) {
-                        auto msg = em::protocol::serialize_multiplexed( channel, data );
-                        return debug_comms.send( msg, 100_ms );
+                        return send_( channel, data );
                 };
         }
 
@@ -33,7 +38,18 @@ struct testing_system
           , reactor( em::testing::core_channel, name, send_cb() )
           , collector( em::testing::collect_channel, send_cb() )
           , parameters( em::testing::params_channel, send_cb() )
+          , ctx_cb( [&]( std::span< const std::byte > data ) {
+                  // TODO: the ignore is NOT nice
+                  std::ignore = send_( ftester::rec_id, data );
+          } )
+          , ctx( collector, ctx_cb )
         {
+        }
+
+        em::result send_( uint16_t channel, const auto& data )
+        {
+                auto hdr = em::protocol::multiplexer_channel_handler::serialize( channel );
+                return send( debug_comms, 100_ms, hdr, data );
         }
 
         void tick()
@@ -41,7 +57,7 @@ struct testing_system
                 reactor.tick();
 
                 std::array< std::byte, 128 > tmp;
-                auto [succ, data] = debug_comms.load_message( tmp );
+                auto [succ, data] = debug_comms.recv( tmp );
                 if ( !succ )
                         return;
                 std::ignore = em::protocol::extract_multiplexed(

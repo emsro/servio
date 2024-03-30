@@ -32,7 +32,7 @@ int main()
                     .conv       = ctx.core.conv,
                     .now        = ctx.cdrv.clock->get_us() };
 
-                auto [lsucc, ldata] = ctx.cdrv.comms->load_message( INPUT_BUFFER );
+                auto [lsucc, ldata] = ctx.cdrv.comms->recv( INPUT_BUFFER );
 
                 if ( !lsucc )
                         fw::stop_exec();
@@ -47,7 +47,7 @@ int main()
 
                 if ( succ == em::ERROR )
                         fw::stop_exec();
-                if ( ctx.cdrv.comms->send( odata, 100_ms ) != em::SUCCESS )
+                if ( send( *ctx.cdrv.comms, 100_ms, odata ) != em::SUCCESS )
                         fw::stop_exec();
         }
 }

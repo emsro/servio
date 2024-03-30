@@ -24,16 +24,16 @@ struct cobs_uart_rx_test
 
         std::string_view name = "cobs_uart_rx";
 
-        t::coroutine< void > run( auto&, ftest::collector& coll )
+        t::coroutine< void > run( auto&, ftest::uctx& ctx )
         {
                 sntr::test_central_sentry central;
 
                 cobs_uart uart{ "test_uart", central, clk, nullptr, nullptr };
 
-                co_await t::expect( coll, central.buffer.empty() );
+                co_await ctx.expect( central.buffer.empty() );
                 uart.rx_cplt_irq( nullptr );
-                co_await t::expect( coll, !central.buffer.empty() );
-                co_await t::expect( coll, central.is_inoperable() );
+                co_await ctx.expect( !central.buffer.empty() );
+                co_await ctx.expect( central.is_inoperable() );
         }
 };
 
@@ -43,29 +43,29 @@ struct cobs_uart_err_test
 
         std::string_view name = "cobs_uart_err";
 
-        t::coroutine< void > run( auto&, ftest::collector& coll )
+        t::coroutine< void > run( auto&, ftest::uctx& ctx )
         {
                 sntr::test_central_sentry central;
                 UART_HandleTypeDef        handle;
                 cobs_uart                 uart{ "test_uart", central, clk, &handle, nullptr };
 
-                co_await t::expect( coll, central.buffer.empty() );
+                co_await ctx.expect( central.buffer.empty() );
                 handle.ErrorCode = cobs_uart::tolerable_hal_errors;
                 uart.err_irq( &handle );
-                co_await t::expect( coll, central.buffer.size() == 1 );
+                co_await ctx.expect( central.buffer.size() == 1 );
 
-                coll->set( "pos_ecode", std::get< 2 >( central.buffer[0] ) );
-                co_await t::expect( coll, !central.is_inoperable() );
-                co_await t::expect(
-                    coll, std::get< 0 >( central.buffer[0] ) == sntr::test_central_sentry::DEGR );
+                ctx.coll.set( "pos_ecode", std::get< 2 >( central.buffer[0] ) );
+                co_await ctx.expect( !central.is_inoperable() );
+                co_await ctx.expect(
+                    std::get< 0 >( central.buffer[0] ) == sntr::test_central_sentry::DEGR );
 
                 handle.ErrorCode = ~cobs_uart::tolerable_hal_errors;
                 uart.err_irq( &handle );
-                co_await t::expect( coll, central.buffer.size() == 2 );
+                co_await ctx.expect( central.buffer.size() == 2 );
 
-                co_await t::expect( coll, central.is_inoperable() );
-                co_await t::expect(
-                    coll, std::get< 0 >( central.buffer[1] ) == sntr::test_central_sentry::INOP );
+                co_await ctx.expect( central.is_inoperable() );
+                co_await ctx.expect(
+                    std::get< 0 >( central.buffer[1] ) == sntr::test_central_sentry::INOP );
 
                 co_return;
         }
@@ -75,14 +75,14 @@ struct hbridge_test
 {
         std::string_view name = "hbridge_test";
 
-        t::coroutine< void > run( auto&, ftest::collector& coll )
+        t::coroutine< void > run( auto&, ftest::uctx& ctx )
         {
                 hbridge hb{ nullptr };
-                co_await t::expect( coll, hb.setup( 1, 2 ) == nullptr );
+                co_await ctx.expect( hb.setup( 1, 2 ) == nullptr );
 
                 // this sets behavior for scenarion when tim == nullptr
                 hb.set_power( -1 );
-                co_await t::expect( coll, hb.get_direction() == 1 );
+                co_await ctx.expect( hb.get_direction() == 1 );
 
                 auto d = retain_callback( hb );
 
@@ -91,14 +91,14 @@ struct hbridge_test
                         counter += 1;
                 } };
                 hb.set_period_callback( pcb );
-                co_await t::expect( coll, &hb.get_period_callback() == &pcb );
+                co_await ctx.expect( &hb.get_period_callback() == &pcb );
 
-                co_await t::expect( coll, counter == 0 );
+                co_await ctx.expect( counter == 0 );
                 hb.timer_period_irq( nullptr );
-                co_await t::expect( coll, counter == 1 );
+                co_await ctx.expect( counter == 1 );
 
-                co_await t::expect( coll, hb.start() == em::ERROR );
-                co_await t::expect( coll, hb.stop() == em::ERROR );
+                co_await ctx.expect( hb.start() == em::ERROR );
+                co_await ctx.expect( hb.stop() == em::ERROR );
         }
 };
 
@@ -115,14 +115,14 @@ struct adc_pooler_test
 inline void setup_impl_tests(
     em::pmr::memory_resource& mem,
     t::reactor&               reac,
-    t::collector&             coll,
+    ftest::uctx&              ctx,
     clk_iface&                clk,
     em::result&               res )
 
 {
-        ftest::setup_utest< cobs_uart_rx_test >( mem, reac, coll, res, clk );
-        ftest::setup_utest< cobs_uart_err_test >( mem, reac, coll, res, clk );
-        ftest::setup_utest< hbridge_test >( mem, reac, coll, res );
+        ftest::setup_utest< cobs_uart_rx_test >( mem, reac, ctx, res, clk );
+        ftest::setup_utest< cobs_uart_err_test >( mem, reac, ctx, res, clk );
+        ftest::setup_utest< hbridge_test >( mem, reac, ctx, res );
 }
 
 }  // namespace servio::drv::tests

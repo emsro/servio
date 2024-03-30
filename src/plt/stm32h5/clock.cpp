@@ -65,9 +65,6 @@ em::result setup_clk()
         TEMP_CALIB_COEFFS.cal1 = *TEMPSENSOR_CAL1_ADDR;
         TEMP_CALIB_COEFFS.cal2 = *TEMPSENSOR_CAL2_ADDR;
 
-        if ( HAL_ICACHE_Enable() != HAL_OK )
-                return em::ERROR;
-
         return em::SUCCESS;
 }
 

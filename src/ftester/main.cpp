@@ -126,7 +126,7 @@ int main( int argc, char* argv[] )
         }
 
         joque::print_exec_visitor           pvis{ false, true };
-        std::optional< joque::exec_record > rec = joque::exec( ts, 0, "", pvis ).run();
+        std::optional< joque::exec_record > rec = joque::exec( ts, 0, cfg.filter, pvis ).run();
         if ( rec && cfg.output_dir ) {
                 std::ofstream os{ *cfg.output_dir / "res.json" };
                 os << nlohmann::json{ *rec }.dump();

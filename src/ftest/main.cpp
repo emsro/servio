@@ -22,7 +22,7 @@ int main()
 
         em::result res = em::SUCCESS;
         ftest::setup_tests(
-            TEST_STACK, tsys.reactor, tsys.collector, tsys.parameters, ctx.cdrv, ctx.core, res );
+            TEST_STACK, tsys.reactor, tsys.ctx, tsys.parameters, ctx.cdrv, ctx.core, res );
         if ( res != em::SUCCESS )
                 fw::stop_exec();
 

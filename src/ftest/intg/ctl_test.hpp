@@ -24,7 +24,7 @@ struct current_ctl_test
 
         std::string_view name = "ctl_test";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto&, uctx& ctx )
         {
                 if ( co_await is_powerless( params ) )
                         co_await t::skip();
@@ -44,9 +44,9 @@ struct current_ctl_test
                 }
                 avg_curr /= static_cast< float >( count );
 
-                coll->set( "measured", avg_curr );
-                coll->set( "expected", expected );
-                co_await t::expect( em::almost_equal( avg_curr, expected, 0.1F ) );
+                ctx.coll.set( "measured", avg_curr );
+                ctx.coll.set( "expected", expected );
+                co_await ctx.expect( em::almost_equal( avg_curr, expected, 0.1F ) );
         }
 };
 
@@ -63,32 +63,33 @@ struct sign_test
 
         std::string_view name = "sign_test";
 
-        t::coroutine< void > run( auto&, collector& coll )
+        t::coroutine< void > run( auto&, uctx& ctx )
         {
                 if ( co_await is_powerless( params ) )
                         co_await t::skip();
                 setup_poweroff( cor.ctl );
                 rewind( cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.2f );
 
-                t::node_id did = co_await coll->set( "data", em::contiguous_container_type::ARRAY );
+                t::node_id did =
+                    co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
 
                 cor.ctl.switch_to_current_control( clk.get_us(), 0.3f );
                 std::size_t count = 50;
                 for ( std::size_t i : em::range( count ) ) {
                         std::ignore = i;
                         t::node_id nid =
-                            co_await coll->append( did, em::contiguous_container_type::OBJECT );
+                            co_await ctx.coll.append( did, em::contiguous_container_type::OBJECT );
 
                         float current = servio::cnv::current( cor.conv, curr, motor );
                         float pos     = cor.met.get_position();
                         float vel     = cor.met.get_velocity();
 
-                        coll->set( nid, "now", clk.get_us() );
-                        coll->set( nid, "cur", current );
-                        coll->set( nid, "pos", pos );
-                        coll->set( nid, "vel", vel );
+                        ctx.coll.set( nid, "now", clk.get_us() );
+                        ctx.coll.set( nid, "cur", current );
+                        ctx.coll.set( nid, "pos", pos );
+                        ctx.coll.set( nid, "vel", vel );
 
-                        co_await t::expect( std::signbit( current ) == std::signbit( vel ) );
+                        co_await ctx.expect( std::signbit( current ) == std::signbit( vel ) );
                 }
                 cor.ctl.switch_to_current_control( clk.get_us(), 0.0f );
                 motor.set_power( 0 );
@@ -98,7 +99,7 @@ struct sign_test
 inline void setup_ctl_test(
     em::pmr::memory_resource& mem,
     t::reactor&               reac,
-    t::collector&             coll,
+    ftest::uctx&              ctx,
     t::parameters&            params,
     drv::clk_iface&           clk,
     drv::pwm_motor_iface&     motor,
@@ -107,8 +108,8 @@ inline void setup_ctl_test(
     core::core&               cor,
     em::result&               res )
 {
-        setup_utest< current_ctl_test >( mem, reac, coll, res, params, clk, curr, motor, cor );
-        setup_utest< sign_test >( mem, reac, coll, res, params, clk, curr, pos, motor, cor );
+        setup_utest< current_ctl_test >( mem, reac, ctx, res, params, clk, curr, motor, cor );
+        setup_utest< sign_test >( mem, reac, ctx, res, params, clk, curr, pos, motor, cor );
 }
 
 }  // namespace servio::ftest::tests

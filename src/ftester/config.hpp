@@ -11,6 +11,7 @@ struct config
         std::optional< std::filesystem::path > input      = std::nullopt;
         bool                                   powerless  = false;
         std::optional< std::filesystem::path > output_dir = std::nullopt;
+        std::string                            filter;
 
         std::filesystem::path c_device   = "/dev/ttyUSB0";
         uint32_t              c_baudrate = 460800;

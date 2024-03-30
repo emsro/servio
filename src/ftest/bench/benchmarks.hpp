@@ -1,0 +1,208 @@
+#pragma once
+
+#include "cnv/utils.hpp"
+#include "core/core.hpp"
+#include "drv/callbacks.hpp"
+#include "drv/interfaces.hpp"
+#include "drv/retainers.hpp"
+#include "emlabcpp/enumerate.h"
+#include "ftest/is_powerless.hpp"
+#include "ftest/rewind.hpp"
+#include "ftest/utest.hpp"
+#include "ftester/base.hpp"
+
+namespace servio::ftest::tests
+{
+
+struct loop_frequency
+{
+        drv::clk_iface&    clk;
+        drv::period_iface& period;
+        drv::pos_iface&    pos;
+        drv::curr_iface&   curr;
+
+        std::string_view name = "loop_frequency";
+
+        t::coroutine< void > run( auto& mem, uctx& ctx )
+        {
+                base::microseconds         time_window  = 1000_ms;
+                std::size_t                period_cnt   = 0;
+                std::size_t                current_cnt  = 0;
+                std::size_t                position_cnt = 0;
+                em::min_max< std::size_t > curr_profile_size;
+                curr_profile_size.min() = std::numeric_limits< std::size_t >::max();
+
+                drv::period_cb_iface& period_cb = period.get_period_callback();
+                {
+                        em::defer d1 = drv::retain_callback( period );
+                        em::defer d2 = drv::retain_callback( curr );
+                        em::defer d3 = drv::retain_callback( pos );
+
+                        drv::current_cb ccb{ [&]( uint32_t, std::span< uint16_t > data ) {
+                                curr_profile_size = em::expand( curr_profile_size, data.size() );
+                                current_cnt += 1;
+                        } };
+                        curr.set_current_callback( ccb );
+
+                        drv::position_cb pocb{ [&]( uint32_t ) {
+                                position_cnt += 1;
+                        } };
+                        pos.set_position_callback( pocb );
+
+                        drv::period_cb pcb{ [&] {
+                                period_cnt += 1;
+                                period_cb.on_period_irq();
+                        } };
+                        period.set_period_callback( pcb );
+                        drv::wait_for( clk, time_window );
+                }
+
+                co_await store_metric(
+                    mem,
+                    ctx,
+                    "time_window",
+                    std::chrono::duration_cast< base::sec_time >( time_window ),
+                    "s" );
+
+                co_await store_as_freq( mem, ctx, "current  cb freq", current_cnt, time_window );
+                co_await store_as_freq( mem, ctx, "position cb freq", position_cnt, time_window );
+
+                float expected_pfreq = 10'000.0F;
+                co_await store_metric( mem, ctx, "expected cb freq", expected_pfreq, "Hz" );
+                float pfreq =
+                    co_await store_as_freq( mem, ctx, "period   cb freq", period_cnt, time_window );
+                co_await t::expect( ctx.coll, pfreq >= expected_pfreq );
+
+                co_await store_metric(
+                    mem, ctx, "measurements_min", curr_profile_size.min(), "items" );
+                co_await t::expect( ctx.coll, curr_profile_size.min() > 10 );
+                co_await store_metric(
+                    mem, ctx, "measurements_max", curr_profile_size.max(), "items" );
+        }
+
+        t::coroutine< float > store_as_freq(
+            em::pmr::memory_resource& mem,
+            uctx&                     coll,
+            const std::string_view    sv,
+            std::size_t               counter,
+            base::microseconds        time_window )
+        {
+
+                float freq = static_cast< float >( counter ) /
+                             std::chrono::duration_cast< base::sec_time >( time_window ).count();
+                co_await store_metric( mem, coll, sv, freq, "Hz" );
+                co_return freq;
+        }
+};
+
+struct usage
+{
+        drv::period_iface& period;
+        drv::clk_iface&    clk;
+
+        t::coroutine< void > run( auto& mem, uctx& ctx )
+        {
+                base::microseconds time_window = 1000_ms;
+
+                std::ignore = period.stop();
+
+                std::size_t noirq_counter = count_iterations( time_window );
+
+                std::ignore = period.start();
+
+                std::size_t irq_counter = count_iterations( time_window );
+
+                co_await store_metric( mem, ctx, "cpu freq", HAL_RCC_GetSysClockFreq(), "Hz" );
+                co_await store_metric(
+                    mem,
+                    "time_window",
+                    std::chrono::duration_cast< base::sec_time >( time_window ),
+                    "s" );
+
+                co_await store_metric( mem, ctx, "noirq_counter", noirq_counter, "ops" );
+                co_await store_metric( mem, ctx, "irq_counter", irq_counter, "ops" );
+
+                float usage_limit = 50.F;
+                float usage       = 100.F - 100.F * static_cast< float >( irq_counter ) /
+                                          static_cast< float >( noirq_counter );
+                co_await t::expect( ctx.coll, usage < usage_limit );
+                co_await store_metric(
+                    mem, ctx, "irq_usage", static_cast< uint32_t >( usage ), "%" );
+                co_await store_metric(
+                    ctx, mem, "irq_usage limit", static_cast< uint32_t >( usage_limit ), "%" );
+        }
+
+        std::size_t count_iterations( base::microseconds time_window )
+        {
+                std::size_t        counter = 0;
+                base::microseconds end     = clk.get_us() + time_window;
+                while ( clk.get_us() < end )
+                        counter += 1;
+                return counter;
+        }
+};
+
+struct prof_record
+{
+        std::size_t                count = 0;
+        std::array< uint16_t, 64 > max;
+        std::array< uint32_t, 64 > sum;
+        std::array< uint16_t, 64 > min;
+};
+
+std::array< prof_record, 3 > PROF_BUFFER;
+
+struct profile
+{
+        drv::clk_iface&  clk;
+        drv::curr_iface& curr;
+
+        t::coroutine< void > run( auto&, uctx& ctx )
+        {
+                em::defer d2 = drv::retain_callback( curr );
+
+                std::size_t     write_i = 0;
+                drv::current_cb ccb{ [&]( uint32_t, std::span< uint16_t > data ) {
+                        prof_record& rec = PROF_BUFFER[write_i];
+                        rec.count += 1;
+                        if ( data.size() > rec.sum.size() )
+                                return;  // TODO: report error
+                        for ( auto&& [i, v] : em::enumerate( data ) )
+                                rec.sum[i] += v;
+                        for ( auto&& [i, v] : em::enumerate( data ) )
+                                rec.max[i] = std::max( rec.max[i], v );
+                        for ( auto&& [i, v] : em::enumerate( data ) )
+                                rec.min[i] = std::min( rec.min[i], v );
+                } };
+                curr.set_current_callback( ccb );
+
+                std::size_t        read_i = 0;
+                base::microseconds end    = clk.get_us() + 1000_ms;
+
+                t::node_id data_id =
+                    co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
+
+                while ( clk.get_us() < end ) {
+                        write_i += 1;
+
+                        t::node_id row_id = co_await ctx.coll.append(
+                            data_id, em::contiguous_container_type::OBJECT );
+                }
+        }
+};
+
+inline void setup_bench_tests(
+    em::pmr::memory_resource& mem,
+    t::reactor&               reac,
+    t::collector&             coll,
+    drv::clk_iface&           clk,
+    drv::pos_iface&           pos,
+    drv::curr_iface&          curr,
+    drv::period_iface&        period,
+    em::result&               res )
+{
+        setup_utest< loop_frequency >( mem, reac, coll, res, clk, period, pos, curr );
+        setup_utest< usage >( mem, reac, coll, res, period, clk );
+}
+
+}  // namespace servio::ftest::tests

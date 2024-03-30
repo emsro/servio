@@ -2,6 +2,7 @@ servio_add_library(
   TARGET platform
   INCLUDE ../inc/ ./ ../../
   SOURCES adc.cpp
+          dac.cpp
           platform.cpp
           clock.cpp
           uart.cpp
@@ -17,6 +18,7 @@ target_link_libraries(
           HAL::STM32::H5::FLASHEx
           HAL::STM32::H5::ADC
           HAL::STM32::H5::ADCEx
+          HAL::STM32::H5::DAC
           HAL::STM32::H5::CORTEX
           HAL::STM32::H5::DMA
           HAL::STM32::H5::DMAEx

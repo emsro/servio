@@ -9,9 +9,9 @@ namespace servio::ftest
 
 void setup_tests(
     em::pmr::memory_resource& mem,
-    em::testing::reactor&     reac,
-    em::testing::collector&   coll,
-    em::testing::parameters&  params,
+    t::reactor&               reac,
+    uctx&                     ctx,
+    t::parameters&            params,
     core::drivers&            cdrv,
     core::core&               cor,
     em::result&               res )
@@ -20,7 +20,7 @@ void setup_tests(
         drv::tests::setup_iface_tests(
             mem,
             reac,
-            coll,
+            ctx,
             *cdrv.clock,
             *cdrv.comms,
             *cdrv.period,
@@ -30,11 +30,11 @@ void setup_tests(
             *cdrv.position,
             *cdrv.current,
             res );
-        drv::tests::setup_impl_tests( mem, reac, coll, *cdrv.clock, res );
+        drv::tests::setup_impl_tests( mem, reac, ctx, *cdrv.clock, res );
         tests::setup_ctl_test(
             mem,
             reac,
-            coll,
+            ctx,
             params,
             *cdrv.clock,
             *cdrv.motor,
@@ -43,7 +43,7 @@ void setup_tests(
             cor,
             res );
         tests::setup_meas_tests(
-            mem, reac, coll, params, *cdrv.clock, *cdrv.motor, *cdrv.current, cor, res );
+            mem, reac, ctx, params, *cdrv.clock, *cdrv.motor, *cdrv.current, cor, res );
 }
 
 }  // namespace servio::ftest
