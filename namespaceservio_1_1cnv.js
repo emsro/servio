@@ -7,6 +7,8 @@ var namespaceservio_1_1cnv =
     ] ],
     [ "converter", "structservio_1_1cnv_1_1converter.html", "structservio_1_1cnv_1_1converter" ],
     [ "linear_converter", "structservio_1_1cnv_1_1linear__converter.html", "structservio_1_1cnv_1_1linear__converter" ],
+    [ "off_scale", "namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale", "namespaceservio_1_1cnv_structservio_1_1cnv_1_1off__scale_dup" ],
+    [ "calc_current_conversion", "namespaceservio_1_1cnv.html#ae3dc9df6f52fc1747f055d1eef694629", null ],
     [ "current", "namespaceservio_1_1cnv.html#a77d6b5f36c5d79990d459213ba266222", null ],
     [ "current", "namespaceservio_1_1cnv.html#a81aa759bf010df60769d03a4fd7b47cc", null ],
     [ "position", "namespaceservio_1_1cnv.html#ad5f41461e56077db8546aca8f2aea0c5", null ]

@@ -3,6 +3,7 @@ var dir_f2088f76b3ac3723d91fa5f5a2a678d4 =
     [ "adc.cpp", "plt_2stm32h5_2adc_8cpp.html", "plt_2stm32h5_2adc_8cpp" ],
     [ "clock.cpp", "plt_2stm32h5_2clock_8cpp.html", "plt_2stm32h5_2clock_8cpp" ],
     [ "config.cpp", "plt_2stm32h5_2config_8cpp.html", "plt_2stm32h5_2config_8cpp" ],
+    [ "dac.cpp", "dac_8cpp.html", "dac_8cpp" ],
     [ "gpio.cpp", "plt_2stm32h5_2gpio_8cpp.html", "plt_2stm32h5_2gpio_8cpp" ],
     [ "hal.hpp", "stm32h5_2hal_8hpp.html", null ],
     [ "platform.cpp", "stm32h5_2platform_8cpp.html", "stm32h5_2platform_8cpp" ],

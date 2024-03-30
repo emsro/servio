@@ -8,8 +8,6 @@ var annotated_dup =
         [ "bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", "structservio_1_1bb_1_1bb__test__case" ]
       ] ],
       [ "brd", "namespaceservio_1_1brd.html", [
-        [ "off_scale", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1off__scale", "namespaceservio_1_1brd_structservio_1_1brd_1_1off__scale_dup" ],
-        [ "setpoint", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1setpoint", "namespaceservio_1_1brd_structservio_1_1brd_1_1setpoint_dup" ],
         [ "dma_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1dma__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1dma__cfg_dup" ],
         [ "adc_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1adc__cfg_dup" ],
         [ "uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1uart__cfg_dup" ],
@@ -24,7 +22,8 @@ var annotated_dup =
       ] ],
       [ "cnv", "namespaceservio_1_1cnv.html", [
         [ "converter", "structservio_1_1cnv_1_1converter.html", "structservio_1_1cnv_1_1converter" ],
-        [ "linear_converter", "structservio_1_1cnv_1_1linear__converter.html", "structservio_1_1cnv_1_1linear__converter" ]
+        [ "linear_converter", "structservio_1_1cnv_1_1linear__converter.html", "structservio_1_1cnv_1_1linear__converter" ],
+        [ "off_scale", "namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale", "namespaceservio_1_1cnv_structservio_1_1cnv_1_1off__scale_dup" ]
       ] ],
       [ "core", "namespaceservio_1_1core.html", [
         [ "current_callback", "classservio_1_1core_1_1current__callback.html", "classservio_1_1core_1_1current__callback" ],
@@ -86,9 +85,9 @@ var annotated_dup =
         [ "value_cb_iface", "classservio_1_1drv_1_1value__cb__iface.html", "classservio_1_1drv_1_1value__cb__iface" ],
         [ "period_cb_iface", "classservio_1_1drv_1_1period__cb__iface.html", "classservio_1_1drv_1_1period__cb__iface" ],
         [ "com_res", "structservio_1_1drv_1_1com__res.html", "structservio_1_1drv_1_1com__res" ],
-        [ "com_iface", "classservio_1_1drv_1_1com__iface.html", "classservio_1_1drv_1_1com__iface" ],
-        [ "leds_iface", "classservio_1_1drv_1_1leds__iface.html", "classservio_1_1drv_1_1leds__iface" ],
-        [ "clk_iface", "classservio_1_1drv_1_1clk__iface.html", "classservio_1_1drv_1_1clk__iface" ],
+        [ "com_iface", "structservio_1_1drv_1_1com__iface.html", "structservio_1_1drv_1_1com__iface" ],
+        [ "leds_iface", "structservio_1_1drv_1_1leds__iface.html", "structservio_1_1drv_1_1leds__iface" ],
+        [ "clk_iface", "structservio_1_1drv_1_1clk__iface.html", "structservio_1_1drv_1_1clk__iface" ],
         [ "period_iface", "classservio_1_1drv_1_1period__iface.html", "classservio_1_1drv_1_1period__iface" ],
         [ "pwm_motor_iface", "classservio_1_1drv_1_1pwm__motor__iface.html", "classservio_1_1drv_1_1pwm__motor__iface" ],
         [ "pos_iface", "classservio_1_1drv_1_1pos__iface.html", "classservio_1_1drv_1_1pos__iface" ],
@@ -99,6 +98,10 @@ var annotated_dup =
       ] ],
       [ "ftest", "namespaceservio_1_1ftest.html", [
         [ "tests", "namespaceservio_1_1ftest_1_1tests.html", [
+          [ "loop_frequency", "structservio_1_1ftest_1_1tests_1_1loop__frequency.html", "structservio_1_1ftest_1_1tests_1_1loop__frequency" ],
+          [ "usage", "structservio_1_1ftest_1_1tests_1_1usage.html", "structservio_1_1ftest_1_1tests_1_1usage" ],
+          [ "prof_record", "namespaceservio_1_1ftest_1_1tests.html#structservio_1_1ftest_1_1tests_1_1prof__record", "namespaceservio_1_1ftest_1_1tests_structservio_1_1ftest_1_1tests_1_1prof__record_dup" ],
+          [ "profile", "structservio_1_1ftest_1_1tests_1_1profile.html", "structservio_1_1ftest_1_1tests_1_1profile" ],
           [ "current_ctl_test", "structservio_1_1ftest_1_1tests_1_1current__ctl__test.html", "structservio_1_1ftest_1_1tests_1_1current__ctl__test" ],
           [ "sign_test", "structservio_1_1ftest_1_1tests_1_1sign__test.html", "structservio_1_1ftest_1_1tests_1_1sign__test" ],
           [ "meas_cur_test", "structservio_1_1ftest_1_1tests_1_1meas__cur__test.html", "structservio_1_1ftest_1_1tests_1_1meas__cur__test" ],
@@ -106,13 +109,14 @@ var annotated_dup =
           [ "meas_vel_test", "structservio_1_1ftest_1_1tests_1_1meas__vel__test.html", "structservio_1_1ftest_1_1tests_1_1meas__vel__test" ]
         ] ],
         [ "testing_system", "structservio_1_1ftest_1_1testing__system.html", "structservio_1_1ftest_1_1testing__system" ],
-        [ "collector", "structservio_1_1ftest_1_1collector.html", "structservio_1_1ftest_1_1collector" ],
+        [ "uctx", "structservio_1_1ftest_1_1uctx.html", "structservio_1_1ftest_1_1uctx" ],
         [ "utest_base", "structservio_1_1ftest_1_1utest__base.html", "structservio_1_1ftest_1_1utest__base" ],
         [ "utest", "structservio_1_1ftest_1_1utest.html", "structservio_1_1ftest_1_1utest" ]
       ] ],
       [ "ftester", "namespaceservio_1_1ftester.html", [
         [ "config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config", "namespaceservio_1_1ftester_structservio_1_1ftester_1_1config_dup" ],
         [ "joque_test", "structservio_1_1ftester_1_1joque__test.html", "structservio_1_1ftester_1_1joque__test" ],
+        [ "recorder", "classservio_1_1ftester_1_1recorder.html", "classservio_1_1ftester_1_1recorder" ],
         [ "controller_interface", "structservio_1_1ftester_1_1controller__interface.html", "structservio_1_1ftester_1_1controller__interface" ],
         [ "test_system", "structservio_1_1ftester_1_1test__system.html", "structservio_1_1ftester_1_1test__system" ]
       ] ],

@@ -89,82 +89,104 @@ $(document).ready(function(){initNavTree('testing__system_8hpp_source.html','');
 <div class="contents">
 <a href="testing__system_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_2base_8hpp.html">base/base.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="interfaces_8hpp.html">drv/interfaces.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/collect.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/parameters.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/reactor.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utest_8hpp.html">ftest/utest.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ftester_2base_8hpp.html">ftester/base.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/collect.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/parameters.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/reactor.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1ftest.html">servio::ftest</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>base::literals;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1ftest.html">servio::ftest</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structservio_1_1ftest_1_1testing__system.html">testing_system</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a15c347a9b819cf50b3768cae86d126cb">   17</a></span>&#160;        <a class="code" href="classservio_1_1drv_1_1com__iface.html">drv::com_iface</a>&amp; <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a15c347a9b819cf50b3768cae86d126cb">debug_comms</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#ae94f98c5ffdca9be15b1a8ba26334237">   19</a></span>&#160;        em::testing::reactor    <a class="code" href="structservio_1_1ftest_1_1testing__system.html#ae94f98c5ffdca9be15b1a8ba26334237">reactor</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a4baa4177b4ff17eb3f398116f5b4745b">   20</a></span>&#160;        em::testing::collector  <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a4baa4177b4ff17eb3f398116f5b4745b">collector</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a89bf86794ad86594d0a1da09015bbdb2">   21</a></span>&#160;        em::testing::parameters <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a89bf86794ad86594d0a1da09015bbdb2">parameters</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a32be723ba7ea665263188e8b3324c4a5">   23</a></span>&#160;        <span class="keyword">auto</span> <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a32be723ba7ea665263188e8b3324c4a5">send_cb</a>()</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">return</span> [<span class="keyword">this</span>]( uint16_t channel, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; data ) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        <span class="keyword">auto</span> msg = em::protocol::serialize_multiplexed( channel, data );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        <span class="keywordflow">return</span> debug_comms.<a class="code" href="classservio_1_1drv_1_1com__iface.html#a0d37936560e1dbf35ae5512c5b22c64d">send</a>( msg, 100_ms );</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a14956559e6460df15eee9dd9ab531854">   31</a></span>&#160;        <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a14956559e6460df15eee9dd9ab531854">testing_system</a>( <a class="code" href="classservio_1_1drv_1_1com__iface.html">drv::com_iface</a>&amp; debug_comms, std::string_view name )</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;          : debug_comms( debug_comms )</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;          , reactor( em::testing::core_channel, name, send_cb() )</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          , <a class="code" href="structservio_1_1ftest_1_1collector.html">collector</a>( em::testing::collect_channel, send_cb() )</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;          , parameters( em::testing::params_channel, send_cb() )</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a39dbe14688296a9227481d3a84e13fa6">   39</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a39dbe14688296a9227481d3a84e13fa6">tick</a>()</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                reactor.tick();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                std::array&lt; std::byte, 128 &gt; tmp;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keyword">auto</span> [succ, data] = debug_comms.<a class="code" href="classservio_1_1drv_1_1com__iface.html#aca29d0fc1419d3cc2d3dc882d9cef96d">load_message</a>( tmp );</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">if</span> ( !succ )</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                std::ignore = em::protocol::extract_multiplexed(</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    data,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    [&amp;]( em::protocol::channel_type chid, std::span&lt; const std::byte &gt; data ) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                            <span class="keywordflow">return</span> em::protocol::multiplexed_dispatch(</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                chid, data, reactor, <a class="code" href="structservio_1_1ftest_1_1collector.html">collector</a>, parameters );</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    } );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span>base::literals;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html">   17</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structservio_1_1ftest_1_1testing__system.html">testing_system</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a15c347a9b819cf50b3768cae86d126cb">   19</a></span>&#160;        <a class="code" href="structservio_1_1drv_1_1com__iface.html">drv::com_iface</a>&amp; <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a15c347a9b819cf50b3768cae86d126cb">debug_comms</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#ae94f98c5ffdca9be15b1a8ba26334237">   21</a></span>&#160;        em::testing::reactor    <a class="code" href="structservio_1_1ftest_1_1testing__system.html#ae94f98c5ffdca9be15b1a8ba26334237">reactor</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a4baa4177b4ff17eb3f398116f5b4745b">   22</a></span>&#160;        em::testing::collector  <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a4baa4177b4ff17eb3f398116f5b4745b">collector</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a89bf86794ad86594d0a1da09015bbdb2">   23</a></span>&#160;        em::testing::parameters <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a89bf86794ad86594d0a1da09015bbdb2">parameters</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#abfb060275122e700af91f8f3140a66a5">   25</a></span>&#160;        em::static_function&lt; void( std::span&lt; const std::byte &gt; ), 32 &gt; <a class="code" href="structservio_1_1ftest_1_1testing__system.html#abfb060275122e700af91f8f3140a66a5">ctx_cb</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#ab5cf9a234481da7445bbe5d893db543f">   27</a></span>&#160;        <a class="code" href="structservio_1_1ftest_1_1uctx.html">uctx</a> <a class="code" href="structservio_1_1ftest_1_1testing__system.html#ab5cf9a234481da7445bbe5d893db543f">ctx</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a32be723ba7ea665263188e8b3324c4a5">   29</a></span>&#160;        <span class="keyword">auto</span> <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a32be723ba7ea665263188e8b3324c4a5">send_cb</a>()</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">return</span> [<span class="keyword">this</span>]( uint16_t channel, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; data ) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        <span class="keywordflow">return</span> send_( channel, data );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                };</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a14956559e6460df15eee9dd9ab531854">   36</a></span>&#160;        <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a14956559e6460df15eee9dd9ab531854">testing_system</a>( <a class="code" href="structservio_1_1drv_1_1com__iface.html">drv::com_iface</a>&amp; debug_comms, std::string_view name )</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;          : debug_comms( debug_comms )</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;          , reactor( em::testing::core_channel, name, send_cb() )</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;          , collector( em::testing::collect_channel, send_cb() )</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          , parameters( em::testing::params_channel, send_cb() )</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          , ctx_cb( [&amp;]( std::span&lt; const std::byte &gt; data ) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                  <span class="comment">// TODO: the ignore is NOT nice</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                  std::ignore = send_( <a class="code" href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">ftester::rec_id</a>, data );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;          } )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;          , ctx( collector, ctx_cb )</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a9514650c7de1fd4326c5cda0a8b20e61">   49</a></span>&#160;        em::result <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a9514650c7de1fd4326c5cda0a8b20e61">send_</a>( uint16_t channel, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; data )</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keyword">auto</span> hdr = em::protocol::multiplexer_channel_handler::serialize( channel );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#a0a91dc7d48ea5fe638bee2d1827eac5f">send</a>( debug_comms, 100_ms, hdr, data );</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}  <span class="comment">// namespace servio::ftest</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1testing__system.html#a39dbe14688296a9227481d3a84e13fa6">   55</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structservio_1_1ftest_1_1testing__system.html#a39dbe14688296a9227481d3a84e13fa6">tick</a>()</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                reactor.tick();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                std::array&lt; std::byte, 128 &gt; tmp;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keyword">auto</span> [succ, data] = debug_comms.<a class="code" href="structservio_1_1drv_1_1com__iface.html#a2e4eeb8621d13bc7698259bbe5fbd9c1">recv</a>( tmp );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span> ( !succ )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                std::ignore = em::protocol::extract_multiplexed(</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    data,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    [&amp;]( em::protocol::channel_type chid, std::span&lt; const std::byte &gt; data ) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                            <span class="keywordflow">return</span> em::protocol::multiplexed_dispatch(</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                chid, data, reactor, collector, parameters );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    } );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}  <span class="comment">// namespace servio::ftest</span></div>
 <div class="ttc" id="abase_2base_8hpp_html"><div class="ttname"><a href="base_2base_8hpp.html">base.hpp</a></div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1com__iface_html"><div class="ttname"><a href="classservio_1_1drv_1_1com__iface.html">servio::drv::com_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:50</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1com__iface_html_a0d37936560e1dbf35ae5512c5b22c64d"><div class="ttname"><a href="classservio_1_1drv_1_1com__iface.html#a0d37936560e1dbf35ae5512c5b22c64d">servio::drv::com_iface::send</a></div><div class="ttdeci">virtual em::result send(em::view&lt; const std::byte * &gt; data, base::microseconds timeout)=0</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1com__iface_html_aca29d0fc1419d3cc2d3dc882d9cef96d"><div class="ttname"><a href="classservio_1_1drv_1_1com__iface.html#aca29d0fc1419d3cc2d3dc882d9cef96d">servio::drv::com_iface::load_message</a></div><div class="ttdeci">virtual com_res load_message(em::view&lt; std::byte * &gt; data)=0</div></div>
+<div class="ttc" id="aftester_2base_8hpp_html"><div class="ttname"><a href="ftester_2base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_html_a0a91dc7d48ea5fe638bee2d1827eac5f"><div class="ttname"><a href="namespaceservio_1_1drv.html#a0a91dc7d48ea5fe638bee2d1827eac5f">servio::drv::send</a></div><div class="ttdeci">em::result send(com_iface &amp;iface, base::microseconds timeout, auto &amp;... data)</div><div class="ttdef"><b>Definition:</b> interfaces.hpp:59</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftest_html"><div class="ttname"><a href="namespaceservio_1_1ftest.html">servio::ftest</a></div><div class="ttdef"><b>Definition:</b> tests.cpp:8</div></div>
-<div class="ttc" id="astructservio_1_1ftest_1_1collector_html"><div class="ttname"><a href="structservio_1_1ftest_1_1collector.html">servio::ftest::collector</a></div><div class="ttdef"><b>Definition:</b> utest.hpp:21</div></div>
-<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html">servio::ftest::testing_system</a></div><div class="ttdef"><b>Definition:</b> testing_system.hpp:16</div></div>
-<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a14956559e6460df15eee9dd9ab531854"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a14956559e6460df15eee9dd9ab531854">servio::ftest::testing_system::testing_system</a></div><div class="ttdeci">testing_system(drv::com_iface &amp;debug_comms, std::string_view name)</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:31</div></div>
-<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a15c347a9b819cf50b3768cae86d126cb"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a15c347a9b819cf50b3768cae86d126cb">servio::ftest::testing_system::debug_comms</a></div><div class="ttdeci">drv::com_iface &amp; debug_comms</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:17</div></div>
-<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a32be723ba7ea665263188e8b3324c4a5"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a32be723ba7ea665263188e8b3324c4a5">servio::ftest::testing_system::send_cb</a></div><div class="ttdeci">auto send_cb()</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:23</div></div>
-<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a39dbe14688296a9227481d3a84e13fa6"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a39dbe14688296a9227481d3a84e13fa6">servio::ftest::testing_system::tick</a></div><div class="ttdeci">void tick()</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:39</div></div>
-<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a4baa4177b4ff17eb3f398116f5b4745b"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a4baa4177b4ff17eb3f398116f5b4745b">servio::ftest::testing_system::collector</a></div><div class="ttdeci">em::testing::collector collector</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:20</div></div>
-<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a89bf86794ad86594d0a1da09015bbdb2"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a89bf86794ad86594d0a1da09015bbdb2">servio::ftest::testing_system::parameters</a></div><div class="ttdeci">em::testing::parameters parameters</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:21</div></div>
-<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_ae94f98c5ffdca9be15b1a8ba26334237"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#ae94f98c5ffdca9be15b1a8ba26334237">servio::ftest::testing_system::reactor</a></div><div class="ttdeci">em::testing::reactor reactor</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:19</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_a03d74ad4bf85bc6a23531431fd15514c"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">servio::ftester::rec_id</a></div><div class="ttdeci">static constexpr em::protocol::channel_type rec_id</div><div class="ttdef"><b>Definition:</b> base.hpp:10</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1com__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1com__iface.html">servio::drv::com_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:50</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1com__iface_html_a2e4eeb8621d13bc7698259bbe5fbd9c1"><div class="ttname"><a href="structservio_1_1drv_1_1com__iface.html#a2e4eeb8621d13bc7698259bbe5fbd9c1">servio::drv::com_iface::recv</a></div><div class="ttdeci">virtual com_res recv(std::span&lt; std::byte &gt; data)=0</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html">servio::ftest::testing_system</a></div><div class="ttdef"><b>Definition:</b> testing_system.hpp:18</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a14956559e6460df15eee9dd9ab531854"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a14956559e6460df15eee9dd9ab531854">servio::ftest::testing_system::testing_system</a></div><div class="ttdeci">testing_system(drv::com_iface &amp;debug_comms, std::string_view name)</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:36</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a15c347a9b819cf50b3768cae86d126cb"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a15c347a9b819cf50b3768cae86d126cb">servio::ftest::testing_system::debug_comms</a></div><div class="ttdeci">drv::com_iface &amp; debug_comms</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:19</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a32be723ba7ea665263188e8b3324c4a5"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a32be723ba7ea665263188e8b3324c4a5">servio::ftest::testing_system::send_cb</a></div><div class="ttdeci">auto send_cb()</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:29</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a39dbe14688296a9227481d3a84e13fa6"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a39dbe14688296a9227481d3a84e13fa6">servio::ftest::testing_system::tick</a></div><div class="ttdeci">void tick()</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:55</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a4baa4177b4ff17eb3f398116f5b4745b"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a4baa4177b4ff17eb3f398116f5b4745b">servio::ftest::testing_system::collector</a></div><div class="ttdeci">em::testing::collector collector</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:22</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a89bf86794ad86594d0a1da09015bbdb2"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a89bf86794ad86594d0a1da09015bbdb2">servio::ftest::testing_system::parameters</a></div><div class="ttdeci">em::testing::parameters parameters</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:23</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_a9514650c7de1fd4326c5cda0a8b20e61"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#a9514650c7de1fd4326c5cda0a8b20e61">servio::ftest::testing_system::send_</a></div><div class="ttdeci">em::result send_(uint16_t channel, const auto &amp;data)</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:49</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_ab5cf9a234481da7445bbe5d893db543f"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#ab5cf9a234481da7445bbe5d893db543f">servio::ftest::testing_system::ctx</a></div><div class="ttdeci">uctx ctx</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:27</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_abfb060275122e700af91f8f3140a66a5"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#abfb060275122e700af91f8f3140a66a5">servio::ftest::testing_system::ctx_cb</a></div><div class="ttdeci">em::static_function&lt; void(std::span&lt; const std::byte &gt;), 32 &gt; ctx_cb</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:25</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1testing__system_html_ae94f98c5ffdca9be15b1a8ba26334237"><div class="ttname"><a href="structservio_1_1ftest_1_1testing__system.html#ae94f98c5ffdca9be15b1a8ba26334237">servio::ftest::testing_system::reactor</a></div><div class="ttdeci">em::testing::reactor reactor</div><div class="ttdef"><b>Definition:</b> testing_system.hpp:21</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1uctx_html"><div class="ttname"><a href="structservio_1_1ftest_1_1uctx.html">servio::ftest::uctx</a></div><div class="ttdef"><b>Definition:</b> utest.hpp:21</div></div>
+<div class="ttc" id="autest_8hpp_html"><div class="ttname"><a href="utest_8hpp.html">utest.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="testing__system_8hpp.html">testing_system.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:42:11 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 30 2024 22:43:15 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -127,6 +127,8 @@ Functions</h2></td></tr>
 <tr class="separator:a0cdc7abf3d852902f1b08758212aed5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54207fdd13b8536cfecc8079e969056b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#a98eee67bc8174b65e3225bf2cadc29a7">cfg::map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a54207fdd13b8536cfecc8079e969056b">get_default_config</a> ()</td></tr>
 <tr class="separator:a54207fdd13b8536cfecc8079e969056b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5952ca03d742e99c794c66d9d305b8"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a0c5952ca03d742e99c794c66d9d305b8">setup_dac</a> (DAC_HandleTypeDef &amp;dac, const <a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">drv::pin_cfg</a> &amp;pcfg)</td></tr>
+<tr class="separator:a0c5952ca03d742e99c794c66d9d305b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d1ffe876c5d8201cbbb029bb4e7e988"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a5d1ffe876c5d8201cbbb029bb4e7e988">setup_gpio</a> (const <a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">drv::pin_cfg</a> &amp;cfg)</td></tr>
 <tr class="separator:a5d1ffe876c5d8201cbbb029bb4e7e988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab59156a4d6fbd15217a26dc5ebed8b64"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#ab59156a4d6fbd15217a26dc5ebed8b64">setup_adc_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
@@ -737,6 +739,36 @@ cal2</td>
 
 </div>
 </div>
+<a id="a0c5952ca03d742e99c794c66d9d305b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5952ca03d742e99c794c66d9d305b8">&#9670;&nbsp;</a></span>setup_dac()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">em::result servio::plt::setup_dac </td>
+          <td>(</td>
+          <td class="paramtype">DAC_HandleTypeDef &amp;&#160;</td>
+          <td class="paramname"><em>dac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">drv::pin_cfg</a> &amp;&#160;</td>
+          <td class="paramname"><em>pcfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#a3b5744acf3762f9fd7ff7cb9c8211640">servio::drv::pin_cfg::alternate</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, and <a class="el" href="namespaceservio_1_1drv.html#ae43b31297ea3dfab8312221cfd3c348d">servio::drv::pin_cfg::port</a>.</p>
+
+</div>
+</div>
 <a id="a5d1ffe876c5d8201cbbb029bb4e7e988"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d1ffe876c5d8201cbbb029bb4e7e988">&#9670;&nbsp;</a></span>setup_gpio()</h2>
 
@@ -874,7 +906,7 @@ cal2</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1plt.html">plt</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:42:11 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 30 2024 22:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

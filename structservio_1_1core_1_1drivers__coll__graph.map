@@ -2,12 +2,12 @@
 <area shape="rect" id="node1" title=" " alt="" coords="315,265,465,291"/>
 <area shape="rect" id="node2" href="$classservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="24,5,163,47"/>
 <area shape="rect" id="node3" href="$classservio_1_1drv_1_1pos__iface.html" title=" " alt="" coords="13,71,173,98"/>
-<area shape="rect" id="node4" href="$classservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="15,122,171,149"/>
+<area shape="rect" id="node4" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="15,122,171,149"/>
 <area shape="rect" id="node5" href="$classservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="5,173,181,215"/>
 <area shape="rect" id="node6" href="$classservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="14,239,173,266"/>
-<area shape="rect" id="node7" href="$classservio_1_1drv_1_1leds__iface.html" title=" " alt="" coords="11,290,175,317"/>
+<area shape="rect" id="node7" href="$structservio_1_1drv_1_1leds__iface.html" title=" " alt="" coords="11,290,175,317"/>
 <area shape="rect" id="node8" href="$classservio_1_1drv_1_1period__cb__iface.html" title=" " alt="" coords="24,341,163,383"/>
 <area shape="rect" id="node9" href="$classservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="8,407,179,434"/>
 <area shape="rect" id="node10" href="$classservio_1_1drv_1_1curr__iface.html" title=" " alt="" coords="12,458,175,485"/>
-<area shape="rect" id="node11" href="$classservio_1_1drv_1_1com__iface.html" title=" " alt="" coords="11,509,176,535"/>
+<area shape="rect" id="node11" href="$structservio_1_1drv_1_1com__iface.html" title=" " alt="" coords="11,509,176,535"/>
 </map>

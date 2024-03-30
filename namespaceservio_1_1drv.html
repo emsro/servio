@@ -154,11 +154,11 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1com__res.html">com_res</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1com__iface.html">com_iface</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1com__iface.html">com_iface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1leds__iface.html">leds_iface</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1leds__iface.html">leds_iface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1clk__iface.html">clk_iface</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1period__iface.html">period_iface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,7 +232,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1fe835b161f9212cc7232e64191ebc78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a1fe835b161f9212cc7232e64191ebc78">wait_for</a> (<a class="el" href="classservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;clk, <a class="el" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> ms)</td></tr>
+<tr class="memitem:a0a91dc7d48ea5fe638bee2d1827eac5f"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a0a91dc7d48ea5fe638bee2d1827eac5f">send</a> (<a class="el" href="structservio_1_1drv_1_1com__iface.html">com_iface</a> &amp;iface, <a class="el" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> timeout, auto &amp;... data)</td></tr>
+<tr class="separator:a0a91dc7d48ea5fe638bee2d1827eac5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe835b161f9212cc7232e64191ebc78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a1fe835b161f9212cc7232e64191ebc78">wait_for</a> (<a class="el" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;clk, <a class="el" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a> ms)</td></tr>
 <tr class="separator:a1fe835b161f9212cc7232e64191ebc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e3395c31d8cff501ff1b9241e107d9c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a5e3395c31d8cff501ff1b9241e107d9c">retain_callback</a> (<a class="el" href="classservio_1_1drv_1_1period__iface.html">period_iface</a> &amp;period)</td></tr>
 <tr class="separator:a5e3395c31d8cff501ff1b9241e107d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -567,6 +569,42 @@ template&lt;typename Callable &gt; </div>
 
 </div>
 </div>
+<a id="a0a91dc7d48ea5fe638bee2d1827eac5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a91dc7d48ea5fe638bee2d1827eac5f">&#9670;&nbsp;</a></span>send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">em::result servio::drv::send </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1com__iface.html">com_iface</a> &amp;&#160;</td>
+          <td class="paramname"><em>iface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">base::microseconds</a>&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto &amp;...&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structservio_1_1drv_1_1com__iface.html#a3b4b009cc32b3bbc049a42cd11bb725f">servio::drv::com_iface::send()</a>.</p>
+
+</div>
+</div>
 <a id="a9d4caa145e7a9eb34292a6ce97cce774"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d4caa145e7a9eb34292a6ce97cce774">&#9670;&nbsp;</a></span>TEST()</h2>
 
@@ -609,7 +647,7 @@ template&lt;typename Callable &gt; </div>
         <tr>
           <td class="memname">void servio::drv::wait_for </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;&#160;</td>
           <td class="paramname"><em>clk</em>, </td>
         </tr>
         <tr>
@@ -631,7 +669,7 @@ template&lt;typename Callable &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classservio_1_1drv_1_1clk__iface.html#a2761dd940ee94ea145c3236debde14ae">servio::drv::clk_iface::get_us()</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1drv_1_1clk__iface.html#a2761dd940ee94ea145c3236debde14ae">servio::drv::clk_iface::get_us()</a>.</p>
 
 </div>
 </div>
@@ -736,7 +774,7 @@ template&lt;typename Callable &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:42:11 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 30 2024 22:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

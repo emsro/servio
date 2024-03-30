@@ -98,6 +98,8 @@ Classes</h2></td></tr>
 <tr class="separator:structservio_1_1ftester_1_1config"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1joque__test.html">joque_test</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1ftester_1_1recorder.html">recorder</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1controller__interface.html">controller_interface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__system.html">test_system</a></td></tr>
@@ -120,6 +122,8 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a03d74ad4bf85bc6a23531431fd15514c"><td class="memItemLeft" align="right" valign="top">static constexpr em::protocol::channel_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">rec_id</a> = 4</td></tr>
+<tr class="separator:a03d74ad4bf85bc6a23531431fd15514c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4da908b96514755b7dda71c0cdf2734d"><td class="memItemLeft" align="right" valign="top">em::eabi_logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a4da908b96514755b7dda71c0cdf2734d">COM_LOGGER</a></td></tr>
 <tr class="separator:a4da908b96514755b7dda71c0cdf2734d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -135,7 +139,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
+<div class="textblock"></div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::ftester::config:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1ftester_1_1config__coll__graph.svg" width="170" height="218"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
 <a id="a9068c85a2b355f97abbdc5beb418b7dd"></a>uint32_t</td>
@@ -159,6 +171,12 @@ d_baudrate</td>
 <a id="a1ff2b573293cb82c49bf90032e7fc5a7"></a>path</td>
 <td class="fieldname">
 d_device</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a8f8cd80b3be896f7ecf844083945d242"></a>string</td>
+<td class="fieldname">
+filter</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -290,7 +308,7 @@ verbose</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1ftester.html#afa35dca7982260312c4bff22fc180eee">servio::ftester::config::c_device</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a65b2b391dc07c1b8476d7f72e781a825">servio::scmdio::coms_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#a1ff2b573293cb82c49bf90032e7fc5a7">servio::ftester::config::d_device</a>, <a class="el" href="namespaceservio_1_1scmdio.html#ad4fa41dcb7957c74dcc335d566c28eef">servio::scmdio::dcoms_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#a19d0941e319c81c0e7ebde81dc813507">servio::ftester::config::firmware</a>, <a class="el" href="namespaceservio_1_1ftester.html#a105df95d80da73ac8d6c61a0ed81d3e0">firmware_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#ad4b8db7e93cbb7ce322025c023643e84">servio::ftester::config::input</a>, <a class="el" href="namespaceservio_1_1ftester.html#a8eba53b84e68005583705b1565a54e39">ocfg_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#a41d09cfbc888978bd5a03ac36da22432">servio::ftester::config::openocd_config</a>, <a class="el" href="namespaceservio_1_1ftester.html#a27aa99e5128d3666ad6a985273c7541d">servio::ftester::config::output_dir</a>, <a class="el" href="namespaceservio_1_1ftester.html#a9fdf46df9cf2f31fdfb9f0e491ebc39c">servio::ftester::config::powerless</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc">servio::scmdio::powerless_flag()</a>, <a class="el" href="namespaceservio_1_1ftester.html#ae3b4a77a2b4806d57ab17e764cd9b396">servio::ftester::config::verbose</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a614e955e6323363d48b78d51d038a1d9">servio::scmdio::verbose_opt()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1ftester.html#afa35dca7982260312c4bff22fc180eee">servio::ftester::config::c_device</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a65b2b391dc07c1b8476d7f72e781a825">servio::scmdio::coms_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#a1ff2b573293cb82c49bf90032e7fc5a7">servio::ftester::config::d_device</a>, <a class="el" href="namespaceservio_1_1scmdio.html#ad4fa41dcb7957c74dcc335d566c28eef">servio::scmdio::dcoms_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#a8f8cd80b3be896f7ecf844083945d242">servio::ftester::config::filter</a>, <a class="el" href="namespaceservio_1_1ftester.html#a19d0941e319c81c0e7ebde81dc813507">servio::ftester::config::firmware</a>, <a class="el" href="namespaceservio_1_1ftester.html#a105df95d80da73ac8d6c61a0ed81d3e0">firmware_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#ad4b8db7e93cbb7ce322025c023643e84">servio::ftester::config::input</a>, <a class="el" href="namespaceservio_1_1ftester.html#a8eba53b84e68005583705b1565a54e39">ocfg_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#a41d09cfbc888978bd5a03ac36da22432">servio::ftester::config::openocd_config</a>, <a class="el" href="namespaceservio_1_1ftester.html#a27aa99e5128d3666ad6a985273c7541d">servio::ftester::config::output_dir</a>, <a class="el" href="namespaceservio_1_1ftester.html#a9fdf46df9cf2f31fdfb9f0e491ebc39c">servio::ftester::config::powerless</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc">servio::scmdio::powerless_flag()</a>, <a class="el" href="namespaceservio_1_1ftester.html#ae3b4a77a2b4806d57ab17e764cd9b396">servio::ftester::config::verbose</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a614e955e6323363d48b78d51d038a1d9">servio::scmdio::verbose_opt()</a>.</p>
 
 </div>
 </div>
@@ -399,13 +417,35 @@ verbose</td>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a03d74ad4bf85bc6a23531431fd15514c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03d74ad4bf85bc6a23531431fd15514c">&#9670;&nbsp;</a></span>rec_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr em::protocol::channel_type servio::ftester::rec_id = 4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1ftester.html">ftester</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:42:11 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 30 2024 22:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

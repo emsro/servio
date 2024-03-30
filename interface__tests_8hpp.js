@@ -10,5 +10,5 @@ var interface__tests_8hpp =
     [ "position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", "structservio_1_1drv_1_1tests_1_1position__test" ],
     [ "curr_iface_test", "structservio_1_1drv_1_1tests_1_1curr__iface__test.html", "structservio_1_1drv_1_1tests_1_1curr__iface__test" ],
     [ "hold", "interface__tests_8hpp.html#a510bb7381ec9be3c36a77e8794a75201", null ],
-    [ "setup_iface_tests", "interface__tests_8hpp.html#aebf8dcac87ba52ee75df8c80a0df7f5a", null ]
+    [ "setup_iface_tests", "interface__tests_8hpp.html#a5fbe48bf44c7fb58548eafa4c13af3aa", null ]
 ];

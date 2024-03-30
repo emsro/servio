@@ -1,6 +1,6 @@
 <map id="servio::ftest::utest&lt; T &gt;" name="servio::ftest::utest&lt; T &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="63,171,241,197"/>
-<area shape="rect" id="node2" href="$structservio_1_1ftest_1_1utest__base.html" title=" " alt="" coords="63,95,241,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="56,171,235,197"/>
+<area shape="rect" id="node2" href="$structservio_1_1ftest_1_1utest__base.html" title=" " alt="" coords="56,95,235,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,5,131,32"/>
-<area shape="rect" id="node4" href="$structservio_1_1ftest_1_1collector.html" title=" " alt="" coords="155,5,317,32"/>
+<area shape="rect" id="node4" href="$structservio_1_1ftest_1_1uctx.html" title=" " alt="" coords="155,5,290,32"/>
 </map>

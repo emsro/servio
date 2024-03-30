@@ -1,7 +1,5 @@
 var namespaceservio_1_1brd =
 [
-    [ "off_scale", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1off__scale", "namespaceservio_1_1brd_structservio_1_1brd_1_1off__scale_dup" ],
-    [ "setpoint", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1setpoint", "namespaceservio_1_1brd_structservio_1_1brd_1_1setpoint_dup" ],
     [ "dma_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1dma__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1dma__cfg_dup" ],
     [ "adc_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1adc__cfg_dup" ],
     [ "uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1uart__cfg_dup" ],
@@ -10,10 +8,10 @@ var namespaceservio_1_1brd =
     [ "adc_pooler_type", "namespaceservio_1_1brd.html#a958070df355afb0af5cd591aafa0449d", null ],
     [ "page", "namespaceservio_1_1brd.html#a7718b2b8ad07061e4449e50b08ccf825", null ],
     [ "adc_pooler_setup", "namespaceservio_1_1brd.html#aff6bf773b950ff1a6a26be02ee4da8a5", null ],
-    [ "calculate_current_conversion", "namespaceservio_1_1brd.html#aff50a1e1c6124a778bb3582872e34f0d", null ],
-    [ "calculate_temp_conversion", "namespaceservio_1_1brd.html#a33ab6c3ae0001f4b534b228aca58c2c5", null ],
+    [ "calculate_temp_conversion", "namespaceservio_1_1brd.html#ad33efb6e1aee36e59ff30add60610aef", null ],
     [ "comms_setup", "namespaceservio_1_1brd.html#aee366d78fb4dd7ae0e84ee4a28665113", null ],
     [ "generate_config", "namespaceservio_1_1brd.html#aafd656aed641ef33a40d34d4c5a1cca3", null ],
+    [ "get_curr_coeff", "namespaceservio_1_1brd.html#a1f7c49c0c9a0737b07080952026a5ebc", null ],
     [ "get_default_config", "namespaceservio_1_1brd.html#a2668116163a78a9f1c4b9993fce25530", null ],
     [ "get_persistent_pages", "namespaceservio_1_1brd.html#a8280908fc72c736242061b0c1700738b", null ],
     [ "hbridge_setup", "namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc", null ],
@@ -46,6 +44,7 @@ var namespaceservio_1_1brd =
     [ "CENTRAL_SENTRY", "namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43", null ],
     [ "CLOCK", "namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca", null ],
     [ "COMMS", "namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36", null ],
+    [ "DAC_HANDLE", "namespaceservio_1_1brd.html#ab1ef2037afaddd38bb84743b8a7e8ed8", null ],
     [ "DEBUG_COMMS", "namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5", null ],
     [ "DEGRADED_RECORDS", "namespaceservio_1_1brd.html#a29e9ac3d0caab29dfd8e900b69801727", null ],
     [ "HBRIDGE", "namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db", null ],

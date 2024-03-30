@@ -47,7 +47,7 @@ var searchData=
   ['adc_5ftrigger_53',['adc_trigger',['../namespaceservio_1_1plt.html#a03cac8a5dbc15f966a3b411492fffb0d',1,'servio::plt::adc_cfg']]],
   ['adc_5fvcc_54',['ADC_VCC',['../namespaceservio_1_1brd.html#a426f85a0dea9eb2dd9aa43e5f98f91e0',1,'servio::brd']]],
   ['alternate_55',['alternate',['../namespaceservio_1_1drv.html#a9d1eacd594993ffa565429d7ed984a00',1,'servio::drv::pinch_cfg::alternate()'],['../namespaceservio_1_1drv.html#a3b5744acf3762f9fd7ff7cb9c8211640',1,'servio::drv::pin_cfg::alternate()']]],
-  ['angle_56',['angle',['../structservio_1_1mtr_1_1posvel__kalman.html#a2ac393ceac1eb1e6e7713a988a279147',1,'servio::mtr::posvel_kalman::angle()'],['../namespaceservio_1_1klmn.html#a6b85edb1c54956e9cd22ae24f3debbc5',1,'servio::klmn::angle()'],['../namespaceservio_1_1scmdio.html#ae8ed943d565921113b58e844ec40d4fb',1,'servio::scmdio::mode_opts::angle()'],['../namespaceservio_1_1brd.html#acd03ee2c0ea8aca9e6c3580f0fa88137',1,'servio::brd::setpoint::angle()']]],
+  ['angle_56',['angle',['../namespaceservio_1_1scmdio.html#ae8ed943d565921113b58e844ec40d4fb',1,'servio::scmdio::mode_opts::angle()'],['../namespaceservio_1_1klmn.html#a6b85edb1c54956e9cd22ae24f3debbc5',1,'servio::klmn::angle()'],['../structservio_1_1mtr_1_1posvel__kalman.html#a2ac393ceac1eb1e6e7713a988a279147',1,'servio::mtr::posvel_kalman::angle()']]],
   ['angle_5fmod_57',['angle_mod',['../namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f',1,'servio::klmn']]],
   ['angle_5fvec_58',['angle_vec',['../namespaceservio_1_1sim.html#a496e8de9a9763267fda5eeaac8a92fa1',1,'servio::sim']]],
   ['any_5funinitialized_59',['any_uninitialized',['../structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca',1,'servio::core::drivers']]],

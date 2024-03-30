@@ -91,37 +91,42 @@ $(document).ready(function(){initNavTree('setup__tests_8hpp_source.html',''); in
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_8hpp.html">core/core.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivers_8hpp.html">core/drivers.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/collect.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/parameters.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/reactor.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>em = emlabcpp;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1ftest.html">servio::ftest</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1ftest.html#ab2aec6699cbd1a7a408c713f248c61fa">setup_tests</a>(</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    em::pmr::memory_resource&amp; mem,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    em::testing::reactor&amp;     reac,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    em::testing::collector&amp;   coll,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    em::testing::parameters&amp;  params,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    core::drivers&amp;            cdrv,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    core::core&amp;               core,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    em::result&amp;               res );</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utest_8hpp.html">ftest/utest.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/collect.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/parameters.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/reactor.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>em = emlabcpp;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1ftest.html">servio::ftest</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftest.html#a8b4e151d00902dc6a7975ea4fd1affbf">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1ftest.html#ae51d1c1557a8abda1d45aefd0439d415">setup_tests</a>(</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    em::pmr::memory_resource&amp; mem,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    em::testing::reactor&amp;     reac,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="structservio_1_1ftest_1_1uctx.html">uctx</a>&amp;                     ctx,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    em::testing::parameters&amp;  params,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="structservio_1_1core_1_1drivers.html">core::drivers</a>&amp;            cdrv,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="structservio_1_1core_1_1core.html">core::core</a>&amp;               core,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    em::result&amp;               res );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 <div class="ttc" id="acore_8hpp_html"><div class="ttname"><a href="core_8hpp.html">core.hpp</a></div></div>
 <div class="ttc" id="adrivers_8hpp_html"><div class="ttname"><a href="drivers_8hpp.html">drivers.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1ftest_html"><div class="ttname"><a href="namespaceservio_1_1ftest.html">servio::ftest</a></div><div class="ttdef"><b>Definition:</b> tests.cpp:8</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftest_html_ab2aec6699cbd1a7a408c713f248c61fa"><div class="ttname"><a href="namespaceservio_1_1ftest.html#ab2aec6699cbd1a7a408c713f248c61fa">servio::ftest::setup_tests</a></div><div class="ttdeci">void setup_tests(em::pmr::memory_resource &amp;mem, em::testing::reactor &amp;reac, em::testing::collector &amp;coll, em::testing::parameters &amp;params, core::drivers &amp;cdrv, core::core &amp;cor, em::result &amp;res)</div><div class="ttdef"><b>Definition:</b> tests.cpp:10</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftest_html_ae51d1c1557a8abda1d45aefd0439d415"><div class="ttname"><a href="namespaceservio_1_1ftest.html#ae51d1c1557a8abda1d45aefd0439d415">servio::ftest::setup_tests</a></div><div class="ttdeci">void setup_tests(em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, uctx &amp;ctx, t::parameters &amp;params, core::drivers &amp;cdrv, core::core &amp;cor, em::result &amp;res)</div><div class="ttdef"><b>Definition:</b> tests.cpp:10</div></div>
+<div class="ttc" id="astructservio_1_1core_1_1core_html"><div class="ttname"><a href="structservio_1_1core_1_1core.html">servio::core::core</a></div><div class="ttdef"><b>Definition:</b> core.hpp:13</div></div>
+<div class="ttc" id="astructservio_1_1core_1_1drivers_html"><div class="ttname"><a href="structservio_1_1core_1_1drivers.html">servio::core::drivers</a></div><div class="ttdef"><b>Definition:</b> drivers.hpp:13</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1uctx_html"><div class="ttname"><a href="structservio_1_1ftest_1_1uctx.html">servio::ftest::uctx</a></div><div class="ttdef"><b>Definition:</b> utest.hpp:21</div></div>
+<div class="ttc" id="autest_8hpp_html"><div class="ttname"><a href="utest_8hpp.html">utest.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="setup__tests_8hpp.html">setup_tests.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:42:11 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 30 2024 22:43:15 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -90,9 +90,9 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 : <a class="el" href="structservio_1_1mtr_1_1posvel__kalman.html#a3108021ed26e4da47a86907b886efffa">servio::mtr::posvel_kalman</a>
 </li>
 <li>offset
-: <a class="el" href="namespaceservio_1_1brd.html#ad0ad08d9b484f13472524c3ca4119067">servio::brd::off_scale</a>
-, <a class="el" href="namespaceservio_1_1cfg.html#adfaf4cc43f1f1e1d45b9306df55d3c08">servio::cfg::off_scale</a>
+: <a class="el" href="namespaceservio_1_1cfg.html#adfaf4cc43f1f1e1d45b9306df55d3c08">servio::cfg::off_scale</a>
 , <a class="el" href="structservio_1_1cnv_1_1linear__converter.html#a2fe91b131620df1be422208c87188c15">servio::cnv::linear_converter</a>
+, <a class="el" href="namespaceservio_1_1cnv.html#a65efc9dbb9ab3a39bc22ded5db273a70">servio::cnv::off_scale</a>
 , <a class="el" href="namespaceservio_1_1klmn.html#a08e7455b4711a4c4657bc1a613543ec1">servio::klmn::state_range</a>
 , <a class="el" href="structservio_1_1mtr_1_1posvel__kalman.html#ab490ff5729a44ca1074001950b997ac3">servio::mtr::posvel_kalman</a>
 </li>
@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 </li>
 <li>on_event()
 : <a class="el" href="classservio_1_1mon_1_1indication.html#a792da4beab2f501b8954e8465232656c">servio::mon::indication</a>
+</li>
+<li>on_msg()
+: <a class="el" href="classservio_1_1ftester_1_1recorder.html#a7fdc121eed65509063122eb805734f57">servio::ftester::recorder</a>
 </li>
 <li>on_period_irq()
 : <a class="el" href="structservio_1_1drv_1_1adc__pooler.html#af4303b8347974ca47f979e64733ed682">servio::drv::adc_pooler&lt; Set &gt;</a>
@@ -128,9 +131,6 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 <li>operator std::tuple&lt; bool &amp;, em::view&lt; std::byte * &gt; &amp; &gt;()
 : <a class="el" href="structservio_1_1drv_1_1com__res.html#a6020914827fcdb276a0ce29e80fb6b28">servio::drv::com_res</a>
 </li>
-<li>operator t::collector &amp;()
-: <a class="el" href="structservio_1_1ftest_1_1collector.html#af9a291bf38861d6b31c4ba38b7cc634e">servio::ftest::collector</a>
-</li>
 <li>operator()()
 : <a class="el" href="structservio_1_1ftester_1_1joque__test.html#a2d972260a057f5c789c7f9a1d2bcb8f0">servio::ftester::joque_test</a>
 , <a class="el" href="structservio_1_1fw_1_1persistent__config__writer.html#ab864ea4b337eb75993239ced191cf4d5">servio::fw::persistent_config_writer</a>
@@ -140,13 +140,12 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 </li>
 <li>operator-&gt;()
 : <a class="el" href="structservio_1_1drv_1_1adc__pooler.html#a1070a919585287ced780cffa680fdf85">servio::drv::adc_pooler&lt; Set &gt;</a>
-, <a class="el" href="structservio_1_1ftest_1_1collector.html#a3b6ff0d586c59da42b65ee96d7d99b00">servio::ftest::collector</a>
 </li>
 <li>operator&lt;=&gt;
 : <a class="el" href="structservio_1_1cfg_1_1payload.html#a3abc72d179aa82ee807ff02534a31dfb">servio::cfg::payload</a>
 </li>
 <li>operator=()
-: <a class="el" href="classservio_1_1drv_1_1clock.html#a1b7c6ff45ebd1d55c2fc0adefd6a685b">servio::drv::clock</a>
+: <a class="el" href="classservio_1_1drv_1_1clock.html#a535de5fa4805d5e97bbf39a1e0d97124">servio::drv::clock</a>
 , <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#aa1b13d2180961b314892b095888dcd18">servio::drv::cobs_uart</a>
 , <a class="el" href="classservio_1_1drv_1_1hbridge.html#a42d128185198c3d4eefb384c22df681d">servio::drv::hbridge</a>
 , <a class="el" href="classservio_1_1sntr_1_1central__sentry.html#ac8e1300918ee487f1a6e43c62a714742">servio::sntr::central_sentry</a>
@@ -162,7 +161,7 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 29 2024 11:42:11 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 30 2024 22:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

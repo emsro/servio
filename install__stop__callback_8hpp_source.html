@@ -94,29 +94,29 @@ $(document).ready(function(){initNavTree('install__stop__callback_8hpp_source.ht
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1fw.html">servio::fw</a></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespaceservio_1_1fw.html#a48ef88cea0fdbc38510a2b18b4e17a74">    8</a></span>&#160;<a class="code" href="namespaceservio_1_1fw.html#a48ef88cea0fdbc38510a2b18b4e17a74">install_stop_callback</a>( <span class="keyword">auto</span>&amp; target, <a class="code" href="classservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a>&amp; motor, <a class="code" href="classservio_1_1drv_1_1leds__iface.html">drv::leds_iface</a>* leds_ptr )</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespaceservio_1_1fw.html#a48ef88cea0fdbc38510a2b18b4e17a74">    8</a></span>&#160;<a class="code" href="namespaceservio_1_1fw.html#a48ef88cea0fdbc38510a2b18b4e17a74">install_stop_callback</a>( <span class="keyword">auto</span>&amp; target, <a class="code" href="classservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a>&amp; motor, <a class="code" href="structservio_1_1drv_1_1leds__iface.html">drv::leds_iface</a>* leds_ptr )</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        target = [&amp;motor, leds_ptr] {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                motor.<a class="code" href="classservio_1_1drv_1_1pwm__motor__iface.html#afca0b20b10aac66c6b89295d4ff2cae1">force_stop</a>();</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                <span class="keywordflow">if</span> ( leds_ptr != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                        leds_ptr-&gt;<a class="code" href="classservio_1_1drv_1_1leds__iface.html#ac254678ba7f928f8dba50189763f5074">force_red_led</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                        leds_ptr-&gt;<a class="code" href="structservio_1_1drv_1_1leds__iface.html#ac254678ba7f928f8dba50189763f5074">force_red_led</a>();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        };</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}  <span class="comment">// namespace servio::fw</span></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1leds__iface_html"><div class="ttname"><a href="classservio_1_1drv_1_1leds__iface.html">servio::drv::leds_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:60</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1leds__iface_html_ac254678ba7f928f8dba50189763f5074"><div class="ttname"><a href="classservio_1_1drv_1_1leds__iface.html#ac254678ba7f928f8dba50189763f5074">servio::drv::leds_iface::force_red_led</a></div><div class="ttdeci">virtual void force_red_led()=0</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1pwm__motor__iface_html"><div class="ttname"><a href="classservio_1_1drv_1_1pwm__motor__iface.html">servio::drv::pwm_motor_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:92</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1pwm__motor__iface_html"><div class="ttname"><a href="classservio_1_1drv_1_1pwm__motor__iface.html">servio::drv::pwm_motor_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:96</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1pwm__motor__iface_html_afca0b20b10aac66c6b89295d4ff2cae1"><div class="ttname"><a href="classservio_1_1drv_1_1pwm__motor__iface.html#afca0b20b10aac66c6b89295d4ff2cae1">servio::drv::pwm_motor_iface::force_stop</a></div><div class="ttdeci">virtual void force_stop()=0</div></div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1fw_html"><div class="ttname"><a href="namespaceservio_1_1fw.html">servio::fw</a></div><div class="ttdef"><b>Definition:</b> cfg_context.hpp:9</div></div>
 <div class="ttc" id="anamespaceservio_1_1fw_html_a48ef88cea0fdbc38510a2b18b4e17a74"><div class="ttname"><a href="namespaceservio_1_1fw.html#a48ef88cea0fdbc38510a2b18b4e17a74">servio::fw::install_stop_callback</a></div><div class="ttdeci">void install_stop_callback(auto &amp;target, drv::pwm_motor_iface &amp;motor, drv::leds_iface *leds_ptr)</div><div class="ttdef"><b>Definition:</b> install_stop_callback.hpp:8</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1leds__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1leds__iface.html">servio::drv::leds_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:66</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1leds__iface_html_ac254678ba7f928f8dba50189763f5074"><div class="ttname"><a href="structservio_1_1drv_1_1leds__iface.html#ac254678ba7f928f8dba50189763f5074">servio::drv::leds_iface::force_red_led</a></div><div class="ttdeci">virtual void force_red_led()=0</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="install__stop__callback_8hpp.html">install_stop_callback.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:42:11 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 30 2024 22:43:15 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

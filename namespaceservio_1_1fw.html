@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 <tr class="separator:a5b2bdd32885a2db32522f11a3a73a0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a958bf350bbe8b27b5db135c8b6ea0909"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a958bf350bbe8b27b5db135c8b6ea0909">handle_message_packet</a> (<a class="el" href="namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher">dispatcher</a> &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
 <tr class="separator:a958bf350bbe8b27b5db135c8b6ea0909"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48ef88cea0fdbc38510a2b18b4e17a74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a48ef88cea0fdbc38510a2b18b4e17a74">install_stop_callback</a> (auto &amp;target, <a class="el" href="classservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> &amp;motor, <a class="el" href="classservio_1_1drv_1_1leds__iface.html">drv::leds_iface</a> *leds_ptr)</td></tr>
+<tr class="memitem:a48ef88cea0fdbc38510a2b18b4e17a74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a48ef88cea0fdbc38510a2b18b4e17a74">install_stop_callback</a> (auto &amp;target, <a class="el" href="classservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> &amp;motor, <a class="el" href="structservio_1_1drv_1_1leds__iface.html">drv::leds_iface</a> *leds_ptr)</td></tr>
 <tr class="separator:a48ef88cea0fdbc38510a2b18b4e17a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e6a4fc23a613fa7fb33e7b42c7e83a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1cfg_1_1payload.html">cfg::payload</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a4e6a4fc23a613fa7fb33e7b42c7e83a3">load_persistent_config</a> (em::view&lt; const <a class="el" href="namespaceservio_1_1fw.html#a9ab9831a5a3afe24212ba9b5e3bca857">page</a> * &gt; pages, <a class="el" href="namespaceservio_1_1cfg.html#a98eee67bc8174b65e3225bf2cadc29a7">cfg::map</a> &amp;cfg)</td></tr>
 <tr class="separator:a4e6a4fc23a613fa7fb33e7b42c7e83a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -867,7 +867,7 @@ vcc_drv</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classservio_1_1drv_1_1leds__iface.html">drv::leds_iface</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1leds__iface.html">drv::leds_iface</a> *&#160;</td>
           <td class="paramname"><em>leds_ptr</em>&#160;</td>
         </tr>
         <tr>
@@ -883,7 +883,7 @@ vcc_drv</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classservio_1_1drv_1_1leds__iface.html#ac254678ba7f928f8dba50189763f5074">servio::drv::leds_iface::force_red_led()</a>, and <a class="el" href="classservio_1_1drv_1_1pwm__motor__iface.html#afca0b20b10aac66c6b89295d4ff2cae1">servio::drv::pwm_motor_iface::force_stop()</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1drv_1_1leds__iface.html#ac254678ba7f928f8dba50189763f5074">servio::drv::leds_iface::force_red_led()</a>, and <a class="el" href="classservio_1_1drv_1_1pwm__motor__iface.html#afca0b20b10aac66c6b89295d4ff2cae1">servio::drv::pwm_motor_iface::force_stop()</a>.</p>
 
 </div>
 </div>
@@ -1101,7 +1101,7 @@ template&lt;typename InputType , typename OutputType , typename Handle &gt; </di
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca">servio::core::drivers::any_uninitialized()</a>, <a class="el" href="structservio_1_1fw_1_1context.html#a7d45fb61cbad39bd3549c9ce2d7f3682">servio::fw::context::cfg</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a004ea464be38cf39c91ddd5c9b3dc93e">servio::core::drivers::clock</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a389e7674ac16ba937d391c0316d90b6c">servio::core::drivers::current</a>, <a class="el" href="classservio_1_1drv_1_1clk__iface.html#a2761dd940ee94ea145c3236debde14ae">servio::drv::clk_iface::get_us()</a>, <a class="el" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52adee5f03c2c4e73657824e028494b18c0">servio::mon::INITIALIZED</a>, <a class="el" href="namespaceservio_1_1fw.html#abfd6bfc38d66258765a5e4df635edbad">load_cfg_context()</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a9b5e3b87b77644f65974f0517ee349bd">servio::core::drivers::motor</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a0361b0638af2a8395ebe99484a9a10fe">servio::core::drivers::period</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a84c58d510bcc173e7a41d72de1975b73">servio::core::drivers::period_cb</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#aa40ea3d6e996112f3cd24c5cdedeb2a9">servio::core::drivers::position</a>, <a class="el" href="namespaceservio_1_1brd.html#a58f703e939140ddd318ba1e8202e6153">servio::brd::setup_core_drivers()</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a9cd6cc7fd26299a79490b17151efe206">servio::core::drivers::start_cb</a>, <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">stop_exec()</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#af2f6bdfae67f73d331d52d8da2dd5822">servio::core::drivers::temperature</a>, and <a class="el" href="structservio_1_1core_1_1drivers.html#ad7cd0f7be5f10bfa3608390bf6edb773">servio::core::drivers::vcc</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca">servio::core::drivers::any_uninitialized()</a>, <a class="el" href="structservio_1_1fw_1_1context.html#a7d45fb61cbad39bd3549c9ce2d7f3682">servio::fw::context::cfg</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a004ea464be38cf39c91ddd5c9b3dc93e">servio::core::drivers::clock</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a389e7674ac16ba937d391c0316d90b6c">servio::core::drivers::current</a>, <a class="el" href="structservio_1_1drv_1_1clk__iface.html#a2761dd940ee94ea145c3236debde14ae">servio::drv::clk_iface::get_us()</a>, <a class="el" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52adee5f03c2c4e73657824e028494b18c0">servio::mon::INITIALIZED</a>, <a class="el" href="namespaceservio_1_1fw.html#abfd6bfc38d66258765a5e4df635edbad">load_cfg_context()</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a9b5e3b87b77644f65974f0517ee349bd">servio::core::drivers::motor</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a0361b0638af2a8395ebe99484a9a10fe">servio::core::drivers::period</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a84c58d510bcc173e7a41d72de1975b73">servio::core::drivers::period_cb</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#aa40ea3d6e996112f3cd24c5cdedeb2a9">servio::core::drivers::position</a>, <a class="el" href="namespaceservio_1_1brd.html#a58f703e939140ddd318ba1e8202e6153">servio::brd::setup_core_drivers()</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#a9cd6cc7fd26299a79490b17151efe206">servio::core::drivers::start_cb</a>, <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">stop_exec()</a>, <a class="el" href="structservio_1_1core_1_1drivers.html#af2f6bdfae67f73d331d52d8da2dd5822">servio::core::drivers::temperature</a>, and <a class="el" href="structservio_1_1core_1_1drivers.html#ad7cd0f7be5f10bfa3608390bf6edb773">servio::core::drivers::vcc</a>.</p>
 
 </div>
 </div>
@@ -1166,7 +1166,7 @@ template&lt;typename InputType , typename OutputType , typename Handle &gt; </di
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1fw.html">fw</a></li>
-    <li class="footer">Generated on Fri Mar 29 2024 11:42:11 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 30 2024 22:43:16 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

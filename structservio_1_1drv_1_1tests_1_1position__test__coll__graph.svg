@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classservio_1_1drv_1_1clk__iface.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="structservio_1_1drv_1_1clk__iface.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="138.5,-78.5 138.5,-97.5 255.5,-97.5 255.5,-78.5 138.5,-78.5"/>
 <text text-anchor="middle" x="197" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::clk_iface</text>
 </a>
