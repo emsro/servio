@@ -8,7 +8,7 @@
 #include "ftest/is_powerless.hpp"
 #include "ftest/utest.hpp"
 
-namespace servio::ftest::tests
+namespace servio::ftest::intg
 {
 
 struct meas_cur_test
@@ -148,4 +148,4 @@ inline void setup_meas_tests(
         setup_utest< meas_cur_test >( mem, reac, ctx, res, params, clk, curr, motor, cor );
 }
 
-}  // namespace servio::ftest::tests
+}  // namespace servio::ftest::intg

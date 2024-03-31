@@ -1,14 +1,52 @@
 
+#include "ftest/bench/base.hpp"
 #include "ftester/config.hpp"
 #include "ftester/flash.hpp"
 #include "ftester/system.hpp"
 #include "joque/exec.hpp"
 
+#include <emlabcpp/enumerate.h>
 #include <fstream>
 #include <nlohmann/json.hpp>
 
 namespace servio::ftester
 {
+
+bool handle_test_specifics( std::string_view name, test_system& sys )
+{
+        if ( name == "current_profile" )  // TODO: I hate this
+        {
+                auto& recs = sys.get_records();
+
+                std::vector< ftest::bench::prof_record > prof_recs;
+                for ( const auto& rec : recs ) {
+                        em::protocol::handler< ftest::bench::prof_record >::extract( rec.data )
+                            .match(
+                                [&]( const ftest::bench::prof_record& pr ) {
+                                        prof_recs.push_back( pr );
+                                },
+                                [&]( auto&& err ) {
+                                        EMLABCPP_ERROR_LOG( "Failed to parse record: ", err );
+                                } );
+                }
+
+                for ( auto&& [i, prec] : em::enumerate( prof_recs ) ) {
+                        if ( prec.count == 0 )
+                                continue;
+                        auto avg =
+                            prec.sum | std::views::transform( [&]( uint32_t val ) {
+                                    return std::ceil( val / static_cast< float >( prec.count ) );
+                            } );
+                        std::cout << i << " : " << prec.count << ":\n";
+                        std::cout << em::view{ prec.max } << std::endl;
+                        std::cout << em::view{ avg } << std::endl;
+                        std::cout << em::view{ prec.min } << std::endl;
+                }
+                return true;
+        }
+
+        return false;
+}
 
 struct joque_test
 {
@@ -58,8 +96,10 @@ struct joque_test
                 std::ofstream         of{ p };
                 of << j.dump();
 
+                bool specific_test = handle_test_specifics( name, sys );
+
                 auto& recs = sys.get_records();
-                if ( !recs.empty() ) {
+                if ( !recs.empty() && !specific_test ) {
                         std::filesystem::path recp = output_dir.value() / ( name + ".rec" );
                         std::ofstream         of{ recp };
                         for ( const auto& rec : recs )

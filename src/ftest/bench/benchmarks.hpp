@@ -1,14 +1,16 @@
 #pragma once
 
+#include "core/core.hpp"
 #include "drv/callbacks.hpp"
 #include "drv/interfaces.hpp"
 #include "drv/retainers.hpp"
+#include "ftest/bench/base.hpp"
 #include "ftest/utest.hpp"
 #include "platform.hpp"
 
 #include <emlabcpp/enumerate.h>
 
-namespace servio::ftest::tests
+namespace servio::ftest::bench
 {
 
 struct loop_frequency
@@ -142,27 +144,22 @@ struct usage
         }
 };
 
-struct prof_record
-{
-        std::size_t                count = 0;
-        std::array< uint16_t, 64 > max   = { 0 };
-        std::array< uint32_t, 64 > sum   = { 0 };
-        std::array< uint16_t, 64 > min = em::filled< 64 >( std::numeric_limits< uint16_t >::max() );
-};
-
 std::array< prof_record, 3 > PROF_BUFFER;
 
 struct profile
 {
         drv::clk_iface&  clk;
         drv::curr_iface& curr;
+        core::core&      cor;
 
         std::string_view name = "current_profile";
 
         t::coroutine< void > run( auto& mem, uctx& ctx )
         {
                 em::defer d2 = drv::retain_callback( curr );
+                setup_poweroff( cor.ctl );
 
+                cor.ctl.switch_to_power_control( std::numeric_limits< int16_t >::max() / 2 );
                 std::size_t     write_i = 0;
                 drv::current_cb ccb{ [&]( uint32_t, std::span< uint16_t > data ) {
                         prof_record& rec = PROF_BUFFER[write_i];
@@ -196,6 +193,7 @@ struct profile
                 }
 
                 co_await store_metric( mem, ctx, "rec_count", c );
+                cor.ctl.switch_to_power_control( 0 );
         }
 };
 
@@ -207,11 +205,12 @@ inline void setup_bench_tests(
     drv::pos_iface&           pos,
     drv::curr_iface&          curr,
     drv::period_iface&        period,
+    core::core&               cor,
     em::result&               res )
 {
         setup_utest< loop_frequency >( mem, reac, ctx, res, clk, period, pos, curr );
         setup_utest< usage >( mem, reac, ctx, res, period, clk );
-        setup_utest< profile >( mem, reac, ctx, res, clk, curr );
+        setup_utest< profile >( mem, reac, ctx, res, clk, curr, cor );
 }
 
-}  // namespace servio::ftest::tests
+}  // namespace servio::ftest::bench

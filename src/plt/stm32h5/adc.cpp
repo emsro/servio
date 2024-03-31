@@ -44,8 +44,8 @@ em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cf
         dma.Init.Direction             = DMA_PERIPH_TO_MEMORY;
         dma.Init.SrcInc                = DMA_SINC_FIXED;
         dma.Init.DestInc               = DMA_DINC_FIXED;
-        dma.Init.SrcDataWidth          = DMA_SRC_DATAWIDTH_BYTE;
-        dma.Init.DestDataWidth         = DMA_DEST_DATAWIDTH_BYTE;
+        dma.Init.SrcDataWidth          = DMA_SRC_DATAWIDTH_HALFWORD;
+        dma.Init.DestDataWidth         = DMA_DEST_DATAWIDTH_HALFWORD;
         dma.Init.SrcBurstLength        = 1;
         dma.Init.DestBurstLength       = 1;
         dma.Init.TransferAllocatedPort = DMA_SRC_ALLOCATED_PORT0 | DMA_DEST_ALLOCATED_PORT0;

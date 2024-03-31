@@ -10,12 +10,12 @@ void setup_tests(
     uctx&                     ctx,
     t::parameters&,
     core::drivers& cdrv,
-    core::core&,
-    em::result& res )
+    core::core&    cor,
+    em::result&    res )
 
 {
-        tests::setup_bench_tests(
-            mem, reac, ctx, *cdrv.clock, *cdrv.position, *cdrv.current, *cdrv.period, res );
+        bench::setup_bench_tests(
+            mem, reac, ctx, *cdrv.clock, *cdrv.position, *cdrv.current, *cdrv.period, cor, res );
 }
 
 }  // namespace servio::ftest

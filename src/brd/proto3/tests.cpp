@@ -31,7 +31,7 @@ void setup_tests(
             *cdrv.current,
             res );
         drv::tests::setup_impl_tests( mem, reac, ctx, *cdrv.clock, res );
-        tests::setup_ctl_test(
+        intg::setup_ctl_test(
             mem,
             reac,
             ctx,
@@ -42,7 +42,7 @@ void setup_tests(
             *cdrv.position,
             cor,
             res );
-        tests::setup_meas_tests(
+        intg::setup_meas_tests(
             mem, reac, ctx, params, *cdrv.clock, *cdrv.motor, *cdrv.current, cor, res );
 }
 

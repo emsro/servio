@@ -9,7 +9,7 @@
 #include "ftest/rewind.hpp"
 #include "ftest/utest.hpp"
 
-namespace servio::ftest::tests
+namespace servio::ftest::intg
 {
 
 struct current_ctl_test
@@ -112,4 +112,4 @@ inline void setup_ctl_test(
         setup_utest< sign_test >( mem, reac, ctx, res, params, clk, curr, pos, motor, cor );
 }
 
-}  // namespace servio::ftest::tests
+}  // namespace servio::ftest::intg
