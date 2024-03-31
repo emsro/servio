@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"functions_m.html":[8,3,0,12],
 "functions_n.html":[8,3,0,13],
 "functions_o.html":[8,3,0,14],
 "functions_p.html":[8,3,0,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "meas__test_8hpp_source.html":[9,0,1,8,1,1],
 "metrics_8cpp.html":[9,0,1,14,1],
 "metrics_8hpp.html":[9,0,1,14,2],
-"metrics_8hpp_source.html":[9,0,1,14,2],
-"metrics__utest_8cpp.html":[9,0,1,14,0,0]
+"metrics_8hpp_source.html":[9,0,1,14,2]
 };

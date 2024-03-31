@@ -9,7 +9,7 @@ var namespaceservio_1_1ftest =
     [ "rewind", "namespaceservio_1_1ftest.html#a6a81193bb1ef2246b2bfa5b5890b23e6", null ],
     [ "setup_poweroff", "namespaceservio_1_1ftest.html#a7987cf8b1ec20f510735e5435fd46931", null ],
     [ "setup_tests", "namespaceservio_1_1ftest.html#a8b4e151d00902dc6a7975ea4fd1affbf", null ],
-    [ "setup_tests", "namespaceservio_1_1ftest.html#ae51d1c1557a8abda1d45aefd0439d415", null ],
+    [ "setup_tests", "namespaceservio_1_1ftest.html#ac9ee98501cad5a353eae9a440c82c301", null ],
     [ "setup_utest", "namespaceservio_1_1ftest.html#a82fc5f280fcfb6ac25a1ce0dc2f59d07", null ],
     [ "store_data", "namespaceservio_1_1ftest.html#a04f077611bfdcd9d113fd0df35dbba94", null ],
     [ "store_metric", "namespaceservio_1_1ftest.html#a7e35f03d806fc1aab4b09853ff8bc5f9", null ]

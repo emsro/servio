@@ -9,7 +9,7 @@ var namespaceservio_1_1ftest_1_1tests =
     [ "meas_cur_test", "structservio_1_1ftest_1_1tests_1_1meas__cur__test.html", "structservio_1_1ftest_1_1tests_1_1meas__cur__test" ],
     [ "meas_pos_test", "structservio_1_1ftest_1_1tests_1_1meas__pos__test.html", "structservio_1_1ftest_1_1tests_1_1meas__pos__test" ],
     [ "meas_vel_test", "structservio_1_1ftest_1_1tests_1_1meas__vel__test.html", "structservio_1_1ftest_1_1tests_1_1meas__vel__test" ],
-    [ "setup_bench_tests", "namespaceservio_1_1ftest_1_1tests.html#a882efa898537ae50ff25baf87cf703df", null ],
+    [ "setup_bench_tests", "namespaceservio_1_1ftest_1_1tests.html#a254dd1f997216715a002d2bc64e3eb7f", null ],
     [ "setup_ctl_test", "namespaceservio_1_1ftest_1_1tests.html#a5f7d5cd79f60653e52a5cdc7e4289b86", null ],
     [ "setup_meas_tests", "namespaceservio_1_1ftest_1_1tests.html#add397a923bcff4533c128d53b27d79a9", null ],
     [ "PROF_BUFFER", "namespaceservio_1_1ftest_1_1tests.html#a5b28be3dbdded2ee690090c2d4a78e2a", null ]

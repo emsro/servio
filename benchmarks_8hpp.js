@@ -9,6 +9,6 @@ var benchmarks_8hpp =
       [ "sum", "namespaceservio_1_1ftest_1_1tests.html#afe25ac9d5fa495925ef07307c03ce9ef", null ]
     ] ],
     [ "profile", "structservio_1_1ftest_1_1tests_1_1profile.html", "structservio_1_1ftest_1_1tests_1_1profile" ],
-    [ "setup_bench_tests", "benchmarks_8hpp.html#a882efa898537ae50ff25baf87cf703df", null ],
+    [ "setup_bench_tests", "benchmarks_8hpp.html#a254dd1f997216715a002d2bc64e3eb7f", null ],
     [ "PROF_BUFFER", "benchmarks_8hpp.html#a5b28be3dbdded2ee690090c2d4a78e2a", null ]
 ];

@@ -2,6 +2,7 @@ var structservio_1_1ftester_1_1test__system =
 [
     [ "test_system", "structservio_1_1ftester_1_1test__system.html#ae243035a80cef6bf6dc6295ff056c56b", null ],
     [ "get_collected", "structservio_1_1ftester_1_1test__system.html#a6a3431df353f91321743eaa5e001ef56", null ],
+    [ "get_records", "structservio_1_1ftester_1_1test__system.html#a5e37bb2ed282a20c2dbbd09402b7427e", null ],
     [ "get_tests", "structservio_1_1ftester_1_1test__system.html#a156492b3fdbf67e2aaaa8455177b58e0", null ],
     [ "is_initializing", "structservio_1_1ftester_1_1test__system.html#a4ededf6cbd2b9c25f5f89866b16e7622", null ],
     [ "run_test", "structservio_1_1ftester_1_1test__system.html#af0406a1f2b2ffa877583fc3314dc7238", null ],

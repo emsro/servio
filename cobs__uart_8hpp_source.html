@@ -148,8 +148,8 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        UART_HandleTypeDef* uart_   = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        DMA_HandleTypeDef*  tx_dma_ = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">volatile</span> <span class="keywordtype">bool</span>                tx_done_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        std::array&lt; std::byte, 128 &gt; tx_buffer_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">volatile</span> <span class="keywordtype">bool</span>                 tx_done_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        std::array&lt; std::byte, 1024 &gt; tx_buffer_;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        std::byte               rx_byte_;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="namespaceservio_1_1drv_1_1bits.html#structservio_1_1drv_1_1bits_1_1cobs__rx__container">bits::cobs_rx_container</a> rx_;</div>
@@ -246,7 +246,7 @@ $(document).ready(function(){initNavTree('cobs__uart_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="cobs__uart_8hpp.html">cobs_uart.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 30 2024 22:43:15 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Mar 31 2024 12:36:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
