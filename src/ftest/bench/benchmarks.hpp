@@ -1,15 +1,12 @@
 #pragma once
 
-#include "cnv/utils.hpp"
-#include "core/core.hpp"
 #include "drv/callbacks.hpp"
 #include "drv/interfaces.hpp"
 #include "drv/retainers.hpp"
-#include "emlabcpp/enumerate.h"
-#include "ftest/is_powerless.hpp"
-#include "ftest/rewind.hpp"
 #include "ftest/utest.hpp"
-#include "ftester/base.hpp"
+#include "platform.hpp"
+
+#include <emlabcpp/enumerate.h>
 
 namespace servio::ftest::tests
 {
@@ -100,6 +97,8 @@ struct usage
         drv::period_iface& period;
         drv::clk_iface&    clk;
 
+        std::string_view name = "usage";
+
         t::coroutine< void > run( auto& mem, uctx& ctx )
         {
                 base::microseconds time_window = 1000_ms;
@@ -115,6 +114,7 @@ struct usage
                 co_await store_metric( mem, ctx, "cpu freq", HAL_RCC_GetSysClockFreq(), "Hz" );
                 co_await store_metric(
                     mem,
+                    ctx,
                     "time_window",
                     std::chrono::duration_cast< base::sec_time >( time_window ),
                     "s" );
@@ -129,7 +129,7 @@ struct usage
                 co_await store_metric(
                     mem, ctx, "irq_usage", static_cast< uint32_t >( usage ), "%" );
                 co_await store_metric(
-                    ctx, mem, "irq_usage limit", static_cast< uint32_t >( usage_limit ), "%" );
+                    mem, ctx, "irq_usage limit", static_cast< uint32_t >( usage_limit ), "%" );
         }
 
         std::size_t count_iterations( base::microseconds time_window )
@@ -145,9 +145,9 @@ struct usage
 struct prof_record
 {
         std::size_t                count = 0;
-        std::array< uint16_t, 64 > max;
-        std::array< uint32_t, 64 > sum;
-        std::array< uint16_t, 64 > min;
+        std::array< uint16_t, 64 > max   = { 0 };
+        std::array< uint32_t, 64 > sum   = { 0 };
+        std::array< uint16_t, 64 > min = em::filled< 64 >( std::numeric_limits< uint16_t >::max() );
 };
 
 std::array< prof_record, 3 > PROF_BUFFER;
@@ -157,7 +157,9 @@ struct profile
         drv::clk_iface&  clk;
         drv::curr_iface& curr;
 
-        t::coroutine< void > run( auto&, uctx& ctx )
+        std::string_view name = "current_profile";
+
+        t::coroutine< void > run( auto& mem, uctx& ctx )
         {
                 em::defer d2 = drv::retain_callback( curr );
 
@@ -176,33 +178,40 @@ struct profile
                 } };
                 curr.set_current_callback( ccb );
 
-                std::size_t        read_i = 0;
-                base::microseconds end    = clk.get_us() + 1000_ms;
-
-                t::node_id data_id =
-                    co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
+                base::microseconds end = clk.get_us() + 1000_ms;
+                std::size_t        c   = 0;
 
                 while ( clk.get_us() < end ) {
-                        write_i += 1;
 
-                        t::node_id row_id = co_await ctx.coll.append(
-                            data_id, em::contiguous_container_type::OBJECT );
+                        std::size_t read_i = ( write_i + 1 ) % PROF_BUFFER.size();
+
+                        auto msg =
+                            em::protocol::handler< prof_record >::serialize( PROF_BUFFER[read_i] );
+
+                        co_await ctx.expect( ctx.record( msg ) == em::SUCCESS );
+
+                        PROF_BUFFER[read_i] = prof_record{};
+                        write_i             = read_i;
+                        c++;
                 }
+
+                co_await store_metric( mem, ctx, "rec_count", c );
         }
 };
 
 inline void setup_bench_tests(
     em::pmr::memory_resource& mem,
     t::reactor&               reac,
-    t::collector&             coll,
+    uctx&                     ctx,
     drv::clk_iface&           clk,
     drv::pos_iface&           pos,
     drv::curr_iface&          curr,
     drv::period_iface&        period,
     em::result&               res )
 {
-        setup_utest< loop_frequency >( mem, reac, coll, res, clk, period, pos, curr );
-        setup_utest< usage >( mem, reac, coll, res, period, clk );
+        setup_utest< loop_frequency >( mem, reac, ctx, res, clk, period, pos, curr );
+        setup_utest< usage >( mem, reac, ctx, res, period, clk );
+        setup_utest< profile >( mem, reac, ctx, res, clk, curr );
 }
 
 }  // namespace servio::ftest::tests

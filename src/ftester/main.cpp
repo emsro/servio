@@ -58,6 +58,14 @@ struct joque_test
                 std::ofstream         of{ p };
                 of << j.dump();
 
+                auto& recs = sys.get_records();
+                if ( !recs.empty() ) {
+                        std::filesystem::path recp = output_dir.value() / ( name + ".rec" );
+                        std::ofstream         of{ recp };
+                        for ( const auto& rec : recs )
+                                of << em::convert_view< int >( rec.data ) << std::endl;
+                }
+
                 return res;
         }
 };
@@ -65,6 +73,7 @@ struct joque_test
 }  // namespace servio::ftester
 
 int main( int argc, char* argv[] )
+
 {
         using namespace std::literals;
         using namespace servio;

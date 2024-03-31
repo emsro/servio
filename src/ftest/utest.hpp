@@ -22,11 +22,13 @@ struct uctx
         t::collector& coll;
         t::node_id    met_id;  // TODO: this prevents pararell execution
 
-        em::function_view< void( std::span< const std::byte > ) > record;
+        em::function_view< em::result( std::span< const std::byte > ) > record;
 
-        uctx( t::collector& coll, em::function_view< void( std::span< const std::byte > ) > record )
+        uctx(
+            t::collector&                                                   coll,
+            em::function_view< em::result( std::span< const std::byte > ) > record )
           : coll( coll )
-          , record( record )
+          , record( std::move( record ) )
         {
         }
 

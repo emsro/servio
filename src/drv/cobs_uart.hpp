@@ -59,8 +59,8 @@ private:
         UART_HandleTypeDef* uart_   = nullptr;
         DMA_HandleTypeDef*  tx_dma_ = nullptr;
 
-        volatile bool                tx_done_ = true;
-        std::array< std::byte, 128 > tx_buffer_;
+        volatile bool                 tx_done_ = true;
+        std::array< std::byte, 1024 > tx_buffer_;
 
         std::byte               rx_byte_;
         bits::cobs_rx_container rx_;

@@ -2,6 +2,9 @@
 
 #include "ftester/base.hpp"
 
+#include <emlabcpp/convert_view.h>
+#include <list>
+
 namespace servio::ftester
 {
 
@@ -36,13 +39,13 @@ public:
                 buffer_.clear();
         }
 
-        const std::vector< record >& get_buffer() const
+        const std::list< record >& get_buffer() const
         {
                 return buffer_;
         }
 
 private:
-        std::vector< record >      buffer_;
+        std::list< record >        buffer_;
         em::protocol::channel_type chan_;
 };
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ftester/handle_eptr.hpp"
+#include "ftester/recorder.hpp"
 #include "scmdio/async_cobs.hpp"
 
 #include <emlabcpp/convert_view.h>
@@ -70,6 +71,7 @@ struct test_system
                 [this]( auto chann, const auto& data ) {
                         return send( chann, data );
                 } )
+          , rec_( rec_id )
           , col_iface_( col_serv_ )
           , cont_(
                 em::testing::core_channel,
@@ -122,6 +124,11 @@ struct test_system
                 return col_serv_.get_tree();
         }
 
+        const auto& get_records() const
+        {
+                return rec_.get_buffer();
+        }
+
         void tick()
         {
                 cont_.tick();
@@ -148,6 +155,7 @@ private:
         void clear()
         {
                 col_serv_.clear();
+                rec_.clear();
                 col_iface_.res = std::monostate{};
         }
 
@@ -169,7 +177,7 @@ private:
         boost::asio::awaitable< void > dread()
         {
 
-                std::vector< std::byte > buffer( 512, std::byte{ 0 } );
+                std::vector< std::byte > buffer( 1024, std::byte{ 0 } );
 
                 while ( true ) {
                         em::view< std::byte* > data = co_await d_port_.async_read( buffer );
@@ -178,9 +186,9 @@ private:
                             data,
                             [&]( em::protocol::channel_type   chid,
                                  std::span< const std::byte > data ) {
-                                    COM_LOG( chid, "r: ", em::protocol::message< 128 >{ data } );
+                                    COM_LOG( chid, "r: ", em::protocol::msg_format{ data } );
                                     return em::protocol::multiplexed_dispatch(
-                                        chid, data, cont_, col_serv_, par_serv_ );
+                                        chid, data, cont_, col_serv_, par_serv_, rec_ );
                             } );
 
                         system_failure_ |= out == em::ERROR;
@@ -209,6 +217,7 @@ private:
 
         em::testing::collect_server    col_serv_;
         em::testing::parameters_server par_serv_;
+        recorder                       rec_;
 
         controller_interface col_iface_;
 

@@ -22,7 +22,7 @@ struct testing_system
         em::testing::collector  collector;
         em::testing::parameters parameters;
 
-        em::static_function< void( std::span< const std::byte > ), 32 > ctx_cb;
+        em::static_function< em::result( std::span< const std::byte > ), 32 > ctx_cb;
 
         uctx ctx;
 
@@ -39,8 +39,7 @@ struct testing_system
           , collector( em::testing::collect_channel, send_cb() )
           , parameters( em::testing::params_channel, send_cb() )
           , ctx_cb( [&]( std::span< const std::byte > data ) {
-                  // TODO: the ignore is NOT nice
-                  std::ignore = send_( ftester::rec_id, data );
+                  return send_( ftester::rec_id, data );
           } )
           , ctx( collector, ctx_cb )
         {
