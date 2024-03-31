@@ -97,16 +97,18 @@ var annotated_dup =
         [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ]
       ] ],
       [ "ftest", "namespaceservio_1_1ftest.html", [
-        [ "tests", "namespaceservio_1_1ftest_1_1tests.html", [
-          [ "loop_frequency", "structservio_1_1ftest_1_1tests_1_1loop__frequency.html", "structservio_1_1ftest_1_1tests_1_1loop__frequency" ],
-          [ "usage", "structservio_1_1ftest_1_1tests_1_1usage.html", "structservio_1_1ftest_1_1tests_1_1usage" ],
-          [ "prof_record", "namespaceservio_1_1ftest_1_1tests.html#structservio_1_1ftest_1_1tests_1_1prof__record", "namespaceservio_1_1ftest_1_1tests_structservio_1_1ftest_1_1tests_1_1prof__record_dup" ],
-          [ "profile", "structservio_1_1ftest_1_1tests_1_1profile.html", "structservio_1_1ftest_1_1tests_1_1profile" ],
-          [ "current_ctl_test", "structservio_1_1ftest_1_1tests_1_1current__ctl__test.html", "structservio_1_1ftest_1_1tests_1_1current__ctl__test" ],
-          [ "sign_test", "structservio_1_1ftest_1_1tests_1_1sign__test.html", "structservio_1_1ftest_1_1tests_1_1sign__test" ],
-          [ "meas_cur_test", "structservio_1_1ftest_1_1tests_1_1meas__cur__test.html", "structservio_1_1ftest_1_1tests_1_1meas__cur__test" ],
-          [ "meas_pos_test", "structservio_1_1ftest_1_1tests_1_1meas__pos__test.html", "structservio_1_1ftest_1_1tests_1_1meas__pos__test" ],
-          [ "meas_vel_test", "structservio_1_1ftest_1_1tests_1_1meas__vel__test.html", "structservio_1_1ftest_1_1tests_1_1meas__vel__test" ]
+        [ "bench", "namespaceservio_1_1ftest_1_1bench.html", [
+          [ "prof_record", "namespaceservio_1_1ftest_1_1bench.html#structservio_1_1ftest_1_1bench_1_1prof__record", "namespaceservio_1_1ftest_1_1bench_structservio_1_1ftest_1_1bench_1_1prof__record_dup" ],
+          [ "loop_frequency", "structservio_1_1ftest_1_1bench_1_1loop__frequency.html", "structservio_1_1ftest_1_1bench_1_1loop__frequency" ],
+          [ "usage", "structservio_1_1ftest_1_1bench_1_1usage.html", "structservio_1_1ftest_1_1bench_1_1usage" ],
+          [ "profile", "structservio_1_1ftest_1_1bench_1_1profile.html", "structservio_1_1ftest_1_1bench_1_1profile" ]
+        ] ],
+        [ "intg", "namespaceservio_1_1ftest_1_1intg.html", [
+          [ "current_ctl_test", "structservio_1_1ftest_1_1intg_1_1current__ctl__test.html", "structservio_1_1ftest_1_1intg_1_1current__ctl__test" ],
+          [ "sign_test", "structservio_1_1ftest_1_1intg_1_1sign__test.html", "structservio_1_1ftest_1_1intg_1_1sign__test" ],
+          [ "meas_cur_test", "structservio_1_1ftest_1_1intg_1_1meas__cur__test.html", "structservio_1_1ftest_1_1intg_1_1meas__cur__test" ],
+          [ "meas_pos_test", "structservio_1_1ftest_1_1intg_1_1meas__pos__test.html", "structservio_1_1ftest_1_1intg_1_1meas__pos__test" ],
+          [ "meas_vel_test", "structservio_1_1ftest_1_1intg_1_1meas__vel__test.html", "structservio_1_1ftest_1_1intg_1_1meas__vel__test" ]
         ] ],
         [ "testing_system", "structservio_1_1ftest_1_1testing__system.html", "structservio_1_1ftest_1_1testing__system" ],
         [ "uctx", "structservio_1_1ftest_1_1uctx.html", "structservio_1_1ftest_1_1uctx" ],

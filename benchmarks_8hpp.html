@@ -92,9 +92,11 @@ $(document).ready(function(){initNavTree('benchmarks_8hpp.html',''); initResizab
 <div class="title">benchmarks.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="drv_2callbacks_8hpp_source.html">drv/callbacks.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="core_8hpp_source.html">core/core.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drv_2callbacks_8hpp_source.html">drv/callbacks.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="interfaces_8hpp_source.html">drv/interfaces.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="retainers_8hpp_source.html">drv/retainers.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ftest_2bench_2base_8hpp_source.html">ftest/bench/base.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="utest_8hpp_source.html">ftest/utest.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="platform_8hpp_source.html">platform.hpp</a>&quot;</code><br />
 <code>#include &lt;emlabcpp/enumerate.h&gt;</code><br />
@@ -103,7 +105,7 @@ $(document).ready(function(){initNavTree('benchmarks_8hpp.html',''); initResizab
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="benchmarks_8hpp__incl.svg" width="1542" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="benchmarks_8hpp__incl.svg" width="2032" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -111,13 +113,11 @@ $(document).ready(function(){initNavTree('benchmarks_8hpp.html',''); initResizab
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1tests_1_1loop__frequency.html">servio::ftest::tests::loop_frequency</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1bench_1_1loop__frequency.html">servio::ftest::bench::loop_frequency</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1tests_1_1usage.html">servio::ftest::tests::usage</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1bench_1_1usage.html">servio::ftest::bench::usage</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1ftest_1_1tests_1_1prof__record"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1tests.html#structservio_1_1ftest_1_1tests_1_1prof__record">servio::ftest::tests::prof_record</a></td></tr>
-<tr class="separator:structservio_1_1ftest_1_1tests_1_1prof__record"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1tests_1_1profile.html">servio::ftest::tests::profile</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1bench_1_1profile.html">servio::ftest::bench::profile</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -126,76 +126,26 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceservio_1_1ftest"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html">servio::ftest</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceservio_1_1ftest_1_1tests"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1tests.html">servio::ftest::tests</a></td></tr>
+<tr class="memitem:namespaceservio_1_1ftest_1_1bench"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1bench.html">servio::ftest::bench</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a254dd1f997216715a002d2bc64e3eb7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1tests.html#a254dd1f997216715a002d2bc64e3eb7f">servio::ftest::tests::setup_bench_tests</a> (em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, uctx &amp;ctx, drv::clk_iface &amp;clk, drv::pos_iface &amp;pos, drv::curr_iface &amp;curr, drv::period_iface &amp;period, em::result &amp;res)</td></tr>
-<tr class="separator:a254dd1f997216715a002d2bc64e3eb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56881516fb9336e37cd0c96c84fe9cf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1bench.html#a56881516fb9336e37cd0c96c84fe9cf3">servio::ftest::bench::setup_bench_tests</a> (em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, uctx &amp;ctx, drv::clk_iface &amp;clk, drv::pos_iface &amp;pos, drv::curr_iface &amp;curr, drv::period_iface &amp;period, core::core &amp;cor, em::result &amp;res)</td></tr>
+<tr class="separator:a56881516fb9336e37cd0c96c84fe9cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5b28be3dbdded2ee690090c2d4a78e2a"><td class="memItemLeft" align="right" valign="top">std::array&lt; prof_record, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1tests.html#a5b28be3dbdded2ee690090c2d4a78e2a">servio::ftest::tests::PROF_BUFFER</a></td></tr>
-<tr class="separator:a5b28be3dbdded2ee690090c2d4a78e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa68bfcf1c7aaad753b4fa0e429241c1a"><td class="memItemLeft" align="right" valign="top">std::array&lt; prof_record, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1bench.html#aa68bfcf1c7aaad753b4fa0e429241c1a">servio::ftest::bench::PROF_BUFFER</a></td></tr>
+<tr class="separator:aa68bfcf1c7aaad753b4fa0e429241c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="structservio_1_1ftest_1_1tests_1_1prof__record" id="structservio_1_1ftest_1_1tests_1_1prof__record"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1ftest_1_1tests_1_1prof__record">&#9670;&nbsp;</a></span>servio::ftest::tests::prof_record</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::ftest::tests::prof_record</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::ftest::tests::prof_record:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1ftest_1_1tests_1_1prof__record__coll__graph.svg" width="315" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a09950f61231c23aba8d83fd9fa920edf"></a>size_t</td>
-<td class="fieldname">
-count</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a4269c287984ea7a7c7ec001bd273cf2c"></a>array&lt; uint16_t, 64 &gt;</td>
-<td class="fieldname">
-max</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a0685a7c1dedbb1c3bed74010da301e5f"></a>array&lt; uint16_t, 64 &gt;</td>
-<td class="fieldname">
-min</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="afe25ac9d5fa495925ef07307c03ce9ef"></a>array&lt; uint32_t, 64 &gt;</td>
-<td class="fieldname">
-sum</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="dir_d1402af3de76fb47866f75e7c41ad8f0.html">bench</a></li><li class="navelem"><a class="el" href="benchmarks_8hpp.html">benchmarks.hpp</a></li>
-    <li class="footer">Generated on Sun Mar 31 2024 12:36:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Mar 31 2024 21:50:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

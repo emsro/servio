@@ -49,7 +49,7 @@ var hierarchy =
       [ "servio::drv::adc_pooler_current< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__current.html", null ]
     ] ],
     [ "servio::drv::tests::curr_iface_test", "structservio_1_1drv_1_1tests_1_1curr__iface__test.html", null ],
-    [ "servio::ftest::tests::current_ctl_test", "structservio_1_1ftest_1_1tests_1_1current__ctl__test.html", null ],
+    [ "servio::ftest::intg::current_ctl_test", "structservio_1_1ftest_1_1intg_1_1current__ctl__test.html", null ],
     [ "servio::drv::detailed_adc_channel< ID, N >", "structservio_1_1drv_1_1detailed__adc__channel.html", null ],
     [ "servio::drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >", "structservio_1_1drv_1_1detailed__adc__channel.html", null ],
     [ "servio::drv::detailed_cb_iface", "classservio_1_1drv_1_1detailed__cb__iface.html", [
@@ -86,10 +86,10 @@ var hierarchy =
     [ "servio::base::leds_vals", "namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals", null ],
     [ "servio::cnv::linear_converter", "structservio_1_1cnv_1_1linear__converter.html", null ],
     [ "servio::ctl::linear_transition_regulator", "structservio_1_1ctl_1_1linear__transition__regulator.html", null ],
-    [ "servio::ftest::tests::loop_frequency", "structservio_1_1ftest_1_1tests_1_1loop__frequency.html", null ],
-    [ "servio::ftest::tests::meas_cur_test", "structservio_1_1ftest_1_1tests_1_1meas__cur__test.html", null ],
-    [ "servio::ftest::tests::meas_pos_test", "structservio_1_1ftest_1_1tests_1_1meas__pos__test.html", null ],
-    [ "servio::ftest::tests::meas_vel_test", "structservio_1_1ftest_1_1tests_1_1meas__vel__test.html", null ],
+    [ "servio::ftest::bench::loop_frequency", "structservio_1_1ftest_1_1bench_1_1loop__frequency.html", null ],
+    [ "servio::ftest::intg::meas_cur_test", "structservio_1_1ftest_1_1intg_1_1meas__cur__test.html", null ],
+    [ "servio::ftest::intg::meas_pos_test", "structservio_1_1ftest_1_1intg_1_1meas__pos__test.html", null ],
+    [ "servio::ftest::intg::meas_vel_test", "structservio_1_1ftest_1_1intg_1_1meas__vel__test.html", null ],
     [ "servio::mtr::metrics", "classservio_1_1mtr_1_1metrics.html", null ],
     [ "servio::scmdio::mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", null ],
     [ "servio::mon::monitor", "classservio_1_1mon_1_1monitor.html", null ],
@@ -113,8 +113,8 @@ var hierarchy =
     ] ],
     [ "servio::drv::tests::position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", null ],
     [ "servio::mtr::posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", null ],
-    [ "servio::ftest::tests::prof_record", "namespaceservio_1_1ftest_1_1tests.html#structservio_1_1ftest_1_1tests_1_1prof__record", null ],
-    [ "servio::ftest::tests::profile", "structservio_1_1ftest_1_1tests_1_1profile.html", null ],
+    [ "servio::ftest::bench::prof_record", "namespaceservio_1_1ftest_1_1bench.html#structservio_1_1ftest_1_1bench_1_1prof__record", null ],
+    [ "servio::ftest::bench::profile", "structservio_1_1ftest_1_1bench_1_1profile.html", null ],
     [ "servio::mon::pulser", "structservio_1_1mon_1_1pulser.html", null ],
     [ "servio::drv::pwm_motor_iface", "classservio_1_1drv_1_1pwm__motor__iface.html", [
       [ "servio::drv::hbridge", "classservio_1_1drv_1_1hbridge.html", null ]
@@ -124,7 +124,7 @@ var hierarchy =
     [ "servio::sntr::record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", null ],
     [ "servio::ftester::recorder", "classservio_1_1ftester_1_1recorder.html", null ],
     [ "servio::sntr::sentry", "classservio_1_1sntr_1_1sentry.html", null ],
-    [ "servio::ftest::tests::sign_test", "structservio_1_1ftest_1_1tests_1_1sign__test.html", null ],
+    [ "servio::ftest::intg::sign_test", "structservio_1_1ftest_1_1intg_1_1sign__test.html", null ],
     [ "servio::sim::simple_motor", "structservio_1_1sim_1_1simple__motor.html", null ],
     [ "servio::core::standard_callbacks", "structservio_1_1core_1_1standard__callbacks.html", null ],
     [ "servio::klmn::state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", null ],
@@ -150,7 +150,7 @@ var hierarchy =
     [ "servio::brd::uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", null ],
     [ "servio::plt::uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", null ],
     [ "servio::ftest::uctx", "structservio_1_1ftest_1_1uctx.html", null ],
-    [ "servio::ftest::tests::usage", "structservio_1_1ftest_1_1tests_1_1usage.html", null ],
+    [ "servio::ftest::bench::usage", "structservio_1_1ftest_1_1bench_1_1usage.html", null ],
     [ "servio::drv::value_cb_iface", "classservio_1_1drv_1_1value__cb__iface.html", [
       [ "servio::core::position_callback", "classservio_1_1core_1_1position__callback.html", null ],
       [ "servio::drv::empty_value_cb", "structservio_1_1drv_1_1empty__value__cb.html", null ],

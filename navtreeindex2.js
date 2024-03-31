@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"functions_j.html":[8,3,0,9],
+"functions_k.html":[8,3,0,10],
+"functions_l.html":[8,3,0,11],
 "functions_m.html":[8,3,0,12],
 "functions_n.html":[8,3,0,13],
 "functions_o.html":[8,3,0,14],
@@ -60,8 +63,8 @@ var NAVTREEINDEX2 =
 "fw_2main_8cpp.html#ad1824a7aded7f0e6c49688e7ac14321c":[9,0,1,10,9,1],
 "fw_2main_8cpp.html#ae63f34c74ab660564e5401f65b0d4ffa":[9,0,1,10,9,2],
 "fw_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[9,0,1,10,9,0],
-"globals.html":[9,1,0,0],
 "globals.html":[9,1,0],
+"globals.html":[9,1,0,0],
 "globals_8cpp.html":[9,0,1,5,3],
 "globals_8cpp.html#a50e4044e788144d8dde6f5c10ce3326a":[9,0,1,5,3,0],
 "globals_8hpp.html":[9,0,1,5,4],
@@ -245,9 +248,6 @@ var NAVTREEINDEX2 =
 "md_doc_reqs_limits.html#autotoc_md12":[6,0],
 "md_doc_reqs_limits.html#autotoc_md13":[6,1],
 "meas__test_8hpp.html":[9,0,1,8,1,1],
-"meas__test_8hpp.html#add397a923bcff4533c128d53b27d79a9":[9,0,1,8,1,1,3],
-"meas__test_8hpp_source.html":[9,0,1,8,1,1],
-"metrics_8cpp.html":[9,0,1,14,1],
-"metrics_8hpp.html":[9,0,1,14,2],
-"metrics_8hpp_source.html":[9,0,1,14,2]
+"meas__test_8hpp.html#ad8aaf65d4ded13eca44135657041f643":[9,0,1,8,1,1,3],
+"meas__test_8hpp_source.html":[9,0,1,8,1,1]
 };
