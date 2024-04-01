@@ -18,6 +18,8 @@
 
 namespace em = emlabcpp;
 
+// TODO: add calibration procedure for ADC1
+
 // TODO: this needs it's own header
 extern "C" {
 extern int _config_start;
@@ -177,6 +179,8 @@ adc_pooler_type* adc_pooler_setup()
         // TODO: temperature sensors was set to a random unused channel. We can't use the internal
         // temperature channel until the HAL get's cahnged:
         // https://github.com/STMicroelectronics/stm32h5xx_hal_driver/issues/4
+        //
+        // TODO: we can use DTS peripheral instead! (Digital temperature sensor)
         plt::setup_adc_channel(
             ADC_POOLER->temp.chconf,
             drv::pinch_cfg{
@@ -215,7 +219,7 @@ drv::hbridge* hbridge_setup()
         __HAL_RCC_GPIOB_CLK_ENABLE();
         plt::hb_timer_cfg cfg{
             .timer_instance = TIM1,
-            .period         = std::numeric_limits< uint16_t >::max() / 2,
+            .period         = std::numeric_limits< uint16_t >::max() / 4,
             .irq            = TIM1_UP_IRQn,
             .irq_priority   = 1,
             .mc1 =

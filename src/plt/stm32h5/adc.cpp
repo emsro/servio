@@ -43,7 +43,7 @@ em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cf
         dma.Init.Request               = cfg.dma.request;
         dma.Init.Direction             = DMA_PERIPH_TO_MEMORY;
         dma.Init.SrcInc                = DMA_SINC_FIXED;
-        dma.Init.DestInc               = DMA_DINC_FIXED;
+        dma.Init.DestInc               = DMA_DINC_INCREMENTED;
         dma.Init.SrcDataWidth          = DMA_SRC_DATAWIDTH_HALFWORD;
         dma.Init.DestDataWidth         = DMA_DEST_DATAWIDTH_HALFWORD;
         dma.Init.SrcBurstLength        = 1;

@@ -156,12 +156,14 @@ struct profile
 
         t::coroutine< void > run( auto& mem, uctx& ctx )
         {
-                em::defer d2 = drv::retain_callback( curr );
-                setup_poweroff( cor.ctl );
+                auto&     curr_cb = curr.get_current_callback();
+                em::defer d2      = drv::retain_callback( curr );
+                em::defer d       = setup_poweroff( cor.ctl );
 
-                cor.ctl.switch_to_power_control( std::numeric_limits< int16_t >::max() / 2 );
+                cor.ctl.switch_to_power_control( -std::numeric_limits< int16_t >::max() / 2 );
                 std::size_t     write_i = 0;
-                drv::current_cb ccb{ [&]( uint32_t, std::span< uint16_t > data ) {
+                drv::current_cb ccb{ [&]( uint32_t val, std::span< uint16_t > data ) {
+                        curr_cb.on_value_irq( val, data );
                         prof_record& rec = PROF_BUFFER[write_i];
                         rec.count += 1;
                         if ( data.size() > rec.sum.size() )
@@ -193,7 +195,6 @@ struct profile
                 }
 
                 co_await store_metric( mem, ctx, "rec_count", c );
-                cor.ctl.switch_to_power_control( 0 );
         }
 };
 
