@@ -1,6 +1,5 @@
 var namespaceservio =
 [
-    [ "base", "namespaceservio_1_1base.html", "namespaceservio_1_1base" ],
     [ "bb", "namespaceservio_1_1bb.html", "namespaceservio_1_1bb" ],
     [ "brd", "namespaceservio_1_1brd.html", "namespaceservio_1_1brd" ],
     [ "cfg", "namespaceservio_1_1cfg.html", "namespaceservio_1_1cfg" ],
@@ -12,6 +11,12 @@ var namespaceservio =
     [ "ftester", "namespaceservio_1_1ftester.html", "namespaceservio_1_1ftester" ],
     [ "fw", "namespaceservio_1_1fw.html", "namespaceservio_1_1fw" ],
     [ "klmn", "namespaceservio_1_1klmn.html", "namespaceservio_1_1klmn" ],
+    [ "literals", "namespaceservio_1_1literals.html", [
+      [ "operator\"\"_b", "namespaceservio_1_1literals.html#a62e86ab080363c9801b3d11413cb755c", null ],
+      [ "operator\"\"_ms", "namespaceservio_1_1literals.html#af7fb1870e027a6f6576164c72d18bc73", null ],
+      [ "operator\"\"_s", "namespaceservio_1_1literals.html#a9cc4a2727af86eed775de91ae7e0ac23", null ],
+      [ "operator\"\"_us", "namespaceservio_1_1literals.html#add4105476cecfe3e11bbbde64b4e7922", null ]
+    ] ],
     [ "mon", "namespaceservio_1_1mon.html", "namespaceservio_1_1mon" ],
     [ "mtr", "namespaceservio_1_1mtr.html", "namespaceservio_1_1mtr" ],
     [ "plt", "namespaceservio_1_1plt.html", "namespaceservio_1_1plt" ],
@@ -22,5 +27,31 @@ var namespaceservio =
       [ "TEST", "namespaceservio_1_1tests.html#ab13f735a06bbd448c82d5b45d20b76c3", null ],
       [ "TEST", "namespaceservio_1_1tests.html#ac99e95fa19ba420426c1d8c070c4cb6b", null ],
       [ "TEST", "namespaceservio_1_1tests.html#a0469f257c284b92ef2aa143ccfdbe6f3", null ]
-    ] ]
+    ] ],
+    [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
+    [ "pwr", "structservio_1_1pwr.html", null ],
+    [ "limits", "namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55", null ],
+    [ "microseconds", "namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe", null ],
+    [ "milliseconds", "namespaceservio.html#a69f902a923d0918ff3469e9fc5f5f84d", null ],
+    [ "sec_time", "namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909", null ],
+    [ "seconds", "namespaceservio.html#ae4779d6544c35b9251297f70da36f657", null ],
+    [ "control_loop", "namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2", [
+      [ "CURRENT", "namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2aa2770969c827f0f2910f6179418462df", null ],
+      [ "VELOCITY", "namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2a7b4354bded455eb379e3c764806cda7b", null ],
+      [ "POSITION", "namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2a90b4ba73224408e82ade8a072a3712c1", null ]
+    ] ],
+    [ "control_mode", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9", [
+      [ "DISENGAGED", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9afeffe8e712a5ce9a0cedef11c364fa74", null ],
+      [ "POWER", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9ac9c9c146c630ca5ef9197c73c032f4a6", null ],
+      [ "CURRENT", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9aa2770969c827f0f2910f6179418462df", null ],
+      [ "VELOCITY", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a7b4354bded455eb379e3c764806cda7b", null ],
+      [ "POSITION", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a90b4ba73224408e82ade8a072a3712c1", null ]
+    ] ],
+    [ "operator/", "namespaceservio.html#a9f6d2f0b86f31f6738275737eb6628c4", null ],
+    [ "infty", "namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c", null ],
+    [ "p_low", "namespaceservio.html#a53879f15eedde593c9cd6531402f5590", null ],
+    [ "p_max", "namespaceservio.html#ad65a9ec22f69582eff005ae62a0bd415", null ],
+    [ "p_zero", "namespaceservio.html#a546f8798a925217f01d794aa9a1379d7", null ],
+    [ "pi", "namespaceservio.html#a20c15193768c59a28a88e172aba5ab20", null ],
+    [ "pipi", "namespaceservio.html#a00c2d45a108822e094be491c4004429b", null ]
 ];

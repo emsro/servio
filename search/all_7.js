@@ -8,7 +8,7 @@ var searchData=
   ['bench_2ecpp_81',['bench.cpp',['../bench_8cpp.html',1,'']]],
   ['benchmarks_2ehpp_82',['benchmarks.hpp',['../benchmarks_8hpp.html',1,'']]],
   ['blinker_83',['blinker',['../structservio_1_1mon_1_1blinker.html',1,'servio::mon']]],
-  ['blue_84',['blue',['../namespaceservio_1_1base.html#a6401eb8ea8fba126927fcb17bb507663',1,'servio::base::leds_vals::blue()'],['../namespaceservio_1_1plt.html#a8e3ee77a1eecd0b200713232da8790fc',1,'servio::plt::leds_gpio_cfg::blue()']]],
+  ['blue_84',['blue',['../namespaceservio.html#aea051a3a8278bb73781905d787b09d49',1,'servio::leds_vals::blue()'],['../namespaceservio_1_1plt.html#a8e3ee77a1eecd0b200713232da8790fc',1,'servio::plt::leds_gpio_cfg::blue()']]],
   ['board_2ecpp_85',['board.cpp',['../prototype2_2board_8cpp.html',1,'(Global Namespace)'],['../proto3_2board_8cpp.html',1,'(Global Namespace)']]],
   ['booting_86',['BOOTING',['../namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52ad32cbe23a48d1576416d9eb314876c6d',1,'servio::mon']]],
   ['brd_2ehpp_87',['brd.hpp',['../brd_8hpp.html',1,'']]],

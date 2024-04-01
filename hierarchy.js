@@ -83,7 +83,7 @@ var hierarchy =
     [ "servio::drv::tests::leds_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test", null ],
     [ "servio::brd::leds_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1leds__timer__cfg", null ],
     [ "servio::plt::leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", null ],
-    [ "servio::base::leds_vals", "namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals", null ],
+    [ "servio::leds_vals", "namespaceservio.html#structservio_1_1leds__vals", null ],
     [ "servio::cnv::linear_converter", "structservio_1_1cnv_1_1linear__converter.html", null ],
     [ "servio::ctl::linear_transition_regulator", "structservio_1_1ctl_1_1linear__transition__regulator.html", null ],
     [ "servio::ftest::bench::loop_frequency", "structservio_1_1ftest_1_1bench_1_1loop__frequency.html", null ],
@@ -120,6 +120,9 @@ var hierarchy =
       [ "servio::drv::hbridge", "classservio_1_1drv_1_1hbridge.html", null ]
     ] ],
     [ "servio::drv::tests::pwm_motor_test", "structservio_1_1drv_1_1tests_1_1pwm__motor__test.html", null ],
+    [ "emlabcpp::quantity", null, [
+      [ "servio::pwr", "structservio_1_1pwr.html", null ]
+    ] ],
     [ "servio::ftester::recorder::record", "classservio_1_1ftester_1_1recorder.html#structservio_1_1ftester_1_1recorder_1_1record", null ],
     [ "servio::sntr::record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", null ],
     [ "servio::ftester::recorder", "classservio_1_1ftester_1_1recorder.html", null ],

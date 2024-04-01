@@ -74,7 +74,7 @@ var searchData=
   ['handle_5fmessage_435',['handle_message',['../namespaceservio_1_1fw.html#ae3f53c1f676f5ce8a8cbdfa28bd99fea',1,'servio::fw::handle_message(dispatcher &amp;dis, const HostToServio &amp;msg)'],['../namespaceservio_1_1fw.html#a5b2bdd32885a2db32522f11a3a73a0d9',1,'servio::fw::handle_message(dispatcher &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)']]],
   ['handle_5fmessage_5fpacket_436',['handle_message_packet',['../namespaceservio_1_1fw.html#a958bf350bbe8b27b5db135c8b6ea0909',1,'servio::fw']]],
   ['handle_5fset_5fconfig_437',['handle_set_config',['../namespaceservio_1_1fw.html#a4e9503b8a5659417d41556c80472ad4c',1,'servio::fw']]],
-  ['handle_5fset_5fmode_438',['handle_set_mode',['../namespaceservio_1_1fw.html#a677ad05ce4b297ac246595e7ecd06d9a',1,'servio::fw']]],
+  ['handle_5fset_5fmode_438',['handle_set_mode',['../namespaceservio_1_1fw.html#a187d04f6561a215fee9e0f76b5c7a244',1,'servio::fw']]],
   ['handle_5ftest_5fspecifics_439',['handle_test_specifics',['../namespaceservio_1_1ftester.html#af5700e7618c1b63d6c368c7712d72ce0',1,'servio::ftester']]],
   ['handler_440',['handler',['../namespaceservio_1_1cfg.html#a8587e35d0b4b831a0423fb148e9c5df2',1,'servio::cfg']]],
   ['hardfault_5fhandler_441',['HardFault_Handler',['../it_8cpp.html#a2bffc10d5bd4106753b7c30e86903bea',1,'it.cpp']]],

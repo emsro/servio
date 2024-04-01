@@ -52,7 +52,7 @@ var searchData=
   ['angle_5fvec_66',['angle_vec',['../namespaceservio_1_1sim.html#a496e8de9a9763267fda5eeaac8a92fa1',1,'servio::sim']]],
   ['any_5funinitialized_67',['any_uninitialized',['../structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca',1,'servio::core::drivers']]],
   ['apply_68',['apply',['../structservio_1_1cfg_1_1dispatcher.html#a45c428210df58df1a0f7f1ec458cb9bb',1,'servio::cfg::dispatcher::apply()'],['../namespaceservio_1_1cfg.html#a6b74b3216968308a4d01b9b8641cc711',1,'servio::cfg::apply()']]],
-  ['apply_5fpower_69',['apply_power',['../structservio_1_1sim_1_1simple__motor.html#af63c3c93468472d62db8c8a457362ee0',1,'servio::sim::simple_motor']]],
+  ['apply_5fpower_69',['apply_power',['../structservio_1_1sim_1_1simple__motor.html#add71190bfe20f0234ebd080daa4af8d2',1,'servio::sim::simple_motor']]],
   ['assert_5fparam_70',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32g4xx_hal_conf.h'],['../stm32h5xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'assert_param():&#160;stm32h5xx_hal_conf.h']]],
   ['async_5fcobs_2ecpp_71',['async_cobs.cpp',['../async__cobs_8cpp.html',1,'']]],
   ['async_5fcobs_2ehpp_72',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['map_1948',['map',['../namespaceservio_1_1cfg.html#a98eee67bc8174b65e3225bf2cadc29a7',1,'servio::cfg']]],
-  ['microseconds_1949',['microseconds',['../namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8',1,'servio::base']]],
-  ['milliseconds_1950',['milliseconds',['../namespaceservio_1_1base.html#ab25676521e8e9d23787be15ff0ca7941',1,'servio::base']]],
-  ['model_5fname_1951',['model_name',['../namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d',1,'servio::cfg']]]
+  ['map_1955',['map',['../namespaceservio_1_1cfg.html#a98eee67bc8174b65e3225bf2cadc29a7',1,'servio::cfg']]],
+  ['microseconds_1956',['microseconds',['../namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe',1,'servio']]],
+  ['milliseconds_1957',['milliseconds',['../namespaceservio.html#a69f902a923d0918ff3469e9fc5f5f84d',1,'servio']]],
+  ['model_5fname_1958',['model_name',['../namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d',1,'servio::cfg']]]
 ];

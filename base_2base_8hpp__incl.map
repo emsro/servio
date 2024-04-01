@@ -1,7 +1,8 @@
 <map id="src/base/base.hpp" name="src/base/base.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="129,5,268,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="200,5,339,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,72,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="96,80,163,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="187,80,352,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="377,80,455,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="376,80,531,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="555,80,634,107"/>
 </map>

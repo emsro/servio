@@ -151,14 +151,14 @@ $(document).ready(function(){initNavTree('system_8hpp_source.html',''); initResi
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                em::testing::collect_channel,</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                em::pmr::new_delete_resource(),</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                [this]( auto chann, const auto&amp; data ) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#a0a91dc7d48ea5fe638bee2d1827eac5f">send</a>( chann, data );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#a90a412dc5dad533a4ab80b5cfaa5ff2c">send</a>( chann, data );</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                } )</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;          , par_serv_(</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                em::testing::params_channel,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                em::testing::json_to_data_tree( em::pmr::new_delete_resource(), input_json )</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    .value(),</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                [<span class="keyword">this</span>]( <span class="keyword">auto</span> chann, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; data ) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#a0a91dc7d48ea5fe638bee2d1827eac5f">send</a>( chann, data );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#a90a412dc5dad533a4ab80b5cfaa5ff2c">send</a>( chann, data );</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                } )</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;          , rec_( <a class="code" href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">rec_id</a> )</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;          , col_iface_( col_serv_ )</div>
@@ -167,7 +167,7 @@ $(document).ready(function(){initNavTree('system_8hpp_source.html',''); initResi
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                em::pmr::new_delete_resource(),</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                col_iface_,</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                [<span class="keyword">this</span>]( <span class="keyword">auto</span> chann, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; data ) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#a0a91dc7d48ea5fe638bee2d1827eac5f">send</a>( chann, data );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="namespaceservio_1_1drv.html#a90a412dc5dad533a4ab80b5cfaa5ff2c">send</a>( chann, data );</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                } )</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                c_port_.set_option( boost::asio::serial_port_base::baud_rate( c_baudrate ) );</div>
@@ -248,7 +248,7 @@ $(document).ready(function(){initNavTree('system_8hpp_source.html',''); initResi
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                col_iface_.res = std::monostate{};</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        em::result <a class="code" href="namespaceservio_1_1drv.html#a0a91dc7d48ea5fe638bee2d1827eac5f">send</a>( em::protocol::channel_type channel, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; data )</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        em::result <a class="code" href="namespaceservio_1_1drv.html#a90a412dc5dad533a4ab80b5cfaa5ff2c">send</a>( em::protocol::channel_type channel, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; data )</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <a class="code" href="system_8hpp.html#a219c09f731549dd5c08e2c0f2bdada8d">COM_LOG</a>( channel, <span class="stringliteral">&quot;w: &quot;</span>, data );</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                <span class="keyword">auto</span> msg = em::protocol::serialize_multiplexed( channel, data );</div>
@@ -316,7 +316,7 @@ $(document).ready(function(){initNavTree('system_8hpp_source.html',''); initResi
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}  <span class="comment">// namespace servio::ftester</span></div>
 <div class="ttc" id="aasync__cobs_8hpp_html"><div class="ttname"><a href="async__cobs_8hpp.html">async_cobs.hpp</a></div></div>
 <div class="ttc" id="ahandle__eptr_8hpp_html"><div class="ttname"><a href="handle__eptr_8hpp.html">handle_eptr.hpp</a></div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_html_a0a91dc7d48ea5fe638bee2d1827eac5f"><div class="ttname"><a href="namespaceservio_1_1drv.html#a0a91dc7d48ea5fe638bee2d1827eac5f">servio::drv::send</a></div><div class="ttdeci">em::result send(com_iface &amp;iface, base::microseconds timeout, auto &amp;... data)</div><div class="ttdef"><b>Definition:</b> interfaces.hpp:59</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_html_a90a412dc5dad533a4ab80b5cfaa5ff2c"><div class="ttname"><a href="namespaceservio_1_1drv.html#a90a412dc5dad533a4ab80b5cfaa5ff2c">servio::drv::send</a></div><div class="ttdeci">em::result send(com_iface &amp;iface, microseconds timeout, auto &amp;... data)</div><div class="ttdef"><b>Definition:</b> interfaces.hpp:58</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftester_html"><div class="ttname"><a href="namespaceservio_1_1ftester.html">servio::ftester</a></div><div class="ttdef"><b>Definition:</b> base.hpp:6</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftester_html_a03d74ad4bf85bc6a23531431fd15514c"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">servio::ftester::rec_id</a></div><div class="ttdeci">static constexpr em::protocol::channel_type rec_id</div><div class="ttdef"><b>Definition:</b> base.hpp:10</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftester_html_a4da908b96514755b7dda71c0cdf2734d"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a4da908b96514755b7dda71c0cdf2734d">servio::ftester::COM_LOGGER</a></div><div class="ttdeci">em::eabi_logger COM_LOGGER</div><div class="ttdef"><b>Definition:</b> system.hpp:24</div></div>
@@ -347,7 +347,7 @@ $(document).ready(function(){initNavTree('system_8hpp_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="system_8hpp.html">system.hpp</a></li>
-    <li class="footer">Generated on Mon Apr 1 2024 11:45:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Apr 1 2024 15:04:49 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

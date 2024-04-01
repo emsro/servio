@@ -1,9 +1,6 @@
 var annotated_dup =
 [
     [ "servio", "namespaceservio.html", [
-      [ "base", "namespaceservio_1_1base.html", [
-        [ "leds_vals", "namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals", "namespaceservio_1_1base_structservio_1_1base_1_1leds__vals_dup" ]
-      ] ],
       [ "bb", "namespaceservio_1_1bb.html", [
         [ "bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", "structservio_1_1bb_1_1bb__test__case" ]
       ] ],
@@ -177,6 +174,8 @@ var annotated_dup =
         [ "record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", "namespaceservio_1_1sntr_structservio_1_1sntr_1_1record_dup" ],
         [ "sentry", "classservio_1_1sntr_1_1sentry.html", "classservio_1_1sntr_1_1sentry" ],
         [ "test_central_sentry", "structservio_1_1sntr_1_1test__central__sentry.html", "structservio_1_1sntr_1_1test__central__sentry" ]
-      ] ]
+      ] ],
+      [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
+      [ "pwr", "structservio_1_1pwr.html", null ]
     ] ]
 ];

@@ -15,6 +15,6 @@ var interfaces_8hpp =
     [ "curr_iface", "classservio_1_1drv_1_1curr__iface.html", "classservio_1_1drv_1_1curr__iface" ],
     [ "current_cb_iface", "interfaces_8hpp.html#a194d4daf14731733eaade9c7f8dfcff2", null ],
     [ "position_cb_iface", "interfaces_8hpp.html#a280a49ab9a01d82a54b34c1971736a7f", null ],
-    [ "send", "interfaces_8hpp.html#a0a91dc7d48ea5fe638bee2d1827eac5f", null ],
-    [ "wait_for", "interfaces_8hpp.html#a1fe835b161f9212cc7232e64191ebc78", null ]
+    [ "send", "interfaces_8hpp.html#a90a412dc5dad533a4ab80b5cfaa5ff2c", null ],
+    [ "wait_for", "interfaces_8hpp.html#a40b5c094f9145bb1145198ee924ff3cb", null ]
 ];

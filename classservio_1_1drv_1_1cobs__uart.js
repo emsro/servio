@@ -8,7 +8,7 @@ var classservio_1_1drv_1_1cobs__uart =
     [ "operator=", "classservio_1_1drv_1_1cobs__uart.html#aa1b13d2180961b314892b095888dcd18", null ],
     [ "recv", "classservio_1_1drv_1_1cobs__uart.html#a907f51b960288857614a35028d8fedbb", null ],
     [ "rx_cplt_irq", "classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67", null ],
-    [ "send", "classservio_1_1drv_1_1cobs__uart.html#a65dcd8a636b03039b03f768eae66ad9f", null ],
+    [ "send", "classservio_1_1drv_1_1cobs__uart.html#a6aafe7c0836e39db5a87a6e53c9e8c74", null ],
     [ "start", "classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4", null ],
     [ "tx_cplt_irq", "classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb", null ],
     [ "tolerable_hal_errors", "classservio_1_1drv_1_1cobs__uart.html#a0cd97daa231dee9baf9963c1e7efbb00", null ]

@@ -97,13 +97,14 @@ $(document).ready(function(){initNavTree('base_2base_8hpp.html',''); initResizab
 <div class="textblock"><code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;emlabcpp/algorithm.h&gt;</code><br />
+<code>#include &lt;emlabcpp/quantity.h&gt;</code><br />
 <code>#include &lt;numbers&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for base.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="base_2base_8hpp__incl.svg" width="462" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="base_2base_8hpp__incl.svg" width="640" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -111,111 +112,119 @@ $(document).ready(function(){initNavTree('base_2base_8hpp.html',''); initResizab
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:structservio_1_1base_1_1leds__vals"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#structservio_1_1base_1_1leds__vals">servio::base::leds_vals</a></td></tr>
-<tr class="separator:structservio_1_1base_1_1leds__vals"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1leds__vals"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#structservio_1_1leds__vals">servio::leds_vals</a></td></tr>
+<tr class="separator:structservio_1_1leds__vals"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1pwr.html">servio::pwr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceservio"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html">servio</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceservio_1_1base"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html">servio::base</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceservio_1_1base_1_1literals"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base_1_1literals.html">servio::base::literals</a></td></tr>
+<tr class="memitem:namespaceservio_1_1literals"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1literals.html">servio::literals</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4ee4ba55bb220d445e17a921b54178e8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#a4ee4ba55bb220d445e17a921b54178e8">servio::base::microseconds</a> = std::chrono::duration&lt; uint64_t, std::micro &gt;</td></tr>
-<tr class="separator:a4ee4ba55bb220d445e17a921b54178e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab25676521e8e9d23787be15ff0ca7941"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#ab25676521e8e9d23787be15ff0ca7941">servio::base::milliseconds</a> = std::chrono::duration&lt; uint64_t, std::milli &gt;</td></tr>
-<tr class="separator:ab25676521e8e9d23787be15ff0ca7941"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04691caeca128fa7604a500449a4f8b4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#a04691caeca128fa7604a500449a4f8b4">servio::base::seconds</a> = std::chrono::duration&lt; uint64_t &gt;</td></tr>
-<tr class="separator:a04691caeca128fa7604a500449a4f8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f0faa48f2ea63277cd3d5a698cefb68"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#a7f0faa48f2ea63277cd3d5a698cefb68">servio::base::sec_time</a> = std::chrono::duration&lt; float &gt;</td></tr>
-<tr class="separator:a7f0faa48f2ea63277cd3d5a698cefb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e5e15432ec57250250b13239ec98650"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3e5e15432ec57250250b13239ec98650"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#a3e5e15432ec57250250b13239ec98650">servio::base::limits</a> = em::min_max&lt; T &gt;</td></tr>
-<tr class="separator:a3e5e15432ec57250250b13239ec98650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab8d1fc6dacb69519e755e25ea3392fe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">servio::microseconds</a> = std::chrono::duration&lt; uint64_t, std::micro &gt;</td></tr>
+<tr class="separator:aab8d1fc6dacb69519e755e25ea3392fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69f902a923d0918ff3469e9fc5f5f84d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a69f902a923d0918ff3469e9fc5f5f84d">servio::milliseconds</a> = std::chrono::duration&lt; uint64_t, std::milli &gt;</td></tr>
+<tr class="separator:a69f902a923d0918ff3469e9fc5f5f84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4779d6544c35b9251297f70da36f657"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#ae4779d6544c35b9251297f70da36f657">servio::seconds</a> = std::chrono::duration&lt; uint64_t &gt;</td></tr>
+<tr class="separator:ae4779d6544c35b9251297f70da36f657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c65bbbc228b1eeafc15f79227a2909"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909">servio::sec_time</a> = std::chrono::duration&lt; float &gt;</td></tr>
+<tr class="separator:a31c65bbbc228b1eeafc15f79227a2909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f7743aa58139aab9b7d4db0cde30f55"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7f7743aa58139aab9b7d4db0cde30f55"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">servio::limits</a> = em::min_max&lt; T &gt;</td></tr>
+<tr class="separator:a7f7743aa58139aab9b7d4db0cde30f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ac0310c43d6151b2926d5f4a7b986552e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552e">servio::base::control_mode</a> { <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552eafeffe8e712a5ce9a0cedef11c364fa74">servio::base::DISENGAGED</a>
+<tr class="memitem:afc974abf6039d6442e90374ac7b74be9"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9">servio::control_mode</a> { <br />
+&#160;&#160;<a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9afeffe8e712a5ce9a0cedef11c364fa74">servio::DISENGAGED</a>
 , <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552eac9c9c146c630ca5ef9197c73c032f4a6">servio::base::POWER</a>
+&#160;&#160;<a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9ac9c9c146c630ca5ef9197c73c032f4a6">servio::POWER</a>
 , <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552eaa2770969c827f0f2910f6179418462df">servio::base::CURRENT</a>
+&#160;&#160;<a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9aa2770969c827f0f2910f6179418462df">servio::CURRENT</a>
 , <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552ea7b4354bded455eb379e3c764806cda7b">servio::base::VELOCITY</a>
+&#160;&#160;<a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a7b4354bded455eb379e3c764806cda7b">servio::VELOCITY</a>
 , <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1base.html#ac0310c43d6151b2926d5f4a7b986552ea90b4ba73224408e82ade8a072a3712c1">servio::base::POSITION</a>
+&#160;&#160;<a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a90b4ba73224408e82ade8a072a3712c1">servio::POSITION</a>
 <br />
  }</td></tr>
-<tr class="separator:ac0310c43d6151b2926d5f4a7b986552e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52414739b3bb89a0cfbf750a4ea92826"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#a52414739b3bb89a0cfbf750a4ea92826">servio::base::control_loop</a> { <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1base.html#a52414739b3bb89a0cfbf750a4ea92826aa2770969c827f0f2910f6179418462df">servio::base::CURRENT</a>
+<tr class="separator:afc974abf6039d6442e90374ac7b74be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f7489b8bb8f69589f34deadbd657c2"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2">servio::control_loop</a> { <br />
+&#160;&#160;<a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2aa2770969c827f0f2910f6179418462df">servio::CURRENT</a>
 , <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1base.html#a52414739b3bb89a0cfbf750a4ea92826a7b4354bded455eb379e3c764806cda7b">servio::base::VELOCITY</a>
+&#160;&#160;<a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2a7b4354bded455eb379e3c764806cda7b">servio::VELOCITY</a>
 , <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1base.html#a52414739b3bb89a0cfbf750a4ea92826a90b4ba73224408e82ade8a072a3712c1">servio::base::POSITION</a>
+&#160;&#160;<a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2a90b4ba73224408e82ade8a072a3712c1">servio::POSITION</a>
 <br />
  }</td></tr>
-<tr class="separator:a52414739b3bb89a0cfbf750a4ea92826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ab5f7489b8bb8f69589f34deadbd657c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad91b3148e4b6900c2ab4d30f5bae6298"><td class="memItemLeft" align="right" valign="top">constexpr microseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base_1_1literals.html#ad91b3148e4b6900c2ab4d30f5bae6298">servio::base::literals::operator&quot;&quot;_s</a> (unsigned long long int secs)</td></tr>
-<tr class="separator:ad91b3148e4b6900c2ab4d30f5bae6298"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a87b6e418a675e2aaa6d7d7e627e704"><td class="memItemLeft" align="right" valign="top">constexpr microseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base_1_1literals.html#a0a87b6e418a675e2aaa6d7d7e627e704">servio::base::literals::operator&quot;&quot;_ms</a> (unsigned long long int msecs)</td></tr>
-<tr class="separator:a0a87b6e418a675e2aaa6d7d7e627e704"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a074c68b8fb6e24366ae33ad73ebc45ea"><td class="memItemLeft" align="right" valign="top">constexpr microseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base_1_1literals.html#a074c68b8fb6e24366ae33ad73ebc45ea">servio::base::literals::operator&quot;&quot;_us</a> (unsigned long long int usecs)</td></tr>
-<tr class="separator:a074c68b8fb6e24366ae33ad73ebc45ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55ed4f4fb78e8a1928a7a4b64752daa2"><td class="memItemLeft" align="right" valign="top">constexpr std::byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base_1_1literals.html#a55ed4f4fb78e8a1928a7a4b64752daa2">servio::base::literals::operator&quot;&quot;_b</a> (unsigned long long int b)</td></tr>
-<tr class="separator:a55ed4f4fb78e8a1928a7a4b64752daa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc4a2727af86eed775de91ae7e0ac23"><td class="memItemLeft" align="right" valign="top">constexpr microseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1literals.html#a9cc4a2727af86eed775de91ae7e0ac23">servio::literals::operator&quot;&quot;_s</a> (unsigned long long int secs)</td></tr>
+<tr class="separator:a9cc4a2727af86eed775de91ae7e0ac23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7fb1870e027a6f6576164c72d18bc73"><td class="memItemLeft" align="right" valign="top">constexpr microseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1literals.html#af7fb1870e027a6f6576164c72d18bc73">servio::literals::operator&quot;&quot;_ms</a> (unsigned long long int msecs)</td></tr>
+<tr class="separator:af7fb1870e027a6f6576164c72d18bc73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add4105476cecfe3e11bbbde64b4e7922"><td class="memItemLeft" align="right" valign="top">constexpr microseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1literals.html#add4105476cecfe3e11bbbde64b4e7922">servio::literals::operator&quot;&quot;_us</a> (unsigned long long int usecs)</td></tr>
+<tr class="separator:add4105476cecfe3e11bbbde64b4e7922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e86ab080363c9801b3d11413cb755c"><td class="memItemLeft" align="right" valign="top">constexpr std::byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1literals.html#a62e86ab080363c9801b3d11413cb755c">servio::literals::operator&quot;&quot;_b</a> (unsigned long long int b)</td></tr>
+<tr class="separator:a62e86ab080363c9801b3d11413cb755c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f6d2f0b86f31f6738275737eb6628c4"><td class="memItemLeft" align="right" valign="top">pwr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a9f6d2f0b86f31f6738275737eb6628c4">servio::operator/</a> (pwr p, int v)</td></tr>
+<tr class="separator:a9f6d2f0b86f31f6738275737eb6628c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7f4a3ba7fed463a696460a6301b36324"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#a7f4a3ba7fed463a696460a6301b36324">servio::base::infty</a> = std::numeric_limits&lt; float &gt;::infinity()</td></tr>
-<tr class="separator:a7f4a3ba7fed463a696460a6301b36324"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac81788709117cdad254c7e43cedbf3a3"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#ac81788709117cdad254c7e43cedbf3a3">servio::base::pi</a> = std::numbers::pi_v&lt; float &gt;</td></tr>
-<tr class="separator:ac81788709117cdad254c7e43cedbf3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a023d8ec783023c905201589f195bdc53"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1base.html#a023d8ec783023c905201589f195bdc53">servio::base::pipi</a> = 2.F * std::numbers::pi_v&lt; float &gt;</td></tr>
-<tr class="separator:a023d8ec783023c905201589f195bdc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a32b7da24f35e9d57adbab46fa02c1c"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c">servio::infty</a> = std::numeric_limits&lt; float &gt;::infinity()</td></tr>
+<tr class="separator:a0a32b7da24f35e9d57adbab46fa02c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20c15193768c59a28a88e172aba5ab20"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a20c15193768c59a28a88e172aba5ab20">servio::pi</a> = std::numbers::pi_v&lt; float &gt;</td></tr>
+<tr class="separator:a20c15193768c59a28a88e172aba5ab20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c2d45a108822e094be491c4004429b"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a00c2d45a108822e094be491c4004429b">servio::pipi</a> = 2.F * std::numbers::pi_v&lt; float &gt;</td></tr>
+<tr class="separator:a00c2d45a108822e094be491c4004429b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a546f8798a925217f01d794aa9a1379d7"><td class="memItemLeft" align="right" valign="top">static constexpr pwr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a546f8798a925217f01d794aa9a1379d7">servio::p_zero</a> = pwr{ 0 }</td></tr>
+<tr class="separator:a546f8798a925217f01d794aa9a1379d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65a9ec22f69582eff005ae62a0bd415"><td class="memItemLeft" align="right" valign="top">static constexpr pwr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#ad65a9ec22f69582eff005ae62a0bd415">servio::p_max</a> = std::numeric_limits&lt; pwr &gt;::max()</td></tr>
+<tr class="separator:ad65a9ec22f69582eff005ae62a0bd415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53879f15eedde593c9cd6531402f5590"><td class="memItemLeft" align="right" valign="top">static constexpr pwr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a53879f15eedde593c9cd6531402f5590">servio::p_low</a> = std::numeric_limits&lt; pwr &gt;::lowest()</td></tr>
+<tr class="separator:a53879f15eedde593c9cd6531402f5590"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="structservio_1_1base_1_1leds__vals" id="structservio_1_1base_1_1leds__vals"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1base_1_1leds__vals">&#9670;&nbsp;</a></span>servio::base::leds_vals</h2>
+<a name="structservio_1_1leds__vals" id="structservio_1_1leds__vals"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1leds__vals">&#9670;&nbsp;</a></span>servio::leds_vals</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct servio::base::leds_vals</td>
+          <td class="memname">struct servio::leds_vals</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a6401eb8ea8fba126927fcb17bb507663"></a>bool</td>
+<a id="aea051a3a8278bb73781905d787b09d49"></a>bool</td>
 <td class="fieldname">
 blue</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a2482ae2d4349b7d914b598e04ef6cff9"></a>uint8_t</td>
+<a id="ae27a38e0dd1a2a1dfc79e4086915105f"></a>uint8_t</td>
 <td class="fieldname">
 green</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a05f5ed9d1dec54fb0ed7e537bf8c063a"></a>bool</td>
+<a id="ace8f4fa67f61708539ca5a97fbd90490"></a>bool</td>
 <td class="fieldname">
 red</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="abf3fe893e15d76d70f70862489fd606c"></a>uint8_t</td>
+<a id="a095d295856b8d24f9619da9d3901fcae"></a>uint8_t</td>
 <td class="fieldname">
 yellow</td>
 <td class="fielddoc">
@@ -230,7 +239,7 @@ yellow</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0af1587c8378955de40f48b4bd1869f0.html">base</a></li><li class="navelem"><a class="el" href="base_2base_8hpp.html">base.hpp</a></li>
-    <li class="footer">Generated on Mon Apr 1 2024 11:45:06 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Apr 1 2024 15:04:49 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
