@@ -13,8 +13,6 @@ namespace em = emlabcpp;
 namespace servio::drv::tests
 {
 
-using namespace base::literals;
-
 inline auto hold( auto& iface )
 {
         std::ignore = iface.stop();
@@ -33,19 +31,19 @@ struct clock_test
 
         t::coroutine< void > run( auto&, ftest::uctx& ctx )
         {
-                std::size_t        wait_cycles = 100;
-                base::microseconds t1          = clk.get_us();
+                std::size_t  wait_cycles = 100;
+                microseconds t1          = clk.get_us();
                 for ( std::size_t i = 0; i < wait_cycles; i++ )
                         asm( "nop" );
-                base::microseconds t2 = clk.get_us();
+                microseconds t2 = clk.get_us();
                 co_await ctx.expect( t2 > t1 );
                 ctx.coll.set( 0, "t1", t1 );
                 ctx.coll.set( 0, "t2", t2 );
                 ctx.coll.set( 0, "wait cycles", wait_cycles );
 
-                base::microseconds now  = clk.get_us();
-                base::microseconds last = now;
-                base::microseconds end  = now + 2_s;
+                microseconds now  = clk.get_us();
+                microseconds last = now;
+                microseconds end  = now + 2_s;
                 do {
                         last = now;
                         now  = clk.get_us();
@@ -181,11 +179,11 @@ struct pwm_motor_test
 
         auto test(
             ftest::uctx&         ctx,
-            int16_t              pwr,
+            pwr                  p,
             int16_t              expected,
             std::source_location src = std::source_location::current() )
         {
-                iface.set_power( pwr );
+                iface.set_power( p );
                 ctx.coll.set( "last_dir", iface.get_direction() );
                 return ctx.expect( iface.get_direction() == expected, src );
         }
@@ -195,9 +193,9 @@ struct pwm_motor_test
                 co_await ctx.expect( !iface.is_stopped() );
                 auto d = hold( period );
 
-                co_await test( ctx, -1024, -1 );
-                co_await test( ctx, 0, 1 );
-                co_await test( ctx, 1024, 1 );
+                co_await test( ctx, pwr{ -1024 }, -1 );
+                co_await test( ctx, p_zero, 1 );
+                co_await test( ctx, pwr{ 1024 }, 1 );
         }
 };
 

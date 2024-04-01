@@ -34,7 +34,7 @@ public:
 
         void force_red_led() override;
 
-        void update( const base::leds_vals& leds ) override;
+        void update( const leds_vals& leds ) override;
 
 private:
         bool red_forced_ = false;

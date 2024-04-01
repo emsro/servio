@@ -53,27 +53,19 @@ bool hbridge::is_stopped() const
         return tim_ == nullptr;
 }
 
-void hbridge::set_power( int16_t power )
+void hbridge::set_power( pwr power )
 {
 
         int32_t mc1_val = 0;
         int32_t mc2_val = 0;
 
         // TODO: again, casts can potentially produce an error?
-        if ( power > 0 ) {
-                mc1_val = em::map_range< int32_t, int32_t >(
-                    power,
-                    0,
-                    std::numeric_limits< int16_t >::max(),
-                    0,
-                    static_cast< int32_t >( timer_max_ ) );
+        if ( power > p_zero ) {
+                mc1_val = em::map_range< pwr, int32_t >(
+                    power, p_zero, p_max, 0, static_cast< int32_t >( timer_max_ ) );
         } else {
-                mc2_val = em::map_range< int32_t, int32_t >(
-                    power,
-                    0,
-                    std::numeric_limits< int16_t >::lowest(),
-                    0,
-                    static_cast< int32_t >( timer_max_ ) );
+                mc2_val = em::map_range< pwr, int32_t >(
+                    power, p_zero, p_low, 0, static_cast< int32_t >( timer_max_ ) );
         }
         if ( tim_ == nullptr )
                 return;

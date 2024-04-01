@@ -28,7 +28,7 @@ public:
                         irq_count_ += 1;
         }
 
-        base::microseconds get_us() override
+        microseconds get_us() override
         {
                 uint64_t us;
                 uint64_t ic;
@@ -38,7 +38,7 @@ public:
                 } while ( ic != irq_count_ || ( us & uif_mask ) != 0 );
 
                 uint64_t val = ic * tim_.Init.Period + us;
-                return base::microseconds{ val };
+                return microseconds{ val };
         }
 
 private:

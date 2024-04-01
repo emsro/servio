@@ -9,7 +9,7 @@
 namespace servio::fw
 {
 
-ServioToHost handle_set_mode( base::microseconds now, ctl::control& ctl, const Mode& msg )
+ServioToHost handle_set_mode( microseconds now, ctl::control& ctl, const Mode& msg )
 {
         float val;
         switch ( msg.which_pld ) {
@@ -17,13 +17,8 @@ ServioToHost handle_set_mode( base::microseconds now, ctl::control& ctl, const M
                 ctl.disengage();
                 break;
         case Mode_power_tag:
-                val = em::map_range< float, float >(
-                    msg.power,
-                    -1.0F,
-                    1.0F,
-                    std::numeric_limits< int16_t >::lowest(),
-                    std::numeric_limits< int16_t >::max() );
-                ctl.switch_to_power_control( static_cast< int16_t >( val ) );
+                val = em::map_range< float, float >( msg.power, -1.0F, 1.0F, *p_low, *p_max );
+                ctl.switch_to_power_control( pwr( val ) );
                 break;
         case Mode_current_tag:
                 ctl.switch_to_current_control( now, msg.current );
@@ -46,22 +41,22 @@ Mode get_mode( const ctl::control& ctl )
 {
         Mode res;
         switch ( ctl.get_mode() ) {
-        case base::control_mode::DISENGAGED:
+        case control_mode::DISENGAGED:
                 res.which_pld = Mode_disengaged_tag;
                 break;
-        case base::control_mode::POWER:
+        case control_mode::POWER:
                 res.which_pld = Mode_power_tag;
-                res.power     = ctl.get_power();
+                res.power     = *ctl.get_power();
                 break;
-        case base::control_mode::CURRENT:
+        case control_mode::CURRENT:
                 res.which_pld = Mode_current_tag;
                 res.current   = ctl.get_desired_current();
                 break;
-        case base::control_mode::VELOCITY:
+        case control_mode::VELOCITY:
                 res.which_pld = Mode_velocity_tag;
                 res.velocity  = ctl.get_desired_velocity();
                 break;
-        case base::control_mode::POSITION:
+        case control_mode::POSITION:
                 res.which_pld = Mode_position_tag;
                 res.position  = ctl.get_desired_position();
                 break;

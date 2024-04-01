@@ -12,9 +12,9 @@ static_assert( !std::is_move_assignable_v< central_sentry > );
 
 struct test_clk : drv::clk_iface
 {
-        base::microseconds t{ 0 };
+        microseconds t{ 0 };
 
-        base::microseconds get_us() override
+        microseconds get_us() override
         {
                 return t;
         }
@@ -32,7 +32,7 @@ TEST( central_sentry, record )
 {
         record rec;
         EXPECT_EQ( rec.st, record_state::UNSET );
-        EXPECT_EQ( rec.tp, base::microseconds{ 0 } );
+        EXPECT_EQ( rec.tp, microseconds{ 0 } );
         EXPECT_EQ( rec.src, nullptr );
         EXPECT_EQ( rec.ecodes, ecode_set{ 0 } );
         EXPECT_EQ( rec.emsg, nullptr );
@@ -78,7 +78,7 @@ TEST_F( central_sentry_fixture, one_deg_insert )
         ecode_set   ecodes = 0b1010;
         const char* emsg   = "esmg";
         data_type   data   = 42;
-        clk.t              = base::microseconds{ 666 };
+        clk.t              = microseconds{ 666 };
 
         cs.report_degraded( src, ecodes, emsg, data );
 
@@ -110,7 +110,7 @@ TEST_F( central_sentry_fixture, one_inop_insert )
         ecode_set   ecodes = 0b1010;
         const char* emsg   = "esmg";
         data_type   data   = 42;
-        clk.t              = base::microseconds{ 666 };
+        clk.t              = microseconds{ 666 };
 
         cs.report_inoperable( src, ecodes, emsg, data );
 

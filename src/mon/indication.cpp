@@ -3,7 +3,7 @@
 namespace servio::mon
 {
 
-bool indication::on_event( base::microseconds now, const indication_event& e )
+bool indication::on_event( microseconds now, const indication_event& e )
 {
         switch ( e ) {
         case indication_event::VOLTAGE_LOW:
@@ -38,7 +38,7 @@ bool indication::on_event( base::microseconds now, const indication_event& e )
         return true;
 }
 
-void indication::tick( base::microseconds now )
+void indication::tick( microseconds now )
 {
 
         state_.red = red_bl_.update( now );

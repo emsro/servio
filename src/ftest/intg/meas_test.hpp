@@ -32,7 +32,7 @@ struct meas_cur_test
                 drv::empty_current_cb ccb;
                 curr.set_current_callback( ccb );
 
-                motor.set_power( -std::numeric_limits< int16_t >::max() / 2 );
+                motor.set_power( p_low / 2 );
 
                 t::node_id dnid =
                     co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
@@ -50,7 +50,7 @@ struct meas_cur_test
                         drv::wait_for( clk, 10_ms );
                 }
                 co_await t::expect( !em::almost_equal( sum / iters, 0.f, 0.01f ) );
-                motor.set_power( 0 );
+                motor.set_power( p_max );
         }
 };
 
@@ -75,13 +75,13 @@ struct meas_pos_test
                 drv::empty_current_cb ccb;
                 curr.set_current_callback( ccb );
 
-                motor.set_power( std::numeric_limits< int16_t >::max() / 4 );
+                motor.set_power( p_max / 4 );
                 float start = cor.met.get_position();
 
                 drv::wait_for( clk, 400_us );
 
                 float end = cor.met.get_position();
-                motor.set_power( 0 );
+                motor.set_power( p_zero );
 
                 float expected_angle_change = 0.f;
                 co_await t::expect( std::abs( start - end ) > expected_angle_change );
@@ -116,7 +116,7 @@ struct meas_vel_test
                 float       sum          = 0.f;
                 std::size_t measurements = 1024u;
 
-                motor.set_power( std::numeric_limits< int16_t >::max() / 2 );
+                motor.set_power( p_max / 2 );
 
                 for ( std::size_t i = 0; i < measurements; i++ ) {
                         float vel = cor.met.get_velocity();
@@ -124,7 +124,7 @@ struct meas_vel_test
                         sum += vel;
                 }
 
-                motor.set_power( 0 );
+                motor.set_power( p_zero );
 
                 float average_velocity = sum / static_cast< float >( measurements );
                 co_await t::expect( !em::almost_equal( average_velocity, 0.f, 0.05f ) );

@@ -8,11 +8,11 @@ void rewind(
     core::core&          cor,
     drv::clk_iface&      iclk,
     drv::pos_iface&      ipos,
-    base::microseconds   timeout,
+    microseconds         timeout,
     em::min_max< float > area,
     float                current )
 {
-        base::microseconds end = iclk.get_us() + timeout;
+        microseconds end = iclk.get_us() + timeout;
 
         while ( iclk.get_us() < end ) {
                 float pos = cor.conv.position.convert( ipos.get_position() );

@@ -7,8 +7,6 @@
 namespace servio::mtr::tests
 {
 
-using namespace base::literals;
-
 TEST( Metrics, base )
 {
         std::random_device                rd{};
@@ -16,18 +14,18 @@ TEST( Metrics, base )
         float                             observation_deviation = 0.005f;
         std::normal_distribution< float > od{ 0, observation_deviation };
 
-        float              angle    = 0.f;
-        float              velocity = 0.1f;
-        base::microseconds t        = 0_ms;
-        base::microseconds tstep    = 10_us;
+        float        angle    = 0.f;
+        float        velocity = 0.1f;
+        microseconds t        = 0_ms;
+        microseconds tstep    = 10_us;
 
-        metrics met{ t, angle, { 0, 2 * base::pi } };
+        metrics met{ t, angle, { 0, 2 * pi } };
 
         for ( std::size_t i = 0; i < 200; i++ ) {
                 t += tstep;
                 float step_scale = 1.f + od( gen ) / 2.f;
                 angle += step_scale * velocity * static_cast< float >( tstep.count() ) / 1000.f;
-                angle = std::fmod( angle, 2 * base::pi );
+                angle = std::fmod( angle, 2 * pi );
 
                 met.position_irq( t, angle );
 

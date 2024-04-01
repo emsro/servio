@@ -10,11 +10,11 @@ namespace servio::mon
 
 TEST( mon, blinker )
 {
-        constexpr std::size_t        iters  = 4;
-        constexpr base::microseconds test_t = blinker::cycle * iters;
+        constexpr std::size_t  iters  = 4;
+        constexpr microseconds test_t = blinker::cycle * iters;
 
-        blinker            b;
-        base::microseconds t;
+        blinker      b;
+        microseconds t;
 
         for ( t = 0_ms; t < test_t; t += 1_ms )
                 EXPECT_FALSE( b.update( t ) );
@@ -22,7 +22,7 @@ TEST( mon, blinker )
         for ( std::size_t i = 0; i < blinker::n; i++ ) {
                 b = blinker{};
                 b.state.set( i );
-                base::microseconds counter = 0_ms;
+                microseconds counter = 0_ms;
                 for ( t = 0_ms; t < test_t; t += 1_ms ) {
                         if ( b.update( t ) ) {
                                 counter += 1_ms;
@@ -37,7 +37,7 @@ TEST( mon, blinker )
                 b = blinker{};
                 for ( std::size_t j = 0; j <= i; j++ )
                         b.state.set( j );
-                base::microseconds counter = 0_ms;
+                microseconds counter = 0_ms;
                 for ( t = 0_ms; t < test_t; t += 1_ms )
                         if ( b.update( t ) )
                                 counter += 1_ms;

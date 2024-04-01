@@ -24,7 +24,7 @@ struct loop_frequency
 
         t::coroutine< void > run( auto& mem, uctx& ctx )
         {
-                base::microseconds         time_window  = 1000_ms;
+                microseconds               time_window  = 1000_ms;
                 std::size_t                period_cnt   = 0;
                 std::size_t                current_cnt  = 0;
                 std::size_t                position_cnt = 0;
@@ -60,7 +60,7 @@ struct loop_frequency
                     mem,
                     ctx,
                     "time_window",
-                    std::chrono::duration_cast< base::sec_time >( time_window ),
+                    std::chrono::duration_cast< sec_time >( time_window ),
                     "s" );
 
                 co_await store_as_freq( mem, ctx, "current  cb freq", current_cnt, time_window );
@@ -84,11 +84,11 @@ struct loop_frequency
             uctx&                     coll,
             const std::string_view    sv,
             std::size_t               counter,
-            base::microseconds        time_window )
+            microseconds              time_window )
         {
 
                 float freq = static_cast< float >( counter ) /
-                             std::chrono::duration_cast< base::sec_time >( time_window ).count();
+                             std::chrono::duration_cast< sec_time >( time_window ).count();
                 co_await store_metric( mem, coll, sv, freq, "Hz" );
                 co_return freq;
         }
@@ -103,7 +103,7 @@ struct usage
 
         t::coroutine< void > run( auto& mem, uctx& ctx )
         {
-                base::microseconds time_window = 1000_ms;
+                microseconds time_window = 1000_ms;
 
                 std::ignore = period.stop();
 
@@ -118,7 +118,7 @@ struct usage
                     mem,
                     ctx,
                     "time_window",
-                    std::chrono::duration_cast< base::sec_time >( time_window ),
+                    std::chrono::duration_cast< sec_time >( time_window ),
                     "s" );
 
                 co_await store_metric( mem, ctx, "noirq_counter", noirq_counter, "ops" );
@@ -134,10 +134,10 @@ struct usage
                     mem, ctx, "irq_usage limit", static_cast< uint32_t >( usage_limit ), "%" );
         }
 
-        std::size_t count_iterations( base::microseconds time_window )
+        std::size_t count_iterations( microseconds time_window )
         {
-                std::size_t        counter = 0;
-                base::microseconds end     = clk.get_us() + time_window;
+                std::size_t  counter = 0;
+                microseconds end     = clk.get_us() + time_window;
                 while ( clk.get_us() < end )
                         counter += 1;
                 return counter;
@@ -160,7 +160,7 @@ struct profile
                 em::defer d2      = drv::retain_callback( curr );
                 em::defer d       = setup_poweroff( cor.ctl );
 
-                cor.ctl.switch_to_power_control( -std::numeric_limits< int16_t >::max() / 2 );
+                cor.ctl.switch_to_power_control( p_low / 2 );
                 std::size_t     write_i = 0;
                 drv::current_cb ccb{ [&]( uint32_t val, std::span< uint16_t > data ) {
                         curr_cb.on_value_irq( val, data );
@@ -177,8 +177,8 @@ struct profile
                 } };
                 curr.set_current_callback( ccb );
 
-                base::microseconds end = clk.get_us() + 1000_ms;
-                std::size_t        c   = 0;
+                microseconds end = clk.get_us() + 1000_ms;
+                std::size_t  c   = 0;
 
                 while ( clk.get_us() < end ) {
 

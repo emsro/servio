@@ -15,8 +15,6 @@ ostream& operator<<( ostream& os, byte b )
 namespace servio::drv
 {
 
-using namespace base::literals;
-
 TEST( COBS, cont )
 {
         std::vector< std::vector< std::byte > > data{

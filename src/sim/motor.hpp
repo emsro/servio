@@ -39,16 +39,16 @@ struct simple_motor
                 pos_vec = rotate_vec( pos_vec, pos );
         }
 
-        void reset_time( base::microseconds now )
+        void reset_time( microseconds now )
         {
                 last_t = static_cast< float >( now.count() ) / 1000'000.F;
         }
 
-        void apply_power( base::microseconds now, int16_t p )
+        void apply_power( microseconds now, pwr p )
         {
                 auto t = static_cast< float >( now.count() ) / 1000'000.F;
 
-                power              = p;
+                power              = *p;
                 const float t_diff = t - last_t;
 
                 if ( t_diff == 0.F )
@@ -57,7 +57,7 @@ struct simple_motor
                         last_t = t;
                 } };
 
-                current = power_to_current( p );
+                current = power_to_current( power );
 
                 const float force = current * 15.F;
 

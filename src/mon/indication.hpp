@@ -37,32 +37,32 @@ enum class indication_event
 class indication
 {
 public:
-        indication( base::microseconds now )
+        indication( microseconds now )
           : last_tick_( now )
           , yellow_engaged_until_( 0_us )
           , blue_disengage_at_( 0_us )
         {
         }
 
-        bool on_event( base::microseconds now, const indication_event& e );
+        bool on_event( microseconds now, const indication_event& e );
 
-        void tick( base::microseconds now );
+        void tick( microseconds now );
 
-        const base::leds_vals& get_state() const
+        const leds_vals& get_state() const
         {
                 return state_;
         }
 
 private:
-        base::leds_vals    state_;
-        base::microseconds last_tick_;
+        leds_vals    state_;
+        microseconds last_tick_;
 
         blinker red_bl_;
         pulser  green_pu_;
 
-        base::microseconds yellow_engaged_until_;
+        microseconds yellow_engaged_until_;
 
-        base::microseconds blue_disengage_at_;
+        microseconds blue_disengage_at_;
 };
 
 }  // namespace servio::mon

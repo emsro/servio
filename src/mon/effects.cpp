@@ -7,7 +7,7 @@ namespace em = emlabcpp;
 namespace servio::mon
 {
 
-bool blinker::update( base::microseconds now )
+bool blinker::update( microseconds now )
 {
         if ( now < next_e )
                 return output;
@@ -32,9 +32,9 @@ float sin_approx( float x )
 
 uint8_t pulser::update()
 {
-        if ( val > base::pipi )
-                val -= base::pipi;
-        float v = ( sin_approx( val - base::pi ) + 1.F ) / 2.F;
+        if ( val > pipi )
+                val -= pipi;
+        float v = ( sin_approx( val - pi ) + 1.F ) / 2.F;
         v *= intensity;
 
         return static_cast< uint8_t >( em::map_range( v, 0.F, 1.F, 0.F, 255.F ) );

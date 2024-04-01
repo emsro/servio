@@ -8,7 +8,6 @@ std::byte OUTPUT_BUFFER[ServioToHostPacket_size];
 int main()
 {
         using namespace servio;
-        using namespace servio::base::literals;
 
         if ( brd::setup_board() != em::SUCCESS )
                 fw::stop_exec();

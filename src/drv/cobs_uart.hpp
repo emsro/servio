@@ -44,9 +44,8 @@ public:
 
         em::result start() override;
 
-        em::result send(
-            std::span< const std::span< const std::byte > > data,
-            base::microseconds                              timeout ) override;
+        em::result
+        send( std::span< const std::span< const std::byte > > data, microseconds timeout ) override;
 
         // we tolerate overrun, dma, frame, noise error - we can recover
         static constexpr uint32_t tolerable_hal_errors =

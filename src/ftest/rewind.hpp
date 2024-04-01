@@ -12,7 +12,7 @@ void rewind(
     core::core&          cor,
     drv::clk_iface&      iclk,
     drv::pos_iface&      ipos,
-    base::microseconds   timeout,
+    microseconds         timeout,
     em::min_max< float > area,
     float                current );
 

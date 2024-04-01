@@ -12,8 +12,8 @@ struct linear_transition_regulator
         float low_point  = 1.F;
         float high_point = 2.F;
 
-        float              decay = 1.F;
-        base::microseconds last_time;
+        float        decay = 1.F;
+        microseconds last_time;
 
         float state = low_point;
 
@@ -23,7 +23,7 @@ struct linear_transition_regulator
                 decay      = dec / 1'000'000.F;  // input decay is /s, this makes it /us
         }
 
-        void update( base::microseconds now, bool is_moving )
+        void update( microseconds now, bool is_moving )
         {
                 const auto  tdiff = now - last_time;
                 const float dir   = is_moving ? -1.F : 1.F;

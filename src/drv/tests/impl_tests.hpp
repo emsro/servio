@@ -14,8 +14,6 @@
 namespace servio::drv::tests
 {
 
-using namespace base::literals;
-
 namespace t = em::testing;
 
 struct cobs_uart_rx_test
@@ -80,8 +78,8 @@ struct hbridge_test
                 hbridge hb{ nullptr };
                 co_await ctx.expect( hb.setup( 1, 2 ) == nullptr );
 
-                // this sets behavior for scenarion when tim == nullptr
-                hb.set_power( -1 );
+                // this sets behavior for scenario when tim == nullptr
+                hb.set_power( pwr{ -1 } );
                 co_await ctx.expect( hb.get_direction() == 1 );
 
                 auto d = retain_callback( hb );

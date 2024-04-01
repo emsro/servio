@@ -15,7 +15,7 @@ namespace servio::ctl
 
 namespace em = emlabcpp;
 
-using pid              = em::pid< typename base::microseconds::rep >;
+using pid              = em::pid< typename microseconds::rep >;
 using pid_conf         = typename pid::config;
 using pid_coefficients = em::pid_coefficients;
 
@@ -25,9 +25,9 @@ struct config
         ctl::pid_coefficients velocity_pid;
         ctl::pid_coefficients current_pid;
 
-        base::limits< float > position_limits;
-        base::limits< float > velocity_limits;
-        base::limits< float > current_limits;
+        limits< float > position_limits;
+        limits< float > velocity_limits;
+        limits< float > current_limits;
 
         float static_friction_scale;
         float static_friction_decay;

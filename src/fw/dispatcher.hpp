@@ -23,7 +23,7 @@ struct dispatcher
         cfg::dispatcher&                                 cfg_disp;
         em::function_view< bool( const cfg::map* cfg ) > cfg_writer;
         cnv::converter&                                  conv;
-        base::microseconds                               now;
+        microseconds                                     now;
 };
 
 ServioToHost handle_message( dispatcher& dis, const HostToServio& msg );

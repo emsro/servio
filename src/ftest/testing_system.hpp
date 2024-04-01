@@ -12,8 +12,6 @@
 namespace servio::ftest
 {
 
-using namespace base::literals;
-
 struct testing_system
 {
         drv::com_iface& debug_comms;

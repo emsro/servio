@@ -7,7 +7,6 @@ em::pmr::stack_resource< 1024 > TEST_STACK;
 int main()
 {
         using namespace servio;
-        using namespace base::literals;
 
         if ( brd::setup_board() != em::SUCCESS )
                 fw::stop_exec();

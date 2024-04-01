@@ -23,14 +23,14 @@ struct posvel_kalman
 
         float offset = 0.F;
 
-        posvel_kalman( float position, base::limits< float > position_range )
+        posvel_kalman( float position, limits< float > position_range )
           : angle( position )
         {
                 set_position_range( position_range );
                 klmn::angle( x ) = klmn::angle_mod( position, st_range );
         }
 
-        void set_position_range( base::limits< float > position_range )
+        void set_position_range( limits< float > position_range )
         {
                 st_range.offset = position_range.min();
                 st_range.size   = position_range.max() - position_range.min();
@@ -46,7 +46,7 @@ struct posvel_kalman
                 return klmn::velocity( x );
         }
 
-        void update( base::sec_time sdiff, float position )
+        void update( sec_time sdiff, float position )
         {
                 // TODO: this is kinda non ideal, the sdiff should be stable in the system and
                 // computed only once
@@ -63,8 +63,8 @@ struct posvel_kalman
                 std::tie( x, P ) = klmn::update( x, P, z, h, r );
 
                 if ( klmn::requires_offset( klmn::angle( x ), st_range ) ) {
-                        offset = klmn::angle_mod( offset + base::pi, st_range );
-                        klmn::modify_angle( x, base::pi, st_range );
+                        offset = klmn::angle_mod( offset + pi, st_range );
+                        klmn::modify_angle( x, pi, st_range );
                 }
 
                 angle = klmn::angle_mod( klmn::angle( x ) - offset, st_range );

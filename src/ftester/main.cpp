@@ -76,7 +76,10 @@ struct joque_test
                 nlohmann::json j = em::testing::data_tree_to_json( sys.get_collected() );
 
                 if ( res.retcode != 0 ) {
-                        joque::record_output( res, joque::output_chunk::ERROR, j.dump( 2 ) );
+                        std::string s = j.dump( 2 );
+                        if ( s.length() > 2048 )
+                                s = "output json too big, not shown";
+                        joque::record_output( res, joque::output_chunk::ERROR, s );
                 } else if ( j.contains( "metrics" ) ) {
                         for ( const nlohmann::json& m : j["metrics"] ) {
                                 auto k   = m["name"].get< std::string >();

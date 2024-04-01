@@ -9,8 +9,6 @@
 namespace servio::ctl::tests
 {
 
-using namespace base::literals;
-
 class control_fixture : public ::testing::Test
 {
 public:
@@ -56,7 +54,7 @@ public:
 
         void tick()
         {
-                int16_t power = ctl->get_power();
+                pwr power = ctl->get_power();
 
                 motor->apply_power( now, power );
 
@@ -65,10 +63,10 @@ public:
                 ctl->current_irq( now, motor->current );
 
                 EMLABCPP_INFO_LOG_VARS(
-                    power, motor->position(), motor->velocity, ctl->get_desired_current() );
+                    *power, motor->position(), motor->velocity, ctl->get_desired_current() );
         }
 
-        base::microseconds                 now = 0_ms;
+        microseconds                       now = 0_ms;
         std::optional< sim::simple_motor > motor;
         std::optional< ctl::control >      ctl;
 };

@@ -30,7 +30,7 @@ boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio
 boost::asio::awaitable< void > test_position( boost::asio::io_context& io, scmdio::cobs_port& port )
 {
 
-        for ( float pos : { base::pi / 4, base::pi * 3 / 2, base::pi } ) {
+        for ( float pos : { pi / 4, pi * 3 / 2, pi } ) {
 
                 co_await scmdio::set_mode_position( port, pos );
 

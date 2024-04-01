@@ -1,14 +1,15 @@
 #include <chrono>
 #include <cstdint>
 #include <emlabcpp/algorithm.h>
+#include <emlabcpp/quantity.h>
 #include <numbers>
 
 #pragma once
 
-namespace servio::base
-{
-
 namespace em = emlabcpp;
+
+namespace servio
+{
 
 using microseconds = std::chrono::duration< uint64_t, std::micro >;
 using milliseconds = std::chrono::duration< uint64_t, std::milli >;
@@ -72,4 +73,19 @@ struct leds_vals
         uint8_t green;
 };
 
-}  // namespace servio::base
+struct pwr : em::quantity< pwr, int16_t >
+{
+        using em::quantity< pwr, int16_t >::quantity;
+};
+
+inline pwr operator/( pwr p, int v )
+{
+        p /= static_cast< int16_t >( v );
+        return p;
+}
+
+static constexpr pwr p_zero = pwr{ 0 };
+static constexpr pwr p_max  = std::numeric_limits< pwr >::max();
+static constexpr pwr p_low  = std::numeric_limits< pwr >::lowest();
+
+}  // namespace servio

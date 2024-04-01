@@ -49,14 +49,13 @@ struct com_res
 struct com_iface
 {
         virtual em::result start() = 0;
-        virtual em::result send(
-            std::span< const std::span< const std::byte > > data,
-            base::microseconds                              timeout )                    = 0;
-        virtual com_res recv( std::span< std::byte > data ) = 0;
-        virtual ~com_iface()                                = default;
+        virtual em::result
+        send( std::span< const std::span< const std::byte > > data, microseconds timeout ) = 0;
+        virtual com_res recv( std::span< std::byte > data )                                = 0;
+        virtual ~com_iface() = default;
 };
 
-em::result send( com_iface& iface, base::microseconds timeout, auto&... data )
+em::result send( com_iface& iface, microseconds timeout, auto&... data )
 {
         std::array< std::span< const std::byte >, sizeof...( data ) > b{ data... };
         return iface.send( b, timeout );
@@ -64,20 +63,20 @@ em::result send( com_iface& iface, base::microseconds timeout, auto&... data )
 
 struct leds_iface
 {
-        virtual void force_red_led()                       = 0;
-        virtual void update( const base::leds_vals& leds ) = 0;
-        virtual ~leds_iface()                              = default;
+        virtual void force_red_led()                 = 0;
+        virtual void update( const leds_vals& leds ) = 0;
+        virtual ~leds_iface()                        = default;
 };
 
 struct clk_iface
 {
-        virtual base::microseconds get_us() = 0;
-        virtual ~clk_iface()                = default;
+        virtual microseconds get_us() = 0;
+        virtual ~clk_iface()          = default;
 };
 
-inline void wait_for( clk_iface& clk, base::microseconds ms )
+inline void wait_for( clk_iface& clk, microseconds ms )
 {
-        base::microseconds end = clk.get_us() + ms;
+        microseconds end = clk.get_us() + ms;
         while ( clk.get_us() < end )
                 asm( "nop" );
 }
@@ -97,7 +96,7 @@ class pwm_motor_iface
 public:
         virtual void   force_stop()          = 0;
         virtual bool   is_stopped() const    = 0;
-        virtual void   set_power( int16_t )  = 0;
+        virtual void   set_power( pwr )      = 0;
         virtual int8_t get_direction() const = 0;
         virtual ~pwm_motor_iface()           = default;
 };

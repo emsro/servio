@@ -15,7 +15,6 @@ namespace servio::ftest
 {
 
 namespace t = em::testing;
-using namespace base::literals;
 
 struct uctx
 {
@@ -80,7 +79,7 @@ store_data( em::pmr::memory_resource&, uctx& ctx, std::string_view key, auto&& d
 inline auto setup_poweroff( ctl::control& ctl )
 {
         return em::defer{ [&] {
-                ctl.switch_to_power_control( 0 );
+                ctl.switch_to_power_control( pwr{ 0 } );
         } };
 }
 

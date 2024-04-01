@@ -12,7 +12,7 @@ class monitor
 {
 public:
         monitor(
-            base::microseconds     now,
+            microseconds           now,
             const ctl::control&    ctl,
             const drv::vcc_iface&  vcc_drv,
             const drv::temp_iface& temp_drv,
@@ -37,7 +37,7 @@ public:
                 max_tmp_ = temp;
         }
 
-        void tick( base::microseconds now )
+        void tick( microseconds now )
         {
                 indi_.on_event( now, indication_event::HEARTBEAT );
 
@@ -51,7 +51,7 @@ public:
                 if ( temp > max_tmp_ )
                         indi_.on_event( now, indication_event::TEMPERATURE_HIGH );
 
-                if ( ctl_.get_mode() != base::control_mode::DISENGAGED )
+                if ( ctl_.get_mode() != control_mode::DISENGAGED )
                         indi_.on_event( now, indication_event::ENGAGED );
                 else
                         indi_.on_event( now, indication_event::DISENGAGED );

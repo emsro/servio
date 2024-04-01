@@ -73,7 +73,8 @@ struct sign_test
                 t::node_id did =
                     co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
 
-                cor.ctl.switch_to_current_control( clk.get_us(), 0.3f );
+                cor.ctl.switch_to_power_control( -p_low / 2 );
+                drv::wait_for( clk, 100_us );
                 std::size_t count = 50;
                 for ( std::size_t i : em::range( count ) ) {
                         std::ignore = i;
@@ -91,8 +92,7 @@ struct sign_test
 
                         co_await ctx.expect( std::signbit( current ) == std::signbit( vel ) );
                 }
-                cor.ctl.switch_to_current_control( clk.get_us(), 0.0f );
-                motor.set_power( 0 );
+                cor.ctl.switch_to_power_control( p_zero );
         }
 };
 

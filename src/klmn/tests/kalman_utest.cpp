@@ -10,8 +10,8 @@ namespace servio::klmn::tests
 TEST( Kalman, predict )
 {
 
-        const base::sec_time tdiff{ 1.F };
-        const float          process_deviation = 0.005F;
+        const sec_time tdiff{ 1.F };
+        const float    process_deviation = 0.005F;
 
         state                          x{};
         state_covariance               P{};
@@ -38,13 +38,13 @@ TEST( Kalman, predict )
 TEST( Kalman, base )
 {
 
-        const base::sec_time tdiff{ 0.1F };
-        const float          process_deviation     = 0.0005F;
-        const float          observation_deviation = 0.000005F;
+        const sec_time tdiff{ 0.1F };
+        const float    process_deviation     = 0.0005F;
+        const float    observation_deviation = 0.000005F;
 
         std::vector< observation > zs;
         observation                z{};
-        const state_range          sr{ .offset = 0.F, .size = 2 * base::pi };
+        const state_range          sr{ .offset = 0.F, .size = 2 * pi };
         float                      alpha = 0.F;
 
         for ( const std::size_t i : em::range( 1000U ) ) {

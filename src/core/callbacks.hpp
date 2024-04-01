@@ -55,7 +55,7 @@ public:
 
         [[gnu::flatten]] void on_value_irq( uint32_t position ) override
         {
-                const base::microseconds now = clk_.get_us();
+                const microseconds now = clk_.get_us();
 
                 const float p = conv_.position.convert( position );
 

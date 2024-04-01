@@ -55,14 +55,14 @@ void central_sentry::report_inoperable(
     const char*      emsg,
     const data_type& data )
 {
-        base::microseconds now    = clk_.get_us();
-        record*            target = get_next_free( inop_buffer_, inop_i_ );
-        target->st                = record_state::SET;
-        target->tp                = now;
-        target->src               = src;
-        target->ecodes            = ecodes;
-        target->emsg              = emsg;
-        target->data              = data;
+        microseconds now    = clk_.get_us();
+        record*      target = get_next_free( inop_buffer_, inop_i_ );
+        target->st          = record_state::SET;
+        target->tp          = now;
+        target->src         = src;
+        target->ecodes      = ecodes;
+        target->emsg        = emsg;
+        target->data        = data;
         fire_inoperable();
 }
 
@@ -72,14 +72,14 @@ void central_sentry::report_degraded(
     const char*      emsg,
     const data_type& data )
 {
-        base::microseconds now    = clk_.get_us();
-        record*            target = get_next_free( degr_buffer_, degr_i_ );
-        target->st                = record_state::SET;
-        target->tp                = now;
-        target->src               = src;
-        target->ecodes            = ecodes;
-        target->emsg              = emsg;
-        target->data              = data;
+        microseconds now    = clk_.get_us();
+        record*      target = get_next_free( degr_buffer_, degr_i_ );
+        target->st          = record_state::SET;
+        target->tp          = now;
+        target->src         = src;
+        target->ecodes      = ecodes;
+        target->emsg        = emsg;
+        target->data        = data;
 }
 
 }  // namespace servio::sntr

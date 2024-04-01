@@ -15,7 +15,7 @@ com_res cobs_uart::recv( std::span< std::byte > data )
 }
 
 em::result
-cobs_uart::send( std::span< const std::span< const std::byte > > data, base::microseconds timeout )
+cobs_uart::send( std::span< const std::span< const std::byte > > data, microseconds timeout )
 {
         auto end = clk_.get_us() + timeout;
         while ( !tx_done_ )

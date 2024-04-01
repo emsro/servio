@@ -19,20 +19,20 @@ struct core
         mon::monitor    mon;
 
         core(
-            base::microseconds     now,
+            microseconds           now,
             const drv::vcc_iface&  vcc_drv,
             const drv::temp_iface& temp_drv,
             drv::clk_iface&        clk )
           : ctl( now, ctl::config{} )
           , conv()
-          , met( now, 0.F, { 0.F, 2 * base::pi } )
+          , met( now, 0.F, { 0.F, 2 * pi } )
           , ind( now )
           , mon( now, ctl, vcc_drv, temp_drv, ind, conv )
         {
                 ind.tick( clk.get_us() );
         }
 
-        void tick( drv::leds_iface& leds, base::microseconds now )
+        void tick( drv::leds_iface& leds, microseconds now )
         {
                 mon.tick( now );
                 ind.tick( now );

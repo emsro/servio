@@ -38,10 +38,10 @@ public:
 
         // Sets the power that hbridge should generate to the motor.
         // Input range is lineary interpolated based on:
-        //  - limits<int16_t>::lower is full reverse
+        //  - limits<pwr>::lower is full reverse
         //  - 0 is nothing
-        //  - limits<int16_t>::max is full forward
-        void set_power( int16_t ) override;
+        //  - limits<pwr>::max is full forward
+        void set_power( pwr ) override;
 
         // returns either -1 or 1 based on direction last set to power
         int8_t get_direction() const override;
@@ -74,7 +74,7 @@ inline hbridge* hbridge::setup( uint32_t mc1_channel, uint32_t mc2_channel )
         else
                 return nullptr;
 
-        set_power( 0 );
+        set_power( pwr{ 0 } );
 
         return this;
 }

@@ -13,12 +13,12 @@ namespace servio::mtr
 class metrics
 {
 public:
-        metrics( base::microseconds time, float position, base::limits< float > position_range );
+        metrics( microseconds time, float position, limits< float > position_range );
 
-        void set_position_range( base::limits< float > position_range );
+        void set_position_range( limits< float > position_range );
         void set_moving_step( float step );
 
-        void position_irq( base::microseconds now, float position );
+        void position_irq( microseconds now, float position );
 
         bool is_moving() const;
 
@@ -27,7 +27,7 @@ public:
         float get_velocity() const;
 
 private:
-        base::microseconds last_time_;
+        microseconds       last_time_;
         mtr::posvel_kalman pv_kal_;
         static_detector    st_dec_;
 };
