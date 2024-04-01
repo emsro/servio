@@ -22,12 +22,11 @@ em::result setup_dac( DAC_HandleTypeDef& dac, const drv::pin_cfg& pcfg )
         if ( HAL_DAC_ConfigChannel( &dac, &cfg, DAC_CHANNEL_1 ) != HAL_OK )
                 return em::ERROR;
 
-        GPIO_InitTypeDef ginit;
-        ginit.Pin       = pcfg.pin;
-        ginit.Mode      = GPIO_MODE_ANALOG;
-        ginit.Pull      = GPIO_NOPULL;
-        ginit.Speed     = GPIO_SPEED_FREQ_LOW;
-        ginit.Alternate = pcfg.alternate;
+        GPIO_InitTypeDef ginit{};
+        ginit.Pin   = pcfg.pin;
+        ginit.Mode  = GPIO_MODE_ANALOG;
+        ginit.Pull  = GPIO_NOPULL;
+        ginit.Speed = GPIO_SPEED_FREQ_LOW;
         HAL_GPIO_Init( pcfg.port, &ginit );
 
         return em::SUCCESS;

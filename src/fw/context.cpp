@@ -8,12 +8,14 @@ namespace servio::fw
 
 context setup_context()
 {
+        cfg_context cfg_ctx = fw::load_cfg_context();
+
         core::drivers cdrv = brd::setup_core_drivers();
         if ( cdrv.any_uninitialized() )
                 fw::stop_exec();
 
         context ctx{
-            .cfg     = fw::load_cfg_context(),
+            .cfg     = std::move( cfg_ctx ),
             .cdrv    = cdrv,
             .core    = { cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock },
             .scbs    = { *cdrv.motor, *cdrv.clock, ctx.core.ctl, ctx.core.met, ctx.core.conv },

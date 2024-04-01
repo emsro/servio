@@ -11,7 +11,7 @@ message Mode {
     NullMsg disengaged = 1;  // servo is actively driving the motor
     float power = 2;         // -1.0...1.0, sign represents direction
     float current = 3;       // in A, sign represents direction
-    float velocity = 4;      // in rad/s
+    float velocity = 4;      // in rad/s, sign represents direction
     float position = 5;      // in rad
   }
 }
@@ -30,7 +30,7 @@ message Property {
 }
 
 // Config message represents all configuration options for the servio, one
-// instance of this message represnets one value of any of the configuration
+// instance of this message represents one value of any of the configuration
 // fields.
 message Config {
   oneof pld {

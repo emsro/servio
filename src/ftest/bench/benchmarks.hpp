@@ -177,7 +177,7 @@ struct profile
                 } };
                 curr.set_current_callback( ccb );
 
-                microseconds end = clk.get_us() + 1000_ms;
+                microseconds end = clk.get_us() + 10000_ms;
                 std::size_t  c   = 0;
 
                 while ( clk.get_us() < end ) {

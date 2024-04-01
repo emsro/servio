@@ -68,13 +68,13 @@ struct sign_test
                 if ( co_await is_powerless( params ) )
                         co_await t::skip();
                 em::defer d = setup_poweroff( cor.ctl );
-                rewind( cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.2f );
+                rewind( cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.5f );
 
                 t::node_id did =
                     co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
 
-                cor.ctl.switch_to_power_control( -p_low / 2 );
-                drv::wait_for( clk, 100_us );
+                cor.ctl.switch_to_power_control( p_low / 2 );
+                drv::wait_for( clk, 200_ms );
                 std::size_t count = 50;
                 for ( std::size_t i : em::range( count ) ) {
                         std::ignore = i;

@@ -13,7 +13,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
     LIBS cfglib
          ctllib
          mtrlib
-         proto
+         proto_iface
          magic_enum
          GTest::GTest
          gtest_main)
@@ -21,6 +21,6 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   servio_add_test(
     TARGET cfg_storage_utest
     SOURCES tests/cfg_storage_utest.cpp
-    LIBS cfglib ctllib mtrlib proto GTest::GTest gtest_main)
+    LIBS cfglib ctllib mtrlib proto_iface GTest::GTest gtest_main)
 
 endif()
