@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: doc/reqs/control.md File Reference</title>
+<title>servio: 4.1 System should decompose message communication to be independent on underlying transport layer</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('control_8md.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_doc_reqs_04_comms.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -82,18 +82,34 @@ $(document).ready(function(){initNavTree('control_8md.html',''); initResizable()
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">doc/reqs/control.md File Reference</div>  </div>
+<div class="title">4.1 System should decompose message communication to be independent on underlying transport layer </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p>The system should be implemented so that the top message-based communication mechanism is independent of the way the messages are sent or received, be it UART, I2C, or CAN.</p>
+<h1><a class="anchor" id="autotoc_md21"></a>
+4.2 UART shall be supported as transport</h1>
+<p>UART should be first-class citizen for the message transportation. Note that this is full UART: rx/tx pair of wires.</p>
+<h1><a class="anchor" id="autotoc_md22"></a>
+4.3 Message shall be defined in one protobuf file</h1>
+<p>Protobuf is picked as desired message definition mechanism due to it being multi-language compatible. This way we achieve flexibility for the user, as they can pick whatever language they want easily.</p>
+<p>Limitation to one file exists for friendly dependency management - if user wants to use the servo all that is needed is to download <em>one file</em>.</p>
+<h1><a class="anchor" id="autotoc_md23"></a>
+4.4 COBS can be used as framing mechanism</h1>
+<p>Protobufs does not have native framing capability. (We can't tell where message starts or ends) Tranports like UART does not have either, hence we have to introduce separate framing mechanism.</p>
+<p>COBS should be first-class citizen and have full support.</p>
+<h1><a class="anchor" id="autotoc_md24"></a>
+4.5 Exact communication interface is property of board</h1>
+<p>The exact support combination of communication interface is defined by the boards themselves. Each board should clearly defined what communication is supported.</p>
+<p>For example: Protobuf messages wrapped in COBS sent over UART </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="control_8md.html">control.md</a></li>
-    <li class="footer">Generated on Sun Mar 31 2024 21:50:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Apr 1 2024 11:04:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

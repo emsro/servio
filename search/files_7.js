@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['hal_2ehpp_1266',['hal.hpp',['../stm32g4_2hal_8hpp.html',1,'(Global Namespace)'],['../stm32h5_2hal_8hpp.html',1,'(Global Namespace)']]],
-  ['handle_5feptr_2ecpp_1267',['handle_eptr.cpp',['../handle__eptr_8cpp.html',1,'']]],
-  ['handle_5feptr_2ehpp_1268',['handle_eptr.hpp',['../handle__eptr_8hpp.html',1,'']]],
-  ['hbridge_2ecpp_1269',['hbridge.cpp',['../hbridge_8cpp.html',1,'']]],
-  ['hbridge_2ehpp_1270',['hbridge.hpp',['../hbridge_8hpp.html',1,'']]]
+  ['globals_2ecpp_1271',['globals.cpp',['../globals_8cpp.html',1,'']]],
+  ['globals_2ehpp_1272',['globals.hpp',['../globals_8hpp.html',1,'']]],
+  ['gpio_2ecpp_1273',['gpio.cpp',['../brd_2prototype2_2gpio_8cpp.html',1,'(Global Namespace)'],['../plt_2stm32h5_2gpio_8cpp.html',1,'(Global Namespace)']]]
 ];

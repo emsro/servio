@@ -30,15 +30,26 @@ var NAVTREE =
     [ "Build", "index.html#autotoc_md3", null ],
     [ "Flashing", "index.html#autotoc_md4", null ],
     [ "Usage", "index.html#autotoc_md5", null ],
-    [ "Position control mode", "md_doc_reqs_control.html", [
-      [ "Current control mode", "md_doc_reqs_control.html#autotoc_md7", null ],
-      [ "Velocity control mode", "md_doc_reqs_control.html#autotoc_md8", null ],
-      [ "Movement detection", "md_doc_reqs_control.html#autotoc_md9", null ],
-      [ "Static friction compensation", "md_doc_reqs_control.html#autotoc_md10", null ]
+    [ "1.1 Prioritize project independence to hardware", "md_doc_reqs_01_system.html", [
+      [ "1.2 Focus on testing", "md_doc_reqs_01_system.html#autotoc_md9", null ],
+      [ "1.2.1 Test on host what can be tested on host", "md_doc_reqs_01_system.html#autotoc_md10", null ]
     ] ],
-    [ "Current limits", "md_doc_reqs_limits.html", [
-      [ "Position limits", "md_doc_reqs_limits.html#autotoc_md12", null ],
-      [ "Velocity limits", "md_doc_reqs_limits.html#autotoc_md13", null ]
+    [ "2.1 Position control mode", "md_doc_reqs_02_control.html", [
+      [ "2.2 Current control mode", "md_doc_reqs_02_control.html#autotoc_md12", null ],
+      [ "2.3 Velocity control mode", "md_doc_reqs_02_control.html#autotoc_md13", null ],
+      [ "2.4 Power control mode", "md_doc_reqs_02_control.html#autotoc_md14", null ],
+      [ "2.5 Movement detection", "md_doc_reqs_02_control.html#autotoc_md15", null ],
+      [ "2.6 Static friction compensation", "md_doc_reqs_02_control.html#autotoc_md16", null ]
+    ] ],
+    [ "3.1 Current limits", "md_doc_reqs_03_limits.html", [
+      [ "3.2 Position limits", "md_doc_reqs_03_limits.html#autotoc_md18", null ],
+      [ "3.3 Velocity limits", "md_doc_reqs_03_limits.html#autotoc_md19", null ]
+    ] ],
+    [ "4.1 System should decompose message communication to be independent on underlying transport layer", "md_doc_reqs_04_comms.html", [
+      [ "4.2 UART shall be supported as transport", "md_doc_reqs_04_comms.html#autotoc_md21", null ],
+      [ "4.3 Message shall be defined in one protobuf file", "md_doc_reqs_04_comms.html#autotoc_md22", null ],
+      [ "4.4 COBS can be used as framing mechanism", "md_doc_reqs_04_comms.html#autotoc_md23", null ],
+      [ "4.5 Exact communication interface is property of board", "md_doc_reqs_04_comms.html#autotoc_md24", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -83,13 +94,13 @@ var NAVTREEINDEX =
 "adc__pooler_8hpp.html",
 "classservio_1_1ftester_1_1recorder.html#ae668f1ca65e7af33cf056d064a1de027",
 "functions_j.html",
-"metrics_8cpp.html",
-"namespaceservio_1_1cnv.html#ae3dc9df6f52fc1747f055d1eef694629",
-"namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c",
-"scmdio_2main_8cpp.html",
-"stm32h5xx__hal__conf_8h.html#a99add5b89bfdd24b832d1a0d03dc0bd3",
-"structservio_1_1drv_1_1tests_1_1period__iface__test.html#ac46d922c1dbeb48620e44dd626bcd026",
-"structservio_1_1sntr_1_1tests_1_1test__clk.html#a068f28b18d6d7f8484cf68dd6859250f"
+"md_doc_reqs_03_limits.html",
+"namespaceservio_1_1cfg.html#ad2944685956e09930ae90616bc178429",
+"namespaceservio_1_1plt.html#a75103b3e408610a74d1c0299c6f17482",
+"scmdio_2cli_8cpp.html#a614e955e6323363d48b78d51d038a1d9",
+"stm32h5xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462",
+"structservio_1_1drv_1_1tests_1_1curr__iface__test.html",
+"structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#a38ee93bb84c13211165c5a91d370fc06"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
