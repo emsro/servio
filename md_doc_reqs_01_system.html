@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: 1.1 Prioritize project independence to hardware</title>
+<title>servio: 1 System requirements</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,12 +84,14 @@ $(document).ready(function(){initNavTree('md_doc_reqs_01_system.html',''); initR
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">1.1 Prioritize project independence to hardware </div>  </div>
+<div class="title">1 System requirements </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The project should be designed to be as decoupled from specific hardware as reasonable.</p>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md7"></a>
+1.1 Prioritize project independence to hardware</h1>
+<p>The project should be designed to be as decoupled from specific hardware as reasonable.</p>
 <p>The idea is that this property should be high on priority list, but not at cost of rapid decrease in other wanted properties.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 1.1.1 Decomposition</h2>
 <p>The project should be clearly divided into following parts:</p>
 <ul>
@@ -102,17 +104,17 @@ $(document).ready(function(){initNavTree('md_doc_reqs_01_system.html',''); initR
 </li>
 </ul>
 <p>Do not allow unnecessary spilling of dependencies/implementation details between decomposed parts.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 1.1.2 Code shall not be dependent on hardware specifics unless necessary</h2>
 <p>Avoid writing code that is tied to the way target hardware works. The main motivation is 1.2) - the goal is to be able to run as much of the code on host devices as possible. This way we can write tests on host device.</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 1.2 Focus on testing</h1>
 <p>We should maximize the amount of testing (and diversity of use cases) to create as big test coverage as reasonable.</p>
 <p>We should avoid blindly adding tests that does not bring in value, as those just cost resources.</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 1.2.1 Test on host what can be tested on host</h1>
 <p>We should prioritize testing capabilities on host device, instead on the target hardware itself. For example: error handling for incorrect message input can be fully tested on host device and should be done so.</p>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 1.2.3 Use testing on target hardware</h1>
 <p>Thanks to <em>emlabcpp</em> we have capability to write unit tests that run on target hardware and report results to the host system. This shall be used for anything that we can't test on host itself. </p>
 </div></div><!-- contents -->
@@ -121,7 +123,7 @@ $(document).ready(function(){initNavTree('md_doc_reqs_01_system.html',''); initR
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Apr 1 2024 11:19:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Apr 1 2024 11:22:54 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

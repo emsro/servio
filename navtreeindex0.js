@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"":[10,0,4],
+"":[10,0,2],
 "adc__pooler_8hpp.html":[12,0,1,7,2],
 "adc__pooler_8hpp.html#a641200efd9b8b191932945c86f78d9e0":[12,0,1,7,2,6],
 "adc__pooler_8hpp.html#ab0f58f8aab9826fafb7c092dac28f6c3":[12,0,1,7,2,5],
@@ -127,7 +127,7 @@ var NAVTREEINDEX0 =
 "cfg__storage__utest_8cpp.html#a0469f257c284b92ef2aa143ccfdbe6f3":[12,0,1,3,0,0,2],
 "cfg__storage__utest_8cpp.html#a09e62a494e130ce7a8841ddcd2e477c5":[12,0,1,3,0,0,0],
 "cfg__storage__utest_8cpp.html#a2aedfc484fdb299fa4e3e78691615219":[12,0,1,3,0,0,1],
-"cfg__storage__utest_8cpp.html#a2aedfc484fdb299fa4e3e78691615219":[10,0,4,1],
+"cfg__storage__utest_8cpp.html#a2aedfc484fdb299fa4e3e78691615219":[10,0,2,1],
 "cfg__utest_8cpp.html":[12,0,1,3,0,1],
 "cfg__utest_8cpp.html#ab13f735a06bbd448c82d5b45d20b76c3":[12,0,1,3,0,1,0],
 "cfg__utest_8cpp.html#ac99e95fa19ba420426c1d8c070c4cb6b":[12,0,1,3,0,1,1],
