@@ -28,7 +28,7 @@ struct current_ctl_test
         {
                 if ( co_await is_powerless( params ) )
                         co_await t::skip();
-                setup_poweroff( cor.ctl );
+                em::defer d = setup_poweroff( cor.ctl );
 
                 float expected = 0.2F;
                 cor.ctl.switch_to_current_control( clk.get_us(), expected );
@@ -67,7 +67,7 @@ struct sign_test
         {
                 if ( co_await is_powerless( params ) )
                         co_await t::skip();
-                setup_poweroff( cor.ctl );
+                em::defer d = setup_poweroff( cor.ctl );
                 rewind( cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.2f );
 
                 t::node_id did =
