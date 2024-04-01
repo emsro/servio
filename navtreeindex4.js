@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"namespaceservio_1_1cfg.html#ad2944685956e09930ae90616bc178429":[6,0,1,3,20],
 "namespaceservio_1_1cfg.html#adfaf4cc43f1f1e1d45b9306df55d3c08":[8,0,1,3,6,0,0],
 "namespaceservio_1_1cfg.html#af0544dfab0920b3b31d6fdb7063445db":[8,0,1,3,5,0,0],
 "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval":[8,0,1,3,5,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "namespaceservio_1_1plt.html#a6a1b2270dd01143ff1bc38ba8cfd3020":[8,0,1,15,2,7,1,1],
 "namespaceservio_1_1plt.html#a6a38c6f90f09b7f4dd592ba5327a5a85":[8,0,1,15,2,7,3,0],
 "namespaceservio_1_1plt.html#a71520584fd9671ce414b8b5b8c653926":[6,0,1,14,16],
-"namespaceservio_1_1plt.html#a73088cdd7b6754164af4b062382dc239":[8,0,1,15,2,7,6,1],
-"namespaceservio_1_1plt.html#a75103b3e408610a74d1c0299c6f17482":[8,0,1,15,2,7,5,0]
+"namespaceservio_1_1plt.html#a73088cdd7b6754164af4b062382dc239":[8,0,1,15,2,7,6,1]
 };

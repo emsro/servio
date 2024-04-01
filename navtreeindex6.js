@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"scmdio_2cli_8cpp.html#a614e955e6323363d48b78d51d038a1d9":[8,0,1,16,2,4],
 "scmdio_2cli_8cpp.html#a6286d1246b1168d8fa9bd1b651b3752e":[8,0,1,16,2,0],
 "scmdio_2cli_8cpp.html#a65b2b391dc07c1b8476d7f72e781a825":[8,0,1,16,2,1],
 "scmdio_2cli_8cpp.html#ad4fa41dcb7957c74dcc335d566c28eef":[8,0,1,16,2,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "stm32h5xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d":[8,0,1,15,2,8,62],
 "stm32h5xx__hal__conf_8h.html#a7c8601480b3c54ae1398a58d416fd202":[8,0,1,15,2,8,29],
 "stm32h5xx__hal__conf_8h.html#a80498b459859528918535b88fed54b28":[8,0,1,15,2,8,87],
-"stm32h5xx__hal__conf_8h.html#a8415c379764067de24b2738274c4a27c":[8,0,1,15,2,8,92],
-"stm32h5xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462":[8,0,1,15,2,8,61]
+"stm32h5xx__hal__conf_8h.html#a8415c379764067de24b2738274c4a27c":[8,0,1,15,2,8,92]
 };
