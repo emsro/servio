@@ -8,6 +8,8 @@
 namespace servio::bb
 {
 
+using namespace std::chrono_literals;
+
 boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio::cobs_port& port )
 {
 
@@ -16,7 +18,7 @@ boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio
         for ( float curr : { 0.2F, 0.0F, 0.3F } ) {
                 co_await scmdio::set_mode_current( port, curr );
 
-                boost::asio::steady_timer t( io, std::chrono::milliseconds( 100 ) );
+                boost::asio::steady_timer t( io, 100ms );
                 co_await t.async_wait( boost::asio::use_awaitable );
 
                 float current = co_await scmdio::get_property_current( port );
@@ -34,7 +36,7 @@ boost::asio::awaitable< void > test_position( boost::asio::io_context& io, scmdi
 
                 co_await scmdio::set_mode_position( port, pos );
 
-                boost::asio::steady_timer t( io, std::chrono::seconds( 10 ) );
+                boost::asio::steady_timer t( io, 2s );
                 co_await t.async_wait( boost::asio::use_awaitable );
 
                 float position = co_await scmdio::get_property_position( port );
@@ -69,7 +71,7 @@ int main( int argc, char** argv )
 
         if ( !powerless ) {
                 bb::register_test( "moves", "current", cli, bb::test_current, 1s );
-                bb::register_test( "moves", "position", cli, bb::test_position, 1s );
+                bb::register_test( "moves", "position", cli, bb::test_position, 10s );
         }
 
         return RUN_ALL_TESTS();

@@ -22,7 +22,7 @@ struct common_cli
 {
 
         std::filesystem::path        device   = "/dev/ttyUSB0";
-        unsigned                     baudrate = 115200;
+        unsigned                     baudrate = 460800;
         boost::asio::io_context      context{};
         std::unique_ptr< cobs_port > port_ptr{};
 

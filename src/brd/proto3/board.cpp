@@ -441,10 +441,10 @@ core::drivers setup_core_drivers()
 
 consteval cnv::off_scale get_curr_coeff()
 {
-        // mirror scale: 1575 uA/A
+        // mirror scale: 1500 uA/A
         // resistor: 1k
-        constexpr float gain = 1'575.F / 1'000'000.F;
-        return cnv::calc_current_conversion( 3.3F, 0.0F, 1 << 12, 1'000, gain );
+        constexpr float gain = 1'500.F / 1'000'000.F;
+        return cnv::calc_current_conversion( 3.3F, 0.0F, 1 << 12, 1'000.F, gain );
 }
 
 cfg::map get_default_config()

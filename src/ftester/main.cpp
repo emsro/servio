@@ -12,7 +12,7 @@
 namespace servio::ftester
 {
 
-bool handle_test_specifics( std::string_view name, test_system& sys )
+bool handle_test_specifics( std::string_view name, test_system& sys, std::filesystem::path out_dir )
 {
         if ( name == "current_profile" )  // TODO: I hate this
         {
@@ -30,18 +30,21 @@ bool handle_test_specifics( std::string_view name, test_system& sys )
                                 } );
                 }
 
+                std::ofstream of{ out_dir / "current_profile.csv" };
                 for ( auto&& [i, prec] : em::enumerate( prof_recs ) ) {
                         if ( prec.count == 0 )
                                 continue;
-                        auto avg =
-                            prec.sum | std::views::transform( [&]( uint32_t val ) {
-                                    return std::ceil( val / static_cast< float >( prec.count ) );
-                            } );
+                        auto avg = prec.sum | std::views::transform( [&]( uint32_t val ) {
+                                           return std::ceil(
+                                               static_cast< float >( val ) /
+                                               static_cast< float >( prec.count ) );
+                                   } );
                         std::cout << i << " : " << prec.count << ":\n";
-                        std::cout << em::view{ prec.max } << std::endl;
                         std::cout << em::view{ avg } << std::endl;
-                        std::cout << em::view{ prec.min } << std::endl;
+
+                        of << em::view{ avg } << "\n";
                 }
+
                 return true;
         }
 
@@ -69,7 +72,7 @@ struct joque_test
                     [&]( const em::testing::error_variant& err ) {
                             std::stringstream ss;
                             ss << err;
-                            joque::record_output( res, joque::output_chunk::ERROR, ss.str() );
+                            joque::insert_err( res, ss.str() );
                             res.retcode = 1;
                     } );
 
@@ -79,7 +82,7 @@ struct joque_test
                         std::string s = j.dump( 2 );
                         if ( s.length() > 2048 )
                                 s = "output json too big, not shown";
-                        joque::record_output( res, joque::output_chunk::ERROR, s );
+                        joque::insert_err( res, s );
                 } else if ( j.contains( "metrics" ) ) {
                         for ( const nlohmann::json& m : j["metrics"] ) {
                                 auto k   = m["name"].get< std::string >();
@@ -87,7 +90,7 @@ struct joque_test
                                            m["unit"].get< std::string >();
 
                                 auto msg = std::format( "{:<20} {:>20}: {} \n", "", k, val );
-                                joque::record_output( res, joque::output_chunk::STANDARD, msg );
+                                joque::insert_std( res, msg );
                         }
                 }
 
@@ -99,7 +102,7 @@ struct joque_test
                 std::ofstream         of{ p };
                 of << j.dump();
 
-                bool specific_test = handle_test_specifics( name, sys );
+                bool specific_test = handle_test_specifics( name, sys, *output_dir );
 
                 auto& recs = sys.get_records();
                 if ( !recs.empty() && !specific_test ) {
@@ -144,7 +147,7 @@ int main( int argc, char* argv[] )
 
         if ( cfg.firmware.has_value() ) {
                 ts.tasks["flash"] = ftester::make_flash_task(
-                    cfg.firmware.value(), cfg.openocd_config.value(), dev );
+                    cfg.firmware.value(), cfg.openocd_config.value(), std::nullopt, dev );
                 joque::exec( ts ).run();
                 ts = joque::task_set{};
                 std::this_thread::sleep_for( 500ms );
@@ -183,5 +186,5 @@ int main( int argc, char* argv[] )
                 std::ofstream os{ *cfg.output_dir / "res.json" };
                 os << nlohmann::json{ *rec }.dump();
         }
-        return rec->failed_count != 0;
+        return rec->stats[joque::run_status::FAIL] != 0;
 }

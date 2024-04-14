@@ -160,7 +160,7 @@ struct profile
                 em::defer d2      = drv::retain_callback( curr );
                 em::defer d       = setup_poweroff( cor.ctl );
 
-                cor.ctl.switch_to_power_control( p_low / 2 );
+                cor.ctl.switch_to_power_control( p_max );
                 std::size_t     write_i = 0;
                 drv::current_cb ccb{ [&]( uint32_t val, std::span< uint16_t > data ) {
                         curr_cb.on_value_irq( val, data );
@@ -170,10 +170,6 @@ struct profile
                                 return;  // TODO: report error
                         for ( auto&& [i, v] : em::enumerate( data ) )
                                 rec.sum[i] += v;
-                        for ( auto&& [i, v] : em::enumerate( data ) )
-                                rec.max[i] = std::max( rec.max[i], v );
-                        for ( auto&& [i, v] : em::enumerate( data ) )
-                                rec.min[i] = std::min( rec.min[i], v );
                 } };
                 curr.set_current_callback( ccb );
 

@@ -22,7 +22,7 @@ struct current_ctl_test
 
         core::core& cor;
 
-        std::string_view name = "ctl_test";
+        std::string_view name = "current_ctl_test";
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {

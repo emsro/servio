@@ -2,8 +2,8 @@
 #include "fw/servio_pb.hpp"
 #include "fw/store_persistent_config.hpp"
 
-std::byte INPUT_BUFFER[HostToServioPacket_size];
-std::byte OUTPUT_BUFFER[ServioToHostPacket_size];
+std::byte INPUT_BUFFER[HostToServioPacket_size + 32];
+std::byte OUTPUT_BUFFER[ServioToHostPacket_size + 32];
 
 int main()
 {

@@ -32,20 +32,19 @@ struct meas_cur_test
                 drv::empty_current_cb ccb;
                 curr.set_current_callback( ccb );
 
-                motor.set_power( p_low / 2 );
+                motor.set_power( p_max );
 
                 t::node_id dnid =
                     co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
                 t::node_id tnid =
                     co_await ctx.coll.set( "time", em::contiguous_container_type::ARRAY );
 
-                static constexpr std::size_t iters = 50;
+                static constexpr std::size_t iters = 500;
                 float                        sum   = 0;
                 for ( std::size_t i = 0; i < iters; i++ ) {
                         float current = cnv::current( cor.conv, curr, motor );
                         sum += current;
-                        // coll->append( dnid, current );
-                        ctx.coll.append( dnid, curr.get_current() );
+                        ctx.coll.append( dnid, current );
                         ctx.coll.append( tnid, std::chrono::microseconds{ clk.get_us() } );
                         drv::wait_for( clk, 10_ms );
                 }
