@@ -466,7 +466,7 @@ em::view< std::byte* > page_at( uint32_t i )
 }
 
 // TODO: one block is small, need more
-std::array< em::view< std::byte* >, 1 > PERSISTENT_BLOCKS{ page_at( 0 ) };
+std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at( 1 ) };
 
 em::view< const page* > get_persistent_pages()
 {

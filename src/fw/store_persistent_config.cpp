@@ -12,18 +12,8 @@ namespace servio::fw
 
 bool store_persistent_config( const cfg::page& page, const cfg::payload& pld, const cfg::map* cfg )
 {
-
-        if ( HAL_FLASH_Unlock() != HAL_OK )
-                stop_exec();
-        const em::defer d = [] {
-                if ( HAL_FLASH_Lock() != HAL_OK )
-                        stop_exec();
-        };
-
         const std::byte* start      = page.begin();
         auto             start_addr = std::bit_cast< uint32_t >( start );
-
-        plt::cfg_erase( start_addr );
 
         constexpr std::size_t buffer_n = cfg::map::registers_count * sizeof( cfg::keyval ) + 128;
 
@@ -31,7 +21,7 @@ bool store_persistent_config( const cfg::page& page, const cfg::payload& pld, co
 
         auto [succ, used_buffer] = cfg::store( pld, cfg, buffer );
 
-        plt::cfg_write( start_addr, used_buffer );
+        plt::cfg_store( start_addr, used_buffer );
 
         return succ;
 }
@@ -47,7 +37,7 @@ bool persistent_config_writer::operator()( const cfg::map* cfg )
 
         if ( page == nullptr )
                 return false;
-        const bool succ = fw::store_persistent_config( *page, pld, cfg );
+        const bool succ = store_persistent_config( *page, pld, cfg );
         if ( succ )
                 last_payload = pld;
         return succ;

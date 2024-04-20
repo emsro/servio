@@ -74,7 +74,7 @@ int8_t hbridge::get_direction() const
 {
         if ( tim_ == nullptr )
                 return 1;
-        return __HAL_TIM_GET_COMPARE( tim_, mc1_channel_ ) >=
+        return __HAL_TIM_GET_COMPARE( tim_, mc1_channel_ ) <
                        __HAL_TIM_GET_COMPARE( tim_, mc2_channel_ ) ?
                    1 :
                    -1;

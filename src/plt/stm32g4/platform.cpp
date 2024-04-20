@@ -6,6 +6,7 @@
 #include <bit>
 #include <cstring>
 #include <emlabcpp/algorithm.h>
+#include <emlabcpp/defer.h>
 
 namespace servio::plt
 {
@@ -50,6 +51,18 @@ bool cfg_write( uint32_t addr, std::span< std::byte > buffer )
         }
         // TODO: well, there is error handling to do
         return true;
+}
+
+void cfg_store( uint32_t addr, std::span< std::byte > buffer )
+{
+        if ( HAL_FLASH_Unlock() != HAL_OK )
+                fw::stop_exec();
+        const em::defer d = [] {
+                if ( HAL_FLASH_Lock() != HAL_OK )
+                        fw::stop_exec();
+        };
+        cfg_erase( addr );
+        cfg_write( addr, buffer );
 }
 
 }  // namespace servio::plt

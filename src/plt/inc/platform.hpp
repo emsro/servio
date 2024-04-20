@@ -7,8 +7,6 @@
 namespace servio::plt
 {
 
-void cfg_erase( uint32_t start_addr );
-
-bool cfg_write( uint32_t addr, std::span< std::byte > val );
+void cfg_store( uint32_t addr, std::span< std::byte > buffer );
 
 }  // namespace servio::plt

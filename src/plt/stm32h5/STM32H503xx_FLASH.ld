@@ -45,8 +45,8 @@ _Min_Stack_Size = 0x400; /* required amount of stack */
 MEMORY
 {
   RAM    (xrw)    : ORIGIN = 0x20000000,   LENGTH = 32K
-  FLASH    (rx)    : ORIGIN = 0x8000000,   LENGTH = 120K
-  CONFIG (rw)     : ORIGIN = ORIGIN(FLASH) + LENGTH(FLASH), LENGTH = 8K
+  FLASH    (rx)    : ORIGIN = 0x8000000,   LENGTH = 112K
+  CONFIG (rw)     : ORIGIN = ORIGIN(FLASH) + LENGTH(FLASH), LENGTH = 16K
 }
 
 /* Sections */
@@ -64,7 +64,7 @@ SECTIONS
   {
     . = ALIGN(4);
     _config_start = .;
-    . = . + 8K;
+    . = . + 16K;
     _config_end = .;
   } >CONFIG
 

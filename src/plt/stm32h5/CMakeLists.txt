@@ -1,13 +1,7 @@
 servio_add_library(
   TARGET platform
   INCLUDE ../inc/ ./ ../../
-  SOURCES adc.cpp
-          platform.cpp
-          clock.cpp
-          uart.cpp
-          config.cpp
-          gpio.cpp
-          timers.cpp
+  SOURCES adc.cpp clock.cpp uart.cpp config.cpp gpio.cpp timers.cpp
   LIBS emlabcpp HAL::STM32::H5 CMSIS::STM32::H503xx STM32::Nano STM32::NoSys
   OPTS -Os)
 

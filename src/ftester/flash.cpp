@@ -37,10 +37,10 @@ void flash_firmware( const std::filesystem::path& firmware, const std::filesyste
 
         std::stringstream ss;
         ss << "openocd -f " << ocdconf << " -c \"program " << firmware << " verify reset exit\" ";
-        EMLABCPP_DEBUG_LOG( "Executing: ", ss.str() );
 
         const int res = std::system( ss.str().data() );
         if ( res != 0 ) {
+                EMLABCPP_INFO_LOG( "Executing: ", ss.str() );
                 EMLABCPP_ERROR_LOG( "Flashing failed, error code: ", res );
                 std::abort();
         }

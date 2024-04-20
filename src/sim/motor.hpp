@@ -1,9 +1,10 @@
+#pragma once
+
+#include "base/base.hpp"
 #include "emlabcpp/defer.h"
 
 #include <array>
 #include <iostream>
-
-#pragma once
 
 namespace servio::sim
 {
