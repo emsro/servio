@@ -1,0 +1,22 @@
+#include "scmdio/pid_autotune_cmd.hpp"
+
+#include "scmdio/pid_autotune.hpp"
+#include "scmdio/serial.hpp"
+
+namespace servio::scmdio
+{
+boost::asio::awaitable< void > pid_autotune_current( cobs_port& port, float pwr )
+{
+        co_await pid_autotune(
+            pwr,
+            [&port]( float v ) {
+                    return set_mode_power( port, v );
+            },
+            [&port] {
+                    return get_property_current( port );
+            } );
+
+        co_await set_mode_power( port, 0.0F );
+}
+
+}  // namespace servio::scmdio

@@ -15,6 +15,7 @@ namespace servio::drv
 
 inline empty_period_cb EMPTY_PERIOD_CB;
 
+// TODO: add engage/disengage mode that switches this to 0/0 on hbridge
 class hbridge : public pwm_motor_iface, public period_iface
 {
 public:
@@ -52,7 +53,7 @@ public:
 
 private:
         period_cb_iface*   period_cb_;
-        uint32_t           timer_max_ = 0;
+        int32_t            timer_max_ = 0;
         TIM_HandleTypeDef* tim_;
         uint32_t           mc1_channel_ = 0;
         uint32_t           mc2_channel_ = 0;
@@ -70,7 +71,7 @@ inline hbridge* hbridge::setup( uint32_t mc1_channel, uint32_t mc2_channel )
         mc2_channel_ = mc2_channel;
 
         if ( tim_ != nullptr )
-                timer_max_ = tim_->Init.Period;
+                timer_max_ = static_cast< int32_t >( tim_->Init.Period );
         else
                 return nullptr;
 

@@ -54,7 +54,6 @@ drv::adc_pooler_temperature< ADC_POOLER > ADC_TEMPERATURE;
 drv::adc_pooler_position< ADC_POOLER >    ADC_POSITION;
 drv::adc_pooler_current< ADC_POOLER >     ADC_CURRENT;
 
-DAC_HandleTypeDef  DAC_HANDLE{};
 UART_HandleTypeDef UART2_HANDLE{};
 DMA_HandleTypeDef  UART2_DMA_HANDLE{};
 drv::cobs_uart     COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART2_HANDLE, &UART2_DMA_HANDLE };
@@ -382,14 +381,10 @@ em::result start_callback( core::drivers& cdrv )
                         return em::ERROR;
         }
 
-        if ( HAL_DAC_Start( &DAC_HANDLE, DAC_CHANNEL_1 ) != HAL_OK )
-                return em::ERROR;
-
         // TODO: it would kinda be better if during stop callback we would
         // set this to `0` - disables hbridge
         // or maybe during disengage too :)
-        if ( HAL_DAC_SetValue( &DAC_HANDLE, DAC_CHANNEL_1, DAC_ALIGN_8B_R, 255 ) != HAL_OK )
-                return em::ERROR;
+        HAL_GPIO_WritePin( GPIOA, GPIO_PIN_4, GPIO_PIN_SET );
 
         if ( HAL_ICACHE_Enable() != HAL_OK )
                 return em::ERROR;
@@ -411,10 +406,12 @@ core::drivers setup_core_drivers()
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != em::SUCCESS )
                 fw::stop_exec();
 
-        __HAL_RCC_DAC1_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();
-        if ( plt::setup_dac( DAC_HANDLE, drv::pin_cfg{ .pin = GPIO_PIN_4, .port = GPIOA } ) !=
-             em::SUCCESS )
+        if ( plt::setup_gpio( drv::pin_cfg{
+                 .pin  = GPIO_PIN_4,
+                 .port = GPIOA,
+                 .pull = GPIO_PULLDOWN,
+             } ) != em::SUCCESS )
                 fw::stop_exec();
 
         drv::hbridge* hb = hbridge_setup();
@@ -441,9 +438,9 @@ core::drivers setup_core_drivers()
 
 consteval cnv::off_scale get_curr_coeff()
 {
-        // mirror scale: 1500 uA/A
+        // mirror scale: 1575 uA/A
         // resistor: 1k
-        constexpr float gain = 1'500.F / 1'000'000.F;
+        constexpr float gain = 1'575.F / 1'000'000.F;
         return cnv::calc_current_conversion( 3.3F, 0.0F, 1 << 12, 1'000.F, gain );
 }
 

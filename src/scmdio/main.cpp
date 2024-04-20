@@ -1,6 +1,7 @@
 #include "io.pb.h"
 #include "scmdio/cli.hpp"
 #include "scmdio/config_cmds.hpp"
+#include "scmdio/pid_autotune_cmd.hpp"
 #include "scmdio/serial.hpp"
 
 #include <emlabcpp/algorithm.h>
@@ -134,46 +135,60 @@ void pool_def(
 
 struct mode_opts
 {
+        float power;
         float current;
         float angle;
         float velocity;
 };
 
-void mode_def(
-    CLI::App&                     app,
-    boost::asio::io_context&      context,
-    std::unique_ptr< cobs_port >& port_ptr )
+void mode_def( CLI::App& app, boost::asio::io_context& ctx, std::unique_ptr< cobs_port >& port_ptr )
 {
         auto data = std::make_shared< mode_opts >();
 
         auto* mode = app.add_subcommand( "mode", "switch the servo to mode" );
 
         auto* disengaged = mode->add_subcommand( "disengaged", "disengaged mode" );
-        disengaged->callback( [&port_ptr, &context] {
-                co_spawn( context, set_mode_disengaged( *port_ptr ), boost::asio::detached );
+        disengaged->callback( [&port_ptr, &ctx] {
+                co_spawn( ctx, set_mode_disengaged( *port_ptr ), boost::asio::detached );
+        } );
+
+        auto* pow = mode->add_subcommand( "power", "power mode" );
+        pow->add_option( "power", data->power, "power" );
+        pow->callback( [&port_ptr, data, &ctx] {
+                co_spawn( ctx, set_mode_power( *port_ptr, data->power ), boost::asio::detached );
         } );
 
         auto* current = mode->add_subcommand( "current", "current mode" );
         current->add_option( "current", data->current, "goal current" );
-        current->callback( [&port_ptr, data, &context] {
+        current->callback( [&port_ptr, data, &ctx] {
                 co_spawn(
-                    context, set_mode_current( *port_ptr, data->current ), boost::asio::detached );
+                    ctx, set_mode_current( *port_ptr, data->current ), boost::asio::detached );
         } );
 
         auto* position = mode->add_subcommand( "position", "position mode" );
         position->add_option( "angle", data->angle, "goal angle" );
-        position->callback( [&port_ptr, data, &context] {
-                co_spawn(
-                    context, set_mode_position( *port_ptr, data->angle ), boost::asio::detached );
+        position->callback( [&port_ptr, data, &ctx] {
+                co_spawn( ctx, set_mode_position( *port_ptr, data->angle ), boost::asio::detached );
         } );
 
         auto* velocity = mode->add_subcommand( "velocity", "velocity mode" );
         velocity->add_option( "velocity", data->velocity, "goal velocity" );
-        velocity->callback( [&port_ptr, data, &context] {
+        velocity->callback( [&port_ptr, data, &ctx] {
                 co_spawn(
-                    context,
-                    set_mode_velocity( *port_ptr, data->velocity ),
-                    boost::asio::detached );
+                    ctx, set_mode_velocity( *port_ptr, data->velocity ), boost::asio::detached );
+        } );
+}
+
+void autotune_def(
+    CLI::App&                     app,
+    boost::asio::io_context&      ctx,
+    std::unique_ptr< cobs_port >& port_ptr )
+{
+        auto* autotune = app.add_subcommand( "autotune", "does PID autotuning" );
+
+        auto* curr = autotune->add_subcommand( "current", "tune current PID" );
+        curr->callback( [&port_ptr, &ctx] {
+                co_spawn( ctx, pid_autotune_current( *port_ptr, 0.5F ), boost::asio::detached );
         } );
 }
 
@@ -181,15 +196,17 @@ void mode_def(
 
 int main( int argc, char* argv[] )
 {
+        using namespace servio;
 
         CLI::App app{ "Servio utility" };
 
-        servio::scmdio::common_cli cli;
+        scmdio::common_cli cli;
         cli.setup( app );
 
-        servio::scmdio::cfg_def( app, cli.context, cli.port_ptr );
-        servio::scmdio::pool_def( app, cli.context, cli.port_ptr );
-        servio::scmdio::mode_def( app, cli.context, cli.port_ptr );
+        scmdio::cfg_def( app, cli.context, cli.port_ptr );
+        scmdio::pool_def( app, cli.context, cli.port_ptr );
+        scmdio::mode_def( app, cli.context, cli.port_ptr );
+        scmdio::autotune_def( app, cli.context, cli.port_ptr );
 
         try {
                 app.parse( argc, argv );

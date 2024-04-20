@@ -45,6 +45,7 @@ boost::asio::awaitable< float >        get_property_velocity( cobs_port& port );
 boost::asio::awaitable< void > set_mode( cobs_port& port, servio::Mode mode );
 
 boost::asio::awaitable< void > set_mode_disengaged( cobs_port& port );
+boost::asio::awaitable< void > set_mode_power( cobs_port& port, float pow );
 boost::asio::awaitable< void > set_mode_position( cobs_port& port, float angle );
 boost::asio::awaitable< void > set_mode_velocity( cobs_port& port, float vel );
 boost::asio::awaitable< void > set_mode_current( cobs_port& port, float curr );

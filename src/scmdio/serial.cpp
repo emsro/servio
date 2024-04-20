@@ -174,6 +174,13 @@ boost::asio::awaitable< void > set_mode_disengaged( cobs_port& port )
         co_await set_mode( port, m );
 }
 
+boost::asio::awaitable< void > set_mode_power( cobs_port& port, float pow )
+{
+        servio::Mode m;
+        m.set_power( pow );
+        co_await set_mode( port, m );
+}
+
 boost::asio::awaitable< void > set_mode_position( cobs_port& port, float angle )
 {
         servio::Mode m;
