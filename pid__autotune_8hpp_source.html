@@ -182,7 +182,7 @@ $(document).ready(function(){initNavTree('pid__autotune_8hpp_source.html',''); i
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        };</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="namespaceservio_1_1scmdio.html#acea922e69e9824a757167734822e4d2b">   96</a></span>&#160;boost::asio::awaitable&lt; void &gt; <a class="code" href="namespaceservio_1_1scmdio.html#acea922e69e9824a757167734822e4d2b">pid_autotune</a>( <span class="keywordtype">float</span> u, <span class="keyword">auto</span>&amp;&amp; set_f, <span class="keyword">auto</span>&amp;&amp; get_y_f )</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="namespaceservio_1_1scmdio.html#afcf902f4c4fbe43cd7ee095a60768cf1">   96</a></span>&#160;boost::asio::awaitable&lt; std::vector&lt; double &gt; &gt; <a class="code" href="namespaceservio_1_1scmdio.html#afcf902f4c4fbe43cd7ee095a60768cf1">pid_collect</a>( <span class="keywordtype">float</span> u, <span class="keyword">auto</span>&amp;&amp; set_f, <span class="keyword">auto</span>&amp;&amp; get_y_f )</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        co_await set_f( u );</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
@@ -190,18 +190,61 @@ $(document).ready(function(){initNavTree('pid__autotune_8hpp_source.html',''); i
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        buff.reserve( 1024 );</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; 1000; i++ )</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                buff.push_back( co_await get_y_f() );</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span> [i, v] : em::enumerate( buff ) )</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; v &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}  <span class="comment">// namespace servio::scmdio</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        co_return buff;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="namespaceservio_1_1scmdio.html#aa7aafe8ff434221e097fa3aaff3641af">  107</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceservio_1_1scmdio.html#aa7aafe8ff434221e097fa3aaff3641af">pid_calculate</a>( std::span&lt; double &gt; buff )</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        em::min_max mm    = em::min_max_elem( buff );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordtype">double</span>      range = mm.max() - mm.min();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">double</span>      from  = mm.min() + range * 0.2;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">double</span>      to    = mm.min() + range * 0.8;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;buff size: &quot;</span> &lt;&lt; buff.size() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;range: &quot;</span> &lt;&lt; range &lt;&lt; <span class="stringliteral">&quot;\tfrom: &quot;</span> &lt;&lt; from &lt;&lt; <span class="stringliteral">&quot;\tto:&quot;</span> &lt;&lt; to &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">auto</span> beg_iter = em::find_if( buff, [&amp;]( <span class="keywordtype">double</span> v ) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">return</span> v &gt; from;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        } );</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keyword">auto</span> end_iter = em::find_if( buff, [&amp;]( <span class="keywordtype">double</span> v ) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="keywordflow">return</span> v &gt; to;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        } );</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        std::span&lt; double &gt; lls_span{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            &amp;*beg_iter, <span class="keyword">static_cast&lt;</span> std::size_t <span class="keyword">&gt;</span>( std::distance( beg_iter, end_iter ) ) };</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;lls_span size: &quot;</span> &lt;&lt; lls_span.size() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line">line</a> guide = <a class="code" href="namespaceservio_1_1scmdio.html#a40ca775c56c260d187fd81d3730fef47">linear_least_squares</a>( lls_span );</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;guide: &quot;</span> &lt;&lt; guide.<a class="code" href="namespaceservio_1_1scmdio.html#a3d7149bee2e844f1da436d7e6b72cdba">off</a> &lt;&lt; <span class="stringliteral">&quot; + &quot;</span> &lt;&lt; guide.<a class="code" href="namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358">scale</a> &lt;&lt; <span class="stringliteral">&quot; * x&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordtype">double</span> K = range;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">double</span> L = -guide.<a class="code" href="namespaceservio_1_1scmdio.html#a3d7149bee2e844f1da436d7e6b72cdba">off</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="comment">// y = a + b*x</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment">// x = (y-a)/b</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordtype">double</span> T = ( K - guide.<a class="code" href="namespaceservio_1_1scmdio.html#a3d7149bee2e844f1da436d7e6b72cdba">off</a> ) / guide.<a class="code" href="namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358">scale</a> - L;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;K: &quot;</span> &lt;&lt; K &lt;&lt; <span class="stringliteral">&quot;\tL: &quot;</span> &lt;&lt; L &lt;&lt; <span class="stringliteral">&quot;\tT: &quot;</span> &lt;&lt; T &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment">// Cohen coon, inspiration:</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">// https://www.incatools.com/pid-tuning/pid-tuning-methods/</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">double</span> tau = L / ( L + T );</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordtype">double</span> a   = K * L / T;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordtype">double</span> K_p = ( 1.35 / a ) * ( 1 + 0.18 * tau / ( 1 - tau ) );</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordtype">double</span> T_i = L * ( 2.5 - 2.0 * tau ) / ( 1 - 0.39 * tau );</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordtype">double</span> T_d = L * ( 0.37 - 0.37 * tau ) / ( 1 - 0.81 * tau );</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">double</span> K_i = K_p / T_i;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">double</span> K_d = K_p * T_d;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;P: &quot;</span> &lt;&lt; K_p &lt;&lt; <span class="stringliteral">&quot;\tI: &quot;</span> &lt;&lt; K_i &lt;&lt; <span class="stringliteral">&quot;\tD: &quot;</span> &lt;&lt; K_d &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}  <span class="comment">// namespace servio::scmdio</span></div>
 <div class="ttc" id="aasync__cobs_8hpp_html"><div class="ttname"><a href="async__cobs_8hpp.html">async_cobs.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html"><div class="ttname"><a href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div><div class="ttdef"><b>Definition:</b> async_cobs.cpp:10</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_a3d7149bee2e844f1da436d7e6b72cdba"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a3d7149bee2e844f1da436d7e6b72cdba">servio::scmdio::line::off</a></div><div class="ttdeci">double off</div><div class="ttdef"><b>Definition:</b> pid_autotune.hpp:15</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_a40ca775c56c260d187fd81d3730fef47"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a40ca775c56c260d187fd81d3730fef47">servio::scmdio::linear_least_squares</a></div><div class="ttdeci">line linear_least_squares(std::span&lt; double &gt; ys)</div><div class="ttdef"><b>Definition:</b> pid_autotune.hpp:78</div></div>
-<div class="ttc" id="anamespaceservio_1_1scmdio_html_acea922e69e9824a757167734822e4d2b"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#acea922e69e9824a757167734822e4d2b">servio::scmdio::pid_autotune</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; pid_autotune(float u, auto &amp;&amp;set_f, auto &amp;&amp;get_y_f)</div><div class="ttdef"><b>Definition:</b> pid_autotune.hpp:96</div></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html_aa7aafe8ff434221e097fa3aaff3641af"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#aa7aafe8ff434221e097fa3aaff3641af">servio::scmdio::pid_calculate</a></div><div class="ttdeci">void pid_calculate(std::span&lt; double &gt; buff)</div><div class="ttdef"><b>Definition:</b> pid_autotune.hpp:107</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_ae5f25ecedaee17ceb968eb911b257358"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358">servio::scmdio::line::scale</a></div><div class="ttdeci">double scale</div><div class="ttdef"><b>Definition:</b> pid_autotune.hpp:16</div></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html_afcf902f4c4fbe43cd7ee095a60768cf1"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#afcf902f4c4fbe43cd7ee095a60768cf1">servio::scmdio::pid_collect</a></div><div class="ttdeci">boost::asio::awaitable&lt; std::vector&lt; double &gt; &gt; pid_collect(float u, auto &amp;&amp;set_f, auto &amp;&amp;get_y_f)</div><div class="ttdef"><b>Definition:</b> pid_autotune.hpp:96</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_structservio_1_1scmdio_1_1line"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line">servio::scmdio::line</a></div><div class="ttdef"><b>Definition:</b> pid_autotune.hpp:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -209,7 +252,7 @@ $(document).ready(function(){initNavTree('pid__autotune_8hpp_source.html',''); i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="pid__autotune_8hpp.html">pid_autotune.hpp</a></li>
-    <li class="footer">Generated on Sat Apr 20 2024 14:13:01 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Apr 20 2024 20:22:58 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

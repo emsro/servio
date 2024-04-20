@@ -5,5 +5,6 @@ var pid__autotune_8hpp =
       [ "scale", "namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358", null ]
     ] ],
     [ "linear_least_squares", "pid__autotune_8hpp.html#a40ca775c56c260d187fd81d3730fef47", null ],
-    [ "pid_autotune", "pid__autotune_8hpp.html#acea922e69e9824a757167734822e4d2b", null ]
+    [ "pid_calculate", "pid__autotune_8hpp.html#aa7aafe8ff434221e097fa3aaff3641af", null ],
+    [ "pid_collect", "pid__autotune_8hpp.html#afcf902f4c4fbe43cd7ee095a60768cf1", null ]
 ];

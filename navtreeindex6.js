@@ -1,5 +1,14 @@
 var NAVTREEINDEX6 =
 {
+"proto3_2board_8cpp.html#ab9c4570b264e5103deb948e89f713529":[8,0,1,2,0,1,27],
+"proto3_2board_8cpp.html#abdc13d41584a6eddafd9efdb67617940":[8,0,1,2,0,1,51],
+"proto3_2board_8cpp.html#ac13ffcf8c8dd96138053b8a854004583":[8,0,1,2,0,1,23],
+"proto3_2board_8cpp.html#ac9b4664ac58b840d2e0f97c5cc2bcf43":[8,0,1,2,0,1,37],
+"proto3_2board_8cpp.html#acebef877469ed3877cd3aed31f76525e":[8,0,1,2,0,1,31],
+"proto3_2board_8cpp.html#acf0eac3166e968f5cefe71de1f5d5ca8":[8,0,1,2,0,1,19],
+"proto3_2board_8cpp.html#ad7acc0f3dbfde0575a7230b2a53744d5":[8,0,1,2,0,1,40],
+"proto3_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba":[8,0,1,2,0,1,26],
+"proto3_2board_8cpp.html#ae003e88b83b7e7fad39fff209ffcc4ef":[8,0,1,2,0,1,50],
 "proto3_2board_8cpp.html#ae55e8a68c2ed7497673cd487d93c0ef4":[8,0,1,2,0,1,35],
 "proto3_2board_8cpp.html#ae5f38137289f200368426a1f7298b834":[8,0,1,2,0,1,34],
 "proto3_2board_8cpp.html#aee366d78fb4dd7ae0e84ee4a28665113":[8,0,1,2,0,1,3],
@@ -153,9 +162,6 @@ var NAVTREEINDEX6 =
 "static__detector_8hpp_source.html":[8,0,1,14,4],
 "stm32g4_2hal_8hpp.html":[8,0,1,15,1,0],
 "stm32g4_2hal_8hpp_source.html":[8,0,1,15,1,0],
-"stm32g4_2platform_8cpp.html":[8,0,1,15,1,1],
-"stm32g4_2platform_8cpp.html#a645e44622af5420d2d39234cf52d9f76":[8,0,1,15,1,1,0],
-"stm32g4_2platform_8cpp.html#ab819c2568aa5dc1592d9f79774b1cf45":[8,0,1,15,1,1,1],
 "stm32g4xx__hal__conf_8h.html":[8,0,1,15,1,2],
 "stm32g4xx__hal__conf_8h.html#a0bd9565011f8d7c7f33b420ffb920781":[8,0,1,15,1,2,9],
 "stm32g4xx__hal__conf_8h.html#a0c281b7bdebecbe9715d556f0f374fea":[8,0,1,15,1,2,59],
@@ -243,11 +249,5 @@ var NAVTREEINDEX6 =
 "stm32g4xx__hal__conf_8h_source.html":[8,0,1,15,1,2],
 "stm32h5_2hal_8hpp.html":[8,0,1,15,2,4],
 "stm32h5_2hal_8hpp_source.html":[8,0,1,15,2,4],
-"stm32h5_2platform_8cpp.html":[8,0,1,15,2,5],
-"stm32h5_2platform_8cpp.html#a645e44622af5420d2d39234cf52d9f76":[8,0,1,15,2,5,0],
-"stm32h5_2platform_8cpp.html#ab819c2568aa5dc1592d9f79774b1cf45":[8,0,1,15,2,5,1],
-"stm32h5xx__hal__conf_8h.html":[8,0,1,15,2,7],
-"stm32h5xx__hal__conf_8h.html#a01ce38caf5845a4604832a8a28950dc4":[8,0,1,15,2,7,107],
-"stm32h5xx__hal__conf_8h.html#a03584901bd3da44ef3e121ac3b3f3650":[8,0,1,15,2,7,41],
-"stm32h5xx__hal__conf_8h.html#a0390418ff6315463b6ef161c63a69d43":[8,0,1,15,2,7,78]
+"stm32h5xx__hal__conf_8h.html":[8,0,1,15,2,6]
 };
