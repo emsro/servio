@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('scmdio_2main_8cpp.html',''); initResiz
 <div class="textblock"><code>#include &quot;io.pb.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="scmdio_2cli_8hpp_source.html">scmdio/cli.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="config__cmds_8hpp_source.html">scmdio/config_cmds.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pid__autotune__cmd_8hpp_source.html">scmdio/pid_autotune_cmd.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="serial_8hpp_source.html">scmdio/serial.hpp</a>&quot;</code><br />
 <code>#include &lt;emlabcpp/algorithm.h&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('scmdio_2main_8cpp.html',''); initResiz
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="scmdio_2main_8cpp__incl.svg" width="943" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="scmdio_2main_8cpp__incl.svg" width="1047" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -134,8 +135,10 @@ Functions</h2></td></tr>
 <tr class="separator:a51e4cb40456beafbb78ac97e71ae4d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab046fe02e42a95b8c9f2c668bfc6e3ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ab046fe02e42a95b8c9f2c668bfc6e3ba">servio::scmdio::pool_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;context, std::unique_ptr&lt; cobs_port &gt; &amp;port_ptr)</td></tr>
 <tr class="separator:ab046fe02e42a95b8c9f2c668bfc6e3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8f1ceb609ae89895bfd147df09140ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#af8f1ceb609ae89895bfd147df09140ae">servio::scmdio::mode_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;context, std::unique_ptr&lt; cobs_port &gt; &amp;port_ptr)</td></tr>
-<tr class="separator:af8f1ceb609ae89895bfd147df09140ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3343a77efa887d1c6ae4a939ca683b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#af3343a77efa887d1c6ae4a939ca683b6">servio::scmdio::mode_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;ctx, std::unique_ptr&lt; cobs_port &gt; &amp;port_ptr)</td></tr>
+<tr class="separator:af3343a77efa887d1c6ae4a939ca683b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a141bcb6a4196a3a543172be48aa85397"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a141bcb6a4196a3a543172be48aa85397">servio::scmdio::autotune_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;ctx, std::unique_ptr&lt; cobs_port &gt; &amp;port_ptr)</td></tr>
+<tr class="separator:a141bcb6a4196a3a543172be48aa85397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scmdio_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -209,6 +212,12 @@ current</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
+<a id="ab9513f1604f27e60b999a99958a45d90"></a>float</td>
+<td class="fieldname">
+power</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
 <a id="ad4eeda260fbde422b87e85ab46f2da0d"></a>float</td>
 <td class="fieldname">
 velocity</td>
@@ -245,7 +254,7 @@ velocity</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a47742063f815da2978a95cd745152a30">servio::scmdio::cfg_def()</a>, <a class="el" href="structservio_1_1scmdio_1_1common__cli.html#a18286990d879f4c04c5d3f7eac60583c">servio::scmdio::common_cli::context</a>, <a class="el" href="namespaceservio_1_1scmdio.html#af8f1ceb609ae89895bfd147df09140ae">servio::scmdio::mode_def()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#ab046fe02e42a95b8c9f2c668bfc6e3ba">servio::scmdio::pool_def()</a>, <a class="el" href="structservio_1_1scmdio_1_1common__cli.html#a2b92b721999134691c53a9aa2413ba5f">servio::scmdio::common_cli::port_ptr</a>, and <a class="el" href="structservio_1_1scmdio_1_1common__cli.html#a8efad675885c5e667ff8dfa954e62149">servio::scmdio::common_cli::setup()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a141bcb6a4196a3a543172be48aa85397">servio::scmdio::autotune_def()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a47742063f815da2978a95cd745152a30">servio::scmdio::cfg_def()</a>, <a class="el" href="structservio_1_1scmdio_1_1common__cli.html#a18286990d879f4c04c5d3f7eac60583c">servio::scmdio::common_cli::context</a>, <a class="el" href="namespaceservio_1_1scmdio.html#af3343a77efa887d1c6ae4a939ca683b6">servio::scmdio::mode_def()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#ab046fe02e42a95b8c9f2c668bfc6e3ba">servio::scmdio::pool_def()</a>, <a class="el" href="structservio_1_1scmdio_1_1common__cli.html#a2b92b721999134691c53a9aa2413ba5f">servio::scmdio::common_cli::port_ptr</a>, and <a class="el" href="structservio_1_1scmdio_1_1common__cli.html#a8efad675885c5e667ff8dfa954e62149">servio::scmdio::common_cli::setup()</a>.</p>
 
 </div>
 </div>
@@ -255,7 +264,7 @@ velocity</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="scmdio_2main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Sun Apr 14 2024 14:25:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Apr 20 2024 14:13:01 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

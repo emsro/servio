@@ -17,7 +17,7 @@ var namespaceservio_1_1plt =
     [ "setup_adc_timer", "namespaceservio_1_1plt.html#ab59156a4d6fbd15217a26dc5ebed8b64", null ],
     [ "setup_clk", "namespaceservio_1_1plt.html#a97b99f12fdb9bdec7f51c3a2fa1a63b8", null ],
     [ "setup_clock_timer", "namespaceservio_1_1plt.html#a71520584fd9671ce414b8b5b8c653926", null ],
-    [ "setup_dac", "namespaceservio_1_1plt.html#a0c5952ca03d742e99c794c66d9d305b8", null ],
+    [ "setup_dac", "namespaceservio_1_1plt.html#ab45be70ff68ca1e5e7f42d1fd2dea60a", null ],
     [ "setup_gpio", "namespaceservio_1_1plt.html#a5d1ffe876c5d8201cbbb029bb4e7e988", null ],
     [ "setup_hbridge_timers", "namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c", null ],
     [ "setup_leds_channel", "namespaceservio_1_1plt.html#a25cf0c78aaa0a1eed2dda1c91f70fc0a", null ],

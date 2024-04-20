@@ -111,6 +111,8 @@ Classes</h2></td></tr>
 <tr class="separator:structservio_1_1scmdio_1_1cfg__opts"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1scmdio_1_1mode__opts"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts">mode_opts</a></td></tr>
 <tr class="separator:structservio_1_1scmdio_1_1mode__opts"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1scmdio_1_1line"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line">line</a></td></tr>
+<tr class="separator:structservio_1_1scmdio_1_1line"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -146,8 +148,16 @@ Functions</h2></td></tr>
 <tr class="separator:a51e4cb40456beafbb78ac97e71ae4d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab046fe02e42a95b8c9f2c668bfc6e3ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ab046fe02e42a95b8c9f2c668bfc6e3ba">pool_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;context, std::unique_ptr&lt; <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &gt; &amp;port_ptr)</td></tr>
 <tr class="separator:ab046fe02e42a95b8c9f2c668bfc6e3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8f1ceb609ae89895bfd147df09140ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#af8f1ceb609ae89895bfd147df09140ae">mode_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;context, std::unique_ptr&lt; <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &gt; &amp;port_ptr)</td></tr>
-<tr class="separator:af8f1ceb609ae89895bfd147df09140ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3343a77efa887d1c6ae4a939ca683b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#af3343a77efa887d1c6ae4a939ca683b6">mode_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;ctx, std::unique_ptr&lt; <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &gt; &amp;port_ptr)</td></tr>
+<tr class="separator:af3343a77efa887d1c6ae4a939ca683b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a141bcb6a4196a3a543172be48aa85397"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a141bcb6a4196a3a543172be48aa85397">autotune_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;ctx, std::unique_ptr&lt; <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &gt; &amp;port_ptr)</td></tr>
+<tr class="separator:a141bcb6a4196a3a543172be48aa85397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ca775c56c260d187fd81d3730fef47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line">line</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a40ca775c56c260d187fd81d3730fef47">linear_least_squares</a> (std::span&lt; double &gt; ys)</td></tr>
+<tr class="separator:a40ca775c56c260d187fd81d3730fef47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acea922e69e9824a757167734822e4d2b"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#acea922e69e9824a757167734822e4d2b">pid_autotune</a> (float u, auto &amp;&amp;set_f, auto &amp;&amp;get_y_f)</td></tr>
+<tr class="separator:acea922e69e9824a757167734822e4d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e1523147838541bb345fa50f257471"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ac0e1523147838541bb345fa50f257471">pid_autotune_current</a> (<a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &amp;port, float <a class="el" href="structservio_1_1pwr.html">pwr</a>)</td></tr>
+<tr class="separator:ac0e1523147838541bb345fa50f257471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf90a9c7cf0c9e0f5124ae2e9da6e7e3"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#acf90a9c7cf0c9e0f5124ae2e9da6e7e3">write</a> (<a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &amp;port, const servio::HostToServio &amp;payload)</td></tr>
 <tr class="memdesc:acf90a9c7cf0c9e0f5124ae2e9da6e7e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a reply to servo port.  <a href="namespaceservio_1_1scmdio.html#acf90a9c7cf0c9e0f5124ae2e9da6e7e3">More...</a><br /></td></tr>
 <tr class="separator:acf90a9c7cf0c9e0f5124ae2e9da6e7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,12 +195,22 @@ Functions</h2></td></tr>
 <tr class="separator:aa46b302a7220d504bdf3fc5683c99784"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e9426deae421f80fe767a13e789e6d3"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a4e9426deae421f80fe767a13e789e6d3">set_mode_disengaged</a> (<a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &amp;port)</td></tr>
 <tr class="separator:a4e9426deae421f80fe767a13e789e6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e9314b89aa7bf4e8befabe2ed69470e"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a1e9314b89aa7bf4e8befabe2ed69470e">set_mode_power</a> (<a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &amp;port, float pow)</td></tr>
+<tr class="separator:a1e9314b89aa7bf4e8befabe2ed69470e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9da5122fa9736ee8ca5c24ffca8674a9"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a9da5122fa9736ee8ca5c24ffca8674a9">set_mode_position</a> (<a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &amp;port, float angle)</td></tr>
 <tr class="separator:a9da5122fa9736ee8ca5c24ffca8674a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa01b34a2e19a667f616be09279d6d92c"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#aa01b34a2e19a667f616be09279d6d92c">set_mode_velocity</a> (<a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &amp;port, float vel)</td></tr>
 <tr class="separator:aa01b34a2e19a667f616be09279d6d92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada2b3d06cbfe7688a58b744c88013ca1"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ada2b3d06cbfe7688a58b744c88013ca1">set_mode_current</a> (<a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &amp;port, float curr)</td></tr>
 <tr class="separator:ada2b3d06cbfe7688a58b744c88013ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5698f80e4c7a222fcc97fff343ea42e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a5698f80e4c7a222fcc97fff343ea42e5">TEST</a> (autotune, lls_symm)</td></tr>
+<tr class="separator:a5698f80e4c7a222fcc97fff343ea42e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2afdb9114bd0f5849715486e9db6ec62"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a2afdb9114bd0f5849715486e9db6ec62">TEST</a> (autotune, lls_off)</td></tr>
+<tr class="separator:a2afdb9114bd0f5849715486e9db6ec62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a058d618dff68f4915ad47a130589e7c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a058d618dff68f4915ad47a130589e7c3">TEST</a> (autotune, lls_linear)</td></tr>
+<tr class="separator:a058d618dff68f4915ad47a130589e7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46626ef4592ca7c5fd26dfb876358105"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a46626ef4592ca7c5fd26dfb876358105">TEST</a> (autotune, lls_noise)</td></tr>
+<tr class="separator:a46626ef4592ca7c5fd26dfb876358105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1scmdio_1_1cfg__opts" id="structservio_1_1scmdio_1_1cfg__opts"></a>
@@ -262,6 +282,12 @@ current</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
+<a id="ab9513f1604f27e60b999a99958a45d90"></a>float</td>
+<td class="fieldname">
+power</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
 <a id="ad4eeda260fbde422b87e85ab46f2da0d"></a>float</td>
 <td class="fieldname">
 velocity</td>
@@ -271,7 +297,72 @@ velocity</td>
 
 </div>
 </div>
+<a name="structservio_1_1scmdio_1_1line" id="structservio_1_1scmdio_1_1line"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1line">&#9670;&nbsp;</a></span>servio::scmdio::line</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::scmdio::line</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a3d7149bee2e844f1da436d7e6b72cdba"></a>double</td>
+<td class="fieldname">
+off</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ae5f25ecedaee17ceb968eb911b257358"></a>double</td>
+<td class="fieldname">
+scale</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a141bcb6a4196a3a543172be48aa85397"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a141bcb6a4196a3a543172be48aa85397">&#9670;&nbsp;</a></span>autotune_def()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void servio::scmdio::autotune_def </td>
+          <td>(</td>
+          <td class="paramtype">CLI::App &amp;&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::asio::io_context &amp;&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>port_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#ac0e1523147838541bb345fa50f257471">pid_autotune_current()</a>.</p>
+
+</div>
+</div>
 <a id="a6286d1246b1168d8fa9bd1b651b3752e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6286d1246b1168d8fa9bd1b651b3752e">&#9670;&nbsp;</a></span>baudrate_opt()</h2>
 
@@ -848,8 +939,34 @@ velocity</td>
 
 </div>
 </div>
-<a id="af8f1ceb609ae89895bfd147df09140ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8f1ceb609ae89895bfd147df09140ae">&#9670;&nbsp;</a></span>mode_def()</h2>
+<a id="a40ca775c56c260d187fd81d3730fef47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ca775c56c260d187fd81d3730fef47">&#9670;&nbsp;</a></span>linear_least_squares()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line">line</a> servio::scmdio::linear_least_squares </td>
+          <td>(</td>
+          <td class="paramtype">std::span&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>ys</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af3343a77efa887d1c6ae4a939ca683b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3343a77efa887d1c6ae4a939ca683b6">&#9670;&nbsp;</a></span>mode_def()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -864,7 +981,7 @@ velocity</td>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">boost::asio::io_context &amp;&#160;</td>
-          <td class="paramname"><em>context</em>, </td>
+          <td class="paramname"><em>ctx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -880,7 +997,71 @@ velocity</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1cnv.html#a81aa759bf010df60769d03a4fd7b47cc">servio::cnv::current()</a>, <a class="el" href="namespaceservio_1_1cnv.html#ad5f41461e56077db8546aca8f2aea0c5">servio::cnv::position()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#ada2b3d06cbfe7688a58b744c88013ca1">set_mode_current()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a4e9426deae421f80fe767a13e789e6d3">set_mode_disengaged()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a9da5122fa9736ee8ca5c24ffca8674a9">set_mode_position()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#aa01b34a2e19a667f616be09279d6d92c">set_mode_velocity()</a>, and <a class="el" href="namespaceservio_1_1klmn.html#aab9b4531c387d4264fe17a1341856597">servio::klmn::velocity()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1cnv.html#a81aa759bf010df60769d03a4fd7b47cc">servio::cnv::current()</a>, <a class="el" href="namespaceservio_1_1cnv.html#ad5f41461e56077db8546aca8f2aea0c5">servio::cnv::position()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#ada2b3d06cbfe7688a58b744c88013ca1">set_mode_current()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a4e9426deae421f80fe767a13e789e6d3">set_mode_disengaged()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a9da5122fa9736ee8ca5c24ffca8674a9">set_mode_position()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a1e9314b89aa7bf4e8befabe2ed69470e">set_mode_power()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#aa01b34a2e19a667f616be09279d6d92c">set_mode_velocity()</a>, and <a class="el" href="namespaceservio_1_1klmn.html#aab9b4531c387d4264fe17a1341856597">servio::klmn::velocity()</a>.</p>
+
+</div>
+</div>
+<a id="acea922e69e9824a757167734822e4d2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acea922e69e9824a757167734822e4d2b">&#9670;&nbsp;</a></span>pid_autotune()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::asio::awaitable&lt; void &gt; servio::scmdio::pid_autotune </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>set_f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>get_y_f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac0e1523147838541bb345fa50f257471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e1523147838541bb345fa50f257471">&#9670;&nbsp;</a></span>pid_autotune_current()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::asio::awaitable&lt; void &gt; servio::scmdio::pid_autotune_current </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &amp;&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pwr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a681b60ef96a826f98c583c4245a4a94e">get_property_current()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#acea922e69e9824a757167734822e4d2b">pid_autotune()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a1e9314b89aa7bf4e8befabe2ed69470e">set_mode_power()</a>.</p>
 
 </div>
 </div>
@@ -1186,6 +1367,36 @@ velocity</td>
 
 </div>
 </div>
+<a id="a1e9314b89aa7bf4e8befabe2ed69470e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e9314b89aa7bf4e8befabe2ed69470e">&#9670;&nbsp;</a></span>set_mode_power()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::asio::awaitable&lt; void &gt; servio::scmdio::set_mode_power </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a> &amp;&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#aa46b302a7220d504bdf3fc5683c99784">set_mode()</a>.</p>
+
+</div>
+</div>
 <a id="aa01b34a2e19a667f616be09279d6d92c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa01b34a2e19a667f616be09279d6d92c">&#9670;&nbsp;</a></span>set_mode_velocity()</h2>
 
@@ -1213,6 +1424,126 @@ velocity</td>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#aa46b302a7220d504bdf3fc5683c99784">set_mode()</a>.</p>
+
+</div>
+</div>
+<a id="a058d618dff68f4915ad47a130589e7c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a058d618dff68f4915ad47a130589e7c3">&#9670;&nbsp;</a></span>TEST() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">servio::scmdio::TEST </td>
+          <td>(</td>
+          <td class="paramtype">autotune&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lls_linear&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a40ca775c56c260d187fd81d3730fef47">linear_least_squares()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a3d7149bee2e844f1da436d7e6b72cdba">servio::scmdio::line::off</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358">servio::scmdio::line::scale</a>.</p>
+
+</div>
+</div>
+<a id="a46626ef4592ca7c5fd26dfb876358105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46626ef4592ca7c5fd26dfb876358105">&#9670;&nbsp;</a></span>TEST() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">servio::scmdio::TEST </td>
+          <td>(</td>
+          <td class="paramtype">autotune&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lls_noise&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a40ca775c56c260d187fd81d3730fef47">linear_least_squares()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a3d7149bee2e844f1da436d7e6b72cdba">servio::scmdio::line::off</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358">servio::scmdio::line::scale</a>.</p>
+
+</div>
+</div>
+<a id="a2afdb9114bd0f5849715486e9db6ec62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2afdb9114bd0f5849715486e9db6ec62">&#9670;&nbsp;</a></span>TEST() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">servio::scmdio::TEST </td>
+          <td>(</td>
+          <td class="paramtype">autotune&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lls_off&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a40ca775c56c260d187fd81d3730fef47">linear_least_squares()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a3d7149bee2e844f1da436d7e6b72cdba">servio::scmdio::line::off</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358">servio::scmdio::line::scale</a>.</p>
+
+</div>
+</div>
+<a id="a5698f80e4c7a222fcc97fff343ea42e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5698f80e4c7a222fcc97fff343ea42e5">&#9670;&nbsp;</a></span>TEST() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">servio::scmdio::TEST </td>
+          <td>(</td>
+          <td class="paramtype">autotune&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lls_symm&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a40ca775c56c260d187fd81d3730fef47">linear_least_squares()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a3d7149bee2e844f1da436d7e6b72cdba">servio::scmdio::line::off</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358">servio::scmdio::line::scale</a>.</p>
 
 </div>
 </div>
@@ -1282,7 +1613,7 @@ velocity</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1scmdio.html">scmdio</a></li>
-    <li class="footer">Generated on Sun Apr 14 2024 14:25:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Apr 20 2024 14:13:01 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

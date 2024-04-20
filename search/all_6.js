@@ -16,8 +16,8 @@ var searchData=
   ['adc_5ferror_5fcodes_30',['adc_error_codes',['../namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76b',1,'servio::drv']]],
   ['adc_5ferror_5firq_31',['adc_error_irq',['../structservio_1_1drv_1_1adc__pooler.html#a774cee15e9567b519f2b0a117041ee56',1,'servio::drv::adc_pooler']]],
   ['adc_5fhandle_32',['ADC_HANDLE',['../namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e',1,'servio::brd']]],
-  ['adc_5finstance_33',['adc_instance',['../namespaceservio_1_1plt.html#a7c17b619a35f4e0ff604967668babdb4',1,'servio::plt::adc_cfg::adc_instance()'],['../namespaceservio_1_1brd.html#a6e305a39d11b7de03020a9a6a299008b',1,'servio::brd::adc_cfg::adc_instance()']]],
-  ['adc_5firq_5fpriority_34',['adc_irq_priority',['../namespaceservio_1_1plt.html#a6a1b2270dd01143ff1bc38ba8cfd3020',1,'servio::plt::adc_cfg::adc_irq_priority()'],['../namespaceservio_1_1brd.html#ad1ee92f9b8d2bb0815540c8fc791375b',1,'servio::brd::adc_cfg::adc_irq_priority()']]],
+  ['adc_5finstance_33',['adc_instance',['../namespaceservio_1_1brd.html#a6e305a39d11b7de03020a9a6a299008b',1,'servio::brd::adc_cfg::adc_instance()'],['../namespaceservio_1_1plt.html#a7c17b619a35f4e0ff604967668babdb4',1,'servio::plt::adc_cfg::adc_instance()']]],
+  ['adc_5firq_5fpriority_34',['adc_irq_priority',['../namespaceservio_1_1brd.html#ad1ee92f9b8d2bb0815540c8fc791375b',1,'servio::brd::adc_cfg::adc_irq_priority()'],['../namespaceservio_1_1plt.html#a6a1b2270dd01143ff1bc38ba8cfd3020',1,'servio::plt::adc_cfg::adc_irq_priority()']]],
   ['adc_5fperiod_5fcb_35',['ADC_PERIOD_CB',['../namespaceservio_1_1brd.html#a9fd563d901e739e49f3a9b8754686117',1,'servio::brd']]],
   ['adc_5fpooler_36',['adc_pooler',['../structservio_1_1drv_1_1adc__pooler.html#a5f8465839a30b1db2cca7dc463bb327b',1,'servio::drv::adc_pooler']]],
   ['adc_5fpooler_37',['ADC_POOLER',['../namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1',1,'servio::brd']]],
@@ -58,5 +58,7 @@ var searchData=
   ['async_5fcobs_2ehpp_72',['async_cobs.hpp',['../async__cobs_8hpp.html',1,'']]],
   ['async_5fread_73',['async_read',['../structservio_1_1scmdio_1_1cobs__port.html#a753a34ede7c88a22216b2b05b54b15e4',1,'servio::scmdio::cobs_port']]],
   ['async_5fwrite_74',['async_write',['../structservio_1_1scmdio_1_1cobs__port.html#ab1d8918adfbec664a16b9079d48cfc9a',1,'servio::scmdio::cobs_port']]],
-  ['attempt_5fn_75',['ATTEMPT_N',['../namespaceservio_1_1cnv_1_1tests.html#a51fc9b65a1f2fbfd9cf62801705adeb9',1,'servio::cnv::tests']]]
+  ['attempt_5fn_75',['ATTEMPT_N',['../namespaceservio_1_1cnv_1_1tests.html#a51fc9b65a1f2fbfd9cf62801705adeb9',1,'servio::cnv::tests']]],
+  ['autotune_5fdef_76',['autotune_def',['../namespaceservio_1_1scmdio.html#a141bcb6a4196a3a543172be48aa85397',1,'servio::scmdio']]],
+  ['autotune_5futest_2ecpp_77',['autotune_utest.cpp',['../autotune__utest_8cpp.html',1,'']]]
 ];

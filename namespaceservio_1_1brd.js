@@ -44,7 +44,6 @@ var namespaceservio_1_1brd =
     [ "CENTRAL_SENTRY", "namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43", null ],
     [ "CLOCK", "namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca", null ],
     [ "COMMS", "namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36", null ],
-    [ "DAC_HANDLE", "namespaceservio_1_1brd.html#ab1ef2037afaddd38bb84743b8a7e8ed8", null ],
     [ "DEBUG_COMMS", "namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5", null ],
     [ "DEGRADED_RECORDS", "namespaceservio_1_1brd.html#a29e9ac3d0caab29dfd8e900b69801727", null ],
     [ "HBRIDGE", "namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db", null ],

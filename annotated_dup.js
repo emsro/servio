@@ -158,7 +158,8 @@ var annotated_dup =
         [ "serialize_error", "structservio_1_1scmdio_1_1serialize__error.html", "structservio_1_1scmdio_1_1serialize__error" ],
         [ "parse_error", "structservio_1_1scmdio_1_1parse__error.html", "structservio_1_1scmdio_1_1parse__error" ],
         [ "cfg_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1cfg__opts_dup" ],
-        [ "mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1mode__opts_dup" ]
+        [ "mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1mode__opts_dup" ],
+        [ "line", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1line_dup" ]
       ] ],
       [ "sim", "namespaceservio_1_1sim.html", [
         [ "simple_motor", "structservio_1_1sim_1_1simple__motor.html", "structservio_1_1sim_1_1simple__motor" ]
