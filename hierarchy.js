@@ -11,6 +11,7 @@ var hierarchy =
     [ "servio::drv::adc_pooler< Set >", "structservio_1_1drv_1_1adc__pooler.html", null ],
     [ "servio::drv::tests::adc_pooler_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test", null ],
     [ "servio::drv::adc_set< CentralSentry >", "structservio_1_1drv_1_1adc__set.html", null ],
+    [ "servio::core::avg_filter", "structservio_1_1core_1_1avg__filter.html", null ],
     [ "servio::mon::blinker", "structservio_1_1mon_1_1blinker.html", null ],
     [ "servio::sntr::central_sentry_iface", "structservio_1_1sntr_1_1central__sentry__iface.html", [
       [ "servio::sntr::central_sentry", "classservio_1_1sntr_1_1central__sentry.html", null ],

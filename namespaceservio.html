@@ -88,7 +88,6 @@ $(document).ready(function(){initNavTree('namespaceservio.html',''); initResizab
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">servio Namespace Reference</div>  </div>
@@ -182,11 +181,6 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="separator:ab5f7489b8bb8f69589f34deadbd657c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a9f6d2f0b86f31f6738275737eb6628c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a9f6d2f0b86f31f6738275737eb6628c4">operator/</a> (<a class="el" href="structservio_1_1pwr.html">pwr</a> p, int v)</td></tr>
-<tr class="separator:a9f6d2f0b86f31f6738275737eb6628c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a0a32b7da24f35e9d57adbab46fa02c1c"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c">infty</a> = std::numeric_limits&lt; float &gt;::infinity()</td></tr>
@@ -197,9 +191,9 @@ Variables</h2></td></tr>
 <tr class="separator:a00c2d45a108822e094be491c4004429b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a546f8798a925217f01d794aa9a1379d7"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a546f8798a925217f01d794aa9a1379d7">p_zero</a> = <a class="el" href="structservio_1_1pwr.html">pwr</a>{ 0 }</td></tr>
 <tr class="separator:a546f8798a925217f01d794aa9a1379d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad65a9ec22f69582eff005ae62a0bd415"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#ad65a9ec22f69582eff005ae62a0bd415">p_max</a> = std::numeric_limits&lt; <a class="el" href="structservio_1_1pwr.html">pwr</a> &gt;::max()</td></tr>
+<tr class="memitem:ad65a9ec22f69582eff005ae62a0bd415"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#ad65a9ec22f69582eff005ae62a0bd415">p_max</a> = <a class="el" href="structservio_1_1pwr.html">pwr</a>{ 1.0 }</td></tr>
 <tr class="separator:ad65a9ec22f69582eff005ae62a0bd415"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53879f15eedde593c9cd6531402f5590"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a53879f15eedde593c9cd6531402f5590">p_low</a> = std::numeric_limits&lt; <a class="el" href="structservio_1_1pwr.html">pwr</a> &gt;::lowest()</td></tr>
+<tr class="memitem:a53879f15eedde593c9cd6531402f5590"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a53879f15eedde593c9cd6531402f5590">p_low</a> = <a class="el" href="structservio_1_1pwr.html">pwr</a>{ -1.0 }</td></tr>
 <tr class="separator:a53879f15eedde593c9cd6531402f5590"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
@@ -374,43 +368,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a9f6d2f0b86f31f6738275737eb6628c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f6d2f0b86f31f6738275737eb6628c4">&#9670;&nbsp;</a></span>operator/()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structservio_1_1pwr.html">pwr</a> servio::operator/ </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>v</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a0a32b7da24f35e9d57adbab46fa02c1c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a32b7da24f35e9d57adbab46fa02c1c">&#9670;&nbsp;</a></span>infty</h2>
@@ -444,7 +401,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a> servio::p_low = std::numeric_limits&lt; <a class="el" href="structservio_1_1pwr.html">pwr</a> &gt;::lowest()</td>
+          <td class="memname">constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a> servio::p_low = <a class="el" href="structservio_1_1pwr.html">pwr</a>{ -1.0 }</td>
         </tr>
       </table>
   </td>
@@ -466,7 +423,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a> servio::p_max = std::numeric_limits&lt; <a class="el" href="structservio_1_1pwr.html">pwr</a> &gt;::max()</td>
+          <td class="memname">constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a> servio::p_max = <a class="el" href="structservio_1_1pwr.html">pwr</a>{ 1.0 }</td>
         </tr>
       </table>
   </td>
@@ -550,7 +507,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li>
-    <li class="footer">Generated on Sat Apr 20 2024 20:22:58 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun May 5 2024 14:33:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

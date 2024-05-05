@@ -47,7 +47,6 @@ var namespaceservio =
       [ "VELOCITY", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a7b4354bded455eb379e3c764806cda7b", null ],
       [ "POSITION", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a90b4ba73224408e82ade8a072a3712c1", null ]
     ] ],
-    [ "operator/", "namespaceservio.html#a9f6d2f0b86f31f6738275737eb6628c4", null ],
     [ "infty", "namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c", null ],
     [ "p_low", "namespaceservio.html#a53879f15eedde593c9cd6531402f5590", null ],
     [ "p_max", "namespaceservio.html#ad65a9ec22f69582eff005ae62a0bd415", null ],

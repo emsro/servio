@@ -12,6 +12,7 @@ var prototype2_2board_8cpp =
     [ "HAL_UART_RxCpltCallback", "prototype2_2board_8cpp.html#a84719ef5a2750117d3d1b6e105d8f148", null ],
     [ "HAL_UART_TxCpltCallback", "prototype2_2board_8cpp.html#a94a249281eebfa3bd9aa3f979cc9f03d", null ],
     [ "hbridge_setup", "prototype2_2board_8cpp.html#a7e933c86ae59b33c53a15dd89f58febc", null ],
+    [ "install_stop_callback", "prototype2_2board_8cpp.html#a0f720ee34102e93c489fc104ab51e4ed", null ],
     [ "leds_setup", "prototype2_2board_8cpp.html#a8018a4a9a9bc9b1d4af53c14d646d4c8", null ],
     [ "setup_board", "prototype2_2board_8cpp.html#acf0eac3166e968f5cefe71de1f5d5ca8", null ],
     [ "setup_core_drivers", "prototype2_2board_8cpp.html#a58f703e939140ddd318ba1e8202e6153", null ],

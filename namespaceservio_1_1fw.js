@@ -22,7 +22,6 @@ var namespaceservio_1_1fw =
     [ "handle_message_packet", "namespaceservio_1_1fw.html#a958bf350bbe8b27b5db135c8b6ea0909", null ],
     [ "handle_set_config", "namespaceservio_1_1fw.html#a4e9503b8a5659417d41556c80472ad4c", null ],
     [ "handle_set_mode", "namespaceservio_1_1fw.html#a187d04f6561a215fee9e0f76b5c7a244", null ],
-    [ "install_stop_callback", "namespaceservio_1_1fw.html#a48ef88cea0fdbc38510a2b18b4e17a74", null ],
     [ "load_cfg_context", "namespaceservio_1_1fw.html#abfd6bfc38d66258765a5e4df635edbad", null ],
     [ "load_persistent_config", "namespaceservio_1_1fw.html#a4e6a4fc23a613fa7fb33e7b42c7e83a3", null ],
     [ "map_cfg", "namespaceservio_1_1fw.html#a7e5cfea2793f02c9a7aa9fbd14e00120", null ],

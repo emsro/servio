@@ -1,5 +1,6 @@
 var namespaceservio_1_1core =
 [
+    [ "avg_filter", "structservio_1_1core_1_1avg__filter.html", "structservio_1_1core_1_1avg__filter" ],
     [ "current_callback", "classservio_1_1core_1_1current__callback.html", "classservio_1_1core_1_1current__callback" ],
     [ "position_callback", "classservio_1_1core_1_1position__callback.html", "classservio_1_1core_1_1position__callback" ],
     [ "core", "structservio_1_1core_1_1core.html", "structservio_1_1core_1_1core" ],

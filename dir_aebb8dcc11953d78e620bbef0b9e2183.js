@@ -1,6 +1,7 @@
 var dir_aebb8dcc11953d78e620bbef0b9e2183 =
 [
     [ "callbacks.hpp", "core_2callbacks_8hpp.html", [
+      [ "avg_filter", "structservio_1_1core_1_1avg__filter.html", "structservio_1_1core_1_1avg__filter" ],
       [ "current_callback", "classservio_1_1core_1_1current__callback.html", "classservio_1_1core_1_1current__callback" ],
       [ "position_callback", "classservio_1_1core_1_1position__callback.html", "classservio_1_1core_1_1position__callback" ]
     ] ],

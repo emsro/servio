@@ -23,6 +23,7 @@ var annotated_dup =
         [ "off_scale", "namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale", "namespaceservio_1_1cnv_structservio_1_1cnv_1_1off__scale_dup" ]
       ] ],
       [ "core", "namespaceservio_1_1core.html", [
+        [ "avg_filter", "structservio_1_1core_1_1avg__filter.html", "structservio_1_1core_1_1avg__filter" ],
         [ "current_callback", "classservio_1_1core_1_1current__callback.html", "classservio_1_1core_1_1current__callback" ],
         [ "position_callback", "classservio_1_1core_1_1position__callback.html", "classservio_1_1core_1_1position__callback" ],
         [ "core", "structservio_1_1core_1_1core.html", "structservio_1_1core_1_1core" ],

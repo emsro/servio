@@ -9,6 +9,7 @@ var classservio_1_1drv_1_1hbridge =
     [ "is_stopped", "classservio_1_1drv_1_1hbridge.html#a1756b1fc5080d2f1d13d24a12e6f7a50", null ],
     [ "operator=", "classservio_1_1drv_1_1hbridge.html#a42d128185198c3d4eefb384c22df681d", null ],
     [ "operator=", "classservio_1_1drv_1_1hbridge.html#a835c18733b3b5c3692d4cd83a9cb6a37", null ],
+    [ "set_invert", "classservio_1_1drv_1_1hbridge.html#aacfb37303df17a349a73b7cec5a001d8", null ],
     [ "set_period_callback", "classservio_1_1drv_1_1hbridge.html#a28b3688cc2a74637b053e8c8b3d05d40", null ],
     [ "set_power", "classservio_1_1drv_1_1hbridge.html#adee305934427c204358465cb87c2bbb8", null ],
     [ "setup", "classservio_1_1drv_1_1hbridge.html#aaa818f0bff60de49f5f40e38223147f5", null ],

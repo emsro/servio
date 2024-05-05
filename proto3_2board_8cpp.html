@@ -102,7 +102,6 @@ $(document).ready(function(){initNavTree('proto3_2board_8cpp.html',''); initResi
 <code>#include &quot;<a class="el" href="cobs__uart_8hpp_source.html">drv/cobs_uart.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hbridge_8hpp_source.html">drv/hbridge.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="leds_8hpp_source.html">drv/leds.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="install__stop__callback_8hpp_source.html">fw/install_stop_callback.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8hpp_source.html">fw/util.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="platform_8hpp_source.html">platform.hpp</a>&quot;</code><br />
 <code>#include &quot;setup.hpp&quot;</code><br />
@@ -113,7 +112,7 @@ $(document).ready(function(){initNavTree('proto3_2board_8cpp.html',''); initResi
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="proto3_2board_8cpp__incl.svg" width="2644" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="proto3_2board_8cpp__incl.svg" width="2088" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -170,8 +169,12 @@ Functions</h2></td></tr>
 <tr class="separator:a3a32ee93be6ec4e7cdc01ac78546f79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8018a4a9a9bc9b1d4af53c14d646d4c8"><td class="memItemLeft" align="right" valign="top">drv::leds *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a8018a4a9a9bc9b1d4af53c14d646d4c8">servio::brd::leds_setup</a> ()</td></tr>
 <tr class="separator:a8018a4a9a9bc9b1d4af53c14d646d4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09d9b20c02bd7bc2036088706a3b98f5"><td class="memItemLeft" align="right" valign="top">drv::pos_iface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a09d9b20c02bd7bc2036088706a3b98f5">servio::brd::quad_encoder_setup</a> ()</td></tr>
+<tr class="separator:a09d9b20c02bd7bc2036088706a3b98f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac2ab253dd62c8d22e7504bd106c6283"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#aac2ab253dd62c8d22e7504bd106c6283">servio::brd::start_callback</a> (core::drivers &amp;cdrv)</td></tr>
 <tr class="separator:aac2ab253dd62c8d22e7504bd106c6283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f720ee34102e93c489fc104ab51e4ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a0f720ee34102e93c489fc104ab51e4ed">servio::brd::install_stop_callback</a> (drv::pwm_motor_iface &amp;motor, drv::leds_iface *leds_ptr)</td></tr>
+<tr class="separator:a0f720ee34102e93c489fc104ab51e4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf0eac3166e968f5cefe71de1f5d5ca8"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#acf0eac3166e968f5cefe71de1f5d5ca8">servio::brd::setup_board</a> ()</td></tr>
 <tr class="memdesc:acf0eac3166e968f5cefe71de1f5d5ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial setup call for the board.  <a href="namespaceservio_1_1brd.html#acf0eac3166e968f5cefe71de1f5d5ca8">More...</a><br /></td></tr>
 <tr class="separator:acf0eac3166e968f5cefe71de1f5d5ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -568,7 +571,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5e799c239320254db95d54212428175b.html">brd</a></li><li class="navelem"><a class="el" href="dir_4828b704a5fd73b2754f53e5de2f9f03.html">proto3</a></li><li class="navelem"><a class="el" href="proto3_2board_8cpp.html">board.cpp</a></li>
-    <li class="footer">Generated on Sat Apr 20 2024 20:22:58 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun May 5 2024 14:33:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

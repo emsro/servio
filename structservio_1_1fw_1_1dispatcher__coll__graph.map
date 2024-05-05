@@ -1,13 +1,13 @@
 <map id="servio::fw::dispatcher" name="servio::fw::dispatcher">
-<area shape="rect" id="node1" title=" " alt="" coords="761,251,921,277"/>
-<area shape="rect" id="node2" href="$classservio_1_1drv_1_1pos__iface.html" title=" " alt="" coords="479,5,639,32"/>
-<area shape="rect" id="node3" href="$structservio_1_1cfg_1_1dispatcher.html" title=" " alt="" coords="475,196,642,223"/>
-<area shape="rect" id="node4" href="$structservio_1_1core_1_1core.html" title=" " alt="" coords="252,191,387,217"/>
-<area shape="rect" id="node5" href="$structservio_1_1cnv_1_1converter.html" title=" " alt="" coords="5,157,168,184"/>
-<area shape="rect" id="node6" href="$classservio_1_1mtr_1_1metrics.html" title=" " alt="" coords="11,73,162,100"/>
-<area shape="rect" id="node7" href="$classservio_1_1ctl_1_1control.html" title=" " alt="" coords="17,227,156,253"/>
-<area shape="rect" id="node8" href="$classservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="471,302,647,343"/>
-<area shape="rect" id="node9" href="$classservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="479,368,638,395"/>
-<area shape="rect" id="node10" href="$classservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="473,419,644,445"/>
-<area shape="rect" id="node11" href="$classservio_1_1drv_1_1curr__iface.html" title=" " alt="" coords="477,469,640,496"/>
+<area shape="rect" id="node1" title=" " alt="" coords="805,225,965,252"/>
+<area shape="rect" id="node2" href="$classservio_1_1drv_1_1pos__iface.html" title=" " alt="" coords="525,5,685,32"/>
+<area shape="rect" id="node3" href="$structservio_1_1cfg_1_1dispatcher.html" title=" " alt="" coords="522,175,689,201"/>
+<area shape="rect" id="node4" href="$classservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="252,107,428,149"/>
+<area shape="rect" id="node5" href="$structservio_1_1core_1_1core.html" title=" " alt="" coords="273,173,407,200"/>
+<area shape="rect" id="node6" href="$structservio_1_1cnv_1_1converter.html" title=" " alt="" coords="5,83,168,109"/>
+<area shape="rect" id="node7" href="$classservio_1_1mtr_1_1metrics.html" title=" " alt="" coords="11,201,162,228"/>
+<area shape="rect" id="node8" href="$classservio_1_1ctl_1_1control.html" title=" " alt="" coords="17,265,156,292"/>
+<area shape="rect" id="node9" href="$classservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="526,336,685,363"/>
+<area shape="rect" id="node10" href="$classservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="520,387,691,413"/>
+<area shape="rect" id="node11" href="$classservio_1_1drv_1_1curr__iface.html" title=" " alt="" coords="524,437,687,464"/>
 </map>

@@ -123,12 +123,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a835c18733b3b5c3692d4cd83a9cb6a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa818f0bff60de49f5f40e38223147f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1hbridge.html">hbridge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1hbridge.html#aaa818f0bff60de49f5f40e38223147f5">setup</a> (uint32_t mc1_channel, uint32_t mc2_channel)</td></tr>
 <tr class="separator:aaa818f0bff60de49f5f40e38223147f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba898e36f0927115d4f26073d9de3937"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1hbridge.html#aba898e36f0927115d4f26073d9de3937">timer_period_irq</a> (TIM_HandleTypeDef *h)</td></tr>
+<tr class="separator:aba898e36f0927115d4f26073d9de3937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf7f06e92b257bc4bf6cfeb0255971d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1hbridge.html#adf7f06e92b257bc4bf6cfeb0255971d4">force_stop</a> () override</td></tr>
 <tr class="separator:adf7f06e92b257bc4bf6cfeb0255971d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1756b1fc5080d2f1d13d24a12e6f7a50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1hbridge.html#a1756b1fc5080d2f1d13d24a12e6f7a50">is_stopped</a> () const override</td></tr>
 <tr class="separator:a1756b1fc5080d2f1d13d24a12e6f7a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba898e36f0927115d4f26073d9de3937"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1hbridge.html#aba898e36f0927115d4f26073d9de3937">timer_period_irq</a> (TIM_HandleTypeDef *h)</td></tr>
-<tr class="separator:aba898e36f0927115d4f26073d9de3937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacfb37303df17a349a73b7cec5a001d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1hbridge.html#aacfb37303df17a349a73b7cec5a001d8">set_invert</a> (bool v) override</td></tr>
+<tr class="separator:aacfb37303df17a349a73b7cec5a001d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28b3688cc2a74637b053e8c8b3d05d40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1hbridge.html#a28b3688cc2a74637b053e8c8b3d05d40">set_period_callback</a> (<a class="el" href="classservio_1_1drv_1_1period__cb__iface.html">period_cb_iface</a> &amp;) override</td></tr>
 <tr class="separator:a28b3688cc2a74637b053e8c8b3d05d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae47fffca2033b088aa3d9efbce97dd88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1period__cb__iface.html">period_cb_iface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1hbridge.html#ae47fffca2033b088aa3d9efbce97dd88">get_period_callback</a> () override</td></tr>
@@ -388,6 +390,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aacfb37303df17a349a73b7cec5a001d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacfb37303df17a349a73b7cec5a001d8">&#9670;&nbsp;</a></span>set_invert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void servio::drv::hbridge::set_invert </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classservio_1_1drv_1_1pwm__motor__iface.html#a46999fa99616912230c1e86b1be186c9">servio::drv::pwm_motor_iface</a>.</p>
+
+</div>
+</div>
 <a id="a28b3688cc2a74637b053e8c8b3d05d40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28b3688cc2a74637b053e8c8b3d05d40">&#9670;&nbsp;</a></span>set_period_callback()</h2>
 
@@ -442,7 +472,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classservio_1_1drv_1_1pwm__motor__iface.html#a0469021861453e240fe392722ae900b7">servio::drv::pwm_motor_iface</a>.</p>
 
-<p class="reference">References <a class="el" href="namespaceservio.html#a53879f15eedde593c9cd6531402f5590">servio::p_low</a>, <a class="el" href="namespaceservio.html#ad65a9ec22f69582eff005ae62a0bd415">servio::p_max</a>, and <a class="el" href="namespaceservio.html#a546f8798a925217f01d794aa9a1379d7">servio::p_zero</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio.html#a546f8798a925217f01d794aa9a1379d7">servio::p_zero</a>.</p>
 
 </div>
 </div>
@@ -576,7 +606,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="classservio_1_1drv_1_1hbridge.html">hbridge</a></li>
-    <li class="footer">Generated on Sat Apr 20 2024 20:22:58 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun May 5 2024 14:33:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

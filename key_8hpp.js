@@ -13,6 +13,7 @@ var key_8hpp =
       [ "TEMP_CONV_SCALE", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a635506dbfa2d898483e0c7996a60d7f4", null ],
       [ "TEMP_CONV_OFFSET", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a3e51788c0e37c789f5007042d479e91e", null ],
       [ "VOLTAGE_CONV_SCALE", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a9da229b909d34f11013bdcf275984461", null ],
+      [ "INVERT_HBRIDGE", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a27b1d9351a918683ed53e8faad3a4624", null ],
       [ "CURRENT_LOOP_P", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a5ece52fe10c8b9738a0215916df9f5c1", null ],
       [ "CURRENT_LOOP_I", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a484293eb183cafd6a872e257f5255c95", null ],
       [ "CURRENT_LOOP_D", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a9d0aee5a89a96ad0fa4d1bff8c5e37de", null ],
