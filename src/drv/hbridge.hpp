@@ -21,7 +21,6 @@ class hbridge : public pwm_motor_iface, public period_iface
 public:
         hbridge( TIM_HandleTypeDef* tim );
 
-        // driver is non-movable and non-copyable
         hbridge( const hbridge& )            = delete;
         hbridge( hbridge&& )                 = delete;
         hbridge& operator=( const hbridge& ) = delete;
@@ -29,10 +28,12 @@ public:
 
         hbridge* setup( uint32_t mc1_channel, uint32_t mc2_channel );
 
+        void timer_period_irq( TIM_HandleTypeDef* h );
+
         void force_stop() override;
         bool is_stopped() const override;
 
-        void timer_period_irq( TIM_HandleTypeDef* h );
+        void set_invert( bool v ) override;
 
         void             set_period_callback( period_cb_iface& ) override;
         period_cb_iface& get_period_callback() override;
@@ -55,6 +56,7 @@ private:
         period_cb_iface*   period_cb_;
         int32_t            timer_max_ = 0;
         TIM_HandleTypeDef* tim_;
+        bool               inverted_    = false;
         uint32_t           mc1_channel_ = 0;
         uint32_t           mc2_channel_ = 0;
 };

@@ -53,18 +53,28 @@ bool hbridge::is_stopped() const
         return tim_ == nullptr;
 }
 
+void hbridge::set_invert( bool v )
+{
+        inverted_ = v;
+}
+
 void hbridge::set_power( pwr power )
 {
         if ( tim_ == nullptr )
                 return;
 
+        using namespace std;
+
         int32_t mc1_val = timer_max_;
         int32_t mc2_val = timer_max_;
 
         if ( power > p_zero )
-                mc1_val = em::map_range< pwr, int32_t >( power, p_zero, p_max, timer_max_, 0 );
+                mc1_val = timer_max_ - *power * timer_max_;
         else
-                mc2_val = em::map_range< pwr, int32_t >( power, p_zero, p_low, timer_max_, 0 );
+                mc2_val = timer_max_ - *abs( power ) * timer_max_;
+
+        if ( inverted_ )
+                swap( mc1_val, mc2_val );
 
         __HAL_TIM_SET_COMPARE( tim_, mc1_channel_, static_cast< uint32_t >( mc1_val ) );
         __HAL_TIM_SET_COMPARE( tim_, mc2_channel_, static_cast< uint32_t >( mc2_val ) );
@@ -74,10 +84,13 @@ int8_t hbridge::get_direction() const
 {
         if ( tim_ == nullptr )
                 return 1;
+
+        int8_t v = inverted_ ? -1 : 1;
+
         return __HAL_TIM_GET_COMPARE( tim_, mc1_channel_ ) <
                        __HAL_TIM_GET_COMPARE( tim_, mc2_channel_ ) ?
-                   1 :
-                   -1;
+                   v :
+                   -v;
 }
 
 }  // namespace servio::drv

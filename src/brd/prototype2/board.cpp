@@ -7,7 +7,6 @@
 #include "drv/cobs_uart.hpp"
 #include "drv/leds.hpp"
 #include "emlabcpp/result.h"
-#include "fw/install_stop_callback.hpp"
 #include "fw/util.hpp"
 #include "setup.hpp"
 #include "sntr/central_sentry.hpp"
@@ -366,6 +365,15 @@ em::result start_callback( core::drivers& cdrv )
         return em::SUCCESS;
 }
 
+void install_stop_callback( drv::pwm_motor_iface& motor, drv::leds_iface* leds_ptr )
+{
+        core::STOP_CALLBACK = [&motor, leds_ptr] {
+                motor.force_stop();
+                if ( leds_ptr != nullptr )
+                        leds_ptr->force_red_led();
+        };
+}
+
 core::drivers setup_core_drivers()
 {
         __HAL_RCC_TIM2_CLK_ENABLE();
@@ -377,7 +385,7 @@ core::drivers setup_core_drivers()
         auto*      adc_pooler = adc_pooler_setup();
         drv::leds* leds       = leds_setup();
         if ( hb != nullptr )
-                fw::install_stop_callback( core::STOP_CALLBACK, *hb, leds );
+                install_stop_callback( *hb, leds );
 
         return core::drivers{
             .clock       = &CLOCK,

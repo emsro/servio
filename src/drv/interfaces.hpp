@@ -96,6 +96,7 @@ class pwm_motor_iface
 public:
         virtual void   force_stop()          = 0;
         virtual bool   is_stopped() const    = 0;
+        virtual void   set_invert( bool v )  = 0;
         virtual void   set_power( pwr )      = 0;
         virtual int8_t get_direction() const = 0;
         virtual ~pwm_motor_iface()           = default;

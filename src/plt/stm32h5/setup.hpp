@@ -88,4 +88,6 @@ em::result setup_clk();
 
 em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq );
 
+em::result setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
+
 }  // namespace servio::plt

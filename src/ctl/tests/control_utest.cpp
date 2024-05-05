@@ -31,9 +31,9 @@ public:
                             .d = 4.F,
                         },
                         .current_pid{
-                            .p = 2048.F,
-                            .i = 0.512F,
-                            .d = 1024.F,
+                            .p = 0.0625F,
+                            .i = 0.000'005'12F,
+                            .d = 0.03125F,
                         },
                         .position_limits{
                             -10.F,

@@ -163,4 +163,36 @@ em::result setup_leds_channel( TIM_HandleTypeDef* tim, drv::pinch_cfg cfg )
         return em::SUCCESS;
 }
 
+em::result setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
+{
+        tim.Instance               = instance;
+        tim.Init.Prescaler         = 0;
+        tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
+        tim.Init.Period            = 65535;
+        tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
+        tim.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+
+        TIM_Encoder_InitTypeDef init;
+        init.EncoderMode  = TIM_ENCODERMODE_TI12;
+        init.IC1Polarity  = TIM_ICPOLARITY_RISING;
+        init.IC1Selection = TIM_ICSELECTION_DIRECTTI;
+        init.IC1Prescaler = TIM_ICPSC_DIV1;
+        init.IC1Filter    = 0;
+        init.IC2Polarity  = TIM_ICPOLARITY_RISING;
+        init.IC2Selection = TIM_ICSELECTION_DIRECTTI;
+        init.IC2Prescaler = TIM_ICPSC_DIV1;
+        init.IC2Filter    = 0;
+
+        if ( HAL_TIM_Encoder_Init( &tim, &init ) != HAL_OK )
+                return em::ERROR;
+
+        TIM_MasterConfigTypeDef mcfg;
+        mcfg.MasterOutputTrigger = TIM_TRGO_RESET;
+        mcfg.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
+        if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mcfg ) != HAL_OK )
+                return em::ERROR;
+
+        return em::SUCCESS;
+}
+
 }  // namespace servio::plt

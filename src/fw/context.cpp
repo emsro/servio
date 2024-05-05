@@ -19,7 +19,7 @@ context setup_context()
             .cdrv    = cdrv,
             .core    = { cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock },
             .scbs    = { *cdrv.motor, *cdrv.clock, ctx.core.ctl, ctx.core.met, ctx.core.conv },
-            .cfg_dis = { ctx.cfg.map, ctx.core },
+            .cfg_dis = { ctx.cfg.map, ctx.core, *cdrv.motor },
         };
         ctx.scbs.set_callbacks( *cdrv.period, *cdrv.period_cb, *cdrv.position, *cdrv.current );
         ctx.cdrv.leds->update( ctx.core.ind.get_state() );

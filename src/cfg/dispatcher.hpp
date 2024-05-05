@@ -2,6 +2,7 @@
 #include "cfg/key.hpp"
 #include "cfg/map.hpp"
 #include "core/core.hpp"
+#include "core/drivers.hpp"
 
 #pragma once
 
@@ -11,8 +12,9 @@ namespace servio::cfg
 struct dispatcher
 {
 
-        map&        m;
-        core::core& c;
+        map&                  m;
+        core::core&           c;
+        drv::pwm_motor_iface& motor;
 
         template < key Key, typename T >
         void set( const T& item )

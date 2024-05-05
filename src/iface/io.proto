@@ -63,6 +63,9 @@ message Config {
     // provided scale.
     float voltage_conv_scale = 18;
 
+    // Invert the hbridge output pins
+    bool invert_hbridge = 19;
+
     // PID configuration parameters for current control loop
     float current_loop_p = 30;
     float current_loop_i = 31;

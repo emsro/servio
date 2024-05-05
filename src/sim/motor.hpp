@@ -23,7 +23,7 @@ inline angle_vec rotate_vec( const angle_vec& v, float angle )
 
 struct simple_motor
 {
-        int16_t   power    = 0;
+        float     power    = 0;
         float     current  = 0.F;
         float     velocity = 0.F;
         angle_vec pos_vec  = { 1.F, 0.f };
@@ -88,14 +88,9 @@ struct simple_motor
                 return std::min( 0.05f, vel ) + vel * 0.1F;
         }
 
-        static float power_to_current( int16_t p )
+        static float power_to_current( float p )
         {
-                return em::map_range< int16_t, float >(
-                    p,
-                    std::numeric_limits< int16_t >::lowest(),
-                    std::numeric_limits< int16_t >::max(),
-                    -3.F,
-                    3.F );
+                return em::map_range< float, float >( p, *p_low, *p_max, -3.F, 3.F );
         }
 };
 

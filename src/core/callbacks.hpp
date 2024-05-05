@@ -8,6 +8,24 @@
 namespace servio::core
 {
 
+struct avg_filter
+{
+        static constexpr std::size_t n      = 16;
+        std::array< float, n >       buffer = { 0 };
+        std::size_t                  i      = 0;
+
+        void add( float v )
+        {
+                buffer[i] = v;
+                i         = ( i + 1 ) % n;
+        }
+
+        float get() const
+        {
+                return em::avg( buffer );
+        }
+};
+
 class current_callback : public drv::current_cb_iface
 {
 public:
@@ -27,11 +45,14 @@ public:
         {
                 const float c = cnv::current( conv_, curr, motor_ );
 
-                ctl_.current_irq( clk_.get_us(), c );
+                filter_.add( c );
+
+                ctl_.current_irq( clk_.get_us(), filter_.get() );
                 motor_.set_power( ctl_.get_power() );
         }
 
 private:
+        avg_filter            filter_;
         drv::pwm_motor_iface& motor_;
         ctl::control&         ctl_;
         drv::clk_iface&       clk_;

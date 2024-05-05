@@ -13,12 +13,7 @@ control::control( microseconds now, ctl::config cfg )
   , position_pid_( now.count(), { cfg.position_pid, cfg.current_limits } )
   , velocity_pid_( now.count(), { cfg.velocity_pid, cfg.current_limits } )
   , current_scale_regl_{ .low_point = 1.F, .high_point = 2.F, .last_time = now }
-  , current_pid_(
-        now.count(),
-        { cfg.current_pid,
-          limits< float >{
-              std::numeric_limits< int16_t >::lowest(),
-              std::numeric_limits< int16_t >::max() } } )
+  , current_pid_( now.count(), { cfg.current_pid, limits< float >{ *p_low, *p_max } } )
 {
         set_static_friction( cfg.static_friction_scale, cfg.static_friction_decay );
 }

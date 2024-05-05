@@ -49,6 +49,9 @@ void dispatcher::apply( const key& key )
         case VOLTAGE_CONV_SCALE:
                 c.conv.set_vcc_cfg( m.get_val< VOLTAGE_CONV_SCALE >() );
                 break;
+        case INVERT_HBRIDGE:
+                motor.set_invert( m.get_val< INVERT_HBRIDGE >() );
+                break;
         case MINIMUM_VOLTAGE:
                 c.mon.set_minimum_voltage( m.get_val< MINIMUM_VOLTAGE >() );
                 break;

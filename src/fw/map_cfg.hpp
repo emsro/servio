@@ -52,6 +52,9 @@ template < typename Cfg, typename UnaryFunction >
         case Config_voltage_conv_scale_tag:
                 f.template operator()< cfg::VOLTAGE_CONV_SCALE >( cfg.voltage_conv_scale );
                 break;
+        case Config_invert_hbridge_tag:
+                f.template operator()< cfg::INVERT_HBRIDGE >( cfg.invert_hbridge );
+                break;
         case Config_current_loop_p_tag:
                 f.template operator()< cfg::CURRENT_LOOP_P >( cfg.current_loop_p );
                 break;

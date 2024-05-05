@@ -31,6 +31,7 @@ using map = em::protocol::register_map<
     reg< TEMP_CONV_SCALE, float >,
     reg< TEMP_CONV_OFFSET, float >,
     reg< VOLTAGE_CONV_SCALE, float >,
+    reg< INVERT_HBRIDGE, bool >,
     reg< CURRENT_LOOP_P, float >,
     reg< CURRENT_LOOP_I, float >,
     reg< CURRENT_LOOP_D, float >,
@@ -55,7 +56,7 @@ using map = em::protocol::register_map<
     reg< MOVING_DETECTION_STEP, float > >;
 
 using value_message = typename map::message_type;
-using value_variant = std::variant< model_name, uint32_t, float >;
+using value_variant = std::variant< model_name, uint32_t, float, bool >;
 
 struct keyval
 {

@@ -8,7 +8,6 @@
 #include "drv/cobs_uart.hpp"
 #include "drv/hbridge.hpp"
 #include "drv/leds.hpp"
-#include "fw/install_stop_callback.hpp"
 #include "fw/util.hpp"
 #include "platform.hpp"
 #include "setup.hpp"
@@ -361,6 +360,11 @@ drv::leds* leds_setup()
         return nullptr;
 }
 
+drv::pos_iface* quad_encoder_setup()
+{
+        return nullptr;
+}
+
 em::result start_callback( core::drivers& cdrv )
 {
         if ( cdrv.position != nullptr ) {
@@ -381,15 +385,23 @@ em::result start_callback( core::drivers& cdrv )
                         return em::ERROR;
         }
 
-        // TODO: it would kinda be better if during stop callback we would
-        // set this to `0` - disables hbridge
-        // or maybe during disengage too :)
-        HAL_GPIO_WritePin( GPIOA, GPIO_PIN_4, GPIO_PIN_SET );
+        HAL_GPIO_WritePin( GPIOA, GPIO_PIN_4, GPIO_PIN_SET );  // abstract this , this is just VREF
+                                                               // for hbridge
 
         if ( HAL_ICACHE_Enable() != HAL_OK )
                 return em::ERROR;
 
         return em::SUCCESS;
+}
+
+void install_stop_callback( drv::pwm_motor_iface& motor, drv::leds_iface* leds_ptr )
+{
+        core::STOP_CALLBACK = [&motor, leds_ptr] {
+                motor.force_stop();
+                HAL_GPIO_WritePin( GPIOA, GPIO_PIN_4, GPIO_PIN_RESET );
+                if ( leds_ptr != nullptr )
+                        leds_ptr->force_red_led();
+        };
 }
 
 em::result setup_board()
@@ -399,7 +411,6 @@ em::result setup_board()
         return plt::setup_clk();
 }
 
-// TODO: well, this was kinda duplicated...
 core::drivers setup_core_drivers()
 {
         __HAL_RCC_TIM2_CLK_ENABLE();
@@ -419,7 +430,7 @@ core::drivers setup_core_drivers()
         auto*      adc_pooler = adc_pooler_setup();
         drv::leds* leds       = leds_setup();
         if ( hb != nullptr )
-                fw::install_stop_callback( core::STOP_CALLBACK, *hb, leds );
+                install_stop_callback( *hb, leds );
 
         return core::drivers{
             .clock       = &CLOCK,

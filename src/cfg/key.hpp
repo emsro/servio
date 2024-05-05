@@ -19,6 +19,7 @@ enum key : uint32_t
         TEMP_CONV_SCALE            = 16,
         TEMP_CONV_OFFSET           = 17,
         VOLTAGE_CONV_SCALE         = 18,
+        INVERT_HBRIDGE             = 19,
         CURRENT_LOOP_P             = 30,
         CURRENT_LOOP_I             = 31,
         CURRENT_LOOP_D             = 32,

@@ -73,19 +73,13 @@ struct leds_vals
         uint8_t green;
 };
 
-struct pwr : em::quantity< pwr, int16_t >
+struct pwr : em::quantity< pwr, float >
 {
-        using em::quantity< pwr, int16_t >::quantity;
+        using em::quantity< pwr, float >::quantity;
 };
 
-inline pwr operator/( pwr p, int v )
-{
-        p /= static_cast< int16_t >( v );
-        return p;
-}
-
 static constexpr pwr p_zero = pwr{ 0 };
-static constexpr pwr p_max  = std::numeric_limits< pwr >::max();
-static constexpr pwr p_low  = std::numeric_limits< pwr >::lowest();
+static constexpr pwr p_max  = pwr{ 1.0 };
+static constexpr pwr p_low  = pwr{ -1.0 };
 
 }  // namespace servio

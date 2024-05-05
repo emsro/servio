@@ -11,14 +11,12 @@ namespace servio::fw
 
 ServioToHost handle_set_mode( microseconds now, ctl::control& ctl, const Mode& msg )
 {
-        float val;
         switch ( msg.which_pld ) {
         case Mode_disengaged_tag:
                 ctl.disengage();
                 break;
         case Mode_power_tag:
-                val = em::map_range< float, float >( msg.power, -1.0F, 1.0F, *p_low, *p_max );
-                ctl.switch_to_power_control( pwr( val ) );
+                ctl.switch_to_power_control( pwr( msg.power ) );
                 break;
         case Mode_current_tag:
                 ctl.switch_to_current_control( now, msg.current );
