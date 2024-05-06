@@ -15,6 +15,11 @@ boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio
 
         co_await scmdio::set_mode_position( port, 0.2F );
 
+        boost::asio::steady_timer t( io, 100ms );
+        co_await t.async_wait( boost::asio::use_awaitable );
+
+        co_await scmdio::set_mode_current( port, 0.F );
+
         for ( float curr : { 0.2F, 0.0F, 0.3F } ) {
                 co_await scmdio::set_mode_current( port, curr );
 

@@ -69,9 +69,9 @@ void hbridge::set_power( pwr power )
         int32_t mc2_val = timer_max_;
 
         if ( power > p_zero )
-                mc1_val = timer_max_ - *power * timer_max_;
+                mc1_val = ( 1.0F - *power ) * static_cast< float >( timer_max_ );
         else
-                mc2_val = timer_max_ - *abs( power ) * timer_max_;
+                mc2_val = ( 1.0F + *power ) * static_cast< float >( timer_max_ );
 
         if ( inverted_ )
                 swap( mc1_val, mc2_val );

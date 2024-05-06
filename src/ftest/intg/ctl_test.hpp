@@ -36,7 +36,7 @@ struct current_ctl_test
                 float                        avg_curr = 0;
                 static constexpr std::size_t count    = 10000;
 
-                drv::wait_for( clk, 200_us );
+                drv::wait_for( clk, 350_ms );
                 for ( std::size_t i : em::range( count ) ) {
                         std::ignore   = i;
                         float current = cnv::current( cor.conv, curr, motor );
