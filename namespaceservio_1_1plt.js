@@ -19,6 +19,7 @@ var namespaceservio_1_1plt =
     [ "setup_clk", "namespaceservio_1_1plt.html#a97b99f12fdb9bdec7f51c3a2fa1a63b8", null ],
     [ "setup_clock_timer", "namespaceservio_1_1plt.html#a71520584fd9671ce414b8b5b8c653926", null ],
     [ "setup_dac", "namespaceservio_1_1plt.html#ab45be70ff68ca1e5e7f42d1fd2dea60a", null ],
+    [ "setup_dts", "namespaceservio_1_1plt.html#a60d4cc26aa950bc45225db9bae6dfa05", null ],
     [ "setup_encoder_timer", "namespaceservio_1_1plt.html#a07c1896432fd80d18bc9f155ba369966", null ],
     [ "setup_gpio", "namespaceservio_1_1plt.html#a5d1ffe876c5d8201cbbb029bb4e7e988", null ],
     [ "setup_hbridge_timers", "namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c", null ],

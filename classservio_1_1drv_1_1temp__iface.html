@@ -97,14 +97,16 @@ $(document).ready(function(){initNavTree('classservio_1_1drv_1_1temp__iface.html
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classservio_1_1drv_1_1temp__iface__inherit__graph.svg" width="216" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classservio_1_1drv_1_1temp__iface__inherit__graph.svg" width="400" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aead7601d70ec3bce64cd21d892a7ca65"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1temp__iface.html#aead7601d70ec3bce64cd21d892a7ca65">get_temperature</a> () const =0</td></tr>
-<tr class="separator:aead7601d70ec3bce64cd21d892a7ca65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64257472ae1da6a2317b61953b60b8df"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1temp__iface.html#a64257472ae1da6a2317b61953b60b8df">get_temperature</a> () const =0</td></tr>
+<tr class="separator:a64257472ae1da6a2317b61953b60b8df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4ac7791f13252aaf91ed3fc959ea265"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1temp__iface.html#ac4ac7791f13252aaf91ed3fc959ea265">tick</a> ()</td></tr>
+<tr class="separator:ac4ac7791f13252aaf91ed3fc959ea265"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade23ccc9e6b7ba0638470add1a3c4943"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1temp__iface.html#ade23ccc9e6b7ba0638470add1a3c4943">~temp_iface</a> ()=default</td></tr>
 <tr class="separator:ade23ccc9e6b7ba0638470add1a3c4943"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -135,8 +137,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aead7601d70ec3bce64cd21d892a7ca65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aead7601d70ec3bce64cd21d892a7ca65">&#9670;&nbsp;</a></span>get_temperature()</h2>
+<a id="a64257472ae1da6a2317b61953b60b8df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64257472ae1da6a2317b61953b60b8df">&#9670;&nbsp;</a></span>get_temperature()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,7 +147,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual uint32_t servio::drv::temp_iface::get_temperature </td>
+          <td class="memname">virtual int32_t servio::drv::temp_iface::get_temperature </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -158,7 +160,34 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="structservio_1_1drv_1_1adc__pooler__temperature.html#aa9a3e9afe6fa8100c96652e0e1302439">servio::drv::adc_pooler_temperature&lt; AdcPooler &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classservio_1_1drv_1_1dts__temp.html#a3833ead6722273c733f3adc7ff73e008">servio::drv::dts_temp</a>, and <a class="el" href="structservio_1_1drv_1_1adc__pooler__temperature.html#a27e54d380dfc5923d5c8dd4e1b423e39">servio::drv::adc_pooler_temperature&lt; AdcPooler &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ac4ac7791f13252aaf91ed3fc959ea265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4ac7791f13252aaf91ed3fc959ea265">&#9670;&nbsp;</a></span>tick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void servio::drv::temp_iface::tick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classservio_1_1drv_1_1dts__temp.html#a853ad7671a934b66e696faa6881c1a24">servio::drv::dts_temp</a>.</p>
 
 </div>
 </div>
@@ -171,7 +200,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="classservio_1_1drv_1_1temp__iface.html">temp_iface</a></li>
-    <li class="footer">Generated on Mon May 6 2024 16:35:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon May 6 2024 20:55:19 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -1,11 +1,12 @@
 var namespaceservio_1_1brd =
 [
+    [ "adc_set", "structservio_1_1brd_1_1adc__set.html", "structservio_1_1brd_1_1adc__set" ],
     [ "dma_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1dma__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1dma__cfg_dup" ],
     [ "adc_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1adc__cfg_dup" ],
     [ "uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1uart__cfg_dup" ],
     [ "hb_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1hb__timer__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1hb__timer__cfg_dup" ],
     [ "leds_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1leds__timer__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1leds__timer__cfg_dup" ],
-    [ "adc_pooler_type", "namespaceservio_1_1brd.html#a958070df355afb0af5cd591aafa0449d", null ],
+    [ "adc_pooler_type", "namespaceservio_1_1brd.html#a88ed8ca615b2e45acfd0c91e5a3a4212", null ],
     [ "page", "namespaceservio_1_1brd.html#a7718b2b8ad07061e4449e50b08ccf825", null ],
     [ "adc_pooler_setup", "namespaceservio_1_1brd.html#aff6bf773b950ff1a6a26be02ee4da8a5", null ],
     [ "calculate_temp_conversion", "namespaceservio_1_1brd.html#ad33efb6e1aee36e59ff30add60610aef", null ],
@@ -48,6 +49,8 @@ var namespaceservio_1_1brd =
     [ "COMMS", "namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36", null ],
     [ "DEBUG_COMMS", "namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5", null ],
     [ "DEGRADED_RECORDS", "namespaceservio_1_1brd.html#a29e9ac3d0caab29dfd8e900b69801727", null ],
+    [ "DTS_DRV", "namespaceservio_1_1brd.html#a6f72e0496d5ab998f9c9f5860478271a", null ],
+    [ "DTS_HANDLE", "namespaceservio_1_1brd.html#ac98826a0db7719c6623fe0d921bc6962", null ],
     [ "HBRIDGE", "namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db", null ],
     [ "INOPERABLE_RECORDS", "namespaceservio_1_1brd.html#a6361cccb21edfbd0a060cf03dc67f2c3", null ],
     [ "LEDS", "namespaceservio_1_1brd.html#a9a9ba68956eb017a599db3ce8d3c109a", null ],

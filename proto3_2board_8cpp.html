@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('proto3_2board_8cpp.html',''); initResi
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
@@ -100,6 +101,7 @@ $(document).ready(function(){initNavTree('proto3_2board_8cpp.html',''); initResi
 <code>#include &quot;<a class="el" href="adc__pooler__def_8hpp_source.html">drv/adc_pooler_def.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="clock_8hpp_source.html">drv/clock.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cobs__uart_8hpp_source.html">drv/cobs_uart.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dts__temp_8hpp_source.html">drv/dts_temp.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hbridge_8hpp_source.html">drv/hbridge.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="leds_8hpp_source.html">drv/leds.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8hpp_source.html">fw/util.hpp</a>&quot;</code><br />
@@ -112,10 +114,15 @@ $(document).ready(function(){initNavTree('proto3_2board_8cpp.html',''); initResi
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="proto3_2board_8cpp__incl.svg" width="2088" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="proto3_2board_8cpp__incl.svg" width="2278" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1brd_1_1adc__set.html">servio::brd::adc_set</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceservio"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html">servio</a></td></tr>
@@ -125,8 +132,8 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a958070df355afb0af5cd591aafa0449d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a958070df355afb0af5cd591aafa0449d">servio::brd::adc_pooler_type</a> = drv::adc_pooler&lt; drv::adc_set&lt; CENTRAL_SENTRY &gt; &gt;</td></tr>
-<tr class="separator:a958070df355afb0af5cd591aafa0449d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ed8ca615b2e45acfd0c91e5a3a4212"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a88ed8ca615b2e45acfd0c91e5a3a4212">servio::brd::adc_pooler_type</a> = drv::adc_pooler&lt; adc_set &gt;</td></tr>
+<tr class="separator:a88ed8ca615b2e45acfd0c91e5a3a4212"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -222,8 +229,6 @@ Variables</h2></td></tr>
 <tr class="separator:a9fd563d901e739e49f3a9b8754686117"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a426f85a0dea9eb2dd9aa43e5f98f91e0"><td class="memItemLeft" align="right" valign="top">drv::adc_pooler_vcc&lt; ADC_POOLER &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a426f85a0dea9eb2dd9aa43e5f98f91e0">servio::brd::ADC_VCC</a></td></tr>
 <tr class="separator:a426f85a0dea9eb2dd9aa43e5f98f91e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae55e8a68c2ed7497673cd487d93c0ef4"><td class="memItemLeft" align="right" valign="top">drv::adc_pooler_temperature&lt; ADC_POOLER &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ae55e8a68c2ed7497673cd487d93c0ef4">servio::brd::ADC_TEMPERATURE</a></td></tr>
-<tr class="separator:ae55e8a68c2ed7497673cd487d93c0ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5f38137289f200368426a1f7298b834"><td class="memItemLeft" align="right" valign="top">drv::adc_pooler_position&lt; ADC_POOLER &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ae5f38137289f200368426a1f7298b834">servio::brd::ADC_POSITION</a></td></tr>
 <tr class="separator:ae5f38137289f200368426a1f7298b834"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23deb8d32711e253336fa079cbff2dde"><td class="memItemLeft" align="right" valign="top">drv::adc_pooler_current&lt; ADC_POOLER &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a23deb8d32711e253336fa079cbff2dde">servio::brd::ADC_CURRENT</a></td></tr>
@@ -244,6 +249,10 @@ Variables</h2></td></tr>
 <tr class="separator:a5bce2edc1a38d3055b24c79c9b7a24fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a667b31fa6ec529d3b42f5d74755336db"><td class="memItemLeft" align="right" valign="top">drv::hbridge&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">servio::brd::HBRIDGE</a> { &amp;TIM1_HANDLE }</td></tr>
 <tr class="separator:a667b31fa6ec529d3b42f5d74755336db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac98826a0db7719c6623fe0d921bc6962"><td class="memItemLeft" align="right" valign="top">DTS_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ac98826a0db7719c6623fe0d921bc6962">servio::brd::DTS_HANDLE</a> {}</td></tr>
+<tr class="separator:ac98826a0db7719c6623fe0d921bc6962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f72e0496d5ab998f9c9f5860478271a"><td class="memItemLeft" align="right" valign="top">drv::dts_temp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a6f72e0496d5ab998f9c9f5860478271a">servio::brd::DTS_DRV</a> { DTS_HANDLE }</td></tr>
+<tr class="separator:a6f72e0496d5ab998f9c9f5860478271a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29918e98b54be5dc695e54e37e23f295"><td class="memItemLeft" align="right" valign="top">std::array&lt; em::view&lt; std::byte * &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a29918e98b54be5dc695e54e37e23f295">servio::brd::PERSISTENT_BLOCKS</a> { page_at( 0 ), page_at( 1 ) }</td></tr>
 <tr class="separator:a29918e98b54be5dc695e54e37e23f295"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -571,7 +580,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5e799c239320254db95d54212428175b.html">brd</a></li><li class="navelem"><a class="el" href="dir_4828b704a5fd73b2754f53e5de2f9f03.html">proto3</a></li><li class="navelem"><a class="el" href="proto3_2board_8cpp.html">board.cpp</a></li>
-    <li class="footer">Generated on Mon May 6 2024 16:35:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon May 6 2024 20:55:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

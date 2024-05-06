@@ -1,5 +1,6 @@
 var prototype2_2board_8cpp =
 [
+    [ "adc_set", "structservio_1_1brd_1_1adc__set.html", "structservio_1_1brd_1_1adc__set" ],
     [ "ADC1_2_IRQHandler", "prototype2_2board_8cpp.html#aff4af6b741ab43c7784e08e0e2e50586", null ],
     [ "adc_pooler_setup", "prototype2_2board_8cpp.html#aff6bf773b950ff1a6a26be02ee4da8a5", null ],
     [ "comms_setup", "prototype2_2board_8cpp.html#aee366d78fb4dd7ae0e84ee4a28665113", null ],
@@ -21,6 +22,7 @@ var prototype2_2board_8cpp =
     [ "TIM1_UP_TIM16_IRQHandler", "prototype2_2board_8cpp.html#a9895c719dd7dc3d711d91dc0523f0696", null ],
     [ "USART1_IRQHandler", "prototype2_2board_8cpp.html#a27fb9800d727337121da9525aca0b557", null ],
     [ "USART2_IRQHandler", "prototype2_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba", null ],
+    [ "ADC_TEMPERATURE", "prototype2_2board_8cpp.html#ae55e8a68c2ed7497673cd487d93c0ef4", null ],
     [ "ADC_TIM_HANDLE", "prototype2_2board_8cpp.html#a3f1bce49bf6d1c2b0ab6be8bfc10219b", null ],
     [ "TIM3_HANDLE", "prototype2_2board_8cpp.html#ad3461a2b66a48bb2ff01731378427b6e", null ]
 ];

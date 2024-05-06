@@ -1,6 +1,5 @@
 var adc__pooler__def_8hpp =
 [
-    [ "adc_set", "structservio_1_1drv_1_1adc__set.html", "structservio_1_1drv_1_1adc__set" ],
     [ "adc_pooler_period_cb", "structservio_1_1drv_1_1adc__pooler__period__cb.html", "structservio_1_1drv_1_1adc__pooler__period__cb" ],
     [ "adc_pooler_vcc", "structservio_1_1drv_1_1adc__pooler__vcc.html", "structservio_1_1drv_1_1adc__pooler__vcc" ],
     [ "adc_pooler_temperature", "structservio_1_1drv_1_1adc__pooler__temperature.html", "structservio_1_1drv_1_1adc__pooler__temperature" ],

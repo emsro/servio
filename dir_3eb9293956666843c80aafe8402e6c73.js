@@ -25,6 +25,9 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
         [ "port", "namespaceservio_1_1drv.html#a9665d6d8f68c3b75b979a05b24809187", null ]
       ] ]
     ] ],
+    [ "dts_temp.hpp", "dts__temp_8hpp.html", [
+      [ "dts_temp", "classservio_1_1drv_1_1dts__temp.html", "classservio_1_1drv_1_1dts__temp" ]
+    ] ],
     [ "hbridge.cpp", "hbridge_8cpp.html", null ],
     [ "hbridge.hpp", "hbridge_8hpp.html", "hbridge_8hpp" ],
     [ "interfaces.hpp", "interfaces_8hpp.html", "interfaces_8hpp" ],

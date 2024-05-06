@@ -5,6 +5,7 @@ var annotated_dup =
         [ "bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", "structservio_1_1bb_1_1bb__test__case" ]
       ] ],
       [ "brd", "namespaceservio_1_1brd.html", [
+        [ "adc_set", "structservio_1_1brd_1_1adc__set.html", "structservio_1_1brd_1_1adc__set" ],
         [ "dma_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1dma__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1dma__cfg_dup" ],
         [ "adc_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1adc__cfg_dup" ],
         [ "uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1uart__cfg_dup" ],
@@ -62,7 +63,6 @@ var annotated_dup =
         [ "adc_channel", "structservio_1_1drv_1_1adc__channel.html", "structservio_1_1drv_1_1adc__channel" ],
         [ "adc_channel_with_callback", "structservio_1_1drv_1_1adc__channel__with__callback.html", "structservio_1_1drv_1_1adc__channel__with__callback" ],
         [ "adc_pooler", "structservio_1_1drv_1_1adc__pooler.html", "structservio_1_1drv_1_1adc__pooler" ],
-        [ "adc_set", "structservio_1_1drv_1_1adc__set.html", "structservio_1_1drv_1_1adc__set" ],
         [ "adc_pooler_period_cb", "structservio_1_1drv_1_1adc__pooler__period__cb.html", "structservio_1_1drv_1_1adc__pooler__period__cb" ],
         [ "adc_pooler_vcc", "structservio_1_1drv_1_1adc__pooler__vcc.html", "structservio_1_1drv_1_1adc__pooler__vcc" ],
         [ "adc_pooler_temperature", "structservio_1_1drv_1_1adc__pooler__temperature.html", "structservio_1_1drv_1_1adc__pooler__temperature" ],
@@ -78,6 +78,7 @@ var annotated_dup =
         [ "cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", "classservio_1_1drv_1_1cobs__uart" ],
         [ "pin_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg", "namespaceservio_1_1drv_structservio_1_1drv_1_1pin__cfg_dup" ],
         [ "pinch_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg", "namespaceservio_1_1drv_structservio_1_1drv_1_1pinch__cfg_dup" ],
+        [ "dts_temp", "classservio_1_1drv_1_1dts__temp.html", "classservio_1_1drv_1_1dts__temp" ],
         [ "hbridge", "classservio_1_1drv_1_1hbridge.html", "classservio_1_1drv_1_1hbridge" ],
         [ "detailed_cb_iface", "classservio_1_1drv_1_1detailed__cb__iface.html", "classservio_1_1drv_1_1detailed__cb__iface" ],
         [ "value_cb_iface", "classservio_1_1drv_1_1value__cb__iface.html", "classservio_1_1drv_1_1value__cb__iface" ],

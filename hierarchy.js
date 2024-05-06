@@ -3,14 +3,14 @@ var hierarchy =
     [ "servio::brd::adc_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__cfg", null ],
     [ "servio::plt::adc_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg", null ],
     [ "servio::drv::adc_channel< ID >", "structservio_1_1drv_1_1adc__channel.html", [
-      [ "servio::drv::adc_channel_with_callback< POSITION_CHANNEL >", "structservio_1_1drv_1_1adc__channel__with__callback.html", null ],
+      [ "servio::drv::adc_channel_with_callback< drv::POSITION_CHANNEL >", "structservio_1_1drv_1_1adc__channel__with__callback.html", null ],
       [ "servio::drv::adc_channel_with_callback< ID >", "structservio_1_1drv_1_1adc__channel__with__callback.html", null ]
     ] ],
-    [ "servio::drv::adc_channel< TEMP_CHANNEL >", "structservio_1_1drv_1_1adc__channel.html", null ],
-    [ "servio::drv::adc_channel< VCC_CHANNEL >", "structservio_1_1drv_1_1adc__channel.html", null ],
+    [ "servio::drv::adc_channel< drv::TEMP_CHANNEL >", "structservio_1_1drv_1_1adc__channel.html", null ],
+    [ "servio::drv::adc_channel< drv::VCC_CHANNEL >", "structservio_1_1drv_1_1adc__channel.html", null ],
     [ "servio::drv::adc_pooler< Set >", "structservio_1_1drv_1_1adc__pooler.html", null ],
     [ "servio::drv::tests::adc_pooler_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test", null ],
-    [ "servio::drv::adc_set< CentralSentry >", "structservio_1_1drv_1_1adc__set.html", null ],
+    [ "servio::brd::adc_set", "structservio_1_1brd_1_1adc__set.html", null ],
     [ "servio::core::avg_filter", "structservio_1_1core_1_1avg__filter.html", null ],
     [ "servio::mon::blinker", "structservio_1_1mon_1_1blinker.html", null ],
     [ "servio::sntr::central_sentry_iface", "structservio_1_1sntr_1_1central__sentry__iface.html", [
@@ -52,7 +52,7 @@ var hierarchy =
     [ "servio::drv::tests::curr_iface_test", "structservio_1_1drv_1_1tests_1_1curr__iface__test.html", null ],
     [ "servio::ftest::intg::current_ctl_test", "structservio_1_1ftest_1_1intg_1_1current__ctl__test.html", null ],
     [ "servio::drv::detailed_adc_channel< ID, N >", "structservio_1_1drv_1_1detailed__adc__channel.html", null ],
-    [ "servio::drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >", "structservio_1_1drv_1_1detailed__adc__channel.html", null ],
+    [ "servio::drv::detailed_adc_channel< drv::CURRENT_CHANNEL, 128 >", "structservio_1_1drv_1_1detailed__adc__channel.html", null ],
     [ "servio::drv::detailed_cb_iface", "classservio_1_1drv_1_1detailed__cb__iface.html", [
       [ "servio::core::current_callback", "classservio_1_1core_1_1current__callback.html", null ],
       [ "servio::drv::adc_detailed_cb< Callable >", "structservio_1_1drv_1_1adc__detailed__cb.html", null ],
@@ -136,7 +136,8 @@ var hierarchy =
     [ "servio::mtr::static_detector", "structservio_1_1mtr_1_1static__detector.html", null ],
     [ "servio::plt::temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", null ],
     [ "servio::drv::temp_iface", "classservio_1_1drv_1_1temp__iface.html", [
-      [ "servio::drv::adc_pooler_temperature< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__temperature.html", null ]
+      [ "servio::drv::adc_pooler_temperature< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__temperature.html", null ],
+      [ "servio::drv::dts_temp", "classservio_1_1drv_1_1dts__temp.html", null ]
     ] ],
     [ "servio::drv::tests::temperature_test", "structservio_1_1drv_1_1tests_1_1temperature__test.html", null ],
     [ "testing::Test", null, [
