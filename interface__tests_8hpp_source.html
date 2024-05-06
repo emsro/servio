@@ -282,9 +282,9 @@ $(document).ready(function(){initNavTree('interface__tests_8hpp_source.html','')
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                co_await ctx.<a class="code" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( !iface.<a class="code" href="classservio_1_1drv_1_1pwm__motor__iface.html#a3a2a6a7f1bc20ccf5dd073e94c97888f">is_stopped</a>() );</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <span class="keyword">auto</span> d = <a class="code" href="namespaceservio_1_1drv_1_1tests.html#a510bb7381ec9be3c36a77e8794a75201">hold</a>( period );</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                co_await test( ctx, <a class="code" href="structservio_1_1pwr.html">pwr</a>{ -1024 }, -1 );</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                co_await test( ctx, <a class="code" href="structservio_1_1pwr.html">pwr</a>{ -0.5 }, -1 );</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                co_await test( ctx, <a class="code" href="namespaceservio.html#a546f8798a925217f01d794aa9a1379d7">p_zero</a>, 1 );</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                co_await test( ctx, <a class="code" href="structservio_1_1pwr.html">pwr</a>{ 1024 }, 1 );</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                co_await test( ctx, <a class="code" href="structservio_1_1pwr.html">pwr</a>{ 0.5 }, 1 );</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;};</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
@@ -497,7 +497,7 @@ $(document).ready(function(){initNavTree('interface__tests_8hpp_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="dir_26e34818c745abafa34d6ef482a48aa2.html">tests</a></li><li class="navelem"><a class="el" href="interface__tests_8hpp.html">interface_tests.hpp</a></li>
-    <li class="footer">Generated on Sun May 5 2024 14:33:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon May 6 2024 16:35:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

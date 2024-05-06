@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"functions_func.html":[7,3,1,0],
 "functions_func_b.html":[7,3,1,1],
 "functions_func_c.html":[7,3,1,2],
 "functions_func_d.html":[7,3,1,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "load__persistent__config_8hpp.html":[8,0,1,10,7],
 "load__persistent__config_8hpp.html#a4e6a4fc23a613fa7fb33e7b42c7e83a3":[8,0,1,10,7,1],
 "load__persistent__config_8hpp.html#a9ab9831a5a3afe24212ba9b5e3bca857":[8,0,1,10,7,0],
-"load__persistent__config_8hpp_source.html":[8,0,1,10,7]
+"load__persistent__config_8hpp_source.html":[8,0,1,10,7],
+"map_8hpp.html":[8,0,1,3,5]
 };

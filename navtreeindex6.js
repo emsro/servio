@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"proto3_2board_8cpp.html#a958070df355afb0af5cd591aafa0449d":[8,0,1,2,0,1,0],
 "proto3_2board_8cpp.html#a991f10f53fec7bf1caa79b8438ed01c1":[8,0,1,2,0,1,35],
 "proto3_2board_8cpp.html#a9a9ba68956eb017a599db3ce8d3c109a":[8,0,1,2,0,1,46],
 "proto3_2board_8cpp.html#a9d6115db9e0f265bcf31a4f0726bee91":[8,0,1,2,0,1,19],
@@ -249,5 +248,6 @@ var NAVTREEINDEX6 =
 "stm32g4xx__hal__conf_8h.html#ad048ac737242c2c2cb9f4a72953d10ce":[8,0,1,15,1,2,80],
 "stm32g4xx__hal__conf_8h.html#ad18182e565b6900ed99874235c42bc05":[8,0,1,15,1,2,7],
 "stm32g4xx__hal__conf_8h.html#adf2c524ff7f06b1d339e3173839fddec":[8,0,1,15,1,2,39],
-"stm32g4xx__hal__conf_8h.html#ae27809d4959b9fd5b5d974e3e1c77d2e":[8,0,1,15,1,2,50]
+"stm32g4xx__hal__conf_8h.html#ae27809d4959b9fd5b5d974e3e1c77d2e":[8,0,1,15,1,2,50],
+"stm32g4xx__hal__conf_8h.html#aeafcff4f57440c60e64812dddd13e7cb":[8,0,1,15,1,2,42]
 };
