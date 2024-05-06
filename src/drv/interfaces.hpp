@@ -121,8 +121,9 @@ public:
 class temp_iface
 {
 public:
-        virtual uint32_t get_temperature() const = 0;
-        virtual ~temp_iface()                    = default;
+        virtual int32_t get_temperature() const = 0;
+        virtual void    tick(){};
+        virtual ~temp_iface() = default;
 };
 
 class curr_iface

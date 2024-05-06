@@ -20,6 +20,7 @@ struct context
         void tick()
         {
                 core.tick( *cdrv.leds, cdrv.clock->get_us() );
+                cdrv.temperature->tick();
         }
 };
 

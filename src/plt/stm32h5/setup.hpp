@@ -90,4 +90,6 @@ em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQ
 
 em::result setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 
+em::result setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst );
+
 }  // namespace servio::plt

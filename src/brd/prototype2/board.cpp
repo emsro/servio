@@ -30,7 +30,25 @@ ADC_HandleTypeDef ADC_HANDLE{};
 DMA_HandleTypeDef ADC_DMA_HANDLE{};
 TIM_HandleTypeDef ADC_TIM_HANDLE{};
 
-using adc_pooler_type = drv::adc_pooler< drv::adc_set< CENTRAL_SENTRY > >;
+struct adc_set
+{
+        using id_type = drv::chan_ids;
+
+        drv::detailed_adc_channel< drv::CURRENT_CHANNEL, 128 > current{
+            { "current", CENTRAL_SENTRY } };
+        drv::adc_channel_with_callback< drv::POSITION_CHANNEL > position{
+            "position",
+            CENTRAL_SENTRY };
+        drv::adc_channel< drv::VCC_CHANNEL >  vcc{ { "vcc", CENTRAL_SENTRY } };
+        drv::adc_channel< drv::TEMP_CHANNEL > temp{ { "temp", CENTRAL_SENTRY } };
+
+        [[gnu::flatten]] auto tie()
+        {
+                return std::tie( current, position, vcc, temp );
+        }
+};
+
+using adc_pooler_type = drv::adc_pooler< adc_set >;
 
 adc_pooler_type ADC_POOLER{ drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, ADC_TIM_HANDLE };
 drv::adc_pooler_period_cb< ADC_POOLER >   ADC_PERIOD_CB;

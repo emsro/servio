@@ -15,22 +15,6 @@ enum chan_ids
         TEMP_CHANNEL     = 0x4,
 };
 
-template < auto& CentralSentry >
-struct adc_set
-{
-        using id_type = chan_ids;
-
-        drv::detailed_adc_channel< CURRENT_CHANNEL, 128 >  current{ { "current", CentralSentry } };
-        drv::adc_channel_with_callback< POSITION_CHANNEL > position{ "position", CentralSentry };
-        drv::adc_channel< VCC_CHANNEL >                    vcc{ { "vcc", CentralSentry } };
-        drv::adc_channel< TEMP_CHANNEL >                   temp{ { "temp", CentralSentry } };
-
-        [[gnu::flatten]] auto tie()
-        {
-                return std::tie( current, position, vcc, temp );
-        }
-};
-
 template < auto& AdcPooler >
 struct adc_pooler_period_cb : period_cb_iface
 {
@@ -52,7 +36,7 @@ struct adc_pooler_vcc : vcc_iface
 template < auto& AdcPooler >
 struct adc_pooler_temperature : temp_iface
 {
-        uint32_t get_temperature() const override
+        int32_t get_temperature() const override
         {
                 return AdcPooler->temp.last_value;
         }

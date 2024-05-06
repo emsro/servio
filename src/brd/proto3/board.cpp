@@ -6,6 +6,7 @@
 #include "drv/adc_pooler_def.hpp"
 #include "drv/clock.hpp"
 #include "drv/cobs_uart.hpp"
+#include "drv/dts_temp.hpp"
 #include "drv/hbridge.hpp"
 #include "drv/leds.hpp"
 #include "fw/util.hpp"
@@ -45,13 +46,29 @@ ADC_HandleTypeDef ADC_HANDLE;
 DMA_HandleTypeDef ADC_DMA_HANDLE;
 TIM_HandleTypeDef TIM6_HANDLE;
 
-using adc_pooler_type = drv::adc_pooler< drv::adc_set< CENTRAL_SENTRY > >;
+struct adc_set
+{
+        using id_type = drv::chan_ids;
+
+        drv::detailed_adc_channel< drv::CURRENT_CHANNEL, 128 > current{
+            { "current", CENTRAL_SENTRY } };
+        drv::adc_channel_with_callback< drv::POSITION_CHANNEL > position{
+            "position",
+            CENTRAL_SENTRY };
+        drv::adc_channel< drv::VCC_CHANNEL > vcc{ { "vcc", CENTRAL_SENTRY } };
+
+        [[gnu::flatten]] auto tie()
+        {
+                return std::tie( current, position, vcc );
+        }
+};
+
+using adc_pooler_type = drv::adc_pooler< adc_set >;
 adc_pooler_type ADC_POOLER{ drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, TIM6_HANDLE };
-drv::adc_pooler_period_cb< ADC_POOLER >   ADC_PERIOD_CB;
-drv::adc_pooler_vcc< ADC_POOLER >         ADC_VCC;
-drv::adc_pooler_temperature< ADC_POOLER > ADC_TEMPERATURE;
-drv::adc_pooler_position< ADC_POOLER >    ADC_POSITION;
-drv::adc_pooler_current< ADC_POOLER >     ADC_CURRENT;
+drv::adc_pooler_period_cb< ADC_POOLER > ADC_PERIOD_CB;
+drv::adc_pooler_vcc< ADC_POOLER >       ADC_VCC;
+drv::adc_pooler_position< ADC_POOLER >  ADC_POSITION;
+drv::adc_pooler_current< ADC_POOLER >   ADC_CURRENT;
 
 UART_HandleTypeDef UART2_HANDLE{};
 DMA_HandleTypeDef  UART2_DMA_HANDLE{};
@@ -61,6 +78,8 @@ DMA_HandleTypeDef  UART1_DMA_HANDLE{};
 drv::cobs_uart     DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, &UART1_DMA_HANDLE };
 TIM_HandleTypeDef  TIM1_HANDLE{};
 drv::hbridge       HBRIDGE{ &TIM1_HANDLE };
+DTS_HandleTypeDef  DTS_HANDLE{};
+drv::dts_temp      DTS_DRV{ DTS_HANDLE };
 
 }  // namespace servio::brd
 
@@ -173,18 +192,6 @@ adc_pooler_type* adc_pooler_setup()
                 .channel = ADC_CHANNEL_7,
                 .pin     = GPIO_PIN_7,
                 .port    = GPIOA,
-            } );
-        // TODO: temperature sensors was set to a random unused channel. We can't use the internal
-        // temperature channel until the HAL get's cahnged:
-        // https://github.com/STMicroelectronics/stm32h5xx_hal_driver/issues/4
-        //
-        // TODO: we can use DTS peripheral instead! (Digital temperature sensor)
-        plt::setup_adc_channel(
-            ADC_POOLER->temp.chconf,
-            drv::pinch_cfg{
-                .channel = ADC_CHANNEL_1,
-                .pin     = 0,
-                .port    = nullptr,
             } );
         em::result res = em::worst_of(
             plt::setup_adc(
@@ -417,6 +424,10 @@ core::drivers setup_core_drivers()
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != em::SUCCESS )
                 fw::stop_exec();
 
+        __HAL_RCC_DTS_CLK_ENABLE();
+        if ( plt::setup_dts( DTS_HANDLE, DTS ) != em::SUCCESS )
+                fw::stop_exec();
+
         __HAL_RCC_GPIOA_CLK_ENABLE();
         if ( plt::setup_gpio( drv::pin_cfg{
                  .pin  = GPIO_PIN_4,
@@ -437,7 +448,7 @@ core::drivers setup_core_drivers()
             .position    = adc_pooler == nullptr ? nullptr : &ADC_POSITION,
             .current     = adc_pooler == nullptr ? nullptr : &ADC_CURRENT,
             .vcc         = adc_pooler == nullptr ? nullptr : &ADC_VCC,
-            .temperature = adc_pooler == nullptr ? nullptr : &ADC_TEMPERATURE,
+            .temperature = &DTS_DRV,
             .period_cb   = adc_pooler == nullptr ? nullptr : &ADC_PERIOD_CB,
             .motor       = hb,
             .period      = hb,
@@ -463,6 +474,8 @@ cfg::map get_default_config()
 
         m.set_val< cfg::key::CURRENT_CONV_SCALE >( curr_cfg.scale );
         m.set_val< cfg::key::CURRENT_CONV_OFFSET >( curr_cfg.offset );
+        m.set_val< cfg::key::TEMP_CONV_OFFSET >( 0.0F );
+        m.set_val< cfg::key::TEMP_CONV_SCALE >( 1.0F );
 
         return m;
 }
