@@ -12,16 +12,22 @@
 namespace servio::tests
 {
 
+template < typename T >
+std::set< uint32_t > get_enum_ids()
+{
+        const auto           entries = magic_enum::enum_entries< T >();
+        std::set< uint32_t > ids;
+        for ( auto [val, name] : entries ) {
+                std::ignore = name;
+                ids.insert( static_cast< uint32_t >( val ) );
+        }
+        return ids;
+}
+
 TEST( CFG, cfg_proto_id_match )
 {
-        const auto cfg_key_entries = magic_enum::enum_entries< cfg::key >();
-        const auto proto_entries   = magic_enum::enum_entries< servio::Config::PldCase >();
-
-        std::set< uint32_t > cfg_ids;
-        for ( auto [val, name] : cfg_key_entries ) {
-                std::ignore = name;
-                cfg_ids.insert( val );
-        }
+        auto       cfg_ids       = get_enum_ids< cfg::key >();
+        const auto proto_entries = magic_enum::enum_entries< servio::Config::PldCase >();
 
         std::set< uint32_t > proto_ids;
         for ( auto [val, name] : proto_entries ) {
@@ -32,6 +38,16 @@ TEST( CFG, cfg_proto_id_match )
         }
 
         EXPECT_EQ( cfg_ids, proto_ids );
+}
+
+TEST( CFG, encoder_match )
+{
+        auto encoder_ids = get_enum_ids< cfg::encoder_mode >();
+
+        // TODO: find a better way
+        std::set< uint32_t > proto_ids = { servio::ENCODER_ANALOG, servio::ENCODER_QUAD };
+
+        EXPECT_EQ( encoder_ids, proto_ids );
 }
 
 TEST( CFG, cfg_types )

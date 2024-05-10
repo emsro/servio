@@ -2,6 +2,8 @@
 
 #include "platform.hpp"
 
+#include <optional>
+
 namespace servio::drv
 {
 
@@ -12,14 +14,6 @@ struct pin_cfg
         uint8_t       mode      = GPIO_MODE_OUTPUT_PP;
         uint8_t       alternate = 0x0;
         uint8_t       pull      = GPIO_NOPULL;
-};
-
-struct pinch_cfg
-{
-        uint32_t      channel;
-        uint32_t      pin;
-        GPIO_TypeDef* port;
-        uint8_t       alternate = 0x0;
 };
 
 }  // namespace servio::drv

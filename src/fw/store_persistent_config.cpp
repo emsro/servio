@@ -21,7 +21,8 @@ bool store_persistent_config( const cfg::page& page, const cfg::payload& pld, co
 
         auto [succ, used_buffer] = cfg::store( pld, cfg, buffer );
 
-        plt::cfg_store( start_addr, used_buffer );
+        if ( succ )
+                plt::cfg_store( start_addr, used_buffer );
 
         return succ;
 }

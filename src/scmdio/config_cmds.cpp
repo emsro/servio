@@ -2,6 +2,7 @@
 
 #include <boost/asio.hpp>
 #include <emlabcpp/algorithm.h>
+#include <fstream>
 #include <google/protobuf/util/json_util.h>
 
 namespace em = emlabcpp;
@@ -131,6 +132,16 @@ cfg_set_cmd( cobs_port& port, const std::string& name, std::string value )
 
         servio::ServioToHost reply = co_await exchange( port, msg );
         std::ignore                = reply;
+}
+
+boost::asio::awaitable< void > cfg_load_cmd( cobs_port& port, const std::filesystem::path& cfg )
+{
+        std::ifstream fd( cfg );
+
+        auto j = nlohmann::json::parse( fd );
+
+        for ( auto&& [key, val] : j.items() )
+                co_await cfg_set_cmd( port, key, val.dump() );
 }
 
 }  // namespace servio::scmdio

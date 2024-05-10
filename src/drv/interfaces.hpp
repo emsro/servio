@@ -11,16 +11,14 @@ namespace em = emlabcpp;
 namespace servio::drv
 {
 
-class detailed_cb_iface
+struct detailed_cb_iface
 {
-public:
         virtual void on_value_irq( uint32_t val, std::span< uint16_t > profile ) = 0;
         virtual ~detailed_cb_iface()                                             = default;
 };
 
-class value_cb_iface
+struct value_cb_iface
 {
-public:
         virtual void on_value_irq( uint32_t val ) = 0;
         virtual ~value_cb_iface()                 = default;
 };
@@ -28,9 +26,8 @@ public:
 using current_cb_iface  = detailed_cb_iface;
 using position_cb_iface = value_cb_iface;
 
-class period_cb_iface
+struct period_cb_iface
 {
-public:
         virtual void on_period_irq() = 0;
         virtual ~period_cb_iface()   = default;
 };
@@ -81,9 +78,8 @@ inline void wait_for( clk_iface& clk, microseconds ms )
                 asm( "nop" );
 }
 
-class period_iface
+struct period_iface
 {
-public:
         virtual em::result       start()                                 = 0;
         virtual em::result       stop()                                  = 0;
         virtual void             set_period_callback( period_cb_iface& ) = 0;
@@ -91,9 +87,8 @@ public:
         virtual ~period_iface()                                          = default;
 };
 
-class pwm_motor_iface
+struct pwm_motor_iface
 {
-public:
         virtual void   force_stop()          = 0;
         virtual bool   is_stopped() const    = 0;
         virtual void   set_invert( bool v )  = 0;
@@ -102,33 +97,29 @@ public:
         virtual ~pwm_motor_iface()           = default;
 };
 
-class pos_iface
+struct pos_iface
 {
-public:
         virtual uint32_t           get_position() const                        = 0;
         virtual void               set_position_callback( position_cb_iface& ) = 0;
         virtual position_cb_iface& get_position_callback() const               = 0;
         virtual ~pos_iface()                                                   = default;
 };
 
-class vcc_iface
+struct vcc_iface
 {
-public:
         virtual uint32_t get_vcc() const = 0;
         virtual ~vcc_iface()             = default;
 };
 
-class temp_iface
+struct temp_iface
 {
-public:
         virtual int32_t get_temperature() const = 0;
         virtual void    tick(){};
         virtual ~temp_iface() = default;
 };
 
-class curr_iface
+struct curr_iface
 {
-public:
         virtual uint32_t          get_current() const                       = 0;
         virtual void              set_current_callback( current_cb_iface& ) = 0;
         virtual current_cb_iface& get_current_callback() const              = 0;

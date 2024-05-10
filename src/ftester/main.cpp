@@ -39,9 +39,6 @@ bool handle_test_specifics( std::string_view name, test_system& sys, std::filesy
                                                static_cast< float >( val ) /
                                                static_cast< float >( prec.count ) );
                                    } );
-                        std::cout << i << " : " << prec.count << ":\n";
-                        std::cout << em::view{ avg } << std::endl;
-
                         of << em::view{ avg } << "\n";
                 }
 

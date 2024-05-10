@@ -106,7 +106,11 @@ ServioToHost handle_get_property(
 ServioToHost handle_set_config( cfg::dispatcher& cfg_disp, const Config& req )
 {
         const bool key_found = map_cfg( req.which_pld, req, [&]< cfg::key K >( auto& val ) {
-                cfg_disp.set< K >( val );
+                // XXX: scaling issues /o\...
+                if constexpr ( K == cfg::ENCODER_MODE )
+                        cfg_disp.set< K >( static_cast< cfg::encoder_mode >( val ) );
+                else
+                        cfg_disp.set< K >( val );
         } );
         if ( !key_found )
                 return error_msg( "unknown key" );
@@ -123,6 +127,9 @@ ServioToHost handle_get_config( const cfg::dispatcher& cfg_disp, const GetConfig
                     if constexpr ( K == cfg::MODEL ) {
                             const cfg::model_name& n = cfg_disp.m.get_val< K >();
                             copy_string_to( n.data(), n.size(), val );
+                            // TODO scaling issues right here /o\...
+                    } else if constexpr ( K == cfg::ENCODER_MODE ) {
+                            val = static_cast< EncoderMode >( cfg_disp.m.get_val< K >() );
                     } else {
                             val = cfg_disp.m.get_val< K >();
                     }

@@ -35,16 +35,8 @@ em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
         oc_config.OCIdleState  = TIM_OCIDLESTATE_RESET;
         oc_config.OCNIdleState = TIM_OCNIDLESTATE_RESET;
 
-        for ( const drv::pinch_cfg& pc : { cfg.mc1, cfg.mc2 } ) {
-                GPIO_InitTypeDef gpio_itd{};
-                gpio_itd.Pin       = pc.pin;
-                gpio_itd.Mode      = GPIO_MODE_AF_PP;
-                gpio_itd.Pull      = GPIO_NOPULL;
-                gpio_itd.Speed     = GPIO_SPEED_FREQ_LOW;
-                gpio_itd.Alternate = pc.alternate;
-
-                HAL_GPIO_Init( pc.port, &gpio_itd );
-        }
+        setup_gpio( cfg.mc1_pin );
+        setup_gpio( cfg.mc2_pin );
 
         if ( HAL_TIM_PWM_Init( &tim ) != HAL_OK )
                 fw::stop_exec();
@@ -54,10 +46,10 @@ em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
 
         __HAL_TIM_ENABLE_IT( &tim, TIM_IT_UPDATE );
 
-        if ( HAL_TIM_PWM_ConfigChannel( &tim, &oc_config, cfg.mc1.channel ) != HAL_OK )
+        if ( HAL_TIM_PWM_ConfigChannel( &tim, &oc_config, cfg.mc1_ch ) != HAL_OK )
                 fw::stop_exec();
 
-        if ( HAL_TIM_PWM_ConfigChannel( &tim, &oc_config, cfg.mc2.channel ) != HAL_OK )
+        if ( HAL_TIM_PWM_ConfigChannel( &tim, &oc_config, cfg.mc2_ch ) != HAL_OK )
                 fw::stop_exec();
 
         TIM_BreakDeadTimeConfigTypeDef break_dead_time_cfg{};
@@ -138,17 +130,10 @@ em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQ
         return em::SUCCESS;
 }
 
-em::result setup_leds_channel( TIM_HandleTypeDef* tim, drv::pinch_cfg cfg )
+em::result setup_leds_channel( TIM_HandleTypeDef* tim, uint32_t ch, drv::pin_cfg pin )
 {
-        GPIO_InitTypeDef gpio_itd{};
 
-        gpio_itd.Pin       = cfg.pin;
-        gpio_itd.Mode      = GPIO_MODE_AF_PP;
-        gpio_itd.Pull      = GPIO_NOPULL;
-        gpio_itd.Speed     = GPIO_SPEED_FREQ_LOW;
-        gpio_itd.Alternate = cfg.alternate;
-
-        HAL_GPIO_Init( cfg.port, &gpio_itd );
+        setup_gpio( pin );
 
         TIM_OC_InitTypeDef chc;
 
@@ -157,18 +142,18 @@ em::result setup_leds_channel( TIM_HandleTypeDef* tim, drv::pinch_cfg cfg )
         chc.OCPolarity = TIM_OCPOLARITY_HIGH;
         chc.OCFastMode = TIM_OCFAST_DISABLE;
 
-        if ( HAL_TIM_PWM_ConfigChannel( tim, &chc, cfg.channel ) != HAL_OK )
+        if ( HAL_TIM_PWM_ConfigChannel( tim, &chc, ch ) != HAL_OK )
                 return em::ERROR;
 
         return em::SUCCESS;
 }
 
-em::result setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
+em::result setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint32_t period )
 {
         tim.Instance               = instance;
         tim.Init.Prescaler         = 0;
         tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
-        tim.Init.Period            = 65535;
+        tim.Init.Period            = period;
         tim.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
         tim.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 

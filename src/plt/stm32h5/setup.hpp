@@ -3,6 +3,7 @@
 
 #include <emlabcpp/result.h>
 #include <memory>
+#include <optional>
 
 namespace em = emlabcpp;
 
@@ -39,12 +40,14 @@ struct uart_cfg
 
 struct hb_timer_cfg
 {
-        TIM_TypeDef*   timer_instance;
-        uint16_t       period;
-        IRQn_Type      irq;
-        uint32_t       irq_priority;
-        drv::pinch_cfg mc1;
-        drv::pinch_cfg mc2;
+        TIM_TypeDef* timer_instance;
+        uint16_t     period;
+        IRQn_Type    irq;
+        uint32_t     irq_priority;
+        uint32_t     mc1_ch;
+        drv::pin_cfg mc1_pin;
+        uint32_t     mc2_ch;
+        drv::pin_cfg mc2_pin;
 };
 
 struct leds_gpio_cfg
@@ -55,9 +58,11 @@ struct leds_gpio_cfg
 
 struct leds_timer_cfg
 {
-        TIM_TypeDef*   timer_instance;
-        drv::pinch_cfg yellow;
-        drv::pinch_cfg green;
+        TIM_TypeDef* timer_instance;
+        uint32_t     yellow_ch;
+        drv::pin_cfg yellow_pin;
+        uint32_t     green_ch;
+        drv::pin_cfg green_pin;
 };
 
 struct temp_calib_coeffs
@@ -71,7 +76,10 @@ extern temp_calib_coeffs TEMP_CALIB_COEFFS;
 cfg::map get_default_config();
 
 em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );
-void       setup_adc_channel( ADC_ChannelConfTypeDef& channel, drv::pinch_cfg cfg );
+void       setup_adc_channel(
+          ADC_ChannelConfTypeDef&       channel,
+          uint32_t                      ch_id,
+          std::optional< drv::pin_cfg > cfg );
 em::result setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 
 em::result setup_dac( DAC_HandleTypeDef& dac, const drv::pin_cfg& cfg );
@@ -80,15 +88,15 @@ em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart
 
 em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg );
 
-em::result setup_gpio( const drv::pin_cfg& cfg );
+void setup_gpio( const drv::pin_cfg& cfg );
 
-em::result setup_leds_channel( TIM_HandleTypeDef* tim, drv::pinch_cfg cfg );
+em::result setup_leds_channel( TIM_HandleTypeDef* tim, uint32_t ch, drv::pin_cfg cfg );
 
 em::result setup_clk();
 
 em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq );
 
-em::result setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
+em::result setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint32_t period );
 
 em::result setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst );
 

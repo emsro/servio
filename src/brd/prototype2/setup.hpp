@@ -22,7 +22,10 @@ struct adc_cfg
 };
 
 em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );
-void       setup_adc_channel( ADC_ChannelConfTypeDef& channel, drv::pinch_cfg cfg );
+void       setup_adc_channel(
+          ADC_ChannelConfTypeDef&       channel,
+          uint32_t                      chann_id,
+          std::optional< drv::pin_cfg > cfg );
 em::result setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 
 struct uart_cfg
@@ -40,26 +43,29 @@ em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart
 
 struct hb_timer_cfg
 {
-        TIM_TypeDef*   timer_instance;
-        uint16_t       period;
-        IRQn_Type      irq;
-        uint32_t       irq_priority;
-        drv::pinch_cfg mc1;
-        drv::pinch_cfg mc2;
+        TIM_TypeDef* timer_instance;
+        uint16_t     period;
+        IRQn_Type    irq;
+        uint32_t     irq_priority;
+        uint32_t     mc1_chan;
+        drv::pin_cfg mc1_pin;
+        uint32_t     mc2_chan;
+        drv::pin_cfg mc2_pin;
 };
 
 em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg );
-
-em::result setup_gpio( const drv::pin_cfg& cfg );
+void       setup_gpio( const drv::pin_cfg& cfg );
 
 struct leds_timer_cfg
 {
-        TIM_TypeDef*   timer_instance;
-        drv::pinch_cfg yellow;
-        drv::pinch_cfg green;
+        TIM_TypeDef* timer_instance;
+        uint32_t     yellow_chan;
+        drv::pin_cfg yellow;
+        uint32_t     green_chan;
+        drv::pin_cfg green;
 };
 
-em::result setup_leds_channel( TIM_HandleTypeDef& tim, drv::pinch_cfg cfg );
+em::result setup_leds_channel( TIM_HandleTypeDef& tim, uint32_t chann, drv::pin_cfg cfg );
 em::result setup_leds_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 
 void setup_clk();

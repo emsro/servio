@@ -10,7 +10,7 @@ context setup_context()
 {
         cfg_context cfg_ctx = fw::load_cfg_context();
 
-        core::drivers cdrv = brd::setup_core_drivers();
+        core::drivers cdrv = brd::setup_core_drivers( cfg_ctx.map );
         if ( cdrv.any_uninitialized() )
                 fw::stop_exec();
 

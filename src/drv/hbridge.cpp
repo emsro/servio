@@ -68,7 +68,8 @@ void hbridge::set_power( pwr power )
         int32_t mc1_val = timer_max_;
         int32_t mc2_val = timer_max_;
 
-        if ( power > p_zero )
+        if ( power == p_zero ) {
+        } else if ( power > p_zero )
                 mc1_val = ( 1.0F - *power ) * static_cast< float >( timer_max_ );
         else
                 mc2_val = ( 1.0F + *power ) * static_cast< float >( timer_max_ );
@@ -87,7 +88,7 @@ int8_t hbridge::get_direction() const
 
         int8_t v = inverted_ ? -1 : 1;
 
-        return __HAL_TIM_GET_COMPARE( tim_, mc1_channel_ ) <
+        return __HAL_TIM_GET_COMPARE( tim_, mc1_channel_ ) <=
                        __HAL_TIM_GET_COMPARE( tim_, mc2_channel_ ) ?
                    v :
                    -v;

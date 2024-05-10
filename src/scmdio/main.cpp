@@ -24,9 +24,10 @@ void field_option( CLI::App* app, std::string& field )
 
 struct cfg_opts
 {
-        bool        json = false;
-        std::string field;
-        std::string value;
+        bool                  json = false;
+        std::string           field;
+        std::string           value;
+        std::filesystem::path path;
 };
 
 void cfg_def(
@@ -74,6 +75,12 @@ void cfg_def(
         auto* clear = cfg->add_subcommand( "clear", "clear latest store config from the servo" );
         clear->callback( [&port_ptr, &context] {
                 co_spawn( context, cfg_clear_cmd( *port_ptr ), boost::asio::detached );
+        } );
+
+        auto* load = cfg->add_subcommand( "load", "load config from a file" );
+        load->add_option( "path", data->path, "Path to a file" );
+        load->callback( [&port_ptr, data, &context] {
+                co_spawn( context, cfg_load_cmd( *port_ptr, data->path ), boost::asio::detached );
         } );
 }
 

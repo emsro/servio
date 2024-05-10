@@ -16,9 +16,9 @@ em::result leds::start()
 {
         if ( tim_ == nullptr )
                 return em::ERROR;
-        if ( HAL_TIM_PWM_Start( tim_, yellow_.channel ) != HAL_OK )
+        if ( HAL_TIM_PWM_Start( tim_, y_chan_ ) != HAL_OK )
                 return em::ERROR;
-        if ( HAL_TIM_PWM_Start( tim_, green_.channel ) != HAL_OK )
+        if ( HAL_TIM_PWM_Start( tim_, g_chan_ ) != HAL_OK )
                 return em::ERROR;
         return em::SUCCESS;
 }
@@ -36,11 +36,11 @@ void leds::update( const leds_vals& leds )
 
         const uint16_t yellow_val =
             em::map_range< uint8_t, uint16_t >( leds.yellow, 0U, u_max, 0U, per );
-        __HAL_TIM_SET_COMPARE( tim_, yellow_.channel, yellow_val );
+        __HAL_TIM_SET_COMPARE( tim_, y_chan_, yellow_val );
 
         const uint16_t green_val =
             em::map_range< uint8_t, uint16_t >( leds.green, 0U, u_max, 0U, per );
-        __HAL_TIM_SET_COMPARE( tim_, green_.channel, green_val );
+        __HAL_TIM_SET_COMPARE( tim_, g_chan_, green_val );
 }
 
 }  // namespace servio::drv

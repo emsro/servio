@@ -29,6 +29,11 @@ message Property {
   }
 }
 
+enum EncoderMode {
+  ENCODER_ANALOG = 0;
+  ENCODER_QUAD = 1;
+};
+
 // Config message represents all configuration options for the servio, one
 // instance of this message represents one value of any of the configuration
 // fields.
@@ -37,8 +42,10 @@ message Config {
     // String identifying the model of servo, used for debugging purposes.
     string model = 1;
 
-    uint32 id = 2;
-    uint32 group_id = 3;
+    uint32 id = 2;        // not implemented/tested
+    uint32 group_id = 3;  // not implemented/tested
+
+    EncoderMode encoder_mode = 4;
 
     // Position conversion uses two setpoints (lower/higher) to setup a
     // conversion from the range of measuring sensor to real angle (in radians).

@@ -2,8 +2,10 @@
 #include "cfg/key.hpp"
 
 #include <emlabcpp/experimental/string_buffer.h>
+#include <emlabcpp/experimental/testing/convert.h>
 #include <emlabcpp/protocol/register_handler.h>
 #include <emlabcpp/protocol/register_map.h>
+#include <magic_enum.hpp>
 
 #pragma once
 
@@ -17,11 +19,18 @@ using reg = em::protocol::register_pair< Key, T >;
 
 using model_name = em::string_buffer< 32 >;
 
+enum encoder_mode : uint8_t
+{
+        ENC_MODE_ANALOG = 0,
+        ENC_MODE_QUAD   = 1
+};
+
 using map = em::protocol::register_map<
     std::endian::little,
     reg< MODEL, model_name >,
     reg< ID, uint32_t >,
     reg< GROUP_ID, uint32_t >,
+    reg< ENCODER_MODE, encoder_mode >,
     reg< POSITION_CONV_LOW_VALUE, uint32_t >,
     reg< POSITION_CONV_LOW_ANGLE, float >,
     reg< POSITION_CONV_HIGH_VALUE, uint32_t >,
@@ -56,7 +65,7 @@ using map = em::protocol::register_map<
     reg< MOVING_DETECTION_STEP, float > >;
 
 using value_message = typename map::message_type;
-using value_variant = std::variant< model_name, uint32_t, float, bool >;
+using value_variant = std::variant< model_name, uint32_t, float, bool, encoder_mode >;
 
 struct keyval
 {
@@ -73,4 +82,21 @@ keyval make_keyval( auto val )
         };
 }
 
+// TODO: find all inlines and minimize
+#ifdef EMLABCPP_USE_OSTREAM
+inline std::ostream& operator<<( std::ostream& os, const encoder_mode& m )
+{
+        return os << magic_enum::enum_name( m );
+}
+#endif
+
 }  // namespace servio::cfg
+
+namespace emlabcpp::testing
+{
+template <>
+struct value_type_converter< servio::cfg::encoder_mode >
+  : value_type_converter_enum< servio::cfg::encoder_mode >
+{
+};
+}  // namespace emlabcpp::testing

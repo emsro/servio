@@ -21,12 +21,12 @@ public:
         {
         }
 
-        leds* setup( pin_cfg red, pin_cfg blue, pinch_cfg yellow, pinch_cfg green )
+        leds* setup( pin_cfg red, pin_cfg blue, uint32_t y_chan, uint32_t g_chan )
         {
                 red_    = red;
                 blue_   = blue;
-                yellow_ = yellow;
-                green_  = green;
+                y_chan_ = y_chan;
+                g_chan_ = g_chan;
                 return tim_ != nullptr ? this : nullptr;
         }
 
@@ -44,8 +44,8 @@ private:
 
         TIM_HandleTypeDef* tim_;
 
-        pinch_cfg yellow_;
-        pinch_cfg green_;
+        uint32_t y_chan_;
+        uint32_t g_chan_;
 };
 
 }  // namespace servio::drv

@@ -38,7 +38,7 @@ struct adc_pooler_temperature : temp_iface
 {
         int32_t get_temperature() const override
         {
-                return AdcPooler->temp.last_value;
+                return static_cast< int32_t >( AdcPooler->temp.last_value );
         }
 };
 
@@ -80,7 +80,7 @@ struct adc_pooler_current : curr_iface
         }
 };
 
-auto ADC_SEQUENCE = std::array{
+chan_ids ADC_FULL_SEQUENCE[] = {
     CURRENT_CHANNEL,
     POSITION_CHANNEL,
     CURRENT_CHANNEL,
@@ -89,6 +89,18 @@ auto ADC_SEQUENCE = std::array{
     POSITION_CHANNEL,
     CURRENT_CHANNEL,
     TEMP_CHANNEL,
+};
+
+chan_ids ADC_CURR_POS_VCC_SEQUENCE[] = {
+    CURRENT_CHANNEL,
+    POSITION_CHANNEL,
+    CURRENT_CHANNEL,
+    VCC_CHANNEL,
+};
+
+chan_ids ADC_CURR_VCC_SEQUENCE[] = {
+    CURRENT_CHANNEL,
+    VCC_CHANNEL,
 };
 
 }  // namespace servio::drv

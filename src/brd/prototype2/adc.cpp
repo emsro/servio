@@ -6,10 +6,13 @@
 namespace servio::brd
 {
 
-void setup_adc_channel( ADC_ChannelConfTypeDef& channel, drv::pinch_cfg cfg )
+void setup_adc_channel(
+    ADC_ChannelConfTypeDef&       channel,
+    uint32_t                      chann_id,
+    std::optional< drv::pin_cfg > port )
 {
         channel = ADC_ChannelConfTypeDef{
-            .Channel      = cfg.channel,
+            .Channel      = chann_id,
             .Rank         = ADC_REGULAR_RANK_1,
             .SamplingTime = ADC_SAMPLETIME_92CYCLES_5,
             .SingleDiff   = ADC_SINGLE_ENDED,
@@ -18,13 +21,8 @@ void setup_adc_channel( ADC_ChannelConfTypeDef& channel, drv::pinch_cfg cfg )
             .OffsetSign   = 0,
         };
 
-        if ( cfg.port == nullptr )
-                return;
-        GPIO_InitTypeDef gpio_c{};
-        gpio_c.Pin  = cfg.pin;
-        gpio_c.Mode = GPIO_MODE_ANALOG;
-        gpio_c.Pull = GPIO_NOPULL;
-        HAL_GPIO_Init( cfg.port, &gpio_c );
+        if ( port.has_value() )
+                setup_gpio( *port );
 }
 
 em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg )

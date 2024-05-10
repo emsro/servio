@@ -10,6 +10,7 @@ enum key : uint32_t
         MODEL                      = 1,
         ID                         = 2,
         GROUP_ID                   = 3,
+        ENCODER_MODE               = 4,
         POSITION_CONV_LOW_VALUE    = 10,
         POSITION_CONV_LOW_ANGLE    = 11,
         POSITION_CONV_HIGH_VALUE   = 12,

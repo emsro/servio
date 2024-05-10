@@ -19,4 +19,6 @@ boost::asio::awaitable< void > cfg_get_cmd( cobs_port& port, const std::string& 
 boost::asio::awaitable< void >
 cfg_set_cmd( cobs_port& port, const std::string& name, std::string value );
 
+boost::asio::awaitable< void > cfg_load_cmd( cobs_port& port, const std::filesystem::path& cfg );
+
 }  // namespace servio::scmdio

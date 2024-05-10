@@ -18,8 +18,6 @@ enum adc_error_codes
         ADC_POOLER_SAMPLES_OVER_ERR = 0x7
 };
 
-inline empty_adc_detailed_cb EMPTY_ADC_DETAILED_CALLBACK;
-
 template < auto ID, std::size_t N >
 struct detailed_adc_channel
 {
@@ -32,7 +30,7 @@ struct detailed_adc_channel
 
         uint32_t               last_value;
         ADC_ChannelConfTypeDef chconf   = {};
-        detailed_cb_iface*     callback = &EMPTY_ADC_DETAILED_CALLBACK;
+        detailed_cb_iface*     callback = &EMPTY_DETAILED_CALLBACK;
 
         [[gnu::flatten]] void period_start( ADC_HandleTypeDef& h )
         {
@@ -67,8 +65,6 @@ struct detailed_adc_channel
         {
         }
 };
-
-inline empty_value_cb EMPTY_ADC_CALLBACK;
 
 template < auto ID >
 struct adc_channel
@@ -109,7 +105,7 @@ struct adc_channel_with_callback : adc_channel< ID >
         {
         }
 
-        value_cb_iface* callback = &EMPTY_ADC_CALLBACK;
+        value_cb_iface* callback = &EMPTY_CALLBACK;
 
         [[gnu::flatten]] void conv_cplt( ADC_HandleTypeDef& h )
         {
@@ -123,16 +119,16 @@ struct adc_pooler
 {
         using id_type = typename Set::id_type;
 
-        adc_pooler(
-            em::view< const id_type* > seq,
-            ADC_HandleTypeDef&         adc,
-            DMA_HandleTypeDef&         dma,
-            TIM_HandleTypeDef&         tim )
+        adc_pooler( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, TIM_HandleTypeDef& tim )
           : adc_( &adc )
           , dma_( &dma )
           , tim_( &tim )
-          , sequence_( seq )
         {
+        }
+
+        void set_seq( em::view< const id_type* > seq )
+        {
+                sequence_ = seq;
         }
 
         em::result start()

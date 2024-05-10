@@ -12,6 +12,7 @@ consteval map get_default_config()
             reg< MODEL, model_name >{ "no model" },
             reg< ID, uint32_t >{ 0 },
             reg< GROUP_ID, uint32_t >{ 0 },
+            reg< ENCODER_MODE, encoder_mode >{ ENC_MODE_ANALOG },
             reg< POSITION_CONV_LOW_VALUE, uint32_t >{ 0 },
             reg< POSITION_CONV_LOW_ANGLE, float >{ 0.F },
             reg< POSITION_CONV_HIGH_VALUE, uint32_t >{ 4096 },

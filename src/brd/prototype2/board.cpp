@@ -50,7 +50,7 @@ struct adc_set
 
 using adc_pooler_type = drv::adc_pooler< adc_set >;
 
-adc_pooler_type ADC_POOLER{ drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, ADC_TIM_HANDLE };
+adc_pooler_type                           ADC_POOLER{ ADC_HANDLE, ADC_DMA_HANDLE, ADC_TIM_HANDLE };
 drv::adc_pooler_period_cb< ADC_POOLER >   ADC_PERIOD_CB;
 drv::adc_pooler_vcc< ADC_POOLER >         ADC_VCC;
 drv::adc_pooler_temperature< ADC_POOLER > ADC_TEMPERATURE;
@@ -158,32 +158,29 @@ adc_pooler_type* adc_pooler_setup()
         __HAL_RCC_TIM4_CLK_ENABLE();
         setup_adc_channel(
             ADC_POOLER->current.chconf,
-            drv::pinch_cfg{
-                .channel = ADC_CHANNEL_4,
-                .pin     = GPIO_PIN_3,
-                .port    = GPIOA,
+            ADC_CHANNEL_4,
+            drv::pin_cfg{
+                .pin  = GPIO_PIN_3,
+                .port = GPIOA,
+                .mode = GPIO_MODE_ANALOG,
             } );
         setup_adc_channel(
             ADC_POOLER->position.chconf,
-            drv::pinch_cfg{
-                .channel = ADC_CHANNEL_1,
-                .pin     = GPIO_PIN_0,
-                .port    = GPIOA,
+            ADC_CHANNEL_1,
+            drv::pin_cfg{
+                .pin  = GPIO_PIN_0,
+                .port = GPIOA,
+                .mode = GPIO_MODE_ANALOG,
             } );
         setup_adc_channel(
             ADC_POOLER->vcc.chconf,
-            drv::pinch_cfg{
-                .channel = ADC_CHANNEL_2,
-                .pin     = GPIO_PIN_1,
-                .port    = GPIOA,
+            ADC_CHANNEL_2,
+            drv::pin_cfg{
+                .pin  = GPIO_PIN_1,
+                .port = GPIOA,
+                .mode = GPIO_MODE_ANALOG,
             } );
-        setup_adc_channel(
-            ADC_POOLER->temp.chconf,
-            drv::pinch_cfg{
-                .channel = ADC_CHANNEL_TEMPSENSOR_ADC1,
-                .pin     = 0,
-                .port    = nullptr,
-            } );
+        setup_adc_channel( ADC_POOLER->temp.chconf, ADC_CHANNEL_TEMPSENSOR_ADC1, std::nullopt );
         em::result res = em::worst_of(
             setup_adc(
                 ADC_HANDLE,
@@ -205,6 +202,8 @@ adc_pooler_type* adc_pooler_setup()
         if ( res != em::SUCCESS )
                 return nullptr;
 
+        ADC_POOLER.set_seq( drv::ADC_FULL_SEQUENCE );
+
         return &ADC_POOLER;
 }
 
@@ -217,25 +216,27 @@ drv::hbridge* hbridge_setup()
             .period         = std::numeric_limits< uint16_t >::max() / 8,
             .irq            = TIM1_UP_TIM16_IRQn,
             .irq_priority   = 0,
-            .mc1 =
-                drv::pinch_cfg{
-                    .channel   = TIM_CHANNEL_1,
+            .mc1_chan       = TIM_CHANNEL_1,
+            .mc1_pin =
+                {
                     .pin       = GPIO_PIN_8,
                     .port      = GPIOA,
+                    .mode      = GPIO_MODE_AF_PP,
                     .alternate = GPIO_AF6_TIM1,
                 },
-            .mc2 =
-                drv::pinch_cfg{
-                    .channel   = TIM_CHANNEL_2,
+            .mc2_chan = TIM_CHANNEL_2,
+            .mc2_pin =
+                {
                     .pin       = GPIO_PIN_9,
                     .port      = GPIOA,
+                    .mode      = GPIO_MODE_AF_PP,
                     .alternate = GPIO_AF6_TIM1,
                 },
         };
         if ( setup_hbridge_timers( TIM1_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
 
-        return HBRIDGE.setup( cfg.mc1.channel, cfg.mc2.channel );
+        return HBRIDGE.setup( cfg.mc1_chan, cfg.mc2_chan );
 }
 
 drv::cobs_uart* comms_setup()
@@ -333,28 +334,32 @@ drv::leds* leds_setup()
             .pin  = GPIO_PIN_1,
             .port = GPIOF,
         };
-        drv::pinch_cfg yellow{
-            .channel   = TIM_CHANNEL_2,
+
+        setup_gpio( red );
+        setup_gpio( blue );
+
+        uint32_t     yellow_ch = TIM_CHANNEL_2;
+        drv::pin_cfg yellow{
             .pin       = GPIO_PIN_5,
             .port      = GPIOB,
+            .mode      = GPIO_MODE_AF_PP,
             .alternate = GPIO_AF2_TIM3,
         };
-        drv::pinch_cfg green{
-            .channel   = TIM_CHANNEL_3,
+        uint32_t     green_ch = TIM_CHANNEL_3;
+        drv::pin_cfg green{
             .pin       = GPIO_PIN_0,
             .port      = GPIOB,
+            .mode      = GPIO_MODE_AF_PP,
             .alternate = GPIO_AF2_TIM3,
         };
 
         em::result res = em::worst_of(
-            setup_gpio( red ),
-            setup_gpio( blue ),
             setup_leds_timer( TIM3_HANDLE, TIM3 ),
-            setup_leds_channel( TIM3_HANDLE, yellow ),
-            setup_leds_channel( TIM3_HANDLE, green ) );
+            setup_leds_channel( TIM3_HANDLE, yellow_ch, yellow ),
+            setup_leds_channel( TIM3_HANDLE, green_ch, green ) );
 
         if ( res == em::SUCCESS )
-                return LEDS.setup( red, blue, yellow, green );
+                return LEDS.setup( red, blue, yellow_ch, green_ch );
 
         return nullptr;
 }
@@ -392,7 +397,7 @@ void install_stop_callback( drv::pwm_motor_iface& motor, drv::leds_iface* leds_p
         };
 }
 
-core::drivers setup_core_drivers()
+core::drivers setup_core_drivers( const cfg::map& )
 {
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( setup_clock_timer( TIM2_HANDLE, TIM2 ) != em::SUCCESS )

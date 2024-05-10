@@ -21,6 +21,9 @@ template < typename Cfg, typename UnaryFunction >
         case Config_group_id_tag:
                 f.template operator()< cfg::GROUP_ID >( cfg.group_id );
                 break;
+        case Config_encoder_mode_tag:
+                f.template operator()< cfg::ENCODER_MODE >( cfg.encoder_mode );
+                break;
         case Config_position_conv_lower_setpoint_value_tag:
                 f.template operator()< cfg::POSITION_CONV_LOW_VALUE >(
                     cfg.position_conv_lower_setpoint_value );

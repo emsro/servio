@@ -9,9 +9,9 @@ namespace servio::drv
 {
 
 template < typename Callable >
-struct adc_detailed_cb : public detailed_cb_iface
+struct detailed_cb : public detailed_cb_iface
 {
-        adc_detailed_cb( Callable callback )
+        detailed_cb( Callable callback )
           : cb( std::move( callback ) )
         {
         }
@@ -25,16 +25,18 @@ struct adc_detailed_cb : public detailed_cb_iface
 };
 
 template < typename Callable >
-using current_cb = adc_detailed_cb< Callable >;
+using current_cb = detailed_cb< Callable >;
 
-struct empty_adc_detailed_cb : public detailed_cb_iface
+struct empty_detailed_cb : public detailed_cb_iface
 {
         void on_value_irq( uint32_t, std::span< uint16_t > ) override
         {
         }
 };
 
-using empty_current_cb = empty_adc_detailed_cb;
+inline empty_detailed_cb EMPTY_DETAILED_CALLBACK;
+
+using empty_current_cb = empty_detailed_cb;
 
 template < typename Callable >
 struct value_cb : public value_cb_iface
@@ -61,6 +63,8 @@ struct empty_value_cb : public value_cb_iface
         {
         }
 };
+
+inline empty_value_cb EMPTY_CALLBACK;
 
 using empty_position_cb = empty_value_cb;
 

@@ -1,5 +1,5 @@
 ---
-name: tests
+name: build
 
 on: [push]
 
@@ -27,3 +27,9 @@ jobs:
             - run: make build
 
             - run: make test
+
+
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: proto3_fw.elf
+                  path: build/h5/src/brd/proto3/proto3_fw.elf

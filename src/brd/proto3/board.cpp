@@ -9,6 +9,7 @@
 #include "drv/dts_temp.hpp"
 #include "drv/hbridge.hpp"
 #include "drv/leds.hpp"
+#include "drv/quad_encoder.hpp"
 #include "fw/util.hpp"
 #include "platform.hpp"
 #include "setup.hpp"
@@ -25,6 +26,17 @@ extern "C" {
 extern int _config_start;
 extern int _config_end;
 }
+
+namespace servio::brd
+{
+
+drv::pin_cfg HBRDIGE_VREF_PIN{
+    .pin  = GPIO_PIN_4,
+    .port = GPIOA,
+    .pull = GPIO_PULLDOWN,
+};
+
+}  // namespace servio::brd
 
 namespace servio::brd
 {
@@ -64,7 +76,7 @@ struct adc_set
 };
 
 using adc_pooler_type = drv::adc_pooler< adc_set >;
-adc_pooler_type ADC_POOLER{ drv::ADC_SEQUENCE, ADC_HANDLE, ADC_DMA_HANDLE, TIM6_HANDLE };
+adc_pooler_type                         ADC_POOLER{ ADC_HANDLE, ADC_DMA_HANDLE, TIM6_HANDLE };
 drv::adc_pooler_period_cb< ADC_POOLER > ADC_PERIOD_CB;
 drv::adc_pooler_vcc< ADC_POOLER >       ADC_VCC;
 drv::adc_pooler_position< ADC_POOLER >  ADC_POSITION;
@@ -80,6 +92,10 @@ TIM_HandleTypeDef  TIM1_HANDLE{};
 drv::hbridge       HBRIDGE{ &TIM1_HANDLE };
 DTS_HandleTypeDef  DTS_HANDLE{};
 drv::dts_temp      DTS_DRV{ DTS_HANDLE };
+
+TIM_HandleTypeDef  TIM3_HANDLE{};
+drv::quad_encoder  QUAD{ TIM3_HANDLE };
+TIM_HandleTypeDef* QUAD_TRIGGER_TIMER = nullptr;
 
 }  // namespace servio::brd
 
@@ -132,6 +148,9 @@ extern "C" {
 {
         servio::brd::HBRIDGE.timer_period_irq( h );
         servio::brd::CLOCK.timer_period_irq( h );
+
+        if ( h == servio::brd::QUAD_TRIGGER_TIMER )
+                servio::brd::QUAD.on_tick_irq();
 }
 
 [[gnu::flatten]] void HAL_UART_TxCpltCallback( UART_HandleTypeDef* h )
@@ -166,7 +185,7 @@ extern "C" {
 namespace servio::brd
 {
 
-adc_pooler_type* adc_pooler_setup()
+adc_pooler_type* adc_pooler_setup( bool enable_pos )
 {
         __HAL_RCC_ADC_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();
@@ -174,24 +193,28 @@ adc_pooler_type* adc_pooler_setup()
         __HAL_RCC_TIM6_CLK_ENABLE();
         plt::setup_adc_channel(
             ADC_POOLER->current.chconf,
-            drv::pinch_cfg{
-                .channel = ADC_CHANNEL_15,
-                .pin     = GPIO_PIN_3,
-                .port    = GPIOA,
+            ADC_CHANNEL_15,
+            drv::pin_cfg{
+                .pin  = GPIO_PIN_3,
+                .port = GPIOA,
+                .mode = GPIO_MODE_ANALOG,
             } );
-        plt::setup_adc_channel(
-            ADC_POOLER->position.chconf,
-            drv::pinch_cfg{
-                .channel = ADC_CHANNEL_0,
-                .pin     = GPIO_PIN_0,
-                .port    = GPIOA,
-            } );
+        if ( enable_pos )
+                plt::setup_adc_channel(
+                    ADC_POOLER->position.chconf,
+                    ADC_CHANNEL_0,
+                    drv::pin_cfg{
+                        .pin  = GPIO_PIN_0,
+                        .port = GPIOA,
+                        .mode = GPIO_MODE_ANALOG,
+                    } );
         plt::setup_adc_channel(
             ADC_POOLER->vcc.chconf,
-            drv::pinch_cfg{
-                .channel = ADC_CHANNEL_7,
-                .pin     = GPIO_PIN_7,
-                .port    = GPIOA,
+            ADC_CHANNEL_7,
+            drv::pin_cfg{
+                .pin  = GPIO_PIN_7,
+                .port = GPIOA,
+                .mode = GPIO_MODE_ANALOG,
             } );
         em::result res = em::worst_of(
             plt::setup_adc(
@@ -215,6 +238,11 @@ adc_pooler_type* adc_pooler_setup()
         if ( res != em::SUCCESS )
                 return nullptr;
 
+        if ( enable_pos )
+                ADC_POOLER.set_seq( drv::ADC_CURR_POS_VCC_SEQUENCE );
+        else
+                ADC_POOLER.set_seq( drv::ADC_CURR_VCC_SEQUENCE );
+
         return &ADC_POOLER;
 }
 
@@ -227,25 +255,27 @@ drv::hbridge* hbridge_setup()
             .period         = std::numeric_limits< uint16_t >::max() / 4,
             .irq            = TIM1_UP_IRQn,
             .irq_priority   = 1,
-            .mc1 =
-                drv::pinch_cfg{
-                    .channel   = TIM_CHANNEL_1,
+            .mc1_ch         = TIM_CHANNEL_1,
+            .mc1_pin =
+                {
                     .pin       = GPIO_PIN_6,
                     .port      = GPIOB,
+                    .mode      = GPIO_MODE_AF_PP,
                     .alternate = GPIO_AF14_TIM1,
                 },
-            .mc2 =
-                drv::pinch_cfg{
-                    .channel   = TIM_CHANNEL_2,
+            .mc2_ch = TIM_CHANNEL_2,
+            .mc2_pin =
+                {
                     .pin       = GPIO_PIN_7,
                     .port      = GPIOB,
+                    .mode      = GPIO_MODE_AF_PP,
                     .alternate = GPIO_AF14_TIM1,
                 },
         };
         if ( plt::setup_hbridge_timers( TIM1_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
 
-        return HBRIDGE.setup( cfg.mc1.channel, cfg.mc2.channel );
+        return HBRIDGE.setup( cfg.mc1_ch, cfg.mc2_ch );
 }
 
 drv::cobs_uart* comms_setup()
@@ -341,35 +371,64 @@ drv::leds* leds_setup()
             .pin  = GPIO_PIN_14,
             .port = GPIOC,
         };
-        drv::pinch_cfg yellow{
-            .channel   = TIM_CHANNEL_3,
+        plt::setup_gpio( red );
+        plt::setup_gpio( blue );
+
+        uint32_t     yellow_ch = TIM_CHANNEL_3;
+        drv::pin_cfg yellow{
             .pin       = GPIO_PIN_10,
             .port      = GPIOB,
+            .mode      = GPIO_MODE_AF_PP,
             .alternate = GPIO_AF1_TIM2,
         };
 
-        drv::pinch_cfg green{
-            .channel   = TIM_CHANNEL_1,
+        uint32_t     green_ch = TIM_CHANNEL_1;
+        drv::pin_cfg green{
             .pin       = GPIO_PIN_2,
             .port      = GPIOB,
+            .mode      = GPIO_MODE_AF_PP,
             .alternate = GPIO_AF14_TIM2,
         };
 
         em::result res = em::worst_of(
-            plt::setup_gpio( red ),
-            plt::setup_gpio( blue ),
-            plt::setup_leds_channel( &TIM2_HANDLE, yellow ),
-            plt::setup_leds_channel( &TIM2_HANDLE, green ) );
+            plt::setup_leds_channel( &TIM2_HANDLE, yellow_ch, yellow ),
+            plt::setup_leds_channel( &TIM2_HANDLE, yellow_ch, green ) );
 
         if ( res == em::SUCCESS )
-                return LEDS.setup( red, blue, yellow, green );
+                return LEDS.setup( red, blue, yellow_ch, green_ch );
 
         return nullptr;
 }
 
-drv::pos_iface* quad_encoder_setup()
+drv::pos_iface* quad_encoder_setup( uint32_t period )
 {
-        return nullptr;
+
+        __HAL_RCC_TIM3_CLK_ENABLE();
+        __HAL_RCC_GPIOB_CLK_ENABLE();
+
+        drv::pin_cfg ch1 = {
+            .pin       = GPIO_PIN_4,
+            .port      = GPIOB,
+            .mode      = GPIO_MODE_AF_PP,
+            .alternate = GPIO_AF2_TIM3,
+        };
+        plt::setup_gpio( ch1 );
+
+        drv::pin_cfg ch2 = {
+            .pin       = GPIO_PIN_5,
+            .port      = GPIOB,
+            .mode      = GPIO_MODE_AF_PP,
+            .alternate = GPIO_AF2_TIM3,
+        };
+        plt::setup_gpio( ch2 );
+
+        em::result res = plt::setup_encoder_timer( TIM3_HANDLE, TIM3, period );
+        if ( res != em::SUCCESS )
+                return nullptr;
+
+        QUAD_TRIGGER_TIMER = &TIM1_HANDLE;
+
+        return &QUAD;
 }
 
 em::result start_callback( core::drivers& cdrv )
@@ -391,9 +450,10 @@ em::result start_callback( core::drivers& cdrv )
                 if ( LEDS.start() != em::SUCCESS )
                         return em::ERROR;
         }
+        if ( QUAD_TRIGGER_TIMER != nullptr )
+                QUAD.start();
 
-        HAL_GPIO_WritePin( GPIOA, GPIO_PIN_4, GPIO_PIN_SET );  // abstract this , this is just VREF
-                                                               // for hbridge
+        HAL_GPIO_WritePin( HBRDIGE_VREF_PIN.port, HBRDIGE_VREF_PIN.pin, GPIO_PIN_SET );
 
         if ( HAL_ICACHE_Enable() != HAL_OK )
                 return em::ERROR;
@@ -405,7 +465,7 @@ void install_stop_callback( drv::pwm_motor_iface& motor, drv::leds_iface* leds_p
 {
         core::STOP_CALLBACK = [&motor, leds_ptr] {
                 motor.force_stop();
-                HAL_GPIO_WritePin( GPIOA, GPIO_PIN_4, GPIO_PIN_RESET );
+                HAL_GPIO_WritePin( HBRDIGE_VREF_PIN.port, HBRDIGE_VREF_PIN.pin, GPIO_PIN_RESET );
                 if ( leds_ptr != nullptr )
                         leds_ptr->force_red_led();
         };
@@ -418,7 +478,7 @@ em::result setup_board()
         return plt::setup_clk();
 }
 
-core::drivers setup_core_drivers()
+core::drivers setup_core_drivers( const cfg::map& m )
 {
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != em::SUCCESS )
@@ -429,23 +489,30 @@ core::drivers setup_core_drivers()
                 fw::stop_exec();
 
         __HAL_RCC_GPIOA_CLK_ENABLE();
-        if ( plt::setup_gpio( drv::pin_cfg{
-                 .pin  = GPIO_PIN_4,
-                 .port = GPIOA,
-                 .pull = GPIO_PULLDOWN,
-             } ) != em::SUCCESS )
-                fw::stop_exec();
+        plt::setup_gpio( HBRDIGE_VREF_PIN );
 
         drv::hbridge* hb = hbridge_setup();
 
-        auto*      adc_pooler = adc_pooler_setup();
-        drv::leds* leds       = leds_setup();
+        cfg::encoder_mode emod = m.get_val< cfg::ENCODER_MODE >();
+
+        auto*           adc_pooler = adc_pooler_setup( emod == cfg::encoder_mode::ENC_MODE_ANALOG );
+        drv::pos_iface* pos        = nullptr;
+        switch ( emod ) {
+        case cfg::encoder_mode::ENC_MODE_ANALOG:
+                pos = adc_pooler == nullptr ? nullptr : &ADC_POSITION;
+                break;
+        case cfg::encoder_mode::ENC_MODE_QUAD:
+                pos = quad_encoder_setup( 3840 );  // XXX make pos from config
+                break;
+        }
+
+        drv::leds* leds = leds_setup();
         if ( hb != nullptr )
                 install_stop_callback( *hb, leds );
 
         return core::drivers{
             .clock       = &CLOCK,
-            .position    = adc_pooler == nullptr ? nullptr : &ADC_POSITION,
+            .position    = pos,
             .current     = adc_pooler == nullptr ? nullptr : &ADC_CURRENT,
             .vcc         = adc_pooler == nullptr ? nullptr : &ADC_VCC,
             .temperature = &DTS_DRV,

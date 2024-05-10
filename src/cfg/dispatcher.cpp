@@ -21,6 +21,7 @@ void dispatcher::apply( const key& key )
         case MODEL:
         case ID:
         case GROUP_ID:
+        case ENCODER_MODE:
                 break;
         case POSITION_CONV_LOW_ANGLE:
         case POSITION_CONV_HIGH_ANGLE:

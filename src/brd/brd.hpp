@@ -19,7 +19,7 @@ cfg::map get_default_config();
 em::result setup_board();
 
 /// Initialize all core drivers for the servo
-core::drivers setup_core_drivers();
+core::drivers setup_core_drivers( const cfg::map& );
 
 /// Initialize debug interface
 drv::com_iface* setup_debug_comms();
