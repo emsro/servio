@@ -1,10 +1,12 @@
 <map id="src/cfg/storage.hpp" name="src/cfg/storage.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="606,5,753,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="401,5,547,32"/>
 <area shape="rect" id="node2" href="$map_8hpp.html" title=" " alt="" coords="423,87,525,114"/>
-<area shape="rect" id="node5" title=" " alt="" coords="708,169,885,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="717,80,895,121"/>
-<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="5,177,121,203"/>
-<area shape="rect" id="node4" href="$key_8hpp.html" title=" " alt="" coords="145,177,240,203"/>
-<area shape="rect" id="node6" title=" " alt="" coords="265,169,462,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="486,169,683,211"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,169,183,211"/>
+<area shape="rect" id="node10" title=" " alt="" coords="549,80,727,121"/>
+<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="207,177,323,203"/>
+<area shape="rect" id="node4" href="$key_8hpp.html" title=" " alt="" coords="347,177,441,203"/>
+<area shape="rect" id="node6" title=" " alt="" coords="465,169,643,211"/>
+<area shape="rect" id="node7" title=" " alt="" coords="667,169,865,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="889,169,1086,211"/>
+<area shape="rect" id="node9" title=" " alt="" coords="1111,177,1245,203"/>
 </map>

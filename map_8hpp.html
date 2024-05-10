@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('map_8hpp.html',''); initResizable(); }
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">map.hpp File Reference</div>  </div>
@@ -95,14 +96,16 @@ $(document).ready(function(){initNavTree('map_8hpp.html',''); initResizable(); }
 <div class="textblock"><code>#include &quot;<a class="el" href="base_2base_8hpp_source.html">base/base.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="key_8hpp_source.html">cfg/key.hpp</a>&quot;</code><br />
 <code>#include &lt;emlabcpp/experimental/string_buffer.h&gt;</code><br />
+<code>#include &lt;emlabcpp/experimental/testing/convert.h&gt;</code><br />
 <code>#include &lt;emlabcpp/protocol/register_handler.h&gt;</code><br />
 <code>#include &lt;emlabcpp/protocol/register_map.h&gt;</code><br />
+<code>#include &lt;magic_enum.hpp&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for map.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="map_8hpp__incl.svg" width="952" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="map_8hpp__incl.svg" width="1314" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -112,12 +115,18 @@ $(document).ready(function(){initNavTree('map_8hpp.html',''); initResizable(); }
 Classes</h2></td></tr>
 <tr class="memitem:structservio_1_1cfg_1_1keyval"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval">servio::cfg::keyval</a></td></tr>
 <tr class="separator:structservio_1_1cfg_1_1keyval"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structemlabcpp_1_1testing_1_1value__type__converter_3_01servio_1_1cfg_1_1encoder__mode_01_4.html">emlabcpp::testing::value_type_converter&lt; servio::cfg::encoder_mode &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceservio"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html">servio</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceservio_1_1cfg"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html">servio::cfg</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceemlabcpp"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceemlabcpp.html">emlabcpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceemlabcpp_1_1testing"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceemlabcpp_1_1testing.html">emlabcpp::testing</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -127,12 +136,22 @@ Typedefs</h2></td></tr>
 <tr class="separator:a32b8c5eabc601575ebc6703e48d5a32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1b0cd7595545bccd65c21b9925a525d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d">servio::cfg::model_name</a> = em::string_buffer&lt; 32 &gt;</td></tr>
 <tr class="separator:ac1b0cd7595545bccd65c21b9925a525d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa883d385db327221e62a7dcd17e4ff23"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#aa883d385db327221e62a7dcd17e4ff23">servio::cfg::map</a> = em::protocol::register_map&lt; std::endian::little, reg&lt; MODEL, model_name &gt;, reg&lt; ID, uint32_t &gt;, reg&lt; GROUP_ID, uint32_t &gt;, reg&lt; POSITION_CONV_LOW_VALUE, uint32_t &gt;, reg&lt; POSITION_CONV_LOW_ANGLE, float &gt;, reg&lt; POSITION_CONV_HIGH_VALUE, uint32_t &gt;, reg&lt; POSITION_CONV_HIGH_ANGLE, float &gt;, reg&lt; CURRENT_CONV_SCALE, float &gt;, reg&lt; CURRENT_CONV_OFFSET, float &gt;, reg&lt; TEMP_CONV_SCALE, float &gt;, reg&lt; TEMP_CONV_OFFSET, float &gt;, reg&lt; VOLTAGE_CONV_SCALE, float &gt;, reg&lt; INVERT_HBRIDGE, bool &gt;, reg&lt; CURRENT_LOOP_P, float &gt;, reg&lt; CURRENT_LOOP_I, float &gt;, reg&lt; CURRENT_LOOP_D, float &gt;, reg&lt; CURRENT_LIM_MIN, float &gt;, reg&lt; CURRENT_LIM_MAX, float &gt;, reg&lt; VELOCITY_LOOP_P, float &gt;, reg&lt; VELOCITY_LOOP_I, float &gt;, reg&lt; VELOCITY_LOOP_D, float &gt;, reg&lt; VELOCITY_LIM_MIN, float &gt;, reg&lt; VELOCITY_LIM_MAX, float &gt;, reg&lt; VELOCITY_TO_CURR_LIM_SCALE, float &gt;, reg&lt; POSITION_LOOP_P, float &gt;, reg&lt; POSITION_LOOP_I, float &gt;, reg&lt; POSITION_LOOP_D, float &gt;, reg&lt; POSITION_LIM_MIN, float &gt;, reg&lt; POSITION_LIM_MAX, float &gt;, reg&lt; POSITION_TO_VEL_LIM_SCALE, float &gt;, reg&lt; STATIC_FRICTION_SCALE, float &gt;, reg&lt; STATIC_FRICTION_DECAY, float &gt;, reg&lt; MINIMUM_VOLTAGE, float &gt;, reg&lt; MAXIMUM_TEMPERATURE, float &gt;, reg&lt; MOVING_DETECTION_STEP, float &gt; &gt;</td></tr>
-<tr class="separator:aa883d385db327221e62a7dcd17e4ff23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63b06a9719242d158c4e03cb439a54a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#aa63b06a9719242d158c4e03cb439a54a">servio::cfg::map</a> = em::protocol::register_map&lt; std::endian::little, reg&lt; MODEL, model_name &gt;, reg&lt; ID, uint32_t &gt;, reg&lt; GROUP_ID, uint32_t &gt;, reg&lt; ENCODER_MODE, encoder_mode &gt;, reg&lt; POSITION_CONV_LOW_VALUE, uint32_t &gt;, reg&lt; POSITION_CONV_LOW_ANGLE, float &gt;, reg&lt; POSITION_CONV_HIGH_VALUE, uint32_t &gt;, reg&lt; POSITION_CONV_HIGH_ANGLE, float &gt;, reg&lt; CURRENT_CONV_SCALE, float &gt;, reg&lt; CURRENT_CONV_OFFSET, float &gt;, reg&lt; TEMP_CONV_SCALE, float &gt;, reg&lt; TEMP_CONV_OFFSET, float &gt;, reg&lt; VOLTAGE_CONV_SCALE, float &gt;, reg&lt; INVERT_HBRIDGE, bool &gt;, reg&lt; CURRENT_LOOP_P, float &gt;, reg&lt; CURRENT_LOOP_I, float &gt;, reg&lt; CURRENT_LOOP_D, float &gt;, reg&lt; CURRENT_LIM_MIN, float &gt;, reg&lt; CURRENT_LIM_MAX, float &gt;, reg&lt; VELOCITY_LOOP_P, float &gt;, reg&lt; VELOCITY_LOOP_I, float &gt;, reg&lt; VELOCITY_LOOP_D, float &gt;, reg&lt; VELOCITY_LIM_MIN, float &gt;, reg&lt; VELOCITY_LIM_MAX, float &gt;, reg&lt; VELOCITY_TO_CURR_LIM_SCALE, float &gt;, reg&lt; POSITION_LOOP_P, float &gt;, reg&lt; POSITION_LOOP_I, float &gt;, reg&lt; POSITION_LOOP_D, float &gt;, reg&lt; POSITION_LIM_MIN, float &gt;, reg&lt; POSITION_LIM_MAX, float &gt;, reg&lt; POSITION_TO_VEL_LIM_SCALE, float &gt;, reg&lt; STATIC_FRICTION_SCALE, float &gt;, reg&lt; STATIC_FRICTION_DECAY, float &gt;, reg&lt; MINIMUM_VOLTAGE, float &gt;, reg&lt; MAXIMUM_TEMPERATURE, float &gt;, reg&lt; MOVING_DETECTION_STEP, float &gt; &gt;</td></tr>
+<tr class="separator:aa63b06a9719242d158c4e03cb439a54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8aede70f47a2a0b2a4eb2f0f9056d142"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a8aede70f47a2a0b2a4eb2f0f9056d142">servio::cfg::value_message</a> = typename map::message_type</td></tr>
 <tr class="separator:a8aede70f47a2a0b2a4eb2f0f9056d142"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bf5458e7282e2f6af3fc1cfc875b012"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a7bf5458e7282e2f6af3fc1cfc875b012">servio::cfg::value_variant</a> = std::variant&lt; model_name, uint32_t, float, bool &gt;</td></tr>
-<tr class="separator:a7bf5458e7282e2f6af3fc1cfc875b012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8bcf8607b8a636737d60192fbfa5da4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ab8bcf8607b8a636737d60192fbfa5da4">servio::cfg::value_variant</a> = std::variant&lt; model_name, uint32_t, float, bool, encoder_mode &gt;</td></tr>
+<tr class="separator:ab8bcf8607b8a636737d60192fbfa5da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ac95eb32082e3a9fbeb45c101ed4e6451"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">servio::cfg::encoder_mode</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451ab39c3bb4516942032a2eef39745dd131">servio::cfg::ENC_MODE_ANALOG</a> = 0
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451af5c4d91cc253d4fe16fdc0d444063225">servio::cfg::ENC_MODE_QUAD</a> = 1
+<br />
+ }</td></tr>
+<tr class="separator:ac95eb32082e3a9fbeb45c101ed4e6451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -176,7 +195,7 @@ msg</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1e869ebbc6cce176ee0dbb76743ac339.html">cfg</a></li><li class="navelem"><a class="el" href="map_8hpp.html">map.hpp</a></li>
-    <li class="footer">Generated on Mon May 6 2024 20:55:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri May 10 2024 16:37:14 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

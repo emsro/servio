@@ -11,5 +11,7 @@ var adc__pooler__def_8hpp =
       [ "VCC_CHANNEL", "adc__pooler__def_8hpp.html#abbf0ab1dcfca79ccba89674e773fa2afa5d4ed1e160240300ede5185d38cf2723", null ],
       [ "TEMP_CHANNEL", "adc__pooler__def_8hpp.html#abbf0ab1dcfca79ccba89674e773fa2afa7088c90744202107459b09dcf730f610", null ]
     ] ],
-    [ "ADC_SEQUENCE", "adc__pooler__def_8hpp.html#a73c9d35c07a012f60e2c706c77e82f1c", null ]
+    [ "ADC_CURR_POS_VCC_SEQUENCE", "adc__pooler__def_8hpp.html#a62753f44eb44e93d933fb1916219f8de", null ],
+    [ "ADC_CURR_VCC_SEQUENCE", "adc__pooler__def_8hpp.html#a18254cc3788fca41ec17fbbcc5ed7e79", null ],
+    [ "ADC_FULL_SEQUENCE", "adc__pooler__def_8hpp.html#a50911cebc046f58f90aa62585a1abefc", null ]
 ];

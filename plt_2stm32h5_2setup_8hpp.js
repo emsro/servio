@@ -25,8 +25,10 @@ var plt_2stm32h5_2setup_8hpp =
     [ "hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", [
       [ "irq", "namespaceservio_1_1plt.html#a6a38c6f90f09b7f4dd592ba5327a5a85", null ],
       [ "irq_priority", "namespaceservio_1_1plt.html#ab213bda5719bf57b4e2404e4c53e0c48", null ],
-      [ "mc1", "namespaceservio_1_1plt.html#a10096e8dc0a12328bcda1c7ede9833f2", null ],
-      [ "mc2", "namespaceservio_1_1plt.html#a110537a82897a1ce2b2e04fdf0633152", null ],
+      [ "mc1_ch", "namespaceservio_1_1plt.html#a4a2a54f770976186280c10166402518c", null ],
+      [ "mc1_pin", "namespaceservio_1_1plt.html#abf83c9b9ef5f51ca968ce2bfd819b19a", null ],
+      [ "mc2_ch", "namespaceservio_1_1plt.html#af748fc48605aa9327b8a17cff5681907", null ],
+      [ "mc2_pin", "namespaceservio_1_1plt.html#a343a2e6d97e198ad0c85add7bb96ec86", null ],
       [ "period", "namespaceservio_1_1plt.html#a9b84499420f471615a09ab94300d09e4", null ],
       [ "timer_instance", "namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673", null ]
     ] ],
@@ -35,9 +37,11 @@ var plt_2stm32h5_2setup_8hpp =
       [ "red", "namespaceservio_1_1plt.html#a3f041bb8297fff525ea8012ba66633fe", null ]
     ] ],
     [ "leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", [
-      [ "green", "namespaceservio_1_1plt.html#a75103b3e408610a74d1c0299c6f17482", null ],
+      [ "green_ch", "namespaceservio_1_1plt.html#ac8dc88b10301f0823d983ad1a7f4e3e7", null ],
+      [ "green_pin", "namespaceservio_1_1plt.html#adad93e2611f6799cedf41c16211afb44", null ],
       [ "timer_instance", "namespaceservio_1_1plt.html#ac320b1f2637e8716b47834cec0877368", null ],
-      [ "yellow", "namespaceservio_1_1plt.html#a7cc4c6a6554cf5bc2eee93407aa1f371", null ]
+      [ "yellow_ch", "namespaceservio_1_1plt.html#a37d79e24faa708acaded518bc3b20f90", null ],
+      [ "yellow_pin", "namespaceservio_1_1plt.html#a5b199dce656d176cdce5d0a2e9daf13d", null ]
     ] ],
     [ "temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", [
       [ "cal1", "namespaceservio_1_1plt.html#a59425b83be9afe0d27b552f409f4c7cf", null ],
@@ -45,15 +49,15 @@ var plt_2stm32h5_2setup_8hpp =
     ] ],
     [ "get_default_config", "plt_2stm32h5_2setup_8hpp.html#a54207fdd13b8536cfecc8079e969056b", null ],
     [ "setup_adc", "plt_2stm32h5_2setup_8hpp.html#a61d6b0c2150e342de64df4363ad4e8bc", null ],
-    [ "setup_adc_channel", "plt_2stm32h5_2setup_8hpp.html#a04f200642c04256949e23ea736bbd57e", null ],
+    [ "setup_adc_channel", "plt_2stm32h5_2setup_8hpp.html#a70eb8d81c3d462dbfd075b29d8c8bef8", null ],
     [ "setup_adc_timer", "plt_2stm32h5_2setup_8hpp.html#ab59156a4d6fbd15217a26dc5ebed8b64", null ],
     [ "setup_clk", "plt_2stm32h5_2setup_8hpp.html#a97b99f12fdb9bdec7f51c3a2fa1a63b8", null ],
     [ "setup_clock_timer", "plt_2stm32h5_2setup_8hpp.html#a71520584fd9671ce414b8b5b8c653926", null ],
     [ "setup_dac", "plt_2stm32h5_2setup_8hpp.html#ab45be70ff68ca1e5e7f42d1fd2dea60a", null ],
     [ "setup_dts", "plt_2stm32h5_2setup_8hpp.html#a60d4cc26aa950bc45225db9bae6dfa05", null ],
-    [ "setup_encoder_timer", "plt_2stm32h5_2setup_8hpp.html#a07c1896432fd80d18bc9f155ba369966", null ],
-    [ "setup_gpio", "plt_2stm32h5_2setup_8hpp.html#a5d1ffe876c5d8201cbbb029bb4e7e988", null ],
+    [ "setup_encoder_timer", "plt_2stm32h5_2setup_8hpp.html#ab37835d18590cef3c440c59263d761d2", null ],
+    [ "setup_gpio", "plt_2stm32h5_2setup_8hpp.html#abd588eda5c3b709d51591980b12b1848", null ],
     [ "setup_hbridge_timers", "plt_2stm32h5_2setup_8hpp.html#a917cc285404ba1c9a62080f12567ad7c", null ],
-    [ "setup_leds_channel", "plt_2stm32h5_2setup_8hpp.html#a25cf0c78aaa0a1eed2dda1c91f70fc0a", null ],
+    [ "setup_leds_channel", "plt_2stm32h5_2setup_8hpp.html#a200428b196e587e16f5ffd08676efc76", null ],
     [ "setup_uart", "plt_2stm32h5_2setup_8hpp.html#a7b7c8043898e10b87fa53fd5bb021d96", null ]
 ];

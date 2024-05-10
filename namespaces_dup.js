@@ -1,5 +1,6 @@
 var namespaces_dup =
 [
+    [ "emlabcpp", "namespaceemlabcpp.html", "namespaceemlabcpp" ],
     [ "google", "namespacegoogle.html", "namespacegoogle" ],
     [ "servio", "namespaceservio.html", "namespaceservio" ],
     [ "std", null, [

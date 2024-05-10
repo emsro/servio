@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['yellow_1074',['yellow',['../namespaceservio.html#a095d295856b8d24f9619da9d3901fcae',1,'servio::leds_vals::yellow()'],['../namespaceservio_1_1brd.html#ada361fdd7636868099bdd3c5f97a3b70',1,'servio::brd::leds_timer_cfg::yellow()'],['../namespaceservio_1_1plt.html#a7cc4c6a6554cf5bc2eee93407aa1f371',1,'servio::plt::leds_timer_cfg::yellow()']]]
+  ['yellow_1098',['yellow',['../namespaceservio.html#a095d295856b8d24f9619da9d3901fcae',1,'servio::leds_vals::yellow()'],['../namespaceservio_1_1brd.html#ad4c13670ec4d8a72245b9dd0c5670465',1,'servio::brd::leds_timer_cfg::yellow()']]],
+  ['yellow_5fch_1099',['yellow_ch',['../namespaceservio_1_1plt.html#a37d79e24faa708acaded518bc3b20f90',1,'servio::plt::leds_timer_cfg']]],
+  ['yellow_5fchan_1100',['yellow_chan',['../namespaceservio_1_1brd.html#ac74b07889fd283c2cc886191b88fe8f6',1,'servio::brd::leds_timer_cfg']]],
+  ['yellow_5fpin_1101',['yellow_pin',['../namespaceservio_1_1plt.html#a5b199dce656d176cdce5d0a2e9daf13d',1,'servio::plt::leds_timer_cfg']]]
 ];

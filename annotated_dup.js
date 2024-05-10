@@ -1,5 +1,10 @@
 var annotated_dup =
 [
+    [ "emlabcpp", "namespaceemlabcpp.html", [
+      [ "testing", "namespaceemlabcpp_1_1testing.html", [
+        [ "value_type_converter< servio::cfg::encoder_mode >", "structemlabcpp_1_1testing_1_1value__type__converter_3_01servio_1_1cfg_1_1encoder__mode_01_4.html", null ]
+      ] ]
+    ] ],
     [ "servio", "namespaceservio.html", [
       [ "bb", "namespaceservio_1_1bb.html", [
         [ "bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", "structservio_1_1bb_1_1bb__test__case" ]
@@ -68,8 +73,8 @@ var annotated_dup =
         [ "adc_pooler_temperature", "structservio_1_1drv_1_1adc__pooler__temperature.html", "structservio_1_1drv_1_1adc__pooler__temperature" ],
         [ "adc_pooler_position", "structservio_1_1drv_1_1adc__pooler__position.html", "structservio_1_1drv_1_1adc__pooler__position" ],
         [ "adc_pooler_current", "structservio_1_1drv_1_1adc__pooler__current.html", "structservio_1_1drv_1_1adc__pooler__current" ],
-        [ "adc_detailed_cb", "structservio_1_1drv_1_1adc__detailed__cb.html", "structservio_1_1drv_1_1adc__detailed__cb" ],
-        [ "empty_adc_detailed_cb", "structservio_1_1drv_1_1empty__adc__detailed__cb.html", "structservio_1_1drv_1_1empty__adc__detailed__cb" ],
+        [ "detailed_cb", "structservio_1_1drv_1_1detailed__cb.html", "structservio_1_1drv_1_1detailed__cb" ],
+        [ "empty_detailed_cb", "structservio_1_1drv_1_1empty__detailed__cb.html", "structservio_1_1drv_1_1empty__detailed__cb" ],
         [ "value_cb", "structservio_1_1drv_1_1value__cb.html", "structservio_1_1drv_1_1value__cb" ],
         [ "empty_value_cb", "structservio_1_1drv_1_1empty__value__cb.html", "structservio_1_1drv_1_1empty__value__cb" ],
         [ "period_cb", "structservio_1_1drv_1_1period__cb.html", "structservio_1_1drv_1_1period__cb" ],
@@ -77,23 +82,23 @@ var annotated_dup =
         [ "clock", "classservio_1_1drv_1_1clock.html", "classservio_1_1drv_1_1clock" ],
         [ "cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", "classservio_1_1drv_1_1cobs__uart" ],
         [ "pin_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg", "namespaceservio_1_1drv_structservio_1_1drv_1_1pin__cfg_dup" ],
-        [ "pinch_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg", "namespaceservio_1_1drv_structservio_1_1drv_1_1pinch__cfg_dup" ],
         [ "dts_temp", "classservio_1_1drv_1_1dts__temp.html", "classservio_1_1drv_1_1dts__temp" ],
         [ "hbridge", "classservio_1_1drv_1_1hbridge.html", "classservio_1_1drv_1_1hbridge" ],
-        [ "detailed_cb_iface", "classservio_1_1drv_1_1detailed__cb__iface.html", "classservio_1_1drv_1_1detailed__cb__iface" ],
-        [ "value_cb_iface", "classservio_1_1drv_1_1value__cb__iface.html", "classservio_1_1drv_1_1value__cb__iface" ],
-        [ "period_cb_iface", "classservio_1_1drv_1_1period__cb__iface.html", "classservio_1_1drv_1_1period__cb__iface" ],
+        [ "detailed_cb_iface", "structservio_1_1drv_1_1detailed__cb__iface.html", "structservio_1_1drv_1_1detailed__cb__iface" ],
+        [ "value_cb_iface", "structservio_1_1drv_1_1value__cb__iface.html", "structservio_1_1drv_1_1value__cb__iface" ],
+        [ "period_cb_iface", "structservio_1_1drv_1_1period__cb__iface.html", "structservio_1_1drv_1_1period__cb__iface" ],
         [ "com_res", "structservio_1_1drv_1_1com__res.html", "structservio_1_1drv_1_1com__res" ],
         [ "com_iface", "structservio_1_1drv_1_1com__iface.html", "structservio_1_1drv_1_1com__iface" ],
         [ "leds_iface", "structservio_1_1drv_1_1leds__iface.html", "structservio_1_1drv_1_1leds__iface" ],
         [ "clk_iface", "structservio_1_1drv_1_1clk__iface.html", "structservio_1_1drv_1_1clk__iface" ],
-        [ "period_iface", "classservio_1_1drv_1_1period__iface.html", "classservio_1_1drv_1_1period__iface" ],
-        [ "pwm_motor_iface", "classservio_1_1drv_1_1pwm__motor__iface.html", "classservio_1_1drv_1_1pwm__motor__iface" ],
-        [ "pos_iface", "classservio_1_1drv_1_1pos__iface.html", "classservio_1_1drv_1_1pos__iface" ],
-        [ "vcc_iface", "classservio_1_1drv_1_1vcc__iface.html", "classservio_1_1drv_1_1vcc__iface" ],
-        [ "temp_iface", "classservio_1_1drv_1_1temp__iface.html", "classservio_1_1drv_1_1temp__iface" ],
-        [ "curr_iface", "classservio_1_1drv_1_1curr__iface.html", "classservio_1_1drv_1_1curr__iface" ],
-        [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ]
+        [ "period_iface", "structservio_1_1drv_1_1period__iface.html", "structservio_1_1drv_1_1period__iface" ],
+        [ "pwm_motor_iface", "structservio_1_1drv_1_1pwm__motor__iface.html", "structservio_1_1drv_1_1pwm__motor__iface" ],
+        [ "pos_iface", "structservio_1_1drv_1_1pos__iface.html", "structservio_1_1drv_1_1pos__iface" ],
+        [ "vcc_iface", "structservio_1_1drv_1_1vcc__iface.html", "structservio_1_1drv_1_1vcc__iface" ],
+        [ "temp_iface", "structservio_1_1drv_1_1temp__iface.html", "structservio_1_1drv_1_1temp__iface" ],
+        [ "curr_iface", "structservio_1_1drv_1_1curr__iface.html", "structservio_1_1drv_1_1curr__iface" ],
+        [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ],
+        [ "quad_encoder", "classservio_1_1drv_1_1quad__encoder.html", "classservio_1_1drv_1_1quad__encoder" ]
       ] ],
       [ "ftest", "namespaceservio_1_1ftest.html", [
         [ "bench", "namespaceservio_1_1ftest_1_1bench.html", [

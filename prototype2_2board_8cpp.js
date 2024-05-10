@@ -2,7 +2,7 @@ var prototype2_2board_8cpp =
 [
     [ "adc_set", "structservio_1_1brd_1_1adc__set.html", "structservio_1_1brd_1_1adc__set" ],
     [ "ADC1_2_IRQHandler", "prototype2_2board_8cpp.html#aff4af6b741ab43c7784e08e0e2e50586", null ],
-    [ "adc_pooler_setup", "prototype2_2board_8cpp.html#aff6bf773b950ff1a6a26be02ee4da8a5", null ],
+    [ "adc_pooler_setup", "prototype2_2board_8cpp.html#a891a00dcf6324e3e1a665b70cf22f4d6", null ],
     [ "comms_setup", "prototype2_2board_8cpp.html#aee366d78fb4dd7ae0e84ee4a28665113", null ],
     [ "DMA1_Channel1_IRQHandler", "prototype2_2board_8cpp.html#abd49de55f82b1a0be3edaaf34dbe4b14", null ],
     [ "DMA1_Channel4_IRQHandler", "prototype2_2board_8cpp.html#a9cdc63af1166aec768f87546a48bec8d", null ],
@@ -16,13 +16,12 @@ var prototype2_2board_8cpp =
     [ "install_stop_callback", "prototype2_2board_8cpp.html#a0f720ee34102e93c489fc104ab51e4ed", null ],
     [ "leds_setup", "prototype2_2board_8cpp.html#a8018a4a9a9bc9b1d4af53c14d646d4c8", null ],
     [ "setup_board", "prototype2_2board_8cpp.html#acf0eac3166e968f5cefe71de1f5d5ca8", null ],
-    [ "setup_core_drivers", "prototype2_2board_8cpp.html#a58f703e939140ddd318ba1e8202e6153", null ],
+    [ "setup_core_drivers", "prototype2_2board_8cpp.html#a63b31b841162a6c12f9ad008796f4b26", null ],
     [ "setup_debug_comms", "prototype2_2board_8cpp.html#a3a32ee93be6ec4e7cdc01ac78546f79f", null ],
     [ "start_callback", "prototype2_2board_8cpp.html#aac2ab253dd62c8d22e7504bd106c6283", null ],
     [ "TIM1_UP_TIM16_IRQHandler", "prototype2_2board_8cpp.html#a9895c719dd7dc3d711d91dc0523f0696", null ],
     [ "USART1_IRQHandler", "prototype2_2board_8cpp.html#a27fb9800d727337121da9525aca0b557", null ],
     [ "USART2_IRQHandler", "prototype2_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba", null ],
     [ "ADC_TEMPERATURE", "prototype2_2board_8cpp.html#ae55e8a68c2ed7497673cd487d93c0ef4", null ],
-    [ "ADC_TIM_HANDLE", "prototype2_2board_8cpp.html#a3f1bce49bf6d1c2b0ab6be8bfc10219b", null ],
-    [ "TIM3_HANDLE", "prototype2_2board_8cpp.html#ad3461a2b66a48bb2ff01731378427b6e", null ]
+    [ "ADC_TIM_HANDLE", "prototype2_2board_8cpp.html#a3f1bce49bf6d1c2b0ab6be8bfc10219b", null ]
 ];

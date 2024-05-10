@@ -113,8 +113,8 @@ $(document).ready(function(){initNavTree('classservio_1_1drv_1_1leds.html',''); 
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aeb04b29d89a7674ddd4396490f1d692c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1leds.html#aeb04b29d89a7674ddd4396490f1d692c">leds</a> (TIM_HandleTypeDef *tim)</td></tr>
 <tr class="separator:aeb04b29d89a7674ddd4396490f1d692c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb58ce267a2894b14e05f5b18998f86b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1leds.html">leds</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1leds.html#acb58ce267a2894b14e05f5b18998f86b">setup</a> (<a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> red, <a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> blue, <a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg">pinch_cfg</a> yellow, <a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg">pinch_cfg</a> green)</td></tr>
-<tr class="separator:acb58ce267a2894b14e05f5b18998f86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b9aae775d0f6321cb6e00ef2acd5195"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1leds.html">leds</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1leds.html#a1b9aae775d0f6321cb6e00ef2acd5195">setup</a> (<a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> red, <a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> blue, uint32_t y_chan, uint32_t g_chan)</td></tr>
+<tr class="separator:a1b9aae775d0f6321cb6e00ef2acd5195"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af876d35e30904d36099d8a2fc9c897c3"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1leds.html#af876d35e30904d36099d8a2fc9c897c3">start</a> ()</td></tr>
 <tr class="separator:af876d35e30904d36099d8a2fc9c897c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15878bd23155000b0661fe8e97e86ee4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1leds.html#a15878bd23155000b0661fe8e97e86ee4">force_red_led</a> () override</td></tr>
@@ -182,8 +182,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acb58ce267a2894b14e05f5b18998f86b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb58ce267a2894b14e05f5b18998f86b">&#9670;&nbsp;</a></span>setup()</h2>
+<a id="a1b9aae775d0f6321cb6e00ef2acd5195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b9aae775d0f6321cb6e00ef2acd5195">&#9670;&nbsp;</a></span>setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,14 +206,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg">pinch_cfg</a>&#160;</td>
-          <td class="paramname"><em>yellow</em>, </td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>y_chan</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg">pinch_cfg</a>&#160;</td>
-          <td class="paramname"><em>green</em>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>g_chan</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -245,8 +245,6 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ac5f0039f77b404546b45518637a509dc">servio::drv::pinch_cfg::channel</a>.</p>
-
 </div>
 </div>
 <a id="a54b9111219f37c0ab5acf3e331c39c87"></a>
@@ -275,7 +273,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="structservio_1_1drv_1_1leds__iface.html#ad609577deaf0078b5ad89511e337575f">servio::drv::leds_iface</a>.</p>
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#ac5f0039f77b404546b45518637a509dc">servio::drv::pinch_cfg::channel</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, and <a class="el" href="namespaceservio_1_1drv.html#ae43b31297ea3dfab8312221cfd3c348d">servio::drv::pin_cfg::port</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, and <a class="el" href="namespaceservio_1_1drv.html#ae43b31297ea3dfab8312221cfd3c348d">servio::drv::pin_cfg::port</a>.</p>
 
 </div>
 </div>
@@ -289,7 +287,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="classservio_1_1drv_1_1leds.html">leds</a></li>
-    <li class="footer">Generated on Mon May 6 2024 20:55:19 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri May 10 2024 16:37:14 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

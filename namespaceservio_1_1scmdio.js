@@ -16,6 +16,7 @@ var namespaceservio_1_1scmdio =
     [ "cfg_commit_cmd", "namespaceservio_1_1scmdio.html#af30474b6ff2cbc6ed555489ffde92ab6", null ],
     [ "cfg_def", "namespaceservio_1_1scmdio.html#a47742063f815da2978a95cd745152a30", null ],
     [ "cfg_get_cmd", "namespaceservio_1_1scmdio.html#a0316dca4208257cd70c10ba3808b6238", null ],
+    [ "cfg_load_cmd", "namespaceservio_1_1scmdio.html#a375cf8bd82ad14c26dd71868ce7dee12", null ],
     [ "cfg_query_cmd", "namespaceservio_1_1scmdio.html#a924cc37a67bd5a6d14afd76aea80ff4b", null ],
     [ "cfg_set_cmd", "namespaceservio_1_1scmdio.html#a7cd98f3bc5c4f656559e6067f3b079e1", null ],
     [ "coms_opt", "namespaceservio_1_1scmdio.html#a65b2b391dc07c1b8476d7f72e781a825", null ],

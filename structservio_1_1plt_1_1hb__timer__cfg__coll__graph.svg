@@ -21,9 +21,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="7.5,-78.5 7.5,-97.5 127.5,-97.5 127.5,-78.5 7.5,-78.5"/>
-<text text-anchor="middle" x="67.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::pinch_cfg</text>
+<g id="a_node2"><a xlink:href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="13,-78.5 13,-97.5 122,-97.5 122,-78.5 13,-78.5"/>
+<text text-anchor="middle" x="67.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::pin_cfg</text>
 </a>
 </g>
 </g>
@@ -32,8 +32,8 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M67.5,-68.22C67.5,-52.7 67.5,-31.36 67.5,-19.62"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="64,-68.28 67.5,-78.28 71,-68.28 64,-68.28"/>
-<text text-anchor="middle" x="80" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00"> mc1</text>
-<text text-anchor="middle" x="80" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">mc2</text>
+<text text-anchor="middle" x="90" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00"> mc1_pin</text>
+<text text-anchor="middle" x="90" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">mc2_pin</text>
 </g>
 </g>
 </svg>

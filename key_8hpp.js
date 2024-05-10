@@ -4,6 +4,7 @@ var key_8hpp =
       [ "MODEL", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3add6c0ae6916d0b990a601cab95903e66", null ],
       [ "ID", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218", null ],
       [ "GROUP_ID", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3ab0267128c648c65666ba26bdeb685577", null ],
+      [ "ENCODER_MODE", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a5bcc5eca5c52167826fd65a5b5177e18", null ],
       [ "POSITION_CONV_LOW_VALUE", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3abff3384d9bd6bd5cfc1de004c7243356", null ],
       [ "POSITION_CONV_LOW_ANGLE", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a2fd53be6aabe17ef8352778e7ec85d78", null ],
       [ "POSITION_CONV_HIGH_VALUE", "key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a86faeb8efe17a26899e0709bbd9d151c", null ],

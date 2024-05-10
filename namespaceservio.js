@@ -24,8 +24,10 @@ var namespaceservio =
     [ "sim", "namespaceservio_1_1sim.html", "namespaceservio_1_1sim" ],
     [ "sntr", "namespaceservio_1_1sntr.html", "namespaceservio_1_1sntr" ],
     [ "tests", "namespaceservio_1_1tests.html", [
+      [ "get_enum_ids", "namespaceservio_1_1tests.html#a84a8d9b8ff1d17f892b34e726dc8204f", null ],
       [ "TEST", "namespaceservio_1_1tests.html#ab13f735a06bbd448c82d5b45d20b76c3", null ],
       [ "TEST", "namespaceservio_1_1tests.html#ac99e95fa19ba420426c1d8c070c4cb6b", null ],
+      [ "TEST", "namespaceservio_1_1tests.html#ad23443d3e38a15ffe9889c74d4950768", null ],
       [ "TEST", "namespaceservio_1_1tests.html#a0469f257c284b92ef2aa143ccfdbe6f3", null ]
     ] ],
     [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],

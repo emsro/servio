@@ -24,24 +24,28 @@ var brd_2prototype2_2setup_8hpp =
     [ "hb_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1hb__timer__cfg", [
       [ "irq", "namespaceservio_1_1brd.html#a1e541240b58bf9a3b0b231322e97e8d8", null ],
       [ "irq_priority", "namespaceservio_1_1brd.html#a5cc24e66248456657c38efaaa43e8cda", null ],
-      [ "mc1", "namespaceservio_1_1brd.html#a0683d1c7d1238fd05bf95bd3e21b161a", null ],
-      [ "mc2", "namespaceservio_1_1brd.html#a5fba70e6533e2220ed9da0befd0ef660", null ],
+      [ "mc1_chan", "namespaceservio_1_1brd.html#a9b7f46163664e986fe90a80e57bfc7d0", null ],
+      [ "mc1_pin", "namespaceservio_1_1brd.html#ac52056d808f705327009877afa229ff3", null ],
+      [ "mc2_chan", "namespaceservio_1_1brd.html#a5a30b881b473de9bca2ce17b84cd70b1", null ],
+      [ "mc2_pin", "namespaceservio_1_1brd.html#a59e42999cf1056d6bb4ee158234f9d59", null ],
       [ "period", "namespaceservio_1_1brd.html#ad41a6a8b9a50b5dae419f1df748163e7", null ],
       [ "timer_instance", "namespaceservio_1_1brd.html#ae97e490293c865d59424bd7f41b75628", null ]
     ] ],
     [ "leds_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1leds__timer__cfg", [
-      [ "green", "namespaceservio_1_1brd.html#a733eb76619e84fa82aa1cb6a6fa3dfcd", null ],
+      [ "green", "namespaceservio_1_1brd.html#a198d4cd752228a76c28ed4aa29f1f6e4", null ],
+      [ "green_chan", "namespaceservio_1_1brd.html#a9c681bb4537c818f13212adf9d0601f6", null ],
       [ "timer_instance", "namespaceservio_1_1brd.html#abb81ebaad8e98d9dac4d9419eb8349cb", null ],
-      [ "yellow", "namespaceservio_1_1brd.html#ada361fdd7636868099bdd3c5f97a3b70", null ]
+      [ "yellow", "namespaceservio_1_1brd.html#ad4c13670ec4d8a72245b9dd0c5670465", null ],
+      [ "yellow_chan", "namespaceservio_1_1brd.html#ac74b07889fd283c2cc886191b88fe8f6", null ]
     ] ],
     [ "setup_adc", "brd_2prototype2_2setup_8hpp.html#a6899a3f9d2b0715afe322fab084b0483", null ],
-    [ "setup_adc_channel", "brd_2prototype2_2setup_8hpp.html#abaa745f5afa545289a9ea27cbe08ebbe", null ],
+    [ "setup_adc_channel", "brd_2prototype2_2setup_8hpp.html#a40d7aa8b4c5b2762d3de53bef81d1d0a", null ],
     [ "setup_adc_timer", "brd_2prototype2_2setup_8hpp.html#a1adccd58bc423db0db48b2b4ff6bbf6d", null ],
     [ "setup_clk", "brd_2prototype2_2setup_8hpp.html#af375aef2289854552e3c6e5c3c16a5cb", null ],
     [ "setup_clock_timer", "brd_2prototype2_2setup_8hpp.html#addcb00188aacbda8352cbd4ddbe7d3e9", null ],
-    [ "setup_gpio", "brd_2prototype2_2setup_8hpp.html#aabe7ae83af846cbd60a93744ae3237ae", null ],
+    [ "setup_gpio", "brd_2prototype2_2setup_8hpp.html#a17e0489e12570029d9e83d58b441201a", null ],
     [ "setup_hbridge_timers", "brd_2prototype2_2setup_8hpp.html#a0fe8bce4494ca56db71b5ccfdac9a52a", null ],
-    [ "setup_leds_channel", "brd_2prototype2_2setup_8hpp.html#a0bfe1785c7671fbc6d1d8e62b760fd77", null ],
+    [ "setup_leds_channel", "brd_2prototype2_2setup_8hpp.html#abdce02de8a84ee14366c5abaf3932f90", null ],
     [ "setup_leds_timer", "brd_2prototype2_2setup_8hpp.html#a8d47462a1f7fce38cda0f512305746ba", null ],
     [ "setup_uart", "brd_2prototype2_2setup_8hpp.html#ab330172ec900f8e5a967b042c5d0fefb", null ]
 ];

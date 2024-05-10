@@ -12,7 +12,5 @@ var adc__pooler_8hpp =
       [ "ADC_POOLER_CFG_ERR", "adc__pooler_8hpp.html#ac3fe0bceb2beffcf0ffe45c7d948c76ba82611ec514648359b9bf369d982b0966", null ],
       [ "ADC_POOLER_NO_SAMPLES_ERR", "adc__pooler_8hpp.html#ac3fe0bceb2beffcf0ffe45c7d948c76ba803239673ddf0d7b57ba78073bf99f68", null ],
       [ "ADC_POOLER_SAMPLES_OVER_ERR", "adc__pooler_8hpp.html#ac3fe0bceb2beffcf0ffe45c7d948c76bac5ae4a296b818df7ba97dad5b998fc68", null ]
-    ] ],
-    [ "EMPTY_ADC_CALLBACK", "adc__pooler_8hpp.html#ab0f58f8aab9826fafb7c092dac28f6c3", null ],
-    [ "EMPTY_ADC_DETAILED_CALLBACK", "adc__pooler_8hpp.html#a641200efd9b8b191932945c86f78d9e0", null ]
+    ] ]
 ];

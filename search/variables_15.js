@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['val_1975',['val',['../structservio_1_1mon_1_1pulser.html#affef689099a64f55f34799d90b95cac2',1,'servio::mon::pulser']]],
-  ['value_1976',['value',['../namespaceservio_1_1scmdio.html#a5d25c25f8f8e7deb217a5ddf6748469f',1,'servio::scmdio::cfg_opts']]],
-  ['vcc_1977',['vcc',['../structservio_1_1brd_1_1adc__set.html#a6c7d5a095766cdeb38982a8186a2d61f',1,'servio::brd::adc_set::vcc()'],['../structservio_1_1cnv_1_1converter.html#ab1b60da51eb07bc71cff59076febb53c',1,'servio::cnv::converter::vcc()'],['../structservio_1_1core_1_1drivers.html#ad7cd0f7be5f10bfa3608390bf6edb773',1,'servio::core::drivers::vcc()']]],
-  ['vcc_5fdrv_1978',['vcc_drv',['../namespaceservio_1_1fw.html#a30decc59aa14841d1c959b5e37fbc0a9',1,'servio::fw::dispatcher']]],
-  ['velocity_1979',['velocity',['../namespaceservio_1_1scmdio.html#ad4eeda260fbde422b87e85ab46f2da0d',1,'servio::scmdio::mode_opts::velocity()'],['../structservio_1_1sim_1_1simple__motor.html#a5f88e006e13663bb61961ab5523de590',1,'servio::sim::simple_motor::velocity()']]],
-  ['velocity_5flimits_1980',['velocity_limits',['../namespaceservio_1_1ctl.html#ae2e474266fb6d232fcea1591e7d70407',1,'servio::ctl::config']]],
-  ['velocity_5fpid_1981',['velocity_pid',['../namespaceservio_1_1ctl.html#a2e67e78f924fe11eabb708084ffb4096',1,'servio::ctl::config']]],
-  ['verbose_1982',['verbose',['../namespaceservio_1_1ftester.html#ae3b4a77a2b4806d57ab17e764cd9b396',1,'servio::ftester::config']]]
+  ['uart1_5fdma_5fhandle_2017',['UART1_DMA_HANDLE',['../namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c',1,'servio::brd']]],
+  ['uart1_5fhandle_2018',['UART1_HANDLE',['../namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef',1,'servio::brd']]],
+  ['uart2_5fdma_5fhandle_2019',['UART2_DMA_HANDLE',['../namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940',1,'servio::brd']]],
+  ['uart2_5fhandle_2020',['UART2_HANDLE',['../namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd',1,'servio::brd']]],
+  ['uart_5finstance_2021',['uart_instance',['../namespaceservio_1_1brd.html#a5895fee6b6d24be701903dff24c37a64',1,'servio::brd::uart_cfg::uart_instance()'],['../namespaceservio_1_1plt.html#a2fefd453402afb93ffd0696664e4fe05',1,'servio::plt::uart_cfg::uart_instance()']]],
+  ['used_2022',['used',['../structservio_1_1drv_1_1detailed__adc__channel.html#abb124331c9121663f28517ef1f770b12',1,'servio::drv::detailed_adc_channel']]],
+  ['used_5fdata_2023',['used_data',['../structservio_1_1drv_1_1com__res.html#a1fd6e27e86352e01cccaa53f97183b1b',1,'servio::drv::com_res']]]
 ];

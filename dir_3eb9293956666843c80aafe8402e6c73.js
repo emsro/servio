@@ -17,12 +17,6 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
         [ "pin", "namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244", null ],
         [ "port", "namespaceservio_1_1drv.html#ae43b31297ea3dfab8312221cfd3c348d", null ],
         [ "pull", "namespaceservio_1_1drv.html#a4ea163424b4d1621603871134262f897", null ]
-      ] ],
-      [ "pinch_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg", [
-        [ "alternate", "namespaceservio_1_1drv.html#a9d1eacd594993ffa565429d7ed984a00", null ],
-        [ "channel", "namespaceservio_1_1drv.html#ac5f0039f77b404546b45518637a509dc", null ],
-        [ "pin", "namespaceservio_1_1drv.html#afd65d5af9ac22738b2b92e662410d6a8", null ],
-        [ "port", "namespaceservio_1_1drv.html#a9665d6d8f68c3b75b979a05b24809187", null ]
       ] ]
     ] ],
     [ "dts_temp.hpp", "dts__temp_8hpp.html", [
@@ -34,6 +28,9 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
     [ "leds.cpp", "leds_8cpp.html", null ],
     [ "leds.hpp", "leds_8hpp.html", [
       [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ]
+    ] ],
+    [ "quad_encoder.hpp", "quad__encoder_8hpp.html", [
+      [ "quad_encoder", "classservio_1_1drv_1_1quad__encoder.html", "classservio_1_1drv_1_1quad__encoder" ]
     ] ],
     [ "retainers.hpp", "retainers_8hpp.html", "retainers_8hpp" ]
 ];

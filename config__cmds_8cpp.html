@@ -93,13 +93,14 @@ $(document).ready(function(){initNavTree('config__cmds_8cpp.html',''); initResiz
 <div class="textblock"><code>#include &quot;<a class="el" href="serial_8hpp_source.html">scmdio/serial.hpp</a>&quot;</code><br />
 <code>#include &lt;boost/asio.hpp&gt;</code><br />
 <code>#include &lt;emlabcpp/algorithm.h&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;google/protobuf/util/json_util.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for config_cmds.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="config__cmds_8cpp__incl.svg" width="960" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="config__cmds_8cpp__incl.svg" width="1058" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -122,6 +123,8 @@ Functions</h2></td></tr>
 <tr class="separator:a0316dca4208257cd70c10ba3808b6238"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cd98f3bc5c4f656559e6067f3b079e1"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a7cd98f3bc5c4f656559e6067f3b079e1">servio::scmdio::cfg_set_cmd</a> (cobs_port &amp;port, const std::string &amp;name, std::string value)</td></tr>
 <tr class="separator:a7cd98f3bc5c4f656559e6067f3b079e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375cf8bd82ad14c26dd71868ce7dee12"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a375cf8bd82ad14c26dd71868ce7dee12">servio::scmdio::cfg_load_cmd</a> (cobs_port &amp;port, const std::filesystem::path &amp;cfg)</td></tr>
+<tr class="separator:a375cf8bd82ad14c26dd71868ce7dee12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -129,7 +132,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="config__cmds_8cpp.html">config_cmds.cpp</a></li>
-    <li class="footer">Generated on Mon May 6 2024 20:55:19 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri May 10 2024 16:37:14 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -1,4 +1,4 @@
 <map id="servio::plt::leds_timer_cfg" name="servio::plt::leds_timer_cfg">
 <area shape="rect" id="node1" title=" " alt="" coords="5,109,196,136"/>
-<area shape="rect" id="node2" href="$namespaceservio_1_1drv.html#structservio_1_1drv_1_1pinch__cfg" title=" " alt="" coords="21,5,181,32"/>
+<area shape="rect" id="node2" href="$namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg" title=" " alt="" coords="28,5,173,32"/>
 </map>

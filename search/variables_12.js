@@ -1,23 +1,13 @@
 var searchData=
 [
-  ['scale_1929',['scale',['../structservio_1_1cnv_1_1linear__converter.html#a0150bfaf4610d45d2bf84ae88224970a',1,'servio::cnv::linear_converter::scale()'],['../namespaceservio_1_1cnv.html#a7c89f761e78402c1f465f3e9028c7c48',1,'servio::cnv::off_scale::scale()'],['../namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358',1,'servio::scmdio::line::scale()'],['../namespaceservio_1_1cfg.html#a1e64cea163bc7cfbed23383830b2268e',1,'servio::cfg::off_scale::scale()']]],
-  ['scbs_1930',['scbs',['../structservio_1_1fw_1_1context.html#a8a34001a27ad2d35fec01407df424ffc',1,'servio::fw::context']]],
-  ['sentry_5f_1931',['sentry_',['../structservio_1_1drv_1_1detailed__adc__channel.html#a9490be83ec1d8ba30bd7648cab5f7a6e',1,'servio::drv::detailed_adc_channel::sentry_()'],['../structservio_1_1drv_1_1adc__channel.html#a3039bc56cfcb389d036fab08e9a91add',1,'servio::drv::adc_channel::sentry_()']]],
-  ['size_1932',['size',['../namespaceservio_1_1klmn.html#a6012e20714154f03136eb5812a2abef2',1,'servio::klmn::state_range']]],
-  ['sizes_1933',['sizes',['../namespaceservio_1_1drv_1_1bits.html#ace9011daf35556b455c3a0ac0ca1dbf6',1,'servio::drv::bits::cobs_rx_container']]],
-  ['src_1934',['src',['../namespaceservio_1_1sntr.html#ad7affdf6bdcd1d05412b08366280f0f3',1,'servio::sntr::record']]],
-  ['st_1935',['st',['../namespaceservio_1_1sntr.html#ab2bae1b01c0a067f1bb5eed8f6b6f38c',1,'servio::sntr::record']]],
-  ['st_5frange_1936',['st_range',['../structservio_1_1mtr_1_1posvel__kalman.html#a16bbaa07f34c05010375ecc1b35a4a04',1,'servio::mtr::posvel_kalman']]],
-  ['start_5fcb_1937',['start_cb',['../structservio_1_1core_1_1drivers.html#a9cd6cc7fd26299a79490b17151efe206',1,'servio::core::drivers']]],
-  ['state_1938',['state',['../structservio_1_1ctl_1_1linear__transition__regulator.html#aecb19b527ceb961ed007cbbd7ed5aca0',1,'servio::ctl::linear_transition_regulator::state()'],['../structservio_1_1mon_1_1blinker.html#a49be452f68e339b5f6b490600efd3b07',1,'servio::mon::blinker::state()']]],
-  ['static_5ffriction_5fdecay_1939',['static_friction_decay',['../namespaceservio_1_1ctl.html#a82bc794a9ee0b6dc71d35f7a9a34f0d5',1,'servio::ctl::config']]],
-  ['static_5ffriction_5fforce_1940',['static_friction_force',['../structservio_1_1sim_1_1simple__motor.html#a22d12968f6742a706c9230e4b8d09aba',1,'servio::sim::simple_motor']]],
-  ['static_5ffriction_5fscale_1941',['static_friction_scale',['../namespaceservio_1_1ctl.html#a12d2d3c5170110791423a4c445b6612f',1,'servio::ctl::config']]],
-  ['static_5ffriction_5fvel_1942',['static_friction_vel',['../structservio_1_1sim_1_1simple__motor.html#acc2abb9ad8bc69397608de83372fd0c6',1,'servio::sim::simple_motor']]],
-  ['step_1943',['step',['../structservio_1_1mon_1_1blinker.html#aafb4c78f56d665b361b2335eb29fff34',1,'servio::mon::blinker::step()'],['../structservio_1_1mtr_1_1static__detector.html#aba0d43a6912a9e7257dc99be65401883',1,'servio::mtr::static_detector::step()']]],
-  ['stop_5fcallback_1944',['STOP_CALLBACK',['../namespaceservio_1_1core.html#a50e4044e788144d8dde6f5c10ce3326a',1,'servio::core']]],
-  ['stop_5fcounter_1945',['stop_counter',['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html#a5f0c2ddb22faec42344d000fdf779cdc',1,'servio::sntr::tests::sentry_fixture']]],
-  ['success_1946',['success',['../structservio_1_1drv_1_1com__res.html#a1e3b91f63e1a9ee9dfb4a5cba9fdc561',1,'servio::drv::com_res']]],
-  ['sum_1947',['sum',['../namespaceservio_1_1ftest_1_1bench.html#a602be9f91456c08126a7676980dcd957',1,'servio::ftest::bench::prof_record']]],
-  ['sys_1948',['sys',['../structservio_1_1ftester_1_1joque__test.html#aa786e779669720901c94ff58fc6c4d1f',1,'servio::ftester::joque_test']]]
+  ['r_1968',['r',['../structservio_1_1mtr_1_1posvel__kalman.html#a073b4525c78cab66a6d0f8cd0a389753',1,'servio::mtr::posvel_kalman']]],
+  ['reactor_1969',['reactor',['../structservio_1_1ftest_1_1testing__system.html#ae94f98c5ffdca9be15b1a8ba26334237',1,'servio::ftest::testing_system']]],
+  ['read_5fbuffer_1970',['read_buffer',['../structservio_1_1scmdio_1_1cobs__port.html#a3c0ff28427c4ac6cd78e1a315e5dfe3f',1,'servio::scmdio::cobs_port']]],
+  ['rec_5fid_1971',['rec_id',['../namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c',1,'servio::ftester']]],
+  ['received_5fsize_1972',['received_size',['../namespaceservio_1_1drv_1_1bits.html#a83f268c48b8dc33d9a7f4121b5e37261',1,'servio::drv::bits::cobs_rx_container']]],
+  ['record_1973',['record',['../structservio_1_1ftest_1_1uctx.html#a461950ee4b776bcba1ace5adfaec50e2',1,'servio::ftest::uctx']]],
+  ['red_1974',['red',['../namespaceservio.html#ace8f4fa67f61708539ca5a97fbd90490',1,'servio::leds_vals::red()'],['../namespaceservio_1_1plt.html#a3f041bb8297fff525ea8012ba66633fe',1,'servio::plt::leds_gpio_cfg::red()']]],
+  ['request_1975',['request',['../namespaceservio_1_1brd.html#a30b5430a286a0f580f7dc4a849c1fb33',1,'servio::brd::dma_cfg::request()'],['../namespaceservio_1_1plt.html#a7f97f414a1e6cbee2d61917de9cf159a',1,'servio::plt::dma_cfg::request()']]],
+  ['res_1976',['res',['../structservio_1_1ftester_1_1controller__interface.html#ae19bb736902f5e78b569d76eb547af43',1,'servio::ftester::controller_interface']]],
+  ['rx_1977',['rx',['../namespaceservio_1_1brd.html#a5987a41f2e6ef4c86bc41bb9c6494ef9',1,'servio::brd::uart_cfg::rx()'],['../namespaceservio_1_1plt.html#a1688c8334710f32b004a657ad9014aa2',1,'servio::plt::uart_cfg::rx()']]]
 ];

@@ -1,6 +1,6 @@
 <map id="servio::ftest::bench::usage" name="servio::ftest::bench::usage">
 <area shape="rect" id="node1" title=" " alt="" coords="173,200,320,241"/>
-<area shape="rect" id="node2" href="$classservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="5,96,144,137"/>
+<area shape="rect" id="node2" href="$structservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="5,96,144,137"/>
 <area shape="rect" id="node3" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="169,103,325,130"/>
 <area shape="rect" id="node4" title=" " alt="" coords="349,103,475,130"/>
 <area shape="rect" id="node5" title=" " alt="" coords="329,5,495,47"/>

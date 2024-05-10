@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classservio_1_1drv_1_1pos__iface.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="structservio_1_1drv_1_1pos__iface.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="390,-324.5 390,-343.5 510,-343.5 510,-324.5 390,-324.5"/>
 <text text-anchor="middle" x="450" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::pos_iface</text>
 </a>
@@ -53,7 +53,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classservio_1_1drv_1_1pwm__motor__iface.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="structservio_1_1drv_1_1pwm__motor__iface.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="185,-237 185,-267 317,-267 317,-237 185,-237"/>
 <text text-anchor="start" x="193" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::pwm_motor</text>
 <text text-anchor="middle" x="251" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">_iface</text>
@@ -162,7 +162,7 @@
 <!-- Node12 -->
 <g id="node9" class="node">
 <title>Node12</title>
-<g id="a_node9"><a xlink:href="classservio_1_1drv_1_1vcc__iface.html" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="structservio_1_1drv_1_1vcc__iface.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="390.5,-76.5 390.5,-95.5 509.5,-95.5 509.5,-76.5 390.5,-76.5"/>
 <text text-anchor="middle" x="450" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::vcc_iface</text>
 </a>
@@ -178,7 +178,7 @@
 <!-- Node13 -->
 <g id="node10" class="node">
 <title>Node13</title>
-<g id="a_node10"><a xlink:href="classservio_1_1drv_1_1temp__iface.html" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="structservio_1_1drv_1_1temp__iface.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="386,-38.5 386,-57.5 514,-57.5 514,-38.5 386,-38.5"/>
 <text text-anchor="middle" x="450" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::temp_iface</text>
 </a>
@@ -194,7 +194,7 @@
 <!-- Node14 -->
 <g id="node11" class="node">
 <title>Node14</title>
-<g id="a_node11"><a xlink:href="classservio_1_1drv_1_1curr__iface.html" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="structservio_1_1drv_1_1curr__iface.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="389,-0.5 389,-19.5 511,-19.5 511,-0.5 389,-0.5"/>
 <text text-anchor="middle" x="450" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::curr_iface</text>
 </a>

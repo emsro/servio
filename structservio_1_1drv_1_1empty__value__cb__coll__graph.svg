@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classservio_1_1drv_1_1value__cb__iface.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="structservio_1_1drv_1_1value__cb__iface.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="2,-67.5 2,-97.5 103,-97.5 103,-67.5 2,-67.5"/>
 <text text-anchor="start" x="10" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::value</text>
 <text text-anchor="middle" x="52.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_cb_iface</text>

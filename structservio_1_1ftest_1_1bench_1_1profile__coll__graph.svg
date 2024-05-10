@@ -166,7 +166,7 @@
 <!-- Node12 -->
 <g id="node11" class="node">
 <title>Node12</title>
-<g id="a_node11"><a xlink:href="classservio_1_1drv_1_1curr__iface.html" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="structservio_1_1drv_1_1curr__iface.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="191,-31 191,-50 313,-50 313,-31 191,-31"/>
 <text text-anchor="middle" x="252" y="-38" font-family="Helvetica,sans-Serif" font-size="10.00">servio::drv::curr_iface</text>
 </a>
