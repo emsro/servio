@@ -7,3 +7,5 @@ The groups are:
  - @subpage ctl
  - @subpage lims
  - @subpage comms
+ - @subpage units
+ - @subpage config
