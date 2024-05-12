@@ -1,21 +1,12 @@
 var searchData=
 [
-  ['base_2ehpp_81',['base.hpp',['../base_2base_8hpp.html',1,'(Global Namespace)'],['../ftest_2bench_2base_8hpp.html',1,'(Global Namespace)'],['../ftester_2base_8hpp.html',1,'(Global Namespace)'],['../sntr_2base_8hpp.html',1,'(Global Namespace)']]],
-  ['baudrate_82',['baudrate',['../structservio_1_1scmdio_1_1common__cli.html#a894c539777a60724c857e87ff1f05de9',1,'servio::scmdio::common_cli::baudrate()'],['../namespaceservio_1_1brd.html#a4ad75e024e12ff5c1bb16069c851023d',1,'servio::brd::uart_cfg::baudrate()'],['../namespaceservio_1_1plt.html#a4a2f721279aeff0baecd4f733fd18e37',1,'servio::plt::uart_cfg::baudrate()']]],
-  ['baudrate_5fopt_83',['baudrate_opt',['../namespaceservio_1_1scmdio.html#a6286d1246b1168d8fa9bd1b651b3752e',1,'servio::scmdio']]],
-  ['bb_5ftest_5fcase_84',['bb_test_case',['../structservio_1_1bb_1_1bb__test__case.html#a2a7ccbccec9e1f2dcd38957e510e5b98',1,'servio::bb::bb_test_case::bb_test_case()'],['../structservio_1_1bb_1_1bb__test__case.html',1,'servio::bb::bb_test_case']]],
-  ['bb_5ftest_5fcase_2ehpp_85',['bb_test_case.hpp',['../bb__test__case_8hpp.html',1,'']]],
-  ['bench_2ecpp_86',['bench.cpp',['../bench_8cpp.html',1,'']]],
-  ['benchmarks_2ehpp_87',['benchmarks.hpp',['../benchmarks_8hpp.html',1,'']]],
-  ['blinker_88',['blinker',['../structservio_1_1mon_1_1blinker.html',1,'servio::mon']]],
-  ['blue_89',['blue',['../namespaceservio.html#aea051a3a8278bb73781905d787b09d49',1,'servio::leds_vals::blue()'],['../namespaceservio_1_1plt.html#a8e3ee77a1eecd0b200713232da8790fc',1,'servio::plt::leds_gpio_cfg::blue()']]],
-  ['board_2ecpp_90',['board.cpp',['../proto3_2board_8cpp.html',1,'(Global Namespace)'],['../prototype2_2board_8cpp.html',1,'(Global Namespace)']]],
-  ['booting_91',['BOOTING',['../namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52ad32cbe23a48d1576416d9eb314876c6d',1,'servio::mon']]],
-  ['brd_2ehpp_92',['brd.hpp',['../brd_8hpp.html',1,'']]],
-  ['buffer_93',['buffer',['../structservio_1_1core_1_1avg__filter.html#ad6b0f945bd3240833057ff9450c8dc3f',1,'servio::core::avg_filter::buffer()'],['../structservio_1_1drv_1_1detailed__adc__channel.html#ad11f56dd273bd4dafc88de6dc9a91363',1,'servio::drv::detailed_adc_channel::buffer()'],['../namespaceservio_1_1drv_1_1bits.html#af2fde201622302a56ede64cfe86352e5',1,'servio::drv::bits::cobs_rx_container::buffer()'],['../structservio_1_1sntr_1_1test__central__sentry.html#a2ea27ced060ca8e4fa55774ef488ed8c',1,'servio::sntr::test_central_sentry::buffer()']]],
-  ['buffer_5fa_94',['buffer_a',['../structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#a2dccf181d27ff44fc9394398f9c997d9',1,'servio::sntr::tests::central_sentry_fixture::buffer_a()'],['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html#a6c69eb61d973be8a36465658aaa0c000',1,'servio::sntr::tests::sentry_fixture::buffer_a()']]],
-  ['buffer_5fb_95',['buffer_b',['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html#afa499bdc0087642001dd916e7a724a15',1,'servio::sntr::tests::sentry_fixture::buffer_b()'],['../structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#a3aa92f4c98795e11244715d58092a80b',1,'servio::sntr::tests::central_sentry_fixture::buffer_b()']]],
-  ['buffer_5fc_96',['buffer_c',['../structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#ace6cb5ed850e5a2e6ba75f29787ed56a',1,'servio::sntr::tests::central_sentry_fixture']]],
-  ['buffer_5fsize_97',['buffer_size',['../serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc',1,'serial.cpp']]],
-  ['busfault_5fhandler_98',['BusFault_Handler',['../it_8cpp.html#a850cefb17a977292ae5eb4cafa9976c3',1,'it.cpp']]]
+  ['_5fclose_12',['_close',['../extra_8cpp.html#ad26efdbfacf3ddbee142d421bf01272f',1,'extra.cpp']]],
+  ['_5fconfig_5fend_13',['_config_end',['../proto3_2board_8cpp.html#ab9c4570b264e5103deb948e89f713529',1,'_config_end():&#160;board.cpp'],['../brd_2prototype2_2config_8cpp.html#ab9c4570b264e5103deb948e89f713529',1,'_config_end():&#160;config.cpp']]],
+  ['_5fconfig_5fstart_14',['_config_start',['../proto3_2board_8cpp.html#a906f7ef6acab4815e6b77b601dac50e7',1,'_config_start():&#160;board.cpp'],['../brd_2prototype2_2config_8cpp.html#a906f7ef6acab4815e6b77b601dac50e7',1,'_config_start():&#160;config.cpp']]],
+  ['_5fexit_15',['_exit',['../extra_8cpp.html#a31dcaff181eaa6a8cfb484e35f23fb5f',1,'extra.cpp']]],
+  ['_5fgetpid_16',['_getpid',['../extra_8cpp.html#a945e539df8e0f66d3c73c533fe1968ee',1,'extra.cpp']]],
+  ['_5fkill_17',['_kill',['../extra_8cpp.html#a0ed15a34423726cf23f8dd30a0968dbb',1,'extra.cpp']]],
+  ['_5flseek_18',['_lseek',['../extra_8cpp.html#a9a33858e15f999352b72063439c5cffd',1,'extra.cpp']]],
+  ['_5fread_19',['_read',['../extra_8cpp.html#ae9a656c34f65fef4f3d0c975d252fe32',1,'extra.cpp']]],
+  ['_5fwrite_20',['_write',['../extra_8cpp.html#a1764b05ba713fd9473356dc1c1228989',1,'extra.cpp']]]
 ];

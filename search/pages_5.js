@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['servio_2281',['Servio',['../index.html',1,'']]]
+  ['6_20configuration_2287',['6 Configuration',['../config.html',1,'md_doc_requirements']]]
 ];

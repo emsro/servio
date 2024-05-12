@@ -88,24 +88,35 @@ $(document).ready(function(){initNavTree('comms.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_doc_reqs_04_comms"></a> </p>
-<h1><a class="anchor" id="autotoc_md21"></a>
-4.1 System should decompose message communication to be independent on underlying transport layer</h1>
-<p>The system should be implemented so that the top message-based communication mechanism is independent of the way the messages are sent or received, be it UART, I2C, or CAN.</p>
 <h1><a class="anchor" id="autotoc_md22"></a>
-4.2 UART shall be supported as transport</h1>
-<p>UART should be first-class citizen for the message transportation. Note that this is full UART: rx/tx pair of wires.</p>
+4.1 System should have one major communication interface</h1>
+<p>The system as a whole should have one major communication interface. This interface represents the primary way of communicating with the servomotor.</p>
+<p>The interface shall be message based and well documented by the project.</p>
 <h1><a class="anchor" id="autotoc_md23"></a>
-4.3 Message shall be defined in one protobuf file</h1>
+4.2 System should decompose message communication to be independent on underlying transport layer</h1>
+<p>The system should be implemented so that the top message-based communication mechanism is independent of the way the messages are sent or received, be it UART, I2C, or CAN.</p>
+<p>There should be clear separation of receiving/transmitting a message and processing the content of the message in the system.</p>
+<h1><a class="anchor" id="autotoc_md24"></a>
+4.3 UART shall be supported as transport</h1>
+<p>UART should be first-class citizen for the message transportation. We explicitly want to support full-duplex UART.</p>
+<h1><a class="anchor" id="autotoc_md25"></a>
+4.4 Major communication message shall be defined in one protobuf file</h1>
 <p>Protobuf is picked as desired message definition mechanism due to it being multi-language compatible. This way we achieve flexibility for the user, as they can pick whatever language they want easily.</p>
 <p>Limitation to one file exists for friendly dependency management - if user wants to use the servo all that is needed is to download <em>one file</em>.</p>
-<h1><a class="anchor" id="autotoc_md24"></a>
-4.4 COBS can be used as framing mechanism</h1>
+<h1><a class="anchor" id="autotoc_md26"></a>
+4.5 COBS can be used as framing mechanism</h1>
 <p>Protobufs does not have native framing capability. (We can't tell where message starts or ends) Tranports like UART does not have either, hence we have to introduce separate framing mechanism.</p>
 <p>COBS should be first-class citizen and have full support.</p>
-<h1><a class="anchor" id="autotoc_md25"></a>
-4.5 Exact communication interface is property of board</h1>
+<h1><a class="anchor" id="autotoc_md27"></a>
+4.6 Exact communication interface is property of board</h1>
 <p>The exact support combination of communication interface is defined by the boards themselves. Each board should clearly defined what communication is supported.</p>
-<p>For example: Protobuf messages wrapped in COBS sent over UART </p>
+<p>For example: Protobuf messages wrapped in COBS sent over UART</p>
+<h1><a class="anchor" id="autotoc_md28"></a>
+4.7 ID</h1>
+<p>TBD</p>
+<h1><a class="anchor" id="autotoc_md29"></a>
+4.7 Group ID</h1>
+<p>TBD </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
@@ -113,7 +124,7 @@ $(document).ready(function(){initNavTree('comms.html',''); initResizable(); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="md_doc_requirements.html">Requirements</a></li>
-    <li class="footer">Generated on Sat May 11 2024 17:38:46 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun May 12 2024 20:55:41 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
