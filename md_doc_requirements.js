@@ -31,7 +31,7 @@ var md_doc_requirements =
       [ "4.5 COBS can be used as framing mechanism", "comms.html#autotoc_md26", null ],
       [ "4.6 Exact communication interface is property of board", "comms.html#autotoc_md27", null ],
       [ "4.7 ID", "comms.html#autotoc_md28", null ],
-      [ "4.7 Group ID", "comms.html#autotoc_md29", null ]
+      [ "4.8 Group ID", "comms.html#autotoc_md29", null ]
     ] ],
     [ "5 Units", "units.html", [
       [ "5.1 Any values facing the user shall be in well defined units specified by other requirements", "units.html#autotoc_md30", null ],
@@ -58,10 +58,10 @@ var md_doc_requirements =
       ] ],
       [ "6.6 Firmware version changes", "config.html#autotoc_md48", null ],
       [ "6.7 Utility for changes shall exist", "config.html#autotoc_md49", null ],
-      [ "6. Common format for storing on host side", "config.html#autotoc_md50", null ],
-      [ "6. List of fields for configuration", "config.html#autotoc_md51", [
-        [ "6. Model", "config.html#autotoc_md52", null ],
-        [ "6. Other", "config.html#autotoc_md53", null ]
+      [ "6.8 Common format for storing on host side", "config.html#autotoc_md50", null ],
+      [ "6.9 List of fields for configuration", "config.html#autotoc_md51", [
+        [ "6.9.1 Model", "config.html#autotoc_md52", null ],
+        [ "6.9.2 ID", "config.html#autotoc_md53", null ]
       ] ]
     ] ]
 ];

@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"functions_c.html":[7,3,0,2],
 "functions_d.html":[7,3,0,3],
 "functions_e.html":[7,3,0,4],
 "functions_enum.html":[7,3,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "leds_8hpp.html":[8,0,1,7,14],
 "leds_8hpp_source.html":[8,0,1,7,14],
 "lims.html":[5,2],
-"lims.html#autotoc_md19":[5,2,0],
-"lims.html#autotoc_md20":[5,2,1]
+"lims.html#autotoc_md19":[5,2,0]
 };

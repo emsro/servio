@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca":[7,0,1,4,5,0],
 "structservio_1_1core_1_1drivers.html#a9b5e3b87b77644f65974f0517ee349bd":[7,0,1,4,5,6],
 "structservio_1_1core_1_1drivers.html#a9cd6cc7fd26299a79490b17151efe206":[7,0,1,4,5,10],
 "structservio_1_1core_1_1drivers.html#aa40ea3d6e996112f3cd24c5cdedeb2a9":[7,0,1,4,5,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "structservio_1_1ftest_1_1intg_1_1meas__vel__test.html#aee7235f87746ae6f2d8a2e7a20cde012":[7,0,1,7,1,4,3],
 "structservio_1_1ftest_1_1intg_1_1sign__test.html":[7,0,1,7,1,1],
 "structservio_1_1ftest_1_1intg_1_1sign__test.html#a02e6c94e2db568ce4ce7eaf63db3dc64":[7,0,1,7,1,1,7],
-"structservio_1_1ftest_1_1intg_1_1sign__test.html#a39c1680532f1f6e47e66a364a4e1150c":[7,0,1,7,1,1,6],
-"structservio_1_1ftest_1_1intg_1_1sign__test.html#a3f713472ccbe56ef4a500c96cfadcaf0":[7,0,1,7,1,1,3]
+"structservio_1_1ftest_1_1intg_1_1sign__test.html#a39c1680532f1f6e47e66a364a4e1150c":[7,0,1,7,1,1,6]
 };

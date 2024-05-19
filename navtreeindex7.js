@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"stm32g4xx__hal__conf_8h.html#a6552186102a1131b2849ac55a582945d":[8,0,1,15,1,2,10],
 "stm32g4xx__hal__conf_8h.html#a6879802837c27d8761d8a8fdab626891":[8,0,1,15,1,2,79],
 "stm32g4xx__hal__conf_8h.html#a68c6c7c633e6cb378824020ef00a5701":[8,0,1,15,1,2,77],
 "stm32g4xx__hal__conf_8h.html#a68ecbc9b0a1a40a1ec9d18d5e9747c4f":[8,0,1,15,1,2,41],
@@ -196,8 +197,8 @@ var NAVTREEINDEX7 =
 "structservio_1_1brd_1_1adc__set.html":[7,0,1,1,0],
 "structservio_1_1brd_1_1adc__set.html#a33e73081eeb5add77dea110229efb3fa":[7,0,1,1,0,6],
 "structservio_1_1brd_1_1adc__set.html#a346644d1f1901a6078bc9ec5a6af9883":[7,0,1,1,0,4],
-"structservio_1_1brd_1_1adc__set.html#a52eada32164a05c9bb024618c95dfcf1":[7,0,1,1,0,0],
 "structservio_1_1brd_1_1adc__set.html#a52eada32164a05c9bb024618c95dfcf1":[7,0,1,1,0,1],
+"structservio_1_1brd_1_1adc__set.html#a52eada32164a05c9bb024618c95dfcf1":[7,0,1,1,0,0],
 "structservio_1_1brd_1_1adc__set.html#a6c7d5a095766cdeb38982a8186a2d61f":[7,0,1,1,0,7],
 "structservio_1_1brd_1_1adc__set.html#a9fd8c06a6adadf6d1c51462323e71752":[7,0,1,1,0,5],
 "structservio_1_1brd_1_1adc__set.html#acd49f5d2a25d5a8bf40c0e053509f022":[7,0,1,1,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "structservio_1_1core_1_1drivers.html#a0361b0638af2a8395ebe99484a9a10fe":[7,0,1,4,5,7],
 "structservio_1_1core_1_1drivers.html#a389e7674ac16ba937d391c0316d90b6c":[7,0,1,4,5,4],
 "structservio_1_1core_1_1drivers.html#a6d26ca408a056f7f0e5df3df4655add7":[7,0,1,4,5,1],
-"structservio_1_1core_1_1drivers.html#a84c58d510bcc173e7a41d72de1975b73":[7,0,1,4,5,8],
-"structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca":[7,0,1,4,5,0]
+"structservio_1_1core_1_1drivers.html#a84c58d510bcc173e7a41d72de1975b73":[7,0,1,4,5,8]
 };

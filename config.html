@@ -144,15 +144,18 @@ $(document).ready(function(){initNavTree('config.html',''); initResizable(); });
 6.7 Utility for changes shall exist</h1>
 <p>Utility binary for host devices that can manage the configuration of servomotor shall exist and be accessible to the users. It should support all commands accessible via the main communication interface.</p>
 <h1><a class="anchor" id="autotoc_md50"></a>
-6. Common format for storing on host side</h1>
+6.8 Common format for storing on host side</h1>
 <p>There should be one common format to store the configuration sets on host device.</p>
 <p>TBD</p>
 <h1><a class="anchor" id="autotoc_md51"></a>
-6. List of fields for configuration</h1>
+6.9 List of fields for configuration</h1>
+<p>As a subrequirements to this, we have a subset of configuration fields that should be present. This is not full list, that always depends on the current version of firmware</p>
 <h2><a class="anchor" id="autotoc_md52"></a>
-6. Model</h2>
+6.9.1 Model</h2>
+<p>String with the name of the model of the servo, user-defined. For debug purposes only.</p>
 <h2><a class="anchor" id="autotoc_md53"></a>
-6. Other</h2>
+6.9.2 ID</h2>
+<p>Unique ID used by the main communication mechanism as described in 4.7. 32 bit unsigned integer value. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
@@ -160,7 +163,7 @@ $(document).ready(function(){initNavTree('config.html',''); initResizable(); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="md_doc_requirements.html">Requirements</a></li>
-    <li class="footer">Generated on Sun May 12 2024 20:55:41 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun May 19 2024 14:38:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
