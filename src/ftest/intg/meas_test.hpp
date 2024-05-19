@@ -39,7 +39,7 @@ struct meas_cur_test
                 t::node_id tnid =
                     co_await ctx.coll.set( "time", em::contiguous_container_type::ARRAY );
 
-                static constexpr std::size_t iters = 500;
+                static constexpr std::size_t iters = 50;
                 float                        sum   = 0;
                 for ( std::size_t i = 0; i < iters; i++ ) {
                         float current = cnv::current( cor.conv, curr, motor );

@@ -65,14 +65,14 @@ void hbridge::set_power( pwr power )
 
         using namespace std;
 
-        int32_t mc1_val = timer_max_;
-        int32_t mc2_val = timer_max_;
+        auto mc1_val = static_cast< float >( timer_max_ );
+        auto mc2_val = static_cast< float >( timer_max_ );
 
         if ( power == p_zero ) {
         } else if ( power > p_zero )
-                mc1_val = ( 1.0F - *power ) * static_cast< float >( timer_max_ );
+                mc1_val *= 1.0F - *power;
         else
-                mc2_val = ( 1.0F + *power ) * static_cast< float >( timer_max_ );
+                mc2_val *= 1.0F + *power;
 
         if ( inverted_ )
                 swap( mc1_val, mc2_val );
@@ -84,6 +84,10 @@ void hbridge::set_power( pwr power )
 int8_t hbridge::get_direction() const
 {
         if ( tim_ == nullptr )
+                return 1;
+
+        if ( __HAL_TIM_GET_COMPARE( tim_, mc1_channel_ ) ==
+             __HAL_TIM_GET_COMPARE( tim_, mc2_channel_ ) )
                 return 1;
 
         int8_t v = inverted_ ? -1 : 1;

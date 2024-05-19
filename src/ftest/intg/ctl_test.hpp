@@ -34,7 +34,7 @@ struct current_ctl_test
                 cor.ctl.switch_to_current_control( clk.get_us(), expected );
 
                 float                        avg_curr = 0;
-                static constexpr std::size_t count    = 10000;
+                static constexpr std::size_t count    = 10000000;
 
                 drv::wait_for( clk, 350_ms );
                 for ( std::size_t i : em::range( count ) ) {

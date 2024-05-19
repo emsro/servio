@@ -185,6 +185,7 @@ struct pwm_motor_test
         {
                 iface.set_power( p );
                 ctx.coll.set( "last_dir", iface.get_direction() );
+                ctx.coll.set( "expected", expected );
                 return ctx.expect( iface.get_direction() == expected, src );
         }
 
