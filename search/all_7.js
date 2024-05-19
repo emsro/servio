@@ -1,12 +1,20 @@
 var searchData=
 [
-  ['_5fclose_12',['_close',['../extra_8cpp.html#ad26efdbfacf3ddbee142d421bf01272f',1,'extra.cpp']]],
-  ['_5fconfig_5fend_13',['_config_end',['../proto3_2board_8cpp.html#ab9c4570b264e5103deb948e89f713529',1,'_config_end():&#160;board.cpp'],['../brd_2prototype2_2config_8cpp.html#ab9c4570b264e5103deb948e89f713529',1,'_config_end():&#160;config.cpp']]],
-  ['_5fconfig_5fstart_14',['_config_start',['../proto3_2board_8cpp.html#a906f7ef6acab4815e6b77b601dac50e7',1,'_config_start():&#160;board.cpp'],['../brd_2prototype2_2config_8cpp.html#a906f7ef6acab4815e6b77b601dac50e7',1,'_config_start():&#160;config.cpp']]],
-  ['_5fexit_15',['_exit',['../extra_8cpp.html#a31dcaff181eaa6a8cfb484e35f23fb5f',1,'extra.cpp']]],
-  ['_5fgetpid_16',['_getpid',['../extra_8cpp.html#a945e539df8e0f66d3c73c533fe1968ee',1,'extra.cpp']]],
-  ['_5fkill_17',['_kill',['../extra_8cpp.html#a0ed15a34423726cf23f8dd30a0968dbb',1,'extra.cpp']]],
-  ['_5flseek_18',['_lseek',['../extra_8cpp.html#a9a33858e15f999352b72063439c5cffd',1,'extra.cpp']]],
-  ['_5fread_19',['_read',['../extra_8cpp.html#ae9a656c34f65fef4f3d0c975d252fe32',1,'extra.cpp']]],
-  ['_5fwrite_20',['_write',['../extra_8cpp.html#a1764b05ba713fd9473356dc1c1228989',1,'extra.cpp']]]
+  ['f_311',['f',['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html#ad6f54bb0e48399688e1dfc809515014d',1,'servio::sntr::tests::sentry_fixture']]],
+  ['field_312',['field',['../namespaceservio_1_1scmdio.html#a704ae1876459aaf7751ec6071b8f9585',1,'servio::scmdio::cfg_opts']]],
+  ['field_5foption_313',['field_option',['../namespaceservio_1_1scmdio.html#ad775904026fd4fb1d8f3a62288c7d3ab',1,'servio::scmdio']]],
+  ['filter_314',['filter',['../namespaceservio_1_1ftester.html#a8f8cd80b3be896f7ecf844083945d242',1,'servio::ftester::config']]],
+  ['find_5flatest_5fpage_315',['find_latest_page',['../namespaceservio_1_1cfg.html#a8787135a705ae3b12e06d41bcf8c6c95',1,'servio::cfg']]],
+  ['find_5fnext_5fpage_316',['find_next_page',['../namespaceservio_1_1cfg.html#ac90beba4f9ba45db1db48a6daebc5ff4',1,'servio::cfg']]],
+  ['find_5foldest_5fpage_317',['find_oldest_page',['../namespaceservio_1_1cfg.html#ad27421ee699b93b2235fcf8d1c74298f',1,'servio::cfg']]],
+  ['find_5funused_5fpage_318',['find_unused_page',['../namespaceservio_1_1cfg.html#a54ea7bfc67c10412d2f5ddb4435739ff',1,'servio::cfg']]],
+  ['firmware_319',['firmware',['../namespaceservio_1_1ftester.html#a19d0941e319c81c0e7ebde81dc813507',1,'servio::ftester::config']]],
+  ['firmware_5fopt_320',['firmware_opt',['../namespaceservio_1_1ftester.html#a105df95d80da73ac8d6c61a0ed81d3e0',1,'servio::ftester']]],
+  ['flash_2ecpp_321',['flash.cpp',['../flash_8cpp.html',1,'']]],
+  ['flash_2ehpp_322',['flash.hpp',['../flash_8hpp.html',1,'']]],
+  ['flash_5ffirmware_323',['flash_firmware',['../namespaceservio_1_1ftester.html#a545cc7dc041b95b87529ebff248997ad',1,'servio::ftester']]],
+  ['forbidden_5feid_324',['forbidden_eid',['../namespaceservio_1_1sntr.html#a06bb191b3311daa89a373b1505dc285b',1,'servio::sntr']]],
+  ['force_5fred_5fled_325',['force_red_led',['../classservio_1_1drv_1_1leds.html#a15878bd23155000b0661fe8e97e86ee4',1,'servio::drv::leds::force_red_led()'],['../structservio_1_1drv_1_1leds__iface.html#ac254678ba7f928f8dba50189763f5074',1,'servio::drv::leds_iface::force_red_led()']]],
+  ['force_5fstop_326',['force_stop',['../structservio_1_1drv_1_1pwm__motor__iface.html#afca0b20b10aac66c6b89295d4ff2cae1',1,'servio::drv::pwm_motor_iface::force_stop()'],['../classservio_1_1drv_1_1hbridge.html#adf7f06e92b257bc4bf6cfeb0255971d4',1,'servio::drv::hbridge::force_stop()']]],
+  ['full_5fapply_327',['full_apply',['../structservio_1_1cfg_1_1dispatcher.html#a1d801a08e9f4603b1b58dfca305a4ebc',1,'servio::cfg::dispatcher']]]
 ];

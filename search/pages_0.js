@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['1_20system_20requirements_2282',['1 System requirements',['../sys.html',1,'md_doc_requirements']]]
+  ['communication_20requirements_2282',['Communication requirements',['../comms.html',1,'md_doc_requirements']]],
+  ['configuration_2283',['Configuration',['../config.html',1,'md_doc_requirements']]]
 ];

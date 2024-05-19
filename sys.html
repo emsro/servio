@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: 1 System requirements</title>
+<title>servio: System requirements</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,16 +84,16 @@ $(document).ready(function(){initNavTree('sys.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">1 System requirements </div>  </div>
+<div class="title">System requirements </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_doc_reqs_01_system"></a> </p>
 <h1><a class="anchor" id="autotoc_md6"></a>
-1.1 Prioritize project independence to hardware</h1>
+REQ1.1 Prioritize project independence to hardware</h1>
 <p>The project should be designed to be as decoupled from specific hardware as reasonable.</p>
 <p>The idea is that this property should be high on priority list, but not at cost of rapid decrease in other wanted properties - simplicity, debuggability, or performance.</p>
 <h2><a class="anchor" id="autotoc_md7"></a>
-1.1.1 Decomposition</h2>
+REQ1.1.1 Decomposition</h2>
 <p>The project should be clearly divided into following parts:</p>
 <ul>
 <li>Host tools</li>
@@ -106,11 +106,11 @@ $(document).ready(function(){initNavTree('sys.html',''); initResizable(); });
 </ul>
 <p>Do not allow unnecessary spilling of dependencies/implementation details between decomposed parts.</p>
 <h2><a class="anchor" id="autotoc_md8"></a>
-1.1.2 Code shall not be dependent on hardware specifics unless necessary</h2>
+REQ1.1.2 Code shall not be dependent on hardware specifics unless necessary</h2>
 <p>Avoid writing code that is tied to the way target hardware works. The main motivation is 1.2) - the goal is to be able to run as much of the code on host devices as possible. This way we can write tests on host device.</p>
 <p>This does not have to be done if cost in development of properly abstracted code would outweigh the price of overhead caused by the need to test on specific hardware.</p>
 <h1><a class="anchor" id="autotoc_md9"></a>
-1.2 Focus on testing</h1>
+REQ1.2 Focus on testing</h1>
 <p>We should maximize the amount of testing (and diversity of use cases) to create as big test coverage as reasonable.</p>
 <p>We should avoid blindly adding tests that does not bring in value, as those just cost resources.</p>
 <p>Value of tests:</p><ul>
@@ -119,10 +119,10 @@ $(document).ready(function(){initNavTree('sys.html',''); initResizable(); });
 <li>Support for refactoring or updates to the code</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md10"></a>
-1.2.1 Test on host what can be tested on host</h1>
+REQ1.2.1 Test on host what can be tested on host</h1>
 <p>We should prioritize testing capabilities on host device, instead on the target hardware itself. For example: error handling for incorrect message input can be fully tested on host device and should be done so.</p>
 <h1><a class="anchor" id="autotoc_md11"></a>
-1.2.3 Use testing on target hardware</h1>
+REQ1.2.3 Use testing on target hardware</h1>
 <p>Write unit tests for capabilities that can't be tested on host hardware. The fact that something can't be tested on host should not be an excuse for untested capabilities. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('sys.html',''); initResizable(); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="md_doc_requirements.html">Requirements</a></li>
-    <li class="footer">Generated on Sun May 19 2024 14:38:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun May 19 2024 20:34:09 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
