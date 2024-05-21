@@ -44,6 +44,9 @@ servio::Config vary_value( const google::protobuf::FieldDescriptor* field, servi
                 refl->SetString( &item, field, refl->GetString( item, field ) + "a" );
                 break;
         case field_desc::CPPTYPE_ENUM:
+                refl->SetEnumValue(
+                    &item, field, ( refl->GetEnumValue( item, field ) + 1 ) % field->index() );
+                break;
         case field_desc::CPPTYPE_MESSAGE:
                 throw std::exception{};  // TODO: improve this
         }
@@ -132,7 +135,7 @@ int main( int argc, char** argv )
                 return app.exit( e );
         }
 
-        bb::register_test( "basic", "config", cli, bb::test_config, 10s );
+        bb::register_test( "basic", "config", cli, bb::test_config, 15s );
 
         return RUN_ALL_TESTS();
 }

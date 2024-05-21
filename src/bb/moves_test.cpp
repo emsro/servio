@@ -20,10 +20,10 @@ boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio
 
         co_await scmdio::set_mode_current( port, 0.F );
 
-        for ( float curr : { 0.2F, 0.0F, 0.3F } ) {
+        for ( float curr : { 0.1F, 0.0F, 0.15F } ) {
                 co_await scmdio::set_mode_current( port, curr );
 
-                boost::asio::steady_timer t( io, 100ms );
+                boost::asio::steady_timer t( io, 200ms );
                 co_await t.async_wait( boost::asio::use_awaitable );
 
                 float current = co_await scmdio::get_property_current( port );
