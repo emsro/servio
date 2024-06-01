@@ -181,6 +181,11 @@ struct adc_pooler
                 } );
         }
 
+        uint32_t get_max_value()
+        {
+                return __HAL_ADC_DIGITAL_SCALE( adc_->Init.Resolution );
+        }
+
 private:
         [[gnu::flatten]] void with( id_type set_id, auto&& f )
         {

@@ -13,10 +13,8 @@ consteval map get_default_config()
             reg< ID, uint32_t >{ 0 },
             reg< GROUP_ID, uint32_t >{ 0 },
             reg< ENCODER_MODE, encoder_mode >{ ENC_MODE_ANALOG },
-            reg< POSITION_CONV_LOW_VALUE, uint32_t >{ 0 },
-            reg< POSITION_CONV_LOW_ANGLE, float >{ 0.F },
-            reg< POSITION_CONV_HIGH_VALUE, uint32_t >{ 4096 },
-            reg< POSITION_CONV_HIGH_ANGLE, float >{ 2 * pi },
+            reg< POSITION_LOW_ANGLE, float >{ 0.F },
+            reg< POSITION_HIGH_ANGLE, float >{ 2 * pi },
             reg< CURRENT_CONV_SCALE, float >{ 1.F },
             reg< CURRENT_CONV_OFFSET, float >{ 0.F },
             reg< TEMP_CONV_SCALE, float >{ 1.F },
@@ -45,6 +43,7 @@ consteval map get_default_config()
             reg< MINIMUM_VOLTAGE, float >{ 6.F },
             reg< MAXIMUM_TEMPERATURE, float >{ 80.F },
             reg< MOVING_DETECTION_STEP, float >{ 0.05F },
+            reg< QUAD_ENCD_RANGE, uint32_t >{ 2048 },
         };
 }
 }  // namespace servio::cfg

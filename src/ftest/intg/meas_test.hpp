@@ -74,7 +74,7 @@ struct meas_pos_test
                 drv::empty_current_cb ccb;
                 curr.set_current_callback( ccb );
 
-                motor.set_power( p_max / 4 );
+                motor.set_power( p_max / 4.F );
                 float start = cor.met.get_position();
 
                 drv::wait_for( clk, 400_us );
@@ -82,7 +82,7 @@ struct meas_pos_test
                 float end = cor.met.get_position();
                 motor.set_power( p_zero );
 
-                float expected_angle_change = 0.f;
+                float expected_angle_change = 0.F;
                 co_await t::expect( std::abs( start - end ) > expected_angle_change );
                 ctx.coll.set( "pos1", start );
                 ctx.coll.set( "pos2", end );
@@ -115,7 +115,7 @@ struct meas_vel_test
                 float       sum          = 0.f;
                 std::size_t measurements = 1024u;
 
-                motor.set_power( p_max / 2 );
+                motor.set_power( p_max / 2.F );
 
                 for ( std::size_t i = 0; i < measurements; i++ ) {
                         float vel = cor.met.get_velocity();

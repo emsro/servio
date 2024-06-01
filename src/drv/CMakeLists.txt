@@ -13,7 +13,7 @@ else()
   servio_add_library(
     TARGET drvlib
     INCLUDE ../
-    SOURCES cobs_uart.cpp leds.cpp hbridge.cpp
+    SOURCES cobs_uart.cpp leds.cpp hbridge.cpp flash_cfg.cpp
     LIBS emlabcpp nano_iface platform cmake_git_version_tracking
     OPTS -Os)
 endif()

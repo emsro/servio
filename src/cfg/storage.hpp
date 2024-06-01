@@ -10,15 +10,6 @@ namespace em = emlabcpp;
 namespace servio::cfg
 {
 
-struct payload
-{
-        em::string_buffer< 16 > git_ver;
-        em::string_buffer< 32 > git_date;
-        uint32_t                id;
-
-        friend constexpr auto operator<=>( const payload&, const payload& ) = default;
-};
-
 using page = em::view< std::byte* >;
 
 const page* find_unused_page( em::view< const page* > pages );

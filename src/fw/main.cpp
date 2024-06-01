@@ -1,3 +1,4 @@
+#include "brd/brd.hpp"
 #include "fw/context.hpp"
 #include "fw/servio_pb.hpp"
 #include "fw/store_persistent_config.hpp"
@@ -16,7 +17,7 @@ int main()
         while ( true ) {
                 ctx.tick();
 
-                fw::persistent_config_writer cfg_writer{ ctx.cfg.last_payload, ctx.cfg.pages };
+                fw::persistent_config_writer cfg_writer{ ctx.cdrv.cfg->payload, *ctx.cdrv.storage };
 
                 fw::dispatcher dis{
                     .motor      = *ctx.cdrv.motor,

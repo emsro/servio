@@ -11,10 +11,8 @@ enum key : uint32_t
         ID                         = 2,
         GROUP_ID                   = 3,
         ENCODER_MODE               = 4,
-        POSITION_CONV_LOW_VALUE    = 10,
-        POSITION_CONV_LOW_ANGLE    = 11,
-        POSITION_CONV_HIGH_VALUE   = 12,
-        POSITION_CONV_HIGH_ANGLE   = 13,
+        POSITION_LOW_ANGLE         = 11,
+        POSITION_HIGH_ANGLE        = 13,
         CURRENT_CONV_SCALE         = 14,
         CURRENT_CONV_OFFSET        = 15,
         TEMP_CONV_SCALE            = 16,
@@ -43,6 +41,7 @@ enum key : uint32_t
         MINIMUM_VOLTAGE            = 62,
         MAXIMUM_TEMPERATURE        = 65,
         MOVING_DETECTION_STEP      = 66,
+        QUAD_ENCD_RANGE            = 80,
 };
 
 }

@@ -7,14 +7,17 @@
 #include "drv/clock.hpp"
 #include "drv/cobs_uart.hpp"
 #include "drv/dts_temp.hpp"
+#include "drv/flash_cfg.hpp"
 #include "drv/hbridge.hpp"
 #include "drv/leds.hpp"
 #include "drv/quad_encoder.hpp"
+#include "fw/load_persistent_config.hpp"
 #include "fw/util.hpp"
 #include "platform.hpp"
 #include "setup.hpp"
 #include "sntr/central_sentry.hpp"
 
+#include <emlabcpp/defer.h>
 #include <emlabcpp/result.h>
 
 namespace em = emlabcpp;
@@ -36,10 +39,39 @@ drv::pin_cfg HBRDIGE_VREF_PIN{
     .pull = GPIO_PULLDOWN,
 };
 
-}  // namespace servio::brd
-
-namespace servio::brd
+consteval cnv::off_scale get_curr_coeff()
 {
+        // mirror scale: 1575 uA/A
+        // resistor: 1k
+        constexpr float gain = 1'575.F / 1'000'000.F;
+        return cnv::calc_current_conversion( 3.3F, 0.0F, 1 << 12, 1'000.F, gain );
+}
+
+cfg::map get_default_config()
+{
+        cfg::map m = plt::get_default_config();
+
+        const cnv::off_scale curr_cfg = get_curr_coeff();
+
+        m.set_val< cfg::key::CURRENT_CONV_SCALE >( curr_cfg.scale );
+        m.set_val< cfg::key::CURRENT_CONV_OFFSET >( curr_cfg.offset );
+        m.set_val< cfg::key::TEMP_CONV_OFFSET >( 0.0F );
+        m.set_val< cfg::key::TEMP_CONV_SCALE >( 1.0F );
+
+        return m;
+}
+
+cfg::context CFG{ .map = get_default_config() };
+
+em::view< std::byte* > page_at( uint32_t i )
+{
+        return em::view_n(
+            reinterpret_cast< std::byte* >( &_config_start ) + i * FLASH_SECTOR_SIZE,
+            FLASH_SECTOR_SIZE );
+}
+
+std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at( 1 ) };
+drv::flash_storage                      FLASH_STORAGE{ PERSISTENT_BLOCKS };
 
 TIM_HandleTypeDef TIM2_HANDLE = {};
 drv::clock        CLOCK{ TIM2_HANDLE };
@@ -433,11 +465,6 @@ drv::pos_iface* quad_encoder_setup( uint32_t period )
 
 em::result start_callback( core::drivers& cdrv )
 {
-        if ( cdrv.position != nullptr ) {
-                // this implies that adc_pooleri initialization is OK
-                if ( ADC_POOLER.start() != em::SUCCESS )
-                        return em::ERROR;
-        }
         if ( cdrv.motor != nullptr ) {
                 if ( HBRIDGE.start() != em::SUCCESS )
                         return em::ERROR;
@@ -454,6 +481,17 @@ em::result start_callback( core::drivers& cdrv )
                 QUAD.start();
 
         HAL_GPIO_WritePin( HBRDIGE_VREF_PIN.port, HBRDIGE_VREF_PIN.pin, GPIO_PIN_SET );
+
+        drv::wait_for( CLOCK, 50_us );
+
+        if ( HAL_ADCEx_Calibration_Start( &ADC_HANDLE, ADC_SINGLE_ENDED ) != HAL_OK )
+                return em::ERROR;
+
+        if ( cdrv.position != nullptr ) {
+                // this implies that adc_pooleri initialization is OK
+                if ( ADC_POOLER.start() != em::SUCCESS )
+                        return em::ERROR;
+        }
 
         if ( HAL_ICACHE_Enable() != HAL_OK )
                 return em::ERROR;
@@ -478,8 +516,10 @@ em::result setup_board()
         return plt::setup_clk();
 }
 
-core::drivers setup_core_drivers( const cfg::map& m )
+core::drivers setup_core_drivers()
 {
+        CFG.payload = fw::load_persistent_config( FLASH_STORAGE, CFG.map );
+
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != em::SUCCESS )
                 fw::stop_exec();
@@ -493,7 +533,7 @@ core::drivers setup_core_drivers( const cfg::map& m )
 
         drv::hbridge* hb = hbridge_setup();
 
-        cfg::encoder_mode emod = m.get_val< cfg::ENCODER_MODE >();
+        cfg::encoder_mode emod = CFG.map.get_val< cfg::ENCODER_MODE >();
 
         auto*           adc_pooler = adc_pooler_setup( emod == cfg::encoder_mode::ENC_MODE_ANALOG );
         drv::pos_iface* pos        = nullptr;
@@ -502,7 +542,7 @@ core::drivers setup_core_drivers( const cfg::map& m )
                 pos = adc_pooler == nullptr ? nullptr : &ADC_POSITION;
                 break;
         case cfg::encoder_mode::ENC_MODE_QUAD:
-                pos = quad_encoder_setup( 3840 );  // XXX make pos from config
+                pos = quad_encoder_setup( CFG.map.get_val< cfg::QUAD_ENCD_RANGE >() );
                 break;
         }
 
@@ -511,6 +551,8 @@ core::drivers setup_core_drivers( const cfg::map& m )
                 install_stop_callback( *hb, leds );
 
         return core::drivers{
+            .cfg         = &CFG,
+            .storage     = &FLASH_STORAGE,
             .clock       = &CLOCK,
             .position    = pos,
             .current     = adc_pooler == nullptr ? nullptr : &ADC_CURRENT,
@@ -523,45 +565,6 @@ core::drivers setup_core_drivers( const cfg::map& m )
             .leds        = leds,
             .start_cb    = start_callback,
         };
-}
-
-consteval cnv::off_scale get_curr_coeff()
-{
-        // mirror scale: 1575 uA/A
-        // resistor: 1k
-        constexpr float gain = 1'575.F / 1'000'000.F;
-        return cnv::calc_current_conversion( 3.3F, 0.0F, 1 << 12, 1'000.F, gain );
-}
-
-cfg::map get_default_config()
-{
-        cfg::map m = plt::get_default_config();
-
-        const cnv::off_scale curr_cfg = get_curr_coeff();
-
-        m.set_val< cfg::key::CURRENT_CONV_SCALE >( curr_cfg.scale );
-        m.set_val< cfg::key::CURRENT_CONV_OFFSET >( curr_cfg.offset );
-        m.set_val< cfg::key::TEMP_CONV_OFFSET >( 0.0F );
-        m.set_val< cfg::key::TEMP_CONV_SCALE >( 1.0F );
-
-        return m;
-}
-
-// TODO: this needs better placement
-// TODO: study this: https://github.com/littlefs-project/littlefs
-em::view< std::byte* > page_at( uint32_t i )
-{
-        return em::view_n(
-            reinterpret_cast< std::byte* >( &_config_start ) + i * FLASH_SECTOR_SIZE,
-            FLASH_SECTOR_SIZE );
-}
-
-// TODO: one block is small, need more
-std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at( 1 ) };
-
-em::view< const page* > get_persistent_pages()
-{
-        return PERSISTENT_BLOCKS;
 }
 
 }  // namespace servio::brd

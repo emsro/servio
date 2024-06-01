@@ -11,6 +11,9 @@ namespace em = emlabcpp;
 
 struct drivers
 {
+        cfg::context* cfg;
+
+        drv::storage_iface*   storage;
         drv::clk_iface*       clock;
         drv::pos_iface*       position;
         drv::curr_iface*      current;

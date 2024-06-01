@@ -15,6 +15,7 @@ struct dispatcher
         map&                  m;
         core::core&           c;
         drv::pwm_motor_iface& motor;
+        drv::pos_iface&       pos;
 
         template < key Key, typename T >
         void set( const T& item )

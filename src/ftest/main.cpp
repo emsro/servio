@@ -1,3 +1,4 @@
+#include "brd/brd.hpp"
 #include "ftest/setup_tests.hpp"
 #include "ftest/testing_system.hpp"
 #include "fw/context.hpp"

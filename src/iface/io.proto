@@ -47,13 +47,9 @@ message Config {
 
     EncoderMode encoder_mode = 4;
 
-    // Position conversion uses two setpoints (lower/higher) to setup a
-    // conversion from the range of measuring sensor to real angle (in radians).
-    uint32 position_conv_lower_setpoint_value = 10;  // sensor at lower setpoint
-    float position_conv_lower_setpoint_angle = 11;   // angle at lower setpoint
-    uint32 position_conv_higher_setpoint_value =
-        12;  // sensor at higher setpoint
-    float position_conv_higher_setpoint_angle = 13;  // angle at higher setpoing
+    // Defines minimum and maximum achievable angle by the system. radians
+    float position_lower_angle = 11;
+    float position_higher_angle = 13;
 
     // Current conversion uses simple linear formula: x = y * scale + offset, to
     // convert from mesured value via ADC to real currrent.
@@ -120,6 +116,10 @@ message Config {
     // will just signal with leds that values are outside of desired range.
     float minimum_voltage = 65;
     float maximum_temperature = 66;
+
+
+    // Number of ticks that quadrature encoder generates in one rotation.
+    uint32 quad_encoder_range = 80;
   }
 }
 

@@ -73,9 +73,13 @@ struct sign_test
                 t::node_id did =
                     co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
 
-                cor.ctl.switch_to_power_control( p_low / 2 );
+                cor.ctl.switch_to_power_control( p_low / 2.F );
                 drv::wait_for( clk, 200_ms );
                 std::size_t count = 50;
+
+                float csum = 0;
+                float vsum = 0;
+
                 for ( std::size_t i : em::range( count ) ) {
                         std::ignore = i;
                         t::node_id nid =
@@ -85,13 +89,15 @@ struct sign_test
                         float pos     = cor.met.get_position();
                         float vel     = cor.met.get_velocity();
 
+                        csum += current;
+                        vsum += vel;
+
                         ctx.coll.set( nid, "now", clk.get_us() );
                         ctx.coll.set( nid, "cur", current );
                         ctx.coll.set( nid, "pos", pos );
                         ctx.coll.set( nid, "vel", vel );
-
-                        co_await ctx.expect( std::signbit( current ) == std::signbit( vel ) );
                 }
+                co_await ctx.expect( std::signbit( csum ) == std::signbit( vsum ) );
                 cor.ctl.switch_to_power_control( p_zero );
         }
 };

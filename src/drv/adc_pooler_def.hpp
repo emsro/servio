@@ -45,6 +45,11 @@ struct adc_pooler_temperature : temp_iface
 template < auto& AdcPooler >
 struct adc_pooler_position : pos_iface
 {
+        limits< uint32_t > get_position_range() const override
+        {
+                return { 0, AdcPooler.get_max_value() };
+        }
+
         uint32_t get_position() const override
         {
                 return AdcPooler->position.last_value;

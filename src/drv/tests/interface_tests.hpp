@@ -227,7 +227,7 @@ struct temperature_test
 
         t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
-                uint32_t temp = iface.get_temperature();
+                int32_t temp = iface.get_temperature();
 
                 co_await store_metric( mem, ctx, "temp", temp );
                 co_await ctx.expect( temp != 0 );

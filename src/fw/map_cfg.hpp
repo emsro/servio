@@ -24,21 +24,11 @@ template < typename Cfg, typename UnaryFunction >
         case Config_encoder_mode_tag:
                 f.template operator()< cfg::ENCODER_MODE >( cfg.encoder_mode );
                 break;
-        case Config_position_conv_lower_setpoint_value_tag:
-                f.template operator()< cfg::POSITION_CONV_LOW_VALUE >(
-                    cfg.position_conv_lower_setpoint_value );
+        case Config_position_lower_angle_tag:
+                f.template operator()< cfg::POSITION_LOW_ANGLE >( cfg.position_lower_angle );
                 break;
-        case Config_position_conv_lower_setpoint_angle_tag:
-                f.template operator()< cfg::POSITION_CONV_LOW_ANGLE >(
-                    cfg.position_conv_lower_setpoint_angle );
-                break;
-        case Config_position_conv_higher_setpoint_value_tag:
-                f.template operator()< cfg::POSITION_CONV_HIGH_VALUE >(
-                    cfg.position_conv_higher_setpoint_value );
-                break;
-        case Config_position_conv_higher_setpoint_angle_tag:
-                f.template operator()< cfg::POSITION_CONV_HIGH_ANGLE >(
-                    cfg.position_conv_higher_setpoint_angle );
+        case Config_position_higher_angle_tag:
+                f.template operator()< cfg::POSITION_HIGH_ANGLE >( cfg.position_higher_angle );
                 break;
         case Config_current_conv_scale_tag:
                 f.template operator()< cfg::CURRENT_CONV_SCALE >( cfg.current_conv_scale );
@@ -125,6 +115,9 @@ template < typename Cfg, typename UnaryFunction >
                 break;
         case Config_moving_detection_step_tag:
                 f.template operator()< cfg::MOVING_DETECTION_STEP >( cfg.moving_detection_step );
+                break;
+        case Config_quad_encoder_range_tag:
+                f.template operator()< cfg::QUAD_ENCD_RANGE >( cfg.quad_encoder_range );
                 break;
         default:
                 found_key = false;

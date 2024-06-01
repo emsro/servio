@@ -13,6 +13,14 @@ namespace em = emlabcpp;
 
 namespace servio::cfg
 {
+struct payload
+{
+        em::string_buffer< 16 > git_ver;
+        em::string_buffer< 32 > git_date;
+        uint32_t                id;
+
+        friend constexpr auto operator<=>( const payload&, const payload& ) = default;
+};
 
 template < auto Key, typename T >
 using reg = em::protocol::register_pair< Key, T >;
@@ -31,10 +39,8 @@ using map = em::protocol::register_map<
     reg< ID, uint32_t >,
     reg< GROUP_ID, uint32_t >,
     reg< ENCODER_MODE, encoder_mode >,
-    reg< POSITION_CONV_LOW_VALUE, uint32_t >,
-    reg< POSITION_CONV_LOW_ANGLE, float >,
-    reg< POSITION_CONV_HIGH_VALUE, uint32_t >,
-    reg< POSITION_CONV_HIGH_ANGLE, float >,
+    reg< POSITION_LOW_ANGLE, float >,
+    reg< POSITION_HIGH_ANGLE, float >,
     reg< CURRENT_CONV_SCALE, float >,
     reg< CURRENT_CONV_OFFSET, float >,
     reg< TEMP_CONV_SCALE, float >,
@@ -62,7 +68,8 @@ using map = em::protocol::register_map<
     reg< STATIC_FRICTION_DECAY, float >,
     reg< MINIMUM_VOLTAGE, float >,
     reg< MAXIMUM_TEMPERATURE, float >,
-    reg< MOVING_DETECTION_STEP, float > >;
+    reg< MOVING_DETECTION_STEP, float >,
+    reg< QUAD_ENCD_RANGE, uint32_t > >;
 
 using value_message = typename map::message_type;
 using value_variant = std::variant< model_name, uint32_t, float, bool, encoder_mode >;
@@ -81,6 +88,12 @@ keyval make_keyval( auto val )
             .msg = em::protocol::register_handler< map >::serialize< Key >( val ),
         };
 }
+
+struct context
+{
+        cfg::payload payload;
+        cfg::map     map;
+};
 
 // TODO: find all inlines and minimize
 #ifdef EMLABCPP_USE_OSTREAM

@@ -19,6 +19,11 @@ public:
                 HAL_TIM_Encoder_Start( &h_, TIM_CHANNEL_ALL );
         }
 
+        limits< uint32_t > get_position_range() const override
+        {
+                return { 0, h_.Init.Period };
+        }
+
         uint32_t get_position() const override
         {
                 return __HAL_TIM_GET_COUNTER( &h_ );

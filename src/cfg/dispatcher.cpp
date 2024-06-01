@@ -23,20 +23,17 @@ void dispatcher::apply( const key& key )
         case GROUP_ID:
         case ENCODER_MODE:
                 break;
-        case POSITION_CONV_LOW_ANGLE:
-        case POSITION_CONV_HIGH_ANGLE:
+        case POSITION_LOW_ANGLE:
+        case POSITION_HIGH_ANGLE: {
                 c.met.set_position_range(
-                    { m.get_val< POSITION_CONV_LOW_ANGLE >(),
-                      m.get_val< POSITION_CONV_HIGH_ANGLE >() } );
-                [[fallthrough]];
-        case POSITION_CONV_LOW_VALUE:
-        case POSITION_CONV_HIGH_VALUE:
+                    { m.get_val< POSITION_LOW_ANGLE >(), m.get_val< POSITION_HIGH_ANGLE >() } );
+                auto [min_val, max_val] = pos.get_position_range();
                 c.conv.set_position_cfg(
-                    m.get_val< POSITION_CONV_LOW_VALUE >(),
-                    m.get_val< POSITION_CONV_LOW_ANGLE >(),
-                    m.get_val< POSITION_CONV_HIGH_VALUE >(),
-                    m.get_val< POSITION_CONV_HIGH_ANGLE >() );
-                break;
+                    min_val,
+                    m.get_val< POSITION_LOW_ANGLE >(),
+                    max_val,
+                    m.get_val< POSITION_HIGH_ANGLE >() );
+        } break;
         case CURRENT_CONV_SCALE:
         case CURRENT_CONV_OFFSET:
                 c.conv.set_current_cfg(

@@ -1,6 +1,8 @@
 #include "base/base.hpp"
+#include "cfg/map.hpp"
 
 #include <cstdint>
+#include <emlabcpp/outcome.h>
 #include <emlabcpp/result.h>
 #include <span>
 
@@ -58,6 +60,13 @@ em::result send( com_iface& iface, microseconds timeout, auto&... data )
         return iface.send( b, timeout );
 }
 
+struct storage_iface
+{
+        virtual em::result  store_page( std::span< const std::byte > data ) = 0;
+        virtual em::outcome load_page( std::span< std::byte > data )        = 0;
+        virtual ~storage_iface()                                            = default;
+};
+
 struct leds_iface
 {
         virtual void force_red_led()                 = 0;
@@ -99,6 +108,7 @@ struct pwm_motor_iface
 
 struct pos_iface
 {
+        virtual limits< uint32_t > get_position_range() const                  = 0;
         virtual uint32_t           get_position() const                        = 0;
         virtual void               set_position_callback( position_cb_iface& ) = 0;
         virtual position_cb_iface& get_position_callback() const               = 0;
