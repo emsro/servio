@@ -1,13 +1,13 @@
 <map id="src/drv/adc_pooler.hpp" name="src/drv/adc_pooler.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="209,5,377,32"/>
-<area shape="rect" id="node2" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="73,80,209,107"/>
-<area shape="rect" id="node6" href="$platform_8hpp.html" title=" " alt="" coords="240,80,346,107"/>
-<area shape="rect" id="node8" href="$sentry_8hpp.html" title=" " alt="" coords="458,80,576,107"/>
-<area shape="rect" id="node3" href="$interfaces_8hpp.html" title=" " alt="" coords="28,162,168,189"/>
-<area shape="rect" id="node4" title=" " alt="" coords="65,319,132,345"/>
-<area shape="rect" id="node5" title=" " alt="" coords="180,244,233,271"/>
-<area shape="rect" id="node7" title=" " alt="" coords="295,162,366,189"/>
-<area shape="rect" id="node9" href="$sntr_2base_8hpp.html" title=" " alt="" coords="440,244,551,271"/>
-<area shape="rect" id="node10" title=" " alt="" coords="542,319,610,345"/>
-<area shape="rect" id="node11" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="390,155,534,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="117,5,285,32"/>
+<area shape="rect" id="node2" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="5,162,141,189"/>
+<area shape="rect" id="node6" href="$platform_8hpp.html" title=" " alt="" coords="148,80,255,107"/>
+<area shape="rect" id="node8" href="$sentry_8hpp.html" title=" " alt="" coords="302,80,421,107"/>
+<area shape="rect" id="node3" href="$interfaces_8hpp.html" title=" " alt="" coords="58,244,198,271"/>
+<area shape="rect" id="node4" title=" " alt="" coords="203,319,269,345"/>
+<area shape="rect" id="node5" title=" " alt="" coords="48,319,101,345"/>
+<area shape="rect" id="node7" href="$hal_8hpp.html" title=" " alt="" coords="166,162,237,189"/>
+<area shape="rect" id="node9" href="$sntr_2base_8hpp.html" title=" " alt="" coords="301,244,411,271"/>
+<area shape="rect" id="node10" title=" " alt="" coords="390,319,458,345"/>
+<area shape="rect" id="node11" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="312,155,456,196"/>
 </map>

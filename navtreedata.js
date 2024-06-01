@@ -35,7 +35,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ],
+        [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ],
@@ -59,7 +59,7 @@ var NAVTREE =
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
+        [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
@@ -71,16 +71,15 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"classservio_1_1mtr_1_1metrics.html",
-"functions_c.html",
-"lims.html#autotoc_md20",
-"namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1475199ec7c8f59508f313ac90d0b909",
-"namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f",
-"posvel__kalman_8hpp_source.html",
-"stm32g4xx__hal__conf_8h.html#a6552186102a1131b2849ac55a582945d",
-"structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca",
-"structservio_1_1ftest_1_1intg_1_1sign__test.html#a3f713472ccbe56ef4a500c96cfadcaf0"
+"adc_8cpp.html",
+"classservio_1_1drv_1_1quad__encoder.html",
+"flash_8hpp.html#a82f44e4d4b0aef1e39e57e40120f6ee0",
+"key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3aab34f7796f76a255878423f5155aea97",
+"namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451",
+"namespaceservio_1_1plt.html#a79d3faed853bcee26c9f504a8cd30118",
+"serial_8hpp.html#a6647589b925a226c31da4c42391a7eb3",
+"structservio_1_1core_1_1standard__callbacks.html#a7a03037291aaf4d1be21c9688bfd3786",
+"structservio_1_1ftest_1_1intg_1_1sign__test.html#ad13c8f7e12f633a1320e80003d6985e3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

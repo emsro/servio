@@ -1,6 +1,5 @@
 var namespaceservio_1_1fw =
 [
-    [ "cfg_context", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1cfg__context", "namespaceservio_1_1fw_structservio_1_1fw_1_1cfg__context_dup" ],
     [ "context", "structservio_1_1fw_1_1context.html", "structservio_1_1fw_1_1context" ],
     [ "dispatcher", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher", "namespaceservio_1_1fw_structservio_1_1fw_1_1dispatcher_dup" ],
     [ "persistent_config_writer", "structservio_1_1fw_1_1persistent__config__writer.html", "structservio_1_1fw_1_1persistent__config__writer" ],
@@ -22,13 +21,11 @@ var namespaceservio_1_1fw =
     [ "handle_message_packet", "namespaceservio_1_1fw.html#a958bf350bbe8b27b5db135c8b6ea0909", null ],
     [ "handle_set_config", "namespaceservio_1_1fw.html#a4e9503b8a5659417d41556c80472ad4c", null ],
     [ "handle_set_mode", "namespaceservio_1_1fw.html#a187d04f6561a215fee9e0f76b5c7a244", null ],
-    [ "load_cfg_context", "namespaceservio_1_1fw.html#abfd6bfc38d66258765a5e4df635edbad", null ],
-    [ "load_persistent_config", "namespaceservio_1_1fw.html#a4e6a4fc23a613fa7fb33e7b42c7e83a3", null ],
+    [ "load_persistent_config", "namespaceservio_1_1fw.html#a4ef71df0b100af9e858af3aa863ef3bf", null ],
     [ "map_cfg", "namespaceservio_1_1fw.html#a7e5cfea2793f02c9a7aa9fbd14e00120", null ],
     [ "multistart", "namespaceservio_1_1fw.html#a68327591c08e30e0258912e40f476a8c", null ],
     [ "operator<<", "namespaceservio_1_1fw.html#a360603de771fc0f6d7cb7bfa7caf6da8", null ],
     [ "process_message", "namespaceservio_1_1fw.html#aef7177bf7b33538307aa967e65274fd9", null ],
     [ "setup_context", "namespaceservio_1_1fw.html#a72376fa0b159e4c3fa169ba877df3e56", null ],
-    [ "stop_exec", "namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da", null ],
-    [ "store_persistent_config", "namespaceservio_1_1fw.html#ab36e52030344b4d8ae9775e4499c7f7e", null ]
+    [ "stop_exec", "namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da", null ]
 ];

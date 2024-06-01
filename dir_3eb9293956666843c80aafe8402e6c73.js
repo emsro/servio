@@ -22,6 +22,10 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
     [ "dts_temp.hpp", "dts__temp_8hpp.html", [
       [ "dts_temp", "classservio_1_1drv_1_1dts__temp.html", "classservio_1_1drv_1_1dts__temp" ]
     ] ],
+    [ "flash_cfg.cpp", "flash__cfg_8cpp.html", null ],
+    [ "flash_cfg.hpp", "flash__cfg_8hpp.html", [
+      [ "flash_storage", "classservio_1_1drv_1_1flash__storage.html", "classservio_1_1drv_1_1flash__storage" ]
+    ] ],
     [ "hbridge.cpp", "hbridge_8cpp.html", null ],
     [ "hbridge.hpp", "hbridge_8hpp.html", "hbridge_8hpp" ],
     [ "interfaces.hpp", "interfaces_8hpp.html", "interfaces_8hpp" ],

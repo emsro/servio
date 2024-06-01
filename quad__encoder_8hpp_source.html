@@ -108,51 +108,58 @@ $(document).ready(function(){initNavTree('quad__encoder_8hpp_source.html',''); i
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                HAL_TIM_Encoder_Start( &amp;h_, TIM_CHANNEL_ALL );</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1quad__encoder.html#ae5fabbcbd09485d3ac5a5cec9ff8db5a">   22</a></span>&#160;        uint32_t <a class="code" href="classservio_1_1drv_1_1quad__encoder.html#ae5fabbcbd09485d3ac5a5cec9ff8db5a">get_position</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1quad__encoder.html#a94358f8c846235f54f3a30ad83704c9a">   22</a></span>&#160;        <a class="code" href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">limits&lt; uint32_t &gt;</a> <a class="code" href="classservio_1_1drv_1_1quad__encoder.html#a94358f8c846235f54f3a30ad83704c9a">get_position_range</a>()<span class="keyword"> const override</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">return</span> __HAL_TIM_GET_COUNTER( &amp;h_ );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">return</span> { 0, h_.Init.Period };</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1quad__encoder.html#a3f6c31db0e0329f702f59ba91542cb5a">   27</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1quad__encoder.html#a3f6c31db0e0329f702f59ba91542cb5a">on_tick_irq</a>()</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">if</span> ( irq_counter_ == 0 ) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        callback_-&gt;<a class="code" href="structservio_1_1drv_1_1value__cb__iface.html#a570e1b674c6d87cdb422dbfc6b1d2864">on_value_irq</a>( __HAL_TIM_GET_COUNTER( &amp;h_ ) );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        irq_counter_ = irq_count_max_;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        irq_counter_--;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1quad__encoder.html#ae6eaed58decf4c894c01622929c6c3dd">   36</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1quad__encoder.html#ae6eaed58decf4c894c01622929c6c3dd">set_position_callback</a>( <a class="code" href="structservio_1_1drv_1_1value__cb__iface.html">position_cb_iface</a>&amp; cb )<span class="keyword"> override</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                callback_ = &amp;cb;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1quad__encoder.html#ae5fabbcbd09485d3ac5a5cec9ff8db5a">   27</a></span>&#160;        uint32_t <a class="code" href="classservio_1_1drv_1_1quad__encoder.html#ae5fabbcbd09485d3ac5a5cec9ff8db5a">get_position</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">return</span> __HAL_TIM_GET_COUNTER( &amp;h_ );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1quad__encoder.html#a3f6c31db0e0329f702f59ba91542cb5a">   32</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1quad__encoder.html#a3f6c31db0e0329f702f59ba91542cb5a">on_tick_irq</a>()</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">if</span> ( irq_counter_ == 0 ) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        callback_-&gt;<a class="code" href="structservio_1_1drv_1_1value__cb__iface.html#a570e1b674c6d87cdb422dbfc6b1d2864">on_value_irq</a>( __HAL_TIM_GET_COUNTER( &amp;h_ ) );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        irq_counter_ = irq_count_max_;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        irq_counter_--;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1quad__encoder.html#ae55d3804ef40ee78bfc8f09e8f81d422">   41</a></span>&#160;        <a class="code" href="structservio_1_1drv_1_1value__cb__iface.html">position_cb_iface</a>&amp; <a class="code" href="classservio_1_1drv_1_1quad__encoder.html#ae55d3804ef40ee78bfc8f09e8f81d422">get_position_callback</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1quad__encoder.html#ae6eaed58decf4c894c01622929c6c3dd">   41</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1quad__encoder.html#ae6eaed58decf4c894c01622929c6c3dd">set_position_callback</a>( <a class="code" href="structservio_1_1drv_1_1value__cb__iface.html">position_cb_iface</a>&amp; cb )<span class="keyword"> override</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span> *callback_;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                callback_ = &amp;cb;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">static</span> constexpr std::size_t irq_count_max_ = 8;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::size_t                  irq_counter_   = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        TIM_HandleTypeDef&amp;           h_;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="structservio_1_1drv_1_1value__cb__iface.html">value_cb_iface</a>*              callback_ = &amp;<a class="code" href="namespaceservio_1_1drv.html#adfb61af954b514cf4ba6d1ca47dad13b">EMPTY_CALLBACK</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1quad__encoder.html#ae55d3804ef40ee78bfc8f09e8f81d422">   46</a></span>&#160;        <a class="code" href="structservio_1_1drv_1_1value__cb__iface.html">position_cb_iface</a>&amp; <a class="code" href="classservio_1_1drv_1_1quad__encoder.html#ae55d3804ef40ee78bfc8f09e8f81d422">get_position_callback</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">return</span> *callback_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">static</span> constexpr std::size_t irq_count_max_ = 8;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::size_t                  irq_counter_   = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        TIM_HandleTypeDef&amp;           h_;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="structservio_1_1drv_1_1value__cb__iface.html">value_cb_iface</a>*              callback_ = &amp;<a class="code" href="namespaceservio_1_1drv.html#adfb61af954b514cf4ba6d1ca47dad13b">EMPTY_CALLBACK</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html">servio::drv::quad_encoder</a></div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:10</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_a04b6a5c7564d7b38720cdab356644c24"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#a04b6a5c7564d7b38720cdab356644c24">servio::drv::quad_encoder::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:17</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_a3f6c31db0e0329f702f59ba91542cb5a"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#a3f6c31db0e0329f702f59ba91542cb5a">servio::drv::quad_encoder::on_tick_irq</a></div><div class="ttdeci">void on_tick_irq()</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:27</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_a3f6c31db0e0329f702f59ba91542cb5a"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#a3f6c31db0e0329f702f59ba91542cb5a">servio::drv::quad_encoder::on_tick_irq</a></div><div class="ttdeci">void on_tick_irq()</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:32</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_a94358f8c846235f54f3a30ad83704c9a"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#a94358f8c846235f54f3a30ad83704c9a">servio::drv::quad_encoder::get_position_range</a></div><div class="ttdeci">limits&lt; uint32_t &gt; get_position_range() const override</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:22</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_aca8f198cb6cb063f4c2a0260fb63d2ef"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#aca8f198cb6cb063f4c2a0260fb63d2ef">servio::drv::quad_encoder::quad_encoder</a></div><div class="ttdeci">quad_encoder(TIM_HandleTypeDef &amp;h)</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:12</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_ae55d3804ef40ee78bfc8f09e8f81d422"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#ae55d3804ef40ee78bfc8f09e8f81d422">servio::drv::quad_encoder::get_position_callback</a></div><div class="ttdeci">position_cb_iface &amp; get_position_callback() const override</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:41</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_ae5fabbcbd09485d3ac5a5cec9ff8db5a"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#ae5fabbcbd09485d3ac5a5cec9ff8db5a">servio::drv::quad_encoder::get_position</a></div><div class="ttdeci">uint32_t get_position() const override</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:22</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_ae6eaed58decf4c894c01622929c6c3dd"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#ae6eaed58decf4c894c01622929c6c3dd">servio::drv::quad_encoder::set_position_callback</a></div><div class="ttdeci">void set_position_callback(position_cb_iface &amp;cb) override</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:36</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_ae55d3804ef40ee78bfc8f09e8f81d422"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#ae55d3804ef40ee78bfc8f09e8f81d422">servio::drv::quad_encoder::get_position_callback</a></div><div class="ttdeci">position_cb_iface &amp; get_position_callback() const override</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:46</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_ae5fabbcbd09485d3ac5a5cec9ff8db5a"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#ae5fabbcbd09485d3ac5a5cec9ff8db5a">servio::drv::quad_encoder::get_position</a></div><div class="ttdeci">uint32_t get_position() const override</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:27</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1quad__encoder_html_ae6eaed58decf4c894c01622929c6c3dd"><div class="ttname"><a href="classservio_1_1drv_1_1quad__encoder.html#ae6eaed58decf4c894c01622929c6c3dd">servio::drv::quad_encoder::set_position_callback</a></div><div class="ttdeci">void set_position_callback(position_cb_iface &amp;cb) override</div><div class="ttdef"><b>Definition:</b> quad_encoder.hpp:41</div></div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1drv.html">servio::drv</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:8</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html_adfb61af954b514cf4ba6d1ca47dad13b"><div class="ttname"><a href="namespaceservio_1_1drv.html#adfb61af954b514cf4ba6d1ca47dad13b">servio::drv::EMPTY_CALLBACK</a></div><div class="ttdeci">empty_value_cb EMPTY_CALLBACK</div><div class="ttdef"><b>Definition:</b> callbacks.hpp:67</div></div>
+<div class="ttc" id="anamespaceservio_html_a7f7743aa58139aab9b7d4db0cde30f55"><div class="ttname"><a href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">servio::limits</a></div><div class="ttdeci">em::min_max&lt; T &gt; limits</div><div class="ttdef"><b>Definition:</b> base.hpp:46</div></div>
 <div class="ttc" id="aplatform_8hpp_html"><div class="ttname"><a href="platform_8hpp.html">platform.hpp</a></div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1pos__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1pos__iface.html">servio::drv::pos_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:101</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1value__cb__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1value__cb__iface.html">servio::drv::value_cb_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:21</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1pos__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1pos__iface.html">servio::drv::pos_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:110</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1value__cb__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1value__cb__iface.html">servio::drv::value_cb_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:23</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1value__cb__iface_html_a570e1b674c6d87cdb422dbfc6b1d2864"><div class="ttname"><a href="structservio_1_1drv_1_1value__cb__iface.html#a570e1b674c6d87cdb422dbfc6b1d2864">servio::drv::value_cb_iface::on_value_irq</a></div><div class="ttdeci">virtual void on_value_irq(uint32_t val)=0</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -160,7 +167,7 @@ $(document).ready(function(){initNavTree('quad__encoder_8hpp_source.html',''); i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="quad__encoder_8hpp.html">quad_encoder.hpp</a></li>
-    <li class="footer">Generated on Tue May 21 2024 05:23:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

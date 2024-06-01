@@ -5,6 +5,7 @@ var interfaces_8hpp =
     [ "period_cb_iface", "structservio_1_1drv_1_1period__cb__iface.html", "structservio_1_1drv_1_1period__cb__iface" ],
     [ "com_res", "structservio_1_1drv_1_1com__res.html", "structservio_1_1drv_1_1com__res" ],
     [ "com_iface", "structservio_1_1drv_1_1com__iface.html", "structservio_1_1drv_1_1com__iface" ],
+    [ "storage_iface", "structservio_1_1drv_1_1storage__iface.html", "structservio_1_1drv_1_1storage__iface" ],
     [ "leds_iface", "structservio_1_1drv_1_1leds__iface.html", "structservio_1_1drv_1_1leds__iface" ],
     [ "clk_iface", "structservio_1_1drv_1_1clk__iface.html", "structservio_1_1drv_1_1clk__iface" ],
     [ "period_iface", "structservio_1_1drv_1_1period__iface.html", "structservio_1_1drv_1_1period__iface" ],

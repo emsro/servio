@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data_5fcache_5fenable_2166',['DATA_CACHE_ENABLE',['../stm32g4xx__hal__conf_8h.html#a5b4c32a40cf49b06c0d761e385949a6b',1,'stm32g4xx_hal_conf.h']]]
+  ['external_5fclock_5fvalue_2131',['EXTERNAL_CLOCK_VALUE',['../stm32h5xx__hal__conf_8h.html#a8c47c935e91e70569098b41718558648',1,'stm32h5xx_hal_conf.h']]]
 ];

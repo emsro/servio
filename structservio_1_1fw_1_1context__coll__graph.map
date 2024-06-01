@@ -1,21 +1,21 @@
 <map id="servio::fw::context" name="servio::fw::context">
-<area shape="rect" id="node1" title=" " alt="" coords="584,577,725,604"/>
-<area shape="rect" id="node2" href="$namespaceservio_1_1fw.html#structservio_1_1fw_1_1cfg__context" title=" " alt="" coords="317,140,485,167"/>
-<area shape="rect" id="node3" href="$structservio_1_1cfg_1_1payload.html" title=" " alt="" coords="18,5,169,32"/>
-<area shape="rect" id="node4" href="$structservio_1_1cfg_1_1dispatcher.html" title=" " alt="" coords="318,577,485,604"/>
-<area shape="rect" id="node5" href="$structservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="5,545,181,586"/>
-<area shape="rect" id="node10" href="$structservio_1_1core_1_1drivers.html" title=" " alt="" coords="326,325,477,352"/>
-<area shape="rect" id="node6" href="$structservio_1_1core_1_1core.html" title=" " alt="" coords="26,613,161,640"/>
-<area shape="rect" id="node7" href="$structservio_1_1core_1_1standard__callbacks.html" title=" " alt="" coords="320,710,483,751"/>
-<area shape="rect" id="node8" href="$classservio_1_1core_1_1position__callback.html" title=" " alt="" coords="14,693,173,734"/>
-<area shape="rect" id="node9" href="$classservio_1_1core_1_1current__callback.html" title=" " alt="" coords="17,758,169,799"/>
-<area shape="rect" id="node11" href="$structservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="24,377,163,418"/>
-<area shape="rect" id="node12" href="$structservio_1_1drv_1_1pos__iface.html" title=" " alt="" coords="13,443,173,469"/>
-<area shape="rect" id="node13" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="15,493,171,520"/>
-<area shape="rect" id="node14" href="$structservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="14,56,173,83"/>
-<area shape="rect" id="node15" href="$structservio_1_1drv_1_1leds__iface.html" title=" " alt="" coords="11,107,175,133"/>
-<area shape="rect" id="node16" href="$structservio_1_1drv_1_1period__cb__iface.html" title=" " alt="" coords="24,158,163,199"/>
-<area shape="rect" id="node17" href="$structservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="8,224,179,251"/>
-<area shape="rect" id="node18" href="$structservio_1_1drv_1_1curr__iface.html" title=" " alt="" coords="12,275,175,301"/>
-<area shape="rect" id="node19" href="$structservio_1_1drv_1_1com__iface.html" title=" " alt="" coords="11,325,176,352"/>
+<area shape="rect" id="node1" title=" " alt="" coords="580,141,721,168"/>
+<area shape="rect" id="node2" href="$structservio_1_1cfg_1_1dispatcher.html" title=" " alt="" coords="315,173,481,200"/>
+<area shape="rect" id="node3" href="$structservio_1_1drv_1_1pos__iface.html" title=" " alt="" coords="13,200,173,227"/>
+<area shape="rect" id="node9" href="$structservio_1_1core_1_1drivers.html" title=" " alt="" coords="323,505,473,532"/>
+<area shape="rect" id="node4" href="$structservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="5,257,181,298"/>
+<area shape="rect" id="node5" href="$structservio_1_1core_1_1core.html" title=" " alt="" coords="26,5,161,32"/>
+<area shape="rect" id="node6" href="$structservio_1_1core_1_1standard__callbacks.html" title=" " alt="" coords="317,107,479,149"/>
+<area shape="rect" id="node7" href="$classservio_1_1core_1_1position__callback.html" title=" " alt="" coords="14,59,173,101"/>
+<area shape="rect" id="node8" href="$classservio_1_1core_1_1current__callback.html" title=" " alt="" coords="17,125,169,166"/>
+<area shape="rect" id="node10" href="$structservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="24,439,163,481"/>
+<area shape="rect" id="node11" href="$namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context" title=" " alt="" coords="20,505,167,532"/>
+<area shape="rect" id="node12" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="15,556,171,583"/>
+<area shape="rect" id="node13" href="$structservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="14,607,173,633"/>
+<area shape="rect" id="node14" href="$structservio_1_1drv_1_1leds__iface.html" title=" " alt="" coords="11,657,175,684"/>
+<area shape="rect" id="node15" href="$structservio_1_1drv_1_1period__cb__iface.html" title=" " alt="" coords="24,709,163,750"/>
+<area shape="rect" id="node16" href="$structservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="8,775,179,801"/>
+<area shape="rect" id="node17" href="$structservio_1_1drv_1_1curr__iface.html" title=" " alt="" coords="12,825,175,852"/>
+<area shape="rect" id="node18" href="$structservio_1_1drv_1_1com__iface.html" title=" " alt="" coords="11,323,176,349"/>
+<area shape="rect" id="node19" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="20,374,167,415"/>
 </map>

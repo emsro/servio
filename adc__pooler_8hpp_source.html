@@ -270,26 +270,31 @@ $(document).ready(function(){initNavTree('adc__pooler_8hpp_source.html',''); ini
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                } );</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> with( <a class="code" href="structservio_1_1drv_1_1adc__pooler.html#ac5be031b859137067c988267ea81e3ef">id_type</a> set_id, <span class="keyword">auto</span>&amp;&amp; f )</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                em::for_each( set_.tie(), [&amp;]&lt; <span class="keyword">typename</span> T &gt;( T&amp; item ) {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                        if ( T::id == set_id )</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                f( item );</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                } );</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        ADC_HandleTypeDef* adc_ = {};</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        DMA_HandleTypeDef* dma_ = {};</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        TIM_HandleTypeDef* tim_ = {};</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        std::size_t sequence_i_ = 0;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        em::view&lt; const id_type* &gt; sequence_;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        Set                        set_;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;};</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1adc__pooler.html#a017a730636d02b520f79c1d30af18592">  184</a></span>&#160;        uint32_t <a class="code" href="structservio_1_1drv_1_1adc__pooler.html#a017a730636d02b520f79c1d30af18592">get_max_value</a>()</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">return</span> __HAL_ADC_DIGITAL_SCALE( adc_-&gt;Init.Resolution );</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        [[gnu::flatten]] <span class="keywordtype">void</span> with( <a class="code" href="structservio_1_1drv_1_1adc__pooler.html#ac5be031b859137067c988267ea81e3ef">id_type</a> set_id, <span class="keyword">auto</span>&amp;&amp; f )</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                em::for_each( set_.tie(), [&amp;]&lt; <span class="keyword">typename</span> T &gt;( T&amp; item ) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                        if ( T::id == set_id )</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                f( item );</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                } );</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        ADC_HandleTypeDef* adc_ = {};</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        DMA_HandleTypeDef* dma_ = {};</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        TIM_HandleTypeDef* tim_ = {};</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        std::size_t sequence_i_ = 0;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        em::view&lt; const id_type* &gt; sequence_;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        Set                        set_;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;};</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
 <div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html">servio::sntr::sentry</a></div><div class="ttdef"><b>Definition:</b> sentry.hpp:12</div></div>
 <div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html_a437c915013d9d4560e80e431f4689f9b"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html#a437c915013d9d4560e80e431f4689f9b">servio::sntr::sentry::set_inoperable</a></div><div class="ttdeci">void set_inoperable(std::size_t eid, const char *emsg, const data_type &amp;data=std::monostate{})</div><div class="ttdef"><b>Definition:</b> sentry.cpp:13</div></div>
 <div class="ttc" id="aclassservio_1_1sntr_1_1sentry_html_a976f75a13b7759a068057d77458a892a"><div class="ttname"><a href="classservio_1_1sntr_1_1sentry.html#a976f75a13b7759a068057d77458a892a">servio::sntr::sentry::set_degraded</a></div><div class="ttdeci">void set_degraded(std::size_t eid, const char *emsg, const data_type &amp;data=std::monostate{})</div><div class="ttdef"><b>Definition:</b> sentry.cpp:26</div></div>
@@ -321,6 +326,7 @@ $(document).ready(function(){initNavTree('adc__pooler_8hpp_source.html',''); ini
 <div class="ttc" id="astructservio_1_1drv_1_1adc__channel_html_ad63d895784d81b6ae4949808c1413eb1"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel.html#ad63d895784d81b6ae4949808c1413eb1">servio::drv::adc_channel::chconf</a></div><div class="ttdeci">ADC_ChannelConfTypeDef chconf</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:77</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__channel_html_addb153a7d723e9d1e935dd07fd456f01"><div class="ttname"><a href="structservio_1_1drv_1_1adc__channel.html#addb153a7d723e9d1e935dd07fd456f01">servio::drv::adc_channel::period_start</a></div><div class="ttdeci">void period_start(ADC_HandleTypeDef &amp;h)</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:79</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html">servio::drv::adc_pooler</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:119</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html_a017a730636d02b520f79c1d30af18592"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html#a017a730636d02b520f79c1d30af18592">servio::drv::adc_pooler::get_max_value</a></div><div class="ttdeci">uint32_t get_max_value()</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:184</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html_a1070a919585287ced780cffa680fdf85"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html#a1070a919585287ced780cffa680fdf85">servio::drv::adc_pooler::operator-&gt;</a></div><div class="ttdeci">Set * operator-&gt;()</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:140</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html_a1cd6af5094b499c8d954d3328081c697"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html#a1cd6af5094b499c8d954d3328081c697">servio::drv::adc_pooler::operator*</a></div><div class="ttdeci">Set &amp; operator*()</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:145</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1adc__pooler_html_a51810b4cf71f9296ce38297912d3f14c"><div class="ttname"><a href="structservio_1_1drv_1_1adc__pooler.html#a51810b4cf71f9296ce38297912d3f14c">servio::drv::adc_pooler::set_seq</a></div><div class="ttdeci">void set_seq(em::view&lt; const id_type * &gt; seq)</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:129</div></div>
@@ -340,9 +346,9 @@ $(document).ready(function(){initNavTree('adc__pooler_8hpp_source.html',''); ini
 <div class="ttc" id="astructservio_1_1drv_1_1detailed__adc__channel_html_abb124331c9121663f28517ef1f770b12"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__adc__channel.html#abb124331c9121663f28517ef1f770b12">servio::drv::detailed_adc_channel::used</a></div><div class="ttdeci">std::size_t used</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:29</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1detailed__adc__channel_html_ad11f56dd273bd4dafc88de6dc9a91363"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__adc__channel.html#ad11f56dd273bd4dafc88de6dc9a91363">servio::drv::detailed_adc_channel::buffer</a></div><div class="ttdeci">uint16_t buffer[N]</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:28</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1detailed__adc__channel_html_af780e6e5c11f56ae70521efc5137259a"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__adc__channel.html#af780e6e5c11f56ae70521efc5137259a">servio::drv::detailed_adc_channel::period_stop</a></div><div class="ttdeci">void period_stop(ADC_HandleTypeDef &amp;h)</div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:47</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1detailed__cb__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__cb__iface.html">servio::drv::detailed_cb_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:15</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1detailed__cb__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__cb__iface.html">servio::drv::detailed_cb_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:17</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1detailed__cb__iface_html_acfa83e7c5128568504fd3f6ca3cc6731"><div class="ttname"><a href="structservio_1_1drv_1_1detailed__cb__iface.html#acfa83e7c5128568504fd3f6ca3cc6731">servio::drv::detailed_cb_iface::on_value_irq</a></div><div class="ttdeci">virtual void on_value_irq(uint32_t val, std::span&lt; uint16_t &gt; profile)=0</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1value__cb__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1value__cb__iface.html">servio::drv::value_cb_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:21</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1value__cb__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1value__cb__iface.html">servio::drv::value_cb_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:23</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1value__cb__iface_html_a570e1b674c6d87cdb422dbfc6b1d2864"><div class="ttname"><a href="structservio_1_1drv_1_1value__cb__iface.html#a570e1b674c6d87cdb422dbfc6b1d2864">servio::drv::value_cb_iface::on_value_irq</a></div><div class="ttdeci">virtual void on_value_irq(uint32_t val)=0</div></div>
 <div class="ttc" id="astructservio_1_1sntr_1_1central__sentry__iface_html"><div class="ttname"><a href="structservio_1_1sntr_1_1central__sentry__iface.html">servio::sntr::central_sentry_iface</a></div><div class="ttdef"><b>Definition:</b> central_sentry_iface.hpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -351,7 +357,7 @@ $(document).ready(function(){initNavTree('adc__pooler_8hpp_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="adc__pooler_8hpp.html">adc_pooler.hpp</a></li>
-    <li class="footer">Generated on Tue May 21 2024 05:23:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

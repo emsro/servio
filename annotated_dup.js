@@ -10,18 +10,14 @@ var annotated_dup =
         [ "bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", "structservio_1_1bb_1_1bb__test__case" ]
       ] ],
       [ "brd", "namespaceservio_1_1brd.html", [
-        [ "adc_set", "structservio_1_1brd_1_1adc__set.html", "structservio_1_1brd_1_1adc__set" ],
-        [ "dma_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1dma__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1dma__cfg_dup" ],
-        [ "adc_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1adc__cfg_dup" ],
-        [ "uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1uart__cfg_dup" ],
-        [ "hb_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1hb__timer__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1hb__timer__cfg_dup" ],
-        [ "leds_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1leds__timer__cfg", "namespaceservio_1_1brd_structservio_1_1brd_1_1leds__timer__cfg_dup" ]
+        [ "adc_set", "structservio_1_1brd_1_1adc__set.html", "structservio_1_1brd_1_1adc__set" ]
       ] ],
       [ "cfg", "namespaceservio_1_1cfg.html", [
         [ "dispatcher", "structservio_1_1cfg_1_1dispatcher.html", "structservio_1_1cfg_1_1dispatcher" ],
+        [ "payload", "structservio_1_1cfg_1_1payload.html", "structservio_1_1cfg_1_1payload" ],
         [ "keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1keyval_dup" ],
-        [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ],
-        [ "payload", "structservio_1_1cfg_1_1payload.html", "structservio_1_1cfg_1_1payload" ]
+        [ "context", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1context_dup" ],
+        [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ]
       ] ],
       [ "cnv", "namespaceservio_1_1cnv.html", [
         [ "converter", "structservio_1_1cnv_1_1converter.html", "structservio_1_1cnv_1_1converter" ],
@@ -83,12 +79,14 @@ var annotated_dup =
         [ "cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", "classservio_1_1drv_1_1cobs__uart" ],
         [ "pin_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg", "namespaceservio_1_1drv_structservio_1_1drv_1_1pin__cfg_dup" ],
         [ "dts_temp", "classservio_1_1drv_1_1dts__temp.html", "classservio_1_1drv_1_1dts__temp" ],
+        [ "flash_storage", "classservio_1_1drv_1_1flash__storage.html", "classservio_1_1drv_1_1flash__storage" ],
         [ "hbridge", "classservio_1_1drv_1_1hbridge.html", "classservio_1_1drv_1_1hbridge" ],
         [ "detailed_cb_iface", "structservio_1_1drv_1_1detailed__cb__iface.html", "structservio_1_1drv_1_1detailed__cb__iface" ],
         [ "value_cb_iface", "structservio_1_1drv_1_1value__cb__iface.html", "structservio_1_1drv_1_1value__cb__iface" ],
         [ "period_cb_iface", "structservio_1_1drv_1_1period__cb__iface.html", "structservio_1_1drv_1_1period__cb__iface" ],
         [ "com_res", "structservio_1_1drv_1_1com__res.html", "structservio_1_1drv_1_1com__res" ],
         [ "com_iface", "structservio_1_1drv_1_1com__iface.html", "structservio_1_1drv_1_1com__iface" ],
+        [ "storage_iface", "structservio_1_1drv_1_1storage__iface.html", "structservio_1_1drv_1_1storage__iface" ],
         [ "leds_iface", "structservio_1_1drv_1_1leds__iface.html", "structservio_1_1drv_1_1leds__iface" ],
         [ "clk_iface", "structservio_1_1drv_1_1clk__iface.html", "structservio_1_1drv_1_1clk__iface" ],
         [ "period_iface", "structservio_1_1drv_1_1period__iface.html", "structservio_1_1drv_1_1period__iface" ],
@@ -127,7 +125,6 @@ var annotated_dup =
         [ "test_system", "structservio_1_1ftester_1_1test__system.html", "structservio_1_1ftester_1_1test__system" ]
       ] ],
       [ "fw", "namespaceservio_1_1fw.html", [
-        [ "cfg_context", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1cfg__context", "namespaceservio_1_1fw_structservio_1_1fw_1_1cfg__context_dup" ],
         [ "context", "structservio_1_1fw_1_1context.html", "structservio_1_1fw_1_1context" ],
         [ "dispatcher", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher", "namespaceservio_1_1fw_structservio_1_1fw_1_1dispatcher_dup" ],
         [ "persistent_config_writer", "structservio_1_1fw_1_1persistent__config__writer.html", "structservio_1_1fw_1_1persistent__config__writer" ],

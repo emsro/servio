@@ -64,33 +64,33 @@
 <path fill="none" stroke="midnightblue" d="M182.28,-112.44C156.15,-103.4 114.74,-89.06 85.42,-78.92"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="86.2,-75.48 75.6,-75.52 83.91,-82.1 86.2,-75.48"/>
 </g>
-<!-- Node13 -->
+<!-- Node21 -->
 <g id="node5" class="node">
-<title>Node13</title>
+<title>Node21</title>
 <g id="a_node5"><a xlink:href="platform_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="red" points="120,-56.5 120,-75.5 200,-75.5 200,-56.5 120,-56.5"/>
 <text text-anchor="middle" x="160" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">platform.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node13 -->
+<!-- Node2&#45;&gt;Node21 -->
 <g id="edge4" class="edge">
-<title>Node2&#45;&gt;Node13</title>
+<title>Node2&#45;&gt;Node21</title>
 <path fill="none" stroke="midnightblue" d="M199.24,-112.08C192.46,-104.3 182.46,-92.8 174.24,-83.37"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="176.82,-81 167.62,-75.75 171.54,-85.59 176.82,-81"/>
 </g>
-<!-- Node15 -->
+<!-- Node24 -->
 <g id="node6" class="node">
-<title>Node15</title>
+<title>Node24</title>
 <g id="a_node6"><a xlink:href="sentry_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="red" points="218.5,-56.5 218.5,-75.5 307.5,-75.5 307.5,-56.5 218.5,-56.5"/>
 <text text-anchor="middle" x="263" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">sntr/sentry.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node15 -->
+<!-- Node2&#45;&gt;Node24 -->
 <g id="edge5" class="edge">
-<title>Node2&#45;&gt;Node15</title>
+<title>Node2&#45;&gt;Node24</title>
 <path fill="none" stroke="midnightblue" d="M216,-112.32C224.19,-104.42 236.51,-92.55 246.47,-82.94"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="249.07,-85.29 253.84,-75.83 244.21,-80.26 249.07,-85.29"/>
 </g>

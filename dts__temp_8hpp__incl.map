@@ -1,13 +1,15 @@
 <map id="src/drv/dts_temp.hpp" name="src/drv/dts_temp.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="327,5,486,32"/>
-<area shape="rect" id="node2" href="$interfaces_8hpp.html" title=" " alt="" coords="169,80,309,107"/>
-<area shape="rect" id="node7" href="$util_8hpp.html" title=" " alt="" coords="503,80,593,107"/>
-<area shape="rect" id="node10" href="$platform_8hpp.html" title=" " alt="" coords="353,80,460,107"/>
-<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="29,155,145,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,229,72,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="169,155,308,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="332,155,385,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="505,155,591,181"/>
-<area shape="rect" id="node9" title=" " alt="" coords="615,155,681,181"/>
-<area shape="rect" id="node11" title=" " alt="" coords="410,155,481,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="607,5,765,32"/>
+<area shape="rect" id="node2" href="$interfaces_8hpp.html" title=" " alt="" coords="212,80,352,107"/>
+<area shape="rect" id="node9" href="$util_8hpp.html" title=" " alt="" coords="641,80,731,107"/>
+<area shape="rect" id="node12" href="$platform_8hpp.html" title=" " alt="" coords="790,80,897,107"/>
+<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="11,229,127,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="83,304,150,331"/>
+<area shape="rect" id="node5" href="$map_8hpp.html" title=" " alt="" coords="24,155,127,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="203,155,361,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="386,155,525,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="549,155,602,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="626,155,711,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="735,155,802,181"/>
+<area shape="rect" id="node13" href="$hal_8hpp.html" title=" " alt="" coords="827,155,897,181"/>
 </map>

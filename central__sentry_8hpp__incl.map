@@ -1,12 +1,14 @@
 <map id="src/sntr/central_sentry.hpp" name="src/sntr/central_sentry.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="306,5,499,32"/>
-<area shape="rect" id="node2" href="$interfaces_8hpp.html" title=" " alt="" coords="115,87,255,114"/>
-<area shape="rect" id="node6" title=" " alt="" coords="269,169,323,196"/>
-<area shape="rect" id="node7" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="331,80,475,121"/>
-<area shape="rect" id="node9" href="$record_8hpp.html" title=" " alt="" coords="499,87,619,114"/>
-<area shape="rect" id="node10" title=" " alt="" coords="643,80,821,121"/>
-<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="234,244,350,271"/>
-<area shape="rect" id="node4" title=" " alt="" coords="259,319,325,345"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,169,144,196"/>
-<area shape="rect" id="node8" href="$sntr_2base_8hpp.html" title=" " alt="" coords="347,169,458,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="544,5,737,32"/>
+<area shape="rect" id="node2" href="$interfaces_8hpp.html" title=" " alt="" coords="313,87,453,114"/>
+<area shape="rect" id="node8" title=" " alt="" coords="548,169,602,196"/>
+<area shape="rect" id="node9" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="568,80,712,121"/>
+<area shape="rect" id="node11" href="$record_8hpp.html" title=" " alt="" coords="736,87,856,114"/>
+<area shape="rect" id="node12" title=" " alt="" coords="881,80,1058,121"/>
+<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="414,244,530,271"/>
+<area shape="rect" id="node4" title=" " alt="" coords="439,319,506,345"/>
+<area shape="rect" id="node5" href="$map_8hpp.html" title=" " alt="" coords="421,169,524,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="24,169,182,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="207,169,346,196"/>
+<area shape="rect" id="node10" href="$sntr_2base_8hpp.html" title=" " alt="" coords="626,169,737,196"/>
 </map>

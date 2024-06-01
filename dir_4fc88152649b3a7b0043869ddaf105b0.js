@@ -1,6 +1,5 @@
 var dir_4fc88152649b3a7b0043869ddaf105b0 =
 [
-    [ "cfg_context.hpp", "cfg__context_8hpp.html", "cfg__context_8hpp" ],
     [ "context.cpp", "context_8cpp.html", "context_8cpp" ],
     [ "context.hpp", "context_8hpp.html", "context_8hpp" ],
     [ "dispatcher.cpp", "fw_2dispatcher_8cpp.html", "fw_2dispatcher_8cpp" ],
@@ -12,8 +11,10 @@ var dir_4fc88152649b3a7b0043869ddaf105b0 =
     [ "map_cfg.hpp", "map__cfg_8hpp.html", "map__cfg_8hpp" ],
     [ "servio_pb.cpp", "servio__pb_8cpp.html", "servio__pb_8cpp" ],
     [ "servio_pb.hpp", "servio__pb_8hpp.html", "servio__pb_8hpp" ],
-    [ "store_persistent_config.cpp", "store__persistent__config_8cpp.html", "store__persistent__config_8cpp" ],
-    [ "store_persistent_config.hpp", "store__persistent__config_8hpp.html", "store__persistent__config_8hpp" ],
+    [ "store_persistent_config.cpp", "store__persistent__config_8cpp.html", null ],
+    [ "store_persistent_config.hpp", "store__persistent__config_8hpp.html", [
+      [ "persistent_config_writer", "structservio_1_1fw_1_1persistent__config__writer.html", "structservio_1_1fw_1_1persistent__config__writer" ]
+    ] ],
     [ "util.cpp", "util_8cpp.html", "util_8cpp" ],
     [ "util.hpp", "util_8hpp.html", "util_8hpp" ]
 ];

@@ -6,5 +6,6 @@ var structservio_1_1cfg_1_1dispatcher =
     [ "set", "structservio_1_1cfg_1_1dispatcher.html#a256182993eacb532d7cbbb311b0b1acb", null ],
     [ "c", "structservio_1_1cfg_1_1dispatcher.html#aed0e248f63762fe9716eabd9e35b2bd8", null ],
     [ "m", "structservio_1_1cfg_1_1dispatcher.html#a796848fd1ca44849d50e5326535b337a", null ],
-    [ "motor", "structservio_1_1cfg_1_1dispatcher.html#acce77d8661ca210fd3686a9021c8256f", null ]
+    [ "motor", "structservio_1_1cfg_1_1dispatcher.html#acce77d8661ca210fd3686a9021c8256f", null ],
+    [ "pos", "structservio_1_1cfg_1_1dispatcher.html#af5a24ecaa013848565b704a86ae16688", null ]
 ];

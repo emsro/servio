@@ -1,21 +1,4 @@
 var searchData=
 [
-  ['parse_5ferror_1202',['parse_error',['../structservio_1_1scmdio_1_1parse__error.html',1,'servio::scmdio']]],
-  ['payload_1203',['payload',['../structservio_1_1cfg_1_1payload.html',1,'servio::cfg']]],
-  ['period_5fcb_1204',['period_cb',['../structservio_1_1drv_1_1period__cb.html',1,'servio::drv']]],
-  ['period_5fcb_5fiface_1205',['period_cb_iface',['../structservio_1_1drv_1_1period__cb__iface.html',1,'servio::drv']]],
-  ['period_5fiface_1206',['period_iface',['../structservio_1_1drv_1_1period__iface.html',1,'servio::drv']]],
-  ['period_5fiface_5ftest_1207',['period_iface_test',['../structservio_1_1drv_1_1tests_1_1period__iface__test.html',1,'servio::drv::tests']]],
-  ['persistent_5fconfig_5fwriter_1208',['persistent_config_writer',['../structservio_1_1fw_1_1persistent__config__writer.html',1,'servio::fw']]],
-  ['pin_5fcfg_1209',['pin_cfg',['../namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg',1,'servio::drv']]],
-  ['pos_5fiface_1210',['pos_iface',['../structservio_1_1drv_1_1pos__iface.html',1,'servio::drv']]],
-  ['position_5fcallback_1211',['position_callback',['../classservio_1_1core_1_1position__callback.html',1,'servio::core']]],
-  ['position_5ftest_1212',['position_test',['../structservio_1_1drv_1_1tests_1_1position__test.html',1,'servio::drv::tests']]],
-  ['posvel_5fkalman_1213',['posvel_kalman',['../structservio_1_1mtr_1_1posvel__kalman.html',1,'servio::mtr']]],
-  ['prof_5frecord_1214',['prof_record',['../namespaceservio_1_1ftest_1_1bench.html#structservio_1_1ftest_1_1bench_1_1prof__record',1,'servio::ftest::bench']]],
-  ['profile_1215',['profile',['../structservio_1_1ftest_1_1bench_1_1profile.html',1,'servio::ftest::bench']]],
-  ['pulser_1216',['pulser',['../structservio_1_1mon_1_1pulser.html',1,'servio::mon']]],
-  ['pwm_5fmotor_5fiface_1217',['pwm_motor_iface',['../structservio_1_1drv_1_1pwm__motor__iface.html',1,'servio::drv']]],
-  ['pwm_5fmotor_5ftest_1218',['pwm_motor_test',['../structservio_1_1drv_1_1tests_1_1pwm__motor__test.html',1,'servio::drv::tests']]],
-  ['pwr_1219',['pwr',['../structservio_1_1pwr.html',1,'servio']]]
+  ['off_5fscale_1178',['off_scale',['../namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale',1,'servio::cfg::off_scale'],['../namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale',1,'servio::cnv::off_scale']]]
 ];

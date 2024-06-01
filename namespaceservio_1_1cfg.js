@@ -1,11 +1,12 @@
 var namespaceservio_1_1cfg =
 [
     [ "dispatcher", "structservio_1_1cfg_1_1dispatcher.html", "structservio_1_1cfg_1_1dispatcher" ],
-    [ "keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1keyval_dup" ],
-    [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ],
     [ "payload", "structservio_1_1cfg_1_1payload.html", "structservio_1_1cfg_1_1payload" ],
+    [ "keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1keyval_dup" ],
+    [ "context", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1context_dup" ],
+    [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ],
     [ "handler", "namespaceservio_1_1cfg.html#a8587e35d0b4b831a0423fb148e9c5df2", null ],
-    [ "map", "namespaceservio_1_1cfg.html#aa63b06a9719242d158c4e03cb439a54a", null ],
+    [ "map", "namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325", null ],
     [ "model_name", "namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d", null ],
     [ "page", "namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10", null ],
     [ "reg", "namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f", null ],
@@ -21,10 +22,8 @@ var namespaceservio_1_1cfg =
       [ "ID", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218", null ],
       [ "GROUP_ID", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab0267128c648c65666ba26bdeb685577", null ],
       [ "ENCODER_MODE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5bcc5eca5c52167826fd65a5b5177e18", null ],
-      [ "POSITION_CONV_LOW_VALUE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3abff3384d9bd6bd5cfc1de004c7243356", null ],
-      [ "POSITION_CONV_LOW_ANGLE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2fd53be6aabe17ef8352778e7ec85d78", null ],
-      [ "POSITION_CONV_HIGH_VALUE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a86faeb8efe17a26899e0709bbd9d151c", null ],
-      [ "POSITION_CONV_HIGH_ANGLE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ae65ae00365958f8a263cc2dc7c6b9289", null ],
+      [ "POSITION_LOW_ANGLE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1c189400ff78d331b05283d2e6e1f52e", null ],
+      [ "POSITION_HIGH_ANGLE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6433f4f26bcae6d525a4b25a30700678", null ],
       [ "CURRENT_CONV_SCALE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3abcd4ce2f3f5d88dfe44aab2228971441", null ],
       [ "CURRENT_CONV_OFFSET", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2e2ed1aafb50d3868139a287ee15ed58", null ],
       [ "TEMP_CONV_SCALE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a635506dbfa2d898483e0c7996a60d7f4", null ],
@@ -52,7 +51,8 @@ var namespaceservio_1_1cfg =
       [ "STATIC_FRICTION_DECAY", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6c89e4ec3a7be28f0c103c13057c4f9c", null ],
       [ "MINIMUM_VOLTAGE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab025034ef4a6897674222cdf80c8c171", null ],
       [ "MAXIMUM_TEMPERATURE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a31f81f3f8379662055edc0f05154c542", null ],
-      [ "MOVING_DETECTION_STEP", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8df354e31764c98878c7f2a765111fc5", null ]
+      [ "MOVING_DETECTION_STEP", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8df354e31764c98878c7f2a765111fc5", null ],
+      [ "QUAD_ENCD_RANGE", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a90ed638c490da8f648bc7315210a7f42", null ]
     ] ],
     [ "apply", "namespaceservio_1_1cfg.html#a6b74b3216968308a4d01b9b8641cc711", null ],
     [ "calculate_current_conversion", "namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811", null ],

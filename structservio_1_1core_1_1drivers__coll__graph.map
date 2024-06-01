@@ -1,13 +1,16 @@
 <map id="servio::core::drivers" name="servio::core::drivers">
-<area shape="rect" id="node1" title=" " alt="" coords="315,265,465,291"/>
-<area shape="rect" id="node2" href="$structservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="24,5,163,47"/>
-<area shape="rect" id="node3" href="$structservio_1_1drv_1_1pos__iface.html" title=" " alt="" coords="13,71,173,98"/>
-<area shape="rect" id="node4" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="15,122,171,149"/>
-<area shape="rect" id="node5" href="$structservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="5,173,181,215"/>
-<area shape="rect" id="node6" href="$structservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="14,239,173,266"/>
-<area shape="rect" id="node7" href="$structservio_1_1drv_1_1leds__iface.html" title=" " alt="" coords="11,290,175,317"/>
-<area shape="rect" id="node8" href="$structservio_1_1drv_1_1period__cb__iface.html" title=" " alt="" coords="24,341,163,383"/>
-<area shape="rect" id="node9" href="$structservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="8,407,179,434"/>
-<area shape="rect" id="node10" href="$structservio_1_1drv_1_1curr__iface.html" title=" " alt="" coords="12,458,175,485"/>
-<area shape="rect" id="node11" href="$structservio_1_1drv_1_1com__iface.html" title=" " alt="" coords="11,509,176,535"/>
+<area shape="rect" id="node1" title=" " alt="" coords="571,315,721,342"/>
+<area shape="rect" id="node2" href="$structservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="280,5,419,47"/>
+<area shape="rect" id="node3" href="$structservio_1_1drv_1_1pos__iface.html" title=" " alt="" coords="269,71,429,98"/>
+<area shape="rect" id="node4" href="$namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context" title=" " alt="" coords="276,122,423,149"/>
+<area shape="rect" id="node5" href="$structservio_1_1cfg_1_1payload.html" title=" " alt="" coords="5,122,156,149"/>
+<area shape="rect" id="node6" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="271,173,427,199"/>
+<area shape="rect" id="node7" href="$structservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="261,224,437,265"/>
+<area shape="rect" id="node8" href="$structservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="270,290,429,317"/>
+<area shape="rect" id="node9" href="$structservio_1_1drv_1_1leds__iface.html" title=" " alt="" coords="267,341,431,367"/>
+<area shape="rect" id="node10" href="$structservio_1_1drv_1_1period__cb__iface.html" title=" " alt="" coords="280,392,419,433"/>
+<area shape="rect" id="node11" href="$structservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="264,458,435,485"/>
+<area shape="rect" id="node12" href="$structservio_1_1drv_1_1curr__iface.html" title=" " alt="" coords="268,509,431,535"/>
+<area shape="rect" id="node13" href="$structservio_1_1drv_1_1com__iface.html" title=" " alt="" coords="267,559,432,586"/>
+<area shape="rect" id="node14" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="276,611,423,652"/>
 </map>

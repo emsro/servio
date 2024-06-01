@@ -4,6 +4,7 @@ var structservio_1_1drv_1_1adc__pooler =
     [ "adc_pooler", "structservio_1_1drv_1_1adc__pooler.html#a987b5031dff2b6f9acebdfcf971948df", null ],
     [ "adc_conv_cplt_irq", "structservio_1_1drv_1_1adc__pooler.html#a6e27aabd150211e20c317ffc246f5d5e", null ],
     [ "adc_error_irq", "structservio_1_1drv_1_1adc__pooler.html#a774cee15e9567b519f2b0a117041ee56", null ],
+    [ "get_max_value", "structservio_1_1drv_1_1adc__pooler.html#a017a730636d02b520f79c1d30af18592", null ],
     [ "on_period_irq", "structservio_1_1drv_1_1adc__pooler.html#af4303b8347974ca47f979e64733ed682", null ],
     [ "operator*", "structservio_1_1drv_1_1adc__pooler.html#a1cd6af5094b499c8d954d3328081c697", null ],
     [ "operator->", "structservio_1_1drv_1_1adc__pooler.html#a1070a919585287ced780cffa680fdf85", null ],

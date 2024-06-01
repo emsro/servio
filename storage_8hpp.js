@@ -1,6 +1,5 @@
 var storage_8hpp =
 [
-    [ "payload", "structservio_1_1cfg_1_1payload.html", "structservio_1_1cfg_1_1payload" ],
     [ "page", "storage_8hpp.html#a5082244066c102db79273fce9ba13b10", null ],
     [ "find_latest_page", "storage_8hpp.html#a8787135a705ae3b12e06d41bcf8c6c95", null ],
     [ "find_next_page", "storage_8hpp.html#ac90beba4f9ba45db1db48a6daebc5ff4", null ],

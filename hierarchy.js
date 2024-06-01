@@ -1,12 +1,10 @@
 var hierarchy =
 [
-    [ "servio::brd::adc_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__cfg", null ],
     [ "servio::plt::adc_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg", null ],
     [ "servio::drv::adc_channel< ID >", "structservio_1_1drv_1_1adc__channel.html", [
       [ "servio::drv::adc_channel_with_callback< drv::POSITION_CHANNEL >", "structservio_1_1drv_1_1adc__channel__with__callback.html", null ],
       [ "servio::drv::adc_channel_with_callback< ID >", "structservio_1_1drv_1_1adc__channel__with__callback.html", null ]
     ] ],
-    [ "servio::drv::adc_channel< drv::TEMP_CHANNEL >", "structservio_1_1drv_1_1adc__channel.html", null ],
     [ "servio::drv::adc_channel< drv::VCC_CHANNEL >", "structservio_1_1drv_1_1adc__channel.html", null ],
     [ "servio::drv::adc_pooler< Set >", "structservio_1_1drv_1_1adc__pooler.html", null ],
     [ "servio::drv::tests::adc_pooler_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test", null ],
@@ -17,7 +15,6 @@ var hierarchy =
       [ "servio::sntr::central_sentry", "classservio_1_1sntr_1_1central__sentry.html", null ],
       [ "servio::sntr::test_central_sentry", "structservio_1_1sntr_1_1test__central__sentry.html", null ]
     ] ],
-    [ "servio::fw::cfg_context", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1cfg__context", null ],
     [ "servio::scmdio::cfg_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__opts", null ],
     [ "servio::fw::check_bool", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool", null ],
     [ "servio::drv::clk_iface", "structservio_1_1drv_1_1clk__iface.html", [
@@ -39,6 +36,7 @@ var hierarchy =
     [ "servio::drv::tests::comms_timeout_test", "structservio_1_1drv_1_1tests_1_1comms__timeout__test.html", null ],
     [ "servio::ctl::config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", null ],
     [ "servio::ftester::config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config", null ],
+    [ "servio::cfg::context", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context", null ],
     [ "servio::fw::context", "structservio_1_1fw_1_1context.html", null ],
     [ "servio::ctl::control", "classservio_1_1ctl_1_1control.html", null ],
     [ "em::testing::controller_interface", null, [
@@ -60,7 +58,6 @@ var hierarchy =
     ] ],
     [ "servio::cfg::dispatcher", "structservio_1_1cfg_1_1dispatcher.html", null ],
     [ "servio::fw::dispatcher", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1dispatcher", null ],
-    [ "servio::brd::dma_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1dma__cfg", null ],
     [ "servio::plt::dma_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg", null ],
     [ "servio::core::drivers", "structservio_1_1core_1_1drivers.html", null ],
     [ "std::exception", null, [
@@ -71,7 +68,6 @@ var hierarchy =
         [ "servio::scmdio::serialize_error", "structservio_1_1scmdio_1_1serialize__error.html", null ]
       ] ]
     ] ],
-    [ "servio::brd::hb_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1hb__timer__cfg", null ],
     [ "servio::plt::hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", null ],
     [ "servio::drv::tests::hbridge_test", "structservio_1_1drv_1_1tests_1_1hbridge__test.html", null ],
     [ "servio::mon::indication", "classservio_1_1mon_1_1indication.html", null ],
@@ -82,7 +78,6 @@ var hierarchy =
       [ "servio::drv::leds", "classservio_1_1drv_1_1leds.html", null ]
     ] ],
     [ "servio::drv::tests::leds_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test", null ],
-    [ "servio::brd::leds_timer_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1leds__timer__cfg", null ],
     [ "servio::plt::leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", null ],
     [ "servio::leds_vals", "namespaceservio.html#structservio_1_1leds__vals", null ],
     [ "servio::scmdio::line", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line", null ],
@@ -134,6 +129,9 @@ var hierarchy =
     [ "servio::core::standard_callbacks", "structservio_1_1core_1_1standard__callbacks.html", null ],
     [ "servio::klmn::state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", null ],
     [ "servio::mtr::static_detector", "structservio_1_1mtr_1_1static__detector.html", null ],
+    [ "servio::drv::storage_iface", "structservio_1_1drv_1_1storage__iface.html", [
+      [ "servio::drv::flash_storage", "classservio_1_1drv_1_1flash__storage.html", null ]
+    ] ],
     [ "servio::plt::temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", null ],
     [ "servio::drv::temp_iface", "structservio_1_1drv_1_1temp__iface.html", [
       [ "servio::drv::adc_pooler_temperature< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__temperature.html", null ],
@@ -153,7 +151,6 @@ var hierarchy =
     ] ],
     [ "servio::ftester::test_system", "structservio_1_1ftester_1_1test__system.html", null ],
     [ "servio::ftest::testing_system", "structservio_1_1ftest_1_1testing__system.html", null ],
-    [ "servio::brd::uart_cfg", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1uart__cfg", null ],
     [ "servio::plt::uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", null ],
     [ "servio::ftest::uctx", "structservio_1_1ftest_1_1uctx.html", null ],
     [ "servio::ftest::bench::usage", "structservio_1_1ftest_1_1bench_1_1usage.html", null ],
