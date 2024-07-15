@@ -40,6 +40,8 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   find_package(GTest REQUIRED)
 
   add_subdirectory(dep/CLI11)
+  set(JOQUE_REPROC_ENABLED ON)
+  set(JOQUE_NLOHMANN_JSON_ENABLED ON)
   add_subdirectory(dep/joque)
 
   include(CTest)

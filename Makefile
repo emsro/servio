@@ -1,6 +1,6 @@
 
 .DEFAULT_GOAL := build
-.PHONY: build build_host build_g4
+.PHONY: build build_host build_h5
 
 FIND_FILTER = -not \( -path ./build -prune \) -not \( -path ./stm32-cmake -prune \) -not \( -path ./.doxygen -prune \)
 
@@ -8,13 +8,10 @@ BUILD_ARGS = -GNinja
 
 configure:
 	$(MAKE) configure_host
-	$(MAKE) configure_g4
 	$(MAKE) configure_h5
 
 configure_host:
 	cmake --preset "host_debug_cfg"
-configure_g4:
-	cmake --preset "stm32g4_debug_cfg"
 configure_h5:
 	cmake --preset "stm32h5_debug_cfg"
 configure_asan:
@@ -22,15 +19,12 @@ configure_asan:
 
 build:
 	$(MAKE) build_host
-	$(MAKE) build_g4
 	$(MAKE) build_h5
 
 build_host:
-	cmake --build --preset "host_debug_build"
-build_g4:
-	cmake --build --preset "stm32g4_debug_build"
+	cmake --build --preset "host_debug_build" -j 4
 build_h5:
-	cmake --build --preset "stm32h5_debug_build"
+	cmake --build --preset "stm32h5_debug_build" -j 4
 build_asan:
 	cmake --build --preset "host_asan_build"
 

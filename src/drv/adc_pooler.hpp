@@ -189,7 +189,7 @@ struct adc_pooler
 private:
         [[gnu::flatten]] void with( id_type set_id, auto&& f )
         {
-                em::for_each( set_.tie(), [&]< typename T >( T& item ) {
+                em::for_each( em::decompose( set_ ), [&]< typename T >( T& item ) {
                         if ( T::id == set_id )
                                 f( item );
                 } );

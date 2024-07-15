@@ -4,6 +4,7 @@
 #include "ftester/flash.hpp"
 #include "ftester/system.hpp"
 #include "joque/exec.hpp"
+#include "joque/json.hpp"
 
 #include <emlabcpp/enumerate.h>
 #include <fstream>
@@ -177,7 +178,7 @@ int main( int argc, char* argv[] )
                 };
         }
 
-        joque::print_exec_visitor           pvis{ false, true };
+        joque::print_exec_visitor           pvis{ false };
         std::optional< joque::exec_record > rec = joque::exec( ts, 0, cfg.filter, pvis ).run();
         if ( rec && cfg.output_dir ) {
                 std::ofstream os{ *cfg.output_dir / "res.json" };

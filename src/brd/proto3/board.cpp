@@ -100,11 +100,6 @@ struct adc_set
             "position",
             CENTRAL_SENTRY };
         drv::adc_channel< drv::VCC_CHANNEL > vcc{ { "vcc", CENTRAL_SENTRY } };
-
-        [[gnu::flatten]] auto tie()
-        {
-                return std::tie( current, position, vcc );
-        }
 };
 
 using adc_pooler_type = drv::adc_pooler< adc_set >;
