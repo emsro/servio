@@ -1,6 +1,7 @@
 
 
-#include "scmdio/async_cobs.hpp"
+#include "../base/base.hpp"
+#include "./async_cobs.hpp"
 
 #include <CLI/CLI.hpp>
 
@@ -9,7 +10,7 @@
 namespace servio::scmdio
 {
 
-CLI::Option* verbose_opt( CLI::App& app, std::optional< bool >& val );
+CLI::Option* verbose_opt( CLI::App& app, opt< bool >& val );
 
 CLI::Option* coms_opt( CLI::App& app, std::filesystem::path& device );
 CLI::Option* dcoms_opt( CLI::App& app, std::filesystem::path& device );

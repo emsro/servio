@@ -12,12 +12,17 @@ option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 
 add_subdirectory(dep/emlabcpp)
-add_subdirectory(dep/cmake-git-version-tracking)
-add_subdirectory(dep/magic_enum)
 
+include(cmake/CPM.cmake)
 include(cmake/flags.cmake)
 include(cmake/utils.cmake)
-include(cmake/nanopb.cmake)
+
+cpmaddpackage(
+  "gh:andrew-hardin/cmake-git-version-tracking#6c0cb87edd029ddfb403a8e24577c144a03605a6"
+)
+cpmaddpackage("gh:Neargye/magic_enum@0.9.7")
+cpmaddpackage("gh:avakar/atom#f5d5c6c0f5fdc96a6275d55f7c4ee98396e407a6")
+cpmaddpackage("gh:koniarik/vari@0.4.7")
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
   target_compile_options(
@@ -37,9 +42,38 @@ target_link_libraries(emlabcpp PUBLIC magic_enum)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
-  find_package(GTest REQUIRED)
+  cpmaddpackage("gh:CLIUtils/CLI11@2.4.2")
+  cpmaddpackage("gh:doctest/doctest@2.4.11")
+  cpmaddpackage("gh:nlohmann/json@3.11.3")
+  cpmaddpackage(
+    NAME
+    Boost
+    VERSION
+    1.84.0
+    URL
+    https://github.com/boostorg/boost/releases/download/boost-1.84.0/boost-1.84.0.tar.xz
+    URL_HASH
+    SHA256=2e64e5d79a738d0fa6fb546c6e5c2bd28f88d268a2a080546f74e5ff98f29d0e
+    OPTIONS
+    "BOOST_ENABLE_CMAKE ON"
+    "BOOST_INCLUDE_LIBRARIES container\\\;asio" # Note the escapes!
+    SYSTEM
+    ON)
+  cpmaddpackage(
+    NAME
+    googletest
+    GITHUB_REPOSITORY
+    google/googletest
+    VERSION
+    1.15.2
+    OPTIONS
+    "INSTALL_GTEST OFF"
+    "gtest_force_shared_crt"
+    SYSTEM
+    ON)
 
-  add_subdirectory(dep/CLI11)
+  target_link_libraries(emlabcpp PUBLIC nlohmann_json::nlohmann_json)
+
   set(JOQUE_REPROC_ENABLED ON)
   set(JOQUE_NLOHMANN_JSON_ENABLED ON)
   add_subdirectory(dep/joque)
@@ -54,7 +88,10 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
   stm32_fetch_hal(H5)
   stm32_fetch_cmsis(H5)
-  find_package(CMSIS COMPONENTS STM32H5 REQUIRED GLOBAL)
+  find_package(
+    CMSIS
+    COMPONENTS STM32H5
+    REQUIRED GLOBAL)
   find_package(HAL COMPONENTS STM32H5 REQUIRED GLOBAL)
 
   target_compile_options(emlabcpp PUBLIC -Os)

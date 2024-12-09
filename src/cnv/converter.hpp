@@ -1,4 +1,4 @@
-#include "cnv/linear_converter.hpp"
+#include "./linear_converter.hpp"
 
 #pragma once
 
@@ -13,8 +13,8 @@ struct converter
             uint32_t high_value,
             float    high_angle )
         {
-                const int   val_diff   = static_cast< int >( high_value - low_value );
-                const float angle_diff = high_angle - low_angle;
+                int const   val_diff   = static_cast< int >( high_value - low_value );
+                float const angle_diff = high_angle - low_angle;
                 position.scale         = angle_diff / static_cast< float >( val_diff );
                 position.offset = low_angle - static_cast< float >( low_value ) * position.scale;
         }

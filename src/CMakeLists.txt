@@ -16,6 +16,7 @@ target_link_libraries(
   serviolib
   INTERFACE sntrlib
             monlib
+            ifacelib
             corelib
             cfglib
             mtrlib

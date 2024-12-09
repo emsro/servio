@@ -1,8 +1,8 @@
 #pragma once
 
-#include "drv/interfaces.hpp"
-#include "sntr/central_sentry_iface.hpp"
-#include "sntr/record.hpp"
+#include "../drv/interfaces.hpp"
+#include "./central_sentry_iface.hpp"
+#include "./record.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <span>
@@ -21,24 +21,24 @@ public:
             std::span< record >         degr_buffer,
             em::function_view< void() > stop_callback );
 
-        central_sentry( const central_sentry& )            = delete;
+        central_sentry( central_sentry const& )            = delete;
         central_sentry( central_sentry&& )                 = delete;
-        central_sentry& operator=( const central_sentry& ) = delete;
+        central_sentry& operator=( central_sentry const& ) = delete;
         central_sentry& operator=( central_sentry&& )      = delete;
 
         bool is_inoperable() const override;
 
         void report_inoperable(
-            const char*      src,
+            char const*      src,
             ecode_set        ecodes,
-            const char*      emsg,
-            const data_type& data ) override;
+            char const*      emsg,
+            data_type const& data ) override;
 
         void report_degraded(
-            const char*      src,
+            char const*      src,
             ecode_set        ecodes,
-            const char*      emsg,
-            const data_type& data ) override;
+            char const*      emsg,
+            data_type const& data ) override;
 
 private:
         void fire_inoperable();

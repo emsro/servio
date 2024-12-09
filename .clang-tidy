@@ -7,7 +7,6 @@ Checks: >
     misc*,
     performance*,
     portability*,
-    readability*,-readability-named-parameter,-readability-magic-numbers,-readability-identifier-length,-readability-suspicious-call-argument,
 WarningsAsErrors: true
 HeaderFilterRegex: .*
 AnalyzeTemporaryDtors: true

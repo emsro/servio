@@ -1,9 +1,9 @@
 #pragma once
 
-#include "base/base.hpp"
-#include "emlabcpp/defer.h"
+#include "../base/base.hpp"
 
 #include <array>
+#include <emlabcpp/defer.h>
 #include <iostream>
 
 namespace servio::sim
@@ -13,7 +13,7 @@ namespace em = emlabcpp;
 
 using angle_vec = std::array< float, 2 >;
 
-inline angle_vec rotate_vec( const angle_vec& v, float angle )
+inline angle_vec rotate_vec( angle_vec const& v, float angle )
 {
         return {
             std::cos( angle ) * v[0] - std::sin( angle ) * v[1],
@@ -50,17 +50,17 @@ struct simple_motor
                 auto t = static_cast< float >( now.count() ) / 1000'000.F;
 
                 power              = *p;
-                const float t_diff = t - last_t;
+                float const t_diff = t - last_t;
 
                 if ( t_diff == 0.F )
                         return;
-                const em::defer d{ [&] {
+                em::defer const d{ [&] {
                         last_t = t;
                 } };
 
                 current = power_to_current( power );
 
-                const float force = current * 15.F;
+                float const force = current * 15.F;
 
                 if ( std::abs( velocity ) < static_friction_vel ) {
                         if ( std::abs( force ) < static_friction_force ) {
@@ -70,11 +70,11 @@ struct simple_motor
                 }
 
                 // let's simplify current into accel
-                const float acc = force - resistance( velocity );
+                float const acc = force - resistance( velocity );
 
                 velocity += acc * t_diff;
 
-                const float angle_change = velocity * t_diff;
+                float const angle_change = velocity * t_diff;
                 pos_vec                  = rotate_vec( pos_vec, angle_change );
         }
 
@@ -94,7 +94,7 @@ struct simple_motor
         }
 };
 
-inline std::ostream& operator<<( std::ostream& os, const simple_motor& sim )
+inline std::ostream& operator<<( std::ostream& os, simple_motor const& sim )
 {
         return os << "\t" << sim.power << "\t" << sim.current << "\t" << sim.velocity << "\t"
                   << sim.position();

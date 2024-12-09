@@ -1,9 +1,9 @@
-#include "ftester/cli.hpp"
+#include "./cli.hpp"
 
 namespace servio::ftester
 {
 
-CLI::Option* ocfg_opt( CLI::App& app, std::optional< std::filesystem::path >& o_cfg )
+CLI::Option* ocfg_opt( CLI::App& app, opt< std::filesystem::path >& o_cfg )
 {
         return app
             .add_option(
@@ -12,8 +12,7 @@ CLI::Option* ocfg_opt( CLI::App& app, std::optional< std::filesystem::path >& o_
             ->check( CLI::ExistingFile );
 }
 
-CLI::Option*
-firmware_opt( CLI::App& app, std::optional< std::filesystem::path >& fw, CLI::Option* cfg_opt )
+CLI::Option* firmware_opt( CLI::App& app, opt< std::filesystem::path >& fw, CLI::Option* cfg_opt )
 {
         return app.add_option( "-f,--firmware", fw, "Firmware for the device" )
             ->envname( "SERVIO_FIRMWARE" )

@@ -1,13 +1,14 @@
 
-#include "ftest/bench/base.hpp"
-#include "ftester/config.hpp"
-#include "ftester/flash.hpp"
-#include "ftester/system.hpp"
-#include "joque/exec.hpp"
-#include "joque/json.hpp"
+#include "../base/base.hpp"
+#include "../ftest/bench/base.hpp"
+#include "./config.hpp"
+#include "./flash.hpp"
+#include "./system.hpp"
 
 #include <emlabcpp/enumerate.h>
 #include <fstream>
+#include <joque/exec.hpp>
+#include <joque/json.hpp>
 #include <nlohmann/json.hpp>
 
 namespace servio::ftester
@@ -20,10 +21,10 @@ bool handle_test_specifics( std::string_view name, test_system& sys, std::filesy
                 auto& recs = sys.get_records();
 
                 std::vector< ftest::bench::prof_record > prof_recs;
-                for ( const auto& rec : recs ) {
+                for ( auto const& rec : recs ) {
                         em::protocol::handler< ftest::bench::prof_record >::extract( rec.data )
                             .match(
-                                [&]( const ftest::bench::prof_record& pr ) {
+                                [&]( ftest::bench::prof_record const& pr ) {
                                         prof_recs.push_back( pr );
                                 },
                                 [&]( auto&& err ) {
@@ -51,23 +52,23 @@ bool handle_test_specifics( std::string_view name, test_system& sys, std::filesy
 
 struct joque_test
 {
-        std::string                            name;
-        em::testing::test_id                   tid;
-        test_system&                           sys;
-        std::optional< std::filesystem::path > output_dir;
+        std::string                  name;
+        em::testing::test_id         tid;
+        test_system&                 sys;
+        opt< std::filesystem::path > output_dir;
 
-        joque::run_result operator()( const joque::task& )
+        joque::run_result operator()( joque::task const& )
         {
                 joque::run_result res;
                 res.retcode = 0;
 
                 em::match(
                     sys.run_test( tid ),
-                    [&]( const em::testing::test_result& tres ) {
+                    [&]( em::testing::test_result const& tres ) {
                             if ( em::testing::is_problematic( tres.status ) )
                                     res.retcode = 2;
                     },
-                    [&]( const em::testing::error_variant& err ) {
+                    [&]( em::testing::error_variant const& err ) {
                             std::stringstream ss;
                             ss << err;
                             joque::insert_err( res, ss.str() );
@@ -82,7 +83,7 @@ struct joque_test
                                 s = "output json too big, not shown";
                         joque::insert_err( res, s );
                 } else if ( j.contains( "metrics" ) ) {
-                        for ( const nlohmann::json& m : j["metrics"] ) {
+                        for ( nlohmann::json const& m : j["metrics"] ) {
                                 auto k   = m["name"].get< std::string >();
                                 auto val = std::to_string( m["value"].get< int >() ) + " " +
                                            m["unit"].get< std::string >();
@@ -106,7 +107,7 @@ struct joque_test
                 if ( !recs.empty() && !specific_test ) {
                         std::filesystem::path recp = output_dir.value() / ( name + ".rec" );
                         std::ofstream         of{ recp };
-                        for ( const auto& rec : recs )
+                        for ( auto const& rec : recs )
                                 of << em::convert_view< int >( rec.data ) << std::endl;
                 }
 
@@ -178,8 +179,8 @@ int main( int argc, char* argv[] )
                 };
         }
 
-        joque::print_exec_visitor           pvis{ false };
-        std::optional< joque::exec_record > rec = joque::exec( ts, 0, cfg.filter, pvis ).run();
+        joque::print_exec_visitor pvis{ false };
+        opt< joque::exec_record > rec = joque::exec( ts, 0, cfg.filter, pvis ).run();
         if ( rec && cfg.output_dir ) {
                 std::ofstream os{ *cfg.output_dir / "res.json" };
                 os << nlohmann::json{ *rec }.dump();

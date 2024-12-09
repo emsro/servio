@@ -1,4 +1,4 @@
-#include "brd.hpp"
+#include "../brd.hpp"
 #include "cfg/default.hpp"
 #include "cnv/setup.hpp"
 #include "core/drivers.hpp"
@@ -51,7 +51,7 @@ cfg::map get_default_config()
 {
         cfg::map m = plt::get_default_config();
 
-        const cnv::off_scale curr_cfg = get_curr_coeff();
+        cnv::off_scale const curr_cfg = get_curr_coeff();
 
         m.set_val< cfg::key::CURRENT_CONV_SCALE >( curr_cfg.scale );
         m.set_val< cfg::key::CURRENT_CONV_OFFSET >( curr_cfg.offset );

@@ -1,5 +1,5 @@
-#include "base/base.hpp"
-#include "cfg/map.hpp"
+#include "../base/base.hpp"
+#include "../cfg/map.hpp"
 
 #include <cstdint>
 #include <emlabcpp/outcome.h>
@@ -49,20 +49,20 @@ struct com_iface
 {
         virtual em::result start() = 0;
         virtual em::result
-        send( std::span< const std::span< const std::byte > > data, microseconds timeout ) = 0;
+        send( std::span< std::span< std::byte const > const > data, microseconds timeout ) = 0;
         virtual com_res recv( std::span< std::byte > data )                                = 0;
         virtual ~com_iface() = default;
 };
 
 em::result send( com_iface& iface, microseconds timeout, auto&... data )
 {
-        std::array< std::span< const std::byte >, sizeof...( data ) > b{ data... };
+        std::array< std::span< std::byte const >, sizeof...( data ) > b{ data... };
         return iface.send( b, timeout );
 }
 
 struct storage_iface
 {
-        virtual em::result  store_page( std::span< const std::byte > data ) = 0;
+        virtual em::result  store_page( std::span< std::byte const > data ) = 0;
         virtual em::outcome load_page( std::span< std::byte > data )        = 0;
         virtual ~storage_iface()                                            = default;
 };
@@ -70,7 +70,7 @@ struct storage_iface
 struct leds_iface
 {
         virtual void force_red_led()                 = 0;
-        virtual void update( const leds_vals& leds ) = 0;
+        virtual void update( leds_vals const& leds ) = 0;
         virtual ~leds_iface()                        = default;
 };
 

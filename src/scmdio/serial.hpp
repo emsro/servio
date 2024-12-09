@@ -1,5 +1,5 @@
-#include "io.pb.h"
-#include "scmdio/async_cobs.hpp"
+#include "../iface/def.h"
+#include "./async_cobs.hpp"
 
 #include <boost/asio.hpp>
 #include <boost/asio/serial_port.hpp>
@@ -9,40 +9,36 @@
 namespace servio::scmdio
 {
 
-/// Writes a reply to servo port
-boost::asio::awaitable< void > write( cobs_port& port, const servio::HostToServio& payload );
+template < typename T >
+using opt = std::optional< T >;
 
-/// Reads a reply from servo over port
-boost::asio::awaitable< servio::ServioToHost > read( cobs_port& port );
+// XXX: do we really want json everywhere?
 
-/// Exchanges messages with the servo over port
-boost::asio::awaitable< servio::ServioToHost >
-exchange( cobs_port& port, const servio::HostToServio& msg );
+boost::asio::awaitable< void > write( cobs_port& port, std::string_view payload );
 
-/// Loads a config field specified by `field` from servo over port
-boost::asio::awaitable< servio::Config >
-get_config_field( cobs_port& port, const google::protobuf::FieldDescriptor* field );
+boost::asio::awaitable< std::string > read( cobs_port& port );
 
-/// Sets config field defined by `cfg` to serv over port
-boost::asio::awaitable< void > set_config_field( cobs_port& port, const servio::Config& cfg );
+boost::asio::awaitable< nlohmann::json > exchg( cobs_port& port, std::string const& msg );
 
-/// Loads full config of servo over port
-boost::asio::awaitable< std::vector< servio::Config > > get_full_config( cobs_port& port );
+boost::asio::awaitable< vari::vval< iface::cfg_vals > >
+get_config_field( cobs_port& port, iface::cfg_key cfg );
 
-boost::asio::awaitable< servio::Property > get_property( cobs_port& port, uint32_t field_id );
+boost::asio::awaitable< void >
+set_config_field( cobs_port& port, vari::vref< iface::cfg_vals const > val );
 
-boost::asio::awaitable< servio::Property >
-get_property( cobs_port& port, servio::Property::PldCase field_id );
+// XXX: nasty type
+boost::asio::awaitable< std::vector< vari::vval< iface::cfg_vals > > >
+get_full_config( cobs_port& port );
 
-boost::asio::awaitable< servio::Property >
-get_property( cobs_port& port, const google::protobuf::FieldDescriptor* field );
+boost::asio::awaitable< vari::vval< iface::prop_vals > >
+get_property( cobs_port& port, iface::prop_key );
 
-boost::asio::awaitable< servio::Mode > get_property_mode( cobs_port& port );
-boost::asio::awaitable< float >        get_property_current( cobs_port& port );
-boost::asio::awaitable< float >        get_property_position( cobs_port& port );
-boost::asio::awaitable< float >        get_property_velocity( cobs_port& port );
+boost::asio::awaitable< iface::mode_key > get_property_mode( cobs_port& port );
+boost::asio::awaitable< float >           get_property_current( cobs_port& port );
+boost::asio::awaitable< float >           get_property_position( cobs_port& port );
+boost::asio::awaitable< float >           get_property_velocity( cobs_port& port );
 
-boost::asio::awaitable< void > set_mode( cobs_port& port, servio::Mode mode );
+boost::asio::awaitable< void > set_mode( cobs_port& port, vari::vref< iface::mode_vals const > v );
 
 boost::asio::awaitable< void > set_mode_disengaged( cobs_port& port );
 boost::asio::awaitable< void > set_mode_power( cobs_port& port, float pow );

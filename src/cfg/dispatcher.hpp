@@ -1,8 +1,8 @@
 
-#include "cfg/key.hpp"
-#include "cfg/map.hpp"
-#include "core/core.hpp"
-#include "core/drivers.hpp"
+#include "../core/core.hpp"
+#include "../core/drivers.hpp"
+#include "./key.hpp"
+#include "./map.hpp"
 
 #pragma once
 
@@ -18,7 +18,7 @@ struct dispatcher
         drv::pos_iface&       pos;
 
         template < key Key, typename T >
-        void set( const T& item )
+        void set( T const& item )
         {
                 m.set_val< Key >( item );
                 apply( Key );
@@ -26,15 +26,15 @@ struct dispatcher
 
         void full_apply();
 
-        void apply( const key& key );
+        void apply( key const& key );
 
         template < key Key >
-        const auto& get() const
+        auto const& get() const
         {
                 return m.get_val< Key >();
         }
 };
 
-void apply( ctl::control&, const map&, const key& key );
+void apply( ctl::control&, map const&, key const& key );
 
 }  // namespace servio::cfg

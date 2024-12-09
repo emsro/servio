@@ -1,4 +1,4 @@
-#include "cfg/map.hpp"
+#include "./map.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/experimental/string_buffer.h>
@@ -12,16 +12,16 @@ namespace servio::cfg
 
 using page = em::view< std::byte* >;
 
-const page* find_unused_page( em::view< const page* > pages );
+page const* find_unused_page( em::view< page const* > pages );
 
-const page* find_oldest_page( em::view< const page* > pages );
+page const* find_oldest_page( em::view< page const* > pages );
 
-const page* find_next_page( em::view< const page* > pages );
+page const* find_next_page( em::view< page const* > pages );
 
-const page* find_latest_page( em::view< const page* > pages );
+page const* find_latest_page( em::view< page const* > pages );
 
-std::tuple< bool, page > store( const payload& pl, const map* m, page buffer );
+std::tuple< bool, page > store( payload const& pl, map const* m, page buffer );
 
-bool load( page p, em::function_view< bool( const payload& ) > pl_cb, map& m );
+bool load( page p, em::function_view< bool( payload const& ) > pl_cb, map& m );
 
 }  // namespace servio::cfg

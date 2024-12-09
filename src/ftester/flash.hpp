@@ -6,13 +6,15 @@
 
 namespace servio::ftester
 {
+template < typename T >
+using opt = std::optional< T >;
 
 joque::task make_flash_task(
-    const std::filesystem::path&                  firmware,
-    const std::filesystem::path&                  ocd_cfg,
-    const std::optional< std::filesystem::path >& log_file,
-    const joque::resource&                        dev_res );
+    std::filesystem::path const&        firmware,
+    std::filesystem::path const&        ocd_cfg,
+    opt< std::filesystem::path > const& log_file,
+    joque::resource const&              dev_res );
 
-void flash_firmware( const std::filesystem::path& firmware, const std::filesystem::path& ocdconf );
+void flash_firmware( std::filesystem::path const& firmware, std::filesystem::path const& ocdconf );
 
 }  // namespace servio::ftester

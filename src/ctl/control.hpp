@@ -1,5 +1,5 @@
-#include "ctl/config.hpp"
-#include "ctl/linear_transition_regulator.hpp"
+#include "./config.hpp"
+#include "./linear_transition_regulator.hpp"
 
 #include <emlabcpp/pid.h>
 #include <limits>

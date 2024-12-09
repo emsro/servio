@@ -1,7 +1,7 @@
-#include "cnv/converter.hpp"
-#include "cnv/utils.hpp"
-#include "ctl/control.hpp"
-#include "mtr/metrics.hpp"
+#include "../cnv/converter.hpp"
+#include "../cnv/utils.hpp"
+#include "../ctl/control.hpp"
+#include "../mtr/metrics.hpp"
 
 #pragma once
 
@@ -33,7 +33,7 @@ public:
             drv::pwm_motor_iface& motor,
             ctl::control&         ctl,
             drv::clk_iface&       clk,
-            const cnv::converter& conv )
+            cnv::converter const& conv )
           : motor_( motor )
           , ctl_( ctl )
           , clk_( clk )
@@ -43,7 +43,7 @@ public:
 
         [[gnu::flatten]] void on_value_irq( uint32_t curr, std::span< uint16_t > ) override
         {
-                const float c = cnv::current( conv_, curr, motor_ );
+                float const c = cnv::current( conv_, curr, motor_ );
 
                 filter_.add( c );
 
@@ -56,7 +56,7 @@ private:
         drv::pwm_motor_iface& motor_;
         ctl::control&         ctl_;
         drv::clk_iface&       clk_;
-        const cnv::converter& conv_;
+        cnv::converter const& conv_;
 };
 
 class position_callback : public drv::position_cb_iface
@@ -66,7 +66,7 @@ public:
             ctl::control&         ctl,
             mtr::metrics&         met,
             drv::clk_iface&       clk,
-            const cnv::converter& conv )
+            cnv::converter const& conv )
           : ctl_( ctl )
           , met_( met )
           , clk_( clk )
@@ -76,9 +76,9 @@ public:
 
         [[gnu::flatten]] void on_value_irq( uint32_t position ) override
         {
-                const microseconds now = clk_.get_us();
+                microseconds const now = clk_.get_us();
 
-                const float p = conv_.position.convert( position );
+                float const p = conv_.position.convert( position );
 
                 met_.position_irq( now, p );
                 ctl_.moving_irq( now, met_.is_moving() );
@@ -90,7 +90,7 @@ private:
         ctl::control&         ctl_;
         mtr::metrics&         met_;
         drv::clk_iface&       clk_;
-        const cnv::converter& conv_;
+        cnv::converter const& conv_;
 };
 
 }  // namespace servio::core

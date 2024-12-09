@@ -1,5 +1,5 @@
-#include "cfg/default.hpp"
-#include "cfg/storage.hpp"
+#include "../default.hpp"
+#include "../storage.hpp"
 
 #include <gtest/gtest.h>
 
@@ -7,7 +7,7 @@ using page = std::array< std::byte, 2048 >;
 
 namespace std
 {
-std::ostream& operator<<( std::ostream& os, const std::byte& b )
+std::ostream& operator<<( std::ostream& os, std::byte const& b )
 {
         return os << int( b );
 }
@@ -25,7 +25,7 @@ TEST( CFG, storage )
                 return em::view{ p };
         } );
 
-        const cfg::page* tmp = nullptr;
+        cfg::page const* tmp = nullptr;
 
         tmp = cfg::find_unused_page( pages );
         EXPECT_EQ( *tmp, pages[0] );
@@ -52,7 +52,7 @@ TEST( CFG, storage )
         tmp = cfg::find_next_page( pages );
         EXPECT_EQ( *tmp, pages[1] );
 
-        auto pl_check = [&]( const cfg::payload& pll ) -> bool {
+        auto pl_check = [&]( cfg::payload const& pll ) -> bool {
                 return pl == pll;
         };
         success = cfg::load( p, pl_check, cm );

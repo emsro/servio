@@ -1,4 +1,4 @@
-#include "ftester/flash.hpp"
+#include "./flash.hpp"
 
 #include <emlabcpp/experimental/logging.h>
 #include <joque/process.hpp>
@@ -8,10 +8,10 @@ namespace servio::ftester
 {
 
 joque::task make_flash_task(
-    const std::filesystem::path&                  firmware,
-    const std::filesystem::path&                  ocd_cfg,
-    const std::optional< std::filesystem::path >& log_file,
-    const joque::resource&                        dev_res )
+    std::filesystem::path const&        firmware,
+    std::filesystem::path const&        ocd_cfg,
+    opt< std::filesystem::path > const& log_file,
+    joque::resource const&              dev_res )
 {
         auto f = [&]( auto&&... extra ) {
                 return joque::task{
@@ -31,14 +31,14 @@ joque::task make_flash_task(
         return f();
 }
 
-void flash_firmware( const std::filesystem::path& firmware, const std::filesystem::path& ocdconf )
+void flash_firmware( std::filesystem::path const& firmware, std::filesystem::path const& ocdconf )
 {
         using namespace std::literals;
 
         std::stringstream ss;
         ss << "openocd -f " << ocdconf << " -c \"program " << firmware << " verify reset exit\" ";
 
-        const int res = std::system( ss.str().data() );
+        int const res = std::system( ss.str().data() );
         if ( res != 0 ) {
                 EMLABCPP_INFO_LOG( "Executing: ", ss.str() );
                 EMLABCPP_ERROR_LOG( "Flashing failed, error code: ", res );

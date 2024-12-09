@@ -1,4 +1,4 @@
-#include "ftester/handle_eptr.hpp"
+#include "./handle_eptr.hpp"
 
 #include <emlabcpp/experimental/logging.h>
 
@@ -11,7 +11,7 @@ void handle_eptr( std::exception_ptr eptr )
                 if ( eptr )
                         std::rethrow_exception( eptr );
         }
-        catch ( const std::exception& e ) {
+        catch ( std::exception const& e ) {
                 EMLABCPP_ERROR_LOG( "Caught exception: '", e.what(), "'\n" );
         }
         catch ( ... ) {

@@ -4,247 +4,207 @@
 #include "emlabcpp/outcome.h"
 #include "emlabcpp/result.h"
 #include "fw/map_cfg.hpp"
-#include "fw/servio_pb.hpp"
 
 namespace servio::fw
 {
-
-ServioToHost handle_set_mode( microseconds now, ctl::control& ctl, const Mode& msg )
+namespace
 {
-        switch ( msg.which_pld ) {
-        case Mode_disengaged_tag:
-                ctl.disengage();
-                break;
-        case Mode_power_tag:
-                ctl.switch_to_power_control( pwr( msg.power ) );
-                break;
-        case Mode_current_tag:
-                ctl.switch_to_current_control( now, msg.current );
-                break;
-        case Mode_velocity_tag:
-                ctl.switch_to_velocity_control( now, msg.velocity );
-                break;
-        case Mode_position_tag:
-                ctl.switch_to_position_control( now, msg.position );
-                break;
-        default:
-                return error_msg( "got unknown mode" );
-        }
-        ServioToHost rep;
-        rep.which_pld = ServioToHost_set_mode_tag;
-        return rep;
+std::string_view
+handle_set_mode( microseconds now, ctl::control& ctl, vari::vref< iface::mode_vals const > inpt )
+{
+        inpt.visit(
+            [&]( iface::kval< "disengaged"_a, void > const& ) {
+                    ctl.disengage();
+            },
+            [&]( iface::kval< "power"_a, float > const& kv ) {
+                    ctl.switch_to_power_control( pwr( kv.value ) );
+            },
+            [&]( iface::kval< "current"_a, float > const& kv ) {
+                    ctl.switch_to_current_control( now, kv.value );
+            },
+            [&]( iface::kval< "velocity"_a, float > const& kv ) {
+                    ctl.switch_to_velocity_control( now, kv.value );
+            },
+            [&]( iface::kval< "position"_a, float > const& kv ) {
+                    ctl.switch_to_position_control( now, kv.value );
+            } );
+        return "ok";
 }
 
-Mode get_mode( const ctl::control& ctl )
+iface::mode_key get_mode( ctl::control const& ctl )
 {
-        Mode res;
         switch ( ctl.get_mode() ) {
         case control_mode::DISENGAGED:
-                res.which_pld = Mode_disengaged_tag;
-                break;
+                return "disengaged"_a;
         case control_mode::POWER:
-                res.which_pld = Mode_power_tag;
-                res.power     = *ctl.get_power();
-                break;
+                return "power"_a;
         case control_mode::CURRENT:
-                res.which_pld = Mode_current_tag;
-                res.current   = ctl.get_desired_current();
-                break;
+                return "current"_a;
         case control_mode::VELOCITY:
-                res.which_pld = Mode_velocity_tag;
-                res.velocity  = ctl.get_desired_velocity();
-                break;
+                return "velocity"_a;
         case control_mode::POSITION:
-                res.which_pld = Mode_position_tag;
-                res.position  = ctl.get_desired_position();
-                break;
+                return "position"_a;
         }
-        return res;
+        // XXX: maybe something better?
+        return "disengaged"_a;
 }
 
-ServioToHost handle_get_property(
-    const ctl::control&         ctl,
-    const mtr::metrics&         met,
-    const cnv::converter&       conv,
-    const drv::pos_iface&       pos_drv,
-    const drv::curr_iface&      curr_drv,
-    const drv::vcc_iface&       vcc_drv,
-    const drv::temp_iface&      temp_drv,
-    const drv::pwm_motor_iface& motor,
-    const GetProperty&          msg )
+std::string_view fmt_arithm( em::view< char* > buff, auto&& x )
 {
-        Property prop;
-        prop.which_pld = static_cast< pb_size_t >( msg.field_id );
-        switch ( msg.field_id ) {
-        case Property_mode_tag:
-                prop.mode = get_mode( ctl );
-                break;
-        case Property_current_tag:
-                prop.current = cnv::current( conv, curr_drv, motor );
-                break;
-        case Property_vcc_tag:
-                prop.vcc = conv.vcc.convert( vcc_drv.get_vcc() );
-                break;
-        case Property_temp_tag:
-                prop.temp = conv.temp.convert( temp_drv.get_temperature() );
-                break;
-        case Property_position_tag:
-                prop.position = cnv::position( conv, pos_drv );
-                break;
-        case Property_velocity_tag:
-                prop.velocity = met.get_velocity();
-                break;
-        default:
-                return error_msg( "got unknown property" );
-        }
-        ServioToHost repl;
-        repl.get_property = prop;
-        repl.which_pld    = ServioToHost_get_property_tag;
-        return repl;
-}
-
-ServioToHost handle_set_config( cfg::dispatcher& cfg_disp, const Config& req )
-{
-        const bool key_found = map_cfg( req.which_pld, req, [&]< cfg::key K >( auto& val ) {
-                // XXX: scaling issues /o\...
-                if constexpr ( K == cfg::ENCODER_MODE )
-                        cfg_disp.set< K >( static_cast< cfg::encoder_mode >( val ) );
-                else
-                        cfg_disp.set< K >( val );
-        } );
-        if ( !key_found )
-                return error_msg( "unknown key" );
-        ServioToHost msg;
-        msg.which_pld = ServioToHost_set_config_tag;
-        return msg;
-}
-
-ServioToHost handle_get_config( const cfg::dispatcher& cfg_disp, const GetConfig& req )
-{
-        ServioToHost msg;
-        const bool   key_found =
-            map_cfg( req.field_id, msg.get_config, [&]< cfg::key K, typename T >( T& val ) {
-                    if constexpr ( K == cfg::MODEL ) {
-                            const cfg::model_name& n = cfg_disp.m.get_val< K >();
-                            copy_string_to( n.data(), n.size(), val );
-                            // TODO scaling issues right here /o\...
-                    } else if constexpr ( K == cfg::ENCODER_MODE ) {
-                            val = static_cast< EncoderMode >( cfg_disp.m.get_val< K >() );
-                    } else {
-                            val = cfg_disp.m.get_val< K >();
-                    }
-            } );
-        if ( !key_found )
-                return error_msg( "unknown key" );
-        msg.get_config.which_pld =
-            static_cast< uint16_t >( req.field_id );  // TODO: well this is not ideal
-        msg.which_pld = ServioToHost_get_config_tag;
-        return msg;
-}
-
-ServioToHost handle_commit_config( const cfg::dispatcher& cfg_disp, const auto& cfg_writer )
-{
-
-        const bool succ = cfg_writer( &cfg_disp.m );
-        if ( !succ )
-                return error_msg( "commit failed" );
-
-        ServioToHost msg;
-        msg.which_pld = ServioToHost_commit_config_tag;
-        return msg;
-}
-
-ServioToHost handle_clear_config( const auto& cfg_writer )
-{
-
-        const bool succ = cfg_writer( nullptr );
-        if ( !succ )
-                return error_msg( "clear failed" );
-
-        ServioToHost msg;
-        msg.which_pld = ServioToHost_commit_config_tag;
-        return msg;
-}
-
-ServioToHost handle_message( dispatcher& dis, const HostToServio& msg )
-{
-        switch ( msg.which_pld ) {
-        case HostToServio_set_mode_tag:
-                return handle_set_mode( dis.now, dis.ctl, msg.set_mode );
-        case HostToServio_get_property_tag:
-                return handle_get_property(
-                    dis.ctl,
-                    dis.met,
-                    dis.conv,
-                    dis.pos_drv,
-                    dis.curr_drv,
-                    dis.vcc_drv,
-                    dis.temp_drv,
-                    dis.motor,
-                    msg.get_property );
-        case HostToServio_set_config_tag:
-                return handle_set_config( dis.cfg_disp, msg.set_config );
-        case HostToServio_get_config_tag:
-                return handle_get_config( dis.cfg_disp, msg.get_config );
-        case HostToServio_commit_config_tag:
-                return handle_commit_config( dis.cfg_disp, dis.cfg_writer );
-        case HostToServio_clear_config_tag:
-                return handle_clear_config( dis.cfg_writer );
-        default:
-                return error_msg( "unknown command" );
-        }
+        // XXX: check ec
+        // auto [ptr, ec] = std::to_chars( buff.begin(), buff.end(), x );
         return {};
 }
 
-template < typename InputType, typename OutputType, typename Handle >
-std::tuple< em::outcome, em::view< std::byte* > > process_message(
-    em::view< const std::byte* > input_data,
-    em::view< std::byte* >       output_buffer,
-    Handle&&                     h )
+std::string_view handle_get_property(
+    ctl::control const&         ctl,
+    mtr::metrics const&         met,
+    cnv::converter const&       conv,
+    drv::pos_iface const&       pos_drv,
+    drv::curr_iface const&      curr_drv,
+    drv::vcc_iface const&       vcc_drv,
+    drv::temp_iface const&      temp_drv,
+    drv::pwm_motor_iface const& motor,
+    iface::prop_key             inpt,
+    em::view< char* >           buffer )
 {
-        InputType  inpt;
-        const bool succ = decode( input_data, inpt );
-        if ( !succ )
-                return { em::FAILURE, {} };
+        float x = 0;
+        if ( inpt == "mode"_a )
+                return get_mode( ctl ).to_string();
+        else if ( inpt == "current"_a )
+                x = cnv::current( conv, curr_drv, motor );
+        else if ( inpt == "vcc"_a )
+                x = conv.vcc.convert( vcc_drv.get_vcc() );
+        else if ( inpt == "temp"_a )
+                x = conv.temp.convert( temp_drv.get_temperature() );
+        else if ( inpt == "position"_a )
+                x = cnv::position( conv, pos_drv );
+        else if ( inpt == "velocity"_a )
+                x = met.get_velocity();
 
-        OutputType output;
-
-        em::outcome res = h( inpt, output );
-        if ( res != em::SUCCESS )
-                return { res, {} };
-
-        return encode( output_buffer, output );
+        return fmt_arithm( buffer, x );
 }
+
+std::string_view
+handle_set_config( cfg::dispatcher& cfg_disp, vari::vref< iface::cfg_vals const > v )
+{
+        v.visit( [&]< auto K, typename T >( iface::kval< K, T > const& kv ) {
+                static constexpr auto cfg_k = iface_to_cfg[( (iface::cfg_key) K ).value()];
+
+                // XXX: scaling issues /o\...
+                if constexpr ( cfg_k == cfg::ENCODER_MODE ) {
+                        if ( kv.value == "analog"_a )
+                                cfg_disp.set< cfg_k >( cfg::ENC_MODE_ANALOG );
+                        else if ( kv.value == "quad"_a )
+                                cfg_disp.set< cfg_k >( cfg::ENC_MODE_QUAD );
+                } else {
+                        cfg_disp.set< cfg_k >( kv.value );
+                }
+        } );
+        return "ok";
+}
+
+std::string_view
+handle_get_config( cfg::dispatcher const& cfg_disp, iface::cfg_key ck, em::view< char* > buffer )
+{
+        std::string_view res;
+
+        cfg::key cfg_k = iface_to_cfg[ck.value()];
+
+        cfg_disp.m.with_register( cfg_k, [&]< typename R >( R& reg ) {
+                // XXX: bounds check for cfg::MODEL? or ANYTHING?
+                if constexpr ( R::key == cfg::MODEL )
+                        res = copy_string_to( reg.value, buffer );
+                else if constexpr ( R::key == cfg::ENCODER_MODE )
+                        switch ( cfg_disp.m.get_val< R::key >() ) {
+                        case cfg::ENC_MODE_ANALOG:
+                                res = copy_string_to( "analog", buffer );
+                                break;
+                        case cfg::ENC_MODE_QUAD:
+                                res = copy_string_to( "quad", buffer );
+                                break;
+                        }
+                else if constexpr ( R::key == cfg::INVERT_HBRIDGE )
+                        if ( cfg_disp.m.get_val< cfg::INVERT_HBRIDGE >() )
+                                res = copy_string_to( "true", buffer );
+                        else
+                                res = copy_string_to( "false", buffer );
+                else
+                        res = fmt_arithm( buffer, cfg_disp.m.get_val< R::key >() );
+        } );
+        return res;
+}
+
+std::string_view handle_commit_config( cfg::dispatcher const& cfg_disp, auto const& cfg_writer )
+{
+        bool const succ = cfg_writer( &cfg_disp.m );
+        if ( !succ )
+                return "failed";
+        return "ok";
+}
+
+std::string_view handle_clear_config( auto const& cfg_writer )
+{
+        bool const succ = cfg_writer( nullptr );
+        if ( !succ )
+                return "failed";
+        return "ok";
+}
+
+std::string_view
+handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, em::view< char* > buffer )
+{
+        return inpt.visit(
+            [&]( iface::mode_stmt const& s ) {
+                    return handle_set_mode( dis.now, dis.ctl, s.arg );
+            },
+            [&]( iface::prop_stmt const& s ) {
+                    return handle_get_property(
+                        dis.ctl,
+                        dis.met,
+                        dis.conv,
+                        dis.pos_drv,
+                        dis.curr_drv,
+                        dis.vcc_drv,
+                        dis.temp_drv,
+                        dis.motor,
+                        s.prop,
+                        buffer );
+            },
+            [&]( iface::cfg_set_stmt const& s ) {
+                    return handle_set_config( dis.cfg_disp, s.val );
+            },
+            [&]( iface::cfg_get_stmt const& s ) {
+                    return handle_get_config( dis.cfg_disp, s.k, buffer );
+            },
+            [&]( iface::cfg_commit_stmt const& ) {
+                    return handle_commit_config( dis.cfg_disp, dis.cfg_writer );
+            },
+            [&]( iface::cfg_clear_stmt const& ) {
+                    return handle_clear_config( dis.cfg_writer );
+            } );
+}
+}  // namespace
 
 std::tuple< em::outcome, em::view< std::byte* > > handle_message(
     dispatcher&                  dis,
-    em::view< const std::byte* > input_data,
+    em::view< std::byte const* > input_data,
     em::view< std::byte* >       output_buffer )
 {
-        return process_message< HostToServio, ServioToHost >(
-            input_data, output_buffer, [&dis]( const HostToServio& inpt, ServioToHost& out ) {
-                    out = handle_message( dis, inpt );
-                    return em::SUCCESS;
-            } );
-}
+        // XXX: well, technically, em::view could've had data if it has pointer?
+        std::string_view inpt{ (char const*) input_data.begin(), input_data.size() };
 
-std::tuple< em::outcome, em::view< std::byte* > > handle_message_packet(
-    dispatcher&                  dis,
-    em::view< const std::byte* > input_data,
-    em::view< std::byte* >       output_buffer )
-{
-        return process_message< HostToServioPacket, ServioToHostPacket >(
-            input_data,
-            output_buffer,
-            [&dis]( const HostToServioPacket& inpt, ServioToHostPacket& out ) -> em::outcome {
-                    // TODO: check whenver id equals to currently configured id, or group id
-                    // equals to currently configured group id
-                    if ( !inpt.has_payload )
-                            return em::ERROR;
-                    out.id          = inpt.id;
-                    out.has_payload = true;
-                    out.payload     = handle_message( dis, inpt.payload );
-                    return em::SUCCESS;
+        using R = std::tuple< em::outcome, em::view< std::byte* > >;
+        return iface::parse( inpt ).visit(
+            [&]( vari::vref< iface::stmt > s ) -> R {
+                    std::string_view res = handle_message(
+                        dis, s, em::view_n( (char*) output_buffer.begin(), output_buffer.size() ) );
+                    // XXX: how to detect failure?
+                    return { em::SUCCESS, em::view_n( (std::byte*) res.data(), res.size() ) };
+            },
+            [&]( iface::invalid_stmt& ) -> R {
+                    // XXX: proapgate error?
+                    return { em::FAILURE, {} };
             } );
 }
 

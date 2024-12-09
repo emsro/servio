@@ -1,5 +1,5 @@
-#include "ctl/control.hpp"
-#include "sim/motor.hpp"
+#include "../../sim/motor.hpp"
+#include "../control.hpp"
 
 #include <emlabcpp/experimental/logging.h>
 #include <emlabcpp/experimental/logging/util.h>
@@ -66,9 +66,9 @@ public:
                     *power, motor->position(), motor->velocity, ctl->get_desired_current() );
         }
 
-        microseconds                       now = 0_ms;
-        std::optional< sim::simple_motor > motor;
-        std::optional< ctl::control >      ctl;
+        microseconds             now = 0_ms;
+        opt< sim::simple_motor > motor;
+        opt< ctl::control >      ctl;
 };
 
 TEST_F( control_fixture, current )

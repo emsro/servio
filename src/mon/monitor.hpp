@@ -1,7 +1,7 @@
-#include "cnv/converter.hpp"
-#include "ctl/control.hpp"
-#include "drv/interfaces.hpp"
-#include "mon/indication.hpp"
+#include "../cnv/converter.hpp"
+#include "../ctl/control.hpp"
+#include "../drv/interfaces.hpp"
+#include "./indication.hpp"
 
 #pragma once
 
@@ -13,11 +13,11 @@ class monitor
 public:
         monitor(
             microseconds           now,
-            const ctl::control&    ctl,
-            const drv::vcc_iface&  vcc_drv,
-            const drv::temp_iface& temp_drv,
+            ctl::control const&    ctl,
+            drv::vcc_iface const&  vcc_drv,
+            drv::temp_iface const& temp_drv,
             indication&            indi,
-            const cnv::converter&  conv )
+            cnv::converter const&  conv )
           : ctl_( ctl )
           , indi_( indi )
           , vcc_drv_( vcc_drv )
@@ -42,12 +42,12 @@ public:
                 indi_.on_event( now, indication_event::HEARTBEAT );
 
                 // TODO: check that this works
-                const float vcc = conv_.vcc.convert( vcc_drv_.get_vcc() );
+                float const vcc = conv_.vcc.convert( vcc_drv_.get_vcc() );
                 if ( vcc < min_vcc_ )
                         indi_.on_event( now, indication_event::VOLTAGE_LOW );
 
                 // TODO: check that this works
-                const float temp = conv_.temp.convert( temp_drv_.get_temperature() );
+                float const temp = conv_.temp.convert( temp_drv_.get_temperature() );
                 if ( temp > max_tmp_ )
                         indi_.on_event( now, indication_event::TEMPERATURE_HIGH );
 
@@ -58,11 +58,11 @@ public:
         }
 
 private:
-        const ctl::control&    ctl_;
+        ctl::control const&    ctl_;
         indication&            indi_;
-        const drv::vcc_iface&  vcc_drv_;
-        const drv::temp_iface& temp_drv_;
-        const cnv::converter&  conv_;
+        drv::vcc_iface const&  vcc_drv_;
+        drv::temp_iface const& temp_drv_;
+        cnv::converter const&  conv_;
 
         float min_vcc_ = 0.F;
         float max_tmp_ = 90.F;

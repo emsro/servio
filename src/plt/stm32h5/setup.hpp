@@ -76,19 +76,16 @@ extern temp_calib_coeffs TEMP_CALIB_COEFFS;
 cfg::map get_default_config();
 
 em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );
-void       setup_adc_channel(
-          ADC_ChannelConfTypeDef&       channel,
-          uint32_t                      ch_id,
-          std::optional< drv::pin_cfg > cfg );
+void setup_adc_channel( ADC_ChannelConfTypeDef& channel, uint32_t ch_id, opt< drv::pin_cfg > cfg );
 em::result setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 
-em::result setup_dac( DAC_HandleTypeDef& dac, const drv::pin_cfg& cfg );
+em::result setup_dac( DAC_HandleTypeDef& dac, drv::pin_cfg const& cfg );
 
 em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg );
 
 em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg );
 
-void setup_gpio( const drv::pin_cfg& cfg );
+void setup_gpio( drv::pin_cfg const& cfg );
 
 em::result setup_leds_channel( TIM_HandleTypeDef* tim, uint32_t ch, drv::pin_cfg cfg );
 

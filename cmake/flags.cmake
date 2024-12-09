@@ -9,8 +9,6 @@ function(servio_compile_options target)
             -Wunused
             -Wnull-dereference
             -Wformat=2
-            -Wduplicated-cond
-            -Wlogical-op # -Wlifetime
             -Wunreachable-code
             -Wsign-conversion
             -Wdouble-promotion
@@ -20,10 +18,8 @@ function(servio_compile_options target)
             -Wno-missing-field-initializers
             $<$<COMPILE_LANGUAGE:CXX>:
             -Wconversion
-            -Wuseless-cast
             # -Wcast-align ## can't get rid of it at certain places
             -Wnon-virtual-dtor
-            -Wold-style-cast
             -Woverloaded-virtual
             -Wno-mismatched-new-delete # triggers false positive on coroutines
             >)

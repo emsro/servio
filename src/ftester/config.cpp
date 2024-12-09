@@ -1,8 +1,8 @@
 
-#include "ftester/config.hpp"
+#include "./config.hpp"
 
-#include "ftester/cli.hpp"
-#include "scmdio/cli.hpp"
+#include "../scmdio/cli.hpp"
+#include "./cli.hpp"
 
 namespace servio::ftester
 {

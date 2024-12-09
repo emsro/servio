@@ -1,4 +1,4 @@
-#include "sntr/central_sentry.hpp"
+#include "../central_sentry.hpp"
 
 #include <gtest/gtest.h>
 
@@ -74,9 +74,9 @@ TEST_F( central_sentry_fixture, one_deg_insert )
         EXPECT_EQ( fired_count, 0 );
         EXPECT_FALSE( cs.is_inoperable() );
 
-        const char* src    = "t1";
+        char const* src    = "t1";
         ecode_set   ecodes = 0b1010;
-        const char* emsg   = "esmg";
+        char const* emsg   = "esmg";
         data_type   data   = 42;
         clk.t              = microseconds{ 666 };
 
@@ -106,9 +106,9 @@ TEST_F( central_sentry_fixture, one_inop_insert )
         EXPECT_EQ( fired_count, 0 );
         EXPECT_FALSE( cs.is_inoperable() );
 
-        const char* src    = "t1";
+        char const* src    = "t1";
         ecode_set   ecodes = 0b1010;
-        const char* emsg   = "esmg";
+        char const* emsg   = "esmg";
         data_type   data   = 42;
         clk.t              = microseconds{ 666 };
 

@@ -1,5 +1,5 @@
 
-#include "klmn/simulate.hpp"
+#include "./simulate.hpp"
 
 namespace servio::klmn
 {
@@ -8,14 +8,14 @@ std::vector< state > simulate(
     sec_time                          tdiff,
     float                             process_deviation,
     float                             observation_deviation,
-    const std::vector< observation >& observations,
+    std::vector< observation > const& observations,
     state_range                       sr )
 {
-        const state_transition_model   f = get_transition_model( tdiff );
-        const control_input_model      b = get_control_input_model( tdiff );
-        const process_noise_covariance q = get_process_noise_covariance( tdiff, process_deviation );
-        const observation_model        h = get_observation_model();
-        const observation_noise_covariance r =
+        state_transition_model const   f = get_transition_model( tdiff );
+        control_input_model const      b = get_control_input_model( tdiff );
+        process_noise_covariance const q = get_process_noise_covariance( tdiff, process_deviation );
+        observation_model const        h = get_observation_model();
+        observation_noise_covariance const r =
             get_observation_noise_covariance( observation_deviation );
 
         state x;

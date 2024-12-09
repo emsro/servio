@@ -1,5 +1,6 @@
-#include "base/base.hpp"
-#include "emlabcpp/experimental/matrix.h"
+#include "../base/base.hpp"
+
+#include <emlabcpp/experimental/matrix.h>
 
 #pragma once
 
@@ -60,34 +61,34 @@ get_observation_noise_covariance( float observation_deviation )
 }
 
 constexpr std::tuple< state, state_covariance > predict(
-    const state&                    x_prev,
-    const state_covariance&         p_prev,
-    const control_input&            u,
-    const state_transition_model&   f,
-    const control_input_model&      b,
-    const process_noise_covariance& q )
+    state const&                    x_prev,
+    state_covariance const&         p_prev,
+    control_input const&            u,
+    state_transition_model const&   f,
+    control_input_model const&      b,
+    process_noise_covariance const& q )
 {
-        const state            x = f * x_prev + b * u;
-        const state_covariance p = f * p_prev * em::transpose( f ) + q;
+        state const            x = f * x_prev + b * u;
+        state_covariance const p = f * p_prev * em::transpose( f ) + q;
 
         return { x, p };
 }
 
 constexpr std::tuple< state, state_covariance > update(
-    const state&                        x_prev,
-    const state_covariance&             p_prev,
-    const observation&                  z,
-    const observation_model&            h,
-    const observation_noise_covariance& r )
+    state const&                        x_prev,
+    state_covariance const&             p_prev,
+    observation const&                  z,
+    observation_model const&            h,
+    observation_noise_covariance const& r )
 {
 
-        const innovation_covariance s = h * p_prev * em::transpose( h ) + r;
-        const kalman_gain           k = p_prev * em::transpose( h ) * em::inverse( s );
+        innovation_covariance const s = h * p_prev * em::transpose( h ) + r;
+        kalman_gain const           k = p_prev * em::transpose( h ) * em::inverse( s );
 
         constexpr em::identity_matrix< 2 > i;
 
-        const state            x = ( i - k * h ) * x_prev + k * z;
-        const state_covariance p = ( i - k * h ) * p_prev;
+        state const            x = ( i - k * h ) * x_prev + k * z;
+        state_covariance const p = ( i - k * h ) * p_prev;
 
         return { x, p };
 }
@@ -110,7 +111,7 @@ struct state_range
         float size;
 };
 
-constexpr bool requires_offset( const float v, const state_range& r )
+constexpr bool requires_offset( float const v, state_range const& r )
 {
         return ( v < r.offset + 0.1F * r.size ) || ( r.offset + 0.8F * r.size < v );
 }

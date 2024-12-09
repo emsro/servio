@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ftester/base.hpp"
+#include "./base.hpp"
 
 #include <emlabcpp/convert_view.h>
 #include <list>
@@ -26,7 +26,7 @@ public:
                 return chan_;
         }
 
-        em::outcome on_msg( const std::span< const std::byte >& msg )
+        em::outcome on_msg( std::span< std::byte const > const& msg )
         {
                 buffer_.push_back( record{
                     .data = { msg.begin(), msg.end() },
@@ -39,7 +39,7 @@ public:
                 buffer_.clear();
         }
 
-        const std::list< record >& get_buffer() const
+        std::list< record > const& get_buffer() const
         {
                 return buffer_;
         }

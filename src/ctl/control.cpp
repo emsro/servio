@@ -1,6 +1,6 @@
 #include "control.hpp"
 
-#include "base/base.hpp"
+#include "../base/base.hpp"
 
 #include <emlabcpp/match.h>
 #include <emlabcpp/protocol/register_handler.h>
@@ -138,10 +138,10 @@ void control::moving_irq( microseconds now, bool is_moving )
 
         float desired_curr = get_desired_current();
 
-        const limits< float > lims = get_current_limits();
+        limits< float > const lims = get_current_limits();
         desired_curr               = clamp( desired_curr, lims );
 
-        const float fpower = em::update( current_pid_, now.count(), current, desired_curr );
+        float const fpower = em::update( current_pid_, now.count(), current, desired_curr );
         power_             = pwr( fpower );
 }
 

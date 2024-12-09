@@ -1,14 +1,13 @@
 #pragma once
 
-#include "ftester/handle_eptr.hpp"
-#include "ftester/recorder.hpp"
-#include "scmdio/async_cobs.hpp"
+#include "../scmdio/async_cobs.hpp"
+#include "./handle_eptr.hpp"
+#include "./recorder.hpp"
 
 #include <emlabcpp/convert_view.h>
 #include <emlabcpp/experimental/logging/eabi_logger.h>
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/controller.h>
-#include <emlabcpp/experimental/testing/gtest.h>
 #include <emlabcpp/experimental/testing/json.h>
 #include <emlabcpp/experimental/testing/parameters.h>
 #include <emlabcpp/pmr/new_delete_resource.h>
@@ -36,12 +35,12 @@ struct controller_interface : em::testing::controller_interface
         {
         }
 
-        void on_result( const em::testing::test_result& r ) final
+        void on_result( em::testing::test_result const& r ) final
         {
                 res = r;
         }
 
-        void on_error( const em::testing::error_variant& err ) final
+        void on_error( em::testing::error_variant const& err ) final
         {
                 res = err;
         }
@@ -51,24 +50,24 @@ struct test_system
 {
 
         test_system(
-            const std::filesystem::path& d_dev,
+            std::filesystem::path const& d_dev,
             uint32_t                     d_baudrate,
-            const std::filesystem::path& c_dev,
+            std::filesystem::path const& c_dev,
             uint32_t                     c_baudrate,
-            const nlohmann::json&        input_json )
+            nlohmann::json const&        input_json )
           : d_port_( io_context_, d_dev, d_baudrate )
           , c_port_( io_context_, c_dev )
           , col_serv_(
                 em::testing::collect_channel,
                 em::pmr::new_delete_resource(),
-                [this]( auto chann, const auto& data ) {
+                [this]( auto chann, auto const& data ) {
                         return send( chann, data );
                 } )
           , par_serv_(
                 em::testing::params_channel,
                 em::testing::json_to_data_tree( em::pmr::new_delete_resource(), input_json )
                     .value(),
-                [this]( auto chann, const auto& data ) {
+                [this]( auto chann, auto const& data ) {
                         return send( chann, data );
                 } )
           , rec_( rec_id )
@@ -77,7 +76,7 @@ struct test_system
                 em::testing::core_channel,
                 em::pmr::new_delete_resource(),
                 col_iface_,
-                [this]( auto chann, const auto& data ) {
+                [this]( auto chann, auto const& data ) {
                         return send( chann, data );
                 } )
         {
@@ -97,7 +96,7 @@ struct test_system
                 return std::string{ cont_.suite_date() };
         }
 
-        const auto& get_tests() const
+        auto const& get_tests() const
         {
                 return cont_.get_tests();
         }
@@ -119,12 +118,12 @@ struct test_system
                 return cont_.is_initializing();
         }
 
-        const em::testing::data_tree& get_collected() const
+        em::testing::data_tree const& get_collected() const
         {
                 return col_serv_.get_tree();
         }
 
-        const auto& get_records() const
+        auto const& get_records() const
         {
                 return rec_.get_buffer();
         }
@@ -159,7 +158,7 @@ private:
                 col_iface_.res = std::monostate{};
         }
 
-        em::result send( em::protocol::channel_type channel, const auto& data )
+        em::result send( em::protocol::channel_type channel, auto const& data )
         {
                 COM_LOG( channel, "w: ", data );
                 auto msg = em::protocol::serialize_multiplexed( channel, data );
@@ -185,7 +184,7 @@ private:
                         em::outcome out = em::protocol::extract_multiplexed(
                             data,
                             [&]( em::protocol::channel_type   chid,
-                                 std::span< const std::byte > data ) {
+                                 std::span< std::byte const > data ) {
                                     COM_LOG( chid, "r: ", em::protocol::msg_format{ data } );
                                     return em::protocol::multiplexed_dispatch(
                                         chid, data, cont_, col_serv_, par_serv_, rec_ );

@@ -14,7 +14,7 @@ struct cobs_port
 
         cobs_port(
             boost::asio::io_context&     context,
-            const std::filesystem::path& p,
+            std::filesystem::path const& p,
             uint32_t                     baudrate )
           : port( context, p )
         {
@@ -24,7 +24,8 @@ struct cobs_port
         boost::asio::serial_port port;
         std::vector< std::byte > read_buffer;
 
-        boost::asio::awaitable< void > async_write( em::view< std::byte* > msg );
+        boost::asio::awaitable< void > async_write( em::view< std::byte const* > msg );
+        boost::asio::awaitable< void > async_write( std::string_view msg );
 
         boost::asio::awaitable< em::view< std::byte* > >
         async_read( em::view< std::byte* > buffer );

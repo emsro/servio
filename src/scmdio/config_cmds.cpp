@@ -1,9 +1,9 @@
-#include "scmdio/serial.hpp"
+#include "./field_util.hpp"
+#include "./serial.hpp"
 
 #include <boost/asio.hpp>
 #include <emlabcpp/algorithm.h>
 #include <fstream>
-#include <google/protobuf/util/json_util.h>
 
 namespace em = emlabcpp;
 
@@ -11,38 +11,34 @@ namespace servio::scmdio
 {
 namespace
 {
-        void print_configs( const std::vector< servio::Config >& out )
-        {
-                std::cout << em::joined(
-                                 out,
-                                 std::string{ "\n" },
-                                 [&]( const servio::Config& cfg ) {
-                                         return cfg.ShortDebugString();
-                                 } )
-                          << std::endl;
-        }
+void print_configs( std::vector< vari::vval< iface::cfg_vals > > const& out )
+{
+        std::cout << em::joined( out, std::string{ "\n" }, [&]( auto const& cfg ) {
+                return cfg.visit( [&]( auto& c ) {
+                        return std::format( "{{ {},{} }}", c.key.to_string(), c.value );
+                } );
+        } ) << std::endl;
+}
 
-        void print_configs_json( const std::vector< servio::Config >& out )
-        {
-                google::protobuf::util::JsonPrintOptions ops;
-                ops.preserve_proto_field_names = true;
-                std::cout << "["
-                          << em::joined(
-                                 em::view( out ),
-                                 std::string{ ",\n " },
-                                 [&]( const servio::Config& cfg ) {
-                                         std::string tmp;
-                                         std::ignore = google::protobuf::util::MessageToJsonString(
-                                             cfg, &tmp, ops );
-                                         return tmp;
-                                 } )
-                          << "]" << std::endl;
-        }
+void print_configs_json( std::vector< vari::vval< iface::cfg_vals > > const& out )
+{
+        std::cout << "["
+                  << em::joined(
+                         em::view( out ),
+                         std::string{ ",\n " },
+                         [&]( vari::vref< iface::cfg_vals const > cfg ) {
+                                 return cfg.visit( [&]( auto const& c ) {
+                                         return std::format(
+                                             "{{ {}:{} }}", c.key.to_string(), c.value );
+                                 } );
+                         } )
+                  << "]" << std::endl;
+}
 }  // namespace
 
 boost::asio::awaitable< void > cfg_query_cmd( cobs_port& port, bool json )
 {
-        std::vector< servio::Config > out = co_await get_full_config( port );
+        std::vector< vari::vval< iface::cfg_vals > > out = co_await get_full_config( port );
 
         if ( json )
                 print_configs_json( out );
@@ -52,89 +48,51 @@ boost::asio::awaitable< void > cfg_query_cmd( cobs_port& port, bool json )
 
 boost::asio::awaitable< void > cfg_commit_cmd( cobs_port& port )
 {
-        servio::HostToServio msg;
-        msg.mutable_commit_config();
+        std::string msg = std::format( "cfg cmt" );
 
-        servio::ServioToHost reply = co_await exchange( port, msg );
-        std::ignore                = reply;
+        auto reply = co_await exchg( port, msg );
+        // XXX: check the retcode
+        std::ignore = reply;
 }
 
 boost::asio::awaitable< void > cfg_clear_cmd( cobs_port& port )
 {
-        servio::HostToServio msg;
-        msg.mutable_clear_config();
-        servio::ServioToHost reply = co_await exchange( port, msg );
-        std::ignore                = reply;
+        std::string msg   = std::format( "cfg clr" );
+        auto        reply = co_await exchg( port, msg );
+        std::ignore       = reply;
 }
 
-boost::asio::awaitable< void > cfg_get_cmd( cobs_port& port, const std::string& name, bool json )
+boost::asio::awaitable< void > cfg_get_cmd( cobs_port& port, std::string const& name, bool json )
 {
-        const google::protobuf::Descriptor* desc = servio::Config::GetDescriptor();
-
-        const google::protobuf::FieldDescriptor* field = desc->FindFieldByName( name );
-        if ( field == nullptr ) {
-                std::cerr << "Failed to find config field " << name << std::endl;
+        auto field = iface::cfg_key::from_string( name );
+        // XXX throw?
+        if ( !field ) {
+                std::cerr << "err" << std::endl;
                 co_return;
         }
 
-        servio::Config cfg = co_await get_config_field( port, field );
+        auto val = co_await get_config_field( port, *field );
 
-        if ( json )
-                print_configs_json( { cfg } );
-        else
-                print_configs( { cfg } );
+        val.visit( [&]( auto& v ) {
+                if ( json )
+                        std::cout << std::format( "[{{ {}:{} }}]", name, v.value ) << std::endl;
+                else
+                        std::cout << std::format( "{},{}", name, v.value ) << std::endl;
+        } );
 }
 
 boost::asio::awaitable< void >
-cfg_set_cmd( cobs_port& port, const std::string& name, std::string value )
+cfg_set_cmd( cobs_port& port, std::string const& name, std::string value )
 {
 
-        const google::protobuf::Descriptor* desc = servio::Config::GetDescriptor();
-
-        using field_desc        = google::protobuf::FieldDescriptor;
-        const field_desc* field = desc->FindFieldByName( name );
-        if ( field == nullptr ) {
-                std::cerr << "Failed to find config field " << name << std::endl;
-                co_return;
-        }
-
-        if ( field->is_repeated() ) {
-                std::cerr << "Config field is repeated, which is not supported" << std::endl;
-                co_return;
-        }
-
-        switch ( field->cpp_type() ) {
-        case field_desc::CPPTYPE_INT32:
-        case field_desc::CPPTYPE_INT64:
-        case field_desc::CPPTYPE_UINT32:
-        case field_desc::CPPTYPE_UINT64:
-        case field_desc::CPPTYPE_FLOAT:
-        case field_desc::CPPTYPE_DOUBLE:
-                break;
-        case field_desc::CPPTYPE_BOOL:
-        case field_desc::CPPTYPE_ENUM:
-        case field_desc::CPPTYPE_STRING:
-                value = "\"" + value + "\"";
-                break;
-        case field_desc::CPPTYPE_MESSAGE:
-                throw std::exception{};  // TODO: improve this
-        }
-
-        std::string json = "{\"" + name + "\":" + value + "}";
-
-        servio::Config cmsg;
-        auto           status = google::protobuf::util::JsonStringToMessage( json, &cmsg );
-        if ( !status.ok() )
-                throw std::exception{};  // TODO: improve
-
-        servio::HostToServio msg;
-        *msg.mutable_set_config() = cmsg;
-
-        servio::ServioToHost reply = co_await exchange( port, msg );
-        std::ignore                = reply;
+        auto v = kval_ser< iface::cfg_vals >::ser( name, value );
+        if ( v )
+                co_await set_config_field( port, v.vref() );
+        else
+                throw "XXX";
 }
 
-boost::asio::awaitable< void > cfg_load_cmd( cobs_port& port, const std::filesystem::path& cfg )
+boost::asio::awaitable< void > cfg_load_cmd( cobs_port& port, std::filesystem::path const& cfg )
 {
         std::ifstream fd( cfg );
 

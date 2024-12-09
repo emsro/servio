@@ -1,8 +1,8 @@
-#include "sntr/sentry.hpp"
+#include "./sentry.hpp"
 
 namespace servio::sntr
 {
-sentry::sentry( const char* source_id, central_sentry_iface& central )
+sentry::sentry( char const* source_id, central_sentry_iface& central )
   : source_id_( source_id )
   , central_( central )
 {
@@ -10,7 +10,7 @@ sentry::sentry( const char* source_id, central_sentry_iface& central )
                 source_id_ = "unknown";
 }
 
-void sentry::set_inoperable( std::size_t eid, const char* emsg, const data_type& data )
+void sentry::set_inoperable( std::size_t eid, char const* emsg, data_type const& data )
 {
         if ( eid > max_eid )
                 report_inop( forbidden_eid, "inop eid err", static_cast< uint32_t >( eid ) );
@@ -18,12 +18,12 @@ void sentry::set_inoperable( std::size_t eid, const char* emsg, const data_type&
                 report_inop( eid, emsg, data );
 }
 
-void sentry::set_inoperable_set( ecode_set set, const char* emsg, const data_type& data )
+void sentry::set_inoperable_set( ecode_set set, char const* emsg, data_type const& data )
 {
         central_.report_inoperable( source_id_, set, emsg, data );
 }
 
-void sentry::set_degraded( std::size_t eid, const char* emsg, const data_type& data )
+void sentry::set_degraded( std::size_t eid, char const* emsg, data_type const& data )
 {
         if ( eid > max_eid ) {
                 report_inop( forbidden_eid, "degr eid err", static_cast< uint32_t >( eid ) );
@@ -33,7 +33,7 @@ void sentry::set_degraded( std::size_t eid, const char* emsg, const data_type& d
         }
 }
 
-void sentry::set_degraded_set( ecode_set set, const char* emsg, const data_type& data )
+void sentry::set_degraded_set( ecode_set set, char const* emsg, data_type const& data )
 {
         degr_ecode_ &= set;
         central_.report_degraded( source_id_, degr_ecode_, emsg, data );
@@ -46,7 +46,7 @@ void sentry::unset_degraded( std::size_t eid )
             source_id_, degr_ecode_, "unset degraded", static_cast< uint32_t >( eid ) );
 }
 
-void sentry::report_inop( std::size_t eid, const char* emsg, const data_type& data )
+void sentry::report_inop( std::size_t eid, char const* emsg, data_type const& data )
 {
         inop_ecode_.set( std::min( eid, inop_ecode_.size() - 1 ) );
         central_.report_inoperable( source_id_, inop_ecode_, emsg, data );

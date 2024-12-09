@@ -1,4 +1,4 @@
-#include "base/base.hpp"
+#include "../base/base.hpp"
 
 #include <emlabcpp/pid.h>
 
@@ -39,7 +39,7 @@ struct config
 template <>
 struct nlohmann::adl_serializer< servio::ctl::config >
 {
-        static void to_json( nlohmann::json& j, const servio::ctl::config& cfg )
+        static void to_json( nlohmann::json& j, servio::ctl::config const& cfg )
         {
                 j["position_pid"]          = cfg.position_pid;
                 j["velocity_pid"]          = cfg.velocity_pid;
@@ -51,7 +51,7 @@ struct nlohmann::adl_serializer< servio::ctl::config >
                 j["static_friction_decay"] = cfg.static_friction_decay;
         }
 
-        static servio::ctl::config from_json( const nlohmann::json& j )
+        static servio::ctl::config from_json( nlohmann::json const& j )
         {
                 servio::ctl::config cfg;
                 cfg.position_pid          = j["position_pid"];

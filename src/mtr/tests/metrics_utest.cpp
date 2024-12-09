@@ -1,4 +1,4 @@
-#include "mtr/metrics.hpp"
+#include "../metrics.hpp"
 
 #include <emlabcpp/experimental/logging/util.h>
 #include <gtest/gtest.h>

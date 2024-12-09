@@ -11,31 +11,34 @@ namespace em = emlabcpp;
 namespace servio
 {
 
+template < typename T >
+using opt = std::optional< T >;
+
 using microseconds = std::chrono::duration< uint64_t, std::micro >;
 using milliseconds = std::chrono::duration< uint64_t, std::milli >;
 using seconds      = std::chrono::duration< uint64_t >;
 
 namespace literals
 {
-        constexpr microseconds operator""_s( unsigned long long int secs )
-        {
-                return microseconds{ secs * 1'000'000U };
-        }
+constexpr microseconds operator""_s( unsigned long long int secs )
+{
+        return microseconds{ secs * 1'000'000U };
+}
 
-        constexpr microseconds operator""_ms( unsigned long long int msecs )
-        {
-                return microseconds{ msecs * 1'000U };
-        }
+constexpr microseconds operator""_ms( unsigned long long int msecs )
+{
+        return microseconds{ msecs * 1'000U };
+}
 
-        constexpr microseconds operator""_us( unsigned long long int usecs )
-        {
-                return microseconds{ usecs };
-        }
+constexpr microseconds operator""_us( unsigned long long int usecs )
+{
+        return microseconds{ usecs };
+}
 
-        constexpr std::byte operator""_b( unsigned long long int b )
-        {
-                return std::byte{ static_cast< uint8_t >( b ) };
-        }
+constexpr std::byte operator""_b( unsigned long long int b )
+{
+        return std::byte{ static_cast< uint8_t >( b ) };
+}
 }  // namespace literals
 
 using namespace literals;

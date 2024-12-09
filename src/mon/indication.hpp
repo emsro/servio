@@ -1,5 +1,5 @@
-#include "base/base.hpp"
-#include "mon/effects.hpp"
+#include "../base/base.hpp"
+#include "./effects.hpp"
 
 #pragma once
 
@@ -44,11 +44,11 @@ public:
         {
         }
 
-        bool on_event( microseconds now, const indication_event& e );
+        bool on_event( microseconds now, indication_event const& e );
 
         void tick( microseconds now );
 
-        const leds_vals& get_state() const
+        leds_vals const& get_state() const
         {
                 return state_;
         }

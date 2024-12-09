@@ -1,6 +1,6 @@
 #pragma once
 
-#include "scmdio/async_cobs.hpp"
+#include "./async_cobs.hpp"
 
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/enumerate.h>
@@ -100,7 +100,7 @@ boost::asio::awaitable< std::vector< double > > pid_collect( float u, auto&& set
         std::vector< double > buff;
         buff.reserve( 1024 );
         for ( int i = 0; i < 1000; i++ )
-                buff.push_back( co_await get_y_f() );
+                buff.push_back( (double) co_await get_y_f() );
         co_return buff;
 }
 

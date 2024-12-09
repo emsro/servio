@@ -1,7 +1,7 @@
 #pragma once
 
-#include "sntr/base.hpp"
-#include "sntr/central_sentry_iface.hpp"
+#include "./base.hpp"
+#include "./central_sentry_iface.hpp"
 
 #include <variant>
 
@@ -11,39 +11,39 @@ namespace servio::sntr
 class sentry
 {
 public:
-        sentry( const char* source_id, central_sentry_iface& central );
+        sentry( char const* source_id, central_sentry_iface& central );
 
-        sentry( const sentry& )            = delete;
+        sentry( sentry const& )            = delete;
         sentry( sentry&& )                 = delete;
-        sentry& operator=( const sentry& ) = delete;
+        sentry& operator=( sentry const& ) = delete;
         sentry& operator=( sentry&& )      = delete;
 
         void set_inoperable(
             std::size_t      eid,
-            const char*      emsg,
-            const data_type& data = std::monostate{} );
+            char const*      emsg,
+            data_type const& data = std::monostate{} );
 
         void set_inoperable_set(
             ecode_set        set,
-            const char*      emsg,
-            const data_type& data = std::monostate{} );
+            char const*      emsg,
+            data_type const& data = std::monostate{} );
 
         void
-        set_degraded( std::size_t eid, const char* emsg, const data_type& data = std::monostate{} );
+        set_degraded( std::size_t eid, char const* emsg, data_type const& data = std::monostate{} );
 
         void set_degraded_set(
             ecode_set        set,
-            const char*      emsg,
-            const data_type& data = std::monostate{} );
+            char const*      emsg,
+            data_type const& data = std::monostate{} );
 
         void unset_degraded( std::size_t eid );
 
         ~sentry();
 
 private:
-        void report_inop( std::size_t eid, const char* emsg, const data_type& data );
+        void report_inop( std::size_t eid, char const* emsg, data_type const& data );
 
-        const char*           source_id_;
+        char const*           source_id_;
         central_sentry_iface& central_;
 
         ecode_set inop_ecode_;

@@ -1,11 +1,11 @@
-#include "base/base.hpp"
-#include "cfg/key.hpp"
+#include "../base/base.hpp"
+#include "./key.hpp"
 
 #include <emlabcpp/experimental/string_buffer.h>
 #include <emlabcpp/experimental/testing/convert.h>
 #include <emlabcpp/protocol/register_handler.h>
 #include <emlabcpp/protocol/register_map.h>
-#include <magic_enum.hpp>
+#include <magic_enum/magic_enum.hpp>
 
 #pragma once
 
@@ -19,7 +19,7 @@ struct payload
         em::string_buffer< 32 > git_date;
         uint32_t                id;
 
-        friend constexpr auto operator<=>( const payload&, const payload& ) = default;
+        friend constexpr auto operator<=>( payload const&, payload const& ) = default;
 };
 
 template < auto Key, typename T >
@@ -97,7 +97,7 @@ struct context
 
 // TODO: find all inlines and minimize
 #ifdef EMLABCPP_USE_OSTREAM
-inline std::ostream& operator<<( std::ostream& os, const encoder_mode& m )
+inline std::ostream& operator<<( std::ostream& os, encoder_mode const& m )
 {
         return os << magic_enum::enum_name( m );
 }

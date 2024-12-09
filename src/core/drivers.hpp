@@ -1,6 +1,6 @@
 #pragma once
 
-#include "drv/interfaces.hpp"
+#include "../drv/interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 
@@ -34,7 +34,7 @@ struct drivers
 
         bool any_uninitialized()
         {
-                return em::any_of( tie(), []< typename T >( const T ptr ) {
+                return em::any_of( tie(), []< typename T >( T const ptr ) {
                         if constexpr ( std::is_pointer_v< T > ) {
                                 return ptr == nullptr;
                         } else {

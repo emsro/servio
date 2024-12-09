@@ -1,6 +1,6 @@
 #pragma once
 
-#include "sntr/base.hpp"
+#include "./base.hpp"
 
 namespace servio::sntr
 {
@@ -16,9 +16,9 @@ struct record
 {
         record_state st = record_state::UNSET;
         microseconds tp{ 0 };
-        const char*  src = nullptr;
+        char const*  src = nullptr;
         ecode_set    ecodes;
-        const char*  emsg = nullptr;
+        char const*  emsg = nullptr;
         data_type    data;
 };
 

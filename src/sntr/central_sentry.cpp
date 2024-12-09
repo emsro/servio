@@ -1,23 +1,23 @@
 
-#include "sntr/central_sentry.hpp"
+#include "./central_sentry.hpp"
 
-#include "sntr/base.hpp"
-#include "sntr/record.hpp"
+#include "./base.hpp"
+#include "./record.hpp"
 
 namespace servio::sntr
 {
 
 namespace
 {
-        record* get_next_free( std::span< record > buffer, std::size_t& index )
-        {
-                record* target;
-                do {
-                        target = &buffer[index];
-                        index  = ( index + 1 ) % buffer.size();
-                } while ( target->st == record_state::LOCKED );
-                return target;
-        }
+record* get_next_free( std::span< record > buffer, std::size_t& index )
+{
+        record* target;
+        do {
+                target = &buffer[index];
+                index  = ( index + 1 ) % buffer.size();
+        } while ( target->st == record_state::LOCKED );
+        return target;
+}
 }  // namespace
 
 central_sentry::central_sentry(
@@ -50,10 +50,10 @@ bool central_sentry::is_inoperable() const
 }
 
 void central_sentry::report_inoperable(
-    const char*      src,
+    char const*      src,
     ecode_set        ecodes,
-    const char*      emsg,
-    const data_type& data )
+    char const*      emsg,
+    data_type const& data )
 {
         microseconds now    = clk_.get_us();
         record*      target = get_next_free( inop_buffer_, inop_i_ );
@@ -67,10 +67,10 @@ void central_sentry::report_inoperable(
 }
 
 void central_sentry::report_degraded(
-    const char*      src,
+    char const*      src,
     ecode_set        ecodes,
-    const char*      emsg,
-    const data_type& data )
+    char const*      emsg,
+    data_type const& data )
 {
         microseconds now    = clk_.get_us();
         record*      target = get_next_free( degr_buffer_, degr_i_ );

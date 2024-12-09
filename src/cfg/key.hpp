@@ -44,4 +44,4 @@ enum key : uint32_t
         QUAD_ENCD_RANGE            = 80,
 };
 
-}
+}  // namespace servio::cfg

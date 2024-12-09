@@ -1,4 +1,4 @@
-#include "mon/effects.hpp"
+#include "./effects.hpp"
 
 #include <emlabcpp/algorithm.h>
 
@@ -26,7 +26,7 @@ bool blinker::update( microseconds now )
 
 float sin_approx( float x )
 {
-        const float x3 = x * x * x;
+        float const x3 = x * x * x;
         return x - x3 / 6.F + ( x3 * x * x ) / 120.F - ( x3 * x3 * x ) / 5040.F;
 }
 

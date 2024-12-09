@@ -1,22 +1,13 @@
-#include "scmdio/cli.hpp"
+#include "../scmdio/cli.hpp"
 
 #include <boost/asio.hpp>
 #include <boost/asio/awaitable.hpp>
 #include <boost/asio/serial_port.hpp>
 #include <chrono>
 #include <filesystem>
-#include <google/protobuf/util/message_differencer.h>
 #include <gtest/gtest.h>
 
 #pragma once
-
-namespace google::protobuf
-{
-bool operator==( const Message& lh, const Message& rh )
-{
-        return util::MessageDifferencer::Equals( lh, rh );
-}
-}  // namespace google::protobuf
 
 namespace servio::bb
 {
@@ -64,8 +55,8 @@ struct bb_test_case : ::testing::Test
 };
 
 inline void register_test(
-    const std::string&              fixture_name,
-    const std::string&              name,
+    std::string const&              fixture_name,
+    std::string const&              name,
     scmdio::common_cli&             cli,
     std::function< test_signature > test,
     std::chrono::milliseconds       timeout )

@@ -1,5 +1,5 @@
-#include "sntr/central_sentry.hpp"
-#include "sntr/sentry.hpp"
+#include "../central_sentry.hpp"
+#include "../sentry.hpp"
 
 #include <gtest/gtest.h>
 
@@ -42,7 +42,7 @@ TEST_F( sentry_fixture, init )
 
 TEST_F( sentry_fixture, insert_inop )
 {
-        const char* name = "s1";
+        char const* name = "s1";
         sentry      s1( name, central );
         clk.t = microseconds{ 2342 };
 
@@ -50,7 +50,7 @@ TEST_F( sentry_fixture, insert_inop )
         EXPECT_EQ( stop_counter, 0 );
 
         std::size_t eid  = 7;
-        const char* emsg = "saq";
+        char const* emsg = "saq";
         data_type   data = std::bitset< 32 >{ 0b10101 };
         s1.set_inoperable( eid, emsg, data );
 
@@ -67,7 +67,7 @@ TEST_F( sentry_fixture, insert_inop )
 
 TEST_F( sentry_fixture, insert_degr )
 {
-        const char*  name = "s1";
+        char const*  name = "s1";
         sentry       s1( name, central );
         microseconds t1{ 23232 };
         clk.t = t1;
@@ -76,7 +76,7 @@ TEST_F( sentry_fixture, insert_degr )
         EXPECT_EQ( stop_counter, 0 );
 
         std::size_t eid  = 7;
-        const char* emsg = "saq";
+        char const* emsg = "saq";
         data_type   data = std::bitset< 32 >{ 0b10101 };
         s1.set_degraded( eid, emsg, data );
 
@@ -111,12 +111,12 @@ TEST_F( sentry_fixture, insert_degr )
 
 TEST_F( sentry_fixture, insert_wrong_code )
 {
-        const char* name = "s1";
+        char const* name = "s1";
         sentry      s1( name, central );
         clk.t = microseconds{ 23232 };
 
         std::size_t eid = eid_bits * 2;
-        const char* msg = "msg";
+        char const* msg = "msg";
         s1.set_inoperable( eid, msg );
 
         EXPECT_EQ( buffer_a[0].st, record_state::SET );

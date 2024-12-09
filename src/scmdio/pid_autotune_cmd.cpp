@@ -1,7 +1,7 @@
-#include "scmdio/pid_autotune_cmd.hpp"
+#include "./pid_autotune_cmd.hpp"
 
-#include "scmdio/pid_autotune.hpp"
-#include "scmdio/serial.hpp"
+#include "./pid_autotune.hpp"
+#include "./serial.hpp"
 
 namespace servio::scmdio
 {

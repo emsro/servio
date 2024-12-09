@@ -1,9 +1,7 @@
-find_package(nlohmann_json REQUIRED)
-
 function(add_btest)
   cmake_parse_arguments(A "" "TARGET" "ARGS;SOURCE" ${ARGN})
   add_executable(${A_TARGET} ${A_SOURCE})
-  target_link_libraries(${A_TARGET} PRIVATE scmdiolib GTest::GTest)
+  target_link_libraries(${A_TARGET} PRIVATE scmdiolib gtest)
   servio_compile_options(${A_TARGET})
 endfunction()
 

@@ -1,7 +1,7 @@
-#include "base/base.hpp"
+#include "../base/base.hpp"
+#include "../scmdio/cli.hpp"
+#include "../scmdio/serial.hpp"
 #include "bb_test_case.hpp"
-#include "scmdio/cli.hpp"
-#include "scmdio/serial.hpp"
 
 #include <gtest/gtest.h>
 

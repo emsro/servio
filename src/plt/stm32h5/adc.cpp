@@ -5,10 +5,7 @@
 namespace servio::plt
 {
 
-void setup_adc_channel(
-    ADC_ChannelConfTypeDef&       channel,
-    uint32_t                      ch,
-    std::optional< drv::pin_cfg > cfg )
+void setup_adc_channel( ADC_ChannelConfTypeDef& channel, uint32_t ch, opt< drv::pin_cfg > cfg )
 {
         channel = ADC_ChannelConfTypeDef{
             .Channel      = ch,

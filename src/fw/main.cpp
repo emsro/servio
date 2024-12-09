@@ -1,10 +1,9 @@
 #include "brd/brd.hpp"
 #include "fw/context.hpp"
-#include "fw/servio_pb.hpp"
 #include "fw/store_persistent_config.hpp"
 
-std::byte INPUT_BUFFER[HostToServioPacket_size + 32];
-std::byte OUTPUT_BUFFER[ServioToHostPacket_size + 32];
+std::byte INPUT_BUFFER[128];
+std::byte OUTPUT_BUFFER[128];
 
 int main()
 {
@@ -43,7 +42,8 @@ int main()
                 ctx.core.ind.on_event(
                     ctx.cdrv.clock->get_us(), mon::indication_event::INCOMING_MESSAGE );
 
-                auto [succ, odata] = fw::handle_message_packet( dis, ldata, OUTPUT_BUFFER );
+                // XXX: packet handling
+                auto [succ, odata] = fw::handle_message( dis, ldata, OUTPUT_BUFFER );
 
                 if ( succ == em::ERROR )
                         fw::stop_exec();

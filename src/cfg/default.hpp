@@ -1,5 +1,5 @@
-#include "cfg/key.hpp"
-#include "cfg/map.hpp"
+#include "./key.hpp"
+#include "./map.hpp"
 
 #pragma once
 

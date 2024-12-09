@@ -1,6 +1,6 @@
-#include "scmdio/async_cobs.hpp"
+#include "./async_cobs.hpp"
 
-#include "scmdio/exceptions.hpp"
+#include "./exceptions.hpp"
 
 #include <array>
 
@@ -9,7 +9,13 @@ namespace em = emlabcpp;
 namespace servio::scmdio
 {
 
-boost::asio::awaitable< void > cobs_port::async_write( em::view< std::byte* > msg )
+boost::asio::awaitable< void > cobs_port::async_write( std::string_view msg )
+{
+        return this->async_write(
+            em::view_n( reinterpret_cast< std::byte const* >( msg.data() ), msg.size() ) );
+}
+
+boost::asio::awaitable< void > cobs_port::async_write( em::view< std::byte const* > msg )
 {
         // why +16? because for small messages *2 is not enough
         std::vector< std::byte > msg_buffer( msg.size() * 2 + 16, std::byte{ 0 } );

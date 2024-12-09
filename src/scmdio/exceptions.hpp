@@ -1,4 +1,3 @@
-#include "io.pb.h"
 
 #include <exception>
 
@@ -13,62 +12,62 @@ struct servio_exception : std::exception
 
 struct reply_error : servio_exception
 {
-        reply_error( const char* msg )
+        reply_error( char const* msg )
           : msg( msg )
         {
         }
 
-        const char* what() const noexcept override
+        char const* what() const noexcept override
         {
                 return msg;
         }
 
-        const char* msg;
+        char const* msg;
 };
 
 struct error_exception : servio_exception
 {
-        error_exception( servio::ErrorMsg msg )
+        error_exception( std::string msg )
           : msg( std::move( msg ) )
         {
         }
 
-        const char* what() const noexcept override
+        char const* what() const noexcept override
         {
-                return msg.msg().c_str();
+                return msg.c_str();
         }
 
-        servio::ErrorMsg msg;
+        std::string msg;
 };
 
 struct serialize_error : servio_exception
 {
-        serialize_error( const char* msg )
+        serialize_error( char const* msg )
           : msg( msg )
         {
         }
 
-        const char* what() const noexcept override
+        char const* what() const noexcept override
         {
                 return msg;
         }
 
-        const char* msg;
+        char const* msg;
 };
 
 struct parse_error : servio_exception
 {
-        parse_error( const char* msg )
+        parse_error( char const* msg )
           : msg( msg )
         {
         }
 
-        const char* what() const noexcept override
+        char const* what() const noexcept override
         {
                 return msg;
         }
 
-        const char* msg;
+        char const* msg;
 };
 
 }  // namespace servio::scmdio

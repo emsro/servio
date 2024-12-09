@@ -1,7 +1,7 @@
+#include "../scmdio/cli.hpp"
+#include "../scmdio/exceptions.hpp"
+#include "../scmdio/serial.hpp"
 #include "bb_test_case.hpp"
-#include "scmdio/cli.hpp"
-#include "scmdio/exceptions.hpp"
-#include "scmdio/serial.hpp"
 
 #include <emlabcpp/experimental/logging.h>
 #include <filesystem>
@@ -9,58 +9,49 @@
 
 namespace servio::bb
 {
+using namespace iface::literals;
 
-boost::asio::awaitable< void > check_mode( scmdio::cobs_port& port, servio::Mode m )
+boost::asio::awaitable< void > check_mode( scmdio::cobs_port& port, auto v )
 {
-        co_await scmdio::set_mode( port, m );
+        co_await scmdio::set_mode( port, v );
 
-        servio::Mode repl = co_await scmdio::get_property_mode( port );
-        EXPECT_EQ( repl.pld_case(), m.pld_case() );
+        iface::mode_key m        = co_await scmdio::get_property_mode( port );
+        iface::mode_key expected = decltype( v )::key;
+        EXPECT_EQ( m, expected );
 }
 
 boost::asio::awaitable< void > disengage( boost::asio::io_context&, scmdio::cobs_port& port )
 {
-        servio::Mode m;
-        m.mutable_disengaged();
-        co_await scmdio::set_mode( port, m );
+        auto k = "disengaged"_kv;
+        co_await scmdio::set_mode( port, k );
 }
 
 boost::asio::awaitable< void > test_disengaged( boost::asio::io_context&, scmdio::cobs_port& port )
 {
-        servio::Mode m;
-        m.mutable_disengaged();
-        co_await check_mode( port, m );
+        co_await check_mode( port, "disengaged"_kv );
 }
 
 boost::asio::awaitable< void > test_power( boost::asio::io_context& io, scmdio::cobs_port& port )
 {
-        servio::Mode m;
-        m.set_power( 0 );
-        co_await check_mode( port, m );
+        co_await check_mode( port, 0.0F | "power"_kv );
         co_await disengage( io, port );
 }
 
 boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio::cobs_port& port )
 {
-        servio::Mode m;
-        m.set_current( 0 );
-        co_await check_mode( port, m );
+        co_await check_mode( port, 0.0F | "current"_kv );
         co_await disengage( io, port );
 }
 
 boost::asio::awaitable< void > test_velocity( boost::asio::io_context& io, scmdio::cobs_port& port )
 {
-        servio::Mode m;
-        m.set_velocity( 0 );
-        co_await check_mode( port, m );
+        co_await check_mode( port, 0.0F | "velocity"_kv );
         co_await disengage( io, port );
 }
 
 boost::asio::awaitable< void > test_position( boost::asio::io_context& io, scmdio::cobs_port& port )
 {
-        servio::Mode m;
-        m.set_position( 0 );
-        co_await check_mode( port, m );
+        co_await check_mode( port, 0.0F | "position"_kv );
         co_await disengage( io, port );
 }
 
@@ -72,8 +63,8 @@ int main( int argc, char** argv )
         using namespace std::chrono_literals;
 
         ::testing::InitGoogleTest( &argc, argv );
-        bool                  powerless = false;
-        std::optional< bool > verbose   = false;
+        bool        powerless = false;
+        opt< bool > verbose   = false;
 
         CLI::App app{ "modes related tests" };
         scmdio::powerless_flag( app, powerless );

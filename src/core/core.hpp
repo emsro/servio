@@ -1,10 +1,10 @@
 #pragma once
 
-#include "callbacks.hpp"
-#include "ctl/control.hpp"
-#include "mon/indication.hpp"
-#include "mon/monitor.hpp"
-#include "mtr/metrics.hpp"
+#include "../ctl/control.hpp"
+#include "../mon/indication.hpp"
+#include "../mon/monitor.hpp"
+#include "../mtr/metrics.hpp"
+#include "./callbacks.hpp"
 
 namespace servio::core
 {
@@ -20,8 +20,8 @@ struct core
 
         core(
             microseconds           now,
-            const drv::vcc_iface&  vcc_drv,
-            const drv::temp_iface& temp_drv,
+            drv::vcc_iface const&  vcc_drv,
+            drv::temp_iface const& temp_drv,
             drv::clk_iface&        clk )
           : ctl( now, ctl::config{} )
           , conv()
@@ -47,7 +47,7 @@ struct standard_callbacks
             drv::clk_iface&       clk,
             ctl::control&         ctl,
             mtr::metrics&         met,
-            const cnv::converter& conv )
+            cnv::converter const& conv )
           : current_cb( motor, ctl, clk, conv )
           , pos_cb( ctl, met, clk, conv )
         {

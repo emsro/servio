@@ -1,6 +1,6 @@
-#include "cfg/dispatcher.hpp"
+#include "./dispatcher.hpp"
 
-#include "cfg/key.hpp"
+#include "./key.hpp"
 
 #include <emlabcpp/protocol/register_handler.h>
 
@@ -11,11 +11,11 @@ using handler = em::protocol::register_handler< map >;
 
 void dispatcher::full_apply()
 {
-        for ( const auto key : map::keys )
+        for ( auto const key : map::keys )
                 apply( key );
 }
 
-void dispatcher::apply( const key& key )
+void dispatcher::apply( key const& key )
 {
         switch ( key ) {
         case MODEL:
@@ -65,7 +65,7 @@ void dispatcher::apply( const key& key )
         ::servio::cfg::apply( c.ctl, m, key );
 }
 
-void apply( ctl::control& ctl, const map& m, const key& key )
+void apply( ctl::control& ctl, map const& m, key const& key )
 {
 
         switch ( key ) {

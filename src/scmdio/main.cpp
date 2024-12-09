@@ -1,8 +1,8 @@
-#include "io.pb.h"
-#include "scmdio/cli.hpp"
-#include "scmdio/config_cmds.hpp"
-#include "scmdio/pid_autotune_cmd.hpp"
-#include "scmdio/serial.hpp"
+#include "./cli.hpp"
+#include "./config_cmds.hpp"
+#include "./field_util.hpp"
+#include "./pid_autotune_cmd.hpp"
+#include "./serial.hpp"
 
 #include <emlabcpp/algorithm.h>
 #include <filesystem>
@@ -84,21 +84,17 @@ void cfg_def(
         } );
 }
 
-boost::asio::awaitable< void > pool_cmd(
-    boost::asio::io_context&,
-    cobs_port&                                              port,
-    std::vector< const google::protobuf::FieldDescriptor* > fields )
+boost::asio::awaitable< void >
+pool_cmd( boost::asio::io_context&, cobs_port& port, std::vector< iface::prop_key > props )
 {
 
         while ( true ) {
                 std::vector< std::string > vals;
-                for ( const google::protobuf::FieldDescriptor* field : fields ) {
-                        servio::Property repl = co_await get_property( port, field );
-
-                        // TODO: this is quite a hack
-                        std::string s = repl.ShortDebugString();
-                        s             = s.substr( s.find( ':' ) + 1 );
-                        vals.push_back( s );
+                for ( iface::prop_key const field : props ) {
+                        auto val = co_await get_property( port, field );
+                        val.visit( [&]( auto& kv ) {
+                                vals.emplace_back( std::format( "{}", kv.value ) );
+                        } );
                 }
                 std::cout << em::joined( vals, std::string{ "\t" } ) << std::endl;
         }
@@ -112,16 +108,14 @@ pool_cmd( boost::asio::io_context& context, cobs_port& port, std::vector< std::s
                 co_return;
         }
 
-        std::vector< const google::protobuf::FieldDescriptor* > fields;
-        for ( const std::string& prop : properties ) {
-                const google::protobuf::Descriptor* desc = servio::Property::GetDescriptor();
-
-                const google::protobuf::FieldDescriptor* field = desc->FindFieldByName( prop );
-                if ( field == nullptr ) {
+        std::vector< iface::prop_key > fields;
+        for ( std::string const& prop : properties ) {
+                auto s = iface::prop_key::from_string( prop );
+                if ( !s ) {
                         std::cerr << "Failed to find property: " << prop << std::endl;
                         co_return;
                 }
-                fields.push_back( field );
+                fields.push_back( std::move( *s ) );
         }
         co_await pool_cmd( context, port, fields );
 }

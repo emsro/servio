@@ -22,9 +22,9 @@ build:
 	$(MAKE) build_h5
 
 build_host:
-	cmake --build --preset "host_debug_build" -j 4
+	cmake --build --preset "host_debug_build"
 build_h5:
-	cmake --build --preset "stm32h5_debug_build" -j 4
+	cmake --build --preset "stm32h5_debug_build"
 build_asan:
 	cmake --build --preset "host_asan_build"
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/base.hpp"
+#include "../base/base.hpp"
 
 namespace servio::mon
 {

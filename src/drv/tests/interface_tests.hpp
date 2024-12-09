@@ -249,8 +249,8 @@ struct position_test
 
                 em::defer d = retain_callback( iface );
 
-                std::optional< uint32_t > opt_pos = std::nullopt;
-                position_cb               pcb{ [&]( uint32_t pos ) {
+                opt< uint32_t > opt_pos = std::nullopt;
+                position_cb     pcb{ [&]( uint32_t pos ) {
                         opt_pos = pos;
                 } };
                 iface.set_position_callback( pcb );
@@ -276,9 +276,9 @@ struct curr_iface_test
         {
                 em::defer d = retain_callback( iface );
 
-                std::optional< uint32_t > opt_curr = std::nullopt;
-                std::span< uint16_t >     prof;
-                current_cb                ccb{ [&]( uint32_t curr, std::span< uint16_t > profile ) {
+                opt< uint32_t >       opt_curr = std::nullopt;
+                std::span< uint16_t > prof;
+                current_cb            ccb{ [&]( uint32_t curr, std::span< uint16_t > profile ) {
                         opt_curr = curr;
                         prof     = profile;
                 } };

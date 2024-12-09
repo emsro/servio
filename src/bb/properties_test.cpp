@@ -1,7 +1,8 @@
+#include "../iface/def.h"
+#include "../scmdio/cli.hpp"
+#include "../scmdio/exceptions.hpp"
+#include "../scmdio/serial.hpp"
 #include "bb_test_case.hpp"
-#include "scmdio/cli.hpp"
-#include "scmdio/exceptions.hpp"
-#include "scmdio/serial.hpp"
 
 #include <emlabcpp/experimental/logging.h>
 #include <filesystem>
@@ -13,13 +14,11 @@ namespace servio::bb
 boost::asio::awaitable< void >
 test_properties_querying( boost::asio::io_context&, scmdio::cobs_port& port )
 {
-        const google::protobuf::OneofDescriptor* desc =
-            servio::Property::GetDescriptor()->oneof_decl( 0 );
-
-        for ( int i = 0; i < desc->field_count(); i++ ) {
-                const google::protobuf::FieldDescriptor* field = desc->field( i );
-                servio::Property prop = co_await scmdio::get_property( port, field );
-                EXPECT_EQ( static_cast< int >( prop.pld_case() ), field->number() );
+        for ( auto k : iface::prop_key::iota() ) {
+                auto vals = co_await scmdio::get_property( port, k );
+                vals.visit( [&]< auto K, typename T >( iface::kval< K, T >& ) {
+                        EXPECT_EQ( K.to_string(), k.to_string() );
+                } );
         }
 }
 
@@ -31,8 +30,8 @@ int main( int argc, char** argv )
         using namespace std::chrono_literals;
 
         ::testing::InitGoogleTest( &argc, argv );
-        bool                  powerless = false;
-        std::optional< bool > verbose   = false;
+        bool        powerless = false;
+        opt< bool > verbose   = false;
 
         CLI::App app{ "properties tests" };
         scmdio::powerless_flag( app, powerless );

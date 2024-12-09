@@ -1,4 +1,4 @@
-#include "base/base.hpp"
+#include "../base/base.hpp"
 
 #include <algorithm>
 
@@ -25,9 +25,9 @@ struct linear_transition_regulator
 
         void update( microseconds now, bool is_moving )
         {
-                const auto  tdiff = now - last_time;
-                const float dir   = is_moving ? -1.F : 1.F;
-                const float step  = decay * static_cast< float >( tdiff.count() );
+                auto const  tdiff = now - last_time;
+                float const dir   = is_moving ? -1.F : 1.F;
+                float const step  = decay * static_cast< float >( tdiff.count() );
 
                 state     = std::clamp( state + dir * step, low_point, high_point );
                 last_time = now;

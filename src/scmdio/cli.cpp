@@ -1,14 +1,14 @@
 
-#include "scmdio/cli.hpp"
+#include "./cli.hpp"
 
 namespace servio::scmdio
 {
 
-CLI::Option* verbose_opt( CLI::App& app, std::optional< bool >& val )
+CLI::Option* verbose_opt( CLI::App& app, opt< bool >& val )
 {
         return app.add_flag( "-v,--verbose", val, "verbosity" )
             ->envname( "SERVIO_VERBOSE" )
-            ->each( []( const std::string& ) {
+            ->each( []( std::string const& ) {
                     em::DEBUG_LOGGER.set_option( em::set_stdout( true ) );
             } );
 }

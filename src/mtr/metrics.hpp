@@ -1,6 +1,6 @@
-#include "base/base.hpp"
-#include "mtr/posvel_kalman.hpp"
-#include "mtr/static_detector.hpp"
+#include "../base/base.hpp"
+#include "./posvel_kalman.hpp"
+#include "./static_detector.hpp"
 
 #include <array>
 #include <tuple>

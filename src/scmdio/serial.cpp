@@ -1,7 +1,8 @@
-#include "scmdio/serial.hpp"
+#include "./serial.hpp"
 
-#include "scmdio/async_cobs.hpp"
-#include "scmdio/exceptions.hpp"
+#include "./async_cobs.hpp"
+#include "./exceptions.hpp"
+#include "./field_util.hpp"
 
 #include <emlabcpp/view.h>
 
@@ -11,195 +12,173 @@ constexpr std::size_t buffer_size = 1024;
 namespace servio::scmdio
 {
 
-boost::asio::awaitable< void > write( cobs_port& port, const servio::HostToServio& payload )
+using namespace avakar::literals;
+
+boost::asio::awaitable< void > write( cobs_port& port, std::string_view payload )
 {
-        servio::HostToServioPacket msg;
-        msg.set_id( 0 );
-        *msg.mutable_payload() = payload;
+        EMLABCPP_DEBUG_LOG( "Sending: ", payload );
 
-        std::size_t              size = msg.ByteSizeLong();
-        std::vector< std::byte > buffer( size, std::byte{ 0 } );
-        EMLABCPP_DEBUG_LOG( "Sending: ", msg.ShortDebugString() );
-        if ( !msg.SerializeToArray( buffer.data(), static_cast< int >( size ) ) )
-                throw serialize_error{ "failed to serliaze host to servio message" };
-
-        co_await port.async_write( em::view_n( buffer.data(), size ) );
+        co_await port.async_write( payload );
 }
 
-boost::asio::awaitable< servio::ServioToHost > read( cobs_port& port )
+boost::asio::awaitable< std::string > read( cobs_port& port )
 {
+
         std::array< std::byte, buffer_size > reply_buffer;
         em::view< std::byte* >               deser_msg = co_await port.async_read( reply_buffer );
 
-        if ( deser_msg.empty() )
-                throw reply_error{ "Got an empty reply" };
-
-        servio::ServioToHostPacket reply;
-        if ( !reply.ParseFromArray(
-                 deser_msg.begin(), static_cast< int >( deser_msg.size() - 1 ) ) ) {
-                EMLABCPP_ERROR_LOG( "Failed to parse message: ", deser_msg );
-                throw parse_error{ "failed to parse servio to host message from incoming data" };
-        }
-        EMLABCPP_DEBUG_LOG( "Got: ", reply.ShortDebugString() );
-
-        if ( reply.payload().has_error() )
-                throw error_exception{ reply.payload().error() };
-
-        co_return reply.payload();
+        std::string res{ reinterpret_cast< char* >( deser_msg.begin() ), deser_msg.size() };
+        EMLABCPP_DEBUG_LOG( "Got: ", res );
+        co_return res;
 }
 
-boost::asio::awaitable< servio::ServioToHost >
-exchange( cobs_port& port, const servio::HostToServio& msg )
+boost::asio::awaitable< nlohmann::json > exchg( cobs_port& port, std::string const& msg )
 {
         co_await write( port, msg );
 
-        try {
-                servio::ServioToHost reply = co_await read( port );
-                co_return reply;
-        }
-        catch ( error_exception& err ) {
-                EMLABCPP_ERROR_LOG(
-                    "For msg ",
-                    msg.ShortDebugString(),
-                    " got an error reply: ",
-                    err.msg.ShortDebugString() );
-                throw;
-        }
+        std::string reply = co_await read( port );
+        co_return nlohmann::json::parse( reply );
 }
 
-boost::asio::awaitable< servio::Config >
-get_config_field( cobs_port& port, const google::protobuf::FieldDescriptor* field )
+boost::asio::awaitable< vari::vval< iface::cfg_vals > >
+get_config_field( cobs_port& port, iface::cfg_key cfg )
 {
-        servio::HostToServio msg;
-        msg.mutable_get_config()->set_field_id( static_cast< uint32_t >( field->number() ) );
+        std::string msg = std::format( "cfg get {}", cfg.to_string() );
 
-        servio::ServioToHost reply = co_await exchange( port, msg );
-        if ( !reply.has_get_config() ) {
-                EMLABCPP_ERROR_LOG(
-                    "Expected message with get_config, instead got: ", reply.ShortDebugString() );
-                throw reply_error{ "reply does not contain get_config as it should" };
+        nlohmann::json reply = co_await exchg( port, msg );
+        if ( !reply.contains( cfg.to_string() ) ) {
+                EMLABCPP_ERROR_LOG( "Expected message with cfg field, instead got: ", reply );
+                throw reply_error{ "reply does not contain cfg field as it should" };
         }
-        co_return reply.get_config();
+
+        auto res = kval_ser< iface::cfg_vals >::from_json( cfg.to_string(), reply );
+        assert( res );
+        co_return std::move( res ).vval();
 }
 
-boost::asio::awaitable< void > set_config_field( cobs_port& port, const servio::Config& cfg )
+boost::asio::awaitable< void >
+set_config_field( cobs_port& port, vari::vref< iface::cfg_vals const > val )
 {
-        servio::HostToServio msg;
-        *msg.mutable_set_config() = cfg;
+        std::string msg;
+        val.visit( [&]( auto const& val ) {
+                msg = std::format( "cfg set {} {}", val.key.to_string(), val.value );
+        } );
 
-        servio::ServioToHost reply = co_await exchange( port, msg );
-        if ( !reply.has_set_config() )
+        std::string res = co_await exchg( port, msg );
+        if ( res != "ok" )
                 throw reply_error{ "reply does not contain set_config as it should" };
 }
 
-boost::asio::awaitable< std::vector< servio::Config > > get_full_config( cobs_port& port )
+boost::asio::awaitable< std::vector< vari::vval< iface::cfg_vals > > >
+get_full_config( cobs_port& port )
 {
-        const google::protobuf::OneofDescriptor* desc =
-            servio::Config::GetDescriptor()->oneof_decl( 0 );
-
-        std::vector< servio::Config > out;
-        for ( int i = 0; i < desc->field_count(); i++ ) {
-                const google::protobuf::FieldDescriptor* field = desc->field( i );
-
-                servio::Config cfg = co_await get_config_field( port, field );
-
-                out.push_back( cfg );
+        std::vector< vari::vval< iface::cfg_vals > > res;
+        for ( auto f : iface::cfg_key::iota() ) {
+                auto val = co_await get_config_field( port, f );
+                res.emplace_back( std::move( val ) );
         }
-        co_return out;
+
+        co_return res;
 }
 
-boost::asio::awaitable< servio::Property > get_property( cobs_port& port, uint32_t field_id )
+boost::asio::awaitable< vari::vval< iface::prop_vals > >
+get_property( cobs_port& port, iface::prop_key p )
 {
-        servio::HostToServio hts;
-        hts.mutable_get_property()->set_field_id( field_id );
-        servio::ServioToHost sth = co_await exchange( port, hts );
-        if ( !sth.has_get_property() ) {
-                EMLABCPP_ERROR_LOG(
-                    "Expected message with get_property, instead got: ", sth.ShortDebugString() );
-                throw reply_error{ "reply does not contain get_property as it should" };
+        std::string msg = std::format( "prp {}", p.to_string() );
+
+        nlohmann::json reply = co_await exchg( port, msg );
+        if ( !reply.contains( p.to_string() ) ) {
+                EMLABCPP_ERROR_LOG( "Expected message with prop field, instead got: ", reply );
+                throw reply_error{ "reply does not contain prop field as it should" };
         }
-        co_return sth.get_property();
-}
 
-boost::asio::awaitable< servio::Property >
-get_property( cobs_port& port, servio::Property::PldCase field_id )
-{
-        return get_property( port, static_cast< uint32_t >( field_id ) );
-}
-
-boost::asio::awaitable< servio::Property >
-get_property( cobs_port& port, const google::protobuf::FieldDescriptor* field )
-{
-        return get_property( port, static_cast< uint32_t >( field->number() ) );
+        auto res = kval_ser< iface::prop_vals >::from_json( p.to_string(), reply );
+        assert( res );
+        co_return std::move( res ).vval();
 }
 
 /// TODO: error checking for the getters
-boost::asio::awaitable< servio::Mode > get_property_mode( cobs_port& port )
+boost::asio::awaitable< iface::mode_key > get_property_mode( cobs_port& port )
 {
-        servio::Property prop = co_await get_property( port, servio::Property::kMode );
-        co_return prop.mode();
+        auto val = co_await get_property( port, "mode"_a );
+        throw "XXX";
 }
 
 boost::asio::awaitable< float > get_property_current( cobs_port& port )
 {
-        servio::Property prop = co_await get_property( port, servio::Property::kCurrent );
-        co_return prop.current();
+        auto val = co_await get_property( port, "current"_a );
+        throw "XXX";
 }
 
 boost::asio::awaitable< float > get_property_position( cobs_port& port )
 {
-        servio::Property prop = co_await get_property( port, servio::Property::kPosition );
-        co_return prop.position();
+        auto val = co_await get_property( port, "position"_a );
+        throw "XXX";
 }
 
 boost::asio::awaitable< float > get_property_velocity( cobs_port& port )
 {
-        servio::Property prop = co_await get_property( port, servio::Property::kVelocity );
-        co_return prop.velocity();
+        auto val = co_await get_property( port, "velocity"_a );
+        throw "XXX";
 }
 
-boost::asio::awaitable< void > set_mode( cobs_port& port, servio::Mode mode )
+namespace
 {
-        servio::HostToServio hts;
-        *hts.mutable_set_mode() = mode;
-
-        co_await exchange( port, hts );
+boost::asio::awaitable< void > set_mode_raw( cobs_port& port, std::string_view k, float v )
+{
+        std::string msg = std::format( "mode {} {}", k, v );
+        co_await exchg( port, msg );
+        // XXX: check return value
 }
 
-boost::asio::awaitable< void > set_mode_disengaged( cobs_port& port )
-{
-        servio::Mode m;
-        m.mutable_disengaged();
+}  // namespace
 
-        co_await set_mode( port, m );
+boost::asio::awaitable< void > set_mode( cobs_port& port, vari::vref< iface::mode_vals const > v )
+{
+        std::string msg;
+        v.visit( [&]< typename KV >( KV const& kval ) {
+                if constexpr ( KV::is_void )
+                        msg = std::format( "mode {}", kval.key );
+                else
+                        msg = std::format( "mode {} {}", kval.key, kval.value );
+        } );
+        co_await exchg( port, msg );
+        // XXX: check return value
+}
+
+boost::asio::awaitable< void > set_mode_disengaged( cobs_port& )
+{
+        // XXX: it's not really easy to create instances of the type...
+        // XXX: this is weird
+        throw "XXX";
+        /*
+        auto kv = kval_ser< iface::mode_vals >::from_val(
+            "disengaged", vari::vptr< iface::mode_types >{} );
+        if ( kv )
+                co_await set_mode( port, kv.vref() );
+        else
+                throw "XXX";
+        */
 }
 
 boost::asio::awaitable< void > set_mode_power( cobs_port& port, float pow )
 {
-        servio::Mode m;
-        m.set_power( pow );
-        co_await set_mode( port, m );
+        co_await set_mode_raw( port, "power", pow );
 }
 
 boost::asio::awaitable< void > set_mode_position( cobs_port& port, float angle )
 {
-        servio::Mode m;
-        m.set_position( angle );
-        co_await set_mode( port, m );
+        co_await set_mode_raw( port, "position", angle );
 }
 
 boost::asio::awaitable< void > set_mode_velocity( cobs_port& port, float vel )
 {
-        servio::Mode m;
-        m.set_velocity( vel );
-        co_await set_mode( port, m );
+        co_await set_mode_raw( port, "velocity", vel );
 }
 
 boost::asio::awaitable< void > set_mode_current( cobs_port& port, float curr )
 {
-        servio::Mode m;
-        m.set_current( curr );
-        co_await set_mode( port, m );
+        co_await set_mode_raw( port, "current", curr );
 }
 
 }  // namespace servio::scmdio
