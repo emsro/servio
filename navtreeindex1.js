@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"classservio_1_1drv_1_1leds.html#a54b9111219f37c0ab5acf3e331c39c87":[7,0,2,6,37,4],
-"classservio_1_1drv_1_1leds.html#aeb04b29d89a7674ddd4396490f1d692c":[7,0,2,6,37,0],
 "classservio_1_1drv_1_1leds.html#af876d35e30904d36099d8a2fc9c897c3":[7,0,2,6,37,3],
 "classservio_1_1drv_1_1quad__encoder.html":[7,0,2,6,38],
 "classservio_1_1drv_1_1quad__encoder.html#a04b6a5c7564d7b38720cdab356644c24":[7,0,2,6,38,6],
@@ -78,8 +76,8 @@ var NAVTREEINDEX1 =
 "cobs__uart_8hpp.html#a81601f09a11f735318be2f9fff6c0befaf5f7f7950a88404a4bd10072631d85bb":[8,0,1,7,7,1,0],
 "cobs__uart_8hpp_source.html":[8,0,1,7,7],
 "cobs__utest_8cpp.html":[8,0,1,7,1,0],
-"cobs__utest_8cpp.html#a46936d3ef60dcc71326b357d0605ccd5":[8,0,1,7,1,0,0],
 "cobs__utest_8cpp.html#a46936d3ef60dcc71326b357d0605ccd5":[6,0,3,2],
+"cobs__utest_8cpp.html#a46936d3ef60dcc71326b357d0605ccd5":[8,0,1,7,1,0,0],
 "cobs__utest_8cpp.html#a9d4caa145e7a9eb34292a6ce97cce774":[8,0,1,7,1,0,1],
 "comms.html":[5,3],
 "comms.html#autotoc_md22":[5,3,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX1 =
 "effects_8cpp.html":[8,0,1,13,1],
 "effects_8cpp.html#a05b0570c91ff6eb55da2986405b24659":[8,0,1,13,1,0],
 "effects_8hpp.html":[8,0,1,13,2],
-"effects_8hpp.html#a05b0570c91ff6eb55da2986405b24659":[8,0,1,13,2,2]
+"effects_8hpp.html#a05b0570c91ff6eb55da2986405b24659":[8,0,1,13,2,2],
+"effects_8hpp_source.html":[8,0,1,13,2],
+"effects__utest_8cpp.html":[8,0,1,13,0,0]
 };
