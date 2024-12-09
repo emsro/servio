@@ -1,4 +1,6 @@
 
+#include <cstdint>
+//
 #include <avakar/atom.h>
 #include <format>
 #include <nlohmann/json.hpp>
