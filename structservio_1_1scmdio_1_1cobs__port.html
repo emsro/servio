@@ -104,10 +104,12 @@ $(document).ready(function(){initNavTree('structservio_1_1scmdio_1_1cobs__port.h
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aedbfedba7bc428e5990fb0a40b89ce33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#aedbfedba7bc428e5990fb0a40b89ce33">cobs_port</a> (boost::asio::io_context &amp;context, const std::filesystem::path &amp;p, uint32_t baudrate)</td></tr>
-<tr class="separator:aedbfedba7bc428e5990fb0a40b89ce33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1d8918adfbec664a16b9079d48cfc9a"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#ab1d8918adfbec664a16b9079d48cfc9a">async_write</a> (em::view&lt; std::byte * &gt; msg)</td></tr>
-<tr class="separator:ab1d8918adfbec664a16b9079d48cfc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103f8d1bc17c9f8b97aa89ce457501ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#a103f8d1bc17c9f8b97aa89ce457501ab">cobs_port</a> (boost::asio::io_context &amp;context, std::filesystem::path const &amp;p, uint32_t baudrate)</td></tr>
+<tr class="separator:a103f8d1bc17c9f8b97aa89ce457501ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d02a45486e6a1d34517202510fe5789"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#a4d02a45486e6a1d34517202510fe5789">async_write</a> (em::view&lt; std::byte const * &gt; msg)</td></tr>
+<tr class="separator:a4d02a45486e6a1d34517202510fe5789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88cd1be52514801736211b2c2e71572b"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#a88cd1be52514801736211b2c2e71572b">async_write</a> (std::string_view msg)</td></tr>
+<tr class="separator:a88cd1be52514801736211b2c2e71572b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a753a34ede7c88a22216b2b05b54b15e4"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#a753a34ede7c88a22216b2b05b54b15e4">async_read</a> (em::view&lt; std::byte * &gt; buffer)</td></tr>
 <tr class="separator:a753a34ede7c88a22216b2b05b54b15e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -119,8 +121,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a3c0ff28427c4ac6cd78e1a315e5dfe3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aedbfedba7bc428e5990fb0a40b89ce33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedbfedba7bc428e5990fb0a40b89ce33">&#9670;&nbsp;</a></span>cobs_port()</h2>
+<a id="a103f8d1bc17c9f8b97aa89ce457501ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a103f8d1bc17c9f8b97aa89ce457501ab">&#9670;&nbsp;</a></span>cobs_port()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,7 +139,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -184,8 +186,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab1d8918adfbec664a16b9079d48cfc9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1d8918adfbec664a16b9079d48cfc9a">&#9670;&nbsp;</a></span>async_write()</h2>
+<a id="a4d02a45486e6a1d34517202510fe5789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d02a45486e6a1d34517202510fe5789">&#9670;&nbsp;</a></span>async_write() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +195,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">boost::asio::awaitable&lt; void &gt; servio::scmdio::cobs_port::async_write </td>
           <td>(</td>
-          <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
+          <td class="paramtype">em::view&lt; std::byte const * &gt;&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -201,6 +203,26 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#a1296ac6c804e517daeb0073c76a98290">port</a>.</p>
+
+</div>
+</div>
+<a id="a88cd1be52514801736211b2c2e71572b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88cd1be52514801736211b2c2e71572b">&#9670;&nbsp;</a></span>async_write() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::asio::awaitable&lt; void &gt; servio::scmdio::cobs_port::async_write </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#a4d02a45486e6a1d34517202510fe5789">async_write()</a>.</p>
 
 </div>
 </div>
@@ -243,7 +265,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1scmdio.html">scmdio</a></li><li class="navelem"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

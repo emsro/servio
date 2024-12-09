@@ -93,12 +93,13 @@ $(document).ready(function(){initNavTree('util_8hpp.html',''); initResizable(); 
 <div class="contents">
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for util.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="util_8hpp__incl.svg" width="187" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="util_8hpp__incl.svg" width="310" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -123,10 +124,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a68327591c08e30e0258912e40f476a8c"><td class="memTemplParams" colspan="2">template&lt;typename... Components&gt; </td></tr>
 <tr class="memitem:a68327591c08e30e0258912e40f476a8c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a68327591c08e30e0258912e40f476a8c">servio::fw::multistart</a> (Components &amp;... comps)</td></tr>
 <tr class="separator:a68327591c08e30e0258912e40f476a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28dbe05bad5512563b13c2fc66a305a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a28dbe05bad5512563b13c2fc66a305a5">servio::fw::copy_string_to</a> (const char *str, std::size_t size, auto &amp;target)</td></tr>
-<tr class="separator:a28dbe05bad5512563b13c2fc66a305a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a360603de771fc0f6d7cb7bfa7caf6da8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a360603de771fc0f6d7cb7bfa7caf6da8">servio::fw::operator&lt;&lt;</a> (const check_bool &amp;, bool val)</td></tr>
-<tr class="separator:a360603de771fc0f6d7cb7bfa7caf6da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa291e3073743223a35832c4cb3e92420"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#aa291e3073743223a35832c4cb3e92420">servio::fw::copy_string_to</a> (auto &amp;src, auto &amp;target)</td></tr>
+<tr class="separator:aa291e3073743223a35832c4cb3e92420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa615012255c33b2658c3ca4980efd38f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#aa615012255c33b2658c3ca4980efd38f">servio::fw::operator&lt;&lt;</a> (check_bool const &amp;, bool val)</td></tr>
+<tr class="separator:aa615012255c33b2658c3ca4980efd38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1fw_1_1check__bool" id="structservio_1_1fw_1_1check__bool"></a>
@@ -149,7 +150,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="util_8hpp.html">util.hpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

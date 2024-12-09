@@ -140,25 +140,25 @@ Functions</h2></td></tr>
 <tr class="separator:a0884697a42d50e650e6d39955a87424d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ca1d1043f3acebfdbf1e88110d92679"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceservio_1_1klmn.html#a704cf7af70c58cea5af6dc389b807cbd">observation_noise_covariance</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a1ca1d1043f3acebfdbf1e88110d92679">get_observation_noise_covariance</a> (float observation_deviation)</td></tr>
 <tr class="separator:a1ca1d1043f3acebfdbf1e88110d92679"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcca2dfb8e15fd67d8ddeb4c54946cee"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a>, <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#abcca2dfb8e15fd67d8ddeb4c54946cee">predict</a> (const <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a> &amp;x_prev, const <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> &amp;p_prev, const <a class="el" href="namespaceservio_1_1klmn.html#a265c882587110f56dad6b8e59422bf52">control_input</a> &amp;u, const <a class="el" href="namespaceservio_1_1klmn.html#afea6216b903aa2cb07122c0a086643cd">state_transition_model</a> &amp;f, const <a class="el" href="namespaceservio_1_1klmn.html#a06eeeb1c879c6761c7ee54e42b43d285">control_input_model</a> &amp;b, const <a class="el" href="namespaceservio_1_1klmn.html#a3e008d0919e3b9e249df7660063afb0d">process_noise_covariance</a> &amp;q)</td></tr>
-<tr class="separator:abcca2dfb8e15fd67d8ddeb4c54946cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3ccd538e37fd4e579d4b883468b534a"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a>, <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#ac3ccd538e37fd4e579d4b883468b534a">update</a> (const <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a> &amp;x_prev, const <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> &amp;p_prev, const <a class="el" href="namespaceservio_1_1klmn.html#ad3c38b4afcfc858dde73afeb79b4dbc1">observation</a> &amp;z, const <a class="el" href="namespaceservio_1_1klmn.html#a2f11d48d9891719c00ed2acb5ba4b255">observation_model</a> &amp;h, const <a class="el" href="namespaceservio_1_1klmn.html#a704cf7af70c58cea5af6dc389b807cbd">observation_noise_covariance</a> &amp;r)</td></tr>
-<tr class="separator:ac3ccd538e37fd4e579d4b883468b534a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a609eab0f665504f09c8b30be6dfb4c"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a>, <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a5a609eab0f665504f09c8b30be6dfb4c">predict</a> (<a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a> const &amp;x_prev, <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> const &amp;p_prev, <a class="el" href="namespaceservio_1_1klmn.html#a265c882587110f56dad6b8e59422bf52">control_input</a> const &amp;u, <a class="el" href="namespaceservio_1_1klmn.html#afea6216b903aa2cb07122c0a086643cd">state_transition_model</a> const &amp;f, <a class="el" href="namespaceservio_1_1klmn.html#a06eeeb1c879c6761c7ee54e42b43d285">control_input_model</a> const &amp;b, <a class="el" href="namespaceservio_1_1klmn.html#a3e008d0919e3b9e249df7660063afb0d">process_noise_covariance</a> const &amp;q)</td></tr>
+<tr class="separator:a5a609eab0f665504f09c8b30be6dfb4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a234fa44edad4ff9eca397d3fe26a76ec"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a>, <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a234fa44edad4ff9eca397d3fe26a76ec">update</a> (<a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a> const &amp;x_prev, <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> const &amp;p_prev, <a class="el" href="namespaceservio_1_1klmn.html#ad3c38b4afcfc858dde73afeb79b4dbc1">observation</a> const &amp;z, <a class="el" href="namespaceservio_1_1klmn.html#a2f11d48d9891719c00ed2acb5ba4b255">observation_model</a> const &amp;h, <a class="el" href="namespaceservio_1_1klmn.html#a704cf7af70c58cea5af6dc389b807cbd">observation_noise_covariance</a> const &amp;r)</td></tr>
+<tr class="separator:a234fa44edad4ff9eca397d3fe26a76ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b85edb1c54956e9cd22ae24f3debbc5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a6b85edb1c54956e9cd22ae24f3debbc5"><td class="memTemplItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a6b85edb1c54956e9cd22ae24f3debbc5">angle</a> (T &amp;x)</td></tr>
 <tr class="separator:a6b85edb1c54956e9cd22ae24f3debbc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab9b4531c387d4264fe17a1341856597"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aab9b4531c387d4264fe17a1341856597"><td class="memTemplItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#aab9b4531c387d4264fe17a1341856597">velocity</a> (T &amp;x)</td></tr>
 <tr class="separator:aab9b4531c387d4264fe17a1341856597"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a451b033ac382e652c5e1571572f417f1"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a451b033ac382e652c5e1571572f417f1">requires_offset</a> (const float v, const <a class="el" href="namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range">state_range</a> &amp;r)</td></tr>
-<tr class="separator:a451b033ac382e652c5e1571572f417f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c5877d688d33d7cb52521c65be21b7"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#ad6c5877d688d33d7cb52521c65be21b7">requires_offset</a> (float const v, <a class="el" href="namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range">state_range</a> const &amp;r)</td></tr>
+<tr class="separator:ad6c5877d688d33d7cb52521c65be21b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2656c673261ab9f79dd300223947a4f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f">angle_mod</a> (float v, <a class="el" href="namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range">state_range</a> r)</td></tr>
 <tr class="separator:ac2656c673261ab9f79dd300223947a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0aa6c92d5518702afcdd1e85fa793ef"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa0aa6c92d5518702afcdd1e85fa793ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#aa0aa6c92d5518702afcdd1e85fa793ef">modify_angle</a> (T &amp;x, float val, <a class="el" href="namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range">state_range</a> r)</td></tr>
 <tr class="separator:aa0aa6c92d5518702afcdd1e85fa793ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3822093522319dfa0c920ce1cf6a873"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#af3822093522319dfa0c920ce1cf6a873">simulate</a> (<a class="el" href="namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909">sec_time</a> tdiff, float process_deviation, float observation_deviation, const std::vector&lt; <a class="el" href="namespaceservio_1_1klmn.html#ad3c38b4afcfc858dde73afeb79b4dbc1">observation</a> &gt; &amp;observations, <a class="el" href="namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range">state_range</a> sr)</td></tr>
-<tr class="separator:af3822093522319dfa0c920ce1cf6a873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51ded188d3892b9cbe894be75d71a6c5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a51ded188d3892b9cbe894be75d71a6c5">simulate</a> (<a class="el" href="namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909">sec_time</a> tdiff, float process_deviation, float observation_deviation, std::vector&lt; <a class="el" href="namespaceservio_1_1klmn.html#ad3c38b4afcfc858dde73afeb79b4dbc1">observation</a> &gt; const &amp;observations, <a class="el" href="namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range">state_range</a> sr)</td></tr>
+<tr class="separator:a51ded188d3892b9cbe894be75d71a6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1klmn_1_1state__range" id="structservio_1_1klmn_1_1state__range"></a>
@@ -599,8 +599,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="abcca2dfb8e15fd67d8ddeb4c54946cee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcca2dfb8e15fd67d8ddeb4c54946cee">&#9670;&nbsp;</a></span>predict()</h2>
+<a id="a5a609eab0f665504f09c8b30be6dfb4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a609eab0f665504f09c8b30be6dfb4c">&#9670;&nbsp;</a></span>predict()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -611,37 +611,37 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">constexpr std::tuple&lt; <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a>, <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> &gt; servio::klmn::predict </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a> const &amp;&#160;</td>
           <td class="paramname"><em>x_prev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> const &amp;&#160;</td>
           <td class="paramname"><em>p_prev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#a265c882587110f56dad6b8e59422bf52">control_input</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#a265c882587110f56dad6b8e59422bf52">control_input</a> const &amp;&#160;</td>
           <td class="paramname"><em>u</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#afea6216b903aa2cb07122c0a086643cd">state_transition_model</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#afea6216b903aa2cb07122c0a086643cd">state_transition_model</a> const &amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#a06eeeb1c879c6761c7ee54e42b43d285">control_input_model</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#a06eeeb1c879c6761c7ee54e42b43d285">control_input_model</a> const &amp;&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#a3e008d0919e3b9e249df7660063afb0d">process_noise_covariance</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#a3e008d0919e3b9e249df7660063afb0d">process_noise_covariance</a> const &amp;&#160;</td>
           <td class="paramname"><em>q</em>&#160;</td>
         </tr>
         <tr>
@@ -659,8 +659,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a451b033ac382e652c5e1571572f417f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a451b033ac382e652c5e1571572f417f1">&#9670;&nbsp;</a></span>requires_offset()</h2>
+<a id="ad6c5877d688d33d7cb52521c65be21b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c5877d688d33d7cb52521c65be21b7">&#9670;&nbsp;</a></span>requires_offset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -671,13 +671,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">constexpr bool servio::klmn::requires_offset </td>
           <td>(</td>
-          <td class="paramtype">const float&#160;</td>
+          <td class="paramtype">float const&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range">state_range</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range">state_range</a> const &amp;&#160;</td>
           <td class="paramname"><em>r</em>&#160;</td>
         </tr>
         <tr>
@@ -697,8 +697,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="af3822093522319dfa0c920ce1cf6a873"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3822093522319dfa0c920ce1cf6a873">&#9670;&nbsp;</a></span>simulate()</h2>
+<a id="a51ded188d3892b9cbe894be75d71a6c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51ded188d3892b9cbe894be75d71a6c5">&#9670;&nbsp;</a></span>simulate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -724,7 +724,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceservio_1_1klmn.html#ad3c38b4afcfc858dde73afeb79b4dbc1">observation</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespaceservio_1_1klmn.html#ad3c38b4afcfc858dde73afeb79b4dbc1">observation</a> &gt; const &amp;&#160;</td>
           <td class="paramname"><em>observations</em>, </td>
         </tr>
         <tr>
@@ -741,12 +741,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1klmn.html#a6b85edb1c54956e9cd22ae24f3debbc5">angle()</a>, <a class="el" href="namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f">angle_mod()</a>, <a class="el" href="namespaceservio_1_1klmn.html#ace7ac59187828069b648532db7b16d1f">get_control_input_model()</a>, <a class="el" href="namespaceservio_1_1klmn.html#a0884697a42d50e650e6d39955a87424d">get_observation_model()</a>, <a class="el" href="namespaceservio_1_1klmn.html#a1ca1d1043f3acebfdbf1e88110d92679">get_observation_noise_covariance()</a>, <a class="el" href="namespaceservio_1_1klmn.html#a74d34aba693646c582f03251d4be2f57">get_process_noise_covariance()</a>, <a class="el" href="namespaceservio_1_1klmn.html#a859f3a32ef9c0387df89a3a2c8d5dbd7">get_transition_model()</a>, <a class="el" href="namespaceservio_1_1klmn.html#aa0aa6c92d5518702afcdd1e85fa793ef">modify_angle()</a>, <a class="el" href="namespaceservio.html#a20c15193768c59a28a88e172aba5ab20">servio::pi</a>, <a class="el" href="namespaceservio_1_1klmn.html#abcca2dfb8e15fd67d8ddeb4c54946cee">predict()</a>, <a class="el" href="namespaceservio_1_1klmn.html#a451b033ac382e652c5e1571572f417f1">requires_offset()</a>, <a class="el" href="namespaceservio_1_1klmn.html#ac3ccd538e37fd4e579d4b883468b534a">update()</a>, and <a class="el" href="namespaceservio_1_1klmn.html#aab9b4531c387d4264fe17a1341856597">velocity()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1klmn.html#a6b85edb1c54956e9cd22ae24f3debbc5">angle()</a>, <a class="el" href="namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f">angle_mod()</a>, <a class="el" href="namespaceservio_1_1klmn.html#ace7ac59187828069b648532db7b16d1f">get_control_input_model()</a>, <a class="el" href="namespaceservio_1_1klmn.html#a0884697a42d50e650e6d39955a87424d">get_observation_model()</a>, <a class="el" href="namespaceservio_1_1klmn.html#a1ca1d1043f3acebfdbf1e88110d92679">get_observation_noise_covariance()</a>, <a class="el" href="namespaceservio_1_1klmn.html#a74d34aba693646c582f03251d4be2f57">get_process_noise_covariance()</a>, <a class="el" href="namespaceservio_1_1klmn.html#a859f3a32ef9c0387df89a3a2c8d5dbd7">get_transition_model()</a>, <a class="el" href="namespaceservio_1_1klmn.html#aa0aa6c92d5518702afcdd1e85fa793ef">modify_angle()</a>, <a class="el" href="namespaceservio.html#a20c15193768c59a28a88e172aba5ab20">servio::pi</a>, <a class="el" href="namespaceservio_1_1klmn.html#a5a609eab0f665504f09c8b30be6dfb4c">predict()</a>, <a class="el" href="namespaceservio_1_1klmn.html#ad6c5877d688d33d7cb52521c65be21b7">requires_offset()</a>, <a class="el" href="namespaceservio_1_1klmn.html#a234fa44edad4ff9eca397d3fe26a76ec">update()</a>, and <a class="el" href="namespaceservio_1_1klmn.html#aab9b4531c387d4264fe17a1341856597">velocity()</a>.</p>
 
 </div>
 </div>
-<a id="ac3ccd538e37fd4e579d4b883468b534a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3ccd538e37fd4e579d4b883468b534a">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a234fa44edad4ff9eca397d3fe26a76ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a234fa44edad4ff9eca397d3fe26a76ec">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -757,31 +757,31 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">constexpr std::tuple&lt; <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a>, <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> &gt; servio::klmn::update </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135">state</a> const &amp;&#160;</td>
           <td class="paramname"><em>x_prev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203">state_covariance</a> const &amp;&#160;</td>
           <td class="paramname"><em>p_prev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#ad3c38b4afcfc858dde73afeb79b4dbc1">observation</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#ad3c38b4afcfc858dde73afeb79b4dbc1">observation</a> const &amp;&#160;</td>
           <td class="paramname"><em>z</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#a2f11d48d9891719c00ed2acb5ba4b255">observation_model</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#a2f11d48d9891719c00ed2acb5ba4b255">observation_model</a> const &amp;&#160;</td>
           <td class="paramname"><em>h</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceservio_1_1klmn.html#a704cf7af70c58cea5af6dc389b807cbd">observation_noise_covariance</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1klmn.html#a704cf7af70c58cea5af6dc389b807cbd">observation_noise_covariance</a> const &amp;&#160;</td>
           <td class="paramname"><em>r</em>&#160;</td>
         </tr>
         <tr>
@@ -833,7 +833,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1klmn.html">klmn</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -100,13 +100,11 @@ REQ4.2 System should decompose message communication to be independent on underl
 RE4.3 UART shall be supported as transport</h1>
 <p>UART should be first-class citizen for the message transportation. We explicitly want to support full-duplex UART.</p>
 <h1><a class="anchor" id="autotoc_md25"></a>
-REQ4.4 Major communication message shall be defined in one protobuf file</h1>
-<p>Protobuf is picked as desired message definition mechanism due to it being multi-language compatible. This way we achieve flexibility for the user, as they can pick whatever language they want easily.</p>
-<p>Limitation to one file exists for friendly dependency management - if user wants to use the servo all that is needed is to download <em>one file</em>.</p>
+REQ4.4 Major communication message shall be defined in TBD</h1>
+<p>TBD</p>
 <h1><a class="anchor" id="autotoc_md26"></a>
 REQ4.5 COBS can be used as framing mechanism</h1>
-<p>Protobufs does not have native framing capability. (We can't tell where message starts or ends) Tranports like UART does not have either, hence we have to introduce separate framing mechanism.</p>
-<p>COBS should be first-class citizen and have full support.</p>
+<p>TBD</p>
 <h1><a class="anchor" id="autotoc_md27"></a>
 REQ4.6 Exact communication interface is property of board</h1>
 <p>The exact support combination of communication interface is defined by the boards themselves. Each board should clearly defined what communication is supported.</p>
@@ -124,7 +122,7 @@ REQ4.8 Group ID</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="md_doc_requirements.html">Requirements</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['wait_5ffor_1744',['wait_for',['../namespaceservio_1_1drv.html#a40b5c094f9145bb1145198ee924ff3cb',1,'servio::drv']]],
-  ['wait_5ffor_5finit_1745',['wait_for_init',['../structservio_1_1ftester_1_1test__system.html#a917d3a872e5de2df6c6d06745e8e5669',1,'servio::ftester::test_system']]],
-  ['what_1746',['what',['../structservio_1_1scmdio_1_1reply__error.html#a8a4d7d927975c6f801691ed5d2a96524',1,'servio::scmdio::reply_error::what()'],['../structservio_1_1scmdio_1_1error__exception.html#a3445760a35a70513bdc2a12d7a22e7fb',1,'servio::scmdio::error_exception::what()'],['../structservio_1_1scmdio_1_1serialize__error.html#a5faca67393e3f00a08feacf91998f2bc',1,'servio::scmdio::serialize_error::what()'],['../structservio_1_1scmdio_1_1parse__error.html#a97ba55054c4b1348136b8c2c167c10e0',1,'servio::scmdio::parse_error::what()']]],
-  ['write_1747',['write',['../namespaceservio_1_1scmdio.html#acf90a9c7cf0c9e0f5124ae2e9da6e7e3',1,'servio::scmdio']]]
+  ['value_5fcb_1840',['value_cb',['../structservio_1_1drv_1_1value__cb.html#ac7ecdfdf950295f84dc2b9703d4061d8',1,'servio::drv::value_cb']]],
+  ['vary_5fvalue_1841',['vary_value',['../namespaceservio_1_1bb.html#a5089d4dc853f8c5e763dd60a57c2a70f',1,'servio::bb']]],
+  ['velocity_1842',['velocity',['../namespaceservio_1_1klmn.html#aab9b4531c387d4264fe17a1341856597',1,'servio::klmn']]],
+  ['velocity_5firq_1843',['velocity_irq',['../classservio_1_1ctl_1_1control.html#a79edbb0317312fa6d29b9528b2a5dbd8',1,'servio::ctl::control']]],
+  ['verbose_5fopt_1844',['verbose_opt',['../namespaceservio_1_1scmdio.html#adfe9fb5c444c1aa557dab6b76f5f9f91',1,'servio::scmdio']]]
 ];

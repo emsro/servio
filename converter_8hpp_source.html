@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('converter_8hpp_source.html',''); initR
 <div class="title">converter.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="converter_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linear__converter_8hpp.html">cnv/linear_converter.hpp</a>&quot;</span></div>
+<a href="converter_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linear__converter_8hpp.html">./linear_converter.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
@@ -102,8 +102,8 @@ $(document).ready(function(){initNavTree('converter_8hpp_source.html',''); initR
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            uint32_t high_value,</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordtype">float</span>    high_angle )</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span>   val_diff   = <span class="keyword">static_cast&lt;</span> <span class="keywordtype">int</span> <span class="keyword">&gt;</span>( high_value - low_value );</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">float</span> angle_diff = high_angle - low_angle;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="keywordtype">int</span> <span class="keyword">const</span>   val_diff   = <span class="keyword">static_cast&lt;</span> <span class="keywordtype">int</span> <span class="keyword">&gt;</span>( high_value - low_value );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordtype">float</span> <span class="keyword">const</span> angle_diff = high_angle - low_angle;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <a class="code" href="structservio_1_1cnv_1_1converter.html#a2ed3229b71607923715107fb0ba66590">position</a>.<a class="code" href="structservio_1_1cnv_1_1linear__converter.html#a0150bfaf4610d45d2bf84ae88224970a">scale</a>         = angle_diff / <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( val_diff );</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <a class="code" href="structservio_1_1cnv_1_1converter.html#a2ed3229b71607923715107fb0ba66590">position</a>.<a class="code" href="structservio_1_1cnv_1_1linear__converter.html#a2fe91b131620df1be422208c87188c15">offset</a> = low_angle - <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( low_value ) * <a class="code" href="structservio_1_1cnv_1_1converter.html#a2ed3229b71607923715107fb0ba66590">position</a>.<a class="code" href="structservio_1_1cnv_1_1linear__converter.html#a0150bfaf4610d45d2bf84ae88224970a">scale</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('converter_8hpp_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6185f3a156e0baa9ffebb847f82d024e.html">cnv</a></li><li class="navelem"><a class="el" href="converter_8hpp.html">converter.hpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

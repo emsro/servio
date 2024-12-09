@@ -91,18 +91,18 @@ $(document).ready(function(){initNavTree('fw_2dispatcher_8hpp.html',''); initRes
 <div class="title">dispatcher.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="cfg_2dispatcher_8hpp_source.html">cfg/dispatcher.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="def_8h_source.html">../iface/def.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cfg_2dispatcher_8hpp_source.html">cfg/dispatcher.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="control_8hpp_source.html">ctl/control.hpp</a>&quot;</code><br />
 <code>#include &quot;emlabcpp/outcome.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8hpp_source.html">fw/util.hpp</a>&quot;</code><br />
 <code>#include &lt;emlabcpp/experimental/function_view.h&gt;</code><br />
-<code>#include &lt;io.pb.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for dispatcher.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="fw_2dispatcher_8hpp__incl.svg" width="943" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="fw_2dispatcher_8hpp__incl.svg" width="1455" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -122,12 +122,8 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae3f53c1f676f5ce8a8cbdfa28bd99fea"><td class="memItemLeft" align="right" valign="top">ServioToHost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#ae3f53c1f676f5ce8a8cbdfa28bd99fea">servio::fw::handle_message</a> (dispatcher &amp;dis, const HostToServio &amp;msg)</td></tr>
-<tr class="separator:ae3f53c1f676f5ce8a8cbdfa28bd99fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b2bdd32885a2db32522f11a3a73a0d9"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a5b2bdd32885a2db32522f11a3a73a0d9">servio::fw::handle_message</a> (dispatcher &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
-<tr class="separator:a5b2bdd32885a2db32522f11a3a73a0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a958bf350bbe8b27b5db135c8b6ea0909"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a958bf350bbe8b27b5db135c8b6ea0909">servio::fw::handle_message_packet</a> (dispatcher &amp;dis, em::view&lt; const std::byte * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
-<tr class="separator:a958bf350bbe8b27b5db135c8b6ea0909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b82be4ad1a7fd2ce964d0b3721aa4f5"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; em::outcome, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1fw.html#a7b82be4ad1a7fd2ce964d0b3721aa4f5">servio::fw::handle_message</a> (dispatcher &amp;dis, em::view&lt; std::byte const * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
+<tr class="separator:a7b82be4ad1a7fd2ce964d0b3721aa4f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1fw_1_1dispatcher" id="structservio_1_1fw_1_1dispatcher"></a>
@@ -158,7 +154,7 @@ cfg_disp</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aeb851eece19778a49f0561bd8c16aea6"></a>function_view&lt; bool(const map *cfg) &gt;</td>
+<a id="ae9a4cee0d9a893062ad2c866993e3e06"></a>function_view&lt; bool(map const  *cfg) &gt;</td>
 <td class="fieldname">
 cfg_writer</td>
 <td class="fielddoc">
@@ -176,7 +172,7 @@ ctl</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a7d5118590ffdbca198efabeb6210fa1a"></a>const curr_iface &amp;</td>
+<a id="ae57950de3a6ccee412db78dc0bab372b"></a>curr_iface const  &amp;</td>
 <td class="fieldname">
 curr_drv</td>
 <td class="fielddoc">
@@ -200,19 +196,19 @@ now</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a3b385e70e2d7f64db703fd7cc349f52d"></a>const pos_iface &amp;</td>
+<a id="acd211de25e7ebea5753c8014bd56af72"></a>pos_iface const  &amp;</td>
 <td class="fieldname">
 pos_drv</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a3b30b50aa7fa4b382c18180b43d7189b"></a>const temp_iface &amp;</td>
+<a id="af49b0edf2f2a25b794d5cb5c16b97bc1"></a>temp_iface const  &amp;</td>
 <td class="fieldname">
 temp_drv</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a30decc59aa14841d1c959b5e37fbc0a9"></a>const vcc_iface &amp;</td>
+<a id="aba677ad7f6de2db3202a2ca1b3d1fb70"></a>vcc_iface const  &amp;</td>
 <td class="fieldname">
 vcc_drv</td>
 <td class="fielddoc">
@@ -227,7 +223,7 @@ vcc_drv</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4fc88152649b3a7b0043869ddaf105b0.html">fw</a></li><li class="navelem"><a class="el" href="fw_2dispatcher_8hpp.html">dispatcher.hpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

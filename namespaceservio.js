@@ -10,6 +10,7 @@ var namespaceservio =
     [ "ftest", "namespaceservio_1_1ftest.html", "namespaceservio_1_1ftest" ],
     [ "ftester", "namespaceservio_1_1ftester.html", "namespaceservio_1_1ftester" ],
     [ "fw", "namespaceservio_1_1fw.html", "namespaceservio_1_1fw" ],
+    [ "iface", "namespaceservio_1_1iface.html", "namespaceservio_1_1iface" ],
     [ "klmn", "namespaceservio_1_1klmn.html", "namespaceservio_1_1klmn" ],
     [ "literals", "namespaceservio_1_1literals.html", [
       [ "operator\"\"_b", "namespaceservio_1_1literals.html#a62e86ab080363c9801b3d11413cb755c", null ],
@@ -25,6 +26,7 @@ var namespaceservio =
     [ "sntr", "namespaceservio_1_1sntr.html", "namespaceservio_1_1sntr" ],
     [ "tests", "namespaceservio_1_1tests.html", [
       [ "get_enum_ids", "namespaceservio_1_1tests.html#a84a8d9b8ff1d17f892b34e726dc8204f", null ],
+      [ "get_iface_ids", "namespaceservio_1_1tests.html#aefe500b551ec67be6b9fddd7ebac42b3", null ],
       [ "TEST", "namespaceservio_1_1tests.html#ab13f735a06bbd448c82d5b45d20b76c3", null ],
       [ "TEST", "namespaceservio_1_1tests.html#ac99e95fa19ba420426c1d8c070c4cb6b", null ],
       [ "TEST", "namespaceservio_1_1tests.html#ad23443d3e38a15ffe9889c74d4950768", null ],
@@ -35,6 +37,7 @@ var namespaceservio =
     [ "limits", "namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55", null ],
     [ "microseconds", "namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe", null ],
     [ "milliseconds", "namespaceservio.html#a69f902a923d0918ff3469e9fc5f5f84d", null ],
+    [ "opt", "namespaceservio.html#a61b877b22095a520cf71c2099e4888dc", null ],
     [ "sec_time", "namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909", null ],
     [ "seconds", "namespaceservio.html#ae4779d6544c35b9251297f70da36f657", null ],
     [ "control_loop", "namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2", [

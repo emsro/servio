@@ -10,6 +10,7 @@ var base_2base_8hpp =
     [ "limits", "base_2base_8hpp.html#a7f7743aa58139aab9b7d4db0cde30f55", null ],
     [ "microseconds", "base_2base_8hpp.html#aab8d1fc6dacb69519e755e25ea3392fe", null ],
     [ "milliseconds", "base_2base_8hpp.html#a69f902a923d0918ff3469e9fc5f5f84d", null ],
+    [ "opt", "base_2base_8hpp.html#a61b877b22095a520cf71c2099e4888dc", null ],
     [ "sec_time", "base_2base_8hpp.html#a31c65bbbc228b1eeafc15f79227a2909", null ],
     [ "seconds", "base_2base_8hpp.html#ae4779d6544c35b9251297f70da36f657", null ],
     [ "control_loop", "base_2base_8hpp.html#ab5f7489b8bb8f69589f34deadbd657c2", [

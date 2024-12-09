@@ -95,12 +95,12 @@ $(document).ready(function(){initNavTree('namespaceservio_1_1brd.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1brd_1_1adc__set.html">adc_set</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1brd_1_1adc__set"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set">adc_set</a></td></tr>
+<tr class="separator:structservio_1_1brd_1_1adc__set"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a8b36136e5a2768136f9d44ad5ef7c56a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a8b36136e5a2768136f9d44ad5ef7c56a">adc_pooler_type</a> = <a class="el" href="structservio_1_1drv_1_1adc__pooler.html">drv::adc_pooler</a>&lt; <a class="el" href="structservio_1_1brd_1_1adc__set.html">adc_set</a> &gt;</td></tr>
+<tr class="memitem:a8b36136e5a2768136f9d44ad5ef7c56a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a8b36136e5a2768136f9d44ad5ef7c56a">adc_pooler_type</a> = <a class="el" href="structservio_1_1drv_1_1adc__pooler.html">drv::adc_pooler</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set">adc_set</a> &gt;</td></tr>
 <tr class="separator:a8b36136e5a2768136f9d44ad5ef7c56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -200,6 +200,59 @@ Variables</h2></td></tr>
 <tr class="memitem:af60883934036a3959a709e9d81fb0999"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#af60883934036a3959a709e9d81fb0999">QUAD_TRIGGER_TIMER</a> = nullptr</td></tr>
 <tr class="separator:af60883934036a3959a709e9d81fb0999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structservio_1_1brd_1_1adc__set" id="structservio_1_1brd_1_1adc__set"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1brd_1_1adc__set">&#9670;&nbsp;</a></span>servio::brd::adc_set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::brd::adc_set</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::brd::adc_set:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1brd_1_1adc__set__coll__graph.svg" width="716" height="214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a52eada32164a05c9bb024618c95dfcf1"></a>typedef chan_ids</td>
+<td class="fieldname">
+id_type</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a346644d1f1901a6078bc9ec5a6af9883"></a>detailed_adc_channel&lt; CURRENT_CHANNEL, 128 &gt;</td>
+<td class="fieldname">
+current</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a9fd8c06a6adadf6d1c51462323e71752"></a>adc_channel_with_callback&lt; POSITION_CHANNEL &gt;</td>
+<td class="fieldname">
+position</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a6c7d5a095766cdeb38982a8186a2d61f"></a>adc_channel&lt; VCC_CHANNEL &gt;</td>
+<td class="fieldname">
+vcc</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a8b36136e5a2768136f9d44ad5ef7c56a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8b36136e5a2768136f9d44ad5ef7c56a">&#9670;&nbsp;</a></span>adc_pooler_type</h2>
@@ -208,7 +261,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1brd.html#a8b36136e5a2768136f9d44ad5ef7c56a">servio::brd::adc_pooler_type</a> = typedef <a class="el" href="structservio_1_1drv_1_1adc__pooler.html">drv::adc_pooler</a>&lt; <a class="el" href="structservio_1_1brd_1_1adc__set.html">adc_set</a> &gt;</td>
+          <td class="memname">using <a class="el" href="namespaceservio_1_1brd.html#a8b36136e5a2768136f9d44ad5ef7c56a">servio::brd::adc_pooler_type</a> = typedef <a class="el" href="structservio_1_1drv_1_1adc__pooler.html">drv::adc_pooler</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set">adc_set</a> &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -232,7 +285,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#a62753f44eb44e93d933fb1916219f8de">servio::drv::ADC_CURR_POS_VCC_SEQUENCE</a>, <a class="el" href="namespaceservio_1_1drv.html#a18254cc3788fca41ec17fbbcc5ed7e79">servio::drv::ADC_CURR_VCC_SEQUENCE</a>, <a class="el" href="namespaceservio_1_1brd.html#a2b0ceaa2337a3d916d52ba0fe6f823bc">ADC_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e">ADC_HANDLE</a>, <a class="el" href="namespaceservio_1_1plt.html#a7c17b619a35f4e0ff604967668babdb4">servio::plt::adc_cfg::adc_instance</a>, <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="structservio_1_1drv_1_1adc__pooler.html#a51810b4cf71f9296ce38297912d3f14c">servio::drv::adc_pooler&lt; Set &gt;::set_seq()</a>, <a class="el" href="namespaceservio_1_1plt.html#a61d6b0c2150e342de64df4363ad4e8bc">servio::plt::setup_adc()</a>, <a class="el" href="namespaceservio_1_1plt.html#a70eb8d81c3d462dbfd075b29d8c8bef8">servio::plt::setup_adc_channel()</a>, <a class="el" href="namespaceservio_1_1plt.html#ab59156a4d6fbd15217a26dc5ebed8b64">servio::plt::setup_adc_timer()</a>, and <a class="el" href="namespaceservio_1_1brd.html#af2809e836bdf98c64f1024daeb658ba3">TIM6_HANDLE</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#a62753f44eb44e93d933fb1916219f8de">servio::drv::ADC_CURR_POS_VCC_SEQUENCE</a>, <a class="el" href="namespaceservio_1_1drv.html#a18254cc3788fca41ec17fbbcc5ed7e79">servio::drv::ADC_CURR_VCC_SEQUENCE</a>, <a class="el" href="namespaceservio_1_1brd.html#a2b0ceaa2337a3d916d52ba0fe6f823bc">ADC_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e">ADC_HANDLE</a>, <a class="el" href="namespaceservio_1_1plt.html#a7c17b619a35f4e0ff604967668babdb4">servio::plt::adc_cfg::adc_instance</a>, <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="structservio_1_1drv_1_1adc__pooler.html#a51810b4cf71f9296ce38297912d3f14c">servio::drv::adc_pooler&lt; Set &gt;::set_seq()</a>, <a class="el" href="namespaceservio_1_1plt.html#a61d6b0c2150e342de64df4363ad4e8bc">servio::plt::setup_adc()</a>, <a class="el" href="namespaceservio_1_1plt.html#ac9aa102dc4b651ab6503b4aa6ca604f4">servio::plt::setup_adc_channel()</a>, <a class="el" href="namespaceservio_1_1plt.html#ab59156a4d6fbd15217a26dc5ebed8b64">servio::plt::setup_adc_timer()</a>, and <a class="el" href="namespaceservio_1_1brd.html#af2809e836bdf98c64f1024daeb658ba3">TIM6_HANDLE</a>.</p>
 
 </div>
 </div>
@@ -251,7 +304,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">COMMS</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, <a class="el" href="namespaceservio_1_1plt.html#a7b7c8043898e10b87fa53fd5bb021d96">servio::plt::setup_uart()</a>, <a class="el" href="namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940">UART2_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">UART2_HANDLE</a>, and <a class="el" href="namespaceservio_1_1plt.html#a2fefd453402afb93ffd0696664e4fe05">servio::plt::uart_cfg::uart_instance</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">COMMS</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, <a class="el" href="namespaceservio_1_1plt.html#a7b7c8043898e10b87fa53fd5bb021d96">servio::plt::setup_uart()</a>, <a class="el" href="namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940">UART2_DMA_HANDLE</a>, and <a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">UART2_HANDLE</a>.</p>
 
 </div>
 </div>
@@ -308,7 +361,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">HBRIDGE</a>, <a class="el" href="classservio_1_1drv_1_1hbridge.html#aaa818f0bff60de49f5f40e38223147f5">servio::drv::hbridge::setup()</a>, <a class="el" href="namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c">servio::plt::setup_hbridge_timers()</a>, <a class="el" href="namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc">TIM1_HANDLE</a>, and <a class="el" href="namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673">servio::plt::hb_timer_cfg::timer_instance</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">HBRIDGE</a>, <a class="el" href="classservio_1_1drv_1_1hbridge.html#aaa818f0bff60de49f5f40e38223147f5">servio::drv::hbridge::setup()</a>, <a class="el" href="namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c">servio::plt::setup_hbridge_timers()</a>, and <a class="el" href="namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc">TIM1_HANDLE</a>.</p>
 
 </div>
 </div>
@@ -461,7 +514,7 @@ Variables</h2></td></tr>
 
 <p>Initialize debug interface. </p>
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">DEBUG_COMMS</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, <a class="el" href="namespaceservio_1_1plt.html#a7b7c8043898e10b87fa53fd5bb021d96">servio::plt::setup_uart()</a>, <a class="el" href="namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c">UART1_DMA_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">UART1_HANDLE</a>, and <a class="el" href="namespaceservio_1_1plt.html#a2fefd453402afb93ffd0696664e4fe05">servio::plt::uart_cfg::uart_instance</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">DEBUG_COMMS</a>, <a class="el" href="namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9">servio::plt::dma_cfg::irq</a>, <a class="el" href="namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244">servio::drv::pin_cfg::pin</a>, <a class="el" href="namespaceservio_1_1plt.html#a7b7c8043898e10b87fa53fd5bb021d96">servio::plt::setup_uart()</a>, <a class="el" href="namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c">UART1_DMA_HANDLE</a>, and <a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">UART1_HANDLE</a>.</p>
 
 </div>
 </div>
@@ -940,7 +993,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1brd.html">brd</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -69,8 +69,8 @@
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="sntr_2base_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="red" points="12.5,-0.5 12.5,-19.5 95.5,-19.5 95.5,-0.5 12.5,-0.5"/>
-<text text-anchor="middle" x="54" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">sntr/base.hpp</text>
+<polygon fill="white" stroke="red" points="20.5,-0.5 20.5,-19.5 87.5,-19.5 87.5,-0.5 20.5,-0.5"/>
+<text text-anchor="middle" x="54" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">./base.hpp</text>
 </a>
 </g>
 </g>

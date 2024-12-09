@@ -92,8 +92,8 @@ $(document).ready(function(){initNavTree('kalman_8hpp.html',''); initResizable()
 <div class="title">kalman.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="base_2base_8hpp_source.html">base/base.hpp</a>&quot;</code><br />
-<code>#include &quot;emlabcpp/experimental/matrix.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="base_2base_8hpp_source.html">../base/base.hpp</a>&quot;</code><br />
+<code>#include &lt;emlabcpp/experimental/matrix.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for kalman.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -154,18 +154,18 @@ Functions</h2></td></tr>
 <tr class="separator:a0884697a42d50e650e6d39955a87424d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ca1d1043f3acebfdbf1e88110d92679"><td class="memItemLeft" align="right" valign="top">constexpr observation_noise_covariance&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a1ca1d1043f3acebfdbf1e88110d92679">servio::klmn::get_observation_noise_covariance</a> (float observation_deviation)</td></tr>
 <tr class="separator:a1ca1d1043f3acebfdbf1e88110d92679"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcca2dfb8e15fd67d8ddeb4c54946cee"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; state, state_covariance &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#abcca2dfb8e15fd67d8ddeb4c54946cee">servio::klmn::predict</a> (const state &amp;x_prev, const state_covariance &amp;p_prev, const control_input &amp;u, const state_transition_model &amp;f, const control_input_model &amp;b, const process_noise_covariance &amp;q)</td></tr>
-<tr class="separator:abcca2dfb8e15fd67d8ddeb4c54946cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3ccd538e37fd4e579d4b883468b534a"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; state, state_covariance &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#ac3ccd538e37fd4e579d4b883468b534a">servio::klmn::update</a> (const state &amp;x_prev, const state_covariance &amp;p_prev, const observation &amp;z, const observation_model &amp;h, const observation_noise_covariance &amp;r)</td></tr>
-<tr class="separator:ac3ccd538e37fd4e579d4b883468b534a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a609eab0f665504f09c8b30be6dfb4c"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; state, state_covariance &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a5a609eab0f665504f09c8b30be6dfb4c">servio::klmn::predict</a> (state const &amp;x_prev, state_covariance const &amp;p_prev, control_input const &amp;u, state_transition_model const &amp;f, control_input_model const &amp;b, process_noise_covariance const &amp;q)</td></tr>
+<tr class="separator:a5a609eab0f665504f09c8b30be6dfb4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a234fa44edad4ff9eca397d3fe26a76ec"><td class="memItemLeft" align="right" valign="top">constexpr std::tuple&lt; state, state_covariance &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a234fa44edad4ff9eca397d3fe26a76ec">servio::klmn::update</a> (state const &amp;x_prev, state_covariance const &amp;p_prev, observation const &amp;z, observation_model const &amp;h, observation_noise_covariance const &amp;r)</td></tr>
+<tr class="separator:a234fa44edad4ff9eca397d3fe26a76ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b85edb1c54956e9cd22ae24f3debbc5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a6b85edb1c54956e9cd22ae24f3debbc5"><td class="memTemplItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a6b85edb1c54956e9cd22ae24f3debbc5">servio::klmn::angle</a> (T &amp;x)</td></tr>
 <tr class="separator:a6b85edb1c54956e9cd22ae24f3debbc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab9b4531c387d4264fe17a1341856597"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aab9b4531c387d4264fe17a1341856597"><td class="memTemplItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#aab9b4531c387d4264fe17a1341856597">servio::klmn::velocity</a> (T &amp;x)</td></tr>
 <tr class="separator:aab9b4531c387d4264fe17a1341856597"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a451b033ac382e652c5e1571572f417f1"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#a451b033ac382e652c5e1571572f417f1">servio::klmn::requires_offset</a> (const float v, const state_range &amp;r)</td></tr>
-<tr class="separator:a451b033ac382e652c5e1571572f417f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c5877d688d33d7cb52521c65be21b7"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#ad6c5877d688d33d7cb52521c65be21b7">servio::klmn::requires_offset</a> (float const v, state_range const &amp;r)</td></tr>
+<tr class="separator:ad6c5877d688d33d7cb52521c65be21b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2656c673261ab9f79dd300223947a4f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f">servio::klmn::angle_mod</a> (float v, state_range r)</td></tr>
 <tr class="separator:ac2656c673261ab9f79dd300223947a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0aa6c92d5518702afcdd1e85fa793ef"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -208,7 +208,7 @@ size</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_9dddf5cf0927eef839735694c66ca8bc.html">klmn</a></li><li class="navelem"><a class="el" href="kalman_8hpp.html">kalman.hpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

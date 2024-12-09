@@ -22,31 +22,16 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="10,-0.5 10,-19.5 60,-19.5 60,-0.5 10,-0.5"/>
-<text text-anchor="middle" x="35" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">io.pb.h</text>
+<polygon fill="white" stroke="#bfbfbf" points="40.5,-0.5 40.5,-19.5 105.5,-19.5 105.5,-0.5 40.5,-0.5"/>
+<text text-anchor="middle" x="73" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">exception</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M66.73,-56.08C61.36,-48.46 53.48,-37.26 46.92,-27.94"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="49.78,-25.91 41.16,-19.75 44.05,-29.94 49.78,-25.91"/>
-</g>
-<!-- Node3 -->
-<g id="node3" class="node">
-<title>Node3</title>
-<g id="a_node3"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="78.5,-0.5 78.5,-19.5 143.5,-19.5 143.5,-0.5 78.5,-0.5"/>
-<text text-anchor="middle" x="111" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">exception</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
-<title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M79.27,-56.08C84.64,-48.46 92.52,-37.26 99.08,-27.94"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="101.95,-29.94 104.84,-19.75 96.22,-25.91 101.95,-29.94"/>
+<path fill="none" stroke="midnightblue" d="M73,-56.08C73,-49.01 73,-38.86 73,-29.99"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="76.5,-29.75 73,-19.75 69.5,-29.75 76.5,-29.75"/>
 </g>
 </g>
 </svg>

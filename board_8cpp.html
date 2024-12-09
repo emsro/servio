@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('board_8cpp.html',''); initResizable();
 <div class="title">board.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="brd_8hpp_source.html">brd.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="brd_8hpp_source.html">../brd.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="default_8hpp_source.html">cfg/default.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cnv_2setup_8hpp_source.html">cnv/setup.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_8hpp_source.html">core/drivers.hpp</a>&quot;</code><br />
@@ -118,14 +118,14 @@ $(document).ready(function(){initNavTree('board_8cpp.html',''); initResizable();
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="board_8cpp__incl.svg" width="2730" height="604"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="board_8cpp__incl.svg" width="2786" height="604"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1brd_1_1adc__set.html">servio::brd::adc_set</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1brd_1_1adc__set"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set">servio::brd::adc_set</a></td></tr>
+<tr class="separator:structservio_1_1brd_1_1adc__set"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -268,6 +268,59 @@ Variables</h2></td></tr>
 <tr class="memitem:af60883934036a3959a709e9d81fb0999"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#af60883934036a3959a709e9d81fb0999">servio::brd::QUAD_TRIGGER_TIMER</a> = nullptr</td></tr>
 <tr class="separator:af60883934036a3959a709e9d81fb0999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structservio_1_1brd_1_1adc__set" id="structservio_1_1brd_1_1adc__set"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1brd_1_1adc__set">&#9670;&nbsp;</a></span>servio::brd::adc_set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::brd::adc_set</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::brd::adc_set:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1brd_1_1adc__set__coll__graph.svg" width="716" height="214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a52eada32164a05c9bb024618c95dfcf1"></a>typedef chan_ids</td>
+<td class="fieldname">
+id_type</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a346644d1f1901a6078bc9ec5a6af9883"></a>detailed_adc_channel&lt; CURRENT_CHANNEL, 128 &gt;</td>
+<td class="fieldname">
+current</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a9fd8c06a6adadf6d1c51462323e71752"></a>adc_channel_with_callback&lt; POSITION_CHANNEL &gt;</td>
+<td class="fieldname">
+position</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a6c7d5a095766cdeb38982a8186a2d61f"></a>adc_channel&lt; VCC_CHANNEL &gt;</td>
+<td class="fieldname">
+vcc</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a55924a8071033769a12ad0e752f67c8b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55924a8071033769a12ad0e752f67c8b">&#9670;&nbsp;</a></span>ADC1_IRQHandler()</h2>
@@ -592,7 +645,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5e799c239320254db95d54212428175b.html">brd</a></li><li class="navelem"><a class="el" href="dir_4828b704a5fd73b2754f53e5de2f9f03.html">proto3</a></li><li class="navelem"><a class="el" href="board_8cpp.html">board.cpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

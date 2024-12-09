@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('pid__autotune_8hpp_source.html',''); i
 <div class="contents">
 <a href="pid__autotune_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="async__cobs_8hpp.html">scmdio/async_cobs.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="async__cobs_8hpp.html">./async_cobs.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/algorithm.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/enumerate.h&gt;</span></div>
@@ -189,7 +189,7 @@ $(document).ready(function(){initNavTree('pid__autotune_8hpp_source.html',''); i
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        std::vector&lt; double &gt; buff;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        buff.reserve( 1024 );</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; 1000; i++ )</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                buff.push_back( co_await get_y_f() );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                buff.push_back( (<span class="keywordtype">double</span>) co_await get_y_f() );</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        co_return buff;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
@@ -253,7 +253,7 @@ $(document).ready(function(){initNavTree('pid__autotune_8hpp_source.html',''); i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="pid__autotune_8hpp.html">pid_autotune.hpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

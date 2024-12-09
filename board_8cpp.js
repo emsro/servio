@@ -1,6 +1,11 @@
 var board_8cpp =
 [
-    [ "adc_set", "structservio_1_1brd_1_1adc__set.html", "structservio_1_1brd_1_1adc__set" ],
+    [ "adc_set", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set", [
+      [ "id_type", "namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1", null ],
+      [ "current", "namespaceservio_1_1brd.html#a346644d1f1901a6078bc9ec5a6af9883", null ],
+      [ "position", "namespaceservio_1_1brd.html#a9fd8c06a6adadf6d1c51462323e71752", null ],
+      [ "vcc", "namespaceservio_1_1brd.html#a6c7d5a095766cdeb38982a8186a2d61f", null ]
+    ] ],
     [ "adc_pooler_type", "board_8cpp.html#a8b36136e5a2768136f9d44ad5ef7c56a", null ],
     [ "ADC1_IRQHandler", "board_8cpp.html#a55924a8071033769a12ad0e752f67c8b", null ],
     [ "adc_pooler_setup", "board_8cpp.html#a9896090034aa0fb9a33dd63575d46473", null ],

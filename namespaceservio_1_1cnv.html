@@ -110,12 +110,12 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ae3dc9df6f52fc1747f055d1eef694629"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale">off_scale</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cnv.html#ae3dc9df6f52fc1747f055d1eef694629">calc_current_conversion</a> (float v_max, float v_min, float steps, float r_shunt, float gain)</td></tr>
 <tr class="separator:ae3dc9df6f52fc1747f055d1eef694629"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81aa759bf010df60769d03a4fd7b47cc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cnv.html#a81aa759bf010df60769d03a4fd7b47cc">current</a> (const <a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> &amp;conv, uint32_t raw_current, const <a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> &amp;motor)</td></tr>
-<tr class="separator:a81aa759bf010df60769d03a4fd7b47cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d6b5f36c5d79990d459213ba266222"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cnv.html#a77d6b5f36c5d79990d459213ba266222">current</a> (const <a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> &amp;conv, const <a class="el" href="structservio_1_1drv_1_1curr__iface.html">drv::curr_iface</a> &amp;curr_drv, const <a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> &amp;motor)</td></tr>
-<tr class="separator:a77d6b5f36c5d79990d459213ba266222"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5f41461e56077db8546aca8f2aea0c5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cnv.html#ad5f41461e56077db8546aca8f2aea0c5">position</a> (const <a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> &amp;conv, const <a class="el" href="structservio_1_1drv_1_1pos__iface.html">drv::pos_iface</a> &amp;pos_drv)</td></tr>
-<tr class="separator:ad5f41461e56077db8546aca8f2aea0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae12fdfe740950353fc33f56b42ca8644"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cnv.html#ae12fdfe740950353fc33f56b42ca8644">current</a> (<a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> const &amp;conv, uint32_t raw_current, <a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> const &amp;motor)</td></tr>
+<tr class="separator:ae12fdfe740950353fc33f56b42ca8644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe52b2a5e9ee2e0c9866f2a8f9e795f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cnv.html#adbe52b2a5e9ee2e0c9866f2a8f9e795f">current</a> (<a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> const &amp;conv, <a class="el" href="structservio_1_1drv_1_1curr__iface.html">drv::curr_iface</a> const &amp;curr_drv, <a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> const &amp;motor)</td></tr>
+<tr class="separator:adbe52b2a5e9ee2e0c9866f2a8f9e795f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0388be6e732b4ddd6268df7355fe41fd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cnv.html#a0388be6e732b4ddd6268df7355fe41fd">position</a> (<a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> const &amp;conv, <a class="el" href="structservio_1_1drv_1_1pos__iface.html">drv::pos_iface</a> const &amp;pos_drv)</td></tr>
+<tr class="separator:a0388be6e732b4ddd6268df7355fe41fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1cnv_1_1off__scale" id="structservio_1_1cnv_1_1off__scale"></a>
@@ -204,8 +204,8 @@ scale</td>
 
 </div>
 </div>
-<a id="a77d6b5f36c5d79990d459213ba266222"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77d6b5f36c5d79990d459213ba266222">&#9670;&nbsp;</a></span>current() <span class="overload">[1/2]</span></h2>
+<a id="adbe52b2a5e9ee2e0c9866f2a8f9e795f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbe52b2a5e9ee2e0c9866f2a8f9e795f">&#9670;&nbsp;</a></span>current() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -216,19 +216,19 @@ scale</td>
         <tr>
           <td class="memname">float servio::cnv::current </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> const &amp;&#160;</td>
           <td class="paramname"><em>conv</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structservio_1_1drv_1_1curr__iface.html">drv::curr_iface</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1curr__iface.html">drv::curr_iface</a> const &amp;&#160;</td>
           <td class="paramname"><em>curr_drv</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> const &amp;&#160;</td>
           <td class="paramname"><em>motor</em>&#160;</td>
         </tr>
         <tr>
@@ -244,12 +244,12 @@ scale</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1cnv.html#a81aa759bf010df60769d03a4fd7b47cc">current()</a>, and <a class="el" href="structservio_1_1drv_1_1curr__iface.html#a6b850d0b2c9412457b57266d4d08b732">servio::drv::curr_iface::get_current()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1cnv.html#ae12fdfe740950353fc33f56b42ca8644">current()</a>, and <a class="el" href="structservio_1_1drv_1_1curr__iface.html#a6b850d0b2c9412457b57266d4d08b732">servio::drv::curr_iface::get_current()</a>.</p>
 
 </div>
 </div>
-<a id="a81aa759bf010df60769d03a4fd7b47cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81aa759bf010df60769d03a4fd7b47cc">&#9670;&nbsp;</a></span>current() <span class="overload">[2/2]</span></h2>
+<a id="ae12fdfe740950353fc33f56b42ca8644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae12fdfe740950353fc33f56b42ca8644">&#9670;&nbsp;</a></span>current() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -260,7 +260,7 @@ scale</td>
         <tr>
           <td class="memname">float servio::cnv::current </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> const &amp;&#160;</td>
           <td class="paramname"><em>conv</em>, </td>
         </tr>
         <tr>
@@ -272,7 +272,7 @@ scale</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> const &amp;&#160;</td>
           <td class="paramname"><em>motor</em>&#160;</td>
         </tr>
         <tr>
@@ -292,8 +292,8 @@ scale</td>
 
 </div>
 </div>
-<a id="ad5f41461e56077db8546aca8f2aea0c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5f41461e56077db8546aca8f2aea0c5">&#9670;&nbsp;</a></span>position()</h2>
+<a id="a0388be6e732b4ddd6268df7355fe41fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0388be6e732b4ddd6268df7355fe41fd">&#9670;&nbsp;</a></span>position()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,13 +304,13 @@ scale</td>
         <tr>
           <td class="memname">float servio::cnv::position </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1cnv_1_1converter.html">converter</a> const &amp;&#160;</td>
           <td class="paramname"><em>conv</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structservio_1_1drv_1_1pos__iface.html">drv::pos_iface</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1pos__iface.html">drv::pos_iface</a> const &amp;&#160;</td>
           <td class="paramname"><em>pos_drv</em>&#160;</td>
         </tr>
         <tr>
@@ -336,7 +336,7 @@ scale</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1cnv.html">cnv</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

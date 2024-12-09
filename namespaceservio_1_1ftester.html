@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('namespaceservio_1_1ftester.html',''); 
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -105,18 +106,24 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1test__system.html">test_system</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a0560239d5205ea42c2dee9c8a27244ee"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0560239d5205ea42c2dee9c8a27244ee"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a> = std::optional&lt; T &gt;</td></tr>
+<tr class="separator:a0560239d5205ea42c2dee9c8a27244ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8eba53b84e68005583705b1565a54e39"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a8eba53b84e68005583705b1565a54e39">ocfg_opt</a> (CLI::App &amp;app, std::optional&lt; std::filesystem::path &gt; &amp;o_cfg)</td></tr>
-<tr class="separator:a8eba53b84e68005583705b1565a54e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a105df95d80da73ac8d6c61a0ed81d3e0"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a105df95d80da73ac8d6c61a0ed81d3e0">firmware_opt</a> (CLI::App &amp;app, std::optional&lt; std::filesystem::path &gt; &amp;fw, CLI::Option *cfg_opt)</td></tr>
-<tr class="separator:a105df95d80da73ac8d6c61a0ed81d3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a5bb51f3fd5536940bb6352d4eeda8"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a89a5bb51f3fd5536940bb6352d4eeda8">ocfg_opt</a> (CLI::App &amp;app, <a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; std::filesystem::path &gt; &amp;o_cfg)</td></tr>
+<tr class="separator:a89a5bb51f3fd5536940bb6352d4eeda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc64a6f277fb5ffb8b088c5bc1b4657d"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#acc64a6f277fb5ffb8b088c5bc1b4657d">firmware_opt</a> (CLI::App &amp;app, <a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; std::filesystem::path &gt; &amp;fw, CLI::Option *cfg_opt)</td></tr>
+<tr class="separator:acc64a6f277fb5ffb8b088c5bc1b4657d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abafc9ebaf605802ca7b02a5592cf7a7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config">config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#abafc9ebaf605802ca7b02a5592cf7a7f">get_config</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:abafc9ebaf605802ca7b02a5592cf7a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82f44e4d4b0aef1e39e57e40120f6ee0"><td class="memItemLeft" align="right" valign="top">joque::task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a82f44e4d4b0aef1e39e57e40120f6ee0">make_flash_task</a> (const std::filesystem::path &amp;firmware, const std::filesystem::path &amp;ocd_cfg, const std::optional&lt; std::filesystem::path &gt; &amp;log_file, const joque::resource &amp;dev_res)</td></tr>
-<tr class="separator:a82f44e4d4b0aef1e39e57e40120f6ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a545cc7dc041b95b87529ebff248997ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a545cc7dc041b95b87529ebff248997ad">flash_firmware</a> (const std::filesystem::path &amp;firmware, const std::filesystem::path &amp;ocdconf)</td></tr>
-<tr class="separator:a545cc7dc041b95b87529ebff248997ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da680db1c1e39cf5df13a9836803fd2"><td class="memItemLeft" align="right" valign="top">joque::task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a2da680db1c1e39cf5df13a9836803fd2">make_flash_task</a> (std::filesystem::path const &amp;firmware, std::filesystem::path const &amp;ocd_cfg, <a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; std::filesystem::path &gt; const &amp;log_file, joque::resource const &amp;dev_res)</td></tr>
+<tr class="separator:a2da680db1c1e39cf5df13a9836803fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48d568e7f67be4d2bb49a369067697f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#ad48d568e7f67be4d2bb49a369067697f">flash_firmware</a> (std::filesystem::path const &amp;firmware, std::filesystem::path const &amp;ocdconf)</td></tr>
+<tr class="separator:ad48d568e7f67be4d2bb49a369067697f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a843d1ebeface228cb7f950468c97e8cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a843d1ebeface228cb7f950468c97e8cb">handle_eptr</a> (std::exception_ptr eptr)</td></tr>
 <tr class="separator:a843d1ebeface228cb7f950468c97e8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af85eaac72e6fd1885c973e047a7ac2ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#af85eaac72e6fd1885c973e047a7ac2ad">handle_test_specifics</a> (std::string_view name, <a class="el" href="structservio_1_1ftester_1_1test__system.html">test_system</a> &amp;sys, std::filesystem::path out_dir)</td></tr>
@@ -182,25 +189,25 @@ filter</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a19d0941e319c81c0e7ebde81dc813507"></a>optional&lt; path &gt;</td>
+<a id="a404e695ca8b7eea551e75f9308a5a7f2"></a><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; path &gt;</td>
 <td class="fieldname">
 firmware</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ad4b8db7e93cbb7ce322025c023643e84"></a>optional&lt; path &gt;</td>
+<a id="aa82f2858ac70e9973a3761bd4d70ac8f"></a><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; path &gt;</td>
 <td class="fieldname">
 input</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a41d09cfbc888978bd5a03ac36da22432"></a>optional&lt; path &gt;</td>
+<a id="a609a366e588998899f3a5ccb26e6dd01"></a><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; path &gt;</td>
 <td class="fieldname">
 openocd_config</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a27aa99e5128d3666ad6a985273c7541d"></a>optional&lt; path &gt;</td>
+<a id="a0876b9fcc87d2b7574e65e6182934729"></a><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; path &gt;</td>
 <td class="fieldname">
 output_dir</td>
 <td class="fielddoc">
@@ -212,7 +219,7 @@ powerless</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ae3b4a77a2b4806d57ab17e764cd9b396"></a>optional&lt; bool &gt;</td>
+<a id="a4cd90f4cd4b3a3dbfad5c39ff3f3b54b"></a><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; bool &gt;</td>
 <td class="fieldname">
 verbose</td>
 <td class="fielddoc">
@@ -221,9 +228,26 @@ verbose</td>
 
 </div>
 </div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a0560239d5205ea42c2dee9c8a27244ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0560239d5205ea42c2dee9c8a27244ee">&#9670;&nbsp;</a></span>opt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">servio::ftester::opt</a> = typedef std::optional&lt; T &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a105df95d80da73ac8d6c61a0ed81d3e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a105df95d80da73ac8d6c61a0ed81d3e0">&#9670;&nbsp;</a></span>firmware_opt()</h2>
+<a id="acc64a6f277fb5ffb8b088c5bc1b4657d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc64a6f277fb5ffb8b088c5bc1b4657d">&#9670;&nbsp;</a></span>firmware_opt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,7 +261,7 @@ verbose</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::optional&lt; std::filesystem::path &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; std::filesystem::path &gt; &amp;&#160;</td>
           <td class="paramname"><em>fw</em>, </td>
         </tr>
         <tr>
@@ -256,8 +280,8 @@ verbose</td>
 
 </div>
 </div>
-<a id="a545cc7dc041b95b87529ebff248997ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a545cc7dc041b95b87529ebff248997ad">&#9670;&nbsp;</a></span>flash_firmware()</h2>
+<a id="ad48d568e7f67be4d2bb49a369067697f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48d568e7f67be4d2bb49a369067697f">&#9670;&nbsp;</a></span>flash_firmware()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,13 +289,13 @@ verbose</td>
         <tr>
           <td class="memname">void servio::ftester::flash_firmware </td>
           <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
           <td class="paramname"><em>firmware</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
           <td class="paramname"><em>ocdconf</em>&#160;</td>
         </tr>
         <tr>
@@ -310,7 +334,7 @@ verbose</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1ftester.html#afa35dca7982260312c4bff22fc180eee">servio::ftester::config::c_device</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a65b2b391dc07c1b8476d7f72e781a825">servio::scmdio::coms_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#a1ff2b573293cb82c49bf90032e7fc5a7">servio::ftester::config::d_device</a>, <a class="el" href="namespaceservio_1_1scmdio.html#ad4fa41dcb7957c74dcc335d566c28eef">servio::scmdio::dcoms_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#a8f8cd80b3be896f7ecf844083945d242">servio::ftester::config::filter</a>, <a class="el" href="namespaceservio_1_1ftester.html#a19d0941e319c81c0e7ebde81dc813507">servio::ftester::config::firmware</a>, <a class="el" href="namespaceservio_1_1ftester.html#a105df95d80da73ac8d6c61a0ed81d3e0">firmware_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#ad4b8db7e93cbb7ce322025c023643e84">servio::ftester::config::input</a>, <a class="el" href="namespaceservio_1_1ftester.html#a8eba53b84e68005583705b1565a54e39">ocfg_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#a41d09cfbc888978bd5a03ac36da22432">servio::ftester::config::openocd_config</a>, <a class="el" href="namespaceservio_1_1ftester.html#a27aa99e5128d3666ad6a985273c7541d">servio::ftester::config::output_dir</a>, <a class="el" href="namespaceservio_1_1ftester.html#a9fdf46df9cf2f31fdfb9f0e491ebc39c">servio::ftester::config::powerless</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc">servio::scmdio::powerless_flag()</a>, <a class="el" href="namespaceservio_1_1ftester.html#ae3b4a77a2b4806d57ab17e764cd9b396">servio::ftester::config::verbose</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a614e955e6323363d48b78d51d038a1d9">servio::scmdio::verbose_opt()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a65b2b391dc07c1b8476d7f72e781a825">servio::scmdio::coms_opt()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#ad4fa41dcb7957c74dcc335d566c28eef">servio::scmdio::dcoms_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#acc64a6f277fb5ffb8b088c5bc1b4657d">firmware_opt()</a>, <a class="el" href="namespaceservio_1_1ftester.html#a89a5bb51f3fd5536940bb6352d4eeda8">ocfg_opt()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc">servio::scmdio::powerless_flag()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#adfe9fb5c444c1aa557dab6b76f5f9f91">servio::scmdio::verbose_opt()</a>.</p>
 
 </div>
 </div>
@@ -364,12 +388,12 @@ verbose</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structservio_1_1ftester_1_1test__system.html#a5e37bb2ed282a20c2dbbd09402b7427e">servio::ftester::test_system::get_records()</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1ftester_1_1test__system.html#afdb82aef4c121c4b8aa55654f3f4fad8">servio::ftester::test_system::get_records()</a>.</p>
 
 </div>
 </div>
-<a id="a82f44e4d4b0aef1e39e57e40120f6ee0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82f44e4d4b0aef1e39e57e40120f6ee0">&#9670;&nbsp;</a></span>make_flash_task()</h2>
+<a id="a2da680db1c1e39cf5df13a9836803fd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da680db1c1e39cf5df13a9836803fd2">&#9670;&nbsp;</a></span>make_flash_task()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -377,25 +401,25 @@ verbose</td>
         <tr>
           <td class="memname">joque::task servio::ftester::make_flash_task </td>
           <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
           <td class="paramname"><em>firmware</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
           <td class="paramname"><em>ocd_cfg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::optional&lt; std::filesystem::path &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; std::filesystem::path &gt; const &amp;&#160;</td>
           <td class="paramname"><em>log_file</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const joque::resource &amp;&#160;</td>
+          <td class="paramtype">joque::resource const &amp;&#160;</td>
           <td class="paramname"><em>dev_res</em>&#160;</td>
         </tr>
         <tr>
@@ -408,8 +432,8 @@ verbose</td>
 
 </div>
 </div>
-<a id="a8eba53b84e68005583705b1565a54e39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8eba53b84e68005583705b1565a54e39">&#9670;&nbsp;</a></span>ocfg_opt()</h2>
+<a id="a89a5bb51f3fd5536940bb6352d4eeda8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a5bb51f3fd5536940bb6352d4eeda8">&#9670;&nbsp;</a></span>ocfg_opt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -423,7 +447,7 @@ verbose</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::optional&lt; std::filesystem::path &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; std::filesystem::path &gt; &amp;&#160;</td>
           <td class="paramname"><em>o_cfg</em>&#160;</td>
         </tr>
         <tr>
@@ -489,7 +513,7 @@ verbose</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1ftester.html">ftester</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -89,30 +89,30 @@ $(document).ready(function(){initNavTree('simulate_8hpp_source.html',''); initRe
 <div class="contents">
 <a href="simulate_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="kalman_8hpp.html">klmn/kalman.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="kalman_8hpp.html">./kalman.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceservio_1_1klmn.html">servio::klmn</a></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;std::vector&lt; state &gt; <a class="code" href="namespaceservio_1_1klmn.html#af3822093522319dfa0c920ce1cf6a873">simulate</a>(</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;std::vector&lt; state &gt; <a class="code" href="namespaceservio_1_1klmn.html#a51ded188d3892b9cbe894be75d71a6c5">simulate</a>(</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909">sec_time</a>                          tdiff,</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">float</span>                             process_deviation,</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">float</span>                             observation_deviation,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">const</span> std::vector&lt; observation &gt;&amp; observations,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::vector&lt; observation &gt; <span class="keyword">const</span>&amp; observations,</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    state_range                       sr );</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}  <span class="comment">// namespace servio::klmn</span></div>
 <div class="ttc" id="akalman_8hpp_html"><div class="ttname"><a href="kalman_8hpp.html">kalman.hpp</a></div></div>
-<div class="ttc" id="anamespaceservio_1_1klmn_html"><div class="ttname"><a href="namespaceservio_1_1klmn.html">servio::klmn</a></div><div class="ttdef"><b>Definition:</b> kalman.hpp:7</div></div>
-<div class="ttc" id="anamespaceservio_1_1klmn_html_af3822093522319dfa0c920ce1cf6a873"><div class="ttname"><a href="namespaceservio_1_1klmn.html#af3822093522319dfa0c920ce1cf6a873">servio::klmn::simulate</a></div><div class="ttdeci">std::vector&lt; state &gt; simulate(sec_time tdiff, float process_deviation, float observation_deviation, const std::vector&lt; observation &gt; &amp;observations, state_range sr)</div><div class="ttdef"><b>Definition:</b> simulate.cpp:7</div></div>
-<div class="ttc" id="anamespaceservio_html_a31c65bbbc228b1eeafc15f79227a2909"><div class="ttname"><a href="namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909">servio::sec_time</a></div><div class="ttdeci">std::chrono::duration&lt; float &gt; sec_time</div><div class="ttdef"><b>Definition:</b> base.hpp:43</div></div>
+<div class="ttc" id="anamespaceservio_1_1klmn_html"><div class="ttname"><a href="namespaceservio_1_1klmn.html">servio::klmn</a></div><div class="ttdef"><b>Definition:</b> kalman.hpp:8</div></div>
+<div class="ttc" id="anamespaceservio_1_1klmn_html_a51ded188d3892b9cbe894be75d71a6c5"><div class="ttname"><a href="namespaceservio_1_1klmn.html#a51ded188d3892b9cbe894be75d71a6c5">servio::klmn::simulate</a></div><div class="ttdeci">std::vector&lt; state &gt; simulate(sec_time tdiff, float process_deviation, float observation_deviation, std::vector&lt; observation &gt; const &amp;observations, state_range sr)</div><div class="ttdef"><b>Definition:</b> simulate.cpp:7</div></div>
+<div class="ttc" id="anamespaceservio_html_a31c65bbbc228b1eeafc15f79227a2909"><div class="ttname"><a href="namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909">servio::sec_time</a></div><div class="ttdeci">std::chrono::duration&lt; float &gt; sec_time</div><div class="ttdef"><b>Definition:</b> base.hpp:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_9dddf5cf0927eef839735694c66ca8bc.html">klmn</a></li><li class="navelem"><a class="el" href="simulate_8hpp.html">simulate.hpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

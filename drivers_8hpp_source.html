@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('drivers_8hpp_source.html',''); initRes
 <div class="contents">
 <a href="drivers_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="interfaces_8hpp.html">drv/interfaces.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../drv/interfaces.hpp&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('drivers_8hpp_source.html',''); initRes
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca">   35</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca">any_uninitialized</a>()</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">return</span> em::any_of( <a class="code" href="structservio_1_1core_1_1drivers.html#a6d26ca408a056f7f0e5df3df4655add7">tie</a>(), []&lt; <span class="keyword">typename</span> T &gt;( <span class="keyword">const</span> T ptr ) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">return</span> em::any_of( <a class="code" href="structservio_1_1core_1_1drivers.html#a6d26ca408a056f7f0e5df3df4655add7">tie</a>(), []&lt; <span class="keyword">typename</span> T &gt;( T <span class="keyword">const</span> ptr ) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <span class="keywordflow">if</span> constexpr ( std::is_pointer_v&lt; T &gt; ) {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                <span class="keywordflow">return</span> ptr == <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        } <span class="keywordflow">else</span> {</div>
@@ -135,7 +135,6 @@ $(document).ready(function(){initNavTree('drivers_8hpp_source.html',''); initRes
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}  <span class="comment">// namespace servio::core</span></div>
-<div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
 <div class="ttc" id="anamespaceemlabcpp_html"><div class="ttname"><a href="namespaceemlabcpp.html">emlabcpp</a></div><div class="ttdef"><b>Definition:</b> map.hpp:109</div></div>
 <div class="ttc" id="anamespaceservio_1_1cfg_html_structservio_1_1cfg_1_1context"><div class="ttname"><a href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context">servio::cfg::context</a></div><div class="ttdef"><b>Definition:</b> map.hpp:93</div></div>
 <div class="ttc" id="anamespaceservio_1_1core_html"><div class="ttname"><a href="namespaceservio_1_1core.html">servio::core</a></div><div class="ttdef"><b>Definition:</b> callbacks.hpp:9</div></div>
@@ -172,7 +171,7 @@ $(document).ready(function(){initNavTree('drivers_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a class="el" href="drivers_8hpp.html">drivers.hpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

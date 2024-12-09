@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('utest_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">   34</a></span>&#160;        <span class="keyword">auto</span> <a class="code" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( <span class="keywordtype">bool</span> expr, std::source_location sl = <a class="code" href="namespaceservio_1_1cnv.html#a81aa759bf010df60769d03a4fd7b47cc">std::source_location::current</a>() )</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">   34</a></span>&#160;        <span class="keyword">auto</span> <a class="code" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( <span class="keywordtype">bool</span> expr, std::source_location sl = <a class="code" href="namespaceservio_1_1cnv.html#ae12fdfe740950353fc33f56b42ca8644">std::source_location::current</a>() )</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">return</span> t::expect( <a class="code" href="structservio_1_1ftest_1_1uctx.html#a4ce9a11aea4141ca78dfe38c7b548180">coll</a>, expr, sl );</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
@@ -216,7 +216,7 @@ $(document).ready(function(){initNavTree('utest_8hpp_source.html',''); initResiz
 <div class="ttc" id="acontrol_8hpp_html"><div class="ttname"><a href="control_8hpp.html">control.hpp</a></div></div>
 <div class="ttc" id="anamespaceemlabcpp_html"><div class="ttname"><a href="namespaceemlabcpp.html">emlabcpp</a></div><div class="ttdef"><b>Definition:</b> map.hpp:109</div></div>
 <div class="ttc" id="anamespaceservio_1_1cfg_html_a17a7e0a2edf8384906b0f662d462cfd3"><div class="ttname"><a href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">servio::cfg::key</a></div><div class="ttdeci">key</div><div class="ttdef"><b>Definition:</b> key.hpp:9</div></div>
-<div class="ttc" id="anamespaceservio_1_1cnv_html_a81aa759bf010df60769d03a4fd7b47cc"><div class="ttname"><a href="namespaceservio_1_1cnv.html#a81aa759bf010df60769d03a4fd7b47cc">servio::cnv::current</a></div><div class="ttdeci">float current(const converter &amp;conv, uint32_t raw_current, const drv::pwm_motor_iface &amp;motor)</div><div class="ttdef"><b>Definition:</b> utils.hpp:9</div></div>
+<div class="ttc" id="anamespaceservio_1_1cnv_html_ae12fdfe740950353fc33f56b42ca8644"><div class="ttname"><a href="namespaceservio_1_1cnv.html#ae12fdfe740950353fc33f56b42ca8644">servio::cnv::current</a></div><div class="ttdeci">float current(converter const &amp;conv, uint32_t raw_current, drv::pwm_motor_iface const &amp;motor)</div><div class="ttdef"><b>Definition:</b> utils.hpp:9</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftest_html"><div class="ttname"><a href="namespaceservio_1_1ftest.html">servio::ftest</a></div><div class="ttdef"><b>Definition:</b> bench.cpp:5</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftest_html_a04f077611bfdcd9d113fd0df35dbba94"><div class="ttname"><a href="namespaceservio_1_1ftest.html#a04f077611bfdcd9d113fd0df35dbba94">servio::ftest::store_data</a></div><div class="ttdeci">t::coroutine&lt; void &gt; store_data(em::pmr::memory_resource &amp;, uctx &amp;ctx, std::string_view key, auto &amp;&amp;data)</div><div class="ttdef"><b>Definition:</b> utest.hpp:72</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftest_html_a7987cf8b1ec20f510735e5435fd46931"><div class="ttname"><a href="namespaceservio_1_1ftest.html#a7987cf8b1ec20f510735e5435fd46931">servio::ftest::setup_poweroff</a></div><div class="ttdeci">auto setup_poweroff(ctl::control &amp;ctl)</div><div class="ttdef"><b>Definition:</b> utest.hpp:79</div></div>
@@ -237,14 +237,14 @@ $(document).ready(function(){initNavTree('utest_8hpp_source.html',''); initResiz
 <div class="ttc" id="astructservio_1_1ftest_1_1utest_html_af3cd3390585ff0e9e5ea2b24fef1daeb"><div class="ttname"><a href="structservio_1_1ftest_1_1utest.html#af3cd3390585ff0e9e5ea2b24fef1daeb">servio::ftest::utest::utest</a></div><div class="ttdeci">utest(uctx &amp;ctx, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> utest.hpp:93</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1utest_html_afc4e8aa17ee44d13787b10cf1c4989bb"><div class="ttname"><a href="structservio_1_1ftest_1_1utest.html#afc4e8aa17ee44d13787b10cf1c4989bb">servio::ftest::utest::get_name</a></div><div class="ttdeci">std::string_view get_name() const override</div><div class="ttdef"><b>Definition:</b> utest.hpp:99</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1utest_html_afcff200b228a1e1b5e2f16c5658bb2c1"><div class="ttname"><a href="structservio_1_1ftest_1_1utest.html#afcff200b228a1e1b5e2f16c5658bb2c1">servio::ftest::utest::item</a></div><div class="ttdeci">T item</div><div class="ttdef"><b>Definition:</b> utest.hpp:90</div></div>
-<div class="ttc" id="astructservio_1_1pwr_html"><div class="ttname"><a href="structservio_1_1pwr.html">servio::pwr</a></div><div class="ttdef"><b>Definition:</b> base.hpp:77</div></div>
+<div class="ttc" id="astructservio_1_1pwr_html"><div class="ttname"><a href="structservio_1_1pwr.html">servio::pwr</a></div><div class="ttdef"><b>Definition:</b> base.hpp:80</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="utest_8hpp.html">utest.hpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

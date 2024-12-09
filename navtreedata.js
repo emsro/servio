@@ -35,7 +35,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ],
@@ -71,15 +71,16 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"adc_8cpp.html",
-"classservio_1_1drv_1_1quad__encoder.html",
-"flash_8hpp.html#a82f44e4d4b0aef1e39e57e40120f6ee0",
-"key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3aab34f7796f76a255878423f5155aea97",
-"namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451",
-"namespaceservio_1_1plt.html#a79d3faed853bcee26c9f504a8cd30118",
-"serial_8hpp.html#a6647589b925a226c31da4c42391a7eb3",
-"structservio_1_1core_1_1standard__callbacks.html#a7a03037291aaf4d1be21c9688bfd3786",
-"structservio_1_1ftest_1_1intg_1_1sign__test.html#ad13c8f7e12f633a1320e80003d6985e3"
+"",
+"classservio_1_1drv_1_1leds.html#a54b9111219f37c0ab5acf3e331c39c87",
+"effects_8hpp_source.html",
+"key_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a484293eb183cafd6a872e257f5255c95",
+"namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3e51788c0e37c789f5007042d479e91e",
+"namespaceservio_1_1klmn.html#a06eeeb1c879c6761c7ee54e42b43d285",
+"posvel__kalman_8hpp_source.html",
+"structservio_1_1bb_1_1bb__test__case.html",
+"structservio_1_1drv_1_1value__cb.html#a6b0d95c08d91085b8b0cac059357bfb5",
+"structservio_1_1sim_1_1simple__motor.html#a6efb3825c4da30b8feaf2b886eecbb29"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -5,10 +5,10 @@ var namespaceservio_1_1ftester_structservio_1_1ftester_1_1config_dup =
     [ "d_baudrate", "namespaceservio_1_1ftester.html#ab3e6303bc5ee2f7e96e9196984c0cfb4", null ],
     [ "d_device", "namespaceservio_1_1ftester.html#a1ff2b573293cb82c49bf90032e7fc5a7", null ],
     [ "filter", "namespaceservio_1_1ftester.html#a8f8cd80b3be896f7ecf844083945d242", null ],
-    [ "firmware", "namespaceservio_1_1ftester.html#a19d0941e319c81c0e7ebde81dc813507", null ],
-    [ "input", "namespaceservio_1_1ftester.html#ad4b8db7e93cbb7ce322025c023643e84", null ],
-    [ "openocd_config", "namespaceservio_1_1ftester.html#a41d09cfbc888978bd5a03ac36da22432", null ],
-    [ "output_dir", "namespaceservio_1_1ftester.html#a27aa99e5128d3666ad6a985273c7541d", null ],
+    [ "firmware", "namespaceservio_1_1ftester.html#a404e695ca8b7eea551e75f9308a5a7f2", null ],
+    [ "input", "namespaceservio_1_1ftester.html#aa82f2858ac70e9973a3761bd4d70ac8f", null ],
+    [ "openocd_config", "namespaceservio_1_1ftester.html#a609a366e588998899f3a5ccb26e6dd01", null ],
+    [ "output_dir", "namespaceservio_1_1ftester.html#a0876b9fcc87d2b7574e65e6182934729", null ],
     [ "powerless", "namespaceservio_1_1ftester.html#a9fdf46df9cf2f31fdfb9f0e491ebc39c", null ],
-    [ "verbose", "namespaceservio_1_1ftester.html#ae3b4a77a2b4806d57ab17e764cd9b396", null ]
+    [ "verbose", "namespaceservio_1_1ftester.html#a4cd90f4cd4b3a3dbfad5c39ff3f3b54b", null ]
 ];

@@ -27,7 +27,7 @@ var md_doc_requirements =
       [ "REQ4.1 System should have one major communication interface", "comms.html#autotoc_md22", null ],
       [ "REQ4.2 System should decompose message communication to be independent on underlying transport layer", "comms.html#autotoc_md23", null ],
       [ "RE4.3 UART shall be supported as transport", "comms.html#autotoc_md24", null ],
-      [ "REQ4.4 Major communication message shall be defined in one protobuf file", "comms.html#autotoc_md25", null ],
+      [ "REQ4.4 Major communication message shall be defined in TBD", "comms.html#autotoc_md25", null ],
       [ "REQ4.5 COBS can be used as framing mechanism", "comms.html#autotoc_md26", null ],
       [ "REQ4.6 Exact communication interface is property of board", "comms.html#autotoc_md27", null ],
       [ "REQ4.7 ID", "comms.html#autotoc_md28", null ],

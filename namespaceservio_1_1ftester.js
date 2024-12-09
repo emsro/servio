@@ -5,13 +5,14 @@ var namespaceservio_1_1ftester =
     [ "recorder", "classservio_1_1ftester_1_1recorder.html", "classservio_1_1ftester_1_1recorder" ],
     [ "controller_interface", "structservio_1_1ftester_1_1controller__interface.html", "structservio_1_1ftester_1_1controller__interface" ],
     [ "test_system", "structservio_1_1ftester_1_1test__system.html", "structservio_1_1ftester_1_1test__system" ],
-    [ "firmware_opt", "namespaceservio_1_1ftester.html#a105df95d80da73ac8d6c61a0ed81d3e0", null ],
-    [ "flash_firmware", "namespaceservio_1_1ftester.html#a545cc7dc041b95b87529ebff248997ad", null ],
+    [ "opt", "namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee", null ],
+    [ "firmware_opt", "namespaceservio_1_1ftester.html#acc64a6f277fb5ffb8b088c5bc1b4657d", null ],
+    [ "flash_firmware", "namespaceservio_1_1ftester.html#ad48d568e7f67be4d2bb49a369067697f", null ],
     [ "get_config", "namespaceservio_1_1ftester.html#abafc9ebaf605802ca7b02a5592cf7a7f", null ],
     [ "handle_eptr", "namespaceservio_1_1ftester.html#a843d1ebeface228cb7f950468c97e8cb", null ],
     [ "handle_test_specifics", "namespaceservio_1_1ftester.html#af85eaac72e6fd1885c973e047a7ac2ad", null ],
-    [ "make_flash_task", "namespaceservio_1_1ftester.html#a82f44e4d4b0aef1e39e57e40120f6ee0", null ],
-    [ "ocfg_opt", "namespaceservio_1_1ftester.html#a8eba53b84e68005583705b1565a54e39", null ],
+    [ "make_flash_task", "namespaceservio_1_1ftester.html#a2da680db1c1e39cf5df13a9836803fd2", null ],
+    [ "ocfg_opt", "namespaceservio_1_1ftester.html#a89a5bb51f3fd5536940bb6352d4eeda8", null ],
     [ "COM_LOGGER", "namespaceservio_1_1ftester.html#a4da908b96514755b7dda71c0cdf2734d", null ],
     [ "rec_id", "namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c", null ]
 ];

@@ -1,6 +1,6 @@
 var namespaceservio_1_1brd =
 [
-    [ "adc_set", "structservio_1_1brd_1_1adc__set.html", "structservio_1_1brd_1_1adc__set" ],
+    [ "adc_set", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set", "namespaceservio_1_1brd_structservio_1_1brd_1_1adc__set_dup" ],
     [ "adc_pooler_type", "namespaceservio_1_1brd.html#a8b36136e5a2768136f9d44ad5ef7c56a", null ],
     [ "adc_pooler_setup", "namespaceservio_1_1brd.html#a9896090034aa0fb9a33dd63575d46473", null ],
     [ "comms_setup", "namespaceservio_1_1brd.html#abc2b65905e78a66ddc912d5a64e06b5e", null ],

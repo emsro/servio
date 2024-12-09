@@ -1,9 +1,9 @@
 <map id="src/cfg/dispatcher.cpp" name="src/cfg/dispatcher.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="199,5,362,32"/>
-<area shape="rect" id="node2" href="$cfg_2dispatcher_8hpp.html" title=" " alt="" coords="210,80,351,107"/>
-<area shape="rect" id="node3" href="$key_8hpp.html" title=" " alt="" coords="284,237,379,263"/>
-<area shape="rect" id="node5" title=" " alt="" coords="407,229,605,271"/>
-<area shape="rect" id="node4" href="$map_8hpp.html" title=" " alt="" coords="369,155,472,181"/>
-<area shape="rect" id="node6" href="$core_8hpp.html" title=" " alt="" coords="32,155,143,181"/>
-<area shape="rect" id="node7" href="$drivers_8hpp.html" title=" " alt="" coords="167,155,293,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="139,5,302,32"/>
+<area shape="rect" id="node2" href="$cfg_2dispatcher_8hpp.html" title=" " alt="" coords="158,80,283,107"/>
+<area shape="rect" id="node5" href="$key_8hpp.html" title=" " alt="" coords="5,237,84,263"/>
+<area shape="rect" id="node7" title=" " alt="" coords="397,229,594,271"/>
+<area shape="rect" id="node3" href="$core_8hpp.html" title=" " alt="" coords="82,155,205,181"/>
+<area shape="rect" id="node4" href="$drivers_8hpp.html" title=" " alt="" coords="229,155,367,181"/>
+<area shape="rect" id="node6" href="$map_8hpp.html" title=" " alt="" coords="391,155,506,181"/>
 </map>

@@ -1,18 +1,18 @@
 <map id="src/drv/leds.hpp" name="src/drv/leds.hpp">
 <area shape="rect" id="node1" title=" " alt="" coords="279,5,404,32"/>
-<area shape="rect" id="node2" href="$base_2base_8hpp.html" title=" " alt="" coords="542,244,658,271"/>
+<area shape="rect" id="node2" href="$base_2base_8hpp.html" title=" " alt="" coords="545,244,661,271"/>
 <area shape="rect" id="node4" title=" " alt="" coords="232,319,299,345"/>
 <area shape="rect" id="node8" href="$defs_8hpp.html" title=" " alt="" coords="139,87,242,114"/>
 <area shape="rect" id="node9" href="$platform_8hpp.html" title=" " alt="" coords="23,169,129,196"/>
 <area shape="rect" id="node11" href="$interfaces_8hpp.html" title=" " alt="" coords="422,87,562,114"/>
-<area shape="rect" id="node16" title=" " alt="" coords="955,80,1133,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="397,319,464,345"/>
-<area shape="rect" id="node5" title=" " alt="" coords="488,319,653,345"/>
-<area shape="rect" id="node6" title=" " alt="" coords="677,319,832,345"/>
-<area shape="rect" id="node7" title=" " alt="" coords="857,319,935,345"/>
+<area shape="rect" id="node16" title=" " alt="" coords="967,80,1145,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="400,319,467,345"/>
+<area shape="rect" id="node5" title=" " alt="" coords="491,319,656,345"/>
+<area shape="rect" id="node6" title=" " alt="" coords="680,319,835,345"/>
+<area shape="rect" id="node7" title=" " alt="" coords="859,319,938,345"/>
 <area shape="rect" id="node10" title=" " alt="" coords="153,169,228,196"/>
-<area shape="rect" id="node12" href="$map_8hpp.html" title=" " alt="" coords="594,169,697,196"/>
-<area shape="rect" id="node13" title=" " alt="" coords="721,169,879,196"/>
+<area shape="rect" id="node12" href="$map_8hpp.html" title=" " alt="" coords="593,169,708,196"/>
+<area shape="rect" id="node13" title=" " alt="" coords="733,169,891,196"/>
 <area shape="rect" id="node14" title=" " alt="" coords="303,169,441,196"/>
 <area shape="rect" id="node15" title=" " alt="" coords="465,169,519,196"/>
 </map>

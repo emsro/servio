@@ -87,14 +87,14 @@ $(document).ready(function(){initNavTree('map_8hpp_source.html',''); initResizab
 <div class="title">map.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="map_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_2base_8hpp.html">base/base.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="key_8hpp.html">cfg/key.hpp</a>&quot;</span></div>
+<a href="map_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;../base/base.hpp&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="key_8hpp.html">./key.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/string_buffer.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/experimental/testing/convert.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/protocol/register_handler.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/protocol/register_map.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;magic_enum.hpp&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;magic_enum/magic_enum.hpp&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('map_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1payload.html#add5943dd37543f9556fc86254cc8bbc7">   19</a></span>&#160;        em::string_buffer&lt; 32 &gt; <a class="code" href="structservio_1_1cfg_1_1payload.html#add5943dd37543f9556fc86254cc8bbc7">git_date</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1payload.html#a6365f79ef66d2e2c6daa7371a3dd8a4c">   20</a></span>&#160;        uint32_t                <a class="code" href="structservio_1_1cfg_1_1payload.html#a6365f79ef66d2e2c6daa7371a3dd8a4c">id</a>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1payload.html#a3abc72d179aa82ee807ff02534a31dfb">   22</a></span>&#160;        <span class="keyword">friend</span> constexpr <span class="keyword">auto</span> <a class="code" href="structservio_1_1cfg_1_1payload.html#a3abc72d179aa82ee807ff02534a31dfb">operator&lt;=&gt;</a>( <span class="keyword">const</span> <a class="code" href="structservio_1_1cfg_1_1payload.html">payload</a>&amp;, <span class="keyword">const</span> <a class="code" href="structservio_1_1cfg_1_1payload.html">payload</a>&amp; ) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1payload.html#a197fcf15dd9728c4fde1e1af1dbd60de">   22</a></span>&#160;        <span class="keyword">friend</span> constexpr <span class="keyword">auto</span> <a class="code" href="structservio_1_1cfg_1_1payload.html#a197fcf15dd9728c4fde1e1af1dbd60de">operator&lt;=&gt;</a>( <a class="code" href="structservio_1_1cfg_1_1payload.html">payload</a> <span class="keyword">const</span>&amp;, <a class="code" href="structservio_1_1cfg_1_1payload.html">payload</a> <span class="keyword">const</span>&amp; ) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span> &lt; auto Key, <span class="keyword">typename</span> T &gt;</div>
@@ -186,7 +186,7 @@ $(document).ready(function(){initNavTree('map_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">// TODO: find all inlines and minimize</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#ifdef EMLABCPP_USE_OSTREAM</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">inline</span> std::ostream&amp; operator&lt;&lt;( std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a>&amp; m )</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">inline</span> std::ostream&amp; operator&lt;&lt;( std::ostream&amp; os, <a class="code" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> <span class="keyword">const</span>&amp; m )</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> os &lt;&lt; magic_enum::enum_name( m );</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
@@ -202,7 +202,6 @@ $(document).ready(function(){initNavTree('map_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}  <span class="comment">// namespace emlabcpp::testing</span></div>
-<div class="ttc" id="abase_2base_8hpp_html"><div class="ttname"><a href="base_2base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="akey_8hpp_html"><div class="ttname"><a href="key_8hpp.html">key.hpp</a></div></div>
 <div class="ttc" id="anamespaceemlabcpp_1_1testing_html"><div class="ttname"><a href="namespaceemlabcpp_1_1testing.html">emlabcpp::testing</a></div><div class="ttdef"><b>Definition:</b> map.hpp:109</div></div>
 <div class="ttc" id="anamespaceemlabcpp_html"><div class="ttname"><a href="namespaceemlabcpp.html">emlabcpp</a></div><div class="ttdef"><b>Definition:</b> map.hpp:109</div></div>
@@ -225,7 +224,7 @@ $(document).ready(function(){initNavTree('map_8hpp_source.html',''); initResizab
 <div class="ttc" id="anamespaceservio_1_1cfg_html_structservio_1_1cfg_1_1keyval"><div class="ttname"><a href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval">servio::cfg::keyval</a></div><div class="ttdef"><b>Definition:</b> map.hpp:78</div></div>
 <div class="ttc" id="anamespaceservio_html"><div class="ttname"><a href="namespaceservio.html">servio</a></div><div class="ttdef"><b>Definition:</b> base.hpp:12</div></div>
 <div class="ttc" id="astructservio_1_1cfg_1_1payload_html"><div class="ttname"><a href="structservio_1_1cfg_1_1payload.html">servio::cfg::payload</a></div><div class="ttdef"><b>Definition:</b> map.hpp:17</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1payload_html_a3abc72d179aa82ee807ff02534a31dfb"><div class="ttname"><a href="structservio_1_1cfg_1_1payload.html#a3abc72d179aa82ee807ff02534a31dfb">servio::cfg::payload::operator&lt;=&gt;</a></div><div class="ttdeci">constexpr friend auto operator&lt;=&gt;(const payload &amp;, const payload &amp;)=default</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1payload_html_a197fcf15dd9728c4fde1e1af1dbd60de"><div class="ttname"><a href="structservio_1_1cfg_1_1payload.html#a197fcf15dd9728c4fde1e1af1dbd60de">servio::cfg::payload::operator&lt;=&gt;</a></div><div class="ttdeci">constexpr friend auto operator&lt;=&gt;(payload const &amp;, payload const &amp;)=default</div></div>
 <div class="ttc" id="astructservio_1_1cfg_1_1payload_html_a6365f79ef66d2e2c6daa7371a3dd8a4c"><div class="ttname"><a href="structservio_1_1cfg_1_1payload.html#a6365f79ef66d2e2c6daa7371a3dd8a4c">servio::cfg::payload::id</a></div><div class="ttdeci">uint32_t id</div><div class="ttdef"><b>Definition:</b> map.hpp:20</div></div>
 <div class="ttc" id="astructservio_1_1cfg_1_1payload_html_a7f168f4a3fccf8fd031f47e41ca73437"><div class="ttname"><a href="structservio_1_1cfg_1_1payload.html#a7f168f4a3fccf8fd031f47e41ca73437">servio::cfg::payload::git_ver</a></div><div class="ttdeci">em::string_buffer&lt; 16 &gt; git_ver</div><div class="ttdef"><b>Definition:</b> map.hpp:18</div></div>
 <div class="ttc" id="astructservio_1_1cfg_1_1payload_html_add5943dd37543f9556fc86254cc8bbc7"><div class="ttname"><a href="structservio_1_1cfg_1_1payload.html#add5943dd37543f9556fc86254cc8bbc7">servio::cfg::payload::git_date</a></div><div class="ttdeci">em::string_buffer&lt; 32 &gt; git_date</div><div class="ttdef"><b>Definition:</b> map.hpp:19</div></div>
@@ -235,7 +234,7 @@ $(document).ready(function(){initNavTree('map_8hpp_source.html',''); initResizab
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1e869ebbc6cce176ee0dbb76743ac339.html">cfg</a></li><li class="navelem"><a class="el" href="map_8hpp.html">map.hpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

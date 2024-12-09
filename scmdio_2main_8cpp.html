@@ -91,11 +91,11 @@ $(document).ready(function(){initNavTree('scmdio_2main_8cpp.html',''); initResiz
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;io.pb.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="scmdio_2cli_8hpp_source.html">scmdio/cli.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="config__cmds_8hpp_source.html">scmdio/config_cmds.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="pid__autotune__cmd_8hpp_source.html">scmdio/pid_autotune_cmd.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="serial_8hpp_source.html">scmdio/serial.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="scmdio_2cli_8hpp_source.html">./cli.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config__cmds_8hpp_source.html">./config_cmds.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="field__util_8hpp_source.html">./field_util.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pid__autotune__cmd_8hpp_source.html">./pid_autotune_cmd.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="serial_8hpp_source.html">./serial.hpp</a>&quot;</code><br />
 <code>#include &lt;emlabcpp/algorithm.h&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('scmdio_2main_8cpp.html',''); initResiz
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="scmdio_2main_8cpp__incl.svg" width="1047" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="scmdio_2main_8cpp__incl.svg" width="1214" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -129,8 +129,8 @@ Functions</h2></td></tr>
 <tr class="separator:ad775904026fd4fb1d8f3a62288c7d3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47742063f815da2978a95cd745152a30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a47742063f815da2978a95cd745152a30">servio::scmdio::cfg_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;context, std::unique_ptr&lt; cobs_port &gt; &amp;port_ptr)</td></tr>
 <tr class="separator:a47742063f815da2978a95cd745152a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a6a4d2cb946a4d8e54396443a7b5b3a"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a7a6a4d2cb946a4d8e54396443a7b5b3a">servio::scmdio::pool_cmd</a> (boost::asio::io_context &amp;, cobs_port &amp;port, std::vector&lt; const google::protobuf::FieldDescriptor * &gt; fields)</td></tr>
-<tr class="separator:a7a6a4d2cb946a4d8e54396443a7b5b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab8bbbc1e80d27ca1f0a9d4ca382146c"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#aab8bbbc1e80d27ca1f0a9d4ca382146c">servio::scmdio::pool_cmd</a> (boost::asio::io_context &amp;, cobs_port &amp;port, std::vector&lt; <a class="el" href="namespaceservio_1_1iface.html#a7970571e13b4e35d7ff0f2fdd28a3880">iface::prop_key</a> &gt; props)</td></tr>
+<tr class="separator:aab8bbbc1e80d27ca1f0a9d4ca382146c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51e4cb40456beafbb78ac97e71ae4d75"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a51e4cb40456beafbb78ac97e71ae4d75">servio::scmdio::pool_cmd</a> (boost::asio::io_context &amp;context, cobs_port &amp;port, std::vector&lt; std::string &gt; properties)</td></tr>
 <tr class="separator:a51e4cb40456beafbb78ac97e71ae4d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab046fe02e42a95b8c9f2c668bfc6e3ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ab046fe02e42a95b8c9f2c668bfc6e3ba">servio::scmdio::pool_def</a> (CLI::App &amp;app, boost::asio::io_context &amp;context, std::unique_ptr&lt; cobs_port &gt; &amp;port_ptr)</td></tr>
@@ -270,7 +270,7 @@ velocity</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="scmdio_2main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

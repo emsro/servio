@@ -101,9 +101,9 @@ $(document).ready(function(){initNavTree('async__cobs_8hpp_source.html',''); ini
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1cobs__port.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structservio_1_1scmdio_1_1cobs__port.html">cobs_port</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1cobs__port.html#aedbfedba7bc428e5990fb0a40b89ce33">   15</a></span>&#160;        <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html#aedbfedba7bc428e5990fb0a40b89ce33">cobs_port</a>(</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1cobs__port.html#a103f8d1bc17c9f8b97aa89ce457501ab">   15</a></span>&#160;        <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html#a103f8d1bc17c9f8b97aa89ce457501ab">cobs_port</a>(</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            boost::asio::io_context&amp;     context,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keyword">const</span> std::filesystem::path&amp; p,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            std::filesystem::path <span class="keyword">const</span>&amp; p,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            uint32_t                     baudrate )</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          : <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html#a1296ac6c804e517daeb0073c76a98290">port</a>( context, p )</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
@@ -113,28 +113,29 @@ $(document).ready(function(){initNavTree('async__cobs_8hpp_source.html',''); ini
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1cobs__port.html#a1296ac6c804e517daeb0073c76a98290">   24</a></span>&#160;        boost::asio::serial_port <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html#a1296ac6c804e517daeb0073c76a98290">port</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1cobs__port.html#a3c0ff28427c4ac6cd78e1a315e5dfe3f">   25</a></span>&#160;        std::vector&lt; std::byte &gt; <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html#a3c0ff28427c4ac6cd78e1a315e5dfe3f">read_buffer</a>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        boost::asio::awaitable&lt; void &gt; <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html#ab1d8918adfbec664a16b9079d48cfc9a">async_write</a>( em::view&lt; std::byte* &gt; msg );</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        boost::asio::awaitable&lt; em::view&lt; std::byte* &gt; &gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html#a753a34ede7c88a22216b2b05b54b15e4">async_read</a>( em::view&lt; std::byte* &gt; buffer );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}  <span class="comment">// namespace servio::scmdio</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        boost::asio::awaitable&lt; void &gt; <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html#a4d02a45486e6a1d34517202510fe5789">async_write</a>( em::view&lt; std::byte const* &gt; msg );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        boost::asio::awaitable&lt; void &gt; <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html#a4d02a45486e6a1d34517202510fe5789">async_write</a>( std::string_view msg );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        boost::asio::awaitable&lt; em::view&lt; std::byte* &gt; &gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="structservio_1_1scmdio_1_1cobs__port.html#a753a34ede7c88a22216b2b05b54b15e4">async_read</a>( em::view&lt; std::byte* &gt; buffer );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}  <span class="comment">// namespace servio::scmdio</span></div>
 <div class="ttc" id="anamespaceemlabcpp_html"><div class="ttname"><a href="namespaceemlabcpp.html">emlabcpp</a></div><div class="ttdef"><b>Definition:</b> map.hpp:109</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html"><div class="ttname"><a href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div><div class="ttdef"><b>Definition:</b> async_cobs.cpp:10</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1cobs__port_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__port.html">servio::scmdio::cobs_port</a></div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:13</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1cobs__port_html_a103f8d1bc17c9f8b97aa89ce457501ab"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__port.html#a103f8d1bc17c9f8b97aa89ce457501ab">servio::scmdio::cobs_port::cobs_port</a></div><div class="ttdeci">cobs_port(boost::asio::io_context &amp;context, std::filesystem::path const &amp;p, uint32_t baudrate)</div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:15</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1cobs__port_html_a1296ac6c804e517daeb0073c76a98290"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__port.html#a1296ac6c804e517daeb0073c76a98290">servio::scmdio::cobs_port::port</a></div><div class="ttdeci">boost::asio::serial_port port</div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:24</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1cobs__port_html_a3c0ff28427c4ac6cd78e1a315e5dfe3f"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__port.html#a3c0ff28427c4ac6cd78e1a315e5dfe3f">servio::scmdio::cobs_port::read_buffer</a></div><div class="ttdeci">std::vector&lt; std::byte &gt; read_buffer</div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:25</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1cobs__port_html_a753a34ede7c88a22216b2b05b54b15e4"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__port.html#a753a34ede7c88a22216b2b05b54b15e4">servio::scmdio::cobs_port::async_read</a></div><div class="ttdeci">boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt; async_read(em::view&lt; std::byte * &gt; buffer)</div><div class="ttdef"><b>Definition:</b> async_cobs.cpp:39</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1cobs__port_html_ab1d8918adfbec664a16b9079d48cfc9a"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__port.html#ab1d8918adfbec664a16b9079d48cfc9a">servio::scmdio::cobs_port::async_write</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; async_write(em::view&lt; std::byte * &gt; msg)</div><div class="ttdef"><b>Definition:</b> async_cobs.cpp:12</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1cobs__port_html_aedbfedba7bc428e5990fb0a40b89ce33"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__port.html#aedbfedba7bc428e5990fb0a40b89ce33">servio::scmdio::cobs_port::cobs_port</a></div><div class="ttdeci">cobs_port(boost::asio::io_context &amp;context, const std::filesystem::path &amp;p, uint32_t baudrate)</div><div class="ttdef"><b>Definition:</b> async_cobs.hpp:15</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1cobs__port_html_a4d02a45486e6a1d34517202510fe5789"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__port.html#a4d02a45486e6a1d34517202510fe5789">servio::scmdio::cobs_port::async_write</a></div><div class="ttdeci">boost::asio::awaitable&lt; void &gt; async_write(em::view&lt; std::byte const * &gt; msg)</div><div class="ttdef"><b>Definition:</b> async_cobs.cpp:18</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1cobs__port_html_a753a34ede7c88a22216b2b05b54b15e4"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__port.html#a753a34ede7c88a22216b2b05b54b15e4">servio::scmdio::cobs_port::async_read</a></div><div class="ttdeci">boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt; async_read(em::view&lt; std::byte * &gt; buffer)</div><div class="ttdef"><b>Definition:</b> async_cobs.cpp:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="async__cobs_8hpp.html">async_cobs.hpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

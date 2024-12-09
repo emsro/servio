@@ -90,10 +90,11 @@ $(document).ready(function(){initNavTree('config__test_8cpp.html',''); initResiz
 <div class="title">config_test.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="bb__test__case_8hpp_source.html">bb_test_case.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="scmdio_2cli_8hpp_source.html">scmdio/cli.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="exceptions_8hpp_source.html">scmdio/exceptions.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="serial_8hpp_source.html">scmdio/serial.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="scmdio_2cli_8hpp_source.html">../scmdio/cli.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="exceptions_8hpp_source.html">../scmdio/exceptions.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="field__util_8hpp_source.html">../scmdio/field_util.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="serial_8hpp_source.html">../scmdio/serial.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bb__test__case_8hpp_source.html">bb_test_case.hpp</a>&quot;</code><br />
 <code>#include &lt;emlabcpp/experimental/logging.h&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;gtest/gtest.h&gt;</code><br />
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('config__test_8cpp.html',''); initResiz
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="config__test_8cpp__incl.svg" width="1407" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="config__test_8cpp__incl.svg" width="1666" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -115,10 +116,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afa1bdf5f7f6e79003c5cb9d1beecfa87"><td class="memItemLeft" align="right" valign="top">servio::Config&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#afa1bdf5f7f6e79003c5cb9d1beecfa87">servio::bb::vary_value</a> (const google::protobuf::FieldDescriptor *field, servio::Config item)</td></tr>
-<tr class="separator:afa1bdf5f7f6e79003c5cb9d1beecfa87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9158df11b810a88d059a5252706efa29"><td class="memItemLeft" align="right" valign="top">::testing::AssertionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a9158df11b810a88d059a5252706efa29">servio::bb::cmp_cfg_state</a> (const std::map&lt; servio::Config::PldCase, servio::Config &gt; &amp;initial, servio::Config::PldCase tested_field, const std::vector&lt; servio::Config &gt; &amp;new_state)</td></tr>
-<tr class="separator:a9158df11b810a88d059a5252706efa29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5089d4dc853f8c5e763dd60a57c2a70f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a5089d4dc853f8c5e763dd60a57c2a70f">servio::bb::vary_value</a> (vari::vref&lt; <a class="el" href="namespaceservio_1_1iface.html#a275b09671e04d6474e4791afd9c6f741">iface::cfg_types</a> &gt; x)</td></tr>
+<tr class="separator:a5089d4dc853f8c5e763dd60a57c2a70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77fcbacc4f0f5c7f2a48cd6940d4da4a"><td class="memItemLeft" align="right" valign="top">::testing::AssertionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a77fcbacc4f0f5c7f2a48cd6940d4da4a">servio::bb::cmp_cfg_state</a> (std::size_t tested_i, std::vector&lt; vari::vval&lt; <a class="el" href="namespaceservio_1_1iface.html#a046fd3157153db7d7c88652d9a1836f5">iface::cfg_vals</a> &gt; &gt; const &amp;initial, std::vector&lt; vari::vval&lt; <a class="el" href="namespaceservio_1_1iface.html#a046fd3157153db7d7c88652d9a1836f5">iface::cfg_vals</a> &gt; &gt; const &amp;new_state)</td></tr>
+<tr class="separator:a77fcbacc4f0f5c7f2a48cd6940d4da4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca391fb30b75c7962a0a19617f039a92"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#aca391fb30b75c7962a0a19617f039a92">servio::bb::test_config</a> (boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;port)</td></tr>
 <tr class="separator:aca391fb30b75c7962a0a19617f039a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
@@ -151,7 +152,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc">servio::scmdio::powerless_flag()</a>, <a class="el" href="namespaceservio_1_1bb.html#af96e2c93cab7c4829a6755ea8bcccff0">servio::bb::register_test()</a>, <a class="el" href="structservio_1_1scmdio_1_1common__cli.html#a8efad675885c5e667ff8dfa954e62149">servio::scmdio::common_cli::setup()</a>, <a class="el" href="namespaceservio_1_1bb.html#aca391fb30b75c7962a0a19617f039a92">servio::bb::test_config()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a614e955e6323363d48b78d51d038a1d9">servio::scmdio::verbose_opt()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc">servio::scmdio::powerless_flag()</a>, <a class="el" href="namespaceservio_1_1bb.html#a9e5fb6b5343104b9e106aeeaf18ac1bf">servio::bb::register_test()</a>, <a class="el" href="structservio_1_1scmdio_1_1common__cli.html#a8efad675885c5e667ff8dfa954e62149">servio::scmdio::common_cli::setup()</a>, <a class="el" href="namespaceservio_1_1bb.html#aca391fb30b75c7962a0a19617f039a92">servio::bb::test_config()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#adfe9fb5c444c1aa557dab6b76f5f9f91">servio::scmdio::verbose_opt()</a>.</p>
 
 </div>
 </div>
@@ -161,7 +162,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b5f1ff6edc0113562981516635a79dda.html">bb</a></li><li class="navelem"><a class="el" href="config__test_8cpp.html">config_test.cpp</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 19:42:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Dec 9 2024 21:42:55 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
