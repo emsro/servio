@@ -25,6 +25,7 @@ var namespaceservio =
     [ "sim", "namespaceservio_1_1sim.html", "namespaceservio_1_1sim" ],
     [ "sntr", "namespaceservio_1_1sntr.html", "namespaceservio_1_1sntr" ],
     [ "tests", "namespaceservio_1_1tests.html", [
+      [ "diff", "namespaceservio_1_1tests.html#ad9a6789b9d11178a421bdd85692bb8d1", null ],
       [ "get_enum_ids", "namespaceservio_1_1tests.html#a84a8d9b8ff1d17f892b34e726dc8204f", null ],
       [ "get_iface_ids", "namespaceservio_1_1tests.html#aefe500b551ec67be6b9fddd7ebac42b3", null ],
       [ "TEST", "namespaceservio_1_1tests.html#ab13f735a06bbd448c82d5b45d20b76c3", null ],
