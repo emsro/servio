@@ -29,8 +29,8 @@ using model_name = em::string_buffer< 32 >;
 
 enum encoder_mode : uint8_t
 {
-        ENC_MODE_ANALOG = 0,
-        ENC_MODE_QUAD   = 1
+        ENC_MODE_ANALOG = 1,
+        ENC_MODE_QUAD   = 2
 };
 
 using map = em::protocol::register_map<

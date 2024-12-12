@@ -12,7 +12,7 @@ enum key : uint32_t
         GROUP_ID                   = 3,
         ENCODER_MODE               = 4,
         POSITION_LOW_ANGLE         = 11,
-        POSITION_HIGH_ANGLE        = 13,
+        POSITION_HIGH_ANGLE        = 12,
         CURRENT_CONV_SCALE         = 14,
         CURRENT_CONV_OFFSET        = 15,
         TEMP_CONV_SCALE            = 16,
