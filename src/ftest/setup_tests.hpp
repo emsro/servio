@@ -1,8 +1,8 @@
 #pragma once
 
-#include "core/core.hpp"
-#include "core/drivers.hpp"
-#include "ftest/utest.hpp"
+#include "../core/core.hpp"
+#include "../core/drivers.hpp"
+#include "./utest.hpp"
 
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/parameters.h>

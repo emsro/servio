@@ -1,5 +1,5 @@
-#include "cfg/storage.hpp"
-#include "drv/interfaces.hpp"
+#include "../cfg/storage.hpp"
+#include "../drv/interfaces.hpp"
 
 #pragma once
 
@@ -11,7 +11,7 @@ struct persistent_config_writer
         cfg::payload&       pl;
         drv::storage_iface& iface;
 
-        bool operator()( const cfg::map* cfg );
+        bool operator()( cfg::map const* cfg );
 };
 
 }  // namespace servio::fw

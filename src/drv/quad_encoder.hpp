@@ -1,7 +1,7 @@
 #pragma once
 
-#include "drv/interfaces.hpp"
-#include "platform.hpp"
+#include "../plt/platform.hpp"
+#include "./interfaces.hpp"
 
 namespace servio::drv
 {

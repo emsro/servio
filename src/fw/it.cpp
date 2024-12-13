@@ -1,5 +1,5 @@
-#include "fw/util.hpp"
-#include "platform.hpp"
+#include "../fw/util.hpp"
+#include "../plt/platform.hpp"
 
 // NOLINTBEGIN
 

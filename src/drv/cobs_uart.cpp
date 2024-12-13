@@ -1,8 +1,9 @@
-#include "drv/cobs_uart.hpp"
+#include "./cobs_uart.hpp"
 
-#include "base/base.hpp"
-#include "emlabcpp/result.h"
-#include "fw/util.hpp"
+#include "../base/base.hpp"
+#include "../fw/util.hpp"
+
+#include <emlabcpp/result.h>
 
 namespace servio::drv
 {
@@ -15,7 +16,7 @@ com_res cobs_uart::recv( std::span< std::byte > data )
 }
 
 em::result
-cobs_uart::send( std::span< const std::span< const std::byte > > data, microseconds timeout )
+cobs_uart::send( std::span< std::span< std::byte const > const > data, microseconds timeout )
 {
         auto end = clk_.get_us() + timeout;
         while ( !tx_done_ )

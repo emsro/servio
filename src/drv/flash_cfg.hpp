@@ -1,8 +1,8 @@
 #pragma once
 
-#include "cfg/storage.hpp"
-#include "drv/interfaces.hpp"
-#include "platform.hpp"
+#include "../cfg/storage.hpp"
+#include "../plt/platform.hpp"
+#include "./interfaces.hpp"
 
 #include <cstdint>
 #include <emlabcpp/defer.h>
@@ -18,7 +18,7 @@ public:
         {
         }
 
-        em::result store_page( std::span< const std::byte > data ) override;
+        em::result store_page( std::span< std::byte const > data ) override;
 
         em::outcome load_page( std::span< std::byte > data ) override;
 

@@ -1,7 +1,7 @@
-#include "brd/brd.hpp"
-#include "ftest/setup_tests.hpp"
-#include "ftest/testing_system.hpp"
-#include "fw/context.hpp"
+#include "../brd/brd.hpp"
+#include "../fw/context.hpp"
+#include "./setup_tests.hpp"
+#include "./testing_system.hpp"
 
 em::pmr::stack_resource< 1024 > TEST_STACK;
 

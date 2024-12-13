@@ -1,8 +1,8 @@
 #include "store_persistent_config.hpp"
 
-#include "brd/brd.hpp"
+#include "../brd/brd.hpp"
+#include "../plt/platform.hpp"
 #include "git.h"
-#include "platform.hpp"
 #include "util.hpp"
 
 #include <emlabcpp/algorithm.h>
@@ -12,9 +12,9 @@ namespace servio::fw
 {
 
 // XXX: this no longer has to be in fw/
-bool persistent_config_writer::operator()( const cfg::map* cfg )
+bool persistent_config_writer::operator()( cfg::map const* cfg )
 {
-        const cfg::payload pld{
+        cfg::payload const pld{
             .git_ver  = git::Describe(),
             .git_date = git::CommitDate(),
             .id       = pl.id + 1,

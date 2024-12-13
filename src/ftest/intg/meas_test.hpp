@@ -1,12 +1,12 @@
 #pragma once
 
-#include "cnv/utils.hpp"
-#include "core/core.hpp"
-#include "drv/callbacks.hpp"
-#include "drv/interfaces.hpp"
-#include "drv/retainers.hpp"
-#include "ftest/is_powerless.hpp"
-#include "ftest/utest.hpp"
+#include "../../cnv/utils.hpp"
+#include "../../core/core.hpp"
+#include "../../drv/callbacks.hpp"
+#include "../../drv/interfaces.hpp"
+#include "../../drv/retainers.hpp"
+#include "../is_powerless.hpp"
+#include "../utest.hpp"
 
 namespace servio::ftest::intg
 {

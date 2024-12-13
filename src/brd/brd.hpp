@@ -1,7 +1,7 @@
 #pragma once
 
-#include "cfg/map.hpp"
-#include "core/drivers.hpp"
+#include "../cfg/map.hpp"
+#include "../core/drivers.hpp"
 
 namespace servio::brd
 {

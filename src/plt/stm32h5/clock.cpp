@@ -1,10 +1,10 @@
-#include "emlabcpp/result.h"
-#include "fw/util.hpp"
-#include "platform.hpp"
+#include "../../fw/util.hpp"
+#include "../platform.hpp"
 #include "setup.hpp"
 
 #include <cassert>
 #include <cstdlib>
+#include <emlabcpp/result.h>
 
 namespace servio::plt
 {

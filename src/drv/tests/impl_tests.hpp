@@ -1,12 +1,12 @@
 #pragma once
 
-#include "drv/callbacks.hpp"
-#include "drv/cobs_uart.hpp"
-#include "drv/hbridge.hpp"
-#include "drv/interfaces.hpp"
-#include "drv/retainers.hpp"
-#include "ftest/utest.hpp"
-#include "sntr/test_central_sentry.hpp"
+#include "../../ftest/utest.hpp"
+#include "../../sntr/test_central_sentry.hpp"
+#include "../callbacks.hpp"
+#include "../cobs_uart.hpp"
+#include "../hbridge.hpp"
+#include "../interfaces.hpp"
+#include "../retainers.hpp"
 
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/coroutine.h>

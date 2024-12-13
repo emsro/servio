@@ -1,5 +1,5 @@
-#include "cfg/map.hpp"
-#include "drv/defs.hpp"
+#include "../../cfg/map.hpp"
+#include "../../drv/defs.hpp"
 
 #include <emlabcpp/result.h>
 #include <memory>

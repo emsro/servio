@@ -1,9 +1,9 @@
 #pragma once
 
-#include "drv/callbacks.hpp"
-#include "drv/interfaces.hpp"
-#include "drv/retainers.hpp"
-#include "ftest/utest.hpp"
+#include "../../ftest/utest.hpp"
+#include "../callbacks.hpp"
+#include "../interfaces.hpp"
+#include "../retainers.hpp"
 
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/coroutine.h>

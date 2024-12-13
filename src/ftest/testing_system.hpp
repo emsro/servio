@@ -1,7 +1,7 @@
-#include "base/base.hpp"
-#include "drv/interfaces.hpp"
-#include "ftest/utest.hpp"
-#include "ftester/base.hpp"
+#include "../base/base.hpp"
+#include "../drv/interfaces.hpp"
+#include "../ftester/base.hpp"
+#include "./utest.hpp"
 
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/parameters.h>
@@ -20,13 +20,13 @@ struct testing_system
         em::testing::collector  collector;
         em::testing::parameters parameters;
 
-        em::static_function< em::result( std::span< const std::byte > ), 32 > ctx_cb;
+        em::static_function< em::result( std::span< std::byte const > ), 32 > ctx_cb;
 
         uctx ctx;
 
         auto send_cb()
         {
-                return [this]( uint16_t channel, const auto& data ) {
+                return [this]( uint16_t channel, auto const& data ) {
                         return send_( channel, data );
                 };
         }
@@ -36,14 +36,14 @@ struct testing_system
           , reactor( em::testing::core_channel, name, send_cb() )
           , collector( em::testing::collect_channel, send_cb() )
           , parameters( em::testing::params_channel, send_cb() )
-          , ctx_cb( [&]( std::span< const std::byte > data ) {
+          , ctx_cb( [&]( std::span< std::byte const > data ) {
                   return send_( ftester::rec_id, data );
           } )
           , ctx( collector, ctx_cb )
         {
         }
 
-        em::result send_( uint16_t channel, const auto& data )
+        em::result send_( uint16_t channel, auto const& data )
         {
                 auto hdr = em::protocol::multiplexer_channel_handler::serialize( channel );
                 return send( debug_comms, 100_ms, hdr, data );
@@ -59,7 +59,7 @@ struct testing_system
                         return;
                 std::ignore = em::protocol::extract_multiplexed(
                     data,
-                    [&]( em::protocol::channel_type chid, std::span< const std::byte > data ) {
+                    [&]( em::protocol::channel_type chid, std::span< std::byte const > data ) {
                             return em::protocol::multiplexed_dispatch(
                                 chid, data, reactor, collector, parameters );
                     } );

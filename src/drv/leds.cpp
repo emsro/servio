@@ -1,6 +1,6 @@
-#include "drv/leds.hpp"
+#include "./leds.hpp"
 
-#include "fw/util.hpp"
+#include "../fw/util.hpp"
 
 #include <emlabcpp/algorithm.h>
 
@@ -23,7 +23,7 @@ em::result leds::start()
         return em::SUCCESS;
 }
 
-void leds::update( const leds_vals& leds )
+void leds::update( leds_vals const& leds )
 {
 
         if ( !red_forced_ )
@@ -32,13 +32,13 @@ void leds::update( const leds_vals& leds )
         HAL_GPIO_WritePin( blue_.port, blue_.pin, leds.blue ? GPIO_PIN_SET : GPIO_PIN_RESET );
 
         static constexpr uint8_t u_max = std::numeric_limits< uint8_t >::max();
-        const auto               per   = static_cast< uint16_t >( tim_->Init.Period );
+        auto const               per   = static_cast< uint16_t >( tim_->Init.Period );
 
-        const uint16_t yellow_val =
+        uint16_t const yellow_val =
             em::map_range< uint8_t, uint16_t >( leds.yellow, 0U, u_max, 0U, per );
         __HAL_TIM_SET_COMPARE( tim_, y_chan_, yellow_val );
 
-        const uint16_t green_val =
+        uint16_t const green_val =
             em::map_range< uint8_t, uint16_t >( leds.green, 0U, u_max, 0U, per );
         __HAL_TIM_SET_COMPARE( tim_, g_chan_, green_val );
 }

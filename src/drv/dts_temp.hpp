@@ -1,6 +1,6 @@
-#include "drv/interfaces.hpp"
-#include "fw/util.hpp"
-#include "platform.hpp"
+#include "../fw/util.hpp"
+#include "../plt/platform.hpp"
+#include "./interfaces.hpp"
 
 #pragma once
 

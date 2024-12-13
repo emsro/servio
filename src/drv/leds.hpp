@@ -1,7 +1,7 @@
-#include "base/base.hpp"
-#include "drv/defs.hpp"
-#include "drv/interfaces.hpp"
-#include "platform.hpp"
+#include "../base/base.hpp"
+#include "../plt/platform.hpp"
+#include "./defs.hpp"
+#include "./interfaces.hpp"
 
 #include <cstdint>
 #include <emlabcpp/experimental/function_view.h>
@@ -34,7 +34,7 @@ public:
 
         void force_red_led() override;
 
-        void update( const leds_vals& leds ) override;
+        void update( leds_vals const& leds ) override;
 
 private:
         bool red_forced_ = false;

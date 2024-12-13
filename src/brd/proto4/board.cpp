@@ -24,12 +24,6 @@ namespace em = emlabcpp;
 
 // TODO: add calibration procedure for ADC1
 
-// TODO: this needs it's own header
-extern "C" {
-extern int _config_start;
-extern int _config_end;
-}
-
 namespace servio::brd
 {
 
@@ -62,16 +56,6 @@ cfg::map get_default_config()
 }
 
 cfg::context CFG{ .map = get_default_config() };
-
-em::view< std::byte* > page_at( uint32_t i )
-{
-        return em::view_n(
-            reinterpret_cast< std::byte* >( &_config_start ) + i * FLASH_SECTOR_SIZE,
-            FLASH_SECTOR_SIZE );
-}
-
-std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at( 1 ) };
-drv::flash_storage                      FLASH_STORAGE{ PERSISTENT_BLOCKS };
 
 TIM_HandleTypeDef TIM2_HANDLE = {};
 drv::clock        CLOCK{ TIM2_HANDLE };
@@ -513,7 +497,8 @@ em::result setup_board()
 
 core::drivers setup_core_drivers()
 {
-        CFG.payload = fw::load_persistent_config( FLASH_STORAGE, CFG.map );
+        // XXX: fix
+        // CFG.payload = fw::load_persistent_config( FLASH_STORAGE, CFG.map );
 
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != em::SUCCESS )
@@ -547,7 +532,7 @@ core::drivers setup_core_drivers()
 
         return core::drivers{
             .cfg         = &CFG,
-            .storage     = &FLASH_STORAGE,
+            .storage     = nullptr,  // XXX: fix
             .clock       = &CLOCK,
             .position    = pos,
             .current     = adc_pooler == nullptr ? nullptr : &ADC_CURRENT,

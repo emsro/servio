@@ -1,10 +1,10 @@
+#include "../cfg/dispatcher.hpp"
+#include "../ctl/control.hpp"
 #include "../iface/def.h"
-#include "cfg/dispatcher.hpp"
-#include "ctl/control.hpp"
-#include "emlabcpp/outcome.h"
-#include "fw/util.hpp"
+#include "./util.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
+#include <emlabcpp/outcome.h>
 
 #pragma once
 

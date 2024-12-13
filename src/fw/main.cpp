@@ -1,6 +1,6 @@
-#include "brd/brd.hpp"
-#include "fw/context.hpp"
-#include "fw/store_persistent_config.hpp"
+#include "../brd/brd.hpp"
+#include "./context.hpp"
+#include "./store_persistent_config.hpp"
 
 std::byte INPUT_BUFFER[128];
 std::byte OUTPUT_BUFFER[128];

@@ -1,6 +1,6 @@
-#include "cfg/storage.hpp"
-#include "drv/interfaces.hpp"
-#include "fw/util.hpp"
+#include "../cfg/storage.hpp"
+#include "../drv/interfaces.hpp"
+#include "./util.hpp"
 
 #pragma once
 
@@ -21,11 +21,11 @@ inline cfg::payload load_persistent_config( drv::storage_iface& iface, cfg::map&
         if ( r == em::FAILURE )
                 return res;
 
-        auto check_f = [&]( const cfg::payload& payload ) {
+        auto check_f = [&]( cfg::payload const& payload ) {
                 res = payload;
                 return true;
         };
-        const bool cfg_loaded = cfg::load( buffer, check_f, cfg );
+        bool const cfg_loaded = cfg::load( buffer, check_f, cfg );
 
         if ( !cfg_loaded )
                 fw::stop_exec();

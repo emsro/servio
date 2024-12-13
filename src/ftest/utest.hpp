@@ -1,7 +1,7 @@
 #pragma once
 
-#include "base/base.hpp"
-#include "ctl/control.hpp"
+#include "../base/base.hpp"
+#include "../ctl/control.hpp"
 
 #include <emlabcpp/defer.h>
 #include <emlabcpp/experimental/testing/collect.h>
@@ -21,11 +21,11 @@ struct uctx
         t::collector& coll;
         t::node_id    met_id;  // TODO: this prevents pararell execution
 
-        em::function_view< em::result( std::span< const std::byte > ) > record;
+        em::function_view< em::result( std::span< std::byte const > ) > record;
 
         uctx(
             t::collector&                                                   coll,
-            em::function_view< em::result( std::span< const std::byte > ) > record )
+            em::function_view< em::result( std::span< std::byte const > ) > record )
           : coll( coll )
           , record( std::move( record ) )
         {

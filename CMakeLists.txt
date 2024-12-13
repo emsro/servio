@@ -103,6 +103,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
   add_subdirectory(src)
   add_subdirectory(src/brd/proto3)
+  add_subdirectory(src/brd/proto4)
 
 else()
   message(WARNING "unsupported platform ${SERVIO_PLATFORM}")

@@ -1,9 +1,9 @@
-#include "emlabcpp/result.h"
-#include "fw/util.hpp"
+#include "../../fw/util.hpp"
 #include "setup.hpp"
 
 #include <cstdlib>
 #include <cstring>
+#include <emlabcpp/result.h>
 #include <initializer_list>
 #include <limits>
 

@@ -1,6 +1,6 @@
 
-#include "drv/adc_pooler.hpp"
-#include "drv/interfaces.hpp"
+#include "./adc_pooler.hpp"
+#include "./interfaces.hpp"
 
 #pragma once
 

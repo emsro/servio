@@ -1,6 +1,6 @@
-#include "base/base.hpp"
-#include "drv/interfaces.hpp"
-#include "platform.hpp"
+#include "../base/base.hpp"
+#include "../plt/platform.hpp"
+#include "./interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 
@@ -17,9 +17,9 @@ public:
         {
         }
 
-        clock( const clock& )            = delete;
+        clock( clock const& )            = delete;
         clock( clock&& )                 = delete;
-        clock& operator=( const clock& ) = delete;
+        clock& operator=( clock const& ) = delete;
         clock& operator=( clock&& )      = delete;
 
         void timer_period_irq( TIM_HandleTypeDef* h )
@@ -42,9 +42,9 @@ public:
         }
 
 private:
-        static constexpr uint64_t uif_mask   = 1U << 31;
-        volatile uint64_t         irq_count_ = 0;
-        TIM_HandleTypeDef&        tim_;
+        static constexpr uint64_t uif_mask = 1U << 31;
+        uint64_t volatile irq_count_       = 0;
+        TIM_HandleTypeDef& tim_;
 };
 
 }  // namespace servio::drv

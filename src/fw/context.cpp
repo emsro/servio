@@ -1,7 +1,7 @@
-#include "fw/context.hpp"
+#include "./context.hpp"
 
-#include "brd/brd.hpp"
-#include "fw/util.hpp"
+#include "../brd/brd.hpp"
+#include "./util.hpp"
 
 namespace servio::fw
 {

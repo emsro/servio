@@ -1,7 +1,7 @@
-#include "drv/bits/cobs_rx_container.h"
-#include "drv/interfaces.hpp"
-#include "platform.hpp"
-#include "sntr/sentry.hpp"
+#include "../plt/platform.hpp"
+#include "../sntr/sentry.hpp"
+#include "./bits/cobs_rx_container.h"
+#include "./interfaces.hpp"
 
 #include <emlabcpp/experimental/cobs.h>
 #include <emlabcpp/experimental/function_view.h>
@@ -25,15 +25,15 @@ class cobs_uart : public com_iface
 
 public:
         cobs_uart(
-            const char*                 id,
+            char const*                 id,
             sntr::central_sentry_iface& central,
             clk_iface&                  clk,
             UART_HandleTypeDef*         uart,
             DMA_HandleTypeDef*          tx_dma );
 
-        cobs_uart( const cobs_uart& )            = delete;
+        cobs_uart( cobs_uart const& )            = delete;
         cobs_uart( cobs_uart&& )                 = delete;
-        cobs_uart& operator=( const cobs_uart& ) = delete;
+        cobs_uart& operator=( cobs_uart const& ) = delete;
         cobs_uart& operator=( cobs_uart&& )      = delete;
 
         void rx_cplt_irq( UART_HandleTypeDef* huart );
@@ -45,7 +45,7 @@ public:
         em::result start() override;
 
         em::result
-        send( std::span< const std::span< const std::byte > > data, microseconds timeout ) override;
+        send( std::span< std::span< std::byte const > const > data, microseconds timeout ) override;
 
         // we tolerate overrun, dma, frame, noise error - we can recover
         static constexpr uint32_t tolerable_hal_errors =
@@ -58,7 +58,7 @@ private:
         UART_HandleTypeDef* uart_   = nullptr;
         DMA_HandleTypeDef*  tx_dma_ = nullptr;
 
-        volatile bool                 tx_done_ = true;
+        bool volatile tx_done_ = true;
         std::array< std::byte, 1024 > tx_buffer_;
 
         std::byte               rx_byte_;
@@ -66,7 +66,7 @@ private:
 };
 
 inline cobs_uart::cobs_uart(
-    const char*                 id,
+    char const*                 id,
     sntr::central_sentry_iface& central,
     clk_iface&                  clk,
     UART_HandleTypeDef*         uart,

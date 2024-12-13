@@ -1,12 +1,12 @@
 #pragma once
 
-#include "core/core.hpp"
-#include "drv/callbacks.hpp"
-#include "drv/interfaces.hpp"
-#include "drv/retainers.hpp"
-#include "ftest/bench/base.hpp"
-#include "ftest/utest.hpp"
-#include "platform.hpp"
+#include "../../core/core.hpp"
+#include "../../drv/callbacks.hpp"
+#include "../../drv/interfaces.hpp"
+#include "../../drv/retainers.hpp"
+#include "../../plt/platform.hpp"
+#include "../utest.hpp"
+#include "./base.hpp"
 
 #include <emlabcpp/enumerate.h>
 
@@ -82,7 +82,7 @@ struct loop_frequency
         t::coroutine< float > store_as_freq(
             em::pmr::memory_resource& mem,
             uctx&                     coll,
-            const std::string_view    sv,
+            std::string_view const    sv,
             std::size_t               counter,
             microseconds              time_window )
         {

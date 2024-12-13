@@ -1,6 +1,6 @@
 servio_add_library(
   TARGET platform
-  INCLUDE ../inc/ ./ ../../
+  INCLUDE ./
   SOURCES adc.cpp
           clock.cpp
           uart.cpp

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "core/core.hpp"
-#include "core/drivers.hpp"
+#include "../core/core.hpp"
+#include "../core/drivers.hpp"
 
 namespace servio::ftest
 {

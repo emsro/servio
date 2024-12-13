@@ -1,6 +1,6 @@
 #pragma once
 
-#include "sntr/central_sentry_iface.hpp"
+#include "./central_sentry_iface.hpp"
 
 #include <emlabcpp/static_vector.h>
 #include <tuple>
@@ -18,7 +18,7 @@ struct test_central_sentry : central_sentry_iface
                 DEGR
         };
 
-        using record = std::tuple< src, const char*, ecode_set, const char*, data_type >;
+        using record = std::tuple< src, char const*, ecode_set, char const*, data_type >;
         em::static_vector< record, 8 > buffer;
         bool                           is_inop = false;
 
@@ -28,10 +28,10 @@ struct test_central_sentry : central_sentry_iface
         }
 
         void report_inoperable(
-            const char*      src,
+            char const*      src,
             ecode_set        ecodes,
-            const char*      emsg,
-            const data_type& data ) override
+            char const*      emsg,
+            data_type const& data ) override
         {
                 is_inop = true;
                 if ( !buffer.full() )
@@ -39,10 +39,10 @@ struct test_central_sentry : central_sentry_iface
         }
 
         void report_degraded(
-            const char*      src,
+            char const*      src,
             ecode_set        ecodes,
-            const char*      emsg,
-            const data_type& data ) override
+            char const*      emsg,
+            data_type const& data ) override
         {
                 if ( !buffer.full() )
                         buffer.emplace_back( DEGR, src, ecodes, emsg, data );

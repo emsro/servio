@@ -1,6 +1,6 @@
-#include "drv/callbacks.hpp"
-#include "platform.hpp"
-#include "sntr/sentry.hpp"
+#include "../plt/platform.hpp"
+#include "../sntr/sentry.hpp"
+#include "./callbacks.hpp"
 
 #pragma once
 
@@ -55,7 +55,7 @@ struct detailed_adc_channel
                 else if ( used == N )
                         sentry_.set_degraded( ADC_POOLER_SAMPLES_OVER_ERR, "too many samples", N );
 
-                const std::span readings( std::data( buffer ), used );
+                std::span const readings( std::data( buffer ), used );
 
                 last_value = em::avg( readings );
                 callback->on_value_irq( last_value, readings );
@@ -100,7 +100,7 @@ struct adc_channel
 template < auto ID >
 struct adc_channel_with_callback : adc_channel< ID >
 {
-        adc_channel_with_callback( const char* id, sntr::central_sentry_iface& central )
+        adc_channel_with_callback( char const* id, sntr::central_sentry_iface& central )
           : adc_channel< ID >( { id, central } )
         {
         }
@@ -126,7 +126,7 @@ struct adc_pooler
         {
         }
 
-        void set_seq( em::view< const id_type* > seq )
+        void set_seq( em::view< id_type const* > seq )
         {
                 sequence_ = seq;
         }
@@ -159,7 +159,7 @@ struct adc_pooler
         {
                 if ( h != adc_ )
                         return;
-                const auto active_id = sequence_[sequence_i_];
+                auto const active_id = sequence_[sequence_i_];
                 with( active_id, [&]( auto& item ) {
                         item.conv_cplt( *adc_ );
                 } );
@@ -201,7 +201,7 @@ private:
 
         std::size_t sequence_i_ = 0;
 
-        em::view< const id_type* > sequence_;
+        em::view< id_type const* > sequence_;
         Set                        set_;
 };
 

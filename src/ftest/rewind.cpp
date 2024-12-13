@@ -1,5 +1,5 @@
 
-#include "ftest/rewind.hpp"
+#include "./rewind.hpp"
 
 namespace servio::ftest
 {

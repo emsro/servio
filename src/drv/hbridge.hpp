@@ -1,7 +1,7 @@
-#include "drv/callbacks.hpp"
-#include "drv/interfaces.hpp"
-#include "platform.hpp"
-#include "sntr/sentry.hpp"
+#include "../plt/platform.hpp"
+#include "../sntr/sentry.hpp"
+#include "./callbacks.hpp"
+#include "./interfaces.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <span>
@@ -21,9 +21,9 @@ class hbridge : public pwm_motor_iface, public period_iface
 public:
         hbridge( TIM_HandleTypeDef* tim );
 
-        hbridge( const hbridge& )            = delete;
+        hbridge( hbridge const& )            = delete;
         hbridge( hbridge&& )                 = delete;
-        hbridge& operator=( const hbridge& ) = delete;
+        hbridge& operator=( hbridge const& ) = delete;
         hbridge& operator=( hbridge&& )      = delete;
 
         hbridge* setup( uint32_t mc1_channel, uint32_t mc2_channel );

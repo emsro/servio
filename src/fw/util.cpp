@@ -1,6 +1,6 @@
 #include "util.hpp"
 
-#include "core/globals.hpp"
+#include "../core/globals.hpp"
 
 namespace servio::fw
 {
