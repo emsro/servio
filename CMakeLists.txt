@@ -43,7 +43,6 @@ target_link_libraries(emlabcpp PUBLIC magic_enum)
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
   cpmaddpackage("gh:CLIUtils/CLI11@2.4.2")
-  cpmaddpackage("gh:doctest/doctest@2.4.11")
   cpmaddpackage("gh:nlohmann/json@3.11.3")
   cpmaddpackage(
     NAME
