@@ -89,9 +89,9 @@ $(document).ready(function(){initNavTree('flash__cfg_8hpp_source.html',''); init
 <div class="contents">
 <a href="flash__cfg_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="storage_8hpp.html">cfg/storage.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="interfaces_8hpp.html">drv/interfaces.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="platform_8hpp.html">platform.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../cfg/storage.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../plt/platform.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="interfaces_8hpp.html">./interfaces.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;emlabcpp/defer.h&gt;</span></div>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('flash__cfg_8hpp_source.html',''); init
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1flash__storage.html#a9056881e1665f885f377d2909dd371d1">store_page</a>( std::span&lt; const std::byte &gt; data ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1flash__storage.html#a7a00d269f942a63dcbb0f7e8b1ae2879">store_page</a>( std::span&lt; std::byte const &gt; data ) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        em::outcome <a class="code" href="classservio_1_1drv_1_1flash__storage.html#ae1145234825dda396925c352f0649aa9">load_page</a>( std::span&lt; std::byte &gt; data ) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
@@ -118,12 +118,10 @@ $(document).ready(function(){initNavTree('flash__cfg_8hpp_source.html',''); init
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1flash__storage_html"><div class="ttname"><a href="classservio_1_1drv_1_1flash__storage.html">servio::drv::flash_storage</a></div><div class="ttdef"><b>Definition:</b> flash_cfg.hpp:14</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1flash__storage_html_a35af08b51c145f25bbd2ca0909d32aa3"><div class="ttname"><a href="classservio_1_1drv_1_1flash__storage.html#a35af08b51c145f25bbd2ca0909d32aa3">servio::drv::flash_storage::flash_storage</a></div><div class="ttdeci">flash_storage(std::span&lt; em::view&lt; std::byte * &gt;, 2 &gt; pages)</div><div class="ttdef"><b>Definition:</b> flash_cfg.hpp:16</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1flash__storage_html_a9056881e1665f885f377d2909dd371d1"><div class="ttname"><a href="classservio_1_1drv_1_1flash__storage.html#a9056881e1665f885f377d2909dd371d1">servio::drv::flash_storage::store_page</a></div><div class="ttdeci">em::result store_page(std::span&lt; const std::byte &gt; data) override</div><div class="ttdef"><b>Definition:</b> flash_cfg.cpp:62</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1flash__storage_html_ae1145234825dda396925c352f0649aa9"><div class="ttname"><a href="classservio_1_1drv_1_1flash__storage.html#ae1145234825dda396925c352f0649aa9">servio::drv::flash_storage::load_page</a></div><div class="ttdeci">em::outcome load_page(std::span&lt; std::byte &gt; data) override</div><div class="ttdef"><b>Definition:</b> flash_cfg.cpp:89</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1flash__storage_html_a7a00d269f942a63dcbb0f7e8b1ae2879"><div class="ttname"><a href="classservio_1_1drv_1_1flash__storage.html#a7a00d269f942a63dcbb0f7e8b1ae2879">servio::drv::flash_storage::store_page</a></div><div class="ttdeci">em::result store_page(std::span&lt; std::byte const &gt; data) override</div><div class="ttdef"><b>Definition:</b> flash_cfg.cpp:60</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1flash__storage_html_ae1145234825dda396925c352f0649aa9"><div class="ttname"><a href="classservio_1_1drv_1_1flash__storage.html#ae1145234825dda396925c352f0649aa9">servio::drv::flash_storage::load_page</a></div><div class="ttdeci">em::outcome load_page(std::span&lt; std::byte &gt; data) override</div><div class="ttdef"><b>Definition:</b> flash_cfg.cpp:87</div></div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1drv.html">servio::drv</a></div><div class="ttdef"><b>Definition:</b> adc_pooler.hpp:8</div></div>
-<div class="ttc" id="aplatform_8hpp_html"><div class="ttname"><a href="platform_8hpp.html">platform.hpp</a></div></div>
-<div class="ttc" id="astorage_8hpp_html"><div class="ttname"><a href="storage_8hpp.html">storage.hpp</a></div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1storage__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1storage__iface.html">servio::drv::storage_iface</a></div><div class="ttdef"><b>Definition:</b> interfaces.hpp:64</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -131,7 +129,7 @@ $(document).ready(function(){initNavTree('flash__cfg_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="flash__cfg_8hpp.html">flash_cfg.hpp</a></li>
-    <li class="footer">Generated on Thu Dec 12 2024 21:21:49 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Dec 13 2024 15:51:40 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

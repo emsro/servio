@@ -1,14 +1,14 @@
 <map id="src/drv/hbridge.hpp" name="src/drv/hbridge.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="278,5,425,32"/>
-<area shape="rect" id="node2" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="113,87,249,114"/>
-<area shape="rect" id="node3" href="$interfaces_8hpp.html" title=" " alt="" coords="5,169,145,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="143,244,197,271"/>
-<area shape="rect" id="node6" href="$platform_8hpp.html" title=" " alt="" coords="502,87,609,114"/>
-<area shape="rect" id="node8" href="$sentry_8hpp.html" title=" " alt="" coords="359,87,477,114"/>
-<area shape="rect" id="node12" title=" " alt="" coords="633,80,811,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="201,319,267,345"/>
-<area shape="rect" id="node7" href="$hal_8hpp.html" title=" " alt="" coords="640,169,711,196"/>
-<area shape="rect" id="node9" href="$sntr_2base_8hpp.html" title=" " alt="" coords="419,244,508,271"/>
-<area shape="rect" id="node10" title=" " alt="" coords="521,319,589,345"/>
-<area shape="rect" id="node11" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="323,169,513,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="431,5,578,32"/>
+<area shape="rect" id="node2" href="$platform_8hpp.html" title=" " alt="" coords="17,87,155,114"/>
+<area shape="rect" id="node4" href="$sentry_8hpp.html" title=" " alt="" coords="267,87,398,114"/>
+<area shape="rect" id="node9" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="592,87,711,114"/>
+<area shape="rect" id="node10" href="$interfaces_8hpp.html" title=" " alt="" coords="418,169,541,196"/>
+<area shape="rect" id="node11" title=" " alt="" coords="551,244,605,271"/>
+<area shape="rect" id="node12" title=" " alt="" coords="735,80,912,121"/>
+<area shape="rect" id="node3" href="$hal_8hpp.html" title=" " alt="" coords="5,169,76,196"/>
+<area shape="rect" id="node5" href="$sntr_2base_8hpp.html" title=" " alt="" coords="269,244,359,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="147,319,215,345"/>
+<area shape="rect" id="node8" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="152,169,343,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="446,319,513,345"/>
 </map>

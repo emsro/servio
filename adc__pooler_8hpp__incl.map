@@ -1,13 +1,13 @@
 <map id="src/drv/adc_pooler.hpp" name="src/drv/adc_pooler.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="117,5,285,32"/>
-<area shape="rect" id="node2" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="5,155,141,181"/>
-<area shape="rect" id="node6" href="$platform_8hpp.html" title=" " alt="" coords="148,80,255,107"/>
-<area shape="rect" id="node8" href="$sentry_8hpp.html" title=" " alt="" coords="314,80,433,107"/>
-<area shape="rect" id="node3" href="$interfaces_8hpp.html" title=" " alt="" coords="58,229,198,256"/>
-<area shape="rect" id="node4" title=" " alt="" coords="203,304,269,331"/>
-<area shape="rect" id="node5" title=" " alt="" coords="48,304,101,331"/>
-<area shape="rect" id="node7" href="$hal_8hpp.html" title=" " alt="" coords="166,155,237,181"/>
-<area shape="rect" id="node9" href="$sntr_2base_8hpp.html" title=" " alt="" coords="299,229,389,256"/>
-<area shape="rect" id="node10" title=" " alt="" coords="334,304,402,331"/>
-<area shape="rect" id="node11" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="313,155,503,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="173,5,341,32"/>
+<area shape="rect" id="node2" href="$platform_8hpp.html" title=" " alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node4" href="$sentry_8hpp.html" title=" " alt="" coords="192,80,323,107"/>
+<area shape="rect" id="node9" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="429,155,547,181"/>
+<area shape="rect" id="node3" href="$hal_8hpp.html" title=" " alt="" coords="15,155,86,181"/>
+<area shape="rect" id="node5" href="$sntr_2base_8hpp.html" title=" " alt="" coords="225,229,314,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="189,304,257,331"/>
+<area shape="rect" id="node8" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="162,155,353,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="343,304,409,331"/>
+<area shape="rect" id="node10" href="$interfaces_8hpp.html" title=" " alt="" coords="413,229,536,256"/>
+<area shape="rect" id="node11" title=" " alt="" coords="497,304,551,331"/>
 </map>

@@ -8,6 +8,6 @@ var structservio_1_1drv_1_1adc__pooler =
     [ "on_period_irq", "structservio_1_1drv_1_1adc__pooler.html#af4303b8347974ca47f979e64733ed682", null ],
     [ "operator*", "structservio_1_1drv_1_1adc__pooler.html#a1cd6af5094b499c8d954d3328081c697", null ],
     [ "operator->", "structservio_1_1drv_1_1adc__pooler.html#a1070a919585287ced780cffa680fdf85", null ],
-    [ "set_seq", "structservio_1_1drv_1_1adc__pooler.html#a51810b4cf71f9296ce38297912d3f14c", null ],
+    [ "set_seq", "structservio_1_1drv_1_1adc__pooler.html#ab2c65fe8d06ffc714df95c8f273adde1", null ],
     [ "start", "structservio_1_1drv_1_1adc__pooler.html#a6f088b3c4b20f74a15db3ee2ae496500", null ]
 ];

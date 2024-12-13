@@ -10,7 +10,7 @@ var searchData=
   ['leds_2ehpp_557',['leds.hpp',['../leds_8hpp.html',1,'']]],
   ['leds_5fgpio_5fcfg_558',['leds_gpio_cfg',['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg',1,'servio::plt']]],
   ['leds_5fiface_559',['leds_iface',['../structservio_1_1drv_1_1leds__iface.html',1,'servio::drv']]],
-  ['leds_5fsetup_560',['leds_setup',['../namespaceservio_1_1brd.html#a4197e2e5a9a4ac54415764c123fef94f',1,'servio::brd']]],
+  ['leds_5fsetup_560',['leds_setup',['../namespaceservio_1_1brd.html#a8018a4a9a9bc9b1d4af53c14d646d4c8',1,'servio::brd']]],
   ['leds_5ftest_561',['leds_test',['../namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test',1,'servio::drv::tests']]],
   ['leds_5ftimer_5fcfg_562',['leds_timer_cfg',['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg',1,'servio::plt']]],
   ['leds_5fvals_563',['leds_vals',['../namespaceservio.html#structservio_1_1leds__vals',1,'servio']]],

@@ -2,8 +2,8 @@ var searchData=
 [
   ['_5fbuild_5fiface_5fcfg_5fmap_6',['_build_iface_cfg_map',['../namespaceservio_1_1fw.html#a73feb1e8feb3a290d746a5f33b28696f',1,'servio::fw']]],
   ['_5fclose_7',['_close',['../extra_8cpp.html#ad26efdbfacf3ddbee142d421bf01272f',1,'extra.cpp']]],
-  ['_5fconfig_5fend_8',['_config_end',['../board_8cpp.html#ab9c4570b264e5103deb948e89f713529',1,'board.cpp']]],
-  ['_5fconfig_5fstart_9',['_config_start',['../board_8cpp.html#a906f7ef6acab4815e6b77b601dac50e7',1,'board.cpp']]],
+  ['_5fconfig_5fend_8',['_config_end',['../proto3_2board_8cpp.html#ab9c4570b264e5103deb948e89f713529',1,'board.cpp']]],
+  ['_5fconfig_5fstart_9',['_config_start',['../proto3_2board_8cpp.html#a906f7ef6acab4815e6b77b601dac50e7',1,'board.cpp']]],
   ['_5fexit_10',['_exit',['../extra_8cpp.html#a31dcaff181eaa6a8cfb484e35f23fb5f',1,'extra.cpp']]],
   ['_5fgetpid_11',['_getpid',['../extra_8cpp.html#a945e539df8e0f66d3c73c533fe1968ee',1,'extra.cpp']]],
   ['_5fis_5fdec_12',['_is_dec',['../namespaceservio_1_1iface.html#ab13711a55cca63cc0baf543b26d2f88f',1,'servio::iface']]],

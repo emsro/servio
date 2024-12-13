@@ -1,6 +1,6 @@
 <map id="src/drv/defs.hpp" name="src/drv/defs.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="53,5,179,32"/>
-<area shape="rect" id="node2" href="$platform_8hpp.html" title=" " alt="" coords="5,80,112,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="136,80,211,107"/>
-<area shape="rect" id="node3" href="$hal_8hpp.html" title=" " alt="" coords="23,155,94,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="77,5,203,32"/>
+<area shape="rect" id="node2" href="$platform_8hpp.html" title=" " alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="168,80,243,107"/>
+<area shape="rect" id="node3" href="$hal_8hpp.html" title=" " alt="" coords="39,155,110,181"/>
 </map>

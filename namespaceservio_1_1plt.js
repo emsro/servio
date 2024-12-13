@@ -18,7 +18,7 @@ var namespaceservio_1_1plt =
     [ "setup_dac", "namespaceservio_1_1plt.html#a9a5ad25189bfd840d70b81e6cc064ce6", null ],
     [ "setup_dts", "namespaceservio_1_1plt.html#a60d4cc26aa950bc45225db9bae6dfa05", null ],
     [ "setup_encoder_timer", "namespaceservio_1_1plt.html#ab37835d18590cef3c440c59263d761d2", null ],
-    [ "setup_gpio", "namespaceservio_1_1plt.html#abd588eda5c3b709d51591980b12b1848", null ],
+    [ "setup_gpio", "namespaceservio_1_1plt.html#abd82db4ae277c933a1955cdada712dc6", null ],
     [ "setup_hbridge_timers", "namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c", null ],
     [ "setup_leds_channel", "namespaceservio_1_1plt.html#a200428b196e587e16f5ffd08676efc76", null ],
     [ "setup_uart", "namespaceservio_1_1plt.html#a7b7c8043898e10b87fa53fd5bb021d96", null ],

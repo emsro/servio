@@ -1,13 +1,13 @@
 <map id="src/fw/main.cpp" name="src/fw/main.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="234,5,358,32"/>
-<area shape="rect" id="node2" href="$brd_8hpp.html" title=" " alt="" coords="5,229,101,256"/>
-<area shape="rect" id="node6" href="$context_8hpp.html" title=" " alt="" coords="237,80,355,107"/>
-<area shape="rect" id="node10" href="$store__persistent__config_8hpp.html" title=" " alt="" coords="428,304,575,345"/>
-<area shape="rect" id="node3" href="$map_8hpp.html" title=" " alt="" coords="249,468,351,495"/>
-<area shape="rect" id="node4" href="$drivers_8hpp.html" title=" " alt="" coords="79,311,206,338"/>
-<area shape="rect" id="node5" href="$interfaces_8hpp.html" title=" " alt="" coords="281,393,433,420"/>
-<area shape="rect" id="node7" href="$cfg_2dispatcher_8hpp.html" title=" " alt="" coords="176,229,317,256"/>
-<area shape="rect" id="node8" href="$core_8hpp.html" title=" " alt="" coords="281,311,404,338"/>
-<area shape="rect" id="node9" href="$fw_2dispatcher_8hpp.html" title=" " alt="" coords="176,155,312,181"/>
-<area shape="rect" id="node11" href="$storage_8hpp.html" title=" " alt="" coords="457,393,580,420"/>
+<area shape="rect" id="node1" title=" " alt="" coords="239,5,363,32"/>
+<area shape="rect" id="node2" href="$brd_8hpp.html" title=" " alt="" coords="5,229,113,256"/>
+<area shape="rect" id="node6" href="$context_8hpp.html" title=" " alt="" coords="247,80,354,107"/>
+<area shape="rect" id="node10" href="$store__persistent__config_8hpp.html" title=" " alt="" coords="447,304,581,345"/>
+<area shape="rect" id="node3" href="$map_8hpp.html" title=" " alt="" coords="261,468,375,495"/>
+<area shape="rect" id="node4" href="$drivers_8hpp.html" title=" " alt="" coords="86,311,225,338"/>
+<area shape="rect" id="node5" href="$interfaces_8hpp.html" title=" " alt="" coords="299,393,451,420"/>
+<area shape="rect" id="node7" href="$cfg_2dispatcher_8hpp.html" title=" " alt="" coords="189,229,343,256"/>
+<area shape="rect" id="node8" href="$core_8hpp.html" title=" " alt="" coords="299,311,422,338"/>
+<area shape="rect" id="node9" href="$fw_2dispatcher_8hpp.html" title=" " alt="" coords="189,155,314,181"/>
+<area shape="rect" id="node11" href="$storage_8hpp.html" title=" " alt="" coords="476,393,611,420"/>
 </map>

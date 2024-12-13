@@ -1,0 +1,36 @@
+var proto4_2board_8cpp =
+[
+    [ "adc_set", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set", [
+      [ "id_type", "namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1", null ],
+      [ "id_type", "namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1", null ],
+      [ "current", "namespaceservio_1_1brd.html#a346644d1f1901a6078bc9ec5a6af9883", null ],
+      [ "position", "namespaceservio_1_1brd.html#a9fd8c06a6adadf6d1c51462323e71752", null ],
+      [ "vcc", "namespaceservio_1_1brd.html#a6c7d5a095766cdeb38982a8186a2d61f", null ]
+    ] ],
+    [ "ADC1_IRQHandler", "proto4_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b", null ],
+    [ "adc_pooler_setup", "proto4_2board_8cpp.html#a48e26a3111574036c12af8e0ad948472", null ],
+    [ "comms_setup", "proto4_2board_8cpp.html#aee366d78fb4dd7ae0e84ee4a28665113", null ],
+    [ "get_curr_coeff", "proto4_2board_8cpp.html#a1f7c49c0c9a0737b07080952026a5ebc", null ],
+    [ "get_default_config", "proto4_2board_8cpp.html#a2668116163a78a9f1c4b9993fce25530", null ],
+    [ "GPDMA1_Channel0_IRQHandler", "proto4_2board_8cpp.html#ab4f8ebd906a5475a5817237942b25f62", null ],
+    [ "GPDMA1_Channel1_IRQHandler", "proto4_2board_8cpp.html#a491410644cceae6a73091be92aa6f5d5", null ],
+    [ "GPDMA1_Channel2_IRQHandler", "proto4_2board_8cpp.html#a39c0c4c797bc531071ac66cb95c2cae8", null ],
+    [ "HAL_ADC_ConvCpltCallback", "proto4_2board_8cpp.html#a14eed1aeca4fd0404c553698e9370c85", null ],
+    [ "HAL_ADC_ErrorCallback", "proto4_2board_8cpp.html#a6540ad5da39d6ceff72603fe4fd2fc1a", null ],
+    [ "HAL_TIM_PeriodElapsedCallback", "proto4_2board_8cpp.html#a641bc903b980920fddc6954a40e4ec51", null ],
+    [ "HAL_UART_ErrorCallback", "proto4_2board_8cpp.html#af9825e42db142e52d9cd233081c2d018", null ],
+    [ "HAL_UART_RxCpltCallback", "proto4_2board_8cpp.html#a84719ef5a2750117d3d1b6e105d8f148", null ],
+    [ "HAL_UART_TxCpltCallback", "proto4_2board_8cpp.html#a94a249281eebfa3bd9aa3f979cc9f03d", null ],
+    [ "hbridge_setup", "proto4_2board_8cpp.html#a7e933c86ae59b33c53a15dd89f58febc", null ],
+    [ "install_stop_callback", "proto4_2board_8cpp.html#a0f720ee34102e93c489fc104ab51e4ed", null ],
+    [ "leds_setup", "proto4_2board_8cpp.html#a8018a4a9a9bc9b1d4af53c14d646d4c8", null ],
+    [ "quad_encoder_setup", "proto4_2board_8cpp.html#a064090e0ba34cfb1d6f51f247cf479aa", null ],
+    [ "setup_board", "proto4_2board_8cpp.html#acf0eac3166e968f5cefe71de1f5d5ca8", null ],
+    [ "setup_core_drivers", "proto4_2board_8cpp.html#a58f703e939140ddd318ba1e8202e6153", null ],
+    [ "setup_debug_comms", "proto4_2board_8cpp.html#a3a32ee93be6ec4e7cdc01ac78546f79f", null ],
+    [ "start_callback", "proto4_2board_8cpp.html#aac2ab253dd62c8d22e7504bd106c6283", null ],
+    [ "TIM1_UP_IRQHandler", "proto4_2board_8cpp.html#ac13ffcf8c8dd96138053b8a854004583", null ],
+    [ "TIM2_IRQHandler", "proto4_2board_8cpp.html#a69ed77607e30e5935ea2d6994e94be10", null ],
+    [ "USART1_IRQHandler", "proto4_2board_8cpp.html#a27fb9800d727337121da9525aca0b557", null ],
+    [ "USART2_IRQHandler", "proto4_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba", null ]
+];

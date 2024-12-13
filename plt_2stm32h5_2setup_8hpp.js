@@ -56,7 +56,7 @@ var plt_2stm32h5_2setup_8hpp =
     [ "setup_dac", "plt_2stm32h5_2setup_8hpp.html#a9a5ad25189bfd840d70b81e6cc064ce6", null ],
     [ "setup_dts", "plt_2stm32h5_2setup_8hpp.html#a60d4cc26aa950bc45225db9bae6dfa05", null ],
     [ "setup_encoder_timer", "plt_2stm32h5_2setup_8hpp.html#ab37835d18590cef3c440c59263d761d2", null ],
-    [ "setup_gpio", "plt_2stm32h5_2setup_8hpp.html#abd588eda5c3b709d51591980b12b1848", null ],
+    [ "setup_gpio", "plt_2stm32h5_2setup_8hpp.html#abd82db4ae277c933a1955cdada712dc6", null ],
     [ "setup_hbridge_timers", "plt_2stm32h5_2setup_8hpp.html#a917cc285404ba1c9a62080f12567ad7c", null ],
     [ "setup_leds_channel", "plt_2stm32h5_2setup_8hpp.html#a200428b196e587e16f5ffd08676efc76", null ],
     [ "setup_uart", "plt_2stm32h5_2setup_8hpp.html#a7b7c8043898e10b87fa53fd5bb021d96", null ]

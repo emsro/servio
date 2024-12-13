@@ -1,14 +1,14 @@
 var classservio_1_1drv_1_1hbridge =
 [
     [ "hbridge", "classservio_1_1drv_1_1hbridge.html#aff8253967397832ae0961ee23deae45f", null ],
-    [ "hbridge", "classservio_1_1drv_1_1hbridge.html#a7c940c511f041ccec9838378700e8d86", null ],
+    [ "hbridge", "classservio_1_1drv_1_1hbridge.html#adc4dbb9d9b8878c96015e5e1f7af2889", null ],
     [ "hbridge", "classservio_1_1drv_1_1hbridge.html#a11b0a38a2f997cf5d8b685fdf387edee", null ],
     [ "force_stop", "classservio_1_1drv_1_1hbridge.html#adf7f06e92b257bc4bf6cfeb0255971d4", null ],
     [ "get_direction", "classservio_1_1drv_1_1hbridge.html#a1b5c9f4c4bfb86c522a7879094746b62", null ],
     [ "get_period_callback", "classservio_1_1drv_1_1hbridge.html#ae47fffca2033b088aa3d9efbce97dd88", null ],
     [ "is_stopped", "classservio_1_1drv_1_1hbridge.html#a1756b1fc5080d2f1d13d24a12e6f7a50", null ],
-    [ "operator=", "classservio_1_1drv_1_1hbridge.html#a42d128185198c3d4eefb384c22df681d", null ],
     [ "operator=", "classservio_1_1drv_1_1hbridge.html#a835c18733b3b5c3692d4cd83a9cb6a37", null ],
+    [ "operator=", "classservio_1_1drv_1_1hbridge.html#aa6b00f6aa9fa44720885a3cfc1865004", null ],
     [ "set_invert", "classservio_1_1drv_1_1hbridge.html#aacfb37303df17a349a73b7cec5a001d8", null ],
     [ "set_period_callback", "classservio_1_1drv_1_1hbridge.html#a28b3688cc2a74637b053e8c8b3d05d40", null ],
     [ "set_power", "classservio_1_1drv_1_1hbridge.html#adee305934427c204358465cb87c2bbb8", null ],
