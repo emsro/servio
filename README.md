@@ -1,7 +1,7 @@
 
 # Servio
 
-[![Tests](https://github.com/emsro/servio/actions/workflows/tests.yml/badge.svg)](https://github.com/emsro/servio/actions/workflows/tests.yml)
+[![Build](https://github.com/emsro/servio/actions/workflows/build.yml/badge.svg)](https://github.com/emsro/servio/actions/workflows/build.yml)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nlohmann/json/master/LICENSE.MIT)
 
 Open firmware for DC servomotors written in C++20.
