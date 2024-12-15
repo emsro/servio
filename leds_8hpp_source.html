@@ -110,38 +110,36 @@ $(document).ready(function(){initNavTree('leds_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1leds.html#a1b9aae775d0f6321cb6e00ef2acd5195">   24</a></span>&#160;        <a class="code" href="classservio_1_1drv_1_1leds.html">leds</a>* <a class="code" href="classservio_1_1drv_1_1leds.html#a1b9aae775d0f6321cb6e00ef2acd5195">setup</a>( <a class="code" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> red, <a class="code" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> blue, uint32_t y_chan, uint32_t g_chan )</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1leds.html#a11d230b96ee081e4e9ee9c2c3ad2b7b5">   24</a></span>&#160;        <a class="code" href="classservio_1_1drv_1_1leds.html">leds</a>* <a class="code" href="classservio_1_1drv_1_1leds.html#a11d230b96ee081e4e9ee9c2c3ad2b7b5">setup</a>( <a class="code" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> red, <a class="code" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> blue, uint32_t g_chan )</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                red_    = red;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                blue_   = blue;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                y_chan_ = y_chan;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                g_chan_ = g_chan;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">return</span> tim_ != <span class="keyword">nullptr</span> ? this : <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1leds.html#af876d35e30904d36099d8a2fc9c897c3">start</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1leds.html#a15878bd23155000b0661fe8e97e86ee4">force_red_led</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1leds.html#a414da11d6e3beaa0d7ebdb04eddc1197">update</a>( <a class="code" href="namespaceservio.html#structservio_1_1leds__vals">leds_vals</a> <span class="keyword">const</span>&amp; <a class="code" href="classservio_1_1drv_1_1leds.html">leds</a> ) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">bool</span> red_forced_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> red_;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> blue_;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        TIM_HandleTypeDef* tim_;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        uint32_t y_chan_;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        uint32_t g_chan_;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                g_chan_ = g_chan;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">return</span> tim_ != <span class="keyword">nullptr</span> ? this : <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        em::result <a class="code" href="classservio_1_1drv_1_1leds.html#af876d35e30904d36099d8a2fc9c897c3">start</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1leds.html#a15878bd23155000b0661fe8e97e86ee4">force_red_led</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1drv_1_1leds.html#a414da11d6e3beaa0d7ebdb04eddc1197">update</a>( <a class="code" href="namespaceservio.html#structservio_1_1leds__vals">leds_vals</a> <span class="keyword">const</span>&amp; <a class="code" href="classservio_1_1drv_1_1leds.html">leds</a> ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">bool</span> red_forced_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> red_;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">pin_cfg</a> blue_;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        TIM_HandleTypeDef* tim_;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        uint32_t g_chan_;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}  <span class="comment">// namespace servio::drv</span></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1leds_html"><div class="ttname"><a href="classservio_1_1drv_1_1leds.html">servio::drv::leds</a></div><div class="ttdef"><b>Definition:</b> leds.hpp:17</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1leds_html_a11d230b96ee081e4e9ee9c2c3ad2b7b5"><div class="ttname"><a href="classservio_1_1drv_1_1leds.html#a11d230b96ee081e4e9ee9c2c3ad2b7b5">servio::drv::leds::setup</a></div><div class="ttdeci">leds * setup(pin_cfg red, pin_cfg blue, uint32_t g_chan)</div><div class="ttdef"><b>Definition:</b> leds.hpp:24</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1leds_html_a15878bd23155000b0661fe8e97e86ee4"><div class="ttname"><a href="classservio_1_1drv_1_1leds.html#a15878bd23155000b0661fe8e97e86ee4">servio::drv::leds::force_red_led</a></div><div class="ttdeci">void force_red_led() override</div><div class="ttdef"><b>Definition:</b> leds.cpp:10</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1leds_html_a1b9aae775d0f6321cb6e00ef2acd5195"><div class="ttname"><a href="classservio_1_1drv_1_1leds.html#a1b9aae775d0f6321cb6e00ef2acd5195">servio::drv::leds::setup</a></div><div class="ttdeci">leds * setup(pin_cfg red, pin_cfg blue, uint32_t y_chan, uint32_t g_chan)</div><div class="ttdef"><b>Definition:</b> leds.hpp:24</div></div>
-<div class="ttc" id="aclassservio_1_1drv_1_1leds_html_a414da11d6e3beaa0d7ebdb04eddc1197"><div class="ttname"><a href="classservio_1_1drv_1_1leds.html#a414da11d6e3beaa0d7ebdb04eddc1197">servio::drv::leds::update</a></div><div class="ttdeci">void update(leds_vals const &amp;leds) override</div><div class="ttdef"><b>Definition:</b> leds.cpp:26</div></div>
+<div class="ttc" id="aclassservio_1_1drv_1_1leds_html_a414da11d6e3beaa0d7ebdb04eddc1197"><div class="ttname"><a href="classservio_1_1drv_1_1leds.html#a414da11d6e3beaa0d7ebdb04eddc1197">servio::drv::leds::update</a></div><div class="ttdeci">void update(leds_vals const &amp;leds) override</div><div class="ttdef"><b>Definition:</b> leds.cpp:24</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1leds_html_aeb04b29d89a7674ddd4396490f1d692c"><div class="ttname"><a href="classservio_1_1drv_1_1leds.html#aeb04b29d89a7674ddd4396490f1d692c">servio::drv::leds::leds</a></div><div class="ttdeci">leds(TIM_HandleTypeDef *tim)</div><div class="ttdef"><b>Definition:</b> leds.hpp:19</div></div>
 <div class="ttc" id="aclassservio_1_1drv_1_1leds_html_af876d35e30904d36099d8a2fc9c897c3"><div class="ttname"><a href="classservio_1_1drv_1_1leds.html#af876d35e30904d36099d8a2fc9c897c3">servio::drv::leds::start</a></div><div class="ttdeci">em::result start()</div><div class="ttdef"><b>Definition:</b> leds.cpp:15</div></div>
 <div class="ttc" id="adefs_8hpp_html"><div class="ttname"><a href="defs_8hpp.html">defs.hpp</a></div></div>
@@ -157,7 +155,7 @@ $(document).ready(function(){initNavTree('leds_8hpp_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="leds_8hpp.html">leds.hpp</a></li>
-    <li class="footer">Generated on Fri Dec 13 2024 16:09:48 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Dec 15 2024 12:49:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

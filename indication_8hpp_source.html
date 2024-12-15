@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// - heartbeat - pulsing of green led - heartbeat controls frequency of the pulses</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// - engaged/disengaged - pulsing of green led - eng/diseng controls intesinty of pulses</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// - unable to reach goal - yellow is ON for 50ms</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// - unable to reach goal - TBD XXX/TODO</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// - booting - blue is ON</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// - initialized - blue is OFF</span></div>
@@ -126,40 +126,35 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1indication.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classservio_1_1mon_1_1indication.html">indication</a></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1indication.html#a2174f06a431d58e9965c50c791dcf61b">   40</a></span>&#160;        <a class="code" href="classservio_1_1mon_1_1indication.html#a2174f06a431d58e9965c50c791dcf61b">indication</a>( <a class="code" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> now )</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          : last_tick_( now )</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          , yellow_engaged_until_( 0_us )</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;          , blue_disengage_at_( 0_us )</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1indication.html#adb4dc7d00a2c0c2fdd1d19918b53ee58">   40</a></span>&#160;        <a class="code" href="classservio_1_1mon_1_1indication.html#adb4dc7d00a2c0c2fdd1d19918b53ee58">indication</a>()</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          : blue_disengage_at_( 0_us )</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classservio_1_1mon_1_1indication.html#a8018aa91f3f07ec6dd7742995bc2d9fc">on_event</a>( <a class="code" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> now, <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52">indication_event</a> <span class="keyword">const</span>&amp; e );</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classservio_1_1mon_1_1indication.html#a8018aa91f3f07ec6dd7742995bc2d9fc">on_event</a>( <a class="code" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> now, <a class="code" href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52">indication_event</a> <span class="keyword">const</span>&amp; e );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1mon_1_1indication.html#a7b3388544b792bc995507846fb60fcc1">tick</a>( <a class="code" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> now );</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classservio_1_1mon_1_1indication.html#a7b3388544b792bc995507846fb60fcc1">tick</a>( <a class="code" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> now );</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1indication.html#a0e19e799c3e9d8e98f639d9bd352fc42">   51</a></span>&#160;        <a class="code" href="namespaceservio.html#structservio_1_1leds__vals">leds_vals</a> <span class="keyword">const</span>&amp; <a class="code" href="classservio_1_1mon_1_1indication.html#a0e19e799c3e9d8e98f639d9bd352fc42">get_state</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">return</span> state_;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="namespaceservio.html#structservio_1_1leds__vals">leds_vals</a>    state_;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> last_tick_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classservio_1_1mon_1_1indication.html#a0e19e799c3e9d8e98f639d9bd352fc42">   49</a></span>&#160;        <a class="code" href="namespaceservio.html#structservio_1_1leds__vals">leds_vals</a> <span class="keyword">const</span>&amp; <a class="code" href="classservio_1_1mon_1_1indication.html#a0e19e799c3e9d8e98f639d9bd352fc42">get_state</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">return</span> state_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="namespaceservio.html#structservio_1_1leds__vals">leds_vals</a> state_;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="structservio_1_1mon_1_1blinker.html">blinker</a> red_bl_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="structservio_1_1mon_1_1pulser.html">pulser</a>  green_pu_;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="structservio_1_1mon_1_1blinker.html">blinker</a> red_bl_;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="structservio_1_1mon_1_1pulser.html">pulser</a>  green_pu_;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> blue_disengage_at_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> yellow_engaged_until_;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> blue_disengage_at_;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}  <span class="comment">// namespace servio::mon</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}  <span class="comment">// namespace servio::mon</span></div>
 <div class="ttc" id="aclassservio_1_1mon_1_1indication_html"><div class="ttname"><a href="classservio_1_1mon_1_1indication.html">servio::mon::indication</a></div><div class="ttdef"><b>Definition:</b> indication.hpp:38</div></div>
-<div class="ttc" id="aclassservio_1_1mon_1_1indication_html_a0e19e799c3e9d8e98f639d9bd352fc42"><div class="ttname"><a href="classservio_1_1mon_1_1indication.html#a0e19e799c3e9d8e98f639d9bd352fc42">servio::mon::indication::get_state</a></div><div class="ttdeci">leds_vals const  &amp; get_state() const</div><div class="ttdef"><b>Definition:</b> indication.hpp:51</div></div>
-<div class="ttc" id="aclassservio_1_1mon_1_1indication_html_a2174f06a431d58e9965c50c791dcf61b"><div class="ttname"><a href="classservio_1_1mon_1_1indication.html#a2174f06a431d58e9965c50c791dcf61b">servio::mon::indication::indication</a></div><div class="ttdeci">indication(microseconds now)</div><div class="ttdef"><b>Definition:</b> indication.hpp:40</div></div>
+<div class="ttc" id="aclassservio_1_1mon_1_1indication_html_a0e19e799c3e9d8e98f639d9bd352fc42"><div class="ttname"><a href="classservio_1_1mon_1_1indication.html#a0e19e799c3e9d8e98f639d9bd352fc42">servio::mon::indication::get_state</a></div><div class="ttdeci">leds_vals const  &amp; get_state() const</div><div class="ttdef"><b>Definition:</b> indication.hpp:49</div></div>
 <div class="ttc" id="aclassservio_1_1mon_1_1indication_html_a7b3388544b792bc995507846fb60fcc1"><div class="ttname"><a href="classservio_1_1mon_1_1indication.html#a7b3388544b792bc995507846fb60fcc1">servio::mon::indication::tick</a></div><div class="ttdeci">void tick(microseconds now)</div><div class="ttdef"><b>Definition:</b> indication.cpp:41</div></div>
 <div class="ttc" id="aclassservio_1_1mon_1_1indication_html_a8018aa91f3f07ec6dd7742995bc2d9fc"><div class="ttname"><a href="classservio_1_1mon_1_1indication.html#a8018aa91f3f07ec6dd7742995bc2d9fc">servio::mon::indication::on_event</a></div><div class="ttdeci">bool on_event(microseconds now, indication_event const &amp;e)</div><div class="ttdef"><b>Definition:</b> indication.cpp:6</div></div>
+<div class="ttc" id="aclassservio_1_1mon_1_1indication_html_adb4dc7d00a2c0c2fdd1d19918b53ee58"><div class="ttname"><a href="classservio_1_1mon_1_1indication.html#adb4dc7d00a2c0c2fdd1d19918b53ee58">servio::mon::indication::indication</a></div><div class="ttdeci">indication()</div><div class="ttdef"><b>Definition:</b> indication.hpp:40</div></div>
 <div class="ttc" id="aeffects_8hpp_html"><div class="ttname"><a href="effects_8hpp.html">effects.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1mon_html"><div class="ttname"><a href="namespaceservio_1_1mon.html">servio::mon</a></div><div class="ttdef"><b>Definition:</b> effects.cpp:8</div></div>
 <div class="ttc" id="anamespaceservio_1_1mon_html_af16397f3997f66e0f28c3409143cfc52"><div class="ttname"><a href="namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52">servio::mon::indication_event</a></div><div class="ttdeci">indication_event</div><div class="ttdef"><b>Definition:</b> indication.hpp:24</div></div>
@@ -182,7 +177,7 @@ $(document).ready(function(){initNavTree('indication_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a6b4a2e33ade41a94a8fb6b8af82a267.html">mon</a></li><li class="navelem"><a class="el" href="indication_8hpp.html">indication.hpp</a></li>
-    <li class="footer">Generated on Fri Dec 13 2024 16:09:48 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Dec 15 2024 12:49:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
