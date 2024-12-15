@@ -22,7 +22,7 @@ cpmaddpackage(
 )
 cpmaddpackage("gh:Neargye/magic_enum@0.9.7")
 cpmaddpackage("gh:avakar/atom#f5d5c6c0f5fdc96a6275d55f7c4ee98396e407a6")
-cpmaddpackage("gh:koniarik/vari@0.4.7")
+cpmaddpackage("gh:koniarik/vari@0.4.8")
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
   target_compile_options(
@@ -33,7 +33,9 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   set(SERVIO_SHARED_FLAGS "-fsingle-precision-constant -gdwarf-2")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SERVIO_SHARED_FLAGS} -gdwarf-2")
+  set(CMAKE_CXX_FLAGS
+      "${CMAKE_CXX_FLAGS} ${SERVIO_SHARED_FLAGS} -gdwarf-2 -DVARI_DISABLE_ASSERTS=ON"
+  )
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SERVIO_SHARED_FLAGS}")
 
 endif()

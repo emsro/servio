@@ -387,14 +387,6 @@ drv::leds* leds_setup()
         plt::setup_gpio( red );
         plt::setup_gpio( blue );
 
-        uint32_t     yellow_ch = TIM_CHANNEL_3;
-        drv::pin_cfg yellow{
-            .pin       = GPIO_PIN_10,
-            .port      = GPIOB,
-            .mode      = GPIO_MODE_AF_PP,
-            .alternate = GPIO_AF1_TIM2,
-        };
-
         uint32_t     green_ch = TIM_CHANNEL_1;
         drv::pin_cfg green{
             .pin       = GPIO_PIN_2,
@@ -403,8 +395,7 @@ drv::leds* leds_setup()
             .alternate = GPIO_AF14_TIM2,
         };
 
-        em::result res = plt::setup_leds_channel( &TIM2_HANDLE, yellow_ch, yellow ) &&
-                         plt::setup_leds_channel( &TIM2_HANDLE, yellow_ch, green );
+        em::result res = plt::setup_leds_channel( &TIM2_HANDLE, green_ch, green );
 
         if ( res == em::SUCCESS )
                 return LEDS.setup( red, blue, green_ch );
