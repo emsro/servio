@@ -72,7 +72,6 @@ struct leds_vals
 {
         bool    red;
         bool    blue;
-        uint8_t yellow;
         uint8_t green;
 };
 

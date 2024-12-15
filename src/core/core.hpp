@@ -26,7 +26,7 @@ struct core
           : ctl( now, ctl::config{} )
           , conv()
           , met( now, 0.F, { 0.F, 2 * pi } )
-          , ind( now )
+          , ind()
           , mon( now, ctl, vcc_drv, temp_drv, ind, conv )
         {
                 ind.tick( clk.get_us() );

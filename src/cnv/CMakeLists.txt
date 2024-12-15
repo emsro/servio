@@ -1,5 +1,4 @@
 add_library(cnvlib INTERFACE)
-target_include_directories(cnvlib INTERFACE ../)
 target_link_libraries(cnvlib INTERFACE emlabcpp)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

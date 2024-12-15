@@ -14,7 +14,7 @@ namespace servio::mon
 // - heartbeat - pulsing of green led - heartbeat controls frequency of the pulses
 // - engaged/disengaged - pulsing of green led - eng/diseng controls intesinty of pulses
 //
-// - unable to reach goal - yellow is ON for 50ms
+// - unable to reach goal - TBD XXX/TODO
 //
 // - booting - blue is ON
 // - initialized - blue is OFF
@@ -37,10 +37,8 @@ enum class indication_event
 class indication
 {
 public:
-        indication( microseconds now )
-          : last_tick_( now )
-          , yellow_engaged_until_( 0_us )
-          , blue_disengage_at_( 0_us )
+        indication()
+          : blue_disengage_at_( 0_us )
         {
         }
 
@@ -54,13 +52,10 @@ public:
         }
 
 private:
-        leds_vals    state_;
-        microseconds last_tick_;
+        leds_vals state_;
 
         blinker red_bl_;
         pulser  green_pu_;
-
-        microseconds yellow_engaged_until_;
 
         microseconds blue_disengage_at_;
 };

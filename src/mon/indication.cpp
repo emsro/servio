@@ -3,7 +3,7 @@
 namespace servio::mon
 {
 
-bool indication::on_event( microseconds now, const indication_event& e )
+bool indication::on_event( microseconds now, indication_event const& e )
 {
         switch ( e ) {
         case indication_event::VOLTAGE_LOW:
@@ -23,7 +23,7 @@ bool indication::on_event( microseconds now, const indication_event& e )
                 green_pu_.intensity = 0.5F;
                 break;
         case indication_event::STUCK:
-                yellow_engaged_until_ = now + 50_ms;
+                // XXX: unfinished
                 break;
         case indication_event::BOOTING:
                 blue_disengage_at_ = now + 10_s;
@@ -44,8 +44,6 @@ void indication::tick( microseconds now )
         state_.red = red_bl_.update( now );
 
         state_.green = green_pu_.update();
-
-        state_.yellow = now < yellow_engaged_until_ ? 255U : 0U;
 
         state_.blue = now < blue_disengage_at_;
 }

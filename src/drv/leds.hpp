@@ -21,11 +21,10 @@ public:
         {
         }
 
-        leds* setup( pin_cfg red, pin_cfg blue, uint32_t y_chan, uint32_t g_chan )
+        leds* setup( pin_cfg red, pin_cfg blue, uint32_t g_chan )
         {
                 red_    = red;
                 blue_   = blue;
-                y_chan_ = y_chan;
                 g_chan_ = g_chan;
                 return tim_ != nullptr ? this : nullptr;
         }
@@ -44,7 +43,6 @@ private:
 
         TIM_HandleTypeDef* tim_;
 
-        uint32_t y_chan_;
         uint32_t g_chan_;
 };
 

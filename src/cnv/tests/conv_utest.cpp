@@ -1,5 +1,5 @@
-#include "cnv/converter.hpp"
-#include "cnv/linear_converter.hpp"
+#include "../converter.hpp"
+#include "../linear_converter.hpp"
 
 #include <cstdint>
 #include <emlabcpp/algorithm.h>

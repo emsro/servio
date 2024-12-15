@@ -211,6 +211,9 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
                 .mode = GPIO_MODE_ANALOG,
             } );
         if ( enable_pos )
+                return nullptr;
+        /*
+        // XXX: turns out there is no free pin on adc for potenitometer?
                 plt::setup_adc_channel(
                     ADC_POOLER->position.chconf,
                     ADC_CHANNEL_0,
@@ -219,6 +222,7 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
                         .port = GPIOA,
                         .mode = GPIO_MODE_ANALOG,
                     } );
+                    */
         plt::setup_adc_channel(
             ADC_POOLER->vcc.chconf,
             ADC_CHANNEL_7,
@@ -227,24 +231,23 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
                 .port = GPIOA,
                 .mode = GPIO_MODE_ANALOG,
             } );
-        em::result res = em::worst_of(
-            plt::setup_adc(
-                ADC_HANDLE,
-                ADC_DMA_HANDLE,
-                plt::adc_cfg{
-                    .adc_instance     = ADC1,
-                    .adc_irq_priority = 1,
-                    .adc_trigger      = ADC_EXTERNALTRIG_T6_TRGO,
-                    .dma =
-                        plt::dma_cfg{
-                            .irq          = GPDMA1_Channel0_IRQn,
-                            .irq_priority = 1,
-                            .instance     = GPDMA1_Channel0,
-                            .request      = GPDMA1_REQUEST_ADC1,
-                            .priority     = DMA_HIGH_PRIORITY,
-                        },
-                } ),
-            plt::setup_adc_timer( TIM6_HANDLE, TIM6 ) );
+        em::result res = plt::setup_adc(
+                             ADC_HANDLE,
+                             ADC_DMA_HANDLE,
+                             plt::adc_cfg{
+                                 .adc_instance     = ADC1,
+                                 .adc_irq_priority = 1,
+                                 .adc_trigger      = ADC_EXTERNALTRIG_T6_TRGO,
+                                 .dma =
+                                     plt::dma_cfg{
+                                         .irq          = GPDMA1_Channel0_IRQn,
+                                         .irq_priority = 1,
+                                         .instance     = GPDMA1_Channel0,
+                                         .request      = GPDMA1_REQUEST_ADC1,
+                                         .priority     = DMA_HIGH_PRIORITY,
+                                     },
+                             } ) &&
+                         plt::setup_adc_timer( TIM6_HANDLE, TIM6 );
 
         if ( res != em::SUCCESS )
                 return nullptr;
@@ -292,38 +295,37 @@ drv::hbridge* hbridge_setup()
 drv::cobs_uart* comms_setup()
 {
         __HAL_RCC_GPDMA1_CLK_ENABLE();
-        __HAL_RCC_USART2_CLK_ENABLE();
-        __HAL_RCC_GPIOB_CLK_ENABLE();
+        __HAL_RCC_USART1_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();
 
         plt::uart_cfg cfg{
-            .uart_instance = USART2,
+            .uart_instance = USART1,
             .baudrate      = 460800,
-            .irq           = USART2_IRQn,
+            .irq           = USART1_IRQn,
             .irq_priority  = 2,
             .rx =
                 drv::pin_cfg{
-                    .pin       = GPIO_PIN_15,
-                    .port      = GPIOB,
-                    .alternate = GPIO_AF13_USART2,
+                    .pin       = GPIO_PIN_10,
+                    .port      = GPIOA,
+                    .alternate = GPIO_AF7_USART1,
                 },
             .tx =
                 drv::pin_cfg{
-                    .pin       = GPIO_PIN_8,
+                    .pin       = GPIO_PIN_9,
                     .port      = GPIOA,
-                    .alternate = GPIO_AF4_USART2,
+                    .alternate = GPIO_AF7_USART1,
                 },
             .tx_dma =
                 plt::dma_cfg{
                     .irq          = GPDMA1_Channel1_IRQn,
                     .irq_priority = 2,
                     .instance     = GPDMA1_Channel1,
-                    .request      = GPDMA1_REQUEST_USART2_TX,
+                    .request      = GPDMA1_REQUEST_USART1_TX,
                     .priority     = DMA_LOW_PRIORITY_LOW_WEIGHT,
                 },
         };
 
-        if ( setup_uart( UART2_HANDLE, UART2_DMA_HANDLE, cfg ) != em::SUCCESS )
+        if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
 
         return &COMMS;
@@ -333,31 +335,31 @@ drv::com_iface* setup_debug_comms()
 {
         __HAL_RCC_GPDMA1_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();
-        __HAL_RCC_USART1_CLK_ENABLE();
+        __HAL_RCC_USART2_CLK_ENABLE();
 
         plt::uart_cfg cfg{
-            .uart_instance = USART1,
+            .uart_instance = USART2,
             .baudrate      = 460800,
-            .irq           = USART1_IRQn,
+            .irq           = USART2_IRQn,
             .irq_priority  = 2,
             .rx =
                 drv::pin_cfg{
                     .pin       = GPIO_PIN_11,
                     .port      = GPIOA,
-                    .alternate = GPIO_AF8_USART1,
+                    .alternate = GPIO_AF4_USART2,
                 },
             .tx =
                 drv::pin_cfg{
                     .pin       = GPIO_PIN_12,
                     .port      = GPIOA,
-                    .alternate = GPIO_AF8_USART1,
+                    .alternate = GPIO_AF4_USART2,
                 },
             .tx_dma =
                 plt::dma_cfg{
                     .irq          = GPDMA1_Channel2_IRQn,
                     .irq_priority = 2,
                     .instance     = GPDMA1_Channel2,
-                    .request      = GPDMA1_REQUEST_USART1_TX,
+                    .request      = GPDMA1_REQUEST_USART2_TX,
                     .priority     = DMA_LOW_PRIORITY_LOW_WEIGHT,
                 },
         };
@@ -401,12 +403,11 @@ drv::leds* leds_setup()
             .alternate = GPIO_AF14_TIM2,
         };
 
-        em::result res = em::worst_of(
-            plt::setup_leds_channel( &TIM2_HANDLE, yellow_ch, yellow ),
-            plt::setup_leds_channel( &TIM2_HANDLE, yellow_ch, green ) );
+        em::result res = plt::setup_leds_channel( &TIM2_HANDLE, yellow_ch, yellow ) &&
+                         plt::setup_leds_channel( &TIM2_HANDLE, yellow_ch, green );
 
         if ( res == em::SUCCESS )
-                return LEDS.setup( red, blue, yellow_ch, green_ch );
+                return LEDS.setup( red, blue, green_ch );
 
         return nullptr;
 }

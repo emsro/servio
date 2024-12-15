@@ -243,24 +243,23 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
                 .port = GPIOA,
                 .mode = GPIO_MODE_ANALOG,
             } );
-        em::result res = em::worst_of(
-            plt::setup_adc(
-                ADC_HANDLE,
-                ADC_DMA_HANDLE,
-                plt::adc_cfg{
-                    .adc_instance     = ADC1,
-                    .adc_irq_priority = 1,
-                    .adc_trigger      = ADC_EXTERNALTRIG_T6_TRGO,
-                    .dma =
-                        plt::dma_cfg{
-                            .irq          = GPDMA1_Channel0_IRQn,
-                            .irq_priority = 1,
-                            .instance     = GPDMA1_Channel0,
-                            .request      = GPDMA1_REQUEST_ADC1,
-                            .priority     = DMA_HIGH_PRIORITY,
-                        },
-                } ),
-            plt::setup_adc_timer( TIM6_HANDLE, TIM6 ) );
+        em::result res = plt::setup_adc(
+                             ADC_HANDLE,
+                             ADC_DMA_HANDLE,
+                             plt::adc_cfg{
+                                 .adc_instance     = ADC1,
+                                 .adc_irq_priority = 1,
+                                 .adc_trigger      = ADC_EXTERNALTRIG_T6_TRGO,
+                                 .dma =
+                                     plt::dma_cfg{
+                                         .irq          = GPDMA1_Channel0_IRQn,
+                                         .irq_priority = 1,
+                                         .instance     = GPDMA1_Channel0,
+                                         .request      = GPDMA1_REQUEST_ADC1,
+                                         .priority     = DMA_HIGH_PRIORITY,
+                                     },
+                             } ) &&
+                         plt::setup_adc_timer( TIM6_HANDLE, TIM6 );
 
         if ( res != em::SUCCESS )
                 return nullptr;
@@ -401,14 +400,6 @@ drv::leds* leds_setup()
         plt::setup_gpio( red );
         plt::setup_gpio( blue );
 
-        uint32_t     yellow_ch = TIM_CHANNEL_3;
-        drv::pin_cfg yellow{
-            .pin       = GPIO_PIN_10,
-            .port      = GPIOB,
-            .mode      = GPIO_MODE_AF_PP,
-            .alternate = GPIO_AF1_TIM2,
-        };
-
         uint32_t     green_ch = TIM_CHANNEL_1;
         drv::pin_cfg green{
             .pin       = GPIO_PIN_2,
@@ -417,12 +408,10 @@ drv::leds* leds_setup()
             .alternate = GPIO_AF14_TIM2,
         };
 
-        em::result res = em::worst_of(
-            plt::setup_leds_channel( &TIM2_HANDLE, yellow_ch, yellow ),
-            plt::setup_leds_channel( &TIM2_HANDLE, yellow_ch, green ) );
+        em::result res = plt::setup_leds_channel( &TIM2_HANDLE, green_ch, green );
 
         if ( res == em::SUCCESS )
-                return LEDS.setup( red, blue, yellow_ch, green_ch );
+                return LEDS.setup( red, blue, green_ch );
 
         return nullptr;
 }

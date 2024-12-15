@@ -1,5 +1,6 @@
 #include "./dispatcher.hpp"
 
+#include "../base/fmt.hpp"
 #include "../cnv/utils.hpp"
 #include "./map_cfg.hpp"
 
@@ -50,13 +51,6 @@ iface::mode_key get_mode( ctl::control const& ctl )
         return "disengaged"_a;
 }
 
-std::string_view fmt_arithm( em::view< char* > buff, auto&& x )
-{
-        // XXX: check ec
-        // auto [ptr, ec] = std::to_chars( buff.begin(), buff.end(), x );
-        return {};
-}
-
 std::string_view handle_get_property(
     ctl::control const&         ctl,
     mtr::metrics const&         met,
@@ -83,7 +77,7 @@ std::string_view handle_get_property(
         else if ( inpt == "velocity"_a )
                 x = met.get_velocity();
 
-        return fmt_arithm( buffer, x );
+        return base::fmt_arithm( buffer, x );
 }
 
 std::string_view
@@ -131,7 +125,7 @@ handle_get_config( cfg::dispatcher const& cfg_disp, iface::cfg_key ck, em::view<
                         else
                                 res = copy_string_to( "false", buffer );
                 else
-                        res = fmt_arithm( buffer, cfg_disp.m.get_val< R::key >() );
+                        res = base::fmt_arithm( buffer, cfg_disp.m.get_val< R::key >() );
         } );
         return res;
 }
