@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"functions.html":[7,3,0],
+"functions.html":[7,3,0,0],
 "functions_b.html":[7,3,0,1],
 "functions_c.html":[7,3,0,2],
 "functions_d.html":[7,3,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "map_8hpp_source.html":[8,0,1,3,5],
 "map__cfg_8hpp.html":[8,0,1,10,8],
 "map__cfg_8hpp.html#a73feb1e8feb3a290d746a5f33b28696f":[8,0,1,10,8,0],
-"map__cfg_8hpp.html#ad47f9327b09f44b6fd3a8cc7218ce729":[8,0,1,10,8,1],
-"map__cfg_8hpp_source.html":[8,0,1,10,8],
-"math_8hpp.html":[8,0,1,3,6]
+"map__cfg_8hpp.html#ad47f9327b09f44b6fd3a8cc7218ce729":[8,0,1,10,8,1]
 };

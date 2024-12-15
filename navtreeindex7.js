@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"stm32h5xx__hal__conf_8h.html#ac38f5d91c277dad9a16f7aebb2ed0661":[8,0,1,15,0,7,74],
+"stm32h5xx__hal__conf_8h.html#ac3dd74314ed62ac8575e2f9f48b3ac48":[8,0,1,15,0,7,42],
 "stm32h5xx__hal__conf_8h.html#ac5104af8fa310ea51facc7949116192e":[8,0,1,15,0,7,19],
 "stm32h5xx__hal__conf_8h.html#ac783fa1f8bcc0d8f9291cd1b6774411a":[8,0,1,15,0,7,5],
 "stm32h5xx__hal__conf_8h.html#ac79983d623c7f760c5077618a453561b":[8,0,1,15,0,7,105],
@@ -247,7 +249,5 @@ var NAVTREEINDEX7 =
 "structservio_1_1drv_1_1temp__iface.html#ade23ccc9e6b7ba0638470add1a3c4943":[7,0,2,6,35,0],
 "structservio_1_1drv_1_1tests_1_1clock__test.html":[7,0,2,6,1,5],
 "structservio_1_1drv_1_1tests_1_1clock__test.html#a662f82eb3b12226d132e06b1d7117585":[7,0,2,6,1,5,0],
-"structservio_1_1drv_1_1tests_1_1clock__test.html#aa011ee6518a69343e673ef0afd7608df":[7,0,2,6,1,5,2],
-"structservio_1_1drv_1_1tests_1_1clock__test.html#abf50d5793744c5605b6916e6ab10f90b":[7,0,2,6,1,5,1],
-"structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html":[7,0,2,6,1,1]
+"structservio_1_1drv_1_1tests_1_1clock__test.html#aa011ee6518a69343e673ef0afd7608df":[7,0,2,6,1,5,2]
 };
