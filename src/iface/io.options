@@ -1,5 +1,0 @@
-* anonymous_oneof:true
-* mangle_names:M_STRIP_PACKAGE
-* long_names:false
-Config.model	max_length:30
-ErrorMsg.msg	max_length:63

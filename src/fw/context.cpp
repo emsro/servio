@@ -14,10 +14,17 @@ context setup_context()
                 fw::stop_exec();
 
         context ctx{
-            .cdrv    = cdrv,
-            .core    = { cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock },
-            .scbs    = { *cdrv.motor, *cdrv.clock, ctx.core.ctl, ctx.core.met, ctx.core.conv },
-            .cfg_dis = { cdrv.cfg->map, ctx.core, *cdrv.motor, *cdrv.position },
+            .cdrv = cdrv,
+            .core = { cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature, *cdrv.clock },
+            .scbs = { *cdrv.motor, *cdrv.clock, ctx.core.ctl, ctx.core.met, ctx.core.conv },
+            .cfg_dis =
+                { cdrv.cfg->map,
+                  ctx.core.ctl,
+                  ctx.core.conv,
+                  ctx.core.met,
+                  ctx.core.mon,
+                  *cdrv.motor,
+                  *cdrv.position },
         };
         ctx.scbs.set_callbacks( *cdrv.period, *cdrv.period_cb, *cdrv.position, *cdrv.current );
         ctx.cdrv.leds->update( ctx.core.ind.get_state() );

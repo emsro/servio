@@ -17,6 +17,6 @@ static constexpr std::size_t eid_bits = std::max( terminated_eid, forbidden_eid 
 static_assert( max_eid < std::min( terminated_eid, forbidden_eid ) );
 
 using ecode_set = std::bitset< eid_bits >;
-using data_type = std::variant< std::monostate, uint32_t, std::bitset< 32 > >;
+using data_type = uint32_t;
 
 }  // namespace servio::sntr

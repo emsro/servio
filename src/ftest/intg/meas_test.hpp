@@ -80,7 +80,7 @@ struct meas_pos_test
                 drv::wait_for( clk, 400_us );
 
                 float end = cor.met.get_position();
-                motor.set_power( p_zero );
+                motor.set_power( 0_pwr );
 
                 float expected_angle_change = 0.F;
                 co_await t::expect( std::abs( start - end ) > expected_angle_change );
@@ -123,7 +123,7 @@ struct meas_vel_test
                         sum += vel;
                 }
 
-                motor.set_power( p_zero );
+                motor.set_power( 0_pwr );
 
                 float average_velocity = sum / static_cast< float >( measurements );
                 co_await t::expect( !em::almost_equal( average_velocity, 0.f, 0.05f ) );

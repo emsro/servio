@@ -27,19 +27,19 @@ TEST( iface, parse )
                     << "inpt: " << inpt << "\n idx: " << res.index() << " vs " << exp.index();
         };
 
-        test_f( "mod disengaged", mode_stmt{ kv< "disengaged"_a >() } );
-        test_f( "mod power 42", mode_stmt{ kv< "power"_a >( 42.0F ) } );
-        test_f( "mod current -1", mode_stmt{ kv< "current"_a >( -1.0F ) } );
-        test_f( "mod velocity 0.0", mode_stmt{ kv< "velocity"_a >( 0.0F ) } );
-        test_f( "mod position 0", mode_stmt{ kv< "position"_a >( 0.0F ) } );
-        test_f( "mod position 3.14", mode_stmt{ kv< "position"_a >( 3.14F ) } );
+        test_f( "mode disengaged", mode_stmt{ kv< "disengaged"_a >() } );
+        test_f( "mode power 42", mode_stmt{ kv< "power"_a >( 42.0F ) } );
+        test_f( "mode current -1", mode_stmt{ kv< "current"_a >( -1.0F ) } );
+        test_f( "mode velocity 0.0", mode_stmt{ kv< "velocity"_a >( 0.0F ) } );
+        test_f( "mode position 0", mode_stmt{ kv< "position"_a >( 0.0F ) } );
+        test_f( "mode position 3.14", mode_stmt{ kv< "position"_a >( 3.14F ) } );
 
-        test_f( "prp mode", prop_stmt{ "mode"_a } );
-        test_f( "prp current", prop_stmt{ "current"_a } );
-        test_f( "prp vcc", prop_stmt{ "vcc"_a } );
-        test_f( "prp temp", prop_stmt{ "temp"_a } );
-        test_f( "prp position", prop_stmt{ "position"_a } );
-        test_f( "prp velocity", prop_stmt{ "velocity"_a } );
+        test_f( "prop mode", prop_stmt{ "mode"_a } );
+        test_f( "prop current", prop_stmt{ "current"_a } );
+        test_f( "prop vcc", prop_stmt{ "vcc"_a } );
+        test_f( "prop temp", prop_stmt{ "temp"_a } );
+        test_f( "prop position", prop_stmt{ "position"_a } );
+        test_f( "prop velocity", prop_stmt{ "velocity"_a } );
 }
 
 }  // namespace servio::iface

@@ -98,7 +98,7 @@ struct sign_test
                         ctx.coll.set( nid, "vel", vel );
                 }
                 co_await ctx.expect( std::signbit( csum ) == std::signbit( vsum ) );
-                cor.ctl.switch_to_power_control( p_zero );
+                cor.ctl.switch_to_power_control( 0_pwr );
         }
 };
 

@@ -68,8 +68,8 @@ void hbridge::set_power( pwr power )
         auto mc1_val = static_cast< float >( timer_max_ );
         auto mc2_val = static_cast< float >( timer_max_ );
 
-        if ( power == p_zero ) {
-        } else if ( power > p_zero )
+        if ( power == 0_pwr ) {
+        } else if ( power > 0_pwr )
                 mc1_val *= 1.0F - *power;
         else
                 mc2_val *= 1.0F + *power;

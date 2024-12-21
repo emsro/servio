@@ -3,7 +3,6 @@
 #include "../cfg/dispatcher.hpp"
 #include "../core/core.hpp"
 #include "../core/drivers.hpp"
-#include "./dispatcher.hpp"
 
 namespace servio::fw
 {

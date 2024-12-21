@@ -1,5 +1,6 @@
 #include "../brd/brd.hpp"
 #include "../fw/context.hpp"
+#include "../fw/util.hpp"
 #include "./setup_tests.hpp"
 #include "./testing_system.hpp"
 

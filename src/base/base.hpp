@@ -18,8 +18,6 @@ using microseconds = std::chrono::duration< uint64_t, std::micro >;
 using milliseconds = std::chrono::duration< uint64_t, std::milli >;
 using seconds      = std::chrono::duration< uint64_t >;
 
-namespace literals
-{
 constexpr microseconds operator""_s( unsigned long long int secs )
 {
         return microseconds{ secs * 1'000'000U };
@@ -39,9 +37,6 @@ constexpr std::byte operator""_b( unsigned long long int b )
 {
         return std::byte{ static_cast< uint8_t >( b ) };
 }
-}  // namespace literals
-
-using namespace literals;
 
 using sec_time = std::chrono::duration< float >;
 
@@ -80,8 +75,16 @@ struct pwr : em::quantity< pwr, float >
         using em::quantity< pwr, float >::quantity;
 };
 
-static constexpr pwr p_zero = pwr{ 0 };
-static constexpr pwr p_max  = pwr{ 1.0 };
-static constexpr pwr p_low  = pwr{ -1.0 };
+static constexpr pwr p_max = pwr{ 1.0 };
+static constexpr pwr p_low = pwr{ -1.0 };
 
+constexpr pwr operator""_pwr( unsigned long long int x )
+{
+        return pwr{ x };
+}
+
+constexpr pwr operator""_pwr( long double x )
+{
+        return pwr{ x };
+}
 }  // namespace servio

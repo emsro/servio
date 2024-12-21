@@ -30,6 +30,12 @@ central_sentry::central_sentry(
   , degr_buffer_( degr_buffer )
   , stop_callback_( stop_callback )
 {
+        for ( record& r : inop_buffer )
+                r = default_record();
+
+        for ( record& r : degr_buffer )
+                r = default_record();
+
         if ( inop_buffer_.empty() )
                 fire_inoperable();
         if ( degr_buffer_.empty() )
@@ -60,7 +66,7 @@ void central_sentry::report_inoperable(
         target->st          = record_state::SET;
         target->tp          = now;
         target->src         = src;
-        target->ecodes      = ecodes;
+        target->ecodes      = ecodes.to_ulong();
         target->emsg        = emsg;
         target->data        = data;
         fire_inoperable();
@@ -77,7 +83,7 @@ void central_sentry::report_degraded(
         target->st          = record_state::SET;
         target->tp          = now;
         target->src         = src;
-        target->ecodes      = ecodes;
+        target->ecodes      = ecodes.to_ulong();
         target->emsg        = emsg;
         target->data        = data;
 }

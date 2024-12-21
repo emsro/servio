@@ -30,13 +30,13 @@ struct central_sentry_fixture : ::testing::Test
 
 TEST( central_sentry, record )
 {
-        record rec;
+        record rec = default_record();
         EXPECT_EQ( rec.st, record_state::UNSET );
         EXPECT_EQ( rec.tp, microseconds{ 0 } );
         EXPECT_EQ( rec.src, nullptr );
         EXPECT_EQ( rec.ecodes, ecode_set{ 0 } );
         EXPECT_EQ( rec.emsg, nullptr );
-        EXPECT_EQ( rec.data, data_type{ std::monostate{} } );
+        EXPECT_EQ( rec.data, data_type{ 0 } );
 }
 
 TEST_F( central_sentry_fixture, empty_inop )

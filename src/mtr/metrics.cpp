@@ -3,9 +3,13 @@
 namespace servio::mtr
 {
 
-metrics::metrics( microseconds time, float position, limits< float > position_range )
+metrics::metrics(
+    microseconds    time,
+    float           position,
+    float           velocity,
+    limits< float > position_range )
   : last_time_( time )
-  , pv_kal_( position, position_range )
+  , pv_kal_( position, velocity, position_range )
   , st_dec_( position )
 {
         set_position_range( position_range );
@@ -26,7 +30,7 @@ void metrics::set_moving_step( float step )
         if ( now == last_time_ )
                 return;
 
-        const microseconds tdiff = now - last_time_;
+        microseconds const tdiff = now - last_time_;
 
         auto sdiff = std::chrono::duration_cast< sec_time >( tdiff );
 

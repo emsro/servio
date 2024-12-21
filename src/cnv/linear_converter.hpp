@@ -19,7 +19,7 @@ struct linear_converter
         }
 
         float offset = 0.F;
-        float scale  = 0.F;
+        float scale  = 1.F;
 };
 
 }  // namespace servio::cnv

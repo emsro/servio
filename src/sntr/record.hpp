@@ -14,12 +14,26 @@ enum class record_state
 
 struct record
 {
-        record_state st = record_state::UNSET;
-        microseconds tp{ 0 };
-        char const*  src = nullptr;
-        ecode_set    ecodes;
-        char const*  emsg = nullptr;
+        record_state st;
+        microseconds tp;
+        char const*  src;
+        uint32_t     ecodes;
+        char const*  emsg;
         data_type    data;
 };
+
+static_assert( std::is_trivially_default_constructible< record >::value );
+
+constexpr record default_record()
+{
+        return {
+            .st     = record_state::UNSET,
+            .tp     = 0_ms,
+            .src    = nullptr,
+            .ecodes = {},
+            .emsg   = nullptr,
+            .data   = {},
+        };
+}
 
 }  // namespace servio::sntr

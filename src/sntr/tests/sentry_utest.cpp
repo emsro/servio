@@ -51,7 +51,7 @@ TEST_F( sentry_fixture, insert_inop )
 
         std::size_t eid  = 7;
         char const* emsg = "saq";
-        data_type   data = std::bitset< 32 >{ 0b10101 };
+        data_type   data = 0b10101;
         s1.set_inoperable( eid, emsg, data );
 
         EXPECT_EQ( central.is_inoperable(), true );
@@ -77,7 +77,7 @@ TEST_F( sentry_fixture, insert_degr )
 
         std::size_t eid  = 7;
         char const* emsg = "saq";
-        data_type   data = std::bitset< 32 >{ 0b10101 };
+        data_type   data = 0b10101;
         s1.set_degraded( eid, emsg, data );
 
         EXPECT_EQ( central.is_inoperable(), false );

@@ -3,7 +3,7 @@
 
 #pragma once
 
-namespace servio::fw
+namespace servio::core
 {
 
 using namespace avakar::literals;
@@ -54,4 +54,4 @@ consteval auto _build_iface_cfg_map()
 
 static constexpr auto iface_to_cfg = _build_iface_cfg_map();
 
-}  // namespace servio::fw
+}  // namespace servio::core

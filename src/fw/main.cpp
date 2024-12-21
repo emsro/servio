@@ -1,6 +1,7 @@
 #include "../brd/brd.hpp"
+#include "../core/dispatcher.hpp"
 #include "./context.hpp"
-#include "./store_persistent_config.hpp"
+#include "./util.hpp"
 
 std::byte INPUT_BUFFER[128];
 std::byte OUTPUT_BUFFER[128];
@@ -16,20 +17,19 @@ int main()
         while ( true ) {
                 ctx.tick();
 
-                fw::persistent_config_writer cfg_writer{ ctx.cdrv.cfg->payload, *ctx.cdrv.storage };
-
-                fw::dispatcher dis{
-                    .motor      = *ctx.cdrv.motor,
-                    .pos_drv    = *ctx.cdrv.position,
-                    .curr_drv   = *ctx.cdrv.current,
-                    .vcc_drv    = *ctx.cdrv.vcc,
-                    .temp_drv   = *ctx.cdrv.temperature,
-                    .ctl        = ctx.core.ctl,
-                    .met        = ctx.core.met,
-                    .cfg_disp   = ctx.cfg_dis,
-                    .cfg_writer = cfg_writer,
-                    .conv       = ctx.core.conv,
-                    .now        = ctx.cdrv.clock->get_us() };
+                core::dispatcher dis{
+                    .motor    = *ctx.cdrv.motor,
+                    .pos_drv  = *ctx.cdrv.position,
+                    .curr_drv = *ctx.cdrv.current,
+                    .vcc_drv  = *ctx.cdrv.vcc,
+                    .temp_drv = *ctx.cdrv.temperature,
+                    .ctl      = ctx.core.ctl,
+                    .met      = ctx.core.met,
+                    .cfg_disp = ctx.cfg_dis,
+                    .cfg_pl   = ctx.cdrv.cfg->payload,
+                    .stor_drv = *ctx.cdrv.storage,
+                    .conv     = ctx.core.conv,
+                    .now      = ctx.cdrv.clock->get_us() };
 
                 auto [lsucc, ldata] = ctx.cdrv.comms->recv( INPUT_BUFFER );
 
@@ -43,7 +43,7 @@ int main()
                     ctx.cdrv.clock->get_us(), mon::indication_event::INCOMING_MESSAGE );
 
                 // XXX: packet handling
-                auto [succ, odata] = fw::handle_message( dis, ldata, OUTPUT_BUFFER );
+                auto [succ, odata] = core::handle_message( dis, ldata, OUTPUT_BUFFER );
 
                 if ( succ == em::ERROR )
                         fw::stop_exec();

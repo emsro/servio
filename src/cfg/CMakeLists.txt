@@ -1,7 +1,7 @@
 servio_add_library(
   TARGET cfglib
   SOURCES storage.cpp dispatcher.cpp
-  LIBS emlabcpp platform ctllib ifacelib
+  LIBS emlabcpp platform ctllib ifacelib avakar::atom
   OPTS -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

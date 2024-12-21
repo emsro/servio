@@ -19,7 +19,7 @@ TEST( Metrics, base )
         microseconds t        = 0_ms;
         microseconds tstep    = 10_us;
 
-        metrics met{ t, angle, { 0, 2 * pi } };
+        metrics met{ t, angle, 0.F, { 0, 2 * pi } };
 
         for ( std::size_t i = 0; i < 200; i++ ) {
                 t += tstep;

@@ -13,9 +13,12 @@ struct dispatcher
 {
 
         map&                  m;
-        core::core&           c;
+        ctl::control&         ctl;
+        cnv::converter&       conv;
+        mtr::metrics&         met;
+        mon::monitor&         mon;
         drv::pwm_motor_iface& motor;
-        drv::pos_iface&       pos;
+        drv::get_pos_iface&   pos;
 
         template < key Key, typename T >
         void set( T const& item )

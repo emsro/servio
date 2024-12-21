@@ -19,7 +19,6 @@ function(servio_compile_options target)
             $<$<COMPILE_LANGUAGE:CXX>:
             -Wconversion
             # -Wcast-align ## can't get rid of it at certain places
-            -Wnon-virtual-dtor
             -Woverloaded-virtual
             -Wno-mismatched-new-delete # triggers false positive on coroutines
             >)

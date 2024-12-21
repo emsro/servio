@@ -194,9 +194,9 @@ struct pwm_motor_test
                 co_await ctx.expect( !iface.is_stopped() );
                 auto d = hold( period );
 
-                co_await test( ctx, pwr{ -0.5 }, -1 );
-                co_await test( ctx, p_zero, 1 );
-                co_await test( ctx, pwr{ 0.5 }, 1 );
+                co_await test( ctx, -0.5_pwr, -1 );
+                co_await test( ctx, 0_pwr, 1 );
+                co_await test( ctx, 0.5_pwr, 1 );
         }
 };
 

@@ -1,7 +1,6 @@
 
-#include <cstdint>
-//
-#include <avakar/atom.h>
+#include "./base.h"
+
 #include <emlabcpp/experimental/string_buffer.h>
 #include <vari/vopt.h>
 #include <vari/vval.h>
@@ -10,88 +9,7 @@
 
 namespace servio::iface
 {
-
 namespace em = emlabcpp;
-
-template < typename T >
-using opt = std::optional< T >;
-
-using avakar::atom;
-using namespace avakar::literals;
-
-template < uint32_t IDX, auto Key, typename T >
-struct field
-{
-        static_assert( std::three_way_comparable< T > );
-
-        static constexpr auto id  = IDX;
-        static constexpr auto key = Key;
-        using value_type          = T;
-        T val;
-
-        constexpr auto operator<=>( field const& ) const noexcept = default;
-};
-
-template < uint32_t IDX, auto Key >
-struct field< IDX, Key, void >
-{
-        static constexpr auto id  = IDX;
-        static constexpr auto key = Key;
-        using value_type          = void;
-
-        constexpr auto operator<=>( field const& ) const noexcept = default;
-};
-
-template < auto Key, typename T >
-struct kval
-{
-        static_assert( std::three_way_comparable< T > );
-        static constexpr auto key     = Key;
-        using value_type              = T;
-        static constexpr bool is_void = false;
-
-        T value;
-
-        constexpr auto operator<=>( kval const& ) const noexcept = default;
-};
-
-template < auto Key >
-struct kval< Key, void >
-{
-
-        static constexpr auto key     = Key;
-        using value_type              = void;
-        static constexpr bool is_void = true;
-
-        constexpr auto operator<=>( kval const& ) const noexcept = default;
-};
-
-template < auto Key, typename T >
-constexpr kval< Key, T > operator|( T val, kval< Key, void > ) noexcept
-{
-        return { std::move( val ) };
-}
-
-namespace literals
-{
-template < avakar::s x >
-constexpr kval< avakar::a< x >{}, void > operator""_kv() noexcept
-{
-        return {};
-}
-}  // namespace literals
-
-template < typename Cfg >
-struct field_traits;
-
-template < typename... Field >
-struct field_traits< vari::typelist< Field... > >
-{
-        using keys  = atom< Field::key... >;
-        using types = vari::unique_typelist_t< vari::typelist< typename Field::value_type... > >;
-        using vals  = vari::typelist< kval< Field::key, typename Field::value_type >... >;
-        static constexpr uint32_t ids[] = { Field::id... };
-};
 
 using mode = vari::typelist<
     field< 1, "disengaged"_a, void >,

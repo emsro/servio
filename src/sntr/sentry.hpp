@@ -18,23 +18,13 @@ public:
         sentry& operator=( sentry const& ) = delete;
         sentry& operator=( sentry&& )      = delete;
 
-        void set_inoperable(
-            std::size_t      eid,
-            char const*      emsg,
-            data_type const& data = std::monostate{} );
+        void set_inoperable( std::size_t eid, char const* emsg, data_type const& data = {} );
 
-        void set_inoperable_set(
-            ecode_set        set,
-            char const*      emsg,
-            data_type const& data = std::monostate{} );
+        void set_inoperable_set( ecode_set set, char const* emsg, data_type const& data = {} );
 
-        void
-        set_degraded( std::size_t eid, char const* emsg, data_type const& data = std::monostate{} );
+        void set_degraded( std::size_t eid, char const* emsg, data_type const& data = {} );
 
-        void set_degraded_set(
-            ecode_set        set,
-            char const*      emsg,
-            data_type const& data = std::monostate{} );
+        void set_degraded_set( ecode_set set, char const* emsg, data_type const& data = {} );
 
         void unset_degraded( std::size_t eid );
 

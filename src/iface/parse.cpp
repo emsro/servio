@@ -295,11 +295,11 @@ vari::vval< stmt, invalid_stmt > parse( std::string_view inpt )
         auto   id = p.exp( "id"_a );
         if ( !id ) {
                 return invalid_stmt{};
-        } else if ( *id == "mod" ) {
+        } else if ( *id == "mode" ) {
                 if ( auto r = _mode_stmt( p ) )
                         return *r;
                 return invalid_stmt{};
-        } else if ( *id == "prp" ) {
+        } else if ( *id == "prop" ) {
                 auto pr = p.exp_any< prop_key >();
                 if ( !pr )
                         return invalid_stmt{};
@@ -320,9 +320,9 @@ vari::vval< stmt, invalid_stmt > parse( std::string_view inpt )
                         return cfg_get_stmt{
                             .k = *m,
                         };
-                } else if ( *sub == "cmt" ) {
+                } else if ( *sub == "commit" ) {
                         return cfg_commit_stmt{};
-                } else if ( *sub == "clr" ) {
+                } else if ( *sub == "clear" ) {
                         return cfg_clear_stmt{};
                 }
         }

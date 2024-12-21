@@ -61,8 +61,8 @@ TIM_HandleTypeDef TIM2_HANDLE = {};
 drv::clock        CLOCK{ TIM2_HANDLE };
 drv::leds         LEDS{ &TIM2_HANDLE };
 
-std::array< sntr::record, 16 >  INOPERABLE_RECORDS;
-std::array< sntr::record, 128 > DEGRADED_RECORDS;
+sntr::record INOPERABLE_RECORDS[16];
+sntr::record DEGRADED_RECORDS[128];
 
 sntr::central_sentry CENTRAL_SENTRY{
     CLOCK,
@@ -372,27 +372,26 @@ drv::com_iface* setup_debug_comms()
 
 drv::leds* leds_setup()
 {
-        __HAL_RCC_GPIOC_CLK_ENABLE();
-        __HAL_RCC_GPIOB_CLK_ENABLE();
+        __HAL_RCC_GPIOA_CLK_ENABLE();
         __HAL_RCC_TIM2_CLK_ENABLE();
 
         drv::pin_cfg red{
-            .pin  = GPIO_PIN_13,
-            .port = GPIOC,
+            .pin  = GPIO_PIN_0,
+            .port = GPIOA,
         };
         drv::pin_cfg blue{
-            .pin  = GPIO_PIN_14,
-            .port = GPIOC,
+            .pin  = GPIO_PIN_1,
+            .port = GPIOA,
         };
         plt::setup_gpio( red );
         plt::setup_gpio( blue );
-
-        uint32_t     green_ch = TIM_CHANNEL_1;
+        // XXX: in theory, red/blue could also be on TIM2
+        uint32_t     green_ch = TIM_CHANNEL_3;
         drv::pin_cfg green{
             .pin       = GPIO_PIN_2,
-            .port      = GPIOB,
+            .port      = GPIOA,
             .mode      = GPIO_MODE_AF_PP,
-            .alternate = GPIO_AF14_TIM2,
+            .alternate = GPIO_AF1_TIM2,
         };
 
         em::result res = plt::setup_leds_channel( &TIM2_HANDLE, green_ch, green );
@@ -425,6 +424,7 @@ drv::pos_iface* quad_encoder_setup( uint32_t period )
         };
         plt::setup_gpio( ch2 );
 
+        // XXX: technicaly we are missing PA8 - encoder clk - indication of zero
         em::result res = plt::setup_encoder_timer( TIM3_HANDLE, TIM3, period );
         if ( res != em::SUCCESS )
                 return nullptr;

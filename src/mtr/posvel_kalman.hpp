@@ -23,11 +23,12 @@ struct posvel_kalman
 
         float offset = 0.F;
 
-        posvel_kalman( float position, limits< float > position_range )
+        posvel_kalman( float position, float velocity, limits< float > position_range )
           : angle( position )
         {
                 set_position_range( position_range );
-                klmn::angle( x ) = klmn::angle_mod( position, st_range );
+                klmn::angle( x )    = klmn::angle_mod( position, st_range );
+                klmn::velocity( x ) = velocity;
         }
 
         void set_position_range( limits< float > position_range )

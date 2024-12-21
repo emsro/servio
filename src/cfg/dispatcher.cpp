@@ -25,10 +25,10 @@ void dispatcher::apply( key const& key )
                 break;
         case POSITION_LOW_ANGLE:
         case POSITION_HIGH_ANGLE: {
-                c.met.set_position_range(
+                met.set_position_range(
                     { m.get_val< POSITION_LOW_ANGLE >(), m.get_val< POSITION_HIGH_ANGLE >() } );
                 auto [min_val, max_val] = pos.get_position_range();
-                c.conv.set_position_cfg(
+                conv.set_position_cfg(
                     min_val,
                     m.get_val< POSITION_LOW_ANGLE >(),
                     max_val,
@@ -36,33 +36,33 @@ void dispatcher::apply( key const& key )
         } break;
         case CURRENT_CONV_SCALE:
         case CURRENT_CONV_OFFSET:
-                c.conv.set_current_cfg(
+                conv.set_current_cfg(
                     m.get_val< CURRENT_CONV_SCALE >(), m.get_val< CURRENT_CONV_OFFSET >() );
                 break;
         case TEMP_CONV_SCALE:
         case TEMP_CONV_OFFSET:
-                c.conv.set_temp_cfg(
+                conv.set_temp_cfg(
                     m.get_val< TEMP_CONV_SCALE >(), m.get_val< TEMP_CONV_OFFSET >() );
                 break;
         case VOLTAGE_CONV_SCALE:
-                c.conv.set_vcc_cfg( m.get_val< VOLTAGE_CONV_SCALE >() );
+                conv.set_vcc_cfg( m.get_val< VOLTAGE_CONV_SCALE >() );
                 break;
         case INVERT_HBRIDGE:
                 motor.set_invert( m.get_val< INVERT_HBRIDGE >() );
                 break;
         case MINIMUM_VOLTAGE:
-                c.mon.set_minimum_voltage( m.get_val< MINIMUM_VOLTAGE >() );
+                mon.set_minimum_voltage( m.get_val< MINIMUM_VOLTAGE >() );
                 break;
         case MAXIMUM_TEMPERATURE:
-                c.mon.set_maximum_temperature( m.get_val< MAXIMUM_TEMPERATURE >() );
+                mon.set_maximum_temperature( m.get_val< MAXIMUM_TEMPERATURE >() );
                 break;
         case MOVING_DETECTION_STEP:
-                c.met.set_moving_step( m.get_val< MOVING_DETECTION_STEP >() );
+                met.set_moving_step( m.get_val< MOVING_DETECTION_STEP >() );
                 break;
         default:
                 break;
         }
-        ::servio::cfg::apply( c.ctl, m, key );
+        ::servio::cfg::apply( ctl, m, key );
 }
 
 void apply( ctl::control& ctl, map const& m, key const& key )

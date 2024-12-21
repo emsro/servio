@@ -16,7 +16,7 @@ struct blinker
         bool update( microseconds now );
 
 private:
-        bool output;
+        bool output = false;
 
         std::size_t i = 0;
 
