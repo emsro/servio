@@ -1,7 +1,13 @@
 <map id="src/sntr/sentry.cpp" name="src/sntr/sentry.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="48,5,188,32"/>
-<area shape="rect" id="node2" href="$sentry_8hpp.html" title=" " alt="" coords="69,80,167,107"/>
-<area shape="rect" id="node3" href="$sntr_2base_8hpp.html" title=" " alt="" coords="73,229,163,256"/>
-<area shape="rect" id="node4" title=" " alt="" coords="151,304,219,331"/>
-<area shape="rect" id="node5" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="23,155,213,181"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="48,5,188,31"/>
+<area shape="rect" id="Node000002" href="$sentry_8hpp.html" title=" " alt="" coords="69,79,167,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,31,121,65,115,65,115,31"/>
+<area shape="rect" id="Node000003" href="$sntr_2base_8hpp.html" title=" " alt="" coords="73,225,163,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,106,41,125,25,137,12,153,9,164,9,173,20,190,42,206,69,218,66,223,39,210,17,194,4,174,3,163,8,151,21,134,38,120,75,102"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="151,299,219,324"/>
+<area shape="poly" id="edge6_Node000002_Node000011" title=" " alt="" coords="161,102,198,120,215,134,228,151,236,168,239,187,234,225,220,260,203,289,199,286,215,257,228,223,233,187,231,170,224,153,211,137,195,125,159,106"/>
+<area shape="rect" id="Node000012" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="23,152,213,177"/>
+<area shape="poly" id="edge4_Node000002_Node000012" title=" " alt="" coords="121,104,121,138,115,138,115,104"/>
+<area shape="poly" id="edge3_Node000003_Node000011" title=" " alt="" coords="131,249,167,287,163,290,127,253"/>
+<area shape="poly" id="edge5_Node000012_Node000003" title=" " alt="" coords="121,178,121,212,115,212,115,178"/>
 </map>

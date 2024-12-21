@@ -1,7 +1,11 @@
 <map id="servio::scmdio::error_exception" name="servio::scmdio::error_exception">
-<area shape="rect" id="node1" title=" " alt="" coords="85,200,241,241"/>
-<area shape="rect" id="node2" href="$structservio_1_1scmdio_1_1servio__exception.html" title=" " alt="" coords="5,96,171,137"/>
-<area shape="rect" id="node3" title=" " alt="" coords="31,13,145,39"/>
-<area shape="rect" id="node4" title=" " alt="" coords="195,103,282,130"/>
-<area shape="rect" id="node5" title=" " alt="" coords="169,5,308,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="85,197,241,237"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1scmdio_1_1servio__exception.html" title=" " alt="" coords="5,95,171,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,144,151,196,147,199,108,147"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="31,13,145,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,52,91,95,85,95,85,52"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="195,102,282,127"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,140,179,199,175,196,219,137"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="169,5,308,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="241,59,241,102,236,102,236,59"/>
 </map>

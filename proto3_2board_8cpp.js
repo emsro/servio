@@ -1,6 +1,6 @@
 var proto3_2board_8cpp =
 [
-    [ "adc_set", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set", [
+    [ "servio::brd::adc_set", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set", [
       [ "id_type", "namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1", null ],
       [ "id_type", "namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1", null ],
       [ "current", "namespaceservio_1_1brd.html#a346644d1f1901a6078bc9ec5a6af9883", null ],
@@ -25,7 +25,7 @@ var proto3_2board_8cpp =
     [ "hbridge_setup", "proto3_2board_8cpp.html#a7e933c86ae59b33c53a15dd89f58febc", null ],
     [ "install_stop_callback", "proto3_2board_8cpp.html#a0f720ee34102e93c489fc104ab51e4ed", null ],
     [ "leds_setup", "proto3_2board_8cpp.html#a8018a4a9a9bc9b1d4af53c14d646d4c8", null ],
-    [ "page_at", "proto3_2board_8cpp.html#a9d6115db9e0f265bcf31a4f0726bee91", null ],
+    [ "page_at", "proto3_2board_8cpp.html#add6a3b92bad6689d78fb2eaf68f65274", null ],
     [ "quad_encoder_setup", "proto3_2board_8cpp.html#a064090e0ba34cfb1d6f51f247cf479aa", null ],
     [ "setup_board", "proto3_2board_8cpp.html#acf0eac3166e968f5cefe71de1f5d5ca8", null ],
     [ "setup_core_drivers", "proto3_2board_8cpp.html#a58f703e939140ddd318ba1e8202e6153", null ],
@@ -49,13 +49,13 @@ var proto3_2board_8cpp =
     [ "CLOCK", "proto3_2board_8cpp.html#a9374215c588b74922836fbf5ab2602ca", null ],
     [ "COMMS", "proto3_2board_8cpp.html#a9ed63463e203d8f35b52cb533ff25b36", null ],
     [ "DEBUG_COMMS", "proto3_2board_8cpp.html#ad7acc0f3dbfde0575a7230b2a53744d5", null ],
-    [ "DEGRADED_RECORDS", "proto3_2board_8cpp.html#a29e9ac3d0caab29dfd8e900b69801727", null ],
+    [ "DEGRADED_RECORDS", "proto3_2board_8cpp.html#a65286cd4958053ab65432f7dc945def0", null ],
     [ "DTS_DRV", "proto3_2board_8cpp.html#a6f72e0496d5ab998f9c9f5860478271a", null ],
     [ "DTS_HANDLE", "proto3_2board_8cpp.html#ac98826a0db7719c6623fe0d921bc6962", null ],
     [ "FLASH_STORAGE", "proto3_2board_8cpp.html#a5b2edc3596fd260a33fb0ad364801d91", null ],
     [ "HBRDIGE_VREF_PIN", "proto3_2board_8cpp.html#a1a626482a7be9ab6f7a948b1f751c4bc", null ],
     [ "HBRIDGE", "proto3_2board_8cpp.html#a667b31fa6ec529d3b42f5d74755336db", null ],
-    [ "INOPERABLE_RECORDS", "proto3_2board_8cpp.html#a6361cccb21edfbd0a060cf03dc67f2c3", null ],
+    [ "INOPERABLE_RECORDS", "proto3_2board_8cpp.html#a323df4f622e226692113439a0bd783d6", null ],
     [ "LEDS", "proto3_2board_8cpp.html#a9a9ba68956eb017a599db3ce8d3c109a", null ],
     [ "PERSISTENT_BLOCKS", "proto3_2board_8cpp.html#ad966d7bc309628fe42f3784ce52dab6f", null ],
     [ "QUAD", "proto3_2board_8cpp.html#a8f7e0ef32154098de4eef8563f77aa33", null ],

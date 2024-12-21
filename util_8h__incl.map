@@ -1,5 +1,7 @@
 <map id="src/iface/util.h" name="src/iface/util.h">
-<area shape="rect" id="node1" title=" " alt="" coords="55,5,170,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,103,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="127,80,219,107"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="55,5,170,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,103,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,33,74,70,70,67,101,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="127,79,219,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,29,156,66,152,70,121,33"/>
 </map>

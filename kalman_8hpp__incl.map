@@ -1,10 +1,17 @@
 <map id="src/klmn/kalman.hpp" name="src/klmn/kalman.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="278,5,437,32"/>
-<area shape="rect" id="node2" href="$base_2base_8hpp.html" title=" " alt="" coords="205,87,333,114"/>
-<area shape="rect" id="node8" title=" " alt="" coords="358,80,535,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,169,72,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="96,169,163,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="187,169,352,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="376,169,531,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="555,169,634,196"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="278,5,437,31"/>
+<area shape="rect" id="Node000002" href="$base_2base_8hpp.html" title=" " alt="" coords="205,86,333,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="346,33,294,79,291,75,343,29"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="358,79,535,119"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="372,29,417,68,413,72,369,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,72,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,114,86,165,84,160,235,109"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="96,167,163,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="250,114,163,162,161,158,247,109"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="187,167,352,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="272,112,272,153,267,153,267,112"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="376,167,531,192"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="297,109,415,159,413,164,295,114"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="555,167,634,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="317,109,347,116,542,163,541,168,346,121,316,114"/>
 </map>

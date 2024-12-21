@@ -1,4 +1,5 @@
 <map id="servio::ftest::bench::prof_record" name="servio::ftest::bench::prof_record">
-<area shape="rect" id="node1" title=" " alt="" coords="5,109,152,151"/>
-<area shape="rect" id="node2" title=" " alt="" coords="9,5,149,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,108,152,148"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="9,5,149,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,59,81,108,76,108,76,59"/>
 </map>

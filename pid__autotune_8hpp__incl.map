@@ -1,9 +1,15 @@
 <map id="src/scmdio/pid_autotune.hpp" name="src/scmdio/pid_autotune.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="305,5,514,32"/>
-<area shape="rect" id="node2" href="$async__cobs_8hpp.html" title=" " alt="" coords="169,80,303,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="327,80,492,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="516,80,689,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,162,123,189"/>
-<area shape="rect" id="node4" title=" " alt="" coords="147,155,325,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="349,162,411,189"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="305,5,514,31"/>
+<area shape="rect" id="Node000002" href="$async__cobs_8hpp.html" title=" " alt="" coords="169,79,303,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="382,33,278,76,276,71,380,28"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="327,79,492,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="412,31,412,65,407,65,407,31"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="516,79,689,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="441,28,559,71,558,76,439,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,159,123,185"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="212,106,103,156,100,151,210,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="147,152,325,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="239,104,239,138,233,138,233,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="349,159,411,185"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="259,102,348,150,346,155,256,107"/>
 </map>

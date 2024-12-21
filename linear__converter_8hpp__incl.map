@@ -1,4 +1,5 @@
 <map id="src/cnv/linear_converter.hpp" name="src/cnv/linear_converter.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,211,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="75,80,141,107"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,211,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="75,79,141,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,31,111,65,105,65,105,31"/>
 </map>

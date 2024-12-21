@@ -1,4 +1,5 @@
 <map id="servio::sim::simple_motor" name="servio::sim::simple_motor">
-<area shape="rect" id="node1" title=" " alt="" coords="11,95,158,136"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="11,93,158,133"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,164,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,44,87,93,82,93,82,44"/>
 </map>

@@ -1,6 +1,6 @@
 var proto4_2board_8cpp =
 [
-    [ "adc_set", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set", [
+    [ "servio::brd::adc_set", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set", [
       [ "id_type", "namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1", null ],
       [ "id_type", "namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1", null ],
       [ "current", "namespaceservio_1_1brd.html#a346644d1f1901a6078bc9ec5a6af9883", null ],

@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['temp_5fcalib_5fcoeffs_1305',['temp_calib_coeffs',['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs',1,'servio::plt']]],
-  ['temp_5fiface_1306',['temp_iface',['../structservio_1_1drv_1_1temp__iface.html',1,'servio::drv']]],
-  ['temperature_5ftest_1307',['temperature_test',['../structservio_1_1drv_1_1tests_1_1temperature__test.html',1,'servio::drv::tests']]],
-  ['test_5fcentral_5fsentry_1308',['test_central_sentry',['../structservio_1_1sntr_1_1test__central__sentry.html',1,'servio::sntr']]],
-  ['test_5fclk_1309',['test_clk',['../structservio_1_1sntr_1_1tests_1_1test__clk.html',1,'servio::sntr::tests']]],
-  ['test_5fsystem_1310',['test_system',['../structservio_1_1ftester_1_1test__system.html',1,'servio::ftester']]],
-  ['testing_5fsystem_1311',['testing_system',['../structservio_1_1ftest_1_1testing__system.html',1,'servio::ftest']]]
+  ['sentry_0',['sentry',['../classservio_1_1sntr_1_1sentry.html',1,'servio::sntr']]],
+  ['sentry_5ffixture_1',['sentry_fixture',['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html',1,'servio::sntr::tests']]],
+  ['serialize_5ferror_2',['serialize_error',['../structservio_1_1scmdio_1_1serialize__error.html',1,'servio::scmdio']]],
+  ['servio_5fexception_3',['servio_exception',['../structservio_1_1scmdio_1_1servio__exception.html',1,'servio::scmdio']]],
+  ['sign_5ftest_4',['sign_test',['../structservio_1_1ftest_1_1intg_1_1sign__test.html',1,'servio::ftest::intg']]],
+  ['simple_5fmotor_5',['simple_motor',['../structservio_1_1sim_1_1simple__motor.html',1,'servio::sim']]],
+  ['standard_5fcallbacks_6',['standard_callbacks',['../structservio_1_1core_1_1standard__callbacks.html',1,'servio::core']]],
+  ['state_5frange_7',['state_range',['../namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range',1,'servio::klmn']]],
+  ['static_5fdetector_8',['static_detector',['../structservio_1_1mtr_1_1static__detector.html',1,'servio::mtr']]],
+  ['stor_9',['stor',['../structservio_1_1core_1_1tests_1_1mock_1_1stor.html',1,'servio::core::tests::mock']]],
+  ['storage_5fiface_10',['storage_iface',['../structservio_1_1drv_1_1storage__iface.html',1,'servio::drv']]]
 ];

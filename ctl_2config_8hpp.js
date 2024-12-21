@@ -1,6 +1,6 @@
 var ctl_2config_8hpp =
 [
-    [ "config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", [
+    [ "servio::ctl::config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", [
       [ "current_limits", "namespaceservio_1_1ctl.html#a646e8f5b539f9c87c6efb543e03105c8", null ],
       [ "current_pid", "namespaceservio_1_1ctl.html#ad4f05cf40ee9e9cf64b0c935db871865", null ],
       [ "position_limits", "namespaceservio_1_1ctl.html#a0dfeb2e27a410283c4571d56517f0fa7", null ],

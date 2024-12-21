@@ -1,5 +1,7 @@
 <map id="servio::scmdio::cfg_opts" name="servio::scmdio::cfg_opts">
-<area shape="rect" id="node1" title=" " alt="" coords="5,200,185,227"/>
-<area shape="rect" id="node2" title=" " alt="" coords="52,96,139,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="26,5,165,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,197,185,223"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="52,95,139,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,134,98,197,93,197,93,134"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="26,5,165,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,59,98,94,93,94,93,59"/>
 </map>

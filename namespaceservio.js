@@ -13,12 +13,6 @@ var namespaceservio =
     [ "fw", "namespaceservio_1_1fw.html", "namespaceservio_1_1fw" ],
     [ "iface", "namespaceservio_1_1iface.html", "namespaceservio_1_1iface" ],
     [ "klmn", "namespaceservio_1_1klmn.html", "namespaceservio_1_1klmn" ],
-    [ "literals", "namespaceservio_1_1literals.html", [
-      [ "operator\"\"_b", "namespaceservio_1_1literals.html#a62e86ab080363c9801b3d11413cb755c", null ],
-      [ "operator\"\"_ms", "namespaceservio_1_1literals.html#af7fb1870e027a6f6576164c72d18bc73", null ],
-      [ "operator\"\"_s", "namespaceservio_1_1literals.html#a9cc4a2727af86eed775de91ae7e0ac23", null ],
-      [ "operator\"\"_us", "namespaceservio_1_1literals.html#add4105476cecfe3e11bbbde64b4e7922", null ]
-    ] ],
     [ "mon", "namespaceservio_1_1mon.html", "namespaceservio_1_1mon" ],
     [ "mtr", "namespaceservio_1_1mtr.html", "namespaceservio_1_1mtr" ],
     [ "plt", "namespaceservio_1_1plt.html", "namespaceservio_1_1plt" ],
@@ -54,10 +48,15 @@ var namespaceservio =
       [ "VELOCITY", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a7b4354bded455eb379e3c764806cda7b", null ],
       [ "POSITION", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a90b4ba73224408e82ade8a072a3712c1", null ]
     ] ],
+    [ "operator\"\"_b", "namespaceservio.html#ab847134240e9ea51845999d7685beee3", null ],
+    [ "operator\"\"_ms", "namespaceservio.html#a492bd58e72d7b3b68e1f6b26a1588d81", null ],
+    [ "operator\"\"_pwr", "namespaceservio.html#a3cbe32a0d33853a8e061ea4df443760e", null ],
+    [ "operator\"\"_pwr", "namespaceservio.html#a546e51ff861bb4e2219e0b99efd5184f", null ],
+    [ "operator\"\"_s", "namespaceservio.html#a381f999384719facd93ca4e5778e85a0", null ],
+    [ "operator\"\"_us", "namespaceservio.html#a8b49e8ac8975f209d89f963b7e5518df", null ],
     [ "infty", "namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c", null ],
     [ "p_low", "namespaceservio.html#a53879f15eedde593c9cd6531402f5590", null ],
     [ "p_max", "namespaceservio.html#ad65a9ec22f69582eff005ae62a0bd415", null ],
-    [ "p_zero", "namespaceservio.html#a546f8798a925217f01d794aa9a1379d7", null ],
     [ "pi", "namespaceservio.html#a20c15193768c59a28a88e172aba5ab20", null ],
     [ "pipi", "namespaceservio.html#a00c2d45a108822e094be491c4004429b", null ]
 ];

@@ -16,7 +16,7 @@ var namespaceservio_1_1klmn =
     [ "state", "namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135", null ],
     [ "state_covariance", "namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203", null ],
     [ "state_transition_model", "namespaceservio_1_1klmn.html#afea6216b903aa2cb07122c0a086643cd", null ],
-    [ "angle", "namespaceservio_1_1klmn.html#a6b85edb1c54956e9cd22ae24f3debbc5", null ],
+    [ "angle", "namespaceservio_1_1klmn.html#a842c2861339b66fae8238ec81777ba7d", null ],
     [ "angle_mod", "namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f", null ],
     [ "get_control_input_model", "namespaceservio_1_1klmn.html#ace7ac59187828069b648532db7b16d1f", null ],
     [ "get_observation_model", "namespaceservio_1_1klmn.html#a0884697a42d50e650e6d39955a87424d", null ],
@@ -28,5 +28,5 @@ var namespaceservio_1_1klmn =
     [ "requires_offset", "namespaceservio_1_1klmn.html#ad6c5877d688d33d7cb52521c65be21b7", null ],
     [ "simulate", "namespaceservio_1_1klmn.html#a51ded188d3892b9cbe894be75d71a6c5", null ],
     [ "update", "namespaceservio_1_1klmn.html#a234fa44edad4ff9eca397d3fe26a76ec", null ],
-    [ "velocity", "namespaceservio_1_1klmn.html#aab9b4531c387d4264fe17a1341856597", null ]
+    [ "velocity", "namespaceservio_1_1klmn.html#a6ab2426e56ee2674d68f6d2824bfe992", null ]
 ];

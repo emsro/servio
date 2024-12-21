@@ -1,11 +1,21 @@
 <map id="servio::sntr::tests::sentry_fixture" name="servio::sntr::tests::sentry_fixture">
-<area shape="rect" id="node1" title=" " alt="" coords="528,122,663,163"/>
-<area shape="rect" id="node2" title=" " alt="" coords="298,5,399,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="277,57,420,98"/>
-<area shape="rect" id="node4" href="$namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record" title=" " alt="" coords="11,101,155,128"/>
-<area shape="rect" id="node5" title=" " alt="" coords="277,122,420,163"/>
-<area shape="rect" id="node6" href="$classservio_1_1sntr_1_1central__sentry.html" title=" " alt="" coords="275,187,423,229"/>
-<area shape="rect" id="node7" href="$structservio_1_1sntr_1_1central__sentry__iface.html" title=" " alt="" coords="9,187,157,229"/>
-<area shape="rect" id="node8" href="$structservio_1_1sntr_1_1tests_1_1test__clk.html" title=" " alt="" coords="281,253,416,294"/>
-<area shape="rect" id="node9" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="5,260,161,287"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="528,119,663,159"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="298,5,399,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="403,33,424,41,505,80,566,117,563,122,503,84,422,46,401,38"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1sntr_1_1tests_1_1test__clk.html" title=" " alt="" coords="281,55,416,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="430,93,529,119,527,125,428,99"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="5,63,161,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="175,81,281,81,281,86,175,87"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="175,64,281,65,281,70,175,69"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="277,119,420,159"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="434,137,528,137,528,142,434,142"/>
+<area shape="rect" id="Node000006" href="$namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record" title=" " alt="" coords="11,163,155,188"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="169,161,277,146,277,152,169,166"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="277,183,420,223"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="166,187,186,190,277,198,277,203,185,195,166,193"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="433,179,527,154,528,159,434,184"/>
+<area shape="rect" id="Node000008" href="$classservio_1_1sntr_1_1central__sentry.html" title=" " alt="" coords="275,247,423,287"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="407,239,422,233,463,215,503,196,564,157,567,162,505,200,465,220,424,238,409,244"/>
+<area shape="rect" id="Node000009" href="$structservio_1_1sntr_1_1central__sentry__iface.html" title=" " alt="" coords="9,247,157,287"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="171,265,274,265,274,270,171,270"/>
 </map>

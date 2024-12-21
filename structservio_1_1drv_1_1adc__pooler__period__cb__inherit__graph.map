@@ -1,4 +1,5 @@
 <map id="servio::drv::adc_pooler_period_cb&lt; AdcPooler &gt;" name="servio::drv::adc_pooler_period_cb&lt; AdcPooler &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,192,136"/>
-<area shape="rect" id="node2" href="$structservio_1_1drv_1_1period__cb__iface.html" title=" " alt="" coords="29,5,168,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,192,133"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1period__cb__iface.html" title=" " alt="" coords="29,5,168,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,59,101,93,96,93,96,59"/>
 </map>

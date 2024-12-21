@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['id_5ftype_2143',['id_type',['../namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1',1,'servio::brd::adc_set::id_type()'],['../namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1',1,'servio::brd::adc_set::id_type()'],['../structservio_1_1drv_1_1adc__pooler.html#ac5be031b859137067c988267ea81e3ef',1,'servio::drv::adc_pooler::id_type()']]],
-  ['innovation_5fcovariance_2144',['innovation_covariance',['../namespaceservio_1_1klmn.html#a0b3815cc4aa581729c8b9da6bd7eb20f',1,'servio::klmn']]]
+  ['handler_0',['handler',['../namespaceservio_1_1cfg.html#a8587e35d0b4b831a0423fb148e9c5df2',1,'servio::cfg']]]
 ];

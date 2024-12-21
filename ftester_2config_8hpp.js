@@ -1,6 +1,6 @@
 var ftester_2config_8hpp =
 [
-    [ "config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config", [
+    [ "servio::ftester::config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config", [
       [ "c_baudrate", "namespaceservio_1_1ftester.html#a9068c85a2b355f97abbdc5beb418b7dd", null ],
       [ "c_device", "namespaceservio_1_1ftester.html#afa35dca7982260312c4bff22fc180eee", null ],
       [ "d_baudrate", "namespaceservio_1_1ftester.html#ab3e6303bc5ee2f7e96e9196984c0cfb4", null ],

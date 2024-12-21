@@ -1,9 +1,9 @@
 var namespaceservio_1_1ftester =
 [
     [ "config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config", "namespaceservio_1_1ftester_structservio_1_1ftester_1_1config_dup" ],
+    [ "controller_interface", "structservio_1_1ftester_1_1controller__interface.html", "structservio_1_1ftester_1_1controller__interface" ],
     [ "joque_test", "structservio_1_1ftester_1_1joque__test.html", "structservio_1_1ftester_1_1joque__test" ],
     [ "recorder", "classservio_1_1ftester_1_1recorder.html", "classservio_1_1ftester_1_1recorder" ],
-    [ "controller_interface", "structservio_1_1ftester_1_1controller__interface.html", "structservio_1_1ftester_1_1controller__interface" ],
     [ "test_system", "structservio_1_1ftester_1_1test__system.html", "structservio_1_1ftester_1_1test__system" ],
     [ "opt", "namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee", null ],
     [ "firmware_opt", "namespaceservio_1_1ftester.html#acc64a6f277fb5ffb8b088c5bc1b4657d", null ],

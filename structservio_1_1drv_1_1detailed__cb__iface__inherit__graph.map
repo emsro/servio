@@ -1,6 +1,9 @@
 <map id="servio::drv::detailed_cb_iface" name="servio::drv::detailed_cb_iface">
-<area shape="rect" id="node1" title=" " alt="" coords="5,71,156,112"/>
-<area shape="rect" id="node2" href="$classservio_1_1core_1_1current__callback.html" title=" " alt="" coords="204,5,356,47"/>
-<area shape="rect" id="node3" href="$structservio_1_1drv_1_1detailed__cb.html" title=" " alt="" coords="205,71,355,112"/>
-<area shape="rect" id="node4" href="$structservio_1_1drv_1_1empty__detailed__cb.html" title=" " alt="" coords="210,136,350,177"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,69,156,109"/>
+<area shape="rect" id="Node000002" href="$classservio_1_1core_1_1current__callback.html" title=" " alt="" coords="204,5,356,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,63,216,43,218,48,157,68"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1detailed__cb.html" title=" " alt="" coords="205,69,355,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,87,204,87,204,92,170,92"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1drv_1_1empty__detailed__cb.html" title=" " alt="" coords="210,133,350,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="157,111,218,131,216,136,156,116"/>
 </map>

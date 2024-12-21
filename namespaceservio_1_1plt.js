@@ -1,12 +1,12 @@
 var namespaceservio_1_1plt =
 [
-    [ "dma_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1dma__cfg_dup" ],
     [ "adc_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1adc__cfg_dup" ],
-    [ "uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1uart__cfg_dup" ],
+    [ "dma_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1dma__cfg_dup" ],
     [ "hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1hb__timer__cfg_dup" ],
     [ "leds_gpio_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__gpio__cfg_dup" ],
     [ "leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__timer__cfg_dup" ],
     [ "temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", "namespaceservio_1_1plt_structservio_1_1plt_1_1temp__calib__coeffs_dup" ],
+    [ "uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1uart__cfg_dup" ],
     [ "calculate_temp_conversion", "namespaceservio_1_1plt.html#a9d808c8e4af01c8ace4848aef68ac0bf", null ],
     [ "generate_config", "namespaceservio_1_1plt.html#a0cdc7abf3d852902f1b08758212aed5e", null ],
     [ "get_default_config", "namespaceservio_1_1plt.html#a54207fdd13b8536cfecc8079e969056b", null ],

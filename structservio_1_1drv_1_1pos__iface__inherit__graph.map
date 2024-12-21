@@ -1,5 +1,9 @@
 <map id="servio::drv::pos_iface" name="servio::drv::pos_iface">
-<area shape="rect" id="node1" title=" " alt="" coords="116,5,276,32"/>
-<area shape="rect" id="node2" href="$structservio_1_1drv_1_1adc__pooler__position.html" title=" " alt="" coords="5,80,181,121"/>
-<area shape="rect" id="node3" href="$classservio_1_1drv_1_1quad__encoder.html" title=" " alt="" coords="205,87,395,114"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="116,93,276,119"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1adc__pooler__position.html" title=" " alt="" coords="5,167,181,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,129,120,169,116,164,169,125"/>
+<area shape="rect" id="Node000004" href="$classservio_1_1drv_1_1quad__encoder.html" title=" " alt="" coords="205,174,395,199"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,125,286,172,283,176,220,129"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1get__pos__iface.html" title=" " alt="" coords="121,5,271,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,59,199,93,193,93,193,59"/>
 </map>

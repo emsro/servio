@@ -1,10 +1,15 @@
 <map id="src/iface/tests/parse_utest.cpp" name="src/iface/tests/parse_utest.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="303,5,457,47"/>
-<area shape="rect" id="node2" href="$def_8h.html" title=" " alt="" coords="292,95,359,121"/>
-<area shape="rect" id="node8" title=" " alt="" coords="383,95,487,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,177,72,203"/>
-<area shape="rect" id="node4" title=" " alt="" coords="97,177,213,203"/>
-<area shape="rect" id="node5" title=" " alt="" coords="237,169,414,211"/>
-<area shape="rect" id="node6" title=" " alt="" coords="438,177,530,203"/>
-<area shape="rect" id="node7" title=" " alt="" coords="555,177,645,203"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="248,5,401,45"/>
+<area shape="rect" id="Node000002" href="$def_8h.html" title=" " alt="" coords="237,93,303,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,47,288,84,284,80,309,44"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="327,93,431,119"/>
+<area shape="poly" id="edge6_Node000001_Node000010" title=" " alt="" coords="340,44,366,80,361,84,336,47"/>
+<area shape="rect" id="Node000003" href="$base_8h.html" title=" " alt="" coords="5,174,79,199"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,120,91,169,84,172,83,167,89,164,236,115"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="103,167,280,207"/>
+<area shape="poly" id="edge3_Node000002_Node000007" title=" " alt="" coords="260,121,222,159,218,155,257,117"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="304,174,396,199"/>
+<area shape="poly" id="edge4_Node000002_Node000008" title=" " alt="" coords="284,117,330,162,326,166,280,121"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="421,174,511,199"/>
+<area shape="poly" id="edge5_Node000002_Node000009" title=" " alt="" coords="299,116,426,166,424,171,298,121"/>
 </map>

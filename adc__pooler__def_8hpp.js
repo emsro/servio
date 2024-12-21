@@ -1,10 +1,10 @@
 var adc__pooler__def_8hpp =
 [
-    [ "adc_pooler_period_cb", "structservio_1_1drv_1_1adc__pooler__period__cb.html", "structservio_1_1drv_1_1adc__pooler__period__cb" ],
-    [ "adc_pooler_vcc", "structservio_1_1drv_1_1adc__pooler__vcc.html", "structservio_1_1drv_1_1adc__pooler__vcc" ],
-    [ "adc_pooler_temperature", "structservio_1_1drv_1_1adc__pooler__temperature.html", "structservio_1_1drv_1_1adc__pooler__temperature" ],
-    [ "adc_pooler_position", "structservio_1_1drv_1_1adc__pooler__position.html", "structservio_1_1drv_1_1adc__pooler__position" ],
-    [ "adc_pooler_current", "structservio_1_1drv_1_1adc__pooler__current.html", "structservio_1_1drv_1_1adc__pooler__current" ],
+    [ "servio::drv::adc_pooler_period_cb< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__period__cb.html", "structservio_1_1drv_1_1adc__pooler__period__cb" ],
+    [ "servio::drv::adc_pooler_vcc< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__vcc.html", "structservio_1_1drv_1_1adc__pooler__vcc" ],
+    [ "servio::drv::adc_pooler_temperature< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__temperature.html", "structservio_1_1drv_1_1adc__pooler__temperature" ],
+    [ "servio::drv::adc_pooler_position< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__position.html", "structservio_1_1drv_1_1adc__pooler__position" ],
+    [ "servio::drv::adc_pooler_current< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__current.html", "structservio_1_1drv_1_1adc__pooler__current" ],
     [ "chan_ids", "adc__pooler__def_8hpp.html#abbf0ab1dcfca79ccba89674e773fa2af", [
       [ "CURRENT_CHANNEL", "adc__pooler__def_8hpp.html#abbf0ab1dcfca79ccba89674e773fa2afa747e7a5e75119c45c2129e9112797e1b", null ],
       [ "POSITION_CHANNEL", "adc__pooler__def_8hpp.html#abbf0ab1dcfca79ccba89674e773fa2afa5acb229675ac8a8e0058233120461f35", null ],

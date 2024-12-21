@@ -1,7 +1,11 @@
 <map id="servio::ftest::bench::usage" name="servio::ftest::bench::usage">
-<area shape="rect" id="node1" title=" " alt="" coords="173,200,320,241"/>
-<area shape="rect" id="node2" href="$structservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="5,96,144,137"/>
-<area shape="rect" id="node3" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="169,103,325,130"/>
-<area shape="rect" id="node4" title=" " alt="" coords="349,103,475,130"/>
-<area shape="rect" id="node5" title=" " alt="" coords="329,5,495,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="173,197,320,237"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="5,95,144,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,139,216,195,213,200,117,144"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="169,102,325,127"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,141,249,197,244,197,244,141"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="349,102,475,127"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="383,137,279,199,276,195,380,132"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="329,5,495,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="415,59,415,102,409,102,409,59"/>
 </map>

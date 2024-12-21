@@ -1,9 +1,15 @@
 <map id="src/mtr/metrics.cpp" name="src/mtr/metrics.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="342,5,490,32"/>
-<area shape="rect" id="node2" href="$metrics_8hpp.html" title=" " alt="" coords="367,80,465,107"/>
-<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="5,155,133,181"/>
-<area shape="rect" id="node4" href="$posvel__kalman_8hpp.html" title=" " alt="" coords="158,155,314,181"/>
-<area shape="rect" id="node5" href="$static__detector_8hpp.html" title=" " alt="" coords="339,155,493,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="517,155,573,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="598,155,653,181"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="342,5,490,31"/>
+<area shape="rect" id="Node000002" href="$metrics_8hpp.html" title=" " alt="" coords="367,79,465,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="419,31,419,65,413,65,413,31"/>
+<area shape="rect" id="Node000003" href="$base_2base_8hpp.html" title=" " alt="" coords="5,152,133,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="367,105,139,152,138,147,366,100"/>
+<area shape="rect" id="Node000009" href="$posvel__kalman_8hpp.html" title=" " alt="" coords="158,152,314,177"/>
+<area shape="poly" id="edge3_Node000002_Node000009" title=" " alt="" coords="388,107,279,149,277,144,386,102"/>
+<area shape="rect" id="Node000012" href="$static__detector_8hpp.html" title=" " alt="" coords="339,152,493,177"/>
+<area shape="poly" id="edge4_Node000002_Node000012" title=" " alt="" coords="419,104,419,138,413,138,413,104"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="517,152,573,177"/>
+<area shape="poly" id="edge5_Node000002_Node000014" title=" " alt="" coords="438,102,513,143,511,147,436,106"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="598,152,653,177"/>
+<area shape="poly" id="edge6_Node000002_Node000015" title=" " alt="" coords="450,101,586,147,584,152,449,107"/>
 </map>

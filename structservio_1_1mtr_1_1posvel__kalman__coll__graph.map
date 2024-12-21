@@ -1,4 +1,5 @@
 <map id="servio::mtr::posvel_kalman" name="servio::mtr::posvel_kalman">
-<area shape="rect" id="node1" title=" " alt="" coords="5,109,149,151"/>
-<area shape="rect" id="node2" href="$namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range" title=" " alt="" coords="5,5,149,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,108,149,148"/>
+<area shape="rect" id="Node000002" href="$namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range" title=" " alt="" coords="5,5,149,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,59,80,108,75,108,75,59"/>
 </map>

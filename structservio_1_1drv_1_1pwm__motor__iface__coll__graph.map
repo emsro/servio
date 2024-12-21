@@ -1,0 +1,5 @@
+<map id="servio::drv::pwm_motor_iface" name="servio::drv::pwm_motor_iface">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,181,133"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1motor__info__iface.html" title=" " alt="" coords="25,5,162,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,59,96,93,91,93,91,59"/>
+</map>

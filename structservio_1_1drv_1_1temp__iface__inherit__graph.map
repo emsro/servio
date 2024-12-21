@@ -1,5 +1,9 @@
 <map id="servio::drv::temp_iface" name="servio::drv::temp_iface">
-<area shape="rect" id="node1" title=" " alt="" coords="125,5,296,32"/>
-<area shape="rect" id="node2" href="$structservio_1_1drv_1_1adc__pooler__temperature.html" title=" " alt="" coords="5,80,211,121"/>
-<area shape="rect" id="node3" href="$classservio_1_1drv_1_1dts__temp.html" title=" " alt="" coords="235,87,394,114"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,77,176,102"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1core_1_1tests_1_1mock_1_1get__temp.html" title=" " alt="" coords="257,5,396,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,70,256,41,258,47,153,75"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1adc__pooler__temperature.html" title=" " alt="" coords="224,69,429,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,87,224,87,224,92,190,92"/>
+<area shape="rect" id="Node000004" href="$classservio_1_1drv_1_1dts__temp.html" title=" " alt="" coords="247,134,406,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="158,103,274,131,273,137,156,108"/>
 </map>

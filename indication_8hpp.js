@@ -1,6 +1,6 @@
 var indication_8hpp =
 [
-    [ "indication", "classservio_1_1mon_1_1indication.html", "classservio_1_1mon_1_1indication" ],
+    [ "servio::mon::indication", "classservio_1_1mon_1_1indication.html", "classservio_1_1mon_1_1indication" ],
     [ "indication_event", "indication_8hpp.html#af16397f3997f66e0f28c3409143cfc52", [
       [ "VOLTAGE_LOW", "indication_8hpp.html#af16397f3997f66e0f28c3409143cfc52a1ebe303c3b179265bbac9ab1f3219826", null ],
       [ "TEMPERATURE_HIGH", "indication_8hpp.html#af16397f3997f66e0f28c3409143cfc52adecfbda91cde2e00e1e04c4c97cb1b86", null ],

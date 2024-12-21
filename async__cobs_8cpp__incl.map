@@ -1,10 +1,17 @@
 <map id="src/scmdio/async_cobs.cpp" name="src/scmdio/async_cobs.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="357,5,555,32"/>
-<area shape="rect" id="node2" href="$async__cobs_8hpp.html" title=" " alt="" coords="212,80,345,107"/>
-<area shape="rect" id="node6" href="$exceptions_8hpp.html" title=" " alt="" coords="391,80,521,107"/>
-<area shape="rect" id="node8" title=" " alt="" coords="545,80,601,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,162,123,189"/>
-<area shape="rect" id="node4" title=" " alt="" coords="147,155,325,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="349,162,411,189"/>
-<area shape="rect" id="node7" title=" " alt="" coords="435,162,522,189"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="357,5,555,31"/>
+<area shape="rect" id="Node000002" href="$async__cobs_8hpp.html" title=" " alt="" coords="212,79,345,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="428,33,321,76,319,71,427,28"/>
+<area shape="rect" id="Node000006" href="$exceptions_8hpp.html" title=" " alt="" coords="391,79,521,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="459,31,459,65,453,65,453,31"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="545,79,601,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="476,28,544,69,541,74,473,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,159,123,185"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,107,109,157,107,152,247,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="147,152,325,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="275,105,255,141,250,139,270,103"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="349,159,411,185"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="295,102,356,149,352,153,292,106"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="435,159,522,185"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="462,103,474,145,469,147,457,105"/>
 </map>

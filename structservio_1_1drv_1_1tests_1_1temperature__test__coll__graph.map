@@ -1,6 +1,9 @@
 <map id="servio::drv::tests::temperature_test" name="servio::drv::tests::temperature_test">
-<area shape="rect" id="node1" title=" " alt="" coords="145,185,288,227"/>
-<area shape="rect" id="node2" title=" " alt="" coords="26,96,151,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,172,47"/>
-<area shape="rect" id="node4" href="$structservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="175,96,346,123"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="79,183,222,223"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="5,95,176,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,130,141,181,136,184,103,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="200,95,325,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,131,175,185,172,180,237,127"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="179,5,346,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="265,59,265,94,260,94,260,59"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="servio::ftest::utest&lt; T &gt;" name="servio::ftest::utest&lt; T &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="56,171,235,197"/>
-<area shape="rect" id="node2" href="$structservio_1_1ftest_1_1utest__base.html" title=" " alt="" coords="56,95,235,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,131,32"/>
-<area shape="rect" id="node4" href="$structservio_1_1ftest_1_1uctx.html" title=" " alt="" coords="155,5,290,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="56,168,235,193"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1ftest_1_1utest__base.html" title=" " alt="" coords="56,93,235,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,133,148,168,143,168,143,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,131,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,39,137,91,133,95,86,43"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1ftest_1_1uctx.html" title=" " alt="" coords="155,5,290,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="205,43,158,95,154,91,201,39"/>
 </map>

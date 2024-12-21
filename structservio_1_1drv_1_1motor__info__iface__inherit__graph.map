@@ -1,0 +1,9 @@
+<map id="servio::drv::motor_info_iface" name="servio::drv::motor_info_iface">
+<area shape="rect" id="Node000001" title=" " alt="" coords="89,5,226,45"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="69,93,245,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,59,160,93,155,93,155,59"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1core_1_1tests_1_1mock_1_1mot.html" title=" " alt="" coords="5,181,144,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,145,95,183,91,179,127,142"/>
+<area shape="rect" id="Node000004" href="$classservio_1_1drv_1_1hbridge.html" title=" " alt="" coords="168,189,315,214"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="187,141,232,186,228,190,184,145"/>
+</map>

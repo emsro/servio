@@ -1,4 +1,7 @@
 <map id="servio::drv::quad_encoder" name="servio::drv::quad_encoder">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,195,107"/>
-<area shape="rect" id="node2" href="$structservio_1_1drv_1_1pos__iface.html" title=" " alt="" coords="20,5,180,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,167,195,192"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1pos__iface.html" title=" " alt="" coords="20,93,180,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,132,103,167,97,167,97,132"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1get__pos__iface.html" title=" " alt="" coords="25,5,175,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,59,103,93,97,93,97,59"/>
 </map>

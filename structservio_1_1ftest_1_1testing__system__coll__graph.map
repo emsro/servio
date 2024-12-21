@@ -1,5 +1,7 @@
 <map id="servio::ftest::testing_system" name="servio::ftest::testing_system">
-<area shape="rect" id="node1" title=" " alt="" coords="83,95,235,136"/>
-<area shape="rect" id="node2" href="$structservio_1_1ftest_1_1uctx.html" title=" " alt="" coords="5,5,140,32"/>
-<area shape="rect" id="node3" href="$structservio_1_1drv_1_1com__iface.html" title=" " alt="" coords="165,5,330,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="99,93,251,133"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1com__iface.html" title=" " alt="" coords="5,5,171,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,39,135,68,158,91,154,95,131,71,106,43"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1ftest_1_1uctx.html" title=" " alt="" coords="195,5,330,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="254,44,235,71,207,95,204,91,231,68,249,41"/>
 </map>

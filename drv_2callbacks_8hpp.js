@@ -1,11 +1,11 @@
 var drv_2callbacks_8hpp =
 [
-    [ "detailed_cb", "structservio_1_1drv_1_1detailed__cb.html", "structservio_1_1drv_1_1detailed__cb" ],
-    [ "empty_detailed_cb", "structservio_1_1drv_1_1empty__detailed__cb.html", "structservio_1_1drv_1_1empty__detailed__cb" ],
-    [ "value_cb", "structservio_1_1drv_1_1value__cb.html", "structservio_1_1drv_1_1value__cb" ],
-    [ "empty_value_cb", "structservio_1_1drv_1_1empty__value__cb.html", "structservio_1_1drv_1_1empty__value__cb" ],
-    [ "period_cb", "structservio_1_1drv_1_1period__cb.html", "structservio_1_1drv_1_1period__cb" ],
-    [ "empty_period_cb", "structservio_1_1drv_1_1empty__period__cb.html", "structservio_1_1drv_1_1empty__period__cb" ],
+    [ "servio::drv::detailed_cb< Callable >", "structservio_1_1drv_1_1detailed__cb.html", "structservio_1_1drv_1_1detailed__cb" ],
+    [ "servio::drv::empty_detailed_cb", "structservio_1_1drv_1_1empty__detailed__cb.html", "structservio_1_1drv_1_1empty__detailed__cb" ],
+    [ "servio::drv::value_cb< Callable >", "structservio_1_1drv_1_1value__cb.html", "structservio_1_1drv_1_1value__cb" ],
+    [ "servio::drv::empty_value_cb", "structservio_1_1drv_1_1empty__value__cb.html", "structservio_1_1drv_1_1empty__value__cb" ],
+    [ "servio::drv::period_cb< Callable >", "structservio_1_1drv_1_1period__cb.html", "structservio_1_1drv_1_1period__cb" ],
+    [ "servio::drv::empty_period_cb", "structservio_1_1drv_1_1empty__period__cb.html", "structservio_1_1drv_1_1empty__period__cb" ],
     [ "current_cb", "drv_2callbacks_8hpp.html#acb96632a153ab3bc0026940e950bb717", null ],
     [ "empty_current_cb", "drv_2callbacks_8hpp.html#afa6ea7295f655701d653891a4d095a3f", null ],
     [ "empty_position_cb", "drv_2callbacks_8hpp.html#a6acd0b565a5151d327a2011e398d8193", null ],

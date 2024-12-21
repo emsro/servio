@@ -1,4 +1,7 @@
 <map id="servio::drv::adc_pooler_current&lt; AdcPooler &gt;" name="servio::drv::adc_pooler_current&lt; AdcPooler &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,176,121"/>
-<area shape="rect" id="node2" href="$structservio_1_1drv_1_1curr__iface.html" title=" " alt="" coords="9,5,172,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,167,176,207"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1curr__iface.html" title=" " alt="" coords="9,93,172,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,132,93,167,88,167,88,132"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1get__curr__iface.html" title=" " alt="" coords="15,5,166,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,59,93,93,88,93,88,59"/>
 </map>

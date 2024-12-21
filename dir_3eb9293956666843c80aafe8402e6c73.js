@@ -5,36 +5,18 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
     [ "adc_pooler.hpp", "adc__pooler_8hpp.html", "adc__pooler_8hpp" ],
     [ "adc_pooler_def.hpp", "adc__pooler__def_8hpp.html", "adc__pooler__def_8hpp" ],
     [ "callbacks.hpp", "drv_2callbacks_8hpp.html", "drv_2callbacks_8hpp" ],
-    [ "clock.hpp", "clock_8hpp.html", [
-      [ "clock", "classservio_1_1drv_1_1clock.html", "classservio_1_1drv_1_1clock" ]
-    ] ],
+    [ "clock.hpp", "clock_8hpp.html", "clock_8hpp" ],
     [ "cobs_uart.cpp", "cobs__uart_8cpp.html", null ],
     [ "cobs_uart.hpp", "cobs__uart_8hpp.html", "cobs__uart_8hpp" ],
-    [ "defs.hpp", "defs_8hpp.html", [
-      [ "pin_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg", [
-        [ "alternate", "namespaceservio_1_1drv.html#a3b5744acf3762f9fd7ff7cb9c8211640", null ],
-        [ "mode", "namespaceservio_1_1drv.html#a4b6dbe40933c2ab5f79074a81d43c19d", null ],
-        [ "pin", "namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244", null ],
-        [ "port", "namespaceservio_1_1drv.html#ae43b31297ea3dfab8312221cfd3c348d", null ],
-        [ "pull", "namespaceservio_1_1drv.html#a4ea163424b4d1621603871134262f897", null ]
-      ] ]
-    ] ],
-    [ "dts_temp.hpp", "dts__temp_8hpp.html", [
-      [ "dts_temp", "classservio_1_1drv_1_1dts__temp.html", "classservio_1_1drv_1_1dts__temp" ]
-    ] ],
+    [ "defs.hpp", "defs_8hpp.html", "defs_8hpp" ],
+    [ "dts_temp.hpp", "dts__temp_8hpp.html", "dts__temp_8hpp" ],
     [ "flash_cfg.cpp", "flash__cfg_8cpp.html", null ],
-    [ "flash_cfg.hpp", "flash__cfg_8hpp.html", [
-      [ "flash_storage", "classservio_1_1drv_1_1flash__storage.html", "classservio_1_1drv_1_1flash__storage" ]
-    ] ],
+    [ "flash_cfg.hpp", "flash__cfg_8hpp.html", "flash__cfg_8hpp" ],
     [ "hbridge.cpp", "hbridge_8cpp.html", null ],
     [ "hbridge.hpp", "hbridge_8hpp.html", "hbridge_8hpp" ],
     [ "interfaces.hpp", "interfaces_8hpp.html", "interfaces_8hpp" ],
     [ "leds.cpp", "leds_8cpp.html", null ],
-    [ "leds.hpp", "leds_8hpp.html", [
-      [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ]
-    ] ],
-    [ "quad_encoder.hpp", "quad__encoder_8hpp.html", [
-      [ "quad_encoder", "classservio_1_1drv_1_1quad__encoder.html", "classservio_1_1drv_1_1quad__encoder" ]
-    ] ],
+    [ "leds.hpp", "leds_8hpp.html", "leds_8hpp" ],
+    [ "quad_encoder.hpp", "quad__encoder_8hpp.html", "quad__encoder_8hpp" ],
     [ "retainers.hpp", "retainers_8hpp.html", "retainers_8hpp" ]
 ];

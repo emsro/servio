@@ -1,5 +1,9 @@
 <map id="servio::drv::hbridge" name="servio::drv::hbridge">
-<area shape="rect" id="node1" title=" " alt="" coords="111,95,257,121"/>
-<area shape="rect" id="node2" href="$structservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="5,5,181,47"/>
-<area shape="rect" id="node3" href="$structservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="205,5,344,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="111,181,257,207"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="5,93,181,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,140,172,179,169,183,124,144"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1motor__info__iface.html" title=" " alt="" coords="25,5,162,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="96,59,96,93,91,93,91,59"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1drv_1_1period__iface.html" title=" " alt="" coords="205,93,344,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="244,144,199,183,196,179,241,140"/>
 </map>

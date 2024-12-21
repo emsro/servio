@@ -1,4 +1,5 @@
 <map id="servio::plt::hb_timer_cfg" name="servio::plt::hb_timer_cfg">
-<area shape="rect" id="node1" title=" " alt="" coords="5,109,185,136"/>
-<area shape="rect" id="node2" href="$namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg" title=" " alt="" coords="23,5,168,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,108,185,133"/>
+<area shape="rect" id="Node000002" href="$namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg" title=" " alt="" coords="23,5,168,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,45,98,108,93,108,93,45"/>
 </map>

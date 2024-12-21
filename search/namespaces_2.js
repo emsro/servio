@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vari_1349',['vari',['../namespacevari.html',1,'']]]
+  ['vari_0',['vari',['../namespacevari.html',1,'']]]
 ];

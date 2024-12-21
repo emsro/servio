@@ -1,7 +1,11 @@
 <map id="servio::drv::tests::comms_echo_test" name="servio::drv::tests::comms_echo_test">
-<area shape="rect" id="node1" title=" " alt="" coords="175,185,323,227"/>
-<area shape="rect" id="node2" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="5,96,161,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="186,96,311,123"/>
-<area shape="rect" id="node4" title=" " alt="" coords="165,5,332,47"/>
-<area shape="rect" id="node5" href="$structservio_1_1drv_1_1com__iface.html" title=" " alt="" coords="335,96,501,123"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="195,183,343,223"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="5,95,161,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,124,233,180,230,185,117,128"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1com__iface.html" title=" " alt="" coords="186,95,351,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="271,134,271,182,266,182,266,134"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="375,95,501,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="406,129,304,185,302,180,404,124"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="355,5,521,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="441,59,441,94,435,94,435,59"/>
 </map>

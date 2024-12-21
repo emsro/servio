@@ -1,5 +1,7 @@
 <map id="servio::sntr::central_sentry_iface" name="servio::sntr::central_sentry_iface">
-<area shape="rect" id="node1" title=" " alt="" coords="87,5,235,47"/>
-<area shape="rect" id="node2" href="$classservio_1_1sntr_1_1central__sentry.html" title=" " alt="" coords="5,95,153,136"/>
-<area shape="rect" id="node3" href="$structservio_1_1sntr_1_1test__central__sentry.html" title=" " alt="" coords="178,95,306,136"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="87,5,235,45"/>
+<area shape="rect" id="Node000002" href="$classservio_1_1sntr_1_1central__sentry.html" title=" " alt="" coords="5,93,153,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,57,99,95,95,91,131,54"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1sntr_1_1test__central__sentry.html" title=" " alt="" coords="178,93,306,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,54,226,91,222,95,186,57"/>
 </map>

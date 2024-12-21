@@ -30,7 +30,72 @@ var NAVTREE =
     [ "Build", "index.html#autotoc_md3", null ],
     [ "Flashing", "index.html#autotoc_md4", null ],
     [ "Usage", "index.html#autotoc_md5", null ],
-    [ "Requirements", "md_doc_requirements.html", "md_doc_requirements" ],
+    [ "Requirements", "md_doc_2requirements.html", [
+      [ "System requirements", "sys.html", [
+        [ "REQ1.1 Prioritize project independence to hardware", "sys.html#autotoc_md6", [
+          [ "REQ1.1.1 Decomposition", "sys.html#autotoc_md7", null ],
+          [ "REQ1.1.2 Code shall not be dependent on hardware specifics unless necessary", "sys.html#autotoc_md8", null ]
+        ] ],
+        [ "REQ1.2 Focus on testing", "sys.html#autotoc_md9", null ],
+        [ "REQ1.2.1 Test on host what can be tested on host", "sys.html#autotoc_md10", null ],
+        [ "REQ1.2.3 Use testing on target hardware", "sys.html#autotoc_md11", null ]
+      ] ],
+      [ "System control requirements", "ctl.html", [
+        [ "REQ2.1 Position control mode", "ctl.html#autotoc_md12", null ],
+        [ "REQ2.2 Current control mode", "ctl.html#autotoc_md13", null ],
+        [ "REQ2.3 Velocity control mode", "ctl.html#autotoc_md14", null ],
+        [ "REQ2.4 Power control mode", "ctl.html#autotoc_md15", null ],
+        [ "REQ2.5 Movement detection", "ctl.html#autotoc_md16", null ],
+        [ "REQ2.6 Static friction compensation", "ctl.html#autotoc_md17", null ],
+        [ "REQ2.7 Disengaged", "ctl.html#autotoc_md18", null ]
+      ] ],
+      [ "System limits requirements", "lims.html", [
+        [ "REQ3.1 Current limits", "lims.html#autotoc_md19", null ],
+        [ "REQ3.2 Position limits", "lims.html#autotoc_md20", null ],
+        [ "REQ3.3 Velocity limits", "lims.html#autotoc_md21", null ]
+      ] ],
+      [ "Communication requirements", "comms.html", [
+        [ "REQ4.1 System should have one major communication interface", "comms.html#autotoc_md22", null ],
+        [ "REQ4.2 System should decompose message communication to be independent on underlying transport layer", "comms.html#autotoc_md23", null ],
+        [ "RE4.3 UART shall be supported as transport", "comms.html#autotoc_md24", null ],
+        [ "REQ4.4 Major communication message shall be defined in TBD", "comms.html#autotoc_md25", null ],
+        [ "REQ4.5 COBS can be used as framing mechanism", "comms.html#autotoc_md26", null ],
+        [ "REQ4.6 Exact communication interface is property of board", "comms.html#autotoc_md27", null ],
+        [ "REQ4.7 ID", "comms.html#autotoc_md28", null ],
+        [ "REQ4.8 Group ID", "comms.html#autotoc_md29", null ]
+      ] ],
+      [ "Units", "units.html", [
+        [ "REQ5.1 Any values facing the user shall be in well defined units specified by other requirements", "units.html#autotoc_md30", null ],
+        [ "REQ5.2 Angular position is specified in radians", "units.html#autotoc_md31", null ],
+        [ "REQ5.3 Electric current is specified in amperes", "units.html#autotoc_md32", null ],
+        [ "REQ5.4 Time is specified in seconds", "units.html#autotoc_md33", null ],
+        [ "REQ5.5 Angular velocity is specified in radians per second.", "units.html#autotoc_md34", null ]
+      ] ],
+      [ "Configuration", "config.html", [
+        [ "REQ6.1 One configuration", "config.html#autotoc_md35", null ],
+        [ "REQ6.2 Configuration can be managed by the user via the communication interface", "config.html#autotoc_md36", [
+          [ "REQ6.2.1 Get configuration field", "config.html#autotoc_md37", null ],
+          [ "REQ6.2.2 Set configuration field", "config.html#autotoc_md38", null ],
+          [ "REQ6.2.3 Commit the configuration", "config.html#autotoc_md39", null ],
+          [ "REQ6.2.4 Clear the configuration", "config.html#autotoc_md40", null ]
+        ] ],
+        [ "REQ6.3 Configuration shall be documented", "config.html#autotoc_md41", null ],
+        [ "REQ6.4 Configuration is tied to the version of firmware", "config.html#autotoc_md42", null ],
+        [ "REQ6.5 Persistent configuration", "config.html#autotoc_md43", [
+          [ "REQ6.5.1 Entire set is always stored", "config.html#autotoc_md44", null ],
+          [ "REQ6.5.2 Size of history", "config.html#autotoc_md45", null ],
+          [ "REQ6.5.3 Clear removes history", "config.html#autotoc_md46", null ],
+          [ "REQ6.5.4 Firmware version is also stored", "config.html#autotoc_md47", null ]
+        ] ],
+        [ "REQ6.6 Firmware version changes", "config.html#autotoc_md48", null ],
+        [ "REQ6.7 Utility for changes shall exist", "config.html#autotoc_md49", null ],
+        [ "REQ6.8 Common format for storing on host side", "config.html#autotoc_md50", null ],
+        [ "REQ6.9 List of fields for configuration", "config.html#autotoc_md51", [
+          [ "REQ6.9.1 Model", "config.html#autotoc_md52", null ],
+          [ "REQ6.9.2 ID", "config.html#autotoc_md53", null ]
+        ] ]
+      ] ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -53,7 +118,7 @@ var NAVTREE =
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Enumerator", "functions_eval.html", null ],
-        [ "Related Functions", "functions_rela.html", null ]
+        [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -71,16 +136,19 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"clock_8hpp_source.html",
-"functions.html",
-"map__cfg_8hpp_source.html",
-"namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451",
-"namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52ad32cbe23a48d1576416d9eb314876c6d",
-"proto3_2board_8cpp.html#a991f10f53fec7bf1caa79b8438ed01c1",
-"stm32h5xx__hal__conf_8h.html#ac38f5d91c277dad9a16f7aebb2ed0661",
-"structservio_1_1drv_1_1tests_1_1clock__test.html#abf50d5793744c5605b6916e6ab10f90b",
-"structservio_1_1mtr_1_1posvel__kalman.html#ae6b01a41923a1dded326d897a34e2863"
+"adc_8cpp.html",
+"classservio_1_1drv_1_1hbridge.html#aacfb37303df17a349a73b7cec5a001d8",
+"ctl__test_8hpp.html",
+"impl__tests_8hpp_source.html",
+"namespaceservio.html#ad65a9ec22f69582eff005ae62a0bd415",
+"namespaceservio_1_1drv_1_1tests.html",
+"namespaceservio_1_1scmdio.html#ad4eeda260fbde422b87e85ab46f2da0d",
+"sentry_8hpp_source.html",
+"structservio_1_1cfg_1_1dispatcher.html#ad2c019978b411e7fc1bd272ab39f662b",
+"structservio_1_1drv_1_1adc__pooler__vcc.html#a5113ccf765b4e2b4bf7a060f1fc496de",
+"structservio_1_1drv_1_1tests_1_1vcc__test.html#ae3b773812e273e1854ec37f3d5234ed5",
+"structservio_1_1iface_1_1cfg__clear__stmt.html",
+"structservio_1_1sim_1_1simple__motor.html#acc2abb9ad8bc69397608de83372fd0c6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

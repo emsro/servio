@@ -1,6 +1,10 @@
 <map id="src/mon/effects.cpp" name="src/mon/effects.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="45,5,195,32"/>
-<area shape="rect" id="node2" href="$effects_8hpp.html" title=" " alt="" coords="25,80,127,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="37,229,203,256"/>
-<area shape="rect" id="node3" href="$base_2base_8hpp.html" title=" " alt="" coords="5,155,133,181"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="45,5,195,31"/>
+<area shape="rect" id="Node000002" href="$effects_8hpp.html" title=" " alt="" coords="25,79,127,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,32,93,68,88,66,110,30"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="37,225,203,251"/>
+<area shape="poly" id="edge4_Node000001_Node000006" title=" " alt="" coords="127,30,143,78,152,128,152,150,148,178,135,214,130,212,143,177,147,150,147,128,137,79,122,32"/>
+<area shape="rect" id="Node000003" href="$base_2base_8hpp.html" title=" " alt="" coords="5,152,133,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="78,105,74,139,69,138,72,104"/>
+<area shape="poly" id="edge3_Node000003_Node000006" title=" " alt="" coords="80,176,106,213,102,216,76,179"/>
 </map>

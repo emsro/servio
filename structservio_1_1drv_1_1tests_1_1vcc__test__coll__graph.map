@@ -1,6 +1,9 @@
 <map id="servio::drv::tests::vcc_test" name="servio::drv::tests::vcc_test">
-<area shape="rect" id="node1" title=" " alt="" coords="107,185,238,227"/>
-<area shape="rect" id="node2" title=" " alt="" coords="26,96,151,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,172,47"/>
-<area shape="rect" id="node4" href="$structservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="176,96,335,123"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="53,183,183,223"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="5,95,164,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,132,114,182,109,183,91,134"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="189,95,314,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,130,147,185,144,180,222,126"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="168,5,335,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="254,59,254,94,249,94,249,59"/>
 </map>

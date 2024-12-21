@@ -1,12 +1,25 @@
 <map id="src/drv/hbridge.cpp" name="src/drv/hbridge.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="711,5,857,32"/>
-<area shape="rect" id="node2" href="$hbridge_8hpp.html" title=" " alt="" coords="319,80,417,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="517,319,656,345"/>
-<area shape="rect" id="node10" title=" " alt="" coords="821,80,987,107"/>
-<area shape="rect" id="node3" href="$platform_8hpp.html" title=" " alt="" coords="608,162,747,189"/>
-<area shape="rect" id="node4" href="$sentry_8hpp.html" title=" " alt="" coords="5,162,136,189"/>
-<area shape="rect" id="node5" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="211,162,330,189"/>
-<area shape="rect" id="node6" href="$interfaces_8hpp.html" title=" " alt="" coords="307,244,429,271"/>
-<area shape="rect" id="node8" title=" " alt="" coords="243,319,296,345"/>
-<area shape="rect" id="node9" title=" " alt="" coords="406,155,583,196"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="711,5,857,31"/>
+<area shape="rect" id="Node000002" href="$hbridge_8hpp.html" title=" " alt="" coords="319,79,417,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="718,33,431,82,431,77,717,28"/>
+<area shape="rect" id="Node000027" title=" " alt="" coords="517,313,656,339"/>
+<area shape="poly" id="edge12_Node000001_Node000027" title=" " alt="" coords="788,31,789,61,787,103,779,149,761,193,732,232,696,264,659,290,625,309,622,305,656,285,693,260,728,228,756,191,774,148,782,102,784,61,782,31"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="821,79,987,104"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="805,28,874,69,871,74,802,33"/>
+<area shape="rect" id="Node000003" href="$platform_8hpp.html" title=" " alt="" coords="608,159,747,185"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,101,620,153,619,159,412,107"/>
+<area shape="rect" id="Node000006" href="$sentry_8hpp.html" title=" " alt="" coords="5,159,136,185"/>
+<area shape="poly" id="edge3_Node000002_Node000006" title=" " alt="" coords="325,107,128,158,126,153,324,101"/>
+<area shape="rect" id="Node000017" href="$drv_2callbacks_8hpp.html" title=" " alt="" coords="211,159,330,185"/>
+<area shape="poly" id="edge4_Node000002_Node000017" title=" " alt="" coords="355,106,297,153,294,149,352,102"/>
+<area shape="rect" id="Node000018" href="$interfaces_8hpp.html" title=" " alt="" coords="307,240,429,265"/>
+<area shape="poly" id="edge9_Node000002_Node000018" title=" " alt="" coords="371,104,371,226,365,226,365,104"/>
+<area shape="rect" id="Node000028" title=" " alt="" coords="243,313,296,339"/>
+<area shape="poly" id="edge11_Node000002_Node000028" title=" " alt="" coords="319,98,288,104,256,114,226,130,202,154,193,172,191,191,194,212,202,232,225,271,250,302,246,305,221,274,197,234,189,213,186,191,188,170,198,150,223,126,253,109,286,98,318,93"/>
+<area shape="rect" id="Node000029" title=" " alt="" coords="406,152,583,192"/>
+<area shape="poly" id="edge10_Node000002_Node000029" title=" " alt="" coords="388,102,454,142,451,147,385,106"/>
+<area shape="poly" id="edge5_Node000017_Node000018" title=" " alt="" coords="287,183,345,229,341,233,283,187"/>
+<area shape="poly" id="edge8_Node000017_Node000028" title=" " alt="" coords="273,185,272,300,267,300,268,185"/>
+<area shape="poly" id="edge6_Node000018_Node000027" title=" " alt="" coords="404,263,539,306,537,312,402,268"/>
+<area shape="poly" id="edge7_Node000018_Node000028" title=" " alt="" coords="354,268,298,307,295,303,351,263"/>
 </map>

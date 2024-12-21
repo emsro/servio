@@ -1,9 +1,9 @@
 var namespaceservio_1_1mon =
 [
     [ "blinker", "structservio_1_1mon_1_1blinker.html", "structservio_1_1mon_1_1blinker" ],
-    [ "pulser", "structservio_1_1mon_1_1pulser.html", "structservio_1_1mon_1_1pulser" ],
     [ "indication", "classservio_1_1mon_1_1indication.html", "classservio_1_1mon_1_1indication" ],
     [ "monitor", "classservio_1_1mon_1_1monitor.html", "classservio_1_1mon_1_1monitor" ],
+    [ "pulser", "structservio_1_1mon_1_1pulser.html", "structservio_1_1mon_1_1pulser" ],
     [ "indication_event", "namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52", [
       [ "VOLTAGE_LOW", "namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a1ebe303c3b179265bbac9ab1f3219826", null ],
       [ "TEMPERATURE_HIGH", "namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52adecfbda91cde2e00e1e04c4c97cb1b86", null ],
