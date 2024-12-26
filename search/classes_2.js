@@ -29,8 +29,9 @@ var searchData=
   ['controller_5finterface_26',['controller_interface',['../structservio_1_1ftester_1_1controller__interface.html',1,'servio::ftester']]],
   ['converter_27',['converter',['../structservio_1_1cnv_1_1converter.html',1,'servio::cnv']]],
   ['core_28',['core',['../structservio_1_1core_1_1core.html',1,'servio::core']]],
-  ['curr_5fiface_29',['curr_iface',['../structservio_1_1drv_1_1curr__iface.html',1,'servio::drv']]],
-  ['curr_5fiface_5ftest_30',['curr_iface_test',['../structservio_1_1drv_1_1tests_1_1curr__iface__test.html',1,'servio::drv::tests']]],
-  ['current_5fcallback_31',['current_callback',['../classservio_1_1core_1_1current__callback.html',1,'servio::core']]],
-  ['current_5fctl_5ftest_32',['current_ctl_test',['../structservio_1_1ftest_1_1intg_1_1current__ctl__test.html',1,'servio::ftest::intg']]]
+  ['curr_29',['curr',['../structservio_1_1drv_1_1mock_1_1curr.html',1,'servio::drv::mock']]],
+  ['curr_5fiface_30',['curr_iface',['../structservio_1_1drv_1_1curr__iface.html',1,'servio::drv']]],
+  ['curr_5fiface_5ftest_31',['curr_iface_test',['../structservio_1_1drv_1_1tests_1_1curr__iface__test.html',1,'servio::drv::tests']]],
+  ['current_5fcallback_32',['current_callback',['../classservio_1_1core_1_1current__callback.html',1,'servio::core']]],
+  ['current_5fctl_5ftest_33',['current_ctl_test',['../structservio_1_1ftest_1_1intg_1_1current__ctl__test.html',1,'servio::ftest::intg']]]
 ];

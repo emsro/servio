@@ -1,5 +1,6 @@
 var structservio_1_1iface_1_1field =
 [
+    [ "kv_type", "structservio_1_1iface_1_1field.html#ab42ca7a6ad090e3aa8970eb9f09edb37", null ],
     [ "value_type", "structservio_1_1iface_1_1field.html#a985f40dc2ebb7493a89327f4ff891428", null ],
     [ "operator<=>", "structservio_1_1iface_1_1field.html#a289cfd715bd07db7c09b7fefa9c8d501", null ],
     [ "id", "structservio_1_1iface_1_1field.html#aa3bdf51e8471eb56b51727663fefb492", null ],

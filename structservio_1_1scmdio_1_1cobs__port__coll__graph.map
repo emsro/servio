@@ -1,5 +1,7 @@
 <map id="servio::scmdio::cobs_port" name="servio::scmdio::cobs_port">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,193,119"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="10,5,189,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,45,102,93,97,93,97,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="81,108,269,133"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1scmdio_1_1port__iface.html" title=" " alt="" coords="5,5,156,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,53,165,106,162,110,107,57"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="181,13,359,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,49,189,110,185,106,247,46"/>
 </map>

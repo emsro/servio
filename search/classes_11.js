@@ -9,6 +9,6 @@ var searchData=
   ['standard_5fcallbacks_6',['standard_callbacks',['../structservio_1_1core_1_1standard__callbacks.html',1,'servio::core']]],
   ['state_5frange_7',['state_range',['../namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range',1,'servio::klmn']]],
   ['static_5fdetector_8',['static_detector',['../structservio_1_1mtr_1_1static__detector.html',1,'servio::mtr']]],
-  ['stor_9',['stor',['../structservio_1_1core_1_1tests_1_1mock_1_1stor.html',1,'servio::core::tests::mock']]],
+  ['stor_9',['stor',['../structservio_1_1drv_1_1mock_1_1stor.html',1,'servio::drv::mock']]],
   ['storage_5fiface_10',['storage_iface',['../structservio_1_1drv_1_1storage__iface.html',1,'servio::drv']]]
 ];

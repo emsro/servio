@@ -7,6 +7,5 @@ var searchData=
   ['mode_5fopts_4',['mode_opts',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts',1,'servio::scmdio']]],
   ['mode_5fstmt_5',['mode_stmt',['../structservio_1_1iface_1_1mode__stmt.html',1,'servio::iface']]],
   ['monitor_6',['monitor',['../classservio_1_1mon_1_1monitor.html',1,'servio::mon']]],
-  ['mot_7',['mot',['../structservio_1_1core_1_1tests_1_1mock_1_1mot.html',1,'servio::core::tests::mock']]],
-  ['motor_5finfo_5fiface_8',['motor_info_iface',['../structservio_1_1drv_1_1motor__info__iface.html',1,'servio::drv']]]
+  ['motor_5finfo_5fiface_7',['motor_info_iface',['../structservio_1_1drv_1_1motor__info__iface.html',1,'servio::drv']]]
 ];

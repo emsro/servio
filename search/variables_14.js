@@ -3,7 +3,7 @@ var searchData=
   ['t_0',['t',['../structservio_1_1sntr_1_1tests_1_1test__clk.html#acc0710e4b685bec714bcacfc8726faaa',1,'servio::sntr::tests::test_clk']]],
   ['temp_1',['temp',['../structservio_1_1cnv_1_1converter.html#a2e247fbcad8b7a3455893ce44fde1a6f',1,'servio::cnv::converter']]],
   ['temp_5fcalib_5fcoeffs_2',['TEMP_CALIB_COEFFS',['../namespaceservio_1_1plt.html#a02f2e0e13537988c8b1ab01ed1c6bd87',1,'servio::plt']]],
-  ['temp_5fdrv_3',['temp_drv',['../namespaceservio_1_1core.html#a1f73c141b025ab1042f552c7085a6e6a',1,'servio::core::dispatcher']]],
+  ['temp_5fdrv_3',['temp_drv',['../namespaceservio_1_1core.html#a1f73c141b025ab1042f552c7085a6e6a',1,'servio::core::dispatcher::temp_drv'],['../structservio_1_1scmdio_1_1port__mock.html#a1d39d4aef5933b127725e2d2b9552261',1,'servio::scmdio::port_mock::attrs::temp_drv']]],
   ['temperature_4',['temperature',['../structservio_1_1core_1_1drivers.html#af2f6bdfae67f73d331d52d8da2dd5822',1,'servio::core::drivers']]],
   ['terminated_5feid_5',['terminated_eid',['../namespaceservio_1_1sntr.html#aab752fd85ad1241ac8d43aa365f39d86',1,'servio::sntr']]],
   ['test_6',['test',['../structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107',1,'servio::bb::bb_test_case']]],

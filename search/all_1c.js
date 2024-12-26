@@ -5,7 +5,7 @@ var searchData=
   ['radians_20per_20second_2',['REQ5.5 Angular velocity is specified in radians per second.',['../units.html#autotoc_md34',1,'']]],
   ['re4_203_20uart_20shall_20be_20supported_20as_20transport_3',['RE4.3 UART shall be supported as transport',['../comms.html#autotoc_md24',1,'']]],
   ['reactor_4',['reactor',['../structservio_1_1ftest_1_1testing__system.html#ae94f98c5ffdca9be15b1a8ba26334237',1,'servio::ftest::testing_system']]],
-  ['read_5',['read',['../namespaceservio_1_1scmdio.html#ac075ec890b51441dbd4b23f720c9fe49',1,'servio::scmdio']]],
+  ['read_5',['read',['../namespaceservio_1_1scmdio.html#accc142ca963f10bc5aece50a60a9ed3b',1,'servio::scmdio']]],
   ['read_5fbuffer_6',['read_buffer',['../structservio_1_1scmdio_1_1cobs__port.html#a3c0ff28427c4ac6cd78e1a315e5dfe3f',1,'servio::scmdio::cobs_port']]],
   ['readme_2emd_7',['README.md',['../README_8md.html',1,'']]],
   ['real_8',['real',['../namespaceservio_1_1iface.html#ab1ae0a3f8eddcd7aab9dcf84f5752c7f',1,'servio::iface']]],

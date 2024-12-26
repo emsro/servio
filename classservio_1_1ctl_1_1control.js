@@ -1,6 +1,6 @@
 var classservio_1_1ctl_1_1control =
 [
-    [ "control", "classservio_1_1ctl_1_1control.html#a7c27ef85ea45b11411b66df0daec7928", null ],
+    [ "control", "classservio_1_1ctl_1_1control.html#ad8b91d0a4921b3a3b2c6ec55d4a7618a", null ],
     [ "current_irq", "classservio_1_1ctl_1_1control.html#a4cb46d72e2b1c43f69be36395443408b", null ],
     [ "disengage", "classservio_1_1ctl_1_1control.html#aec94b1ea8cd631cb99d492c4ab86d201", null ],
     [ "get_desired_current", "classservio_1_1ctl_1_1control.html#a362f3df07672ac504c4d1a9cfd6f8371", null ],

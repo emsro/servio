@@ -1,6 +1,8 @@
 var namespaceservio_1_1core =
 [
-    [ "tests", "namespaceservio_1_1core_1_1tests.html", "namespaceservio_1_1core_1_1tests" ],
+    [ "tests", "namespaceservio_1_1core_1_1tests.html", [
+      [ "TEST", "namespaceservio_1_1core_1_1tests.html#a71d97959036ed86f752e52a887d81fe4", null ]
+    ] ],
     [ "avg_filter", "structservio_1_1core_1_1avg__filter.html", "structservio_1_1core_1_1avg__filter" ],
     [ "core", "structservio_1_1core_1_1core.html", "structservio_1_1core_1_1core" ],
     [ "current_callback", "classservio_1_1core_1_1current__callback.html", "classservio_1_1core_1_1current__callback" ],

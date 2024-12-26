@@ -6,6 +6,7 @@ var namespaceservio_1_1ftester =
     [ "recorder", "classservio_1_1ftester_1_1recorder.html", "classservio_1_1ftester_1_1recorder" ],
     [ "test_system", "structservio_1_1ftester_1_1test__system.html", "structservio_1_1ftester_1_1test__system" ],
     [ "opt", "namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee", null ],
+    [ "sptr", "namespaceservio_1_1ftester.html#a8a630f7d7a8f7f10922563441a8566dc", null ],
     [ "firmware_opt", "namespaceservio_1_1ftester.html#acc64a6f277fb5ffb8b088c5bc1b4657d", null ],
     [ "flash_firmware", "namespaceservio_1_1ftester.html#ad48d568e7f67be4d2bb49a369067697f", null ],
     [ "get_config", "namespaceservio_1_1ftester.html#abafc9ebaf605802ca7b02a5592cf7a7f", null ],

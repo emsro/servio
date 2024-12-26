@@ -32,16 +32,6 @@ var annotated_dup =
         [ "off_scale", "namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale", "namespaceservio_1_1cnv_structservio_1_1cnv_1_1off__scale_dup" ]
       ] ],
       [ "core", "namespaceservio_1_1core.html", [
-        [ "tests", "namespaceservio_1_1core_1_1tests.html", [
-          [ "mock", "namespaceservio_1_1core_1_1tests_1_1mock.html", [
-            [ "get_curr", "structservio_1_1core_1_1tests_1_1mock_1_1get__curr.html", "structservio_1_1core_1_1tests_1_1mock_1_1get__curr" ],
-            [ "get_pos", "structservio_1_1core_1_1tests_1_1mock_1_1get__pos.html", "structservio_1_1core_1_1tests_1_1mock_1_1get__pos" ],
-            [ "get_temp", "structservio_1_1core_1_1tests_1_1mock_1_1get__temp.html", "structservio_1_1core_1_1tests_1_1mock_1_1get__temp" ],
-            [ "get_vcc_", "structservio_1_1core_1_1tests_1_1mock_1_1get__vcc__.html", "structservio_1_1core_1_1tests_1_1mock_1_1get__vcc__" ],
-            [ "mot", "structservio_1_1core_1_1tests_1_1mock_1_1mot.html", "structservio_1_1core_1_1tests_1_1mock_1_1mot" ],
-            [ "stor", "structservio_1_1core_1_1tests_1_1mock_1_1stor.html", "structservio_1_1core_1_1tests_1_1mock_1_1stor" ]
-          ] ]
-        ] ],
         [ "avg_filter", "structservio_1_1core_1_1avg__filter.html", "structservio_1_1core_1_1avg__filter" ],
         [ "core", "structservio_1_1core_1_1core.html", "structservio_1_1core_1_1core" ],
         [ "current_callback", "classservio_1_1core_1_1current__callback.html", "classservio_1_1core_1_1current__callback" ],
@@ -61,6 +51,14 @@ var annotated_dup =
       [ "drv", "namespaceservio_1_1drv.html", [
         [ "bits", "namespaceservio_1_1drv_1_1bits.html", [
           [ "cobs_rx_container", "namespaceservio_1_1drv_1_1bits.html#structservio_1_1drv_1_1bits_1_1cobs__rx__container", "namespaceservio_1_1drv_1_1bits_structservio_1_1drv_1_1bits_1_1cobs__rx__container_dup" ]
+        ] ],
+        [ "mock", "namespaceservio_1_1drv_1_1mock.html", [
+          [ "curr", "structservio_1_1drv_1_1mock_1_1curr.html", "structservio_1_1drv_1_1mock_1_1curr" ],
+          [ "pos", "structservio_1_1drv_1_1mock_1_1pos.html", "structservio_1_1drv_1_1mock_1_1pos" ],
+          [ "pwm_mot", "structservio_1_1drv_1_1mock_1_1pwm__mot.html", "structservio_1_1drv_1_1mock_1_1pwm__mot" ],
+          [ "stor", "structservio_1_1drv_1_1mock_1_1stor.html", "structservio_1_1drv_1_1mock_1_1stor" ],
+          [ "temp", "structservio_1_1drv_1_1mock_1_1temp.html", "structservio_1_1drv_1_1mock_1_1temp" ],
+          [ "vcc", "structservio_1_1drv_1_1mock_1_1vcc.html", "structservio_1_1drv_1_1mock_1_1vcc" ]
         ] ],
         [ "tests", "namespaceservio_1_1drv_1_1tests.html", [
           [ "adc_pooler_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test", null ],
@@ -162,6 +160,8 @@ var annotated_dup =
         [ "field_tuple< vari::typelist< Ts... > >", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4", "namespaceservio_1_1iface_structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4_dup" ],
         [ "group", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1group", "namespaceservio_1_1iface_structservio_1_1iface_1_1group_dup" ],
         [ "invalid_stmt", "structservio_1_1iface_1_1invalid__stmt.html", "structservio_1_1iface_1_1invalid__stmt" ],
+        [ "key_filter", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter", null ],
+        [ "key_filter< K, vari::typelist< F, Fs... > >", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4.html", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4" ],
         [ "kval", "structservio_1_1iface_1_1kval.html", "structservio_1_1iface_1_1kval" ],
         [ "kval< Key, void >", "structservio_1_1iface_1_1kval_3_01Key_00_01void_01_4.html", "structservio_1_1iface_1_1kval_3_01Key_00_01void_01_4" ],
         [ "mode_stmt", "structservio_1_1iface_1_1mode__stmt.html", "structservio_1_1iface_1_1mode__stmt" ],
@@ -202,6 +202,8 @@ var annotated_dup =
         [ "line", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1line_dup" ],
         [ "mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1mode__opts_dup" ],
         [ "parse_error", "structservio_1_1scmdio_1_1parse__error.html", "structservio_1_1scmdio_1_1parse__error" ],
+        [ "port_iface", "structservio_1_1scmdio_1_1port__iface.html", "structservio_1_1scmdio_1_1port__iface" ],
+        [ "port_mock", "structservio_1_1scmdio_1_1port__mock.html", "structservio_1_1scmdio_1_1port__mock" ],
         [ "reply_error", "structservio_1_1scmdio_1_1reply__error.html", "structservio_1_1scmdio_1_1reply__error" ],
         [ "serialize_error", "structservio_1_1scmdio_1_1serialize__error.html", "structservio_1_1scmdio_1_1serialize__error" ],
         [ "servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", null ]

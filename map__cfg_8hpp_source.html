@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('map__cfg_8hpp_source.html',''); initRe
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespaceservio_1_1core.html#aa638b55811ea0be1f44dc32ff5700cfa">   11</a></span><span class="keyword">consteval</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespaceservio_1_1core.html#aa638b55811ea0be1f44dc32ff5700cfa">_build_iface_cfg_map</a>()</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        std::array&lt; <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">cfg::key</a>, iface::cfg_key::keys.size() &gt; res;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">auto</span> f = [&amp;]( <a class="code hl_typedef" href="namespaceservio_1_1iface.html#a2657579c08831e4008ac39cc757d5cc5">iface::cfg_key</a> idx, <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">cfg::key</a> k ) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">auto</span> f = [&amp;]( <a class="code hl_typedef" href="namespaceservio_1_1iface.html#aaf16ae9411acb9dfaa3882cac5eeec8b">iface::cfg_key</a> idx, <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">cfg::key</a> k ) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                res[idx.value()] = k;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        };</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        f( <span class="stringliteral">&quot;model&quot;</span>_a, <a class="code hl_enumvalue" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add6c0ae6916d0b990a601cab95903e66">cfg::MODEL</a> );</div>
@@ -197,14 +197,14 @@ $(document).ready(function(){initNavTree('map__cfg_8hpp_source.html',''); initRe
 <div class="ttc" id="anamespaceservio_1_1core_html"><div class="ttname"><a href="namespaceservio_1_1core.html">servio::core</a></div><div class="ttdef"><b>Definition</b> callbacks.hpp:9</div></div>
 <div class="ttc" id="anamespaceservio_1_1core_html_a1ea704c6094fe31cea8002b9fcb0cba1"><div class="ttname"><a href="namespaceservio_1_1core.html#a1ea704c6094fe31cea8002b9fcb0cba1">servio::core::iface_to_cfg</a></div><div class="ttdeci">static constexpr auto iface_to_cfg</div><div class="ttdef"><b>Definition</b> map_cfg.hpp:55</div></div>
 <div class="ttc" id="anamespaceservio_1_1core_html_aa638b55811ea0be1f44dc32ff5700cfa"><div class="ttname"><a href="namespaceservio_1_1core.html#aa638b55811ea0be1f44dc32ff5700cfa">servio::core::_build_iface_cfg_map</a></div><div class="ttdeci">consteval auto _build_iface_cfg_map()</div><div class="ttdef"><b>Definition</b> map_cfg.hpp:11</div></div>
-<div class="ttc" id="anamespaceservio_1_1iface_html_a2657579c08831e4008ac39cc757d5cc5"><div class="ttname"><a href="namespaceservio_1_1iface.html#a2657579c08831e4008ac39cc757d5cc5">servio::iface::cfg_key</a></div><div class="ttdeci">typename field_traits&lt; cfg &gt;::keys cfg_key</div><div class="ttdef"><b>Definition</b> def.h:96</div></div>
+<div class="ttc" id="anamespaceservio_1_1iface_html_aaf16ae9411acb9dfaa3882cac5eeec8b"><div class="ttname"><a href="namespaceservio_1_1iface.html#aaf16ae9411acb9dfaa3882cac5eeec8b">servio::iface::cfg_key</a></div><div class="ttdeci">typename cfg_traits::keys cfg_key</div><div class="ttdef"><b>Definition</b> def.h:98</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a class="el" href="map__cfg_8hpp.html">map_cfg.hpp</a></li>
-    <li class="footer">Generated on Sat Dec 21 2024 16:43:59 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Dec 26 2024 20:32:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

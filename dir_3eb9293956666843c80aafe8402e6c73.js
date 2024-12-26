@@ -17,6 +17,7 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
     [ "interfaces.hpp", "interfaces_8hpp.html", "interfaces_8hpp" ],
     [ "leds.cpp", "leds_8cpp.html", null ],
     [ "leds.hpp", "leds_8hpp.html", "leds_8hpp" ],
+    [ "mock.hpp", "mock_8hpp.html", "mock_8hpp" ],
     [ "quad_encoder.hpp", "quad__encoder_8hpp.html", "quad__encoder_8hpp" ],
     [ "retainers.hpp", "retainers_8hpp.html", "retainers_8hpp" ]
 ];

@@ -23,13 +23,14 @@ var searchData=
   ['board_2ecpp_20',['board.cpp',['../proto3_2board_8cpp.html',1,'(Global Namespace)'],['../proto4_2board_8cpp.html',1,'(Global Namespace)']]],
   ['booting_21',['BOOTING',['../namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52ad32cbe23a48d1576416d9eb314876c6d',1,'servio::mon']]],
   ['brd_2ehpp_22',['brd.hpp',['../brd_8hpp.html',1,'']]],
-  ['buffer_23',['buffer',['../namespaceservio_1_1drv_1_1bits.html#af2fde201622302a56ede64cfe86352e5',1,'servio::drv::bits::cobs_rx_container::buffer'],['../structservio_1_1core_1_1avg__filter.html#ad6b0f945bd3240833057ff9450c8dc3f',1,'servio::core::avg_filter::buffer'],['../structservio_1_1drv_1_1detailed__adc__channel.html#ad11f56dd273bd4dafc88de6dc9a91363',1,'servio::drv::detailed_adc_channel::buffer'],['../structservio_1_1sntr_1_1test__central__sentry.html#a2ea27ced060ca8e4fa55774ef488ed8c',1,'servio::sntr::test_central_sentry::buffer']]],
-  ['buffer_5fa_24',['buffer_a',['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html#a6c69eb61d973be8a36465658aaa0c000',1,'servio::sntr::tests::sentry_fixture::buffer_a'],['../structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#a2dccf181d27ff44fc9394398f9c997d9',1,'servio::sntr::tests::central_sentry_fixture::buffer_a']]],
-  ['buffer_5fb_25',['buffer_b',['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html#afa499bdc0087642001dd916e7a724a15',1,'servio::sntr::tests::sentry_fixture::buffer_b'],['../structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#a3aa92f4c98795e11244715d58092a80b',1,'servio::sntr::tests::central_sentry_fixture::buffer_b']]],
-  ['buffer_5fc_26',['buffer_c',['../structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#ace6cb5ed850e5a2e6ba75f29787ed56a',1,'servio::sntr::tests::central_sentry_fixture']]],
-  ['buffer_5fsize_27',['buffer_size',['../serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc',1,'serial.cpp']]],
-  ['build_28',['Build',['../index.html#autotoc_md3',1,'']]],
-  ['busfault_5fhandler_29',['BusFault_Handler',['../it_8cpp.html#a850cefb17a977292ae5eb4cafa9976c3',1,'it.cpp']]],
-  ['by_20other_20requirements_30',['REQ5.1 Any values facing the user shall be in well defined units specified by other requirements',['../units.html#autotoc_md30',1,'']]],
-  ['by_20the_20user_20via_20the_20communication_20interface_31',['REQ6.2 Configuration can be managed by the user via the communication interface',['../config.html#autotoc_md36',1,'']]]
+  ['buff_23',['buff',['../structservio_1_1scmdio_1_1port__mock.html#ae97e2b1eb2ac64d4c74a56fb90498ed9',1,'servio::scmdio::port_mock']]],
+  ['buffer_24',['buffer',['../structservio_1_1drv_1_1detailed__adc__channel.html#ad11f56dd273bd4dafc88de6dc9a91363',1,'servio::drv::detailed_adc_channel::buffer'],['../structservio_1_1core_1_1avg__filter.html#ad6b0f945bd3240833057ff9450c8dc3f',1,'servio::core::avg_filter::buffer'],['../namespaceservio_1_1drv_1_1bits.html#af2fde201622302a56ede64cfe86352e5',1,'servio::drv::bits::cobs_rx_container::buffer'],['../structservio_1_1sntr_1_1test__central__sentry.html#a2ea27ced060ca8e4fa55774ef488ed8c',1,'servio::sntr::test_central_sentry::buffer']]],
+  ['buffer_5fa_25',['buffer_a',['../structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#a2dccf181d27ff44fc9394398f9c997d9',1,'servio::sntr::tests::central_sentry_fixture::buffer_a'],['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html#a6c69eb61d973be8a36465658aaa0c000',1,'servio::sntr::tests::sentry_fixture::buffer_a']]],
+  ['buffer_5fb_26',['buffer_b',['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html#afa499bdc0087642001dd916e7a724a15',1,'servio::sntr::tests::sentry_fixture::buffer_b'],['../structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#a3aa92f4c98795e11244715d58092a80b',1,'servio::sntr::tests::central_sentry_fixture::buffer_b']]],
+  ['buffer_5fc_27',['buffer_c',['../structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html#ace6cb5ed850e5a2e6ba75f29787ed56a',1,'servio::sntr::tests::central_sentry_fixture']]],
+  ['buffer_5fsize_28',['buffer_size',['../serial_8cpp.html#ac714a2b4f10a1cb64f44a5517819e9cc',1,'serial.cpp']]],
+  ['build_29',['Build',['../index.html#autotoc_md3',1,'']]],
+  ['busfault_5fhandler_30',['BusFault_Handler',['../it_8cpp.html#a850cefb17a977292ae5eb4cafa9976c3',1,'it.cpp']]],
+  ['by_20other_20requirements_31',['REQ5.1 Any values facing the user shall be in well defined units specified by other requirements',['../units.html#autotoc_md30',1,'']]],
+  ['by_20the_20user_20via_20the_20communication_20interface_32',['REQ6.2 Configuration can be managed by the user via the communication interface',['../config.html#autotoc_md36',1,'']]]
 ];

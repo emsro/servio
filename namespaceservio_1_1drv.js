@@ -1,6 +1,7 @@
 var namespaceservio_1_1drv =
 [
     [ "bits", "namespaceservio_1_1drv_1_1bits.html", "namespaceservio_1_1drv_1_1bits" ],
+    [ "mock", "namespaceservio_1_1drv_1_1mock.html", "namespaceservio_1_1drv_1_1mock" ],
     [ "tests", "namespaceservio_1_1drv_1_1tests.html", "namespaceservio_1_1drv_1_1tests" ],
     [ "adc_channel", "structservio_1_1drv_1_1adc__channel.html", "structservio_1_1drv_1_1adc__channel" ],
     [ "adc_channel_with_callback", "structservio_1_1drv_1_1adc__channel__with__callback.html", "structservio_1_1drv_1_1adc__channel__with__callback" ],
