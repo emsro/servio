@@ -1,5 +1,6 @@
 
 #include "../../cfg/default.hpp"
+#include "../../drv/mock.hpp"
 #include "../dispatcher.hpp"
 #include "../map_cfg.hpp"
 
@@ -12,127 +13,25 @@
 
 namespace servio::core::tests
 {
-namespace mock
-{
-struct mot : drv::pwm_motor_iface
-{
-        void set_invert( bool ) override
-        {
-        }
-
-        void set_power( pwr ) override
-        {
-        }
-
-        void force_stop() override
-        {
-        }
-
-        bool is_stopped() const override
-        {
-                return false;
-        }
-
-        int8_t get_direction() const override
-        {
-                return -1;
-        };
-};
-
-struct get_pos : drv::get_pos_iface
-{
-        uint32_t x;
-
-        uint32_t get_position() const override
-        {
-                return x;
-        }
-
-        limits< uint32_t > get_position_range() const override
-        {
-                return { 0, 1024 };
-        }
-};
-
-struct get_curr : drv::get_curr_iface
-{
-        uint32_t x;
-
-        uint32_t get_current() const override
-        {
-                return x;
-        }
-};
-
-struct get_vcc_ : drv::vcc_iface
-{
-        uint32_t x;
-
-        uint32_t get_vcc() const override
-        {
-                return x;
-        }
-};
-
-struct get_temp : drv::temp_iface
-{
-        int32_t x;
-
-        int32_t get_temperature() const override
-        {
-                return x;
-        }
-};
-
-struct stor : drv::storage_iface
-{
-        std::size_t store_cnt = 0;
-
-        em::result store_page( std::span< std::byte const > ) override
-        {
-                store_cnt += 1;
-                return em::SUCCESS;
-        }
-
-        em::outcome load_page( std::span< std::byte > data ) override
-        {
-                std::ignore = data;
-                return em::SUCCESS;
-        }
-};
-
-}  // namespace mock
 
 TEST( core, dispatcher )
 {
-        mock::mot      mot;
-        mock::get_pos  gp;
-        mock::get_curr gc;
-        mock::get_vcc_ gv;
-        mock::get_temp tm;
-        mock::stor     sd;
+        drv::mock::pwm_mot mot;
+        drv::mock::pos     gp;
+        drv::mock::curr    gc;
+        drv::mock::vcc     gv;
+        drv::mock::temp    tm;
+        drv::mock::stor    sd;
 
-        ctl::control ctl{
+        cfg::map     m = cfg::get_default_config();
+        cfg::payload pl;
+        core         cor{
             0_ms,
+            gv,
+            tm,
             ctl::config{
-                .position_limits = { -2.0F, 2.0F },
+                        .position_limits = { -2.0F, 2.0F },
             } };
-        mtr::metrics    mtr{ 0_ms, 0.0F, -1.0F, { -1.0F, 1.0F } };
-        cfg::map        m = cfg::get_default_config();
-        cfg::payload    pl;
-        cnv::converter  cnv;
-        mon::indication indi;
-        mon::monitor    mon{ 0_ms, ctl, gv, tm, indi, cnv };
-
-        cfg::dispatcher cdisp{
-            .m     = m,
-            .ctl   = ctl,
-            .conv  = cnv,
-            .met   = mtr,
-            .mon   = mon,
-            .motor = mot,
-            .pos   = gp,
-        };
 
         dispatcher disp{
             .motor    = mot,
@@ -140,12 +39,13 @@ TEST( core, dispatcher )
             .curr_drv = gc,
             .vcc_drv  = gv,
             .temp_drv = tm,
-            .ctl      = ctl,
-            .met      = mtr,
-            .cfg_disp = cdisp,
+            .ctl      = cor.ctl,
+            .met      = cor.met,
+            .mon      = cor.mon,
+            .cfg_map  = m,
             .cfg_pl   = pl,
             .stor_drv = sd,
-            .conv     = cnv,
+            .conv     = cor.conv,
             .now      = 0_ms,
         };
 
@@ -166,25 +66,25 @@ TEST( core, dispatcher )
         // XXX: negative tests
 
         // mode
-        ctl.switch_to_power_control( 0_pwr );
+        cor.ctl.switch_to_power_control( 0_pwr );
         test( "mode disengaged", R"(["OK"])"_json );
-        EXPECT_EQ( ctl.get_mode(), control_mode::DISENGAGED );
+        EXPECT_EQ( cor.ctl.get_mode(), control_mode::DISENGAGED );
         test( "prop mode", R"(["OK", "disengaged"])"_json );
 
         test( "mode power 0.2", R"(["OK"])"_json );
-        EXPECT_EQ( ctl.get_power(), 0.2_pwr );
+        EXPECT_EQ( cor.ctl.get_power(), 0.2_pwr );
         test( "prop mode", R"(["OK", "power"])"_json );
 
         test( "mode current 0.5", R"(["OK"])"_json );
-        EXPECT_EQ( ctl.get_desired_current(), 0.5F );
+        EXPECT_EQ( cor.ctl.get_desired_current(), 0.5F );
         test( "prop mode", R"(["OK", "current"])"_json );
 
         test( "mode velocity 0.22", R"(["OK"])"_json );
-        EXPECT_EQ( ctl.get_desired_velocity(), 0.22F );
+        EXPECT_EQ( cor.ctl.get_desired_velocity(), 0.22F );
         test( "prop mode", R"(["OK", "velocity"])"_json );
 
         test( "mode position -1", R"(["OK"])"_json );
-        EXPECT_EQ( ctl.get_desired_position(), -1.0F );
+        EXPECT_EQ( cor.ctl.get_desired_position(), -1.0F );
         test( "prop mode", R"(["OK", "position"])"_json );
 
         // prop
@@ -197,7 +97,7 @@ TEST( core, dispatcher )
         gp.x = 342;
         test( "prop position", R"(["OK",342.0])"_json );
 
-        test( "prop velocity", R"(["OK",-1.0])"_json );
+        test( "prop velocity", R"(["OK",0.0])"_json );
 
         // cfg set/get
         std::tuple t = iface::field_tuple_t< iface::cfg >{};

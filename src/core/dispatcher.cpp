@@ -175,14 +175,26 @@ handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, em::view<
                         s.prop,
                         buff );
             },
-            [&]( iface::cfg_set_stmt const& s ) -> R {
-                    return handle_set_config( dis.cfg_disp, s.val, buff );
-            },
-            [&]( iface::cfg_get_stmt const& s ) -> R {
-                    return handle_get_config( dis.cfg_disp, s.k, buff );
+            [&]( vari::vref< iface::cfg_set_stmt const, iface::cfg_get_stmt const > s ) -> R {
+                    cfg::dispatcher cfg_disp{
+                        .m     = dis.cfg_map,
+                        .ctl   = dis.ctl,
+                        .conv  = dis.conv,
+                        .met   = dis.met,
+                        .mon   = dis.mon,
+                        .motor = dis.motor,
+                        .pos   = dis.pos_drv,
+                    };
+                    return s.visit(
+                        [&]( iface::cfg_set_stmt const& st ) {
+                                return handle_set_config( cfg_disp, st.val, buff );
+                        },
+                        [&]( iface::cfg_get_stmt const& s ) -> R {
+                                return handle_get_config( cfg_disp, s.k, buff );
+                        } );
             },
             [&]( iface::cfg_commit_stmt const& ) -> R {
-                    if ( store_persistent_config( dis.stor_drv, dis.cfg_pl, &dis.cfg_disp.m ) )
+                    if ( store_persistent_config( dis.stor_drv, dis.cfg_pl, &dis.cfg_map ) )
                             return json_ser( buff, "OK" );
                     return json_ser( buff, "NOK" );
             },

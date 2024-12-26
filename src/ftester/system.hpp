@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../scmdio/async_cobs.hpp"
+#include "../scmdio/port.hpp"
 #include "./handle_eptr.hpp"
 #include "./recorder.hpp"
 
@@ -23,6 +23,9 @@ using namespace std::chrono_literals;
 inline em::eabi_logger COM_LOGGER{
     { em::set_stdout{ false }, em::set_stderr{ false }, em::DEBUG_LOGGER_COLORS } };
 #define COM_LOG( chann, ... ) EMLABCPP_EABI_LOG_IMPL( COM_LOGGER, "com", chann, __VA_ARGS__ )
+
+template < typename T >
+using sptr = std::shared_ptr< T >;
 
 struct controller_interface : em::testing::controller_interface
 {
@@ -210,9 +213,9 @@ private:
         }
 
 private:
-        boost::asio::io_context   io_context_;
-        servio::scmdio::cobs_port d_port_;
-        boost::asio::serial_port  c_port_;
+        boost::asio::io_context  io_context_;
+        scmdio::cobs_port        d_port_;
+        boost::asio::serial_port c_port_;
 
         em::testing::collect_server    col_serv_;
         em::testing::parameters_server par_serv_;

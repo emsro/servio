@@ -9,6 +9,6 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   servio_add_test(
     TARGET kalman_utest
     SOURCES tests/kalman_utest.cpp
-    LIBS klmnlib gtest gtest_main)
+    LIBS klmnlib gtest_main)
 
 endif()

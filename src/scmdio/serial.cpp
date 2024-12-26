@@ -1,8 +1,8 @@
 #include "./serial.hpp"
 
-#include "./async_cobs.hpp"
 #include "./exceptions.hpp"
 #include "./field_util.hpp"
+#include "./port.hpp"
 
 #include <emlabcpp/view.h>
 
@@ -14,14 +14,15 @@ namespace servio::scmdio
 
 using namespace avakar::literals;
 
-boost::asio::awaitable< void > write( cobs_port& port, std::string_view payload )
+boost::asio::awaitable< void > write( port_iface& port, std::string_view payload )
 {
         EMLABCPP_DEBUG_LOG( "Sending: ", payload );
 
-        co_await port.async_write( payload );
+        co_await port.async_write(
+            em::view_n( reinterpret_cast< std::byte const* >( payload.data() ), payload.size() ) );
 }
 
-boost::asio::awaitable< std::string > read( cobs_port& port )
+boost::asio::awaitable< std::string > read( port_iface& port )
 {
 
         std::array< std::byte, buffer_size > reply_buffer;
@@ -32,45 +33,52 @@ boost::asio::awaitable< std::string > read( cobs_port& port )
         co_return res;
 }
 
-boost::asio::awaitable< nlohmann::json > exchg( cobs_port& port, std::string const& msg )
+boost::asio::awaitable< nlohmann::json > exchg( port_iface& port, std::string const& msg )
 {
         co_await write( port, msg );
 
         std::string reply = co_await read( port );
-        co_return nlohmann::json::parse( reply );
+        auto        jr    = nlohmann::json::parse( reply );
+        if ( !jr.is_array() || jr.size() < 1 ) {
+                EMLABCPP_ERROR_LOG( "Expected message with at least one field in array: ", reply );
+                throw reply_error{ "" };
+        }
+        co_return jr;
 }
 
 boost::asio::awaitable< vari::vval< iface::cfg_vals > >
-get_config_field( cobs_port& port, iface::cfg_key cfg )
+get_config_field( port_iface& port, iface::cfg_key cfg )
 {
         std::string msg = std::format( "cfg get {}", cfg.to_string() );
 
         nlohmann::json reply = co_await exchg( port, msg );
-        if ( !reply.contains( cfg.to_string() ) ) {
-                EMLABCPP_ERROR_LOG( "Expected message with cfg field, instead got: ", reply );
-                throw reply_error{ "reply does not contain cfg field as it should" };
+        if ( reply.size() != 2 ) {
+                EMLABCPP_ERROR_LOG( "Expected message with one extra field, instead got: ", reply );
+                throw reply_error{ "" };
         }
 
-        auto res = kval_ser< iface::cfg_vals >::from_json( cfg.to_string(), reply );
+        auto res = kval_ser< iface::cfg_vals >::from_json( cfg.to_string(), reply.at( 1 ) );
         assert( res );
         co_return std::move( res ).vval();
 }
 
 boost::asio::awaitable< void >
-set_config_field( cobs_port& port, vari::vref< iface::cfg_vals const > val )
+set_config_field( port_iface& port, vari::vref< iface::cfg_vals const > val )
 {
         std::string msg;
         val.visit( [&]( auto const& val ) {
                 msg = std::format( "cfg set {} {}", val.key.to_string(), val.value );
         } );
 
-        std::string res = co_await exchg( port, msg );
-        if ( res != "ok" )
-                throw reply_error{ "reply does not contain set_config as it should" };
+        nlohmann::json res = co_await exchg( port, msg );
+        if ( res.at( 0 ) != "OK" ) {
+                EMLABCPP_ERROR_LOG( "Setting failed, got following response: ", res.dump() );
+                throw reply_error{ "" };
+        }
 }
 
 boost::asio::awaitable< std::vector< vari::vval< iface::cfg_vals > > >
-get_full_config( cobs_port& port )
+get_full_config( port_iface& port )
 {
         std::vector< vari::vval< iface::cfg_vals > > res;
         for ( auto f : iface::cfg_key::iota() ) {
@@ -82,49 +90,70 @@ get_full_config( cobs_port& port )
 }
 
 boost::asio::awaitable< vari::vval< iface::prop_vals > >
-get_property( cobs_port& port, iface::prop_key p )
+get_property( port_iface& port, iface::prop_key p )
 {
-        std::string msg = std::format( "prp {}", p.to_string() );
+        std::string msg = std::format( "prop {}", p.to_string() );
 
         nlohmann::json reply = co_await exchg( port, msg );
-        if ( !reply.contains( p.to_string() ) ) {
-                EMLABCPP_ERROR_LOG( "Expected message with prop field, instead got: ", reply );
-                throw reply_error{ "reply does not contain prop field as it should" };
+        if ( reply.at( 0 ) != "OK" ) {
+                EMLABCPP_ERROR_LOG( "Setting failed, got following response: ", reply.dump() );
+                throw reply_error{ "" };
         }
 
-        auto res = kval_ser< iface::prop_vals >::from_json( p.to_string(), reply );
+        auto res = kval_ser< iface::prop_vals >::from_json( p.to_string(), reply.at( 1 ) );
         assert( res );
         co_return std::move( res ).vval();
 }
 
-/// TODO: error checking for the getters
-boost::asio::awaitable< iface::mode_key > get_property_mode( cobs_port& port )
+namespace
 {
-        auto val = co_await get_property( port, "mode"_a );
-        throw "XXX";
+template < auto K, typename FS, typename KV >
+auto kval_filter( vari::vref< KV > var )
+{
+        using RT = typename iface::field_traits< FS >::template ktof< K >::value_type;
+        return var.visit( [&]< typename KK >( KK& kv ) -> RT {
+                if constexpr ( K.to_string() == KK::key.to_string() ) {
+                        return kv.value;
+                } else {
+                        EMLABCPP_ERROR_LOG( "Got unexpected kind of value: ", K.to_string() );
+                        throw reply_error{ "" };
+                }
+        } );
 }
 
-boost::asio::awaitable< float > get_property_current( cobs_port& port )
+template < auto K >
+boost::asio::awaitable< typename iface::prop_traits::ktof< K >::value_type >
+query_prop( port_iface& port )
 {
-        auto val = co_await get_property( port, "current"_a );
-        throw "XXX";
+        auto val = co_await get_property( port, K );
+        co_return kval_filter< K, iface::property, iface::prop_vals >( val );
 }
 
-boost::asio::awaitable< float > get_property_position( cobs_port& port )
+}  // namespace
+
+boost::asio::awaitable< iface::mode_key > get_property_mode( port_iface& port )
 {
-        auto val = co_await get_property( port, "position"_a );
-        throw "XXX";
+        return query_prop< "mode"_a >( port );
 }
 
-boost::asio::awaitable< float > get_property_velocity( cobs_port& port )
+boost::asio::awaitable< float > get_property_current( port_iface& port )
 {
-        auto val = co_await get_property( port, "velocity"_a );
-        throw "XXX";
+        return query_prop< "current"_a >( port );
+}
+
+boost::asio::awaitable< float > get_property_position( port_iface& port )
+{
+        return query_prop< "position"_a >( port );
+}
+
+boost::asio::awaitable< float > get_property_velocity( port_iface& port )
+{
+        return query_prop< "velocity"_a >( port );
 }
 
 namespace
 {
-boost::asio::awaitable< void > set_mode_raw( cobs_port& port, std::string_view k, float v )
+boost::asio::awaitable< void > set_mode_raw( port_iface& port, std::string_view k, auto v )
 {
         std::string msg = std::format( "mode {} {}", k, v );
         co_await exchg( port, msg );
@@ -133,7 +162,7 @@ boost::asio::awaitable< void > set_mode_raw( cobs_port& port, std::string_view k
 
 }  // namespace
 
-boost::asio::awaitable< void > set_mode( cobs_port& port, vari::vref< iface::mode_vals const > v )
+boost::asio::awaitable< void > set_mode( port_iface& port, vari::vref< iface::mode_vals const > v )
 {
         std::string msg;
         v.visit( [&]< typename KV >( KV const& kval ) {
@@ -146,37 +175,27 @@ boost::asio::awaitable< void > set_mode( cobs_port& port, vari::vref< iface::mod
         // XXX: check return value
 }
 
-boost::asio::awaitable< void > set_mode_disengaged( cobs_port& )
+boost::asio::awaitable< void > set_mode_disengaged( port_iface& port )
 {
-        // XXX: it's not really easy to create instances of the type...
-        // XXX: this is weird
-        throw "XXX";
-        /*
-        auto kv = kval_ser< iface::mode_vals >::from_val(
-            "disengaged", vari::vptr< iface::mode_types >{} );
-        if ( kv )
-                co_await set_mode( port, kv.vref() );
-        else
-                throw "XXX";
-        */
+        co_await set_mode_raw( port, "disengaged", "" );
 }
 
-boost::asio::awaitable< void > set_mode_power( cobs_port& port, float pow )
+boost::asio::awaitable< void > set_mode_power( port_iface& port, float pow )
 {
         co_await set_mode_raw( port, "power", pow );
 }
 
-boost::asio::awaitable< void > set_mode_position( cobs_port& port, float angle )
+boost::asio::awaitable< void > set_mode_position( port_iface& port, float angle )
 {
         co_await set_mode_raw( port, "position", angle );
 }
 
-boost::asio::awaitable< void > set_mode_velocity( cobs_port& port, float vel )
+boost::asio::awaitable< void > set_mode_velocity( port_iface& port, float vel )
 {
         co_await set_mode_raw( port, "velocity", vel );
 }
 
-boost::asio::awaitable< void > set_mode_current( cobs_port& port, float curr )
+boost::asio::awaitable< void > set_mode_current( port_iface& port, float curr )
 {
         co_await set_mode_raw( port, "current", curr );
 }

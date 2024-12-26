@@ -12,7 +12,6 @@ struct context
         core::drivers            cdrv;
         core::core               core;
         core::standard_callbacks scbs;
-        cfg::dispatcher          cfg_dis;
 
         void tick()
         {

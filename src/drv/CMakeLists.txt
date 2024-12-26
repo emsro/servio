@@ -6,7 +6,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   servio_add_test(
     TARGET cobs_utest
     SOURCES tests/cobs_utest.cpp
-    LIBS drvlib emlabcpp gtest gtest_main)
+    LIBS drvlib emlabcpp gtest_main)
 
 else()
 

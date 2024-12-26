@@ -36,7 +36,7 @@ void print_configs_json( std::vector< vari::vval< iface::cfg_vals > > const& out
 }
 }  // namespace
 
-boost::asio::awaitable< void > cfg_query_cmd( cobs_port& port, bool json )
+boost::asio::awaitable< void > cfg_query_cmd( port_iface& port, bool json )
 {
         std::vector< vari::vval< iface::cfg_vals > > out = co_await get_full_config( port );
 
@@ -46,7 +46,7 @@ boost::asio::awaitable< void > cfg_query_cmd( cobs_port& port, bool json )
                 print_configs( out );
 }
 
-boost::asio::awaitable< void > cfg_commit_cmd( cobs_port& port )
+boost::asio::awaitable< void > cfg_commit_cmd( port_iface& port )
 {
         std::string msg = std::format( "cfg cmt" );
 
@@ -55,14 +55,14 @@ boost::asio::awaitable< void > cfg_commit_cmd( cobs_port& port )
         std::ignore = reply;
 }
 
-boost::asio::awaitable< void > cfg_clear_cmd( cobs_port& port )
+boost::asio::awaitable< void > cfg_clear_cmd( port_iface& port )
 {
         std::string msg   = std::format( "cfg clr" );
         auto        reply = co_await exchg( port, msg );
         std::ignore       = reply;
 }
 
-boost::asio::awaitable< void > cfg_get_cmd( cobs_port& port, std::string const& name, bool json )
+boost::asio::awaitable< void > cfg_get_cmd( port_iface& port, std::string const& name, bool json )
 {
         auto field = iface::cfg_key::from_string( name );
         // XXX throw?
@@ -82,7 +82,7 @@ boost::asio::awaitable< void > cfg_get_cmd( cobs_port& port, std::string const& 
 }
 
 boost::asio::awaitable< void >
-cfg_set_cmd( cobs_port& port, std::string const& name, std::string value )
+cfg_set_cmd( port_iface& port, std::string const& name, std::string value )
 {
 
         auto v = kval_ser< iface::cfg_vals >::ser( name, value );
@@ -92,7 +92,7 @@ cfg_set_cmd( cobs_port& port, std::string const& name, std::string value )
                 throw "XXX";
 }
 
-boost::asio::awaitable< void > cfg_load_cmd( cobs_port& port, std::filesystem::path const& cfg )
+boost::asio::awaitable< void > cfg_load_cmd( port_iface& port, std::filesystem::path const& cfg )
 {
         std::ifstream fd( cfg );
 

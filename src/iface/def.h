@@ -37,9 +37,10 @@ using property = vari::typelist<
     field< 5, "position"_a, float >,
     field< 6, "velocity"_a, float > >;
 
-using prop_types = typename field_traits< property >::types;
-using prop_vals  = typename field_traits< property >::vals;
-using prop_key   = typename field_traits< property >::keys;
+using prop_traits = field_traits< property >;
+using prop_types  = prop_traits::types;
+using prop_vals   = prop_traits::vals;
+using prop_key    = prop_traits::keys;
 
 struct prop_stmt
 {
@@ -91,9 +92,10 @@ using cfg = vari::typelist<
     field< 66, "maximum_temperature"_a, float >,
     field< 80, "quad_encoder_range"_a, uint32_t > >;
 
-using cfg_types = typename field_traits< cfg >::types;
-using cfg_vals  = typename field_traits< cfg >::vals;
-using cfg_key   = typename field_traits< cfg >::keys;
+using cfg_traits = field_traits< cfg >;
+using cfg_types  = typename cfg_traits::types;
+using cfg_vals   = typename cfg_traits::vals;
+using cfg_key    = typename cfg_traits::keys;
 
 struct cfg_set_stmt
 {

@@ -22,14 +22,13 @@ struct core
             microseconds           now,
             drv::vcc_iface const&  vcc_drv,
             drv::temp_iface const& temp_drv,
-            drv::clk_iface&        clk )
-          : ctl( now, ctl::config{} )
+            ctl::config const&     ctl_cfg = ctl::config{} )
+          : ctl( now, ctl_cfg )
           , conv()
           , met( now, 0.F, 0.F, { 0.F, 2 * pi } )
           , ind()
           , mon( now, ctl, vcc_drv, temp_drv, ind, conv )
         {
-                ind.tick( clk.get_us() );
         }
 
         void tick( drv::leds_iface& leds, microseconds now )

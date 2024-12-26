@@ -1,8 +1,7 @@
 servio_add_library(
   TARGET corelib
   SOURCES globals.cpp dispatcher.cpp
-  LIBS emlabcpp platform avakar::atom vari cmake_git_version_tracking
-  OPTS -Os)
+  LIBS emlabcpp platform avakar::atom vari cmake_git_version_tracking)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 

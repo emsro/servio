@@ -9,11 +9,11 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   servio_add_test(
     TARGET cfg_utest
     SOURCES tests/cfg_utest.cpp
-    LIBS cfglib ctllib mtrlib magic_enum gtest gtest_main)
+    LIBS cfglib ctllib mtrlib magic_enum gtest_main)
 
   servio_add_test(
     TARGET cfg_storage_utest
     SOURCES tests/cfg_storage_utest.cpp
-    LIBS cfglib ctllib mtrlib gtest gtest_main)
+    LIBS cfglib ctllib mtrlib gtest_main)
 
 endif()

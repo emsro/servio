@@ -1,4 +1,4 @@
-#include "./async_cobs.hpp"
+#include "./port.hpp"
 
 #include "./exceptions.hpp"
 
@@ -8,12 +8,6 @@ namespace em = emlabcpp;
 
 namespace servio::scmdio
 {
-
-boost::asio::awaitable< void > cobs_port::async_write( std::string_view msg )
-{
-        return this->async_write(
-            em::view_n( reinterpret_cast< std::byte const* >( msg.data() ), msg.size() ) );
-}
 
 boost::asio::awaitable< void > cobs_port::async_write( em::view< std::byte const* > msg )
 {

@@ -1,10 +1,10 @@
 #pragma once
 
-#include "async_cobs.hpp"
+#include "port.hpp"
 
 namespace servio::scmdio
 {
 
-boost::asio::awaitable< void > pid_autotune_current( cobs_port& port, float pwr );
+boost::asio::awaitable< void > pid_autotune_current( port_iface& port, float pwr );
 
 }  // namespace servio::scmdio

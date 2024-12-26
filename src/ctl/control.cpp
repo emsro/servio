@@ -8,7 +8,7 @@
 namespace servio::ctl
 {
 
-control::control( microseconds now, ctl::config cfg )
+control::control( microseconds now, ctl::config const& cfg )
   : position_lims_( cfg.position_limits )
   , position_pid_( now.count(), { cfg.position_pid, cfg.current_limits } )
   , velocity_pid_( now.count(), { cfg.velocity_pid, cfg.current_limits } )

@@ -9,6 +9,6 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   servio_add_test(
     TARGET effects_utest
     SOURCES tests/effects_utest.cpp
-    LIBS monlib gtest gtest_main)
+    LIBS monlib gtest_main)
 
 endif()
