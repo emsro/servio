@@ -11,6 +11,7 @@ var hierarchy =
     [ "servio::brd::adc_set", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set", null ],
     [ "nlohmann::adl_serializer< avakar::atom< Ts... > >", "structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "nlohmann::adl_serializer< vari::_vval< Ts... > >", "structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html", null ],
+    [ "servio::base::array_ser", "structservio_1_1base_1_1array__ser.html", null ],
     [ "servio::scmdio::port_mock::attrs", "structservio_1_1scmdio_1_1port__mock.html#structservio_1_1scmdio_1_1port__mock_1_1attrs", null ],
     [ "servio::core::avg_filter", "structservio_1_1core_1_1avg__filter.html", null ],
     [ "servio::mon::blinker", "structservio_1_1mon_1_1blinker.html", null ],
@@ -96,9 +97,10 @@ var hierarchy =
     [ "servio::plt::hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", null ],
     [ "servio::drv::tests::hbridge_test", "structservio_1_1drv_1_1tests_1_1hbridge__test.html", null ],
     [ "servio::mon::indication", "classservio_1_1mon_1_1indication.html", null ],
+    [ "servio::iface::info_stmt", "structservio_1_1iface_1_1info__stmt.html", null ],
     [ "servio::iface::invalid_stmt", "structservio_1_1iface_1_1invalid__stmt.html", null ],
     [ "servio::ftester::joque_test", "structservio_1_1ftester_1_1joque__test.html", null ],
-    [ "servio::base::json_ser", "structservio_1_1base_1_1json__ser.html", null ],
+    [ "servio::base::jval_ser", "structservio_1_1base_1_1jval__ser.html", null ],
     [ "servio::iface::key_filter< K, T >", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter", null ],
     [ "servio::iface::key_filter< K, vari::typelist< Fs... > >", "namespaceservio_1_1iface.html", [
       [ "servio::iface::key_filter< K, vari::typelist< F, Fs... > >", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4.html", null ]
@@ -133,6 +135,7 @@ var hierarchy =
         [ "servio::drv::mock::pwm_mot", "structservio_1_1drv_1_1mock_1_1pwm__mot.html", null ]
       ] ]
     ] ],
+    [ "servio::base::object_ser", "structservio_1_1base_1_1object__ser.html", null ],
     [ "servio::cfg::off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", null ],
     [ "servio::cnv::off_scale", "namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale", null ],
     [ "servio::cfg::payload", "structservio_1_1cfg_1_1payload.html", null ],

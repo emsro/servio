@@ -20,7 +20,7 @@ var searchData=
   ['emsg_17',['emsg',['../namespaceservio_1_1sntr.html#a62ef64d0c1174f817df2e428e96d9838',1,'servio::sntr::record']]],
   ['enc_5fmode_5fanalog_18',['ENC_MODE_ANALOG',['../namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451ab39c3bb4516942032a2eef39745dd131',1,'servio::cfg']]],
   ['enc_5fmode_5fquad_19',['ENC_MODE_QUAD',['../namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451af5c4d91cc253d4fe16fdc0d444063225',1,'servio::cfg']]],
-  ['encoder_5fmode_20',['encoder_mode',['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5bcc5eca5c52167826fd65a5b5177e18',1,'servio::cfg::ENCODER_MODE'],['../namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451',1,'servio::cfg::encoder_mode'],['../namespaceservio_1_1iface.html#a07f5b32871871c0c582ce5bae32d01aa',1,'servio::iface::encoder_mode']]],
+  ['encoder_5fmode_20',['encoder_mode',['../namespaceservio_1_1iface.html#a07f5b32871871c0c582ce5bae32d01aa',1,'servio::iface::encoder_mode'],['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5bcc5eca5c52167826fd65a5b5177e18',1,'servio::cfg::ENCODER_MODE'],['../namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451',1,'servio::cfg::encoder_mode']]],
   ['engaged_21',['ENGAGED',['../namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a91fc31ffb68f72532b0ab7f28f24db85',1,'servio::mon']]],
   ['entire_20set_20is_20always_20stored_22',['REQ6.5.1 Entire set is always stored',['../config.html#autotoc_md44',1,'']]],
   ['err_5firq_23',['err_irq',['../classservio_1_1drv_1_1cobs__uart.html#a1712f7ee5425ac6e5c1b12a209ffbbf1',1,'servio::drv::cobs_uart']]],

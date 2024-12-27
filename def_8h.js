@@ -7,6 +7,7 @@ var def_8h =
     [ "servio::iface::cfg_commit_stmt", "structservio_1_1iface_1_1cfg__commit__stmt.html", "structservio_1_1iface_1_1cfg__commit__stmt" ],
     [ "servio::iface::cfg_clear_stmt", "structservio_1_1iface_1_1cfg__clear__stmt.html", "structservio_1_1iface_1_1cfg__clear__stmt" ],
     [ "servio::iface::invalid_stmt", "structservio_1_1iface_1_1invalid__stmt.html", "structservio_1_1iface_1_1invalid__stmt" ],
+    [ "servio::iface::info_stmt", "structservio_1_1iface_1_1info__stmt.html", "structservio_1_1iface_1_1info__stmt" ],
     [ "servio::iface::resp", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1resp", [
       [ "res", "namespaceservio_1_1iface.html#aa9d86f637741caf1dc2a04c490dcbd28", null ]
     ] ],
@@ -18,14 +19,15 @@ var def_8h =
     [ "ec_mode_key", "def_8h.html#a1253342d0b3c65e5737ee321483e9480", null ],
     [ "encoder_mode", "def_8h.html#a07f5b32871871c0c582ce5bae32d01aa", null ],
     [ "mode", "def_8h.html#a0a3d9351bbf571aed8b41b0c55661154", null ],
-    [ "mode_key", "def_8h.html#a6cc386d2e30761c13a890084434ce875", null ],
-    [ "mode_types", "def_8h.html#aed4a78655c609b68b5f5b78071f5a001", null ],
-    [ "mode_vals", "def_8h.html#aed5b389c9d05879d568686a2c0fa1c42", null ],
+    [ "mode_key", "def_8h.html#afc4d172ed1587258c9380099d6ed50c4", null ],
+    [ "mode_traits", "def_8h.html#a5ea2d5532aacc5b7651e6ee806af1b06", null ],
+    [ "mode_types", "def_8h.html#a48aa0e6ec702b8ab96997b1b6ce48643", null ],
+    [ "mode_vals", "def_8h.html#adf8ee149d3b364ac8ddd0e3a929e0f36", null ],
     [ "prop_key", "def_8h.html#a6f6156102f37511b55b6228d06ea56c4", null ],
     [ "prop_traits", "def_8h.html#a4d022dbeb2b8d3c92b53ad8b2e48b274", null ],
     [ "prop_types", "def_8h.html#a46ee004dacd275d957b867b340889ec9", null ],
     [ "prop_vals", "def_8h.html#a70dd8b0e0beff18fca4d25f00c404fec", null ],
     [ "property", "def_8h.html#aa1b3c4ec0edf29e073e86618c9c7ee10", null ],
-    [ "stmt", "def_8h.html#ad75b5ec6e3a2da487d989fb53b28b1ac", null ],
+    [ "stmt", "def_8h.html#a737e56b7f88459ad67c0001f4dd1e64a", null ],
     [ "parse", "def_8h.html#aa5cef807e90c362aede32aa8c3767c39", null ]
 ];

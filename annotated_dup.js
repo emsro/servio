@@ -11,7 +11,9 @@ var annotated_dup =
     ] ],
     [ "servio", "namespaceservio.html", [
       [ "base", "namespaceservio_1_1base.html", [
-        [ "json_ser", "structservio_1_1base_1_1json__ser.html", "structservio_1_1base_1_1json__ser" ]
+        [ "array_ser", "structservio_1_1base_1_1array__ser.html", "structservio_1_1base_1_1array__ser" ],
+        [ "jval_ser", "structservio_1_1base_1_1jval__ser.html", "structservio_1_1base_1_1jval__ser" ],
+        [ "object_ser", "structservio_1_1base_1_1object__ser.html", "structservio_1_1base_1_1object__ser" ]
       ] ],
       [ "bb", "namespaceservio_1_1bb.html", [
         [ "bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", "structservio_1_1bb_1_1bb__test__case" ]
@@ -159,6 +161,7 @@ var annotated_dup =
         [ "field_tuple", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple", null ],
         [ "field_tuple< vari::typelist< Ts... > >", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4", "namespaceservio_1_1iface_structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4_dup" ],
         [ "group", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1group", "namespaceservio_1_1iface_structservio_1_1iface_1_1group_dup" ],
+        [ "info_stmt", "structservio_1_1iface_1_1info__stmt.html", "structservio_1_1iface_1_1info__stmt" ],
         [ "invalid_stmt", "structservio_1_1iface_1_1invalid__stmt.html", "structservio_1_1iface_1_1invalid__stmt" ],
         [ "key_filter", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter", null ],
         [ "key_filter< K, vari::typelist< F, Fs... > >", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4.html", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4" ],
