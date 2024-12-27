@@ -5,74 +5,74 @@
 namespace servio::base
 {
 
+template < typename T >
+using opt = std::optional< T >;
+
 namespace em = emlabcpp;
 
-struct json_ser
+struct jval_ser
 {
-        json_ser( em::view< char* > buff, char const* prefix )
+        jval_ser( em::view< std::byte* > buff ) noexcept
+          : jval_ser( em::view{ (char*) buff.begin(), (char*) buff.end() } )
+        {
+        }
+
+        jval_ser( em::view< char* > buff ) noexcept
           : b( buff.begin() )
           , e( buff.end() )
         {
-                ( *this )( prefix, '[' );
         }
 
-        json_ser& operator()( std::string_view sv ) &
+        jval_ser& operator()( std::string_view sv ) & noexcept
         {
                 return ( *this )( sv.data() );
         }
 
-        json_ser& operator()( char const* st, char c = ',' ) &
+        jval_ser& operator()( char const* st ) & noexcept
         {
-                add( c );
                 add( '"' );
                 cpy( st );
                 add( '"' );
                 return *this;
         }
 
-        json_ser& operator()( unsigned int x ) &
+        jval_ser& operator()( unsigned int x ) & noexcept
         {
-                add( ',' );
                 fmt( "%u", x );
                 return *this;
         }
 
-        json_ser& operator()( long unsigned int x ) &
+        jval_ser& operator()( long unsigned int x ) & noexcept
         {
-                add( ',' );
                 fmt( "%lu", x );
                 return *this;
         }
 
-        json_ser& operator()( bool x ) &
+        jval_ser& operator()( bool x ) & noexcept
         {
-                add( ',' );
                 cpy( x ? "true" : "false" );
                 return *this;
         }
 
-        json_ser& operator()( float x ) &
+        jval_ser& operator()( float x ) & noexcept
         {
-                add( ',' );
                 fmt( "%f", x );
                 return *this;
         }
 
-        template < typename T >
-        json_ser&& operator()( T st ) &&
+        operator em::view< std::byte* >() && noexcept
         {
-                ( *this )( (T&&) st );
-                return std::move( *this );
+                return { (std::byte*) b, (std::byte*) p };
         }
 
-        operator std::string_view() &&
+        void add( char c ) noexcept
         {
-                add( ']' );
-                return { b, p };
+                if ( p != e )
+                        *p++ = c;
         }
 
 private:
-        void fmt( char const* fmt, auto& x )
+        void fmt( char const* fmt, auto& x ) noexcept
         {
                 std::size_t size = static_cast< std::size_t >( e - p );
                 int         res  = snprintf( p, size, fmt, x );
@@ -81,20 +81,92 @@ private:
                 p += size;
         }
 
-        void cpy( char const* st )
+        void cpy( char const* st ) noexcept
         {
                 while ( *st != '\0' )
                         add( *st++ );
-        }
-
-        void add( char c )
-        {
-                if ( p != e )
-                        *p++ = c;
         }
 
         char* b;
         char* p = b;
         char* e;
 };
+
+struct object_ser;
+
+struct array_ser
+{
+        array_ser( jval_ser& s ) noexcept
+          : ser( s )
+        {
+                ser.add( '[' );
+        }
+
+        array_ser( array_ser const& ) = delete;
+
+        ~array_ser() noexcept
+        {
+                ser.add( ']' );
+        }
+
+        array_ser& operator()( auto&& v ) noexcept
+        {
+                delim();
+                ser( v );
+                return *this;
+        }
+
+        operator object_ser() noexcept;
+
+        jval_ser& ser;
+
+private:
+        void delim() noexcept
+        {
+                if ( d != '\0' )
+                        ser.add( d );
+                d = ',';
+        }
+
+        char d = '\0';
+};
+
+struct object_ser
+{
+        object_ser( jval_ser& s ) noexcept
+          : ser( s )
+        {
+                ser.add( '{' );
+        }
+
+        object_ser( object_ser const& ) = delete;
+
+        ~object_ser() noexcept
+        {
+                ser.add( '}' );
+        }
+
+        object_ser& operator()( auto& k, auto& v ) noexcept
+        {
+                if ( delim != '\0' )
+                        ser.add( delim );
+                ser( k );
+                ser.add( ':' );
+                ser( v );
+                delim = ',';
+                return *this;
+        }
+
+        jval_ser& ser;
+
+private:
+        char delim = '\0';
+};
+
+inline array_ser::operator object_ser() noexcept
+{
+        delim();
+        return { ser };
+}
+
 }  // namespace servio::base

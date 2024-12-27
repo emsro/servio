@@ -25,7 +25,7 @@ struct str
         std::string_view s;
 };
 
-using tok = vari::typelist< id, str, float, int32_t, err, end >;
+using tok = vari::typelist< id, str, float, int32_t, err >;
 
 struct lexer
 {
@@ -38,7 +38,7 @@ struct lexer
         {
         }
 
-        vari::vval< tok > next()
+        vari::vval< tok, end > next()
         {
                 while ( p != e && _is_ws( *p ) )
                         p++;
@@ -284,15 +284,11 @@ vari::vopt< cfg_vals > _cfg_vals( parser& p )
         return kvals_parse< cfg_vals >::parse( p );
 }
 
-}  // namespace
-
-vari::vval< stmt, invalid_stmt > parse( std::string_view inpt )
+vari::vval< stmt, invalid_stmt > _parse( parser& p )
 {
         // XXX, missing tests:
         // - no overflow after parsed message
-        lexer  l{ inpt };
-        parser p{ l };
-        auto   id = p.exp( "id"_a );
+        auto id = p.exp( "id"_a );
         if ( !id ) {
                 return invalid_stmt{};
         } else if ( *id == "mode" ) {
@@ -325,8 +321,35 @@ vari::vval< stmt, invalid_stmt > parse( std::string_view inpt )
                 } else if ( *sub == "clear" ) {
                         return cfg_clear_stmt{};
                 }
+        } else if ( *id == "info" ) {
+                return info_stmt{};
         }
         return invalid_stmt{};
+}
+
+}  // namespace
+
+vari::vval< stmt, invalid_stmt > parse( std::string_view inpt )
+{
+        lexer  l{ inpt };
+        parser p{ std::move( l ) };
+
+        using R = vari::vval< stmt, invalid_stmt >;
+        return _parse( p ).visit(
+            [&]( invalid_stmt& is ) -> R {
+                    return is;
+            },
+            [&]( vari::vval< stmt > st ) -> R {
+                    if ( !p.l )
+                            return st;
+                    return p.l->next().visit(
+                        [&]( end& ) -> R {
+                                return st;
+                        },
+                        [&]( vari::vref< tok > ) -> R {
+                                return invalid_stmt{};
+                        } );
+            } );
 }
 
 }  // namespace servio::iface

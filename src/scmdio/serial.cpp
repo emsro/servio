@@ -40,7 +40,8 @@ boost::asio::awaitable< nlohmann::json > exchg( port_iface& port, std::string co
         std::string reply = co_await read( port );
         auto        jr    = nlohmann::json::parse( reply );
         if ( !jr.is_array() || jr.size() < 1 ) {
-                EMLABCPP_ERROR_LOG( "Expected message with at least one field in array: ", reply );
+                EMLABCPP_ERROR_LOG(
+                    "Expected message with at least one field in array: ", reply, " input: ", msg );
                 throw reply_error{ "" };
         }
         co_return jr;

@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/range.h>
+#include <git.h>
 #include <gtest/gtest.h>
 #include <random>
 #include <source_location>
@@ -50,7 +51,7 @@ TEST( core, dispatcher )
         };
 
         auto exec = [&]( std::string_view inpt ) {
-                std::byte buff[42];
+                std::byte buff[666];
                 auto [res, used] = handle_message(
                     disp, em::view_n( (std::byte const*) inpt.data(), inpt.size() ), buff );
                 EXPECT_EQ( res, em::SUCCESS ) << inpt;
@@ -86,6 +87,13 @@ TEST( core, dispatcher )
         test( "mode position -1", R"(["OK"])"_json );
         EXPECT_EQ( cor.ctl.get_desired_position(), -1.0F );
         test( "prop mode", R"(["OK", "position"])"_json );
+
+        test(
+            "info",
+            nlohmann::json::parse( std::format(
+                R"(["OK", {{"commit":"{}","version":"{}" }}])",
+                git::CommitSHA1(),
+                git::Describe() ) ) );
 
         // prop
         gc.x = 42;
@@ -123,6 +131,8 @@ TEST( core, dispatcher )
                 {
                         float operator()( float x )
                         {
+                                if ( x < 0.0001F )
+                                        return 1.0F;
                                 return -x;
                         }
 

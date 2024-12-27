@@ -4,17 +4,15 @@
 #include "../cfg/storage.hpp"
 #include "../cnv/utils.hpp"
 #include "./map_cfg.hpp"
-#include "git.h"
 
 #include <emlabcpp/outcome.h>
 #include <emlabcpp/result.h>
+#include <git.h>
 
 namespace servio::core
 {
 namespace
 {
-
-using base::json_ser;
 
 // XXX: this no longer has to be in fw/
 bool store_persistent_config( drv::storage_iface& stor, cfg::payload& pl, cfg::map const* cfg )
@@ -37,11 +35,11 @@ bool store_persistent_config( drv::storage_iface& stor, cfg::payload& pl, cfg::m
         return true;
 }
 
-std::string_view handle_set_mode(
+void handle_set_mode(
     microseconds                         now,
     ctl::control&                        ctl,
     vari::vref< iface::mode_vals const > inpt,
-    em::view< char* >                    buff )
+    base::jval_ser&                      out )
 {
         inpt.visit(
             [&]( iface::kval< "disengaged"_a, void > const& ) {
@@ -59,7 +57,8 @@ std::string_view handle_set_mode(
             [&]( iface::kval< "position"_a, float > const& kv ) {
                     ctl.switch_to_position_control( now, kv.value );
             } );
-        return json_ser( buff, "OK" );
+
+        base::array_ser{ out }( "OK" );
 }
 
 iface::mode_key get_mode( ctl::control const& ctl )
@@ -80,7 +79,7 @@ iface::mode_key get_mode( ctl::control const& ctl )
         return "disengaged"_a;
 }
 
-std::string_view handle_get_property(
+void handle_get_property(
     ctl::control const&          ctl,
     mtr::metrics const&          met,
     cnv::converter const&        conv,
@@ -90,12 +89,16 @@ std::string_view handle_get_property(
     drv::temp_iface const&       temp_drv,
     drv::motor_info_iface const& motor,
     iface::prop_key              inpt,
-    em::view< char* >            buff )
+    base::jval_ser&              out )
 {
+        base::array_ser as{ out };
+        as( "OK" );
+
         float x = 0;
-        if ( inpt == "mode"_a )
-                return json_ser( buff, "OK" )( get_mode( ctl ).to_string() );
-        else if ( inpt == "current"_a )
+        if ( inpt == "mode"_a ) {
+                as( get_mode( ctl ).to_string() );
+                return;
+        } else if ( inpt == "current"_a )
                 x = cnv::current( conv, curr_drv, motor );
         else if ( inpt == "vcc"_a )
                 x = conv.vcc.convert( vcc_drv.get_vcc() );
@@ -106,14 +109,17 @@ std::string_view handle_get_property(
         else if ( inpt == "velocity"_a )
                 x = met.get_velocity();
 
-        return json_ser( buff, "OK" )( x );
+        as( x );
 }
 
-std::string_view handle_set_config(
+void handle_set_config(
     cfg::dispatcher&                    cfg_disp,
     vari::vref< iface::cfg_vals const > v,
-    em::view< char* >                   buff )
+    base::jval_ser&                     out )
 {
+        base::array_ser as{ out };
+        as( "OK" );
+
         v.visit( [&]< auto K, typename T >( iface::kval< K, T > const& kv ) {
                 static constexpr auto cfg_k = iface_to_cfg[( (iface::cfg_key) K ).value()];
 
@@ -127,43 +133,39 @@ std::string_view handle_set_config(
                         cfg_disp.set< cfg_k >( kv.value );
                 }
         } );
-        return json_ser( buff, "OK" );
 }
 
-std::string_view
-handle_get_config( cfg::dispatcher const& cfg_disp, iface::cfg_key ck, em::view< char* > buff )
+void handle_get_config( cfg::dispatcher const& cfg_disp, iface::cfg_key ck, base::jval_ser& out )
 {
 
         cfg::key cfg_k = iface_to_cfg[ck.value()];
 
-        json_ser r{ buff, "OK" };
+        base::array_ser as{ out };
+        as( "OK" );
 
         cfg_disp.m.with_register( cfg_k, [&]< typename R >( R& reg ) {
                 if constexpr ( R::key == cfg::ENCODER_MODE )
                         switch ( reg.value ) {
                         case cfg::ENC_MODE_ANALOG:
-                                r( "analog" );
+                                as( "analog" );
                                 break;
                         case cfg::ENC_MODE_QUAD:
-                                r( "quad" );
+                                as( "quad" );
                                 break;
                         }
                 else
-                        r( reg.value );
+                        as( reg.value );
         } );
-        return r;
 }
 
-std::string_view
-handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, em::view< char* > buff )
+void handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, base::jval_ser& out )
 {
-        using R = std::string_view;
-        return inpt.visit(
-            [&]( iface::mode_stmt const& s ) -> R {
-                    return handle_set_mode( dis.now, dis.ctl, s.arg, buff );
+        inpt.visit(
+            [&]( iface::mode_stmt const& s ) {
+                    handle_set_mode( dis.now, dis.ctl, s.arg, out );
             },
-            [&]( iface::prop_stmt const& s ) -> R {
-                    return handle_get_property(
+            [&]( iface::prop_stmt const& s ) {
+                    handle_get_property(
                         dis.ctl,
                         dis.met,
                         dis.conv,
@@ -173,9 +175,9 @@ handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, em::view<
                         dis.temp_drv,
                         dis.motor,
                         s.prop,
-                        buff );
+                        out );
             },
-            [&]( vari::vref< iface::cfg_set_stmt const, iface::cfg_get_stmt const > s ) -> R {
+            [&]( vari::vref< iface::cfg_set_stmt const, iface::cfg_get_stmt const > s ) {
                     cfg::dispatcher cfg_disp{
                         .m     = dis.cfg_map,
                         .ctl   = dis.ctl,
@@ -185,23 +187,34 @@ handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, em::view<
                         .motor = dis.motor,
                         .pos   = dis.pos_drv,
                     };
-                    return s.visit(
+                    s.visit(
                         [&]( iface::cfg_set_stmt const& st ) {
-                                return handle_set_config( cfg_disp, st.val, buff );
+                                handle_set_config( cfg_disp, st.val, out );
                         },
-                        [&]( iface::cfg_get_stmt const& s ) -> R {
-                                return handle_get_config( cfg_disp, s.k, buff );
+                        [&]( iface::cfg_get_stmt const& s ) {
+                                handle_get_config( cfg_disp, s.k, out );
                         } );
             },
-            [&]( iface::cfg_commit_stmt const& ) -> R {
+            [&]( iface::cfg_commit_stmt const& ) {
+                    base::array_ser as{ out };
                     if ( store_persistent_config( dis.stor_drv, dis.cfg_pl, &dis.cfg_map ) )
-                            return json_ser( buff, "OK" );
-                    return json_ser( buff, "NOK" );
+                            as( "OK" );
+                    else
+                            as( "NOK" );
             },
-            [&]( iface::cfg_clear_stmt const& ) -> R {
+            [&]( iface::cfg_clear_stmt const& ) {
+                    base::array_ser as{ out };
                     if ( store_persistent_config( dis.stor_drv, dis.cfg_pl, nullptr ) )
-                            return json_ser( buff, "OK" );
-                    return json_ser( buff, "NOK" );
+                            as( "OK" );
+                    else
+                            as( "NOK" );
+            },
+            [&]( iface::info_stmt const& ) {
+                    base::array_ser as{ out };
+                    as( "OK" );
+                    base::object_ser obj{ as };
+                    obj( "version", git::Describe() );
+                    obj( "commit", git::CommitSHA1() );
             } );
 }
 }  // namespace
@@ -214,18 +227,21 @@ std::tuple< em::outcome, em::view< std::byte* > > handle_message(
         // XXX: well, technically, em::view could've had data if it has pointer?
         std::string_view inpt{ (char const*) input_data.begin(), input_data.size() };
 
-        using R = std::tuple< em::outcome, em::view< std::byte* > >;
-        return iface::parse( inpt ).visit(
+        base::jval_ser out{ output_buffer };
+        using R = em::outcome;
+
+        auto res = iface::parse( inpt ).visit(
             [&]( vari::vref< iface::stmt > s ) -> R {
-                    std::string_view res = handle_message(
-                        dis, s, em::view_n( (char*) output_buffer.begin(), output_buffer.size() ) );
-                    // XXX: how to detect failure?
-                    return { em::SUCCESS, em::view_n( (std::byte*) res.data(), res.size() ) };
+                    handle_message( dis, s, out );
+                    return em::SUCCESS;
             },
             [&]( iface::invalid_stmt& ) -> R {
-                    // XXX: proapgate error?
-                    return { em::FAILURE, {} };
+                    base::array_ser as{ out };
+                    as( "NOK" );
+                    as( "parse error" );
+                    return em::FAILURE;
             } );
+        return { res, std::move( out ) };
 }
 
 }  // namespace servio::core

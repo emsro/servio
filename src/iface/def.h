@@ -18,9 +18,10 @@ using mode = vari::typelist<
     field< 4, "velocity"_a, float >,
     field< 5, "position"_a, float > >;
 
-using mode_types = typename field_traits< mode >::types;
-using mode_vals  = typename field_traits< mode >::vals;
-using mode_key   = typename field_traits< mode >::keys;
+using mode_traits = field_traits< mode >;
+using mode_types  = typename mode_traits::types;
+using mode_vals   = typename mode_traits::vals;
+using mode_key    = typename mode_traits::keys;
 
 struct mode_stmt
 {
@@ -126,8 +127,19 @@ struct invalid_stmt
         constexpr auto operator<=>( invalid_stmt const& ) const noexcept = default;
 };
 
-using stmt = vari::
-    typelist< mode_stmt, prop_stmt, cfg_set_stmt, cfg_get_stmt, cfg_commit_stmt, cfg_clear_stmt >;
+struct info_stmt
+{
+        constexpr auto operator<=>( info_stmt const& ) const noexcept = default;
+};
+
+using stmt = vari::typelist<
+    mode_stmt,
+    prop_stmt,
+    cfg_set_stmt,
+    cfg_get_stmt,
+    cfg_commit_stmt,
+    cfg_clear_stmt,
+    info_stmt >;
 
 // XXX: missing ID targeting for servos
 
