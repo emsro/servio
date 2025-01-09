@@ -164,7 +164,12 @@ struct stm32_bootloader_mock : stream_iface
                 buffer.emplace_back( ACK );
 
                 while ( true ) {
-                        auto [b, chck] = co_await cons::get< 2 >{};
+                        auto [b] = co_await cons::get< 1 >{};
+                        if ( b == INIT ) {
+                                buffer.emplace_back( ACK );
+                                continue;
+                        }
+                        auto [chck] = co_await cons::get< 1 >{};
                         assert( b == ~chck );
 
                         switch ( b ) {

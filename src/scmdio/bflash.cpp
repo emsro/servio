@@ -138,7 +138,7 @@ awaitable< void > read_memory( stream_iface& port, uint32_t addr, em::view< std:
         co_await send( port, bflash_conv( addr ) );
         co_await wait_for_ack( port );
 
-        co_await write_size( port, buff.size() - 1 );
+        co_await write_size( port, buff.size() );
         co_await wait_for_ack( port );
 
         co_await port.read( buff );
@@ -152,7 +152,7 @@ write_memory( stream_iface& port, uint32_t addr, em::view< std::byte const* > bu
         co_await send( port, bflash_conv( addr ) );
         co_await wait_for_ack( port );
 
-        co_await write_size( port, buff.size() - 1 );
+        co_await write_size( port, buff.size() );
         co_await wait_for_ack( port );
 
         co_await port.write( buff );
