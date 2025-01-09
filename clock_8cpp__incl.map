@@ -1,6 +1,6 @@
 <map id="src/plt/stm32h5/clock.cpp" name="src/plt/stm32h5/clock.cpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="590,5,778,31"/>
-<area shape="rect" id="Node000002" href="$util_8hpp.html" title=" " alt="" coords="140,79,255,104"/>
+<area shape="rect" id="Node000002" href="$fw_2util_8hpp.html" title=" " alt="" coords="140,79,255,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="606,33,268,82,268,77,605,28"/>
 <area shape="rect" id="Node000006" href="$platform_8hpp.html" title=" " alt="" coords="399,225,518,251"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="591,33,531,48,470,71,413,106,389,128,369,153,365,163,365,171,374,188,394,204,417,217,414,222,391,208,370,192,360,173,360,162,364,151,385,124,410,102,468,67,530,43,589,28"/>

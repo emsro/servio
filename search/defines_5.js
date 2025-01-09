@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['prefetch_5fenable_0',['PREFETCH_ENABLE',['../stm32h5xx__hal__conf_8h.html#a13fc0d5e7bb925385c0cc0772ba6a391',1,'stm32h5xx_hal_conf.h']]]
+  ['magic_5fenum_5frange_5fmax_0',['MAGIC_ENUM_RANGE_MAX',['../bflash_8cpp.html#a60b5d28d5f88bcb69e8f0f868f5d32fb',1,'bflash.cpp']]]
 ];

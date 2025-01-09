@@ -195,21 +195,26 @@ var annotated_dup =
         [ "uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1uart__cfg_dup" ]
       ] ],
       [ "scmdio", "namespaceservio_1_1scmdio.html", [
-        [ "cfg_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1cfg__opts_dup" ],
+        [ "autotune_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1autotune__ctx_dup" ],
+        [ "bflash_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1bflash__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1bflash__ctx_dup" ],
+        [ "cfg_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1cfg__ctx_dup" ],
+        [ "cobs_cli", "structservio_1_1scmdio_1_1cobs__cli.html", "structservio_1_1scmdio_1_1cobs__cli" ],
         [ "cobs_port", "structservio_1_1scmdio_1_1cobs__port.html", "structservio_1_1scmdio_1_1cobs__port" ],
-        [ "common_cli", "structservio_1_1scmdio_1_1common__cli.html", "structservio_1_1scmdio_1_1common__cli" ],
-        [ "error_exception", "structservio_1_1scmdio_1_1error__exception.html", "structservio_1_1scmdio_1_1error__exception" ],
+        [ "consumer", "structservio_1_1scmdio_1_1consumer.html", "structservio_1_1scmdio_1_1consumer" ],
         [ "kval_ser", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser", null ],
         [ "kval_ser< vari::typelist< KV, KVs... > >", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4" ],
         [ "kval_ser< vari::typelist<> >", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4" ],
         [ "line", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1line_dup" ],
         [ "mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1mode__opts_dup" ],
-        [ "parse_error", "structservio_1_1scmdio_1_1parse__error.html", "structservio_1_1scmdio_1_1parse__error" ],
+        [ "pool_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1pool__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1pool__opts_dup" ],
+        [ "port_cli", "structservio_1_1scmdio_1_1port__cli.html", "structservio_1_1scmdio_1_1port__cli" ],
         [ "port_iface", "structservio_1_1scmdio_1_1port__iface.html", "structservio_1_1scmdio_1_1port__iface" ],
         [ "port_mock", "structservio_1_1scmdio_1_1port__mock.html", "structservio_1_1scmdio_1_1port__mock" ],
-        [ "reply_error", "structservio_1_1scmdio_1_1reply__error.html", "structservio_1_1scmdio_1_1reply__error" ],
-        [ "serialize_error", "structservio_1_1scmdio_1_1serialize__error.html", "structservio_1_1scmdio_1_1serialize__error" ],
-        [ "servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", null ]
+        [ "serial_cli", "structservio_1_1scmdio_1_1serial__cli.html", "structservio_1_1scmdio_1_1serial__cli" ],
+        [ "serial_stream", "structservio_1_1scmdio_1_1serial__stream.html", "structservio_1_1scmdio_1_1serial__stream" ],
+        [ "servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", null ],
+        [ "stm32_bootloader_mock", "structservio_1_1scmdio_1_1stm32__bootloader__mock.html", "structservio_1_1scmdio_1_1stm32__bootloader__mock" ],
+        [ "stream_iface", "structservio_1_1scmdio_1_1stream__iface.html", "structservio_1_1scmdio_1_1stream__iface" ]
       ] ],
       [ "sim", "namespaceservio_1_1sim.html", [
         [ "simple_motor", "structservio_1_1sim_1_1simple__motor.html", "structservio_1_1sim_1_1simple__motor" ]
@@ -231,6 +236,11 @@ var annotated_dup =
     ] ],
     [ "std", "namespacestd.html", [
       [ "formatter< A, char >", "structstd_1_1formatter_3_01A_00_01char_01_4.html", "structstd_1_1formatter_3_01A_00_01char_01_4" ],
-      [ "formatter< avakar::atom< As... >, char >", "structstd_1_1formatter_3_01avakar_1_1atom_3_01As_8_8_8_01_4_00_01char_01_4.html", "structstd_1_1formatter_3_01avakar_1_1atom_3_01As_8_8_8_01_4_00_01char_01_4" ]
+      [ "formatter< avakar::atom< As... >, char >", "structstd_1_1formatter_3_01avakar_1_1atom_3_01As_8_8_8_01_4_00_01char_01_4.html", "structstd_1_1formatter_3_01avakar_1_1atom_3_01As_8_8_8_01_4_00_01char_01_4" ],
+      [ "formatter< emlabcpp::view< T >, char >", "structstd_1_1formatter_3_01emlabcpp_1_1view_3_01T_01_4_00_01char_01_4.html", "structstd_1_1formatter_3_01emlabcpp_1_1view_3_01T_01_4_00_01char_01_4" ],
+      [ "formatter< nlohmann::json, char >", "structstd_1_1formatter_3_01nlohmann_1_1json_00_01char_01_4.html", "structstd_1_1formatter_3_01nlohmann_1_1json_00_01char_01_4" ],
+      [ "formatter< std::byte, char >", "structstd_1_1formatter_3_01std_1_1byte_00_01char_01_4.html", "structstd_1_1formatter_3_01std_1_1byte_00_01char_01_4" ],
+      [ "formatter< std::optional< T >, char >", "structstd_1_1formatter_3_01std_1_1optional_3_01T_01_4_00_01char_01_4.html", "structstd_1_1formatter_3_01std_1_1optional_3_01T_01_4_00_01char_01_4" ],
+      [ "formatter< std::span< T >, char >", "structstd_1_1formatter_3_01std_1_1span_3_01T_01_4_00_01char_01_4.html", "structstd_1_1formatter_3_01std_1_1span_3_01T_01_4_00_01char_01_4" ]
     ] ]
 ];

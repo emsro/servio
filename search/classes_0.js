@@ -17,5 +17,6 @@ var searchData=
   ['adl_5fserializer_3c_20vari_3a_3a_5fvval_3c_20ts_2e_2e_2e_20_3e_20_3e_14',['adl_serializer&lt; vari::_vval&lt; Ts... &gt; &gt;',['../structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html',1,'nlohmann']]],
   ['array_5fser_15',['array_ser',['../structservio_1_1base_1_1array__ser.html',1,'servio::base']]],
   ['attrs_16',['attrs',['../structservio_1_1scmdio_1_1port__mock.html#structservio_1_1scmdio_1_1port__mock_1_1attrs',1,'servio::scmdio::port_mock']]],
-  ['avg_5ffilter_17',['avg_filter',['../structservio_1_1core_1_1avg__filter.html',1,'servio::core']]]
+  ['autotune_5fctx_17',['autotune_ctx',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx',1,'servio::scmdio']]],
+  ['avg_5ffilter_18',['avg_filter',['../structservio_1_1core_1_1avg__filter.html',1,'servio::core']]]
 ];

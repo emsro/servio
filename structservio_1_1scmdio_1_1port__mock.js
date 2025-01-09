@@ -12,8 +12,8 @@ var structservio_1_1scmdio_1_1port__mock =
       [ "vcc_drv", "structservio_1_1scmdio_1_1port__mock.html#acac10bbd351c357bccaa28c5e66dbee0", null ]
     ] ],
     [ "port_mock", "structservio_1_1scmdio_1_1port__mock.html#a955c5ee795ef1704d617d71d01d478ac", null ],
-    [ "async_read", "structservio_1_1scmdio_1_1port__mock.html#ad9ebfd299b482527dca4a164d5b42630", null ],
-    [ "async_write", "structservio_1_1scmdio_1_1port__mock.html#ad5d764968d642353e6ff291aeeb00c58", null ],
+    [ "read_msg", "structservio_1_1scmdio_1_1port__mock.html#aee252077e64fe8bb0240c4d53426b33a", null ],
+    [ "write_msg", "structservio_1_1scmdio_1_1port__mock.html#a943e3897b6feb9a0704ba1305d42dead", null ],
     [ "a", "structservio_1_1scmdio_1_1port__mock.html#ad8ef328bd6bbd6d04d8f26ecaec1e09f", null ],
     [ "buff", "structservio_1_1scmdio_1_1port__mock.html#ae97e2b1eb2ac64d4c74a56fb90498ed9", null ]
 ];

@@ -30,10 +30,11 @@ var searchData=
   ['load_5fpersistent_5fconfig_27',['load_persistent_config',['../namespaceservio_1_1fw.html#a4ef71df0b100af9e858af3aa863ef3bf',1,'servio::fw']]],
   ['load_5fpersistent_5fconfig_2ehpp_28',['load_persistent_config.hpp',['../load__persistent__config_8hpp.html',1,'']]],
   ['locked_29',['LOCKED',['../namespaceservio_1_1sntr.html#a875fcd3a5d9ef6909df43ffc0b84d60eaaeff3f3f2731681b2ed6a27786a56203',1,'servio::sntr']]],
-  ['loop_5ffrequency_30',['loop_frequency',['../structservio_1_1ftest_1_1bench_1_1loop__frequency.html',1,'servio::ftest::bench']]],
-  ['low_5fpoint_31',['low_point',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a678d5f4c5423a504124660c634013463',1,'servio::ctl::linear_transition_regulator']]],
-  ['lse_5fstartup_5ftimeout_32',['LSE_STARTUP_TIMEOUT',['../stm32h5xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32h5xx_hal_conf.h']]],
-  ['lse_5fvalue_33',['LSE_VALUE',['../stm32h5xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d',1,'stm32h5xx_hal_conf.h']]],
-  ['lsi_5fstartup_5ftime_34',['LSI_STARTUP_TIME',['../stm32h5xx__hal__conf_8h.html#ab9ea77371b070034ca2a56381a7e9de7',1,'stm32h5xx_hal_conf.h']]],
-  ['lsi_5fvalue_35',['LSI_VALUE',['../stm32h5xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9',1,'stm32h5xx_hal_conf.h']]]
+  ['log_5ferror_30',['log_error',['../namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5',1,'servio::scmdio']]],
+  ['loop_5ffrequency_31',['loop_frequency',['../structservio_1_1ftest_1_1bench_1_1loop__frequency.html',1,'servio::ftest::bench']]],
+  ['low_5fpoint_32',['low_point',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a678d5f4c5423a504124660c634013463',1,'servio::ctl::linear_transition_regulator']]],
+  ['lse_5fstartup_5ftimeout_33',['LSE_STARTUP_TIMEOUT',['../stm32h5xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32h5xx_hal_conf.h']]],
+  ['lse_5fvalue_34',['LSE_VALUE',['../stm32h5xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d',1,'stm32h5xx_hal_conf.h']]],
+  ['lsi_5fstartup_5ftime_35',['LSI_STARTUP_TIME',['../stm32h5xx__hal__conf_8h.html#ab9ea77371b070034ca2a56381a7e9de7',1,'stm32h5xx_hal_conf.h']]],
+  ['lsi_5fvalue_36',['LSI_VALUE',['../stm32h5xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9',1,'stm32h5xx_hal_conf.h']]]
 ];

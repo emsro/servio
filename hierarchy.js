@@ -13,7 +13,9 @@ var hierarchy =
     [ "nlohmann::adl_serializer< vari::_vval< Ts... > >", "structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "servio::base::array_ser", "structservio_1_1base_1_1array__ser.html", null ],
     [ "servio::scmdio::port_mock::attrs", "structservio_1_1scmdio_1_1port__mock.html#structservio_1_1scmdio_1_1port__mock_1_1attrs", null ],
+    [ "servio::scmdio::autotune_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx", null ],
     [ "servio::core::avg_filter", "structservio_1_1core_1_1avg__filter.html", null ],
+    [ "servio::scmdio::bflash_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1bflash__ctx", null ],
     [ "servio::mon::blinker", "structservio_1_1mon_1_1blinker.html", null ],
     [ "servio::sntr::central_sentry_iface", "structservio_1_1sntr_1_1central__sentry__iface.html", [
       [ "servio::sntr::central_sentry", "classservio_1_1sntr_1_1central__sentry.html", null ],
@@ -21,8 +23,8 @@ var hierarchy =
     ] ],
     [ "servio::iface::cfg_clear_stmt", "structservio_1_1iface_1_1cfg__clear__stmt.html", null ],
     [ "servio::iface::cfg_commit_stmt", "structservio_1_1iface_1_1cfg__commit__stmt.html", null ],
+    [ "servio::scmdio::cfg_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__ctx", null ],
     [ "servio::iface::cfg_get_stmt", "structservio_1_1iface_1_1cfg__get__stmt.html", null ],
-    [ "servio::scmdio::cfg_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__opts", null ],
     [ "servio::iface::cfg_set_stmt", "structservio_1_1iface_1_1cfg__set__stmt.html", null ],
     [ "servio::fw::check_bool", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool", null ],
     [ "servio::drv::clk_iface", "structservio_1_1drv_1_1clk__iface.html", [
@@ -38,11 +40,12 @@ var hierarchy =
       [ "servio::drv::cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", null ]
     ] ],
     [ "servio::drv::com_res", "structservio_1_1drv_1_1com__res.html", null ],
-    [ "servio::scmdio::common_cli", "structservio_1_1scmdio_1_1common__cli.html", null ],
     [ "servio::drv::tests::comms_echo_test", "structservio_1_1drv_1_1tests_1_1comms__echo__test.html", null ],
     [ "servio::drv::tests::comms_timeout_test", "structservio_1_1drv_1_1tests_1_1comms__timeout__test.html", null ],
     [ "servio::ctl::config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", null ],
     [ "servio::ftester::config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config", null ],
+    [ "servio::scmdio::consumer< T >", "structservio_1_1scmdio_1_1consumer.html", null ],
+    [ "servio::scmdio::consumer< std::byte >", "structservio_1_1scmdio_1_1consumer.html", null ],
     [ "servio::cfg::context", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context", null ],
     [ "servio::fw::context", "structservio_1_1fw_1_1context.html", null ],
     [ "servio::ctl::control", "classservio_1_1ctl_1_1control.html", null ],
@@ -65,11 +68,8 @@ var hierarchy =
     [ "servio::plt::dma_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg", null ],
     [ "servio::core::drivers", "structservio_1_1core_1_1drivers.html", null ],
     [ "std::exception", null, [
-      [ "servio::scmdio::servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", [
-        [ "servio::scmdio::error_exception", "structservio_1_1scmdio_1_1error__exception.html", null ],
-        [ "servio::scmdio::parse_error", "structservio_1_1scmdio_1_1parse__error.html", null ],
-        [ "servio::scmdio::reply_error", "structservio_1_1scmdio_1_1reply__error.html", null ],
-        [ "servio::scmdio::serialize_error", "structservio_1_1scmdio_1_1serialize__error.html", null ]
+      [ "std::runtime_error", null, [
+        [ "servio::scmdio::servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", null ]
       ] ]
     ] ],
     [ "servio::iface::field< IDX, Key, T >", "structservio_1_1iface_1_1field.html", null ],
@@ -80,6 +80,12 @@ var hierarchy =
     [ "servio::iface::field_tuple< vari::typelist< Ts... > >", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4", null ],
     [ "std::formatter< A, char >", "structstd_1_1formatter_3_01A_00_01char_01_4.html", null ],
     [ "std::formatter< avakar::atom< As... >, char >", "structstd_1_1formatter_3_01avakar_1_1atom_3_01As_8_8_8_01_4_00_01char_01_4.html", null ],
+    [ "std::formatter< emlabcpp::view< T >, char >", "structstd_1_1formatter_3_01emlabcpp_1_1view_3_01T_01_4_00_01char_01_4.html", null ],
+    [ "std::formatter< nlohmann::json, char >", "structstd_1_1formatter_3_01nlohmann_1_1json_00_01char_01_4.html", null ],
+    [ "std::formatter< std::byte, char >", "structstd_1_1formatter_3_01std_1_1byte_00_01char_01_4.html", null ],
+    [ "std::formatter< std::optional< T >, char >", "structstd_1_1formatter_3_01std_1_1optional_3_01T_01_4_00_01char_01_4.html", null ],
+    [ "std::formatter< std::span< T >, char >", "structstd_1_1formatter_3_01std_1_1span_3_01T_01_4_00_01char_01_4.html", null ],
+    [ "servio::scmdio::consumer< T >::get< N >", "structservio_1_1scmdio_1_1consumer_1_1get.html", null ],
     [ "servio::drv::get_curr_iface", "structservio_1_1drv_1_1get__curr__iface.html", [
       [ "servio::drv::curr_iface", "structservio_1_1drv_1_1curr__iface.html", [
         [ "servio::drv::adc_pooler_current< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__current.html", null ]
@@ -149,6 +155,11 @@ var hierarchy =
     ] ],
     [ "servio::drv::tests::period_iface_test", "structservio_1_1drv_1_1tests_1_1period__iface__test.html", null ],
     [ "servio::drv::pin_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg", null ],
+    [ "servio::scmdio::pool_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1pool__opts", null ],
+    [ "servio::scmdio::port_cli", "structservio_1_1scmdio_1_1port__cli.html", [
+      [ "servio::scmdio::cobs_cli", "structservio_1_1scmdio_1_1cobs__cli.html", null ],
+      [ "servio::scmdio::serial_cli", "structservio_1_1scmdio_1_1serial__cli.html", null ]
+    ] ],
     [ "servio::scmdio::port_iface", "structservio_1_1scmdio_1_1port__iface.html", [
       [ "servio::scmdio::cobs_port", "structservio_1_1scmdio_1_1cobs__port.html", null ],
       [ "servio::scmdio::port_mock", "structservio_1_1scmdio_1_1port__mock.html", null ]
@@ -157,6 +168,7 @@ var hierarchy =
     [ "servio::mtr::posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", null ],
     [ "servio::ftest::bench::prof_record", "namespaceservio_1_1ftest_1_1bench.html#structservio_1_1ftest_1_1bench_1_1prof__record", null ],
     [ "servio::ftest::bench::profile", "structservio_1_1ftest_1_1bench_1_1profile.html", null ],
+    [ "servio::scmdio::consumer< T >::promise_type", "structservio_1_1scmdio_1_1consumer_1_1promise__type.html", null ],
     [ "servio::iface::prop_stmt", "structservio_1_1iface_1_1prop__stmt.html", null ],
     [ "servio::mon::pulser", "structservio_1_1mon_1_1pulser.html", null ],
     [ "servio::drv::tests::pwm_motor_test", "structservio_1_1drv_1_1tests_1_1pwm__motor__test.html", null ],
@@ -176,6 +188,10 @@ var hierarchy =
     [ "servio::drv::storage_iface", "structservio_1_1drv_1_1storage__iface.html", [
       [ "servio::drv::flash_storage", "classservio_1_1drv_1_1flash__storage.html", null ],
       [ "servio::drv::mock::stor", "structservio_1_1drv_1_1mock_1_1stor.html", null ]
+    ] ],
+    [ "servio::scmdio::stream_iface", "structservio_1_1scmdio_1_1stream__iface.html", [
+      [ "servio::scmdio::serial_stream", "structservio_1_1scmdio_1_1serial__stream.html", null ],
+      [ "servio::scmdio::stm32_bootloader_mock", "structservio_1_1scmdio_1_1stm32__bootloader__mock.html", null ]
     ] ],
     [ "servio::plt::temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", null ],
     [ "servio::drv::temp_iface", "structservio_1_1drv_1_1temp__iface.html", [

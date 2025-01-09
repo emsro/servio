@@ -1,0 +1,7 @@
+<map id="servio::scmdio::bflash_ctx" name="servio::scmdio::bflash_ctx">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,168,196,193"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1scmdio_1_1serial__cli.html" title=" " alt="" coords="9,80,192,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,119,103,167,98,167,98,119"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1scmdio_1_1port__cli.html" title=" " alt="" coords="14,5,187,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,45,103,80,98,80,98,45"/>
+</map>

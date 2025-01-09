@@ -5,12 +5,12 @@ var indexSectionsWithContent =
   2: "esv",
   3: "0abcdefghiklmpqrstu",
   4: "_abcdefghijklmnopqrstuvw~",
-  5: "_abcdefghijklmnopqrstuvxy",
+  5: "_abcdefghijklmnopqrstuvwxy",
   6: "acdefhiklmnoprstv",
   7: "aceikrs",
   8: "abcdeghilmpqstuv",
   9: "o",
-  10: "acehlpstuv",
+  10: "acehlmpstuv",
   11: "clrsu"
 };
 

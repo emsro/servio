@@ -106,45 +106,45 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a6c6697661de5cf696a131b33a08c3779" id="r_a6c6697661de5cf696a131b33a08c3779"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a6c6697661de5cf696a131b33a08c3779">test_signature</a> = boost::asio::awaitable&lt; void &gt;(boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;)</td></tr>
-<tr class="separator:a6c6697661de5cf696a131b33a08c3779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9849bd4fc25ccf897eb1563fb19a5bcd" id="r_a9849bd4fc25ccf897eb1563fb19a5bcd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a9849bd4fc25ccf897eb1563fb19a5bcd">test_signature</a> = boost::asio::awaitable&lt; void &gt;(boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;)</td></tr>
+<tr class="separator:a9849bd4fc25ccf897eb1563fb19a5bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9e5fb6b5343104b9e106aeeaf18ac1bf" id="r_a9e5fb6b5343104b9e106aeeaf18ac1bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a9e5fb6b5343104b9e106aeeaf18ac1bf">register_test</a> (std::string const &amp;fixture_name, std::string const &amp;name, <a class="el" href="structservio_1_1scmdio_1_1common__cli.html">scmdio::common_cli</a> &amp;cli, std::function&lt; <a class="el" href="namespaceservio_1_1bb.html#a6c6697661de5cf696a131b33a08c3779">test_signature</a> &gt; test, std::chrono::milliseconds timeout)</td></tr>
-<tr class="separator:a9e5fb6b5343104b9e106aeeaf18ac1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25ca27e98592b295f2c6bab62db8abdf" id="r_a25ca27e98592b295f2c6bab62db8abdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a25ca27e98592b295f2c6bab62db8abdf">register_test</a> (std::string const &amp;fixture_name, std::string const &amp;name, boost::asio::io_context &amp;io_ctx, std::shared_ptr&lt; <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &gt; port, std::function&lt; <a class="el" href="namespaceservio_1_1bb.html#a9849bd4fc25ccf897eb1563fb19a5bcd">test_signature</a> &gt; test, std::chrono::milliseconds timeout)</td></tr>
+<tr class="separator:a25ca27e98592b295f2c6bab62db8abdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5089d4dc853f8c5e763dd60a57c2a70f" id="r_a5089d4dc853f8c5e763dd60a57c2a70f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a5089d4dc853f8c5e763dd60a57c2a70f">vary_value</a> (vari::vref&lt; <a class="el" href="namespaceservio_1_1iface.html#ac7eaa4b9d993cc332eade38a17d678a0">iface::cfg_types</a> &gt; x)</td></tr>
 <tr class="separator:a5089d4dc853f8c5e763dd60a57c2a70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77fcbacc4f0f5c7f2a48cd6940d4da4a" id="r_a77fcbacc4f0f5c7f2a48cd6940d4da4a"><td class="memItemLeft" align="right" valign="top">::testing::AssertionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a77fcbacc4f0f5c7f2a48cd6940d4da4a">cmp_cfg_state</a> (std::size_t tested_i, std::vector&lt; vari::vval&lt; <a class="el" href="namespaceservio_1_1iface.html#a772857f85c4cac4a3ac6bebbbaf92644">iface::cfg_vals</a> &gt; &gt; const &amp;initial, std::vector&lt; vari::vval&lt; <a class="el" href="namespaceservio_1_1iface.html#a772857f85c4cac4a3ac6bebbbaf92644">iface::cfg_vals</a> &gt; &gt; const &amp;new_state)</td></tr>
 <tr class="separator:a77fcbacc4f0f5c7f2a48cd6940d4da4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca391fb30b75c7962a0a19617f039a92" id="r_aca391fb30b75c7962a0a19617f039a92"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#aca391fb30b75c7962a0a19617f039a92">test_config</a> (boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;port)</td></tr>
-<tr class="separator:aca391fb30b75c7962a0a19617f039a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11750fa3e09016ebba072e065595e787" id="r_a11750fa3e09016ebba072e065595e787"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a11750fa3e09016ebba072e065595e787">check_mode</a> (<a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;port, auto v)</td></tr>
-<tr class="separator:a11750fa3e09016ebba072e065595e787"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab85f40d232e357ede79182bda5489136" id="r_ab85f40d232e357ede79182bda5489136"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#ab85f40d232e357ede79182bda5489136">disengage</a> (boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;port)</td></tr>
-<tr class="separator:ab85f40d232e357ede79182bda5489136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6675f55decf856ef87cc4bd05da00ce" id="r_ae6675f55decf856ef87cc4bd05da00ce"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#ae6675f55decf856ef87cc4bd05da00ce">test_disengaged</a> (boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;port)</td></tr>
-<tr class="separator:ae6675f55decf856ef87cc4bd05da00ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58c0ef5bc323e8716f5c4ee0d25c1369" id="r_a58c0ef5bc323e8716f5c4ee0d25c1369"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a58c0ef5bc323e8716f5c4ee0d25c1369">test_power</a> (boost::asio::io_context &amp;io, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;port)</td></tr>
-<tr class="separator:a58c0ef5bc323e8716f5c4ee0d25c1369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60d31cf0e65b8243e9e2d1349910e9ba" id="r_a60d31cf0e65b8243e9e2d1349910e9ba"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a60d31cf0e65b8243e9e2d1349910e9ba">test_current</a> (boost::asio::io_context &amp;io, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;port)</td></tr>
-<tr class="separator:a60d31cf0e65b8243e9e2d1349910e9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a679263fc821787b5d09593452f43b7d6" id="r_a679263fc821787b5d09593452f43b7d6"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a679263fc821787b5d09593452f43b7d6">test_velocity</a> (boost::asio::io_context &amp;io, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;port)</td></tr>
-<tr class="separator:a679263fc821787b5d09593452f43b7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a880bcff5b36ca30cc19a181dea5d2752" id="r_a880bcff5b36ca30cc19a181dea5d2752"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a880bcff5b36ca30cc19a181dea5d2752">test_position</a> (boost::asio::io_context &amp;io, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;port)</td></tr>
-<tr class="separator:a880bcff5b36ca30cc19a181dea5d2752"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55e689a164b2fcb5d85f51df39772710" id="r_a55e689a164b2fcb5d85f51df39772710"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a55e689a164b2fcb5d85f51df39772710">test_properties_querying</a> (boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;port)</td></tr>
-<tr class="separator:a55e689a164b2fcb5d85f51df39772710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9d03539febf0e415d12186f79bf9c03" id="r_ae9d03539febf0e415d12186f79bf9c03"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#ae9d03539febf0e415d12186f79bf9c03">test_config</a> (boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;port)</td></tr>
+<tr class="separator:ae9d03539febf0e415d12186f79bf9c03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab15d1dc848675c550cf2824ed244509a" id="r_ab15d1dc848675c550cf2824ed244509a"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#ab15d1dc848675c550cf2824ed244509a">check_mode</a> (<a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;port, auto v)</td></tr>
+<tr class="separator:ab15d1dc848675c550cf2824ed244509a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87254b7aaecc1313529eb65c8096d2c0" id="r_a87254b7aaecc1313529eb65c8096d2c0"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a87254b7aaecc1313529eb65c8096d2c0">disengage</a> (boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;port)</td></tr>
+<tr class="separator:a87254b7aaecc1313529eb65c8096d2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4bb392bdd7aa0459cf772cdd0230f99" id="r_ad4bb392bdd7aa0459cf772cdd0230f99"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#ad4bb392bdd7aa0459cf772cdd0230f99">test_disengaged</a> (boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;port)</td></tr>
+<tr class="separator:ad4bb392bdd7aa0459cf772cdd0230f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3b7db518bd8ab0658a561135e93112" id="r_aea3b7db518bd8ab0658a561135e93112"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#aea3b7db518bd8ab0658a561135e93112">test_power</a> (boost::asio::io_context &amp;io, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;port)</td></tr>
+<tr class="separator:aea3b7db518bd8ab0658a561135e93112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390bb13008a780762d256e178ab8acca" id="r_a390bb13008a780762d256e178ab8acca"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a390bb13008a780762d256e178ab8acca">test_current</a> (boost::asio::io_context &amp;io, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;port)</td></tr>
+<tr class="separator:a390bb13008a780762d256e178ab8acca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaec678d17b745044d38f3c7fd9687c92" id="r_aaec678d17b745044d38f3c7fd9687c92"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#aaec678d17b745044d38f3c7fd9687c92">test_velocity</a> (boost::asio::io_context &amp;io, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;port)</td></tr>
+<tr class="separator:aaec678d17b745044d38f3c7fd9687c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a419ee5b44dab39f4b23a8503efa74383" id="r_a419ee5b44dab39f4b23a8503efa74383"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#a419ee5b44dab39f4b23a8503efa74383">test_position</a> (boost::asio::io_context &amp;io, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;port)</td></tr>
+<tr class="separator:a419ee5b44dab39f4b23a8503efa74383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6eaf73807de37e4d37a071d612a883" id="r_ace6eaf73807de37e4d37a071d612a883"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#ace6eaf73807de37e4d37a071d612a883">test_properties_querying</a> (boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;port)</td></tr>
+<tr class="separator:ace6eaf73807de37e4d37a071d612a883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="a6c6697661de5cf696a131b33a08c3779" name="a6c6697661de5cf696a131b33a08c3779"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c6697661de5cf696a131b33a08c3779">&#9670;&#160;</a></span>test_signature</h2>
+<a id="a9849bd4fc25ccf897eb1563fb19a5bcd" name="a9849bd4fc25ccf897eb1563fb19a5bcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9849bd4fc25ccf897eb1563fb19a5bcd">&#9670;&#160;</a></span>test_signature</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1bb.html#a6c6697661de5cf696a131b33a08c3779">servio::bb::test_signature</a> = typedef boost::asio::awaitable&lt; void &gt;( boost::asio::io_context&amp;, <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a>&amp; )</td>
+          <td class="memname">using <a class="el" href="namespaceservio_1_1bb.html#a9849bd4fc25ccf897eb1563fb19a5bcd">servio::bb::test_signature</a> = typedef boost::asio::awaitable&lt; void &gt;( boost::asio::io_context&amp;, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a>&amp; )</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -152,8 +152,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a11750fa3e09016ebba072e065595e787" name="a11750fa3e09016ebba072e065595e787"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11750fa3e09016ebba072e065595e787">&#9670;&#160;</a></span>check_mode()</h2>
+<a id="ab15d1dc848675c550cf2824ed244509a" name="ab15d1dc848675c550cf2824ed244509a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab15d1dc848675c550cf2824ed244509a">&#9670;&#160;</a></span>check_mode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +161,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">boost::asio::awaitable&lt; void &gt; servio::bb::check_mode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;&#160;</td>
           <td class="paramname"><em>port</em>, </td>
         </tr>
         <tr>
@@ -178,7 +178,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a11d294adbb6ef96e3962f74ebfe317ea">servio::scmdio::get_property_mode()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a610d0593bb55f086d2f4a1c43a392e8c">servio::scmdio::set_mode()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a6c8341fa198e273aa6a79de5fb9af804">servio::scmdio::get_property_mode()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a63185ec97bb1d01e8212608a2d983a6e">servio::scmdio::set_mode()</a>.</p>
 
 </div>
 </div>
@@ -216,8 +216,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab85f40d232e357ede79182bda5489136" name="ab85f40d232e357ede79182bda5489136"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab85f40d232e357ede79182bda5489136">&#9670;&#160;</a></span>disengage()</h2>
+<a id="a87254b7aaecc1313529eb65c8096d2c0" name="a87254b7aaecc1313529eb65c8096d2c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87254b7aaecc1313529eb65c8096d2c0">&#9670;&#160;</a></span>disengage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,7 +231,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;&#160;</td>
           <td class="paramname"><em>port</em>&#160;</td>
         </tr>
         <tr>
@@ -242,12 +242,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a610d0593bb55f086d2f4a1c43a392e8c">servio::scmdio::set_mode()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a63185ec97bb1d01e8212608a2d983a6e">servio::scmdio::set_mode()</a>.</p>
 
 </div>
 </div>
-<a id="a9e5fb6b5343104b9e106aeeaf18ac1bf" name="a9e5fb6b5343104b9e106aeeaf18ac1bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e5fb6b5343104b9e106aeeaf18ac1bf">&#9670;&#160;</a></span>register_test()</h2>
+<a id="a25ca27e98592b295f2c6bab62db8abdf" name="a25ca27e98592b295f2c6bab62db8abdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25ca27e98592b295f2c6bab62db8abdf">&#9670;&#160;</a></span>register_test()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,13 +270,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1common__cli.html">scmdio::common_cli</a> &amp;&#160;</td>
-          <td class="paramname"><em>cli</em>, </td>
+          <td class="paramtype">boost::asio::io_context &amp;&#160;</td>
+          <td class="paramname"><em>io_ctx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::function&lt; <a class="el" href="namespaceservio_1_1bb.html#a6c6697661de5cf696a131b33a08c3779">test_signature</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &gt;&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; <a class="el" href="namespaceservio_1_1bb.html#a9849bd4fc25ccf897eb1563fb19a5bcd">test_signature</a> &gt;&#160;</td>
           <td class="paramname"><em>test</em>, </td>
         </tr>
         <tr>
@@ -300,8 +306,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aca391fb30b75c7962a0a19617f039a92" name="aca391fb30b75c7962a0a19617f039a92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca391fb30b75c7962a0a19617f039a92">&#9670;&#160;</a></span>test_config()</h2>
+<a id="ae9d03539febf0e415d12186f79bf9c03" name="ae9d03539febf0e415d12186f79bf9c03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d03539febf0e415d12186f79bf9c03">&#9670;&#160;</a></span>test_config()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -315,7 +321,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;&#160;</td>
           <td class="paramname"><em>port</em>&#160;</td>
         </tr>
         <tr>
@@ -326,12 +332,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#a77fcbacc4f0f5c7f2a48cd6940d4da4a">cmp_cfg_state()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a76d8ce65bdbaa45ce106d6a756752995">servio::scmdio::get_full_config()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a68df0e1162c95ba565dcce84bfa73777">servio::scmdio::set_config_field()</a>, and <a class="el" href="namespaceservio_1_1bb.html#a5089d4dc853f8c5e763dd60a57c2a70f">vary_value()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#a77fcbacc4f0f5c7f2a48cd6940d4da4a">cmp_cfg_state()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#af6459b97ab23e66a4f2a2e2934efa29d">servio::scmdio::get_full_config()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a1e93aa71ffa2b83ea015222ba9e5f71b">servio::scmdio::set_config_field()</a>, and <a class="el" href="namespaceservio_1_1bb.html#a5089d4dc853f8c5e763dd60a57c2a70f">vary_value()</a>.</p>
 
 </div>
 </div>
-<a id="a60d31cf0e65b8243e9e2d1349910e9ba" name="a60d31cf0e65b8243e9e2d1349910e9ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60d31cf0e65b8243e9e2d1349910e9ba">&#9670;&#160;</a></span>test_current()</h2>
+<a id="a390bb13008a780762d256e178ab8acca" name="a390bb13008a780762d256e178ab8acca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390bb13008a780762d256e178ab8acca">&#9670;&#160;</a></span>test_current()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,7 +351,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;&#160;</td>
           <td class="paramname"><em>port</em>&#160;</td>
         </tr>
         <tr>
@@ -356,12 +362,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#a11750fa3e09016ebba072e065595e787">check_mode()</a>, and <a class="el" href="namespaceservio_1_1bb.html#ab85f40d232e357ede79182bda5489136">disengage()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#ab15d1dc848675c550cf2824ed244509a">check_mode()</a>, and <a class="el" href="namespaceservio_1_1bb.html#a87254b7aaecc1313529eb65c8096d2c0">disengage()</a>.</p>
 
 </div>
 </div>
-<a id="ae6675f55decf856ef87cc4bd05da00ce" name="ae6675f55decf856ef87cc4bd05da00ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6675f55decf856ef87cc4bd05da00ce">&#9670;&#160;</a></span>test_disengaged()</h2>
+<a id="ad4bb392bdd7aa0459cf772cdd0230f99" name="ad4bb392bdd7aa0459cf772cdd0230f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4bb392bdd7aa0459cf772cdd0230f99">&#9670;&#160;</a></span>test_disengaged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -375,7 +381,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;&#160;</td>
           <td class="paramname"><em>port</em>&#160;</td>
         </tr>
         <tr>
@@ -386,12 +392,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#a11750fa3e09016ebba072e065595e787">check_mode()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#ab15d1dc848675c550cf2824ed244509a">check_mode()</a>.</p>
 
 </div>
 </div>
-<a id="a880bcff5b36ca30cc19a181dea5d2752" name="a880bcff5b36ca30cc19a181dea5d2752"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a880bcff5b36ca30cc19a181dea5d2752">&#9670;&#160;</a></span>test_position()</h2>
+<a id="a419ee5b44dab39f4b23a8503efa74383" name="a419ee5b44dab39f4b23a8503efa74383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a419ee5b44dab39f4b23a8503efa74383">&#9670;&#160;</a></span>test_position()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,7 +411,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;&#160;</td>
           <td class="paramname"><em>port</em>&#160;</td>
         </tr>
         <tr>
@@ -416,12 +422,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#a11750fa3e09016ebba072e065595e787">check_mode()</a>, and <a class="el" href="namespaceservio_1_1bb.html#ab85f40d232e357ede79182bda5489136">disengage()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#ab15d1dc848675c550cf2824ed244509a">check_mode()</a>, and <a class="el" href="namespaceservio_1_1bb.html#a87254b7aaecc1313529eb65c8096d2c0">disengage()</a>.</p>
 
 </div>
 </div>
-<a id="a58c0ef5bc323e8716f5c4ee0d25c1369" name="a58c0ef5bc323e8716f5c4ee0d25c1369"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58c0ef5bc323e8716f5c4ee0d25c1369">&#9670;&#160;</a></span>test_power()</h2>
+<a id="aea3b7db518bd8ab0658a561135e93112" name="aea3b7db518bd8ab0658a561135e93112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea3b7db518bd8ab0658a561135e93112">&#9670;&#160;</a></span>test_power()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -435,7 +441,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;&#160;</td>
           <td class="paramname"><em>port</em>&#160;</td>
         </tr>
         <tr>
@@ -446,12 +452,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#a11750fa3e09016ebba072e065595e787">check_mode()</a>, and <a class="el" href="namespaceservio_1_1bb.html#ab85f40d232e357ede79182bda5489136">disengage()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#ab15d1dc848675c550cf2824ed244509a">check_mode()</a>, and <a class="el" href="namespaceservio_1_1bb.html#a87254b7aaecc1313529eb65c8096d2c0">disengage()</a>.</p>
 
 </div>
 </div>
-<a id="a55e689a164b2fcb5d85f51df39772710" name="a55e689a164b2fcb5d85f51df39772710"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55e689a164b2fcb5d85f51df39772710">&#9670;&#160;</a></span>test_properties_querying()</h2>
+<a id="ace6eaf73807de37e4d37a071d612a883" name="ace6eaf73807de37e4d37a071d612a883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6eaf73807de37e4d37a071d612a883">&#9670;&#160;</a></span>test_properties_querying()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -465,7 +471,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;&#160;</td>
           <td class="paramname"><em>port</em>&#160;</td>
         </tr>
         <tr>
@@ -476,12 +482,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#ae9ebf818fa820a1003fbd93312e64bd9">servio::scmdio::get_property()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a19a8418740de76af20e8f1040fe32a18">servio::scmdio::get_property()</a>.</p>
 
 </div>
 </div>
-<a id="a679263fc821787b5d09593452f43b7d6" name="a679263fc821787b5d09593452f43b7d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a679263fc821787b5d09593452f43b7d6">&#9670;&#160;</a></span>test_velocity()</h2>
+<a id="aaec678d17b745044d38f3c7fd9687c92" name="aaec678d17b745044d38f3c7fd9687c92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaec678d17b745044d38f3c7fd9687c92">&#9670;&#160;</a></span>test_velocity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -495,7 +501,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1cobs__port.html">scmdio::cobs_port</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;&#160;</td>
           <td class="paramname"><em>port</em>&#160;</td>
         </tr>
         <tr>
@@ -506,7 +512,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#a11750fa3e09016ebba072e065595e787">check_mode()</a>, and <a class="el" href="namespaceservio_1_1bb.html#ab85f40d232e357ede79182bda5489136">disengage()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1bb.html#ab15d1dc848675c550cf2824ed244509a">check_mode()</a>, and <a class="el" href="namespaceservio_1_1bb.html#a87254b7aaecc1313529eb65c8096d2c0">disengage()</a>.</p>
 
 </div>
 </div>
@@ -534,7 +540,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1bb.html">bb</a></li>
-    <li class="footer">Generated on Fri Dec 27 2024 23:32:04 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Jan 9 2025 16:30:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

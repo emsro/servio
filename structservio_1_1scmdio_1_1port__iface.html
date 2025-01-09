@@ -109,10 +109,10 @@ $(document).ready(function(){initNavTree('structservio_1_1scmdio_1_1port__iface.
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aac3b0dd958f61e1f0fb494024af68891" id="r_aac3b0dd958f61e1f0fb494024af68891"><td class="memItemLeft" align="right" valign="top">virtual boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html#aac3b0dd958f61e1f0fb494024af68891">async_write</a> (em::view&lt; std::byte const * &gt; msg)=0</td></tr>
-<tr class="separator:aac3b0dd958f61e1f0fb494024af68891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae16839d1d4d3239c8f1c5263be47d859" id="r_ae16839d1d4d3239c8f1c5263be47d859"><td class="memItemLeft" align="right" valign="top">virtual boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html#ae16839d1d4d3239c8f1c5263be47d859">async_read</a> (em::view&lt; std::byte * &gt; buffer)=0</td></tr>
-<tr class="separator:ae16839d1d4d3239c8f1c5263be47d859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530660ebfdfa0df643711916c5e9e6aa" id="r_a530660ebfdfa0df643711916c5e9e6aa"><td class="memItemLeft" align="right" valign="top">virtual awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html#a530660ebfdfa0df643711916c5e9e6aa">write_msg</a> (std::span&lt; std::byte const &gt; msg)=0</td></tr>
+<tr class="separator:a530660ebfdfa0df643711916c5e9e6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c285685c9e668dff9eaa958088887b4" id="r_a1c285685c9e668dff9eaa958088887b4"><td class="memItemLeft" align="right" valign="top">virtual awaitable&lt; std::span&lt; std::byte &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html#a1c285685c9e668dff9eaa958088887b4">read_msg</a> (std::span&lt; std::byte &gt; buffer)=0</td></tr>
+<tr class="separator:a1c285685c9e668dff9eaa958088887b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68e4e7d3d09cb4ec7b020cdd41c8fac7" id="r_a68e4e7d3d09cb4ec7b020cdd41c8fac7"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html#a68e4e7d3d09cb4ec7b020cdd41c8fac7">~port_iface</a> ()=default</td></tr>
 <tr class="separator:a68e4e7d3d09cb4ec7b020cdd41c8fac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -143,8 +143,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae16839d1d4d3239c8f1c5263be47d859" name="ae16839d1d4d3239c8f1c5263be47d859"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae16839d1d4d3239c8f1c5263be47d859">&#9670;&#160;</a></span>async_read()</h2>
+<a id="a1c285685c9e668dff9eaa958088887b4" name="a1c285685c9e668dff9eaa958088887b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c285685c9e668dff9eaa958088887b4">&#9670;&#160;</a></span>read_msg()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,9 +153,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual boost::asio::awaitable&lt; em::view&lt; std::byte * &gt; &gt; servio::scmdio::port_iface::async_read </td>
+          <td class="memname">virtual awaitable&lt; std::span&lt; std::byte &gt; &gt; servio::scmdio::port_iface::read_msg </td>
           <td>(</td>
-          <td class="paramtype">em::view&lt; std::byte * &gt;&#160;</td>
+          <td class="paramtype">std::span&lt; std::byte &gt;&#160;</td>
           <td class="paramname"><em>buffer</em></td><td>)</td>
           <td></td>
         </tr>
@@ -167,12 +167,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#a7a87b602857935cc6e8783127e0e987d">servio::scmdio::cobs_port</a>, and <a class="el" href="structservio_1_1scmdio_1_1port__mock.html#ad9ebfd299b482527dca4a164d5b42630">servio::scmdio::port_mock</a>.</p>
+<p>Implemented in <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#a1e32d6501dad5553f34877ed013df8dd">servio::scmdio::cobs_port</a>, and <a class="el" href="structservio_1_1scmdio_1_1port__mock.html#aee252077e64fe8bb0240c4d53426b33a">servio::scmdio::port_mock</a>.</p>
 
 </div>
 </div>
-<a id="aac3b0dd958f61e1f0fb494024af68891" name="aac3b0dd958f61e1f0fb494024af68891"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac3b0dd958f61e1f0fb494024af68891">&#9670;&#160;</a></span>async_write()</h2>
+<a id="a530660ebfdfa0df643711916c5e9e6aa" name="a530660ebfdfa0df643711916c5e9e6aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530660ebfdfa0df643711916c5e9e6aa">&#9670;&#160;</a></span>write_msg()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,9 +181,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual boost::asio::awaitable&lt; void &gt; servio::scmdio::port_iface::async_write </td>
+          <td class="memname">virtual awaitable&lt; void &gt; servio::scmdio::port_iface::write_msg </td>
           <td>(</td>
-          <td class="paramtype">em::view&lt; std::byte const * &gt;&#160;</td>
+          <td class="paramtype">std::span&lt; std::byte const &gt;&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -195,7 +195,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#a0c81281ef52567a88ce6fbadab440985">servio::scmdio::cobs_port</a>, and <a class="el" href="structservio_1_1scmdio_1_1port__mock.html#ad5d764968d642353e6ff291aeeb00c58">servio::scmdio::port_mock</a>.</p>
+<p>Implemented in <a class="el" href="structservio_1_1scmdio_1_1cobs__port.html#a55b3437fca2074f6b76a3e875d4021a0">servio::scmdio::cobs_port</a>, and <a class="el" href="structservio_1_1scmdio_1_1port__mock.html#a943e3897b6feb9a0704ba1305d42dead">servio::scmdio::port_mock</a>.</p>
 
 </div>
 </div>
@@ -208,7 +208,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1scmdio.html">scmdio</a></li><li class="navelem"><a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a></li>
-    <li class="footer">Generated on Fri Dec 27 2024 23:32:04 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Jan 9 2025 16:30:25 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

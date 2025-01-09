@@ -1,0 +1,7 @@
+<map id="servio::scmdio::serial_stream" name="servio::scmdio::serial_stream">
+<area shape="rect" id="Node000001" title=" " alt="" coords="109,108,270,148"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1scmdio_1_1stream__iface.html" title=" " alt="" coords="5,5,176,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,54,173,106,169,110,117,57"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="200,13,379,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="270,50,210,110,206,106,266,46"/>
+</map>

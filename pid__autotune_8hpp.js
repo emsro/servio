@@ -6,5 +6,5 @@ var pid__autotune_8hpp =
     ] ],
     [ "linear_least_squares", "pid__autotune_8hpp.html#a40ca775c56c260d187fd81d3730fef47", null ],
     [ "pid_calculate", "pid__autotune_8hpp.html#aa7aafe8ff434221e097fa3aaff3641af", null ],
-    [ "pid_collect", "pid__autotune_8hpp.html#afcf902f4c4fbe43cd7ee095a60768cf1", null ]
+    [ "pid_collect", "pid__autotune_8hpp.html#a1ad8fcf9c2a8a99c6b80086bfcdee61d", null ]
 ];

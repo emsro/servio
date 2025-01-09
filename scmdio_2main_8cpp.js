@@ -1,24 +1,39 @@
 var scmdio_2main_8cpp =
 [
-    [ "servio::scmdio::cfg_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__opts", [
-      [ "field", "namespaceservio_1_1scmdio.html#a704ae1876459aaf7751ec6071b8f9585", null ],
-      [ "json", "namespaceservio_1_1scmdio.html#a13d716f128c45b93d5d6eb1e6895ea80", null ],
-      [ "path", "namespaceservio_1_1scmdio.html#a8b36a5dd98dd84c3dd6492bbf310f996", null ],
-      [ "value", "namespaceservio_1_1scmdio.html#a5d25c25f8f8e7deb217a5ddf6748469f", null ]
+    [ "servio::scmdio::cfg_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__ctx", [
+      [ "field", "namespaceservio_1_1scmdio.html#a042f0e3f3f694f590baea65ef0f865e5", null ],
+      [ "json", "namespaceservio_1_1scmdio.html#a0d17b95179abdab0d7d40727d25097fd", null ],
+      [ "path", "namespaceservio_1_1scmdio.html#a13a9500c0be1297fac08fb0a64cb4e90", null ],
+      [ "port", "namespaceservio_1_1scmdio.html#a39730f404cc78a2c1c8c7d704c0fa0fd", null ],
+      [ "value", "namespaceservio_1_1scmdio.html#aa78dcdc970fec9cb4b3abd6719bf90aa", null ]
+    ] ],
+    [ "servio::scmdio::pool_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1pool__opts", [
+      [ "data", "namespaceservio_1_1scmdio.html#a290cb9a642d3eb9533e624f5f8ee5353", null ],
+      [ "port", "namespaceservio_1_1scmdio.html#afc14c36a6f4bf467d227cb3ed4d35d9f", null ]
     ] ],
     [ "servio::scmdio::mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", [
       [ "angle", "namespaceservio_1_1scmdio.html#ae8ed943d565921113b58e844ec40d4fb", null ],
       [ "current", "namespaceservio_1_1scmdio.html#a5b48fe29c3252d8489d843328bae56cd", null ],
+      [ "port", "namespaceservio_1_1scmdio.html#a69c469e9e4a7f5eb8bec07954bcce4d7", null ],
       [ "power", "namespaceservio_1_1scmdio.html#ab9513f1604f27e60b999a99958a45d90", null ],
       [ "velocity", "namespaceservio_1_1scmdio.html#ad4eeda260fbde422b87e85ab46f2da0d", null ]
     ] ],
-    [ "autotune_def", "scmdio_2main_8cpp.html#a141bcb6a4196a3a543172be48aa85397", null ],
-    [ "cfg_def", "scmdio_2main_8cpp.html#a47742063f815da2978a95cd745152a30", null ],
+    [ "servio::scmdio::autotune_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx", [
+      [ "port", "namespaceservio_1_1scmdio.html#a973d0c9ccb632d5c0739bc46802a3343", null ]
+    ] ],
+    [ "servio::scmdio::bflash_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1bflash__ctx", [
+      [ "file", "namespaceservio_1_1scmdio.html#a77ea38e1834f94b476247a7987fd8a15", null ],
+      [ "port", "namespaceservio_1_1scmdio.html#ad3644167e344e9f8ce39123a2461fbba", null ]
+    ] ],
+    [ "autotune_def", "scmdio_2main_8cpp.html#a54ae7a5edcb3197b0f05c6c357ad8b94", null ],
+    [ "bflash_def", "scmdio_2main_8cpp.html#ae34166d08fd8a74b00c051f802a676e6", null ],
+    [ "cfg_def", "scmdio_2main_8cpp.html#a53cc5ff3007630b899ca2bf5afc5a391", null ],
+    [ "cobs_port_callback", "scmdio_2main_8cpp.html#ae7a1742daa01ae5bc16d3ef272f4bcf8", null ],
     [ "field_option", "scmdio_2main_8cpp.html#ad775904026fd4fb1d8f3a62288c7d3ab", null ],
     [ "json_flag", "scmdio_2main_8cpp.html#a9d0341f90de176f1fb8528b9d21bbf61", null ],
     [ "main", "scmdio_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
-    [ "mode_def", "scmdio_2main_8cpp.html#af3343a77efa887d1c6ae4a939ca683b6", null ],
-    [ "pool_cmd", "scmdio_2main_8cpp.html#aab8bbbc1e80d27ca1f0a9d4ca382146c", null ],
-    [ "pool_cmd", "scmdio_2main_8cpp.html#a51e4cb40456beafbb78ac97e71ae4d75", null ],
-    [ "pool_def", "scmdio_2main_8cpp.html#ab046fe02e42a95b8c9f2c668bfc6e3ba", null ]
+    [ "mode_def", "scmdio_2main_8cpp.html#ae25251a99c0a6e96b85027cca28a0cc8", null ],
+    [ "pool_cmd", "scmdio_2main_8cpp.html#a31a59d1205df549028fb32c3a406f979", null ],
+    [ "pool_cmd", "scmdio_2main_8cpp.html#a8cc488f9ad0de0df045c5a9592b2b3b9", null ],
+    [ "pool_def", "scmdio_2main_8cpp.html#aa895c4d04b8c0c7d854041c055f68740", null ]
 ];

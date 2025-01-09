@@ -2,7 +2,7 @@ var searchData=
 [
   ['val_0',['val',['../structservio_1_1mon_1_1pulser.html#affef689099a64f55f34799d90b95cac2',1,'servio::mon::pulser::val'],['../structservio_1_1iface_1_1cfg__set__stmt.html#a5fdda90bd54c406d7926788ab913bd21',1,'servio::iface::cfg_set_stmt::val']]],
   ['vals_1',['vals',['../structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html#a95e2ba7a2802d93641e281d5f1f6c51a',1,'servio::iface::field_traits&lt; vari::typelist&lt; Field... &gt; &gt;']]],
-  ['value_2',['value',['../namespaceservio_1_1scmdio.html#a5d25c25f8f8e7deb217a5ddf6748469f',1,'servio::scmdio::cfg_opts::value'],['../structservio_1_1iface_1_1kval.html#af52be62a798f3f327bdb0ed5ac3d0134',1,'servio::iface::kval::value']]],
+  ['value_2',['value',['../namespaceservio_1_1scmdio.html#aa78dcdc970fec9cb4b3abd6719bf90aa',1,'servio::scmdio::cfg_ctx::value'],['../structservio_1_1iface_1_1kval.html#af52be62a798f3f327bdb0ed5ac3d0134',1,'servio::iface::kval::value']]],
   ['value_5fcb_3',['value_cb',['../structservio_1_1drv_1_1value__cb.html#ac7ecdfdf950295f84dc2b9703d4061d8',1,'servio::drv::value_cb::value_cb()'],['../structservio_1_1drv_1_1value__cb.html',1,'servio::drv::value_cb&lt; Callable &gt;']]],
   ['value_5fcb_5fiface_4',['value_cb_iface',['../structservio_1_1drv_1_1value__cb__iface.html',1,'servio::drv']]],
   ['value_5fmessage_5',['value_message',['../namespaceservio_1_1cfg.html#a8aede70f47a2a0b2a4eb2f0f9056d142',1,'servio::cfg']]],
@@ -18,7 +18,7 @@ var searchData=
   ['vcc_5fiface_15',['vcc_iface',['../structservio_1_1drv_1_1vcc__iface.html',1,'servio::drv']]],
   ['vcc_5ftest_16',['vcc_test',['../structservio_1_1drv_1_1tests_1_1vcc__test.html',1,'servio::drv::tests']]],
   ['vdd_5fvalue_17',['VDD_VALUE',['../stm32h5xx__hal__conf_8h.html#aae550dad9f96d52cfce5e539adadbbb4',1,'stm32h5xx_hal_conf.h']]],
-  ['velocity_18',['velocity',['../structservio_1_1sim_1_1simple__motor.html#a5f88e006e13663bb61961ab5523de590',1,'servio::sim::simple_motor::velocity'],['../namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2a7b4354bded455eb379e3c764806cda7b',1,'servio::VELOCITY'],['../namespaceservio_1_1scmdio.html#ad4eeda260fbde422b87e85ab46f2da0d',1,'servio::scmdio::mode_opts::velocity'],['../namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a7b4354bded455eb379e3c764806cda7b',1,'servio::VELOCITY'],['../namespaceservio_1_1klmn.html#a6ab2426e56ee2674d68f6d2824bfe992',1,'servio::klmn::velocity()']]],
+  ['velocity_18',['velocity',['../structservio_1_1sim_1_1simple__motor.html#a5f88e006e13663bb61961ab5523de590',1,'servio::sim::simple_motor::velocity'],['../namespaceservio_1_1klmn.html#a6ab2426e56ee2674d68f6d2824bfe992',1,'servio::klmn::velocity()'],['../namespaceservio_1_1scmdio.html#ad4eeda260fbde422b87e85ab46f2da0d',1,'servio::scmdio::mode_opts::velocity'],['../namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2a7b4354bded455eb379e3c764806cda7b',1,'servio::VELOCITY'],['../namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a7b4354bded455eb379e3c764806cda7b',1,'servio::VELOCITY']]],
   ['velocity_20control_20mode_19',['REQ2.3 Velocity control mode',['../ctl.html#autotoc_md14',1,'']]],
   ['velocity_20is_20specified_20in_20radians_20per_20second_20',['REQ5.5 Angular velocity is specified in radians per second.',['../units.html#autotoc_md34',1,'']]],
   ['velocity_20limits_21',['REQ3.3 Velocity limits',['../lims.html#autotoc_md21',1,'']]],

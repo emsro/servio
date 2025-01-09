@@ -1,9 +1,9 @@
 <map id="servio::bb::bb_test_case" name="servio::bb::bb_test_case">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,196,184,221"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="23,108,124,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,146,94,195,89,196,77,147"/>
-<area shape="rect" id="Node000003" href="$structservio_1_1scmdio_1_1common__cli.html" title=" " alt="" coords="149,108,353,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,142,117,198,115,193,217,138"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="163,5,338,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="253,59,253,108,248,108,248,59"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,211,184,236"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="23,115,124,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,153,95,210,89,211,76,154"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="149,108,323,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,158,114,213,111,208,195,153"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1scmdio_1_1port__iface.html" title=" " alt="" coords="161,5,311,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="239,59,239,108,233,108,233,59"/>
 </map>
