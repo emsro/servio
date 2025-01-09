@@ -1,3 +1,4 @@
+#include "./bflash.hpp"
 #include "./cli.hpp"
 #include "./config_cmds.hpp"
 #include "./field_util.hpp"
@@ -22,76 +23,77 @@ void field_option( CLI::App* app, std::string& field )
         app->add_option( "field", field, "Field name" );
 }
 
-struct cfg_opts
+void cobs_port_callback( CLI::App* app, io_context& io_ctx, auto& ctx_ptr, auto f )
+{
+        app->callback( [&io_ctx, ctx_ptr, f = std::move( f )] {
+                co_spawn( io_ctx, f( ctx_ptr->port.get( io_ctx ) ), detached );
+        } );
+}
+
+struct cfg_ctx
 {
         bool                  json = false;
         std::string           field;
         std::string           value;
         std::filesystem::path path;
+        cobs_cli              port;
 };
 
-void cfg_def(
-    CLI::App&                     app,
-    boost::asio::io_context&      context,
-    std::unique_ptr< cobs_port >& port_ptr )
+void cfg_def( CLI::App& app, io_context& io_ctx )
 {
-        auto data = std::make_shared< cfg_opts >();
+        auto ctx = std::make_shared< cfg_ctx >();
 
         auto* cfg = app.add_subcommand( "cfg", "configuration commands" );
 
+        port_opts( *cfg, ctx->port );
+
         auto* query = cfg->add_subcommand( "query", "list all config options from the servo" );
-        json_flag( query, data->json );
-        query->callback( [&port_ptr, data, &context] {
-                co_spawn( context, cfg_query_cmd( *port_ptr, data->json ), boost::asio::detached );
+        json_flag( query, ctx->json );
+        cobs_port_callback( query, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+                return cfg_query_cmd( p, ctx->json );
         } );
 
         auto* get = cfg->add_subcommand( "get", "retrivies a configuration option from the servo" );
-        field_option( get, data->field );
-        json_flag( get, data->json );
-        get->callback( [&port_ptr, data, &context] {
-                co_spawn(
-                    context,
-                    cfg_get_cmd( *port_ptr, data->field, data->json ),
-                    boost::asio::detached );
+        field_option( get, ctx->field );
+        json_flag( get, ctx->json );
+        cobs_port_callback( get, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+                return cfg_get_cmd( p, ctx->field, ctx->json );
         } );
 
         auto* set =
             cfg->add_subcommand( "set", "sets a configuration option to value in the servo" );
-        field_option( set, data->field );
-        set->add_option( "value", data->value, "Value to set" );
-        set->callback( [&port_ptr, data, &context] {
-                co_spawn(
-                    context,
-                    cfg_set_cmd( *port_ptr, data->field, data->value ),
-                    boost::asio::detached );
+        field_option( set, ctx->field );
+        set->add_option( "value", ctx->value, "Value to set" );
+        cobs_port_callback( set, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+                return cfg_set_cmd( p, ctx->field, ctx->value );
         } );
 
         auto* commit = cfg->add_subcommand(
             "commit", "stores the current configuration of servo in its persistent memory" );
-        commit->callback( [&port_ptr, &context] {
-                co_spawn( context, cfg_commit_cmd( *port_ptr ), boost::asio::detached );
+        cobs_port_callback( commit, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+                return cfg_commit_cmd( p );
         } );
 
         auto* clear = cfg->add_subcommand( "clear", "clear latest store config from the servo" );
-        clear->callback( [&port_ptr, &context] {
-                co_spawn( context, cfg_clear_cmd( *port_ptr ), boost::asio::detached );
+        cobs_port_callback( clear, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+                return cfg_clear_cmd( p );
         } );
 
         auto* load = cfg->add_subcommand( "load", "load config from a file" );
-        load->add_option( "path", data->path, "Path to a file" );
-        load->callback( [&port_ptr, data, &context] {
-                co_spawn( context, cfg_load_cmd( *port_ptr, data->path ), boost::asio::detached );
+        load->add_option( "path", ctx->path, "Path to a file" );
+        cobs_port_callback( load, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+                return cfg_load_cmd( p, ctx->path );
         } );
 }
 
-boost::asio::awaitable< void >
-pool_cmd( boost::asio::io_context&, cobs_port& port, std::vector< iface::prop_key > props )
+awaitable< void >
+pool_cmd( io_context&, sptr< cobs_port > port, std::vector< iface::prop_key > props )
 {
 
         while ( true ) {
                 std::vector< std::string > vals;
                 for ( iface::prop_key const field : props ) {
-                        auto val = co_await get_property( port, field );
+                        auto val = co_await get_property( *port, field );
                         val.visit( [&]( auto& kv ) {
                                 vals.emplace_back( std::format( "{}", kv.value ) );
                         } );
@@ -100,8 +102,8 @@ pool_cmd( boost::asio::io_context&, cobs_port& port, std::vector< iface::prop_ke
         }
 }
 
-boost::asio::awaitable< void >
-pool_cmd( boost::asio::io_context& context, cobs_port& port, std::vector< std::string > properties )
+awaitable< void >
+pool_cmd( io_context& context, sptr< cobs_port > port, std::vector< std::string > properties )
 {
         if ( properties.empty() ) {
                 std::cout << "got an empty property list, not pooling" << std::endl;
@@ -120,76 +122,130 @@ pool_cmd( boost::asio::io_context& context, cobs_port& port, std::vector< std::s
         co_await pool_cmd( context, port, fields );
 }
 
-void pool_def(
-    CLI::App&                     app,
-    boost::asio::io_context&      context,
-    std::unique_ptr< cobs_port >& port_ptr )
+struct pool_opts
 {
-        auto data = std::make_shared< std::vector< std::string > >();
+        std::vector< std::string > data;
+        cobs_cli                   port;
+};
+
+void pool_def( CLI::App& app, io_context& io_ctx )
+{
+        auto ctx = std::make_shared< pool_opts >();
 
         auto* pool = app.add_subcommand( "pool", "pool the servo for properties" );
-        pool->add_option( "properties", *data, "properties to pool" );
-        pool->callback( [&port_ptr, data, &context] {
-                co_spawn( context, pool_cmd( context, *port_ptr, *data ), boost::asio::detached );
+        port_opts( *pool, ctx->port );
+        pool->add_option( "properties", ctx->data, "properties to pool" );
+        cobs_port_callback( pool, io_ctx, ctx, [&io_ctx, ctx]( sptr< cobs_port > p ) {
+                return pool_cmd( io_ctx, p, ctx->data );
         } );
 }
 
 struct mode_opts
 {
-        float power;
-        float current;
-        float angle;
-        float velocity;
+        float    power;
+        float    current;
+        float    angle;
+        float    velocity;
+        cobs_cli port;
 };
 
-void mode_def( CLI::App& app, boost::asio::io_context& ctx, std::unique_ptr< cobs_port >& port_ptr )
+void mode_def( CLI::App& app, io_context& io_ctx )
 {
-        auto data = std::make_shared< mode_opts >();
+        auto ctx = std::make_shared< mode_opts >();
 
         auto* mode = app.add_subcommand( "mode", "switch the servo to mode" );
+        port_opts( *mode, ctx->port );
+
+        using R = awaitable< void >;
 
         auto* disengaged = mode->add_subcommand( "disengaged", "disengaged mode" );
-        disengaged->callback( [&port_ptr, &ctx] {
-                co_spawn( ctx, set_mode_disengaged( *port_ptr ), boost::asio::detached );
+        cobs_port_callback( disengaged, io_ctx, ctx, []( sptr< cobs_port > p ) -> R {
+                co_await set_mode_disengaged( *p );
         } );
 
         auto* pow = mode->add_subcommand( "power", "power mode" );
-        pow->add_option( "power", data->power, "power" );
-        pow->callback( [&port_ptr, data, &ctx] {
-                co_spawn( ctx, set_mode_power( *port_ptr, data->power ), boost::asio::detached );
+        pow->add_option( "power", ctx->power, "power" );
+        cobs_port_callback( disengaged, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) -> R {
+                co_await set_mode_power( *p, ctx->power );
         } );
 
         auto* current = mode->add_subcommand( "current", "current mode" );
-        current->add_option( "current", data->current, "goal current" );
-        current->callback( [&port_ptr, data, &ctx] {
-                co_spawn(
-                    ctx, set_mode_current( *port_ptr, data->current ), boost::asio::detached );
+        current->add_option( "current", ctx->current, "goal current" );
+        cobs_port_callback( current, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) -> R {
+                co_await set_mode_current( *p, ctx->current );
         } );
 
         auto* position = mode->add_subcommand( "position", "position mode" );
-        position->add_option( "angle", data->angle, "goal angle" );
-        position->callback( [&port_ptr, data, &ctx] {
-                co_spawn( ctx, set_mode_position( *port_ptr, data->angle ), boost::asio::detached );
+        position->add_option( "angle", ctx->angle, "goal angle" );
+        cobs_port_callback( position, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) -> R {
+                co_await set_mode_position( *p, ctx->angle );
         } );
 
         auto* velocity = mode->add_subcommand( "velocity", "velocity mode" );
-        velocity->add_option( "velocity", data->velocity, "goal velocity" );
-        velocity->callback( [&port_ptr, data, &ctx] {
-                co_spawn(
-                    ctx, set_mode_velocity( *port_ptr, data->velocity ), boost::asio::detached );
+        velocity->add_option( "velocity", ctx->velocity, "goal velocity" );
+        cobs_port_callback( velocity, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) -> R {
+                co_await set_mode_velocity( *p, ctx->velocity );
         } );
 }
 
-void autotune_def(
-    CLI::App&                     app,
-    boost::asio::io_context&      ctx,
-    std::unique_ptr< cobs_port >& port_ptr )
+struct autotune_ctx
 {
+        cobs_cli port;
+};
+
+void autotune_def( CLI::App& app, io_context& io_ctx )
+{
+        auto ctx = std::make_shared< autotune_ctx >();
+
         auto* autotune = app.add_subcommand( "autotune", "does PID autotuning" );
 
+        port_opts( *autotune, ctx->port );
+
         auto* curr = autotune->add_subcommand( "current", "tune current PID" );
-        curr->callback( [&port_ptr, &ctx] {
-                co_spawn( ctx, pid_autotune_current( *port_ptr, 0.5F ), boost::asio::detached );
+        cobs_port_callback( curr, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) -> awaitable< void > {
+                co_await pid_autotune_current( *p, 0.5F );
+        } );
+}
+
+struct bflash_ctx
+{
+        std::filesystem::path file;
+        serial_cli            port;
+};
+
+void bflash_def( CLI::App& app, io_context& io_ctx )
+{
+        auto ctx = std::make_shared< bflash_ctx >();
+
+        auto port_callback = [&]( CLI::App* cmd, auto f ) {
+                cmd->callback( [&io_ctx, ctx, f = std::move( f )]() {
+                        sptr< serial_stream > ss = ctx->port.get( io_ctx );
+                        using spb                = boost::asio::serial_port_base;
+                        ss->port.set_option( spb::parity( spb::parity::even ) );
+                        ss->port.set_option( spb::character_size( 8 ) );
+                        ss->port.set_option( spb::stop_bits( spb::stop_bits::one ) );
+
+                        co_spawn( io_ctx, f( ss ), detached );
+                } );
+        };
+
+        auto* bflash = app.add_subcommand( "bflash", "flash firmware via bootloader" );
+        port_opts( *bflash, ctx->port );
+
+        auto* info =
+            bflash->add_subcommand( "info", "Query the system about bootloader information" )
+                ->fallthrough();
+        port_callback( info, []( sptr< serial_stream > ss ) -> awaitable< void > {
+                co_await bflash_info( *ss, std::cout );
+        } );
+
+        auto* download =
+            bflash->add_subcommand( "download", "Download the image flashed into the device" )
+                ->fallthrough();
+        download->add_option( "file", ctx->file, "file to download to" )->required();
+        port_callback( download, [ctx]( sptr< serial_stream > ss ) -> awaitable< void > {
+                std::ofstream f{ ctx->file };
+                co_await bflash_download( *ss, f );
         } );
 }
 
@@ -197,17 +253,17 @@ void autotune_def(
 
 int main( int argc, char* argv[] )
 {
+        spdlog::enable_backtrace( 32 );
         using namespace servio;
 
-        CLI::App app{ "Servio utility" };
+        boost::asio::io_context ctx;
+        CLI::App                app{ "Servio utility" };
 
-        scmdio::common_cli cli;
-        cli.setup( app );
-
-        scmdio::cfg_def( app, cli.context, cli.port_ptr );
-        scmdio::pool_def( app, cli.context, cli.port_ptr );
-        scmdio::mode_def( app, cli.context, cli.port_ptr );
-        scmdio::autotune_def( app, cli.context, cli.port_ptr );
+        scmdio::cfg_def( app, ctx );
+        scmdio::pool_def( app, ctx );
+        scmdio::mode_def( app, ctx );
+        scmdio::autotune_def( app, ctx );
+        scmdio::bflash_def( app, ctx );
 
         try {
                 app.parse( argc, argv );
@@ -216,7 +272,7 @@ int main( int argc, char* argv[] )
                 return app.exit( e );
         }
 
-        cli.context.run();
+        ctx.run();
 
         return 0;
 }

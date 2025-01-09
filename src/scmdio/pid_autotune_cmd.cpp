@@ -5,7 +5,7 @@
 
 namespace servio::scmdio
 {
-boost::asio::awaitable< void > pid_autotune_current( port_iface& port, float pwr )
+awaitable< void > pid_autotune_current( port_iface& port, float pwr )
 {
         std::vector< double > data = co_await pid_collect(
             pwr,

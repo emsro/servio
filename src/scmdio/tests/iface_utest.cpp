@@ -11,14 +11,6 @@ namespace servio::scmdio
 
 using namespace avakar::literals;
 
-void handle_eptr( std::exception_ptr eptr )
-{
-        EXPECT_NO_THROW( {
-                if ( eptr )
-                        std::rethrow_exception( eptr );
-        } );
-}
-
 template < typename T, typename F >
 boost::asio::awaitable< void > tuple_coawait( T&& t, F&& f )
 {

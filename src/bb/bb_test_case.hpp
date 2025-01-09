@@ -13,53 +13,58 @@ namespace servio::bb
 {
 
 using test_signature =
-    boost::asio::awaitable< void >( boost::asio::io_context&, scmdio::cobs_port& );
+    boost::asio::awaitable< void >( boost::asio::io_context&, scmdio::port_iface& );
 
 struct bb_test_case : ::testing::Test
 {
+
         bb_test_case(
-            scmdio::common_cli&             cli,
-            std::function< test_signature > test,
-            std::chrono::milliseconds       timeout )
-          : cli( cli )
+            boost::asio::io_context&              ctx,
+            std::shared_ptr< scmdio::port_iface > port,
+            std::function< test_signature >       test,
+            std::chrono::milliseconds             timeout )
+          : io_ctx( ctx )
+          , port( port )
           , test( std::move( test ) )
           , timeout( timeout )
         {
         }
 
+        boost::asio::io_context&              io_ctx;
+        std::shared_ptr< scmdio::port_iface > port;
+        std::function< test_signature >       test;
+        std::chrono::milliseconds             timeout;
+
         void TestBody() final
         {
-                cli.context.restart();
+                io_ctx.restart();
                 std::exception_ptr excep_ptr;
                 bool               finished = false;
                 co_spawn(
-                    cli.context,
+                    io_ctx,
                     [&]() -> boost::asio::awaitable< void > {
-                            co_await test( cli.context, *cli.port_ptr );
+                            co_await this->test( io_ctx, *port );
                             finished = true;
                     },
                     [&]( std::exception_ptr ptr ) {
                             excep_ptr = std::move( ptr );
                     } );
-                cli.context.run_for( timeout );
+                io_ctx.run_for( timeout );
 
                 if ( excep_ptr )
                         std::rethrow_exception( excep_ptr );
                 EXPECT_TRUE( finished )
                     << "Test failed to finish in time, timeout: " << timeout.count() << "s";
         }
-
-        scmdio::common_cli&             cli;
-        std::function< test_signature > test;
-        std::chrono::milliseconds       timeout;
 };
 
 inline void register_test(
-    std::string const&              fixture_name,
-    std::string const&              name,
-    scmdio::common_cli&             cli,
-    std::function< test_signature > test,
-    std::chrono::milliseconds       timeout )
+    std::string const&                    fixture_name,
+    std::string const&                    name,
+    boost::asio::io_context&              io_ctx,
+    std::shared_ptr< scmdio::port_iface > port,
+    std::function< test_signature >       test,
+    std::chrono::milliseconds             timeout )
 {
         ::testing::RegisterTest(
             fixture_name.c_str(),
@@ -68,8 +73,8 @@ inline void register_test(
             nullptr,
             __FILE__,
             __LINE__,
-            [&cli, test = std::move( test ), timeout] {
-                    return new bb_test_case( cli, test, timeout );
+            [&io_ctx, &port, test = std::move( test ), timeout] {
+                    return new bb_test_case( io_ctx, port, std::move( test ), timeout );
             } );
 }
 

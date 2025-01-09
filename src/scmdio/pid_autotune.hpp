@@ -93,7 +93,7 @@ inline line linear_least_squares( std::span< double > ys )
         };
 }
 
-boost::asio::awaitable< std::vector< double > > pid_collect( float u, auto&& set_f, auto&& get_y_f )
+awaitable< std::vector< double > > pid_collect( float u, auto&& set_f, auto&& get_y_f )
 {
         co_await set_f( u );
 

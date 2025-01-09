@@ -36,9 +36,9 @@ void print_configs_json( std::vector< vari::vval< iface::cfg_vals > > const& out
 }
 }  // namespace
 
-boost::asio::awaitable< void > cfg_query_cmd( port_iface& port, bool json )
+awaitable< void > cfg_query_cmd( sptr< port_iface > port, bool json )
 {
-        std::vector< vari::vval< iface::cfg_vals > > out = co_await get_full_config( port );
+        std::vector< vari::vval< iface::cfg_vals > > out = co_await get_full_config( *port );
 
         if ( json )
                 print_configs_json( out );
@@ -46,23 +46,23 @@ boost::asio::awaitable< void > cfg_query_cmd( port_iface& port, bool json )
                 print_configs( out );
 }
 
-boost::asio::awaitable< void > cfg_commit_cmd( port_iface& port )
+awaitable< void > cfg_commit_cmd( sptr< port_iface > port )
 {
         std::string msg = std::format( "cfg cmt" );
 
-        auto reply = co_await exchg( port, msg );
+        auto reply = co_await exchg( *port, msg );
         // XXX: check the retcode
         std::ignore = reply;
 }
 
-boost::asio::awaitable< void > cfg_clear_cmd( port_iface& port )
+awaitable< void > cfg_clear_cmd( sptr< port_iface > port )
 {
         std::string msg   = std::format( "cfg clr" );
-        auto        reply = co_await exchg( port, msg );
+        auto        reply = co_await exchg( *port, msg );
         std::ignore       = reply;
 }
 
-boost::asio::awaitable< void > cfg_get_cmd( port_iface& port, std::string const& name, bool json )
+awaitable< void > cfg_get_cmd( sptr< port_iface > port, std::string const& name, bool json )
 {
         auto field = iface::cfg_key::from_string( name );
         // XXX throw?
@@ -71,7 +71,7 @@ boost::asio::awaitable< void > cfg_get_cmd( port_iface& port, std::string const&
                 co_return;
         }
 
-        auto val = co_await get_config_field( port, *field );
+        auto val = co_await get_config_field( *port, *field );
 
         val.visit( [&]( auto& v ) {
                 if ( json )
@@ -81,18 +81,17 @@ boost::asio::awaitable< void > cfg_get_cmd( port_iface& port, std::string const&
         } );
 }
 
-boost::asio::awaitable< void >
-cfg_set_cmd( port_iface& port, std::string const& name, std::string value )
+awaitable< void > cfg_set_cmd( sptr< port_iface > port, std::string const& name, std::string value )
 {
 
         auto v = kval_ser< iface::cfg_vals >::ser( name, value );
         if ( v )
-                co_await set_config_field( port, v.vref() );
+                co_await set_config_field( *port, v.vref() );
         else
                 throw "XXX";
 }
 
-boost::asio::awaitable< void > cfg_load_cmd( port_iface& port, std::filesystem::path const& cfg )
+awaitable< void > cfg_load_cmd( sptr< port_iface > port, std::filesystem::path const& cfg )
 {
         std::ifstream fd( cfg );
 

@@ -3,6 +3,7 @@
 #include "../../core/core.hpp"
 #include "../../core/dispatcher.hpp"
 #include "../port.hpp"
+#include "./util.hpp"
 
 namespace servio::scmdio
 {
@@ -31,7 +32,7 @@ struct port_mock : port_iface
 
         std::deque< std::vector< std::byte > > buff;
 
-        boost::asio::awaitable< void > async_write( em::view< std::byte const* > msg ) override
+        boost::asio::awaitable< void > write_msg( std::span< std::byte const > msg ) override
         {
                 core::dispatcher disp{
                     .motor    = a.motor,
@@ -55,16 +56,16 @@ struct port_mock : port_iface
                 co_return;
         }
 
-        boost::asio::awaitable< em::view< std::byte* > >
-        async_read( em::view< std::byte* > buffer ) override
+        boost::asio::awaitable< std::span< std::byte > >
+        read_msg( std::span< std::byte > buffer ) override
         {
                 if ( buff.empty() )
-                        co_return em::view< std::byte* >{};
+                        co_return std::span< std::byte >{};
 
                 assert( buff.front().size() <= buffer.size() );
                 auto [in, out] = std::ranges::copy( buff.front(), buffer.begin() );
                 buff.pop_front();
-                co_return em::view< std::byte* >{ buffer.begin(), out };
+                co_return std::span< std::byte >{ buffer.begin(), out };
         }
 };
 

@@ -1,5 +1,4 @@
 #include "../scmdio/cli.hpp"
-#include "../scmdio/exceptions.hpp"
 #include "../scmdio/field_util.hpp"
 #include "../scmdio/serial.hpp"
 #include "bb_test_case.hpp"
@@ -58,7 +57,7 @@ void vary_value( vari::vref< iface::cfg_types > x )
         return ::testing::AssertionSuccess();
 }
 
-boost::asio::awaitable< void > test_config( boost::asio::io_context&, scmdio::cobs_port& port )
+boost::asio::awaitable< void > test_config( boost::asio::io_context&, scmdio::port_iface& port )
 {
         std::vector< vari::vval< iface::cfg_vals > > const cfg_vec =
             co_await scmdio::get_full_config( port );
@@ -93,14 +92,15 @@ int main( int argc, char** argv )
         using namespace std::chrono_literals;
 
         ::testing::InitGoogleTest( &argc, argv );
-        bool        powerless = false;
-        opt< bool > verbose   = false;
+        bool                    powerless = false;
+        opt< bool >             verbose   = false;
+        boost::asio::io_context io_ctx;
 
         CLI::App app{ "config tests" };
         scmdio::powerless_flag( app, powerless );
         scmdio::verbose_opt( app, verbose );
-        scmdio::common_cli cli;
-        cli.setup( app );
+        scmdio::cobs_cli port;
+        scmdio::port_opts( app, port );
 
         try {
                 app.parse( argc, argv );
@@ -109,7 +109,7 @@ int main( int argc, char** argv )
                 return app.exit( e );
         }
 
-        bb::register_test( "basic", "config", cli, bb::test_config, 15s );
+        bb::register_test( "basic", "config", io_ctx, port.get( io_ctx ), bb::test_config, 15s );
 
         return RUN_ALL_TESTS();
 }

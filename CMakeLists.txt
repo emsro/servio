@@ -46,6 +46,8 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 
   cpmaddpackage("gh:CLIUtils/CLI11@2.4.2")
   cpmaddpackage("gh:nlohmann/json@3.11.3")
+  cpmaddpackage("gh:gabime/spdlog@1.15.0")
+  target_compile_definitions(spdlog PUBLIC -DSPDLOG_USE_STD_FORMAT=ON)
   cpmaddpackage(
     NAME
     Boost

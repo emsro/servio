@@ -1,6 +1,5 @@
 #include "../iface/def.h"
 #include "../scmdio/cli.hpp"
-#include "../scmdio/exceptions.hpp"
 #include "../scmdio/serial.hpp"
 #include "bb_test_case.hpp"
 
@@ -12,7 +11,7 @@ namespace servio::bb
 {
 
 boost::asio::awaitable< void >
-test_properties_querying( boost::asio::io_context&, scmdio::cobs_port& port )
+test_properties_querying( boost::asio::io_context&, scmdio::port_iface& port )
 {
         for ( auto k : iface::prop_key::iota() ) {
                 auto vals = co_await scmdio::get_property( port, k );
@@ -30,14 +29,15 @@ int main( int argc, char** argv )
         using namespace std::chrono_literals;
 
         ::testing::InitGoogleTest( &argc, argv );
-        bool        powerless = false;
-        opt< bool > verbose   = false;
+        bool                    powerless = false;
+        opt< bool >             verbose   = false;
+        boost::asio::io_context io_ctx;
 
         CLI::App app{ "properties tests" };
         scmdio::powerless_flag( app, powerless );
         scmdio::verbose_opt( app, verbose );
-        scmdio::common_cli cli;
-        cli.setup( app );
+        scmdio::cobs_cli port;
+        scmdio::port_opts( app, port );
 
         try {
                 app.parse( argc, argv );
@@ -46,7 +46,13 @@ int main( int argc, char** argv )
                 return app.exit( e );
         }
 
-        bb::register_test( "basic", "properties_querying", cli, bb::test_properties_querying, 1s );
+        bb::register_test(
+            "basic",
+            "properties_querying",
+            io_ctx,
+            port.get( io_ctx ),
+            bb::test_properties_querying,
+            1s );
 
         return RUN_ALL_TESTS();
 }

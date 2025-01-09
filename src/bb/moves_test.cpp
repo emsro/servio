@@ -10,7 +10,7 @@ namespace servio::bb
 
 using namespace std::chrono_literals;
 
-boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio::cobs_port& port )
+boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio::port_iface& port )
 {
 
         co_await scmdio::set_mode_position( port, 0.2F );
@@ -34,7 +34,8 @@ boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio
         co_await scmdio::set_mode_disengaged( port );
 }
 
-boost::asio::awaitable< void > test_position( boost::asio::io_context& io, scmdio::cobs_port& port )
+boost::asio::awaitable< void >
+test_position( boost::asio::io_context& io, scmdio::port_iface& port )
 {
 
         for ( float pos : { pi / 4, pi * 3 / 2, pi } ) {
@@ -60,12 +61,13 @@ int main( int argc, char** argv )
         using namespace std::chrono_literals;
 
         ::testing::InitGoogleTest( &argc, argv );
-        bool powerless = false;
+        bool                    powerless = false;
+        boost::asio::io_context io_ctx;
 
         CLI::App app{ "black box tests with basic moves" };
         scmdio::powerless_flag( app, powerless );
-        scmdio::common_cli cli;
-        cli.setup( app );
+        scmdio::cobs_cli port;
+        scmdio::port_opts( app, port );
 
         try {
                 app.parse( argc, argv );
@@ -75,8 +77,10 @@ int main( int argc, char** argv )
         }
 
         if ( !powerless ) {
-                bb::register_test( "moves", "current", cli, bb::test_current, 1s );
-                bb::register_test( "moves", "position", cli, bb::test_position, 10s );
+                bb::register_test(
+                    "moves", "current", io_ctx, port.get( io_ctx ), bb::test_current, 1s );
+                bb::register_test(
+                    "moves", "position", io_ctx, port.get( io_ctx ), bb::test_position, 10s );
         }
 
         return RUN_ALL_TESTS();

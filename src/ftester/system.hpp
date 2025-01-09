@@ -173,7 +173,7 @@ private:
         template < std::size_t N >
         boost::asio::awaitable< void > write( em::protocol::message< N > msg )
         {
-                co_await d_port_.async_write( msg );
+                co_await d_port_.write_msg( msg );
         }
 
         boost::asio::awaitable< void > dread()
@@ -182,7 +182,7 @@ private:
                 std::vector< std::byte > buffer( 1024, std::byte{ 0 } );
 
                 while ( true ) {
-                        em::view< std::byte* > data = co_await d_port_.async_read( buffer );
+                        em::view< std::byte* > data = co_await d_port_.read_msg( buffer );
 
                         em::outcome out = em::protocol::extract_multiplexed(
                             data,

@@ -1,44 +1,12 @@
 
 #include <cstdint>
 //
-#include <avakar/atom.h>
-#include <format>
+#include "./base.hpp"
+
 #include <nlohmann/json.hpp>
 #include <vari/vopt.h>
 
 #pragma once
-
-template < avakar::atom_literal A >
-struct std::formatter< A, char >
-{
-        template < typename ParseContext >
-        constexpr ParseContext::iterator parse( ParseContext& ctx )
-        {
-                return ctx.begin();
-        }
-
-        template < class FmtContext >
-        FmtContext::iterator format( A const&, FmtContext& ctx ) const
-        {
-                return std::formatter< std::string_view, char >{}.format( A::to_string(), ctx );
-        }
-};
-
-template < auto... As >
-struct std::formatter< avakar::atom< As... >, char >
-{
-        template < typename ParseContext >
-        constexpr ParseContext::iterator parse( ParseContext& ctx )
-        {
-                return ctx.begin();
-        }
-
-        template < class FmtContext >
-        FmtContext::iterator format( avakar::atom< As... > const& s, FmtContext& ctx ) const
-        {
-                return std::formatter< std::string_view, char >{}.format( s.to_string(), ctx );
-        }
-};
 
 template < auto... Ts >
 struct nlohmann::adl_serializer< avakar::atom< Ts... > >

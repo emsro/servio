@@ -1,7 +1,8 @@
 servio_add_library(
   TARGET scmdiolib
-  SOURCES serial.cpp config_cmds.cpp cli.cpp port.cpp pid_autotune_cmd.cpp
-  LIBS emlabcpp avakar::atom vari CLI11::CLI11 Boost::asio)
+  SOURCES bflash.cpp serial.cpp config_cmds.cpp cli.cpp port.cpp
+          pid_autotune_cmd.cpp
+  LIBS emlabcpp avakar::atom vari CLI11::CLI11 Boost::asio spdlog::spdlog)
 
 servio_add_executable(
   TARGET scmdio
@@ -16,4 +17,9 @@ servio_add_test(
 servio_add_test(
   TARGET scmdio_iface_utest
   SOURCES tests/iface_utest.cpp
+  LIBS scmdiolib corelib monlib mtrlib cfglib gtest_main)
+
+servio_add_test(
+  TARGET scmdio_bflash_utest
+  SOURCES tests/bflash_utest.cpp
   LIBS scmdiolib corelib monlib mtrlib cfglib gtest_main)
