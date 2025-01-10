@@ -35,13 +35,15 @@ awaitable< void > init_comm( stream_iface& port )
                 log_error( "Response for init is not NACK as expected for double-init: {}", b );
 }
 
-awaitable< void > send( stream_iface& port, auto&& data )
+awaitable< void > send( stream_iface& port, auto&& data, std::byte checksum = 0x00_b )
 {
-        std::byte b = std::accumulate(
-            data.begin(), data.end(), std::byte{ 0 }, [&]( std::byte a, std::byte b ) {
-                    std::bitset< 8 > lh{ (unsigned long) a }, rh{ (unsigned long) b };
-                    return ( std::byte )( lh ^ rh ).to_ulong();
-            } );
+        std::byte b =
+            checksum ^
+            std::accumulate(
+                data.begin(), data.end(), std::byte{ 0 }, [&]( std::byte a, std::byte b ) {
+                        std::bitset< 8 > lh{ (unsigned long) a }, rh{ (unsigned long) b };
+                        return ( std::byte )( lh ^ rh ).to_ulong();
+                } );
         co_await port.write( data );
         co_await port.write( b );
 }
@@ -70,11 +72,12 @@ awaitable< void > wait_for_ack( stream_iface& port )
         opt< std::byte > resp = co_await port.read();
 
         if ( resp != ACK )
-                log_error( "Response is not ACK:", resp );
+                log_error( "Response is not ACK: {}", resp );
 }
 
 awaitable< void > cmd( stream_iface& port, cmd_e cmd )
 {
+        spdlog::debug( "Sending command: {}", magic_enum::enum_name( cmd ) );
         auto      b      = static_cast< std::byte >( cmd );
         std::byte data[] = { b, ~b };
         co_await port.write( data );
@@ -121,15 +124,7 @@ awaitable< uint16_t > get_id( stream_iface& port )
         co_return ( (int) vec[0] << 8 ) + (int) vec[1];
 }
 
-static constexpr std::size_t mem_step = 250;
-
-awaitable< void > write_size( stream_iface& port, std::size_t size )
-{
-        assert( size <= 255 );
-        auto size_b = static_cast< std::byte >( size - 1 );
-        co_await port.write( size_b );
-        co_await port.write( ~size_b );
-}
+static constexpr std::size_t mem_step = 252;
 
 awaitable< void > read_memory( stream_iface& port, uint32_t addr, em::view< std::byte* > buff )
 {
@@ -138,7 +133,10 @@ awaitable< void > read_memory( stream_iface& port, uint32_t addr, em::view< std:
         co_await send( port, bflash_conv( addr ) );
         co_await wait_for_ack( port );
 
-        co_await write_size( port, buff.size() );
+        assert( buff.size() <= 255 );
+        auto size_b = static_cast< std::byte >( buff.size() - 1 );
+        co_await port.write( size_b );
+        co_await port.write( ~size_b );
         co_await wait_for_ack( port );
 
         co_await port.read( buff );
@@ -149,13 +147,16 @@ write_memory( stream_iface& port, uint32_t addr, em::view< std::byte const* > bu
 {
         co_await cmd( port, WRITE_MEMORY );
 
+        spdlog::debug( "Sending address: {}", addr );
         co_await send( port, bflash_conv( addr ) );
         co_await wait_for_ack( port );
 
-        co_await write_size( port, buff.size() );
+        if ( buff.size() % 4 != 0 || buff.size() > 255 )
+                log_error( "Invalid buffer size: {}", buff.size() );
+        auto size_b = static_cast< std::byte >( buff.size() - 1 );
+        co_await port.write( size_b );
+        co_await send( port, buff, size_b );
         co_await wait_for_ack( port );
-
-        co_await port.write( buff );
 }
 
 struct chip_info
@@ -164,7 +165,7 @@ struct chip_info
 };
 
 static std::map< uint16_t, chip_info > const chips = {
-    { 0x468, chip_info{ .flash = { 0x0800'0000, 0x0801'FFFF } } } };
+    { 0x468, chip_info{ .flash = { 0x0800'0000, 0x0802'0000 } } } };
 
 awaitable< chip_info const* > get_chip_id( stream_iface& port )
 {
@@ -172,6 +173,7 @@ awaitable< chip_info const* > get_chip_id( stream_iface& port )
         auto     iter = chips.find( id );
         if ( iter == chips.end() )
                 log_error( "Unknown chip id:", id );
+        spdlog::info( "chip id: {}", id );
         co_return &iter->second;
 }
 
@@ -200,7 +202,7 @@ awaitable< void > bflash_download( stream_iface& port, std::ostream& os )
         }
 }
 
-awaitable< void > bflash_upload( stream_iface& port, std::istream& is )
+awaitable< void > bflash_flash( stream_iface& port, std::istream& is )
 {
         co_await init_comm( port );
         chip_info const* ci = co_await get_chip_id( port );
@@ -208,7 +210,10 @@ awaitable< void > bflash_upload( stream_iface& port, std::istream& is )
                 std::size_t s = std::min( mem_step, (std::size_t) ci->flash.max() - addr );
                 std::vector< std::byte > tmp( s, 0x00_b );
                 is.read( (char*) tmp.data(), tmp.size() );
+                tmp.resize( is.gcount() );
                 co_await write_memory( port, addr, tmp );
+                if ( !is )
+                        break;
         }
 }
 

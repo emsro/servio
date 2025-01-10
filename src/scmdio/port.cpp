@@ -21,7 +21,7 @@ awaitable< void > timeout( auto duration )
 
 awaitable< void > serial_stream::write( std::span< std::byte const > msg )
 {
-        spdlog::debug( "writing: ", msg );
+        spdlog::debug( "writing: {}", msg );
         co_await async_write( port, boost::asio::buffer( msg ), use_awaitable );
 }
 
@@ -29,7 +29,8 @@ awaitable< bool > serial_stream::read( std::span< std::byte > buffer )
 {
         std::variant< std::size_t, std::monostate > results = co_await (
             async_read( port, boost::asio::buffer( buffer ), use_awaitable ) || timeout( 100ms ) );
-        spdlog::debug( "reading: ", buffer );
+        std::span< char > b2{ (char*) buffer.data(), buffer.size() };
+        spdlog::debug( "reading: {}", spdlog::to_hex( buffer ) );
         co_return results.index() == 0;
 }
 
@@ -48,7 +49,7 @@ awaitable< void > cobs_port::write_msg( std::span< std::byte const > msg )
         msg_buffer[ser_msg.size()] = std::byte{ 0 };
         ser_msg                    = em::view_n( ser_msg.begin(), ser_msg.size() + 1 );
 
-        spdlog::debug( "writing: ", ser_msg );
+        spdlog::debug( "writing: {}", ser_msg );
 
         co_await async_write(
             port, boost::asio::buffer( ser_msg.begin(), ser_msg.size() ), use_awaitable );

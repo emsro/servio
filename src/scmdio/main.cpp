@@ -247,6 +247,14 @@ void bflash_def( CLI::App& app, io_context& io_ctx )
                 std::ofstream f{ ctx->file };
                 co_await bflash_download( *ss, f );
         } );
+
+        auto* flash =
+            bflash->add_subcommand( "flash", "Flash image to target device" )->fallthrough();
+        flash->add_option( "file", ctx->file, "file to download to" )->required();
+        port_callback( flash, [ctx]( sptr< serial_stream > ss ) -> awaitable< void > {
+                std::ifstream f{ ctx->file };
+                co_await bflash_flash( *ss, f );
+        } );
 }
 
 }  // namespace servio::scmdio

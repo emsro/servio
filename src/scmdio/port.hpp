@@ -1,6 +1,7 @@
 #pragma once
 
 #include "base.hpp"
+#include "spdlog/fmt/bin_to_hex.h"
 
 #include <emlabcpp/experimental/cobs.h>
 #include <vector>

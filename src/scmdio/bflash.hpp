@@ -23,6 +23,6 @@ inline uint32_t bflash_conv( std::span< std::byte const, 4 > data )
 
 awaitable< void > bflash_info( stream_iface& port, std::ostream& os );
 awaitable< void > bflash_download( stream_iface& port, std::ostream& os );
-awaitable< void > bflash_upload( stream_iface& port, std::istream& is );
+awaitable< void > bflash_flash( stream_iface& port, std::istream& is );
 
 }  // namespace servio::scmdio

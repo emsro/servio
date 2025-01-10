@@ -170,7 +170,8 @@ struct stm32_bootloader_mock : stream_iface
                                 continue;
                         }
                         auto [chck] = co_await cons::get< 1 >{};
-                        assert( b == ~chck );
+                        if ( b != ~chck )
+                                log_error( "command check failed: {} {}", b, chck );
 
                         switch ( b ) {
                         case GET:
@@ -189,7 +190,8 @@ struct stm32_bootloader_mock : stream_iface
                                 // XXX: checksum check
                                 buffer.emplace_back( ACK );
                                 auto [size, schck] = co_await cons::get< 2 >{};
-                                assert( size == ~schck );
+                                if ( size != ~schck )
+                                        log_error( "chcksm mismatch: {} {}", size, schck );
                                 buffer.emplace_back( ACK );
                                 for ( std::size_t i = 0; i <= (std::size_t) size; i++ )
                                         buffer.emplace_back( memory.at( addr++ ) );
@@ -202,13 +204,14 @@ struct stm32_bootloader_mock : stream_iface
                                 co_await cons::get< 1 >{};
                                 // XXX: checksum check
                                 buffer.emplace_back( ACK );
-                                auto [size, schck] = co_await cons::get< 2 >{};
-                                assert( size == ~schck );
-                                buffer.emplace_back( ACK );
+                                auto [size] = co_await cons::get< 1 >{};
                                 for ( std::size_t i = 0; i <= (std::size_t) size; i++ ) {
                                         auto [x]            = co_await cons::get< 1 >{};
                                         memory.at( addr++ ) = x;
                                 }
+                                co_await cons::get< 1 >{};
+                                // XXX: checksum check
+                                buffer.emplace_back( ACK );
                                 break;
                         }
                         default:
@@ -267,13 +270,14 @@ cmd: GET_CHECKSUM
 
 TEST( scmdio, reflash )
 {
+        spdlog::enable_backtrace( 32 );
 
         boost::asio::io_context ctx;
         std::stringstream       ss;
         stm32_bootloader_mock   m;
         co_spawn( ctx, bflash_download( m, ss ), handle_eptr );
 
-        co_spawn( ctx, bflash_upload( m, ss ), handle_eptr );
+        co_spawn( ctx, bflash_flash( m, ss ), handle_eptr );
 
         ctx.run();
 }

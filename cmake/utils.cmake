@@ -30,6 +30,8 @@ macro(servio_add_board_executable)
   target_link_options(${A_TARGET} PRIVATE -Wl,--print-memory-usage)
 
   stm32_add_linker_script(${A_TARGET} PRIVATE ${A_LINKER_SCRIPT})
+  stm32_generate_binary_file(${A_TARGET})
+  stm32_generate_hex_file(${A_TARGET})
 endmacro()
 
 macro(servio_add_test)
