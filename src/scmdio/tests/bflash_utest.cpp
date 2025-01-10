@@ -3,6 +3,7 @@
 #include "./util.hpp"
 #include "spdlog/fmt/bin_to_hex.h"
 
+#include <deque>
 #include <emlabcpp/experimental/coro/owning_coroutine_handle.h>
 #include <gtest/gtest.h>
 
