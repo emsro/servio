@@ -186,7 +186,7 @@ struct stm32_bootloader_mock : stream_iface
                         case READ_MEMORY: {
                                 buffer.emplace_back( ACK );
                                 auto     data = co_await cons::get< 4 >{};
-                                uint32_t addr = bflash_conv( data ) - mem_offset;
+                                uint32_t addr = conv_addr( data );
                                 co_await cons::get< 1 >{};
                                 // XXX: checksum check
                                 buffer.emplace_back( ACK );
@@ -201,7 +201,7 @@ struct stm32_bootloader_mock : stream_iface
                         case WRITE_MEMORY: {
                                 buffer.emplace_back( ACK );
                                 auto     data = co_await cons::get< 4 >{};
-                                uint32_t addr = bflash_conv( data ) - mem_offset;
+                                uint32_t addr = conv_addr( data );
                                 co_await cons::get< 1 >{};
                                 // XXX: checksum check
                                 buffer.emplace_back( ACK );
@@ -226,6 +226,11 @@ struct stm32_bootloader_mock : stream_iface
                 spdlog::debug( "writing: {}", msg );
                 c.eat( msg );
                 co_return;
+        }
+
+        uint32_t conv_addr( std::span< std::byte, 4 > data )
+        {
+                return static_cast< uint32_t >( bflash_conv( data ) - mem_offset );
         }
 
         awaitable< bool > read( std::span< std::byte > msg ) override

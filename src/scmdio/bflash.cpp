@@ -198,7 +198,7 @@ awaitable< void > bflash_download( stream_iface& port, std::ostream& os )
                 std::size_t s = std::min( mem_step, (std::size_t) ci->flash.max() - addr );
                 std::vector< std::byte > tmp( s, 0x00_b );
                 co_await read_memory( port, addr, tmp );
-                os.write( (char*) tmp.data(), tmp.size() );
+                os.write( (char*) tmp.data(), (long) tmp.size() );
         }
 }
 
@@ -209,8 +209,8 @@ awaitable< void > bflash_flash( stream_iface& port, std::istream& is )
         for ( uint32_t addr = ci->flash.min(); addr < ci->flash.max(); addr += mem_step ) {
                 std::size_t s = std::min( mem_step, (std::size_t) ci->flash.max() - addr );
                 std::vector< std::byte > tmp( s, 0x00_b );
-                is.read( (char*) tmp.data(), tmp.size() );
-                tmp.resize( is.gcount() );
+                is.read( (char*) tmp.data(), (long) tmp.size() );
+                tmp.resize( (unsigned long) is.gcount() );
                 co_await write_memory( port, addr, tmp );
                 if ( !is )
                         break;
