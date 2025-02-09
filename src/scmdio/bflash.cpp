@@ -1,8 +1,9 @@
-#include "./bflash.hpp"
-
-#include "../base/base.hpp"
 
 #define MAGIC_ENUM_RANGE_MAX 256
+
+#include "./bflash.hpp"
+
+#include "../base.hpp"
 
 #include <magic_enum/magic_enum.hpp>
 

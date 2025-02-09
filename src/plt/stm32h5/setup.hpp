@@ -65,6 +65,17 @@ struct leds_timer_cfg
         drv::pin_cfg green_pin;
 };
 
+struct i2c_cfg
+{
+        I2C_TypeDef* instance;
+        IRQn_Type    ev_irq;
+        uint32_t     ev_irq_priority;
+        IRQn_Type    er_irq;
+        uint32_t     er_irq_priority;
+        drv::pin_cfg scl;
+        drv::pin_cfg sda;
+};
+
 struct temp_calib_coeffs
 {
         float cal1;
@@ -82,6 +93,8 @@ em::result setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 em::result setup_dac( DAC_HandleTypeDef& dac, drv::pin_cfg const& cfg );
 
 em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg );
+
+em::result setup_i2c( I2C_HandleTypeDef& i2c, i2c_cfg cfg );
 
 em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg );
 

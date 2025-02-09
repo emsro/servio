@@ -15,6 +15,7 @@
 #include "../../plt/platform.hpp"
 #include "../../sntr/central_sentry.hpp"
 #include "../brd.hpp"
+#include "flash_cfg.hpp"
 #include "setup.hpp"
 
 #include <emlabcpp/defer.h>
@@ -23,12 +24,6 @@
 namespace em = emlabcpp;
 
 // TODO: add calibration procedure for ADC1
-
-// TODO: this needs it's own header
-extern "C" {
-extern int _config_start;
-extern int _config_end;
-}
 
 namespace servio::brd
 {
@@ -62,13 +57,6 @@ cfg::map get_default_config()
 }
 
 cfg::context CFG{ .map = get_default_config() };
-
-em::view< std::byte* > page_at( uint32_t i )
-{
-        return em::view_n(
-            reinterpret_cast< std::byte* >( &_config_start ) + i * FLASH_SECTOR_SIZE,
-            FLASH_SECTOR_SIZE );
-}
 
 std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at( 1 ) };
 drv::flash_storage                      FLASH_STORAGE{ PERSISTENT_BLOCKS };
@@ -528,6 +516,8 @@ core::drivers setup_core_drivers()
         case cfg::encoder_mode::ENC_MODE_QUAD:
                 pos = quad_encoder_setup( CFG.map.get_val< cfg::QUAD_ENCD_RANGE >() );
                 break;
+        case 0:
+                fw::stop_exec();
         }
 
         drv::leds* leds = leds_setup();

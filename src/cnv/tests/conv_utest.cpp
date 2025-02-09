@@ -17,7 +17,7 @@ static constexpr uint32_t ATTEMPT_N = 100;
 TEST( cnv, linear )
 {
         std::default_random_engine             e( 0 );
-        std::binomial_distribution< uint32_t > bd( ATTEMPT_N, 0.5F );
+        std::binomial_distribution< uint32_t > bd( ATTEMPT_N, 0.5 );
 
         linear_converter lc{ .offset = 0, .scale = 0 };
 
@@ -39,7 +39,7 @@ TEST( cnv, linear )
 TEST( cnv, converter )
 {
         std::default_random_engine             e( 0 );
-        std::binomial_distribution< uint32_t > bd( ATTEMPT_N, 0.5F );
+        std::binomial_distribution< uint32_t > bd( ATTEMPT_N, 0.5 );
         std::normal_distribution< float >      nd( 0.F, 1.F );
 
         converter cnv;

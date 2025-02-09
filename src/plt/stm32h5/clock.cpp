@@ -54,11 +54,13 @@ em::result setup_clk()
                 return em::ERROR;
         /** Initializes the peripherals clocks
          */
-        PeriphClkInit.PeriphClockSelection =
-            RCC_PERIPHCLK_USART1 | RCC_PERIPHCLK_USART2 | RCC_PERIPHCLK_ADCDAC | RCC_PERIPHCLK_DAC;
+        PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1 | RCC_PERIPHCLK_USART2 |
+                                             RCC_PERIPHCLK_ADCDAC | RCC_PERIPHCLK_DAC |
+                                             RCC_PERIPHCLK_I2C2;
         PeriphClkInit.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK2;
         PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
         PeriphClkInit.AdcDacClockSelection = RCC_ADCDACCLKSOURCE_HSI;
+        PeriphClkInit.I2c2ClockSelection   = RCC_I2C2CLKSOURCE_PCLK1;
         if ( HAL_RCCEx_PeriphCLKConfig( &PeriphClkInit ) != HAL_OK )
                 return em::ERROR;
 

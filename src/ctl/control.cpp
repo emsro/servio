@@ -1,6 +1,6 @@
 #include "control.hpp"
 
-#include "../base/base.hpp"
+#include "../base.hpp"
 
 #include <emlabcpp/match.h>
 #include <emlabcpp/protocol/register_handler.h>

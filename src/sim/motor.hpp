@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../base/base.hpp"
+#include "../base.hpp"
 
 #include <array>
 #include <emlabcpp/defer.h>

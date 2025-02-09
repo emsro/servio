@@ -1,4 +1,3 @@
-add_subdirectory(base)
 add_subdirectory(cfg)
 add_subdirectory(cnv)
 add_subdirectory(core)

@@ -48,7 +48,7 @@ struct cobs_uart_err_test
                 cobs_uart                 uart{ "test_uart", central, clk, &handle, nullptr };
 
                 co_await ctx.expect( central.buffer.empty() );
-                handle.ErrorCode = cobs_uart::tolerable_hal_errors;
+                handle.ErrorCode = bits::uart_common_tolerable_hal_errors;
                 uart.err_irq( &handle );
                 co_await ctx.expect( central.buffer.size() == 1 );
 
@@ -57,7 +57,7 @@ struct cobs_uart_err_test
                 co_await ctx.expect(
                     std::get< 0 >( central.buffer[0] ) == sntr::test_central_sentry::DEGR );
 
-                handle.ErrorCode = ~cobs_uart::tolerable_hal_errors;
+                handle.ErrorCode = bits::uart_common_tolerable_hal_errors;
                 uart.err_irq( &handle );
                 co_await ctx.expect( central.buffer.size() == 2 );
 

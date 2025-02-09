@@ -1,6 +1,6 @@
 
-#include "base/base.hpp"
-#include "drv/bits/cobs_rx_container.h"
+#include "base.hpp"
+#include "drv/bits/cobs_rx_container.hpp"
 
 #include <gtest/gtest.h>
 
@@ -25,7 +25,7 @@ TEST( COBS, cont )
 
         bits::cobs_rx_container cont;
 
-        for ( const std::vector< std::byte >& msg : data ) {
+        for ( std::vector< std::byte > const& msg : data ) {
                 std::array< std::byte, 32 > buffer;
                 auto [succes, sub] = em::encode_cobs( msg, buffer );
                 EXPECT_TRUE( succes );
@@ -36,7 +36,7 @@ TEST( COBS, cont )
 
         EXPECT_EQ( cont.sizes.size(), data.size() );
 
-        for ( const std::vector< std::byte >& msg : data ) {
+        for ( std::vector< std::byte > const& msg : data ) {
                 std::array< std::byte, 16 > buffer;
                 auto [success, data] = bits::load_message( cont, buffer );
 

@@ -1,6 +1,6 @@
 #include "./cobs_uart.hpp"
 
-#include "../base/base.hpp"
+#include "../base.hpp"
 #include "../fw/util.hpp"
 
 #include <emlabcpp/result.h>
@@ -8,20 +8,10 @@
 namespace servio::drv
 {
 
-com_res cobs_uart::recv( std::span< std::byte > data )
+em::result cobs_uart::send( send_data_t data, microseconds timeout )
 {
-        auto [res, used] = bits::load_message( rx_, data );
-
-        return { res, used };
-}
-
-em::result
-cobs_uart::send( std::span< std::span< std::byte const > const > data, microseconds timeout )
-{
-        auto end = clk_.get_us() + timeout;
-        while ( !tx_done_ )
-                if ( clk_.get_us() > end )
-                        return em::ERROR;
+        if ( !spin_with_timeout( clk_, tx_done_, timeout ) )
+                return em::ERROR;
 
         em::cobs_encoder e( tx_buffer_ );
         for ( auto s : data )

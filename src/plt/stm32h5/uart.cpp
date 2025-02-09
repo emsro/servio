@@ -20,21 +20,8 @@ em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart
         uart.Init.ClockPrescaler         = UART_PRESCALER_DIV1;
         uart.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
 
-        GPIO_InitTypeDef rx_init;
-
-        rx_init.Pin       = cfg.rx.pin;
-        rx_init.Mode      = GPIO_MODE_AF_PP;
-        rx_init.Pull      = GPIO_NOPULL;
-        rx_init.Speed     = GPIO_SPEED_FREQ_LOW;
-        rx_init.Alternate = cfg.rx.alternate;
-
-        GPIO_InitTypeDef tx_init;
-
-        tx_init.Pin       = cfg.tx.pin;
-        tx_init.Mode      = GPIO_MODE_AF_PP;
-        tx_init.Pull      = GPIO_NOPULL;
-        tx_init.Speed     = GPIO_SPEED_FREQ_LOW;
-        tx_init.Alternate = cfg.tx.alternate;
+        setup_gpio( cfg.rx );
+        setup_gpio( cfg.tx );
 
         tx_dma.Instance                   = cfg.tx_dma.instance;
         tx_dma.Init.BlkHWRequest          = DMA_BREQ_SINGLE_BURST;
@@ -50,9 +37,6 @@ em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart
         tx_dma.Init.SrcInc                = DMA_SINC_INCREMENTED;
         tx_dma.Init.TransferAllocatedPort = DMA_SRC_ALLOCATED_PORT0 | DMA_DEST_ALLOCATED_PORT0;
         tx_dma.Init.TransferEventMode     = DMA_TCEM_BLOCK_TRANSFER;
-
-        HAL_GPIO_Init( cfg.rx.port, &rx_init );
-        HAL_GPIO_Init( cfg.tx.port, &tx_init );
 
         if ( HAL_DMA_Init( &tx_dma ) != HAL_OK )
                 fw::stop_exec();

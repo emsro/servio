@@ -1,4 +1,4 @@
-#include "../base/base.hpp"
+#include "../base.hpp"
 #include "../scmdio/cli.hpp"
 #include "../scmdio/serial.hpp"
 #include "bb_test_case.hpp"

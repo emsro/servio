@@ -9,12 +9,15 @@
 #include "../../drv/flash_cfg.hpp"
 #include "../../drv/hbridge.hpp"
 #include "../../drv/leds.hpp"
+#include "../../drv/nl_uart.hpp"
+#include "../../drv/paged_i2c_eeprom.hpp"
 #include "../../drv/quad_encoder.hpp"
 #include "../../fw/load_persistent_config.hpp"
 #include "../../fw/util.hpp"
 #include "../../plt/platform.hpp"
 #include "../../sntr/central_sentry.hpp"
 #include "../brd.hpp"
+#include "flash_cfg.hpp"
 #include "setup.hpp"
 
 #include <emlabcpp/defer.h>
@@ -22,10 +25,13 @@
 
 namespace em = emlabcpp;
 
+// TODO: check duplication with proto3/board.cpp
 // TODO: add calibration procedure for ADC1
 
 namespace servio::brd
 {
+
+using namespace literals;
 
 drv::pin_cfg HBRDIGE_VREF_PIN{
     .pin  = GPIO_PIN_4,
@@ -33,6 +39,7 @@ drv::pin_cfg HBRDIGE_VREF_PIN{
     .pull = GPIO_PULLDOWN,
 };
 
+// XXX: duplicated and actually property of our hbridge
 consteval cnv::off_scale get_curr_coeff()
 {
         // mirror scale: 1575 uA/A
@@ -56,6 +63,9 @@ cfg::map get_default_config()
 }
 
 cfg::context CFG{ .map = get_default_config() };
+
+std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at( 1 ) };
+drv::flash_storage                      FLASH_STORAGE{ PERSISTENT_BLOCKS };
 
 TIM_HandleTypeDef TIM2_HANDLE = {};
 drv::clock        CLOCK{ TIM2_HANDLE };
@@ -95,10 +105,10 @@ drv::adc_pooler_current< ADC_POOLER >   ADC_CURRENT;
 
 UART_HandleTypeDef UART2_HANDLE{};
 DMA_HandleTypeDef  UART2_DMA_HANDLE{};
-drv::cobs_uart     COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART2_HANDLE, &UART2_DMA_HANDLE };
+drv::cobs_uart     DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, CLOCK, &UART2_HANDLE, &UART2_DMA_HANDLE };
 UART_HandleTypeDef UART1_HANDLE{};
 DMA_HandleTypeDef  UART1_DMA_HANDLE{};
-drv::cobs_uart     DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, &UART1_DMA_HANDLE };
+drv::nl_uart       COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, &UART1_DMA_HANDLE };
 TIM_HandleTypeDef  TIM1_HANDLE{};
 drv::hbridge       HBRIDGE{ &TIM1_HANDLE };
 DTS_HandleTypeDef  DTS_HANDLE{};
@@ -107,6 +117,9 @@ drv::dts_temp      DTS_DRV{ DTS_HANDLE };
 TIM_HandleTypeDef  TIM3_HANDLE{};
 drv::quad_encoder  QUAD{ TIM3_HANDLE };
 TIM_HandleTypeDef* QUAD_TRIGGER_TIMER = nullptr;
+
+I2C_HandleTypeDef I2C2_HANDLE{};
+drv::i2c_eeprom   EEPROM{ 0b1010'0000, 65'535u, 2'000u, I2C2_HANDLE };
 
 }  // namespace servio::brd
 
@@ -150,6 +163,16 @@ void GPDMA1_Channel1_IRQHandler()
 void GPDMA1_Channel2_IRQHandler()
 {
         HAL_DMA_IRQHandler( &servio::brd::UART1_DMA_HANDLE );
+}
+
+void I2C2_ER_IRQHandler()
+{
+        HAL_I2C_ER_IRQHandler( &servio::brd::I2C2_HANDLE );
+}
+
+void I2C2_EV_IRQHandler()
+{
+        HAL_I2C_EV_IRQHandler( &servio::brd::I2C2_HANDLE );
 }
 }
 
@@ -210,19 +233,14 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
                 .port = GPIOA,
                 .mode = GPIO_MODE_ANALOG,
             } );
-        if ( enable_pos )
-                return nullptr;
-        /*
-        // XXX: turns out there is no free pin on adc for potenitometer?
-                plt::setup_adc_channel(
-                    ADC_POOLER->position.chconf,
-                    ADC_CHANNEL_0,
-                    drv::pin_cfg{
-                        .pin  = GPIO_PIN_0,
-                        .port = GPIOA,
-                        .mode = GPIO_MODE_ANALOG,
-                    } );
-                    */
+        plt::setup_adc_channel(
+            ADC_POOLER->position.chconf,
+            ADC_CHANNEL_0,
+            drv::pin_cfg{
+                .pin  = GPIO_PIN_6,
+                .port = GPIOA,
+                .mode = GPIO_MODE_ANALOG,
+            } );
         plt::setup_adc_channel(
             ADC_POOLER->vcc.chconf,
             ADC_CHANNEL_7,
@@ -292,7 +310,7 @@ drv::hbridge* hbridge_setup()
         return HBRIDGE.setup( cfg.mc1_ch, cfg.mc2_ch );
 }
 
-drv::cobs_uart* comms_setup()
+drv::com_iface* comms_setup()
 {
         __HAL_RCC_GPDMA1_CLK_ENABLE();
         __HAL_RCC_USART1_CLK_ENABLE();
@@ -434,6 +452,66 @@ drv::pos_iface* quad_encoder_setup( uint32_t period )
         return &QUAD;
 }
 
+void try_i2c_gpio_toggle()
+{
+        drv::pin_cfg a{
+            .pin  = GPIO_PIN_10,
+            .port = GPIOB,
+            .mode = GPIO_MODE_OUTPUT_OD,
+            .pull = GPIO_PULLUP,
+        };
+        drv::pin_cfg b{
+            .pin  = GPIO_PIN_13,
+            .port = GPIOB,
+            .mode = GPIO_MODE_OUTPUT_OD,
+            .pull = GPIO_PULLUP,
+        };
+        plt::setup_gpio( a );
+        plt::setup_gpio( b );
+        for ( ;; ) {
+                HAL_GPIO_TogglePin( GPIOB, a.pin );
+                HAL_GPIO_TogglePin( GPIOB, b.pin );
+                drv::wait_for( CLOCK, 10_ms );
+        }
+}
+
+drv::storage_iface* eeprom_setup()
+{
+        __HAL_RCC_GPIOB_CLK_ENABLE();
+
+        try_i2c_gpio_toggle();
+
+        plt::i2c_cfg cfg{
+            .instance        = I2C2,
+            .ev_irq          = I2C2_EV_IRQn,
+            .ev_irq_priority = 4,
+            .er_irq          = I2C2_ER_IRQn,
+            .er_irq_priority = 4,
+            .scl =
+                {
+                    .pin       = GPIO_PIN_10,
+                    .port      = GPIOB,
+                    .mode      = GPIO_MODE_AF_OD,
+                    .alternate = GPIO_AF4_I2C2,
+                    .pull      = GPIO_PULLUP,
+                },
+            .sda = {
+                .pin       = GPIO_PIN_13,
+                .port      = GPIOB,
+                .mode      = GPIO_MODE_AF_OD,
+                .alternate = GPIO_AF4_I2C2,
+                .pull      = GPIO_PULLUP,
+            } };
+
+        em::result res = plt::setup_i2c( I2C2_HANDLE, cfg );
+        if ( res != em::SUCCESS )
+                return nullptr;
+
+        __HAL_RCC_I2C2_CLK_ENABLE();
+
+        return &EEPROM;
+}
+
 em::result start_callback( core::drivers& cdrv )
 {
         if ( cdrv.motor != nullptr ) {
@@ -446,6 +524,10 @@ em::result start_callback( core::drivers& cdrv )
         }
         if ( cdrv.leds != nullptr ) {
                 if ( LEDS.start() != em::SUCCESS )
+                        return em::ERROR;
+        }
+        if ( cdrv.storage == &EEPROM ) {
+                if ( EEPROM.start() != em::SUCCESS )
                         return em::ERROR;
         }
         if ( QUAD_TRIGGER_TIMER != nullptr )
@@ -489,8 +571,7 @@ em::result setup_board()
 
 core::drivers setup_core_drivers()
 {
-        // XXX: fix
-        // CFG.payload = fw::load_persistent_config( FLASH_STORAGE, CFG.map );
+        CFG.payload = fw::load_persistent_config( FLASH_STORAGE, CFG.map );
 
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != em::SUCCESS )
@@ -516,6 +597,8 @@ core::drivers setup_core_drivers()
         case cfg::encoder_mode::ENC_MODE_QUAD:
                 pos = quad_encoder_setup( CFG.map.get_val< cfg::QUAD_ENCD_RANGE >() );
                 break;
+        case 0:
+                fw::stop_exec();
         }
 
         drv::leds* leds = leds_setup();
@@ -524,7 +607,7 @@ core::drivers setup_core_drivers()
 
         return core::drivers{
             .cfg         = &CFG,
-            .storage     = nullptr,  // XXX: fix
+            .storage     = &FLASH_STORAGE,  // TODO: eeprom setup
             .clock       = &CLOCK,
             .position    = pos,
             .current     = adc_pooler == nullptr ? nullptr : &ADC_CURRENT,

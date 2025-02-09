@@ -1,4 +1,4 @@
-#include "../base/base.hpp"
+#include "../base.hpp"
 #include "../cfg/map.hpp"
 
 #include <cstdint>
@@ -42,12 +42,13 @@ struct com_res
         }
 };
 
+using send_data_t = std::span< std::span< std::byte const > const >;
+
 struct com_iface
 {
-        virtual em::result start() = 0;
-        virtual em::result
-        send( std::span< std::span< std::byte const > const > data, microseconds timeout ) = 0;
-        virtual com_res recv( std::span< std::byte > data )                                = 0;
+        virtual em::result start()                                        = 0;
+        virtual em::result send( send_data_t data, microseconds timeout ) = 0;
+        virtual com_res    recv( std::span< std::byte > data )            = 0;
 };
 
 em::result send( com_iface& iface, microseconds timeout, auto&... data )
@@ -78,6 +79,15 @@ inline void wait_for( clk_iface& clk, microseconds ms )
         microseconds end = clk.get_us() + ms;
         while ( clk.get_us() < end )
                 asm( "nop" );
+}
+
+inline bool spin_with_timeout( clk_iface& clk, bool volatile& cond, microseconds timeout )
+{
+        auto end = clk.get_us() + timeout;
+        while ( !cond )
+                if ( clk.get_us() > end )
+                        return false;
+        return true;
 }
 
 struct period_iface

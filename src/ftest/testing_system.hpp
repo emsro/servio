@@ -1,4 +1,4 @@
-#include "../base/base.hpp"
+#include "../base.hpp"
 #include "../drv/interfaces.hpp"
 #include "../ftester/base.hpp"
 #include "./utest.hpp"

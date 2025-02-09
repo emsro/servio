@@ -1,5 +1,5 @@
 
-#include "../base/base.hpp"
+#include "../base.hpp"
 #include "../ftest/bench/base.hpp"
 #include "./config.hpp"
 #include "./flash.hpp"

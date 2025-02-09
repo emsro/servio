@@ -5,14 +5,12 @@
 #include "./interfaces.hpp"
 
 #include <cstdint>
-#include <emlabcpp/defer.h>
 
 namespace servio::drv
 {
 
-class flash_storage : public storage_iface
+struct flash_storage : public storage_iface
 {
-public:
         flash_storage( std::span< em::view< std::byte* >, 2 > pages )
           : _pages( pages )
         {
