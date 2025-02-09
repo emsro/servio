@@ -5,7 +5,7 @@ var searchData=
   ['read_5fbuffer_2',['read_buffer',['../structservio_1_1scmdio_1_1serial__stream.html#aa022deddb082929fac635cd13b2f3844',1,'servio::scmdio::serial_stream::read_buffer'],['../structservio_1_1scmdio_1_1cobs__port.html#a3c0ff28427c4ac6cd78e1a315e5dfe3f',1,'servio::scmdio::cobs_port::read_buffer']]],
   ['read_5fmemory_3',['READ_MEMORY',['../namespaceservio_1_1scmdio.html#ae955730fa1b178ff99584f5b3f610bd7',1,'servio::scmdio']]],
   ['rec_5fid_4',['rec_id',['../namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c',1,'servio::ftester']]],
-  ['received_5fsize_5',['received_size',['../namespaceservio_1_1drv_1_1bits.html#a83f268c48b8dc33d9a7f4121b5e37261',1,'servio::drv::bits::cobs_rx_container']]],
+  ['received_5fsize_5',['received_size',['../structservio_1_1drv_1_1bits_1_1cobs__rx__container.html#a83f268c48b8dc33d9a7f4121b5e37261',1,'servio::drv::bits::cobs_rx_container::received_size'],['../structservio_1_1drv_1_1bits_1_1nl__rx__container.html#abd82e48777d62bb0f85cf3ad01532a97',1,'servio::drv::bits::nl_rx_container::received_size']]],
   ['record_6',['record',['../structservio_1_1ftest_1_1uctx.html#a275019c78e88e39edf7e23e48bb68b99',1,'servio::ftest::uctx']]],
   ['red_7',['red',['../namespaceservio.html#ace8f4fa67f61708539ca5a97fbd90490',1,'servio::leds_vals::red'],['../namespaceservio_1_1plt.html#a3f041bb8297fff525ea8012ba66633fe',1,'servio::plt::leds_gpio_cfg::red']]],
   ['request_8',['request',['../namespaceservio_1_1plt.html#a7f97f414a1e6cbee2d61917de9cf159a',1,'servio::plt::dma_cfg']]],

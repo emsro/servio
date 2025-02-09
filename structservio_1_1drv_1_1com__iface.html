@@ -104,15 +104,15 @@ $(document).ready(function(){initNavTree('structservio_1_1drv_1_1com__iface.html
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1drv_1_1com__iface__inherit__graph.svg" width="176" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1drv_1_1com__iface__inherit__graph.svg" width="339" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a964c0f9d4b01b5e94574ed71a250a4f0" id="r_a964c0f9d4b01b5e94574ed71a250a4f0"><td class="memItemLeft" align="right" valign="top">virtual em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1com__iface.html#a964c0f9d4b01b5e94574ed71a250a4f0">start</a> ()=0</td></tr>
 <tr class="separator:a964c0f9d4b01b5e94574ed71a250a4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2793949005c890fc0a9b8aeece243865" id="r_a2793949005c890fc0a9b8aeece243865"><td class="memItemLeft" align="right" valign="top">virtual em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1com__iface.html#a2793949005c890fc0a9b8aeece243865">send</a> (std::span&lt; std::span&lt; std::byte const &gt; const &gt; data, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout)=0</td></tr>
-<tr class="separator:a2793949005c890fc0a9b8aeece243865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936f7bbab0b2a5cdc7268b75f7924ef0" id="r_a936f7bbab0b2a5cdc7268b75f7924ef0"><td class="memItemLeft" align="right" valign="top">virtual em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1com__iface.html#a936f7bbab0b2a5cdc7268b75f7924ef0">send</a> (<a class="el" href="namespaceservio_1_1drv.html#ae233abc47871b442f75cd856dcb2115c">send_data_t</a> data, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout)=0</td></tr>
+<tr class="separator:a936f7bbab0b2a5cdc7268b75f7924ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e4eeb8621d13bc7698259bbe5fbd9c1" id="r_a2e4eeb8621d13bc7698259bbe5fbd9c1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structservio_1_1drv_1_1com__res.html">com_res</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1com__iface.html#a2e4eeb8621d13bc7698259bbe5fbd9c1">recv</a> (std::span&lt; std::byte &gt; data)=0</td></tr>
 <tr class="separator:a2e4eeb8621d13bc7698259bbe5fbd9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -141,12 +141,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a907f51b960288857614a35028d8fedbb">servio::drv::cobs_uart</a>.</p>
+<p>Implemented in <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a907f51b960288857614a35028d8fedbb">servio::drv::cobs_uart</a>, and <a class="el" href="structservio_1_1drv_1_1nl__uart.html#a1102742e75e91bb067c7e5a9d298c818">servio::drv::nl_uart</a>.</p>
 
 </div>
 </div>
-<a id="a2793949005c890fc0a9b8aeece243865" name="a2793949005c890fc0a9b8aeece243865"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2793949005c890fc0a9b8aeece243865">&#9670;&#160;</a></span>send()</h2>
+<a id="a936f7bbab0b2a5cdc7268b75f7924ef0" name="a936f7bbab0b2a5cdc7268b75f7924ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a936f7bbab0b2a5cdc7268b75f7924ef0">&#9670;&#160;</a></span>send()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,7 +157,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual em::result servio::drv::com_iface::send </td>
           <td>(</td>
-          <td class="paramtype">std::span&lt; std::span&lt; std::byte const &gt; const &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1drv.html#ae233abc47871b442f75cd856dcb2115c">send_data_t</a>&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
@@ -179,7 +179,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a55220b30bb1e4fcbdaafac8185f32482">servio::drv::cobs_uart</a>.</p>
+<p>Implemented in <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#aa057d6a82771a776653902e9b3c60165">servio::drv::cobs_uart</a>, and <a class="el" href="structservio_1_1drv_1_1nl__uart.html#ae9d971f275073c87d9002b97e5a2bfd7">servio::drv::nl_uart</a>.</p>
 
 </div>
 </div>
@@ -206,7 +206,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">servio::drv::cobs_uart</a>.</p>
+<p>Implemented in <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">servio::drv::cobs_uart</a>, and <a class="el" href="structservio_1_1drv_1_1nl__uart.html#a7f56e30a2e1040c77233d302c663bf77">servio::drv::nl_uart</a>.</p>
 
 </div>
 </div>
@@ -219,7 +219,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="structservio_1_1drv_1_1com__iface.html">com_iface</a></li>
-    <li class="footer">Generated on Sat Jan 11 2025 12:11:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Feb 9 2025 20:39:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -11,13 +11,17 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
     [ "defs.hpp", "defs_8hpp.html", "defs_8hpp" ],
     [ "dts_temp.hpp", "dts__temp_8hpp.html", "dts__temp_8hpp" ],
     [ "flash_cfg.cpp", "flash__cfg_8cpp.html", null ],
-    [ "flash_cfg.hpp", "flash__cfg_8hpp.html", "flash__cfg_8hpp" ],
+    [ "flash_cfg.hpp", "drv_2flash__cfg_8hpp.html", "drv_2flash__cfg_8hpp" ],
     [ "hbridge.cpp", "hbridge_8cpp.html", null ],
     [ "hbridge.hpp", "hbridge_8hpp.html", "hbridge_8hpp" ],
     [ "interfaces.hpp", "interfaces_8hpp.html", "interfaces_8hpp" ],
     [ "leds.cpp", "leds_8cpp.html", null ],
     [ "leds.hpp", "leds_8hpp.html", "leds_8hpp" ],
     [ "mock.hpp", "mock_8hpp.html", "mock_8hpp" ],
+    [ "nl_uart.cpp", "nl__uart_8cpp.html", null ],
+    [ "nl_uart.hpp", "nl__uart_8hpp.html", "nl__uart_8hpp" ],
+    [ "paged_i2c_eeprom.cpp", "paged__i2c__eeprom_8cpp.html", null ],
+    [ "paged_i2c_eeprom.hpp", "paged__i2c__eeprom_8hpp.html", "paged__i2c__eeprom_8hpp" ],
     [ "quad_encoder.hpp", "quad__encoder_8hpp.html", "quad__encoder_8hpp" ],
     [ "retainers.hpp", "retainers_8hpp.html", "retainers_8hpp" ]
 ];

@@ -43,6 +43,15 @@ var plt_2stm32h5_2setup_8hpp =
       [ "yellow_ch", "namespaceservio_1_1plt.html#a37d79e24faa708acaded518bc3b20f90", null ],
       [ "yellow_pin", "namespaceservio_1_1plt.html#a5b199dce656d176cdce5d0a2e9daf13d", null ]
     ] ],
+    [ "servio::plt::i2c_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg", [
+      [ "er_irq", "namespaceservio_1_1plt.html#a4e5f98c021570301d866fec45d7f2e82", null ],
+      [ "er_irq_priority", "namespaceservio_1_1plt.html#a3971ff606bfc50cda5277b1c26a7cd16", null ],
+      [ "ev_irq", "namespaceservio_1_1plt.html#a179604cc2da4e956bcca6581da703d25", null ],
+      [ "ev_irq_priority", "namespaceservio_1_1plt.html#a4497f1c55e145fa95db4e05a96bd0145", null ],
+      [ "instance", "namespaceservio_1_1plt.html#a74d7ce616f0ba1cd6ecd704c56050262", null ],
+      [ "scl", "namespaceservio_1_1plt.html#ad861cf75604c8035ae6fc326c136bae0", null ],
+      [ "sda", "namespaceservio_1_1plt.html#a35fa78ce521231b6d4f451d48a676bd9", null ]
+    ] ],
     [ "servio::plt::temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", [
       [ "cal1", "namespaceservio_1_1plt.html#a59425b83be9afe0d27b552f409f4c7cf", null ],
       [ "cal2", "namespaceservio_1_1plt.html#a73088cdd7b6754164af4b062382dc239", null ]
@@ -58,6 +67,7 @@ var plt_2stm32h5_2setup_8hpp =
     [ "setup_encoder_timer", "plt_2stm32h5_2setup_8hpp.html#ab37835d18590cef3c440c59263d761d2", null ],
     [ "setup_gpio", "plt_2stm32h5_2setup_8hpp.html#abd82db4ae277c933a1955cdada712dc6", null ],
     [ "setup_hbridge_timers", "plt_2stm32h5_2setup_8hpp.html#a917cc285404ba1c9a62080f12567ad7c", null ],
+    [ "setup_i2c", "plt_2stm32h5_2setup_8hpp.html#a82b4088167a8a259e745f035915d672a", null ],
     [ "setup_leds_channel", "plt_2stm32h5_2setup_8hpp.html#a200428b196e587e16f5ffd08676efc76", null ],
     [ "setup_uart", "plt_2stm32h5_2setup_8hpp.html#a7b7c8043898e10b87fa53fd5bb021d96", null ]
 ];

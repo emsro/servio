@@ -3,6 +3,7 @@ var namespaceservio_1_1plt =
     [ "adc_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1adc__cfg_dup" ],
     [ "dma_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1dma__cfg_dup" ],
     [ "hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1hb__timer__cfg_dup" ],
+    [ "i2c_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1i2c__cfg_dup" ],
     [ "leds_gpio_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__gpio__cfg_dup" ],
     [ "leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__timer__cfg_dup" ],
     [ "temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", "namespaceservio_1_1plt_structservio_1_1plt_1_1temp__calib__coeffs_dup" ],
@@ -20,6 +21,7 @@ var namespaceservio_1_1plt =
     [ "setup_encoder_timer", "namespaceservio_1_1plt.html#ab37835d18590cef3c440c59263d761d2", null ],
     [ "setup_gpio", "namespaceservio_1_1plt.html#abd82db4ae277c933a1955cdada712dc6", null ],
     [ "setup_hbridge_timers", "namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c", null ],
+    [ "setup_i2c", "namespaceservio_1_1plt.html#a82b4088167a8a259e745f035915d672a", null ],
     [ "setup_leds_channel", "namespaceservio_1_1plt.html#a200428b196e587e16f5ffd08676efc76", null ],
     [ "setup_uart", "namespaceservio_1_1plt.html#a7b7c8043898e10b87fa53fd5bb021d96", null ],
     [ "TEMP_CALIB_COEFFS", "namespaceservio_1_1plt.html#a02f2e0e13537988c8b1ab01ed1c6bd87", null ]

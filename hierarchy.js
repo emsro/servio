@@ -33,11 +33,11 @@ var hierarchy =
       [ "servio::sntr::tests::test_clk", "structservio_1_1sntr_1_1tests_1_1test__clk.html", null ]
     ] ],
     [ "servio::drv::tests::clock_test", "structservio_1_1drv_1_1tests_1_1clock__test.html", null ],
-    [ "servio::drv::bits::cobs_rx_container", "namespaceservio_1_1drv_1_1bits.html#structservio_1_1drv_1_1bits_1_1cobs__rx__container", null ],
     [ "servio::drv::tests::cobs_uart_err_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html", null ],
     [ "servio::drv::tests::cobs_uart_rx_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html", null ],
     [ "servio::drv::com_iface", "structservio_1_1drv_1_1com__iface.html", [
-      [ "servio::drv::cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", null ]
+      [ "servio::drv::cobs_uart", "structservio_1_1drv_1_1cobs__uart.html", null ],
+      [ "servio::drv::nl_uart", "structservio_1_1drv_1_1nl__uart.html", null ]
     ] ],
     [ "servio::drv::com_res", "structservio_1_1drv_1_1com__res.html", null ],
     [ "servio::drv::tests::comms_echo_test", "structservio_1_1drv_1_1tests_1_1comms__echo__test.html", null ],
@@ -102,6 +102,7 @@ var hierarchy =
     [ "servio::iface::group< Desc, Ts >", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1group", null ],
     [ "servio::plt::hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", null ],
     [ "servio::drv::tests::hbridge_test", "structservio_1_1drv_1_1tests_1_1hbridge__test.html", null ],
+    [ "servio::plt::i2c_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg", null ],
     [ "servio::mon::indication", "classservio_1_1mon_1_1indication.html", null ],
     [ "servio::iface::info_stmt", "structservio_1_1iface_1_1info__stmt.html", null ],
     [ "servio::iface::invalid_stmt", "structservio_1_1iface_1_1invalid__stmt.html", null ],
@@ -144,6 +145,7 @@ var hierarchy =
     [ "servio::base::object_ser", "structservio_1_1base_1_1object__ser.html", null ],
     [ "servio::cfg::off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", null ],
     [ "servio::cnv::off_scale", "namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale", null ],
+    [ "servio::cfg::page_info", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1page__info", null ],
     [ "servio::cfg::payload", "structservio_1_1cfg_1_1payload.html", null ],
     [ "servio::drv::period_cb_iface", "structservio_1_1drv_1_1period__cb__iface.html", [
       [ "servio::drv::adc_pooler_period_cb< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__period__cb.html", null ],
@@ -175,10 +177,15 @@ var hierarchy =
     [ "emlabcpp::quantity", null, [
       [ "servio::pwr", "structservio_1_1pwr.html", null ]
     ] ],
+    [ "servio::cfg::record", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1record", null ],
     [ "servio::ftester::recorder::record", "classservio_1_1ftester_1_1recorder.html#structservio_1_1ftester_1_1recorder_1_1record", null ],
     [ "servio::sntr::record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", null ],
     [ "servio::ftester::recorder", "classservio_1_1ftester_1_1recorder.html", null ],
     [ "servio::iface::resp", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1resp", null ],
+    [ "servio::drv::bits::rx_buffer", "structservio_1_1drv_1_1bits_1_1rx__buffer.html", [
+      [ "servio::drv::bits::cobs_rx_container", "structservio_1_1drv_1_1bits_1_1cobs__rx__container.html", null ],
+      [ "servio::drv::bits::nl_rx_container", "structservio_1_1drv_1_1bits_1_1nl__rx__container.html", null ]
+    ] ],
     [ "servio::sntr::sentry", "classservio_1_1sntr_1_1sentry.html", null ],
     [ "servio::ftest::intg::sign_test", "structservio_1_1ftest_1_1intg_1_1sign__test.html", null ],
     [ "servio::sim::simple_motor", "structservio_1_1sim_1_1simple__motor.html", null ],
@@ -186,7 +193,8 @@ var hierarchy =
     [ "servio::klmn::state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", null ],
     [ "servio::mtr::static_detector", "structservio_1_1mtr_1_1static__detector.html", null ],
     [ "servio::drv::storage_iface", "structservio_1_1drv_1_1storage__iface.html", [
-      [ "servio::drv::flash_storage", "classservio_1_1drv_1_1flash__storage.html", null ],
+      [ "servio::drv::flash_storage", "structservio_1_1drv_1_1flash__storage.html", null ],
+      [ "servio::drv::i2c_eeprom", "structservio_1_1drv_1_1i2c__eeprom.html", null ],
       [ "servio::drv::mock::stor", "structservio_1_1drv_1_1mock_1_1stor.html", null ]
     ] ],
     [ "servio::scmdio::stream_iface", "structservio_1_1scmdio_1_1stream__iface.html", [

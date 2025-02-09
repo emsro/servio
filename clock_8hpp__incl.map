@@ -1,6 +1,6 @@
 <map id="src/drv/clock.hpp" name="src/drv/clock.hpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="407,5,539,31"/>
-<area shape="rect" id="Node000002" href="$base_2base_8hpp.html" title=" " alt="" coords="311,240,439,265"/>
+<area shape="rect" id="Node000002" href="$base_8hpp.html" title=" " alt="" coords="328,240,421,265"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="410,33,361,51,337,64,317,81,300,100,291,119,281,167,278,180,281,191,302,215,329,232,327,237,299,219,276,193,273,180,276,166,286,117,295,98,313,77,334,60,358,46,408,28"/>
 <area shape="rect" id="Node000008" href="$platform_8hpp.html" title=" " alt="" coords="327,86,465,111"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="464,33,419,78,415,74,460,29"/>
@@ -9,7 +9,7 @@
 <area shape="rect" id="Node000022" title=" " alt="" coords="655,79,833,119"/>
 <area shape="poly" id="edge17_Node000001_Node000022" title=" " alt="" coords="513,28,667,72,665,77,512,33"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,313,72,339"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="315,268,86,316,85,310,314,263"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="328,266,86,316,85,310,327,260"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="568,313,635,339"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="412,263,556,308,554,313,410,268"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="96,313,261,339"/>

@@ -26,7 +26,9 @@ var annotated_dup =
         [ "dispatcher", "structservio_1_1cfg_1_1dispatcher.html", "structservio_1_1cfg_1_1dispatcher" ],
         [ "keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1keyval_dup" ],
         [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ],
-        [ "payload", "structservio_1_1cfg_1_1payload.html", "structservio_1_1cfg_1_1payload" ]
+        [ "page_info", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1page__info", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1page__info_dup" ],
+        [ "payload", "structservio_1_1cfg_1_1payload.html", "structservio_1_1cfg_1_1payload" ],
+        [ "record", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1record", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1record_dup" ]
       ] ],
       [ "cnv", "namespaceservio_1_1cnv.html", [
         [ "converter", "structservio_1_1cnv_1_1converter.html", "structservio_1_1cnv_1_1converter" ],
@@ -52,7 +54,9 @@ var annotated_dup =
       ] ],
       [ "drv", "namespaceservio_1_1drv.html", [
         [ "bits", "namespaceservio_1_1drv_1_1bits.html", [
-          [ "cobs_rx_container", "namespaceservio_1_1drv_1_1bits.html#structservio_1_1drv_1_1bits_1_1cobs__rx__container", "namespaceservio_1_1drv_1_1bits_structservio_1_1drv_1_1bits_1_1cobs__rx__container_dup" ]
+          [ "cobs_rx_container", "structservio_1_1drv_1_1bits_1_1cobs__rx__container.html", "structservio_1_1drv_1_1bits_1_1cobs__rx__container" ],
+          [ "nl_rx_container", "structservio_1_1drv_1_1bits_1_1nl__rx__container.html", "structservio_1_1drv_1_1bits_1_1nl__rx__container" ],
+          [ "rx_buffer", "structservio_1_1drv_1_1bits_1_1rx__buffer.html", "structservio_1_1drv_1_1bits_1_1rx__buffer" ]
         ] ],
         [ "mock", "namespaceservio_1_1drv_1_1mock.html", [
           [ "curr", "structservio_1_1drv_1_1mock_1_1curr.html", "structservio_1_1drv_1_1mock_1_1curr" ],
@@ -88,7 +92,7 @@ var annotated_dup =
         [ "adc_pooler_vcc", "structservio_1_1drv_1_1adc__pooler__vcc.html", "structservio_1_1drv_1_1adc__pooler__vcc" ],
         [ "clk_iface", "structservio_1_1drv_1_1clk__iface.html", "structservio_1_1drv_1_1clk__iface" ],
         [ "clock", "classservio_1_1drv_1_1clock.html", "classservio_1_1drv_1_1clock" ],
-        [ "cobs_uart", "classservio_1_1drv_1_1cobs__uart.html", "classservio_1_1drv_1_1cobs__uart" ],
+        [ "cobs_uart", "structservio_1_1drv_1_1cobs__uart.html", "structservio_1_1drv_1_1cobs__uart" ],
         [ "com_iface", "structservio_1_1drv_1_1com__iface.html", "structservio_1_1drv_1_1com__iface" ],
         [ "com_res", "structservio_1_1drv_1_1com__res.html", "structservio_1_1drv_1_1com__res" ],
         [ "curr_iface", "structservio_1_1drv_1_1curr__iface.html", "structservio_1_1drv_1_1curr__iface" ],
@@ -99,13 +103,15 @@ var annotated_dup =
         [ "empty_detailed_cb", "structservio_1_1drv_1_1empty__detailed__cb.html", "structservio_1_1drv_1_1empty__detailed__cb" ],
         [ "empty_period_cb", "structservio_1_1drv_1_1empty__period__cb.html", "structservio_1_1drv_1_1empty__period__cb" ],
         [ "empty_value_cb", "structservio_1_1drv_1_1empty__value__cb.html", "structservio_1_1drv_1_1empty__value__cb" ],
-        [ "flash_storage", "classservio_1_1drv_1_1flash__storage.html", "classservio_1_1drv_1_1flash__storage" ],
+        [ "flash_storage", "structservio_1_1drv_1_1flash__storage.html", "structservio_1_1drv_1_1flash__storage" ],
         [ "get_curr_iface", "structservio_1_1drv_1_1get__curr__iface.html", "structservio_1_1drv_1_1get__curr__iface" ],
         [ "get_pos_iface", "structservio_1_1drv_1_1get__pos__iface.html", "structservio_1_1drv_1_1get__pos__iface" ],
         [ "hbridge", "classservio_1_1drv_1_1hbridge.html", "classservio_1_1drv_1_1hbridge" ],
+        [ "i2c_eeprom", "structservio_1_1drv_1_1i2c__eeprom.html", "structservio_1_1drv_1_1i2c__eeprom" ],
         [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ],
         [ "leds_iface", "structservio_1_1drv_1_1leds__iface.html", "structservio_1_1drv_1_1leds__iface" ],
         [ "motor_info_iface", "structservio_1_1drv_1_1motor__info__iface.html", "structservio_1_1drv_1_1motor__info__iface" ],
+        [ "nl_uart", "structservio_1_1drv_1_1nl__uart.html", "structservio_1_1drv_1_1nl__uart" ],
         [ "period_cb", "structservio_1_1drv_1_1period__cb.html", "structservio_1_1drv_1_1period__cb" ],
         [ "period_cb_iface", "structservio_1_1drv_1_1period__cb__iface.html", "structservio_1_1drv_1_1period__cb__iface" ],
         [ "period_iface", "structservio_1_1drv_1_1period__iface.html", "structservio_1_1drv_1_1period__iface" ],
@@ -189,6 +195,7 @@ var annotated_dup =
         [ "adc_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1adc__cfg_dup" ],
         [ "dma_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1dma__cfg_dup" ],
         [ "hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1hb__timer__cfg_dup" ],
+        [ "i2c_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1i2c__cfg_dup" ],
         [ "leds_gpio_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__gpio__cfg_dup" ],
         [ "leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1leds__timer__cfg_dup" ],
         [ "temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", "namespaceservio_1_1plt_structservio_1_1plt_1_1temp__calib__coeffs_dup" ],

@@ -1,7 +1,9 @@
 <map id="servio::drv::storage_iface" name="servio::drv::storage_iface">
-<area shape="rect" id="Node000001" title=" " alt="" coords="82,5,229,45"/>
-<area shape="rect" id="Node000002" href="$classservio_1_1drv_1_1flash__storage.html" title=" " alt="" coords="5,93,135,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,57,91,95,87,91,125,53"/>
-<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1mock_1_1stor.html" title=" " alt="" coords="159,101,325,126"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,53,232,98,228,102,182,57"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="173,5,319,45"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1flash__storage.html" title=" " alt="" coords="5,93,135,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,54,110,96,107,91,194,49"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1i2c__eeprom.html" title=" " alt="" coords="159,101,333,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,59,249,100,243,100,243,59"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1drv_1_1mock_1_1stor.html" title=" " alt="" coords="357,101,524,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="302,49,416,98,414,103,300,53"/>
 </map>

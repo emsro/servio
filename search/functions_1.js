@@ -6,7 +6,7 @@ var searchData=
   ['adc_5ferror_5firq_3',['adc_error_irq',['../structservio_1_1drv_1_1adc__pooler.html#a774cee15e9567b519f2b0a117041ee56',1,'servio::drv::adc_pooler']]],
   ['adc_5fpooler_4',['adc_pooler',['../structservio_1_1drv_1_1adc__pooler.html#a987b5031dff2b6f9acebdfcf971948df',1,'servio::drv::adc_pooler']]],
   ['adc_5fpooler_5fsetup_5',['adc_pooler_setup',['../namespaceservio_1_1brd.html#a48e26a3111574036c12af8e0ad948472',1,'servio::brd']]],
-  ['add_6',['add',['../structservio_1_1base_1_1jval__ser.html#a4e1f07ac3fa35c5d4428e5099aa879d8',1,'servio::base::jval_ser::add()'],['../structservio_1_1core_1_1avg__filter.html#aa2b04080d7c98d45bfc7336b70ac2a51',1,'servio::core::avg_filter::add()']]],
+  ['add_6',['add',['../structservio_1_1core_1_1avg__filter.html#aa2b04080d7c98d45bfc7336b70ac2a51',1,'servio::core::avg_filter::add()'],['../structservio_1_1base_1_1jval__ser.html#a4e1f07ac3fa35c5d4428e5099aa879d8',1,'servio::base::jval_ser::add()']]],
   ['angle_7',['angle',['../namespaceservio_1_1klmn.html#a842c2861339b66fae8238ec81777ba7d',1,'servio::klmn']]],
   ['angle_5fmod_8',['angle_mod',['../namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f',1,'servio::klmn']]],
   ['any_5funinitialized_9',['any_uninitialized',['../structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca',1,'servio::core::drivers']]],

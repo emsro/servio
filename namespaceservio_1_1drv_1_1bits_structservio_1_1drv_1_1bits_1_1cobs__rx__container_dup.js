@@ -1,7 +1,0 @@
-var namespaceservio_1_1drv_1_1bits_structservio_1_1drv_1_1bits_1_1cobs__rx__container_dup =
-[
-    [ "buffer", "namespaceservio_1_1drv_1_1bits.html#af2fde201622302a56ede64cfe86352e5", null ],
-    [ "cobs_dec", "namespaceservio_1_1drv_1_1bits.html#a706003385a8549ca44d3562df29231cd", null ],
-    [ "received_size", "namespaceservio_1_1drv_1_1bits.html#a83f268c48b8dc33d9a7f4121b5e37261", null ],
-    [ "sizes", "namespaceservio_1_1drv_1_1bits.html#ace9011daf35556b455c3a0ac0ca1dbf6", null ]
-];

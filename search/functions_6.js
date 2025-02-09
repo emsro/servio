@@ -8,7 +8,7 @@ var searchData=
   ['find_5funused_5fpage_5',['find_unused_page',['../namespaceservio_1_1cfg.html#affa8761abffcaac7a2dbe37319ba5413',1,'servio::cfg']]],
   ['firmware_5fopt_6',['firmware_opt',['../namespaceservio_1_1ftester.html#acc64a6f277fb5ffb8b088c5bc1b4657d',1,'servio::ftester']]],
   ['flash_5ffirmware_7',['flash_firmware',['../namespaceservio_1_1ftester.html#ad48d568e7f67be4d2bb49a369067697f',1,'servio::ftester']]],
-  ['flash_5fstorage_8',['flash_storage',['../classservio_1_1drv_1_1flash__storage.html#a35af08b51c145f25bbd2ca0909d32aa3',1,'servio::drv::flash_storage']]],
+  ['flash_5fstorage_8',['flash_storage',['../structservio_1_1drv_1_1flash__storage.html#a35af08b51c145f25bbd2ca0909d32aa3',1,'servio::drv::flash_storage']]],
   ['flush_5fport_9',['flush_port',['../namespaceservio_1_1scmdio.html#aa6760a0dd8290696504efea1a2cf3287',1,'servio::scmdio']]],
   ['force_5fred_5fled_10',['force_red_led',['../structservio_1_1drv_1_1leds__iface.html#ac254678ba7f928f8dba50189763f5074',1,'servio::drv::leds_iface::force_red_led()'],['../classservio_1_1drv_1_1leds.html#a15878bd23155000b0661fe8e97e86ee4',1,'servio::drv::leds::force_red_led()']]],
   ['force_5fstop_11',['force_stop',['../classservio_1_1drv_1_1hbridge.html#adf7f06e92b257bc4bf6cfeb0255971d4',1,'servio::drv::hbridge::force_stop()'],['../structservio_1_1drv_1_1pwm__motor__iface.html#afca0b20b10aac66c6b89295d4ff2cae1',1,'servio::drv::pwm_motor_iface::force_stop()'],['../structservio_1_1drv_1_1mock_1_1pwm__mot.html#a5c1e8e642aac32eef24058092c25206f',1,'servio::drv::mock::pwm_mot::force_stop()']]],

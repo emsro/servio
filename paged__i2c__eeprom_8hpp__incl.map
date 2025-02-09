@@ -1,0 +1,28 @@
+<map id="src/drv/paged_i2c_eeprom.hpp" name="src/drv/paged_i2c_eeprom.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="115,5,337,31"/>
+<area shape="rect" id="Node000002" href="$paging_8hpp.html" title=" " alt="" coords="5,79,132,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,33,108,75,106,71,200,28"/>
+<area shape="rect" id="Node000010" href="$platform_8hpp.html" title=" " alt="" coords="157,79,295,104"/>
+<area shape="poly" id="edge5_Node000001_Node000010" title=" " alt="" coords="229,31,229,65,223,65,223,31"/>
+<area shape="rect" id="Node000013" href="$interfaces_8hpp.html" title=" " alt="" coords="397,79,519,104"/>
+<area shape="poly" id="edge7_Node000001_Node000013" title=" " alt="" coords="264,28,408,72,407,77,262,33"/>
+<area shape="rect" id="Node000003" href="$base_8hpp.html" title=" " alt="" coords="270,225,363,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="64,105,50,140,49,159,56,176,68,186,87,195,139,211,199,222,257,229,256,234,198,227,138,216,85,200,66,191,52,179,44,160,45,139,59,104"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="65,152,136,177"/>
+<area shape="poly" id="edge4_Node000002_Node000009" title=" " alt="" coords="76,103,92,139,88,141,72,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="330,299,397,324"/>
+<area shape="poly" id="edge3_Node000003_Node000005" title=" " alt="" coords="327,250,350,286,346,289,322,252"/>
+<area shape="rect" id="Node000011" href="$hal_8hpp.html" title=" " alt="" coords="160,152,231,177"/>
+<area shape="poly" id="edge6_Node000010_Node000011" title=" " alt="" coords="223,105,208,141,203,139,218,103"/>
+<area shape="poly" id="edge8_Node000013_Node000003" title=" " alt="" coords="397,100,369,107,341,117,316,133,296,153,291,167,291,182,303,212,298,214,286,183,286,166,292,151,313,129,339,113,368,102,396,95"/>
+<area shape="poly" id="edge11_Node000013_Node000005" title=" " alt="" coords="458,105,435,178,407,239,379,288,375,286,402,236,430,176,453,104"/>
+<area shape="rect" id="Node000014" href="$map_8hpp.html" title=" " alt="" coords="306,152,421,177"/>
+<area shape="poly" id="edge9_Node000013_Node000014" title=" " alt="" coords="444,106,391,146,388,141,441,102"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="496,152,655,177"/>
+<area shape="poly" id="edge12_Node000013_Node000021" title=" " alt="" coords="478,102,546,142,543,147,475,106"/>
+<area shape="rect" id="Node000022" title=" " alt="" coords="679,152,818,177"/>
+<area shape="poly" id="edge13_Node000013_Node000022" title=" " alt="" coords="505,101,689,146,688,151,504,107"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="842,152,895,177"/>
+<area shape="poly" id="edge14_Node000013_Node000023" title=" " alt="" coords="520,97,658,117,829,149,828,155,657,122,519,103"/>
+<area shape="poly" id="edge10_Node000014_Node000003" title=" " alt="" coords="358,179,334,215,330,212,353,176"/>
+</map>

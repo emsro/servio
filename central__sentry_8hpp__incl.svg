@@ -74,7 +74,7 @@
 <!-- Node23 -->
 <g id="Node000023" class="node">
 <title>Node23</title>
-<g id="a_Node000023"><a xlink:href="record_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_Node000023"><a xlink:href="sntr_2record_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="650.98,-189.5 576.98,-189.5 576.98,-170.5 650.98,-170.5 650.98,-189.5"/>
 <text text-anchor="middle" x="613.98" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">./record.hpp</text>
 </a>
@@ -111,9 +111,9 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="base_2base_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="#fff0f0" stroke="red" points="401.98,-74 305.98,-74 305.98,-55 401.98,-55 401.98,-74"/>
-<text text-anchor="middle" x="353.98" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">../base/base.hpp</text>
+<g id="a_Node000003"><a xlink:href="base_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="#fff0f0" stroke="red" points="388.98,-74 318.98,-74 318.98,-55 388.98,-55 388.98,-74"/>
+<text text-anchor="middle" x="353.98" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">../base.hpp</text>
 </a>
 </g>
 </g>

@@ -9,7 +9,8 @@ var proto4_2board_8cpp =
     ] ],
     [ "ADC1_IRQHandler", "proto4_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b", null ],
     [ "adc_pooler_setup", "proto4_2board_8cpp.html#a48e26a3111574036c12af8e0ad948472", null ],
-    [ "comms_setup", "proto4_2board_8cpp.html#aee366d78fb4dd7ae0e84ee4a28665113", null ],
+    [ "comms_setup", "proto4_2board_8cpp.html#a666117f8f817f737641c61f86ff8641e", null ],
+    [ "eeprom_setup", "proto4_2board_8cpp.html#a9da716cde949fe5737c1076f1220740f", null ],
     [ "get_curr_coeff", "proto4_2board_8cpp.html#a1f7c49c0c9a0737b07080952026a5ebc", null ],
     [ "get_default_config", "proto4_2board_8cpp.html#a2668116163a78a9f1c4b9993fce25530", null ],
     [ "GPDMA1_Channel0_IRQHandler", "proto4_2board_8cpp.html#ab4f8ebd906a5475a5817237942b25f62", null ],
@@ -22,6 +23,8 @@ var proto4_2board_8cpp =
     [ "HAL_UART_RxCpltCallback", "proto4_2board_8cpp.html#a84719ef5a2750117d3d1b6e105d8f148", null ],
     [ "HAL_UART_TxCpltCallback", "proto4_2board_8cpp.html#a94a249281eebfa3bd9aa3f979cc9f03d", null ],
     [ "hbridge_setup", "proto4_2board_8cpp.html#a7e933c86ae59b33c53a15dd89f58febc", null ],
+    [ "I2C2_ER_IRQHandler", "proto4_2board_8cpp.html#aa9f9cffda230ddffc3b7e5ac2ae393ac", null ],
+    [ "I2C2_EV_IRQHandler", "proto4_2board_8cpp.html#aa32a80208798d6132876a58823ff6202", null ],
     [ "install_stop_callback", "proto4_2board_8cpp.html#a0f720ee34102e93c489fc104ab51e4ed", null ],
     [ "leds_setup", "proto4_2board_8cpp.html#a8018a4a9a9bc9b1d4af53c14d646d4c8", null ],
     [ "quad_encoder_setup", "proto4_2board_8cpp.html#a064090e0ba34cfb1d6f51f247cf479aa", null ],
@@ -31,6 +34,9 @@ var proto4_2board_8cpp =
     [ "start_callback", "proto4_2board_8cpp.html#aac2ab253dd62c8d22e7504bd106c6283", null ],
     [ "TIM1_UP_IRQHandler", "proto4_2board_8cpp.html#ac13ffcf8c8dd96138053b8a854004583", null ],
     [ "TIM2_IRQHandler", "proto4_2board_8cpp.html#a69ed77607e30e5935ea2d6994e94be10", null ],
+    [ "try_i2c_gpio_toggle", "proto4_2board_8cpp.html#a668bf87da871835d142af405a83420e9", null ],
     [ "USART1_IRQHandler", "proto4_2board_8cpp.html#a27fb9800d727337121da9525aca0b557", null ],
-    [ "USART2_IRQHandler", "proto4_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba", null ]
+    [ "USART2_IRQHandler", "proto4_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba", null ],
+    [ "EEPROM", "proto4_2board_8cpp.html#af51294555f0d709d8eeff3e8a42817aa", null ],
+    [ "I2C2_HANDLE", "proto4_2board_8cpp.html#a7047a111e0cca6a2e255c57bd604a300", null ]
 ];

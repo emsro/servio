@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('proto3_2board_8cpp.html',''); initResi
 <code>#include &quot;<a class="el" href="clock_8hpp_source.html">../../drv/clock.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cobs__uart_8hpp_source.html">../../drv/cobs_uart.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dts__temp_8hpp_source.html">../../drv/dts_temp.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="flash__cfg_8hpp_source.html">../../drv/flash_cfg.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drv_2flash__cfg_8hpp_source.html">../../drv/flash_cfg.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hbridge_8hpp_source.html">../../drv/hbridge.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="leds_8hpp_source.html">../../drv/leds.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="quad__encoder_8hpp_source.html">../../drv/quad_encoder.hpp</a>&quot;</code><br />
@@ -117,6 +117,7 @@ $(document).ready(function(){initNavTree('proto3_2board_8cpp.html',''); initResi
 <code>#include &quot;<a class="el" href="platform_8hpp_source.html">../../plt/platform.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="central__sentry_8hpp_source.html">../../sntr/central_sentry.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="brd_8hpp_source.html">../brd.hpp</a>&quot;</code><br />
+<code>#include &quot;flash_cfg.hpp&quot;</code><br />
 <code>#include &quot;setup.hpp&quot;</code><br />
 <code>#include &lt;emlabcpp/defer.h&gt;</code><br />
 <code>#include &lt;emlabcpp/result.h&gt;</code><br />
@@ -125,7 +126,7 @@ $(document).ready(function(){initNavTree('proto3_2board_8cpp.html',''); initResi
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="proto3_2board_8cpp__incl.svg" width="3114" height="608"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="proto3_2board_8cpp__incl.svg" width="3103" height="608"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -151,8 +152,6 @@ Functions</h2></td></tr>
 <tr class="separator:a1f7c49c0c9a0737b07080952026a5ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2668116163a78a9f1c4b9993fce25530" id="r_a2668116163a78a9f1c4b9993fce25530"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">cfg::map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a2668116163a78a9f1c4b9993fce25530">servio::brd::get_default_config</a> ()</td></tr>
 <tr class="separator:a2668116163a78a9f1c4b9993fce25530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add6a3b92bad6689d78fb2eaf68f65274" id="r_add6a3b92bad6689d78fb2eaf68f65274"><td class="memItemLeft" align="right" valign="top">em::view&lt; std::byte * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#add6a3b92bad6689d78fb2eaf68f65274">servio::brd::page_at</a> (uint32_t i)</td></tr>
-<tr class="separator:add6a3b92bad6689d78fb2eaf68f65274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55924a8071033769a12ad0e752f67c8b" id="r_a55924a8071033769a12ad0e752f67c8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto3_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b">ADC1_IRQHandler</a> ()</td></tr>
 <tr class="separator:a55924a8071033769a12ad0e752f67c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac13ffcf8c8dd96138053b8a854004583" id="r_ac13ffcf8c8dd96138053b8a854004583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto3_2board_8cpp.html#ac13ffcf8c8dd96138053b8a854004583">TIM1_UP_IRQHandler</a> ()</td></tr>
@@ -185,8 +184,8 @@ Functions</h2></td></tr>
 <tr class="separator:a48e26a3111574036c12af8e0ad948472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e933c86ae59b33c53a15dd89f58febc" id="r_a7e933c86ae59b33c53a15dd89f58febc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1hbridge.html">drv::hbridge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc">servio::brd::hbridge_setup</a> ()</td></tr>
 <tr class="separator:a7e933c86ae59b33c53a15dd89f58febc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee366d78fb4dd7ae0e84ee4a28665113" id="r_aee366d78fb4dd7ae0e84ee4a28665113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#aee366d78fb4dd7ae0e84ee4a28665113">servio::brd::comms_setup</a> ()</td></tr>
-<tr class="separator:aee366d78fb4dd7ae0e84ee4a28665113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a666117f8f817f737641c61f86ff8641e" id="r_a666117f8f817f737641c61f86ff8641e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a666117f8f817f737641c61f86ff8641e">servio::brd::comms_setup</a> ()</td></tr>
+<tr class="separator:a666117f8f817f737641c61f86ff8641e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a32ee93be6ec4e7cdc01ac78546f79f" id="r_a3a32ee93be6ec4e7cdc01ac78546f79f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1com__iface.html">drv::com_iface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a3a32ee93be6ec4e7cdc01ac78546f79f">servio::brd::setup_debug_comms</a> ()</td></tr>
 <tr class="memdesc:a3a32ee93be6ec4e7cdc01ac78546f79f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize debug interface.  <br /></td></tr>
 <tr class="separator:a3a32ee93be6ec4e7cdc01ac78546f79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,17 +206,13 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a906f7ef6acab4815e6b77b601dac50e7" id="r_a906f7ef6acab4815e6b77b601dac50e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto3_2board_8cpp.html#a906f7ef6acab4815e6b77b601dac50e7">_config_start</a></td></tr>
-<tr class="separator:a906f7ef6acab4815e6b77b601dac50e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9c4570b264e5103deb948e89f713529" id="r_ab9c4570b264e5103deb948e89f713529"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto3_2board_8cpp.html#ab9c4570b264e5103deb948e89f713529">_config_end</a></td></tr>
-<tr class="separator:ab9c4570b264e5103deb948e89f713529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a626482a7be9ab6f7a948b1f751c4bc" id="r_a1a626482a7be9ab6f7a948b1f751c4bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">drv::pin_cfg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a1a626482a7be9ab6f7a948b1f751c4bc">servio::brd::HBRDIGE_VREF_PIN</a></td></tr>
 <tr class="separator:a1a626482a7be9ab6f7a948b1f751c4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a081ab2c39471f1a64575875b86b24f9b" id="r_a081ab2c39471f1a64575875b86b24f9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context">cfg::context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a081ab2c39471f1a64575875b86b24f9b">servio::brd::CFG</a> { .map = <a class="el" href="namespaceservio_1_1brd.html#a2668116163a78a9f1c4b9993fce25530">get_default_config</a>() }</td></tr>
 <tr class="separator:a081ab2c39471f1a64575875b86b24f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad966d7bc309628fe42f3784ce52dab6f" id="r_ad966d7bc309628fe42f3784ce52dab6f"><td class="memItemLeft" align="right" valign="top">std::array&lt; em::view&lt; std::byte * &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ad966d7bc309628fe42f3784ce52dab6f">servio::brd::PERSISTENT_BLOCKS</a> { <a class="el" href="namespaceservio_1_1brd.html#add6a3b92bad6689d78fb2eaf68f65274">page_at</a>( 0 ), <a class="el" href="namespaceservio_1_1brd.html#add6a3b92bad6689d78fb2eaf68f65274">page_at</a>( 1 ) }</td></tr>
-<tr class="separator:ad966d7bc309628fe42f3784ce52dab6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b2edc3596fd260a33fb0ad364801d91" id="r_a5b2edc3596fd260a33fb0ad364801d91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1flash__storage.html">drv::flash_storage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a5b2edc3596fd260a33fb0ad364801d91">servio::brd::FLASH_STORAGE</a> { <a class="el" href="namespaceservio_1_1brd.html#ad966d7bc309628fe42f3784ce52dab6f">PERSISTENT_BLOCKS</a> }</td></tr>
+<tr class="memitem:a0c3ea303fb4da0872e1f15dec6181e42" id="r_a0c3ea303fb4da0872e1f15dec6181e42"><td class="memItemLeft" align="right" valign="top">std::array&lt; em::view&lt; std::byte * &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a0c3ea303fb4da0872e1f15dec6181e42">servio::brd::PERSISTENT_BLOCKS</a> { <a class="el" href="namespaceservio.html#a7f26120992786718c3b52d10b3c48f89">page_at</a>( 0 ), <a class="el" href="namespaceservio.html#a7f26120992786718c3b52d10b3c48f89">page_at</a>( 1 ) }</td></tr>
+<tr class="separator:a0c3ea303fb4da0872e1f15dec6181e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b2edc3596fd260a33fb0ad364801d91" id="r_a5b2edc3596fd260a33fb0ad364801d91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1flash__storage.html">drv::flash_storage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a5b2edc3596fd260a33fb0ad364801d91">servio::brd::FLASH_STORAGE</a> { <a class="el" href="namespaceservio_1_1brd.html#a0c3ea303fb4da0872e1f15dec6181e42">PERSISTENT_BLOCKS</a> }</td></tr>
 <tr class="separator:a5b2edc3596fd260a33fb0ad364801d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a191cac90543a6fe4aa7a94e8134a184a" id="r_a191cac90543a6fe4aa7a94e8134a184a"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">servio::brd::TIM2_HANDLE</a> = {}</td></tr>
 <tr class="separator:a191cac90543a6fe4aa7a94e8134a184a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -251,13 +246,13 @@ Variables</h2></td></tr>
 <tr class="separator:a94b7ae930f330eca472cc2d8756805cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdc13d41584a6eddafd9efdb67617940" id="r_abdc13d41584a6eddafd9efdb67617940"><td class="memItemLeft" align="right" valign="top">DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940">servio::brd::UART2_DMA_HANDLE</a> {}</td></tr>
 <tr class="separator:abdc13d41584a6eddafd9efdb67617940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ed63463e203d8f35b52cb533ff25b36" id="r_a9ed63463e203d8f35b52cb533ff25b36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">servio::brd::COMMS</a> { &quot;comms&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43">CENTRAL_SENTRY</a>, <a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">UART2_HANDLE</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940">UART2_DMA_HANDLE</a> }</td></tr>
-<tr class="separator:a9ed63463e203d8f35b52cb533ff25b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a9b306486bf3305ae24c053879746c3" id="r_a6a9b306486bf3305ae24c053879746c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a6a9b306486bf3305ae24c053879746c3">servio::brd::COMMS</a> { &quot;comms&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43">CENTRAL_SENTRY</a>, <a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">UART2_HANDLE</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#abdc13d41584a6eddafd9efdb67617940">UART2_DMA_HANDLE</a> }</td></tr>
+<tr class="separator:a6a9b306486bf3305ae24c053879746c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae003e88b83b7e7fad39fff209ffcc4ef" id="r_ae003e88b83b7e7fad39fff209ffcc4ef"><td class="memItemLeft" align="right" valign="top">UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">servio::brd::UART1_HANDLE</a> {}</td></tr>
 <tr class="separator:ae003e88b83b7e7fad39fff209ffcc4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2466f2f0e86115fb9b4b1b0bd00b21c" id="r_ab2466f2f0e86115fb9b4b1b0bd00b21c"><td class="memItemLeft" align="right" valign="top">DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c">servio::brd::UART1_DMA_HANDLE</a> {}</td></tr>
 <tr class="separator:ab2466f2f0e86115fb9b4b1b0bd00b21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7acc0f3dbfde0575a7230b2a53744d5" id="r_ad7acc0f3dbfde0575a7230b2a53744d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a> { &quot;dcomms&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43">CENTRAL_SENTRY</a>, <a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">UART1_HANDLE</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c">UART1_DMA_HANDLE</a> }</td></tr>
+<tr class="memitem:ad7acc0f3dbfde0575a7230b2a53744d5" id="r_ad7acc0f3dbfde0575a7230b2a53744d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a> { &quot;dcomms&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43">CENTRAL_SENTRY</a>, <a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">UART1_HANDLE</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#ab2466f2f0e86115fb9b4b1b0bd00b21c">UART1_DMA_HANDLE</a> }</td></tr>
 <tr class="separator:ad7acc0f3dbfde0575a7230b2a53744d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bce2edc1a38d3055b24c79c9b7a24fc" id="r_a5bce2edc1a38d3055b24c79c9b7a24fc"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc">servio::brd::TIM1_HANDLE</a> {}</td></tr>
 <tr class="separator:a5bce2edc1a38d3055b24c79c9b7a24fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -485,7 +480,7 @@ vcc { { &quot;vcc&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b466
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a1712f7ee5425ac6e5c1b12a209ffbbf1">servio::drv::cobs_uart::err_irq()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a6a9b306486bf3305ae24c053879746c3">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a1712f7ee5425ac6e5c1b12a209ffbbf1">servio::drv::cobs_uart::err_irq()</a>.</p>
 
 </div>
 </div>
@@ -505,7 +500,7 @@ vcc { { &quot;vcc&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b466
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">servio::drv::cobs_uart::rx_cplt_irq()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a6a9b306486bf3305ae24c053879746c3">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">servio::drv::cobs_uart::rx_cplt_irq()</a>.</p>
 
 </div>
 </div>
@@ -525,7 +520,7 @@ vcc { { &quot;vcc&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b466
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9ed63463e203d8f35b52cb533ff25b36">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="classservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">servio::drv::cobs_uart::tx_cplt_irq()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a6a9b306486bf3305ae24c053879746c3">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">servio::drv::cobs_uart::tx_cplt_irq()</a>.</p>
 
 </div>
 </div>
@@ -605,58 +600,13 @@ vcc { { &quot;vcc&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b466
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ab9c4570b264e5103deb948e89f713529" name="ab9c4570b264e5103deb948e89f713529"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9c4570b264e5103deb948e89f713529">&#9670;&#160;</a></span>_config_end</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int _config_end</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a906f7ef6acab4815e6b77b601dac50e7" name="a906f7ef6acab4815e6b77b601dac50e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a906f7ef6acab4815e6b77b601dac50e7">&#9670;&#160;</a></span>_config_start</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int _config_start</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5e799c239320254db95d54212428175b.html">brd</a></li><li class="navelem"><a class="el" href="dir_4828b704a5fd73b2754f53e5de2f9f03.html">proto3</a></li><li class="navelem"><a class="el" href="proto3_2board_8cpp.html">board.cpp</a></li>
-    <li class="footer">Generated on Sat Jan 11 2025 12:11:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Feb 9 2025 20:39:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

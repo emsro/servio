@@ -1,6 +1,6 @@
 <map id="src/mon/effects.hpp" name="src/mon/effects.hpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="194,5,345,31"/>
-<area shape="rect" id="Node000002" href="$base_2base_8hpp.html" title=" " alt="" coords="205,79,333,104"/>
+<area shape="rect" id="Node000002" href="$base_8hpp.html" title=" " alt="" coords="223,79,316,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,31,272,65,267,65,267,31"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,152,72,177"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,107,86,152,85,146,231,101"/>
@@ -11,5 +11,5 @@
 <area shape="rect" id="Node000006" title=" " alt="" coords="376,152,531,177"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="300,102,411,144,409,149,298,107"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="555,152,634,177"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="322,101,542,149,541,154,321,107"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="317,100,542,149,541,154,316,105"/>
 </map>

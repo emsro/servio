@@ -107,6 +107,8 @@ Classes</h2></td></tr>
 <tr class="separator:structservio_1_1plt_1_1dma__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1plt_1_1hb__timer__cfg" id="r_structservio_1_1plt_1_1hb__timer__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg">hb_timer_cfg</a></td></tr>
 <tr class="separator:structservio_1_1plt_1_1hb__timer__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1plt_1_1i2c__cfg" id="r_structservio_1_1plt_1_1i2c__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg">i2c_cfg</a></td></tr>
+<tr class="separator:structservio_1_1plt_1_1i2c__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1plt_1_1leds__gpio__cfg" id="r_structservio_1_1plt_1_1leds__gpio__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg">leds_gpio_cfg</a></td></tr>
 <tr class="separator:structservio_1_1plt_1_1leds__gpio__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1plt_1_1leds__timer__cfg" id="r_structservio_1_1plt_1_1leds__timer__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg">leds_timer_cfg</a></td></tr>
@@ -134,6 +136,8 @@ Functions</h2></td></tr>
 <tr class="separator:a60d4cc26aa950bc45225db9bae6dfa05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd82db4ae277c933a1955cdada712dc6" id="r_abd82db4ae277c933a1955cdada712dc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#abd82db4ae277c933a1955cdada712dc6">setup_gpio</a> (<a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">drv::pin_cfg</a> const &amp;cfg)</td></tr>
 <tr class="separator:abd82db4ae277c933a1955cdada712dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b4088167a8a259e745f035915d672a" id="r_a82b4088167a8a259e745f035915d672a"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a82b4088167a8a259e745f035915d672a">setup_i2c</a> (I2C_HandleTypeDef &amp;i2c, <a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg">i2c_cfg</a> cfg)</td></tr>
+<tr class="separator:a82b4088167a8a259e745f035915d672a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab59156a4d6fbd15217a26dc5ebed8b64" id="r_ab59156a4d6fbd15217a26dc5ebed8b64"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#ab59156a4d6fbd15217a26dc5ebed8b64">setup_adc_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance)</td></tr>
 <tr class="separator:ab59156a4d6fbd15217a26dc5ebed8b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a5ad25189bfd840d70b81e6cc064ce6" id="r_a9a5ad25189bfd840d70b81e6cc064ce6"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a9a5ad25189bfd840d70b81e6cc064ce6">setup_dac</a> (DAC_HandleTypeDef &amp;dac, <a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">drv::pin_cfg</a> const &amp;cfg)</td></tr>
@@ -322,6 +326,72 @@ timer_instance</td>
 
 </div>
 </div>
+<a name="structservio_1_1plt_1_1i2c__cfg" id="structservio_1_1plt_1_1i2c__cfg"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1plt_1_1i2c__cfg">&#9670;&#160;</a></span>servio::plt::i2c_cfg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::plt::i2c_cfg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::plt::i2c_cfg:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1plt_1_1i2c__cfg__coll__graph.svg" width="156" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a4e5f98c021570301d866fec45d7f2e82" name="a4e5f98c021570301d866fec45d7f2e82"></a>IRQn_Type</td>
+<td class="fieldname">
+er_irq</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a3971ff606bfc50cda5277b1c26a7cd16" name="a3971ff606bfc50cda5277b1c26a7cd16"></a>uint32_t</td>
+<td class="fieldname">
+er_irq_priority</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a179604cc2da4e956bcca6581da703d25" name="a179604cc2da4e956bcca6581da703d25"></a>IRQn_Type</td>
+<td class="fieldname">
+ev_irq</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a4497f1c55e145fa95db4e05a96bd0145" name="a4497f1c55e145fa95db4e05a96bd0145"></a>uint32_t</td>
+<td class="fieldname">
+ev_irq_priority</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a74d7ce616f0ba1cd6ecd704c56050262" name="a74d7ce616f0ba1cd6ecd704c56050262"></a>I2C_TypeDef *</td>
+<td class="fieldname">
+instance</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ad861cf75604c8035ae6fc326c136bae0" name="ad861cf75604c8035ae6fc326c136bae0"></a>pin_cfg</td>
+<td class="fieldname">
+scl</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a35fa78ce521231b6d4f451d48a676bd9" name="a35fa78ce521231b6d4f451d48a676bd9"></a>pin_cfg</td>
+<td class="fieldname">
+sda</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <a name="structservio_1_1plt_1_1leds__gpio__cfg" id="structservio_1_1plt_1_1leds__gpio__cfg"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1plt_1_1leds__gpio__cfg">&#9670;&#160;</a></span>servio::plt::leds_gpio_cfg</h2>
 
@@ -333,11 +403,11 @@ timer_instance</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::plt::leds_gpio_cfg:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div class="textblock"></div><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::plt::leds_gpio_cfg:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1plt_1_1leds__gpio__cfg__coll__graph.svg" width="195" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
@@ -369,11 +439,11 @@ red</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::plt::leds_timer_cfg:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div class="textblock"></div><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::plt::leds_timer_cfg:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1plt_1_1leds__timer__cfg__coll__graph.svg" width="202" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
@@ -452,11 +522,11 @@ cal2</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::plt::uart_cfg:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div class="textblock"></div><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::plt::uart_cfg:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1plt_1_1uart__cfg__coll__graph.svg" width="331" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
@@ -857,6 +927,36 @@ uart_instance</td>
 
 </div>
 </div>
+<a id="a82b4088167a8a259e745f035915d672a" name="a82b4088167a8a259e745f035915d672a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b4088167a8a259e745f035915d672a">&#9670;&#160;</a></span>setup_i2c()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">em::result servio::plt::setup_i2c </td>
+          <td>(</td>
+          <td class="paramtype">I2C_HandleTypeDef &amp;&#160;</td>
+          <td class="paramname"><em>i2c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg">i2c_cfg</a>&#160;</td>
+          <td class="paramname"><em>cfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1plt.html#abd82db4ae277c933a1955cdada712dc6">setup_gpio()</a>, and <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>.</p>
+
+</div>
+</div>
 <a id="a200428b196e587e16f5ffd08676efc76" name="a200428b196e587e16f5ffd08676efc76"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a200428b196e587e16f5ffd08676efc76">&#9670;&#160;</a></span>setup_leds_channel()</h2>
 
@@ -925,7 +1025,7 @@ uart_instance</td>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1plt.html#abd82db4ae277c933a1955cdada712dc6">setup_gpio()</a>, and <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>.</p>
 
 </div>
 </div>
@@ -950,7 +1050,7 @@ uart_instance</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1plt.html">plt</a></li>
-    <li class="footer">Generated on Sat Jan 11 2025 12:11:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Feb 9 2025 20:39:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

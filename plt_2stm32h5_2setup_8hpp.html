@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('plt_2stm32h5_2setup_8hpp.html',''); in
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="plt_2stm32h5_2setup_8hpp__incl.svg" width="1823" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="plt_2stm32h5_2setup_8hpp__incl.svg" width="1788" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="plt_2stm32h5_2setup_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -127,6 +127,8 @@ Classes</h2></td></tr>
 <tr class="separator:structservio_1_1plt_1_1leds__gpio__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1plt_1_1leds__timer__cfg" id="r_structservio_1_1plt_1_1leds__timer__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg">servio::plt::leds_timer_cfg</a></td></tr>
 <tr class="separator:structservio_1_1plt_1_1leds__timer__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1plt_1_1i2c__cfg" id="r_structservio_1_1plt_1_1i2c__cfg"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg">servio::plt::i2c_cfg</a></td></tr>
+<tr class="separator:structservio_1_1plt_1_1i2c__cfg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1plt_1_1temp__calib__coeffs" id="r_structservio_1_1plt_1_1temp__calib__coeffs"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs">servio::plt::temp_calib_coeffs</a></td></tr>
 <tr class="separator:structservio_1_1plt_1_1temp__calib__coeffs"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -151,6 +153,8 @@ Functions</h2></td></tr>
 <tr class="separator:a9a5ad25189bfd840d70b81e6cc064ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b7c8043898e10b87fa53fd5bb021d96" id="r_a7b7c8043898e10b87fa53fd5bb021d96"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a7b7c8043898e10b87fa53fd5bb021d96">servio::plt::setup_uart</a> (UART_HandleTypeDef &amp;uart, DMA_HandleTypeDef &amp;tx_dma, <a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg">uart_cfg</a> cfg)</td></tr>
 <tr class="separator:a7b7c8043898e10b87fa53fd5bb021d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b4088167a8a259e745f035915d672a" id="r_a82b4088167a8a259e745f035915d672a"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a82b4088167a8a259e745f035915d672a">servio::plt::setup_i2c</a> (I2C_HandleTypeDef &amp;i2c, <a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg">i2c_cfg</a> cfg)</td></tr>
+<tr class="separator:a82b4088167a8a259e745f035915d672a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a917cc285404ba1c9a62080f12567ad7c" id="r_a917cc285404ba1c9a62080f12567ad7c"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a917cc285404ba1c9a62080f12567ad7c">servio::plt::setup_hbridge_timers</a> (TIM_HandleTypeDef &amp;tim, <a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg">hb_timer_cfg</a> cfg)</td></tr>
 <tr class="separator:a917cc285404ba1c9a62080f12567ad7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd82db4ae277c933a1955cdada712dc6" id="r_abd82db4ae277c933a1955cdada712dc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#abd82db4ae277c933a1955cdada712dc6">servio::plt::setup_gpio</a> (<a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">drv::pin_cfg</a> const &amp;cfg)</td></tr>
@@ -490,6 +494,72 @@ yellow_pin</td>
 
 </div>
 </div>
+<a name="structservio_1_1plt_1_1i2c__cfg" id="structservio_1_1plt_1_1i2c__cfg"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1plt_1_1i2c__cfg">&#9670;&#160;</a></span>servio::plt::i2c_cfg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::plt::i2c_cfg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::plt::i2c_cfg:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1plt_1_1i2c__cfg__coll__graph.svg" width="156" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a4e5f98c021570301d866fec45d7f2e82" name="a4e5f98c021570301d866fec45d7f2e82"></a>IRQn_Type</td>
+<td class="fieldname">
+er_irq</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a3971ff606bfc50cda5277b1c26a7cd16" name="a3971ff606bfc50cda5277b1c26a7cd16"></a>uint32_t</td>
+<td class="fieldname">
+er_irq_priority</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a179604cc2da4e956bcca6581da703d25" name="a179604cc2da4e956bcca6581da703d25"></a>IRQn_Type</td>
+<td class="fieldname">
+ev_irq</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a4497f1c55e145fa95db4e05a96bd0145" name="a4497f1c55e145fa95db4e05a96bd0145"></a>uint32_t</td>
+<td class="fieldname">
+ev_irq_priority</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a74d7ce616f0ba1cd6ecd704c56050262" name="a74d7ce616f0ba1cd6ecd704c56050262"></a>I2C_TypeDef *</td>
+<td class="fieldname">
+instance</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ad861cf75604c8035ae6fc326c136bae0" name="ad861cf75604c8035ae6fc326c136bae0"></a>pin_cfg</td>
+<td class="fieldname">
+scl</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a35fa78ce521231b6d4f451d48a676bd9" name="a35fa78ce521231b6d4f451d48a676bd9"></a>pin_cfg</td>
+<td class="fieldname">
+sda</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <a name="structservio_1_1plt_1_1temp__calib__coeffs" id="structservio_1_1plt_1_1temp__calib__coeffs"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1plt_1_1temp__calib__coeffs">&#9670;&#160;</a></span>servio::plt::temp_calib_coeffs</h2>
 
@@ -525,7 +595,7 @@ cal2</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ac1b950000007ef415966b2ee5669a0d.html">plt</a></li><li class="navelem"><a class="el" href="dir_f2088f76b3ac3723d91fa5f5a2a678d4.html">stm32h5</a></li><li class="navelem"><a class="el" href="plt_2stm32h5_2setup_8hpp.html">setup.hpp</a></li>
-    <li class="footer">Generated on Sat Jan 11 2025 12:11:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Feb 9 2025 20:39:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -1,13 +1,13 @@
 <map id="src/sim/motor.hpp" name="src/sim/motor.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="376,5,515,31"/>
-<area shape="rect" id="Node000002" href="$base_2base_8hpp.html" title=" " alt="" coords="205,79,333,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="418,33,312,76,310,71,416,28"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="357,79,413,104"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="437,33,406,70,402,66,433,29"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="438,79,573,104"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="457,29,489,66,485,70,453,33"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="597,79,677,104"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="477,28,594,71,592,76,475,33"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="359,5,497,31"/>
+<area shape="rect" id="Node000002" href="$base_8hpp.html" title=" " alt="" coords="223,79,316,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="404,33,309,75,307,71,401,28"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="340,79,396,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="420,33,389,70,384,66,416,29"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="421,79,555,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="440,29,472,66,467,70,436,33"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="580,79,660,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="460,28,577,71,575,76,458,33"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,152,72,177"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,107,86,152,85,146,231,101"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="96,152,163,177"/>
@@ -17,5 +17,5 @@
 <area shape="rect" id="Node000006" title=" " alt="" coords="376,152,531,177"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="300,102,411,144,409,149,298,107"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="555,152,634,177"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="322,101,542,149,541,154,321,107"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="317,100,542,149,541,154,316,105"/>
 </map>

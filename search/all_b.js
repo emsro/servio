@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_0',['a',['../structservio_1_1scmdio_1_1port__mock.html#ad8ef328bd6bbd6d04d8f26ecaec1e09f',1,'servio::scmdio::port_mock']]],
+  ['a_0',['a',['../structservio_1_1scmdio_1_1port__mock.html#ad8ef328bd6bbd6d04d8f26ecaec1e09f',1,'servio::scmdio::port_mock::a'],['../namespaceservio_1_1paging.html#a2fabf8c0c669f1fa520a83909c55c1c6',1,'servio::paging::A']]],
   ['ack_1',['ACK',['../namespaceservio_1_1scmdio.html#a848cd90402a2f36d81869dc4fdbbaec0',1,'servio::scmdio']]],
   ['adc_2ecpp_2',['adc.cpp',['../adc_8cpp.html',1,'']]],
   ['adc1_5firqhandler_3',['adc1_irqhandler',['../proto4_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b',1,'ADC1_IRQHandler():&#160;board.cpp'],['../proto3_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b',1,'ADC1_IRQHandler():&#160;board.cpp']]],
@@ -43,7 +43,7 @@ var searchData=
   ['adc_5fset_40',['adc_set',['../namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set',1,'servio::brd']]],
   ['adc_5ftrigger_41',['adc_trigger',['../namespaceservio_1_1plt.html#a03cac8a5dbc15f966a3b411492fffb0d',1,'servio::plt::adc_cfg']]],
   ['adc_5fvcc_42',['ADC_VCC',['../namespaceservio_1_1brd.html#a426f85a0dea9eb2dd9aa43e5f98f91e0',1,'servio::brd']]],
-  ['add_43',['add',['../structservio_1_1core_1_1avg__filter.html#aa2b04080d7c98d45bfc7336b70ac2a51',1,'servio::core::avg_filter::add()'],['../structservio_1_1base_1_1jval__ser.html#a4e1f07ac3fa35c5d4428e5099aa879d8',1,'servio::base::jval_ser::add()']]],
+  ['add_43',['add',['../structservio_1_1base_1_1jval__ser.html#a4e1f07ac3fa35c5d4428e5099aa879d8',1,'servio::base::jval_ser::add()'],['../structservio_1_1core_1_1avg__filter.html#aa2b04080d7c98d45bfc7336b70ac2a51',1,'servio::core::avg_filter::add()']]],
   ['adl_5fserializer_3c_20avakar_3a_3aatom_3c_20ts_2e_2e_2e_20_3e_20_3e_44',['adl_serializer&lt; avakar::atom&lt; Ts... &gt; &gt;',['../structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html',1,'nlohmann']]],
   ['adl_5fserializer_3c_20vari_3a_3a_5fvval_3c_20ts_2e_2e_2e_20_3e_20_3e_45',['adl_serializer&lt; vari::_vval&lt; Ts... &gt; &gt;',['../structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html',1,'nlohmann']]],
   ['also_20stored_46',['REQ6.5.4 Firmware version is also stored',['../config.html#autotoc_md47',1,'']]],

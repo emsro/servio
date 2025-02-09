@@ -110,8 +110,12 @@ Classes</h2></td></tr>
 <tr class="separator:structservio_1_1cfg_1_1keyval"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1cfg_1_1off__scale" id="r_structservio_1_1cfg_1_1off__scale"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale">off_scale</a></td></tr>
 <tr class="separator:structservio_1_1cfg_1_1off__scale"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1cfg_1_1page__info" id="r_structservio_1_1cfg_1_1page__info"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1page__info">page_info</a></td></tr>
+<tr class="separator:structservio_1_1cfg_1_1page__info"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1payload.html">payload</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1cfg_1_1record" id="r_structservio_1_1cfg_1_1record"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1record">record</a></td></tr>
+<tr class="separator:structservio_1_1cfg_1_1record"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -128,10 +132,10 @@ Typedefs</h2></td></tr>
 <tr class="separator:a8aede70f47a2a0b2a4eb2f0f9056d142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8bcf8607b8a636737d60192fbfa5da4" id="r_ab8bcf8607b8a636737d60192fbfa5da4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ab8bcf8607b8a636737d60192fbfa5da4">value_variant</a> = std::variant&lt; <a class="el" href="namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d">model_name</a>, uint32_t, float, bool, <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> &gt;</td></tr>
 <tr class="separator:ab8bcf8607b8a636737d60192fbfa5da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13803ac011d5d820ca7061750964e74f" id="r_a13803ac011d5d820ca7061750964e74f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> = std::span&lt; std::byte * &gt;</td></tr>
+<tr class="separator:a13803ac011d5d820ca7061750964e74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c0059c37a0260639c1b3eb21d8c849e" id="r_a1c0059c37a0260639c1b3eb21d8c849e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a1c0059c37a0260639c1b3eb21d8c849e">reghandler</a> = em::protocol::register_handler&lt; <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> &gt;</td></tr>
 <tr class="separator:a1c0059c37a0260639c1b3eb21d8c849e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5082244066c102db79273fce9ba13b10" id="r_a5082244066c102db79273fce9ba13b10"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> = em::view&lt; std::byte * &gt;</td></tr>
-<tr class="separator:a5082244066c102db79273fce9ba13b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -227,17 +231,17 @@ Functions</h2></td></tr>
 <tr class="separator:a9d620c785f59bfb68d9bd89fd2038581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80a4e62e0bd44de593e5680623556811" id="r_a80a4e62e0bd44de593e5680623556811"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale">off_scale</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811">calculate_current_conversion</a> (float v_max, float v_min, float steps, float r_shunt, float gain)</td></tr>
 <tr class="separator:a80a4e62e0bd44de593e5680623556811"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affa8761abffcaac7a2dbe37319ba5413" id="r_affa8761abffcaac7a2dbe37319ba5413"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#affa8761abffcaac7a2dbe37319ba5413">find_unused_page</a> (em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const * &gt; pages)</td></tr>
+<tr class="memitem:affa8761abffcaac7a2dbe37319ba5413" id="r_affa8761abffcaac7a2dbe37319ba5413"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#affa8761abffcaac7a2dbe37319ba5413">find_unused_page</a> (em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const * &gt; pages)</td></tr>
 <tr class="separator:affa8761abffcaac7a2dbe37319ba5413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76cc3816c8e11d289dc47c27268ec5b0" id="r_a76cc3816c8e11d289dc47c27268ec5b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a76cc3816c8e11d289dc47c27268ec5b0">find_oldest_page</a> (em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const * &gt; pages)</td></tr>
+<tr class="memitem:a76cc3816c8e11d289dc47c27268ec5b0" id="r_a76cc3816c8e11d289dc47c27268ec5b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a76cc3816c8e11d289dc47c27268ec5b0">find_oldest_page</a> (em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const * &gt; pages)</td></tr>
 <tr class="separator:a76cc3816c8e11d289dc47c27268ec5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ae71615839581b20589975997a497f5" id="r_a5ae71615839581b20589975997a497f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a5ae71615839581b20589975997a497f5">find_next_page</a> (em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const * &gt; pages)</td></tr>
+<tr class="memitem:a5ae71615839581b20589975997a497f5" id="r_a5ae71615839581b20589975997a497f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a5ae71615839581b20589975997a497f5">find_next_page</a> (em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const * &gt; pages)</td></tr>
 <tr class="separator:a5ae71615839581b20589975997a497f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafa3ceb2fb9ae12d15da5c3c2f867bc7" id="r_aafa3ceb2fb9ae12d15da5c3c2f867bc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#aafa3ceb2fb9ae12d15da5c3c2f867bc7">find_latest_page</a> (em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const * &gt; pages)</td></tr>
+<tr class="memitem:aafa3ceb2fb9ae12d15da5c3c2f867bc7" id="r_aafa3ceb2fb9ae12d15da5c3c2f867bc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#aafa3ceb2fb9ae12d15da5c3c2f867bc7">find_latest_page</a> (em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const * &gt; pages)</td></tr>
 <tr class="separator:aafa3ceb2fb9ae12d15da5c3c2f867bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5400e33f9b974197675a2a38b6938cb3" id="r_a5400e33f9b974197675a2a38b6938cb3"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a5400e33f9b974197675a2a38b6938cb3">store</a> (<a class="el" href="structservio_1_1cfg_1_1payload.html">payload</a> const &amp;pl, <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> const *m, <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> buffer)</td></tr>
+<tr class="memitem:a5400e33f9b974197675a2a38b6938cb3" id="r_a5400e33f9b974197675a2a38b6938cb3"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a5400e33f9b974197675a2a38b6938cb3">store</a> (<a class="el" href="structservio_1_1cfg_1_1payload.html">payload</a> const &amp;pl, <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> const *m, <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> buffer)</td></tr>
 <tr class="separator:a5400e33f9b974197675a2a38b6938cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5ab04677caa94064e98eac75d1429e2" id="r_ae5ab04677caa94064e98eac75d1429e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ae5ab04677caa94064e98eac75d1429e2">load</a> (<a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> p, em::function_view&lt; bool(<a class="el" href="structservio_1_1cfg_1_1payload.html">payload</a> const &amp;) &gt; pl_cb, <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> &amp;m)</td></tr>
+<tr class="memitem:ae5ab04677caa94064e98eac75d1429e2" id="r_ae5ab04677caa94064e98eac75d1429e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ae5ab04677caa94064e98eac75d1429e2">load</a> (<a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> p, em::function_view&lt; bool(<a class="el" href="structservio_1_1cfg_1_1payload.html">payload</a> const &amp;) &gt; pl_cb, <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> &amp;m)</td></tr>
 <tr class="separator:ae5ab04677caa94064e98eac75d1429e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
@@ -335,6 +339,64 @@ scale</td>
 
 </div>
 </div>
+<a name="structservio_1_1cfg_1_1page__info" id="structservio_1_1cfg_1_1page__info"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1cfg_1_1page__info">&#9670;&#160;</a></span>servio::cfg::page_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::cfg::page_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a1d6dbb2edf63f191411bb82a62181223" name="a1d6dbb2edf63f191411bb82a62181223"></a>page_state</td>
+<td class="fieldname">
+st = page_state::A</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="af496a760700e5c43be35ed4e3aabf7fa" name="af496a760700e5c43be35ed4e3aabf7fa"></a>uint32_t</td>
+<td class="fieldname">
+ver = 0x01</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structservio_1_1cfg_1_1record" id="structservio_1_1cfg_1_1record"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1cfg_1_1record">&#9670;&#160;</a></span>servio::cfg::record</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::cfg::record</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a66972d206c15053111bcbccad4288ba0" name="a66972d206c15053111bcbccad4288ba0"></a>uint32_t</td>
+<td class="fieldname">
+data</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ad21d5d419e323d3423aafde6f97ba8c5" name="ad21d5d419e323d3423aafde6f97ba8c5"></a>uint16_t</td>
+<td class="fieldname">
+key</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a8587e35d0b4b831a0423fb148e9c5df2" name="a8587e35d0b4b831a0423fb148e9c5df2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8587e35d0b4b831a0423fb148e9c5df2">&#9670;&#160;</a></span>handler</h2>
@@ -378,14 +440,14 @@ scale</td>
 
 </div>
 </div>
-<a id="a5082244066c102db79273fce9ba13b10" name="a5082244066c102db79273fce9ba13b10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5082244066c102db79273fce9ba13b10">&#9670;&#160;</a></span>page</h2>
+<a id="a13803ac011d5d820ca7061750964e74f" name="a13803ac011d5d820ca7061750964e74f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13803ac011d5d820ca7061750964e74f">&#9670;&#160;</a></span>page</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">servio::cfg::page</a> = typedef em::view&lt; std::byte* &gt;</td>
+          <td class="memname">typedef em::view&lt; std::byte * &gt; <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">servio::cfg::page</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -620,9 +682,9 @@ template&lt;auto Key, typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const  * servio::cfg::find_latest_page </td>
+          <td class="memname"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const  * servio::cfg::find_latest_page </td>
           <td>(</td>
-          <td class="paramtype">em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const * &gt;&#160;</td>
+          <td class="paramtype">em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const * &gt;&#160;</td>
           <td class="paramname"><em>pages</em></td><td>)</td>
           <td></td>
         </tr>
@@ -638,9 +700,9 @@ template&lt;auto Key, typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const  * servio::cfg::find_next_page </td>
+          <td class="memname"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const  * servio::cfg::find_next_page </td>
           <td>(</td>
-          <td class="paramtype">em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const * &gt;&#160;</td>
+          <td class="paramtype">em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const * &gt;&#160;</td>
           <td class="paramname"><em>pages</em></td><td>)</td>
           <td></td>
         </tr>
@@ -658,9 +720,9 @@ template&lt;auto Key, typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const  * servio::cfg::find_oldest_page </td>
+          <td class="memname"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const  * servio::cfg::find_oldest_page </td>
           <td>(</td>
-          <td class="paramtype">em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const * &gt;&#160;</td>
+          <td class="paramtype">em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const * &gt;&#160;</td>
           <td class="paramname"><em>pages</em></td><td>)</td>
           <td></td>
         </tr>
@@ -676,9 +738,9 @@ template&lt;auto Key, typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const  * servio::cfg::find_unused_page </td>
+          <td class="memname"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const  * servio::cfg::find_unused_page </td>
           <td>(</td>
-          <td class="paramtype">em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> const * &gt;&#160;</td>
+          <td class="paramtype">em::view&lt; <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> const * &gt;&#160;</td>
           <td class="paramname"><em>pages</em></td><td>)</td>
           <td></td>
         </tr>
@@ -715,7 +777,7 @@ template&lt;auto Key, typename T &gt; </div>
         <tr>
           <td class="memname">bool servio::cfg::load </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a>&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -769,7 +831,7 @@ template&lt;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; bool, <a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a> &gt; servio::cfg::store </td>
+          <td class="memname">std::tuple&lt; bool, <a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a> &gt; servio::cfg::store </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structservio_1_1cfg_1_1payload.html">payload</a> const &amp;&#160;</td>
           <td class="paramname"><em>pl</em>, </td>
@@ -783,7 +845,7 @@ template&lt;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceservio_1_1cfg.html#a5082244066c102db79273fce9ba13b10">page</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f">page</a>&#160;</td>
           <td class="paramname"><em>buffer</em>&#160;</td>
         </tr>
         <tr>
@@ -804,7 +866,7 @@ template&lt;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1cfg.html">cfg</a></li>
-    <li class="footer">Generated on Sat Jan 11 2025 12:11:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Feb 9 2025 20:39:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

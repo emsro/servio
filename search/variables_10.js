@@ -9,7 +9,7 @@ var searchData=
   ['payload_6',['payload',['../namespaceservio_1_1cfg.html#a85e63accec8da1d53f96ea06a0718b6c',1,'servio::cfg::context']]],
   ['period_7',['period',['../namespaceservio_1_1plt.html#a9b84499420f471615a09ab94300d09e4',1,'servio::plt::hb_timer_cfg::period'],['../structservio_1_1ftest_1_1bench_1_1usage.html#adaac867b90ba46a380e93adc4003eb22',1,'servio::ftest::bench::usage::period'],['../structservio_1_1ftest_1_1bench_1_1loop__frequency.html#afab2bccc646ca35401fe23aa27253641',1,'servio::ftest::bench::loop_frequency::period'],['../structservio_1_1drv_1_1tests_1_1pwm__motor__test.html#a684887cd2e4de9a66cf70f72d942182b',1,'servio::drv::tests::pwm_motor_test::period'],['../structservio_1_1core_1_1drivers.html#a0361b0638af2a8395ebe99484a9a10fe',1,'servio::core::drivers::period']]],
   ['period_5fcb_8',['period_cb',['../structservio_1_1core_1_1drivers.html#a84c58d510bcc173e7a41d72de1975b73',1,'servio::core::drivers']]],
-  ['persistent_5fblocks_9',['PERSISTENT_BLOCKS',['../namespaceservio_1_1brd.html#ad966d7bc309628fe42f3784ce52dab6f',1,'servio::brd']]],
+  ['persistent_5fblocks_9',['PERSISTENT_BLOCKS',['../namespaceservio_1_1brd.html#a0c3ea303fb4da0872e1f15dec6181e42',1,'servio::brd']]],
   ['pi_10',['pi',['../namespaceservio.html#a20c15193768c59a28a88e172aba5ab20',1,'servio']]],
   ['pin_11',['pin',['../namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244',1,'servio::drv::pin_cfg']]],
   ['pipi_12',['pipi',['../namespaceservio.html#a00c2d45a108822e094be491c4004429b',1,'servio']]],
