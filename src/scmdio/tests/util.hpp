@@ -4,7 +4,7 @@
 
 namespace servio::scmdio
 {
-void handle_eptr( std::exception_ptr eptr )
+inline void handle_eptr( std::exception_ptr eptr )
 {
         EXPECT_NO_THROW( {
                 if ( eptr )

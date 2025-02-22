@@ -84,6 +84,9 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   include(CTest)
   enable_testing()
 
+  servio_add_executable(TARGET servio_utest LIBS emlabcpp gtest_main)
+  add_test(NAME servio_utest COMMAND servio_utest)
+
   add_subdirectory(src/plt/host)
   add_subdirectory(src)
 

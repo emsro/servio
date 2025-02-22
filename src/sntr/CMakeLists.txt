@@ -6,14 +6,6 @@ servio_add_library(
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
-  servio_add_test(
-    TARGET central_sentry_utest
-    SOURCES tests/central_sentry_utest.cpp
-    LIBS sntrlib gtest_main)
-
-  servio_add_test(
-    TARGET sentry_utest
-    SOURCES tests/sentry_utest.cpp
-    LIBS sntrlib gtest_main)
+  servio_expand_test(TARGET servio_utest SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS sntrlib)
 
 endif()

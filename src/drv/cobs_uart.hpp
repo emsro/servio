@@ -16,8 +16,8 @@ namespace servio::drv
 
 enum cobs_error_codes
 {
-        COBS_HAL_ERROR_IRQ_ERR = 0x1,
-        COBS_HAL_RX_START_ERR  = 0x2
+        COBS_HAL_ERROR_IRQ_ERR = 0x3,
+        COBS_HAL_RX_START_ERR  = 0x4
 };
 
 struct cobs_uart final : public com_iface

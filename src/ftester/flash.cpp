@@ -7,7 +7,7 @@
 namespace servio::ftester
 {
 
-joque::task make_flash_task(
+joque::task make_openocd_flash_task(
     std::filesystem::path const&        firmware,
     std::filesystem::path const&        ocd_cfg,
     opt< std::filesystem::path > const& log_file,
@@ -31,7 +31,39 @@ joque::task make_flash_task(
         return f();
 }
 
-void flash_firmware( std::filesystem::path const& firmware, std::filesystem::path const& ocdconf )
+joque::task make_bmp_flash_task(
+    std::filesystem::path const& firmware,
+    std::filesystem::path const& device,
+    joque::resource const&       dev_res )
+{
+        return {
+            .job = joque::process::derive(
+                       "arm-none-eabi-gdb",
+                       "-nx",
+                       "--batch",
+                       "-ex",
+                       "target extended-remote " + device.string() + "",
+                       "-ex",
+                       "monitor swdp_scan",
+                       "-ex",
+                       "attach 1",
+                       "-ex",
+                       "monitor erase_mass",
+                       "-ex",
+                       "load",
+                       "-ex",
+                       "compare-sections",
+                       "-ex",
+                       "kill",
+                       firmware )
+                       .add_input( firmware ),
+            .resources = { dev_res },
+        };
+}
+
+void flash_firmware_openocd(
+    std::filesystem::path const& firmware,
+    std::filesystem::path const& ocdconf )
 {
         using namespace std::literals;
 

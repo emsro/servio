@@ -81,7 +81,7 @@ sntr::central_sentry CENTRAL_SENTRY{
     core::STOP_CALLBACK };
 
 ADC_HandleTypeDef ADC_HANDLE;
-DMA_HandleTypeDef ADC_DMA_HANDLE;
+DMA_HandleTypeDef GPDMA1_Ch0_HANDLE;
 TIM_HandleTypeDef TIM6_HANDLE;
 
 struct adc_set
@@ -97,18 +97,18 @@ struct adc_set
 };
 
 using adc_pooler_type = drv::adc_pooler< adc_set >;
-adc_pooler_type                         ADC_POOLER{ ADC_HANDLE, ADC_DMA_HANDLE, TIM6_HANDLE };
+adc_pooler_type                         ADC_POOLER{ ADC_HANDLE, GPDMA1_Ch0_HANDLE, TIM6_HANDLE };
 drv::adc_pooler_period_cb< ADC_POOLER > ADC_PERIOD_CB;
 drv::adc_pooler_vcc< ADC_POOLER >       ADC_VCC;
 drv::adc_pooler_position< ADC_POOLER >  ADC_POSITION;
 drv::adc_pooler_current< ADC_POOLER >   ADC_CURRENT;
 
 UART_HandleTypeDef UART2_HANDLE{};
-DMA_HandleTypeDef  UART2_DMA_HANDLE{};
-drv::cobs_uart     DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, CLOCK, &UART2_HANDLE, &UART2_DMA_HANDLE };
+DMA_HandleTypeDef  GPDMA1_Ch2_HANDLE{};
+drv::cobs_uart DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, CLOCK, &UART2_HANDLE, &GPDMA1_Ch2_HANDLE };
 UART_HandleTypeDef UART1_HANDLE{};
-DMA_HandleTypeDef  UART1_DMA_HANDLE{};
-drv::nl_uart       COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, &UART1_DMA_HANDLE };
+DMA_HandleTypeDef  GPDMA1_Ch1_HANDLE{};
+drv::nl_uart       COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, &GPDMA1_Ch1_HANDLE };
 TIM_HandleTypeDef  TIM1_HANDLE{};
 drv::hbridge       HBRIDGE{ &TIM1_HANDLE };
 DTS_HandleTypeDef  DTS_HANDLE{};
@@ -152,17 +152,17 @@ void USART1_IRQHandler()
 
 void GPDMA1_Channel0_IRQHandler()
 {
-        HAL_DMA_IRQHandler( &servio::brd::ADC_DMA_HANDLE );
+        HAL_DMA_IRQHandler( &servio::brd::GPDMA1_Ch0_HANDLE );
 }
 
 void GPDMA1_Channel1_IRQHandler()
 {
-        HAL_DMA_IRQHandler( &servio::brd::UART2_DMA_HANDLE );
+        HAL_DMA_IRQHandler( &servio::brd::GPDMA1_Ch1_HANDLE );
 }
 
 void GPDMA1_Channel2_IRQHandler()
 {
-        HAL_DMA_IRQHandler( &servio::brd::UART1_DMA_HANDLE );
+        HAL_DMA_IRQHandler( &servio::brd::GPDMA1_Ch2_HANDLE );
 }
 
 void I2C2_ER_IRQHandler()
@@ -251,7 +251,7 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
             } );
         em::result res = plt::setup_adc(
                              ADC_HANDLE,
-                             ADC_DMA_HANDLE,
+                             GPDMA1_Ch0_HANDLE,
                              plt::adc_cfg{
                                  .adc_instance     = ADC1,
                                  .adc_irq_priority = 1,
@@ -318,32 +318,34 @@ drv::com_iface* comms_setup()
 
         plt::uart_cfg cfg{
             .uart_instance = USART1,
-            .baudrate      = 460800,
+            .baudrate      = 230400,
             .irq           = USART1_IRQn,
-            .irq_priority  = 2,
+            .irq_priority  = 0,
             .rx =
                 drv::pin_cfg{
                     .pin       = GPIO_PIN_10,
                     .port      = GPIOA,
+                    .mode      = GPIO_MODE_AF_PP,
                     .alternate = GPIO_AF7_USART1,
                 },
             .tx =
                 drv::pin_cfg{
                     .pin       = GPIO_PIN_9,
                     .port      = GPIOA,
+                    .mode      = GPIO_MODE_AF_PP,
                     .alternate = GPIO_AF7_USART1,
                 },
             .tx_dma =
                 plt::dma_cfg{
                     .irq          = GPDMA1_Channel1_IRQn,
-                    .irq_priority = 2,
+                    .irq_priority = 0,
                     .instance     = GPDMA1_Channel1,
                     .request      = GPDMA1_REQUEST_USART1_TX,
                     .priority     = DMA_LOW_PRIORITY_LOW_WEIGHT,
                 },
         };
 
-        if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != em::SUCCESS )
+        if ( setup_uart( UART1_HANDLE, GPDMA1_Ch1_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
 
         return &COMMS;
@@ -357,32 +359,34 @@ drv::com_iface* setup_debug_comms()
 
         plt::uart_cfg cfg{
             .uart_instance = USART2,
-            .baudrate      = 460800,
+            .baudrate      = 230400,
             .irq           = USART2_IRQn,
-            .irq_priority  = 2,
+            .irq_priority  = 0,
             .rx =
                 drv::pin_cfg{
                     .pin       = GPIO_PIN_11,
                     .port      = GPIOA,
+                    .mode      = GPIO_MODE_AF_PP,
                     .alternate = GPIO_AF4_USART2,
                 },
             .tx =
                 drv::pin_cfg{
                     .pin       = GPIO_PIN_12,
                     .port      = GPIOA,
+                    .mode      = GPIO_MODE_AF_PP,
                     .alternate = GPIO_AF4_USART2,
                 },
             .tx_dma =
                 plt::dma_cfg{
                     .irq          = GPDMA1_Channel2_IRQn,
-                    .irq_priority = 2,
+                    .irq_priority = 0,
                     .instance     = GPDMA1_Channel2,
                     .request      = GPDMA1_REQUEST_USART2_TX,
                     .priority     = DMA_LOW_PRIORITY_LOW_WEIGHT,
                 },
         };
 
-        if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != em::SUCCESS )
+        if ( setup_uart( UART2_HANDLE, GPDMA1_Ch2_HANDLE, cfg ) != em::SUCCESS )
                 return nullptr;
 
         return &DEBUG_COMMS;

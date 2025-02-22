@@ -3,11 +3,8 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   add_library(drvlib bits/rx_buffer.cpp)
   target_include_directories(drvlib INTERFACE ../)
   target_link_libraries(drvlib PUBLIC emlabcpp)
-
-  servio_add_test(
-    TARGET cobs_utest
-    SOURCES tests/cobs_utest.cpp
-    LIBS drvlib emlabcpp gtest_main)
+  
+    servio_expand_test(TARGET servio_utest SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS drvlib)
 
 else()
 

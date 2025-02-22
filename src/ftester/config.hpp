@@ -1,9 +1,12 @@
 #pragma once
 
+#include "./cli.hpp"
+
 #include <cstdint>
 #include <filesystem>
 #include <optional>
 #include <string>
+#include <vari/uvptr.h>
 
 namespace servio::ftester
 {
@@ -19,13 +22,12 @@ struct config
         std::string                  filter;
 
         std::filesystem::path c_device   = "/dev/ttyUSB0";
-        uint32_t              c_baudrate = 460800;
+        uint32_t              c_baudrate = 230400;
         std::filesystem::path d_device   = "/dev/ttyACM0";
-        uint32_t              d_baudrate = 460800;
+        uint32_t              d_baudrate = 230400;
         opt< bool >           verbose    = false;
 
-        opt< std::filesystem::path > firmware       = std::nullopt;
-        opt< std::filesystem::path > openocd_config = std::nullopt;
+        vari::uvptr< openocd_flash_config, bmp_config > flash_cmd;
 };
 
 config get_config( int argc, char* argv[] );

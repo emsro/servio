@@ -6,9 +6,6 @@ servio_add_library(
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
-  servio_add_test(
-    TARGET effects_utest
-    SOURCES tests/effects_utest.cpp
-    LIBS monlib gtest_main)
+  servio_expand_test(TARGET servio_utest SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS monlib)
 
 endif()

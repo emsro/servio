@@ -5,15 +5,7 @@ servio_add_library(
   OPTS -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
-
-  servio_add_test(
-    TARGET cfg_utest
-    SOURCES tests/cfg_utest.cpp
-    LIBS cfglib ctllib mtrlib magic_enum gtest_main)
-
-  servio_add_test(
-    TARGET cfg_storage_utest
-    SOURCES tests/cfg_storage_utest.cpp
-    LIBS cfglib ctllib mtrlib gtest_main)
+ 
+  servio_expand_test(TARGET servio_utest SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS cfglib)
 
 endif()

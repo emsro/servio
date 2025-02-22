@@ -10,6 +10,7 @@
 #include <joque/exec.hpp>
 #include <joque/json.hpp>
 #include <nlohmann/json.hpp>
+#include <vari/vref.h>
 
 namespace servio::ftester
 {
@@ -144,11 +145,18 @@ int main( int argc, char* argv[] )
                 em::ERROR_LOGGER.set_option( em::set_ostream{ &errorfile } );
         }
 
-        if ( cfg.firmware.has_value() ) {
-                ts.tasks["flash"] = ftester::make_flash_task(
-                    cfg.firmware.value(), cfg.openocd_config.value(), std::nullopt, dev );
-                joque::exec( ts ).run();
-                ts = joque::task_set{};
+        if ( cfg.flash_cmd ) {
+                joque::task_set ts2;
+                cfg.flash_cmd.vref().visit(
+                    [&]( ftester::openocd_flash_config const& ocd ) {
+                            ts2.tasks["flash"] = ftester::make_openocd_flash_task(
+                                ocd.fw, ocd.openocd_config, std::nullopt, dev );
+                    },
+                    [&]( ftester::bmp_config const& bmp ) {
+                            ts2.tasks["flash"] =
+                                ftester::make_bmp_flash_task( bmp.fw, bmp.device, dev );
+                    } );
+                joque::exec( ts2 ).run();
                 std::this_thread::sleep_for( 500ms );
         }
 

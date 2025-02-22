@@ -18,8 +18,7 @@ config get_config( int argc, char* argv[] )
         app.add_option( "-o,--output", cfg.output_dir, "Directory to use for storing results" );
         app.add_option( "--input", cfg.input, "Input data" );
         scmdio::powerless_flag( app, cfg.powerless );
-        CLI::Option* ocfg = ocfg_opt( app, cfg.openocd_config );
-        firmware_opt( app, cfg.firmware, ocfg );
+        flash_commands( app, cfg.flash_cmd );
         app.add_option( "--filter", cfg.filter, "Filter for tests" );
 
         try {

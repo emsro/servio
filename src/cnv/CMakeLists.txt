@@ -3,9 +3,7 @@ target_link_libraries(cnvlib INTERFACE emlabcpp)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
-  servio_add_test(
-    TARGET conv_utest
-    SOURCES tests/conv_utest.cpp
-    LIBS cnvlib gtest_main)
+  
+    servio_expand_test(TARGET servio_utest SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS cnvlib)
 
 endif()

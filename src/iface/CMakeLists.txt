@@ -6,9 +6,6 @@ servio_add_library(
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
-  servio_add_test(
-    TARGET iface_utest
-    SOURCES tests/util_utest.cpp tests/parse_utest.cpp
-    LIBS ifacelib gtest_main)
+  servio_expand_test(TARGET servio_utest SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS ifacelib)
 
 endif()

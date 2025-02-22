@@ -71,8 +71,15 @@ struct port_iface
 struct cobs_port : port_iface
 {
 
+        static std::filesystem::path const& check_path( std::filesystem::path const& p )
+        {
+                if ( !std::filesystem::exists( p ) )
+                        throw std::runtime_error( "Path " + p.string() + " does not exist" );
+                return p;
+        }
+
         cobs_port( io_context& context, std::filesystem::path const& p, uint32_t baudrate )
-          : port( context, p )
+          : port( context, check_path( p ) )
         {
                 port.set_option( boost::asio::serial_port_base::baud_rate( baudrate ) );
                 flush_port( port );

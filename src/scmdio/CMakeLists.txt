@@ -9,17 +9,5 @@ servio_add_executable(
   SOURCES main.cpp
   LIBS scmdiolib)
 
-servio_add_test(
-  TARGET autotune_utest
-  SOURCES tests/autotune_utest.cpp
-  LIBS scmdiolib gtest_main)
-
-servio_add_test(
-  TARGET scmdio_iface_utest
-  SOURCES tests/iface_utest.cpp
-  LIBS scmdiolib corelib monlib mtrlib cfglib gtest_main)
-
-servio_add_test(
-  TARGET scmdio_bflash_utest
-  SOURCES tests/bflash_utest.cpp
-  LIBS scmdiolib corelib monlib mtrlib cfglib gtest_main)
+  
+servio_expand_test(TARGET servio_utest SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS scmdiolib)
