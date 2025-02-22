@@ -9,5 +9,5 @@ servio_add_executable(
   SOURCES main.cpp
   LIBS scmdiolib)
 
-  
-servio_expand_test(TARGET servio_utest SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS scmdiolib)
+servio_expand_test(TARGET servio_utest SOURCES
+                   ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS scmdiolib)
