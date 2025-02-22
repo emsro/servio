@@ -98,16 +98,18 @@ $(document).ready(function(){initNavTree('ftester_2config_8hpp.html',''); initRe
   <div class="headertitle"><div class="title">config.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ftester_2cli_8hpp_source.html">./cli.hpp</a>&quot;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vari/uvptr.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for config.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ftester_2config_8hpp__incl.svg" width="374" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ftester_2config_8hpp__incl.svg" width="520" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="ftester_2config_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -153,7 +155,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldtype">
 <a id="a9068c85a2b355f97abbdc5beb418b7dd" name="a9068c85a2b355f97abbdc5beb418b7dd"></a>uint32_t</td>
 <td class="fieldname">
-c_baudrate = 460800</td>
+c_baudrate = 230400</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -165,7 +167,7 @@ c_device = &quot;/dev/ttyUSB0&quot;</td>
 <tr><td class="fieldtype">
 <a id="ab3e6303bc5ee2f7e96e9196984c0cfb4" name="ab3e6303bc5ee2f7e96e9196984c0cfb4"></a>uint32_t</td>
 <td class="fieldname">
-d_baudrate = 460800</td>
+d_baudrate = 230400</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -181,21 +183,15 @@ filter</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a404e695ca8b7eea551e75f9308a5a7f2" name="a404e695ca8b7eea551e75f9308a5a7f2"></a><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; path &gt;</td>
+<a id="a66e80e3cf060cfb06b123b129f110c4e" name="a66e80e3cf060cfb06b123b129f110c4e"></a>uvptr&lt; <a class="el" href="namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1openocd__flash__config">openocd_flash_config</a>, <a class="el" href="namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1bmp__config">bmp_config</a> &gt;</td>
 <td class="fieldname">
-firmware = std::nullopt</td>
+flash_cmd</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
 <a id="aa82f2858ac70e9973a3761bd4d70ac8f" name="aa82f2858ac70e9973a3761bd4d70ac8f"></a><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; path &gt;</td>
 <td class="fieldname">
 input = std::nullopt</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a609a366e588998899f3a5ccb26e6dd01" name="a609a366e588998899f3a5ccb26e6dd01"></a><a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; path &gt;</td>
-<td class="fieldname">
-openocd_config = std::nullopt</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -226,7 +222,7 @@ verbose = false</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="ftester_2config_8hpp.html">config.hpp</a></li>
-    <li class="footer">Generated on Sun Feb 9 2025 20:39:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Feb 22 2025 21:48:12 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

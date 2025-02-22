@@ -1,11 +1,15 @@
 <map id="src/ftester/cli.cpp" name="src/ftester/cli.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="103,5,237,31"/>
-<area shape="rect" id="Node000002" href="$ftester_2cli_8hpp.html" title=" " alt="" coords="133,79,207,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,31,173,65,167,65,167,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="211,5,345,31"/>
+<area shape="rect" id="Node000002" href="$ftester_2cli_8hpp.html" title=" " alt="" coords="187,79,260,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="271,33,243,69,238,66,267,29"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="285,79,381,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="289,29,318,66,313,69,285,33"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,152,100,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="153,106,85,147,82,142,150,102"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,106,94,149,92,144,195,102"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="125,152,215,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="173,104,173,138,167,138,167,104"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="217,106,189,143,185,140,212,103"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="239,152,314,177"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="189,102,249,142,246,147,186,106"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="234,103,262,140,258,143,230,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="338,152,434,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="251,102,348,144,346,149,248,106"/>
 </map>

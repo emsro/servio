@@ -145,9 +145,11 @@ var annotated_dup =
         [ "utest_base", "structservio_1_1ftest_1_1utest__base.html", "structservio_1_1ftest_1_1utest__base" ]
       ] ],
       [ "ftester", "namespaceservio_1_1ftester.html", [
+        [ "bmp_config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1bmp__config", "namespaceservio_1_1ftester_structservio_1_1ftester_1_1bmp__config_dup" ],
         [ "config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config", "namespaceservio_1_1ftester_structservio_1_1ftester_1_1config_dup" ],
         [ "controller_interface", "structservio_1_1ftester_1_1controller__interface.html", "structservio_1_1ftester_1_1controller__interface" ],
         [ "joque_test", "structservio_1_1ftester_1_1joque__test.html", "structservio_1_1ftester_1_1joque__test" ],
+        [ "openocd_flash_config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1openocd__flash__config", "namespaceservio_1_1ftester_structservio_1_1ftester_1_1openocd__flash__config_dup" ],
         [ "recorder", "classservio_1_1ftester_1_1recorder.html", "classservio_1_1ftester_1_1recorder" ],
         [ "test_system", "structservio_1_1ftester_1_1test__system.html", "structservio_1_1ftester_1_1test__system" ]
       ] ],

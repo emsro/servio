@@ -104,29 +104,49 @@ $(document).ready(function(){initNavTree('ftester_2cli_8hpp_source.html',''); in
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;CLI/CLI.hpp&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1ftester.html">servio::ftester</a></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">   11</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a> = std::optional&lt; T &gt;;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>CLI::Option* <a class="code hl_function" href="namespaceservio_1_1ftester.html#a89a5bb51f3fd5536940bb6352d4eeda8">ocfg_opt</a>( CLI::App&amp; app, <a class="code hl_typedef" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt&lt; std::filesystem::path &gt;</a>&amp; o_cfg );</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>CLI::Option* <a class="code hl_function" href="namespaceservio_1_1ftester.html#acc64a6f277fb5ffb8b088c5bc1b4657d">firmware_opt</a>( CLI::App&amp; app, <a class="code hl_typedef" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt&lt; std::filesystem::path &gt;</a>&amp; fw, CLI::Option* cfg_opt );</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}  <span class="comment">// namespace servio::ftester</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vari/uvptr.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1ftester.html">servio::ftester</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">   12</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a> = std::optional&lt; T &gt;;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html">   14</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1openocd__flash__config">openocd_flash_config</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html#a395635dae0d133981cb0f2204a27e76a">   16</a></span>        std::filesystem::path <a class="code hl_variable" href="namespaceservio_1_1ftester.html#a395635dae0d133981cb0f2204a27e76a">openocd_config</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html#aaffecbdec76b5f485513b0aee82f3a2c">   17</a></span>        std::filesystem::path <a class="code hl_variable" href="namespaceservio_1_1ftester.html#aaffecbdec76b5f485513b0aee82f3a2c">fw</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html">   20</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1bmp__config">bmp_config</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html#a4e2bf400b5caac347ef36aaa7b2d04ef">   22</a></span>        std::filesystem::path <a class="code hl_variable" href="namespaceservio_1_1ftester.html#a4e2bf400b5caac347ef36aaa7b2d04ef">device</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html#a64ccd91617f65d60bb904a198e9b203c">   23</a></span>        std::filesystem::path <a class="code hl_variable" href="namespaceservio_1_1ftester.html#a64ccd91617f65d60bb904a198e9b203c">fw</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1ftester.html#ae5942d435f2a598719463c390a64dde5">flash_commands</a>( CLI::App&amp; app, vari::uvptr&lt; openocd_flash_config, bmp_config &gt;&amp; flash_cmd );</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}  <span class="comment">// namespace servio::ftester</span></div>
 <div class="ttc" id="anamespaceservio_1_1ftester_html"><div class="ttname"><a href="namespaceservio_1_1ftester.html">servio::ftester</a></div><div class="ttdef"><b>Definition</b> base.hpp:6</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html_a0560239d5205ea42c2dee9c8a27244ee"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">servio::ftester::opt</a></div><div class="ttdeci">std::optional&lt; T &gt; opt</div><div class="ttdef"><b>Definition</b> cli.hpp:11</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html_a89a5bb51f3fd5536940bb6352d4eeda8"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a89a5bb51f3fd5536940bb6352d4eeda8">servio::ftester::ocfg_opt</a></div><div class="ttdeci">CLI::Option * ocfg_opt(CLI::App &amp;app, opt&lt; std::filesystem::path &gt; &amp;o_cfg)</div><div class="ttdef"><b>Definition</b> cli.cpp:6</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html_acc64a6f277fb5ffb8b088c5bc1b4657d"><div class="ttname"><a href="namespaceservio_1_1ftester.html#acc64a6f277fb5ffb8b088c5bc1b4657d">servio::ftester::firmware_opt</a></div><div class="ttdeci">CLI::Option * firmware_opt(CLI::App &amp;app, opt&lt; std::filesystem::path &gt; &amp;fw, CLI::Option *cfg_opt)</div><div class="ttdef"><b>Definition</b> cli.cpp:15</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_a0560239d5205ea42c2dee9c8a27244ee"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">servio::ftester::opt</a></div><div class="ttdeci">std::optional&lt; T &gt; opt</div><div class="ttdef"><b>Definition</b> cli.hpp:12</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_a395635dae0d133981cb0f2204a27e76a"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a395635dae0d133981cb0f2204a27e76a">servio::ftester::openocd_flash_config::openocd_config</a></div><div class="ttdeci">std::filesystem::path openocd_config</div><div class="ttdef"><b>Definition</b> cli.hpp:16</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_a4e2bf400b5caac347ef36aaa7b2d04ef"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a4e2bf400b5caac347ef36aaa7b2d04ef">servio::ftester::bmp_config::device</a></div><div class="ttdeci">std::filesystem::path device</div><div class="ttdef"><b>Definition</b> cli.hpp:22</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_a64ccd91617f65d60bb904a198e9b203c"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a64ccd91617f65d60bb904a198e9b203c">servio::ftester::bmp_config::fw</a></div><div class="ttdeci">std::filesystem::path fw</div><div class="ttdef"><b>Definition</b> cli.hpp:23</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_aaffecbdec76b5f485513b0aee82f3a2c"><div class="ttname"><a href="namespaceservio_1_1ftester.html#aaffecbdec76b5f485513b0aee82f3a2c">servio::ftester::openocd_flash_config::fw</a></div><div class="ttdeci">std::filesystem::path fw</div><div class="ttdef"><b>Definition</b> cli.hpp:17</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_ae5942d435f2a598719463c390a64dde5"><div class="ttname"><a href="namespaceservio_1_1ftester.html#ae5942d435f2a598719463c390a64dde5">servio::ftester::flash_commands</a></div><div class="ttdeci">void flash_commands(CLI::App &amp;app, vari::uvptr&lt; openocd_flash_config, bmp_config &gt; &amp;flash_cmd)</div><div class="ttdef"><b>Definition</b> cli.cpp:19</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_structservio_1_1ftester_1_1bmp__config"><div class="ttname"><a href="namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1bmp__config">servio::ftester::bmp_config</a></div><div class="ttdef"><b>Definition</b> cli.hpp:21</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_structservio_1_1ftester_1_1openocd__flash__config"><div class="ttname"><a href="namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1openocd__flash__config">servio::ftester::openocd_flash_config</a></div><div class="ttdef"><b>Definition</b> cli.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="ftester_2cli_8hpp.html">cli.hpp</a></li>
-    <li class="footer">Generated on Sun Feb 9 2025 20:39:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Feb 22 2025 21:48:12 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

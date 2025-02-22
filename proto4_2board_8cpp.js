@@ -38,5 +38,8 @@ var proto4_2board_8cpp =
     [ "USART1_IRQHandler", "proto4_2board_8cpp.html#a27fb9800d727337121da9525aca0b557", null ],
     [ "USART2_IRQHandler", "proto4_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba", null ],
     [ "EEPROM", "proto4_2board_8cpp.html#af51294555f0d709d8eeff3e8a42817aa", null ],
+    [ "GPDMA1_Ch0_HANDLE", "proto4_2board_8cpp.html#a4e12a8575b75c1e84bb664d036617d14", null ],
+    [ "GPDMA1_Ch1_HANDLE", "proto4_2board_8cpp.html#a76d7d9f64898e440e0a213f703835653", null ],
+    [ "GPDMA1_Ch2_HANDLE", "proto4_2board_8cpp.html#a617eab611ab9411ef972a8dcaee6236b", null ],
     [ "I2C2_HANDLE", "proto4_2board_8cpp.html#a7047a111e0cca6a2e255c57bd604a300", null ]
 ];
