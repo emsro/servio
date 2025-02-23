@@ -57,10 +57,9 @@ struct cobs_uart_err_test
                 co_await ctx.expect(
                     std::get< 0 >( central.buffer[0] ) == sntr::test_central_sentry::DEGR );
 
-                handle.ErrorCode = bits::uart_common_tolerable_hal_errors;
+                handle.ErrorCode = ~bits::uart_common_tolerable_hal_errors;
                 uart.err_irq( &handle );
                 co_await ctx.expect( central.buffer.size() == 2 );
-
                 co_await ctx.expect( central.is_inoperable() );
                 co_await ctx.expect(
                     std::get< 0 >( central.buffer[1] ) == sntr::test_central_sentry::INOP );

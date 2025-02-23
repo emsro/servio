@@ -6,16 +6,19 @@
 namespace servio::drv::bits
 {
 
-struct nl_rx_container : rx_buffer
+template < char C >
+struct char_rx_container : rx_buffer
 {
         uint16_t received_size = 0;
 };
 
-inline void on_rx_cplt_irq( nl_rx_container& rx, std::byte inpt )
+template < char C >
+void on_rx_cplt_irq( char_rx_container< C >& rx, std::byte inpt )
 {
         char c = (char) inpt;
-        if ( c == '\n' ) {
-                rx.sizes.push_back( rx.received_size );
+        rx.buffer.emplace_back( inpt );
+        if ( c == C ) {
+                rx.sizes.push_back( rx.received_size + 1 );
                 rx.received_size = 0;
         } else {
                 rx.received_size += 1;

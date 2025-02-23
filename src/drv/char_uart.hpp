@@ -1,5 +1,5 @@
 
-#include "./bits/nl_rx_container.hpp"
+#include "./bits/char_rx_container.hpp"
 #include "./bits/uart.hpp"
 #include "./interfaces.hpp"
 
@@ -17,19 +17,19 @@ enum nl_error_codes
 };
 
 // XXX: screaming duplication with cobs uart
-struct nl_uart final : public com_iface
+struct char_uart final : public com_iface
 {
-        nl_uart(
+        char_uart(
             char const*                 id,
             sntr::central_sentry_iface& central,
             clk_iface&                  clk,
             UART_HandleTypeDef*         uart,
             DMA_HandleTypeDef*          tx_dma );
 
-        nl_uart( nl_uart const& )            = delete;
-        nl_uart( nl_uart&& )                 = delete;
-        nl_uart& operator=( nl_uart const& ) = delete;
-        nl_uart& operator=( nl_uart&& )      = delete;
+        char_uart( char_uart const& )            = delete;
+        char_uart( char_uart&& )                 = delete;
+        char_uart& operator=( char_uart const& ) = delete;
+        char_uart& operator=( char_uart&& )      = delete;
 
         void rx_cplt_irq( UART_HandleTypeDef* huart )
         {
@@ -72,11 +72,12 @@ private:
         bool volatile tx_done_ = true;
         std::array< std::byte, 1024 > tx_buffer_;
 
-        std::byte             rx_byte_;
-        bits::nl_rx_container rx_;
+        std::byte rx_byte_;
+        // XXX: the char might be templated
+        bits::char_rx_container< '\0' > rx_;
 };
 
-inline nl_uart::nl_uart(
+inline char_uart::char_uart(
     char const*                 id,
     sntr::central_sentry_iface& central,
     clk_iface&                  clk,

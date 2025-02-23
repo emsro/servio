@@ -57,18 +57,25 @@ awaitable< void > cobs_port::write_msg( std::span< std::byte const > msg )
 
 awaitable< std::span< std::byte > > cobs_port::read_msg( std::span< std::byte > buffer )
 {
-        std::size_t n = co_await async_read_until(
-            port, boost::asio::dynamic_buffer( read_buffer ), 0, use_awaitable );
-        std::span< std::byte > dview = em::view_n( read_buffer.data(), n );
+        auto                   iter = std::ranges::find( read_buffer, std::byte{ 0 } );
+        std::span< std::byte > dview;
+        if ( iter != read_buffer.end() ) {
+                dview = em::view_n(
+                    read_buffer.data(), std::distance( read_buffer.begin(), iter ) + 1 );
+        } else {
+                std::vector< std::byte > expand;
+                std::size_t              n = co_await async_read_until(
+                    port, boost::asio::dynamic_buffer( expand ), 0, use_awaitable );
+                n += read_buffer.size();
+                read_buffer.insert( read_buffer.end(), expand.begin(), expand.end() );
+                dview = em::view_n( read_buffer.data(), n );
+        }
+
         spdlog::debug( "reading: ", dview );
 
         auto [rsucc, deser_msg] = em::decode_cobs( dview, buffer );
 
-        read_buffer.erase(
-            read_buffer.begin(), read_buffer.begin() + static_cast< long int >( n ) );
-
-        assert( read_buffer.empty() );
-
+        read_buffer.erase( read_buffer.begin(), read_buffer.begin() + dview.size() );
         if ( !rsucc )
                 log_error( "Failed to parse cobs: ", dview );
 

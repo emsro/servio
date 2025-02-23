@@ -9,7 +9,6 @@ load_message( rx_buffer& rx, em::view< std::byte* > data )
         if ( rx.sizes.empty() )
                 return { true, {} };
 
-        // dupl with cobs_rx_container
         // this condition can block it indefinetly right?
         if ( rx.sizes.front() > data.size() )
                 return { false, {} };

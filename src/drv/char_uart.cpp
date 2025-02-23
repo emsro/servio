@@ -1,9 +1,9 @@
-#include "./nl_uart.hpp"
+#include "./char_uart.hpp"
 
 namespace servio::drv
 {
 
-em::result nl_uart::send( send_data_t data, microseconds timeout )
+em::result char_uart::send( send_data_t data, microseconds timeout )
 {
         if ( !spin_with_timeout( clk_, tx_done_, timeout ) )
                 return em::ERROR;

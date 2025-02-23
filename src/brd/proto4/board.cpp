@@ -3,13 +3,13 @@
 #include "../../core/drivers.hpp"
 #include "../../core/globals.hpp"
 #include "../../drv/adc_pooler_def.hpp"
+#include "../../drv/char_uart.hpp"
 #include "../../drv/clock.hpp"
 #include "../../drv/cobs_uart.hpp"
 #include "../../drv/dts_temp.hpp"
 #include "../../drv/flash_cfg.hpp"
 #include "../../drv/hbridge.hpp"
 #include "../../drv/leds.hpp"
-#include "../../drv/nl_uart.hpp"
 #include "../../drv/paged_i2c_eeprom.hpp"
 #include "../../drv/quad_encoder.hpp"
 #include "../../fw/load_persistent_config.hpp"
@@ -108,7 +108,7 @@ DMA_HandleTypeDef  GPDMA1_Ch2_HANDLE{};
 drv::cobs_uart DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, CLOCK, &UART2_HANDLE, &GPDMA1_Ch2_HANDLE };
 UART_HandleTypeDef UART1_HANDLE{};
 DMA_HandleTypeDef  GPDMA1_Ch1_HANDLE{};
-drv::nl_uart       COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, &GPDMA1_Ch1_HANDLE };
+drv::char_uart     COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, &GPDMA1_Ch1_HANDLE };
 TIM_HandleTypeDef  TIM1_HANDLE{};
 drv::hbridge       HBRIDGE{ &TIM1_HANDLE };
 DTS_HandleTypeDef  DTS_HANDLE{};

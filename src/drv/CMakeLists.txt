@@ -17,7 +17,7 @@ else()
             hbridge.cpp
             flash_cfg.cpp
             paged_i2c_eeprom.cpp
-            nl_uart.cpp
+            char_uart.cpp
     LIBS emlabcpp platform cmake_git_version_tracking
-    OPTS -Os)
+    OPTS -Og)
 endif()

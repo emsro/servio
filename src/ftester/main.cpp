@@ -119,8 +119,8 @@ struct joque_test
 }  // namespace servio::ftester
 
 int main( int argc, char* argv[] )
-
 {
+        spdlog::enable_backtrace( 32 );
         using namespace std::literals;
         using namespace servio;
 
