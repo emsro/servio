@@ -108,8 +108,7 @@ $(document).ready(function(){initNavTree('cobs__rx__container_8hpp_source.html',
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceemlabcpp.html">em</a> = <a class="code hl_namespace" href="namespaceemlabcpp.html">emlabcpp</a>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1bits.html">   10</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1drv_1_1bits.html">servio::drv::bits</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1drv_1_1bits.html">servio::drv::bits</a></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
@@ -121,7 +120,7 @@ $(document).ready(function(){initNavTree('cobs__rx__container_8hpp_source.html',
 </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4">   19</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4">on_rx_cplt_irq</a>( <a class="code hl_struct" href="structservio_1_1drv_1_1bits_1_1cobs__rx__container.html">cobs_rx_container</a>&amp; rx, std::byte inpt )</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4">   19</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1drv_1_1bits.html#a90dcc50c50424e715008c27ec4d87869">on_rx_cplt_irq</a>( <a class="code hl_struct" href="structservio_1_1drv_1_1bits_1_1cobs__rx__container.html">cobs_rx_container</a>&amp; rx, std::byte inpt )</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">if</span> ( inpt == std::byte{ 0 } ) {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1rx__buffer.html#ab87f2b63db801a6a2641e54893e46577">sizes</a>.push_back( rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1cobs__rx__container.html#a83f268c48b8dc33d9a7f4121b5e37261">received_size</a> - 1 );</div>
@@ -140,10 +139,9 @@ $(document).ready(function(){initNavTree('cobs__rx__container_8hpp_source.html',
 </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}  <span class="comment">// namespace servio::drv::bits</span></div>
-</div>
 <div class="ttc" id="anamespaceemlabcpp_html"><div class="ttname"><a href="namespaceemlabcpp.html">emlabcpp</a></div><div class="ttdef"><b>Definition</b> map.hpp:109</div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_1_1bits_html"><div class="ttname"><a href="namespaceservio_1_1drv_1_1bits.html">servio::drv::bits</a></div><div class="ttdef"><b>Definition</b> cobs_rx_container.hpp:11</div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_1_1bits_html_a74cf7569d05ba86cd733572599f74aa4"><div class="ttname"><a href="namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4">servio::drv::bits::on_rx_cplt_irq</a></div><div class="ttdeci">void on_rx_cplt_irq(cobs_rx_container &amp;rx, std::byte inpt)</div><div class="ttdef"><b>Definition</b> cobs_rx_container.hpp:19</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_1_1bits_html"><div class="ttname"><a href="namespaceservio_1_1drv_1_1bits.html">servio::drv::bits</a></div><div class="ttdef"><b>Definition</b> char_rx_container.hpp:7</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_1_1bits_html_a90dcc50c50424e715008c27ec4d87869"><div class="ttname"><a href="namespaceservio_1_1drv_1_1bits.html#a90dcc50c50424e715008c27ec4d87869">servio::drv::bits::on_rx_cplt_irq</a></div><div class="ttdeci">void on_rx_cplt_irq(char_rx_container&lt; C &gt; &amp;rx, std::byte inpt)</div><div class="ttdef"><b>Definition</b> char_rx_container.hpp:16</div></div>
 <div class="ttc" id="anamespaceservio_html_a61b877b22095a520cf71c2099e4888dc"><div class="ttname"><a href="namespaceservio.html#a61b877b22095a520cf71c2099e4888dc">servio::opt</a></div><div class="ttdeci">std::optional&lt; T &gt; opt</div><div class="ttdef"><b>Definition</b> base.hpp:15</div></div>
 <div class="ttc" id="arx__buffer_8hpp_html"><div class="ttname"><a href="rx__buffer_8hpp.html">rx_buffer.hpp</a></div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1bits_1_1cobs__rx__container_html"><div class="ttname"><a href="structservio_1_1drv_1_1bits_1_1cobs__rx__container.html">servio::drv::bits::cobs_rx_container</a></div><div class="ttdef"><b>Definition</b> cobs_rx_container.hpp:14</div></div>
@@ -158,7 +156,7 @@ $(document).ready(function(){initNavTree('cobs__rx__container_8hpp_source.html',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="dir_e7107a7cd49c6cff870a5eabc9e76a4a.html">bits</a></li><li class="navelem"><a class="el" href="cobs__rx__container_8hpp.html">cobs_rx_container.hpp</a></li>
-    <li class="footer">Generated on Sat Feb 22 2025 21:49:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Feb 23 2025 18:16:15 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

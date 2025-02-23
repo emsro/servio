@@ -54,8 +54,8 @@ var annotated_dup =
       ] ],
       [ "drv", "namespaceservio_1_1drv.html", [
         [ "bits", "namespaceservio_1_1drv_1_1bits.html", [
+          [ "char_rx_container", "structservio_1_1drv_1_1bits_1_1char__rx__container.html", "structservio_1_1drv_1_1bits_1_1char__rx__container" ],
           [ "cobs_rx_container", "structservio_1_1drv_1_1bits_1_1cobs__rx__container.html", "structservio_1_1drv_1_1bits_1_1cobs__rx__container" ],
-          [ "nl_rx_container", "structservio_1_1drv_1_1bits_1_1nl__rx__container.html", "structservio_1_1drv_1_1bits_1_1nl__rx__container" ],
           [ "rx_buffer", "structservio_1_1drv_1_1bits_1_1rx__buffer.html", "structservio_1_1drv_1_1bits_1_1rx__buffer" ]
         ] ],
         [ "mock", "namespaceservio_1_1drv_1_1mock.html", [
@@ -90,6 +90,7 @@ var annotated_dup =
         [ "adc_pooler_position", "structservio_1_1drv_1_1adc__pooler__position.html", "structservio_1_1drv_1_1adc__pooler__position" ],
         [ "adc_pooler_temperature", "structservio_1_1drv_1_1adc__pooler__temperature.html", "structservio_1_1drv_1_1adc__pooler__temperature" ],
         [ "adc_pooler_vcc", "structservio_1_1drv_1_1adc__pooler__vcc.html", "structservio_1_1drv_1_1adc__pooler__vcc" ],
+        [ "char_uart", "structservio_1_1drv_1_1char__uart.html", "structservio_1_1drv_1_1char__uart" ],
         [ "clk_iface", "structservio_1_1drv_1_1clk__iface.html", "structservio_1_1drv_1_1clk__iface" ],
         [ "clock", "classservio_1_1drv_1_1clock.html", "classservio_1_1drv_1_1clock" ],
         [ "cobs_uart", "structservio_1_1drv_1_1cobs__uart.html", "structservio_1_1drv_1_1cobs__uart" ],
@@ -111,7 +112,6 @@ var annotated_dup =
         [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ],
         [ "leds_iface", "structservio_1_1drv_1_1leds__iface.html", "structservio_1_1drv_1_1leds__iface" ],
         [ "motor_info_iface", "structservio_1_1drv_1_1motor__info__iface.html", "structservio_1_1drv_1_1motor__info__iface" ],
-        [ "nl_uart", "structservio_1_1drv_1_1nl__uart.html", "structservio_1_1drv_1_1nl__uart" ],
         [ "period_cb", "structservio_1_1drv_1_1period__cb.html", "structservio_1_1drv_1_1period__cb" ],
         [ "period_cb_iface", "structservio_1_1drv_1_1period__cb__iface.html", "structservio_1_1drv_1_1period__cb__iface" ],
         [ "period_iface", "structservio_1_1drv_1_1period__iface.html", "structservio_1_1drv_1_1period__iface" ],

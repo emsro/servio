@@ -37,8 +37,8 @@ var hierarchy =
     [ "servio::drv::tests::cobs_uart_err_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html", null ],
     [ "servio::drv::tests::cobs_uart_rx_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html", null ],
     [ "servio::drv::com_iface", "structservio_1_1drv_1_1com__iface.html", [
-      [ "servio::drv::cobs_uart", "structservio_1_1drv_1_1cobs__uart.html", null ],
-      [ "servio::drv::nl_uart", "structservio_1_1drv_1_1nl__uart.html", null ]
+      [ "servio::drv::char_uart", "structservio_1_1drv_1_1char__uart.html", null ],
+      [ "servio::drv::cobs_uart", "structservio_1_1drv_1_1cobs__uart.html", null ]
     ] ],
     [ "servio::drv::com_res", "structservio_1_1drv_1_1com__res.html", null ],
     [ "servio::drv::tests::comms_echo_test", "structservio_1_1drv_1_1tests_1_1comms__echo__test.html", null ],
@@ -185,8 +185,9 @@ var hierarchy =
     [ "servio::ftester::recorder", "classservio_1_1ftester_1_1recorder.html", null ],
     [ "servio::iface::resp", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1resp", null ],
     [ "servio::drv::bits::rx_buffer", "structservio_1_1drv_1_1bits_1_1rx__buffer.html", [
-      [ "servio::drv::bits::cobs_rx_container", "structservio_1_1drv_1_1bits_1_1cobs__rx__container.html", null ],
-      [ "servio::drv::bits::nl_rx_container", "structservio_1_1drv_1_1bits_1_1nl__rx__container.html", null ]
+      [ "servio::drv::bits::char_rx_container< '\\0' >", "structservio_1_1drv_1_1bits_1_1char__rx__container.html", null ],
+      [ "servio::drv::bits::char_rx_container< C >", "structservio_1_1drv_1_1bits_1_1char__rx__container.html", null ],
+      [ "servio::drv::bits::cobs_rx_container", "structservio_1_1drv_1_1bits_1_1cobs__rx__container.html", null ]
     ] ],
     [ "servio::sntr::sentry", "classservio_1_1sntr_1_1sentry.html", null ],
     [ "servio::ftest::intg::sign_test", "structservio_1_1ftest_1_1intg_1_1sign__test.html", null ],

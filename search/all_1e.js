@@ -66,7 +66,7 @@ var searchData=
   ['try_5fi2c_5fgpio_5ftoggle_63',['try_i2c_gpio_toggle',['../namespaceservio_1_1brd.html#a668bf87da871835d142af405a83420e9',1,'servio::brd']]],
   ['tuple_5fcoawait_64',['tuple_coawait',['../namespaceservio_1_1scmdio.html#a25eabf1f2e7b29b0098fbf63cbb7466f',1,'servio::scmdio']]],
   ['tx_65',['tx',['../namespaceservio_1_1plt.html#a9dd4647ad22e65f5bed71ae108f45679',1,'servio::plt::uart_cfg']]],
-  ['tx_5fcplt_5firq_66',['tx_cplt_irq',['../structservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb',1,'servio::drv::cobs_uart::tx_cplt_irq()'],['../structservio_1_1drv_1_1nl__uart.html#a6174d0cf092bc1dfa2c4785573a1d365',1,'servio::drv::nl_uart::tx_cplt_irq()']]],
+  ['tx_5fcplt_5firq_66',['tx_cplt_irq',['../structservio_1_1drv_1_1char__uart.html#a4e5d99e72f02c6bc94dbd77d981f2627',1,'servio::drv::char_uart::tx_cplt_irq()'],['../structservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb',1,'servio::drv::cobs_uart::tx_cplt_irq()']]],
   ['tx_5fdma_67',['tx_dma',['../namespaceservio_1_1plt.html#a58ea661027d27b37be80791fb5f64068',1,'servio::plt::uart_cfg']]],
   ['type_68',['type',['../structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4.html#a257c987a6fd01c76a0e41d0194b57dc5',1,'servio::iface::key_filter&lt; K, vari::typelist&lt; F, Fs... &gt; &gt;::type'],['../namespaceservio_1_1iface.html#a3675d882024884424fb61a2ce871e181',1,'servio::iface::field_tuple&lt; vari::typelist&lt; Ts... &gt; &gt;::type']]],
   ['types_69',['types',['../structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html#a53b394d9df1428dbff6e8bf7c72964a8',1,'servio::iface::field_traits&lt; vari::typelist&lt; Field... &gt; &gt;']]]

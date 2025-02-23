@@ -26,7 +26,7 @@ var namespaceservio_1_1brd =
     [ "CENTRAL_SENTRY", "namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43", null ],
     [ "CFG", "namespaceservio_1_1brd.html#a081ab2c39471f1a64575875b86b24f9b", null ],
     [ "CLOCK", "namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca", null ],
-    [ "COMMS", "namespaceservio_1_1brd.html#a6a9b306486bf3305ae24c053879746c3", null ],
+    [ "COMMS", "namespaceservio_1_1brd.html#a547f64614abb964e99e80d7a6bde741b", null ],
     [ "DEBUG_COMMS", "namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5", null ],
     [ "DEGRADED_RECORDS", "namespaceservio_1_1brd.html#a65286cd4958053ab65432f7dc945def0", null ],
     [ "DTS_DRV", "namespaceservio_1_1brd.html#a6f72e0496d5ab998f9c9f5860478271a", null ],

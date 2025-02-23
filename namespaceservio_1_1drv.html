@@ -129,6 +129,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1adc__pooler__vcc.html">adc_pooler_vcc</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1char__uart.html">char_uart</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1drv_1_1clock.html">clock</a></td></tr>
@@ -170,8 +172,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1leds__iface.html">leds_iface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1motor__info__iface.html">motor_info_iface</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1nl__uart.html">nl_uart</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1period__cb.html">period_cb</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,13 +247,6 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:abbf0ab1dcfca79ccba89674e773fa2af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81601f09a11f735318be2f9fff6c0bef" id="r_a81601f09a11f735318be2f9fff6c0bef"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0bef">cobs_error_codes</a> { <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0befaf5f7f7950a88404a4bd10072631d85bb">COBS_HAL_ERROR_IRQ_ERR</a> = 0x3
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0befa81cfae8ee9b2ff6ffc3950754d2f5dea">COBS_HAL_RX_START_ERR</a> = 0x4
-<br />
- }</td></tr>
-<tr class="separator:a81601f09a11f735318be2f9fff6c0bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cce3df4ac7f4050e4b0c02208b51128" id="r_a0cce3df4ac7f4050e4b0c02208b51128"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a0cce3df4ac7f4050e4b0c02208b51128">nl_error_codes</a> { <br />
 &#160;&#160;<a class="el" href="namespaceservio_1_1drv.html#a0cce3df4ac7f4050e4b0c02208b51128a57d5ca509fdc17d87a5cd7299609b5e6">NL_HAL_ERROR_IRQ_ERR</a> = 0x1
 , <br />
@@ -261,6 +254,13 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a0cce3df4ac7f4050e4b0c02208b51128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81601f09a11f735318be2f9fff6c0bef" id="r_a81601f09a11f735318be2f9fff6c0bef"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0bef">cobs_error_codes</a> { <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0befaf5f7f7950a88404a4bd10072631d85bb">COBS_HAL_ERROR_IRQ_ERR</a> = 0x3
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1drv.html#a81601f09a11f735318be2f9fff6c0befa81cfae8ee9b2ff6ffc3950754d2f5dea">COBS_HAL_RX_START_ERR</a> = 0x4
+<br />
+ }</td></tr>
+<tr class="separator:a81601f09a11f735318be2f9fff6c0bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -716,7 +716,7 @@ template&lt;typename Callable &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv_1_1bits.html#a5d70b0c1c418dd446c10d13da1ad0fdd">servio::drv::bits::load_message()</a>, <a class="el" href="namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4">servio::drv::bits::on_rx_cplt_irq()</a>, and <a class="el" href="structservio_1_1drv_1_1bits_1_1rx__buffer.html#ab87f2b63db801a6a2641e54893e46577">servio::drv::bits::rx_buffer::sizes</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv_1_1bits.html#a5d70b0c1c418dd446c10d13da1ad0fdd">servio::drv::bits::load_message()</a>, <a class="el" href="namespaceservio_1_1drv_1_1bits.html#a90dcc50c50424e715008c27ec4d87869">servio::drv::bits::on_rx_cplt_irq()</a>, and <a class="el" href="structservio_1_1drv_1_1bits_1_1rx__buffer.html#ab87f2b63db801a6a2641e54893e46577">servio::drv::bits::rx_buffer::sizes</a>.</p>
 
 </div>
 </div>
@@ -897,7 +897,7 @@ template&lt;typename Callable &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li>
-    <li class="footer">Generated on Sat Feb 22 2025 21:49:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Feb 23 2025 18:16:15 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

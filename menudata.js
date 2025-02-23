@@ -175,7 +175,6 @@ var menudata={children:[
 {text:"j",url:"functions_func_j.html#index_j"},
 {text:"l",url:"functions_func_l.html#index_l"},
 {text:"m",url:"functions_func_m.html#index_m"},
-{text:"n",url:"functions_func_n.html#index_n"},
 {text:"o",url:"functions_func_o.html#index_o"},
 {text:"p",url:"functions_func_p.html#index_p"},
 {text:"q",url:"functions_func_q.html#index_q"},

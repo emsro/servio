@@ -28,7 +28,7 @@ var searchData=
   ['entire_20set_20is_20always_20stored_25',['REQ6.5.1 Entire set is always stored',['../config.html#autotoc_md44',1,'']]],
   ['er_5firq_26',['er_irq',['../namespaceservio_1_1plt.html#a4e5f98c021570301d866fec45d7f2e82',1,'servio::plt::i2c_cfg']]],
   ['er_5firq_5fpriority_27',['er_irq_priority',['../namespaceservio_1_1plt.html#a3971ff606bfc50cda5277b1c26a7cd16',1,'servio::plt::i2c_cfg']]],
-  ['err_5firq_28',['err_irq',['../structservio_1_1drv_1_1nl__uart.html#a01e6fb9f133c0b36f8640fd3b849a35b',1,'servio::drv::nl_uart::err_irq()'],['../structservio_1_1drv_1_1cobs__uart.html#a1712f7ee5425ac6e5c1b12a209ffbbf1',1,'servio::drv::cobs_uart::err_irq()']]],
+  ['err_5firq_28',['err_irq',['../structservio_1_1drv_1_1cobs__uart.html#a1712f7ee5425ac6e5c1b12a209ffbbf1',1,'servio::drv::cobs_uart::err_irq()'],['../structservio_1_1drv_1_1char__uart.html#abd6cedba4c3c5adcc759615ced5b631b',1,'servio::drv::char_uart::err_irq()']]],
   ['ev_5firq_29',['ev_irq',['../namespaceservio_1_1plt.html#a179604cc2da4e956bcca6581da703d25',1,'servio::plt::i2c_cfg']]],
   ['ev_5firq_5fpriority_30',['ev_irq_priority',['../namespaceservio_1_1plt.html#a4497f1c55e145fa95db4e05a96bd0145',1,'servio::plt::i2c_cfg']]],
   ['exact_20communication_20interface_20is_20property_20of_20board_31',['REQ4.6 Exact communication interface is property of board',['../comms.html#autotoc_md27',1,'']]],

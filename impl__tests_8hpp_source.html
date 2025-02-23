@@ -165,92 +165,91 @@ $(document).ready(function(){initNavTree('impl__tests_8hpp_source.html',''); ini
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>(</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    std::get&lt; 0 &gt;( central.<a class="code hl_variable" href="structservio_1_1sntr_1_1test__central__sentry.html#a2ea27ced060ca8e4fa55774ef488ed8c">buffer</a>[0] ) == <a class="code hl_enumvalue" href="structservio_1_1sntr_1_1test__central__sentry.html#a2cfd3bbd7f0ccf8d76ce765e2257c3a9aee91f6a7d67e52b6c94bf8a5fa22becf">sntr::test_central_sentry::DEGR</a> );</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                handle.ErrorCode = <a class="code hl_variable" href="namespaceservio_1_1drv_1_1bits.html#ab49ae58ef86d106445fed671bc9b6f9b">bits::uart_common_tolerable_hal_errors</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                handle.ErrorCode = ~bits::uart_common_tolerable_hal_errors;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                uart.err_irq( &amp;handle );</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( central.<a class="code hl_variable" href="structservio_1_1sntr_1_1test__central__sentry.html#a2ea27ced060ca8e4fa55774ef488ed8c">buffer</a>.size() == 2 );</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( central.<a class="code hl_function" href="structservio_1_1sntr_1_1test__central__sentry.html#afed4728d002e6ee7fa32fe74329f7268">is_inoperable</a>() );</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>(</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                    std::get&lt; 0 &gt;( central.<a class="code hl_variable" href="structservio_1_1sntr_1_1test__central__sentry.html#a2ea27ced060ca8e4fa55774ef488ed8c">buffer</a>[1] ) == <a class="code hl_enumvalue" href="structservio_1_1sntr_1_1test__central__sentry.html#a2cfd3bbd7f0ccf8d76ce765e2257c3a9af7773e8aae5bde11f20ac50d88c23387">sntr::test_central_sentry::INOP</a> );</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keyword">co_return</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( central.<a class="code hl_function" href="structservio_1_1sntr_1_1test__central__sentry.html#afed4728d002e6ee7fa32fe74329f7268">is_inoperable</a>() );</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>(</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                    std::get&lt; 0 &gt;( central.<a class="code hl_variable" href="structservio_1_1sntr_1_1test__central__sentry.html#a2ea27ced060ca8e4fa55774ef488ed8c">buffer</a>[1] ) == <a class="code hl_enumvalue" href="structservio_1_1sntr_1_1test__central__sentry.html#a2cfd3bbd7f0ccf8d76ce765e2257c3a9af7773e8aae5bde11f20ac50d88c23387">sntr::test_central_sentry::INOP</a> );</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                <span class="keyword">co_return</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
 </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html">   72</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html">hbridge_test</a></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#ad21850d078b28e3c780ac3fca11b4266">   74</a></span>        std::string_view <a class="code hl_variable" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#ad21850d078b28e3c780ac3fca11b4266">name</a> = <span class="stringliteral">&quot;hbridge_test&quot;</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#a5271dfd93b4412d31a762af5dcd441ad">   76</a></span>        t::coroutine&lt; void &gt; <a class="code hl_function" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#a5271dfd93b4412d31a762af5dcd441ad">run</a>( <span class="keyword">auto</span>&amp;, <a class="code hl_struct" href="structservio_1_1ftest_1_1uctx.html">ftest::uctx</a>&amp; ctx )</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <a class="code hl_class" href="classservio_1_1drv_1_1hbridge.html">hbridge</a> hb{ <span class="keyword">nullptr</span> };</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( hb.setup( 1, 2 ) == <span class="keyword">nullptr</span> );</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="comment">// this sets behavior for scenario when tim == nullptr</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                hb.set_power( <a class="code hl_struct" href="structservio_1_1pwr.html">pwr</a>{ -1 } );</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( hb.get_direction() == 1 );</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                <span class="keyword">auto</span> d = <a class="code hl_function" href="namespaceservio_1_1drv.html#a5e3395c31d8cff501ff1b9241e107d9c">retain_callback</a>( hb );</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                std::size_t counter = 0;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                <a class="code hl_struct" href="structservio_1_1drv_1_1period__cb.html">period_cb</a>   pcb{ [&amp;] {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                        counter += 1;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                } };</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                hb.set_period_callback( pcb );</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( &amp;hb.get_period_callback() == &amp;pcb );</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( counter == 0 );</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                hb.timer_period_irq( <span class="keyword">nullptr</span> );</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( counter == 1 );</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( hb.start() == em::ERROR );</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( hb.stop() == em::ERROR );</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="};">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html">   71</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html">hbridge_test</a></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#ad21850d078b28e3c780ac3fca11b4266">   73</a></span>        std::string_view <a class="code hl_variable" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#ad21850d078b28e3c780ac3fca11b4266">name</a> = <span class="stringliteral">&quot;hbridge_test&quot;</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#a5271dfd93b4412d31a762af5dcd441ad">   75</a></span>        t::coroutine&lt; void &gt; <a class="code hl_function" href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#a5271dfd93b4412d31a762af5dcd441ad">run</a>( <span class="keyword">auto</span>&amp;, <a class="code hl_struct" href="structservio_1_1ftest_1_1uctx.html">ftest::uctx</a>&amp; ctx )</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <a class="code hl_class" href="classservio_1_1drv_1_1hbridge.html">hbridge</a> hb{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( hb.setup( 1, 2 ) == <span class="keyword">nullptr</span> );</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="comment">// this sets behavior for scenario when tim == nullptr</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                hb.set_power( <a class="code hl_struct" href="structservio_1_1pwr.html">pwr</a>{ -1 } );</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( hb.get_direction() == 1 );</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="keyword">auto</span> d = <a class="code hl_function" href="namespaceservio_1_1drv.html#a5e3395c31d8cff501ff1b9241e107d9c">retain_callback</a>( hb );</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                std::size_t counter = 0;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <a class="code hl_struct" href="structservio_1_1drv_1_1period__cb.html">period_cb</a>   pcb{ [&amp;] {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                        counter += 1;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                } };</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                hb.set_period_callback( pcb );</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( &amp;hb.get_period_callback() == &amp;pcb );</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( counter == 0 );</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                hb.timer_period_irq( <span class="keyword">nullptr</span> );</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( counter == 1 );</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( hb.start() == em::ERROR );</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( hb.stop() == em::ERROR );</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
 </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
 </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">// TODO: write this!</span></div>
-<div class="foldopen" id="foldopen00104" data-start="{" data-end="};">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1tests.html">  104</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test">leds_test</a></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>};</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">// TODO: write this!</span></div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="};">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1tests.html">  103</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test">leds_test</a></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
 </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">// also skipped, mindfuck</span></div>
-<div class="foldopen" id="foldopen00109" data-start="{" data-end="};">
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1tests.html">  109</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test">adc_pooler_test</a></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">// also skipped, mindfuck</span></div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="};">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1tests.html">  108</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test">adc_pooler_test</a></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>};</div>
 </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1tests.html#a32bd21a70e0ed0409959b659339181b1">  113</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1drv_1_1tests.html#a32bd21a70e0ed0409959b659339181b1">setup_impl_tests</a>(</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    em::pmr::memory_resource&amp; mem,</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    t::reactor&amp;               reac,</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_struct" href="structservio_1_1ftest_1_1uctx.html">ftest::uctx</a>&amp;              ctx,</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_struct" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a>&amp;                clk,</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    em::result&amp;               res )</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        ftest::setup_utest&lt; cobs_uart_rx_test &gt;( mem, reac, ctx, res, clk );</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        ftest::setup_utest&lt; cobs_uart_err_test &gt;( mem, reac, ctx, res, clk );</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        ftest::setup_utest&lt; hbridge_test &gt;( mem, reac, ctx, res );</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1tests.html#a32bd21a70e0ed0409959b659339181b1">  112</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1drv_1_1tests.html#a32bd21a70e0ed0409959b659339181b1">setup_impl_tests</a>(</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    em::pmr::memory_resource&amp; mem,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    t::reactor&amp;               reac,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_struct" href="structservio_1_1ftest_1_1uctx.html">ftest::uctx</a>&amp;              ctx,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_struct" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a>&amp;                clk,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    em::result&amp;               res )</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>{</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        ftest::setup_utest&lt; cobs_uart_rx_test &gt;( mem, reac, ctx, res, clk );</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        ftest::setup_utest&lt; cobs_uart_err_test &gt;( mem, reac, ctx, res, clk );</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        ftest::setup_utest&lt; hbridge_test &gt;( mem, reac, ctx, res );</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
 </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}  <span class="comment">// namespace servio::drv::tests</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}  <span class="comment">// namespace servio::drv::tests</span></div>
 </div>
 <div class="ttc" id="aclassservio_1_1drv_1_1hbridge_html"><div class="ttname"><a href="classservio_1_1drv_1_1hbridge.html">servio::drv::hbridge</a></div><div class="ttdef"><b>Definition</b> hbridge.hpp:20</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_1_1bits_html_ab49ae58ef86d106445fed671bc9b6f9b"><div class="ttname"><a href="namespaceservio_1_1drv_1_1bits.html#ab49ae58ef86d106445fed671bc9b6f9b">servio::drv::bits::uart_common_tolerable_hal_errors</a></div><div class="ttdeci">static constexpr uint32_t uart_common_tolerable_hal_errors</div><div class="ttdef"><b>Definition</b> uart.hpp:14</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_1_1tests_html"><div class="ttname"><a href="namespaceservio_1_1drv_1_1tests.html">servio::drv::tests</a></div><div class="ttdef"><b>Definition</b> impl_tests.hpp:15</div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_1_1tests_html_a32bd21a70e0ed0409959b659339181b1"><div class="ttname"><a href="namespaceservio_1_1drv_1_1tests.html#a32bd21a70e0ed0409959b659339181b1">servio::drv::tests::setup_impl_tests</a></div><div class="ttdeci">void setup_impl_tests(em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, ftest::uctx &amp;ctx, clk_iface &amp;clk, em::result &amp;res)</div><div class="ttdef"><b>Definition</b> impl_tests.hpp:113</div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_1_1tests_html_structservio_1_1drv_1_1tests_1_1adc__pooler__test"><div class="ttname"><a href="namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test">servio::drv::tests::adc_pooler_test</a></div><div class="ttdef"><b>Definition</b> impl_tests.hpp:110</div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_1_1tests_html_structservio_1_1drv_1_1tests_1_1leds__test"><div class="ttname"><a href="namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test">servio::drv::tests::leds_test</a></div><div class="ttdef"><b>Definition</b> impl_tests.hpp:105</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_1_1tests_html_a32bd21a70e0ed0409959b659339181b1"><div class="ttname"><a href="namespaceservio_1_1drv_1_1tests.html#a32bd21a70e0ed0409959b659339181b1">servio::drv::tests::setup_impl_tests</a></div><div class="ttdeci">void setup_impl_tests(em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, ftest::uctx &amp;ctx, clk_iface &amp;clk, em::result &amp;res)</div><div class="ttdef"><b>Definition</b> impl_tests.hpp:112</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_1_1tests_html_structservio_1_1drv_1_1tests_1_1adc__pooler__test"><div class="ttname"><a href="namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test">servio::drv::tests::adc_pooler_test</a></div><div class="ttdef"><b>Definition</b> impl_tests.hpp:109</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_1_1tests_html_structservio_1_1drv_1_1tests_1_1leds__test"><div class="ttname"><a href="namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test">servio::drv::tests::leds_test</a></div><div class="ttdef"><b>Definition</b> impl_tests.hpp:104</div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html_a5e3395c31d8cff501ff1b9241e107d9c"><div class="ttname"><a href="namespaceservio_1_1drv.html#a5e3395c31d8cff501ff1b9241e107d9c">servio::drv::retain_callback</a></div><div class="ttdeci">auto retain_callback(period_iface &amp;period)</div><div class="ttdef"><b>Definition</b> retainers.hpp:12</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1clk__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1clk__iface.html">servio::drv::clk_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:73</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1cobs__uart_html"><div class="ttname"><a href="structservio_1_1drv_1_1cobs__uart.html">servio::drv::cobs_uart</a></div><div class="ttdef"><b>Definition</b> cobs_uart.hpp:24</div></div>
@@ -263,9 +262,9 @@ $(document).ready(function(){initNavTree('impl__tests_8hpp_source.html',''); ini
 <div class="ttc" id="astructservio_1_1drv_1_1tests_1_1cobs__uart__rx__test_html_a2e579d70114b150acfdc68f33b33944e"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html#a2e579d70114b150acfdc68f33b33944e">servio::drv::tests::cobs_uart_rx_test::name</a></div><div class="ttdeci">std::string_view name</div><div class="ttdef"><b>Definition</b> impl_tests.hpp:23</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1tests_1_1cobs__uart__rx__test_html_a3c84f221211ac82d1adb481cf23cdf12"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html#a3c84f221211ac82d1adb481cf23cdf12">servio::drv::tests::cobs_uart_rx_test::clk</a></div><div class="ttdeci">clk_iface &amp; clk</div><div class="ttdef"><b>Definition</b> impl_tests.hpp:21</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1tests_1_1cobs__uart__rx__test_html_a707cec6c473cbdbb6e20b917323063cd"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html#a707cec6c473cbdbb6e20b917323063cd">servio::drv::tests::cobs_uart_rx_test::run</a></div><div class="ttdeci">t::coroutine&lt; void &gt; run(auto &amp;, ftest::uctx &amp;ctx)</div><div class="ttdef"><b>Definition</b> impl_tests.hpp:25</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1hbridge__test_html"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1hbridge__test.html">servio::drv::tests::hbridge_test</a></div><div class="ttdef"><b>Definition</b> impl_tests.hpp:73</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1hbridge__test_html_a5271dfd93b4412d31a762af5dcd441ad"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#a5271dfd93b4412d31a762af5dcd441ad">servio::drv::tests::hbridge_test::run</a></div><div class="ttdeci">t::coroutine&lt; void &gt; run(auto &amp;, ftest::uctx &amp;ctx)</div><div class="ttdef"><b>Definition</b> impl_tests.hpp:76</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1hbridge__test_html_ad21850d078b28e3c780ac3fca11b4266"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#ad21850d078b28e3c780ac3fca11b4266">servio::drv::tests::hbridge_test::name</a></div><div class="ttdeci">std::string_view name</div><div class="ttdef"><b>Definition</b> impl_tests.hpp:74</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1hbridge__test_html"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1hbridge__test.html">servio::drv::tests::hbridge_test</a></div><div class="ttdef"><b>Definition</b> impl_tests.hpp:72</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1hbridge__test_html_a5271dfd93b4412d31a762af5dcd441ad"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#a5271dfd93b4412d31a762af5dcd441ad">servio::drv::tests::hbridge_test::run</a></div><div class="ttdeci">t::coroutine&lt; void &gt; run(auto &amp;, ftest::uctx &amp;ctx)</div><div class="ttdef"><b>Definition</b> impl_tests.hpp:75</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1tests_1_1hbridge__test_html_ad21850d078b28e3c780ac3fca11b4266"><div class="ttname"><a href="structservio_1_1drv_1_1tests_1_1hbridge__test.html#ad21850d078b28e3c780ac3fca11b4266">servio::drv::tests::hbridge_test::name</a></div><div class="ttdeci">std::string_view name</div><div class="ttdef"><b>Definition</b> impl_tests.hpp:73</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1uctx_html"><div class="ttname"><a href="structservio_1_1ftest_1_1uctx.html">servio::ftest::uctx</a></div><div class="ttdef"><b>Definition</b> utest.hpp:20</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1uctx_html_a4ce9a11aea4141ca78dfe38c7b548180"><div class="ttname"><a href="structservio_1_1ftest_1_1uctx.html#a4ce9a11aea4141ca78dfe38c7b548180">servio::ftest::uctx::coll</a></div><div class="ttdeci">t::collector &amp; coll</div><div class="ttdef"><b>Definition</b> utest.hpp:21</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1uctx_html_aa900f345307f9a52bdc5d4a135ab35e6"><div class="ttname"><a href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">servio::ftest::uctx::expect</a></div><div class="ttdeci">auto expect(bool expr, std::source_location sl=std::source_location::current())</div><div class="ttdef"><b>Definition</b> utest.hpp:34</div></div>
@@ -281,7 +280,7 @@ $(document).ready(function(){initNavTree('impl__tests_8hpp_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="dir_26e34818c745abafa34d6ef482a48aa2.html">tests</a></li><li class="navelem"><a class="el" href="impl__tests_8hpp.html">impl_tests.hpp</a></li>
-    <li class="footer">Generated on Sat Feb 22 2025 21:49:57 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Feb 23 2025 18:16:15 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

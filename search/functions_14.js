@@ -19,5 +19,5 @@ var searchData=
   ['timer_5fperiod_5firq_16',['timer_period_irq',['../classservio_1_1drv_1_1clock.html#a4c73be0f0f7c1973f0022b3ed10dd9e8',1,'servio::drv::clock::timer_period_irq()'],['../classservio_1_1drv_1_1hbridge.html#aba898e36f0927115d4f26073d9de3937',1,'servio::drv::hbridge::timer_period_irq()']]],
   ['try_5fi2c_5fgpio_5ftoggle_17',['try_i2c_gpio_toggle',['../namespaceservio_1_1brd.html#a668bf87da871835d142af405a83420e9',1,'servio::brd']]],
   ['tuple_5fcoawait_18',['tuple_coawait',['../namespaceservio_1_1scmdio.html#a25eabf1f2e7b29b0098fbf63cbb7466f',1,'servio::scmdio']]],
-  ['tx_5fcplt_5firq_19',['tx_cplt_irq',['../structservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb',1,'servio::drv::cobs_uart::tx_cplt_irq()'],['../structservio_1_1drv_1_1nl__uart.html#a6174d0cf092bc1dfa2c4785573a1d365',1,'servio::drv::nl_uart::tx_cplt_irq()']]]
+  ['tx_5fcplt_5firq_19',['tx_cplt_irq',['../structservio_1_1drv_1_1char__uart.html#a4e5d99e72f02c6bc94dbd77d981f2627',1,'servio::drv::char_uart::tx_cplt_irq()'],['../structservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb',1,'servio::drv::cobs_uart::tx_cplt_irq()']]]
 ];
