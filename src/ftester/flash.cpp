@@ -1,7 +1,7 @@
 #include "./flash.hpp"
 
-#include <emlabcpp/experimental/logging.h>
 #include <joque/process.hpp>
+#include <spdlog/spdlog.h>
 #include <thread>
 
 namespace servio::ftester
@@ -72,8 +72,9 @@ void flash_firmware_openocd(
 
         int const res = std::system( ss.str().data() );
         if ( res != 0 ) {
-                EMLABCPP_INFO_LOG( "Executing: ", ss.str() );
-                EMLABCPP_ERROR_LOG( "Flashing failed, error code: ", res );
+                spdlog::dump_backtrace();
+                spdlog::info( "Executed: {}", ss.str() );
+                spdlog::error( "Flashing failed, error code: {}", res );
                 std::abort();
         }
 

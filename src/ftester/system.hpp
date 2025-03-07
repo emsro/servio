@@ -5,7 +5,6 @@
 #include "./recorder.hpp"
 
 #include <emlabcpp/convert_view.h>
-#include <emlabcpp/experimental/logging/eabi_logger.h>
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/controller.h>
 #include <emlabcpp/experimental/testing/json.h>

@@ -23,7 +23,7 @@ void field_option( CLI::App* app, std::string& field )
         app->add_option( "field", field, "Field name" );
 }
 
-void cobs_port_callback( CLI::App* app, io_context& io_ctx, auto& ctx_ptr, auto f )
+void port_callback( CLI::App* app, io_context& io_ctx, auto& ctx_ptr, auto f )
 {
         app->callback( [&io_ctx, ctx_ptr, f = std::move( f )] {
                 co_spawn( io_ctx, f( ctx_ptr->port.get( io_ctx ) ), detached );
@@ -36,7 +36,7 @@ struct cfg_ctx
         std::string           field;
         std::string           value;
         std::filesystem::path path;
-        cobs_cli              port;
+        char_cli              port;
 };
 
 void cfg_def( CLI::App& app, io_context& io_ctx )
@@ -49,14 +49,14 @@ void cfg_def( CLI::App& app, io_context& io_ctx )
 
         auto* query = cfg->add_subcommand( "query", "list all config options from the servo" );
         json_flag( query, ctx->json );
-        cobs_port_callback( query, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+        port_callback( query, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
                 return cfg_query_cmd( p, ctx->json );
         } );
 
         auto* get = cfg->add_subcommand( "get", "retrivies a configuration option from the servo" );
         field_option( get, ctx->field );
         json_flag( get, ctx->json );
-        cobs_port_callback( get, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+        port_callback( get, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
                 return cfg_get_cmd( p, ctx->field, ctx->json );
         } );
 
@@ -64,30 +64,30 @@ void cfg_def( CLI::App& app, io_context& io_ctx )
             cfg->add_subcommand( "set", "sets a configuration option to value in the servo" );
         field_option( set, ctx->field );
         set->add_option( "value", ctx->value, "Value to set" );
-        cobs_port_callback( set, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+        port_callback( set, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
                 return cfg_set_cmd( p, ctx->field, ctx->value );
         } );
 
         auto* commit = cfg->add_subcommand(
             "commit", "stores the current configuration of servo in its persistent memory" );
-        cobs_port_callback( commit, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+        port_callback( commit, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
                 return cfg_commit_cmd( p );
         } );
 
         auto* clear = cfg->add_subcommand( "clear", "clear latest store config from the servo" );
-        cobs_port_callback( clear, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+        port_callback( clear, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
                 return cfg_clear_cmd( p );
         } );
 
         auto* load = cfg->add_subcommand( "load", "load config from a file" );
         load->add_option( "path", ctx->path, "Path to a file" );
-        cobs_port_callback( load, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) {
+        port_callback( load, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
                 return cfg_load_cmd( p, ctx->path );
         } );
 }
 
 awaitable< void >
-pool_cmd( io_context&, sptr< cobs_port > port, std::vector< iface::prop_key > props )
+pool_cmd( io_context&, sptr< char_port > port, std::vector< iface::prop_key > props )
 {
 
         while ( true ) {
@@ -103,7 +103,7 @@ pool_cmd( io_context&, sptr< cobs_port > port, std::vector< iface::prop_key > pr
 }
 
 awaitable< void >
-pool_cmd( io_context& context, sptr< cobs_port > port, std::vector< std::string > properties )
+pool_cmd( io_context& context, sptr< char_port > port, std::vector< std::string > properties )
 {
         if ( properties.empty() ) {
                 std::cout << "got an empty property list, not pooling" << std::endl;
@@ -125,7 +125,7 @@ pool_cmd( io_context& context, sptr< cobs_port > port, std::vector< std::string 
 struct pool_opts
 {
         std::vector< std::string > data;
-        cobs_cli                   port;
+        char_cli                   port;
 };
 
 void pool_def( CLI::App& app, io_context& io_ctx )
@@ -135,7 +135,7 @@ void pool_def( CLI::App& app, io_context& io_ctx )
         auto* pool = app.add_subcommand( "pool", "pool the servo for properties" );
         port_opts( *pool, ctx->port );
         pool->add_option( "properties", ctx->data, "properties to pool" );
-        cobs_port_callback( pool, io_ctx, ctx, [&io_ctx, ctx]( sptr< cobs_port > p ) {
+        port_callback( pool, io_ctx, ctx, [&io_ctx, ctx]( sptr< char_port > p ) {
                 return pool_cmd( io_ctx, p, ctx->data );
         } );
 }
@@ -146,7 +146,7 @@ struct mode_opts
         float    current;
         float    angle;
         float    velocity;
-        cobs_cli port;
+        char_cli port;
 };
 
 void mode_def( CLI::App& app, io_context& io_ctx )
@@ -159,38 +159,38 @@ void mode_def( CLI::App& app, io_context& io_ctx )
         using R = awaitable< void >;
 
         auto* disengaged = mode->add_subcommand( "disengaged", "disengaged mode" );
-        cobs_port_callback( disengaged, io_ctx, ctx, []( sptr< cobs_port > p ) -> R {
+        port_callback( disengaged, io_ctx, ctx, []( sptr< char_port > p ) -> R {
                 co_await set_mode_disengaged( *p );
         } );
 
         auto* pow = mode->add_subcommand( "power", "power mode" );
         pow->add_option( "power", ctx->power, "power" );
-        cobs_port_callback( disengaged, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) -> R {
+        port_callback( disengaged, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
                 co_await set_mode_power( *p, ctx->power );
         } );
 
         auto* current = mode->add_subcommand( "current", "current mode" );
         current->add_option( "current", ctx->current, "goal current" );
-        cobs_port_callback( current, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) -> R {
+        port_callback( current, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
                 co_await set_mode_current( *p, ctx->current );
         } );
 
         auto* position = mode->add_subcommand( "position", "position mode" );
         position->add_option( "angle", ctx->angle, "goal angle" );
-        cobs_port_callback( position, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) -> R {
+        port_callback( position, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
                 co_await set_mode_position( *p, ctx->angle );
         } );
 
         auto* velocity = mode->add_subcommand( "velocity", "velocity mode" );
         velocity->add_option( "velocity", ctx->velocity, "goal velocity" );
-        cobs_port_callback( velocity, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) -> R {
+        port_callback( velocity, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
                 co_await set_mode_velocity( *p, ctx->velocity );
         } );
 }
 
 struct autotune_ctx
 {
-        cobs_cli port;
+        char_cli port;
 };
 
 void autotune_def( CLI::App& app, io_context& io_ctx )
@@ -202,7 +202,7 @@ void autotune_def( CLI::App& app, io_context& io_ctx )
         port_opts( *autotune, ctx->port );
 
         auto* curr = autotune->add_subcommand( "current", "tune current PID" );
-        cobs_port_callback( curr, io_ctx, ctx, [ctx]( sptr< cobs_port > p ) -> awaitable< void > {
+        port_callback( curr, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> awaitable< void > {
                 co_await pid_autotune_current( *p, 0.5F );
         } );
 }

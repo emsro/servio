@@ -2,7 +2,6 @@
 #include "../scmdio/serial.hpp"
 #include "bb_test_case.hpp"
 
-#include <emlabcpp/experimental/logging.h>
 #include <filesystem>
 #include <gtest/gtest.h>
 

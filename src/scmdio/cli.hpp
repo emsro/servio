@@ -22,7 +22,7 @@ CLI::Option* powerless_flag( CLI::App& app, bool& is_powerless );
 struct port_cli
 {
         std::filesystem::path device   = "/dev/ttyUSB0";
-        unsigned              baudrate = 460800;
+        unsigned              baudrate = 230400;
 };
 
 struct cobs_cli : port_cli
@@ -49,6 +49,19 @@ struct serial_cli : port_cli
 
 private:
         sptr< serial_stream > prt = nullptr;
+};
+
+struct char_cli : port_cli
+{
+        sptr< char_port > get( io_context& ctx )
+        {
+                if ( !prt )
+                        prt = std::make_shared< char_port >( ctx, device, baudrate );
+                return prt;
+        }
+
+private:
+        sptr< char_port > prt = nullptr;
 };
 
 void port_opts( CLI::App& app, port_cli& cli );

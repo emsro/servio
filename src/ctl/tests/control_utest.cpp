@@ -1,8 +1,6 @@
 #include "../../sim/motor.hpp"
 #include "../control.hpp"
 
-#include <emlabcpp/experimental/logging.h>
-#include <emlabcpp/experimental/logging/util.h>
 #include <emlabcpp/range.h>
 #include <gtest/gtest.h>
 
@@ -61,9 +59,6 @@ public:
                 ctl->position_irq( now, motor->position() );
                 ctl->velocity_irq( now, motor->velocity );
                 ctl->current_irq( now, motor->current );
-
-                EMLABCPP_INFO_LOG_VARS(
-                    *power, motor->position(), motor->velocity, ctl->get_desired_current() );
         }
 
         microseconds             now = 0_ms;

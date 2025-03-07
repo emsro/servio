@@ -1,6 +1,5 @@
 #include "../metrics.hpp"
 
-#include <emlabcpp/experimental/logging/util.h>
 #include <gtest/gtest.h>
 #include <random>
 
@@ -32,7 +31,6 @@ TEST( Metrics, base )
                 if ( t < 200_ms )  // we kinda ignore first 200ms
                         continue;
 
-                EMLABCPP_INFO_LOG_VARS( met.get_position(), angle, t );
                 EXPECT_NEAR( met.get_position(), angle, 0.01 )
                     << "t: " << static_cast< double >( t.count() ) / 1000.0 << ", "
                     << "i: " << i;

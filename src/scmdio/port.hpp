@@ -42,10 +42,17 @@ inline void flush_port( boost::asio::serial_port& p )
                 spdlog::error( "Failed to flush serial buffer" );
 }
 
+inline std::filesystem::path const& check_path( std::filesystem::path const& p )
+{
+        if ( !std::filesystem::exists( p ) )
+                throw std::runtime_error( "Path " + p.string() + " does not exist" );
+        return p;
+}
+
 struct serial_stream : stream_iface
 {
         serial_stream( io_context& io_ctx, std::filesystem::path const& p, uint32_t baudrate )
-          : port( io_ctx, p )
+          : port( io_ctx, check_path( p ) )
         {
                 port.set_option( boost::asio::serial_port_base::baud_rate( baudrate ) );
                 flush_port( port );
@@ -69,16 +76,28 @@ struct port_iface
 };
 
 struct cobs_port : port_iface
-{
 
-        static std::filesystem::path const& check_path( std::filesystem::path const& p )
+{
+        cobs_port( io_context& context, std::filesystem::path const& p, uint32_t baudrate )
+          : port( context, check_path( p ) )
         {
-                if ( !std::filesystem::exists( p ) )
-                        throw std::runtime_error( "Path " + p.string() + " does not exist" );
-                return p;
+                port.set_option( boost::asio::serial_port_base::baud_rate( baudrate ) );
+                flush_port( port );
         }
 
-        cobs_port( io_context& context, std::filesystem::path const& p, uint32_t baudrate )
+        boost::asio::serial_port port;
+        std::vector< std::byte > read_buffer;
+
+        awaitable< void > write_msg( std::span< std::byte const > msg ) override;
+
+        awaitable< std::span< std::byte > > read_msg( std::span< std::byte > buffer ) override;
+};
+
+struct char_port : port_iface
+{
+        static constexpr char ch = '\0';
+
+        char_port( io_context& context, std::filesystem::path const& p, uint32_t baudrate )
           : port( context, check_path( p ) )
         {
                 port.set_option( boost::asio::serial_port_base::baud_rate( baudrate ) );

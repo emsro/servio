@@ -55,13 +55,15 @@ awaitable< void > cobs_port::write_msg( std::span< std::byte const > msg )
             port, boost::asio::buffer( ser_msg.begin(), ser_msg.size() ), use_awaitable );
 }
 
-awaitable< std::span< std::byte > > cobs_port::read_msg( std::span< std::byte > buffer )
+namespace
 {
-        auto                   iter = std::ranges::find( read_buffer, std::byte{ 0 } );
+awaitable< std::span< std::byte > > _pool_buffer( auto& port, auto& read_buffer, std::byte delim )
+{
+        auto                   iter = std::ranges::find( read_buffer, delim );
         std::span< std::byte > dview;
         if ( iter != read_buffer.end() ) {
                 dview = em::view_n(
-                    read_buffer.data(), std::distance( read_buffer.begin(), iter ) + 1 );
+                    read_buffer.data(), std::distance( read_buffer.begin(), iter ) + 1u );
         } else {
                 std::vector< std::byte > expand;
                 std::size_t              n = co_await async_read_until(
@@ -72,14 +74,37 @@ awaitable< std::span< std::byte > > cobs_port::read_msg( std::span< std::byte > 
         }
 
         spdlog::debug( "reading: ", dview );
+        co_return dview;
+}
+}  // namespace
+
+awaitable< std::span< std::byte > > cobs_port::read_msg( std::span< std::byte > buffer )
+{
+        std::span< std::byte > dview = co_await _pool_buffer( port, read_buffer, std::byte{ 0 } );
 
         auto [rsucc, deser_msg] = em::decode_cobs( dview, buffer );
 
-        read_buffer.erase( read_buffer.begin(), read_buffer.begin() + dview.size() );
+        read_buffer.erase( read_buffer.begin(), read_buffer.begin() + (long) dview.size() );
         if ( !rsucc )
                 log_error( "Failed to parse cobs: ", dview );
 
         co_return deser_msg;
+}
+
+awaitable< void > char_port::write_msg( std::span< std::byte const > msg )
+{
+        spdlog::debug( "writing: {}", msg );
+        if ( msg.back() != std::byte{ ch } )
+                log_error( "Message does not end with expected char" );
+
+        co_await async_write( port, boost::asio::buffer( msg ), use_awaitable );
+}
+
+awaitable< std::span< std::byte > > char_port::read_msg( std::span< std::byte > buffer )
+{
+        std::span< std::byte > dview = co_await _pool_buffer( port, read_buffer, std::byte{ ch } );
+
+        co_return dview;
 }
 
 }  // namespace servio::scmdio

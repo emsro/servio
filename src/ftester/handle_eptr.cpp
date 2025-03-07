@@ -1,10 +1,11 @@
 #include "./handle_eptr.hpp"
 
-#include <emlabcpp/experimental/logging.h>
+#include <spdlog/spdlog.h>
 
 namespace servio::ftester
 {
 
+// XXX: this might not be the greatest idea ever
 void handle_eptr( std::exception_ptr eptr )
 {
         try {
@@ -12,10 +13,12 @@ void handle_eptr( std::exception_ptr eptr )
                         std::rethrow_exception( eptr );
         }
         catch ( std::exception const& e ) {
-                EMLABCPP_ERROR_LOG( "Caught exception: '", e.what(), "'\n" );
+                spdlog::dump_backtrace();
+                spdlog::error( "Caught an exception: {}", e.what() );
         }
         catch ( ... ) {
-                EMLABCPP_ERROR_LOG( "Caught an unknown exception\n" );
+                spdlog::dump_backtrace();
+                spdlog::error( "Caught an unknown exception" );
         }
 }
 }  // namespace servio::ftester
