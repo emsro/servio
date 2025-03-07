@@ -1,7 +1,7 @@
 var searchData=
 [
   ['generate_5fconfig_0',['generate_config',['../namespaceservio_1_1plt.html#a0cdc7abf3d852902f1b08758212aed5e',1,'servio::plt']]],
-  ['get_1',['get',['../structservio_1_1core_1_1avg__filter.html#ada1197c5ca3274a977a804e57927e859',1,'servio::core::avg_filter::get()'],['../structservio_1_1scmdio_1_1cobs__cli.html#a1d2ef62a40e7c4070c442d4a266e86f8',1,'servio::scmdio::cobs_cli::get()'],['../structservio_1_1scmdio_1_1serial__cli.html#a59ff25b0b47c7334742d5c696db49599',1,'servio::scmdio::serial_cli::get()'],['../structservio_1_1cfg_1_1dispatcher.html#a81861596f4dcf8041f89558563629a78',1,'servio::cfg::dispatcher::get()']]],
+  ['get_1',['get',['../structservio_1_1core_1_1avg__filter.html#ada1197c5ca3274a977a804e57927e859',1,'servio::core::avg_filter::get()'],['../structservio_1_1scmdio_1_1cobs__cli.html#a1d2ef62a40e7c4070c442d4a266e86f8',1,'servio::scmdio::cobs_cli::get()'],['../structservio_1_1scmdio_1_1serial__cli.html#a59ff25b0b47c7334742d5c696db49599',1,'servio::scmdio::serial_cli::get()'],['../structservio_1_1scmdio_1_1char__cli.html#ae785aed991a0e1ce5a66e06d1c3604c9',1,'servio::scmdio::char_cli::get()'],['../structservio_1_1cfg_1_1dispatcher.html#a81861596f4dcf8041f89558563629a78',1,'servio::cfg::dispatcher::get()']]],
   ['get_5fbuffer_2',['get_buffer',['../classservio_1_1ftester_1_1recorder.html#aabb71c5624fd566672b623c9744c4c2e',1,'servio::ftester::recorder']]],
   ['get_5fchannel_3',['get_channel',['../classservio_1_1ftester_1_1recorder.html#a3b4bbfc40421b8f03ffcb4f07b6dd7dc',1,'servio::ftester::recorder']]],
   ['get_5fcollected_4',['get_collected',['../structservio_1_1ftester_1_1test__system.html#a6210fb84ed2ee6984b8ea6c3b2e7c674',1,'servio::ftester::test_system']]],

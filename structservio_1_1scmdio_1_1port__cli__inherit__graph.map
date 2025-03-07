@@ -1,7 +1,9 @@
 <map id="servio::scmdio::port_cli" name="servio::scmdio::port_cli">
-<area shape="rect" id="Node000001" title=" " alt="" coords="109,5,282,31"/>
-<area shape="rect" id="Node000002" href="$structservio_1_1scmdio_1_1cobs__cli.html" title=" " alt="" coords="5,79,183,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,41,112,81,109,76,166,36"/>
-<area shape="rect" id="Node000003" href="$structservio_1_1scmdio_1_1serial__cli.html" title=" " alt="" coords="207,79,389,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,36,283,76,280,81,222,41"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="206,5,379,31"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1scmdio_1_1char__cli.html" title=" " alt="" coords="5,79,180,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,38,126,81,124,76,247,33"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1scmdio_1_1cobs__cli.html" title=" " alt="" coords="204,79,381,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="295,44,295,79,290,79,290,44"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1scmdio_1_1serial__cli.html" title=" " alt="" coords="405,79,588,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="339,33,465,76,463,81,337,38"/>
 </map>

@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('scmdio_2cli_8hpp_source.html',''); ini
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1port__cli.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1scmdio_1_1port__cli.html">port_cli</a></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1port__cli.html#a8fcf1ca36deff02969a4228a84440c8d">   24</a></span>        std::filesystem::path <a class="code hl_variable" href="structservio_1_1scmdio_1_1port__cli.html#a8fcf1ca36deff02969a4228a84440c8d">device</a>   = <span class="stringliteral">&quot;/dev/ttyUSB0&quot;</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1port__cli.html#a4a2efd02e1b37f1db4a402c47cfc768c">   25</a></span>        <span class="keywordtype">unsigned</span>              <a class="code hl_variable" href="structservio_1_1scmdio_1_1port__cli.html#a4a2efd02e1b37f1db4a402c47cfc768c">baudrate</a> = 460800;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1port__cli.html#a4a2efd02e1b37f1db4a402c47cfc768c">   25</a></span>        <span class="keywordtype">unsigned</span>              <a class="code hl_variable" href="structservio_1_1scmdio_1_1port__cli.html#a4a2efd02e1b37f1db4a402c47cfc768c">baudrate</a> = 230400;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
 </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
@@ -162,9 +162,26 @@ $(document).ready(function(){initNavTree('scmdio_2cli_8hpp_source.html',''); ini
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
 </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1scmdio.html#ae3a3dd4bf0754ea235ae81a1b52ce0c2">port_opts</a>( CLI::App&amp; app, port_cli&amp; cli );</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}  <span class="comment">// namespace servio::scmdio</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1char__cli.html">   54</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1scmdio_1_1char__cli.html">char_cli</a> : <a class="code hl_struct" href="structservio_1_1scmdio_1_1port__cli.html">port_cli</a></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1char__cli.html#ae785aed991a0e1ce5a66e06d1c3604c9">   56</a></span>        <a class="code hl_typedef" href="namespaceservio_1_1scmdio.html#a662f29442a014cdbe007bc12f0d52fe8">sptr&lt; char_port &gt;</a> <a class="code hl_function" href="structservio_1_1scmdio_1_1char__cli.html#ae785aed991a0e1ce5a66e06d1c3604c9">get</a>( io_context&amp; ctx )</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="keywordflow">if</span> ( !prt )</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                        prt = std::make_shared&lt; char_port &gt;( ctx, <a class="code hl_variable" href="structservio_1_1scmdio_1_1port__cli.html#a8fcf1ca36deff02969a4228a84440c8d">device</a>, <a class="code hl_variable" href="structservio_1_1scmdio_1_1port__cli.html#a4a2efd02e1b37f1db4a402c47cfc768c">baudrate</a> );</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                <span class="keywordflow">return</span> prt;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_typedef" href="namespaceservio_1_1scmdio.html#a662f29442a014cdbe007bc12f0d52fe8">sptr&lt; char_port &gt;</a> prt = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1scmdio.html#ae3a3dd4bf0754ea235ae81a1b52ce0c2">port_opts</a>( CLI::App&amp; app, port_cli&amp; cli );</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}  <span class="comment">// namespace servio::scmdio</span></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html"><div class="ttname"><a href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div><div class="ttdef"><b>Definition</b> base.hpp:14</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_a0f5027194b08215b948567a9932bcdbc"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc">servio::scmdio::powerless_flag</a></div><div class="ttdeci">CLI::Option * powerless_flag(CLI::App &amp;app, bool &amp;is_powerless)</div><div class="ttdef"><b>Definition</b> cli.cpp:36</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_a6286d1246b1168d8fa9bd1b651b3752e"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a6286d1246b1168d8fa9bd1b651b3752e">servio::scmdio::baudrate_opt</a></div><div class="ttdeci">CLI::Option * baudrate_opt(CLI::App &amp;app, unsigned &amp;baudrate)</div><div class="ttdef"><b>Definition</b> cli.cpp:30</div></div>
@@ -174,6 +191,8 @@ $(document).ready(function(){initNavTree('scmdio_2cli_8hpp_source.html',''); ini
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_adfe9fb5c444c1aa557dab6b76f5f9f91"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#adfe9fb5c444c1aa557dab6b76f5f9f91">servio::scmdio::verbose_opt</a></div><div class="ttdeci">CLI::Option * verbose_opt(CLI::App &amp;app, opt&lt; bool &gt; &amp;val)</div><div class="ttdef"><b>Definition</b> cli.cpp:7</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_ae3a3dd4bf0754ea235ae81a1b52ce0c2"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#ae3a3dd4bf0754ea235ae81a1b52ce0c2">servio::scmdio::port_opts</a></div><div class="ttdeci">void port_opts(CLI::App &amp;app, port_cli &amp;cli)</div><div class="ttdef"><b>Definition</b> cli.cpp:44</div></div>
 <div class="ttc" id="aport_8hpp_html"><div class="ttname"><a href="port_8hpp.html">port.hpp</a></div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1char__cli_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1char__cli.html">servio::scmdio::char_cli</a></div><div class="ttdef"><b>Definition</b> cli.hpp:55</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1char__cli_html_ae785aed991a0e1ce5a66e06d1c3604c9"><div class="ttname"><a href="structservio_1_1scmdio_1_1char__cli.html#ae785aed991a0e1ce5a66e06d1c3604c9">servio::scmdio::char_cli::get</a></div><div class="ttdeci">sptr&lt; char_port &gt; get(io_context &amp;ctx)</div><div class="ttdef"><b>Definition</b> cli.hpp:56</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1cobs__cli_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__cli.html">servio::scmdio::cobs_cli</a></div><div class="ttdef"><b>Definition</b> cli.hpp:29</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1cobs__cli_html_a1d2ef62a40e7c4070c442d4a266e86f8"><div class="ttname"><a href="structservio_1_1scmdio_1_1cobs__cli.html#a1d2ef62a40e7c4070c442d4a266e86f8">servio::scmdio::cobs_cli::get</a></div><div class="ttdeci">sptr&lt; cobs_port &gt; get(io_context &amp;ctx)</div><div class="ttdef"><b>Definition</b> cli.hpp:30</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1port__cli_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1port__cli.html">servio::scmdio::port_cli</a></div><div class="ttdef"><b>Definition</b> cli.hpp:23</div></div>
@@ -187,7 +206,7 @@ $(document).ready(function(){initNavTree('scmdio_2cli_8hpp_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="scmdio_2cli_8hpp.html">cli.hpp</a></li>
-    <li class="footer">Generated on Sun Feb 23 2025 18:47:21 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Mar 7 2025 20:02:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

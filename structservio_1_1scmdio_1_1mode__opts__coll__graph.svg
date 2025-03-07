@@ -20,9 +20,9 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="structservio_1_1scmdio_1_1cobs__cli.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="140.5,-85 7.5,-85 7.5,-66 140.5,-66 140.5,-85"/>
-<text text-anchor="middle" x="74" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">servio::scmdio::cobs_cli</text>
+<g id="a_Node000002"><a xlink:href="structservio_1_1scmdio_1_1char__cli.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="139.5,-85 8.5,-85 8.5,-66 139.5,-66 139.5,-85"/>
+<text text-anchor="middle" x="74" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">servio::scmdio::char_cli</text>
 </a>
 </g>
 </g>

@@ -161,10 +161,12 @@ var hierarchy =
     [ "servio::drv::pin_cfg", "namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg", null ],
     [ "servio::scmdio::pool_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1pool__opts", null ],
     [ "servio::scmdio::port_cli", "structservio_1_1scmdio_1_1port__cli.html", [
+      [ "servio::scmdio::char_cli", "structservio_1_1scmdio_1_1char__cli.html", null ],
       [ "servio::scmdio::cobs_cli", "structservio_1_1scmdio_1_1cobs__cli.html", null ],
       [ "servio::scmdio::serial_cli", "structservio_1_1scmdio_1_1serial__cli.html", null ]
     ] ],
     [ "servio::scmdio::port_iface", "structservio_1_1scmdio_1_1port__iface.html", [
+      [ "servio::scmdio::char_port", "structservio_1_1scmdio_1_1char__port.html", null ],
       [ "servio::scmdio::cobs_port", "structservio_1_1scmdio_1_1cobs__port.html", null ],
       [ "servio::scmdio::port_mock", "structservio_1_1scmdio_1_1port__mock.html", null ]
     ] ],

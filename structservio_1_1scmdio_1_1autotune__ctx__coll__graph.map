@@ -1,6 +1,6 @@
 <map id="servio::scmdio::autotune_ctx" name="servio::scmdio::autotune_ctx">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,168,216,193"/>
-<area shape="rect" id="Node000002" href="$structservio_1_1scmdio_1_1cobs__cli.html" title=" " alt="" coords="22,80,199,105"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1scmdio_1_1char__cli.html" title=" " alt="" coords="23,80,198,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,119,113,167,108,167,108,119"/>
 <area shape="rect" id="Node000003" href="$structservio_1_1scmdio_1_1port__cli.html" title=" " alt="" coords="24,5,197,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,45,113,80,108,80,108,45"/>

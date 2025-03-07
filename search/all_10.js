@@ -29,7 +29,7 @@ var searchData=
   ['flash_5fcmd_26',['flash_cmd',['../namespaceservio_1_1ftester.html#a66e80e3cf060cfb06b123b129f110c4e',1,'servio::ftester::config']]],
   ['flash_5fcommands_27',['flash_commands',['../namespaceservio_1_1ftester.html#ae5942d435f2a598719463c390a64dde5',1,'servio::ftester']]],
   ['flash_5ffirmware_5fopenocd_28',['flash_firmware_openocd',['../namespaceservio_1_1ftester.html#a62b686ad2b66859c1accbb7678069d60',1,'servio::ftester']]],
-  ['flash_5fstorage_29',['flash_storage',['../structservio_1_1drv_1_1flash__storage.html#a35af08b51c145f25bbd2ca0909d32aa3',1,'servio::drv::flash_storage::flash_storage()'],['../namespaceservio_1_1brd.html#a5b2edc3596fd260a33fb0ad364801d91',1,'servio::brd::FLASH_STORAGE'],['../structservio_1_1drv_1_1flash__storage.html',1,'servio::drv::flash_storage']]],
+  ['flash_5fstorage_29',['flash_storage',['../namespaceservio_1_1brd.html#a5b2edc3596fd260a33fb0ad364801d91',1,'servio::brd::FLASH_STORAGE'],['../structservio_1_1drv_1_1flash__storage.html#a35af08b51c145f25bbd2ca0909d32aa3',1,'servio::drv::flash_storage::flash_storage()'],['../structservio_1_1drv_1_1flash__storage.html',1,'servio::drv::flash_storage']]],
   ['flashing_30',['Flashing',['../index.html#autotoc_md4',1,'']]],
   ['flush_5fport_31',['flush_port',['../namespaceservio_1_1scmdio.html#aa6760a0dd8290696504efea1a2cf3287',1,'servio::scmdio']]],
   ['fmt_2ehpp_32',['fmt.hpp',['../fmt_8hpp.html',1,'']]],

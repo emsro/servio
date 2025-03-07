@@ -2,7 +2,7 @@ var searchData=
 [
   ['b_0',['B',['../namespaceservio_1_1paging.html#ad02986094bea92f872032787c0472b71',1,'servio::paging']]],
   ['base_2eh_1',['base.h',['../base_8h.html',1,'']]],
-  ['base_2ehpp_2',['base.hpp',['../sntr_2base_8hpp.html',1,'(Global Namespace)'],['../scmdio_2base_8hpp.html',1,'(Global Namespace)'],['../ftester_2base_8hpp.html',1,'(Global Namespace)'],['../ftest_2bench_2base_8hpp.html',1,'(Global Namespace)'],['../base_8hpp.html',1,'(Global Namespace)']]],
+  ['base_2ehpp_2',['base.hpp',['../scmdio_2base_8hpp.html',1,'(Global Namespace)'],['../sntr_2base_8hpp.html',1,'(Global Namespace)'],['../ftester_2base_8hpp.html',1,'(Global Namespace)'],['../ftest_2bench_2base_8hpp.html',1,'(Global Namespace)'],['../base_8hpp.html',1,'(Global Namespace)']]],
   ['baudrate_3',['baudrate',['../namespaceservio_1_1plt.html#a4a2f721279aeff0baecd4f733fd18e37',1,'servio::plt::uart_cfg::baudrate'],['../structservio_1_1scmdio_1_1port__cli.html#a4a2efd02e1b37f1db4a402c47cfc768c',1,'servio::scmdio::port_cli::baudrate']]],
   ['baudrate_5fopt_4',['baudrate_opt',['../namespaceservio_1_1scmdio.html#a6286d1246b1168d8fa9bd1b651b3752e',1,'servio::scmdio']]],
   ['bb_5ftest_5fcase_5',['bb_test_case',['../structservio_1_1bb_1_1bb__test__case.html',1,'servio::bb::bb_test_case'],['../structservio_1_1bb_1_1bb__test__case.html#a053e7d170ad5e723685fef5d153d5009',1,'servio::bb::bb_test_case::bb_test_case()']]],

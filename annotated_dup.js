@@ -207,6 +207,8 @@ var annotated_dup =
         [ "autotune_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1autotune__ctx_dup" ],
         [ "bflash_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1bflash__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1bflash__ctx_dup" ],
         [ "cfg_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1cfg__ctx_dup" ],
+        [ "char_cli", "structservio_1_1scmdio_1_1char__cli.html", "structservio_1_1scmdio_1_1char__cli" ],
+        [ "char_port", "structservio_1_1scmdio_1_1char__port.html", "structservio_1_1scmdio_1_1char__port" ],
         [ "cobs_cli", "structservio_1_1scmdio_1_1cobs__cli.html", "structservio_1_1scmdio_1_1cobs__cli" ],
         [ "cobs_port", "structservio_1_1scmdio_1_1cobs__port.html", "structservio_1_1scmdio_1_1cobs__port" ],
         [ "consumer", "structservio_1_1scmdio_1_1consumer.html", "structservio_1_1scmdio_1_1consumer" ],

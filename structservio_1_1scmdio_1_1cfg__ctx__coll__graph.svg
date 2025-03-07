@@ -12,8 +12,8 @@
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="179.5,-19 50.5,-19 50.5,0 179.5,0 179.5,-19"/>
-<text text-anchor="middle" x="115" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">servio::scmdio::cfg_ctx</text>
+<polygon fill="#999999" stroke="#666666" points="178.5,-19 49.5,-19 49.5,0 178.5,0 178.5,-19"/>
+<text text-anchor="middle" x="114" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">servio::scmdio::cfg_ctx</text>
 </a>
 </g>
 </g>
@@ -30,8 +30,8 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node2&#45;&gt;Node1</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M69.97,-68.73C81.9,-53.3 99.12,-31.04 108.42,-19"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="67,-66.84 63.65,-76.9 72.54,-71.13 67,-66.84"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M69.75,-68.73C81.47,-53.3 98.39,-31.04 107.54,-19"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="66.8,-66.82 63.54,-76.9 72.38,-71.05 66.8,-66.82"/>
 </a>
 </g>
 <text text-anchor="middle" x="107" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> field</text>
@@ -59,9 +59,9 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="structservio_1_1scmdio_1_1cobs__cli.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="249.5,-96 116.5,-96 116.5,-77 249.5,-77 249.5,-96"/>
-<text text-anchor="middle" x="183" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">servio::scmdio::cobs_cli</text>
+<g id="a_Node000004"><a xlink:href="structservio_1_1scmdio_1_1char__cli.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="247.5,-96 116.5,-96 116.5,-77 247.5,-77 247.5,-96"/>
+<text text-anchor="middle" x="182" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">servio::scmdio::char_cli</text>
 </a>
 </g>
 </g>
@@ -69,11 +69,11 @@
 <g id="edge3_Node000001_Node000004" class="edge">
 <title>Node4&#45;&gt;Node1</title>
 <g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M168.19,-69.16C154.18,-53.72 133.73,-31.15 122.71,-19"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="165.89,-71.84 175.2,-76.9 171.08,-67.14 165.89,-71.84"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M167.19,-69.16C153.18,-53.72 132.73,-31.15 121.71,-19"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="164.89,-71.84 174.2,-76.9 170.08,-67.14 164.89,-71.84"/>
 </a>
 </g>
-<text text-anchor="middle" x="169.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> port</text>
+<text text-anchor="middle" x="168.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> port</text>
 </g>
 <!-- Node5 -->
 <g id="Node000005" class="node">
@@ -88,8 +88,8 @@
 <g id="edge4_Node000004_Node000005" class="edge">
 <title>Node5&#45;&gt;Node4</title>
 <g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M185.74,-128.32C185.02,-117.5 184.14,-104.4 183.57,-96.01"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="182.26,-128.73 186.43,-138.48 189.25,-128.26 182.26,-128.73"/>
+<path fill="none" stroke="#63b8ff" d="M185.43,-128.32C184.52,-117.5 183.42,-104.4 182.72,-96.01"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="181.96,-128.8 186.28,-138.48 188.93,-128.22 181.96,-128.8"/>
 </a>
 </g>
 </g>
