@@ -9,7 +9,11 @@ CLI::Option* verbose_opt( CLI::App& app, opt< bool >& val )
         return app.add_flag( "-v,--verbose", val, "verbosity" )
             ->envname( "SERVIO_VERBOSE" )
             ->each( []( std::string const& ) {
-                    em::DEBUG_LOGGER.set_option( em::set_stdout( true ) );
+                    auto l = spdlog::get_level();
+                    if ( l == spdlog::level::info )
+                            spdlog::set_level( spdlog::level::debug );
+                    else if ( l == spdlog::level::debug )
+                            spdlog::set_level( spdlog::level::trace );
             } );
 }
 

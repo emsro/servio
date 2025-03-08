@@ -19,6 +19,8 @@ enum nl_error_codes
 // XXX: screaming duplication with cobs uart
 struct char_uart final : public com_iface
 {
+        static constexpr char delim = '\0';
+
         char_uart(
             char const*                 id,
             sntr::central_sentry_iface& central,
@@ -74,7 +76,7 @@ private:
 
         std::byte rx_byte_;
         // XXX: the char might be templated
-        bits::char_rx_container< '\0' > rx_;
+        bits::char_rx_container< delim > rx_;
 };
 
 inline char_uart::char_uart(

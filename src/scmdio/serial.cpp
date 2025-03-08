@@ -15,7 +15,7 @@ using namespace avakar::literals;
 
 awaitable< void > write( port_iface& port, std::string_view payload )
 {
-        EMLABCPP_DEBUG_LOG( "Sending: ", payload );
+        spdlog::debug( "sending: {}", payload );
 
         co_await port.write_msg(
             em::view_n( reinterpret_cast< std::byte const* >( payload.data() ), payload.size() ) );
@@ -28,7 +28,7 @@ awaitable< std::string > read( port_iface& port )
         em::view< std::byte* >               deser_msg = co_await port.read_msg( reply_buffer );
 
         std::string res{ reinterpret_cast< char* >( deser_msg.begin() ), deser_msg.size() };
-        EMLABCPP_DEBUG_LOG( "Got: ", res );
+        spdlog::debug( "got: {}", res );
         co_return res;
 }
 
@@ -41,19 +41,27 @@ awaitable< nlohmann::json > exchg( port_iface& port, std::string const& msg )
         if ( !jr.is_array() || jr.size() < 1 )
                 log_error(
                     "Expected message with at least one field in array: {} input: {}", reply, msg );
+        if ( jr[0] != "OK" )
+                log_error( "Expected OK message, got: {}", jr.dump() );
+        spdlog::debug( "json reply: {}", jr.dump() );
         co_return jr;
 }
 
 awaitable< vari::vval< iface::cfg_vals > > get_config_field( port_iface& port, iface::cfg_key cfg )
 {
+        spdlog::debug( "querying config field: {}", cfg.to_string() );
+
         std::string msg = std::format( "cfg get {}", cfg.to_string() );
 
         nlohmann::json reply = co_await exchg( port, msg );
         if ( reply.size() != 2 )
                 log_error( "Expected message with one extra field, instead got: ", reply );
 
+        spdlog::debug( "got value for {}: {}", cfg.to_string(), reply.at( 1 ) );
+
         auto res = kval_ser< iface::cfg_vals >::from_json( cfg.to_string(), reply.at( 1 ) );
         assert( res );
+        spdlog::debug( "parsed value" );
         co_return std::move( res ).vval();
 }
 

@@ -59,7 +59,7 @@ cfg::map get_default_config()
 cfg::context CFG{ .map = get_default_config() };
 
 std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at( 1 ) };
-drv::flash_storage                      FLASH_STORAGE{ PERSISTENT_BLOCKS };
+drv::flash_storage                      FLASH_STORAGE{ PERSISTENT_BLOCKS, +[]() {}, +[]() {} };
 
 TIM_HandleTypeDef TIM2_HANDLE = {};
 drv::clock        CLOCK{ TIM2_HANDLE };

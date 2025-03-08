@@ -31,7 +31,6 @@ struct servio_exception : std::runtime_error
 template < typename... Args >
 [[noreturn]] inline void log_error( auto const& fmt, Args&&... args )
 {
-        spdlog::dump_backtrace();
         spdlog::error( fmt, (Args&&) args... );
         throw servio_exception{ "Critical error occured" };
 }

@@ -11,8 +11,13 @@ namespace servio::drv
 
 struct flash_storage : public storage_iface
 {
-        flash_storage( std::span< em::view< std::byte* >, 2 > pages )
+        flash_storage(
+            std::span< em::view< std::byte* >, 2 > pages,
+            em::function_view< void() >            start_cb,
+            em::function_view< void() >            stop_cb )
           : _pages( pages )
+          , _start_cb( start_cb )
+          , _stop_cb( stop_cb )
         {
         }
 
@@ -22,6 +27,8 @@ struct flash_storage : public storage_iface
 
 private:
         std::span< em::view< std::byte* > > _pages;
+        em::function_view< void() >         _start_cb;
+        em::function_view< void() >         _stop_cb;
 };
 
 }  // namespace servio::drv

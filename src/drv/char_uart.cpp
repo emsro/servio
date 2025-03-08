@@ -15,6 +15,9 @@ em::result char_uart::send( send_data_t data, microseconds timeout )
                                 return em::ERROR;
                         tx_buffer_[count++] = b;
                 }
+        if ( count == tx_buffer_.size() )
+                return em::ERROR;
+        tx_buffer_[count++] = std::byte{ delim };
 
         tx_done_ = false;
 

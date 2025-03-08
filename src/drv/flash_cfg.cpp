@@ -69,12 +69,14 @@ em::result flash_storage::store_page( std::span< std::byte const > data )
         std::byte const* start      = page->begin();
         auto             start_addr = std::bit_cast< uint32_t >( start );
 
+        _stop_cb();
         if ( HAL_ICACHE_Disable() != HAL_OK )
                 fw::stop_exec();
         if ( HAL_FLASH_Unlock() != HAL_OK )
                 fw::stop_exec();
 
-        em::defer const d = [] {
+        em::defer const d = [&] {
+                _start_cb();
                 if ( HAL_ICACHE_Enable() != HAL_OK )
                         fw::stop_exec();
                 if ( HAL_FLASH_Lock() != HAL_OK )

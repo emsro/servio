@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../scmdio/base.hpp"
 #include "../scmdio/port.hpp"
 #include "./handle_eptr.hpp"
 #include "./recorder.hpp"
@@ -18,10 +19,6 @@ namespace servio::ftester
 {
 
 using namespace std::chrono_literals;
-
-inline em::eabi_logger COM_LOGGER{
-    { em::set_stdout{ false }, em::set_stderr{ false }, em::DEBUG_LOGGER_COLORS } };
-#define COM_LOG( chann, ... ) EMLABCPP_EABI_LOG_IMPL( COM_LOGGER, "com", chann, __VA_ARGS__ )
 
 template < typename T >
 using sptr = std::shared_ptr< T >;
@@ -108,7 +105,7 @@ struct test_system
                 while ( is_initializing() ) {
                         tick();
                         if ( system_failure_ ) {
-                                EMLABCPP_ERROR_LOG( "Failed to initialize" );
+                                spdlog::error( "Failed to initialize" );
                                 return false;
                         }
                 }
@@ -162,7 +159,7 @@ private:
 
         em::result send( em::protocol::channel_type channel, auto const& data )
         {
-                COM_LOG( channel, "w: ", data );
+                spdlog::debug( "Channel {} write: {}", channel, std::span{ data } );
                 auto msg = em::protocol::serialize_multiplexed( channel, data );
                 co_spawn( io_context_, write( msg ), handle_eptr );
 
@@ -187,7 +184,7 @@ private:
                             data,
                             [&]( em::protocol::channel_type   chid,
                                  std::span< std::byte const > data ) {
-                                    COM_LOG( chid, "r: ", em::protocol::msg_format{ data } );
+                                    spdlog::debug( "Channel {} read: {}", chid, std::span{ data } );
                                     return em::protocol::multiplexed_dispatch(
                                         chid, data, cont_, col_serv_, par_serv_, rec_ );
                             } );

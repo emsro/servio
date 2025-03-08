@@ -23,10 +23,26 @@ void field_option( CLI::App* app, std::string& field )
         app->add_option( "field", field, "Field name" );
 }
 
+void handle_eptr( std::exception_ptr eptr )
+{
+        try {
+                if ( eptr )
+                        std::rethrow_exception( eptr );
+        }
+        catch ( std::exception const& e ) {
+                spdlog::dump_backtrace();
+                spdlog::error( "Caught an exception: {}", e.what() );
+        }
+        catch ( ... ) {
+                spdlog::dump_backtrace();
+                spdlog::error( "Caught an unknown exception" );
+        }
+}
+
 void port_callback( CLI::App* app, io_context& io_ctx, auto& ctx_ptr, auto f )
 {
         app->callback( [&io_ctx, ctx_ptr, f = std::move( f )] {
-                co_spawn( io_ctx, f( ctx_ptr->port.get( io_ctx ) ), detached );
+                co_spawn( io_ctx, f( ctx_ptr->port.get( io_ctx ) ), handle_eptr );
         } );
 }
 
@@ -44,6 +60,7 @@ void cfg_def( CLI::App& app, io_context& io_ctx )
         auto ctx = std::make_shared< cfg_ctx >();
 
         auto* cfg = app.add_subcommand( "cfg", "configuration commands" );
+        cfg->require_subcommand( 1 );
 
         port_opts( *cfg, ctx->port );
 
@@ -267,11 +284,16 @@ int main( int argc, char* argv[] )
         boost::asio::io_context ctx;
         CLI::App                app{ "Servio utility" };
 
+        opt< bool > val;
+        scmdio::verbose_opt( app, val );
+
         scmdio::cfg_def( app, ctx );
         scmdio::pool_def( app, ctx );
         scmdio::mode_def( app, ctx );
         scmdio::autotune_def( app, ctx );
         scmdio::bflash_def( app, ctx );
+
+        app.require_subcommand( 1 );
 
         try {
                 app.parse( argc, argv );

@@ -4,6 +4,7 @@
 
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/enumerate.h>
+#include <iostream>
 
 namespace servio::scmdio
 {

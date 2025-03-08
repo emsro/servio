@@ -60,7 +60,7 @@ SECTIONS
     . = ALIGN(4);
   } >FLASH
 
-  .config :
+  .config (NOLOAD):
   {
     . = ALIGN(4);
     _config_start = .;

@@ -81,7 +81,7 @@ struct comms_echo_test
                 while ( !ready )
                         std::tie( ready, v ) = comms.recv( buffer2 );
 
-                store_data( mem, ctx, "data", v );
+                co_await store_data( mem, ctx, "data", v );
 
                 co_await ctx.expect( v == em::view{ buffer } );
         }
@@ -121,7 +121,7 @@ struct comms_timeout_test
                 while ( !ready )
                         std::tie( ready, v ) = comms.recv( buffer2 );
 
-                store_data( mem, ctx, "data", v );
+                co_await store_data( mem, ctx, "data", v );
 
                 co_await ctx.expect( v == em::view{ buffer } );
         }

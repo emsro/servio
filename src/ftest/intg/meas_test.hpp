@@ -126,7 +126,7 @@ struct meas_vel_test
                 motor.set_power( 0_pwr );
 
                 float average_velocity = sum / static_cast< float >( measurements );
-                co_await t::expect( !em::almost_equal( average_velocity, 0.f, 0.05f ) );
+                co_await ctx.expect( !em::almost_equal( average_velocity, 0.f, 0.01f ) );
                 ctx.coll.set( "average velocity", average_velocity );
         }
 };

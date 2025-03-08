@@ -3,6 +3,7 @@
 //
 #include "./base.hpp"
 
+#include <charconv>
 #include <nlohmann/json.hpp>
 #include <vari/vopt.h>
 
@@ -30,6 +31,42 @@ struct nlohmann::adl_serializer< vari::_vval< Ts... > >
 
 namespace servio::scmdio
 {
+
+template < typename T >
+struct val_ser
+{
+        static T ser( std::string_view val )
+        {
+                if constexpr ( std::same_as< T, std::string_view > )
+                        return val;
+                else if constexpr ( std::same_as< T, float > )
+                        return std::stof( std::string{ val } );
+                else if constexpr ( std::same_as< T, bool > ) {
+                        if ( val == "true" )
+                                return true;
+                        if ( val == "false" )
+                                return false;
+                        log_error( "Invalid bool value: ", val );
+                } else if constexpr ( std::is_integral_v< T > ) {
+                        T ret;
+                        std::from_chars( val.data(), val.data() + val.size(), ret );
+                        return ret;
+                } else
+                        static_assert( std::is_same_v< T, void >, "unsupported type" );
+        }
+};
+
+template < auto... Ts >
+struct val_ser< avakar::atom< Ts... > >
+{
+        static avakar::atom< Ts... > ser( std::string_view val )
+        {
+                auto x = avakar::atom< Ts... >::from_string( val );
+                if ( x )
+                        return *x;
+                log_error( "Failed to parse atom: ", val );
+        }
+};
 
 template < typename T >
 struct kval_ser;
@@ -75,8 +112,9 @@ struct kval_ser< vari::typelist< KV, KVs... > >
         static vari::vopt< KV, KVs... > ser( std::string_view name, std::string_view value )
         {
                 if ( KV::key.to_string() == name )
+                        return KV{ val_ser< typename KV::value_type >::ser( value ) };
+                else
                         return kval_ser< vari::typelist< KVs... > >::ser( name, value );
-                return {};  // XXX: finish
         }
 
         static vari::vopt< KV, KVs... > from_json( std::string_view name, nlohmann::json const& j )

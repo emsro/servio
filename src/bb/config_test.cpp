@@ -65,14 +65,13 @@ boost::asio::awaitable< void > test_config( boost::asio::io_context&, scmdio::po
                 co_await cfg_vec[i].visit( [&]( auto& val ) -> boost::asio::awaitable< void > {
                         auto cpy{ val };
                         vary_value( cpy.value );
-                        EMLABCPP_INFO_LOG( "Setting new value: ", std::format( "{}", cpy.value ) );
+                        spdlog::info( "Setting new value: {}", cpy.value );
                         co_await scmdio::set_config_field( port, cpy );
 
                         EXPECT_TRUE(
                             cmp_cfg_state( i, cfg_vec, co_await scmdio::get_full_config( port ) ) );
 
-                        EMLABCPP_INFO_LOG(
-                            "Setting original value: ", std::format( "{}", val.value ) );
+                        spdlog::info( "Setting original value: {}", val.value );
 
                         co_await scmdio::set_config_field( port, val );
                 } );

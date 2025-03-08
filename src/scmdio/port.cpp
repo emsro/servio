@@ -57,17 +57,57 @@ awaitable< void > cobs_port::write_msg( std::span< std::byte const > msg )
 
 namespace
 {
+struct match_byte
+{
+        std::byte b;
+
+        template < typename Iterator >
+        std::pair< Iterator, bool > operator()( Iterator begin, Iterator end ) const
+        {
+                auto iter = std::find_if( begin, end, [&]( char const c ) {
+                        //                        spdlog::trace( "{}", +c );
+                        return c == (char) b;
+                } );
+                if ( iter != end )
+                        return { ++iter, true };
+                return { iter, false };
+        }
+};
+
+}  // namespace
+}  // namespace servio::scmdio
+
+namespace boost::asio
+{
+template <>
+struct is_match_condition< servio::scmdio::match_byte > : public boost::true_type
+{
+};
+}  // namespace boost::asio
+
+namespace servio::scmdio
+{
+namespace
+{
+
 awaitable< std::span< std::byte > > _pool_buffer( auto& port, auto& read_buffer, std::byte delim )
 {
         auto                   iter = std::ranges::find( read_buffer, delim );
         std::span< std::byte > dview;
         if ( iter != read_buffer.end() ) {
+                spdlog::trace( "Using existing buffer" );
                 dview = em::view_n(
-                    read_buffer.data(), std::distance( read_buffer.begin(), iter ) + 1u );
+                    read_buffer.data(),
+                    (std::size_t) std::distance( read_buffer.begin(), iter ) + 1u );
         } else {
                 std::vector< std::byte > expand;
-                std::size_t              n = co_await async_read_until(
-                    port, boost::asio::dynamic_buffer( expand ), 0, use_awaitable );
+                spdlog::trace( "Starting read" );
+                std::size_t n = co_await async_read_until(
+                    port,
+                    boost::asio::dynamic_buffer( expand ),
+                    match_byte{ delim },
+                    use_awaitable );
+                spdlog::trace( "Got: {}", std::span{ expand } );
                 n += read_buffer.size();
                 read_buffer.insert( read_buffer.end(), expand.begin(), expand.end() );
                 dview = em::view_n( read_buffer.data(), n );
@@ -94,16 +134,19 @@ awaitable< std::span< std::byte > > cobs_port::read_msg( std::span< std::byte > 
 awaitable< void > char_port::write_msg( std::span< std::byte const > msg )
 {
         spdlog::debug( "writing: {}", msg );
-        if ( msg.back() != std::byte{ ch } )
-                log_error( "Message does not end with expected char" );
 
         co_await async_write( port, boost::asio::buffer( msg ), use_awaitable );
+
+        std::array< std::byte, 1 > end = { std::byte{ ch } };
+        co_await async_write( port, boost::asio::buffer( end ), use_awaitable );
 }
 
 awaitable< std::span< std::byte > > char_port::read_msg( std::span< std::byte > buffer )
 {
         std::span< std::byte > dview = co_await _pool_buffer( port, read_buffer, std::byte{ ch } );
-
+        assert( dview.size() <= buffer.size() );
+        std::copy( dview.begin(), dview.end(), buffer.begin() );
+        read_buffer.erase( read_buffer.begin(), read_buffer.begin() + (long) dview.size() );
         co_return dview;
 }
 

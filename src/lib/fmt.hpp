@@ -38,13 +38,13 @@ struct jval_ser
 
         jval_ser& operator()( unsigned int x ) & noexcept
         {
-                fmt( "%u", x );
+                utos( p, e, x );
                 return *this;
         }
 
         jval_ser& operator()( long unsigned int x ) & noexcept
         {
-                fmt( "%lu", x );
+                utos( p, e, x );
                 return *this;
         }
 
@@ -56,7 +56,7 @@ struct jval_ser
 
         jval_ser& operator()( float x ) & noexcept
         {
-                fmt( "%f", x );
+                ftos( p, e, x );
                 return *this;
         }
 
@@ -72,13 +72,46 @@ struct jval_ser
         }
 
 private:
-        void fmt( char const* fmt, auto& x ) noexcept
+        // XXX: this should NOT be here
+        static void utos( char*& p, char* e, std::unsigned_integral auto x ) noexcept
         {
-                std::size_t size = static_cast< std::size_t >( e - p );
-                int         res  = snprintf( p, size, fmt, x );
+                auto add = [&]( char c ) {
+                        if ( p != e )
+                                *p++ = c;
+                };
 
-                size = std::min( (std::size_t) std::max( res, 0 ), size );
-                p += size;
+                char* pp = p;
+                do {
+                        add( '0' + ( x % 10 ) );
+                        x /= 10;
+                } while ( x != 0 );
+                for ( char* q = p - 1; q > pp; --q, ++pp )
+                        std::swap( *q, *pp );
+        }
+
+        static void ftos( char*& p, char* e, float x ) noexcept
+        {
+                auto add = [&]( char c ) {
+                        if ( p != e )
+                                *p++ = c;
+                };
+                if ( x < 0.0F ) {
+                        add( '-' );
+                        x *= -1.0F;
+                }
+                uint32_t y = x;
+                x -= y;
+                utos( p, e, y );
+                add( '.' );
+                static constexpr std::size_t dec_places = 6;
+                for ( std::size_t i = 0; i < dec_places; ++i ) {
+                        x *= 10.0F;
+                        uint32_t z = x;
+                        x -= z;
+                        add( '0' + z );
+                        if ( x == 0.00F )
+                                break;
+                }
         }
 
         void cpy( char const* st ) noexcept

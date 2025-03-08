@@ -34,7 +34,6 @@ page const* find_cmp_page( em::view< page const* > pages, CmpFunction&& cmp_f )
         page const* candidate    = nullptr;
         uint32_t    candidate_id = 0;
         for ( page const& p : pages ) {
-                EMLABCPP_DEBUG_LOG( "Checking page: ", p.begin(), " ", p.end() );
                 std::ignore = handler::load(
                     p,
                     [&]( payload const& pl ) -> bool {
@@ -54,26 +53,23 @@ page const* find_cmp_page( em::view< page const* > pages, CmpFunction&& cmp_f )
 page const* find_unused_page( em::view< page const* > pages )
 {
         page const* iter = em::find_if( pages, [&]( page const& p ) {
-                EMLABCPP_DEBUG_LOG( "Unused trying page: ", p.begin(), " ", p.end() );
-                const em::cfg::load_result lr = handler::load(
+                em::cfg::load_result const lr = handler::load(
                     p,
-                    [&]( const payload& ) -> bool {
+                    [&]( payload const& ) -> bool {
                             return false;
                     },
-                    [&]( const keyval& ) {},
+                    [&]( keyval const& ) {},
                     chcksum_f );
                 return lr == em::cfg::load_result::DESERIALIZATION_ERROR;
         } );
         if ( iter == pages.end() )
                 return nullptr;
-        EMLABCPP_DEBUG_LOG( "Got unused page: ", iter->begin(), " ", iter->end() );
         return &*iter;
 }
 
 page const* find_oldest_page( em::view< page const* > pages )
 {
         return find_cmp_page( pages, [&]( uint32_t candidate_id, uint32_t page_id ) {
-                EMLABCPP_DEBUG_LOG( "Ids: ", candidate_id, " ", page_id );
                 return page_id < candidate_id;
         } );
 }
@@ -115,7 +111,7 @@ bool load( page p, em::function_view< bool( payload const& ) > pl_cb, map& m )
             p,
             pl_cb,
             [&]( keyval const& kv ) -> bool {
-                    const auto opt_err = reghandler::insert( m, kv.key, kv.msg );
+                    auto const opt_err = reghandler::insert( m, kv.key, kv.msg );
                     return !opt_err.has_value();
             },
             chcksum_f );

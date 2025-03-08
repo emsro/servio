@@ -64,9 +64,6 @@ cfg::map get_default_config()
 
 cfg::context CFG{ .map = get_default_config() };
 
-std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at( 1 ) };
-drv::flash_storage                      FLASH_STORAGE{ PERSISTENT_BLOCKS };
-
 TIM_HandleTypeDef TIM2_HANDLE = {};
 drv::clock        CLOCK{ TIM2_HANDLE };
 drv::leds         LEDS{ &TIM2_HANDLE };
@@ -120,6 +117,20 @@ TIM_HandleTypeDef* QUAD_TRIGGER_TIMER = nullptr;
 
 I2C_HandleTypeDef I2C2_HANDLE{};
 drv::i2c_eeprom   EEPROM{ 0b1010'0000, 65'535u, 2'000u, I2C2_HANDLE };
+
+std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at( 1 ) };
+
+void flash_start_cb()
+{
+        HBRIDGE.start();
+}
+
+void flash_stop_cb()
+{
+        HBRIDGE.stop();
+}
+
+drv::flash_storage FLASH_STORAGE{ PERSISTENT_BLOCKS, flash_start_cb, flash_stop_cb };
 
 }  // namespace servio::brd
 
@@ -545,7 +556,7 @@ em::result start_callback( core::drivers& cdrv )
                 return em::ERROR;
 
         if ( cdrv.position != nullptr ) {
-                // this implies that adc_pooleri initialization is OK
+                // this implies that adc_pooler initialization is OK
                 if ( ADC_POOLER.start() != em::SUCCESS )
                         return em::ERROR;
         }

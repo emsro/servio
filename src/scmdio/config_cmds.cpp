@@ -4,6 +4,7 @@
 #include <boost/asio.hpp>
 #include <emlabcpp/algorithm.h>
 #include <fstream>
+#include <iostream>
 
 namespace em = emlabcpp;
 
@@ -15,7 +16,7 @@ void print_configs( std::vector< vari::vval< iface::cfg_vals > > const& out )
 {
         std::cout << em::joined( out, std::string{ "\n" }, [&]( auto const& cfg ) {
                 return cfg.visit( [&]( auto& c ) {
-                        return std::format( "{{ {},{} }}", c.key.to_string(), c.value );
+                        return std::format( "{}:\t{}", c.key.to_string(), c.value );
                 } );
         } ) << std::endl;
 }
@@ -48,7 +49,7 @@ awaitable< void > cfg_query_cmd( sptr< port_iface > port, bool json )
 
 awaitable< void > cfg_commit_cmd( sptr< port_iface > port )
 {
-        std::string msg = std::format( "cfg cmt" );
+        std::string msg = std::format( "cfg commit" );
 
         auto reply = co_await exchg( *port, msg );
         // XXX: check the retcode
@@ -57,7 +58,7 @@ awaitable< void > cfg_commit_cmd( sptr< port_iface > port )
 
 awaitable< void > cfg_clear_cmd( sptr< port_iface > port )
 {
-        std::string msg   = std::format( "cfg clr" );
+        std::string msg   = std::format( "cfg clear" );
         auto        reply = co_await exchg( *port, msg );
         std::ignore       = reply;
 }

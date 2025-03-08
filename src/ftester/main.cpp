@@ -10,6 +10,9 @@
 #include <joque/exec.hpp>
 #include <joque/json.hpp>
 #include <nlohmann/json.hpp>
+#include <spdlog/sinks/basic_file_sink.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
+#include <spdlog/spdlog.h>
 #include <vari/vref.h>
 
 namespace servio::ftester
@@ -29,7 +32,8 @@ bool handle_test_specifics( std::string_view name, test_system& sys, std::filesy
                                         prof_recs.push_back( pr );
                                 },
                                 [&]( auto&& err ) {
-                                        EMLABCPP_ERROR_LOG( "Failed to parse record: ", err );
+                                        // XXX: fix
+                                        // spdlog::error( "Failed to parse record: {}", err );
                                 } );
                 }
 
@@ -128,21 +132,18 @@ int main( int argc, char* argv[] )
         joque::resource dev;
         joque::task_set ts;
 
-        if ( cfg.verbose ) {
-                em::DEBUG_LOGGER.set_option( em::set_stdout( *cfg.verbose ) );
-                ftester::COM_LOGGER.set_option( em::set_stdout( *cfg.verbose ) );
-                em::INFO_LOGGER.set_option( em::set_stdout( *cfg.verbose ) );
-        }
-
         if ( cfg.output_dir ) {
-                static std::ofstream comfile{ cfg.output_dir.value() / "com.log" };
-                servio::ftester::COM_LOGGER.set_option( em::set_ostream{ &comfile } );
-                static std::ofstream infofile{ cfg.output_dir.value() / "info.log" };
-                em::INFO_LOGGER.set_option( em::set_ostream{ &infofile } );
-                static std::ofstream debugfile{ cfg.output_dir.value() / "debug.log" };
-                em::DEBUG_LOGGER.set_option( em::set_ostream{ &debugfile } );
-                static std::ofstream errorfile{ cfg.output_dir.value() / "error.log" };
-                em::ERROR_LOGGER.set_option( em::set_ostream{ &errorfile } );
+                auto console_sink = std::make_shared< spdlog::sinks::stdout_color_sink_mt >();
+                if ( cfg.verbose )
+                        console_sink->set_level( spdlog::level::debug );
+
+                auto file_sink = std::make_shared< spdlog::sinks::basic_file_sink_mt >(
+                    cfg.output_dir.value() / "spdlog.log" );
+                file_sink->set_level( spdlog::level::trace );
+
+                auto logger = std::make_shared< spdlog::logger >(
+                    spdlog::logger{ "logger", { console_sink, file_sink } } );
+                spdlog::set_default_logger( logger );
         }
 
         if ( cfg.flash_cmd ) {

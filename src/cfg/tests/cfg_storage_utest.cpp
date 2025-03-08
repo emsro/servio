@@ -18,7 +18,6 @@ namespace servio::tests
 
 TEST( CFG, storage )
 {
-        EMLABCPP_INFO_LOG( "wololo" );
         std::array< page, 2 > buffer;
 
         std::array pages = em::map_f_to_a( buffer, [&]( page& p ) {

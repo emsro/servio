@@ -43,7 +43,7 @@ struct lexer
                 while ( p != e && _is_ws( *p ) )
                         p++;
 
-                if ( p == e )
+                if ( p == e || *p == '\0' )
                         return end{};
                 if ( auto r = numreal( p, e ) )
                         return std::move( r ).vval();
