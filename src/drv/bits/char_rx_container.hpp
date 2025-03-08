@@ -16,11 +16,11 @@ template < char C >
 void on_rx_cplt_irq( char_rx_container< C >& rx, std::byte inpt )
 {
         char c = (char) inpt;
-        rx.buffer.emplace_back( inpt );
         if ( c == C ) {
-                rx.sizes.push_back( rx.received_size + 1 );
+                rx.sizes.push_back( rx.received_size );
                 rx.received_size = 0;
         } else {
+                rx.buffer.emplace_back( inpt );
                 rx.received_size += 1;
         }
 }

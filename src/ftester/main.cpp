@@ -134,8 +134,7 @@ int main( int argc, char* argv[] )
 
         if ( cfg.output_dir ) {
                 auto console_sink = std::make_shared< spdlog::sinks::stdout_color_sink_mt >();
-                if ( cfg.verbose )
-                        console_sink->set_level( spdlog::level::debug );
+                console_sink->set_level( spdlog::get_level() );
 
                 auto file_sink = std::make_shared< spdlog::sinks::basic_file_sink_mt >(
                     cfg.output_dir.value() / "spdlog.log" );
@@ -143,6 +142,7 @@ int main( int argc, char* argv[] )
 
                 auto logger = std::make_shared< spdlog::logger >(
                     spdlog::logger{ "logger", { console_sink, file_sink } } );
+                logger->set_level( spdlog::get_level() );
                 spdlog::set_default_logger( logger );
         }
 
@@ -171,6 +171,7 @@ int main( int argc, char* argv[] )
         ftester::test_system tsys{
             cfg.d_device, cfg.d_baudrate, cfg.c_device, cfg.c_baudrate, inpt };
 
+        spdlog::debug( "Initializing test system" );
         tsys.wait_for_init();
 
         std::string suite_name = tsys.suite_name();

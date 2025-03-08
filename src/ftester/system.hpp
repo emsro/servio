@@ -201,6 +201,8 @@ private:
                             boost::asio::buffer( buffer.data(), buffer.size() ),
                             boost::asio::use_awaitable );
 
+                        spdlog::debug( "forwarding: {}", std::span{ buffer.data(), n } );
+
                         co_await boost::asio::async_write(
                             c_port_,
                             boost::asio::buffer( buffer.data(), n ),

@@ -64,7 +64,7 @@ int main( int argc, char** argv )
 
         ::testing::InitGoogleTest( &argc, argv );
         bool                    powerless = false;
-        opt< bool >             verbose   = false;
+        uint32_t                verbose   = 0;
         boost::asio::io_context io_ctx;
 
         CLI::App app{ "modes related tests" };

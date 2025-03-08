@@ -19,7 +19,7 @@ int main()
         if ( dbg_comms == nullptr || dbg_comms->start() != em::SUCCESS )
                 fw::stop_exec();
 
-        ftest::testing_system tsys{ *dbg_comms, "basic tests" };
+        ftest::testing_system tsys{ *dbg_comms, "servio tests" };
 
         em::result res = em::SUCCESS;
         ftest::setup_tests(

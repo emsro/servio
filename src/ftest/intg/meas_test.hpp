@@ -83,7 +83,7 @@ struct meas_pos_test
                 motor.set_power( 0_pwr );
 
                 float expected_angle_change = 0.F;
-                co_await t::expect( std::abs( start - end ) > expected_angle_change );
+                co_await ctx.expect( std::abs( start - end ) > expected_angle_change );
                 ctx.coll.set( "pos1", start );
                 ctx.coll.set( "pos2", end );
         }

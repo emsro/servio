@@ -8,6 +8,8 @@ em::result char_uart::send( send_data_t data, microseconds timeout )
         if ( !spin_with_timeout( clk_, tx_done_, timeout ) )
                 return em::ERROR;
 
+        // XXX: check that char is NOT present
+
         uint16_t count = 0;
         for ( auto s : data )
                 for ( std::byte b : s ) {

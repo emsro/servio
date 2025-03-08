@@ -4,7 +4,7 @@
 namespace servio::scmdio
 {
 
-CLI::Option* verbose_opt( CLI::App& app, opt< bool >& val )
+CLI::Option* verbose_opt( CLI::App& app, uint32_t& val )
 {
         return app.add_flag( "-v,--verbose", val, "verbosity" )
             ->envname( "SERVIO_VERBOSE" )

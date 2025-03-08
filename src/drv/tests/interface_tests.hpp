@@ -68,14 +68,14 @@ struct comms_echo_test
 
         t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
-                std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x00_b };
+                std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };
                 em::result                 res = send( comms, 100_ms, buffer );
                 co_await ctx.expect( res == em::SUCCESS );
 
                 wait_for( clk, 10_ms );
 
-                std::array< std::byte, 6 > buffer2{
-                    0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b };
+                std::array< std::byte, 7 > buffer2{
+                    0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b };
                 bool                   ready = false;
                 em::view< std::byte* > v;
                 while ( !ready )
@@ -101,7 +101,7 @@ struct comms_timeout_test
 
         t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
-                std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x00_b };
+                std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };
                 em::result                 res = send( comms, 1_us, buffer );
                 co_await ctx.expect( res == em::SUCCESS );
 
