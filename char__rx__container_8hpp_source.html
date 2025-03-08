@@ -121,11 +121,11 @@ $(document).ready(function(){initNavTree('char__rx__container_8hpp_source.html',
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1bits.html#a90dcc50c50424e715008c27ec4d87869">   16</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1drv_1_1bits.html#a90dcc50c50424e715008c27ec4d87869">on_rx_cplt_irq</a>( <a class="code hl_struct" href="structservio_1_1drv_1_1bits_1_1char__rx__container.html">char_rx_container&lt; C &gt;</a>&amp; rx, std::byte inpt )</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordtype">char</span> c = (char) inpt;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1rx__buffer.html#ad322b66e24b1c50583d2e16f7fdd5ae0">buffer</a>.emplace_back( inpt );</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">if</span> ( c == C ) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1rx__buffer.html#ab87f2b63db801a6a2641e54893e46577">sizes</a>.push_back( rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1char__rx__container.html#a52beed2b62872d8df9ffda174227af60">received_size</a> + 1 );</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1char__rx__container.html#a52beed2b62872d8df9ffda174227af60">received_size</a> = 0;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span> ( c == C ) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1rx__buffer.html#ab87f2b63db801a6a2641e54893e46577">sizes</a>.push_back( rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1char__rx__container.html#a52beed2b62872d8df9ffda174227af60">received_size</a> );</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1char__rx__container.html#a52beed2b62872d8df9ffda174227af60">received_size</a> = 0;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1rx__buffer.html#ad322b66e24b1c50583d2e16f7fdd5ae0">buffer</a>.emplace_back( inpt );</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                rx.<a class="code hl_variable" href="structservio_1_1drv_1_1bits_1_1char__rx__container.html#a52beed2b62872d8df9ffda174227af60">received_size</a> += 1;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('char__rx__container_8hpp_source.html',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="dir_e7107a7cd49c6cff870a5eabc9e76a4a.html">bits</a></li><li class="navelem"><a class="el" href="char__rx__container_8hpp.html">char_rx_container.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 8 2025 16:08:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Mar 8 2025 21:11:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

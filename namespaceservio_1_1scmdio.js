@@ -85,7 +85,7 @@ var namespaceservio_1_1scmdio =
     [ "TEST", "namespaceservio_1_1scmdio.html#a81846b672743b2603712dd12fe1feb71", null ],
     [ "TEST", "namespaceservio_1_1scmdio.html#a3537170a38e448c946a51d639e35ce9d", null ],
     [ "tuple_coawait", "namespaceservio_1_1scmdio.html#a25eabf1f2e7b29b0098fbf63cbb7466f", null ],
-    [ "verbose_opt", "namespaceservio_1_1scmdio.html#adfe9fb5c444c1aa557dab6b76f5f9f91", null ],
+    [ "verbose_opt", "namespaceservio_1_1scmdio.html#ad6bd175875ae535d1fec019087aaa0eb", null ],
     [ "write", "namespaceservio_1_1scmdio.html#a541a193834ccc76608db019f895238e6", null ],
     [ "ACK", "namespaceservio_1_1scmdio.html#a848cd90402a2f36d81869dc4fdbbaec0", null ],
     [ "GET", "namespaceservio_1_1scmdio.html#a82f75a7b080fb09c3f172e1d3a24899d", null ],

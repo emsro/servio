@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('scmdio_2cli_8hpp_source.html',''); ini
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>CLI::Option* <a class="code hl_function" href="namespaceservio_1_1scmdio.html#adfe9fb5c444c1aa557dab6b76f5f9f91">verbose_opt</a>( CLI::App&amp; app, opt&lt; bool &gt;&amp; val );</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>CLI::Option* <a class="code hl_function" href="namespaceservio_1_1scmdio.html#ad6bd175875ae535d1fec019087aaa0eb">verbose_opt</a>( CLI::App&amp; app, uint32_t&amp; val );</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>CLI::Option* <a class="code hl_function" href="namespaceservio_1_1scmdio.html#a65b2b391dc07c1b8476d7f72e781a825">coms_opt</a>( CLI::App&amp; app, std::filesystem::path&amp; device );</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>CLI::Option* <a class="code hl_function" href="namespaceservio_1_1scmdio.html#ad4fa41dcb7957c74dcc335d566c28eef">dcoms_opt</a>( CLI::App&amp; app, std::filesystem::path&amp; device );</div>
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('scmdio_2cli_8hpp_source.html',''); ini
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_a65b2b391dc07c1b8476d7f72e781a825"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a65b2b391dc07c1b8476d7f72e781a825">servio::scmdio::coms_opt</a></div><div class="ttdeci">CLI::Option * coms_opt(CLI::App &amp;app, std::filesystem::path &amp;comms)</div><div class="ttdef"><b>Definition</b> cli.cpp:20</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_a662f29442a014cdbe007bc12f0d52fe8"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a662f29442a014cdbe007bc12f0d52fe8">servio::scmdio::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; sptr</div><div class="ttdef"><b>Definition</b> base.hpp:21</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_ad4fa41dcb7957c74dcc335d566c28eef"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#ad4fa41dcb7957c74dcc335d566c28eef">servio::scmdio::dcoms_opt</a></div><div class="ttdeci">CLI::Option * dcoms_opt(CLI::App &amp;app, std::filesystem::path &amp;comms)</div><div class="ttdef"><b>Definition</b> cli.cpp:27</div></div>
-<div class="ttc" id="anamespaceservio_1_1scmdio_html_adfe9fb5c444c1aa557dab6b76f5f9f91"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#adfe9fb5c444c1aa557dab6b76f5f9f91">servio::scmdio::verbose_opt</a></div><div class="ttdeci">CLI::Option * verbose_opt(CLI::App &amp;app, opt&lt; bool &gt; &amp;val)</div><div class="ttdef"><b>Definition</b> cli.cpp:7</div></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html_ad6bd175875ae535d1fec019087aaa0eb"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#ad6bd175875ae535d1fec019087aaa0eb">servio::scmdio::verbose_opt</a></div><div class="ttdeci">CLI::Option * verbose_opt(CLI::App &amp;app, uint32_t &amp;val)</div><div class="ttdef"><b>Definition</b> cli.cpp:7</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_ae3a3dd4bf0754ea235ae81a1b52ce0c2"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#ae3a3dd4bf0754ea235ae81a1b52ce0c2">servio::scmdio::port_opts</a></div><div class="ttdeci">void port_opts(CLI::App &amp;app, port_cli &amp;cli)</div><div class="ttdef"><b>Definition</b> cli.cpp:48</div></div>
 <div class="ttc" id="aport_8hpp_html"><div class="ttname"><a href="port_8hpp.html">port.hpp</a></div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1char__cli_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1char__cli.html">servio::scmdio::char_cli</a></div><div class="ttdef"><b>Definition</b> cli.hpp:55</div></div>
@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('scmdio_2cli_8hpp_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="scmdio_2cli_8hpp.html">cli.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 8 2025 16:08:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Mar 8 2025 21:11:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

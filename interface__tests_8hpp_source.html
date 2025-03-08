@@ -177,14 +177,14 @@ $(document).ready(function(){initNavTree('interface__tests_8hpp_source.html','')
 <div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1comms__echo__test.html#aa2e6fd56154e3a48ccb608159e0d1bc6">   69</a></span>        t::coroutine&lt; void &gt; <a class="code hl_function" href="structservio_1_1drv_1_1tests_1_1comms__echo__test.html#aa2e6fd56154e3a48ccb608159e0d1bc6">run</a>( <span class="keyword">auto</span>&amp; mem, <a class="code hl_struct" href="structservio_1_1ftest_1_1uctx.html">ftest::uctx</a>&amp; ctx )</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                std::array&lt; std::byte, 6 &gt; buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x00_b };</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                std::array&lt; std::byte, 6 &gt; buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                em::result                 res = <a class="code hl_function" href="namespaceservio_1_1drv.html#a90a412dc5dad533a4ab80b5cfaa5ff2c">send</a>( <a class="code hl_variable" href="structservio_1_1drv_1_1tests_1_1comms__echo__test.html#a35e1cc9226843e8147e38a53a1f5c0b2">comms</a>, 100_ms, buffer );</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( res == em::SUCCESS );</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <a class="code hl_function" href="namespaceservio_1_1drv.html#a40b5c094f9145bb1145198ee924ff3cb">wait_for</a>( <a class="code hl_variable" href="structservio_1_1drv_1_1tests_1_1comms__echo__test.html#ad474e2fe2a2391de578760ee933eae24">clk</a>, 10_ms );</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                std::array&lt; std::byte, 6 &gt; buffer2{</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b };</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                std::array&lt; std::byte, 7 &gt; buffer2{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b };</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordtype">bool</span>                   ready = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                em::view&lt; std::byte* &gt; v;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordflow">while</span> ( !ready )</div>
@@ -214,7 +214,7 @@ $(document).ready(function(){initNavTree('interface__tests_8hpp_source.html','')
 <div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1tests_1_1comms__timeout__test.html#ad810e947ca16caa1efb319f0ad44b835">  102</a></span>        t::coroutine&lt; void &gt; <a class="code hl_function" href="structservio_1_1drv_1_1tests_1_1comms__timeout__test.html#ad810e947ca16caa1efb319f0ad44b835">run</a>( <span class="keyword">auto</span>&amp; mem, <a class="code hl_struct" href="structservio_1_1ftest_1_1uctx.html">ftest::uctx</a>&amp; ctx )</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                std::array&lt; std::byte, 6 &gt; buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x00_b };</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                std::array&lt; std::byte, 6 &gt; buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                em::result                 res = <a class="code hl_function" href="namespaceservio_1_1drv.html#a90a412dc5dad533a4ab80b5cfaa5ff2c">send</a>( <a class="code hl_variable" href="structservio_1_1drv_1_1tests_1_1comms__timeout__test.html#a6f29b88ad53dca1f37e9849a535438ab">comms</a>, 1_us, buffer );</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( res == em::SUCCESS );</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
@@ -553,7 +553,7 @@ $(document).ready(function(){initNavTree('interface__tests_8hpp_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="dir_26e34818c745abafa34d6ef482a48aa2.html">tests</a></li><li class="navelem"><a class="el" href="interface__tests_8hpp.html">interface_tests.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 8 2025 16:08:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Mar 8 2025 21:11:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

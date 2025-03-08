@@ -9,5 +9,5 @@ var scmdio_2cli_8hpp =
     [ "dcoms_opt", "scmdio_2cli_8hpp.html#ad4fa41dcb7957c74dcc335d566c28eef", null ],
     [ "port_opts", "scmdio_2cli_8hpp.html#ae3a3dd4bf0754ea235ae81a1b52ce0c2", null ],
     [ "powerless_flag", "scmdio_2cli_8hpp.html#a0f5027194b08215b948567a9932bcdbc", null ],
-    [ "verbose_opt", "scmdio_2cli_8hpp.html#adfe9fb5c444c1aa557dab6b76f5f9f91", null ]
+    [ "verbose_opt", "scmdio_2cli_8hpp.html#ad6bd175875ae535d1fec019087aaa0eb", null ]
 ];
