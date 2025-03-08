@@ -1,5 +1,6 @@
 var namespaces_dup =
 [
+    [ "boost", "namespaceboost.html", "namespaceboost" ],
     [ "emlabcpp", "namespaceemlabcpp.html", "namespaceemlabcpp" ],
     [ "servio", "namespaceservio.html", "namespaceservio" ],
     [ "std", "namespacestd.html", "namespacestd" ],

@@ -237,7 +237,7 @@ $(document).ready(function(){initNavTree('meas__test_8hpp_source.html',''); init
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <a class="code hl_variable" href="structservio_1_1ftest_1_1intg_1_1meas__vel__test.html#a048e23f76e5e611dfadc1f43b7f5d477">motor</a>.<a class="code hl_function" href="structservio_1_1drv_1_1pwm__motor__iface.html#a0469021861453e240fe392722ae900b7">set_power</a>( 0_pwr );</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <span class="keywordtype">float</span> average_velocity = sum / <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( measurements );</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <span class="keyword">co_await</span> t::expect( !em::almost_equal( average_velocity, 0.f, 0.05f ) );</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( !em::almost_equal( average_velocity, 0.f, 0.01f ) );</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                ctx.<a class="code hl_variable" href="structservio_1_1ftest_1_1uctx.html#a4ce9a11aea4141ca78dfe38c7b548180">coll</a>.set( <span class="stringliteral">&quot;average velocity&quot;</span>, average_velocity );</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
 </div>
@@ -310,13 +310,14 @@ $(document).ready(function(){initNavTree('meas__test_8hpp_source.html',''); init
 <div class="ttc" id="astructservio_1_1ftest_1_1intg_1_1meas__vel__test_html_aee7235f87746ae6f2d8a2e7a20cde012"><div class="ttname"><a href="structservio_1_1ftest_1_1intg_1_1meas__vel__test.html#aee7235f87746ae6f2d8a2e7a20cde012">servio::ftest::intg::meas_vel_test::curr</a></div><div class="ttdeci">drv::curr_iface &amp; curr</div><div class="ttdef"><b>Definition</b> meas_test.hpp:97</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1uctx_html"><div class="ttname"><a href="structservio_1_1ftest_1_1uctx.html">servio::ftest::uctx</a></div><div class="ttdef"><b>Definition</b> utest.hpp:20</div></div>
 <div class="ttc" id="astructservio_1_1ftest_1_1uctx_html_a4ce9a11aea4141ca78dfe38c7b548180"><div class="ttname"><a href="structservio_1_1ftest_1_1uctx.html#a4ce9a11aea4141ca78dfe38c7b548180">servio::ftest::uctx::coll</a></div><div class="ttdeci">t::collector &amp; coll</div><div class="ttdef"><b>Definition</b> utest.hpp:21</div></div>
+<div class="ttc" id="astructservio_1_1ftest_1_1uctx_html_aa900f345307f9a52bdc5d4a135ab35e6"><div class="ttname"><a href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">servio::ftest::uctx::expect</a></div><div class="ttdeci">auto expect(bool expr, std::source_location sl=std::source_location::current())</div><div class="ttdef"><b>Definition</b> utest.hpp:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="dir_298d61badfb8e83b30e1451ec7acbef9.html">intg</a></li><li class="navelem"><a class="el" href="meas__test_8hpp.html">meas_test.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 7 2025 20:02:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Mar 8 2025 16:08:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

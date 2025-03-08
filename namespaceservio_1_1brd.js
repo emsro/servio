@@ -5,6 +5,8 @@ var namespaceservio_1_1brd =
     [ "adc_pooler_setup", "namespaceservio_1_1brd.html#a48e26a3111574036c12af8e0ad948472", null ],
     [ "comms_setup", "namespaceservio_1_1brd.html#a666117f8f817f737641c61f86ff8641e", null ],
     [ "eeprom_setup", "namespaceservio_1_1brd.html#a9da716cde949fe5737c1076f1220740f", null ],
+    [ "flash_start_cb", "namespaceservio_1_1brd.html#ab06f5330a2d1fb447f81c8c604feb7d3", null ],
+    [ "flash_stop_cb", "namespaceservio_1_1brd.html#a0d8854452f43c880788d5ba944dd75c0", null ],
     [ "get_curr_coeff", "namespaceservio_1_1brd.html#a1f7c49c0c9a0737b07080952026a5ebc", null ],
     [ "get_default_config", "namespaceservio_1_1brd.html#a2668116163a78a9f1c4b9993fce25530", null ],
     [ "hbridge_setup", "namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc", null ],

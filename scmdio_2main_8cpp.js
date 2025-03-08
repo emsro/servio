@@ -29,6 +29,7 @@ var scmdio_2main_8cpp =
     [ "bflash_def", "scmdio_2main_8cpp.html#ae34166d08fd8a74b00c051f802a676e6", null ],
     [ "cfg_def", "scmdio_2main_8cpp.html#a53cc5ff3007630b899ca2bf5afc5a391", null ],
     [ "field_option", "scmdio_2main_8cpp.html#ad775904026fd4fb1d8f3a62288c7d3ab", null ],
+    [ "handle_eptr", "scmdio_2main_8cpp.html#aabcd238bcdc64fd6f45c2ff73d285170", null ],
     [ "json_flag", "scmdio_2main_8cpp.html#a9d0341f90de176f1fb8528b9d21bbf61", null ],
     [ "main", "scmdio_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
     [ "mode_def", "scmdio_2main_8cpp.html#ae25251a99c0a6e96b85027cca28a0cc8", null ],

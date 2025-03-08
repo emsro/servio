@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('interface__tests_8hpp_source.html','')
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordflow">while</span> ( !ready )</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                        std::tie( ready, v ) = <a class="code hl_variable" href="structservio_1_1drv_1_1tests_1_1comms__echo__test.html#a35e1cc9226843e8147e38a53a1f5c0b2">comms</a>.<a class="code hl_function" href="structservio_1_1drv_1_1com__iface.html#a2e4eeb8621d13bc7698259bbe5fbd9c1">recv</a>( buffer2 );</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                store_data( mem, ctx, <span class="stringliteral">&quot;data&quot;</span>, v );</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="keyword">co_await</span> store_data( mem, ctx, <span class="stringliteral">&quot;data&quot;</span>, v );</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( v == em::view{ buffer } );</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
@@ -234,7 +234,7 @@ $(document).ready(function(){initNavTree('interface__tests_8hpp_source.html','')
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                <span class="keywordflow">while</span> ( !ready )</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                        std::tie( ready, v ) = <a class="code hl_variable" href="structservio_1_1drv_1_1tests_1_1comms__timeout__test.html#a6f29b88ad53dca1f37e9849a535438ab">comms</a>.<a class="code hl_function" href="structservio_1_1drv_1_1com__iface.html#a2e4eeb8621d13bc7698259bbe5fbd9c1">recv</a>( buffer2 );</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                store_data( mem, ctx, <span class="stringliteral">&quot;data&quot;</span>, v );</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                <span class="keyword">co_await</span> store_data( mem, ctx, <span class="stringliteral">&quot;data&quot;</span>, v );</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <span class="keyword">co_await</span> ctx.<a class="code hl_function" href="structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6">expect</a>( v == em::view{ buffer } );</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
@@ -553,7 +553,7 @@ $(document).ready(function(){initNavTree('interface__tests_8hpp_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="dir_26e34818c745abafa34d6ef482a48aa2.html">tests</a></li><li class="navelem"><a class="el" href="interface__tests_8hpp.html">interface_tests.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 7 2025 20:02:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Mar 8 2025 16:08:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

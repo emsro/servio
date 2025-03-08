@@ -116,16 +116,16 @@ $(document).ready(function(){initNavTree('structservio_1_1drv_1_1flash__storage.
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a35af08b51c145f25bbd2ca0909d32aa3" id="r_a35af08b51c145f25bbd2ca0909d32aa3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1flash__storage.html#a35af08b51c145f25bbd2ca0909d32aa3">flash_storage</a> (std::span&lt; em::view&lt; std::byte * &gt;, 2 &gt; pages)</td></tr>
-<tr class="separator:a35af08b51c145f25bbd2ca0909d32aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f1220c1ed04025cd52306ad1f27d650" id="r_a6f1220c1ed04025cd52306ad1f27d650"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1flash__storage.html#a6f1220c1ed04025cd52306ad1f27d650">flash_storage</a> (std::span&lt; em::view&lt; std::byte * &gt;, 2 &gt; pages, em::function_view&lt; void() &gt; start_cb, em::function_view&lt; void() &gt; stop_cb)</td></tr>
+<tr class="separator:a6f1220c1ed04025cd52306ad1f27d650"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a00d269f942a63dcbb0f7e8b1ae2879" id="r_a7a00d269f942a63dcbb0f7e8b1ae2879"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1flash__storage.html#a7a00d269f942a63dcbb0f7e8b1ae2879">store_page</a> (std::span&lt; std::byte const &gt; data) override</td></tr>
 <tr class="separator:a7a00d269f942a63dcbb0f7e8b1ae2879"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1145234825dda396925c352f0649aa9" id="r_ae1145234825dda396925c352f0649aa9"><td class="memItemLeft" align="right" valign="top">em::outcome&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1flash__storage.html#ae1145234825dda396925c352f0649aa9">load_page</a> (std::span&lt; std::byte &gt; data) override</td></tr>
 <tr class="separator:ae1145234825dda396925c352f0649aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a35af08b51c145f25bbd2ca0909d32aa3" name="a35af08b51c145f25bbd2ca0909d32aa3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35af08b51c145f25bbd2ca0909d32aa3">&#9670;&#160;</a></span>flash_storage()</h2>
+<a id="a6f1220c1ed04025cd52306ad1f27d650" name="a6f1220c1ed04025cd52306ad1f27d650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f1220c1ed04025cd52306ad1f27d650">&#9670;&#160;</a></span>flash_storage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,8 +137,24 @@ Public Member Functions</h2></td></tr>
           <td class="memname">servio::drv::flash_storage::flash_storage </td>
           <td>(</td>
           <td class="paramtype">std::span&lt; em::view&lt; std::byte * &gt;, 2 &gt;&#160;</td>
-          <td class="paramname"><em>pages</em></td><td>)</td>
+          <td class="paramname"><em>pages</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">em::function_view&lt; void() &gt;&#160;</td>
+          <td class="paramname"><em>start_cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">em::function_view&lt; void() &gt;&#160;</td>
+          <td class="paramname"><em>stop_cb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -221,7 +237,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="structservio_1_1drv_1_1flash__storage.html">flash_storage</a></li>
-    <li class="footer">Generated on Fri Mar 7 2025 20:02:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Mar 8 2025 16:08:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -22,6 +22,8 @@ var namespaceservio_1_1scmdio =
     [ "servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", null ],
     [ "stm32_bootloader_mock", "structservio_1_1scmdio_1_1stm32__bootloader__mock.html", "structservio_1_1scmdio_1_1stm32__bootloader__mock" ],
     [ "stream_iface", "structservio_1_1scmdio_1_1stream__iface.html", "structservio_1_1scmdio_1_1stream__iface" ],
+    [ "val_ser", "structservio_1_1scmdio_1_1val__ser.html", "structservio_1_1scmdio_1_1val__ser" ],
+    [ "val_ser< avakar::atom< Ts... > >", "structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html", "structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4" ],
     [ "opt", "namespaceservio_1_1scmdio.html#adec9aeb6f81f1c6f3db642544d88f967", null ],
     [ "sptr", "namespaceservio_1_1scmdio.html#a662f29442a014cdbe007bc12f0d52fe8", null ],
     [ "autotune_def", "namespaceservio_1_1scmdio.html#a54ae7a5edcb3197b0f05c6c357ad8b94", null ],

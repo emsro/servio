@@ -16,6 +16,5 @@ var namespaceservio_1_1ftester =
     [ "handle_test_specifics", "namespaceservio_1_1ftester.html#af85eaac72e6fd1885c973e047a7ac2ad", null ],
     [ "make_bmp_flash_task", "namespaceservio_1_1ftester.html#a6271a31584c71e0f02b95d888832da1e", null ],
     [ "make_openocd_flash_task", "namespaceservio_1_1ftester.html#a4d55394c1681c7716e00d85a89a60c08", null ],
-    [ "COM_LOGGER", "namespaceservio_1_1ftester.html#a4da908b96514755b7dda71c0cdf2734d", null ],
     [ "rec_id", "namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c", null ]
 ];

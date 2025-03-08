@@ -1,5 +1,10 @@
 var annotated_dup =
 [
+    [ "boost", "namespaceboost.html", [
+      [ "asio", "namespaceboost_1_1asio.html", [
+        [ "is_match_condition< servio::scmdio::match_byte >", "structboost_1_1asio_1_1is__match__condition_3_01servio_1_1scmdio_1_1match__byte_01_4.html", null ]
+      ] ]
+    ] ],
     [ "emlabcpp", "namespaceemlabcpp.html", [
       [ "testing", "namespaceemlabcpp_1_1testing.html", [
         [ "value_type_converter< servio::cfg::encoder_mode >", "structemlabcpp_1_1testing_1_1value__type__converter_3_01servio_1_1cfg_1_1encoder__mode_01_4.html", null ]
@@ -225,7 +230,9 @@ var annotated_dup =
         [ "serial_stream", "structservio_1_1scmdio_1_1serial__stream.html", "structservio_1_1scmdio_1_1serial__stream" ],
         [ "servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", null ],
         [ "stm32_bootloader_mock", "structservio_1_1scmdio_1_1stm32__bootloader__mock.html", "structservio_1_1scmdio_1_1stm32__bootloader__mock" ],
-        [ "stream_iface", "structservio_1_1scmdio_1_1stream__iface.html", "structservio_1_1scmdio_1_1stream__iface" ]
+        [ "stream_iface", "structservio_1_1scmdio_1_1stream__iface.html", "structservio_1_1scmdio_1_1stream__iface" ],
+        [ "val_ser", "structservio_1_1scmdio_1_1val__ser.html", "structservio_1_1scmdio_1_1val__ser" ],
+        [ "val_ser< avakar::atom< Ts... > >", "structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html", "structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4" ]
       ] ],
       [ "sim", "namespaceservio_1_1sim.html", [
         [ "simple_motor", "structservio_1_1sim_1_1simple__motor.html", "structservio_1_1sim_1_1simple__motor" ]

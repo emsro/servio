@@ -11,6 +11,8 @@ var proto4_2board_8cpp =
     [ "adc_pooler_setup", "proto4_2board_8cpp.html#a48e26a3111574036c12af8e0ad948472", null ],
     [ "comms_setup", "proto4_2board_8cpp.html#a666117f8f817f737641c61f86ff8641e", null ],
     [ "eeprom_setup", "proto4_2board_8cpp.html#a9da716cde949fe5737c1076f1220740f", null ],
+    [ "flash_start_cb", "proto4_2board_8cpp.html#ab06f5330a2d1fb447f81c8c604feb7d3", null ],
+    [ "flash_stop_cb", "proto4_2board_8cpp.html#a0d8854452f43c880788d5ba944dd75c0", null ],
     [ "get_curr_coeff", "proto4_2board_8cpp.html#a1f7c49c0c9a0737b07080952026a5ebc", null ],
     [ "get_default_config", "proto4_2board_8cpp.html#a2668116163a78a9f1c4b9993fce25530", null ],
     [ "GPDMA1_Channel0_IRQHandler", "proto4_2board_8cpp.html#ab4f8ebd906a5475a5817237942b25f62", null ],

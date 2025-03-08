@@ -187,7 +187,7 @@ var hierarchy =
     [ "servio::ftester::recorder", "classservio_1_1ftester_1_1recorder.html", null ],
     [ "servio::iface::resp", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1resp", null ],
     [ "servio::drv::bits::rx_buffer", "structservio_1_1drv_1_1bits_1_1rx__buffer.html", [
-      [ "servio::drv::bits::char_rx_container< '\\0' >", "structservio_1_1drv_1_1bits_1_1char__rx__container.html", null ],
+      [ "servio::drv::bits::char_rx_container< delim >", "structservio_1_1drv_1_1bits_1_1char__rx__container.html", null ],
       [ "servio::drv::bits::char_rx_container< C >", "structservio_1_1drv_1_1bits_1_1char__rx__container.html", null ],
       [ "servio::drv::bits::cobs_rx_container", "structservio_1_1drv_1_1bits_1_1cobs__rx__container.html", null ]
     ] ],
@@ -226,9 +226,14 @@ var hierarchy =
     ] ],
     [ "servio::ftester::test_system", "structservio_1_1ftester_1_1test__system.html", null ],
     [ "servio::ftest::testing_system", "structservio_1_1ftest_1_1testing__system.html", null ],
+    [ "boost::true_type", null, [
+      [ "boost::asio::is_match_condition< servio::scmdio::match_byte >", "structboost_1_1asio_1_1is__match__condition_3_01servio_1_1scmdio_1_1match__byte_01_4.html", null ]
+    ] ],
     [ "servio::plt::uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", null ],
     [ "servio::ftest::uctx", "structservio_1_1ftest_1_1uctx.html", null ],
     [ "servio::ftest::bench::usage", "structservio_1_1ftest_1_1bench_1_1usage.html", null ],
+    [ "servio::scmdio::val_ser< T >", "structservio_1_1scmdio_1_1val__ser.html", null ],
+    [ "servio::scmdio::val_ser< avakar::atom< Ts... > >", "structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "servio::drv::value_cb_iface", "structservio_1_1drv_1_1value__cb__iface.html", [
       [ "servio::core::position_callback", "classservio_1_1core_1_1position__callback.html", null ],
       [ "servio::drv::empty_value_cb", "structservio_1_1drv_1_1empty__value__cb.html", null ],

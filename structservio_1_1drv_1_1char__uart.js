@@ -10,5 +10,6 @@ var structservio_1_1drv_1_1char__uart =
     [ "rx_cplt_irq", "structservio_1_1drv_1_1char__uart.html#ab9b0dccea4114cbc61b616b8d4ee5941", null ],
     [ "send", "structservio_1_1drv_1_1char__uart.html#a4c0b3ac71d8ce891296ce2cb190adcac", null ],
     [ "start", "structservio_1_1drv_1_1char__uart.html#a2e6168b2f2959af4821ad1d2b93c8de2", null ],
-    [ "tx_cplt_irq", "structservio_1_1drv_1_1char__uart.html#a4e5d99e72f02c6bc94dbd77d981f2627", null ]
+    [ "tx_cplt_irq", "structservio_1_1drv_1_1char__uart.html#a4e5d99e72f02c6bc94dbd77d981f2627", null ],
+    [ "delim", "structservio_1_1drv_1_1char__uart.html#a547073f102e60f7e16355461ee091bc2", null ]
 ];
