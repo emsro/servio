@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cfg_0',['cfg',['../namespaceservio_1_1iface.html#a8686cc102e0a91097d2a2691839994d0',1,'servio::iface']]],
+  ['cfg_0',['cfg',['../namespaceservio_1_1iface.html#a626f18747394fa9795a4364786f56810',1,'servio::iface']]],
   ['cfg_5fkey_1',['cfg_key',['../namespaceservio_1_1iface.html#aaf16ae9411acb9dfaa3882cac5eeec8b',1,'servio::iface']]],
   ['cfg_5ftraits_2',['cfg_traits',['../namespaceservio_1_1iface.html#a9b76b81e907b1d13fdfdcd60196885c9',1,'servio::iface']]],
   ['cfg_5ftypes_3',['cfg_types',['../namespaceservio_1_1iface.html#ac7eaa4b9d993cc332eade38a17d678a0',1,'servio::iface']]],

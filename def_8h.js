@@ -11,7 +11,7 @@ var def_8h =
     [ "servio::iface::resp", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1resp", [
       [ "res", "namespaceservio_1_1iface.html#aa9d86f637741caf1dc2a04c490dcbd28", null ]
     ] ],
-    [ "cfg", "def_8h.html#a8686cc102e0a91097d2a2691839994d0", null ],
+    [ "cfg", "def_8h.html#a626f18747394fa9795a4364786f56810", null ],
     [ "cfg_key", "def_8h.html#aaf16ae9411acb9dfaa3882cac5eeec8b", null ],
     [ "cfg_traits", "def_8h.html#a9b76b81e907b1d13fdfdcd60196885c9", null ],
     [ "cfg_types", "def_8h.html#ac7eaa4b9d993cc332eade38a17d678a0", null ],
@@ -29,5 +29,6 @@ var def_8h =
     [ "prop_vals", "def_8h.html#a70dd8b0e0beff18fca4d25f00c404fec", null ],
     [ "property", "def_8h.html#aa1b3c4ec0edf29e073e86618c9c7ee10", null ],
     [ "stmt", "def_8h.html#a737e56b7f88459ad67c0001f4dd1e64a", null ],
+    [ "str_name", "def_8h.html#aeb9ff3cc159dd124b89a32fe26bddce0", null ],
     [ "parse", "def_8h.html#aa5cef807e90c362aede32aa8c3767c39", null ]
 ];

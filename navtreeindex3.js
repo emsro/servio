@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"hbridge_8hpp.html#a2312e09db62ce5efa6d7aa8de3cef65d":[8,0,1,6,15,1],
+"hbridge_8hpp_source.html":[8,0,1,6,15],
 "hierarchy.html":[7,2],
 "i2c_8cpp.html":[8,0,1,15,0,7],
 "i2c_8cpp.html#a82b4088167a8a259e745f035915d672a":[8,0,1,15,0,7,0],
@@ -184,10 +186,12 @@ var NAVTREEINDEX3 =
 "moves__test_8cpp.html#a390bb13008a780762d256e178ab8acca":[8,0,1,0,3,1],
 "moves__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[8,0,1,0,3,0],
 "moves__test_8cpp.html#a419ee5b44dab39f4b23a8503efa74383":[8,0,1,0,3,2],
-"namespaceboost.html":[6,0,0],
-"namespaceboost_1_1asio.html":[6,0,0,0],
-"namespaceemlabcpp.html":[6,0,1],
-"namespaceemlabcpp_1_1testing.html":[6,0,1,0],
+"namespaceavakar.html":[6,0,0],
+"namespaceavakar.html#a0ac47952e24e79aeb41ab920766bde9d":[6,0,0,0],
+"namespaceboost.html":[6,0,1],
+"namespaceboost_1_1asio.html":[6,0,1,0],
+"namespaceemlabcpp.html":[6,0,2],
+"namespaceemlabcpp_1_1testing.html":[6,0,2,0],
 "namespacemembers.html":[6,1,0,0],
 "namespacemembers.html":[6,1,0],
 "namespacemembers_a.html":[6,1,0,1],
@@ -243,11 +247,7 @@ var NAVTREEINDEX3 =
 "namespacemembers_vars.html":[6,1,2],
 "namespacemembers_w.html":[6,1,0,23],
 "namespaces.html":[6,0],
-"namespaceservio.html":[6,0,2],
-"namespaceservio.html#a00c2d45a108822e094be491c4004429b":[6,0,2,39],
-"namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c":[6,0,2,35],
-"namespaceservio.html#a20c15193768c59a28a88e172aba5ab20":[6,0,2,38],
-"namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909":[6,0,2,28],
-"namespaceservio.html#a3cbe32a0d33853a8e061ea4df443760e":[6,0,2,32],
-"namespaceservio.html#a53879f15eedde593c9cd6531402f5590":[6,0,2,36]
+"namespaceservio.html":[6,0,3],
+"namespaceservio.html#a00c2d45a108822e094be491c4004429b":[6,0,3,39],
+"namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c":[6,0,3,35]
 };

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_0',['a',['../structservio_1_1scmdio_1_1port__mock.html#ad8ef328bd6bbd6d04d8f26ecaec1e09f',1,'servio::scmdio::port_mock::a'],['../namespaceservio_1_1paging.html#a2fabf8c0c669f1fa520a83909c55c1c6',1,'servio::paging::A']]],
+  ['a_0',['a',['../namespaceservio_1_1paging.html#a2fabf8c0c669f1fa520a83909c55c1c6',1,'servio::paging::A'],['../structservio_1_1scmdio_1_1port__mock.html#ad8ef328bd6bbd6d04d8f26ecaec1e09f',1,'servio::scmdio::port_mock::a']]],
   ['ack_1',['ACK',['../namespaceservio_1_1scmdio.html#a848cd90402a2f36d81869dc4fdbbaec0',1,'servio::scmdio']]],
   ['adc_2ecpp_2',['adc.cpp',['../adc_8cpp.html',1,'']]],
   ['adc1_5firqhandler_3',['adc1_irqhandler',['../proto4_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b',1,'ADC1_IRQHandler():&#160;board.cpp'],['../proto3_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b',1,'ADC1_IRQHandler():&#160;board.cpp']]],
@@ -21,7 +21,7 @@ var searchData=
   ['adc_5finstance_18',['adc_instance',['../namespaceservio_1_1plt.html#a7c17b619a35f4e0ff604967668babdb4',1,'servio::plt::adc_cfg']]],
   ['adc_5firq_5fpriority_19',['adc_irq_priority',['../namespaceservio_1_1plt.html#a6a1b2270dd01143ff1bc38ba8cfd3020',1,'servio::plt::adc_cfg']]],
   ['adc_5fperiod_5fcb_20',['ADC_PERIOD_CB',['../namespaceservio_1_1brd.html#a9fd563d901e739e49f3a9b8754686117',1,'servio::brd']]],
-  ['adc_5fpooler_21',['adc_pooler',['../structservio_1_1drv_1_1adc__pooler.html',1,'servio::drv::adc_pooler&lt; Set &gt;'],['../namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1',1,'servio::brd::ADC_POOLER'],['../structservio_1_1drv_1_1adc__pooler.html#a987b5031dff2b6f9acebdfcf971948df',1,'servio::drv::adc_pooler::adc_pooler()']]],
+  ['adc_5fpooler_21',['adc_pooler',['../structservio_1_1drv_1_1adc__pooler.html',1,'servio::drv::adc_pooler&lt; Set &gt;'],['../structservio_1_1drv_1_1adc__pooler.html#a987b5031dff2b6f9acebdfcf971948df',1,'servio::drv::adc_pooler::adc_pooler()'],['../namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1',1,'servio::brd::ADC_POOLER']]],
   ['adc_5fpooler_2ehpp_22',['adc_pooler.hpp',['../adc__pooler_8hpp.html',1,'']]],
   ['adc_5fpooler_5fcfg_5ferr_23',['ADC_POOLER_CFG_ERR',['../namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76ba82611ec514648359b9bf369d982b0966',1,'servio::drv']]],
   ['adc_5fpooler_5fcurrent_24',['adc_pooler_current',['../structservio_1_1drv_1_1adc__pooler__current.html',1,'servio::drv']]],
@@ -69,8 +69,9 @@ var searchData=
   ['autotune_5fctx_66',['autotune_ctx',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx',1,'servio::scmdio']]],
   ['autotune_5fdef_67',['autotune_def',['../namespaceservio_1_1scmdio.html#a54ae7a5edcb3197b0f05c6c357ad8b94',1,'servio::scmdio']]],
   ['autotune_5futest_2ecpp_68',['autotune_utest.cpp',['../autotune__utest_8cpp.html',1,'']]],
-  ['avg_5ffilter_69',['avg_filter',['../structservio_1_1core_1_1avg__filter.html',1,'servio::core']]],
-  ['await_5fready_70',['await_ready',['../structservio_1_1scmdio_1_1consumer_1_1get.html#adcb8d023fdf00210ea247ee4ee4cfd59',1,'servio::scmdio::consumer::get']]],
-  ['await_5fresume_71',['await_resume',['../structservio_1_1scmdio_1_1consumer_1_1get.html#a73b22a7f78f15610ee19dd9b3d8ecab4',1,'servio::scmdio::consumer::get']]],
-  ['await_5fsuspend_72',['await_suspend',['../structservio_1_1scmdio_1_1consumer_1_1get.html#aee249b8cf0f9597005b18bac3e404977',1,'servio::scmdio::consumer::get']]]
+  ['avakar_69',['avakar',['../namespaceavakar.html',1,'']]],
+  ['avg_5ffilter_70',['avg_filter',['../structservio_1_1core_1_1avg__filter.html',1,'servio::core']]],
+  ['await_5fready_71',['await_ready',['../structservio_1_1scmdio_1_1consumer_1_1get.html#adcb8d023fdf00210ea247ee4ee4cfd59',1,'servio::scmdio::consumer::get']]],
+  ['await_5fresume_72',['await_resume',['../structservio_1_1scmdio_1_1consumer_1_1get.html#a73b22a7f78f15610ee19dd9b3d8ecab4',1,'servio::scmdio::consumer::get']]],
+  ['await_5fsuspend_73',['await_suspend',['../structservio_1_1scmdio_1_1consumer_1_1get.html#aee249b8cf0f9597005b18bac3e404977',1,'servio::scmdio::consumer::get']]]
 ];

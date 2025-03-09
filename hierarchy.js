@@ -81,6 +81,7 @@ var hierarchy =
     [ "servio::iface::field_tuple< vari::typelist< Ts... > >", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4", null ],
     [ "std::formatter< A, char >", "structstd_1_1formatter_3_01A_00_01char_01_4.html", null ],
     [ "std::formatter< avakar::atom< As... >, char >", "structstd_1_1formatter_3_01avakar_1_1atom_3_01As_8_8_8_01_4_00_01char_01_4.html", null ],
+    [ "std::formatter< emlabcpp::string_buffer< N >, char >", "structstd_1_1formatter_3_01emlabcpp_1_1string__buffer_3_01N_01_4_00_01char_01_4.html", null ],
     [ "std::formatter< emlabcpp::view< T >, char >", "structstd_1_1formatter_3_01emlabcpp_1_1view_3_01T_01_4_00_01char_01_4.html", null ],
     [ "std::formatter< nlohmann::json, char >", "structstd_1_1formatter_3_01nlohmann_1_1json_00_01char_01_4.html", null ],
     [ "std::formatter< std::byte, char >", "structstd_1_1formatter_3_01std_1_1byte_00_01char_01_4.html", null ],

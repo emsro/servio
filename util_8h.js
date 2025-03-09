@@ -3,6 +3,8 @@ var util_8h =
     [ "SERVIO_NUM_ASSERT", "util_8h.html#abff091ec966eae9851195a8d22072630", null ],
     [ "num", "util_8h.html#a9844dae1e4bd49c122e21f7c085b2915", null ],
     [ "real", "util_8h.html#ab1ae0a3f8eddcd7aab9dcf84f5752c7f", null ],
+    [ "_exp_pow", "util_8h.html#a5c235672f7ba6299488929e4397a1d89", null ],
+    [ "_finish_exp", "util_8h.html#aebaa0b86d054ddc3f54bd9d4b55a3da7", null ],
     [ "_is_dec", "util_8h.html#ab13711a55cca63cc0baf543b26d2f88f", null ],
     [ "_is_hex", "util_8h.html#a9455e2cf8643ff6b870257d8858d17d8", null ],
     [ "_is_id_letter", "util_8h.html#afba82c1e52afaa00950493cbfab86b2d", null ],

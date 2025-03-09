@@ -175,8 +175,8 @@ Functions</h2></td></tr>
 <tr class="separator:ac023aa739e41677ffd009b64bd229c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36102a4552c6bf3e92b28956b1e78f9e" id="r_a36102a4552c6bf3e92b28956b1e78f9e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a36102a4552c6bf3e92b28956b1e78f9e">bflash_conv</a> (std::span&lt; std::byte const, 4 &gt; data)</td></tr>
 <tr class="separator:a36102a4552c6bf3e92b28956b1e78f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6bd175875ae535d1fec019087aaa0eb" id="r_ad6bd175875ae535d1fec019087aaa0eb"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ad6bd175875ae535d1fec019087aaa0eb">verbose_opt</a> (CLI::App &amp;app, uint32_t &amp;val)</td></tr>
-<tr class="separator:ad6bd175875ae535d1fec019087aaa0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aecdc1e34568340af05c8ef7b84c712" id="r_a8aecdc1e34568340af05c8ef7b84c712"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a8aecdc1e34568340af05c8ef7b84c712">verbose_opt</a> (CLI::App &amp;app)</td></tr>
+<tr class="separator:a8aecdc1e34568340af05c8ef7b84c712"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65b2b391dc07c1b8476d7f72e781a825" id="r_a65b2b391dc07c1b8476d7f72e781a825"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a65b2b391dc07c1b8476d7f72e781a825">coms_opt</a> (CLI::App &amp;app, std::filesystem::path &amp;comms)</td></tr>
 <tr class="separator:a65b2b391dc07c1b8476d7f72e781a825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4fa41dcb7957c74dcc335d566c28eef" id="r_ad4fa41dcb7957c74dcc335d566c28eef"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ad4fa41dcb7957c74dcc335d566c28eef">dcoms_opt</a> (CLI::App &amp;app, std::filesystem::path &amp;comms)</td></tr>
@@ -1290,7 +1290,7 @@ template&lt;auto K, typename F  = typename iface::cfg_traits::ktof&lt; K &gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#ab3a9d3e781797bae6ec2211568c2511b">exchg()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5">log_error()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#ab3a9d3e781797bae6ec2211568c2511b">exchg()</a>.</p>
 
 </div>
 </div>
@@ -1854,7 +1854,7 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#ab3a9d3e781797bae6ec2211568c2511b">exchg()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5">log_error()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#ab3a9d3e781797bae6ec2211568c2511b">exchg()</a>.</p>
 
 </div>
 </div>
@@ -2256,8 +2256,8 @@ template&lt;typename T , typename F &gt; </div>
 
 </div>
 </div>
-<a id="ad6bd175875ae535d1fec019087aaa0eb" name="ad6bd175875ae535d1fec019087aaa0eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6bd175875ae535d1fec019087aaa0eb">&#9670;&#160;</a></span>verbose_opt()</h2>
+<a id="a8aecdc1e34568340af05c8ef7b84c712" name="a8aecdc1e34568340af05c8ef7b84c712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aecdc1e34568340af05c8ef7b84c712">&#9670;&#160;</a></span>verbose_opt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2266,18 +2266,8 @@ template&lt;typename T , typename F &gt; </div>
           <td class="memname">CLI::Option * servio::scmdio::verbose_opt </td>
           <td>(</td>
           <td class="paramtype">CLI::App &amp;&#160;</td>
-          <td class="paramname"><em>app</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>app</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">uint32_t &amp;&#160;</td>
-          <td class="paramname"><em>val</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2475,7 +2465,7 @@ template&lt;typename T , typename F &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1scmdio.html">scmdio</a></li>
-    <li class="footer">Generated on Sat Mar 8 2025 21:11:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 9 2025 13:06:09 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

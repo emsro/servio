@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('field__util_8hpp_source.html',''); ini
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">template</span> &lt; <span class="keyword">auto</span>... Ts &gt;</div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html">   13</a></span><span class="keyword">struct </span>nlohmann::adl_serializer&lt; avakar::atom&lt; Ts... &gt; &gt;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html">   13</a></span><span class="keyword">struct </span>nlohmann::adl_serializer&lt; <a class="code hl_namespace" href="namespaceavakar.html">avakar</a>::atom&lt; Ts... &gt; &gt;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#aa0a5ba165d6278e2a41e4bf15d662504">   15</a></span>        <span class="keyword">static</span> avakar::atom&lt; Ts... &gt; <a class="code hl_function" href="structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#aa0a5ba165d6278e2a41e4bf15d662504">from_json</a>( nlohmann::json <span class="keyword">const</span>&amp; j )</div>
@@ -141,145 +141,154 @@ $(document).ready(function(){initNavTree('field__util_8hpp_source.html',''); ini
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1val__ser.html">   36</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1scmdio_1_1val__ser.html">val_ser</a></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1val__ser.html#ae57b94dd83fbc48e4350be1f6e0a472a">   38</a></span>        <span class="keyword">static</span> T <a class="code hl_function" href="structservio_1_1scmdio_1_1val__ser.html#ae57b94dd83fbc48e4350be1f6e0a472a">ser</a>( std::string_view val )</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, std::string_view &gt; )</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                        <span class="keywordflow">return</span> val;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, float &gt; )</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                        <span class="keywordflow">return</span> std::stof( std::string{ val } );</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, bool &gt; ) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                        <span class="keywordflow">if</span> ( val == <span class="stringliteral">&quot;true&quot;</span> )</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                        <span class="keywordflow">if</span> ( val == <span class="stringliteral">&quot;false&quot;</span> )</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                        <a class="code hl_function" href="namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5">log_error</a>( <span class="stringliteral">&quot;Invalid bool value: &quot;</span>, val );</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::is_integral_v&lt; T &gt; ) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                        T ret;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                        std::from_chars( val.data(), val.data() + val.size(), ret );</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                } <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                        <span class="keyword">static_assert</span>( std::is_same_v&lt; T, void &gt;, <span class="stringliteral">&quot;unsupported type&quot;</span> );</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceemlabcpp.html">em</a> = <a class="code hl_namespace" href="namespaceemlabcpp.html">emlabcpp</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1val__ser.html">   38</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1scmdio_1_1val__ser.html">val_ser</a></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1val__ser.html#ae57b94dd83fbc48e4350be1f6e0a472a">   40</a></span>        <span class="keyword">static</span> T <a class="code hl_function" href="structservio_1_1scmdio_1_1val__ser.html#ae57b94dd83fbc48e4350be1f6e0a472a">ser</a>( std::string_view val )</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, std::string_view &gt; )</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                        <span class="keywordflow">return</span> val;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, float &gt; )</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                        <span class="keywordflow">return</span> std::stof( std::string{ val } );</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, bool &gt; ) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                        <span class="keywordflow">if</span> ( val == <span class="stringliteral">&quot;true&quot;</span> )</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                        <span class="keywordflow">if</span> ( val == <span class="stringliteral">&quot;false&quot;</span> )</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                        <a class="code hl_function" href="namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5">log_error</a>( <span class="stringliteral">&quot;Invalid bool value: &quot;</span>, val );</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::is_integral_v&lt; T &gt; ) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                        T ret;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                        std::from_chars( val.data(), val.data() + val.size(), ret );</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( em::is_string_buffer_v&lt; T &gt; ) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                        <span class="keywordflow">return</span> T{ val };</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                        <span class="keyword">static_assert</span>( std::is_same_v&lt; T, void &gt;, <span class="stringliteral">&quot;unsupported type&quot;</span> );</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">template</span> &lt; <span class="keyword">auto</span>... Ts &gt;</div>
-<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html">   60</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1scmdio_1_1val__ser.html">val_ser</a>&lt; avakar::atom&lt; Ts... &gt; &gt;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#a61972ccc8f4c236f65d3603f8f2127b3">   62</a></span>        <span class="keyword">static</span> avakar::atom&lt; Ts... &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#a61972ccc8f4c236f65d3603f8f2127b3">ser</a>( std::string_view val )</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <span class="keyword">auto</span> x = avakar::atom&lt; Ts... &gt;::from_string( val );</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keywordflow">if</span> ( x )</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                        <span class="keywordflow">return</span> *x;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                <a class="code hl_function" href="namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5">log_error</a>( <span class="stringliteral">&quot;Failed to parse atom: &quot;</span>, val );</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">template</span> &lt; <span class="keyword">auto</span>... Ts &gt;</div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html">   64</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1scmdio_1_1val__ser.html">val_ser</a>&lt; <a class="code hl_namespace" href="namespaceavakar.html">avakar</a>::atom&lt; Ts... &gt; &gt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#a61972ccc8f4c236f65d3603f8f2127b3">   66</a></span>        <span class="keyword">static</span> avakar::atom&lt; Ts... &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#a61972ccc8f4c236f65d3603f8f2127b3">ser</a>( std::string_view val )</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keyword">auto</span> x = avakar::atom&lt; Ts... &gt;::from_string( val );</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="keywordflow">if</span> ( x )</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                        <span class="keywordflow">return</span> *x;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <a class="code hl_function" href="namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5">log_error</a>( <span class="stringliteral">&quot;Failed to parse atom: &quot;</span>, val );</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
 </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="namespaceservio_1_1scmdio.html">   72</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="foldopen" id="foldopen00075" data-start="{" data-end="};">
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html">   75</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>&lt; <a class="code hl_namespace" href="namespacevari.html">vari</a>::typelist&lt;&gt; &gt;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
-<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#ab9fab5ce0fb9f02259e90562f205b395">   77</a></span>        <span class="keyword">static</span> vari::vopt&lt; vari::typelist&lt;&gt; &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#ab9fab5ce0fb9f02259e90562f205b395">ser</a>( std::string_view, std::string_view )</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="namespaceservio_1_1scmdio.html">   76</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html">   79</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>&lt; <a class="code hl_namespace" href="namespacevari.html">vari</a>::typelist&lt;&gt; &gt;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#ab9fab5ce0fb9f02259e90562f205b395">   81</a></span>        <span class="keyword">static</span> vari::vopt&lt; vari::typelist&lt;&gt; &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#ab9fab5ce0fb9f02259e90562f205b395">ser</a>( std::string_view, std::string_view )</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#a8c796309fa3cf9f3759a09719152c2b5">   82</a></span>        <span class="keyword">static</span> vari::vopt&lt; vari::typelist&lt;&gt; &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#a8c796309fa3cf9f3759a09719152c2b5">from_json</a>( <span class="keyword">auto</span>&amp;, nlohmann::json <span class="keyword">const</span>&amp; )</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#a8c796309fa3cf9f3759a09719152c2b5">   86</a></span>        <span class="keyword">static</span> vari::vopt&lt; vari::typelist&lt;&gt; &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#a8c796309fa3cf9f3759a09719152c2b5">from_json</a>( <span class="keyword">auto</span>&amp;, nlohmann::json <span class="keyword">const</span>&amp; )</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
 </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>};</div>
 </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> KV, <span class="keyword">typename</span>... KVs &gt;</div>
-<div class="foldopen" id="foldopen00089" data-start="{" data-end="};">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html">   89</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>&lt; <a class="code hl_namespace" href="namespacevari.html">vari</a>::typelist&lt; KV, KVs... &gt; &gt;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="comment">// XXX: hate this, can&#39;t pass anything - does not have to match</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">template</span> &lt; <span class="keyword">typename</span>... Ts &gt;</div>
-<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#ae94b48a4c21be060496917c18b50be48">   94</a></span>        <span class="keyword">static</span> vari::vopt&lt; KV, KVs... &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#ae94b48a4c21be060496917c18b50be48">from_val</a>( std::string_view name, vari::_vptr&lt; Ts... &gt; x )</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keyword">auto</span> k = KV::key_type::from_string( name );</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <span class="keywordflow">if</span> ( !k )</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                        <span class="keywordflow">return</span> <a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>&lt; vari::typelist&lt; KVs... &gt; &gt;::from_val( name, x );</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">return</span> x.visit(</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    [&amp;]( vari::empty_t ) -&gt; vari::vopt&lt; KV, KVs... &gt; {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                            <span class="keywordflow">if</span> ( std::same_as&lt; typename KV::value_type, void &gt; )</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                                    <span class="keywordflow">return</span> KV{ *k };</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                            <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                    },</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                    [&amp;]&lt; <span class="keyword">typename</span> U &gt;( U&amp; thing ) -&gt; vari::vopt&lt; KV, KVs... &gt; {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                            <span class="keywordflow">if</span> ( std::same_as&lt; U, typename KV::value_type &gt; )</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                                    <span class="keywordflow">return</span> KV{ *k, thing };</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                            <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                    } );</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> KV, <span class="keyword">typename</span>... KVs &gt;</div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="};">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html">   93</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>&lt; <a class="code hl_namespace" href="namespacevari.html">vari</a>::typelist&lt; KV, KVs... &gt; &gt;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="comment">// XXX: hate this, can&#39;t pass anything - does not have to match</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keyword">template</span> &lt; <span class="keyword">typename</span>... Ts &gt;</div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#ae94b48a4c21be060496917c18b50be48">   98</a></span>        <span class="keyword">static</span> vari::vopt&lt; KV, KVs... &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#ae94b48a4c21be060496917c18b50be48">from_val</a>( std::string_view name, vari::_vptr&lt; Ts... &gt; x )</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                <span class="keyword">auto</span> k = KV::key_type::from_string( name );</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                <span class="keywordflow">if</span> ( !k )</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                        <span class="keywordflow">return</span> <a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>&lt; vari::typelist&lt; KVs... &gt; &gt;::from_val( name, x );</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                <span class="keywordflow">return</span> x.visit(</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                    [&amp;]( vari::empty_t ) -&gt; vari::vopt&lt; KV, KVs... &gt; {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                            <span class="keywordflow">if</span> ( std::same_as&lt; typename KV::value_type, void &gt; )</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                                    <span class="keywordflow">return</span> KV{ *k };</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                            <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                    },</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                    [&amp;]&lt; <span class="keyword">typename</span> U &gt;( U&amp; thing ) -&gt; vari::vopt&lt; KV, KVs... &gt; {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                            <span class="keywordflow">if</span> ( std::same_as&lt; U, typename KV::value_type &gt; )</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                                    <span class="keywordflow">return</span> KV{ *k, thing };</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                            <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    } );</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
 </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a09f6da468761a0df3b2b8fc366f07664">  112</a></span>        <span class="keyword">static</span> vari::vopt&lt; KV, KVs... &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a09f6da468761a0df3b2b8fc366f07664">ser</a>( std::string_view name, std::string_view value )</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                <span class="keywordflow">if</span> ( KV::key.to_string() == name )</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                        <span class="keywordflow">return</span> KV{ <a class="code hl_function" href="structservio_1_1scmdio_1_1val__ser.html#ae57b94dd83fbc48e4350be1f6e0a472a">val_ser&lt; typename KV::value_type &gt;::ser</a>( value ) };</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                        <span class="keywordflow">return</span> <a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>&lt; vari::typelist&lt; KVs... &gt; &gt;::ser( name, value );</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a09f6da468761a0df3b2b8fc366f07664">  116</a></span>        <span class="keyword">static</span> vari::vopt&lt; KV, KVs... &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a09f6da468761a0df3b2b8fc366f07664">ser</a>( std::string_view name, std::string_view value )</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                <span class="keywordflow">if</span> ( KV::key.to_string() == name )</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                        <span class="keywordflow">return</span> KV{ <a class="code hl_function" href="structservio_1_1scmdio_1_1val__ser.html#ae57b94dd83fbc48e4350be1f6e0a472a">val_ser&lt; typename KV::value_type &gt;::ser</a>( value ) };</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                        <span class="keywordflow">return</span> <a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>&lt; vari::typelist&lt; KVs... &gt; &gt;::ser( name, value );</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
 </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a577d6b981f715a95a99b1cfd943c4861">  120</a></span>        <span class="keyword">static</span> vari::vopt&lt; KV, KVs... &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a577d6b981f715a95a99b1cfd943c4861">from_json</a>( std::string_view name, nlohmann::json <span class="keyword">const</span>&amp; j )</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        {</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                <span class="keywordflow">if</span> ( KV::key.to_string() == name )</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                        <span class="keywordflow">return</span> KV{ j.get&lt; <span class="keyword">typename</span> KV::value_type &gt;() };</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                        <span class="keywordflow">return</span> <a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>&lt; vari::typelist&lt; KVs... &gt; &gt;::from_json( name, j );</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a577d6b981f715a95a99b1cfd943c4861">  124</a></span>        <span class="keyword">static</span> vari::vopt&lt; KV, KVs... &gt; <a class="code hl_function" href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a577d6b981f715a95a99b1cfd943c4861">from_json</a>( std::string_view name, nlohmann::json <span class="keyword">const</span>&amp; j )</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <span class="keywordflow">if</span> ( KV::key.to_string() == name ) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                        <span class="comment">// if constexpr ( std::same_as&lt; typename KV::value_type, std::string_view &gt;</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                        <span class="comment">// )</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                        <span class="keywordflow">return</span> KV{ j.get&lt; <span class="keyword">typename</span> KV::value_type &gt;() };</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                        <span class="keywordflow">return</span> <a class="code hl_struct" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">kval_ser</a>&lt; vari::typelist&lt; KVs... &gt; &gt;::from_json( name, j );</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
 </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>};</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>};</div>
 </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}  <span class="comment">// namespace servio::scmdio</span></div>
-<div class="ttc" id="anamespaceservio_1_1scmdio_html"><div class="ttname"><a href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div><div class="ttdef"><b>Definition</b> base.hpp:14</div></div>
-<div class="ttc" id="anamespaceservio_1_1scmdio_html_aa0948d83703aaf03ad168493e958f0c5"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5">servio::scmdio::log_error</a></div><div class="ttdeci">void log_error(auto const &amp;fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> base.hpp:32</div></div>
-<div class="ttc" id="anamespaceservio_1_1scmdio_html_structservio_1_1scmdio_1_1kval__ser"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">servio::scmdio::kval_ser</a></div><div class="ttdef"><b>Definition</b> field_util.hpp:72</div></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}  <span class="comment">// namespace servio::scmdio</span></div>
+<div class="ttc" id="anamespaceavakar_html"><div class="ttname"><a href="namespaceavakar.html">avakar</a></div><div class="ttdef"><b>Definition</b> config_test.cpp:10</div></div>
+<div class="ttc" id="anamespaceemlabcpp_html"><div class="ttname"><a href="namespaceemlabcpp.html">emlabcpp</a></div><div class="ttdef"><b>Definition</b> map.hpp:109</div></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html"><div class="ttname"><a href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div><div class="ttdef"><b>Definition</b> base.hpp:15</div></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html_aa0948d83703aaf03ad168493e958f0c5"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5">servio::scmdio::log_error</a></div><div class="ttdeci">void log_error(auto const &amp;fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> base.hpp:33</div></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html_structservio_1_1scmdio_1_1kval__ser"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">servio::scmdio::kval_ser</a></div><div class="ttdef"><b>Definition</b> field_util.hpp:76</div></div>
 <div class="ttc" id="anamespacevari_html"><div class="ttname"><a href="namespacevari.html">vari</a></div><div class="ttdef"><b>Definition</b> util_utest.cpp:9</div></div>
 <div class="ttc" id="asntr_2base_8hpp_html"><div class="ttname"><a href="sntr_2base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="astructnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4_html_aa0a5ba165d6278e2a41e4bf15d662504"><div class="ttname"><a href="structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#aa0a5ba165d6278e2a41e4bf15d662504">nlohmann::adl_serializer&lt; avakar::atom&lt; Ts... &gt; &gt;::from_json</a></div><div class="ttdeci">static avakar::atom&lt; Ts... &gt; from_json(nlohmann::json const &amp;j)</div><div class="ttdef"><b>Definition</b> field_util.hpp:15</div></div>
 <div class="ttc" id="astructnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4_html_a6d892663fcee773096b41f466457be8c"><div class="ttname"><a href="structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html#a6d892663fcee773096b41f466457be8c">nlohmann::adl_serializer&lt; vari::_vval&lt; Ts... &gt; &gt;::from_json</a></div><div class="ttdeci">static vari::_vval&lt; Ts... &gt; from_json(nlohmann::json const &amp;)</div><div class="ttdef"><b>Definition</b> field_util.hpp:26</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4_html_a09f6da468761a0df3b2b8fc366f07664"><div class="ttname"><a href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a09f6da468761a0df3b2b8fc366f07664">servio::scmdio::kval_ser&lt; vari::typelist&lt; KV, KVs... &gt; &gt;::ser</a></div><div class="ttdeci">static vari::vopt&lt; KV, KVs... &gt; ser(std::string_view name, std::string_view value)</div><div class="ttdef"><b>Definition</b> field_util.hpp:112</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4_html_a577d6b981f715a95a99b1cfd943c4861"><div class="ttname"><a href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a577d6b981f715a95a99b1cfd943c4861">servio::scmdio::kval_ser&lt; vari::typelist&lt; KV, KVs... &gt; &gt;::from_json</a></div><div class="ttdeci">static vari::vopt&lt; KV, KVs... &gt; from_json(std::string_view name, nlohmann::json const &amp;j)</div><div class="ttdef"><b>Definition</b> field_util.hpp:120</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4_html_ae94b48a4c21be060496917c18b50be48"><div class="ttname"><a href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#ae94b48a4c21be060496917c18b50be48">servio::scmdio::kval_ser&lt; vari::typelist&lt; KV, KVs... &gt; &gt;::from_val</a></div><div class="ttdeci">static vari::vopt&lt; KV, KVs... &gt; from_val(std::string_view name, vari::_vptr&lt; Ts... &gt; x)</div><div class="ttdef"><b>Definition</b> field_util.hpp:94</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4_html_a8c796309fa3cf9f3759a09719152c2b5"><div class="ttname"><a href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#a8c796309fa3cf9f3759a09719152c2b5">servio::scmdio::kval_ser&lt; vari::typelist&lt;&gt; &gt;::from_json</a></div><div class="ttdeci">static vari::vopt&lt; vari::typelist&lt;&gt; &gt; from_json(auto &amp;, nlohmann::json const &amp;)</div><div class="ttdef"><b>Definition</b> field_util.hpp:82</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4_html_ab9fab5ce0fb9f02259e90562f205b395"><div class="ttname"><a href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#ab9fab5ce0fb9f02259e90562f205b395">servio::scmdio::kval_ser&lt; vari::typelist&lt;&gt; &gt;::ser</a></div><div class="ttdeci">static vari::vopt&lt; vari::typelist&lt;&gt; &gt; ser(std::string_view, std::string_view)</div><div class="ttdef"><b>Definition</b> field_util.hpp:77</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4_html_a61972ccc8f4c236f65d3603f8f2127b3"><div class="ttname"><a href="structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#a61972ccc8f4c236f65d3603f8f2127b3">servio::scmdio::val_ser&lt; avakar::atom&lt; Ts... &gt; &gt;::ser</a></div><div class="ttdeci">static avakar::atom&lt; Ts... &gt; ser(std::string_view val)</div><div class="ttdef"><b>Definition</b> field_util.hpp:62</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1val__ser_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1val__ser.html">servio::scmdio::val_ser</a></div><div class="ttdef"><b>Definition</b> field_util.hpp:37</div></div>
-<div class="ttc" id="astructservio_1_1scmdio_1_1val__ser_html_ae57b94dd83fbc48e4350be1f6e0a472a"><div class="ttname"><a href="structservio_1_1scmdio_1_1val__ser.html#ae57b94dd83fbc48e4350be1f6e0a472a">servio::scmdio::val_ser::ser</a></div><div class="ttdeci">static T ser(std::string_view val)</div><div class="ttdef"><b>Definition</b> field_util.hpp:38</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4_html_a09f6da468761a0df3b2b8fc366f07664"><div class="ttname"><a href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a09f6da468761a0df3b2b8fc366f07664">servio::scmdio::kval_ser&lt; vari::typelist&lt; KV, KVs... &gt; &gt;::ser</a></div><div class="ttdeci">static vari::vopt&lt; KV, KVs... &gt; ser(std::string_view name, std::string_view value)</div><div class="ttdef"><b>Definition</b> field_util.hpp:116</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4_html_a577d6b981f715a95a99b1cfd943c4861"><div class="ttname"><a href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#a577d6b981f715a95a99b1cfd943c4861">servio::scmdio::kval_ser&lt; vari::typelist&lt; KV, KVs... &gt; &gt;::from_json</a></div><div class="ttdeci">static vari::vopt&lt; KV, KVs... &gt; from_json(std::string_view name, nlohmann::json const &amp;j)</div><div class="ttdef"><b>Definition</b> field_util.hpp:124</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4_html_ae94b48a4c21be060496917c18b50be48"><div class="ttname"><a href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html#ae94b48a4c21be060496917c18b50be48">servio::scmdio::kval_ser&lt; vari::typelist&lt; KV, KVs... &gt; &gt;::from_val</a></div><div class="ttdeci">static vari::vopt&lt; KV, KVs... &gt; from_val(std::string_view name, vari::_vptr&lt; Ts... &gt; x)</div><div class="ttdef"><b>Definition</b> field_util.hpp:98</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4_html_a8c796309fa3cf9f3759a09719152c2b5"><div class="ttname"><a href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#a8c796309fa3cf9f3759a09719152c2b5">servio::scmdio::kval_ser&lt; vari::typelist&lt;&gt; &gt;::from_json</a></div><div class="ttdeci">static vari::vopt&lt; vari::typelist&lt;&gt; &gt; from_json(auto &amp;, nlohmann::json const &amp;)</div><div class="ttdef"><b>Definition</b> field_util.hpp:86</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4_html_ab9fab5ce0fb9f02259e90562f205b395"><div class="ttname"><a href="structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html#ab9fab5ce0fb9f02259e90562f205b395">servio::scmdio::kval_ser&lt; vari::typelist&lt;&gt; &gt;::ser</a></div><div class="ttdeci">static vari::vopt&lt; vari::typelist&lt;&gt; &gt; ser(std::string_view, std::string_view)</div><div class="ttdef"><b>Definition</b> field_util.hpp:81</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4_html_a61972ccc8f4c236f65d3603f8f2127b3"><div class="ttname"><a href="structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#a61972ccc8f4c236f65d3603f8f2127b3">servio::scmdio::val_ser&lt; avakar::atom&lt; Ts... &gt; &gt;::ser</a></div><div class="ttdeci">static avakar::atom&lt; Ts... &gt; ser(std::string_view val)</div><div class="ttdef"><b>Definition</b> field_util.hpp:66</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1val__ser_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1val__ser.html">servio::scmdio::val_ser</a></div><div class="ttdef"><b>Definition</b> field_util.hpp:39</div></div>
+<div class="ttc" id="astructservio_1_1scmdio_1_1val__ser_html_ae57b94dd83fbc48e4350be1f6e0a472a"><div class="ttname"><a href="structservio_1_1scmdio_1_1val__ser.html#ae57b94dd83fbc48e4350be1f6e0a472a">servio::scmdio::val_ser::ser</a></div><div class="ttdeci">static T ser(std::string_view val)</div><div class="ttdef"><b>Definition</b> field_util.hpp:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="field__util_8hpp.html">field_util.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 8 2025 21:11:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 9 2025 13:06:08 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
