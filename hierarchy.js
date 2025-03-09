@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "servio::str_lib::_no_res", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__no__res", null ],
     [ "servio::plt::adc_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg", null ],
     [ "servio::drv::adc_channel< ID >", "structservio_1_1drv_1_1adc__channel.html", [
       [ "servio::drv::adc_channel_with_callback< drv::POSITION_CHANNEL >", "structservio_1_1drv_1_1adc__channel__with__callback.html", null ],
@@ -9,9 +10,10 @@ var hierarchy =
     [ "servio::drv::adc_pooler< Set >", "structservio_1_1drv_1_1adc__pooler.html", null ],
     [ "servio::drv::tests::adc_pooler_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test", null ],
     [ "servio::brd::adc_set", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set", null ],
+    [ "servio::str_lib::bits::adder", "structservio_1_1str__lib_1_1bits_1_1adder.html", null ],
     [ "nlohmann::adl_serializer< avakar::atom< Ts... > >", "structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "nlohmann::adl_serializer< vari::_vval< Ts... > >", "structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html", null ],
-    [ "servio::base::array_ser", "structservio_1_1base_1_1array__ser.html", null ],
+    [ "servio::json::array_ser", "structservio_1_1json_1_1array__ser.html", null ],
     [ "servio::scmdio::port_mock::attrs", "structservio_1_1scmdio_1_1port__mock.html#structservio_1_1scmdio_1_1port__mock_1_1attrs", null ],
     [ "servio::scmdio::autotune_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx", null ],
     [ "servio::core::avg_filter", "structservio_1_1core_1_1avg__filter.html", null ],
@@ -109,7 +111,7 @@ var hierarchy =
     [ "servio::iface::info_stmt", "structservio_1_1iface_1_1info__stmt.html", null ],
     [ "servio::iface::invalid_stmt", "structservio_1_1iface_1_1invalid__stmt.html", null ],
     [ "servio::ftester::joque_test", "structservio_1_1ftester_1_1joque__test.html", null ],
-    [ "servio::base::jval_ser", "structservio_1_1base_1_1jval__ser.html", null ],
+    [ "servio::json::jval_ser", "structservio_1_1json_1_1jval__ser.html", null ],
     [ "servio::iface::key_filter< K, T >", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter", null ],
     [ "servio::iface::key_filter< K, vari::typelist< Fs... > >", "namespaceservio_1_1iface.html", [
       [ "servio::iface::key_filter< K, vari::typelist< F, Fs... > >", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4.html", null ]
@@ -144,7 +146,7 @@ var hierarchy =
         [ "servio::drv::mock::pwm_mot", "structservio_1_1drv_1_1mock_1_1pwm__mot.html", null ]
       ] ]
     ] ],
-    [ "servio::base::object_ser", "structservio_1_1base_1_1object__ser.html", null ],
+    [ "servio::json::object_ser", "structservio_1_1json_1_1object__ser.html", null ],
     [ "servio::cfg::off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", null ],
     [ "servio::cnv::off_scale", "namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale", null ],
     [ "servio::ftester::openocd_flash_config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1openocd__flash__config", null ],
@@ -192,6 +194,8 @@ var hierarchy =
       [ "servio::drv::bits::char_rx_container< C >", "structservio_1_1drv_1_1bits_1_1char__rx__container.html", null ],
       [ "servio::drv::bits::cobs_rx_container", "structservio_1_1drv_1_1bits_1_1cobs__rx__container.html", null ]
     ] ],
+    [ "servio::str_lib::s_to_nr_res", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res", null ],
+    [ "servio::str_lib::s_to_nr_res.__unnamed3__", "namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3____", null ],
     [ "servio::sntr::sentry", "classservio_1_1sntr_1_1sentry.html", null ],
     [ "servio::ftest::intg::sign_test", "structservio_1_1ftest_1_1intg_1_1sign__test.html", null ],
     [ "servio::sim::simple_motor", "structservio_1_1sim_1_1simple__motor.html", null ],

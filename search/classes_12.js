@@ -1,11 +1,19 @@
 var searchData=
 [
-  ['temp_0',['temp',['../structservio_1_1drv_1_1mock_1_1temp.html',1,'servio::drv::mock']]],
-  ['temp_5fcalib_5fcoeffs_1',['temp_calib_coeffs',['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs',1,'servio::plt']]],
-  ['temp_5fiface_2',['temp_iface',['../structservio_1_1drv_1_1temp__iface.html',1,'servio::drv']]],
-  ['temperature_5ftest_3',['temperature_test',['../structservio_1_1drv_1_1tests_1_1temperature__test.html',1,'servio::drv::tests']]],
-  ['test_5fcentral_5fsentry_4',['test_central_sentry',['../structservio_1_1sntr_1_1test__central__sentry.html',1,'servio::sntr']]],
-  ['test_5fclk_5',['test_clk',['../structservio_1_1sntr_1_1tests_1_1test__clk.html',1,'servio::sntr::tests']]],
-  ['test_5fsystem_6',['test_system',['../structservio_1_1ftester_1_1test__system.html',1,'servio::ftester']]],
-  ['testing_5fsystem_7',['testing_system',['../structservio_1_1ftest_1_1testing__system.html',1,'servio::ftest']]]
+  ['s_5fto_5fnr_5fres_0',['s_to_nr_res',['../namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res',1,'servio::str_lib']]],
+  ['s_5fto_5fnr_5fres_2e_5f_5funnamed3_5f_5f_1',['s_to_nr_res.__unnamed3__',['../namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3____',1,'servio::str_lib']]],
+  ['sentry_2',['sentry',['../classservio_1_1sntr_1_1sentry.html',1,'servio::sntr']]],
+  ['sentry_5ffixture_3',['sentry_fixture',['../structservio_1_1sntr_1_1tests_1_1sentry__fixture.html',1,'servio::sntr::tests']]],
+  ['serial_5fcli_4',['serial_cli',['../structservio_1_1scmdio_1_1serial__cli.html',1,'servio::scmdio']]],
+  ['serial_5fstream_5',['serial_stream',['../structservio_1_1scmdio_1_1serial__stream.html',1,'servio::scmdio']]],
+  ['servio_5fexception_6',['servio_exception',['../structservio_1_1scmdio_1_1servio__exception.html',1,'servio::scmdio']]],
+  ['sign_5ftest_7',['sign_test',['../structservio_1_1ftest_1_1intg_1_1sign__test.html',1,'servio::ftest::intg']]],
+  ['simple_5fmotor_8',['simple_motor',['../structservio_1_1sim_1_1simple__motor.html',1,'servio::sim']]],
+  ['standard_5fcallbacks_9',['standard_callbacks',['../structservio_1_1core_1_1standard__callbacks.html',1,'servio::core']]],
+  ['state_5frange_10',['state_range',['../namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range',1,'servio::klmn']]],
+  ['static_5fdetector_11',['static_detector',['../structservio_1_1mtr_1_1static__detector.html',1,'servio::mtr']]],
+  ['stm32_5fbootloader_5fmock_12',['stm32_bootloader_mock',['../structservio_1_1scmdio_1_1stm32__bootloader__mock.html',1,'servio::scmdio']]],
+  ['stor_13',['stor',['../structservio_1_1drv_1_1mock_1_1stor.html',1,'servio::drv::mock']]],
+  ['storage_5fiface_14',['storage_iface',['../structservio_1_1drv_1_1storage__iface.html',1,'servio::drv']]],
+  ['stream_5fiface_15',['stream_iface',['../structservio_1_1scmdio_1_1stream__iface.html',1,'servio::scmdio']]]
 ];

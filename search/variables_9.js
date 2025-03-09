@@ -18,7 +18,8 @@ var searchData=
   ['irq_15',['irq',['../namespaceservio_1_1plt.html#a6a38c6f90f09b7f4dd592ba5327a5a85',1,'servio::plt::hb_timer_cfg::irq'],['../namespaceservio_1_1plt.html#a79d3faed853bcee26c9f504a8cd30118',1,'servio::plt::uart_cfg::irq'],['../namespaceservio_1_1plt.html#a7d4a6b247d91d69294b54a26c5f447f9',1,'servio::plt::dma_cfg::irq']]],
   ['irq_5fpriority_16',['irq_priority',['../namespaceservio_1_1plt.html#a8a2e3a00c96709b614c139e346025c03',1,'servio::plt::dma_cfg::irq_priority'],['../namespaceservio_1_1plt.html#a938ebf12955cf3df53b628bac7d8e0d8',1,'servio::plt::uart_cfg::irq_priority'],['../namespaceservio_1_1plt.html#ab213bda5719bf57b4e2404e4c53e0c48',1,'servio::plt::hb_timer_cfg::irq_priority']]],
   ['is_5finop_17',['is_inop',['../structservio_1_1sntr_1_1test__central__sentry.html#acf6d729304d4eb6eaf0b964dd7e53adb',1,'servio::sntr::test_central_sentry']]],
-  ['is_5fstatic_18',['is_static',['../structservio_1_1mtr_1_1static__detector.html#a4fddc254997d1edbd8ca28eee21a2701',1,'servio::mtr::static_detector']]],
-  ['is_5fvoid_19',['is_void',['../structservio_1_1iface_1_1kval.html#ab19e72543aa619eaeb125f62d4fd9058',1,'servio::iface::kval::is_void'],['../structservio_1_1iface_1_1kval_3_01Key_00_01void_01_4.html#a01e544e1c80ff04ed243e595d2d00c9e',1,'servio::iface::kval&lt; Key, void &gt;::is_void']]],
-  ['item_20',['item',['../structservio_1_1ftest_1_1utest.html#afcff200b228a1e1b5e2f16c5658bb2c1',1,'servio::ftest::utest']]]
+  ['is_5fnum_18',['is_num',['../namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9',1,'servio::str_lib::s_to_nr_res']]],
+  ['is_5fstatic_19',['is_static',['../structservio_1_1mtr_1_1static__detector.html#a4fddc254997d1edbd8ca28eee21a2701',1,'servio::mtr::static_detector']]],
+  ['is_5fvoid_20',['is_void',['../structservio_1_1iface_1_1kval.html#ab19e72543aa619eaeb125f62d4fd9058',1,'servio::iface::kval::is_void'],['../structservio_1_1iface_1_1kval_3_01Key_00_01void_01_4.html#a01e544e1c80ff04ed243e595d2d00c9e',1,'servio::iface::kval&lt; Key, void &gt;::is_void']]],
+  ['item_21',['item',['../structservio_1_1ftest_1_1utest.html#afcff200b228a1e1b5e2f16c5658bb2c1',1,'servio::ftest::utest']]]
 ];

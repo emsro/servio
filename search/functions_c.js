@@ -2,7 +2,7 @@ var searchData=
 [
   ['leds_0',['leds',['../classservio_1_1drv_1_1leds.html#aeb04b29d89a7674ddd4396490f1d692c',1,'servio::drv::leds']]],
   ['leds_5fsetup_1',['leds_setup',['../namespaceservio_1_1brd.html#a8018a4a9a9bc9b1d4af53c14d646d4c8',1,'servio::brd']]],
-  ['lex_5fid_2',['lex_id',['../namespaceservio_1_1iface.html#a2e32876e69f4f96b683f1fffc011ec23',1,'servio::iface']]],
+  ['lex_5fletters_2',['lex_letters',['../namespaceservio_1_1str__lib.html#a8177c267b47c96fcce04e5b633496111',1,'servio::str_lib']]],
   ['linear_5fleast_5fsquares_3',['linear_least_squares',['../namespaceservio_1_1scmdio.html#a40ca775c56c260d187fd81d3730fef47',1,'servio::scmdio']]],
   ['load_4',['load',['../namespaceservio_1_1cfg.html#ae5ab04677caa94064e98eac75d1429e2',1,'servio::cfg']]],
   ['load_5fmessage_5',['load_message',['../namespaceservio_1_1drv_1_1bits.html#a5d70b0c1c418dd446c10d13da1ad0fdd',1,'servio::drv::bits']]],

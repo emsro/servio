@@ -5,16 +5,10 @@ var searchData=
   ['_5fconfig_5fend_2',['_config_end',['../plt_2stm32h5_2flash__cfg_8hpp.html#ab9c4570b264e5103deb948e89f713529',1,'flash_cfg.hpp']]],
   ['_5fconfig_5fstart_3',['_config_start',['../plt_2stm32h5_2flash__cfg_8hpp.html#a906f7ef6acab4815e6b77b601dac50e7',1,'flash_cfg.hpp']]],
   ['_5fexit_4',['_exit',['../extra_8cpp.html#a31dcaff181eaa6a8cfb484e35f23fb5f',1,'extra.cpp']]],
-  ['_5fexp_5fpow_5',['_exp_pow',['../namespaceservio_1_1iface.html#a5c235672f7ba6299488929e4397a1d89',1,'servio::iface']]],
-  ['_5ffinish_5fexp_6',['_finish_exp',['../namespaceservio_1_1iface.html#aebaa0b86d054ddc3f54bd9d4b55a3da7',1,'servio::iface']]],
-  ['_5fgetpid_7',['_getpid',['../extra_8cpp.html#a945e539df8e0f66d3c73c533fe1968ee',1,'extra.cpp']]],
-  ['_5fis_5fdec_8',['_is_dec',['../namespaceservio_1_1iface.html#ab13711a55cca63cc0baf543b26d2f88f',1,'servio::iface']]],
-  ['_5fis_5fhex_9',['_is_hex',['../namespaceservio_1_1iface.html#a9455e2cf8643ff6b870257d8858d17d8',1,'servio::iface']]],
-  ['_5fis_5fid_5fletter_10',['_is_id_letter',['../namespaceservio_1_1iface.html#afba82c1e52afaa00950493cbfab86b2d',1,'servio::iface']]],
-  ['_5fis_5fletter_11',['_is_letter',['../namespaceservio_1_1iface.html#a291913d48eae1c1657b15307cd0afb88',1,'servio::iface']]],
-  ['_5fis_5fws_12',['_is_ws',['../namespaceservio_1_1iface.html#a1c0739fb844ed9a5ad3009520be29ea5',1,'servio::iface']]],
-  ['_5fkill_13',['_kill',['../extra_8cpp.html#a0ed15a34423726cf23f8dd30a0968dbb',1,'extra.cpp']]],
-  ['_5flseek_14',['_lseek',['../extra_8cpp.html#a9a33858e15f999352b72063439c5cffd',1,'extra.cpp']]],
-  ['_5fread_15',['_read',['../extra_8cpp.html#ae9a656c34f65fef4f3d0c975d252fe32',1,'extra.cpp']]],
-  ['_5fwrite_16',['_write',['../extra_8cpp.html#a1764b05ba713fd9473356dc1c1228989',1,'extra.cpp']]]
+  ['_5fgetpid_5',['_getpid',['../extra_8cpp.html#a945e539df8e0f66d3c73c533fe1968ee',1,'extra.cpp']]],
+  ['_5fkill_6',['_kill',['../extra_8cpp.html#a0ed15a34423726cf23f8dd30a0968dbb',1,'extra.cpp']]],
+  ['_5flseek_7',['_lseek',['../extra_8cpp.html#a9a33858e15f999352b72063439c5cffd',1,'extra.cpp']]],
+  ['_5fno_5fres_8',['_no_res',['../namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__no__res',1,'servio::str_lib']]],
+  ['_5fread_9',['_read',['../extra_8cpp.html#ae9a656c34f65fef4f3d0c975d252fe32',1,'extra.cpp']]],
+  ['_5fwrite_10',['_write',['../extra_8cpp.html#a1764b05ba713fd9473356dc1c1228989',1,'extra.cpp']]]
 ];

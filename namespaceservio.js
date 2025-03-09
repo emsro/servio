@@ -1,6 +1,5 @@
 var namespaceservio =
 [
-    [ "base", "namespaceservio_1_1base.html", "namespaceservio_1_1base" ],
     [ "bb", "namespaceservio_1_1bb.html", "namespaceservio_1_1bb" ],
     [ "brd", "namespaceservio_1_1brd.html", "namespaceservio_1_1brd" ],
     [ "cfg", "namespaceservio_1_1cfg.html", "namespaceservio_1_1cfg" ],
@@ -12,6 +11,7 @@ var namespaceservio =
     [ "ftester", "namespaceservio_1_1ftester.html", "namespaceservio_1_1ftester" ],
     [ "fw", "namespaceservio_1_1fw.html", "namespaceservio_1_1fw" ],
     [ "iface", "namespaceservio_1_1iface.html", "namespaceservio_1_1iface" ],
+    [ "json", "namespaceservio_1_1json.html", "namespaceservio_1_1json" ],
     [ "klmn", "namespaceservio_1_1klmn.html", "namespaceservio_1_1klmn" ],
     [ "literals", "namespaceservio_1_1literals.html", [
       [ "operator\"\"_b", "namespaceservio_1_1literals.html#a62e86ab080363c9801b3d11413cb755c", null ],
@@ -33,6 +33,7 @@ var namespaceservio =
     [ "scmdio", "namespaceservio_1_1scmdio.html", "namespaceservio_1_1scmdio" ],
     [ "sim", "namespaceservio_1_1sim.html", "namespaceservio_1_1sim" ],
     [ "sntr", "namespaceservio_1_1sntr.html", "namespaceservio_1_1sntr" ],
+    [ "str_lib", "namespaceservio_1_1str__lib.html", "namespaceservio_1_1str__lib" ],
     [ "tests", "namespaceservio_1_1tests.html", [
       [ "diff", "namespaceservio_1_1tests.html#ad9a6789b9d11178a421bdd85692bb8d1", null ],
       [ "get_enum_ids", "namespaceservio_1_1tests.html#a84a8d9b8ff1d17f892b34e726dc8204f", null ],

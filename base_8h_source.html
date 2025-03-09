@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('base_8h_source.html',''); initResizabl
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span>... Ts &gt;</div>
 <div class="foldopen" id="foldopen00084" data-start="{" data-end="};">
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="namespaceservio_1_1iface.html">   84</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple">field_tuple</a>&lt; <a class="code hl_namespace" href="namespacevari.html">vari</a>::typelist&lt; Ts... &gt; &gt;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="namespaceservio_1_1iface.html">   84</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple">field_tuple</a>&lt; vari::typelist&lt; Ts... &gt; &gt;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="namespaceservio_1_1iface.html#a3675d882024884424fb61a2ce871e181">   86</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="namespaceservio_1_1iface.html#a3675d882024884424fb61a2ce871e181">type</a> = std::tuple&lt; Ts... &gt;;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
@@ -234,7 +234,7 @@ $(document).ready(function(){initNavTree('base_8h_source.html',''); initResizabl
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">template</span> &lt; <span class="keyword">auto</span> K, <span class="keyword">typename</span> F, <span class="keyword">typename</span>... Fs &gt;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">requires</span>( K.to_string() != F::key.to_string() )</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">struct</span> <a class="code hl_struct" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter">key_filter</a>&lt; K, vari::typelist&lt; F, Fs... &gt; &gt; : <a class="code hl_struct" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter">key_filter</a>&lt; K, <a class="code hl_namespace" href="namespacevari.html">vari</a>::typelist&lt; Fs... &gt; &gt;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">struct</span> <a class="code hl_struct" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter">key_filter</a>&lt; K, vari::typelist&lt; F, Fs... &gt; &gt; : <a class="code hl_struct" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter">key_filter</a>&lt; K, vari::typelist&lt; Fs... &gt; &gt;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>{</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>};</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
@@ -243,7 +243,7 @@ $(document).ready(function(){initNavTree('base_8h_source.html',''); initResizabl
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span>... Field &gt;</div>
 <div class="foldopen" id="foldopen00121" data-start="{" data-end="};">
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html">  121</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__traits">field_traits</a>&lt; <a class="code hl_namespace" href="namespacevari.html">vari</a>::typelist&lt; Field... &gt; &gt;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html">  121</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__traits">field_traits</a>&lt; vari::typelist&lt; Field... &gt; &gt;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keyword">template</span> &lt; auto K &gt;</div>
@@ -268,7 +268,6 @@ $(document).ready(function(){initNavTree('base_8h_source.html',''); initResizabl
 <div class="ttc" id="anamespaceservio_1_1iface_html_structservio_1_1iface_1_1field__tuple"><div class="ttname"><a href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple">servio::iface::field_tuple</a></div><div class="ttdef"><b>Definition</b> base.h:81</div></div>
 <div class="ttc" id="anamespaceservio_1_1iface_html_structservio_1_1iface_1_1group"><div class="ttname"><a href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1group">servio::iface::group</a></div><div class="ttdef"><b>Definition</b> base.h:94</div></div>
 <div class="ttc" id="anamespaceservio_1_1iface_html_structservio_1_1iface_1_1key__filter"><div class="ttname"><a href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter">servio::iface::key_filter</a></div><div class="ttdef"><b>Definition</b> base.h:100</div></div>
-<div class="ttc" id="anamespacevari_html"><div class="ttname"><a href="namespacevari.html">vari</a></div><div class="ttdef"><b>Definition</b> util_utest.cpp:9</div></div>
 <div class="ttc" id="astructservio_1_1iface_1_1field_3_01IDX_00_01Key_00_01void_01_4_html_a0f9a15210ad638c610a57fcd45157a0d"><div class="ttname"><a href="structservio_1_1iface_1_1field_3_01IDX_00_01Key_00_01void_01_4.html#a0f9a15210ad638c610a57fcd45157a0d">servio::iface::field&lt; IDX, Key, void &gt;::operator&lt;=&gt;</a></div><div class="ttdeci">constexpr auto operator&lt;=&gt;(field const &amp;) const noexcept=default</div></div>
 <div class="ttc" id="astructservio_1_1iface_1_1field_3_01IDX_00_01Key_00_01void_01_4_html_ad91bd0410b9f6b30c03c655541fc8ce9"><div class="ttname"><a href="structservio_1_1iface_1_1field_3_01IDX_00_01Key_00_01void_01_4.html#ad91bd0410b9f6b30c03c655541fc8ce9">servio::iface::field&lt; IDX, Key, void &gt;::value_type</a></div><div class="ttdeci">void value_type</div><div class="ttdef"><b>Definition</b> base.h:75</div></div>
 <div class="ttc" id="astructservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4_html_a53b394d9df1428dbff6e8bf7c72964a8"><div class="ttname"><a href="structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html#a53b394d9df1428dbff6e8bf7c72964a8">servio::iface::field_traits&lt; vari::typelist&lt; Field... &gt; &gt;::types</a></div><div class="ttdeci">vari::unique_typelist_t&lt; vari::typelist&lt; typename Field::value_type... &gt; &gt; types</div><div class="ttdef"><b>Definition</b> base.h:128</div></div>
@@ -296,7 +295,7 @@ $(document).ready(function(){initNavTree('base_8h_source.html',''); initResizabl
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_87dbd44838687e059bb6b206e0e79295.html">iface</a></li><li class="navelem"><a class="el" href="base_8h.html">base.h</a></li>
-    <li class="footer">Generated on Sun Mar 9 2025 13:38:18 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 9 2025 16:04:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

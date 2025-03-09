@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['object_5fser_0',['object_ser',['../structservio_1_1base_1_1object__ser.html',1,'servio::base']]],
-  ['off_5fscale_1',['off_scale',['../namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale',1,'servio::cfg::off_scale'],['../namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale',1,'servio::cnv::off_scale']]],
-  ['openocd_5fflash_5fconfig_2',['openocd_flash_config',['../namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1openocd__flash__config',1,'servio::ftester']]]
+  ['meas_5fcur_5ftest_0',['meas_cur_test',['../structservio_1_1ftest_1_1intg_1_1meas__cur__test.html',1,'servio::ftest::intg']]],
+  ['meas_5fpos_5ftest_1',['meas_pos_test',['../structservio_1_1ftest_1_1intg_1_1meas__pos__test.html',1,'servio::ftest::intg']]],
+  ['meas_5fvel_5ftest_2',['meas_vel_test',['../structservio_1_1ftest_1_1intg_1_1meas__vel__test.html',1,'servio::ftest::intg']]],
+  ['metrics_3',['metrics',['../classservio_1_1mtr_1_1metrics.html',1,'servio::mtr']]],
+  ['mode_5fopts_4',['mode_opts',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts',1,'servio::scmdio']]],
+  ['mode_5fstmt_5',['mode_stmt',['../structservio_1_1iface_1_1mode__stmt.html',1,'servio::iface']]],
+  ['monitor_6',['monitor',['../classservio_1_1mon_1_1monitor.html',1,'servio::mon']]],
+  ['motor_5finfo_5fiface_7',['motor_info_iface',['../structservio_1_1drv_1_1motor__info__iface.html',1,'servio::drv']]]
 ];

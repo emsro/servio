@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['r_0',['r',['../structservio_1_1mtr_1_1posvel__kalman.html#a073b4525c78cab66a6d0f8cd0a389753',1,'servio::mtr::posvel_kalman']]],
+  ['r_0',['r',['../namespaceservio_1_1str__lib.html#a4b43b0aee35624cd95b910189b3dc231',1,'servio::str_lib::s_to_nr_res.__unnamed3__::r'],['../structservio_1_1mtr_1_1posvel__kalman.html#a073b4525c78cab66a6d0f8cd0a389753',1,'servio::mtr::posvel_kalman::r']]],
   ['radians_1',['REQ5.2 Angular position is specified in radians',['../units.html#autotoc_md31',1,'']]],
   ['radians_20per_20second_2',['REQ5.5 Angular velocity is specified in radians per second.',['../units.html#autotoc_md34',1,'']]],
   ['re4_203_20uart_20shall_20be_20supported_20as_20transport_3',['RE4.3 UART shall be supported as transport',['../comms.html#autotoc_md24',1,'']]],
@@ -10,7 +10,7 @@ var searchData=
   ['read_5fmemory_7',['READ_MEMORY',['../namespaceservio_1_1scmdio.html#ae955730fa1b178ff99584f5b3f610bd7',1,'servio::scmdio']]],
   ['read_5fmsg_8',['read_msg',['../structservio_1_1scmdio_1_1port__mock.html#aee252077e64fe8bb0240c4d53426b33a',1,'servio::scmdio::port_mock::read_msg()'],['../structservio_1_1scmdio_1_1char__port.html#af11f38083f610403a23ba6a49d499e04',1,'servio::scmdio::char_port::read_msg()'],['../structservio_1_1scmdio_1_1port__iface.html#a1c285685c9e668dff9eaa958088887b4',1,'servio::scmdio::port_iface::read_msg()'],['../structservio_1_1scmdio_1_1cobs__port.html#a1e32d6501dad5553f34877ed013df8dd',1,'servio::scmdio::cobs_port::read_msg()']]],
   ['readme_2emd_9',['README.md',['../README_8md.html',1,'']]],
-  ['real_10',['real',['../namespaceservio_1_1iface.html#ab1ae0a3f8eddcd7aab9dcf84f5752c7f',1,'servio::iface']]],
+  ['real_10',['real',['../namespaceservio_1_1str__lib.html#a57ef0f842947c125eba788c392bc0722',1,'servio::str_lib']]],
   ['rec_5fid_11',['rec_id',['../namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c',1,'servio::ftester']]],
   ['received_5fsize_12',['received_size',['../structservio_1_1drv_1_1bits_1_1char__rx__container.html#a52beed2b62872d8df9ffda174227af60',1,'servio::drv::bits::char_rx_container::received_size'],['../structservio_1_1drv_1_1bits_1_1cobs__rx__container.html#a83f268c48b8dc33d9a7f4121b5e37261',1,'servio::drv::bits::cobs_rx_container::received_size']]],
   ['record_13',['record',['../classservio_1_1ftester_1_1recorder.html#structservio_1_1ftester_1_1recorder_1_1record',1,'servio::ftester::recorder::record'],['../namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record',1,'servio::sntr::record'],['../namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1record',1,'servio::cfg::record'],['../structservio_1_1ftest_1_1uctx.html#a275019c78e88e39edf7e23e48bb68b99',1,'servio::ftest::uctx::record'],['../structservio_1_1sntr_1_1test__central__sentry.html#a3d74b7c85ebf7ef9bf7c25cec5dd037d',1,'servio::sntr::test_central_sentry::record']]],

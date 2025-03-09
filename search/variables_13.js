@@ -5,7 +5,7 @@ var searchData=
   ['scl_2',['scl',['../namespaceservio_1_1plt.html#ad861cf75604c8035ae6fc326c136bae0',1,'servio::plt::i2c_cfg']]],
   ['sda_3',['sda',['../namespaceservio_1_1plt.html#a35fa78ce521231b6d4f451d48a676bd9',1,'servio::plt::i2c_cfg']]],
   ['sentry_5f_4',['sentry_',['../structservio_1_1drv_1_1detailed__adc__channel.html#a9490be83ec1d8ba30bd7648cab5f7a6e',1,'servio::drv::detailed_adc_channel::sentry_'],['../structservio_1_1drv_1_1adc__channel.html#a3039bc56cfcb389d036fab08e9a91add',1,'servio::drv::adc_channel::sentry_']]],
-  ['ser_5',['ser',['../structservio_1_1base_1_1array__ser.html#a8e6f7b60e79a3b75583bcda549cec777',1,'servio::base::array_ser::ser'],['../structservio_1_1base_1_1object__ser.html#a2948f069d83e58f7a612ba27f2e8a67a',1,'servio::base::object_ser::ser']]],
+  ['ser_5',['ser',['../structservio_1_1json_1_1array__ser.html#a9743c72a9cf3695b3c1f7ce8360fcd23',1,'servio::json::array_ser::ser'],['../structservio_1_1json_1_1object__ser.html#ad2b9359a19b501d532f68242d51b9572',1,'servio::json::object_ser::ser']]],
   ['size_6',['size',['../namespaceservio_1_1klmn.html#a6012e20714154f03136eb5812a2abef2',1,'servio::klmn::state_range']]],
   ['sizes_7',['sizes',['../structservio_1_1drv_1_1bits_1_1rx__buffer.html#ab87f2b63db801a6a2641e54893e46577',1,'servio::drv::bits::rx_buffer']]],
   ['src_8',['src',['../namespaceservio_1_1sntr.html#aeb51cca5a317d316e17dbe689a713910',1,'servio::sntr::record']]],

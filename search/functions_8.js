@@ -10,9 +10,10 @@ var searchData=
   ['handle_5fmessage_7',['handle_message',['../namespaceservio_1_1core.html#a0af9bc48e9d28b505e69947c01415025',1,'servio::core']]],
   ['handle_5ftest_5fspecifics_8',['handle_test_specifics',['../namespaceservio_1_1ftester.html#af85eaac72e6fd1885c973e047a7ac2ad',1,'servio::ftester']]],
   ['hardfault_5fhandler_9',['HardFault_Handler',['../it_8cpp.html#a2bffc10d5bd4106753b7c30e86903bea',1,'it.cpp']]],
-  ['hbridge_10',['hbridge',['../classservio_1_1drv_1_1hbridge.html#adc4dbb9d9b8878c96015e5e1f7af2889',1,'servio::drv::hbridge::hbridge(hbridge const &amp;)=delete'],['../classservio_1_1drv_1_1hbridge.html#a11b0a38a2f997cf5d8b685fdf387edee',1,'servio::drv::hbridge::hbridge(hbridge &amp;&amp;)=delete'],['../classservio_1_1drv_1_1hbridge.html#aff8253967397832ae0961ee23deae45f',1,'servio::drv::hbridge::hbridge(TIM_HandleTypeDef *tim)']]],
-  ['hbridge_5fsetup_11',['hbridge_setup',['../namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc',1,'servio::brd']]],
-  ['hex_5fnumeric_12',['hex_numeric',['../namespaceservio_1_1iface.html#a230304a9513fc8846d8cd2c3053c9db9',1,'servio::iface']]],
-  ['hex_5fprefix_13',['hex_prefix',['../namespaceservio_1_1iface.html#acf4ed007d91f91bf5c6ad1fda55fbbbd',1,'servio::iface']]],
-  ['hold_14',['hold',['../namespaceservio_1_1drv_1_1tests.html#a510bb7381ec9be3c36a77e8794a75201',1,'servio::drv::tests']]]
+  ['has_5fexp_5fsuffix_10',['has_exp_suffix',['../namespaceservio_1_1str__lib_1_1bits.html#adb8a5deec2c1fad6596bfa40151541ee',1,'servio::str_lib::bits']]],
+  ['hbridge_11',['hbridge',['../classservio_1_1drv_1_1hbridge.html#adc4dbb9d9b8878c96015e5e1f7af2889',1,'servio::drv::hbridge::hbridge(hbridge const &amp;)=delete'],['../classservio_1_1drv_1_1hbridge.html#a11b0a38a2f997cf5d8b685fdf387edee',1,'servio::drv::hbridge::hbridge(hbridge &amp;&amp;)=delete'],['../classservio_1_1drv_1_1hbridge.html#aff8253967397832ae0961ee23deae45f',1,'servio::drv::hbridge::hbridge(TIM_HandleTypeDef *tim)']]],
+  ['hbridge_5fsetup_12',['hbridge_setup',['../namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc',1,'servio::brd']]],
+  ['hex_5fprefix_13',['hex_prefix',['../namespaceservio_1_1str__lib_1_1bits.html#a05768067697a4e6d0a0286b43aa7c3d4',1,'servio::str_lib::bits']]],
+  ['hex_5fto_5fn_14',['hex_to_n',['../namespaceservio_1_1str__lib.html#a8691c6eace75343774b65877969b8173',1,'servio::str_lib']]],
+  ['hold_15',['hold',['../namespaceservio_1_1drv_1_1tests.html#a510bb7381ec9be3c36a77e8794a75201',1,'servio::drv::tests']]]
 ];

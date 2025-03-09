@@ -15,11 +15,6 @@ var annotated_dup =
       [ "adl_serializer< vari::_vval< Ts... > >", "structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html", "structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4" ]
     ] ],
     [ "servio", "namespaceservio.html", [
-      [ "base", "namespaceservio_1_1base.html", [
-        [ "array_ser", "structservio_1_1base_1_1array__ser.html", "structservio_1_1base_1_1array__ser" ],
-        [ "jval_ser", "structservio_1_1base_1_1jval__ser.html", "structservio_1_1base_1_1jval__ser" ],
-        [ "object_ser", "structservio_1_1base_1_1object__ser.html", "structservio_1_1base_1_1object__ser" ]
-      ] ],
       [ "bb", "namespaceservio_1_1bb.html", [
         [ "bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", "structservio_1_1bb_1_1bb__test__case" ]
       ] ],
@@ -184,6 +179,11 @@ var annotated_dup =
         [ "prop_stmt", "structservio_1_1iface_1_1prop__stmt.html", "structservio_1_1iface_1_1prop__stmt" ],
         [ "resp", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1resp", "namespaceservio_1_1iface_structservio_1_1iface_1_1resp_dup" ]
       ] ],
+      [ "json", "namespaceservio_1_1json.html", [
+        [ "array_ser", "structservio_1_1json_1_1array__ser.html", "structservio_1_1json_1_1array__ser" ],
+        [ "jval_ser", "structservio_1_1json_1_1jval__ser.html", "structservio_1_1json_1_1jval__ser" ],
+        [ "object_ser", "structservio_1_1json_1_1object__ser.html", "structservio_1_1json_1_1object__ser" ]
+      ] ],
       [ "klmn", "namespaceservio_1_1klmn.html", [
         [ "state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", "namespaceservio_1_1klmn_structservio_1_1klmn_1_1state__range_dup" ]
       ] ],
@@ -248,6 +248,14 @@ var annotated_dup =
         [ "record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", "namespaceservio_1_1sntr_structservio_1_1sntr_1_1record_dup" ],
         [ "sentry", "classservio_1_1sntr_1_1sentry.html", "classservio_1_1sntr_1_1sentry" ],
         [ "test_central_sentry", "structservio_1_1sntr_1_1test__central__sentry.html", "structservio_1_1sntr_1_1test__central__sentry" ]
+      ] ],
+      [ "str_lib", "namespaceservio_1_1str__lib.html", [
+        [ "bits", "namespaceservio_1_1str__lib_1_1bits.html", [
+          [ "adder", "structservio_1_1str__lib_1_1bits_1_1adder.html", "structservio_1_1str__lib_1_1bits_1_1adder" ]
+        ] ],
+        [ "_no_res", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__no__res", null ],
+        [ "s_to_nr_res", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res", "namespaceservio_1_1str__lib_structservio_1_1str__lib_1_1s__to__nr__res_dup" ],
+        [ "s_to_nr_res.__unnamed3__", "namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3____", "namespaceservio_1_1str__lib_unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3_____dup" ]
       ] ],
       [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
       [ "pwr", "structservio_1_1pwr.html", null ]

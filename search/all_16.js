@@ -14,7 +14,7 @@ var searchData=
   ['leds_5ftest_11',['leds_test',['../namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test',1,'servio::drv::tests']]],
   ['leds_5ftimer_5fcfg_12',['leds_timer_cfg',['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg',1,'servio::plt']]],
   ['leds_5fvals_13',['leds_vals',['../namespaceservio.html#structservio_1_1leds__vals',1,'servio']]],
-  ['lex_5fid_14',['lex_id',['../namespaceservio_1_1iface.html#a2e32876e69f4f96b683f1fffc011ec23',1,'servio::iface']]],
+  ['lex_5fletters_14',['lex_letters',['../namespaceservio_1_1str__lib.html#a8177c267b47c96fcce04e5b633496111',1,'servio::str_lib']]],
   ['limits_15',['limits',['../namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55',1,'servio::limits'],['../lims.html#autotoc_md19',1,'REQ3.1 Current limits'],['../lims.html#autotoc_md20',1,'REQ3.2 Position limits'],['../lims.html#autotoc_md21',1,'REQ3.3 Velocity limits']]],
   ['limits_20requirements_16',['System limits requirements',['../lims.html',1,'md_doc_2requirements']]],
   ['line_17',['line',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line',1,'servio::scmdio']]],
