@@ -1,5 +1,6 @@
 #pragma once
 
+#include <bit>
 #include <concepts>
 
 namespace servio::str_lib
@@ -56,6 +57,9 @@ constexpr bool try_sign( char const*& p, char const* e, int& sign )
         if ( *p == '-' ) {
                 p++;
                 sign = -1;
+        } else if ( *p == '+' ) {
+                p++;
+                sign = 1;
         } else
                 sign = 1;
         return true;
@@ -100,7 +104,7 @@ constexpr void u_to_s( char*& p, char* e, std::unsigned_integral auto x ) noexce
 
         char* pp = p;
         do {
-                add( x % 10 );
+                add.ch( x % 10 );
                 x /= 10;
         } while ( x != 0 );
         for ( char* q = p - 1; q > pp; --q, ++pp )
@@ -130,7 +134,7 @@ constexpr void f_to_s( char*& p, char* e, float x ) noexcept
 
 constexpr bool hex_to_n( char const*& p, char const* e, num& x ) noexcept
 {
-        if ( p == e && !bits::is_hex( *p ) )
+        if ( p == e || !bits::is_hex( *p ) )
                 return false;
         auto f = [&]( char c ) {
                 x *= 16;
@@ -141,20 +145,24 @@ constexpr bool hex_to_n( char const*& p, char const* e, num& x ) noexcept
                 else
                         x += c - '0';
         };
-        do
+        for ( std::size_t i = 0; i < sizeof( x ) * 2 - 1; i++ ) {
                 f( *p++ );
-        while ( p != e && bits::is_hex( *p ) );
-        return true;
+                if ( p == e || !bits::is_hex( *p ) )
+                        return true;
+        }
+        return false;
 }
 
 constexpr bool dec_to_n( char const*& p, char const* e, num& x ) noexcept
 {
-        if ( p == e && !bits::is_dec( *p ) )
+        if ( p == e || !bits::is_dec( *p ) )
                 return false;
-        do
+        for ( std::size_t i = 0; i < sizeof( x ) * 2 - 1; i++ ) {
                 x = ( x * 10 ) + ( *p++ - '0' );
-        while ( p != e && bits::is_dec( *p ) );
-        return true;
+                if ( p == e || !bits::is_dec( *p ) )
+                        return true;
+        }
+        return false;
 }
 
 constexpr bool apply_exp( char const*& p, char const* e, float& x ) noexcept
@@ -188,9 +196,9 @@ constexpr bool s_to_nr( char const*& p, char const* e, s_to_nr_res& x ) noexcept
         x.n      = 0;
         x.is_num = true;
         if ( bits::hex_prefix( p, e ) ) {
+                p += 2;
                 if ( !hex_to_n( p, e, x.n ) )
                         return false;
-                x.is_num = true;
                 return true;
         }
 
@@ -199,19 +207,17 @@ constexpr bool s_to_nr( char const*& p, char const* e, s_to_nr_res& x ) noexcept
                 return false;
 
         if ( p == e )
-                return {};
+                return false;
 
-        if ( *p != '.' )
-                if ( !dec_to_n( p, e, x.n ) )
-                        return false;
+        if ( !dec_to_n( p, e, x.n ) )
+                return false;
 
         if ( *p == '.' ) {
                 float y   = 0.0F;
                 float exp = 1.0F;
                 while ( ++p != e && bits::is_dec( *p ) ) {
                         exp *= 10.0F;
-                        y *= 10;
-                        y += *p - '0';
+                        y = ( y * 10 ) + ( *p - '0' );
                 }
                 x.r      = ( (float) sign * (float) x.n ) + ( y / exp );
                 x.is_num = false;

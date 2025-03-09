@@ -2,6 +2,7 @@
 
 #include <emlabcpp/algorithm.h>
 #include <gtest/gtest.h>
+#include <source_location>
 
 namespace servio::iface
 {
@@ -22,10 +23,13 @@ auto kv()
 
 TEST( iface, valid_parse )
 {
-        auto test_f = [&]( std::string_view inpt, vari::vval< stmt > exp ) {
+        auto test_f = [&]( std::string_view     inpt,
+                           vari::vval< stmt >   exp,
+                           std::source_location loc = std::source_location::current() ) {
                 auto res = parse( inpt );
                 EXPECT_EQ( res, exp )
-                    << "inpt: " << inpt << "\n idx: " << res.index() << " vs " << exp.index();
+                    << "inpt: " << inpt << "\n idx: " << res.index() << " vs " << exp.index()
+                    << "\n loc: " << loc.file_name() << ":" << loc.line() << "\n";
         };
 
         test_f( "mode disengaged", mode_stmt{ kv< "disengaged"_a >() } );
