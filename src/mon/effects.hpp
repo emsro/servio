@@ -2,6 +2,8 @@
 
 #include "../base.hpp"
 
+#include <bitset>
+
 namespace servio::mon
 {
 
