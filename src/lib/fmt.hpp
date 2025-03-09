@@ -82,7 +82,7 @@ private:
 
                 char* pp = p;
                 do {
-                        add( '0' + ( x % 10 ) );
+                        add( (char) ( '0' + ( x % 10 ) ) );
                         x /= 10;
                 } while ( x != 0 );
                 for ( char* q = p - 1; q > pp; --q, ++pp )
@@ -99,16 +99,16 @@ private:
                         add( '-' );
                         x *= -1.0F;
                 }
-                uint32_t y = x;
-                x -= y;
+                auto y = (uint32_t) x;
+                x -= (float) y;
                 utos( p, e, y );
                 add( '.' );
                 static constexpr std::size_t dec_places = 6;
                 for ( std::size_t i = 0; i < dec_places; ++i ) {
                         x *= 10.0F;
-                        uint32_t z = x;
-                        x -= z;
-                        add( '0' + z );
+                        auto z = (uint32_t) x;
+                        x -= (float) z;
+                        add( (char) ( '0' + z ) );
                         if ( x == 0.00F )
                                 break;
                 }

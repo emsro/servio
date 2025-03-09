@@ -122,12 +122,12 @@ std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at
 
 void flash_start_cb()
 {
-        HBRIDGE.start();
+        std::ignore = HBRIDGE.start();
 }
 
 void flash_stop_cb()
 {
-        HBRIDGE.stop();
+        std::ignore = HBRIDGE.stop();
 }
 
 drv::flash_storage FLASH_STORAGE{ PERSISTENT_BLOCKS, flash_start_cb, flash_stop_cb };
@@ -605,6 +605,8 @@ core::drivers setup_core_drivers()
 
         auto*           adc_pooler = adc_pooler_setup( emod == cfg::encoder_mode::ENC_MODE_ANALOG );
         drv::pos_iface* pos        = nullptr;
+        if ( emod == 0 )
+                fw::stop_exec();
         switch ( emod ) {
         case cfg::encoder_mode::ENC_MODE_ANALOG:
                 pos = adc_pooler == nullptr ? nullptr : &ADC_POSITION;
@@ -612,8 +614,6 @@ core::drivers setup_core_drivers()
         case cfg::encoder_mode::ENC_MODE_QUAD:
                 pos = quad_encoder_setup( CFG.map.get_val< cfg::QUAD_ENCD_RANGE >() );
                 break;
-        case 0:
-                fw::stop_exec();
         }
 
         drv::leds* leds = leds_setup();
