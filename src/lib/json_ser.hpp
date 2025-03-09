@@ -1,8 +1,10 @@
-#include <emlabcpp/view.h>
-
 #pragma once
 
-namespace servio::base
+#include "./str_lib.h"
+
+#include <emlabcpp/view.h>
+
+namespace servio::json
 {
 
 template < typename T >
@@ -38,13 +40,13 @@ struct jval_ser
 
         jval_ser& operator()( unsigned int x ) & noexcept
         {
-                utos( p, e, x );
+                str_lib::u_to_s( p, e, x );
                 return *this;
         }
 
         jval_ser& operator()( long unsigned int x ) & noexcept
         {
-                utos( p, e, x );
+                str_lib::u_to_s( p, e, x );
                 return *this;
         }
 
@@ -56,7 +58,7 @@ struct jval_ser
 
         jval_ser& operator()( float x ) & noexcept
         {
-                ftos( p, e, x );
+                str_lib::f_to_s( p, e, x );
                 return *this;
         }
 
@@ -72,48 +74,6 @@ struct jval_ser
         }
 
 private:
-        // XXX: this should NOT be here
-        static void utos( char*& p, char* e, std::unsigned_integral auto x ) noexcept
-        {
-                auto add = [&]( char c ) {
-                        if ( p != e )
-                                *p++ = c;
-                };
-
-                char* pp = p;
-                do {
-                        add( (char) ( '0' + ( x % 10 ) ) );
-                        x /= 10;
-                } while ( x != 0 );
-                for ( char* q = p - 1; q > pp; --q, ++pp )
-                        std::swap( *q, *pp );
-        }
-
-        static void ftos( char*& p, char* e, float x ) noexcept
-        {
-                auto add = [&]( char c ) {
-                        if ( p != e )
-                                *p++ = c;
-                };
-                if ( x < 0.0F ) {
-                        add( '-' );
-                        x *= -1.0F;
-                }
-                auto y = (uint32_t) x;
-                x -= (float) y;
-                utos( p, e, y );
-                add( '.' );
-                static constexpr std::size_t dec_places = 6;
-                for ( std::size_t i = 0; i < dec_places; ++i ) {
-                        x *= 10.0F;
-                        auto z = (uint32_t) x;
-                        x -= (float) z;
-                        add( (char) ( '0' + z ) );
-                        if ( x == 0.00F )
-                                break;
-                }
-        }
-
         void cpy( char const* st ) noexcept
         {
                 while ( *st != '\0' )
@@ -202,4 +162,4 @@ inline array_ser::operator object_ser() noexcept
         return { ser };
 }
 
-}  // namespace servio::base
+}  // namespace servio::json

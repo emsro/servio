@@ -1,80 +1,11 @@
 
-#define SERVIO_NUM_CHECK
 
 #include "../util.h"
 
 #include <gtest/gtest.h>
 
-namespace vari
-{
-template < typename... Ts >
-std::ostream& operator<<( std::ostream& os, _vval< Ts... > const& rh )
-{
-        rh.visit( [&]( auto& item ) {
-                os << item;
-        } );
-        return os;
-}
-
-template < typename... Ts >
-std::ostream& operator<<( std::ostream& os, _vopt< Ts... > const& rh )
-{
-        rh.visit(
-            [&]( vari::empty_t ) {
-                    os << "empty";
-            },
-            [&]( auto& item ) {
-                    os << item;
-            } );
-        return os;
-}
-}  // namespace vari
-
 namespace servio::iface
 {
-
-TEST( iface, numreal )
-{
-        auto test_f = [&]( std::string_view s, vari::vopt< num, real > const& n ) {
-                char const* p = s.data();
-                char const* e = s.data() + s.size();
-
-                auto res = numreal( p, e );
-                res.visit(
-                    [&]( vari::empty_t ) {
-                            EXPECT_EQ( res, n );
-                    },
-                    [&]( auto& lh ) {
-                            n.visit(
-                                [&]( vari::empty_t ) {
-                                        EXPECT_EQ( res, n );
-                                },
-                                [&]( auto& rh ) {
-                                        EXPECT_NEAR( lh, rh, 1e-6 ) << "\n inpt: " << s << "\n";
-                                } );
-                    } );
-        };
-
-        test_f( "0", 0 );
-        test_f( "1", 1 );
-        test_f( "42", 42 );
-        test_f( "-1", -1 );
-        test_f( "0xFF", 0xFF );
-        test_f( "0xfF", 0xFF );
-        test_f( "0xFf", 0xFF );
-        test_f( "0xff", 0xFF );
-        test_f( ".0", 0.0F );
-        test_f( "0.0", 0.0F );
-        test_f( ".1", 0.1F );
-        test_f( "3.14", 3.14F );
-        test_f( "3e-06", 3e-06F );
-        test_f( "3e-6", 3e-06F );
-        test_f( "3e06", 3e06F );
-        test_f( "3e6", 3e06F );
-        test_f( "0.3e-06", 0.3e-06F );
-        test_f( "0.3E-6", 0.3e-06F );
-        test_f( "0.3e", {} );
-}
 
 TEST( iface, str )
 {

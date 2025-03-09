@@ -2,7 +2,7 @@
 
 #include "../cfg/storage.hpp"
 #include "../cnv/utils.hpp"
-#include "../lib/fmt.hpp"
+#include "../lib/json_ser.hpp"
 #include "./map_cfg.hpp"
 
 #include <emlabcpp/outcome.h>
@@ -39,7 +39,7 @@ void handle_set_mode(
     microseconds                         now,
     ctl::control&                        ctl,
     vari::vref< iface::mode_vals const > inpt,
-    base::jval_ser&                      out )
+    json::jval_ser&                      out )
 {
         inpt.visit(
             [&]( iface::kval< "disengaged"_a, void > const& ) {
@@ -58,7 +58,7 @@ void handle_set_mode(
                     ctl.switch_to_position_control( now, kv.value );
             } );
 
-        base::array_ser{ out }( "OK" );
+        json::array_ser{ out }( "OK" );
 }
 
 iface::mode_key get_mode( ctl::control const& ctl )
@@ -89,9 +89,9 @@ void handle_get_property(
     drv::temp_iface const&       temp_drv,
     drv::motor_info_iface const& motor,
     iface::prop_key              inpt,
-    base::jval_ser&              out )
+    json::jval_ser&              out )
 {
-        base::array_ser as{ out };
+        json::array_ser as{ out };
         as( "OK" );
 
         float x = 0;
@@ -115,9 +115,9 @@ void handle_get_property(
 void handle_set_config(
     cfg::dispatcher&                    cfg_disp,
     vari::vref< iface::cfg_vals const > v,
-    base::jval_ser&                     out )
+    json::jval_ser&                     out )
 {
-        base::array_ser as{ out };
+        json::array_ser as{ out };
         as( "OK" );
 
         v.visit( [&]< auto K, typename T >( iface::kval< K, T > const& kv ) {
@@ -135,12 +135,12 @@ void handle_set_config(
         } );
 }
 
-void handle_get_config( cfg::dispatcher const& cfg_disp, iface::cfg_key ck, base::jval_ser& out )
+void handle_get_config( cfg::dispatcher const& cfg_disp, iface::cfg_key ck, json::jval_ser& out )
 {
 
         cfg::key cfg_k = iface_to_cfg[ck.value()];
 
-        base::array_ser as{ out };
+        json::array_ser as{ out };
         as( "OK" );
 
         cfg_disp.m.with_register( cfg_k, [&]< typename R >( R& reg ) {
@@ -158,7 +158,7 @@ void handle_get_config( cfg::dispatcher const& cfg_disp, iface::cfg_key ck, base
         } );
 }
 
-void handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, base::jval_ser& out )
+void handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, json::jval_ser& out )
 {
         inpt.visit(
             [&]( iface::mode_stmt const& s ) {
@@ -196,23 +196,23 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, base
                         } );
             },
             [&]( iface::cfg_commit_stmt const& ) {
-                    base::array_ser as{ out };
+                    json::array_ser as{ out };
                     if ( store_persistent_config( dis.stor_drv, dis.cfg_pl, &dis.cfg_map ) )
                             as( "OK" );
                     else
                             as( "NOK" );
             },
             [&]( iface::cfg_clear_stmt const& ) {
-                    base::array_ser as{ out };
+                    json::array_ser as{ out };
                     if ( store_persistent_config( dis.stor_drv, dis.cfg_pl, nullptr ) )
                             as( "OK" );
                     else
                             as( "NOK" );
             },
             [&]( iface::info_stmt const& ) {
-                    base::array_ser as{ out };
+                    json::array_ser as{ out };
                     as( "OK" );
-                    base::object_ser obj{ as };
+                    json::object_ser obj{ as };
                     obj( "version", git::Describe() );
                     obj( "commit", git::CommitSHA1() );
             } );
@@ -227,7 +227,7 @@ std::tuple< em::outcome, em::view< std::byte* > > handle_message(
         // XXX: well, technically, em::view could've had data if it has pointer?
         std::string_view inpt{ (char const*) input_data.begin(), input_data.size() };
 
-        base::jval_ser out{ output_buffer };
+        json::jval_ser out{ output_buffer };
         using R = em::outcome;
 
         auto res = iface::parse( inpt ).visit(
@@ -236,7 +236,7 @@ std::tuple< em::outcome, em::view< std::byte* > > handle_message(
                     return em::SUCCESS;
             },
             [&]( iface::invalid_stmt& ) -> R {
-                    base::array_ser as{ out };
+                    json::array_ser as{ out };
                     as( "NOK" );
                     as( "parse error" );
                     return em::FAILURE;

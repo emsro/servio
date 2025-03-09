@@ -7,6 +7,7 @@ add_subdirectory(iface)
 add_subdirectory(klmn)
 add_subdirectory(mon)
 add_subdirectory(mtr)
+add_subdirectory(lib)
 add_subdirectory(drv)
 
 add_library(serviolib INTERFACE)

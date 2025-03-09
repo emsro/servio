@@ -40,17 +40,21 @@ struct lexer
 
         vari::vval< tok, end > next()
         {
-                while ( p != e && _is_ws( *p ) )
+                while ( p != e && str_lib::bits::is_ws( *p ) )
                         p++;
 
                 if ( p == e || *p == '\0' )
                         return end{};
-                if ( auto r = numreal( p, e ) )
-                        return std::move( r ).vval();
+                str_lib::s_to_nr_res r;
+                if ( str_lib::s_to_nr( p, e, r ) ) {
+                        if ( r.is_num )
+                                return r.n;
+                        return r.r;
+                }
                 if ( auto s = parse_str( p, e ) )
                         return str{ .s = *s };
                 char const* pp = p;
-                if ( lex_id( p, e ) )
+                if ( str_lib::lex_letters( p, e ) )
                         return id{ .s = { pp, p } };
                 return err{};
         }
