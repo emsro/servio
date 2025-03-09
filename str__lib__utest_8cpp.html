@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('str__lib__utest_8cpp.html',''); initRe
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -101,20 +102,23 @@ $(document).ready(function(){initNavTree('str__lib__utest_8cpp.html',''); initRe
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="str__lib_8h_source.html">../str_lib.h</a>&quot;</code><br />
+<code>#include &lt;emlabcpp/algorithm.h&gt;</code><br />
 <code>#include &lt;gtest/gtest.h&gt;</code><br />
+<code>#include &lt;regex&gt;</code><br />
+<code>#include &lt;source_location&gt;</code><br />
 <code>#include &lt;vari/vopt.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for str_lib_utest.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="str__lib__utest_8cpp__incl.svg" width="343" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="str__lib__utest_8cpp__incl.svg" width="780" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:structservio_1_1str__lib_1_1__no__res" id="r_structservio_1_1str__lib_1_1__no__res"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__no__res">servio::str_lib::_no_res</a></td></tr>
-<tr class="separator:structservio_1_1str__lib_1_1__no__res"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1str__lib_1_1__invalid" id="r_structservio_1_1str__lib_1_1__invalid"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__invalid">servio::str_lib::_invalid</a></td></tr>
+<tr class="separator:structservio_1_1str__lib_1_1__invalid"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -122,6 +126,11 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceservio_1_1str__lib" id="r_namespaceservio_1_1str__lib"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html">servio::str_lib</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aa14e6f3d5b57ca3bfbb5d52f41ff3873" id="r_aa14e6f3d5b57ca3bfbb5d52f41ff3873"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str__lib__utest_8cpp.html#aa14e6f3d5b57ca3bfbb5d52f41ff3873">TEST_INPT</a>(inp,  n)&#160;&#160;&#160;check( test_f( inp ), n, inp )</td></tr>
+<tr class="separator:aa14e6f3d5b57ca3bfbb5d52f41ff3873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -131,27 +140,56 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a566fc33633143036744b3cf4ec748439" id="r_a566fc33633143036744b3cf4ec748439"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#a566fc33633143036744b3cf4ec748439">servio::str_lib::TEST</a> (iface, numreal)</td></tr>
-<tr class="separator:a566fc33633143036744b3cf4ec748439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a197a7784e684947bb0905e89477d687c" id="r_a197a7784e684947bb0905e89477d687c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#a197a7784e684947bb0905e89477d687c">servio::str_lib::TEST</a> (lib, numreal)</td></tr>
+<tr class="separator:a197a7784e684947bb0905e89477d687c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a31a7ef388848d4eeaeeed7b13033bd92" id="r_a31a7ef388848d4eeaeeed7b13033bd92"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__no__res">_no_res</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#a31a7ef388848d4eeaeeed7b13033bd92">servio::str_lib::no_res</a></td></tr>
-<tr class="separator:a31a7ef388848d4eeaeeed7b13033bd92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d36443f9ef01c0a5ae5b2da3393b3f4" id="r_a7d36443f9ef01c0a5ae5b2da3393b3f4"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__invalid">_invalid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#a7d36443f9ef01c0a5ae5b2da3393b3f4">servio::str_lib::invalid</a></td></tr>
+<tr class="separator:a7d36443f9ef01c0a5ae5b2da3393b3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="structservio_1_1str__lib_1_1__no__res" id="structservio_1_1str__lib_1_1__no__res"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1str__lib_1_1__no__res">&#9670;&#160;</a></span>servio::str_lib::_no_res</h2>
+<a name="structservio_1_1str__lib_1_1__invalid" id="structservio_1_1str__lib_1_1__invalid"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1str__lib_1_1__invalid">&#9670;&#160;</a></span>servio::str_lib::_invalid</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct servio::str_lib::_no_res</td>
+          <td class="memname">struct servio::str_lib::_invalid</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock"></div>
+</div>
+</div>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aa14e6f3d5b57ca3bfbb5d52f41ff3873" name="aa14e6f3d5b57ca3bfbb5d52f41ff3873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa14e6f3d5b57ca3bfbb5d52f41ff3873">&#9670;&#160;</a></span>TEST_INPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEST_INPT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">inp, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;check( test_f( inp ), n, inp )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 </div><!-- contents -->
@@ -160,7 +198,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_687d3cc02ad229ca90048a832a445bbd.html">tests</a></li><li class="navelem"><a class="el" href="str__lib__utest_8cpp.html">str_lib_utest.cpp</a></li>
-    <li class="footer">Generated on Sun Mar 9 2025 16:04:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 9 2025 21:03:48 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

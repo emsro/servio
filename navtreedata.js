@@ -145,12 +145,12 @@ var NAVTREEINDEX =
 "namespaceservio_1_1plt.html#ae634bafb995aba994e778d86113e6fcd",
 "proto3_2board_8cpp.html#a064090e0ba34cfb1d6f51f247cf479aa",
 "stm32h5xx__hal__conf_8h.html#a450c131e38ad410884575918a021576f",
-"structservio_1_1core_1_1drivers.html#a09f6aabf789b4a4575464e0be3876924",
-"structservio_1_1drv_1_1detailed__cb__iface.html",
-"structservio_1_1drv_1_1tests_1_1vcc__test.html",
-"structservio_1_1fw_1_1context.html#a8a34001a27ad2d35fec01407df424ffc",
-"structservio_1_1scmdio_1_1cobs__port.html#aa4fa1ffb32d567064b55c18ee5cf3684",
-"structservio_1_1sntr_1_1tests_1_1sentry__fixture.html#a6c69eb61d973be8a36465658aaa0c000"
+"structservio_1_1core_1_1drivers.html#a0361b0638af2a8395ebe99484a9a10fe",
+"structservio_1_1drv_1_1detailed__cb.html#afda7ab97f6620810cb8f3165831d9fd5",
+"structservio_1_1drv_1_1tests_1_1temperature__test.html#ac165b4a459a85e9aff3b5cc44220c2b4",
+"structservio_1_1fw_1_1context.html#a7a2373ccd5ec055b87a2f4b25ebf58ca",
+"structservio_1_1scmdio_1_1cobs__port.html#a55b3437fca2074f6b76a3e875d4021a0",
+"structservio_1_1sntr_1_1tests_1_1sentry__fixture.html#a5f0c2ddb22faec42344d000fdf779cdc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

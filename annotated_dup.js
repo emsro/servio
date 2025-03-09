@@ -253,7 +253,7 @@ var annotated_dup =
         [ "bits", "namespaceservio_1_1str__lib_1_1bits.html", [
           [ "adder", "structservio_1_1str__lib_1_1bits_1_1adder.html", "structservio_1_1str__lib_1_1bits_1_1adder" ]
         ] ],
-        [ "_no_res", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__no__res", null ],
+        [ "_invalid", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__invalid", null ],
         [ "s_to_nr_res", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res", "namespaceservio_1_1str__lib_structservio_1_1str__lib_1_1s__to__nr__res_dup" ],
         [ "s_to_nr_res.__unnamed3__", "namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3____", "namespaceservio_1_1str__lib_unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3_____dup" ]
       ] ],

@@ -23,7 +23,7 @@ var searchData=
   ['central_5fsentry_5fiface_20',['central_sentry_iface',['../structservio_1_1sntr_1_1central__sentry__iface.html',1,'servio::sntr']]],
   ['central_5fsentry_5fiface_2ehpp_21',['central_sentry_iface.hpp',['../central__sentry__iface_8hpp.html',1,'']]],
   ['central_5fsentry_5futest_2ecpp_22',['central_sentry_utest.cpp',['../central__sentry__utest_8cpp.html',1,'']]],
-  ['cfg_23',['cfg',['../namespaceservio_1_1iface.html#a626f18747394fa9795a4364786f56810',1,'servio::iface::cfg'],['../structservio_1_1core_1_1drivers.html#a09f6aabf789b4a4575464e0be3876924',1,'servio::core::drivers::cfg'],['../namespaceservio_1_1brd.html#a081ab2c39471f1a64575875b86b24f9b',1,'servio::brd::CFG']]],
+  ['cfg_23',['cfg',['../namespaceservio_1_1brd.html#a081ab2c39471f1a64575875b86b24f9b',1,'servio::brd::CFG'],['../structservio_1_1core_1_1drivers.html#a09f6aabf789b4a4575464e0be3876924',1,'servio::core::drivers::cfg'],['../namespaceservio_1_1iface.html#a626f18747394fa9795a4364786f56810',1,'servio::iface::cfg']]],
   ['cfg_5fclear_5fcmd_24',['cfg_clear_cmd',['../namespaceservio_1_1scmdio.html#a20353fdb09312abbc0de5672e6408885',1,'servio::scmdio']]],
   ['cfg_5fclear_5fstmt_25',['cfg_clear_stmt',['../structservio_1_1iface_1_1cfg__clear__stmt.html',1,'servio::iface']]],
   ['cfg_5fcommit_5fcmd_26',['cfg_commit_cmd',['../namespaceservio_1_1scmdio.html#a18a1d72e9259ccc7898375a69dbbe3d0',1,'servio::scmdio']]],

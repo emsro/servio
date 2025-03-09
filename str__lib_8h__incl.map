@@ -1,5 +1,7 @@
 <map id="src/lib/str_lib.h" name="src/lib/str_lib.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,123,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="24,79,104,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,31,67,65,61,65,61,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="7,5,125,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,44,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,32,41,68,36,65,57,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="69,79,149,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="75,30,97,66,93,68,71,32"/>
 </map>
