@@ -10,7 +10,7 @@
 namespace servio::scmdio
 {
 
-CLI::Option* verbose_opt( CLI::App& app, uint32_t& val );
+CLI::Option* verbose_opt( CLI::App& app );
 
 CLI::Option* coms_opt( CLI::App& app, std::filesystem::path& device );
 CLI::Option* dcoms_opt( CLI::App& app, std::filesystem::path& device );

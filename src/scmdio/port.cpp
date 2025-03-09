@@ -147,7 +147,7 @@ awaitable< std::span< std::byte > > char_port::read_msg( std::span< std::byte > 
         assert( dview.size() <= buffer.size() );
         std::copy( dview.begin(), dview.end(), buffer.begin() );
         read_buffer.erase( read_buffer.begin(), read_buffer.begin() + (long) dview.size() );
-        co_return dview;
+        co_return std::span{ buffer.data(), dview.size() };
 }
 
 }  // namespace servio::scmdio

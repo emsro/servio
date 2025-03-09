@@ -224,15 +224,16 @@ struct kval_parse< K, float >
         }
 };
 
-template < auto K >
-struct kval_parse< K, std::string_view >
+template < auto K, std::size_t N >
+struct kval_parse< K, em::string_buffer< N > >
 {
-        static vari::vopt< kval< K, std::string_view > > parse( parser& p ) noexcept
+        static vari::vopt< kval< K, em::string_buffer< N > > > parse( parser& p ) noexcept
         {
-                using R = vari::vopt< kval< K, std::string_view > >;
+                using R = vari::vopt< kval< K, em::string_buffer< N > > >;
                 return p.expr().visit(
                     [&]( std::string_view& s ) -> R {
-                            return kval< K, std::string_view >{ .value = s };
+                            // note that this will cutoff the string if it's longer than N
+                            return kval< K, em::string_buffer< N > >{ .value = s };
                     },
                     [&]( float& ) -> R {
                             return {};

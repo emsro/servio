@@ -56,8 +56,10 @@ using encoder_mode = vari::typelist<  //
 
 using ec_mode_key = typename field_traits< encoder_mode >::keys;
 
+using str_name = em::string_buffer< 32 >;
+
 using cfg = vari::typelist<
-    field< 1, "model"_a, std::string_view >,
+    field< 1, "model"_a, str_name >,
     field< 2, "id"_a, uint32_t >,
     field< 3, "group_id"_a, uint32_t >,
     field< 4, "encoder_mode"_a, ec_mode_key >,

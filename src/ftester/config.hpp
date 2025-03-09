@@ -25,7 +25,6 @@ struct config
         uint32_t              c_baudrate = 230400;
         std::filesystem::path d_device   = "/dev/ttyACM0";
         uint32_t              d_baudrate = 230400;
-        uint32_t              verbose    = 0;
 
         vari::uvptr< openocd_flash_config, bmp_config > flash_cmd;
 };

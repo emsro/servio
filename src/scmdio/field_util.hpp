@@ -32,6 +32,8 @@ struct nlohmann::adl_serializer< vari::_vval< Ts... > >
 namespace servio::scmdio
 {
 
+namespace em = emlabcpp;
+
 template < typename T >
 struct val_ser
 {
@@ -51,6 +53,8 @@ struct val_ser
                         T ret;
                         std::from_chars( val.data(), val.data() + val.size(), ret );
                         return ret;
+                } else if constexpr ( em::is_string_buffer_v< T > ) {
+                        return T{ val };
                 } else
                         static_assert( std::is_same_v< T, void >, "unsupported type" );
         }
@@ -119,9 +123,12 @@ struct kval_ser< vari::typelist< KV, KVs... > >
 
         static vari::vopt< KV, KVs... > from_json( std::string_view name, nlohmann::json const& j )
         {
-                if ( KV::key.to_string() == name )
+                if ( KV::key.to_string() == name ) {
+                        // if constexpr ( std::same_as< typename KV::value_type, std::string_view >
+                        // )
+
                         return KV{ j.get< typename KV::value_type >() };
-                else
+                } else
                         return kval_ser< vari::typelist< KVs... > >::from_json( name, j );
         }
 };

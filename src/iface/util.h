@@ -86,6 +86,45 @@ constexpr bool hex_prefix( char const* p, char const* e )
         return false;
 }
 
+constexpr float _exp_pow( int p )
+{
+        if ( p == 0 )
+                return 1;
+        if ( p == 1 )
+                return 10.F;
+
+        if ( p >= 0 ) {
+                float res = 10.0F;
+                for ( int i = 1; i < p; i++ )
+                        res *= 10.0F;
+                return res;
+        } else {
+                float res = 0.1F;
+                for ( int i = -1; i > p; i-- )
+                        res *= 0.1F;
+                return res;
+        }
+}
+
+inline vari::vopt< real > _finish_exp( char const*& p, char const* e, float x )
+{
+        if ( p == e )
+                return {};
+
+        int sign = 1;
+        if ( *p == '-' ) {
+                p++;
+                sign = -1;
+        }
+
+        if ( p == e )
+                return {};
+
+        if ( auto r = dec_numeric( p, e ) )
+                return x * _exp_pow( sign * *r );
+        return {};
+}
+
 inline vari::vopt< num, real > numreal( char const*& p, char const* e )
 {
         SERVIO_NUM_ASSERT( p != e );
@@ -93,6 +132,7 @@ inline vari::vopt< num, real > numreal( char const*& p, char const* e )
                 p++;
                 return hex_numeric( ++p, e );
         }
+
         int sign = 1;
         if ( *p == '-' ) {
                 p++;
@@ -100,6 +140,7 @@ inline vari::vopt< num, real > numreal( char const*& p, char const* e )
         }
         if ( p == e )
                 return {};
+
         num x = 0;
         if ( *p != '.' ) {
                 if ( auto r = dec_numeric( p, e ) )
@@ -107,16 +148,25 @@ inline vari::vopt< num, real > numreal( char const*& p, char const* e )
                 else
                         return {};
         }
-        if ( *p != '.' )
-                return sign * x;
-        float y   = 0.0F;
-        float exp = 1.0F;
-        while ( ++p != e && _is_dec( *p ) ) {
-                exp *= 10.0F;
-                y *= 10;
-                y += *p - '0';
+
+        if ( *p == '.' ) {
+                float y   = 0.0F;
+                float exp = 1.0F;
+                while ( ++p != e && _is_dec( *p ) ) {
+                        exp *= 10.0F;
+                        y *= 10;
+                        y += *p - '0';
+                }
+                real res = ( (float) sign * (float) x ) + ( y / exp );
+                if ( p != e && ( *p == 'e' || *p == 'E' ) )
+                        return _finish_exp( ++p, e, res );
+                return res;
+        } else {
+                num res = sign * x;
+                if ( p != e && ( *p == 'e' || *p == 'E' ) )
+                        return _finish_exp( ++p, e, (float) res );
+                return res;
         }
-        return (float) sign * ( (float) x ) + ( y / exp );
 }
 
 constexpr bool lex_id( char const*& p, char const* e ) noexcept

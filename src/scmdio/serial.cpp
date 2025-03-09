@@ -72,9 +72,7 @@ awaitable< void > set_config_field( port_iface& port, vari::vref< iface::cfg_val
                 msg = std::format( "cfg set {} {}", val.key.to_string(), val.value );
         } );
 
-        nlohmann::json res = co_await exchg( port, msg );
-        if ( res.at( 0 ) != "OK" )
-                log_error( "Setting failed, got following response: ", res.dump() );
+        co_await exchg( port, msg );
 }
 
 awaitable< std::vector< vari::vval< iface::cfg_vals > > > get_full_config( port_iface& port )
@@ -93,8 +91,6 @@ awaitable< vari::vval< iface::prop_vals > > get_property( port_iface& port, ifac
         std::string msg = std::format( "prop {}", p.to_string() );
 
         nlohmann::json reply = co_await exchg( port, msg );
-        if ( reply.at( 0 ) != "OK" )
-                log_error( "Setting failed, got following response: ", reply.dump() );
 
         auto res = kval_ser< iface::prop_vals >::from_json( p.to_string(), reply.at( 1 ) );
         assert( res );

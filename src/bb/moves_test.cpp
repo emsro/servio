@@ -66,7 +66,7 @@ int main( int argc, char** argv )
 
         CLI::App app{ "black box tests with basic moves" };
         scmdio::powerless_flag( app, powerless );
-        scmdio::cobs_cli port;
+        scmdio::char_cli port;
         scmdio::port_opts( app, port );
 
         try {

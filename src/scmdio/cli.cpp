@@ -4,17 +4,23 @@
 namespace servio::scmdio
 {
 
-CLI::Option* verbose_opt( CLI::App& app, uint32_t& val )
+CLI::Option* verbose_opt( CLI::App& app )
 {
-        return app.add_flag( "-v,--verbose", val, "verbosity" )
-            ->envname( "SERVIO_VERBOSE" )
-            ->each( []( std::string const& ) {
-                    auto l = spdlog::get_level();
-                    if ( l == spdlog::level::info )
-                            spdlog::set_level( spdlog::level::debug );
-                    else if ( l == spdlog::level::debug )
-                            spdlog::set_level( spdlog::level::trace );
-            } );
+        return app
+            .add_flag(
+                "-v,--verbose",
+                [&]( std::int64_t x ) {
+                        if ( x == 0 )
+                                spdlog::set_level( spdlog::level::info );
+                        else if ( x == 1 )
+                                spdlog::set_level( spdlog::level::debug );
+                        else if ( x == 2 )
+                                spdlog::set_level( spdlog::level::trace );
+                        else
+                                throw CLI::ValidationError( "Invalid verbosity level" );
+                },
+                "verbosity" )
+            ->envname( "SERVIO_VERBOSE" );
 }
 
 CLI::Option* coms_opt( CLI::App& app, std::filesystem::path& comms )

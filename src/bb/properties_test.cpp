@@ -29,13 +29,12 @@ int main( int argc, char** argv )
 
         ::testing::InitGoogleTest( &argc, argv );
         bool                    powerless = false;
-        uint32_t                verbose   = 0;
         boost::asio::io_context io_ctx;
 
         CLI::App app{ "properties tests" };
         scmdio::powerless_flag( app, powerless );
-        scmdio::verbose_opt( app, verbose );
-        scmdio::cobs_cli port;
+        scmdio::verbose_opt( app );
+        scmdio::char_cli port;
         scmdio::port_opts( app, port );
 
         try {

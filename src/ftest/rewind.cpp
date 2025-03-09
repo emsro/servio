@@ -21,7 +21,7 @@ void rewind(
                 float dir = area.max() < pos ? -1 : 1;
                 cor.ctl.switch_to_current_control( iclk.get_us(), dir * current );
         }
-        cor.ctl.switch_to_current_control( iclk.get_us(), 0.f );
+        cor.ctl.switch_to_power_control( 0_pwr );
 }
 
 }  // namespace servio::ftest

@@ -40,7 +40,19 @@ TEST( iface, numreal )
                 char const* e = s.data() + s.size();
 
                 auto res = numreal( p, e );
-                EXPECT_EQ( res, n ) << "\n inpt: " << s << "\n";
+                res.visit(
+                    [&]( vari::empty_t ) {
+                            EXPECT_EQ( res, n );
+                    },
+                    [&]( auto& lh ) {
+                            n.visit(
+                                [&]( vari::empty_t ) {
+                                        EXPECT_EQ( res, n );
+                                },
+                                [&]( auto& rh ) {
+                                        EXPECT_NEAR( lh, rh, 1e-6 ) << "\n inpt: " << s << "\n";
+                                } );
+                    } );
         };
 
         test_f( "0", 0 );
@@ -52,8 +64,16 @@ TEST( iface, numreal )
         test_f( "0xFf", 0xFF );
         test_f( "0xff", 0xFF );
         test_f( ".0", 0.0F );
+        test_f( "0.0", 0.0F );
         test_f( ".1", 0.1F );
         test_f( "3.14", 3.14F );
+        test_f( "3e-06", 3e-06F );
+        test_f( "3e-6", 3e-06F );
+        test_f( "3e06", 3e06F );
+        test_f( "3e6", 3e06F );
+        test_f( "0.3e-06", 0.3e-06F );
+        test_f( "0.3E-6", 0.3e-06F );
+        test_f( "0.3e", {} );
 }
 
 TEST( iface, str )

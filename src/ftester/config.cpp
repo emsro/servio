@@ -12,7 +12,7 @@ config get_config( int argc, char* argv[] )
         config   cfg;
         CLI::App app( "Utility to run basic input-less tests" );
 
-        scmdio::verbose_opt( app, cfg.verbose );
+        scmdio::verbose_opt( app );
         scmdio::coms_opt( app, cfg.c_device );
         scmdio::dcoms_opt( app, cfg.d_device );
         app.add_option( "-o,--output", cfg.output_dir, "Directory to use for storing results" );

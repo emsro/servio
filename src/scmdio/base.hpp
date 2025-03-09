@@ -4,6 +4,7 @@
 //
 #include <avakar/atom.h>
 #include <boost/asio.hpp>
+#include <emlabcpp/experimental/string_buffer.h>
 #include <emlabcpp/view.h>
 #include <nlohmann/json.hpp>
 #include <spdlog/spdlog.h>
@@ -146,6 +147,22 @@ struct std::formatter< emlabcpp::view< T >, char >
                 for ( std::size_t i = 1; i < v.size(); ++i )
                         format_to( out, ", {}", v[i] );
                 return format_to( out, "]" );
+        }
+};
+
+template < std::size_t N >
+struct std::formatter< emlabcpp::string_buffer< N >, char >
+{
+        template < typename ParseContext >
+        constexpr ParseContext::iterator parse( ParseContext& ctx )
+        {
+                return ctx.begin();
+        }
+
+        template < class FmtContext >
+        FmtContext::iterator format( emlabcpp::string_buffer< N > const& v, FmtContext& ctx ) const
+        {
+                return std::formatter< std::string_view, char >{}.format( v, ctx );
         }
 };
 

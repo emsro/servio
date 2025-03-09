@@ -284,8 +284,7 @@ int main( int argc, char* argv[] )
         boost::asio::io_context ctx;
         CLI::App                app{ "Servio utility" };
 
-        uint32_t verbose;
-        scmdio::verbose_opt( app, verbose );
+        scmdio::verbose_opt( app );
 
         scmdio::cfg_def( app, ctx );
         scmdio::pool_def( app, ctx );
