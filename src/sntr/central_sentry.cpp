@@ -67,7 +67,7 @@ void central_sentry::report_inoperable(
                 target->st     = record_state::SET;
                 target->tp     = now;
                 target->src    = src;
-                target->ecodes = ecodes.to_ulong();
+                target->ecodes = (uint32_t) ecodes.to_ulong();
                 target->emsg   = emsg;
                 target->data   = data;
         }
@@ -86,7 +86,7 @@ void central_sentry::report_degraded(
                 target->st     = record_state::SET;
                 target->tp     = now;
                 target->src    = src;
-                target->ecodes = ecodes.to_ulong();
+                target->ecodes = (uint32_t) ecodes.to_ulong();
                 target->emsg   = emsg;
                 target->data   = data;
         }

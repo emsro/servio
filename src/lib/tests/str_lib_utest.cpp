@@ -39,7 +39,6 @@ template < typename T >
 void check(
     opt< s_to_nr_res >   nrs,
     T                    n,
-    std::string_view     inpt,
     std::source_location loc = std::source_location::current() )
 {
         static constexpr bool is_valid = !std::same_as< T, _invalid >;
@@ -60,7 +59,7 @@ void check(
         }
 }
 
-#define TEST_INPT( inp, n ) check( test_f( inp ), n, inp )
+#define TEST_INPT( inp, n ) check( test_f( inp ), n )
 
 }  // namespace
 
@@ -124,7 +123,13 @@ TEST( lib, numreal )
         TEST_INPT( "-1.0E-07", -1.0e-07F );
         TEST_INPT( "0x0", 0x0 );
         TEST_INPT( "0x1", 0x1 );
-        // TEST_INPT( "0x7FFFFFFF", 0x7FFFFFFF ); // we cutoff this too
+        TEST_INPT( "0x7FFFFFFF", 0x7FFFFFFF );
+        TEST_INPT( "0x11FFFFFFF", invalid );
+        TEST_INPT( "2147483647", std::numeric_limits< int32_t >::max() );
+        TEST_INPT( "2147483648", invalid );
+        TEST_INPT( "-2147483647", -2147483647 );
+        TEST_INPT( "-2147483648", std::numeric_limits< int32_t >::min() );
+        TEST_INPT( "-2147483649", invalid );
         TEST_INPT( "0x80000000", invalid );       // Out of 32-bit integer range
         TEST_INPT( "0xFFFFFFFF", invalid );       // Out of 32-bit integer range
         TEST_INPT( "0x100000000", invalid );      // Out of 32-bit integer range

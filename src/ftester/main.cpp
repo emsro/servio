@@ -31,7 +31,7 @@ bool handle_test_specifics( std::string_view name, test_system& sys, std::filesy
                                 [&]( ftest::bench::prof_record const& pr ) {
                                         prof_recs.push_back( pr );
                                 },
-                                [&]( auto&& err ) {
+                                [&]( auto&& ) {
                                         // XXX: fix
                                         // spdlog::error( "Failed to parse record: {}", err );
                                 } );
