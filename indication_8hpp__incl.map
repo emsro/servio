@@ -1,9 +1,9 @@
 <map id="src/mon/indication.hpp" name="src/mon/indication.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="184,5,355,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="228,5,399,31"/>
 <area shape="rect" id="Node000002" href="$base_8hpp.html" title=" " alt="" coords="223,152,316,177"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,32,256,64,253,84,253,104,262,138,257,140,248,104,247,83,251,63,262,30"/>
-<area shape="rect" id="Node000008" href="$effects_8hpp.html" title=" " alt="" coords="263,79,366,104"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="279,30,302,66,298,69,275,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="312,32,279,140,274,138,307,30"/>
+<area shape="rect" id="Node000008" href="$effects_8hpp.html" title=" " alt="" coords="307,79,410,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="323,30,346,66,342,69,319,32"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,225,72,251"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,180,86,225,85,220,231,175"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="96,225,163,251"/>
@@ -14,5 +14,7 @@
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="300,175,411,218,409,223,298,180"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="555,225,634,251"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="317,174,542,222,541,228,316,179"/>
-<area shape="poly" id="edge8_Node000008_Node000002" title=" " alt="" coords="309,106,286,142,282,139,305,103"/>
+<area shape="poly" id="edge8_Node000008_Node000002" title=" " alt="" coords="346,106,296,145,293,141,343,102"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="340,152,399,177"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="363,104,368,138,363,139,358,105"/>
 </map>

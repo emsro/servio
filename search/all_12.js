@@ -83,7 +83,7 @@ var searchData=
   ['hbridge_5ftest_80',['hbridge_test',['../structservio_1_1drv_1_1tests_1_1hbridge__test.html',1,'servio::drv::tests']]],
   ['heartbeat_81',['HEARTBEAT',['../namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52a0d895a0a05a7cce9b2c0c8bb252f78cc',1,'servio::mon']]],
   ['hex_5fprefix_82',['hex_prefix',['../namespaceservio_1_1str__lib_1_1bits.html#a05768067697a4e6d0a0286b43aa7c3d4',1,'servio::str_lib::bits']]],
-  ['hex_5fto_5fn_83',['hex_to_n',['../namespaceservio_1_1str__lib.html#a8691c6eace75343774b65877969b8173',1,'servio::str_lib']]],
+  ['hex_5fto_5fn_83',['hex_to_n',['../namespaceservio_1_1str__lib.html#aaab7e0a876beb327d57f81cceb6c2d4a',1,'servio::str_lib']]],
   ['high_5fpoint_84',['high_point',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a8f84eb64d139440f87b13310f211b08f',1,'servio::ctl::linear_transition_regulator']]],
   ['history_85',['history',['../config.html#autotoc_md45',1,'REQ6.5.2 Size of history'],['../config.html#autotoc_md46',1,'REQ6.5.3 Clear removes history']]],
   ['hold_86',['hold',['../namespaceservio_1_1drv_1_1tests.html#a510bb7381ec9be3c36a77e8794a75201',1,'servio::drv::tests']]],
