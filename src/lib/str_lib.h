@@ -150,7 +150,7 @@ constexpr bool hex_to_n( char const*& p, char const* e, int32_t& x ) noexcept
                         return false;
                 else if ( p != e && bits::is_hex( *p ) )
                         continue;
-                x = y;
+                x = (int32_t) y;
                 return true;
         }
         return false;
@@ -161,7 +161,7 @@ namespace bits
 consteval uint32_t i32_lowest_as_u32()
 {
         int64_t x = std::numeric_limits< int32_t >::lowest();
-        return -x;
+        return (uint32_t) -x;
 }
 }  // namespace bits
 
@@ -177,7 +177,7 @@ constexpr bool dec_to_n( char const*& p, char const* e, int32_t& x ) noexcept
                 uint32_t yy = y * 10;
                 if ( yy < y )
                         return false;
-                y = ( y * 10 ) + ( *p++ - '0' );
+                y = ( y * 10u ) + static_cast< uint32_t >( *p++ - '0' );
                 if ( sign == 1 && y > std::numeric_limits< int32_t >::max() )
                         return false;
                 else if ( sign == -1 && y > bits::i32_lowest_as_u32() )
