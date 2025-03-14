@@ -31,7 +31,7 @@ awaitable< void > init_comm( stream_iface& port )
         }
         co_await port.write( INIT );
         b = co_await port.read();
-        // XXX: revisit exceptions?
+        assert( b );
         if ( b != NACK )
                 log_error( "Response for init is not NACK as expected for double-init: {}", b );
 }

@@ -246,9 +246,9 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
             } );
         plt::setup_adc_channel(
             ADC_POOLER->position.chconf,
-            ADC_CHANNEL_0,
+            ADC_CHANNEL_19,
             drv::pin_cfg{
-                .pin  = GPIO_PIN_6,
+                .pin  = GPIO_PIN_5,
                 .port = GPIOA,
                 .mode = GPIO_MODE_ANALOG,
             } );

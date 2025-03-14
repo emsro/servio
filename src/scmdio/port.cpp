@@ -30,6 +30,8 @@ awaitable< bool > serial_stream::read( std::span< std::byte > buffer )
         std::variant< std::size_t, std::monostate > results = co_await (
             async_read( port, boost::asio::buffer( buffer ), use_awaitable ) || timeout( 100ms ) );
         std::span< char > b2{ (char*) buffer.data(), buffer.size() };
+        if ( results.index() == 1 )
+                log_error( "Timeout while reading from serial port" );
         spdlog::debug( "reading: {}", spdlog::to_hex( buffer ) );
         co_return results.index() == 0;
 }
