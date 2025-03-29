@@ -74,12 +74,12 @@ constexpr float exp_pow( int p )
                 for ( int i = 0; i < p; i++ )
                         res *= 10.0F;
                 return res;
-        } else {
-                float res = 0.1F;
-                for ( int i = -1; i > p; i-- )
-                        res *= 0.1F;
-                return res;
         }
+
+        float res = 0.1F;
+        for ( int i = -1; i > p; i-- )
+                res *= 0.1F;
+        return res;
 }
 
 struct adder
@@ -205,7 +205,10 @@ constexpr bool apply_exp( char const*& p, char const* e, float& x ) noexcept
         num y = 0.0F;
         if ( !dec_to_n( p, e, y ) )
                 return false;
-        x *= bits::exp_pow( y );
+        if ( y > 38 )
+                x = std::numeric_limits< float >::infinity();
+        else
+                x *= bits::exp_pow( y );
         return true;
 }
 
