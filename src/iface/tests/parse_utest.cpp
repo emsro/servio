@@ -1,6 +1,7 @@
 #include "../def.h"
 
 #include <emlabcpp/algorithm.h>
+#include <format>
 #include <gtest/gtest.h>
 #include <source_location>
 
