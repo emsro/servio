@@ -194,12 +194,12 @@ $(document).ready(function(){initNavTree('str__lib_8h_source.html',''); initResi
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; p; i++ )</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                        res *= 10.0F;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordtype">float</span> res = 0.1F;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = -1; i &gt; p; i-- )</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                        res *= 0.1F;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">float</span> res = 0.1F;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = -1; i &gt; p; i-- )</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                res *= 0.1F;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
 </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
@@ -344,76 +344,79 @@ $(document).ready(function(){initNavTree('str__lib_8h_source.html',''); initResi
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <a class="code hl_typedef" href="namespaceservio_1_1str__lib.html#a50b074234c1f9706e173b2fdc90770d9">num</a> y = 0.0F;</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">if</span> ( !<a class="code hl_function" href="namespaceservio_1_1str__lib.html#a56eb235e8bea728e488bfac8cf394e48">dec_to_n</a>( p, e, y ) )</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        x *= <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#add09febdf112368e58ff5088dc6f367b">bits::exp_pow</a>( y );</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">if</span> ( y &gt; 38 )</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                x = std::numeric_limits&lt; float &gt;::infinity();</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                x *= <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#add09febdf112368e58ff5088dc6f367b">bits::exp_pow</a>( y );</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>}</div>
 </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="foldopen" id="foldopen00212" data-start="{" data-end="};">
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="namespaceservio_1_1str__lib.html">  212</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res">s_to_nr_res</a></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>{</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9">  214</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9">is_num</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="foldopen" id="foldopen00216" data-start="{" data-end="};">
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="namespaceservio_1_1str__lib.html">  216</a></span>        <span class="keyword">union</span></div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        {</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                <a class="code hl_typedef" href="namespaceservio_1_1str__lib.html#a50b074234c1f9706e173b2fdc90770d9">num</a>  n;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                <a class="code hl_typedef" href="namespaceservio_1_1str__lib.html#a57ef0f842947c125eba788c392bc0722">real</a> r;</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        };</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="foldopen" id="foldopen00215" data-start="{" data-end="};">
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="namespaceservio_1_1str__lib.html">  215</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res">s_to_nr_res</a></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>{</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9">  217</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9">is_num</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="foldopen" id="foldopen00219" data-start="{" data-end="};">
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="namespaceservio_1_1str__lib.html">  219</a></span>        <span class="keyword">union</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                <a class="code hl_typedef" href="namespaceservio_1_1str__lib.html#a50b074234c1f9706e173b2fdc90770d9">num</a>  n;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                <a class="code hl_typedef" href="namespaceservio_1_1str__lib.html#a57ef0f842947c125eba788c392bc0722">real</a> r;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        };</div>
 </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>};</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>};</div>
 </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="namespaceservio_1_1str__lib.html#a6581570c8e1b6db1ffaba372b4231139">  223</a></span><span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceservio_1_1str__lib.html#a6581570c8e1b6db1ffaba372b4231139">s_to_nr</a>( <span class="keywordtype">char</span> <span class="keyword">const</span>*&amp; p, <span class="keywordtype">char</span> <span class="keyword">const</span>* e, <a class="code hl_struct" href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res">s_to_nr_res</a>&amp; x ) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>{</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        x.n      = 0;</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        x.<a class="code hl_variable" href="namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9">is_num</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#a05768067697a4e6d0a0286b43aa7c3d4">bits::hex_prefix</a>( p, e ) ) {</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                p += 2;</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                <span class="keywordflow">if</span> ( !<a class="code hl_function" href="namespaceservio_1_1str__lib.html#aaab7e0a876beb327d57f81cceb6c2d4a">hex_to_n</a>( p, e, x.n ) )</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        }</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        <span class="keywordflow">if</span> ( p == e )</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="namespaceservio_1_1str__lib.html#a6581570c8e1b6db1ffaba372b4231139">  226</a></span><span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceservio_1_1str__lib.html#a6581570c8e1b6db1ffaba372b4231139">s_to_nr</a>( <span class="keywordtype">char</span> <span class="keyword">const</span>*&amp; p, <span class="keywordtype">char</span> <span class="keyword">const</span>* e, <a class="code hl_struct" href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res">s_to_nr_res</a>&amp; x ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>{</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        x.n      = 0;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        x.<a class="code hl_variable" href="namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9">is_num</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <span class="keywordflow">if</span> ( <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#a05768067697a4e6d0a0286b43aa7c3d4">bits::hex_prefix</a>( p, e ) ) {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                p += 2;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                <span class="keywordflow">if</span> ( !<a class="code hl_function" href="namespaceservio_1_1str__lib.html#aaab7e0a876beb327d57f81cceb6c2d4a">hex_to_n</a>( p, e, x.n ) )</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        }</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keywordflow">if</span> ( !<a class="code hl_function" href="namespaceservio_1_1str__lib.html#a56eb235e8bea728e488bfac8cf394e48">dec_to_n</a>( p, e, x.n ) )</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keywordflow">if</span> ( p == e )</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        <span class="keywordflow">if</span> ( *p == <span class="charliteral">&#39;.&#39;</span> ) {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                <span class="keywordtype">float</span> y   = 0.0F;</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                <span class="keywordtype">float</span> exp = 1.0F;</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                <span class="keywordflow">while</span> ( ++p != e &amp;&amp; <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#a71e7272641d158f12eb27afb0f6e34a5">bits::is_dec</a>( *p ) ) {</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                        exp *= 10.0F;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                        y = ( y * 10 ) + ( *p - <span class="charliteral">&#39;0&#39;</span> );</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                }</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                x.r      = (float) x.n + ( y / exp );</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                x.is_num = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#adb8a5deec2c1fad6596bfa40151541ee">bits::has_exp_suffix</a>( p, e ) )</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceservio_1_1str__lib.html#a497fc2eef0aca4badc72ac40a50fc891">apply_exp</a>( ++p, e, x.r );</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#adb8a5deec2c1fad6596bfa40151541ee">bits::has_exp_suffix</a>( p, e ) ) {</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                x.r      = (float) x.n;</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                x.is_num = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceservio_1_1str__lib.html#a497fc2eef0aca4badc72ac40a50fc891">apply_exp</a>( ++p, e, x.r );</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        }</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>}</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        <span class="keywordflow">if</span> ( !<a class="code hl_function" href="namespaceservio_1_1str__lib.html#a56eb235e8bea728e488bfac8cf394e48">dec_to_n</a>( p, e, x.n ) )</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        <span class="keywordflow">if</span> ( *p == <span class="charliteral">&#39;.&#39;</span> ) {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                <span class="keywordtype">float</span> y   = 0.0F;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                <span class="keywordtype">float</span> exp = 1.0F;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                <span class="keywordflow">while</span> ( ++p != e &amp;&amp; <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#a71e7272641d158f12eb27afb0f6e34a5">bits::is_dec</a>( *p ) ) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                        exp *= 10.0F;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                        y = ( y * 10 ) + ( *p - <span class="charliteral">&#39;0&#39;</span> );</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                }</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                x.r      = (float) x.n + ( y / exp );</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                x.is_num = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                <span class="keywordflow">if</span> ( <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#adb8a5deec2c1fad6596bfa40151541ee">bits::has_exp_suffix</a>( p, e ) )</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceservio_1_1str__lib.html#a497fc2eef0aca4badc72ac40a50fc891">apply_exp</a>( ++p, e, x.r );</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#adb8a5deec2c1fad6596bfa40151541ee">bits::has_exp_suffix</a>( p, e ) ) {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                x.r      = (float) x.n;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                x.is_num = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceservio_1_1str__lib.html#a497fc2eef0aca4badc72ac40a50fc891">apply_exp</a>( ++p, e, x.r );</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        }</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}</div>
 </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
-<div class="foldopen" id="foldopen00259" data-start="{" data-end="}">
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="namespaceservio_1_1str__lib.html#a8177c267b47c96fcce04e5b633496111">  259</a></span><span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceservio_1_1str__lib.html#a8177c267b47c96fcce04e5b633496111">lex_letters</a>( <span class="keywordtype">char</span> <span class="keyword">const</span>*&amp; p, <span class="keywordtype">char</span> <span class="keyword">const</span>* e ) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>{</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordflow">if</span> ( p == e || !<a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#a2ef3bbeb97b5b6496f301f4aa6e52238">bits::is_letter</a>( *p ) )</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordflow">while</span> ( p != e &amp;&amp; <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#aa45a43e85a14382a4f7b45d379c8c07e">bits::is_id_letter</a>( *++p ) )</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>}</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="foldopen" id="foldopen00262" data-start="{" data-end="}">
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno"><a class="line" href="namespaceservio_1_1str__lib.html#a8177c267b47c96fcce04e5b633496111">  262</a></span><span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceservio_1_1str__lib.html#a8177c267b47c96fcce04e5b633496111">lex_letters</a>( <span class="keywordtype">char</span> <span class="keyword">const</span>*&amp; p, <span class="keywordtype">char</span> <span class="keyword">const</span>* e ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>{</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <span class="keywordflow">if</span> ( p == e || !<a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#a2ef3bbeb97b5b6496f301f4aa6e52238">bits::is_letter</a>( *p ) )</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        <span class="keywordflow">while</span> ( p != e &amp;&amp; <a class="code hl_function" href="namespaceservio_1_1str__lib_1_1bits.html#aa45a43e85a14382a4f7b45d379c8c07e">bits::is_id_letter</a>( *++p ) )</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}</div>
 </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>}  <span class="comment">// namespace servio::str_lib</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>}  <span class="comment">// namespace servio::str_lib</span></div>
 </div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_1_1bits_html_a05768067697a4e6d0a0286b43aa7c3d4"><div class="ttname"><a href="namespaceservio_1_1str__lib_1_1bits.html#a05768067697a4e6d0a0286b43aa7c3d4">servio::str_lib::bits::hex_prefix</a></div><div class="ttdeci">constexpr bool hex_prefix(char const *p, char const *e)</div><div class="ttdef"><b>Definition</b> str_lib.h:41</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_1_1bits_html_a183cfab85343e43a15db9052fbdc2d90"><div class="ttname"><a href="namespaceservio_1_1str__lib_1_1bits.html#a183cfab85343e43a15db9052fbdc2d90">servio::str_lib::bits::is_hex</a></div><div class="ttdeci">constexpr bool is_hex(char c) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:26</div></div>
@@ -426,17 +429,17 @@ $(document).ready(function(){initNavTree('str__lib_8h_source.html',''); initResi
 <div class="ttc" id="anamespaceservio_1_1str__lib_1_1bits_html_adb8a5deec2c1fad6596bfa40151541ee"><div class="ttname"><a href="namespaceservio_1_1str__lib_1_1bits.html#adb8a5deec2c1fad6596bfa40151541ee">servio::str_lib::bits::has_exp_suffix</a></div><div class="ttdeci">constexpr bool has_exp_suffix(char const *p, char const *e)</div><div class="ttdef"><b>Definition</b> str_lib.h:48</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_1_1bits_html_add09febdf112368e58ff5088dc6f367b"><div class="ttname"><a href="namespaceservio_1_1str__lib_1_1bits.html#add09febdf112368e58ff5088dc6f367b">servio::str_lib::bits::exp_pow</a></div><div class="ttdeci">constexpr float exp_pow(int p)</div><div class="ttdef"><b>Definition</b> str_lib.h:70</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_html"><div class="ttname"><a href="namespaceservio_1_1str__lib.html">servio::str_lib</a></div><div class="ttdef"><b>Definition</b> str_lib.h:9</div></div>
-<div class="ttc" id="anamespaceservio_1_1str__lib_html_a3903dd4a75ac6fdbf6aabe44aae9aca9"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9">servio::str_lib::s_to_nr_res::is_num</a></div><div class="ttdeci">bool is_num</div><div class="ttdef"><b>Definition</b> str_lib.h:214</div></div>
+<div class="ttc" id="anamespaceservio_1_1str__lib_html_a3903dd4a75ac6fdbf6aabe44aae9aca9"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9">servio::str_lib::s_to_nr_res::is_num</a></div><div class="ttdeci">bool is_num</div><div class="ttdef"><b>Definition</b> str_lib.h:217</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_html_a42a3f44f68adb28ef07ff2ee407e86e1"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a42a3f44f68adb28ef07ff2ee407e86e1">servio::str_lib::u_to_s</a></div><div class="ttdeci">constexpr void u_to_s(char *&amp;p, char *e, std::unsigned_integral auto x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:103</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_html_a497fc2eef0aca4badc72ac40a50fc891"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a497fc2eef0aca4badc72ac40a50fc891">servio::str_lib::apply_exp</a></div><div class="ttdeci">constexpr bool apply_exp(char const *&amp;p, char const *e, float &amp;x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:200</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_html_a50b074234c1f9706e173b2fdc90770d9"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a50b074234c1f9706e173b2fdc90770d9">servio::str_lib::num</a></div><div class="ttdeci">int32_t num</div><div class="ttdef"><b>Definition</b> str_lib.h:11</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_html_a5462d4d8ad0f312c1fec922ea9c91b7a"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a5462d4d8ad0f312c1fec922ea9c91b7a">servio::str_lib::f_to_s</a></div><div class="ttdeci">constexpr void f_to_s(char *&amp;p, char *e, float x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:116</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_html_a56eb235e8bea728e488bfac8cf394e48"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a56eb235e8bea728e488bfac8cf394e48">servio::str_lib::dec_to_n</a></div><div class="ttdeci">constexpr bool dec_to_n(char const *&amp;p, char const *e, int32_t &amp;x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:170</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_html_a57ef0f842947c125eba788c392bc0722"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a57ef0f842947c125eba788c392bc0722">servio::str_lib::real</a></div><div class="ttdeci">float real</div><div class="ttdef"><b>Definition</b> str_lib.h:12</div></div>
-<div class="ttc" id="anamespaceservio_1_1str__lib_html_a6581570c8e1b6db1ffaba372b4231139"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a6581570c8e1b6db1ffaba372b4231139">servio::str_lib::s_to_nr</a></div><div class="ttdeci">constexpr bool s_to_nr(char const *&amp;p, char const *e, s_to_nr_res &amp;x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:223</div></div>
-<div class="ttc" id="anamespaceservio_1_1str__lib_html_a8177c267b47c96fcce04e5b633496111"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a8177c267b47c96fcce04e5b633496111">servio::str_lib::lex_letters</a></div><div class="ttdeci">constexpr bool lex_letters(char const *&amp;p, char const *e) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:259</div></div>
+<div class="ttc" id="anamespaceservio_1_1str__lib_html_a6581570c8e1b6db1ffaba372b4231139"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a6581570c8e1b6db1ffaba372b4231139">servio::str_lib::s_to_nr</a></div><div class="ttdeci">constexpr bool s_to_nr(char const *&amp;p, char const *e, s_to_nr_res &amp;x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:226</div></div>
+<div class="ttc" id="anamespaceservio_1_1str__lib_html_a8177c267b47c96fcce04e5b633496111"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a8177c267b47c96fcce04e5b633496111">servio::str_lib::lex_letters</a></div><div class="ttdeci">constexpr bool lex_letters(char const *&amp;p, char const *e) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:262</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_html_aaab7e0a876beb327d57f81cceb6c2d4a"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#aaab7e0a876beb327d57f81cceb6c2d4a">servio::str_lib::hex_to_n</a></div><div class="ttdeci">constexpr bool hex_to_n(char const *&amp;p, char const *e, int32_t &amp;x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:137</div></div>
-<div class="ttc" id="anamespaceservio_1_1str__lib_html_structservio_1_1str__lib_1_1s__to__nr__res"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res">servio::str_lib::s_to_nr_res</a></div><div class="ttdef"><b>Definition</b> str_lib.h:213</div></div>
+<div class="ttc" id="anamespaceservio_1_1str__lib_html_structservio_1_1str__lib_1_1s__to__nr__res"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res">servio::str_lib::s_to_nr_res</a></div><div class="ttdef"><b>Definition</b> str_lib.h:216</div></div>
 <div class="ttc" id="astructservio_1_1str__lib_1_1bits_1_1adder_html"><div class="ttname"><a href="structservio_1_1str__lib_1_1bits_1_1adder.html">servio::str_lib::bits::adder</a></div><div class="ttdef"><b>Definition</b> str_lib.h:86</div></div>
 <div class="ttc" id="astructservio_1_1str__lib_1_1bits_1_1adder_html_a1c1b32468bf076ca3512cb95225a84c5"><div class="ttname"><a href="structservio_1_1str__lib_1_1bits_1_1adder.html#a1c1b32468bf076ca3512cb95225a84c5">servio::str_lib::bits::adder::e</a></div><div class="ttdeci">char * e</div><div class="ttdef"><b>Definition</b> str_lib.h:88</div></div>
 <div class="ttc" id="astructservio_1_1str__lib_1_1bits_1_1adder_html_a4763060eed458d02e2ce6403e6ad63e9"><div class="ttname"><a href="structservio_1_1str__lib_1_1bits_1_1adder.html#a4763060eed458d02e2ce6403e6ad63e9">servio::str_lib::bits::adder::operator()</a></div><div class="ttdeci">constexpr void operator()(char c) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.h:90</div></div>
@@ -448,7 +451,7 @@ $(document).ready(function(){initNavTree('str__lib_8h_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="str__lib_8h.html">str_lib.h</a></li>
-    <li class="footer">Generated on Sat Mar 29 2025 16:06:45 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Mar 29 2025 16:50:05 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
