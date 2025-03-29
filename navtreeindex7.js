@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"proto3_2bench_8cpp.html#a1ca8d6d1c306452d7a349b11c9e55897":[8,0,1,1,0,0,0],
 "proto3_2board_8cpp.html":[8,0,1,1,0,1],
 "proto3_2board_8cpp.html#a064090e0ba34cfb1d6f51f247cf479aa":[8,0,1,1,0,1,19],
 "proto3_2board_8cpp.html#a081ab2c39471f1a64575875b86b24f9b":[8,0,1,1,0,1,36],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "stm32h5xx__hal__conf_8h.html#a2c51d4e89cd75f4629092d46ca26a750":[8,0,1,15,0,9,89],
 "stm32h5xx__hal__conf_8h.html#a2df8b2975927ef19a2c2bd3f84c57dd3":[8,0,1,15,0,9,26],
 "stm32h5xx__hal__conf_8h.html#a341aab546270845c3de00697b9a8f08e":[8,0,1,15,0,9,21],
-"stm32h5xx__hal__conf_8h.html#a34a796bea8a48187716b99c6f14b14f2":[8,0,1,15,0,9,77],
-"stm32h5xx__hal__conf_8h.html#a382744674caee964d227d41574fe2b73":[8,0,1,15,0,9,70]
+"stm32h5xx__hal__conf_8h.html#a34a796bea8a48187716b99c6f14b14f2":[8,0,1,15,0,9,77]
 };
