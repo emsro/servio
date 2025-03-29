@@ -26,15 +26,15 @@ bool handle_test_specifics( std::string_view name, test_system& sys, std::filesy
 
                 std::vector< ftest::bench::prof_record > prof_recs;
                 for ( auto const& rec : recs ) {
-                        em::protocol::handler< ftest::bench::prof_record >::extract( rec.data )
-                            .match(
-                                [&]( ftest::bench::prof_record const& pr ) {
-                                        prof_recs.push_back( pr );
-                                },
-                                [&]( auto&& ) {
-                                        // XXX: fix
-                                        // spdlog::error( "Failed to parse record: {}", err );
-                                } );
+                        em::match(
+                            em::protocol::handler< ftest::bench::prof_record >::extract( rec.data ),
+                            [&]( ftest::bench::prof_record const& pr ) {
+                                    prof_recs.push_back( pr );
+                            },
+                            [&]( auto&& ) {
+                                    // XXX: fix
+                                    // spdlog::error( "Failed to parse record: {}", err );
+                            } );
                 }
 
                 std::ofstream of{ out_dir / "current_profile.csv" };
