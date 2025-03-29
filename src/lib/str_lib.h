@@ -3,6 +3,7 @@
 #include <bit>
 #include <concepts>
 #include <cstdint>
+#include <limits>
 
 namespace servio::str_lib
 {
