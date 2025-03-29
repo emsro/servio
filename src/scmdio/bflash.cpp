@@ -5,6 +5,7 @@
 
 #include "../base.hpp"
 
+#include <bitset>
 #include <magic_enum/magic_enum.hpp>
 
 namespace servio::scmdio

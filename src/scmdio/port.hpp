@@ -15,7 +15,7 @@ struct stream_iface
 {
         virtual awaitable< void > write( std::span< std::byte const > msg ) = 0;
 
-        virtual awaitable< void > write( std::byte b )
+        awaitable< void > write( std::byte b )
         {
                 std::byte data[] = { b };
                 co_await write( data );
@@ -23,7 +23,7 @@ struct stream_iface
 
         virtual awaitable< bool > read( std::span< std::byte > buffer ) = 0;
 
-        virtual awaitable< opt< std::byte > > read()
+        awaitable< opt< std::byte > > read()
         {
                 std::byte        data[1];
                 opt< std::byte > res;
