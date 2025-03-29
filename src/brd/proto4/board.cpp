@@ -494,7 +494,13 @@ drv::storage_iface* eeprom_setup()
 {
         __HAL_RCC_GPIOB_CLK_ENABLE();
 
-        try_i2c_gpio_toggle();
+        drv::pin_cfg pwr{
+            .pin  = GPIO_PIN_15,
+            .port = GPIOB,
+            .mode = GPIO_MODE_OUTPUT_PP,
+        };
+        plt::setup_gpio( pwr );
+        HAL_GPIO_WritePin( pwr.port, pwr.pin, GPIO_PIN_SET );
 
         plt::i2c_cfg cfg{
             .instance        = I2C2,
@@ -621,8 +627,9 @@ core::drivers setup_core_drivers()
                 install_stop_callback( *hb, leds );
 
         return core::drivers{
-            .cfg         = &CFG,
-            .storage     = &FLASH_STORAGE,  // TODO: eeprom setup
+            .cfg = &CFG,
+            //.storage     = &FLASH_STORAGE,
+            .storage     = eeprom_setup(),
             .clock       = &CLOCK,
             .position    = pos,
             .current     = adc_pooler == nullptr ? nullptr : &ADC_CURRENT,

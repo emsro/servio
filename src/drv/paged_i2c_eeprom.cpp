@@ -55,7 +55,7 @@ em::result read_data(
 
 em::result i2c_eeprom::start()
 {
-        for ( uint16_t x = 0x00; x < 0x255; x++ ) {
+        for ( uint16_t x = 0x00; x < 255; x++ ) {
                 uint8_t data[1] = { 0x00 };
                 auto    stat    = HAL_I2C_Mem_Read( i2c_, x, 0x00, 2, data, 1, 200 );
                 if ( stat == HAL_OK )

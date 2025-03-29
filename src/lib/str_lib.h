@@ -174,10 +174,10 @@ constexpr bool dec_to_n( char const*& p, char const* e, int32_t& x ) noexcept
                 return false;
         uint32_t y = 0;
         for ( ;; ) {
-                uint32_t yy = y * 10;
+                uint32_t yy = y * 10 + static_cast< uint32_t >( *p++ - '0' );
                 if ( yy < y )
                         return false;
-                y = ( y * 10u ) + static_cast< uint32_t >( *p++ - '0' );
+                y = yy;
                 if ( sign == 1 && y > std::numeric_limits< int32_t >::max() )
                         return false;
                 else if ( sign == -1 && y > bits::i32_lowest_as_u32() )
