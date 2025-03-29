@@ -2,6 +2,7 @@
 
 #include <bit>
 #include <concepts>
+#include <cstdint>
 
 namespace servio::str_lib
 {
