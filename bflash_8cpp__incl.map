@@ -1,11 +1,13 @@
 <map id="src/scmdio/bflash.cpp" name="src/scmdio/bflash.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="218,5,381,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="267,5,430,31"/>
 <area shape="rect" id="Node000002" href="$bflash_8hpp.html" title=" " alt="" coords="97,79,195,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="276,33,184,75,182,70,274,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="317,33,192,77,191,72,315,28"/>
 <area shape="rect" id="Node000015" href="$base_8hpp.html" title=" " alt="" coords="253,79,346,104"/>
-<area shape="poly" id="edge3_Node000001_Node000015" title=" " alt="" coords="302,31,302,65,297,65,297,31"/>
-<area shape="rect" id="Node000020" title=" " alt="" coords="371,79,593,104"/>
-<area shape="poly" id="edge9_Node000001_Node000020" title=" " alt="" coords="330,28,440,71,438,76,328,33"/>
+<area shape="poly" id="edge3_Node000001_Node000015" title=" " alt="" coords="343,33,317,69,313,66,338,29"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="370,79,429,104"/>
+<area shape="poly" id="edge9_Node000001_Node000020" title=" " alt="" coords="359,29,385,66,381,69,355,33"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="452,79,675,104"/>
+<area shape="poly" id="edge10_Node000001_Node000021" title=" " alt="" coords="384,28,516,72,515,77,382,33"/>
 <area shape="rect" id="Node000003" href="$port_8hpp.html" title=" " alt="" coords="5,152,81,177"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,106,73,146,70,142,128,102"/>
 <area shape="rect" id="Node000016" title=" " alt="" coords="106,152,173,177"/>
@@ -17,5 +19,5 @@
 <area shape="rect" id="Node000018" title=" " alt="" coords="477,152,631,177"/>
 <area shape="poly" id="edge7_Node000015_Node000018" title=" " alt="" coords="341,101,501,146,499,151,340,107"/>
 <area shape="rect" id="Node000019" title=" " alt="" coords="656,152,735,177"/>
-<area shape="poly" id="edge8_Node000015_Node000019" title=" " alt="" coords="347,99,360,101,499,124,643,149,642,155,498,130,359,107,346,104"/>
+<area shape="poly" id="edge8_Node000015_Node000019" title=" " alt="" coords="347,99,358,101,499,124,643,149,642,155,498,130,358,107,346,104"/>
 </map>

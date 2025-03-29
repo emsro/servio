@@ -111,12 +111,12 @@ $(document).ready(function(){initNavTree('structservio_1_1scmdio_1_1stream__ifac
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b87212d9aea3daf2b643f5fb0924c7e" id="r_a2b87212d9aea3daf2b643f5fb0924c7e"><td class="memItemLeft" align="right" valign="top">virtual awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1stream__iface.html#a2b87212d9aea3daf2b643f5fb0924c7e">write</a> (std::span&lt; std::byte const &gt; msg)=0</td></tr>
 <tr class="separator:a2b87212d9aea3daf2b643f5fb0924c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64b9134dbe179566b41f10bdc3a0ccc9" id="r_a64b9134dbe179566b41f10bdc3a0ccc9"><td class="memItemLeft" align="right" valign="top">virtual awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1stream__iface.html#a64b9134dbe179566b41f10bdc3a0ccc9">write</a> (std::byte b)</td></tr>
-<tr class="separator:a64b9134dbe179566b41f10bdc3a0ccc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea331b1d7fe68344885c89bf778196e3" id="r_aea331b1d7fe68344885c89bf778196e3"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1stream__iface.html#aea331b1d7fe68344885c89bf778196e3">write</a> (std::byte b)</td></tr>
+<tr class="separator:aea331b1d7fe68344885c89bf778196e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfe801fedb9916cd12ad28a4613dc879" id="r_abfe801fedb9916cd12ad28a4613dc879"><td class="memItemLeft" align="right" valign="top">virtual awaitable&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1stream__iface.html#abfe801fedb9916cd12ad28a4613dc879">read</a> (std::span&lt; std::byte &gt; buffer)=0</td></tr>
 <tr class="separator:abfe801fedb9916cd12ad28a4613dc879"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa58149600161ab2ef8be367adbfe5aac" id="r_aa58149600161ab2ef8be367adbfe5aac"><td class="memItemLeft" align="right" valign="top">virtual awaitable&lt; <a class="el" href="namespaceservio_1_1scmdio.html#adec9aeb6f81f1c6f3db642544d88f967">opt</a>&lt; std::byte &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1stream__iface.html#aa58149600161ab2ef8be367adbfe5aac">read</a> ()</td></tr>
-<tr class="separator:aa58149600161ab2ef8be367adbfe5aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71fdb22e45057da31c472af39b79f190" id="r_a71fdb22e45057da31c472af39b79f190"><td class="memItemLeft" align="right" valign="top">awaitable&lt; <a class="el" href="namespaceservio_1_1scmdio.html#adec9aeb6f81f1c6f3db642544d88f967">opt</a>&lt; std::byte &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1stream__iface.html#a71fdb22e45057da31c472af39b79f190">read</a> ()</td></tr>
+<tr class="separator:a71fdb22e45057da31c472af39b79f190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5b08878646ea1ef44a48ce2c1849809" id="r_ae5b08878646ea1ef44a48ce2c1849809"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1stream__iface.html#ae5b08878646ea1ef44a48ce2c1849809">~stream_iface</a> ()=default</td></tr>
 <tr class="separator:ae5b08878646ea1ef44a48ce2c1849809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -147,8 +147,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa58149600161ab2ef8be367adbfe5aac" name="aa58149600161ab2ef8be367adbfe5aac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa58149600161ab2ef8be367adbfe5aac">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
+<a id="a71fdb22e45057da31c472af39b79f190" name="a71fdb22e45057da31c472af39b79f190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71fdb22e45057da31c472af39b79f190">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,7 +157,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual awaitable&lt; <a class="el" href="namespaceservio_1_1scmdio.html#adec9aeb6f81f1c6f3db642544d88f967">opt</a>&lt; std::byte &gt; &gt; servio::scmdio::stream_iface::read </td>
+          <td class="memname">awaitable&lt; <a class="el" href="namespaceservio_1_1scmdio.html#adec9aeb6f81f1c6f3db642544d88f967">opt</a>&lt; std::byte &gt; &gt; servio::scmdio::stream_iface::read </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -165,12 +165,12 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structservio_1_1scmdio_1_1stream__iface.html#aa58149600161ab2ef8be367adbfe5aac">read()</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1scmdio_1_1stream__iface.html#a71fdb22e45057da31c472af39b79f190">read()</a>.</p>
 
 </div>
 </div>
@@ -202,8 +202,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a64b9134dbe179566b41f10bdc3a0ccc9" name="a64b9134dbe179566b41f10bdc3a0ccc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64b9134dbe179566b41f10bdc3a0ccc9">&#9670;&#160;</a></span>write() <span class="overload">[1/2]</span></h2>
+<a id="aea331b1d7fe68344885c89bf778196e3" name="aea331b1d7fe68344885c89bf778196e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea331b1d7fe68344885c89bf778196e3">&#9670;&#160;</a></span>write() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +212,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual awaitable&lt; void &gt; servio::scmdio::stream_iface::write </td>
+          <td class="memname">awaitable&lt; void &gt; servio::scmdio::stream_iface::write </td>
           <td>(</td>
           <td class="paramtype">std::byte&#160;</td>
           <td class="paramname"><em>b</em></td><td>)</td>
@@ -221,7 +221,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -267,7 +267,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1scmdio.html">scmdio</a></li><li class="navelem"><a class="el" href="structservio_1_1scmdio_1_1stream__iface.html">stream_iface</a></li>
-    <li class="footer">Generated on Sat Mar 29 2025 10:07:54 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Mar 29 2025 10:31:48 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
