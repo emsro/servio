@@ -11,8 +11,8 @@ var searchData=
   ['src_8',['src',['../namespaceservio_1_1sntr.html#aeb51cca5a317d316e17dbe689a713910',1,'servio::sntr::record']]],
   ['st_9',['st',['../namespaceservio_1_1cfg.html#a1d6dbb2edf63f191411bb82a62181223',1,'servio::cfg::page_info::st'],['../namespaceservio_1_1sntr.html#ab2bae1b01c0a067f1bb5eed8f6b6f38c',1,'servio::sntr::record::st']]],
   ['st_5frange_10',['st_range',['../structservio_1_1mtr_1_1posvel__kalman.html#a16bbaa07f34c05010375ecc1b35a4a04',1,'servio::mtr::posvel_kalman']]],
-  ['start_5fcb_11',['start_cb',['../structservio_1_1core_1_1drivers.html#a9cd6cc7fd26299a79490b17151efe206',1,'servio::core::drivers']]],
-  ['state_12',['state',['../structservio_1_1mon_1_1blinker.html#a49be452f68e339b5f6b490600efd3b07',1,'servio::mon::blinker::state'],['../structservio_1_1ctl_1_1linear__transition__regulator.html#aecb19b527ceb961ed007cbbd7ed5aca0',1,'servio::ctl::linear_transition_regulator::state']]],
+  ['start_5fcb_11',['start_cb',['../structservio_1_1core_1_1drivers.html#a8cc3ac64667269991eac2f401fadba19',1,'servio::core::drivers']]],
+  ['state_12',['state',['../structservio_1_1ctl_1_1linear__transition__regulator.html#aecb19b527ceb961ed007cbbd7ed5aca0',1,'servio::ctl::linear_transition_regulator::state'],['../structservio_1_1mon_1_1blinker.html#a49be452f68e339b5f6b490600efd3b07',1,'servio::mon::blinker::state']]],
   ['static_5ffriction_5fdecay_13',['static_friction_decay',['../namespaceservio_1_1ctl.html#a82bc794a9ee0b6dc71d35f7a9a34f0d5',1,'servio::ctl::config']]],
   ['static_5ffriction_5fforce_14',['static_friction_force',['../structservio_1_1sim_1_1simple__motor.html#a22d12968f6742a706c9230e4b8d09aba',1,'servio::sim::simple_motor']]],
   ['static_5ffriction_5fscale_15',['static_friction_scale',['../namespaceservio_1_1ctl.html#a12d2d3c5170110791423a4c445b6612f',1,'servio::ctl::config']]],
@@ -23,7 +23,7 @@ var searchData=
   ['stor_5fdrv_20',['stor_drv',['../namespaceservio_1_1core.html#a255a1e1542ad84f0bd464b26259b8823',1,'servio::core::dispatcher::stor_drv'],['../structservio_1_1scmdio_1_1port__mock.html#a94faad0c5b62bfa8f2c444a195fd8268',1,'servio::scmdio::port_mock::attrs::stor_drv']]],
   ['storage_21',['storage',['../structservio_1_1core_1_1drivers.html#afcb49ca9c356877336314e3646a9945c',1,'servio::core::drivers']]],
   ['store_5fcnt_22',['store_cnt',['../structservio_1_1drv_1_1mock_1_1stor.html#a7acdaf5638ad3cf91fec7513f7a36405',1,'servio::drv::mock::stor']]],
-  ['success_23',['success',['../structservio_1_1drv_1_1com__res.html#a1e3b91f63e1a9ee9dfb4a5cba9fdc561',1,'servio::drv::com_res']]],
+  ['success_23',['success',['../structservio_1_1drv_1_1com__res.html#a1e3b91f63e1a9ee9dfb4a5cba9fdc561',1,'servio::drv::com_res::success'],['../namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e',1,'servio::SUCCESS']]],
   ['sum_24',['sum',['../namespaceservio_1_1ftest_1_1bench.html#a602be9f91456c08126a7676980dcd957',1,'servio::ftest::bench::prof_record']]],
   ['sys_25',['sys',['../structservio_1_1ftester_1_1joque__test.html#aa786e779669720901c94ff58fc6c4d1f',1,'servio::ftester::joque_test']]]
 ];

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['nl_5fhal_5ferror_5firq_5ferr_0',['NL_HAL_ERROR_IRQ_ERR',['../namespaceservio_1_1drv.html#a0cce3df4ac7f4050e4b0c02208b51128a57d5ca509fdc17d87a5cd7299609b5e6',1,'servio::drv']]],
-  ['nl_5fhal_5frx_5fstart_5ferr_1',['NL_HAL_RX_START_ERR',['../namespaceservio_1_1drv.html#a0cce3df4ac7f4050e4b0c02208b51128ac174cd3da2d8d184f1ab628d315fb2e9',1,'servio::drv']]]
+  ['maximum_5ftemperature_0',['MAXIMUM_TEMPERATURE',['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a31f81f3f8379662055edc0f05154c542',1,'servio::cfg']]],
+  ['minimum_5fvoltage_1',['MINIMUM_VOLTAGE',['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab025034ef4a6897674222cdf80c8c171',1,'servio::cfg']]],
+  ['model_2',['MODEL',['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add6c0ae6916d0b990a601cab95903e66',1,'servio::cfg']]],
+  ['moving_5fdetection_5fstep_3',['MOVING_DETECTION_STEP',['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8df354e31764c98878c7f2a765111fc5',1,'servio::cfg']]]
 ];

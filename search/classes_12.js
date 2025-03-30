@@ -12,8 +12,9 @@ var searchData=
   ['standard_5fcallbacks_9',['standard_callbacks',['../structservio_1_1core_1_1standard__callbacks.html',1,'servio::core']]],
   ['state_5frange_10',['state_range',['../namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range',1,'servio::klmn']]],
   ['static_5fdetector_11',['static_detector',['../structservio_1_1mtr_1_1static__detector.html',1,'servio::mtr']]],
-  ['stm32_5fbootloader_5fmock_12',['stm32_bootloader_mock',['../structservio_1_1scmdio_1_1stm32__bootloader__mock.html',1,'servio::scmdio']]],
-  ['stor_13',['stor',['../structservio_1_1drv_1_1mock_1_1stor.html',1,'servio::drv::mock']]],
-  ['storage_5fiface_14',['storage_iface',['../structservio_1_1drv_1_1storage__iface.html',1,'servio::drv']]],
-  ['stream_5fiface_15',['stream_iface',['../structservio_1_1scmdio_1_1stream__iface.html',1,'servio::scmdio']]]
+  ['status_12',['status',['../structservio_1_1status.html',1,'servio']]],
+  ['stm32_5fbootloader_5fmock_13',['stm32_bootloader_mock',['../structservio_1_1scmdio_1_1stm32__bootloader__mock.html',1,'servio::scmdio']]],
+  ['stor_14',['stor',['../structservio_1_1drv_1_1mock_1_1stor.html',1,'servio::drv::mock']]],
+  ['storage_5fiface_15',['storage_iface',['../structservio_1_1drv_1_1storage__iface.html',1,'servio::drv']]],
+  ['stream_5fiface_16',['stream_iface',['../structservio_1_1scmdio_1_1stream__iface.html',1,'servio::scmdio']]]
 ];

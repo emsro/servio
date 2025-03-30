@@ -117,8 +117,8 @@ Functions</h2></td></tr>
 <tr class="separator:a74cf7569d05ba86cd733572599f74aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d70b0c1c418dd446c10d13da1ad0fdd" id="r_a5d70b0c1c418dd446c10d13da1ad0fdd"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1bits.html#a5d70b0c1c418dd446c10d13da1ad0fdd">load_message</a> (<a class="el" href="structservio_1_1drv_1_1bits_1_1rx__buffer.html">rx_buffer</a> &amp;rx, em::view&lt; std::byte * &gt; data)</td></tr>
 <tr class="separator:a5d70b0c1c418dd446c10d13da1ad0fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52b312e1d911fb277ff38edf6044375d" id="r_a52b312e1d911fb277ff38edf6044375d"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1bits.html#a52b312e1d911fb277ff38edf6044375d">uart_start_it</a> (UART_HandleTypeDef *h, std::byte &amp;b)</td></tr>
-<tr class="separator:a52b312e1d911fb277ff38edf6044375d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a155d033c32c49028ed952ffe8bda2576" id="r_a155d033c32c49028ed952ffe8bda2576"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1bits.html#a155d033c32c49028ed952ffe8bda2576">uart_start_it</a> (UART_HandleTypeDef *h, std::byte &amp;b)</td></tr>
+<tr class="separator:a155d033c32c49028ed952ffe8bda2576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1478bc5acabf1316e6895571df891c16" id="r_a1478bc5acabf1316e6895571df891c16"><td class="memTemplParams" colspan="2">template&lt;auto START_ERR&gt; </td></tr>
 <tr class="memitem:a1478bc5acabf1316e6895571df891c16"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1bits.html#a1478bc5acabf1316e6895571df891c16">uart_rx_cplt_irq</a> (UART_HandleTypeDef *h, UART_HandleTypeDef *local, auto &amp;drv, auto &amp;rx_buff, std::byte &amp;rx_byte, <a class="el" href="classservio_1_1sntr_1_1sentry.html">sntr::sentry</a> &amp;sentry)</td></tr>
 <tr class="separator:a1478bc5acabf1316e6895571df891c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,12 +335,12 @@ template&lt;auto START_ERR&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv_1_1bits.html#a90dcc50c50424e715008c27ec4d87869">on_rx_cplt_irq()</a>, and <a class="el" href="classservio_1_1sntr_1_1sentry.html#a23bd0c905c13a4e592c1805e0e785ded">servio::sntr::sentry::set_inoperable()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv_1_1bits.html#a90dcc50c50424e715008c27ec4d87869">on_rx_cplt_irq()</a>, <a class="el" href="classservio_1_1sntr_1_1sentry.html#a23bd0c905c13a4e592c1805e0e785ded">servio::sntr::sentry::set_inoperable()</a>, and <a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a>.</p>
 
 </div>
 </div>
-<a id="a52b312e1d911fb277ff38edf6044375d" name="a52b312e1d911fb277ff38edf6044375d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52b312e1d911fb277ff38edf6044375d">&#9670;&#160;</a></span>uart_start_it()</h2>
+<a id="a155d033c32c49028ed952ffe8bda2576" name="a155d033c32c49028ed952ffe8bda2576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a155d033c32c49028ed952ffe8bda2576">&#9670;&#160;</a></span>uart_start_it()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -349,7 +349,7 @@ template&lt;auto START_ERR&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">em::result servio::drv::bits::uart_start_it </td>
+          <td class="memname"><a class="el" href="structservio_1_1status.html">status</a> servio::drv::bits::uart_start_it </td>
           <td>(</td>
           <td class="paramtype">UART_HandleTypeDef *&#160;</td>
           <td class="paramname"><em>h</em>, </td>
@@ -372,6 +372,8 @@ template&lt;auto START_ERR&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio.html#a55104dad626571b464bc092401f5e57e">servio::ERROR</a>, and <a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a>.</p>
 
 </div>
 </div>
@@ -406,7 +408,7 @@ template&lt;auto START_ERR&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv_1_1bits.html">bits</a></li>
-    <li class="footer">Generated on Sat Mar 29 2025 16:55:02 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 30 2025 14:48:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

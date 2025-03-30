@@ -289,13 +289,13 @@ $(document).ready(function(){initNavTree('system_8hpp_source.html',''); initResi
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                col_iface_.<a class="code hl_variable" href="structservio_1_1ftester_1_1controller__interface.html#ae19bb736902f5e78b569d76eb547af43">res</a> = std::monostate{};</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        }</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        em::result send( em::protocol::channel_type channel, <span class="keyword">auto</span> <span class="keyword">const</span>&amp; data )</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        status send( em::protocol::channel_type channel, <span class="keyword">auto</span> <span class="keyword">const</span>&amp; data )</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        {</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                spdlog::debug( <span class="stringliteral">&quot;Channel {} write: {}&quot;</span>, channel, std::span{ data } );</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                <span class="keyword">auto</span> msg = em::protocol::serialize_multiplexed( channel, data );</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                co_spawn( io_context_, write( msg ), <a class="code hl_function" href="namespaceservio_1_1ftester.html#a843d1ebeface228cb7f950468c97e8cb">handle_eptr</a> );</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                <span class="keywordflow">return</span> em::SUCCESS;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">SUCCESS</a>;</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        }</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
@@ -358,14 +358,15 @@ $(document).ready(function(){initNavTree('system_8hpp_source.html',''); initResi
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>};</div>
 </div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>}  <span class="comment">// namespace servio::ftester</span></div>
-<div class="ttc" id="aclassservio_1_1ftester_1_1recorder_html_aabb71c5624fd566672b623c9744c4c2e"><div class="ttname"><a href="classservio_1_1ftester_1_1recorder.html#aabb71c5624fd566672b623c9744c4c2e">servio::ftester::recorder::get_buffer</a></div><div class="ttdeci">std::list&lt; record &gt; const &amp; get_buffer() const</div><div class="ttdef"><b>Definition</b> recorder.hpp:42</div></div>
-<div class="ttc" id="aclassservio_1_1ftester_1_1recorder_html_ae668f1ca65e7af33cf056d064a1de027"><div class="ttname"><a href="classservio_1_1ftester_1_1recorder.html#ae668f1ca65e7af33cf056d064a1de027">servio::ftester::recorder::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition</b> recorder.hpp:37</div></div>
+<div class="ttc" id="aclassservio_1_1ftester_1_1recorder_html_aabb71c5624fd566672b623c9744c4c2e"><div class="ttname"><a href="classservio_1_1ftester_1_1recorder.html#aabb71c5624fd566672b623c9744c4c2e">servio::ftester::recorder::get_buffer</a></div><div class="ttdeci">std::list&lt; record &gt; const &amp; get_buffer() const</div><div class="ttdef"><b>Definition</b> recorder.hpp:43</div></div>
+<div class="ttc" id="aclassservio_1_1ftester_1_1recorder_html_ae668f1ca65e7af33cf056d064a1de027"><div class="ttname"><a href="classservio_1_1ftester_1_1recorder.html#ae668f1ca65e7af33cf056d064a1de027">servio::ftester::recorder::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition</b> recorder.hpp:38</div></div>
 <div class="ttc" id="ahandle__eptr_8hpp_html"><div class="ttname"><a href="handle__eptr_8hpp.html">handle_eptr.hpp</a></div></div>
 <div class="ttc" id="anamespaceemlabcpp_html"><div class="ttname"><a href="namespaceemlabcpp.html">emlabcpp</a></div><div class="ttdef"><b>Definition</b> map.hpp:109</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftester_html"><div class="ttname"><a href="namespaceservio_1_1ftester.html">servio::ftester</a></div><div class="ttdef"><b>Definition</b> base.hpp:6</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftester_html_a03d74ad4bf85bc6a23531431fd15514c"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">servio::ftester::rec_id</a></div><div class="ttdeci">static constexpr em::protocol::channel_type rec_id</div><div class="ttdef"><b>Definition</b> base.hpp:10</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftester_html_a843d1ebeface228cb7f950468c97e8cb"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a843d1ebeface228cb7f950468c97e8cb">servio::ftester::handle_eptr</a></div><div class="ttdeci">void handle_eptr(std::exception_ptr eptr)</div><div class="ttdef"><b>Definition</b> handle_eptr.cpp:9</div></div>
 <div class="ttc" id="anamespaceservio_1_1ftester_html_a8a630f7d7a8f7f10922563441a8566dc"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a8a630f7d7a8f7f10922563441a8566dc">servio::ftester::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; sptr</div><div class="ttdef"><b>Definition</b> system.hpp:24</div></div>
+<div class="ttc" id="anamespaceservio_html_a8d5869ffe2516e502b6f358d2827207e"><div class="ttname"><a href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a></div><div class="ttdeci">static constexpr status SUCCESS</div><div class="ttdef"><b>Definition</b> status.hpp:36</div></div>
 <div class="ttc" id="arecorder_8hpp_html"><div class="ttname"><a href="recorder_8hpp.html">recorder.hpp</a></div></div>
 <div class="ttc" id="astructservio_1_1ftester_1_1controller__interface_html"><div class="ttname"><a href="structservio_1_1ftester_1_1controller__interface.html">servio::ftester::controller_interface</a></div><div class="ttdef"><b>Definition</b> system.hpp:27</div></div>
 <div class="ttc" id="astructservio_1_1ftester_1_1controller__interface_html_a6d652fc38de5cd5bde1db726f86a757a"><div class="ttname"><a href="structservio_1_1ftester_1_1controller__interface.html#a6d652fc38de5cd5bde1db726f86a757a">servio::ftester::controller_interface::col_serv</a></div><div class="ttdeci">em::testing::collect_server &amp; col_serv</div><div class="ttdef"><b>Definition</b> system.hpp:28</div></div>
@@ -392,7 +393,7 @@ $(document).ready(function(){initNavTree('system_8hpp_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="system_8hpp.html">system.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 29 2025 16:55:02 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 30 2025 14:48:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

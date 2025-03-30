@@ -19,5 +19,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "scmdio", "dir_d4b5d0c37e91718ad53ded7871cea291.html", "dir_d4b5d0c37e91718ad53ded7871cea291" ],
     [ "sim", "dir_5ba998bec3831bd658c4991b03a0da20.html", "dir_5ba998bec3831bd658c4991b03a0da20" ],
     [ "sntr", "dir_070e9ba8c0971cb503d46bc104bcf599.html", "dir_070e9ba8c0971cb503d46bc104bcf599" ],
-    [ "base.hpp", "base_8hpp.html", "base_8hpp" ]
+    [ "base.hpp", "base_8hpp.html", "base_8hpp" ],
+    [ "status.hpp", "status_8hpp.html", "status_8hpp" ]
 ];

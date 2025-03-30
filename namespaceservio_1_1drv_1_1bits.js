@@ -8,6 +8,6 @@ var namespaceservio_1_1drv_1_1bits =
     [ "on_rx_cplt_irq", "namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4", null ],
     [ "uart_err_irq", "namespaceservio_1_1drv_1_1bits.html#a6b247372630cfbf78e3f602e71389a49", null ],
     [ "uart_rx_cplt_irq", "namespaceservio_1_1drv_1_1bits.html#a1478bc5acabf1316e6895571df891c16", null ],
-    [ "uart_start_it", "namespaceservio_1_1drv_1_1bits.html#a52b312e1d911fb277ff38edf6044375d", null ],
+    [ "uart_start_it", "namespaceservio_1_1drv_1_1bits.html#a155d033c32c49028ed952ffe8bda2576", null ],
     [ "uart_common_tolerable_hal_errors", "namespaceservio_1_1drv_1_1bits.html#ab49ae58ef86d106445fed671bc9b6f9b", null ]
 ];

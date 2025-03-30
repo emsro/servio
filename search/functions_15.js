@@ -3,7 +3,7 @@ var searchData=
   ['u_5fto_5fs_0',['u_to_s',['../namespaceservio_1_1str__lib.html#a42a3f44f68adb28ef07ff2ee407e86e1',1,'servio::str_lib']]],
   ['uart_5ferr_5firq_1',['uart_err_irq',['../namespaceservio_1_1drv_1_1bits.html#a6b247372630cfbf78e3f602e71389a49',1,'servio::drv::bits']]],
   ['uart_5frx_5fcplt_5firq_2',['uart_rx_cplt_irq',['../namespaceservio_1_1drv_1_1bits.html#a1478bc5acabf1316e6895571df891c16',1,'servio::drv::bits']]],
-  ['uart_5fstart_5fit_3',['uart_start_it',['../namespaceservio_1_1drv_1_1bits.html#a52b312e1d911fb277ff38edf6044375d',1,'servio::drv::bits']]],
+  ['uart_5fstart_5fit_3',['uart_start_it',['../namespaceservio_1_1drv_1_1bits.html#a155d033c32c49028ed952ffe8bda2576',1,'servio::drv::bits']]],
   ['uctx_4',['uctx',['../structservio_1_1ftest_1_1uctx.html#a8691ab0cb4c738295bddca2b0afbd356',1,'servio::ftest::uctx']]],
   ['unhandled_5fexception_5',['unhandled_exception',['../structservio_1_1scmdio_1_1consumer_1_1promise__type.html#a967634914e7e52489bc20651fbd1a8bb',1,'servio::scmdio::consumer::promise_type']]],
   ['unset_5fdegraded_6',['unset_degraded',['../classservio_1_1sntr_1_1sentry.html#a5abd7b47b87addf3f2c7a64768ec8fc7',1,'servio::sntr::sentry']]],

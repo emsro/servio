@@ -57,17 +57,17 @@ var plt_2stm32h5_2setup_8hpp =
       [ "cal2", "namespaceservio_1_1plt.html#a73088cdd7b6754164af4b062382dc239", null ]
     ] ],
     [ "get_default_config", "plt_2stm32h5_2setup_8hpp.html#a54207fdd13b8536cfecc8079e969056b", null ],
-    [ "setup_adc", "plt_2stm32h5_2setup_8hpp.html#a61d6b0c2150e342de64df4363ad4e8bc", null ],
+    [ "setup_adc", "plt_2stm32h5_2setup_8hpp.html#a6b386aa81248da18c0dc5f61e42a4ec7", null ],
     [ "setup_adc_channel", "plt_2stm32h5_2setup_8hpp.html#ac9aa102dc4b651ab6503b4aa6ca604f4", null ],
-    [ "setup_adc_timer", "plt_2stm32h5_2setup_8hpp.html#ab59156a4d6fbd15217a26dc5ebed8b64", null ],
-    [ "setup_clk", "plt_2stm32h5_2setup_8hpp.html#a97b99f12fdb9bdec7f51c3a2fa1a63b8", null ],
-    [ "setup_clock_timer", "plt_2stm32h5_2setup_8hpp.html#a71520584fd9671ce414b8b5b8c653926", null ],
-    [ "setup_dac", "plt_2stm32h5_2setup_8hpp.html#a9a5ad25189bfd840d70b81e6cc064ce6", null ],
-    [ "setup_dts", "plt_2stm32h5_2setup_8hpp.html#a60d4cc26aa950bc45225db9bae6dfa05", null ],
-    [ "setup_encoder_timer", "plt_2stm32h5_2setup_8hpp.html#ab37835d18590cef3c440c59263d761d2", null ],
+    [ "setup_adc_timer", "plt_2stm32h5_2setup_8hpp.html#a0d5e16e4ff00fbf1ee2566f7035e409f", null ],
+    [ "setup_clk", "plt_2stm32h5_2setup_8hpp.html#a65ff90a96eb3af82fcf7c6648b32ba46", null ],
+    [ "setup_clock_timer", "plt_2stm32h5_2setup_8hpp.html#ab6226ebe35cbd7afea5cf9a80ddc87f7", null ],
+    [ "setup_dac", "plt_2stm32h5_2setup_8hpp.html#adf9c7748837cc319665c30d97fcebcb1", null ],
+    [ "setup_dts", "plt_2stm32h5_2setup_8hpp.html#af23a3fd89ef7065c2f310df68dd9c526", null ],
+    [ "setup_encoder_timer", "plt_2stm32h5_2setup_8hpp.html#a4e0c665041fef1c8687a4a21403a2659", null ],
     [ "setup_gpio", "plt_2stm32h5_2setup_8hpp.html#abd82db4ae277c933a1955cdada712dc6", null ],
-    [ "setup_hbridge_timers", "plt_2stm32h5_2setup_8hpp.html#a917cc285404ba1c9a62080f12567ad7c", null ],
-    [ "setup_i2c", "plt_2stm32h5_2setup_8hpp.html#a82b4088167a8a259e745f035915d672a", null ],
-    [ "setup_leds_channel", "plt_2stm32h5_2setup_8hpp.html#a200428b196e587e16f5ffd08676efc76", null ],
-    [ "setup_uart", "plt_2stm32h5_2setup_8hpp.html#a7b7c8043898e10b87fa53fd5bb021d96", null ]
+    [ "setup_hbridge_timers", "plt_2stm32h5_2setup_8hpp.html#a1ab82543f002b972fd70964ede34e70e", null ],
+    [ "setup_i2c", "plt_2stm32h5_2setup_8hpp.html#ae5039a71d1fe46ae0b2b77ece05e8914", null ],
+    [ "setup_leds_channel", "plt_2stm32h5_2setup_8hpp.html#af9805b88250d0a4cb6462aba3211bd09", null ],
+    [ "setup_uart", "plt_2stm32h5_2setup_8hpp.html#a5d8400afc8f50954c30ace6182a1a51e", null ]
 ];

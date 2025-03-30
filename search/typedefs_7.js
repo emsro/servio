@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['kalman_5fgain_0',['kalman_gain',['../namespaceservio_1_1klmn.html#af5efb0f3164d80b24e95734b34812cd7',1,'servio::klmn']]],
-  ['keys_1',['keys',['../structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html#a7d96b63ab1f12e43c6e2e912dc1156fa',1,'servio::iface::field_traits&lt; vari::typelist&lt; Field... &gt; &gt;']]],
-  ['ktof_2',['ktof',['../structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html#afcbefd5b6187af62d7f6bfbc4607b6c9',1,'servio::iface::field_traits&lt; vari::typelist&lt; Field... &gt; &gt;']]],
-  ['kv_5ftype_3',['kv_type',['../structservio_1_1iface_1_1field.html#ab42ca7a6ad090e3aa8970eb9f09edb37',1,'servio::iface::field']]]
+  ['id_5ftype_0',['id_type',['../namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1',1,'servio::brd::adc_set::id_type'],['../namespaceservio_1_1brd.html#a52eada32164a05c9bb024618c95dfcf1',1,'servio::brd::adc_set::id_type'],['../structservio_1_1drv_1_1adc__pooler.html#ac5be031b859137067c988267ea81e3ef',1,'servio::drv::adc_pooler::id_type']]],
+  ['innovation_5fcovariance_1',['innovation_covariance',['../namespaceservio_1_1klmn.html#a0b3815cc4aa581729c8b9da6bd7eb20f',1,'servio::klmn']]]
 ];

@@ -157,6 +157,8 @@ Classes</h2></td></tr>
 <tr class="separator:structservio_1_1leds__vals"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1pwr.html">pwr</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1status.html">status</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -199,6 +201,15 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:ab5f7489b8bb8f69589f34deadbd657c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adca103027c4779db2eda865cdee69f7d" id="r_adca103027c4779db2eda865cdee69f7d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#adca103027c4779db2eda865cdee69f7d">status_e</a> { <br />
+&#160;&#160;<a class="el" href="namespaceservio.html#adca103027c4779db2eda865cdee69f7dad0749aaba8b833466dfcbb0428e4f89c">SUCCESS</a> = 0
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio.html#adca103027c4779db2eda865cdee69f7da36fc6065a3e970bc3e6b2e59da52bf2a">FAILURE</a> = 1
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio.html#adca103027c4779db2eda865cdee69f7dabb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a> = 2
+<br />
+ }</td></tr>
+<tr class="separator:adca103027c4779db2eda865cdee69f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -221,6 +232,12 @@ Variables</h2></td></tr>
 <tr class="separator:ad65a9ec22f69582eff005ae62a0bd415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53879f15eedde593c9cd6531402f5590" id="r_a53879f15eedde593c9cd6531402f5590"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a53879f15eedde593c9cd6531402f5590">p_low</a> = <a class="el" href="structservio_1_1pwr.html">pwr</a>{ -1.0 }</td></tr>
 <tr class="separator:a53879f15eedde593c9cd6531402f5590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55104dad626571b464bc092401f5e57e" id="r_a55104dad626571b464bc092401f5e57e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a55104dad626571b464bc092401f5e57e">ERROR</a> = status::ERROR</td></tr>
+<tr class="separator:a55104dad626571b464bc092401f5e57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47a5b9d9754c9bec77aa054df2a928f9" id="r_a47a5b9d9754c9bec77aa054df2a928f9"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a47a5b9d9754c9bec77aa054df2a928f9">FAILURE</a> = status::FAILURE</td></tr>
+<tr class="separator:a47a5b9d9754c9bec77aa054df2a928f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d5869ffe2516e502b6f358d2827207e" id="r_a8d5869ffe2516e502b6f358d2827207e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">SUCCESS</a> = status::SUCCESS</td></tr>
+<tr class="separator:a8d5869ffe2516e502b6f358d2827207e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1leds__vals" id="structservio_1_1leds__vals"></a>
@@ -404,6 +421,33 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="adca103027c4779db2eda865cdee69f7d" name="adca103027c4779db2eda865cdee69f7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adca103027c4779db2eda865cdee69f7d">&#9670;&#160;</a></span>status_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceservio.html#adca103027c4779db2eda865cdee69f7d">servio::status_e</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="adca103027c4779db2eda865cdee69f7dad0749aaba8b833466dfcbb0428e4f89c" name="adca103027c4779db2eda865cdee69f7dad0749aaba8b833466dfcbb0428e4f89c"></a>SUCCESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="adca103027c4779db2eda865cdee69f7da36fc6065a3e970bc3e6b2e59da52bf2a" name="adca103027c4779db2eda865cdee69f7da36fc6065a3e970bc3e6b2e59da52bf2a"></a>FAILURE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="adca103027c4779db2eda865cdee69f7dabb1ca97ec761fc37101737ba0aa2e7c5" name="adca103027c4779db2eda865cdee69f7dabb1ca97ec761fc37101737ba0aa2e7c5"></a>ERROR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a3cbe32a0d33853a8e061ea4df443760e" name="a3cbe32a0d33853a8e061ea4df443760e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3cbe32a0d33853a8e061ea4df443760e">&#9670;&#160;</a></span>operator&quot;&quot;_pwr() <span class="overload">[1/2]</span></h2>
@@ -478,6 +522,50 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a55104dad626571b464bc092401f5e57e" name="a55104dad626571b464bc092401f5e57e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55104dad626571b464bc092401f5e57e">&#9670;&#160;</a></span>ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structservio_1_1status.html">status</a> servio::ERROR = status::ERROR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a47a5b9d9754c9bec77aa054df2a928f9" name="a47a5b9d9754c9bec77aa054df2a928f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47a5b9d9754c9bec77aa054df2a928f9">&#9670;&#160;</a></span>FAILURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structservio_1_1status.html">status</a> servio::FAILURE = status::FAILURE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0a32b7da24f35e9d57adbab46fa02c1c" name="a0a32b7da24f35e9d57adbab46fa02c1c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a32b7da24f35e9d57adbab46fa02c1c">&#9670;&#160;</a></span>infty</h2>
 
@@ -588,13 +676,35 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a8d5869ffe2516e502b6f358d2827207e" name="a8d5869ffe2516e502b6f358d2827207e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d5869ffe2516e502b6f358d2827207e">&#9670;&#160;</a></span>SUCCESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structservio_1_1status.html">status</a> servio::SUCCESS = status::SUCCESS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li>
-    <li class="footer">Generated on Sat Mar 29 2025 16:55:02 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 30 2025 14:48:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

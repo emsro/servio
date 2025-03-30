@@ -202,6 +202,9 @@ var hierarchy =
     [ "servio::core::standard_callbacks", "structservio_1_1core_1_1standard__callbacks.html", null ],
     [ "servio::klmn::state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", null ],
     [ "servio::mtr::static_detector", "structservio_1_1mtr_1_1static__detector.html", null ],
+    [ "emlabcpp::status", null, [
+      [ "servio::status", "structservio_1_1status.html", null ]
+    ] ],
     [ "servio::drv::storage_iface", "structservio_1_1drv_1_1storage__iface.html", [
       [ "servio::drv::flash_storage", "structservio_1_1drv_1_1flash__storage.html", null ],
       [ "servio::drv::i2c_eeprom", "structservio_1_1drv_1_1i2c__eeprom.html", null ],

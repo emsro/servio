@@ -118,10 +118,10 @@ $(document).ready(function(){initNavTree('structservio_1_1drv_1_1flash__storage.
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6f1220c1ed04025cd52306ad1f27d650" id="r_a6f1220c1ed04025cd52306ad1f27d650"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1flash__storage.html#a6f1220c1ed04025cd52306ad1f27d650">flash_storage</a> (std::span&lt; em::view&lt; std::byte * &gt;, 2 &gt; pages, em::function_view&lt; void() &gt; start_cb, em::function_view&lt; void() &gt; stop_cb)</td></tr>
 <tr class="separator:a6f1220c1ed04025cd52306ad1f27d650"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a00d269f942a63dcbb0f7e8b1ae2879" id="r_a7a00d269f942a63dcbb0f7e8b1ae2879"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1flash__storage.html#a7a00d269f942a63dcbb0f7e8b1ae2879">store_page</a> (std::span&lt; std::byte const &gt; data) override</td></tr>
-<tr class="separator:a7a00d269f942a63dcbb0f7e8b1ae2879"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1145234825dda396925c352f0649aa9" id="r_ae1145234825dda396925c352f0649aa9"><td class="memItemLeft" align="right" valign="top">em::outcome&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1flash__storage.html#ae1145234825dda396925c352f0649aa9">load_page</a> (std::span&lt; std::byte &gt; data) override</td></tr>
-<tr class="separator:ae1145234825dda396925c352f0649aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06eba853bda0903fbb662b65e240b4ab" id="r_a06eba853bda0903fbb662b65e240b4ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1flash__storage.html#a06eba853bda0903fbb662b65e240b4ab">store_page</a> (std::span&lt; std::byte const &gt; data) override</td></tr>
+<tr class="separator:a06eba853bda0903fbb662b65e240b4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46570102086cdeaadafdfd267a1a560b" id="r_a46570102086cdeaadafdfd267a1a560b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1flash__storage.html#a46570102086cdeaadafdfd267a1a560b">load_page</a> (std::span&lt; std::byte &gt; data) override</td></tr>
+<tr class="separator:a46570102086cdeaadafdfd267a1a560b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6f1220c1ed04025cd52306ad1f27d650" name="a6f1220c1ed04025cd52306ad1f27d650"></a>
@@ -167,8 +167,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae1145234825dda396925c352f0649aa9" name="ae1145234825dda396925c352f0649aa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1145234825dda396925c352f0649aa9">&#9670;&#160;</a></span>load_page()</h2>
+<a id="a46570102086cdeaadafdfd267a1a560b" name="a46570102086cdeaadafdfd267a1a560b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46570102086cdeaadafdfd267a1a560b">&#9670;&#160;</a></span>load_page()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +177,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">em::outcome servio::drv::flash_storage::load_page </td>
+          <td class="memname"><a class="el" href="structservio_1_1status.html">status</a> servio::drv::flash_storage::load_page </td>
           <td>(</td>
           <td class="paramtype">std::span&lt; std::byte &gt;&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
@@ -191,14 +191,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structservio_1_1drv_1_1storage__iface.html#a304c479d0eeeea78942b2d951170a000">servio::drv::storage_iface</a>.</p>
+<p>Implements <a class="el" href="structservio_1_1drv_1_1storage__iface.html#ad3de86e29f81f890baf77043fdb579bd">servio::drv::storage_iface</a>.</p>
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1cfg.html#aafa3ceb2fb9ae12d15da5c3c2f867bc7">servio::cfg::find_latest_page()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio.html#a55104dad626571b464bc092401f5e57e">servio::ERROR</a>, <a class="el" href="namespaceservio.html#a47a5b9d9754c9bec77aa054df2a928f9">servio::FAILURE</a>, <a class="el" href="namespaceservio_1_1cfg.html#aafa3ceb2fb9ae12d15da5c3c2f867bc7">servio::cfg::find_latest_page()</a>, and <a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a>.</p>
 
 </div>
 </div>
-<a id="a7a00d269f942a63dcbb0f7e8b1ae2879" name="a7a00d269f942a63dcbb0f7e8b1ae2879"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a00d269f942a63dcbb0f7e8b1ae2879">&#9670;&#160;</a></span>store_page()</h2>
+<a id="a06eba853bda0903fbb662b65e240b4ab" name="a06eba853bda0903fbb662b65e240b4ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06eba853bda0903fbb662b65e240b4ab">&#9670;&#160;</a></span>store_page()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,7 +207,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">em::result servio::drv::flash_storage::store_page </td>
+          <td class="memname"><a class="el" href="structservio_1_1status.html">status</a> servio::drv::flash_storage::store_page </td>
           <td>(</td>
           <td class="paramtype">std::span&lt; std::byte const &gt;&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
@@ -221,9 +221,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structservio_1_1drv_1_1storage__iface.html#ae849398502fe452f4e4a45796ec8ba59">servio::drv::storage_iface</a>.</p>
+<p>Implements <a class="el" href="structservio_1_1drv_1_1storage__iface.html#a85edba21fa256b1c226f89a2655f21f8">servio::drv::storage_iface</a>.</p>
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1cfg.html#a5ae71615839581b20589975997a497f5">servio::cfg::find_next_page()</a>, and <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio.html#a55104dad626571b464bc092401f5e57e">servio::ERROR</a>, <a class="el" href="namespaceservio_1_1cfg.html#a5ae71615839581b20589975997a497f5">servio::cfg::find_next_page()</a>, <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>, and <a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a>.</p>
 
 </div>
 </div>
@@ -237,7 +237,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="structservio_1_1drv_1_1flash__storage.html">flash_storage</a></li>
-    <li class="footer">Generated on Sat Mar 29 2025 16:55:02 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 30 2025 14:48:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

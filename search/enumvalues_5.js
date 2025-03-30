@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['group_5fid_0',['GROUP_ID',['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab0267128c648c65666ba26bdeb685577',1,'servio::cfg']]]
+  ['failure_0',['FAILURE',['../namespaceservio.html#adca103027c4779db2eda865cdee69f7da36fc6065a3e970bc3e6b2e59da52bf2a',1,'servio']]]
 ];

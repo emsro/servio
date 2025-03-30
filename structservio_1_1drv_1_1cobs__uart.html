@@ -134,10 +134,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1712f7ee5425ac6e5c1b12a209ffbbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a907f51b960288857614a35028d8fedbb" id="r_a907f51b960288857614a35028d8fedbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1com__res.html">com_res</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a907f51b960288857614a35028d8fedbb">recv</a> (std::span&lt; std::byte &gt; data) override</td></tr>
 <tr class="separator:a907f51b960288857614a35028d8fedbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87725c3bc71d715123cc06293480bcf4" id="r_a87725c3bc71d715123cc06293480bcf4"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a87725c3bc71d715123cc06293480bcf4">start</a> () override</td></tr>
-<tr class="separator:a87725c3bc71d715123cc06293480bcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa057d6a82771a776653902e9b3c60165" id="r_aa057d6a82771a776653902e9b3c60165"><td class="memItemLeft" align="right" valign="top">em::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html#aa057d6a82771a776653902e9b3c60165">send</a> (<a class="el" href="namespaceservio_1_1drv.html#ae233abc47871b442f75cd856dcb2115c">send_data_t</a> data, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout) override</td></tr>
-<tr class="separator:aa057d6a82771a776653902e9b3c60165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa753a527d4f52359dd19da18b8d503be" id="r_aa753a527d4f52359dd19da18b8d503be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html#aa753a527d4f52359dd19da18b8d503be">start</a> () override</td></tr>
+<tr class="separator:aa753a527d4f52359dd19da18b8d503be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c8a4a620d378e21e8d54df6ef94f09a" id="r_a8c8a4a620d378e21e8d54df6ef94f09a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a8c8a4a620d378e21e8d54df6ef94f09a">send</a> (<a class="el" href="namespaceservio_1_1drv.html#ae233abc47871b442f75cd856dcb2115c">send_data_t</a> data, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout) override</td></tr>
+<tr class="separator:a8c8a4a620d378e21e8d54df6ef94f09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a70e6be6fefc419604261fcb79be8151d" name="a70e6be6fefc419604261fcb79be8151d"></a>
@@ -383,8 +383,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa057d6a82771a776653902e9b3c60165" name="aa057d6a82771a776653902e9b3c60165"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa057d6a82771a776653902e9b3c60165">&#9670;&#160;</a></span>send()</h2>
+<a id="a8c8a4a620d378e21e8d54df6ef94f09a" name="a8c8a4a620d378e21e8d54df6ef94f09a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8a4a620d378e21e8d54df6ef94f09a">&#9670;&#160;</a></span>send()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,7 +393,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">em::result servio::drv::cobs_uart::send </td>
+          <td class="memname"><a class="el" href="structservio_1_1status.html">status</a> servio::drv::cobs_uart::send </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceservio_1_1drv.html#ae233abc47871b442f75cd856dcb2115c">send_data_t</a>&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -417,14 +417,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structservio_1_1drv_1_1com__iface.html#a936f7bbab0b2a5cdc7268b75f7924ef0">servio::drv::com_iface</a>.</p>
+<p>Implements <a class="el" href="structservio_1_1drv_1_1com__iface.html#a8990843e0788a9011bc6088063568a79">servio::drv::com_iface</a>.</p>
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv.html#a939143e8846f4165956444ad9cdc5c4d">servio::drv::spin_with_timeout()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio.html#a55104dad626571b464bc092401f5e57e">servio::ERROR</a>, <a class="el" href="namespaceservio_1_1drv.html#a939143e8846f4165956444ad9cdc5c4d">servio::drv::spin_with_timeout()</a>, and <a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a>.</p>
 
 </div>
 </div>
-<a id="a87725c3bc71d715123cc06293480bcf4" name="a87725c3bc71d715123cc06293480bcf4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87725c3bc71d715123cc06293480bcf4">&#9670;&#160;</a></span>start()</h2>
+<a id="aa753a527d4f52359dd19da18b8d503be" name="aa753a527d4f52359dd19da18b8d503be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa753a527d4f52359dd19da18b8d503be">&#9670;&#160;</a></span>start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -433,7 +433,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">em::result servio::drv::cobs_uart::start </td>
+          <td class="memname"><a class="el" href="structservio_1_1status.html">status</a> servio::drv::cobs_uart::start </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -446,9 +446,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structservio_1_1drv_1_1com__iface.html#a964c0f9d4b01b5e94574ed71a250a4f0">servio::drv::com_iface</a>.</p>
+<p>Implements <a class="el" href="structservio_1_1drv_1_1com__iface.html#a1fb373ffbe95d6e709cbaf5838dbe9e7">servio::drv::com_iface</a>.</p>
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv_1_1bits.html#a52b312e1d911fb277ff38edf6044375d">servio::drv::bits::uart_start_it()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv_1_1bits.html#a155d033c32c49028ed952ffe8bda2576">servio::drv::bits::uart_start_it()</a>.</p>
 
 </div>
 </div>
@@ -488,7 +488,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html">cobs_uart</a></li>
-    <li class="footer">Generated on Sat Mar 29 2025 16:55:02 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 30 2025 14:48:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -10,6 +10,7 @@ var searchData=
   ['emsg_7',['emsg',['../namespaceservio_1_1sntr.html#a62ef64d0c1174f817df2e428e96d9838',1,'servio::sntr::record']]],
   ['er_5firq_8',['er_irq',['../namespaceservio_1_1plt.html#a4e5f98c021570301d866fec45d7f2e82',1,'servio::plt::i2c_cfg']]],
   ['er_5firq_5fpriority_9',['er_irq_priority',['../namespaceservio_1_1plt.html#a3971ff606bfc50cda5277b1c26a7cd16',1,'servio::plt::i2c_cfg']]],
-  ['ev_5firq_10',['ev_irq',['../namespaceservio_1_1plt.html#a179604cc2da4e956bcca6581da703d25',1,'servio::plt::i2c_cfg']]],
-  ['ev_5firq_5fpriority_11',['ev_irq_priority',['../namespaceservio_1_1plt.html#a4497f1c55e145fa95db4e05a96bd0145',1,'servio::plt::i2c_cfg']]]
+  ['error_10',['ERROR',['../namespaceservio.html#a55104dad626571b464bc092401f5e57e',1,'servio']]],
+  ['ev_5firq_11',['ev_irq',['../namespaceservio_1_1plt.html#a179604cc2da4e956bcca6581da703d25',1,'servio::plt::i2c_cfg']]],
+  ['ev_5firq_5fpriority_12',['ev_irq_priority',['../namespaceservio_1_1plt.html#a4497f1c55e145fa95db4e05a96bd0145',1,'servio::plt::i2c_cfg']]]
 ];

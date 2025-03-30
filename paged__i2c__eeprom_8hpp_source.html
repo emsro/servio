@@ -123,11 +123,11 @@ $(document).ready(function(){initNavTree('paged__i2c__eeprom_8hpp_source.html','
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
 </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        em::result <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a9d590a4c2eedfee775e714dc59b3bcd0">start</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a92897591514cd2e6a56281ea05ff5bd1">start</a>();</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        em::result <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a2f6ec7bd479ff45210a21960c0f2308c">store_page</a>( std::span&lt; std::byte const &gt; data ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a68008e204a65a8b918e560ea01632c0f">store_page</a>( std::span&lt; std::byte const &gt; data ) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        em::outcome <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a0e50ef61466ddd3ea2157054ed8d0c58">load_page</a>( std::span&lt; std::byte &gt; data ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#aef815a7194aa376f1e390560b10014fa">load_page</a>( std::span&lt; std::byte &gt; data ) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        std::size_t        mem_size_;</div>
@@ -141,21 +141,22 @@ $(document).ready(function(){initNavTree('paged__i2c__eeprom_8hpp_source.html','
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}  <span class="comment">// namespace servio::drv</span></div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1drv.html">servio::drv</a></div><div class="ttdef"><b>Definition</b> adc_pooler.hpp:8</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1drv.html">servio::drv</a></div><div class="ttdef"><b>Definition</b> adc_pooler.hpp:9</div></div>
 <div class="ttc" id="anamespaceservio_1_1paging_html_a20710ee777b0aec728765766e14ac975"><div class="ttname"><a href="namespaceservio_1_1paging.html#a20710ee777b0aec728765766e14ac975">servio::paging::state</a></div><div class="ttdeci">std::byte state</div><div class="ttdef"><b>Definition</b> paging.hpp:10</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html">servio::drv::i2c_eeprom</a></div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.hpp:13</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a0e50ef61466ddd3ea2157054ed8d0c58"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a0e50ef61466ddd3ea2157054ed8d0c58">servio::drv::i2c_eeprom::load_page</a></div><div class="ttdeci">em::outcome load_page(std::span&lt; std::byte &gt; data) override</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:102</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a29fc02522a5b55ebfa948a52536d493c"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a29fc02522a5b55ebfa948a52536d493c">servio::drv::i2c_eeprom::i2c_eeprom</a></div><div class="ttdeci">i2c_eeprom(uint8_t addr, uint16_t size, uint16_t page_size, I2C_HandleTypeDef &amp;i2c)</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.hpp:14</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a2f6ec7bd479ff45210a21960c0f2308c"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a2f6ec7bd479ff45210a21960c0f2308c">servio::drv::i2c_eeprom::store_page</a></div><div class="ttdeci">em::result store_page(std::span&lt; std::byte const &gt; data) override</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:86</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a9d590a4c2eedfee775e714dc59b3bcd0"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a9d590a4c2eedfee775e714dc59b3bcd0">servio::drv::i2c_eeprom::start</a></div><div class="ttdeci">em::result start()</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:56</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1storage__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1storage__iface.html">servio::drv::storage_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:61</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a68008e204a65a8b918e560ea01632c0f"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a68008e204a65a8b918e560ea01632c0f">servio::drv::i2c_eeprom::store_page</a></div><div class="ttdeci">status store_page(std::span&lt; std::byte const &gt; data) override</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:87</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a92897591514cd2e6a56281ea05ff5bd1"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a92897591514cd2e6a56281ea05ff5bd1">servio::drv::i2c_eeprom::start</a></div><div class="ttdeci">status start()</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:57</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_aef815a7194aa376f1e390560b10014fa"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#aef815a7194aa376f1e390560b10014fa">servio::drv::i2c_eeprom::load_page</a></div><div class="ttdeci">status load_page(std::span&lt; std::byte &gt; data) override</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:104</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1storage__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1storage__iface.html">servio::drv::storage_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:60</div></div>
+<div class="ttc" id="astructservio_1_1status_html"><div class="ttname"><a href="structservio_1_1status.html">servio::status</a></div><div class="ttdef"><b>Definition</b> status.hpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="paged__i2c__eeprom_8hpp.html">paged_i2c_eeprom.hpp</a></li>
-    <li class="footer">Generated on Sat Mar 29 2025 16:55:02 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 30 2025 14:48:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

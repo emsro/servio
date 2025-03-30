@@ -15,5 +15,5 @@ var core_2dispatcher_8hpp =
       [ "temp_drv", "namespaceservio_1_1core.html#a1f73c141b025ab1042f552c7085a6e6a", null ],
       [ "vcc_drv", "namespaceservio_1_1core.html#a060f4b65aed428b20c34ac5a1df68d00", null ]
     ] ],
-    [ "handle_message", "core_2dispatcher_8hpp.html#a0af9bc48e9d28b505e69947c01415025", null ]
+    [ "handle_message", "core_2dispatcher_8hpp.html#afd0bb8edfce26e988b98d2d2adf45dc3", null ]
 ];

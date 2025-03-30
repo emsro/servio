@@ -258,7 +258,8 @@ var annotated_dup =
         [ "s_to_nr_res.__unnamed3__", "namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3____", "namespaceservio_1_1str__lib_unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3_____dup" ]
       ] ],
       [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
-      [ "pwr", "structservio_1_1pwr.html", null ]
+      [ "pwr", "structservio_1_1pwr.html", null ],
+      [ "status", "structservio_1_1status.html", "structservio_1_1status" ]
     ] ],
     [ "std", "namespacestd.html", [
       [ "formatter< A, char >", "structstd_1_1formatter_3_01A_00_01char_01_4.html", "structstd_1_1formatter_3_01A_00_01char_01_4" ],

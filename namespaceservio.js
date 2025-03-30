@@ -45,6 +45,7 @@ var namespaceservio =
     ] ],
     [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
     [ "pwr", "structservio_1_1pwr.html", null ],
+    [ "status", "structservio_1_1status.html", "structservio_1_1status" ],
     [ "limits", "namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55", null ],
     [ "microseconds", "namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe", null ],
     [ "milliseconds", "namespaceservio.html#a69f902a923d0918ff3469e9fc5f5f84d", null ],
@@ -63,12 +64,20 @@ var namespaceservio =
       [ "VELOCITY", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a7b4354bded455eb379e3c764806cda7b", null ],
       [ "POSITION", "namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a90b4ba73224408e82ade8a072a3712c1", null ]
     ] ],
+    [ "status_e", "namespaceservio.html#adca103027c4779db2eda865cdee69f7d", [
+      [ "SUCCESS", "namespaceservio.html#adca103027c4779db2eda865cdee69f7dad0749aaba8b833466dfcbb0428e4f89c", null ],
+      [ "FAILURE", "namespaceservio.html#adca103027c4779db2eda865cdee69f7da36fc6065a3e970bc3e6b2e59da52bf2a", null ],
+      [ "ERROR", "namespaceservio.html#adca103027c4779db2eda865cdee69f7dabb1ca97ec761fc37101737ba0aa2e7c5", null ]
+    ] ],
     [ "operator\"\"_pwr", "namespaceservio.html#a3cbe32a0d33853a8e061ea4df443760e", null ],
     [ "operator\"\"_pwr", "namespaceservio.html#a546e51ff861bb4e2219e0b99efd5184f", null ],
     [ "page_at", "namespaceservio.html#a7f26120992786718c3b52d10b3c48f89", null ],
+    [ "ERROR", "namespaceservio.html#a55104dad626571b464bc092401f5e57e", null ],
+    [ "FAILURE", "namespaceservio.html#a47a5b9d9754c9bec77aa054df2a928f9", null ],
     [ "infty", "namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c", null ],
     [ "p_low", "namespaceservio.html#a53879f15eedde593c9cd6531402f5590", null ],
     [ "p_max", "namespaceservio.html#ad65a9ec22f69582eff005ae62a0bd415", null ],
     [ "pi", "namespaceservio.html#a20c15193768c59a28a88e172aba5ab20", null ],
-    [ "pipi", "namespaceservio.html#a00c2d45a108822e094be491c4004429b", null ]
+    [ "pipi", "namespaceservio.html#a00c2d45a108822e094be491c4004429b", null ],
+    [ "SUCCESS", "namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e", null ]
 ];

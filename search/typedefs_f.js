@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['test_5fsignature_0',['test_signature',['../namespaceservio_1_1bb.html#a9849bd4fc25ccf897eb1563fb19a5bcd',1,'servio::bb']]],
-  ['type_1',['type',['../namespaceservio_1_1iface.html#a3675d882024884424fb61a2ce871e181',1,'servio::iface::field_tuple&lt; vari::typelist&lt; Ts... &gt; &gt;::type'],['../structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4.html#a257c987a6fd01c76a0e41d0194b57dc5',1,'servio::iface::key_filter&lt; K, vari::typelist&lt; F, Fs... &gt; &gt;::type']]],
-  ['types_2',['types',['../structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html#a53b394d9df1428dbff6e8bf7c72964a8',1,'servio::iface::field_traits&lt; vari::typelist&lt; Field... &gt; &gt;']]]
+  ['sec_5ftime_0',['sec_time',['../namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909',1,'servio']]],
+  ['seconds_1',['seconds',['../namespaceservio.html#ae4779d6544c35b9251297f70da36f657',1,'servio']]],
+  ['send_5fdata_5ft_2',['send_data_t',['../namespaceservio_1_1drv.html#ae233abc47871b442f75cd856dcb2115c',1,'servio::drv']]],
+  ['sptr_3',['sptr',['../namespaceservio_1_1ftester.html#a8a630f7d7a8f7f10922563441a8566dc',1,'servio::ftester::sptr'],['../namespaceservio_1_1scmdio.html#a662f29442a014cdbe007bc12f0d52fe8',1,'servio::scmdio::sptr']]],
+  ['state_4',['state',['../namespaceservio_1_1klmn.html#acbeaec773e12939afebddba25b5d3135',1,'servio::klmn::state'],['../namespaceservio_1_1paging.html#a20710ee777b0aec728765766e14ac975',1,'servio::paging::state']]],
+  ['state_5fcovariance_5',['state_covariance',['../namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203',1,'servio::klmn']]],
+  ['state_5ftransition_5fmodel_6',['state_transition_model',['../namespaceservio_1_1klmn.html#afea6216b903aa2cb07122c0a086643cd',1,'servio::klmn']]],
+  ['stmt_7',['stmt',['../namespaceservio_1_1iface.html#a737e56b7f88459ad67c0001f4dd1e64a',1,'servio::iface']]],
+  ['str_5fname_8',['str_name',['../namespaceservio_1_1iface.html#aeb9ff3cc159dd124b89a32fe26bddce0',1,'servio::iface']]]
 ];
