@@ -11,8 +11,7 @@ void setup_tests(
     t::parameters&,
     core::drivers& cdrv,
     core::core&    cor,
-    em::result&    res )
-
+    status&        res )
 {
         bench::setup_bench_tests(
             mem, reac, ctx, *cdrv.clock, *cdrv.position, *cdrv.current, *cdrv.period, cor, res );

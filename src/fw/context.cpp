@@ -1,6 +1,7 @@
 #include "./context.hpp"
 
 #include "../brd/brd.hpp"
+#include "../status.hpp"
 #include "./util.hpp"
 
 namespace servio::fw
@@ -31,7 +32,7 @@ context setup_context()
             *cdrv.position };
         cfg_dis.full_apply();
 
-        if ( cdrv.start_cb( cdrv ) != em::SUCCESS )
+        if ( cdrv.start_cb( cdrv ) != SUCCESS )
                 fw::stop_exec();
 
         ctx.core.ind.on_event( cdrv.clock->get_us(), mon::indication_event::INITIALIZED );

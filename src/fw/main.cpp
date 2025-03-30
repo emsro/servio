@@ -10,7 +10,7 @@ int main()
 {
         using namespace servio;
 
-        if ( brd::setup_board() != em::SUCCESS )
+        if ( brd::setup_board() != SUCCESS )
                 fw::stop_exec();
 
         fw::context ctx = fw::setup_context();
@@ -46,9 +46,9 @@ int main()
                 // XXX: packet handling
                 auto [succ, odata] = core::handle_message( dis, ldata, OUTPUT_BUFFER );
 
-                if ( succ == em::ERROR )
+                if ( succ == ERROR )
                         fw::stop_exec();
-                if ( send( *ctx.cdrv.comms, 100_ms, odata ) != em::SUCCESS )
+                if ( send( *ctx.cdrv.comms, 100_ms, odata ) != SUCCESS )
                         fw::stop_exec();
         }
 }

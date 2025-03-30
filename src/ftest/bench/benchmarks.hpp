@@ -183,7 +183,7 @@ struct profile
                         auto msg =
                             em::protocol::handler< prof_record >::serialize( PROF_BUFFER[read_i] );
 
-                        co_await ctx.expect( ctx.record( msg ) == em::SUCCESS );
+                        co_await ctx.expect( ctx.record( msg ) == SUCCESS );
 
                         PROF_BUFFER[read_i] = prof_record{};
                         write_i             = read_i;
@@ -203,7 +203,7 @@ inline void setup_bench_tests(
     drv::curr_iface&          curr,
     drv::period_iface&        period,
     core::core&               cor,
-    em::result&               res )
+    status&                   res )
 {
         setup_utest< loop_frequency >( mem, reac, ctx, res, clk, period, pos, curr );
         setup_utest< usage >( mem, reac, ctx, res, period, clk );

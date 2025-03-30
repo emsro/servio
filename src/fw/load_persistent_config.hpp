@@ -13,12 +13,12 @@ inline cfg::payload load_persistent_config( drv::storage_iface& iface, cfg::map&
 {
         constexpr std::size_t buffer_n = cfg::map::registers_count * sizeof( cfg::keyval ) + 128;
         std::array< std::byte, buffer_n > buffer;
-        em::outcome                       r = iface.load_page( buffer );
-        if ( r == em::ERROR )
+        status                            r = iface.load_page( buffer );
+        if ( r == ERROR )
                 fw::stop_exec();  // XXX: this is drastic
 
         cfg::payload res{ .git_ver = "", .git_date = "", .id = 0 };
-        if ( r == em::FAILURE )
+        if ( r == FAILURE )
                 return res;
 
         auto check_f = [&]( cfg::payload const& payload ) {

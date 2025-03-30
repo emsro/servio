@@ -19,11 +19,11 @@ struct i2c_eeprom : public storage_iface
         {
         }
 
-        em::result start();
+        status start();
 
-        em::result store_page( std::span< std::byte const > data ) override;
+        status store_page( std::span< std::byte const > data ) override;
 
-        em::outcome load_page( std::span< std::byte > data ) override;
+        status load_page( std::span< std::byte > data ) override;
 
 private:
         std::size_t        mem_size_;

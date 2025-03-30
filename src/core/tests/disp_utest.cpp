@@ -54,7 +54,7 @@ TEST( core, dispatcher )
                 std::byte buff[666];
                 auto [res, used] = handle_message(
                     disp, em::view_n( (std::byte const*) inpt.data(), inpt.size() ), buff );
-                EXPECT_EQ( res, em::SUCCESS ) << inpt;
+                EXPECT_EQ( res, SUCCESS ) << inpt;
                 std::string_view res_str( (char*) used.begin(), used.size() );
                 return nlohmann::json::parse( res_str );
         };

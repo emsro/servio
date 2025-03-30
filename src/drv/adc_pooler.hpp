@@ -1,5 +1,6 @@
 #include "../plt/platform.hpp"
 #include "../sntr/sentry.hpp"
+#include "../status.hpp"
 #include "./callbacks.hpp"
 
 #pragma once
@@ -134,7 +135,7 @@ struct adc_pooler
         em::result start()
         {
                 __HAL_TIM_ENABLE( tim_ );
-                return em::SUCCESS;
+                return SUCCESS;
         }
 
         Set* operator->()

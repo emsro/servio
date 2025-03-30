@@ -94,8 +94,8 @@ struct hbridge_test
                 hb.timer_period_irq( nullptr );
                 co_await ctx.expect( counter == 1 );
 
-                co_await ctx.expect( hb.start() == em::ERROR );
-                co_await ctx.expect( hb.stop() == em::ERROR );
+                co_await ctx.expect( hb.start() == ERROR );
+                co_await ctx.expect( hb.stop() == ERROR );
         }
 };
 
@@ -114,8 +114,7 @@ inline void setup_impl_tests(
     t::reactor&               reac,
     ftest::uctx&              ctx,
     clk_iface&                clk,
-    em::result&               res )
-
+    status&                   res )
 {
         ftest::setup_utest< cobs_uart_rx_test >( mem, reac, ctx, res, clk );
         ftest::setup_utest< cobs_uart_err_test >( mem, reac, ctx, res, clk );

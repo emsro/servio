@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../status.hpp"
 #include "interfaces.hpp"
 
 namespace servio::drv::mock
@@ -78,16 +79,16 @@ struct stor : drv::storage_iface
 {
         std::size_t store_cnt = 0;
 
-        em::result store_page( std::span< std::byte const > ) override
+        status store_page( std::span< std::byte const > ) override
         {
                 store_cnt += 1;
-                return em::SUCCESS;
+                return SUCCESS;
         }
 
-        em::outcome load_page( std::span< std::byte > data ) override
+        status load_page( std::span< std::byte > data ) override
         {
                 std::ignore = data;
-                return em::SUCCESS;
+                return SUCCESS;
         }
 };
 

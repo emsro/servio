@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../status.hpp"
 #include "./base.hpp"
 
 #include <emlabcpp/convert_view.h>

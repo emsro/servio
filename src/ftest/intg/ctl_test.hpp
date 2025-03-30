@@ -112,7 +112,7 @@ inline void setup_ctl_test(
     drv::curr_iface&          curr,
     drv::pos_iface&           pos,
     core::core&               cor,
-    em::result&               res )
+    status&                   res )
 {
         setup_utest< current_ctl_test >( mem, reac, ctx, res, params, clk, curr, motor, cor );
         setup_utest< sign_test >( mem, reac, ctx, res, params, clk, curr, pos, motor, cor );

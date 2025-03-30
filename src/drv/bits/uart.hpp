@@ -3,8 +3,7 @@
 
 #include "../../plt/platform.hpp"
 #include "../../sntr/sentry.hpp"
-
-#include <emlabcpp/result.h>
+#include "../../status.hpp"
 
 namespace em = emlabcpp;
 
@@ -14,13 +13,13 @@ namespace servio::drv::bits
 static constexpr uint32_t uart_common_tolerable_hal_errors =
     HAL_UART_ERROR_ORE | HAL_UART_ERROR_DMA | HAL_UART_ERROR_FE | HAL_UART_ERROR_NE;
 
-inline em::result uart_start_it( UART_HandleTypeDef* h, std::byte& b )
+inline status uart_start_it( UART_HandleTypeDef* h, std::byte& b )
 {
         if ( h == nullptr )
-                return em::ERROR;
+                return ERROR;
         if ( HAL_UART_Receive_IT( h, reinterpret_cast< uint8_t* >( &b ), 1 ) != HAL_OK )
-                return em::ERROR;
-        return em::SUCCESS;
+                return ERROR;
+        return SUCCESS;
 }
 
 template < auto START_ERR >
@@ -37,7 +36,7 @@ inline void uart_rx_cplt_irq(
 
         on_rx_cplt_irq( rx_buff, rx_byte );
 
-        if ( drv.start() != em::SUCCESS )
+        if ( drv.start() != SUCCESS )
                 sentry.set_inoperable( START_ERR, "rx start" );
 }
 

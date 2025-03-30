@@ -21,9 +21,9 @@ struct flash_storage : public storage_iface
         {
         }
 
-        em::result store_page( std::span< std::byte const > data ) override;
+        status store_page( std::span< std::byte const > data ) override;
 
-        em::outcome load_page( std::span< std::byte > data ) override;
+        status load_page( std::span< std::byte > data ) override;
 
 private:
         std::span< em::view< std::byte* > > _pages;

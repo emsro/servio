@@ -2,6 +2,7 @@
 
 #include "../base.hpp"
 #include "../ctl/control.hpp"
+#include "../status.hpp"
 
 #include <emlabcpp/defer.h>
 #include <emlabcpp/experimental/testing/collect.h>
@@ -112,10 +113,10 @@ void setup_utest(
     em::pmr::memory_resource& mem,
     t::reactor&               r,
     uctx&                     ctx,
-    em::result&               res,
+    status&                   res,
     Args&&... args )
 {
-        if ( res != em::SUCCESS )
+        if ( res != SUCCESS )
                 return;
         res = t::construct_test_unit< utest< T > >( mem, r, ctx, std::forward< Args >( args )... );
 }

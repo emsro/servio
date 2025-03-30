@@ -14,8 +14,7 @@ void setup_tests(
     t::parameters&            params,
     core::drivers&            cdrv,
     core::core&               cor,
-    em::result&               res )
-
+    status&                   res )
 {
         drv::tests::setup_iface_tests(
             mem,

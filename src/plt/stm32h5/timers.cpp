@@ -10,7 +10,7 @@
 namespace servio::plt
 {
 
-em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
+status setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
 {
 
         tim.Instance               = cfg.timer_instance;
@@ -74,10 +74,10 @@ em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
         HAL_NVIC_SetPriority( cfg.irq, cfg.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.irq );
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
-em::result setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
+status setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
 {
         tim.Instance               = instance;
         tim.Init.Prescaler         = 0;
@@ -96,10 +96,10 @@ em::result setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK )
                 fw::stop_exec();
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
-em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq )
+status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq )
 {
         tim.Instance               = instance;
         tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1'000'000 );
@@ -116,21 +116,21 @@ em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQ
         __HAL_TIM_UIFREMAP_ENABLE( &tim );
 
         if ( HAL_TIM_PWM_Init( &tim ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
         if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
         if ( HAL_TIM_Base_Start( &tim ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
         HAL_NVIC_SetPriority( irq, 0, 0 );
         HAL_NVIC_EnableIRQ( irq );
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
-em::result setup_leds_channel( TIM_HandleTypeDef* tim, uint32_t ch, drv::pin_cfg pin )
+status setup_leds_channel( TIM_HandleTypeDef* tim, uint32_t ch, drv::pin_cfg pin )
 {
 
         setup_gpio( pin );
@@ -143,12 +143,12 @@ em::result setup_leds_channel( TIM_HandleTypeDef* tim, uint32_t ch, drv::pin_cfg
         chc.OCFastMode = TIM_OCFAST_DISABLE;
 
         if ( HAL_TIM_PWM_ConfigChannel( tim, &chc, ch ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
-em::result setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint32_t period )
+status setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint32_t period )
 {
         tim.Instance               = instance;
         tim.Init.Prescaler         = 0;
@@ -169,15 +169,15 @@ em::result setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, u
         init.IC2Filter    = 0;
 
         if ( HAL_TIM_Encoder_Init( &tim, &init ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
         TIM_MasterConfigTypeDef mcfg;
         mcfg.MasterOutputTrigger = TIM_TRGO_RESET;
         mcfg.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
         if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mcfg ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
 }  // namespace servio::plt

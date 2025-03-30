@@ -15,10 +15,10 @@ void leds::force_red_led()
 em::result leds::start()
 {
         if ( tim_ == nullptr )
-                return em::ERROR;
+                return ERROR;
         if ( HAL_TIM_PWM_Start( tim_, g_chan_ ) != HAL_OK )
-                return em::ERROR;
-        return em::SUCCESS;
+                return ERROR;
+        return SUCCESS;
 }
 
 void leds::update( leds_vals const& leds )

@@ -7,26 +7,26 @@
 namespace servio::drv
 {
 
-em::result hbridge::start()
+status hbridge::start()
 {
         if ( tim_ == nullptr )
-                return em::ERROR;
+                return ERROR;
         if ( HAL_TIM_PWM_Start_IT( tim_, mc1_channel_ ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
         if ( HAL_TIM_PWM_Start_IT( tim_, mc2_channel_ ) != HAL_OK )
-                return em::ERROR;
-        return em::SUCCESS;
+                return ERROR;
+        return SUCCESS;
 }
 
-em::result hbridge::stop()
+status hbridge::stop()
 {
         if ( tim_ == nullptr )
-                return em::ERROR;
+                return ERROR;
         if ( HAL_TIM_PWM_Stop_IT( tim_, mc1_channel_ ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
         if ( HAL_TIM_PWM_Stop_IT( tim_, mc2_channel_ ) != HAL_OK )
-                return em::ERROR;
-        return em::SUCCESS;
+                return ERROR;
+        return SUCCESS;
 }
 
 void hbridge::set_period_callback( period_cb_iface& cb )

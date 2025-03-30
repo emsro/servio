@@ -140,7 +140,7 @@ inline void setup_meas_tests(
     drv::pwm_motor_iface&     motor,
     drv::curr_iface&          curr,
     core::core&               cor,
-    em::result&               res )
+    status&                   res )
 {
         setup_utest< meas_vel_test >( mem, reac, ctx, res, params, clk, curr, motor, cor );
         setup_utest< meas_pos_test >( mem, reac, ctx, res, params, clk, curr, motor, cor );

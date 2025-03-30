@@ -10,21 +10,21 @@ int main()
 {
         using namespace servio;
 
-        if ( brd::setup_board() != em::SUCCESS )
+        if ( brd::setup_board() != SUCCESS )
                 fw::stop_exec();
 
         fw::context ctx = fw::setup_context();
 
         drv::com_iface* dbg_comms = brd::setup_debug_comms();
-        if ( dbg_comms == nullptr || dbg_comms->start() != em::SUCCESS )
+        if ( dbg_comms == nullptr || dbg_comms->start() != SUCCESS )
                 fw::stop_exec();
 
         ftest::testing_system tsys{ *dbg_comms, "servio tests" };
 
-        em::result res = em::SUCCESS;
+        status res = SUCCESS;
         ftest::setup_tests(
             TEST_STACK, tsys.reactor, tsys.ctx, tsys.parameters, ctx.cdrv, ctx.core, res );
-        if ( res != em::SUCCESS )
+        if ( res != SUCCESS )
                 fw::stop_exec();
 
         while ( true ) {

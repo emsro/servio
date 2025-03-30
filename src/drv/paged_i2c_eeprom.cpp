@@ -2,6 +2,7 @@
 #include "./paged_i2c_eeprom.hpp"
 
 #include "../fw/util.hpp"
+#include "../status.hpp"
 
 namespace servio::drv
 {
@@ -9,7 +10,7 @@ namespace servio::drv
 namespace
 {
 
-em::result write_data(
+status write_data(
     I2C_HandleTypeDef*           hi2c,
     uint16_t                     addr,
     uint16_t                     mem_addr,
@@ -24,13 +25,13 @@ em::result write_data(
                 auto stat = HAL_I2C_Mem_Write(
                     hi2c, addr, mem_addr, 2, (uint8_t*) data.data(), n, timeout );
                 if ( stat != HAL_OK )
-                        return em::ERROR;
+                        return ERROR;
                 data = data.subspan( 0, n );
         }
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
-em::result read_data(
+status read_data(
     I2C_HandleTypeDef*           hi2c,
     uint16_t                     addr,
     uint16_t                     mem_addr,
@@ -45,15 +46,15 @@ em::result read_data(
                 auto stat =
                     HAL_I2C_Mem_Read( hi2c, addr, mem_addr, 2, (uint8_t*) data.data(), n, timeout );
                 if ( stat != HAL_OK )
-                        return em::ERROR;
+                        return ERROR;
                 data = data.subspan( 0, n );
         }
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
 }  // namespace
 
-em::result i2c_eeprom::start()
+status i2c_eeprom::start()
 {
         for ( uint16_t x = 0x00; x < 255; x++ ) {
                 uint8_t data[1] = { 0x00 };
@@ -69,7 +70,7 @@ em::result i2c_eeprom::start()
 
                 auto stat = HAL_I2C_Mem_Read( i2c_, addr_, mem_addr, 2, (uint8_t*) &st, 1, 200 );
                 if ( stat != HAL_OK )
-                        return em::ERROR;
+                        return ERROR;
 
                 if ( mem_addr == 0x00 )
                         current_state_ = st;
@@ -80,13 +81,13 @@ em::result i2c_eeprom::start()
                 mem_addr = 0x00;
         page_addr_ = mem_addr;
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
-em::result i2c_eeprom::store_page( std::span< std::byte const > data )
+status i2c_eeprom::store_page( std::span< std::byte const > data )
 {
         if ( data.size() > page_size_ )
-                return em::ERROR;
+                return ERROR;
         page_addr_ += page_size_;
         std::byte page_state[1];
         if ( page_addr_ + page_size_ > mem_size_ ) {
@@ -95,14 +96,15 @@ em::result i2c_eeprom::store_page( std::span< std::byte const > data )
         } else {
                 page_state[0] = { current_state_ };
         }
-        return write_data( i2c_, addr_, page_addr_, page_state ) &&
-               write_data( i2c_, addr_ + 1, page_addr_, data );
+        return write_data( i2c_, addr_, page_addr_, page_state ) == ERROR ?
+                   ERROR :
+                   write_data( i2c_, addr_ + 1, page_addr_, data );
 }
 
-em::outcome i2c_eeprom::load_page( std::span< std::byte > data )
+status i2c_eeprom::load_page( std::span< std::byte > data )
 {
         if ( data.size() > page_size_ )
-                return em::ERROR;
+                return ERROR;
         return read_data( i2c_, addr_, page_addr_ + 1, data );
 }
 

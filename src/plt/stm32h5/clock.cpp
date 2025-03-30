@@ -11,7 +11,7 @@ namespace servio::plt
 
 namespace em = emlabcpp;
 
-em::result setup_clk()
+status setup_clk()
 {
 
         RCC_OscInitTypeDef       RCC_OscInitStruct = {};
@@ -51,7 +51,7 @@ em::result setup_clk()
         RCC_ClkInitStruct.APB3CLKDivider = RCC_HCLK_DIV1;
 
         if ( HAL_RCC_ClockConfig( &RCC_ClkInitStruct, FLASH_LATENCY_5 ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
         /** Initializes the peripherals clocks
          */
         PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1 | RCC_PERIPHCLK_USART2 |
@@ -62,12 +62,12 @@ em::result setup_clk()
         PeriphClkInit.AdcDacClockSelection = RCC_ADCDACCLKSOURCE_HSI;
         PeriphClkInit.I2c2ClockSelection   = RCC_I2C2CLKSOURCE_PCLK1;
         if ( HAL_RCCEx_PeriphCLKConfig( &PeriphClkInit ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
         TEMP_CALIB_COEFFS.cal1 = *TEMPSENSOR_CAL1_ADDR;
         TEMP_CALIB_COEFFS.cal2 = *TEMPSENSOR_CAL2_ADDR;
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
 }  // namespace servio::plt

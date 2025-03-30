@@ -4,7 +4,7 @@
 namespace servio::plt
 {
 
-em::result setup_i2c( I2C_HandleTypeDef& i2c, i2c_cfg cfg )
+status setup_i2c( I2C_HandleTypeDef& i2c, i2c_cfg cfg )
 {
         i2c.Instance              = cfg.instance;
         i2c.Init.Timing           = 0x202029A8;
@@ -34,7 +34,7 @@ em::result setup_i2c( I2C_HandleTypeDef& i2c, i2c_cfg cfg )
         if ( HAL_I2CEx_ConfigDigitalFilter( &i2c, 0 ) != HAL_OK )
                 fw::stop_exec();
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
 }  // namespace servio::plt

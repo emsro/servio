@@ -8,7 +8,7 @@ namespace servio::brd
 /// An API that has to be implemented by each board variation.
 
 /// Initial setup call for the board
-em::result setup_board();
+status setup_board();
 
 /// Initialize all core drivers for the servo
 core::drivers setup_core_drivers();

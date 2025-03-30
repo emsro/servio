@@ -231,25 +231,26 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
                 .port = GPIOA,
                 .mode = GPIO_MODE_ANALOG,
             } );
-        em::result res = plt::setup_adc(
-                             ADC_HANDLE,
-                             ADC_DMA_HANDLE,
-                             plt::adc_cfg{
-                                 .adc_instance     = ADC1,
-                                 .adc_irq_priority = 1,
-                                 .adc_trigger      = ADC_EXTERNALTRIG_T6_TRGO,
-                                 .dma =
-                                     plt::dma_cfg{
-                                         .irq          = GPDMA1_Channel0_IRQn,
-                                         .irq_priority = 1,
-                                         .instance     = GPDMA1_Channel0,
-                                         .request      = GPDMA1_REQUEST_ADC1,
-                                         .priority     = DMA_HIGH_PRIORITY,
-                                     },
-                             } ) &&
+        status res = plt::setup_adc(
+                         ADC_HANDLE,
+                         ADC_DMA_HANDLE,
+                         plt::adc_cfg{
+                             .adc_instance     = ADC1,
+                             .adc_irq_priority = 1,
+                             .adc_trigger      = ADC_EXTERNALTRIG_T6_TRGO,
+                             .dma =
+                                 plt::dma_cfg{
+                                     .irq          = GPDMA1_Channel0_IRQn,
+                                     .irq_priority = 1,
+                                     .instance     = GPDMA1_Channel0,
+                                     .request      = GPDMA1_REQUEST_ADC1,
+                                     .priority     = DMA_HIGH_PRIORITY,
+                                 },
+                         } ) != SUCCESS ?
+                         ERROR :
                          plt::setup_adc_timer( TIM6_HANDLE, TIM6 );
 
-        if ( res != em::SUCCESS )
+        if ( res != SUCCESS )
                 return nullptr;
 
         if ( enable_pos )
@@ -286,7 +287,7 @@ drv::hbridge* hbridge_setup()
                     .alternate = GPIO_AF14_TIM1,
                 },
         };
-        if ( plt::setup_hbridge_timers( TIM1_HANDLE, cfg ) != em::SUCCESS )
+        if ( plt::setup_hbridge_timers( TIM1_HANDLE, cfg ) != SUCCESS )
                 return nullptr;
 
         return HBRIDGE.setup( cfg.mc1_ch, cfg.mc2_ch );
@@ -326,7 +327,7 @@ drv::cobs_uart* comms_setup()
                 },
         };
 
-        if ( setup_uart( UART2_HANDLE, UART2_DMA_HANDLE, cfg ) != em::SUCCESS )
+        if ( setup_uart( UART2_HANDLE, UART2_DMA_HANDLE, cfg ) != SUCCESS )
                 return nullptr;
 
         return &COMMS;
@@ -365,7 +366,7 @@ drv::com_iface* setup_debug_comms()
                 },
         };
 
-        if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != em::SUCCESS )
+        if ( setup_uart( UART1_HANDLE, UART1_DMA_HANDLE, cfg ) != SUCCESS )
                 return nullptr;
 
         return &DEBUG_COMMS;
@@ -396,9 +397,9 @@ drv::leds* leds_setup()
             .alternate = GPIO_AF14_TIM2,
         };
 
-        em::result res = plt::setup_leds_channel( &TIM2_HANDLE, green_ch, green );
+        status res = plt::setup_leds_channel( &TIM2_HANDLE, green_ch, green );
 
-        if ( res == em::SUCCESS )
+        if ( res == SUCCESS )
                 return LEDS.setup( red, blue, green_ch );
 
         return nullptr;
@@ -426,8 +427,8 @@ drv::pos_iface* quad_encoder_setup( uint32_t period )
         };
         plt::setup_gpio( ch2 );
 
-        em::result res = plt::setup_encoder_timer( TIM3_HANDLE, TIM3, period );
-        if ( res != em::SUCCESS )
+        status res = plt::setup_encoder_timer( TIM3_HANDLE, TIM3, period );
+        if ( res != SUCCESS )
                 return nullptr;
 
         QUAD_TRIGGER_TIMER = &TIM1_HANDLE;
@@ -435,19 +436,19 @@ drv::pos_iface* quad_encoder_setup( uint32_t period )
         return &QUAD;
 }
 
-em::result start_callback( core::drivers& cdrv )
+status start_callback( core::drivers& cdrv )
 {
         if ( cdrv.motor != nullptr ) {
-                if ( HBRIDGE.start() != em::SUCCESS )
-                        return em::ERROR;
+                if ( HBRIDGE.start() != SUCCESS )
+                        return ERROR;
         }
         if ( cdrv.comms != nullptr ) {
-                if ( COMMS.start() != em::SUCCESS )
-                        return em::ERROR;
+                if ( COMMS.start() != SUCCESS )
+                        return ERROR;
         }
         if ( cdrv.leds != nullptr ) {
-                if ( LEDS.start() != em::SUCCESS )
-                        return em::ERROR;
+                if ( LEDS.start() != SUCCESS )
+                        return ERROR;
         }
         if ( QUAD_TRIGGER_TIMER != nullptr )
                 QUAD.start();
@@ -457,18 +458,18 @@ em::result start_callback( core::drivers& cdrv )
         drv::wait_for( CLOCK, 50_us );
 
         if ( HAL_ADCEx_Calibration_Start( &ADC_HANDLE, ADC_SINGLE_ENDED ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
         if ( cdrv.position != nullptr ) {
                 // this implies that adc_pooleri initialization is OK
-                if ( ADC_POOLER.start() != em::SUCCESS )
-                        return em::ERROR;
+                if ( ADC_POOLER.start() != SUCCESS )
+                        return ERROR;
         }
 
         if ( HAL_ICACHE_Enable() != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
 void install_stop_callback( drv::pwm_motor_iface& motor, drv::leds_iface* leds_ptr )
@@ -481,10 +482,10 @@ void install_stop_callback( drv::pwm_motor_iface& motor, drv::leds_iface* leds_p
         };
 }
 
-em::result setup_board()
+status setup_board()
 {
         if ( HAL_Init() != HAL_OK )
-                return em::ERROR;
+                return ERROR;
         return plt::setup_clk();
 }
 
@@ -493,11 +494,11 @@ core::drivers setup_core_drivers()
         CFG.payload = fw::load_persistent_config( FLASH_STORAGE, CFG.map );
 
         __HAL_RCC_TIM2_CLK_ENABLE();
-        if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != em::SUCCESS )
+        if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != SUCCESS )
                 fw::stop_exec();
 
         __HAL_RCC_DTS_CLK_ENABLE();
-        if ( plt::setup_dts( DTS_HANDLE, DTS ) != em::SUCCESS )
+        if ( plt::setup_dts( DTS_HANDLE, DTS ) != SUCCESS )
                 fw::stop_exec();
 
         __HAL_RCC_GPIOA_CLK_ENABLE();

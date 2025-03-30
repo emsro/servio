@@ -57,12 +57,12 @@ struct char_uart final : public com_iface
                 return { res, used };
         }
 
-        em::result start() override
+        status start() override
         {
                 return bits::uart_start_it( uart_, rx_byte_ );
         }
 
-        em::result send( send_data_t data, microseconds timeout ) override;
+        status send( send_data_t data, microseconds timeout ) override;
 
 private:
         sntr::sentry sentry_;

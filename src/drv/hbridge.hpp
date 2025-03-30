@@ -49,8 +49,8 @@ public:
         int8_t get_direction() const override;
 
         // starts the timers
-        em::result start() override;
-        em::result stop() override;
+        status start() override;
+        status stop() override;
 
 private:
         period_cb_iface*   period_cb_;

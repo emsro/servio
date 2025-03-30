@@ -21,7 +21,7 @@ void setup_adc_channel( ADC_ChannelConfTypeDef& channel, uint32_t ch, opt< drv::
                 setup_gpio( *cfg );
 }
 
-em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg )
+status setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg )
 {
         adc.Instance                  = cfg.adc_instance;
         adc.Init.ClockPrescaler       = ADC_CLOCK_ASYNC_DIV1;
@@ -49,15 +49,15 @@ em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cf
         dma.Init.Priority              = cfg.dma.priority;
 
         if ( HAL_ADC_Init( &adc ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
         if ( HAL_DMA_Init( &dma ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
         __HAL_LINKDMA( ( &adc ), DMA_Handle, dma );
 
         if ( HAL_DMA_ConfigChannelAttributes( &dma, DMA_CHANNEL_NPRIV ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
         HAL_NVIC_SetPriority( ADC1_IRQn, cfg.adc_irq_priority, 0 );
         HAL_NVIC_EnableIRQ( ADC1_IRQn );
@@ -65,7 +65,7 @@ em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cf
         HAL_NVIC_SetPriority( cfg.dma.irq, cfg.dma.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.dma.irq );
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
 }  // namespace servio::plt

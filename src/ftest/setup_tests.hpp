@@ -20,6 +20,6 @@ void setup_tests(
     em::testing::parameters&  params,
     core::drivers&            cdrv,
     core::core&               core,
-    em::result&               res );
+    status&                   res );
 
 };

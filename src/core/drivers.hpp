@@ -25,7 +25,7 @@ struct drivers
         drv::com_iface*       comms;
         drv::leds_iface*      leds;
 
-        em::function_view< em::result( drivers& ) > start_cb;
+        em::function_view< status( drivers& ) > start_cb;
 
         auto tie()
         {

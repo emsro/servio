@@ -59,12 +59,12 @@ bool cfg_write( uint32_t addr, std::span< std::byte const > buffer )
 }
 }  // namespace
 
-em::result flash_storage::store_page( std::span< std::byte const > data )
+status flash_storage::store_page( std::span< std::byte const > data )
 {
         cfg::page const* page = cfg::find_next_page( _pages );
 
         if ( page == nullptr )
-                return em::ERROR;
+                return ERROR;
 
         std::byte const* start      = page->begin();
         auto             start_addr = std::bit_cast< uint32_t >( start );
@@ -84,19 +84,19 @@ em::result flash_storage::store_page( std::span< std::byte const > data )
         };
         cfg_erase( start_addr );
         if ( cfg_write( start_addr, data ) )
-                return em::SUCCESS;
-        return em::ERROR;
+                return SUCCESS;
+        return ERROR;
 }
 
-em::outcome flash_storage::load_page( std::span< std::byte > data )
+status flash_storage::load_page( std::span< std::byte > data )
 {
         cfg::page const* last_page = cfg::find_latest_page( _pages );
         if ( last_page == nullptr )
-                return em::FAILURE;
+                return FAILURE;
         if ( data.size() >= last_page->size() )
-                return em::ERROR;
+                return ERROR;
         std::memcpy( data.data(), last_page->begin(), data.size() );
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
 }  // namespace servio::drv

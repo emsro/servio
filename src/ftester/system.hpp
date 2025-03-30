@@ -157,13 +157,13 @@ private:
                 col_iface_.res = std::monostate{};
         }
 
-        em::result send( em::protocol::channel_type channel, auto const& data )
+        status send( em::protocol::channel_type channel, auto const& data )
         {
                 spdlog::debug( "Channel {} write: {}", channel, std::span{ data } );
                 auto msg = em::protocol::serialize_multiplexed( channel, data );
                 co_spawn( io_context_, write( msg ), handle_eptr );
 
-                return em::SUCCESS;
+                return SUCCESS;
         }
 
         template < std::size_t N >

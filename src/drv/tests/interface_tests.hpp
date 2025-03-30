@@ -70,7 +70,7 @@ struct comms_echo_test
         {
                 std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };
                 em::result                 res = send( comms, 100_ms, buffer );
-                co_await ctx.expect( res == em::SUCCESS );
+                co_await ctx.expect( res == SUCCESS );
 
                 wait_for( clk, 10_ms );
 
@@ -103,15 +103,15 @@ struct comms_timeout_test
         {
                 std::array< std::byte, 6 > buffer{ 0x01_b, 0x02_b, 0x03_b, 0x04_b, 0x05_b, 0x06_b };
                 em::result                 res = send( comms, 1_us, buffer );
-                co_await ctx.expect( res == em::SUCCESS );
+                co_await ctx.expect( res == SUCCESS );
 
                 res = send( comms, 1_us, buffer );
-                co_await ctx.expect( res == em::ERROR );
+                co_await ctx.expect( res == ERROR );
 
                 wait_for( clk, 10_ms );
 
                 res = send( comms, 100_ms, buffer );
-                co_await ctx.expect( res != em::ERROR );
+                co_await ctx.expect( res != ERROR );
 
                 wait_for( clk, 10_ms );
 
@@ -145,7 +145,7 @@ struct period_iface_test
         t::coroutine< void > run( auto& mem, ftest::uctx& ctx )
         {
                 auto d = retain_callback( iface );
-                co_await ctx.expect( iface.stop() == em::SUCCESS );
+                co_await ctx.expect( iface.stop() == SUCCESS );
 
                 std::size_t counter = 0;
                 period_cb   pcb{ [&] {
@@ -158,7 +158,7 @@ struct period_iface_test
                 co_await ctx.expect( counter == 0 );
                 ctx.coll.set( "counter1", counter );
 
-                co_await ctx.expect( iface.start() == em::SUCCESS );
+                co_await ctx.expect( iface.start() == SUCCESS );
 
                 wait_for( clk, 10_ms );
 
@@ -308,7 +308,7 @@ inline void setup_iface_tests(
     temp_iface&               temp,
     pos_iface&                pos,
     curr_iface&               curr,
-    em::result&               res )
+    status&                   res )
 {
         ftest::setup_utest< clock_test >( mem, reac, ctx, res, clk );
         ftest::setup_utest< comms_echo_test >( mem, reac, ctx, res, clk, comms );

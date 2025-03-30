@@ -27,7 +27,7 @@ struct dispatcher
         microseconds               now;
 };
 
-std::tuple< em::outcome, em::view< std::byte* > > handle_message(
+std::tuple< status, em::view< std::byte* > > handle_message(
     dispatcher&                  dis,
     em::view< std::byte const* > input_data,
     em::view< std::byte* >       output_buffer );

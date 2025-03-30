@@ -1,7 +1,7 @@
 #include "../../cfg/map.hpp"
 #include "../../drv/defs.hpp"
+#include "../../status.hpp"
 
-#include <emlabcpp/result.h>
 #include <memory>
 #include <optional>
 
@@ -86,28 +86,28 @@ extern temp_calib_coeffs TEMP_CALIB_COEFFS;
 
 cfg::map get_default_config();
 
-em::result setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );
+status setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );
 void setup_adc_channel( ADC_ChannelConfTypeDef& channel, uint32_t ch_id, opt< drv::pin_cfg > cfg );
-em::result setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
+status setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
 
-em::result setup_dac( DAC_HandleTypeDef& dac, drv::pin_cfg const& cfg );
+status setup_dac( DAC_HandleTypeDef& dac, drv::pin_cfg const& cfg );
 
-em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg );
+status setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg );
 
-em::result setup_i2c( I2C_HandleTypeDef& i2c, i2c_cfg cfg );
+status setup_i2c( I2C_HandleTypeDef& i2c, i2c_cfg cfg );
 
-em::result setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg );
+status setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg );
 
 void setup_gpio( drv::pin_cfg const& cfg );
 
-em::result setup_leds_channel( TIM_HandleTypeDef* tim, uint32_t ch, drv::pin_cfg cfg );
+status setup_leds_channel( TIM_HandleTypeDef* tim, uint32_t ch, drv::pin_cfg cfg );
 
-em::result setup_clk();
+status setup_clk();
 
-em::result setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq );
+status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq );
 
-em::result setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint32_t period );
+status setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint32_t period );
 
-em::result setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst );
+status setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst );
 
 }  // namespace servio::plt

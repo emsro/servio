@@ -3,7 +3,7 @@
 namespace servio::plt
 {
 
-em::result setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst )
+status setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst )
 {
         h.Instance           = inst;
         h.Init.QuickMeasure  = DTS_QUICKMEAS_DISABLE;
@@ -14,9 +14,9 @@ em::result setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst )
         h.Init.HighThreshold = 0x0;
         h.Init.LowThreshold  = 0x0;
         if ( HAL_DTS_Init( &h ) != HAL_OK )
-                return em::ERROR;
+                return ERROR;
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
 }  // namespace servio::plt

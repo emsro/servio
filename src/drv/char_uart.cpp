@@ -3,10 +3,10 @@
 namespace servio::drv
 {
 
-em::result char_uart::send( send_data_t data, microseconds timeout )
+status char_uart::send( send_data_t data, microseconds timeout )
 {
         if ( !spin_with_timeout( clk_, tx_done_, timeout ) )
-                return em::ERROR;
+                return ERROR;
 
         // XXX: check that char is NOT present
 
@@ -14,21 +14,21 @@ em::result char_uart::send( send_data_t data, microseconds timeout )
         for ( auto s : data )
                 for ( std::byte b : s ) {
                         if ( count == tx_buffer_.size() )
-                                return em::ERROR;
+                                return ERROR;
                         tx_buffer_[count++] = b;
                 }
         if ( count == tx_buffer_.size() )
-                return em::ERROR;
+                return ERROR;
         tx_buffer_[count++] = std::byte{ delim };
 
         tx_done_ = false;
 
         if ( HAL_UART_Transmit_DMA(
                  uart_, reinterpret_cast< uint8_t* >( tx_buffer_.data() ), count ) != HAL_OK ) {
-                return em::ERROR;
+                return ERROR;
         }
 
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
 }  // namespace servio::drv

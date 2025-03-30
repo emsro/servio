@@ -3,10 +3,9 @@
 #include "../cfg/storage.hpp"
 #include "../cnv/utils.hpp"
 #include "../lib/json_ser.hpp"
+#include "../status.hpp"
 #include "./map_cfg.hpp"
 
-#include <emlabcpp/outcome.h>
-#include <emlabcpp/result.h>
 #include <git.h>
 
 namespace servio::core
@@ -29,7 +28,7 @@ bool store_persistent_config( drv::storage_iface& stor, cfg::payload& pl, cfg::m
         if ( !succ )
                 return false;
 
-        if ( stor.store_page( used_buffer ) == em::ERROR )
+        if ( stor.store_page( used_buffer ) == ERROR )
                 return false;
         pl = pld;
         return true;
@@ -219,7 +218,7 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, json
 }
 }  // namespace
 
-std::tuple< em::outcome, em::view< std::byte* > > handle_message(
+std::tuple< status, em::view< std::byte* > > handle_message(
     dispatcher&                  dis,
     em::view< std::byte const* > input_data,
     em::view< std::byte* >       output_buffer )
@@ -228,18 +227,18 @@ std::tuple< em::outcome, em::view< std::byte* > > handle_message(
         std::string_view inpt{ (char const*) input_data.begin(), input_data.size() };
 
         json::jval_ser out{ output_buffer };
-        using R = em::outcome;
+        using R = status;
 
         auto res = iface::parse( inpt ).visit(
             [&]( vari::vref< iface::stmt > s ) -> R {
                     handle_message( dis, s, out );
-                    return em::SUCCESS;
+                    return SUCCESS;
             },
             [&]( iface::invalid_stmt& ) -> R {
                     json::array_ser as{ out };
                     as( "NOK" );
                     as( "parse error" );
-                    return em::FAILURE;
+                    return FAILURE;
             } );
         return { res, std::move( out ) };
 }

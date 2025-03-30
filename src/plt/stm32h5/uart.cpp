@@ -6,7 +6,7 @@
 namespace servio::plt
 {
 
-em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg )
+status setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg cfg )
 {
         uart.Instance                    = cfg.uart_instance;
         uart.Init.BaudRate               = cfg.baudrate;
@@ -61,7 +61,7 @@ em::result setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart
 
         HAL_NVIC_SetPriority( cfg.irq, cfg.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.irq );
-        return em::SUCCESS;
+        return SUCCESS;
 }
 
 }  // namespace servio::plt

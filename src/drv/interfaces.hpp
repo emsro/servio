@@ -1,9 +1,8 @@
 #include "../base.hpp"
 #include "../cfg/map.hpp"
+#include "../status.hpp"
 
 #include <cstdint>
-#include <emlabcpp/outcome.h>
-#include <emlabcpp/result.h>
 #include <span>
 
 #pragma once
@@ -46,12 +45,12 @@ using send_data_t = std::span< std::span< std::byte const > const >;
 
 struct com_iface
 {
-        virtual em::result start()                                        = 0;
-        virtual em::result send( send_data_t data, microseconds timeout ) = 0;
-        virtual com_res    recv( std::span< std::byte > data )            = 0;
+        virtual status  start()                                        = 0;
+        virtual status  send( send_data_t data, microseconds timeout ) = 0;
+        virtual com_res recv( std::span< std::byte > data )            = 0;
 };
 
-em::result send( com_iface& iface, microseconds timeout, auto&... data )
+status send( com_iface& iface, microseconds timeout, auto&... data )
 {
         std::array< std::span< std::byte const >, sizeof...( data ) > b{ data... };
         return iface.send( b, timeout );
@@ -59,8 +58,8 @@ em::result send( com_iface& iface, microseconds timeout, auto&... data )
 
 struct storage_iface
 {
-        virtual em::result  store_page( std::span< std::byte const > data ) = 0;
-        virtual em::outcome load_page( std::span< std::byte > data )        = 0;
+        virtual status store_page( std::span< std::byte const > data ) = 0;
+        virtual status load_page( std::span< std::byte > data )        = 0;
 };
 
 struct leds_iface
@@ -92,8 +91,8 @@ inline bool spin_with_timeout( clk_iface& clk, bool volatile& cond, microseconds
 
 struct period_iface
 {
-        virtual em::result       start()                                 = 0;
-        virtual em::result       stop()                                  = 0;
+        virtual status           start()                                 = 0;
+        virtual status           stop()                                  = 0;
         virtual void             set_period_callback( period_cb_iface& ) = 0;
         virtual period_cb_iface& get_period_callback()                   = 0;
 };
