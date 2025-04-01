@@ -32,7 +32,7 @@ public:
                 buffer_.push_back( record{
                     .data = { msg.begin(), msg.end() },
                 } );
-                return em::SUCCESS;
+                return em::outcome::SUCCESS;
         }
 
         void clear()

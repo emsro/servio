@@ -189,7 +189,7 @@ private:
                                         chid, data, cont_, col_serv_, par_serv_, rec_ );
                             } );
 
-                        system_failure_ |= out == em::ERROR;
+                        system_failure_ |= out == em::outcome::ERROR;
                 }
         }
 
