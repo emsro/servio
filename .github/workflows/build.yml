@@ -31,5 +31,5 @@ jobs:
 
             - uses: actions/upload-artifact@v4
               with:
-                  name: proto3_fw.elf
-                  path: build/h5/src/brd/proto3/proto3_fw.elf
+                  name: proto4_fw.elf
+                  path: build/h5/src/brd/proto4/proto4_fw.elf
