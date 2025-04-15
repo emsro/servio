@@ -24,14 +24,13 @@ TEST( core, dispatcher )
         drv::mock::temp    tm;
         drv::mock::stor    sd;
 
-        cfg::map     m = cfg::get_default_config();
-        cfg::payload pl;
-        core         cor{
+        cfg::map m = cfg::get_default_config();
+        core     cor{
             0_ms,
             gv,
             tm,
             ctl::config{
-                        .position_limits = { -2.0F, 2.0F },
+                    .position_limits = { -2.0F, 2.0F },
             } };
 
         dispatcher disp{
@@ -44,7 +43,6 @@ TEST( core, dispatcher )
             .met      = cor.met,
             .mon      = cor.mon,
             .cfg_map  = m,
-            .cfg_pl   = pl,
             .stor_drv = sd,
             .conv     = cor.conv,
             .now      = 0_ms,

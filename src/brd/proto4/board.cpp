@@ -12,7 +12,6 @@
 #include "../../drv/leds.hpp"
 #include "../../drv/paged_i2c_eeprom.hpp"
 #include "../../drv/quad_encoder.hpp"
-#include "../../fw/load_persistent_config.hpp"
 #include "../../fw/util.hpp"
 #include "../../plt/platform.hpp"
 #include "../../sntr/central_sentry.hpp"
@@ -594,7 +593,7 @@ status setup_board()
 
 core::drivers setup_core_drivers()
 {
-        CFG.payload = fw::load_persistent_config( FLASH_STORAGE, CFG.map );
+        FLASH_STORAGE.load_cfg( CFG.map );
 
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != SUCCESS )

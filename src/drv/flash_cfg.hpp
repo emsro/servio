@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../cfg/storage.hpp"
 #include "../plt/platform.hpp"
 #include "./interfaces.hpp"
 
 #include <cstdint>
+#include <emlabcpp/experimental/function_view.h>
 
 namespace servio::drv
 {
@@ -21,9 +21,9 @@ struct flash_storage : public storage_iface
         {
         }
 
-        status store_page( std::span< std::byte const > data ) override;
-
-        status load_page( std::span< std::byte > data ) override;
+        status store_cfg( cfg::map const& m ) override;
+        status load_cfg( cfg::map& m ) override;
+        status clear_cfg() override;
 
 private:
         std::span< em::view< std::byte* > > _pages;

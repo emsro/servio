@@ -1,6 +1,6 @@
 servio_add_library(
   TARGET cfglib
-  SOURCES storage.cpp dispatcher.cpp
+  SOURCES dispatcher.cpp
   LIBS emlabcpp platform ctllib ifacelib avakar::atom
   OPTS -Os)
 

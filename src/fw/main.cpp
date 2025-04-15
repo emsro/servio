@@ -27,7 +27,6 @@ int main()
                     .met      = ctx.core.met,
                     .mon      = ctx.core.mon,
                     .cfg_map  = ctx.cdrv.cfg->map,
-                    .cfg_pl   = ctx.cdrv.cfg->payload,
                     .stor_drv = *ctx.cdrv.storage,
                     .conv     = ctx.core.conv,
                     .now      = ctx.cdrv.clock->get_us() };

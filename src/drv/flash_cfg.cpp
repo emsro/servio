@@ -59,15 +59,8 @@ bool cfg_write( uint32_t addr, std::span< std::byte const > buffer )
 }
 }  // namespace
 
-status flash_storage::store_page( std::span< std::byte const > data )
+status flash_storage::store_cfg( cfg::map const& m )
 {
-        cfg::page const* page = cfg::find_next_page( _pages );
-
-        if ( page == nullptr )
-                return ERROR;
-
-        std::byte const* start      = page->begin();
-        auto             start_addr = std::bit_cast< uint32_t >( start );
 
         _stop_cb();
         if ( HAL_ICACHE_Disable() != HAL_OK )
@@ -82,20 +75,23 @@ status flash_storage::store_page( std::span< std::byte const > data )
                 if ( HAL_FLASH_Lock() != HAL_OK )
                         fw::stop_exec();
         };
-        cfg_erase( start_addr );
-        if ( cfg_write( start_addr, data ) )
-                return SUCCESS;
+        std::ignore = m;
+        // cfg_erase( start_addr );
+        // if ( cfg_write( start_addr, data ) )
+        //         return SUCCESS;
         return ERROR;
 }
 
-status flash_storage::load_page( std::span< std::byte > data )
+status flash_storage::load_cfg( cfg::map& m )
 {
-        cfg::page const* last_page = cfg::find_latest_page( _pages );
-        if ( last_page == nullptr )
-                return FAILURE;
-        if ( data.size() >= last_page->size() )
-                return ERROR;
-        std::memcpy( data.data(), last_page->begin(), data.size() );
+        // XXX: fix;
+        std::ignore = m;
+        return SUCCESS;
+}
+
+status flash_storage::clear_cfg()
+{
+        // XXX: fix;
         return SUCCESS;
 }
 

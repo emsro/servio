@@ -58,8 +58,9 @@ status send( com_iface& iface, microseconds timeout, auto&... data )
 
 struct storage_iface
 {
-        virtual status store_page( std::span< std::byte const > data ) = 0;
-        virtual status load_page( std::span< std::byte > data )        = 0;
+        virtual status store_cfg( cfg::map const& m ) = 0;
+        virtual status load_cfg( cfg::map& m )        = 0;
+        virtual status clear_cfg()                    = 0;
 };
 
 struct leds_iface

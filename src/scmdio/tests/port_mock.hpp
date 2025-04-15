@@ -19,7 +19,6 @@ struct port_mock : port_iface
                 drv::temp_iface const&     temp_drv;
                 core::core&                cor;
                 cfg::map&                  cfg_map;
-                cfg::payload&              cfg_pl;
                 drv::storage_iface&        stor_drv;
         };
 
@@ -44,7 +43,6 @@ struct port_mock : port_iface
                     .met      = a.cor.met,
                     .mon      = a.cor.mon,
                     .cfg_map  = a.cfg_map,
-                    .cfg_pl   = a.cfg_pl,
                     .stor_drv = a.stor_drv,
                     .conv     = a.cor.conv,
                     .now      = 0_ms,  // XXX: rethink

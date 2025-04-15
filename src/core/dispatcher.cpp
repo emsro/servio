@@ -1,6 +1,5 @@
 #include "./dispatcher.hpp"
 
-#include "../cfg/storage.hpp"
 #include "../cnv/utils.hpp"
 #include "../lib/json_ser.hpp"
 #include "../status.hpp"
@@ -12,27 +11,6 @@ namespace servio::core
 {
 namespace
 {
-
-// XXX: this no longer has to be in fw/
-bool store_persistent_config( drv::storage_iface& stor, cfg::payload& pl, cfg::map const* cfg )
-{
-        cfg::payload const pld{
-            .git_ver  = git::Describe(),
-            .git_date = git::CommitDate(),
-            .id       = pl.id + 1,
-        };
-        constexpr std::size_t buffer_n = cfg::map::registers_count * sizeof( cfg::keyval ) + 128;
-        std::array< std::byte, buffer_n > buffer;
-        auto [succ, used_buffer] = cfg::store( pld, cfg, buffer );
-
-        if ( !succ )
-                return false;
-
-        if ( stor.store_page( used_buffer ) == ERROR )
-                return false;
-        pl = pld;
-        return true;
-}
 
 void handle_set_mode(
     microseconds                         now,
@@ -196,14 +174,14 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, json
             },
             [&]( iface::cfg_commit_stmt const& ) {
                     json::array_ser as{ out };
-                    if ( store_persistent_config( dis.stor_drv, dis.cfg_pl, &dis.cfg_map ) )
+                    if ( dis.stor_drv.store_cfg( dis.cfg_map ) == status::SUCCESS )
                             as( "OK" );
                     else
                             as( "NOK" );
             },
             [&]( iface::cfg_clear_stmt const& ) {
                     json::array_ser as{ out };
-                    if ( store_persistent_config( dis.stor_drv, dis.cfg_pl, nullptr ) )
+                    if ( dis.stor_drv.clear_cfg() == status::SUCCESS )
                             as( "OK" );
                     else
                             as( "NOK" );

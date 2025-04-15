@@ -167,7 +167,9 @@ struct chip_info
 };
 
 static std::map< uint16_t, chip_info > const chips = {
-    { 0x468, chip_info{ .flash = { 0x0800'0000, 0x0802'0000 } } } };
+    { 0x468, chip_info{ .flash = { 0x0800'0000, 0x0802'0000 } } },  // STM32G432
+    { 0x474, chip_info{ .flash = { 0x0800'0000, 0x0802'0000 } } },  // STM32H503
+};
 
 awaitable< chip_info const* > get_chip_id( stream_iface& port )
 {

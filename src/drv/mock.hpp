@@ -79,15 +79,20 @@ struct stor : drv::storage_iface
 {
         std::size_t store_cnt = 0;
 
-        status store_page( std::span< std::byte const > ) override
+        status store_cfg( cfg::map const& ) override
         {
                 store_cnt += 1;
                 return SUCCESS;
         }
 
-        status load_page( std::span< std::byte > data ) override
+        status load_cfg( cfg::map& data ) override
         {
                 std::ignore = data;
+                return SUCCESS;
+        }
+
+        status clear_cfg() override
+        {
                 return SUCCESS;
         }
 };

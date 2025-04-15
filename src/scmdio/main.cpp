@@ -246,7 +246,8 @@ void bflash_def( CLI::App& app, io_context& io_ctx )
                 } );
         };
 
-        auto* bflash = app.add_subcommand( "bflash", "flash firmware via bootloader" );
+        auto* bflash =
+            app.add_subcommand( "bflash", "flash firmware via bootloader" )->fallthrough();
         port_opts( *bflash, ctx->port );
 
         auto* info =

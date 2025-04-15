@@ -13,14 +13,6 @@ namespace em = emlabcpp;
 
 namespace servio::cfg
 {
-struct payload
-{
-        em::string_buffer< 16 > git_ver;
-        em::string_buffer< 32 > git_date;
-        uint32_t                id;
-
-        friend constexpr auto operator<=>( payload const&, payload const& ) = default;
-};
 
 template < auto Key, typename T >
 using reg = em::protocol::register_pair< Key, T >;
@@ -91,8 +83,7 @@ keyval make_keyval( auto val )
 
 struct context
 {
-        cfg::payload payload;
-        cfg::map     map;
+        cfg::map map;
 };
 
 // TODO: find all inlines and minimize

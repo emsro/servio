@@ -21,7 +21,6 @@ struct dispatcher
         mtr::metrics&              met;
         mon::monitor&              mon;
         cfg::map&                  cfg_map;
-        cfg::payload&              cfg_pl;
         drv::storage_iface&        stor_drv;
         cnv::converter&            conv;
         microseconds               now;

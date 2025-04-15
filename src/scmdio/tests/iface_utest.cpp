@@ -33,7 +33,6 @@ TEST( iface, base )
         drv::mock::stor    sd;
         core::core         cor{ 0_ms, gv, tm, ctl::config{ .position_limits = { -2.0F, 2.0F } } };
         cfg::map           m = cfg::get_default_config();
-        cfg::payload       pl;
         port_mock          pm( port_mock::attrs{
                      .motor    = mot,
                      .pos_drv  = gp,
@@ -42,7 +41,6 @@ TEST( iface, base )
                      .temp_drv = tm,
                      .cor      = cor,
                      .cfg_map  = m,
-                     .cfg_pl   = pl,
                      .stor_drv = sd,
         } );
 
