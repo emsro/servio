@@ -117,8 +117,7 @@ var NAVTREE =
         [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ],
-        [ "Related Symbols", "functions_rela.html", null ]
+        [ "Enumerator", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -127,7 +126,6 @@ var NAVTREE =
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -137,20 +135,20 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc_8cpp.html",
-"classservio_1_1drv_1_1hbridge.html#adc4dbb9d9b8878c96015e5e1f7af2889",
-"def_8h.html",
-"hbridge_8hpp_source.html",
-"namespaceservio.html#a00c2d45a108822e094be491c4004429b",
-"namespaceservio_1_1drv.html#a4ea163424b4d1621603871134262f897",
-"namespaceservio_1_1plt.html#ac8dc88b10301f0823d983ad1a7f4e3e7",
-"port__mock_8hpp_source.html",
-"stm32h5xx__hal__conf_8h.html#a0390418ff6315463b6ef161c63a69d43",
-"structservio_1_1core_1_1core.html#a2783edc02e723535534b6911cf26b3e8",
-"structservio_1_1drv_1_1detailed__adc__channel.html#a9490be83ec1d8ba30bd7648cab5f7a6e",
-"structservio_1_1drv_1_1tests_1_1pwm__motor__test.html",
-"structservio_1_1ftester_1_1test__system.html#a6b9805f1d928de19f74d3e0edecbc69d",
-"structservio_1_1scmdio_1_1char__port.html#ad0da16714b7652a6488cb9a525c88c57",
-"structservio_1_1sntr_1_1test__central__sentry.html#af91dc1bbf5a5560e3b050e12a4c0d7c6"
+"classservio_1_1drv_1_1hbridge.html#adf7f06e92b257bc4bf6cfeb0255971d4",
+"def_8h.html#a46ee004dacd275d957b867b340889ec9",
+"iface__utest_8cpp.html#ae5d6f4bf5f0a998c0b0a0ba766c44483",
+"namespaceservio.html#a7f26120992786718c3b52d10b3c48f89",
+"namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76ba2b59c251a1b282e9c31fd711cd6dc93a",
+"namespaceservio_1_1scmdio.html#a1ad8fcf9c2a8a99c6b80086bfcdee61d",
+"proto3_2board_8cpp.html#a6f72e0496d5ab998f9c9f5860478271a",
+"stm32h5xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21",
+"structservio_1_1ctl_1_1linear__transition__regulator.html#a7bb3e3cb9898faf10fa49a4e9a03efdc",
+"structservio_1_1drv_1_1i2c__eeprom.html#a92897591514cd2e6a56281ea05ff5bd1",
+"structservio_1_1ftest_1_1bench_1_1loop__frequency.html#af23804703c9c399f690838a3e4218348",
+"structservio_1_1iface_1_1field_3_01IDX_00_01Key_00_01void_01_4.html",
+"structservio_1_1scmdio_1_1consumer_1_1promise__type.html#a967634914e7e52489bc20651fbd1a8bb",
+"structstd_1_1formatter_3_01avakar_1_1atom_3_01As_8_8_8_01_4_00_01char_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

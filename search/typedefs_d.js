@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['page_0',['page',['../namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f',1,'servio::cfg::page'],['../cfg__storage__utest_8cpp.html#a09e62a494e130ce7a8841ddcd2e477c5',1,'page:&#160;cfg_storage_utest.cpp'],['../namespaceservio_1_1fw.html#a9ab9831a5a3afe24212ba9b5e3bca857',1,'servio::fw::page']]],
+  ['page_0',['page',['../namespaceservio_1_1cfg.html#a9433bdfbcc58ecaceece24bd28e0b173',1,'servio::cfg']]],
   ['pid_1',['pid',['../namespaceservio_1_1ctl.html#ab1ca795df93b505dddc7271740f2e3f0',1,'servio::ctl']]],
   ['pid_5fcoefficients_2',['pid_coefficients',['../namespaceservio_1_1ctl.html#aa4cf1922c9ea312468fc30bb2f68d6c5',1,'servio::ctl']]],
   ['pid_5fconf_3',['pid_conf',['../namespaceservio_1_1ctl.html#affde5dbb6a289ceda28bc8544112be1c',1,'servio::ctl']]],

@@ -8,5 +8,5 @@ var cfg_2record_8hpp =
       [ "data", "namespaceservio_1_1cfg.html#a66972d206c15053111bcbccad4288ba0", null ],
       [ "key", "namespaceservio_1_1cfg.html#ad21d5d419e323d3423aafde6f97ba8c5", null ]
     ] ],
-    [ "page", "cfg_2record_8hpp.html#a13803ac011d5d820ca7061750964e74f", null ]
+    [ "page", "cfg_2record_8hpp.html#a9433bdfbcc58ecaceece24bd28e0b173", null ]
 ];

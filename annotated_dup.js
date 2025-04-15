@@ -27,7 +27,6 @@ var annotated_dup =
         [ "keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1keyval_dup" ],
         [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ],
         [ "page_info", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1page__info", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1page__info_dup" ],
-        [ "payload", "structservio_1_1cfg_1_1payload.html", "structservio_1_1cfg_1_1payload" ],
         [ "record", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1record", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1record_dup" ]
       ] ],
       [ "cnv", "namespaceservio_1_1cnv.html", [

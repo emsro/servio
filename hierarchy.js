@@ -151,7 +151,6 @@ var hierarchy =
     [ "servio::cnv::off_scale", "namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale", null ],
     [ "servio::ftester::openocd_flash_config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1openocd__flash__config", null ],
     [ "servio::cfg::page_info", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1page__info", null ],
-    [ "servio::cfg::payload", "structservio_1_1cfg_1_1payload.html", null ],
     [ "servio::drv::period_cb_iface", "structservio_1_1drv_1_1period__cb__iface.html", [
       [ "servio::drv::adc_pooler_period_cb< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__period__cb.html", null ],
       [ "servio::drv::empty_period_cb", "structservio_1_1drv_1_1empty__period__cb.html", null ],

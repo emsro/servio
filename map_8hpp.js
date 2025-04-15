@@ -1,13 +1,11 @@
 var map_8hpp =
 [
-    [ "servio::cfg::payload", "structservio_1_1cfg_1_1payload.html", "structservio_1_1cfg_1_1payload" ],
     [ "servio::cfg::keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", [
       [ "key", "namespaceservio_1_1cfg.html#af0544dfab0920b3b31d6fdb7063445db", null ],
       [ "msg", "namespaceservio_1_1cfg.html#a01c421b775e98f6e6f964f38d1a9bdc8", null ]
     ] ],
     [ "servio::cfg::context", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context", [
-      [ "map", "namespaceservio_1_1cfg.html#a3dbb7cf8f857ae3e9ab69908e1674f69", null ],
-      [ "payload", "namespaceservio_1_1cfg.html#a85e63accec8da1d53f96ea06a0718b6c", null ]
+      [ "map", "namespaceservio_1_1cfg.html#a3dbb7cf8f857ae3e9ab69908e1674f69", null ]
     ] ],
     [ "emlabcpp::testing::value_type_converter< servio::cfg::encoder_mode >", "structemlabcpp_1_1testing_1_1value__type__converter_3_01servio_1_1cfg_1_1encoder__mode_01_4.html", null ],
     [ "map", "map_8hpp.html#abda42f815b2023fe34054fd7a2845325", null ],

@@ -21,14 +21,6 @@ var namespaceservio =
     ] ],
     [ "mon", "namespaceservio_1_1mon.html", "namespaceservio_1_1mon" ],
     [ "mtr", "namespaceservio_1_1mtr.html", "namespaceservio_1_1mtr" ],
-    [ "paging", "namespaceservio_1_1paging.html", [
-      [ "state", "namespaceservio_1_1paging.html#a20710ee777b0aec728765766e14ac975", null ],
-      [ "next", "namespaceservio_1_1paging.html#a074417afd55f8e051ad1f0307a693bf7", null ],
-      [ "A", "namespaceservio_1_1paging.html#a2fabf8c0c669f1fa520a83909c55c1c6", null ],
-      [ "B", "namespaceservio_1_1paging.html#ad02986094bea92f872032787c0472b71", null ],
-      [ "C", "namespaceservio_1_1paging.html#ad5830da9bf2143f705a083dc50c23f38", null ],
-      [ "D", "namespaceservio_1_1paging.html#a8c8e332a151dc8accb4544b3060e177e", null ]
-    ] ],
     [ "plt", "namespaceservio_1_1plt.html", "namespaceservio_1_1plt" ],
     [ "scmdio", "namespaceservio_1_1scmdio.html", "namespaceservio_1_1scmdio" ],
     [ "sim", "namespaceservio_1_1sim.html", "namespaceservio_1_1sim" ],
@@ -40,8 +32,7 @@ var namespaceservio =
       [ "get_iface_ids", "namespaceservio_1_1tests.html#aefe500b551ec67be6b9fddd7ebac42b3", null ],
       [ "TEST", "namespaceservio_1_1tests.html#ab13f735a06bbd448c82d5b45d20b76c3", null ],
       [ "TEST", "namespaceservio_1_1tests.html#ac99e95fa19ba420426c1d8c070c4cb6b", null ],
-      [ "TEST", "namespaceservio_1_1tests.html#ad23443d3e38a15ffe9889c74d4950768", null ],
-      [ "TEST", "namespaceservio_1_1tests.html#a0469f257c284b92ef2aa143ccfdbe6f3", null ]
+      [ "TEST", "namespaceservio_1_1tests.html#ad23443d3e38a15ffe9889c74d4950768", null ]
     ] ],
     [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
     [ "pwr", "structservio_1_1pwr.html", null ],

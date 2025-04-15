@@ -2,8 +2,6 @@ var namespaceservio_1_1fw =
 [
     [ "check_bool", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool", null ],
     [ "context", "structservio_1_1fw_1_1context.html", "structservio_1_1fw_1_1context" ],
-    [ "page", "namespaceservio_1_1fw.html#a9ab9831a5a3afe24212ba9b5e3bca857", null ],
-    [ "load_persistent_config", "namespaceservio_1_1fw.html#a4ef71df0b100af9e858af3aa863ef3bf", null ],
     [ "multistart", "namespaceservio_1_1fw.html#a68327591c08e30e0258912e40f476a8c", null ],
     [ "operator<<", "namespaceservio_1_1fw.html#aa615012255c33b2658c3ca4980efd38f", null ],
     [ "setup_context", "namespaceservio_1_1fw.html#a72376fa0b159e4c3fa169ba877df3e56", null ],

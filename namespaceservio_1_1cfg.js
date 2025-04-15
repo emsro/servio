@@ -5,14 +5,12 @@ var namespaceservio_1_1cfg =
     [ "keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1keyval_dup" ],
     [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ],
     [ "page_info", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1page__info", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1page__info_dup" ],
-    [ "payload", "structservio_1_1cfg_1_1payload.html", "structservio_1_1cfg_1_1payload" ],
     [ "record", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1record", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1record_dup" ],
-    [ "handler", "namespaceservio_1_1cfg.html#a8587e35d0b4b831a0423fb148e9c5df2", null ],
+    [ "handler", "namespaceservio_1_1cfg.html#aebf1441050290671f4e9721c97421e31", null ],
     [ "map", "namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325", null ],
     [ "model_name", "namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d", null ],
-    [ "page", "namespaceservio_1_1cfg.html#a13803ac011d5d820ca7061750964e74f", null ],
+    [ "page", "namespaceservio_1_1cfg.html#a9433bdfbcc58ecaceece24bd28e0b173", null ],
     [ "reg", "namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f", null ],
-    [ "reghandler", "namespaceservio_1_1cfg.html#a1c0059c37a0260639c1b3eb21d8c849e", null ],
     [ "value_message", "namespaceservio_1_1cfg.html#a8aede70f47a2a0b2a4eb2f0f9056d142", null ],
     [ "value_variant", "namespaceservio_1_1cfg.html#ab8bcf8607b8a636737d60192fbfa5da4", null ],
     [ "encoder_mode", "namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451", [
@@ -58,12 +56,6 @@ var namespaceservio_1_1cfg =
     ] ],
     [ "apply", "namespaceservio_1_1cfg.html#af51a406aac937b43c11b921dee6cf67b", null ],
     [ "calculate_current_conversion", "namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811", null ],
-    [ "find_latest_page", "namespaceservio_1_1cfg.html#aafa3ceb2fb9ae12d15da5c3c2f867bc7", null ],
-    [ "find_next_page", "namespaceservio_1_1cfg.html#a5ae71615839581b20589975997a497f5", null ],
-    [ "find_oldest_page", "namespaceservio_1_1cfg.html#a76cc3816c8e11d289dc47c27268ec5b0", null ],
-    [ "find_unused_page", "namespaceservio_1_1cfg.html#affa8761abffcaac7a2dbe37319ba5413", null ],
     [ "get_default_config", "namespaceservio_1_1cfg.html#ab1b0accd80bacf405ee88cecdbb53768", null ],
-    [ "load", "namespaceservio_1_1cfg.html#ae5ab04677caa94064e98eac75d1429e2", null ],
-    [ "make_keyval", "namespaceservio_1_1cfg.html#a9d620c785f59bfb68d9bd89fd2038581", null ],
-    [ "store", "namespaceservio_1_1cfg.html#a5400e33f9b974197675a2a38b6938cb3", null ]
+    [ "make_keyval", "namespaceservio_1_1cfg.html#a9d620c785f59bfb68d9bd89fd2038581", null ]
 ];
