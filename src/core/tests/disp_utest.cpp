@@ -174,8 +174,9 @@ TEST( core, dispatcher )
         EXPECT_EQ( sd.store_cnt, 0 );
         test( "cfg commit", R"(["OK"])"_json );
         EXPECT_EQ( sd.store_cnt, 1 );
+
         test( "cfg clear", R"(["OK"])"_json );
-        EXPECT_EQ( sd.store_cnt, 2 );
+        EXPECT_EQ( sd.clear_cnt, 1 );
 }
 
 }  // namespace servio::core::tests

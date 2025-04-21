@@ -78,6 +78,7 @@ struct temp : drv::temp_iface
 struct stor : drv::storage_iface
 {
         std::size_t store_cnt = 0;
+        std::size_t clear_cnt = 0;
 
         status store_cfg( cfg::map const& ) override
         {
@@ -93,6 +94,7 @@ struct stor : drv::storage_iface
 
         status clear_cfg() override
         {
+                clear_cnt += 1;
                 return SUCCESS;
         }
 };
