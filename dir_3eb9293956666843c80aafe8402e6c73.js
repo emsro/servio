@@ -11,6 +11,7 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
     [ "cobs_uart.cpp", "cobs__uart_8cpp.html", null ],
     [ "cobs_uart.hpp", "cobs__uart_8hpp.html", "cobs__uart_8hpp" ],
     [ "defs.hpp", "defs_8hpp.html", "defs_8hpp" ],
+    [ "drv8251.hpp", "drv8251_8hpp.html", "drv8251_8hpp" ],
     [ "dts_temp.hpp", "dts__temp_8hpp.html", "dts__temp_8hpp" ],
     [ "flash_cfg.cpp", "flash__cfg_8cpp.html", null ],
     [ "flash_cfg.hpp", "drv_2flash__cfg_8hpp.html", "drv_2flash__cfg_8hpp" ],

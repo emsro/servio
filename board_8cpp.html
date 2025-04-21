@@ -65,7 +65,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('proto4_2board_8cpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('board_8cpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('proto4_2board_8cpp.html',''); initResi
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">board.cpp File Reference</div></div>
@@ -107,6 +108,7 @@ $(document).ready(function(){initNavTree('proto4_2board_8cpp.html',''); initResi
 <code>#include &quot;<a class="el" href="char__uart_8hpp_source.html">../../drv/char_uart.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="clock_8hpp_source.html">../../drv/clock.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cobs__uart_8hpp_source.html">../../drv/cobs_uart.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drv8251_8hpp_source.html">../../drv/drv8251.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dts__temp_8hpp_source.html">../../drv/dts_temp.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drv_2flash__cfg_8hpp_source.html">../../drv/flash_cfg.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hbridge_8hpp_source.html">../../drv/hbridge.hpp</a>&quot;</code><br />
@@ -126,7 +128,7 @@ $(document).ready(function(){initNavTree('proto4_2board_8cpp.html',''); initResi
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="proto4_2board_8cpp__incl.svg" width="3255" height="594"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="board_8cpp__incl.svg" width="3618" height="594"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -141,53 +143,56 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceservio_1_1brd" id="r_namespaceservio_1_1brd"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html">servio::brd</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8b36136e5a2768136f9d44ad5ef7c56a" id="r_a8b36136e5a2768136f9d44ad5ef7c56a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a8b36136e5a2768136f9d44ad5ef7c56a">servio::brd::adc_pooler_type</a> = <a class="el" href="structservio_1_1drv_1_1adc__pooler.html">drv::adc_pooler</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set">adc_set</a> &gt;</td></tr>
+<tr class="separator:a8b36136e5a2768136f9d44ad5ef7c56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1f7c49c0c9a0737b07080952026a5ebc" id="r_a1f7c49c0c9a0737b07080952026a5ebc"><td class="memItemLeft" align="right" valign="top">consteval <a class="el" href="namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale">cnv::off_scale</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a1f7c49c0c9a0737b07080952026a5ebc">servio::brd::get_curr_coeff</a> ()</td></tr>
-<tr class="separator:a1f7c49c0c9a0737b07080952026a5ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2668116163a78a9f1c4b9993fce25530" id="r_a2668116163a78a9f1c4b9993fce25530"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">cfg::map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a2668116163a78a9f1c4b9993fce25530">servio::brd::get_default_config</a> ()</td></tr>
 <tr class="separator:a2668116163a78a9f1c4b9993fce25530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab06f5330a2d1fb447f81c8c604feb7d3" id="r_ab06f5330a2d1fb447f81c8c604feb7d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ab06f5330a2d1fb447f81c8c604feb7d3">servio::brd::flash_start_cb</a> ()</td></tr>
 <tr class="separator:ab06f5330a2d1fb447f81c8c604feb7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d8854452f43c880788d5ba944dd75c0" id="r_a0d8854452f43c880788d5ba944dd75c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a0d8854452f43c880788d5ba944dd75c0">servio::brd::flash_stop_cb</a> ()</td></tr>
 <tr class="separator:a0d8854452f43c880788d5ba944dd75c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55924a8071033769a12ad0e752f67c8b" id="r_a55924a8071033769a12ad0e752f67c8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#a55924a8071033769a12ad0e752f67c8b">ADC1_IRQHandler</a> ()</td></tr>
+<tr class="memitem:a55924a8071033769a12ad0e752f67c8b" id="r_a55924a8071033769a12ad0e752f67c8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#a55924a8071033769a12ad0e752f67c8b">ADC1_IRQHandler</a> ()</td></tr>
 <tr class="separator:a55924a8071033769a12ad0e752f67c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac13ffcf8c8dd96138053b8a854004583" id="r_ac13ffcf8c8dd96138053b8a854004583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#ac13ffcf8c8dd96138053b8a854004583">TIM1_UP_IRQHandler</a> ()</td></tr>
+<tr class="memitem:ac13ffcf8c8dd96138053b8a854004583" id="r_ac13ffcf8c8dd96138053b8a854004583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#ac13ffcf8c8dd96138053b8a854004583">TIM1_UP_IRQHandler</a> ()</td></tr>
 <tr class="separator:ac13ffcf8c8dd96138053b8a854004583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69ed77607e30e5935ea2d6994e94be10" id="r_a69ed77607e30e5935ea2d6994e94be10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#a69ed77607e30e5935ea2d6994e94be10">TIM2_IRQHandler</a> ()</td></tr>
+<tr class="memitem:a69ed77607e30e5935ea2d6994e94be10" id="r_a69ed77607e30e5935ea2d6994e94be10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#a69ed77607e30e5935ea2d6994e94be10">TIM2_IRQHandler</a> ()</td></tr>
 <tr class="separator:a69ed77607e30e5935ea2d6994e94be10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adec38e248f7515f0ee427630d5ff98ba" id="r_adec38e248f7515f0ee427630d5ff98ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba">USART2_IRQHandler</a> ()</td></tr>
+<tr class="memitem:adec38e248f7515f0ee427630d5ff98ba" id="r_adec38e248f7515f0ee427630d5ff98ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#adec38e248f7515f0ee427630d5ff98ba">USART2_IRQHandler</a> ()</td></tr>
 <tr class="separator:adec38e248f7515f0ee427630d5ff98ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27fb9800d727337121da9525aca0b557" id="r_a27fb9800d727337121da9525aca0b557"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#a27fb9800d727337121da9525aca0b557">USART1_IRQHandler</a> ()</td></tr>
+<tr class="memitem:a27fb9800d727337121da9525aca0b557" id="r_a27fb9800d727337121da9525aca0b557"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#a27fb9800d727337121da9525aca0b557">USART1_IRQHandler</a> ()</td></tr>
 <tr class="separator:a27fb9800d727337121da9525aca0b557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4f8ebd906a5475a5817237942b25f62" id="r_ab4f8ebd906a5475a5817237942b25f62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#ab4f8ebd906a5475a5817237942b25f62">GPDMA1_Channel0_IRQHandler</a> ()</td></tr>
+<tr class="memitem:ab4f8ebd906a5475a5817237942b25f62" id="r_ab4f8ebd906a5475a5817237942b25f62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#ab4f8ebd906a5475a5817237942b25f62">GPDMA1_Channel0_IRQHandler</a> ()</td></tr>
 <tr class="separator:ab4f8ebd906a5475a5817237942b25f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a491410644cceae6a73091be92aa6f5d5" id="r_a491410644cceae6a73091be92aa6f5d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#a491410644cceae6a73091be92aa6f5d5">GPDMA1_Channel1_IRQHandler</a> ()</td></tr>
+<tr class="memitem:a491410644cceae6a73091be92aa6f5d5" id="r_a491410644cceae6a73091be92aa6f5d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#a491410644cceae6a73091be92aa6f5d5">GPDMA1_Channel1_IRQHandler</a> ()</td></tr>
 <tr class="separator:a491410644cceae6a73091be92aa6f5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39c0c4c797bc531071ac66cb95c2cae8" id="r_a39c0c4c797bc531071ac66cb95c2cae8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#a39c0c4c797bc531071ac66cb95c2cae8">GPDMA1_Channel2_IRQHandler</a> ()</td></tr>
+<tr class="memitem:a39c0c4c797bc531071ac66cb95c2cae8" id="r_a39c0c4c797bc531071ac66cb95c2cae8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#a39c0c4c797bc531071ac66cb95c2cae8">GPDMA1_Channel2_IRQHandler</a> ()</td></tr>
 <tr class="separator:a39c0c4c797bc531071ac66cb95c2cae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9f9cffda230ddffc3b7e5ac2ae393ac" id="r_aa9f9cffda230ddffc3b7e5ac2ae393ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#aa9f9cffda230ddffc3b7e5ac2ae393ac">I2C2_ER_IRQHandler</a> ()</td></tr>
+<tr class="memitem:aa9f9cffda230ddffc3b7e5ac2ae393ac" id="r_aa9f9cffda230ddffc3b7e5ac2ae393ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#aa9f9cffda230ddffc3b7e5ac2ae393ac">I2C2_ER_IRQHandler</a> ()</td></tr>
 <tr class="separator:aa9f9cffda230ddffc3b7e5ac2ae393ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa32a80208798d6132876a58823ff6202" id="r_aa32a80208798d6132876a58823ff6202"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#aa32a80208798d6132876a58823ff6202">I2C2_EV_IRQHandler</a> ()</td></tr>
+<tr class="memitem:aa32a80208798d6132876a58823ff6202" id="r_aa32a80208798d6132876a58823ff6202"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#aa32a80208798d6132876a58823ff6202">I2C2_EV_IRQHandler</a> ()</td></tr>
 <tr class="separator:aa32a80208798d6132876a58823ff6202"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a641bc903b980920fddc6954a40e4ec51" id="r_a641bc903b980920fddc6954a40e4ec51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#a641bc903b980920fddc6954a40e4ec51">HAL_TIM_PeriodElapsedCallback</a> (TIM_HandleTypeDef *h)</td></tr>
+<tr class="memitem:a641bc903b980920fddc6954a40e4ec51" id="r_a641bc903b980920fddc6954a40e4ec51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#a641bc903b980920fddc6954a40e4ec51">HAL_TIM_PeriodElapsedCallback</a> (TIM_HandleTypeDef *h)</td></tr>
 <tr class="separator:a641bc903b980920fddc6954a40e4ec51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94a249281eebfa3bd9aa3f979cc9f03d" id="r_a94a249281eebfa3bd9aa3f979cc9f03d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#a94a249281eebfa3bd9aa3f979cc9f03d">HAL_UART_TxCpltCallback</a> (UART_HandleTypeDef *h)</td></tr>
+<tr class="memitem:a94a249281eebfa3bd9aa3f979cc9f03d" id="r_a94a249281eebfa3bd9aa3f979cc9f03d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#a94a249281eebfa3bd9aa3f979cc9f03d">HAL_UART_TxCpltCallback</a> (UART_HandleTypeDef *h)</td></tr>
 <tr class="separator:a94a249281eebfa3bd9aa3f979cc9f03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84719ef5a2750117d3d1b6e105d8f148" id="r_a84719ef5a2750117d3d1b6e105d8f148"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#a84719ef5a2750117d3d1b6e105d8f148">HAL_UART_RxCpltCallback</a> (UART_HandleTypeDef *h)</td></tr>
+<tr class="memitem:a84719ef5a2750117d3d1b6e105d8f148" id="r_a84719ef5a2750117d3d1b6e105d8f148"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#a84719ef5a2750117d3d1b6e105d8f148">HAL_UART_RxCpltCallback</a> (UART_HandleTypeDef *h)</td></tr>
 <tr class="separator:a84719ef5a2750117d3d1b6e105d8f148"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9825e42db142e52d9cd233081c2d018" id="r_af9825e42db142e52d9cd233081c2d018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#af9825e42db142e52d9cd233081c2d018">HAL_UART_ErrorCallback</a> (UART_HandleTypeDef *h)</td></tr>
+<tr class="memitem:af9825e42db142e52d9cd233081c2d018" id="r_af9825e42db142e52d9cd233081c2d018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#af9825e42db142e52d9cd233081c2d018">HAL_UART_ErrorCallback</a> (UART_HandleTypeDef *h)</td></tr>
 <tr class="separator:af9825e42db142e52d9cd233081c2d018"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14eed1aeca4fd0404c553698e9370c85" id="r_a14eed1aeca4fd0404c553698e9370c85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#a14eed1aeca4fd0404c553698e9370c85">HAL_ADC_ConvCpltCallback</a> (ADC_HandleTypeDef *h)</td></tr>
+<tr class="memitem:a14eed1aeca4fd0404c553698e9370c85" id="r_a14eed1aeca4fd0404c553698e9370c85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#a14eed1aeca4fd0404c553698e9370c85">HAL_ADC_ConvCpltCallback</a> (ADC_HandleTypeDef *h)</td></tr>
 <tr class="separator:a14eed1aeca4fd0404c553698e9370c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6540ad5da39d6ceff72603fe4fd2fc1a" id="r_a6540ad5da39d6ceff72603fe4fd2fc1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proto4_2board_8cpp.html#a6540ad5da39d6ceff72603fe4fd2fc1a">HAL_ADC_ErrorCallback</a> (ADC_HandleTypeDef *h)</td></tr>
+<tr class="memitem:a6540ad5da39d6ceff72603fe4fd2fc1a" id="r_a6540ad5da39d6ceff72603fe4fd2fc1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8cpp.html#a6540ad5da39d6ceff72603fe4fd2fc1a">HAL_ADC_ErrorCallback</a> (ADC_HandleTypeDef *h)</td></tr>
 <tr class="separator:a6540ad5da39d6ceff72603fe4fd2fc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48e26a3111574036c12af8e0ad948472" id="r_a48e26a3111574036c12af8e0ad948472"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1brd.html#a88ed8ca615b2e45acfd0c91e5a3a4212">adc_pooler_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a48e26a3111574036c12af8e0ad948472">servio::brd::adc_pooler_setup</a> (bool enable_pos)</td></tr>
+<tr class="memitem:a48e26a3111574036c12af8e0ad948472" id="r_a48e26a3111574036c12af8e0ad948472"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1brd.html#a8b36136e5a2768136f9d44ad5ef7c56a">adc_pooler_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a48e26a3111574036c12af8e0ad948472">servio::brd::adc_pooler_setup</a> (bool enable_pos)</td></tr>
 <tr class="separator:a48e26a3111574036c12af8e0ad948472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e933c86ae59b33c53a15dd89f58febc" id="r_a7e933c86ae59b33c53a15dd89f58febc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1hbridge.html">drv::hbridge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a7e933c86ae59b33c53a15dd89f58febc">servio::brd::hbridge_setup</a> ()</td></tr>
 <tr class="separator:a7e933c86ae59b33c53a15dd89f58febc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a666117f8f817f737641c61f86ff8641e" id="r_a666117f8f817f737641c61f86ff8641e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a666117f8f817f737641c61f86ff8641e">servio::brd::comms_setup</a> ()</td></tr>
+<tr class="memitem:a666117f8f817f737641c61f86ff8641e" id="r_a666117f8f817f737641c61f86ff8641e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1com__iface.html">drv::com_iface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a666117f8f817f737641c61f86ff8641e">servio::brd::comms_setup</a> ()</td></tr>
 <tr class="separator:a666117f8f817f737641c61f86ff8641e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a32ee93be6ec4e7cdc01ac78546f79f" id="r_a3a32ee93be6ec4e7cdc01ac78546f79f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1com__iface.html">drv::com_iface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a3a32ee93be6ec4e7cdc01ac78546f79f">servio::brd::setup_debug_comms</a> ()</td></tr>
 <tr class="memdesc:a3a32ee93be6ec4e7cdc01ac78546f79f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize debug interface.  <br /></td></tr>
@@ -213,16 +218,72 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a1a626482a7be9ab6f7a948b1f751c4bc" id="r_a1a626482a7be9ab6f7a948b1f751c4bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">drv::pin_cfg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a1a626482a7be9ab6f7a948b1f751c4bc">servio::brd::HBRDIGE_VREF_PIN</a></td></tr>
+<tr class="separator:a1a626482a7be9ab6f7a948b1f751c4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081ab2c39471f1a64575875b86b24f9b" id="r_a081ab2c39471f1a64575875b86b24f9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context">cfg::context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a081ab2c39471f1a64575875b86b24f9b">servio::brd::CFG</a> { .map = <a class="el" href="namespaceservio_1_1brd.html#a2668116163a78a9f1c4b9993fce25530">get_default_config</a>() }</td></tr>
+<tr class="separator:a081ab2c39471f1a64575875b86b24f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a191cac90543a6fe4aa7a94e8134a184a" id="r_a191cac90543a6fe4aa7a94e8134a184a"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">servio::brd::TIM2_HANDLE</a> = {}</td></tr>
+<tr class="separator:a191cac90543a6fe4aa7a94e8134a184a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9374215c588b74922836fbf5ab2602ca" id="r_a9374215c588b74922836fbf5ab2602ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1clock.html">drv::clock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">servio::brd::CLOCK</a> { <a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a> }</td></tr>
+<tr class="separator:a9374215c588b74922836fbf5ab2602ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a9ba68956eb017a599db3ce8d3c109a" id="r_a9a9ba68956eb017a599db3ce8d3c109a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1leds.html">drv::leds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9a9ba68956eb017a599db3ce8d3c109a">servio::brd::LEDS</a> { &amp;<a class="el" href="namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a">TIM2_HANDLE</a> }</td></tr>
+<tr class="separator:a9a9ba68956eb017a599db3ce8d3c109a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addfa5c15bed763dcc4f894ac92d33f7f" id="r_addfa5c15bed763dcc4f894ac92d33f7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record">sntr::record</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#addfa5c15bed763dcc4f894ac92d33f7f">servio::brd::INOPERABLE_RECORDS</a> [16]</td></tr>
+<tr class="separator:addfa5c15bed763dcc4f894ac92d33f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e9012d3c60aec6e72b21b7d38255e7" id="r_ac1e9012d3c60aec6e72b21b7d38255e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record">sntr::record</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ac1e9012d3c60aec6e72b21b7d38255e7">servio::brd::DEGRADED_RECORDS</a> [128]</td></tr>
+<tr class="separator:ac1e9012d3c60aec6e72b21b7d38255e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b4664ac58b840d2e0f97c5cc2bcf43" id="r_ac9b4664ac58b840d2e0f97c5cc2bcf43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1sntr_1_1central__sentry.html">sntr::central_sentry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43">servio::brd::CENTRAL_SENTRY</a></td></tr>
+<tr class="separator:ac9b4664ac58b840d2e0f97c5cc2bcf43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acebef877469ed3877cd3aed31f76525e" id="r_acebef877469ed3877cd3aed31f76525e"><td class="memItemLeft" align="right" valign="top">ADC_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e">servio::brd::ADC_HANDLE</a></td></tr>
+<tr class="separator:acebef877469ed3877cd3aed31f76525e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e12a8575b75c1e84bb664d036617d14" id="r_a4e12a8575b75c1e84bb664d036617d14"><td class="memItemLeft" align="right" valign="top">DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a4e12a8575b75c1e84bb664d036617d14">servio::brd::GPDMA1_Ch0_HANDLE</a></td></tr>
 <tr class="separator:a4e12a8575b75c1e84bb664d036617d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2809e836bdf98c64f1024daeb658ba3" id="r_af2809e836bdf98c64f1024daeb658ba3"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#af2809e836bdf98c64f1024daeb658ba3">servio::brd::TIM6_HANDLE</a></td></tr>
+<tr class="separator:af2809e836bdf98c64f1024daeb658ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991f10f53fec7bf1caa79b8438ed01c1" id="r_a991f10f53fec7bf1caa79b8438ed01c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1brd.html#a8b36136e5a2768136f9d44ad5ef7c56a">adc_pooler_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">servio::brd::ADC_POOLER</a> { <a class="el" href="namespaceservio_1_1brd.html#acebef877469ed3877cd3aed31f76525e">ADC_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#a4e12a8575b75c1e84bb664d036617d14">GPDMA1_Ch0_HANDLE</a>, <a class="el" href="namespaceservio_1_1brd.html#af2809e836bdf98c64f1024daeb658ba3">TIM6_HANDLE</a> }</td></tr>
+<tr class="separator:a991f10f53fec7bf1caa79b8438ed01c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fd563d901e739e49f3a9b8754686117" id="r_a9fd563d901e739e49f3a9b8754686117"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1adc__pooler__period__cb.html">drv::adc_pooler_period_cb</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a9fd563d901e739e49f3a9b8754686117">servio::brd::ADC_PERIOD_CB</a></td></tr>
+<tr class="separator:a9fd563d901e739e49f3a9b8754686117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a426f85a0dea9eb2dd9aa43e5f98f91e0" id="r_a426f85a0dea9eb2dd9aa43e5f98f91e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1adc__pooler__vcc.html">drv::adc_pooler_vcc</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a426f85a0dea9eb2dd9aa43e5f98f91e0">servio::brd::ADC_VCC</a></td></tr>
+<tr class="separator:a426f85a0dea9eb2dd9aa43e5f98f91e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5f38137289f200368426a1f7298b834" id="r_ae5f38137289f200368426a1f7298b834"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1adc__pooler__position.html">drv::adc_pooler_position</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ae5f38137289f200368426a1f7298b834">servio::brd::ADC_POSITION</a></td></tr>
+<tr class="separator:ae5f38137289f200368426a1f7298b834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23deb8d32711e253336fa079cbff2dde" id="r_a23deb8d32711e253336fa079cbff2dde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1adc__pooler__current.html">drv::adc_pooler_current</a>&lt; <a class="el" href="namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1">ADC_POOLER</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a23deb8d32711e253336fa079cbff2dde">servio::brd::ADC_CURRENT</a></td></tr>
+<tr class="separator:a23deb8d32711e253336fa079cbff2dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b7ae930f330eca472cc2d8756805cd" id="r_a94b7ae930f330eca472cc2d8756805cd"><td class="memItemLeft" align="right" valign="top">UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">servio::brd::UART2_HANDLE</a> {}</td></tr>
+<tr class="separator:a94b7ae930f330eca472cc2d8756805cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a617eab611ab9411ef972a8dcaee6236b" id="r_a617eab611ab9411ef972a8dcaee6236b"><td class="memItemLeft" align="right" valign="top">DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a617eab611ab9411ef972a8dcaee6236b">servio::brd::GPDMA1_Ch2_HANDLE</a> {}</td></tr>
 <tr class="separator:a617eab611ab9411ef972a8dcaee6236b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7acc0f3dbfde0575a7230b2a53744d5" id="r_ad7acc0f3dbfde0575a7230b2a53744d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1cobs__uart.html">drv::cobs_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a> { &quot;dcomms&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43">CENTRAL_SENTRY</a>, <a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd">UART2_HANDLE</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#a617eab611ab9411ef972a8dcaee6236b">GPDMA1_Ch2_HANDLE</a> }</td></tr>
+<tr class="separator:ad7acc0f3dbfde0575a7230b2a53744d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae003e88b83b7e7fad39fff209ffcc4ef" id="r_ae003e88b83b7e7fad39fff209ffcc4ef"><td class="memItemLeft" align="right" valign="top">UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">servio::brd::UART1_HANDLE</a> {}</td></tr>
+<tr class="separator:ae003e88b83b7e7fad39fff209ffcc4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76d7d9f64898e440e0a213f703835653" id="r_a76d7d9f64898e440e0a213f703835653"><td class="memItemLeft" align="right" valign="top">DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a76d7d9f64898e440e0a213f703835653">servio::brd::GPDMA1_Ch1_HANDLE</a> {}</td></tr>
 <tr class="separator:a76d7d9f64898e440e0a213f703835653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a547f64614abb964e99e80d7a6bde741b" id="r_a547f64614abb964e99e80d7a6bde741b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1char__uart.html">drv::char_uart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a547f64614abb964e99e80d7a6bde741b">servio::brd::COMMS</a> { &quot;comms&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b4664ac58b840d2e0f97c5cc2bcf43">CENTRAL_SENTRY</a>, <a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">CLOCK</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef">UART1_HANDLE</a>, &amp;<a class="el" href="namespaceservio_1_1brd.html#a76d7d9f64898e440e0a213f703835653">GPDMA1_Ch1_HANDLE</a> }</td></tr>
+<tr class="separator:a547f64614abb964e99e80d7a6bde741b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bce2edc1a38d3055b24c79c9b7a24fc" id="r_a5bce2edc1a38d3055b24c79c9b7a24fc"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc">servio::brd::TIM1_HANDLE</a> {}</td></tr>
+<tr class="separator:a5bce2edc1a38d3055b24c79c9b7a24fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667b31fa6ec529d3b42f5d74755336db" id="r_a667b31fa6ec529d3b42f5d74755336db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1hbridge.html">drv::hbridge</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">servio::brd::HBRIDGE</a> { &amp;<a class="el" href="namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc">TIM1_HANDLE</a> }</td></tr>
+<tr class="separator:a667b31fa6ec529d3b42f5d74755336db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac98826a0db7719c6623fe0d921bc6962" id="r_ac98826a0db7719c6623fe0d921bc6962"><td class="memItemLeft" align="right" valign="top">DTS_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ac98826a0db7719c6623fe0d921bc6962">servio::brd::DTS_HANDLE</a> {}</td></tr>
+<tr class="separator:ac98826a0db7719c6623fe0d921bc6962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f72e0496d5ab998f9c9f5860478271a" id="r_a6f72e0496d5ab998f9c9f5860478271a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1dts__temp.html">drv::dts_temp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a6f72e0496d5ab998f9c9f5860478271a">servio::brd::DTS_DRV</a> { <a class="el" href="namespaceservio_1_1brd.html#ac98826a0db7719c6623fe0d921bc6962">DTS_HANDLE</a> }</td></tr>
+<tr class="separator:a6f72e0496d5ab998f9c9f5860478271a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3461a2b66a48bb2ff01731378427b6e" id="r_ad3461a2b66a48bb2ff01731378427b6e"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ad3461a2b66a48bb2ff01731378427b6e">servio::brd::TIM3_HANDLE</a> {}</td></tr>
+<tr class="separator:ad3461a2b66a48bb2ff01731378427b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f7e0ef32154098de4eef8563f77aa33" id="r_a8f7e0ef32154098de4eef8563f77aa33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classservio_1_1drv_1_1quad__encoder.html">drv::quad_encoder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a8f7e0ef32154098de4eef8563f77aa33">servio::brd::QUAD</a> { <a class="el" href="namespaceservio_1_1brd.html#ad3461a2b66a48bb2ff01731378427b6e">TIM3_HANDLE</a> }</td></tr>
+<tr class="separator:a8f7e0ef32154098de4eef8563f77aa33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af60883934036a3959a709e9d81fb0999" id="r_af60883934036a3959a709e9d81fb0999"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#af60883934036a3959a709e9d81fb0999">servio::brd::QUAD_TRIGGER_TIMER</a> = nullptr</td></tr>
+<tr class="separator:af60883934036a3959a709e9d81fb0999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7047a111e0cca6a2e255c57bd604a300" id="r_a7047a111e0cca6a2e255c57bd604a300"><td class="memItemLeft" align="right" valign="top">I2C_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a7047a111e0cca6a2e255c57bd604a300">servio::brd::I2C2_HANDLE</a> {}</td></tr>
 <tr class="separator:a7047a111e0cca6a2e255c57bd604a300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af51294555f0d709d8eeff3e8a42817aa" id="r_af51294555f0d709d8eeff3e8a42817aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1i2c__eeprom.html">drv::i2c_eeprom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#af51294555f0d709d8eeff3e8a42817aa">servio::brd::EEPROM</a> { 0b1010'0000, 65'535u, 2'000u, <a class="el" href="namespaceservio_1_1brd.html#a7047a111e0cca6a2e255c57bd604a300">I2C2_HANDLE</a> }</td></tr>
 <tr class="separator:af51294555f0d709d8eeff3e8a42817aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad966d7bc309628fe42f3784ce52dab6f" id="r_ad966d7bc309628fe42f3784ce52dab6f"><td class="memItemLeft" align="right" valign="top">std::array&lt; em::view&lt; std::byte * &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#ad966d7bc309628fe42f3784ce52dab6f">servio::brd::PERSISTENT_BLOCKS</a> { <a class="el" href="namespaceservio.html#a7f26120992786718c3b52d10b3c48f89">page_at</a>( 0 ), <a class="el" href="namespaceservio.html#a7f26120992786718c3b52d10b3c48f89">page_at</a>( 1 ) }</td></tr>
+<tr class="separator:ad966d7bc309628fe42f3784ce52dab6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b2edc3596fd260a33fb0ad364801d91" id="r_a5b2edc3596fd260a33fb0ad364801d91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1drv_1_1flash__storage.html">drv::flash_storage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1brd.html#a5b2edc3596fd260a33fb0ad364801d91">servio::brd::FLASH_STORAGE</a> { <a class="el" href="namespaceservio_1_1brd.html#ad966d7bc309628fe42f3784ce52dab6f">PERSISTENT_BLOCKS</a>, <a class="el" href="namespaceservio_1_1brd.html#ab06f5330a2d1fb447f81c8c604feb7d3">flash_start_cb</a>, <a class="el" href="namespaceservio_1_1brd.html#a0d8854452f43c880788d5ba944dd75c0">flash_stop_cb</a> }</td></tr>
+<tr class="separator:a5b2edc3596fd260a33fb0ad364801d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1brd_1_1adc__set" id="structservio_1_1brd_1_1adc__set"></a>
@@ -245,12 +306,6 @@ Variables</h2></td></tr>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a52eada32164a05c9bb024618c95dfcf1" name="a52eada32164a05c9bb024618c95dfcf1"></a>typedef chan_ids</td>
-<td class="fieldname">
-id_type</td>
-<td class="fielddoc">
-</td></tr>
 <tr><td class="fieldtype">
 <a id="a52eada32164a05c9bb024618c95dfcf1" name="a52eada32164a05c9bb024618c95dfcf1"></a>typedef chan_ids</td>
 <td class="fieldname">
@@ -415,7 +470,7 @@ vcc { { &quot;vcc&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b466
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">servio::brd::CLOCK</a>, <a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">servio::brd::HBRIDGE</a>, <a class="el" href="classservio_1_1drv_1_1quad__encoder.html#a3f6c31db0e0329f702f59ba91542cb5a">servio::drv::quad_encoder::on_tick_irq()</a>, <a class="el" href="namespaceservio_1_1brd.html#a8f7e0ef32154098de4eef8563f77aa33">servio::brd::QUAD</a>, <a class="el" href="namespaceservio_1_1brd.html#a7c9221057f8d0df6c264dae1c8a75fd6">servio::brd::QUAD_TRIGGER_TIMER</a>, <a class="el" href="classservio_1_1drv_1_1clock.html#a4c73be0f0f7c1973f0022b3ed10dd9e8">servio::drv::clock::timer_period_irq()</a>, and <a class="el" href="classservio_1_1drv_1_1hbridge.html#aba898e36f0927115d4f26073d9de3937">servio::drv::hbridge::timer_period_irq()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a9374215c588b74922836fbf5ab2602ca">servio::brd::CLOCK</a>, <a class="el" href="namespaceservio_1_1brd.html#a667b31fa6ec529d3b42f5d74755336db">servio::brd::HBRIDGE</a>, <a class="el" href="classservio_1_1drv_1_1quad__encoder.html#a3f6c31db0e0329f702f59ba91542cb5a">servio::drv::quad_encoder::on_tick_irq()</a>, <a class="el" href="namespaceservio_1_1brd.html#a8f7e0ef32154098de4eef8563f77aa33">servio::brd::QUAD</a>, <a class="el" href="namespaceservio_1_1brd.html#af60883934036a3959a709e9d81fb0999">servio::brd::QUAD_TRIGGER_TIMER</a>, <a class="el" href="classservio_1_1drv_1_1clock.html#a4c73be0f0f7c1973f0022b3ed10dd9e8">servio::drv::clock::timer_period_irq()</a>, and <a class="el" href="classservio_1_1drv_1_1hbridge.html#aba898e36f0927115d4f26073d9de3937">servio::drv::hbridge::timer_period_irq()</a>.</p>
 
 </div>
 </div>
@@ -435,7 +490,7 @@ vcc { { &quot;vcc&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b466
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a547f64614abb964e99e80d7a6bde741b">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a1712f7ee5425ac6e5c1b12a209ffbbf1">servio::drv::cobs_uart::err_irq()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a547f64614abb964e99e80d7a6bde741b">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, <a class="el" href="structservio_1_1drv_1_1char__uart.html#abd6cedba4c3c5adcc759615ced5b631b">servio::drv::char_uart::err_irq()</a>, and <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a1712f7ee5425ac6e5c1b12a209ffbbf1">servio::drv::cobs_uart::err_irq()</a>.</p>
 
 </div>
 </div>
@@ -455,7 +510,7 @@ vcc { { &quot;vcc&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b466
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a547f64614abb964e99e80d7a6bde741b">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">servio::drv::cobs_uart::rx_cplt_irq()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a547f64614abb964e99e80d7a6bde741b">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, <a class="el" href="structservio_1_1drv_1_1char__uart.html#ab9b0dccea4114cbc61b616b8d4ee5941">servio::drv::char_uart::rx_cplt_irq()</a>, and <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#a640fcbdc07840b36a868426eec078e67">servio::drv::cobs_uart::rx_cplt_irq()</a>.</p>
 
 </div>
 </div>
@@ -475,7 +530,7 @@ vcc { { &quot;vcc&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b466
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a547f64614abb964e99e80d7a6bde741b">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, and <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">servio::drv::cobs_uart::tx_cplt_irq()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1brd.html#a547f64614abb964e99e80d7a6bde741b">servio::brd::COMMS</a>, <a class="el" href="namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5">servio::brd::DEBUG_COMMS</a>, <a class="el" href="structservio_1_1drv_1_1char__uart.html#a4e5d99e72f02c6bc94dbd77d981f2627">servio::drv::char_uart::tx_cplt_irq()</a>, and <a class="el" href="structservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb">servio::drv::cobs_uart::tx_cplt_irq()</a>.</p>
 
 </div>
 </div>
@@ -598,8 +653,8 @@ vcc { { &quot;vcc&quot;, <a class="el" href="namespaceservio_1_1brd.html#ac9b466
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5e799c239320254db95d54212428175b.html">brd</a></li><li class="navelem"><a class="el" href="dir_82b0596e20b09fade96ec7a36283f1bb.html">proto4</a></li><li class="navelem"><a class="el" href="proto4_2board_8cpp.html">board.cpp</a></li>
-    <li class="footer">Generated on Mon Apr 21 2025 08:03:49 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5e799c239320254db95d54212428175b.html">brd</a></li><li class="navelem"><a class="el" href="dir_82b0596e20b09fade96ec7a36283f1bb.html">proto4</a></li><li class="navelem"><a class="el" href="board_8cpp.html">board.cpp</a></li>
+    <li class="footer">Generated on Mon Apr 21 2025 11:43:30 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

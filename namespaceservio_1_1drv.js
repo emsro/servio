@@ -1,6 +1,9 @@
 var namespaceservio_1_1drv =
 [
     [ "bits", "namespaceservio_1_1drv_1_1bits.html", "namespaceservio_1_1drv_1_1bits" ],
+    [ "drv8251", "namespaceservio_1_1drv_1_1drv8251.html", [
+      [ "get_curr_coeff", "namespaceservio_1_1drv_1_1drv8251.html#a137ccaabbaf7114ac8aed68632e19bf5", null ]
+    ] ],
     [ "mock", "namespaceservio_1_1drv_1_1mock.html", "namespaceservio_1_1drv_1_1mock" ],
     [ "tests", "namespaceservio_1_1drv_1_1tests.html", "namespaceservio_1_1drv_1_1tests" ],
     [ "adc_channel", "structservio_1_1drv_1_1adc__channel.html", "structservio_1_1drv_1_1adc__channel" ],

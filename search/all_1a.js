@@ -25,7 +25,7 @@ var searchData=
   ['period_5fstart_22',['period_start',['../structservio_1_1drv_1_1detailed__adc__channel.html#a39a7fefb8fb21d6f6c600eead712b709',1,'servio::drv::detailed_adc_channel::period_start()'],['../structservio_1_1drv_1_1adc__channel.html#addb153a7d723e9d1e935dd07fd456f01',1,'servio::drv::adc_channel::period_start()']]],
   ['period_5fstop_23',['period_stop',['../structservio_1_1drv_1_1detailed__adc__channel.html#af780e6e5c11f56ae70521efc5137259a',1,'servio::drv::detailed_adc_channel::period_stop()'],['../structservio_1_1drv_1_1adc__channel.html#a0ce47e9badd775a7886272e30c6c1595',1,'servio::drv::adc_channel::period_stop()']]],
   ['persistent_20configuration_24',['REQ6.5 Persistent configuration',['../config.html#autotoc_md44',1,'']]],
-  ['persistent_5fblocks_25',['PERSISTENT_BLOCKS',['../namespaceservio_1_1brd.html#a0c3ea303fb4da0872e1f15dec6181e42',1,'servio::brd']]],
+  ['persistent_5fblocks_25',['PERSISTENT_BLOCKS',['../namespaceservio_1_1brd.html#ad966d7bc309628fe42f3784ce52dab6f',1,'servio::brd']]],
   ['pi_26',['pi',['../namespaceservio.html#a20c15193768c59a28a88e172aba5ab20',1,'servio']]],
   ['pid_27',['pid',['../namespaceservio_1_1ctl.html#ab1ca795df93b505dddc7271740f2e3f0',1,'servio::ctl']]],
   ['pid_5fautotune_2ehpp_28',['pid_autotune.hpp',['../pid__autotune_8hpp.html',1,'']]],
