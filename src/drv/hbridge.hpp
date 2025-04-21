@@ -15,7 +15,6 @@ namespace servio::drv
 
 inline empty_period_cb EMPTY_PERIOD_CB;
 
-// TODO: add engage/disengage mode that switches this to 0/0 on hbridge
 class hbridge : public pwm_motor_iface, public period_iface
 {
 public:

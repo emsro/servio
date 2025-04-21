@@ -6,6 +6,7 @@
 #include "../../drv/char_uart.hpp"
 #include "../../drv/clock.hpp"
 #include "../../drv/cobs_uart.hpp"
+#include "../../drv/drv8251.hpp"
 #include "../../drv/dts_temp.hpp"
 #include "../../drv/flash_cfg.hpp"
 #include "../../drv/hbridge.hpp"
@@ -38,20 +39,11 @@ drv::pin_cfg HBRDIGE_VREF_PIN{
     .pull = GPIO_PULLDOWN,
 };
 
-// XXX: duplicated and actually property of our hbridge
-consteval cnv::off_scale get_curr_coeff()
-{
-        // mirror scale: 1575 uA/A
-        // resistor: 1k
-        constexpr float gain = 1'575.F / 1'000'000.F;
-        return cnv::calc_current_conversion( 3.3F, 0.0F, 1 << 12, 1'000.F, gain );
-}
-
 cfg::map get_default_config()
 {
         cfg::map m = plt::get_default_config();
 
-        cnv::off_scale const curr_cfg = get_curr_coeff();
+        cnv::off_scale const curr_cfg = drv::drv8251::get_curr_coeff();
 
         m.set_val< cfg::key::CURRENT_CONV_SCALE >( curr_cfg.scale );
         m.set_val< cfg::key::CURRENT_CONV_OFFSET >( curr_cfg.offset );
@@ -593,7 +585,8 @@ status setup_board()
 
 core::drivers setup_core_drivers()
 {
-        FLASH_STORAGE.load_cfg( CFG.map );
+        if ( FLASH_STORAGE.load_cfg( CFG.map ) != SUCCESS )
+                fw::stop_exec();
 
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != SUCCESS )

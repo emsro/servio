@@ -108,7 +108,6 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
 
   add_subdirectory(src)
-  add_subdirectory(src/brd/proto3)
   add_subdirectory(src/brd/proto4)
 
 else()
