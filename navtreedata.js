@@ -145,10 +145,10 @@ var NAVTREEINDEX =
 "stm32h5xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21",
 "structservio_1_1ctl_1_1linear__transition__regulator.html#a7bb3e3cb9898faf10fa49a4e9a03efdc",
 "structservio_1_1drv_1_1i2c__eeprom.html#a92897591514cd2e6a56281ea05ff5bd1",
-"structservio_1_1ftest_1_1bench_1_1loop__frequency.html#af23804703c9c399f690838a3e4218348",
-"structservio_1_1iface_1_1field_3_01IDX_00_01Key_00_01void_01_4.html",
-"structservio_1_1scmdio_1_1consumer_1_1promise__type.html#a967634914e7e52489bc20651fbd1a8bb",
-"structstd_1_1formatter_3_01avakar_1_1atom_3_01As_8_8_8_01_4_00_01char_01_4.html"
+"structservio_1_1ftest_1_1bench_1_1loop__frequency.html#ae8cf5ea3c566b35c1e31d4d6e9a0af9e",
+"structservio_1_1iface_1_1field.html#ab42ca7a6ad090e3aa8970eb9f09edb37",
+"structservio_1_1scmdio_1_1consumer_1_1promise__type.html#a5d2306048f2769c9400ac571db1e8518",
+"structstd_1_1formatter_3_01A_00_01char_01_4.html#af3ad8edccb5a7222ac0bd6317d9a20a6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
