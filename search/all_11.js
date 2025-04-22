@@ -59,7 +59,7 @@ var searchData=
   ['gpdma1_5fchannel1_5firqhandler_56',['GPDMA1_Channel1_IRQHandler',['../board_8cpp.html#a491410644cceae6a73091be92aa6f5d5',1,'board.cpp']]],
   ['gpdma1_5fchannel2_5firqhandler_57',['GPDMA1_Channel2_IRQHandler',['../board_8cpp.html#a39c0c4c797bc531071ac66cb95c2cae8',1,'board.cpp']]],
   ['gpio_2ecpp_58',['gpio.cpp',['../gpio_8cpp.html',1,'']]],
-  ['green_59',['green',['../namespaceservio.html#ae27a38e0dd1a2a1dfc79e4086915105f',1,'servio::leds_vals']]],
+  ['green_59',['green',['../namespaceservio.html#ad2c6efd34261b8e5b5c16c90e171b7ed',1,'servio::leds_vals']]],
   ['green_5fch_60',['green_ch',['../namespaceservio_1_1plt.html#ac8dc88b10301f0823d983ad1a7f4e3e7',1,'servio::plt::leds_timer_cfg']]],
   ['green_5fpin_61',['green_pin',['../namespaceservio_1_1plt.html#adad93e2611f6799cedf41c16211afb44',1,'servio::plt::leds_timer_cfg']]],
   ['group_62',['group',['../namespaceservio_1_1iface.html#structservio_1_1iface_1_1group',1,'servio::iface']]],

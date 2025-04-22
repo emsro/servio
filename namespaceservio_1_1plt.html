@@ -146,8 +146,6 @@ Functions</h2></td></tr>
 <tr class="separator:a5d8400afc8f50954c30ace6182a1a51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ab82543f002b972fd70964ede34e70e" id="r_a1ab82543f002b972fd70964ede34e70e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a1ab82543f002b972fd70964ede34e70e">setup_hbridge_timers</a> (TIM_HandleTypeDef &amp;tim, <a class="el" href="namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg">hb_timer_cfg</a> cfg)</td></tr>
 <tr class="separator:a1ab82543f002b972fd70964ede34e70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9805b88250d0a4cb6462aba3211bd09" id="r_af9805b88250d0a4cb6462aba3211bd09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#af9805b88250d0a4cb6462aba3211bd09">setup_leds_channel</a> (TIM_HandleTypeDef *tim, uint32_t ch, <a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">drv::pin_cfg</a> cfg)</td></tr>
-<tr class="separator:af9805b88250d0a4cb6462aba3211bd09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6226ebe35cbd7afea5cf9a80ddc87f7" id="r_ab6226ebe35cbd7afea5cf9a80ddc87f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#ab6226ebe35cbd7afea5cf9a80ddc87f7">setup_clock_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance, IRQn_Type irq)</td></tr>
 <tr class="separator:ab6226ebe35cbd7afea5cf9a80ddc87f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e0c665041fef1c8687a4a21403a2659" id="r_a4e0c665041fef1c8687a4a21403a2659"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html#a4e0c665041fef1c8687a4a21403a2659">setup_encoder_timer</a> (TIM_HandleTypeDef &amp;tim, TIM_TypeDef *instance, uint32_t period)</td></tr>
@@ -965,42 +963,6 @@ uart_instance</td>
 
 </div>
 </div>
-<a id="af9805b88250d0a4cb6462aba3211bd09" name="af9805b88250d0a4cb6462aba3211bd09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9805b88250d0a4cb6462aba3211bd09">&#9670;&#160;</a></span>setup_leds_channel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structservio_1_1status.html">status</a> servio::plt::setup_leds_channel </td>
-          <td>(</td>
-          <td class="paramtype">TIM_HandleTypeDef *&#160;</td>
-          <td class="paramname"><em>tim</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>ch</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg">drv::pin_cfg</a>&#160;</td>
-          <td class="paramname"><em>cfg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="namespaceservio.html#a55104dad626571b464bc092401f5e57e">servio::ERROR</a>, <a class="el" href="namespaceservio_1_1plt.html#abd82db4ae277c933a1955cdada712dc6">setup_gpio()</a>, and <a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a>.</p>
-
-</div>
-</div>
 <a id="a5d8400afc8f50954c30ace6182a1a51e" name="a5d8400afc8f50954c30ace6182a1a51e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d8400afc8f50954c30ace6182a1a51e">&#9670;&#160;</a></span>setup_uart()</h2>
 
@@ -1058,7 +1020,7 @@ uart_instance</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1plt.html">plt</a></li>
-    <li class="footer">Generated on Mon Apr 21 2025 11:43:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Apr 22 2025 11:02:01 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

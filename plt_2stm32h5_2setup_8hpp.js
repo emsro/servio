@@ -68,6 +68,5 @@ var plt_2stm32h5_2setup_8hpp =
     [ "setup_gpio", "plt_2stm32h5_2setup_8hpp.html#abd82db4ae277c933a1955cdada712dc6", null ],
     [ "setup_hbridge_timers", "plt_2stm32h5_2setup_8hpp.html#a1ab82543f002b972fd70964ede34e70e", null ],
     [ "setup_i2c", "plt_2stm32h5_2setup_8hpp.html#ae5039a71d1fe46ae0b2b77ece05e8914", null ],
-    [ "setup_leds_channel", "plt_2stm32h5_2setup_8hpp.html#af9805b88250d0a4cb6462aba3211bd09", null ],
     [ "setup_uart", "plt_2stm32h5_2setup_8hpp.html#a5d8400afc8f50954c30ace6182a1a51e", null ]
 ];

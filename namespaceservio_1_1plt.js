@@ -22,7 +22,6 @@ var namespaceservio_1_1plt =
     [ "setup_gpio", "namespaceservio_1_1plt.html#abd82db4ae277c933a1955cdada712dc6", null ],
     [ "setup_hbridge_timers", "namespaceservio_1_1plt.html#a1ab82543f002b972fd70964ede34e70e", null ],
     [ "setup_i2c", "namespaceservio_1_1plt.html#ae5039a71d1fe46ae0b2b77ece05e8914", null ],
-    [ "setup_leds_channel", "namespaceservio_1_1plt.html#af9805b88250d0a4cb6462aba3211bd09", null ],
     [ "setup_uart", "namespaceservio_1_1plt.html#a5d8400afc8f50954c30ace6182a1a51e", null ],
     [ "TEMP_CALIB_COEFFS", "namespaceservio_1_1plt.html#a02f2e0e13537988c8b1ab01ed1c6bd87", null ]
 ];

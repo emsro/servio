@@ -108,7 +108,7 @@ var annotated_dup =
         [ "get_pos_iface", "structservio_1_1drv_1_1get__pos__iface.html", "structservio_1_1drv_1_1get__pos__iface" ],
         [ "hbridge", "classservio_1_1drv_1_1hbridge.html", "classservio_1_1drv_1_1hbridge" ],
         [ "i2c_eeprom", "structservio_1_1drv_1_1i2c__eeprom.html", "structservio_1_1drv_1_1i2c__eeprom" ],
-        [ "leds", "classservio_1_1drv_1_1leds.html", "classservio_1_1drv_1_1leds" ],
+        [ "leds", "structservio_1_1drv_1_1leds.html", "structservio_1_1drv_1_1leds" ],
         [ "leds_iface", "structservio_1_1drv_1_1leds__iface.html", "structservio_1_1drv_1_1leds__iface" ],
         [ "motor_info_iface", "structservio_1_1drv_1_1motor__info__iface.html", "structservio_1_1drv_1_1motor__info__iface" ],
         [ "period_cb", "structservio_1_1drv_1_1period__cb.html", "structservio_1_1drv_1_1period__cb" ],

@@ -124,7 +124,7 @@ var hierarchy =
     [ "servio::scmdio::kval_ser< vari::typelist<> >", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html", null ],
     [ "servio::plt::leds_gpio_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg", null ],
     [ "servio::drv::leds_iface", "structservio_1_1drv_1_1leds__iface.html", [
-      [ "servio::drv::leds", "classservio_1_1drv_1_1leds.html", null ]
+      [ "servio::drv::leds", "structservio_1_1drv_1_1leds.html", null ]
     ] ],
     [ "servio::drv::tests::leds_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test", null ],
     [ "servio::plt::leds_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg", null ],

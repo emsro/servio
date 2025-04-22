@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['leds_0',['leds',['../classservio_1_1drv_1_1leds.html',1,'servio::drv']]],
+  ['leds_0',['leds',['../structservio_1_1drv_1_1leds.html',1,'servio::drv']]],
   ['leds_5fgpio_5fcfg_1',['leds_gpio_cfg',['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg',1,'servio::plt']]],
   ['leds_5fiface_2',['leds_iface',['../structservio_1_1drv_1_1leds__iface.html',1,'servio::drv']]],
   ['leds_5ftest_3',['leds_test',['../namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1leds__test',1,'servio::drv::tests']]],
