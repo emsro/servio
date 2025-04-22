@@ -72,9 +72,9 @@ enum class control_loop
 
 struct leds_vals
 {
-        bool    red;
-        bool    blue;
-        uint8_t green;
+        bool red;
+        bool blue;
+        bool green;
 };
 
 struct pwr : em::quantity< pwr, float >

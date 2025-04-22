@@ -100,8 +100,6 @@ status setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg );
 
 void setup_gpio( drv::pin_cfg const& cfg );
 
-status setup_leds_channel( TIM_HandleTypeDef* tim, uint32_t ch, drv::pin_cfg cfg );
-
 status setup_clk();
 
 status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq );

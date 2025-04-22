@@ -57,7 +57,7 @@ cfg::context CFG{ .map = get_default_config() };
 
 TIM_HandleTypeDef TIM2_HANDLE = {};
 drv::clock        CLOCK{ TIM2_HANDLE };
-drv::leds         LEDS{ &TIM2_HANDLE };
+drv::leds         LEDS{};
 
 sntr::record INOPERABLE_RECORDS[16];
 sntr::record DEGRADED_RECORDS[128];
@@ -237,9 +237,9 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
             } );
         plt::setup_adc_channel(
             ADC_POOLER->position.chconf,
-            ADC_CHANNEL_19,
+            ADC_CHANNEL_14,
             drv::pin_cfg{
-                .pin  = GPIO_PIN_5,
+                .pin  = GPIO_PIN_2,
                 .port = GPIOA,
                 .mode = GPIO_MODE_ANALOG,
             } );
@@ -409,23 +409,14 @@ drv::leds* leds_setup()
             .pin  = GPIO_PIN_1,
             .port = GPIOA,
         };
+        drv::pin_cfg green{
+            .pin  = GPIO_PIN_8,
+            .port = GPIOA,
+        };
         plt::setup_gpio( red );
         plt::setup_gpio( blue );
-        // XXX: in theory, red/blue could also be on TIM2
-        uint32_t     green_ch = TIM_CHANNEL_3;
-        drv::pin_cfg green{
-            .pin       = GPIO_PIN_2,
-            .port      = GPIOA,
-            .mode      = GPIO_MODE_AF_PP,
-            .alternate = GPIO_AF1_TIM2,
-        };
-
-        em::result res = plt::setup_leds_channel( &TIM2_HANDLE, green_ch, green );
-
-        if ( res == SUCCESS )
-                return LEDS.setup( red, blue, green_ch );
-
-        return nullptr;
+        plt::setup_gpio( green );
+        return LEDS.setup( red, blue, green );
 }
 
 drv::pos_iface* quad_encoder_setup( uint32_t period )
@@ -534,10 +525,6 @@ status start_callback( core::drivers& cdrv )
         }
         if ( cdrv.comms != nullptr ) {
                 if ( COMMS.start() != SUCCESS )
-                        return ERROR;
-        }
-        if ( cdrv.leds != nullptr ) {
-                if ( LEDS.start() != SUCCESS )
                         return ERROR;
         }
         if ( cdrv.storage == &EEPROM ) {

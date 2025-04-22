@@ -130,24 +130,6 @@ status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Ty
         return SUCCESS;
 }
 
-status setup_leds_channel( TIM_HandleTypeDef* tim, uint32_t ch, drv::pin_cfg pin )
-{
-
-        setup_gpio( pin );
-
-        TIM_OC_InitTypeDef chc;
-
-        chc.OCMode     = TIM_OCMODE_PWM1;
-        chc.Pulse      = 0;
-        chc.OCPolarity = TIM_OCPOLARITY_HIGH;
-        chc.OCFastMode = TIM_OCFAST_DISABLE;
-
-        if ( HAL_TIM_PWM_ConfigChannel( tim, &chc, ch ) != HAL_OK )
-                return ERROR;
-
-        return SUCCESS;
-}
-
 status setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint32_t period )
 {
         tim.Instance               = instance;
