@@ -38,7 +38,7 @@
             "type": "float",
             "default": 0.0,
             "unit": "rad",
-            "desc": ""
+            "desc": "Expected lowest position of the servomotor"
         },
         {
             "id": 12,
@@ -46,7 +46,7 @@
             "type": "float",
             "default": "2*pi",
             "unit": "rad",
-            "desc": ""
+            "desc": "Expected highest position of the servomotor"
         },
         {
             "id": 14,
@@ -54,7 +54,7 @@
             "type": "float",
             "default": 1.0,
             "unit": "",
-            "desc": ""
+            "desc": "Current conversion scale factor for formula: C = ADC * scale + offset"
         },
         {
             "id": 15,
@@ -62,7 +62,7 @@
             "type": "float",
             "default": 0.0,
             "unit": "",
-            "desc": ""
+            "desc": "Current conversion offset for formula: C = ADC * scale + offset"
         },
         {
             "id": 16,
@@ -70,7 +70,7 @@
             "type": "float",
             "default": 1.0,
             "unit": "",
-            "desc": ""
+            "desc": "Temperature conversion scale factor for formula: T = ADC * scale + offset"
         },
         {
             "id": 17,
@@ -78,7 +78,7 @@
             "type": "float",
             "default": 0.0,
             "unit": "",
-            "desc": ""
+            "desc": "Temperature conversion offset for formula: T = ADC * scale + offset"
         },
         {
             "id": 18,
@@ -86,7 +86,7 @@
             "type": "float",
             "default": 1.0,
             "unit": "",
-            "desc": ""
+            "desc": "Voltage conversion scale factor for formula: V = ADC * scale"
         },
         {
             "id": 19,
@@ -94,7 +94,7 @@
             "type": "bool",
             "default": "false",
             "unit": "",
-            "desc": ""
+            "desc": "Invert direction of the H-bridge"
         },
         {
             "id": 30,
@@ -126,7 +126,7 @@
             "type": "float",
             "default": -2.0,
             "unit": "",
-            "desc": ""
+            "desc": "Soft limit for lowest current"
         },
         {
             "id": 34,
@@ -134,7 +134,7 @@
             "type": "float",
             "default": 2.0,
             "unit": "",
-            "desc": ""
+            "desc": "Soft limit for highest current"
         },
         {
             "id": 40,
@@ -166,7 +166,7 @@
             "type": "float",
             "default": -3.0,
             "unit": "rad/s",
-            "desc": ""
+            "desc": "Soft limit for lowest velocity"
         },
         {
             "id": 44,
@@ -174,7 +174,7 @@
             "type": "float",
             "default": 3.0,
             "unit": "rad/s",
-            "desc": ""
+            "desc": "Soft limit for highest velocity"
         },
         {
             "id": 45,
@@ -182,7 +182,7 @@
             "type": "float",
             "default": 2.0,
             "unit": "",
-            "desc": ""
+            "desc": "Scaling of current limit derived from velocity limit"
         },
         {
             "id": 50,
@@ -230,7 +230,7 @@
             "type": "float",
             "default": 2.0,
             "unit": "rad",
-            "desc": ""
+            "desc": "Scaling of velocity limit derived from position limit"
         },
         {
             "id": 60,
@@ -238,15 +238,15 @@
             "type": "float",
             "default": 3.0,
             "unit": "",
-            "desc": ""
+            "desc": "Scaling of current in case of non-moving servo"
         },
         {
             "id": 61,
             "name": "static_friction_decay",
             "type": "float",
             "default": 1.0,
-            "unit": "",
-            "desc": ""
+            "unit": "s",
+            "desc": "Time required for the static friction compensation to decay to be ineffective"
         },
         {
             "id": 62,
@@ -254,7 +254,7 @@
             "type": "float",
             "default": 6.0,
             "unit": "voltage",
-            "desc": ""
+            "desc": "Minimum voltage for the servomotor to operate"
         },
         {
             "id": 65,
@@ -262,15 +262,15 @@
             "type": "float",
             "default": 80.0,
             "unit": "celsius",
-            "desc": ""
+            "desc": "Maximum temperature for the servomotor to operate"
         },
         {
             "id": 66,
             "name": "moving_detection_step",
             "type": "float",
             "default": "0.05F",
-            "unit": "",
-            "desc": ""
+            "unit": "rad",
+            "desc": "Deadband for the moving detection"
         },
         {
             "id": 80,
@@ -278,7 +278,7 @@
             "type": "uint32_t",
             "default": 2048,
             "unit": "",
-            "desc": ""
+            "desc": "Number of pulses per revolution of the quadrature encoder"
         }
     ]
 }

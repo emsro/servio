@@ -116,7 +116,7 @@ TEST( core, dispatcher )
                 // verify get
                 if constexpr ( iface::cfg_key{ F::key } == "encoder_mode"_a ) {
                         auto expected = m.ref_by_key< kv >();
-                        EXPECT_EQ( res_j.at( 1 ), expected );
+                        EXPECT_EQ( res_j.at( 1 ), cfg::encoder_mode_to_str( expected ) );
                 } else if constexpr ( std::same_as< typename F::value_type, float > )
                         EXPECT_NEAR( res_j.at( 1 ), m.ref_by_key< kv >(), 0.00001 );
                 else
@@ -162,7 +162,7 @@ TEST( core, dispatcher )
                 // verify change
                 if constexpr ( iface::cfg_key{ F::key } == "encoder_mode"_a ) {
                         auto expected = m.ref_by_key< kv >();
-                        EXPECT_EQ( res_j.at( 1 ), expected );
+                        EXPECT_EQ( res_j.at( 1 ), cfg::encoder_mode_to_str( expected ) );
                 } else if constexpr ( std::same_as< typename F::value_type, float > )
                         EXPECT_NEAR( res_j.at( 1 ), m.ref_by_key< kv >(), 0.00001 );
                 else

@@ -26,6 +26,17 @@ constexpr std::optional< encoder_mode > str_to_encoder_mode( std::string_view st
         return {};
 }
 
+constexpr std::string_view encoder_mode_to_str( encoder_mode em )
+{
+        switch ( em ) {
+        case encoder_mode::analog:
+                return "analog";
+        case encoder_mode::quad:
+                return "quad";
+        }
+        return {};
+}
+
 using value_type = vari::typelist< uint32_t, float, bool, encoder_mode, string_type >;
 
 // GEN BEGIN HERE
@@ -181,6 +192,81 @@ constexpr std::optional< key > str_to_key( std::string_view str )
         return {};
 }
 
+constexpr std::string_view key_to_str( key k )
+{
+        if ( k == key::model )
+                return "model";
+        if ( k == key::id )
+                return "id";
+        if ( k == key::group_id )
+                return "group_id";
+        if ( k == key::encoder_mode )
+                return "encoder_mode";
+        if ( k == key::position_low_angle )
+                return "position_low_angle";
+        if ( k == key::position_high_angle )
+                return "position_high_angle";
+        if ( k == key::current_conv_scale )
+                return "current_conv_scale";
+        if ( k == key::current_conv_offset )
+                return "current_conv_offset";
+        if ( k == key::temp_conv_scale )
+                return "temp_conv_scale";
+        if ( k == key::temp_conv_offset )
+                return "temp_conv_offset";
+        if ( k == key::voltage_conv_scale )
+                return "voltage_conv_scale";
+        if ( k == key::invert_hbridge )
+                return "invert_hbridge";
+        if ( k == key::current_loop_p )
+                return "current_loop_p";
+        if ( k == key::current_loop_i )
+                return "current_loop_i";
+        if ( k == key::current_loop_d )
+                return "current_loop_d";
+        if ( k == key::current_lim_min )
+                return "current_lim_min";
+        if ( k == key::current_lim_max )
+                return "current_lim_max";
+        if ( k == key::velocity_loop_p )
+                return "velocity_loop_p";
+        if ( k == key::velocity_loop_i )
+                return "velocity_loop_i";
+        if ( k == key::velocity_loop_d )
+                return "velocity_loop_d";
+        if ( k == key::velocity_lim_min )
+                return "velocity_lim_min";
+        if ( k == key::velocity_lim_max )
+                return "velocity_lim_max";
+        if ( k == key::velocity_to_current_lim_scale )
+                return "velocity_to_current_lim_scale";
+        if ( k == key::position_loop_p )
+                return "position_loop_p";
+        if ( k == key::position_loop_i )
+                return "position_loop_i";
+        if ( k == key::position_loop_d )
+                return "position_loop_d";
+        if ( k == key::position_lim_min )
+                return "position_lim_min";
+        if ( k == key::position_lim_max )
+                return "position_lim_max";
+        if ( k == key::position_to_velocity_lim_scale )
+                return "position_to_velocity_lim_scale";
+        if ( k == key::static_friction_scale )
+                return "static_friction_scale";
+        if ( k == key::static_friction_decay )
+                return "static_friction_decay";
+        if ( k == key::minimum_voltage )
+                return "minimum_voltage";
+        if ( k == key::maximum_temperature )
+                return "maximum_temperature";
+        if ( k == key::moving_detection_step )
+                return "moving_detection_step";
+        if ( k == key::quad_encoder_range )
+                return "quad_encoder_range";
+        return {};
+}
+
 constexpr std::array< uint32_t, 35 > ids = {
     1,  2,  3,  4,  11, 12, 14, 15, 16, 17, 18, 19, 30, 31, 32, 33, 34, 40,
     41, 42, 43, 44, 45, 50, 51, 52, 53, 54, 55, 60, 61, 62, 65, 66, 80,
@@ -195,38 +281,58 @@ struct map
         // Group ID of the servomotor
         uint32_t group_id = 0;
         // Encoder mode of the servomotor
-        cfg::encoder_mode encoder_mode                   = cfg::encoder_mode::analog;
-        float             position_low_angle             = 0.0;
-        float             position_high_angle            = 2 * pi;
-        float             current_conv_scale             = 1.0;
-        float             current_conv_offset            = 0.0;
-        float             temp_conv_scale                = 1.0;
-        float             temp_conv_offset               = 0.0;
-        float             voltage_conv_scale             = 1.0;
-        bool              invert_hbridge                 = false;
-        float             current_loop_p                 = 1.0;
-        float             current_loop_i                 = 0.0001F;
-        float             current_loop_d                 = 0.0;
-        float             current_lim_min                = -2.0;
-        float             current_lim_max                = 2.0;
-        float             velocity_loop_p                = 1.0;
-        float             velocity_loop_i                = 0.000'000'2F;
-        float             velocity_loop_d                = 0.0;
-        float             velocity_lim_min               = -3.0;
-        float             velocity_lim_max               = 3.0;
-        float             velocity_to_current_lim_scale  = 2.0;
-        float             position_loop_p                = 0.2F;
-        float             position_loop_i                = 0.000'000'02F;
-        float             position_loop_d                = 0.0;
-        float             position_lim_min               = 0.1F;
-        float             position_lim_max               = 2.0F * pi - 0.1F;
-        float             position_to_velocity_lim_scale = 2.0;
-        float             static_friction_scale          = 3.0;
-        float             static_friction_decay          = 1.0;
-        float             minimum_voltage                = 6.0;
-        float             maximum_temperature            = 80.0;
-        float             moving_detection_step          = 0.05F;
-        uint32_t          quad_encoder_range             = 2048;
+        cfg::encoder_mode encoder_mode = cfg::encoder_mode::analog;
+        // Expected lowest position of the servomotor
+        float position_low_angle = 0.0;
+        // Expected highest position of the servomotor
+        float position_high_angle = 2 * pi;
+        // Current conversion scale factor for formula: C = ADC * scale + offset
+        float current_conv_scale = 1.0;
+        // Current conversion offset for formula: C = ADC * scale + offset
+        float current_conv_offset = 0.0;
+        // Temperature conversion scale factor for formula: T = ADC * scale + offset
+        float temp_conv_scale = 1.0;
+        // Temperature conversion offset for formula: T = ADC * scale + offset
+        float temp_conv_offset = 0.0;
+        // Voltage conversion scale factor for formula: V = ADC * scale
+        float voltage_conv_scale = 1.0;
+        // Invert direction of the H-bridge
+        bool  invert_hbridge = false;
+        float current_loop_p = 1.0;
+        float current_loop_i = 0.0001F;
+        float current_loop_d = 0.0;
+        // Soft limit for lowest current
+        float current_lim_min = -2.0;
+        // Soft limit for highest current
+        float current_lim_max = 2.0;
+        float velocity_loop_p = 1.0;
+        float velocity_loop_i = 0.000'000'2F;
+        float velocity_loop_d = 0.0;
+        // Soft limit for lowest velocity
+        float velocity_lim_min = -3.0;
+        // Soft limit for highest velocity
+        float velocity_lim_max = 3.0;
+        // Scaling of current limit derived from velocity limit
+        float velocity_to_current_lim_scale = 2.0;
+        float position_loop_p               = 0.2F;
+        float position_loop_i               = 0.000'000'02F;
+        float position_loop_d               = 0.0;
+        float position_lim_min              = 0.1F;
+        float position_lim_max              = 2.0F * pi - 0.1F;
+        // Scaling of velocity limit derived from position limit
+        float position_to_velocity_lim_scale = 2.0;
+        // Scaling of current in case of non-moving servo
+        float static_friction_scale = 3.0;
+        // Time required for the static friction compensation to decay to be ineffective
+        float static_friction_decay = 1.0;
+        // Minimum voltage for the servomotor to operate
+        float minimum_voltage = 6.0;
+        // Maximum temperature for the servomotor to operate
+        float maximum_temperature = 80.0;
+        // Deadband for the moving detection
+        float moving_detection_step = 0.05F;
+        // Number of pulses per revolution of the quadrature encoder
+        uint32_t quad_encoder_range = 2048;
 
         template < key K >
         constexpr auto& ref_by_key()

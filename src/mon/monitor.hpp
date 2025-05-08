@@ -41,6 +41,8 @@ public:
         {
                 indi_.on_event( now, indication_event::HEARTBEAT );
 
+                // TODO: both vcc and temperature should result in harsher reaction
+
                 // TODO: check that this works
                 float const vcc = conv_.vcc.convert( vcc_drv_.get_vcc() );
                 if ( vcc < min_vcc_ )
