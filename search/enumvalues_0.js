@@ -6,5 +6,6 @@ var searchData=
   ['adc_5fpooler_5fistart_5ferr_3',['ADC_POOLER_ISTART_ERR',['../namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76baacba2c1922260f5b588d9ddf67536d82',1,'servio::drv']]],
   ['adc_5fpooler_5fistop_5ferr_4',['ADC_POOLER_ISTOP_ERR',['../namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76ba67cfd4666bbb4520dd6b5e03b09187e5',1,'servio::drv']]],
   ['adc_5fpooler_5fno_5fsamples_5ferr_5',['ADC_POOLER_NO_SAMPLES_ERR',['../namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76ba803239673ddf0d7b57ba78073bf99f68',1,'servio::drv']]],
-  ['adc_5fpooler_5fsamples_5fover_5ferr_6',['ADC_POOLER_SAMPLES_OVER_ERR',['../namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76bac5ae4a296b818df7ba97dad5b998fc68',1,'servio::drv']]]
+  ['adc_5fpooler_5fsamples_5fover_5ferr_6',['ADC_POOLER_SAMPLES_OVER_ERR',['../namespaceservio_1_1drv.html#ac3fe0bceb2beffcf0ffe45c7d948c76bac5ae4a296b818df7ba97dad5b998fc68',1,'servio::drv']]],
+  ['analog_7',['analog',['../namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a02c9adc0d63e270f7ea08ef4008e81bf',1,'servio::cfg']]]
 ];

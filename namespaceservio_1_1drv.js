@@ -78,6 +78,8 @@ var namespaceservio_1_1drv =
       [ "NL_HAL_ERROR_IRQ_ERR", "namespaceservio_1_1drv.html#a0cce3df4ac7f4050e4b0c02208b51128a57d5ca509fdc17d87a5cd7299609b5e6", null ],
       [ "NL_HAL_RX_START_ERR", "namespaceservio_1_1drv.html#a0cce3df4ac7f4050e4b0c02208b51128ac174cd3da2d8d184f1ab628d315fb2e9", null ]
     ] ],
+    [ "cfg_erase", "namespaceservio_1_1drv.html#a19a2cf65697fc271377dfbf1bc8c1dc3", null ],
+    [ "cfg_write", "namespaceservio_1_1drv.html#a500eb08ac25ba30d034e0a70f40f1156", null ],
     [ "retain_callback", "namespaceservio_1_1drv.html#adc59015cd12f6be58b23024501b3fe6c", null ],
     [ "retain_callback", "namespaceservio_1_1drv.html#a5e3395c31d8cff501ff1b9241e107d9c", null ],
     [ "retain_callback", "namespaceservio_1_1drv.html#a2854d66adb35885d265babb165cb5c63", null ],

@@ -1,14 +1,13 @@
 var namespaceservio_1_1iface =
 [
     [ "literals", "namespaceservio_1_1iface_1_1literals.html", [
-      [ "operator\"\"_kv", "namespaceservio_1_1iface_1_1literals.html#aec4186789ad9735dab31f35d4345d34d", null ]
+      [ "operator\"\"_kv", "namespaceservio_1_1iface_1_1literals.html#a589594e6cd4476cdd2db015d2efdf1c2", null ]
     ] ],
     [ "cfg_clear_stmt", "structservio_1_1iface_1_1cfg__clear__stmt.html", "structservio_1_1iface_1_1cfg__clear__stmt" ],
     [ "cfg_commit_stmt", "structservio_1_1iface_1_1cfg__commit__stmt.html", "structservio_1_1iface_1_1cfg__commit__stmt" ],
     [ "cfg_get_stmt", "structservio_1_1iface_1_1cfg__get__stmt.html", "structservio_1_1iface_1_1cfg__get__stmt" ],
     [ "cfg_set_stmt", "structservio_1_1iface_1_1cfg__set__stmt.html", "structservio_1_1iface_1_1cfg__set__stmt" ],
     [ "field", "structservio_1_1iface_1_1field.html", "structservio_1_1iface_1_1field" ],
-    [ "field< IDX, Key, void >", "structservio_1_1iface_1_1field_3_01IDX_00_01Key_00_01void_01_4.html", "structservio_1_1iface_1_1field_3_01IDX_00_01Key_00_01void_01_4" ],
     [ "field_traits", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__traits", null ],
     [ "field_traits< vari::typelist< Field... > >", "structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html", "structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4" ],
     [ "field_tuple", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple", null ],
@@ -19,19 +18,20 @@ var namespaceservio_1_1iface =
     [ "key_filter", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter", null ],
     [ "key_filter< K, vari::typelist< F, Fs... > >", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4.html", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4" ],
     [ "kval", "structservio_1_1iface_1_1kval.html", "structservio_1_1iface_1_1kval" ],
-    [ "kval< Key, void >", "structservio_1_1iface_1_1kval_3_01Key_00_01void_01_4.html", "structservio_1_1iface_1_1kval_3_01Key_00_01void_01_4" ],
+    [ "kvals_parse", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1kvals__parse", null ],
+    [ "kvals_parse< vari::typelist< Ts... > >", "structservio_1_1iface_1_1kvals__parse_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4.html", "structservio_1_1iface_1_1kvals__parse_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4" ],
     [ "mode_stmt", "structservio_1_1iface_1_1mode__stmt.html", "structservio_1_1iface_1_1mode__stmt" ],
     [ "prop_stmt", "structservio_1_1iface_1_1prop__stmt.html", "structservio_1_1iface_1_1prop__stmt" ],
     [ "resp", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1resp", "namespaceservio_1_1iface_structservio_1_1iface_1_1resp_dup" ],
-    [ "cfg", "namespaceservio_1_1iface.html#a626f18747394fa9795a4364786f56810", null ],
+    [ "cfg", "namespaceservio_1_1iface.html#aef0b6aaab8532fc6015f4ff92e69b2fc", null ],
     [ "cfg_key", "namespaceservio_1_1iface.html#aaf16ae9411acb9dfaa3882cac5eeec8b", null ],
     [ "cfg_traits", "namespaceservio_1_1iface.html#a9b76b81e907b1d13fdfdcd60196885c9", null ],
     [ "cfg_types", "namespaceservio_1_1iface.html#ac7eaa4b9d993cc332eade38a17d678a0", null ],
     [ "cfg_vals", "namespaceservio_1_1iface.html#a772857f85c4cac4a3ac6bebbbaf92644", null ],
     [ "ec_mode_key", "namespaceservio_1_1iface.html#a1253342d0b3c65e5737ee321483e9480", null ],
-    [ "encoder_mode", "namespaceservio_1_1iface.html#a07f5b32871871c0c582ce5bae32d01aa", null ],
+    [ "encoder_mode", "namespaceservio_1_1iface.html#a02c37ea79e6a630317f08684846f4886", null ],
     [ "field_tuple_t", "namespaceservio_1_1iface.html#a064058093cb0552dc7bcca11395eb50c", null ],
-    [ "mode", "namespaceservio_1_1iface.html#a0a3d9351bbf571aed8b41b0c55661154", null ],
+    [ "mode", "namespaceservio_1_1iface.html#a66b7ee99765e0c2c5ea01d6cd5ff94a4", null ],
     [ "mode_key", "namespaceservio_1_1iface.html#afc4d172ed1587258c9380099d6ed50c4", null ],
     [ "mode_traits", "namespaceservio_1_1iface.html#a5ea2d5532aacc5b7651e6ee806af1b06", null ],
     [ "mode_types", "namespaceservio_1_1iface.html#a48aa0e6ec702b8ab96997b1b6ce48643", null ],
@@ -46,10 +46,8 @@ var namespaceservio_1_1iface =
     [ "str_name", "namespaceservio_1_1iface.html#aeb9ff3cc159dd124b89a32fe26bddce0", null ],
     [ "kv", "namespaceservio_1_1iface.html#a9ad3871132620b0aae30e2821db477d0", null ],
     [ "kv", "namespaceservio_1_1iface.html#a5d4a63423015f5ee1bdfcbc62aebe2a6", null ],
-    [ "operator|", "namespaceservio_1_1iface.html#aacb1391e0f6f91d788bda0f06cba9ca1", null ],
+    [ "operator|", "namespaceservio_1_1iface.html#ac01dead54e1148548ab9b70433c41d6d", null ],
     [ "parse", "namespaceservio_1_1iface.html#aa5cef807e90c362aede32aa8c3767c39", null ],
-    [ "parse_str", "namespaceservio_1_1iface.html#aff0b2ce71b6e19226aeec7dc9c3ad611", null ],
     [ "TEST", "namespaceservio_1_1iface.html#a263b7e837e94bfc151c5c33d8e6c4ab9", null ],
-    [ "TEST", "namespaceservio_1_1iface.html#abb99d070f438399b1c053a8742ad0a65", null ],
     [ "TEST", "namespaceservio_1_1iface.html#aa6ca13fc37760e880ae7679695c73de7", null ]
 ];

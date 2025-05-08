@@ -6,5 +6,5 @@ var classservio_1_1drv_1_1quad__encoder =
     [ "get_position_range", "classservio_1_1drv_1_1quad__encoder.html#a94358f8c846235f54f3a30ad83704c9a", null ],
     [ "on_tick_irq", "classservio_1_1drv_1_1quad__encoder.html#a3f6c31db0e0329f702f59ba91542cb5a", null ],
     [ "set_position_callback", "classservio_1_1drv_1_1quad__encoder.html#ae6eaed58decf4c894c01622929c6c3dd", null ],
-    [ "start", "classservio_1_1drv_1_1quad__encoder.html#a04b6a5c7564d7b38720cdab356644c24", null ]
+    [ "start", "classservio_1_1drv_1_1quad__encoder.html#aa79b856e88dd0dba4e09db70003883a2", null ]
 ];

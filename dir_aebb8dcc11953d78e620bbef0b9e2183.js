@@ -7,6 +7,5 @@ var dir_aebb8dcc11953d78e620bbef0b9e2183 =
     [ "dispatcher.hpp", "core_2dispatcher_8hpp.html", "core_2dispatcher_8hpp" ],
     [ "drivers.hpp", "drivers_8hpp.html", "drivers_8hpp" ],
     [ "globals.cpp", "globals_8cpp.html", "globals_8cpp" ],
-    [ "globals.hpp", "globals_8hpp.html", null ],
-    [ "map_cfg.hpp", "map__cfg_8hpp.html", "map__cfg_8hpp" ]
+    [ "globals.hpp", "globals_8hpp.html", null ]
 ];

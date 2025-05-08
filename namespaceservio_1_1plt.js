@@ -9,7 +9,6 @@ var namespaceservio_1_1plt =
     [ "temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", "namespaceservio_1_1plt_structservio_1_1plt_1_1temp__calib__coeffs_dup" ],
     [ "uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1uart__cfg_dup" ],
     [ "calculate_temp_conversion", "namespaceservio_1_1plt.html#a9d808c8e4af01c8ace4848aef68ac0bf", null ],
-    [ "generate_config", "namespaceservio_1_1plt.html#a0cdc7abf3d852902f1b08758212aed5e", null ],
     [ "get_default_config", "namespaceservio_1_1plt.html#a54207fdd13b8536cfecc8079e969056b", null ],
     [ "setup_adc", "namespaceservio_1_1plt.html#a6b386aa81248da18c0dc5f61e42a4ec7", null ],
     [ "setup_adc_channel", "namespaceservio_1_1plt.html#ac9aa102dc4b651ab6503b4aa6ca604f4", null ],

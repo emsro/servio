@@ -95,7 +95,8 @@ $(document).ready(function(){initNavTree('namespaceservio_1_1cfg.html',''); init
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">servio::cfg Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -106,127 +107,116 @@ Classes</h2></td></tr>
 <tr class="separator:structservio_1_1cfg_1_1context"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1dispatcher.html">dispatcher</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1cfg_1_1keyval" id="r_structservio_1_1cfg_1_1keyval"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval">keyval</a></td></tr>
-<tr class="separator:structservio_1_1cfg_1_1keyval"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1map.html">map</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1cfg_1_1off__scale" id="r_structservio_1_1cfg_1_1off__scale"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale">off_scale</a></td></tr>
 <tr class="separator:structservio_1_1cfg_1_1off__scale"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1cfg_1_1page__info" id="r_structservio_1_1cfg_1_1page__info"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1page__info">page_info</a></td></tr>
-<tr class="separator:structservio_1_1cfg_1_1page__info"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1cfg_1_1record" id="r_structservio_1_1cfg_1_1record"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1record">record</a></td></tr>
-<tr class="separator:structservio_1_1cfg_1_1record"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aebf1441050290671f4e9721c97421e31" id="r_aebf1441050290671f4e9721c97421e31"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#aebf1441050290671f4e9721c97421e31">handler</a> = em::protocol::register_handler&lt; <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> &gt;</td></tr>
-<tr class="separator:aebf1441050290671f4e9721c97421e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32b8c5eabc601575ebc6703e48d5a32f" id="r_a32b8c5eabc601575ebc6703e48d5a32f"><td class="memTemplParams" colspan="2">template&lt;auto Key, typename T &gt; </td></tr>
-<tr class="memitem:a32b8c5eabc601575ebc6703e48d5a32f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a> = em::protocol::register_pair&lt; Key, T &gt;</td></tr>
-<tr class="separator:a32b8c5eabc601575ebc6703e48d5a32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1b0cd7595545bccd65c21b9925a525d" id="r_ac1b0cd7595545bccd65c21b9925a525d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d">model_name</a> = em::string_buffer&lt; 32 &gt;</td></tr>
-<tr class="separator:ac1b0cd7595545bccd65c21b9925a525d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abda42f815b2023fe34054fd7a2845325" id="r_abda42f815b2023fe34054fd7a2845325"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> = em::protocol::register_map&lt; std::endian::little, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add6c0ae6916d0b990a601cab95903e66">MODEL</a>, <a class="el" href="namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d">model_name</a> &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218">ID</a>, uint32_t &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab0267128c648c65666ba26bdeb685577">GROUP_ID</a>, uint32_t &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5bcc5eca5c52167826fd65a5b5177e18">ENCODER_MODE</a>, <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1c189400ff78d331b05283d2e6e1f52e">POSITION_LOW_ANGLE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6433f4f26bcae6d525a4b25a30700678">POSITION_HIGH_ANGLE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3abcd4ce2f3f5d88dfe44aab2228971441">CURRENT_CONV_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2e2ed1aafb50d3868139a287ee15ed58">CURRENT_CONV_OFFSET</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a635506dbfa2d898483e0c7996a60d7f4">TEMP_CONV_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3e51788c0e37c789f5007042d479e91e">TEMP_CONV_OFFSET</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9da229b909d34f11013bdcf275984461">VOLTAGE_CONV_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a27b1d9351a918683ed53e8faad3a4624">INVERT_HBRIDGE</a>, bool &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5ece52fe10c8b9738a0215916df9f5c1">CURRENT_LOOP_P</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a484293eb183cafd6a872e257f5255c95">CURRENT_LOOP_I</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9d0aee5a89a96ad0fa4d1bff8c5e37de">CURRENT_LOOP_D</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5d27ee3ebb714214d1198b16673ada2d">CURRENT_LIM_MIN</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aab34f7796f76a255878423f5155aea97">CURRENT_LIM_MAX</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3afa17f61b9cbecbb7e7eacc898538534e">VELOCITY_LOOP_P</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a351f305c0351b25aa96fc3ed04d673ff">VELOCITY_LOOP_I</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ac314e0ebf8920fd7724fbe160126b67b">VELOCITY_LOOP_D</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add19e1b450d538f7e4f15e922f5c5db2">VELOCITY_LIM_MIN</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9b1509db8257f0cdc3725c0de68894db">VELOCITY_LIM_MAX</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6f267ece2c260181dc5e10a938a26827">VELOCITY_TO_CURR_LIM_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a62ab6a965f4c3bf5ccc7865227d7aada">POSITION_LOOP_P</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6183f0e09601674ae8d6d20492813423">POSITION_LOOP_I</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3204e245ff3b67e47f6293f07ad604d5">POSITION_LOOP_D</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab20ae693e2fde0f2ff400cad4eb71a77">POSITION_LIM_MIN</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a35c5180994d66a40ffc59b62258413a1">POSITION_LIM_MAX</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1475199ec7c8f59508f313ac90d0b909">POSITION_TO_VEL_LIM_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aef9de0f2161b9a8478c2fac44c8f5185">STATIC_FRICTION_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6c89e4ec3a7be28f0c103c13057c4f9c">STATIC_FRICTION_DECAY</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab025034ef4a6897674222cdf80c8c171">MINIMUM_VOLTAGE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a31f81f3f8379662055edc0f05154c542">MAXIMUM_TEMPERATURE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8df354e31764c98878c7f2a765111fc5">MOVING_DETECTION_STEP</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a90ed638c490da8f648bc7315210a7f42">QUAD_ENCD_RANGE</a>, uint32_t &gt; &gt;</td></tr>
-<tr class="separator:abda42f815b2023fe34054fd7a2845325"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8aede70f47a2a0b2a4eb2f0f9056d142" id="r_a8aede70f47a2a0b2a4eb2f0f9056d142"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a8aede70f47a2a0b2a4eb2f0f9056d142">value_message</a> = typename map::message_type</td></tr>
-<tr class="separator:a8aede70f47a2a0b2a4eb2f0f9056d142"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8bcf8607b8a636737d60192fbfa5da4" id="r_ab8bcf8607b8a636737d60192fbfa5da4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ab8bcf8607b8a636737d60192fbfa5da4">value_variant</a> = std::variant&lt; <a class="el" href="namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d">model_name</a>, uint32_t, float, bool, <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> &gt;</td></tr>
-<tr class="separator:ab8bcf8607b8a636737d60192fbfa5da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9433bdfbcc58ecaceece24bd28e0b173" id="r_a9433bdfbcc58ecaceece24bd28e0b173"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a9433bdfbcc58ecaceece24bd28e0b173">page</a> = std::span&lt; std::byte * &gt;</td></tr>
-<tr class="separator:a9433bdfbcc58ecaceece24bd28e0b173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae6ccfe21a05c0792001ae96061eb4b" id="r_a2ae6ccfe21a05c0792001ae96061eb4b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a2ae6ccfe21a05c0792001ae96061eb4b">string_type</a> = em::string_buffer&lt; 32 &gt;</td></tr>
+<tr class="separator:a2ae6ccfe21a05c0792001ae96061eb4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d911d2eca0f1903b94ae41589325b7" id="r_a48d911d2eca0f1903b94ae41589325b7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a48d911d2eca0f1903b94ae41589325b7">value_type</a> = vari::typelist&lt; uint32_t, float, bool, <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a>, <a class="el" href="namespaceservio_1_1cfg.html#a2ae6ccfe21a05c0792001ae96061eb4b">string_type</a> &gt;</td></tr>
+<tr class="separator:a48d911d2eca0f1903b94ae41589325b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a17a7e0a2edf8384906b0f662d462cfd3" id="r_a17a7e0a2edf8384906b0f662d462cfd3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> : uint32_t { <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add6c0ae6916d0b990a601cab95903e66">MODEL</a> = 1
+<tr class="memitem:ac95eb32082e3a9fbeb45c101ed4e6451" id="r_ac95eb32082e3a9fbeb45c101ed4e6451"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a02c9adc0d63e270f7ea08ef4008e81bf">analog</a> = 1
 , <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218">ID</a> = 2
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab0267128c648c65666ba26bdeb685577">GROUP_ID</a> = 3
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5bcc5eca5c52167826fd65a5b5177e18">ENCODER_MODE</a> = 4
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1c189400ff78d331b05283d2e6e1f52e">POSITION_LOW_ANGLE</a> = 11
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6433f4f26bcae6d525a4b25a30700678">POSITION_HIGH_ANGLE</a> = 12
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3abcd4ce2f3f5d88dfe44aab2228971441">CURRENT_CONV_SCALE</a> = 14
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2e2ed1aafb50d3868139a287ee15ed58">CURRENT_CONV_OFFSET</a> = 15
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a635506dbfa2d898483e0c7996a60d7f4">TEMP_CONV_SCALE</a> = 16
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3e51788c0e37c789f5007042d479e91e">TEMP_CONV_OFFSET</a> = 17
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9da229b909d34f11013bdcf275984461">VOLTAGE_CONV_SCALE</a> = 18
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a27b1d9351a918683ed53e8faad3a4624">INVERT_HBRIDGE</a> = 19
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5ece52fe10c8b9738a0215916df9f5c1">CURRENT_LOOP_P</a> = 30
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a484293eb183cafd6a872e257f5255c95">CURRENT_LOOP_I</a> = 31
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9d0aee5a89a96ad0fa4d1bff8c5e37de">CURRENT_LOOP_D</a> = 32
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5d27ee3ebb714214d1198b16673ada2d">CURRENT_LIM_MIN</a> = 33
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aab34f7796f76a255878423f5155aea97">CURRENT_LIM_MAX</a> = 34
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3afa17f61b9cbecbb7e7eacc898538534e">VELOCITY_LOOP_P</a> = 40
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a351f305c0351b25aa96fc3ed04d673ff">VELOCITY_LOOP_I</a> = 41
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ac314e0ebf8920fd7724fbe160126b67b">VELOCITY_LOOP_D</a> = 42
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add19e1b450d538f7e4f15e922f5c5db2">VELOCITY_LIM_MIN</a> = 43
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9b1509db8257f0cdc3725c0de68894db">VELOCITY_LIM_MAX</a> = 44
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6f267ece2c260181dc5e10a938a26827">VELOCITY_TO_CURR_LIM_SCALE</a> = 45
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a62ab6a965f4c3bf5ccc7865227d7aada">POSITION_LOOP_P</a> = 50
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6183f0e09601674ae8d6d20492813423">POSITION_LOOP_I</a> = 51
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3204e245ff3b67e47f6293f07ad604d5">POSITION_LOOP_D</a> = 52
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab20ae693e2fde0f2ff400cad4eb71a77">POSITION_LIM_MIN</a> = 53
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a35c5180994d66a40ffc59b62258413a1">POSITION_LIM_MAX</a> = 54
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1475199ec7c8f59508f313ac90d0b909">POSITION_TO_VEL_LIM_SCALE</a> = 55
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aef9de0f2161b9a8478c2fac44c8f5185">STATIC_FRICTION_SCALE</a> = 60
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6c89e4ec3a7be28f0c103c13057c4f9c">STATIC_FRICTION_DECAY</a> = 61
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab025034ef4a6897674222cdf80c8c171">MINIMUM_VOLTAGE</a> = 62
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a31f81f3f8379662055edc0f05154c542">MAXIMUM_TEMPERATURE</a> = 65
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8df354e31764c98878c7f2a765111fc5">MOVING_DETECTION_STEP</a> = 66
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a90ed638c490da8f648bc7315210a7f42">QUAD_ENCD_RANGE</a> = 80
-<br />
- }</td></tr>
-<tr class="separator:a17a7e0a2edf8384906b0f662d462cfd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac95eb32082e3a9fbeb45c101ed4e6451" id="r_ac95eb32082e3a9fbeb45c101ed4e6451"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> : uint8_t { <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451ab39c3bb4516942032a2eef39745dd131">ENC_MODE_ANALOG</a> = 1
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451af5c4d91cc253d4fe16fdc0d444063225">ENC_MODE_QUAD</a> = 2
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a9a7821516bdd5d9a1586f094d6e1aacb">quad</a> = 2
 <br />
  }</td></tr>
 <tr class="separator:ac95eb32082e3a9fbeb45c101ed4e6451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17a7e0a2edf8384906b0f662d462cfd3" id="r_a17a7e0a2edf8384906b0f662d462cfd3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a20f35e630daf44dbfa4c3f68f5399d8c">model</a> = 1
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f">id</a> = 2
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a0e939a4ffd3aacd724dd3b50147b4353">group_id</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3879788c8c54de8f9cc05a7ffa5cecdd">encoder_mode</a> = 4
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ad51ef8dc6f384a122f8a1ad65f5cbda0">position_low_angle</a> = 11
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a426e319932d33d22130717d019bd8604">position_high_angle</a> = 12
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a15d1aeff79f57d8ae73b6595f7315885">current_conv_scale</a> = 14
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6781c954ae5cb10ab902b38422be5371">current_conv_offset</a> = 15
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a128bb4ccc34e3149e097051276feb107">temp_conv_scale</a> = 16
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a530d7e88b9632ea1697e000371a7429a">temp_conv_offset</a> = 17
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3afa8652ff2d205b38b16e4bbce2ada224">voltage_conv_scale</a> = 18
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a4cc65d762d2bed3de7efc351b4a43433">invert_hbridge</a> = 19
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aaada797188b227204c37ed74e2011859">current_loop_p</a> = 30
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6cfd5a78bbf933e45376d2463e52cdba">current_loop_i</a> = 31
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3e9248946a76db39400fff28c324fc1e">current_loop_d</a> = 32
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ae01543784ec3cf7e6432a4e710585826">current_lim_min</a> = 33
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5d2cb5b938b227e29376d539745d6031">current_lim_max</a> = 34
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a15cfbb0d062684d7ca899ab3c32123cc">velocity_loop_p</a> = 40
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6fee121a8a44361abacfc929b36c2a76">velocity_loop_i</a> = 41
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a76f740f0b59eb33514128cded4b67d17">velocity_loop_d</a> = 42
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a00178165ea01e51ccc38aef401f0911f">velocity_lim_min</a> = 43
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2e262d19d09a893fcc858183c21b715c">velocity_lim_max</a> = 44
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a7362621e4e854583c7dc6965a34e7031">velocity_to_current_lim_scale</a> = 45
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ad7dd4c7e66a6be078a43d5f969bfcc32">position_loop_p</a> = 50
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a967417287c7c2faa1b6e62f41e002fd1">position_loop_i</a> = 51
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab87a4b73f6b8354139fe42c0b5fcd582">position_loop_d</a> = 52
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6f926ecfcd7ea240f3021231959ef5e1">position_lim_min</a> = 53
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2ef23cd36b8309fbcf66271b0c4e069e">position_lim_max</a> = 54
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a42f4736d5203f0cdca42f19cea71c433">position_to_velocity_lim_scale</a> = 55
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a673b9ac6e87403ce01ee6c1f8f8a7a79">static_friction_scale</a> = 60
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ac58c7cc4fca148d3dc09a9c6296f119d">static_friction_decay</a> = 61
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a21b6369c006cbd75d5205c4cf174c913">minimum_voltage</a> = 62
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aad42c6ceec9c979572dfdac1898051c9">maximum_temperature</a> = 65
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6205b4ef989f8fa005cf3d6a4445afdb">moving_detection_step</a> = 66
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed">quad_encoder_range</a> = 80
+<br />
+ }</td></tr>
+<tr class="separator:a17a7e0a2edf8384906b0f662d462cfd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab1b0accd80bacf405ee88cecdbb53768" id="r_ab1b0accd80bacf405ee88cecdbb53768"><td class="memItemLeft" align="right" valign="top">consteval <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ab1b0accd80bacf405ee88cecdbb53768">get_default_config</a> ()</td></tr>
-<tr class="separator:ab1b0accd80bacf405ee88cecdbb53768"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af51a406aac937b43c11b921dee6cf67b" id="r_af51a406aac937b43c11b921dee6cf67b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#af51a406aac937b43c11b921dee6cf67b">apply</a> (<a class="el" href="classservio_1_1ctl_1_1control.html">ctl::control</a> &amp;ctl, <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> const &amp;m, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> const &amp;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a>)</td></tr>
-<tr class="separator:af51a406aac937b43c11b921dee6cf67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d620c785f59bfb68d9bd89fd2038581" id="r_a9d620c785f59bfb68d9bd89fd2038581"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> Key&gt; </td></tr>
-<tr class="memitem:a9d620c785f59bfb68d9bd89fd2038581"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval">keyval</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a9d620c785f59bfb68d9bd89fd2038581">make_keyval</a> (auto val)</td></tr>
-<tr class="separator:a9d620c785f59bfb68d9bd89fd2038581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eb8fc3fad9e683169acc64a7148a604" id="r_a6eb8fc3fad9e683169acc64a7148a604"><td class="memItemLeft" align="right" valign="top">constexpr std::optional&lt; <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a6eb8fc3fad9e683169acc64a7148a604">str_to_encoder_mode</a> (std::string_view str)</td></tr>
+<tr class="separator:a6eb8fc3fad9e683169acc64a7148a604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa980c6ba0ebb5762dfd1780c78e1fabe" id="r_aa980c6ba0ebb5762dfd1780c78e1fabe"><td class="memItemLeft" align="right" valign="top">constexpr std::optional&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#aa980c6ba0ebb5762dfd1780c78e1fabe">str_to_key</a> (std::string_view str)</td></tr>
+<tr class="separator:aa980c6ba0ebb5762dfd1780c78e1fabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80a4e62e0bd44de593e5680623556811" id="r_a80a4e62e0bd44de593e5680623556811"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale">off_scale</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811">calculate_current_conversion</a> (float v_max, float v_min, float steps, float r_shunt, float gain)</td></tr>
 <tr class="separator:a80a4e62e0bd44de593e5680623556811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aacd5b64d1f9f88f8f96968dda51a22e1" id="r_aacd5b64d1f9f88f8f96968dda51a22e1"><td class="memItemLeft" align="right" valign="top">constexpr std::array&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a>, 35 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#aacd5b64d1f9f88f8f96968dda51a22e1">keys</a></td></tr>
+<tr class="separator:aacd5b64d1f9f88f8f96968dda51a22e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7b5b8858fd0b5aa713c341ba3d2877" id="r_a9a7b5b8858fd0b5aa713c341ba3d2877"><td class="memItemLeft" align="right" valign="top">constexpr std::array&lt; uint32_t, 35 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a9a7b5b8858fd0b5aa713c341ba3d2877">ids</a></td></tr>
+<tr class="separator:a9a7b5b8858fd0b5aa713c341ba3d2877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1cfg_1_1context" id="structservio_1_1cfg_1_1context"></a>
@@ -240,41 +230,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
+<div class="textblock"></div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::cfg::context:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1cfg_1_1context__coll__graph.svg" width="158" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a3dbb7cf8f857ae3e9ab69908e1674f69" name="a3dbb7cf8f857ae3e9ab69908e1674f69"></a><a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a></td>
+<a id="a3dbb7cf8f857ae3e9ab69908e1674f69" name="a3dbb7cf8f857ae3e9ab69908e1674f69"></a><a class="el" href="structservio_1_1cfg_1_1map.html">map</a></td>
 <td class="fieldname">
 map</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="structservio_1_1cfg_1_1keyval" id="structservio_1_1cfg_1_1keyval"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1cfg_1_1keyval">&#9670;&#160;</a></span>servio::cfg::keyval</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::cfg::keyval</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="af0544dfab0920b3b31d6fdb7063445db" name="af0544dfab0920b3b31d6fdb7063445db"></a><a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a></td>
-<td class="fieldname">
-key</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a01c421b775e98f6e6f964f38d1a9bdc8" name="a01c421b775e98f6e6f964f38d1a9bdc8"></a><a class="el" href="namespaceservio_1_1cfg.html#a8aede70f47a2a0b2a4eb2f0f9056d142">value_message</a></td>
-<td class="fieldname">
-msg</td>
 <td class="fielddoc">
 </td></tr>
 </table>
@@ -310,159 +278,29 @@ scale</td>
 
 </div>
 </div>
-<a name="structservio_1_1cfg_1_1page__info" id="structservio_1_1cfg_1_1page__info"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1cfg_1_1page__info">&#9670;&#160;</a></span>servio::cfg::page_info</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::cfg::page_info</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a1d6dbb2edf63f191411bb82a62181223" name="a1d6dbb2edf63f191411bb82a62181223"></a>page_state</td>
-<td class="fieldname">
-st = page_state::A</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="af496a760700e5c43be35ed4e3aabf7fa" name="af496a760700e5c43be35ed4e3aabf7fa"></a>uint32_t</td>
-<td class="fieldname">
-ver = 0x01</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="structservio_1_1cfg_1_1record" id="structservio_1_1cfg_1_1record"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1cfg_1_1record">&#9670;&#160;</a></span>servio::cfg::record</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::cfg::record</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a66972d206c15053111bcbccad4288ba0" name="a66972d206c15053111bcbccad4288ba0"></a>uint32_t</td>
-<td class="fieldname">
-data</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="ad21d5d419e323d3423aafde6f97ba8c5" name="ad21d5d419e323d3423aafde6f97ba8c5"></a>uint16_t</td>
-<td class="fieldname">
-key</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="aebf1441050290671f4e9721c97421e31" name="aebf1441050290671f4e9721c97421e31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebf1441050290671f4e9721c97421e31">&#9670;&#160;</a></span>handler</h2>
+<a id="a2ae6ccfe21a05c0792001ae96061eb4b" name="a2ae6ccfe21a05c0792001ae96061eb4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae6ccfe21a05c0792001ae96061eb4b">&#9670;&#160;</a></span>string_type</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1cfg.html#aebf1441050290671f4e9721c97421e31">servio::cfg::handler</a> = typedef em::protocol::register_handler&lt; <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> &gt;</td>
+          <td class="memname">using <a class="el" href="namespaceservio_1_1cfg.html#a2ae6ccfe21a05c0792001ae96061eb4b">servio::cfg::string_type</a> = typedef em::string_buffer&lt; 32 &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="abda42f815b2023fe34054fd7a2845325" name="abda42f815b2023fe34054fd7a2845325"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abda42f815b2023fe34054fd7a2845325">&#9670;&#160;</a></span>map</h2>
+<a id="a48d911d2eca0f1903b94ae41589325b7" name="a48d911d2eca0f1903b94ae41589325b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48d911d2eca0f1903b94ae41589325b7">&#9670;&#160;</a></span>value_type</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">servio::cfg::map</a> = typedef em::protocol::register_map&lt; std::endian::little, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add6c0ae6916d0b990a601cab95903e66">MODEL</a>, <a class="el" href="namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d">model_name</a> &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218">ID</a>, uint32_t &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab0267128c648c65666ba26bdeb685577">GROUP_ID</a>, uint32_t &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5bcc5eca5c52167826fd65a5b5177e18">ENCODER_MODE</a>, <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1c189400ff78d331b05283d2e6e1f52e">POSITION_LOW_ANGLE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6433f4f26bcae6d525a4b25a30700678">POSITION_HIGH_ANGLE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3abcd4ce2f3f5d88dfe44aab2228971441">CURRENT_CONV_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2e2ed1aafb50d3868139a287ee15ed58">CURRENT_CONV_OFFSET</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a635506dbfa2d898483e0c7996a60d7f4">TEMP_CONV_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3e51788c0e37c789f5007042d479e91e">TEMP_CONV_OFFSET</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9da229b909d34f11013bdcf275984461">VOLTAGE_CONV_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a27b1d9351a918683ed53e8faad3a4624">INVERT_HBRIDGE</a>, bool &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5ece52fe10c8b9738a0215916df9f5c1">CURRENT_LOOP_P</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a484293eb183cafd6a872e257f5255c95">CURRENT_LOOP_I</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9d0aee5a89a96ad0fa4d1bff8c5e37de">CURRENT_LOOP_D</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5d27ee3ebb714214d1198b16673ada2d">CURRENT_LIM_MIN</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aab34f7796f76a255878423f5155aea97">CURRENT_LIM_MAX</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3afa17f61b9cbecbb7e7eacc898538534e">VELOCITY_LOOP_P</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a351f305c0351b25aa96fc3ed04d673ff">VELOCITY_LOOP_I</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ac314e0ebf8920fd7724fbe160126b67b">VELOCITY_LOOP_D</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add19e1b450d538f7e4f15e922f5c5db2">VELOCITY_LIM_MIN</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9b1509db8257f0cdc3725c0de68894db">VELOCITY_LIM_MAX</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6f267ece2c260181dc5e10a938a26827">VELOCITY_TO_CURR_LIM_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a62ab6a965f4c3bf5ccc7865227d7aada">POSITION_LOOP_P</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6183f0e09601674ae8d6d20492813423">POSITION_LOOP_I</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3204e245ff3b67e47f6293f07ad604d5">POSITION_LOOP_D</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab20ae693e2fde0f2ff400cad4eb71a77">POSITION_LIM_MIN</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a35c5180994d66a40ffc59b62258413a1">POSITION_LIM_MAX</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1475199ec7c8f59508f313ac90d0b909">POSITION_TO_VEL_LIM_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aef9de0f2161b9a8478c2fac44c8f5185">STATIC_FRICTION_SCALE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6c89e4ec3a7be28f0c103c13057c4f9c">STATIC_FRICTION_DECAY</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab025034ef4a6897674222cdf80c8c171">MINIMUM_VOLTAGE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a31f81f3f8379662055edc0f05154c542">MAXIMUM_TEMPERATURE</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8df354e31764c98878c7f2a765111fc5">MOVING_DETECTION_STEP</a>, float &gt;, <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">reg</a>&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a90ed638c490da8f648bc7315210a7f42">QUAD_ENCD_RANGE</a>, uint32_t &gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac1b0cd7595545bccd65c21b9925a525d" name="ac1b0cd7595545bccd65c21b9925a525d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1b0cd7595545bccd65c21b9925a525d">&#9670;&#160;</a></span>model_name</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d">servio::cfg::model_name</a> = typedef em::string_buffer&lt; 32 &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9433bdfbcc58ecaceece24bd28e0b173" name="a9433bdfbcc58ecaceece24bd28e0b173"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9433bdfbcc58ecaceece24bd28e0b173">&#9670;&#160;</a></span>page</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1cfg.html#a9433bdfbcc58ecaceece24bd28e0b173">servio::cfg::page</a> = typedef std::span&lt; std::byte* &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a32b8c5eabc601575ebc6703e48d5a32f" name="a32b8c5eabc601575ebc6703e48d5a32f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32b8c5eabc601575ebc6703e48d5a32f">&#9670;&#160;</a></span>reg</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;auto Key, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1cfg.html#a32b8c5eabc601575ebc6703e48d5a32f">servio::cfg::reg</a> = typedef em::protocol::register_pair&lt; Key, T &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8aede70f47a2a0b2a4eb2f0f9056d142" name="a8aede70f47a2a0b2a4eb2f0f9056d142"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8aede70f47a2a0b2a4eb2f0f9056d142">&#9670;&#160;</a></span>value_message</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1cfg.html#a8aede70f47a2a0b2a4eb2f0f9056d142">servio::cfg::value_message</a> = typedef typename map::message_type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab8bcf8607b8a636737d60192fbfa5da4" name="ab8bcf8607b8a636737d60192fbfa5da4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8bcf8607b8a636737d60192fbfa5da4">&#9670;&#160;</a></span>value_variant</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceservio_1_1cfg.html#ab8bcf8607b8a636737d60192fbfa5da4">servio::cfg::value_variant</a> = typedef std::variant&lt; <a class="el" href="namespaceservio_1_1cfg.html#ac1b0cd7595545bccd65c21b9925a525d">model_name</a>, uint32_t, float, bool, <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> &gt;</td>
+          <td class="memname">using <a class="el" href="namespaceservio_1_1cfg.html#a48d911d2eca0f1903b94ae41589325b7">servio::cfg::value_type</a> = typedef vari::typelist&lt; uint32_t, float, bool, <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a>, <a class="el" href="namespaceservio_1_1cfg.html#a2ae6ccfe21a05c0792001ae96061eb4b">string_type</a> &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -475,15 +313,23 @@ template&lt;auto Key, typename T &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">servio::cfg::encoder_mode</a> : uint8_t</td>
+          <td class="memname">enum class <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">servio::cfg::encoder_mode</a> : uint8_t</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac95eb32082e3a9fbeb45c101ed4e6451ab39c3bb4516942032a2eef39745dd131" name="ac95eb32082e3a9fbeb45c101ed4e6451ab39c3bb4516942032a2eef39745dd131"></a>ENC_MODE_ANALOG&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac95eb32082e3a9fbeb45c101ed4e6451af5c4d91cc253d4fe16fdc0d444063225" name="ac95eb32082e3a9fbeb45c101ed4e6451af5c4d91cc253d4fe16fdc0d444063225"></a>ENC_MODE_QUAD&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac95eb32082e3a9fbeb45c101ed4e6451a02c9adc0d63e270f7ea08ef4008e81bf" name="ac95eb32082e3a9fbeb45c101ed4e6451a02c9adc0d63e270f7ea08ef4008e81bf"></a>analog&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac95eb32082e3a9fbeb45c101ed4e6451a9a7821516bdd5d9a1586f094d6e1aacb" name="ac95eb32082e3a9fbeb45c101ed4e6451a9a7821516bdd5d9a1586f094d6e1aacb"></a>quad&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -493,89 +339,61 @@ template&lt;auto Key, typename T &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">servio::cfg::key</a> : uint32_t</td>
+          <td class="memname">enum class <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">servio::cfg::key</a> : uint32_t</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3add6c0ae6916d0b990a601cab95903e66" name="a17a7e0a2edf8384906b0f662d462cfd3add6c0ae6916d0b990a601cab95903e66"></a>MODEL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218" name="a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218"></a>ID&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3ab0267128c648c65666ba26bdeb685577" name="a17a7e0a2edf8384906b0f662d462cfd3ab0267128c648c65666ba26bdeb685577"></a>GROUP_ID&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a5bcc5eca5c52167826fd65a5b5177e18" name="a17a7e0a2edf8384906b0f662d462cfd3a5bcc5eca5c52167826fd65a5b5177e18"></a>ENCODER_MODE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a1c189400ff78d331b05283d2e6e1f52e" name="a17a7e0a2edf8384906b0f662d462cfd3a1c189400ff78d331b05283d2e6e1f52e"></a>POSITION_LOW_ANGLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a6433f4f26bcae6d525a4b25a30700678" name="a17a7e0a2edf8384906b0f662d462cfd3a6433f4f26bcae6d525a4b25a30700678"></a>POSITION_HIGH_ANGLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3abcd4ce2f3f5d88dfe44aab2228971441" name="a17a7e0a2edf8384906b0f662d462cfd3abcd4ce2f3f5d88dfe44aab2228971441"></a>CURRENT_CONV_SCALE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a2e2ed1aafb50d3868139a287ee15ed58" name="a17a7e0a2edf8384906b0f662d462cfd3a2e2ed1aafb50d3868139a287ee15ed58"></a>CURRENT_CONV_OFFSET&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a635506dbfa2d898483e0c7996a60d7f4" name="a17a7e0a2edf8384906b0f662d462cfd3a635506dbfa2d898483e0c7996a60d7f4"></a>TEMP_CONV_SCALE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a3e51788c0e37c789f5007042d479e91e" name="a17a7e0a2edf8384906b0f662d462cfd3a3e51788c0e37c789f5007042d479e91e"></a>TEMP_CONV_OFFSET&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a9da229b909d34f11013bdcf275984461" name="a17a7e0a2edf8384906b0f662d462cfd3a9da229b909d34f11013bdcf275984461"></a>VOLTAGE_CONV_SCALE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a27b1d9351a918683ed53e8faad3a4624" name="a17a7e0a2edf8384906b0f662d462cfd3a27b1d9351a918683ed53e8faad3a4624"></a>INVERT_HBRIDGE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a5ece52fe10c8b9738a0215916df9f5c1" name="a17a7e0a2edf8384906b0f662d462cfd3a5ece52fe10c8b9738a0215916df9f5c1"></a>CURRENT_LOOP_P&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a484293eb183cafd6a872e257f5255c95" name="a17a7e0a2edf8384906b0f662d462cfd3a484293eb183cafd6a872e257f5255c95"></a>CURRENT_LOOP_I&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a9d0aee5a89a96ad0fa4d1bff8c5e37de" name="a17a7e0a2edf8384906b0f662d462cfd3a9d0aee5a89a96ad0fa4d1bff8c5e37de"></a>CURRENT_LOOP_D&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a5d27ee3ebb714214d1198b16673ada2d" name="a17a7e0a2edf8384906b0f662d462cfd3a5d27ee3ebb714214d1198b16673ada2d"></a>CURRENT_LIM_MIN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3aab34f7796f76a255878423f5155aea97" name="a17a7e0a2edf8384906b0f662d462cfd3aab34f7796f76a255878423f5155aea97"></a>CURRENT_LIM_MAX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3afa17f61b9cbecbb7e7eacc898538534e" name="a17a7e0a2edf8384906b0f662d462cfd3afa17f61b9cbecbb7e7eacc898538534e"></a>VELOCITY_LOOP_P&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a351f305c0351b25aa96fc3ed04d673ff" name="a17a7e0a2edf8384906b0f662d462cfd3a351f305c0351b25aa96fc3ed04d673ff"></a>VELOCITY_LOOP_I&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3ac314e0ebf8920fd7724fbe160126b67b" name="a17a7e0a2edf8384906b0f662d462cfd3ac314e0ebf8920fd7724fbe160126b67b"></a>VELOCITY_LOOP_D&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3add19e1b450d538f7e4f15e922f5c5db2" name="a17a7e0a2edf8384906b0f662d462cfd3add19e1b450d538f7e4f15e922f5c5db2"></a>VELOCITY_LIM_MIN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a9b1509db8257f0cdc3725c0de68894db" name="a17a7e0a2edf8384906b0f662d462cfd3a9b1509db8257f0cdc3725c0de68894db"></a>VELOCITY_LIM_MAX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a6f267ece2c260181dc5e10a938a26827" name="a17a7e0a2edf8384906b0f662d462cfd3a6f267ece2c260181dc5e10a938a26827"></a>VELOCITY_TO_CURR_LIM_SCALE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a62ab6a965f4c3bf5ccc7865227d7aada" name="a17a7e0a2edf8384906b0f662d462cfd3a62ab6a965f4c3bf5ccc7865227d7aada"></a>POSITION_LOOP_P&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a6183f0e09601674ae8d6d20492813423" name="a17a7e0a2edf8384906b0f662d462cfd3a6183f0e09601674ae8d6d20492813423"></a>POSITION_LOOP_I&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a3204e245ff3b67e47f6293f07ad604d5" name="a17a7e0a2edf8384906b0f662d462cfd3a3204e245ff3b67e47f6293f07ad604d5"></a>POSITION_LOOP_D&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3ab20ae693e2fde0f2ff400cad4eb71a77" name="a17a7e0a2edf8384906b0f662d462cfd3ab20ae693e2fde0f2ff400cad4eb71a77"></a>POSITION_LIM_MIN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a35c5180994d66a40ffc59b62258413a1" name="a17a7e0a2edf8384906b0f662d462cfd3a35c5180994d66a40ffc59b62258413a1"></a>POSITION_LIM_MAX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a1475199ec7c8f59508f313ac90d0b909" name="a17a7e0a2edf8384906b0f662d462cfd3a1475199ec7c8f59508f313ac90d0b909"></a>POSITION_TO_VEL_LIM_SCALE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3aef9de0f2161b9a8478c2fac44c8f5185" name="a17a7e0a2edf8384906b0f662d462cfd3aef9de0f2161b9a8478c2fac44c8f5185"></a>STATIC_FRICTION_SCALE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a6c89e4ec3a7be28f0c103c13057c4f9c" name="a17a7e0a2edf8384906b0f662d462cfd3a6c89e4ec3a7be28f0c103c13057c4f9c"></a>STATIC_FRICTION_DECAY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3ab025034ef4a6897674222cdf80c8c171" name="a17a7e0a2edf8384906b0f662d462cfd3ab025034ef4a6897674222cdf80c8c171"></a>MINIMUM_VOLTAGE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a31f81f3f8379662055edc0f05154c542" name="a17a7e0a2edf8384906b0f662d462cfd3a31f81f3f8379662055edc0f05154c542"></a>MAXIMUM_TEMPERATURE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a8df354e31764c98878c7f2a765111fc5" name="a17a7e0a2edf8384906b0f662d462cfd3a8df354e31764c98878c7f2a765111fc5"></a>MOVING_DETECTION_STEP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a90ed638c490da8f648bc7315210a7f42" name="a17a7e0a2edf8384906b0f662d462cfd3a90ed638c490da8f648bc7315210a7f42"></a>QUAD_ENCD_RANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a20f35e630daf44dbfa4c3f68f5399d8c" name="a17a7e0a2edf8384906b0f662d462cfd3a20f35e630daf44dbfa4c3f68f5399d8c"></a>model&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f" name="a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f"></a>id&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a0e939a4ffd3aacd724dd3b50147b4353" name="a17a7e0a2edf8384906b0f662d462cfd3a0e939a4ffd3aacd724dd3b50147b4353"></a>group_id&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a3879788c8c54de8f9cc05a7ffa5cecdd" name="a17a7e0a2edf8384906b0f662d462cfd3a3879788c8c54de8f9cc05a7ffa5cecdd"></a>encoder_mode&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3ad51ef8dc6f384a122f8a1ad65f5cbda0" name="a17a7e0a2edf8384906b0f662d462cfd3ad51ef8dc6f384a122f8a1ad65f5cbda0"></a>position_low_angle&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a426e319932d33d22130717d019bd8604" name="a17a7e0a2edf8384906b0f662d462cfd3a426e319932d33d22130717d019bd8604"></a>position_high_angle&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a15d1aeff79f57d8ae73b6595f7315885" name="a17a7e0a2edf8384906b0f662d462cfd3a15d1aeff79f57d8ae73b6595f7315885"></a>current_conv_scale&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a6781c954ae5cb10ab902b38422be5371" name="a17a7e0a2edf8384906b0f662d462cfd3a6781c954ae5cb10ab902b38422be5371"></a>current_conv_offset&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a128bb4ccc34e3149e097051276feb107" name="a17a7e0a2edf8384906b0f662d462cfd3a128bb4ccc34e3149e097051276feb107"></a>temp_conv_scale&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a530d7e88b9632ea1697e000371a7429a" name="a17a7e0a2edf8384906b0f662d462cfd3a530d7e88b9632ea1697e000371a7429a"></a>temp_conv_offset&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3afa8652ff2d205b38b16e4bbce2ada224" name="a17a7e0a2edf8384906b0f662d462cfd3afa8652ff2d205b38b16e4bbce2ada224"></a>voltage_conv_scale&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a4cc65d762d2bed3de7efc351b4a43433" name="a17a7e0a2edf8384906b0f662d462cfd3a4cc65d762d2bed3de7efc351b4a43433"></a>invert_hbridge&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3aaada797188b227204c37ed74e2011859" name="a17a7e0a2edf8384906b0f662d462cfd3aaada797188b227204c37ed74e2011859"></a>current_loop_p&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a6cfd5a78bbf933e45376d2463e52cdba" name="a17a7e0a2edf8384906b0f662d462cfd3a6cfd5a78bbf933e45376d2463e52cdba"></a>current_loop_i&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a3e9248946a76db39400fff28c324fc1e" name="a17a7e0a2edf8384906b0f662d462cfd3a3e9248946a76db39400fff28c324fc1e"></a>current_loop_d&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3ae01543784ec3cf7e6432a4e710585826" name="a17a7e0a2edf8384906b0f662d462cfd3ae01543784ec3cf7e6432a4e710585826"></a>current_lim_min&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a5d2cb5b938b227e29376d539745d6031" name="a17a7e0a2edf8384906b0f662d462cfd3a5d2cb5b938b227e29376d539745d6031"></a>current_lim_max&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a15cfbb0d062684d7ca899ab3c32123cc" name="a17a7e0a2edf8384906b0f662d462cfd3a15cfbb0d062684d7ca899ab3c32123cc"></a>velocity_loop_p&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a6fee121a8a44361abacfc929b36c2a76" name="a17a7e0a2edf8384906b0f662d462cfd3a6fee121a8a44361abacfc929b36c2a76"></a>velocity_loop_i&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a76f740f0b59eb33514128cded4b67d17" name="a17a7e0a2edf8384906b0f662d462cfd3a76f740f0b59eb33514128cded4b67d17"></a>velocity_loop_d&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a00178165ea01e51ccc38aef401f0911f" name="a17a7e0a2edf8384906b0f662d462cfd3a00178165ea01e51ccc38aef401f0911f"></a>velocity_lim_min&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a2e262d19d09a893fcc858183c21b715c" name="a17a7e0a2edf8384906b0f662d462cfd3a2e262d19d09a893fcc858183c21b715c"></a>velocity_lim_max&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a7362621e4e854583c7dc6965a34e7031" name="a17a7e0a2edf8384906b0f662d462cfd3a7362621e4e854583c7dc6965a34e7031"></a>velocity_to_current_lim_scale&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3ad7dd4c7e66a6be078a43d5f969bfcc32" name="a17a7e0a2edf8384906b0f662d462cfd3ad7dd4c7e66a6be078a43d5f969bfcc32"></a>position_loop_p&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a967417287c7c2faa1b6e62f41e002fd1" name="a17a7e0a2edf8384906b0f662d462cfd3a967417287c7c2faa1b6e62f41e002fd1"></a>position_loop_i&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3ab87a4b73f6b8354139fe42c0b5fcd582" name="a17a7e0a2edf8384906b0f662d462cfd3ab87a4b73f6b8354139fe42c0b5fcd582"></a>position_loop_d&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a6f926ecfcd7ea240f3021231959ef5e1" name="a17a7e0a2edf8384906b0f662d462cfd3a6f926ecfcd7ea240f3021231959ef5e1"></a>position_lim_min&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a2ef23cd36b8309fbcf66271b0c4e069e" name="a17a7e0a2edf8384906b0f662d462cfd3a2ef23cd36b8309fbcf66271b0c4e069e"></a>position_lim_max&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a42f4736d5203f0cdca42f19cea71c433" name="a17a7e0a2edf8384906b0f662d462cfd3a42f4736d5203f0cdca42f19cea71c433"></a>position_to_velocity_lim_scale&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a673b9ac6e87403ce01ee6c1f8f8a7a79" name="a17a7e0a2edf8384906b0f662d462cfd3a673b9ac6e87403ce01ee6c1f8f8a7a79"></a>static_friction_scale&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3ac58c7cc4fca148d3dc09a9c6296f119d" name="a17a7e0a2edf8384906b0f662d462cfd3ac58c7cc4fca148d3dc09a9c6296f119d"></a>static_friction_decay&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a21b6369c006cbd75d5205c4cf174c913" name="a17a7e0a2edf8384906b0f662d462cfd3a21b6369c006cbd75d5205c4cf174c913"></a>minimum_voltage&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3aad42c6ceec9c979572dfdac1898051c9" name="a17a7e0a2edf8384906b0f662d462cfd3aad42c6ceec9c979572dfdac1898051c9"></a>maximum_temperature&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3a6205b4ef989f8fa005cf3d6a4445afdb" name="a17a7e0a2edf8384906b0f662d462cfd3a6205b4ef989f8fa005cf3d6a4445afdb"></a>moving_detection_step&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed" name="a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed"></a>quad_encoder_range&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af51a406aac937b43c11b921dee6cf67b" name="af51a406aac937b43c11b921dee6cf67b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af51a406aac937b43c11b921dee6cf67b">&#9670;&#160;</a></span>apply()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void servio::cfg::apply </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classservio_1_1ctl_1_1control.html">ctl::control</a> &amp;&#160;</td>
-          <td class="paramname"><em>ctl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> const &amp;&#160;</td>
-          <td class="paramname"><em>m</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> const &amp;&#160;</td>
-          <td class="paramname"><em>key</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2aa2770969c827f0f2910f6179418462df">servio::CURRENT</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aab34f7796f76a255878423f5155aea97">CURRENT_LIM_MAX</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5d27ee3ebb714214d1198b16673ada2d">CURRENT_LIM_MIN</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9d0aee5a89a96ad0fa4d1bff8c5e37de">CURRENT_LOOP_D</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a484293eb183cafd6a872e257f5255c95">CURRENT_LOOP_I</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5ece52fe10c8b9738a0215916df9f5c1">CURRENT_LOOP_P</a>, <a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2a90b4ba73224408e82ade8a072a3712c1">servio::POSITION</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a35c5180994d66a40ffc59b62258413a1">POSITION_LIM_MAX</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab20ae693e2fde0f2ff400cad4eb71a77">POSITION_LIM_MIN</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3204e245ff3b67e47f6293f07ad604d5">POSITION_LOOP_D</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6183f0e09601674ae8d6d20492813423">POSITION_LOOP_I</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a62ab6a965f4c3bf5ccc7865227d7aada">POSITION_LOOP_P</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1475199ec7c8f59508f313ac90d0b909">POSITION_TO_VEL_LIM_SCALE</a>, <a class="el" href="classservio_1_1ctl_1_1control.html#a38a843981e3f30711a8ecb2e57a2567e">servio::ctl::control::set_limits()</a>, <a class="el" href="classservio_1_1ctl_1_1control.html#a59bf910eb61a839854546eec53f07781">servio::ctl::control::set_pid()</a>, <a class="el" href="classservio_1_1ctl_1_1control.html#a026b36daf4dfc381a6f54e515260cb02">servio::ctl::control::set_pos_to_vel_lim_scale()</a>, <a class="el" href="classservio_1_1ctl_1_1control.html#a52eaa3ffd4fedd26bc42c7836eaf0a20">servio::ctl::control::set_static_friction()</a>, <a class="el" href="classservio_1_1ctl_1_1control.html#ad94697bfa27c37accf9a298e72ae5f5b">servio::ctl::control::set_vel_to_curr_lim_scale()</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6c89e4ec3a7be28f0c103c13057c4f9c">STATIC_FRICTION_DECAY</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aef9de0f2161b9a8478c2fac44c8f5185">STATIC_FRICTION_SCALE</a>, <a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2a7b4354bded455eb379e3c764806cda7b">servio::VELOCITY</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9b1509db8257f0cdc3725c0de68894db">VELOCITY_LIM_MAX</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add19e1b450d538f7e4f15e922f5c5db2">VELOCITY_LIM_MIN</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ac314e0ebf8920fd7724fbe160126b67b">VELOCITY_LOOP_D</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a351f305c0351b25aa96fc3ed04d673ff">VELOCITY_LOOP_I</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3afa17f61b9cbecbb7e7eacc898538534e">VELOCITY_LOOP_P</a>, and <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6f267ece2c260181dc5e10a938a26827">VELOCITY_TO_CURR_LIM_SCALE</a>.</p>
-
-</div>
-</div>
 <a id="a80a4e62e0bd44de593e5680623556811" name="a80a4e62e0bd44de593e5680623556811"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80a4e62e0bd44de593e5680623556811">&#9670;&#160;</a></span>calculate_current_conversion()</h2>
 
@@ -632,44 +450,108 @@ template&lt;auto Key, typename T &gt; </div>
 
 </div>
 </div>
-<a id="ab1b0accd80bacf405ee88cecdbb53768" name="ab1b0accd80bacf405ee88cecdbb53768"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1b0accd80bacf405ee88cecdbb53768">&#9670;&#160;</a></span>get_default_config()</h2>
+<a id="a6eb8fc3fad9e683169acc64a7148a604" name="a6eb8fc3fad9e683169acc64a7148a604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eb8fc3fad9e683169acc64a7148a604">&#9670;&#160;</a></span>str_to_encoder_mode()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">consteval <a class="el" href="namespaceservio_1_1cfg.html#abda42f815b2023fe34054fd7a2845325">map</a> servio::cfg::get_default_config </td>
+          <td class="memname">constexpr std::optional&lt; <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> &gt; servio::cfg::str_to_encoder_mode </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451af5c4d91cc253d4fe16fdc0d444063225">ENC_MODE_QUAD</a>, and <a class="el" href="namespaceservio.html#a20c15193768c59a28a88e172aba5ab20">servio::pi</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a02c9adc0d63e270f7ea08ef4008e81bf">analog</a>, and <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a9a7821516bdd5d9a1586f094d6e1aacb">quad</a>.</p>
 
 </div>
 </div>
-<a id="a9d620c785f59bfb68d9bd89fd2038581" name="a9d620c785f59bfb68d9bd89fd2038581"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d620c785f59bfb68d9bd89fd2038581">&#9670;&#160;</a></span>make_keyval()</h2>
+<a id="aa980c6ba0ebb5762dfd1780c78e1fabe" name="aa980c6ba0ebb5762dfd1780c78e1fabe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa980c6ba0ebb5762dfd1780c78e1fabe">&#9670;&#160;</a></span>str_to_key()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> Key&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval">keyval</a> servio::cfg::make_keyval </td>
+          <td class="memname">constexpr std::optional&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> &gt; servio::cfg::str_to_key </td>
           <td>(</td>
-          <td class="paramtype">auto&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1cfg.html#af0544dfab0920b3b31d6fdb7063445db">servio::cfg::keyval::key</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6781c954ae5cb10ab902b38422be5371">current_conv_offset</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a15d1aeff79f57d8ae73b6595f7315885">current_conv_scale</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5d2cb5b938b227e29376d539745d6031">current_lim_max</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ae01543784ec3cf7e6432a4e710585826">current_lim_min</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3e9248946a76db39400fff28c324fc1e">current_loop_d</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6cfd5a78bbf933e45376d2463e52cdba">current_loop_i</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aaada797188b227204c37ed74e2011859">current_loop_p</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3879788c8c54de8f9cc05a7ffa5cecdd">encoder_mode</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a0e939a4ffd3aacd724dd3b50147b4353">group_id</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f">id</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a4cc65d762d2bed3de7efc351b4a43433">invert_hbridge</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aad42c6ceec9c979572dfdac1898051c9">maximum_temperature</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a21b6369c006cbd75d5205c4cf174c913">minimum_voltage</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a20f35e630daf44dbfa4c3f68f5399d8c">model</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6205b4ef989f8fa005cf3d6a4445afdb">moving_detection_step</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a426e319932d33d22130717d019bd8604">position_high_angle</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2ef23cd36b8309fbcf66271b0c4e069e">position_lim_max</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6f926ecfcd7ea240f3021231959ef5e1">position_lim_min</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab87a4b73f6b8354139fe42c0b5fcd582">position_loop_d</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a967417287c7c2faa1b6e62f41e002fd1">position_loop_i</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ad7dd4c7e66a6be078a43d5f969bfcc32">position_loop_p</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ad51ef8dc6f384a122f8a1ad65f5cbda0">position_low_angle</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a42f4736d5203f0cdca42f19cea71c433">position_to_velocity_lim_scale</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed">quad_encoder_range</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ac58c7cc4fca148d3dc09a9c6296f119d">static_friction_decay</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a673b9ac6e87403ce01ee6c1f8f8a7a79">static_friction_scale</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a530d7e88b9632ea1697e000371a7429a">temp_conv_offset</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a128bb4ccc34e3149e097051276feb107">temp_conv_scale</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2e262d19d09a893fcc858183c21b715c">velocity_lim_max</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a00178165ea01e51ccc38aef401f0911f">velocity_lim_min</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a76f740f0b59eb33514128cded4b67d17">velocity_loop_d</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6fee121a8a44361abacfc929b36c2a76">velocity_loop_i</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a15cfbb0d062684d7ca899ab3c32123cc">velocity_loop_p</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a7362621e4e854583c7dc6965a34e7031">velocity_to_current_lim_scale</a>, and <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3afa8652ff2d205b38b16e4bbce2ada224">voltage_conv_scale</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a9a7b5b8858fd0b5aa713c341ba3d2877" name="a9a7b5b8858fd0b5aa713c341ba3d2877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7b5b8858fd0b5aa713c341ba3d2877">&#9670;&#160;</a></span>ids</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::array&lt; uint32_t, 35 &gt; servio::cfg::ids</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    1,  2,  3,  4,  11, 12, 14, 15, 16, 17, 18, 19, 30, 31, 32, 33, 34, 40,</div>
+<div class="line">    41, 42, 43, 44, 45, 50, 51, 52, 53, 54, 55, 60, 61, 62, 65, 66, 80,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aacd5b64d1f9f88f8f96968dda51a22e1" name="aacd5b64d1f9f88f8f96968dda51a22e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacd5b64d1f9f88f8f96968dda51a22e1">&#9670;&#160;</a></span>keys</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::array&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a>, 35 &gt; servio::cfg::keys</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -679,7 +561,7 @@ template&lt;<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1cfg.html">cfg</a></li>
-    <li class="footer">Generated on Tue Apr 22 2025 11:02:01 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu May 8 2025 15:49:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

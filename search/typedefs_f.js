@@ -8,5 +8,7 @@ var searchData=
   ['state_5fcovariance_5',['state_covariance',['../namespaceservio_1_1klmn.html#ae839380c658b06e259608b78e6f17203',1,'servio::klmn']]],
   ['state_5ftransition_5fmodel_6',['state_transition_model',['../namespaceservio_1_1klmn.html#afea6216b903aa2cb07122c0a086643cd',1,'servio::klmn']]],
   ['stmt_7',['stmt',['../namespaceservio_1_1iface.html#a737e56b7f88459ad67c0001f4dd1e64a',1,'servio::iface']]],
-  ['str_5fname_8',['str_name',['../namespaceservio_1_1iface.html#aeb9ff3cc159dd124b89a32fe26bddce0',1,'servio::iface']]]
+  ['str_5fname_8',['str_name',['../namespaceservio_1_1iface.html#aeb9ff3cc159dd124b89a32fe26bddce0',1,'servio::iface']]],
+  ['string_5ftype_9',['string_type',['../namespaceservio_1_1cfg.html#a2ae6ccfe21a05c0792001ae96061eb4b',1,'servio::cfg']]],
+  ['sv_5fkey_10',['sv_key',['../namespaceservio.html#a2c228fec92f02dc577feb5048d12863c',1,'servio']]]
 ];

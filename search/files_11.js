@@ -12,7 +12,7 @@ var searchData=
   ['static_5fdetector_2ehpp_9',['static_detector.hpp',['../static__detector_8hpp.html',1,'']]],
   ['status_2ehpp_10',['status.hpp',['../status_8hpp.html',1,'']]],
   ['stm32h5xx_5fhal_5fconf_2eh_11',['stm32h5xx_hal_conf.h',['../stm32h5xx__hal__conf_8h.html',1,'']]],
-  ['str_5flib_2eh_12',['str_lib.h',['../str__lib_8h.html',1,'']]],
+  ['str_5flib_2ehpp_12',['str_lib.hpp',['../str__lib_8hpp.html',1,'']]],
   ['str_5flib_5futest_2ecpp_13',['str_lib_utest.cpp',['../str__lib__utest_8cpp.html',1,'']]],
   ['system_2ehpp_14',['system.hpp',['../system_8hpp.html',1,'']]]
 ];

@@ -16,5 +16,6 @@ var searchData=
   ['stm32_5fbootloader_5fmock_13',['stm32_bootloader_mock',['../structservio_1_1scmdio_1_1stm32__bootloader__mock.html',1,'servio::scmdio']]],
   ['stor_14',['stor',['../structservio_1_1drv_1_1mock_1_1stor.html',1,'servio::drv::mock']]],
   ['storage_5fiface_15',['storage_iface',['../structservio_1_1drv_1_1storage__iface.html',1,'servio::drv']]],
-  ['stream_5fiface_16',['stream_iface',['../structservio_1_1scmdio_1_1stream__iface.html',1,'servio::scmdio']]]
+  ['str_16',['str',['../namespaceservio_1_1parser.html#structservio_1_1parser_1_1str',1,'servio::parser']]],
+  ['stream_5fiface_17',['stream_iface',['../structservio_1_1scmdio_1_1stream__iface.html',1,'servio::scmdio']]]
 ];

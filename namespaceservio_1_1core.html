@@ -126,15 +126,11 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:afd0bb8edfce26e988b98d2d2adf45dc3" id="r_afd0bb8edfce26e988b98d2d2adf45dc3"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="structservio_1_1status.html">status</a>, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1core.html#afd0bb8edfce26e988b98d2d2adf45dc3">handle_message</a> (<a class="el" href="namespaceservio_1_1core.html#structservio_1_1core_1_1dispatcher">dispatcher</a> &amp;dis, em::view&lt; std::byte const * &gt; input_data, em::view&lt; std::byte * &gt; output_buffer)</td></tr>
 <tr class="separator:afd0bb8edfce26e988b98d2d2adf45dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa638b55811ea0be1f44dc32ff5700cfa" id="r_aa638b55811ea0be1f44dc32ff5700cfa"><td class="memItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1core.html#aa638b55811ea0be1f44dc32ff5700cfa">_build_iface_cfg_map</a> ()</td></tr>
-<tr class="separator:aa638b55811ea0be1f44dc32ff5700cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a50e4044e788144d8dde6f5c10ce3326a" id="r_a50e4044e788144d8dde6f5c10ce3326a"><td class="memItemLeft" align="right" valign="top">em::static_function&lt; void(), 16 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1core.html#a50e4044e788144d8dde6f5c10ce3326a">STOP_CALLBACK</a></td></tr>
 <tr class="separator:a50e4044e788144d8dde6f5c10ce3326a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ea704c6094fe31cea8002b9fcb0cba1" id="r_a1ea704c6094fe31cea8002b9fcb0cba1"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1core.html#a1ea704c6094fe31cea8002b9fcb0cba1">iface_to_cfg</a> = <a class="el" href="namespaceservio_1_1core.html#aa638b55811ea0be1f44dc32ff5700cfa">_build_iface_cfg_map</a>()</td></tr>
-<tr class="separator:a1ea704c6094fe31cea8002b9fcb0cba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1core_1_1dispatcher" id="structservio_1_1core_1_1dispatcher"></a>
@@ -153,7 +149,7 @@ Variables</h2></td></tr>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1core_1_1dispatcher__coll__graph.svg" width="715" height="548"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1core_1_1dispatcher__coll__graph.svg" width="715" height="598"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
@@ -234,25 +230,6 @@ vcc_drv</td>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa638b55811ea0be1f44dc32ff5700cfa" name="aa638b55811ea0be1f44dc32ff5700cfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa638b55811ea0be1f44dc32ff5700cfa">&#9670;&#160;</a></span>_build_iface_cfg_map()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">consteval auto servio::core::_build_iface_cfg_map </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2e2ed1aafb50d3868139a287ee15ed58">servio::cfg::CURRENT_CONV_OFFSET</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3abcd4ce2f3f5d88dfe44aab2228971441">servio::cfg::CURRENT_CONV_SCALE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aab34f7796f76a255878423f5155aea97">servio::cfg::CURRENT_LIM_MAX</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5d27ee3ebb714214d1198b16673ada2d">servio::cfg::CURRENT_LIM_MIN</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9d0aee5a89a96ad0fa4d1bff8c5e37de">servio::cfg::CURRENT_LOOP_D</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a484293eb183cafd6a872e257f5255c95">servio::cfg::CURRENT_LOOP_I</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5ece52fe10c8b9738a0215916df9f5c1">servio::cfg::CURRENT_LOOP_P</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5bcc5eca5c52167826fd65a5b5177e18">servio::cfg::ENCODER_MODE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab0267128c648c65666ba26bdeb685577">servio::cfg::GROUP_ID</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8836cb7e462d5d55106ce947c8aa6218">servio::cfg::ID</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a27b1d9351a918683ed53e8faad3a4624">servio::cfg::INVERT_HBRIDGE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a31f81f3f8379662055edc0f05154c542">servio::cfg::MAXIMUM_TEMPERATURE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab025034ef4a6897674222cdf80c8c171">servio::cfg::MINIMUM_VOLTAGE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add6c0ae6916d0b990a601cab95903e66">servio::cfg::MODEL</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a8df354e31764c98878c7f2a765111fc5">servio::cfg::MOVING_DETECTION_STEP</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6433f4f26bcae6d525a4b25a30700678">servio::cfg::POSITION_HIGH_ANGLE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a35c5180994d66a40ffc59b62258413a1">servio::cfg::POSITION_LIM_MAX</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab20ae693e2fde0f2ff400cad4eb71a77">servio::cfg::POSITION_LIM_MIN</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3204e245ff3b67e47f6293f07ad604d5">servio::cfg::POSITION_LOOP_D</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6183f0e09601674ae8d6d20492813423">servio::cfg::POSITION_LOOP_I</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a62ab6a965f4c3bf5ccc7865227d7aada">servio::cfg::POSITION_LOOP_P</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1c189400ff78d331b05283d2e6e1f52e">servio::cfg::POSITION_LOW_ANGLE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a1475199ec7c8f59508f313ac90d0b909">servio::cfg::POSITION_TO_VEL_LIM_SCALE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a90ed638c490da8f648bc7315210a7f42">servio::cfg::QUAD_ENCD_RANGE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6c89e4ec3a7be28f0c103c13057c4f9c">servio::cfg::STATIC_FRICTION_DECAY</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aef9de0f2161b9a8478c2fac44c8f5185">servio::cfg::STATIC_FRICTION_SCALE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3e51788c0e37c789f5007042d479e91e">servio::cfg::TEMP_CONV_OFFSET</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a635506dbfa2d898483e0c7996a60d7f4">servio::cfg::TEMP_CONV_SCALE</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9b1509db8257f0cdc3725c0de68894db">servio::cfg::VELOCITY_LIM_MAX</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3add19e1b450d538f7e4f15e922f5c5db2">servio::cfg::VELOCITY_LIM_MIN</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ac314e0ebf8920fd7724fbe160126b67b">servio::cfg::VELOCITY_LOOP_D</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a351f305c0351b25aa96fc3ed04d673ff">servio::cfg::VELOCITY_LOOP_I</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3afa17f61b9cbecbb7e7eacc898538534e">servio::cfg::VELOCITY_LOOP_P</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6f267ece2c260181dc5e10a938a26827">servio::cfg::VELOCITY_TO_CURR_LIM_SCALE</a>, and <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a9da229b909d34f11013bdcf275984461">servio::cfg::VOLTAGE_CONV_SCALE</a>.</p>
-
-</div>
-</div>
 <a id="afd0bb8edfce26e988b98d2d2adf45dc3" name="afd0bb8edfce26e988b98d2d2adf45dc3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd0bb8edfce26e988b98d2d2adf45dc3">&#9670;&#160;</a></span>handle_message()</h2>
 
@@ -290,28 +267,6 @@ vcc_drv</td>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a1ea704c6094fe31cea8002b9fcb0cba1" name="a1ea704c6094fe31cea8002b9fcb0cba1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ea704c6094fe31cea8002b9fcb0cba1">&#9670;&#160;</a></span>iface_to_cfg</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr auto servio::core::iface_to_cfg = <a class="el" href="namespaceservio_1_1core.html#aa638b55811ea0be1f44dc32ff5700cfa">_build_iface_cfg_map</a>()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a50e4044e788144d8dde6f5c10ce3326a" name="a50e4044e788144d8dde6f5c10ce3326a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a50e4044e788144d8dde6f5c10ce3326a">&#9670;&#160;</a></span>STOP_CALLBACK</h2>
 
@@ -332,7 +287,7 @@ vcc_drv</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1core.html">core</a></li>
-    <li class="footer">Generated on Tue Apr 22 2025 11:02:01 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu May 8 2025 15:49:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

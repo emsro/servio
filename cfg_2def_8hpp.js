@@ -1,0 +1,54 @@
+var cfg_2def_8hpp =
+[
+    [ "servio::cfg::map", "structservio_1_1cfg_1_1map.html", "structservio_1_1cfg_1_1map" ],
+    [ "servio::cfg::context", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context", [
+      [ "map", "namespaceservio_1_1cfg.html#a3dbb7cf8f857ae3e9ab69908e1674f69", null ]
+    ] ],
+    [ "string_type", "cfg_2def_8hpp.html#a2ae6ccfe21a05c0792001ae96061eb4b", null ],
+    [ "value_type", "cfg_2def_8hpp.html#a48d911d2eca0f1903b94ae41589325b7", null ],
+    [ "encoder_mode", "cfg_2def_8hpp.html#ac95eb32082e3a9fbeb45c101ed4e6451", [
+      [ "analog", "cfg_2def_8hpp.html#ac95eb32082e3a9fbeb45c101ed4e6451a02c9adc0d63e270f7ea08ef4008e81bf", null ],
+      [ "quad", "cfg_2def_8hpp.html#ac95eb32082e3a9fbeb45c101ed4e6451a9a7821516bdd5d9a1586f094d6e1aacb", null ]
+    ] ],
+    [ "key", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3", [
+      [ "model", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a20f35e630daf44dbfa4c3f68f5399d8c", null ],
+      [ "id", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f", null ],
+      [ "group_id", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a0e939a4ffd3aacd724dd3b50147b4353", null ],
+      [ "encoder_mode", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a3879788c8c54de8f9cc05a7ffa5cecdd", null ],
+      [ "position_low_angle", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3ad51ef8dc6f384a122f8a1ad65f5cbda0", null ],
+      [ "position_high_angle", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a426e319932d33d22130717d019bd8604", null ],
+      [ "current_conv_scale", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a15d1aeff79f57d8ae73b6595f7315885", null ],
+      [ "current_conv_offset", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a6781c954ae5cb10ab902b38422be5371", null ],
+      [ "temp_conv_scale", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a128bb4ccc34e3149e097051276feb107", null ],
+      [ "temp_conv_offset", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a530d7e88b9632ea1697e000371a7429a", null ],
+      [ "voltage_conv_scale", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3afa8652ff2d205b38b16e4bbce2ada224", null ],
+      [ "invert_hbridge", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a4cc65d762d2bed3de7efc351b4a43433", null ],
+      [ "current_loop_p", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3aaada797188b227204c37ed74e2011859", null ],
+      [ "current_loop_i", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a6cfd5a78bbf933e45376d2463e52cdba", null ],
+      [ "current_loop_d", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a3e9248946a76db39400fff28c324fc1e", null ],
+      [ "current_lim_min", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3ae01543784ec3cf7e6432a4e710585826", null ],
+      [ "current_lim_max", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a5d2cb5b938b227e29376d539745d6031", null ],
+      [ "velocity_loop_p", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a15cfbb0d062684d7ca899ab3c32123cc", null ],
+      [ "velocity_loop_i", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a6fee121a8a44361abacfc929b36c2a76", null ],
+      [ "velocity_loop_d", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a76f740f0b59eb33514128cded4b67d17", null ],
+      [ "velocity_lim_min", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a00178165ea01e51ccc38aef401f0911f", null ],
+      [ "velocity_lim_max", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a2e262d19d09a893fcc858183c21b715c", null ],
+      [ "velocity_to_current_lim_scale", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a7362621e4e854583c7dc6965a34e7031", null ],
+      [ "position_loop_p", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3ad7dd4c7e66a6be078a43d5f969bfcc32", null ],
+      [ "position_loop_i", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a967417287c7c2faa1b6e62f41e002fd1", null ],
+      [ "position_loop_d", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3ab87a4b73f6b8354139fe42c0b5fcd582", null ],
+      [ "position_lim_min", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a6f926ecfcd7ea240f3021231959ef5e1", null ],
+      [ "position_lim_max", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a2ef23cd36b8309fbcf66271b0c4e069e", null ],
+      [ "position_to_velocity_lim_scale", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a42f4736d5203f0cdca42f19cea71c433", null ],
+      [ "static_friction_scale", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a673b9ac6e87403ce01ee6c1f8f8a7a79", null ],
+      [ "static_friction_decay", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3ac58c7cc4fca148d3dc09a9c6296f119d", null ],
+      [ "minimum_voltage", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a21b6369c006cbd75d5205c4cf174c913", null ],
+      [ "maximum_temperature", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3aad42c6ceec9c979572dfdac1898051c9", null ],
+      [ "moving_detection_step", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a6205b4ef989f8fa005cf3d6a4445afdb", null ],
+      [ "quad_encoder_range", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed", null ]
+    ] ],
+    [ "str_to_encoder_mode", "cfg_2def_8hpp.html#a6eb8fc3fad9e683169acc64a7148a604", null ],
+    [ "str_to_key", "cfg_2def_8hpp.html#aa980c6ba0ebb5762dfd1780c78e1fabe", null ],
+    [ "ids", "cfg_2def_8hpp.html#a9a7b5b8858fd0b5aa713c341ba3d2877", null ],
+    [ "keys", "cfg_2def_8hpp.html#aacd5b64d1f9f88f8f96968dda51a22e1", null ]
+];

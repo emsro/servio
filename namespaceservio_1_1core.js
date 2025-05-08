@@ -10,8 +10,6 @@ var namespaceservio_1_1core =
     [ "drivers", "structservio_1_1core_1_1drivers.html", "structservio_1_1core_1_1drivers" ],
     [ "position_callback", "classservio_1_1core_1_1position__callback.html", "classservio_1_1core_1_1position__callback" ],
     [ "standard_callbacks", "structservio_1_1core_1_1standard__callbacks.html", "structservio_1_1core_1_1standard__callbacks" ],
-    [ "_build_iface_cfg_map", "namespaceservio_1_1core.html#aa638b55811ea0be1f44dc32ff5700cfa", null ],
     [ "handle_message", "namespaceservio_1_1core.html#afd0bb8edfce26e988b98d2d2adf45dc3", null ],
-    [ "iface_to_cfg", "namespaceservio_1_1core.html#a1ea704c6094fe31cea8002b9fcb0cba1", null ],
     [ "STOP_CALLBACK", "namespaceservio_1_1core.html#a50e4044e788144d8dde6f5c10ce3326a", null ]
 ];

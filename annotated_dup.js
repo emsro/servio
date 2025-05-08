@@ -5,11 +5,6 @@ var annotated_dup =
         [ "is_match_condition< servio::scmdio::match_byte >", "structboost_1_1asio_1_1is__match__condition_3_01servio_1_1scmdio_1_1match__byte_01_4.html", null ]
       ] ]
     ] ],
-    [ "emlabcpp", "namespaceemlabcpp.html", [
-      [ "testing", "namespaceemlabcpp_1_1testing.html", [
-        [ "value_type_converter< servio::cfg::encoder_mode >", "structemlabcpp_1_1testing_1_1value__type__converter_3_01servio_1_1cfg_1_1encoder__mode_01_4.html", null ]
-      ] ]
-    ] ],
     [ "nlohmann", null, [
       [ "adl_serializer< avakar::atom< Ts... > >", "structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html", "structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4" ],
       [ "adl_serializer< vari::_vval< Ts... > >", "structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html", "structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4" ]
@@ -24,10 +19,8 @@ var annotated_dup =
       [ "cfg", "namespaceservio_1_1cfg.html", [
         [ "context", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1context_dup" ],
         [ "dispatcher", "structservio_1_1cfg_1_1dispatcher.html", "structservio_1_1cfg_1_1dispatcher" ],
-        [ "keyval", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1keyval", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1keyval_dup" ],
-        [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ],
-        [ "page_info", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1page__info", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1page__info_dup" ],
-        [ "record", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1record", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1record_dup" ]
+        [ "map", "structservio_1_1cfg_1_1map.html", "structservio_1_1cfg_1_1map" ],
+        [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ]
       ] ],
       [ "cnv", "namespaceservio_1_1cnv.html", [
         [ "converter", "structservio_1_1cnv_1_1converter.html", "structservio_1_1cnv_1_1converter" ],
@@ -162,7 +155,6 @@ var annotated_dup =
         [ "cfg_get_stmt", "structservio_1_1iface_1_1cfg__get__stmt.html", "structservio_1_1iface_1_1cfg__get__stmt" ],
         [ "cfg_set_stmt", "structservio_1_1iface_1_1cfg__set__stmt.html", "structservio_1_1iface_1_1cfg__set__stmt" ],
         [ "field", "structservio_1_1iface_1_1field.html", "structservio_1_1iface_1_1field" ],
-        [ "field< IDX, Key, void >", "structservio_1_1iface_1_1field_3_01IDX_00_01Key_00_01void_01_4.html", "structservio_1_1iface_1_1field_3_01IDX_00_01Key_00_01void_01_4" ],
         [ "field_traits", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__traits", null ],
         [ "field_traits< vari::typelist< Field... > >", "structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html", "structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4" ],
         [ "field_tuple", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple", null ],
@@ -173,7 +165,8 @@ var annotated_dup =
         [ "key_filter", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter", null ],
         [ "key_filter< K, vari::typelist< F, Fs... > >", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4.html", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4" ],
         [ "kval", "structservio_1_1iface_1_1kval.html", "structservio_1_1iface_1_1kval" ],
-        [ "kval< Key, void >", "structservio_1_1iface_1_1kval_3_01Key_00_01void_01_4.html", "structservio_1_1iface_1_1kval_3_01Key_00_01void_01_4" ],
+        [ "kvals_parse", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1kvals__parse", null ],
+        [ "kvals_parse< vari::typelist< Ts... > >", "structservio_1_1iface_1_1kvals__parse_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4.html", "structservio_1_1iface_1_1kvals__parse_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4" ],
         [ "mode_stmt", "structservio_1_1iface_1_1mode__stmt.html", "structservio_1_1iface_1_1mode__stmt" ],
         [ "prop_stmt", "structservio_1_1iface_1_1prop__stmt.html", "structservio_1_1iface_1_1prop__stmt" ],
         [ "resp", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1resp", "namespaceservio_1_1iface_structservio_1_1iface_1_1resp_dup" ]
@@ -196,6 +189,22 @@ var annotated_dup =
         [ "metrics", "classservio_1_1mtr_1_1metrics.html", "classservio_1_1mtr_1_1metrics" ],
         [ "posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", "structservio_1_1mtr_1_1posvel__kalman" ],
         [ "static_detector", "structservio_1_1mtr_1_1static__detector.html", "structservio_1_1mtr_1_1static__detector" ]
+      ] ],
+      [ "parser", "namespaceservio_1_1parser.html", [
+        [ "end", "namespaceservio_1_1parser.html#structservio_1_1parser_1_1end", null ],
+        [ "err", "namespaceservio_1_1parser.html#structservio_1_1parser_1_1err", null ],
+        [ "id", "namespaceservio_1_1parser.html#structservio_1_1parser_1_1id", "namespaceservio_1_1parser_structservio_1_1parser_1_1id_dup" ],
+        [ "lexer", "structservio_1_1parser_1_1lexer.html", "structservio_1_1parser_1_1lexer" ],
+        [ "parse_trait", "namespaceservio_1_1parser.html#structservio_1_1parser_1_1parse__trait", null ],
+        [ "parse_trait< A >", "structservio_1_1parser_1_1parse__trait_3_01A_01_4.html", "structservio_1_1parser_1_1parse__trait_3_01A_01_4" ],
+        [ "parse_trait< bool >", "structservio_1_1parser_1_1parse__trait_3_01bool_01_4.html", "structservio_1_1parser_1_1parse__trait_3_01bool_01_4" ],
+        [ "parse_trait< em::string_buffer< N > >", "structservio_1_1parser_1_1parse__trait_3_01em_1_1string__buffer_3_01N_01_4_01_4.html", "structservio_1_1parser_1_1parse__trait_3_01em_1_1string__buffer_3_01N_01_4_01_4" ],
+        [ "parse_trait< float >", "structservio_1_1parser_1_1parse__trait_3_01float_01_4.html", "structservio_1_1parser_1_1parse__trait_3_01float_01_4" ],
+        [ "parse_trait< uint32_t >", "structservio_1_1parser_1_1parse__trait_3_01uint32__t_01_4.html", "structservio_1_1parser_1_1parse__trait_3_01uint32__t_01_4" ],
+        [ "parse_trait< unit >", "structservio_1_1parser_1_1parse__trait_3_01unit_01_4.html", "structservio_1_1parser_1_1parse__trait_3_01unit_01_4" ],
+        [ "parser", "structservio_1_1parser_1_1parser.html", "structservio_1_1parser_1_1parser" ],
+        [ "str", "namespaceservio_1_1parser.html#structservio_1_1parser_1_1str", "namespaceservio_1_1parser_structservio_1_1parser_1_1str_dup" ],
+        [ "unit", "structservio_1_1parser_1_1unit.html", "structservio_1_1parser_1_1unit" ]
       ] ],
       [ "plt", "namespaceservio_1_1plt.html", [
         [ "adc_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1adc__cfg_dup" ],
@@ -256,6 +265,11 @@ var annotated_dup =
         [ "s_to_nr_res", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res", "namespaceservio_1_1str__lib_structservio_1_1str__lib_1_1s__to__nr__res_dup" ],
         [ "s_to_nr_res.__unnamed3__", "namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3____", "namespaceservio_1_1str__lib_unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3_____dup" ]
       ] ],
+      [ "_type_tag", "structservio_1_1__type__tag.html", "structservio_1_1__type__tag" ],
+      [ "_type_tag_core", "structservio_1_1__type__tag__core.html", "structservio_1_1__type__tag__core" ],
+      [ "_type_tag_core< vari::typelist< T > >", "structservio_1_1__type__tag__core_3_01vari_1_1typelist_3_01T_01_4_01_4.html", "structservio_1_1__type__tag__core_3_01vari_1_1typelist_3_01T_01_4_01_4" ],
+      [ "atom_sv_key", "structservio_1_1atom__sv__key.html", "structservio_1_1atom__sv__key" ],
+      [ "key_atom_literal", "structservio_1_1key__atom__literal.html", "structservio_1_1key__atom__literal" ],
       [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
       [ "pwr", "structservio_1_1pwr.html", null ],
       [ "status", "structservio_1_1status.html", "structservio_1_1status" ]

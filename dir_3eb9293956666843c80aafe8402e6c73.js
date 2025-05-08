@@ -13,7 +13,7 @@ var dir_3eb9293956666843c80aafe8402e6c73 =
     [ "defs.hpp", "defs_8hpp.html", "defs_8hpp" ],
     [ "drv8251.hpp", "drv8251_8hpp.html", "drv8251_8hpp" ],
     [ "dts_temp.hpp", "dts__temp_8hpp.html", "dts__temp_8hpp" ],
-    [ "flash_cfg.cpp", "flash__cfg_8cpp.html", null ],
+    [ "flash_cfg.cpp", "flash__cfg_8cpp.html", "flash__cfg_8cpp" ],
     [ "flash_cfg.hpp", "drv_2flash__cfg_8hpp.html", "drv_2flash__cfg_8hpp" ],
     [ "hbridge.cpp", "hbridge_8cpp.html", null ],
     [ "hbridge.hpp", "hbridge_8hpp.html", "hbridge_8hpp" ],

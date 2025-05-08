@@ -136,6 +136,8 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceservio_1_1mtr" id="r_namespaceservio_1_1mtr"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1mtr.html">mtr</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceservio_1_1parser" id="r_namespaceservio_1_1parser"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1parser.html">parser</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceservio_1_1plt" id="r_namespaceservio_1_1plt"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1plt.html">plt</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceservio_1_1scmdio" id="r_namespaceservio_1_1scmdio"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html">scmdio</a></td></tr>
@@ -151,6 +153,16 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1__type__tag.html">_type_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1__type__tag__core.html">_type_tag_core</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1__type__tag__core_3_01vari_1_1typelist_3_01T_01_4_01_4.html">_type_tag_core&lt; vari::typelist&lt; T &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1atom__sv__key.html">atom_sv_key</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1key__atom__literal.html">key_atom_literal</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1leds__vals" id="r_structservio_1_1leds__vals"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#structservio_1_1leds__vals">leds_vals</a></td></tr>
 <tr class="separator:structservio_1_1leds__vals"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1pwr.html">pwr</a></td></tr>
@@ -174,6 +186,15 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a7f7743aa58139aab9b7d4db0cde30f55" id="r_a7f7743aa58139aab9b7d4db0cde30f55"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7f7743aa58139aab9b7d4db0cde30f55"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">limits</a> = em::min_max&lt; T &gt;</td></tr>
 <tr class="separator:a7f7743aa58139aab9b7d4db0cde30f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c228fec92f02dc577feb5048d12863c" id="r_a2c228fec92f02dc577feb5048d12863c"><td class="memTemplParams" colspan="2">template&lt;auto &amp; k&gt; </td></tr>
+<tr class="memitem:a2c228fec92f02dc577feb5048d12863c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a2c228fec92f02dc577feb5048d12863c">sv_key</a> = <a class="el" href="structservio_1_1key__atom__literal.html">key_atom_literal</a>&lt; <a class="el" href="structservio_1_1atom__sv__key.html">atom_sv_key</a>&lt; k.size()+1 &gt;(k) &gt;</td></tr>
+<tr class="separator:a2c228fec92f02dc577feb5048d12863c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f0759f09f2c690d0f022168b58d26b" id="r_a01f0759f09f2c690d0f022168b58d26b"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:a01f0759f09f2c690d0f022168b58d26b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a01f0759f09f2c690d0f022168b58d26b">type_tag</a> = vari::_define_variadic&lt; <a class="el" href="structservio_1_1__type__tag.html">_type_tag</a>, vari::typelist&lt; Ts... &gt; &gt;</td></tr>
+<tr class="separator:a01f0759f09f2c690d0f022168b58d26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa195fc53ee59bc0920f4a87b6a4832da" id="r_aa195fc53ee59bc0920f4a87b6a4832da"><td class="memTemplParams" colspan="2">template&lt;auto Tag&gt; </td></tr>
+<tr class="memitem:aa195fc53ee59bc0920f4a87b6a4832da"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio.html#aa195fc53ee59bc0920f4a87b6a4832da">type_tag_type</a> = vari::type_at_t&lt; Tag.index(), typename decltype(Tag)::types &gt;</td></tr>
+<tr class="separator:aa195fc53ee59bc0920f4a87b6a4832da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -215,6 +236,9 @@ Functions</h2></td></tr>
 <tr class="separator:a546e51ff861bb4e2219e0b99efd5184f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cbe32a0d33853a8e061ea4df443760e" id="r_a3cbe32a0d33853a8e061ea4df443760e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a3cbe32a0d33853a8e061ea4df443760e">operator&quot;&quot;_pwr</a> (long double x)</td></tr>
 <tr class="separator:a3cbe32a0d33853a8e061ea4df443760e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f0ccffc322269a6008e79d5b69ae9f" id="r_a90f0ccffc322269a6008e79d5b69ae9f"><td class="memTemplParams" colspan="2">template&lt;typename K , typename... Fn&gt; </td></tr>
+<tr class="memitem:a90f0ccffc322269a6008e79d5b69ae9f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a90f0ccffc322269a6008e79d5b69ae9f">atom_visit</a> (K const &amp;key, Fn &amp;&amp;... fn)</td></tr>
+<tr class="separator:a90f0ccffc322269a6008e79d5b69ae9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f26120992786718c3b52d10b3c48f89" id="r_a7f26120992786718c3b52d10b3c48f89"><td class="memItemLeft" align="right" valign="top">em::view&lt; std::byte * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a7f26120992786718c3b52d10b3c48f89">page_at</a> (uint32_t i)</td></tr>
 <tr class="separator:a7f26120992786718c3b52d10b3c48f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -230,8 +254,10 @@ Variables</h2></td></tr>
 <tr class="separator:ad65a9ec22f69582eff005ae62a0bd415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53879f15eedde593c9cd6531402f5590" id="r_a53879f15eedde593c9cd6531402f5590"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a53879f15eedde593c9cd6531402f5590">p_low</a> = <a class="el" href="structservio_1_1pwr.html">pwr</a>{ -1.0 }</td></tr>
 <tr class="separator:a53879f15eedde593c9cd6531402f5590"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55104dad626571b464bc092401f5e57e" id="r_a55104dad626571b464bc092401f5e57e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a55104dad626571b464bc092401f5e57e">ERROR</a> = status::ERROR</td></tr>
-<tr class="separator:a55104dad626571b464bc092401f5e57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe30c34f17cd9316ffa16728c9aa15b" id="r_a5fe30c34f17cd9316ffa16728c9aa15b"><td class="memItemLeft" >struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe30c34f17cd9316ffa16728c9aa15b" id="r_a5fe30c34f17cd9316ffa16728c9aa15b"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a5fe30c34f17cd9316ffa16728c9aa15b">ERROR</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a5fe30c34f17cd9316ffa16728c9aa15b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47a5b9d9754c9bec77aa054df2a928f9" id="r_a47a5b9d9754c9bec77aa054df2a928f9"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a47a5b9d9754c9bec77aa054df2a928f9">FAILURE</a> = status::FAILURE</td></tr>
 <tr class="separator:a47a5b9d9754c9bec77aa054df2a928f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d5869ffe2516e502b6f358d2827207e" id="r_a8d5869ffe2516e502b6f358d2827207e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">SUCCESS</a> = status::SUCCESS</td></tr>
@@ -362,6 +388,54 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a2c228fec92f02dc577feb5048d12863c" name="a2c228fec92f02dc577feb5048d12863c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c228fec92f02dc577feb5048d12863c">&#9670;&#160;</a></span>sv_key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto &amp; k&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceservio.html#a2c228fec92f02dc577feb5048d12863c">servio::sv_key</a> = typedef <a class="el" href="structservio_1_1key__atom__literal.html">key_atom_literal</a>&lt; <a class="el" href="structservio_1_1atom__sv__key.html">atom_sv_key</a>&lt; k.size() + 1 &gt;( k ) &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01f0759f09f2c690d0f022168b58d26b" name="a01f0759f09f2c690d0f022168b58d26b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01f0759f09f2c690d0f022168b58d26b">&#9670;&#160;</a></span>type_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Ts&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceservio.html#a01f0759f09f2c690d0f022168b58d26b">servio::type_tag</a> = typedef vari::_define_variadic&lt; <a class="el" href="structservio_1_1__type__tag.html">_type_tag</a>, vari::typelist&lt; Ts... &gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa195fc53ee59bc0920f4a87b6a4832da" name="aa195fc53ee59bc0920f4a87b6a4832da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa195fc53ee59bc0920f4a87b6a4832da">&#9670;&#160;</a></span>type_tag_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto Tag&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceservio.html#aa195fc53ee59bc0920f4a87b6a4832da">servio::type_tag_type</a> = typedef vari::type_at_t&lt; Tag.index(), typename decltype( Tag )::types &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ab5f7489b8bb8f69589f34deadbd657c2" name="ab5f7489b8bb8f69589f34deadbd657c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5f7489b8bb8f69589f34deadbd657c2">&#9670;&#160;</a></span>control_loop</h2>
@@ -447,6 +521,36 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a90f0ccffc322269a6008e79d5b69ae9f" name="a90f0ccffc322269a6008e79d5b69ae9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90f0ccffc322269a6008e79d5b69ae9f">&#9670;&#160;</a></span>atom_visit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename... Fn&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto servio::atom_visit </td>
+          <td>(</td>
+          <td class="paramtype">K const &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Fn &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>fn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3cbe32a0d33853a8e061ea4df443760e" name="a3cbe32a0d33853a8e061ea4df443760e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3cbe32a0d33853a8e061ea4df443760e">&#9670;&#160;</a></span>operator&quot;&quot;_pwr() <span class="overload">[1/2]</span></h2>
 
@@ -520,24 +624,16 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a55104dad626571b464bc092401f5e57e" name="a55104dad626571b464bc092401f5e57e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55104dad626571b464bc092401f5e57e">&#9670;&#160;</a></span>ERROR</h2>
+<a id="a5fe30c34f17cd9316ffa16728c9aa15b" name="a5fe30c34f17cd9316ffa16728c9aa15b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe30c34f17cd9316ffa16728c9aa15b">&#9670;&#160;</a></span>[struct]</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="structservio_1_1status.html">status</a> servio::ERROR = status::ERROR</td>
+          <td class="memname">constexpr struct  { ... }  servio::ERROR</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -702,7 +798,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li>
-    <li class="footer">Generated on Tue Apr 22 2025 11:02:01 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu May 8 2025 15:49:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

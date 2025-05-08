@@ -7,5 +7,6 @@ var searchData=
   ['gpdma1_5fch2_5fhandle_4',['GPDMA1_Ch2_HANDLE',['../namespaceservio_1_1brd.html#a617eab611ab9411ef972a8dcaee6236b',1,'servio::brd']]],
   ['green_5',['green',['../namespaceservio.html#ad2c6efd34261b8e5b5c16c90e171b7ed',1,'servio::leds_vals']]],
   ['green_5fch_6',['green_ch',['../namespaceservio_1_1plt.html#ac8dc88b10301f0823d983ad1a7f4e3e7',1,'servio::plt::leds_timer_cfg']]],
-  ['green_5fpin_7',['green_pin',['../namespaceservio_1_1plt.html#adad93e2611f6799cedf41c16211afb44',1,'servio::plt::leds_timer_cfg']]]
+  ['green_5fpin_7',['green_pin',['../namespaceservio_1_1plt.html#adad93e2611f6799cedf41c16211afb44',1,'servio::plt::leds_timer_cfg']]],
+  ['group_5fid_8',['group_id',['../structservio_1_1cfg_1_1map.html#ac42b48936f0e0bdcbe1981d43345f8ca',1,'servio::cfg::map']]]
 ];

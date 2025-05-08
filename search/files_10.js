@@ -1,7 +1,7 @@
 var searchData=
 [
   ['readme_2emd_0',['readme.md',['../README_8md.html',1,'(Global Namespace)'],['../src_2brd_2proto4_81_2README_8md.html',1,'(Global Namespace)']]],
-  ['record_2ehpp_1',['record.hpp',['../cfg_2record_8hpp.html',1,'(Global Namespace)'],['../sntr_2record_8hpp.html',1,'(Global Namespace)']]],
+  ['record_2ehpp_1',['record.hpp',['../record_8hpp.html',1,'']]],
   ['recorder_2ehpp_2',['recorder.hpp',['../recorder_8hpp.html',1,'']]],
   ['requirements_2emd_3',['requirements.md',['../requirements_8md.html',1,'']]],
   ['retainers_2ehpp_4',['retainers.hpp',['../retainers_8hpp.html',1,'']]],

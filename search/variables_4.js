@@ -2,7 +2,7 @@ var searchData=
 [
   ['d_5fbaudrate_0',['d_baudrate',['../namespaceservio_1_1ftester.html#ab3e6303bc5ee2f7e96e9196984c0cfb4',1,'servio::ftester::config']]],
   ['d_5fdevice_1',['d_device',['../namespaceservio_1_1ftester.html#a1ff2b573293cb82c49bf90032e7fc5a7',1,'servio::ftester::config']]],
-  ['data_2',['data',['../namespaceservio_1_1cfg.html#a66972d206c15053111bcbccad4288ba0',1,'servio::cfg::record::data'],['../classservio_1_1ftester_1_1recorder.html#a3309b0e3d714cd34929938c0d100ffce',1,'servio::ftester::recorder::record::data'],['../namespaceservio_1_1scmdio.html#a290cb9a642d3eb9533e624f5f8ee5353',1,'servio::scmdio::pool_opts::data'],['../namespaceservio_1_1sntr.html#add92c4f308a02a7af7a4ddd626ab8f8a',1,'servio::sntr::record::data']]],
+  ['data_2',['data',['../classservio_1_1ftester_1_1recorder.html#a3309b0e3d714cd34929938c0d100ffce',1,'servio::ftester::recorder::record::data'],['../namespaceservio_1_1scmdio.html#a290cb9a642d3eb9533e624f5f8ee5353',1,'servio::scmdio::pool_opts::data'],['../namespaceservio_1_1sntr.html#add92c4f308a02a7af7a4ddd626ab8f8a',1,'servio::sntr::record::data']]],
   ['debug_5fcomms_3',['debug_comms',['../structservio_1_1ftest_1_1testing__system.html#a15c347a9b819cf50b3768cae86d126cb',1,'servio::ftest::testing_system::debug_comms'],['../namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5',1,'servio::brd::DEBUG_COMMS']]],
   ['decay_4',['decay',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a79dd5adc577a77d349ec011aca62c6d0',1,'servio::ctl::linear_transition_regulator']]],
   ['degraded_5frecords_5',['DEGRADED_RECORDS',['../namespaceservio_1_1brd.html#ac1e9012d3c60aec6e72b21b7d38255e7',1,'servio::brd']]],
