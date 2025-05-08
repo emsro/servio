@@ -41,6 +41,22 @@ def generate_key_to_str(fd, fields):
     fd.write("    return {};\n")
     fd.write("}\n")
 
+def generate_key_to_id(fd, fields):
+    fd.write("constexpr uint32_t key_to_id(key k){\n")
+    for field in fields:
+        fd.write(f"    if(k == key::{field['name']})\n")
+        fd.write(f"        return {field['id']};\n")
+    fd.write("    return {};\n")
+    fd.write("}\n")
+
+def generate_id_to_key(fd, fields):
+    fd.write("constexpr key id_to_key(uint32_t id){\n")
+    for field in fields:
+        fd.write(f"    if(id == {field['id']})\n")
+        fd.write(f"        return key::{field['name']};\n")
+    fd.write("    return {};\n")
+    fd.write("}\n")
+
 def generate_map(fd, fields):
     fd.write("struct map{\n")
     for field in fields:
@@ -66,6 +82,8 @@ def generate_cfg(fd, fields):
     generate_key_values(fd, fields)
     generate_str_to_key(fd, fields)
     generate_key_to_str(fd, fields)
+    generate_key_to_id(fd, fields)
+    generate_id_to_key(fd, fields)
     generate_ids(fd, fields)
     generate_map(fd, fields)
 

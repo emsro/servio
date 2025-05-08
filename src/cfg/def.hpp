@@ -37,7 +37,8 @@ constexpr std::string_view encoder_mode_to_str( encoder_mode em )
         return {};
 }
 
-using value_type = vari::typelist< uint32_t, float, bool, encoder_mode, string_type >;
+using value_type    = vari::typelist< uint32_t, float, bool, encoder_mode, string_type >;
+using value_variant = std::variant< uint32_t, float, bool, encoder_mode, string_type >;
 
 // GEN BEGIN HERE
 // This part of file is auto-generated. Do not edit.
@@ -264,6 +265,156 @@ constexpr std::string_view key_to_str( key k )
                 return "moving_detection_step";
         if ( k == key::quad_encoder_range )
                 return "quad_encoder_range";
+        return {};
+}
+
+constexpr uint32_t key_to_id( key k )
+{
+        if ( k == key::model )
+                return 1;
+        if ( k == key::id )
+                return 2;
+        if ( k == key::group_id )
+                return 3;
+        if ( k == key::encoder_mode )
+                return 4;
+        if ( k == key::position_low_angle )
+                return 11;
+        if ( k == key::position_high_angle )
+                return 12;
+        if ( k == key::current_conv_scale )
+                return 14;
+        if ( k == key::current_conv_offset )
+                return 15;
+        if ( k == key::temp_conv_scale )
+                return 16;
+        if ( k == key::temp_conv_offset )
+                return 17;
+        if ( k == key::voltage_conv_scale )
+                return 18;
+        if ( k == key::invert_hbridge )
+                return 19;
+        if ( k == key::current_loop_p )
+                return 30;
+        if ( k == key::current_loop_i )
+                return 31;
+        if ( k == key::current_loop_d )
+                return 32;
+        if ( k == key::current_lim_min )
+                return 33;
+        if ( k == key::current_lim_max )
+                return 34;
+        if ( k == key::velocity_loop_p )
+                return 40;
+        if ( k == key::velocity_loop_i )
+                return 41;
+        if ( k == key::velocity_loop_d )
+                return 42;
+        if ( k == key::velocity_lim_min )
+                return 43;
+        if ( k == key::velocity_lim_max )
+                return 44;
+        if ( k == key::velocity_to_current_lim_scale )
+                return 45;
+        if ( k == key::position_loop_p )
+                return 50;
+        if ( k == key::position_loop_i )
+                return 51;
+        if ( k == key::position_loop_d )
+                return 52;
+        if ( k == key::position_lim_min )
+                return 53;
+        if ( k == key::position_lim_max )
+                return 54;
+        if ( k == key::position_to_velocity_lim_scale )
+                return 55;
+        if ( k == key::static_friction_scale )
+                return 60;
+        if ( k == key::static_friction_decay )
+                return 61;
+        if ( k == key::minimum_voltage )
+                return 62;
+        if ( k == key::maximum_temperature )
+                return 65;
+        if ( k == key::moving_detection_step )
+                return 66;
+        if ( k == key::quad_encoder_range )
+                return 80;
+        return {};
+}
+
+constexpr key id_to_key( uint32_t id )
+{
+        if ( id == 1 )
+                return key::model;
+        if ( id == 2 )
+                return key::id;
+        if ( id == 3 )
+                return key::group_id;
+        if ( id == 4 )
+                return key::encoder_mode;
+        if ( id == 11 )
+                return key::position_low_angle;
+        if ( id == 12 )
+                return key::position_high_angle;
+        if ( id == 14 )
+                return key::current_conv_scale;
+        if ( id == 15 )
+                return key::current_conv_offset;
+        if ( id == 16 )
+                return key::temp_conv_scale;
+        if ( id == 17 )
+                return key::temp_conv_offset;
+        if ( id == 18 )
+                return key::voltage_conv_scale;
+        if ( id == 19 )
+                return key::invert_hbridge;
+        if ( id == 30 )
+                return key::current_loop_p;
+        if ( id == 31 )
+                return key::current_loop_i;
+        if ( id == 32 )
+                return key::current_loop_d;
+        if ( id == 33 )
+                return key::current_lim_min;
+        if ( id == 34 )
+                return key::current_lim_max;
+        if ( id == 40 )
+                return key::velocity_loop_p;
+        if ( id == 41 )
+                return key::velocity_loop_i;
+        if ( id == 42 )
+                return key::velocity_loop_d;
+        if ( id == 43 )
+                return key::velocity_lim_min;
+        if ( id == 44 )
+                return key::velocity_lim_max;
+        if ( id == 45 )
+                return key::velocity_to_current_lim_scale;
+        if ( id == 50 )
+                return key::position_loop_p;
+        if ( id == 51 )
+                return key::position_loop_i;
+        if ( id == 52 )
+                return key::position_loop_d;
+        if ( id == 53 )
+                return key::position_lim_min;
+        if ( id == 54 )
+                return key::position_lim_max;
+        if ( id == 55 )
+                return key::position_to_velocity_lim_scale;
+        if ( id == 60 )
+                return key::static_friction_scale;
+        if ( id == 61 )
+                return key::static_friction_decay;
+        if ( id == 62 )
+                return key::minimum_voltage;
+        if ( id == 65 )
+                return key::maximum_temperature;
+        if ( id == 66 )
+                return key::moving_detection_step;
+        if ( id == 80 )
+                return key::quad_encoder_range;
         return {};
 }
 

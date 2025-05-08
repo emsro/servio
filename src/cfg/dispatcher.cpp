@@ -46,6 +46,21 @@ void dispatcher::apply( key key )
         case key::moving_detection_step:
                 met.set_moving_step( m.moving_detection_step );
                 break;
+        default:
+                break;
+        }
+        cfg::apply( ctl, m, key );
+}
+
+void dispatcher::full_apply()
+{
+        for ( auto key : keys )
+                dispatcher::apply( key );
+}
+
+void apply( ctl::control& ctl, map const& m, key k )
+{
+        switch ( k ) {
         case key::current_loop_p:
         case key::current_loop_i:
         case key::current_loop_d:
@@ -91,13 +106,9 @@ void dispatcher::apply( key key )
         case key::static_friction_decay:
                 ctl.set_static_friction( m.static_friction_scale, m.static_friction_decay );
                 break;
+        default:
+                break;
         }
-}
-
-void dispatcher::full_apply()
-{
-        for ( auto key : keys )
-                dispatcher::apply( key );
 }
 
 }  // namespace servio::cfg

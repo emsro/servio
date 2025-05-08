@@ -36,4 +36,6 @@ struct dispatcher
         void apply( key k );
 };
 
+void apply( ctl::control& ctl, map const& m, key k );
+
 }  // namespace servio::cfg
