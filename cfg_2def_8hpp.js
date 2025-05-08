@@ -6,6 +6,7 @@ var cfg_2def_8hpp =
     ] ],
     [ "string_type", "cfg_2def_8hpp.html#a2ae6ccfe21a05c0792001ae96061eb4b", null ],
     [ "value_type", "cfg_2def_8hpp.html#a48d911d2eca0f1903b94ae41589325b7", null ],
+    [ "value_variant", "cfg_2def_8hpp.html#a11b3e77327c1944e2695d83a40392512", null ],
     [ "encoder_mode", "cfg_2def_8hpp.html#ac95eb32082e3a9fbeb45c101ed4e6451", [
       [ "analog", "cfg_2def_8hpp.html#ac95eb32082e3a9fbeb45c101ed4e6451a02c9adc0d63e270f7ea08ef4008e81bf", null ],
       [ "quad", "cfg_2def_8hpp.html#ac95eb32082e3a9fbeb45c101ed4e6451a9a7821516bdd5d9a1586f094d6e1aacb", null ]
@@ -48,6 +49,8 @@ var cfg_2def_8hpp =
       [ "quad_encoder_range", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed", null ]
     ] ],
     [ "encoder_mode_to_str", "cfg_2def_8hpp.html#ac80d4a995f39ca9ccba86cf314ae22e5", null ],
+    [ "id_to_key", "cfg_2def_8hpp.html#a1e1087069c21f5e087e55da1f2a9f95e", null ],
+    [ "key_to_id", "cfg_2def_8hpp.html#ad3a87c381f3fd90e336373a20951af56", null ],
     [ "key_to_str", "cfg_2def_8hpp.html#ad27b6513845d7e691073c821d7b96eb9", null ],
     [ "str_to_encoder_mode", "cfg_2def_8hpp.html#a6eb8fc3fad9e683169acc64a7148a604", null ],
     [ "str_to_key", "cfg_2def_8hpp.html#aa980c6ba0ebb5762dfd1780c78e1fabe", null ],

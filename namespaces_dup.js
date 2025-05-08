@@ -6,8 +6,10 @@ var namespaces_dup =
     [ "boost", "namespaceboost.html", "namespaceboost" ],
     [ "gen", "namespacegen.html", [
       [ "generate_cfg", "namespacegen.html#a512c32317d41bb49f7777a5b62752ef4", null ],
+      [ "generate_id_to_key", "namespacegen.html#aecf3e4598601f4ef9ef9709bdac4384b", null ],
       [ "generate_ids", "namespacegen.html#a55448cdb62d57584a884f5977ae668c5", null ],
       [ "generate_key", "namespacegen.html#aafe3472e120b87c8c0ce044e9ecf2811", null ],
+      [ "generate_key_to_id", "namespacegen.html#a76444d94bc4f9be1b9bf8ffbacb04489", null ],
       [ "generate_key_to_str", "namespacegen.html#a585a0f08c42cb3c0a872fb8d0d0d8385", null ],
       [ "generate_key_values", "namespacegen.html#aff9f967fd3b537bb78cb496f15004e23", null ],
       [ "generate_map", "namespacegen.html#a6b619b0cd51bf738efbc045981057cac", null ],

@@ -6,6 +6,7 @@ var namespaceservio_1_1cfg =
     [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ],
     [ "string_type", "namespaceservio_1_1cfg.html#a2ae6ccfe21a05c0792001ae96061eb4b", null ],
     [ "value_type", "namespaceservio_1_1cfg.html#a48d911d2eca0f1903b94ae41589325b7", null ],
+    [ "value_variant", "namespaceservio_1_1cfg.html#a11b3e77327c1944e2695d83a40392512", null ],
     [ "encoder_mode", "namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451", [
       [ "analog", "namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a02c9adc0d63e270f7ea08ef4008e81bf", null ],
       [ "quad", "namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a9a7821516bdd5d9a1586f094d6e1aacb", null ]
@@ -47,8 +48,11 @@ var namespaceservio_1_1cfg =
       [ "moving_detection_step", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6205b4ef989f8fa005cf3d6a4445afdb", null ],
       [ "quad_encoder_range", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed", null ]
     ] ],
+    [ "apply", "namespaceservio_1_1cfg.html#a82a22faf6950a6a32663e937da4a47a5", null ],
     [ "calculate_current_conversion", "namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811", null ],
     [ "encoder_mode_to_str", "namespaceservio_1_1cfg.html#ac80d4a995f39ca9ccba86cf314ae22e5", null ],
+    [ "id_to_key", "namespaceservio_1_1cfg.html#a1e1087069c21f5e087e55da1f2a9f95e", null ],
+    [ "key_to_id", "namespaceservio_1_1cfg.html#ad3a87c381f3fd90e336373a20951af56", null ],
     [ "key_to_str", "namespaceservio_1_1cfg.html#ad27b6513845d7e691073c821d7b96eb9", null ],
     [ "str_to_encoder_mode", "namespaceservio_1_1cfg.html#a6eb8fc3fad9e683169acc64a7148a604", null ],
     [ "str_to_key", "namespaceservio_1_1cfg.html#aa980c6ba0ebb5762dfd1780c78e1fabe", null ],
