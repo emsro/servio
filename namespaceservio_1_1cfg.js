@@ -48,6 +48,8 @@ var namespaceservio_1_1cfg =
       [ "quad_encoder_range", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed", null ]
     ] ],
     [ "calculate_current_conversion", "namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811", null ],
+    [ "encoder_mode_to_str", "namespaceservio_1_1cfg.html#ac80d4a995f39ca9ccba86cf314ae22e5", null ],
+    [ "key_to_str", "namespaceservio_1_1cfg.html#ad27b6513845d7e691073c821d7b96eb9", null ],
     [ "str_to_encoder_mode", "namespaceservio_1_1cfg.html#a6eb8fc3fad9e683169acc64a7148a604", null ],
     [ "str_to_key", "namespaceservio_1_1cfg.html#aa980c6ba0ebb5762dfd1780c78e1fabe", null ],
     [ "ids", "namespaceservio_1_1cfg.html#a9a7b5b8858fd0b5aa713c341ba3d2877", null ],

@@ -47,6 +47,8 @@ var cfg_2def_8hpp =
       [ "moving_detection_step", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3a6205b4ef989f8fa005cf3d6a4445afdb", null ],
       [ "quad_encoder_range", "cfg_2def_8hpp.html#a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed", null ]
     ] ],
+    [ "encoder_mode_to_str", "cfg_2def_8hpp.html#ac80d4a995f39ca9ccba86cf314ae22e5", null ],
+    [ "key_to_str", "cfg_2def_8hpp.html#ad27b6513845d7e691073c821d7b96eb9", null ],
     [ "str_to_encoder_mode", "cfg_2def_8hpp.html#a6eb8fc3fad9e683169acc64a7148a604", null ],
     [ "str_to_key", "cfg_2def_8hpp.html#aa980c6ba0ebb5762dfd1780c78e1fabe", null ],
     [ "ids", "cfg_2def_8hpp.html#a9a7b5b8858fd0b5aa713c341ba3d2877", null ],

@@ -206,8 +206,12 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a6eb8fc3fad9e683169acc64a7148a604" id="r_a6eb8fc3fad9e683169acc64a7148a604"><td class="memItemLeft" align="right" valign="top">constexpr std::optional&lt; <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a6eb8fc3fad9e683169acc64a7148a604">str_to_encoder_mode</a> (std::string_view str)</td></tr>
 <tr class="separator:a6eb8fc3fad9e683169acc64a7148a604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac80d4a995f39ca9ccba86cf314ae22e5" id="r_ac80d4a995f39ca9ccba86cf314ae22e5"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ac80d4a995f39ca9ccba86cf314ae22e5">encoder_mode_to_str</a> (<a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a> em)</td></tr>
+<tr class="separator:ac80d4a995f39ca9ccba86cf314ae22e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa980c6ba0ebb5762dfd1780c78e1fabe" id="r_aa980c6ba0ebb5762dfd1780c78e1fabe"><td class="memItemLeft" align="right" valign="top">constexpr std::optional&lt; <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#aa980c6ba0ebb5762dfd1780c78e1fabe">str_to_key</a> (std::string_view str)</td></tr>
 <tr class="separator:aa980c6ba0ebb5762dfd1780c78e1fabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27b6513845d7e691073c821d7b96eb9" id="r_ad27b6513845d7e691073c821d7b96eb9"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#ad27b6513845d7e691073c821d7b96eb9">key_to_str</a> (<a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> k)</td></tr>
+<tr class="separator:ad27b6513845d7e691073c821d7b96eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80a4e62e0bd44de593e5680623556811" id="r_a80a4e62e0bd44de593e5680623556811"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale">off_scale</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811">calculate_current_conversion</a> (float v_max, float v_min, float steps, float r_shunt, float gain)</td></tr>
 <tr class="separator:a80a4e62e0bd44de593e5680623556811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -450,6 +454,62 @@ scale</td>
 
 </div>
 </div>
+<a id="ac80d4a995f39ca9ccba86cf314ae22e5" name="ac80d4a995f39ca9ccba86cf314ae22e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac80d4a995f39ca9ccba86cf314ae22e5">&#9670;&#160;</a></span>encoder_mode_to_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::string_view servio::cfg::encoder_mode_to_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451">encoder_mode</a>&#160;</td>
+          <td class="paramname"><em>em</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a02c9adc0d63e270f7ea08ef4008e81bf">analog</a>, and <a class="el" href="namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a9a7821516bdd5d9a1586f094d6e1aacb">quad</a>.</p>
+
+</div>
+</div>
+<a id="ad27b6513845d7e691073c821d7b96eb9" name="ad27b6513845d7e691073c821d7b96eb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27b6513845d7e691073c821d7b96eb9">&#9670;&#160;</a></span>key_to_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::string_view servio::cfg::key_to_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a>&#160;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6781c954ae5cb10ab902b38422be5371">current_conv_offset</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a15d1aeff79f57d8ae73b6595f7315885">current_conv_scale</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a5d2cb5b938b227e29376d539745d6031">current_lim_max</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ae01543784ec3cf7e6432a4e710585826">current_lim_min</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3e9248946a76db39400fff28c324fc1e">current_loop_d</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6cfd5a78bbf933e45376d2463e52cdba">current_loop_i</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aaada797188b227204c37ed74e2011859">current_loop_p</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3879788c8c54de8f9cc05a7ffa5cecdd">encoder_mode</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a0e939a4ffd3aacd724dd3b50147b4353">group_id</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f">id</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a4cc65d762d2bed3de7efc351b4a43433">invert_hbridge</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aad42c6ceec9c979572dfdac1898051c9">maximum_temperature</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a21b6369c006cbd75d5205c4cf174c913">minimum_voltage</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a20f35e630daf44dbfa4c3f68f5399d8c">model</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6205b4ef989f8fa005cf3d6a4445afdb">moving_detection_step</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a426e319932d33d22130717d019bd8604">position_high_angle</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2ef23cd36b8309fbcf66271b0c4e069e">position_lim_max</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6f926ecfcd7ea240f3021231959ef5e1">position_lim_min</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab87a4b73f6b8354139fe42c0b5fcd582">position_loop_d</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a967417287c7c2faa1b6e62f41e002fd1">position_loop_i</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ad7dd4c7e66a6be078a43d5f969bfcc32">position_loop_p</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ad51ef8dc6f384a122f8a1ad65f5cbda0">position_low_angle</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a42f4736d5203f0cdca42f19cea71c433">position_to_velocity_lim_scale</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed">quad_encoder_range</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ac58c7cc4fca148d3dc09a9c6296f119d">static_friction_decay</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a673b9ac6e87403ce01ee6c1f8f8a7a79">static_friction_scale</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a530d7e88b9632ea1697e000371a7429a">temp_conv_offset</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a128bb4ccc34e3149e097051276feb107">temp_conv_scale</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a2e262d19d09a893fcc858183c21b715c">velocity_lim_max</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a00178165ea01e51ccc38aef401f0911f">velocity_lim_min</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a76f740f0b59eb33514128cded4b67d17">velocity_loop_d</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6fee121a8a44361abacfc929b36c2a76">velocity_loop_i</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a15cfbb0d062684d7ca899ab3c32123cc">velocity_loop_p</a>, <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a7362621e4e854583c7dc6965a34e7031">velocity_to_current_lim_scale</a>, and <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3afa8652ff2d205b38b16e4bbce2ada224">voltage_conv_scale</a>.</p>
+
+</div>
+</div>
 <a id="a6eb8fc3fad9e683169acc64a7148a604" name="a6eb8fc3fad9e683169acc64a7148a604"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6eb8fc3fad9e683169acc64a7148a604">&#9670;&#160;</a></span>str_to_encoder_mode()</h2>
 
@@ -561,7 +621,7 @@ scale</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1cfg.html">cfg</a></li>
-    <li class="footer">Generated on Thu May 8 2025 15:49:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu May 8 2025 20:22:11 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
