@@ -2,6 +2,8 @@
 
 #include <cstdint>
 //
+#include "../lib/parser.hpp"
+
 #include <avakar/atom.h>
 #include <vari/bits/typelist.h>
 
@@ -18,28 +20,16 @@ template < auto Key, typename T >
 struct kval
 {
         static_assert( std::three_way_comparable< T > );
-        static constexpr auto key     = Key;
-        using value_type              = T;
-        static constexpr bool is_void = false;
+        static constexpr auto key = Key;
+        using value_type          = T;
 
         T value;
 
         constexpr auto operator<=>( kval const& ) const noexcept = default;
 };
 
-template < auto Key >
-struct kval< Key, void >
-{
-
-        static constexpr auto key     = Key;
-        using value_type              = void;
-        static constexpr bool is_void = true;
-
-        constexpr auto operator<=>( kval const& ) const noexcept = default;
-};
-
 template < auto Key, typename T >
-constexpr kval< Key, T > operator|( T val, kval< Key, void > ) noexcept
+constexpr kval< Key, T > operator|( T val, kval< Key, parser::unit > ) noexcept
 {
         return { std::move( val ) };
 }
@@ -47,7 +37,7 @@ constexpr kval< Key, T > operator|( T val, kval< Key, void > ) noexcept
 namespace literals
 {
 template < avakar::s x >
-constexpr kval< avakar::a< x >{}, void > operator""_kv() noexcept
+constexpr kval< avakar::a< x >{}, parser::unit > operator""_kv() noexcept
 {
         return {};
 }
@@ -63,16 +53,6 @@ struct field
         using value_type          = T;
 
         using kv_type = kval< Key, value_type >;
-
-        constexpr auto operator<=>( field const& ) const noexcept = default;
-};
-
-template < uint32_t IDX, auto Key >
-struct field< IDX, Key, void >
-{
-        static constexpr auto id  = IDX;
-        static constexpr auto key = Key;
-        using value_type          = void;
 
         constexpr auto operator<=>( field const& ) const noexcept = default;
 };

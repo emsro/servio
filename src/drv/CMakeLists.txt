@@ -18,6 +18,6 @@ else()
             flash_cfg.cpp
             paged_i2c_eeprom.cpp
             char_uart.cpp
-    LIBS emlabcpp platform cmake_git_version_tracking
+    LIBS emlabcpp platform cmake_git_version_tracking vari
     OPTS -Os)
 endif()

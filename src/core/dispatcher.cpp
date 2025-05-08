@@ -1,14 +1,16 @@
 #include "./dispatcher.hpp"
 
 #include "../cnv/utils.hpp"
+#include "../lib/atom_visit.hpp"
 #include "../lib/json_ser.hpp"
 #include "../status.hpp"
-#include "./map_cfg.hpp"
 
 #include <git.h>
 
 namespace servio::core
 {
+using namespace avakar::literals;
+
 namespace
 {
 
@@ -19,7 +21,7 @@ void handle_set_mode(
     json::jval_ser&                      out )
 {
         inpt.visit(
-            [&]( iface::kval< "disengaged"_a, void > const& ) {
+            [&]( iface::kval< "disengaged"_a, iface::unit > const& ) {
                     ctl.disengage();
             },
             [&]( iface::kval< "power"_a, float > const& kv ) {
@@ -98,40 +100,30 @@ void handle_set_config(
         as( "OK" );
 
         v.visit( [&]< auto K, typename T >( iface::kval< K, T > const& kv ) {
-                static constexpr auto cfg_k = iface_to_cfg[( (iface::cfg_key) K ).value()];
-
-                // XXX: scaling issues /o\...
-                if constexpr ( cfg_k == cfg::ENCODER_MODE ) {
-                        if ( kv.value == "analog"_a )
-                                cfg_disp.set< cfg_k >( cfg::ENC_MODE_ANALOG );
-                        else if ( kv.value == "quad"_a )
-                                cfg_disp.set< cfg_k >( cfg::ENC_MODE_QUAD );
-                } else {
-                        cfg_disp.set< cfg_k >( kv.value );
-                }
+                constexpr auto k = *cfg::str_to_key( K.to_string() );
+                if constexpr ( k == cfg::key::encoder_mode )
+                        atom_visit( kv.value, [&]< auto V >( avakar::atom< V > ) {
+                                constexpr auto em = *cfg::str_to_encoder_mode( V.to_string() );
+                                cfg_disp.set< k >( em );
+                        } );
+                else
+                        cfg_disp.set< k >( kv.value );
         } );
 }
 
 void handle_get_config( cfg::dispatcher const& cfg_disp, iface::cfg_key ck, json::jval_ser& out )
 {
 
-        cfg::key cfg_k = iface_to_cfg[ck.value()];
-
         json::array_ser as{ out };
         as( "OK" );
 
-        cfg_disp.m.with_register( cfg_k, [&]< typename R >( R& reg ) {
-                if constexpr ( R::key == cfg::ENCODER_MODE )
-                        switch ( reg.value ) {
-                        case cfg::ENC_MODE_ANALOG:
-                                as( "analog" );
-                                break;
-                        case cfg::ENC_MODE_QUAD:
-                                as( "quad" );
-                                break;
-                        }
+        atom_visit( ck, [&]< auto K >( avakar::atom< K > ) {
+                constexpr auto k = *cfg::str_to_key( K.to_string() );
+                auto           v = cfg_disp.get< k >();
+                if constexpr ( k == cfg::key::encoder_mode )
+                        as( v == cfg::encoder_mode::analog ? "analog" : "quad" );
                 else
-                        as( reg.value );
+                        as( v );
         } );
 }
 

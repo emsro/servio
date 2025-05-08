@@ -5,8 +5,9 @@
 #include "../fw/util.hpp"
 #include "../status.hpp"
 
-#include <emlabcpp/experimental/cfg2/handler.h>
-#include <emlabcpp/experimental/cfg2/page.h>
+#include <emlabcpp/experimental/cfg/handler.h>
+#include <emlabcpp/experimental/cfg/page.h>
+#include <span>
 
 namespace servio::drv
 {
@@ -20,18 +21,11 @@ status write_data(
     uint16_t                     mem_addr,
     std::span< std::byte const > data )
 {
-        static constexpr std::size_t packet  = 32;
-        static constexpr uint32_t    timeout = 200;
-
-        // XXX maybe nonblocking next?
-        while ( !data.empty() ) {
-                auto n    = (uint16_t) std::min( data.size(), packet );
-                auto stat = HAL_I2C_Mem_Write(
-                    hi2c, dev_addr, mem_addr, 2, (uint8_t*) data.data(), n, timeout );
-                if ( stat != HAL_OK )
-                        return ERROR;
-                data = data.subspan( 0, n );
-        }
+        static constexpr uint32_t timeout = 200;
+        auto                      stat    = HAL_I2C_Mem_Write(
+            hi2c, dev_addr, mem_addr, 2, (uint8_t*) data.data(), (uint16_t) data.size(), timeout );
+        if ( stat != HAL_OK )
+                return ERROR;
         return SUCCESS;
 }
 
@@ -41,86 +35,20 @@ status read_data(
     uint16_t                     mem_addr,
     std::span< std::byte const > data )
 {
-        static constexpr std::size_t packet  = 32;
-        static constexpr uint32_t    timeout = 200;
+        static constexpr uint32_t timeout = 200;
 
-        // XXX maybe nonblocking next?
-        while ( !data.empty() ) {
-                auto n    = (uint16_t) std::min( data.size(), packet );
-                auto stat = HAL_I2C_Mem_Read(
-                    hi2c, dev_addr, mem_addr, 2, (uint8_t*) data.data(), n, timeout );
-                if ( stat != HAL_OK )
-                        return ERROR;
-                data = data.subspan( 0, n );
-        }
+        auto stat = HAL_I2C_Mem_Read(
+            hi2c, dev_addr, mem_addr, 2, (uint8_t*) data.data(), (uint16_t) data.size(), timeout );
+        if ( stat != HAL_OK )
+                return ERROR;
         return SUCCESS;
-}
-
-status locate_next(
-    I2C_HandleTypeDef*  hi2c,
-    uint16_t            dev_addr,
-    uint16_t            mem_size,
-    uint16_t            page_size,
-    uint16_t&           page_addr,
-    em::cfg::hdr_state& page_st )
-{
-        em::cfg::activ_page_sel psel;
-
-        for ( uint16_t i = 0; i < mem_size / page_size; i++ ) {
-                std::byte data[2] = { 0x00_b, 0x00_b };
-                if ( read_data( hi2c, dev_addr, i * page_size, data ) != SUCCESS )
-                        return ERROR;
-                if ( psel.on_raw_hdr( i, std::span< std::byte, 2 >{ data, 2 } ) == ERROR ) {
-                        page_addr = i * page_size;
-                        page_st   = em::cfg::hdr_state::A;
-                        return SUCCESS;
-                }
-        }
-
-        page_addr = static_cast< uint16_t >( psel.idx * page_size );
-        page_st   = psel.hdr_st ? *psel.hdr_st : em::cfg::hdr_state::A;
-        return SUCCESS;
-}
-
-opt< uint16_t >
-locate_current( I2C_HandleTypeDef* hi2c, uint16_t dev_addr, uint16_t mem_size, uint16_t page_size )
-{
-        em::cfg::activ_page_sel psel;
-
-        for ( uint16_t i = 0; i < mem_size / page_size; i++ ) {
-                std::byte data[2] = { 0x00_b, 0x00_b };
-                if ( read_data( hi2c, dev_addr, i * page_size, data ) != SUCCESS )
-                        return {};
-                if ( psel.on_raw_hdr( i, std::span< std::byte, 2 >{ data, 2 } ) == ERROR )
-                        continue;
-        }
-        if ( !psel.hdr_st )
-                return {};
-        return static_cast< uint16_t >( psel.idx * page_size );
 }
 
 }  // namespace
 
-status i2c_eeprom::start()
-{
-        for ( uint16_t x = 0x00; x < 255; x++ ) {
-                uint8_t data[1] = { 0x00 };
-                auto    stat    = HAL_I2C_Mem_Read( i2c_, x, 0x00, 2, data, 1, 200 );
-                if ( stat == HAL_OK )
-                        fw::stop_exec();
-        }
-        fw::stop_exec();
-
-        return SUCCESS;
-}
-
 status i2c_eeprom::store_cfg( cfg::map const& m )
 {
-        uint16_t page_addr = 0x00;
-        if ( auto addr = locate_current( i2c_, dev_addr_, mem_size_, page_size_ ) )
-                page_addr = *addr;
-
-        em::static_vector< cfg::key, cfg::map::registers_count > unseen_keys{ cfg::map::keys };
+        em::static_vector< uint32_t, cfg::ids.size() > unseen_ids{ cfg::ids };
 
         std::byte buffer[42];
 
@@ -133,52 +61,52 @@ status i2c_eeprom::store_cfg( cfg::map const& m )
             .write_f = [&]( std::size_t addr, std::span< std::byte > data ) -> em::result {
                     return write_data( i2c_, dev_addr_, static_cast< uint16_t >( addr ), data );
             },
-            .check_key_cache_f = [&]( uint32_t key ) -> em::cfg::cache_res {
-                    return em::cfg::key_check_unseen_container( unseen_keys, key );
+            .check_key_cache_f = [&]( uint32_t id ) -> em::cfg::cache_res {
+                    return em::cfg::key_check_unseen_container( unseen_ids, id );
             },
-            .value_changed_f = [&]( uint32_t key, std::span< std::byte > data ) -> bool {
-                    return em::cfg::reg_map_value_changed( m, key, data );
+            .value_changed_f = [&]( uint32_t id, std::span< std::byte > data ) -> bool {
+                    auto ptr = m.ref_by_id( id );
+                    if ( !ptr )  // XXX: maybe rethink?
+                            return false;
+                    return ptr.vref().visit( [&]< typename T >( T const& val ) {
+                            auto newval = em::cfg::get_val< T >( data );
+                            if ( newval )
+                                    return val != *newval;
+                            return false;
+                    } );
             },
-            .serialize_key_f = [&]( uint32_t               key,
+            .serialize_key_f = [&]( uint32_t               id,
                                     std::span< std::byte > buffer ) -> opt< std::size_t > {
-                    return em::cfg::serialize_reg_map_key( m, key, buffer );
+                    opt< std::size_t > res;
+                    auto               ptr = m.ref_by_id( id );
+                    if ( !ptr )
+                            return res;
+                    ptr.vref().visit( [&]< typename T >( T const& val ) {
+                            auto ran = em::cfg::store_kval( id, val, buffer );
+                            if ( ran )
+                                    res = ran->size();
+                    } );
+                    return res;
             },
             .take_unseen_key_f =
                 [&] {
-                        return em::cfg::pop_from_container( unseen_keys );
+                        return em::cfg::pop_from_container( unseen_ids );
                 },
-        };
+            .reset_keys_f = [&]() -> em::result {
+                    unseen_ids = cfg::ids;
+                    return em::result::SUCCESS;
+            } };
 
-        // XXX: update begins after header!
         em::cfg::update_cbs_bind lb{ lu };
-        em::cfg::update_result   res =
-            em::cfg::update_stored_config( page_addr, page_addr + page_size_, lb );
-        if ( res == em::cfg::update_result::ERROR )
-                return ERROR;
-        if ( res == em::cfg::update_result::FULL ) {
-                em::cfg::hdr_state page_st;
-                if ( locate_next( i2c_, dev_addr_, mem_size_, page_size_, page_addr, page_st ) !=
-                     SUCCESS )
-                        return ERROR;
-                // XXX: update header?
-                unseen_keys = cfg::map::keys;
-                res = em::cfg::update_stored_config( page_addr, page_addr + page_size_, lb );
-                if ( res != em::cfg::update_result::SUCCESS )
-                        return ERROR;
-        }
-
-        return SUCCESS;
+        auto                     res = em::cfg::update( mem_size_, page_size_, lb );
+        return res;
 }
 
 status i2c_eeprom::load_cfg( cfg::map& m )
-
 {
-        auto addr = locate_current( i2c_, dev_addr_, mem_size_, page_size_ );
-        if ( !addr )
-                return SUCCESS;
         std::byte tmp[42];
 
-        em::static_vector< cfg::key, cfg::map::registers_count > unseen_keys{ cfg::map::keys };
+        em::static_vector< uint32_t, cfg::ids.size() > unseen_ids{ cfg::ids };
 
         em::cfg::load_cbs cbs = {
             .buffer = tmp,
@@ -186,17 +114,25 @@ status i2c_eeprom::load_cfg( cfg::map& m )
                 [&]( std::size_t addr, std::span< std::byte, em::cfg::cell_size > data ) {
                         return read_data( i2c_, dev_addr_, static_cast< uint16_t >( addr ), data );
                 },
-            .check_key_cache_f = [&]( uint32_t key ) -> em::cfg::cache_res {
-                    return em::cfg::key_check_unseen_container( unseen_keys, key );
+            .check_key_cache_f = [&]( uint32_t id ) -> em::cfg::cache_res {
+                    return em::cfg::key_check_unseen_container( unseen_ids, id );
             },
-            .on_kval_f =
-                [&]( uint32_t key, std::span< std::byte > data ) {
-                        return em::cfg::set_reg_map_key( m, key, data );
-                },
+            .on_kval_f = [&]( uint32_t id, std::span< std::byte > data ) -> em::result {
+                    auto ptr = m.ref_by_id( id );
+                    if ( !ptr )
+                            return em::result::ERROR;
+                    return ptr.vref().visit( [&]< typename T >( T& val ) -> em::result {
+                            auto newval = em::cfg::get_val< T >( data );
+                            if ( newval ) {
+                                    val = *newval;
+                                    return em::result::SUCCESS;
+                            }
+                            return em::result::ERROR;
+                    } );
+            },
         };
-        // XXX: load begins after header
         em::cfg::load_cbs_bind liface{ cbs };
-        em::result             r = em::cfg::load_stored_config( *addr, *addr + page_size_, liface );
+        auto                   r = em::cfg::load( mem_size_, page_size_, liface );
         return r;
 }
 

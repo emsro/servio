@@ -5,6 +5,8 @@
 #include "../port.hpp"
 #include "./util.hpp"
 
+#include <deque>
+
 namespace servio::scmdio
 {
 

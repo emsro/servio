@@ -1,7 +1,7 @@
 servio_add_library(
   TARGET sntrlib
   SOURCES central_sentry.cpp sentry.cpp
-  LIBS emlabcpp platform avakar::atom
+  LIBS emlabcpp platform avakar::atom vari
   OPTS -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

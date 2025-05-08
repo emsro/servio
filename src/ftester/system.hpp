@@ -80,9 +80,14 @@ struct test_system
                 } )
         {
                 c_port_.set_option( boost::asio::serial_port_base::baud_rate( c_baudrate ) );
+                c_port_.set_option( boost::asio::serial_port_base::flow_control(
+                    boost::asio::serial_port_base::flow_control::none ) );
 
                 co_spawn( io_context_, dread(), handle_eptr );
                 co_spawn( io_context_, cread(), handle_eptr );
+
+                spdlog::debug( "Debug port: {}", d_dev.string() );
+                spdlog::debug( "Control port: {}", c_dev.string() );
         }
 
         std::string suite_name() const
@@ -197,16 +202,22 @@ private:
         {
                 std::vector< std::byte > buffer( 8, std::byte{ 0 } );
                 while ( true ) {
-                        std::size_t n = co_await c_port_.async_read_some(
-                            boost::asio::buffer( buffer.data(), buffer.size() ),
-                            boost::asio::use_awaitable );
+                        try {
+                                std::size_t n = co_await c_port_.async_read_some(
+                                    boost::asio::buffer( buffer.data(), buffer.size() ),
+                                    boost::asio::use_awaitable );
 
-                        spdlog::debug( "forwarding: {}", std::span{ buffer.data(), n } );
+                                spdlog::debug( "forwarding: {}", std::span{ buffer.data(), n } );
 
-                        co_await boost::asio::async_write(
-                            c_port_,
-                            boost::asio::buffer( buffer.data(), n ),
-                            boost::asio::use_awaitable );
+                                co_await boost::asio::async_write(
+                                    c_port_,
+                                    boost::asio::buffer( buffer.data(), n ),
+                                    boost::asio::use_awaitable );
+                        }
+                        catch ( std::exception const& e ) {
+                                spdlog::error( "Failed to read from controller {}", e.what() );
+                                system_failure_ = true;
+                        }
                 }
         }
 

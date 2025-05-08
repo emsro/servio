@@ -22,7 +22,7 @@ void vary_value( vari::vref< iface::cfg_types > x )
 {
         return x.visit(
             [&]( float& x ) {
-                    x = 1;
+                    x += 1;
             },
             [&]< std::size_t N >( em::string_buffer< N >& xs ) {
                     xs[0] = 'X';
@@ -124,7 +124,7 @@ int main( int argc, char** argv )
                 return app.exit( e );
         }
 
-        bb::register_test( "basic", "config", io_ctx, port.get( io_ctx ), bb::test_config, 15s );
+        bb::register_test( "basic", "config", io_ctx, port.get( io_ctx ), bb::test_config, 30s );
 
         return RUN_ALL_TESTS();
 }

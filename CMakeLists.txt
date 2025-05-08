@@ -4,7 +4,7 @@ project(servio C CXX ASM)
 
 set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 99)
 
 cmake_policy(SET CMP0077 NEW)
@@ -22,7 +22,7 @@ cpmaddpackage(
 )
 cpmaddpackage("gh:Neargye/magic_enum@0.9.7")
 cpmaddpackage("gh:avakar/atom#f5d5c6c0f5fdc96a6275d55f7c4ee98396e407a6")
-cpmaddpackage("gh:koniarik/vari@0.4.8")
+cpmaddpackage("gh:koniarik/vari#abb51a157dc3d07ceeb5c2c1c71a98d419bdc776")
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
   target_compile_options(
@@ -32,7 +32,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
            -DEMLABCPP_ASSERT_NATIVE)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
-  set(SERVIO_SHARED_FLAGS "-fsingle-precision-constant -gdwarf-2")
+  set(SERVIO_SHARED_FLAGS "-fsingle-precision-constant -gdwarf-2 -lm")
   set(CMAKE_CXX_FLAGS
       "${CMAKE_CXX_FLAGS} ${SERVIO_SHARED_FLAGS} -gdwarf-2 -DVARI_DISABLE_ASSERTS=ON"
   )
@@ -52,11 +52,11 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
     NAME
     Boost
     VERSION
-    1.84.0
+    1.88.0
     URL
-    https://github.com/boostorg/boost/releases/download/boost-1.84.0/boost-1.84.0.tar.xz
+    https://github.com/boostorg/boost/releases/download/boost-1.88.0/boost-1.88.0-cmake.tar.xz
     URL_HASH
-    SHA256=2e64e5d79a738d0fa6fb546c6e5c2bd28f88d268a2a080546f74e5ff98f29d0e
+    SHA256=f48b48390380cfb94a629872346e3a81370dc498896f16019ade727ab72eb1ec
     OPTIONS
     "BOOST_ENABLE_CMAKE ON"
     "BOOST_INCLUDE_LIBRARIES container\\\;asio" # Note the escapes!

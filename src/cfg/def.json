@@ -1,0 +1,284 @@
+{
+    "fields": [
+        {
+            "id": 1,
+            "name": "model",
+            "type": "string_type",
+            "default": "\"no model\"",
+            "unit": "",
+            "desc": "Model of the servomotor, used for debugging purposes"
+        },
+        {
+            "id": 2,
+            "name": "id",
+            "type": "uint32_t",
+            "default": 0,
+            "unit": "",
+            "desc": "ID of the servomotor"
+        },
+        {
+            "id": 3,
+            "name": "group_id",
+            "type": "uint32_t",
+            "default": 0,
+            "unit": "",
+            "desc": "Group ID of the servomotor"
+        },
+        {
+            "id": 4,
+            "name": "encoder_mode",
+            "type": "cfg::encoder_mode",
+            "default": "cfg::encoder_mode::analog",
+            "unit": "",
+            "desc": "Encoder mode of the servomotor"
+        },
+        {
+            "id": 11,
+            "name": "position_low_angle",
+            "type": "float",
+            "default": 0.0,
+            "unit": "rad",
+            "desc": ""
+        },
+        {
+            "id": 12,
+            "name": "position_high_angle",
+            "type": "float",
+            "default": "2*pi",
+            "unit": "rad",
+            "desc": ""
+        },
+        {
+            "id": 14,
+            "name": "current_conv_scale",
+            "type": "float",
+            "default": 1.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 15,
+            "name": "current_conv_offset",
+            "type": "float",
+            "default": 0.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 16,
+            "name": "temp_conv_scale",
+            "type": "float",
+            "default": 1.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 17,
+            "name": "temp_conv_offset",
+            "type": "float",
+            "default": 0.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 18,
+            "name": "voltage_conv_scale",
+            "type": "float",
+            "default": 1.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 19,
+            "name": "invert_hbridge",
+            "type": "bool",
+            "default": "false",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 30,
+            "name": "current_loop_p",
+            "type": "float",
+            "default": 1.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 31,
+            "name": "current_loop_i",
+            "type": "float",
+            "default": "0.0001F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 32,
+            "name": "current_loop_d",
+            "type": "float",
+            "default": 0.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 33,
+            "name": "current_lim_min",
+            "type": "float",
+            "default": -2.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 34,
+            "name": "current_lim_max",
+            "type": "float",
+            "default": 2.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 40,
+            "name": "velocity_loop_p",
+            "type": "float",
+            "default": 1.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 41,
+            "name": "velocity_loop_i",
+            "type": "float",
+            "default": "0.000'000'2F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 42,
+            "name": "velocity_loop_d",
+            "type": "float",
+            "default": 0.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 43,
+            "name": "velocity_lim_min",
+            "type": "float",
+            "default": -3.0,
+            "unit": "rad/s",
+            "desc": ""
+        },
+        {
+            "id": 44,
+            "name": "velocity_lim_max",
+            "type": "float",
+            "default": 3.0,
+            "unit": "rad/s",
+            "desc": ""
+        },
+        {
+            "id": 45,
+            "name": "velocity_to_current_lim_scale",
+            "type": "float",
+            "default": 2.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 50,
+            "name": "position_loop_p",
+            "type": "float",
+            "default": "0.2F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 51,
+            "name": "position_loop_i",
+            "type": "float",
+            "default": "0.000'000'02F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 52,
+            "name": "position_loop_d",
+            "type": "float",
+            "default": 0.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 53,
+            "name": "position_lim_min",
+            "type": "float",
+            "default": "0.1F",
+            "unit": "rad",
+            "desc": ""
+        },
+        {
+            "id": 54,
+            "name": "position_lim_max",
+            "type": "float",
+            "default": "2.0F * pi - 0.1F",
+            "unit": "rad",
+            "desc": ""
+        },
+        {
+            "id": 55,
+            "name": "position_to_velocity_lim_scale",
+            "type": "float",
+            "default": 2.0,
+            "unit": "rad",
+            "desc": ""
+        },
+        {
+            "id": 60,
+            "name": "static_friction_scale",
+            "type": "float",
+            "default": 3.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 61,
+            "name": "static_friction_decay",
+            "type": "float",
+            "default": 1.0,
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 62,
+            "name": "minimum_voltage",
+            "type": "float",
+            "default": 6.0,
+            "unit": "voltage",
+            "desc": ""
+        },
+        {
+            "id": 65,
+            "name": "maximum_temperature",
+            "type": "float",
+            "default": 80.0,
+            "unit": "celsius",
+            "desc": ""
+        },
+        {
+            "id": 66,
+            "name": "moving_detection_step",
+            "type": "float",
+            "default": "0.05F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 80,
+            "name": "quad_encoder_range",
+            "type": "uint32_t",
+            "default": 2048,
+            "unit": "",
+            "desc": ""
+        }
+    ]
+}

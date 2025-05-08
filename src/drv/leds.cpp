@@ -14,7 +14,6 @@ void leds::force_red_led()
 
 void leds::update( leds_vals const& leds )
 {
-
         if ( !red_forced_ )
                 HAL_GPIO_WritePin( red_.port, red_.pin, leds.red ? GPIO_PIN_SET : GPIO_PIN_RESET );
 

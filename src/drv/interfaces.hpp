@@ -1,5 +1,5 @@
 #include "../base.hpp"
-#include "../cfg/map.hpp"
+#include "../cfg/def.hpp"
 #include "../status.hpp"
 
 #include <cstdint>

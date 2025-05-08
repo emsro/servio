@@ -1,6 +1,6 @@
 #pragma once
 
-#include "./str_lib.h"
+#include "./str_lib.hpp"
 
 #include <emlabcpp/view.h>
 

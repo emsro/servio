@@ -17,12 +17,10 @@ struct i2c_eeprom : public storage_iface
             I2C_HandleTypeDef& i2c )
           : mem_size_( mem_size )
           , page_size_( page_size )
-          , dev_addr_( dev_addr )
+          , dev_addr_( dev_addr << 1 )
           , i2c_( &i2c )
         {
         }
-
-        status start();
 
         status store_cfg( cfg::map const& m ) override;
         status load_cfg( cfg::map& m ) override;
@@ -31,7 +29,6 @@ struct i2c_eeprom : public storage_iface
 private:
         uint16_t           mem_size_;
         uint16_t           page_size_ = 0x00;
-        uint16_t           page_addr_ = 0x00;
         uint8_t            dev_addr_;
         I2C_HandleTypeDef* i2c_ = nullptr;
 };

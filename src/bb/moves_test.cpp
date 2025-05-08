@@ -42,10 +42,15 @@ test_position( boost::asio::io_context& io, scmdio::port_iface& port )
 
                 co_await scmdio::set_mode_position( port, pos );
 
-                boost::asio::steady_timer t( io, 2s );
-                co_await t.async_wait( boost::asio::use_awaitable );
-
-                float position = co_await scmdio::get_property_position( port );
+                auto  now      = std::chrono::steady_clock::now();
+                auto  end      = now + 20s;
+                float position = -pos;
+                while ( now < end ) {
+                        position = co_await scmdio::get_property_position( port );
+                        now      = std::chrono::steady_clock::now();
+                        if ( position - pos < 0.3F )
+                                break;
+                }
 
                 EXPECT_NEAR( pos, position, 0.3F );
         }
@@ -80,7 +85,7 @@ int main( int argc, char** argv )
                 bb::register_test(
                     "moves", "current", io_ctx, port.get( io_ctx ), bb::test_current, 1s );
                 bb::register_test(
-                    "moves", "position", io_ctx, port.get( io_ctx ), bb::test_position, 10s );
+                    "moves", "position", io_ctx, port.get( io_ctx ), bb::test_position, 60s );
         }
 
         return RUN_ALL_TESTS();

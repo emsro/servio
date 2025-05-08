@@ -1,5 +1,4 @@
 
-#include "../../cfg/default.hpp"
 #include "../../drv/mock.hpp"
 #include "../serial.hpp"
 #include "./port_mock.hpp"
@@ -32,7 +31,7 @@ TEST( iface, base )
         drv::mock::temp    tm;
         drv::mock::stor    sd;
         core::core         cor{ 0_ms, gv, tm, ctl::config{ .position_limits = { -2.0F, 2.0F } } };
-        cfg::map           m = cfg::get_default_config();
+        cfg::map           m{};
         port_mock          pm( port_mock::attrs{
                      .motor    = mot,
                      .pos_drv  = gp,

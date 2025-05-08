@@ -147,6 +147,7 @@ int main( int argc, char* argv[] )
         }
 
         if ( cfg.flash_cmd ) {
+                spdlog::debug( "Flashing device" );
                 joque::task_set ts2;
                 cfg.flash_cmd.vref().visit(
                     [&]( ftester::openocd_flash_config const& ocd ) {
@@ -158,7 +159,7 @@ int main( int argc, char* argv[] )
                                 ftester::make_bmp_flash_task( bmp.fw, bmp.device, dev );
                     } );
                 joque::exec( ts2 ).run();
-                std::this_thread::sleep_for( 500ms );
+                std::this_thread::sleep_for( 1000ms );
         }
 
         nlohmann::json inpt;

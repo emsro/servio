@@ -1,5 +1,6 @@
 
-#include "./base.h"
+#include "../lib/parser.hpp"
+#include "./base.hpp"
 
 #include <emlabcpp/experimental/string_buffer.h>
 #include <vari/vopt.h>
@@ -9,10 +10,11 @@
 
 namespace servio::iface
 {
+using parser::unit;
 namespace em = emlabcpp;
 
 using mode = vari::typelist<
-    field< 1, "disengaged"_a, void >,
+    field< 1, "disengaged"_a, unit >,
     field< 2, "power"_a, float >,
     field< 3, "current"_a, float >,
     field< 4, "velocity"_a, float >,
@@ -51,8 +53,8 @@ struct prop_stmt
 };
 
 using encoder_mode = vari::typelist<  //
-    field< 1, "analog"_a, void >,
-    field< 2, "quad"_a, void > >;
+    field< 1, "analog"_a, unit >,
+    field< 2, "quad"_a, unit > >;
 
 using ec_mode_key = typename field_traits< encoder_mode >::keys;
 
@@ -63,8 +65,8 @@ using cfg = vari::typelist<
     field< 2, "id"_a, uint32_t >,
     field< 3, "group_id"_a, uint32_t >,
     field< 4, "encoder_mode"_a, ec_mode_key >,
-    field< 11, "position_lower_angle"_a, float >,
-    field< 12, "position_higher_angle"_a, float >,
+    field< 11, "position_low_angle"_a, float >,
+    field< 12, "position_high_angle"_a, float >,
     field< 14, "current_conv_scale"_a, float >,
     field< 15, "current_conv_offset"_a, float >,
     field< 16, "temp_conv_scale"_a, float >,

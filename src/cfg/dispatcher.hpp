@@ -1,10 +1,9 @@
 
+#pragma once
+
 #include "../core/core.hpp"
 #include "../core/drivers.hpp"
-#include "./key.hpp"
-#include "./map.hpp"
-
-#pragma once
+#include "./def.hpp"
 
 namespace servio::cfg
 {
@@ -23,21 +22,18 @@ struct dispatcher
         template < key Key, typename T >
         void set( T const& item )
         {
-                m.set_val< Key >( item );
-                apply( Key );
+                m.ref_by_key< Key >() = item;
+                this->apply( Key );
         }
-
-        void full_apply();
-
-        void apply( key const& key );
 
         template < key Key >
         auto const& get() const
         {
-                return m.get_val< Key >();
+                return m.ref_by_key< Key >();
         }
-};
 
-void apply( ctl::control&, map const&, key const& key );
+        void full_apply();
+        void apply( key k );
+};
 
 }  // namespace servio::cfg

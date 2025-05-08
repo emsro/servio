@@ -9,7 +9,14 @@ servio_add_library(
           i2c.cpp
           timers.cpp
           dts.cpp
-  LIBS emlabcpp HAL::STM32::H5 CMSIS::STM32::H503xx STM32::Nano STM32::NoSys
+  LIBS emlabcpp
+       HAL::STM32::H5
+       CMSIS::STM32::H503xx
+       STM32::Nano
+       STM32::NoSys
+       vari
+       avakar::atom
+       cfglib
   OPTS -Os)
 
 target_link_libraries(

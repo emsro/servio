@@ -1,7 +1,5 @@
-#include "../../iface/def.h"
-#include "../default.hpp"
-#include "../key.hpp"
-#include "../map.hpp"
+#include "../../iface/def.hpp"
+#include "../def.hpp"
 
 #include <gtest/gtest.h>
 #include <magic_enum/magic_enum.hpp>
@@ -12,15 +10,11 @@
 namespace servio::tests
 {
 
-template < typename T >
-std::set< uint32_t > get_enum_ids()
+std::set< uint32_t > get_cfg_ids()
 {
-        auto const           entries = magic_enum::enum_entries< T >();
         std::set< uint32_t > ids;
-        for ( auto [val, name] : entries ) {
-                std::ignore = name;
-                ids.insert( static_cast< uint32_t >( val ) );
-        }
+        for ( auto const& d : cfg::keys )
+                ids.insert( static_cast< uint32_t >( d ) );
         return ids;
 }
 
@@ -41,7 +35,7 @@ std::vector< uint32_t > diff( std::set< uint32_t > const& lh, std::set< uint32_t
 
 TEST( CFG, cfg_proto_id_match )
 {
-        auto cfg_ids   = get_enum_ids< cfg::key >();
+        auto cfg_ids   = get_cfg_ids();
         auto iface_ids = get_iface_ids< iface::cfg >();
 
         EXPECT_EQ( cfg_ids, iface_ids )
@@ -49,34 +43,6 @@ TEST( CFG, cfg_proto_id_match )
             << em::joined( diff( cfg_ids, iface_ids ), std::string{ "," }, [&]( uint32_t x ) {
                        return std::to_string( x );
                } );
-}
-
-TEST( CFG, encoder_match )
-{
-        auto encoder_ids = get_enum_ids< cfg::encoder_mode >();
-        auto iface_ids   = get_iface_ids< iface::encoder_mode >();
-
-        EXPECT_EQ( encoder_ids, iface_ids );
-}
-
-TEST( CFG, cfg_types )
-{
-        // Check that cfg::value_variant exactly represents all types in cfg::map
-
-        cfg::map const cmap = cfg::get_default_config();
-
-        std::set< std::type_index > used_types;
-
-        em::protocol::for_each_register( cmap, [&]< cfg::key, typename T >( T const& ) {
-                static_assert(
-                    em::alternative_of< std::decay_t< T >, cfg::value_variant >,
-                    "failed to find value in variant" );
-
-                used_types.emplace( typeid( T ) );
-        } );
-
-        EXPECT_EQ( used_types.size(), std::variant_size_v< cfg::value_variant > )
-            << "Not all types from variant are used";
 }
 
 }  // namespace servio::tests

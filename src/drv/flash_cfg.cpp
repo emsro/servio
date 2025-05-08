@@ -7,8 +7,8 @@
 namespace servio::drv
 {
 
-namespace
-{
+// namespace
+//{
 
 void cfg_erase( uint32_t start_addr )
 {
@@ -57,7 +57,8 @@ bool cfg_write( uint32_t addr, std::span< std::byte const > buffer )
         // TODO: well, there is error handling to do
         return true;
 }
-}  // namespace
+
+//}  // namespace
 
 status flash_storage::store_cfg( cfg::map const& m )
 {

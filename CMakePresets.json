@@ -26,18 +26,6 @@
             }
         },
         {
-            "name": "stm32g4_debug_cfg",
-            "generator": "Ninja",
-            "binaryDir": "build/g4/",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-                "SERVIO_PLATFORM": "stm32g4",
-                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/dep/stm32-cmake/cmake/stm32_gcc.cmake",
-                "CMAKE_CXX_COMPILER_LAUNCHER": "ccache"
-            }
-        },
-        {
             "name": "stm32h5_debug_cfg",
             "generator": "Ninja",
             "binaryDir": "build/h5/",
@@ -46,7 +34,8 @@
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "SERVIO_PLATFORM": "stm32h5",
                 "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/dep/stm32-cmake/cmake/stm32_gcc.cmake",
-                "CMAKE_CXX_COMPILER_LAUNCHER": "ccache"
+                "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
             }
         }
     ],
@@ -58,10 +47,6 @@
         {
             "name": "host_asan_build",
             "configurePreset": "host_asan_cfg"
-        },
-        {
-            "name": "stm32g4_debug_build",
-            "configurePreset": "stm32g4_debug_cfg"
         },
         {
             "name": "stm32h5_debug_build",

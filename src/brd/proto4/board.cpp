@@ -1,4 +1,3 @@
-#include "../../cfg/default.hpp"
 #include "../../cnv/setup.hpp"
 #include "../../core/drivers.hpp"
 #include "../../core/globals.hpp"
@@ -17,7 +16,6 @@
 #include "../../plt/platform.hpp"
 #include "../../sntr/central_sentry.hpp"
 #include "../brd.hpp"
-#include "flash_cfg.hpp"
 #include "setup.hpp"
 
 #include <emlabcpp/defer.h>
@@ -25,12 +23,8 @@
 
 namespace em = emlabcpp;
 
-// TODO: check duplication with proto3/board.cpp
-// TODO: add calibration procedure for ADC1
-
 namespace servio::brd
 {
-
 using namespace literals;
 
 drv::pin_cfg HBRDIGE_VREF_PIN{
@@ -45,10 +39,8 @@ cfg::map get_default_config()
 
         cnv::off_scale const curr_cfg = drv::drv8251::get_curr_coeff();
 
-        m.set_val< cfg::key::CURRENT_CONV_SCALE >( curr_cfg.scale );
-        m.set_val< cfg::key::CURRENT_CONV_OFFSET >( curr_cfg.offset );
-        m.set_val< cfg::key::TEMP_CONV_OFFSET >( 0.0F );
-        m.set_val< cfg::key::TEMP_CONV_SCALE >( 1.0F );
+        m.current_conv_scale  = curr_cfg.scale;
+        m.current_conv_offset = curr_cfg.offset;
 
         return m;
 }
@@ -107,21 +99,7 @@ drv::quad_encoder  QUAD{ TIM3_HANDLE };
 TIM_HandleTypeDef* QUAD_TRIGGER_TIMER = nullptr;
 
 I2C_HandleTypeDef I2C2_HANDLE{};
-drv::i2c_eeprom   EEPROM{ 0b1010'0000, 65'535u, 2'000u, I2C2_HANDLE };
-
-std::array< em::view< std::byte* >, 2 > PERSISTENT_BLOCKS{ page_at( 0 ), page_at( 1 ) };
-
-void flash_start_cb()
-{
-        std::ignore = HBRIDGE.start();
-}
-
-void flash_stop_cb()
-{
-        std::ignore = HBRIDGE.stop();
-}
-
-drv::flash_storage FLASH_STORAGE{ PERSISTENT_BLOCKS, flash_start_cb, flash_stop_cb };
+drv::i2c_eeprom   EEPROM{ 0x50, 65'535u, 2'000u, I2C2_HANDLE };
 
 }  // namespace servio::brd
 
@@ -396,10 +374,9 @@ drv::com_iface* setup_debug_comms()
         return &DEBUG_COMMS;
 }
 
-drv::leds* leds_setup()
+drv::leds& leds_setup()
 {
         __HAL_RCC_GPIOA_CLK_ENABLE();
-        __HAL_RCC_TIM2_CLK_ENABLE();
 
         drv::pin_cfg red{
             .pin  = GPIO_PIN_0,
@@ -477,14 +454,16 @@ void try_i2c_gpio_toggle()
 drv::storage_iface* eeprom_setup()
 {
         __HAL_RCC_GPIOB_CLK_ENABLE();
+        __HAL_RCC_GPIOA_CLK_ENABLE();
+        __HAL_RCC_I2C2_CLK_ENABLE();
 
         drv::pin_cfg pwr{
             .pin  = GPIO_PIN_15,
-            .port = GPIOB,
+            .port = GPIOA,
             .mode = GPIO_MODE_OUTPUT_PP,
         };
         plt::setup_gpio( pwr );
-        HAL_GPIO_WritePin( pwr.port, pwr.pin, GPIO_PIN_SET );
+        HAL_GPIO_WritePin( pwr.port, pwr.pin, GPIO_PIN_RESET );
 
         plt::i2c_cfg cfg{
             .instance        = I2C2,
@@ -512,43 +491,36 @@ drv::storage_iface* eeprom_setup()
         if ( res != SUCCESS )
                 return nullptr;
 
-        __HAL_RCC_I2C2_CLK_ENABLE();
-
         return &EEPROM;
 }
 
 status start_callback( core::drivers& cdrv )
 {
+        if ( HAL_ADCEx_Calibration_Start( &ADC_HANDLE, ADC_SINGLE_ENDED ) != HAL_OK )
+                fw::stop_exec();
+
         if ( cdrv.motor != nullptr ) {
                 if ( HBRIDGE.start() != SUCCESS )
-                        return ERROR;
+                        fw::stop_exec();
         }
         if ( cdrv.comms != nullptr ) {
                 if ( COMMS.start() != SUCCESS )
-                        return ERROR;
-        }
-        if ( cdrv.storage == &EEPROM ) {
-                if ( EEPROM.start() != SUCCESS )
-                        return ERROR;
+                        fw::stop_exec();
         }
         if ( QUAD_TRIGGER_TIMER != nullptr )
-                QUAD.start();
+                if ( QUAD.start() != SUCCESS )
+                        fw::stop_exec();
 
         HAL_GPIO_WritePin( HBRDIGE_VREF_PIN.port, HBRDIGE_VREF_PIN.pin, GPIO_PIN_SET );
-
-        drv::wait_for( CLOCK, 50_us );
-
-        if ( HAL_ADCEx_Calibration_Start( &ADC_HANDLE, ADC_SINGLE_ENDED ) != HAL_OK )
-                return ERROR;
 
         if ( cdrv.position != nullptr ) {
                 // this implies that adc_pooler initialization is OK
                 if ( ADC_POOLER.start() != SUCCESS )
-                        return ERROR;
+                        fw::stop_exec();
         }
 
         if ( HAL_ICACHE_Enable() != HAL_OK )
-                return ERROR;
+                fw::stop_exec();
 
         return SUCCESS;
 }
@@ -572,7 +544,7 @@ status setup_board()
 
 core::drivers setup_core_drivers()
 {
-        if ( FLASH_STORAGE.load_cfg( CFG.map ) != SUCCESS )
+        if ( EEPROM.load_cfg( CFG.map ) != SUCCESS )
                 fw::stop_exec();
 
         __HAL_RCC_TIM2_CLK_ENABLE();
@@ -588,24 +560,22 @@ core::drivers setup_core_drivers()
 
         drv::hbridge* hb = hbridge_setup();
 
-        cfg::encoder_mode emod = CFG.map.get_val< cfg::ENCODER_MODE >();
+        cfg::encoder_mode emod = CFG.map.encoder_mode;
 
-        auto*           adc_pooler = adc_pooler_setup( emod == cfg::encoder_mode::ENC_MODE_ANALOG );
+        auto*           adc_pooler = adc_pooler_setup( emod == cfg::encoder_mode::analog );
         drv::pos_iface* pos        = nullptr;
-        if ( emod == 0 )
-                fw::stop_exec();
         switch ( emod ) {
-        case cfg::encoder_mode::ENC_MODE_ANALOG:
+        case cfg::encoder_mode::analog:
                 pos = adc_pooler == nullptr ? nullptr : &ADC_POSITION;
                 break;
-        case cfg::encoder_mode::ENC_MODE_QUAD:
-                pos = quad_encoder_setup( CFG.map.get_val< cfg::QUAD_ENCD_RANGE >() );
+        case cfg::encoder_mode::quad:
+                pos = quad_encoder_setup( CFG.map.quad_encoder_range );
                 break;
         }
 
-        drv::leds* leds = leds_setup();
+        drv::leds& leds = leds_setup();
         if ( hb != nullptr )
-                install_stop_callback( *hb, leds );
+                install_stop_callback( *hb, &leds );
 
         return core::drivers{
             .cfg = &CFG,
@@ -620,7 +590,7 @@ core::drivers setup_core_drivers()
             .motor       = hb,
             .period      = hb,
             .comms       = comms_setup(),
-            .leds        = leds,
+            .leds        = &leds,
             .start_cb    = start_callback,
         };
 }

@@ -68,8 +68,11 @@ awaitable< vari::vval< iface::cfg_vals > > get_config_field( port_iface& port, i
 awaitable< void > set_config_field( port_iface& port, vari::vref< iface::cfg_vals const > val )
 {
         std::string msg;
-        val.visit( [&]( auto const& val ) {
-                msg = std::format( "cfg set {} {}", val.key.to_string(), val.value );
+        val.visit( [&]< typename T >( T const& val ) {
+                if constexpr ( std::same_as< typename T::value_type, iface::str_name > )
+                        msg = std::format( "cfg set {} \"{}\"", val.key.to_string(), val.value );
+                else
+                        msg = std::format( "cfg set {} {}", val.key.to_string(), val.value );
         } );
 
         co_await exchg( port, msg );
@@ -155,7 +158,7 @@ awaitable< void > set_mode( port_iface& port, vari::vref< iface::mode_vals const
 {
         std::string msg;
         v.visit( [&]< typename KV >( KV const& kval ) {
-                if constexpr ( KV::is_void )
+                if constexpr ( std::same_as< typename KV::value_type, parser::unit > )
                         msg = std::format( "mode {}", kval.key );
                 else
                         msg = std::format( "mode {} {}", kval.key, kval.value );

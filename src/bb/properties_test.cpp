@@ -1,4 +1,4 @@
-#include "../iface/def.h"
+#include "../iface/def.hpp"
 #include "../scmdio/cli.hpp"
 #include "../scmdio/serial.hpp"
 #include "bb_test_case.hpp"

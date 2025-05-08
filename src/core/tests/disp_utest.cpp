@@ -1,8 +1,6 @@
 
-#include "../../cfg/default.hpp"
 #include "../../drv/mock.hpp"
 #include "../dispatcher.hpp"
-#include "../map_cfg.hpp"
 
 #include <cstdint>
 #include <emlabcpp/algorithm.h>
@@ -15,6 +13,8 @@
 namespace servio::core::tests
 {
 
+using namespace avakar::literals;
+
 TEST( core, dispatcher )
 {
         drv::mock::pwm_mot mot;
@@ -24,7 +24,7 @@ TEST( core, dispatcher )
         drv::mock::temp    tm;
         drv::mock::stor    sd;
 
-        cfg::map m = cfg::get_default_config();
+        cfg::map m{};
         core     cor{
             0_ms,
             gv,
@@ -108,21 +108,21 @@ TEST( core, dispatcher )
         // cfg set/get
         std::tuple t = iface::field_tuple_t< iface::cfg >{};
         em::for_each( t, [&]< typename F >( F& ) {
-                static constexpr std::string_view s = F::key.to_string();
+                static constexpr std::string_view s  = F::key.to_string();
+                static constexpr cfg::key         kv = *cfg::str_to_key( s );
 
-                auto                      res_j = exec( std::format( "cfg get {}", s ) );
-                static constexpr cfg::key k     = iface_to_cfg[iface::cfg_key{ F::key }.value()];
+                auto res_j = exec( std::format( "cfg get {}", s ) );
 
                 // verify get
-                if constexpr ( k == cfg::ENCODER_MODE ) {
-                        auto expected =
-                            ( m.get_val< k >() == cfg::ENC_MODE_QUAD ) ? "quad" : "analog";
+                if constexpr ( iface::cfg_key{ F::key } == "encoder_mode"_a ) {
+                        auto expected = m.ref_by_key< kv >();
                         EXPECT_EQ( res_j.at( 1 ), expected );
                 } else if constexpr ( std::same_as< typename F::value_type, float > )
-                        EXPECT_NEAR( res_j.at( 1 ), m.get_val< k >(), 0.00001 );
+                        EXPECT_NEAR( res_j.at( 1 ), m.ref_by_key< kv >(), 0.00001 );
                 else
-                        EXPECT_EQ( res_j.at( 1 ), m.get_val< k >() )
-                            << "key: " << F::key.to_string() << "\nk: " << k << std::endl;
+                        EXPECT_EQ( res_j.at( 1 ), m.ref_by_key< kv >() )
+                            << "key: " << F::key.to_string() << "\nk: " << F::key.to_string()
+                            << std::endl;
 
                 // vary
                 struct vary
@@ -146,29 +146,29 @@ TEST( core, dispatcher )
 
                         std::string_view operator()( cfg::encoder_mode em )
                         {
-                                return em == cfg::ENC_MODE_QUAD ? "analog" : "quad";
+                                return em == cfg::encoder_mode::quad ? "analog" : "quad";
                         }
 
-                        std::string_view operator()( cfg::model_name )
+                        std::string_view operator()( cfg::string_type )
                         {
                                 return "wololo";
                         }
                 };
 
-                exec( std::format( "cfg set {} {}", s, vary{}( m.get_val< k >() ) ) );
+                exec( std::format( "cfg set {} {}", s, vary{}( m.ref_by_key< kv >() ) ) );
 
                 res_j = exec( std::format( "cfg get {}", s ) );
 
                 // verify change
-                if constexpr ( k == cfg::ENCODER_MODE ) {
-                        auto expected =
-                            ( m.get_val< k >() == cfg::ENC_MODE_QUAD ) ? "quad" : "analog";
+                if constexpr ( iface::cfg_key{ F::key } == "encoder_mode"_a ) {
+                        auto expected = m.ref_by_key< kv >();
                         EXPECT_EQ( res_j.at( 1 ), expected );
                 } else if constexpr ( std::same_as< typename F::value_type, float > )
-                        EXPECT_NEAR( res_j.at( 1 ), m.get_val< k >(), 0.00001 );
+                        EXPECT_NEAR( res_j.at( 1 ), m.ref_by_key< kv >(), 0.00001 );
                 else
-                        EXPECT_EQ( res_j.at( 1 ), m.get_val< k >() )
-                            << "key: " << F::key.to_string() << "\nk: " << k << std::endl;
+                        EXPECT_EQ( res_j.at( 1 ), m.ref_by_key< kv >() )
+                            << "key: " << F::key.to_string() << "\nk: " << F::key.to_string()
+                            << std::endl;
         } );
 
         EXPECT_EQ( sd.store_cnt, 0 );

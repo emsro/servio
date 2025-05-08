@@ -1,6 +1,6 @@
 #include "../cfg/dispatcher.hpp"
 #include "../ctl/control.hpp"
-#include "../iface/def.h"
+#include "../iface/def.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/outcome.h>

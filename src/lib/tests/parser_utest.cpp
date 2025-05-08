@@ -1,10 +1,10 @@
 
 
-#include "../util.h"
+#include "../parser.hpp"
 
 #include <gtest/gtest.h>
 
-namespace servio::iface
+namespace servio::parser
 {
 
 TEST( iface, str )
@@ -21,4 +21,4 @@ TEST( iface, str )
         test_f( "\"wololo boo\"", "wololo boo" );
 }
 
-}  // namespace servio::iface
+}  // namespace servio::parser

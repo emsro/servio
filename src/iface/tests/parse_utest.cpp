@@ -1,4 +1,4 @@
-#include "../def.h"
+#include "../def.hpp"
 
 #include <emlabcpp/algorithm.h>
 #include <format>
@@ -19,7 +19,7 @@ auto kv( auto x )
 template < auto A >
 auto kv()
 {
-        return kval< A, void >{};
+        return kval< A, parser::unit >{};
 }
 
 TEST( iface, valid_parse )
@@ -73,6 +73,10 @@ TEST( iface, valid_parse )
                 test_f(
                     std::format( "cfg get {}", F::key.to_string() ), cfg_get_stmt{ .k = F::key } );
         } );
+
+        test_f(
+            "cfg set model \"no model\"",
+            cfg_set_stmt{ .val = kv< "model"_a, iface::str_name >( "no model" ) } );
 
         test_f( "cfg commit", cfg_commit_stmt{} );
         test_f( "    cfg      commit       ", cfg_commit_stmt{} );
