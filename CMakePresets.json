@@ -55,8 +55,12 @@
     ],
     "testPresets": [
         {
-            "name": "host_debug_utest",
+            "name": "host_debug_test",
             "configurePreset": "host_debug_cfg"
+        },
+        {
+            "name": "host_asan_test",
+            "configurePreset": "host_asan_cfg"
         }
     ]
 }

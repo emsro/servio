@@ -32,7 +32,7 @@ flash:
 	/usr/local/bin/openocd -f src/plt/stm32h5/openocd.cfg -c "program build/h5/proto3_fw.elf verify reset exit"
 
 test: build_host
-	cd build/host && ctest -T Test --output-on-failure
+	ctest --preset host_debug_test --output-on-failure
 
 test_asan: build_asan
-	cd build/asan && ctest -T Test --output-on-failure
+	ctest --preset host_asan_test --output-on-failure
