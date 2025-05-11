@@ -5,7 +5,6 @@
 #include "../../drv/callbacks.hpp"
 #include "../../drv/interfaces.hpp"
 #include "../../drv/retainers.hpp"
-#include "../is_powerless.hpp"
 #include "../utest.hpp"
 
 namespace servio::ftest::intg
@@ -24,8 +23,6 @@ struct meas_cur_test
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {
-                if ( co_await is_powerless( params ) )
-                        co_await t::skip();
                 setup_poweroff( cor.ctl );
 
                 em::defer             d = drv::retain_callback( curr );
@@ -66,8 +63,6 @@ struct meas_pos_test
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {
-                if ( co_await is_powerless( params ) )
-                        co_await t::skip();
                 setup_poweroff( cor.ctl );
                 em::defer d = drv::retain_callback( curr );
 
@@ -102,8 +97,6 @@ struct meas_vel_test
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {
-                if ( co_await is_powerless( params ) )
-                        co_await t::skip();
                 setup_poweroff( cor.ctl );
                 em::defer d = drv::retain_callback( curr );
 

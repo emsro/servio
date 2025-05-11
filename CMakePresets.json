@@ -28,7 +28,7 @@
         {
             "name": "stm32h5_debug_cfg",
             "generator": "Ninja",
-            "binaryDir": "build/h5/",
+            "binaryDir": "build/stm32h5/",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",

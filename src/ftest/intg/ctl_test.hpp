@@ -5,7 +5,6 @@
 #include "../../drv/callbacks.hpp"
 #include "../../drv/interfaces.hpp"
 #include "../../drv/retainers.hpp"
-#include "../is_powerless.hpp"
 #include "../rewind.hpp"
 #include "../utest.hpp"
 
@@ -26,8 +25,6 @@ struct current_ctl_test
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {
-                if ( co_await is_powerless( params ) )
-                        co_await t::skip();
                 em::defer d = setup_poweroff( cor.ctl );
 
                 float expected = 0.2F;
@@ -65,8 +62,6 @@ struct sign_test
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {
-                if ( co_await is_powerless( params ) )
-                        co_await t::skip();
                 em::defer d = setup_poweroff( cor.ctl );
                 rewind( cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.5f );
 

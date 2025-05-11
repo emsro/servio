@@ -3,7 +3,7 @@
 
 // NOLINTBEGIN
 
-extern "C" void SysTick_Handler()
+extern "C" __attribute__( ( used ) ) void SysTick_Handler()
 {
         HAL_IncTick();
 }

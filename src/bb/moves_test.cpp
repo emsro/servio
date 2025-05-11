@@ -66,11 +66,9 @@ int main( int argc, char** argv )
         using namespace std::chrono_literals;
 
         ::testing::InitGoogleTest( &argc, argv );
-        bool                    powerless = false;
         boost::asio::io_context io_ctx;
 
-        CLI::App app{ "black box tests with basic moves" };
-        scmdio::powerless_flag( app, powerless );
+        CLI::App         app{ "black box tests with basic moves" };
         scmdio::char_cli port;
         scmdio::port_opts( app, port );
 
@@ -81,12 +79,9 @@ int main( int argc, char** argv )
                 return app.exit( e );
         }
 
-        if ( !powerless ) {
-                bb::register_test(
-                    "moves", "current", io_ctx, port.get( io_ctx ), bb::test_current, 1s );
-                bb::register_test(
-                    "moves", "position", io_ctx, port.get( io_ctx ), bb::test_position, 60s );
-        }
+        bb::register_test( "moves", "current", io_ctx, port.get( io_ctx ), bb::test_current, 1s );
+        bb::register_test(
+            "moves", "position", io_ctx, port.get( io_ctx ), bb::test_position, 60s );
 
         return RUN_ALL_TESTS();
 }

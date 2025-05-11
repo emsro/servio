@@ -3,3 +3,4 @@ servio_add_library(
   SOURCES extra.cpp util.cpp context.cpp
   LIBS avakar::atom vari emlabcpp cfglib mtrlib platform
   OPTS -Os)
+target_sources(fwlib INTERFACE it.cpp)

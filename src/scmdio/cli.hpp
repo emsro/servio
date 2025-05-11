@@ -17,8 +17,6 @@ CLI::Option* dcoms_opt( CLI::App& app, std::filesystem::path& device );
 
 CLI::Option* baudrate_opt( CLI::App& app, unsigned& baudrate );
 
-CLI::Option* powerless_flag( CLI::App& app, bool& is_powerless );
-
 struct port_cli
 {
         std::filesystem::path device   = "/dev/ttyUSB0";

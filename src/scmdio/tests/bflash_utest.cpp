@@ -223,7 +223,7 @@ struct stm32_bootloader_mock : stream_iface
 
         awaitable< void > write( std::span< std::byte const > msg ) override
         {
-                spdlog::debug( "writing: {}", msg );
+                spdlog::debug( "m writing: {}", msg );
                 c.eat( msg );
                 co_return;
         }

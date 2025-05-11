@@ -43,14 +43,6 @@ CLI::Option* baudrate_opt( CLI::App& app, unsigned& baudrate )
             ->envname( "SERVIO_BAUDRATE" );
 }
 
-CLI::Option* powerless_flag( CLI::App& app, bool& is_powerless )
-{
-        return app.add_flag(
-            "--powerless,!--power",
-            is_powerless,
-            "If enabled the tests will get info that no power is present" );
-}
-
 void port_opts( CLI::App& app, port_cli& cli )
 {
         coms_opt( app, cli.device )->capture_default_str();

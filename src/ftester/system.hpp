@@ -64,8 +64,10 @@ struct test_system
                 } )
           , par_serv_(
                 em::testing::params_channel,
-                em::testing::json_to_data_tree( em::pmr::new_delete_resource(), input_json )
-                    .value(),
+                input_json.is_null() ?
+                    em::testing::data_tree{ em::pmr::new_delete_resource() } :
+                    em::testing::json_to_data_tree( em::pmr::new_delete_resource(), input_json )
+                        .value(),
                 [this]( auto chann, auto const& data ) {
                         return send( chann, data );
                 } )

@@ -8,6 +8,7 @@
 #include <emlabcpp/experimental/testing/collect.h>
 #include <emlabcpp/experimental/testing/coroutine.h>
 #include <emlabcpp/experimental/testing/interface.h>
+#include <emlabcpp/experimental/testing/parameters.h>
 #include <emlabcpp/experimental/testing/reactor.h>
 
 namespace em = emlabcpp;

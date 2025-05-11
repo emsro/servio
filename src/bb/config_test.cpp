@@ -108,11 +108,9 @@ int main( int argc, char** argv )
         using namespace std::chrono_literals;
 
         ::testing::InitGoogleTest( &argc, argv );
-        bool                    powerless = false;
         boost::asio::io_context io_ctx;
 
         CLI::App app{ "config tests" };
-        scmdio::powerless_flag( app, powerless );
         scmdio::verbose_opt( app );
         scmdio::char_cli port;
         scmdio::port_opts( app, port );

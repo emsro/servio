@@ -1,7 +1,12 @@
 servio_add_library(
   TARGET scmdiolib
-  SOURCES bflash.cpp serial.cpp config_cmds.cpp cli.cpp port.cpp
+  SOURCES bflash.cpp
+          serial.cpp
+          config_cmds.cpp
+          cli.cpp
+          port.cpp
           pid_autotune_cmd.cpp
+          setuplib.cpp
   LIBS emlabcpp avakar::atom vari CLI11::CLI11 Boost::asio spdlog::spdlog)
 
 servio_add_executable(

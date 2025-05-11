@@ -17,7 +17,6 @@ using opt = std::optional< T >;
 struct config
 {
         opt< std::filesystem::path > input      = std::nullopt;
-        bool                         powerless  = false;
         opt< std::filesystem::path > output_dir = std::nullopt;
         std::string                  filter;
 

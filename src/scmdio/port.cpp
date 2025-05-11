@@ -21,7 +21,7 @@ awaitable< void > timeout( auto duration )
 
 awaitable< void > serial_stream::write( std::span< std::byte const > msg )
 {
-        spdlog::debug( "writing: {}", msg );
+        spdlog::debug( "ss writing: {}", msg );
         co_await async_write( port, boost::asio::buffer( msg ), use_awaitable );
 }
 
@@ -51,10 +51,12 @@ awaitable< void > cobs_port::write_msg( std::span< std::byte const > msg )
         msg_buffer[ser_msg.size()] = std::byte{ 0 };
         ser_msg                    = em::view_n( ser_msg.begin(), ser_msg.size() + 1 );
 
-        spdlog::debug( "writing: {}", ser_msg );
+        spdlog::debug( "cp writing: {}", ser_msg );
 
-        co_await async_write(
-            port, boost::asio::buffer( ser_msg.begin(), ser_msg.size() ), use_awaitable );
+        co_await (
+            async_write(
+                port, boost::asio::buffer( ser_msg.begin(), ser_msg.size() ), use_awaitable ) ||
+            timeout( 100ms ) );
 }
 
 namespace
@@ -135,7 +137,7 @@ awaitable< std::span< std::byte > > cobs_port::read_msg( std::span< std::byte > 
 
 awaitable< void > char_port::write_msg( std::span< std::byte const > msg )
 {
-        spdlog::debug( "writing: {}", msg );
+        spdlog::debug( "chp writing: {}", msg );
 
         co_await async_write( port, boost::asio::buffer( msg ), use_awaitable );
 

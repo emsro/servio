@@ -38,6 +38,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   )
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SERVIO_SHARED_FLAGS}")
 
+  target_compile_options(vari INTERFACE -DVARI_DISABLE_ASSERTS=ON)
 endif()
 
 target_link_libraries(emlabcpp PUBLIC magic_enum)

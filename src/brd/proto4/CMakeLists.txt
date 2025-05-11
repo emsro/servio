@@ -6,7 +6,7 @@ servio_add_library(
 
 servio_add_board_executable(
   TARGET proto4_fw
-  SOURCES ../../fw/main.cpp ../../fw/it.cpp
+  SOURCES ../../fw/main.cpp
   LIBS serviolib proto4_board
   OPTS -Os
   LINKER_SCRIPT
@@ -14,7 +14,7 @@ servio_add_board_executable(
 
 servio_add_board_executable(
   TARGET proto4_fw_ftest
-  SOURCES ../../fw/it.cpp tests.cpp
+  SOURCES tests.cpp
   LIBS serviolib ftestlib proto4_board
   OPTS -Os
   LINKER_SCRIPT
@@ -22,7 +22,7 @@ servio_add_board_executable(
 
 servio_add_board_executable(
   TARGET proto4_bench_ftest
-  SOURCES ../../fw/it.cpp bench.cpp
+  SOURCES bench.cpp
   LIBS serviolib ftestlib proto4_board
   OPTS -Os
   LINKER_SCRIPT

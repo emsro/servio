@@ -168,7 +168,6 @@ int main( int argc, char* argv[] )
                 f >> inpt;
                 inpt = std::move( inpt[0] );
         }
-        inpt["powerless"] = cfg.powerless;
         ftester::test_system tsys{
             cfg.d_device, cfg.d_baudrate, cfg.c_device, cfg.c_baudrate, inpt };
 

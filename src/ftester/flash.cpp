@@ -48,8 +48,6 @@ joque::task make_bmp_flash_task(
                        "-ex",
                        "attach 1",
                        "-ex",
-                       "monitor erase_mass",
-                       "-ex",
                        "load",
                        "-ex",
                        "compare-sections",

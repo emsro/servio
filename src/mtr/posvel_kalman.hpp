@@ -8,8 +8,8 @@ namespace servio::mtr
 struct posvel_kalman
 {
         // TODO: hardcoded constant is meh
-        static constexpr float observation_deviation = 0.000005F;
-        static constexpr float process_deviation     = 0.005F;
+        static constexpr float observation_deviation = 0.005F;
+        static constexpr float process_deviation     = 0.5F;
 
         static constexpr klmn::observation_model            h = klmn::get_observation_model();
         static constexpr klmn::observation_noise_covariance r =

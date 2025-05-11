@@ -84,16 +84,18 @@ void control::switch_to_current_control( microseconds, float current )
 
 void control::switch_to_velocity_control( microseconds, float velocity )
 {
-        state_              = control_mode::VELOCITY;
-        velocity_goal_      = clamp( velocity, velocity_lims_.config_lims );
-        velocity_pid_.i_sum = 0;
+        if ( state_ != control_mode::VELOCITY )
+                velocity_pid_.i_sum = 0;
+        state_         = control_mode::VELOCITY;
+        velocity_goal_ = clamp( velocity, velocity_lims_.config_lims );
 }
 
 void control::switch_to_position_control( microseconds, float position )
 {
-        state_              = control_mode::POSITION;
-        position_goal_      = clamp( position, position_lims_ );
-        position_pid_.i_sum = 0;
+        if ( state_ != control_mode::POSITION )
+                position_pid_.i_sum = 0;
+        state_         = control_mode::POSITION;
+        position_goal_ = clamp( position, position_lims_ );
 }
 
 void control::moving_irq( microseconds now, bool is_moving )
