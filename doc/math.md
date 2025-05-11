@@ -37,12 +37,13 @@ Sources:
 | Rot. equivalent of 2. Newton's law | $\tau = J \alpha$
 | Instantaneous power | $P = \tau \omega$
 
-
+There is inverse relationship between $\tau$ and $\omega$ limits
+ - $\tau_s$ occurs when $\omega=0$
+ - $w_n$ occurs when $\tau=0$
 ```mermaid
 xychart-beta
     title "Motor torque/velocity curve"
-    x-axis "Torque" 0 --> 1
-    y-axis "Velocity" 0 --> 1
-    line [0, 1]
-         [1, 0]
+    x-axis "Velocity"
+    y-axis "Torque"
+    line [1, 0]
 ```
