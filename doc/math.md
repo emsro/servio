@@ -24,7 +24,7 @@ Sources:
 
 |||
 | --- | --- |
-| V = IR||
-| $ \tau = I_a K_T $ | $I_a$ is armature current
-| $ K_m = \frac{\tau}{\sqrt{P}} = \frac{K_T I}{\sqrt{P}} = \frac{K_T I}{\sqrt{I^2 R}} = \frac{K_T}{\sqrt{R}} $ | $P$ is resistive power loss
-| $ V_{emf} = K_v \omega $ |
+| $V = IR$||
+| $\tau = I_a K_T$ | $I_a$ is armature current
+| $K_m = \frac{\tau}{\sqrt{P}} = \frac{K_T I}{\sqrt{P}} = \frac{K_T I}{\sqrt{I^2 R}} = \frac{K_T}{\sqrt{R}}$ | $P$ is resistive power loss
+| $V_{emf} = K_v \omega$ |
