@@ -37,13 +37,18 @@ Sources:
 | Rot. equivalent of 2. Newton's law | $\tau = J \alpha$
 | Instantaneous power | $P = \tau \omega$
 
+## velocity-torque curve
 There is inverse relationship between $\tau$ and $\omega$ limits
  - $\tau_s$ occurs when $\omega=0$
  - $w_n$ occurs when $\tau=0$
+
+Key observation: This curve will vary based on voltage applied - thanks to relationship between $K_v$ and $w_n$.
+Green line are limits at _higher_ voltage than blue line.
 ```mermaid
 xychart-beta
     title "Motor torque/velocity curve"
-    x-axis "Velocity"
-    y-axis "Torque"
-    line [1, 0]
+    x-axis "Velocity" 0 --> 1
+    y-axis "Torque" 0 --> 1
+    line [0.8, 0]
+    line [1, 0.2]
 ```
