@@ -12,7 +12,7 @@ var searchData=
   ['generate_5fmap_9',['generate_map',['../namespacegen.html#a6b619b0cd51bf738efbc045981057cac',1,'gen']]],
   ['generate_5fstr_5fto_5fkey_10',['generate_str_to_key',['../namespacegen.html#aa3048d328ec6b041a1ccd50f2f6b24b7',1,'gen']]],
   ['get_11',['get',['../structservio_1_1scmdio_1_1consumer_1_1get.html',1,'servio::scmdio::consumer&lt; T &gt;::get&lt; N &gt;'],['../namespaceservio_1_1scmdio.html#a82f75a7b080fb09c3f172e1d3a24899d',1,'servio::scmdio::GET'],['../structservio_1_1scmdio_1_1char__cli.html#ae785aed991a0e1ce5a66e06d1c3604c9',1,'servio::scmdio::char_cli::get()'],['../structservio_1_1scmdio_1_1serial__cli.html#a59ff25b0b47c7334742d5c696db49599',1,'servio::scmdio::serial_cli::get()'],['../structservio_1_1scmdio_1_1cobs__cli.html#a1d2ef62a40e7c4070c442d4a266e86f8',1,'servio::scmdio::cobs_cli::get()'],['../structservio_1_1core_1_1avg__filter.html#ada1197c5ca3274a977a804e57927e859',1,'servio::core::avg_filter::get()'],['../structservio_1_1cfg_1_1dispatcher.html#a81861596f4dcf8041f89558563629a78',1,'servio::cfg::dispatcher::get()']]],
-  ['get_20configuration_20field_12',['REQ6.2.1 Get configuration field',['../config.html#autotoc_md38',1,'']]],
+  ['get_20configuration_20field_12',['REQ6.2.1 Get configuration field',['../config.html#autotoc_md41',1,'']]],
   ['get_5fbuffer_13',['get_buffer',['../classservio_1_1ftester_1_1recorder.html#aabb71c5624fd566672b623c9744c4c2e',1,'servio::ftester::recorder']]],
   ['get_5fcfg_5fids_14',['get_cfg_ids',['../namespaceservio_1_1tests.html#a29f50f665178a07021adb5188b408a06',1,'servio::tests']]],
   ['get_5fchannel_15',['get_channel',['../classservio_1_1ftester_1_1recorder.html#a3b4bbfc40421b8f03ffcb4f07b6dd7dc',1,'servio::ftester::recorder']]],
@@ -74,6 +74,6 @@ var searchData=
   ['green_5fch_71',['green_ch',['../namespaceservio_1_1plt.html#ac8dc88b10301f0823d983ad1a7f4e3e7',1,'servio::plt::leds_timer_cfg']]],
   ['green_5fpin_72',['green_pin',['../namespaceservio_1_1plt.html#adad93e2611f6799cedf41c16211afb44',1,'servio::plt::leds_timer_cfg']]],
   ['group_73',['group',['../namespaceservio_1_1iface.html#structservio_1_1iface_1_1group',1,'servio::iface']]],
-  ['group_20id_74',['REQ4.8 Group ID',['../comms.html#autotoc_md30',1,'']]],
+  ['group_20id_74',['REQ4.8 Group ID',['../comms.html#autotoc_md33',1,'']]],
   ['group_5fid_75',['group_id',['../structservio_1_1cfg_1_1map.html#ac42b48936f0e0bdcbe1981d43345f8ca',1,'servio::cfg::map::group_id'],['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a0e939a4ffd3aacd724dd3b50147b4353',1,'servio::cfg::group_id']]]
 ];

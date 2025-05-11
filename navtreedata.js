@@ -30,69 +30,73 @@ var NAVTREE =
     [ "Build", "index.html#autotoc_md3", null ],
     [ "Flashing", "index.html#autotoc_md4", null ],
     [ "Usage", "index.html#autotoc_md5", null ],
+    [ "Motor related math", "md_doc_2math.html", [
+      [ "Dictionary", "md_doc_2math.html#autotoc_md8", null ],
+      [ "Equations", "md_doc_2math.html#autotoc_md9", null ]
+    ] ],
     [ "Requirements", "md_doc_2requirements.html", [
       [ "System requirements", "sys.html", [
-        [ "REQ1.1 Prioritize project independence to hardware", "sys.html#autotoc_md7", [
-          [ "REQ1.1.1 Decomposition", "sys.html#autotoc_md8", null ],
-          [ "REQ1.1.2 Code shall not be dependent on hardware specifics unless necessary", "sys.html#autotoc_md9", null ]
+        [ "REQ1.1 Prioritize project independence to hardware", "sys.html#autotoc_md10", [
+          [ "REQ1.1.1 Decomposition", "sys.html#autotoc_md11", null ],
+          [ "REQ1.1.2 Code shall not be dependent on hardware specifics unless necessary", "sys.html#autotoc_md12", null ]
         ] ],
-        [ "REQ1.2 Focus on testing", "sys.html#autotoc_md10", null ],
-        [ "REQ1.2.1 Test on host what can be tested on host", "sys.html#autotoc_md11", null ],
-        [ "REQ1.2.3 Use testing on target hardware", "sys.html#autotoc_md12", null ]
+        [ "REQ1.2 Focus on testing", "sys.html#autotoc_md13", null ],
+        [ "REQ1.2.1 Test on host what can be tested on host", "sys.html#autotoc_md14", null ],
+        [ "REQ1.2.3 Use testing on target hardware", "sys.html#autotoc_md15", null ]
       ] ],
       [ "System control requirements", "ctl.html", [
-        [ "REQ2.1 Position control mode", "ctl.html#autotoc_md13", null ],
-        [ "REQ2.2 Current control mode", "ctl.html#autotoc_md14", null ],
-        [ "REQ2.3 Velocity control mode", "ctl.html#autotoc_md15", null ],
-        [ "REQ2.4 Power control mode", "ctl.html#autotoc_md16", null ],
-        [ "REQ2.5 Movement detection", "ctl.html#autotoc_md17", null ],
-        [ "REQ2.6 Static friction compensation", "ctl.html#autotoc_md18", null ],
-        [ "REQ2.7 Disengaged", "ctl.html#autotoc_md19", null ]
+        [ "REQ2.1 Position control mode", "ctl.html#autotoc_md16", null ],
+        [ "REQ2.2 Current control mode", "ctl.html#autotoc_md17", null ],
+        [ "REQ2.3 Velocity control mode", "ctl.html#autotoc_md18", null ],
+        [ "REQ2.4 Power control mode", "ctl.html#autotoc_md19", null ],
+        [ "REQ2.5 Movement detection", "ctl.html#autotoc_md20", null ],
+        [ "REQ2.6 Static friction compensation", "ctl.html#autotoc_md21", null ],
+        [ "REQ2.7 Disengaged", "ctl.html#autotoc_md22", null ]
       ] ],
       [ "System limits requirements", "lims.html", [
-        [ "REQ3.1 Current limits", "lims.html#autotoc_md20", null ],
-        [ "REQ3.2 Position limits", "lims.html#autotoc_md21", null ],
-        [ "REQ3.3 Velocity limits", "lims.html#autotoc_md22", null ]
+        [ "REQ3.1 Current limits", "lims.html#autotoc_md23", null ],
+        [ "REQ3.2 Position limits", "lims.html#autotoc_md24", null ],
+        [ "REQ3.3 Velocity limits", "lims.html#autotoc_md25", null ]
       ] ],
       [ "Communication requirements", "comms.html", [
-        [ "REQ4.1 System should have one major communication interface", "comms.html#autotoc_md23", null ],
-        [ "REQ4.2 System should decompose message communication to be independent on underlying transport layer", "comms.html#autotoc_md24", null ],
-        [ "RE4.3 UART shall be supported as transport", "comms.html#autotoc_md25", null ],
-        [ "REQ4.4 Major communication message shall be defined in TBD", "comms.html#autotoc_md26", null ],
-        [ "REQ4.5 COBS can be used as framing mechanism", "comms.html#autotoc_md27", null ],
-        [ "REQ4.6 Exact communication interface is property of board", "comms.html#autotoc_md28", null ],
-        [ "REQ4.7 ID", "comms.html#autotoc_md29", null ],
-        [ "REQ4.8 Group ID", "comms.html#autotoc_md30", null ]
+        [ "REQ4.1 System should have one major communication interface", "comms.html#autotoc_md26", null ],
+        [ "REQ4.2 System should decompose message communication to be independent on underlying transport layer", "comms.html#autotoc_md27", null ],
+        [ "RE4.3 UART shall be supported as transport", "comms.html#autotoc_md28", null ],
+        [ "REQ4.4 Major communication message shall be defined in TBD", "comms.html#autotoc_md29", null ],
+        [ "REQ4.5 COBS can be used as framing mechanism", "comms.html#autotoc_md30", null ],
+        [ "REQ4.6 Exact communication interface is property of board", "comms.html#autotoc_md31", null ],
+        [ "REQ4.7 ID", "comms.html#autotoc_md32", null ],
+        [ "REQ4.8 Group ID", "comms.html#autotoc_md33", null ]
       ] ],
       [ "Units", "units.html", [
-        [ "REQ5.1 Any values facing the user shall be in well defined units specified by other requirements", "units.html#autotoc_md31", null ],
-        [ "REQ5.2 Angular position is specified in radians", "units.html#autotoc_md32", null ],
-        [ "REQ5.3 Electric current is specified in amperes", "units.html#autotoc_md33", null ],
-        [ "REQ5.4 Time is specified in seconds", "units.html#autotoc_md34", null ],
-        [ "REQ5.5 Angular velocity is specified in radians per second.", "units.html#autotoc_md35", null ]
+        [ "REQ5.1 Any values facing the user shall be in well defined units specified by other requirements", "units.html#autotoc_md34", null ],
+        [ "REQ5.2 Angular position is specified in radians", "units.html#autotoc_md35", null ],
+        [ "REQ5.3 Electric current is specified in amperes", "units.html#autotoc_md36", null ],
+        [ "REQ5.4 Time is specified in seconds", "units.html#autotoc_md37", null ],
+        [ "REQ5.5 Angular velocity is specified in radians per second.", "units.html#autotoc_md38", null ]
       ] ],
       [ "Configuration", "config.html", [
-        [ "REQ6.1 One configuration", "config.html#autotoc_md36", null ],
-        [ "REQ6.2 Configuration can be managed by the user via the communication interface", "config.html#autotoc_md37", [
-          [ "REQ6.2.1 Get configuration field", "config.html#autotoc_md38", null ],
-          [ "REQ6.2.2 Set configuration field", "config.html#autotoc_md39", null ],
-          [ "REQ6.2.3 Commit the configuration", "config.html#autotoc_md40", null ],
-          [ "REQ6.2.4 Clear the configuration", "config.html#autotoc_md41", null ]
+        [ "REQ6.1 One configuration", "config.html#autotoc_md39", null ],
+        [ "REQ6.2 Configuration can be managed by the user via the communication interface", "config.html#autotoc_md40", [
+          [ "REQ6.2.1 Get configuration field", "config.html#autotoc_md41", null ],
+          [ "REQ6.2.2 Set configuration field", "config.html#autotoc_md42", null ],
+          [ "REQ6.2.3 Commit the configuration", "config.html#autotoc_md43", null ],
+          [ "REQ6.2.4 Clear the configuration", "config.html#autotoc_md44", null ]
         ] ],
-        [ "REQ6.3 Configuration shall be documented", "config.html#autotoc_md42", null ],
-        [ "REQ6.4 Configuration is tied to the version of firmware", "config.html#autotoc_md43", null ],
-        [ "REQ6.5 Persistent configuration", "config.html#autotoc_md44", [
-          [ "REQ6.5.1 Entire set is always stored", "config.html#autotoc_md45", null ],
-          [ "REQ6.5.2 Size of history", "config.html#autotoc_md46", null ],
-          [ "REQ6.5.3 Clear removes history", "config.html#autotoc_md47", null ],
-          [ "REQ6.5.4 Firmware version is also stored", "config.html#autotoc_md48", null ]
+        [ "REQ6.3 Configuration shall be documented", "config.html#autotoc_md45", null ],
+        [ "REQ6.4 Configuration is tied to the version of firmware", "config.html#autotoc_md46", null ],
+        [ "REQ6.5 Persistent configuration", "config.html#autotoc_md47", [
+          [ "REQ6.5.1 Entire set is always stored", "config.html#autotoc_md48", null ],
+          [ "REQ6.5.2 Size of history", "config.html#autotoc_md49", null ],
+          [ "REQ6.5.3 Clear removes history", "config.html#autotoc_md50", null ],
+          [ "REQ6.5.4 Firmware version is also stored", "config.html#autotoc_md51", null ]
         ] ],
-        [ "REQ6.6 Firmware version changes", "config.html#autotoc_md49", null ],
-        [ "REQ6.7 Utility for changes shall exist", "config.html#autotoc_md50", null ],
-        [ "REQ6.8 Common format for storing on host side", "config.html#autotoc_md51", null ],
-        [ "REQ6.9 List of fields for configuration", "config.html#autotoc_md52", [
-          [ "REQ6.9.1 Model", "config.html#autotoc_md53", null ],
-          [ "REQ6.9.2 ID", "config.html#autotoc_md54", null ]
+        [ "REQ6.6 Firmware version changes", "config.html#autotoc_md52", null ],
+        [ "REQ6.7 Utility for changes shall exist", "config.html#autotoc_md53", null ],
+        [ "REQ6.8 Common format for storing on host side", "config.html#autotoc_md54", null ],
+        [ "REQ6.9 List of fields for configuration", "config.html#autotoc_md55", [
+          [ "REQ6.9.1 Model", "config.html#autotoc_md56", null ],
+          [ "REQ6.9.2 ID", "config.html#autotoc_md57", null ]
         ] ]
       ] ]
     ] ],
@@ -136,19 +140,19 @@ var NAVTREEINDEX =
 [
 "adc_8cpp.html",
 "classservio_1_1core_1_1position__callback.html",
-"comms.html#autotoc_md23",
+"comms.html#autotoc_md26",
 "functions_i.html",
-"namespaceboost.html",
-"namespaceservio_1_1core.html#a33e1f4c80d9e83220d0fe5cb8a3bb8bf",
-"namespaceservio_1_1plt.html",
-"pid__autotune_8hpp.html#a40ca775c56c260d187fd81d3730fef47",
-"stm32h5xx__hal__conf_8h.html#a99be773f7f62b6277d1c87658e085725",
-"structservio_1_1cnv_1_1converter.html#ab1b60da51eb07bc71cff59076febb53c",
-"structservio_1_1drv_1_1com__iface.html",
-"structservio_1_1drv_1_1tests_1_1comms__echo__test.html#ad474e2fe2a2391de578760ee933eae24",
-"structservio_1_1ftest_1_1utest.html#a23cd2a14060453b2882ab01f18d8c8a9",
-"structservio_1_1mtr_1_1posvel__kalman.html#abc934ba372caafc150a706c4bc217352",
-"structservio_1_1scmdio_1_1stm32__bootloader__mock.html#ae1103f42a4aad01c833a7c499f2733af"
+"moves__test_8cpp.html#a419ee5b44dab39f4b23a8503efa74383",
+"namespaceservio_1_1core.html#a22ae2baca758d55f044e3becfaab35d3",
+"namespaceservio_1_1parser.html#structservio_1_1parser_1_1err",
+"parser__utest_8cpp.html#af39dadab0eaff6879d09ba3c5526b912",
+"stm32h5xx__hal__conf_8h.html#a94f0f5f870b8e45eab42cfe77e4210ed",
+"structservio_1_1cnv_1_1converter.html#a2ed3229b71607923715107fb0ba66590",
+"structservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb",
+"structservio_1_1drv_1_1tests_1_1comms__echo__test.html#aa2e6fd56154e3a48ccb608159e0d1bc6",
+"structservio_1_1ftest_1_1utest.html",
+"structservio_1_1mtr_1_1posvel__kalman.html#ab490ff5729a44ca1074001950b997ac3",
+"structservio_1_1scmdio_1_1stm32__bootloader__mock.html#acda402ede535a6705143c1863afe897e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
