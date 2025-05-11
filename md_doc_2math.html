@@ -114,7 +114,15 @@ Dictionary</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">$\omega$   </td><td class="markdownTableBodyNone">$\frac{rad}{s}$   </td><td class="markdownTableBodyNone">motor velocity    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">$\omega_n$   </td><td class="markdownTableBodyNone">$\frac{rad}{s}$   </td><td class="markdownTableBodyNone">no-load velocity    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">$\alpha$   </td><td class="markdownTableBodyNone">$\frac{rad}{s^2}$   </td><td class="markdownTableBodyNone">motor angular acceleration    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">$\tau$   </td><td class="markdownTableBodyNone">$Nm$   </td><td class="markdownTableBodyNone">motor <a href="https://en.wikipedia.org/wiki/Torque">torque</a> - moment of force    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">$\tau_s$   </td><td class="markdownTableBodyNone">$Nm$   </td><td class="markdownTableBodyNone">stalled motor torque    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">$J$   </td><td class="markdownTableBodyNone">$kg\cdot m^2 $   </td><td class="markdownTableBodyNone">moment of inertia    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">$V_{emf}$   </td><td class="markdownTableBodyNone">$V$   </td><td class="markdownTableBodyNone">Back counter electromotive force voltage - <a href="https://en.wikipedia.org/wiki/Counter_electromotive_force">EMF</a>    </td></tr>
 <tr class="markdownTableRowEven">
@@ -136,14 +144,20 @@ Equations</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Motor constant   </td><td class="markdownTableBodyNone">$K_m = \frac{\tau}{\sqrt{P}} = \frac{K_T I}{\sqrt{P}} = \frac{K_T I}{\sqrt{I^2 R}} = \frac{K_T}{\sqrt{R}}$   </td><td class="markdownTableBodyNone">$P$ is resistive power loss   </td></tr>
 </table>
-<p>| Back EMF | $V_{emf} = K_v \omega$ | | Motor velocity constant | $K_v = \frac{\omega_{no-load}}{V_{peak}} $ | Note the velocity without load | Torque to force | $\tau = r F$ | $r$ is radius and $F$ is force </p>
-</div></div><!-- contents -->
+<p>| Back EMF | $V_{emf} = K_v \omega$ | | Motor velocity constant | $K_v = \frac{\omega_n}{V_{peak}} $ | Note the velocity without load | Torque to force | $\tau = r F$ | $r$ is radius and $F$ is force | Rot. equivalent of 2. Newton's law | $\tau = J \alpha$ | Instantaneous power | $P = \tau \omega$</p>
+<div class="fragment"><div class="line">xychart-beta</div>
+<div class="line">    title &quot;Motor torque/velocity curve&quot;</div>
+<div class="line">    x-axis &quot;Torque&quot; 0 --&gt; 1</div>
+<div class="line">    y-axis &quot;Velocity&quot; 0 --&gt; 1</div>
+<div class="line">    line [0, 1]</div>
+<div class="line">         [1, 0]</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun May 11 2025 08:41:19 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun May 11 2025 09:05:17 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
