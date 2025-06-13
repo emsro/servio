@@ -94,11 +94,11 @@ $(document).ready(function(){initNavTree('md_doc_2math.html',''); initResizable(
   <div class="headertitle"><div class="title">Motor related math</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md7"></a> Write down of math related to DC motors that we accumulated, the purpose is to have one source of all information and consistent usage of symbols.</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md6"></a> Write down of math related to DC motors that we accumulated, the purpose is to have one source of all information and consistent usage of symbols.</p>
 <p>Sources:</p><ul>
 <li><a href="https://en.wikipedia.org/wiki/Motor_constants">https://en.wikipedia.org/wiki/Motor_constants</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Dictionary</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -132,7 +132,7 @@ Dictionary</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">$K_M$   </td><td class="markdownTableBodyNone">$\frac{Nm}{\sqrt{W}}$   </td><td class="markdownTableBodyNone">motor constant   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Equations</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -145,22 +145,25 @@ Equations</h1>
 <td class="markdownTableBodyNone">Motor constant   </td><td class="markdownTableBodyNone">$K_m = \frac{\tau}{\sqrt{P}} = \frac{K_T I}{\sqrt{P}} = \frac{K_T I}{\sqrt{I^2 R}} = \frac{K_T}{\sqrt{R}}$   </td><td class="markdownTableBodyNone">$P$ is resistive power loss   </td></tr>
 </table>
 <p>| Back EMF | $V_{emf} = K_v \omega$ | | Motor velocity constant | $K_v = \frac{\omega_n}{V_{peak}} $ | Note the velocity without load | Torque to force | $\tau = r F$ | $r$ is radius and $F$ is force | Rot. equivalent of 2. Newton's law | $\tau = J \alpha$ | Instantaneous power | $P = \tau \omega$</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+velocity-torque curve</h2>
 <p>There is inverse relationship between $\tau$ and $\omega$ limits</p><ul>
 <li>$\tau_s$ occurs when $\omega=0$</li>
-<li>$w_n$ occurs when $\tau=0$ <div class="fragment"><div class="line">xychart-beta</div>
-<div class="line">    title &quot;Motor torque/velocity curve&quot;</div>
-<div class="line">    x-axis &quot;Velocity&quot;</div>
-<div class="line">    y-axis &quot;Torque&quot;</div>
-<div class="line">    line [1, 0]</div>
-</div><!-- fragment --> </li>
+<li>$w_n$ occurs when $\tau=0$</li>
 </ul>
-</div></div><!-- contents -->
+<p>Key observation: This curve will vary based on voltage applied - thanks to relationship between $K_v$ and $w_n$. Green line are limits at <em>higher</em> voltage than blue line. </p><div class="fragment"><div class="line">xychart-beta</div>
+<div class="line">    title &quot;Motor torque/velocity curve&quot;</div>
+<div class="line">    x-axis &quot;Velocity&quot; 0 --&gt; 1</div>
+<div class="line">    y-axis &quot;Torque&quot; 0 --&gt; 1</div>
+<div class="line">    line [0.8, 0]</div>
+<div class="line">    line [1, 0.2]</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun May 11 2025 09:11:26 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Jun 13 2025 18:33:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -7,8 +7,9 @@ var searchData=
   ['decay_4',['decay',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a79dd5adc577a77d349ec011aca62c6d0',1,'servio::ctl::linear_transition_regulator']]],
   ['degraded_5frecords_5',['DEGRADED_RECORDS',['../namespaceservio_1_1brd.html#ac1e9012d3c60aec6e72b21b7d38255e7',1,'servio::brd']]],
   ['delim_6',['delim',['../structservio_1_1drv_1_1char__uart.html#a547073f102e60f7e16355461ee091bc2',1,'servio::drv::char_uart']]],
-  ['device_7',['device',['../namespaceservio_1_1ftester.html#a4e2bf400b5caac347ef36aaa7b2d04ef',1,'servio::ftester::bmp_config::device'],['../structservio_1_1scmdio_1_1port__cli.html#a8fcf1ca36deff02969a4228a84440c8d',1,'servio::scmdio::port_cli::device']]],
-  ['dma_8',['dma',['../namespaceservio_1_1plt.html#a86a48d377d92187ee93f68bed0aad67f',1,'servio::plt::adc_cfg']]],
-  ['dts_5fdrv_9',['DTS_DRV',['../namespaceservio_1_1brd.html#a6f72e0496d5ab998f9c9f5860478271a',1,'servio::brd']]],
-  ['dts_5fhandle_10',['DTS_HANDLE',['../namespaceservio_1_1brd.html#ac98826a0db7719c6623fe0d921bc6962',1,'servio::brd']]]
+  ['dev_5faddr_7',['dev_addr',['../structservio_1_1drv_1_1i2c__eeprom.html#aa8248f1958751fe409d4e95e9d0e9d73',1,'servio::drv::i2c_eeprom']]],
+  ['device_8',['device',['../namespaceservio_1_1ftester.html#a4e2bf400b5caac347ef36aaa7b2d04ef',1,'servio::ftester::bmp_config::device'],['../structservio_1_1scmdio_1_1port__cli.html#a8fcf1ca36deff02969a4228a84440c8d',1,'servio::scmdio::port_cli::device']]],
+  ['dma_9',['dma',['../namespaceservio_1_1plt.html#a86a48d377d92187ee93f68bed0aad67f',1,'servio::plt::adc_cfg']]],
+  ['dts_5fdrv_10',['DTS_DRV',['../namespaceservio_1_1brd.html#a6f72e0496d5ab998f9c9f5860478271a',1,'servio::brd']]],
+  ['dts_5fhandle_11',['DTS_HANDLE',['../namespaceservio_1_1brd.html#ac98826a0db7719c6623fe0d921bc6962',1,'servio::brd']]]
 ];

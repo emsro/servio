@@ -11,7 +11,7 @@ var searchData=
   ['encoder_5fmode_8',['encoder_mode',['../structservio_1_1cfg_1_1map.html#a1ed1f3ea354aaafb27844f008015e243',1,'servio::cfg::map']]],
   ['er_5firq_9',['er_irq',['../namespaceservio_1_1plt.html#a4e5f98c021570301d866fec45d7f2e82',1,'servio::plt::i2c_cfg']]],
   ['er_5firq_5fpriority_10',['er_irq_priority',['../namespaceservio_1_1plt.html#a3971ff606bfc50cda5277b1c26a7cd16',1,'servio::plt::i2c_cfg']]],
-  ['error_11',['ERROR',['../namespaceservio.html#a5fe30c34f17cd9316ffa16728c9aa15b',1,'servio']]],
+  ['error_11',['ERROR',['../namespaceservio.html#a2bffda22b19bcf89ee87272318abfa40',1,'servio']]],
   ['ev_5firq_12',['ev_irq',['../namespaceservio_1_1plt.html#a179604cc2da4e956bcca6581da703d25',1,'servio::plt::i2c_cfg']]],
   ['ev_5firq_5fpriority_13',['ev_irq_priority',['../namespaceservio_1_1plt.html#a4497f1c55e145fa95db4e05a96bd0145',1,'servio::plt::i2c_cfg']]]
 ];

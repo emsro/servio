@@ -31,8 +31,10 @@ var NAVTREE =
     [ "Flashing", "index.html#autotoc_md4", null ],
     [ "Usage", "index.html#autotoc_md5", null ],
     [ "Motor related math", "md_doc_2math.html", [
-      [ "Dictionary", "md_doc_2math.html#autotoc_md8", null ],
-      [ "Equations", "md_doc_2math.html#autotoc_md9", null ]
+      [ "Dictionary", "md_doc_2math.html#autotoc_md7", null ],
+      [ "Equations", "md_doc_2math.html#autotoc_md8", [
+        [ "velocity-torque curve", "md_doc_2math.html#autotoc_md9", null ]
+      ] ]
     ] ],
     [ "Requirements", "md_doc_2requirements.html", [
       [ "System requirements", "sys.html", [
@@ -141,18 +143,19 @@ var NAVTREEINDEX =
 "adc_8cpp.html",
 "classservio_1_1core_1_1position__callback.html",
 "comms.html#autotoc_md26",
-"functions_i.html",
-"moves__test_8cpp.html#a419ee5b44dab39f4b23a8503efa74383",
-"namespaceservio_1_1core.html#a22ae2baca758d55f044e3becfaab35d3",
-"namespaceservio_1_1parser.html#structservio_1_1parser_1_1err",
-"parser__utest_8cpp.html#af39dadab0eaff6879d09ba3c5526b912",
-"stm32h5xx__hal__conf_8h.html#a94f0f5f870b8e45eab42cfe77e4210ed",
-"structservio_1_1cnv_1_1converter.html#a2ed3229b71607923715107fb0ba66590",
-"structservio_1_1drv_1_1cobs__uart.html#afc279484fd7b6a321225475b82b9abcb",
-"structservio_1_1drv_1_1tests_1_1comms__echo__test.html#aa2e6fd56154e3a48ccb608159e0d1bc6",
-"structservio_1_1ftest_1_1utest.html",
-"structservio_1_1mtr_1_1posvel__kalman.html#ab490ff5729a44ca1074001950b997ac3",
-"structservio_1_1scmdio_1_1stm32__bootloader__mock.html#acda402ede535a6705143c1863afe897e"
+"functions_j.html",
+"namespaceboost.html",
+"namespaceservio_1_1core.html#a33e1f4c80d9e83220d0fe5cb8a3bb8bf",
+"namespaceservio_1_1plt.html#a03cac8a5dbc15f966a3b411492fffb0d",
+"parser_8hpp.html#aafa7d7f19209bc47e0a529b41372214a",
+"stm32h5xx__hal__conf_8h.html#a8415c379764067de24b2738274c4a27c",
+"structservio_1_1cfg_1_1map.html#aee5c5bd8251fa034869fc5c61c23222f",
+"structservio_1_1drv_1_1cobs__uart.html#a6af5f9d1d0e7b013692ca67eb7aee3ff",
+"structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html#a2e579d70114b150acfdc68f33b33944e",
+"structservio_1_1ftest_1_1testing__system.html#a39dbe14688296a9227481d3a84e13fa6",
+"structservio_1_1mon_1_1pulser.html#a76f836652a3958acf4de4c7b1ad9fad8",
+"structservio_1_1scmdio_1_1serial__stream.html#a26ecb888fd8c5761028fff59e295dfa7",
+"units.html#autotoc_md35"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

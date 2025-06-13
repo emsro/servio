@@ -108,45 +108,50 @@ $(document).ready(function(){initNavTree('paged__i2c__eeprom_8hpp_source.html','
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// XXX: unit tests for various internal mechanisms?</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// XXX: maybe abstract away the paging mechanism?</span></div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1i2c__eeprom.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1i2c__eeprom.html">i2c_eeprom</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structservio_1_1drv_1_1storage__iface.html">storage_iface</a></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1i2c__eeprom.html#a1e4f426f99e1bf6978317d1d664e60d4">   13</a></span>        <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a1e4f426f99e1bf6978317d1d664e60d4">i2c_eeprom</a>(</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            uint8_t            dev_addr,</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1i2c__eeprom.html">   10</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1i2c__eeprom.html">i2c_eeprom</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structservio_1_1drv_1_1storage__iface.html">storage_iface</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1i2c__eeprom.html#a51cc1143c461681a132a59b53d248652">   12</a></span>        <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a51cc1143c461681a132a59b53d248652">i2c_eeprom</a>(</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <a class="code hl_struct" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a>&amp;         clk,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            uint8_t            <a class="code hl_variable" href="structservio_1_1drv_1_1i2c__eeprom.html#aa8248f1958751fe409d4e95e9d0e9d73">dev_addr</a>,</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            uint16_t           mem_size,</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            uint16_t           page_size,</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            I2C_HandleTypeDef&amp; i2c )</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>          : mem_size_( mem_size )</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>          , page_size_( page_size )</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>          , dev_addr_( dev_addr &lt;&lt; 1 )</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>          , i2c_( &amp;i2c )</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>          : <a class="code hl_variable" href="structservio_1_1drv_1_1i2c__eeprom.html#aa8248f1958751fe409d4e95e9d0e9d73">dev_addr</a>( <a class="code hl_variable" href="structservio_1_1drv_1_1i2c__eeprom.html#aa8248f1958751fe409d4e95e9d0e9d73">dev_addr</a> &lt;&lt; 1 )</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>          , clk_( clk )</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>          , mem_size_( mem_size )</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>          , page_size_( page_size )</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>          , i2c_( &amp;i2c )</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        }</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a2b544cb5d4cf0aaf53af949967c8fe46">store_cfg</a>( <a class="code hl_struct" href="structservio_1_1cfg_1_1map.html">cfg::map</a> <span class="keyword">const</span>&amp; m ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#aedce6424b8fb220e49ffc398bf0a2271">load_cfg</a>( <a class="code hl_struct" href="structservio_1_1cfg_1_1map.html">cfg::map</a>&amp; m ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a6f25149fcca2065b3937b6aea147f9d9">clear_cfg</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        uint16_t           mem_size_;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        uint16_t           page_size_ = 0x00;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        uint8_t            dev_addr_;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        I2C_HandleTypeDef* i2c_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1i2c__eeprom.html#aa8248f1958751fe409d4e95e9d0e9d73">   26</a></span>        uint8_t <a class="code hl_variable" href="structservio_1_1drv_1_1i2c__eeprom.html#aa8248f1958751fe409d4e95e9d0e9d73">dev_addr</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a2b544cb5d4cf0aaf53af949967c8fe46">store_cfg</a>( <a class="code hl_struct" href="structservio_1_1cfg_1_1map.html">cfg::map</a> <span class="keyword">const</span>&amp; m ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#aedce6424b8fb220e49ffc398bf0a2271">load_cfg</a>( <a class="code hl_struct" href="structservio_1_1cfg_1_1map.html">cfg::map</a>&amp; m ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1drv_1_1i2c__eeprom.html#a6f25149fcca2065b3937b6aea147f9d9">clear_cfg</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_struct" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a>&amp;         clk_;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        uint16_t           mem_size_;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        uint16_t           page_size_ = 0x00;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        I2C_HandleTypeDef* i2c_       = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}  <span class="comment">// namespace servio::drv</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}  <span class="comment">// namespace servio::drv</span></div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1drv_html"><div class="ttname"><a href="namespaceservio_1_1drv.html">servio::drv</a></div><div class="ttdef"><b>Definition</b> adc_pooler.hpp:9</div></div>
 <div class="ttc" id="astructservio_1_1cfg_1_1map_html"><div class="ttname"><a href="structservio_1_1cfg_1_1map.html">servio::cfg::map</a></div><div class="ttdef"><b>Definition</b> def.hpp:427</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html">servio::drv::i2c_eeprom</a></div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.hpp:12</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a1e4f426f99e1bf6978317d1d664e60d4"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a1e4f426f99e1bf6978317d1d664e60d4">servio::drv::i2c_eeprom::i2c_eeprom</a></div><div class="ttdeci">i2c_eeprom(uint8_t dev_addr, uint16_t mem_size, uint16_t page_size, I2C_HandleTypeDef &amp;i2c)</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.hpp:13</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a2b544cb5d4cf0aaf53af949967c8fe46"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a2b544cb5d4cf0aaf53af949967c8fe46">servio::drv::i2c_eeprom::store_cfg</a></div><div class="ttdeci">status store_cfg(cfg::map const &amp;m) override</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:49</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a6f25149fcca2065b3937b6aea147f9d9"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a6f25149fcca2065b3937b6aea147f9d9">servio::drv::i2c_eeprom::clear_cfg</a></div><div class="ttdeci">status clear_cfg() override</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:139</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_aedce6424b8fb220e49ffc398bf0a2271"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#aedce6424b8fb220e49ffc398bf0a2271">servio::drv::i2c_eeprom::load_cfg</a></div><div class="ttdeci">status load_cfg(cfg::map &amp;m) override</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:105</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1clk__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1clk__iface.html">servio::drv::clk_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:73</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html">servio::drv::i2c_eeprom</a></div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.hpp:11</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a2b544cb5d4cf0aaf53af949967c8fe46"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a2b544cb5d4cf0aaf53af949967c8fe46">servio::drv::i2c_eeprom::store_cfg</a></div><div class="ttdeci">status store_cfg(cfg::map const &amp;m) override</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:183</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a51cc1143c461681a132a59b53d248652"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a51cc1143c461681a132a59b53d248652">servio::drv::i2c_eeprom::i2c_eeprom</a></div><div class="ttdeci">i2c_eeprom(clk_iface &amp;clk, uint8_t dev_addr, uint16_t mem_size, uint16_t page_size, I2C_HandleTypeDef &amp;i2c)</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.hpp:12</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_a6f25149fcca2065b3937b6aea147f9d9"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#a6f25149fcca2065b3937b6aea147f9d9">servio::drv::i2c_eeprom::clear_cfg</a></div><div class="ttdeci">status clear_cfg() override</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:252</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_aa8248f1958751fe409d4e95e9d0e9d73"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#aa8248f1958751fe409d4e95e9d0e9d73">servio::drv::i2c_eeprom::dev_addr</a></div><div class="ttdeci">uint8_t dev_addr</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.hpp:26</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1i2c__eeprom_html_aedce6424b8fb220e49ffc398bf0a2271"><div class="ttname"><a href="structservio_1_1drv_1_1i2c__eeprom.html#aedce6424b8fb220e49ffc398bf0a2271">servio::drv::i2c_eeprom::load_cfg</a></div><div class="ttdeci">status load_cfg(cfg::map &amp;m) override</div><div class="ttdef"><b>Definition</b> paged_i2c_eeprom.cpp:244</div></div>
 <div class="ttc" id="astructservio_1_1drv_1_1storage__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1storage__iface.html">servio::drv::storage_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:60</div></div>
 <div class="ttc" id="astructservio_1_1status_html"><div class="ttname"><a href="structservio_1_1status.html">servio::status</a></div><div class="ttdef"><b>Definition</b> status.hpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -155,7 +160,7 @@ $(document).ready(function(){initNavTree('paged__i2c__eeprom_8hpp_source.html','
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="paged__i2c__eeprom_8hpp.html">paged_i2c_eeprom.hpp</a></li>
-    <li class="footer">Generated on Sun May 11 2025 09:11:26 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Jun 13 2025 18:33:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

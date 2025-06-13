@@ -41,7 +41,7 @@ var searchData=
   ['set_5ftemp_5fcfg_38',['set_temp_cfg',['../structservio_1_1cnv_1_1converter.html#a25b239118d5c61d49ed49874aeafc713',1,'servio::cnv::converter']]],
   ['set_5fvcc_5fcfg_39',['set_vcc_cfg',['../structservio_1_1cnv_1_1converter.html#a2681c36d726d82b10f0325fc72e77167',1,'servio::cnv::converter']]],
   ['set_5fvel_5fto_5fcurr_5flim_5fscale_40',['set_vel_to_curr_lim_scale',['../classservio_1_1ctl_1_1control.html#ad94697bfa27c37accf9a298e72ae5f5b',1,'servio::ctl::control']]],
-  ['setup_41',['setup',['../classservio_1_1drv_1_1hbridge.html#aaa818f0bff60de49f5f40e38223147f5',1,'servio::drv::hbridge::setup()'],['../structservio_1_1drv_1_1leds.html#acb4da8265196539024fa9a35a5ff7436',1,'servio::drv::leds::setup()'],['../structservio_1_1ftest_1_1utest__base.html#aea40ea8d33d61e4b6a9d1e004a4dd36b',1,'servio::ftest::utest_base::setup()'],['../classservio_1_1ctl_1_1tests_1_1control__fixture.html#a3b27f3f5df007705211c5a1a1add2df1',1,'servio::ctl::tests::control_fixture::SetUp()']]],
+  ['setup_41',['setup',['../classservio_1_1ctl_1_1tests_1_1control__fixture.html#a3b27f3f5df007705211c5a1a1add2df1',1,'servio::ctl::tests::control_fixture::SetUp()'],['../classservio_1_1drv_1_1hbridge.html#aaa818f0bff60de49f5f40e38223147f5',1,'servio::drv::hbridge::setup()'],['../structservio_1_1drv_1_1leds.html#acb4da8265196539024fa9a35a5ff7436',1,'servio::drv::leds::setup()'],['../structservio_1_1ftest_1_1utest__base.html#aea40ea8d33d61e4b6a9d1e004a4dd36b',1,'servio::ftest::utest_base::setup()']]],
   ['setup_5fadc_42',['setup_adc',['../namespaceservio_1_1plt.html#a6b386aa81248da18c0dc5f61e42a4ec7',1,'servio::plt']]],
   ['setup_5fadc_5fchannel_43',['setup_adc_channel',['../namespaceservio_1_1plt.html#ac9aa102dc4b651ab6503b4aa6ca604f4',1,'servio::plt']]],
   ['setup_5fadc_5ftimer_44',['setup_adc_timer',['../namespaceservio_1_1plt.html#a0d5e16e4ff00fbf1ee2566f7035e409f',1,'servio::plt']]],
@@ -59,7 +59,7 @@ var searchData=
   ['setup_5fgpio_56',['setup_gpio',['../namespaceservio_1_1plt.html#abd82db4ae277c933a1955cdada712dc6',1,'servio::plt']]],
   ['setup_5fhbridge_5ftimers_57',['setup_hbridge_timers',['../namespaceservio_1_1plt.html#a1ab82543f002b972fd70964ede34e70e',1,'servio::plt']]],
   ['setup_5fi2c_58',['setup_i2c',['../namespaceservio_1_1plt.html#ae5039a71d1fe46ae0b2b77ece05e8914',1,'servio::plt']]],
-  ['setup_5fiface_5ftests_59',['setup_iface_tests',['../namespaceservio_1_1drv_1_1tests.html#aa50a13a9d18ccdf27e8c31a836623c96',1,'servio::drv::tests']]],
+  ['setup_5fiface_5ftests_59',['setup_iface_tests',['../namespaceservio_1_1drv_1_1tests.html#a53f87f571493c4c3170605626ad97f11',1,'servio::drv::tests']]],
   ['setup_5fimpl_5ftests_60',['setup_impl_tests',['../namespaceservio_1_1drv_1_1tests.html#a35ebe1133f2b5d39e2bf4722888f5d50',1,'servio::drv::tests']]],
   ['setup_5fmeas_5ftests_61',['setup_meas_tests',['../namespaceservio_1_1ftest_1_1intg.html#a1a8cc3c4d570011d71c7c4c4ba5c1e3a',1,'servio::ftest::intg']]],
   ['setup_5fmem_62',['setup_mem',['../structservio_1_1scmdio_1_1stm32__bootloader__mock.html#a55701dd8cbc20ebc973c70a6d8c2e8b5',1,'servio::scmdio::stm32_bootloader_mock']]],
@@ -72,7 +72,7 @@ var searchData=
   ['sin_5fapprox_69',['sin_approx',['../namespaceservio_1_1mon.html#a05b0570c91ff6eb55da2986405b24659',1,'servio::mon']]],
   ['spin_5fwith_5ftimeout_70',['spin_with_timeout',['../namespaceservio_1_1drv.html#a939143e8846f4165956444ad9cdc5c4d',1,'servio::drv']]],
   ['standard_5fcallbacks_71',['standard_callbacks',['../structservio_1_1core_1_1standard__callbacks.html#aea7889ae987fae194168f992b4591da0',1,'servio::core::standard_callbacks']]],
-  ['start_72',['start',['../structservio_1_1drv_1_1period__iface.html#a6b11cdb34ef544ccb12192b11d2d2af9',1,'servio::drv::period_iface::start()'],['../structservio_1_1drv_1_1adc__pooler.html#a6f088b3c4b20f74a15db3ee2ae496500',1,'servio::drv::adc_pooler::start()'],['../structservio_1_1drv_1_1char__uart.html#a4b0991604a590bdc010be475957c0ce8',1,'servio::drv::char_uart::start()'],['../structservio_1_1drv_1_1cobs__uart.html#aa753a527d4f52359dd19da18b8d503be',1,'servio::drv::cobs_uart::start()'],['../classservio_1_1drv_1_1hbridge.html#af1e93481bcc17c248c4c5ff2bd55eb64',1,'servio::drv::hbridge::start()'],['../structservio_1_1drv_1_1com__iface.html#a1fb373ffbe95d6e709cbaf5838dbe9e7',1,'servio::drv::com_iface::start()'],['../classservio_1_1drv_1_1quad__encoder.html#aa79b856e88dd0dba4e09db70003883a2',1,'servio::drv::quad_encoder::start()']]],
+  ['start_72',['start',['../structservio_1_1drv_1_1period__iface.html#a6b11cdb34ef544ccb12192b11d2d2af9',1,'servio::drv::period_iface::start()'],['../classservio_1_1drv_1_1hbridge.html#af1e93481bcc17c248c4c5ff2bd55eb64',1,'servio::drv::hbridge::start()'],['../structservio_1_1drv_1_1adc__pooler.html#a6f088b3c4b20f74a15db3ee2ae496500',1,'servio::drv::adc_pooler::start()'],['../structservio_1_1drv_1_1char__uart.html#a4b0991604a590bdc010be475957c0ce8',1,'servio::drv::char_uart::start()'],['../structservio_1_1drv_1_1cobs__uart.html#aa753a527d4f52359dd19da18b8d503be',1,'servio::drv::cobs_uart::start()'],['../structservio_1_1drv_1_1com__iface.html#a1fb373ffbe95d6e709cbaf5838dbe9e7',1,'servio::drv::com_iface::start()'],['../classservio_1_1drv_1_1quad__encoder.html#aa79b856e88dd0dba4e09db70003883a2',1,'servio::drv::quad_encoder::start()']]],
   ['start_5fcallback_73',['start_callback',['../namespaceservio_1_1brd.html#a65ea96db65121287fc719a500753b3b0',1,'servio::brd']]],
   ['state_5fmachine_74',['state_machine',['../structservio_1_1scmdio_1_1stm32__bootloader__mock.html#a8d3be7fb3a1a10f91d4460ff2fb0c401',1,'servio::scmdio::stm32_bootloader_mock']]],
   ['static_5fdetector_75',['static_detector',['../structservio_1_1mtr_1_1static__detector.html#a94c0f9e7e88fec7ad559c4860f95566a',1,'servio::mtr::static_detector']]],
@@ -91,6 +91,5 @@ var searchData=
   ['switch_5fto_5fcurrent_5fcontrol_88',['switch_to_current_control',['../classservio_1_1ctl_1_1control.html#ac9bf79e53536c7bfcb6db94ef5c20c7a',1,'servio::ctl::control']]],
   ['switch_5fto_5fposition_5fcontrol_89',['switch_to_position_control',['../classservio_1_1ctl_1_1control.html#a0f932035f509245b0fcbd2882b403666',1,'servio::ctl::control']]],
   ['switch_5fto_5fpower_5fcontrol_90',['switch_to_power_control',['../classservio_1_1ctl_1_1control.html#ad3d4a1277080a68ec791550a4e0ae738',1,'servio::ctl::control']]],
-  ['switch_5fto_5fvelocity_5fcontrol_91',['switch_to_velocity_control',['../classservio_1_1ctl_1_1control.html#a593068263871cb753d9d9dc59693998b',1,'servio::ctl::control']]],
-  ['systick_5fhandler_92',['SysTick_Handler',['../it_8cpp.html#aafb8d3e0fd06464b1ee0ae1edbc3c7d6',1,'it.cpp']]]
+  ['switch_5fto_5fvelocity_5fcontrol_91',['switch_to_velocity_control',['../classservio_1_1ctl_1_1control.html#a593068263871cb753d9d9dc59693998b',1,'servio::ctl::control']]]
 ];

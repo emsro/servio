@@ -1,0 +1,9 @@
+<map id="servio::drv::tests::storage_iface_test" name="servio::drv::tests::storage_iface_test">
+<area shape="rect" id="Node000001" title=" " alt="" coords="59,197,210,237"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="5,95,152,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,145,127,196,122,199,94,148"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="176,102,301,127"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,139,156,199,152,195,215,135"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="155,5,322,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="241,59,241,102,236,102,236,59"/>
+</map>

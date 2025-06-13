@@ -8,6 +8,5 @@ var searchData=
   ['interface_5ftests_2ehpp_5',['interface_tests.hpp',['../interface__tests_8hpp.html',1,'']]],
   ['interfaces_2ehpp_6',['interfaces.hpp',['../interfaces_8hpp.html',1,'']]],
   ['io_2eproto_7',['io.proto',['../io_8proto.html',1,'']]],
-  ['is_5fpowerless_2ehpp_8',['is_powerless.hpp',['../is__powerless_8hpp.html',1,'']]],
-  ['it_2ecpp_9',['it.cpp',['../it_8cpp.html',1,'']]]
+  ['it_2ecpp_8',['it.cpp',['../it_8cpp.html',1,'']]]
 ];

@@ -28,12 +28,14 @@ var searchData=
   ['list_20of_20fields_20for_20configuration_25',['REQ6.9 List of fields for configuration',['../config.html#autotoc_md55',1,'']]],
   ['load_5fcfg_26',['load_cfg',['../structservio_1_1drv_1_1i2c__eeprom.html#aedce6424b8fb220e49ffc398bf0a2271',1,'servio::drv::i2c_eeprom::load_cfg()'],['../structservio_1_1drv_1_1mock_1_1stor.html#ab4cc939c7ee1b0bf6fc18c4b99d47366',1,'servio::drv::mock::stor::load_cfg()'],['../structservio_1_1drv_1_1storage__iface.html#a71f4360ae40ef59f58f03554d4daca70',1,'servio::drv::storage_iface::load_cfg()'],['../structservio_1_1drv_1_1flash__storage.html#a40dc8612540547cb1adf3c9e0bf6e8aa',1,'servio::drv::flash_storage::load_cfg()']]],
   ['load_5fmessage_27',['load_message',['../namespaceservio_1_1drv_1_1bits.html#a5d70b0c1c418dd446c10d13da1ad0fdd',1,'servio::drv::bits']]],
-  ['locked_28',['LOCKED',['../namespaceservio_1_1sntr.html#a875fcd3a5d9ef6909df43ffc0b84d60eaaeff3f3f2731681b2ed6a27786a56203',1,'servio::sntr']]],
-  ['log_5ferror_29',['log_error',['../namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5',1,'servio::scmdio']]],
-  ['loop_5ffrequency_30',['loop_frequency',['../structservio_1_1ftest_1_1bench_1_1loop__frequency.html',1,'servio::ftest::bench']]],
-  ['low_5fpoint_31',['low_point',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a678d5f4c5423a504124660c634013463',1,'servio::ctl::linear_transition_regulator']]],
-  ['lse_5fstartup_5ftimeout_32',['LSE_STARTUP_TIMEOUT',['../stm32h5xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32h5xx_hal_conf.h']]],
-  ['lse_5fvalue_33',['LSE_VALUE',['../stm32h5xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d',1,'stm32h5xx_hal_conf.h']]],
-  ['lsi_5fstartup_5ftime_34',['LSI_STARTUP_TIME',['../stm32h5xx__hal__conf_8h.html#ab9ea77371b070034ca2a56381a7e9de7',1,'stm32h5xx_hal_conf.h']]],
-  ['lsi_5fvalue_35',['LSI_VALUE',['../stm32h5xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9',1,'stm32h5xx_hal_conf.h']]]
+  ['load_5fpreset_28',['load_preset',['../namespaceservio_1_1scmdio.html#a58574b7237f6a644eaa2df1da28f8529',1,'servio::scmdio']]],
+  ['load_5fraw_5fpreset_29',['load_raw_preset',['../namespaceservio_1_1scmdio.html#a54e3bd40a8656f4f5610d379bc3484e6',1,'servio::scmdio']]],
+  ['locked_30',['LOCKED',['../namespaceservio_1_1sntr.html#a875fcd3a5d9ef6909df43ffc0b84d60eaaeff3f3f2731681b2ed6a27786a56203',1,'servio::sntr']]],
+  ['log_5ferror_31',['log_error',['../namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5',1,'servio::scmdio']]],
+  ['loop_5ffrequency_32',['loop_frequency',['../structservio_1_1ftest_1_1bench_1_1loop__frequency.html',1,'servio::ftest::bench']]],
+  ['low_5fpoint_33',['low_point',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a678d5f4c5423a504124660c634013463',1,'servio::ctl::linear_transition_regulator']]],
+  ['lse_5fstartup_5ftimeout_34',['LSE_STARTUP_TIMEOUT',['../stm32h5xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32h5xx_hal_conf.h']]],
+  ['lse_5fvalue_35',['LSE_VALUE',['../stm32h5xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d',1,'stm32h5xx_hal_conf.h']]],
+  ['lsi_5fstartup_5ftime_36',['LSI_STARTUP_TIME',['../stm32h5xx__hal__conf_8h.html#ab9ea77371b070034ca2a56381a7e9de7',1,'stm32h5xx_hal_conf.h']]],
+  ['lsi_5fvalue_37',['LSI_VALUE',['../stm32h5xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9',1,'stm32h5xx_hal_conf.h']]]
 ];

@@ -5,7 +5,7 @@ var searchData=
   ['parse_5fstr_2',['parse_str',['../namespaceservio_1_1parser.html#aafa7d7f19209bc47e0a529b41372214a',1,'servio::parser']]],
   ['pendsv_5fhandler_3',['PendSV_Handler',['../it_8cpp.html#a6303e1f258cbdc1f970ce579cc015623',1,'it.cpp']]],
   ['period_5fcb_4',['period_cb',['../structservio_1_1drv_1_1period__cb.html#a9fd9a31f052b6bdd9e2c7e9ad69b8238',1,'servio::drv::period_cb']]],
-  ['period_5fstart_5',['period_start',['../structservio_1_1drv_1_1adc__channel.html#addb153a7d723e9d1e935dd07fd456f01',1,'servio::drv::adc_channel::period_start()'],['../structservio_1_1drv_1_1detailed__adc__channel.html#a39a7fefb8fb21d6f6c600eead712b709',1,'servio::drv::detailed_adc_channel::period_start()']]],
+  ['period_5fstart_5',['period_start',['../structservio_1_1drv_1_1detailed__adc__channel.html#a39a7fefb8fb21d6f6c600eead712b709',1,'servio::drv::detailed_adc_channel::period_start()'],['../structservio_1_1drv_1_1adc__channel.html#addb153a7d723e9d1e935dd07fd456f01',1,'servio::drv::adc_channel::period_start(ADC_HandleTypeDef &amp;h)']]],
   ['period_5fstop_6',['period_stop',['../structservio_1_1drv_1_1adc__channel.html#a0ce47e9badd775a7886272e30c6c1595',1,'servio::drv::adc_channel::period_stop()'],['../structservio_1_1drv_1_1detailed__adc__channel.html#af780e6e5c11f56ae70521efc5137259a',1,'servio::drv::detailed_adc_channel::period_stop()']]],
   ['pid_5fautotune_5fcurrent_7',['pid_autotune_current',['../namespaceservio_1_1scmdio.html#a767b23a2db56d8ed7a8980aa7c9fdfe2',1,'servio::scmdio']]],
   ['pid_5fcalculate_8',['pid_calculate',['../namespaceservio_1_1scmdio.html#aa7aafe8ff434221e097fa3aaff3641af',1,'servio::scmdio']]],
@@ -15,11 +15,10 @@ var searchData=
   ['port_5fcallback_12',['port_callback',['../namespaceservio_1_1scmdio.html#acedc16b62c42d1234cff5edd94bafd79',1,'servio::scmdio']]],
   ['port_5fmock_13',['port_mock',['../structservio_1_1scmdio_1_1port__mock.html#a955c5ee795ef1704d617d71d01d478ac',1,'servio::scmdio::port_mock']]],
   ['port_5fopts_14',['port_opts',['../namespaceservio_1_1scmdio.html#ae3a3dd4bf0754ea235ae81a1b52ce0c2',1,'servio::scmdio']]],
-  ['position_15',['position',['../namespaceservio_1_1cnv.html#a8771025b6298c59e1f7b30f8fa1f7413',1,'servio::cnv::position()'],['../structservio_1_1sim_1_1simple__motor.html#af9e7bc066c489f582240cb6d8a6b1d5c',1,'servio::sim::simple_motor::position()']]],
+  ['position_15',['position',['../structservio_1_1sim_1_1simple__motor.html#af9e7bc066c489f582240cb6d8a6b1d5c',1,'servio::sim::simple_motor::position()'],['../namespaceservio_1_1cnv.html#a8771025b6298c59e1f7b30f8fa1f7413',1,'servio::cnv::position()']]],
   ['position_5fcallback_16',['position_callback',['../classservio_1_1core_1_1position__callback.html#a0c7bb643858948c6cab502eff927e893',1,'servio::core::position_callback']]],
   ['position_5firq_17',['position_irq',['../classservio_1_1mtr_1_1metrics.html#aebdb5e475782f8b4cb326ed55e987d9d',1,'servio::mtr::metrics::position_irq()'],['../classservio_1_1ctl_1_1control.html#aeb6ba07010b0017814e59ded265dd18a',1,'servio::ctl::control::position_irq()']]],
   ['posvel_5fkalman_18',['posvel_kalman',['../structservio_1_1mtr_1_1posvel__kalman.html#ad84318f129e7ae0a33a852e71e40e23e',1,'servio::mtr::posvel_kalman']]],
   ['power_5fto_5fcurrent_19',['power_to_current',['../structservio_1_1sim_1_1simple__motor.html#a8dd1529503ba16f71669c94f9bb346ee',1,'servio::sim::simple_motor']]],
-  ['powerless_5fflag_20',['powerless_flag',['../namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc',1,'servio::scmdio']]],
-  ['predict_21',['predict',['../namespaceservio_1_1klmn.html#a5a609eab0f665504f09c8b30be6dfb4c',1,'servio::klmn']]]
+  ['predict_20',['predict',['../namespaceservio_1_1klmn.html#a5a609eab0f665504f09c8b30be6dfb4c',1,'servio::klmn']]]
 ];

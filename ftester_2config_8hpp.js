@@ -8,8 +8,7 @@ var ftester_2config_8hpp =
       [ "filter", "namespaceservio_1_1ftester.html#a8f8cd80b3be896f7ecf844083945d242", null ],
       [ "flash_cmd", "namespaceservio_1_1ftester.html#a66e80e3cf060cfb06b123b129f110c4e", null ],
       [ "input", "namespaceservio_1_1ftester.html#aa82f2858ac70e9973a3761bd4d70ac8f", null ],
-      [ "output_dir", "namespaceservio_1_1ftester.html#a0876b9fcc87d2b7574e65e6182934729", null ],
-      [ "powerless", "namespaceservio_1_1ftester.html#a9fdf46df9cf2f31fdfb9f0e491ebc39c", null ]
+      [ "output_dir", "namespaceservio_1_1ftester.html#a0876b9fcc87d2b7574e65e6182934729", null ]
     ] ],
     [ "get_config", "ftester_2config_8hpp.html#abafc9ebaf605802ca7b02a5592cf7a7f", null ]
 ];

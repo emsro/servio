@@ -2,7 +2,7 @@ var searchData=
 [
   ['i2c2_5fer_5firqhandler_0',['I2C2_ER_IRQHandler',['../board_8cpp.html#aa9f9cffda230ddffc3b7e5ac2ae393ac',1,'board.cpp']]],
   ['i2c2_5fev_5firqhandler_1',['I2C2_EV_IRQHandler',['../board_8cpp.html#aa32a80208798d6132876a58823ff6202',1,'board.cpp']]],
-  ['i2c_5feeprom_2',['i2c_eeprom',['../structservio_1_1drv_1_1i2c__eeprom.html#a1e4f426f99e1bf6978317d1d664e60d4',1,'servio::drv::i2c_eeprom']]],
+  ['i2c_5feeprom_2',['i2c_eeprom',['../structservio_1_1drv_1_1i2c__eeprom.html#a51cc1143c461681a132a59b53d248652',1,'servio::drv::i2c_eeprom']]],
   ['i32_5flowest_5fas_5fu32_3',['i32_lowest_as_u32',['../namespaceservio_1_1str__lib_1_1bits.html#a2307b515c6486d25c3d268645ff819fd',1,'servio::str_lib::bits']]],
   ['id_5fto_5fkey_4',['id_to_key',['../namespaceservio_1_1cfg.html#a1e1087069c21f5e087e55da1f2a9f95e',1,'servio::cfg']]],
   ['index_5',['index',['../structservio_1_1__type__tag.html#add3985688c08180c0d8b031ffcb0d073',1,'servio::_type_tag']]],
@@ -16,7 +16,6 @@ var searchData=
   ['is_5finoperable_13',['is_inoperable',['../structservio_1_1sntr_1_1test__central__sentry.html#afed4728d002e6ee7fa32fe74329f7268',1,'servio::sntr::test_central_sentry::is_inoperable()'],['../structservio_1_1sntr_1_1central__sentry__iface.html#ad08a24c849cc7bf4d13cce789a5c8d80',1,'servio::sntr::central_sentry_iface::is_inoperable()'],['../classservio_1_1sntr_1_1central__sentry.html#a186b59212b4632b366081b9c637d8c1c',1,'servio::sntr::central_sentry::is_inoperable()']]],
   ['is_5fletter_14',['is_letter',['../namespaceservio_1_1str__lib_1_1bits.html#a2ef3bbeb97b5b6496f301f4aa6e52238',1,'servio::str_lib::bits']]],
   ['is_5fmoving_15',['is_moving',['../classservio_1_1mtr_1_1metrics.html#a5ecbdefc8370d0a38f6a7f7ef619bc5b',1,'servio::mtr::metrics']]],
-  ['is_5fpowerless_16',['is_powerless',['../namespaceservio_1_1ftest.html#a0c26a71fa7e66380d0d7781c77fe390a',1,'servio::ftest']]],
-  ['is_5fstopped_17',['is_stopped',['../structservio_1_1drv_1_1mock_1_1pwm__mot.html#a445ee8260acd38d4a964c450689668aa',1,'servio::drv::mock::pwm_mot::is_stopped()'],['../structservio_1_1drv_1_1motor__info__iface.html#a94eae2a5ec1dbee8a12fbe9313093e8b',1,'servio::drv::motor_info_iface::is_stopped()'],['../classservio_1_1drv_1_1hbridge.html#a1756b1fc5080d2f1d13d24a12e6f7a50',1,'servio::drv::hbridge::is_stopped()']]],
-  ['is_5fws_18',['is_ws',['../namespaceservio_1_1str__lib_1_1bits.html#a18d294bf2f7a8e7fb92d5eb042aca02c',1,'servio::str_lib::bits']]]
+  ['is_5fstopped_16',['is_stopped',['../structservio_1_1drv_1_1mock_1_1pwm__mot.html#a445ee8260acd38d4a964c450689668aa',1,'servio::drv::mock::pwm_mot::is_stopped()'],['../structservio_1_1drv_1_1motor__info__iface.html#a94eae2a5ec1dbee8a12fbe9313093e8b',1,'servio::drv::motor_info_iface::is_stopped()'],['../classservio_1_1drv_1_1hbridge.html#a1756b1fc5080d2f1d13d24a12e6f7a50',1,'servio::drv::hbridge::is_stopped()']]],
+  ['is_5fws_17',['is_ws',['../namespaceservio_1_1str__lib_1_1bits.html#a18d294bf2f7a8e7fb92d5eb042aca02c',1,'servio::str_lib::bits']]]
 ];

@@ -136,6 +136,10 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1port__mock.html">port_mock</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1scmdio_1_1preset__def" id="r_structservio_1_1scmdio_1_1preset__def"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__def">preset_def</a></td></tr>
+<tr class="separator:structservio_1_1scmdio_1_1preset__def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1scmdio_1_1raw__preset__def" id="r_structservio_1_1scmdio_1_1raw__preset__def"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1raw__preset__def">raw_preset_def</a></td></tr>
+<tr class="separator:structservio_1_1scmdio_1_1raw__preset__def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1serial__cli.html">serial_cli</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1scmdio_1_1serial__stream.html">serial_stream</a></td></tr>
@@ -183,8 +187,6 @@ Functions</h2></td></tr>
 <tr class="separator:ad4fa41dcb7957c74dcc335d566c28eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6286d1246b1168d8fa9bd1b651b3752e" id="r_a6286d1246b1168d8fa9bd1b651b3752e"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a6286d1246b1168d8fa9bd1b651b3752e">baudrate_opt</a> (CLI::App &amp;app, unsigned &amp;baudrate)</td></tr>
 <tr class="separator:a6286d1246b1168d8fa9bd1b651b3752e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f5027194b08215b948567a9932bcdbc" id="r_a0f5027194b08215b948567a9932bcdbc"><td class="memItemLeft" align="right" valign="top">CLI::Option *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a0f5027194b08215b948567a9932bcdbc">powerless_flag</a> (CLI::App &amp;app, bool &amp;is_powerless)</td></tr>
-<tr class="separator:a0f5027194b08215b948567a9932bcdbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3a3dd4bf0754ea235ae81a1b52ce0c2" id="r_ae3a3dd4bf0754ea235ae81a1b52ce0c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ae3a3dd4bf0754ea235ae81a1b52ce0c2">port_opts</a> (CLI::App &amp;app, <a class="el" href="structservio_1_1scmdio_1_1port__cli.html">port_cli</a> &amp;cli)</td></tr>
 <tr class="separator:ae3a3dd4bf0754ea235ae81a1b52ce0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc483e22f0f472030faa37ede17570af" id="r_abc483e22f0f472030faa37ede17570af"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#abc483e22f0f472030faa37ede17570af">cfg_query_cmd</a> (<a class="el" href="namespaceservio_1_1scmdio.html#a662f29442a014cdbe007bc12f0d52fe8">sptr</a>&lt; <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a> &gt; port, bool json)</td></tr>
@@ -233,6 +235,10 @@ Functions</h2></td></tr>
 <tr class="separator:aa6760a0dd8290696504efea1a2cf3287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6789ab0e74b37afe45d4ad8dbb30de7e" id="r_a6789ab0e74b37afe45d4ad8dbb30de7e"><td class="memItemLeft" align="right" valign="top">std::filesystem::path const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a6789ab0e74b37afe45d4ad8dbb30de7e">check_path</a> (std::filesystem::path const &amp;p)</td></tr>
 <tr class="separator:a6789ab0e74b37afe45d4ad8dbb30de7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e3bd40a8656f4f5610d379bc3484e6" id="r_a54e3bd40a8656f4f5610d379bc3484e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1raw__preset__def">raw_preset_def</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a54e3bd40a8656f4f5610d379bc3484e6">load_raw_preset</a> (std::filesystem::path const &amp;folder)</td></tr>
+<tr class="separator:a54e3bd40a8656f4f5610d379bc3484e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58574b7237f6a644eaa2df1da28f8529" id="r_a58574b7237f6a644eaa2df1da28f8529"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__def">preset_def</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a58574b7237f6a644eaa2df1da28f8529">load_preset</a> (std::filesystem::path const &amp;folder)</td></tr>
+<tr class="separator:a58574b7237f6a644eaa2df1da28f8529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a541a193834ccc76608db019f895238e6" id="r_a541a193834ccc76608db019f895238e6"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a541a193834ccc76608db019f895238e6">write</a> (<a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a> &amp;port, std::string_view payload)</td></tr>
 <tr class="separator:a541a193834ccc76608db019f895238e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07bb505d72d2a7c2a0970af183e13be3" id="r_a07bb505d72d2a7c2a0970af183e13be3"><td class="memItemLeft" align="right" valign="top">awaitable&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a07bb505d72d2a7c2a0970af183e13be3">read</a> (<a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a> &amp;port)</td></tr>
@@ -554,6 +560,83 @@ data</td>
 <a id="acc094a30f90dcc544e7793fe7232442e" name="acc094a30f90dcc544e7793fe7232442e"></a><a class="el" href="structservio_1_1scmdio_1_1char__cli.html">char_cli</a></td>
 <td class="fieldname">
 port</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structservio_1_1scmdio_1_1preset__def" id="structservio_1_1scmdio_1_1preset__def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1preset__def">&#9670;&#160;</a></span>servio::scmdio::preset_def</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::scmdio::preset_def</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::scmdio::preset_def:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1scmdio_1_1preset__def__coll__graph.svg" width="206" height="243"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="ad79753bc636630887eeabef821d358ec" name="ad79753bc636630887eeabef821d358ec"></a>string</td>
+<td class="fieldname">
+board</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ab7dec6b8d5f87d01961ba611a39e476e" name="ab7dec6b8d5f87d01961ba611a39e476e"></a>json</td>
+<td class="fieldname">
+config</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a2a3e21a7c5971bd185cb863d186f332d" name="a2a3e21a7c5971bd185cb863d186f332d"></a>string</td>
+<td class="fieldname">
+name</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a5a4b359fcdbaa05657d8f85c7e3dc68a" name="a5a4b359fcdbaa05657d8f85c7e3dc68a"></a>string</td>
+<td class="fieldname">
+platform</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structservio_1_1scmdio_1_1raw__preset__def" id="structservio_1_1scmdio_1_1raw__preset__def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1raw__preset__def">&#9670;&#160;</a></span>servio::scmdio::raw_preset_def</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::scmdio::raw_preset_def</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="aef7f466a323dbe43923f94548dd45a2c" name="aef7f466a323dbe43923f94548dd45a2c"></a>json</td>
+<td class="fieldname">
+config</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a5fea6003be161f442586771ace5607ac" name="a5fea6003be161f442586771ace5607ac"></a>json</td>
+<td class="fieldname">
+meta</td>
 <td class="fielddoc">
 </td></tr>
 </table>
@@ -1446,6 +1529,46 @@ template&lt;auto K, typename F  = typename iface::cfg_traits::ktof&lt; K &gt;&gt
 
 </div>
 </div>
+<a id="a58574b7237f6a644eaa2df1da28f8529" name="a58574b7237f6a644eaa2df1da28f8529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58574b7237f6a644eaa2df1da28f8529">&#9670;&#160;</a></span>load_preset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__def">preset_def</a> servio::scmdio::load_preset </td>
+          <td>(</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
+          <td class="paramname"><em>folder</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#aef7f466a323dbe43923f94548dd45a2c">servio::scmdio::raw_preset_def::config</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a54e3bd40a8656f4f5610d379bc3484e6">load_raw_preset()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a5fea6003be161f442586771ace5607ac">servio::scmdio::raw_preset_def::meta</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a2a3e21a7c5971bd185cb863d186f332d">servio::scmdio::preset_def::name</a>.</p>
+
+</div>
+</div>
+<a id="a54e3bd40a8656f4f5610d379bc3484e6" name="a54e3bd40a8656f4f5610d379bc3484e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e3bd40a8656f4f5610d379bc3484e6">&#9670;&#160;</a></span>load_raw_preset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1raw__preset__def">raw_preset_def</a> servio::scmdio::load_raw_preset </td>
+          <td>(</td>
+          <td class="paramtype">std::filesystem::path const &amp;&#160;</td>
+          <td class="paramname"><em>folder</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#aef7f466a323dbe43923f94548dd45a2c">servio::scmdio::raw_preset_def::config</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a54e3bd40a8656f4f5610d379bc3484e6">load_raw_preset()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a5fea6003be161f442586771ace5607ac">servio::scmdio::raw_preset_def::meta</a>.</p>
+
+</div>
+</div>
 <a id="aa0948d83703aaf03ad168493e958f0c5" name="aa0948d83703aaf03ad168493e958f0c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa0948d83703aaf03ad168493e958f0c5">&#9670;&#160;</a></span>log_error()</h2>
 
@@ -1777,34 +1900,6 @@ template&lt;typename... Args&gt; </div>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="structservio_1_1scmdio_1_1port__cli.html#a4a2efd02e1b37f1db4a402c47cfc768c">servio::scmdio::port_cli::baudrate</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a6286d1246b1168d8fa9bd1b651b3752e">baudrate_opt()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a65b2b391dc07c1b8476d7f72e781a825">coms_opt()</a>, and <a class="el" href="structservio_1_1scmdio_1_1port__cli.html#a8fcf1ca36deff02969a4228a84440c8d">servio::scmdio::port_cli::device</a>.</p>
-
-</div>
-</div>
-<a id="a0f5027194b08215b948567a9932bcdbc" name="a0f5027194b08215b948567a9932bcdbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f5027194b08215b948567a9932bcdbc">&#9670;&#160;</a></span>powerless_flag()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">CLI::Option * servio::scmdio::powerless_flag </td>
-          <td>(</td>
-          <td class="paramtype">CLI::App &amp;&#160;</td>
-          <td class="paramname"><em>app</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>is_powerless</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -2465,7 +2560,7 @@ template&lt;typename T , typename F &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1scmdio.html">scmdio</a></li>
-    <li class="footer">Generated on Sun May 11 2025 09:11:27 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Jun 13 2025 18:33:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

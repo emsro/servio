@@ -22,13 +22,14 @@ var searchData=
   ['position_5fcallback_19',['position_callback',['../classservio_1_1core_1_1position__callback.html',1,'servio::core']]],
   ['position_5ftest_20',['position_test',['../structservio_1_1drv_1_1tests_1_1position__test.html',1,'servio::drv::tests']]],
   ['posvel_5fkalman_21',['posvel_kalman',['../structservio_1_1mtr_1_1posvel__kalman.html',1,'servio::mtr']]],
-  ['prof_5frecord_22',['prof_record',['../namespaceservio_1_1ftest_1_1bench.html#structservio_1_1ftest_1_1bench_1_1prof__record',1,'servio::ftest::bench']]],
-  ['profile_23',['profile',['../structservio_1_1ftest_1_1bench_1_1profile.html',1,'servio::ftest::bench']]],
-  ['promise_5ftype_24',['promise_type',['../structservio_1_1scmdio_1_1consumer_1_1promise__type.html',1,'servio::scmdio::consumer']]],
-  ['prop_5fstmt_25',['prop_stmt',['../structservio_1_1iface_1_1prop__stmt.html',1,'servio::iface']]],
-  ['pulser_26',['pulser',['../structservio_1_1mon_1_1pulser.html',1,'servio::mon']]],
-  ['pwm_5fmot_27',['pwm_mot',['../structservio_1_1drv_1_1mock_1_1pwm__mot.html',1,'servio::drv::mock']]],
-  ['pwm_5fmotor_5fiface_28',['pwm_motor_iface',['../structservio_1_1drv_1_1pwm__motor__iface.html',1,'servio::drv']]],
-  ['pwm_5fmotor_5ftest_29',['pwm_motor_test',['../structservio_1_1drv_1_1tests_1_1pwm__motor__test.html',1,'servio::drv::tests']]],
-  ['pwr_30',['pwr',['../structservio_1_1pwr.html',1,'servio']]]
+  ['preset_5fdef_22',['preset_def',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__def',1,'servio::scmdio']]],
+  ['prof_5frecord_23',['prof_record',['../namespaceservio_1_1ftest_1_1bench.html#structservio_1_1ftest_1_1bench_1_1prof__record',1,'servio::ftest::bench']]],
+  ['profile_24',['profile',['../structservio_1_1ftest_1_1bench_1_1profile.html',1,'servio::ftest::bench']]],
+  ['promise_5ftype_25',['promise_type',['../structservio_1_1scmdio_1_1consumer_1_1promise__type.html',1,'servio::scmdio::consumer']]],
+  ['prop_5fstmt_26',['prop_stmt',['../structservio_1_1iface_1_1prop__stmt.html',1,'servio::iface']]],
+  ['pulser_27',['pulser',['../structservio_1_1mon_1_1pulser.html',1,'servio::mon']]],
+  ['pwm_5fmot_28',['pwm_mot',['../structservio_1_1drv_1_1mock_1_1pwm__mot.html',1,'servio::drv::mock']]],
+  ['pwm_5fmotor_5fiface_29',['pwm_motor_iface',['../structservio_1_1drv_1_1pwm__motor__iface.html',1,'servio::drv']]],
+  ['pwm_5fmotor_5ftest_30',['pwm_motor_test',['../structservio_1_1drv_1_1tests_1_1pwm__motor__test.html',1,'servio::drv::tests']]],
+  ['pwr_31',['pwr',['../structservio_1_1pwr.html',1,'servio']]]
 ];

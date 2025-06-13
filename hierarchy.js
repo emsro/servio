@@ -77,6 +77,7 @@ var hierarchy =
     [ "servio::core::drivers", "structservio_1_1core_1_1drivers.html", null ],
     [ "servio::parser::end", "namespaceservio_1_1parser.html#structservio_1_1parser_1_1end", null ],
     [ "servio::parser::err", "namespaceservio_1_1parser.html#structservio_1_1parser_1_1err", null ],
+    [ "servio::error_status", "structservio_1_1error__status.html", null ],
     [ "std::exception", null, [
       [ "std::runtime_error", null, [
         [ "servio::scmdio::servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", null ]
@@ -191,6 +192,7 @@ var hierarchy =
     ] ],
     [ "servio::drv::tests::position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", null ],
     [ "servio::mtr::posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", null ],
+    [ "servio::scmdio::preset_def", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__def", null ],
     [ "servio::ftest::bench::prof_record", "namespaceservio_1_1ftest_1_1bench.html#structservio_1_1ftest_1_1bench_1_1prof__record", null ],
     [ "servio::ftest::bench::profile", "structservio_1_1ftest_1_1bench_1_1profile.html", null ],
     [ "servio::scmdio::consumer< T >::promise_type", "structservio_1_1scmdio_1_1consumer_1_1promise__type.html", null ],
@@ -200,6 +202,7 @@ var hierarchy =
     [ "emlabcpp::quantity", null, [
       [ "servio::pwr", "structservio_1_1pwr.html", null ]
     ] ],
+    [ "servio::scmdio::raw_preset_def", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1raw__preset__def", null ],
     [ "servio::ftester::recorder::record", "classservio_1_1ftester_1_1recorder.html#structservio_1_1ftester_1_1recorder_1_1record", null ],
     [ "servio::sntr::record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", null ],
     [ "servio::ftester::recorder", "classservio_1_1ftester_1_1recorder.html", null ],
@@ -225,6 +228,7 @@ var hierarchy =
       [ "servio::drv::i2c_eeprom", "structservio_1_1drv_1_1i2c__eeprom.html", null ],
       [ "servio::drv::mock::stor", "structservio_1_1drv_1_1mock_1_1stor.html", null ]
     ] ],
+    [ "servio::drv::tests::storage_iface_test", "structservio_1_1drv_1_1tests_1_1storage__iface__test.html", null ],
     [ "servio::parser::str", "namespaceservio_1_1parser.html#structservio_1_1parser_1_1str", null ],
     [ "servio::scmdio::stream_iface", "structservio_1_1scmdio_1_1stream__iface.html", [
       [ "servio::scmdio::serial_stream", "structservio_1_1scmdio_1_1serial__stream.html", null ],
