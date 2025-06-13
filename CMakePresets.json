@@ -4,7 +4,7 @@
         {
             "name": "host_debug_cfg",
             "generator": "Ninja",
-            "binaryDir": "build/host",
+            "binaryDir": "_build/host",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
@@ -15,7 +15,7 @@
         {
             "name": "host_asan_cfg",
             "generator": "Ninja",
-            "binaryDir": "build/asan",
+            "binaryDir": "_build/asan",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
@@ -28,7 +28,7 @@
         {
             "name": "stm32h5_debug_cfg",
             "generator": "Ninja",
-            "binaryDir": "build/stm32h5/",
+            "binaryDir": "_build/stm32h5/",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",

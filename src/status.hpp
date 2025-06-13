@@ -31,18 +31,17 @@ struct [[nodiscard]] status : em::status< status, status_e, status_e::SUCCESS >
         }
 };
 
-static constexpr struct
+struct error_status
 {
-        operator status() const noexcept
-        {
-                return status( status_e::ERROR );
-        }
+        operator status() const noexcept;
 
         constexpr bool operator==( status const& s ) const noexcept
         {
                 return s.value() == status_e::ERROR;
         }
-} ERROR;
+};
+
+static constexpr error_status ERROR;
 
 static constexpr status FAILURE = status::FAILURE;
 static constexpr status SUCCESS = status::SUCCESS;

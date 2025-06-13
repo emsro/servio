@@ -7,7 +7,7 @@ namespace servio::plt
 status setup_i2c( I2C_HandleTypeDef& i2c, i2c_cfg cfg )
 {
         i2c.Instance              = cfg.instance;
-        i2c.Init.Timing           = 0x202029A8;
+        i2c.Init.Timing           = 0x00707CBB;
         i2c.Init.OwnAddress1      = 0;
         i2c.Init.AddressingMode   = I2C_ADDRESSINGMODE_7BIT;
         i2c.Init.DualAddressMode  = I2C_DUALADDRESS_DISABLE;

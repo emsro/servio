@@ -1,4 +1,4 @@
-#include "./setuplib.hpp"
+#include "./preset.hpp"
 
 namespace servio::scmdio
 {
@@ -12,7 +12,7 @@ nlohmann::json j_from_file( std::filesystem::path const& file )
 }
 }  // namespace
 
-raw_setup_def load_raw_setup( std::filesystem::path const& folder )
+raw_preset_def load_raw_preset( std::filesystem::path const& folder )
 {
         nlohmann::json meta   = j_from_file( folder / "meta.json" );
         nlohmann::json config = nlohmann::json::object();
@@ -20,8 +20,8 @@ raw_setup_def load_raw_setup( std::filesystem::path const& folder )
                 config = j_from_file( folder / "config.json" );
 
         if ( meta.contains( "inherits" ) ) {
-                raw_setup_def parent =
-                    load_raw_setup( folder.parent_path() / meta["inherits"].get< std::string >() );
+                raw_preset_def parent =
+                    load_raw_preset( folder.parent_path() / meta["inherits"].get< std::string >() );
                 parent.meta.merge_patch( std::move( meta ) );
                 parent.config.merge_patch( std::move( config ) );
                 return parent;
@@ -33,11 +33,11 @@ raw_setup_def load_raw_setup( std::filesystem::path const& folder )
         };
 }
 
-setup_def load_setup( std::filesystem::path const& folder )
+preset_def load_preset( std::filesystem::path const& folder )
 {
-        raw_setup_def raw = load_raw_setup( folder );
+        raw_preset_def raw = load_raw_preset( folder );
 
-        setup_def res;
+        preset_def res;
 
         return {
             .name     = folder.filename().string(),

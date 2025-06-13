@@ -296,6 +296,23 @@ struct curr_iface_test
         }
 };
 
+struct storage_iface_test
+{
+        storage_iface& iface;
+
+        std::string_view name = "storage_iface";
+
+        t::coroutine< void > run( auto&, ftest::uctx& ctx )
+        {
+                // XXX: this could be improved a lot
+                cfg::map m;
+                co_await ctx.expect( iface.load_cfg( m ) == SUCCESS );
+                co_await ctx.expect( iface.store_cfg( m ) == SUCCESS );
+                co_await ctx.expect( iface.clear_cfg() == SUCCESS );
+                co_await ctx.expect( iface.store_cfg( m ) == SUCCESS );
+        }
+};
+
 inline void setup_iface_tests(
     em::pmr::memory_resource& mem,
     t::reactor&               reac,
@@ -308,6 +325,7 @@ inline void setup_iface_tests(
     temp_iface&               temp,
     pos_iface&                pos,
     curr_iface&               curr,
+    storage_iface&            siface,
     status&                   res )
 {
         ftest::setup_utest< clock_test >( mem, reac, ctx, res, clk );
@@ -319,6 +337,7 @@ inline void setup_iface_tests(
         ftest::setup_utest< temperature_test >( mem, reac, ctx, res, temp );
         ftest::setup_utest< position_test >( mem, reac, ctx, res, pos, clk );
         ftest::setup_utest< curr_iface_test >( mem, reac, ctx, res, curr, clk );
+        ftest::setup_utest< storage_iface_test >( mem, reac, ctx, res, siface );
 }
 
 }  // namespace servio::drv::tests

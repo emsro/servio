@@ -99,7 +99,7 @@ drv::quad_encoder  QUAD{ TIM3_HANDLE };
 TIM_HandleTypeDef* QUAD_TRIGGER_TIMER = nullptr;
 
 I2C_HandleTypeDef I2C2_HANDLE{};
-drv::i2c_eeprom   EEPROM{ 0x50, 65'535u, 2'000u, I2C2_HANDLE };
+drv::i2c_eeprom   EEPROM{ CLOCK, 0x50, 65'535u, 2'000u, I2C2_HANDLE };
 
 }  // namespace servio::brd
 

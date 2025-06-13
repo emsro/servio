@@ -1,7 +1,7 @@
 servio_add_library(
   TARGET proto4_board
   SOURCES board.cpp
-  LIBS platform
+  LIBS serviolib platform
   OPTS -Os)
 
 servio_add_board_executable(

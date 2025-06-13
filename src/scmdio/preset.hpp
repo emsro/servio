@@ -6,15 +6,15 @@
 namespace servio::scmdio
 {
 
-struct raw_setup_def
+struct raw_preset_def
 {
         nlohmann::json meta;
         nlohmann::json config;
 };
 
-raw_setup_def load_raw_setup( std::filesystem::path const& folder );
+raw_preset_def load_raw_preset( std::filesystem::path const& folder );
 
-struct setup_def
+struct preset_def
 {
         std::string    name;
         std::string    board;
@@ -22,6 +22,6 @@ struct setup_def
         nlohmann::json config;
 };
 
-setup_def load_setup( std::filesystem::path const& folder );
+preset_def load_preset( std::filesystem::path const& folder );
 
 }  // namespace servio::scmdio

@@ -10,30 +10,30 @@ add_subdirectory(mtr)
 add_subdirectory(lib)
 add_subdirectory(drv)
 
-add_library(serviolib INTERFACE)
+servio_add_library(TARGET serviolib SOURCES status.cpp)
 
 target_link_libraries(
   serviolib
-  INTERFACE sntrlib
-            monlib
-            ifacelib
-            corelib
-            cfglib
-            mtrlib
-            ctllib
-            drvlib)
+  PUBLIC sntrlib
+         monlib
+         ifacelib
+         corelib
+         cfglib
+         mtrlib
+         ctllib
+         drvlib)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
   add_subdirectory(scmdio)
-  target_link_libraries(serviolib INTERFACE scmdiolib)
+  target_link_libraries(serviolib PUBLIC scmdiolib)
   add_subdirectory(bb)
   add_subdirectory(ftester)
 
 else()
 
   add_subdirectory(fw)
-  target_link_libraries(serviolib INTERFACE fwlib)
+  target_link_libraries(serviolib PUBLIC fwlib)
 
   add_subdirectory(ftest)
 

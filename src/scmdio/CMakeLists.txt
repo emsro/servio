@@ -6,7 +6,7 @@ servio_add_library(
           cli.cpp
           port.cpp
           pid_autotune_cmd.cpp
-          setuplib.cpp
+          preset.cpp
   LIBS emlabcpp avakar::atom vari CLI11::CLI11 Boost::asio spdlog::spdlog)
 
 servio_add_executable(
