@@ -54,8 +54,8 @@ struct test_system
             std::filesystem::path const& c_dev,
             uint32_t                     c_baudrate,
             nlohmann::json const&        input_json )
-          : d_port_( io_context_, d_dev, d_baudrate )
-          , c_port_( io_context_, c_dev )
+          : d_port_( io_context_, check_path( d_dev ), d_baudrate )
+          , c_port_( io_context_, check_path( c_dev ) )
           , col_serv_(
                 em::testing::collect_channel,
                 em::pmr::new_delete_resource(),

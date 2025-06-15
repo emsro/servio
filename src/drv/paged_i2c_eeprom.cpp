@@ -123,7 +123,10 @@ struct update_iface : em::cfg::update_iface
 
         em::result write( std::size_t addr, std::span< std::byte const > data ) override
         {
-                return write_data( i2c, dev_addr, static_cast< uint16_t >( addr ), data );
+                auto res = write_data( i2c, dev_addr, static_cast< uint16_t >( addr ), data );
+                // XXX: read datasheet properly
+                wait_for( clk, 4_ms );
+                return res;
         }
 
         em::cfg::cache_res check_key_cache( uint32_t id ) override
@@ -182,11 +185,10 @@ struct update_iface : em::cfg::update_iface
 
 status i2c_eeprom::store_cfg( cfg::map const& m )
 {
-        em::static_vector< uint32_t, cfg::ids.size() > unseen_ids{ cfg::ids };
 
         update_iface lb{ m, i2c_, clk_, dev_addr, mem_size_, page_size_ };
         auto         res = em::cfg::update( mem_size_, page_size_, lb );
-        return res;
+        return res == em::cfg::status::SUCCESS ? SUCCESS : ERROR;
 }
 
 namespace
@@ -246,7 +248,7 @@ status i2c_eeprom::load_cfg( cfg::map& m )
         load_iface liface{ m, i2c_, dev_addr };
 
         auto r = em::cfg::load( mem_size_, page_size_, liface );
-        return r;
+        return r == em::cfg::status::SUCCESS ? SUCCESS : ERROR;
 }
 
 status i2c_eeprom::clear_cfg()

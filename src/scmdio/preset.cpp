@@ -6,7 +6,8 @@ namespace
 {
 nlohmann::json j_from_file( std::filesystem::path const& file )
 {
-        assert( std::filesystem::exists( file ) );
+        if ( !std::filesystem::exists( file ) )
+                throw std::runtime_error( "File not found: " + file.string() );
         std::ifstream ifs{ file };
         return nlohmann::json::parse( ifs );
 }

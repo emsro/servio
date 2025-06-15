@@ -14,9 +14,9 @@ enum class status_e
         ERROR   = 2,
 };
 
-struct [[nodiscard]] status : em::status< status, status_e, status_e::SUCCESS >
+struct [[nodiscard]] status : em::status< status, status_e >
 {
-        using base = em::status< status, status_e, status_e::SUCCESS >;
+        using base = em::status< status, status_e >;
         using enum status_e;
         using base::status;
 

@@ -42,13 +42,6 @@ inline void flush_port( boost::asio::serial_port& p )
                 spdlog::error( "Failed to flush serial buffer" );
 }
 
-inline std::filesystem::path const& check_path( std::filesystem::path const& p )
-{
-        if ( !std::filesystem::exists( p ) )
-                throw std::runtime_error( "Path " + p.string() + " does not exist" );
-        return p;
-}
-
 struct serial_stream : stream_iface
 {
         serial_stream( io_context& io_ctx, std::filesystem::path const& p, uint32_t baudrate )

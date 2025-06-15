@@ -19,5 +19,5 @@ else()
             paged_i2c_eeprom.cpp
             char_uart.cpp
     LIBS emlabcpp platform cmake_git_version_tracking vari
-    OPTS -Os)
+    OPTS -O0)
 endif()

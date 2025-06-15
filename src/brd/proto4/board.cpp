@@ -99,7 +99,7 @@ drv::quad_encoder  QUAD{ TIM3_HANDLE };
 TIM_HandleTypeDef* QUAD_TRIGGER_TIMER = nullptr;
 
 I2C_HandleTypeDef I2C2_HANDLE{};
-drv::i2c_eeprom   EEPROM{ CLOCK, 0x50, 65'535u, 2'000u, I2C2_HANDLE };
+drv::i2c_eeprom   EEPROM{ CLOCK, 0x50, 8'192u, 2'048u, I2C2_HANDLE };
 
 }  // namespace servio::brd
 
@@ -544,7 +544,8 @@ status setup_board()
 
 core::drivers setup_core_drivers()
 {
-        if ( EEPROM.load_cfg( CFG.map ) != SUCCESS )
+        drv::storage_iface* eeprom = eeprom_setup();
+        if ( eeprom && eeprom->load_cfg( CFG.map ) != SUCCESS )
                 fw::stop_exec();
 
         __HAL_RCC_TIM2_CLK_ENABLE();
@@ -580,7 +581,7 @@ core::drivers setup_core_drivers()
         return core::drivers{
             .cfg = &CFG,
             //.storage     = &FLASH_STORAGE,
-            .storage     = eeprom_setup(),
+            .storage     = eeprom,
             .clock       = &CLOCK,
             .position    = pos,
             .current     = adc_pooler == nullptr ? nullptr : &ADC_CURRENT,
