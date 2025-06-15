@@ -102,26 +102,37 @@ $(document).ready(function(){initNavTree('ftester_2base_8hpp_source.html',''); i
 <a href="ftester_2base_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;emlabcpp/experimental/multiplexer.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1ftester.html">servio::ftester</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span>em = emlabcpp;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">   10</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> em::protocol::channel_type <a class="code hl_variable" href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">rec_id</a> = 4;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}  <span class="comment">// namespace servio::ftester</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html">    6</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1ftester.html">servio::ftester</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>em = emlabcpp;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">   11</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> em::protocol::channel_type <a class="code hl_variable" href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">rec_id</a> = 4;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespaceservio_1_1ftester.html#abb3ad4b5b64b6499f9fb111f7418cb42">   13</a></span><span class="keyword">inline</span> std::filesystem::path <span class="keyword">const</span>&amp; <a class="code hl_function" href="namespaceservio_1_1ftester.html#abb3ad4b5b64b6499f9fb111f7418cb42">check_path</a>( std::filesystem::path <span class="keyword">const</span>&amp; p )</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span> ( !std::filesystem::exists( p ) )</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                <span class="keywordflow">throw</span> std::runtime_error( <span class="stringliteral">&quot;Path &quot;</span> + p.string() + <span class="stringliteral">&quot; does not exist&quot;</span> );</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">return</span> p;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
 </div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html"><div class="ttname"><a href="namespaceservio_1_1ftester.html">servio::ftester</a></div><div class="ttdef"><b>Definition</b> base.hpp:6</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html_a03d74ad4bf85bc6a23531431fd15514c"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">servio::ftester::rec_id</a></div><div class="ttdeci">static constexpr em::protocol::channel_type rec_id</div><div class="ttdef"><b>Definition</b> base.hpp:10</div></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}  <span class="comment">// namespace servio::ftester</span></div>
+</div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html"><div class="ttname"><a href="namespaceservio_1_1ftester.html">servio::ftester</a></div><div class="ttdef"><b>Definition</b> base.hpp:7</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_a03d74ad4bf85bc6a23531431fd15514c"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a03d74ad4bf85bc6a23531431fd15514c">servio::ftester::rec_id</a></div><div class="ttdeci">static constexpr em::protocol::channel_type rec_id</div><div class="ttdef"><b>Definition</b> base.hpp:11</div></div>
+<div class="ttc" id="anamespaceservio_1_1ftester_html_abb3ad4b5b64b6499f9fb111f7418cb42"><div class="ttname"><a href="namespaceservio_1_1ftester.html#abb3ad4b5b64b6499f9fb111f7418cb42">servio::ftester::check_path</a></div><div class="ttdeci">std::filesystem::path const &amp; check_path(std::filesystem::path const &amp;p)</div><div class="ttdef"><b>Definition</b> base.hpp:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="ftester_2base_8hpp.html">base.hpp</a></li>
-    <li class="footer">Generated on Fri Jun 13 2025 18:33:53 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Jun 15 2025 09:49:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

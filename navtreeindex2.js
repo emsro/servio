@@ -196,7 +196,8 @@ var NAVTREEINDEX2 =
 "ftest_2main_8cpp.html#a8ec39cabb30c6ae2b2fa939c57da30f8":[9,0,1,7,2,1],
 "ftest_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[9,0,1,7,2,0],
 "ftester_2base_8hpp.html":[9,0,1,8,0],
-"ftester_2base_8hpp.html#a03d74ad4bf85bc6a23531431fd15514c":[9,0,1,8,0,0],
+"ftester_2base_8hpp.html#a03d74ad4bf85bc6a23531431fd15514c":[9,0,1,8,0,1],
+"ftester_2base_8hpp.html#abb3ad4b5b64b6499f9fb111f7418cb42":[9,0,1,8,0,0],
 "ftester_2base_8hpp_source.html":[9,0,1,8,0],
 "ftester_2cli_8cpp.html":[9,0,1,8,1],
 "ftester_2cli_8cpp.html#ae5942d435f2a598719463c390a64dde5":[9,0,1,8,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "functions_func_w.html":[8,3,1,22],
 "functions_func_~.html":[8,3,1,23],
 "functions_g.html":[8,3,0,7],
-"functions_h.html":[8,3,0,8],
-"functions_i.html":[8,3,0,9]
+"functions_h.html":[8,3,0,8]
 };

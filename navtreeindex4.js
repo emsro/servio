@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"namespaceavakar.html#a0ac47952e24e79aeb41ab920766bde9d":[7,0,0,0],
 "namespaceboost.html":[7,0,1],
 "namespaceboost_1_1asio.html":[7,0,1,0],
 "namespacegen.html":[7,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "namespaceservio_1_1core.html#a060f4b65aed428b20c34ac5a1df68d00":[9,0,1,4,4,0,11],
 "namespaceservio_1_1core.html#a1f73c141b025ab1042f552c7085a6e6a":[9,0,1,4,4,0,10],
 "namespaceservio_1_1core.html#a22ae2baca758d55f044e3becfaab35d3":[9,0,1,4,4,0,1],
-"namespaceservio_1_1core.html#a255a1e1542ad84f0bd464b26259b8823":[9,0,1,4,4,0,9],
-"namespaceservio_1_1core.html#a31df351328f5dcd0f2f0710e5053978c":[9,0,1,4,4,0,2]
+"namespaceservio_1_1core.html#a255a1e1542ad84f0bd464b26259b8823":[9,0,1,4,4,0,9]
 };

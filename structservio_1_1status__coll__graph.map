@@ -1,5 +1,5 @@
 <map id="servio::status" name="servio::status">
-<area shape="rect" id="Node000001" title=" " alt="" coords="25,108,136,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,156,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,74,83,108,78,108,78,74"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="25,93,136,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,156,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,59,83,93,78,93,78,59"/>
 </map>

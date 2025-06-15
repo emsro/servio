@@ -1,5 +1,7 @@
 <map id="src/ftester/base.hpp" name="src/ftester/base.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="19,5,169,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="97,5,248,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,183,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,31,97,65,91,65,91,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,33,125,71,121,67,159,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="207,86,298,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,29,233,74,229,78,183,33"/>
 </map>

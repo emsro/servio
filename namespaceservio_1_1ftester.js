@@ -9,6 +9,7 @@ var namespaceservio_1_1ftester =
     [ "test_system", "structservio_1_1ftester_1_1test__system.html", "structservio_1_1ftester_1_1test__system" ],
     [ "opt", "namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee", null ],
     [ "sptr", "namespaceservio_1_1ftester.html#a8a630f7d7a8f7f10922563441a8566dc", null ],
+    [ "check_path", "namespaceservio_1_1ftester.html#abb3ad4b5b64b6499f9fb111f7418cb42", null ],
     [ "flash_commands", "namespaceservio_1_1ftester.html#ae5942d435f2a598719463c390a64dde5", null ],
     [ "flash_firmware_openocd", "namespaceservio_1_1ftester.html#a62b686ad2b66859c1accbb7678069d60", null ],
     [ "get_config", "namespaceservio_1_1ftester.html#abafc9ebaf605802ca7b02a5592cf7a7f", null ],
