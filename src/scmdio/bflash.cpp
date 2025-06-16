@@ -126,7 +126,7 @@ awaitable< uint16_t > get_id( stream_iface& port )
         co_return ( (int) vec[0] << 8 ) + (int) vec[1];
 }
 
-static constexpr std::size_t mem_step = 252;
+static constexpr std::size_t mem_step = 128;
 
 awaitable< void > read_memory( stream_iface& port, uint32_t addr, em::view< std::byte* > buff )
 {
@@ -158,6 +158,15 @@ write_memory( stream_iface& port, uint32_t addr, em::view< std::byte const* > bu
         auto size_b = static_cast< std::byte >( buff.size() - 1 );
         co_await port.write( size_b );
         co_await send( port, buff, size_b );
+        co_await wait_for_ack( port );
+}
+
+awaitable< void > full_erase( stream_iface& port )
+{
+        co_await cmd( port, EXTENDED_ERASE );
+
+        std::array< std::byte, 2 > data = { 0xFF_b, 0xFF_b };
+        co_await send( port, data );
         co_await wait_for_ack( port );
 }
 
@@ -201,24 +210,38 @@ awaitable< void > bflash_download( stream_iface& port, std::ostream& os )
         for ( uint32_t addr = ci->flash.min(); addr < ci->flash.max(); addr += mem_step ) {
                 std::size_t s = std::min( mem_step, (std::size_t) ci->flash.max() - addr );
                 std::vector< std::byte > tmp( s, 0x00_b );
+                if ( addr % ( mem_step * 8 ) == 0 )
+                        spdlog::info( "Reading from 0x{:08X}", addr );
                 co_await read_memory( port, addr, tmp );
                 os.write( (char*) tmp.data(), (long) tmp.size() );
         }
+        spdlog::info( "download done" );
 }
 
 awaitable< void > bflash_flash( stream_iface& port, std::istream& is )
 {
         co_await init_comm( port );
         chip_info const* ci = co_await get_chip_id( port );
+        co_await full_erase( port );
         for ( uint32_t addr = ci->flash.min(); addr < ci->flash.max(); addr += mem_step ) {
                 std::size_t s = std::min( mem_step, (std::size_t) ci->flash.max() - addr );
                 std::vector< std::byte > tmp( s, 0x00_b );
                 is.read( (char*) tmp.data(), (long) tmp.size() );
                 tmp.resize( (unsigned long) is.gcount() );
+                if ( addr % ( mem_step * 8 ) == 0 )
+                        spdlog::info( "Writing to 0x{:08X}", addr );
                 co_await write_memory( port, addr, tmp );
                 if ( !is )
                         break;
         }
+        spdlog::info( "flash done" );
+}
+
+awaitable< void > bflash_clear( stream_iface& port )
+{
+        co_await init_comm( port );
+        spdlog::info( "Clearing device" );
+        co_await full_erase( port );
 }
 
 }  // namespace servio::scmdio

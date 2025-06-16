@@ -273,6 +273,11 @@ void bflash_def( CLI::App& app, io_context& io_ctx )
                 std::ifstream f{ ctx->file };
                 co_await bflash_flash( *ss, f );
         } );
+
+        auto* clear = bflash->add_subcommand( "clear", "Clear the device" )->fallthrough();
+        port_callback( clear, []( sptr< serial_stream > ss ) -> awaitable< void > {
+                co_await bflash_clear( *ss );
+        } );
 }
 
 }  // namespace servio::scmdio
