@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"functions_g.html":[8,3,0,7],
+"functions_h.html":[8,3,0,8],
 "functions_i.html":[8,3,0,9],
 "functions_j.html":[8,3,0,10],
 "functions_k.html":[8,3,0,11],
@@ -15,8 +17,8 @@ var NAVTREEINDEX3 =
 "functions_type.html":[8,3,3],
 "functions_u.html":[8,3,0,21],
 "functions_v.html":[8,3,0,22],
-"functions_vars.html":[8,3,2],
 "functions_vars.html":[8,3,2,0],
+"functions_vars.html":[8,3,2],
 "functions_vars_a.html":[8,3,2,1],
 "functions_vars_b.html":[8,3,2,2],
 "functions_vars_c.html":[8,3,2,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "motor_8hpp_source.html":[9,0,1,17,0],
 "moves__test_8cpp.html":[9,0,1,0,3],
 "moves__test_8cpp.html#a390bb13008a780762d256e178ab8acca":[9,0,1,0,3,1],
-"moves__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[9,0,1,0,3,0],
-"moves__test_8cpp.html#a419ee5b44dab39f4b23a8503efa74383":[9,0,1,0,3,2],
-"namespaceavakar.html":[7,0,0]
+"moves__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[9,0,1,0,3,0]
 };

@@ -177,6 +177,8 @@ Functions</h2></td></tr>
 <tr class="separator:a36eda1aa96b09ceacda43b2dd5fc3db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac08d22061ab06f4d1fb7ce9d246977b1" id="r_ac08d22061ab06f4d1fb7ce9d246977b1"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ac08d22061ab06f4d1fb7ce9d246977b1">bflash_flash</a> (<a class="el" href="structservio_1_1scmdio_1_1stream__iface.html">stream_iface</a> &amp;port, std::istream &amp;is)</td></tr>
 <tr class="separator:ac08d22061ab06f4d1fb7ce9d246977b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c28531cac32f24f3bf91aa98106141" id="r_a10c28531cac32f24f3bf91aa98106141"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a10c28531cac32f24f3bf91aa98106141">bflash_clear</a> (<a class="el" href="structservio_1_1scmdio_1_1stream__iface.html">stream_iface</a> &amp;port)</td></tr>
+<tr class="separator:a10c28531cac32f24f3bf91aa98106141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac023aa739e41677ffd009b64bd229c1d" id="r_ac023aa739e41677ffd009b64bd229c1d"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::byte, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ac023aa739e41677ffd009b64bd229c1d">bflash_conv</a> (uint32_t x)</td></tr>
 <tr class="separator:ac023aa739e41677ffd009b64bd229c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36102a4552c6bf3e92b28956b1e78f9e" id="r_a36102a4552c6bf3e92b28956b1e78f9e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a36102a4552c6bf3e92b28956b1e78f9e">bflash_conv</a> (std::span&lt; std::byte const, 4 &gt; data)</td></tr>
@@ -735,6 +737,26 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a10c28531cac32f24f3bf91aa98106141" name="a10c28531cac32f24f3bf91aa98106141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c28531cac32f24f3bf91aa98106141">&#9670;&#160;</a></span>bflash_clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">awaitable&lt; void &gt; servio::scmdio::bflash_clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1scmdio_1_1stream__iface.html">stream_iface</a> &amp;&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a10c28531cac32f24f3bf91aa98106141">bflash_clear()</a>.</p>
+
+</div>
+</div>
 <a id="a36102a4552c6bf3e92b28956b1e78f9e" name="a36102a4552c6bf3e92b28956b1e78f9e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a36102a4552c6bf3e92b28956b1e78f9e">&#9670;&#160;</a></span>bflash_conv() <span class="overload">[1/2]</span></h2>
 
@@ -813,7 +835,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a36eda1aa96b09ceacda43b2dd5fc3db4">bflash_download()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#ac08d22061ab06f4d1fb7ce9d246977b1">bflash_flash()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#aadcd2580e5b34923ffe680f2b73dd7ca">bflash_info()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#acedc16b62c42d1234cff5edd94bafd79">port_callback()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#ae3a3dd4bf0754ea235ae81a1b52ce0c2">port_opts()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a10c28531cac32f24f3bf91aa98106141">bflash_clear()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a36eda1aa96b09ceacda43b2dd5fc3db4">bflash_download()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#ac08d22061ab06f4d1fb7ce9d246977b1">bflash_flash()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#aadcd2580e5b34923ffe680f2b73dd7ca">bflash_info()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#acedc16b62c42d1234cff5edd94bafd79">port_callback()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#ae3a3dd4bf0754ea235ae81a1b52ce0c2">port_opts()</a>.</p>
 
 </div>
 </div>
@@ -2560,7 +2582,7 @@ template&lt;typename T , typename F &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1scmdio.html">scmdio</a></li>
-    <li class="footer">Generated on Sun Jun 15 2025 09:49:31 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Jun 16 2025 14:45:35 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

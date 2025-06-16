@@ -30,6 +30,7 @@ var namespaceservio_1_1scmdio =
     [ "sptr", "namespaceservio_1_1scmdio.html#a662f29442a014cdbe007bc12f0d52fe8", null ],
     [ "autotune_def", "namespaceservio_1_1scmdio.html#a54ae7a5edcb3197b0f05c6c357ad8b94", null ],
     [ "baudrate_opt", "namespaceservio_1_1scmdio.html#a6286d1246b1168d8fa9bd1b651b3752e", null ],
+    [ "bflash_clear", "namespaceservio_1_1scmdio.html#a10c28531cac32f24f3bf91aa98106141", null ],
     [ "bflash_conv", "namespaceservio_1_1scmdio.html#a36102a4552c6bf3e92b28956b1e78f9e", null ],
     [ "bflash_conv", "namespaceservio_1_1scmdio.html#ac023aa739e41677ffd009b64bd229c1d", null ],
     [ "bflash_def", "namespaceservio_1_1scmdio.html#ae34166d08fd8a74b00c051f802a676e6", null ],
