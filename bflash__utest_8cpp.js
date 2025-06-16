@@ -7,6 +7,7 @@ var bflash__utest_8cpp =
     [ "TEST", "bflash__utest_8cpp.html#a81846b672743b2603712dd12fe1feb71", null ],
     [ "TEST", "bflash__utest_8cpp.html#a3537170a38e448c946a51d639e35ce9d", null ],
     [ "ACK", "bflash__utest_8cpp.html#a848cd90402a2f36d81869dc4fdbbaec0", null ],
+    [ "EXTENDED_ERASE", "bflash__utest_8cpp.html#addb5a10e165b61408e2b9901d21e22dd", null ],
     [ "GET", "bflash__utest_8cpp.html#a82f75a7b080fb09c3f172e1d3a24899d", null ],
     [ "GET_ID", "bflash__utest_8cpp.html#a2e3414b9823d240dc7aa618caaf824cd", null ],
     [ "INIT", "bflash__utest_8cpp.html#a4c839f956a7e0795b2f98fc209c91f85", null ],

@@ -92,6 +92,7 @@ var namespaceservio_1_1scmdio =
     [ "verbose_opt", "namespaceservio_1_1scmdio.html#a8aecdc1e34568340af05c8ef7b84c712", null ],
     [ "write", "namespaceservio_1_1scmdio.html#a541a193834ccc76608db019f895238e6", null ],
     [ "ACK", "namespaceservio_1_1scmdio.html#a848cd90402a2f36d81869dc4fdbbaec0", null ],
+    [ "EXTENDED_ERASE", "namespaceservio_1_1scmdio.html#addb5a10e165b61408e2b9901d21e22dd", null ],
     [ "GET", "namespaceservio_1_1scmdio.html#a82f75a7b080fb09c3f172e1d3a24899d", null ],
     [ "GET_ID", "namespaceservio_1_1scmdio.html#a2e3414b9823d240dc7aa618caaf824cd", null ],
     [ "INIT", "namespaceservio_1_1scmdio.html#a4c839f956a7e0795b2f98fc209c91f85", null ],

@@ -13,5 +13,6 @@ var searchData=
   ['er_5firq_5fpriority_10',['er_irq_priority',['../namespaceservio_1_1plt.html#a3971ff606bfc50cda5277b1c26a7cd16',1,'servio::plt::i2c_cfg']]],
   ['error_11',['ERROR',['../namespaceservio.html#a2bffda22b19bcf89ee87272318abfa40',1,'servio']]],
   ['ev_5firq_12',['ev_irq',['../namespaceservio_1_1plt.html#a179604cc2da4e956bcca6581da703d25',1,'servio::plt::i2c_cfg']]],
-  ['ev_5firq_5fpriority_13',['ev_irq_priority',['../namespaceservio_1_1plt.html#a4497f1c55e145fa95db4e05a96bd0145',1,'servio::plt::i2c_cfg']]]
+  ['ev_5firq_5fpriority_13',['ev_irq_priority',['../namespaceservio_1_1plt.html#a4497f1c55e145fa95db4e05a96bd0145',1,'servio::plt::i2c_cfg']]],
+  ['extended_5ferase_14',['EXTENDED_ERASE',['../namespaceservio_1_1scmdio.html#addb5a10e165b61408e2b9901d21e22dd',1,'servio::scmdio']]]
 ];

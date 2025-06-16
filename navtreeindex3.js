@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"functions_func_~.html":[8,3,1,23],
 "functions_g.html":[8,3,0,7],
 "functions_h.html":[8,3,0,8],
 "functions_i.html":[8,3,0,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "motor_8hpp.html#ab96084e1fc88946c6f8ff8e99946ce0a":[9,0,1,17,0,3],
 "motor_8hpp_source.html":[9,0,1,17,0],
 "moves__test_8cpp.html":[9,0,1,0,3],
-"moves__test_8cpp.html#a390bb13008a780762d256e178ab8acca":[9,0,1,0,3,1],
-"moves__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[9,0,1,0,3,0]
+"moves__test_8cpp.html#a390bb13008a780762d256e178ab8acca":[9,0,1,0,3,1]
 };

@@ -42,6 +42,7 @@ var searchData=
   ['exp_5fpow_39',['exp_pow',['../namespaceservio_1_1str__lib_1_1bits.html#add09febdf112368e58ff5088dc6f367b',1,'servio::str_lib::bits']]],
   ['expect_40',['expect',['../structservio_1_1ftest_1_1uctx.html#aa900f345307f9a52bdc5d4a135ab35e6',1,'servio::ftest::uctx']]],
   ['expr_41',['expr',['../structservio_1_1parser_1_1parser.html#aa970e125157a4ced22d1a608598a2636',1,'servio::parser::parser']]],
-  ['external_5fclock_5fvalue_42',['EXTERNAL_CLOCK_VALUE',['../stm32h5xx__hal__conf_8h.html#a8c47c935e91e70569098b41718558648',1,'stm32h5xx_hal_conf.h']]],
-  ['extra_2ecpp_43',['extra.cpp',['../extra_8cpp.html',1,'']]]
+  ['extended_5ferase_42',['EXTENDED_ERASE',['../namespaceservio_1_1scmdio.html#addb5a10e165b61408e2b9901d21e22dd',1,'servio::scmdio']]],
+  ['external_5fclock_5fvalue_43',['EXTERNAL_CLOCK_VALUE',['../stm32h5xx__hal__conf_8h.html#a8c47c935e91e70569098b41718558648',1,'stm32h5xx_hal_conf.h']]],
+  ['extra_2ecpp_44',['extra.cpp',['../extra_8cpp.html',1,'']]]
 ];
