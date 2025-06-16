@@ -97,13 +97,14 @@ private:
         owning_handle h_;
 };
 
-static constexpr std::byte ACK          = 0x79_b;
-static constexpr std::byte NACK         = 0x1F_b;
-static constexpr std::byte INIT         = 0x7F_b;
-static constexpr std::byte GET          = 0x00_b;
-static constexpr std::byte GET_ID       = 0x02_b;
-static constexpr std::byte READ_MEMORY  = 0x11_b;
-static constexpr std::byte WRITE_MEMORY = 0x31_b;
+static constexpr std::byte ACK            = 0x79_b;
+static constexpr std::byte NACK           = 0x1F_b;
+static constexpr std::byte INIT           = 0x7F_b;
+static constexpr std::byte GET            = 0x00_b;
+static constexpr std::byte GET_ID         = 0x02_b;
+static constexpr std::byte READ_MEMORY    = 0x11_b;
+static constexpr std::byte WRITE_MEMORY   = 0x31_b;
+static constexpr std::byte EXTENDED_ERASE = 0x44_b;
 
 struct stm32_bootloader_mock : stream_iface
 {
@@ -183,6 +184,15 @@ struct stm32_bootloader_mock : stream_iface
                                 buffer.emplace_back( ACK );
                                 reply_data( get_id_data() );
                                 break;
+                        case EXTENDED_ERASE: {
+                                buffer.emplace_back( ACK );
+                                auto data = co_await cons::get< 2 >{};
+                                // XXX: do something?
+                                std::ignore = data;
+                                co_await cons::get< 1 >{};
+                                buffer.emplace_back( ACK );
+                                break;
+                        }
                         case READ_MEMORY: {
                                 buffer.emplace_back( ACK );
                                 auto     data = co_await cons::get< 4 >{};
