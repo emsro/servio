@@ -1,5 +1,7 @@
 #include "./preset.hpp"
 
+#include <spdlog/spdlog.h>
+
 namespace servio::scmdio
 {
 namespace
@@ -38,14 +40,18 @@ preset_def load_preset( std::filesystem::path const& folder )
 {
         raw_preset_def raw = load_raw_preset( folder );
 
-        preset_def res;
-
-        return {
+        preset_def res{
             .name     = folder.filename().string(),
             .board    = raw.meta.at( "board" ),
             .platform = raw.meta.at( "platform" ),
             .config   = std::move( raw.config ),
         };
+
+        spdlog::info( "preset: {}", res.name );
+        spdlog::info( "board: {}", res.board );
+        spdlog::info( "preset config: {}", res.config.dump() );
+
+        return res;
 }
 
 }  // namespace servio::scmdio
