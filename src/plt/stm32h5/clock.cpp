@@ -64,9 +64,6 @@ status setup_clk()
         if ( HAL_RCCEx_PeriphCLKConfig( &PeriphClkInit ) != HAL_OK )
                 return ERROR;
 
-        TEMP_CALIB_COEFFS.cal1 = *TEMPSENSOR_CAL1_ADDR;
-        TEMP_CALIB_COEFFS.cal2 = *TEMPSENSOR_CAL2_ADDR;
-
         return SUCCESS;
 }
 

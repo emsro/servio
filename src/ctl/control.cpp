@@ -78,6 +78,8 @@ void control::switch_to_power_control( pwr power )
 
 void control::switch_to_current_control( microseconds, float current )
 {
+        if ( state_ != control_mode::CURRENT )
+                current_pid_.i_sum = 0;
         state_        = control_mode::CURRENT;
         current_goal_ = clamp( current, current_lims_.config_lims );
 }

@@ -76,14 +76,6 @@ struct i2c_cfg
         drv::pin_cfg sda;
 };
 
-struct temp_calib_coeffs
-{
-        float cal1;
-        float cal2;
-};
-
-extern temp_calib_coeffs TEMP_CALIB_COEFFS;
-
 cfg::map get_default_config();
 
 status setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );

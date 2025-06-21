@@ -20,6 +20,7 @@ void setup_tests(
             mem,
             reac,
             ctx,
+            cdrv.cfg->map,
             *cdrv.clock,
             *cdrv.comms,
             *cdrv.period,

@@ -1,5 +1,5 @@
 servio_add_library(
   TARGET ftestlib
-  SOURCES main.cpp rewind.cpp
+  SOURCES main.cpp
   LIBS fwlib platform
   OPTS -Og)

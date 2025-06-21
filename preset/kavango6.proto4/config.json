@@ -1,4 +1,16 @@
 {
     "model": "kavango6",
-    "encoder_mode": "analog"
+    "encoder_mode": "analog",
+    "current_loop_p": 2.0,
+    "current_loop_i": 0.000006,
+    "current_loop_d": 0.0,
+    "current_lim_min": -0.4,
+    "current_lim_max": 0.4,
+    "position_loop_p": 0.2,
+    "position_loop_i": 0.00000002,
+    "position_loop_d": 0.0,
+    "velocity_loop_p": 0.1,
+    "velocity_loop_i": 0.00000007,
+    "velocity_loop_d": 0.0,
+    "invert_hbridge": true
 }

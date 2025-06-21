@@ -43,8 +43,6 @@ constexpr std::byte operator""_b( unsigned long long int b )
 
 }  // namespace literals
 
-using namespace literals;
-
 using sec_time = std::chrono::duration< float >;
 
 template < typename T >
@@ -85,6 +83,8 @@ struct pwr : em::quantity< pwr, float >
 static constexpr pwr p_max = pwr{ 1.0 };
 static constexpr pwr p_low = pwr{ -1.0 };
 
+namespace literals
+{
 constexpr pwr operator""_pwr( unsigned long long int x )
 {
         return pwr{ x };
@@ -94,4 +94,8 @@ constexpr pwr operator""_pwr( long double x )
 {
         return pwr{ x };
 }
+}  // namespace literals
+
+using namespace literals;
+
 }  // namespace servio

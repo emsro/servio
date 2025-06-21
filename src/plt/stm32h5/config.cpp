@@ -31,12 +31,10 @@ namespace servio::plt
 //
 //
 
-temp_calib_coeffs TEMP_CALIB_COEFFS;
-
 cfg::off_scale calculate_temp_conversion()
 {
-        auto const cal1 = TEMP_CALIB_COEFFS.cal1;
-        auto const cal2 = TEMP_CALIB_COEFFS.cal2;
+        auto cal1 = *TEMPSENSOR_CAL1_ADDR;
+        auto cal2 = *TEMPSENSOR_CAL2_ADDR;
 
         float const scale =
             static_cast< float >( TEMPSENSOR_CAL2_TEMP - TEMPSENSOR_CAL1_TEMP ) / ( cal2 - cal1 );

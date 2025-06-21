@@ -63,7 +63,7 @@ struct sign_test
         t::coroutine< void > run( auto&, uctx& ctx )
         {
                 em::defer d = setup_poweroff( cor.ctl );
-                rewind( cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.5f );
+                rewind( cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.5f, [] {} );
 
                 t::node_id did =
                     co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
