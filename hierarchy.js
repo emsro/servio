@@ -234,7 +234,6 @@ var hierarchy =
       [ "servio::scmdio::serial_stream", "structservio_1_1scmdio_1_1serial__stream.html", null ],
       [ "servio::scmdio::stm32_bootloader_mock", "structservio_1_1scmdio_1_1stm32__bootloader__mock.html", null ]
     ] ],
-    [ "servio::plt::temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", null ],
     [ "servio::drv::temp_iface", "structservio_1_1drv_1_1temp__iface.html", [
       [ "servio::drv::adc_pooler_temperature< AdcPooler >", "structservio_1_1drv_1_1adc__pooler__temperature.html", null ],
       [ "servio::drv::dts_temp", "classservio_1_1drv_1_1dts__temp.html", null ],

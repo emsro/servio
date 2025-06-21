@@ -52,10 +52,6 @@ var plt_2stm32h5_2setup_8hpp =
       [ "scl", "namespaceservio_1_1plt.html#ad861cf75604c8035ae6fc326c136bae0", null ],
       [ "sda", "namespaceservio_1_1plt.html#a35fa78ce521231b6d4f451d48a676bd9", null ]
     ] ],
-    [ "servio::plt::temp_calib_coeffs", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1temp__calib__coeffs", [
-      [ "cal1", "namespaceservio_1_1plt.html#a59425b83be9afe0d27b552f409f4c7cf", null ],
-      [ "cal2", "namespaceservio_1_1plt.html#a73088cdd7b6754164af4b062382dc239", null ]
-    ] ],
     [ "get_default_config", "plt_2stm32h5_2setup_8hpp.html#a54207fdd13b8536cfecc8079e969056b", null ],
     [ "setup_adc", "plt_2stm32h5_2setup_8hpp.html#a6b386aa81248da18c0dc5f61e42a4ec7", null ],
     [ "setup_adc_channel", "plt_2stm32h5_2setup_8hpp.html#ac9aa102dc4b651ab6503b4aa6ca604f4", null ],

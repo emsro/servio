@@ -11,5 +11,5 @@ var interface__tests_8hpp =
     [ "servio::drv::tests::curr_iface_test", "structservio_1_1drv_1_1tests_1_1curr__iface__test.html", "structservio_1_1drv_1_1tests_1_1curr__iface__test" ],
     [ "servio::drv::tests::storage_iface_test", "structservio_1_1drv_1_1tests_1_1storage__iface__test.html", "structservio_1_1drv_1_1tests_1_1storage__iface__test" ],
     [ "hold", "interface__tests_8hpp.html#a510bb7381ec9be3c36a77e8794a75201", null ],
-    [ "setup_iface_tests", "interface__tests_8hpp.html#a53f87f571493c4c3170605626ad97f11", null ]
+    [ "setup_iface_tests", "interface__tests_8hpp.html#a689c6030b8d212eec16fcc04f8776e92", null ]
 ];

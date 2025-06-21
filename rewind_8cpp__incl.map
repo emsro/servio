@@ -1,9 +1,0 @@
-<map id="src/ftest/rewind.cpp" name="src/ftest/rewind.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="69,5,219,31"/>
-<area shape="rect" id="Node000002" href="$rewind_8hpp.html" title=" " alt="" coords="93,79,195,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,31,147,65,141,65,141,31"/>
-<area shape="rect" id="Node000003" href="$core_8hpp.html" title=" " alt="" coords="5,152,128,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="133,106,91,144,88,141,130,102"/>
-<area shape="rect" id="Node000041" href="$drivers_8hpp.html" title=" " alt="" coords="152,152,291,177"/>
-<area shape="poly" id="edge3_Node000002_Node000041" title=" " alt="" coords="158,102,200,141,197,144,155,106"/>
-</map>

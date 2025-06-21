@@ -16,6 +16,8 @@ var namespaceservio =
     [ "literals", "namespaceservio_1_1literals.html", [
       [ "operator\"\"_b", "namespaceservio_1_1literals.html#a62e86ab080363c9801b3d11413cb755c", null ],
       [ "operator\"\"_ms", "namespaceservio_1_1literals.html#af7fb1870e027a6f6576164c72d18bc73", null ],
+      [ "operator\"\"_pwr", "namespaceservio_1_1literals.html#adb414b5974d857698f687cfad6c71993", null ],
+      [ "operator\"\"_pwr", "namespaceservio_1_1literals.html#aa1dc9b44ed11abf89c730b678e925874", null ],
       [ "operator\"\"_s", "namespaceservio_1_1literals.html#a9cc4a2727af86eed775de91ae7e0ac23", null ],
       [ "operator\"\"_us", "namespaceservio_1_1literals.html#add4105476cecfe3e11bbbde64b4e7922", null ]
     ] ],
@@ -69,8 +71,6 @@ var namespaceservio =
       [ "ERROR", "namespaceservio.html#adca103027c4779db2eda865cdee69f7dabb1ca97ec761fc37101737ba0aa2e7c5", null ]
     ] ],
     [ "atom_visit", "namespaceservio.html#a90f0ccffc322269a6008e79d5b69ae9f", null ],
-    [ "operator\"\"_pwr", "namespaceservio.html#a3cbe32a0d33853a8e061ea4df443760e", null ],
-    [ "operator\"\"_pwr", "namespaceservio.html#a546e51ff861bb4e2219e0b99efd5184f", null ],
     [ "page_at", "namespaceservio.html#a7f26120992786718c3b52d10b3c48f89", null ],
     [ "ERROR", "namespaceservio.html#a2bffda22b19bcf89ee87272318abfa40", null ],
     [ "FAILURE", "namespaceservio.html#a47a5b9d9754c9bec77aa054df2a928f9", null ],
