@@ -1,5 +1,7 @@
 <map id="servio::drv::detailed_cb&lt; Callable &gt;" name="servio::drv::detailed_cb&lt; Callable &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,156,133"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="73,108,224,148"/>
 <area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1detailed__cb__iface.html" title=" " alt="" coords="5,5,156,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,59,83,93,78,93,78,59"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,55,138,106,134,109,99,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="181,13,255,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,51,164,109,160,106,200,48"/>
 </map>

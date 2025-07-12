@@ -3,6 +3,8 @@ var structservio_1_1cfg_1_1map =
     [ "ref_by_id", "structservio_1_1cfg_1_1map.html#a1fb3e184cb7cf91e54881e164072d3ee", null ],
     [ "ref_by_id", "structservio_1_1cfg_1_1map.html#a418e9e2e1b3989d26cb30d327ca9c637", null ],
     [ "ref_by_key", "structservio_1_1cfg_1_1map.html#a979177bb51f69023b3dca9a1560ffda5", null ],
+    [ "ref_by_key", "structservio_1_1cfg_1_1map.html#a0463ac9fa9fd1c8e31c6c6e38fa7ebc4", null ],
+    [ "ref_by_key", "structservio_1_1cfg_1_1map.html#adffa5054fadb598da7bee8c2a50124ef", null ],
     [ "current_conv_offset", "structservio_1_1cfg_1_1map.html#a317e44cedea66aed112237adf946a020", null ],
     [ "current_conv_scale", "structservio_1_1cfg_1_1map.html#a30aeb772b3297405349c9c8f39a83ffd", null ],
     [ "current_lim_max", "structservio_1_1cfg_1_1map.html#a9d75bea9ba5b97d967353808bb2245d8", null ],

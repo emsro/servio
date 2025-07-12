@@ -1,5 +1,110 @@
 var cfg_2def_8hpp =
 [
+    [ "servio::cfg::key_trait< key::model >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1model_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a2b08a6e3efbf2c18299874b656a0f7a6", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::id >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1id_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a068f9458d173a888c80618a27c922b77", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::group_id >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1group__id_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#add50dd121470b669a8dca5537607c825", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::encoder_mode >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1encoder__mode_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a2bea05ac4be4c98012fb17e7c916cf9a", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::position_low_angle >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__low__angle_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#aa26c6b19b8875186ad04436a48ecc429", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::position_high_angle >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__high__angle_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a33f4d1f9bc5657ae4c2c9a4c762e7a8c", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::current_conv_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__conv__scale_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#af47fb4019da79e0d1ab78aa2fb6599a6", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::current_conv_offset >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__conv__offset_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a39d43ab36075f218b6a7822156f67273", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::temp_conv_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1temp__conv__scale_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#ac8f5435c9fa3c13484cc024555065971", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::temp_conv_offset >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1temp__conv__offset_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a61867bf070989fe2425d36885eb9dec0", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::voltage_conv_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1voltage__conv__scale_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#afcfcd8a4a45bdb8ae5419b5032b4420d", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::invert_hbridge >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1invert__hbridge_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#ab0dc68e03a8dcb4c857e0e2eb58b122a", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::current_loop_p >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__loop__p_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a765e094b88cdb310c17fce597cc45d9c", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::current_loop_i >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__loop__i_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#aaea2543e74e8301e71dc907b60349b61", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::current_loop_d >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__loop__d_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a87d3508ae06ded749df19160b52b4ec5", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::current_lim_min >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__lim__min_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a4f8cc6b41bb070e1ea21fa13fdfac0b7", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::current_lim_max >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__lim__max_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a199cbb816900bdd2e98a462823911dfc", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::velocity_loop_p >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__loop__p_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a5cdd487173da0ebab3df53f9601ec9bd", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::velocity_loop_i >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__loop__i_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a2e097fd5116828e20a4959d462aa2300", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::velocity_loop_d >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__loop__d_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a231899821048d2d8ae9973eebd50777e", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::velocity_lim_min >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__lim__min_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a377de53669d4a0b009880d5bbfb857e0", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::velocity_lim_max >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__lim__max_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#af3393709c56bd98e5ecfbe1c96bae588", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::velocity_to_current_lim_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__to__current__lim__scale_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a693619adfc7093748d94188951374cb7", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::position_loop_p >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__loop__p_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#ab82a8ef9a11baeabd8b0d1896a98de0f", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::position_loop_i >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__loop__i_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a9891c47cc7007b7dd00be57a6c719c85", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::position_loop_d >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__loop__d_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a7a917d5194e3f7af2bd57af84565cf34", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::position_lim_min >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__lim__min_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a47fd422845d237bba31ff6abbf8362e4", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::position_lim_max >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__lim__max_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a288d076fe4a404b9ba9f3be6c62cdde7", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::position_to_velocity_lim_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__to__velocity__lim__scale_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a17b934612daafaaf35ead08cb8fb4f0c", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::static_friction_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1static__friction__scale_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a50183dfff055de85a30c5f23549a0318", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::static_friction_decay >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1static__friction__decay_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a298510c0a28d413ea6adfc3449fa7d40", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::minimum_voltage >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1minimum__voltage_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a75b2c726df0d6bed53466456a1d2cf79", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::maximum_temperature >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1maximum__temperature_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a15316aae68b8a403c4906d29634b8256", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::moving_detection_step >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1moving__detection__step_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#ac3666d97ffe801e70e9231ce6261b2f1", null ]
+    ] ],
+    [ "servio::cfg::key_trait< key::quad_encoder_range >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1quad__encoder__range_01_4", [
+      [ "type", "namespaceservio_1_1cfg.html#a3adee557f0a113443bcbfd5c72270698", null ]
+    ] ],
     [ "servio::cfg::map", "structservio_1_1cfg_1_1map.html", "structservio_1_1cfg_1_1map" ],
     [ "servio::cfg::context", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context", [
       [ "map", "namespaceservio_1_1cfg.html#a3dbb7cf8f857ae3e9ab69908e1674f69", null ]
@@ -51,9 +156,9 @@ var cfg_2def_8hpp =
     [ "encoder_mode_to_str", "cfg_2def_8hpp.html#ac80d4a995f39ca9ccba86cf314ae22e5", null ],
     [ "id_to_key", "cfg_2def_8hpp.html#a1e1087069c21f5e087e55da1f2a9f95e", null ],
     [ "key_to_id", "cfg_2def_8hpp.html#ad3a87c381f3fd90e336373a20951af56", null ],
-    [ "key_to_str", "cfg_2def_8hpp.html#ad27b6513845d7e691073c821d7b96eb9", null ],
     [ "str_to_encoder_mode", "cfg_2def_8hpp.html#a6eb8fc3fad9e683169acc64a7148a604", null ],
     [ "str_to_key", "cfg_2def_8hpp.html#aa980c6ba0ebb5762dfd1780c78e1fabe", null ],
+    [ "to_str", "cfg_2def_8hpp.html#ab92ef77e7efafe1116ada6bda301b5b1", null ],
     [ "ids", "cfg_2def_8hpp.html#a9a7b5b8858fd0b5aa713c341ba3d2877", null ],
     [ "keys", "cfg_2def_8hpp.html#aacd5b64d1f9f88f8f96968dda51a22e1", null ]
 ];

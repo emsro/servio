@@ -16,9 +16,10 @@ var searchData=
   ['adder_13',['adder',['../structservio_1_1str__lib_1_1bits_1_1adder.html',1,'servio::str_lib::bits']]],
   ['adl_5fserializer_3c_20avakar_3a_3aatom_3c_20ts_2e_2e_2e_20_3e_20_3e_14',['adl_serializer&lt; avakar::atom&lt; Ts... &gt; &gt;',['../structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html',1,'nlohmann']]],
   ['adl_5fserializer_3c_20vari_3a_3a_5fvval_3c_20ts_2e_2e_2e_20_3e_20_3e_15',['adl_serializer&lt; vari::_vval&lt; Ts... &gt; &gt;',['../structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html',1,'nlohmann']]],
-  ['array_5fser_16',['array_ser',['../structservio_1_1json_1_1array__ser.html',1,'servio::json']]],
-  ['atom_5fsv_5fkey_17',['atom_sv_key',['../structservio_1_1atom__sv__key.html',1,'servio']]],
-  ['attrs_18',['attrs',['../structservio_1_1scmdio_1_1port__mock.html#structservio_1_1scmdio_1_1port__mock_1_1attrs',1,'servio::scmdio::port_mock']]],
-  ['autotune_5fctx_19',['autotune_ctx',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx',1,'servio::scmdio']]],
-  ['avg_5ffilter_20',['avg_filter',['../structservio_1_1core_1_1avg__filter.html',1,'servio::core']]]
+  ['arg_5fdef_16',['arg_def',['../namespaceservio_1_1iface.html#structservio_1_1iface_1_1arg__def',1,'servio::iface']]],
+  ['array_5fser_17',['array_ser',['../structservio_1_1json_1_1array__ser.html',1,'servio::json']]],
+  ['atom_5fsv_5fkey_18',['atom_sv_key',['../structservio_1_1atom__sv__key.html',1,'servio']]],
+  ['attrs_19',['attrs',['../structservio_1_1scmdio_1_1port__mock.html#structservio_1_1scmdio_1_1port__mock_1_1attrs',1,'servio::scmdio::port_mock']]],
+  ['autotune_5fctx_20',['autotune_ctx',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx',1,'servio::scmdio']]],
+  ['avg_5ffilter_21',['avg_filter',['../structservio_1_1core_1_1avg__filter.html',1,'servio::core']]]
 ];

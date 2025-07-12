@@ -29,12 +29,7 @@ var namespaceservio =
     [ "sim", "namespaceservio_1_1sim.html", "namespaceservio_1_1sim" ],
     [ "sntr", "namespaceservio_1_1sntr.html", "namespaceservio_1_1sntr" ],
     [ "str_lib", "namespaceservio_1_1str__lib.html", "namespaceservio_1_1str__lib" ],
-    [ "tests", "namespaceservio_1_1tests.html", [
-      [ "diff", "namespaceservio_1_1tests.html#ad9a6789b9d11178a421bdd85692bb8d1", null ],
-      [ "get_cfg_ids", "namespaceservio_1_1tests.html#a29f50f665178a07021adb5188b408a06", null ],
-      [ "get_iface_ids", "namespaceservio_1_1tests.html#aefe500b551ec67be6b9fddd7ebac42b3", null ],
-      [ "TEST", "namespaceservio_1_1tests.html#ab13f735a06bbd448c82d5b45d20b76c3", null ]
-    ] ],
+    [ "tests", "namespaceservio_1_1tests.html", null ],
     [ "_type_tag", "structservio_1_1__type__tag.html", "structservio_1_1__type__tag" ],
     [ "_type_tag_core", "structservio_1_1__type__tag__core.html", "structservio_1_1__type__tag__core" ],
     [ "_type_tag_core< vari::typelist< T > >", "structservio_1_1__type__tag__core_3_01vari_1_1typelist_3_01T_01_4_01_4.html", "structservio_1_1__type__tag__core_3_01vari_1_1typelist_3_01T_01_4_01_4" ],

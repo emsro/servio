@@ -5,7 +5,7 @@ var searchData=
   ['sentry_5futest_2ecpp_2',['sentry_utest.cpp',['../sentry__utest_8cpp.html',1,'']]],
   ['serial_2ecpp_3',['serial.cpp',['../serial_8cpp.html',1,'']]],
   ['serial_2ehpp_4',['serial.hpp',['../serial_8hpp.html',1,'']]],
-  ['setup_2ehpp_5',['setup.hpp',['../plt_2stm32h5_2setup_8hpp.html',1,'(Global Namespace)'],['../cnv_2setup_8hpp.html',1,'(Global Namespace)']]],
+  ['setup_2ehpp_5',['setup.hpp',['../cnv_2setup_8hpp.html',1,'(Global Namespace)'],['../plt_2stm32h5_2setup_8hpp.html',1,'(Global Namespace)']]],
   ['setup_5ftests_2ehpp_6',['setup_tests.hpp',['../setup__tests_8hpp.html',1,'']]],
   ['simulate_2ecpp_7',['simulate.cpp',['../simulate_8cpp.html',1,'']]],
   ['simulate_2ehpp_8',['simulate.hpp',['../simulate_8hpp.html',1,'']]],

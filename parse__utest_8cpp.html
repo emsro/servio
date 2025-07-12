@@ -98,16 +98,16 @@ $(document).ready(function(){initNavTree('parse__utest_8cpp.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="iface_2def_8hpp_source.html">../def.hpp</a>&quot;</code><br />
-<code>#include &lt;emlabcpp/algorithm.h&gt;</code><br />
-<code>#include &lt;format&gt;</code><br />
 <code>#include &lt;gtest/gtest.h&gt;</code><br />
-<code>#include &lt;source_location&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;vari/vopt.h&gt;</code><br />
+<code>#include &lt;vari/vval.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for parse_utest.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="parse__utest_8cpp__incl.svg" width="803" height="359"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="parse__utest_8cpp__incl.svg" width="584" height="359"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -119,16 +119,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5d4a63423015f5ee1bdfcbc62aebe2a6" id="r_a5d4a63423015f5ee1bdfcbc62aebe2a6"><td class="memTemplParams" colspan="2">template&lt;auto A&gt; </td></tr>
-<tr class="memitem:a5d4a63423015f5ee1bdfcbc62aebe2a6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#a5d4a63423015f5ee1bdfcbc62aebe2a6">servio::iface::kv</a> (auto x)</td></tr>
-<tr class="separator:a5d4a63423015f5ee1bdfcbc62aebe2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ad3871132620b0aae30e2821db477d0" id="r_a9ad3871132620b0aae30e2821db477d0"><td class="memTemplParams" colspan="2">template&lt;auto A&gt; </td></tr>
-<tr class="memitem:a9ad3871132620b0aae30e2821db477d0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#a9ad3871132620b0aae30e2821db477d0">servio::iface::kv</a> ()</td></tr>
-<tr class="separator:a9ad3871132620b0aae30e2821db477d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6ca13fc37760e880ae7679695c73de7" id="r_aa6ca13fc37760e880ae7679695c73de7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#aa6ca13fc37760e880ae7679695c73de7">servio::iface::TEST</a> (iface, valid_parse)</td></tr>
-<tr class="separator:aa6ca13fc37760e880ae7679695c73de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a263b7e837e94bfc151c5c33d8e6c4ab9" id="r_a263b7e837e94bfc151c5c33d8e6c4ab9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#a263b7e837e94bfc151c5c33d8e6c4ab9">servio::iface::TEST</a> (iface, invalid_parse)</td></tr>
-<tr class="separator:a263b7e837e94bfc151c5c33d8e6c4ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90bd124bddf7bc4eb89321a7c18d2f01" id="r_a90bd124bddf7bc4eb89321a7c18d2f01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#a90bd124bddf7bc4eb89321a7c18d2f01">servio::iface::TEST</a> (IfaceParse, ValidParse)</td></tr>
+<tr class="separator:a90bd124bddf7bc4eb89321a7c18d2f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b8488baa2b260757cae97d5e01735fe" id="r_a3b8488baa2b260757cae97d5e01735fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#a3b8488baa2b260757cae97d5e01735fe">servio::iface::TEST</a> (IfaceParse, InvalidParse)</td></tr>
+<tr class="separator:a3b8488baa2b260757cae97d5e01735fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -136,7 +130,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_87dbd44838687e059bb6b206e0e79295.html">iface</a></li><li class="navelem"><a class="el" href="dir_dee90caf0b13032181456b741da49af6.html">tests</a></li><li class="navelem"><a class="el" href="parse__utest_8cpp.html">parse_utest.cpp</a></li>
-    <li class="footer">Generated on Sat Jun 21 2025 20:31:04 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Jul 12 2025 19:15:54 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

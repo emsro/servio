@@ -33,8 +33,7 @@ var scmdio_2main_8cpp =
     [ "json_flag", "scmdio_2main_8cpp.html#a9d0341f90de176f1fb8528b9d21bbf61", null ],
     [ "main", "scmdio_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
     [ "mode_def", "scmdio_2main_8cpp.html#ae25251a99c0a6e96b85027cca28a0cc8", null ],
-    [ "pool_cmd", "scmdio_2main_8cpp.html#a635d507f259f623502798926fcb4b2e3", null ],
-    [ "pool_cmd", "scmdio_2main_8cpp.html#ae37a4ac5d155ff3f5fd128a868875f2d", null ],
+    [ "pool_cmd", "scmdio_2main_8cpp.html#afeb5779e6c4f22edcae47554ad81c92f", null ],
     [ "pool_def", "scmdio_2main_8cpp.html#aa895c4d04b8c0c7d854041c055f68740", null ],
     [ "port_callback", "scmdio_2main_8cpp.html#acedc16b62c42d1234cff5edd94bafd79", null ]
 ];

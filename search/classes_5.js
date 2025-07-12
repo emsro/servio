@@ -5,5 +5,6 @@ var searchData=
   ['empty_5fvalue_5fcb_2',['empty_value_cb',['../structservio_1_1drv_1_1empty__value__cb.html',1,'servio::drv']]],
   ['end_3',['end',['../namespaceservio_1_1parser.html#structservio_1_1parser_1_1end',1,'servio::parser']]],
   ['err_4',['err',['../namespaceservio_1_1parser.html#structservio_1_1parser_1_1err',1,'servio::parser']]],
-  ['error_5fstatus_5',['error_status',['../structservio_1_1error__status.html',1,'servio']]]
+  ['error_5fstatus_5',['error_status',['../structservio_1_1error__status.html',1,'servio']]],
+  ['expr_5ftok_6',['expr_tok',['../structservio_1_1parser_1_1expr__tok.html',1,'servio::parser']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['s_0',['s',['../namespaceservio_1_1parser.html#ab3b58e3c9fd5d98d052c459918106189',1,'servio::parser::str::s'],['../namespaceservio_1_1parser.html#ad8a60aa49caedc6a77fa1246126ff7c4',1,'servio::parser::id::s']]],
-  ['scale_1',['scale',['../structservio_1_1cnv_1_1linear__converter.html#a0150bfaf4610d45d2bf84ae88224970a',1,'servio::cnv::linear_converter::scale'],['../namespaceservio_1_1cnv.html#a7c89f761e78402c1f465f3e9028c7c48',1,'servio::cnv::off_scale::scale'],['../namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358',1,'servio::scmdio::line::scale'],['../namespaceservio_1_1cfg.html#a1e64cea163bc7cfbed23383830b2268e',1,'servio::cfg::off_scale::scale']]],
+  ['s_0',['s',['../namespaceservio_1_1parser.html#a261654f8652586d4a86e08563956f996',1,'servio::parser::id_t']]],
+  ['scale_1',['scale',['../namespaceservio_1_1cfg.html#a1e64cea163bc7cfbed23383830b2268e',1,'servio::cfg::off_scale::scale'],['../namespaceservio_1_1scmdio.html#ae5f25ecedaee17ceb968eb911b257358',1,'servio::scmdio::line::scale'],['../structservio_1_1cnv_1_1linear__converter.html#a0150bfaf4610d45d2bf84ae88224970a',1,'servio::cnv::linear_converter::scale'],['../namespaceservio_1_1cnv.html#a7c89f761e78402c1f465f3e9028c7c48',1,'servio::cnv::off_scale::scale']]],
   ['scbs_2',['scbs',['../structservio_1_1fw_1_1context.html#a8a34001a27ad2d35fec01407df424ffc',1,'servio::fw::context']]],
   ['scl_3',['scl',['../namespaceservio_1_1plt.html#ad861cf75604c8035ae6fc326c136bae0',1,'servio::plt::i2c_cfg']]],
   ['sda_4',['sda',['../namespaceservio_1_1plt.html#a35fa78ce521231b6d4f451d48a676bd9',1,'servio::plt::i2c_cfg']]],
@@ -10,10 +10,10 @@ var searchData=
   ['size_7',['size',['../namespaceservio_1_1klmn.html#a6012e20714154f03136eb5812a2abef2',1,'servio::klmn::state_range']]],
   ['sizes_8',['sizes',['../structservio_1_1drv_1_1bits_1_1rx__buffer.html#ab87f2b63db801a6a2641e54893e46577',1,'servio::drv::bits::rx_buffer']]],
   ['src_9',['src',['../namespaceservio_1_1sntr.html#aeb51cca5a317d316e17dbe689a713910',1,'servio::sntr::record']]],
-  ['st_10',['st',['../namespaceservio_1_1sntr.html#ab2bae1b01c0a067f1bb5eed8f6b6f38c',1,'servio::sntr::record']]],
+  ['st_10',['st',['../namespaceservio_1_1iface.html#a3a86058e939b1809966faa0cb5238b72',1,'servio::iface::invalid_stmt::st'],['../namespaceservio_1_1iface.html#a923a9436b322ebae14c458f06d0db499',1,'servio::iface::arg_def::st'],['../namespaceservio_1_1sntr.html#ab2bae1b01c0a067f1bb5eed8f6b6f38c',1,'servio::sntr::record::st']]],
   ['st_5frange_11',['st_range',['../structservio_1_1mtr_1_1posvel__kalman.html#a16bbaa07f34c05010375ecc1b35a4a04',1,'servio::mtr::posvel_kalman']]],
   ['start_5fcb_12',['start_cb',['../structservio_1_1core_1_1drivers.html#a8cc3ac64667269991eac2f401fadba19',1,'servio::core::drivers']]],
-  ['state_13',['state',['../structservio_1_1ctl_1_1linear__transition__regulator.html#aecb19b527ceb961ed007cbbd7ed5aca0',1,'servio::ctl::linear_transition_regulator::state'],['../structservio_1_1mon_1_1blinker.html#a49be452f68e339b5f6b490600efd3b07',1,'servio::mon::blinker::state']]],
+  ['state_13',['state',['../structservio_1_1mon_1_1blinker.html#a49be452f68e339b5f6b490600efd3b07',1,'servio::mon::blinker::state'],['../structservio_1_1ctl_1_1linear__transition__regulator.html#aecb19b527ceb961ed007cbbd7ed5aca0',1,'servio::ctl::linear_transition_regulator::state']]],
   ['static_5ffriction_5fdecay_14',['static_friction_decay',['../structservio_1_1cfg_1_1map.html#a3b4b161f2c520da3427ae3ea59ee421c',1,'servio::cfg::map::static_friction_decay'],['../namespaceservio_1_1ctl.html#a82bc794a9ee0b6dc71d35f7a9a34f0d5',1,'servio::ctl::config::static_friction_decay']]],
   ['static_5ffriction_5fforce_15',['static_friction_force',['../structservio_1_1sim_1_1simple__motor.html#a22d12968f6742a706c9230e4b8d09aba',1,'servio::sim::simple_motor']]],
   ['static_5ffriction_5fscale_16',['static_friction_scale',['../structservio_1_1cfg_1_1map.html#ae779028624d9aa0de019599ae0d64132',1,'servio::cfg::map::static_friction_scale'],['../namespaceservio_1_1ctl.html#a12d2d3c5170110791423a4c445b6612f',1,'servio::ctl::config::static_friction_scale']]],
@@ -24,7 +24,8 @@ var searchData=
   ['stor_5fdrv_21',['stor_drv',['../structservio_1_1scmdio_1_1port__mock.html#a94faad0c5b62bfa8f2c444a195fd8268',1,'servio::scmdio::port_mock::attrs::stor_drv'],['../namespaceservio_1_1core.html#a255a1e1542ad84f0bd464b26259b8823',1,'servio::core::dispatcher::stor_drv']]],
   ['storage_22',['storage',['../structservio_1_1core_1_1drivers.html#afcb49ca9c356877336314e3646a9945c',1,'servio::core::drivers']]],
   ['store_5fcnt_23',['store_cnt',['../structservio_1_1drv_1_1mock_1_1stor.html#a7acdaf5638ad3cf91fec7513f7a36405',1,'servio::drv::mock::stor']]],
-  ['success_24',['success',['../structservio_1_1drv_1_1com__res.html#a1e3b91f63e1a9ee9dfb4a5cba9fdc561',1,'servio::drv::com_res::success'],['../namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e',1,'servio::SUCCESS']]],
-  ['sum_25',['sum',['../namespaceservio_1_1ftest_1_1bench.html#a602be9f91456c08126a7676980dcd957',1,'servio::ftest::bench::prof_record']]],
-  ['sys_26',['sys',['../structservio_1_1ftester_1_1joque__test.html#aa786e779669720901c94ff58fc6c4d1f',1,'servio::ftester::joque_test']]]
+  ['sub_24',['sub',['../structservio_1_1iface_1_1mode__stmt.html#a08b989f077813d8d498c0785e6e5fd4c',1,'servio::iface::mode_stmt::sub'],['../structservio_1_1iface_1_1cfg__stmt.html#a3092283e1580c7c670a282989a28ebc6',1,'servio::iface::cfg_stmt::sub'],['../structservio_1_1iface_1_1stmt.html#a99c0f94d94ac71468cf5b351427404c1',1,'servio::iface::stmt::sub']]],
+  ['success_25',['success',['../structservio_1_1drv_1_1com__res.html#a1e3b91f63e1a9ee9dfb4a5cba9fdc561',1,'servio::drv::com_res::success'],['../namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e',1,'servio::SUCCESS']]],
+  ['sum_26',['sum',['../namespaceservio_1_1ftest_1_1bench.html#a602be9f91456c08126a7676980dcd957',1,'servio::ftest::bench::prof_record']]],
+  ['sys_27',['sys',['../structservio_1_1ftester_1_1joque__test.html#aa786e779669720901c94ff58fc6c4d1f',1,'servio::ftester::joque_test']]]
 ];

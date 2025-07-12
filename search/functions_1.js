@@ -10,14 +10,15 @@ var searchData=
   ['angle_7',['angle',['../namespaceservio_1_1klmn.html#a842c2861339b66fae8238ec81777ba7d',1,'servio::klmn']]],
   ['angle_5fmod_8',['angle_mod',['../namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f',1,'servio::klmn']]],
   ['any_5funinitialized_9',['any_uninitialized',['../structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca',1,'servio::core::drivers']]],
-  ['apply_10',['apply',['../namespaceservio_1_1cfg.html#a82a22faf6950a6a32663e937da4a47a5',1,'servio::cfg::apply()'],['../structservio_1_1cfg_1_1dispatcher.html#a0a439b9b034826bf563d79ee7ce6a162',1,'servio::cfg::dispatcher::apply()']]],
+  ['apply_10',['apply',['../structservio_1_1cfg_1_1dispatcher.html#a0a439b9b034826bf563d79ee7ce6a162',1,'servio::cfg::dispatcher::apply()'],['../namespaceservio_1_1cfg.html#a82a22faf6950a6a32663e937da4a47a5',1,'servio::cfg::apply()']]],
   ['apply_5fexp_11',['apply_exp',['../namespaceservio_1_1str__lib.html#a497fc2eef0aca4badc72ac40a50fc891',1,'servio::str_lib']]],
   ['apply_5fpower_12',['apply_power',['../structservio_1_1sim_1_1simple__motor.html#add71190bfe20f0234ebd080daa4af8d2',1,'servio::sim::simple_motor']]],
-  ['array_5fser_13',['array_ser',['../structservio_1_1json_1_1array__ser.html#aba24e33ba9e474528a9724044c5ee321',1,'servio::json::array_ser::array_ser(jval_ser &amp;s) noexcept'],['../structservio_1_1json_1_1array__ser.html#abbb91a47135ca38135088aae9c5b2339',1,'servio::json::array_ser::array_ser(array_ser const &amp;)=delete']]],
-  ['atom_5fsv_5fkey_14',['atom_sv_key',['../structservio_1_1atom__sv__key.html#a165a531fbd5d8c1be9b0d44c3b11b639',1,'servio::atom_sv_key']]],
-  ['atom_5fvisit_15',['atom_visit',['../namespaceservio.html#a90f0ccffc322269a6008e79d5b69ae9f',1,'servio']]],
-  ['autotune_5fdef_16',['autotune_def',['../namespaceservio_1_1scmdio.html#a54ae7a5edcb3197b0f05c6c357ad8b94',1,'servio::scmdio']]],
-  ['await_5fready_17',['await_ready',['../structservio_1_1scmdio_1_1consumer_1_1get.html#adcb8d023fdf00210ea247ee4ee4cfd59',1,'servio::scmdio::consumer::get']]],
-  ['await_5fresume_18',['await_resume',['../structservio_1_1scmdio_1_1consumer_1_1get.html#a73b22a7f78f15610ee19dd9b3d8ecab4',1,'servio::scmdio::consumer::get']]],
-  ['await_5fsuspend_19',['await_suspend',['../structservio_1_1scmdio_1_1consumer_1_1get.html#aee249b8cf0f9597005b18bac3e404977',1,'servio::scmdio::consumer::get']]]
+  ['apply_5fprefix_13',['apply_prefix',['../namespacegen.html#ab999c1a55cdab8e29e530b83ba3d6ea6',1,'gen']]],
+  ['array_5fser_14',['array_ser',['../structservio_1_1json_1_1array__ser.html#abbb91a47135ca38135088aae9c5b2339',1,'servio::json::array_ser::array_ser(array_ser const &amp;)=delete'],['../structservio_1_1json_1_1array__ser.html#aba24e33ba9e474528a9724044c5ee321',1,'servio::json::array_ser::array_ser(jval_ser &amp;s) noexcept']]],
+  ['atom_5fsv_5fkey_15',['atom_sv_key',['../structservio_1_1atom__sv__key.html#a165a531fbd5d8c1be9b0d44c3b11b639',1,'servio::atom_sv_key']]],
+  ['atom_5fvisit_16',['atom_visit',['../namespaceservio.html#a90f0ccffc322269a6008e79d5b69ae9f',1,'servio']]],
+  ['autotune_5fdef_17',['autotune_def',['../namespaceservio_1_1scmdio.html#a54ae7a5edcb3197b0f05c6c357ad8b94',1,'servio::scmdio']]],
+  ['await_5fready_18',['await_ready',['../structservio_1_1scmdio_1_1consumer_1_1get.html#adcb8d023fdf00210ea247ee4ee4cfd59',1,'servio::scmdio::consumer::get']]],
+  ['await_5fresume_19',['await_resume',['../structservio_1_1scmdio_1_1consumer_1_1get.html#a73b22a7f78f15610ee19dd9b3d8ecab4',1,'servio::scmdio::consumer::get']]],
+  ['await_5fsuspend_20',['await_suspend',['../structservio_1_1scmdio_1_1consumer_1_1get.html#aee249b8cf0f9597005b18bac3e404977',1,'servio::scmdio::consumer::get']]]
 ];

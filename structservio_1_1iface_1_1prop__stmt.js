@@ -1,5 +1,5 @@
 var structservio_1_1iface_1_1prop__stmt =
 [
-    [ "operator<=>", "structservio_1_1iface_1_1prop__stmt.html#aa48bebaa5cb217286132edb2859f6f80", null ],
-    [ "prop", "structservio_1_1iface_1_1prop__stmt.html#a67a5b053ea3416237e5f50ace3385b23", null ]
+    [ "operator<=>", "structservio_1_1iface_1_1prop__stmt.html#aa8431c2e4aa836090bafaf638be61e96", null ],
+    [ "name", "structservio_1_1iface_1_1prop__stmt.html#a380cc37a71c8ad9c344c1a8ec2d88455", null ]
 ];

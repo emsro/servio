@@ -1,5 +1,7 @@
 <map id="servio::drv::period_cb&lt; Callable &gt;" name="servio::drv::period_cb&lt; Callable &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,144,133"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="71,108,209,148"/>
 <area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1period__cb__iface.html" title=" " alt="" coords="5,5,144,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,59,77,93,72,93,72,59"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,55,130,106,126,109,92,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="168,13,243,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,51,155,109,150,106,188,48"/>
 </map>

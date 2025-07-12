@@ -1,5 +1,5 @@
 var structservio_1_1iface_1_1cfg__get__stmt =
 [
-    [ "operator<=>", "structservio_1_1iface_1_1cfg__get__stmt.html#ab61e3cedb07c86e2d9d16719bb8bd847", null ],
-    [ "k", "structservio_1_1iface_1_1cfg__get__stmt.html#a8ef37d30af52c20167f5f9c7a107d5a8", null ]
+    [ "operator<=>", "structservio_1_1iface_1_1cfg__get__stmt.html#ad65801d3c67a9e917584f45214a98f47", null ],
+    [ "field", "structservio_1_1iface_1_1cfg__get__stmt.html#a5ae640edadea393cf06eb7173be0bffe", null ]
 ];
