@@ -55,7 +55,7 @@ TEST( IfaceParse, ValidParse )
 
         test_valid_parse(
             "cfg set foo bar",
-            cfg_stmt{ cfg_set_stmt{ .field = "foo", .value.data = iface::string{ "bar" } } } );
+            cfg_stmt{ cfg_set_stmt{ .field = "foo", .value = { iface::string{ "bar" } } } } );
         test_valid_parse( "cfg get foo", cfg_stmt{ cfg_get_stmt{ "foo" } } );
         test_valid_parse(
             "cfg list5 level 1 5",
