@@ -9,7 +9,6 @@ Checks: >
     portability*,
 WarningsAsErrors: true
 HeaderFilterRegex: .*
-AnalyzeTemporaryDtors: true
 FormatStyle: file
 CheckOptions:
     - key: readability-function-cognitive-complexity.IgnoreMacros

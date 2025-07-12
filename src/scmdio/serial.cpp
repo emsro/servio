@@ -47,100 +47,50 @@ awaitable< nlohmann::json > exchg( port_iface& port, std::string const& msg )
         co_return jr;
 }
 
-awaitable< vari::vval< iface::cfg_vals > > get_config_field( port_iface& port, iface::cfg_key cfg )
+awaitable< nlohmann::json > get_config_field( port_iface& port, std::string_view name )
 {
-        spdlog::debug( "querying config field: {}", cfg.to_string() );
+        spdlog::debug( "querying config field: {}", name );
 
-        std::string msg = std::format( "cfg get {}", cfg.to_string() );
+        std::string msg = std::format( "cfg get {}", name );
 
         nlohmann::json reply = co_await exchg( port, msg );
         if ( reply.size() != 2 )
                 log_error( "Expected message with one extra field, instead got: ", reply );
 
-        spdlog::debug( "got value for {}: {}", cfg.to_string(), reply.at( 1 ) );
+        spdlog::debug( "got value for {}: {}", name, reply.at( 1 ) );
 
-        auto res = kval_ser< iface::cfg_vals >::from_json( cfg.to_string(), reply.at( 1 ) );
-        assert( res );
-        spdlog::debug( "parsed value" );
-        co_return std::move( res ).vval();
+        co_return reply.at( 1 );
 }
 
-awaitable< void > set_config_field( port_iface& port, vari::vref< iface::cfg_vals const > val )
+awaitable< void >
+set_config_field( port_iface& port, std::string_view name, nlohmann::json const& value )
+
 {
         std::string msg;
-        val.visit( [&]< typename T >( T const& val ) {
-                if constexpr ( std::same_as< typename T::value_type, iface::str_name > )
-                        msg = std::format( "cfg set {} \"{}\"", val.key.to_string(), val.value );
-                else
-                        msg = std::format( "cfg set {} {}", val.key.to_string(), val.value );
-        } );
+        msg = std::format( "cfg set {} {}", name, value.dump() );
 
         co_await exchg( port, msg );
 }
 
-awaitable< std::vector< vari::vval< iface::cfg_vals > > > get_full_config( port_iface& port )
+awaitable< std::map< std::string, nlohmann::json > > get_full_config( port_iface& port )
 {
-        std::vector< vari::vval< iface::cfg_vals > > res;
-        for ( auto f : iface::cfg_key::iota() ) {
-                auto val = co_await get_config_field( port, f );
-                res.emplace_back( std::move( val ) );
+        std::map< std::string, nlohmann::json > res;
+        // XXX: use the list command instead
+        for ( auto k : cfg::keys ) {
+                auto val = co_await get_config_field( port, to_str( k ) );
+                res.emplace( to_str( k ), std::move( val ) );
         }
 
         co_return res;
 }
 
-awaitable< vari::vval< iface::prop_vals > > get_property( port_iface& port, iface::prop_key p )
+awaitable< nlohmann::json > get_property( port_iface& port, std::string_view prop )
 {
-        std::string msg = std::format( "prop {}", p.to_string() );
+        std::string msg = std::format( "prop {}", prop );
 
         nlohmann::json reply = co_await exchg( port, msg );
 
-        auto res = kval_ser< iface::prop_vals >::from_json( p.to_string(), reply.at( 1 ) );
-        assert( res );
-        co_return std::move( res ).vval();
-}
-
-namespace
-{
-template < auto K, typename FS, typename KV >
-auto kval_filter( vari::vref< KV > var )
-{
-        using RT = typename iface::field_traits< FS >::template ktof< K >::value_type;
-        return var.visit( [&]< typename KK >( KK& kv ) -> RT {
-                if constexpr ( K.to_string() == KK::key.to_string() )
-                        return kv.value;
-                else
-                        log_error( "Got unexpected kind of value: ", K.to_string() );
-        } );
-}
-
-template < auto K >
-awaitable< typename iface::prop_traits::ktof< K >::value_type > query_prop( port_iface& port )
-{
-        auto val = co_await get_property( port, K );
-        co_return kval_filter< K, iface::property, iface::prop_vals >( val );
-}
-
-}  // namespace
-
-awaitable< iface::mode_key > get_property_mode( port_iface& port )
-{
-        return query_prop< "mode"_a >( port );
-}
-
-awaitable< float > get_property_current( port_iface& port )
-{
-        return query_prop< "current"_a >( port );
-}
-
-awaitable< float > get_property_position( port_iface& port )
-{
-        return query_prop< "position"_a >( port );
-}
-
-awaitable< float > get_property_velocity( port_iface& port )
-{
-        return query_prop< "velocity"_a >( port );
+        co_return reply.at( 1 );
 }
 
 namespace
@@ -154,42 +104,16 @@ awaitable< void > set_mode_raw( port_iface& port, std::string_view k, auto v )
 
 }  // namespace
 
-awaitable< void > set_mode( port_iface& port, vari::vref< iface::mode_vals const > v )
+awaitable< void > set_mode( port_iface& port, std::string_view mode, nlohmann::json const& arg )
 {
+
         std::string msg;
-        v.visit( [&]< typename KV >( KV const& kval ) {
-                if constexpr ( std::same_as< typename KV::value_type, parser::unit > )
-                        msg = std::format( "mode {}", kval.key );
-                else
-                        msg = std::format( "mode {} {}", kval.key, kval.value );
-        } );
+        if ( arg.is_null() )
+                msg = std::format( "mode {}", mode );
+        else
+                msg = std::format( "mode {} {}", mode, arg.dump() );
         co_await exchg( port, msg );
         // XXX: check return value
-}
-
-awaitable< void > set_mode_disengaged( port_iface& port )
-{
-        co_await set_mode_raw( port, "disengaged", "" );
-}
-
-awaitable< void > set_mode_power( port_iface& port, float pow )
-{
-        co_await set_mode_raw( port, "power", pow );
-}
-
-awaitable< void > set_mode_position( port_iface& port, float angle )
-{
-        co_await set_mode_raw( port, "position", angle );
-}
-
-awaitable< void > set_mode_velocity( port_iface& port, float vel )
-{
-        co_await set_mode_raw( port, "velocity", vel );
-}
-
-awaitable< void > set_mode_current( port_iface& port, float curr )
-{
-        co_await set_mode_raw( port, "current", curr );
 }
 
 }  // namespace servio::scmdio

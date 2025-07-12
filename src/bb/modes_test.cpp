@@ -7,51 +7,49 @@
 
 namespace servio::bb
 {
-using namespace iface::literals;
 
-boost::asio::awaitable< void > check_mode( scmdio::port_iface& port, auto v )
+boost::asio::awaitable< void >
+check_mode( scmdio::port_iface& port, std::string_view expected, std::string_view value = "" )
 {
-        co_await scmdio::set_mode( port, v );
-
-        iface::mode_key m        = co_await scmdio::get_property_mode( port );
-        iface::mode_key expected = decltype( v )::key;
+        co_await scmdio::set_mode( port, expected );
+        auto m = co_await scmdio::get_property( port, "mode" );
         EXPECT_EQ( m, expected );
 }
 
 boost::asio::awaitable< void > disengage( boost::asio::io_context&, scmdio::port_iface& port )
 {
-        auto k = "disengaged"_kv;
+        auto k = "disengaged";
         co_await scmdio::set_mode( port, k );
 }
 
 boost::asio::awaitable< void > test_disengaged( boost::asio::io_context&, scmdio::port_iface& port )
 {
-        co_await check_mode( port, "disengaged"_kv );
+        co_await check_mode( port, "disengaged" );
 }
 
 boost::asio::awaitable< void > test_power( boost::asio::io_context& io, scmdio::port_iface& port )
 {
-        co_await check_mode( port, 0.0F | "power"_kv );
+        co_await check_mode( port, "power", "0.0" );
         co_await disengage( io, port );
 }
 
 boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio::port_iface& port )
 {
-        co_await check_mode( port, 0.0F | "current"_kv );
+        co_await check_mode( port, "current", "0.0" );
         co_await disengage( io, port );
 }
 
 boost::asio::awaitable< void >
 test_velocity( boost::asio::io_context& io, scmdio::port_iface& port )
 {
-        co_await check_mode( port, 0.0F | "velocity"_kv );
+        co_await check_mode( port, "velocity", "0.0" );
         co_await disengage( io, port );
 }
 
 boost::asio::awaitable< void >
 test_position( boost::asio::io_context& io, scmdio::port_iface& port )
 {
-        co_await check_mode( port, 0.0F | "position"_kv );
+        co_await check_mode( port, "position", "0.0" );
         co_await disengage( io, port );
 }
 

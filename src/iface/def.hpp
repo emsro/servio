@@ -8,148 +8,215 @@
 
 #pragma once
 
-namespace servio::iface
-{
-using parser::unit;
 namespace em = emlabcpp;
 
-using mode = vari::typelist<
-    field< 1, "disengaged"_a, unit >,
-    field< 2, "power"_a, float >,
-    field< 3, "current"_a, float >,
-    field< 4, "velocity"_a, float >,
-    field< 5, "position"_a, float > >;
+namespace servio::iface
+{
 
-using mode_traits = field_traits< mode >;
-using mode_types  = typename mode_traits::types;
-using mode_vals   = typename mode_traits::vals;
-using mode_key    = typename mode_traits::keys;
+using parser::expr_tok;
+using parser::string;
+
+// GEN BEGIN HERE
+enum class property
+{
+        mode,      // Mode of the servomotor
+        current,   // Actual current flowing through the servomotor
+        vcc,       // Actual input voltage
+        temp,      // Actual temperature of the MCU
+        position,  // Actual position of the servomotor
+        velocity,  // Actual velocity of the servomotor
+};
+
+static constexpr std::array< property, 6 > property_values = {
+    property::mode,
+    property::current,
+    property::vcc,
+    property::temp,
+    property::position,
+    property::velocity,
+};
+
+static constexpr std::string_view to_str( property v )
+{
+        switch ( v ) {
+        case property::mode:
+                return "mode";
+        case property::current:
+                return "current";
+        case property::vcc:
+                return "vcc";
+        case property::temp:
+                return "temp";
+        case property::position:
+                return "position";
+        case property::velocity:
+                return "velocity";
+        }
+        return "unknown";
+}
+
+struct mode_disengaged_stmt
+{
+        friend constexpr auto
+        operator<=>( mode_disengaged_stmt const&, mode_disengaged_stmt const& ) noexcept = default;
+};
+
+struct mode_power_stmt
+{
+        float power = 0;
+        friend constexpr auto
+        operator<=>( mode_power_stmt const&, mode_power_stmt const& ) noexcept = default;
+};
+
+struct mode_current_stmt
+{
+        float current = 0.0;
+        friend constexpr auto
+        operator<=>( mode_current_stmt const&, mode_current_stmt const& ) noexcept = default;
+};
+
+struct mode_velocity_stmt
+{
+        float velocity = 0.0;
+        friend constexpr auto
+        operator<=>( mode_velocity_stmt const&, mode_velocity_stmt const& ) noexcept = default;
+};
+
+struct mode_position_stmt
+{
+        float position = 0.0;
+        friend constexpr auto
+        operator<=>( mode_position_stmt const&, mode_position_stmt const& ) noexcept = default;
+};
+
+using mode_stmts = vari::typelist<
+    mode_disengaged_stmt,
+    mode_power_stmt,
+    mode_current_stmt,
+    mode_velocity_stmt,
+    mode_position_stmt >;
 
 struct mode_stmt
 {
-        vari::vval< mode_vals > arg;
+        vari::vval< mode_stmts > sub = mode_disengaged_stmt{};
 
-        constexpr auto operator<=>( mode_stmt const& ) const noexcept = default;
+        friend constexpr auto operator<=>( mode_stmt const&, mode_stmt const& ) noexcept = default;
 };
-
-using property = vari::typelist<
-    field< 1, "mode"_a, mode_key >,
-    field< 2, "current"_a, float >,
-    field< 3, "vcc"_a, float >,
-    field< 4, "temp"_a, float >,
-    field< 5, "position"_a, float >,
-    field< 6, "velocity"_a, float > >;
-
-using prop_traits = field_traits< property >;
-using prop_types  = prop_traits::types;
-using prop_vals   = prop_traits::vals;
-using prop_key    = prop_traits::keys;
 
 struct prop_stmt
 {
-        prop_key prop;
-
-        constexpr auto operator<=>( prop_stmt const& ) const noexcept = default;
+        property              name                                                       = {};
+        friend constexpr auto operator<=>( prop_stmt const&, prop_stmt const& ) noexcept = default;
 };
-
-using encoder_mode = vari::typelist<  //
-    field< 1, "analog"_a, unit >,
-    field< 2, "quad"_a, unit > >;
-
-using ec_mode_key = typename field_traits< encoder_mode >::keys;
-
-using str_name = em::string_buffer< 32 >;
-
-using cfg = vari::typelist<
-    field< 1, "model"_a, str_name >,
-    field< 2, "id"_a, uint32_t >,
-    field< 3, "group_id"_a, uint32_t >,
-    field< 4, "encoder_mode"_a, ec_mode_key >,
-    field< 11, "position_low_angle"_a, float >,
-    field< 12, "position_high_angle"_a, float >,
-    field< 14, "current_conv_scale"_a, float >,
-    field< 15, "current_conv_offset"_a, float >,
-    field< 16, "temp_conv_scale"_a, float >,
-    field< 17, "temp_conv_offset"_a, float >,
-    field< 18, "voltage_conv_scale"_a, float >,
-    field< 19, "invert_hbridge"_a, bool >,
-    field< 30, "current_loop_p"_a, float >,
-    field< 31, "current_loop_i"_a, float >,
-    field< 32, "current_loop_d"_a, float >,
-    field< 33, "current_lim_min"_a, float >,
-    field< 34, "current_lim_max"_a, float >,
-    field< 40, "velocity_loop_p"_a, float >,
-    field< 41, "velocity_loop_i"_a, float >,
-    field< 42, "velocity_loop_d"_a, float >,
-    field< 43, "velocity_lim_min"_a, float >,
-    field< 44, "velocity_lim_max"_a, float >,
-    field< 45, "velocity_to_current_lim_scale"_a, float >,
-    field< 50, "position_loop_p"_a, float >,
-    field< 51, "position_loop_i"_a, float >,
-    field< 52, "position_loop_d"_a, float >,
-    field< 53, "position_lim_min"_a, float >,
-    field< 54, "position_lim_max"_a, float >,
-    field< 55, "position_to_velocity_lim_scale"_a, float >,
-    field< 60, "static_friction_scale"_a, float >,
-    field< 61, "static_friction_decay"_a, float >,
-    field< 62, "moving_detection_step"_a, float >,
-    field< 65, "minimum_voltage"_a, float >,
-    field< 66, "maximum_temperature"_a, float >,
-    field< 80, "quad_encoder_range"_a, uint32_t > >;
-
-using cfg_traits = field_traits< cfg >;
-using cfg_types  = typename cfg_traits::types;
-using cfg_vals   = typename cfg_traits::vals;
-using cfg_key    = typename cfg_traits::keys;
 
 struct cfg_set_stmt
 {
-        vari::vval< cfg_vals > val;
-
-        constexpr auto operator<=>( cfg_set_stmt const& ) const noexcept = default;
+        string   field = {};
+        expr_tok value = {};
+        friend constexpr auto
+        operator<=>( cfg_set_stmt const&, cfg_set_stmt const& ) noexcept = default;
 };
 
 struct cfg_get_stmt
 {
-        cfg_key k;
+        string field = {};
+        friend constexpr auto
+        operator<=>( cfg_get_stmt const&, cfg_get_stmt const& ) noexcept = default;
+};
 
-        constexpr auto operator<=>( cfg_get_stmt const& ) const noexcept = default;
+struct cfg_list5_stmt
+{
+        string  level  = "";
+        int32_t offset = 0;
+        int32_t n      = 5;
+        friend constexpr auto
+        operator<=>( cfg_list5_stmt const&, cfg_list5_stmt const& ) noexcept = default;
 };
 
 struct cfg_commit_stmt
 {
-        constexpr auto operator<=>( cfg_commit_stmt const& ) const noexcept = default;
+        friend constexpr auto
+        operator<=>( cfg_commit_stmt const&, cfg_commit_stmt const& ) noexcept = default;
 };
 
 struct cfg_clear_stmt
 {
-        constexpr auto operator<=>( cfg_clear_stmt const& ) const noexcept = default;
+        friend constexpr auto
+        operator<=>( cfg_clear_stmt const&, cfg_clear_stmt const& ) noexcept = default;
 };
 
-struct invalid_stmt
+using cfg_stmts =
+    vari::typelist< cfg_set_stmt, cfg_get_stmt, cfg_list5_stmt, cfg_commit_stmt, cfg_clear_stmt >;
+
+struct cfg_stmt
 {
-        constexpr auto operator<=>( invalid_stmt const& ) const noexcept = default;
+        vari::vval< cfg_stmts > sub = cfg_set_stmt{};
+
+        friend constexpr auto operator<=>( cfg_stmt const&, cfg_stmt const& ) noexcept = default;
 };
 
 struct info_stmt
 {
-        constexpr auto operator<=>( info_stmt const& ) const noexcept = default;
+        friend constexpr auto operator<=>( info_stmt const&, info_stmt const& ) noexcept = default;
 };
 
-using stmt = vari::typelist<
-    mode_stmt,
-    prop_stmt,
-    cfg_set_stmt,
-    cfg_get_stmt,
-    cfg_commit_stmt,
-    cfg_clear_stmt,
-    info_stmt >;
+using stmts = vari::typelist< mode_stmt, prop_stmt, cfg_stmt, info_stmt >;
 
-// XXX: missing ID targeting for servos
-
-struct resp
+struct stmt
 {
-        em::string_buffer< 64 > res;
+        vari::vval< stmts > sub = mode_stmt{};
+
+        friend constexpr auto operator<=>( stmt const&, stmt const& ) noexcept = default;
+};
+// GEN END HERE
+
+enum class parse_status : uint8_t
+{
+        SUCCESS,
+        SYNTAX_ERROR,       // syntax error in the input
+        ARG_TYPE_MISMATCH,  // type mismatch between argument and value
+        ARG_DUPLICATE,      // duplicate argument
+        ARG_AFTER_KVAL,     // argument appears after key-value pair
+        ARG_MISSING,        // required argument is missing
+        CMD_MISSING,        // command is missing
+        UNKNOWN_ARG_KEY,    // unknown key argument
+        UNKNOWN_CMD,        // unknown command
+        UNKNOWN_VALUE,      // unknown value for an argument
+        UNEXPECTED_ARG,     // unexpected argument in the input
+};
+
+inline std::string_view to_str( parse_status st )
+{
+        switch ( st ) {
+        case parse_status::SUCCESS:
+                return "success";
+        case parse_status::SYNTAX_ERROR:
+                return "syntax error";
+        case parse_status::ARG_TYPE_MISMATCH:
+                return "argument type mismatch";
+        case parse_status::ARG_DUPLICATE:
+                return "duplicate argument";
+        case parse_status::ARG_AFTER_KVAL:
+                return "argument after key-value pair";
+        case parse_status::ARG_MISSING:
+                return "argument missing";
+        case parse_status::CMD_MISSING:
+                return "command missing";
+        case parse_status::UNKNOWN_ARG_KEY:
+                return "unknown argument key";
+        case parse_status::UNKNOWN_CMD:
+                return "unknown command";
+        case parse_status::UNKNOWN_VALUE:
+                return "unknown value for an argument";
+        case parse_status::UNEXPECTED_ARG:
+                return "unexpected argument";
+        }
+        return "unknown status";
+}
+
+struct invalid_stmt
+{
+        parse_status st;
 };
 
 vari::vval< stmt, invalid_stmt > parse( std::string_view inpt );

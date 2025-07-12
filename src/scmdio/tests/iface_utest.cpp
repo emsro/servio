@@ -10,16 +10,6 @@ namespace servio::scmdio
 
 using namespace avakar::literals;
 
-template < typename T, typename F >
-boost::asio::awaitable< void > tuple_coawait( T&& t, F&& f )
-{
-        co_await std::apply(
-            [&]( auto&... its ) -> boost::asio::awaitable< void > {
-                    ( co_await f( its ), ... );
-            },
-            t );
-}
-
 TEST( iface, base )
 {
         boost::asio::io_context ctx;
@@ -45,42 +35,34 @@ TEST( iface, base )
 
         bool finished = false;
         auto run_f    = [&]() -> boost::asio::awaitable< void > {
-                // XXX: maybe move to vari?
-                auto tpl = iface::field_tuple_t< iface::cfg >{};
+                for ( auto k : cfg::keys )
+                        co_await get_config_field( pm, to_str( k ) );
 
-                for ( auto k : iface::cfg_key::iota() )
-                        co_await get_config_field( pm, k );
-
-                co_await tuple_coawait(
-                    tpl, [&]< typename F >( F& ) -> boost::asio::awaitable< void > {
-                            if constexpr ( F::key == iface::cfg_key{ "encoder_mode"_a } ) {
-                                    typename F::kv_type kv{ .value = "quad"_a };
-                                    co_await set_config_field( pm, kv );
-                            } else if constexpr ( F::key == iface::cfg_key{ "model"_a } ) {
-                                    typename F::kv_type kv{ .value = "wololo" };
-                                    co_await set_config_field( pm, kv );
-                            } else {
-                                    typename F::kv_type kv{ .value = {} };
-                                    co_await set_config_field( pm, kv );
-                            }
-                    } );
+                for ( auto k : cfg::keys )
+                        if ( k == cfg::key::encoder_mode )
+                                co_await set_config_field( pm, to_str( k ), "quad" );
+                        else if ( k == cfg::key::model )
+                                co_await set_config_field( pm, to_str( k ), "wololo" );
+                        else if ( k == cfg::key::id || k == cfg::key::group_id )
+                                co_await set_config_field( pm, to_str( k ), 0 );
+                        else if ( k == cfg::key::invert_hbridge )
+                                co_await set_config_field( pm, to_str( k ), false );
+                        else if ( k == cfg::key::quad_encoder_range )
+                                co_await set_config_field( pm, to_str( k ), 0 );
+                        else
+                                co_await set_config_field( pm, to_str( k ), 0.0 );
 
                 auto cfg_vec = co_await get_full_config( pm );
-                EXPECT_EQ( cfg_vec.size(), iface::cfg_key::iota().size() );
+                EXPECT_EQ( cfg_vec.size(), cfg::keys.size() );
 
-                for ( auto k : iface::prop_key::iota() )
-                        co_await get_property( pm, k );
+                for ( auto p : iface::property_values )
+                        co_await get_property( pm, to_str( p ) );
 
-                co_await get_property_mode( pm );
-                co_await get_property_current( pm );
-                co_await get_property_position( pm );
-                co_await get_property_velocity( pm );
-
-                co_await set_mode_disengaged( pm );
-                co_await set_mode_power( pm, 0.0F );
-                co_await set_mode_position( pm, 0.0F );
-                co_await set_mode_velocity( pm, 0.0F );
-                co_await set_mode_current( pm, 0.0F );
+                co_await set_mode( pm, "disengaged" );
+                co_await set_mode( pm, "power", 0.0 );
+                co_await set_mode( pm, "position", 0.0 );
+                co_await set_mode( pm, "velocity", 0.0 );
+                co_await set_mode( pm, "current", 0.0 );
 
                 finished = true;
         };

@@ -6,56 +6,58 @@
 #include "../status.hpp"
 
 #include <git.h>
+#include <string_view>
 
 namespace servio::core
 {
 using namespace avakar::literals;
+using namespace std::string_view_literals;
 
 namespace
 {
 
 void handle_set_mode(
-    microseconds                         now,
-    ctl::control&                        ctl,
-    vari::vref< iface::mode_vals const > inpt,
-    json::jval_ser&                      out )
+    microseconds                          now,
+    ctl::control&                         ctl,
+    vari::vref< iface::mode_stmts const > inpt,
+    json::jval_ser&                       out )
 {
         inpt.visit(
-            [&]( iface::kval< "disengaged"_a, iface::unit > const& ) {
+            [&]( iface::mode_disengaged_stmt const& ) {
                     ctl.disengage();
             },
-            [&]( iface::kval< "power"_a, float > const& kv ) {
-                    ctl.switch_to_power_control( pwr( kv.value ) );
+            [&]( iface::mode_power_stmt const& kv ) {
+                    ctl.switch_to_power_control( pwr( kv.power ) );
             },
-            [&]( iface::kval< "current"_a, float > const& kv ) {
-                    ctl.switch_to_current_control( now, kv.value );
+            [&]( iface::mode_current_stmt const& kv ) {
+                    ctl.switch_to_current_control( now, kv.current );
             },
-            [&]( iface::kval< "velocity"_a, float > const& kv ) {
-                    ctl.switch_to_velocity_control( now, kv.value );
+            [&]( iface::mode_velocity_stmt const& kv ) {
+                    ctl.switch_to_velocity_control( now, kv.velocity );
             },
-            [&]( iface::kval< "position"_a, float > const& kv ) {
-                    ctl.switch_to_position_control( now, kv.value );
+            [&]( iface::mode_position_stmt const& kv ) {
+                    ctl.switch_to_position_control( now, kv.position );
             } );
 
         json::array_ser{ out }( "OK" );
 }
 
-iface::mode_key get_mode( ctl::control const& ctl )
+std::string_view get_mode( ctl::control const& ctl )
 {
         switch ( ctl.get_mode() ) {
         case control_mode::DISENGAGED:
-                return "disengaged"_a;
+                return "disengaged";
         case control_mode::POWER:
-                return "power"_a;
+                return "power";
         case control_mode::CURRENT:
-                return "current"_a;
+                return "current";
         case control_mode::VELOCITY:
-                return "velocity"_a;
+                return "velocity";
         case control_mode::POSITION:
-                return "position"_a;
+                return "position";
         }
         // XXX: maybe something better?
-        return "disengaged"_a;
+        return "disengaged";
 }
 
 void handle_get_property(
@@ -67,73 +69,141 @@ void handle_get_property(
     drv::vcc_iface const&        vcc_drv,
     drv::temp_iface const&       temp_drv,
     drv::motor_info_iface const& motor,
-    iface::prop_key              inpt,
+    iface::property              inpt,
     json::jval_ser&              out )
 {
         json::array_ser as{ out };
-        as( "OK" );
 
-        float x = 0;
-        if ( inpt == "mode"_a ) {
-                as( get_mode( ctl ).to_string() );
-                return;
-        } else if ( inpt == "current"_a )
-                x = cnv::current( conv, curr_drv, motor );
-        else if ( inpt == "vcc"_a )
-                x = conv.vcc.convert( vcc_drv.get_vcc() );
-        else if ( inpt == "temp"_a )
-                x = conv.temp.convert( temp_drv.get_temperature() );
-        else if ( inpt == "position"_a )
-                x = cnv::position( conv, pos_drv );
-        else if ( inpt == "velocity"_a )
-                x = met.get_velocity();
-
-        as( x );
+        switch ( inpt ) {
+        case iface::property::mode:
+                as( "OK" );
+                as( get_mode( ctl ) );
+                break;
+        case iface::property::current:
+                as( "OK" );
+                as( cnv::current( conv, curr_drv, motor ) );
+                break;
+        case iface::property::vcc:
+                as( "OK" );
+                as( conv.vcc.convert( vcc_drv.get_vcc() ) );
+                break;
+        case iface::property::temp:
+                as( "OK" );
+                as( conv.temp.convert( temp_drv.get_temperature() ) );
+                break;
+        case iface::property::position:
+                as( "OK" );
+                as( cnv::position( conv, pos_drv ) );
+                break;
+        case iface::property::velocity:
+                as( "OK" );
+                as( met.get_velocity() );
+                break;
+        default:
+                as( "NOK" );
+                as( "unknown property" );
+                break;
+        }
 }
 
 void handle_set_config(
-    cfg::dispatcher&                    cfg_disp,
-    vari::vref< iface::cfg_vals const > v,
-    json::jval_ser&                     out )
+    cfg::dispatcher&        cfg_disp,
+    std::string_view        field,
+    parser::expr_tok const& value,
+    json::jval_ser&         out )
 {
         json::array_ser as{ out };
-        as( "OK" );
 
-        v.visit( [&]< auto K, typename T >( iface::kval< K, T > const& kv ) {
-                constexpr auto k = *cfg::str_to_key( K.to_string() );
-                if constexpr ( k == cfg::key::encoder_mode )
-                        atom_visit( kv.value, [&]< auto V >( avakar::atom< V > ) {
-                                constexpr auto em = *cfg::str_to_encoder_mode( V.to_string() );
-                                cfg_disp.set< k >( em );
-                        } );
-                else
-                        cfg_disp.set< k >( kv.value );
-        } );
+        auto k_opt = cfg::str_to_key( field );
+        if ( !k_opt ) {
+                as( "NOK" );
+                as( "unknown field" );
+                return;
+        }
+        auto k   = *k_opt;
+        using R  = opt< std::string_view >;
+        auto err = cfg_disp.m.ref_by_key( *k_opt ).visit(
+            [&]( vari::empty_t ) -> R {
+                    return "internal key error"sv;
+            },
+            [&]( uint32_t& x ) -> R {
+                    int32_t y = 0;
+                    if ( !parser::load_value( y, value.data ) )
+                            return "type mismatch"sv;
+                    if ( y < 0 )
+                            return "value must be non-negative"sv;
+                    x = static_cast< uint32_t >( y );
+                    return {};
+            },
+            [&]( vari::vref< float, bool, em::string_buffer< 32 > > x ) -> R {
+                    if ( !parser::load_value( x, value.data ) )
+                            return "type mismatch"sv;
+                    return {};
+            },
+            [&]( cfg::encoder_mode& x ) -> R {
+                    em::string_buffer< 32 > str;
+                    if ( !parser::load_value( str, value.data ) )
+                            return "type mismatch"sv;
+                    auto em = cfg::str_to_encoder_mode( str );
+                    if ( !em )
+                            return "unknown encoder mode"sv;
+                    x = *em;
+                    return {};
+            } );
+        if ( err ) {
+                as( "NOK" );
+                as( err.value() );
+                return;
+        }
+        as( "OK" );
+        cfg_disp.apply( k );
 }
 
-void handle_get_config( cfg::dispatcher const& cfg_disp, iface::cfg_key ck, json::jval_ser& out )
+void handle_get_config(
+    cfg::dispatcher const& cfg_disp,
+    std::string_view       field,
+    json::jval_ser&        out )
 {
 
         json::array_ser as{ out };
-        as( "OK" );
-
-        atom_visit( ck, [&]< auto K >( avakar::atom< K > ) {
-                constexpr auto k = *cfg::str_to_key( K.to_string() );
-                auto           v = cfg_disp.get< k >();
-                if constexpr ( k == cfg::key::encoder_mode )
-                        as( v == cfg::encoder_mode::analog ? "analog" : "quad" );
-                else
-                        as( v );
-        } );
+        auto            k_opt = cfg::str_to_key( field );
+        if ( !k_opt ) {
+                as( "NOK" );
+                as( "unknown field" );
+                return;
+        }
+        cfg_disp.m.ref_by_key( *k_opt ).visit(
+            [&]( vari::empty_t ) {
+                    as( "NOK" );
+                    as( "internal key error" );
+            },
+            [&]( vari::vref< float, bool, em::string_buffer< 32 >, uint32_t > x ) {
+                    as( "OK" );
+                    x.visit( as );
+            },
+            [&]( cfg::encoder_mode& x ) {
+                    as( "OK" );
+                    switch ( x ) {
+                    case cfg::encoder_mode::analog:
+                            as( "analog" );
+                            break;
+                    case cfg::encoder_mode::quad:
+                            as( "quad" );
+                            break;
+                    default:
+                            as( "unknown" );
+                            break;
+                    }
+            } );
 }
 
-void handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, json::jval_ser& out )
+void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, json::jval_ser& out )
 {
         inpt.visit(
-            [&]( iface::mode_stmt const& s ) {
-                    handle_set_mode( dis.now, dis.ctl, s.arg, out );
+            [&]( iface::mode_stmt const& m ) {
+                    handle_set_mode( dis.now, dis.ctl, m.sub, out );
             },
-            [&]( iface::prop_stmt const& s ) {
+            [&]( iface::prop_stmt const& p ) {
                     handle_get_property(
                         dis.ctl,
                         dis.met,
@@ -143,10 +213,10 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, json
                         dis.vcc_drv,
                         dis.temp_drv,
                         dis.motor,
-                        s.prop,
+                        p.name,
                         out );
             },
-            [&]( vari::vref< iface::cfg_set_stmt const, iface::cfg_get_stmt const > s ) {
+            [&]( iface::cfg_stmt const& cfg ) {
                     cfg::dispatcher cfg_disp{
                         .m     = dis.cfg_map,
                         .ctl   = dis.ctl,
@@ -156,27 +226,30 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmt const > inpt, json
                         .motor = dis.motor,
                         .pos   = dis.pos_drv,
                     };
-                    s.visit(
+                    cfg.sub.visit(
                         [&]( iface::cfg_set_stmt const& st ) {
-                                handle_set_config( cfg_disp, st.val, out );
+                                handle_set_config( cfg_disp, st.field, st.value, out );
                         },
                         [&]( iface::cfg_get_stmt const& s ) {
-                                handle_get_config( cfg_disp, s.k, out );
+                                handle_get_config( cfg_disp, s.field, out );
+                        },
+                        [&]( iface::cfg_list5_stmt const& ) {
+                                // XXX
+                        },
+                        [&]( iface::cfg_commit_stmt const& ) {
+                                json::array_ser as{ out };
+                                if ( dis.stor_drv.store_cfg( dis.cfg_map ) == status::SUCCESS )
+                                        as( "OK" );
+                                else
+                                        as( "NOK" );
+                        },
+                        [&]( iface::cfg_clear_stmt const& ) {
+                                json::array_ser as{ out };
+                                if ( dis.stor_drv.clear_cfg() == status::SUCCESS )
+                                        as( "OK" );
+                                else
+                                        as( "NOK" );
                         } );
-            },
-            [&]( iface::cfg_commit_stmt const& ) {
-                    json::array_ser as{ out };
-                    if ( dis.stor_drv.store_cfg( dis.cfg_map ) == status::SUCCESS )
-                            as( "OK" );
-                    else
-                            as( "NOK" );
-            },
-            [&]( iface::cfg_clear_stmt const& ) {
-                    json::array_ser as{ out };
-                    if ( dis.stor_drv.clear_cfg() == status::SUCCESS )
-                            as( "OK" );
-                    else
-                            as( "NOK" );
             },
             [&]( iface::info_stmt const& ) {
                     json::array_ser as{ out };
@@ -201,13 +274,14 @@ std::tuple< status, em::view< std::byte* > > handle_message(
 
         auto res = iface::parse( inpt ).visit(
             [&]( vari::vref< iface::stmt > s ) -> R {
-                    handle_message( dis, s, out );
+                    handle_message( dis, s->sub, out );
                     return SUCCESS;
             },
-            [&]( iface::invalid_stmt& ) -> R {
+            [&]( iface::invalid_stmt& st ) -> R {
                     json::array_ser as{ out };
                     as( "NOK" );
                     as( "parse error" );
+                    as( to_str( st.st ) );
                     return FAILURE;
             } );
         return { res, std::move( out ) };

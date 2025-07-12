@@ -104,39 +104,21 @@ void cfg_def( CLI::App& app, io_context& io_ctx )
 }
 
 awaitable< void >
-pool_cmd( io_context&, sptr< char_port > port, std::vector< iface::prop_key > props )
+pool_cmd( io_context&, sptr< char_port > port, std::vector< std::string > const& props )
 {
-
-        while ( true ) {
-                std::vector< std::string > vals;
-                for ( iface::prop_key const field : props ) {
-                        auto val = co_await get_property( *port, field );
-                        val.visit( [&]( auto& kv ) {
-                                vals.emplace_back( std::format( "{}", kv.value ) );
-                        } );
-                }
-                std::cout << em::joined( vals, std::string{ "\t" } ) << std::endl;
-        }
-}
-
-awaitable< void >
-pool_cmd( io_context& context, sptr< char_port > port, std::vector< std::string > properties )
-{
-        if ( properties.empty() ) {
+        if ( props.empty() ) {
                 std::cout << "got an empty property list, not pooling" << std::endl;
                 co_return;
         }
 
-        std::vector< iface::prop_key > fields;
-        for ( std::string const& prop : properties ) {
-                auto s = iface::prop_key::from_string( prop );
-                if ( !s ) {
-                        std::cerr << "Failed to find property: " << prop << std::endl;
-                        co_return;
+        while ( true ) {
+                std::vector< std::string > vals;
+                for ( std::string const& field : props ) {
+                        auto val = co_await get_property( *port, field );
+                        vals.emplace_back( val.dump() );
                 }
-                fields.push_back( std::move( *s ) );
+                std::cout << em::joined( vals, std::string{ "\t" } ) << std::endl;
         }
-        co_await pool_cmd( context, port, fields );
 }
 
 struct pool_opts
@@ -177,31 +159,31 @@ void mode_def( CLI::App& app, io_context& io_ctx )
 
         auto* disengaged = mode->add_subcommand( "disengaged", "disengaged mode" );
         port_callback( disengaged, io_ctx, ctx, []( sptr< char_port > p ) -> R {
-                co_await set_mode_disengaged( *p );
+                co_await set_mode( *p, "disengaged" );
         } );
 
         auto* pow = mode->add_subcommand( "power", "power mode" );
         pow->add_option( "power", ctx->power, "power" );
-        port_callback( disengaged, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
-                co_await set_mode_power( *p, ctx->power );
+        port_callback( pow, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
+                co_await set_mode( *p, "power", ctx->power );
         } );
 
         auto* current = mode->add_subcommand( "current", "current mode" );
         current->add_option( "current", ctx->current, "goal current" );
         port_callback( current, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
-                co_await set_mode_current( *p, ctx->current );
+                co_await set_mode( *p, "current", ctx->current );
         } );
 
         auto* position = mode->add_subcommand( "position", "position mode" );
         position->add_option( "angle", ctx->angle, "goal angle" );
         port_callback( position, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
-                co_await set_mode_position( *p, ctx->angle );
+                co_await set_mode( *p, "position", ctx->angle );
         } );
 
         auto* velocity = mode->add_subcommand( "velocity", "velocity mode" );
         velocity->add_option( "velocity", ctx->velocity, "goal velocity" );
         port_callback( velocity, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
-                co_await set_mode_velocity( *p, ctx->velocity );
+                co_await set_mode( *p, "velocity", ctx->velocity );
         } );
 }
 

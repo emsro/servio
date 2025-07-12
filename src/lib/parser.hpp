@@ -24,14 +24,28 @@ inline vari::vopt< std::string_view > parse_str( char const*& p, char const* e )
                 return {};
         while ( pp != e ) {
                 pp++;
-                if ( str_lib::bits::is_id_letter( *pp ) || *pp == ' ' )
-                        continue;
                 if ( *pp != '"' )
-                        return {};
+                        continue;
                 std::string_view res{ p + 1, pp };
                 pp++;
                 p = pp;
                 return res;
+        }
+        return {};
+}
+
+enum class op_t : uint8_t
+{
+        ASSIGN = '='
+};
+
+inline vari::vopt< op_t > parse_op( char const*& p, char const* e ) noexcept
+{
+        if ( p == e )
+                return {};
+        if ( *p == '=' ) {
+                p++;
+                return op_t::ASSIGN;
         }
         return {};
 }
@@ -44,91 +58,149 @@ struct end
 {
 };
 
-struct id
+struct id_t
 {
         std::string_view s;
 };
 
-struct str
-{
-        std::string_view s;
-};
+using string = em::string_buffer< 32 >;
 
-using tok = vari::typelist< id, str, float, int32_t, err >;
+using tok = vari::typelist< op_t, id_t, string, float, int32_t, bool, err >;
 
 struct lexer
 {
+        char const* b;
         char const* p;
         char const* e;
 
         lexer( std::string_view sv )
-          : p( sv.data() )
+          : b( sv.data() )
+          , p( sv.data() )
           , e( sv.data() + sv.size() )
         {
         }
 
-        vari::vval< tok, end > next()
+        bool clear_ws()
         {
                 while ( p != e && str_lib::bits::is_ws( *p ) )
                         p++;
+                return p == e || *p == '\0';
+        }
 
-                if ( p == e || *p == '\0' )
+        vari::vval< tok, end > next()
+        {
+                if ( clear_ws() )
                         return end{};
+
                 str_lib::s_to_nr_res r;
                 if ( str_lib::s_to_nr( p, e, r ) ) {
                         if ( r.is_num )
                                 return r.n;
                         return r.r;
                 }
+                if ( auto op = parse_op( p, e ) )
+                        return op_t{ *op };
                 if ( auto s = parse_str( p, e ) )
-                        return str{ .s = *s };
+                        return string{ *s };
                 char const* pp = p;
-                if ( str_lib::lex_letters( p, e ) )
-                        return id{ .s = { pp, p } };
-                return err{};
+                if ( !str_lib::lex_letters( p, e ) )
+                        return err{};
+                std::string_view id{ pp, p };
+                if ( id == "true" )
+                        return true;
+                else if ( id == "false" )
+                        return false;
+                return id_t{ .s = id };
         }
 };
 
+using expr_t = vari::typelist< string, float, int32_t, bool >;
+
 struct parser
 {
-        opt< lexer > l;
+        lexer l;
 
-        constexpr operator bool() noexcept
+        std::size_t loc()
         {
-                return !!l;
+                return static_cast< std::size_t >( l.p - l.b );
         }
 
-        vari::vopt< std::string_view, float, int32_t > expr()
+        bool ended()
         {
-                using R = vari::vopt< std::string_view, float, int32_t >;
-                if ( l )
-                        return l->next().visit(
-                            [&]( id& x ) -> R {
-                                    return x.s;
-                            },
-                            [&]( str& x ) -> R {
-                                    return x.s;
-                            },
-                            [&]( float& x ) -> R {
-                                    return x;
-                            },
-                            [&]( int32_t& x ) -> R {
-                                    return x;
-                            },
-                            [&]( vari::vref< err, end > ) -> R {
-                                    return {};
-                            } );
-                return {};
+                return l.clear_ws();
         }
 
-        opt< std::string_view > exp( atom< "id"_a > )
+        vari::vopt< string, float, int32_t, id_t, op_t, bool > next()
+        {
+                using R = vari::vopt< string, float, int32_t, id_t, op_t, bool >;
+                return l.next().visit(
+                    [&]( id_t& x ) -> R {
+                            return x;
+                    },
+                    [&]( string& x ) -> R {
+                            return x;
+                    },
+                    [&]( bool& x ) -> R {
+                            return x;
+                    },
+                    [&]( float& x ) -> R {
+                            return x;
+                    },
+                    [&]( int32_t& x ) -> R {
+                            return x;
+                    },
+                    [&]( op_t& op ) -> R {
+                            return op;
+                    },
+                    [&]( vari::vref< err, end > ) -> R {
+                            return {};
+                    } );
+        }
+
+        vari::vopt< expr_t > expr()
+        {
+                using R = vari::vopt< expr_t >;
+                return l.next().visit(
+                    [&]( bool& x ) -> R {
+                            return x;
+                    },
+                    [&]( id_t& ) -> R {
+                            return {};
+                    },
+                    [&]( string& x ) -> R {
+                            return x;
+                    },
+                    [&]( float& x ) -> R {
+                            return x;
+                    },
+                    [&]( int32_t& x ) -> R {
+                            return x;
+                    },
+                    [&]( vari::vref< op_t, err, end > ) -> R {
+                            return {};
+                    } );
+        }
+
+        opt< op_t > op()
+        {
+                using R = opt< op_t >;
+                return l.next().visit(
+                    [&]( op_t& op ) -> R {
+                            return op;
+                    },
+                    [&]( vari::vref< id_t, string, float, int32_t, bool, err, end > ) -> R {
+                            return {};
+                    } );
+        }
+
+        opt< std::string_view > id()
         {
                 using R = opt< std::string_view >;
-                return l->next().visit(
-                    [&]( id& sv ) -> R {
+                return l.next().visit(
+                    [&]( id_t& sv ) -> R {
                             return sv.s;
                     },
-                    [&]( vari::vref< str, float, int32_t, err, end > ) -> R {
+                    [&]( vari::vref< op_t, string, float, int32_t, bool, err, end > ) -> R {
                             return {};
                     } );
         }
@@ -136,7 +208,7 @@ struct parser
         template < typename T >
         opt< T > exp_any()
         {
-                if ( auto r = this->exp( "id"_a ) ) {
+                if ( auto r = this->id() ) {
                         for ( T x : T::iota() )
                                 if ( x.to_string() == *r )
                                         return x;
@@ -145,141 +217,55 @@ struct parser
         }
 };
 
-inline opt< float > _real( parser& p )
+inline bool
+load_value( vari::vref< string, float, int32_t, bool > tgt, vari::vref< expr_t const > val )
 {
-        using R = opt< float >;
-        return p.expr().visit(
-            [&]( std::string_view& ) -> R {
-                    return {};
-            },
-            [&]( float& x ) -> R {
-                    return x;
-            },
-            [&]( int32_t& x ) -> R {
-                    return (float) x;
-            },
-            [&]( vari::empty_t ) -> R {
-                    return {};
-            } );
-}
 
-inline opt< bool > _bool( parser& p )
-{
-        using R = opt< bool >;
-        return p.expr().visit(
-            [&]( std::string_view& s ) -> R {
-                    if ( s == "true" )
-                            return true;
-                    if ( s == "false" )
+        return tgt.visit(
+            [&]( bool& b ) {
+                    return val.visit( [&]< typename T >( T const& x ) {
+                            if constexpr ( std::same_as< T, bool > ) {
+                                    b = x;
+                                    return true;
+                            }
                             return false;
-                    return {};
+                    } );
             },
-            [&]( float& ) -> R {
-                    return {};
+            [&]( string& s ) {
+                    return val.visit(
+                        [&]( string const& sv ) {
+                                s = sv;
+                                return true;
+                        },
+                        [&]( vari::vref< float const, int32_t const, bool const > ) {
+                                return false;
+                        } );
             },
-            [&]( int32_t& x ) -> R {
-                    return x != 0;
+            [&]( float& f ) {
+                    return val.visit( [&]< typename T >( T const& x ) {
+                            if constexpr ( std::same_as< T, float > || std::same_as< T, int32_t > ) {
+                                    f = (float) x;
+                                    return true;
+                            }
+                            return false;
+                    } );
             },
-            [&]( vari::empty_t ) -> R {
-                    return {};
+            [&]( int32_t& i ) {
+                    return val.visit( [&]< typename T >( T const& x ) {
+                            if constexpr ( std::same_as< T, int32_t > ) {
+                                    i = x;
+                                    return true;
+                            }
+                            return false;
+                    } );
             } );
-}
-
-template < typename T >
-struct parse_trait;
-
-struct unit
-{
-        constexpr auto operator<=>( unit const& ) const noexcept = default;
 };
 
-template <>
-struct parse_trait< unit >
+struct expr_tok
 {
-        static vari::vopt< unit > parse( parser& ) noexcept
-        {
-                return unit{};
-        }
-};
+        vari::vval< expr_t > data = int32_t{ 0 };
 
-template < avakar::atomish A >
-struct parse_trait< A >
-{
-        static vari::vopt< A > parse( parser& p ) noexcept
-        {
-                if ( auto v = p.exp_any< A >() )
-                        return *v;
-                return {};
-        }
-};
-
-template <>
-struct parse_trait< bool >
-{
-        static vari::vopt< bool > parse( parser& p ) noexcept
-        {
-                if ( auto v = _bool( p ) )
-                        return *v;
-                return {};
-        }
-};
-
-template <>
-struct parse_trait< float >
-{
-        static vari::vopt< float > parse( parser& p ) noexcept
-        {
-                if ( auto v = _real( p ) )
-                        return *v;
-                return {};
-        }
-};
-
-template < std::size_t N >
-struct parse_trait< em::string_buffer< N > >
-{
-        static vari::vopt< em::string_buffer< N > > parse( parser& p ) noexcept
-        {
-                using R = vari::vopt< em::string_buffer< N > >;
-                return p.expr().visit(
-                    [&]( std::string_view& s ) -> R {
-                            // note that this will cutoff the string if it's longer than N
-                            return em::string_buffer< N >{ s };
-                    },
-                    [&]( float& ) -> R {
-                            return {};
-                    },
-                    [&]( int32_t& ) -> R {
-                            return {};
-                    },
-                    [&]( vari::empty_t ) -> R {
-                            return {};
-                    } );
-        }
-};
-
-template <>
-struct parse_trait< uint32_t >
-{
-        static vari::vopt< uint32_t > parse( parser& p ) noexcept
-        {
-                using R = vari::vopt< uint32_t >;
-                return p.expr().visit(
-                    [&]( std::string_view& ) -> R {
-                            return {};
-                    },
-                    [&]( float& ) -> R {
-                            return {};
-                    },
-                    [&]( int32_t& x ) -> R {
-                            if ( x < 0 )
-                                    return {};
-                            return (uint32_t) x;
-                    },
-                    [&]( vari::empty_t ) -> R {
-                            return {};
-                    } );
-        }
+        friend constexpr auto operator<=>( expr_tok const&, expr_tok const& ) noexcept = default;
 };
 
 }  // namespace servio::parser
