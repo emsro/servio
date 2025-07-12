@@ -41,7 +41,6 @@ using value_type    = vari::typelist< uint32_t, float, bool, encoder_mode, strin
 using value_variant = std::variant< uint32_t, float, bool, encoder_mode, string_type >;
 
 // GEN BEGIN HERE
-// This part of file is auto-generated. Do not edit.
 enum class key : uint32_t
 {
         model                          = 1,
@@ -193,7 +192,7 @@ constexpr std::optional< key > str_to_key( std::string_view str )
         return {};
 }
 
-constexpr std::string_view key_to_str( key k )
+constexpr std::string_view to_str( key k )
 {
         if ( k == key::model )
                 return "model";
@@ -422,6 +421,218 @@ constexpr std::array< uint32_t, 35 > ids = {
     1,  2,  3,  4,  11, 12, 14, 15, 16, 17, 18, 19, 30, 31, 32, 33, 34, 40,
     41, 42, 43, 44, 45, 50, 51, 52, 53, 54, 55, 60, 61, 62, 65, 66, 80,
 };
+template < key K >
+struct key_trait;
+
+template <>
+struct key_trait< key::model >
+{
+        using type = string_type;
+};
+
+template <>
+struct key_trait< key::id >
+{
+        using type = uint32_t;
+};
+
+template <>
+struct key_trait< key::group_id >
+{
+        using type = uint32_t;
+};
+
+template <>
+struct key_trait< key::encoder_mode >
+{
+        using type = cfg::encoder_mode;
+};
+
+template <>
+struct key_trait< key::position_low_angle >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::position_high_angle >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::current_conv_scale >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::current_conv_offset >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::temp_conv_scale >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::temp_conv_offset >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::voltage_conv_scale >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::invert_hbridge >
+{
+        using type = bool;
+};
+
+template <>
+struct key_trait< key::current_loop_p >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::current_loop_i >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::current_loop_d >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::current_lim_min >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::current_lim_max >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::velocity_loop_p >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::velocity_loop_i >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::velocity_loop_d >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::velocity_lim_min >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::velocity_lim_max >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::velocity_to_current_lim_scale >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::position_loop_p >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::position_loop_i >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::position_loop_d >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::position_lim_min >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::position_lim_max >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::position_to_velocity_lim_scale >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::static_friction_scale >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::static_friction_decay >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::minimum_voltage >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::maximum_temperature >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::moving_detection_step >
+{
+        using type = float;
+};
+
+template <>
+struct key_trait< key::quad_encoder_range >
+{
+        using type = uint32_t;
+};
 
 struct map
 {
@@ -558,6 +769,160 @@ struct map
                         return moving_detection_step;
                 if constexpr ( K == key::quad_encoder_range )
                         return quad_encoder_range;
+        }
+
+        constexpr vari::vptr< value_type > ref_by_key( key K )
+        {
+                switch ( K ) {
+                case key::model:
+                        return &model;
+                case key::id:
+                        return &id;
+                case key::group_id:
+                        return &group_id;
+                case key::encoder_mode:
+                        return &encoder_mode;
+                case key::position_low_angle:
+                        return &position_low_angle;
+                case key::position_high_angle:
+                        return &position_high_angle;
+                case key::current_conv_scale:
+                        return &current_conv_scale;
+                case key::current_conv_offset:
+                        return &current_conv_offset;
+                case key::temp_conv_scale:
+                        return &temp_conv_scale;
+                case key::temp_conv_offset:
+                        return &temp_conv_offset;
+                case key::voltage_conv_scale:
+                        return &voltage_conv_scale;
+                case key::invert_hbridge:
+                        return &invert_hbridge;
+                case key::current_loop_p:
+                        return &current_loop_p;
+                case key::current_loop_i:
+                        return &current_loop_i;
+                case key::current_loop_d:
+                        return &current_loop_d;
+                case key::current_lim_min:
+                        return &current_lim_min;
+                case key::current_lim_max:
+                        return &current_lim_max;
+                case key::velocity_loop_p:
+                        return &velocity_loop_p;
+                case key::velocity_loop_i:
+                        return &velocity_loop_i;
+                case key::velocity_loop_d:
+                        return &velocity_loop_d;
+                case key::velocity_lim_min:
+                        return &velocity_lim_min;
+                case key::velocity_lim_max:
+                        return &velocity_lim_max;
+                case key::velocity_to_current_lim_scale:
+                        return &velocity_to_current_lim_scale;
+                case key::position_loop_p:
+                        return &position_loop_p;
+                case key::position_loop_i:
+                        return &position_loop_i;
+                case key::position_loop_d:
+                        return &position_loop_d;
+                case key::position_lim_min:
+                        return &position_lim_min;
+                case key::position_lim_max:
+                        return &position_lim_max;
+                case key::position_to_velocity_lim_scale:
+                        return &position_to_velocity_lim_scale;
+                case key::static_friction_scale:
+                        return &static_friction_scale;
+                case key::static_friction_decay:
+                        return &static_friction_decay;
+                case key::minimum_voltage:
+                        return &minimum_voltage;
+                case key::maximum_temperature:
+                        return &maximum_temperature;
+                case key::moving_detection_step:
+                        return &moving_detection_step;
+                case key::quad_encoder_range:
+                        return &quad_encoder_range;
+                }
+                return nullptr;
+        }
+
+        constexpr vari::vptr< value_type const > ref_by_key( key K ) const
+        {
+                switch ( K ) {
+                case key::model:
+                        return &model;
+                case key::id:
+                        return &id;
+                case key::group_id:
+                        return &group_id;
+                case key::encoder_mode:
+                        return &encoder_mode;
+                case key::position_low_angle:
+                        return &position_low_angle;
+                case key::position_high_angle:
+                        return &position_high_angle;
+                case key::current_conv_scale:
+                        return &current_conv_scale;
+                case key::current_conv_offset:
+                        return &current_conv_offset;
+                case key::temp_conv_scale:
+                        return &temp_conv_scale;
+                case key::temp_conv_offset:
+                        return &temp_conv_offset;
+                case key::voltage_conv_scale:
+                        return &voltage_conv_scale;
+                case key::invert_hbridge:
+                        return &invert_hbridge;
+                case key::current_loop_p:
+                        return &current_loop_p;
+                case key::current_loop_i:
+                        return &current_loop_i;
+                case key::current_loop_d:
+                        return &current_loop_d;
+                case key::current_lim_min:
+                        return &current_lim_min;
+                case key::current_lim_max:
+                        return &current_lim_max;
+                case key::velocity_loop_p:
+                        return &velocity_loop_p;
+                case key::velocity_loop_i:
+                        return &velocity_loop_i;
+                case key::velocity_loop_d:
+                        return &velocity_loop_d;
+                case key::velocity_lim_min:
+                        return &velocity_lim_min;
+                case key::velocity_lim_max:
+                        return &velocity_lim_max;
+                case key::velocity_to_current_lim_scale:
+                        return &velocity_to_current_lim_scale;
+                case key::position_loop_p:
+                        return &position_loop_p;
+                case key::position_loop_i:
+                        return &position_loop_i;
+                case key::position_loop_d:
+                        return &position_loop_d;
+                case key::position_lim_min:
+                        return &position_lim_min;
+                case key::position_lim_max:
+                        return &position_lim_max;
+                case key::position_to_velocity_lim_scale:
+                        return &position_to_velocity_lim_scale;
+                case key::static_friction_scale:
+                        return &static_friction_scale;
+                case key::static_friction_decay:
+                        return &static_friction_decay;
+                case key::minimum_voltage:
+                        return &minimum_voltage;
+                case key::maximum_temperature:
+                        return &maximum_temperature;
+                case key::moving_detection_step:
+                        return &moving_detection_step;
+                case key::quad_encoder_range:
+                        return &quad_encoder_range;
+                }
+                return nullptr;
         }
 
         constexpr vari::vptr< value_type > ref_by_id( uint32_t id )

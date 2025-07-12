@@ -28,21 +28,6 @@ struct kval
         constexpr auto operator<=>( kval const& ) const noexcept = default;
 };
 
-template < auto Key, typename T >
-constexpr kval< Key, T > operator|( T val, kval< Key, parser::unit > ) noexcept
-{
-        return { std::move( val ) };
-}
-
-namespace literals
-{
-template < avakar::s x >
-constexpr kval< avakar::a< x >{}, parser::unit > operator""_kv() noexcept
-{
-        return {};
-}
-}  // namespace literals
-
 template < uint32_t IDX, auto Key, typename T >
 struct field
 {

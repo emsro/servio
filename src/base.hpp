@@ -3,6 +3,7 @@
 #include <emlabcpp/algorithm.h>
 #include <emlabcpp/quantity.h>
 #include <numbers>
+#include <optional>
 
 #pragma once
 

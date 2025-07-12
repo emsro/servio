@@ -18,52 +18,59 @@ std::ostream& operator<<( std::ostream& os, atom< Ts... > const& a )
 namespace servio::bb
 {
 
-void vary_value( vari::vref< iface::cfg_types > x )
+void vary_value( std::string_view k, nlohmann::json& x )
 {
-        return x.visit(
-            [&]( float& x ) {
-                    x += 1;
-            },
-            [&]< std::size_t N >( em::string_buffer< N >& xs ) {
-                    xs[0] = 'X';
-            },
-            [&]( iface::ec_mode_key& k ) {
-                    k = iface::ec_mode_key::from_value(
-                        ( k.value() + 1 ) % k.keys.size() );  // XXX: change?
-            },
-            [&]( bool& x ) {
-                    x = !x;
-            },
-            [&]( uint32_t& x ) {
-                    x += 1;
-            } );
+        if ( x.is_number() ) {
+                x = x.get< float >() + 1;
+                return;
+        }
+        if ( x.is_string() ) {
+                if ( k == "encoder_mode" ) {
+                        x = x.get< std::string >() == "quad" ? "analog" : "quad";
+                        return;
+                }
+                x = "X";
+                return;
+        }
+        if ( x.is_boolean() ) {
+                x = !x.get< bool >();
+                return;
+        }
+        throw std::runtime_error( "Unsupported JSON type" );
 }
 
 ::testing::AssertionResult cmp_cfg_state(
-    opt< std::size_t >                                  tested_i,
-    std::vector< vari::vval< iface::cfg_vals > > const& initial,
-    std::vector< vari::vval< iface::cfg_vals > > const& new_state )
+    std::string_view                               tested_k,
+    std::map< std::string, nlohmann::json > const& initial,
+    std::map< std::string, nlohmann::json > const& new_state )
 {
 
-        for ( std::size_t i = 0; i < initial.size(); i++ ) {
-
-                bool const are_equal = initial[i] == new_state[i];
-                if ( tested_i && i == *tested_i ) {
+        auto bl = initial.begin();
+        auto br = new_state.begin();
+        for ( ; bl != initial.end() && br != new_state.end(); ++bl, ++br ) {
+                if ( bl->first != br->first ) {
+                        return ::testing::AssertionFailure()
+                               << "Config keys do not match: initial: " << bl->first
+                               << ", new: " << br->first;
+                }
+                bool const are_equal = bl->second == br->second;
+                if ( tested_k != "" && bl->first == tested_k ) {
                         if ( are_equal ) {
                                 return ::testing::AssertionFailure()
-                                       << "The newly set key " << *tested_i
+                                       << "The newly set key " << tested_k
                                        << " is same as in initial setting";
                         }
                 } else if ( !are_equal ) {
-                        initial[i].visit( [&]< typename KV1 >( KV1& x ) {
-                                new_state[i].visit( [&]( auto& y ) {
-                                        return ::testing::AssertionFailure()
-                                               << "Field " << KV1::key.to_string()
-                                               << " changed, initial: " << x.value
-                                               << " new: " << y.value;
-                                } );
-                        } );
+                        return ::testing::AssertionFailure()
+                               << "Field " << bl->first << " changed, initial: " << bl->second
+                               << " new: " << br->second;
                 }
+        }
+
+        if ( bl != initial.end() || br != new_state.end() ) {
+                return ::testing::AssertionFailure()
+                       << "Config sizes do not match: initial: " << initial.size()
+                       << ", new: " << new_state.size();
         }
 
         return ::testing::AssertionSuccess();
@@ -71,32 +78,24 @@ void vary_value( vari::vref< iface::cfg_types > x )
 
 boost::asio::awaitable< void > test_config( boost::asio::io_context&, scmdio::port_iface& port )
 {
-        std::vector< vari::vval< iface::cfg_vals > > const cfg_vec =
-            co_await scmdio::get_full_config( port );
+        auto const cfg_vec = co_await scmdio::get_full_config( port );
 
-        for ( std::size_t i = 0; i < cfg_vec.size(); i++ ) {
-                co_await cfg_vec[i].visit(
-                    [&]< typename KV >( KV& val ) -> boost::asio::awaitable< void > {
-                            auto cpy{ val };
-                            vary_value( cpy.value );
-                            spdlog::info(
-                                "Setting new value {}: {}, original: {}",
-                                KV::key,
-                                cpy.value,
-                                val.value );
-                            co_await scmdio::set_config_field( port, cpy );
+        for ( auto const& [k, v] : cfg_vec ) {
+                auto cpy{ v };
+                vary_value( k, cpy );
+                spdlog::info( "Setting new value {}: {}, original: {}", k, cpy, v );
+                co_await scmdio::set_config_field( port, k, cpy );
 
-                            EXPECT_TRUE( cmp_cfg_state(
-                                i, cfg_vec, co_await scmdio::get_full_config( port ) ) );
+                EXPECT_TRUE(
+                    cmp_cfg_state( k, cfg_vec, co_await scmdio::get_full_config( port ) ) );
 
-                            spdlog::info( "Setting original value {}: {}", KV::key, val.value );
+                spdlog::info( "Setting original value {}: {}", k, v );
 
-                            co_await scmdio::set_config_field( port, val );
+                co_await scmdio::set_config_field( port, k, v );
 
-                            auto const new_cfg_vec = co_await scmdio::get_full_config( port );
+                auto const new_cfg_vec = co_await scmdio::get_full_config( port );
 
-                            EXPECT_TRUE( cmp_cfg_state( {}, cfg_vec, new_cfg_vec ) );
-                    } );
+                EXPECT_TRUE( cmp_cfg_state( "", cfg_vec, new_cfg_vec ) );
         }
 }
 

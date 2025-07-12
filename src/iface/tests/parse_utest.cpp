@@ -1,110 +1,77 @@
 #include "../def.hpp"
 
-#include <emlabcpp/algorithm.h>
-#include <format>
 #include <gtest/gtest.h>
-#include <source_location>
+#include <string_view>
+#include <vari/vopt.h>
+#include <vari/vval.h>
 
 namespace servio::iface
 {
-
-using namespace std::string_view_literals;
-
-template < auto A >
-auto kv( auto x )
+namespace
 {
-        return kval< A, decltype( x ) >{ .value = std::move( x ) };
+template < typename S >
+void test_valid_parse( std::string_view inpt, S expected_stmt )
+{
+        auto res = parse( inpt );
+        res.visit(
+            [&]( vari::vref< stmt > s ) {
+                    vari::vval< stmts > expected{ expected_stmt };
+                    EXPECT_EQ( s->sub, expected );
+            },
+            [&]( invalid_stmt& ) {
+                    FAIL() << "expected valid parse";
+            } );
 }
 
-template < auto A >
-auto kv()
+void test_invalid_parse( std::string_view inpt, parse_status st )
 {
-        return kval< A, parser::unit >{};
+        auto res = parse( inpt );
+        res.visit(
+            [&]( vari::vref< stmt > ) {
+                    FAIL() << "expected invalid parse";
+            },
+            [&]( invalid_stmt& s ) {
+                    EXPECT_EQ( s.st, st ) << "inpt: " << inpt << "\n"
+                                          << "st: " << to_str( s.st ) << "\n";
+            } );
+}
+}  // namespace
+
+TEST( IfaceParse, ValidParse )
+{
+        test_valid_parse( "mode disengaged", mode_stmt{ mode_disengaged_stmt{} } );
+        test_valid_parse( "mode power 42", mode_stmt{ mode_power_stmt{ 42.0F } } );
+        test_valid_parse( "mode current -1", mode_stmt{ mode_current_stmt{ -1.0F } } );
+        test_valid_parse( "mode velocity 0.0", mode_stmt{ mode_velocity_stmt{ 0.0F } } );
+        test_valid_parse( "mode position 0", mode_stmt{ mode_position_stmt{ 0.0F } } );
+        test_valid_parse( "mode position 3.14", mode_stmt{ mode_position_stmt{ 3.14F } } );
+
+        test_valid_parse( "prop mode", prop_stmt{ property::mode } );
+        test_valid_parse( "prop current", prop_stmt{ property::current } );
+        test_valid_parse( "prop vcc", prop_stmt{ property::vcc } );
+        test_valid_parse( "prop temp", prop_stmt{ property::temp } );
+        test_valid_parse( "prop position", prop_stmt{ property::position } );
+        test_valid_parse( "prop velocity", prop_stmt{ property::velocity } );
+
+        test_valid_parse(
+            "cfg set foo bar",
+            cfg_stmt{ cfg_set_stmt{ .field = "foo", .value = { iface::string{ "bar" } } } } );
+        test_valid_parse( "cfg get foo", cfg_stmt{ cfg_get_stmt{ "foo" } } );
+        test_valid_parse(
+            "cfg list5 level 1 5",
+            cfg_stmt{ cfg_list5_stmt{ .level = "level", .offset = 1, .n = 5 } } );
+        test_valid_parse( "cfg commit", cfg_stmt{ cfg_commit_stmt{} } );
+        test_valid_parse( "cfg clear", cfg_stmt{ cfg_clear_stmt{} } );
 }
 
-TEST( iface, valid_parse )
+TEST( IfaceParse, InvalidParse )
 {
-        auto test_f = [&]( std::string_view     inpt,
-                           vari::vval< stmt >   exp,
-                           std::source_location loc = std::source_location::current() ) {
-                auto res = parse( inpt );
-                EXPECT_EQ( res, exp )
-                    << "inpt: " << inpt << "\n idx: " << res.index() << " vs " << exp.index()
-                    << "\n loc: " << loc.file_name() << ":" << loc.line() << "\n";
-        };
-
-        test_f( "mode disengaged", mode_stmt{ kv< "disengaged"_a >() } );
-        test_f( "mode power 42", mode_stmt{ kv< "power"_a >( 42.0F ) } );
-        test_f( "mode current -1", mode_stmt{ kv< "current"_a >( -1.0F ) } );
-        test_f( "mode velocity 0.0", mode_stmt{ kv< "velocity"_a >( 0.0F ) } );
-        test_f( "mode position 0", mode_stmt{ kv< "position"_a >( 0.0F ) } );
-        test_f( "mode position 3.14", mode_stmt{ kv< "position"_a >( 3.14F ) } );
-
-        test_f( "prop mode", prop_stmt{ "mode"_a } );
-        test_f( "prop current", prop_stmt{ "current"_a } );
-        test_f( "prop vcc", prop_stmt{ "vcc"_a } );
-        test_f( "prop temp", prop_stmt{ "temp"_a } );
-        test_f( "prop position", prop_stmt{ "position"_a } );
-        test_f( "prop velocity", prop_stmt{ "velocity"_a } );
-
-        // XXX: maybe move to vari?
-        field_tuple_t< cfg > tpl{};
-        em::for_each( tpl, [&]< typename F >( F& ) -> void {
-                using KV = typename F::kv_type;
-                if constexpr ( F::key == cfg_key{ "encoder_mode"_a } )
-                        test_f(
-                            std::format( "cfg set {} {}", F::key.to_string(), "quad" ),
-                            cfg_set_stmt{ .val = KV{ .value = "quad"_a } } );
-                else if constexpr ( F::key == cfg_key{ "model"_a } )
-                        test_f(
-                            std::format( "cfg set {} {}", F::key.to_string(), "wololo" ),
-                            cfg_set_stmt{ .val = KV{ .value = "wololo" } } );
-                else if constexpr ( std::same_as< typename F::value_type, bool > )
-                        test_f(
-                            std::format( "cfg set {} false", F::key.to_string() ),
-                            cfg_set_stmt{ .val = KV{ .value = false } } );
-                else
-                        test_f(
-                            std::format( "cfg set {} {}", F::key.to_string(), 42 ),
-                            cfg_set_stmt{ .val = KV{ .value = 42 } } );
-        } );
-
-        em::for_each( tpl, [&]< typename F >( F& ) -> void {
-                test_f(
-                    std::format( "cfg get {}", F::key.to_string() ), cfg_get_stmt{ .k = F::key } );
-        } );
-
-        test_f(
-            "cfg set model \"no model\"",
-            cfg_set_stmt{ .val = kv< "model"_a, iface::str_name >( "no model" ) } );
-
-        test_f( "cfg commit", cfg_commit_stmt{} );
-        test_f( "    cfg      commit       ", cfg_commit_stmt{} );
-        test_f( "    cfg  \t   commit       ", cfg_commit_stmt{} );
-        test_f( "    cfg\tcommit       ", cfg_commit_stmt{} );
-        test_f( "cfg clear", cfg_clear_stmt{} );
-}
-
-TEST( iface, invalid_parse )
-{
-        auto test_f = [&]( std::string_view inpt ) {
-                // XXX: maybe vval could be comparable with any T?
-                vari::vval< invalid_stmt > exp = invalid_stmt{};
-
-                auto res = parse( inpt );
-                EXPECT_EQ( res, exp )
-                    << "inpt: " << inpt << "\n idx: " << res.index() << " vs " << exp.index();
-        };
-
-        test_f( "" );
-        for ( std::size_t i = 0; i < 255; i++ )
-                test_f( std::to_string( (char) i ) );
-        test_f( "mode" );
-        test_f( "prop" );
-        test_f( "cfg" );
-        test_f( "cfg " );
-        test_f( "cfg s" );
-        test_f( "cfg commit boo" );
+        test_invalid_parse( "", parse_status::CMD_MISSING );
+        test_invalid_parse( "mode", parse_status::CMD_MISSING );
+        test_invalid_parse( "prop", parse_status::ARG_MISSING );
+        test_invalid_parse( "cfg", parse_status::CMD_MISSING );
+        test_invalid_parse( "cfg s", parse_status::UNKNOWN_CMD );
+        test_invalid_parse( "cfg commit boo", parse_status::UNEXPECTED_ARG );
 }
 
 }  // namespace servio::iface

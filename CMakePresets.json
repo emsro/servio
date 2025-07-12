@@ -22,7 +22,7 @@
                 "SERVIO_PLATFORM": "host",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
                 "CMAKE_C_FLAGS": "-fsanitize=address",
-                "CMAKE_CXX_FLAGS": "-fsanitize=address"
+                "CMAKE_CXX_FLAGS": "-fsanitize=address -O0"
             }
         },
         {

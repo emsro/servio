@@ -12,12 +12,8 @@ namespace servio::bb
 boost::asio::awaitable< void >
 test_properties_querying( boost::asio::io_context&, scmdio::port_iface& port )
 {
-        for ( auto k : iface::prop_key::iota() ) {
-                auto vals = co_await scmdio::get_property( port, k );
-                vals.visit( [&]< auto K, typename T >( iface::kval< K, T >& ) {
-                        EXPECT_EQ( K.to_string(), k.to_string() );
-                } );
-        }
+        for ( auto k : iface::property_values )
+                co_await scmdio::get_property( port, to_str( k ) );
 }
 
 }  // namespace servio::bb

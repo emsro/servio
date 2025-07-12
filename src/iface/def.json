@@ -1,0 +1,188 @@
+{
+    "types": [
+        {
+            "name": "property",
+            "kind": "enum",
+            "values": [
+                {
+                    "key": "mode",
+                    "desc": "Mode of the servomotor"
+                },
+                {
+                    "key": "current",
+                    "desc": "Actual current flowing through the servomotor"
+                },
+                {
+                    "key": "vcc",
+                    "desc": "Actual input voltage"
+                },
+                {
+                    "key": "temp",
+                    "desc": "Actual temperature of the MCU"
+                },
+                {
+                    "key": "position",
+                    "desc": "Actual position of the servomotor"
+                },
+                {
+                    "key": "velocity",
+                    "desc": "Actual velocity of the servomotor"
+                }
+            ]
+        }
+    ],
+    "cmds": [
+        {
+            "name": "mode",
+            "type": "group",
+            "desc": "Set mode of servomotor",
+            "cmds": [
+                {
+                    "name": "disengaged",
+                    "desc": "Set servomotor to disengaged mode, no power applied"
+                },
+                {
+                    "name": "power",
+                    "desc": "Regulate power applied to the servomotor",
+                    "type": "arg",
+                    "args": [
+                        {
+                            "name": "power",
+                            "type": "float",
+                            "default": 0,
+                            "unit": "",
+                            "desc": "Power between -1. and 1."
+                        }
+                    ]
+                },
+                {
+                    "name": "current",
+                    "desc": "Regulate current applied to the servomotor",
+                    "type": "arg",
+                    "args": [
+                        {
+                            "name": "current",
+                            "type": "float",
+                            "default": 0.0,
+                            "unit": "A",
+                            "desc": "Current level to set"
+                        }
+                    ]
+                },
+                {
+                    "name": "velocity",
+                    "desc": "Regulate velocity applied to the servomotor",
+                    "type": "arg",
+                    "args": [
+                        {
+                            "name": "velocity",
+                            "type": "float",
+                            "default": 0.0,
+                            "unit": "rad/s",
+                            "desc": "Velocity to set"
+                        }
+                    ]
+                },
+                {
+                    "name": "position",
+                    "desc": "Regulate position applied to the servomotor",
+                    "type": "arg",
+                    "args": [
+                        {
+                            "name": "position",
+                            "type": "float",
+                            "default": 0.0,
+                            "unit": "rad",
+                            "desc": "Position to set"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "prop",
+            "type": "arg",
+            "desc": "Get properties of servomotor",
+            "args": [
+                {
+                    "name": "name",
+                    "type": "property",
+                    "desc": "Property to get"
+                }
+            ]
+        },
+        {
+            "name": "cfg",
+            "type": "group",
+            "desc": "Configuration commands for the servomotor",
+            "cmds": [
+                {
+                    "name": "set",
+                    "type": "arg",
+                    "desc": "Set a configuration field",
+                    "args": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "desc": "Configuration field to set"
+                        },
+                        {
+                            "name": "value",
+                            "type": "expr_tok",
+                            "desc": "Value to set for the configuration field, type depends on the field"
+                        }
+                    ]
+                },
+                {
+                    "name": "get",
+                    "type": "arg",
+                    "desc": "Get a configuration field",
+                    "args": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "desc": "Configuration field to get"
+                        }
+                    ]
+                },
+                {
+                    "name": "list5",
+                    "type": "arg",
+                    "desc": "List subset of configuration fields",
+                    "args": [
+                        {
+                            "name": "level",
+                            "type": "string",
+                            "default": "\"\"",
+                            "desc": "Configuration level to list, empty for root level"
+                        },
+                        {
+                            "name": "offset",
+                            "type": "int32_t",
+                            "default": 0,
+                            "desc": "Offset for the configuration fields to list"
+                        },
+                        {
+                            "name": "n",
+                            "type": "int32_t",
+                            "default": 5,
+                            "desc": "Number of configuration fields to list"
+                        }
+                    ]
+                },
+                {
+                    "name": "commit",
+                    "desc": "Commit the current configuration changes into memory"
+                },
+                {
+                    "name": "clear",
+                    "desc": "Clear the current configuration from memory"
+                }
+            ]
+        },
+        {
+            "name": "info",
+            "desc": "Get information about the servomotor"
+        }
+    ]
+}

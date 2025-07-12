@@ -105,24 +105,29 @@ TEST( core, dispatcher )
 
         test( "prop velocity", R"(["OK",0.0])"_json );
 
-        // cfg set/get
-        std::tuple t = iface::field_tuple_t< iface::cfg >{};
-        em::for_each( t, [&]< typename F >( F& ) {
-                static constexpr std::string_view s  = F::key.to_string();
-                static constexpr cfg::key         kv = *cfg::str_to_key( s );
+        test( "cfg set model wololo", R"(["OK"])"_json );
 
-                auto res_j = exec( std::format( "cfg get {}", s ) );
+        // cfg set/get
+        for ( auto k : cfg::keys ) {
+
+                auto res_j = exec( std::format( "cfg get {}", to_str( k ) ) );
 
                 // verify get
-                if constexpr ( iface::cfg_key{ F::key } == "encoder_mode"_a ) {
-                        auto expected = m.ref_by_key< kv >();
-                        EXPECT_EQ( res_j.at( 1 ), cfg::encoder_mode_to_str( expected ) );
-                } else if constexpr ( std::same_as< typename F::value_type, float > )
-                        EXPECT_NEAR( res_j.at( 1 ), m.ref_by_key< kv >(), 0.00001 );
-                else
-                        EXPECT_EQ( res_j.at( 1 ), m.ref_by_key< kv >() )
-                            << "key: " << F::key.to_string() << "\nk: " << F::key.to_string()
-                            << std::endl;
+                auto expected = m.ref_by_key( k );
+                expected.visit(
+                    [&]( vari::empty_t ) {
+                            FAIL();
+                    },
+                    [&]< typename T >( T& x ) {
+                            if constexpr ( std::same_as< T, cfg::encoder_mode > )
+                                    EXPECT_EQ( res_j.at( 1 ), cfg::encoder_mode_to_str( x ) );
+                            else if constexpr ( std::same_as< T, float > )
+                                    EXPECT_NEAR( res_j.at( 1 ), x, 0.00001 );
+                            else
+                                    EXPECT_EQ( res_j.at( 1 ), x )
+                                        << "key: " << to_str( k ) << " type: " << typeid( x ).name()
+                                        << std::endl;
+                    } );
 
                 // vary
                 struct vary
@@ -155,21 +160,36 @@ TEST( core, dispatcher )
                         }
                 };
 
-                exec( std::format( "cfg set {} {}", s, vary{}( m.ref_by_key< kv >() ) ) );
+                exec( std::format(
+                    "cfg set {} {}",
+                    to_str( k ),
+                    expected.visit(
+                        [&]( vari::empty_t ) -> std::string {
+                                return "";
+                        },
+                        [&]( auto& x ) -> std::string {
+                                return std::format( "{}", vary{}( x ) );
+                        } ) ) );
 
-                res_j = exec( std::format( "cfg get {}", s ) );
+                res_j = exec( std::format( "cfg get {}", to_str( k ) ) );
 
                 // verify change
-                if constexpr ( iface::cfg_key{ F::key } == "encoder_mode"_a ) {
-                        auto expected = m.ref_by_key< kv >();
-                        EXPECT_EQ( res_j.at( 1 ), cfg::encoder_mode_to_str( expected ) );
-                } else if constexpr ( std::same_as< typename F::value_type, float > )
-                        EXPECT_NEAR( res_j.at( 1 ), m.ref_by_key< kv >(), 0.00001 );
-                else
-                        EXPECT_EQ( res_j.at( 1 ), m.ref_by_key< kv >() )
-                            << "key: " << F::key.to_string() << "\nk: " << F::key.to_string()
-                            << std::endl;
-        } );
+                expected = m.ref_by_key( k );
+                expected.visit(
+                    [&]( vari::empty_t ) {
+                            FAIL();
+                    },
+                    [&]< typename T >( T& x ) {
+                            if constexpr ( std::same_as< T, cfg::encoder_mode > )
+                                    EXPECT_EQ( res_j.at( 1 ), cfg::encoder_mode_to_str( x ) );
+                            else if constexpr ( std::same_as< T, float > )
+                                    EXPECT_NEAR( res_j.at( 1 ), x, 0.00001 );
+                            else
+                                    EXPECT_EQ( res_j.at( 1 ), x )
+                                        << "key: " << to_str( k ) << " type: " << typeid( x ).name()
+                                        << std::endl;
+                    } );
+        }
 
         EXPECT_EQ( sd.store_cnt, 0 );
         test( "cfg commit", R"(["OK"])"_json );
