@@ -86,7 +86,6 @@ var searchData=
   ['group_20id_83',['REQ4.8 Group ID',['../comms.html#autotoc_md92',1,'']]],
   ['group_20tt_20cfg_20tt_84',['group &lt;tt&gt;cfg&lt;/tt&gt;',['../md_src_2iface_2iface.html#autotoc_md58',1,'']]],
   ['group_20tt_20mode_20tt_85',['group &lt;tt&gt;mode&lt;/tt&gt;',['../md_src_2iface_2iface.html#autotoc_md51',1,'']]],
-  ['group_5fid_86',['group_id',['../structservio_1_1cfg_1_1map.html#ac42b48936f0e0bdcbe1981d43345f8ca',1,'servio::cfg::map::group_id'],['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a0e939a4ffd3aacd724dd3b50147b4353',1,'servio::cfg::group_id']]],
-  ['group_5fid_20tt_87',['3 &lt;tt&gt;group_id&lt;/tt&gt;',['../md_src_2cfg_2cfg.html#autotoc_md9',1,'']]],
-  ['grouphandler_88',['GroupHandler',['../namespacegen.html#a78e2d0fb7a745d7484838cf4bc688cb1',1,'gen']]]
+  ['group_5fid_86',['group_id',['../md_src_2cfg_2cfg.html#autotoc_md9',1,'3 group_id'],['../structservio_1_1cfg_1_1map.html#ac42b48936f0e0bdcbe1981d43345f8ca',1,'servio::cfg::map::group_id'],['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a0e939a4ffd3aacd724dd3b50147b4353',1,'servio::cfg::group_id']]],
+  ['grouphandler_87',['GroupHandler',['../namespacegen.html#a78e2d0fb7a745d7484838cf4bc688cb1',1,'gen']]]
 ];
