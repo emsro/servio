@@ -339,83 +339,70 @@ $(document).ready(function(){initNavTree('parser_8hpp_source.html',''); initResi
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                    } );</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        }</div>
 </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
-<div class="foldopen" id="foldopen00209" data-start="{" data-end="}">
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="structservio_1_1parser_1_1parser.html#af3dd91a8bfa86c00e8f024fc6af060bf">  209</a></span>        <a class="code hl_typedef" href="namespaceservio_1_1parser.html#a6f812287956d67cd893002e5c196fb46">opt&lt; T &gt;</a> <a class="code hl_function" href="structservio_1_1parser_1_1parser.html#af3dd91a8bfa86c00e8f024fc6af060bf">exp_any</a>()</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        {</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                <span class="keywordflow">if</span> ( <span class="keyword">auto</span> r = this-&gt;<span class="keywordtype">id</span>() ) {</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                        <span class="keywordflow">for</span> ( T x : T::iota() )</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                                <span class="keywordflow">if</span> ( x.to_string() == *r )</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                                        <span class="keywordflow">return</span> x;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                }</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>};</div>
 </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>};</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="keyword">inline</span> <span class="keywordtype">bool</span></div>
+<div class="foldopen" id="foldopen00210" data-start="{" data-end="}">
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="namespaceservio_1_1parser.html#a4fa25e3ee27b27cddc600423ab729c29">  210</a></span><a class="code hl_function" href="namespaceservio_1_1parser.html#a4fa25e3ee27b27cddc600423ab729c29">load_value</a>( vari::vref&lt; string, float, int32_t, bool &gt; tgt, vari::vref&lt; expr_t const &gt; val )</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>{</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">return</span> tgt.visit(</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            [&amp;]( <span class="keywordtype">bool</span>&amp; b ) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                    <span class="keywordflow">return</span> val.visit( [&amp;]&lt; <span class="keyword">typename</span> T &gt;( T <span class="keyword">const</span>&amp; x ) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, bool &gt; ) {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                                    b = x;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                            }</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                    } );</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            },</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            [&amp;]( <span class="keywordtype">string</span>&amp; s ) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                    <span class="keywordflow">return</span> val.visit(</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                        [&amp;]( <span class="keywordtype">string</span> <span class="keyword">const</span>&amp; sv ) {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                                s = sv;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                        },</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                        [&amp;]( vari::vref&lt; float const, int32_t const, bool const &gt; ) {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                        } );</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            },</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            [&amp;]( <span class="keywordtype">float</span>&amp; f ) {</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                    <span class="keywordflow">return</span> val.visit( [&amp;]&lt; <span class="keyword">typename</span> T &gt;( T <span class="keyword">const</span>&amp; x ) {</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, float &gt; || std::same_as&lt; T, int32_t &gt; ) {</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                                    f = (float) x;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                            }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                    } );</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            },</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            [&amp;]( int32_t&amp; i ) {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                    <span class="keywordflow">return</span> val.visit( [&amp;]&lt; <span class="keyword">typename</span> T &gt;( T <span class="keyword">const</span>&amp; x ) {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, int32_t &gt; ) {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                                    i = x;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                            }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                    } );</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            } );</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>};</div>
 </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="keyword">inline</span> <span class="keywordtype">bool</span></div>
-<div class="foldopen" id="foldopen00221" data-start="{" data-end="}">
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="namespaceservio_1_1parser.html#a4fa25e3ee27b27cddc600423ab729c29">  221</a></span><a class="code hl_function" href="namespaceservio_1_1parser.html#a4fa25e3ee27b27cddc600423ab729c29">load_value</a>( vari::vref&lt; string, float, int32_t, bool &gt; tgt, vari::vref&lt; expr_t const &gt; val )</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>{</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keywordflow">return</span> tgt.visit(</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            [&amp;]( <span class="keywordtype">bool</span>&amp; b ) {</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                    <span class="keywordflow">return</span> val.visit( [&amp;]&lt; <span class="keyword">typename</span> T &gt;( T <span class="keyword">const</span>&amp; x ) {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, bool &gt; ) {</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                                    b = x;</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                            }</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                    } );</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            },</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            [&amp;]( <span class="keywordtype">string</span>&amp; s ) {</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                    <span class="keywordflow">return</span> val.visit(</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                        [&amp;]( <span class="keywordtype">string</span> <span class="keyword">const</span>&amp; sv ) {</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                                s = sv;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                        },</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                        [&amp;]( vari::vref&lt; float const, int32_t const, bool const &gt; ) {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                        } );</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            },</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            [&amp;]( <span class="keywordtype">float</span>&amp; f ) {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                    <span class="keywordflow">return</span> val.visit( [&amp;]&lt; <span class="keyword">typename</span> T &gt;( T <span class="keyword">const</span>&amp; x ) {</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, float &gt; || std::same_as&lt; T, int32_t &gt; ) {</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                                    f = (float) x;</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                            }</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                    } );</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            },</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            [&amp;]( int32_t&amp; i ) {</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    <span class="keywordflow">return</span> val.visit( [&amp;]&lt; <span class="keyword">typename</span> T &gt;( T <span class="keyword">const</span>&amp; x ) {</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::same_as&lt; T, int32_t &gt; ) {</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                                    i = x;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                            }</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                    } );</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            } );</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>};</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="foldopen" id="foldopen00253" data-start="{" data-end="};">
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="structservio_1_1parser_1_1expr__tok.html">  253</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1parser_1_1expr__tok.html">expr_tok</a></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>{</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="structservio_1_1parser_1_1expr__tok.html#a23c279d402a3d142ad392c7ddaed99b9">  255</a></span>        vari::vval&lt; expr_t &gt; <a class="code hl_variable" href="structservio_1_1parser_1_1expr__tok.html#a23c279d402a3d142ad392c7ddaed99b9">data</a> = int32_t{ 0 };</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="structservio_1_1parser_1_1expr__tok.html#a553b5e90a9a8bb4771976369f0953aec">  257</a></span>        <span class="keyword">friend</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_friend" href="structservio_1_1parser_1_1expr__tok.html#a553b5e90a9a8bb4771976369f0953aec">operator&lt;=&gt;</a>( <a class="code hl_struct" href="structservio_1_1parser_1_1expr__tok.html">expr_tok</a> <span class="keyword">const</span>&amp;, <a class="code hl_struct" href="structservio_1_1parser_1_1expr__tok.html">expr_tok</a> <span class="keyword">const</span>&amp; ) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>};</div>
 </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
-<div class="foldopen" id="foldopen00264" data-start="{" data-end="};">
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="structservio_1_1parser_1_1expr__tok.html">  264</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1parser_1_1expr__tok.html">expr_tok</a></div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>{</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="structservio_1_1parser_1_1expr__tok.html#a23c279d402a3d142ad392c7ddaed99b9">  266</a></span>        vari::vval&lt; expr_t &gt; <a class="code hl_variable" href="structservio_1_1parser_1_1expr__tok.html#a23c279d402a3d142ad392c7ddaed99b9">data</a> = int32_t{ 0 };</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="structservio_1_1parser_1_1expr__tok.html#a553b5e90a9a8bb4771976369f0953aec">  268</a></span>        <span class="keyword">friend</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_friend" href="structservio_1_1parser_1_1expr__tok.html#a553b5e90a9a8bb4771976369f0953aec">operator&lt;=&gt;</a>( <a class="code hl_struct" href="structservio_1_1parser_1_1expr__tok.html">expr_tok</a> <span class="keyword">const</span>&amp;, <a class="code hl_struct" href="structservio_1_1parser_1_1expr__tok.html">expr_tok</a> <span class="keyword">const</span>&amp; ) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>};</div>
-</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>}  <span class="comment">// namespace servio::parser</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}  <span class="comment">// namespace servio::parser</span></div>
 </div>
 <div class="ttc" id="anamespaceservio_1_1parser_html"><div class="ttname"><a href="namespaceservio_1_1parser.html">servio::parser</a></div><div class="ttdef"><b>Definition</b> parser.hpp:11</div></div>
 <div class="ttc" id="anamespaceservio_1_1parser_html_a24b787b75914be64d29c85e0e941a3e4"><div class="ttname"><a href="namespaceservio_1_1parser.html#a24b787b75914be64d29c85e0e941a3e4">servio::parser::parse_op</a></div><div class="ttdeci">vari::vopt&lt; op_t &gt; parse_op(char const *&amp;p, char const *e) noexcept</div><div class="ttdef"><b>Definition</b> parser.hpp:42</div></div>
 <div class="ttc" id="anamespaceservio_1_1parser_html_a261654f8652586d4a86e08563956f996"><div class="ttname"><a href="namespaceservio_1_1parser.html#a261654f8652586d4a86e08563956f996">servio::parser::id_t::s</a></div><div class="ttdeci">std::string_view s</div><div class="ttdef"><b>Definition</b> parser.hpp:63</div></div>
-<div class="ttc" id="anamespaceservio_1_1parser_html_a4fa25e3ee27b27cddc600423ab729c29"><div class="ttname"><a href="namespaceservio_1_1parser.html#a4fa25e3ee27b27cddc600423ab729c29">servio::parser::load_value</a></div><div class="ttdeci">bool load_value(vari::vref&lt; string, float, int32_t, bool &gt; tgt, vari::vref&lt; expr_t const &gt; val)</div><div class="ttdef"><b>Definition</b> parser.hpp:221</div></div>
+<div class="ttc" id="anamespaceservio_1_1parser_html_a4fa25e3ee27b27cddc600423ab729c29"><div class="ttname"><a href="namespaceservio_1_1parser.html#a4fa25e3ee27b27cddc600423ab729c29">servio::parser::load_value</a></div><div class="ttdeci">bool load_value(vari::vref&lt; string, float, int32_t, bool &gt; tgt, vari::vref&lt; expr_t const &gt; val)</div><div class="ttdef"><b>Definition</b> parser.hpp:210</div></div>
 <div class="ttc" id="anamespaceservio_1_1parser_html_a6f812287956d67cd893002e5c196fb46"><div class="ttname"><a href="namespaceservio_1_1parser.html#a6f812287956d67cd893002e5c196fb46">servio::parser::opt</a></div><div class="ttdeci">std::optional&lt; T &gt; opt</div><div class="ttdef"><b>Definition</b> parser.hpp:17</div></div>
 <div class="ttc" id="anamespaceservio_1_1parser_html_a8763d76da0873cac4b90e8fe382886a8"><div class="ttname"><a href="namespaceservio_1_1parser.html#a8763d76da0873cac4b90e8fe382886a8">servio::parser::op_t</a></div><div class="ttdeci">op_t</div><div class="ttdef"><b>Definition</b> parser.hpp:38</div></div>
 <div class="ttc" id="anamespaceservio_1_1parser_html_a8763d76da0873cac4b90e8fe382886a8affd6976a2b4f6934eb075d0013316ff1"><div class="ttname"><a href="namespaceservio_1_1parser.html#a8763d76da0873cac4b90e8fe382886a8affd6976a2b4f6934eb075d0013316ff1">servio::parser::op_t::ASSIGN</a></div><div class="ttdeci">@ ASSIGN</div></div>
@@ -432,8 +419,8 @@ $(document).ready(function(){initNavTree('parser_8hpp_source.html',''); initResi
 <div class="ttc" id="anamespaceservio_1_1str__lib_html_a8177c267b47c96fcce04e5b633496111"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a8177c267b47c96fcce04e5b633496111">servio::str_lib::lex_letters</a></div><div class="ttdeci">constexpr bool lex_letters(char const *&amp;p, char const *e) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.hpp:262</div></div>
 <div class="ttc" id="anamespaceservio_1_1str__lib_html_structservio_1_1str__lib_1_1s__to__nr__res"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res">servio::str_lib::s_to_nr_res</a></div><div class="ttdef"><b>Definition</b> str_lib.hpp:216</div></div>
 <div class="ttc" id="astr__lib_8hpp_html"><div class="ttname"><a href="str__lib_8hpp.html">str_lib.hpp</a></div></div>
-<div class="ttc" id="astructservio_1_1parser_1_1expr__tok_html"><div class="ttname"><a href="structservio_1_1parser_1_1expr__tok.html">servio::parser::expr_tok</a></div><div class="ttdef"><b>Definition</b> parser.hpp:265</div></div>
-<div class="ttc" id="astructservio_1_1parser_1_1expr__tok_html_a23c279d402a3d142ad392c7ddaed99b9"><div class="ttname"><a href="structservio_1_1parser_1_1expr__tok.html#a23c279d402a3d142ad392c7ddaed99b9">servio::parser::expr_tok::data</a></div><div class="ttdeci">vari::vval&lt; expr_t &gt; data</div><div class="ttdef"><b>Definition</b> parser.hpp:266</div></div>
+<div class="ttc" id="astructservio_1_1parser_1_1expr__tok_html"><div class="ttname"><a href="structservio_1_1parser_1_1expr__tok.html">servio::parser::expr_tok</a></div><div class="ttdef"><b>Definition</b> parser.hpp:254</div></div>
+<div class="ttc" id="astructservio_1_1parser_1_1expr__tok_html_a23c279d402a3d142ad392c7ddaed99b9"><div class="ttname"><a href="structservio_1_1parser_1_1expr__tok.html#a23c279d402a3d142ad392c7ddaed99b9">servio::parser::expr_tok::data</a></div><div class="ttdeci">vari::vval&lt; expr_t &gt; data</div><div class="ttdef"><b>Definition</b> parser.hpp:255</div></div>
 <div class="ttc" id="astructservio_1_1parser_1_1expr__tok_html_a553b5e90a9a8bb4771976369f0953aec"><div class="ttname"><a href="structservio_1_1parser_1_1expr__tok.html#a553b5e90a9a8bb4771976369f0953aec">servio::parser::expr_tok::operator&lt;=&gt;</a></div><div class="ttdeci">friend constexpr auto operator&lt;=&gt;(expr_tok const &amp;, expr_tok const &amp;) noexcept=default</div></div>
 <div class="ttc" id="astructservio_1_1parser_1_1lexer_html"><div class="ttname"><a href="structservio_1_1parser_1_1lexer.html">servio::parser::lexer</a></div><div class="ttdef"><b>Definition</b> parser.hpp:71</div></div>
 <div class="ttc" id="astructservio_1_1parser_1_1lexer_html_a08c22261e6a2f01042b142b4332ac5df"><div class="ttname"><a href="structservio_1_1parser_1_1lexer.html#a08c22261e6a2f01042b142b4332ac5df">servio::parser::lexer::lexer</a></div><div class="ttdeci">lexer(std::string_view sv)</div><div class="ttdef"><b>Definition</b> parser.hpp:76</div></div>
@@ -450,14 +437,13 @@ $(document).ready(function(){initNavTree('parser_8hpp_source.html',''); initResi
 <div class="ttc" id="astructservio_1_1parser_1_1parser_html_a591bd45983f6e9eeb90b94a20c793874"><div class="ttname"><a href="structservio_1_1parser_1_1parser.html#a591bd45983f6e9eeb90b94a20c793874">servio::parser::parser::ended</a></div><div class="ttdeci">bool ended()</div><div class="ttdef"><b>Definition</b> parser.hpp:128</div></div>
 <div class="ttc" id="astructservio_1_1parser_1_1parser_html_ad7930ababc1397bf06ffcd1ddad618b0"><div class="ttname"><a href="structservio_1_1parser_1_1parser.html#ad7930ababc1397bf06ffcd1ddad618b0">servio::parser::parser::loc</a></div><div class="ttdeci">std::size_t loc()</div><div class="ttdef"><b>Definition</b> parser.hpp:123</div></div>
 <div class="ttc" id="astructservio_1_1parser_1_1parser_html_ad9255790904d362691da955ffbd80815"><div class="ttname"><a href="structservio_1_1parser_1_1parser.html#ad9255790904d362691da955ffbd80815">servio::parser::parser::op</a></div><div class="ttdeci">opt&lt; op_t &gt; op()</div><div class="ttdef"><b>Definition</b> parser.hpp:184</div></div>
-<div class="ttc" id="astructservio_1_1parser_1_1parser_html_af3dd91a8bfa86c00e8f024fc6af060bf"><div class="ttname"><a href="structservio_1_1parser_1_1parser.html#af3dd91a8bfa86c00e8f024fc6af060bf">servio::parser::parser::exp_any</a></div><div class="ttdeci">opt&lt; T &gt; exp_any()</div><div class="ttdef"><b>Definition</b> parser.hpp:209</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="parser_8hpp.html">parser.hpp</a></li>
-    <li class="footer">Generated on Sat Jul 12 2025 19:15:54 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Jul 13 2025 16:46:34 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
