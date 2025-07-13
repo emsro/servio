@@ -1,5 +1,11 @@
 var NAVTREEINDEX7 =
 {
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg":[11,0,1,15,0,8,0],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg":[11,0,1,15,0,8,3],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg":[11,0,1,15,0,8,6],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg":[11,0,1,15,0,8,4],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg":[11,0,1,15,0,8,5],
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg":[11,0,1,15,0,8,2],
 "namespaceservio_1_1scmdio.html":[9,0,3,18],
 "namespaceservio_1_1scmdio.html#a01ca1a463c43ab3d64c9e41785066fc8":[9,0,3,18,52],
 "namespaceservio_1_1scmdio.html#a042f0e3f3f694f590baea65ef0f865e5":[11,0,1,16,9,0,0],
@@ -159,9 +165,9 @@ var NAVTREEINDEX7 =
 "namespaceservio_1_1tests.html":[9,0,3,22],
 "namespacestd.html":[9,0,4],
 "namespacestd.html#aee346fa297157efeaa914ac49cbd5206":[9,0,4,8],
-"paged__i2c__eeprom_8cpp.html":[11,0,1,6,21],
-"paged__i2c__eeprom_8hpp.html":[11,0,1,6,22],
-"paged__i2c__eeprom_8hpp_source.html":[11,0,1,6,22],
+"paged__i2c__eeprom_8cpp.html":[11,0,1,6,20],
+"paged__i2c__eeprom_8hpp.html":[11,0,1,6,21],
+"paged__i2c__eeprom_8hpp_source.html":[11,0,1,6,21],
 "pages.html":[],
 "parse_8cpp.html":[11,0,1,10,4],
 "parse_8cpp.html#a02e4062f476bf6950a858dd4ad07b0d6":[11,0,1,10,4,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX7 =
 "properties__test_8cpp.html":[11,0,1,0,4],
 "properties__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[11,0,1,0,4,0],
 "properties__test_8cpp.html#ace6eaf73807de37e4d37a071d612a883":[11,0,1,0,4,1],
-"quad__encoder_8hpp.html":[11,0,1,6,23],
-"quad__encoder_8hpp_source.html":[11,0,1,6,23],
-"record_8hpp.html":[11,0,1,18,5],
-"record_8hpp.html#a3b8dd8a106554a9a31a43f91746adf78":[11,0,1,18,5,2],
-"record_8hpp.html#a875fcd3a5d9ef6909df43ffc0b84d60e":[11,0,1,18,5,1],
-"record_8hpp.html#a875fcd3a5d9ef6909df43ffc0b84d60ea666a87025ab0d8965e221050c8948001":[11,0,1,18,5,1,2],
-"record_8hpp.html#a875fcd3a5d9ef6909df43ffc0b84d60ea8c52684db8f49511e9b44471716bf164":[11,0,1,18,5,1,1]
+"quad__encoder_8hpp.html":[11,0,1,6,22]
 };

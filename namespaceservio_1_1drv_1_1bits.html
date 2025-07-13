@@ -110,9 +110,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a90dcc50c50424e715008c27ec4d87869" id="r_a90dcc50c50424e715008c27ec4d87869"><td class="memTemplParams" colspan="2">template&lt;char C&gt; </td></tr>
-<tr class="memitem:a90dcc50c50424e715008c27ec4d87869"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1bits.html#a90dcc50c50424e715008c27ec4d87869">on_rx_cplt_irq</a> (<a class="el" href="structservio_1_1drv_1_1bits_1_1char__rx__container.html">char_rx_container</a>&lt; C &gt; &amp;rx, std::byte inpt)</td></tr>
-<tr class="separator:a90dcc50c50424e715008c27ec4d87869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6739d87c6581c9fb60072e3fcc4447" id="r_a2a6739d87c6581c9fb60072e3fcc4447"><td class="memTemplParams" colspan="2">template&lt;char... C&gt; </td></tr>
+<tr class="memitem:a2a6739d87c6581c9fb60072e3fcc4447"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1bits.html#a2a6739d87c6581c9fb60072e3fcc4447">on_rx_cplt_irq</a> (<a class="el" href="structservio_1_1drv_1_1bits_1_1char__rx__container.html">char_rx_container</a>&lt; C... &gt; &amp;rx, std::byte inpt)</td></tr>
+<tr class="separator:a2a6739d87c6581c9fb60072e3fcc4447"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74cf7569d05ba86cd733572599f74aa4" id="r_a74cf7569d05ba86cd733572599f74aa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4">on_rx_cplt_irq</a> (<a class="el" href="structservio_1_1drv_1_1bits_1_1cobs__rx__container.html">cobs_rx_container</a> &amp;rx, std::byte inpt)</td></tr>
 <tr class="separator:a74cf7569d05ba86cd733572599f74aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d70b0c1c418dd446c10d13da1ad0fdd" id="r_a5d70b0c1c418dd446c10d13da1ad0fdd"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, em::view&lt; std::byte * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv_1_1bits.html#a5d70b0c1c418dd446c10d13da1ad0fdd">load_message</a> (<a class="el" href="structservio_1_1drv_1_1bits_1_1rx__buffer.html">rx_buffer</a> &amp;rx, em::view&lt; std::byte * &gt; data)</td></tr>
@@ -161,18 +161,18 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a90dcc50c50424e715008c27ec4d87869" name="a90dcc50c50424e715008c27ec4d87869"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90dcc50c50424e715008c27ec4d87869">&#9670;&#160;</a></span>on_rx_cplt_irq() <span class="overload">[1/2]</span></h2>
+<a id="a2a6739d87c6581c9fb60072e3fcc4447" name="a2a6739d87c6581c9fb60072e3fcc4447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a6739d87c6581c9fb60072e3fcc4447">&#9670;&#160;</a></span>on_rx_cplt_irq() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;char C&gt; </div>
+template&lt;char... C&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void servio::drv::bits::on_rx_cplt_irq </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1bits_1_1char__rx__container.html">char_rx_container</a>&lt; C &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1drv_1_1bits_1_1char__rx__container.html">char_rx_container</a>&lt; C... &gt; &amp;&#160;</td>
           <td class="paramname"><em>rx</em>, </td>
         </tr>
         <tr>
@@ -335,7 +335,7 @@ template&lt;auto START_ERR&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1drv_1_1bits.html#a90dcc50c50424e715008c27ec4d87869">on_rx_cplt_irq()</a>, <a class="el" href="classservio_1_1sntr_1_1sentry.html#a23bd0c905c13a4e592c1805e0e785ded">servio::sntr::sentry::set_inoperable()</a>, and <a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1drv_1_1bits.html#a2a6739d87c6581c9fb60072e3fcc4447">on_rx_cplt_irq()</a>, <a class="el" href="classservio_1_1sntr_1_1sentry.html#a23bd0c905c13a4e592c1805e0e785ded">servio::sntr::sentry::set_inoperable()</a>, and <a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a>.</p>
 
 </div>
 </div>
@@ -408,7 +408,7 @@ template&lt;auto START_ERR&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv_1_1bits.html">bits</a></li>
-    <li class="footer">Generated on Sun Jul 13 2025 16:58:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Jul 13 2025 17:34:28 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

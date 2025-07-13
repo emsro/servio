@@ -1,12 +1,18 @@
 var NAVTREEINDEX6 =
 {
+"namespaceservio_1_1drv.html#adfb61af954b514cf4ba6d1ca47dad13b":[9,0,3,6,69],
+"namespaceservio_1_1drv.html#ae233abc47871b442f75cd856dcb2115c":[9,0,3,6,52],
+"namespaceservio_1_1drv.html#ae43b31297ea3dfab8312221cfd3c348d":[11,0,1,6,9,0,3],
+"namespaceservio_1_1drv.html#aeecd29983881eeb289182b0fba7b8244":[11,0,1,6,9,0,2],
+"namespaceservio_1_1drv.html#afa6ea7295f655701d653891a4d095a3f":[9,0,3,6,48],
+"namespaceservio_1_1drv.html#structservio_1_1drv_1_1pin__cfg":[11,0,1,6,9,0],
 "namespaceservio_1_1drv_1_1bits.html":[9,0,3,6,0],
 "namespaceservio_1_1drv_1_1bits.html#a1478bc5acabf1316e6895571df891c16":[9,0,3,6,0,7],
 "namespaceservio_1_1drv_1_1bits.html#a155d033c32c49028ed952ffe8bda2576":[9,0,3,6,0,8],
+"namespaceservio_1_1drv_1_1bits.html#a2a6739d87c6581c9fb60072e3fcc4447":[9,0,3,6,0,4],
 "namespaceservio_1_1drv_1_1bits.html#a5d70b0c1c418dd446c10d13da1ad0fdd":[9,0,3,6,0,3],
 "namespaceservio_1_1drv_1_1bits.html#a6b247372630cfbf78e3f602e71389a49":[9,0,3,6,0,6],
 "namespaceservio_1_1drv_1_1bits.html#a74cf7569d05ba86cd733572599f74aa4":[9,0,3,6,0,5],
-"namespaceservio_1_1drv_1_1bits.html#a90dcc50c50424e715008c27ec4d87869":[9,0,3,6,0,4],
 "namespaceservio_1_1drv_1_1bits.html#ab49ae58ef86d106445fed671bc9b6f9b":[9,0,3,6,0,9],
 "namespaceservio_1_1drv_1_1drv8251.html":[9,0,3,6,1],
 "namespaceservio_1_1drv_1_1drv8251.html#a137ccaabbaf7114ac8aed68632e19bf5":[9,0,3,6,1,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX6 =
 "namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673":[11,0,1,15,0,8,3,7],
 "namespaceservio_1_1plt.html#af23a3fd89ef7065c2f310df68dd9c526":[9,0,3,17,15],
 "namespaceservio_1_1plt.html#af748fc48605aa9327b8a17cff5681907":[11,0,1,15,0,8,3,4],
-"namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg":[11,0,1,15,0,8,1],
-"namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg":[11,0,1,15,0,8,0],
-"namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg":[11,0,1,15,0,8,3],
-"namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg":[11,0,1,15,0,8,6],
-"namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg":[11,0,1,15,0,8,4],
-"namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__timer__cfg":[11,0,1,15,0,8,5],
-"namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg":[11,0,1,15,0,8,2]
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1adc__cfg":[11,0,1,15,0,8,1]
 };

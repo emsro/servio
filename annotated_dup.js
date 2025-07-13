@@ -76,8 +76,14 @@ var annotated_dup =
         [ "tests", "namespaceservio_1_1ctl_1_1tests.html", [
           [ "control_fixture", "classservio_1_1ctl_1_1tests_1_1control__fixture.html", "classservio_1_1ctl_1_1tests_1_1control__fixture" ]
         ] ],
+        [ "args", "structservio_1_1ctl_1_1args.html", "structservio_1_1ctl_1_1args" ],
+        [ "args_def", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1args__def", "namespaceservio_1_1ctl_structservio_1_1ctl_1_1args__def_dup" ],
+        [ "args_token", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1args__token", "namespaceservio_1_1ctl_structservio_1_1ctl_1_1args__token_dup" ],
         [ "config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", "namespaceservio_1_1ctl_structservio_1_1ctl_1_1config_dup" ],
         [ "control", "classservio_1_1ctl_1_1control.html", "classservio_1_1ctl_1_1control" ],
+        [ "governor", "structservio_1_1ctl_1_1governor.html", "structservio_1_1ctl_1_1governor" ],
+        [ "governor_autoreg", "structservio_1_1ctl_1_1governor__autoreg.html", "structservio_1_1ctl_1_1governor__autoreg" ],
+        [ "governor_registry", "structservio_1_1ctl_1_1governor__registry.html", "structservio_1_1ctl_1_1governor__registry" ],
         [ "linear_transition_regulator", "structservio_1_1ctl_1_1linear__transition__regulator.html", "structservio_1_1ctl_1_1linear__transition__regulator" ]
       ] ],
       [ "drv", "namespaceservio_1_1drv.html", [

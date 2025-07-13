@@ -13,7 +13,7 @@ var searchData=
   ['char_5fcli_10',['char_cli',['../structservio_1_1scmdio_1_1char__cli.html',1,'servio::scmdio']]],
   ['char_5fport_11',['char_port',['../structservio_1_1scmdio_1_1char__port.html',1,'servio::scmdio']]],
   ['char_5frx_5fcontainer_12',['char_rx_container',['../structservio_1_1drv_1_1bits_1_1char__rx__container.html',1,'servio::drv::bits']]],
-  ['char_5frx_5fcontainer_3c_20delim_20_3e_13',['char_rx_container&lt; delim &gt;',['../structservio_1_1drv_1_1bits_1_1char__rx__container.html',1,'servio::drv::bits']]],
+  ['char_5frx_5fcontainer_3c_20delims_2e_2e_2e_20_3e_13',['char_rx_container&lt; Delims... &gt;',['../structservio_1_1drv_1_1bits_1_1char__rx__container.html',1,'servio::drv::bits']]],
   ['char_5fuart_14',['char_uart',['../structservio_1_1drv_1_1char__uart.html',1,'servio::drv']]],
   ['check_5fbool_15',['check_bool',['../namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool',1,'servio::fw']]],
   ['clk_5fiface_16',['clk_iface',['../structservio_1_1drv_1_1clk__iface.html',1,'servio::drv']]],

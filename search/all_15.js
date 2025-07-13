@@ -52,5 +52,6 @@ var searchData=
   ['kval_5fser_49',['kval_ser',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser',1,'servio::scmdio']]],
   ['kval_5fser_3c_20vari_3a_3atypelist_3c_20kv_2c_20kvs_2e_2e_2e_20_3e_20_3e_50',['kval_ser&lt; vari::typelist&lt; KV, KVs... &gt; &gt;',['../structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html',1,'servio::scmdio']]],
   ['kval_5fser_3c_20vari_3a_3atypelist_3c_3e_20_3e_51',['kval_ser&lt; vari::typelist&lt;&gt; &gt;',['../structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html',1,'servio::scmdio']]],
-  ['kw_52',['kw',['../namespaceservio_1_1iface.html#acb8b7269c2cdc2507f9895cc49ad5761',1,'servio::iface::arg_def']]]
+  ['kw_52',['kw',['../namespaceservio_1_1iface.html#acb8b7269c2cdc2507f9895cc49ad5761',1,'servio::iface::arg_def']]],
+  ['kwargs_53',['kwargs',['../namespaceservio_1_1ctl.html#a65cc21d938adb9cd4d3433b9c4531125',1,'servio::ctl::args_token']]]
 ];

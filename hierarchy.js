@@ -18,6 +18,9 @@ var hierarchy =
     [ "nlohmann::adl_serializer< avakar::atom< Ts... > >", "structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "nlohmann::adl_serializer< vari::_vval< Ts... > >", "structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "servio::iface::arg_def", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1arg__def", null ],
+    [ "servio::ctl::args", "structservio_1_1ctl_1_1args.html", null ],
+    [ "servio::ctl::args_def", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1args__def", null ],
+    [ "servio::ctl::args_token", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1args__token", null ],
     [ "servio::json::array_ser", "structservio_1_1json_1_1array__ser.html", null ],
     [ "servio::atom_sv_key< N >", "structservio_1_1atom__sv__key.html", null ],
     [ "servio::scmdio::port_mock::attrs", "structservio_1_1scmdio_1_1port__mock.html#structservio_1_1scmdio_1_1port__mock_1_1attrs", null ],
@@ -47,7 +50,7 @@ var hierarchy =
     [ "servio::drv::tests::cobs_uart_err_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html", null ],
     [ "servio::drv::tests::cobs_uart_rx_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html", null ],
     [ "servio::drv::com_iface", "structservio_1_1drv_1_1com__iface.html", [
-      [ "servio::drv::char_uart", "structservio_1_1drv_1_1char__uart.html", null ],
+      [ "servio::drv::char_uart< Delims >", "structservio_1_1drv_1_1char__uart.html", null ],
       [ "servio::drv::cobs_uart", "structservio_1_1drv_1_1cobs__uart.html", null ]
     ] ],
     [ "servio::drv::com_res", "structservio_1_1drv_1_1com__res.html", null ],
@@ -114,6 +117,9 @@ var hierarchy =
         [ "servio::drv::quad_encoder", "classservio_1_1drv_1_1quad__encoder.html", null ]
       ] ]
     ] ],
+    [ "servio::ctl::governor", "structservio_1_1ctl_1_1governor.html", null ],
+    [ "servio::ctl::governor_autoreg", "structservio_1_1ctl_1_1governor__autoreg.html", null ],
+    [ "servio::ctl::governor_registry", "structservio_1_1ctl_1_1governor__registry.html", null ],
     [ "servio::iface::group< Desc, Ts >", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1group", null ],
     [ "servio::plt::hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", null ],
     [ "servio::drv::tests::hbridge_test", "structservio_1_1drv_1_1tests_1_1hbridge__test.html", null ],
@@ -243,7 +249,7 @@ var hierarchy =
     [ "servio::sntr::record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", null ],
     [ "servio::ftester::recorder", "classservio_1_1ftester_1_1recorder.html", null ],
     [ "servio::drv::bits::rx_buffer", "structservio_1_1drv_1_1bits_1_1rx__buffer.html", [
-      [ "servio::drv::bits::char_rx_container< delim >", "structservio_1_1drv_1_1bits_1_1char__rx__container.html", null ],
+      [ "servio::drv::bits::char_rx_container< Delims... >", "structservio_1_1drv_1_1bits_1_1char__rx__container.html", null ],
       [ "servio::drv::bits::char_rx_container< C >", "structservio_1_1drv_1_1bits_1_1char__rx__container.html", null ],
       [ "servio::drv::bits::cobs_rx_container", "structservio_1_1drv_1_1bits_1_1cobs__rx__container.html", null ]
     ] ],

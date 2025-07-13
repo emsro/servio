@@ -67,16 +67,16 @@ var NAVTREE =
       [ "66 moving_detection_step", "md_src_2cfg_2cfg.html#autotoc_md40", null ],
       [ "80 quad_encoder_range", "md_src_2cfg_2cfg.html#autotoc_md41", null ]
     ] ],
-    [ "iface", "md_src_2iface_2iface.html", [
+    [ "Interface", "md_src_2iface_2iface.html", [
+      [ "Types", "md_src_2iface_2iface.html#autotoc_md42", [
+        [ "int32_t", "md_src_2iface_2iface.html#autotoc_md43", null ],
+        [ "float", "md_src_2iface_2iface.html#autotoc_md44", null ],
+        [ "string", "md_src_2iface_2iface.html#autotoc_md45", null ],
+        [ "bool", "md_src_2iface_2iface.html#autotoc_md46", null ],
+        [ "expr_tok", "md_src_2iface_2iface.html#autotoc_md47", null ],
+        [ "enum property", "md_src_2iface_2iface.html#autotoc_md48", null ]
+      ] ],
       [ "Commands", "md_src_2iface_2iface.html#autotoc_md49", [
-        [ "Types", "md_src_2iface_2iface.html#autotoc_md42", [
-          [ "int32_t", "md_src_2iface_2iface.html#autotoc_md43", null ],
-          [ "float", "md_src_2iface_2iface.html#autotoc_md44", null ],
-          [ "string", "md_src_2iface_2iface.html#autotoc_md45", null ],
-          [ "bool", "md_src_2iface_2iface.html#autotoc_md46", null ],
-          [ "expr_tok", "md_src_2iface_2iface.html#autotoc_md47", null ],
-          [ "enum property", "md_src_2iface_2iface.html#autotoc_md48", null ]
-        ] ],
         [ "group mode", "md_src_2iface_2iface.html#autotoc_md50", [
           [ "cmd mode disengaged", "md_src_2iface_2iface.html#autotoc_md51", null ],
           [ "cmd mode power <power = 0>", "md_src_2iface_2iface.html#autotoc_md52", null ],
@@ -207,21 +207,22 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc_8cpp.html",
-"char__uart_8cpp.html",
-"cobs__rx__container_8hpp.html",
-"functions_func_n.html",
-"md_src_2cfg_2cfg.html#autotoc_md17",
+"char__uart_8hpp.html",
+"cobs__rx__container_8hpp.html#a74cf7569d05ba86cd733572599f74aa4",
+"functions_func_o.html",
+"md_src_2cfg_2cfg.html#autotoc_md16",
 "namespaceservio_1_1brd.html#a7047a111e0cca6a2e255c57bd604a300",
-"namespaceservio_1_1drv_1_1bits.html",
-"namespaceservio_1_1scmdio.html",
-"record_8hpp.html#a875fcd3a5d9ef6909df43ffc0b84d60eaaeff3f3f2731681b2ed6a27786a56203",
-"structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html",
-"structservio_1_1core_1_1drivers.html#aea1ac88a160beffe23f4a8582dccff35",
-"structservio_1_1drv_1_1flash__storage.html#a54091eaf206f30ea03862d84ea4081b2",
-"structservio_1_1drv_1_1tests_1_1temperature__test.html",
-"structservio_1_1ftester_1_1test__system.html#a917d3a872e5de2df6c6d06745e8e5669",
-"structservio_1_1mtr_1_1static__detector.html#a4fddc254997d1edbd8ca28eee21a2701",
-"structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#a61972ccc8f4c236f65d3603f8f2127b3"
+"namespaceservio_1_1drv.html#adfb61af954b514cf4ba6d1ca47dad13b",
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg",
+"quad__encoder_8hpp_source.html",
+"str__lib__utest_8cpp.html#aa14e6f3d5b57ca3bfbb5d52f41ff3873",
+"structservio_1_1core_1_1drivers.html#aa40ea3d6e996112f3cd24c5cdedeb2a9",
+"structservio_1_1drv_1_1detailed__adc__channel.html#a9490be83ec1d8ba30bd7648cab5f7a6e",
+"structservio_1_1drv_1_1tests_1_1period__iface__test.html#a4da4611172c75ff2d758b5a6a10e8d09",
+"structservio_1_1ftest_1_1utest__base.html#aea40ea8d33d61e4b6a9d1e004a4dd36b",
+"structservio_1_1mon_1_1pulser.html#a76f836652a3958acf4de4c7b1ad9fad8",
+"structservio_1_1scmdio_1_1stm32__bootloader__mock.html#a55701dd8cbc20ebc973c70a6d8c2e8b5",
+"utils_8hpp.html#a8771025b6298c59e1f7b30f8fa1f7413"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -6,7 +6,7 @@ var searchData=
   ['debug_5fcomms_3',['debug_comms',['../structservio_1_1ftest_1_1testing__system.html#a15c347a9b819cf50b3768cae86d126cb',1,'servio::ftest::testing_system::debug_comms'],['../namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5',1,'servio::brd::DEBUG_COMMS']]],
   ['decay_4',['decay',['../structservio_1_1ctl_1_1linear__transition__regulator.html#a79dd5adc577a77d349ec011aca62c6d0',1,'servio::ctl::linear_transition_regulator']]],
   ['degraded_5frecords_5',['DEGRADED_RECORDS',['../namespaceservio_1_1brd.html#ac1e9012d3c60aec6e72b21b7d38255e7',1,'servio::brd']]],
-  ['delim_6',['delim',['../structservio_1_1drv_1_1char__uart.html#a547073f102e60f7e16355461ee091bc2',1,'servio::drv::char_uart']]],
+  ['delims_6',['delims',['../structservio_1_1drv_1_1char__uart.html#a19aca62966d7b02e331fbbd2d767d302',1,'servio::drv::char_uart']]],
   ['dev_5faddr_7',['dev_addr',['../structservio_1_1drv_1_1i2c__eeprom.html#aa8248f1958751fe409d4e95e9d0e9d73',1,'servio::drv::i2c_eeprom']]],
   ['device_8',['device',['../structservio_1_1scmdio_1_1port__cli.html#a8fcf1ca36deff02969a4228a84440c8d',1,'servio::scmdio::port_cli::device'],['../namespaceservio_1_1ftester.html#a4e2bf400b5caac347ef36aaa7b2d04ef',1,'servio::ftester::bmp_config::device']]],
   ['dma_9',['dma',['../namespaceservio_1_1plt.html#a86a48d377d92187ee93f68bed0aad67f',1,'servio::plt::adc_cfg']]],
