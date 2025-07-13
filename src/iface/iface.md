@@ -26,54 +26,53 @@ Wildcard token for accepting: `string`, `float`, `int32_t`, `bool`
 
 Commands
 ========
-
-## group mode
+## group: mode
 
 Set mode of servomotor
 
-### cmd mode disengaged
+### cmd: mode disengaged
 
 Set servomotor to disengaged mode, no power applied
 
-### cmd mode power <power = 0>
+### cmd: mode power <power = 0>
 
 Regulate power applied to the servomotor
 
 - _power_: Power between -1. and 1.
   - type: _float_
   - unit: __
-### cmd mode current <current = 0.0>
+### cmd: mode current <current = 0.0>
 
 Regulate current applied to the servomotor
 
 - _current_: Current level to set
   - type: _float_
   - unit: _A_
-### cmd mode velocity <velocity = 0.0>
+### cmd: mode velocity <velocity = 0.0>
 
 Regulate velocity applied to the servomotor
 
 - _velocity_: Velocity to set
   - type: _float_
   - unit: _rad/s_
-### cmd mode position <position = 0.0>
+### cmd: mode position <position = 0.0>
 
 Regulate position applied to the servomotor
 
 - _position_: Position to set
   - type: _float_
   - unit: _rad_
-## cmd prop <name>
+## cmd: prop <name>
 
 Get properties of servomotor
 
 - _name_: Property to get
   - type: _property_
-## group cfg
+## group: cfg
 
 Configuration commands for the servomotor
 
-### cmd cfg set <field> <value>
+### cmd: cfg set <field> <value>
 
 Set a configuration field
 
@@ -81,13 +80,13 @@ Set a configuration field
   - type: _string_
 - _value_: Value to set for the configuration field, type depends on the field
   - type: _expr_tok_
-### cmd cfg get <field>
+### cmd: cfg get <field>
 
 Get a configuration field
 
 - _field_: Configuration field to get
   - type: _string_
-### cmd cfg list5 <level = ""> <offset = 0> <n = 5>
+### cmd: cfg list5 <level = ""> <offset = 0> <n = 5>
 
 List subset of configuration fields
 
@@ -97,14 +96,14 @@ List subset of configuration fields
   - type: _int32_t_
 - _n_: Number of configuration fields to list
   - type: _int32_t_
-### cmd cfg commit
+### cmd: cfg commit
 
 Commit the current configuration changes into memory
 
-### cmd cfg clear
+### cmd: cfg clear
 
 Clear the current configuration from memory
 
-## cmd info
+## cmd: info
 
 Get information about the servomotor

@@ -70,7 +70,7 @@ def gen_arg_cmd(fd: TextIO, cmd: Dict[str, Any], args: List[Dict[str, Any]], pre
 def gen_arg_doc(fd: TextIO, cmd: Dict[str, Any], args: List[Dict[str, Any]], prefix: str) -> None:
     name = apply_prefix(prefix, cmd['name'], " ")
     level = name.count(" ") * "#" + "##"
-    fd.write(f"{level} cmd {name}")
+    fd.write(f"{level} cmd: {name}")
     for arg in args:
         fd.write(f" <{arg['name']}")
         if 'default' in arg:
@@ -134,7 +134,7 @@ def gen_group_doc(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
         return
     name = apply_prefix(prefix, cmd['name'], " ")
     level = name.count(" ") * "#" + "##"
-    fd.write(f"{level} group {name}\n\n")
+    fd.write(f"{level} group: {name}\n\n")
     fd.write(f"{cmd['desc']}\n\n")
 
 def traverse_commands(fd: TextIO, cmd: Dict[str, Any], prefix: str,
