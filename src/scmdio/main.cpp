@@ -59,7 +59,7 @@ void cfg_def( CLI::App& app, io_context& io_ctx )
 {
         auto ctx = std::make_shared< cfg_ctx >();
 
-        auto* cfg = app.add_subcommand( "cfg", "configuration commands" );
+        auto* cfg = app.add_subcommand( "cfg", "configuration commands" )->fallthrough();
         cfg->require_subcommand( 1 );
 
         port_opts( *cfg, ctx->port );

@@ -88,11 +88,12 @@ DMA_HandleTypeDef  GPDMA1_Ch2_HANDLE{};
 drv::cobs_uart DEBUG_COMMS{ "dcomms", CENTRAL_SENTRY, CLOCK, &UART2_HANDLE, &GPDMA1_Ch2_HANDLE };
 UART_HandleTypeDef UART1_HANDLE{};
 DMA_HandleTypeDef  GPDMA1_Ch1_HANDLE{};
-drv::char_uart     COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, &GPDMA1_Ch1_HANDLE };
-TIM_HandleTypeDef  TIM1_HANDLE{};
-drv::hbridge       HBRIDGE{ &TIM1_HANDLE };
-DTS_HandleTypeDef  DTS_HANDLE{};
-drv::dts_temp      DTS_DRV{ DTS_HANDLE };
+drv::char_uart< '\n', '\0' >
+                  COMMS{ "comms", CENTRAL_SENTRY, CLOCK, &UART1_HANDLE, &GPDMA1_Ch1_HANDLE };
+TIM_HandleTypeDef TIM1_HANDLE{};
+drv::hbridge      HBRIDGE{ &TIM1_HANDLE };
+DTS_HandleTypeDef DTS_HANDLE{};
+drv::dts_temp     DTS_DRV{ DTS_HANDLE };
 
 TIM_HandleTypeDef  TIM3_HANDLE{};
 drv::quad_encoder  QUAD{ TIM3_HANDLE };

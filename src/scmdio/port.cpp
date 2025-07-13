@@ -117,7 +117,7 @@ awaitable< std::span< std::byte > > _pool_buffer( auto& port, auto& read_buffer,
                 dview = em::view_n( read_buffer.data(), n );
         }
 
-        spdlog::debug( "reading: ", dview );
+        spdlog::debug( "reading: {}", dview );
         co_return dview;
 }
 }  // namespace
@@ -137,7 +137,7 @@ awaitable< std::span< std::byte > > cobs_port::read_msg( std::span< std::byte > 
 
 awaitable< void > char_port::write_msg( std::span< std::byte const > msg )
 {
-        spdlog::debug( "chp writing: {}", msg );
+        spdlog::debug( "chp writing: {} delim: {}", msg, ( +ch ) );
 
         co_await async_write( port, boost::asio::buffer( msg ), use_awaitable );
 

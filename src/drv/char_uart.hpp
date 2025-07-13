@@ -16,17 +16,23 @@ enum nl_error_codes
         NL_HAL_RX_START_ERR  = 0x2
 };
 
-// XXX: screaming duplication with cobs uart
+template < char... Delims >
 struct char_uart final : public com_iface
 {
-        static constexpr char delim = '\0';
+        static constexpr char delims[] = { Delims... };
 
         char_uart(
             char const*                 id,
             sntr::central_sentry_iface& central,
             clk_iface&                  clk,
             UART_HandleTypeDef*         uart,
-            DMA_HandleTypeDef*          tx_dma );
+            DMA_HandleTypeDef*          tx_dma )
+          : sentry_( id, central )
+          , clk_( clk )
+          , uart_( uart )
+          , tx_dma_( tx_dma )
+        {
+        }
 
         char_uart( char_uart const& )            = delete;
         char_uart( char_uart&& )                 = delete;
@@ -62,7 +68,34 @@ struct char_uart final : public com_iface
                 return bits::uart_start_it( uart_, rx_byte_ );
         }
 
-        status send( send_data_t data, microseconds timeout ) override;
+        status send( send_data_t data, microseconds timeout ) override
+        {
+                if ( !spin_with_timeout( clk_, tx_done_, timeout ) )
+                        return ERROR;
+
+                // XXX: check that char is NOT present
+
+                uint16_t count = 0;
+                for ( auto s : data )
+                        for ( std::byte b : s ) {
+                                if ( count == tx_buffer_.size() )
+                                        return ERROR;
+                                tx_buffer_[count++] = b;
+                        }
+                if ( count == tx_buffer_.size() )
+                        return ERROR;
+                tx_buffer_[count++] = std::byte{ delims[0] };
+
+                tx_done_ = false;
+
+                if ( HAL_UART_Transmit_DMA(
+                         uart_, reinterpret_cast< uint8_t* >( tx_buffer_.data() ), count ) !=
+                     HAL_OK ) {
+                        return ERROR;
+                }
+
+                return SUCCESS;
+        }
 
 private:
         sntr::sentry sentry_;
@@ -76,20 +109,7 @@ private:
 
         std::byte rx_byte_;
         // XXX: the char might be templated
-        bits::char_rx_container< delim > rx_;
+        bits::char_rx_container< Delims... > rx_;
 };
-
-inline char_uart::char_uart(
-    char const*                 id,
-    sntr::central_sentry_iface& central,
-    clk_iface&                  clk,
-    UART_HandleTypeDef*         uart,
-    DMA_HandleTypeDef*          tx_dma )
-  : sentry_( id, central )
-  , clk_( clk )
-  , uart_( uart )
-  , tx_dma_( tx_dma )
-{
-}
 
 }  // namespace servio::drv

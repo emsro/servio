@@ -1,4 +1,6 @@
-#Interface
+
+Interface
+=========
 
 ## Types
 ### int32_t
@@ -24,6 +26,7 @@ Wildcard token for accepting: `string`, `float`, `int32_t`, `bool`
 
 Commands
 ========
+
 ## group mode
 
 Set mode of servomotor

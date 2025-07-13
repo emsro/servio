@@ -40,8 +40,11 @@ struct serial_cli : port_cli
 {
         sptr< serial_stream > get( io_context& ctx )
         {
-                if ( !prt )
+                if ( !prt ) {
+                        spdlog::debug(
+                            "Opening serial port: {} at baudrate: {}", device.string(), baudrate );
                         prt = std::make_shared< serial_stream >( ctx, device, baudrate );
+                }
                 return prt;
         }
 
@@ -53,8 +56,11 @@ struct char_cli : port_cli
 {
         sptr< char_port > get( io_context& ctx )
         {
-                if ( !prt )
+                if ( !prt ) {
+                        spdlog::debug(
+                            "Opening char port: {} at baudrate: {}", device.string(), baudrate );
                         prt = std::make_shared< char_port >( ctx, device, baudrate );
+                }
                 return prt;
         }
 
