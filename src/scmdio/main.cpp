@@ -228,8 +228,9 @@ void bflash_def( CLI::App& app, io_context& io_ctx )
                 } );
         };
 
-        auto* bflash =
-            app.add_subcommand( "bflash", "flash firmware via bootloader" )->fallthrough();
+        auto* bflash = app.add_subcommand( "bflash", "flash firmware via bootloader" )
+                           ->fallthrough()
+                           ->require_subcommand( 1 );
         port_opts( *bflash, ctx->port );
 
         auto* info =
@@ -250,7 +251,8 @@ void bflash_def( CLI::App& app, io_context& io_ctx )
 
         auto* flash =
             bflash->add_subcommand( "flash", "Flash image to target device" )->fallthrough();
-        flash->add_option( "file", ctx->file, "file to download to" )->required();
+        flash->add_option( "file", ctx->file, "file to flash into the device, has to be .bin" )
+            ->required();
         port_callback( flash, [ctx]( sptr< serial_stream > ss ) -> awaitable< void > {
                 std::ifstream f{ ctx->file };
                 co_await bflash_flash( *ss, f );

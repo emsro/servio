@@ -204,17 +204,6 @@ struct parser
                             return {};
                     } );
         }
-
-        template < typename T >
-        opt< T > exp_any()
-        {
-                if ( auto r = this->id() ) {
-                        for ( T x : T::iota() )
-                                if ( x.to_string() == *r )
-                                        return x;
-                }
-                return {};
-        }
 };
 
 inline bool

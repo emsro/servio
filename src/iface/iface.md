@@ -1,3 +1,5 @@
+# Interface
+
 
 ## Types
 #### int32_t
@@ -10,6 +12,7 @@ String limited up to 32 characters. Has to be enclosed in quotation marks.
 Bool value in form of string `true` or `false`.
 #### expr_tok
 Wildcard token for accepting: `string`, `float`, `int32_t`, `bool`
+
 <!-- GEN BEGIN HERE -->
 #### enum property
 

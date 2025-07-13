@@ -129,7 +129,7 @@ def generate_cfg_doc(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
         field_id = field['id']
 
         fd.write(f"""
-### {field_id} `{name}`
+### {field_id} {name}
 {desc}
  - _type_: `{field_type}`
 """)
