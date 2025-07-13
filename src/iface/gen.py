@@ -69,14 +69,14 @@ def gen_arg_cmd(fd: TextIO, cmd: Dict[str, Any], args: List[Dict[str, Any]], pre
 
 def gen_arg_doc(fd: TextIO, cmd: Dict[str, Any], args: List[Dict[str, Any]], prefix: str) -> None:
     name = apply_prefix(prefix, cmd['name'], " ")
-    level = name.count(" ") * "#" + "###"
-    fd.write(f"{level} cmd `{name}")
+    level = name.count(" ") * "#" + "##"
+    fd.write(f"{level} cmd {name}")
     for arg in args:
         fd.write(f" <{arg['name']}")
         if 'default' in arg:
             fd.write(f" = {arg['default']}")
         fd.write(">")
-    fd.write("`\n\n")
+    fd.write("\n\n")
     fd.write(f"{cmd['desc']}\n\n")
     for arg in args:
         fd.write(f"- _{arg['name']}_: {arg['desc']}\n")
@@ -133,8 +133,8 @@ def gen_group_doc(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
     if cmd['name'] == "":
         return
     name = apply_prefix(prefix, cmd['name'], " ")
-    level = name.count(" ") * "#" + "###"
-    fd.write(f"{level} group `{name}`\n\n")
+    level = name.count(" ") * "#" + "##"
+    fd.write(f"{level} group {name}\n\n")
     fd.write(f"{cmd['desc']}\n\n")
 
 def traverse_commands(fd: TextIO, cmd: Dict[str, Any], prefix: str,
@@ -217,7 +217,7 @@ def gen_type_convert(fd: TextIO, tp: Dict[str, Any]) -> None:
 
 def gen_type_doc(fd: TextIO, tp: Dict[str, Any]) -> None:
     if tp['kind'] == 'enum':
-        fd.write(f"#### enum {tp['name']}\n\n")
+        fd.write(f"### enum {tp['name']}\n\n")
         for value in tp['values']:
             fd.write(f" - _{value['key']}_: ")
             fd.write(f"{value['desc']}\n")
@@ -258,7 +258,8 @@ def gen_md(fd: TextIO, root: Dict[str, Any]) -> None:
     for tp in root['types']:
         gen_type_doc(fd, tp)
 
-    fd.write("## Commands \n")
+    fd.write("Commands \n")
+    fd.write("======== \n")
     traverse_doc(fd, root, prefix="")
 
 with open('def.json', "r") as fd:
