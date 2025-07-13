@@ -77,22 +77,22 @@ var NAVTREE =
         [ "enum property", "md_src_2iface_2iface.html#autotoc_md48", null ]
       ] ],
       [ "Commands", "md_src_2iface_2iface.html#autotoc_md49", [
-        [ "group mode", "md_src_2iface_2iface.html#autotoc_md50", [
-          [ "cmd mode disengaged", "md_src_2iface_2iface.html#autotoc_md51", null ],
-          [ "cmd mode power <power = 0>", "md_src_2iface_2iface.html#autotoc_md52", null ],
-          [ "cmd mode current <current = 0.0>", "md_src_2iface_2iface.html#autotoc_md53", null ],
-          [ "cmd mode velocity <velocity = 0.0>", "md_src_2iface_2iface.html#autotoc_md54", null ],
-          [ "cmd mode position <position = 0.0>", "md_src_2iface_2iface.html#autotoc_md55", null ]
+        [ "group: mode", "md_src_2iface_2iface.html#autotoc_md50", [
+          [ "cmd: mode disengaged", "md_src_2iface_2iface.html#autotoc_md51", null ],
+          [ "cmd: mode power <power = 0>", "md_src_2iface_2iface.html#autotoc_md52", null ],
+          [ "cmd: mode current <current = 0.0>", "md_src_2iface_2iface.html#autotoc_md53", null ],
+          [ "cmd: mode velocity <velocity = 0.0>", "md_src_2iface_2iface.html#autotoc_md54", null ],
+          [ "cmd: mode position <position = 0.0>", "md_src_2iface_2iface.html#autotoc_md55", null ]
         ] ],
-        [ "cmd prop <name>", "md_src_2iface_2iface.html#autotoc_md56", null ],
-        [ "group cfg", "md_src_2iface_2iface.html#autotoc_md57", [
-          [ "cmd cfg set <field> <value>", "md_src_2iface_2iface.html#autotoc_md58", null ],
-          [ "cmd cfg get <field>", "md_src_2iface_2iface.html#autotoc_md59", null ],
-          [ "cmd cfg list5 <level = \"\"> <offset = 0> <n = 5>", "md_src_2iface_2iface.html#autotoc_md60", null ],
-          [ "cmd cfg commit", "md_src_2iface_2iface.html#autotoc_md61", null ],
-          [ "cmd cfg clear", "md_src_2iface_2iface.html#autotoc_md62", null ]
+        [ "cmd: prop <name>", "md_src_2iface_2iface.html#autotoc_md56", null ],
+        [ "group: cfg", "md_src_2iface_2iface.html#autotoc_md57", [
+          [ "cmd: cfg set <field> <value>", "md_src_2iface_2iface.html#autotoc_md58", null ],
+          [ "cmd: cfg get <field>", "md_src_2iface_2iface.html#autotoc_md59", null ],
+          [ "cmd: cfg list5 <level = \"\"> <offset = 0> <n = 5>", "md_src_2iface_2iface.html#autotoc_md60", null ],
+          [ "cmd: cfg commit", "md_src_2iface_2iface.html#autotoc_md61", null ],
+          [ "cmd: cfg clear", "md_src_2iface_2iface.html#autotoc_md62", null ]
         ] ],
-        [ "cmd info", "md_src_2iface_2iface.html#autotoc_md63", null ]
+        [ "cmd: info", "md_src_2iface_2iface.html#autotoc_md63", null ]
       ] ]
     ] ],
     [ "Motor related math", "md_doc_2math.html", [

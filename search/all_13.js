@@ -32,7 +32,7 @@ var searchData=
   ['indication_2ecpp_29',['indication.cpp',['../indication_8cpp.html',1,'']]],
   ['indication_2ehpp_30',['indication.hpp',['../indication_8hpp.html',1,'']]],
   ['indication_5fevent_31',['indication_event',['../namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52',1,'servio::mon']]],
-  ['info_32',['cmd info',['../md_src_2iface_2iface.html#autotoc_md63',1,'']]],
+  ['info_32',['cmd: info',['../md_src_2iface_2iface.html#autotoc_md63',1,'']]],
   ['info_5fstmt_33',['info_stmt',['../structservio_1_1iface_1_1info__stmt.html',1,'servio::iface']]],
   ['infty_34',['infty',['../namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c',1,'servio']]],
   ['init_35',['INIT',['../namespaceservio_1_1scmdio.html#a4c839f956a7e0795b2f98fc209c91f85',1,'servio::scmdio']]],

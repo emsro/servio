@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['5_0',['cmd cfg list5 &lt;level = &quot;&quot;&gt; &lt;offset = 0&gt; &lt;n = 5&gt;',['../md_src_2iface_2iface.html#autotoc_md60',1,'']]],
+  ['5_0',['cmd: cfg list5 &lt;level = &quot;&quot;&gt; &lt;offset = 0&gt; &lt;n = 5&gt;',['../md_src_2iface_2iface.html#autotoc_md60',1,'']]],
   ['5_201_20entire_20set_20is_20always_20stored_1',['REQ6.5.1 Entire set is always stored',['../config.html#autotoc_md106',1,'']]],
   ['5_202_20size_20of_20history_2',['REQ6.5.2 Size of history',['../config.html#autotoc_md107',1,'']]],
   ['5_203_20clear_20removes_20history_3',['REQ6.5.3 Clear removes history',['../config.html#autotoc_md108',1,'']]],

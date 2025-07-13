@@ -66,7 +66,7 @@ var searchData=
   ['servio_5fexception_63',['servio_exception',['../structservio_1_1scmdio_1_1servio__exception.html',1,'servio::scmdio']]],
   ['set_64',['set',['../namespaceservio_1_1sntr.html#a875fcd3a5d9ef6909df43ffc0b84d60ea8c52684db8f49511e9b44471716bf164',1,'servio::sntr::SET'],['../structservio_1_1cfg_1_1dispatcher.html#ab6b4eb350a903f2bf9b12fe775f68451',1,'servio::cfg::dispatcher::set()']]],
   ['set_20configuration_20field_65',['REQ6.2.2 Set configuration field',['../config.html#autotoc_md100',1,'']]],
-  ['set_20field_20value_66',['cmd cfg set &lt;field&gt; &lt;value&gt;',['../md_src_2iface_2iface.html#autotoc_md58',1,'']]],
+  ['set_20field_20value_66',['cmd: cfg set &lt;field&gt; &lt;value&gt;',['../md_src_2iface_2iface.html#autotoc_md58',1,'']]],
   ['set_20is_20always_20stored_67',['REQ6.5.1 Entire set is always stored',['../config.html#autotoc_md106',1,'']]],
   ['set_5fcallbacks_68',['set_callbacks',['../structservio_1_1core_1_1standard__callbacks.html#a19b7321ffa8f54459af4e0ac712a9667',1,'servio::core::standard_callbacks']]],
   ['set_5fconfig_69',['set_config',['../structservio_1_1ctl_1_1linear__transition__regulator.html#ab8c6b8492b17a9e82a5ee831438708ae',1,'servio::ctl::linear_transition_regulator']]],
