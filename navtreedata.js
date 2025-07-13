@@ -30,97 +30,140 @@ var NAVTREE =
     [ "Build", "index.html#autotoc_md3", null ],
     [ "Flashing", "index.html#autotoc_md4", null ],
     [ "Usage", "index.html#autotoc_md5", null ],
-    [ "Config fields", "md_src_2cfg_2cfg.html", null ],
-    [ "Interface", "md_src_2iface_2iface.html", [
-      [ "Types", "md_src_2iface_2iface.html#autotoc_md43", null ],
-      [ "Commands", "md_src_2iface_2iface.html#autotoc_md50", [
-        [ "group <tt>mode</tt>", "md_src_2iface_2iface.html#autotoc_md51", [
-          [ "cmd <tt>mode disengaged</tt>", "md_src_2iface_2iface.html#autotoc_md52", null ],
-          [ "cmd <tt>mode power <power = 0></tt>", "md_src_2iface_2iface.html#autotoc_md53", null ],
-          [ "cmd <tt>mode current <current = 0.0></tt>", "md_src_2iface_2iface.html#autotoc_md54", null ],
-          [ "cmd <tt>mode velocity <velocity = 0.0></tt>", "md_src_2iface_2iface.html#autotoc_md55", null ],
-          [ "cmd <tt>mode position <position = 0.0></tt>", "md_src_2iface_2iface.html#autotoc_md56", null ]
+    [ "Config fields", "md_src_2cfg_2cfg.html", [
+      [ "1 model", "md_src_2cfg_2cfg.html#autotoc_md7", null ],
+      [ "2 id", "md_src_2cfg_2cfg.html#autotoc_md8", null ],
+      [ "3 group_id", "md_src_2cfg_2cfg.html#autotoc_md9", null ],
+      [ "4 encoder_mode", "md_src_2cfg_2cfg.html#autotoc_md10", null ],
+      [ "11 position_low_angle", "md_src_2cfg_2cfg.html#autotoc_md11", null ],
+      [ "12 position_high_angle", "md_src_2cfg_2cfg.html#autotoc_md12", null ],
+      [ "14 current_conv_scale", "md_src_2cfg_2cfg.html#autotoc_md13", null ],
+      [ "15 current_conv_offset", "md_src_2cfg_2cfg.html#autotoc_md14", null ],
+      [ "16 temp_conv_scale", "md_src_2cfg_2cfg.html#autotoc_md15", null ],
+      [ "17 temp_conv_offset", "md_src_2cfg_2cfg.html#autotoc_md16", null ],
+      [ "18 voltage_conv_scale", "md_src_2cfg_2cfg.html#autotoc_md17", null ],
+      [ "19 invert_hbridge", "md_src_2cfg_2cfg.html#autotoc_md18", null ],
+      [ "30 current_loop_p", "md_src_2cfg_2cfg.html#autotoc_md19", null ],
+      [ "31 current_loop_i", "md_src_2cfg_2cfg.html#autotoc_md20", null ],
+      [ "32 current_loop_d", "md_src_2cfg_2cfg.html#autotoc_md21", null ],
+      [ "33 current_lim_min", "md_src_2cfg_2cfg.html#autotoc_md22", null ],
+      [ "34 current_lim_max", "md_src_2cfg_2cfg.html#autotoc_md23", null ],
+      [ "40 velocity_loop_p", "md_src_2cfg_2cfg.html#autotoc_md24", null ],
+      [ "41 velocity_loop_i", "md_src_2cfg_2cfg.html#autotoc_md25", null ],
+      [ "42 velocity_loop_d", "md_src_2cfg_2cfg.html#autotoc_md26", null ],
+      [ "43 velocity_lim_min", "md_src_2cfg_2cfg.html#autotoc_md27", null ],
+      [ "44 velocity_lim_max", "md_src_2cfg_2cfg.html#autotoc_md28", null ],
+      [ "45 velocity_to_current_lim_scale", "md_src_2cfg_2cfg.html#autotoc_md29", null ],
+      [ "50 position_loop_p", "md_src_2cfg_2cfg.html#autotoc_md30", null ],
+      [ "51 position_loop_i", "md_src_2cfg_2cfg.html#autotoc_md31", null ],
+      [ "52 position_loop_d", "md_src_2cfg_2cfg.html#autotoc_md32", null ],
+      [ "53 position_lim_min", "md_src_2cfg_2cfg.html#autotoc_md33", null ],
+      [ "54 position_lim_max", "md_src_2cfg_2cfg.html#autotoc_md34", null ],
+      [ "55 position_to_velocity_lim_scale", "md_src_2cfg_2cfg.html#autotoc_md35", null ],
+      [ "60 static_friction_scale", "md_src_2cfg_2cfg.html#autotoc_md36", null ],
+      [ "61 static_friction_decay", "md_src_2cfg_2cfg.html#autotoc_md37", null ],
+      [ "62 minimum_voltage", "md_src_2cfg_2cfg.html#autotoc_md38", null ],
+      [ "65 maximum_temperature", "md_src_2cfg_2cfg.html#autotoc_md39", null ],
+      [ "66 moving_detection_step", "md_src_2cfg_2cfg.html#autotoc_md40", null ],
+      [ "80 quad_encoder_range", "md_src_2cfg_2cfg.html#autotoc_md41", null ]
+    ] ],
+    [ "iface", "md_src_2iface_2iface.html", [
+      [ "Commands", "md_src_2iface_2iface.html#autotoc_md49", [
+        [ "Types", "md_src_2iface_2iface.html#autotoc_md42", [
+          [ "int32_t", "md_src_2iface_2iface.html#autotoc_md43", null ],
+          [ "float", "md_src_2iface_2iface.html#autotoc_md44", null ],
+          [ "string", "md_src_2iface_2iface.html#autotoc_md45", null ],
+          [ "bool", "md_src_2iface_2iface.html#autotoc_md46", null ],
+          [ "expr_tok", "md_src_2iface_2iface.html#autotoc_md47", null ],
+          [ "enum property", "md_src_2iface_2iface.html#autotoc_md48", null ]
         ] ],
-        [ "cmd <tt>prop <name></tt>", "md_src_2iface_2iface.html#autotoc_md57", null ],
-        [ "group <tt>cfg</tt>", "md_src_2iface_2iface.html#autotoc_md58", [
-          [ "cmd <tt>cfg set <field> <value></tt>", "md_src_2iface_2iface.html#autotoc_md59", null ],
-          [ "cmd <tt>cfg get <field></tt>", "md_src_2iface_2iface.html#autotoc_md60", null ],
-          [ "cmd <tt>cfg list5 <level = \"\"> <offset = 0> <n = 5></tt>", "md_src_2iface_2iface.html#autotoc_md61", null ],
-          [ "cmd <tt>cfg commit</tt>", "md_src_2iface_2iface.html#autotoc_md62", null ],
-          [ "cmd <tt>cfg clear</tt>", "md_src_2iface_2iface.html#autotoc_md63", null ]
+        [ "group mode", "md_src_2iface_2iface.html#autotoc_md50", [
+          [ "cmd mode disengaged", "md_src_2iface_2iface.html#autotoc_md51", null ],
+          [ "cmd mode power <power = 0>", "md_src_2iface_2iface.html#autotoc_md52", null ],
+          [ "cmd mode current <current = 0.0>", "md_src_2iface_2iface.html#autotoc_md53", null ],
+          [ "cmd mode velocity <velocity = 0.0>", "md_src_2iface_2iface.html#autotoc_md54", null ],
+          [ "cmd mode position <position = 0.0>", "md_src_2iface_2iface.html#autotoc_md55", null ]
         ] ],
-        [ "cmd <tt>info</tt>", "md_src_2iface_2iface.html#autotoc_md64", null ]
+        [ "cmd prop <name>", "md_src_2iface_2iface.html#autotoc_md56", null ],
+        [ "group cfg", "md_src_2iface_2iface.html#autotoc_md57", [
+          [ "cmd cfg set <field> <value>", "md_src_2iface_2iface.html#autotoc_md58", null ],
+          [ "cmd cfg get <field>", "md_src_2iface_2iface.html#autotoc_md59", null ],
+          [ "cmd cfg list5 <level = \"\"> <offset = 0> <n = 5>", "md_src_2iface_2iface.html#autotoc_md60", null ],
+          [ "cmd cfg commit", "md_src_2iface_2iface.html#autotoc_md61", null ],
+          [ "cmd cfg clear", "md_src_2iface_2iface.html#autotoc_md62", null ]
+        ] ],
+        [ "cmd info", "md_src_2iface_2iface.html#autotoc_md63", null ]
       ] ]
     ] ],
     [ "Motor related math", "md_doc_2math.html", [
-      [ "Dictionary", "md_doc_2math.html#autotoc_md66", null ],
-      [ "Equations", "md_doc_2math.html#autotoc_md67", [
-        [ "velocity-torque curve", "md_doc_2math.html#autotoc_md68", null ]
+      [ "Dictionary", "md_doc_2math.html#autotoc_md65", null ],
+      [ "Equations", "md_doc_2math.html#autotoc_md66", [
+        [ "velocity-torque curve", "md_doc_2math.html#autotoc_md67", null ]
       ] ]
     ] ],
     [ "Requirements", "md_doc_2requirements.html", [
       [ "System requirements", "sys.html", [
-        [ "REQ1.1 Prioritize project independence to hardware", "sys.html#autotoc_md69", [
-          [ "REQ1.1.1 Decomposition", "sys.html#autotoc_md70", null ],
-          [ "REQ1.1.2 Code shall not be dependent on hardware specifics unless necessary", "sys.html#autotoc_md71", null ]
+        [ "REQ1.1 Prioritize project independence to hardware", "sys.html#autotoc_md68", [
+          [ "REQ1.1.1 Decomposition", "sys.html#autotoc_md69", null ],
+          [ "REQ1.1.2 Code shall not be dependent on hardware specifics unless necessary", "sys.html#autotoc_md70", null ]
         ] ],
-        [ "REQ1.2 Focus on testing", "sys.html#autotoc_md72", null ],
-        [ "REQ1.2.1 Test on host what can be tested on host", "sys.html#autotoc_md73", null ],
-        [ "REQ1.2.3 Use testing on target hardware", "sys.html#autotoc_md74", null ]
+        [ "REQ1.2 Focus on testing", "sys.html#autotoc_md71", null ],
+        [ "REQ1.2.1 Test on host what can be tested on host", "sys.html#autotoc_md72", null ],
+        [ "REQ1.2.3 Use testing on target hardware", "sys.html#autotoc_md73", null ]
       ] ],
       [ "System control requirements", "ctl.html", [
-        [ "REQ2.1 Position control mode", "ctl.html#autotoc_md75", null ],
-        [ "REQ2.2 Current control mode", "ctl.html#autotoc_md76", null ],
-        [ "REQ2.3 Velocity control mode", "ctl.html#autotoc_md77", null ],
-        [ "REQ2.4 Power control mode", "ctl.html#autotoc_md78", null ],
-        [ "REQ2.5 Movement detection", "ctl.html#autotoc_md79", null ],
-        [ "REQ2.6 Static friction compensation", "ctl.html#autotoc_md80", null ],
-        [ "REQ2.7 Disengaged", "ctl.html#autotoc_md81", null ]
+        [ "REQ2.1 Position control mode", "ctl.html#autotoc_md74", null ],
+        [ "REQ2.2 Current control mode", "ctl.html#autotoc_md75", null ],
+        [ "REQ2.3 Velocity control mode", "ctl.html#autotoc_md76", null ],
+        [ "REQ2.4 Power control mode", "ctl.html#autotoc_md77", null ],
+        [ "REQ2.5 Movement detection", "ctl.html#autotoc_md78", null ],
+        [ "REQ2.6 Static friction compensation", "ctl.html#autotoc_md79", null ],
+        [ "REQ2.7 Disengaged", "ctl.html#autotoc_md80", null ]
       ] ],
       [ "System limits requirements", "lims.html", [
-        [ "REQ3.1 Current limits", "lims.html#autotoc_md82", null ],
-        [ "REQ3.2 Position limits", "lims.html#autotoc_md83", null ],
-        [ "REQ3.3 Velocity limits", "lims.html#autotoc_md84", null ]
+        [ "REQ3.1 Current limits", "lims.html#autotoc_md81", null ],
+        [ "REQ3.2 Position limits", "lims.html#autotoc_md82", null ],
+        [ "REQ3.3 Velocity limits", "lims.html#autotoc_md83", null ]
       ] ],
       [ "Communication requirements", "comms.html", [
-        [ "REQ4.1 System should have one major communication interface", "comms.html#autotoc_md85", null ],
-        [ "REQ4.2 System should decompose message communication to be independent on underlying transport layer", "comms.html#autotoc_md86", null ],
-        [ "RE4.3 UART shall be supported as transport", "comms.html#autotoc_md87", null ],
-        [ "REQ4.4 Major communication message shall be defined in TBD", "comms.html#autotoc_md88", null ],
-        [ "REQ4.5 COBS can be used as framing mechanism", "comms.html#autotoc_md89", null ],
-        [ "REQ4.6 Exact communication interface is property of board", "comms.html#autotoc_md90", null ],
-        [ "REQ4.7 ID", "comms.html#autotoc_md91", null ],
-        [ "REQ4.8 Group ID", "comms.html#autotoc_md92", null ]
+        [ "REQ4.1 System should have one major communication interface", "comms.html#autotoc_md84", null ],
+        [ "REQ4.2 System should decompose message communication to be independent on underlying transport layer", "comms.html#autotoc_md85", null ],
+        [ "RE4.3 UART shall be supported as transport", "comms.html#autotoc_md86", null ],
+        [ "REQ4.4 Major communication message shall be defined in TBD", "comms.html#autotoc_md87", null ],
+        [ "REQ4.5 COBS can be used as framing mechanism", "comms.html#autotoc_md88", null ],
+        [ "REQ4.6 Exact communication interface is property of board", "comms.html#autotoc_md89", null ],
+        [ "REQ4.7 ID", "comms.html#autotoc_md90", null ],
+        [ "REQ4.8 Group ID", "comms.html#autotoc_md91", null ]
       ] ],
       [ "Units", "units.html", [
-        [ "REQ5.1 Any values facing the user shall be in well defined units specified by other requirements", "units.html#autotoc_md93", null ],
-        [ "REQ5.2 Angular position is specified in radians", "units.html#autotoc_md94", null ],
-        [ "REQ5.3 Electric current is specified in amperes", "units.html#autotoc_md95", null ],
-        [ "REQ5.4 Time is specified in seconds", "units.html#autotoc_md96", null ],
-        [ "REQ5.5 Angular velocity is specified in radians per second.", "units.html#autotoc_md97", null ]
+        [ "REQ5.1 Any values facing the user shall be in well defined units specified by other requirements", "units.html#autotoc_md92", null ],
+        [ "REQ5.2 Angular position is specified in radians", "units.html#autotoc_md93", null ],
+        [ "REQ5.3 Electric current is specified in amperes", "units.html#autotoc_md94", null ],
+        [ "REQ5.4 Time is specified in seconds", "units.html#autotoc_md95", null ],
+        [ "REQ5.5 Angular velocity is specified in radians per second.", "units.html#autotoc_md96", null ]
       ] ],
       [ "Configuration", "config.html", [
-        [ "REQ6.1 One configuration", "config.html#autotoc_md98", null ],
-        [ "REQ6.2 Configuration can be managed by the user via the communication interface", "config.html#autotoc_md99", [
-          [ "REQ6.2.1 Get configuration field", "config.html#autotoc_md100", null ],
-          [ "REQ6.2.2 Set configuration field", "config.html#autotoc_md101", null ],
-          [ "REQ6.2.3 Commit the configuration", "config.html#autotoc_md102", null ],
-          [ "REQ6.2.4 Clear the configuration", "config.html#autotoc_md103", null ]
+        [ "REQ6.1 One configuration", "config.html#autotoc_md97", null ],
+        [ "REQ6.2 Configuration can be managed by the user via the communication interface", "config.html#autotoc_md98", [
+          [ "REQ6.2.1 Get configuration field", "config.html#autotoc_md99", null ],
+          [ "REQ6.2.2 Set configuration field", "config.html#autotoc_md100", null ],
+          [ "REQ6.2.3 Commit the configuration", "config.html#autotoc_md101", null ],
+          [ "REQ6.2.4 Clear the configuration", "config.html#autotoc_md102", null ]
         ] ],
-        [ "REQ6.3 Configuration shall be documented", "config.html#autotoc_md104", null ],
-        [ "REQ6.4 Configuration is tied to the version of firmware", "config.html#autotoc_md105", null ],
-        [ "REQ6.5 Persistent configuration", "config.html#autotoc_md106", [
-          [ "REQ6.5.1 Entire set is always stored", "config.html#autotoc_md107", null ],
-          [ "REQ6.5.2 Size of history", "config.html#autotoc_md108", null ],
-          [ "REQ6.5.3 Clear removes history", "config.html#autotoc_md109", null ],
-          [ "REQ6.5.4 Firmware version is also stored", "config.html#autotoc_md110", null ]
+        [ "REQ6.3 Configuration shall be documented", "config.html#autotoc_md103", null ],
+        [ "REQ6.4 Configuration is tied to the version of firmware", "config.html#autotoc_md104", null ],
+        [ "REQ6.5 Persistent configuration", "config.html#autotoc_md105", [
+          [ "REQ6.5.1 Entire set is always stored", "config.html#autotoc_md106", null ],
+          [ "REQ6.5.2 Size of history", "config.html#autotoc_md107", null ],
+          [ "REQ6.5.3 Clear removes history", "config.html#autotoc_md108", null ],
+          [ "REQ6.5.4 Firmware version is also stored", "config.html#autotoc_md109", null ]
         ] ],
-        [ "REQ6.6 Firmware version changes", "config.html#autotoc_md111", null ],
-        [ "REQ6.7 Utility for changes shall exist", "config.html#autotoc_md112", null ],
-        [ "REQ6.8 Common format for storing on host side", "config.html#autotoc_md113", null ],
-        [ "REQ6.9 List of fields for configuration", "config.html#autotoc_md114", [
-          [ "REQ6.9.1 Model", "config.html#autotoc_md115", null ],
-          [ "REQ6.9.2 ID", "config.html#autotoc_md116", null ]
+        [ "REQ6.6 Firmware version changes", "config.html#autotoc_md110", null ],
+        [ "REQ6.7 Utility for changes shall exist", "config.html#autotoc_md111", null ],
+        [ "REQ6.8 Common format for storing on host side", "config.html#autotoc_md112", null ],
+        [ "REQ6.9 List of fields for configuration", "config.html#autotoc_md113", [
+          [ "REQ6.9.1 Model", "config.html#autotoc_md114", null ],
+          [ "REQ6.9.2 ID", "config.html#autotoc_md115", null ]
         ] ]
       ] ]
     ] ],
@@ -167,18 +210,18 @@ var NAVTREEINDEX =
 "char__uart_8cpp.html",
 "cobs__rx__container_8hpp.html",
 "functions_func_n.html",
-"md_src_2iface_2iface.html#autotoc_md55",
-"namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a3879788c8c54de8f9cc05a7ffa5cecdd",
-"namespaceservio_1_1ftester.html#a4e2bf400b5caac347ef36aaa7b2d04ef",
-"namespaceservio_1_1scmdio.html#a77ea38e1834f94b476247a7987fd8a15",
-"scmdio_2main_8cpp.html#aa895c4d04b8c0c7d854041c055f68740",
-"structservio_1_1atom__sv__key.html",
-"structservio_1_1drv_1_1adc__channel.html#a31f781d219a2cc4489adcbaba591da95",
-"structservio_1_1drv_1_1leds__iface.html#ac254678ba7f928f8dba50189763f5074",
-"structservio_1_1ftest_1_1bench_1_1loop__frequency.html#a8d8328a7e932e093b8b3eacf7e93fff6",
-"structservio_1_1iface_1_1cfg__list5__stmt.html#a8ebfd2d070aa1cbf31d23f291aada0ce",
-"structservio_1_1parser_1_1parser.html#a591bd45983f6e9eeb90b94a20c793874",
-"structservio_1_1sntr_1_1test__central__sentry.html"
+"md_src_2cfg_2cfg.html#autotoc_md17",
+"namespaceservio_1_1brd.html#a7047a111e0cca6a2e255c57bd604a300",
+"namespaceservio_1_1drv_1_1bits.html",
+"namespaceservio_1_1scmdio.html",
+"record_8hpp.html#a875fcd3a5d9ef6909df43ffc0b84d60eaaeff3f3f2731681b2ed6a27786a56203",
+"structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html",
+"structservio_1_1core_1_1drivers.html#aea1ac88a160beffe23f4a8582dccff35",
+"structservio_1_1drv_1_1flash__storage.html#a54091eaf206f30ea03862d84ea4081b2",
+"structservio_1_1drv_1_1tests_1_1temperature__test.html",
+"structservio_1_1ftester_1_1test__system.html#a917d3a872e5de2df6c6d06745e8e5669",
+"structservio_1_1mtr_1_1static__detector.html#a4fddc254997d1edbd8ca28eee21a2701",
+"structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#a61972ccc8f4c236f65d3603f8f2127b3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

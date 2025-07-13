@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: Interface</title>
+<title>servio: iface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,28 +91,28 @@ $(document).ready(function(){initNavTree('md_src_2iface_2iface.html',''); initRe
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Interface</div></div>
+  <div class="headertitle"><div class="title">iface</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md42"></a></p>
-<h1><a class="anchor" id="autotoc_md43"></a>
-Types</h1>
-<h3><a class="anchor" id="autotoc_md44"></a>
+<div class="textblock"><p>#Interface</p>
+<h2><a class="anchor" id="autotoc_md42"></a>
+Types</h2>
+<h3><a class="anchor" id="autotoc_md43"></a>
 int32_t</h3>
 <p>Standard 32bit integer value. </p>
-<h3><a class="anchor" id="autotoc_md45"></a>
+<h3><a class="anchor" id="autotoc_md44"></a>
 float</h3>
 <p>32bit float value supporting scientific syntax. </p>
-<h3><a class="anchor" id="autotoc_md46"></a>
+<h3><a class="anchor" id="autotoc_md45"></a>
 string</h3>
 <p>String limited up to 32 characters. Has to be enclosed in quotation marks. </p>
-<h3><a class="anchor" id="autotoc_md47"></a>
+<h3><a class="anchor" id="autotoc_md46"></a>
 bool</h3>
 <p>Bool value in form of string <code>true</code> or <code>false</code>. </p>
-<h3><a class="anchor" id="autotoc_md48"></a>
+<h3><a class="anchor" id="autotoc_md47"></a>
 expr_tok</h3>
 <p>Wildcard token for accepting: <code>string</code>, <code>float</code>, <code>int32_t</code>, <code>bool</code></p>
-<h3><a class="anchor" id="autotoc_md49"></a>
+<h3><a class="anchor" id="autotoc_md48"></a>
 enum property</h3>
 <ul>
 <li><em>mode</em>: Mode of the servomotor</li>
@@ -122,16 +122,16 @@ enum property</h3>
 <li><em>position</em>: Actual position of the servomotor</li>
 <li><em>velocity</em>: Actual velocity of the servomotor</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md50"></a>
+<h1><a class="anchor" id="autotoc_md49"></a>
 Commands</h1>
-<h2><a class="anchor" id="autotoc_md51"></a>
-group &lt;tt&gt;mode&lt;/tt&gt;</h2>
+<h2><a class="anchor" id="autotoc_md50"></a>
+group mode</h2>
 <p>Set mode of servomotor</p>
-<h3><a class="anchor" id="autotoc_md52"></a>
-cmd &lt;tt&gt;mode disengaged&lt;/tt&gt;</h3>
+<h3><a class="anchor" id="autotoc_md51"></a>
+cmd mode disengaged</h3>
 <p>Set servomotor to disengaged mode, no power applied</p>
-<h3><a class="anchor" id="autotoc_md53"></a>
-cmd &lt;tt&gt;mode power &lt;power = 0&gt;&lt;/tt&gt;</h3>
+<h3><a class="anchor" id="autotoc_md52"></a>
+cmd mode power &lt;power = 0&gt;</h3>
 <p>Regulate power applied to the servomotor</p>
 <ul>
 <li><em>power</em>: Power between -1. and 1.<ul>
@@ -140,8 +140,8 @@ cmd &lt;tt&gt;mode power &lt;power = 0&gt;&lt;/tt&gt;</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md54"></a>
-cmd &lt;tt&gt;mode current &lt;current = 0.0&gt;&lt;/tt&gt;</h3>
+<h3><a class="anchor" id="autotoc_md53"></a>
+cmd mode current &lt;current = 0.0&gt;</h3>
 <p>Regulate current applied to the servomotor</p>
 <ul>
 <li><em>current</em>: Current level to set<ul>
@@ -150,8 +150,8 @@ cmd &lt;tt&gt;mode current &lt;current = 0.0&gt;&lt;/tt&gt;</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md55"></a>
-cmd &lt;tt&gt;mode velocity &lt;velocity = 0.0&gt;&lt;/tt&gt;</h3>
+<h3><a class="anchor" id="autotoc_md54"></a>
+cmd mode velocity &lt;velocity = 0.0&gt;</h3>
 <p>Regulate velocity applied to the servomotor</p>
 <ul>
 <li><em>velocity</em>: Velocity to set<ul>
@@ -160,8 +160,8 @@ cmd &lt;tt&gt;mode velocity &lt;velocity = 0.0&gt;&lt;/tt&gt;</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md56"></a>
-cmd &lt;tt&gt;mode position &lt;position = 0.0&gt;&lt;/tt&gt;</h3>
+<h3><a class="anchor" id="autotoc_md55"></a>
+cmd mode position &lt;position = 0.0&gt;</h3>
 <p>Regulate position applied to the servomotor</p>
 <ul>
 <li><em>position</em>: Position to set<ul>
@@ -170,8 +170,8 @@ cmd &lt;tt&gt;mode position &lt;position = 0.0&gt;&lt;/tt&gt;</h3>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md57"></a>
-cmd &lt;tt&gt;prop &lt;name&gt;&lt;/tt&gt;</h2>
+<h2><a class="anchor" id="autotoc_md56"></a>
+cmd prop &lt;name&gt;</h2>
 <p>Get properties of servomotor</p>
 <ul>
 <li><em>name</em>: Property to get<ul>
@@ -179,11 +179,11 @@ cmd &lt;tt&gt;prop &lt;name&gt;&lt;/tt&gt;</h2>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md58"></a>
-group &lt;tt&gt;cfg&lt;/tt&gt;</h2>
+<h2><a class="anchor" id="autotoc_md57"></a>
+group cfg</h2>
 <p>Configuration commands for the servomotor</p>
-<h3><a class="anchor" id="autotoc_md59"></a>
-cmd &lt;tt&gt;cfg set &lt;field&gt; &lt;value&gt;&lt;/tt&gt;</h3>
+<h3><a class="anchor" id="autotoc_md58"></a>
+cmd cfg set &lt;field&gt; &lt;value&gt;</h3>
 <p>Set a configuration field</p>
 <ul>
 <li><em>field</em>: Configuration field to set<ul>
@@ -195,8 +195,8 @@ cmd &lt;tt&gt;cfg set &lt;field&gt; &lt;value&gt;&lt;/tt&gt;</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md60"></a>
-cmd &lt;tt&gt;cfg get &lt;field&gt;&lt;/tt&gt;</h3>
+<h3><a class="anchor" id="autotoc_md59"></a>
+cmd cfg get &lt;field&gt;</h3>
 <p>Get a configuration field</p>
 <ul>
 <li><em>field</em>: Configuration field to get<ul>
@@ -204,8 +204,8 @@ cmd &lt;tt&gt;cfg get &lt;field&gt;&lt;/tt&gt;</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md61"></a>
-cmd &lt;tt&gt;cfg list5 &lt;level = ""&gt; &lt;offset = 0&gt; &lt;n = 5&gt;&lt;/tt&gt;</h3>
+<h3><a class="anchor" id="autotoc_md60"></a>
+cmd cfg list5 &lt;level = ""&gt; &lt;offset = 0&gt; &lt;n = 5&gt;</h3>
 <p>List subset of configuration fields</p>
 <ul>
 <li><em>level</em>: Configuration level to list, empty for root level<ul>
@@ -221,14 +221,14 @@ cmd &lt;tt&gt;cfg list5 &lt;level = ""&gt; &lt;offset = 0&gt; &lt;n = 5&gt;&lt;/
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md62"></a>
-cmd &lt;tt&gt;cfg commit&lt;/tt&gt;</h3>
+<h3><a class="anchor" id="autotoc_md61"></a>
+cmd cfg commit</h3>
 <p>Commit the current configuration changes into memory</p>
-<h3><a class="anchor" id="autotoc_md63"></a>
-cmd &lt;tt&gt;cfg clear&lt;/tt&gt;</h3>
+<h3><a class="anchor" id="autotoc_md62"></a>
+cmd cfg clear</h3>
 <p>Clear the current configuration from memory</p>
-<h2><a class="anchor" id="autotoc_md64"></a>
-cmd &lt;tt&gt;info&lt;/tt&gt;</h2>
+<h2><a class="anchor" id="autotoc_md63"></a>
+cmd info</h2>
 <p>Get information about the servomotor </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
@@ -236,7 +236,7 @@ cmd &lt;tt&gt;info&lt;/tt&gt;</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Jul 13 2025 16:47:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Jul 13 2025 16:58:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

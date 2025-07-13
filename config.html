@@ -94,72 +94,72 @@ $(document).ready(function(){initNavTree('config.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Configuration</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md98"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md97"></a>
 REQ6.1 One configuration</h1>
 <p>Configuration shall be a single set of key/value pairs stored in the system.</p>
 <p>The keys has to be unique, and are in form of identificator.</p>
 <p>key/value pairs in configuration can also be referred to as fields.</p>
-<h1><a class="anchor" id="autotoc_md99"></a>
+<h1><a class="anchor" id="autotoc_md98"></a>
 REQ6.2 Configuration can be managed by the user via the communication interface</h1>
 <p>Use shall have well defined interface to the servo to change the configuration.</p>
 <p>The interface shall support multiple operations for the configuration, listed as subrequirements.</p>
-<h2><a class="anchor" id="autotoc_md100"></a>
+<h2><a class="anchor" id="autotoc_md99"></a>
 REQ6.2.1 Get configuration field</h2>
 <p>Retrieves value of configuration field based on key.</p>
-<h2><a class="anchor" id="autotoc_md101"></a>
+<h2><a class="anchor" id="autotoc_md100"></a>
 REQ6.2.2 Set configuration field</h2>
 <p>Sets a new value to configuration field based on key.</p>
 <p>Set alone does not cause values to be persistent.</p>
-<h2><a class="anchor" id="autotoc_md102"></a>
+<h2><a class="anchor" id="autotoc_md101"></a>
 REQ6.2.3 Commit the configuration</h2>
 <p>Executes operation to make the current configuration persistent.</p>
-<h2><a class="anchor" id="autotoc_md103"></a>
+<h2><a class="anchor" id="autotoc_md102"></a>
 REQ6.2.4 Clear the configuration</h2>
 <p>Removes last stored set of configuration.</p>
-<h1><a class="anchor" id="autotoc_md104"></a>
+<h1><a class="anchor" id="autotoc_md103"></a>
 REQ6.3 Configuration shall be documented</h1>
 <p>Each field shall have easy to access configuration as to it's semantics.</p>
 <p>Documentation of each field should also define what units are used for that field, or what is the valid domain of values.</p>
-<h1><a class="anchor" id="autotoc_md105"></a>
+<h1><a class="anchor" id="autotoc_md104"></a>
 REQ6.4 Configuration is tied to the version of firmware</h1>
 <p>The exact list of configuration fields is property of the version of the firmware.</p>
 <p>That is, any two servomotors with any board with same version of the firmware, will have exactly the same set of configuration fields.</p>
 <p>Motivation: we do not want the system to get complicated by supporting variations.</p>
-<h1><a class="anchor" id="autotoc_md106"></a>
+<h1><a class="anchor" id="autotoc_md105"></a>
 REQ6.5 Persistent configuration</h1>
 <p>System shall have capability to store entire set of configuration internally. The stored configuration shall persist between reboots of the system, even in case of a loss of power.</p>
 <p>Stored configuration is loaded during the boot sequence of the device, and never touched again, unless overwritten or cleaned.</p>
-<h2><a class="anchor" id="autotoc_md107"></a>
+<h2><a class="anchor" id="autotoc_md106"></a>
 REQ6.5.1 Entire set is always stored</h2>
 <p>Entire set of key/value pairs existing in the current version of the firmware shall be stored in the persistent storage.</p>
-<h2><a class="anchor" id="autotoc_md108"></a>
+<h2><a class="anchor" id="autotoc_md107"></a>
 REQ6.5.2 Size of history</h2>
 <p>The storing mechanism shall be able to store multiple records of configuration. Exact number is up to the each board or platform. At least 2 records shall be feasible.</p>
-<h2><a class="anchor" id="autotoc_md109"></a>
+<h2><a class="anchor" id="autotoc_md108"></a>
 REQ6.5.3 Clear removes history</h2>
 <p>Clear command shall remove last set of fields from the persistent history.</p>
-<h2><a class="anchor" id="autotoc_md110"></a>
+<h2><a class="anchor" id="autotoc_md109"></a>
 REQ6.5.4 Firmware version is also stored</h2>
 <p>Part of the stored configuration shall be version of firmware used to write the configuration. Information about the shall be retrievable from the system.</p>
-<h1><a class="anchor" id="autotoc_md111"></a>
+<h1><a class="anchor" id="autotoc_md110"></a>
 REQ6.6 Firmware version changes</h1>
 <p>As firmware is developed, the exact set of fields in configuration will change. The system shall support backwards compatibility for any configuration stored in persistent history.</p>
 <p>That is, if configuration is stored in any version, any subsequent version of the firmware shall be able to load said configuration without an error.</p>
 <p>That does not imply that the system should be able to convert any fields from old version to a new, just that it happens without an error on best effort basis.</p>
-<h1><a class="anchor" id="autotoc_md112"></a>
+<h1><a class="anchor" id="autotoc_md111"></a>
 REQ6.7 Utility for changes shall exist</h1>
 <p>Utility binary for host devices that can manage the configuration of servomotor shall exist and be accessible to the users. It should support all commands accessible via the main communication interface.</p>
-<h1><a class="anchor" id="autotoc_md113"></a>
+<h1><a class="anchor" id="autotoc_md112"></a>
 REQ6.8 Common format for storing on host side</h1>
 <p>There should be one common format to store the configuration sets on host device.</p>
 <p>TBD</p>
-<h1><a class="anchor" id="autotoc_md114"></a>
+<h1><a class="anchor" id="autotoc_md113"></a>
 REQ6.9 List of fields for configuration</h1>
 <p>As a subrequirements to this, we have a subset of configuration fields that should be present. This is not full list, that always depends on the current version of firmware</p>
-<h2><a class="anchor" id="autotoc_md115"></a>
+<h2><a class="anchor" id="autotoc_md114"></a>
 REQ6.9.1 Model</h2>
 <p>String with the name of the model of the servo, user-defined. For debug purposes only.</p>
-<h2><a class="anchor" id="autotoc_md116"></a>
+<h2><a class="anchor" id="autotoc_md115"></a>
 REQ6.9.2 ID</h2>
 <p>Unique ID used by the main communication mechanism as described in 4.7. 32 bit unsigned integer value. </p>
 </div></div><!-- contents -->
@@ -169,7 +169,7 @@ REQ6.9.2 ID</h2>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="md_doc_2requirements.html">Requirements</a></li>
-    <li class="footer">Generated on Sun Jul 13 2025 16:47:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Jul 13 2025 16:58:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

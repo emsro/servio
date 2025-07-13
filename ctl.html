@@ -94,40 +94,40 @@ $(document).ready(function(){initNavTree('ctl.html',''); initResizable(); });
   <div class="headertitle"><div class="title">System control requirements</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md75"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md74"></a>
 REQ2.1 Position control mode</h1>
 <p>System shall support position control mode. In this mode, the goal is to achieve specified position on controlled axis.</p>
 <p>Position is measured with position sensor, it's exact nature is not defined by this requirement.</p>
 <p>Goal position is specified in <em>radians</em>. The system should handle any position within configured software limits and native limits given by the hardware construction of the system.</p>
 <p>Precision is subject to the nature of position sensor, and is not handled by this requirement.</p>
-<h1><a class="anchor" id="autotoc_md76"></a>
+<h1><a class="anchor" id="autotoc_md75"></a>
 REQ2.2 Current control mode</h1>
 <p>System shall support current control mode. In this mode, the goal is to achieve specified current flowing to connected motor.</p>
 <p>Current is measured with current sensor, it's exact nature is not defined by this requirement.</p>
 <p>Goal current is specified in <em>amperes</em>. The system should handle current within configured software limits and native limits given by the hardware construction of the system.</p>
-<h1><a class="anchor" id="autotoc_md77"></a>
+<h1><a class="anchor" id="autotoc_md76"></a>
 REQ2.3 Velocity control mode</h1>
 <p>System shall support velocity control mode. In this mode, the goal is to achieve specified rotational velocity with controlled axis.</p>
 <p>Velocity is estimated based on current position as measured by position sensor. This requirement does not specify any requirements for the sensed value.</p>
 <p>Goal velocity is specified in <em>radians per second</em>. The system should handle velocity within configured software limits and native limits given by the hardware construction of the system.</p>
-<h1><a class="anchor" id="autotoc_md78"></a>
+<h1><a class="anchor" id="autotoc_md77"></a>
 REQ2.4 Power control mode</h1>
 <p>System shall support direct setting of desired power being sent to the motor.</p>
 <p>When the mode is active, any software limits for position, current, or velocity does not have to be respected.</p>
 <p>Desired power is specified as an float value within -1..0..1 range, where -1 is reverse, 0 is no power, and 1 is full forward.</p>
 <p>This mode is inherently unsafe and is recommended only for advanced use.</p>
-<h1><a class="anchor" id="autotoc_md79"></a>
+<h1><a class="anchor" id="autotoc_md78"></a>
 REQ2.5 Movement detection</h1>
 <p>System has to have capability to detect whenever output axis is stationary or moving.</p>
 <p>This detection shall use position sensor. The sensitivity of the mechanism shall be configurable via standard means.</p>
-<h1><a class="anchor" id="autotoc_md80"></a>
+<h1><a class="anchor" id="autotoc_md79"></a>
 REQ2.6 Static friction compensation</h1>
 <p>When the servo is considered as not moving (more in 2.5), the system shall provide static friction compensation for any mechanism affected by it's effects.</p>
 <p>As of now only velocity control mode and position control mode are considered as affected.</p>
 <p>This compensation shall provide a short-term increase in power to the motor to overcame the static friction, this compensation shall disappear once the motor is moving.</p>
 <p>The transition shall be gradual, to avoid hysteresis.</p>
 <p>The mechanism shall be parametrized, and configurable via standard means.</p>
-<h1><a class="anchor" id="autotoc_md81"></a>
+<h1><a class="anchor" id="autotoc_md80"></a>
 REQ2.7 Disengaged</h1>
 <p>TBD </p>
 </div></div><!-- contents -->
@@ -137,7 +137,7 @@ REQ2.7 Disengaged</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="md_doc_2requirements.html">Requirements</a></li>
-    <li class="footer">Generated on Sun Jul 13 2025 16:47:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Jul 13 2025 16:58:33 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
