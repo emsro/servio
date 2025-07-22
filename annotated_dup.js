@@ -274,6 +274,7 @@ var annotated_dup =
         [ "port_cli", "structservio_1_1scmdio_1_1port__cli.html", "structservio_1_1scmdio_1_1port__cli" ],
         [ "port_iface", "structservio_1_1scmdio_1_1port__iface.html", "structservio_1_1scmdio_1_1port__iface" ],
         [ "port_mock", "structservio_1_1scmdio_1_1port__mock.html", "structservio_1_1scmdio_1_1port__mock" ],
+        [ "preset_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1preset__ctx_dup" ],
         [ "preset_def", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__def", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1preset__def_dup" ],
         [ "raw_preset_def", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1raw__preset__def", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1raw__preset__def_dup" ],
         [ "serial_cli", "structservio_1_1scmdio_1_1serial__cli.html", "structservio_1_1scmdio_1_1serial__cli" ],

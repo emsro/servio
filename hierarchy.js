@@ -234,6 +234,7 @@ var hierarchy =
     ] ],
     [ "servio::drv::tests::position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", null ],
     [ "servio::mtr::posvel_kalman", "structservio_1_1mtr_1_1posvel__kalman.html", null ],
+    [ "servio::scmdio::preset_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__ctx", null ],
     [ "servio::scmdio::preset_def", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__def", null ],
     [ "servio::ftest::bench::prof_record", "namespaceservio_1_1ftest_1_1bench.html#structservio_1_1ftest_1_1bench_1_1prof__record", null ],
     [ "servio::ftest::bench::profile", "structservio_1_1ftest_1_1bench_1_1profile.html", null ],

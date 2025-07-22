@@ -11,7 +11,6 @@ var str__lib_8hpp =
     [ "num", "str__lib_8hpp.html#a50b074234c1f9706e173b2fdc90770d9", null ],
     [ "real", "str__lib_8hpp.html#a57ef0f842947c125eba788c392bc0722", null ],
     [ "apply_exp", "str__lib_8hpp.html#a497fc2eef0aca4badc72ac40a50fc891", null ],
-    [ "dec_to_n", "str__lib_8hpp.html#a56eb235e8bea728e488bfac8cf394e48", null ],
     [ "exp_pow", "str__lib_8hpp.html#add09febdf112368e58ff5088dc6f367b", null ],
     [ "f_to_s", "str__lib_8hpp.html#a5462d4d8ad0f312c1fec922ea9c91b7a", null ],
     [ "has_exp_suffix", "str__lib_8hpp.html#adb8a5deec2c1fad6596bfa40151541ee", null ],
@@ -26,5 +25,6 @@ var str__lib_8hpp =
     [ "lex_letters", "str__lib_8hpp.html#a8177c267b47c96fcce04e5b633496111", null ],
     [ "s_to_nr", "str__lib_8hpp.html#a6581570c8e1b6db1ffaba372b4231139", null ],
     [ "try_sign", "str__lib_8hpp.html#a8789d3e446b079808f31b65e03339d14", null ],
-    [ "u_to_s", "str__lib_8hpp.html#a42a3f44f68adb28ef07ff2ee407e86e1", null ]
+    [ "u_to_s", "str__lib_8hpp.html#a42a3f44f68adb28ef07ff2ee407e86e1", null ],
+    [ "udec_to_n", "str__lib_8hpp.html#a4a2f3e361e957d225f39bcecb2738bfe", null ]
 ];

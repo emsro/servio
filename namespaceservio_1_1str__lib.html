@@ -133,8 +133,8 @@ Functions</h2></td></tr>
 <tr class="separator:a5462d4d8ad0f312c1fec922ea9c91b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaab7e0a876beb327d57f81cceb6c2d4a" id="r_aaab7e0a876beb327d57f81cceb6c2d4a"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#aaab7e0a876beb327d57f81cceb6c2d4a">hex_to_n</a> (char const *&amp;p, char const *e, int32_t &amp;x) noexcept</td></tr>
 <tr class="separator:aaab7e0a876beb327d57f81cceb6c2d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56eb235e8bea728e488bfac8cf394e48" id="r_a56eb235e8bea728e488bfac8cf394e48"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#a56eb235e8bea728e488bfac8cf394e48">dec_to_n</a> (char const *&amp;p, char const *e, int32_t &amp;x) noexcept</td></tr>
-<tr class="separator:a56eb235e8bea728e488bfac8cf394e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a2f3e361e957d225f39bcecb2738bfe" id="r_a4a2f3e361e957d225f39bcecb2738bfe"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#a4a2f3e361e957d225f39bcecb2738bfe">udec_to_n</a> (char const *&amp;p, char const *e, uint32_t &amp;x) noexcept</td></tr>
+<tr class="separator:a4a2f3e361e957d225f39bcecb2738bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a497fc2eef0aca4badc72ac40a50fc891" id="r_a497fc2eef0aca4badc72ac40a50fc891"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#a497fc2eef0aca4badc72ac40a50fc891">apply_exp</a> (char const *&amp;p, char const *e, float &amp;x) noexcept</td></tr>
 <tr class="separator:a497fc2eef0aca4badc72ac40a50fc891"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6581570c8e1b6db1ffaba372b4231139" id="r_a6581570c8e1b6db1ffaba372b4231139"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1str__lib.html#a6581570c8e1b6db1ffaba372b4231139">s_to_nr</a> (char const *&amp;p, char const *e, <a class="el" href="namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res">s_to_nr_res</a> &amp;x) noexcept</td></tr>
@@ -308,51 +308,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1str__lib.html#a56eb235e8bea728e488bfac8cf394e48">dec_to_n()</a>, and <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#add09febdf112368e58ff5088dc6f367b">servio::str_lib::bits::exp_pow()</a>.</p>
-
-</div>
-</div>
-<a id="a56eb235e8bea728e488bfac8cf394e48" name="a56eb235e8bea728e488bfac8cf394e48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56eb235e8bea728e488bfac8cf394e48">&#9670;&#160;</a></span>dec_to_n()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool servio::str_lib::dec_to_n </td>
-          <td>(</td>
-          <td class="paramtype">char const *&amp;&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char const *&#160;</td>
-          <td class="paramname"><em>e</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t &amp;&#160;</td>
-          <td class="paramname"><em>x</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a2307b515c6486d25c3d268645ff819fd">servio::str_lib::bits::i32_lowest_as_u32()</a>, <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a71e7272641d158f12eb27afb0f6e34a5">servio::str_lib::bits::is_dec()</a>, and <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a8789d3e446b079808f31b65e03339d14">servio::str_lib::bits::try_sign()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#add09febdf112368e58ff5088dc6f367b">servio::str_lib::bits::exp_pow()</a>, <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a8789d3e446b079808f31b65e03339d14">servio::str_lib::bits::try_sign()</a>, and <a class="el" href="namespaceservio_1_1str__lib.html#a4a2f3e361e957d225f39bcecb2738bfe">udec_to_n()</a>.</p>
 
 </div>
 </div>
@@ -522,7 +478,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1str__lib.html#a497fc2eef0aca4badc72ac40a50fc891">apply_exp()</a>, <a class="el" href="namespaceservio_1_1str__lib.html#a56eb235e8bea728e488bfac8cf394e48">dec_to_n()</a>, <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#adb8a5deec2c1fad6596bfa40151541ee">servio::str_lib::bits::has_exp_suffix()</a>, <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a05768067697a4e6d0a0286b43aa7c3d4">servio::str_lib::bits::hex_prefix()</a>, <a class="el" href="namespaceservio_1_1str__lib.html#aaab7e0a876beb327d57f81cceb6c2d4a">hex_to_n()</a>, <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a71e7272641d158f12eb27afb0f6e34a5">servio::str_lib::bits::is_dec()</a>, and <a class="el" href="namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9">servio::str_lib::s_to_nr_res::is_num</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1str__lib.html#a497fc2eef0aca4badc72ac40a50fc891">apply_exp()</a>, <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#adb8a5deec2c1fad6596bfa40151541ee">servio::str_lib::bits::has_exp_suffix()</a>, <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a05768067697a4e6d0a0286b43aa7c3d4">servio::str_lib::bits::hex_prefix()</a>, <a class="el" href="namespaceservio_1_1str__lib.html#aaab7e0a876beb327d57f81cceb6c2d4a">hex_to_n()</a>, <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a2307b515c6486d25c3d268645ff819fd">servio::str_lib::bits::i32_lowest_as_u32()</a>, <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a71e7272641d158f12eb27afb0f6e34a5">servio::str_lib::bits::is_dec()</a>, <a class="el" href="namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9">servio::str_lib::s_to_nr_res::is_num</a>, <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a8789d3e446b079808f31b65e03339d14">servio::str_lib::bits::try_sign()</a>, and <a class="el" href="namespaceservio_1_1str__lib.html#a4a2f3e361e957d225f39bcecb2738bfe">udec_to_n()</a>.</p>
 
 </div>
 </div>
@@ -552,7 +508,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1str__lib.html#a7d36443f9ef01c0a5ae5b2da3393b3f4">invalid</a>, and <a class="el" href="str__lib__utest_8cpp.html#aa14e6f3d5b57ca3bfbb5d52f41ff3873">TEST_INPT</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1str__lib.html#a7d36443f9ef01c0a5ae5b2da3393b3f4">invalid</a>, <a class="el" href="namespaceservio_1_1str__lib.html#a6581570c8e1b6db1ffaba372b4231139">s_to_nr()</a>, and <a class="el" href="str__lib__utest_8cpp.html#aa14e6f3d5b57ca3bfbb5d52f41ff3873">TEST_INPT</a>.</p>
 
 </div>
 </div>
@@ -600,6 +556,50 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a4a2f3e361e957d225f39bcecb2738bfe" name="a4a2f3e361e957d225f39bcecb2738bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2f3e361e957d225f39bcecb2738bfe">&#9670;&#160;</a></span>udec_to_n()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool servio::str_lib::udec_to_n </td>
+          <td>(</td>
+          <td class="paramtype">char const *&amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1str__lib_1_1bits.html#a71e7272641d158f12eb27afb0f6e34a5">servio::str_lib::bits::is_dec()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a7d36443f9ef01c0a5ae5b2da3393b3f4" name="a7d36443f9ef01c0a5ae5b2da3393b3f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d36443f9ef01c0a5ae5b2da3393b3f4">&#9670;&#160;</a></span>invalid</h2>
@@ -629,7 +629,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1str__lib.html">str_lib</a></li>
-    <li class="footer">Generated on Sun Jul 13 2025 17:38:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Jul 22 2025 20:16:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

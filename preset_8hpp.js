@@ -11,5 +11,6 @@ var preset_8hpp =
       [ "platform", "namespaceservio_1_1scmdio.html#a5a4b359fcdbaa05657d8f85c7e3dc68a", null ]
     ] ],
     [ "load_preset", "preset_8hpp.html#a58574b7237f6a644eaa2df1da28f8529", null ],
+    [ "load_preset_cmd", "preset_8hpp.html#ad9cdcd1956f9f3ad5cbc2f5d1eed77c4", null ],
     [ "load_raw_preset", "preset_8hpp.html#a54e3bd40a8656f4f5610d379bc3484e6", null ]
 ];

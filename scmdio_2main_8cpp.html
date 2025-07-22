@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('scmdio_2main_8cpp.html',''); initResiz
 <code>#include &quot;<a class="el" href="config__cmds_8hpp_source.html">./config_cmds.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="field__util_8hpp_source.html">./field_util.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="pid__autotune__cmd_8hpp_source.html">./pid_autotune_cmd.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="preset_8hpp_source.html">./preset.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="serial_8hpp_source.html">./serial.hpp</a>&quot;</code><br />
 <code>#include &lt;emlabcpp/algorithm.h&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
@@ -111,7 +112,7 @@ $(document).ready(function(){initNavTree('scmdio_2main_8cpp.html',''); initResiz
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="scmdio_2main_8cpp__incl.svg" width="1050" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="scmdio_2main_8cpp__incl.svg" width="1234" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -126,6 +127,8 @@ Classes</h2></td></tr>
 <tr class="separator:structservio_1_1scmdio_1_1autotune__ctx"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structservio_1_1scmdio_1_1bflash__ctx" id="r_structservio_1_1scmdio_1_1bflash__ctx"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1bflash__ctx">servio::scmdio::bflash_ctx</a></td></tr>
 <tr class="separator:structservio_1_1scmdio_1_1bflash__ctx"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1scmdio_1_1preset__ctx" id="r_structservio_1_1scmdio_1_1preset__ctx"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__ctx">servio::scmdio::preset_ctx</a></td></tr>
+<tr class="separator:structservio_1_1scmdio_1_1preset__ctx"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -156,6 +159,8 @@ Functions</h2></td></tr>
 <tr class="separator:a54ae7a5edcb3197b0f05c6c357ad8b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34166d08fd8a74b00c051f802a676e6" id="r_ae34166d08fd8a74b00c051f802a676e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ae34166d08fd8a74b00c051f802a676e6">servio::scmdio::bflash_def</a> (CLI::App &amp;app, io_context &amp;io_ctx)</td></tr>
 <tr class="separator:ae34166d08fd8a74b00c051f802a676e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae58a9baee10b53a76a702c860c1b0b02" id="r_ae58a9baee10b53a76a702c860c1b0b02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ae58a9baee10b53a76a702c860c1b0b02">servio::scmdio::preset_def</a> (CLI::App &amp;app, io_context &amp;io_ctx)</td></tr>
+<tr class="separator:ae58a9baee10b53a76a702c860c1b0b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scmdio_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -370,6 +375,42 @@ port</td>
 
 </div>
 </div>
+<a name="structservio_1_1scmdio_1_1preset__ctx" id="structservio_1_1scmdio_1_1preset__ctx"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1preset__ctx">&#9670;&#160;</a></span>servio::scmdio::preset_ctx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::scmdio::preset_ctx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::scmdio::preset_ctx:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1scmdio_1_1preset__ctx__coll__graph.svg" width="204" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="ae665eeb47bc1dda7715739e368f1b5c1" name="ae665eeb47bc1dda7715739e368f1b5c1"></a><a class="el" href="structservio_1_1scmdio_1_1char__cli.html">char_cli</a></td>
+<td class="fieldname">
+port</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a6e8a257e438ed21a677a30806d4a556c" name="a6e8a257e438ed21a677a30806d4a556c"></a>path</td>
+<td class="fieldname">
+preset_folder</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
@@ -405,7 +446,7 @@ port</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="scmdio_2main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Sun Jul 13 2025 17:38:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Jul 22 2025 20:16:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

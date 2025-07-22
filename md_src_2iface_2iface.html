@@ -94,24 +94,53 @@ $(document).ready(function(){initNavTree('md_src_2iface_2iface.html',''); initRe
   <div class="headertitle"><div class="title">Interface</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md42"></a>
+<div class="textblock"><p>Servio communicates via a character-based protocol. The user is expected to send a command-line-style message over UART delimited with '<br  />
+' character. The servo will reply with a JSON-encoded response. The UART is configured as follows: 8-bit word length, 1 stop bit, no parity, 230400 baud.</p>
+<p>This section will explain how the system behaves, followed by a description of existing commands.</p>
+<h1><a class="anchor" id="autotoc_md42"></a>
+Message</h1>
+<p>The generic pattern for a message is: </p><div class="fragment"><div class="line">&lt;root_cmd&gt; &lt;subcmd1&gt; &lt;value1&gt; &lt;arg2=value2&gt; \n</div>
+</div><!-- fragment --><p> Any message starts with a specific command that has to be executed. Commands can be organized into a nested structure, hence multiple keywords can be present to specify a command. Any command keyword is separated by at least one whitespace character.</p>
+<p>After the command, some commands may support arguments. These are separated by whitespace. Any arguments without a keyword are positionally matched to the expected argument set. Following that are arguments in the form of key=value pairs. If an argument has a default value it does not have to be provided.</p>
+<p>Note that commands and args are not explicitly separated. The parser is context-aware - it knows whether to expect a nested command or argument.</p>
+<p>Here are some examples:</p><ul>
+<li>Non-nested command without args: <code>info</code></li>
+<li>Nested command without args: <code>cfg clear</code></li>
+<li>Non-nested command with position arg: <code>prop position</code></li>
+<li>Non-nested command with keyword arg: <code>prop name=position</code></li>
+<li>Nested command with position arg: <code>cfg get model</code></li>
+<li>Nested command with keyword arg: <code>cfg get field=model</code></li>
+<li>Nested command with position and keyword arg: <code>cfg set minimum_voltage value=0.1</code></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md43"></a>
+Reply</h1>
+<p>Servio always replies with valid JSON, whose root element is an array with at least one item. The first item is always either the string "OK" or "NOK".</p>
+<p>Example combinations of answers for commands:</p><ul>
+<li><code>cfg clear</code>: <code>["OK"]</code></li>
+<li><code>cfg get model</code>: <code>["OK", "kavango6"]</code></li>
+<li><code>info</code>: <code>["OK",{"version":"v0.2.0-82-g6fa680832","commit":"6fa68083287dee3e6f71438346d1c4406dc929ec"}]</code></li>
+<li><code>invalid_cmd</code>: <code>["NOK","parse error","unknown command"]</code></li>
+</ul>
+<p>The number of items in the array and their semantics depend on each command.</p>
+<h1><a class="anchor" id="autotoc_md44"></a>
 Types</h1>
-<h2><a class="anchor" id="autotoc_md43"></a>
-int32_t</h2>
-<p>Standard 32bit integer value. </p>
-<h2><a class="anchor" id="autotoc_md44"></a>
-float</h2>
-<p>32bit float value supporting scientific syntax. </p>
+<p>Arguments of commands have types; these are validated by the parser. Any command processing can be subject to more validation, but that is not done by the parser.</p>
 <h2><a class="anchor" id="autotoc_md45"></a>
-string</h2>
-<p>String limited up to 32 characters. Has to be enclosed in quotation marks. </p>
+int32_t</h2>
+<p>Standard 32-bit integer value. </p>
 <h2><a class="anchor" id="autotoc_md46"></a>
-bool</h2>
-<p>Bool value in form of string <code>true</code> or <code>false</code>. </p>
+float</h2>
+<p>32-bit float value supporting scientific syntax. </p>
 <h2><a class="anchor" id="autotoc_md47"></a>
+string</h2>
+<p>String limited up to 32 characters. Must be enclosed in quotation marks. </p>
+<h2><a class="anchor" id="autotoc_md48"></a>
+bool</h2>
+<p>Boolean value in the form of a string <code>true</code> or <code>false</code>. </p>
+<h2><a class="anchor" id="autotoc_md49"></a>
 expr_tok</h2>
 <p>Wildcard token for accepting: <code>string</code>, <code>float</code>, <code>int32_t</code>, <code>bool</code></p>
-<h2><a class="anchor" id="autotoc_md48"></a>
+<h2><a class="anchor" id="autotoc_md50"></a>
 enum property</h2>
 <ul>
 <li><em>mode</em>: Mode of the servomotor</li>
@@ -121,27 +150,27 @@ enum property</h2>
 <li><em>position</em>: Actual position of the servomotor</li>
 <li><em>velocity</em>: Actual velocity of the servomotor</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md49"></a>
+<h1><a class="anchor" id="autotoc_md51"></a>
 Commands</h1>
-<h2><a class="anchor" id="autotoc_md50"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 group: mode</h2>
-<p>Set mode of servomotor</p>
-<h3><a class="anchor" id="autotoc_md51"></a>
+<p>Set mode of the servomotor</p>
+<h3><a class="anchor" id="autotoc_md53"></a>
 cmd: mode disengaged</h3>
-<p>Set servomotor to disengaged mode, no power applied</p>
-<h3><a class="anchor" id="autotoc_md52"></a>
+<p>Set the servomotor to disengaged mode, no power applied</p>
+<h3><a class="anchor" id="autotoc_md54"></a>
 cmd: mode power &lt;power = 0&gt;</h3>
-<p>Regulate power applied to the servomotor</p>
+<p>Regulate the power applied to the servomotor. Sign of value controls direction of the movement. 1.0 is full power, 0.0 is no power, -1.0 is full reverse power.</p>
 <ul>
-<li><em>power</em>: Power between -1. and 1.<ul>
+<li><em>power</em>: Power between -1.0 and 1.0<ul>
 <li>type: <em>float</em></li>
 <li>unit: __ </li>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md53"></a>
+<h3><a class="anchor" id="autotoc_md55"></a>
 cmd: mode current &lt;current = 0.0&gt;</h3>
-<p>Regulate current applied to the servomotor</p>
+<p>Regulate the current applied to the servomotor. Sign of value controls direction of the movement. Value is clamped based on current limits configuration.</p>
 <ul>
 <li><em>current</em>: Current level to set<ul>
 <li>type: <em>float</em></li>
@@ -149,9 +178,9 @@ cmd: mode current &lt;current = 0.0&gt;</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md54"></a>
+<h3><a class="anchor" id="autotoc_md56"></a>
 cmd: mode velocity &lt;velocity = 0.0&gt;</h3>
-<p>Regulate velocity applied to the servomotor</p>
+<p>Regulate the velocity applied to the servomotor. Value is clamped based on velocity limits configuration.</p>
 <ul>
 <li><em>velocity</em>: Velocity to set<ul>
 <li>type: <em>float</em></li>
@@ -159,9 +188,9 @@ cmd: mode velocity &lt;velocity = 0.0&gt;</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md55"></a>
+<h3><a class="anchor" id="autotoc_md57"></a>
 cmd: mode position &lt;position = 0.0&gt;</h3>
-<p>Regulate position applied to the servomotor</p>
+<p>Regulate the position applied to the servomotor. The position will be clamped to fit within the current position limits. The way it is mapped depends on configuration of position_low_angle and position_high_angle.</p>
 <ul>
 <li><em>position</em>: Position to set<ul>
 <li>type: <em>float</em></li>
@@ -169,19 +198,19 @@ cmd: mode position &lt;position = 0.0&gt;</h3>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md56"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 cmd: prop &lt;name&gt;</h2>
-<p>Get properties of servomotor</p>
+<p>Get properties of the servomotor</p>
 <ul>
 <li><em>name</em>: Property to get<ul>
 <li>type: <em>property</em> </li>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md57"></a>
+<h2><a class="anchor" id="autotoc_md59"></a>
 group: cfg</h2>
-<p>Configuration commands for the servomotor</p>
-<h3><a class="anchor" id="autotoc_md58"></a>
+<p>Configuration commands for the servomotor. See configuration documentation to get list of existing fields.</p>
+<h3><a class="anchor" id="autotoc_md60"></a>
 cmd: cfg set &lt;field&gt; &lt;value&gt;</h3>
 <p>Set a configuration field</p>
 <ul>
@@ -194,7 +223,7 @@ cmd: cfg set &lt;field&gt; &lt;value&gt;</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md59"></a>
+<h3><a class="anchor" id="autotoc_md61"></a>
 cmd: cfg get &lt;field&gt;</h3>
 <p>Get a configuration field</p>
 <ul>
@@ -203,7 +232,7 @@ cmd: cfg get &lt;field&gt;</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md60"></a>
+<h3><a class="anchor" id="autotoc_md62"></a>
 cmd: cfg list5 &lt;level = ""&gt; &lt;offset = 0&gt; &lt;n = 5&gt;</h3>
 <p>List subset of configuration fields</p>
 <ul>
@@ -220,13 +249,13 @@ cmd: cfg list5 &lt;level = ""&gt; &lt;offset = 0&gt; &lt;n = 5&gt;</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md61"></a>
+<h3><a class="anchor" id="autotoc_md63"></a>
 cmd: cfg commit</h3>
-<p>Commit the current configuration changes into memory</p>
-<h3><a class="anchor" id="autotoc_md62"></a>
+<p>Commit the current configuration changes to memory</p>
+<h3><a class="anchor" id="autotoc_md64"></a>
 cmd: cfg clear</h3>
 <p>Clear the current configuration from memory</p>
-<h2><a class="anchor" id="autotoc_md63"></a>
+<h2><a class="anchor" id="autotoc_md65"></a>
 cmd: info</h2>
 <p>Get information about the servomotor </p>
 </div></div><!-- contents -->
@@ -235,7 +264,7 @@ cmd: info</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Jul 13 2025 17:38:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Jul 22 2025 20:16:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

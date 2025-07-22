@@ -8,12 +8,12 @@ var namespaceservio_1_1str__lib =
     [ "opt", "namespaceservio_1_1str__lib.html#ad9c79900906ffd071760090436c51839", null ],
     [ "real", "namespaceservio_1_1str__lib.html#a57ef0f842947c125eba788c392bc0722", null ],
     [ "apply_exp", "namespaceservio_1_1str__lib.html#a497fc2eef0aca4badc72ac40a50fc891", null ],
-    [ "dec_to_n", "namespaceservio_1_1str__lib.html#a56eb235e8bea728e488bfac8cf394e48", null ],
     [ "f_to_s", "namespaceservio_1_1str__lib.html#a5462d4d8ad0f312c1fec922ea9c91b7a", null ],
     [ "hex_to_n", "namespaceservio_1_1str__lib.html#aaab7e0a876beb327d57f81cceb6c2d4a", null ],
     [ "lex_letters", "namespaceservio_1_1str__lib.html#a8177c267b47c96fcce04e5b633496111", null ],
     [ "s_to_nr", "namespaceservio_1_1str__lib.html#a6581570c8e1b6db1ffaba372b4231139", null ],
     [ "TEST", "namespaceservio_1_1str__lib.html#a197a7784e684947bb0905e89477d687c", null ],
     [ "u_to_s", "namespaceservio_1_1str__lib.html#a42a3f44f68adb28ef07ff2ee407e86e1", null ],
+    [ "udec_to_n", "namespaceservio_1_1str__lib.html#a4a2f3e361e957d225f39bcecb2738bfe", null ],
     [ "invalid", "namespaceservio_1_1str__lib.html#a7d36443f9ef01c0a5ae5b2da3393b3f4", null ]
 ];

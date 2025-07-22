@@ -1,5 +1,6 @@
 var serial_8hpp =
 [
+    [ "commit_config", "serial_8hpp.html#a9a8d67d786d16f17c830580979bc0677", null ],
     [ "exchg", "serial_8hpp.html#ab3a9d3e781797bae6ec2211568c2511b", null ],
     [ "get_config_field", "serial_8hpp.html#ab635d19afac38b67d9225af4a9a32da9", null ],
     [ "get_full_config", "serial_8hpp.html#ae5f9b072b952790b31829cc9325d3fdb", null ],
