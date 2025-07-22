@@ -64,7 +64,6 @@ awaitable< nlohmann::json > get_config_field( port_iface& port, std::string_view
 
 awaitable< void >
 set_config_field( port_iface& port, std::string_view name, nlohmann::json const& value )
-
 {
         std::string msg;
         msg = std::format( "cfg set {} {}", name, value.dump() );
@@ -82,6 +81,15 @@ awaitable< std::map< std::string, nlohmann::json > > get_full_config( port_iface
         }
 
         co_return res;
+}
+
+awaitable< void > commit_config( port_iface& port )
+{
+        std::string msg = "cfg commit";
+
+        auto reply = co_await exchg( port, msg );
+        // XXX: check the retcode
+        std::ignore = reply;
 }
 
 awaitable< nlohmann::json > get_property( port_iface& port, std::string_view prop )

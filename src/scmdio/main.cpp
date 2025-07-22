@@ -3,6 +3,7 @@
 #include "./config_cmds.hpp"
 #include "./field_util.hpp"
 #include "./pid_autotune_cmd.hpp"
+#include "./preset.hpp"
 #include "./serial.hpp"
 
 #include <emlabcpp/algorithm.h>
@@ -82,7 +83,8 @@ void cfg_def( CLI::App& app, io_context& io_ctx )
         field_option( set, ctx->field );
         set->add_option( "value", ctx->value, "Value to set" );
         port_callback( set, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
-                return cfg_set_cmd( p, ctx->field, ctx->value );
+                nlohmann::json j = nlohmann::json::parse( ctx->value );
+                return cfg_set_cmd( p, ctx->field, std::move( j ) );
         } );
 
         auto* commit = cfg->add_subcommand(
@@ -264,6 +266,28 @@ void bflash_def( CLI::App& app, io_context& io_ctx )
         } );
 }
 
+struct preset_ctx
+{
+        std::filesystem::path preset_folder;
+        char_cli              port;
+};
+
+void preset_def( CLI::App& app, io_context& io_ctx )
+{
+        auto ctx = std::make_shared< preset_ctx >();
+
+        auto* preset = app.add_subcommand( "preset", "Manage presets" )
+                           ->fallthrough()
+                           ->require_subcommand( 1 );
+        port_opts( *preset, ctx->port );
+
+        auto* load = preset->add_subcommand( "load", "Load a preset" );
+        load->add_option( "preset", ctx->preset_folder, "Preset name" )->required();
+        port_callback( load, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> awaitable< void > {
+                co_await load_preset_cmd( *p, ctx->preset_folder );
+        } );
+}
+
 }  // namespace servio::scmdio
 
 int main( int argc, char* argv[] )
@@ -279,8 +303,9 @@ int main( int argc, char* argv[] )
         scmdio::cfg_def( app, ctx );
         scmdio::pool_def( app, ctx );
         scmdio::mode_def( app, ctx );
-        scmdio::autotune_def( app, ctx );
+        // scmdio::autotune_def( app, ctx ); XXX: finish
         scmdio::bflash_def( app, ctx );
+        scmdio::preset_def( app, ctx );
 
         app.require_subcommand( 1 );
 

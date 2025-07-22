@@ -11,6 +11,7 @@ namespace em = emlabcpp;
 namespace servio::scmdio
 {
 
+// Stream sends bytes
 struct stream_iface
 {
         virtual awaitable< void > write( std::span< std::byte const > msg ) = 0;
@@ -59,6 +60,7 @@ struct serial_stream : stream_iface
         awaitable< bool > read( std::span< std::byte > buffer ) override;
 };
 
+// Ports write messages
 struct port_iface
 {
         virtual awaitable< void > write_msg( std::span< std::byte const > msg ) = 0;
@@ -88,7 +90,7 @@ struct cobs_port : port_iface
 
 struct char_port : port_iface
 {
-        static constexpr char ch = '\0';
+        static constexpr char ch = '\n';
 
         char_port( io_context& context, std::filesystem::path const& p, uint32_t baudrate )
           : port( context, check_path( p ) )

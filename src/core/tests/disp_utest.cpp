@@ -106,6 +106,8 @@ TEST( core, dispatcher )
         test( "prop velocity", R"(["OK",0.0])"_json );
 
         test( "cfg set model wololo", R"(["OK"])"_json );
+        test( "cfg set current_lim_min -0.4", R"(["OK"])"_json );
+        test( "cfg get current_lim_min", R"(["OK",-0.4])"_json );
 
         // cfg set/get
         for ( auto k : cfg::keys ) {

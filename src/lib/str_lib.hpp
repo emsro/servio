@@ -167,11 +167,8 @@ consteval uint32_t i32_lowest_as_u32()
 }
 }  // namespace bits
 
-constexpr bool dec_to_n( char const*& p, char const* e, int32_t& x ) noexcept
+constexpr bool udec_to_n( char const*& p, char const* e, uint32_t& x ) noexcept
 {
-        int sign;
-        if ( !bits::try_sign( p, e, sign ) )
-                return false;
         if ( p == e || !bits::is_dec( *p ) )
                 return false;
         uint32_t y = 0;
@@ -180,18 +177,10 @@ constexpr bool dec_to_n( char const*& p, char const* e, int32_t& x ) noexcept
                 if ( yy < y )
                         return false;
                 y = yy;
-                if ( sign == 1 && y > std::numeric_limits< int32_t >::max() )
-                        return false;
-                else if ( sign == -1 && y > bits::i32_lowest_as_u32() )
-                        return false;
-                else if ( p != e && bits::is_dec( *p ) )
+                if ( p != e && bits::is_dec( *p ) )
                         continue;
-                else if ( y == bits::i32_lowest_as_u32() && sign == -1 )
-                        x = std::numeric_limits< int32_t >::lowest();
-                else {
-                        x = (int32_t) y;
-                        x *= sign;
-                }
+                else
+                        x = y;
                 return true;
         }
         return false;
@@ -202,13 +191,19 @@ constexpr bool apply_exp( char const*& p, char const* e, float& x ) noexcept
         if ( p == e )
                 return false;
 
-        num y = 0.0F;
-        if ( !dec_to_n( p, e, y ) )
+        uint32_t y = 0;
+        int      sign;
+        if ( !bits::try_sign( p, e, sign ) )
+                return false;
+        if ( !udec_to_n( p, e, y ) )
                 return false;
         if ( y > 38 )
-                x = std::numeric_limits< float >::infinity();
+                if ( sign == 1 )
+                        x = std::numeric_limits< float >::infinity();
+                else
+                        x = 0.0F;
         else
-                x *= bits::exp_pow( y );
+                x *= bits::exp_pow( sign * (int) y );
         return true;
 }
 
@@ -237,7 +232,15 @@ constexpr bool s_to_nr( char const*& p, char const* e, s_to_nr_res& x ) noexcept
         if ( p == e )
                 return false;
 
-        if ( !dec_to_n( p, e, x.n ) )
+        int sign;
+        if ( !bits::try_sign( p, e, sign ) )
+                return false;
+        uint32_t u = 0;
+        if ( !udec_to_n( p, e, u ) )
+                return false;
+        if ( sign == 1 && u > std::numeric_limits< num >::max() )
+                return false;
+        if ( sign == -1 && u > bits::i32_lowest_as_u32() )
                 return false;
 
         if ( *p == '.' ) {
@@ -247,14 +250,19 @@ constexpr bool s_to_nr( char const*& p, char const* e, s_to_nr_res& x ) noexcept
                         exp *= 10.0F;
                         y = ( y * 10 ) + ( *p - '0' );
                 }
-                x.r      = (float) x.n + ( y / exp );
+                x.r      = (float) sign * ( (float) u + ( y / exp ) );
                 x.is_num = false;
                 if ( bits::has_exp_suffix( p, e ) )
                         return apply_exp( ++p, e, x.r );
         } else if ( bits::has_exp_suffix( p, e ) ) {
-                x.r      = (float) x.n;
+                x.r      = (float) sign * (float) u;
                 x.is_num = false;
                 return apply_exp( ++p, e, x.r );
+        } else {
+                if ( u == bits::i32_lowest_as_u32() && sign == -1 )
+                        x.n = std::numeric_limits< num >::lowest();
+                else
+                        x.n = sign * (int32_t) u;
         }
         return true;
 }

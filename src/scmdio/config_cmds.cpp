@@ -68,7 +68,8 @@ awaitable< void > cfg_get_cmd( sptr< port_iface > port, std::string const& name,
                 std::cout << std::format( "{},{}", name, val ) << std::endl;
 }
 
-awaitable< void > cfg_set_cmd( sptr< port_iface > port, std::string const& name, std::string value )
+awaitable< void >
+cfg_set_cmd( sptr< port_iface > port, std::string const& name, nlohmann::json value )
 {
         co_await set_config_field( *port, name, value );
 }

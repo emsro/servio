@@ -17,7 +17,7 @@ awaitable< void > cfg_clear_cmd( sptr< port_iface > port );
 awaitable< void > cfg_get_cmd( sptr< port_iface > port, std::string const& name, bool json );
 
 awaitable< void >
-cfg_set_cmd( sptr< port_iface > port, std::string const& name, std::string value );
+cfg_set_cmd( sptr< port_iface > port, std::string const& name, nlohmann::json value );
 
 awaitable< void > cfg_load_cmd( sptr< port_iface > port, std::filesystem::path const& cfg );
 

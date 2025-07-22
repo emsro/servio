@@ -1,5 +1,7 @@
 #include "./preset.hpp"
 
+#include "./serial.hpp"
+
 #include <spdlog/spdlog.h>
 
 namespace servio::scmdio
@@ -47,11 +49,23 @@ preset_def load_preset( std::filesystem::path const& folder )
             .config   = std::move( raw.config ),
         };
 
-        spdlog::info( "preset: {}", res.name );
-        spdlog::info( "board: {}", res.board );
-        spdlog::info( "preset config: {}", res.config.dump() );
-
         return res;
+}
+
+awaitable< void > load_preset_cmd( port_iface& port, std::filesystem::path const& folder )
+{
+        spdlog::info( "Loading preset from {}", folder.string() );
+
+        preset_def preset = load_preset( folder );
+        spdlog::info( "Preset loaded: {}", preset.name );
+        spdlog::info( "Board: {}", preset.board );
+        spdlog::info( "Platform: {}", preset.platform );
+        for ( auto& [k, v] : preset.config.items() ) {
+                spdlog::info( "Config: {} = {}", k, v.dump() );
+                co_await set_config_field( port, k, v );
+        }
+        spdlog::info( "Comming config" );
+        co_await commit_config( port );
 }
 
 }  // namespace servio::scmdio

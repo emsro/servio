@@ -28,6 +28,8 @@ set_config_field( port_iface& port, std::string_view name, nlohmann::json const&
 
 awaitable< std::map< std::string, nlohmann::json > > get_full_config( port_iface& port );
 
+awaitable< void > commit_config( port_iface& port );
+
 awaitable< nlohmann::json > get_property( port_iface& port, std::string_view prop );
 
 awaitable< void >

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "port.hpp"
+
 #include <fstream>
 #include <nlohmann/json.hpp>
 
@@ -23,5 +25,7 @@ struct preset_def
 };
 
 preset_def load_preset( std::filesystem::path const& folder );
+
+awaitable< void > load_preset_cmd( port_iface& port, std::filesystem::path const& folder );
 
 }  // namespace servio::scmdio

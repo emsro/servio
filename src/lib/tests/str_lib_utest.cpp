@@ -65,6 +65,13 @@ void check(
 
 TEST( lib, numreal )
 {
+        std::string_view s = "2.2250738585072014e-308";
+        char const*      p = s.data();
+        char const*      e = s.data() + s.size();
+
+        s_to_nr_res nrs;
+        s_to_nr( p, e, nrs );
+
         TEST_INPT( "-1", -1 );
         TEST_INPT( ".", invalid );
         TEST_INPT( ".EEE", invalid );
@@ -95,6 +102,7 @@ TEST( lib, numreal )
         TEST_INPT( "", invalid );
         TEST_INPT( "-0", 0 );
         TEST_INPT( "-0.0", -0.0F );
+        TEST_INPT( "-0.4", -0.4F );
         TEST_INPT( "0.0000001", 0.0000001F );
         TEST_INPT( "-0.0000001", -0.0000001F );
         TEST_INPT( "1e-7", 1e-7F );
@@ -142,7 +150,7 @@ TEST( lib, numreal )
             "-1.7976931348623157e+308",
             -std::numeric_limits< double >::infinity() );  // Out of 32-bit float range
         TEST_INPT( "2.2250738585072014e-308", 0.0F );      // Out of 32-bit float range
-        TEST_INPT( "-2.2250738585072014e-308", -0.0F );    // Out of 32-bit float rang
+        TEST_INPT( "-2.2250738585072014e-308", -0.0F );    // Out of 32-bit float range
 }
 
 }  // namespace servio::str_lib

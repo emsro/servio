@@ -35,15 +35,15 @@
         {
             "name": "mode",
             "type": "group",
-            "desc": "Set mode of servomotor",
+            "desc": "Set mode of the servomotor",
             "cmds": [
                 {
                     "name": "disengaged",
-                    "desc": "Set servomotor to disengaged mode, no power applied"
+                    "desc": "Set the servomotor to disengaged mode, no power applied"
                 },
                 {
                     "name": "power",
-                    "desc": "Regulate power applied to the servomotor",
+                    "desc": "Regulate the power applied to the servomotor. Sign of value controls direction of the movement. 1.0 is full power, 0.0 is no power, -1.0 is full reverse power.",
                     "type": "arg",
                     "args": [
                         {
@@ -51,13 +51,13 @@
                             "type": "float",
                             "default": 0,
                             "unit": "",
-                            "desc": "Power between -1. and 1."
+                            "desc": "Power between -1.0 and 1.0"
                         }
                     ]
                 },
                 {
                     "name": "current",
-                    "desc": "Regulate current applied to the servomotor",
+                    "desc": "Regulate the current applied to the servomotor. Sign of value controls direction of the movement. Value is clamped based on current limits configuration.",
                     "type": "arg",
                     "args": [
                         {
@@ -71,7 +71,7 @@
                 },
                 {
                     "name": "velocity",
-                    "desc": "Regulate velocity applied to the servomotor",
+                    "desc": "Regulate the velocity applied to the servomotor. Value is clamped based on velocity limits configuration.",
                     "type": "arg",
                     "args": [
                         {
@@ -85,7 +85,7 @@
                 },
                 {
                     "name": "position",
-                    "desc": "Regulate position applied to the servomotor",
+                    "desc": "Regulate the position applied to the servomotor. The position will be clamped to fit within the current position limits. The way it is mapped depends on configuration of position_low_angle and position_high_angle.",
                     "type": "arg",
                     "args": [
                         {
@@ -102,7 +102,7 @@
         {
             "name": "prop",
             "type": "arg",
-            "desc": "Get properties of servomotor",
+            "desc": "Get properties of the servomotor",
             "args": [
                 {
                     "name": "name",
@@ -114,7 +114,7 @@
         {
             "name": "cfg",
             "type": "group",
-            "desc": "Configuration commands for the servomotor",
+            "desc": "Configuration commands for the servomotor. See configuration documentation to get list of existing fields.",
             "cmds": [
                 {
                     "name": "set",
@@ -172,7 +172,7 @@
                 },
                 {
                     "name": "commit",
-                    "desc": "Commit the current configuration changes into memory"
+                    "desc": "Commit the current configuration changes to memory"
                 },
                 {
                     "name": "clear",
