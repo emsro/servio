@@ -113,6 +113,16 @@ constexpr void u_to_s( char*& p, char* e, std::unsigned_integral auto x ) noexce
                 std::swap( *q, *pp );
 }
 
+constexpr void i_to_s( char*& p, char* e, std::signed_integral auto x ) noexcept
+{
+        if ( x < 0 ) {
+                if ( p != e )
+                        *p++ = '-';
+                u_to_s( p, e, (uint32_t) -x );
+        } else
+                u_to_s( p, e, (uint32_t) x );
+}
+
 constexpr void f_to_s( char*& p, char* e, float x ) noexcept
 {
         bits::adder add{ p, e };

@@ -1,0 +1,68 @@
+{
+    "fields": [
+        {
+            "id": 1,
+            "name": "loop_p",
+            "type": "float",
+            "default": "1.0F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 2,
+            "name": "loop_i",
+            "type": "float",
+            "default": "0.0001F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 3,
+            "name": "loop_d",
+            "type": "float",
+            "default": "0.0F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 4,
+            "name": "curr_lim_min",
+            "type": "float",
+            "default": "-2.0F",
+            "unit": "",
+            "desc": "Soft limit for lowest current"
+        },
+        {
+            "id": 5,
+            "name": "curr_lim_max",
+            "type": "float",
+            "default": "2.0F",
+            "unit": "",
+            "desc": "Soft limit for highest current"
+        },
+        {
+            "id": 6,
+            "name": "pos_lim_min",
+            "type": "float",
+            "default": "-2.0F",
+            "unit": "",
+            "desc": "Soft limit for lowest position"
+        },
+        {
+            "id": 7,
+            "name": "pos_lim_max",
+            "type": "float",
+            "default": "2.0F",
+            "unit": "",
+            "desc": "Soft limit for highest position"
+        },
+        {
+            "id": 8,
+            "name": "pos_to_curr_lim_scale",
+            "type": "float",
+            "default": "0.1F",
+            "unit": "",
+            "desc": "Scale factor for position to current limit conversion"
+        }
+    ]
+}

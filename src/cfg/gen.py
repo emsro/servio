@@ -2,6 +2,7 @@
 
 import json
 import os
+import argparse
 from typing import Dict, List, Any, TextIO, Callable
 
 def regenerate_file(filename: str, fields: List[Dict[str, Any]],
@@ -40,14 +41,6 @@ def generate_ids(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
         fd.write(f"{field['id']}, ")
     fd.write("};\n")
 
-def generate_str_to_key(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
-    fd.write("constexpr std::optional<key> str_to_key(std::string_view str) {\n")
-    for field in fields:
-        fd.write(f"""    if (str == "{field['name']}")
-        return key::{field['name']};
-""")
-    fd.write("    return {};\n}\n")
-
 def generate_to_str(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
     fd.write("constexpr std::string_view to_str(key k) {\n")
     for field in fields:
@@ -82,6 +75,7 @@ def generate_key_trait(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
 
 def generate_map(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
     fd.write("struct map {\n")
+    fd.write("    using key_type = key;\n")
 
     for field in fields:
         if field['desc'] != "":
@@ -116,6 +110,13 @@ constexpr vari::vptr<value_type {const_modifier}> ref_by_id(uint32_t id) {const_
 """)
         fd.write("    return {};\n}\n")
 
+    fd.write("static constexpr std::optional<key> str_to_key(std::string_view str) {\n")
+    for field in fields:
+        fd.write(f"""    if (str == "{field['name']}")
+        return key::{field['name']};
+""")
+    fd.write("    return {};\n}\n")
+
     fd.write("};\n")
 
 def generate_cfg_doc(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
@@ -141,7 +142,6 @@ def generate_cfg_doc(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
 def generate_cfg(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
     generate_key(fd, fields)
     generate_key_values(fd, fields)
-    generate_str_to_key(fd, fields)
     generate_to_str(fd, fields)
     generate_key_to_id(fd, fields)
     generate_id_to_key(fd, fields)
@@ -150,19 +150,25 @@ def generate_cfg(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
     generate_map(fd, fields)
 
 
-def main() -> None:
-    with open('def.json', 'r') as fd:
+def main(definition, output, doc) -> None:
+    with open(definition, 'r') as fd:
         data = json.load(fd)
         if 'fields' not in data:
             print("Error: 'fields' key not found in def.json")
             return
         fields: List[Dict[str, Any]] = data["fields"]
 
-    regenerate_file('def.hpp', fields, generate_cfg)
+    regenerate_file(output, fields, generate_cfg)
 
-    regenerate_file('cfg.md', fields, generate_cfg_doc)
+    regenerate_file(doc, fields, generate_cfg_doc)
 
-    os.system("clang-format -i def.hpp")
+    os.system(f"clang-format -i {output}")
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description="Generate configuration files from JSON definition.")
+    parser.add_argument('--definition', type=str, help='Path to the JSON definition file.')
+    parser.add_argument('--output', type=str, help='Path to the output header file.')
+    parser.add_argument('--doc', type=str, help='Path to the output documentation file.')
+
+    args = parser.parse_args()
+    main(args.definition, args.output, args.doc)

@@ -11,6 +11,9 @@ cmake_policy(SET CMP0077 NEW)
 option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 
+add_library(zll INTERFACE dep/zll/zll.h)
+target_include_directories(zll INTERFACE dep/zll)
+
 add_subdirectory(dep/emlabcpp)
 
 include(cmake/CPM.cmake)
@@ -85,7 +88,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   include(CTest)
   enable_testing()
 
-  servio_add_executable(TARGET servio_utest LIBS emlabcpp gtest_main)
+  servio_add_executable(TARGET servio_utest LIBS emlabcpp gtest_main serviolib)
   add_test(NAME servio_utest COMMAND servio_utest)
 
   add_subdirectory(src/plt/host)

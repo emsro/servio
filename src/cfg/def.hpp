@@ -1,16 +1,10 @@
 #pragma once
 
-#include "../base.hpp"
-
-#include <emlabcpp/experimental/string_buffer.h>
-#include <vari/vref.h>
+#include "./base.hpp"
 
 namespace servio::cfg
 {
 
-namespace em = emlabcpp;
-
-using string_type = em::string_buffer< 32 >;
 enum class encoder_mode : uint8_t
 {
         analog = 1,
@@ -34,11 +28,30 @@ constexpr std::string_view encoder_mode_to_str( encoder_mode em )
         case encoder_mode::quad:
                 return "quad";
         }
-        return {};
+        return "invalid";
 }
 
-using value_type    = vari::typelist< uint32_t, float, bool, encoder_mode, string_type >;
-using value_variant = std::variant< uint32_t, float, bool, encoder_mode, string_type >;
+template <>
+struct cfg_type_trait< encoder_mode >
+{
+        using base_type = string;
+
+        static opt_str_err load( encoder_mode& tg, base_type& inpt )
+        {
+                auto em = str_to_encoder_mode( inpt );
+                if ( !em )
+                        return "unknown encoder mode"_err;
+                tg = *em;
+                return {};
+        }
+
+        static string store( encoder_mode const& val )
+        {
+                return encoder_mode_to_str( val );
+        }
+};
+
+using value_type = vari::typelist< uint32_t, float, bool, encoder_mode, string >;
 
 // GEN BEGIN HERE
 enum class key : uint32_t
@@ -116,81 +129,6 @@ constexpr std::array< key, 35 > keys = {
     key::moving_detection_step,
     key::quad_encoder_range,
 };
-
-constexpr std::optional< key > str_to_key( std::string_view str )
-{
-        if ( str == "model" )
-                return key::model;
-        if ( str == "id" )
-                return key::id;
-        if ( str == "group_id" )
-                return key::group_id;
-        if ( str == "encoder_mode" )
-                return key::encoder_mode;
-        if ( str == "position_low_angle" )
-                return key::position_low_angle;
-        if ( str == "position_high_angle" )
-                return key::position_high_angle;
-        if ( str == "current_conv_scale" )
-                return key::current_conv_scale;
-        if ( str == "current_conv_offset" )
-                return key::current_conv_offset;
-        if ( str == "temp_conv_scale" )
-                return key::temp_conv_scale;
-        if ( str == "temp_conv_offset" )
-                return key::temp_conv_offset;
-        if ( str == "voltage_conv_scale" )
-                return key::voltage_conv_scale;
-        if ( str == "invert_hbridge" )
-                return key::invert_hbridge;
-        if ( str == "current_loop_p" )
-                return key::current_loop_p;
-        if ( str == "current_loop_i" )
-                return key::current_loop_i;
-        if ( str == "current_loop_d" )
-                return key::current_loop_d;
-        if ( str == "current_lim_min" )
-                return key::current_lim_min;
-        if ( str == "current_lim_max" )
-                return key::current_lim_max;
-        if ( str == "velocity_loop_p" )
-                return key::velocity_loop_p;
-        if ( str == "velocity_loop_i" )
-                return key::velocity_loop_i;
-        if ( str == "velocity_loop_d" )
-                return key::velocity_loop_d;
-        if ( str == "velocity_lim_min" )
-                return key::velocity_lim_min;
-        if ( str == "velocity_lim_max" )
-                return key::velocity_lim_max;
-        if ( str == "velocity_to_current_lim_scale" )
-                return key::velocity_to_current_lim_scale;
-        if ( str == "position_loop_p" )
-                return key::position_loop_p;
-        if ( str == "position_loop_i" )
-                return key::position_loop_i;
-        if ( str == "position_loop_d" )
-                return key::position_loop_d;
-        if ( str == "position_lim_min" )
-                return key::position_lim_min;
-        if ( str == "position_lim_max" )
-                return key::position_lim_max;
-        if ( str == "position_to_velocity_lim_scale" )
-                return key::position_to_velocity_lim_scale;
-        if ( str == "static_friction_scale" )
-                return key::static_friction_scale;
-        if ( str == "static_friction_decay" )
-                return key::static_friction_decay;
-        if ( str == "minimum_voltage" )
-                return key::minimum_voltage;
-        if ( str == "maximum_temperature" )
-                return key::maximum_temperature;
-        if ( str == "moving_detection_step" )
-                return key::moving_detection_step;
-        if ( str == "quad_encoder_range" )
-                return key::quad_encoder_range;
-        return {};
-}
 
 constexpr std::string_view to_str( key k )
 {
@@ -427,7 +365,7 @@ struct key_trait;
 template <>
 struct key_trait< key::model >
 {
-        using type = string_type;
+        using type = string;
 };
 
 template <>
@@ -636,8 +574,9 @@ struct key_trait< key::quad_encoder_range >
 
 struct map
 {
+        using key_type = key;
         // Model of the servomotor, used for debugging purposes
-        string_type model = "no model";
+        string model = "no model";
         // ID of the servomotor
         uint32_t id = 0;
         // Group ID of the servomotor
@@ -1072,6 +1011,81 @@ struct map
                         return &moving_detection_step;
                 if ( id == 80 )
                         return &quad_encoder_range;
+                return {};
+        }
+
+        static constexpr std::optional< key > str_to_key( std::string_view str )
+        {
+                if ( str == "model" )
+                        return key::model;
+                if ( str == "id" )
+                        return key::id;
+                if ( str == "group_id" )
+                        return key::group_id;
+                if ( str == "encoder_mode" )
+                        return key::encoder_mode;
+                if ( str == "position_low_angle" )
+                        return key::position_low_angle;
+                if ( str == "position_high_angle" )
+                        return key::position_high_angle;
+                if ( str == "current_conv_scale" )
+                        return key::current_conv_scale;
+                if ( str == "current_conv_offset" )
+                        return key::current_conv_offset;
+                if ( str == "temp_conv_scale" )
+                        return key::temp_conv_scale;
+                if ( str == "temp_conv_offset" )
+                        return key::temp_conv_offset;
+                if ( str == "voltage_conv_scale" )
+                        return key::voltage_conv_scale;
+                if ( str == "invert_hbridge" )
+                        return key::invert_hbridge;
+                if ( str == "current_loop_p" )
+                        return key::current_loop_p;
+                if ( str == "current_loop_i" )
+                        return key::current_loop_i;
+                if ( str == "current_loop_d" )
+                        return key::current_loop_d;
+                if ( str == "current_lim_min" )
+                        return key::current_lim_min;
+                if ( str == "current_lim_max" )
+                        return key::current_lim_max;
+                if ( str == "velocity_loop_p" )
+                        return key::velocity_loop_p;
+                if ( str == "velocity_loop_i" )
+                        return key::velocity_loop_i;
+                if ( str == "velocity_loop_d" )
+                        return key::velocity_loop_d;
+                if ( str == "velocity_lim_min" )
+                        return key::velocity_lim_min;
+                if ( str == "velocity_lim_max" )
+                        return key::velocity_lim_max;
+                if ( str == "velocity_to_current_lim_scale" )
+                        return key::velocity_to_current_lim_scale;
+                if ( str == "position_loop_p" )
+                        return key::position_loop_p;
+                if ( str == "position_loop_i" )
+                        return key::position_loop_i;
+                if ( str == "position_loop_d" )
+                        return key::position_loop_d;
+                if ( str == "position_lim_min" )
+                        return key::position_lim_min;
+                if ( str == "position_lim_max" )
+                        return key::position_lim_max;
+                if ( str == "position_to_velocity_lim_scale" )
+                        return key::position_to_velocity_lim_scale;
+                if ( str == "static_friction_scale" )
+                        return key::static_friction_scale;
+                if ( str == "static_friction_decay" )
+                        return key::static_friction_decay;
+                if ( str == "minimum_voltage" )
+                        return key::minimum_voltage;
+                if ( str == "maximum_temperature" )
+                        return key::maximum_temperature;
+                if ( str == "moving_detection_step" )
+                        return key::moving_detection_step;
+                if ( str == "quad_encoder_range" )
+                        return key::quad_encoder_range;
                 return {};
         }
 };

@@ -4,7 +4,6 @@
 //
 #include "../lib/parser.hpp"
 
-#include <avakar/atom.h>
 #include <vari/bits/typelist.h>
 
 namespace servio::iface
@@ -13,86 +12,105 @@ namespace servio::iface
 template < typename T >
 using opt = std::optional< T >;
 
-using avakar::atom;
-using namespace avakar::literals;
+using parser::expr_tok;
+using parser::string;
 
-template < auto Key, typename T >
-struct kval
+using value_type = vari::typelist< string, float, int32_t >;
+
+enum class parse_status : uint8_t
 {
-        static_assert( std::three_way_comparable< T > );
-        static constexpr auto key = Key;
-        using value_type          = T;
-
-        T value;
-
-        constexpr auto operator<=>( kval const& ) const noexcept = default;
+        SUCCESS,
+        SYNTAX_ERROR,       // syntax error in the input
+        ARG_TYPE_MISMATCH,  // type mismatch between argument and value
+        ARG_DUPLICATE,      // duplicate argument
+        ARG_AFTER_KVAL,     // argument appears after key-value pair
+        ARG_MISSING,        // required argument is missing
+        CMD_MISSING,        // command is missing
+        UNKNOWN_ARG_KEY,    // unknown key argument
+        UNKNOWN_CMD,        // unknown command
+        UNKNOWN_VALUE,      // unknown value for an argument
+        UNEXPECTED_ARG,     // unexpected argument in the input
 };
 
-template < uint32_t IDX, auto Key, typename T >
-struct field
+enum class arg_status : uint8_t
 {
-        static_assert( std::three_way_comparable< T > );
-
-        static constexpr auto id  = IDX;
-        static constexpr auto key = Key;
-        using value_type          = T;
-
-        using kv_type = kval< Key, value_type >;
-
-        constexpr auto operator<=>( field const& ) const noexcept = default;
+        DEFAULT,
+        MISSING,
+        FOUND
 };
 
-template < typename T >
-struct field_tuple;
-
-template < typename... Ts >
-struct field_tuple< vari::typelist< Ts... > >
+struct arg_def
 {
-        using type = std::tuple< Ts... >;
+        arg_status                         st = arg_status::MISSING;
+        char const*                        kw;
+        vari::vref< value_type, expr_tok > val;
 };
 
-template < typename T >
-using field_tuple_t = typename field_tuple< T >::type;
-
-template < avakar::s Desc, typename... Ts >
-struct group
+struct arg_parser
 {
-        using value_type = vari::typelist< Ts... >;
+        arg_parser( parser::parser& p )
+          : p_( p )
+        {
+        }
+
+        parse_status parse_args( std::span< arg_def > args ) &&;
+
+private:
+        parser::parser& p_;
 };
 
-template < auto K, typename T >
-struct key_filter
+struct cmd_parser
 {
-        static_assert( sizeof( K ) == 0, "Could not match the key" );
+        cmd_parser( parser::parser& p )
+          : p_( p )
+        {
+        }
+
+        cmd_parser( cmd_parser const& )            = delete;
+        cmd_parser& operator=( cmd_parser const& ) = delete;
+        cmd_parser( cmd_parser&& )                 = default;
+
+        opt< std::string_view > next_cmd() const
+        {
+                return p_.id();
+        }
+
+        operator arg_parser() &&
+        {
+                return arg_parser{ p_ };
+        }
+
+private:
+        parser::parser& p_;
 };
 
-template < auto K, typename F, typename... Fs >
-requires( K.to_string() == F::key.to_string() )
-struct key_filter< K, vari::typelist< F, Fs... > >
+inline std::string_view to_str( parse_status st )
 {
-        using type = F;
-};
-
-template < auto K, typename F, typename... Fs >
-requires( K.to_string() != F::key.to_string() )
-struct key_filter< K, vari::typelist< F, Fs... > > : key_filter< K, vari::typelist< Fs... > >
-{
-};
-
-template < typename Cfg >
-struct field_traits;
-
-template < typename... Field >
-struct field_traits< vari::typelist< Field... > >
-{
-
-        template < auto K >
-        using ktof = typename key_filter< K, vari::typelist< Field... > >::type;
-
-        using keys  = atom< Field::key... >;
-        using types = vari::unique_typelist_t< vari::typelist< typename Field::value_type... > >;
-        using vals  = vari::typelist< kval< Field::key, typename Field::value_type >... >;
-        static constexpr uint32_t ids[] = { Field::id... };
-};
+        switch ( st ) {
+        case parse_status::SUCCESS:
+                return "success";
+        case parse_status::SYNTAX_ERROR:
+                return "syntax error";
+        case parse_status::ARG_TYPE_MISMATCH:
+                return "argument type mismatch";
+        case parse_status::ARG_DUPLICATE:
+                return "duplicate argument";
+        case parse_status::ARG_AFTER_KVAL:
+                return "argument after key-value pair";
+        case parse_status::ARG_MISSING:
+                return "argument missing";
+        case parse_status::CMD_MISSING:
+                return "command missing";
+        case parse_status::UNKNOWN_ARG_KEY:
+                return "unknown argument key";
+        case parse_status::UNKNOWN_CMD:
+                return "unknown command";
+        case parse_status::UNKNOWN_VALUE:
+                return "unknown value for an argument";
+        case parse_status::UNEXPECTED_ARG:
+                return "unexpected argument";
+        }
+        return "unknown status";
+}
 
 }  // namespace servio::iface

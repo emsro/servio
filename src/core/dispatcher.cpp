@@ -1,5 +1,6 @@
 #include "./dispatcher.hpp"
 
+#include "../cfg/handler.hpp"
 #include "../cnv/utils.hpp"
 #include "../lib/atom_visit.hpp"
 #include "../lib/json_ser.hpp"
@@ -106,97 +107,6 @@ void handle_get_property(
         }
 }
 
-void handle_set_config(
-    cfg::dispatcher&        cfg_disp,
-    std::string_view        field,
-    parser::expr_tok const& value,
-    json::jval_ser&         out )
-{
-        json::array_ser as{ out };
-
-        auto k_opt = cfg::str_to_key( field );
-        if ( !k_opt ) {
-                as( "NOK" );
-                as( "unknown field" );
-                return;
-        }
-        auto k   = *k_opt;
-        using R  = opt< std::string_view >;
-        auto err = cfg_disp.m.ref_by_key( *k_opt ).visit(
-            [&]( vari::empty_t ) -> R {
-                    return "internal key error"sv;
-            },
-            [&]( uint32_t& x ) -> R {
-                    int32_t y = 0;
-                    if ( !parser::load_value( y, value.data ) )
-                            return "type mismatch"sv;
-                    if ( y < 0 )
-                            return "value must be non-negative"sv;
-                    x = static_cast< uint32_t >( y );
-                    return {};
-            },
-            [&]( vari::vref< float, bool, em::string_buffer< 32 > > x ) -> R {
-                    if ( !parser::load_value( x, value.data ) )
-                            return "type mismatch"sv;
-                    return {};
-            },
-            [&]( cfg::encoder_mode& x ) -> R {
-                    em::string_buffer< 32 > str;
-                    if ( !parser::load_value( str, value.data ) )
-                            return "type mismatch"sv;
-                    auto em = cfg::str_to_encoder_mode( str );
-                    if ( !em )
-                            return "unknown encoder mode"sv;
-                    x = *em;
-                    return {};
-            } );
-        if ( err ) {
-                as( "NOK" );
-                as( err.value() );
-                return;
-        }
-        as( "OK" );
-        cfg_disp.apply( k );
-}
-
-void handle_get_config(
-    cfg::dispatcher const& cfg_disp,
-    std::string_view       field,
-    json::jval_ser&        out )
-{
-
-        json::array_ser as{ out };
-        auto            k_opt = cfg::str_to_key( field );
-        if ( !k_opt ) {
-                as( "NOK" );
-                as( "unknown field" );
-                return;
-        }
-        cfg_disp.m.ref_by_key( *k_opt ).visit(
-            [&]( vari::empty_t ) {
-                    as( "NOK" );
-                    as( "internal key error" );
-            },
-            [&]( vari::vref< float, bool, em::string_buffer< 32 >, uint32_t > x ) {
-                    as( "OK" );
-                    x.visit( as );
-            },
-            [&]( cfg::encoder_mode& x ) {
-                    as( "OK" );
-                    switch ( x ) {
-                    case cfg::encoder_mode::analog:
-                            as( "analog" );
-                            break;
-                    case cfg::encoder_mode::quad:
-                            as( "quad" );
-                            break;
-                    default:
-                            as( "unknown" );
-                            break;
-                    }
-            } );
-}
-
 void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, json::jval_ser& out )
 {
         inpt.visit(
@@ -226,25 +136,42 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, jso
                         .motor = dis.motor,
                         .pos   = dis.pos_drv,
                     };
+                    json::array_ser as{ out };
                     cfg.sub.visit(
                         [&]( iface::cfg_set_stmt const& st ) {
-                                handle_set_config( cfg_disp, st.field, st.value, out );
+                                cfg::on_cmd_set( cfg_disp.m, st.field, st.value.data )
+                                    .visit(
+                                        [&]( cfg::key k ) {
+                                                cfg_disp.apply( k );
+                                                as( "OK" );
+                                        },
+                                        [&]( str_err const& e ) {
+                                                as( "NOK" );
+                                                as( e.error );
+                                        } );
                         },
                         [&]( iface::cfg_get_stmt const& s ) {
-                                handle_get_config( cfg_disp, s.field, out );
+                                auto res = cfg::on_cmd_get( cfg_disp.m, s.field );
+                                res.visit(
+                                    [&]( vari::vref< cfg::base_t > x ) {
+                                            as( "OK" );
+                                            x.visit( as );
+                                    },
+                                    [&]( str_err const& e ) {
+                                            as( "NOK" );
+                                            as( e.error );
+                                    } );
                         },
                         [&]( iface::cfg_list5_stmt const& ) {
                                 // XXX
                         },
                         [&]( iface::cfg_commit_stmt const& ) {
-                                json::array_ser as{ out };
                                 if ( dis.stor_drv.store_cfg( dis.cfg_map ) == status::SUCCESS )
                                         as( "OK" );
                                 else
                                         as( "NOK" );
                         },
                         [&]( iface::cfg_clear_stmt const& ) {
-                                json::array_ser as{ out };
                                 if ( dis.stor_drv.clear_cfg() == status::SUCCESS )
                                         as( "OK" );
                                 else

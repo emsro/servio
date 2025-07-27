@@ -1,7 +1,7 @@
 servio_add_library(
   TARGET ctllib
   SOURCES control.cpp
-  LIBS emlabcpp platform
+  LIBS emlabcpp platform zll
   OPTS -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

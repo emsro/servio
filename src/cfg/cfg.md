@@ -6,7 +6,7 @@
 
 ## 1 model
 Model of the servomotor, used for debugging purposes
- - _type_: `string_type`
+ - _type_: `string`
  - _default_: `"no model"`
 
 ## 2 id

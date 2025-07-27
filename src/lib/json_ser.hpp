@@ -38,6 +38,18 @@ struct jval_ser
                 return *this;
         }
 
+        jval_ser& operator()( long int x ) & noexcept
+        {
+                str_lib::i_to_s( p, e, x );
+                return *this;
+        }
+
+        jval_ser& operator()( int x ) & noexcept
+        {
+                str_lib::i_to_s( p, e, x );
+                return *this;
+        }
+
         jval_ser& operator()( unsigned int x ) & noexcept
         {
                 str_lib::u_to_s( p, e, x );

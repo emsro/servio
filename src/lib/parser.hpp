@@ -2,15 +2,12 @@
 
 #include "./str_lib.hpp"
 
-#include <avakar/atom.h>
 #include <emlabcpp/experimental/string_buffer.h>
 #include <string_view>
 #include <vari/vopt.h>
 
 namespace servio::parser
 {
-using avakar::atom;
-using namespace avakar::literals;
 namespace em = emlabcpp;
 
 template < typename T >

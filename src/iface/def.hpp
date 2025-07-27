@@ -13,9 +13,6 @@ namespace em = emlabcpp;
 namespace servio::iface
 {
 
-using parser::expr_tok;
-using parser::string;
-
 // GEN BEGIN HERE
 enum class property
 {
@@ -168,51 +165,8 @@ struct stmt
 
         friend constexpr auto operator<=>( stmt const&, stmt const& ) noexcept = default;
 };
+
 // GEN END HERE
-
-enum class parse_status : uint8_t
-{
-        SUCCESS,
-        SYNTAX_ERROR,       // syntax error in the input
-        ARG_TYPE_MISMATCH,  // type mismatch between argument and value
-        ARG_DUPLICATE,      // duplicate argument
-        ARG_AFTER_KVAL,     // argument appears after key-value pair
-        ARG_MISSING,        // required argument is missing
-        CMD_MISSING,        // command is missing
-        UNKNOWN_ARG_KEY,    // unknown key argument
-        UNKNOWN_CMD,        // unknown command
-        UNKNOWN_VALUE,      // unknown value for an argument
-        UNEXPECTED_ARG,     // unexpected argument in the input
-};
-
-inline std::string_view to_str( parse_status st )
-{
-        switch ( st ) {
-        case parse_status::SUCCESS:
-                return "success";
-        case parse_status::SYNTAX_ERROR:
-                return "syntax error";
-        case parse_status::ARG_TYPE_MISMATCH:
-                return "argument type mismatch";
-        case parse_status::ARG_DUPLICATE:
-                return "duplicate argument";
-        case parse_status::ARG_AFTER_KVAL:
-                return "argument after key-value pair";
-        case parse_status::ARG_MISSING:
-                return "argument missing";
-        case parse_status::CMD_MISSING:
-                return "command missing";
-        case parse_status::UNKNOWN_ARG_KEY:
-                return "unknown argument key";
-        case parse_status::UNKNOWN_CMD:
-                return "unknown command";
-        case parse_status::UNKNOWN_VALUE:
-                return "unknown value for an argument";
-        case parse_status::UNEXPECTED_ARG:
-                return "unexpected argument";
-        }
-        return "unknown status";
-}
 
 struct invalid_stmt
 {

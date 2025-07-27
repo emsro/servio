@@ -97,6 +97,41 @@ constexpr pwr operator""_pwr( long double x )
 }
 }  // namespace literals
 
+struct str_err
+{
+        std::string_view error;
+};
+
+struct opt_str_err
+{
+        std::string_view error;
+
+        opt_str_err() = default;
+
+        opt_str_err( str_err e )
+          : error( e.error )
+        {
+        }
+
+        operator str_err() const
+        {
+                return str_err{ error };
+        }
+
+        operator bool() const noexcept
+        {
+                return !error.empty();
+        }
+};
+
+namespace literals
+{
+constexpr str_err operator""_err( char const* str, std::size_t )
+{
+        return str_err{ str };
+}
+}  // namespace literals
+
 using namespace literals;
 
 }  // namespace servio

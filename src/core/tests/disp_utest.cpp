@@ -13,8 +13,6 @@
 namespace servio::core::tests
 {
 
-using namespace avakar::literals;
-
 TEST( core, dispatcher )
 {
         drv::mock::pwm_mot mot;
@@ -156,7 +154,7 @@ TEST( core, dispatcher )
                                 return em == cfg::encoder_mode::quad ? "analog" : "quad";
                         }
 
-                        std::string_view operator()( cfg::string_type )
+                        std::string_view operator()( cfg::string )
                         {
                                 return "wololo";
                         }

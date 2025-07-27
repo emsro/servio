@@ -32,7 +32,7 @@ def gen_arg_cmd(fd: TextIO, cmd: Dict[str, Any], args: List[Dict[str, Any]], pre
     n = len(args)
 
     fd.write(f"""
-    static std::tuple<{name}_stmt, parse_status> _{name}(parser::parser& p) {{
+    static std::tuple<{name}_stmt, parse_status> _{name}(arg_parser ap) {{
     """)
 
     basic_types = ['string', 'int32_t', 'float', 'bool', 'expr_tok']
@@ -51,7 +51,7 @@ def gen_arg_cmd(fd: TextIO, cmd: Dict[str, Any], args: List[Dict[str, Any]], pre
     fd.write(f"""
         {name}_stmt res;
         std::array<arg_def, {n}> arg_defs = {{{",".join(arg_def)}}};
-        parse_status st = _arg_parse(p, arg_defs);
+        parse_status st = std::move(ap).parse_args(arg_defs);
     """)
 
     for arg in args:
@@ -109,23 +109,21 @@ def gen_group_cmd(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
         res_name = "stmt"
         sub_name = ""
     fd.write(f"""
-    static std::tuple<{res_name}, parse_status> {fun_name}(parser::parser& p) {{
+    static std::tuple<{res_name}, parse_status> {fun_name}(cmd_parser p) {{
         {res_name} res;
-        auto id = p.id();
+        auto id = p.next_cmd();
+        parse_status st = parse_status::UNKNOWN_CMD;
         if (!id) {{
             return {{res, parse_status::CMD_MISSING}};
         }}""")
     for subcmd in cmd['cmds']:
         fd.write(f"""
         else if(*id == "{subcmd['name']}"){{
-            auto [substmt, st] = {sub_name}_{subcmd['name']}(p);
-            if (st != parse_status::SUCCESS)
-                return {{ res, st }};
-            res.sub = std::move(substmt);
+            std::tie(res.sub, st) = {sub_name}_{subcmd['name']}(std::move(p));
         }}""")
     fd.write(f"""
         else {{return {{res, parse_status::UNKNOWN_CMD}};}}
-        return {{ res, parse_status::SUCCESS }};
+        return {{ res, st }};
     }}
     """)
 

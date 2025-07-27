@@ -12,7 +12,6 @@ namespace servio::ctl
 
 class control
 {
-
 public:
         control( microseconds, ctl::config const& cfg = {} );
 
@@ -30,9 +29,9 @@ public:
         void switch_to_position_control( microseconds now, float position );
 
         void moving_irq( microseconds now, bool is_moving );
-
         void position_irq( microseconds now, float position );
         void velocity_irq( microseconds now, float velocity );
+
         void current_irq( microseconds now, float current );
 
         pwr get_power() const;

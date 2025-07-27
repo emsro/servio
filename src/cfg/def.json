@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "model",
-            "type": "string_type",
+            "type": "string",
             "default": "\"no model\"",
             "unit": "",
             "desc": "Model of the servomotor, used for debugging purposes"
