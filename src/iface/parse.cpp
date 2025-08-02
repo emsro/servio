@@ -252,10 +252,8 @@ static std::tuple< cfg_list5_stmt, parse_status > _cfg_list5( arg_parser ap )
 {
 
         cfg_list5_stmt           res;
-        std::array< arg_def, 3 > arg_defs = {
-            arg_def{ .st = arg_status::DEFAULT, .kw = "level", .val = res.level },
-            arg_def{ .st = arg_status::DEFAULT, .kw = "offset", .val = res.offset },
-            arg_def{ .st = arg_status::DEFAULT, .kw = "n", .val = res.n } };
+        std::array< arg_def, 1 > arg_defs = {
+            arg_def{ .st = arg_status::DEFAULT, .kw = "offset", .val = res.offset } };
         parse_status st = std::move( ap ).parse_args( arg_defs );
 
         return { res, st };
@@ -339,8 +337,7 @@ static std::tuple< stmt, parse_status > _root( cmd_parser p )
 
 vari::vval< stmt, invalid_stmt > parse( std::string_view inpt )
 {
-        parser::lexer  l{ inpt };
-        parser::parser p{ std::move( l ) };
+        parser::parser p{ parser::lexer{ inpt } };
 
         auto [res, st] = _root( p );
         if ( st != parse_status::SUCCESS )

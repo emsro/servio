@@ -4,7 +4,7 @@
 
 #pragma once
 
-namespace servio::ctl
+namespace servio
 {
 
 struct linear_transition_regulator
@@ -34,4 +34,4 @@ struct linear_transition_regulator
         }
 };
 
-}  // namespace servio::ctl
+}  // namespace servio

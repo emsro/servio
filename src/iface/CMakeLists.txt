@@ -1,17 +1,34 @@
-add_custom_command(
-  OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/def.hpp
-  COMMAND python3 ${CMAKE_CURRENT_SOURCE_DIR}/gen.py
-  DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/def.json
-          ${CMAKE_CURRENT_SOURCE_DIR}/gen.py
-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
-add_custom_target(iface_def DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/def.hpp)
+function(servio_gen_iface)
+  cmake_parse_arguments(A "" "TARGET;DEF;HDR;PARSER;DOC" "" ${ARGN})
+  add_custom_command(
+    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/${A_HDR}
+    COMMAND python3 ${CMAKE_CURRENT_FUNCTION_LIST_DIR}/gen.py --definition
+            ${A_DEF} --hdr ${A_HDR} --parser ${A_PARSER} --doc ${A_DOC}
+    COMMENT
+      "Generating interface header, parser, and documentation from: def.json"
+    VERBATIM
+    DEPENDS ${A_DEF} ${CMAKE_CURRENT_FUNCTION_LIST_DIR}/gen.py
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+  add_custom_target(${A_TARGET} DEPENDS ${A_HDR} ${A_DOC})
+endfunction()
 
+servio_gen_iface(
+  TARGET
+  ifacelib_def
+  DEF
+  def.json
+  HDR
+  def.hpp
+  PARSER
+  parse.cpp
+  DOC
+  iface.md)
 servio_add_library(
   TARGET ifacelib
   SOURCES parse.cpp
   LIBS avakar::atom vari emlabcpp platform
   OPTS -Og)
-add_dependencies(ifacelib iface_def)
+add_dependencies(ifacelib ifacelib_def)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 

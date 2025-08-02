@@ -1,0 +1,66 @@
+{
+    "types": [],
+    "cmds": [
+        {
+            "name": "set",
+            "type": "arg",
+            "desc": "Set position of the servomotor",
+            "args": [
+                {
+                    "name": "goal",
+                    "type": "float",
+                    "desc": "Goal position"
+                }
+            ]
+        },
+        {
+            "name": "cfg",
+            "type": "group",
+            "desc": "Configuration commands for the position governor.",
+            "cmds": [
+                {
+                    "name": "set",
+                    "type": "arg",
+                    "desc": "Set a configuration field",
+                    "args": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "desc": "Configuration field to set"
+                        },
+                        {
+                            "name": "value",
+                            "type": "expr_tok",
+                            "desc": "Value to set for the configuration field, type depends on the field"
+                        }
+                    ]
+                },
+                {
+                    "name": "get",
+                    "type": "arg",
+                    "desc": "Get a configuration field",
+                    "args": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "desc": "Configuration field to get"
+                        }
+                    ]
+                },
+                {
+                    "name": "list5",
+                    "type": "arg",
+                    "desc": "List subset of configuration fields",
+                    "args": [
+                        {
+                            "name": "offset",
+                            "type": "int32_t",
+                            "default": 0,
+                            "desc": "Offset for the configuration fields to list"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

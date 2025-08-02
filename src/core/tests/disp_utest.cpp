@@ -108,7 +108,7 @@ TEST( core, dispatcher )
         test( "cfg get current_lim_min", R"(["OK",-0.4])"_json );
 
         // cfg set/get
-        for ( auto k : cfg::keys ) {
+        for ( auto k : cfg::map::keys ) {
 
                 auto res_j = exec( std::format( "cfg get {}", to_str( k ) ) );
 
@@ -190,6 +190,14 @@ TEST( core, dispatcher )
                                         << std::endl;
                     } );
         }
+
+        test(
+            "cfg list5 0",
+            R"(["OK", ["model","id","group_id","encoder_mode","position_low_angle"]])"_json );
+        test(
+            "cfg list5 2",
+            R"(["OK", ["group_id","encoder_mode","position_low_angle","position_high_angle","current_conv_scale"]])"_json );
+        test( "cfg list5 1024", R"(["OK", []])"_json );
 
         EXPECT_EQ( sd.store_cnt, 0 );
         test( "cfg commit", R"(["OK"])"_json );

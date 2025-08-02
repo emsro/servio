@@ -3,25 +3,24 @@
 #include "../base.hpp"
 #include "../cfg/base.hpp"
 #include "../iface/base.hpp"
+#include "../lib/json_ser.hpp"
 #include "../status.hpp"
 
 #include <span>
 #include <string_view>
 #include <zll.h>
 
-namespace servio::gvnr
+namespace servio::gov
 {
 
 struct handle
 {
-        virtual status on_cmd( iface::cmd_parser cmd ) = 0;
+        virtual status on_cmd( iface::cmd_parser cmd, servio::iface::root_ser out ) = 0;
 
-        virtual void current_irq( microseconds now, float current ) = 0;
+        virtual pwr current_irq( microseconds now, float current ) = 0;
 
         virtual void
         metrics_irq( microseconds now, float position, float velocity, bool is_moving ) = 0;
-
-        virtual pwr get_power() const = 0;
 
         virtual ~handle() = default;
 };
@@ -51,4 +50,4 @@ struct governor_autoreg
         }
 };
 
-}  // namespace servio::gvnr
+}  // namespace servio::gov

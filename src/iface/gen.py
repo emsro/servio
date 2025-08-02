@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+import argparse
 import os
 from typing import Dict, List, Any, Callable, TextIO, Optional
 
@@ -260,10 +261,21 @@ def gen_md(fd: TextIO, root: Dict[str, Any]) -> None:
     fd.write("======== \n")
     traverse_doc(fd, root, prefix="")
 
-with open('def.json', "r") as fd:
-    root = json.load(fd)
-    root['name'] = ""
 
-regenerate("parse.cpp", lambda fd: gen_parse(fd, root))
-regenerate("def.hpp", lambda fd: gen_def(fd, root))
-regenerate("iface.md", lambda fd: gen_md(fd, root))
+def main(definition, hdr, parser, doc):
+    with open(definition, "r") as fd:
+        root = json.load(fd)
+        root['name'] = ""
+
+    regenerate(parser, lambda fd: gen_parse(fd, root))
+    regenerate(hdr, lambda fd: gen_def(fd, root))
+    regenerate(doc, lambda fd: gen_md(fd, root))
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Generate interface files from JSON definitions.")
+    parser.add_argument("--definition", type=str, help="Path to the JSON definition file.")
+    parser.add_argument("--hdr", type=str, help="Path to the output markdown file.")
+    parser.add_argument('--parser', type=str, help='Path to the output parser file.')
+    parser.add_argument('--doc', type=str, help='Path to the output documentation file.')
+    args = parser.parse_args()
+    main(args.definition, args.hdr, args.parser, args.doc)

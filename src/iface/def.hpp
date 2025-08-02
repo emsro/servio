@@ -123,9 +123,7 @@ struct cfg_get_stmt
 
 struct cfg_list5_stmt
 {
-        string  level  = "";
         int32_t offset = 0;
-        int32_t n      = 5;
         friend constexpr auto
         operator<=>( cfg_list5_stmt const&, cfg_list5_stmt const& ) noexcept = default;
 };
@@ -167,11 +165,6 @@ struct stmt
 };
 
 // GEN END HERE
-
-struct invalid_stmt
-{
-        parse_status st;
-};
 
 vari::vval< stmt, invalid_stmt > parse( std::string_view inpt );
 

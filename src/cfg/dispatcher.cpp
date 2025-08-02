@@ -54,7 +54,7 @@ void dispatcher::apply( key key )
 
 void dispatcher::full_apply()
 {
-        for ( auto key : keys )
+        for ( auto key : map::keys )
                 dispatcher::apply( key );
 }
 

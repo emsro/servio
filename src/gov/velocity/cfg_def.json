@@ -1,0 +1,44 @@
+{
+    "fields": [
+        {
+            "id": 1,
+            "name": "loop_p",
+            "type": "float",
+            "default": "1.0F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 2,
+            "name": "loop_i",
+            "type": "float",
+            "default": "0.0001F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 3,
+            "name": "loop_d",
+            "type": "float",
+            "default": "0.0F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 4,
+            "name": "static_friction_scale",
+            "type": "float",
+            "default": 3.0,
+            "unit": "",
+            "desc": "Scaling of current in case of non-moving servo"
+        },
+        {
+            "id": 5,
+            "name": "static_friction_decay",
+            "type": "float",
+            "default": 1.0,
+            "unit": "s",
+            "desc": "Time required for the static friction compensation to decay to be ineffective"
+        }
+    ]
+}

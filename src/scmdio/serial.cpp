@@ -75,7 +75,7 @@ awaitable< std::map< std::string, nlohmann::json > > get_full_config( port_iface
 {
         std::map< std::string, nlohmann::json > res;
         // XXX: use the list command instead
-        for ( auto k : cfg::keys ) {
+        for ( auto k : cfg::map::keys ) {
                 auto val = co_await get_config_field( port, to_str( k ) );
                 res.emplace( to_str( k ), std::move( val ) );
         }

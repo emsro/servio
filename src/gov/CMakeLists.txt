@@ -5,6 +5,8 @@ servio_add_library(
   OPTS -Os)
 
 add_subdirectory(current)
+add_subdirectory(position)
+add_subdirectory(velocity)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 

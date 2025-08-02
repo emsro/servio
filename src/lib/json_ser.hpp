@@ -102,38 +102,51 @@ struct object_ser;
 struct array_ser
 {
         array_ser( jval_ser& s ) noexcept
-          : ser( s )
+          : ser( &s )
         {
-                ser.add( '[' );
+                ser->add( '[' );
         }
 
         array_ser( array_ser const& ) = delete;
 
+        array_ser( array_ser&& other ) noexcept
+          : d( other.d )
+          , ser( other.ser )
+        {
+                other.ser = nullptr;
+        }
+
         ~array_ser() noexcept
         {
-                ser.add( ']' );
+                if ( ser )
+                        ser->add( ']' );
         }
 
         array_ser& operator()( auto&& v ) noexcept
         {
                 delim();
-                ser( v );
+                ( *ser )( v );
                 return *this;
         }
 
-        operator object_ser() noexcept;
+        array_ser sub() noexcept
+        {
+                delim();
+                return { *ser };
+        }
 
-        jval_ser& ser;
+        operator object_ser() noexcept;
 
 private:
         void delim() noexcept
         {
                 if ( d != '\0' )
-                        ser.add( d );
+                        ser->add( d );
                 d = ',';
         }
 
-        char d = '\0';
+        char      d = '\0';
+        jval_ser* ser;
 };
 
 struct object_ser
@@ -171,7 +184,7 @@ private:
 inline array_ser::operator object_ser() noexcept
 {
         delim();
-        return { ser };
+        return { *ser };
 }
 
 }  // namespace servio::json

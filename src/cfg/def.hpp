@@ -92,43 +92,6 @@ enum class key : uint32_t
         moving_detection_step          = 66,
         quad_encoder_range             = 80,
 };
-constexpr std::array< key, 35 > keys = {
-    key::model,
-    key::id,
-    key::group_id,
-    key::encoder_mode,
-    key::position_low_angle,
-    key::position_high_angle,
-    key::current_conv_scale,
-    key::current_conv_offset,
-    key::temp_conv_scale,
-    key::temp_conv_offset,
-    key::voltage_conv_scale,
-    key::invert_hbridge,
-    key::current_loop_p,
-    key::current_loop_i,
-    key::current_loop_d,
-    key::current_lim_min,
-    key::current_lim_max,
-    key::velocity_loop_p,
-    key::velocity_loop_i,
-    key::velocity_loop_d,
-    key::velocity_lim_min,
-    key::velocity_lim_max,
-    key::velocity_to_current_lim_scale,
-    key::position_loop_p,
-    key::position_loop_i,
-    key::position_loop_d,
-    key::position_lim_min,
-    key::position_lim_max,
-    key::position_to_velocity_lim_scale,
-    key::static_friction_scale,
-    key::static_friction_decay,
-    key::minimum_voltage,
-    key::maximum_temperature,
-    key::moving_detection_step,
-    key::quad_encoder_range,
-};
 
 constexpr std::string_view to_str( key k )
 {
@@ -574,7 +537,44 @@ struct key_trait< key::quad_encoder_range >
 
 struct map
 {
-        using key_type = key;
+        using key_type                              = key;
+        static constexpr std::array< key, 35 > keys = {
+            key::model,
+            key::id,
+            key::group_id,
+            key::encoder_mode,
+            key::position_low_angle,
+            key::position_high_angle,
+            key::current_conv_scale,
+            key::current_conv_offset,
+            key::temp_conv_scale,
+            key::temp_conv_offset,
+            key::voltage_conv_scale,
+            key::invert_hbridge,
+            key::current_loop_p,
+            key::current_loop_i,
+            key::current_loop_d,
+            key::current_lim_min,
+            key::current_lim_max,
+            key::velocity_loop_p,
+            key::velocity_loop_i,
+            key::velocity_loop_d,
+            key::velocity_lim_min,
+            key::velocity_lim_max,
+            key::velocity_to_current_lim_scale,
+            key::position_loop_p,
+            key::position_loop_i,
+            key::position_loop_d,
+            key::position_lim_min,
+            key::position_lim_max,
+            key::position_to_velocity_lim_scale,
+            key::static_friction_scale,
+            key::static_friction_decay,
+            key::minimum_voltage,
+            key::maximum_temperature,
+            key::moving_detection_step,
+            key::quad_encoder_range,
+        };
         // Model of the servomotor, used for debugging purposes
         string model = "no model";
         // ID of the servomotor

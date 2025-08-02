@@ -1,14 +1,14 @@
-function(servio_add_configuration)
+function(servio_gen_configuration)
   cmake_parse_arguments(A "" "TARGET;DEF;OUTPUT;DOC" "" ${ARGN})
   add_custom_command(
-    OUTPUT ${A_OUTPUT}
+    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/${A_OUTPUT}
     COMMAND python3 ${CMAKE_CURRENT_FUNCTION_LIST_DIR}/gen.py --definition
             ${A_DEF} --output ${A_OUTPUT} --doc ${A_DOC}
     COMMENT "Generating configuration header and documentation from: ${A_DEF}"
     VERBATIM
     DEPENDS ${A_DEF} ${CMAKE_CURRENT_FUNCTION_LIST_DIR}/gen.py
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
-  add_custom_target(${A_TARGET} DEPENDS ${A_OUTPUT})
+  add_custom_target(${A_TARGET} DEPENDS ${A_OUTPUT} ${A_DOC})
 endfunction()
 
 servio_add_library(
@@ -16,7 +16,7 @@ servio_add_library(
   SOURCES dispatcher.cpp
   LIBS emlabcpp platform ctllib ifacelib avakar::atom vari
   OPTS -Os)
-servio_add_configuration(
+servio_gen_configuration(
   TARGET
   cfg_def
   DEF

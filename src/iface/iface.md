@@ -129,15 +129,11 @@ Get a configuration field
 
 - _field_: Configuration field to get
   - type: _string_
-### cmd: cfg list5 <level = ""> <offset = 0> <n = 5>
+### cmd: cfg list5 <offset = 0>
 
 List subset of configuration fields
 
-- _level_: Configuration level to list, empty for root level
-  - type: _string_
 - _offset_: Offset for the configuration fields to list
-  - type: _int32_t_
-- _n_: Number of configuration fields to list
   - type: _int32_t_
 ### cmd: cfg commit
 

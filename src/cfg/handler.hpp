@@ -1,9 +1,11 @@
 
 #pragma once
 
+#include "../iface/base.hpp"
 #include "./base.hpp"
 
 #include <emlabcpp/experimental/cfg/handler.h>
+#include <emlabcpp/experimental/function_view.h>
 #include <emlabcpp/static_function.h>
 
 namespace servio::cfg
@@ -63,40 +65,105 @@ struct handler : iface
         }
 };
 
-template < typename T >
-vari::vval< typename T::key_type, str_err >
-on_cmd_set( T& map, std::string_view key, vari::vref< servio::cfg::base_t const > value )
+struct cmd_iface
 {
-        auto k_opt = T::str_to_key( key );
-        if ( !k_opt )
-                return "unknown key"_err;
-        using R = opt_str_err;
-        R tmp   = map.ref_by_key( *k_opt ).visit(
-            [&]( vari::empty_t ) -> R {
-                    return {};
-            },
-            [&]( auto& x ) -> R {
-                    return servio::cfg::load_value( x, value );
-            } );
-        if ( tmp )
-                return (str_err) tmp;
-        return *k_opt;
-}
 
-template < typename T >
-vari::vval< servio::cfg::base_t, str_err > on_cmd_get( T& map, std::string_view key )
-{
-        auto k_opt = T::str_to_key( key );
-        if ( !k_opt )
-                return "unknown key"_err;
-        using R = vari::vval< servio::cfg::base_t, str_err >;
-        return map.ref_by_key( *k_opt ).visit(
-            [&]( vari::empty_t ) -> R {
-                    return "internal error"_err;
-            },
-            [&]( auto& x ) -> R {
-                    return servio::cfg::store_value( x );
-            } );
-}
+        template < typename T >
+        static opt< typename T::key_type > on_cmd_set(
+            T&                                      map,
+            std::string_view                        key,
+            vari::vref< servio::cfg::base_t const > value,
+            servio::iface::root_ser                 out )
+        {
+                auto k_opt = T::str_to_key( key );
+                if ( !k_opt ) {
+                        unknown_key_branch( std::move( out ) );
+                        return {};
+                }
+                map.ref_by_key( *k_opt ).visit(
+                    [&]( vari::empty_t ) {
+                            internal_error_branch( std::move( out ) );
+                    },
+                    [&]( auto& x ) {
+                            cmd_set_load_val( x, value, std::move( out ) );
+                    } );
+                return k_opt;
+        }
+
+        template < typename T >
+        static void on_cmd_list5( int32_t offset, servio::iface::root_ser out )
+        {
+                auto f = []( uint32_t k ) -> std::string_view {
+                        return to_str( T::keys[k] );
+                };
+                return on_cmd_list5( offset, T::keys.size(), f, std::move( out ) );
+        }
+
+        template < typename T >
+        static void on_cmd_get( T& map, std::string_view key, servio::iface::root_ser out )
+        {
+                auto k_opt = T::str_to_key( key );
+                if ( !k_opt )
+                        return unknown_key_branch( std::move( out ) );
+
+                map.ref_by_key( *k_opt ).visit(
+                    [&]( vari::empty_t ) {
+                            return internal_error_branch( std::move( out ) );
+                    },
+                    [&]( auto& x ) {
+                            cmd_get_store_val( x, std::move( out ) );
+                    } );
+        }
+
+private:
+        static void unknown_key_branch( servio::iface::root_ser out )
+        {
+                std::move( out ).nok()( "unknown key" );
+        }
+
+        static void internal_error_branch( servio::iface::root_ser out )
+        {
+                std::move( out ).nok()( "internal error" );
+        }
+
+        static void cmd_set_load_val(
+            auto&                                   x,
+            vari::vref< servio::cfg::base_t const > value,
+            servio::iface::root_ser                 out )
+        {
+                auto opt_e = servio::cfg::load_value( x, value );
+                if ( opt_e )
+                        std::move( out ).nok()( opt_e.error );
+                else
+                        std::move( out ).ok();
+        }
+
+        static void cmd_get_store_val( auto const& x, servio::iface::root_ser out )
+        {
+                auto as = std::move( out ).ok();
+                servio::cfg::store_value( x ).visit( as );
+        }
+
+        static void on_cmd_list5(
+            int32_t                                           offset,
+            std::size_t                                       size,
+            em::function_view< std::string_view( uint32_t ) > key_to_str,
+            servio::iface::root_ser                           out )
+        {
+                if ( offset < 0 ) {
+                        std::move( out ).nok()( "negative offset" );
+                        return;
+                }
+                auto as  = std::move( out ).ok();
+                auto sub = as.sub();
+
+                for ( int32_t i = 0; i < 5; ++i ) {
+                        int32_t j = offset + i;
+                        if ( j >= (int32_t) size )
+                                break;
+                        sub( key_to_str( (uint32_t) j ) );
+                }
+        }
+};
 
 }  // namespace servio::cfg

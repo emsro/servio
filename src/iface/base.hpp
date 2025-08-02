@@ -2,6 +2,7 @@
 
 #include <cstdint>
 //
+#include "../lib/json_ser.hpp"
 #include "../lib/parser.hpp"
 
 #include <vari/bits/typelist.h>
@@ -84,6 +85,11 @@ private:
         parser::parser& p_;
 };
 
+struct invalid_stmt
+{
+        parse_status st;
+};
+
 inline std::string_view to_str( parse_status st )
 {
         switch ( st ) {
@@ -112,5 +118,32 @@ inline std::string_view to_str( parse_status st )
         }
         return "unknown status";
 }
+
+struct root_ser
+{
+        root_ser( json::jval_ser& as ) noexcept
+          : as( as )
+        {
+        }
+
+        root_ser( root_ser const& )            = delete;
+        root_ser& operator=( root_ser const& ) = delete;
+        root_ser( root_ser&& ) noexcept        = default;
+
+        json::array_ser ok() && noexcept
+        {
+                as( "OK" );
+                return std::move( as );
+        }
+
+        json::array_ser nok() && noexcept
+        {
+                as( "OK" );
+                return std::move( as );
+        }
+
+private:
+        json::array_ser as;
+};
 
 }  // namespace servio::iface

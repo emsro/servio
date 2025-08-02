@@ -35,10 +35,10 @@ TEST( iface, base )
 
         bool finished = false;
         auto run_f    = [&]() -> boost::asio::awaitable< void > {
-                for ( auto k : cfg::keys )
+                for ( auto k : cfg::map::keys )
                         co_await get_config_field( pm, to_str( k ) );
 
-                for ( auto k : cfg::keys )
+                for ( auto k : cfg::map::keys )
                         if ( k == cfg::key::encoder_mode )
                                 co_await set_config_field( pm, to_str( k ), "quad" );
                         else if ( k == cfg::key::model )
@@ -53,7 +53,7 @@ TEST( iface, base )
                                 co_await set_config_field( pm, to_str( k ), 0.0 );
 
                 auto cfg_vec = co_await get_full_config( pm );
-                EXPECT_EQ( cfg_vec.size(), cfg::keys.size() );
+                EXPECT_EQ( cfg_vec.size(), cfg::map::keys.size() );
 
                 for ( auto p : iface::property_values )
                         co_await get_property( pm, to_str( p ) );

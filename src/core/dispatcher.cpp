@@ -21,7 +21,7 @@ void handle_set_mode(
     microseconds                          now,
     ctl::control&                         ctl,
     vari::vref< iface::mode_stmts const > inpt,
-    json::jval_ser&                       out )
+    iface::root_ser                       out )
 {
         inpt.visit(
             [&]( iface::mode_disengaged_stmt const& ) {
@@ -40,7 +40,7 @@ void handle_set_mode(
                     ctl.switch_to_position_control( now, kv.position );
             } );
 
-        json::array_ser{ out }( "OK" );
+        std::move( out ).ok();
 }
 
 std::string_view get_mode( ctl::control const& ctl )
@@ -71,47 +71,38 @@ void handle_get_property(
     drv::temp_iface const&       temp_drv,
     drv::motor_info_iface const& motor,
     iface::property              inpt,
-    json::jval_ser&              out )
+    iface::root_ser              out )
 {
-        json::array_ser as{ out };
-
         switch ( inpt ) {
         case iface::property::mode:
-                as( "OK" );
-                as( get_mode( ctl ) );
+                std::move( out ).ok()( get_mode( ctl ) );
                 break;
         case iface::property::current:
-                as( "OK" );
-                as( cnv::current( conv, curr_drv, motor ) );
+                std::move( out ).ok()( cnv::current( conv, curr_drv, motor ) );
                 break;
         case iface::property::vcc:
-                as( "OK" );
-                as( conv.vcc.convert( vcc_drv.get_vcc() ) );
+                std::move( out ).ok()( conv.vcc.convert( vcc_drv.get_vcc() ) );
                 break;
         case iface::property::temp:
-                as( "OK" );
-                as( conv.temp.convert( temp_drv.get_temperature() ) );
+                std::move( out ).ok()( conv.temp.convert( temp_drv.get_temperature() ) );
                 break;
         case iface::property::position:
-                as( "OK" );
-                as( cnv::position( conv, pos_drv ) );
+                std::move( out ).ok()( cnv::position( conv, pos_drv ) );
                 break;
         case iface::property::velocity:
-                as( "OK" );
-                as( met.get_velocity() );
+                std::move( out ).ok()( met.get_velocity() );
                 break;
         default:
-                as( "NOK" );
-                as( "unknown property" );
+                std::move( out ).nok()( "unknown property" );
                 break;
         }
 }
 
-void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, json::jval_ser& out )
+void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, iface::root_ser out )
 {
         inpt.visit(
             [&]( iface::mode_stmt const& m ) {
-                    handle_set_mode( dis.now, dis.ctl, m.sub, out );
+                    handle_set_mode( dis.now, dis.ctl, m.sub, std::move( out ) );
             },
             [&]( iface::prop_stmt const& p ) {
                     handle_get_property(
@@ -124,7 +115,7 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, jso
                         dis.temp_drv,
                         dis.motor,
                         p.name,
-                        out );
+                        std::move( out ) );
             },
             [&]( iface::cfg_stmt const& cfg ) {
                     cfg::dispatcher cfg_disp{
@@ -136,51 +127,35 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, jso
                         .motor = dis.motor,
                         .pos   = dis.pos_drv,
                     };
-                    json::array_ser as{ out };
                     cfg.sub.visit(
                         [&]( iface::cfg_set_stmt const& st ) {
-                                cfg::on_cmd_set( cfg_disp.m, st.field, st.value.data )
-                                    .visit(
-                                        [&]( cfg::key k ) {
-                                                cfg_disp.apply( k );
-                                                as( "OK" );
-                                        },
-                                        [&]( str_err const& e ) {
-                                                as( "NOK" );
-                                                as( e.error );
-                                        } );
+                                auto opt_key = cfg::cmd_iface::on_cmd_set(
+                                    cfg_disp.m, st.field, st.value.data, std::move( out ) );
+                                if ( opt_key )
+                                        cfg_disp.apply( *opt_key );
                         },
                         [&]( iface::cfg_get_stmt const& s ) {
-                                auto res = cfg::on_cmd_get( cfg_disp.m, s.field );
-                                res.visit(
-                                    [&]( vari::vref< cfg::base_t > x ) {
-                                            as( "OK" );
-                                            x.visit( as );
-                                    },
-                                    [&]( str_err const& e ) {
-                                            as( "NOK" );
-                                            as( e.error );
-                                    } );
+                                cfg::cmd_iface::on_cmd_get( cfg_disp.m, s.field, std::move( out ) );
                         },
-                        [&]( iface::cfg_list5_stmt const& ) {
-                                // XXX
+                        [&]( iface::cfg_list5_stmt const& st ) {
+                                cfg::cmd_iface::on_cmd_list5< cfg::map >(
+                                    st.offset, std::move( out ) );
                         },
                         [&]( iface::cfg_commit_stmt const& ) {
                                 if ( dis.stor_drv.store_cfg( dis.cfg_map ) == status::SUCCESS )
-                                        as( "OK" );
+                                        std::move( out ).ok();
                                 else
-                                        as( "NOK" );
+                                        std::move( out ).nok();
                         },
                         [&]( iface::cfg_clear_stmt const& ) {
                                 if ( dis.stor_drv.clear_cfg() == status::SUCCESS )
-                                        as( "OK" );
+                                        std::move( out ).ok();
                                 else
-                                        as( "NOK" );
+                                        std::move( out ).nok();
                         } );
             },
             [&]( iface::info_stmt const& ) {
-                    json::array_ser as{ out };
-                    as( "OK" );
+                    json::array_ser  as = std::move( out ).ok();
                     json::object_ser obj{ as };
                     obj( "version", git::Describe() );
                     obj( "commit", git::CommitSHA1() );
@@ -205,10 +180,8 @@ std::tuple< status, em::view< std::byte* > > handle_message(
                     return SUCCESS;
             },
             [&]( iface::invalid_stmt& st ) -> R {
-                    json::array_ser as{ out };
-                    as( "NOK" );
-                    as( "parse error" );
-                    as( to_str( st.st ) );
+                    iface::root_ser root{ out };
+                    std::move( root ).nok()( "parse_error" )( to_str( st.st ) );
                     return FAILURE;
             } );
         return { res, std::move( out ) };

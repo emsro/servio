@@ -1,5 +1,5 @@
+#include "../lib/linear_transition_regulator.hpp"
 #include "./config.hpp"
-#include "./linear_transition_regulator.hpp"
 
 #include <emlabcpp/pid.h>
 #include <limits>
@@ -73,9 +73,9 @@ private:
                 limits< float > vel_derived_lims{ -infty, infty };
         } current_lims_;
 
-        float                            current_goal_ = 0.F;
-        ctl::linear_transition_regulator current_scale_regl_;
-        ctl::pid                         current_pid_;
+        float                       current_goal_ = 0.F;
+        linear_transition_regulator current_scale_regl_;
+        ctl::pid                    current_pid_;
 
         pwr power_ = pwr{ 0 };
 };

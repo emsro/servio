@@ -2,7 +2,7 @@
 
 #include "../../base.hpp"
 
-namespace servio::gvnr::curr::cfg
+namespace servio::gov::curr::cfg
 {
 using value_type = vari::typelist< uint32_t, float, bool >;
 // GEN BEGIN HERE
@@ -16,16 +16,6 @@ enum class key : uint32_t
         pos_lim_min           = 6,
         pos_lim_max           = 7,
         pos_to_curr_lim_scale = 8,
-};
-constexpr std::array< key, 8 > keys = {
-    key::loop_p,
-    key::loop_i,
-    key::loop_d,
-    key::curr_lim_min,
-    key::curr_lim_max,
-    key::pos_lim_min,
-    key::pos_lim_max,
-    key::pos_to_curr_lim_scale,
 };
 
 constexpr std::string_view to_str( key k )
@@ -154,10 +144,20 @@ struct key_trait< key::pos_to_curr_lim_scale >
 
 struct map
 {
-        using key_type = key;
-        float loop_p   = 1.0F;
-        float loop_i   = 0.0001F;
-        float loop_d   = 0.0F;
+        using key_type                             = key;
+        static constexpr std::array< key, 8 > keys = {
+            key::loop_p,
+            key::loop_i,
+            key::loop_d,
+            key::curr_lim_min,
+            key::curr_lim_max,
+            key::pos_lim_min,
+            key::pos_lim_max,
+            key::pos_to_curr_lim_scale,
+        };
+        float loop_p = 1.0F;
+        float loop_i = 0.0001F;
+        float loop_d = 0.0F;
         // Soft limit for lowest current
         float curr_lim_min = -2.0F;
         // Soft limit for highest current
@@ -301,4 +301,4 @@ struct map
 };
 
 // GEN END HERE
-}  // namespace servio::gvnr::curr::cfg
+}  // namespace servio::gov::curr::cfg

@@ -151,22 +151,10 @@
                     "desc": "List subset of configuration fields",
                     "args": [
                         {
-                            "name": "level",
-                            "type": "string",
-                            "default": "\"\"",
-                            "desc": "Configuration level to list, empty for root level"
-                        },
-                        {
                             "name": "offset",
                             "type": "int32_t",
                             "default": 0,
                             "desc": "Offset for the configuration fields to list"
-                        },
-                        {
-                            "name": "n",
-                            "type": "int32_t",
-                            "default": 5,
-                            "desc": "Number of configuration fields to list"
                         }
                     ]
                 },

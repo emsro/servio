@@ -57,9 +57,7 @@ TEST( IfaceParse, ValidParse )
             "cfg set foo bar",
             cfg_stmt{ cfg_set_stmt{ .field = "foo", .value = { iface::string{ "bar" } } } } );
         test_valid_parse( "cfg get foo", cfg_stmt{ cfg_get_stmt{ "foo" } } );
-        test_valid_parse(
-            "cfg list5 level 1 5",
-            cfg_stmt{ cfg_list5_stmt{ .level = "level", .offset = 1, .n = 5 } } );
+        test_valid_parse( "cfg list5 1", cfg_stmt{ cfg_list5_stmt{ .offset = 1 } } );
         test_valid_parse( "cfg commit", cfg_stmt{ cfg_commit_stmt{} } );
         test_valid_parse( "cfg clear", cfg_stmt{ cfg_clear_stmt{} } );
 }

@@ -1,7 +1,7 @@
 
 #include "./governor.hpp"
 
-namespace servio::gvnr
+namespace servio::gov
 {
 
 static zll::ll_list< governor > governor_registry;
@@ -20,4 +20,4 @@ void register_governor_factory( governor& gov )
         governor_registry.link_back( gov );
 }
 
-}  // namespace servio::gvnr
+}  // namespace servio::gov

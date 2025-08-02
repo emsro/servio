@@ -1,13 +1,16 @@
 #include "../../cfg/handler.hpp"
 #include "../governor.hpp"
 #include "./cfg.hpp"
+#include "./iface.hpp"
 
 #include <emlabcpp/pid.h>
 
-namespace servio::gvnr::curr
+namespace servio::gov::curr
 {
 
-struct _current_gov : governor, handle
+std::tuple< iface::stmt, iface::parse_status > parse_curr( iface::cmd_parser p );
+
+struct _current_gov final : governor, handle
 {
         _current_gov()
           : goal_( 0.F )
@@ -26,7 +29,7 @@ struct _current_gov : governor, handle
                 return _cfg_handler;
         };
 
-        status apply_cfg( cfg::key k )
+        void apply_cfg( cfg::key k )
         {
                 switch ( k ) {
                 case cfg::key::loop_p:
@@ -44,7 +47,6 @@ struct _current_gov : governor, handle
                 case cfg::key::pos_to_curr_lim_scale:
                         break;
                 }
-                return SUCCESS;
         }
 
         engage_res engage( std::span< std::byte > ) override
@@ -59,8 +61,37 @@ struct _current_gov : governor, handle
                 return SUCCESS;
         }
 
-        status on_cmd( iface::cmd_parser cmd ) override
+        status on_cmd( iface::cmd_parser cmd, servio::iface::root_ser out ) override
         {
+                auto [stm, st] = parse_curr( std::move( cmd ) );
+                // XXX: do we want to reply? :)
+                if ( st != iface::parse_status::SUCCESS )
+                        return ERROR;
+
+                using R = status;
+                return stm.sub.visit(
+                    [&]( iface::set_stmt const& s ) -> R {
+                            set_goal_current( s.goal );
+                            return SUCCESS;
+                    },
+                    [&]( iface::cfg_stmt const& s ) -> R {
+                            s.sub.visit(
+                                [&]( iface::cfg_set_stmt const& st ) {
+                                        auto opt_k = servio::cfg::cmd_iface::on_cmd_set(
+                                            _cfg, st.field, st.value.data, std::move( out ) );
+                                        if ( opt_k )
+                                                apply_cfg( *opt_k );
+                                },
+                                [&]( iface::cfg_get_stmt const& st ) {
+                                        servio::cfg::cmd_iface::on_cmd_get(
+                                            _cfg, st.field, std::move( out ) );
+                                },
+                                [&]( iface::cfg_list5_stmt const& st ) {
+                                        servio::cfg::cmd_iface::on_cmd_list5< cfg::map >(
+                                            st.offset, std::move( out ) );
+                                } );
+                            return SUCCESS;
+                    } );
         }
 
         void set_goal_current( float goal )
@@ -68,13 +99,14 @@ struct _current_gov : governor, handle
                 goal_ = goal;
         }
 
-        void current_irq( microseconds now, float current ) override
+        pwr current_irq( microseconds now, float current ) override
         {
                 auto  lims         = em::intersection( pid_.cfg.limits, derived_curr_lims_ );
                 float desired_curr = clamp( goal_, lims );
 
                 float const fpower = em::update( pid_, now.count(), current, desired_curr );
                 power_             = pwr( fpower );
+                return power_;
         }
 
         void
@@ -84,11 +116,6 @@ struct _current_gov : governor, handle
                     _cfg.pos_to_curr_lim_scale * ( _cfg.pos_lim_max - position );
                 derived_curr_lims_.min() =
                     _cfg.pos_to_curr_lim_scale * ( _cfg.pos_lim_min - position );
-        }
-
-        pwr get_power() const override
-        {
-                return power_;
         }
 
 private:
@@ -103,6 +130,6 @@ private:
         pwr             power_;
 };
 
-extern _current_gov current_gnvr;
+extern _current_gov current_gvnr;
 
-}  // namespace servio::gvnr::curr
+}  // namespace servio::gov::curr
