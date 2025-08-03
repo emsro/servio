@@ -13,16 +13,11 @@ function(servio_gen_iface)
 endfunction()
 
 servio_gen_iface(
-  TARGET
-  ifacelib_def
-  DEF
-  def.json
-  HDR
-  def.hpp
-  PARSER
-  parse.cpp
-  DOC
-  iface.md)
+  TARGET ifacelib_def
+  DEF def.json
+  HDR def.hpp
+  PARSER parse.cpp
+  DOC iface.md)
 servio_add_library(
   TARGET ifacelib
   SOURCES parse.cpp

@@ -10,13 +10,11 @@
 namespace servio::gov::vel
 {
 
-std::tuple< iface::stmt, iface::parse_status > parse_curr( iface::cmd_parser p );
-
 struct _velocity_gov final : governor, handle
 {
         _velocity_gov()
-          : goal_( 0.F )
-          , pid_( 0, { { .p = 1.F, .i = 0.F, .d = 0.F }, { -10.F, 10.F } } )
+          : curr_pid_( 0, { { .p = 1.F, .i = 0.F, .d = 0.F }, { -10.F, 10.F } } )
+          , vel_pid_( 0, { { .p = 1.F, .i = 0.F, .d = 0.F }, { -10.F, 10.F } } )
         {
         }
 
@@ -33,43 +31,58 @@ struct _velocity_gov final : governor, handle
         void apply_cfg( cfg::key k )
         {
                 switch ( k ) {
-                case cfg::key::loop_p:
-                case cfg::key::loop_i:
-                case cfg::key::loop_d:
-                        pid_.cfg.coefficients = {
-                            .p = cfg_.loop_p, .i = cfg_.loop_i, .d = cfg_.loop_d };
+                case cfg::key::curr_loop_p:
+                case cfg::key::curr_loop_i:
+                case cfg::key::curr_loop_d:
+                        curr_pid_.cfg.coefficients = {
+                            .p = cfg_.curr_loop_p, .i = cfg_.curr_loop_i, .d = cfg_.curr_loop_d };
+                        break;
+                case cfg::key::vel_loop_p:
+                case cfg::key::vel_loop_i:
+                case cfg::key::vel_loop_d:
+                        vel_pid_.cfg.coefficients = {
+                            .p = cfg_.vel_loop_p, .i = cfg_.vel_loop_i, .d = cfg_.vel_loop_d };
                         break;
                 case cfg::key::static_friction_decay:
                 case cfg::key::static_friction_scale:
                         current_scale_regl_.set_config(
                             cfg_.static_friction_scale, cfg_.static_friction_decay );
                         break;
+                case cfg::key::curr_lim_min:
+                case cfg::key::curr_lim_max:
+                        em::update_limits( curr_pid_, { cfg_.curr_lim_min, cfg_.curr_lim_max } );
+                        break;
+                case cfg::key::vel_lim_min:
+                case cfg::key::vel_lim_max:
+                case cfg::key::vel_to_curr_lim_scale:
+                        break;
                 }
         }
 
         engage_res engage( std::span< std::byte > ) override
         {
-                curr::current_gvnr.set_goal_current( 0.F );
+                goal_vel_ = 0.F;
                 return { SUCCESS, this };
         }
 
         status disengage( handle& ) override
         {
-                curr::current_gvnr.set_goal_current( 0.F );
+                goal_vel_ = 0.F;
                 return SUCCESS;
         }
 
         status on_cmd( iface::cmd_parser cmd, servio::iface::root_ser out ) override
         {
-                auto [stm, st] = parse_curr( std::move( cmd ) );
-                // XXX: do we want to reply? :)
-                if ( st != iface::parse_status::SUCCESS )
+                auto [stm, st] = iface::parse_vel( std::move( cmd ) );
+                if ( st != iface::parse_status::SUCCESS ) {
+                        std::move( out ).nok()( "parse error" );
                         return ERROR;
+                }
 
                 using R = status;
                 return stm.sub.visit(
                     [&]( iface::set_stmt const& s ) -> R {
-                            goal_ = s.goal;
+                            goal_vel_ = s.goal;
                             return SUCCESS;
                     },
                     [&]( iface::cfg_stmt const& s ) -> R {
@@ -94,16 +107,26 @@ struct _velocity_gov final : governor, handle
 
         pwr current_irq( microseconds now, float current ) override
         {
-                return curr::current_gvnr.current_irq( now, current );
+                auto  lims         = em::intersection( curr_pid_.cfg.limits, derived_curr_lims_ );
+                float desired_curr = clamp( goal_curr_, lims );
+
+                float const fpower = em::update( curr_pid_, now.count(), current, desired_curr );
+                auto        power_ = pwr( fpower );
+                return power_;
         }
 
         void
         metrics_irq( microseconds now, float /*position*/, float velocity, bool is_moving ) override
         {
+                derived_curr_lims_.max() =
+                    cfg_.vel_to_curr_lim_scale * ( cfg_.vel_lim_max - velocity );
+                derived_curr_lims_.min() =
+                    cfg_.vel_to_curr_lim_scale * ( cfg_.vel_lim_min - velocity );
+
                 current_scale_regl_.update( now, is_moving );
-                float curr = em::update( pid_, now.count(), velocity, goal_ );
-                curr *= current_scale_regl_.state;
-                curr::current_gvnr.set_goal_current( curr );
+
+                goal_curr_ = em::update( vel_pid_, now.count(), velocity, goal_vel_ );
+                goal_curr_ *= current_scale_regl_.state;
         }
 
 private:
@@ -113,10 +136,13 @@ private:
         servio::cfg::handler< cfg::map > cfg_handler_{ cfg_ };
         linear_transition_regulator      current_scale_regl_;
 
-        float goal_;
-        pid   pid_;
-};
+        limits< float > derived_curr_lims_;
 
-extern _velocity_gov velocity_gnvr;
+        float goal_vel_ = 0.0F;
+
+        float goal_curr_ = 0.0F;
+        pid   curr_pid_;
+        pid   vel_pid_;
+};
 
 }  // namespace servio::gov::vel

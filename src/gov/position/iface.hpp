@@ -58,4 +58,7 @@ struct stmt
 };
 
 // GEN END HERE
+
+std::tuple< iface::stmt, iface::parse_status > parse_pos( iface::cmd_parser p );
+
 }  // namespace servio::gov::pos::iface

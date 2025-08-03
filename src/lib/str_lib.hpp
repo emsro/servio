@@ -183,11 +183,16 @@ constexpr bool udec_to_n( char const*& p, char const* e, uint32_t& x ) noexcept
                 return false;
         uint32_t y = 0;
         for ( ;; ) {
-                uint32_t yy = y * 10 + static_cast< uint32_t >( *p++ - '0' );
-                if ( yy < y )
-                        return false;
-                y = yy;
-                if ( p != e && bits::is_dec( *p ) )
+                if ( bits::is_dec( *p ) ) {
+                        uint32_t yy = y * 10 + static_cast< uint32_t >( *p++ - '0' );
+                        if ( yy < y )
+                                return false;
+                        y = yy;
+                } else {
+                        p++;
+                }
+
+                if ( p != e && ( bits::is_dec( *p ) || *p == '\'' ) )
                         continue;
                 else
                         x = y;
@@ -256,10 +261,14 @@ constexpr bool s_to_nr( char const*& p, char const* e, s_to_nr_res& x ) noexcept
         if ( *p == '.' ) {
                 float y   = 0.0F;
                 float exp = 1.0F;
-                while ( ++p != e && bits::is_dec( *p ) ) {
-                        exp *= 10.0F;
-                        y = ( y * 10 ) + ( *p - '0' );
-                }
+                while ( ++p != e )
+                        if ( bits::is_dec( *p ) ) {
+                                exp *= 10.0F;
+                                y = ( y * 10 ) + ( *p - '0' );
+                        } else if ( *p == '\'' ) {
+                                continue;
+                        } else
+                                break;
                 x.r      = (float) sign * ( (float) u + ( y / exp ) );
                 x.is_num = false;
                 if ( bits::has_exp_suffix( p, e ) )

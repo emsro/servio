@@ -151,6 +151,8 @@ TEST( lib, numreal )
             -std::numeric_limits< double >::infinity() );  // Out of 32-bit float range
         TEST_INPT( "2.2250738585072014e-308", 0.0F );      // Out of 32-bit float range
         TEST_INPT( "-2.2250738585072014e-308", -0.0F );    // Out of 32-bit float range
+        TEST_INPT( "1'000'000", 1'000'000 );
+        TEST_INPT( "1'00.0'000", 1'00.0'000F );
 }
 
 }  // namespace servio::str_lib

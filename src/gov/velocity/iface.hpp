@@ -58,4 +58,5 @@ struct stmt
 };
 
 // GEN END HERE
+std::tuple< iface::stmt, iface::parse_status > parse_vel( iface::cmd_parser p );
 }  // namespace servio::gov::vel::iface

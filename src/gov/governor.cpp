@@ -15,7 +15,7 @@ governor* find_governor( std::string_view id )
         } );
 }
 
-void register_governor_factory( governor& gov )
+void register_governor( governor& gov )
 {
         governor_registry.link_back( gov );
 }

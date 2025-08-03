@@ -2,7 +2,7 @@
     "fields": [
         {
             "id": 1,
-            "name": "loop_p",
+            "name": "pos_loop_p",
             "type": "float",
             "default": "1.0F",
             "unit": "",
@@ -10,7 +10,7 @@
         },
         {
             "id": 2,
-            "name": "loop_i",
+            "name": "pos_loop_i",
             "type": "float",
             "default": "0.0001F",
             "unit": "",
@@ -18,7 +18,7 @@
         },
         {
             "id": 3,
-            "name": "loop_d",
+            "name": "pos_loop_d",
             "type": "float",
             "default": "0.0F",
             "unit": "",
@@ -26,6 +26,30 @@
         },
         {
             "id": 4,
+            "name": "curr_loop_p",
+            "type": "float",
+            "default": "1.0F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 5,
+            "name": "curr_loop_i",
+            "type": "float",
+            "default": "0.0001F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 6,
+            "name": "curr_loop_d",
+            "type": "float",
+            "default": "0.0F",
+            "unit": "",
+            "desc": ""
+        },
+        {
+            "id": 7,
             "name": "static_friction_scale",
             "type": "float",
             "default": 3.0,
@@ -33,12 +57,52 @@
             "desc": "Scaling of current in case of non-moving servo"
         },
         {
-            "id": 5,
+            "id": 8,
             "name": "static_friction_decay",
             "type": "float",
             "default": 1.0,
             "unit": "s",
             "desc": "Time required for the static friction compensation to decay to be ineffective"
+        },
+        {
+            "id": 9,
+            "name": "pos_lim_min",
+            "type": "float",
+            "default": "-2.0F",
+            "unit": "",
+            "desc": "Soft limit for lowest position"
+        },
+        {
+            "id": 10,
+            "name": "pos_lim_max",
+            "type": "float",
+            "default": "2.0F",
+            "unit": "",
+            "desc": "Soft limit for highest position"
+        },
+        {
+            "id": 11,
+            "name": "pos_to_curr_lim_scale",
+            "type": "float",
+            "default": "0.1F",
+            "unit": "",
+            "desc": "Scale factor for position to current limit conversion"
+        },
+        {
+            "id": 12,
+            "name": "curr_lim_min",
+            "type": "float",
+            "default": "-2.0F",
+            "unit": "",
+            "desc": "Soft limit for lowest current"
+        },
+        {
+            "id": 13,
+            "name": "curr_lim_max",
+            "type": "float",
+            "default": "2.0F",
+            "unit": "",
+            "desc": "Soft limit for highest current"
         }
     ]
 }

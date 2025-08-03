@@ -97,7 +97,7 @@ static std::tuple< stmt, parse_status > _root( cmd_parser p )
 // GEN END HERE
 }  // namespace
 
-std::tuple< stmt, parse_status > parse_curr( cmd_parser p )
+std::tuple< stmt, parse_status > parse_pos( cmd_parser p )
 {
         return _root( std::move( p ) );
 }

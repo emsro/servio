@@ -4,7 +4,7 @@
 namespace servio::gov::pos
 {
 
-_position_gov           position_gnvr;
-static governor_autoreg position_gov_autoreg{ position_gnvr };
+static _position_gov    position_gov;
+static governor_autoreg position_gov_autoreg{ position_gov };
 
 }  // namespace servio::gov::pos

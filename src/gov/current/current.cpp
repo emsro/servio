@@ -4,7 +4,7 @@
 namespace servio::gov::curr
 {
 
-_current_gov            current_gvnr;
-static governor_autoreg current_gov_autoreg{ current_gvnr };
+static _current_gov     current_gov;
+static governor_autoreg current_gov_autoreg{ current_gov };
 
 }  // namespace servio::gov::curr

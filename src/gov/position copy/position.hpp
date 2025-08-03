@@ -1,24 +1,28 @@
 #include "../../cfg/handler.hpp"
+#include "../../lib/linear_transition_regulator.hpp"
+#include "../current/current.hpp"
 #include "../governor.hpp"
 #include "./cfg.hpp"
 #include "./iface.hpp"
 
 #include <emlabcpp/pid.h>
 
-namespace servio::gov::curr
+namespace servio::gov::pos
 {
 
-struct _current_gov final : governor, handle
+std::tuple< iface::stmt, iface::parse_status > parse_curr( iface::cmd_parser p );
+
+struct _position_gov final : governor, handle
 {
-        _current_gov()
-          : pid_( 0, { { .p = 1.F, .i = 0.F, .d = 0.F }, { -10.F, 10.F } } )
-          , power_( 0.F )
+        _position_gov()
+          : goal_pos_( 0.F )
+          , pid_( 0, { { .p = 1.F, .i = 0.F, .d = 0.F }, { -10.F, 10.F } } )
         {
         }
 
         std::string_view name() const override
         {
-                return "current";
+                return "position";
         }
 
         servio::cfg::iface& get_cfg() override
@@ -35,85 +39,69 @@ struct _current_gov final : governor, handle
                         pid_.cfg.coefficients = {
                             .p = cfg_.loop_p, .i = cfg_.loop_i, .d = cfg_.loop_d };
                         break;
-                case cfg::key::curr_lim_min:
-                case cfg::key::curr_lim_max:
-                        em::update_limits( pid_, { cfg_.curr_lim_min, cfg_.curr_lim_max } );
-                        break;
-                case cfg::key::pos_lim_min:
-                case cfg::key::pos_lim_max:
-                case cfg::key::pos_to_curr_lim_scale:
+                case cfg::key::static_friction_decay:
+                case cfg::key::static_friction_scale:
+                        current_scale_regl_.set_config(
+                            cfg_.static_friction_scale, cfg_.static_friction_decay );
                         break;
                 }
         }
 
         engage_res engage( std::span< std::byte > ) override
         {
-                power_ = pwr( 0.F );
+                curr::current_gvnr.set_goal_current( 0.F );
                 return { SUCCESS, this };
         }
 
         status disengage( handle& ) override
         {
-                power_ = pwr( 0.F );
+                curr::current_gvnr.set_goal_current( 0.F );
                 return SUCCESS;
         }
 
         status on_cmd( iface::cmd_parser cmd, servio::iface::root_ser out ) override
         {
-                auto [stm, st] = iface::parse_curr( std::move( cmd ) );
-                if ( st != iface::parse_status::SUCCESS ) {
-                        std::move( out ).nok()( "parse error" );
+                auto [stm, st] = parse_curr( std::move( cmd ) );
+                // XXX: do we want to reply? :)
+                if ( st != iface::parse_status::SUCCESS )
                         return ERROR;
-                }
 
                 using R = status;
                 return stm.sub.visit(
                     [&]( iface::set_stmt const& s ) -> R {
-                            set_goal_current( s.goal );
+                            goal_ = s.goal;
                             return SUCCESS;
                     },
                     [&]( iface::cfg_stmt const& s ) -> R {
                             s.sub.visit(
                                 [&]( iface::cfg_set_stmt const& st ) {
-                                        auto opt_k = servio::cfg::cmd_iface::on_cmd_set(
+                                        auto opt_k = servio::cfg::on_cmd_set(
                                             cfg_, st.field, st.value.data, std::move( out ) );
                                         if ( opt_k )
                                                 apply_cfg( *opt_k );
                                 },
                                 [&]( iface::cfg_get_stmt const& st ) {
-                                        servio::cfg::cmd_iface::on_cmd_get(
-                                            cfg_, st.field, std::move( out ) );
+                                        servio::cfg::on_cmd_get( cfg_, st.field, std::move( out ) );
                                 },
                                 [&]( iface::cfg_list5_stmt const& st ) {
-                                        servio::cfg::cmd_iface::on_cmd_list5< cfg::map >(
+                                        servio::cfg::on_cmd_list5< cfg::map >(
                                             st.offset, std::move( out ) );
                                 } );
                             return SUCCESS;
                     } );
         }
 
-        void set_goal_current( float goal )
+        pwr current_irq( microseconds now, float position ) override
         {
-                goal_ = goal;
+                return curr::current_gvnr.current_irq( now, position );
         }
 
-        pwr current_irq( microseconds now, float current ) override
+        void metrics_irq( microseconds now, float position, float /*velocity*/, bool /*is_moving*/ )
+            override
         {
-                auto  lims         = em::intersection( pid_.cfg.limits, derived_curr_lims_ );
-                float desired_curr = clamp( goal_, lims );
-
-                float const fpower = em::update( pid_, now.count(), current, desired_curr );
-                power_             = pwr( fpower );
-                return power_;
-        }
-
-        void
-        metrics_irq( microseconds, float position, float /*velocity*/, bool /*is_moving*/ ) override
-        {
-                derived_curr_lims_.max() =
-                    cfg_.pos_to_curr_lim_scale * ( cfg_.pos_lim_max - position );
-                derived_curr_lims_.min() =
-                    cfg_.pos_to_curr_lim_scale * ( cfg_.pos_lim_min - position );
+                float curr = em::update( pid_, now.count(), position, goal_ );
+                curr *= current_scale_regl_.state;
+                curr::current_gvnr.set_goal_current( curr );
         }
 
 private:
@@ -121,12 +109,12 @@ private:
 
         cfg::map                         cfg_;
         servio::cfg::handler< cfg::map > cfg_handler_{ cfg_ };
+        linear_transition_regulator      current_scale_regl_;
 
-        float goal_ = 0.0F;
-        pid   pid_;
-
-        limits< float > derived_curr_lims_;
-        pwr             power_;
+        float goal_pos_;
+        pid   pos_pid_;
 };
 
-}  // namespace servio::gov::curr
+extern _position_gov position_gnvr;
+
+}  // namespace servio::gov::pos

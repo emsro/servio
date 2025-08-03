@@ -1,4 +1,4 @@
-function(servio_gen_configuration)
+function(servion_gen_cfg)
   cmake_parse_arguments(A "" "TARGET;DEF;OUTPUT;DOC" "" ${ARGN})
   add_custom_command(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/${A_OUTPUT}
@@ -16,15 +16,11 @@ servio_add_library(
   SOURCES dispatcher.cpp
   LIBS emlabcpp platform ctllib ifacelib avakar::atom vari
   OPTS -Os)
-servio_gen_configuration(
-  TARGET
-  cfg_def
-  DEF
-  def.json
-  OUTPUT
-  def.hpp
-  DOC
-  cfg.md)
+servion_gen_cfg(
+  TARGET cfg_def
+  DEF def.json
+  OUTPUT def.hpp
+  DOC cfg.md)
 add_dependencies(cfglib cfg_def)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
