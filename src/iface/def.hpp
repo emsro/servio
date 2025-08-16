@@ -16,7 +16,6 @@ namespace servio::iface
 // GEN BEGIN HERE
 enum class property
 {
-        mode,      // Mode of the servomotor
         current,   // Actual current flowing through the servomotor
         vcc,       // Actual input voltage
         temp,      // Actual temperature of the MCU
@@ -24,8 +23,7 @@ enum class property
         velocity,  // Actual velocity of the servomotor
 };
 
-static constexpr std::array< property, 6 > property_values = {
-    property::mode,
+static constexpr std::array< property, 5 > property_values = {
     property::current,
     property::vcc,
     property::temp,
@@ -36,8 +34,6 @@ static constexpr std::array< property, 6 > property_values = {
 static constexpr std::string_view to_str( property v )
 {
         switch ( v ) {
-        case property::mode:
-                return "mode";
         case property::current:
                 return "current";
         case property::vcc:
@@ -52,52 +48,48 @@ static constexpr std::string_view to_str( property v )
         return "unknown";
 }
 
-struct mode_disengaged_stmt
+struct gov_activate_stmt
 {
+        string governor = {};
         friend constexpr auto
-        operator<=>( mode_disengaged_stmt const&, mode_disengaged_stmt const& ) noexcept = default;
+        operator<=>( gov_activate_stmt const&, gov_activate_stmt const& ) noexcept = default;
 };
 
-struct mode_power_stmt
+struct gov_deactivate_stmt
 {
-        float power = 0;
         friend constexpr auto
-        operator<=>( mode_power_stmt const&, mode_power_stmt const& ) noexcept = default;
+        operator<=>( gov_deactivate_stmt const&, gov_deactivate_stmt const& ) noexcept = default;
 };
 
-struct mode_current_stmt
+struct gov_active_stmt
 {
-        float current = 0.0;
         friend constexpr auto
-        operator<=>( mode_current_stmt const&, mode_current_stmt const& ) noexcept = default;
+        operator<=>( gov_active_stmt const&, gov_active_stmt const& ) noexcept = default;
 };
 
-struct mode_velocity_stmt
+struct gov_list_stmt
 {
-        float velocity = 0.0;
+        int32_t index = {};
         friend constexpr auto
-        operator<=>( mode_velocity_stmt const&, mode_velocity_stmt const& ) noexcept = default;
+        operator<=>( gov_list_stmt const&, gov_list_stmt const& ) noexcept = default;
 };
 
-struct mode_position_stmt
+struct gov_forward
 {
-        float position = 0.0;
+        std::string_view cmd;
+        cmd_parser       parser;
         friend constexpr auto
-        operator<=>( mode_position_stmt const&, mode_position_stmt const& ) noexcept = default;
+        operator<=>( gov_forward const&, gov_forward const& ) noexcept = default;
 };
 
-using mode_stmts = vari::typelist<
-    mode_disengaged_stmt,
-    mode_power_stmt,
-    mode_current_stmt,
-    mode_velocity_stmt,
-    mode_position_stmt >;
+using gov_stmts = vari::
+    typelist< gov_activate_stmt, gov_deactivate_stmt, gov_active_stmt, gov_list_stmt, gov_forward >;
 
-struct mode_stmt
+struct gov_stmt
 {
-        vari::vval< mode_stmts > sub = mode_disengaged_stmt{};
+        vari::vval< gov_stmts > sub = gov_activate_stmt{};
 
-        friend constexpr auto operator<=>( mode_stmt const&, mode_stmt const& ) noexcept = default;
+        friend constexpr auto operator<=>( gov_stmt const&, gov_stmt const& ) noexcept = default;
 };
 
 struct prop_stmt
@@ -121,11 +113,11 @@ struct cfg_get_stmt
         operator<=>( cfg_get_stmt const&, cfg_get_stmt const& ) noexcept = default;
 };
 
-struct cfg_list5_stmt
+struct cfg_list_stmt
 {
-        int32_t offset = 0;
+        int32_t index = 0;
         friend constexpr auto
-        operator<=>( cfg_list5_stmt const&, cfg_list5_stmt const& ) noexcept = default;
+        operator<=>( cfg_list_stmt const&, cfg_list_stmt const& ) noexcept = default;
 };
 
 struct cfg_commit_stmt
@@ -141,7 +133,7 @@ struct cfg_clear_stmt
 };
 
 using cfg_stmts =
-    vari::typelist< cfg_set_stmt, cfg_get_stmt, cfg_list5_stmt, cfg_commit_stmt, cfg_clear_stmt >;
+    vari::typelist< cfg_set_stmt, cfg_get_stmt, cfg_list_stmt, cfg_commit_stmt, cfg_clear_stmt >;
 
 struct cfg_stmt
 {
@@ -155,17 +147,17 @@ struct info_stmt
         friend constexpr auto operator<=>( info_stmt const&, info_stmt const& ) noexcept = default;
 };
 
-using stmts = vari::typelist< mode_stmt, prop_stmt, cfg_stmt, info_stmt >;
+using stmts = vari::typelist< gov_stmt, prop_stmt, cfg_stmt, info_stmt >;
 
 struct stmt
 {
-        vari::vval< stmts > sub = mode_stmt{};
+        vari::vval< stmts > sub = gov_stmt{};
 
         friend constexpr auto operator<=>( stmt const&, stmt const& ) noexcept = default;
 };
 
 // GEN END HERE
 
-vari::vval< stmt, invalid_stmt > parse( std::string_view inpt );
+vari::vval< stmt, invalid_stmt > parse( parser::parser& p );
 
 }  // namespace servio::iface

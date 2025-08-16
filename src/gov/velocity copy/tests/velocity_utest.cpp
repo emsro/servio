@@ -11,7 +11,7 @@ TEST_F( gov_fixture, vel )
         GTEST_SKIP() << "uncalibrated";
 
         for ( float vel : { 1.F, 2.F, 1.F, -1.F } ) {
-                _velocity_gov gov;
+                _power_gov gov;
 
                 auto do_cmd = [&]( std::string_view cmd ) {
                         parser::parser p{ cmd };

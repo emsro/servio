@@ -1,5 +1,5 @@
 #include "../cfg/dispatcher.hpp"
-#include "../ctl/control.hpp"
+#include "../gov/governor_manager.hpp"
 #include "../iface/def.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
@@ -17,7 +17,7 @@ struct dispatcher
         drv::get_curr_iface const& curr_drv;
         drv::vcc_iface const&      vcc_drv;
         drv::temp_iface const&     temp_drv;
-        ctl::control&              ctl;
+        gov::governor_manager&     gov;
         mtr::metrics&              met;
         mon::monitor&              mon;
         cfg::map&                  cfg_map;

@@ -10,12 +10,13 @@ namespace servio::iface
 namespace
 {
 template < typename S >
-void test_valid_parse( std::string_view inpt, S expected_stmt )
+void test_valid_parse( parser::parser& p, std::string_view inpt, S expected_stmt )
 {
-        auto res = parse( inpt );
+        p        = parser::parser{ inpt };
+        auto res = parse( p );
         res.visit(
             [&]( vari::vref< stmt > s ) {
-                    vari::vval< stmts > expected{ expected_stmt };
+                    vari::vval< stmts > expected{ std::move( expected_stmt ) };
                     EXPECT_EQ( s->sub, expected );
             },
             [&]( invalid_stmt& ) {
@@ -23,9 +24,9 @@ void test_valid_parse( std::string_view inpt, S expected_stmt )
             } );
 }
 
-void test_invalid_parse( std::string_view inpt, parse_status st )
+void test_invalid_parse( parser::parser& p, std::string_view inpt, parse_status st )
 {
-        auto res = parse( inpt );
+        auto res = parse( p );
         res.visit(
             [&]( vari::vref< stmt > ) {
                     FAIL() << "expected invalid parse";
@@ -39,37 +40,43 @@ void test_invalid_parse( std::string_view inpt, parse_status st )
 
 TEST( IfaceParse, ValidParse )
 {
-        test_valid_parse( "mode disengaged", mode_stmt{ mode_disengaged_stmt{} } );
-        test_valid_parse( "mode power 42", mode_stmt{ mode_power_stmt{ 42.0F } } );
-        test_valid_parse( "mode current -1", mode_stmt{ mode_current_stmt{ -1.0F } } );
-        test_valid_parse( "mode velocity 0.0", mode_stmt{ mode_velocity_stmt{ 0.0F } } );
-        test_valid_parse( "mode position 0", mode_stmt{ mode_position_stmt{ 0.0F } } );
-        test_valid_parse( "mode position 3.14", mode_stmt{ mode_position_stmt{ 3.14F } } );
+        parser::parser p{ "" };
+        test_valid_parse( p, "gov activate power ", gov_stmt{ gov_activate_stmt{ "power" } } );
+        test_valid_parse( p, "gov activate current ", gov_stmt{ gov_activate_stmt{ "current" } } );
+        test_valid_parse(
+            p, "gov activate velocity ", gov_stmt{ gov_activate_stmt{ "velocity" } } );
+        test_valid_parse(
+            p, "gov activate position ", gov_stmt{ gov_activate_stmt{ "position" } } );
+        test_valid_parse( p, "gov deactivate ", gov_stmt{ gov_deactivate_stmt{} } );
+        test_valid_parse( p, "gov list 0 ", gov_stmt{ gov_list_stmt{ 0 } } );
+        test_valid_parse( p, "gov wololo ", gov_stmt{ gov_forward{ "wololo", p } } );
+        test_valid_parse( p, "gov wololo magic ", gov_stmt{ gov_forward{ "wololo", p } } );
 
-        test_valid_parse( "prop mode", prop_stmt{ property::mode } );
-        test_valid_parse( "prop current", prop_stmt{ property::current } );
-        test_valid_parse( "prop vcc", prop_stmt{ property::vcc } );
-        test_valid_parse( "prop temp", prop_stmt{ property::temp } );
-        test_valid_parse( "prop position", prop_stmt{ property::position } );
-        test_valid_parse( "prop velocity", prop_stmt{ property::velocity } );
+        test_valid_parse( p, "prop current", prop_stmt{ property::current } );
+        test_valid_parse( p, "prop vcc", prop_stmt{ property::vcc } );
+        test_valid_parse( p, "prop temp", prop_stmt{ property::temp } );
+        test_valid_parse( p, "prop position", prop_stmt{ property::position } );
+        test_valid_parse( p, "prop velocity", prop_stmt{ property::velocity } );
 
         test_valid_parse(
+            p,
             "cfg set foo bar",
             cfg_stmt{ cfg_set_stmt{ .field = "foo", .value = { iface::string{ "bar" } } } } );
-        test_valid_parse( "cfg get foo", cfg_stmt{ cfg_get_stmt{ "foo" } } );
-        test_valid_parse( "cfg list5 1", cfg_stmt{ cfg_list5_stmt{ .offset = 1 } } );
-        test_valid_parse( "cfg commit", cfg_stmt{ cfg_commit_stmt{} } );
-        test_valid_parse( "cfg clear", cfg_stmt{ cfg_clear_stmt{} } );
+        test_valid_parse( p, "cfg get foo", cfg_stmt{ cfg_get_stmt{ "foo" } } );
+        test_valid_parse( p, "cfg list 1", cfg_stmt{ cfg_list_stmt{ .index = 1 } } );
+        test_valid_parse( p, "cfg commit", cfg_stmt{ cfg_commit_stmt{} } );
+        test_valid_parse( p, "cfg clear", cfg_stmt{ cfg_clear_stmt{} } );
 }
 
 TEST( IfaceParse, InvalidParse )
 {
-        test_invalid_parse( "", parse_status::CMD_MISSING );
-        test_invalid_parse( "mode", parse_status::CMD_MISSING );
-        test_invalid_parse( "prop", parse_status::ARG_MISSING );
-        test_invalid_parse( "cfg", parse_status::CMD_MISSING );
-        test_invalid_parse( "cfg s", parse_status::UNKNOWN_CMD );
-        test_invalid_parse( "cfg commit boo", parse_status::UNEXPECTED_ARG );
+        parser::parser p{ "" };
+        test_invalid_parse( p, "", parse_status::CMD_MISSING );
+        test_invalid_parse( p, "mode", parse_status::CMD_MISSING );
+        test_invalid_parse( p, "prop", parse_status::ARG_MISSING );
+        test_invalid_parse( p, "cfg", parse_status::CMD_MISSING );
+        test_invalid_parse( p, "cfg s", parse_status::UNKNOWN_CMD );
+        test_invalid_parse( p, "cfg commit boo", parse_status::UNEXPECTED_ARG );
 }
 
 }  // namespace servio::iface

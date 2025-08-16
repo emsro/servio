@@ -20,7 +20,7 @@ TEST( iface, base )
         drv::mock::vcc     gv;
         drv::mock::temp    tm;
         drv::mock::stor    sd;
-        core::core         cor{ 0_ms, gv, tm, ctl::config{ .position_limits = { -2.0F, 2.0F } } };
+        core::core         cor{ 0_ms, gv, tm };
         cfg::map           m{};
         port_mock          pm( port_mock::attrs{
                      .motor    = mot,

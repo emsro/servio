@@ -9,9 +9,9 @@ namespace em = emlabcpp;
 
 enum class status_e
 {
-        SUCCESS = 0,
-        FAILURE = 1,
-        ERROR   = 2,
+        SUCCESS = 0,  // all went well
+        FAILURE = 1,  // expected error occured
+        ERROR   = 2,  // unexpected error occured
 };
 
 struct [[nodiscard]] status : em::status< status, status_e >

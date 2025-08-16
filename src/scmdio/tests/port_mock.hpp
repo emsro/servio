@@ -41,7 +41,7 @@ struct port_mock : port_iface
                     .curr_drv = a.curr_drv,
                     .vcc_drv  = a.vcc_drv,
                     .temp_drv = a.temp_drv,
-                    .ctl      = a.cor.ctl,
+                    .gov      = a.cor.gov_,
                     .met      = a.cor.met,
                     .mon      = a.cor.mon,
                     .cfg_map  = a.cfg_map,

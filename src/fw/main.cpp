@@ -23,7 +23,7 @@ int main()
                     .curr_drv = *ctx.cdrv.current,
                     .vcc_drv  = *ctx.cdrv.vcc,
                     .temp_drv = *ctx.cdrv.temperature,
-                    .ctl      = ctx.core.ctl,
+                    .gov      = ctx.core.gov_,
                     .met      = ctx.core.met,
                     .mon      = ctx.core.mon,
                     .cfg_map  = ctx.cdrv.cfg->map,

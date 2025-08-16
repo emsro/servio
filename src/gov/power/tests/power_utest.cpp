@@ -1,15 +1,16 @@
 
 #include "../../tests/gov_fixture.hpp"
-#include "../current.hpp"
+#include "../power.hpp"
 
 #include <gtest/gtest.h>
 
-namespace servio::gov::curr::tests
+namespace servio::gov::pow::tests
 {
-TEST_F( gov_fixture, curr )
+TEST_F( gov_fixture, vel )
 {
-        for ( float curr : { 0.1F, 0.2F, -0.1F, 0.F, 0.1F } ) {
-                _current_gov gov;
+
+        for ( float pow : { 1.F, 0.F, -1.F } ) {
+                _power_gov gov;
 
                 auto do_cmd = [&]( std::string_view cmd ) {
                         parser::parser p{ cmd };
@@ -19,10 +20,7 @@ TEST_F( gov_fixture, curr )
                         EXPECT_EQ( s, SUCCESS ) << "cmd: " << cmd << "\n";
                 };
 
-                do_cmd( "cfg set loop_p 0.0625" );
-                do_cmd( "cfg set loop_i 0.000'005'12" );
-                do_cmd( "cfg set loop_d 0.03125" );
-                do_cmd( std::format( "set {}", curr ) );
+                do_cmd( std::format( "set {}", pow ) );
 
                 for ( std::size_t i : em::range( 100u ) ) {
                         std::ignore      = i;
@@ -30,8 +28,8 @@ TEST_F( gov_fixture, curr )
                         this->tick( gov, now );
                 }
 
-                EXPECT_NEAR( motor.current, curr, 0.02F )
-                    << "curr: " << curr << " motor current: " << motor.current;
+                EXPECT_NEAR( motor.power, pow, 0.02F )
+                    << "angle: " << pow << " motor power: " << motor.power;
         }
 }
-}  // namespace servio::gov::curr::tests
+}  // namespace servio::gov::pow::tests

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../cfg/dispatcher.hpp"
+#include "../core/callbacks.hpp"
 #include "../core/core.hpp"
 #include "../core/drivers.hpp"
 

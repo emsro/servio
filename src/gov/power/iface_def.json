@@ -1,0 +1,17 @@
+{
+    "types": [],
+    "cmds": [
+        {
+            "name": "set",
+            "type": "arg",
+            "desc": "Set power of the servomotor",
+            "args": [
+                {
+                    "name": "goal",
+                    "type": "float",
+                    "desc": "Goal power, in range -1.0 .. 0 .. 1.0. -1 is 100% reverse movement, 0 is no power, 1 is 100% forward movement."
+                }
+            ]
+        }
+    ]
+}

@@ -6,6 +6,7 @@
 #include "../lib/json_ser.hpp"
 #include "../status.hpp"
 
+#include <emlabcpp/experimental/function_view.h>
 #include <span>
 #include <string_view>
 #include <zll.h>
@@ -27,25 +28,44 @@ struct engage_res
 {
         status  stat;
         handle* h;
+
+        operator std::tuple< status&, handle*& >()
+        {
+                return { stat, h };
+        }
 };
 
-struct governor : zll::ll_base< governor >
+struct governor
 {
-        virtual cfg::iface&      get_cfg()                                                    = 0;
+        virtual cfg::iface*      get_cfg()                                                    = 0;
         virtual std::string_view name() const                                                 = 0;
         virtual status           on_cmd( iface::cmd_parser cmd, servio::iface::root_ser out ) = 0;
         virtual engage_res       engage( std::span< std::byte > buffer )                      = 0;
         virtual status           disengage( handle& )                                         = 0;
+        virtual ~governor() = default;
 };
 
-governor* find_governor( std::string_view name );
-void      register_governor( governor& gov );
-
-struct governor_autoreg
+struct governor_factory : zll::ll_base< governor_factory >
 {
-        governor_autoreg( governor& gov )
+        virtual governor* create( std::span< std::byte > buffer ) = 0;
+};
+
+void register_factory( governor_factory& factory );
+void for_each_factory( em::function_view< void( governor_factory& ) > fn );
+
+template < typename T >
+struct auto_factory : governor_factory
+{
+        auto_factory()
         {
-                register_governor( gov );
+                register_factory( *this );
+        }
+
+        T* create( std::span< std::byte > buffer ) override
+        {
+                if ( buffer.size() < sizeof( T ) )
+                        return nullptr;
+                return new ( buffer.data() ) T();
         }
 };
 

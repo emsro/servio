@@ -117,6 +117,11 @@ struct parser
 {
         lexer l;
 
+        parser( std::string_view sv )
+          : l( lexer{ sv } )
+        {
+        }
+
         std::size_t loc()
         {
                 return static_cast< std::size_t >( l.p - l.b );

@@ -1,5 +1,4 @@
 #include "../cnv/converter.hpp"
-#include "../ctl/control.hpp"
 #include "../drv/interfaces.hpp"
 #include "./indication.hpp"
 
@@ -13,13 +12,11 @@ class monitor
 public:
         monitor(
             microseconds           now,
-            ctl::control const&    ctl,
             drv::vcc_iface const&  vcc_drv,
             drv::temp_iface const& temp_drv,
             indication&            indi,
             cnv::converter const&  conv )
-          : ctl_( ctl )
-          , indi_( indi )
+          : indi_( indi )
           , vcc_drv_( vcc_drv )
           , temp_drv_( temp_drv )
           , conv_( conv )
@@ -37,7 +34,7 @@ public:
                 max_tmp_ = temp;
         }
 
-        void tick( microseconds now )
+        void tick( microseconds now, bool governor_active )
         {
                 indi_.on_event( now, indication_event::HEARTBEAT );
 
@@ -53,14 +50,13 @@ public:
                 if ( temp > max_tmp_ )
                         indi_.on_event( now, indication_event::TEMPERATURE_HIGH );
 
-                if ( ctl_.get_mode() != control_mode::DISENGAGED )
+                if ( governor_active )
                         indi_.on_event( now, indication_event::ENGAGED );
                 else
                         indi_.on_event( now, indication_event::DISENGAGED );
         }
 
 private:
-        ctl::control const&    ctl_;
         indication&            indi_;
         drv::vcc_iface const&  vcc_drv_;
         drv::temp_iface const& temp_drv_;

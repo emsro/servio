@@ -1,5 +1,10 @@
 
 #include "../../drv/mock.hpp"
+#include "../../gov/current/current.hpp"
+#include "../../gov/position/position.hpp"
+#include "../../gov/power/power.hpp"
+#include "../../gov/velocity/velocity.hpp"
+#include "../core.hpp"
 #include "../dispatcher.hpp"
 
 #include <cstdint>
@@ -23,13 +28,7 @@ TEST( core, dispatcher )
         drv::mock::stor    sd;
 
         cfg::map m{};
-        core     cor{
-            0_ms,
-            gv,
-            tm,
-            ctl::config{
-                    .position_limits = { -2.0F, 2.0F },
-            } };
+        core     cor{ 0_ms, gv, tm };
 
         dispatcher disp{
             .motor    = mot,
@@ -37,7 +36,7 @@ TEST( core, dispatcher )
             .curr_drv = gc,
             .vcc_drv  = gv,
             .temp_drv = tm,
-            .ctl      = cor.ctl,
+            .gov      = cor.gov_,
             .met      = cor.met,
             .mon      = cor.mon,
             .cfg_map  = m,
@@ -63,26 +62,39 @@ TEST( core, dispatcher )
         // XXX: negative tests
 
         // mode
-        cor.ctl.switch_to_power_control( 0_pwr );
-        test( "mode disengaged", R"(["OK"])"_json );
-        EXPECT_EQ( cor.ctl.get_mode(), control_mode::DISENGAGED );
-        test( "prop mode", R"(["OK", "disengaged"])"_json );
+        std::byte buff[666];
+        cor.gov_.activate( "power", buff );
+        test( "gov deactivate", R"(["OK"])"_json );
+        EXPECT_EQ( cor.gov_.active_governor(), nullptr );
+        test( "gov active", R"(["OK"])"_json );
 
-        test( "mode power 0.2", R"(["OK"])"_json );
-        EXPECT_EQ( cor.ctl.get_power(), 0.2_pwr );
-        test( "prop mode", R"(["OK", "power"])"_json );
+        test( "gov activate power", R"(["OK"])"_json );
+        test( "gov power set 0.2", R"(["OK"])"_json );
+        auto& p = dynamic_cast< gov::pow::_power_gov& >( *cor.gov_.active_governor() );
+        EXPECT_EQ( p.power, 0.2_pwr );
+        test( "gov active", R"(["OK", "power"])"_json );
+        test( "gov deactivate", R"(["OK"])"_json );
 
-        test( "mode current 0.5", R"(["OK"])"_json );
-        EXPECT_EQ( cor.ctl.get_desired_current(), 0.5F );
-        test( "prop mode", R"(["OK", "current"])"_json );
+        test( "gov activate current", R"(["OK"])"_json );
+        test( "gov current set 0.2", R"(["OK"])"_json );
+        auto& c = dynamic_cast< gov::curr::_current_gov& >( *cor.gov_.active_governor() );
+        EXPECT_EQ( c.goal, 0.5F );
+        test( "gov active", R"(["OK", "current"])"_json );
+        test( "gov deactivate", R"(["OK"])"_json );
 
-        test( "mode velocity 0.22", R"(["OK"])"_json );
-        EXPECT_EQ( cor.ctl.get_desired_velocity(), 0.22F );
-        test( "prop mode", R"(["OK", "velocity"])"_json );
+        test( "gov activate velocity", R"(["OK"])"_json );
+        test( "gov velocity set 0.22", R"(["OK"])"_json );
+        auto& v = dynamic_cast< gov::vel::_velocity_gov& >( *cor.gov_.active_governor() );
+        EXPECT_EQ( v.goal_vel, 0.22F );
+        test( "gov active", R"(["OK", "velocity"])"_json );
+        test( "gov deactivate", R"(["OK"])"_json );
 
-        test( "mode position -1", R"(["OK"])"_json );
-        EXPECT_EQ( cor.ctl.get_desired_position(), -1.0F );
-        test( "prop mode", R"(["OK", "position"])"_json );
+        test( "gov activate position", R"(["OK"])"_json );
+        test( "gov position set -1", R"(["OK"])"_json );
+        auto& pos = dynamic_cast< gov::pos::_position_gov& >( *cor.gov_.active_governor() );
+        EXPECT_EQ( pos.goal_pos, -1.0F );
+        test( "gov active", R"(["OK", "position"])"_json );
+        test( "gov deactivate", R"(["OK"])"_json );
 
         test(
             "info",
@@ -192,12 +204,12 @@ TEST( core, dispatcher )
         }
 
         test(
-            "cfg list5 0",
+            "cfg list 0",
             R"(["OK", ["model","id","group_id","encoder_mode","position_low_angle"]])"_json );
         test(
-            "cfg list5 2",
+            "cfg list 2",
             R"(["OK", ["group_id","encoder_mode","position_low_angle","position_high_angle","current_conv_scale"]])"_json );
-        test( "cfg list5 1024", R"(["OK", []])"_json );
+        test( "cfg list 1024", R"(["OK", []])"_json );
 
         EXPECT_EQ( sd.store_cnt, 0 );
         test( "cfg commit", R"(["OK"])"_json );

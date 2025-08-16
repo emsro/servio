@@ -32,14 +32,14 @@ struct cfg_get_stmt
         operator<=>( cfg_get_stmt const&, cfg_get_stmt const& ) noexcept = default;
 };
 
-struct cfg_list5_stmt
+struct cfg_list_stmt
 {
-        int32_t offset = 0;
+        int32_t index = 0;
         friend constexpr auto
-        operator<=>( cfg_list5_stmt const&, cfg_list5_stmt const& ) noexcept = default;
+        operator<=>( cfg_list_stmt const&, cfg_list_stmt const& ) noexcept = default;
 };
 
-using cfg_stmts = vari::typelist< cfg_set_stmt, cfg_get_stmt, cfg_list5_stmt >;
+using cfg_stmts = vari::typelist< cfg_set_stmt, cfg_get_stmt, cfg_list_stmt >;
 
 struct cfg_stmt
 {

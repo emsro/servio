@@ -2,7 +2,6 @@ add_subdirectory(cfg)
 add_subdirectory(iface)
 add_subdirectory(cnv)
 add_subdirectory(core)
-add_subdirectory(ctl)
 add_subdirectory(gov)
 add_subdirectory(sntr)
 add_subdirectory(klmn)
@@ -21,7 +20,6 @@ target_link_libraries(
          corelib
          cfglib
          mtrlib
-         ctllib
          drvlib)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

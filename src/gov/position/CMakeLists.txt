@@ -12,7 +12,7 @@ servio_gen_iface(
 servio_add_library(
   TARGET posgovlib
   SOURCES position.cpp parse.cpp
-  LIBS gvnrlib vari
+  LIBS govlib vari
   OPTS -Os)
 add_dependencies(posgovlib pos_cfg_def posgov_iface)
 

@@ -2,6 +2,9 @@
 
 #include "../core/core.hpp"
 #include "../core/drivers.hpp"
+#include "../fw/util.hpp"
+#include "../gov/current/current.hpp"
+#include "../gov/power/power.hpp"
 
 namespace servio::ftest
 {
@@ -19,19 +22,26 @@ void rewind(
 {
         microseconds end = iclk.get_us() + timeout;
 
+        cor.gov_.activate( "current", {} );
+        auto* p = dynamic_cast< gov::curr::_current_gov* >( cor.gov_.active_governor() );
+        if ( !p )
+                fw::stop_exec();
+
         while ( iclk.get_us() < end ) {
                 float pos = cor.conv.position.convert( ipos.get_position() );
                 if ( em::contains( area, pos ) )
                         break;
                 float dir = area.max() < pos ? -1 : 1;
-                cor.ctl.switch_to_current_control( iclk.get_us(), dir * current );
+
+                p->set_goal_current( dir * current );
                 cb();
         }
-        cor.ctl.switch_to_current_control( 0_us, 0 );
+        p->set_goal_current( 0 );
         end = iclk.get_us() + 150_ms;
         while ( iclk.get_us() < end )
                 cb();
-        cor.ctl.switch_to_power_control( 0_pwr );
+        if ( cor.gov_.deactivate() != SUCCESS )
+                fw::stop_exec();
 }
 
 }  // namespace servio::ftest

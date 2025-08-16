@@ -4,6 +4,7 @@
 #include "../../drv/callbacks.hpp"
 #include "../../drv/interfaces.hpp"
 #include "../../drv/retainers.hpp"
+#include "../../gov/power/power.hpp"
 #include "../../plt/platform.hpp"
 #include "../utest.hpp"
 #include "./base.hpp"
@@ -158,9 +159,13 @@ struct profile
         {
                 auto&     curr_cb = curr.get_current_callback();
                 em::defer d2      = drv::retain_callback( curr );
-                em::defer d       = setup_poweroff( cor.ctl );
+                em::defer d       = setup_poweroff( cor.gov_ );
 
-                cor.ctl.switch_to_power_control( p_max );
+                cor.gov_.activate( "power", {} );
+                auto* p = dynamic_cast< gov::pow::_power_gov* >( cor.gov_.active_governor() );
+                co_await t::expect( ctx.coll, p != nullptr );
+
+                p->power                = p_max;
                 std::size_t     write_i = 0;
                 drv::current_cb ccb{ [&]( uint32_t val, std::span< uint16_t > data ) {
                         curr_cb.on_value_irq( val, data );

@@ -23,7 +23,7 @@ struct meas_cur_test
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {
-                setup_poweroff( cor.ctl );
+                setup_poweroff( cor.gov_ );
 
                 em::defer             d = drv::retain_callback( curr );
                 drv::empty_current_cb ccb;
@@ -63,7 +63,7 @@ struct meas_pos_test
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {
-                setup_poweroff( cor.ctl );
+                setup_poweroff( cor.gov_ );
                 em::defer d = drv::retain_callback( curr );
 
                 drv::empty_current_cb ccb;
@@ -97,7 +97,7 @@ struct meas_vel_test
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {
-                setup_poweroff( cor.ctl );
+                setup_poweroff( cor.gov_ );
                 em::defer d = drv::retain_callback( curr );
 
                 drv::empty_current_cb ccb;

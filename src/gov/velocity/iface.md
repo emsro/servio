@@ -26,11 +26,11 @@ Get a configuration field
 
 - _field_: Configuration field to get
   - type: _string_
-### cmd: cfg list5 <offset = 0>
+### cmd: cfg list <index = 0>
 
-List subset of configuration fields
+List X-th configuration field
 
-- _offset_: Offset for the configuration fields to list
+- _index_: Index for the configuration field to list, returns nothing in case of out of range index
   - type: _int32_t_
 
 <!-- GEN END HERE -->

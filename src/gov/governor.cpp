@@ -4,20 +4,17 @@
 namespace servio::gov
 {
 
-static zll::ll_list< governor > governor_registry;
+static zll::ll_list< governor_factory > governor_factory_registry;
 
-governor* find_governor( std::string_view id )
+void register_factory( governor_factory& factory )
 {
-        if ( governor_registry.empty() )
-                return nullptr;
-        return find_if_node( governor_registry.front(), [&]( auto const& gov ) {
-                return gov.name() == id;
-        } );
+        governor_factory_registry.link_back( factory );
 }
 
-void register_governor( governor& gov )
+void for_each_factory( em::function_view< void( governor_factory& ) > fn )
 {
-        governor_registry.link_back( gov );
+        for ( governor_factory& factory : governor_factory_registry )
+                fn( factory );
 }
 
 }  // namespace servio::gov

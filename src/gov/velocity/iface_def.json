@@ -48,15 +48,15 @@
                     ]
                 },
                 {
-                    "name": "list5",
+                    "name": "list",
                     "type": "arg",
-                    "desc": "List subset of configuration fields",
+                    "desc": "List X-th configuration field",
                     "args": [
                         {
-                            "name": "offset",
+                            "name": "index",
                             "type": "int32_t",
                             "default": 0,
-                            "desc": "Offset for the configuration fields to list"
+                            "desc": "Index for the configuration field to list, returns nothing in case of out of range index"
                         }
                     ]
                 }

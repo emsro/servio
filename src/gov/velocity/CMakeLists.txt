@@ -12,7 +12,7 @@ servio_gen_iface(
 servio_add_library(
   TARGET velgovlib
   SOURCES velocity.cpp parse.cpp
-  LIBS gvnrlib vari
+  LIBS govlib vari
   OPTS -Os)
 add_dependencies(velgovlib vel_cfg_def vel_iface_def)
 

@@ -108,10 +108,6 @@ struct _convert_type_impl< property >
 constexpr parse_status _convert( string const& src, property& dst )
 {
 
-        if ( src == "mode" ) {
-                dst = property::mode;
-                return parse_status::SUCCESS;
-        }
         if ( src == "current" ) {
                 dst = property::current;
                 return parse_status::SUCCESS;
@@ -135,80 +131,71 @@ constexpr parse_status _convert( string const& src, property& dst )
         return parse_status::UNKNOWN_VALUE;
 }
 
-static std::tuple< mode_disengaged_stmt, parse_status > _mode_disengaged( arg_parser ap )
+static std::tuple< gov_activate_stmt, parse_status > _gov_activate( arg_parser ap )
 {
 
-        mode_disengaged_stmt     res;
+        gov_activate_stmt        res;
+        std::array< arg_def, 1 > arg_defs = {
+            arg_def{ .st = arg_status::MISSING, .kw = "governor", .val = res.governor } };
+        parse_status st = std::move( ap ).parse_args( arg_defs );
+
+        return { std::move( res ), st };
+}
+
+static std::tuple< gov_deactivate_stmt, parse_status > _gov_deactivate( arg_parser ap )
+{
+
+        gov_deactivate_stmt      res;
         std::array< arg_def, 0 > arg_defs = {};
         parse_status             st       = std::move( ap ).parse_args( arg_defs );
 
-        return { res, st };
+        return { std::move( res ), st };
 }
 
-static std::tuple< mode_power_stmt, parse_status > _mode_power( arg_parser ap )
+static std::tuple< gov_active_stmt, parse_status > _gov_active( arg_parser ap )
 {
 
-        mode_power_stmt          res;
+        gov_active_stmt          res;
+        std::array< arg_def, 0 > arg_defs = {};
+        parse_status             st       = std::move( ap ).parse_args( arg_defs );
+
+        return { std::move( res ), st };
+}
+
+static std::tuple< gov_list_stmt, parse_status > _gov_list( arg_parser ap )
+{
+
+        gov_list_stmt            res;
         std::array< arg_def, 1 > arg_defs = {
-            arg_def{ .st = arg_status::DEFAULT, .kw = "power", .val = res.power } };
+            arg_def{ .st = arg_status::MISSING, .kw = "index", .val = res.index } };
         parse_status st = std::move( ap ).parse_args( arg_defs );
 
-        return { res, st };
+        return { std::move( res ), st };
 }
 
-static std::tuple< mode_current_stmt, parse_status > _mode_current( arg_parser ap )
+static std::tuple< gov_stmt, parse_status > _gov( cmd_parser p )
 {
-
-        mode_current_stmt        res;
-        std::array< arg_def, 1 > arg_defs = {
-            arg_def{ .st = arg_status::DEFAULT, .kw = "current", .val = res.current } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
-
-        return { res, st };
-}
-
-static std::tuple< mode_velocity_stmt, parse_status > _mode_velocity( arg_parser ap )
-{
-
-        mode_velocity_stmt       res;
-        std::array< arg_def, 1 > arg_defs = {
-            arg_def{ .st = arg_status::DEFAULT, .kw = "velocity", .val = res.velocity } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
-
-        return { res, st };
-}
-
-static std::tuple< mode_position_stmt, parse_status > _mode_position( arg_parser ap )
-{
-
-        mode_position_stmt       res;
-        std::array< arg_def, 1 > arg_defs = {
-            arg_def{ .st = arg_status::DEFAULT, .kw = "position", .val = res.position } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
-
-        return { res, st };
-}
-
-static std::tuple< mode_stmt, parse_status > _mode( cmd_parser p )
-{
-        mode_stmt    res;
+        gov_stmt     res;
         auto         id = p.next_cmd();
         parse_status st = parse_status::UNKNOWN_CMD;
-        if ( !id )
-                return { res, parse_status::CMD_MISSING };
-        else if ( *id == "disengaged" )
-                std::tie( res.sub, st ) = _mode_disengaged( std::move( p ) );
-        else if ( *id == "power" )
-                std::tie( res.sub, st ) = _mode_power( std::move( p ) );
-        else if ( *id == "current" )
-                std::tie( res.sub, st ) = _mode_current( std::move( p ) );
-        else if ( *id == "velocity" )
-                std::tie( res.sub, st ) = _mode_velocity( std::move( p ) );
-        else if ( *id == "position" )
-                std::tie( res.sub, st ) = _mode_position( std::move( p ) );
-        else
-                return { res, parse_status::UNKNOWN_CMD };
-        return { res, st };
+        if ( !id ) {
+                return { std::move( res ), parse_status::CMD_MISSING };
+        } else if ( *id == "activate" ) {
+                std::tie( res.sub, st ) = _gov_activate( std::move( p ) );
+        } else if ( *id == "deactivate" ) {
+                std::tie( res.sub, st ) = _gov_deactivate( std::move( p ) );
+        } else if ( *id == "active" ) {
+                std::tie( res.sub, st ) = _gov_active( std::move( p ) );
+        } else if ( *id == "list" ) {
+                std::tie( res.sub, st ) = _gov_list( std::move( p ) );
+        } else {
+                st      = parse_status::SUCCESS;
+                res.sub = gov_forward{
+                    .cmd    = *id,
+                    .parser = std::move( p ),
+                };
+        }
+        return { std::move( res ), st };
 }
 
 static std::tuple< prop_stmt, parse_status > _prop( arg_parser ap )
@@ -222,7 +209,7 @@ static std::tuple< prop_stmt, parse_status > _prop( arg_parser ap )
         if ( st == parse_status::SUCCESS )
                 st = _convert( name, res.name );
 
-        return { res, st };
+        return { std::move( res ), st };
 }
 
 static std::tuple< cfg_set_stmt, parse_status > _cfg_set( arg_parser ap )
@@ -234,7 +221,7 @@ static std::tuple< cfg_set_stmt, parse_status > _cfg_set( arg_parser ap )
             arg_def{ .st = arg_status::MISSING, .kw = "value", .val = res.value } };
         parse_status st = std::move( ap ).parse_args( arg_defs );
 
-        return { res, st };
+        return { std::move( res ), st };
 }
 
 static std::tuple< cfg_get_stmt, parse_status > _cfg_get( arg_parser ap )
@@ -245,18 +232,18 @@ static std::tuple< cfg_get_stmt, parse_status > _cfg_get( arg_parser ap )
             arg_def{ .st = arg_status::MISSING, .kw = "field", .val = res.field } };
         parse_status st = std::move( ap ).parse_args( arg_defs );
 
-        return { res, st };
+        return { std::move( res ), st };
 }
 
-static std::tuple< cfg_list5_stmt, parse_status > _cfg_list5( arg_parser ap )
+static std::tuple< cfg_list_stmt, parse_status > _cfg_list( arg_parser ap )
 {
 
-        cfg_list5_stmt           res;
+        cfg_list_stmt            res;
         std::array< arg_def, 1 > arg_defs = {
-            arg_def{ .st = arg_status::DEFAULT, .kw = "offset", .val = res.offset } };
+            arg_def{ .st = arg_status::DEFAULT, .kw = "index", .val = res.index } };
         parse_status st = std::move( ap ).parse_args( arg_defs );
 
-        return { res, st };
+        return { std::move( res ), st };
 }
 
 static std::tuple< cfg_commit_stmt, parse_status > _cfg_commit( arg_parser ap )
@@ -266,7 +253,7 @@ static std::tuple< cfg_commit_stmt, parse_status > _cfg_commit( arg_parser ap )
         std::array< arg_def, 0 > arg_defs = {};
         parse_status             st       = std::move( ap ).parse_args( arg_defs );
 
-        return { res, st };
+        return { std::move( res ), st };
 }
 
 static std::tuple< cfg_clear_stmt, parse_status > _cfg_clear( arg_parser ap )
@@ -276,7 +263,7 @@ static std::tuple< cfg_clear_stmt, parse_status > _cfg_clear( arg_parser ap )
         std::array< arg_def, 0 > arg_defs = {};
         parse_status             st       = std::move( ap ).parse_args( arg_defs );
 
-        return { res, st };
+        return { std::move( res ), st };
 }
 
 static std::tuple< cfg_stmt, parse_status > _cfg( cmd_parser p )
@@ -285,20 +272,20 @@ static std::tuple< cfg_stmt, parse_status > _cfg( cmd_parser p )
         auto         id = p.next_cmd();
         parse_status st = parse_status::UNKNOWN_CMD;
         if ( !id )
-                return { res, parse_status::CMD_MISSING };
+                return { std::move( res ), parse_status::CMD_MISSING };
         else if ( *id == "set" )
                 std::tie( res.sub, st ) = _cfg_set( std::move( p ) );
         else if ( *id == "get" )
                 std::tie( res.sub, st ) = _cfg_get( std::move( p ) );
-        else if ( *id == "list5" )
-                std::tie( res.sub, st ) = _cfg_list5( std::move( p ) );
+        else if ( *id == "list" )
+                std::tie( res.sub, st ) = _cfg_list( std::move( p ) );
         else if ( *id == "commit" )
                 std::tie( res.sub, st ) = _cfg_commit( std::move( p ) );
         else if ( *id == "clear" )
                 std::tie( res.sub, st ) = _cfg_clear( std::move( p ) );
         else
-                return { res, parse_status::UNKNOWN_CMD };
-        return { res, st };
+                return { std::move( res ), parse_status::UNKNOWN_CMD };
+        return { std::move( res ), st };
 }
 
 static std::tuple< info_stmt, parse_status > _info( arg_parser ap )
@@ -308,7 +295,7 @@ static std::tuple< info_stmt, parse_status > _info( arg_parser ap )
         std::array< arg_def, 0 > arg_defs = {};
         parse_status             st       = std::move( ap ).parse_args( arg_defs );
 
-        return { res, st };
+        return { std::move( res ), st };
 }
 
 static std::tuple< stmt, parse_status > _root( cmd_parser p )
@@ -317,9 +304,9 @@ static std::tuple< stmt, parse_status > _root( cmd_parser p )
         auto         id = p.next_cmd();
         parse_status st = parse_status::UNKNOWN_CMD;
         if ( !id )
-                return { res, parse_status::CMD_MISSING };
-        else if ( *id == "mode" )
-                std::tie( res.sub, st ) = _mode( std::move( p ) );
+                return { std::move( res ), parse_status::CMD_MISSING };
+        else if ( *id == "gov" )
+                std::tie( res.sub, st ) = _gov( std::move( p ) );
         else if ( *id == "prop" )
                 std::tie( res.sub, st ) = _prop( std::move( p ) );
         else if ( *id == "cfg" )
@@ -327,17 +314,16 @@ static std::tuple< stmt, parse_status > _root( cmd_parser p )
         else if ( *id == "info" )
                 std::tie( res.sub, st ) = _info( std::move( p ) );
         else
-                return { res, parse_status::UNKNOWN_CMD };
-        return { res, st };
+                return { std::move( res ), parse_status::UNKNOWN_CMD };
+        return { std::move( res ), st };
 }
 
 // GEN END HERE
 
 }  // namespace
 
-vari::vval< stmt, invalid_stmt > parse( std::string_view inpt )
+vari::vval< stmt, invalid_stmt > parse( parser::parser& p )
 {
-        parser::parser p{ parser::lexer{ inpt } };
 
         auto [res, st] = _root( p );
         if ( st != parse_status::SUCCESS )

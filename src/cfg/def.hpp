@@ -56,41 +56,22 @@ using value_type = vari::typelist< uint32_t, float, bool, encoder_mode, string >
 // GEN BEGIN HERE
 enum class key : uint32_t
 {
-        model                          = 1,
-        id                             = 2,
-        group_id                       = 3,
-        encoder_mode                   = 4,
-        position_low_angle             = 11,
-        position_high_angle            = 12,
-        current_conv_scale             = 14,
-        current_conv_offset            = 15,
-        temp_conv_scale                = 16,
-        temp_conv_offset               = 17,
-        voltage_conv_scale             = 18,
-        invert_hbridge                 = 19,
-        current_loop_p                 = 30,
-        current_loop_i                 = 31,
-        current_loop_d                 = 32,
-        current_lim_min                = 33,
-        current_lim_max                = 34,
-        velocity_loop_p                = 40,
-        velocity_loop_i                = 41,
-        velocity_loop_d                = 42,
-        velocity_lim_min               = 43,
-        velocity_lim_max               = 44,
-        velocity_to_current_lim_scale  = 45,
-        position_loop_p                = 50,
-        position_loop_i                = 51,
-        position_loop_d                = 52,
-        position_lim_min               = 53,
-        position_lim_max               = 54,
-        position_to_velocity_lim_scale = 55,
-        static_friction_scale          = 60,
-        static_friction_decay          = 61,
-        minimum_voltage                = 62,
-        maximum_temperature            = 65,
-        moving_detection_step          = 66,
-        quad_encoder_range             = 80,
+        model                 = 1,
+        id                    = 2,
+        group_id              = 3,
+        encoder_mode          = 4,
+        position_low_angle    = 11,
+        position_high_angle   = 12,
+        current_conv_scale    = 14,
+        current_conv_offset   = 15,
+        temp_conv_scale       = 16,
+        temp_conv_offset      = 17,
+        voltage_conv_scale    = 18,
+        invert_hbridge        = 19,
+        minimum_voltage       = 62,
+        maximum_temperature   = 65,
+        moving_detection_step = 66,
+        quad_encoder_range    = 80,
 };
 
 constexpr std::string_view to_str( key k )
@@ -119,44 +100,6 @@ constexpr std::string_view to_str( key k )
                 return "voltage_conv_scale";
         if ( k == key::invert_hbridge )
                 return "invert_hbridge";
-        if ( k == key::current_loop_p )
-                return "current_loop_p";
-        if ( k == key::current_loop_i )
-                return "current_loop_i";
-        if ( k == key::current_loop_d )
-                return "current_loop_d";
-        if ( k == key::current_lim_min )
-                return "current_lim_min";
-        if ( k == key::current_lim_max )
-                return "current_lim_max";
-        if ( k == key::velocity_loop_p )
-                return "velocity_loop_p";
-        if ( k == key::velocity_loop_i )
-                return "velocity_loop_i";
-        if ( k == key::velocity_loop_d )
-                return "velocity_loop_d";
-        if ( k == key::velocity_lim_min )
-                return "velocity_lim_min";
-        if ( k == key::velocity_lim_max )
-                return "velocity_lim_max";
-        if ( k == key::velocity_to_current_lim_scale )
-                return "velocity_to_current_lim_scale";
-        if ( k == key::position_loop_p )
-                return "position_loop_p";
-        if ( k == key::position_loop_i )
-                return "position_loop_i";
-        if ( k == key::position_loop_d )
-                return "position_loop_d";
-        if ( k == key::position_lim_min )
-                return "position_lim_min";
-        if ( k == key::position_lim_max )
-                return "position_lim_max";
-        if ( k == key::position_to_velocity_lim_scale )
-                return "position_to_velocity_lim_scale";
-        if ( k == key::static_friction_scale )
-                return "static_friction_scale";
-        if ( k == key::static_friction_decay )
-                return "static_friction_decay";
         if ( k == key::minimum_voltage )
                 return "minimum_voltage";
         if ( k == key::maximum_temperature )
@@ -194,44 +137,6 @@ constexpr uint32_t key_to_id( key k )
                 return 18;
         if ( k == key::invert_hbridge )
                 return 19;
-        if ( k == key::current_loop_p )
-                return 30;
-        if ( k == key::current_loop_i )
-                return 31;
-        if ( k == key::current_loop_d )
-                return 32;
-        if ( k == key::current_lim_min )
-                return 33;
-        if ( k == key::current_lim_max )
-                return 34;
-        if ( k == key::velocity_loop_p )
-                return 40;
-        if ( k == key::velocity_loop_i )
-                return 41;
-        if ( k == key::velocity_loop_d )
-                return 42;
-        if ( k == key::velocity_lim_min )
-                return 43;
-        if ( k == key::velocity_lim_max )
-                return 44;
-        if ( k == key::velocity_to_current_lim_scale )
-                return 45;
-        if ( k == key::position_loop_p )
-                return 50;
-        if ( k == key::position_loop_i )
-                return 51;
-        if ( k == key::position_loop_d )
-                return 52;
-        if ( k == key::position_lim_min )
-                return 53;
-        if ( k == key::position_lim_max )
-                return 54;
-        if ( k == key::position_to_velocity_lim_scale )
-                return 55;
-        if ( k == key::static_friction_scale )
-                return 60;
-        if ( k == key::static_friction_decay )
-                return 61;
         if ( k == key::minimum_voltage )
                 return 62;
         if ( k == key::maximum_temperature )
@@ -269,44 +174,6 @@ constexpr key id_to_key( uint32_t id )
                 return key::voltage_conv_scale;
         if ( id == 19 )
                 return key::invert_hbridge;
-        if ( id == 30 )
-                return key::current_loop_p;
-        if ( id == 31 )
-                return key::current_loop_i;
-        if ( id == 32 )
-                return key::current_loop_d;
-        if ( id == 33 )
-                return key::current_lim_min;
-        if ( id == 34 )
-                return key::current_lim_max;
-        if ( id == 40 )
-                return key::velocity_loop_p;
-        if ( id == 41 )
-                return key::velocity_loop_i;
-        if ( id == 42 )
-                return key::velocity_loop_d;
-        if ( id == 43 )
-                return key::velocity_lim_min;
-        if ( id == 44 )
-                return key::velocity_lim_max;
-        if ( id == 45 )
-                return key::velocity_to_current_lim_scale;
-        if ( id == 50 )
-                return key::position_loop_p;
-        if ( id == 51 )
-                return key::position_loop_i;
-        if ( id == 52 )
-                return key::position_loop_d;
-        if ( id == 53 )
-                return key::position_lim_min;
-        if ( id == 54 )
-                return key::position_lim_max;
-        if ( id == 55 )
-                return key::position_to_velocity_lim_scale;
-        if ( id == 60 )
-                return key::static_friction_scale;
-        if ( id == 61 )
-                return key::static_friction_decay;
         if ( id == 62 )
                 return key::minimum_voltage;
         if ( id == 65 )
@@ -318,9 +185,23 @@ constexpr key id_to_key( uint32_t id )
         return {};
 }
 
-constexpr std::array< uint32_t, 35 > ids = {
-    1,  2,  3,  4,  11, 12, 14, 15, 16, 17, 18, 19, 30, 31, 32, 33, 34, 40,
-    41, 42, 43, 44, 45, 50, 51, 52, 53, 54, 55, 60, 61, 62, 65, 66, 80,
+constexpr std::array< uint32_t, 16 > ids = {
+    1,
+    2,
+    3,
+    4,
+    11,
+    12,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    62,
+    65,
+    66,
+    80,
 };
 template < key K >
 struct key_trait;
@@ -398,120 +279,6 @@ struct key_trait< key::invert_hbridge >
 };
 
 template <>
-struct key_trait< key::current_loop_p >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::current_loop_i >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::current_loop_d >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::current_lim_min >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::current_lim_max >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::velocity_loop_p >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::velocity_loop_i >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::velocity_loop_d >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::velocity_lim_min >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::velocity_lim_max >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::velocity_to_current_lim_scale >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::position_loop_p >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::position_loop_i >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::position_loop_d >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::position_lim_min >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::position_lim_max >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::position_to_velocity_lim_scale >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::static_friction_scale >
-{
-        using type = float;
-};
-
-template <>
-struct key_trait< key::static_friction_decay >
-{
-        using type = float;
-};
-
-template <>
 struct key_trait< key::minimum_voltage >
 {
         using type = float;
@@ -538,7 +305,7 @@ struct key_trait< key::quad_encoder_range >
 struct map
 {
         using key_type                              = key;
-        static constexpr std::array< key, 35 > keys = {
+        static constexpr std::array< key, 16 > keys = {
             key::model,
             key::id,
             key::group_id,
@@ -551,25 +318,6 @@ struct map
             key::temp_conv_offset,
             key::voltage_conv_scale,
             key::invert_hbridge,
-            key::current_loop_p,
-            key::current_loop_i,
-            key::current_loop_d,
-            key::current_lim_min,
-            key::current_lim_max,
-            key::velocity_loop_p,
-            key::velocity_loop_i,
-            key::velocity_loop_d,
-            key::velocity_lim_min,
-            key::velocity_lim_max,
-            key::velocity_to_current_lim_scale,
-            key::position_loop_p,
-            key::position_loop_i,
-            key::position_loop_d,
-            key::position_lim_min,
-            key::position_lim_max,
-            key::position_to_velocity_lim_scale,
-            key::static_friction_scale,
-            key::static_friction_decay,
             key::minimum_voltage,
             key::maximum_temperature,
             key::moving_detection_step,
@@ -598,34 +346,7 @@ struct map
         // Voltage conversion scale factor for formula: V = ADC * scale
         float voltage_conv_scale = 1.0;
         // Invert direction of the H-bridge
-        bool  invert_hbridge = false;
-        float current_loop_p = 1.0;
-        float current_loop_i = 0.0001F;
-        float current_loop_d = 0.0;
-        // Soft limit for lowest current
-        float current_lim_min = -2.0;
-        // Soft limit for highest current
-        float current_lim_max = 2.0;
-        float velocity_loop_p = 1.0;
-        float velocity_loop_i = 0.000'000'2F;
-        float velocity_loop_d = 0.0;
-        // Soft limit for lowest velocity
-        float velocity_lim_min = -3.0;
-        // Soft limit for highest velocity
-        float velocity_lim_max = 3.0;
-        // Scaling of current limit derived from velocity limit
-        float velocity_to_current_lim_scale = 2.0;
-        float position_loop_p               = 0.2F;
-        float position_loop_i               = 0.000'000'02F;
-        float position_loop_d               = 0.0;
-        float position_lim_min              = 0.1F;
-        float position_lim_max              = 2.0F * pi - 0.1F;
-        // Scaling of velocity limit derived from position limit
-        float position_to_velocity_lim_scale = 2.0;
-        // Scaling of current in case of non-moving servo
-        float static_friction_scale = 3.0;
-        // Time required for the static friction compensation to decay to be ineffective
-        float static_friction_decay = 1.0;
+        bool invert_hbridge = false;
         // Minimum voltage for the servomotor to operate
         float minimum_voltage = 6.0;
         // Maximum temperature for the servomotor to operate
@@ -662,44 +383,6 @@ struct map
                         return voltage_conv_scale;
                 if constexpr ( K == key::invert_hbridge )
                         return invert_hbridge;
-                if constexpr ( K == key::current_loop_p )
-                        return current_loop_p;
-                if constexpr ( K == key::current_loop_i )
-                        return current_loop_i;
-                if constexpr ( K == key::current_loop_d )
-                        return current_loop_d;
-                if constexpr ( K == key::current_lim_min )
-                        return current_lim_min;
-                if constexpr ( K == key::current_lim_max )
-                        return current_lim_max;
-                if constexpr ( K == key::velocity_loop_p )
-                        return velocity_loop_p;
-                if constexpr ( K == key::velocity_loop_i )
-                        return velocity_loop_i;
-                if constexpr ( K == key::velocity_loop_d )
-                        return velocity_loop_d;
-                if constexpr ( K == key::velocity_lim_min )
-                        return velocity_lim_min;
-                if constexpr ( K == key::velocity_lim_max )
-                        return velocity_lim_max;
-                if constexpr ( K == key::velocity_to_current_lim_scale )
-                        return velocity_to_current_lim_scale;
-                if constexpr ( K == key::position_loop_p )
-                        return position_loop_p;
-                if constexpr ( K == key::position_loop_i )
-                        return position_loop_i;
-                if constexpr ( K == key::position_loop_d )
-                        return position_loop_d;
-                if constexpr ( K == key::position_lim_min )
-                        return position_lim_min;
-                if constexpr ( K == key::position_lim_max )
-                        return position_lim_max;
-                if constexpr ( K == key::position_to_velocity_lim_scale )
-                        return position_to_velocity_lim_scale;
-                if constexpr ( K == key::static_friction_scale )
-                        return static_friction_scale;
-                if constexpr ( K == key::static_friction_decay )
-                        return static_friction_decay;
                 if constexpr ( K == key::minimum_voltage )
                         return minimum_voltage;
                 if constexpr ( K == key::maximum_temperature )
@@ -737,44 +420,6 @@ struct map
                         return &voltage_conv_scale;
                 case key::invert_hbridge:
                         return &invert_hbridge;
-                case key::current_loop_p:
-                        return &current_loop_p;
-                case key::current_loop_i:
-                        return &current_loop_i;
-                case key::current_loop_d:
-                        return &current_loop_d;
-                case key::current_lim_min:
-                        return &current_lim_min;
-                case key::current_lim_max:
-                        return &current_lim_max;
-                case key::velocity_loop_p:
-                        return &velocity_loop_p;
-                case key::velocity_loop_i:
-                        return &velocity_loop_i;
-                case key::velocity_loop_d:
-                        return &velocity_loop_d;
-                case key::velocity_lim_min:
-                        return &velocity_lim_min;
-                case key::velocity_lim_max:
-                        return &velocity_lim_max;
-                case key::velocity_to_current_lim_scale:
-                        return &velocity_to_current_lim_scale;
-                case key::position_loop_p:
-                        return &position_loop_p;
-                case key::position_loop_i:
-                        return &position_loop_i;
-                case key::position_loop_d:
-                        return &position_loop_d;
-                case key::position_lim_min:
-                        return &position_lim_min;
-                case key::position_lim_max:
-                        return &position_lim_max;
-                case key::position_to_velocity_lim_scale:
-                        return &position_to_velocity_lim_scale;
-                case key::static_friction_scale:
-                        return &static_friction_scale;
-                case key::static_friction_decay:
-                        return &static_friction_decay;
                 case key::minimum_voltage:
                         return &minimum_voltage;
                 case key::maximum_temperature:
@@ -814,44 +459,6 @@ struct map
                         return &voltage_conv_scale;
                 case key::invert_hbridge:
                         return &invert_hbridge;
-                case key::current_loop_p:
-                        return &current_loop_p;
-                case key::current_loop_i:
-                        return &current_loop_i;
-                case key::current_loop_d:
-                        return &current_loop_d;
-                case key::current_lim_min:
-                        return &current_lim_min;
-                case key::current_lim_max:
-                        return &current_lim_max;
-                case key::velocity_loop_p:
-                        return &velocity_loop_p;
-                case key::velocity_loop_i:
-                        return &velocity_loop_i;
-                case key::velocity_loop_d:
-                        return &velocity_loop_d;
-                case key::velocity_lim_min:
-                        return &velocity_lim_min;
-                case key::velocity_lim_max:
-                        return &velocity_lim_max;
-                case key::velocity_to_current_lim_scale:
-                        return &velocity_to_current_lim_scale;
-                case key::position_loop_p:
-                        return &position_loop_p;
-                case key::position_loop_i:
-                        return &position_loop_i;
-                case key::position_loop_d:
-                        return &position_loop_d;
-                case key::position_lim_min:
-                        return &position_lim_min;
-                case key::position_lim_max:
-                        return &position_lim_max;
-                case key::position_to_velocity_lim_scale:
-                        return &position_to_velocity_lim_scale;
-                case key::static_friction_scale:
-                        return &static_friction_scale;
-                case key::static_friction_decay:
-                        return &static_friction_decay;
                 case key::minimum_voltage:
                         return &minimum_voltage;
                 case key::maximum_temperature:
@@ -890,44 +497,6 @@ struct map
                         return &voltage_conv_scale;
                 if ( id == 19 )
                         return &invert_hbridge;
-                if ( id == 30 )
-                        return &current_loop_p;
-                if ( id == 31 )
-                        return &current_loop_i;
-                if ( id == 32 )
-                        return &current_loop_d;
-                if ( id == 33 )
-                        return &current_lim_min;
-                if ( id == 34 )
-                        return &current_lim_max;
-                if ( id == 40 )
-                        return &velocity_loop_p;
-                if ( id == 41 )
-                        return &velocity_loop_i;
-                if ( id == 42 )
-                        return &velocity_loop_d;
-                if ( id == 43 )
-                        return &velocity_lim_min;
-                if ( id == 44 )
-                        return &velocity_lim_max;
-                if ( id == 45 )
-                        return &velocity_to_current_lim_scale;
-                if ( id == 50 )
-                        return &position_loop_p;
-                if ( id == 51 )
-                        return &position_loop_i;
-                if ( id == 52 )
-                        return &position_loop_d;
-                if ( id == 53 )
-                        return &position_lim_min;
-                if ( id == 54 )
-                        return &position_lim_max;
-                if ( id == 55 )
-                        return &position_to_velocity_lim_scale;
-                if ( id == 60 )
-                        return &static_friction_scale;
-                if ( id == 61 )
-                        return &static_friction_decay;
                 if ( id == 62 )
                         return &minimum_voltage;
                 if ( id == 65 )
@@ -965,44 +534,6 @@ struct map
                         return &voltage_conv_scale;
                 if ( id == 19 )
                         return &invert_hbridge;
-                if ( id == 30 )
-                        return &current_loop_p;
-                if ( id == 31 )
-                        return &current_loop_i;
-                if ( id == 32 )
-                        return &current_loop_d;
-                if ( id == 33 )
-                        return &current_lim_min;
-                if ( id == 34 )
-                        return &current_lim_max;
-                if ( id == 40 )
-                        return &velocity_loop_p;
-                if ( id == 41 )
-                        return &velocity_loop_i;
-                if ( id == 42 )
-                        return &velocity_loop_d;
-                if ( id == 43 )
-                        return &velocity_lim_min;
-                if ( id == 44 )
-                        return &velocity_lim_max;
-                if ( id == 45 )
-                        return &velocity_to_current_lim_scale;
-                if ( id == 50 )
-                        return &position_loop_p;
-                if ( id == 51 )
-                        return &position_loop_i;
-                if ( id == 52 )
-                        return &position_loop_d;
-                if ( id == 53 )
-                        return &position_lim_min;
-                if ( id == 54 )
-                        return &position_lim_max;
-                if ( id == 55 )
-                        return &position_to_velocity_lim_scale;
-                if ( id == 60 )
-                        return &static_friction_scale;
-                if ( id == 61 )
-                        return &static_friction_decay;
                 if ( id == 62 )
                         return &minimum_voltage;
                 if ( id == 65 )
@@ -1040,44 +571,6 @@ struct map
                         return key::voltage_conv_scale;
                 if ( str == "invert_hbridge" )
                         return key::invert_hbridge;
-                if ( str == "current_loop_p" )
-                        return key::current_loop_p;
-                if ( str == "current_loop_i" )
-                        return key::current_loop_i;
-                if ( str == "current_loop_d" )
-                        return key::current_loop_d;
-                if ( str == "current_lim_min" )
-                        return key::current_lim_min;
-                if ( str == "current_lim_max" )
-                        return key::current_lim_max;
-                if ( str == "velocity_loop_p" )
-                        return key::velocity_loop_p;
-                if ( str == "velocity_loop_i" )
-                        return key::velocity_loop_i;
-                if ( str == "velocity_loop_d" )
-                        return key::velocity_loop_d;
-                if ( str == "velocity_lim_min" )
-                        return key::velocity_lim_min;
-                if ( str == "velocity_lim_max" )
-                        return key::velocity_lim_max;
-                if ( str == "velocity_to_current_lim_scale" )
-                        return key::velocity_to_current_lim_scale;
-                if ( str == "position_loop_p" )
-                        return key::position_loop_p;
-                if ( str == "position_loop_i" )
-                        return key::position_loop_i;
-                if ( str == "position_loop_d" )
-                        return key::position_loop_d;
-                if ( str == "position_lim_min" )
-                        return key::position_lim_min;
-                if ( str == "position_lim_max" )
-                        return key::position_lim_max;
-                if ( str == "position_to_velocity_lim_scale" )
-                        return key::position_to_velocity_lim_scale;
-                if ( str == "static_friction_scale" )
-                        return key::static_friction_scale;
-                if ( str == "static_friction_decay" )
-                        return key::static_friction_decay;
                 if ( str == "minimum_voltage" )
                         return key::minimum_voltage;
                 if ( str == "maximum_temperature" )

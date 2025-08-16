@@ -81,6 +81,16 @@ struct cmd_parser
                 return arg_parser{ p_ };
         }
 
+        friend constexpr auto operator<=>( cmd_parser const& lh, cmd_parser const& rh ) noexcept
+        {
+                return &lh.p_ <=> &rh.p_;
+        }
+
+        friend constexpr auto operator==( cmd_parser const& lh, cmd_parser const& rh ) noexcept
+        {
+                return &lh.p_ == &rh.p_;
+        }
+
 private:
         parser::parser& p_;
 };

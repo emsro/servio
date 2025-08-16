@@ -25,10 +25,13 @@ struct current_ctl_test
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {
-                em::defer d = setup_poweroff( cor.ctl );
+                em::defer d = setup_poweroff( cor.gov_ );
 
                 float expected = 0.2F;
-                cor.ctl.switch_to_current_control( clk.get_us(), expected );
+                cor.gov_.activate( "current", {} );
+                auto* p = dynamic_cast< gov::curr::_current_gov* >( cor.gov_.active_governor() );
+                co_await ctx.expect( p != nullptr );
+                p->set_goal_current( expected );
 
                 float                        avg_curr = 0;
                 static constexpr std::size_t count    = 10000000;
@@ -62,13 +65,16 @@ struct sign_test
 
         t::coroutine< void > run( auto&, uctx& ctx )
         {
-                em::defer d = setup_poweroff( cor.ctl );
+                em::defer d = setup_poweroff( cor.gov_ );
                 rewind( cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.5f, [] {} );
 
                 t::node_id did =
                     co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
 
-                cor.ctl.switch_to_power_control( p_low / 2.F );
+                cor.gov_.activate( "power", {} );
+                auto* p = dynamic_cast< gov::pow::_power_gov* >( cor.gov_.active_governor() );
+                co_await ctx.expect( p != nullptr );
+                p->power = p_low / 2.F;
                 drv::wait_for( clk, 200_ms );
                 std::size_t count = 50;
 
@@ -93,7 +99,7 @@ struct sign_test
                         ctx.coll.set( nid, "vel", vel );
                 }
                 co_await ctx.expect( std::signbit( csum ) == std::signbit( vsum ) );
-                cor.ctl.switch_to_power_control( 0_pwr );
+                co_await ctx.expect( cor.gov_.deactivate() == SUCCESS );
         }
 };
 

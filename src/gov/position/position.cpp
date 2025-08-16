@@ -3,8 +3,11 @@
 
 namespace servio::gov::pos
 {
+namespace
+{
 
-static _position_gov    position_gov;
-static governor_autoreg position_gov_autoreg{ position_gov };
+auto_factory< _position_gov > position_gov_factory;
+
+}  // namespace
 
 }  // namespace servio::gov::pos

@@ -16,53 +16,7 @@ using namespace std::string_view_literals;
 
 namespace
 {
-
-void handle_set_mode(
-    microseconds                          now,
-    ctl::control&                         ctl,
-    vari::vref< iface::mode_stmts const > inpt,
-    iface::root_ser                       out )
-{
-        inpt.visit(
-            [&]( iface::mode_disengaged_stmt const& ) {
-                    ctl.disengage();
-            },
-            [&]( iface::mode_power_stmt const& kv ) {
-                    ctl.switch_to_power_control( pwr( kv.power ) );
-            },
-            [&]( iface::mode_current_stmt const& kv ) {
-                    ctl.switch_to_current_control( now, kv.current );
-            },
-            [&]( iface::mode_velocity_stmt const& kv ) {
-                    ctl.switch_to_velocity_control( now, kv.velocity );
-            },
-            [&]( iface::mode_position_stmt const& kv ) {
-                    ctl.switch_to_position_control( now, kv.position );
-            } );
-
-        std::move( out ).ok();
-}
-
-std::string_view get_mode( ctl::control const& ctl )
-{
-        switch ( ctl.get_mode() ) {
-        case control_mode::DISENGAGED:
-                return "disengaged";
-        case control_mode::POWER:
-                return "power";
-        case control_mode::CURRENT:
-                return "current";
-        case control_mode::VELOCITY:
-                return "velocity";
-        case control_mode::POSITION:
-                return "position";
-        }
-        // XXX: maybe something better?
-        return "disengaged";
-}
-
 void handle_get_property(
-    ctl::control const&          ctl,
     mtr::metrics const&          met,
     cnv::converter const&        conv,
     drv::get_pos_iface const&    pos_drv,
@@ -74,9 +28,6 @@ void handle_get_property(
     iface::root_ser              out )
 {
         switch ( inpt ) {
-        case iface::property::mode:
-                std::move( out ).ok()( get_mode( ctl ) );
-                break;
         case iface::property::current:
                 std::move( out ).ok()( cnv::current( conv, curr_drv, motor ) );
                 break;
@@ -101,12 +52,11 @@ void handle_get_property(
 void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, iface::root_ser out )
 {
         inpt.visit(
-            [&]( iface::mode_stmt const& m ) {
-                    handle_set_mode( dis.now, dis.ctl, m.sub, std::move( out ) );
+            [&]( iface::gov_stmt const& ) {
+                    // XXX
             },
             [&]( iface::prop_stmt const& p ) {
                     handle_get_property(
-                        dis.ctl,
                         dis.met,
                         dis.conv,
                         dis.pos_drv,
@@ -120,7 +70,6 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, ifa
             [&]( iface::cfg_stmt const& cfg ) {
                     cfg::dispatcher cfg_disp{
                         .m     = dis.cfg_map,
-                        .ctl   = dis.ctl,
                         .conv  = dis.conv,
                         .met   = dis.met,
                         .mon   = dis.mon,
@@ -137,9 +86,9 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, ifa
                         [&]( iface::cfg_get_stmt const& s ) {
                                 cfg::cmd_iface::on_cmd_get( cfg_disp.m, s.field, std::move( out ) );
                         },
-                        [&]( iface::cfg_list5_stmt const& st ) {
-                                cfg::cmd_iface::on_cmd_list5< cfg::map >(
-                                    st.offset, std::move( out ) );
+                        [&]( iface::cfg_list_stmt const& st ) {
+                                cfg::cmd_iface::on_cmd_list< cfg::map >(
+                                    st.index, std::move( out ) );
                         },
                         [&]( iface::cfg_commit_stmt const& ) {
                                 if ( dis.stor_drv.store_cfg( dis.cfg_map ) == status::SUCCESS )
@@ -174,7 +123,8 @@ std::tuple< status, em::view< std::byte* > > handle_message(
         json::jval_ser out{ output_buffer };
         using R = status;
 
-        auto res = iface::parse( inpt ).visit(
+        parser::parser p{ inpt };
+        auto           res = iface::parse( p ).visit(
             [&]( vari::vref< iface::stmt > s ) -> R {
                     handle_message( dis, s->sub, out );
                     return SUCCESS;

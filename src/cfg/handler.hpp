@@ -91,12 +91,12 @@ struct cmd_iface
         }
 
         template < typename T >
-        static void on_cmd_list5( int32_t offset, servio::iface::root_ser out )
+        static void on_cmd_list( int32_t offset, servio::iface::root_ser out )
         {
                 auto f = []( uint32_t k ) -> std::string_view {
                         return to_str( T::keys[k] );
                 };
-                return on_cmd_list5( offset, T::keys.size(), f, std::move( out ) );
+                return on_cmd_list( offset, T::keys.size(), f, std::move( out ) );
         }
 
         template < typename T >
@@ -144,7 +144,7 @@ private:
                 servio::cfg::store_value( x ).visit( as );
         }
 
-        static void on_cmd_list5(
+        static void on_cmd_list(
             int32_t                                           offset,
             std::size_t                                       size,
             em::function_view< std::string_view( uint32_t ) > key_to_str,
@@ -157,12 +157,9 @@ private:
                 auto as  = std::move( out ).ok();
                 auto sub = as.sub();
 
-                for ( int32_t i = 0; i < 5; ++i ) {
-                        int32_t j = offset + i;
-                        if ( j >= (int32_t) size )
-                                break;
-                        sub( key_to_str( (uint32_t) j ) );
-                }
+                if ( offset >= (int32_t) size )
+                        return;
+                sub( key_to_str( (uint32_t) offset ) );
         }
 };
 

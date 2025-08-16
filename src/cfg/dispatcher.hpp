@@ -1,8 +1,10 @@
 
 #pragma once
 
-#include "../core/core.hpp"
+#include "../cnv/converter.hpp"
 #include "../core/drivers.hpp"
+#include "../mon/monitor.hpp"
+#include "../mtr/metrics.hpp"
 #include "./def.hpp"
 
 namespace servio::cfg
@@ -10,9 +12,7 @@ namespace servio::cfg
 
 struct dispatcher
 {
-
         map&                  m;
-        ctl::control&         ctl;
         cnv::converter&       conv;
         mtr::metrics&         met;
         mon::monitor&         mon;
@@ -35,7 +35,5 @@ struct dispatcher
         void full_apply();
         void apply( key k );
 };
-
-void apply( ctl::control& ctl, map const& m, key k );
 
 }  // namespace servio::cfg

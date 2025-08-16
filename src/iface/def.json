@@ -5,10 +5,6 @@
             "kind": "enum",
             "values": [
                 {
-                    "key": "mode",
-                    "desc": "Mode of the servomotor"
-                },
-                {
                     "key": "current",
                     "desc": "Actual current flowing through the servomotor"
                 },
@@ -33,67 +29,39 @@
     ],
     "cmds": [
         {
-            "name": "mode",
-            "type": "group",
-            "desc": "Set mode of the servomotor",
+            "name": "gov",
+            "type": "forward_group",
+            "desc": "Control the governors",
             "cmds": [
                 {
-                    "name": "disengaged",
-                    "desc": "Set the servomotor to disengaged mode, no power applied"
-                },
-                {
-                    "name": "power",
-                    "desc": "Regulate the power applied to the servomotor. Sign of value controls direction of the movement. 1.0 is full power, 0.0 is no power, -1.0 is full reverse power.",
+                    "name": "activate",
+                    "desc": "Activate a governor",
                     "type": "arg",
                     "args": [
                         {
-                            "name": "power",
-                            "type": "float",
-                            "default": 0,
-                            "unit": "",
-                            "desc": "Power between -1.0 and 1.0"
+                            "name": "governor",
+                            "type": "string",
+                            "desc": "Name of the governor to activate"
                         }
                     ]
                 },
                 {
-                    "name": "current",
-                    "desc": "Regulate the current applied to the servomotor. Sign of value controls direction of the movement. Value is clamped based on current limits configuration.",
-                    "type": "arg",
-                    "args": [
-                        {
-                            "name": "current",
-                            "type": "float",
-                            "default": 0.0,
-                            "unit": "A",
-                            "desc": "Current level to set"
-                        }
-                    ]
+                    "name": "deactivate",
+                    "desc": "Deactivate currently active governor"
                 },
                 {
-                    "name": "velocity",
-                    "desc": "Regulate the velocity applied to the servomotor. Value is clamped based on velocity limits configuration.",
-                    "type": "arg",
-                    "args": [
-                        {
-                            "name": "velocity",
-                            "type": "float",
-                            "default": 0.0,
-                            "unit": "rad/s",
-                            "desc": "Velocity to set"
-                        }
-                    ]
+                    "name": "active",
+                    "desc": "Returns name of active governor or nothing"
                 },
                 {
-                    "name": "position",
-                    "desc": "Regulate the position applied to the servomotor. The position will be clamped to fit within the current position limits. The way it is mapped depends on configuration of position_low_angle and position_high_angle.",
+                    "name": "list",
+                    "desc": "List X-th governor",
                     "type": "arg",
                     "args": [
                         {
-                            "name": "position",
-                            "type": "float",
-                            "default": 0.0,
-                            "unit": "rad",
-                            "desc": "Position to set"
+                            "name": "index",
+                            "type": "int32_t",
+                            "desc": "Index of the governor to list, returns nothing in case of out of range index"
                         }
                     ]
                 }
@@ -146,15 +114,15 @@
                     ]
                 },
                 {
-                    "name": "list5",
+                    "name": "list",
                     "type": "arg",
-                    "desc": "List subset of configuration fields",
+                    "desc": "List X-th configuration field",
                     "args": [
                         {
-                            "name": "offset",
+                            "name": "index",
                             "type": "int32_t",
                             "default": 0,
-                            "desc": "Offset for the configuration fields to list"
+                            "desc": "Index for the configuration field to list, returns nothing in case of out of range index"
                         }
                     ]
                 },

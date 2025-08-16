@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../base.hpp"
-#include "../ctl/control.hpp"
+#include "../gov/governor_manager.hpp"
 #include "../status.hpp"
 
 #include <emlabcpp/defer.h>
@@ -78,10 +78,11 @@ store_data( em::pmr::memory_resource&, uctx& ctx, std::string_view key, auto&& d
                 ctx.coll.append( id, b );
 }
 
-inline auto setup_poweroff( ctl::control& ctl )
+inline auto setup_poweroff( gov::governor_manager& gv )
 {
         return em::defer{ [&] {
-                ctl.switch_to_power_control( pwr{ 0 } );
+                // XXX: maybe improve error handling?
+                std::ignore = gv.deactivate();
         } };
 }
 

@@ -60,7 +60,6 @@ Wildcard token for accepting: `string`, `float`, `int32_t`, `bool`
 <!-- GEN BEGIN HERE -->
 ### enum property
 
- - _mode_: Mode of the servomotor
  - _current_: Actual current flowing through the servomotor
  - _vcc_: Actual input voltage
  - _temp_: Actual temperature of the MCU
@@ -69,42 +68,30 @@ Wildcard token for accepting: `string`, `float`, `int32_t`, `bool`
 
 Commands
 ========
-## group: mode
+## group: gov
 
-Set mode of the servomotor
+Control the governors
 
-### cmd: mode disengaged
+### cmd: gov activate <governor>
 
-Set the servomotor to disengaged mode, no power applied
+Activate a governor
 
-### cmd: mode power <power = 0>
+- _governor_: Name of the governor to activate
+  - type: _string_
+### cmd: gov deactivate
 
-Regulate the power applied to the servomotor. Sign of value controls direction of the movement. 1.0 is full power, 0.0 is no power, -1.0 is full reverse power.
+Deactivate currently active governor
 
-- _power_: Power between -1.0 and 1.0
-  - type: _float_
-  - unit: __
-### cmd: mode current <current = 0.0>
+### cmd: gov active
 
-Regulate the current applied to the servomotor. Sign of value controls direction of the movement. Value is clamped based on current limits configuration.
+Returns name of active governor or nothing
 
-- _current_: Current level to set
-  - type: _float_
-  - unit: _A_
-### cmd: mode velocity <velocity = 0.0>
+### cmd: gov list <index>
 
-Regulate the velocity applied to the servomotor. Value is clamped based on velocity limits configuration.
+List X-th governor
 
-- _velocity_: Velocity to set
-  - type: _float_
-  - unit: _rad/s_
-### cmd: mode position <position = 0.0>
-
-Regulate the position applied to the servomotor. The position will be clamped to fit within the current position limits. The way it is mapped depends on configuration of position_low_angle and position_high_angle.
-
-- _position_: Position to set
-  - type: _float_
-  - unit: _rad_
+- _index_: Index of the governor to list, returns nothing in case of out of range index
+  - type: _int32_t_
 ## cmd: prop <name>
 
 Get properties of the servomotor
@@ -129,23 +116,22 @@ Get a configuration field
 
 - _field_: Configuration field to get
   - type: _string_
-### cmd: cfg list5 <offset = 0>
+### cmd: cfg list <index = 0>
 
-List subset of configuration fields
+List X-th configuration field
 
-- _offset_: Offset for the configuration fields to list
-  - type: _int32_t_
-### cmd: cfg commit
+- _index_: Index for the configuration field to list, returns nothing in case of out of range index
+  - type:
+_int32_t_## #cmd : cfg commit
 
-Commit the current configuration changes to memory
+                       Commit the current configuration changes to memory
 
-### cmd: cfg clear
+                   ## #cmd : cfg clear
 
-Clear the current configuration from memory
+                                 Clear the current configuration from memory
 
-## cmd: info
+                             ##cmd : info
 
-Get information about the servomotor
+                                         Get information about the servomotor
 
-
-<!-- GEN END HERE -->
+                                     < !--GEN END HERE-- >
