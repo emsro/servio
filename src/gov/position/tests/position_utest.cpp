@@ -20,14 +20,19 @@ TEST_F( gov_fixture, pos )
                         EXPECT_EQ( s, SUCCESS ) << "cmd: " << cmd << "\n";
                 };
 
-                do_cmd( "cfg set curr_loop_p 0.0625" );
-                do_cmd( "cfg set curr_loop_i 0.000'000'5" );
-                do_cmd( "cfg set curr_loop_d 0.0" );
-                do_cmd( "cfg set pos_loop_p 2.0" );
-                do_cmd( "cfg set pos_loop_i 0.0" );
-                do_cmd( "cfg set pos_loop_d 0.0" );
-                do_cmd( "cfg set static_friction_scale 1" );
-                do_cmd( "cfg set pos_to_curr_lim_scale 10" );
+                auto set_cfg = [&]( std::string_view key, auto value ) {
+                        auto s = gov.get_cfg()->on_cmd_set( key, value );
+                        EXPECT_TRUE( !s );
+                };
+
+                set_cfg( "curr_loop_p", 0.0625F );
+                set_cfg( "curr_loop_i", 0.0000005F );
+                set_cfg( "curr_loop_d", 0.0F );
+                set_cfg( "pos_loop_p", 2.0F );
+                set_cfg( "pos_loop_i", 0.0F );
+                set_cfg( "pos_loop_d", 0.0F );
+                set_cfg( "static_friction_scale", 1.0F );
+                set_cfg( "pos_to_curr_lim_scale", 10.0F );
                 do_cmd( std::format( "set {}", angle ) );
 
                 for ( std::size_t i : em::range( 500u ) ) {

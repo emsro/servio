@@ -22,11 +22,11 @@ TEST_F( gov_fixture, vel )
                 };
 
                 do_cmd( "cfg set curr_loop_p 0.0625" );
-                do_cmd( "cfg set curr_loop_i 0.000'005'12" );
-                do_cmd( "cfg set curr_loop_d 0.03125" );
+                do_cmd( "cfg set curr_loop_i 5.12" );
+                do_cmd( "cfg set curr_loop_d 0.0" );
                 do_cmd( "cfg set vel_loop_p 16.0" );
-                do_cmd( "cfg set vel_loop_i 0.0005" );
-                do_cmd( "cfg set vel_loop_d 4.0" );
+                do_cmd( "cfg set vel_loop_i 500" );
+                do_cmd( "cfg set vel_loop_d 0.0" );
                 do_cmd( "cfg set static_friction_scale 1" );
                 do_cmd( std::format( "set {}", vel ) );
 

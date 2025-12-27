@@ -148,7 +148,7 @@ struct root_ser
 
         json::array_ser nok() && noexcept
         {
-                as( "OK" );
+                as( "NO" );
                 return std::move( as );
         }
 

@@ -29,8 +29,8 @@
     ],
     "cmds": [
         {
-            "name": "gov",
-            "type": "forward_group",
+            "name": "govctl",
+            "type": "group",
             "desc": "Control the governors",
             "cmds": [
                 {
@@ -68,6 +68,11 @@
             ]
         },
         {
+            "name": "gov",
+            "type": "forward",
+            "desc": "Forward to governors "
+        },
+        {
             "name": "prop",
             "type": "arg",
             "desc": "Get properties of the servomotor",
@@ -82,7 +87,7 @@
         {
             "name": "cfg",
             "type": "group",
-            "desc": "Configuration commands for the servomotor. See configuration documentation to get list of existing fields.",
+            "desc": "Configuration commands for the servomotor. See configuration documentation to get list of existing fields. By default configuration commands target the servio itself, if governor argument is provided it targets the specific governor. As an alternative if field is delimited by single dot, the first string targets governor. That is current.curr_lim_min would target curr_lim_min field of current governor.",
             "cmds": [
                 {
                     "name": "set",
@@ -98,6 +103,12 @@
                             "name": "value",
                             "type": "expr_tok",
                             "desc": "Value to set for the configuration field, type depends on the field"
+                        },
+                        {
+                            "name": "governor",
+                            "type": "string",
+                            "default": "\"\"",
+                            "desc": "Name of governor from which list"
                         }
                     ]
                 },
@@ -110,6 +121,12 @@
                             "name": "field",
                             "type": "string",
                             "desc": "Configuration field to get"
+                        },
+                        {
+                            "name": "governor",
+                            "type": "string",
+                            "default": "\"\"",
+                            "desc": "Name of governor from which list"
                         }
                     ]
                 },
@@ -123,6 +140,12 @@
                             "type": "int32_t",
                             "default": 0,
                             "desc": "Index for the configuration field to list, returns nothing in case of out of range index"
+                        },
+                        {
+                            "name": "governor",
+                            "type": "string",
+                            "default": "\"\"",
+                            "desc": "Name of governor from which list"
                         }
                     ]
                 },

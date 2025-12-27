@@ -3,15 +3,13 @@
 namespace servio::cfg
 {
 
-void dispatcher::apply( key key )
+void root_handler::apply( key key )
 {
         switch ( key ) {
         case key::model:
         case key::id:
         case key::group_id:
-                break;
         case key::encoder_mode:
-                break;
         case key::quad_encoder_range:
                 break;
         case key::position_low_angle:
@@ -51,10 +49,10 @@ void dispatcher::apply( key key )
         }
 }
 
-void dispatcher::full_apply()
+void root_handler::full_apply()
 {
         for ( auto key : map::keys )
-                dispatcher::apply( key );
+                root_handler::apply( key );
 }
 
 }  // namespace servio::cfg

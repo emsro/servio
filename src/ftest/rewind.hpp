@@ -22,8 +22,8 @@ void rewind(
 {
         microseconds end = iclk.get_us() + timeout;
 
-        cor.gov_.activate( "current", {} );
-        auto* p = dynamic_cast< gov::curr::_current_gov* >( cor.gov_.active_governor() );
+        std::ignore = cor.gov_.activate( "current", cor.gov_mem );
+        auto* p     = dynamic_cast< gov::curr::_current_gov* >( cor.gov_.active() );
         if ( !p )
                 fw::stop_exec();
 

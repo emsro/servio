@@ -4,12 +4,15 @@ servio_gen_iface(
   HDR iface.hpp
   PARSER parse.cpp
   DOC iface.md)
+
 servio_add_library(
-  TARGET powgovlib
-  SOURCES power.cpp parse.cpp
+  TARGET powgovlibb
+  SOURCES parse.cpp
   LIBS govlib vari
   OPTS -Os)
-add_dependencies(powgovlib pow_iface_def)
+add_dependencies(powgovlibb pow_iface_def)
+add_library(powgovlib OBJECT power.cpp)
+target_link_libraries(powgovlib PUBLIC powgovlibb)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 

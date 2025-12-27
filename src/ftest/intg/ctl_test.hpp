@@ -28,8 +28,8 @@ struct current_ctl_test
                 em::defer d = setup_poweroff( cor.gov_ );
 
                 float expected = 0.2F;
-                cor.gov_.activate( "current", {} );
-                auto* p = dynamic_cast< gov::curr::_current_gov* >( cor.gov_.active_governor() );
+                std::ignore    = cor.gov_.activate( "current", cor.gov_mem );
+                auto* p        = dynamic_cast< gov::curr::_current_gov* >( cor.gov_.active() );
                 co_await ctx.expect( p != nullptr );
                 p->set_goal_current( expected );
 
@@ -71,8 +71,8 @@ struct sign_test
                 t::node_id did =
                     co_await ctx.coll.set( "data", em::contiguous_container_type::ARRAY );
 
-                cor.gov_.activate( "power", {} );
-                auto* p = dynamic_cast< gov::pow::_power_gov* >( cor.gov_.active_governor() );
+                std::ignore = cor.gov_.activate( "power", cor.gov_mem );
+                auto* p     = dynamic_cast< gov::pow::_power_gov* >( cor.gov_.active() );
                 co_await ctx.expect( p != nullptr );
                 p->power = p_low / 2.F;
                 drv::wait_for( clk, 200_ms );

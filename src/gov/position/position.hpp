@@ -35,13 +35,17 @@ struct _position_gov final : governor, handle
                 case cfg::key::curr_loop_i:
                 case cfg::key::curr_loop_d:
                         curr_pid.cfg.coefficients = {
-                            .p = cfg.curr_loop_p, .i = cfg.curr_loop_i, .d = cfg.curr_loop_d };
+                            .p = cfg.curr_loop_p,
+                            .i = cfg.curr_loop_i / pid_r,
+                            .d = cfg.curr_loop_d * pid_r };
                         break;
                 case cfg::key::pos_loop_p:
                 case cfg::key::pos_loop_i:
                 case cfg::key::pos_loop_d:
                         pos_pid.cfg.coefficients = {
-                            .p = cfg.pos_loop_p, .i = cfg.pos_loop_i, .d = cfg.pos_loop_d };
+                            .p = cfg.pos_loop_p,
+                            .i = cfg.pos_loop_i / pid_r,
+                            .d = cfg.pos_loop_d * pid_r };
                         break;
                 case cfg::key::static_friction_decay:
                 case cfg::key::static_friction_scale:
@@ -59,7 +63,7 @@ struct _position_gov final : governor, handle
                 }
         }
 
-        engage_res engage( std::span< std::byte > ) override
+        engage_res engage( em::pmr::memory_resource& ) override
         {
                 goal_pos = 0.F;
                 return { SUCCESS, this };
@@ -79,29 +83,11 @@ struct _position_gov final : governor, handle
                 }
 
                 using R = status;
-                return stm.sub.visit(
-                    [&]( iface::set_stmt const& s ) -> R {
-                            goal_pos = s.goal;
-                            return SUCCESS;
-                    },
-                    [&]( iface::cfg_stmt const& s ) -> R {
-                            s.sub.visit(
-                                [&]( iface::cfg_set_stmt const& st ) {
-                                        auto opt_k = servio::cfg::cmd_iface::on_cmd_set(
-                                            cfg, st.field, st.value.data, std::move( out ) );
-                                        if ( opt_k )
-                                                apply_cfg( *opt_k );
-                                },
-                                [&]( iface::cfg_get_stmt const& st ) {
-                                        servio::cfg::cmd_iface::on_cmd_get(
-                                            cfg, st.field, std::move( out ) );
-                                },
-                                [&]( iface::cfg_list_stmt const& st ) {
-                                        servio::cfg::cmd_iface::on_cmd_list< cfg::map >(
-                                            st.index, std::move( out ) );
-                                } );
-                            return SUCCESS;
-                    } );
+                return stm.sub.visit( [&]( iface::set_stmt const& s ) -> R {
+                        goal_pos = s.goal;
+                        std::move( out ).ok();
+                        return SUCCESS;
+                } );
         }
 
         pwr current_irq( microseconds now, float current ) override
@@ -128,11 +114,17 @@ struct _position_gov final : governor, handle
                 goal_curr *= current_scale_regl.state;
         }
 
-        using pid = em::pid< typename microseconds::rep >;
+        using pid     = em::pid< typename microseconds::rep >;
+        using pid_per = microseconds::period;
+
+        // magical constant to vary P and D coefficients of PID controller according to time units
+        static constexpr auto pid_r = float{ pid_per::den } / float{ pid_per::num };
 
         cfg::map                         cfg;
-        servio::cfg::handler< cfg::map > cfg_handler{ cfg };
-        linear_transition_regulator      current_scale_regl;
+        servio::cfg::handler< cfg::map > cfg_handler{
+            cfg,
+            em::member_function< &_position_gov::apply_cfg >{ *this } };
+        linear_transition_regulator current_scale_regl;
 
         limits< float > derived_curr_lims;
 

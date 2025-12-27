@@ -14,6 +14,20 @@ struct context
         core::core               core;
         core::standard_callbacks scbs;
 
+        context( core::drivers cdrv )
+          : cdrv( std::move( cdrv ) )
+          , core( cdrv.clock->get_us(), *this->cdrv.vcc, *this->cdrv.temperature )
+          , scbs(
+                *this->cdrv.motor,
+                *this->cdrv.clock,
+                this->core.gov_,
+                this->core.met,
+                this->core.conv )
+        {
+        }
+
+        void setup();
+
         void tick()
         {
                 core.tick( *cdrv.leds, cdrv.clock->get_us() );
@@ -21,6 +35,6 @@ struct context
         }
 };
 
-context setup_context();
+context setup_context( core::drivers cdrv );
 
 }  // namespace servio::fw

@@ -26,58 +26,6 @@ static std::tuple< set_stmt, parse_status > _set( arg_parser ap )
         return { std::move( res ), st };
 }
 
-static std::tuple< cfg_set_stmt, parse_status > _cfg_set( arg_parser ap )
-{
-
-        cfg_set_stmt             res;
-        std::array< arg_def, 2 > arg_defs = {
-            arg_def{ .st = arg_status::MISSING, .kw = "field", .val = res.field },
-            arg_def{ .st = arg_status::MISSING, .kw = "value", .val = res.value } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
-
-        return { std::move( res ), st };
-}
-
-static std::tuple< cfg_get_stmt, parse_status > _cfg_get( arg_parser ap )
-{
-
-        cfg_get_stmt             res;
-        std::array< arg_def, 1 > arg_defs = {
-            arg_def{ .st = arg_status::MISSING, .kw = "field", .val = res.field } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
-
-        return { std::move( res ), st };
-}
-
-static std::tuple< cfg_list_stmt, parse_status > _cfg_list( arg_parser ap )
-{
-
-        cfg_list_stmt            res;
-        std::array< arg_def, 1 > arg_defs = {
-            arg_def{ .st = arg_status::DEFAULT, .kw = "index", .val = res.index } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
-
-        return { std::move( res ), st };
-}
-
-static std::tuple< cfg_stmt, parse_status > _cfg( cmd_parser p )
-{
-        cfg_stmt     res;
-        auto         id = p.next_cmd();
-        parse_status st = parse_status::UNKNOWN_CMD;
-        if ( !id )
-                return { std::move( res ), parse_status::CMD_MISSING };
-        else if ( *id == "set" )
-                std::tie( res.sub, st ) = _cfg_set( std::move( p ) );
-        else if ( *id == "get" )
-                std::tie( res.sub, st ) = _cfg_get( std::move( p ) );
-        else if ( *id == "list" )
-                std::tie( res.sub, st ) = _cfg_list( std::move( p ) );
-        else
-                return { std::move( res ), parse_status::UNKNOWN_CMD };
-        return { std::move( res ), st };
-}
-
 static std::tuple< stmt, parse_status > _root( cmd_parser p )
 {
         stmt         res;
@@ -87,8 +35,6 @@ static std::tuple< stmt, parse_status > _root( cmd_parser p )
                 return { std::move( res ), parse_status::CMD_MISSING };
         else if ( *id == "set" )
                 std::tie( res.sub, st ) = _set( std::move( p ) );
-        else if ( *id == "cfg" )
-                std::tie( res.sub, st ) = _cfg( std::move( p ) );
         else
                 return { std::move( res ), parse_status::UNKNOWN_CMD };
         return { std::move( res ), st };

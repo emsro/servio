@@ -9,6 +9,7 @@
 
 #include <cstdint>
 #include <emlabcpp/algorithm.h>
+#include <emlabcpp/pmr/new_delete_resource.h>
 #include <emlabcpp/range.h>
 #include <git.h>
 #include <gtest/gtest.h>
@@ -31,6 +32,7 @@ TEST( core, dispatcher )
         core     cor{ 0_ms, gv, tm };
 
         dispatcher disp{
+            .mem      = em::pmr::new_delete_resource(),
             .motor    = mot,
             .pos_drv  = gp,
             .curr_drv = gc,
@@ -45,6 +47,8 @@ TEST( core, dispatcher )
             .now      = 0_ms,
         };
 
+        gov::create_governors( cor.gov_, cor.gov_mem );
+
         auto exec = [&]( std::string_view inpt ) {
                 std::byte buff[666];
                 auto [res, used] = handle_message(
@@ -54,47 +58,50 @@ TEST( core, dispatcher )
                 return nlohmann::json::parse( res_str );
         };
 
-        auto test = [&]( std::string_view inpt, nlohmann::json j ) {
+        auto test = [&]( std::string_view     inpt,
+                         nlohmann::json       j,
+                         std::source_location loc = std::source_location::current() ) {
                 auto res_j = exec( inpt );
-                EXPECT_EQ( res_j, j ) << "inpt: " << inpt << "\n";
+                EXPECT_EQ( res_j, j ) << "inpt: " << inpt << "\n"
+                                      << "at " << loc.file_name() << ":" << loc.line() << "\n";
         };
 
         // XXX: negative tests
 
         // mode
-        std::byte buff[666];
-        cor.gov_.activate( "power", buff );
-        test( "gov deactivate", R"(["OK"])"_json );
-        EXPECT_EQ( cor.gov_.active_governor(), nullptr );
-        test( "gov active", R"(["OK"])"_json );
+        auto tmp = cor.gov_.activate( "power", em::pmr::new_delete_resource() );
+        EXPECT_EQ( tmp, SUCCESS );
+        test( "govctl deactivate", R"(["OK"])"_json );
+        EXPECT_EQ( cor.gov_.active(), nullptr );
+        test( "govctl active", R"(["OK"])"_json );
 
-        test( "gov activate power", R"(["OK"])"_json );
+        test( "govctl activate power", R"(["OK"])"_json );
         test( "gov power set 0.2", R"(["OK"])"_json );
-        auto& p = dynamic_cast< gov::pow::_power_gov& >( *cor.gov_.active_governor() );
+        auto& p = dynamic_cast< gov::pow::_power_gov& >( *cor.gov_.active() );
         EXPECT_EQ( p.power, 0.2_pwr );
-        test( "gov active", R"(["OK", "power"])"_json );
-        test( "gov deactivate", R"(["OK"])"_json );
+        test( "govctl active", R"(["OK", "power"])"_json );
+        test( "govctl deactivate", R"(["OK"])"_json );
 
-        test( "gov activate current", R"(["OK"])"_json );
-        test( "gov current set 0.2", R"(["OK"])"_json );
-        auto& c = dynamic_cast< gov::curr::_current_gov& >( *cor.gov_.active_governor() );
+        test( "govctl activate current", R"(["OK"])"_json );
+        test( "gov current set 0.5", R"(["OK"])"_json );
+        auto& c = dynamic_cast< gov::curr::_current_gov& >( *cor.gov_.active() );
         EXPECT_EQ( c.goal, 0.5F );
-        test( "gov active", R"(["OK", "current"])"_json );
-        test( "gov deactivate", R"(["OK"])"_json );
+        test( "govctl active", R"(["OK", "current"])"_json );
+        test( "govctl deactivate", R"(["OK"])"_json );
 
-        test( "gov activate velocity", R"(["OK"])"_json );
+        test( "govctl activate velocity", R"(["OK"])"_json );
         test( "gov velocity set 0.22", R"(["OK"])"_json );
-        auto& v = dynamic_cast< gov::vel::_velocity_gov& >( *cor.gov_.active_governor() );
+        auto& v = dynamic_cast< gov::vel::_velocity_gov& >( *cor.gov_.active() );
         EXPECT_EQ( v.goal_vel, 0.22F );
-        test( "gov active", R"(["OK", "velocity"])"_json );
-        test( "gov deactivate", R"(["OK"])"_json );
+        test( "govctl active", R"(["OK", "velocity"])"_json );
+        test( "govctl deactivate", R"(["OK"])"_json );
 
-        test( "gov activate position", R"(["OK"])"_json );
+        test( "govctl activate position", R"(["OK"])"_json );
         test( "gov position set -1", R"(["OK"])"_json );
-        auto& pos = dynamic_cast< gov::pos::_position_gov& >( *cor.gov_.active_governor() );
+        auto& pos = dynamic_cast< gov::pos::_position_gov& >( *cor.gov_.active() );
         EXPECT_EQ( pos.goal_pos, -1.0F );
-        test( "gov active", R"(["OK", "position"])"_json );
-        test( "gov deactivate", R"(["OK"])"_json );
+        test( "govctl active", R"(["OK", "position"])"_json );
+        test( "govctl deactivate", R"(["OK"])"_json );
 
         test(
             "info",
@@ -116,8 +123,8 @@ TEST( core, dispatcher )
         test( "prop velocity", R"(["OK",0.0])"_json );
 
         test( "cfg set model wololo", R"(["OK"])"_json );
-        test( "cfg set current_lim_min -0.4", R"(["OK"])"_json );
-        test( "cfg get current_lim_min", R"(["OK",-0.4])"_json );
+        test( "cfg set current.curr_lim_min -0.4", R"(["OK"])"_json );
+        test( "cfg get current.curr_lim_min", R"(["OK",-0.4])"_json );
 
         // cfg set/get
         for ( auto k : cfg::map::keys ) {
@@ -203,13 +210,9 @@ TEST( core, dispatcher )
                     } );
         }
 
-        test(
-            "cfg list 0",
-            R"(["OK", ["model","id","group_id","encoder_mode","position_low_angle"]])"_json );
-        test(
-            "cfg list 2",
-            R"(["OK", ["group_id","encoder_mode","position_low_angle","position_high_angle","current_conv_scale"]])"_json );
-        test( "cfg list 1024", R"(["OK", []])"_json );
+        test( "cfg list 0", R"(["OK", "model"])"_json );
+        test( "cfg list 2", R"(["OK", "group_id"])"_json );
+        test( "cfg list 1024", R"(["OK"])"_json );
 
         EXPECT_EQ( sd.store_cnt, 0 );
         test( "cfg commit", R"(["OK"])"_json );

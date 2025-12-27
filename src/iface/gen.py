@@ -8,6 +8,7 @@ from typing import Dict, List, Any, Callable, TextIO, Optional
 # Type aliases for better readability
 CmdHandler = Callable[[TextIO, Dict[str, Any], List[Dict[str, Any]], str], None]
 GroupHandler = Callable[[TextIO, Dict[str, Any], str], None]
+FwdHandler = Callable[[TextIO, Dict[str, Any], str], None]
 
 
 def apply_prefix(prefix: str, name: str, sep: str = "_") -> str:
@@ -105,23 +106,42 @@ def gen_arg_doc(
             fd.write(f"  - unit: _{arg['unit']}_\n")
 
 
+def gen_fwd_cmd_struct(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
+    name = apply_prefix(prefix, cmd["name"])
+    fd.write(
+        f"""
+    struct {name}_stmt {{
+        cmd_parser parser;
+        friend constexpr auto operator<=>(const {name}_stmt&, const {name}_stmt&) noexcept = default;
+    }};
+             """
+    )
+
+
+def gen_fwd_cmd(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
+    name = apply_prefix(prefix, cmd["name"])
+    fd.write(
+        f"""
+    static std::tuple<{name}_stmt, parse_status> _{name}(cmd_parser p) {{
+        {name}_stmt res{{ std::move(p)}};
+        return {{std::move(res), parse_status::SUCCESS}};
+    }}\n
+    """
+    )
+
+
+def gen_fwd_doc(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
+    name = apply_prefix(prefix, cmd["name"], " ")
+    level = name.count(" ") * "#" + "##"
+    fd.write(f"{level} cmd: {name}\n\n")
+    fd.write(f"{cmd['desc']}\n\n")
+
+
 def gen_group_cmd_struct(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
     name = apply_prefix(prefix, cmd["name"])
     if name != "":
         name += "_"
-    if "type" in cmd and cmd["type"] == "forward_group":
-        fd.write(
-            f"""
-        struct {name}forward {{
-            std::string_view cmd;
-            cmd_parser parser;
-            friend constexpr auto operator<=>(const {name}forward&, const {name}forward&) noexcept = default;
-        }};
-        """
-        )
     sub_types = [name + subcmd["name"] + "_stmt" for subcmd in cmd["cmds"]]
-    if "type" in cmd and cmd["type"] == "forward_group":
-        sub_types.append(name + "forward")
     fd.write(
         f"""
         using {name}stmts = vari::typelist<{",".join(sub_types)}>;
@@ -130,7 +150,6 @@ def gen_group_cmd_struct(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
     fd.write(
         f"""struct {name}stmt {{
         vari::vval<{name}stmts> sub = {sub_types[0]}{{}};
-
         friend constexpr auto operator<=>(const {name}stmt&, const {name}stmt&) noexcept = default;
     }};"""
     )
@@ -163,23 +182,11 @@ def gen_group_cmd(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
             std::tie(res.sub, st) = {sub_name}_{subcmd['name']}(std::move(p));
         }}"""
         )
-    if "type" in cmd and cmd["type"] == "forward_group":
-        fd.write(
-            f"""
-        else {{
-            st = parse_status::SUCCESS;
-            res.sub = {name}_forward{{
-                .cmd = *id,
-                .parser = std::move(p),
-            }};
-        }}"""
-        )
-    else:
-        fd.write(
-            f"""
-            else return {{std::move(res), parse_status::UNKNOWN_CMD}};
-        """
-        )
+    fd.write(
+        f"""
+        else return {{std::move(res), parse_status::UNKNOWN_CMD}};
+    """
+    )
     fd.write("return { std::move(res), st }; }")
 
 
@@ -198,6 +205,7 @@ def traverse_commands(
     prefix: str,
     cmd_handler: CmdHandler,
     group_handler: GroupHandler,
+    fwd_handler: FwdHandler,
     separator: str = "_",
     group_first: bool = False,
 ) -> None:
@@ -210,12 +218,14 @@ def traverse_commands(
     for subcmd in cmd["cmds"]:
         if "type" not in subcmd:
             cmd_handler(fd, subcmd, [], p)
-        elif subcmd["type"] == "group" or subcmd["type"] == "forward_group":
+        elif subcmd["type"] == "group":
             traverse_commands(
                 fd, subcmd, p, cmd_handler, group_handler, separator, group_first
             )
         elif subcmd["type"] == "arg":
             cmd_handler(fd, subcmd, subcmd["args"], p)
+        elif subcmd["type"] == "forward":
+            fwd_handler(fd, subcmd, p)
         else:
             raise ValueError(f"Unknown command type: {subcmd['type']}")
 
@@ -225,18 +235,20 @@ def traverse_commands(
 
 def traverse_gen(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
     """Generate parsing code by traversing commands."""
-    traverse_commands(fd, cmd, prefix, gen_arg_cmd, gen_group_cmd)
+    traverse_commands(fd, cmd, prefix, gen_arg_cmd, gen_group_cmd, gen_fwd_cmd)
 
 
 def traverse_structs(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
     """Generate struct definitions by traversing commands."""
-    traverse_commands(fd, cmd, prefix, gen_arg_cmd_struct, gen_group_cmd_struct)
+    traverse_commands(
+        fd, cmd, prefix, gen_arg_cmd_struct, gen_group_cmd_struct, gen_fwd_cmd_struct
+    )
 
 
 def traverse_doc(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
     """Generate documentation by traversing commands."""
     traverse_commands(
-        fd, cmd, prefix, gen_arg_doc, gen_group_doc, " ", group_first=True
+        fd, cmd, prefix, gen_arg_doc, gen_group_doc, gen_fwd_doc, " ", group_first=True
     )
 
 

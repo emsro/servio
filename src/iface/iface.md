@@ -68,41 +68,41 @@ Wildcard token for accepting: `string`, `float`, `int32_t`, `bool`
 
 Commands
 ========
-## group: gov
-
-Control the governors
-
-### cmd: gov activate <governor>
+### cmd: govctl activate <governor>
 
 Activate a governor
 
 - _governor_: Name of the governor to activate
   - type: _string_
-### cmd: gov deactivate
+### cmd: govctl deactivate
 
 Deactivate currently active governor
 
-### cmd: gov active
+### cmd: govctl active
 
 Returns name of active governor or nothing
 
-### cmd: gov list <index>
+### cmd: govctl list <index>
 
 List X-th governor
 
 - _index_: Index of the governor to list, returns nothing in case of out of range index
   - type: _int32_t_
+## group: govctl
+
+Control the governors
+
+## cmd: gov
+
+Forward to governors
+
 ## cmd: prop <name>
 
 Get properties of the servomotor
 
 - _name_: Property to get
   - type: _property_
-## group: cfg
-
-Configuration commands for the servomotor. See configuration documentation to get list of existing fields.
-
-### cmd: cfg set <field> <value>
+### cmd: cfg set <field> <value> <governor = "">
 
 Set a configuration field
 
@@ -110,28 +110,39 @@ Set a configuration field
   - type: _string_
 - _value_: Value to set for the configuration field, type depends on the field
   - type: _expr_tok_
-### cmd: cfg get <field>
+- _governor_: Name of governor from which list
+  - type: _string_
+### cmd: cfg get <field> <governor = "">
 
 Get a configuration field
 
 - _field_: Configuration field to get
   - type: _string_
-### cmd: cfg list <index = 0>
+- _governor_: Name of governor from which list
+  - type: _string_
+### cmd: cfg list <index = 0> <governor = "">
 
 List X-th configuration field
 
 - _index_: Index for the configuration field to list, returns nothing in case of out of range index
-  - type:
-_int32_t_## #cmd : cfg commit
+  - type: _int32_t_
+- _governor_: Name of governor from which list
+  - type: _string_
+### cmd: cfg commit
 
-                       Commit the current configuration changes to memory
+Commit the current configuration changes to memory
 
-                   ## #cmd : cfg clear
+### cmd: cfg clear
 
-                                 Clear the current configuration from memory
+Clear the current configuration from memory
 
-                             ##cmd : info
+## group: cfg
 
-                                         Get information about the servomotor
+Configuration commands for the servomotor. See configuration documentation to get list of existing fields. By default configuration commands target the servio itself, if governor argument is provided it targets the specific governor. As an alternative if field is delimited by single dot, the first string targets governor. That is current.curr_lim_min would target curr_lim_min field of current governor.
+
+## cmd: info
+
+Get information about the servomotor
+
 
                                      < !--GEN END HERE-- >

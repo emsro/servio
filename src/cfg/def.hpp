@@ -51,7 +51,8 @@ struct cfg_type_trait< encoder_mode >
         }
 };
 
-using value_type = vari::typelist< uint32_t, float, bool, encoder_mode, string >;
+using value_type    = vari::typelist< uint32_t, float, bool, encoder_mode, string >;
+using value_variant = std::variant< uint32_t, float, bool, encoder_mode, string >;
 
 // GEN BEGIN HERE
 enum class key : uint32_t

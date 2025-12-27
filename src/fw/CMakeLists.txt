@@ -4,6 +4,7 @@ servio_add_library(
   LIBS avakar::atom
        vari
        emlabcpp
+       govlib
        cfglib
        mtrlib
        platform

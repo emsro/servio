@@ -51,6 +51,11 @@ public:
         status start() override;
         status stop() override;
 
+        pwr get_power() const override
+        {
+                return last_power_;
+        }
+
 private:
         period_cb_iface*   period_cb_;
         int32_t            timer_max_ = 0;
@@ -58,6 +63,7 @@ private:
         bool               inverted_    = false;
         uint32_t           mc1_channel_ = 0;
         uint32_t           mc2_channel_ = 0;
+        pwr                last_power_  = 0_pwr;
 };
 
 inline hbridge::hbridge( TIM_HandleTypeDef* tim )

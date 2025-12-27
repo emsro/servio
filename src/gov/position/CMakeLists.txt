@@ -9,12 +9,15 @@ servio_gen_iface(
   HDR iface.hpp
   PARSER parse.cpp
   DOC iface.md)
+
 servio_add_library(
-  TARGET posgovlib
-  SOURCES position.cpp parse.cpp
+  TARGET posgovlibb
+  SOURCES parse.cpp
   LIBS govlib vari
   OPTS -Os)
-add_dependencies(posgovlib pos_cfg_def posgov_iface)
+add_dependencies(posgovlibb pos_cfg_def posgov_iface)
+add_library(posgovlib OBJECT position.cpp)
+target_link_libraries(posgovlib PUBLIC posgovlibb)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 

@@ -25,7 +25,7 @@ cpmaddpackage(
 )
 cpmaddpackage("gh:Neargye/magic_enum@0.9.7")
 cpmaddpackage("gh:avakar/atom#f5d5c6c0f5fdc96a6275d55f7c4ee98396e407a6")
-cpmaddpackage("gh:koniarik/vari#abb51a157dc3d07ceeb5c2c1c71a98d419bdc776")
+cpmaddpackage("gh:koniarik/vari#8846bd024215997f5009c4fb920ecfb64d4c7efb")
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
   target_compile_options(
@@ -89,8 +89,8 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   enable_testing()
 
   servio_add_executable(TARGET servio_utest LIBS emlabcpp gtest_main serviolib)
-  add_test(NAME servio_utest COMMAND servio_utest)
-
+  include(GoogleTest)
+  gtest_discover_tests(servio_utest)
   add_subdirectory(src/plt/host)
   add_subdirectory(src)
 

@@ -9,12 +9,15 @@ servio_gen_iface(
   HDR iface.hpp
   PARSER parse.cpp
   DOC iface.md)
+
 servio_add_library(
-  TARGET currgovlib
-  SOURCES current.cpp parse.cpp
+  TARGET currgovlibb
+  SOURCES parse.cpp
   LIBS govlib vari
   OPTS -Os)
-add_dependencies(currgovlib curr_cfg_def currgov_iface)
+add_dependencies(currgovlibb curr_cfg_def currgov_iface)
+add_library(currgovlib OBJECT current.cpp)
+target_link_libraries(currgovlib PUBLIC currgovlibb)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 

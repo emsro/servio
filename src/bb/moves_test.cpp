@@ -13,15 +13,17 @@ using namespace std::chrono_literals;
 boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio::port_iface& port )
 {
 
-        co_await scmdio::set_mode( port, "position", 0.2F );
+        co_await scmdio::govctl_activate( port, "position" );
+        co_await scmdio::do_gov( port, "position", { "set" }, { { "goal", 0.2F } } );
 
         boost::asio::steady_timer t( io, 100ms );
         co_await t.async_wait( boost::asio::use_awaitable );
 
-        co_await scmdio::set_mode( port, "current", 0.F );
+        co_await scmdio::govctl_activate( port, "current" );
+        co_await scmdio::do_gov( port, "current", { "set" }, { { "goal", 0.0F } } );
 
         for ( float curr : { 0.1F, 0.0F, 0.15F } ) {
-                co_await scmdio::set_mode( port, "current", curr );
+                co_await scmdio::do_gov( port, "current", { "set" }, { { "goal", curr } } );
 
                 boost::asio::steady_timer t( io, 200ms );
                 co_await t.async_wait( boost::asio::use_awaitable );
@@ -31,16 +33,16 @@ boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio
                 EXPECT_NEAR( curr, current, 0.2F );
         }
 
-        co_await scmdio::set_mode( port, "disengaged" );
+        co_await scmdio::govctl_deactivate( port );
 }
 
 boost::asio::awaitable< void >
 test_position( boost::asio::io_context& io, scmdio::port_iface& port )
 {
-
+        co_await scmdio::govctl_activate( port, "position" );
         for ( float pos : { pi / 4, pi * 3 / 2, pi } ) {
 
-                co_await scmdio::set_mode( port, "position", pos );
+                co_await scmdio::do_gov( port, "position", { "set" }, { { "goal", pos } } );
 
                 auto  now      = std::chrono::steady_clock::now();
                 auto  end      = now + 20s;
@@ -55,7 +57,7 @@ test_position( boost::asio::io_context& io, scmdio::port_iface& port )
                 EXPECT_NEAR( pos, position, 0.3F );
         }
 
-        co_await scmdio::set_mode( port, "disengaged" );
+        co_await scmdio::govctl_deactivate( port );
 }
 
 }  // namespace servio::bb

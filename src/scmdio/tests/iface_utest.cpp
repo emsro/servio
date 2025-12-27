@@ -33,6 +33,8 @@ TEST( iface, base )
                      .stor_drv = sd,
         } );
 
+        gov::create_governors( cor.gov_, cor.gov_mem );
+
         bool finished = false;
         auto run_f    = [&]() -> boost::asio::awaitable< void > {
                 for ( auto k : cfg::map::keys )
@@ -58,11 +60,11 @@ TEST( iface, base )
                 for ( auto p : iface::property_values )
                         co_await get_property( pm, to_str( p ) );
 
-                co_await set_mode( pm, "disengaged" );
-                co_await set_mode( pm, "power", 0.0 );
-                co_await set_mode( pm, "position", 0.0 );
-                co_await set_mode( pm, "velocity", 0.0 );
-                co_await set_mode( pm, "current", 0.0 );
+                co_await govctl_activate( pm, "power" );
+                co_await govctl_deactivate( pm );
+                co_await govctl_activate( pm, "position" );
+                co_await govctl_activate( pm, "velocity" );
+                co_await govctl_activate( pm, "current" );
 
                 finished = true;
         };

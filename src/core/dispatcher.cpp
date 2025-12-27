@@ -1,6 +1,5 @@
 #include "./dispatcher.hpp"
 
-#include "../cfg/handler.hpp"
 #include "../cnv/utils.hpp"
 #include "../lib/atom_visit.hpp"
 #include "../lib/json_ser.hpp"
@@ -49,11 +48,63 @@ void handle_get_property(
         }
 }
 
-void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, iface::root_ser out )
+void handle_gov_message(
+    vari::vref< iface::govctl_stmts const > inpt,
+    em::pmr::memory_resource&               mem,
+    gov::governor_manager&                  gv,
+    iface::root_ser                         out )
 {
         inpt.visit(
-            [&]( iface::gov_stmt const& ) {
-                    // XXX
+            [&]( iface::govctl_activate_stmt const& a ) {
+                    auto s = gv.activate( a.governor, mem );
+                    if ( s == status::SUCCESS )
+                            std::move( out ).ok();
+                    else
+                            std::move( out ).nok()( to_str( s ) );
+            },
+            [&]( iface::govctl_deactivate_stmt const& ) {
+                    auto s = gv.deactivate();
+                    if ( s == status::SUCCESS )
+                            std::move( out ).ok();
+                    else
+                            std::move( out ).nok();
+            },
+            [&]( iface::govctl_active_stmt const& ) {
+                    auto* gov = gv.active();
+                    if ( !gov )
+                            std::move( out ).ok();
+                    else
+                            std::move( out ).ok()( gov->name() );
+            },
+            [&]( iface::govctl_list_stmt const& st ) {
+                    auto      i    = (uint32_t) st.index;
+                    std::span govs = gv.governors();
+                    if ( i < govs.size() )
+                            std::move( out ).ok()( govs[i]->name() );
+                    else
+                            std::move( out ).ok();
+            } );
+}
+
+void handle_message( dispatcher& dis, vari::vref< iface::stmts > inpt, iface::root_ser out )
+{
+        inpt.visit(
+            [&]( iface::govctl_stmt const& g ) {
+                    handle_gov_message( g.sub, dis.mem, dis.gov, std::move( out ) );
+            },
+            [&]( iface::gov_stmt& g ) {
+                    auto cmd = g.parser.next_cmd();
+                    if ( !cmd ) {
+                            std::move( out ).nok()( "missing governor" );
+                            return;
+                    }
+                    for ( auto gov : dis.gov.governors() ) {
+                            if ( gov->name() == *cmd ) {
+                                    std::ignore =
+                                        gov->on_cmd( std::move( g.parser ), std::move( out ) );
+                                    return;
+                            }
+                    }
             },
             [&]( iface::prop_stmt const& p ) {
                     handle_get_property(
@@ -68,7 +119,7 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, ifa
                         std::move( out ) );
             },
             [&]( iface::cfg_stmt const& cfg ) {
-                    cfg::dispatcher cfg_disp{
+                    cfg::root_handler rh{
                         .m     = dis.cfg_map,
                         .conv  = dis.conv,
                         .met   = dis.met,
@@ -76,19 +127,41 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmts const > inpt, ifa
                         .motor = dis.motor,
                         .pos   = dis.pos_drv,
                     };
+                    cfg::dispatcher cfg_disp{
+                        .root_handler = &rh.m_handler,
+                        .gov          = dis.gov,
+                    };
                     cfg.sub.visit(
                         [&]( iface::cfg_set_stmt const& st ) {
-                                auto opt_key = cfg::cmd_iface::on_cmd_set(
-                                    cfg_disp.m, st.field, st.value.data, std::move( out ) );
-                                if ( opt_key )
-                                        cfg_disp.apply( *opt_key );
+                                auto opt_err =
+                                    cfg_disp.on_cmd_set( st.field, st.value.data, st.governor );
+                                if ( opt_err )
+                                        std::move( out ).nok()( opt_err.error );
+                                else
+                                        std::move( out ).ok();
                         },
-                        [&]( iface::cfg_get_stmt const& s ) {
-                                cfg::cmd_iface::on_cmd_get( cfg_disp.m, s.field, std::move( out ) );
+                        [&]( iface::cfg_get_stmt const& st ) {
+                                cfg_disp.on_cmd_get( st.field, st.governor )
+                                    .visit(
+                                        [&]( vari::vref< cfg::base_t > value ) {
+                                                value.visit( std::move( out ).ok() );
+                                        },
+                                        [&]( str_err error ) {
+                                                std::move( out ).nok()( error.error );
+                                        } );
                         },
                         [&]( iface::cfg_list_stmt const& st ) {
-                                cfg::cmd_iface::on_cmd_list< cfg::map >(
-                                    st.index, std::move( out ) );
+                                cfg_disp.on_cmd_list( st.index, st.governor )
+                                    .visit(
+                                        [&]( std::string_view value ) {
+                                                if ( value != "" )
+                                                        std::move( out ).ok()( value );
+                                                else
+                                                        std::move( out ).ok();
+                                        },
+                                        [&]( str_err error ) {
+                                                std::move( out ).nok()( error.error );
+                                        } );
                         },
                         [&]( iface::cfg_commit_stmt const& ) {
                                 if ( dis.stor_drv.store_cfg( dis.cfg_map ) == status::SUCCESS )

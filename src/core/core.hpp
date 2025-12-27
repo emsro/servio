@@ -5,11 +5,16 @@
 #include "../mon/monitor.hpp"
 #include "../mtr/metrics.hpp"
 
+#include <emlabcpp/pmr/stack_resource.h>
+
 namespace servio::core
 {
 
 struct core
 {
+
+        // XXX: could be utility?
+        em::pmr::stack_resource< 1024 > gov_mem;
 
         gov::governor_manager gov_;
         cnv::converter        conv;
@@ -28,7 +33,7 @@ struct core
 
         void tick( drv::leds_iface& leds, microseconds now )
         {
-                mon.tick( now, !!gov_.active_governor() );
+                mon.tick( now, !!gov_.active() );
                 ind.tick( now );
                 leds.update( ind.get_state() );
         }

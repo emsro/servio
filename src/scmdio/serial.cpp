@@ -112,16 +112,43 @@ awaitable< void > set_mode_raw( port_iface& port, std::string_view k, auto v )
 
 }  // namespace
 
-awaitable< void > set_mode( port_iface& port, std::string_view mode, nlohmann::json const& arg )
+awaitable< nlohmann::json > do_gov(
+    port_iface&           port,
+    std::string_view      gov,
+    nlohmann::json const& args,
+    nlohmann::json const& kwargs )
 {
+        std::string msg = std::format( "gov {}", gov );
+        for ( auto& cmd : args )
+                msg += std::format( " {}", cmd );
+        for ( auto& [k, v] : kwargs.items() )
+                msg += std::format( " {}={}", k, v.dump() );
+        auto res = co_await exchg( port, msg );
+        co_return res;
+}
 
-        std::string msg;
-        if ( arg.is_null() )
-                msg = std::format( "mode {}", mode );
-        else
-                msg = std::format( "mode {} {}", mode, arg.dump() );
-        co_await exchg( port, msg );
-        // XXX: check return value
+awaitable< void > govctl_activate( port_iface& port, std::string_view governor )
+{
+        co_await exchg( port, std::format( "govctl activate {}", governor ) );
+}
+
+awaitable< void > govctl_deactivate( port_iface& port )
+{
+        co_await exchg( port, "govctl deactivate" );
+}
+
+awaitable< std::string > govctl_active( port_iface& port )
+{
+        auto res = co_await exchg( port, "govctl active" );
+        co_return ( std::string ) res.at( 1 );
+}
+
+awaitable< opt< std::string > > govctl_list( port_iface& port, int32_t index )
+{
+        auto res = co_await exchg( port, std::format( "govctl list {}", index ) );
+        if ( res.size() < 2 )
+                co_return std::nullopt;
+        co_return ( std::string ) res.at( 1 );
 }
 
 }  // namespace servio::scmdio

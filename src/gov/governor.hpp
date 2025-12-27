@@ -7,6 +7,7 @@
 #include "../status.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
+#include <emlabcpp/pmr/memory_resource.h>
 #include <span>
 #include <string_view>
 #include <zll.h>
@@ -40,18 +41,18 @@ struct governor
         virtual cfg::iface*      get_cfg()                                                    = 0;
         virtual std::string_view name() const                                                 = 0;
         virtual status           on_cmd( iface::cmd_parser cmd, servio::iface::root_ser out ) = 0;
-        virtual engage_res       engage( std::span< std::byte > buffer )                      = 0;
+        virtual engage_res       engage( em::pmr::memory_resource& mem )                      = 0;
         virtual status           disengage( handle& )                                         = 0;
         virtual ~governor() = default;
 };
 
 struct governor_factory : zll::ll_base< governor_factory >
 {
-        virtual governor* create( std::span< std::byte > buffer ) = 0;
+        virtual governor* create( em::pmr::memory_resource& ) = 0;
 };
 
 void register_factory( governor_factory& factory );
-void for_each_factory( em::function_view< void( governor_factory& ) > fn );
+void for_each_factory( em::function_view< void( governor_factory& ) > const& fn );
 
 template < typename T >
 struct auto_factory : governor_factory
@@ -61,11 +62,10 @@ struct auto_factory : governor_factory
                 register_factory( *this );
         }
 
-        T* create( std::span< std::byte > buffer ) override
+        T* create( em::pmr::memory_resource& resource ) override
         {
-                if ( buffer.size() < sizeof( T ) )
-                        return nullptr;
-                return new ( buffer.data() ) T();
+                auto* p = resource.allocate( sizeof( T ), alignof( T ) );
+                return new ( p ) T();
         }
 };
 

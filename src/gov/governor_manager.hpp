@@ -3,6 +3,8 @@
 
 #include "./governor.hpp"
 
+#include <emlabcpp/static_vector.h>
+
 namespace servio::gov
 {
 
@@ -12,27 +14,39 @@ struct governor_manager
 
         [[nodiscard]] bool add_gov( governor& gov )
         {
-                for ( auto& g : governors_ ) {
-                        if ( g == nullptr ) {
-                                g = &gov;
-                                return true;
-                        }
-                }
-                return false;
+                if ( governors_.full() )
+                        return false;
+                governors_.emplace_back( gov );
+                return true;
         }
 
-        bool activate( std::string_view name, std::span< std::byte > buffer )
+        status disengage()
         {
-                status s = status::SUCCESS;
-                for ( auto& g : governors_ ) {
-                        if ( g && g->name() == name ) {
-                                active_ = g;
+                if ( active_ && active_h_ ) {
+                        auto st   = active_->disengage( *active_h_ );
+                        active_   = nullptr;
+                        active_h_ = nullptr;
+                        return st;
+                }
+                return status::FAILURE;
+        }
+
+        status activate( std::string_view name, em::pmr::memory_resource& buffer )
+        {
+                status s = status::ERROR;
+                if ( active_ ) {
+                        if ( disengage() != SUCCESS )
+                                return status::ERROR;
+                }
+                for ( vari::vref< governor > g : governors_ ) {
+                        if ( g->name() == name ) {
+                                active_ = g.get();
 
                                 std::tie( s, active_h_ ) = g->engage( buffer );
                                 break;
                         }
                 }
-                return s == status::SUCCESS;
+                return s;
         }
 
         status deactivate()
@@ -61,15 +75,33 @@ struct governor_manager
                         active_h_->metrics_irq( now, position, velocity, is_moving );
         }
 
-        governor* active_governor() const
+        governor* active() const
         {
                 return active_;
         }
 
+        std::span< vari::vref< governor > const > governors() const
+        {
+                return { governors_ };
+        }
+
 private:
-        std::array< governor*, n > governors_ = {};
-        governor*                  active_    = nullptr;
-        handle*                    active_h_  = nullptr;
+        em::static_vector< vari::vref< governor >, n > governors_ = {};
+        governor*                                      active_    = nullptr;
+        handle*                                        active_h_  = nullptr;
 };
+
+inline void create_governors( governor_manager& gm, em::pmr::memory_resource& mem )
+{
+        auto f = [&]( governor_factory& fac ) {
+                // XXX: error handling?
+                auto* p = fac.create( mem );
+                if ( !p )
+                        return;
+                if ( !gm.add_gov( *p ) )
+                        return;
+        };
+        for_each_factory( f );
+}
 
 }  // namespace servio::gov

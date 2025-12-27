@@ -14,7 +14,7 @@ endfunction()
 servio_add_library(
   TARGET cfglib
   SOURCES dispatcher.cpp
-  LIBS emlabcpp platform ifacelib avakar::atom vari
+  LIBS emlabcpp platform ifacelib avakar::atom vari zll
   OPTS -Os)
 servion_gen_cfg(
   TARGET cfg_def

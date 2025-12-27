@@ -13,7 +13,10 @@ int main()
         if ( brd::setup_board() != SUCCESS )
                 fw::stop_exec();
 
-        fw::context ctx = fw::setup_context();
+        core::drivers cdrv = brd::setup_core_drivers();
+        if ( cdrv.any_uninitialized() )
+                fw::stop_exec();
+        fw::context ctx{ std::move( cdrv ) };
 
         drv::com_iface* dbg_comms = brd::setup_debug_comms();
         if ( dbg_comms == nullptr || dbg_comms->start() != SUCCESS )

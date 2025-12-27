@@ -8,9 +8,9 @@ using value_type = vari::typelist< uint32_t, float, bool >;
 // GEN BEGIN HERE
 enum class key : uint32_t
 {
-        loop_p                = 1,
-        loop_i                = 2,
-        loop_d                = 3,
+        curr_loop_p           = 1,
+        curr_loop_i           = 2,
+        curr_loop_d           = 3,
         curr_lim_min          = 4,
         curr_lim_max          = 5,
         pos_lim_min           = 6,
@@ -20,12 +20,12 @@ enum class key : uint32_t
 
 constexpr std::string_view to_str( key k )
 {
-        if ( k == key::loop_p )
-                return "loop_p";
-        if ( k == key::loop_i )
-                return "loop_i";
-        if ( k == key::loop_d )
-                return "loop_d";
+        if ( k == key::curr_loop_p )
+                return "curr_loop_p";
+        if ( k == key::curr_loop_i )
+                return "curr_loop_i";
+        if ( k == key::curr_loop_d )
+                return "curr_loop_d";
         if ( k == key::curr_lim_min )
                 return "curr_lim_min";
         if ( k == key::curr_lim_max )
@@ -41,11 +41,11 @@ constexpr std::string_view to_str( key k )
 
 constexpr uint32_t key_to_id( key k )
 {
-        if ( k == key::loop_p )
+        if ( k == key::curr_loop_p )
                 return 1;
-        if ( k == key::loop_i )
+        if ( k == key::curr_loop_i )
                 return 2;
-        if ( k == key::loop_d )
+        if ( k == key::curr_loop_d )
                 return 3;
         if ( k == key::curr_lim_min )
                 return 4;
@@ -63,11 +63,11 @@ constexpr uint32_t key_to_id( key k )
 constexpr key id_to_key( uint32_t id )
 {
         if ( id == 1 )
-                return key::loop_p;
+                return key::curr_loop_p;
         if ( id == 2 )
-                return key::loop_i;
+                return key::curr_loop_i;
         if ( id == 3 )
-                return key::loop_d;
+                return key::curr_loop_d;
         if ( id == 4 )
                 return key::curr_lim_min;
         if ( id == 5 )
@@ -95,19 +95,19 @@ template < key K >
 struct key_trait;
 
 template <>
-struct key_trait< key::loop_p >
+struct key_trait< key::curr_loop_p >
 {
         using type = float;
 };
 
 template <>
-struct key_trait< key::loop_i >
+struct key_trait< key::curr_loop_i >
 {
         using type = float;
 };
 
 template <>
-struct key_trait< key::loop_d >
+struct key_trait< key::curr_loop_d >
 {
         using type = float;
 };
@@ -146,18 +146,18 @@ struct map
 {
         using key_type                             = key;
         static constexpr std::array< key, 8 > keys = {
-            key::loop_p,
-            key::loop_i,
-            key::loop_d,
+            key::curr_loop_p,
+            key::curr_loop_i,
+            key::curr_loop_d,
             key::curr_lim_min,
             key::curr_lim_max,
             key::pos_lim_min,
             key::pos_lim_max,
             key::pos_to_curr_lim_scale,
         };
-        float loop_p = 1.0F;
-        float loop_i = 0.0001F;
-        float loop_d = 0.0F;
+        float curr_loop_p = 1.0F;
+        float curr_loop_i = 0.0001F;
+        float curr_loop_d = 0.0F;
         // Soft limit for lowest current
         float curr_lim_min = -2.0F;
         // Soft limit for highest current
@@ -172,12 +172,12 @@ struct map
         template < key K >
         constexpr auto& ref_by_key()
         {
-                if constexpr ( K == key::loop_p )
-                        return loop_p;
-                if constexpr ( K == key::loop_i )
-                        return loop_i;
-                if constexpr ( K == key::loop_d )
-                        return loop_d;
+                if constexpr ( K == key::curr_loop_p )
+                        return curr_loop_p;
+                if constexpr ( K == key::curr_loop_i )
+                        return curr_loop_i;
+                if constexpr ( K == key::curr_loop_d )
+                        return curr_loop_d;
                 if constexpr ( K == key::curr_lim_min )
                         return curr_lim_min;
                 if constexpr ( K == key::curr_lim_max )
@@ -193,12 +193,12 @@ struct map
         constexpr vari::vptr< value_type > ref_by_key( key K )
         {
                 switch ( K ) {
-                case key::loop_p:
-                        return &loop_p;
-                case key::loop_i:
-                        return &loop_i;
-                case key::loop_d:
-                        return &loop_d;
+                case key::curr_loop_p:
+                        return &curr_loop_p;
+                case key::curr_loop_i:
+                        return &curr_loop_i;
+                case key::curr_loop_d:
+                        return &curr_loop_d;
                 case key::curr_lim_min:
                         return &curr_lim_min;
                 case key::curr_lim_max:
@@ -216,12 +216,12 @@ struct map
         constexpr vari::vptr< value_type const > ref_by_key( key K ) const
         {
                 switch ( K ) {
-                case key::loop_p:
-                        return &loop_p;
-                case key::loop_i:
-                        return &loop_i;
-                case key::loop_d:
-                        return &loop_d;
+                case key::curr_loop_p:
+                        return &curr_loop_p;
+                case key::curr_loop_i:
+                        return &curr_loop_i;
+                case key::curr_loop_d:
+                        return &curr_loop_d;
                 case key::curr_lim_min:
                         return &curr_lim_min;
                 case key::curr_lim_max:
@@ -239,11 +239,11 @@ struct map
         constexpr vari::vptr< value_type > ref_by_id( uint32_t id )
         {
                 if ( id == 1 )
-                        return &loop_p;
+                        return &curr_loop_p;
                 if ( id == 2 )
-                        return &loop_i;
+                        return &curr_loop_i;
                 if ( id == 3 )
-                        return &loop_d;
+                        return &curr_loop_d;
                 if ( id == 4 )
                         return &curr_lim_min;
                 if ( id == 5 )
@@ -260,11 +260,11 @@ struct map
         constexpr vari::vptr< value_type const > ref_by_id( uint32_t id ) const
         {
                 if ( id == 1 )
-                        return &loop_p;
+                        return &curr_loop_p;
                 if ( id == 2 )
-                        return &loop_i;
+                        return &curr_loop_i;
                 if ( id == 3 )
-                        return &loop_d;
+                        return &curr_loop_d;
                 if ( id == 4 )
                         return &curr_lim_min;
                 if ( id == 5 )
@@ -280,12 +280,12 @@ struct map
 
         static constexpr std::optional< key > str_to_key( std::string_view str )
         {
-                if ( str == "loop_p" )
-                        return key::loop_p;
-                if ( str == "loop_i" )
-                        return key::loop_i;
-                if ( str == "loop_d" )
-                        return key::loop_d;
+                if ( str == "curr_loop_p" )
+                        return key::curr_loop_p;
+                if ( str == "curr_loop_i" )
+                        return key::curr_loop_i;
+                if ( str == "curr_loop_d" )
+                        return key::curr_loop_d;
                 if ( str == "curr_lim_min" )
                         return key::curr_lim_min;
                 if ( str == "curr_lim_max" )

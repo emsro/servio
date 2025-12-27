@@ -1,6 +1,7 @@
 
 #pragma once
 
+#include "../base.hpp"
 #include "../iface/base.hpp"
 #include "./base.hpp"
 
@@ -14,11 +15,61 @@ namespace servio::cfg
 template < typename T >
 struct handler : iface
 {
-        T& _x;
+        using key_type = typename T::key_type;
 
-        handler( T& x )
+        T&                                    _x;
+        em::function_view< void( key_type ) > _on_cmd_set;
+
+        handler( T& x, em::function_view< void( key_type ) > on_cmd_set )
           : _x( x )
+          , _on_cmd_set( on_cmd_set )
         {
+        }
+
+        opt_str_err
+        on_cmd_set( std::string_view key, vari::vref< servio::cfg::base_t const > value ) override
+        {
+                auto k_opt = T::str_to_key( key );
+                if ( !k_opt )
+                        return "unknown key"_err;
+                auto opt_e = _x.ref_by_key( *k_opt ).visit(
+                    [&]( vari::empty_t ) -> opt_str_err {
+                            return "internal error"_err;
+                    },
+                    [&]( auto& x ) -> opt_str_err {
+                            auto opt_e = servio::cfg::load_value( x, value );
+                            if ( opt_e )
+                                    return opt_e;
+                            return {};
+                    } );
+                if ( !opt_e )
+                        _on_cmd_set( *k_opt );
+                return opt_e;
+        }
+
+        std::string_view on_cmd_list( int32_t offset ) override
+        {
+                if ( offset < 0 )
+                        return {};
+                if ( offset >= (int32_t) T::keys.size() )
+                        return {};
+                return to_str( T::keys[(uint32_t) offset] );
+        }
+
+        vari::vval< base_t, str_err > on_cmd_get( std::string_view key ) override
+        {
+                auto k_opt = T::str_to_key( key );
+                if ( !k_opt )
+                        return "unknown key"_err;
+
+                using R = vari::vval< base_t, str_err >;
+                return _x.ref_by_key( *k_opt ).visit(
+                    [&]( vari::empty_t ) -> R {
+                            return "internal_error"_err;
+                    },
+                    [&]( auto& x ) -> R {
+                            return servio::cfg::store_value( x );
+                    } );
         }
 
         status on_storage_load( uint32_t id, std::span< std::byte const > data ) override
@@ -62,104 +113,6 @@ struct handler : iface
                                 return val != *newval;
                         return false;
                 } );
-        }
-};
-
-struct cmd_iface
-{
-
-        template < typename T >
-        static opt< typename T::key_type > on_cmd_set(
-            T&                                      map,
-            std::string_view                        key,
-            vari::vref< servio::cfg::base_t const > value,
-            servio::iface::root_ser                 out )
-        {
-                auto k_opt = T::str_to_key( key );
-                if ( !k_opt ) {
-                        unknown_key_branch( std::move( out ) );
-                        return {};
-                }
-                map.ref_by_key( *k_opt ).visit(
-                    [&]( vari::empty_t ) {
-                            internal_error_branch( std::move( out ) );
-                    },
-                    [&]( auto& x ) {
-                            cmd_set_load_val( x, value, std::move( out ) );
-                    } );
-                return k_opt;
-        }
-
-        template < typename T >
-        static void on_cmd_list( int32_t offset, servio::iface::root_ser out )
-        {
-                auto f = []( uint32_t k ) -> std::string_view {
-                        return to_str( T::keys[k] );
-                };
-                return on_cmd_list( offset, T::keys.size(), f, std::move( out ) );
-        }
-
-        template < typename T >
-        static void on_cmd_get( T& map, std::string_view key, servio::iface::root_ser out )
-        {
-                auto k_opt = T::str_to_key( key );
-                if ( !k_opt )
-                        return unknown_key_branch( std::move( out ) );
-
-                map.ref_by_key( *k_opt ).visit(
-                    [&]( vari::empty_t ) {
-                            return internal_error_branch( std::move( out ) );
-                    },
-                    [&]( auto& x ) {
-                            cmd_get_store_val( x, std::move( out ) );
-                    } );
-        }
-
-private:
-        static void unknown_key_branch( servio::iface::root_ser out )
-        {
-                std::move( out ).nok()( "unknown key" );
-        }
-
-        static void internal_error_branch( servio::iface::root_ser out )
-        {
-                std::move( out ).nok()( "internal error" );
-        }
-
-        static void cmd_set_load_val(
-            auto&                                   x,
-            vari::vref< servio::cfg::base_t const > value,
-            servio::iface::root_ser                 out )
-        {
-                auto opt_e = servio::cfg::load_value( x, value );
-                if ( opt_e )
-                        std::move( out ).nok()( opt_e.error );
-                else
-                        std::move( out ).ok();
-        }
-
-        static void cmd_get_store_val( auto const& x, servio::iface::root_ser out )
-        {
-                auto as = std::move( out ).ok();
-                servio::cfg::store_value( x ).visit( as );
-        }
-
-        static void on_cmd_list(
-            int32_t                                           offset,
-            std::size_t                                       size,
-            em::function_view< std::string_view( uint32_t ) > key_to_str,
-            servio::iface::root_ser                           out )
-        {
-                if ( offset < 0 ) {
-                        std::move( out ).nok()( "negative offset" );
-                        return;
-                }
-                auto as  = std::move( out ).ok();
-                auto sub = as.sub();
-
-                if ( offset >= (int32_t) size )
-                        return;
-                sub( key_to_str( (uint32_t) offset ) );
         }
 };
 

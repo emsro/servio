@@ -35,7 +35,7 @@ constexpr bool is_ws( char c ) noexcept
 
 constexpr bool is_id_letter( char c ) noexcept
 {
-        return is_letter( c ) || ( c == '_' ) || is_dec( c );
+        return is_letter( c ) || ( c == '_' ) || ( c == '.' ) || is_dec( c );
 }
 
 constexpr bool hex_prefix( char const* p, char const* e )

@@ -131,10 +131,10 @@ constexpr parse_status _convert( string const& src, property& dst )
         return parse_status::UNKNOWN_VALUE;
 }
 
-static std::tuple< gov_activate_stmt, parse_status > _gov_activate( arg_parser ap )
+static std::tuple< govctl_activate_stmt, parse_status > _govctl_activate( arg_parser ap )
 {
 
-        gov_activate_stmt        res;
+        govctl_activate_stmt     res;
         std::array< arg_def, 1 > arg_defs = {
             arg_def{ .st = arg_status::MISSING, .kw = "governor", .val = res.governor } };
         parse_status st = std::move( ap ).parse_args( arg_defs );
@@ -142,30 +142,30 @@ static std::tuple< gov_activate_stmt, parse_status > _gov_activate( arg_parser a
         return { std::move( res ), st };
 }
 
-static std::tuple< gov_deactivate_stmt, parse_status > _gov_deactivate( arg_parser ap )
+static std::tuple< govctl_deactivate_stmt, parse_status > _govctl_deactivate( arg_parser ap )
 {
 
-        gov_deactivate_stmt      res;
+        govctl_deactivate_stmt   res;
         std::array< arg_def, 0 > arg_defs = {};
         parse_status             st       = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
 
-static std::tuple< gov_active_stmt, parse_status > _gov_active( arg_parser ap )
+static std::tuple< govctl_active_stmt, parse_status > _govctl_active( arg_parser ap )
 {
 
-        gov_active_stmt          res;
+        govctl_active_stmt       res;
         std::array< arg_def, 0 > arg_defs = {};
         parse_status             st       = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
 
-static std::tuple< gov_list_stmt, parse_status > _gov_list( arg_parser ap )
+static std::tuple< govctl_list_stmt, parse_status > _govctl_list( arg_parser ap )
 {
 
-        gov_list_stmt            res;
+        govctl_list_stmt         res;
         std::array< arg_def, 1 > arg_defs = {
             arg_def{ .st = arg_status::MISSING, .kw = "index", .val = res.index } };
         parse_status st = std::move( ap ).parse_args( arg_defs );
@@ -173,29 +173,30 @@ static std::tuple< gov_list_stmt, parse_status > _gov_list( arg_parser ap )
         return { std::move( res ), st };
 }
 
-static std::tuple< gov_stmt, parse_status > _gov( cmd_parser p )
+static std::tuple< govctl_stmt, parse_status > _govctl( cmd_parser p )
 {
-        gov_stmt     res;
+        govctl_stmt  res;
         auto         id = p.next_cmd();
         parse_status st = parse_status::UNKNOWN_CMD;
-        if ( !id ) {
+        if ( !id )
                 return { std::move( res ), parse_status::CMD_MISSING };
-        } else if ( *id == "activate" ) {
-                std::tie( res.sub, st ) = _gov_activate( std::move( p ) );
-        } else if ( *id == "deactivate" ) {
-                std::tie( res.sub, st ) = _gov_deactivate( std::move( p ) );
-        } else if ( *id == "active" ) {
-                std::tie( res.sub, st ) = _gov_active( std::move( p ) );
-        } else if ( *id == "list" ) {
-                std::tie( res.sub, st ) = _gov_list( std::move( p ) );
-        } else {
-                st      = parse_status::SUCCESS;
-                res.sub = gov_forward{
-                    .cmd    = *id,
-                    .parser = std::move( p ),
-                };
-        }
+        else if ( *id == "activate" )
+                std::tie( res.sub, st ) = _govctl_activate( std::move( p ) );
+        else if ( *id == "deactivate" )
+                std::tie( res.sub, st ) = _govctl_deactivate( std::move( p ) );
+        else if ( *id == "active" )
+                std::tie( res.sub, st ) = _govctl_active( std::move( p ) );
+        else if ( *id == "list" )
+                std::tie( res.sub, st ) = _govctl_list( std::move( p ) );
+        else
+                return { std::move( res ), parse_status::UNKNOWN_CMD };
         return { std::move( res ), st };
+}
+
+static std::tuple< gov_stmt, parse_status > _gov( cmd_parser p )
+{
+        gov_stmt res{ std::move( p ) };
+        return { std::move( res ), parse_status::SUCCESS };
 }
 
 static std::tuple< prop_stmt, parse_status > _prop( arg_parser ap )
@@ -216,9 +217,10 @@ static std::tuple< cfg_set_stmt, parse_status > _cfg_set( arg_parser ap )
 {
 
         cfg_set_stmt             res;
-        std::array< arg_def, 2 > arg_defs = {
+        std::array< arg_def, 3 > arg_defs = {
             arg_def{ .st = arg_status::MISSING, .kw = "field", .val = res.field },
-            arg_def{ .st = arg_status::MISSING, .kw = "value", .val = res.value } };
+            arg_def{ .st = arg_status::MISSING, .kw = "value", .val = res.value },
+            arg_def{ .st = arg_status::DEFAULT, .kw = "governor", .val = res.governor } };
         parse_status st = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
@@ -228,8 +230,9 @@ static std::tuple< cfg_get_stmt, parse_status > _cfg_get( arg_parser ap )
 {
 
         cfg_get_stmt             res;
-        std::array< arg_def, 1 > arg_defs = {
-            arg_def{ .st = arg_status::MISSING, .kw = "field", .val = res.field } };
+        std::array< arg_def, 2 > arg_defs = {
+            arg_def{ .st = arg_status::MISSING, .kw = "field", .val = res.field },
+            arg_def{ .st = arg_status::DEFAULT, .kw = "governor", .val = res.governor } };
         parse_status st = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
@@ -239,8 +242,9 @@ static std::tuple< cfg_list_stmt, parse_status > _cfg_list( arg_parser ap )
 {
 
         cfg_list_stmt            res;
-        std::array< arg_def, 1 > arg_defs = {
-            arg_def{ .st = arg_status::DEFAULT, .kw = "index", .val = res.index } };
+        std::array< arg_def, 2 > arg_defs = {
+            arg_def{ .st = arg_status::DEFAULT, .kw = "index", .val = res.index },
+            arg_def{ .st = arg_status::DEFAULT, .kw = "governor", .val = res.governor } };
         parse_status st = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
@@ -305,6 +309,8 @@ static std::tuple< stmt, parse_status > _root( cmd_parser p )
         parse_status st = parse_status::UNKNOWN_CMD;
         if ( !id )
                 return { std::move( res ), parse_status::CMD_MISSING };
+        else if ( *id == "govctl" )
+                std::tie( res.sub, st ) = _govctl( std::move( p ) );
         else if ( *id == "gov" )
                 std::tie( res.sub, st ) = _gov( std::move( p ) );
         else if ( *id == "prop" )

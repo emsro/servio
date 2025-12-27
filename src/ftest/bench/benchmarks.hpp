@@ -161,8 +161,8 @@ struct profile
                 em::defer d2      = drv::retain_callback( curr );
                 em::defer d       = setup_poweroff( cor.gov_ );
 
-                cor.gov_.activate( "power", {} );
-                auto* p = dynamic_cast< gov::pow::_power_gov* >( cor.gov_.active_governor() );
+                std::ignore = cor.gov_.activate( "power", cor.gov_mem );
+                auto* p     = dynamic_cast< gov::pow::_power_gov* >( cor.gov_.active() );
                 co_await t::expect( ctx.coll, p != nullptr );
 
                 p->power                = p_max;

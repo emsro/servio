@@ -7,7 +7,7 @@ namespace servio
 {
 namespace em = emlabcpp;
 
-enum class status_e
+enum class status_e : uint8_t
 {
         SUCCESS = 0,  // all went well
         FAILURE = 1,  // expected error occured
@@ -30,6 +30,8 @@ struct [[nodiscard]] status : em::status< status, status_e >
                 return ( value() == status_e::SUCCESS ) ? em::result::SUCCESS : em::result::ERROR;
         }
 };
+
+std::string_view to_str( status s );
 
 struct error_status
 {

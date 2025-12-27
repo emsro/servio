@@ -17,7 +17,7 @@ void test_valid_parse( parser::parser& p, std::string_view inpt, S expected_stmt
         res.visit(
             [&]( vari::vref< stmt > s ) {
                     vari::vval< stmts > expected{ std::move( expected_stmt ) };
-                    EXPECT_EQ( s->sub, expected );
+                    EXPECT_EQ( s->sub, expected ) << "inpt: " << inpt;
             },
             [&]( invalid_stmt& ) {
                     FAIL() << "expected valid parse";
@@ -26,10 +26,11 @@ void test_valid_parse( parser::parser& p, std::string_view inpt, S expected_stmt
 
 void test_invalid_parse( parser::parser& p, std::string_view inpt, parse_status st )
 {
+        p        = parser::parser{ inpt };
         auto res = parse( p );
         res.visit(
             [&]( vari::vref< stmt > ) {
-                    FAIL() << "expected invalid parse";
+                    FAIL() << "expected invalid parse: " << inpt;
             },
             [&]( invalid_stmt& s ) {
                     EXPECT_EQ( s.st, st ) << "inpt: " << inpt << "\n"
@@ -41,16 +42,18 @@ void test_invalid_parse( parser::parser& p, std::string_view inpt, parse_status 
 TEST( IfaceParse, ValidParse )
 {
         parser::parser p{ "" };
-        test_valid_parse( p, "gov activate power ", gov_stmt{ gov_activate_stmt{ "power" } } );
-        test_valid_parse( p, "gov activate current ", gov_stmt{ gov_activate_stmt{ "current" } } );
         test_valid_parse(
-            p, "gov activate velocity ", gov_stmt{ gov_activate_stmt{ "velocity" } } );
+            p, "govctl activate power ", govctl_stmt{ govctl_activate_stmt{ "power" } } );
         test_valid_parse(
-            p, "gov activate position ", gov_stmt{ gov_activate_stmt{ "position" } } );
-        test_valid_parse( p, "gov deactivate ", gov_stmt{ gov_deactivate_stmt{} } );
-        test_valid_parse( p, "gov list 0 ", gov_stmt{ gov_list_stmt{ 0 } } );
-        test_valid_parse( p, "gov wololo ", gov_stmt{ gov_forward{ "wololo", p } } );
-        test_valid_parse( p, "gov wololo magic ", gov_stmt{ gov_forward{ "wololo", p } } );
+            p, "govctl activate current ", govctl_stmt{ govctl_activate_stmt{ "current" } } );
+        test_valid_parse(
+            p, "govctl activate velocity ", govctl_stmt{ govctl_activate_stmt{ "velocity" } } );
+        test_valid_parse(
+            p, "govctl activate position ", govctl_stmt{ govctl_activate_stmt{ "position" } } );
+        test_valid_parse( p, "govctl deactivate ", govctl_stmt{ govctl_deactivate_stmt{} } );
+        test_valid_parse( p, "govctl list 0 ", govctl_stmt{ govctl_list_stmt{ 0 } } );
+        test_valid_parse( p, "gov wololo ", gov_stmt{ p } );
+        test_valid_parse( p, "gov wololo magic ", gov_stmt{ p } );
 
         test_valid_parse( p, "prop current", prop_stmt{ property::current } );
         test_valid_parse( p, "prop vcc", prop_stmt{ property::vcc } );
@@ -72,7 +75,7 @@ TEST( IfaceParse, InvalidParse )
 {
         parser::parser p{ "" };
         test_invalid_parse( p, "", parse_status::CMD_MISSING );
-        test_invalid_parse( p, "mode", parse_status::CMD_MISSING );
+        test_invalid_parse( p, "govctl", parse_status::CMD_MISSING );
         test_invalid_parse( p, "prop", parse_status::ARG_MISSING );
         test_invalid_parse( p, "cfg", parse_status::CMD_MISSING );
         test_invalid_parse( p, "cfg s", parse_status::UNKNOWN_CMD );

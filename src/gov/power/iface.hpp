@@ -21,11 +21,10 @@ using stmts = vari::typelist< set_stmt >;
 
 struct stmt
 {
-        vari::vval< stmts > sub = set_stmt{};
-
+        vari::vval< stmts >   sub                                              = set_stmt{};
         friend constexpr auto operator<=>( stmt const&, stmt const& ) noexcept = default;
 };
 
 // GEN END HERE
-std::tuple< iface::stmt, iface::parse_status > parse_vel( iface::cmd_parser p );
+std::tuple< iface::stmt, iface::parse_status > parse_pow( iface::cmd_parser p );
 }  // namespace servio::gov::pow::iface

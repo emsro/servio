@@ -6,6 +6,6 @@ function(add_btest)
 endfunction()
 
 add_btest(TARGET config_btest SOURCE config_test.cpp)
-add_btest(TARGET modes_btest SOURCE modes_test.cpp)
+add_btest(TARGET gov_btest SOURCE gov_test.cpp)
 add_btest(TARGET moves_btest SOURCE moves_test.cpp)
 add_btest(TARGET properties_btest SOURCE properties_test.cpp)

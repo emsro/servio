@@ -28,6 +28,11 @@ struct pwm_mot : drv::pwm_motor_iface
         {
                 return -1;
         };
+
+        pwr get_power() const override
+        {
+                return 0_pwr;
+        }
 };
 
 struct pos : drv::get_pos_iface

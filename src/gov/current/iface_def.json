@@ -12,55 +12,6 @@
                     "desc": "Goal current"
                 }
             ]
-        },
-        {
-            "name": "cfg",
-            "type": "group",
-            "desc": "Configuration commands for the current governor.",
-            "cmds": [
-                {
-                    "name": "set",
-                    "type": "arg",
-                    "desc": "Set a configuration field",
-                    "args": [
-                        {
-                            "name": "field",
-                            "type": "string",
-                            "desc": "Configuration field to set"
-                        },
-                        {
-                            "name": "value",
-                            "type": "expr_tok",
-                            "desc": "Value to set for the configuration field, type depends on the field"
-                        }
-                    ]
-                },
-                {
-                    "name": "get",
-                    "type": "arg",
-                    "desc": "Get a configuration field",
-                    "args": [
-                        {
-                            "name": "field",
-                            "type": "string",
-                            "desc": "Configuration field to get"
-                        }
-                    ]
-                },
-                {
-                    "name": "list",
-                    "type": "arg",
-                    "desc": "List X-th configuration field",
-                    "args": [
-                        {
-                            "name": "index",
-                            "type": "int32_t",
-                            "default": 0,
-                            "desc": "Index for the configuration field to list, returns nothing in case of out of range index"
-                        }
-                    ]
-                }
-            ]
         }
     ]
 }

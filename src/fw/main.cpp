@@ -13,11 +13,16 @@ int main()
         if ( brd::setup_board() != SUCCESS )
                 fw::stop_exec();
 
-        fw::context ctx = fw::setup_context();
+        core::drivers cdrv = brd::setup_core_drivers();
+        if ( cdrv.any_uninitialized() )
+                fw::stop_exec();
+        fw::context ctx{ std::move( cdrv ) };
+        ctx.setup();
         while ( true ) {
                 ctx.tick();
 
                 core::dispatcher dis{
+                    .mem      = ctx.core.gov_mem,
                     .motor    = *ctx.cdrv.motor,
                     .pos_drv  = *ctx.cdrv.position,
                     .curr_drv = *ctx.cdrv.current,

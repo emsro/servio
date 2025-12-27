@@ -109,6 +109,7 @@ struct pwm_motor_iface : motor_info_iface
         virtual void force_stop()         = 0;
         virtual void set_invert( bool v ) = 0;
         virtual void set_power( pwr )     = 0;
+        virtual pwr  get_power() const    = 0;
 };
 
 struct get_pos_iface

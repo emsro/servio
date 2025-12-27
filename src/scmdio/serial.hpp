@@ -32,7 +32,18 @@ awaitable< void > commit_config( port_iface& port );
 
 awaitable< nlohmann::json > get_property( port_iface& port, std::string_view prop );
 
-awaitable< void >
-set_mode( port_iface& port, std::string_view mode, nlohmann::json const& arg = nullptr );
+awaitable< nlohmann::json > do_gov(
+    port_iface&           port,
+    std::string_view      gov,
+    nlohmann::json const& args   = {},
+    nlohmann::json const& kwargs = {} );
+
+awaitable< void > govctl_activate( port_iface& port, std::string_view governor );
+
+awaitable< void > govctl_deactivate( port_iface& port );
+
+awaitable< std::string > govctl_active( port_iface& port );
+
+awaitable< opt< std::string > > govctl_list( port_iface& port, int32_t index );
 
 }  // namespace servio::scmdio

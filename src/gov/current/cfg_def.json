@@ -2,7 +2,7 @@
     "fields": [
         {
             "id": 1,
-            "name": "loop_p",
+            "name": "curr_loop_p",
             "type": "float",
             "default": "1.0F",
             "unit": "",
@@ -10,7 +10,7 @@
         },
         {
             "id": 2,
-            "name": "loop_i",
+            "name": "curr_loop_i",
             "type": "float",
             "default": "0.0001F",
             "unit": "",
@@ -18,7 +18,7 @@
         },
         {
             "id": 3,
-            "name": "loop_d",
+            "name": "curr_loop_d",
             "type": "float",
             "default": "0.0F",
             "unit": "",

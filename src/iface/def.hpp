@@ -48,47 +48,46 @@ static constexpr std::string_view to_str( property v )
         return "unknown";
 }
 
-struct gov_activate_stmt
+struct govctl_activate_stmt
 {
         string governor = {};
         friend constexpr auto
-        operator<=>( gov_activate_stmt const&, gov_activate_stmt const& ) noexcept = default;
+        operator<=>( govctl_activate_stmt const&, govctl_activate_stmt const& ) noexcept = default;
 };
 
-struct gov_deactivate_stmt
+struct govctl_deactivate_stmt
+{
+        friend constexpr auto operator<=>(
+            govctl_deactivate_stmt const&,
+            govctl_deactivate_stmt const& ) noexcept = default;
+};
+
+struct govctl_active_stmt
 {
         friend constexpr auto
-        operator<=>( gov_deactivate_stmt const&, gov_deactivate_stmt const& ) noexcept = default;
+        operator<=>( govctl_active_stmt const&, govctl_active_stmt const& ) noexcept = default;
 };
 
-struct gov_active_stmt
-{
-        friend constexpr auto
-        operator<=>( gov_active_stmt const&, gov_active_stmt const& ) noexcept = default;
-};
-
-struct gov_list_stmt
+struct govctl_list_stmt
 {
         int32_t index = {};
         friend constexpr auto
-        operator<=>( gov_list_stmt const&, gov_list_stmt const& ) noexcept = default;
+        operator<=>( govctl_list_stmt const&, govctl_list_stmt const& ) noexcept = default;
 };
 
-struct gov_forward
+using govctl_stmts = vari::
+    typelist< govctl_activate_stmt, govctl_deactivate_stmt, govctl_active_stmt, govctl_list_stmt >;
+
+struct govctl_stmt
 {
-        std::string_view cmd;
-        cmd_parser       parser;
+        vari::vval< govctl_stmts > sub = govctl_activate_stmt{};
         friend constexpr auto
-        operator<=>( gov_forward const&, gov_forward const& ) noexcept = default;
+        operator<=>( govctl_stmt const&, govctl_stmt const& ) noexcept = default;
 };
-
-using gov_stmts = vari::
-    typelist< gov_activate_stmt, gov_deactivate_stmt, gov_active_stmt, gov_list_stmt, gov_forward >;
 
 struct gov_stmt
 {
-        vari::vval< gov_stmts > sub = gov_activate_stmt{};
-
+        cmd_parser            parser;
         friend constexpr auto operator<=>( gov_stmt const&, gov_stmt const& ) noexcept = default;
 };
 
@@ -100,22 +99,25 @@ struct prop_stmt
 
 struct cfg_set_stmt
 {
-        string   field = {};
-        expr_tok value = {};
+        string   field    = {};
+        expr_tok value    = {};
+        string   governor = "";
         friend constexpr auto
         operator<=>( cfg_set_stmt const&, cfg_set_stmt const& ) noexcept = default;
 };
 
 struct cfg_get_stmt
 {
-        string field = {};
+        string field    = {};
+        string governor = "";
         friend constexpr auto
         operator<=>( cfg_get_stmt const&, cfg_get_stmt const& ) noexcept = default;
 };
 
 struct cfg_list_stmt
 {
-        int32_t index = 0;
+        int32_t index    = 0;
+        string  governor = "";
         friend constexpr auto
         operator<=>( cfg_list_stmt const&, cfg_list_stmt const& ) noexcept = default;
 };
@@ -138,8 +140,7 @@ using cfg_stmts =
 struct cfg_stmt
 {
         vari::vval< cfg_stmts > sub = cfg_set_stmt{};
-
-        friend constexpr auto operator<=>( cfg_stmt const&, cfg_stmt const& ) noexcept = default;
+        friend constexpr auto   operator<=>( cfg_stmt const&, cfg_stmt const& ) noexcept = default;
 };
 
 struct info_stmt
@@ -147,12 +148,11 @@ struct info_stmt
         friend constexpr auto operator<=>( info_stmt const&, info_stmt const& ) noexcept = default;
 };
 
-using stmts = vari::typelist< gov_stmt, prop_stmt, cfg_stmt, info_stmt >;
+using stmts = vari::typelist< govctl_stmt, gov_stmt, prop_stmt, cfg_stmt, info_stmt >;
 
 struct stmt
 {
-        vari::vval< stmts > sub = gov_stmt{};
-
+        vari::vval< stmts >   sub                                              = govctl_stmt{};
         friend constexpr auto operator<=>( stmt const&, stmt const& ) noexcept = default;
 };
 

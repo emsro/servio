@@ -10,11 +10,13 @@ servio_gen_iface(
   PARSER parse.cpp
   DOC iface.md)
 servio_add_library(
-  TARGET velgovlib
-  SOURCES velocity.cpp parse.cpp
+  TARGET velgovlibb
+  SOURCES parse.cpp
   LIBS govlib vari
   OPTS -Os)
-add_dependencies(velgovlib vel_cfg_def vel_iface_def)
+add_dependencies(velgovlibb vel_cfg_def vel_iface_def)
+add_library(velgovlib OBJECT velocity.cpp)
+target_link_libraries(velgovlib PUBLIC velgovlibb)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 

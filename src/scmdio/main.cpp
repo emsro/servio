@@ -141,51 +141,67 @@ void pool_def( CLI::App& app, io_context& io_ctx )
         } );
 }
 
-struct mode_opts
+struct govctl_opts
 {
-        float    power;
-        float    current;
-        float    angle;
-        float    velocity;
-        char_cli port;
+        std::string governor;
+        char_cli    port;
 };
 
-void mode_def( CLI::App& app, io_context& io_ctx )
+void govctl_def( CLI::App& app, io_context& io_ctx )
 {
-        auto ctx = std::make_shared< mode_opts >();
+        auto ctx = std::make_shared< govctl_opts >();
 
-        auto* mode = app.add_subcommand( "mode", "switch the servo to mode" );
-        port_opts( *mode, ctx->port );
+        auto* gov = app.add_subcommand( "govctl", "control servo governor" );
+        gov->require_subcommand( 1 );
+        port_opts( *gov, ctx->port );
 
-        using R = awaitable< void >;
-
-        auto* disengaged = mode->add_subcommand( "disengaged", "disengaged mode" );
-        port_callback( disengaged, io_ctx, ctx, []( sptr< char_port > p ) -> R {
-                co_await set_mode( *p, "disengaged" );
+        using R        = awaitable< void >;
+        auto* activate = gov->add_subcommand( "activate", "activate governor" );
+        activate->add_option( "gov", ctx->governor, "governor to activate" )->required();
+        port_callback( activate, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
+                co_await govctl_activate( *p, ctx->governor );
         } );
 
-        auto* pow = mode->add_subcommand( "power", "power mode" );
-        pow->add_option( "power", ctx->power, "power" );
-        port_callback( pow, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
-                co_await set_mode( *p, "power", ctx->power );
+        auto* deactivate =
+            gov->add_subcommand( "deactivate", "deactivate currently active governor" );
+        port_callback( deactivate, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
+                co_await govctl_deactivate( *p );
         } );
 
-        auto* current = mode->add_subcommand( "current", "current mode" );
-        current->add_option( "current", ctx->current, "goal current" );
-        port_callback( current, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
-                co_await set_mode( *p, "current", ctx->current );
+        auto* active = gov->add_subcommand( "active", "get currently active governor" );
+        port_callback( active, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
+                auto s = co_await govctl_active( *p );
+                std::cout << "gov: " << s << std::endl;
         } );
 
-        auto* position = mode->add_subcommand( "position", "position mode" );
-        position->add_option( "angle", ctx->angle, "goal angle" );
-        port_callback( position, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
-                co_await set_mode( *p, "position", ctx->angle );
+        auto* list = gov->add_subcommand( "list", "list governors" );
+        port_callback( list, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
+                for ( std::size_t i = 0;; ++i ) {
+                        auto s = co_await govctl_list( *p, i );
+                        if ( !s )
+                                break;
+                        std::cout << "gov: " << *s << std::endl;
+                }
         } );
+}
 
-        auto* velocity = mode->add_subcommand( "velocity", "velocity mode" );
-        velocity->add_option( "velocity", ctx->velocity, "goal velocity" );
-        port_callback( velocity, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
-                co_await set_mode( *p, "velocity", ctx->velocity );
+struct gov_opts
+{
+        std::string governor;
+        char_cli    port;
+};
+
+void gov_def( CLI::App& app, io_context& io_ctx )
+{
+        auto ctx = std::make_shared< gov_opts >();
+
+        auto* gov = app.add_subcommand( "gov", "interact with a specific governor" );
+        gov->add_option( "governor", ctx->governor, "governor to interact with" )->required();
+        port_opts( *gov, ctx->port );
+
+        port_callback( gov, io_ctx, ctx, [ctx, &app]( sptr< char_port > p ) -> awaitable< void > {
+                auto rest = app.remaining( true );
+                co_await do_gov( *p, ctx->governor, { rest }, {} );
         } );
 }
 
@@ -302,7 +318,7 @@ int main( int argc, char* argv[] )
 
         scmdio::cfg_def( app, ctx );
         scmdio::pool_def( app, ctx );
-        scmdio::mode_def( app, ctx );
+        scmdio::govctl_def( app, ctx );
         // scmdio::autotune_def( app, ctx ); XXX: finish
         scmdio::bflash_def( app, ctx );
         scmdio::preset_def( app, ctx );

@@ -7,31 +7,27 @@
 namespace servio::fw
 {
 
-context setup_context()
+void context::setup()
 {
+        scbs.set_callbacks( *cdrv.period, *cdrv.period_cb, *cdrv.position, *cdrv.current );
+        cdrv.leds->update( core.ind.get_state() );
 
-        core::drivers cdrv = brd::setup_core_drivers();
-        if ( cdrv.any_uninitialized() )
-                fw::stop_exec();
+        cfg::root_handler rh{
+            .m     = cdrv.cfg->map,
+            .conv  = core.conv,
+            .met   = core.met,
+            .mon   = core.mon,
+            .motor = *cdrv.motor,
+            .pos   = *cdrv.position };
 
-        context ctx{
-            .cdrv = cdrv,
-            .core = { cdrv.clock->get_us(), *cdrv.vcc, *cdrv.temperature },
-            .scbs = { *cdrv.motor, *cdrv.clock, ctx.core.gov_, ctx.core.met, ctx.core.conv },
-        };
-        ctx.scbs.set_callbacks( *cdrv.period, *cdrv.period_cb, *cdrv.position, *cdrv.current );
-        ctx.cdrv.leds->update( ctx.core.ind.get_state() );
-
-        cfg::dispatcher cfg_dis{
-            cdrv.cfg->map, ctx.core.conv, ctx.core.met, ctx.core.mon, *cdrv.motor, *cdrv.position };
-        cfg_dis.full_apply();
+        rh.full_apply();
 
         if ( cdrv.start_cb( cdrv ) != SUCCESS )
                 fw::stop_exec();
 
-        ctx.core.ind.on_event( cdrv.clock->get_us(), mon::indication_event::INITIALIZED );
+        core.ind.on_event( cdrv.clock->get_us(), mon::indication_event::INITIALIZED );
 
-        return ctx;
+        gov::create_governors( core.gov_, core.gov_mem );
 }
 
 }  // namespace servio::fw

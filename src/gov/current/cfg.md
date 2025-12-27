@@ -2,17 +2,17 @@
 
 <!-- GEN BEGIN HERE -->
 
-## 1 loop_p
+## 1 curr_loop_p
 
  - _type_: `float`
  - _default_: `1.0F`
 
-## 2 loop_i
+## 2 curr_loop_i
 
  - _type_: `float`
  - _default_: `0.0001F`
 
-## 3 loop_d
+## 3 curr_loop_d
 
  - _type_: `float`
  - _default_: `0.0F`

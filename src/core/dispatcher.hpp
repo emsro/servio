@@ -12,6 +12,7 @@ namespace servio::core
 
 struct dispatcher
 {
+        em::pmr::memory_resource&  mem;
         drv::pwm_motor_iface&      motor;
         drv::get_pos_iface&        pos_drv;
         drv::get_curr_iface const& curr_drv;

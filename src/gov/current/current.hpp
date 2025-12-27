@@ -31,11 +31,13 @@ struct _current_gov final : governor, handle
         void apply_cfg( cfg::key k )
         {
                 switch ( k ) {
-                case cfg::key::loop_p:
-                case cfg::key::loop_i:
-                case cfg::key::loop_d:
+                case cfg::key::curr_loop_p:
+                case cfg::key::curr_loop_i:
+                case cfg::key::curr_loop_d:
                         pid.cfg.coefficients = {
-                            .p = cfg.loop_p, .i = cfg.loop_i, .d = cfg.loop_d };
+                            .p = cfg.curr_loop_p,
+                            .i = cfg.curr_loop_i / pid_r,
+                            .d = cfg.curr_loop_d * pid_r };
                         break;
                 case cfg::key::curr_lim_min:
                 case cfg::key::curr_lim_max:
@@ -48,7 +50,7 @@ struct _current_gov final : governor, handle
                 }
         }
 
-        engage_res engage( std::span< std::byte > ) override
+        engage_res engage( em::pmr::memory_resource& ) override
         {
                 power = pwr( 0.F );
                 return { SUCCESS, this };
@@ -69,29 +71,11 @@ struct _current_gov final : governor, handle
                 }
 
                 using R = status;
-                return stm.sub.visit(
-                    [&]( iface::set_stmt const& s ) -> R {
-                            set_goal_current( s.goal );
-                            return SUCCESS;
-                    },
-                    [&]( iface::cfg_stmt const& s ) -> R {
-                            s.sub.visit(
-                                [&]( iface::cfg_set_stmt const& st ) {
-                                        auto opt_k = servio::cfg::cmd_iface::on_cmd_set(
-                                            cfg, st.field, st.value.data, std::move( out ) );
-                                        if ( opt_k )
-                                                apply_cfg( *opt_k );
-                                },
-                                [&]( iface::cfg_get_stmt const& st ) {
-                                        servio::cfg::cmd_iface::on_cmd_get(
-                                            cfg, st.field, std::move( out ) );
-                                },
-                                [&]( iface::cfg_list_stmt const& st ) {
-                                        servio::cfg::cmd_iface::on_cmd_list< cfg::map >(
-                                            st.index, std::move( out ) );
-                                } );
-                            return SUCCESS;
-                    } );
+                return stm.sub.visit( [&]( iface::set_stmt const& s ) -> R {
+                        set_goal_current( s.goal );
+                        std::move( out ).ok();
+                        return SUCCESS;
+                } );
         }
 
         void set_goal_current( float goal )
@@ -118,10 +102,16 @@ struct _current_gov final : governor, handle
                     cfg.pos_to_curr_lim_scale * ( cfg.pos_lim_min - position );
         }
 
-        using pid_t = em::pid< typename microseconds::rep >;
+        using pid_t   = em::pid< typename microseconds::rep >;
+        using pid_per = microseconds::period;
+
+        // magical constant to vary P and D coefficients of PID controller according to time units
+        static constexpr auto pid_r = float{ pid_per::den } / float{ pid_per::num };
 
         cfg::map                         cfg;
-        servio::cfg::handler< cfg::map > cfg_handler{ cfg };
+        servio::cfg::handler< cfg::map > cfg_handler{
+            cfg,
+            em::member_function< &_current_gov::apply_cfg >{ *this } };
 
         float goal = 0.0F;
         pid_t pid;

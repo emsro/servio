@@ -19,9 +19,14 @@ TEST_F( gov_fixture, curr )
                         EXPECT_EQ( s, SUCCESS ) << "cmd: " << cmd << "\n";
                 };
 
-                do_cmd( "cfg set loop_p 0.0625" );
-                do_cmd( "cfg set loop_i 0.000'005'12" );
-                do_cmd( "cfg set loop_d 0.03125" );
+                auto set_cfg = [&]( std::string_view key, auto value ) {
+                        auto s = gov.get_cfg()->on_cmd_set( key, value );
+                        EXPECT_TRUE( !s );
+                };
+
+                set_cfg( "curr_loop_p", 0.0625F );
+                set_cfg( "curr_loop_i", 5.12F );
+                set_cfg( "curr_loop_d", 0.0F );
                 do_cmd( std::format( "set {}", curr ) );
 
                 for ( std::size_t i : em::range( 100u ) ) {

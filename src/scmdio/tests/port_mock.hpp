@@ -6,6 +6,7 @@
 #include "./util.hpp"
 
 #include <deque>
+#include <emlabcpp/pmr/new_delete_resource.h>
 
 namespace servio::scmdio
 {
@@ -36,6 +37,7 @@ struct port_mock : port_iface
         boost::asio::awaitable< void > write_msg( std::span< std::byte const > msg ) override
         {
                 core::dispatcher disp{
+                    .mem      = em::pmr::new_delete_resource(),
                     .motor    = a.motor,
                     .pos_drv  = a.pos_drv,
                     .curr_drv = a.curr_drv,

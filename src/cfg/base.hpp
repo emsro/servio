@@ -71,10 +71,26 @@ vari::vval< base_t > store_value( T val )
 
 struct iface
 {
+        virtual opt_str_err
+        on_cmd_set( std::string_view key, vari::vref< base_t const > value )     = 0;
+        virtual vari::vval< base_t, str_err > on_cmd_get( std::string_view key ) = 0;
+        // returns empty string if offset is out of range
+        virtual std::string_view on_cmd_list( int32_t offset ) = 0;
+
         virtual status on_storage_load( uint32_t id, std::span< std::byte const > data ) = 0;
         virtual opt< std::span< std::byte const > >
                      on_storage_save( uint32_t id, std::span< std::byte > buffer )             = 0;
         virtual bool on_storage_change_check( uint32_t id, std::span< std::byte const > data ) = 0;
 };
+
+void for_each_key( iface& ifa, auto&& f )
+{
+        for ( int32_t offset = 0;; offset++ ) {
+                std::string_view key = ifa.on_cmd_list( offset );
+                if ( key.empty() )
+                        break;
+                f( key );
+        }
+}
 
 }  // namespace servio::cfg
