@@ -1,0 +1,18 @@
+<map id="servio::gov::pos::_position_gov" name="servio::gov::pos::_position_gov">
+<area shape="rect" id="Node000001" title=" " alt="" coords="855,111,987,151"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1gov_1_1governor.html" title=" " alt="" coords="515,5,674,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="673,31,750,52,832,80,889,109,886,113,830,84,749,57,671,36"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1gov_1_1handle.html" title=" " alt="" coords="522,55,667,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="681,80,831,109,855,114,854,119,830,114,680,85"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1gov_1_1pos_1_1cfg_1_1map.html" title=" " alt="" coords="249,171,439,196"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="452,182,507,182,595,185,633,186,682,182,772,167,854,148,855,153,773,172,683,187,633,191,595,191,507,187,452,187"/>
+<area shape="rect" id="Node000006" href="$structservio_1_1cfg_1_1handler.html" title=" " alt="" coords="511,104,678,159"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="419,165,511,146,512,151,420,170"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,171,167,196"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="180,181,249,181,249,186,180,186"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="691,129,854,129,854,134,691,134"/>
+<area shape="rect" id="Node000007" href="$structservio_1_1cfg_1_1iface.html" title=" " alt="" coords="279,107,409,132"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="423,120,511,125,511,130,423,126"/>
+<area shape="rect" id="Node000008" href="$structservio_1_1linear__transition__regulator.html" title=" " alt="" coords="507,246,683,286"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="696,264,764,253,798,243,829,229,853,212,874,192,905,150,910,153,878,195,857,216,832,234,800,248,765,258,697,269"/>
+</map>

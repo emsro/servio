@@ -1,0 +1,13 @@
+<map id="servio::cfg::iface" name="servio::cfg::iface">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,163,136,189"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1cfg_1_1handler.html" title=" " alt="" coords="198,5,355,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,150,127,103,154,77,183,55,205,43,208,48,185,60,157,81,131,106,91,154"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1cfg_1_1handler.html" title=" " alt="" coords="202,70,351,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,156,203,122,205,127,119,161"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1cfg_1_1handler.html" title=" " alt="" coords="193,149,360,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="150,173,193,173,193,179,150,179"/>
+<area shape="rect" id="Node000005" href="$structservio_1_1cfg_1_1handler.html" title=" " alt="" coords="195,227,359,282"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="119,191,205,225,203,230,117,196"/>
+<area shape="rect" id="Node000006" href="$structservio_1_1cfg_1_1handler.html" title=" " alt="" coords="184,306,369,331"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="90,198,130,246,156,270,185,291,213,304,211,308,183,296,153,274,127,249,86,201"/>
+</map>

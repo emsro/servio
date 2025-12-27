@@ -95,7 +95,6 @@ $(document).ready(function(){initNavTree('base_8hpp.html',''); initResizable(); 
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">base.hpp File Reference</div></div>
@@ -123,6 +122,10 @@ Classes</h2></td></tr>
 <tr class="separator:structservio_1_1leds__vals"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1pwr.html">servio::pwr</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1str__err" id="r_structservio_1_1str__err"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#structservio_1_1str__err">servio::str_err</a></td></tr>
+<tr class="separator:structservio_1_1str__err"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1opt__str__err.html">servio::opt_str_err</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -148,31 +151,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a7f7743aa58139aab9b7d4db0cde30f55"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">servio::limits</a> = em::min_max&lt; T &gt;</td></tr>
 <tr class="separator:a7f7743aa58139aab9b7d4db0cde30f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:afc974abf6039d6442e90374ac7b74be9" id="r_afc974abf6039d6442e90374ac7b74be9"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9">servio::control_mode</a> { <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9afeffe8e712a5ce9a0cedef11c364fa74">servio::DISENGAGED</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9ac9c9c146c630ca5ef9197c73c032f4a6">servio::POWER</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9aa2770969c827f0f2910f6179418462df">servio::CURRENT</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a7b4354bded455eb379e3c764806cda7b">servio::VELOCITY</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#afc974abf6039d6442e90374ac7b74be9a90b4ba73224408e82ade8a072a3712c1">servio::POSITION</a>
-<br />
- }</td></tr>
-<tr class="separator:afc974abf6039d6442e90374ac7b74be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f7489b8bb8f69589f34deadbd657c2" id="r_ab5f7489b8bb8f69589f34deadbd657c2"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2">servio::control_loop</a> { <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2aa2770969c827f0f2910f6179418462df">servio::CURRENT</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2a7b4354bded455eb379e3c764806cda7b">servio::VELOCITY</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#ab5f7489b8bb8f69589f34deadbd657c2a90b4ba73224408e82ade8a072a3712c1">servio::POSITION</a>
-<br />
- }</td></tr>
-<tr class="separator:ab5f7489b8bb8f69589f34deadbd657c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9cc4a2727af86eed775de91ae7e0ac23" id="r_a9cc4a2727af86eed775de91ae7e0ac23"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1literals.html#a9cc4a2727af86eed775de91ae7e0ac23">servio::literals::operator&quot;&quot;_s</a> (unsigned long long int secs)</td></tr>
@@ -187,6 +165,8 @@ Functions</h2></td></tr>
 <tr class="separator:aa1dc9b44ed11abf89c730b678e925874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb414b5974d857698f687cfad6c71993" id="r_adb414b5974d857698f687cfad6c71993"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structservio_1_1pwr.html">pwr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1literals.html#adb414b5974d857698f687cfad6c71993">servio::literals::operator&quot;&quot;_pwr</a> (long double x)</td></tr>
 <tr class="separator:adb414b5974d857698f687cfad6c71993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f20cd6499049a09ebaf08d0eee1e3f5" id="r_a4f20cd6499049a09ebaf08d0eee1e3f5"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceservio.html#structservio_1_1str__err">str_err</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1literals.html#a4f20cd6499049a09ebaf08d0eee1e3f5">servio::literals::operator&quot;&quot;_err</a> (char const *str, std::size_t)</td></tr>
+<tr class="separator:a4f20cd6499049a09ebaf08d0eee1e3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -237,13 +217,43 @@ red</td>
 
 </div>
 </div>
+<a name="structservio_1_1str__err" id="structservio_1_1str__err"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1str__err">&#9670;&#160;</a></span>servio::str_err</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::str_err</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::str_err:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1str__err__coll__graph.svg" width="178" height="214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a3e431f9c656096e11e6cc0754373d422" name="a3e431f9c656096e11e6cc0754373d422"></a>string_view</td>
+<td class="fieldname">
+error</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="base_8hpp.html">base.hpp</a></li>
-    <li class="footer">Generated on Tue Jul 22 2025 20:16:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 21:27:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

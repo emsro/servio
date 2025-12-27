@@ -17,12 +17,10 @@ var searchData=
   ['adl_5fserializer_3c_20avakar_3a_3aatom_3c_20ts_2e_2e_2e_20_3e_20_3e_14',['adl_serializer&lt; avakar::atom&lt; Ts... &gt; &gt;',['../structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html',1,'nlohmann']]],
   ['adl_5fserializer_3c_20vari_3a_3a_5fvval_3c_20ts_2e_2e_2e_20_3e_20_3e_15',['adl_serializer&lt; vari::_vval&lt; Ts... &gt; &gt;',['../structnlohmann_1_1adl__serializer_3_01vari_1_1__vval_3_01Ts_8_8_8_01_4_01_4.html',1,'nlohmann']]],
   ['arg_5fdef_16',['arg_def',['../namespaceservio_1_1iface.html#structservio_1_1iface_1_1arg__def',1,'servio::iface']]],
-  ['args_17',['args',['../structservio_1_1ctl_1_1args.html',1,'servio::ctl']]],
-  ['args_5fdef_18',['args_def',['../namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1args__def',1,'servio::ctl']]],
-  ['args_5ftoken_19',['args_token',['../namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1args__token',1,'servio::ctl']]],
-  ['array_5fser_20',['array_ser',['../structservio_1_1json_1_1array__ser.html',1,'servio::json']]],
-  ['atom_5fsv_5fkey_21',['atom_sv_key',['../structservio_1_1atom__sv__key.html',1,'servio']]],
-  ['attrs_22',['attrs',['../structservio_1_1scmdio_1_1port__mock.html#structservio_1_1scmdio_1_1port__mock_1_1attrs',1,'servio::scmdio::port_mock']]],
-  ['autotune_5fctx_23',['autotune_ctx',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx',1,'servio::scmdio']]],
-  ['avg_5ffilter_24',['avg_filter',['../structservio_1_1core_1_1avg__filter.html',1,'servio::core']]]
+  ['arg_5fparser_17',['arg_parser',['../structservio_1_1iface_1_1arg__parser.html',1,'servio::iface']]],
+  ['array_5fser_18',['array_ser',['../structservio_1_1json_1_1array__ser.html',1,'servio::json']]],
+  ['atom_5fsv_5fkey_19',['atom_sv_key',['../structservio_1_1atom__sv__key.html',1,'servio']]],
+  ['attrs_20',['attrs',['../structservio_1_1scmdio_1_1port__mock.html#structservio_1_1scmdio_1_1port__mock_1_1attrs',1,'servio::scmdio::port_mock']]],
+  ['auto_5ffactory_21',['auto_factory',['../structservio_1_1gov_1_1auto__factory.html',1,'servio::gov']]],
+  ['autotune_5fctx_22',['autotune_ctx',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx',1,'servio::scmdio']]]
 ];

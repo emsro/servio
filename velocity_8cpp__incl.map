@@ -1,0 +1,22 @@
+<map id="src/gov/velocity/velocity.cpp" name="src/gov/velocity/velocity.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="273,5,479,31"/>
+<area shape="rect" id="Node000002" href="$velocity_8hpp.html" title=" " alt="" coords="322,79,430,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="379,31,379,65,373,65,373,31"/>
+<area shape="rect" id="Node000003" href="$handler_8hpp.html" title=" " alt="" coords="5,240,152,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="322,100,240,117,197,132,156,154,136,171,119,190,93,229,88,226,115,187,132,167,153,150,194,128,239,112,321,95"/>
+<area shape="rect" id="Node000031" href="$linear__transition__regulator_8hpp.html" title=" " alt="" coords="414,152,586,192"/>
+<area shape="poly" id="edge3_Node000002_Node000031" title=" " alt="" coords="396,102,460,142,457,147,393,106"/>
+<area shape="rect" id="Node000033" href="$current_8hpp.html" title=" " alt="" coords="179,159,338,185"/>
+<area shape="poly" id="edge4_Node000002_Node000033" title=" " alt="" coords="360,106,289,154,286,149,357,102"/>
+<area shape="rect" id="Node000034" href="$governor_8hpp.html" title=" " alt="" coords="177,240,295,265"/>
+<area shape="poly" id="edge8_Node000002_Node000034" title=" " alt="" coords="322,103,232,123,193,137,170,154,165,163,164,171,170,191,186,213,206,230,202,234,182,216,166,193,159,171,160,161,166,150,191,133,230,118,321,98"/>
+<area shape="rect" id="Node000040" title=" " alt="" coords="320,240,443,265"/>
+<area shape="poly" id="edge11_Node000002_Node000040" title=" " alt="" coords="379,104,383,226,378,226,374,104"/>
+<area shape="rect" id="Node000041" href="$velocity_2cfg_8hpp.html" title=" " alt="" coords="610,159,689,185"/>
+<area shape="poly" id="edge9_Node000002_Node000041" title=" " alt="" coords="424,101,599,149,607,152,606,157,598,155,423,107"/>
+<area shape="rect" id="Node000042" href="$velocity_2iface_8hpp.html" title=" " alt="" coords="713,159,804,185"/>
+<area shape="poly" id="edge10_Node000002_Node000042" title=" " alt="" coords="430,98,555,118,702,149,714,153,713,158,701,155,554,123,430,103"/>
+<area shape="poly" id="edge5_Node000033_Node000003" title=" " alt="" coords="234,187,118,237,116,232,231,182"/>
+<area shape="poly" id="edge6_Node000033_Node000034" title=" " alt="" coords="258,186,246,227,241,226,253,184"/>
+<area shape="poly" id="edge7_Node000033_Node000040" title=" " alt="" coords="278,183,353,230,350,235,275,187"/>
+</map>

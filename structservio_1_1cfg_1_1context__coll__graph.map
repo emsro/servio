@@ -1,5 +1,7 @@
 <map id="servio::cfg::context" name="servio::cfg::context">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,152,119"/>
-<area shape="rect" id="Node000002" href="$structservio_1_1cfg_1_1map.html" title=" " alt="" coords="15,5,142,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,45,81,93,76,93,76,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="13,181,159,207"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1cfg_1_1map.html" title=" " alt="" coords="23,93,149,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,133,89,181,83,181,83,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,167,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,45,89,93,83,93,83,45"/>
 </map>

@@ -4,7 +4,7 @@ var str__lib_8hpp =
     [ "servio::str_lib::s_to_nr_res", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res", [
       [ "is_num", "namespaceservio_1_1str__lib.html#a3903dd4a75ac6fdbf6aabe44aae9aca9", null ]
     ] ],
-    [ "servio::str_lib::s_to_nr_res.__unnamed3__", "namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3____", [
+    [ "servio::str_lib::s_to_nr_res.__unnamed1__", "namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed1____", [
       [ "n", "namespaceservio_1_1str__lib.html#a7b8b965ad4bca0e41ab51de7b31363a1", null ],
       [ "r", "namespaceservio_1_1str__lib.html#a4b43b0aee35624cd95b910189b3dc231", null ]
     ] ],
@@ -17,6 +17,7 @@ var str__lib_8hpp =
     [ "hex_prefix", "str__lib_8hpp.html#a05768067697a4e6d0a0286b43aa7c3d4", null ],
     [ "hex_to_n", "str__lib_8hpp.html#aaab7e0a876beb327d57f81cceb6c2d4a", null ],
     [ "i32_lowest_as_u32", "str__lib_8hpp.html#a2307b515c6486d25c3d268645ff819fd", null ],
+    [ "i_to_s", "str__lib_8hpp.html#ab6a932876116b6eae728e17f15d3f719", null ],
     [ "is_dec", "str__lib_8hpp.html#a71e7272641d158f12eb27afb0f6e34a5", null ],
     [ "is_hex", "str__lib_8hpp.html#a183cfab85343e43a15db9052fbdc2d90", null ],
     [ "is_id_letter", "str__lib_8hpp.html#aa45a43e85a14382a4f7b45d379c8c07e", null ],

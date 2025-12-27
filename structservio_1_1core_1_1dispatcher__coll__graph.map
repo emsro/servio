@@ -1,29 +1,31 @@
 <map id="servio::core::dispatcher" name="servio::core::dispatcher">
-<area shape="rect" id="Node000001" title=" " alt="" coords="535,297,709,322"/>
-<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="244,5,420,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,48,465,74,490,91,513,112,551,160,582,213,619,295,614,298,577,215,547,163,509,115,487,96,462,79,410,53"/>
-<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1motor__info__iface.html" title=" " alt="" coords="5,5,143,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="156,23,244,23,244,28,156,28"/>
-<area shape="rect" id="Node000004" href="$structservio_1_1drv_1_1get__pos__iface.html" title=" " alt="" coords="257,69,407,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="406,112,421,119,469,142,512,173,545,204,574,239,615,295,610,298,570,242,541,208,509,177,467,146,419,124,403,117"/>
-<area shape="rect" id="Node000005" href="$structservio_1_1drv_1_1get__curr__iface.html" title=" " alt="" coords="257,133,407,173"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="401,176,421,183,467,198,512,218,568,257,609,294,606,298,564,261,509,222,466,203,419,188,400,181"/>
-<area shape="rect" id="Node000006" href="$structservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="253,198,411,223"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="404,224,512,256,597,294,595,299,510,261,402,229"/>
-<area shape="rect" id="Node000007" href="$structservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="247,247,417,273"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="426,272,511,287,552,294,551,299,510,292,425,278"/>
-<area shape="rect" id="Node000008" href="$classservio_1_1ctl_1_1control.html" title=" " alt="" coords="263,297,401,322"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="415,307,535,307,535,312,415,312"/>
-<area shape="rect" id="Node000009" href="$classservio_1_1mtr_1_1metrics.html" title=" " alt="" coords="257,346,407,371"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="420,342,510,327,551,319,552,325,511,332,421,347"/>
-<area shape="rect" id="Node000010" href="$classservio_1_1mon_1_1monitor.html" title=" " alt="" coords="253,395,411,421"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="405,390,510,359,596,320,598,325,512,364,406,395"/>
-<area shape="rect" id="Node000011" href="$structservio_1_1cfg_1_1map.html" title=" " alt="" coords="269,445,395,470"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="391,438,419,429,466,417,509,399,565,359,606,320,610,324,569,363,512,404,467,422,421,435,392,443"/>
-<area shape="rect" id="Node000012" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="259,495,405,535"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="417,489,465,470,509,443,543,413,572,379,611,321,616,324,576,382,547,417,512,447,467,474,419,494"/>
-<area shape="rect" id="Node000013" href="$structservio_1_1cnv_1_1converter.html" title=" " alt="" coords="251,559,413,585"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="408,553,461,532,486,517,509,499,548,454,578,403,600,356,614,321,619,323,605,358,583,405,552,457,513,503,489,522,464,537,410,558"/>
-<area shape="rect" id="Node000014" href="$structservio_1_1cnv_1_1linear__converter.html" title=" " alt="" coords="5,552,143,592"/>
-<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="156,569,251,569,251,575,156,575"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="559,305,733,330"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1pwm__motor__iface.html" title=" " alt="" coords="268,5,444,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="438,48,490,74,514,91,537,112,576,162,607,217,643,303,638,305,602,220,571,165,533,115,511,96,487,79,435,53"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1motor__info__iface.html" title=" " alt="" coords="17,5,155,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="168,23,268,23,268,28,168,28"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1drv_1_1get__pos__iface.html" title=" " alt="" coords="281,69,431,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="433,112,486,138,536,173,570,207,599,243,639,303,635,306,595,246,566,210,533,177,484,142,431,117"/>
+<area shape="rect" id="Node000005" href="$structservio_1_1drv_1_1get__curr__iface.html" title=" " alt="" coords="281,133,431,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="426,176,445,183,492,199,536,220,593,263,634,302,630,306,589,267,533,225,490,204,443,188,424,181"/>
+<area shape="rect" id="Node000006" href="$structservio_1_1drv_1_1vcc__iface.html" title=" " alt="" coords="277,198,435,223"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="418,224,445,232,491,245,536,262,622,302,620,307,534,266,489,251,443,237,417,230"/>
+<area shape="rect" id="Node000007" href="$structservio_1_1drv_1_1temp__iface.html" title=" " alt="" coords="271,247,441,273"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="435,273,582,302,581,307,434,278"/>
+<area shape="rect" id="Node000008" href="$structservio_1_1gov_1_1governor__manager.html" title=" " alt="" coords="277,297,435,337"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="449,315,558,315,558,320,449,320"/>
+<area shape="rect" id="Node000009" href="$classservio_1_1mtr_1_1metrics.html" title=" " alt="" coords="281,362,431,387"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="434,357,581,327,582,333,435,362"/>
+<area shape="rect" id="Node000010" href="$classservio_1_1mon_1_1monitor.html" title=" " alt="" coords="277,411,435,437"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="413,405,443,396,489,384,534,370,621,328,623,332,536,374,491,389,445,401,415,410"/>
+<area shape="rect" id="Node000011" href="$structservio_1_1cfg_1_1map.html" title=" " alt="" coords="293,461,419,486"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="416,454,443,445,490,431,533,410,589,368,630,329,634,332,593,372,536,414,492,436,445,451,418,459"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="5,461,167,486"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="180,471,292,471,292,476,180,476"/>
+<area shape="rect" id="Node000013" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="283,511,429,551"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="441,505,489,485,533,458,567,426,597,390,636,329,640,332,601,393,571,430,536,462,491,490,443,510"/>
+<area shape="rect" id="Node000014" href="$structservio_1_1cnv_1_1converter.html" title=" " alt="" coords="275,575,437,601"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="431,569,485,547,510,532,533,514,572,466,603,413,625,365,638,329,643,331,630,367,608,416,576,469,537,518,513,537,487,552,433,574"/>
+<area shape="rect" id="Node000015" href="$structservio_1_1cnv_1_1linear__converter.html" title=" " alt="" coords="17,568,155,608"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="168,585,274,585,274,591,168,591"/>
 </map>

@@ -129,8 +129,8 @@ Functions</h2></td></tr>
 <tr class="separator:a7e35f03d806fc1aab4b09853ff8bc5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04f077611bfdcd9d113fd0df35dbba94" id="r_a04f077611bfdcd9d113fd0df35dbba94"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a04f077611bfdcd9d113fd0df35dbba94">store_data</a> (em::pmr::memory_resource &amp;, <a class="el" href="structservio_1_1ftest_1_1uctx.html">uctx</a> &amp;ctx, std::string_view key, auto &amp;&amp;data)</td></tr>
 <tr class="separator:a04f077611bfdcd9d113fd0df35dbba94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7987cf8b1ec20f510735e5435fd46931" id="r_a7987cf8b1ec20f510735e5435fd46931"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a7987cf8b1ec20f510735e5435fd46931">setup_poweroff</a> (<a class="el" href="classservio_1_1ctl_1_1control.html">ctl::control</a> &amp;ctl)</td></tr>
-<tr class="separator:a7987cf8b1ec20f510735e5435fd46931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b64310593ee90cf7ea9d72fece5cfff" id="r_a9b64310593ee90cf7ea9d72fece5cfff"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a9b64310593ee90cf7ea9d72fece5cfff">setup_poweroff</a> (<a class="el" href="structservio_1_1gov_1_1governor__manager.html">gov::governor_manager</a> &amp;gv)</td></tr>
+<tr class="separator:a9b64310593ee90cf7ea9d72fece5cfff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6be4b4acbe79e047c19f5d39d84faef5" id="r_a6be4b4acbe79e047c19f5d39d84faef5"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:a6be4b4acbe79e047c19f5d39d84faef5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a6be4b4acbe79e047c19f5d39d84faef5">setup_utest</a> (em::pmr::memory_resource &amp;mem, t::reactor &amp;r, <a class="el" href="structservio_1_1ftest_1_1uctx.html">uctx</a> &amp;ctx, <a class="el" href="structservio_1_1status.html">status</a> &amp;res, Args &amp;&amp;... args)</td></tr>
 <tr class="separator:a6be4b4acbe79e047c19f5d39d84faef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,12 +192,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structservio_1_1core_1_1core.html#ac1d7318ed40f6e6de81b804e511566f7">servio::core::core::conv</a>, <a class="el" href="structservio_1_1cnv_1_1linear__converter.html#a00a3b7bb8a83fedbf2c62c77ce383e86">servio::cnv::linear_converter::convert()</a>, <a class="el" href="structservio_1_1core_1_1core.html#a2783edc02e723535534b6911cf26b3e8">servio::core::core::ctl</a>, <a class="el" href="structservio_1_1drv_1_1get__pos__iface.html#adfcf4b8b7552a2f3d07c938a95425844">servio::drv::get_pos_iface::get_position()</a>, <a class="el" href="structservio_1_1drv_1_1clk__iface.html#a29aa3a81c0ab39858ab423061e618ba3">servio::drv::clk_iface::get_us()</a>, <a class="el" href="structservio_1_1cnv_1_1converter.html#a2ed3229b71607923715107fb0ba66590">servio::cnv::converter::position</a>, <a class="el" href="classservio_1_1ctl_1_1control.html#ac9bf79e53536c7bfcb6db94ef5c20c7a">servio::ctl::control::switch_to_current_control()</a>, and <a class="el" href="classservio_1_1ctl_1_1control.html#ad3d4a1277080a68ec791550a4e0ae738">servio::ctl::control::switch_to_power_control()</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1gov_1_1governor__manager.html#a14f7a6814b1a0639f4de9e705c3b3090">servio::gov::governor_manager::activate()</a>, <a class="el" href="structservio_1_1gov_1_1governor__manager.html#abfb31c65edc80225d4304de149e7de29">servio::gov::governor_manager::active()</a>, <a class="el" href="structservio_1_1core_1_1core.html#ac1d7318ed40f6e6de81b804e511566f7">servio::core::core::conv</a>, <a class="el" href="structservio_1_1cnv_1_1linear__converter.html#a00a3b7bb8a83fedbf2c62c77ce383e86">servio::cnv::linear_converter::convert()</a>, <a class="el" href="structservio_1_1gov_1_1governor__manager.html#a1487b9ff4937466946039776466a451e">servio::gov::governor_manager::deactivate()</a>, <a class="el" href="structservio_1_1drv_1_1get__pos__iface.html#adfcf4b8b7552a2f3d07c938a95425844">servio::drv::get_pos_iface::get_position()</a>, <a class="el" href="structservio_1_1drv_1_1clk__iface.html#a29aa3a81c0ab39858ab423061e618ba3">servio::drv::clk_iface::get_us()</a>, <a class="el" href="structservio_1_1core_1_1core.html#a58ed07f6a693779b4805fc784a7da723">servio::core::core::gov_</a>, <a class="el" href="structservio_1_1core_1_1core.html#a4f00244647e27c7adb5b26c0f7fdeb95">servio::core::core::gov_mem</a>, <a class="el" href="structservio_1_1cnv_1_1converter.html#a2ed3229b71607923715107fb0ba66590">servio::cnv::converter::position</a>, <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>, and <a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a>.</p>
 
 </div>
 </div>
-<a id="a7987cf8b1ec20f510735e5435fd46931" name="a7987cf8b1ec20f510735e5435fd46931"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7987cf8b1ec20f510735e5435fd46931">&#9670;&#160;</a></span>setup_poweroff()</h2>
+<a id="a9b64310593ee90cf7ea9d72fece5cfff" name="a9b64310593ee90cf7ea9d72fece5cfff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b64310593ee90cf7ea9d72fece5cfff">&#9670;&#160;</a></span>setup_poweroff()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,8 +208,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">auto servio::ftest::setup_poweroff </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classservio_1_1ctl_1_1control.html">ctl::control</a> &amp;&#160;</td>
-          <td class="paramname"><em>ctl</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structservio_1_1gov_1_1governor__manager.html">gov::governor_manager</a> &amp;&#160;</td>
+          <td class="paramname"><em>gv</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -220,7 +220,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classservio_1_1ctl_1_1control.html#ad3d4a1277080a68ec791550a4e0ae738">servio::ctl::control::switch_to_power_control()</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1gov_1_1governor__manager.html#a1487b9ff4937466946039776466a451e">servio::gov::governor_manager::deactivate()</a>.</p>
 
 </div>
 </div>
@@ -488,7 +488,7 @@ template&lt;typename T , typename... Args&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1ftest.html">ftest</a></li>
-    <li class="footer">Generated on Tue Jul 22 2025 20:16:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 21:27:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

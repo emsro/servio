@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('md_src_2cfg_2cfg.html',''); initResiza
 <h1><a class="anchor" id="autotoc_md7"></a>
 1 model</h1>
 <p>Model of the servomotor, used for debugging purposes</p><ul>
-<li><em>type</em>: <code>string_type</code></li>
+<li><em>type</em>: <code>string</code></li>
 <li><em>default</em>: <code>"no model"</code></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md8"></a>
@@ -165,144 +165,27 @@ $(document).ready(function(){initNavTree('md_src_2cfg_2cfg.html',''); initResiza
 <li><em>default</em>: <code>false</code></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md19"></a>
-30 current_loop_p</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>default</em>: <code>1.0</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md20"></a>
-31 current_loop_i</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>default</em>: <code>0.0001F</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md21"></a>
-32 current_loop_d</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md22"></a>
-33 current_lim_min</h1>
-<p>Soft limit for lowest current</p><ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>default</em>: <code>-2.0</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md23"></a>
-34 current_lim_max</h1>
-<p>Soft limit for highest current</p><ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>default</em>: <code>2.0</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md24"></a>
-40 velocity_loop_p</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>default</em>: <code>1.0</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md25"></a>
-41 velocity_loop_i</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>default</em>: <code>0.000'000'2F</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md26"></a>
-42 velocity_loop_d</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md27"></a>
-43 velocity_lim_min</h1>
-<p>Soft limit for lowest velocity</p><ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>unit</em>: rad/s</li>
-<li><em>default</em>: <code>-3.0</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md28"></a>
-44 velocity_lim_max</h1>
-<p>Soft limit for highest velocity</p><ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>unit</em>: rad/s</li>
-<li><em>default</em>: <code>3.0</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md29"></a>
-45 velocity_to_current_lim_scale</h1>
-<p>Scaling of current limit derived from velocity limit</p><ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>default</em>: <code>2.0</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md30"></a>
-50 position_loop_p</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>default</em>: <code>0.2F</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md31"></a>
-51 position_loop_i</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>default</em>: <code>0.000'000'02F</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md32"></a>
-52 position_loop_d</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md33"></a>
-53 position_lim_min</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>unit</em>: rad</li>
-<li><em>default</em>: <code>0.1F</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md34"></a>
-54 position_lim_max</h1>
-<ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>unit</em>: rad</li>
-<li><em>default</em>: <code>2.0F * pi - 0.1F</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md35"></a>
-55 position_to_velocity_lim_scale</h1>
-<p>Scaling of velocity limit derived from position limit</p><ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>unit</em>: rad</li>
-<li><em>default</em>: <code>2.0</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md36"></a>
-60 static_friction_scale</h1>
-<p>Scaling of current in case of non-moving servo</p><ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>default</em>: <code>3.0</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md37"></a>
-61 static_friction_decay</h1>
-<p>Time required for the static friction compensation to decay to be ineffective</p><ul>
-<li><em>type</em>: <code>float</code></li>
-<li><em>unit</em>: s</li>
-<li><em>default</em>: <code>1.0</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md38"></a>
 62 minimum_voltage</h1>
 <p>Minimum voltage for the servomotor to operate</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>unit</em>: voltage</li>
 <li><em>default</em>: <code>6.0</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md39"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 65 maximum_temperature</h1>
 <p>Maximum temperature for the servomotor to operate</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>unit</em>: celsius</li>
 <li><em>default</em>: <code>80.0</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md40"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 66 moving_detection_step</h1>
 <p>Deadband for the moving detection</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>unit</em>: rad</li>
 <li><em>default</em>: <code>0.05F</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md41"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 80 quad_encoder_range</h1>
 <p>Number of pulses per revolution of the quadrature encoder</p><ul>
 <li><em>type</em>: <code>uint32_t</code></li>
@@ -314,7 +197,7 @@ $(document).ready(function(){initNavTree('md_src_2cfg_2cfg.html',''); initResiza
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jul 22 2025 20:16:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 21:27:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -1,14 +1,10 @@
 var governor_8hpp =
 [
-    [ "servio::ctl::args_def", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1args__def", [
-      [ "args", "namespaceservio_1_1ctl.html#ae6d9b82c8f43699c83b2dbbaa20c8540", null ]
-    ] ],
-    [ "servio::ctl::args_token", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1args__token", [
-      [ "args", "namespaceservio_1_1ctl.html#a7d522c301fd5b5e195d8e46a4d3a05fa", null ],
-      [ "kwargs", "namespaceservio_1_1ctl.html#a65cc21d938adb9cd4d3433b9c4531125", null ]
-    ] ],
-    [ "servio::ctl::args", "structservio_1_1ctl_1_1args.html", "structservio_1_1ctl_1_1args" ],
-    [ "servio::ctl::governor", "structservio_1_1ctl_1_1governor.html", "structservio_1_1ctl_1_1governor" ],
-    [ "servio::ctl::governor_registry", "structservio_1_1ctl_1_1governor__registry.html", "structservio_1_1ctl_1_1governor__registry" ],
-    [ "servio::ctl::governor_autoreg", "structservio_1_1ctl_1_1governor__autoreg.html", "structservio_1_1ctl_1_1governor__autoreg" ]
+    [ "servio::gov::handle", "structservio_1_1gov_1_1handle.html", "structservio_1_1gov_1_1handle" ],
+    [ "servio::gov::engage_res", "structservio_1_1gov_1_1engage__res.html", "structservio_1_1gov_1_1engage__res" ],
+    [ "servio::gov::governor", "structservio_1_1gov_1_1governor.html", "structservio_1_1gov_1_1governor" ],
+    [ "servio::gov::governor_factory", "structservio_1_1gov_1_1governor__factory.html", "structservio_1_1gov_1_1governor__factory" ],
+    [ "servio::gov::auto_factory< T >", "structservio_1_1gov_1_1auto__factory.html", "structservio_1_1gov_1_1auto__factory" ],
+    [ "for_each_factory", "governor_8hpp.html#a77dbd0ad7b53ff98af410d564e530d2f", null ],
+    [ "register_factory", "governor_8hpp.html#a4cd568de49112b84fa650c3f7a5f1597", null ]
 ];

@@ -8,8 +8,7 @@ var searchData=
   ['metrics_2ehpp_5',['metrics.hpp',['../metrics_8hpp.html',1,'']]],
   ['metrics_5futest_2ecpp_6',['metrics_utest.cpp',['../metrics__utest_8cpp.html',1,'']]],
   ['mock_2ehpp_7',['mock.hpp',['../mock_8hpp.html',1,'']]],
-  ['modes_5ftest_2ecpp_8',['modes_test.cpp',['../modes__test_8cpp.html',1,'']]],
-  ['monitor_2ehpp_9',['monitor.hpp',['../monitor_8hpp.html',1,'']]],
-  ['motor_2ehpp_10',['motor.hpp',['../motor_8hpp.html',1,'']]],
-  ['moves_5ftest_2ecpp_11',['moves_test.cpp',['../moves__test_8cpp.html',1,'']]]
+  ['monitor_2ehpp_8',['monitor.hpp',['../monitor_8hpp.html',1,'']]],
+  ['motor_2ehpp_9',['motor.hpp',['../motor_8hpp.html',1,'']]],
+  ['moves_5ftest_2ecpp_10',['moves_test.cpp',['../moves__test_8cpp.html',1,'']]]
 ];

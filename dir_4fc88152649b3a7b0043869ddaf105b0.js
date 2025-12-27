@@ -1,6 +1,6 @@
 var dir_4fc88152649b3a7b0043869ddaf105b0 =
 [
-    [ "context.cpp", "context_8cpp.html", "context_8cpp" ],
+    [ "context.cpp", "context_8cpp.html", null ],
     [ "context.hpp", "context_8hpp.html", "context_8hpp" ],
     [ "extra.cpp", "extra_8cpp.html", "extra_8cpp" ],
     [ "it.cpp", "it_8cpp.html", "it_8cpp" ],

@@ -116,14 +116,14 @@ $(document).ready(function(){initNavTree('classservio_1_1core_1_1current__callba
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a30ce1396dc0d5de71a749975b9680afd" id="r_a30ce1396dc0d5de71a749975b9680afd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1core_1_1current__callback.html#a30ce1396dc0d5de71a749975b9680afd">current_callback</a> (<a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> &amp;motor, <a class="el" href="classservio_1_1ctl_1_1control.html">ctl::control</a> &amp;ctl, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;clk, <a class="el" href="structservio_1_1cnv_1_1converter.html">cnv::converter</a> const &amp;conv)</td></tr>
-<tr class="separator:a30ce1396dc0d5de71a749975b9680afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c9af565a8b13988a91cea0779bd0e6" id="r_ab5c9af565a8b13988a91cea0779bd0e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1core_1_1current__callback.html#ab5c9af565a8b13988a91cea0779bd0e6">current_callback</a> (<a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> &amp;motor, <a class="el" href="structservio_1_1gov_1_1governor__manager.html">gov::governor_manager</a> &amp;gov, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;clk, <a class="el" href="structservio_1_1cnv_1_1converter.html">cnv::converter</a> const &amp;conv)</td></tr>
+<tr class="separator:ab5c9af565a8b13988a91cea0779bd0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a961cdfdf8e89b6360bbb95e537e61e10" id="r_a961cdfdf8e89b6360bbb95e537e61e10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1core_1_1current__callback.html#a961cdfdf8e89b6360bbb95e537e61e10">on_value_irq</a> (uint32_t curr, std::span&lt; uint16_t &gt;) override</td></tr>
 <tr class="separator:a961cdfdf8e89b6360bbb95e537e61e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a30ce1396dc0d5de71a749975b9680afd" name="a30ce1396dc0d5de71a749975b9680afd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30ce1396dc0d5de71a749975b9680afd">&#9670;&#160;</a></span>current_callback()</h2>
+<a id="ab5c9af565a8b13988a91cea0779bd0e6" name="ab5c9af565a8b13988a91cea0779bd0e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c9af565a8b13988a91cea0779bd0e6">&#9670;&#160;</a></span>current_callback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,8 +140,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classservio_1_1ctl_1_1control.html">ctl::control</a> &amp;&#160;</td>
-          <td class="paramname"><em>ctl</em>, </td>
+          <td class="paramtype"><a class="el" href="structservio_1_1gov_1_1governor__manager.html">gov::governor_manager</a> &amp;&#160;</td>
+          <td class="paramname"><em>gov</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -207,7 +207,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="structservio_1_1drv_1_1detailed__cb__iface.html#acfa83e7c5128568504fd3f6ca3cc6731">servio::drv::detailed_cb_iface</a>.</p>
 
-<p class="reference">References <a class="el" href="structservio_1_1core_1_1avg__filter.html#aa2b04080d7c98d45bfc7336b70ac2a51">servio::core::avg_filter::add()</a>, <a class="el" href="namespaceservio_1_1cnv.html#a59c972d100b1b475045959e7befa5618">servio::cnv::current()</a>, <a class="el" href="classservio_1_1ctl_1_1control.html#a4cb46d72e2b1c43f69be36395443408b">servio::ctl::control::current_irq()</a>, <a class="el" href="structservio_1_1core_1_1avg__filter.html#ada1197c5ca3274a977a804e57927e859">servio::core::avg_filter::get()</a>, <a class="el" href="classservio_1_1ctl_1_1control.html#a64495854faddb2439ccad06cc5c17c43">servio::ctl::control::get_power()</a>, <a class="el" href="structservio_1_1drv_1_1clk__iface.html#a29aa3a81c0ab39858ab423061e618ba3">servio::drv::clk_iface::get_us()</a>, and <a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html#a0469021861453e240fe392722ae900b7">servio::drv::pwm_motor_iface::set_power()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1cnv.html#a59c972d100b1b475045959e7befa5618">servio::cnv::current()</a>, <a class="el" href="structservio_1_1gov_1_1governor__manager.html#a1b327d6c093850ec247d579b006fead5">servio::gov::governor_manager::current_irq()</a>, <a class="el" href="structservio_1_1drv_1_1clk__iface.html#a29aa3a81c0ab39858ab423061e618ba3">servio::drv::clk_iface::get_us()</a>, and <a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html#a0469021861453e240fe392722ae900b7">servio::drv::pwm_motor_iface::set_power()</a>.</p>
 
 </div>
 </div>
@@ -220,7 +220,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1core.html">core</a></li><li class="navelem"><a class="el" href="classservio_1_1core_1_1current__callback.html">current_callback</a></li>
-    <li class="footer">Generated on Tue Jul 22 2025 20:16:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 21:27:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

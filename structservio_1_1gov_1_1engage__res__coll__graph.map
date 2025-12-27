@@ -1,0 +1,9 @@
+<map id="servio::gov::engage_res" name="servio::gov::engage_res">
+<area shape="rect" id="Node000001" title=" " alt="" coords="106,183,282,208"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1status.html" title=" " alt="" coords="25,95,136,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,126,180,180,177,185,105,130"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,156,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,59,83,94,78,94,78,59"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1gov_1_1handle.html" title=" " alt="" coords="160,95,305,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,134,202,183,197,181,219,131"/>
+</map>

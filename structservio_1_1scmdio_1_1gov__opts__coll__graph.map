@@ -1,0 +1,11 @@
+<map id="servio::scmdio::gov_opts" name="servio::scmdio::gov_opts">
+<area shape="rect" id="Node000001" title=" " alt="" coords="67,183,251,208"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="38,95,125,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,129,150,180,146,184,99,132"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,144,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,59,83,94,78,95,75,59"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1scmdio_1_1char__cli.html" title=" " alt="" coords="161,95,335,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,131,173,184,169,180,224,128"/>
+<area shape="rect" id="Node000005" href="$structservio_1_1scmdio_1_1port__cli.html" title=" " alt="" coords="168,13,341,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="255,52,252,95,246,94,250,51"/>
+</map>

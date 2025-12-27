@@ -135,8 +135,16 @@ Functions</h2></td></tr>
 <tr class="separator:a9a8d67d786d16f17c830580979bc0677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01ca1a463c43ab3d64c9e41785066fc8" id="r_a01ca1a463c43ab3d64c9e41785066fc8"><td class="memItemLeft" align="right" valign="top">awaitable&lt; nlohmann::json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a01ca1a463c43ab3d64c9e41785066fc8">servio::scmdio::get_property</a> (<a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a> &amp;port, std::string_view prop)</td></tr>
 <tr class="separator:a01ca1a463c43ab3d64c9e41785066fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a109841222aaca7a873c4dd11f00fd0c5" id="r_a109841222aaca7a873c4dd11f00fd0c5"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a109841222aaca7a873c4dd11f00fd0c5">servio::scmdio::set_mode</a> (<a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a> &amp;port, std::string_view mode, nlohmann::json const &amp;arg)</td></tr>
-<tr class="separator:a109841222aaca7a873c4dd11f00fd0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4573216114aa8f60292cbf4e34c9211" id="r_af4573216114aa8f60292cbf4e34c9211"><td class="memItemLeft" align="right" valign="top">awaitable&lt; nlohmann::json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#af4573216114aa8f60292cbf4e34c9211">servio::scmdio::do_gov</a> (<a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a> &amp;port, std::string_view gov, nlohmann::json const &amp;args, nlohmann::json const &amp;kwargs)</td></tr>
+<tr class="separator:af4573216114aa8f60292cbf4e34c9211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61e0075bef0e133139d6643a7845bdc9" id="r_a61e0075bef0e133139d6643a7845bdc9"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a61e0075bef0e133139d6643a7845bdc9">servio::scmdio::govctl_activate</a> (<a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a> &amp;port, std::string_view governor)</td></tr>
+<tr class="separator:a61e0075bef0e133139d6643a7845bdc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a4b11c9987fef289939eedf0cfe596" id="r_aa9a4b11c9987fef289939eedf0cfe596"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#aa9a4b11c9987fef289939eedf0cfe596">servio::scmdio::govctl_deactivate</a> (<a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a> &amp;port)</td></tr>
+<tr class="separator:aa9a4b11c9987fef289939eedf0cfe596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc46c2abc8566ad2f50440ba644884ae" id="r_adc46c2abc8566ad2f50440ba644884ae"><td class="memItemLeft" align="right" valign="top">awaitable&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#adc46c2abc8566ad2f50440ba644884ae">servio::scmdio::govctl_active</a> (<a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a> &amp;port)</td></tr>
+<tr class="separator:adc46c2abc8566ad2f50440ba644884ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0929f9a69779d0fe74cf6bac07d6fbf" id="r_aa0929f9a69779d0fe74cf6bac07d6fbf"><td class="memItemLeft" align="right" valign="top">awaitable&lt; <a class="el" href="namespaceservio_1_1scmdio.html#adec9aeb6f81f1c6f3db642544d88f967">opt</a>&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#aa0929f9a69779d0fe74cf6bac07d6fbf">servio::scmdio::govctl_list</a> (<a class="el" href="structservio_1_1scmdio_1_1port__iface.html">port_iface</a> &amp;port, int32_t index)</td></tr>
+<tr class="separator:aa0929f9a69779d0fe74cf6bac07d6fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -172,7 +180,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="serial_8cpp.html">serial.cpp</a></li>
-    <li class="footer">Generated on Tue Jul 22 2025 20:16:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 21:27:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

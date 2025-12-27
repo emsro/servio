@@ -1,7 +1,5 @@
 var searchData=
 [
   ['kalman_5fgain_0',['kalman_gain',['../namespaceservio_1_1klmn.html#af5efb0f3164d80b24e95734b34812cd7',1,'servio::klmn']]],
-  ['keys_1',['keys',['../structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html#a7d96b63ab1f12e43c6e2e912dc1156fa',1,'servio::iface::field_traits&lt; vari::typelist&lt; Field... &gt; &gt;']]],
-  ['ktof_2',['ktof',['../structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html#afcbefd5b6187af62d7f6bfbc4607b6c9',1,'servio::iface::field_traits&lt; vari::typelist&lt; Field... &gt; &gt;']]],
-  ['kv_5ftype_3',['kv_type',['../structservio_1_1iface_1_1field.html#ab42ca7a6ad090e3aa8970eb9f09edb37',1,'servio::iface::field']]]
+  ['key_5ftype_1',['key_type',['../structservio_1_1cfg_1_1map.html#a044c63a37c29a1b36516ef20d8419638',1,'servio::cfg::map::key_type'],['../structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71',1,'servio::cfg::handler::key_type'],['../structservio_1_1gov_1_1curr_1_1cfg_1_1map.html#a57032d306c1e990b5ff969e178d92407',1,'servio::gov::curr::cfg::map::key_type'],['../structservio_1_1gov_1_1pos_1_1cfg_1_1map.html#a941071c821a1d81719bcd41b098c04d5',1,'servio::gov::pos::cfg::map::key_type'],['../structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#a17ba3e7ce0223653c4339cf0357ef195',1,'servio::gov::vel::cfg::map::key_type']]]
 ];

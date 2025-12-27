@@ -18,10 +18,10 @@
 <area shape="poly" id="edge8_Node000003_Node000010" title=" " alt="" coords="175,294,274,277,310,271,311,276,275,283,176,299"/>
 <area shape="rect" id="Node000017" href="$structservio_1_1cfg_1_1map.html" title=" " alt="" coords="31,346,158,371"/>
 <area shape="poly" id="edge9_Node000003_Node000017" title=" " alt="" coords="168,340,274,309,346,278,348,283,276,315,170,345"/>
-<area shape="rect" id="Node000018" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="21,396,168,436"/>
-<area shape="poly" id="edge10_Node000003_Node000018" title=" " alt="" coords="180,390,227,372,273,350,323,314,363,278,367,282,327,318,276,354,229,377,182,395"/>
-<area shape="rect" id="Node000019" title=" " alt="" coords="299,379,473,419"/>
-<area shape="poly" id="edge11_Node000001_Node000019" title=" " alt="" coords="436,370,622,270,624,275,438,374"/>
-<area shape="rect" id="Node000020" title=" " alt="" coords="5,461,184,486"/>
-<area shape="poly" id="edge12_Node000019_Node000020" title=" " alt="" coords="197,471,236,466,274,457,318,439,355,416,358,421,320,444,275,463,237,471,198,476"/>
+<area shape="rect" id="Node000019" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="21,396,168,436"/>
+<area shape="poly" id="edge10_Node000003_Node000019" title=" " alt="" coords="180,390,227,372,273,350,323,314,363,278,367,282,327,318,276,354,229,377,182,395"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="299,379,473,419"/>
+<area shape="poly" id="edge11_Node000001_Node000020" title=" " alt="" coords="436,370,622,270,624,275,438,374"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="5,461,184,486"/>
+<area shape="poly" id="edge12_Node000020_Node000021" title=" " alt="" coords="197,471,236,466,274,457,318,439,355,416,358,421,320,444,275,463,237,471,198,476"/>
 </map>

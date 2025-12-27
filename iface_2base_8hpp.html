@@ -94,39 +94,37 @@ $(document).ready(function(){initNavTree('iface_2base_8hpp.html',''); initResiza
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">base.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &quot;<a class="el" href="json__ser_8hpp_source.html">../lib/json_ser.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="parser_8hpp_source.html">../lib/parser.hpp</a>&quot;</code><br />
-<code>#include &lt;avakar/atom.h&gt;</code><br />
 <code>#include &lt;vari/bits/typelist.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for base.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="iface_2base_8hpp__incl.svg" width="708" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="iface_2base_8hpp__incl.svg" width="726" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="iface_2base_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1iface_1_1kval.html">servio::iface::kval&lt; Key, T &gt;</a></td></tr>
+<tr class="memitem:structservio_1_1iface_1_1arg__def" id="r_structservio_1_1iface_1_1arg__def"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1arg__def">servio::iface::arg_def</a></td></tr>
+<tr class="separator:structservio_1_1iface_1_1arg__def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1iface_1_1arg__parser.html">servio::iface::arg_parser</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1iface_1_1field.html">servio::iface::field&lt; IDX, Key, T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1iface_1_1cmd__parser.html">servio::iface::cmd_parser</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4" id="r_structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4">servio::iface::field_tuple&lt; vari::typelist&lt; Ts... &gt; &gt;</a></td></tr>
-<tr class="separator:structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1iface_1_1group" id="r_structservio_1_1iface_1_1group"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1group">servio::iface::group&lt; Desc, Ts &gt;</a></td></tr>
-<tr class="separator:structservio_1_1iface_1_1group"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1iface_1_1key__filter" id="r_structservio_1_1iface_1_1key__filter"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter">servio::iface::key_filter&lt; K, T &gt;</a></td></tr>
-<tr class="separator:structservio_1_1iface_1_1key__filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4.html">servio::iface::key_filter&lt; K, vari::typelist&lt; F, Fs... &gt; &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html">servio::iface::field_traits&lt; vari::typelist&lt; Field... &gt; &gt;</a></td></tr>
+<tr class="memitem:structservio_1_1iface_1_1invalid__stmt" id="r_structservio_1_1iface_1_1invalid__stmt"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1invalid__stmt">servio::iface::invalid_stmt</a></td></tr>
+<tr class="separator:structservio_1_1iface_1_1invalid__stmt"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1iface_1_1root__ser.html">servio::iface::root_ser</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -141,72 +139,108 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ac639f2caf2b186fdc9def0f09d8ac945" id="r_ac639f2caf2b186fdc9def0f09d8ac945"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ac639f2caf2b186fdc9def0f09d8ac945"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#ac639f2caf2b186fdc9def0f09d8ac945">servio::iface::opt</a> = std::optional&lt; T &gt;</td></tr>
 <tr class="separator:ac639f2caf2b186fdc9def0f09d8ac945"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a064058093cb0552dc7bcca11395eb50c" id="r_a064058093cb0552dc7bcca11395eb50c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a064058093cb0552dc7bcca11395eb50c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#a064058093cb0552dc7bcca11395eb50c">servio::iface::field_tuple_t</a> = typename <a class="el" href="namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple">field_tuple</a>&lt; T &gt;::type</td></tr>
-<tr class="separator:a064058093cb0552dc7bcca11395eb50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89aa769b3ba60af5410510d756446f6d" id="r_a89aa769b3ba60af5410510d756446f6d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#a89aa769b3ba60af5410510d756446f6d">servio::iface::value_type</a> = vari::typelist&lt; string, float, int32_t &gt;</td></tr>
+<tr class="separator:a89aa769b3ba60af5410510d756446f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a1d8c1cf44a5312b5b8f6d38117b74fc7" id="r_a1d8c1cf44a5312b5b8f6d38117b74fc7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7">servio::iface::parse_status</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7ad0749aaba8b833466dfcbb0428e4f89c">servio::iface::SUCCESS</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7a756ec3dd26d1a73363eb3e68b6e820df">servio::iface::SYNTAX_ERROR</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7ab9b4772af3060c63895e0a6759cce905">servio::iface::ARG_TYPE_MISMATCH</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7a44cfcd044dce93c3378b732f7a6ed45e">servio::iface::ARG_DUPLICATE</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7ad0568145f907e1db8abcfe0403e60fb5">servio::iface::ARG_AFTER_KVAL</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7a019e366096fb6e894b659227038abd23">servio::iface::ARG_MISSING</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7accadb1d9a9d8e78a91fb5e1bc3509f7c">servio::iface::CMD_MISSING</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7aea2e5ea758c5f934e1016fd76f45c939">servio::iface::UNKNOWN_ARG_KEY</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7aa7d1af58ff22b73a079a349622038be1">servio::iface::UNKNOWN_CMD</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7a209914a113a06c4306340578dce72238">servio::iface::UNKNOWN_VALUE</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7a3a98c67ba15d8aeeb7f67d4787c922af">servio::iface::UNEXPECTED_ARG</a>
+<br />
+ }</td></tr>
+<tr class="separator:a1d8c1cf44a5312b5b8f6d38117b74fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07806d6a9710889454ebc6662cf4c71d" id="r_a07806d6a9710889454ebc6662cf4c71d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#a07806d6a9710889454ebc6662cf4c71d">servio::iface::arg_status</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a07806d6a9710889454ebc6662cf4c71da5b39c8b553c821e7cddc6da64b5bd2ee">servio::iface::DEFAULT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a07806d6a9710889454ebc6662cf4c71da10d1208b485425756fcc932229386b02">servio::iface::MISSING</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceservio_1_1iface.html#a07806d6a9710889454ebc6662cf4c71da3e918e9c9f594bda6b0cf358391c3b1a">servio::iface::FOUND</a>
+<br />
+ }</td></tr>
+<tr class="separator:a07806d6a9710889454ebc6662cf4c71d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a60b3e0d86c9da2327c6aaa66dccc4244" id="r_a60b3e0d86c9da2327c6aaa66dccc4244"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1iface.html#a60b3e0d86c9da2327c6aaa66dccc4244">servio::iface::to_str</a> (<a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7">parse_status</a> st)</td></tr>
+<tr class="separator:a60b3e0d86c9da2327c6aaa66dccc4244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4" id="structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4">&#9670;&#160;</a></span>servio::iface::field_tuple&lt; vari::typelist&lt; Ts... &gt; &gt;</h2>
+<a name="structservio_1_1iface_1_1arg__def" id="structservio_1_1iface_1_1arg__def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1iface_1_1arg__def">&#9670;&#160;</a></span>servio::iface::arg_def</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct servio::iface::field_tuple&lt; vari::typelist&lt; Ts... &gt; &gt;</td>
+          <td class="memname">struct servio::iface::arg_def</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename... Ts&gt;<br />
-struct servio::iface::field_tuple&lt; vari::typelist&lt; Ts... &gt; &gt;</div></div><table class="fieldtable">
+<div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a3675d882024884424fb61a2ce871e181" name="a3675d882024884424fb61a2ce871e181"></a>typedef tuple&lt; Ts... &gt;</td>
+<a id="acb8b7269c2cdc2507f9895cc49ad5761" name="acb8b7269c2cdc2507f9895cc49ad5761"></a>char const  *</td>
 <td class="fieldname">
-type</td>
+kw</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a923a9436b322ebae14c458f06d0db499" name="a923a9436b322ebae14c458f06d0db499"></a><a class="el" href="namespaceservio_1_1iface.html#a07806d6a9710889454ebc6662cf4c71d">arg_status</a></td>
+<td class="fieldname">
+st = <a class="el" href="namespaceservio_1_1iface.html#a07806d6a9710889454ebc6662cf4c71da10d1208b485425756fcc932229386b02">arg_status::MISSING</a></td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a39f3f058e549e473685eb0401ed101ed" name="a39f3f058e549e473685eb0401ed101ed"></a>vref&lt; <a class="el" href="namespaceservio_1_1iface.html#a89aa769b3ba60af5410510d756446f6d">value_type</a>, <a class="el" href="structservio_1_1parser_1_1expr__tok.html">expr_tok</a> &gt;</td>
+<td class="fieldname">
+val</td>
 <td class="fielddoc">
 </td></tr>
 </table>
 
 </div>
 </div>
-<a name="structservio_1_1iface_1_1group" id="structservio_1_1iface_1_1group"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1iface_1_1group">&#9670;&#160;</a></span>servio::iface::group</h2>
+<a name="structservio_1_1iface_1_1invalid__stmt" id="structservio_1_1iface_1_1invalid__stmt"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1iface_1_1invalid__stmt">&#9670;&#160;</a></span>servio::iface::invalid_stmt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct servio::iface::group</td>
+          <td class="memname">struct servio::iface::invalid_stmt</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><div class="compoundTemplParams">template&lt;avakar::s Desc, typename... Ts&gt;<br />
-struct servio::iface::group&lt; Desc, Ts &gt;</div></div><table class="fieldtable">
+<div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a8694e927e4f0c45fd54738fe30baab5f" name="a8694e927e4f0c45fd54738fe30baab5f"></a>typedef typelist&lt; Ts... &gt;</td>
+<a id="a3a86058e939b1809966faa0cb5238b72" name="a3a86058e939b1809966faa0cb5238b72"></a><a class="el" href="namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7">parse_status</a></td>
 <td class="fieldname">
-value_type</td>
+st</td>
 <td class="fielddoc">
 </td></tr>
 </table>
 
-</div>
-</div>
-<a name="structservio_1_1iface_1_1key__filter" id="structservio_1_1iface_1_1key__filter"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1iface_1_1key__filter">&#9670;&#160;</a></span>servio::iface::key_filter</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::iface::key_filter</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"><div class="compoundTemplParams">template&lt;auto K, typename T&gt;<br />
-struct servio::iface::key_filter&lt; K, T &gt;</div></div>
 </div>
 </div>
 </div><!-- contents -->
@@ -215,7 +249,7 @@ struct servio::iface::key_filter&lt; K, T &gt;</div></div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_87dbd44838687e059bb6b206e0e79295.html">iface</a></li><li class="navelem"><a class="el" href="iface_2base_8hpp.html">base.hpp</a></li>
-    <li class="footer">Generated on Tue Jul 22 2025 20:16:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 21:27:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

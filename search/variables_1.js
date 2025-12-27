@@ -15,7 +15,7 @@ var searchData=
   ['adc_5ftrigger_12',['adc_trigger',['../namespaceservio_1_1plt.html#a03cac8a5dbc15f966a3b411492fffb0d',1,'servio::plt::adc_cfg']]],
   ['adc_5fvcc_13',['ADC_VCC',['../namespaceservio_1_1brd.html#a426f85a0dea9eb2dd9aa43e5f98f91e0',1,'servio::brd']]],
   ['alternate_14',['alternate',['../namespaceservio_1_1drv.html#a3b5744acf3762f9fd7ff7cb9c8211640',1,'servio::drv::pin_cfg']]],
-  ['angle_15',['angle',['../namespaceservio_1_1scmdio.html#ae8ed943d565921113b58e844ec40d4fb',1,'servio::scmdio::mode_opts::angle'],['../structservio_1_1mtr_1_1posvel__kalman.html#a2ac393ceac1eb1e6e7713a988a279147',1,'servio::mtr::posvel_kalman::angle']]],
-  ['args_16',['args',['../namespaceservio_1_1ctl.html#a7d522c301fd5b5e195d8e46a4d3a05fa',1,'servio::ctl::args_token::args'],['../namespaceservio_1_1ctl.html#ae6d9b82c8f43699c83b2dbbaa20c8540',1,'servio::ctl::args_def::args']]],
+  ['angle_15',['angle',['../structservio_1_1mtr_1_1posvel__kalman.html#a2ac393ceac1eb1e6e7713a988a279147',1,'servio::mtr::posvel_kalman']]],
+  ['args_16',['args',['../namespacegen.html#a33517ff0695f1e1d552f649c9f0a1e1a',1,'gen']]],
   ['attempt_5fn_17',['ATTEMPT_N',['../namespaceservio_1_1cnv_1_1tests.html#a51fc9b65a1f2fbfd9cf62801705adeb9',1,'servio::cnv::tests']]]
 ];

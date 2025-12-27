@@ -11,12 +11,13 @@ var scmdio_2main_8cpp =
       [ "data", "namespaceservio_1_1scmdio.html#a290cb9a642d3eb9533e624f5f8ee5353", null ],
       [ "port", "namespaceservio_1_1scmdio.html#acc094a30f90dcc544e7793fe7232442e", null ]
     ] ],
-    [ "servio::scmdio::mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", [
-      [ "angle", "namespaceservio_1_1scmdio.html#ae8ed943d565921113b58e844ec40d4fb", null ],
-      [ "current", "namespaceservio_1_1scmdio.html#a5b48fe29c3252d8489d843328bae56cd", null ],
-      [ "port", "namespaceservio_1_1scmdio.html#af2bb61a18b7d10fc2f2b7dcea4c49593", null ],
-      [ "power", "namespaceservio_1_1scmdio.html#ab9513f1604f27e60b999a99958a45d90", null ],
-      [ "velocity", "namespaceservio_1_1scmdio.html#ad4eeda260fbde422b87e85ab46f2da0d", null ]
+    [ "servio::scmdio::govctl_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1govctl__opts", [
+      [ "governor", "namespaceservio_1_1scmdio.html#a164d6fd967db4c2c0073f360cda21cfa", null ],
+      [ "port", "namespaceservio_1_1scmdio.html#a3b484eea15137baf74fb9225c6c25ca9", null ]
+    ] ],
+    [ "servio::scmdio::gov_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1gov__opts", [
+      [ "governor", "namespaceservio_1_1scmdio.html#ad68fd2cc71b4cfa5b4ee7220bc09ea5a", null ],
+      [ "port", "namespaceservio_1_1scmdio.html#a0ce9f1ae8157b6a9d04bfac7c182c12e", null ]
     ] ],
     [ "servio::scmdio::autotune_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx", [
       [ "port", "namespaceservio_1_1scmdio.html#a6d82b9f6982c5cb68bfaba58d766b209", null ]
@@ -33,10 +34,11 @@ var scmdio_2main_8cpp =
     [ "bflash_def", "scmdio_2main_8cpp.html#ae34166d08fd8a74b00c051f802a676e6", null ],
     [ "cfg_def", "scmdio_2main_8cpp.html#a53cc5ff3007630b899ca2bf5afc5a391", null ],
     [ "field_option", "scmdio_2main_8cpp.html#ad775904026fd4fb1d8f3a62288c7d3ab", null ],
+    [ "gov_def", "scmdio_2main_8cpp.html#aaca4233811acc7480a1f4b2904b5a75e", null ],
+    [ "govctl_def", "scmdio_2main_8cpp.html#a922db2268e022d09f1a2320c26c4f57b", null ],
     [ "handle_eptr", "scmdio_2main_8cpp.html#aabcd238bcdc64fd6f45c2ff73d285170", null ],
     [ "json_flag", "scmdio_2main_8cpp.html#a9d0341f90de176f1fb8528b9d21bbf61", null ],
     [ "main", "scmdio_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
-    [ "mode_def", "scmdio_2main_8cpp.html#ae25251a99c0a6e96b85027cca28a0cc8", null ],
     [ "pool_cmd", "scmdio_2main_8cpp.html#afeb5779e6c4f22edcae47554ad81c92f", null ],
     [ "pool_def", "scmdio_2main_8cpp.html#aa895c4d04b8c0c7d854041c055f68740", null ],
     [ "port_callback", "scmdio_2main_8cpp.html#acedc16b62c42d1234cff5edd94bafd79", null ],

@@ -2,12 +2,20 @@ var searchData=
 [
   ['get_0',['GET',['../namespaceservio_1_1scmdio.html#a82f75a7b080fb09c3f172e1d3a24899d',1,'servio::scmdio']]],
   ['get_5fid_1',['GET_ID',['../namespaceservio_1_1scmdio.html#a2e3414b9823d240dc7aa618caaf824cd',1,'servio::scmdio']]],
-  ['gpdma1_5fch0_5fhandle_2',['GPDMA1_Ch0_HANDLE',['../namespaceservio_1_1brd.html#a4e12a8575b75c1e84bb664d036617d14',1,'servio::brd']]],
-  ['gpdma1_5fch1_5fhandle_3',['GPDMA1_Ch1_HANDLE',['../namespaceservio_1_1brd.html#a76d7d9f64898e440e0a213f703835653',1,'servio::brd']]],
-  ['gpdma1_5fch2_5fhandle_4',['GPDMA1_Ch2_HANDLE',['../namespaceservio_1_1brd.html#a617eab611ab9411ef972a8dcaee6236b',1,'servio::brd']]],
-  ['green_5',['green',['../namespaceservio.html#ad2c6efd34261b8e5b5c16c90e171b7ed',1,'servio::leds_vals']]],
-  ['green_5fch_6',['green_ch',['../namespaceservio_1_1plt.html#ac8dc88b10301f0823d983ad1a7f4e3e7',1,'servio::plt::leds_timer_cfg']]],
-  ['green_5fpin_7',['green_pin',['../namespaceservio_1_1plt.html#adad93e2611f6799cedf41c16211afb44',1,'servio::plt::leds_timer_cfg']]],
-  ['group_5fid_8',['group_id',['../structservio_1_1cfg_1_1map.html#ac42b48936f0e0bdcbe1981d43345f8ca',1,'servio::cfg::map']]],
-  ['grouphandler_9',['GroupHandler',['../namespacegen.html#a78e2d0fb7a745d7484838cf4bc688cb1',1,'gen']]]
+  ['goal_2',['goal',['../structservio_1_1gov_1_1curr_1_1iface_1_1set__stmt.html#a913844dc8aa2e306380924e264225b7a',1,'servio::gov::curr::iface::set_stmt::goal'],['../structservio_1_1gov_1_1pos_1_1iface_1_1set__stmt.html#a343bcb4f45969f8fc8fbc01d90bc2712',1,'servio::gov::pos::iface::set_stmt::goal'],['../structservio_1_1gov_1_1pow_1_1iface_1_1set__stmt.html#a11a1eaf4cae241d2c1a7ba492c68b653',1,'servio::gov::pow::iface::set_stmt::goal'],['../structservio_1_1gov_1_1vel_1_1iface_1_1set__stmt.html#a0ac3e2ba62e12e9985303fe8daf7b147',1,'servio::gov::vel::iface::set_stmt::goal'],['../structservio_1_1gov_1_1curr_1_1__current__gov.html#ac7728d98150d8f22a64b137ad9de6186',1,'servio::gov::curr::_current_gov::goal']]],
+  ['goal_5fcurr_3',['goal_curr',['../structservio_1_1gov_1_1pos_1_1__position__gov.html#a19f9e343f69865e4420309bb6dec5b34',1,'servio::gov::pos::_position_gov::goal_curr'],['../structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a16efdf40163cfc7b3326ffda7d6d4723',1,'servio::gov::vel::_velocity_gov::goal_curr']]],
+  ['goal_5fpos_4',['goal_pos',['../structservio_1_1gov_1_1pos_1_1__position__gov.html#a8981218b30168441f715660938930349',1,'servio::gov::pos::_position_gov']]],
+  ['goal_5fvel_5',['goal_vel',['../structservio_1_1gov_1_1vel_1_1__velocity__gov.html#ab8e779916fd7d20a78b9488a1caccf46',1,'servio::gov::vel::_velocity_gov']]],
+  ['gov_6',['gov',['../structservio_1_1cfg_1_1dispatcher.html#a508af3947df4b0a2831ab6fa4d3d2e12',1,'servio::cfg::dispatcher::gov'],['../namespaceservio_1_1core.html#adc7322c2e038e6c41224388a4c2e756d',1,'servio::core::dispatcher::gov']]],
+  ['gov_5f_7',['gov_',['../structservio_1_1core_1_1core.html#a58ed07f6a693779b4805fc784a7da723',1,'servio::core::core']]],
+  ['gov_5fmem_8',['gov_mem',['../structservio_1_1core_1_1core.html#a4f00244647e27c7adb5b26c0f7fdeb95',1,'servio::core::core']]],
+  ['governor_9',['governor',['../structservio_1_1iface_1_1cfg__set__stmt.html#a115c626571a663aa03580d1db7a13aaf',1,'servio::iface::cfg_set_stmt::governor'],['../namespaceservio_1_1scmdio.html#ad68fd2cc71b4cfa5b4ee7220bc09ea5a',1,'servio::scmdio::gov_opts::governor'],['../namespaceservio_1_1scmdio.html#a164d6fd967db4c2c0073f360cda21cfa',1,'servio::scmdio::govctl_opts::governor'],['../structservio_1_1iface_1_1cfg__list__stmt.html#a7e88ba649001c269f08052f6a179590a',1,'servio::iface::cfg_list_stmt::governor'],['../structservio_1_1iface_1_1cfg__get__stmt.html#a4660642b3bd8413280f4856e812983e3',1,'servio::iface::cfg_get_stmt::governor'],['../structservio_1_1iface_1_1govctl__activate__stmt.html#a1fe6430df517856184fcd9a9eab1de52',1,'servio::iface::govctl_activate_stmt::governor'],['../namespaceservio_1_1cfg.html#ae40317aa42d2e083b34d64a3ad5526a9',1,'servio::cfg::resolve_governor_res::governor']]],
+  ['gpdma1_5fch0_5fhandle_10',['GPDMA1_Ch0_HANDLE',['../namespaceservio_1_1brd.html#a4e12a8575b75c1e84bb664d036617d14',1,'servio::brd']]],
+  ['gpdma1_5fch1_5fhandle_11',['GPDMA1_Ch1_HANDLE',['../namespaceservio_1_1brd.html#a76d7d9f64898e440e0a213f703835653',1,'servio::brd']]],
+  ['gpdma1_5fch2_5fhandle_12',['GPDMA1_Ch2_HANDLE',['../namespaceservio_1_1brd.html#a617eab611ab9411ef972a8dcaee6236b',1,'servio::brd']]],
+  ['green_13',['green',['../namespaceservio.html#ad2c6efd34261b8e5b5c16c90e171b7ed',1,'servio::leds_vals']]],
+  ['green_5fch_14',['green_ch',['../namespaceservio_1_1plt.html#ac8dc88b10301f0823d983ad1a7f4e3e7',1,'servio::plt::leds_timer_cfg']]],
+  ['green_5fpin_15',['green_pin',['../namespaceservio_1_1plt.html#adad93e2611f6799cedf41c16211afb44',1,'servio::plt::leds_timer_cfg']]],
+  ['group_5fid_16',['group_id',['../structservio_1_1cfg_1_1map.html#ac42b48936f0e0bdcbe1981d43345f8ca',1,'servio::cfg::map']]],
+  ['grouphandler_17',['GroupHandler',['../namespacegen.html#a78e2d0fb7a745d7484838cf4bc688cb1',1,'gen']]]
 ];

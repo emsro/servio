@@ -6,6 +6,7 @@ var classservio_1_1drv_1_1hbridge =
     [ "force_stop", "classservio_1_1drv_1_1hbridge.html#adf7f06e92b257bc4bf6cfeb0255971d4", null ],
     [ "get_direction", "classservio_1_1drv_1_1hbridge.html#a1b5c9f4c4bfb86c522a7879094746b62", null ],
     [ "get_period_callback", "classservio_1_1drv_1_1hbridge.html#ae47fffca2033b088aa3d9efbce97dd88", null ],
+    [ "get_power", "classservio_1_1drv_1_1hbridge.html#a284db2a0e3866332b09e19865cb03db8", null ],
     [ "is_stopped", "classservio_1_1drv_1_1hbridge.html#a1756b1fc5080d2f1d13d24a12e6f7a50", null ],
     [ "operator=", "classservio_1_1drv_1_1hbridge.html#a6a2f08fa845ed0eed1d7781aa2170572", null ],
     [ "operator=", "classservio_1_1drv_1_1hbridge.html#aefc28ee6e7cbe782a6c6f39c050e0ecc", null ],

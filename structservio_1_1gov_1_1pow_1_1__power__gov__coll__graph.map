@@ -1,0 +1,11 @@
+<map id="servio::gov::pow::_power_gov" name="servio::gov::pow::_power_gov">
+<area shape="rect" id="Node000001" title=" " alt="" coords="193,183,328,223"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1gov_1_1governor.html" title=" " alt="" coords="5,95,164,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,124,226,180,224,185,117,129"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1gov_1_1handle.html" title=" " alt="" coords="188,95,333,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="263,134,263,182,258,182,258,134"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1pwr.html" title=" " alt="" coords="357,95,452,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="377,130,291,185,289,180,374,125"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="331,5,479,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="407,59,407,94,402,94,402,59"/>
+</map>

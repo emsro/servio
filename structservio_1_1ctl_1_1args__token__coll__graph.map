@@ -1,9 +1,0 @@
-<map id="servio::ctl::args_token" name="servio::ctl::args_token">
-<area shape="rect" id="Node000001" title=" " alt="" coords="512,62,677,87"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="247,5,409,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="423,40,526,59,525,65,422,45"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,13,131,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="144,23,247,23,247,28,144,28"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="244,70,412,125"/>
-<area shape="poly" id="edge3_Node000001_Node000005" title=" " alt="" coords="426,86,511,79,512,84,426,92"/>
-</map>

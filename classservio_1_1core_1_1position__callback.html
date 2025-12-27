@@ -116,14 +116,14 @@ $(document).ready(function(){initNavTree('classservio_1_1core_1_1position__callb
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0c7bb643858948c6cab502eff927e893" id="r_a0c7bb643858948c6cab502eff927e893"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1core_1_1position__callback.html#a0c7bb643858948c6cab502eff927e893">position_callback</a> (<a class="el" href="classservio_1_1ctl_1_1control.html">ctl::control</a> &amp;ctl, <a class="el" href="classservio_1_1mtr_1_1metrics.html">mtr::metrics</a> &amp;met, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;clk, <a class="el" href="structservio_1_1cnv_1_1converter.html">cnv::converter</a> const &amp;conv)</td></tr>
-<tr class="separator:a0c7bb643858948c6cab502eff927e893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0073c2901dff357294114fd394efbed" id="r_ab0073c2901dff357294114fd394efbed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1core_1_1position__callback.html#ab0073c2901dff357294114fd394efbed">position_callback</a> (<a class="el" href="structservio_1_1gov_1_1governor__manager.html">gov::governor_manager</a> &amp;gov, <a class="el" href="classservio_1_1mtr_1_1metrics.html">mtr::metrics</a> &amp;met, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;clk, <a class="el" href="structservio_1_1cnv_1_1converter.html">cnv::converter</a> const &amp;conv)</td></tr>
+<tr class="separator:ab0073c2901dff357294114fd394efbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02116ee8cc9bd1143dc647458b06187d" id="r_a02116ee8cc9bd1143dc647458b06187d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1core_1_1position__callback.html#a02116ee8cc9bd1143dc647458b06187d">on_value_irq</a> (uint32_t position) override</td></tr>
 <tr class="separator:a02116ee8cc9bd1143dc647458b06187d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0c7bb643858948c6cab502eff927e893" name="a0c7bb643858948c6cab502eff927e893"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c7bb643858948c6cab502eff927e893">&#9670;&#160;</a></span>position_callback()</h2>
+<a id="ab0073c2901dff357294114fd394efbed" name="ab0073c2901dff357294114fd394efbed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0073c2901dff357294114fd394efbed">&#9670;&#160;</a></span>position_callback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,8 +134,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">servio::core::position_callback::position_callback </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classservio_1_1ctl_1_1control.html">ctl::control</a> &amp;&#160;</td>
-          <td class="paramname"><em>ctl</em>, </td>
+          <td class="paramtype"><a class="el" href="structservio_1_1gov_1_1governor__manager.html">gov::governor_manager</a> &amp;&#160;</td>
+          <td class="paramname"><em>gov</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -197,7 +197,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="structservio_1_1drv_1_1value__cb__iface.html#a570e1b674c6d87cdb422dbfc6b1d2864">servio::drv::value_cb_iface</a>.</p>
 
-<p class="reference">References <a class="el" href="structservio_1_1cnv_1_1linear__converter.html#a00a3b7bb8a83fedbf2c62c77ce383e86">servio::cnv::linear_converter::convert()</a>, <a class="el" href="classservio_1_1mtr_1_1metrics.html#a7e40c0fd2f0bfc3bd4878f3808a4e614">servio::mtr::metrics::get_position()</a>, <a class="el" href="structservio_1_1drv_1_1clk__iface.html#a29aa3a81c0ab39858ab423061e618ba3">servio::drv::clk_iface::get_us()</a>, <a class="el" href="classservio_1_1mtr_1_1metrics.html#af7fa2837c9d35bd0d7600bd6b87c051e">servio::mtr::metrics::get_velocity()</a>, <a class="el" href="classservio_1_1mtr_1_1metrics.html#a5ecbdefc8370d0a38f6a7f7ef619bc5b">servio::mtr::metrics::is_moving()</a>, <a class="el" href="classservio_1_1ctl_1_1control.html#a98d5b4fe6decb55434eb22bc407ab929">servio::ctl::control::moving_irq()</a>, <a class="el" href="structservio_1_1cnv_1_1converter.html#a2ed3229b71607923715107fb0ba66590">servio::cnv::converter::position</a>, <a class="el" href="classservio_1_1ctl_1_1control.html#aeb6ba07010b0017814e59ded265dd18a">servio::ctl::control::position_irq()</a>, <a class="el" href="classservio_1_1mtr_1_1metrics.html#aebdb5e475782f8b4cb326ed55e987d9d">servio::mtr::metrics::position_irq()</a>, and <a class="el" href="classservio_1_1ctl_1_1control.html#a79edbb0317312fa6d29b9528b2a5dbd8">servio::ctl::control::velocity_irq()</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1cnv_1_1linear__converter.html#a00a3b7bb8a83fedbf2c62c77ce383e86">servio::cnv::linear_converter::convert()</a>, <a class="el" href="structservio_1_1drv_1_1clk__iface.html#a29aa3a81c0ab39858ab423061e618ba3">servio::drv::clk_iface::get_us()</a>, <a class="el" href="classservio_1_1mtr_1_1metrics.html#af7fa2837c9d35bd0d7600bd6b87c051e">servio::mtr::metrics::get_velocity()</a>, <a class="el" href="classservio_1_1mtr_1_1metrics.html#a5ecbdefc8370d0a38f6a7f7ef619bc5b">servio::mtr::metrics::is_moving()</a>, <a class="el" href="structservio_1_1gov_1_1governor__manager.html#a341138f334d25b2a5443d21f2517e8d6">servio::gov::governor_manager::metrics_irq()</a>, <a class="el" href="structservio_1_1cnv_1_1converter.html#a2ed3229b71607923715107fb0ba66590">servio::cnv::converter::position</a>, and <a class="el" href="classservio_1_1mtr_1_1metrics.html#aebdb5e475782f8b4cb326ed55e987d9d">servio::mtr::metrics::position_irq()</a>.</p>
 
 </div>
 </div>
@@ -210,7 +210,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1core.html">core</a></li><li class="navelem"><a class="el" href="classservio_1_1core_1_1position__callback.html">position_callback</a></li>
-    <li class="footer">Generated on Tue Jul 22 2025 20:16:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 21:27:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

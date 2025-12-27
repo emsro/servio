@@ -1,0 +1,38 @@
+var namespaceservio_1_1gov_1_1vel_1_1cfg =
+[
+    [ "key_trait", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait", null ],
+    [ "key_trait< key::curr_lim_max >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__max_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__max_01_4_dup" ],
+    [ "key_trait< key::curr_lim_min >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__min_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__min_01_4_dup" ],
+    [ "key_trait< key::curr_loop_d >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__d_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__d_01_4_dup" ],
+    [ "key_trait< key::curr_loop_i >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__i_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__i_01_4_dup" ],
+    [ "key_trait< key::curr_loop_p >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__p_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__p_01_4_dup" ],
+    [ "key_trait< key::static_friction_decay >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1static__friction__decay_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1static__friction__decay_01_4_dup" ],
+    [ "key_trait< key::static_friction_scale >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1static__friction__scale_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1static__friction__scale_01_4_dup" ],
+    [ "key_trait< key::vel_lim_max >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__lim__max_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__lim__max_01_4_dup" ],
+    [ "key_trait< key::vel_lim_min >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__lim__min_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__lim__min_01_4_dup" ],
+    [ "key_trait< key::vel_loop_d >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__d_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__d_01_4_dup" ],
+    [ "key_trait< key::vel_loop_i >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__i_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__i_01_4_dup" ],
+    [ "key_trait< key::vel_loop_p >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__p_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__p_01_4_dup" ],
+    [ "key_trait< key::vel_to_curr_lim_scale >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__to__curr__lim__scale_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__to__curr__lim__scale_01_4_dup" ],
+    [ "map", "structservio_1_1gov_1_1vel_1_1cfg_1_1map.html", "structservio_1_1gov_1_1vel_1_1cfg_1_1map" ],
+    [ "value_type", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#adaa861b2b3dfebbf6016de0935666bea", null ],
+    [ "key", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cd", [
+      [ "vel_loop_p", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cda59781637249f990f5c727eee78ea2d94", null ],
+      [ "vel_loop_i", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cda583131a288c6512d9cf09f05b72c6a5a", null ],
+      [ "vel_loop_d", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cda77db270991f43b6064e9c64e38d051cf", null ],
+      [ "curr_loop_p", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cdac9e1ad1a5508f28a1fab3d4b8bbf783f", null ],
+      [ "curr_loop_i", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cdadc884ba0abca961f03091c89a5a476d6", null ],
+      [ "curr_loop_d", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cda46ea574807fcb4723a0cf6d58850bbea", null ],
+      [ "static_friction_scale", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cda673b9ac6e87403ce01ee6c1f8f8a7a79", null ],
+      [ "static_friction_decay", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cdac58c7cc4fca148d3dc09a9c6296f119d", null ],
+      [ "vel_lim_min", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cdaacd80c7d8cfd501a578ceeb199f92413", null ],
+      [ "vel_lim_max", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cda0807137976e162eddff8c9edfb48d1db", null ],
+      [ "vel_to_curr_lim_scale", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cdad804a22b7e95d9a4451b54176004bf5b", null ],
+      [ "curr_lim_min", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cdab104883a469b0a77c1cb7fae8c99b573", null ],
+      [ "curr_lim_max", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a62958edea0948a792fcf4fa3d7ba36cdac89fe36f79d0cacf26e00e38caa2d830", null ]
+    ] ],
+    [ "id_to_key", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#aa0a3500e54e49419fb12f52fab2eb60a", null ],
+    [ "key_to_id", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a87f84db44768cb90dd3a321d23fdb786", null ],
+    [ "to_str", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a49ab38931887b65ea4bd8ee7b561c450", null ],
+    [ "ids", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a8af86859ebf7dc64810df17f6463cb23", null ]
+];

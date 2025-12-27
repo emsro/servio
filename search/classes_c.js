@@ -9,6 +9,6 @@ var searchData=
   ['lexer_6',['lexer',['../structservio_1_1parser_1_1lexer.html',1,'servio::parser']]],
   ['line_7',['line',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line',1,'servio::scmdio']]],
   ['linear_5fconverter_8',['linear_converter',['../structservio_1_1cnv_1_1linear__converter.html',1,'servio::cnv']]],
-  ['linear_5ftransition_5fregulator_9',['linear_transition_regulator',['../structservio_1_1ctl_1_1linear__transition__regulator.html',1,'servio::ctl']]],
+  ['linear_5ftransition_5fregulator_9',['linear_transition_regulator',['../structservio_1_1linear__transition__regulator.html',1,'servio']]],
   ['loop_5ffrequency_10',['loop_frequency',['../structservio_1_1ftest_1_1bench_1_1loop__frequency.html',1,'servio::ftest::bench']]]
 ];

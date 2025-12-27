@@ -9,8 +9,12 @@ var cfg_2gen_8py =
     [ "generate_key_trait", "cfg_2gen_8py.html#a4f0c1d7a23d5a7cafac933a88522bd85", null ],
     [ "generate_key_values", "cfg_2gen_8py.html#af164e7bdbd2684a376b5de0f6de43926", null ],
     [ "generate_map", "cfg_2gen_8py.html#af8ab4d160fda157e692685515963b6da", null ],
-    [ "generate_str_to_key", "cfg_2gen_8py.html#ab175657206011772c3db258455a36475", null ],
     [ "generate_to_str", "cfg_2gen_8py.html#ab61d7a4c8034f643dbf381b37c1166e5", null ],
-    [ "main", "cfg_2gen_8py.html#a9da8dd014ed5642c986e85080b4ff6fa", null ],
-    [ "regenerate_file", "cfg_2gen_8py.html#ad3dbb3aea428f390f31d56f15a5f7738", null ]
+    [ "main", "cfg_2gen_8py.html#af9c1c57f99bdfe5f3e37f6426ecc62f1", null ],
+    [ "regenerate_file", "cfg_2gen_8py.html#ad3dbb3aea428f390f31d56f15a5f7738", null ],
+    [ "args", "cfg_2gen_8py.html#a33517ff0695f1e1d552f649c9f0a1e1a", null ],
+    [ "help", "cfg_2gen_8py.html#a8583780752e21a0fa4ab9e055ebbe334", null ],
+    [ "parser", "cfg_2gen_8py.html#ab096d47a0abbe4037fff730c22450996", null ],
+    [ "str", "cfg_2gen_8py.html#ab9d8cdcfada28d093f442497b6c68168", null ],
+    [ "type", "cfg_2gen_8py.html#ab3831b181e67b12f386aaeb2e0a1e5be", null ]
 ];

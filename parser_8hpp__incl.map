@@ -1,15 +1,13 @@
 <map id="src/lib/parser.hpp" name="src/lib/parser.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="393,5,526,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="333,5,466,31"/>
 <area shape="rect" id="Node000002" href="$str__lib_8hpp.html" title=" " alt="" coords="107,86,206,111"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="411,33,220,81,207,85,206,80,219,76,410,28"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="231,86,347,111"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="436,33,327,83,325,78,433,28"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="371,79,548,119"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="462,31,462,65,457,65,457,31"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="572,86,669,111"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="484,28,586,78,584,83,482,33"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="693,86,785,111"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="506,28,683,76,693,79,692,84,681,81,504,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="365,33,206,84,204,79,363,28"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="231,79,408,119"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="389,33,350,71,347,67,386,29"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="432,86,529,111"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="413,29,461,75,457,78,409,33"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="553,86,645,111"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="429,28,558,78,556,83,427,33"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,167,44,192"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="139,114,57,162,54,157,136,109"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="69,167,149,192"/>

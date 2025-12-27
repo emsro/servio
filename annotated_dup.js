@@ -17,16 +17,16 @@ var annotated_dup =
         [ "adc_set", "namespaceservio_1_1brd.html#structservio_1_1brd_1_1adc__set", "namespaceservio_1_1brd_structservio_1_1brd_1_1adc__set_dup" ]
       ] ],
       [ "cfg", "namespaceservio_1_1cfg.html", [
+        [ "cfg_type_trait", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1cfg__type__trait", null ],
+        [ "cfg_type_trait< encoder_mode >", "structservio_1_1cfg_1_1cfg__type__trait_3_01encoder__mode_01_4.html", "structservio_1_1cfg_1_1cfg__type__trait_3_01encoder__mode_01_4" ],
+        [ "cfg_type_trait< uint32_t >", "structservio_1_1cfg_1_1cfg__type__trait_3_01uint32__t_01_4.html", "structservio_1_1cfg_1_1cfg__type__trait_3_01uint32__t_01_4" ],
         [ "context", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1context_dup" ],
         [ "dispatcher", "structservio_1_1cfg_1_1dispatcher.html", "structservio_1_1cfg_1_1dispatcher" ],
+        [ "handler", "structservio_1_1cfg_1_1handler.html", "structservio_1_1cfg_1_1handler" ],
+        [ "iface", "structservio_1_1cfg_1_1iface.html", "structservio_1_1cfg_1_1iface" ],
         [ "key_trait", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait", null ],
         [ "key_trait< key::current_conv_offset >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__conv__offset_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1current__conv__offset_01_4_dup" ],
         [ "key_trait< key::current_conv_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__conv__scale_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1current__conv__scale_01_4_dup" ],
-        [ "key_trait< key::current_lim_max >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__lim__max_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1current__lim__max_01_4_dup" ],
-        [ "key_trait< key::current_lim_min >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__lim__min_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1current__lim__min_01_4_dup" ],
-        [ "key_trait< key::current_loop_d >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__loop__d_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1current__loop__d_01_4_dup" ],
-        [ "key_trait< key::current_loop_i >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__loop__i_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1current__loop__i_01_4_dup" ],
-        [ "key_trait< key::current_loop_p >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1current__loop__p_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1current__loop__p_01_4_dup" ],
         [ "key_trait< key::encoder_mode >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1encoder__mode_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1encoder__mode_01_4_dup" ],
         [ "key_trait< key::group_id >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1group__id_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1group__id_01_4_dup" ],
         [ "key_trait< key::id >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1id_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1id_01_4_dup" ],
@@ -36,27 +36,15 @@ var annotated_dup =
         [ "key_trait< key::model >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1model_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1model_01_4_dup" ],
         [ "key_trait< key::moving_detection_step >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1moving__detection__step_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1moving__detection__step_01_4_dup" ],
         [ "key_trait< key::position_high_angle >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__high__angle_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1position__high__angle_01_4_dup" ],
-        [ "key_trait< key::position_lim_max >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__lim__max_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1position__lim__max_01_4_dup" ],
-        [ "key_trait< key::position_lim_min >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__lim__min_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1position__lim__min_01_4_dup" ],
-        [ "key_trait< key::position_loop_d >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__loop__d_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1position__loop__d_01_4_dup" ],
-        [ "key_trait< key::position_loop_i >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__loop__i_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1position__loop__i_01_4_dup" ],
-        [ "key_trait< key::position_loop_p >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__loop__p_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1position__loop__p_01_4_dup" ],
         [ "key_trait< key::position_low_angle >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__low__angle_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1position__low__angle_01_4_dup" ],
-        [ "key_trait< key::position_to_velocity_lim_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__to__velocity__lim__scale_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1position__to__velocity__lim__scale_01_4_dup" ],
         [ "key_trait< key::quad_encoder_range >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1quad__encoder__range_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1quad__encoder__range_01_4_dup" ],
-        [ "key_trait< key::static_friction_decay >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1static__friction__decay_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1static__friction__decay_01_4_dup" ],
-        [ "key_trait< key::static_friction_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1static__friction__scale_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1static__friction__scale_01_4_dup" ],
         [ "key_trait< key::temp_conv_offset >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1temp__conv__offset_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1temp__conv__offset_01_4_dup" ],
         [ "key_trait< key::temp_conv_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1temp__conv__scale_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1temp__conv__scale_01_4_dup" ],
-        [ "key_trait< key::velocity_lim_max >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__lim__max_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__lim__max_01_4_dup" ],
-        [ "key_trait< key::velocity_lim_min >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__lim__min_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__lim__min_01_4_dup" ],
-        [ "key_trait< key::velocity_loop_d >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__loop__d_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__loop__d_01_4_dup" ],
-        [ "key_trait< key::velocity_loop_i >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__loop__i_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__loop__i_01_4_dup" ],
-        [ "key_trait< key::velocity_loop_p >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__loop__p_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__loop__p_01_4_dup" ],
-        [ "key_trait< key::velocity_to_current_lim_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__to__current__lim__scale_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1velocity__to__current__lim__scale_01_4_dup" ],
         [ "key_trait< key::voltage_conv_scale >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1voltage__conv__scale_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1voltage__conv__scale_01_4_dup" ],
         [ "map", "structservio_1_1cfg_1_1map.html", "structservio_1_1cfg_1_1map" ],
-        [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ]
+        [ "off_scale", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1off__scale", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1off__scale_dup" ],
+        [ "resolve_governor_res", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1resolve__governor__res", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1resolve__governor__res_dup" ],
+        [ "root_handler", "structservio_1_1cfg_1_1root__handler.html", "structservio_1_1cfg_1_1root__handler" ]
       ] ],
       [ "cnv", "namespaceservio_1_1cnv.html", [
         [ "converter", "structservio_1_1cnv_1_1converter.html", "structservio_1_1cnv_1_1converter" ],
@@ -64,27 +52,12 @@ var annotated_dup =
         [ "off_scale", "namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale", "namespaceservio_1_1cnv_structservio_1_1cnv_1_1off__scale_dup" ]
       ] ],
       [ "core", "namespaceservio_1_1core.html", [
-        [ "avg_filter", "structservio_1_1core_1_1avg__filter.html", "structservio_1_1core_1_1avg__filter" ],
         [ "core", "structservio_1_1core_1_1core.html", "structservio_1_1core_1_1core" ],
         [ "current_callback", "classservio_1_1core_1_1current__callback.html", "classservio_1_1core_1_1current__callback" ],
         [ "dispatcher", "namespaceservio_1_1core.html#structservio_1_1core_1_1dispatcher", "namespaceservio_1_1core_structservio_1_1core_1_1dispatcher_dup" ],
         [ "drivers", "structservio_1_1core_1_1drivers.html", "structservio_1_1core_1_1drivers" ],
         [ "position_callback", "classservio_1_1core_1_1position__callback.html", "classservio_1_1core_1_1position__callback" ],
         [ "standard_callbacks", "structservio_1_1core_1_1standard__callbacks.html", "structservio_1_1core_1_1standard__callbacks" ]
-      ] ],
-      [ "ctl", "namespaceservio_1_1ctl.html", [
-        [ "tests", "namespaceservio_1_1ctl_1_1tests.html", [
-          [ "control_fixture", "classservio_1_1ctl_1_1tests_1_1control__fixture.html", "classservio_1_1ctl_1_1tests_1_1control__fixture" ]
-        ] ],
-        [ "args", "structservio_1_1ctl_1_1args.html", "structservio_1_1ctl_1_1args" ],
-        [ "args_def", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1args__def", "namespaceservio_1_1ctl_structservio_1_1ctl_1_1args__def_dup" ],
-        [ "args_token", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1args__token", "namespaceservio_1_1ctl_structservio_1_1ctl_1_1args__token_dup" ],
-        [ "config", "namespaceservio_1_1ctl.html#structservio_1_1ctl_1_1config", "namespaceservio_1_1ctl_structservio_1_1ctl_1_1config_dup" ],
-        [ "control", "classservio_1_1ctl_1_1control.html", "classservio_1_1ctl_1_1control" ],
-        [ "governor", "structservio_1_1ctl_1_1governor.html", "structservio_1_1ctl_1_1governor" ],
-        [ "governor_autoreg", "structservio_1_1ctl_1_1governor__autoreg.html", "structservio_1_1ctl_1_1governor__autoreg" ],
-        [ "governor_registry", "structservio_1_1ctl_1_1governor__registry.html", "structservio_1_1ctl_1_1governor__registry" ],
-        [ "linear_transition_regulator", "structservio_1_1ctl_1_1linear__transition__regulator.html", "structservio_1_1ctl_1_1linear__transition__regulator" ]
       ] ],
       [ "drv", "namespaceservio_1_1drv.html", [
         [ "bits", "namespaceservio_1_1drv_1_1bits.html", [
@@ -192,32 +165,109 @@ var annotated_dup =
         [ "check_bool", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool", null ],
         [ "context", "structservio_1_1fw_1_1context.html", "structservio_1_1fw_1_1context" ]
       ] ],
+      [ "gov", "namespaceservio_1_1gov.html", [
+        [ "curr", "namespaceservio_1_1gov_1_1curr.html", [
+          [ "cfg", "namespaceservio_1_1gov_1_1curr_1_1cfg.html", [
+            [ "key_trait", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait", null ],
+            [ "key_trait< key::curr_lim_max >", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__max_01_4", "namespaceservio_1_1gov_1_1curr_1_1cfg_structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__max_01_4_dup" ],
+            [ "key_trait< key::curr_lim_min >", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__min_01_4", "namespaceservio_1_1gov_1_1curr_1_1cfg_structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__min_01_4_dup" ],
+            [ "key_trait< key::curr_loop_d >", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__d_01_4", "namespaceservio_1_1gov_1_1curr_1_1cfg_structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__d_01_4_dup" ],
+            [ "key_trait< key::curr_loop_i >", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__i_01_4", "namespaceservio_1_1gov_1_1curr_1_1cfg_structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__i_01_4_dup" ],
+            [ "key_trait< key::curr_loop_p >", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__p_01_4", "namespaceservio_1_1gov_1_1curr_1_1cfg_structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__p_01_4_dup" ],
+            [ "key_trait< key::pos_lim_max >", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1pos__lim__max_01_4", "namespaceservio_1_1gov_1_1curr_1_1cfg_structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1pos__lim__max_01_4_dup" ],
+            [ "key_trait< key::pos_lim_min >", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1pos__lim__min_01_4", "namespaceservio_1_1gov_1_1curr_1_1cfg_structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1pos__lim__min_01_4_dup" ],
+            [ "key_trait< key::pos_to_curr_lim_scale >", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1pos__to__curr__lim__scale_01_4", "namespaceservio_1_1gov_1_1curr_1_1cfg_structservio_1_1gov_1_1curr_1_1cfg_1_1key__trait_3_01key_1_1pos__to__curr__lim__scale_01_4_dup" ],
+            [ "map", "structservio_1_1gov_1_1curr_1_1cfg_1_1map.html", "structservio_1_1gov_1_1curr_1_1cfg_1_1map" ]
+          ] ],
+          [ "iface", "namespaceservio_1_1gov_1_1curr_1_1iface.html", [
+            [ "set_stmt", "structservio_1_1gov_1_1curr_1_1iface_1_1set__stmt.html", "structservio_1_1gov_1_1curr_1_1iface_1_1set__stmt" ],
+            [ "stmt", "structservio_1_1gov_1_1curr_1_1iface_1_1stmt.html", "structservio_1_1gov_1_1curr_1_1iface_1_1stmt" ]
+          ] ],
+          [ "_current_gov", "structservio_1_1gov_1_1curr_1_1__current__gov.html", "structservio_1_1gov_1_1curr_1_1__current__gov" ]
+        ] ],
+        [ "pos", "namespaceservio_1_1gov_1_1pos.html", [
+          [ "cfg", "namespaceservio_1_1gov_1_1pos_1_1cfg.html", [
+            [ "key_trait", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait", null ],
+            [ "key_trait< key::curr_lim_max >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__max_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__max_01_4_dup" ],
+            [ "key_trait< key::curr_lim_min >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__min_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__min_01_4_dup" ],
+            [ "key_trait< key::curr_loop_d >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__d_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__d_01_4_dup" ],
+            [ "key_trait< key::curr_loop_i >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__i_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__i_01_4_dup" ],
+            [ "key_trait< key::curr_loop_p >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__p_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__p_01_4_dup" ],
+            [ "key_trait< key::pos_lim_max >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__lim__max_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__lim__max_01_4_dup" ],
+            [ "key_trait< key::pos_lim_min >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__lim__min_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__lim__min_01_4_dup" ],
+            [ "key_trait< key::pos_loop_d >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__loop__d_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__loop__d_01_4_dup" ],
+            [ "key_trait< key::pos_loop_i >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__loop__i_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__loop__i_01_4_dup" ],
+            [ "key_trait< key::pos_loop_p >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__loop__p_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__loop__p_01_4_dup" ],
+            [ "key_trait< key::pos_to_curr_lim_scale >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__to__curr__lim__scale_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__to__curr__lim__scale_01_4_dup" ],
+            [ "key_trait< key::static_friction_decay >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1static__friction__decay_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1static__friction__decay_01_4_dup" ],
+            [ "key_trait< key::static_friction_scale >", "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1static__friction__scale_01_4", "namespaceservio_1_1gov_1_1pos_1_1cfg_structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1static__friction__scale_01_4_dup" ],
+            [ "map", "structservio_1_1gov_1_1pos_1_1cfg_1_1map.html", "structservio_1_1gov_1_1pos_1_1cfg_1_1map" ]
+          ] ],
+          [ "iface", "namespaceservio_1_1gov_1_1pos_1_1iface.html", [
+            [ "set_stmt", "structservio_1_1gov_1_1pos_1_1iface_1_1set__stmt.html", "structservio_1_1gov_1_1pos_1_1iface_1_1set__stmt" ],
+            [ "stmt", "structservio_1_1gov_1_1pos_1_1iface_1_1stmt.html", "structservio_1_1gov_1_1pos_1_1iface_1_1stmt" ]
+          ] ],
+          [ "_position_gov", "structservio_1_1gov_1_1pos_1_1__position__gov.html", "structservio_1_1gov_1_1pos_1_1__position__gov" ]
+        ] ],
+        [ "pow", "namespaceservio_1_1gov_1_1pow.html", [
+          [ "iface", "namespaceservio_1_1gov_1_1pow_1_1iface.html", [
+            [ "set_stmt", "structservio_1_1gov_1_1pow_1_1iface_1_1set__stmt.html", "structservio_1_1gov_1_1pow_1_1iface_1_1set__stmt" ],
+            [ "stmt", "structservio_1_1gov_1_1pow_1_1iface_1_1stmt.html", "structservio_1_1gov_1_1pow_1_1iface_1_1stmt" ]
+          ] ],
+          [ "_power_gov", "structservio_1_1gov_1_1pow_1_1__power__gov.html", "structservio_1_1gov_1_1pow_1_1__power__gov" ]
+        ] ],
+        [ "vel", "namespaceservio_1_1gov_1_1vel.html", [
+          [ "cfg", "namespaceservio_1_1gov_1_1vel_1_1cfg.html", [
+            [ "key_trait", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait", null ],
+            [ "key_trait< key::curr_lim_max >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__max_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__max_01_4_dup" ],
+            [ "key_trait< key::curr_lim_min >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__min_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__min_01_4_dup" ],
+            [ "key_trait< key::curr_loop_d >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__d_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__d_01_4_dup" ],
+            [ "key_trait< key::curr_loop_i >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__i_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__i_01_4_dup" ],
+            [ "key_trait< key::curr_loop_p >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__p_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__p_01_4_dup" ],
+            [ "key_trait< key::static_friction_decay >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1static__friction__decay_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1static__friction__decay_01_4_dup" ],
+            [ "key_trait< key::static_friction_scale >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1static__friction__scale_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1static__friction__scale_01_4_dup" ],
+            [ "key_trait< key::vel_lim_max >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__lim__max_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__lim__max_01_4_dup" ],
+            [ "key_trait< key::vel_lim_min >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__lim__min_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__lim__min_01_4_dup" ],
+            [ "key_trait< key::vel_loop_d >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__d_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__d_01_4_dup" ],
+            [ "key_trait< key::vel_loop_i >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__i_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__i_01_4_dup" ],
+            [ "key_trait< key::vel_loop_p >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__p_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__loop__p_01_4_dup" ],
+            [ "key_trait< key::vel_to_curr_lim_scale >", "namespaceservio_1_1gov_1_1vel_1_1cfg.html#structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__to__curr__lim__scale_01_4", "namespaceservio_1_1gov_1_1vel_1_1cfg_structservio_1_1gov_1_1vel_1_1cfg_1_1key__trait_3_01key_1_1vel__to__curr__lim__scale_01_4_dup" ],
+            [ "map", "structservio_1_1gov_1_1vel_1_1cfg_1_1map.html", "structservio_1_1gov_1_1vel_1_1cfg_1_1map" ]
+          ] ],
+          [ "iface", "namespaceservio_1_1gov_1_1vel_1_1iface.html", [
+            [ "set_stmt", "structservio_1_1gov_1_1vel_1_1iface_1_1set__stmt.html", "structservio_1_1gov_1_1vel_1_1iface_1_1set__stmt" ],
+            [ "stmt", "structservio_1_1gov_1_1vel_1_1iface_1_1stmt.html", "structservio_1_1gov_1_1vel_1_1iface_1_1stmt" ]
+          ] ],
+          [ "_velocity_gov", "structservio_1_1gov_1_1vel_1_1__velocity__gov.html", "structservio_1_1gov_1_1vel_1_1__velocity__gov" ]
+        ] ],
+        [ "auto_factory", "structservio_1_1gov_1_1auto__factory.html", "structservio_1_1gov_1_1auto__factory" ],
+        [ "engage_res", "structservio_1_1gov_1_1engage__res.html", "structservio_1_1gov_1_1engage__res" ],
+        [ "gov_fixture", "structservio_1_1gov_1_1gov__fixture.html", "structservio_1_1gov_1_1gov__fixture" ],
+        [ "governor", "structservio_1_1gov_1_1governor.html", "structservio_1_1gov_1_1governor" ],
+        [ "governor_factory", "structservio_1_1gov_1_1governor__factory.html", "structservio_1_1gov_1_1governor__factory" ],
+        [ "governor_manager", "structservio_1_1gov_1_1governor__manager.html", "structservio_1_1gov_1_1governor__manager" ],
+        [ "handle", "structservio_1_1gov_1_1handle.html", "structservio_1_1gov_1_1handle" ]
+      ] ],
       [ "iface", "namespaceservio_1_1iface.html", [
         [ "arg_def", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1arg__def", "namespaceservio_1_1iface_structservio_1_1iface_1_1arg__def_dup" ],
+        [ "arg_parser", "structservio_1_1iface_1_1arg__parser.html", "structservio_1_1iface_1_1arg__parser" ],
         [ "cfg_clear_stmt", "structservio_1_1iface_1_1cfg__clear__stmt.html", "structservio_1_1iface_1_1cfg__clear__stmt" ],
         [ "cfg_commit_stmt", "structservio_1_1iface_1_1cfg__commit__stmt.html", "structservio_1_1iface_1_1cfg__commit__stmt" ],
         [ "cfg_get_stmt", "structservio_1_1iface_1_1cfg__get__stmt.html", "structservio_1_1iface_1_1cfg__get__stmt" ],
-        [ "cfg_list5_stmt", "structservio_1_1iface_1_1cfg__list5__stmt.html", "structservio_1_1iface_1_1cfg__list5__stmt" ],
+        [ "cfg_list_stmt", "structservio_1_1iface_1_1cfg__list__stmt.html", "structservio_1_1iface_1_1cfg__list__stmt" ],
         [ "cfg_set_stmt", "structservio_1_1iface_1_1cfg__set__stmt.html", "structservio_1_1iface_1_1cfg__set__stmt" ],
         [ "cfg_stmt", "structservio_1_1iface_1_1cfg__stmt.html", "structservio_1_1iface_1_1cfg__stmt" ],
-        [ "field", "structservio_1_1iface_1_1field.html", "structservio_1_1iface_1_1field" ],
-        [ "field_traits", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__traits", null ],
-        [ "field_traits< vari::typelist< Field... > >", "structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4.html", "structservio_1_1iface_1_1field__traits_3_01vari_1_1typelist_3_01Field_8_8_8_01_4_01_4" ],
-        [ "field_tuple", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple", null ],
-        [ "field_tuple< vari::typelist< Ts... > >", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4", "namespaceservio_1_1iface_structservio_1_1iface_1_1field__tuple_3_01vari_1_1typelist_3_01Ts_8_8_8_01_4_01_4_dup" ],
-        [ "group", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1group", "namespaceservio_1_1iface_structservio_1_1iface_1_1group_dup" ],
+        [ "cmd_parser", "structservio_1_1iface_1_1cmd__parser.html", "structservio_1_1iface_1_1cmd__parser" ],
+        [ "gov_stmt", "structservio_1_1iface_1_1gov__stmt.html", "structservio_1_1iface_1_1gov__stmt" ],
+        [ "govctl_activate_stmt", "structservio_1_1iface_1_1govctl__activate__stmt.html", "structservio_1_1iface_1_1govctl__activate__stmt" ],
+        [ "govctl_active_stmt", "structservio_1_1iface_1_1govctl__active__stmt.html", "structservio_1_1iface_1_1govctl__active__stmt" ],
+        [ "govctl_deactivate_stmt", "structservio_1_1iface_1_1govctl__deactivate__stmt.html", "structservio_1_1iface_1_1govctl__deactivate__stmt" ],
+        [ "govctl_list_stmt", "structservio_1_1iface_1_1govctl__list__stmt.html", "structservio_1_1iface_1_1govctl__list__stmt" ],
+        [ "govctl_stmt", "structservio_1_1iface_1_1govctl__stmt.html", "structservio_1_1iface_1_1govctl__stmt" ],
         [ "info_stmt", "structservio_1_1iface_1_1info__stmt.html", "structservio_1_1iface_1_1info__stmt" ],
         [ "invalid_stmt", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1invalid__stmt", "namespaceservio_1_1iface_structservio_1_1iface_1_1invalid__stmt_dup" ],
-        [ "key_filter", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1key__filter", null ],
-        [ "key_filter< K, vari::typelist< F, Fs... > >", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4.html", "structservio_1_1iface_1_1key__filter_3_01K_00_01vari_1_1typelist_3_01F_00_01Fs_8_8_8_01_4_01_4" ],
-        [ "kval", "structservio_1_1iface_1_1kval.html", "structservio_1_1iface_1_1kval" ],
-        [ "mode_current_stmt", "structservio_1_1iface_1_1mode__current__stmt.html", "structservio_1_1iface_1_1mode__current__stmt" ],
-        [ "mode_disengaged_stmt", "structservio_1_1iface_1_1mode__disengaged__stmt.html", "structservio_1_1iface_1_1mode__disengaged__stmt" ],
-        [ "mode_position_stmt", "structservio_1_1iface_1_1mode__position__stmt.html", "structservio_1_1iface_1_1mode__position__stmt" ],
-        [ "mode_power_stmt", "structservio_1_1iface_1_1mode__power__stmt.html", "structservio_1_1iface_1_1mode__power__stmt" ],
-        [ "mode_stmt", "structservio_1_1iface_1_1mode__stmt.html", "structservio_1_1iface_1_1mode__stmt" ],
-        [ "mode_velocity_stmt", "structservio_1_1iface_1_1mode__velocity__stmt.html", "structservio_1_1iface_1_1mode__velocity__stmt" ],
         [ "prop_stmt", "structservio_1_1iface_1_1prop__stmt.html", "structservio_1_1iface_1_1prop__stmt" ],
+        [ "root_ser", "structservio_1_1iface_1_1root__ser.html", "structservio_1_1iface_1_1root__ser" ],
         [ "stmt", "structservio_1_1iface_1_1stmt.html", "structservio_1_1iface_1_1stmt" ]
       ] ],
       [ "json", "namespaceservio_1_1json.html", [
@@ -265,11 +315,12 @@ var annotated_dup =
         [ "cobs_cli", "structservio_1_1scmdio_1_1cobs__cli.html", "structservio_1_1scmdio_1_1cobs__cli" ],
         [ "cobs_port", "structservio_1_1scmdio_1_1cobs__port.html", "structservio_1_1scmdio_1_1cobs__port" ],
         [ "consumer", "structservio_1_1scmdio_1_1consumer.html", "structservio_1_1scmdio_1_1consumer" ],
+        [ "gov_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1gov__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1gov__opts_dup" ],
+        [ "govctl_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1govctl__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1govctl__opts_dup" ],
         [ "kval_ser", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser", null ],
         [ "kval_ser< vari::typelist< KV, KVs... > >", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4" ],
         [ "kval_ser< vari::typelist<> >", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4" ],
         [ "line", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1line_dup" ],
-        [ "mode_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1mode__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1mode__opts_dup" ],
         [ "pool_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1pool__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1pool__opts_dup" ],
         [ "port_cli", "structservio_1_1scmdio_1_1port__cli.html", "structservio_1_1scmdio_1_1port__cli" ],
         [ "port_iface", "structservio_1_1scmdio_1_1port__iface.html", "structservio_1_1scmdio_1_1port__iface" ],
@@ -306,17 +357,17 @@ var annotated_dup =
         ] ],
         [ "_invalid", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__invalid", null ],
         [ "s_to_nr_res", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res", "namespaceservio_1_1str__lib_structservio_1_1str__lib_1_1s__to__nr__res_dup" ],
-        [ "s_to_nr_res.__unnamed3__", "namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3____", "namespaceservio_1_1str__lib_unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed3_____dup" ]
+        [ "s_to_nr_res.__unnamed1__", "namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed1____", "namespaceservio_1_1str__lib_unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed1_____dup" ]
       ] ],
-      [ "_type_tag", "structservio_1_1__type__tag.html", "structservio_1_1__type__tag" ],
-      [ "_type_tag_core", "structservio_1_1__type__tag__core.html", "structservio_1_1__type__tag__core" ],
-      [ "_type_tag_core< vari::typelist< T > >", "structservio_1_1__type__tag__core_3_01vari_1_1typelist_3_01T_01_4_01_4.html", "structservio_1_1__type__tag__core_3_01vari_1_1typelist_3_01T_01_4_01_4" ],
       [ "atom_sv_key", "structservio_1_1atom__sv__key.html", "structservio_1_1atom__sv__key" ],
       [ "error_status", "structservio_1_1error__status.html", "structservio_1_1error__status" ],
       [ "key_atom_literal", "structservio_1_1key__atom__literal.html", "structservio_1_1key__atom__literal" ],
       [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
+      [ "linear_transition_regulator", "structservio_1_1linear__transition__regulator.html", "structservio_1_1linear__transition__regulator" ],
+      [ "opt_str_err", "structservio_1_1opt__str__err.html", "structservio_1_1opt__str__err" ],
       [ "pwr", "structservio_1_1pwr.html", null ],
-      [ "status", "structservio_1_1status.html", "structservio_1_1status" ]
+      [ "status", "structservio_1_1status.html", "structservio_1_1status" ],
+      [ "str_err", "namespaceservio.html#structservio_1_1str__err", "namespaceservio_structservio_1_1str__err_dup" ]
     ] ],
     [ "std", "namespacestd.html", [
       [ "formatter< A, char >", "structstd_1_1formatter_3_01A_00_01char_01_4.html", "structstd_1_1formatter_3_01A_00_01char_01_4" ],

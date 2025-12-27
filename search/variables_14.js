@@ -18,5 +18,6 @@ var searchData=
   ['timer_5finstance_15',['timer_instance',['../namespaceservio_1_1plt.html#ac320b1f2637e8716b47834cec0877368',1,'servio::plt::leds_timer_cfg::timer_instance'],['../namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673',1,'servio::plt::hb_timer_cfg::timer_instance']]],
   ['tp_16',['tp',['../namespaceservio_1_1sntr.html#a2fc03e6e901d85cdba6afb1d0c38a10f',1,'servio::sntr::record']]],
   ['tx_17',['tx',['../namespaceservio_1_1plt.html#a9dd4647ad22e65f5bed71ae108f45679',1,'servio::plt::uart_cfg']]],
-  ['tx_5fdma_18',['tx_dma',['../namespaceservio_1_1plt.html#a58ea661027d27b37be80791fb5f64068',1,'servio::plt::uart_cfg']]]
+  ['tx_5fdma_18',['tx_dma',['../namespaceservio_1_1plt.html#a58ea661027d27b37be80791fb5f64068',1,'servio::plt::uart_cfg']]],
+  ['type_19',['type',['../namespacegen.html#ab3831b181e67b12f386aaeb2e0a1e5be',1,'gen']]]
 ];
