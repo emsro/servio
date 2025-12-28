@@ -69,7 +69,7 @@ var namespaceservio_1_1scmdio =
     [ "load_preset", "namespaceservio_1_1scmdio.html#a58574b7237f6a644eaa2df1da28f8529", null ],
     [ "load_preset_cmd", "namespaceservio_1_1scmdio.html#ad9cdcd1956f9f3ad5cbc2f5d1eed77c4", null ],
     [ "load_raw_preset", "namespaceservio_1_1scmdio.html#a54e3bd40a8656f4f5610d379bc3484e6", null ],
-    [ "log_error", "namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5", null ],
+    [ "log_error", "namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92", null ],
     [ "pid_autotune_current", "namespaceservio_1_1scmdio.html#a767b23a2db56d8ed7a8980aa7c9fdfe2", null ],
     [ "pid_calculate", "namespaceservio_1_1scmdio.html#aa7aafe8ff434221e097fa3aaff3641af", null ],
     [ "pid_collect", "namespaceservio_1_1scmdio.html#a1ad8fcf9c2a8a99c6b80086bfcdee61d", null ],

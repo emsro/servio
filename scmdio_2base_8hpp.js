@@ -12,5 +12,5 @@ var scmdio_2base_8hpp =
     [ "opt", "scmdio_2base_8hpp.html#adec9aeb6f81f1c6f3db642544d88f967", null ],
     [ "sptr", "scmdio_2base_8hpp.html#a662f29442a014cdbe007bc12f0d52fe8", null ],
     [ "check_path", "scmdio_2base_8hpp.html#a6789ab0e74b37afe45d4ad8dbb30de7e", null ],
-    [ "log_error", "scmdio_2base_8hpp.html#aa0948d83703aaf03ad168493e958f0c5", null ]
+    [ "log_error", "scmdio_2base_8hpp.html#a99d6c81392e860065bc3023f6b219a92", null ]
 ];

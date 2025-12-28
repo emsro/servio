@@ -37,7 +37,7 @@ var searchData=
   ['load_5fvalue_34',['load_value',['../namespaceservio_1_1cfg.html#a43af68038247236b1999ae324754229c',1,'servio::cfg::load_value()'],['../namespaceservio_1_1parser.html#a4fa25e3ee27b27cddc600423ab729c29',1,'servio::parser::load_value()']]],
   ['loc_35',['loc',['../structservio_1_1parser_1_1parser.html#ad7930ababc1397bf06ffcd1ddad618b0',1,'servio::parser::parser']]],
   ['locked_36',['LOCKED',['../namespaceservio_1_1sntr.html#a875fcd3a5d9ef6909df43ffc0b84d60eaaeff3f3f2731681b2ed6a27786a56203',1,'servio::sntr']]],
-  ['log_5ferror_37',['log_error',['../namespaceservio_1_1scmdio.html#aa0948d83703aaf03ad168493e958f0c5',1,'servio::scmdio']]],
+  ['log_5ferror_37',['log_error',['../namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92',1,'servio::scmdio']]],
   ['loop_5ffrequency_38',['loop_frequency',['../structservio_1_1ftest_1_1bench_1_1loop__frequency.html',1,'servio::ftest::bench']]],
   ['low_5fpoint_39',['low_point',['../structservio_1_1linear__transition__regulator.html#a88d4a584a998cb31dc6fa2ce633e1f57',1,'servio::linear_transition_regulator']]],
   ['lse_5fstartup_5ftimeout_40',['LSE_STARTUP_TIMEOUT',['../stm32h5xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32h5xx_hal_conf.h']]],
