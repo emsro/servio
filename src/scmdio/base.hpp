@@ -29,8 +29,8 @@ struct servio_exception : std::runtime_error
         using std::runtime_error::runtime_error;
 };
 
-template < typename... FmtArgs, typename... Args >
-[[noreturn]] inline void log_error( spdlog::format_string_t< FmtArgs... > fmt, Args&&... args )
+template < typename... Args >
+[[noreturn]] inline void log_error( spdlog::format_string_t< Args... > fmt, Args&&... args )
 {
         spdlog::error( fmt, (Args&&) args... );
         throw servio_exception{ "Critical error occured" };
