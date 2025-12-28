@@ -133,9 +133,9 @@ $(document).ready(function(){initNavTree('scmdio_2base_8hpp_source.html',''); in
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
 </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span>... FmtArgs, <span class="keyword">typename</span>... Args &gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span>... Args &gt;</div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92">   33</a></span>[[noreturn]] <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92">log_error</a>( spdlog::format_string_t&lt; FmtArgs... &gt; fmt, Args&amp;&amp;... args )</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92">   33</a></span>[[noreturn]] <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92">log_error</a>( spdlog::format_string_t&lt; Args... &gt; fmt, Args&amp;&amp;... args )</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        spdlog::error( fmt, (Args&amp;&amp;) args... );</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">throw</span> <a class="code hl_struct" href="structservio_1_1scmdio_1_1servio__exception.html">servio_exception</a>{ <span class="stringliteral">&quot;Critical error occured&quot;</span> };</div>
@@ -369,7 +369,7 @@ $(document).ready(function(){initNavTree('scmdio_2base_8hpp_source.html',''); in
 <div class="ttc" id="anamespaceservio_1_1scmdio_html"><div class="ttname"><a href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div><div class="ttdef"><b>Definition</b> base.hpp:15</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_a662f29442a014cdbe007bc12f0d52fe8"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a662f29442a014cdbe007bc12f0d52fe8">servio::scmdio::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; sptr</div><div class="ttdef"><b>Definition</b> base.hpp:22</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_a6789ab0e74b37afe45d4ad8dbb30de7e"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a6789ab0e74b37afe45d4ad8dbb30de7e">servio::scmdio::check_path</a></div><div class="ttdeci">std::filesystem::path const &amp; check_path(std::filesystem::path const &amp;p)</div><div class="ttdef"><b>Definition</b> base.hpp:39</div></div>
-<div class="ttc" id="anamespaceservio_1_1scmdio_html_a99d6c81392e860065bc3023f6b219a92"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92">servio::scmdio::log_error</a></div><div class="ttdeci">void log_error(spdlog::format_string_t&lt; FmtArgs... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> base.hpp:33</div></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html_a6bc8cf20076a956127f4020a688a2c92"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92">servio::scmdio::log_error</a></div><div class="ttdeci">void log_error(spdlog::format_string_t&lt; Args... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> base.hpp:33</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_adec9aeb6f81f1c6f3db642544d88f967"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#adec9aeb6f81f1c6f3db642544d88f967">servio::scmdio::opt</a></div><div class="ttdeci">std::optional&lt; T &gt; opt</div><div class="ttdef"><b>Definition</b> base.hpp:25</div></div>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdoc">STL namespace.</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1servio__exception_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1servio__exception.html">servio::scmdio::servio_exception</a></div><div class="ttdef"><b>Definition</b> base.hpp:28</div></div>
@@ -395,7 +395,7 @@ $(document).ready(function(){initNavTree('scmdio_2base_8hpp_source.html',''); in
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="scmdio_2base_8hpp.html">base.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:52:21 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('field__util_8hpp_source.html',''); ini
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                        <span class="keywordflow">if</span> ( val == <span class="stringliteral">&quot;false&quot;</span> )</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                        <a class="code hl_function" href="namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92">log_error</a>( <span class="stringliteral">&quot;Invalid bool value: &quot;</span>, val );</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                        <a class="code hl_function" href="namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92">log_error</a>( <span class="stringliteral">&quot;Invalid bool value: &quot;</span>, val );</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> ( std::is_integral_v&lt; T &gt; ) {</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                        T ret;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                        std::from_chars( val.data(), val.data() + val.size(), ret );</div>
@@ -183,7 +183,7 @@ $(document).ready(function(){initNavTree('field__util_8hpp_source.html',''); ini
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keyword">auto</span> x = avakar::atom&lt; Ts... &gt;::from_string( val );</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="keywordflow">if</span> ( x )</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                        <span class="keywordflow">return</span> *x;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <a class="code hl_function" href="namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92">log_error</a>( <span class="stringliteral">&quot;Failed to parse atom: &quot;</span>, val );</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <a class="code hl_function" href="namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92">log_error</a>( <span class="stringliteral">&quot;Failed to parse atom: &quot;</span>, val );</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
 </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
@@ -267,7 +267,7 @@ $(document).ready(function(){initNavTree('field__util_8hpp_source.html',''); ini
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}  <span class="comment">// namespace servio::scmdio</span></div>
 <div class="ttc" id="anamespaceavakar_html"><div class="ttname"><a href="namespaceavakar.html">avakar</a></div><div class="ttdef"><b>Definition</b> config_test.cpp:10</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html"><div class="ttname"><a href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div><div class="ttdef"><b>Definition</b> base.hpp:15</div></div>
-<div class="ttc" id="anamespaceservio_1_1scmdio_html_a99d6c81392e860065bc3023f6b219a92"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92">servio::scmdio::log_error</a></div><div class="ttdeci">void log_error(spdlog::format_string_t&lt; FmtArgs... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> base.hpp:33</div></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html_a6bc8cf20076a956127f4020a688a2c92"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92">servio::scmdio::log_error</a></div><div class="ttdeci">void log_error(spdlog::format_string_t&lt; Args... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> base.hpp:33</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_structservio_1_1scmdio_1_1kval__ser"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser">servio::scmdio::kval_ser</a></div><div class="ttdef"><b>Definition</b> field_util.hpp:76</div></div>
 <div class="ttc" id="asntr_2base_8hpp_html"><div class="ttname"><a href="sntr_2base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="astructnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4_html_aa0a5ba165d6278e2a41e4bf15d662504"><div class="ttname"><a href="structnlohmann_1_1adl__serializer_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html#aa0a5ba165d6278e2a41e4bf15d662504">nlohmann::adl_serializer&lt; avakar::atom&lt; Ts... &gt; &gt;::from_json</a></div><div class="ttdeci">static avakar::atom&lt; Ts... &gt; from_json(nlohmann::json const &amp;j)</div><div class="ttdef"><b>Definition</b> field_util.hpp:15</div></div>
@@ -286,7 +286,7 @@ $(document).ready(function(){initNavTree('field__util_8hpp_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="field__util_8hpp.html">field_util.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:52:21 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

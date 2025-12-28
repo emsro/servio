@@ -12,5 +12,5 @@ var searchData=
   ['load_5fraw_5fpreset_9',['load_raw_preset',['../namespaceservio_1_1scmdio.html#a54e3bd40a8656f4f5610d379bc3484e6',1,'servio::scmdio']]],
   ['load_5fvalue_10',['load_value',['../namespaceservio_1_1cfg.html#a43af68038247236b1999ae324754229c',1,'servio::cfg::load_value()'],['../namespaceservio_1_1parser.html#a4fa25e3ee27b27cddc600423ab729c29',1,'servio::parser::load_value()']]],
   ['loc_11',['loc',['../structservio_1_1parser_1_1parser.html#ad7930ababc1397bf06ffcd1ddad618b0',1,'servio::parser::parser']]],
-  ['log_5ferror_12',['log_error',['../namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92',1,'servio::scmdio']]]
+  ['log_5ferror_12',['log_error',['../namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92',1,'servio::scmdio']]]
 ];

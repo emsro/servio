@@ -170,9 +170,9 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a99d6c81392e860065bc3023f6b219a92" id="r_a99d6c81392e860065bc3023f6b219a92"><td class="memTemplParams" colspan="2">template&lt;typename... FmtArgs, typename... Args&gt; </td></tr>
-<tr class="memitem:a99d6c81392e860065bc3023f6b219a92"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92">log_error</a> (spdlog::format_string_t&lt; FmtArgs... &gt; fmt, Args &amp;&amp;... args)</td></tr>
-<tr class="separator:a99d6c81392e860065bc3023f6b219a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc8cf20076a956127f4020a688a2c92" id="r_a6bc8cf20076a956127f4020a688a2c92"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a6bc8cf20076a956127f4020a688a2c92"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92">log_error</a> (spdlog::format_string_t&lt; Args... &gt; fmt, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a6bc8cf20076a956127f4020a688a2c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6789ab0e74b37afe45d4ad8dbb30de7e" id="r_a6789ab0e74b37afe45d4ad8dbb30de7e"><td class="memItemLeft" align="right" valign="top">std::filesystem::path const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a6789ab0e74b37afe45d4ad8dbb30de7e">check_path</a> (std::filesystem::path const &amp;p)</td></tr>
 <tr class="separator:a6789ab0e74b37afe45d4ad8dbb30de7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadcd2580e5b34923ffe680f2b73dd7ca" id="r_aadcd2580e5b34923ffe680f2b73dd7ca"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#aadcd2580e5b34923ffe680f2b73dd7ca">bflash_info</a> (<a class="el" href="structservio_1_1scmdio_1_1stream__iface.html">stream_iface</a> &amp;port, std::ostream &amp;os)</td></tr>
@@ -1351,7 +1351,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92">log_error()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a07bb505d72d2a7c2a0970af183e13be3">read()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a541a193834ccc76608db019f895238e6">write()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92">log_error()</a>, <a class="el" href="namespaceservio_1_1scmdio.html#a07bb505d72d2a7c2a0970af183e13be3">read()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a541a193834ccc76608db019f895238e6">write()</a>.</p>
 
 </div>
 </div>
@@ -1435,7 +1435,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#ab3a9d3e781797bae6ec2211568c2511b">exchg()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a99d6c81392e860065bc3023f6b219a92">log_error()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio_1_1scmdio.html#ab3a9d3e781797bae6ec2211568c2511b">exchg()</a>, and <a class="el" href="namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92">log_error()</a>.</p>
 
 </div>
 </div>
@@ -1799,13 +1799,13 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a99d6c81392e860065bc3023f6b219a92" name="a99d6c81392e860065bc3023f6b219a92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99d6c81392e860065bc3023f6b219a92">&#9670;&#160;</a></span>log_error()</h2>
+<a id="a6bc8cf20076a956127f4020a688a2c92" name="a6bc8cf20076a956127f4020a688a2c92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc8cf20076a956127f4020a688a2c92">&#9670;&#160;</a></span>log_error()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename... FmtArgs, typename... Args&gt; </div>
+template&lt;typename... Args&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1813,7 +1813,7 @@ template&lt;typename... FmtArgs, typename... Args&gt; </div>
         <tr>
           <td class="memname">void servio::scmdio::log_error </td>
           <td>(</td>
-          <td class="paramtype">spdlog::format_string_t&lt; FmtArgs... &gt;&#160;</td>
+          <td class="paramtype">spdlog::format_string_t&lt; Args... &gt;&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>
         </tr>
         <tr>
@@ -2592,7 +2592,7 @@ template&lt;typename... FmtArgs, typename... Args&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1scmdio.html">scmdio</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:52:21 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Dec 28 2025 18:55:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
