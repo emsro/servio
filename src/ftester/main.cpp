@@ -86,6 +86,12 @@ struct joque_test
                         std::string s = j.dump( 2 );
                         if ( s.length() > 2048 )
                                 s = "output json too big, not shown";
+                        if ( j.contains( "sfile" ) ) {
+                                std::string ss =
+                                    "Error detected: " + j["sfile"].get< std::string >() + ":" +
+                                    std::to_string( j["sline"].get< int >() );
+                                s = ss + "\n" + s;
+                        }
                         joque::insert_err( res, s );
                 } else if ( j.contains( "metrics" ) ) {
                         for ( nlohmann::json const& m : j["metrics"] ) {
@@ -104,7 +110,7 @@ struct joque_test
                 std::filesystem::create_directories( *output_dir );
                 std::filesystem::path p = output_dir.value() / ( name + ".json" );
                 std::ofstream         of{ p };
-                of << j.dump();
+                of << j.dump( 4 );
 
                 bool specific_test = handle_test_specifics( name, sys, *output_dir );
 
@@ -174,9 +180,11 @@ int main( int argc, char* argv[] )
         spdlog::debug( "Initializing test system" );
         tsys.wait_for_init();
 
+        spdlog::debug( "Setting up tests" );
         std::string suite_name = tsys.suite_name();
         for ( auto [tid, name] : tsys.get_tests() ) {
                 std::string sname{ name.begin(), name.size() };
+                spdlog::debug( "Adding test '{}' (ID {}) to task set", sname, tid );
                 ts.tasks[sname] = joque::task{
                     .job =
                         ftester::joque_test{
@@ -190,10 +198,12 @@ int main( int argc, char* argv[] )
         }
 
         joque::print_exec_visitor pvis{ false };
+        spdlog::debug( "Running tests from suite '{}'", suite_name );
         opt< joque::exec_record > rec = joque::exec( ts, 0, cfg.filter, pvis ).run();
         if ( rec && cfg.output_dir ) {
                 std::ofstream os{ *cfg.output_dir / "res.json" };
                 os << nlohmann::json{ *rec }.dump();
         }
+        spdlog::debug( "Test run complete" );
         return rec->stats[joque::run_status::FAIL] != 0;
 }

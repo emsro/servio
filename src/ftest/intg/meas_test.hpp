@@ -69,7 +69,7 @@ struct meas_pos_test
                 drv::empty_current_cb ccb;
                 curr.set_current_callback( ccb );
 
-                motor.set_power( p_max / 4.F );
+                motor.set_power( p_max / 2.F );
                 float start = cor.met.get_position();
 
                 drv::wait_for( clk, 400_us );

@@ -11,28 +11,25 @@ configure:
 	$(MAKE) configure_h5
 
 configure_host:
-	cmake --preset "host_debug_cfg"
+	cmake --preset "host_debug"
 configure_h5:
-	cmake --preset "stm32h5_debug_cfg"
+	cmake --preset "stm32h5_debug"
 configure_asan:
-	cmake --preset "host_asan_cfg"
+	cmake --preset "host_asan"
 
 build:
 	$(MAKE) build_host
 	$(MAKE) build_h5
 
 build_host:
-	cmake --build --preset "host_debug_build"
+	cmake --build --preset "host_debug"
 build_h5:
-	cmake --build --preset "stm32h5_debug_build"
+	cmake --build --preset "stm32h5_debug"
 build_asan:
-	cmake --build --preset "host_asan_build"
-
-flash:
-	/usr/local/bin/openocd -f src/plt/stm32h5/openocd.cfg -c "program build/h5/proto3_fw.elf verify reset exit"
+	cmake --build --preset "host_asan"
 
 test: build_host
-	ctest --preset host_debug_test --output-on-failure
+	ctest --preset host_debug --output-on-failure
 
 test_asan: build_asan
-	ctest --preset host_asan_test --output-on-failure
+	ctest --preset host_asan --output-on-failure

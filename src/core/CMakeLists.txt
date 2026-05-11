@@ -8,7 +8,7 @@ servio_add_library(
        vari
        cmake_git_version_tracking
        govlib
-       zll)
+       zll::zll)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
@@ -19,6 +19,6 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
     ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp
     LIBS
     corelib
-    powgovlib)
+    govlib)
 
 endif()

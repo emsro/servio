@@ -4,7 +4,10 @@
 #include "./setup_tests.hpp"
 #include "./testing_system.hpp"
 
+namespace
+{
 em::pmr::stack_resource< 1024 > TEST_STACK;
+}
 
 int main()
 {
@@ -16,7 +19,8 @@ int main()
         core::drivers cdrv = brd::setup_core_drivers();
         if ( cdrv.any_uninitialized() )
                 fw::stop_exec();
-        fw::context ctx{ std::move( cdrv ) };
+        fw::context ctx{ cdrv };
+        ctx.setup();
 
         drv::com_iface* dbg_comms = brd::setup_debug_comms();
         if ( dbg_comms == nullptr || dbg_comms->start() != SUCCESS )

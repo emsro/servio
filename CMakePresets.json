@@ -1,23 +1,23 @@
 {
-    "version": 2,
+    "version": 6,
     "configurePresets": [
         {
-            "name": "host_debug_cfg",
+            "name": "host_debug",
             "generator": "Ninja",
             "binaryDir": "_build/host",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "SERVIO_PLATFORM": "host",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache"
             }
         },
         {
-            "name": "host_asan_cfg",
+            "name": "host_asan",
             "generator": "Ninja",
             "binaryDir": "_build/asan",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "SERVIO_PLATFORM": "host",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
@@ -26,14 +26,14 @@
             }
         },
         {
-            "name": "stm32h5_debug_cfg",
+            "name": "stm32h5_debug",
             "generator": "Ninja",
             "binaryDir": "_build/stm32h5/",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "SERVIO_PLATFORM": "stm32h5",
-                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/dep/stm32-cmake/cmake/stm32_gcc.cmake",
+                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchain/arm-none-eabi-gcc.cmake",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
             }
@@ -41,26 +41,75 @@
     ],
     "buildPresets": [
         {
-            "name": "host_debug_build",
-            "configurePreset": "host_debug_cfg"
+            "name": "host_debug",
+            "configurePreset": "host_debug"
         },
         {
-            "name": "host_asan_build",
-            "configurePreset": "host_asan_cfg"
+            "name": "host_asan",
+            "configurePreset": "host_asan"
         },
         {
-            "name": "stm32h5_debug_build",
-            "configurePreset": "stm32h5_debug_cfg"
+            "name": "stm32h5_debug",
+            "configurePreset": "stm32h5_debug"
         }
     ],
     "testPresets": [
         {
-            "name": "host_debug_test",
-            "configurePreset": "host_debug_cfg"
+            "name": "host_debug",
+            "configurePreset": "host_debug"
         },
         {
-            "name": "host_asan_test",
-            "configurePreset": "host_asan_cfg"
+            "name": "host_asan",
+            "configurePreset": "host_asan"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "host_debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "host_debug"
+                },
+                {
+                    "type": "build",
+                    "name": "host_debug"
+                },
+                {
+                    "type": "test",
+                    "name": "host_debug"
+                }
+            ]
+        },
+        {
+            "name": "host_asan",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "host_asan"
+                },
+                {
+                    "type": "build",
+                    "name": "host_asan"
+                },
+                {
+                    "type": "test",
+                    "name": "host_asan"
+                }
+            ]
+        },
+        {
+            "name": "stm32h5_debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "stm32h5_debug"
+                },
+                {
+                    "type": "build",
+                    "name": "stm32h5_debug"
+                }
+            ]
         }
     ]
 }

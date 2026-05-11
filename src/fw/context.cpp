@@ -28,6 +28,8 @@ void context::setup()
         core.ind.on_event( cdrv.clock->get_us(), mon::indication_event::INITIALIZED );
 
         gov::create_governors( core.gov_, core.gov_mem );
+        if ( core.gov_.governors().empty() )
+                fw::stop_exec();
 }
 
 }  // namespace servio::fw

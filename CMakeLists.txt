@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.24)
 
 project(servio C CXX ASM)
 
-set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 99)
@@ -10,9 +9,6 @@ set(CMAKE_C_STANDARD 99)
 cmake_policy(SET CMP0077 NEW)
 option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
-
-add_library(zll INTERFACE dep/zll/zll.h)
-target_include_directories(zll INTERFACE dep/zll)
 
 add_subdirectory(dep/emlabcpp)
 
@@ -23,6 +19,16 @@ include(cmake/utils.cmake)
 cpmaddpackage(
   "gh:andrew-hardin/cmake-git-version-tracking#6c0cb87edd029ddfb403a8e24577c144a03605a6"
 )
+cpmaddpackage("gh:koniarik/zll@1.0.0")
+cpmaddpackage(
+  NAME
+  asrt
+  GITHUB_REPOSITORY
+  emsro/asrt
+  VERSION
+  0.0.2
+  OPTIONS
+  "BUILD_TESTING OFF")
 cpmaddpackage("gh:Neargye/magic_enum@0.9.7")
 cpmaddpackage("gh:avakar/atom#f5d5c6c0f5fdc96a6275d55f7c4ee98396e407a6")
 cpmaddpackage("gh:koniarik/vari#8846bd024215997f5009c4fb920ecfb64d4c7efb")
@@ -96,18 +102,10 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
-  stm32_fetch_hal(H5)
-  stm32_fetch_cmsis(H5)
-  find_package(
-    CMSIS
-    COMPONENTS STM32H5
-    REQUIRED GLOBAL)
-  find_package(HAL COMPONENTS STM32H5 REQUIRED GLOBAL)
+  add_subdirectory(src/plt/stm32h5)
 
   target_compile_options(emlabcpp PUBLIC -Os)
-  target_link_libraries(emlabcpp PRIVATE STM32::H5)
-
-  add_subdirectory(src/plt/stm32h5)
+  target_link_libraries(emlabcpp PRIVATE platform)
 
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
 

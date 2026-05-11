@@ -1,3 +1,32 @@
+file(GLOB HAL_SOURCES ./Src/*.c)
+
+servio_add_library(
+  TARGET stm32h5_hal
+  INCLUDE ./Inc
+  SOURCES ${HAL_SOURCES} ./cmsis/system_stm32h5xx.c ./startup_stm32h503xx.s
+  OPTS -Os)
+target_compile_options(
+  stm32h5_hal
+  PUBLIC -mcpu=cortex-m33
+         -mfloat-abi=hard
+         -mfpu=fpv5-sp-d16
+         -mthumb
+         -ffunction-sections
+         -fdata-sections
+         --specs=nosys.specs
+         --specs=nano.specs)
+target_compile_definitions(stm32h5_hal PUBLIC -DSTM32H503xx)
+target_include_directories(stm32h5_hal PUBLIC ./ ./cmsis/)
+target_link_options(
+  stm32h5_hal
+  PUBLIC
+  -mcpu=cortex-m33
+  -mfloat-abi=hard
+  -mfpu=fpv5-sp-d16
+  -mthumb
+  --specs=nosys.specs
+  --specs=nano.specs)
+
 servio_add_library(
   TARGET platform
   INCLUDE ./
@@ -9,37 +38,5 @@ servio_add_library(
           i2c.cpp
           timers.cpp
           dts.cpp
-  LIBS emlabcpp
-       HAL::STM32::H5
-       CMSIS::STM32::H503xx
-       STM32::Nano
-       STM32::NoSys
-       vari
-       avakar::atom
-       cfglib
+  LIBS emlabcpp stm32h5_hal vari avakar::atom cfglib
   OPTS -Os)
-
-target_link_libraries(
-  platform
-  PRIVATE HAL::STM32::H5::FLASH
-          HAL::STM32::H5::FLASHEx
-          HAL::STM32::H5::ADC
-          HAL::STM32::H5::ADCEx
-          HAL::STM32::H5::DAC
-          HAL::STM32::H5::CORTEX
-          HAL::STM32::H5::DMA
-          HAL::STM32::H5::DTS
-          HAL::STM32::H5::I2C
-          HAL::STM32::H5::I2CEx
-          HAL::STM32::H5::DMAEx
-          HAL::STM32::H5::GPIO
-          HAL::STM32::H5::OPAMP
-          HAL::STM32::H5::PWR
-          HAL::STM32::H5::PWREx
-          HAL::STM32::H5::RCC
-          HAL::STM32::H5::ICACHE
-          HAL::STM32::H5::RCCEx
-          HAL::STM32::H5::TIM
-          HAL::STM32::H5::TIMEx
-          HAL::STM32::H5::UART
-          HAL::STM32::H5::UARTEx)

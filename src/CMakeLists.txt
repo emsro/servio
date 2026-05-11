@@ -16,6 +16,10 @@ target_link_libraries(
   serviolib
   PUBLIC sntrlib
          monlib
+         velgovlib
+         posgovlib
+         currgovlib
+         powgovlib
          ifacelib
          corelib
          cfglib
