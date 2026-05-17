@@ -132,10 +132,10 @@ struct adc_pooler
                 sequence_ = seq;
         }
 
-        em::result start()
+        status start()
         {
                 __HAL_TIM_ENABLE( tim_ );
-                return SUCCESS;
+                return status::success;
         }
 
         Set* operator->()

@@ -4,7 +4,6 @@
 
 #include <cassert>
 #include <cstdlib>
-#include <emlabcpp/result.h>
 
 namespace servio::plt
 {
@@ -51,7 +50,7 @@ status setup_clk()
         RCC_ClkInitStruct.APB3CLKDivider = RCC_HCLK_DIV1;
 
         if ( HAL_RCC_ClockConfig( &RCC_ClkInitStruct, FLASH_LATENCY_5 ) != HAL_OK )
-                return ERROR;
+                return status::error;
         /** Initializes the peripherals clocks
          */
         PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1 | RCC_PERIPHCLK_USART2 |
@@ -62,9 +61,9 @@ status setup_clk()
         PeriphClkInit.AdcDacClockSelection = RCC_ADCDACCLKSOURCE_HSI;
         PeriphClkInit.I2c2ClockSelection   = RCC_I2C2CLKSOURCE_PCLK1;
         if ( HAL_RCCEx_PeriphCLKConfig( &PeriphClkInit ) != HAL_OK )
-                return ERROR;
+                return status::error;
 
-        return SUCCESS;
+        return status::success;
 }
 
 }  // namespace servio::plt

@@ -16,10 +16,10 @@ static constexpr uint32_t uart_common_tolerable_hal_errors =
 inline status uart_start_it( UART_HandleTypeDef* h, std::byte& b )
 {
         if ( h == nullptr )
-                return ERROR;
+                return status::error;
         if ( HAL_UART_Receive_IT( h, reinterpret_cast< uint8_t* >( &b ), 1 ) != HAL_OK )
-                return ERROR;
-        return SUCCESS;
+                return status::error;
+        return status::success;
 }
 
 template < auto START_ERR >
@@ -36,7 +36,7 @@ inline void uart_rx_cplt_irq(
 
         on_rx_cplt_irq( rx_buff, rx_byte );
 
-        if ( drv.start() != SUCCESS )
+        if ( drv.start() != status::success )
                 sentry.set_inoperable( START_ERR, "rx start" );
 }
 

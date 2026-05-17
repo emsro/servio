@@ -1,11 +1,6 @@
 #include "../base.hpp"
 #include "../drv/interfaces.hpp"
-#include "../ftester/base.hpp"
 #include "./utest.hpp"
-
-#include <emlabcpp/experimental/testing/collect.h>
-#include <emlabcpp/experimental/testing/parameters.h>
-#include <emlabcpp/experimental/testing/reactor.h>
 
 #pragma once
 
@@ -16,53 +11,50 @@ struct testing_system
 {
         drv::com_iface& debug_comms;
 
-        em::testing::reactor    reactor;
-        em::testing::collector  collector;
-        em::testing::parameters parameters;
+        asrt_reac_assm assm;
 
-        em::static_function< em::result( std::span< std::byte const > ), 32 > ctx_cb;
+        std::byte buff[1024];
 
-        uctx ctx;
-
-        auto send_cb()
-        {
-                return [this]( uint16_t channel, auto const& data ) {
-                        return send_( channel, data );
-                };
-        }
-
-        testing_system( drv::com_iface& debug_comms, std::string_view name )
+        testing_system( drv::com_iface& debug_comms, char const* name )
           : debug_comms( debug_comms )
-          , reactor( em::testing::core_channel, name, send_cb() )
-          , collector( em::testing::collect_channel, send_cb() )
-          , parameters( em::testing::params_channel, send_cb() )
-          , ctx_cb( [&]( std::span< std::byte const > data ) {
-                  return send_( ftester::rec_id, data );
-          } )
-          , ctx( collector, ctx_cb )
         {
+                auto r = asrt::init( assm, name, 1000 );
+                if ( r != ASRT_SUCCESS )
+                        fw::stop_exec();
         }
 
-        em::result send_( uint16_t channel, auto const& data )
+        void tick( microseconds now )
         {
-                auto hdr = em::protocol::multiplexer_channel_handler::serialize( channel );
-                return send( debug_comms, 100_ms, hdr, data );
-        }
+                milliseconds ms = duration_cast< milliseconds >( now );
+                asrt::tick( assm, (uint32_t) ms.count() );
 
-        void tick()
-        {
-                reactor.tick();
+                while ( auto req = asrt::next( assm.send_queue ) ) {
+                        asrt_rec_span* b = &req->buff;
 
-                std::array< std::byte, 128 > tmp;
-                auto [succ, data] = debug_comms.recv( tmp );
+                        auto f = [&b] -> std::span< std::byte const > {
+                                if ( !b )
+                                        return {};
+                                std::span< std::byte const > sp{
+                                    (std::byte*) b->b, (std::byte*) b->e };
+                                b = b->next;
+                                return sp;
+                        };
+                        auto st = debug_comms.send( f, 100_ms );
+
+                        req.finish( st == status::success ? ASRT_SUCCESS : ASRT_SEND_ERR );
+                }
+
+                auto [succ, data] = debug_comms.recv( buff );
                 if ( !succ )
                         return;
-                std::ignore = em::protocol::extract_multiplexed(
-                    data,
-                    [&]( em::protocol::channel_type chid, std::span< std::byte const > data ) {
-                            return em::protocol::multiplexed_dispatch(
-                                chid, data, reactor, collector, parameters );
-                    } );
+
+                auto r = asrt_chann_dispatch(
+                    &assm.reactor.node,
+                    asrt::span{
+                        .b = (uint8_t*) data.begin(),
+                        .e = (uint8_t*) data.begin() + data.size() } );
+                if ( r != ASRT_SUCCESS )
+                        fw::stop_exec();
         }
 };
 

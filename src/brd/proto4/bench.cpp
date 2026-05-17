@@ -5,16 +5,14 @@ namespace servio::ftest
 {
 
 void setup_tests(
-    em::pmr::memory_resource& mem,
-    t::reactor&               reac,
-    uctx&                     ctx,
-    t::parameters&,
-    core::drivers& cdrv,
-    core::core&    cor,
-    status&        res )
+    asrt::task_ctx& ctx,
+    asrt_reac_assm& assm,
+    core::drivers&  cdrv,
+    core::core&     cor,
+    status&         res )
 {
         bench::setup_bench_tests(
-            mem, reac, ctx, *cdrv.clock, *cdrv.position, *cdrv.current, *cdrv.period, cor, res );
+            ctx, assm, *cdrv.clock, *cdrv.position, *cdrv.current, *cdrv.period, cor, res );
 }
 
 }  // namespace servio::ftest

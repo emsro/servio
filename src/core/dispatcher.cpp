@@ -56,18 +56,18 @@ void handle_gov_message(
 {
         inpt.visit(
             [&]( iface::govctl_activate_stmt const& a ) {
-                    auto s = gv.activate( a.governor, mem );
-                    if ( s == status::SUCCESS )
+                    error_code s = gv.activate( a.governor, mem );
+                    if ( s == status::success )
                             std::move( out ).ok();
                     else
-                            std::move( out ).nok()( to_str( s ) );
+                            std::move( out ).nok()( s.message() );
             },
             [&]( iface::govctl_deactivate_stmt const& ) {
-                    auto s = gv.deactivate();
-                    if ( s == status::SUCCESS )
+                    error_code s = gv.deactivate();
+                    if ( s == status::success )
                             std::move( out ).ok();
                     else
-                            std::move( out ).nok();
+                            std::move( out ).nok()( s.message() );
             },
             [&]( iface::govctl_active_stmt const& ) {
                     auto* gov = gv.active();
@@ -164,13 +164,13 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmts > inpt, iface::ro
                                         } );
                         },
                         [&]( iface::cfg_commit_stmt const& ) {
-                                if ( dis.stor_drv.store_cfg( dis.cfg_map ) == status::SUCCESS )
+                                if ( dis.stor_drv.store_cfg( dis.cfg_map ) == status::success )
                                         std::move( out ).ok();
                                 else
                                         std::move( out ).nok();
                         },
                         [&]( iface::cfg_clear_stmt const& ) {
-                                if ( dis.stor_drv.clear_cfg() == status::SUCCESS )
+                                if ( dis.stor_drv.clear_cfg() == status::success )
                                         std::move( out ).ok();
                                 else
                                         std::move( out ).nok();
@@ -200,12 +200,12 @@ std::tuple< status, em::view< std::byte* > > handle_message(
         auto           res = iface::parse( p ).visit(
             [&]( vari::vref< iface::stmt > s ) -> R {
                     handle_message( dis, s->sub, out );
-                    return SUCCESS;
+                    return status::success;
             },
             [&]( iface::invalid_stmt& st ) -> R {
                     iface::root_ser root{ out };
                     std::move( root ).nok()( "parse_error" )( to_str( st.st ) );
-                    return FAILURE;
+                    return status::failure;
             } );
         return { res, std::move( out ) };
 }

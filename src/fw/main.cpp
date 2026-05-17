@@ -10,7 +10,7 @@ int main()
 {
         using namespace servio;
 
-        if ( brd::setup_board() != SUCCESS )
+        if ( brd::setup_board() != status::success )
                 fw::stop_exec();
 
         core::drivers cdrv = brd::setup_core_drivers();
@@ -50,9 +50,9 @@ int main()
                 // XXX: packet handling
                 auto [succ, odata] = core::handle_message( dis, ldata, OUTPUT_BUFFER );
 
-                if ( succ == ERROR )
+                if ( succ == status::error )
                         fw::stop_exec();
-                if ( send( *ctx.cdrv.comms, 100_ms, odata ) != SUCCESS )
+                if ( send( *ctx.cdrv.comms, 100_ms, odata ) != status::success )
                         fw::stop_exec();
         }
 }

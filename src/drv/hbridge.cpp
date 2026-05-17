@@ -1,32 +1,30 @@
 #include "hbridge.hpp"
 
-#include "emlabcpp/result.h"
-
 #include <emlabcpp/algorithm.h>
 
 namespace servio::drv
 {
 
-status hbridge::start()
+error_code hbridge::start()
 {
         if ( tim_ == nullptr )
-                return ERROR;
+                return status::error;
         if ( HAL_TIM_PWM_Start_IT( tim_, mc1_channel_ ) != HAL_OK )
-                return ERROR;
+                return status::error;
         if ( HAL_TIM_PWM_Start_IT( tim_, mc2_channel_ ) != HAL_OK )
-                return ERROR;
-        return SUCCESS;
+                return status::error;
+        return status::success;
 }
 
-status hbridge::stop()
+error_code hbridge::stop()
 {
         if ( tim_ == nullptr )
-                return ERROR;
+                return status::error;
         if ( HAL_TIM_PWM_Stop_IT( tim_, mc1_channel_ ) != HAL_OK )
-                return ERROR;
+                return status::error;
         if ( HAL_TIM_PWM_Stop_IT( tim_, mc2_channel_ ) != HAL_OK )
-                return ERROR;
-        return SUCCESS;
+                return status::error;
+        return status::success;
 }
 
 void hbridge::set_period_callback( period_cb_iface& cb )

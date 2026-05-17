@@ -14,9 +14,9 @@ status setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst )
         h.Init.HighThreshold = 0x0;
         h.Init.LowThreshold  = 0x0;
         if ( HAL_DTS_Init( &h ) != HAL_OK )
-                return ERROR;
+                return status::error;
 
-        return SUCCESS;
+        return status::success;
 }
 
 }  // namespace servio::plt

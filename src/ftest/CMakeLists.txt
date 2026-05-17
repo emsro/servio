@@ -1,5 +1,5 @@
 servio_add_library(
   TARGET ftestlib
   SOURCES main.cpp
-  LIBS fwlib platform
+  LIBS fwlib platform asrt::asrtrpp
   OPTS -Og)

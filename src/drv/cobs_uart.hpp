@@ -5,7 +5,6 @@
 
 #include <emlabcpp/experimental/cobs.h>
 #include <emlabcpp/experimental/function_view.h>
-#include <emlabcpp/result.h>
 
 #pragma once
 
@@ -58,12 +57,12 @@ struct cobs_uart final : public com_iface
                 return { res, used };
         }
 
-        status start() override
+        error_code start() override
         {
                 return bits::uart_start_it( uart_, rx_byte_ );
         }
 
-        status send( send_data_t data, microseconds timeout ) override;
+        error_code send( send_get_data_f data, microseconds timeout ) override;
 
 private:
         sntr::sentry sentry_;

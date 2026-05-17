@@ -21,9 +21,9 @@ struct flash_storage : public storage_iface
         {
         }
 
-        status store_cfg( cfg::map const& m ) override;
-        status load_cfg( cfg::map& m ) override;
-        status clear_cfg() override;
+        error_code store_cfg( cfg::map const& m ) override;
+        error_code load_cfg( cfg::map& m ) override;
+        error_code clear_cfg() override;
 
 private:
         std::span< em::view< std::byte* > > _pages;

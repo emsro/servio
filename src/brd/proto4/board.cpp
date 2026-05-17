@@ -19,7 +19,6 @@
 #include "setup.hpp"
 
 #include <emlabcpp/defer.h>
-#include <emlabcpp/result.h>
 
 namespace em = emlabcpp;
 
@@ -245,12 +244,12 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
                                      .request      = GPDMA1_REQUEST_ADC1,
                                      .priority     = DMA_HIGH_PRIORITY,
                                  },
-                         } ) != SUCCESS ?
-                         ERROR :
-                     plt::setup_adc_timer( TIM6_HANDLE, TIM6 ) != SUCCESS ? ERROR :
-                                                                            SUCCESS;
+                         } ) != status::success ?
+                         status::error :
+                     plt::setup_adc_timer( TIM6_HANDLE, TIM6 ) != status::success ? status::error :
+                                                                                    status::success;
 
-        if ( res != SUCCESS )
+        if ( res != status::success )
                 return nullptr;
 
         if ( enable_pos )
@@ -287,7 +286,7 @@ drv::hbridge* hbridge_setup()
                     .alternate = GPIO_AF14_TIM1,
                 },
         };
-        if ( plt::setup_hbridge_timers( TIM1_HANDLE, cfg ) != SUCCESS )
+        if ( plt::setup_hbridge_timers( TIM1_HANDLE, cfg ) != status::success )
                 return nullptr;
 
         return HBRIDGE.setup( cfg.mc1_ch, cfg.mc2_ch );
@@ -328,7 +327,7 @@ drv::com_iface* comms_setup()
                 },
         };
 
-        if ( setup_uart( UART1_HANDLE, GPDMA1_Ch1_HANDLE, cfg ) != SUCCESS )
+        if ( setup_uart( UART1_HANDLE, GPDMA1_Ch1_HANDLE, cfg ) != status::success )
                 return nullptr;
 
         return &COMMS;
@@ -369,7 +368,7 @@ drv::com_iface* setup_debug_comms()
                 },
         };
 
-        if ( setup_uart( UART2_HANDLE, GPDMA1_Ch2_HANDLE, cfg ) != SUCCESS )
+        if ( setup_uart( UART2_HANDLE, GPDMA1_Ch2_HANDLE, cfg ) != status::success )
                 return nullptr;
 
         return &DEBUG_COMMS;
@@ -420,8 +419,8 @@ drv::pos_iface* quad_encoder_setup( uint32_t period )
         plt::setup_gpio( ch2 );
 
         // XXX: technicaly we are missing PA8 - encoder clk - indication of zero
-        em::result res = plt::setup_encoder_timer( TIM3_HANDLE, TIM3, period );
-        if ( res != SUCCESS )
+        error_code res = plt::setup_encoder_timer( TIM3_HANDLE, TIM3, period );
+        if ( res != status::success )
                 return nullptr;
 
         QUAD_TRIGGER_TIMER = &TIM1_HANDLE;
@@ -488,8 +487,8 @@ drv::storage_iface* eeprom_setup()
                 .pull      = GPIO_PULLUP,
             } };
 
-        em::result res = plt::setup_i2c( I2C2_HANDLE, cfg );
-        if ( res != SUCCESS )
+        error_code res = plt::setup_i2c( I2C2_HANDLE, cfg );
+        if ( res != status::success )
                 return nullptr;
 
         return &EEPROM;
@@ -501,29 +500,29 @@ status start_callback( core::drivers& cdrv )
                 fw::stop_exec();
 
         if ( cdrv.motor != nullptr ) {
-                if ( HBRIDGE.start() != SUCCESS )
+                if ( HBRIDGE.start() != status::success )
                         fw::stop_exec();
         }
         if ( cdrv.comms != nullptr ) {
-                if ( COMMS.start() != SUCCESS )
+                if ( COMMS.start() != status::success )
                         fw::stop_exec();
         }
         if ( QUAD_TRIGGER_TIMER != nullptr )
-                if ( QUAD.start() != SUCCESS )
+                if ( QUAD.start() != status::success )
                         fw::stop_exec();
 
         HAL_GPIO_WritePin( HBRDIGE_VREF_PIN.port, HBRDIGE_VREF_PIN.pin, GPIO_PIN_SET );
 
         if ( cdrv.position != nullptr ) {
                 // this implies that adc_pooler initialization is OK
-                if ( ADC_POOLER.start() != SUCCESS )
+                if ( ADC_POOLER.start() != status::success )
                         fw::stop_exec();
         }
 
         if ( HAL_ICACHE_Enable() != HAL_OK )
                 fw::stop_exec();
 
-        return SUCCESS;
+        return status::success;
 }
 
 void install_stop_callback( drv::pwm_motor_iface& motor, drv::leds_iface* leds_ptr )
@@ -539,22 +538,22 @@ void install_stop_callback( drv::pwm_motor_iface& motor, drv::leds_iface* leds_p
 status setup_board()
 {
         if ( HAL_Init() != HAL_OK )
-                return ERROR;
+                return status::error;
         return plt::setup_clk();
 }
 
 core::drivers setup_core_drivers()
 {
         drv::storage_iface* eeprom = eeprom_setup();
-        if ( eeprom && eeprom->load_cfg( CFG.map ) != SUCCESS )
+        if ( eeprom && eeprom->load_cfg( CFG.map ) != status::success )
                 fw::stop_exec();
 
         __HAL_RCC_TIM2_CLK_ENABLE();
-        if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != SUCCESS )
+        if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != status::success )
                 fw::stop_exec();
 
         __HAL_RCC_DTS_CLK_ENABLE();
-        if ( plt::setup_dts( DTS_HANDLE, DTS ) != SUCCESS )
+        if ( plt::setup_dts( DTS_HANDLE, DTS ) != status::success )
                 fw::stop_exec();
 
         __HAL_RCC_GPIOA_CLK_ENABLE();

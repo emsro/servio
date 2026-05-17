@@ -5,9 +5,6 @@
 #include "../interfaces.hpp"
 #include "../retainers.hpp"
 
-#include <emlabcpp/experimental/testing/collect.h>
-#include <emlabcpp/experimental/testing/coroutine.h>
-
 namespace em = emlabcpp;
 
 namespace servio::drv::tests

@@ -1,51 +1,41 @@
 #pragma once
 
-#include <emlabcpp/result.h>
-#include <emlabcpp/status.h>
+#include <cstdint>
+#include <emlabcpp/error_code.h>
+
+namespace em = emlabcpp;
 
 namespace servio
 {
-namespace em = emlabcpp;
 
-enum class status_e : uint8_t
+enum class [[nodiscard]] status : uint8_t
 {
-        SUCCESS = 0,  // all went well
-        FAILURE = 1,  // expected error occured
-        ERROR   = 2,  // unexpected error occured
+        success = 0,  // all went well
+        failure = 1,  // expected error occured
+        error   = 2,  // unexpected error occured
 };
 
-struct [[nodiscard]] status : em::status< status, status_e >
+struct status_error_category : em::error_category< status >
 {
-        using base = em::status< status, status_e >;
-        using enum status_e;
-        using base::status;
-
-        constexpr status( em::result const r ) noexcept
-          : base( r == em::result::SUCCESS ? status_e::SUCCESS : status_e::ERROR )
+        [[nodiscard]] char const* message( em::error_value_type code ) const noexcept override
         {
-        }
-
-        operator em::result() const noexcept
-        {
-                return ( value() == status_e::SUCCESS ) ? em::result::SUCCESS : em::result::ERROR;
+                switch ( static_cast< status >( code ) ) {
+                case status::success:
+                        return "success";
+                case status::failure:
+                        return "failure";
+                case status::error:
+                        return "error";
+                default:
+                        return "unknown error code";
+                }
         }
 };
-
-std::string_view to_str( status s );
-
-struct error_status
-{
-        operator status() const noexcept;
-
-        constexpr bool operator==( status const& s ) const noexcept
-        {
-                return s.value() == status_e::ERROR;
-        }
-};
-
-static constexpr error_status ERROR;
-
-static constexpr status FAILURE = status::FAILURE;
-static constexpr status SUCCESS = status::SUCCESS;
 
 }  // namespace servio
+
+namespace emlabcpp
+{
+template <>
+inline servio::status_error_category const error_category_v< servio::status > = {};
+}

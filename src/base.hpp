@@ -1,6 +1,7 @@
 #include <chrono>
 #include <cstdint>
 #include <emlabcpp/algorithm.h>
+#include <emlabcpp/error_code.h>
 #include <emlabcpp/quantity.h>
 #include <numbers>
 #include <optional>
@@ -11,6 +12,8 @@ namespace em = emlabcpp;
 
 namespace servio
 {
+
+using em::error_code;
 
 template < typename T >
 using opt = std::optional< T >;

@@ -66,13 +66,13 @@ struct _velocity_gov final : governor, handle
         engage_res engage( em::pmr::memory_resource& ) override
         {
                 goal_vel = 0.F;
-                return { SUCCESS, this };
+                return { status::success, this };
         }
 
         status disengage( handle& ) override
         {
                 goal_vel = 0.F;
-                return SUCCESS;
+                return status::success;
         }
 
         status on_cmd( iface::cmd_parser cmd, servio::iface::root_ser out ) override
@@ -80,14 +80,14 @@ struct _velocity_gov final : governor, handle
                 auto [stm, st] = iface::parse_vel( std::move( cmd ) );
                 if ( st != iface::parse_status::SUCCESS ) {
                         std::move( out ).nok()( "parse error" );
-                        return ERROR;
+                        return status::error;
                 }
 
                 using R = status;
                 return stm.sub.visit( [&]( iface::set_stmt const& s ) -> R {
                         goal_vel = s.goal;
                         std::move( out ).ok();
-                        return SUCCESS;
+                        return status::success;
                 } );
         }
 

@@ -63,27 +63,30 @@ struct char_uart final : public com_iface
                 return { res, used };
         }
 
-        status start() override
+        error_code start() override
         {
                 return bits::uart_start_it( uart_, rx_byte_ );
         }
 
-        status send( send_data_t data, microseconds timeout ) override
+        error_code send( send_get_data_f data, microseconds timeout ) override
         {
                 if ( !spin_with_timeout( clk_, tx_done_, timeout ) )
-                        return ERROR;
+                        return status::error;
 
                 // XXX: check that char is NOT present
 
-                uint16_t count = 0;
-                for ( auto s : data )
-                        for ( std::byte b : s ) {
+                uint16_t                     count = 0;
+                std::span< std::byte const > d;
+                do {
+                        d = data();
+                        for ( std::byte b : d ) {
                                 if ( count == tx_buffer_.size() )
-                                        return ERROR;
+                                        return status::error;
                                 tx_buffer_[count++] = b;
                         }
+                } while ( !d.empty() );
                 if ( count == tx_buffer_.size() )
-                        return ERROR;
+                        return status::error;
                 tx_buffer_[count++] = std::byte{ delims[0] };
 
                 tx_done_ = false;
@@ -91,10 +94,10 @@ struct char_uart final : public com_iface
                 if ( HAL_UART_Transmit_DMA(
                          uart_, reinterpret_cast< uint8_t* >( tx_buffer_.data() ), count ) !=
                      HAL_OK ) {
-                        return ERROR;
+                        return status::error;
                 }
 
-                return SUCCESS;
+                return status::success;
         }
 
 private:

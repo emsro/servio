@@ -1,8 +1,6 @@
 #include "../../drv/leds.hpp"
 #include "setup.hpp"
 
-#include <emlabcpp/result.h>
-
 namespace servio::plt
 {
 

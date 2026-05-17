@@ -60,7 +60,7 @@ bool cfg_write( uint32_t addr, std::span< std::byte const > buffer )
 
 //}  // namespace
 
-status flash_storage::store_cfg( cfg::map const& m )
+error_code flash_storage::store_cfg( cfg::map const& m )
 {
 
         _stop_cb();
@@ -79,21 +79,21 @@ status flash_storage::store_cfg( cfg::map const& m )
         std::ignore = m;
         // cfg_erase( start_addr );
         // if ( cfg_write( start_addr, data ) )
-        //         return SUCCESS;
-        return ERROR;
+        //         return status::success;
+        return status::success;
 }
 
-status flash_storage::load_cfg( cfg::map& m )
+error_code flash_storage::load_cfg( cfg::map& m )
 {
         // XXX: fix;
         std::ignore = m;
-        return SUCCESS;
+        return status::success;
 }
 
-status flash_storage::clear_cfg()
+error_code flash_storage::clear_cfg()
 {
         // XXX: fix;
-        return SUCCESS;
+        return status::success;
 }
 
 }  // namespace servio::drv

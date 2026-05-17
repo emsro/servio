@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.25)
 
 project(servio C CXX ASM)
 
@@ -25,10 +25,14 @@ cpmaddpackage(
   asrt
   GITHUB_REPOSITORY
   emsro/asrt
-  VERSION
-  0.0.2
+  GIT_TAG
+  7cb909892b5f7bae23ca72f25e03461905a25edb
   OPTIONS
+  "ASRT_LIBRARIES asrtl\\\;asrtr\\\;asrtlpp\\\;asrtrpp"
   "BUILD_TESTING OFF")
+foreach(_asrt_target asrtl asrtr asrtlpp asrtrpp)
+  set_target_properties(${_asrt_target} PROPERTIES SYSTEM TRUE)
+endforeach()
 cpmaddpackage("gh:Neargye/magic_enum@0.9.7")
 cpmaddpackage("gh:avakar/atom#f5d5c6c0f5fdc96a6275d55f7c4ee98396e407a6")
 cpmaddpackage("gh:koniarik/vari#8846bd024215997f5009c4fb920ecfb64d4c7efb")
@@ -48,9 +52,10 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SERVIO_SHARED_FLAGS}")
 
   target_compile_options(vari INTERFACE -DVARI_DISABLE_ASSERTS=ON)
+  target_compile_options(emlabcpp INTERFACE -Wno-psabi)
 endif()
 
-target_link_libraries(emlabcpp PUBLIC magic_enum)
+target_link_libraries(emlabcpp INTERFACE magic_enum)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
@@ -104,9 +109,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
   add_subdirectory(src/plt/stm32h5)
 
-  target_compile_options(emlabcpp PUBLIC -Os)
-  target_link_libraries(emlabcpp PRIVATE platform)
-
+  target_link_libraries(emlabcpp INTERFACE platform)
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
 
   add_subdirectory(src)

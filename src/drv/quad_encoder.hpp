@@ -14,11 +14,11 @@ public:
         {
         }
 
-        status start()
+        error_code start()
         {
                 if ( HAL_TIM_Encoder_Start( &h_, TIM_CHANNEL_ALL ) == HAL_OK )
-                        return SUCCESS;
-                return ERROR;
+                        return status::success;
+                return status::error;
         }
 
         limits< uint32_t > get_position_range() const override

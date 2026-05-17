@@ -61,7 +61,7 @@ status setup_uart( UART_HandleTypeDef& uart, DMA_HandleTypeDef& tx_dma, uart_cfg
 
         HAL_NVIC_SetPriority( cfg.irq, cfg.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.irq );
-        return SUCCESS;
+        return status::success;
 }
 
 }  // namespace servio::plt

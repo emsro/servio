@@ -4,78 +4,51 @@
 #include "../gov/governor_manager.hpp"
 #include "../status.hpp"
 
+#include <asrtrpp/collect.hpp>
+#include <asrtrpp/diag.hpp>
+#include <asrtrpp/reac_assm.hpp>
+#include <asrtrpp/stream.hpp>
+#include <asrtrpp/task_unit.hpp>
 #include <emlabcpp/defer.h>
-#include <emlabcpp/experimental/testing/collect.h>
-#include <emlabcpp/experimental/testing/coroutine.h>
-#include <emlabcpp/experimental/testing/interface.h>
-#include <emlabcpp/experimental/testing/parameters.h>
-#include <emlabcpp/experimental/testing/reactor.h>
+#include <source_location>
 
 namespace em = emlabcpp;
 
 namespace servio::ftest
 {
 
-namespace t = em::testing;
-
-struct uctx
+struct utest : asrt::task_test
 {
-        t::collector& coll;
-        t::node_id    met_id;  // TODO: this prevents pararell execution
+        asrt_reac_assm& assm;
+        asrt::flat_id   met_id;
 
-        em::function_view< em::result( std::span< std::byte const > ) > record;
-
-        uctx(
-            t::collector&                                                   coll,
-            em::function_view< em::result( std::span< std::byte const > ) > record )
-          : coll( coll )
-          , record( std::move( record ) )
+        utest( asrt::task_ctx& ctx, asrt_reac_assm& assm )
+          : asrt::task_test( ctx )
+          , assm( assm )
         {
-        }
-
-        auto expect( bool expr, std::source_location sl = std::source_location::current() )
-        {
-                return t::expect( coll, expr, sl );
         }
 };
 
-struct utest_base : t::test_interface
+inline asrt::task< void > init_utest( utest& ctx )
 {
-        uctx& ctx;
-
-        utest_base( uctx& ctx )
-          : ctx( ctx )
-        {
-        }
-
-        t::coroutine< void > setup( em::pmr::memory_resource& ) override
-        {
-                ctx.met_id =
-                    co_await ctx.coll.set( "metrics", em::contiguous_container_type::ARRAY );
-        }
-};
-
-t::coroutine< void > store_metric(
-    em::pmr::memory_resource&,
-    uctx&            ctx,
-    std::string_view name,
-    auto&&           value,
-    std::string_view unit = "" )
-
-{
-        em::testing::node_id id =
-            co_await ctx.coll.append( ctx.met_id, em::contiguous_container_type::OBJECT );
-        ctx.coll.set( id, "name", name );
-        ctx.coll.set( id, "unit", unit );
-        ctx.coll.set( id, "value", value );
+        ctx.met_id = co_await asrt::set< asrt::obj >( ctx.assm.collect, 0, "metrics" );
 }
 
-t::coroutine< void >
-store_data( em::pmr::memory_resource&, uctx& ctx, std::string_view key, auto&& data )
+asrt::task< void > store_metric( utest& ctx, char const* name, auto&& value, char const* unit = "" )
 {
-        auto id = co_await ctx.coll.set( key, em::contiguous_container_type::ARRAY );
-        for ( auto b : data )
-                ctx.coll.append( id, b );
+        auto id = co_await asrt::append< asrt::obj >( ctx.assm.collect, ctx.met_id );
+        co_await asrt::set( ctx.assm.collect, id, "name", name );
+        co_await asrt::set( ctx.assm.collect, id, "unit", unit );
+        co_await asrt::set( ctx.assm.collect, id, "value", value );
+}
+
+inline asrt::task< void >
+expect( utest& ctx, bool condition, std::source_location loc = std::source_location::current() )
+{
+        if ( !condition ) {
+                co_await asrt::rec_diag( ctx.assm.diag, loc.file_name(), loc.line(), nullptr );
+                co_yield asrt::with_error{ asrt::test_fail };
+        }
 }
 
 inline auto setup_poweroff( gov::governor_manager& gv )
@@ -87,40 +60,24 @@ inline auto setup_poweroff( gov::governor_manager& gv )
 }
 
 template < typename T >
-struct utest : utest_base
-
+void setup_utest( asrt::task_ctx& ctx, asrt_reac_assm& assm, status& res, T def )
 {
-        T item;
-
-        template < typename... Args >
-        utest( uctx& ctx, Args&&... args )
-          : utest_base( ctx )
-          , item( std::forward< Args >( args )... )
-        {
-        }
-
-        std::string_view get_name() const override
-        {
-                return item.name;
-        }
-
-        t::coroutine< void > run( em::pmr::memory_resource& mem ) override
-        {
-                return item.run( mem, ctx );
-        }
-};
-
-template < typename T, typename... Args >
-void setup_utest(
-    em::pmr::memory_resource& mem,
-    t::reactor&               r,
-    uctx&                     ctx,
-    status&                   res,
-    Args&&... args )
-{
-        if ( res != SUCCESS )
+        if ( res != status::success )
                 return;
-        res = t::construct_test_unit< utest< T > >( mem, r, ctx, std::forward< Args >( args )... );
+
+        using U = asrt::task_unit< T >;
+        auto& a = ctx.query( ecor::get_memory_resource );
+        void* p = a.allocate( sizeof( U ), alignof( U ) );
+        if ( !p ) {
+                res = status::error;
+                return;
+        }
+
+        auto& test = *new ( p ) U{ T{ std::move( def ) } };
+        if ( asrt::add_test( assm.reactor, test ) != ASRT_SUCCESS ) {
+                res = status::error;
+                return;
+        }
 }
 
 }  // namespace servio::ftest

@@ -49,15 +49,15 @@ status setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg )
         dma.Init.Priority              = cfg.dma.priority;
 
         if ( HAL_ADC_Init( &adc ) != HAL_OK )
-                return ERROR;
+                return status::error;
 
         if ( HAL_DMA_Init( &dma ) != HAL_OK )
-                return ERROR;
+                return status::error;
 
         __HAL_LINKDMA( ( &adc ), DMA_Handle, dma );
 
         if ( HAL_DMA_ConfigChannelAttributes( &dma, DMA_CHANNEL_NPRIV ) != HAL_OK )
-                return ERROR;
+                return status::error;
 
         HAL_NVIC_SetPriority( ADC1_IRQn, cfg.adc_irq_priority, 0 );
         HAL_NVIC_EnableIRQ( ADC1_IRQn );
@@ -65,7 +65,7 @@ status setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg )
         HAL_NVIC_SetPriority( cfg.dma.irq, cfg.dma.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.dma.irq );
 
-        return SUCCESS;
+        return status::success;
 }
 
 }  // namespace servio::plt

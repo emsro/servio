@@ -3,6 +3,7 @@
 #include "../status.hpp"
 
 #include <cstdint>
+#include <emlabcpp/experimental/function_view.h>
 #include <span>
 
 #pragma once
@@ -41,26 +42,30 @@ struct com_res
         }
 };
 
-using send_data_t = std::span< std::span< std::byte const > const >;
+using send_get_data_f = em::function_view< std::span< std::byte const >() >;
 
 struct com_iface
 {
-        virtual status  start()                                        = 0;
-        virtual status  send( send_data_t data, microseconds timeout ) = 0;
-        virtual com_res recv( std::span< std::byte > data )            = 0;
+        virtual error_code start()                                       = 0;
+        virtual error_code send( send_get_data_f, microseconds timeout ) = 0;
+        virtual com_res    recv( std::span< std::byte > data )           = 0;
 };
 
-status send( com_iface& iface, microseconds timeout, auto&... data )
+inline error_code send( com_iface& comms, microseconds timeout, std::span< std::byte const > data )
 {
-        std::array< std::span< std::byte const >, sizeof...( data ) > b{ data... };
-        return iface.send( b, timeout );
+        auto f = [&data] {
+                auto sp = data;
+                data    = {};
+                return sp;
+        };
+        return comms.send( f, timeout );
 }
 
 struct storage_iface
 {
-        virtual status store_cfg( cfg::map const& m ) = 0;
-        virtual status load_cfg( cfg::map& m )        = 0;
-        virtual status clear_cfg()                    = 0;
+        virtual error_code store_cfg( cfg::map const& m ) = 0;
+        virtual error_code load_cfg( cfg::map& m )        = 0;
+        virtual error_code clear_cfg()                    = 0;
 };
 
 struct leds_iface
@@ -92,8 +97,8 @@ inline bool spin_with_timeout( clk_iface& clk, bool volatile& cond, microseconds
 
 struct period_iface
 {
-        virtual status           start()                                 = 0;
-        virtual status           stop()                                  = 0;
+        virtual error_code       start()                                 = 0;
+        virtual error_code       stop()                                  = 0;
         virtual void             set_period_callback( period_cb_iface& ) = 0;
         virtual period_cb_iface& get_period_callback()                   = 0;
 };
@@ -132,7 +137,7 @@ struct vcc_iface
 struct temp_iface
 {
         virtual int32_t get_temperature() const = 0;
-        virtual void    tick(){};
+        virtual void    tick() {};
 };
 
 struct get_curr_iface

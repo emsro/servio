@@ -25,13 +25,13 @@ struct _power_gov final : governor, handle
         engage_res engage( em::pmr::memory_resource& ) override
         {
                 power = 0_pwr;
-                return { SUCCESS, this };
+                return { status::success, this };
         }
 
         status disengage( handle& ) override
         {
                 power = 0_pwr;
-                return SUCCESS;
+                return status::success;
         }
 
         status on_cmd( iface::cmd_parser cmd, servio::iface::root_ser out ) override
@@ -39,14 +39,14 @@ struct _power_gov final : governor, handle
                 auto [stm, st] = iface::parse_pow( std::move( cmd ) );
                 if ( st != iface::parse_status::SUCCESS ) {
                         std::move( out ).nok()( "parse error" );
-                        return ERROR;
+                        return status::error;
                 }
 
                 using R = status;
                 return stm.sub.visit( [&]( iface::set_stmt const& s ) -> R {
                         power = pwr{ s.goal };
                         std::move( out ).ok();
-                        return SUCCESS;
+                        return status::success;
                 } );
         }
 

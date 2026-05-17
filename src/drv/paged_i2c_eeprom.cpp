@@ -30,8 +30,8 @@ status write_data(
         auto volatile stat = HAL_I2C_Mem_Write(
             hi2c, dev_addr, mem_addr, 2, (uint8_t*) data.data(), (uint16_t) data.size(), timeout );
         if ( stat != HAL_OK )
-                return ERROR;
-        return SUCCESS;
+                return status::error;
+        return status::success;
 }
 
 status read_data(
@@ -45,8 +45,8 @@ status read_data(
         auto stat = HAL_I2C_Mem_Read(
             hi2c, dev_addr, mem_addr, 2, (uint8_t*) data.data(), (uint16_t) data.size(), timeout );
         if ( stat != HAL_OK )
-                return ERROR;
-        return SUCCESS;
+                return status::error;
+        return status::success;
 }
 
 status clear_range_impl(
@@ -59,11 +59,11 @@ status clear_range_impl(
 {
         for ( ; addr < end_addr; addr += static_cast< uint16_t >( buffer.size() ) ) {
                 auto stat = write_data( hi2c, dev_addr, static_cast< uint16_t >( addr ), buffer );
-                if ( stat != SUCCESS )
-                        return ERROR;
+                if ( stat != status::success )
+                        return status::error;
                 wait_for( clk, 4_ms );
         }
-        return SUCCESS;
+        return status::success;
 }
 
 template < std::size_t BatchSize >
@@ -115,13 +115,13 @@ struct update_iface : em::cfg::update_iface
                 return { buffer, sizeof( buffer ) };
         }
 
-        em::result
+        error_code
         read( std::size_t addr, std::span< std::byte, em::cfg::cell_size > data ) override
         {
                 return read_data( i2c, dev_addr, static_cast< uint16_t >( addr ), data );
         }
 
-        em::result write( std::size_t addr, std::span< std::byte const > data ) override
+        error_code write( std::size_t addr, std::span< std::byte const > data ) override
         {
                 auto res = write_data( i2c, dev_addr, static_cast< uint16_t >( addr ), data );
                 // XXX: read datasheet properly
@@ -162,10 +162,10 @@ struct update_iface : em::cfg::update_iface
                 return res;
         }
 
-        em::result reset_keys() override
+        error_code reset_keys() override
         {
                 unseen_ids = cfg::ids;
-                return em::result::SUCCESS;
+                return status::success;
         }
 
         opt< uint32_t > take_unseen_key() override
@@ -173,7 +173,7 @@ struct update_iface : em::cfg::update_iface
                 return em::cfg::pop_from_container( unseen_ids );
         }
 
-        em::result clear_page( std::size_t addr ) override
+        error_code clear_page( std::size_t addr ) override
         {
                 uint16_t end_addr = static_cast< uint16_t >( addr + page_size );
                 return clear_range< em::cfg::cell_size >(
@@ -183,12 +183,12 @@ struct update_iface : em::cfg::update_iface
 
 }  // namespace
 
-status i2c_eeprom::store_cfg( cfg::map const& m )
+error_code i2c_eeprom::store_cfg( cfg::map const& m )
 {
 
         update_iface lb{ m, i2c_, clk_, dev_addr, mem_size_, page_size_ };
         auto         res = em::cfg::update( mem_size_, page_size_, lb );
-        return res == em::cfg::status::SUCCESS ? SUCCESS : ERROR;
+        return res == em::cfg::status::SUCCESS ? status::success : status::error;
 }
 
 namespace
@@ -215,7 +215,7 @@ struct load_iface : em::cfg::load_iface
                 return { buffer, sizeof( buffer ) };
         }
 
-        em::result
+        error_code
         read( std::size_t addr, std::span< std::byte, em::cfg::cell_size > data ) override
         {
                 return read_data( i2c, dev_addr, static_cast< uint16_t >( addr ), data );
@@ -226,32 +226,32 @@ struct load_iface : em::cfg::load_iface
                 return em::cfg::key_check_unseen_container( unseen_ids, id );
         }
 
-        em::result on_kval( uint32_t id, std::span< std::byte > data ) override
+        error_code on_kval( uint32_t id, std::span< std::byte > data ) override
         {
                 auto ptr = cfg.ref_by_id( id );
                 if ( !ptr )
-                        return em::result::ERROR;
-                return ptr.vref().visit( [&]< typename T >( T& val ) -> em::result {
+                        return status::error;
+                return ptr.vref().visit( [&]< typename T >( T& val ) -> error_code {
                         auto newval = em::cfg::get_val< T >( data );
                         if ( newval ) {
                                 val = *newval;
-                                return em::result::SUCCESS;
+                                return status::success;
                         }
-                        return em::result::ERROR;
+                        return status::error;
                 } );
         }
 };
 }  // namespace
 
-status i2c_eeprom::load_cfg( cfg::map& m )
+error_code i2c_eeprom::load_cfg( cfg::map& m )
 {
         load_iface liface{ m, i2c_, dev_addr };
 
         auto r = em::cfg::load( mem_size_, page_size_, liface );
-        return r == em::cfg::status::SUCCESS ? SUCCESS : ERROR;
+        return r == em::cfg::status::SUCCESS ? status::success : status::error;
 }
 
-status i2c_eeprom::clear_cfg()
+error_code i2c_eeprom::clear_cfg()
 {
         static constexpr uint32_t batch = 64;
         return clear_range< batch >(

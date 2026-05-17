@@ -3,25 +3,26 @@
 #include "../base.hpp"
 #include "../fw/util.hpp"
 
-#include <emlabcpp/result.h>
-
 namespace servio::drv
 {
 
-status cobs_uart::send( send_data_t data, microseconds timeout )
+error_code cobs_uart::send( send_get_data_f data, microseconds timeout )
 {
         if ( !spin_with_timeout( clk_, tx_done_, timeout ) )
-                return ERROR;
+                return status::error;
 
-        em::cobs_encoder e( tx_buffer_ );
-        for ( auto s : data )
-                for ( std::byte b : s )
+        em::cobs_encoder             e( tx_buffer_ );
+        std::span< std::byte const > d;
+        do {
+                d = data();
+                for ( std::byte b : d )
                         if ( !e.insert( b ) )
-                                return ERROR;
+                                return status::error;
+        } while ( !d.empty() );
 
         em::view< std::byte* > used = std::move( e ).commit();
         if ( used.size() == tx_buffer_.size() )
-                return ERROR;
+                return status::error;
         tx_buffer_[used.size()] = std::byte{ 0 };
 
         tx_done_ = false;
@@ -30,10 +31,10 @@ status cobs_uart::send( send_data_t data, microseconds timeout )
                  uart_,
                  reinterpret_cast< uint8_t* >( tx_buffer_.begin() ),
                  static_cast< uint16_t >( used.size() + 1 ) ) != HAL_OK ) {
-                return ERROR;
+                return status::error;
         }
 
-        return SUCCESS;
+        return status::success;
 }
 
 }  // namespace servio::drv

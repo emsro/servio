@@ -48,8 +48,8 @@ public:
         int8_t get_direction() const override;
 
         // starts the timers
-        status start() override;
-        status stop() override;
+        error_code start() override;
+        error_code stop() override;
 
         pwr get_power() const override
         {

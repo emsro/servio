@@ -3,7 +3,6 @@
 #include "../iface/def.hpp"
 
 #include <emlabcpp/experimental/function_view.h>
-#include <emlabcpp/outcome.h>
 
 #pragma once
 

@@ -28,15 +28,15 @@ struct governor_manager
                         active_h_ = nullptr;
                         return st;
                 }
-                return status::FAILURE;
+                return status::failure;
         }
 
         status activate( std::string_view name, em::pmr::memory_resource& buffer )
         {
-                status s = status::ERROR;
+                status s = status::error;
                 if ( active_ ) {
-                        if ( disengage() != SUCCESS )
-                                return status::ERROR;
+                        if ( disengage() != status::success )
+                                return status::error;
                 }
                 for ( vari::vref< governor > g : governors_ ) {
                         if ( g->name() == name ) {
@@ -52,13 +52,13 @@ struct governor_manager
         status deactivate()
         {
                 if ( active_ && active_h_ ) {
-                        if ( active_->disengage( *active_h_ ) != SUCCESS )
-                                return status::ERROR;
+                        if ( active_->disengage( *active_h_ ) != status::success )
+                                return status::error;
                         active_h_ = nullptr;
                         active_   = nullptr;
-                        return status::SUCCESS;
+                        return status::success;
                 }
-                return status::FAILURE;
+                return status::failure;
         }
 
         [[gnu::flatten]] pwr current_irq( microseconds now, float current )

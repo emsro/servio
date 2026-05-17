@@ -2,9 +2,8 @@ file(GLOB HAL_SOURCES ./Src/*.c)
 
 servio_add_library(
   TARGET stm32h5_hal
-  INCLUDE ./Inc
   SOURCES ${HAL_SOURCES} ./cmsis/system_stm32h5xx.c ./startup_stm32h503xx.s
-  OPTS -Os)
+  OPTS -Os -w)
 target_compile_options(
   stm32h5_hal
   PUBLIC -mcpu=cortex-m33
@@ -16,7 +15,7 @@ target_compile_options(
          --specs=nosys.specs
          --specs=nano.specs)
 target_compile_definitions(stm32h5_hal PUBLIC -DSTM32H503xx)
-target_include_directories(stm32h5_hal PUBLIC ./ ./cmsis/)
+target_include_directories(stm32h5_hal SYSTEM PUBLIC ./ ./cmsis/ ./Inc)
 target_link_options(
   stm32h5_hal
   PUBLIC
@@ -29,7 +28,6 @@ target_link_options(
 
 servio_add_library(
   TARGET platform
-  INCLUDE ./
   SOURCES adc.cpp
           clock.cpp
           uart.cpp

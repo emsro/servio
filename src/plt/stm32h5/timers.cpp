@@ -3,7 +3,6 @@
 
 #include <cstdlib>
 #include <cstring>
-#include <emlabcpp/result.h>
 #include <initializer_list>
 #include <limits>
 
@@ -74,7 +73,7 @@ status setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
         HAL_NVIC_SetPriority( cfg.irq, cfg.irq_priority, 0 );
         HAL_NVIC_EnableIRQ( cfg.irq );
 
-        return SUCCESS;
+        return status::success;
 }
 
 status setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
@@ -96,7 +95,7 @@ status setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK )
                 fw::stop_exec();
 
-        return SUCCESS;
+        return status::success;
 }
 
 status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq )
@@ -116,18 +115,18 @@ status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Ty
         __HAL_TIM_UIFREMAP_ENABLE( &tim );
 
         if ( HAL_TIM_PWM_Init( &tim ) != HAL_OK )
-                return ERROR;
+                return status::error;
 
         if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mc ) != HAL_OK )
-                return ERROR;
+                return status::error;
 
         if ( HAL_TIM_Base_Start( &tim ) != HAL_OK )
-                return ERROR;
+                return status::error;
 
         HAL_NVIC_SetPriority( irq, 0, 0 );
         HAL_NVIC_EnableIRQ( irq );
 
-        return SUCCESS;
+        return status::success;
 }
 
 status setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint32_t period )
@@ -151,15 +150,15 @@ status setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint3
         init.IC2Filter    = 0;
 
         if ( HAL_TIM_Encoder_Init( &tim, &init ) != HAL_OK )
-                return ERROR;
+                return status::error;
 
         TIM_MasterConfigTypeDef mcfg;
         mcfg.MasterOutputTrigger = TIM_TRGO_RESET;
         mcfg.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
         if ( HAL_TIMEx_MasterConfigSynchronization( &tim, &mcfg ) != HAL_OK )
-                return ERROR;
+                return status::error;
 
-        return SUCCESS;
+        return status::success;
 }
 
 }  // namespace servio::plt

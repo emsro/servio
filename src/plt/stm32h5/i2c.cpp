@@ -34,7 +34,7 @@ status setup_i2c( I2C_HandleTypeDef& i2c, i2c_cfg cfg )
         if ( HAL_I2CEx_ConfigDigitalFilter( &i2c, 0 ) != HAL_OK )
                 fw::stop_exec();
 
-        return SUCCESS;
+        return status::success;
 }
 
 }  // namespace servio::plt

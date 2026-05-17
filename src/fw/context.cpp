@@ -22,7 +22,7 @@ void context::setup()
 
         rh.full_apply();
 
-        if ( cdrv.start_cb( cdrv ) != SUCCESS )
+        if ( cdrv.start_cb( cdrv ) != status::success )
                 fw::stop_exec();
 
         core.ind.on_event( cdrv.clock->get_us(), mon::indication_event::INITIALIZED );

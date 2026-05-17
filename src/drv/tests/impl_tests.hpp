@@ -8,22 +8,19 @@
 #include "../interfaces.hpp"
 #include "../retainers.hpp"
 
-#include <emlabcpp/experimental/testing/collect.h>
-#include <emlabcpp/experimental/testing/coroutine.h>
-
 namespace servio::drv::tests
 {
 
-namespace t = em::testing;
-
-struct cobs_uart_rx_test
+struct cobs_uart_rx_test : ftest::utest
 {
         clk_iface& clk;
 
-        std::string_view name = "cobs_uart_rx";
+        char const* name = "cobs_uart_rx";
 
-        t::coroutine< void > run( auto&, ftest::uctx& ctx )
+        asrt::task< void > exec()
         {
+                co_await init_utest( *this );
+
                 sntr::test_central_sentry central;
 
                 cobs_uart uart{ "test_uart", central, clk, nullptr, nullptr };

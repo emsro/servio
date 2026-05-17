@@ -76,14 +76,14 @@ struct handler : iface
         {
                 auto ptr = _x.ref_by_id( id );
                 if ( !ptr )
-                        return ERROR;
+                        return status::error;
                 return ptr.vref().visit( [&]< typename U >( U& val ) -> status {
                         auto newval = em::cfg::get_val< U >( data );
                         if ( newval ) {
                                 val = *newval;
-                                return SUCCESS;
+                                return status::success;
                         }
-                        return ERROR;
+                        return status::error;
                 } );
         }
 
