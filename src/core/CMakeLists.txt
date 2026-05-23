@@ -1,6 +1,7 @@
 servio_add_library(
   TARGET corelib
   SOURCES globals.cpp dispatcher.cpp
+  OPTS -Os
   LIBS emlabcpp
        platform
        cfglib

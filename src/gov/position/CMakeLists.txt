@@ -17,6 +17,7 @@ servio_add_library(
   OPTS -Os)
 add_dependencies(posgovlibb pos_cfg_def posgov_iface)
 add_library(posgovlib OBJECT position.cpp)
+target_compile_options(posgovlib PRIVATE -Os)
 target_link_libraries(posgovlib PUBLIC posgovlibb)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

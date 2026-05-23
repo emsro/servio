@@ -40,7 +40,7 @@ void rewind(
         end = iclk.get_us() + 150_ms;
         while ( iclk.get_us() < end )
                 cb();
-        if ( cor.gov_.deactivate() != SUCCESS )
+        if ( cor.gov_.deactivate() != status::success )
                 fw::stop_exec();
 }
 

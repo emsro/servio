@@ -22,7 +22,7 @@ servio_add_library(
   TARGET ifacelib
   SOURCES parse.cpp
   LIBS avakar::atom vari emlabcpp platform
-  OPTS -Og)
+  OPTS -Os)
 add_dependencies(ifacelib ifacelib_def)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

@@ -10,7 +10,10 @@ add_subdirectory(mtr)
 add_subdirectory(lib)
 add_subdirectory(drv)
 
-servio_add_library(TARGET serviolib SOURCES status.cpp)
+servio_add_library(
+  TARGET serviolib
+  SOURCES status.cpp
+  OPTS -Os)
 
 target_link_libraries(
   serviolib

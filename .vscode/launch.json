@@ -1,0 +1,88 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "inputs": [
+        {
+            "id": "file",
+            "type": "command",
+            "command": "extension.commandvariable.file.pickFile",
+            "args": {
+                "include": "**/*.elf",
+            }
+        }
+    ],
+    "configurations": [
+        {
+            "name": "BMP Debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${input:file}",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "bmp",
+            "interface": "swd",
+            "device": "STM32H503",
+            "BMPGDBSerialPort": "/dev/cu.usbmodem81D763A41",
+            //"showDevDebugOutput": "raw",
+            "powerOverBMP": "enable",
+            //"powerOverBMP": "disable",
+            "svdFile": "${workspaceRoot}/.vscode/STM32H503.svd",
+        },
+        {
+            "name": "(gdb) Launch scmdio",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/_build/host/src/scmdio/scmdio",
+            "args": [
+                "cfg",
+                "-c",
+                "/dev/cu.usbserial-0001",
+                "set",
+                "current_lim_min",
+                "-0.4"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set ",
+                    "text": "breakpoint set -E c++",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Launch utest",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/_build/host/servio_utest",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set ",
+                    "text": "breakpoint set -E c++",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

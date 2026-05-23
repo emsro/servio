@@ -14,5 +14,5 @@ else()
     SOURCES bits/rx_buffer.cpp cobs_uart.cpp leds.cpp hbridge.cpp flash_cfg.cpp
             paged_i2c_eeprom.cpp
     LIBS emlabcpp platform cmake_git_version_tracking vari
-    OPTS -O0)
+    OPTS -Os)
 endif()

@@ -4,6 +4,13 @@
 #include "./setup_tests.hpp"
 #include "./testing_system.hpp"
 
+extern "C" void asrt_log( enum asrt_log_level level, char const* module, char const* fmt, ... )
+{
+        (void) level;
+        (void) module;
+        (void) fmt;
+}
+
 namespace
 {
 em::pmr::stack_resource< 1024 > TEST_STACK;

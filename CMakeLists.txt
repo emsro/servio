@@ -10,6 +10,17 @@ cmake_policy(SET CMP0077 NEW)
 option(SERVIO_PLATFORM "Target platform")
 option(SERVIO_EMLABCPP_SRC "Gives a location of emlabcpp source")
 
+if(${SERVIO_PLATFORM} STREQUAL "stm32h5")
+  set(SERVIO_CPU_FLAGS
+      "-mcpu=cortex-m33 -mfloat-abi=hard -mfpu=fpv5-sp-d16 -mthumb")
+  set(SERVIO_SHARED_FLAGS
+      "-fsingle-precision-constant -gdwarf-2 -lm ${SERVIO_CPU_FLAGS}")
+  set(CMAKE_CXX_FLAGS
+      "${CMAKE_CXX_FLAGS} ${SERVIO_SHARED_FLAGS} -gdwarf-2 -DVARI_DISABLE_ASSERTS=ON"
+  )
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SERVIO_SHARED_FLAGS}")
+endif()
+
 add_subdirectory(dep/emlabcpp)
 
 include(cmake/CPM.cmake)
@@ -26,7 +37,7 @@ cpmaddpackage(
   GITHUB_REPOSITORY
   emsro/asrt
   GIT_TAG
-  7cb909892b5f7bae23ca72f25e03461905a25edb
+  db5803ac7ec3c592ad323a6b39fa879fde2711dc
   OPTIONS
   "ASRT_LIBRARIES asrtl\\\;asrtr\\\;asrtlpp\\\;asrtrpp"
   "BUILD_TESTING OFF")
@@ -45,12 +56,6 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
            -DEMLABCPP_ASSERT_NATIVE)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
-  set(SERVIO_SHARED_FLAGS "-fsingle-precision-constant -gdwarf-2 -lm")
-  set(CMAKE_CXX_FLAGS
-      "${CMAKE_CXX_FLAGS} ${SERVIO_SHARED_FLAGS} -gdwarf-2 -DVARI_DISABLE_ASSERTS=ON"
-  )
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SERVIO_SHARED_FLAGS}")
-
   target_compile_options(vari INTERFACE -DVARI_DISABLE_ASSERTS=ON)
   target_compile_options(emlabcpp INTERFACE -Wno-psabi)
 endif()
@@ -111,6 +116,10 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
   target_link_libraries(emlabcpp INTERFACE platform)
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
+
+  foreach(_asrt_target asrtl asrtr asrtrpp)
+    target_compile_options(${_asrt_target} PRIVATE -Os)
+  endforeach()
 
   add_subdirectory(src)
   add_subdirectory(src/brd/proto4)

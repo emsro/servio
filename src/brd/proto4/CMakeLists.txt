@@ -8,7 +8,7 @@ servio_add_board_executable(
   TARGET proto4_fw
   SOURCES ../../fw/main.cpp
   LIBS serviolib proto4_board velgovlib posgovlib currgovlib powgovlib
-  OPTS -Os
+  OPTS -Os -flto
   LINKER_SCRIPT
     "${CMAKE_CURRENT_SOURCE_DIR}/../../plt/stm32h5/STM32H503xx_FLASH.ld")
 
@@ -22,7 +22,7 @@ servio_add_board_executable(
        posgovlib
        currgovlib
        powgovlib
-  OPTS -Os
+  OPTS -Oz -flto
   LINKER_SCRIPT
     "${CMAKE_CURRENT_SOURCE_DIR}/../../plt/stm32h5/STM32H503xx_FLASH.ld")
 
@@ -36,6 +36,6 @@ servio_add_board_executable(
        posgovlib
        currgovlib
        powgovlib
-  OPTS -Os
+  OPTS -Os -flto
   LINKER_SCRIPT
     "${CMAKE_CURRENT_SOURCE_DIR}/../../plt/stm32h5/STM32H503xx_FLASH.ld")

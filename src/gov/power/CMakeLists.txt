@@ -12,6 +12,7 @@ servio_add_library(
   OPTS -Os)
 add_dependencies(powgovlibb pow_iface_def)
 add_library(powgovlib OBJECT power.cpp)
+target_compile_options(powgovlib PRIVATE -Os)
 target_link_libraries(powgovlib PUBLIC powgovlibb)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

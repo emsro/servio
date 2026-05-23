@@ -17,6 +17,7 @@ servio_add_library(
   OPTS -Os)
 add_dependencies(currgovlibb curr_cfg_def currgov_iface)
 add_library(currgovlib OBJECT current.cpp)
+target_compile_options(currgovlib PRIVATE -Os)
 target_link_libraries(currgovlib PUBLIC currgovlibb)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

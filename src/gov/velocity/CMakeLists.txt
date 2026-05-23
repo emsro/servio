@@ -16,6 +16,7 @@ servio_add_library(
   OPTS -Os)
 add_dependencies(velgovlibb vel_cfg_def vel_iface_def)
 add_library(velgovlib OBJECT velocity.cpp)
+target_compile_options(velgovlib PRIVATE -Os)
 target_link_libraries(velgovlib PUBLIC velgovlibb)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
