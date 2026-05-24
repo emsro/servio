@@ -85,22 +85,22 @@ struct stor : drv::storage_iface
         std::size_t store_cnt = 0;
         std::size_t clear_cnt = 0;
 
-        status store_cfg( cfg::map const& ) override
+        error_code store_cfg( cfg::map const& ) override
         {
                 store_cnt += 1;
-                return SUCCESS;
+                return error_code{ false };
         }
 
-        status load_cfg( cfg::map& data ) override
+        error_code load_cfg( cfg::map& data ) override
         {
                 std::ignore = data;
-                return SUCCESS;
+                return error_code{ false };
         }
 
-        status clear_cfg() override
+        error_code clear_cfg() override
         {
                 clear_cnt += 1;
-                return SUCCESS;
+                return error_code{ false };
         }
 };
 

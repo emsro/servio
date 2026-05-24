@@ -31,17 +31,19 @@ cpmaddpackage(
   "gh:andrew-hardin/cmake-git-version-tracking#6c0cb87edd029ddfb403a8e24577c144a03605a6"
 )
 cpmaddpackage("gh:koniarik/zll@1.0.0")
-cpmaddpackage(
-  NAME
-  asrt
-  GITHUB_REPOSITORY
-  emsro/asrt
-  GIT_TAG
-  db5803ac7ec3c592ad323a6b39fa879fde2711dc
-  OPTIONS
-  "ASRT_LIBRARIES asrtl\\\;asrtr\\\;asrtlpp\\\;asrtrpp"
-  "BUILD_TESTING OFF")
-foreach(_asrt_target asrtl asrtr asrtlpp asrtrpp)
+if(${SERVIO_PLATFORM} STREQUAL "host")
+  set(_servio_asrt_libs "asrtl;asrtc;asrtr;asrtlpp;asrtcpp;asrtrpp;asrtio")
+  set(_servio_asrt_targets asrtl asrtc asrtr asrtlpp asrtcpp asrtrpp)
+else()
+  set(_servio_asrt_libs "asrtl;asrtr;asrtlpp;asrtrpp")
+  set(_servio_asrt_targets asrtl asrtr asrtlpp asrtrpp)
+endif()
+set(ASRT_LIBRARIES
+    "${_servio_asrt_libs}"
+    CACHE STRING "" FORCE)
+cpmaddpackage(NAME asrt GITHUB_REPOSITORY emsro/asrt GIT_TAG
+              db5803ac7ec3c592ad323a6b39fa879fde2711dc)
+foreach(_asrt_target IN LISTS _servio_asrt_targets)
   set_target_properties(${_asrt_target} PROPERTIES SYSTEM TRUE)
 endforeach()
 cpmaddpackage("gh:Neargye/magic_enum@0.9.7")
@@ -51,9 +53,9 @@ cpmaddpackage("gh:koniarik/vari#8846bd024215997f5009c4fb920ecfb64d4c7efb")
 if(${SERVIO_PLATFORM} STREQUAL "host")
   target_compile_options(
     emlabcpp
-    PUBLIC -DEMLABCPP_USE_LOGGING -DEMLABCPP_USE_NLOHMANN_JSON
-           -DEMLABCPP_USE_TYPEID -DEMLABCPP_USE_OSTREAM -DEMLABCPP_USE_GTEST
-           -DEMLABCPP_ASSERT_NATIVE)
+    INTERFACE -DEMLABCPP_USE_LOGGING -DEMLABCPP_USE_NLOHMANN_JSON
+              -DEMLABCPP_USE_TYPEID -DEMLABCPP_USE_OSTREAM -DEMLABCPP_USE_GTEST
+              -DEMLABCPP_ASSERT_NATIVE)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   target_compile_options(vari INTERFACE -DVARI_DISABLE_ASSERTS=ON)
@@ -95,7 +97,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
     SYSTEM
     ON)
 
-  target_link_libraries(emlabcpp PUBLIC nlohmann_json::nlohmann_json)
+  target_link_libraries(emlabcpp INTERFACE nlohmann_json::nlohmann_json)
 
   set(JOQUE_REPROC_ENABLED ON)
   set(JOQUE_NLOHMANN_JSON_ENABLED ON)

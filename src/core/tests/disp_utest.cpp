@@ -53,7 +53,7 @@ TEST( core, dispatcher )
                 std::byte buff[666];
                 auto [res, used] = handle_message(
                     disp, em::view_n( (std::byte const*) inpt.data(), inpt.size() ), buff );
-                EXPECT_EQ( res, SUCCESS ) << inpt;
+                EXPECT_EQ( res, status::success ) << inpt;
                 std::string_view res_str( (char*) used.begin(), used.size() );
                 return nlohmann::json::parse( res_str );
         };
@@ -70,7 +70,7 @@ TEST( core, dispatcher )
 
         // mode
         auto tmp = cor.gov_.activate( "power", em::pmr::new_delete_resource() );
-        EXPECT_EQ( tmp, SUCCESS );
+        EXPECT_EQ( tmp, status::success );
         test( "govctl deactivate", R"(["OK"])"_json );
         EXPECT_EQ( cor.gov_.active(), nullptr );
         test( "govctl active", R"(["OK"])"_json );

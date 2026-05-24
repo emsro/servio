@@ -16,7 +16,7 @@ TEST_F( gov_fixture, curr )
                         char           buff[128];
                         json::jval_ser jser{ buff };
                         auto           s = gov.on_cmd( p, jser );
-                        EXPECT_EQ( s, SUCCESS ) << "cmd: " << cmd << "\n";
+                        EXPECT_EQ( s, status::success ) << "cmd: " << cmd << "\n";
                 };
 
                 auto set_cfg = [&]( std::string_view key, auto value ) {

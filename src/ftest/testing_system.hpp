@@ -30,8 +30,16 @@ struct testing_system
 
                 while ( auto req = asrt::next( assm.send_queue ) ) {
                         asrt_rec_span* b = &req->buff;
+                        uint8_t        hdr[2];
+                        uint8_t*       pp = hdr;
+                        asrt_add_u16( &pp, req->chid );
+                        bool hdr_sent = false;
 
-                        auto f = [&b] -> std::span< std::byte const > {
+                        auto f = [&] -> std::span< std::byte const > {
+                                if ( !hdr_sent ) {
+                                        hdr_sent = true;
+                                        return std::span< std::byte const >{ (std::byte*) hdr, 2 };
+                                }
                                 if ( !b )
                                         return {};
                                 std::span< std::byte const > sp{
@@ -45,7 +53,7 @@ struct testing_system
                 }
 
                 auto [succ, data] = debug_comms.recv( buff );
-                if ( !succ )
+                if ( !succ || data.empty() )
                         return;
 
                 auto r = asrt_chann_dispatch(

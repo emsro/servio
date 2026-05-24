@@ -98,9 +98,9 @@ def gen_arg_doc(
             fd.write(f" = {arg['default']}")
         fd.write(">")
     fd.write("\n\n")
-    fd.write(f"{cmd['desc']}\n\n")
+    fd.write(f"{cmd['desc'].rstrip()}\n\n")
     for arg in args:
-        fd.write(f"- _{arg['name']}_: {arg['desc']}\n")
+        fd.write(f"- _{arg['name']}_: {arg['desc'].rstrip()}\n")
         fd.write(f"  - type: _{arg['type']}_\n")
         if "unit" in arg:
             fd.write(f"  - unit: _{arg['unit']}_\n")
@@ -134,7 +134,7 @@ def gen_fwd_doc(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
     name = apply_prefix(prefix, cmd["name"], " ")
     level = name.count(" ") * "#" + "##"
     fd.write(f"{level} cmd: {name}\n\n")
-    fd.write(f"{cmd['desc']}\n\n")
+    fd.write(f"{cmd['desc'].rstrip()}\n\n")
 
 
 def gen_group_cmd_struct(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
@@ -196,7 +196,7 @@ def gen_group_doc(fd: TextIO, cmd: Dict[str, Any], prefix: str) -> None:
     name = apply_prefix(prefix, cmd["name"], " ")
     level = name.count(" ") * "#" + "##"
     fd.write(f"{level} group: {name}\n\n")
-    fd.write(f"{cmd['desc']}\n\n")
+    fd.write(f"{cmd['desc'].rstrip()}\n\n")
 
 
 def traverse_commands(
@@ -312,7 +312,7 @@ def gen_type_doc(fd: TextIO, tp: Dict[str, Any]) -> None:
         fd.write(f"### enum {tp['name']}\n\n")
         for value in tp["values"]:
             fd.write(f" - _{value['key']}_: ")
-            fd.write(f"{value['desc']}\n")
+            fd.write(f"{value['desc'].rstrip()}\n")
         fd.write("\n")
     else:
         raise ValueError(f"Unknown type: {tp['kind']} in {tp['name']}")
@@ -337,6 +337,12 @@ def regenerate(filename: str, cb: Callable[[TextIO], None]) -> None:
                     fd.write(line)
     os.system(f"clang-format -i {filename}")
 
+    # Ensure file ends with exactly one newline (prevents end-of-file-fixer conflicts)
+    with open(filename, "r") as fd:
+        content = fd.read()
+    with open(filename, "w") as fd:
+        fd.write(content.rstrip("\n") + "\n")
+
 
 def gen_parse(fd: TextIO, root: Dict[str, Any]) -> None:
     for tp in root["types"]:
@@ -354,8 +360,8 @@ def gen_md(fd: TextIO, root: Dict[str, Any]) -> None:
     for tp in root["types"]:
         gen_type_doc(fd, tp)
 
-    fd.write("Commands \n")
-    fd.write("======== \n")
+    fd.write("Commands\n")
+    fd.write("========\n")
     traverse_doc(fd, root, prefix="")
 
 

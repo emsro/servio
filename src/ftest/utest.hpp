@@ -34,7 +34,7 @@ struct utest : asrt::task_test
 
 inline asrt::task< void > init_utest( utest& ctx )
 {
-        ctx.met_id = co_await asrt::set< asrt::obj >( ctx.assm.collect, 0, "metrics" );
+        ctx.met_id = co_await asrt::set< asrt::arr >( ctx.assm.collect, 0, "metrics" );
 }
 
 template < typename T >

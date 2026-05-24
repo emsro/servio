@@ -4,6 +4,8 @@
 #include "./setup_tests.hpp"
 #include "./testing_system.hpp"
 
+#include <ecor/ecor.hpp>
+
 extern "C" void asrt_log( enum asrt_log_level level, char const* module, char const* fmt, ... )
 {
         (void) level;
@@ -13,8 +15,9 @@ extern "C" void asrt_log( enum asrt_log_level level, char const* module, char co
 
 namespace
 {
-em::pmr::stack_resource< 1024 > TEST_STACK;
-}
+uint8_t                                  TEST_BUF[4096];
+ecor::circular_buffer_memory< uint16_t > TEST_STACK{ TEST_BUF };
+}  // namespace
 
 int main()
 {
@@ -43,6 +46,7 @@ int main()
 
         while ( true ) {
                 ctx.tick();
+                task_ctx.tick();
 
                 tsys.tick( ctx.cdrv.clock->get_us() );
         }

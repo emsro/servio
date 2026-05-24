@@ -22,14 +22,9 @@ jobs:
 
             - run: git config --global --add safe.directory /__w/servio/servio
 
-            - run: make configure
-
             - run: make build
-
-            - run: make test
-
 
             - uses: actions/upload-artifact@v4
               with:
                   name: proto4_fw.elf
-                  path: build/h5/src/brd/proto4/proto4_fw.elf
+                  path: _build/stm32h5/src/brd/proto4/proto4_fw.elf

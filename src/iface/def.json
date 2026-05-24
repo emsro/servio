@@ -70,7 +70,7 @@
         {
             "name": "gov",
             "type": "forward",
-            "desc": "Forward to governors "
+            "desc": "Forward to governors"
         },
         {
             "name": "prop",

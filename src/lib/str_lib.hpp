@@ -4,6 +4,7 @@
 #include <concepts>
 #include <cstdint>
 #include <limits>
+#include <utility>
 
 namespace servio::str_lib
 {

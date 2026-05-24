@@ -545,8 +545,8 @@ status setup_board()
 core::drivers setup_core_drivers()
 {
         drv::storage_iface* eeprom = eeprom_setup();
-        if ( eeprom && eeprom->load_cfg( CFG.map ) != status::success )
-                fw::stop_exec();
+        if ( eeprom )
+                eeprom->load_cfg( CFG.map );
 
         __HAL_RCC_TIM2_CLK_ENABLE();
         if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != status::success )
