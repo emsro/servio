@@ -41,8 +41,7 @@ endif()
 set(ASRT_LIBRARIES
     "${_servio_asrt_libs}"
     CACHE STRING "" FORCE)
-cpmaddpackage(NAME asrt GITHUB_REPOSITORY emsro/asrt GIT_TAG
-              db5803ac7ec3c592ad323a6b39fa879fde2711dc)
+cpmaddpackage(NAME asrt GITHUB_REPOSITORY emsro/asrt GIT_TAG v0.0.3)
 foreach(_asrt_target IN LISTS _servio_asrt_targets)
   set_target_properties(${_asrt_target} PROPERTIES SYSTEM TRUE)
 endforeach()

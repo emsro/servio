@@ -88,19 +88,19 @@ struct stor : drv::storage_iface
         error_code store_cfg( cfg::map const& ) override
         {
                 store_cnt += 1;
-                return error_code{ false };
+                return status::success;
         }
 
         error_code load_cfg( cfg::map& data ) override
         {
                 std::ignore = data;
-                return error_code{ false };
+                return status::success;
         }
 
         error_code clear_cfg() override
         {
                 clear_cnt += 1;
-                return error_code{ false };
+                return status::success;
         }
 };
 

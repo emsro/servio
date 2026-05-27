@@ -15,6 +15,9 @@ PRESET    ?= preset/yellow.proto4
 
 SCMDIO     = _build/host/src/scmdio/scmdio
 ASRTIO     = _build/host/_deps/asrt-build/asrtio/asrtio
+ASRT_TIMEOUT ?= 30000
+FTEST_START_DELAY ?= 2
+FTEST_RETRY_DELAY ?= 1
 
 GDB_FLASH  = arm-none-eabi-gdb -nx --batch \
 	  -ex "target extended-remote $(BMP_GDB)" \
@@ -54,7 +57,9 @@ flash:
 
 # Flash ftest firmware and run the test suite
 ftest: flash
+	sleep $(FTEST_START_DELAY)
 	$(ASRTIO) serial \
+	  --timeout $(ASRT_TIMEOUT) \
 	  --port $(BMP_UART) \
 	  --baud 230400 \
-	  --output $(FTEST_OUT) \
+	  --output $(FTEST_OUT)

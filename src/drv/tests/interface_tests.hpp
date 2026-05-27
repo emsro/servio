@@ -26,7 +26,7 @@ struct clock_test : ftest::utest
 
         char const* name = "clock_test";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -65,7 +65,7 @@ struct comms_echo_test : ftest::utest
 
         char const* name = "comms_echo";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -98,7 +98,7 @@ struct comms_timeout_test : ftest::utest
 
         char const* name = "comms_timeout";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -141,7 +141,7 @@ struct period_iface_test : ftest::utest
 
         char const* name = "period_iface";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -179,7 +179,7 @@ struct pwm_motor_test : ftest::utest
 
         char const* name = "pwm_motor";
 
-        asrt::task< void >
+        ftest::task< void >
         test( pwr p, int16_t expected, std::source_location src = std::source_location::current() )
         {
                 iface.set_power( p );
@@ -188,7 +188,7 @@ struct pwm_motor_test : ftest::utest
                 co_await expect( *this, iface.get_direction() == expected, src );
         }
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -209,7 +209,7 @@ struct vcc_test : ftest::utest
 
         char const* name = "vcc_test";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -228,7 +228,7 @@ struct temperature_test : ftest::utest
 
         char const* name = "temp_test";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -249,7 +249,7 @@ struct position_test : ftest::utest
 
         char const* name = "pos_test";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -278,7 +278,7 @@ struct curr_iface_test : ftest::utest
 
         char const* name = "curr_test";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -310,7 +310,7 @@ struct storage_iface_test : ftest::utest
 
         char const* name = "storage_iface";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 

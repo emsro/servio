@@ -19,6 +19,8 @@ namespace em = emlabcpp;
 
 namespace servio::ftest
 {
+template < typename T >
+using task = asrt::task< T >;
 
 struct utest : asrt::task_test
 {
@@ -32,7 +34,7 @@ struct utest : asrt::task_test
         }
 };
 
-inline asrt::task< void > init_utest( utest& ctx )
+inline task< void > init_utest( utest& ctx )
 {
         ctx.met_id = co_await asrt::set< asrt::arr >( ctx.assm.collect, 0, "metrics" );
 }
@@ -159,7 +161,7 @@ struct _metric_conv< std::bitset< N > >
 };
 
 template < typename T >
-asrt::task< void > store_metric( utest& ctx, char const* name, T&& value, char const* unit = "" )
+task< void > store_metric( utest& ctx, char const* name, T&& value, char const* unit = "" )
 {
         auto converted = _metric_conv< std::remove_cvref_t< T > >::convert( value );
         auto id        = co_await asrt::append< asrt::obj >( ctx.assm.collect, ctx.met_id );
@@ -168,7 +170,7 @@ asrt::task< void > store_metric( utest& ctx, char const* name, T&& value, char c
         co_await asrt::set( ctx.assm.collect, id, "value", converted );
 }
 
-inline asrt::task< void >
+inline task< void >
 expect( utest& ctx, bool condition, std::source_location loc = std::source_location::current() )
 {
         if ( !condition ) {

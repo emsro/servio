@@ -19,7 +19,7 @@ struct meas_cur_test : utest
 
         char const* name = "measure_current";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -53,7 +53,7 @@ struct meas_pos_test : utest
 
         char const* name = "measure_position";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -87,7 +87,7 @@ struct meas_vel_test : utest
 
         char const* name = "measure_vel";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 

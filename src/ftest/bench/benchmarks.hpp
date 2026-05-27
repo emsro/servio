@@ -23,7 +23,7 @@ struct loop_frequency : utest
 
         char const* name = "loop_frequency";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -80,7 +80,7 @@ struct loop_frequency : utest
                     *this, "measurements_max", (uint32_t) curr_profile_size.max(), "items" );
         }
 
-        asrt::task< float >
+        ftest::task< float >
         store_as_freq( char const* sv, std::size_t counter, microseconds time_window )
         {
 
@@ -98,7 +98,7 @@ struct usage : utest
 
         char const* name = "usage";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
                 microseconds time_window = 1000_ms;
@@ -150,7 +150,7 @@ struct profile : utest
 
         char const* name = "current_profile";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 

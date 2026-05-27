@@ -17,7 +17,7 @@ struct cobs_uart_rx_test : ftest::utest
 
         char const* name = "cobs_uart_rx";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -38,7 +38,7 @@ struct cobs_uart_err_test : ftest::utest
 
         char const* name = "cobs_uart_err";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -69,7 +69,7 @@ struct hbridge_test : ftest::utest
 {
         char const* name = "hbridge_test";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 

@@ -21,7 +21,7 @@ struct current_ctl_test : utest
 
         char const* name = "current_ctl_test";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
@@ -61,7 +61,7 @@ struct sign_test : utest
 
         char const* name = "sign_test";
 
-        asrt::task< void > exec()
+        ftest::task< void > exec()
         {
                 co_await init_utest( *this );
 
