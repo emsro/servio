@@ -56,7 +56,7 @@ struct loop_frequency : utest
                                 period_cb.on_period_irq();
                         } };
                         period.set_period_callback( pcb );
-                        drv::wait_for( clk, time_window );
+                        co_await wait_for( *this, clk, time_window );
                 }
 
                 co_await store_metric(

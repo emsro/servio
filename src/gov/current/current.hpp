@@ -13,7 +13,7 @@ namespace servio::gov::curr
 struct _current_gov final : governor, handle
 {
         _current_gov()
-          : pid( 0, { { .p = 1.F, .i = 0.F, .d = 0.F }, { -10.F, 10.F } } )
+          : pid( 0, { { .p = 1.F, .i = 0.F, .d = 0.F }, { 0.F, 1.F } } )
           , power( 0.F )
         {
         }
@@ -41,7 +41,6 @@ struct _current_gov final : governor, handle
                         break;
                 case cfg::key::curr_lim_min:
                 case cfg::key::curr_lim_max:
-                        em::update_limits( pid, { cfg.curr_lim_min, cfg.curr_lim_max } );
                         break;
                 case cfg::key::pos_lim_min:
                 case cfg::key::pos_lim_max:
@@ -85,10 +84,15 @@ struct _current_gov final : governor, handle
 
         pwr current_irq( microseconds now, float current ) override
         {
-                auto  lims         = em::intersection( pid.cfg.limits, derived_curr_lims );
-                float desired_curr = clamp( goal, lims );
+                limits< float > goal_lims = em::intersection(
+                    limits< float >{ cfg.curr_lim_min, cfg.curr_lim_max }, derived_curr_lims );
+                float const desired = clamp( goal, goal_lims );
 
-                float const fpower = em::update( pid, now.count(), current, desired_curr );
+                float const desired_mag  = std::abs( desired );
+                float const measured_mag = std::abs( current );
+                float const fpower_mag = em::update( pid, now.count(), measured_mag, desired_mag );
+
+                float const fpower = desired != 0.0F ? std::copysign( fpower_mag, desired ) : 0.0F;
                 power              = pwr( fpower );
                 return power;
         }

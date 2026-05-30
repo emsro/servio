@@ -2,7 +2,9 @@ function(servio_compile_options target)
   set_target_properties(${target} PROPERTIES CXX_STANDARD 23 CXX_EXTENSIONS OFF)
   target_compile_options(
     ${target}
-    PRIVATE -Wall
+    PRIVATE -fmacro-prefix-map=${PROJECT_SOURCE_DIR}/=
+            -ffile-prefix-map=${PROJECT_SOURCE_DIR}/=
+            -Wall
             # -Werror
             -Wextra
             -Wpedantic

@@ -73,7 +73,7 @@ struct comms_echo_test : ftest::utest
                 auto                       res = send( comms, 100_ms, buffer );
                 co_await expect( *this, res == status::success );
 
-                wait_for( clk, 10_ms );
+                co_await ftest::wait_for( *this, clk, 10_ms );
 
                 std::array< std::byte, 7 > buffer2{
                     0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b, 0x66_b };
@@ -109,12 +109,12 @@ struct comms_timeout_test : ftest::utest
                 res = send( comms, 1_us, buffer );
                 co_await expect( *this, res == status::error );
 
-                wait_for( clk, 10_ms );
+                co_await ftest::wait_for( *this, clk, 10_ms );
 
                 res = send( comms, 100_ms, buffer );
                 co_await expect( *this, res != status::error );
 
-                wait_for( clk, 10_ms );
+                co_await ftest::wait_for( *this, clk, 10_ms );
 
                 std::array< std::byte, 6 > buffer2;
                 bool                       ready = false;
@@ -155,13 +155,13 @@ struct period_iface_test : ftest::utest
                 iface.set_period_callback( pcb );
                 co_await expect( *this, &iface.get_period_callback() == &pcb );
 
-                wait_for( clk, 10_ms );
+                co_await ftest::wait_for( *this, clk, 10_ms );
                 co_await expect( *this, counter == 0 );
                 co_await store_metric( *this, "counter1", counter );
 
                 co_await expect( *this, iface.start() == status::success );
 
-                wait_for( clk, 10_ms );
+                co_await ftest::wait_for( *this, clk, 10_ms );
 
                 co_await store_metric( *this, "counter", counter );
                 co_await expect( *this, &iface.get_period_callback() == &pcb );
@@ -179,25 +179,29 @@ struct pwm_motor_test : ftest::utest
 
         char const* name = "pwm_motor";
 
-        ftest::task< void >
-        test( pwr p, int16_t expected, std::source_location src = std::source_location::current() )
-        {
-                iface.set_power( p );
-                co_await store_metric( *this, "last_dir", iface.get_direction() );
-                co_await store_metric( *this, "expected", expected );
-                co_await expect( *this, iface.get_direction() == expected, src );
-        }
-
         ftest::task< void > exec()
         {
+                struct test_case
+                {
+                        pwr     power;
+                        int16_t expected;
+                };
+
                 co_await init_utest( *this );
 
                 co_await expect( *this, !iface.is_stopped() );
                 auto d = hold( period );
 
-                co_await test( -0.5_pwr, -1 );
-                co_await test( 0_pwr, 1 );
-                co_await test( 0.5_pwr, 1 );
+                for ( test_case const tc : {
+                          test_case{ -0.5_pwr, -1 },
+                          test_case{ 0_pwr, 1 },
+                          test_case{ 0.5_pwr, 1 },
+                      } ) {
+                        iface.set_power( tc.power );
+                        co_await store_metric( *this, "last_dir", iface.get_direction() );
+                        co_await store_metric( *this, "expected", tc.expected );
+                        co_await expect( *this, iface.get_direction() == tc.expected );
+                }
         }
 };
 
@@ -262,7 +266,7 @@ struct position_test : ftest::utest
                 iface.set_position_callback( pcb );
                 co_await expect( *this, &iface.get_position_callback() == &pcb );
 
-                wait_for( clk, 10_ms );
+                co_await ftest::wait_for( *this, clk, 10_ms );
 
                 co_await expect( *this, opt_pos.has_value() );
                 co_await store_metric( *this, "pos", opt_pos.value() );
@@ -293,7 +297,7 @@ struct curr_iface_test : ftest::utest
                 iface.set_current_callback( ccb );
                 co_await expect( *this, &iface.get_current_callback() == &ccb );
 
-                wait_for( clk, 10_ms );
+                co_await ftest::wait_for( *this, clk, 10_ms );
 
                 co_await store_metric( *this, "prof size", prof.size() );
                 co_await expect( *this, !prof.empty() );

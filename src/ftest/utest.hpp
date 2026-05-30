@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../base.hpp"
+#include "../drv/interfaces.hpp"
 #include "../gov/governor_manager.hpp"
 #include "../status.hpp"
 
@@ -34,9 +35,99 @@ struct utest : asrt::task_test
         }
 };
 
-inline task< void > init_utest( utest& ctx )
+struct _init_utest_ctx
 {
-        ctx.met_id = co_await asrt::set< asrt::arr >( ctx.assm.collect, 0, "metrics" );
+        using completion_signatures =
+            ecor::completion_signatures< ecor::set_value_t(), ecor::set_error_t( asrt::status ) >;
+
+        utest* pctx;
+
+        template < typename OP >
+        void start( OP& op )
+        {
+                asrt_flat_value const array_value = {
+                    .type = asrt::collect_append_traits< asrt::arr >::flat_type,
+                };
+
+                auto s = asrt_collect_client_insert(
+                    &pctx->assm.collect,
+                    0,
+                    "metrics",
+                    &array_value,
+                    &pctx->met_id,
+                    +[]( void* ptr, asrt::status st ) {
+                            auto& o = *static_cast< OP* >( ptr );
+                            if ( st != ASRT_SUCCESS )
+                                    o.receiver.set_error( st );
+                            else
+                                    o.receiver.set_value();
+                    },
+                    &op );
+                if ( s != ASRT_SUCCESS )
+                        op.receiver.set_error( static_cast< asrt::status >( s ) );
+        }
+};
+
+inline ecor::sender_from< _init_utest_ctx > init_utest( utest& ctx )
+{
+        return { { &ctx } };
+}
+
+struct _wait_for_sender
+{
+        using sender_concept = ecor::sender_t;
+
+        using completion_signatures = ecor::completion_signatures< ecor::set_value_t() >;
+
+        utest*          pctx;
+        drv::clk_iface* pclk;
+        microseconds    duration;
+
+        template < ecor::receiver R >
+        struct _op : ecor::schedulable
+        {
+                using operation_state_concept = ecor::operation_state_t;
+
+                R                receiver;
+                ecor::task_core* core;
+                drv::clk_iface*  clk;
+                microseconds     end;
+
+                _op( R recv, utest& ctx, drv::clk_iface& clock, microseconds dur )
+                  : receiver( std::move( recv ) )
+                  , core( &ctx.query( ecor::get_task_core ) )
+                  , clk( &clock )
+                  , end( clock.get_us() + dur )
+                {
+                }
+
+                void start()
+                {
+                        core->reschedule( *this );
+                }
+
+                void resume() override
+                {
+                        if ( clk->get_us() < end )
+                                core->reschedule( *this );
+                        else
+                                receiver.set_value();
+                }
+        };
+
+        template < ecor::receiver R >
+        auto connect( R receiver ) &&
+        {
+                static_assert(
+                    ecor::receiver_for< R, _wait_for_sender >,
+                    "Receiver does not satisfy the requirements for wait_for's completion signatures" );
+                return _op< R >{ std::move( receiver ), *pctx, *pclk, duration };
+        }
+};
+
+inline _wait_for_sender wait_for( utest& ctx, drv::clk_iface& clk, microseconds duration )
+{
+        return { &ctx, &clk, duration };
 }
 
 template < typename T >
@@ -160,23 +251,186 @@ struct _metric_conv< std::bitset< N > >
         }
 };
 
-template < typename T >
-task< void > store_metric( utest& ctx, char const* name, T&& value, char const* unit = "" )
+/// store metric in collect
+///
+/// Equivalent of following coroutine:
+/// template < typename T >
+/// task< void > _store_metric( utest& ctx, char const* name, T&& value, char const* unit )
+/// {
+///         auto id = co_await asrt::append< asrt::obj >( ctx.assm.collect, ctx.met_id );
+///         co_await asrt::set( ctx.assm.collect, id, "name", name );
+///         co_await asrt::set( ctx.assm.collect, id, "unit", unit );
+///         co_await asrt::set( ctx.assm.collect, id, "value", value );
+/// }
+struct _store_metric_ctx
 {
-        auto converted = _metric_conv< std::remove_cvref_t< T > >::convert( value );
-        auto id        = co_await asrt::append< asrt::obj >( ctx.assm.collect, ctx.met_id );
-        co_await asrt::set( ctx.assm.collect, id, "name", name );
-        co_await asrt::set( ctx.assm.collect, id, "unit", unit );
-        co_await asrt::set( ctx.assm.collect, id, "value", converted );
+        using completion_signatures =
+            ecor::completion_signatures< ecor::set_value_t(), ecor::set_error_t( asrt::status ) >;
+
+        asrt_collect_client* client;
+        asrt::flat_id        parent;
+        char const*          name;
+        char const*          unit;
+        asrt_flat_value      metric_value;
+
+        template < typename OP >
+        void start( OP& op )
+        {
+                asrt_flat_value const object_value = {
+                    .type = asrt::collect_append_traits< asrt::obj >::flat_type,
+                };
+                auto s = asrt_collect_client_insert(
+                    client,
+                    parent,
+                    nullptr,
+                    &object_value,
+                    &parent,
+                    +[]( void* ptr, asrt::status st ) {
+                            auto& o = *static_cast< OP* >( ptr );
+                            if ( st != ASRT_SUCCESS )
+                                    o.receiver.set_error( st );
+                            else
+                                    o.ctx._start_name( o );
+                    },
+                    &op );
+                if ( s != ASRT_SUCCESS )
+                        op.receiver.set_error( static_cast< asrt::status >( s ) );
+        }
+
+        template < typename OP >
+        void _start_name( OP& op )
+        {
+                asrt_flat_value const name_value = {
+                    .type = asrt::collect_append_traits< char const* >::flat_type,
+                    .data = { .s = { .str_val = name } },
+                };
+                auto s = asrt_collect_client_insert(
+                    client,
+                    parent,
+                    "name",
+                    &name_value,
+                    nullptr,
+                    +[]( void* ptr, asrt::status st ) {
+                            auto& o = *static_cast< OP* >( ptr );
+                            if ( st != ASRT_SUCCESS )
+                                    o.receiver.set_error( st );
+                            else
+                                    o.ctx._start_unit( o );
+                    },
+                    &op );
+                if ( s != ASRT_SUCCESS )
+                        op.receiver.set_error( static_cast< asrt::status >( s ) );
+        }
+
+        template < typename OP >
+        void _start_unit( OP& op )
+        {
+                asrt_flat_value const unit_value = {
+                    .type = asrt::collect_append_traits< char const* >::flat_type,
+                    .data = { .s = { .str_val = unit } },
+                };
+                auto s = asrt_collect_client_insert(
+                    client,
+                    parent,
+                    "unit",
+                    &unit_value,
+                    nullptr,
+                    +[]( void* ptr, asrt::status st ) {
+                            auto& o = *static_cast< OP* >( ptr );
+                            if ( st != ASRT_SUCCESS )
+                                    o.receiver.set_error( st );
+                            else
+                                    o.ctx._start_value( o );
+                    },
+                    &op );
+                if ( s != ASRT_SUCCESS )
+                        op.receiver.set_error( static_cast< asrt::status >( s ) );
+        }
+
+        template < typename OP >
+        void _start_value( OP& op )
+        {
+                auto s = asrt_collect_client_insert(
+                    client,
+                    parent,
+                    "value",
+                    &metric_value,
+                    nullptr,
+                    +[]( void* ptr, asrt::status st ) {
+                            auto& o = *static_cast< OP* >( ptr );
+                            if ( st != ASRT_SUCCESS )
+                                    o.receiver.set_error( st );
+                            else
+                                    o.receiver.set_value();
+                    },
+                    &op );
+                if ( s != ASRT_SUCCESS )
+                        op.receiver.set_error( static_cast< asrt::status >( s ) );
+        }
+};
+
+using _store_metric_sender = ecor::sender_from< _store_metric_ctx >;
+
+template < typename T >
+asrt_flat_value _make_metric_value( T val ) noexcept
+{
+        using traits      = asrt::collect_append_traits< T >;
+        using member_type = decltype( asrt_flat_scalar{}.*traits::member );
+
+        asrt_flat_value v        = { .type = traits::flat_type };
+        v.data.s.*traits::member = static_cast< member_type >( val );
+        return v;
 }
 
-inline task< void >
+template < typename T >
+ecor::sender auto store_metric( utest& ctx, char const* name, T&& value, char const* unit = "" )
+{
+        auto converted = _metric_conv< std::remove_cvref_t< T > >::convert( value );
+        return _store_metric_sender{ {
+            .client       = &ctx.assm.collect,
+            .parent       = ctx.met_id,
+            .name         = name,
+            .unit         = unit,
+            .metric_value = _make_metric_value( converted ),
+        } };
+}
+
+struct _expect_ctx
+{
+        using completion_signatures =
+            ecor::completion_signatures< ecor::set_value_t(), ecor::set_error_t( asrt::status ) >;
+
+        utest*               pctx;
+        bool                 condition;
+        std::source_location loc;
+
+        template < typename OP >
+        void start( OP& op )
+        {
+                if ( condition ) {
+                        op.receiver.set_value();
+                        return;
+                }
+                asrt_diag_client_record(
+                    &pctx->assm.diag,
+                    loc.file_name(),
+                    static_cast< uint32_t >( loc.line() ),
+                    nullptr,
+                    +[]( void* p, enum asrt_status s ) {
+                            auto& o = *static_cast< OP* >( p );
+                            if ( s == ASRT_SUCCESS )
+                                    o.receiver.set_error( ASRT_FAILURE );
+                            else
+                                    o.receiver.set_error( s );
+                    },
+                    &op );
+        }
+};
+
+inline ecor::sender_from< _expect_ctx >
 expect( utest& ctx, bool condition, std::source_location loc = std::source_location::current() )
 {
-        if ( !condition ) {
-                co_await asrt::rec_diag( ctx.assm.diag, loc.file_name(), loc.line(), nullptr );
-                co_yield asrt::with_error{ asrt::test_fail };
-        }
+        return { { &ctx, condition, loc } };
 }
 
 inline auto setup_poweroff( gov::governor_manager& gv )

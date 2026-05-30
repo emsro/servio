@@ -13,7 +13,7 @@ nlohmann::json j_from_file( std::filesystem::path const& file )
         if ( !std::filesystem::exists( file ) )
                 throw std::runtime_error( "File not found: " + file.string() );
         std::ifstream ifs{ file };
-        return nlohmann::json::parse( ifs );
+        return nlohmann::json::parse( ifs, nullptr, true, true );
 }
 }  // namespace
 
@@ -21,7 +21,9 @@ raw_preset_def load_raw_preset( std::filesystem::path const& folder )
 {
         nlohmann::json meta   = j_from_file( folder / "meta.json" );
         nlohmann::json config = nlohmann::json::object();
-        if ( std::filesystem::exists( folder / "config.json" ) )
+        if ( std::filesystem::exists( folder / "config.jsonc" ) )
+                config = j_from_file( folder / "config.jsonc" );
+        else if ( std::filesystem::exists( folder / "config.json" ) )
                 config = j_from_file( folder / "config.json" );
 
         if ( meta.contains( "inherits" ) ) {

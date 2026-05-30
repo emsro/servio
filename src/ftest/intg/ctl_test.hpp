@@ -33,16 +33,20 @@ struct current_ctl_test : utest
                 co_await expect( *this, p != nullptr );
                 p->set_goal_current( expected );
 
-                float                        avg_curr = 0;
-                static constexpr std::size_t count    = 10000000;
-
-                drv::wait_for( clk, 350_ms );
-                for ( std::size_t i : em::range( count ) ) {
-                        std::ignore   = i;
-                        float current = cnv::current( cor.conv, curr, motor );
-                        avg_curr += current;
+                // Stream (time_ms, current) every 10 ms for 500 ms and accumulate average
+                auto         stream     = co_await asrt::define< float, float >( assm.stream, 0 );
+                microseconds stream_end = clk.get_us() + 500_ms;
+                float        avg_curr   = 0;
+                std::size_t  avg_count  = 0;
+                while ( clk.get_us() < stream_end ) {
+                        float t_ms = static_cast< float >( clk.get_us().count() ) / 1000.0F;
+                        float cur  = cnv::current( cor.conv, curr, motor );
+                        co_await asrt::emit( stream, t_ms, cur );
+                        avg_curr += cur;
+                        avg_count += 1;
+                        co_await wait_for( *this, clk, 1_ms );
                 }
-                avg_curr /= static_cast< float >( count );
+                avg_curr /= static_cast< float >( avg_count );
 
                 co_await store_metric( *this, "measured", avg_curr );
                 co_await store_metric( *this, "expected", expected );
@@ -50,6 +54,7 @@ struct current_ctl_test : utest
         }
 };
 
+/// Test that current and velocity have the same sign, i.e. current follows motion direction.
 struct sign_test : utest
 {
         drv::clk_iface&       clk;
@@ -72,7 +77,7 @@ struct sign_test : utest
                 auto* p     = dynamic_cast< gov::pow::_power_gov* >( cor.gov_.active() );
                 co_await expect( *this, p != nullptr );
                 p->power = p_low / 2.F;
-                drv::wait_for( clk, 200_ms );
+                co_await wait_for( *this, clk, 200_ms );
                 std::size_t count = 50;
 
                 float csum = 0;

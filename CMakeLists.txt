@@ -41,7 +41,8 @@ endif()
 set(ASRT_LIBRARIES
     "${_servio_asrt_libs}"
     CACHE STRING "" FORCE)
-cpmaddpackage(NAME asrt GITHUB_REPOSITORY emsro/asrt GIT_TAG v0.0.3)
+cpmaddpackage(NAME ecor SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dep/ecor)
+cpmaddpackage(NAME asrt SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dep/asrt)
 foreach(_asrt_target IN LISTS _servio_asrt_targets)
   set_target_properties(${_asrt_target} PROPERTIES SYSTEM TRUE)
 endforeach()

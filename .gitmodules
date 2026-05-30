@@ -23,3 +23,10 @@
 [submodule "dep/nanopb"]
 	path = dep/nanopb
 	url = https://github.com/nanopb/nanopb
+[submodule "dep/asrt"]
+	path = dep/asrt
+	url = https://github.com/emsro/asrt
+	branch = main
+[submodule "dep/ecor"]
+	path = dep/ecor
+	url = https://github.com/koniarik/ecor.git

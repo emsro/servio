@@ -1,0 +1,29 @@
+{
+    // Motor: DC Geared Motor with Encoder SJ01 6V 160RPM 1:201
+    // https://botland.store/dc-motors-with-gearbox-and-encoders/6287-dc-geared-motor-with-encoder-sj01-6v-160rpm-1201-6959420910205.html
+    "model": "yellow",
+    "encoder_mode": "quad",
+    "quad_encoder_range": 960,
+    "current.curr_loop_p": 0.2,
+    "current.curr_loop_i": 0.5,
+    "current.curr_loop_d": 0.0,
+    // PID output clamped to full PWM range; also serves as max goal magnitude (A)
+    "current.curr_lim_min": -1.0,
+    "current.curr_lim_max": 1.0,
+    // Continuous wheel motor: no position limits
+    "current.pos_lim_min": -1e30,
+    "current.pos_lim_max": 1e30,
+    "current.pos_to_curr_lim_scale": 0.1,
+    "position.curr_loop_p": 0.6,
+    "position.curr_loop_i": 3.0,
+    "position.curr_loop_d": 0.0,
+    "position.pos_loop_p": 2.0,
+    "position.pos_loop_i": 0.0,
+    "position.pos_loop_d": 0.0,
+    "velocity.curr_loop_p": 0.6,
+    "velocity.curr_loop_i": 3.0,
+    "velocity.curr_loop_d": 0.0,
+    "velocity.vel_loop_p": 0.5,
+    "velocity.vel_loop_i": 2.0,
+    "velocity.vel_loop_d": 0.020
+}

@@ -399,6 +399,9 @@ drv::leds& leds_setup()
 drv::pos_iface* quad_encoder_setup( uint32_t period )
 {
 
+        if ( period == 0 )
+                return nullptr;
+
         __HAL_RCC_TIM3_CLK_ENABLE();
         __HAL_RCC_GPIOB_CLK_ENABLE();
 
@@ -419,7 +422,7 @@ drv::pos_iface* quad_encoder_setup( uint32_t period )
         plt::setup_gpio( ch2 );
 
         // XXX: technicaly we are missing PA8 - encoder clk - indication of zero
-        error_code res = plt::setup_encoder_timer( TIM3_HANDLE, TIM3, period );
+        error_code res = plt::setup_encoder_timer( TIM3_HANDLE, TIM3, period - 1U );
         if ( res != status::success )
                 return nullptr;
 

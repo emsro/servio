@@ -31,7 +31,8 @@ void setup_tests(
         drv::tests::setup_impl_tests( ctx, assm, *cdrv.clock, res );
         intg::setup_ctl_test(
             ctx, assm, *cdrv.clock, *cdrv.motor, *cdrv.current, *cdrv.position, cor, res );
-        intg::setup_meas_tests( ctx, assm, *cdrv.clock, *cdrv.motor, *cdrv.current, cor, res );
+        intg::setup_meas_tests(
+            ctx, assm, *cdrv.clock, *cdrv.position, *cdrv.motor, *cdrv.current, cor, res );
 }
 
 }  // namespace servio::ftest
