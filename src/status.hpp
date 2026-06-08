@@ -10,10 +10,9 @@ namespace servio
 
 enum class [[nodiscard]] status : uint8_t
 {
-        success   = 0,  // all went well
-        failure   = 1,  // expected error occured
-        error     = 2,  // unexpected error occured
-        enter_dfu = 3,  // request to enter DFU bootloader after reply is sent
+        success = 0,  // all went well
+        failure = 1,  // expected error occured
+        error   = 2,  // unexpected error occured
 };
 
 struct status_error_category : em::error_category< status >
@@ -27,8 +26,6 @@ struct status_error_category : em::error_category< status >
                         return "failure";
                 case status::error:
                         return "error";
-                case status::enter_dfu:
-                        return "enter_dfu";
                 default:
                         return "unknown error code";
                 }

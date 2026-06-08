@@ -1,6 +1,7 @@
 servio_add_library(
   TARGET scmdiolib
   SOURCES dfu_flash.cpp
+          flash.cpp
           serial.cpp
           config_cmds.cpp
           cli.cpp

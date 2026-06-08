@@ -2,6 +2,7 @@
 #include "./config_cmds.hpp"
 #include "./dfu_flash.hpp"
 #include "./field_util.hpp"
+#include "./flash.hpp"
 #include "./pid_autotune_cmd.hpp"
 #include "./preset.hpp"
 #include "./serial.hpp"
@@ -224,7 +225,7 @@ void autotune_def( CLI::App& app, io_context& io_ctx )
         } );
 }
 
-struct dfu_flash_ctx
+struct dfu_ctx
 {
         std::filesystem::path file;
         serial_cli            port;
@@ -237,7 +238,7 @@ struct dfu_enter_ctx
 
 void dfu_def( CLI::App& app, io_context& io_ctx )
 {
-        auto flash_ctx = std::make_shared< dfu_flash_ctx >();
+        auto flash_ctx = std::make_shared< dfu_ctx >();
         auto enter_ctx = std::make_shared< dfu_enter_ctx >();
 
         auto serial_cb = [&]( CLI::App* cmd, auto f ) {
@@ -265,7 +266,7 @@ void dfu_def( CLI::App& app, io_context& io_ctx )
         auto* info = dfu->add_subcommand( "info", "Query the system about bootloader information" );
         port_opts( *info, flash_ctx->port );
         serial_cb( info, []( sptr< serial_stream > ss ) -> awaitable< void > {
-                co_await dfu_flash_info( *ss, std::cout );
+                co_await dfu_info( *ss, std::cout );
         } );
 
         auto* download =
@@ -274,23 +275,23 @@ void dfu_def( CLI::App& app, io_context& io_ctx )
         download->add_option( "file", flash_ctx->file, "file to download to" )->required();
         serial_cb( download, [flash_ctx]( sptr< serial_stream > ss ) -> awaitable< void > {
                 std::ofstream f{ flash_ctx->file };
-                co_await dfu_flash_download( *ss, f );
+                co_await dfu_download( *ss, f );
         } );
 
-        auto* flash = dfu->add_subcommand( "flash", "Flash image to target device" );
+        auto* flash = dfu->add_subcommand( "upload", "Flash image to target device" );
         port_opts( *flash, flash_ctx->port );
         flash
             ->add_option( "file", flash_ctx->file, "file to flash into the device, has to be .bin" )
             ->required();
         serial_cb( flash, [flash_ctx]( sptr< serial_stream > ss ) -> awaitable< void > {
                 std::ifstream f{ flash_ctx->file };
-                co_await dfu_flash_flash( *ss, f );
+                co_await dfu_upload( *ss, f );
         } );
 
         auto* clear = dfu->add_subcommand( "clear", "Clear the device" );
         port_opts( *clear, flash_ctx->port );
         serial_cb( clear, []( sptr< serial_stream > ss ) -> awaitable< void > {
-                co_await dfu_flash_clear( *ss );
+                co_await dfu_clear( *ss );
         } );
 }
 
@@ -316,6 +317,48 @@ void preset_def( CLI::App& app, io_context& io_ctx )
         } );
 }
 
+struct info_ctx
+{
+        char_cli port;
+};
+
+void info_def( CLI::App& app, io_context& io_ctx )
+{
+        auto ctx = std::make_shared< info_ctx >();
+
+        auto* info = app.add_subcommand( "info", "Query firmware version and commit" );
+        port_opts( *info, ctx->port );
+        port_callback( info, io_ctx, ctx, []( sptr< char_port > p ) -> awaitable< void > {
+                nlohmann::json reply = co_await exchg( *p, "info" );
+                if ( reply.size() >= 2 && reply[1].is_object() ) {
+                        std::cout << "version: " << reply[1].value( "version", "?" ) << "\n";
+                        std::cout << "commit:  " << reply[1].value( "commit", "?" ) << "\n";
+                }
+        } );
+}
+
+struct flash_def_ctx
+{
+        std::filesystem::path file;
+        char_cli              port;
+};
+
+void flash_def( CLI::App& app, io_context& io_ctx )
+{
+        auto ctx = std::make_shared< flash_def_ctx >();
+
+        auto* cmd = app.add_subcommand(
+            "flash", "Flash firmware: auto-detects bootloader or triggers entry via dfu command" );
+        port_opts( *cmd, ctx->port );
+        cmd->add_option( "file", ctx->file, "Firmware binary (.bin)" )->required();
+        cmd->callback( [&io_ctx, ctx] {
+                co_spawn(
+                    io_ctx,
+                    flash_firmware( io_ctx, ctx->port.device, ctx->file, ctx->port.baudrate ),
+                    handle_eptr );
+        } );
+}
+
 }  // namespace servio::scmdio
 
 int main( int argc, char* argv[] )
@@ -332,6 +375,8 @@ int main( int argc, char* argv[] )
         scmdio::pool_def( app, ctx );
         scmdio::govctl_def( app, ctx );
         // scmdio::autotune_def( app, ctx ); XXX: finish
+        scmdio::info_def( app, ctx );
+        scmdio::flash_def( app, ctx );
         scmdio::dfu_def( app, ctx );
         scmdio::preset_def( app, ctx );
 

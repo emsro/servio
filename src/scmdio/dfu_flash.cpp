@@ -132,7 +132,7 @@ awaitable< void > read_memory( stream_iface& port, uint32_t addr, em::view< std:
 {
         co_await cmd( port, READ_MEMORY );
 
-        co_await send( port, dfu_flash_conv( addr ) );
+        co_await send( port, dfu_conv( addr ) );
         co_await wait_for_ack( port );
 
         assert( buff.size() <= 255 );
@@ -150,7 +150,7 @@ write_memory( stream_iface& port, uint32_t addr, em::view< std::byte const* > bu
         co_await cmd( port, WRITE_MEMORY );
 
         spdlog::debug( "Sending address: {}", addr );
-        co_await send( port, dfu_flash_conv( addr ) );
+        co_await send( port, dfu_conv( addr ) );
         co_await wait_for_ack( port );
 
         if ( buff.size() % 4 != 0 || buff.size() > 255 )
@@ -192,7 +192,7 @@ awaitable< chip_info const* > get_chip_id( stream_iface& port )
 
 }  // namespace
 
-awaitable< void > dfu_flash_info( stream_iface& port, std::ostream& os )
+awaitable< void > dfu_info( stream_iface& port, std::ostream& os )
 {
         co_await init_comm( port );
         uint16_t id = co_await get_id( port );
@@ -203,7 +203,7 @@ awaitable< void > dfu_flash_info( stream_iface& port, std::ostream& os )
                 os << "cmd: " << magic_enum::enum_name( (cmd_e) x ) << '\n';
 }
 
-awaitable< void > dfu_flash_download( stream_iface& port, std::ostream& os )
+awaitable< void > dfu_download( stream_iface& port, std::ostream& os )
 {
         co_await init_comm( port );
         chip_info const* ci = co_await get_chip_id( port );
@@ -218,9 +218,8 @@ awaitable< void > dfu_flash_download( stream_iface& port, std::ostream& os )
         spdlog::info( "download done" );
 }
 
-awaitable< void > dfu_flash_flash( stream_iface& port, std::istream& is )
+awaitable< void > dfu_upload_raw( stream_iface& port, std::istream& is )
 {
-        co_await init_comm( port );
         chip_info const* ci = co_await get_chip_id( port );
         co_await full_erase( port );
         for ( uint32_t addr = ci->flash.min(); addr < ci->flash.max(); addr += mem_step ) {
@@ -237,11 +236,68 @@ awaitable< void > dfu_flash_flash( stream_iface& port, std::istream& is )
         spdlog::info( "flash done" );
 }
 
-awaitable< void > dfu_flash_clear( stream_iface& port )
+awaitable< void > dfu_upload( stream_iface& port, std::istream& is )
+{
+        co_await init_comm( port );
+        co_await dfu_upload_raw( port, is );
+}
+
+awaitable< void > dfu_clear( stream_iface& port )
 {
         co_await init_comm( port );
         spdlog::info( "Clearing device" );
         co_await full_erase( port );
+}
+
+awaitable< bool > dfu_try_init( stream_iface& port )
+{
+        co_await port.write( INIT );
+        try {
+                auto b = co_await port.read();
+                if ( !b )
+                        co_return false;
+                co_return *b == ACK || *b == NACK;
+        }
+        catch ( servio_exception const& ) {
+                co_return false;  // timeout — bootloader not present
+        }
+}
+
+awaitable< void > dfu_reset( stream_iface& port )
+{
+        co_await cmd( port, SPECIAL );
+
+        // Frame 1: SubOpcode (2 bytes MSB first) + XOR checksum → ACK
+        std::array< std::byte, 2 > subopcode = { 0x00_b, 0x02_b };  // Reset = 0x0002
+        co_await send( port, subopcode );
+        co_await wait_for_ack( port );
+
+        // Frame 2: DataCount (2 bytes MSB first) + Data (N bytes) + XOR checksum → ACK
+        std::array< std::byte, 6 > data_frame = {
+            0x00_b,
+            0x04_b,  // DataCount = 4
+            0x00_b,
+            0x00_b,
+            0x00_b,
+            0x00_b,  // Data: 4 zero bytes
+        };
+        co_await send( port, data_frame );
+        co_await wait_for_ack( port );
+
+        // Response: DataPacket (Size(2) + Size bytes) + StatusPacket (Size(2) + Size bytes) + ACK
+        std::array< std::byte, 2 > size_buf;
+        co_await port.read( size_buf );
+        std::size_t ndata = ( (std::size_t) size_buf[0] << 8 ) | (std::size_t) size_buf[1];
+        for ( std::size_t i = 0; i < ndata; ++i )
+                co_await port.read();
+
+        co_await port.read( size_buf );
+        std::size_t nstatus = ( (std::size_t) size_buf[0] << 8 ) | (std::size_t) size_buf[1];
+        for ( std::size_t i = 0; i < nstatus; ++i )
+                co_await port.read();
+
+        co_await wait_for_ack( port );
+        spdlog::info( "Device is resetting..." );
 }
 
 }  // namespace servio::scmdio

@@ -302,16 +302,6 @@ static std::tuple< info_stmt, parse_status > _info( arg_parser ap )
         return { std::move( res ), st };
 }
 
-static std::tuple< dfu_stmt, parse_status > _dfu( arg_parser ap )
-{
-
-        dfu_stmt                 res;
-        std::array< arg_def, 0 > arg_defs = {};
-        parse_status             st       = std::move( ap ).parse_args( arg_defs );
-
-        return { std::move( res ), st };
-}
-
 static std::tuple< stmt, parse_status > _root( cmd_parser p )
 {
         stmt         res;
@@ -329,8 +319,6 @@ static std::tuple< stmt, parse_status > _root( cmd_parser p )
                 std::tie( res.sub, st ) = _cfg( std::move( p ) );
         else if ( *id == "info" )
                 std::tie( res.sub, st ) = _info( std::move( p ) );
-        else if ( *id == "dfu" )
-                std::tie( res.sub, st ) = _dfu( std::move( p ) );
         else
                 return { std::move( res ), parse_status::UNKNOWN_CMD };
         return { std::move( res ), st };

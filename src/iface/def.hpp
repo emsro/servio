@@ -148,12 +148,7 @@ struct info_stmt
         friend constexpr auto operator<=>( info_stmt const&, info_stmt const& ) noexcept = default;
 };
 
-struct dfu_stmt
-{
-        friend constexpr auto operator<=>( dfu_stmt const&, dfu_stmt const& ) noexcept = default;
-};
-
-using stmts = vari::typelist< govctl_stmt, gov_stmt, prop_stmt, cfg_stmt, info_stmt, dfu_stmt >;
+using stmts = vari::typelist< govctl_stmt, gov_stmt, prop_stmt, cfg_stmt, info_stmt >;
 
 struct stmt
 {

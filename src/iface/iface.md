@@ -144,9 +144,5 @@ Configuration commands for the servomotor. See configuration documentation to ge
 
 Get information about the servomotor
 
-## cmd: dfu
-
-Enter the STM32H5 ROM bootloader
-
 
                                      < !--GEN END HERE-- >

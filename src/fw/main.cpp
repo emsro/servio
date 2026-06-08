@@ -55,7 +55,5 @@ int main()
                         fw::stop_exec();
                 if ( send( *ctx.cdrv.comms, 100_ms, odata ) != status::success )
                         fw::stop_exec();
-                if ( st == status::enter_dfu )
-                        plt::enter_bootloader();
         }
 }

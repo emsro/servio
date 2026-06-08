@@ -43,23 +43,17 @@ cmake --workflow --preset stm32h5_debug
 
 # Flashing
 
-The STM32H5 has a built-in ROM bootloader accessible via UART. Use `scmdio dfu` to interact with it.
-
-To enter the bootloader from a running firmware:
+To flash firmware, first enter the ROM bootloader by holding the BOOT0 pin high (e.g. with tweezers on the board header) and power-cycling the device. Then use the `flash` command to upload and start the new firmware:
 
 ```
-_install/bin/scmdio dfu enter --comms /dev/cu.usbserial-0001
+_install/bin/scmdio flash --comms /dev/cu.usbserial-0001 _build/stm32h5/src/brd/proto4/proto4_fw.bin
 ```
 
-Alternatively, set the BOOT1 pin high (e.g. with tweezers on the board header) and power-cycle the device.
-
-Once in the bootloader, flash the firmware binary:
+For manual control, upload directly with:
 
 ```
-_install/bin/scmdio dfu flash --comms /dev/cu.usbserialXXXX _build/stm32h5/src/brd/proto4/proto4_fw.bin
+_install/bin/scmdio dfu upload --comms /dev/cu.usbserialXXXX _build/stm32h5/src/brd/proto4/proto4_fw.bin
 ```
-
-After flashing, restore BOOT1 to its normal position (if changed) and power-cycle.
 
 # Configuration
 
