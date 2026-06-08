@@ -1,6 +1,6 @@
-#include "./bflash.hpp"
 #include "./cli.hpp"
 #include "./config_cmds.hpp"
+#include "./dfu_flash.hpp"
 #include "./field_util.hpp"
 #include "./pid_autotune_cmd.hpp"
 #include "./preset.hpp"
@@ -224,19 +224,25 @@ void autotune_def( CLI::App& app, io_context& io_ctx )
         } );
 }
 
-struct bflash_ctx
+struct dfu_flash_ctx
 {
         std::filesystem::path file;
         serial_cli            port;
 };
 
-void bflash_def( CLI::App& app, io_context& io_ctx )
+struct dfu_enter_ctx
 {
-        auto ctx = std::make_shared< bflash_ctx >();
+        char_cli port;
+};
 
-        auto port_callback = [&]( CLI::App* cmd, auto f ) {
-                cmd->callback( [&io_ctx, ctx, f = std::move( f )]() {
-                        sptr< serial_stream > ss = ctx->port.get( io_ctx );
+void dfu_def( CLI::App& app, io_context& io_ctx )
+{
+        auto flash_ctx = std::make_shared< dfu_flash_ctx >();
+        auto enter_ctx = std::make_shared< dfu_enter_ctx >();
+
+        auto serial_cb = [&]( CLI::App* cmd, auto f ) {
+                cmd->callback( [&io_ctx, flash_ctx, f = std::move( f )]() {
+                        sptr< serial_stream > ss = flash_ctx->port.get( io_ctx );
                         using spb                = boost::asio::serial_port_base;
                         ss->port.set_option( spb::parity( spb::parity::even ) );
                         ss->port.set_option( spb::character_size( 8 ) );
@@ -246,39 +252,45 @@ void bflash_def( CLI::App& app, io_context& io_ctx )
                 } );
         };
 
-        auto* bflash = app.add_subcommand( "bflash", "flash firmware via bootloader" )
-                           ->fallthrough()
-                           ->require_subcommand( 1 );
-        port_opts( *bflash, ctx->port );
+        auto* dfu = app.add_subcommand( "dfu", "DFU bootloader commands" )->require_subcommand( 1 );
 
-        auto* info =
-            bflash->add_subcommand( "info", "Query the system about bootloader information" )
-                ->fallthrough();
-        port_callback( info, []( sptr< serial_stream > ss ) -> awaitable< void > {
-                co_await bflash_info( *ss, std::cout );
+        auto* enter = dfu->add_subcommand(
+            "enter", "Send dfu command to the firmware to enter the ROM bootloader" );
+        port_opts( *enter, enter_ctx->port );
+        port_callback( enter, io_ctx, enter_ctx, []( sptr< char_port > p ) -> awaitable< void > {
+                co_await exchg( *p, "dfu" );
+                spdlog::info( "Device is entering bootloader mode" );
+        } );
+
+        auto* info = dfu->add_subcommand( "info", "Query the system about bootloader information" );
+        port_opts( *info, flash_ctx->port );
+        serial_cb( info, []( sptr< serial_stream > ss ) -> awaitable< void > {
+                co_await dfu_flash_info( *ss, std::cout );
         } );
 
         auto* download =
-            bflash->add_subcommand( "download", "Download the image flashed into the device" )
-                ->fallthrough();
-        download->add_option( "file", ctx->file, "file to download to" )->required();
-        port_callback( download, [ctx]( sptr< serial_stream > ss ) -> awaitable< void > {
-                std::ofstream f{ ctx->file };
-                co_await bflash_download( *ss, f );
+            dfu->add_subcommand( "download", "Download the image flashed into the device" );
+        port_opts( *download, flash_ctx->port );
+        download->add_option( "file", flash_ctx->file, "file to download to" )->required();
+        serial_cb( download, [flash_ctx]( sptr< serial_stream > ss ) -> awaitable< void > {
+                std::ofstream f{ flash_ctx->file };
+                co_await dfu_flash_download( *ss, f );
         } );
 
-        auto* flash =
-            bflash->add_subcommand( "flash", "Flash image to target device" )->fallthrough();
-        flash->add_option( "file", ctx->file, "file to flash into the device, has to be .bin" )
+        auto* flash = dfu->add_subcommand( "flash", "Flash image to target device" );
+        port_opts( *flash, flash_ctx->port );
+        flash
+            ->add_option( "file", flash_ctx->file, "file to flash into the device, has to be .bin" )
             ->required();
-        port_callback( flash, [ctx]( sptr< serial_stream > ss ) -> awaitable< void > {
-                std::ifstream f{ ctx->file };
-                co_await bflash_flash( *ss, f );
+        serial_cb( flash, [flash_ctx]( sptr< serial_stream > ss ) -> awaitable< void > {
+                std::ifstream f{ flash_ctx->file };
+                co_await dfu_flash_flash( *ss, f );
         } );
 
-        auto* clear = bflash->add_subcommand( "clear", "Clear the device" )->fallthrough();
-        port_callback( clear, []( sptr< serial_stream > ss ) -> awaitable< void > {
-                co_await bflash_clear( *ss );
+        auto* clear = dfu->add_subcommand( "clear", "Clear the device" );
+        port_opts( *clear, flash_ctx->port );
+        serial_cb( clear, []( sptr< serial_stream > ss ) -> awaitable< void > {
+                co_await dfu_flash_clear( *ss );
         } );
 }
 
@@ -320,7 +332,7 @@ int main( int argc, char* argv[] )
         scmdio::pool_def( app, ctx );
         scmdio::govctl_def( app, ctx );
         // scmdio::autotune_def( app, ctx ); XXX: finish
-        scmdio::bflash_def( app, ctx );
+        scmdio::dfu_def( app, ctx );
         scmdio::preset_def( app, ctx );
 
         app.require_subcommand( 1 );

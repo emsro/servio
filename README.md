@@ -5,7 +5,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nlohmann/json/master/LICENSE.MIT)
 
 Open firmware for DC servomotors written in C++20.
-The FW uses closed control loops, serial communication, and has automatized testing infrastructure.
+The FW uses closed control loops, serial communication, and has automated testing infrastructure.
 More details in [Documentation](https://emsro.github.io/servio/index.html)
 
 # Disclaimer
@@ -14,36 +14,73 @@ The project is in development state, beware that the code still might have probl
 
 # Dependencies
 
-We maintain `Dockerfile` with installed dependencies for CI.
-Use that to install adequate packages in your system, or you can just use that docker file.
+We maintain a `Dockerfile` with installed dependencies for CI.
+Use that to install adequate packages in your system, or use the Docker image directly.
 
-`Dockerfile` is stored in this repository: https://github.com/emsro/build-env
+The `Dockerfile` is stored in this repository: https://github.com/emsro/build-env
 
 # Build
 
-`cmake` is used as build system, however the setup is not trivial.
-We can't compile code for multiple platforms at the same time, hence the design is to use cmake multiple times, once for each platform.
-If you don't care about the details, you can just use `make configure` followed by `make build` in the root folder of the repository, which will correctly build for all platforms.
+CMake with presets is used as the build system. There are separate workflow presets for each target platform. The simplest way to build everything:
 
-We use cmake presets with definitions of the builds for each platform. The presets contain the name of the platform in their name, so `stm32h5_debug_build` represents build for STM32H5, and it is used as so:
 ```
-cmake --preset "stm32h5_debug_cfg"
-cmake --build --preset "stm32h5_debug_build"
-```
-`host_debug_build` represents build of stuff used on the host, and is used as so:
-```
-cmake --preset "host_debug_cfg"
-cmake --build --preset "host_debug_build"
+make build
 ```
 
-Under the hood, the presets use `SERVIO_PLATFORM` to setup which platform should be currently build and the cmake files in the project react accordingly.
+This runs both host and STM32H5 builds. Individual targets:
+
+```
+make build_host   # host tools and unit tests (_build/host/)
+make build_h5     # STM32H5 firmware (_build/stm32h5/)
+```
+
+Alternatively, use cmake workflow presets directly:
+
+```
+cmake --workflow --preset host_debug
+cmake --workflow --preset stm32h5_debug
+```
 
 # Flashing
 
-To flash the firmware, find a openocd file for your platform (`src/plt/stm32g4/openocd.cfg` for STM32G4) and use it with openocd to flash  a firmware file into the device. See `make flash` target for inspiration.
+The STM32H5 has a built-in ROM bootloader accessible via UART. Use `scmdio dfu` to interact with it.
 
-The pattern for naming the firmware is `<board_name>_fw.elf` and can be found in `build/<platform_name>`.
+To enter the bootloader from a running firmware:
 
-# Usage
+```
+_install/bin/scmdio dfu enter --comms /dev/cu.usbserial-0001
+```
 
-After the firmware was fleshed, the servo should communicate over UART via the interface connector. The communication protocol is TBD
+Alternatively, set the BOOT1 pin high (e.g. with tweezers on the board header) and power-cycle the device.
+
+Once in the bootloader, flash the firmware binary:
+
+```
+_install/bin/scmdio dfu flash --comms /dev/cu.usbserialXXXX _build/stm32h5/src/brd/proto4/proto4_fw.bin
+```
+
+After flashing, restore BOOT1 to its normal position (if changed) and power-cycle.
+
+# Configuration
+
+After flashing, load a preset configuration into the servo's EEPROM over the UART config port (230400 baud). Available presets are in the `preset/` directory (`yellow.proto4`, `kavango6.proto4`, `LX15D.proto4`):
+
+```
+_build/host/src/scmdio/scmdio preset load --comms /dev/cu.usbserialXXXX preset/yellow.proto4
+```
+
+Individual fields can also be set directly:
+
+```
+_install/bin/scmdio cfg set <field> <value> --comms /dev/cu.usbserialXXXX
+```
+
+# Communication
+
+The servo communicates over UART (230400 baud, newline-delimited text protocol) on the interface connector (UART1). Configuration is managed via `scmdio`:
+
+```
+_build/host/src/scmdio/scmdio cfg query --comms /dev/cu.usbserialXXXX
+_build/host/src/scmdio/scmdio cfg get <field> --comms /dev/cu.usbserialXXXX
+_build/host/src/scmdio/scmdio cfg set <field> <value> --comms /dev/cu.usbserialXXXX
+```

@@ -5,7 +5,7 @@
 namespace servio::scmdio
 {
 
-inline std::array< std::byte, 4 > bflash_conv( uint32_t x )
+inline std::array< std::byte, 4 > dfu_flash_conv( uint32_t x )
 {
         std::array< std::byte, 4 > res;
         for ( uint32_t i = 0; i < 4; i++ )
@@ -13,7 +13,7 @@ inline std::array< std::byte, 4 > bflash_conv( uint32_t x )
         return res;
 }
 
-inline uint32_t bflash_conv( std::span< std::byte const, 4 > data )
+inline uint32_t dfu_flash_conv( std::span< std::byte const, 4 > data )
 {
         uint32_t res = 0x00;
         for ( uint32_t i = 0; i < 4; i++ )
@@ -21,9 +21,9 @@ inline uint32_t bflash_conv( std::span< std::byte const, 4 > data )
         return res;
 }
 
-awaitable< void > bflash_info( stream_iface& port, std::ostream& os );
-awaitable< void > bflash_download( stream_iface& port, std::ostream& os );
-awaitable< void > bflash_flash( stream_iface& port, std::istream& is );
-awaitable< void > bflash_clear( stream_iface& port );
+awaitable< void > dfu_flash_info( stream_iface& port, std::ostream& os );
+awaitable< void > dfu_flash_download( stream_iface& port, std::ostream& os );
+awaitable< void > dfu_flash_flash( stream_iface& port, std::istream& is );
+awaitable< void > dfu_flash_clear( stream_iface& port );
 
 }  // namespace servio::scmdio

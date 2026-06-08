@@ -5,6 +5,7 @@
 #include "../../drv/callbacks.hpp"
 #include "../../drv/interfaces.hpp"
 #include "../../drv/retainers.hpp"
+#include "../../gov/power/power.hpp"
 #include "../rewind.hpp"
 #include "../utest.hpp"
 
@@ -71,7 +72,9 @@ struct sign_test : utest
                 co_await init_utest( *this );
 
                 em::defer d = setup_poweroff( cor.gov_ );
-                rewind( cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.5f, [] {} );
+                co_await rewind( *this, cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.5f, []() {
+                        return ecor::just();
+                } );
 
                 std::ignore = cor.gov_.activate( "power", cor.gov_mem );
                 auto* p     = dynamic_cast< gov::pow::_power_gov* >( cor.gov_.active() );

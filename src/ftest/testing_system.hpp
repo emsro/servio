@@ -1,5 +1,6 @@
 #include "../base.hpp"
 #include "../drv/interfaces.hpp"
+#include "../fw/util.hpp"
 #include "./utest.hpp"
 
 #pragma once

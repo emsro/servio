@@ -1,5 +1,5 @@
 #include "../../base.hpp"
-#include "../bflash.hpp"
+#include "../dfu_flash.hpp"
 #include "./util.hpp"
 #include "spdlog/fmt/bin_to_hex.h"
 
@@ -240,7 +240,7 @@ struct stm32_bootloader_mock : stream_iface
 
         uint32_t conv_addr( std::span< std::byte, 4 > data )
         {
-                return static_cast< uint32_t >( bflash_conv( data ) - mem_offset );
+                return static_cast< uint32_t >( dfu_flash_conv( data ) - mem_offset );
         }
 
         awaitable< bool > read( std::span< std::byte > msg ) override
@@ -261,7 +261,7 @@ TEST( scmdio, info )
         boost::asio::io_context ctx;
         std::stringstream       ss;
         stm32_bootloader_mock   m;
-        co_spawn( ctx, bflash_info( m, ss ), handle_eptr );
+        co_spawn( ctx, dfu_flash_info( m, ss ), handle_eptr );
 
         ctx.run();
 
@@ -291,9 +291,9 @@ TEST( scmdio, reflash )
         boost::asio::io_context ctx;
         std::stringstream       ss;
         stm32_bootloader_mock   m;
-        co_spawn( ctx, bflash_download( m, ss ), handle_eptr );
+        co_spawn( ctx, dfu_flash_download( m, ss ), handle_eptr );
 
-        co_spawn( ctx, bflash_flash( m, ss ), handle_eptr );
+        co_spawn( ctx, dfu_flash_flash( m, ss ), handle_eptr );
 
         ctx.run();
 }

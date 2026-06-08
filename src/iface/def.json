@@ -162,6 +162,10 @@
         {
             "name": "info",
             "desc": "Get information about the servomotor"
+        },
+        {
+            "name": "dfu",
+            "desc": "Enter the STM32H5 ROM bootloader"
         }
     ]
 }

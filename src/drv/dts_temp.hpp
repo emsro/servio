@@ -15,21 +15,11 @@ public:
         {
         }
 
-        // TODO: switch to irqs and use sentry
-
         void tick() override
         {
                 if ( ticks_ == 0 ) {
-                        HAL_StatusTypeDef s = HAL_DTS_Start( &h_ );
-                        if ( s != HAL_OK )
-                                fw::stop_exec();
-
                         if ( HAL_DTS_GetTemperature( &h_, &temp_ ) != HAL_OK )
                                 fw::stop_exec();
-
-                        if ( HAL_DTS_Stop( &h_ ) != HAL_OK )
-                                fw::stop_exec();
-
                         ticks_ = ticks_max;
                 } else
                         ticks_--;

@@ -1,5 +1,6 @@
 #include "../brd/brd.hpp"
 #include "../core/dispatcher.hpp"
+#include "../plt/stm32h5/setup.hpp"
 #include "./context.hpp"
 #include "./util.hpp"
 
@@ -48,11 +49,13 @@ int main()
                     ctx.cdrv.clock->get_us(), mon::indication_event::INCOMING_MESSAGE );
 
                 // XXX: packet handling
-                auto [succ, odata] = core::handle_message( dis, ldata, OUTPUT_BUFFER );
+                auto [st, odata] = core::handle_message( dis, ldata, OUTPUT_BUFFER );
 
-                if ( succ == status::error )
+                if ( st == status::error )
                         fw::stop_exec();
                 if ( send( *ctx.cdrv.comms, 100_ms, odata ) != status::success )
                         fw::stop_exec();
+                if ( st == status::enter_dfu )
+                        plt::enter_bootloader();
         }
 }

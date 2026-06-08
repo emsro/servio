@@ -558,6 +558,8 @@ core::drivers setup_core_drivers()
         __HAL_RCC_DTS_CLK_ENABLE();
         if ( plt::setup_dts( DTS_HANDLE, DTS ) != status::success )
                 fw::stop_exec();
+        if ( HAL_DTS_Start( &DTS_HANDLE ) != HAL_OK )
+                fw::stop_exec();
 
         __HAL_RCC_GPIOA_CLK_ENABLE();
         plt::setup_gpio( HBRDIGE_VREF_PIN );

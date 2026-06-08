@@ -104,46 +104,15 @@ struct meas_vel_test : utest
                 drv::empty_current_cb ccb;
                 curr.set_current_callback( ccb );
 
-                // --- Pre-rewind: capture raw position for 20 ms ---
-                {
-                        auto stream = co_await asrt::define< float, uint32_t >( assm.stream, 0 );
-                        microseconds stream_end = clk.get_us() + 20_ms;
-                        while ( clk.get_us() < stream_end ) {
-                                float t_ms = static_cast< float >( clk.get_us().count() ) / 1000.0F;
-                                uint32_t raw_pos = pos.get_position();
-                                co_await asrt::emit( stream, t_ms, raw_pos );
-                        }
-                }
-
-                rewind( cor, clk, pos, 250_ms, { 3.0f, 3.3f }, 0.5f, [] {} );
-
-                // --- Post-rewind: capture raw position for 20 ms ---
-                {
-                        auto stream = co_await asrt::define< float, uint32_t >( assm.stream, 0 );
-                        microseconds stream_end = clk.get_us() + 20_ms;
-                        while ( clk.get_us() < stream_end ) {
-                                float t_ms = static_cast< float >( clk.get_us().count() ) / 1000.0F;
-                                uint32_t raw_pos = pos.get_position();
-                                co_await asrt::emit( stream, t_ms, raw_pos );
-                        }
-                }
+                co_await rewind( *this, cor, clk, pos, 250_ms, { 3.0f, 3.3f }, 0.5f, []() {
+                        return ecor::just();
+                } );
 
                 float    sum            = 0.f;
                 uint32_t stream_samples = 0;
 
                 motor.set_power( p_max / 2.F );
                 co_await wait_for( *this, clk, 100_ms );
-
-                // --- After warmup: capture raw position for 20 ms ---
-                {
-                        auto stream = co_await asrt::define< float, uint32_t >( assm.stream, 0 );
-                        microseconds stream_end = clk.get_us() + 20_ms;
-                        while ( clk.get_us() < stream_end ) {
-                                float t_ms = static_cast< float >( clk.get_us().count() ) / 1000.0F;
-                                uint32_t raw_pos = pos.get_position();
-                                co_await asrt::emit( stream, t_ms, raw_pos );
-                        }
-                }
 
                 auto stream = co_await asrt::define< float, float, float, float, uint32_t, bool >(
                     assm.stream, 0 );

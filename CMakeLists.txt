@@ -66,7 +66,7 @@ target_link_libraries(emlabcpp INTERFACE magic_enum)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
-  cpmaddpackage("gh:CLIUtils/CLI11@2.4.2")
+  cpmaddpackage("gh:CLIUtils/CLI11@2.5.0")
   cpmaddpackage("gh:nlohmann/json@3.11.3")
   cpmaddpackage("gh:koniarik/spdlog#20ad67481efcd5e539857297af5c20959ff993d7")
   target_compile_definitions(spdlog PUBLIC -DSPDLOG_USE_STD_FORMAT=ON)

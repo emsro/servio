@@ -1,7 +1,7 @@
 
 #define MAGIC_ENUM_RANGE_MAX 256
 
-#include "./bflash.hpp"
+#include "./dfu_flash.hpp"
 
 #include "../base.hpp"
 
@@ -132,7 +132,7 @@ awaitable< void > read_memory( stream_iface& port, uint32_t addr, em::view< std:
 {
         co_await cmd( port, READ_MEMORY );
 
-        co_await send( port, bflash_conv( addr ) );
+        co_await send( port, dfu_flash_conv( addr ) );
         co_await wait_for_ack( port );
 
         assert( buff.size() <= 255 );
@@ -150,7 +150,7 @@ write_memory( stream_iface& port, uint32_t addr, em::view< std::byte const* > bu
         co_await cmd( port, WRITE_MEMORY );
 
         spdlog::debug( "Sending address: {}", addr );
-        co_await send( port, bflash_conv( addr ) );
+        co_await send( port, dfu_flash_conv( addr ) );
         co_await wait_for_ack( port );
 
         if ( buff.size() % 4 != 0 || buff.size() > 255 )
@@ -192,7 +192,7 @@ awaitable< chip_info const* > get_chip_id( stream_iface& port )
 
 }  // namespace
 
-awaitable< void > bflash_info( stream_iface& port, std::ostream& os )
+awaitable< void > dfu_flash_info( stream_iface& port, std::ostream& os )
 {
         co_await init_comm( port );
         uint16_t id = co_await get_id( port );
@@ -203,7 +203,7 @@ awaitable< void > bflash_info( stream_iface& port, std::ostream& os )
                 os << "cmd: " << magic_enum::enum_name( (cmd_e) x ) << '\n';
 }
 
-awaitable< void > bflash_download( stream_iface& port, std::ostream& os )
+awaitable< void > dfu_flash_download( stream_iface& port, std::ostream& os )
 {
         co_await init_comm( port );
         chip_info const* ci = co_await get_chip_id( port );
@@ -218,7 +218,7 @@ awaitable< void > bflash_download( stream_iface& port, std::ostream& os )
         spdlog::info( "download done" );
 }
 
-awaitable< void > bflash_flash( stream_iface& port, std::istream& is )
+awaitable< void > dfu_flash_flash( stream_iface& port, std::istream& is )
 {
         co_await init_comm( port );
         chip_info const* ci = co_await get_chip_id( port );
@@ -237,7 +237,7 @@ awaitable< void > bflash_flash( stream_iface& port, std::istream& is )
         spdlog::info( "flash done" );
 }
 
-awaitable< void > bflash_clear( stream_iface& port )
+awaitable< void > dfu_flash_clear( stream_iface& port )
 {
         co_await init_comm( port );
         spdlog::info( "Clearing device" );

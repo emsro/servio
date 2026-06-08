@@ -100,4 +100,6 @@ status setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint3
 
 status setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst );
 
+[[noreturn]] void enter_bootloader();
+
 }  // namespace servio::plt

@@ -86,8 +86,9 @@ void handle_gov_message(
             } );
 }
 
-void handle_message( dispatcher& dis, vari::vref< iface::stmts > inpt, iface::root_ser out )
+status handle_message( dispatcher& dis, vari::vref< iface::stmts > inpt, iface::root_ser out )
 {
+        bool dfu_requested = false;
         inpt.visit(
             [&]( iface::govctl_stmt const& g ) {
                     handle_gov_message( g.sub, dis.mem, dis.gov, std::move( out ) );
@@ -181,7 +182,12 @@ void handle_message( dispatcher& dis, vari::vref< iface::stmts > inpt, iface::ro
                     json::object_ser obj{ as };
                     obj( "version", git::Describe() );
                     obj( "commit", git::CommitSHA1() );
+            },
+            [&]( iface::dfu_stmt const& ) {
+                    std::move( out ).ok();
+                    dfu_requested = true;
             } );
+        return dfu_requested ? status::enter_dfu : status::success;
 }
 }  // namespace
 
@@ -199,8 +205,7 @@ std::tuple< status, em::view< std::byte* > > handle_message(
         parser::parser p{ inpt };
         auto           res = iface::parse( p ).visit(
             [&]( vari::vref< iface::stmt > s ) -> R {
-                    handle_message( dis, s->sub, out );
-                    return status::success;
+                    return handle_message( dis, s->sub, out );
             },
             [&]( iface::invalid_stmt& st ) -> R {
                     iface::root_ser root{ out };

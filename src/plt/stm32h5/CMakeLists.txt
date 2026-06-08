@@ -29,6 +29,7 @@ target_link_options(
 servio_add_library(
   TARGET platform
   SOURCES adc.cpp
+          boot.cpp
           clock.cpp
           uart.cpp
           config.cpp
