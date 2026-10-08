@@ -12,7 +12,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Install graphviz
-              run: sudo apt install graphviz plantuml -y
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install -y graphviz plantuml
 
             - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
               with:
