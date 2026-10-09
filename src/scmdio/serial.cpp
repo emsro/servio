@@ -3,7 +3,7 @@
 #include "./field_util.hpp"
 #include "./port.hpp"
 
-#include <emlabcpp/view.h>
+#include <emlabcpp/view.hpp>
 
 // TODO: there might be a better way of obtaining this?
 constexpr std::size_t buffer_size = 1024;

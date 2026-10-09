@@ -2,7 +2,7 @@
 #include "../lib/parser.hpp"
 #include "./base.hpp"
 
-#include <emlabcpp/experimental/string_buffer.h>
+#include <emlabcpp/experimental/string_buffer.hpp>
 #include <vari/vopt.h>
 #include <vari/vval.h>
 

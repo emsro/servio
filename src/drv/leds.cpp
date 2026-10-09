@@ -2,7 +2,7 @@
 
 #include "../fw/util.hpp"
 
-#include <emlabcpp/algorithm.h>
+#include <emlabcpp/algorithm.hpp>
 
 namespace servio::drv
 {

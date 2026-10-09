@@ -2,7 +2,7 @@
 
 #include "./central_sentry_iface.hpp"
 
-#include <emlabcpp/static_vector.h>
+#include <emlabcpp/static_vector.hpp>
 #include <tuple>
 
 namespace em = emlabcpp;

@@ -2,8 +2,8 @@
 
 #include "./port.hpp"
 
-#include <emlabcpp/algorithm.h>
-#include <emlabcpp/enumerate.h>
+#include <emlabcpp/algorithm.hpp>
+#include <emlabcpp/enumerate.hpp>
 #include <iostream>
 
 namespace servio::scmdio

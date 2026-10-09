@@ -4,7 +4,7 @@
 #include "../lib/parser.hpp"
 #include "../status.hpp"
 
-#include <emlabcpp/experimental/string_buffer.h>
+#include <emlabcpp/experimental/string_buffer.hpp>
 #include <vari/vref.h>
 
 namespace servio::cfg

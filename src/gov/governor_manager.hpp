@@ -3,7 +3,7 @@
 
 #include "./governor.hpp"
 
-#include <emlabcpp/static_vector.h>
+#include <emlabcpp/static_vector.hpp>
 
 namespace servio::gov
 {

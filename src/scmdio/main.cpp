@@ -7,7 +7,7 @@
 #include "./preset.hpp"
 #include "./serial.hpp"
 
-#include <emlabcpp/algorithm.h>
+#include <emlabcpp/algorithm.hpp>
 #include <filesystem>
 
 namespace em = emlabcpp;

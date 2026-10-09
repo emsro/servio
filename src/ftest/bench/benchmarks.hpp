@@ -9,7 +9,7 @@
 #include "../utest.hpp"
 #include "./base.hpp"
 
-#include <emlabcpp/enumerate.h>
+#include <emlabcpp/enumerate.hpp>
 
 namespace servio::ftest::bench
 {

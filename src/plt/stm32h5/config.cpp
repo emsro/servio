@@ -3,7 +3,7 @@
 #include "../platform.hpp"
 #include "setup.hpp"
 
-#include <emlabcpp/defer.h>
+#include <emlabcpp/defer.hpp>
 #include <numbers>
 
 namespace servio::plt

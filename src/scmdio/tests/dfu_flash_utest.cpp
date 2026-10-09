@@ -4,7 +4,7 @@
 #include "spdlog/fmt/bin_to_hex.h"
 
 #include <deque>
-#include <emlabcpp/experimental/coro/owning_coroutine_handle.h>
+#include <emlabcpp/experimental/coro/owning_coroutine_handle.hpp>
 #include <gtest/gtest.h>
 
 namespace servio::scmdio

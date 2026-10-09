@@ -2,7 +2,7 @@
 
 #include "../fw/util.hpp"
 
-#include <emlabcpp/defer.h>
+#include <emlabcpp/defer.hpp>
 
 namespace servio::drv
 {

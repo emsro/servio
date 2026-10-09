@@ -2,8 +2,8 @@
 
 #include "../drv/interfaces.hpp"
 
-#include <emlabcpp/experimental/decompose.h>
-#include <emlabcpp/experimental/function_view.h>
+#include <emlabcpp/experimental/decompose.hpp>
+#include <emlabcpp/experimental/function_view.hpp>
 
 namespace servio::core
 {

@@ -1,6 +1,6 @@
 #include "./effects.hpp"
 
-#include <emlabcpp/algorithm.h>
+#include <emlabcpp/algorithm.hpp>
 
 namespace em = emlabcpp;
 

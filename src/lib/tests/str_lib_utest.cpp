@@ -2,7 +2,7 @@
 
 #include "../str_lib.hpp"
 
-#include <emlabcpp/algorithm.h>
+#include <emlabcpp/algorithm.hpp>
 #include <gtest/gtest.h>
 #include <regex>
 #include <source_location>
@@ -54,8 +54,8 @@ void check(
                             << "\n loc: " << loc.file_name() << ":" << loc.line();
         } else {
                 if constexpr ( !std::is_same_v< T, _invalid > )
-                        FAIL() << "Expected result, got none"
-                               << "\n loc: " << loc.file_name() << ":" << loc.line();
+                        FAIL() << "Expected result, got none" << "\n loc: " << loc.file_name()
+                               << ":" << loc.line();
         }
 }
 

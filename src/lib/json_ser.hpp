@@ -2,7 +2,7 @@
 
 #include "./str_lib.hpp"
 
-#include <emlabcpp/view.h>
+#include <emlabcpp/view.hpp>
 
 namespace servio::json
 {

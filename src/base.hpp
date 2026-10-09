@@ -1,8 +1,8 @@
 #include <chrono>
 #include <cstdint>
-#include <emlabcpp/algorithm.h>
-#include <emlabcpp/error_code.h>
-#include <emlabcpp/quantity.h>
+#include <emlabcpp/algorithm.hpp>
+#include <emlabcpp/error_code.hpp>
+#include <emlabcpp/quantity.hpp>
 #include <numbers>
 #include <optional>
 

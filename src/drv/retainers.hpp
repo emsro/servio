@@ -1,6 +1,6 @@
 #include "./interfaces.hpp"
 
-#include <emlabcpp/defer.h>
+#include <emlabcpp/defer.hpp>
 
 #pragma once
 

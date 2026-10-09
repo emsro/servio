@@ -3,7 +3,7 @@
 #include "base.hpp"
 #include "spdlog/fmt/bin_to_hex.h"
 
-#include <emlabcpp/experimental/cobs.h>
+#include <emlabcpp/experimental/cobs.hpp>
 #include <vector>
 
 namespace em = emlabcpp;

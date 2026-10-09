@@ -1,6 +1,6 @@
 #include "../base.hpp"
 
-#include <emlabcpp/experimental/matrix.h>
+#include <emlabcpp/experimental/matrix.hpp>
 
 #pragma once
 

@@ -5,7 +5,7 @@
 #include "../mon/monitor.hpp"
 #include "../mtr/metrics.hpp"
 
-#include <emlabcpp/pmr/stack_resource.h>
+#include <emlabcpp/pmr/stack_resource.hpp>
 
 namespace servio::core
 {

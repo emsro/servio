@@ -1,4 +1,4 @@
-#include <emlabcpp/static_function.h>
+#include <emlabcpp/static_function.hpp>
 
 #pragma once
 

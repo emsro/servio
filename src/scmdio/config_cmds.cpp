@@ -2,7 +2,7 @@
 #include "./serial.hpp"
 
 #include <boost/asio.hpp>
-#include <emlabcpp/algorithm.h>
+#include <emlabcpp/algorithm.hpp>
 #include <fstream>
 #include <iostream>
 

@@ -8,9 +8,9 @@
 #include "../dispatcher.hpp"
 
 #include <cstdint>
-#include <emlabcpp/algorithm.h>
-#include <emlabcpp/pmr/new_delete_resource.h>
-#include <emlabcpp/range.h>
+#include <emlabcpp/algorithm.hpp>
+#include <emlabcpp/pmr/new_delete_resource.hpp>
+#include <emlabcpp/range.hpp>
 #include <git.h>
 #include <gtest/gtest.h>
 #include <random>

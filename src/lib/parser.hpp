@@ -2,7 +2,7 @@
 
 #include "./str_lib.hpp"
 
-#include <emlabcpp/experimental/string_buffer.h>
+#include <emlabcpp/experimental/string_buffer.hpp>
 #include <string_view>
 #include <vari/vopt.h>
 

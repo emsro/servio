@@ -1,6 +1,6 @@
 #include "../platform.hpp"
 
-#include <emlabcpp/view.h>
+#include <emlabcpp/view.hpp>
 
 namespace em = emlabcpp;
 

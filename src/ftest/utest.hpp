@@ -12,7 +12,7 @@
 #include <asrtrpp/stream.hpp>
 #include <asrtrpp/task_unit.hpp>
 #include <bitset>
-#include <emlabcpp/defer.h>
+#include <emlabcpp/defer.hpp>
 #include <source_location>
 #include <string_view>
 #include <type_traits>

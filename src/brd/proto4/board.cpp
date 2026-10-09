@@ -18,7 +18,7 @@
 #include "../brd.hpp"
 #include "setup.hpp"
 
-#include <emlabcpp/defer.h>
+#include <emlabcpp/defer.hpp>
 
 namespace em = emlabcpp;
 

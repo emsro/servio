@@ -3,8 +3,8 @@
 #include "./bits/uart.hpp"
 #include "./interfaces.hpp"
 
-#include <emlabcpp/experimental/cobs.h>
-#include <emlabcpp/experimental/function_view.h>
+#include <emlabcpp/experimental/cobs.hpp>
+#include <emlabcpp/experimental/function_view.hpp>
 
 #pragma once
 

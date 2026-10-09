@@ -6,7 +6,7 @@
 #include "./util.hpp"
 
 #include <deque>
-#include <emlabcpp/pmr/new_delete_resource.h>
+#include <emlabcpp/pmr/new_delete_resource.hpp>
 
 namespace servio::scmdio
 {

@@ -5,9 +5,9 @@
 #include "../iface/base.hpp"
 #include "./base.hpp"
 
-#include <emlabcpp/experimental/cfg/handler.h>
-#include <emlabcpp/experimental/function_view.h>
-#include <emlabcpp/static_function.h>
+#include <emlabcpp/experimental/cfg/handler.hpp>
+#include <emlabcpp/experimental/function_view.hpp>
+#include <emlabcpp/static_function.hpp>
 
 namespace servio::cfg
 {

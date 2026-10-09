@@ -5,8 +5,8 @@
 #include "../fw/util.hpp"
 #include "../status.hpp"
 
-#include <emlabcpp/experimental/cfg/handler.h>
-#include <emlabcpp/experimental/cfg/page.h>
+#include <emlabcpp/experimental/cfg/handler.hpp>
+#include <emlabcpp/experimental/cfg/page.hpp>
 #include <span>
 
 namespace em = emlabcpp;

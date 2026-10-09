@@ -6,8 +6,8 @@
 #include "../lib/json_ser.hpp"
 #include "../status.hpp"
 
-#include <emlabcpp/experimental/function_view.h>
-#include <emlabcpp/pmr/memory_resource.h>
+#include <emlabcpp/experimental/function_view.hpp>
+#include <emlabcpp/pmr/memory_resource.hpp>
 #include <span>
 #include <string_view>
 #include <zll.hpp>

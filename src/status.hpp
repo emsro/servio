@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cstdint>
-#include <emlabcpp/error_code.h>
+#include <emlabcpp/error_code.hpp>
 
 namespace em = emlabcpp;
 

@@ -3,7 +3,7 @@
 #include "../base.hpp"
 
 #include <array>
-#include <emlabcpp/defer.h>
+#include <emlabcpp/defer.hpp>
 #include <iostream>
 
 namespace servio::sim

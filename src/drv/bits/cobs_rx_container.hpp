@@ -3,7 +3,7 @@
 #include "../../base.hpp"
 #include "./rx_buffer.hpp"
 
-#include <emlabcpp/experimental/cobs.h>
+#include <emlabcpp/experimental/cobs.hpp>
 
 namespace em = emlabcpp;
 

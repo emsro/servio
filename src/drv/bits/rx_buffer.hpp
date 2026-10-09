@@ -1,6 +1,6 @@
 #pragma once
 
-#include <emlabcpp/static_circular_buffer.h>
+#include <emlabcpp/static_circular_buffer.hpp>
 
 namespace em = emlabcpp;
 

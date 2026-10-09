@@ -3,7 +3,7 @@
 #include "../governor.hpp"
 #include "./iface.hpp"
 
-#include <emlabcpp/pid.h>
+#include <emlabcpp/pid.hpp>
 
 namespace servio::gov::pow
 {

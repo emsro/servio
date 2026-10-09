@@ -2,8 +2,8 @@
 #include "../linear_converter.hpp"
 
 #include <cstdint>
-#include <emlabcpp/algorithm.h>
-#include <emlabcpp/range.h>
+#include <emlabcpp/algorithm.hpp>
+#include <emlabcpp/range.hpp>
 #include <gtest/gtest.h>
 #include <random>
 

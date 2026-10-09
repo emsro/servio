@@ -4,8 +4,8 @@
 //
 #include <avakar/atom.h>
 #include <boost/asio.hpp>
-#include <emlabcpp/experimental/string_buffer.h>
-#include <emlabcpp/view.h>
+#include <emlabcpp/experimental/string_buffer.hpp>
+#include <emlabcpp/view.hpp>
 #include <nlohmann/json.hpp>
 #include <spdlog/spdlog.h>
 
