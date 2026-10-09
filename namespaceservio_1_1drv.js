@@ -87,9 +87,9 @@ var namespaceservio_1_1drv =
     [ "spin_with_timeout", "namespaceservio_1_1drv.html#ab5a00aab7fb2191912d0d268bc82af56", null ],
     [ "TEST", "namespaceservio_1_1drv.html#a9d4caa145e7a9eb34292a6ce97cce774", null ],
     [ "wait_for", "namespaceservio_1_1drv.html#a40b5c094f9145bb1145198ee924ff3cb", null ],
-    [ "ADC_CURR_POS_VCC_SEQUENCE", "namespaceservio_1_1drv.html#a62753f44eb44e93d933fb1916219f8de", null ],
-    [ "ADC_CURR_VCC_SEQUENCE", "namespaceservio_1_1drv.html#a18254cc3788fca41ec17fbbcc5ed7e79", null ],
-    [ "ADC_FULL_SEQUENCE", "namespaceservio_1_1drv.html#a50911cebc046f58f90aa62585a1abefc", null ],
+    [ "ADC_CURR_POS_VCC_SEQUENCE", "namespaceservio_1_1drv.html#a789a6255cb2fcf458f9fcb2c8bfc26aa", null ],
+    [ "ADC_CURR_VCC_SEQUENCE", "namespaceservio_1_1drv.html#a5278a3509ee0bf54cb1c1e32c1bb4ca2", null ],
+    [ "ADC_FULL_SEQUENCE", "namespaceservio_1_1drv.html#a1569e5c10d22f877d55cf6ca6e60f02d", null ],
     [ "EMPTY_CALLBACK", "namespaceservio_1_1drv.html#adfb61af954b514cf4ba6d1ca47dad13b", null ],
     [ "EMPTY_DETAILED_CALLBACK", "namespaceservio_1_1drv.html#a824590036b2e9e63d30b23e1b35fe099", null ],
     [ "EMPTY_PERIOD_CB", "namespaceservio_1_1drv.html#a2312e09db62ce5efa6d7aa8de3cef65d", null ]
