@@ -5,8 +5,9 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   target_include_directories(drvlib INTERFACE ../)
   target_link_libraries(drvlib PUBLIC servio_emlabcpp)
 
-  servio_expand_test(TARGET servio_utest SOURCES
-                     ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS drvlib)
+  if(BUILD_TESTING)
+    add_subdirectory(tests)
+  endif()
 
 else()
 

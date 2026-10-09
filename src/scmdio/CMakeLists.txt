@@ -18,5 +18,6 @@ servio_add_executable(
 
 install(TARGETS scmdio RUNTIME DESTINATION bin)
 
-servio_expand_test(TARGET servio_utest SOURCES
-                   ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp LIBS scmdiolib)
+if(BUILD_TESTING)
+  add_subdirectory(tests)
+endif()

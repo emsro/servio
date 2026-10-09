@@ -23,8 +23,8 @@ target_link_libraries(currgovlib PUBLIC currgovlibb)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
-  servio_expand_test(
-    TARGET servio_utest SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/tests/*utest.cpp
-    LIBS currgovlib)
+  if(BUILD_TESTING)
+    add_subdirectory(tests)
+  endif()
 
 endif()

@@ -124,30 +124,32 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
     URL_HASH
       SHA256=9bed76128d4e46755dbe818487788c6fceb6f72b378f4daa49b7e1e600d9088d
     SYSTEM EXCLUDE_FROM_ALL)
-  set(INSTALL_GTEST
-      OFF
-      CACHE BOOL "")
-  set(gtest_force_shared_crt
-      ON
-      CACHE BOOL "")
-  FetchContent_Declare(
-    googletest
-    GIT_REPOSITORY https://github.com/google/googletest
-    GIT_TAG v1.18.0
-    GIT_SHALLOW TRUE
-    SYSTEM EXCLUDE_FROM_ALL)
-  FetchContent_MakeAvailable(spdlog Boost googletest)
+  FetchContent_MakeAvailable(spdlog Boost)
   target_compile_definitions(spdlog PUBLIC -DSPDLOG_USE_STD_FORMAT=ON)
 
   target_link_libraries(servio_emlabcpp INTERFACE nlohmann_json::nlohmann_json)
 
   include(CTest)
-  enable_testing()
+  if(BUILD_TESTING)
+    set(INSTALL_GTEST
+        OFF
+        CACHE BOOL "")
+    set(gtest_force_shared_crt
+        ON
+        CACHE BOOL "")
+    FetchContent_Declare(
+      googletest
+      GIT_REPOSITORY https://github.com/google/googletest
+      GIT_TAG v1.18.0
+      GIT_SHALLOW TRUE
+      SYSTEM EXCLUDE_FROM_ALL)
+    FetchContent_MakeAvailable(googletest)
 
-  servio_add_executable(TARGET servio_utest LIBS servio_emlabcpp gtest_main
-                                                 serviolib)
-  include(GoogleTest)
-  gtest_discover_tests(servio_utest)
+    servio_add_executable(TARGET servio_utest LIBS servio_emlabcpp gtest_main
+                                                   serviolib)
+    include(GoogleTest)
+    gtest_discover_tests(servio_utest)
+  endif()
   add_subdirectory(src/plt/host)
   add_subdirectory(src)
 
