@@ -207,7 +207,7 @@ var NAVTREEINDEX7 =
 "power_8hpp.html":[19,0,1,9,2,4],
 "power_8hpp_source.html":[19,0,1,9,2,4],
 "power__utest_8cpp.html":[19,0,1,9,2,0,0],
-"power__utest_8cpp.html#afeababe5d894ae022487a2810d7f78a7":[19,0,1,9,2,0,0,0],
+"power__utest_8cpp.html#a51ff73a6a10beecc1a162989e4d42ab0":[19,0,1,9,2,0,0,0],
 "preset_8cpp.html":[19,0,1,16,17],
 "preset_8cpp.html#a54e3bd40a8656f4f5610d379bc3484e6":[19,0,1,16,17,2],
 "preset_8cpp.html#a58574b7237f6a644eaa2df1da28f8529":[19,0,1,16,17,0],
