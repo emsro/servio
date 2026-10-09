@@ -2,8 +2,9 @@ function(servio_gen_iface)
   cmake_parse_arguments(A "" "TARGET;DEF;HDR;PARSER;DOC" "" ${ARGN})
   add_custom_command(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/${A_HDR}
-    COMMAND python3 ${CMAKE_CURRENT_FUNCTION_LIST_DIR}/gen.py --definition
-            ${A_DEF} --hdr ${A_HDR} --parser ${A_PARSER} --doc ${A_DOC}
+    COMMAND
+      ${Python3_EXECUTABLE} ${CMAKE_CURRENT_FUNCTION_LIST_DIR}/gen.py
+      --definition ${A_DEF} --hdr ${A_HDR} --parser ${A_PARSER} --doc ${A_DOC}
     COMMENT
       "Generating interface header, parser, and documentation from: def.json"
     VERBATIM

@@ -41,6 +41,20 @@
             }
         },
         {
+            "name": "windows_debug",
+            "inherits": "host_debug",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            },
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_CXX_COMPILER_LAUNCHER": ""
+            }
+        },
+        {
             "name": "stm32h5_debug",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/_build/${presetName}",
@@ -79,6 +93,10 @@
             "configurePreset": "host_release"
         },
         {
+            "name": "windows_debug",
+            "configurePreset": "windows_debug"
+        },
+        {
             "name": "stm32h5_debug",
             "configurePreset": "stm32h5_debug"
         },
@@ -103,6 +121,10 @@
         {
             "name": "host_release",
             "configurePreset": "host_release"
+        },
+        {
+            "name": "windows_debug",
+            "configurePreset": "windows_debug"
         }
     ],
     "workflowPresets": [
@@ -171,6 +193,23 @@
                 {
                     "type": "test",
                     "name": "host_release"
+                }
+            ]
+        },
+        {
+            "name": "windows_debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows_debug"
+                },
+                {
+                    "type": "build",
+                    "name": "windows_debug"
+                },
+                {
+                    "type": "test",
+                    "name": "windows_debug"
                 }
             ]
         },

@@ -21,6 +21,7 @@ if(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 endif()
 
 include(FetchContent)
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
 include(cmake/flags.cmake)
 include(cmake/utils.cmake)
 
