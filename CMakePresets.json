@@ -41,6 +41,13 @@
             }
         },
         {
+            "name": "host_static",
+            "inherits": "host_release",
+            "cacheVariables": {
+                "CMAKE_EXE_LINKER_FLAGS": "-static"
+            }
+        },
+        {
             "name": "windows_debug",
             "inherits": "host_debug",
             "condition": {
@@ -52,6 +59,13 @@
                 "CMAKE_C_COMPILER": "clang",
                 "CMAKE_CXX_COMPILER": "clang++",
                 "CMAKE_CXX_COMPILER_LAUNCHER": ""
+            }
+        },
+        {
+            "name": "windows_release",
+            "inherits": "windows_debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
             }
         },
         {
@@ -93,8 +107,19 @@
             "configurePreset": "host_release"
         },
         {
+            "name": "host_static",
+            "configurePreset": "host_static",
+            "targets": [
+                "scmdio"
+            ]
+        },
+        {
             "name": "windows_debug",
             "configurePreset": "windows_debug"
+        },
+        {
+            "name": "windows_release",
+            "configurePreset": "windows_release"
         },
         {
             "name": "stm32h5_debug",
@@ -125,6 +150,10 @@
         {
             "name": "windows_debug",
             "configurePreset": "windows_debug"
+        },
+        {
+            "name": "windows_release",
+            "configurePreset": "windows_release"
         }
     ],
     "workflowPresets": [
@@ -197,6 +226,19 @@
             ]
         },
         {
+            "name": "host_static",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "host_static"
+                },
+                {
+                    "type": "build",
+                    "name": "host_static"
+                }
+            ]
+        },
+        {
             "name": "windows_debug",
             "steps": [
                 {
@@ -210,6 +252,23 @@
                 {
                     "type": "test",
                     "name": "windows_debug"
+                }
+            ]
+        },
+        {
+            "name": "windows_release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows_release"
+                },
+                {
+                    "type": "build",
+                    "name": "windows_release"
+                },
+                {
+                    "type": "test",
+                    "name": "windows_release"
                 }
             ]
         },
