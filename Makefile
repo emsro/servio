@@ -8,13 +8,13 @@ BMP_PORTS := $(sort $(wildcard /dev/cu.usbmodem*))
 BMP_GDB   ?= $(firstword $(BMP_PORTS))
 BMP_UART  ?= $(lastword $(BMP_PORTS))
 
-FW_ELF    ?= _build/stm32h5/src/brd/proto4/proto4_fw.elf
-FTEST_ELF ?= _build/stm32h5/src/brd/proto4/proto4_fw_ftest.elf
+FW_ELF    ?= _build/stm32h5_debug/src/brd/proto4/proto4_fw.elf
+FTEST_ELF ?= _build/stm32h5_debug/src/brd/proto4/proto4_fw_ftest.elf
 FTEST_OUT  = _test/yellow.proto4/fw/proto4_fw_ftest
 PRESET    ?= preset/yellow.proto4
 
-SCMDIO     = _build/host/src/scmdio/scmdio
-ASRTIO     = _build/host/src/ftester/ftester
+SCMDIO     = _build/host_debug/src/scmdio/scmdio
+ASRTIO     = _build/host_debug/src/ftester/ftester
 ASRT_TIMEOUT ?= 30000
 FTEST_START_DELAY ?= 5
 FTEST_RETRY_DELAY ?= 1
@@ -45,7 +45,7 @@ build:
 
 build_host:
 	cmake --workflow --preset "host_debug"
-	cmake --install _build/host --prefix _install
+	cmake --install _build/host_debug --prefix _install
 build_h5:
 	cmake --workflow --preset "stm32h5_debug"
 build_asan:

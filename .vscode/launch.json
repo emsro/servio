@@ -33,7 +33,7 @@
             "name": "(gdb) Launch scmdio",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/_build/host/src/scmdio/scmdio",
+            "program": "${workspaceFolder}/_build/host_debug/src/scmdio/scmdio",
             "args": [
                 "cfg",
                 "-c",
@@ -64,7 +64,7 @@
             "name": "(gdb) Launch utest",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/_build/host/servio_utest",
+            "program": "${workspaceFolder}/_build/host_debug/servio_utest",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

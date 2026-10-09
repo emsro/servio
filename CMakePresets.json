@@ -4,9 +4,9 @@
         {
             "name": "host_debug",
             "generator": "Ninja",
-            "binaryDir": "_build/host",
+            "binaryDir": "${sourceDir}/_build/${presetName}",
             "cacheVariables": {
-                "CMAKE_TYPE": "Debug",
+                "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "SERVIO_PLATFORM": "host",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache"
@@ -15,9 +15,9 @@
         {
             "name": "host_asan",
             "generator": "Ninja",
-            "binaryDir": "_build/asan",
+            "binaryDir": "${sourceDir}/_build/${presetName}",
             "cacheVariables": {
-                "CMAKE_TYPE": "Debug",
+                "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "SERVIO_PLATFORM": "host",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
@@ -26,16 +26,30 @@
             }
         },
         {
+            "name": "host_release",
+            "inherits": "host_debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+            }
+        },
+        {
             "name": "stm32h5_debug",
             "generator": "Ninja",
-            "binaryDir": "_build/stm32h5/",
+            "binaryDir": "${sourceDir}/_build/${presetName}",
             "cacheVariables": {
-                "CMAKE_TYPE": "Debug",
+                "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "SERVIO_PLATFORM": "stm32h5",
                 "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchain/arm-none-eabi-gcc.cmake",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
+            }
+        },
+        {
+            "name": "stm32h5_release",
+            "inherits": "stm32h5_debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
             }
         }
     ],
@@ -49,8 +63,16 @@
             "configurePreset": "host_asan"
         },
         {
+            "name": "host_release",
+            "configurePreset": "host_release"
+        },
+        {
             "name": "stm32h5_debug",
             "configurePreset": "stm32h5_debug"
+        },
+        {
+            "name": "stm32h5_release",
+            "configurePreset": "stm32h5_release"
         }
     ],
     "testPresets": [
@@ -61,6 +83,10 @@
         {
             "name": "host_asan",
             "configurePreset": "host_asan"
+        },
+        {
+            "name": "host_release",
+            "configurePreset": "host_release"
         }
     ],
     "workflowPresets": [
@@ -99,6 +125,23 @@
             ]
         },
         {
+            "name": "host_release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "host_release"
+                },
+                {
+                    "type": "build",
+                    "name": "host_release"
+                },
+                {
+                    "type": "test",
+                    "name": "host_release"
+                }
+            ]
+        },
+        {
             "name": "stm32h5_debug",
             "steps": [
                 {
@@ -108,6 +151,19 @@
                 {
                     "type": "build",
                     "name": "stm32h5_debug"
+                }
+            ]
+        },
+        {
+            "name": "stm32h5_release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "stm32h5_release"
+                },
+                {
+                    "type": "build",
+                    "name": "stm32h5_release"
                 }
             ]
         }
