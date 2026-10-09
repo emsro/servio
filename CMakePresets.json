@@ -26,6 +26,14 @@
             }
         },
         {
+            "name": "host_ubsan",
+            "inherits": "host_debug",
+            "cacheVariables": {
+                "CMAKE_C_FLAGS": "-fsanitize=undefined -fno-sanitize-recover=all",
+                "CMAKE_CXX_FLAGS": "-fsanitize=undefined -fno-sanitize-recover=all"
+            }
+        },
+        {
             "name": "host_release",
             "inherits": "host_debug",
             "cacheVariables": {
@@ -63,6 +71,10 @@
             "configurePreset": "host_asan"
         },
         {
+            "name": "host_ubsan",
+            "configurePreset": "host_ubsan"
+        },
+        {
             "name": "host_release",
             "configurePreset": "host_release"
         },
@@ -83,6 +95,10 @@
         {
             "name": "host_asan",
             "configurePreset": "host_asan"
+        },
+        {
+            "name": "host_ubsan",
+            "configurePreset": "host_ubsan"
         },
         {
             "name": "host_release",
@@ -121,6 +137,23 @@
                 {
                     "type": "test",
                     "name": "host_asan"
+                }
+            ]
+        },
+        {
+            "name": "host_ubsan",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "host_ubsan"
+                },
+                {
+                    "type": "build",
+                    "name": "host_ubsan"
+                },
+                {
+                    "type": "test",
+                    "name": "host_ubsan"
                 }
             ]
         },

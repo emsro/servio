@@ -1,6 +1,7 @@
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
   add_library(drvlib bits/rx_buffer.cpp)
+  servio_compile_options(drvlib)
   target_include_directories(drvlib INTERFACE ../)
   target_link_libraries(drvlib PUBLIC servio_emlabcpp)
 

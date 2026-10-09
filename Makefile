@@ -1,6 +1,6 @@
 
 .DEFAULT_GOAL := build
-.PHONY: build build_host build_h5 build_asan test test_asan flash_fw flash ftest load_preset
+.PHONY: build build_host build_h5 build_asan build_ubsan test test_asan test_ubsan flash_fw flash ftest load_preset
 
 FIND_FILTER = -not \( -path ./build -prune \) -not \( -path ./stm32-cmake -prune \) -not \( -path ./.doxygen -prune \)
 
@@ -50,10 +50,14 @@ build_h5:
 	cmake --workflow --preset "stm32h5_debug"
 build_asan:
 	cmake --workflow --preset "host_asan"
+build_ubsan:
+	cmake --workflow --preset "host_ubsan"
 
 test: build_host
 
 test_asan: build_asan
+
+test_ubsan: build_ubsan
 
 # Flash the main firmware (needed before load_preset on a fresh board)
 flash_fw:
