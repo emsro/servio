@@ -6,6 +6,10 @@
 #include <emlabcpp/experimental/cobs.hpp>
 #include <vector>
 
+#ifndef _WIN32
+#include <termios.h>
+#endif
+
 namespace em = emlabcpp;
 
 namespace servio::scmdio
@@ -38,15 +42,19 @@ struct stream_iface
 
 inline void flush_port( boost::asio::serial_port& p )
 {
-        int const res = ::tcflush( p.lowest_layer().native_handle(), TCIOFLUSH );
-        if ( res != 0 )
+#ifdef _WIN32
+        bool const ok = ::PurgeComm( p.native_handle(), PURGE_RXCLEAR | PURGE_TXCLEAR ) != 0;
+#else
+        bool const ok = ::tcflush( p.native_handle(), TCIOFLUSH ) == 0;
+#endif
+        if ( !ok )
                 spdlog::error( "Failed to flush serial buffer" );
 }
 
 struct serial_stream : stream_iface
 {
         serial_stream( io_context& io_ctx, std::filesystem::path const& p, uint32_t baudrate )
-          : port( io_ctx, check_path( p ) )
+          : port( io_ctx, check_path( p ).string() )
         {
                 port.set_option( boost::asio::serial_port_base::baud_rate( baudrate ) );
                 flush_port( port );
@@ -74,7 +82,7 @@ struct cobs_port : port_iface
 
 {
         cobs_port( io_context& context, std::filesystem::path const& p, uint32_t baudrate )
-          : port( context, check_path( p ) )
+          : port( context, check_path( p ).string() )
         {
                 port.set_option( boost::asio::serial_port_base::baud_rate( baudrate ) );
                 flush_port( port );
@@ -93,7 +101,7 @@ struct char_port : port_iface
         static constexpr char ch = '\n';
 
         char_port( io_context& context, std::filesystem::path const& p, uint32_t baudrate )
-          : port( context, check_path( p ) )
+          : port( context, check_path( p ).string() )
         {
                 port.set_option( boost::asio::serial_port_base::baud_rate( baudrate ) );
                 flush_port( port );

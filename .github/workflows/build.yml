@@ -76,6 +76,21 @@ jobs:
 
             - run: run-clang-tidy -p _build/host_debug -quiet "^$GITHUB_WORKSPACE/src/"
 
+    windows:
+        runs-on: windows-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  submodules: recursive
+
+            - uses: ilammy/msvc-dev-cmd@v1
+
+            - run: cmake --workflow --preset windows_debug
+
+            - run: cmake --install _build/windows_debug --prefix _install
+
+            - run: ./_install/bin/scmdio.exe --help
+
     firmware:
         strategy:
             fail-fast: false
