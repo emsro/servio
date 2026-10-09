@@ -56,6 +56,26 @@ jobs:
 
             - run: cmake --workflow --preset host_asan
 
+    clang-tidy:
+        runs-on: ubuntu-latest
+        container: archlinux:latest
+        env:
+            CC: clang
+            CXX: clang++
+        steps:
+            - run: pacman -Syu --noconfirm git cmake clang gcc make ninja ccache python
+
+            - uses: actions/checkout@v4
+              with:
+                  submodules: recursive
+
+            - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+            # the build generates headers the sources include
+            - run: cmake --preset host_debug && cmake --build --preset host_debug
+
+            - run: run-clang-tidy -p _build/host_debug -quiet "^$GITHUB_WORKSPACE/src/"
+
     firmware:
         strategy:
             fail-fast: false
