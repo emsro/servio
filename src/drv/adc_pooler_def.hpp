@@ -85,7 +85,7 @@ struct adc_pooler_current : curr_iface
         }
 };
 
-chan_ids ADC_FULL_SEQUENCE[] = {
+inline constexpr chan_ids ADC_FULL_SEQUENCE[] = {
     CURRENT_CHANNEL,
     POSITION_CHANNEL,
     CURRENT_CHANNEL,
@@ -96,14 +96,14 @@ chan_ids ADC_FULL_SEQUENCE[] = {
     TEMP_CHANNEL,
 };
 
-chan_ids ADC_CURR_POS_VCC_SEQUENCE[] = {
+inline constexpr chan_ids ADC_CURR_POS_VCC_SEQUENCE[] = {
     CURRENT_CHANNEL,
     POSITION_CHANNEL,
     CURRENT_CHANNEL,
     VCC_CHANNEL,
 };
 
-chan_ids ADC_CURR_VCC_SEQUENCE[] = {
+inline constexpr chan_ids ADC_CURR_VCC_SEQUENCE[] = {
     CURRENT_CHANNEL,
     VCC_CHANNEL,
 };
