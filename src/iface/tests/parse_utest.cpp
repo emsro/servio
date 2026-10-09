@@ -1,8 +1,10 @@
+#include "../../lib/parser.hpp"
+#include "../base.hpp"
 #include "../def.hpp"
 
 #include <gtest/gtest.h>
 #include <string_view>
-#include <vari/vopt.h>
+#include <vari/vref.h>
 #include <vari/vval.h>
 
 namespace servio::iface

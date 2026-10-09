@@ -1,8 +1,16 @@
 #include "./preset.hpp"
 
+#include "./base.hpp"
+#include "./port.hpp"
 #include "./serial.hpp"
 
+#include <filesystem>
+#include <fstream>
+#include <nlohmann/json.hpp>
 #include <spdlog/spdlog.h>
+#include <stdexcept>
+#include <string>
+#include <utility>
 
 namespace servio::scmdio
 {

@@ -1,5 +1,8 @@
+#include "../../base.hpp"
 #include "../metrics.hpp"
 
+#include <cmath>
+#include <cstddef>
 #include <gtest/gtest.h>
 #include <random>
 

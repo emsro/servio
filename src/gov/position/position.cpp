@@ -1,6 +1,8 @@
 
 #include "./position.hpp"
 
+#include "../governor.hpp"
+
 namespace servio::gov::pos
 {
 namespace

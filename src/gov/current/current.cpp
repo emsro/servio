@@ -1,6 +1,8 @@
 
 #include "./current.hpp"
 
+#include "../governor.hpp"
+
 namespace servio::gov::curr
 {
 

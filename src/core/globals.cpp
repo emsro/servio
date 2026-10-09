@@ -1,5 +1,7 @@
 #include "globals.hpp"
 
+#include <emlabcpp/static_function.hpp>
+
 namespace servio::core
 {
 

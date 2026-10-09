@@ -1,6 +1,11 @@
 #include "harness.hpp"
 
-#include <stdexcept>
+#include "cntr_stream_sys.hpp"
+#include "pbar.hpp"
+#include "task.hpp"
+
+#include <cstdint>
+#include <string_view>
 #include <termios.h>
 #include <unistd.h>
 

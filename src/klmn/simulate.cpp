@@ -1,6 +1,12 @@
 
 #include "./simulate.hpp"
 
+#include "../base.hpp"
+#include "./kalman.hpp"
+
+#include <tuple>
+#include <vector>
+
 namespace servio::klmn
 {
 

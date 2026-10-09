@@ -3,6 +3,7 @@
 #include "../pid_autotune.hpp"
 
 #include <gtest/gtest.h>
+#include <vector>
 
 namespace servio::scmdio
 {

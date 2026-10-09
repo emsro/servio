@@ -1,8 +1,15 @@
 
 #include "./central_sentry.hpp"
 
+#include "../base.hpp"
+#include "../drv/interfaces.hpp"
 #include "./base.hpp"
 #include "./record.hpp"
+
+#include <cstddef>
+#include <cstdint>
+#include <emlabcpp/experimental/function_view.hpp>
+#include <span>
 
 namespace servio::sntr
 {

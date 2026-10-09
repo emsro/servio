@@ -1,8 +1,15 @@
 
+#include "../bits/rx_buffer.hpp"
 #include "base.hpp"
 #include "drv/bits/cobs_rx_container.hpp"
 
+#include <array>
+#include <cstddef>
+#include <emlabcpp/experimental/cobs.hpp>
+#include <emlabcpp/view.hpp>
 #include <gtest/gtest.h>
+#include <ostream>
+#include <vector>
 
 namespace std
 {

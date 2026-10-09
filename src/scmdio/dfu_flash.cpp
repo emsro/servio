@@ -4,9 +4,25 @@
 #include "./dfu_flash.hpp"
 
 #include "../base.hpp"
+#include "./base.hpp"
+#include "./port.hpp"
 
+#include <algorithm>
+#include <array>
 #include <bitset>
+#include <cassert>
+#include <cstddef>
+#include <cstdint>
+#include <emlabcpp/algorithm.hpp>
+#include <emlabcpp/min_max.hpp>
+#include <emlabcpp/view.hpp>
+#include <ios>
+#include <istream>
 #include <magic_enum/magic_enum.hpp>
+#include <map>
+#include <ostream>
+#include <spdlog/spdlog.h>
+#include <vector>
 
 namespace servio::scmdio
 {

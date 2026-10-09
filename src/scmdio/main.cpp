@@ -1,15 +1,28 @@
+#include "./base.hpp"
 #include "./cli.hpp"
 #include "./config_cmds.hpp"
 #include "./dfu_flash.hpp"
-#include "./field_util.hpp"
 #include "./flash.hpp"
 #include "./pid_autotune_cmd.hpp"
+#include "./port.hpp"
 #include "./preset.hpp"
 #include "./serial.hpp"
 
+#include <CLI/CLI.hpp>
+#include <boost/asio/co_spawn.hpp>
+#include <boost/asio/io_context.hpp>
+#include <boost/asio/serial_port_base.hpp>
+#include <cstddef>
 #include <emlabcpp/algorithm.hpp>
+#include <exception>
 #include <filesystem>
+#include <fstream>
+#include <iostream>
+#include <memory>
+#include <nlohmann/json.hpp>
+#include <spdlog/spdlog.h>
 #include <utility>
+#include <vector>
 
 namespace servio::scmdio
 {

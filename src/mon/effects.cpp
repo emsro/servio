@@ -1,5 +1,9 @@
 #include "./effects.hpp"
 
+#include "../base.hpp"
+
+#include <cstddef>
+#include <cstdint>
 #include <emlabcpp/algorithm.hpp>
 
 namespace em = emlabcpp;

@@ -1,5 +1,7 @@
 #include "indication.hpp"
 
+#include "../base.hpp"
+
 namespace servio::mon
 {
 

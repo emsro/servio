@@ -2,11 +2,13 @@
 
 #include "../str_lib.hpp"
 
-#include <emlabcpp/algorithm.hpp>
+#include <concepts>
+#include <cstdint>
 #include <gtest/gtest.h>
-#include <regex>
+#include <limits>
+#include <optional>
 #include <source_location>
-#include <vari/vopt.h>
+#include <string_view>
 
 namespace servio::str_lib
 {

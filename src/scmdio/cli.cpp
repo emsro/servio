@@ -1,6 +1,12 @@
 
 #include "./cli.hpp"
 
+#include <CLI/CLI.hpp>
+#include <cstdint>
+#include <filesystem>
+#include <spdlog/common.h>
+#include <spdlog/spdlog.h>
+
 namespace servio::scmdio
 {
 

@@ -1,8 +1,17 @@
 
+#include "../../../base.hpp"
+#include "../../../lib/json_ser.hpp"
+#include "../../../lib/parser.hpp"
+#include "../../../status.hpp"
 #include "../../tests/gov_fixture.hpp"
 #include "../position.hpp"
 
+#include <cstddef>
+#include <emlabcpp/range.hpp>
+#include <format>
 #include <gtest/gtest.h>
+#include <string_view>
+#include <tuple>
 
 namespace servio::gov::pos::tests
 {

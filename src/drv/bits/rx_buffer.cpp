@@ -1,5 +1,10 @@
 #include "./rx_buffer.hpp"
 
+#include <cstddef>
+#include <cstdint>
+#include <emlabcpp/view.hpp>
+#include <tuple>
+
 namespace servio::drv::bits
 {
 

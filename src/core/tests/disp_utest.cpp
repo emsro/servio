@@ -1,20 +1,29 @@
 
+#include "../../base.hpp"
+#include "../../cfg/base.hpp"
+#include "../../cfg/def.hpp"
 #include "../../drv/mock.hpp"
 #include "../../gov/current/current.hpp"
+#include "../../gov/governor_manager.hpp"
 #include "../../gov/position/position.hpp"
 #include "../../gov/power/power.hpp"
 #include "../../gov/velocity/velocity.hpp"
+#include "../../status.hpp"
 #include "../core.hpp"
 #include "../dispatcher.hpp"
 
+#include <concepts>
+#include <cstddef>
 #include <cstdint>
-#include <emlabcpp/algorithm.hpp>
 #include <emlabcpp/pmr/new_delete_resource.hpp>
-#include <emlabcpp/range.hpp>
+#include <emlabcpp/view.hpp>
+#include <format>
 #include <git.h>
 #include <gtest/gtest.h>
-#include <random>
+#include <nlohmann/json.hpp>
 #include <source_location>
+#include <string_view>
+#include <vari/bits/util.h>
 
 namespace servio::core::tests
 {

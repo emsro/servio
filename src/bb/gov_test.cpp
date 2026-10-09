@@ -1,9 +1,15 @@
 #include "../scmdio/cli.hpp"
+#include "../scmdio/port.hpp"
 #include "../scmdio/serial.hpp"
 #include "bb_test_case.hpp"
 
-#include <filesystem>
+#include <CLI/CLI.hpp>
+#include <boost/asio/awaitable.hpp>
+#include <boost/asio/io_context.hpp>
+#include <chrono>
 #include <gtest/gtest.h>
+#include <optional>
+#include <string_view>
 
 namespace servio::bb
 {

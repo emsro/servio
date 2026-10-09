@@ -1,5 +1,12 @@
 #include "./sentry.hpp"
 
+#include "./base.hpp"
+#include "./central_sentry_iface.hpp"
+
+#include <algorithm>
+#include <cstddef>
+#include <cstdint>
+
 namespace servio::sntr
 {
 sentry::sentry( char const* source_id, central_sentry_iface& central )

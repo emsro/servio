@@ -1,8 +1,17 @@
 
+#include "../../base.hpp"
+#include "../../cfg/def.hpp"
+#include "../../core/core.hpp"
 #include "../../drv/mock.hpp"
+#include "../../gov/governor_manager.hpp"
+#include "../../iface/def.hpp"
 #include "../serial.hpp"
 #include "./port_mock.hpp"
+#include "./util.hpp"
 
+#include <boost/asio/awaitable.hpp>
+#include <boost/asio/co_spawn.hpp>
+#include <boost/asio/io_context.hpp>
 #include <gtest/gtest.h>
 
 namespace servio::scmdio

@@ -1,9 +1,13 @@
+#include "../../base.hpp"
 #include "../kalman.hpp"
 #include "../simulate.hpp"
 
 #include <cmath>
+#include <cstddef>
+#include <emlabcpp/range.hpp>
 #include <gtest/gtest.h>
-#include <random>
+#include <tuple>
+#include <vector>
 
 namespace servio::klmn::tests
 {

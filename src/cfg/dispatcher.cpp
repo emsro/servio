@@ -1,5 +1,7 @@
 #include "./dispatcher.hpp"
 
+#include "./def.hpp"
+
 namespace servio::cfg
 {
 

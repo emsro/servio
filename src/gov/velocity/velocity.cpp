@@ -1,6 +1,8 @@
 
 #include "./velocity.hpp"
 
+#include "../governor.hpp"
+
 namespace servio::gov::vel
 {
 

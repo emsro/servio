@@ -1,7 +1,13 @@
+#include "../../base.hpp"
 #include "../effects.hpp"
 
+#include <cmath>
+#include <cstddef>
+#include <cstdint>
+#include <cstdlib>
 #include <emlabcpp/algorithm.hpp>
 #include <gtest/gtest.h>
+#include <numbers>
 
 namespace em = emlabcpp;
 

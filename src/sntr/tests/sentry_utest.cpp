@@ -1,7 +1,17 @@
+#include "../../base.hpp"
+#include "../../drv/interfaces.hpp"
+#include "../base.hpp"
 #include "../central_sentry.hpp"
+#include "../record.hpp"
 #include "../sentry.hpp"
 
+#include <algorithm>
+#include <array>
+#include <cstddef>
+#include <cstdint>
+#include <functional>
 #include <gtest/gtest.h>
+#include <type_traits>
 
 namespace servio::sntr::tests
 {

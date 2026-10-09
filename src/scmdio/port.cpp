@@ -1,9 +1,27 @@
 #include "./port.hpp"
 
+#include "./base.hpp"
+
 #include <algorithm>
 #include <array>
+#include <boost/asio/buffer.hpp>
 #include <boost/asio/experimental/awaitable_operators.hpp>
+#include <boost/asio/read.hpp>
+#include <boost/asio/read_until.hpp>
+#include <boost/asio/this_coro.hpp>
+#include <boost/asio/write.hpp>
+#include <cassert>
+#include <chrono>
+#include <cstddef>
+#include <emlabcpp/experimental/cobs.hpp>
+#include <emlabcpp/view.hpp>
+#include <span>
+#include <spdlog/fmt/bin_to_hex.h>
+#include <spdlog/spdlog.h>
 #include <type_traits>
+#include <utility>
+#include <variant>
+#include <vector>
 
 namespace em = emlabcpp;
 

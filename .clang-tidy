@@ -12,6 +12,10 @@ HeaderFilterRegex: .*
 ExcludeHeaderFilterRegex: /(dep|_build)/
 FormatStyle: file
 CheckOptions:
+    # libstdc++, Boost and nlohmann declare these symbols in internal headers;
+    # servio includes the public ones instead
+    - key: misc-include-cleaner.IgnoreHeaders
+      value: bits/.*;chrono;boost/asio/impl/.*;boost/asio/co_spawn\.hpp;nlohmann/json(_fwd)?\.hpp
     - key: readability-function-cognitive-complexity.IgnoreMacros
       value: true
     - key: readability-identifier-naming.IgnoreFailedSplit

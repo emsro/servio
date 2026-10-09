@@ -1,11 +1,25 @@
 #include "../../base.hpp"
+#include "../base.hpp"
 #include "../dfu_flash.hpp"
+#include "../port.hpp"
 #include "./util.hpp"
-#include "spdlog/fmt/bin_to_hex.h"
 
+#include <array>
+#include <boost/asio/co_spawn.hpp>
+#include <boost/asio/io_context.hpp>
+#include <cassert>
+#include <coroutine>
+#include <cstddef>
+#include <cstdint>
 #include <deque>
 #include <emlabcpp/experimental/coro/owning_coroutine_handle.hpp>
 #include <gtest/gtest.h>
+#include <span>
+#include <spdlog/spdlog.h>
+#include <sstream>
+#include <string_view>
+#include <tuple>
+#include <vector>
 
 namespace servio::scmdio
 {

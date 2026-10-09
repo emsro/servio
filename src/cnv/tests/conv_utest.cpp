@@ -7,6 +7,7 @@
 #include <gtest/gtest.h>
 #include <numbers>
 #include <random>
+#include <tuple>
 
 namespace servio::cnv::tests
 {

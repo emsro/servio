@@ -1,9 +1,22 @@
 #include "./serial.hpp"
 
-#include "./field_util.hpp"
+#include "../cfg/def.hpp"
+#include "./base.hpp"
 #include "./port.hpp"
 
+#include <array>
+#include <cstddef>
+#include <cstdint>
 #include <emlabcpp/view.hpp>
+#include <format>
+#include <map>
+#include <nlohmann/json.hpp>
+#include <optional>
+#include <spdlog/spdlog.h>
+#include <string>
+#include <string_view>
+#include <tuple>
+#include <utility>
 
 // TODO: there might be a better way of obtaining this?
 constexpr std::size_t buffer_size = 1024;

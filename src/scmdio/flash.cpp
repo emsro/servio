@@ -1,9 +1,15 @@
 #include "./flash.hpp"
 
+#include "./base.hpp"
 #include "./dfu_flash.hpp"
-#include "./serial.hpp"
+#include "./port.hpp"
 
+#include <boost/asio/serial_port_base.hpp>
+#include <filesystem>
 #include <fstream>
+#include <ios>
+#include <memory>
+#include <spdlog/spdlog.h>
 
 namespace servio::scmdio
 {

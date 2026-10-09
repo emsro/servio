@@ -3,6 +3,7 @@
 #include "../parser.hpp"
 
 #include <gtest/gtest.h>
+#include <string_view>
 
 namespace servio::parser
 {
