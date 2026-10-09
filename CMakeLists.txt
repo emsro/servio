@@ -37,7 +37,14 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   cpmaddpackage("gh:CLIUtils/CLI11@2.7.2")
   cpmaddpackage("gh:nlohmann/json@3.12.0")
   set(_servio_asrt_libs "asrtl;asrtc;asrtr;asrtlpp;asrtcpp;asrtrpp;asrtio")
-  set(_servio_asrt_targets asrtl asrtc asrtr asrtlpp asrtcpp asrtrpp)
+  set(_servio_asrt_targets
+      asrtl
+      asrtc
+      asrtr
+      asrtlpp
+      asrtcpp
+      asrtrpp
+      asrtio_lib)
 else()
   set(_servio_asrt_libs "asrtl;asrtr;asrtlpp;asrtrpp")
   set(_servio_asrt_targets asrtl asrtr asrtlpp asrtrpp)
