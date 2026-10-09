@@ -116,7 +116,7 @@ namespace
 
 awaitable< std::span< std::byte > > _pool_buffer( auto& port, auto& read_buffer, std::byte delim )
 {
-        auto                   iter = std::ranges::find( read_buffer, delim );
+        auto const             iter = std::ranges::find( read_buffer, delim );
         std::span< std::byte > dview;
         if ( iter != read_buffer.end() ) {
                 spdlog::trace( "Using existing buffer" );

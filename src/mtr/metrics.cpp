@@ -36,7 +36,7 @@ void metrics::set_moving_step( float step )
 
         microseconds const tdiff = now - last_time_;
 
-        auto sdiff = std::chrono::duration_cast< sec_time >( tdiff );
+        auto const sdiff = std::chrono::duration_cast< sec_time >( tdiff );
 
         pv_kal_.update( sdiff, position );
         st_dec_.update( position );

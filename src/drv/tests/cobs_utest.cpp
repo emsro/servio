@@ -50,7 +50,7 @@ TEST( COBS, cont )
 
                 EXPECT_TRUE( success );
 
-                auto data2 = em::data_view( msg );
+                auto const data2 = em::data_view( msg );
                 EXPECT_EQ( data, data2 );
         }
 }

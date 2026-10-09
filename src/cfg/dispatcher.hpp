@@ -13,7 +13,7 @@ namespace servio::cfg
 {
 
 inline vari::vval< vari::vref< iface >, str_err >
-find_iface( iface* root_handler, gov::governor_manager& gm, std::string_view gov )
+find_iface( iface* root_handler, gov::governor_manager const& gm, std::string_view gov )
 {
         if ( gov == "" ) {
                 if ( root_handler )
@@ -39,7 +39,7 @@ struct resolve_governor_res
 inline opt< resolve_governor_res >
 resolve_governor( std::string_view field, std::string_view governor )
 {
-        auto npos = field.find( '.' );
+        auto const npos = field.find( '.' );
         if ( npos != std::string_view::npos ) {
                 if ( !governor.empty() )
                         return {};

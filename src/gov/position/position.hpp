@@ -96,7 +96,7 @@ struct _position_gov final : governor, handle
 
         pwr current_irq( microseconds now, float current ) override
         {
-                auto        lims = em::intersection( curr_pid.cfg.limits, derived_curr_lims );
+                auto const  lims = em::intersection( curr_pid.cfg.limits, derived_curr_lims );
                 float const desired_curr = clamp( goal_curr, lims );
 
                 float const fpower = em::update( curr_pid, now.count(), current, desired_curr );

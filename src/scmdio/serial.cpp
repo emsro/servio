@@ -88,7 +88,7 @@ awaitable< std::map< std::string, nlohmann::json > > get_full_config( port_iface
 {
         std::map< std::string, nlohmann::json > res;
         // XXX: use the list command instead
-        for ( auto k : cfg::map::keys ) {
+        for ( auto const k : cfg::map::keys ) {
                 auto val = co_await get_config_field( port, to_str( k ) );
                 res.emplace( to_str( k ), std::move( val ) );
         }
@@ -100,7 +100,7 @@ awaitable< void > commit_config( port_iface& port )
 {
         std::string const msg = "cfg commit";
 
-        auto reply = co_await exchg( port, msg );
+        auto const reply = co_await exchg( port, msg );
         // XXX: check the retcode
         std::ignore = reply;
 }

@@ -86,14 +86,14 @@ void handle_gov_message(
                             std::move( out ).nok()( s.message() );
             },
             [&]( iface::govctl_active_stmt const& ) {
-                    auto* gov = gv.active();
+                    auto const* gov = gv.active();
                     if ( !gov )
                             std::move( out ).ok();
                     else
                             std::move( out ).ok()( gov->name() );
             },
             [&]( iface::govctl_list_stmt const& st ) {
-                    auto            i    = (uint32_t) st.index;
+                    auto const      i    = (uint32_t) st.index;
                     std::span const govs = gv.governors();
                     if ( i < govs.size() )
                             std::move( out ).ok()( govs[i]->name() );
@@ -114,7 +114,7 @@ status handle_message( dispatcher& dis, vari::vref< iface::stmts > inpt, iface::
                             std::move( out ).nok()( "missing governor" );
                             return;
                     }
-                    for ( auto gov : dis.gov.governors() ) {
+                    for ( auto const gov : dis.gov.governors() ) {
                             if ( gov->name() == *cmd ) {
                                     std::ignore =
                                         gov->on_cmd( std::move( g.parser ), std::move( out ) );
@@ -149,7 +149,7 @@ status handle_message( dispatcher& dis, vari::vref< iface::stmts > inpt, iface::
                     };
                     cfg.sub.visit(
                         [&]( iface::cfg_set_stmt const& st ) {
-                                auto opt_err =
+                                auto const opt_err =
                                     cfg_disp.on_cmd_set( st.field, st.value.data, st.governor );
                                 if ( opt_err )
                                         std::move( out ).nok()( opt_err.error );
@@ -214,7 +214,7 @@ std::tuple< status, em::view< std::byte* > > handle_message(
         using R = status;
 
         parser::parser p{ inpt };
-        auto           res = iface::parse( p ).visit(
+        auto const     res = iface::parse( p ).visit(
             [&]( vari::vref< iface::stmt > s ) -> R {
                     return handle_message( dis, s->sub, out );
             },

@@ -21,16 +21,16 @@ TEST_F( gov_fixture, pos )
         for ( float angle : { 1.F, 2.F, 1.F, -1.F } ) {
                 _position_gov gov;
 
-                auto do_cmd = [&]( std::string_view cmd ) {
+                auto const do_cmd = [&]( std::string_view cmd ) {
                         parser::parser p{ cmd };
                         char           buff[128];
                         json::jval_ser jser{ buff };
-                        auto           s = gov.on_cmd( p, jser );
+                        auto const     s = gov.on_cmd( p, jser );
                         EXPECT_EQ( s, status::success ) << "cmd: " << cmd << "\n";
                 };
 
-                auto set_cfg = [&]( std::string_view key, auto value ) {
-                        auto s = gov.get_cfg()->on_cmd_set( key, value );
+                auto const set_cfg = [&]( std::string_view key, auto value ) {
+                        auto const s = gov.get_cfg()->on_cmd_set( key, value );
                         EXPECT_TRUE( !s );
                 };
 

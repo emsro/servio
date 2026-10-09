@@ -37,11 +37,12 @@ struct echo_peer : peer_hook
 private:
         static void on_readable( uv_poll_t* h, int status, int events )
         {
-                if ( status < 0 || !( events & UV_READABLE ) )
+                if ( status < 0 || !( static_cast< unsigned >( events ) &
+                                      static_cast< unsigned >( UV_READABLE ) ) )
                         return;
-                auto*   self = static_cast< echo_peer* >( h->data );
-                char    buf[256];
-                ssize_t n;
+                auto const* self = static_cast< echo_peer* >( h->data );
+                char        buf[256];
+                ssize_t     n;
                 while ( ( n = ::read( self->fd_, buf, sizeof( buf ) ) ) > 0 )
                         ::write( self->fd_, buf, static_cast< std::size_t >( n ) );
         }
@@ -83,10 +84,11 @@ struct silent_peer : peer_hook
 private:
         static void on_readable( uv_poll_t* h, int status, int events )
         {
-                if ( status < 0 || !( events & UV_READABLE ) )
+                if ( status < 0 || !( static_cast< unsigned >( events ) &
+                                      static_cast< unsigned >( UV_READABLE ) ) )
                         return;
-                auto* self = static_cast< silent_peer* >( h->data );
-                char  buf[256];
+                auto const* self = static_cast< silent_peer* >( h->data );
+                char        buf[256];
                 while ( ::read( self->fd_, buf, sizeof( buf ) ) > 0 )
                         ;
         }

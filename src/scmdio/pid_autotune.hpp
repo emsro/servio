@@ -78,7 +78,7 @@ struct line
 
 inline line linear_least_squares( std::span< double > ys )
 {
-        auto         n   = static_cast< double >( ys.size() );
+        auto const   n   = static_cast< double >( ys.size() );
         double const si  = n * ( n + 1.0 ) / 2.0;
         double const sii = n * ( n + 1 ) * ( 2 * n + 1 ) / 6.0;
         double const sy  = em::sum( ys );
@@ -116,10 +116,10 @@ inline void pid_calculate( std::span< double > buff )
         std::cout << "buff size: " << buff.size() << '\n';
         std::cout << "range: " << range << "\tfrom: " << from << "\tto:" << to << '\n';
 
-        auto beg_iter = em::find_if( buff, [&]( double v ) {
+        auto const beg_iter = em::find_if( buff, [&]( double v ) {
                 return v > from;
         } );
-        auto end_iter = em::find_if( buff, [&]( double v ) {
+        auto const end_iter = em::find_if( buff, [&]( double v ) {
                 return v > to;
         } );
 

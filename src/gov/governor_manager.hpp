@@ -23,9 +23,9 @@ struct governor_manager
         status disengage()
         {
                 if ( active_ && active_h_ ) {
-                        auto st   = active_->disengage( *active_h_ );
-                        active_   = nullptr;
-                        active_h_ = nullptr;
+                        auto const st = active_->disengage( *active_h_ );
+                        active_       = nullptr;
+                        active_h_     = nullptr;
                         return st;
                 }
                 return status::failure;

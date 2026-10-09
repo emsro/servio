@@ -129,13 +129,13 @@ constexpr void f_to_s( char*& p, char* e, float x ) noexcept
                 add( '-' );
                 x *= -1.0F;
         }
-        auto y = (uint32_t) x;
+        auto const y = (uint32_t) x;
         x -= (float) y;
         u_to_s( p, e, y );
         add( '.' );
         for ( std::size_t i = 0; i < 6; ++i ) {
                 x *= 10.0F;
-                auto z = (uint32_t) x;
+                auto const z = (uint32_t) x;
                 x -= (float) z;
                 add.ch( z );
                 if ( x == 0.00F )

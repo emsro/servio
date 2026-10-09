@@ -132,7 +132,7 @@ pool_cmd( io_context&, sptr< char_port > port, std::vector< std::string > const&
         while ( true ) {
                 std::vector< std::string > vals;
                 for ( std::string const& field : props ) {
-                        auto val = co_await get_property( *port, field );
+                        auto const val = co_await get_property( *port, field );
                         vals.emplace_back( val.dump() );
                 }
                 std::cout << em::joined( vals, std::string{ "\t" } ) << '\n';
@@ -186,7 +186,7 @@ void govctl_def( CLI::App& app, io_context& io_ctx )
 
         auto* active = gov->add_subcommand( "active", "get currently active governor" );
         port_callback( active, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
-                auto s = co_await govctl_active( *p );
+                auto const s = co_await govctl_active( *p );
                 std::cout << "gov: " << s << '\n';
         } );
 
@@ -216,7 +216,7 @@ void gov_def( CLI::App& app, io_context& io_ctx )
         port_opts( *gov, ctx->port );
 
         port_callback( gov, io_ctx, ctx, [ctx, &app]( sptr< char_port > p ) -> awaitable< void > {
-                auto rest = app.remaining( true );
+                auto const rest = app.remaining( true );
                 co_await do_gov( *p, ctx->governor, { rest }, {} );
         } );
 }
@@ -256,7 +256,7 @@ void dfu_def( CLI::App& app, io_context& io_ctx )
         auto flash_ctx = std::make_shared< dfu_ctx >();
         auto enter_ctx = std::make_shared< dfu_enter_ctx >();
 
-        auto serial_cb = [&]( CLI::App* cmd, auto f ) {
+        auto const serial_cb = [&]( CLI::App* cmd, auto f ) {
                 cmd->callback( [&io_ctx, flash_ctx, f = std::move( f )]() {
                         sptr< serial_stream > const ss = flash_ctx->port.get( io_ctx );
                         using spb                      = boost::asio::serial_port_base;
@@ -360,7 +360,7 @@ struct flash_def_ctx
 
 void flash_def( CLI::App& app, io_context& io_ctx )
 {
-        auto ctx = std::make_shared< flash_def_ctx >();
+        auto const ctx = std::make_shared< flash_def_ctx >();
 
         auto* cmd = app.add_subcommand(
             "flash", "Flash firmware: auto-detects bootloader or triggers entry via dfu command" );

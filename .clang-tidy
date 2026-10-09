@@ -4,9 +4,9 @@ Checks: >
     bugprone*,-bugprone-easily-swappable-parameters,-bugprone-macro-parentheses,-bugprone-exception-escape,-bugprone-unchecked-optional-access,-bugprone-std-namespace-modification,-bugprone-random-generator-seed,-bugprone-invalid-enum-default-initialization,
     concurrency*,
     modernize*,-modernize-use-trailing-return-type,-modernize-avoid-c-arrays,-modernize-use-nullptr,-modernize-use-nodiscard,-modernize-avoid-c-style-cast,
-    misc*,-misc-no-recursion,-misc-non-private-member-variables-in-classes,
+    misc*,-misc-no-recursion,-misc-non-private-member-variables-in-classes,-misc-explicit-constructor,-misc-static-assert,
     performance*,-performance-enum-size,
-    portability*,-portability-avoid-pragma-once,-portability-template-virtual-member-function,
+    portability*,-portability-avoid-pragma-once,-portability-template-virtual-member-function,-portability-no-assembler,
 WarningsAsErrors: '*'
 HeaderFilterRegex: .*
 ExcludeHeaderFilterRegex: /(dep|_build)/

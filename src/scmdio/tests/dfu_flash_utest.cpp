@@ -129,7 +129,7 @@ struct stm32_bootloader_mock : stream_iface
         static std::vector< std::byte > setup_mem( std::size_t k )
         {
                 std::vector< std::byte > res;
-                std::size_t const        n = 1 << k;
+                std::size_t const        n = std::size_t{ 1 } << k;
                 res.reserve( n );
                 for ( std::size_t i = 0; i < n; ++i )
                         res.emplace_back( 0x00_b );
@@ -202,7 +202,7 @@ struct stm32_bootloader_mock : stream_iface
                                 break;
                         case EXTENDED_ERASE: {
                                 buffer.emplace_back( ACK );
-                                auto data = co_await cons::get< 2 >{};
+                                auto const data = co_await cons::get< 2 >{};
                                 // XXX: do something?
                                 std::ignore = data;
                                 co_await cons::get< 1 >{};

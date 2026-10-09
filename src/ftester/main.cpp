@@ -118,7 +118,7 @@ int main( int argc, char* argv[] )
         h.add( "comms_echo", std::make_unique< echo_peer >( ctx, loop, peer_fd ) );
         h.add( "comms_timeout", std::make_unique< echo_peer >( ctx, loop, peer_fd ) );
 
-        auto timeout = std::chrono::milliseconds{ timeout_ms };
+        auto const timeout = std::chrono::milliseconds{ timeout_ms };
         t.emplace(
             ar,
             run_serial(

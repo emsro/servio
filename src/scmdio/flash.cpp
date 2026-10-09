@@ -36,7 +36,7 @@ awaitable< void > flash_firmware(
     std::filesystem::path const& file_path,
     unsigned                     baudrate )
 {
-        auto ss = make_bootloader_stream( io_ctx, port_path, baudrate );
+        auto const ss = make_bootloader_stream( io_ctx, port_path, baudrate );
 
         if ( !co_await dfu_try_init( *ss ) )
                 log_error(

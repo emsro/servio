@@ -51,9 +51,9 @@ struct posvel_kalman
         {
                 // TODO: this is kinda non ideal, the sdiff should be stable in the system and
                 // computed only once
-                auto f = klmn::get_transition_model( sdiff );
-                auto b = klmn::get_control_input_model( sdiff );
-                auto q = klmn::get_process_noise_covariance( sdiff, process_deviation );
+                auto const f = klmn::get_transition_model( sdiff );
+                auto const b = klmn::get_control_input_model( sdiff );
+                auto const q = klmn::get_process_noise_covariance( sdiff, process_deviation );
 
                 klmn::control_input u{};
                 u[0][0] = 0.F;

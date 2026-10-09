@@ -18,7 +18,7 @@ namespace
 boost::asio::awaitable< void >
 test_properties_querying( boost::asio::io_context&, scmdio::port_iface& port )
 {
-        for ( auto k : iface::property_values )
+        for ( auto const k : iface::property_values )
                 co_await scmdio::get_property( port, to_str( k ) );
 }
 

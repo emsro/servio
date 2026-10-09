@@ -96,7 +96,7 @@ awaitable< void > wait_for_ack( stream_iface& port )
 awaitable< void > cmd( stream_iface& port, cmd_e cmd )
 {
         spdlog::debug( "Sending command: {}", magic_enum::enum_name( cmd ) );
-        auto            b      = static_cast< std::byte >( cmd );
+        auto const      b      = static_cast< std::byte >( cmd );
         std::byte const data[] = { b, ~b };
         co_await port.write( data );
         co_await wait_for_ack( port );
@@ -113,7 +113,7 @@ awaitable< get_data > get( stream_iface& port )
         co_await cmd( port, GET );
         auto size_b = co_await port.read();
         assert( size_b );  // XXX: proper error
-        auto size = (std::size_t) *size_b;
+        auto const size = (std::size_t) *size_b;
 
         std::vector< std::byte > vec( size + 1, 0_b );
         co_await port.read( vec );
@@ -134,12 +134,12 @@ awaitable< uint16_t > get_id( stream_iface& port )
         co_await cmd( port, GET_ID );
         auto size_b = co_await port.read();
         assert( size_b );  // XXX: porper error
-        auto                     size = (std::size_t) *size_b;
+        auto const               size = (std::size_t) *size_b;
         std::vector< std::byte > vec( size + 1, 0_b );
         co_await port.read( vec );
         assert( vec.size() == 2 );
         co_await wait_for_ack( port );
-        co_return ( (int) vec[0] << 8 ) + (int) vec[1];
+        co_return static_cast< uint16_t >( ( (unsigned) vec[0] << 8U ) | (unsigned) vec[1] );
 }
 
 static constexpr std::size_t mem_step = 128;
@@ -152,7 +152,7 @@ awaitable< void > read_memory( stream_iface& port, uint32_t addr, em::view< std:
         co_await wait_for_ack( port );
 
         assert( buff.size() <= 255 );
-        auto size_b = static_cast< std::byte >( buff.size() - 1 );
+        auto const size_b = static_cast< std::byte >( buff.size() - 1 );
         co_await port.write( size_b );
         co_await port.write( ~size_b );
         co_await wait_for_ack( port );
@@ -171,7 +171,7 @@ write_memory( stream_iface& port, uint32_t addr, em::view< std::byte const* > bu
 
         if ( buff.size() % 4 != 0 || buff.size() > 255 )
                 log_error( "Invalid buffer size: {}", buff.size() );
-        auto size_b = static_cast< std::byte >( buff.size() - 1 );
+        auto const size_b = static_cast< std::byte >( buff.size() - 1 );
         co_await port.write( size_b );
         co_await send( port, buff, size_b );
         co_await wait_for_ack( port );
@@ -303,12 +303,12 @@ awaitable< void > dfu_reset( stream_iface& port )
         // Response: DataPacket (Size(2) + Size bytes) + StatusPacket (Size(2) + Size bytes) + ACK
         std::array< std::byte, 2 > size_buf;
         co_await port.read( size_buf );
-        std::size_t const ndata = ( (std::size_t) size_buf[0] << 8 ) | (std::size_t) size_buf[1];
+        std::size_t const ndata = ( (std::size_t) size_buf[0] << 8U ) | (std::size_t) size_buf[1];
         for ( std::size_t i = 0; i < ndata; ++i )
                 co_await port.read();
 
         co_await port.read( size_buf );
-        std::size_t const nstatus = ( (std::size_t) size_buf[0] << 8 ) | (std::size_t) size_buf[1];
+        std::size_t const nstatus = ( (std::size_t) size_buf[0] << 8U ) | (std::size_t) size_buf[1];
         for ( std::size_t i = 0; i < nstatus; ++i )
                 co_await port.read();
 

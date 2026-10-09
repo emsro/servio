@@ -95,9 +95,9 @@ struct lexer
                                 return r.n;
                         return r.r;
                 }
-                if ( auto op = parse_op( p, e ) )
+                if ( auto const op = parse_op( p, e ) )
                         return op_t{ *op };
-                if ( auto s = parse_str( p, e ) )
+                if ( auto const s = parse_str( p, e ) )
                         return string{ *s };
                 char const* pp = p;
                 if ( !str_lib::lex_letters( p, e ) )

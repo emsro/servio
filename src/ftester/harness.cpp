@@ -26,7 +26,7 @@ asrtio::task< void >
 harness::on_test_start( std::string_view name, uint32_t run_idx, uint32_t run_total )
 {
         co_await pr_.on_test_start( name, run_idx, run_total );
-        auto it = registry_.find( std::string{ name } );
+        auto const it = registry_.find( std::string{ name } );
         if ( it != registry_.end() ) {
                 ::tcflush( peer_fd_, TCIOFLUSH );
                 co_await it->second->before();
@@ -41,7 +41,7 @@ asrtio::task< void > harness::on_test_done(
     uint32_t         run_total )
 {
         co_await pr_.on_test_done( name, passed, duration_ms, run_idx, run_total );
-        auto it = registry_.find( std::string{ name } );
+        auto const it = registry_.find( std::string{ name } );
         if ( it != registry_.end() ) {
                 co_await it->second->after();
                 ::tcflush( peer_fd_, TCIOFLUSH );

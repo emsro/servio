@@ -27,7 +27,7 @@ TEST( cnv, linear )
                 for ( float const o : { 0.0F, -1.0F, 1.0F, std::numbers::pi_v< float > } ) {
                         lc.offset = o;
                         lc.scale  = s;
-                        for ( auto i : em::range( ATTEMPT_N ) ) {
+                        for ( auto const i : em::range( ATTEMPT_N ) ) {
                                 std::ignore = i;
 
                                 uint32_t const v = bd( e );
@@ -46,7 +46,7 @@ TEST( cnv, converter )
 
         converter cnv;
 
-        for ( auto i : em::range( ATTEMPT_N ) ) {
+        for ( auto const i : em::range( ATTEMPT_N ) ) {
                 std::ignore       = i;
                 uint32_t const lv = bd( e );
                 float const    la = nd( e );

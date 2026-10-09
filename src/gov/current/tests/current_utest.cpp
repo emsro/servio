@@ -20,16 +20,16 @@ TEST_F( gov_fixture, curr )
         for ( float curr : { 0.1F, 0.2F, -0.1F, 0.F, 0.1F } ) {
                 _current_gov gov;
 
-                auto do_cmd = [&]( std::string_view cmd ) {
+                auto const do_cmd = [&]( std::string_view cmd ) {
                         parser::parser p{ cmd };
                         char           buff[128];
                         json::jval_ser jser{ buff };
-                        auto           s = gov.on_cmd( p, jser );
+                        auto const     s = gov.on_cmd( p, jser );
                         EXPECT_EQ( s, status::success ) << "cmd: " << cmd << "\n";
                 };
 
-                auto set_cfg = [&]( std::string_view key, auto value ) {
-                        auto s = gov.get_cfg()->on_cmd_set( key, value );
+                auto const set_cfg = [&]( std::string_view key, auto value ) {
+                        auto const s = gov.get_cfg()->on_cmd_set( key, value );
                         EXPECT_TRUE( !s );
                 };
 

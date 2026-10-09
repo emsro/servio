@@ -54,8 +54,8 @@ struct com_iface
 inline error_code send( com_iface& comms, microseconds timeout, std::span< std::byte const > data )
 {
         auto f = [&data] {
-                auto sp = data;
-                data    = {};
+                auto const sp = data;
+                data          = {};
                 return sp;
         };
         return comms.send( f, timeout );
@@ -86,9 +86,9 @@ inline void wait_for( clk_iface& clk, microseconds ms )
                 asm( "nop" );
 }
 
-inline bool spin_with_timeout( clk_iface& clk, bool volatile& cond, microseconds timeout )
+inline bool spin_with_timeout( clk_iface& clk, bool const volatile& cond, microseconds timeout )
 {
-        auto end = clk.get_us() + timeout;
+        auto const end = clk.get_us() + timeout;
         while ( !cond )
                 if ( clk.get_us() > end )
                         return false;

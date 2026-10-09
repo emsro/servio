@@ -23,7 +23,7 @@ struct _convert_type_impl;
 template < typename T >
 using _convert_type = _convert_type_impl< T >;
 
-parse_status _load_val( arg_def& arg, vari::vref< parser::expr_t > val )
+parse_status _load_val( arg_def const& arg, vari::vref< parser::expr_t > val )
 {
         return arg.val.visit(
             [&]( vari::vref< string, float, int32_t, bool > e ) -> parse_status {
@@ -47,7 +47,7 @@ parse_status arg_parser::parse_args( std::span< arg_def > args ) &&
         auto parse_arg = [&]( vari::vref< parser::expr_t > val ) -> parse_status {
                 if ( !arg_i )
                         return parse_status::ARG_AFTER_KVAL;
-                auto i = *arg_i;
+                auto const i = *arg_i;
                 if ( i >= args.size() )
                         return parse_status::UNEXPECTED_ARG;
                 *arg_i += 1;
@@ -56,8 +56,8 @@ parse_status arg_parser::parse_args( std::span< arg_def > args ) &&
         };
 
         while ( !p_.ended() ) {
-                using R = parse_status;
-                auto st = p_.next().visit(
+                using R       = parse_status;
+                auto const st = p_.next().visit(
                     [&]( vari::empty_t ) -> R {
                             return parse_status::SYNTAX_ERROR;
                     },
@@ -97,7 +97,7 @@ parse_status arg_parser::parse_args( std::span< arg_def > args ) &&
                 if ( st != parse_status::SUCCESS )
                         return st;
         }
-        for ( auto& arg : args )
+        for ( auto const& arg : args )
                 if ( arg.st == arg_status::MISSING )
                         return parse_status::ARG_MISSING;
         return parse_status::SUCCESS;

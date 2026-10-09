@@ -21,11 +21,11 @@ TEST_F( gov_fixture, vel )
         for ( float pow : { 1.F, 0.F, -1.F } ) {
                 _power_gov gov;
 
-                auto do_cmd = [&]( std::string_view cmd ) {
+                auto const do_cmd = [&]( std::string_view cmd ) {
                         parser::parser p{ cmd };
                         char           buff[128];
                         json::jval_ser jser{ buff };
-                        auto           s = gov.on_cmd( p, jser );
+                        auto const     s = gov.on_cmd( p, jser );
                         EXPECT_EQ( s, status::success ) << "cmd: " << cmd << "\n";
                 };
 

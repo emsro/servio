@@ -74,7 +74,7 @@ struct handler : iface
 
         status on_storage_load( uint32_t id, std::span< std::byte const > data ) override
         {
-                auto ptr = _x.ref_by_id( id );
+                auto const ptr = _x.ref_by_id( id );
                 if ( !ptr )
                         return status::error;
                 return ptr.vref().visit( [&]< typename U >( U& val ) -> status {
@@ -91,7 +91,7 @@ struct handler : iface
         on_storage_save( uint32_t id, std::span< std::byte > buffer ) override
         {
                 opt< std::span< std::byte > > res;
-                auto                          ptr = _x.ref_by_id( id );
+                auto const                    ptr = _x.ref_by_id( id );
                 if ( !ptr )
                         return res;
                 ptr.vref().visit( [&]< typename U >( U const& val ) {
@@ -104,7 +104,7 @@ struct handler : iface
 
         bool on_storage_change_check( uint32_t id, std::span< std::byte const > data ) override
         {
-                auto ptr = _x.ref_by_id( id );
+                auto const ptr = _x.ref_by_id( id );
                 if ( !ptr )  // XXX: maybe rethink?
                         return false;
                 return ptr.vref().visit( [&]< typename U >( U const& val ) {

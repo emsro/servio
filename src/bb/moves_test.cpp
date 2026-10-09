@@ -46,16 +46,16 @@ boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio
 }
 
 boost::asio::awaitable< void >
-test_position( boost::asio::io_context& io, scmdio::port_iface& port )
+test_position( boost::asio::io_context const& io, scmdio::port_iface& port )
 {
         co_await scmdio::govctl_activate( port, "position" );
         for ( float pos : { pi / 4, pi * 3 / 2, pi } ) {
 
                 co_await scmdio::do_gov( port, "position", { "set" }, { { "goal", pos } } );
 
-                auto  now      = std::chrono::steady_clock::now();
-                auto  end      = now + 20s;
-                float position = -pos;
+                auto       now      = std::chrono::steady_clock::now();
+                auto const end      = now + 20s;
+                float      position = -pos;
                 while ( now < end ) {
                         position = co_await scmdio::get_property( port, "position" );
                         now      = std::chrono::steady_clock::now();
