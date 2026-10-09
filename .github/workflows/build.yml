@@ -44,7 +44,7 @@ jobs:
     asan:
         # ASan does not link against musl, so this job runs on a glibc image
         runs-on: ubuntu-latest
-        container: archlinux:latest
+        container: ghcr.io/archlinux/archlinux:latest
         steps:
             - run: pacman -Syu --noconfirm git cmake gcc make ninja ccache python
 
@@ -58,7 +58,7 @@ jobs:
 
     clang-tidy:
         runs-on: ubuntu-latest
-        container: archlinux:latest
+        container: ghcr.io/archlinux/archlinux:latest
         env:
             CC: clang
             CXX: clang++
