@@ -8,7 +8,8 @@ servio_add_library(
           port.cpp
           pid_autotune_cmd.cpp
           preset.cpp
-  LIBS emlabcpp avakar::atom vari CLI11::CLI11 Boost::asio spdlog::spdlog)
+  LIBS servio_emlabcpp avakar::atom vari CLI11::CLI11 Boost::asio
+       spdlog::spdlog)
 
 servio_add_executable(
   TARGET scmdio

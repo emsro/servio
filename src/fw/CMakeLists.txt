@@ -3,7 +3,7 @@ servio_add_library(
   SOURCES extra.cpp util.cpp context.cpp
   LIBS avakar::atom
        vari
-       emlabcpp
+       servio_emlabcpp
        govlib
        cfglib
        mtrlib

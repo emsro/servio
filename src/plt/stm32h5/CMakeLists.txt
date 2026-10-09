@@ -36,5 +36,5 @@ servio_add_library(
           i2c.cpp
           timers.cpp
           dts.cpp
-  LIBS emlabcpp stm32h5_hal vari avakar::atom cfglib
+  LIBS servio_emlabcpp stm32h5_hal vari avakar::atom cfglib
   OPTS -Os)

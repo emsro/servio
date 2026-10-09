@@ -1,7 +1,7 @@
 servio_add_library(
   TARGET mtrlib
   SOURCES metrics.cpp
-  LIBS emlabcpp platform
+  LIBS servio_emlabcpp platform
   OPTS -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

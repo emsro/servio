@@ -1,7 +1,7 @@
 servio_add_library(
   TARGET monlib
   SOURCES indication.cpp effects.cpp
-  LIBS emlabcpp platform
+  LIBS servio_emlabcpp platform
   OPTS -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

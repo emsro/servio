@@ -50,19 +50,22 @@ cpmaddpackage("gh:Neargye/magic_enum@0.9.7")
 cpmaddpackage("gh:avakar/atom#f5d5c6c0f5fdc96a6275d55f7c4ee98396e407a6")
 cpmaddpackage("gh:koniarik/vari#8846bd024215997f5009c4fb920ecfb64d4c7efb")
 
+# Servio's emlabcpp configuration lives on its own target, so emlabcpp's target
+# and its export stay as emlabcpp defines them.
+add_library(servio_emlabcpp INTERFACE)
+target_link_libraries(servio_emlabcpp INTERFACE emlabcpp::emlabcpp magic_enum)
+
 if(${SERVIO_PLATFORM} STREQUAL "host")
   target_compile_options(
-    emlabcpp
+    servio_emlabcpp
     INTERFACE -DEMLABCPP_USE_LOGGING -DEMLABCPP_USE_NLOHMANN_JSON
               -DEMLABCPP_USE_TYPEID -DEMLABCPP_USE_OSTREAM -DEMLABCPP_USE_GTEST
               -DEMLABCPP_ASSERT_NATIVE)
 
 elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   target_compile_options(vari INTERFACE -DVARI_DISABLE_ASSERTS=ON)
-  target_compile_options(emlabcpp INTERFACE -Wno-psabi)
+  target_compile_options(servio_emlabcpp INTERFACE -Wno-psabi)
 endif()
-
-target_link_libraries(emlabcpp INTERFACE magic_enum)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
@@ -97,7 +100,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
     SYSTEM
     ON)
 
-  target_link_libraries(emlabcpp INTERFACE nlohmann_json::nlohmann_json)
+  target_link_libraries(servio_emlabcpp INTERFACE nlohmann_json::nlohmann_json)
 
   set(JOQUE_REPROC_ENABLED ON)
   set(JOQUE_NLOHMANN_JSON_ENABLED ON)
@@ -106,7 +109,8 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
   include(CTest)
   enable_testing()
 
-  servio_add_executable(TARGET servio_utest LIBS emlabcpp gtest_main serviolib)
+  servio_add_executable(TARGET servio_utest LIBS servio_emlabcpp gtest_main
+                                                 serviolib)
   include(GoogleTest)
   gtest_discover_tests(servio_utest)
   add_subdirectory(src/plt/host)
@@ -116,7 +120,7 @@ elseif(${SERVIO_PLATFORM} STREQUAL "stm32h5")
 
   add_subdirectory(src/plt/stm32h5)
 
-  target_link_libraries(emlabcpp INTERFACE platform)
+  target_link_libraries(servio_emlabcpp INTERFACE platform)
   target_link_libraries(cmake_git_version_tracking PRIVATE platform)
 
   foreach(_asrt_target asrtl asrtr asrtrpp)

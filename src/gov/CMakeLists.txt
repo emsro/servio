@@ -1,7 +1,7 @@
 servio_add_library(
   TARGET govlib
   SOURCES governor.cpp
-  LIBS emlabcpp platform zll vari
+  LIBS servio_emlabcpp platform zll vari
   OPTS -Os)
 
 add_subdirectory(power)

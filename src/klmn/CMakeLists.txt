@@ -1,7 +1,7 @@
 servio_add_library(
   TARGET klmnlib
   SOURCES simulate.cpp
-  LIBS emlabcpp
+  LIBS servio_emlabcpp
   OPTS -Os)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")

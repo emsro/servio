@@ -2,7 +2,7 @@ servio_add_library(
   TARGET corelib
   SOURCES globals.cpp dispatcher.cpp
   OPTS -Os
-  LIBS emlabcpp
+  LIBS servio_emlabcpp
        platform
        cfglib
        avakar::atom
