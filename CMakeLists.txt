@@ -49,7 +49,7 @@ foreach(_asrt_target IN LISTS _servio_asrt_targets)
 endforeach()
 cpmaddpackage("gh:Neargye/magic_enum@0.9.7")
 cpmaddpackage("gh:avakar/atom#f5d5c6c0f5fdc96a6275d55f7c4ee98396e407a6")
-cpmaddpackage("gh:koniarik/vari#8846bd024215997f5009c4fb920ecfb64d4c7efb")
+cpmaddpackage("gh:koniarik/vari@1.0.3")
 
 # Servio's emlabcpp configuration lives on its own target, so emlabcpp's target
 # and its export stay as emlabcpp defines them.
