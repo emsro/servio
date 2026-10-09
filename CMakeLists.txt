@@ -102,10 +102,6 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
 
   target_link_libraries(servio_emlabcpp INTERFACE nlohmann_json::nlohmann_json)
 
-  set(JOQUE_REPROC_ENABLED ON)
-  set(JOQUE_NLOHMANN_JSON_ENABLED ON)
-  add_subdirectory(dep/joque)
-
   include(CTest)
   enable_testing()
 
