@@ -22,6 +22,7 @@
 #include <gtest/gtest.h>
 #include <nlohmann/json.hpp>
 #include <source_location>
+#include <string>
 #include <string_view>
 #include <vari/bits/util.h>
 
@@ -148,9 +149,15 @@ TEST( core, dispatcher )
                     },
                     [&]< typename T >( T& x ) {
                             if constexpr ( std::same_as< T, cfg::encoder_mode > )
-                                    EXPECT_EQ( res_j.at( 1 ), cfg::encoder_mode_to_str( x ) );
+                                    EXPECT_EQ(
+                                        res_j.at( 1 ).get< std::string >(),
+                                        cfg::encoder_mode_to_str( x ) );
                             else if constexpr ( std::same_as< T, float > )
                                     EXPECT_NEAR( res_j.at( 1 ), x, 0.00001 );
+                            else if constexpr ( std::convertible_to< T const&, std::string_view > )
+                                    EXPECT_EQ(
+                                        res_j.at( 1 ).get< std::string >(), std::string_view{ x } )
+                                        << "key: " << to_str( k ) << '\n';
                             else
                                     EXPECT_EQ( res_j.at( 1 ), x )
                                         << "key: " << to_str( k ) << " type: " << typeid( x ).name()
@@ -209,9 +216,15 @@ TEST( core, dispatcher )
                     },
                     [&]< typename T >( T& x ) {
                             if constexpr ( std::same_as< T, cfg::encoder_mode > )
-                                    EXPECT_EQ( res_j.at( 1 ), cfg::encoder_mode_to_str( x ) );
+                                    EXPECT_EQ(
+                                        res_j.at( 1 ).get< std::string >(),
+                                        cfg::encoder_mode_to_str( x ) );
                             else if constexpr ( std::same_as< T, float > )
                                     EXPECT_NEAR( res_j.at( 1 ), x, 0.00001 );
+                            else if constexpr ( std::convertible_to< T const&, std::string_view > )
+                                    EXPECT_EQ(
+                                        res_j.at( 1 ).get< std::string >(), std::string_view{ x } )
+                                        << "key: " << to_str( k ) << '\n';
                             else
                                     EXPECT_EQ( res_j.at( 1 ), x )
                                         << "key: " << to_str( k ) << " type: " << typeid( x ).name()
