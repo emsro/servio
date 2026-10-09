@@ -16,6 +16,6 @@ var namespaceservio_1_1drv_1_1tests =
     [ "temperature_test", "structservio_1_1drv_1_1tests_1_1temperature__test.html", "structservio_1_1drv_1_1tests_1_1temperature__test" ],
     [ "vcc_test", "structservio_1_1drv_1_1tests_1_1vcc__test.html", "structservio_1_1drv_1_1tests_1_1vcc__test" ],
     [ "hold", "namespaceservio_1_1drv_1_1tests.html#a510bb7381ec9be3c36a77e8794a75201", null ],
-    [ "setup_iface_tests", "namespaceservio_1_1drv_1_1tests.html#a689c6030b8d212eec16fcc04f8776e92", null ],
-    [ "setup_impl_tests", "namespaceservio_1_1drv_1_1tests.html#a35ebe1133f2b5d39e2bf4722888f5d50", null ]
+    [ "setup_iface_tests", "namespaceservio_1_1drv_1_1tests.html#ac4e6be285d59e9f71fa19f1f30e05379", null ],
+    [ "setup_impl_tests", "namespaceservio_1_1drv_1_1tests.html#ab4d7595bb1cd9dceedd179417ebd00f6", null ]
 ];

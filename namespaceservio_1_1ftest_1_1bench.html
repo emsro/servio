@@ -112,8 +112,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7d7708067ce5e93c5a21cc4083a82534" id="r_a7d7708067ce5e93c5a21cc4083a82534"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1bench.html#a7d7708067ce5e93c5a21cc4083a82534">setup_bench_tests</a> (em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, <a class="el" href="structservio_1_1ftest_1_1uctx.html">uctx</a> &amp;ctx, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;clk, <a class="el" href="structservio_1_1drv_1_1pos__iface.html">drv::pos_iface</a> &amp;pos, <a class="el" href="structservio_1_1drv_1_1curr__iface.html">drv::curr_iface</a> &amp;curr, <a class="el" href="structservio_1_1drv_1_1period__iface.html">drv::period_iface</a> &amp;period, <a class="el" href="structservio_1_1core_1_1core.html">core::core</a> &amp;cor, <a class="el" href="structservio_1_1status.html">status</a> &amp;res)</td></tr>
-<tr class="separator:a7d7708067ce5e93c5a21cc4083a82534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab3aedfb4989cb2e3f7dd9c7ff234408" id="r_aab3aedfb4989cb2e3f7dd9c7ff234408"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1bench.html#aab3aedfb4989cb2e3f7dd9c7ff234408">setup_bench_tests</a> (asrt::task_ctx &amp;ctx, asrt_reac_assm &amp;assm, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;clk, <a class="el" href="structservio_1_1drv_1_1pos__iface.html">drv::pos_iface</a> &amp;pos, <a class="el" href="structservio_1_1drv_1_1curr__iface.html">drv::curr_iface</a> &amp;curr, <a class="el" href="structservio_1_1drv_1_1period__iface.html">drv::period_iface</a> &amp;period, <a class="el" href="structservio_1_1core_1_1core.html">core::core</a> &amp;cor, <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> &amp;res)</td></tr>
+<tr class="separator:aab3aedfb4989cb2e3f7dd9c7ff234408"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -132,14 +132,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::ftest::bench::prof_record:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1ftest_1_1bench_1_1prof__record__coll__graph.svg" width="158" height="154"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
+<div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
 <a id="a65dc97bd809d1a2a07fbe6b77ee5b92f" name="a65dc97bd809d1a2a07fbe6b77ee5b92f"></a>uint32_t</td>
@@ -148,9 +141,9 @@ count = 0</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a602be9f91456c08126a7676980dcd957" name="a602be9f91456c08126a7676980dcd957"></a>array&lt; uint16_t, 32 &gt;</td>
+<a id="a063486d5fb8ab21b9788691daadf350c" name="a063486d5fb8ab21b9788691daadf350c"></a>uint16_t</td>
 <td class="fieldname">
-sum = em::filled&lt; 32 &gt;( static_cast&lt; uint16_t &gt;( 0 ) )</td>
+sum[32] = {}</td>
 <td class="fielddoc">
 </td></tr>
 </table>
@@ -158,8 +151,8 @@ sum = em::filled&lt; 32 &gt;( static_cast&lt; uint16_t &gt;( 0 ) )</td>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a7d7708067ce5e93c5a21cc4083a82534" name="a7d7708067ce5e93c5a21cc4083a82534"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d7708067ce5e93c5a21cc4083a82534">&#9670;&#160;</a></span>setup_bench_tests()</h2>
+<a id="aab3aedfb4989cb2e3f7dd9c7ff234408" name="aab3aedfb4989cb2e3f7dd9c7ff234408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3aedfb4989cb2e3f7dd9c7ff234408">&#9670;&#160;</a></span>setup_bench_tests()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,20 +163,14 @@ sum = em::filled&lt; 32 &gt;( static_cast&lt; uint16_t &gt;( 0 ) )</td>
         <tr>
           <td class="memname">void servio::ftest::bench::setup_bench_tests </td>
           <td>(</td>
-          <td class="paramtype">em::pmr::memory_resource &amp;&#160;</td>
-          <td class="paramname"><em>mem</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">t::reactor &amp;&#160;</td>
-          <td class="paramname"><em>reac</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1ftest_1_1uctx.html">uctx</a> &amp;&#160;</td>
+          <td class="paramtype">asrt::task_ctx &amp;&#160;</td>
           <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">asrt_reac_assm &amp;&#160;</td>
+          <td class="paramname"><em>assm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -218,7 +205,7 @@ sum = em::filled&lt; 32 &gt;( static_cast&lt; uint16_t &gt;( 0 ) )</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structservio_1_1status.html">status</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> &amp;&#160;</td>
           <td class="paramname"><em>res</em>&#160;</td>
         </tr>
         <tr>
@@ -233,6 +220,8 @@ sum = em::filled&lt; 32 &gt;( static_cast&lt; uint16_t &gt;( 0 ) )</td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio_1_1ftest.html#a75aa199fee6ce1d019148d500bfd23d7">servio::ftest::setup_utest()</a>.</p>
 
 </div>
 </div>
@@ -257,7 +246,7 @@ sum = em::filled&lt; 32 &gt;( static_cast&lt; uint16_t &gt;( 0 ) )</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1ftest.html">ftest</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1ftest_1_1bench.html">bench</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

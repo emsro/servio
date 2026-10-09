@@ -94,61 +94,45 @@ $(document).ready(function(){initNavTree('status_8hpp.html',''); initResizable()
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">status.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;emlabcpp/result.h&gt;</code><br />
-<code>#include &lt;emlabcpp/status.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;emlabcpp/error_code.hpp&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for status.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="status_8hpp__incl.svg" width="318" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="status_8hpp__incl.svg" width="288" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="status_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1status.html">servio::status</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1error__status.html">servio::error_status</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1status__error__category.html">servio::status_error_category</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceservio" id="r_namespaceservio"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html">servio</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceemlabcpp" id="r_namespaceemlabcpp"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceemlabcpp.html">emlabcpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a08c735f896d54b9107bb8b8fd8c6c6bc" id="r_a08c735f896d54b9107bb8b8fd8c6c6bc"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a08c735f896d54b9107bb8b8fd8c6c6bc">servio::status_e</a> : uint8_t { <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#a08c735f896d54b9107bb8b8fd8c6c6bcad0749aaba8b833466dfcbb0428e4f89c">servio::SUCCESS</a> = 0
+<tr class="memitem:ae7c15dfa3e6c95de6c389ae86dd84d15" id="r_ae7c15dfa3e6c95de6c389ae86dd84d15"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">servio::status</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">servio::success</a> = 0
 , <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#a08c735f896d54b9107bb8b8fd8c6c6bca36fc6065a3e970bc3e6b2e59da52bf2a">servio::FAILURE</a> = 1
+&#160;&#160;<a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a3ee28fe1a60c95b89d29317f122c7021">servio::failure</a> = 1
 , <br />
-&#160;&#160;<a class="el" href="namespaceservio.html#a08c735f896d54b9107bb8b8fd8c6c6bcabb1ca97ec761fc37101737ba0aa2e7c5">servio::ERROR</a> = 2
+&#160;&#160;<a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">servio::error</a> = 2
 <br />
  }</td></tr>
-<tr class="separator:a08c735f896d54b9107bb8b8fd8c6c6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:abe44afce4c40e0497c02cc782e45b7d3" id="r_abe44afce4c40e0497c02cc782e45b7d3"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#abe44afce4c40e0497c02cc782e45b7d3">servio::to_str</a> (<a class="el" href="structservio_1_1status.html">status</a> s)</td></tr>
-<tr class="separator:abe44afce4c40e0497c02cc782e45b7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a2bffda22b19bcf89ee87272318abfa40" id="r_a2bffda22b19bcf89ee87272318abfa40"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1error__status.html">error_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a2bffda22b19bcf89ee87272318abfa40">servio::ERROR</a></td></tr>
-<tr class="separator:a2bffda22b19bcf89ee87272318abfa40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47a5b9d9754c9bec77aa054df2a928f9" id="r_a47a5b9d9754c9bec77aa054df2a928f9"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a47a5b9d9754c9bec77aa054df2a928f9">servio::FAILURE</a> = status::FAILURE</td></tr>
-<tr class="separator:a47a5b9d9754c9bec77aa054df2a928f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d5869ffe2516e502b6f358d2827207e" id="r_a8d5869ffe2516e502b6f358d2827207e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a> = status::SUCCESS</td></tr>
-<tr class="separator:a8d5869ffe2516e502b6f358d2827207e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ae7c15dfa3e6c95de6c389ae86dd84d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -156,7 +140,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="status_8hpp.html">status.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

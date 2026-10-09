@@ -131,7 +131,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7698e8f1d886e8d2882729813cf1f9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91ac3d6bc1f72e863af96808dece7467" id="r_a91ac3d6bc1f72e863af96808dece7467"><td class="memItemLeft" align="right" valign="top">vari::vval&lt; <a class="el" href="namespaceservio_1_1cfg.html#a215c26edc6be40e5ceb18f9e75f96e62">base_t</a>, <a class="el" href="namespaceservio.html#structservio_1_1str__err">str_err</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#a91ac3d6bc1f72e863af96808dece7467">on_cmd_get</a> (std::string_view <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a>) override</td></tr>
 <tr class="separator:a91ac3d6bc1f72e863af96808dece7467"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8aa733e6116c5d37e9f1b01b9b1cd1bc" id="r_a8aa733e6116c5d37e9f1b01b9b1cd1bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#a8aa733e6116c5d37e9f1b01b9b1cd1bc">on_storage_load</a> (uint32_t <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f">id</a>, std::span&lt; std::byte const &gt; data) override</td></tr>
+<tr class="memitem:a8aa733e6116c5d37e9f1b01b9b1cd1bc" id="r_a8aa733e6116c5d37e9f1b01b9b1cd1bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#a8aa733e6116c5d37e9f1b01b9b1cd1bc">on_storage_load</a> (uint32_t <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f">id</a>, std::span&lt; std::byte const &gt; data) override</td></tr>
 <tr class="separator:a8aa733e6116c5d37e9f1b01b9b1cd1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeed85ab7238e3a07599b63ce94ae032e" id="r_aeed85ab7238e3a07599b63ce94ae032e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio.html#a61b877b22095a520cf71c2099e4888dc">opt</a>&lt; std::span&lt; std::byte const &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#aeed85ab7238e3a07599b63ce94ae032e">on_storage_save</a> (uint32_t <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f">id</a>, std::span&lt; std::byte &gt; buffer) override</td></tr>
 <tr class="separator:aeed85ab7238e3a07599b63ce94ae032e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -359,7 +359,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structservio_1_1status.html">status</a> <a class="el" href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a>&lt; T &gt;::on_storage_load </td>
+          <td class="memname"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> <a class="el" href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a>&lt; T &gt;::on_storage_load </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>id</em>, </td>
@@ -385,7 +385,7 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="structservio_1_1cfg_1_1iface.html#a6383c7edd80d900ff906f70ff3775865">servio::cfg::iface</a>.</p>
 
-<p class="reference">References <a class="el" href="namespaceservio.html#a2bffda22b19bcf89ee87272318abfa40">servio::ERROR</a>, and <a class="el" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a>.</p>
+<p class="reference">References <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">servio::error</a>, and <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">servio::success</a>.</p>
 
 </div>
 </div>
@@ -471,7 +471,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1cfg.html">cfg</a></li><li class="navelem"><a class="el" href="structservio_1_1cfg_1_1handler.html">handler</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

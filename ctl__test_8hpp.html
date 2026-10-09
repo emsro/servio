@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('ctl__test_8hpp.html',''); initResizabl
 <code>#include &quot;<a class="el" href="drv_2callbacks_8hpp_source.html">../../drv/callbacks.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="interfaces_8hpp_source.html">../../drv/interfaces.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="retainers_8hpp_source.html">../../drv/retainers.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="power_8hpp_source.html">../../gov/power/power.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="rewind_8hpp_source.html">../rewind.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="utest_8hpp_source.html">../utest.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -110,7 +111,7 @@ $(document).ready(function(){initNavTree('ctl__test_8hpp.html',''); initResizabl
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ctl__test_8hpp__incl.svg" width="2432" height="506"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ctl__test_8hpp__incl.svg" width="1882" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="ctl__test_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -120,6 +121,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1intg_1_1current__ctl__test.html">servio::ftest::intg::current_ctl_test</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1intg_1_1sign__test.html">servio::ftest::intg::sign_test</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test that current and velocity have the same sign, i.e. current follows motion direction.  <a href="structservio_1_1ftest_1_1intg_1_1sign__test.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -133,8 +135,8 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac2d4a5066b334eb072468b2afa22fad1" id="r_ac2d4a5066b334eb072468b2afa22fad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1intg.html#ac2d4a5066b334eb072468b2afa22fad1">servio::ftest::intg::setup_ctl_test</a> (em::pmr::memory_resource &amp;mem, t::reactor &amp;reac, <a class="el" href="structservio_1_1ftest_1_1uctx.html">ftest::uctx</a> &amp;ctx, t::parameters &amp;params, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;clk, <a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> &amp;motor, <a class="el" href="structservio_1_1drv_1_1curr__iface.html">drv::curr_iface</a> &amp;curr, <a class="el" href="structservio_1_1drv_1_1pos__iface.html">drv::pos_iface</a> &amp;pos, <a class="el" href="structservio_1_1core_1_1core.html">core::core</a> &amp;cor, <a class="el" href="structservio_1_1status.html">status</a> &amp;res)</td></tr>
-<tr class="separator:ac2d4a5066b334eb072468b2afa22fad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa3a67e4f3aa28b4822e669f8018f06" id="r_a3aa3a67e4f3aa28b4822e669f8018f06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest_1_1intg.html#a3aa3a67e4f3aa28b4822e669f8018f06">servio::ftest::intg::setup_ctl_test</a> (asrt::task_ctx &amp;ctx, asrt_reac_assm &amp;assm, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;clk, <a class="el" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a> &amp;motor, <a class="el" href="structservio_1_1drv_1_1curr__iface.html">drv::curr_iface</a> &amp;curr, <a class="el" href="structservio_1_1drv_1_1pos__iface.html">drv::pos_iface</a> &amp;pos, <a class="el" href="structservio_1_1core_1_1core.html">core::core</a> &amp;cor, <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> &amp;res)</td></tr>
+<tr class="separator:a3aa3a67e4f3aa28b4822e669f8018f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -142,7 +144,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="dir_298d61badfb8e83b30e1451ec7acbef9.html">intg</a></li><li class="navelem"><a class="el" href="ctl__test_8hpp.html">ctl_test.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

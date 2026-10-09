@@ -1,6 +1,5 @@
 var ftester_2main_8cpp =
 [
-    [ "servio::ftester::joque_test", "structservio_1_1ftester_1_1joque__test.html", "structservio_1_1ftester_1_1joque__test" ],
-    [ "handle_test_specifics", "ftester_2main_8cpp.html#af85eaac72e6fd1885c973e047a7ac2ad", null ],
+    [ "asrt_log", "ftester_2main_8cpp.html#a04d8c80cbc92519e3909aafe5ae22200", null ],
     [ "main", "ftester_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97", null ]
 ];

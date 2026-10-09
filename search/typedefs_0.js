@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['adc_5fpooler_5ftype_0',['adc_pooler_type',['../namespaceservio_1_1brd.html#a8b36136e5a2768136f9d44ad5ef7c56a',1,'servio::brd']]],
-  ['angle_5fvec_1',['angle_vec',['../namespaceservio_1_1sim.html#a496e8de9a9763267fda5eeaac8a92fa1',1,'servio::sim']]]
+  ['_5fstore_5fmetric_5fsender_0',['_store_metric_sender',['../namespaceservio_1_1ftest.html#a794ae3021457c1a545ce7719be931f65',1,'servio::ftest']]]
 ];

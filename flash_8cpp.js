@@ -1,6 +1,4 @@
 var flash_8cpp =
 [
-    [ "flash_firmware_openocd", "flash_8cpp.html#a62b686ad2b66859c1accbb7678069d60", null ],
-    [ "make_bmp_flash_task", "flash_8cpp.html#a6271a31584c71e0f02b95d888832da1e", null ],
-    [ "make_openocd_flash_task", "flash_8cpp.html#a4d55394c1681c7716e00d85a89a60c08", null ]
+    [ "flash_firmware", "flash_8cpp.html#a010fc649bce2f643a8b970fa283bc7e1", null ]
 ];

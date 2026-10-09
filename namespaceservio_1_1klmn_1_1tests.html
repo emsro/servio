@@ -103,10 +103,16 @@ Functions</h2></td></tr>
 <tr class="separator:a33b71b0d66cd9ee03b55c429b9a815b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a668e3fcaeac4c4a1337f48457eb04dba" id="r_a668e3fcaeac4c4a1337f48457eb04dba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn_1_1tests.html#a668e3fcaeac4c4a1337f48457eb04dba">TEST</a> (Kalman, base)</td></tr>
 <tr class="separator:a668e3fcaeac4c4a1337f48457eb04dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa405a9d915a13e4c1c2d2162ecd75337" id="r_aa405a9d915a13e4c1c2d2162ecd75337"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn_1_1tests.html#aa405a9d915a13e4c1c2d2162ecd75337">TEST</a> (Kalman, velocity_near_overlap_matches_midrange)</td></tr>
+<tr class="memdesc:aa405a9d915a13e4c1c2d2162ecd75337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that the Kalman position/velocity estimator reports the same positive velocity for the same forward motion sequence in mid-range and when the observations start close to the 0/2*pi overlap seam.  <br /></td></tr>
+<tr class="separator:aa405a9d915a13e4c1c2d2162ecd75337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6dd8252102934142c452647de1e555f" id="r_ac6dd8252102934142c452647de1e555f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1klmn_1_1tests.html#ac6dd8252102934142c452647de1e555f">TEST</a> (Kalman, stationary_dither_near_overlap_matches_midrange)</td></tr>
+<tr class="memdesc:ac6dd8252102934142c452647de1e555f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that seam-adjacent quantized observations do not create a spurious velocity bias compared to the same stationary dither sequence in mid-range.  <br /></td></tr>
+<tr class="separator:ac6dd8252102934142c452647de1e555f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a668e3fcaeac4c4a1337f48457eb04dba" name="a668e3fcaeac4c4a1337f48457eb04dba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a668e3fcaeac4c4a1337f48457eb04dba">&#9670;&#160;</a></span>TEST() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a668e3fcaeac4c4a1337f48457eb04dba">&#9670;&#160;</a></span>TEST() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,7 +142,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a33b71b0d66cd9ee03b55c429b9a815b8" name="a33b71b0d66cd9ee03b55c429b9a815b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33b71b0d66cd9ee03b55c429b9a815b8">&#9670;&#160;</a></span>TEST() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a33b71b0d66cd9ee03b55c429b9a815b8">&#9670;&#160;</a></span>TEST() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,13 +171,77 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac6dd8252102934142c452647de1e555f" name="ac6dd8252102934142c452647de1e555f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6dd8252102934142c452647de1e555f">&#9670;&#160;</a></span>TEST() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">servio::klmn::tests::TEST </td>
+          <td>(</td>
+          <td class="paramtype">Kalman&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">stationary_dither_near_overlap_matches_midrange&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifies that seam-adjacent quantized observations do not create a spurious velocity bias compared to the same stationary dither sequence in mid-range. </p>
+
+<p class="reference">References <a class="el" href="namespaceservio.html#a20c15193768c59a28a88e172aba5ab20">servio::pi</a>.</p>
+
+</div>
+</div>
+<a id="aa405a9d915a13e4c1c2d2162ecd75337" name="aa405a9d915a13e4c1c2d2162ecd75337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa405a9d915a13e4c1c2d2162ecd75337">&#9670;&#160;</a></span>TEST() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">servio::klmn::tests::TEST </td>
+          <td>(</td>
+          <td class="paramtype">Kalman&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">velocity_near_overlap_matches_midrange&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifies that the Kalman position/velocity estimator reports the same positive velocity for the same forward motion sequence in mid-range and when the observations start close to the 0/2*pi overlap seam. </p>
+
+<p class="reference">References <a class="el" href="namespaceservio.html#a20c15193768c59a28a88e172aba5ab20">servio::pi</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1klmn.html">klmn</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1klmn_1_1tests.html">tests</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

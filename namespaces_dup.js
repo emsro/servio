@@ -1,9 +1,10 @@
 var namespaces_dup =
 [
     [ "avakar", "namespaceavakar.html", [
-      [ "operator<<", "namespaceavakar.html#a0ac47952e24e79aeb41ab920766bde9d", null ]
+      [ "operator<<", "namespaceavakar.html#a7188a99c2daa8218707878b93e6c3c02", null ]
     ] ],
     [ "boost", "namespaceboost.html", "namespaceboost" ],
+    [ "emlabcpp", "namespaceemlabcpp.html", null ],
     [ "gen", "namespacegen.html", [
       [ "apply_prefix", "namespacegen.html#ab999c1a55cdab8e29e530b83ba3d6ea6", null ],
       [ "gen_arg_cmd", "namespacegen.html#a582cae894a39582687f2804f8ce57f6a", null ],

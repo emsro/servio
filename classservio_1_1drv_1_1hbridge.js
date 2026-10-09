@@ -14,7 +14,7 @@ var classservio_1_1drv_1_1hbridge =
     [ "set_period_callback", "classservio_1_1drv_1_1hbridge.html#a28b3688cc2a74637b053e8c8b3d05d40", null ],
     [ "set_power", "classservio_1_1drv_1_1hbridge.html#adee305934427c204358465cb87c2bbb8", null ],
     [ "setup", "classservio_1_1drv_1_1hbridge.html#aaa818f0bff60de49f5f40e38223147f5", null ],
-    [ "start", "classservio_1_1drv_1_1hbridge.html#af1e93481bcc17c248c4c5ff2bd55eb64", null ],
-    [ "stop", "classservio_1_1drv_1_1hbridge.html#a8195339a47ce7369c84f9f577b9d480c", null ],
+    [ "start", "classservio_1_1drv_1_1hbridge.html#ace6eb29852e5c6370bece3e3afeb242c", null ],
+    [ "stop", "classservio_1_1drv_1_1hbridge.html#ab1da3c152c34762870b46edfa2f4ba81", null ],
     [ "timer_period_irq", "classservio_1_1drv_1_1hbridge.html#aba898e36f0927115d4f26073d9de3937", null ]
 ];

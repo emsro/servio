@@ -103,13 +103,14 @@ $(document).ready(function(){initNavTree('interfaces_8hpp.html',''); initResizab
 <code>#include &quot;<a class="el" href="cfg_2def_8hpp_source.html">../cfg/def.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="status_8hpp_source.html">../status.hpp</a>&quot;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;emlabcpp/experimental/function_view.hpp&gt;</code><br />
 <code>#include &lt;span&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for interfaces.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfaces_8hpp__incl.svg" width="739" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfaces_8hpp__incl.svg" width="982" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="interfaces_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -164,17 +165,17 @@ Typedefs</h2></td></tr>
 <tr class="separator:a194d4daf14731733eaade9c7f8dfcff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a280a49ab9a01d82a54b34c1971736a7f" id="r_a280a49ab9a01d82a54b34c1971736a7f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a280a49ab9a01d82a54b34c1971736a7f">servio::drv::position_cb_iface</a> = <a class="el" href="structservio_1_1drv_1_1value__cb__iface.html">value_cb_iface</a></td></tr>
 <tr class="separator:a280a49ab9a01d82a54b34c1971736a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae233abc47871b442f75cd856dcb2115c" id="r_ae233abc47871b442f75cd856dcb2115c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#ae233abc47871b442f75cd856dcb2115c">servio::drv::send_data_t</a> = std::span&lt; std::span&lt; std::byte const &gt; const &gt;</td></tr>
-<tr class="separator:ae233abc47871b442f75cd856dcb2115c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaac161bbe223f7894d4e15f5a270aa9" id="r_aeaac161bbe223f7894d4e15f5a270aa9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#aeaac161bbe223f7894d4e15f5a270aa9">servio::drv::send_get_data_f</a> = em::function_view&lt; std::span&lt; std::byte const &gt;() &gt;</td></tr>
+<tr class="separator:aeaac161bbe223f7894d4e15f5a270aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6e5875af91fc88cb51f3f382aef97193" id="r_a6e5875af91fc88cb51f3f382aef97193"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1status.html">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a6e5875af91fc88cb51f3f382aef97193">servio::drv::send</a> (<a class="el" href="structservio_1_1drv_1_1com__iface.html">com_iface</a> &amp;iface, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout, auto &amp;... data)</td></tr>
-<tr class="separator:a6e5875af91fc88cb51f3f382aef97193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ddfb5f94ab6a643d78ff0e91d80bc1" id="r_a28ddfb5f94ab6a643d78ff0e91d80bc1"><td class="memItemLeft" align="right" valign="top">error_code&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a28ddfb5f94ab6a643d78ff0e91d80bc1">servio::drv::send</a> (<a class="el" href="structservio_1_1drv_1_1com__iface.html">com_iface</a> &amp;comms, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout, std::span&lt; std::byte const &gt; data)</td></tr>
+<tr class="separator:a28ddfb5f94ab6a643d78ff0e91d80bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40b5c094f9145bb1145198ee924ff3cb" id="r_a40b5c094f9145bb1145198ee924ff3cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a40b5c094f9145bb1145198ee924ff3cb">servio::drv::wait_for</a> (<a class="el" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;clk, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> ms)</td></tr>
 <tr class="separator:a40b5c094f9145bb1145198ee924ff3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a939143e8846f4165956444ad9cdc5c4d" id="r_a939143e8846f4165956444ad9cdc5c4d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a939143e8846f4165956444ad9cdc5c4d">servio::drv::spin_with_timeout</a> (<a class="el" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;clk, bool volatile &amp;cond, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout)</td></tr>
-<tr class="separator:a939143e8846f4165956444ad9cdc5c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5a00aab7fb2191912d0d268bc82af56" id="r_ab5a00aab7fb2191912d0d268bc82af56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#ab5a00aab7fb2191912d0d268bc82af56">servio::drv::spin_with_timeout</a> (<a class="el" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;clk, bool const volatile &amp;cond, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout)</td></tr>
+<tr class="separator:ab5a00aab7fb2191912d0d268bc82af56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -182,7 +183,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="interfaces_8hpp.html">interfaces.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

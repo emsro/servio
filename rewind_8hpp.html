@@ -92,26 +92,36 @@ $(document).ready(function(){initNavTree('rewind_8hpp.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">rewind.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="core_8hpp_source.html">../core/core.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="drivers_8hpp_source.html">../core/drivers.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="fw_2util_8hpp_source.html">../fw/util.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="interfaces_8hpp_source.html">../drv/interfaces.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="current_8hpp_source.html">../gov/current/current.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="power_8hpp_source.html">../gov/power/power.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utest_8hpp_source.html">./utest.hpp</a>&quot;</code><br />
+<code>#include &lt;optional&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for rewind.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="rewind_8hpp__incl.svg" width="1595" height="374"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="rewind_8hpp__incl.svg" width="2972" height="418"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="rewind_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__rewind__sender.html">servio::ftest::_rewind_sender&lt; CB &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__rewind__sender_1_1__op.html">servio::ftest::_rewind_sender&lt; CB &gt;::_op&lt; R &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__rewind__sender_1_1__op_1_1sub__receiver.html">servio::ftest::_rewind_sender&lt; CB &gt;::_op&lt; R &gt;::sub_receiver</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceservio" id="r_namespaceservio"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html">servio</a></td></tr>
@@ -121,8 +131,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aef8c2d16757242361891e1b25f0ee325" id="r_aef8c2d16757242361891e1b25f0ee325"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#aef8c2d16757242361891e1b25f0ee325">servio::ftest::rewind</a> (<a class="el" href="structservio_1_1core_1_1core.html">core::core</a> &amp;cor, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;iclk, <a class="el" href="structservio_1_1drv_1_1pos__iface.html">drv::pos_iface</a> &amp;ipos, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout, em::min_max&lt; float &gt; area, float current, auto cb)</td></tr>
-<tr class="separator:aef8c2d16757242361891e1b25f0ee325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863e324fc7c819980274e04af8bc803e" id="r_a863e324fc7c819980274e04af8bc803e"><td class="memTemplParams" colspan="2">template&lt;typename CB &gt; </td></tr>
+<tr class="memitem:a863e324fc7c819980274e04af8bc803e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1ftest_1_1__rewind__sender.html">_rewind_sender</a>&lt; CB &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a863e324fc7c819980274e04af8bc803e">servio::ftest::rewind</a> (<a class="el" href="structservio_1_1ftest_1_1utest.html">utest</a> &amp;ctx, <a class="el" href="structservio_1_1core_1_1core.html">core::core</a> &amp;cor, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;iclk, <a class="el" href="structservio_1_1drv_1_1pos__iface.html">drv::pos_iface</a> &amp;ipos, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout, em::min_max&lt; float &gt; area, float current, CB cb)</td></tr>
+<tr class="separator:a863e324fc7c819980274e04af8bc803e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -130,7 +141,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="rewind_8hpp.html">rewind.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

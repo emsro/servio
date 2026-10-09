@@ -105,8 +105,8 @@ $(document).ready(function(){initNavTree('scmdio_2base_8hpp_source.html',''); in
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;avakar/atom.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;boost/asio.hpp&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;emlabcpp/experimental/string_buffer.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;emlabcpp/view.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;emlabcpp/experimental/string_buffer.hpp&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;emlabcpp/view.hpp&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;nlohmann/json.hpp&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;spdlog/spdlog.h&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('scmdio_2base_8hpp_source.html',''); in
 </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespaceservio_1_1scmdio.html#a6789ab0e74b37afe45d4ad8dbb30de7e">   39</a></span><span class="keyword">inline</span> std::filesystem::path <span class="keyword">const</span>&amp; <a class="code hl_function" href="namespaceservio_1_1scmdio.html#a6789ab0e74b37afe45d4ad8dbb30de7e">check_path</a>( std::filesystem::path <span class="keyword">const</span>&amp; p )</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespaceservio_1_1scmdio.html#ac33f0d410562d7d3619567d9bf4d850c">   39</a></span><span class="keyword">inline</span> std::filesystem::path <a class="code hl_function" href="namespaceservio_1_1scmdio.html#ac33f0d410562d7d3619567d9bf4d850c">check_path</a>( std::filesystem::path <span class="keyword">const</span>&amp; p )</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">if</span> ( !std::filesystem::exists( p ) )</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <span class="keywordflow">throw</span> std::runtime_error( <span class="stringliteral">&quot;Path &quot;</span> + p.string() + <span class="stringliteral">&quot; does not exist&quot;</span> );</div>
@@ -276,7 +276,7 @@ $(document).ready(function(){initNavTree('scmdio_2base_8hpp_source.html',''); in
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">// XXX: duplication from span much</span></div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
 <div class="foldopen" id="foldopen00139" data-start="{" data-end="};">
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="structstd_1_1formatter_3_01emlabcpp_1_1view_3_01T_01_4_00_01char_01_4.html">  139</a></span><span class="keyword">struct </span>std::formatter&lt; emlabcpp::view&lt; T &gt;, char &gt;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="structstd_1_1formatter_3_01emlabcpp_1_1view_3_01T_01_4_00_01char_01_4.html">  139</a></span><span class="keyword">struct </span>std::formatter&lt; <a class="code hl_namespace" href="namespaceemlabcpp.html">emlabcpp</a>::view&lt; T &gt;, char &gt;</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>{</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keyword">template</span> &lt; <span class="keyword">typename</span> ParseContext &gt;</div>
 <div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
@@ -304,7 +304,7 @@ $(document).ready(function(){initNavTree('scmdio_2base_8hpp_source.html',''); in
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keyword">template</span> &lt; std::<span class="keywordtype">size_t</span> N &gt;</div>
 <div class="foldopen" id="foldopen00161" data-start="{" data-end="};">
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="structstd_1_1formatter_3_01emlabcpp_1_1string__buffer_3_01N_01_4_00_01char_01_4.html">  161</a></span><span class="keyword">struct </span>std::formatter&lt; emlabcpp::string_buffer&lt; N &gt;, char &gt;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="structstd_1_1formatter_3_01emlabcpp_1_1string__buffer_3_01N_01_4_00_01char_01_4.html">  161</a></span><span class="keyword">struct </span>std::formatter&lt; <a class="code hl_namespace" href="namespaceemlabcpp.html">emlabcpp</a>::string_buffer&lt; N &gt;, char &gt;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>{</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keyword">template</span> &lt; <span class="keyword">typename</span> ParseContext &gt;</div>
 <div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
@@ -365,11 +365,12 @@ $(document).ready(function(){initNavTree('scmdio_2base_8hpp_source.html',''); in
 </div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>};</div>
 </div>
-<div class="ttc" id="anamespaceavakar_html"><div class="ttname"><a href="namespaceavakar.html">avakar</a></div><div class="ttdef"><b>Definition</b> config_test.cpp:10</div></div>
+<div class="ttc" id="anamespaceavakar_html"><div class="ttname"><a href="namespaceavakar.html">avakar</a></div><div class="ttdef"><b>Definition</b> config_test.cpp:21</div></div>
+<div class="ttc" id="anamespaceemlabcpp_html"><div class="ttname"><a href="namespaceemlabcpp.html">emlabcpp</a></div><div class="ttdef"><b>Definition</b> status.hpp:38</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html"><div class="ttname"><a href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div><div class="ttdef"><b>Definition</b> base.hpp:15</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_a662f29442a014cdbe007bc12f0d52fe8"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a662f29442a014cdbe007bc12f0d52fe8">servio::scmdio::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; sptr</div><div class="ttdef"><b>Definition</b> base.hpp:22</div></div>
-<div class="ttc" id="anamespaceservio_1_1scmdio_html_a6789ab0e74b37afe45d4ad8dbb30de7e"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a6789ab0e74b37afe45d4ad8dbb30de7e">servio::scmdio::check_path</a></div><div class="ttdeci">std::filesystem::path const &amp; check_path(std::filesystem::path const &amp;p)</div><div class="ttdef"><b>Definition</b> base.hpp:39</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_a6bc8cf20076a956127f4020a688a2c92"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a6bc8cf20076a956127f4020a688a2c92">servio::scmdio::log_error</a></div><div class="ttdeci">void log_error(spdlog::format_string_t&lt; Args... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> base.hpp:33</div></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html_ac33f0d410562d7d3619567d9bf4d850c"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#ac33f0d410562d7d3619567d9bf4d850c">servio::scmdio::check_path</a></div><div class="ttdeci">std::filesystem::path check_path(std::filesystem::path const &amp;p)</div><div class="ttdef"><b>Definition</b> base.hpp:39</div></div>
 <div class="ttc" id="anamespaceservio_1_1scmdio_html_adec9aeb6f81f1c6f3db642544d88f967"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#adec9aeb6f81f1c6f3db642544d88f967">servio::scmdio::opt</a></div><div class="ttdeci">std::optional&lt; T &gt; opt</div><div class="ttdef"><b>Definition</b> base.hpp:25</div></div>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdoc">STL namespace.</div></div>
 <div class="ttc" id="astructservio_1_1scmdio_1_1servio__exception_html"><div class="ttname"><a href="structservio_1_1scmdio_1_1servio__exception.html">servio::scmdio::servio_exception</a></div><div class="ttdef"><b>Definition</b> base.hpp:28</div></div>
@@ -395,7 +396,7 @@ $(document).ready(function(){initNavTree('scmdio_2base_8hpp_source.html',''); in
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="scmdio_2base_8hpp.html">base.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

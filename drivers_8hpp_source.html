@@ -103,13 +103,13 @@ $(document).ready(function(){initNavTree('drivers_8hpp_source.html',''); initRes
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../drv/interfaces.hpp&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;emlabcpp/experimental/decompose.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;emlabcpp/experimental/decompose.hpp&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.hpp&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1core.html">servio::core</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span>em = emlabcpp;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceemlabcpp.html">em</a> = <a class="code hl_namespace" href="namespaceemlabcpp.html">emlabcpp</a>;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structservio_1_1core_1_1drivers.html">   13</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1core_1_1drivers.html">drivers</a></div>
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('drivers_8hpp_source.html',''); initRes
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structservio_1_1core_1_1drivers.html#aea1ac88a160beffe23f4a8582dccff35">   26</a></span>        <a class="code hl_struct" href="structservio_1_1drv_1_1com__iface.html">drv::com_iface</a>*       <a class="code hl_variable" href="structservio_1_1core_1_1drivers.html#aea1ac88a160beffe23f4a8582dccff35">comms</a>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structservio_1_1core_1_1drivers.html#ad5f31d5e8ee94f3469eb1691c770621e">   27</a></span>        <a class="code hl_struct" href="structservio_1_1drv_1_1leds__iface.html">drv::leds_iface</a>*      <a class="code hl_variable" href="structservio_1_1core_1_1drivers.html#ad5f31d5e8ee94f3469eb1691c770621e">leds</a>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structservio_1_1core_1_1drivers.html#a8cc3ac64667269991eac2f401fadba19">   29</a></span>        em::function_view&lt; <a class="code hl_struct" href="structservio_1_1status.html">status</a>( <a class="code hl_struct" href="structservio_1_1core_1_1drivers.html">drivers</a>&amp; ) &gt; <a class="code hl_variable" href="structservio_1_1core_1_1drivers.html#a8cc3ac64667269991eac2f401fadba19">start_cb</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structservio_1_1core_1_1drivers.html#a8cc3ac64667269991eac2f401fadba19">   29</a></span>        em::function_view&lt; <a class="code hl_enumeration" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a>( <a class="code hl_struct" href="structservio_1_1core_1_1drivers.html">drivers</a>&amp; ) &gt; <a class="code hl_variable" href="structservio_1_1core_1_1drivers.html#a8cc3ac64667269991eac2f401fadba19">start_cb</a>;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structservio_1_1core_1_1drivers.html#a6d26ca408a056f7f0e5df3df4655add7">   31</a></span>        <span class="keyword">auto</span> <a class="code hl_function" href="structservio_1_1core_1_1drivers.html#a6d26ca408a056f7f0e5df3df4655add7">tie</a>()</div>
@@ -154,8 +154,10 @@ $(document).ready(function(){initNavTree('drivers_8hpp_source.html',''); initRes
 </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}  <span class="comment">// namespace servio::core</span></div>
+<div class="ttc" id="anamespaceemlabcpp_html"><div class="ttname"><a href="namespaceemlabcpp.html">emlabcpp</a></div><div class="ttdef"><b>Definition</b> status.hpp:38</div></div>
 <div class="ttc" id="anamespaceservio_1_1cfg_html_structservio_1_1cfg_1_1context"><div class="ttname"><a href="namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context">servio::cfg::context</a></div><div class="ttdef"><b>Definition</b> def.hpp:590</div></div>
 <div class="ttc" id="anamespaceservio_1_1core_html"><div class="ttname"><a href="namespaceservio_1_1core.html">servio::core</a></div><div class="ttdef"><b>Definition</b> callbacks.hpp:9</div></div>
+<div class="ttc" id="anamespaceservio_html_ae7c15dfa3e6c95de6c389ae86dd84d15"><div class="ttname"><a href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">servio::status</a></div><div class="ttdeci">status</div><div class="ttdef"><b>Definition</b> status.hpp:12</div></div>
 <div class="ttc" id="astructservio_1_1core_1_1drivers_html"><div class="ttname"><a href="structservio_1_1core_1_1drivers.html">servio::core::drivers</a></div><div class="ttdef"><b>Definition</b> drivers.hpp:14</div></div>
 <div class="ttc" id="astructservio_1_1core_1_1drivers_html_a004ea464be38cf39c91ddd5c9b3dc93e"><div class="ttname"><a href="structservio_1_1core_1_1drivers.html#a004ea464be38cf39c91ddd5c9b3dc93e">servio::core::drivers::clock</a></div><div class="ttdeci">drv::clk_iface * clock</div><div class="ttdef"><b>Definition</b> drivers.hpp:18</div></div>
 <div class="ttc" id="astructservio_1_1core_1_1drivers_html_a0361b0638af2a8395ebe99484a9a10fe"><div class="ttname"><a href="structservio_1_1core_1_1drivers.html#a0361b0638af2a8395ebe99484a9a10fe">servio::core::drivers::period</a></div><div class="ttdeci">drv::period_iface * period</div><div class="ttdef"><b>Definition</b> drivers.hpp:25</div></div>
@@ -172,25 +174,24 @@ $(document).ready(function(){initNavTree('drivers_8hpp_source.html',''); initRes
 <div class="ttc" id="astructservio_1_1core_1_1drivers_html_aea1ac88a160beffe23f4a8582dccff35"><div class="ttname"><a href="structservio_1_1core_1_1drivers.html#aea1ac88a160beffe23f4a8582dccff35">servio::core::drivers::comms</a></div><div class="ttdeci">drv::com_iface * comms</div><div class="ttdef"><b>Definition</b> drivers.hpp:26</div></div>
 <div class="ttc" id="astructservio_1_1core_1_1drivers_html_af2f6bdfae67f73d331d52d8da2dd5822"><div class="ttname"><a href="structservio_1_1core_1_1drivers.html#af2f6bdfae67f73d331d52d8da2dd5822">servio::core::drivers::temperature</a></div><div class="ttdeci">drv::temp_iface * temperature</div><div class="ttdef"><b>Definition</b> drivers.hpp:22</div></div>
 <div class="ttc" id="astructservio_1_1core_1_1drivers_html_afcb49ca9c356877336314e3646a9945c"><div class="ttname"><a href="structservio_1_1core_1_1drivers.html#afcb49ca9c356877336314e3646a9945c">servio::core::drivers::storage</a></div><div class="ttdeci">drv::storage_iface * storage</div><div class="ttdef"><b>Definition</b> drivers.hpp:17</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1clk__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1clk__iface.html">servio::drv::clk_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:73</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1com__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1com__iface.html">servio::drv::com_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:47</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1curr__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1curr__iface.html">servio::drv::curr_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:144</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1leds__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1leds__iface.html">servio::drv::leds_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:67</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1period__cb__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1period__cb__iface.html">servio::drv::period_cb_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:29</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1period__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1period__iface.html">servio::drv::period_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:94</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1pos__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1pos__iface.html">servio::drv::pos_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:122</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1pwm__motor__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1pwm__motor__iface.html">servio::drv::pwm_motor_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:108</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1storage__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1storage__iface.html">servio::drv::storage_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:60</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1temp__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1temp__iface.html">servio::drv::temp_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:133</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1vcc__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1vcc__iface.html">servio::drv::vcc_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:128</div></div>
-<div class="ttc" id="astructservio_1_1status_html"><div class="ttname"><a href="structservio_1_1status.html">servio::status</a></div><div class="ttdef"><b>Definition</b> status.hpp:18</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1clk__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1clk__iface.html">servio::drv::clk_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:78</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1com__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1com__iface.html">servio::drv::com_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:48</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1curr__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1curr__iface.html">servio::drv::curr_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:149</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1leds__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1leds__iface.html">servio::drv::leds_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:72</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1period__cb__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1period__cb__iface.html">servio::drv::period_cb_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:30</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1period__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1period__iface.html">servio::drv::period_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:99</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1pos__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1pos__iface.html">servio::drv::pos_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:127</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1pwm__motor__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1pwm__motor__iface.html">servio::drv::pwm_motor_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:113</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1storage__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1storage__iface.html">servio::drv::storage_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:65</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1temp__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1temp__iface.html">servio::drv::temp_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:138</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1vcc__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1vcc__iface.html">servio::drv::vcc_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:133</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a class="el" href="drivers_8hpp.html">drivers.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

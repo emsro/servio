@@ -1,10 +1,23 @@
 var searchData=
 [
-  ['l_0',['l',['../structservio_1_1parser_1_1parser.html#a2e0a091f41537ff9abd796fb0c03261f',1,'servio::parser::parser']]],
-  ['last_5fpos_1',['last_pos',['../structservio_1_1mtr_1_1static__detector.html#a6b005443e07cf908804a351976d2c1e6',1,'servio::mtr::static_detector']]],
-  ['last_5ft_2',['last_t',['../structservio_1_1sim_1_1simple__motor.html#a3d2d8cad5e6ed5e1d02db5e55d6ee2f8',1,'servio::sim::simple_motor']]],
-  ['last_5ftime_3',['last_time',['../structservio_1_1linear__transition__regulator.html#a86af7d9936d174903f831fdc3fd4fba7',1,'servio::linear_transition_regulator']]],
-  ['last_5fvalue_4',['last_value',['../structservio_1_1drv_1_1detailed__adc__channel.html#a9d54fc9b5453d429ca00fad5f1e17302',1,'servio::drv::detailed_adc_channel::last_value'],['../structservio_1_1drv_1_1adc__channel.html#a31f781d219a2cc4489adcbaba591da95',1,'servio::drv::adc_channel::last_value']]],
-  ['leds_5',['leds',['../structservio_1_1core_1_1drivers.html#ad5f31d5e8ee94f3469eb1691c770621e',1,'servio::core::drivers::leds'],['../namespaceservio_1_1brd.html#a9a9ba68956eb017a599db3ce8d3c109a',1,'servio::brd::LEDS']]],
-  ['low_5fpoint_6',['low_point',['../structservio_1_1linear__transition__regulator.html#a88d4a584a998cb31dc6fa2ce633e1f57',1,'servio::linear_transition_regulator']]]
+  ['m_0',['m',['../structservio_1_1cfg_1_1root__handler.html#a667400ee5615959d58397741ad3c1393',1,'servio::cfg::root_handler']]],
+  ['m_5fhandler_1',['m_handler',['../structservio_1_1cfg_1_1root__handler.html#af1f63e6a735d61c142a1ebcae8eac6d1',1,'servio::cfg::root_handler']]],
+  ['map_2',['map',['../namespaceservio_1_1cfg.html#a3dbb7cf8f857ae3e9ab69908e1674f69',1,'servio::cfg::context']]],
+  ['max_5feid_3',['max_eid',['../namespaceservio_1_1sntr.html#a9cd819b8dac7557532809cf4f1a1f073',1,'servio::sntr']]],
+  ['maximum_5ftemperature_4',['maximum_temperature',['../structservio_1_1cfg_1_1map.html#a6fcb998a25b9456787e604581aed42c7',1,'servio::cfg::map']]],
+  ['mc1_5fch_5',['mc1_ch',['../namespaceservio_1_1plt.html#a4a2a54f770976186280c10166402518c',1,'servio::plt::hb_timer_cfg']]],
+  ['mc1_5fpin_6',['mc1_pin',['../namespaceservio_1_1plt.html#abf83c9b9ef5f51ca968ce2bfd819b19a',1,'servio::plt::hb_timer_cfg']]],
+  ['mc2_5fch_7',['mc2_ch',['../namespaceservio_1_1plt.html#af748fc48605aa9327b8a17cff5681907',1,'servio::plt::hb_timer_cfg']]],
+  ['mc2_5fpin_8',['mc2_pin',['../namespaceservio_1_1plt.html#a343a2e6d97e198ad0c85add7bb96ec86',1,'servio::plt::hb_timer_cfg']]],
+  ['mem_9',['mem',['../namespaceservio_1_1core.html#a60f4044fe51ef47ac4a51aa7ab72c27b',1,'servio::core::dispatcher']]],
+  ['met_10',['met',['../namespaceservio_1_1core.html#a69a198f45973f8414dfae87f38a1550f',1,'servio::core::dispatcher::met'],['../structservio_1_1cfg_1_1root__handler.html#ac897eb06d45a885f37941359a4e346e9',1,'servio::cfg::root_handler::met'],['../structservio_1_1core_1_1core.html#af79a219de96e8d0dfcf16ed14b8f8d0b',1,'servio::core::core::met']]],
+  ['met_5fid_11',['met_id',['../structservio_1_1ftest_1_1utest.html#ae90f670814f00d9aba64fa01412be059',1,'servio::ftest::utest']]],
+  ['meta_12',['meta',['../namespaceservio_1_1scmdio.html#a5fea6003be161f442586771ace5607ac',1,'servio::scmdio::raw_preset_def']]],
+  ['metric_5fvalue_13',['metric_value',['../structservio_1_1ftest_1_1__store__metric__ctx.html#a54f98d30357cbeca1a4fea783142d697',1,'servio::ftest::_store_metric_ctx']]],
+  ['minimum_5fvoltage_14',['minimum_voltage',['../structservio_1_1cfg_1_1map.html#aee5c5bd8251fa034869fc5c61c23222f',1,'servio::cfg::map']]],
+  ['mode_15',['mode',['../namespaceservio_1_1drv.html#a4b6dbe40933c2ab5f79074a81d43c19d',1,'servio::drv::pin_cfg']]],
+  ['model_16',['model',['../structservio_1_1cfg_1_1map.html#a55ef4b06df8f1f0a52e2d0c4f1265cf1',1,'servio::cfg::map']]],
+  ['mon_17',['mon',['../structservio_1_1cfg_1_1root__handler.html#a07744a3227a8bd05fbb9c3653b8061cf',1,'servio::cfg::root_handler::mon'],['../structservio_1_1core_1_1core.html#ada6d34917171a93b984d8484a4d0b8d1',1,'servio::core::core::mon'],['../namespaceservio_1_1core.html#a96a10152046d95f227bbe9a2b5abf074',1,'servio::core::dispatcher::mon']]],
+  ['motor_18',['motor',['../structservio_1_1cfg_1_1root__handler.html#a28c43465f6f37c943d2eec035df79780',1,'servio::cfg::root_handler::motor'],['../namespaceservio_1_1core.html#ac7d472f1e430d48837369e31ea8f2204',1,'servio::core::dispatcher::motor'],['../structservio_1_1core_1_1drivers.html#a9b5e3b87b77644f65974f0517ee349bd',1,'servio::core::drivers::motor'],['../structservio_1_1ftest_1_1intg_1_1current__ctl__test.html#a3f4fbf838d74e35192c1087f7bc8e607',1,'servio::ftest::intg::current_ctl_test::motor'],['../structservio_1_1ftest_1_1intg_1_1sign__test.html#a7671587841163819ea4304c3be101dd0',1,'servio::ftest::intg::sign_test::motor'],['../structservio_1_1ftest_1_1intg_1_1meas__cur__test.html#a9bd70a7057bf0d6b6577cb2a0adee352',1,'servio::ftest::intg::meas_cur_test::motor'],['../structservio_1_1ftest_1_1intg_1_1meas__pos__test.html#a266b5c9207b0f05be3aa43f78e2e64b4',1,'servio::ftest::intg::meas_pos_test::motor'],['../structservio_1_1ftest_1_1intg_1_1meas__vel__test.html#a048e23f76e5e611dfadc1f43b7f5d477',1,'servio::ftest::intg::meas_vel_test::motor'],['../structservio_1_1gov_1_1gov__fixture.html#af3347c97346ae2611d867b0d430e169a',1,'servio::gov::gov_fixture::motor'],['../structservio_1_1scmdio_1_1port__mock.html#a7d512df1ce8e1c4b36e663568f529ba5',1,'servio::scmdio::port_mock::attrs::motor']]],
+  ['moving_5fdetection_5fstep_19',['moving_detection_step',['../structservio_1_1cfg_1_1map.html#ae059bc8f6f3ec941fd2ef60169de3a87',1,'servio::cfg::map']]]
 ];

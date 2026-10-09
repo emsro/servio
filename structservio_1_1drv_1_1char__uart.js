@@ -8,8 +8,8 @@ var structservio_1_1drv_1_1char__uart =
     [ "operator=", "structservio_1_1drv_1_1char__uart.html#a926755eca3e1378acfb2ca7e9ba43977", null ],
     [ "recv", "structservio_1_1drv_1_1char__uart.html#ae9a10d8b2856bd128cc1d4810aced331", null ],
     [ "rx_cplt_irq", "structservio_1_1drv_1_1char__uart.html#afa7e808ab1ce4551ff546cb9506f27ab", null ],
-    [ "send", "structservio_1_1drv_1_1char__uart.html#aea5bd8707e92bca77c24a686fd1a2ff3", null ],
-    [ "start", "structservio_1_1drv_1_1char__uart.html#a050f8f379f618e4c9deed6d774970081", null ],
+    [ "send", "structservio_1_1drv_1_1char__uart.html#a864614790cabf78f884445d84e7918dd", null ],
+    [ "start", "structservio_1_1drv_1_1char__uart.html#a4476be70b9372e6c6ed5a19fa622fa0d", null ],
     [ "tx_cplt_irq", "structservio_1_1drv_1_1char__uart.html#a88e280f45a48ca9ca1bf9287182dda66", null ],
     [ "delims", "structservio_1_1drv_1_1char__uart.html#a19aca62966d7b02e331fbbd2d767d302", null ]
 ];

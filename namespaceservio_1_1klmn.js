@@ -2,7 +2,9 @@ var namespaceservio_1_1klmn =
 [
     [ "tests", "namespaceservio_1_1klmn_1_1tests.html", [
       [ "TEST", "namespaceservio_1_1klmn_1_1tests.html#a668e3fcaeac4c4a1337f48457eb04dba", null ],
-      [ "TEST", "namespaceservio_1_1klmn_1_1tests.html#a33b71b0d66cd9ee03b55c429b9a815b8", null ]
+      [ "TEST", "namespaceservio_1_1klmn_1_1tests.html#a33b71b0d66cd9ee03b55c429b9a815b8", null ],
+      [ "TEST", "namespaceservio_1_1klmn_1_1tests.html#ac6dd8252102934142c452647de1e555f", null ],
+      [ "TEST", "namespaceservio_1_1klmn_1_1tests.html#aa405a9d915a13e4c1c2d2162ecd75337", null ]
     ] ],
     [ "state_range", "namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range", "namespaceservio_1_1klmn_structservio_1_1klmn_1_1state__range_dup" ],
     [ "control_input", "namespaceservio_1_1klmn.html#a265c882587110f56dad6b8e59422bf52", null ],

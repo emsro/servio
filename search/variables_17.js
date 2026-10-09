@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['write_5fmemory_0',['WRITE_MEMORY',['../namespaceservio_1_1scmdio.html#a70c1a5833a7f96afb0a27e958e9bda25',1,'servio::scmdio']]]
+  ['yellow_5fch_0',['yellow_ch',['../namespaceservio_1_1plt.html#a37d79e24faa708acaded518bc3b20f90',1,'servio::plt::leds_timer_cfg']]],
+  ['yellow_5fpin_1',['yellow_pin',['../namespaceservio_1_1plt.html#a5b199dce656d176cdce5d0a2e9daf13d',1,'servio::plt::leds_timer_cfg']]]
 ];

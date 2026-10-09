@@ -1,7 +1,47 @@
-<map id="servio::ftest::utest&lt; T &gt;" name="servio::ftest::utest&lt; T &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,152,184,177"/>
-<area shape="rect" id="Node000002" href="$structservio_1_1ftest_1_1utest__base.html" title=" " alt="" coords="5,79,184,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,118,97,152,92,152,92,118"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="32,5,157,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,44,97,79,92,79,92,44"/>
+<map id="servio::ftest::utest" name="servio::ftest::utest">
+<area shape="rect" id="Node000001" title=" " alt="" coords="168,653,308,678"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1drv_1_1tests_1_1clock__test.html" title=" " alt="" coords="375,5,505,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,639,249,516,270,343,286,253,304,171,327,103,340,76,354,56,373,40,376,44,358,59,345,79,332,105,310,173,291,254,275,343,254,517,244,639"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html" title=" " alt="" coords="365,69,515,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="239,638,251,527,274,373,290,294,308,221,329,161,354,120,368,107,371,111,358,123,334,164,313,223,295,295,279,374,257,528,244,639"/>
+<area shape="rect" id="Node000005" href="$structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html" title=" " alt="" coords="367,133,513,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="240,639,254,539,278,404,312,272,332,220,354,184,368,171,372,175,358,187,336,222,317,274,283,405,259,540,245,639"/>
+<area shape="rect" id="Node000006" href="$structservio_1_1drv_1_1tests_1_1comms__echo__test.html" title=" " alt="" coords="366,197,514,237"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="236,639,240,564,256,460,271,403,291,348,319,295,354,247,369,235,372,240,358,251,323,298,296,350,276,405,261,461,245,564,242,639"/>
+<area shape="rect" id="Node000007" href="$structservio_1_1drv_1_1tests_1_1comms__timeout__test.html" title=" " alt="" coords="356,261,524,301"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="238,639,245,574,264,487,278,440,298,394,323,350,354,311,369,299,373,304,358,315,327,353,303,396,283,442,269,488,251,575,243,639"/>
+<area shape="rect" id="Node000008" href="$structservio_1_1drv_1_1tests_1_1curr__iface__test.html" title=" " alt="" coords="375,325,505,365"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="240,639,251,585,272,514,305,441,328,406,354,375,373,362,376,366,358,379,332,409,310,443,277,516,256,586,245,640"/>
+<area shape="rect" id="Node000009" href="$structservio_1_1drv_1_1tests_1_1hbridge__test.html" title=" " alt="" coords="375,389,505,429"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="244,638,258,596,281,542,312,488,354,439,373,426,376,431,358,443,317,491,285,545,263,597,249,640"/>
+<area shape="rect" id="Node000010" href="$structservio_1_1drv_1_1tests_1_1period__iface__test.html" title=" " alt="" coords="369,453,511,493"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="249,639,290,572,320,535,354,503,374,491,377,496,358,507,324,539,295,575,254,642"/>
+<area shape="rect" id="Node000011" href="$structservio_1_1drv_1_1tests_1_1position__test.html" title=" " alt="" coords="375,517,505,557"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="260,641,302,604,355,567,379,555,381,560,357,572,305,608,264,645"/>
+<area shape="rect" id="Node000012" href="$structservio_1_1drv_1_1tests_1_1pwm__motor__test.html" title=" " alt="" coords="370,581,510,621"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="291,646,375,619,377,624,293,651"/>
+<area shape="rect" id="Node000013" href="$structservio_1_1drv_1_1tests_1_1storage__iface__test.html" title=" " alt="" coords="365,645,515,685"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="322,663,365,663,365,668,322,668"/>
+<area shape="rect" id="Node000014" href="$structservio_1_1drv_1_1tests_1_1temperature__test.html" title=" " alt="" coords="369,709,511,749"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="293,680,377,707,375,712,291,685"/>
+<area shape="rect" id="Node000015" href="$structservio_1_1drv_1_1tests_1_1vcc__test.html" title=" " alt="" coords="375,773,505,813"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="264,686,305,722,357,759,381,771,379,776,355,764,302,727,260,690"/>
+<area shape="rect" id="Node000016" href="$structservio_1_1ftest_1_1bench_1_1loop__frequency.html" title=" " alt="" coords="367,837,513,877"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="254,689,295,755,324,792,358,823,377,835,374,839,354,827,320,795,290,758,249,692"/>
+<area shape="rect" id="Node000017" href="$structservio_1_1ftest_1_1bench_1_1profile.html" title=" " alt="" coords="367,901,513,941"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="249,691,263,733,285,786,317,840,358,887,374,899,371,903,354,891,312,843,281,788,258,735,244,692"/>
+<area shape="rect" id="Node000018" href="$structservio_1_1ftest_1_1bench_1_1usage.html" title=" " alt="" coords="367,965,513,1005"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="245,691,256,745,277,814,310,887,332,921,358,951,373,963,370,967,354,955,328,924,305,890,272,816,251,746,240,692"/>
+<area shape="rect" id="Node000019" href="$structservio_1_1ftest_1_1intg_1_1current__ctl__test.html" title=" " alt="" coords="374,1029,506,1069"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="243,691,251,756,269,842,283,889,303,934,327,977,358,1015,375,1029,372,1033,354,1019,323,980,298,937,278,890,264,844,245,757,238,692"/>
+<area shape="rect" id="Node000020" href="$structservio_1_1ftest_1_1intg_1_1meas__cur__test.html" title=" " alt="" coords="374,1093,506,1133"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="242,692,245,767,261,870,276,926,296,981,323,1033,358,1079,376,1093,372,1097,354,1083,319,1036,291,983,271,927,256,871,240,767,236,692"/>
+<area shape="rect" id="Node000021" href="$structservio_1_1ftest_1_1intg_1_1meas__pos__test.html" title=" " alt="" coords="374,1157,506,1197"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="245,691,259,790,283,926,317,1057,336,1108,358,1144,375,1157,372,1162,354,1147,332,1111,312,1059,278,927,254,791,240,692"/>
+<area shape="rect" id="Node000022" href="$structservio_1_1ftest_1_1intg_1_1meas__vel__test.html" title=" " alt="" coords="374,1221,506,1261"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="244,692,257,803,279,957,295,1036,313,1108,334,1167,358,1208,376,1222,372,1226,354,1211,329,1169,308,1109,290,1037,274,958,251,803,239,692"/>
+<area shape="rect" id="Node000023" href="$structservio_1_1ftest_1_1intg_1_1sign__test.html" title="Test that current and velocity have the same sign, i.e. current follows motion direction." alt="" coords="374,1285,506,1325"/>
+<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="244,691,254,814,275,987,291,1076,310,1158,332,1226,345,1252,358,1272,376,1286,372,1290,354,1275,340,1254,327,1228,304,1160,286,1077,270,988,249,814,238,692"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,653,120,678"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,663,168,663,168,668,134,668"/>
 </map>

@@ -98,17 +98,21 @@ $(document).ready(function(){initNavTree('properties__test_8cpp.html',''); initR
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="iface_2def_8hpp_source.html">../iface/def.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="scmdio_2cli_8hpp_source.html">../scmdio/cli.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cli_8hpp_source.html">../scmdio/cli.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="port_8hpp_source.html">../scmdio/port.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="serial_8hpp_source.html">../scmdio/serial.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bb__test__case_8hpp_source.html">bb_test_case.hpp</a>&quot;</code><br />
-<code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;CLI/CLI.hpp&gt;</code><br />
+<code>#include &lt;boost/asio/awaitable.hpp&gt;</code><br />
+<code>#include &lt;boost/asio/io_context.hpp&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;gtest/gtest.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for properties_test.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="properties__test_8cpp__incl.svg" width="1398" height="418"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="properties__test_8cpp__incl.svg" width="1756" height="418"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -120,8 +124,6 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ace6eaf73807de37e4d37a071d612a883" id="r_ace6eaf73807de37e4d37a071d612a883"><td class="memItemLeft" align="right" valign="top">boost::asio::awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1bb.html#ace6eaf73807de37e4d37a071d612a883">servio::bb::test_properties_querying</a> (boost::asio::io_context &amp;, <a class="el" href="structservio_1_1scmdio_1_1port__iface.html">scmdio::port_iface</a> &amp;port)</td></tr>
-<tr class="separator:ace6eaf73807de37e4d37a071d612a883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627" id="r_a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="properties__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -162,7 +164,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b5f1ff6edc0113562981516635a79dda.html">bb</a></li><li class="navelem"><a class="el" href="properties__test_8cpp.html">properties_test.cpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

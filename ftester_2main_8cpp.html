@@ -92,54 +92,90 @@ $(document).ready(function(){initNavTree('ftester_2main_8cpp.html',''); initResi
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="base_8hpp_source.html">../base.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ftest_2bench_2base_8hpp_source.html">../ftest/bench/base.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="config_8hpp_source.html">./config.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="flash_8hpp_source.html">./flash.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="system_8hpp_source.html">./system.hpp</a>&quot;</code><br />
-<code>#include &lt;emlabcpp/enumerate.h&gt;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
-<code>#include &lt;joque/exec.hpp&gt;</code><br />
-<code>#include &lt;joque/json.hpp&gt;</code><br />
-<code>#include &lt;nlohmann/json.hpp&gt;</code><br />
-<code>#include &lt;spdlog/sinks/basic_file_sink.h&gt;</code><br />
-<code>#include &lt;spdlog/sinks/stdout_color_sinks.h&gt;</code><br />
-<code>#include &lt;spdlog/spdlog.h&gt;</code><br />
-<code>#include &lt;vari/vref.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;final_receiver.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="harness_8hpp_source.html">harness.hpp</a>&quot;</code><br />
+<code>#include &quot;log_sink.hpp&quot;</code><br />
+<code>#include &quot;output_fs.hpp&quot;</code><br />
+<code>#include &quot;param_config.hpp&quot;</code><br />
+<code>#include &quot;pbar.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="peer_8hpp_source.html">peer.hpp</a>&quot;</code><br />
+<code>#include &quot;real_fs.hpp&quot;</code><br />
+<code>#include &quot;run_session.hpp&quot;</code><br />
+<code>#include &quot;task.hpp&quot;</code><br />
+<code>#include &quot;transport.hpp&quot;</code><br />
+<code>#include &quot;util.hpp&quot;</code><br />
+<code>#include &lt;CLI/CLI.hpp&gt;</code><br />
+<code>#include &lt;asrtl/log.h&gt;</code><br />
+<code>#include &lt;asrtlpp/task.hpp&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cstdarg&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
+<code>#include &lt;ostream&gt;</code><br />
+<code>#include &lt;print&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;uv.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for main.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ftester_2main_8cpp__incl.svg" width="3952" height="359"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ftester_2main_8cpp__incl.svg" width="2488" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftester_1_1joque__test.html">servio::ftester::joque_test</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceservio" id="r_namespaceservio"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html">servio</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceservio_1_1ftester" id="r_namespaceservio_1_1ftester"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html">servio::ftester</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af85eaac72e6fd1885c973e047a7ac2ad" id="r_af85eaac72e6fd1885c973e047a7ac2ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#af85eaac72e6fd1885c973e047a7ac2ad">servio::ftester::handle_test_specifics</a> (std::string_view name, <a class="el" href="structservio_1_1ftester_1_1test__system.html">test_system</a> &amp;sys, std::filesystem::path out_dir)</td></tr>
-<tr class="separator:af85eaac72e6fd1885c973e047a7ac2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d8c80cbc92519e3909aafe5ae22200" id="r_a04d8c80cbc92519e3909aafe5ae22200"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ftester_2main_8cpp.html#a04d8c80cbc92519e3909aafe5ae22200">asrt_log</a> (enum asrt_log_level level, char const *module, char const *fmt,...)</td></tr>
+<tr class="separator:a04d8c80cbc92519e3909aafe5ae22200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ftester_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a04d8c80cbc92519e3909aafe5ae22200" name="a04d8c80cbc92519e3909aafe5ae22200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d8c80cbc92519e3909aafe5ae22200">&#9670;&#160;</a></span>asrt_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void asrt_log </td>
+          <td>(</td>
+          <td class="paramtype">enum asrt_log_level&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
 
@@ -166,7 +202,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1ftester.html#a9068c85a2b355f97abbdc5beb418b7dd">servio::ftester::config::c_baudrate</a>, <a class="el" href="namespaceservio_1_1ftester.html#afa35dca7982260312c4bff22fc180eee">servio::ftester::config::c_device</a>, <a class="el" href="namespaceservio_1_1ftester.html#ab3e6303bc5ee2f7e96e9196984c0cfb4">servio::ftester::config::d_baudrate</a>, <a class="el" href="namespaceservio_1_1ftester.html#a1ff2b573293cb82c49bf90032e7fc5a7">servio::ftester::config::d_device</a>, <a class="el" href="namespaceservio_1_1ftester.html#a8f8cd80b3be896f7ecf844083945d242">servio::ftester::config::filter</a>, <a class="el" href="namespaceservio_1_1ftester.html#a66e80e3cf060cfb06b123b129f110c4e">servio::ftester::config::flash_cmd</a>, <a class="el" href="namespaceservio_1_1ftester.html#aaffecbdec76b5f485513b0aee82f3a2c">servio::ftester::openocd_flash_config::fw</a>, <a class="el" href="namespaceservio_1_1ftester.html#aa82f2858ac70e9973a3761bd4d70ac8f">servio::ftester::config::input</a>, <a class="el" href="structservio_1_1ftester_1_1joque__test.html#ada08fe6e2bff17e1003eec4fbc1b7961">servio::ftester::joque_test::name</a>, <a class="el" href="namespaceservio_1_1ftester.html#a395635dae0d133981cb0f2204a27e76a">servio::ftester::openocd_flash_config::openocd_config</a>, and <a class="el" href="namespaceservio_1_1ftester.html#a0876b9fcc87d2b7574e65e6182934729">servio::ftester::config::output_dir</a>.</p>
+<p class="reference">References <a class="el" href="structharness.html#ab88358586461bbc31a6e4ccf7dc5fe75">harness::add()</a>.</p>
 
 </div>
 </div>
@@ -176,7 +212,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="ftester_2main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

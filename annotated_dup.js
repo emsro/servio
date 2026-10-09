@@ -147,19 +147,24 @@ var annotated_dup =
           [ "meas_vel_test", "structservio_1_1ftest_1_1intg_1_1meas__vel__test.html", "structservio_1_1ftest_1_1intg_1_1meas__vel__test" ],
           [ "sign_test", "structservio_1_1ftest_1_1intg_1_1sign__test.html", "structservio_1_1ftest_1_1intg_1_1sign__test" ]
         ] ],
+        [ "_expect_ctx", "structservio_1_1ftest_1_1__expect__ctx.html", "structservio_1_1ftest_1_1__expect__ctx" ],
+        [ "_init_utest_ctx", "structservio_1_1ftest_1_1__init__utest__ctx.html", "structservio_1_1ftest_1_1__init__utest__ctx" ],
+        [ "_metric_conv", "namespaceservio_1_1ftest.html#structservio_1_1ftest_1_1__metric__conv", null ],
+        [ "_metric_conv< bool >", "structservio_1_1ftest_1_1__metric__conv_3_01bool_01_4.html", "structservio_1_1ftest_1_1__metric__conv_3_01bool_01_4" ],
+        [ "_metric_conv< char const * >", "structservio_1_1ftest_1_1__metric__conv_3_01char_01const_01_5_01_4.html", "structservio_1_1ftest_1_1__metric__conv_3_01char_01const_01_5_01_4" ],
+        [ "_metric_conv< float >", "structservio_1_1ftest_1_1__metric__conv_3_01float_01_4.html", "structservio_1_1ftest_1_1__metric__conv_3_01float_01_4" ],
+        [ "_metric_conv< int64_t >", "structservio_1_1ftest_1_1__metric__conv_3_01int64__t_01_4.html", "structservio_1_1ftest_1_1__metric__conv_3_01int64__t_01_4" ],
+        [ "_metric_conv< std::bitset< N > >", "structservio_1_1ftest_1_1__metric__conv_3_01std_1_1bitset_3_01N_01_4_01_4.html", "structservio_1_1ftest_1_1__metric__conv_3_01std_1_1bitset_3_01N_01_4_01_4" ],
+        [ "_metric_conv< std::chrono::duration< Rep, Period > >", "structservio_1_1ftest_1_1__metric__conv_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html", "structservio_1_1ftest_1_1__metric__conv_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4" ],
+        [ "_metric_conv< std::string >", "structservio_1_1ftest_1_1__metric__conv_3_01std_1_1string_01_4.html", "structservio_1_1ftest_1_1__metric__conv_3_01std_1_1string_01_4" ],
+        [ "_metric_conv< std::string_view >", "structservio_1_1ftest_1_1__metric__conv_3_01std_1_1string__view_01_4.html", "structservio_1_1ftest_1_1__metric__conv_3_01std_1_1string__view_01_4" ],
+        [ "_metric_conv< T >", "structservio_1_1ftest_1_1__metric__conv_3_01T_01_4.html", "structservio_1_1ftest_1_1__metric__conv_3_01T_01_4" ],
+        [ "_metric_conv< uint64_t >", "structservio_1_1ftest_1_1__metric__conv_3_01uint64__t_01_4.html", "structservio_1_1ftest_1_1__metric__conv_3_01uint64__t_01_4" ],
+        [ "_rewind_sender", "structservio_1_1ftest_1_1__rewind__sender.html", "structservio_1_1ftest_1_1__rewind__sender" ],
+        [ "_store_metric_ctx", "structservio_1_1ftest_1_1__store__metric__ctx.html", "structservio_1_1ftest_1_1__store__metric__ctx" ],
+        [ "_wait_for_sender", "structservio_1_1ftest_1_1__wait__for__sender.html", "structservio_1_1ftest_1_1__wait__for__sender" ],
         [ "testing_system", "structservio_1_1ftest_1_1testing__system.html", "structservio_1_1ftest_1_1testing__system" ],
-        [ "uctx", "structservio_1_1ftest_1_1uctx.html", "structservio_1_1ftest_1_1uctx" ],
-        [ "utest", "structservio_1_1ftest_1_1utest.html", "structservio_1_1ftest_1_1utest" ],
-        [ "utest_base", "structservio_1_1ftest_1_1utest__base.html", "structservio_1_1ftest_1_1utest__base" ]
-      ] ],
-      [ "ftester", "namespaceservio_1_1ftester.html", [
-        [ "bmp_config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1bmp__config", "namespaceservio_1_1ftester_structservio_1_1ftester_1_1bmp__config_dup" ],
-        [ "config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1config", "namespaceservio_1_1ftester_structservio_1_1ftester_1_1config_dup" ],
-        [ "controller_interface", "structservio_1_1ftester_1_1controller__interface.html", "structservio_1_1ftester_1_1controller__interface" ],
-        [ "joque_test", "structservio_1_1ftester_1_1joque__test.html", "structservio_1_1ftester_1_1joque__test" ],
-        [ "openocd_flash_config", "namespaceservio_1_1ftester.html#structservio_1_1ftester_1_1openocd__flash__config", "namespaceservio_1_1ftester_structservio_1_1ftester_1_1openocd__flash__config_dup" ],
-        [ "recorder", "classservio_1_1ftester_1_1recorder.html", "classservio_1_1ftester_1_1recorder" ],
-        [ "test_system", "structservio_1_1ftester_1_1test__system.html", "structservio_1_1ftester_1_1test__system" ]
+        [ "utest", "structservio_1_1ftest_1_1utest.html", "structservio_1_1ftest_1_1utest" ]
       ] ],
       [ "fw", "namespaceservio_1_1fw.html", [
         [ "check_bool", "namespaceservio_1_1fw.html#structservio_1_1fw_1_1check__bool", null ],
@@ -307,31 +312,22 @@ var annotated_dup =
         [ "uart_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1uart__cfg", "namespaceservio_1_1plt_structservio_1_1plt_1_1uart__cfg_dup" ]
       ] ],
       [ "scmdio", "namespaceservio_1_1scmdio.html", [
-        [ "autotune_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1autotune__ctx_dup" ],
-        [ "bflash_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1bflash__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1bflash__ctx_dup" ],
-        [ "cfg_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1cfg__ctx_dup" ],
         [ "char_cli", "structservio_1_1scmdio_1_1char__cli.html", "structservio_1_1scmdio_1_1char__cli" ],
         [ "char_port", "structservio_1_1scmdio_1_1char__port.html", "structservio_1_1scmdio_1_1char__port" ],
         [ "cobs_cli", "structservio_1_1scmdio_1_1cobs__cli.html", "structservio_1_1scmdio_1_1cobs__cli" ],
         [ "cobs_port", "structservio_1_1scmdio_1_1cobs__port.html", "structservio_1_1scmdio_1_1cobs__port" ],
-        [ "consumer", "structservio_1_1scmdio_1_1consumer.html", "structservio_1_1scmdio_1_1consumer" ],
-        [ "gov_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1gov__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1gov__opts_dup" ],
-        [ "govctl_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1govctl__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1govctl__opts_dup" ],
         [ "kval_ser", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1kval__ser", null ],
         [ "kval_ser< vari::typelist< KV, KVs... > >", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4.html", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_01KV_00_01KVs_8_8_8_01_4_01_4" ],
         [ "kval_ser< vari::typelist<> >", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4.html", "structservio_1_1scmdio_1_1kval__ser_3_01vari_1_1typelist_3_4_01_4" ],
         [ "line", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1line", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1line_dup" ],
-        [ "pool_opts", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1pool__opts", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1pool__opts_dup" ],
         [ "port_cli", "structservio_1_1scmdio_1_1port__cli.html", "structservio_1_1scmdio_1_1port__cli" ],
         [ "port_iface", "structservio_1_1scmdio_1_1port__iface.html", "structservio_1_1scmdio_1_1port__iface" ],
         [ "port_mock", "structservio_1_1scmdio_1_1port__mock.html", "structservio_1_1scmdio_1_1port__mock" ],
-        [ "preset_ctx", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__ctx", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1preset__ctx_dup" ],
         [ "preset_def", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__def", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1preset__def_dup" ],
         [ "raw_preset_def", "namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1raw__preset__def", "namespaceservio_1_1scmdio_structservio_1_1scmdio_1_1raw__preset__def_dup" ],
         [ "serial_cli", "structservio_1_1scmdio_1_1serial__cli.html", "structservio_1_1scmdio_1_1serial__cli" ],
         [ "serial_stream", "structservio_1_1scmdio_1_1serial__stream.html", "structservio_1_1scmdio_1_1serial__stream" ],
         [ "servio_exception", "structservio_1_1scmdio_1_1servio__exception.html", null ],
-        [ "stm32_bootloader_mock", "structservio_1_1scmdio_1_1stm32__bootloader__mock.html", "structservio_1_1scmdio_1_1stm32__bootloader__mock" ],
         [ "stream_iface", "structservio_1_1scmdio_1_1stream__iface.html", "structservio_1_1scmdio_1_1stream__iface" ],
         [ "val_ser", "structservio_1_1scmdio_1_1val__ser.html", "structservio_1_1scmdio_1_1val__ser" ],
         [ "val_ser< avakar::atom< Ts... > >", "structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4.html", "structservio_1_1scmdio_1_1val__ser_3_01avakar_1_1atom_3_01Ts_8_8_8_01_4_01_4" ]
@@ -340,11 +336,6 @@ var annotated_dup =
         [ "simple_motor", "structservio_1_1sim_1_1simple__motor.html", "structservio_1_1sim_1_1simple__motor" ]
       ] ],
       [ "sntr", "namespaceservio_1_1sntr.html", [
-        [ "tests", "namespaceservio_1_1sntr_1_1tests.html", [
-          [ "central_sentry_fixture", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture.html", "structservio_1_1sntr_1_1tests_1_1central__sentry__fixture" ],
-          [ "sentry_fixture", "structservio_1_1sntr_1_1tests_1_1sentry__fixture.html", "structservio_1_1sntr_1_1tests_1_1sentry__fixture" ],
-          [ "test_clk", "structservio_1_1sntr_1_1tests_1_1test__clk.html", "structservio_1_1sntr_1_1tests_1_1test__clk" ]
-        ] ],
         [ "central_sentry", "classservio_1_1sntr_1_1central__sentry.html", "classservio_1_1sntr_1_1central__sentry" ],
         [ "central_sentry_iface", "structservio_1_1sntr_1_1central__sentry__iface.html", "structservio_1_1sntr_1_1central__sentry__iface" ],
         [ "record", "namespaceservio_1_1sntr.html#structservio_1_1sntr_1_1record", "namespaceservio_1_1sntr_structservio_1_1sntr_1_1record_dup" ],
@@ -355,18 +346,16 @@ var annotated_dup =
         [ "bits", "namespaceservio_1_1str__lib_1_1bits.html", [
           [ "adder", "structservio_1_1str__lib_1_1bits_1_1adder.html", "structservio_1_1str__lib_1_1bits_1_1adder" ]
         ] ],
-        [ "_invalid", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1__invalid", null ],
         [ "s_to_nr_res", "namespaceservio_1_1str__lib.html#structservio_1_1str__lib_1_1s__to__nr__res", "namespaceservio_1_1str__lib_structservio_1_1str__lib_1_1s__to__nr__res_dup" ],
         [ "s_to_nr_res.__unnamed1__", "namespaceservio_1_1str__lib.html#unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed1____", "namespaceservio_1_1str__lib_unionservio_1_1str__lib_1_1s__to__nr__res_8____unnamed1_____dup" ]
       ] ],
       [ "atom_sv_key", "structservio_1_1atom__sv__key.html", "structservio_1_1atom__sv__key" ],
-      [ "error_status", "structservio_1_1error__status.html", "structservio_1_1error__status" ],
       [ "key_atom_literal", "structservio_1_1key__atom__literal.html", "structservio_1_1key__atom__literal" ],
       [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
       [ "linear_transition_regulator", "structservio_1_1linear__transition__regulator.html", "structservio_1_1linear__transition__regulator" ],
       [ "opt_str_err", "structservio_1_1opt__str__err.html", "structservio_1_1opt__str__err" ],
       [ "pwr", "structservio_1_1pwr.html", null ],
-      [ "status", "structservio_1_1status.html", "structservio_1_1status" ],
+      [ "status_error_category", "structservio_1_1status__error__category.html", "structservio_1_1status__error__category" ],
       [ "str_err", "namespaceservio.html#structservio_1_1str__err", "namespaceservio_structservio_1_1str__err_dup" ]
     ] ],
     [ "std", "namespacestd.html", [
@@ -378,5 +367,9 @@ var annotated_dup =
       [ "formatter< std::byte, char >", "structstd_1_1formatter_3_01std_1_1byte_00_01char_01_4.html", "structstd_1_1formatter_3_01std_1_1byte_00_01char_01_4" ],
       [ "formatter< std::optional< T >, char >", "structstd_1_1formatter_3_01std_1_1optional_3_01T_01_4_00_01char_01_4.html", "structstd_1_1formatter_3_01std_1_1optional_3_01T_01_4_00_01char_01_4" ],
       [ "formatter< std::span< T >, char >", "structstd_1_1formatter_3_01std_1_1span_3_01T_01_4_00_01char_01_4.html", "structstd_1_1formatter_3_01std_1_1span_3_01T_01_4_00_01char_01_4" ]
-    ] ]
+    ] ],
+    [ "echo_peer", "structecho__peer.html", "structecho__peer" ],
+    [ "harness", "structharness.html", "structharness" ],
+    [ "peer_hook", "structpeer__hook.html", "structpeer__hook" ],
+    [ "silent_peer", "structsilent__peer.html", "structsilent__peer" ]
 ];

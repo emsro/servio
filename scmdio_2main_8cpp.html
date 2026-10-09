@@ -92,46 +92,43 @@ $(document).ready(function(){initNavTree('scmdio_2main_8cpp.html',''); initResiz
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="bflash_8hpp_source.html">./bflash.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="scmdio_2cli_8hpp_source.html">./cli.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="scmdio_2base_8hpp_source.html">./base.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cli_8hpp_source.html">./cli.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="config__cmds_8hpp_source.html">./config_cmds.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="field__util_8hpp_source.html">./field_util.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dfu__flash_8hpp_source.html">./dfu_flash.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="flash_8hpp_source.html">./flash.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="pid__autotune__cmd_8hpp_source.html">./pid_autotune_cmd.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="port_8hpp_source.html">./port.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="preset_8hpp_source.html">./preset.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="serial_8hpp_source.html">./serial.hpp</a>&quot;</code><br />
-<code>#include &lt;emlabcpp/algorithm.h&gt;</code><br />
+<code>#include &lt;CLI/CLI.hpp&gt;</code><br />
+<code>#include &lt;boost/asio/co_spawn.hpp&gt;</code><br />
+<code>#include &lt;boost/asio/io_context.hpp&gt;</code><br />
+<code>#include &lt;boost/asio/serial_port_base.hpp&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;emlabcpp/algorithm.hpp&gt;</code><br />
+<code>#include &lt;exception&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;nlohmann/json.hpp&gt;</code><br />
+<code>#include &lt;spdlog/spdlog.h&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for main.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="scmdio_2main_8cpp__incl.svg" width="1239" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="scmdio_2main_8cpp__incl.svg" width="2538" height="359"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:structservio_1_1scmdio_1_1cfg__ctx" id="r_structservio_1_1scmdio_1_1cfg__ctx"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1cfg__ctx">servio::scmdio::cfg_ctx</a></td></tr>
-<tr class="separator:structservio_1_1scmdio_1_1cfg__ctx"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1scmdio_1_1pool__opts" id="r_structservio_1_1scmdio_1_1pool__opts"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1pool__opts">servio::scmdio::pool_opts</a></td></tr>
-<tr class="separator:structservio_1_1scmdio_1_1pool__opts"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1scmdio_1_1govctl__opts" id="r_structservio_1_1scmdio_1_1govctl__opts"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1govctl__opts">servio::scmdio::govctl_opts</a></td></tr>
-<tr class="separator:structservio_1_1scmdio_1_1govctl__opts"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1scmdio_1_1gov__opts" id="r_structservio_1_1scmdio_1_1gov__opts"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1gov__opts">servio::scmdio::gov_opts</a></td></tr>
-<tr class="separator:structservio_1_1scmdio_1_1gov__opts"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1scmdio_1_1autotune__ctx" id="r_structservio_1_1scmdio_1_1autotune__ctx"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx">servio::scmdio::autotune_ctx</a></td></tr>
-<tr class="separator:structservio_1_1scmdio_1_1autotune__ctx"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1scmdio_1_1bflash__ctx" id="r_structservio_1_1scmdio_1_1bflash__ctx"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1bflash__ctx">servio::scmdio::bflash_ctx</a></td></tr>
-<tr class="separator:structservio_1_1scmdio_1_1bflash__ctx"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structservio_1_1scmdio_1_1preset__ctx" id="r_structservio_1_1scmdio_1_1preset__ctx"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1preset__ctx">servio::scmdio::preset_ctx</a></td></tr>
-<tr class="separator:structservio_1_1scmdio_1_1preset__ctx"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceservio" id="r_namespaceservio"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html">servio</a></td></tr>
@@ -141,298 +138,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9d0341f90de176f1fb8528b9d21bbf61" id="r_a9d0341f90de176f1fb8528b9d21bbf61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a9d0341f90de176f1fb8528b9d21bbf61">servio::scmdio::json_flag</a> (CLI::App *app, bool &amp;flag)</td></tr>
-<tr class="separator:a9d0341f90de176f1fb8528b9d21bbf61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad775904026fd4fb1d8f3a62288c7d3ab" id="r_ad775904026fd4fb1d8f3a62288c7d3ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ad775904026fd4fb1d8f3a62288c7d3ab">servio::scmdio::field_option</a> (CLI::App *app, std::string &amp;field)</td></tr>
-<tr class="separator:ad775904026fd4fb1d8f3a62288c7d3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabcd238bcdc64fd6f45c2ff73d285170" id="r_aabcd238bcdc64fd6f45c2ff73d285170"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#aabcd238bcdc64fd6f45c2ff73d285170">servio::scmdio::handle_eptr</a> (std::exception_ptr eptr)</td></tr>
-<tr class="separator:aabcd238bcdc64fd6f45c2ff73d285170"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acedc16b62c42d1234cff5edd94bafd79" id="r_acedc16b62c42d1234cff5edd94bafd79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#acedc16b62c42d1234cff5edd94bafd79">servio::scmdio::port_callback</a> (CLI::App *app, io_context &amp;io_ctx, auto &amp;ctx_ptr, auto f)</td></tr>
-<tr class="separator:acedc16b62c42d1234cff5edd94bafd79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53cc5ff3007630b899ca2bf5afc5a391" id="r_a53cc5ff3007630b899ca2bf5afc5a391"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a53cc5ff3007630b899ca2bf5afc5a391">servio::scmdio::cfg_def</a> (CLI::App &amp;app, io_context &amp;io_ctx)</td></tr>
-<tr class="separator:a53cc5ff3007630b899ca2bf5afc5a391"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeb5779e6c4f22edcae47554ad81c92f" id="r_afeb5779e6c4f22edcae47554ad81c92f"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#afeb5779e6c4f22edcae47554ad81c92f">servio::scmdio::pool_cmd</a> (io_context &amp;, <a class="el" href="namespaceservio_1_1scmdio.html#a662f29442a014cdbe007bc12f0d52fe8">sptr</a>&lt; <a class="el" href="structservio_1_1scmdio_1_1char__port.html">char_port</a> &gt; port, std::vector&lt; std::string &gt; const &amp;props)</td></tr>
-<tr class="separator:afeb5779e6c4f22edcae47554ad81c92f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa895c4d04b8c0c7d854041c055f68740" id="r_aa895c4d04b8c0c7d854041c055f68740"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#aa895c4d04b8c0c7d854041c055f68740">servio::scmdio::pool_def</a> (CLI::App &amp;app, io_context &amp;io_ctx)</td></tr>
-<tr class="separator:aa895c4d04b8c0c7d854041c055f68740"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a922db2268e022d09f1a2320c26c4f57b" id="r_a922db2268e022d09f1a2320c26c4f57b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a922db2268e022d09f1a2320c26c4f57b">servio::scmdio::govctl_def</a> (CLI::App &amp;app, io_context &amp;io_ctx)</td></tr>
-<tr class="separator:a922db2268e022d09f1a2320c26c4f57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaca4233811acc7480a1f4b2904b5a75e" id="r_aaca4233811acc7480a1f4b2904b5a75e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#aaca4233811acc7480a1f4b2904b5a75e">servio::scmdio::gov_def</a> (CLI::App &amp;app, io_context &amp;io_ctx)</td></tr>
-<tr class="separator:aaca4233811acc7480a1f4b2904b5a75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54ae7a5edcb3197b0f05c6c357ad8b94" id="r_a54ae7a5edcb3197b0f05c6c357ad8b94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a54ae7a5edcb3197b0f05c6c357ad8b94">servio::scmdio::autotune_def</a> (CLI::App &amp;app, io_context &amp;io_ctx)</td></tr>
-<tr class="separator:a54ae7a5edcb3197b0f05c6c357ad8b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae34166d08fd8a74b00c051f802a676e6" id="r_ae34166d08fd8a74b00c051f802a676e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ae34166d08fd8a74b00c051f802a676e6">servio::scmdio::bflash_def</a> (CLI::App &amp;app, io_context &amp;io_ctx)</td></tr>
-<tr class="separator:ae34166d08fd8a74b00c051f802a676e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae58a9baee10b53a76a702c860c1b0b02" id="r_ae58a9baee10b53a76a702c860c1b0b02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#ae58a9baee10b53a76a702c860c1b0b02">servio::scmdio::preset_def</a> (CLI::App &amp;app, io_context &amp;io_ctx)</td></tr>
-<tr class="separator:ae58a9baee10b53a76a702c860c1b0b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scmdio_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="structservio_1_1scmdio_1_1cfg__ctx" id="structservio_1_1scmdio_1_1cfg__ctx"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1cfg__ctx">&#9670;&#160;</a></span>servio::scmdio::cfg_ctx</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::scmdio::cfg_ctx</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::scmdio::cfg_ctx:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1scmdio_1_1cfg__ctx__coll__graph.svg" width="347" height="228"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a042f0e3f3f694f590baea65ef0f865e5" name="a042f0e3f3f694f590baea65ef0f865e5"></a>string</td>
-<td class="fieldname">
-field</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a0d17b95179abdab0d7d40727d25097fd" name="a0d17b95179abdab0d7d40727d25097fd"></a>bool</td>
-<td class="fieldname">
-json = false</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a13a9500c0be1297fac08fb0a64cb4e90" name="a13a9500c0be1297fac08fb0a64cb4e90"></a>path</td>
-<td class="fieldname">
-path</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a9de8a17d5f09ec34dad9501d2e828474" name="a9de8a17d5f09ec34dad9501d2e828474"></a><a class="el" href="structservio_1_1scmdio_1_1char__cli.html">char_cli</a></td>
-<td class="fieldname">
-port</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="aa78dcdc970fec9cb4b3abd6719bf90aa" name="aa78dcdc970fec9cb4b3abd6719bf90aa"></a>string</td>
-<td class="fieldname">
-value</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="structservio_1_1scmdio_1_1pool__opts" id="structservio_1_1scmdio_1_1pool__opts"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1pool__opts">&#9670;&#160;</a></span>servio::scmdio::pool_opts</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::scmdio::pool_opts</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::scmdio::pool_opts:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1scmdio_1_1pool__opts__coll__graph.svg" width="398" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a290cb9a642d3eb9533e624f5f8ee5353" name="a290cb9a642d3eb9533e624f5f8ee5353"></a>vector&lt; string &gt;</td>
-<td class="fieldname">
-data</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="acc094a30f90dcc544e7793fe7232442e" name="acc094a30f90dcc544e7793fe7232442e"></a><a class="el" href="structservio_1_1scmdio_1_1char__cli.html">char_cli</a></td>
-<td class="fieldname">
-port</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="structservio_1_1scmdio_1_1govctl__opts" id="structservio_1_1scmdio_1_1govctl__opts"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1govctl__opts">&#9670;&#160;</a></span>servio::scmdio::govctl_opts</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::scmdio::govctl_opts</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::scmdio::govctl_opts:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1scmdio_1_1govctl__opts__coll__graph.svg" width="347" height="214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a164d6fd967db4c2c0073f360cda21cfa" name="a164d6fd967db4c2c0073f360cda21cfa"></a>string</td>
-<td class="fieldname">
-governor</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a3b484eea15137baf74fb9225c6c25ca9" name="a3b484eea15137baf74fb9225c6c25ca9"></a><a class="el" href="structservio_1_1scmdio_1_1char__cli.html">char_cli</a></td>
-<td class="fieldname">
-port</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="structservio_1_1scmdio_1_1gov__opts" id="structservio_1_1scmdio_1_1gov__opts"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1gov__opts">&#9670;&#160;</a></span>servio::scmdio::gov_opts</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::scmdio::gov_opts</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::scmdio::gov_opts:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1scmdio_1_1gov__opts__coll__graph.svg" width="347" height="214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="ad68fd2cc71b4cfa5b4ee7220bc09ea5a" name="ad68fd2cc71b4cfa5b4ee7220bc09ea5a"></a>string</td>
-<td class="fieldname">
-governor</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a0ce9f1ae8157b6a9d04bfac7c182c12e" name="a0ce9f1ae8157b6a9d04bfac7c182c12e"></a><a class="el" href="structservio_1_1scmdio_1_1char__cli.html">char_cli</a></td>
-<td class="fieldname">
-port</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="structservio_1_1scmdio_1_1autotune__ctx" id="structservio_1_1scmdio_1_1autotune__ctx"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1autotune__ctx">&#9670;&#160;</a></span>servio::scmdio::autotune_ctx</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::scmdio::autotune_ctx</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::scmdio::autotune_ctx:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1scmdio_1_1autotune__ctx__coll__graph.svg" width="222" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a6d82b9f6982c5cb68bfaba58d766b209" name="a6d82b9f6982c5cb68bfaba58d766b209"></a><a class="el" href="structservio_1_1scmdio_1_1char__cli.html">char_cli</a></td>
-<td class="fieldname">
-port</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="structservio_1_1scmdio_1_1bflash__ctx" id="structservio_1_1scmdio_1_1bflash__ctx"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1bflash__ctx">&#9670;&#160;</a></span>servio::scmdio::bflash_ctx</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::scmdio::bflash_ctx</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::scmdio::bflash_ctx:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1scmdio_1_1bflash__ctx__coll__graph.svg" width="202" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a77ea38e1834f94b476247a7987fd8a15" name="a77ea38e1834f94b476247a7987fd8a15"></a>path</td>
-<td class="fieldname">
-file</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="ad3644167e344e9f8ce39123a2461fbba" name="ad3644167e344e9f8ce39123a2461fbba"></a><a class="el" href="structservio_1_1scmdio_1_1serial__cli.html">serial_cli</a></td>
-<td class="fieldname">
-port</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="structservio_1_1scmdio_1_1preset__ctx" id="structservio_1_1scmdio_1_1preset__ctx"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1scmdio_1_1preset__ctx">&#9670;&#160;</a></span>servio::scmdio::preset_ctx</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct servio::scmdio::preset_ctx</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::scmdio::preset_ctx:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1scmdio_1_1preset__ctx__coll__graph.svg" width="204" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="ae665eeb47bc1dda7715739e368f1b5c1" name="ae665eeb47bc1dda7715739e368f1b5c1"></a><a class="el" href="structservio_1_1scmdio_1_1char__cli.html">char_cli</a></td>
-<td class="fieldname">
-port</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a6e8a257e438ed21a677a30806d4a556c" name="a6e8a257e438ed21a677a30806d4a556c"></a>path</td>
-<td class="fieldname">
-preset_folder</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
@@ -468,7 +176,7 @@ preset_folder</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="scmdio_2main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

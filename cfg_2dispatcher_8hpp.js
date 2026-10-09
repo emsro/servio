@@ -6,6 +6,6 @@ var cfg_2dispatcher_8hpp =
     ] ],
     [ "servio::cfg::root_handler", "structservio_1_1cfg_1_1root__handler.html", "structservio_1_1cfg_1_1root__handler" ],
     [ "servio::cfg::dispatcher", "structservio_1_1cfg_1_1dispatcher.html", "structservio_1_1cfg_1_1dispatcher" ],
-    [ "find_iface", "cfg_2dispatcher_8hpp.html#afd599c9182efa18dcf2c92bdd1e3085f", null ],
+    [ "find_iface", "cfg_2dispatcher_8hpp.html#ac35cfc04fd98eb2da62bf50b5e2fb2b9", null ],
     [ "resolve_governor", "cfg_2dispatcher_8hpp.html#aa0ce293b37f38efc1d5b68335f9346f8", null ]
 ];

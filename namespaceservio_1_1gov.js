@@ -13,6 +13,5 @@ var namespaceservio_1_1gov =
     [ "handle", "structservio_1_1gov_1_1handle.html", "structservio_1_1gov_1_1handle" ],
     [ "create_governors", "namespaceservio_1_1gov.html#aed8922310724cfa1c95f0075b497c590", null ],
     [ "for_each_factory", "namespaceservio_1_1gov.html#a77dbd0ad7b53ff98af410d564e530d2f", null ],
-    [ "get_registry", "namespaceservio_1_1gov.html#a4b0609963752328d98732e90c16f6cea", null ],
-    [ "register_factory", "namespaceservio_1_1gov.html#a4cd568de49112b84fa650c3f7a5f1597", null ]
+    [ "register_factory", "namespaceservio_1_1gov.html#a14148c786b015ed791f034e41f75198a", null ]
 ];

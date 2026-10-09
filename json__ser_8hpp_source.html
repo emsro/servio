@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('json__ser_8hpp_source.html',''); initR
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="str__lib_8hpp.html">./str_lib.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;emlabcpp/view.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;emlabcpp/view.hpp&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespaceservio_1_1json.html">    7</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1json.html">servio::json</a></div>
@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('json__ser_8hpp_source.html',''); initR
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespaceservio_1_1json.html#a8cd44627a19f79be3ade0ab86b8f5a52">   11</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceservio_1_1json.html#a8cd44627a19f79be3ade0ab86b8f5a52">opt</a> = std::optional&lt; T &gt;;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>em = emlabcpp;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceemlabcpp.html">em</a> = <a class="code hl_namespace" href="namespaceemlabcpp.html">emlabcpp</a>;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structservio_1_1json_1_1jval__ser.html">   15</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1json_1_1jval__ser.html">jval_ser</a></div>
@@ -339,11 +339,12 @@ $(document).ready(function(){initNavTree('json__ser_8hpp_source.html',''); initR
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}  <span class="comment">// namespace servio::json</span></div>
 </div>
+<div class="ttc" id="anamespaceemlabcpp_html"><div class="ttname"><a href="namespaceemlabcpp.html">emlabcpp</a></div><div class="ttdef"><b>Definition</b> status.hpp:38</div></div>
 <div class="ttc" id="anamespaceservio_1_1json_html"><div class="ttname"><a href="namespaceservio_1_1json.html">servio::json</a></div><div class="ttdef"><b>Definition</b> json_ser.hpp:8</div></div>
 <div class="ttc" id="anamespaceservio_1_1json_html_a8cd44627a19f79be3ade0ab86b8f5a52"><div class="ttname"><a href="namespaceservio_1_1json.html#a8cd44627a19f79be3ade0ab86b8f5a52">servio::json::opt</a></div><div class="ttdeci">std::optional&lt; T &gt; opt</div><div class="ttdef"><b>Definition</b> json_ser.hpp:11</div></div>
-<div class="ttc" id="anamespaceservio_1_1str__lib_html_a42a3f44f68adb28ef07ff2ee407e86e1"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a42a3f44f68adb28ef07ff2ee407e86e1">servio::str_lib::u_to_s</a></div><div class="ttdeci">constexpr void u_to_s(char *&amp;p, char *e, std::unsigned_integral auto x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.hpp:103</div></div>
-<div class="ttc" id="anamespaceservio_1_1str__lib_html_a5462d4d8ad0f312c1fec922ea9c91b7a"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a5462d4d8ad0f312c1fec922ea9c91b7a">servio::str_lib::f_to_s</a></div><div class="ttdeci">constexpr void f_to_s(char *&amp;p, char *e, float x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.hpp:126</div></div>
-<div class="ttc" id="anamespaceservio_1_1str__lib_html_ab6a932876116b6eae728e17f15d3f719"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#ab6a932876116b6eae728e17f15d3f719">servio::str_lib::i_to_s</a></div><div class="ttdeci">constexpr void i_to_s(char *&amp;p, char *e, std::signed_integral auto x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.hpp:116</div></div>
+<div class="ttc" id="anamespaceservio_1_1str__lib_html_a42a3f44f68adb28ef07ff2ee407e86e1"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a42a3f44f68adb28ef07ff2ee407e86e1">servio::str_lib::u_to_s</a></div><div class="ttdeci">constexpr void u_to_s(char *&amp;p, char *e, std::unsigned_integral auto x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.hpp:102</div></div>
+<div class="ttc" id="anamespaceservio_1_1str__lib_html_a5462d4d8ad0f312c1fec922ea9c91b7a"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#a5462d4d8ad0f312c1fec922ea9c91b7a">servio::str_lib::f_to_s</a></div><div class="ttdeci">constexpr void f_to_s(char *&amp;p, char *e, float x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.hpp:125</div></div>
+<div class="ttc" id="anamespaceservio_1_1str__lib_html_ab6a932876116b6eae728e17f15d3f719"><div class="ttname"><a href="namespaceservio_1_1str__lib.html#ab6a932876116b6eae728e17f15d3f719">servio::str_lib::i_to_s</a></div><div class="ttdeci">constexpr void i_to_s(char *&amp;p, char *e, std::signed_integral auto x) noexcept</div><div class="ttdef"><b>Definition</b> str_lib.hpp:115</div></div>
 <div class="ttc" id="astr__lib_8hpp_html"><div class="ttname"><a href="str__lib_8hpp.html">str_lib.hpp</a></div></div>
 <div class="ttc" id="astructservio_1_1json_1_1array__ser_html"><div class="ttname"><a href="structservio_1_1json_1_1array__ser.html">servio::json::array_ser</a></div><div class="ttdef"><b>Definition</b> json_ser.hpp:103</div></div>
 <div class="ttc" id="astructservio_1_1json_1_1array__ser_html_a2b1fbb4aa165d3ef7f62d2a80b8b3c5a"><div class="ttname"><a href="structservio_1_1json_1_1array__ser.html#a2b1fbb4aa165d3ef7f62d2a80b8b3c5a">servio::json::array_ser::operator()</a></div><div class="ttdeci">array_ser &amp; operator()(auto &amp;&amp;v) noexcept</div><div class="ttdef"><b>Definition</b> json_ser.hpp:125</div></div>
@@ -376,7 +377,7 @@ $(document).ready(function(){initNavTree('json__ser_8hpp_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="json__ser_8hpp.html">json_ser.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

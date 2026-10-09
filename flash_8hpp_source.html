@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: src/ftester/flash.hpp Source File</title>
+<title>servio: src/scmdio/flash.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,43 +101,36 @@ $(document).ready(function(){initNavTree('flash_8hpp_source.html',''); initResiz
 <div class="contents">
 <a href="flash_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;joque/task.hpp&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1ftester.html">servio::ftester</a></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a> = std::optional&lt; T &gt;;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>joque::task <a class="code hl_function" href="namespaceservio_1_1ftester.html#a4d55394c1681c7716e00d85a89a60c08">make_openocd_flash_task</a>(</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    std::filesystem::path <span class="keyword">const</span>&amp;        firmware,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    std::filesystem::path <span class="keyword">const</span>&amp;        ocd_cfg,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    opt&lt; std::filesystem::path &gt; <span class="keyword">const</span>&amp; log_file,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    joque::resource <span class="keyword">const</span>&amp;              dev_res );</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>joque::task <a class="code hl_function" href="namespaceservio_1_1ftester.html#a6271a31584c71e0f02b95d888832da1e">make_bmp_flash_task</a>(</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    std::filesystem::path <span class="keyword">const</span>&amp; firmware,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::filesystem::path <span class="keyword">const</span>&amp; device,</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    joque::resource <span class="keyword">const</span>&amp;       dev_res );</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceservio_1_1ftester.html#a62b686ad2b66859c1accbb7678069d60">flash_firmware_openocd</a>(</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::filesystem::path <span class="keyword">const</span>&amp; firmware,</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::filesystem::path <span class="keyword">const</span>&amp; ocdconf );</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}  <span class="comment">// namespace servio::ftester</span></div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html"><div class="ttname"><a href="namespaceservio_1_1ftester.html">servio::ftester</a></div><div class="ttdef"><b>Definition</b> base.hpp:7</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html_a0560239d5205ea42c2dee9c8a27244ee"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">servio::ftester::opt</a></div><div class="ttdeci">std::optional&lt; T &gt; opt</div><div class="ttdef"><b>Definition</b> cli.hpp:12</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html_a4d55394c1681c7716e00d85a89a60c08"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a4d55394c1681c7716e00d85a89a60c08">servio::ftester::make_openocd_flash_task</a></div><div class="ttdeci">joque::task make_openocd_flash_task(std::filesystem::path const &amp;firmware, std::filesystem::path const &amp;ocd_cfg, opt&lt; std::filesystem::path &gt; const &amp;log_file, joque::resource const &amp;dev_res)</div><div class="ttdef"><b>Definition</b> flash.cpp:10</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html_a6271a31584c71e0f02b95d888832da1e"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a6271a31584c71e0f02b95d888832da1e">servio::ftester::make_bmp_flash_task</a></div><div class="ttdeci">joque::task make_bmp_flash_task(std::filesystem::path const &amp;firmware, std::filesystem::path const &amp;device, joque::resource const &amp;dev_res)</div><div class="ttdef"><b>Definition</b> flash.cpp:34</div></div>
-<div class="ttc" id="anamespaceservio_1_1ftester_html_a62b686ad2b66859c1accbb7678069d60"><div class="ttname"><a href="namespaceservio_1_1ftester.html#a62b686ad2b66859c1accbb7678069d60">servio::ftester::flash_firmware_openocd</a></div><div class="ttdeci">void flash_firmware_openocd(std::filesystem::path const &amp;firmware, std::filesystem::path const &amp;ocdconf)</div><div class="ttdef"><b>Definition</b> flash.cpp:62</div></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="sntr_2base_8hpp.html">base.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="port_8hpp.html">port.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// High-level flash command:</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//   1. Try ROM bootloader INIT (100 ms timeout).</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//   2. If no response, send &quot;dfu&quot; command to running firmware, wait 200 ms, retry INIT.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//   3. Upload the binary, then send GO to 0x08000000 so firmware starts immediately.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>awaitable&lt; void &gt; <a class="code hl_function" href="namespaceservio_1_1scmdio.html#a010fc649bce2f643a8b970fa283bc7e1">flash_firmware</a>(</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    io_context&amp;                  io_ctx,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    std::filesystem::path <span class="keyword">const</span>&amp; port_path,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    std::filesystem::path <span class="keyword">const</span>&amp; file_path,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">unsigned</span>                     baudrate );</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}  <span class="comment">// namespace servio::scmdio</span></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html"><div class="ttname"><a href="namespaceservio_1_1scmdio.html">servio::scmdio</a></div><div class="ttdef"><b>Definition</b> base.hpp:15</div></div>
+<div class="ttc" id="anamespaceservio_1_1scmdio_html_a010fc649bce2f643a8b970fa283bc7e1"><div class="ttname"><a href="namespaceservio_1_1scmdio.html#a010fc649bce2f643a8b970fa283bc7e1">servio::scmdio::flash_firmware</a></div><div class="ttdeci">awaitable&lt; void &gt; flash_firmware(io_context &amp;io_ctx, std::filesystem::path const &amp;port_path, std::filesystem::path const &amp;file_path, unsigned baudrate)</div><div class="ttdef"><b>Definition</b> flash.cpp:33</div></div>
+<div class="ttc" id="aport_8hpp_html"><div class="ttname"><a href="port_8hpp.html">port.hpp</a></div></div>
+<div class="ttc" id="asntr_2base_8hpp_html"><div class="ttname"><a href="sntr_2base_8hpp.html">base.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="flash_8hpp.html">flash.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="flash_8hpp.html">flash.hpp</a></li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

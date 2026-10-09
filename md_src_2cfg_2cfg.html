@@ -94,98 +94,98 @@ $(document).ready(function(){initNavTree('md_src_2cfg_2cfg.html',''); initResiza
   <div class="headertitle"><div class="title">Config fields</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md6"></a></p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md7"></a></p>
+<h1><a class="anchor" id="autotoc_md8"></a>
 1 model</h1>
 <p>Model of the servomotor, used for debugging purposes</p><ul>
 <li><em>type</em>: <code>string</code></li>
 <li><em>default</em>: <code>"no model"</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 2 id</h1>
 <p>ID of the servomotor</p><ul>
 <li><em>type</em>: <code>uint32_t</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 3 group_id</h1>
 <p>Group ID of the servomotor</p><ul>
 <li><em>type</em>: <code>uint32_t</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 4 encoder_mode</h1>
 <p>Encoder mode of the servomotor</p><ul>
 <li><em>type</em>: <code>cfg::encoder_mode</code></li>
 <li><em>default</em>: <code>cfg::encoder_mode::analog</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 11 position_low_angle</h1>
 <p>Expected lowest position of the servomotor</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>unit</em>: rad</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 12 position_high_angle</h1>
 <p>Expected highest position of the servomotor</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>unit</em>: rad</li>
 <li><em>default</em>: <code>2*pi</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 14 current_conv_scale</h1>
 <p>Current conversion scale factor for formula: C = ADC * scale + offset</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>default</em>: <code>1.0</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 15 current_conv_offset</h1>
 <p>Current conversion offset for formula: C = ADC * scale + offset</p><ul>
 <li><em>type</em>: <code>float</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 16 temp_conv_scale</h1>
 <p>Temperature conversion scale factor for formula: T = ADC * scale + offset</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>default</em>: <code>1.0</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 17 temp_conv_offset</h1>
 <p>Temperature conversion offset for formula: T = ADC * scale + offset</p><ul>
 <li><em>type</em>: <code>float</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 18 voltage_conv_scale</h1>
 <p>Voltage conversion scale factor for formula: V = ADC * scale</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>default</em>: <code>1.0</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 19 invert_hbridge</h1>
 <p>Invert direction of the H-bridge</p><ul>
 <li><em>type</em>: <code>bool</code></li>
 <li><em>default</em>: <code>false</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 62 minimum_voltage</h1>
 <p>Minimum voltage for the servomotor to operate</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>unit</em>: voltage</li>
 <li><em>default</em>: <code>6.0</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 65 maximum_temperature</h1>
 <p>Maximum temperature for the servomotor to operate</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>unit</em>: celsius</li>
 <li><em>default</em>: <code>80.0</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 66 moving_detection_step</h1>
 <p>Deadband for the moving detection</p><ul>
 <li><em>type</em>: <code>float</code></li>
 <li><em>unit</em>: rad</li>
 <li><em>default</em>: <code>0.05F</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 80 quad_encoder_range</h1>
 <p>Number of pulses per revolution of the quadrature encoder</p><ul>
 <li><em>type</em>: <code>uint32_t</code></li>
@@ -197,7 +197,7 @@ $(document).ready(function(){initNavTree('md_src_2cfg_2cfg.html',''); initResiza
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

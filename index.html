@@ -95,36 +95,49 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/emsro/servio/actions/workflows/build.yml"><img src="https://github.com/emsro/servio/actions/workflows/build.yml/badge.svg" alt="Build" style="pointer-events: none;" class="inline"/></a> <a href="https://raw.githubusercontent.com/nlohmann/json/master/LICENSE.MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" style="pointer-events: none;" class="inline"/></a></p>
-<p>Open firmware for DC servomotors written in C++20. The FW uses closed control loops, serial communication, and has automatized testing infrastructure. More details in <a href="https://emsro.github.io/servio/index.html">Documentation</a></p>
+<p>Open firmware for DC servomotors written in C++20. The FW uses closed control loops, serial communication, and has automated testing infrastructure. More details in <a href="https://emsro.github.io/servio/index.html">Documentation</a></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Disclaimer</h1>
 <p>The project is in development state, beware that the code still might have problematic bugs.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Dependencies</h1>
-<p>We maintain <code>Dockerfile</code> with installed dependencies for CI. Use that to install adequate packages in your system, or you can just use that docker file.</p>
-<p><code>Dockerfile</code> is stored in this repository: <a href="https://github.com/emsro/build-env">https://github.com/emsro/build-env</a></p>
+<p>We maintain a <code>Dockerfile</code> with installed dependencies for CI. Use that to install adequate packages in your system, or use the Docker image directly.</p>
+<p>The <code>Dockerfile</code> is stored in this repository: <a href="https://github.com/emsro/build-env">https://github.com/emsro/build-env</a></p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Build</h1>
-<p><code>cmake</code> is used as build system, however the setup is not trivial. We can't compile code for multiple platforms at the same time, hence the design is to use cmake multiple times, once for each platform. If you don't care about the details, you can just use <code>make configure</code> followed by <code>make build</code> in the root folder of the repository, which will correctly build for all platforms.</p>
-<p>We use cmake presets with definitions of the builds for each platform. The presets contain the name of the platform in their name, so <code>stm32h5_debug_build</code> represents build for STM32H5, and it is used as so: </p><div class="fragment"><div class="line">cmake --preset &quot;stm32h5_debug_cfg&quot;</div>
-<div class="line">cmake --build --preset &quot;stm32h5_debug_build&quot;</div>
-</div><!-- fragment --><p> <code>host_debug_build</code> represents build of stuff used on the host, and is used as so: </p><div class="fragment"><div class="line">cmake --preset &quot;host_debug_cfg&quot;</div>
-<div class="line">cmake --build --preset &quot;host_debug_build&quot;</div>
-</div><!-- fragment --><p>Under the hood, the presets use <code>SERVIO_PLATFORM</code> to setup which platform should be currently build and the cmake files in the project react accordingly.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<p>CMake with presets is used as the build system. There are separate workflow presets for each target platform. The simplest way to build everything:</p>
+<div class="fragment"><div class="line">make build</div>
+</div><!-- fragment --><p>This runs both host and STM32H5 builds. Individual targets:</p>
+<div class="fragment"><div class="line">make build_host   # host tools and unit tests (_build/host_debug/)</div>
+<div class="line">make build_h5     # STM32H5 firmware (_build/stm32h5_debug/)</div>
+</div><!-- fragment --><p>Alternatively, use cmake workflow presets directly:</p>
+<div class="fragment"><div class="line">cmake --workflow --preset host_debug</div>
+<div class="line">cmake --workflow --preset stm32h5_debug</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 Flashing</h1>
-<p>To flash the firmware, find a openocd file for your platform (<code>src/plt/stm32g4/openocd.cfg</code> for STM32G4) and use it with openocd to flash a firmware file into the device. See <code>make flash</code> target for inspiration.</p>
-<p>The pattern for naming the firmware is <code>&lt;board_name&gt;_fw.elf</code> and can be found in <code>build/&lt;platform_name&gt;</code>.</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Usage</h1>
-<p>After the firmware was fleshed, the servo should communicate over UART via the interface connector. The communication protocol is TBD </p>
-</div></div><!-- PageDoc -->
+<p>To flash firmware, first enter the ROM bootloader by holding the BOOT0 pin high (e.g. with tweezers on the board header) and power-cycling the device. Then use the <code>flash</code> command to upload and start the new firmware:</p>
+<div class="fragment"><div class="line">_install/bin/scmdio flash --comms /dev/cu.usbserial-0001 _build/stm32h5_debug/src/brd/proto4/proto4_fw.bin</div>
+</div><!-- fragment --><p>For manual control, upload directly with:</p>
+<div class="fragment"><div class="line">_install/bin/scmdio dfu upload --comms /dev/cu.usbserialXXXX _build/stm32h5_debug/src/brd/proto4/proto4_fw.bin</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+Configuration</h1>
+<p>After flashing, load a preset configuration into the servo's EEPROM over the UART config port (230400 baud). Available presets are in the <code>preset/</code> directory (<code>yellow.proto4</code>, <code>kavango6.proto4</code>, <code>LX15D.proto4</code>):</p>
+<div class="fragment"><div class="line">_build/host_debug/src/scmdio/scmdio preset load --comms /dev/cu.usbserialXXXX preset/yellow.proto4</div>
+</div><!-- fragment --><p>Individual fields can also be set directly:</p>
+<div class="fragment"><div class="line">_install/bin/scmdio cfg set &lt;field&gt; &lt;value&gt; --comms /dev/cu.usbserialXXXX</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+Communication</h1>
+<p>The servo communicates over UART (230400 baud, newline-delimited text protocol) on the interface connector (UART1). Configuration is managed via <code>scmdio</code>:</p>
+<div class="fragment"><div class="line">_build/host_debug/src/scmdio/scmdio cfg query --comms /dev/cu.usbserialXXXX</div>
+<div class="line">_build/host_debug/src/scmdio/scmdio cfg get &lt;field&gt; --comms /dev/cu.usbserialXXXX</div>
+<div class="line">_build/host_debug/src/scmdio/scmdio cfg set &lt;field&gt; &lt;value&gt; --comms /dev/cu.usbserialXXXX</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

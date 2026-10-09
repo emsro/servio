@@ -94,36 +94,72 @@ $(document).ready(function(){initNavTree('utest_8hpp.html',''); initResizable();
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">utest.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="base_8hpp_source.html">../base.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="interfaces_8hpp_source.html">../drv/interfaces.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="governor__manager_8hpp_source.html">../gov/governor_manager.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="status_8hpp_source.html">../status.hpp</a>&quot;</code><br />
-<code>#include &lt;emlabcpp/defer.h&gt;</code><br />
-<code>#include &lt;emlabcpp/experimental/testing/collect.h&gt;</code><br />
-<code>#include &lt;emlabcpp/experimental/testing/coroutine.h&gt;</code><br />
-<code>#include &lt;emlabcpp/experimental/testing/interface.h&gt;</code><br />
-<code>#include &lt;emlabcpp/experimental/testing/parameters.h&gt;</code><br />
-<code>#include &lt;emlabcpp/experimental/testing/reactor.h&gt;</code><br />
+<code>#include &lt;asrtrpp/collect.hpp&gt;</code><br />
+<code>#include &lt;asrtrpp/diag.hpp&gt;</code><br />
+<code>#include &lt;asrtrpp/param.hpp&gt;</code><br />
+<code>#include &lt;asrtrpp/reac_assm.hpp&gt;</code><br />
+<code>#include &lt;asrtrpp/stream.hpp&gt;</code><br />
+<code>#include &lt;asrtrpp/task_unit.hpp&gt;</code><br />
+<code>#include &lt;bitset&gt;</code><br />
+<code>#include &lt;emlabcpp/defer.hpp&gt;</code><br />
+<code>#include &lt;source_location&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for utest.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="utest_8hpp__incl.svg" width="1900" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="utest_8hpp__incl.svg" width="2358" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="utest_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1uctx.html">servio::ftest::uctx</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1utest.html">servio::ftest::utest</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1utest__base.html">servio::ftest::utest_base</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__init__utest__ctx.html">servio::ftest::_init_utest_ctx</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1utest.html">servio::ftest::utest&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__wait__for__sender.html">servio::ftest::_wait_for_sender</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__wait__for__sender_1_1__op.html">servio::ftest::_wait_for_sender::_op&lt; R &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structservio_1_1ftest_1_1__metric__conv" id="r_structservio_1_1ftest_1_1__metric__conv"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#structservio_1_1ftest_1_1__metric__conv">servio::ftest::_metric_conv&lt; T &gt;</a></td></tr>
+<tr class="separator:structservio_1_1ftest_1_1__metric__conv"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__metric__conv_3_01T_01_4.html">servio::ftest::_metric_conv&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__metric__conv_3_01float_01_4.html">servio::ftest::_metric_conv&lt; float &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__metric__conv_3_01bool_01_4.html">servio::ftest::_metric_conv&lt; bool &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__metric__conv_3_01char_01const_01_5_01_4.html">servio::ftest::_metric_conv&lt; char const * &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__metric__conv_3_01uint64__t_01_4.html">servio::ftest::_metric_conv&lt; uint64_t &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__metric__conv_3_01int64__t_01_4.html">servio::ftest::_metric_conv&lt; int64_t &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__metric__conv_3_01std_1_1string__view_01_4.html">servio::ftest::_metric_conv&lt; std::string_view &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__metric__conv_3_01std_1_1string_01_4.html">servio::ftest::_metric_conv&lt; std::string &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__metric__conv_3_01std_1_1chrono_1_1duration_3_01Rep_00_01Period_01_4_01_4.html">servio::ftest::_metric_conv&lt; std::chrono::duration&lt; Rep, Period &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__metric__conv_3_01std_1_1bitset_3_01N_01_4_01_4.html">servio::ftest::_metric_conv&lt; std::bitset&lt; N &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__store__metric__ctx.html">servio::ftest::_store_metric_ctx</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">store metric in collect  <a href="structservio_1_1ftest_1_1__store__metric__ctx.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1ftest_1_1__expect__ctx.html">servio::ftest::_expect_ctx</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -133,25 +169,57 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceservio_1_1ftest" id="r_namespaceservio_1_1ftest"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html">servio::ftest</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a957e7b1e50091e64e0f8db694de0b2ef" id="r_a957e7b1e50091e64e0f8db694de0b2ef"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a957e7b1e50091e64e0f8db694de0b2ef"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a957e7b1e50091e64e0f8db694de0b2ef">servio::ftest::task</a> = asrt::task&lt; T &gt;</td></tr>
+<tr class="separator:a957e7b1e50091e64e0f8db694de0b2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794ae3021457c1a545ce7719be931f65" id="r_a794ae3021457c1a545ce7719be931f65"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a794ae3021457c1a545ce7719be931f65">servio::ftest::_store_metric_sender</a> = ecor::sender_from&lt; <a class="el" href="structservio_1_1ftest_1_1__store__metric__ctx.html">_store_metric_ctx</a> &gt;</td></tr>
+<tr class="separator:a794ae3021457c1a545ce7719be931f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7e35f03d806fc1aab4b09853ff8bc5f9" id="r_a7e35f03d806fc1aab4b09853ff8bc5f9"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a7e35f03d806fc1aab4b09853ff8bc5f9">servio::ftest::store_metric</a> (em::pmr::memory_resource &amp;, <a class="el" href="structservio_1_1ftest_1_1uctx.html">uctx</a> &amp;ctx, std::string_view name, auto &amp;&amp;value, std::string_view unit=&quot;&quot;)</td></tr>
-<tr class="separator:a7e35f03d806fc1aab4b09853ff8bc5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04f077611bfdcd9d113fd0df35dbba94" id="r_a04f077611bfdcd9d113fd0df35dbba94"><td class="memItemLeft" align="right" valign="top">t::coroutine&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a04f077611bfdcd9d113fd0df35dbba94">servio::ftest::store_data</a> (em::pmr::memory_resource &amp;, <a class="el" href="structservio_1_1ftest_1_1uctx.html">uctx</a> &amp;ctx, std::string_view key, auto &amp;&amp;data)</td></tr>
-<tr class="separator:a04f077611bfdcd9d113fd0df35dbba94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ddf524f6fa3316ec89db8d5638bb7ae" id="r_a9ddf524f6fa3316ec89db8d5638bb7ae"><td class="memItemLeft" align="right" valign="top">ecor::sender_from&lt; <a class="el" href="structservio_1_1ftest_1_1__init__utest__ctx.html">_init_utest_ctx</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a9ddf524f6fa3316ec89db8d5638bb7ae">servio::ftest::init_utest</a> (<a class="el" href="structservio_1_1ftest_1_1utest.html">utest</a> &amp;ctx)</td></tr>
+<tr class="separator:a9ddf524f6fa3316ec89db8d5638bb7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a644e1a8674060665c18537e25bec7e61" id="r_a644e1a8674060665c18537e25bec7e61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1ftest_1_1__wait__for__sender.html">_wait_for_sender</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a644e1a8674060665c18537e25bec7e61">servio::ftest::wait_for</a> (<a class="el" href="structservio_1_1ftest_1_1utest.html">utest</a> &amp;ctx, <a class="el" href="structservio_1_1drv_1_1clk__iface.html">drv::clk_iface</a> &amp;clk, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> duration)</td></tr>
+<tr class="separator:a644e1a8674060665c18537e25bec7e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3534459900f413a6046508697efb2687" id="r_a3534459900f413a6046508697efb2687"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3534459900f413a6046508697efb2687"><td class="memTemplItemLeft" align="right" valign="top">asrt_flat_value&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a3534459900f413a6046508697efb2687">servio::ftest::_make_metric_value</a> (T val) noexcept</td></tr>
+<tr class="separator:a3534459900f413a6046508697efb2687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e76a062eb1353e0b7123446ce9c4f05" id="r_a7e76a062eb1353e0b7123446ce9c4f05"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7e76a062eb1353e0b7123446ce9c4f05"><td class="memTemplItemLeft" align="right" valign="top">ecor::sender auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a7e76a062eb1353e0b7123446ce9c4f05">servio::ftest::store_metric</a> (<a class="el" href="structservio_1_1ftest_1_1utest.html">utest</a> &amp;ctx, char const *name, T &amp;&amp;value, char const *unit=&quot;&quot;)</td></tr>
+<tr class="separator:a7e76a062eb1353e0b7123446ce9c4f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70cb278169031a61ce9609a4c3f9b2dc" id="r_a70cb278169031a61ce9609a4c3f9b2dc"><td class="memItemLeft" align="right" valign="top">ecor::sender_from&lt; <a class="el" href="structservio_1_1ftest_1_1__expect__ctx.html">_expect_ctx</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a70cb278169031a61ce9609a4c3f9b2dc">servio::ftest::expect</a> (<a class="el" href="structservio_1_1ftest_1_1utest.html">utest</a> &amp;ctx, bool condition, std::source_location loc=std::source_location::current())</td></tr>
+<tr class="separator:a70cb278169031a61ce9609a4c3f9b2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b64310593ee90cf7ea9d72fece5cfff" id="r_a9b64310593ee90cf7ea9d72fece5cfff"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a9b64310593ee90cf7ea9d72fece5cfff">servio::ftest::setup_poweroff</a> (<a class="el" href="structservio_1_1gov_1_1governor__manager.html">gov::governor_manager</a> &amp;gv)</td></tr>
 <tr class="separator:a9b64310593ee90cf7ea9d72fece5cfff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6be4b4acbe79e047c19f5d39d84faef5" id="r_a6be4b4acbe79e047c19f5d39d84faef5"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
-<tr class="memitem:a6be4b4acbe79e047c19f5d39d84faef5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a6be4b4acbe79e047c19f5d39d84faef5">servio::ftest::setup_utest</a> (em::pmr::memory_resource &amp;mem, t::reactor &amp;r, <a class="el" href="structservio_1_1ftest_1_1uctx.html">uctx</a> &amp;ctx, <a class="el" href="structservio_1_1status.html">status</a> &amp;res, Args &amp;&amp;... args)</td></tr>
-<tr class="separator:a6be4b4acbe79e047c19f5d39d84faef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75aa199fee6ce1d019148d500bfd23d7" id="r_a75aa199fee6ce1d019148d500bfd23d7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a75aa199fee6ce1d019148d500bfd23d7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftest.html#a75aa199fee6ce1d019148d500bfd23d7">servio::ftest::setup_utest</a> (asrt::task_ctx &amp;ctx, asrt_reac_assm &amp;assm, <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> &amp;res, T def)</td></tr>
+<tr class="separator:a75aa199fee6ce1d019148d500bfd23d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structservio_1_1ftest_1_1__metric__conv" id="structservio_1_1ftest_1_1__metric__conv"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structservio_1_1ftest_1_1__metric__conv">&#9670;&#160;</a></span>servio::ftest::_metric_conv</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct servio::ftest::_metric_conv</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+struct servio::ftest::_metric_conv&lt; T &gt;</div></div>
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="utest_8hpp.html">utest.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

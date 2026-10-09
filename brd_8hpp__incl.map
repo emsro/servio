@@ -1,11 +1,12 @@
 <map id="src/brd/brd.hpp" name="src/brd/brd.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="211,5,330,31"/>
-<area shape="rect" id="Node000002" href="$drivers_8hpp.html" title=" " alt="" coords="201,79,340,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="273,31,273,65,268,65,268,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="135,5,254,31"/>
+<area shape="rect" id="Node000002" href="$drivers_8hpp.html" title=" " alt="" coords="125,79,264,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,31,197,65,192,65,192,31"/>
 <area shape="rect" id="Node000003" href="$interfaces_8hpp.html" title=" " alt="" coords="5,159,157,185"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="244,106,123,157,121,152,242,102"/>
-<area shape="rect" id="Node000026" title=" " alt="" coords="182,152,359,192"/>
-<area shape="poly" id="edge3_Node000002_Node000026" title=" " alt="" coords="273,104,273,138,268,138,268,104"/>
-<area shape="rect" id="Node000027" title=" " alt="" coords="383,152,561,192"/>
-<area shape="poly" id="edge4_Node000002_Node000027" title=" " alt="" coords="301,102,412,145,410,150,299,106"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="179,106,111,154,108,149,176,102"/>
+<area shape="rect" id="Node000025" title=" " alt="" coords="49,240,226,280"/>
+<area shape="poly" id="edge5_Node000002_Node000025" title=" " alt="" coords="195,105,186,144,172,193,156,229,151,227,167,191,181,143,190,104"/>
+<area shape="rect" id="Node000027" title=" " alt="" coords="233,152,410,192"/>
+<area shape="poly" id="edge4_Node000002_Node000027" title=" " alt="" coords="215,102,280,142,277,147,212,106"/>
+<area shape="poly" id="edge3_Node000003_Node000025" title=" " alt="" coords="91,183,120,227,115,230,87,186"/>
 </map>

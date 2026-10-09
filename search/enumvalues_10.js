@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['unexpected_5farg_0',['UNEXPECTED_ARG',['../namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7a3a98c67ba15d8aeeb7f67d4787c922af',1,'servio::iface']]],
-  ['unknown_5farg_5fkey_1',['UNKNOWN_ARG_KEY',['../namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7aea2e5ea758c5f934e1016fd76f45c939',1,'servio::iface']]],
-  ['unknown_5fcmd_2',['UNKNOWN_CMD',['../namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7aa7d1af58ff22b73a079a349622038be1',1,'servio::iface']]],
-  ['unknown_5fvalue_3',['UNKNOWN_VALUE',['../namespaceservio_1_1iface.html#a1d8c1cf44a5312b5b8f6d38117b74fc7a209914a113a06c4306340578dce72238',1,'servio::iface']]],
-  ['unset_4',['UNSET',['../namespaceservio_1_1sntr.html#a875fcd3a5d9ef6909df43ffc0b84d60ea666a87025ab0d8965e221050c8948001',1,'servio::sntr']]]
+  ['temp_0',['temp',['../namespaceservio_1_1iface.html#a4076fed6ea5428b755aebce6bcd67662a3d801aa532c1cec3ee82d87a99fdf63f',1,'servio::iface']]],
+  ['temp_5fchannel_1',['TEMP_CHANNEL',['../namespaceservio_1_1drv.html#abbf0ab1dcfca79ccba89674e773fa2afa7088c90744202107459b09dcf730f610',1,'servio::drv']]],
+  ['temp_5fconv_5foffset_2',['temp_conv_offset',['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a530d7e88b9632ea1697e000371a7429a',1,'servio::cfg']]],
+  ['temp_5fconv_5fscale_3',['temp_conv_scale',['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a128bb4ccc34e3149e097051276feb107',1,'servio::cfg']]],
+  ['temperature_5fhigh_4',['TEMPERATURE_HIGH',['../namespaceservio_1_1mon.html#af16397f3997f66e0f28c3409143cfc52adecfbda91cde2e00e1e04c4c97cb1b86',1,'servio::mon']]]
 ];

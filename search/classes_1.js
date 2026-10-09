@@ -21,6 +21,5 @@ var searchData=
   ['array_5fser_18',['array_ser',['../structservio_1_1json_1_1array__ser.html',1,'servio::json']]],
   ['atom_5fsv_5fkey_19',['atom_sv_key',['../structservio_1_1atom__sv__key.html',1,'servio']]],
   ['attrs_20',['attrs',['../structservio_1_1scmdio_1_1port__mock.html#structservio_1_1scmdio_1_1port__mock_1_1attrs',1,'servio::scmdio::port_mock']]],
-  ['auto_5ffactory_21',['auto_factory',['../structservio_1_1gov_1_1auto__factory.html',1,'servio::gov']]],
-  ['autotune_5fctx_22',['autotune_ctx',['../namespaceservio_1_1scmdio.html#structservio_1_1scmdio_1_1autotune__ctx',1,'servio::scmdio']]]
+  ['auto_5ffactory_21',['auto_factory',['../structservio_1_1gov_1_1auto__factory.html',1,'servio::gov']]]
 ];

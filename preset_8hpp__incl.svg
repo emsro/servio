@@ -113,7 +113,7 @@
 <g id="a_Node000012"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="365,-85 232,-85 232,-55 365,-55 365,-85"/>
 <text text-anchor="start" x="240" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">emlabcpp/experimental</text>
-<text text-anchor="middle" x="298.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">/cobs.h</text>
+<text text-anchor="middle" x="298.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">/cobs.hpp</text>
 </a>
 </g>
 </g>

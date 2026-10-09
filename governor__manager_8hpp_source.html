@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('governor__manager_8hpp_source.html',''
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="governor_8hpp.html">./governor.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;emlabcpp/static_vector.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;emlabcpp/static_vector.hpp&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1gov.html">servio::gov</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
@@ -125,27 +125,27 @@ $(document).ready(function(){initNavTree('governor__manager_8hpp_source.html',''
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structservio_1_1gov_1_1governor__manager.html#a957af3c11576e0b082215fed59474cbf">   23</a></span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1gov_1_1governor__manager.html#a957af3c11576e0b082215fed59474cbf">disengage</a>()</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structservio_1_1gov_1_1governor__manager.html#a957af3c11576e0b082215fed59474cbf">   23</a></span>        <a class="code hl_enumeration" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> <a class="code hl_function" href="structservio_1_1gov_1_1governor__manager.html#a957af3c11576e0b082215fed59474cbf">disengage</a>()</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                <span class="keywordflow">if</span> ( active_ &amp;&amp; active_h_ ) {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                        <span class="keyword">auto</span> st   = active_-&gt;<a class="code hl_function" href="structservio_1_1gov_1_1governor.html#a1a692aad0827eaa053dbeacbeb304af8">disengage</a>( *active_h_ );</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                        active_   = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                        active_h_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                        <span class="keyword">auto</span> <span class="keyword">const</span> st = active_-&gt;<a class="code hl_function" href="structservio_1_1gov_1_1governor.html#a1a692aad0827eaa053dbeacbeb304af8">disengage</a>( *active_h_ );</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                        active_       = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                        active_h_     = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                        <span class="keywordflow">return</span> st;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keywordflow">return</span> status::FAILURE;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a3ee28fe1a60c95b89d29317f122c7021">status::failure</a>;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
 </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structservio_1_1gov_1_1governor__manager.html#a14f7a6814b1a0639f4de9e705c3b3090">   34</a></span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1gov_1_1governor__manager.html#a14f7a6814b1a0639f4de9e705c3b3090">activate</a>( std::string_view name, em::pmr::memory_resource&amp; buffer )</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structservio_1_1gov_1_1governor__manager.html#a14f7a6814b1a0639f4de9e705c3b3090">   34</a></span>        <a class="code hl_enumeration" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> <a class="code hl_function" href="structservio_1_1gov_1_1governor__manager.html#a14f7a6814b1a0639f4de9e705c3b3090">activate</a>( std::string_view name, em::pmr::memory_resource&amp; buffer )</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <a class="code hl_struct" href="structservio_1_1status.html">status</a> s = status::ERROR;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <a class="code hl_enumeration" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> s = <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">status::error</a>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                <span class="keywordflow">if</span> ( active_ ) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                        <span class="keywordflow">if</span> ( <a class="code hl_function" href="structservio_1_1gov_1_1governor__manager.html#a957af3c11576e0b082215fed59474cbf">disengage</a>() != <a class="code hl_variable" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">SUCCESS</a> )</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                                <span class="keywordflow">return</span> status::ERROR;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                        <span class="keywordflow">if</span> ( <a class="code hl_function" href="structservio_1_1gov_1_1governor__manager.html#a957af3c11576e0b082215fed59474cbf">disengage</a>() != <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a> )</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">status::error</a>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="keywordflow">for</span> ( vari::vref&lt; governor &gt; g : governors_ ) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="keywordflow">for</span> ( vari::vref&lt; governor &gt; <span class="keyword">const</span> g : governors_ ) {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                        <span class="keywordflow">if</span> ( g-&gt;name() == name ) {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                active_ = g.get();</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
@@ -158,16 +158,16 @@ $(document).ready(function(){initNavTree('governor__manager_8hpp_source.html',''
 </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structservio_1_1gov_1_1governor__manager.html#a1487b9ff4937466946039776466a451e">   52</a></span>        <a class="code hl_struct" href="structservio_1_1status.html">status</a> <a class="code hl_function" href="structservio_1_1gov_1_1governor__manager.html#a1487b9ff4937466946039776466a451e">deactivate</a>()</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structservio_1_1gov_1_1governor__manager.html#a1487b9ff4937466946039776466a451e">   52</a></span>        <a class="code hl_enumeration" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> <a class="code hl_function" href="structservio_1_1gov_1_1governor__manager.html#a1487b9ff4937466946039776466a451e">deactivate</a>()</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keywordflow">if</span> ( active_ &amp;&amp; active_h_ ) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                        <span class="keywordflow">if</span> ( active_-&gt;<a class="code hl_function" href="structservio_1_1gov_1_1governor.html#a1a692aad0827eaa053dbeacbeb304af8">disengage</a>( *active_h_ ) != <a class="code hl_variable" href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">SUCCESS</a> )</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                                <span class="keywordflow">return</span> status::ERROR;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                        <span class="keywordflow">if</span> ( active_-&gt;<a class="code hl_function" href="structservio_1_1gov_1_1governor.html#a1a692aad0827eaa053dbeacbeb304af8">disengage</a>( *active_h_ ) != <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a> )</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">status::error</a>;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                        active_h_ = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                        active_   = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                        <span class="keywordflow">return</span> status::SUCCESS;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a>;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keywordflow">return</span> status::FAILURE;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a3ee28fe1a60c95b89d29317f122c7021">status::failure</a>;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
 </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
@@ -228,10 +228,13 @@ $(document).ready(function(){initNavTree('governor__manager_8hpp_source.html',''
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}  <span class="comment">// namespace servio::gov</span></div>
 <div class="ttc" id="agovernor_8hpp_html"><div class="ttname"><a href="governor_8hpp.html">governor.hpp</a></div></div>
 <div class="ttc" id="anamespaceservio_1_1gov_html"><div class="ttname"><a href="namespaceservio_1_1gov.html">servio::gov</a></div><div class="ttdef"><b>Definition</b> cfg.hpp:6</div></div>
-<div class="ttc" id="anamespaceservio_1_1gov_html_a77dbd0ad7b53ff98af410d564e530d2f"><div class="ttname"><a href="namespaceservio_1_1gov.html#a77dbd0ad7b53ff98af410d564e530d2f">servio::gov::for_each_factory</a></div><div class="ttdeci">void for_each_factory(em::function_view&lt; void(governor_factory &amp;) &gt; const &amp;fn)</div><div class="ttdef"><b>Definition</b> governor.cpp:18</div></div>
+<div class="ttc" id="anamespaceservio_1_1gov_html_a77dbd0ad7b53ff98af410d564e530d2f"><div class="ttname"><a href="namespaceservio_1_1gov.html#a77dbd0ad7b53ff98af410d564e530d2f">servio::gov::for_each_factory</a></div><div class="ttdeci">void for_each_factory(em::function_view&lt; void(governor_factory &amp;) &gt; const &amp;fn)</div><div class="ttdef"><b>Definition</b> governor.cpp:24</div></div>
 <div class="ttc" id="anamespaceservio_1_1gov_html_aed8922310724cfa1c95f0075b497c590"><div class="ttname"><a href="namespaceservio_1_1gov.html#aed8922310724cfa1c95f0075b497c590">servio::gov::create_governors</a></div><div class="ttdeci">void create_governors(governor_manager &amp;gm, em::pmr::memory_resource &amp;mem)</div><div class="ttdef"><b>Definition</b> governor_manager.hpp:94</div></div>
-<div class="ttc" id="anamespaceservio_html_a8d5869ffe2516e502b6f358d2827207e"><div class="ttname"><a href="namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e">servio::SUCCESS</a></div><div class="ttdeci">static constexpr status SUCCESS</div><div class="ttdef"><b>Definition</b> status.hpp:49</div></div>
-<div class="ttc" id="anamespaceservio_html_aab8d1fc6dacb69519e755e25ea3392fe"><div class="ttname"><a href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">servio::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint64_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition</b> base.hpp:18</div></div>
+<div class="ttc" id="anamespaceservio_html_aab8d1fc6dacb69519e755e25ea3392fe"><div class="ttname"><a href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">servio::microseconds</a></div><div class="ttdeci">std::chrono::duration&lt; uint64_t, std::micro &gt; microseconds</div><div class="ttdef"><b>Definition</b> base.hpp:21</div></div>
+<div class="ttc" id="anamespaceservio_html_ae7c15dfa3e6c95de6c389ae86dd84d15"><div class="ttname"><a href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">servio::status</a></div><div class="ttdeci">status</div><div class="ttdef"><b>Definition</b> status.hpp:12</div></div>
+<div class="ttc" id="anamespaceservio_html_ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076"><div class="ttname"><a href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">servio::status::success</a></div><div class="ttdeci">@ success</div></div>
+<div class="ttc" id="anamespaceservio_html_ae7c15dfa3e6c95de6c389ae86dd84d15a3ee28fe1a60c95b89d29317f122c7021"><div class="ttname"><a href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a3ee28fe1a60c95b89d29317f122c7021">servio::status::failure</a></div><div class="ttdeci">@ failure</div></div>
+<div class="ttc" id="anamespaceservio_html_ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282"><div class="ttname"><a href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">servio::status::error</a></div><div class="ttdeci">@ error</div></div>
 <div class="ttc" id="astructservio_1_1gov_1_1governor__factory_html"><div class="ttname"><a href="structservio_1_1gov_1_1governor__factory.html">servio::gov::governor_factory</a></div><div class="ttdef"><b>Definition</b> governor.hpp:50</div></div>
 <div class="ttc" id="astructservio_1_1gov_1_1governor__manager_html"><div class="ttname"><a href="structservio_1_1gov_1_1governor__manager.html">servio::gov::governor_manager</a></div><div class="ttdef"><b>Definition</b> governor_manager.hpp:12</div></div>
 <div class="ttc" id="astructservio_1_1gov_1_1governor__manager_html_a021825c3c3cc76562fea354f9ca51f9c"><div class="ttname"><a href="structservio_1_1gov_1_1governor__manager.html#a021825c3c3cc76562fea354f9ca51f9c">servio::gov::governor_manager::n</a></div><div class="ttdeci">static constexpr std::size_t n</div><div class="ttdef"><b>Definition</b> governor_manager.hpp:13</div></div>
@@ -248,15 +251,14 @@ $(document).ready(function(){initNavTree('governor__manager_8hpp_source.html',''
 <div class="ttc" id="astructservio_1_1gov_1_1governor_html_abd47669978680c380aaa08fe6ff7762f"><div class="ttname"><a href="structservio_1_1gov_1_1governor.html#abd47669978680c380aaa08fe6ff7762f">servio::gov::governor::engage</a></div><div class="ttdeci">virtual engage_res engage(em::pmr::memory_resource &amp;mem)=0</div></div>
 <div class="ttc" id="astructservio_1_1gov_1_1handle_html_a244135e363a057a825012a0b3973cad0"><div class="ttname"><a href="structservio_1_1gov_1_1handle.html#a244135e363a057a825012a0b3973cad0">servio::gov::handle::metrics_irq</a></div><div class="ttdeci">virtual void metrics_irq(microseconds now, float position, float velocity, bool is_moving)=0</div></div>
 <div class="ttc" id="astructservio_1_1gov_1_1handle_html_a2db6dd74b24f040adaf5df654eec61c3"><div class="ttname"><a href="structservio_1_1gov_1_1handle.html#a2db6dd74b24f040adaf5df654eec61c3">servio::gov::handle::current_irq</a></div><div class="ttdeci">virtual pwr current_irq(microseconds now, float current)=0</div></div>
-<div class="ttc" id="astructservio_1_1pwr_html"><div class="ttname"><a href="structservio_1_1pwr.html">servio::pwr</a></div><div class="ttdef"><b>Definition</b> base.hpp:64</div></div>
-<div class="ttc" id="astructservio_1_1status_html"><div class="ttname"><a href="structservio_1_1status.html">servio::status</a></div><div class="ttdef"><b>Definition</b> status.hpp:18</div></div>
+<div class="ttc" id="astructservio_1_1pwr_html"><div class="ttname"><a href="structservio_1_1pwr.html">servio::pwr</a></div><div class="ttdef"><b>Definition</b> base.hpp:67</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7d62d1059ec54d5dc63de032b83eaa8e.html">gov</a></li><li class="navelem"><a class="el" href="governor__manager_8hpp.html">governor_manager.hpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -129,10 +129,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4b0609963752328d98732e90c16f6cea" id="r_a4b0609963752328d98732e90c16f6cea"><td class="memItemLeft" align="right" valign="top">static auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#a4b0609963752328d98732e90c16f6cea">get_registry</a> ()</td></tr>
-<tr class="separator:a4b0609963752328d98732e90c16f6cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd568de49112b84fa650c3f7a5f1597" id="r_a4cd568de49112b84fa650c3f7a5f1597"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#a4cd568de49112b84fa650c3f7a5f1597">register_factory</a> (<a class="el" href="structservio_1_1gov_1_1governor__factory.html">governor_factory</a> &amp;factory)</td></tr>
-<tr class="separator:a4cd568de49112b84fa650c3f7a5f1597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14148c786b015ed791f034e41f75198a" id="r_a14148c786b015ed791f034e41f75198a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#a14148c786b015ed791f034e41f75198a">register_factory</a> (<a class="el" href="structservio_1_1gov_1_1governor__factory.html">governor_factory</a> &amp;factory) noexcept</td></tr>
+<tr class="separator:a14148c786b015ed791f034e41f75198a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77dbd0ad7b53ff98af410d564e530d2f" id="r_a77dbd0ad7b53ff98af410d564e530d2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#a77dbd0ad7b53ff98af410d564e530d2f">for_each_factory</a> (em::function_view&lt; void(<a class="el" href="structservio_1_1gov_1_1governor__factory.html">governor_factory</a> &amp;) &gt; const &amp;fn)</td></tr>
 <tr class="separator:a77dbd0ad7b53ff98af410d564e530d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed8922310724cfa1c95f0075b497c590" id="r_aed8922310724cfa1c95f0075b497c590"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#aed8922310724cfa1c95f0075b497c590">create_governors</a> (<a class="el" href="structservio_1_1gov_1_1governor__manager.html">governor_manager</a> &amp;gm, em::pmr::memory_resource &amp;mem)</td></tr>
@@ -193,40 +191,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespaceservio_1_1gov.html#a4b0609963752328d98732e90c16f6cea">get_registry()</a>.</p>
-
 </div>
 </div>
-<a id="a4b0609963752328d98732e90c16f6cea" name="a4b0609963752328d98732e90c16f6cea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b0609963752328d98732e90c16f6cea">&#9670;&#160;</a></span>get_registry()</h2>
+<a id="a14148c786b015ed791f034e41f75198a" name="a14148c786b015ed791f034e41f75198a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14148c786b015ed791f034e41f75198a">&#9670;&#160;</a></span>register_factory()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto &amp; servio::gov::get_registry </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4cd568de49112b84fa650c3f7a5f1597" name="a4cd568de49112b84fa650c3f7a5f1597"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cd568de49112b84fa650c3f7a5f1597">&#9670;&#160;</a></span>register_factory()</h2>
-
-<div class="memitem">
-<div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void servio::gov::register_factory </td>
@@ -236,9 +210,12 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="namespaceservio_1_1gov.html#a4b0609963752328d98732e90c16f6cea">get_registry()</a>.</p>
 
 </div>
 </div>
@@ -248,7 +225,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1gov.html">gov</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:39 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:24 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

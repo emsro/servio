@@ -1,0 +1,5 @@
+<map id="silent_peer" name="silent_peer">
+<area shape="rect" id="Node000001" title="Reads and discards every byte arriving on the peer fd." alt="" coords="5,79,100,104"/>
+<area shape="rect" id="Node000002" href="$structpeer__hook.html" title=" " alt="" coords="7,5,98,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,44,55,79,50,79,50,44"/>
+</map>

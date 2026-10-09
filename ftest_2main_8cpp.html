@@ -92,8 +92,7 @@ $(document).ready(function(){initNavTree('ftest_2main_8cpp.html',''); initResiza
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -102,25 +101,63 @@ $(document).ready(function(){initNavTree('ftest_2main_8cpp.html',''); initResiza
 <code>#include &quot;<a class="el" href="fw_2util_8hpp_source.html">../fw/util.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="setup__tests_8hpp_source.html">./setup_tests.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="testing__system_8hpp_source.html">./testing_system.hpp</a>&quot;</code><br />
+<code>#include &lt;ecor/ecor.hpp&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for main.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ftest_2main_8cpp__incl.svg" width="1367" height="418"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ftest_2main_8cpp__incl.svg" width="1058" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a04d8c80cbc92519e3909aafe5ae22200" id="r_a04d8c80cbc92519e3909aafe5ae22200"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ftest_2main_8cpp.html#a04d8c80cbc92519e3909aafe5ae22200">asrt_log</a> (enum asrt_log_level level, char const *module, char const *fmt,...)</td></tr>
+<tr class="separator:a04d8c80cbc92519e3909aafe5ae22200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ftest_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a8ec39cabb30c6ae2b2fa939c57da30f8" id="r_a8ec39cabb30c6ae2b2fa939c57da30f8"><td class="memItemLeft" align="right" valign="top">em::pmr::stack_resource&lt; 1024 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ftest_2main_8cpp.html#a8ec39cabb30c6ae2b2fa939c57da30f8">TEST_STACK</a></td></tr>
-<tr class="separator:a8ec39cabb30c6ae2b2fa939c57da30f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a04d8c80cbc92519e3909aafe5ae22200" name="a04d8c80cbc92519e3909aafe5ae22200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d8c80cbc92519e3909aafe5ae22200">&#9670;&#160;</a></span>asrt_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void asrt_log </td>
+          <td>(</td>
+          <td class="paramtype">enum asrt_log_level&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
 
@@ -136,22 +173,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca">servio::core::drivers::any_uninitialized()</a>, <a class="el" href="structservio_1_1drv_1_1com__iface.html#a1fb373ffbe95d6e709cbaf5838dbe9e7">servio::drv::com_iface::start()</a>, and <a class="el" href="ftest_2main_8cpp.html#a8ec39cabb30c6ae2b2fa939c57da30f8">TEST_STACK</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a8ec39cabb30c6ae2b2fa939c57da30f8" name="a8ec39cabb30c6ae2b2fa939c57da30f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ec39cabb30c6ae2b2fa939c57da30f8">&#9670;&#160;</a></span>TEST_STACK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">em::pmr::stack_resource&lt; 1024 &gt; TEST_STACK</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="reference">References <a class="el" href="structservio_1_1core_1_1drivers.html#a8dbfcef2c8ca20aa6ff579100f84c4ca">servio::core::drivers::any_uninitialized()</a>, and <a class="el" href="structservio_1_1drv_1_1com__iface.html#a9493b4fe8328979501a5cd866c3b080d">servio::drv::com_iface::start()</a>.</p>
 
 </div>
 </div>
@@ -161,7 +183,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3edf43d4ed1253cddae91626ffb6e91e.html">ftest</a></li><li class="navelem"><a class="el" href="ftest_2main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

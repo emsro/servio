@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handle_0',['handle',['../structservio_1_1scmdio_1_1consumer.html#a705a0298bcf0f1b3f29926b3b3849ce8',1,'servio::scmdio::consumer']]]
+  ['govctl_5fstmts_0',['govctl_stmts',['../namespaceservio_1_1iface.html#a78f9ff79f88e64ee72f2172c377a610c',1,'servio::iface']]]
 ];

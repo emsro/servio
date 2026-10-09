@@ -7,9 +7,14 @@ var searchData=
   ['_5fgetpid_4',['_getpid',['../extra_8cpp.html#a945e539df8e0f66d3c73c533fe1968ee',1,'extra.cpp']]],
   ['_5fkill_5',['_kill',['../extra_8cpp.html#a0ed15a34423726cf23f8dd30a0968dbb',1,'extra.cpp']]],
   ['_5flseek_6',['_lseek',['../extra_8cpp.html#a9a33858e15f999352b72063439c5cffd',1,'extra.cpp']]],
-  ['_5fposition_5fgov_7',['_position_gov',['../structservio_1_1gov_1_1pos_1_1__position__gov.html#ab63886f5398ce01c55e6f17b5f8547a2',1,'servio::gov::pos::_position_gov']]],
-  ['_5fpower_5fgov_8',['_power_gov',['../structservio_1_1gov_1_1pow_1_1__power__gov.html#af8aee413b138cfc7cc33e039db5c4d4a',1,'servio::gov::pow::_power_gov']]],
-  ['_5fread_9',['_read',['../extra_8cpp.html#ae9a656c34f65fef4f3d0c975d252fe32',1,'extra.cpp']]],
-  ['_5fvelocity_5fgov_10',['_velocity_gov',['../structservio_1_1gov_1_1vel_1_1__velocity__gov.html#aa9fe475eb8407bd4da81863ff8d93b22',1,'servio::gov::vel::_velocity_gov']]],
-  ['_5fwrite_11',['_write',['../extra_8cpp.html#a1764b05ba713fd9473356dc1c1228989',1,'extra.cpp']]]
+  ['_5fmake_5fmetric_5fvalue_7',['_make_metric_value',['../namespaceservio_1_1ftest.html#a3534459900f413a6046508697efb2687',1,'servio::ftest']]],
+  ['_5fop_8',['_op',['../structservio_1_1ftest_1_1__rewind__sender_1_1__op.html#a405f55e5a92a2f853b79a528d7003288',1,'servio::ftest::_rewind_sender::_op::_op()'],['../structservio_1_1ftest_1_1__wait__for__sender_1_1__op.html#ac5011c68a079ae1952b09376a03d9b21',1,'servio::ftest::_wait_for_sender::_op::_op()']]],
+  ['_5fposition_5fgov_9',['_position_gov',['../structservio_1_1gov_1_1pos_1_1__position__gov.html#ab63886f5398ce01c55e6f17b5f8547a2',1,'servio::gov::pos::_position_gov']]],
+  ['_5fpower_5fgov_10',['_power_gov',['../structservio_1_1gov_1_1pow_1_1__power__gov.html#af8aee413b138cfc7cc33e039db5c4d4a',1,'servio::gov::pow::_power_gov']]],
+  ['_5fread_11',['_read',['../extra_8cpp.html#ae9a656c34f65fef4f3d0c975d252fe32',1,'extra.cpp']]],
+  ['_5fstart_5fname_12',['_start_name',['../structservio_1_1ftest_1_1__store__metric__ctx.html#ad4c6c91fafe348f33737fb2b9c601858',1,'servio::ftest::_store_metric_ctx']]],
+  ['_5fstart_5funit_13',['_start_unit',['../structservio_1_1ftest_1_1__store__metric__ctx.html#a2801ea10e3d8577a2ebb986174b4298e',1,'servio::ftest::_store_metric_ctx']]],
+  ['_5fstart_5fvalue_14',['_start_value',['../structservio_1_1ftest_1_1__store__metric__ctx.html#a97e67370628ad270555e48f05fdb26d7',1,'servio::ftest::_store_metric_ctx']]],
+  ['_5fvelocity_5fgov_15',['_velocity_gov',['../structservio_1_1gov_1_1vel_1_1__velocity__gov.html#aa9fe475eb8407bd4da81863ff8d93b22',1,'servio::gov::vel::_velocity_gov']]],
+  ['_5fwrite_16',['_write',['../extra_8cpp.html#a1764b05ba713fd9473356dc1c1228989',1,'extra.cpp']]]
 ];

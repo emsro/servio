@@ -7,7 +7,6 @@ var namespaceservio =
     [ "core", "namespaceservio_1_1core.html", "namespaceservio_1_1core" ],
     [ "drv", "namespaceservio_1_1drv.html", "namespaceservio_1_1drv" ],
     [ "ftest", "namespaceservio_1_1ftest.html", "namespaceservio_1_1ftest" ],
-    [ "ftester", "namespaceservio_1_1ftester.html", "namespaceservio_1_1ftester" ],
     [ "fw", "namespaceservio_1_1fw.html", "namespaceservio_1_1fw" ],
     [ "gov", "namespaceservio_1_1gov.html", "namespaceservio_1_1gov" ],
     [ "iface", "namespaceservio_1_1iface.html", "namespaceservio_1_1iface" ],
@@ -30,15 +29,13 @@ var namespaceservio =
     [ "sim", "namespaceservio_1_1sim.html", "namespaceservio_1_1sim" ],
     [ "sntr", "namespaceservio_1_1sntr.html", "namespaceservio_1_1sntr" ],
     [ "str_lib", "namespaceservio_1_1str__lib.html", "namespaceservio_1_1str__lib" ],
-    [ "tests", "namespaceservio_1_1tests.html", null ],
     [ "atom_sv_key", "structservio_1_1atom__sv__key.html", "structservio_1_1atom__sv__key" ],
-    [ "error_status", "structservio_1_1error__status.html", "structservio_1_1error__status" ],
     [ "key_atom_literal", "structservio_1_1key__atom__literal.html", "structservio_1_1key__atom__literal" ],
     [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],
     [ "linear_transition_regulator", "structservio_1_1linear__transition__regulator.html", "structservio_1_1linear__transition__regulator" ],
     [ "opt_str_err", "structservio_1_1opt__str__err.html", "structservio_1_1opt__str__err" ],
     [ "pwr", "structservio_1_1pwr.html", null ],
-    [ "status", "structservio_1_1status.html", "structservio_1_1status" ],
+    [ "status_error_category", "structservio_1_1status__error__category.html", "structservio_1_1status__error__category" ],
     [ "str_err", "namespaceservio.html#structservio_1_1str__err", "namespaceservio_structservio_1_1str__err_dup" ],
     [ "limits", "namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55", null ],
     [ "microseconds", "namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe", null ],
@@ -47,20 +44,16 @@ var namespaceservio =
     [ "sec_time", "namespaceservio.html#a31c65bbbc228b1eeafc15f79227a2909", null ],
     [ "seconds", "namespaceservio.html#ae4779d6544c35b9251297f70da36f657", null ],
     [ "sv_key", "namespaceservio.html#a2c228fec92f02dc577feb5048d12863c", null ],
-    [ "status_e", "namespaceservio.html#a08c735f896d54b9107bb8b8fd8c6c6bc", [
-      [ "SUCCESS", "namespaceservio.html#a08c735f896d54b9107bb8b8fd8c6c6bcad0749aaba8b833466dfcbb0428e4f89c", null ],
-      [ "FAILURE", "namespaceservio.html#a08c735f896d54b9107bb8b8fd8c6c6bca36fc6065a3e970bc3e6b2e59da52bf2a", null ],
-      [ "ERROR", "namespaceservio.html#a08c735f896d54b9107bb8b8fd8c6c6bcabb1ca97ec761fc37101737ba0aa2e7c5", null ]
+    [ "status", "namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15", [
+      [ "success", "namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076", null ],
+      [ "failure", "namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a3ee28fe1a60c95b89d29317f122c7021", null ],
+      [ "error", "namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282", null ]
     ] ],
     [ "atom_visit", "namespaceservio.html#a90f0ccffc322269a6008e79d5b69ae9f", null ],
     [ "page_at", "namespaceservio.html#a7f26120992786718c3b52d10b3c48f89", null ],
-    [ "to_str", "namespaceservio.html#abe44afce4c40e0497c02cc782e45b7d3", null ],
-    [ "ERROR", "namespaceservio.html#a2bffda22b19bcf89ee87272318abfa40", null ],
-    [ "FAILURE", "namespaceservio.html#a47a5b9d9754c9bec77aa054df2a928f9", null ],
     [ "infty", "namespaceservio.html#a0a32b7da24f35e9d57adbab46fa02c1c", null ],
     [ "p_low", "namespaceservio.html#a53879f15eedde593c9cd6531402f5590", null ],
     [ "p_max", "namespaceservio.html#ad65a9ec22f69582eff005ae62a0bd415", null ],
     [ "pi", "namespaceservio.html#a20c15193768c59a28a88e172aba5ab20", null ],
-    [ "pipi", "namespaceservio.html#a00c2d45a108822e094be491c4004429b", null ],
-    [ "SUCCESS", "namespaceservio.html#a8d5869ffe2516e502b6f358d2827207e", null ]
+    [ "pipi", "namespaceservio.html#a00c2d45a108822e094be491c4004429b", null ]
 ];

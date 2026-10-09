@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>servio: src/ftester/flash.cpp File Reference</title>
+<title>servio: src/scmdio/flash.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,40 +98,42 @@ $(document).ready(function(){initNavTree('flash_8cpp.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="flash_8hpp_source.html">./flash.hpp</a>&quot;</code><br />
-<code>#include &lt;joque/process.hpp&gt;</code><br />
+<code>#include &quot;<a class="el" href="scmdio_2base_8hpp_source.html">./base.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dfu__flash_8hpp_source.html">./dfu_flash.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="port_8hpp_source.html">./port.hpp</a>&quot;</code><br />
+<code>#include &lt;boost/asio/serial_port_base.hpp&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;ios&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;spdlog/spdlog.h&gt;</code><br />
-<code>#include &lt;thread&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for flash.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="flash_8cpp__incl.svg" width="631" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="flash_8cpp__incl.svg" width="898" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceservio" id="r_namespaceservio"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio.html">servio</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceservio_1_1ftester" id="r_namespaceservio_1_1ftester"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html">servio::ftester</a></td></tr>
+<tr class="memitem:namespaceservio_1_1scmdio" id="r_namespaceservio_1_1scmdio"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html">servio::scmdio</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4d55394c1681c7716e00d85a89a60c08" id="r_a4d55394c1681c7716e00d85a89a60c08"><td class="memItemLeft" align="right" valign="top">joque::task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a4d55394c1681c7716e00d85a89a60c08">servio::ftester::make_openocd_flash_task</a> (std::filesystem::path const &amp;firmware, std::filesystem::path const &amp;ocd_cfg, <a class="el" href="namespaceservio_1_1ftester.html#a0560239d5205ea42c2dee9c8a27244ee">opt</a>&lt; std::filesystem::path &gt; const &amp;log_file, joque::resource const &amp;dev_res)</td></tr>
-<tr class="separator:a4d55394c1681c7716e00d85a89a60c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6271a31584c71e0f02b95d888832da1e" id="r_a6271a31584c71e0f02b95d888832da1e"><td class="memItemLeft" align="right" valign="top">joque::task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a6271a31584c71e0f02b95d888832da1e">servio::ftester::make_bmp_flash_task</a> (std::filesystem::path const &amp;firmware, std::filesystem::path const &amp;device, joque::resource const &amp;dev_res)</td></tr>
-<tr class="separator:a6271a31584c71e0f02b95d888832da1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62b686ad2b66859c1accbb7678069d60" id="r_a62b686ad2b66859c1accbb7678069d60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1ftester.html#a62b686ad2b66859c1accbb7678069d60">servio::ftester::flash_firmware_openocd</a> (std::filesystem::path const &amp;firmware, std::filesystem::path const &amp;ocdconf)</td></tr>
-<tr class="separator:a62b686ad2b66859c1accbb7678069d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a010fc649bce2f643a8b970fa283bc7e1" id="r_a010fc649bce2f643a8b970fa283bc7e1"><td class="memItemLeft" align="right" valign="top">awaitable&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1scmdio.html#a010fc649bce2f643a8b970fa283bc7e1">servio::scmdio::flash_firmware</a> (io_context &amp;io_ctx, std::filesystem::path const &amp;port_path, std::filesystem::path const &amp;file_path, unsigned baudrate)</td></tr>
+<tr class="separator:a010fc649bce2f643a8b970fa283bc7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="flash_8cpp.html">flash.cpp</a></li>
-    <li class="footer">Generated on Sun Dec 28 2025 18:55:38 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4b5d0c37e91718ad53ded7871cea291.html">scmdio</a></li><li class="navelem"><a class="el" href="flash_8cpp.html">flash.cpp</a></li>
+    <li class="footer">Generated on Fri Oct 9 2026 19:13:23 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

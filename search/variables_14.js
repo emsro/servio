@@ -1,23 +1,10 @@
 var searchData=
 [
-  ['t_0',['t',['../structservio_1_1sntr_1_1tests_1_1test__clk.html#acc0710e4b685bec714bcacfc8726faaa',1,'servio::sntr::tests::test_clk']]],
-  ['temp_1',['temp',['../structservio_1_1cnv_1_1converter.html#a2e247fbcad8b7a3455893ce44fde1a6f',1,'servio::cnv::converter']]],
-  ['temp_5fconv_5foffset_2',['temp_conv_offset',['../structservio_1_1cfg_1_1map.html#a6108e063bbe0ff49543adb58f0703c0b',1,'servio::cfg::map']]],
-  ['temp_5fconv_5fscale_3',['temp_conv_scale',['../structservio_1_1cfg_1_1map.html#ac0ef2f74c41ec9111efd8b352a471b22',1,'servio::cfg::map']]],
-  ['temp_5fdrv_4',['temp_drv',['../namespaceservio_1_1core.html#a1f73c141b025ab1042f552c7085a6e6a',1,'servio::core::dispatcher::temp_drv'],['../structservio_1_1scmdio_1_1port__mock.html#a1d39d4aef5933b127725e2d2b9552261',1,'servio::scmdio::port_mock::attrs::temp_drv']]],
-  ['temperature_5',['temperature',['../structservio_1_1core_1_1drivers.html#af2f6bdfae67f73d331d52d8da2dd5822',1,'servio::core::drivers']]],
-  ['terminated_5feid_6',['terminated_eid',['../namespaceservio_1_1sntr.html#aab752fd85ad1241ac8d43aa365f39d86',1,'servio::sntr']]],
-  ['test_7',['test',['../structservio_1_1bb_1_1bb__test__case.html#a0ca98012019603e8f74a014e6220c107',1,'servio::bb::bb_test_case']]],
-  ['test_5fstack_8',['TEST_STACK',['../ftest_2main_8cpp.html#a8ec39cabb30c6ae2b2fa939c57da30f8',1,'main.cpp']]],
-  ['tid_9',['tid',['../structservio_1_1ftester_1_1joque__test.html#a260a320a306b5c55da43c54c3586916f',1,'servio::ftester::joque_test']]],
-  ['tim1_5fhandle_10',['TIM1_HANDLE',['../namespaceservio_1_1brd.html#a5bce2edc1a38d3055b24c79c9b7a24fc',1,'servio::brd']]],
-  ['tim2_5fhandle_11',['TIM2_HANDLE',['../namespaceservio_1_1brd.html#a191cac90543a6fe4aa7a94e8134a184a',1,'servio::brd']]],
-  ['tim3_5fhandle_12',['TIM3_HANDLE',['../namespaceservio_1_1brd.html#ad3461a2b66a48bb2ff01731378427b6e',1,'servio::brd']]],
-  ['tim6_5fhandle_13',['TIM6_HANDLE',['../namespaceservio_1_1brd.html#af2809e836bdf98c64f1024daeb658ba3',1,'servio::brd']]],
-  ['timeout_14',['timeout',['../structservio_1_1bb_1_1bb__test__case.html#a3f100ed3ab391da7a8b450166cb5ff2f',1,'servio::bb::bb_test_case']]],
-  ['timer_5finstance_15',['timer_instance',['../namespaceservio_1_1plt.html#ac320b1f2637e8716b47834cec0877368',1,'servio::plt::leds_timer_cfg::timer_instance'],['../namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673',1,'servio::plt::hb_timer_cfg::timer_instance']]],
-  ['tp_16',['tp',['../namespaceservio_1_1sntr.html#a2fc03e6e901d85cdba6afb1d0c38a10f',1,'servio::sntr::record']]],
-  ['tx_17',['tx',['../namespaceservio_1_1plt.html#a9dd4647ad22e65f5bed71ae108f45679',1,'servio::plt::uart_cfg']]],
-  ['tx_5fdma_18',['tx_dma',['../namespaceservio_1_1plt.html#a58ea661027d27b37be80791fb5f64068',1,'servio::plt::uart_cfg']]],
-  ['type_19',['type',['../namespacegen.html#ab3831b181e67b12f386aaeb2e0a1e5be',1,'gen']]]
+  ['uart1_5fhandle_0',['UART1_HANDLE',['../namespaceservio_1_1brd.html#ae003e88b83b7e7fad39fff209ffcc4ef',1,'servio::brd']]],
+  ['uart2_5fhandle_1',['UART2_HANDLE',['../namespaceservio_1_1brd.html#a94b7ae930f330eca472cc2d8756805cd',1,'servio::brd']]],
+  ['uart_5fcommon_5ftolerable_5fhal_5ferrors_2',['uart_common_tolerable_hal_errors',['../namespaceservio_1_1drv_1_1bits.html#ab49ae58ef86d106445fed671bc9b6f9b',1,'servio::drv::bits']]],
+  ['uart_5finstance_3',['uart_instance',['../namespaceservio_1_1plt.html#a2fefd453402afb93ffd0696664e4fe05',1,'servio::plt::uart_cfg']]],
+  ['unit_4',['unit',['../structservio_1_1ftest_1_1__store__metric__ctx.html#a89519f511aab301bd20558c845683e38',1,'servio::ftest::_store_metric_ctx']]],
+  ['used_5',['used',['../structservio_1_1drv_1_1detailed__adc__channel.html#abb124331c9121663f28517ef1f770b12',1,'servio::drv::detailed_adc_channel']]],
+  ['used_5fdata_6',['used_data',['../structservio_1_1drv_1_1com__res.html#a1fd6e27e86352e01cccaa53f97183b1b',1,'servio::drv::com_res']]]
 ];

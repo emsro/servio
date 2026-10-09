@@ -19,8 +19,8 @@ var interfaces_8hpp =
     [ "servio::drv::curr_iface", "structservio_1_1drv_1_1curr__iface.html", "structservio_1_1drv_1_1curr__iface" ],
     [ "current_cb_iface", "interfaces_8hpp.html#a194d4daf14731733eaade9c7f8dfcff2", null ],
     [ "position_cb_iface", "interfaces_8hpp.html#a280a49ab9a01d82a54b34c1971736a7f", null ],
-    [ "send_data_t", "interfaces_8hpp.html#ae233abc47871b442f75cd856dcb2115c", null ],
-    [ "send", "interfaces_8hpp.html#a6e5875af91fc88cb51f3f382aef97193", null ],
-    [ "spin_with_timeout", "interfaces_8hpp.html#a939143e8846f4165956444ad9cdc5c4d", null ],
+    [ "send_get_data_f", "interfaces_8hpp.html#aeaac161bbe223f7894d4e15f5a270aa9", null ],
+    [ "send", "interfaces_8hpp.html#a28ddfb5f94ab6a643d78ff0e91d80bc1", null ],
+    [ "spin_with_timeout", "interfaces_8hpp.html#ab5a00aab7fb2191912d0d268bc82af56", null ],
     [ "wait_for", "interfaces_8hpp.html#a40b5c094f9145bb1145198ee924ff3cb", null ]
 ];

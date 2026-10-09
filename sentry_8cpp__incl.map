@@ -1,13 +1,22 @@
 <map id="src/sntr/sentry.cpp" name="src/sntr/sentry.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="48,5,188,31"/>
-<area shape="rect" id="Node000002" href="$sentry_8hpp.html" title=" " alt="" coords="69,79,167,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,31,121,65,115,65,115,31"/>
-<area shape="rect" id="Node000003" href="$sntr_2base_8hpp.html" title=" " alt="" coords="73,225,163,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,106,41,125,25,137,12,153,9,164,9,173,20,190,42,206,69,218,66,223,39,210,17,194,4,174,3,163,8,151,21,134,38,120,75,102"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="151,299,219,324"/>
-<area shape="poly" id="edge6_Node000002_Node000012" title=" " alt="" coords="161,102,198,120,215,134,228,151,236,168,239,187,234,225,220,260,203,289,199,286,215,257,228,223,233,187,231,170,224,153,211,137,195,125,159,106"/>
-<area shape="rect" id="Node000013" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="23,152,213,177"/>
-<area shape="poly" id="edge4_Node000002_Node000013" title=" " alt="" coords="121,104,121,138,115,138,115,104"/>
-<area shape="poly" id="edge3_Node000003_Node000012" title=" " alt="" coords="131,249,167,287,163,290,127,253"/>
-<area shape="poly" id="edge5_Node000013_Node000003" title=" " alt="" coords="121,178,121,212,115,212,115,178"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="243,5,383,31"/>
+<area shape="rect" id="Node000002" href="$sentry_8hpp.html" title=" " alt="" coords="5,79,103,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,33,110,78,108,72,270,28"/>
+<area shape="rect" id="Node000003" href="$sntr_2base_8hpp.html" title=" " alt="" coords="109,225,199,251"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="314,32,302,99,288,141,264,179,235,204,203,222,201,217,232,200,260,176,283,138,297,97,309,31"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="189,299,255,324"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="318,31,323,64,322,104,306,159,284,210,240,289,235,286,279,208,301,157,317,104,318,64,313,31"/>
+<area shape="rect" id="Node000014" href="$central__sentry__iface_8hpp.html" title=" " alt="" coords="59,152,249,177"/>
+<area shape="poly" id="edge9_Node000001_Node000014" title=" " alt="" coords="301,33,179,144,175,140,298,29"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="375,79,461,104"/>
+<area shape="poly" id="edge10_Node000001_Node000015" title=" " alt="" coords="331,28,391,69,388,73,328,33"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="485,79,556,104"/>
+<area shape="poly" id="edge11_Node000001_Node000016" title=" " alt="" coords="347,28,475,72,473,77,345,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="52,105,42,139,42,158,48,176,71,201,101,218,98,222,68,205,44,179,37,159,37,138,46,103"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="51,299,119,324"/>
+<area shape="poly" id="edge7_Node000002_Node000013" title=" " alt="" coords="51,105,39,138,36,157,37,177,54,236,75,285,70,287,49,238,31,178,30,157,34,136,46,103"/>
+<area shape="poly" id="edge5_Node000002_Node000014" title=" " alt="" coords="72,102,128,142,125,146,69,106"/>
+<area shape="poly" id="edge3_Node000003_Node000006" title=" " alt="" coords="167,249,203,287,199,290,163,253"/>
+<area shape="poly" id="edge4_Node000003_Node000013" title=" " alt="" coords="144,253,107,291,103,287,141,249"/>
+<area shape="poly" id="edge6_Node000014_Node000003" title=" " alt="" coords="157,178,157,212,151,212,151,178"/>
 </map>

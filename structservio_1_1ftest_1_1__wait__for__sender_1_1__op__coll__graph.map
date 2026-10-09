@@ -1,0 +1,9 @@
+<map id="servio::ftest::_wait_for_sender::_op&lt; R &gt;" name="servio::ftest::_wait_for_sender::_op&lt; R &gt;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="101,93,269,133"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,141,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,37,164,91,161,95,96,41"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="166,5,205,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,44,188,93,183,93,183,44"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1drv_1_1clk__iface.html" title=" " alt="" coords="229,5,385,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="286,42,250,71,216,95,213,91,246,67,282,38"/>
+</map>
