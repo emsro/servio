@@ -32,6 +32,10 @@ cpmaddpackage(
 )
 cpmaddpackage("gh:koniarik/zll@2.0.1")
 if(${SERVIO_PLATFORM} STREQUAL "host")
+  # asrtio requests CLI11 and json as well, and CPM keeps the first request, so
+  # servio's versions have to come before asrt.
+  cpmaddpackage("gh:CLIUtils/CLI11@2.7.2")
+  cpmaddpackage("gh:nlohmann/json@3.12.0")
   set(_servio_asrt_libs "asrtl;asrtc;asrtr;asrtlpp;asrtcpp;asrtrpp;asrtio")
   set(_servio_asrt_targets asrtl asrtc asrtr asrtlpp asrtcpp asrtrpp)
 else()
@@ -47,7 +51,7 @@ cpmaddpackage(NAME asrt SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dep/asrt)
 foreach(_asrt_target IN LISTS _servio_asrt_targets)
   set_target_properties(${_asrt_target} PROPERTIES SYSTEM TRUE)
 endforeach()
-cpmaddpackage("gh:Neargye/magic_enum@0.9.7")
+cpmaddpackage("gh:Neargye/magic_enum@0.9.8")
 cpmaddpackage("gh:avakar/atom#f5d5c6c0f5fdc96a6275d55f7c4ee98396e407a6")
 cpmaddpackage("gh:koniarik/vari@1.0.3")
 
@@ -70,19 +74,17 @@ endif()
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
 
-  cpmaddpackage("gh:CLIUtils/CLI11@2.5.0")
-  cpmaddpackage("gh:nlohmann/json@3.11.3")
-  cpmaddpackage("gh:koniarik/spdlog#20ad67481efcd5e539857297af5c20959ff993d7")
+  cpmaddpackage("gh:gabime/spdlog@1.17.0")
   target_compile_definitions(spdlog PUBLIC -DSPDLOG_USE_STD_FORMAT=ON)
   cpmaddpackage(
     NAME
     Boost
     VERSION
-    1.88.0
+    1.92.0
     URL
-    https://github.com/boostorg/boost/releases/download/boost-1.88.0/boost-1.88.0-cmake.tar.xz
+    https://github.com/boostorg/boost/releases/download/boost-1.92.0/boost-1.92.0-cmake.tar.xz
     URL_HASH
-    SHA256=f48b48390380cfb94a629872346e3a81370dc498896f16019ade727ab72eb1ec
+    SHA256=9bed76128d4e46755dbe818487788c6fceb6f72b378f4daa49b7e1e600d9088d
     OPTIONS
     "BOOST_ENABLE_CMAKE ON"
     "BOOST_INCLUDE_LIBRARIES container\\\;asio" # Note the escapes!
@@ -94,7 +96,7 @@ if(${SERVIO_PLATFORM} STREQUAL "host")
     GITHUB_REPOSITORY
     google/googletest
     VERSION
-    1.15.2
+    1.18.0
     OPTIONS
     "INSTALL_GTEST OFF"
     "gtest_force_shared_crt"

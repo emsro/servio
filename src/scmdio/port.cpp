@@ -2,6 +2,7 @@
 
 #include <array>
 #include <boost/asio/experimental/awaitable_operators.hpp>
+#include <type_traits>
 
 namespace em = emlabcpp;
 
@@ -84,7 +85,7 @@ struct match_byte
 namespace boost::asio
 {
 template <>
-struct is_match_condition< servio::scmdio::match_byte > : public boost::true_type
+struct is_match_condition< servio::scmdio::match_byte > : public std::true_type
 {
 };
 }  // namespace boost::asio

@@ -53,7 +53,7 @@ struct port_mock : port_iface
                 };
                 std::byte tmp[666];
                 auto [res, used] = core::handle_message( disp, msg, tmp );
-                assert( res == SUCCESS );
+                assert( res == status::success );
                 buff.emplace_back( used.begin(), used.end() );
                 co_return;
         }
