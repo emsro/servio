@@ -32,8 +32,7 @@ TEST( Metrics, base )
                         continue;
 
                 EXPECT_NEAR( met.get_position(), angle, 0.01 )
-                    << "t: " << static_cast< double >( t.count() ) / 1000.0 << ", "
-                    << "i: " << i;
+                    << "t: " << static_cast< double >( t.count() ) / 1000.0 << ", " << "i: " << i;
         }
 }
 
