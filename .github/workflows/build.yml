@@ -4,27 +4,94 @@ name: build
 on: [push]
 
 jobs:
-    test:
+    host:
+        strategy:
+            fail-fast: false
+            matrix:
+                preset: [host_debug, host_release]
+                compiler:
+                    - {cc: gcc, cxx: g++}
+                    - {cc: clang, cxx: clang++}
+                include:
+                    # Alpine's clang ships no UBSan runtime
+                    - preset: host_ubsan
+                      compiler: {cc: gcc, cxx: g++}
         runs-on: ubuntu-latest
         container:
             image: ghcr.io/emsro/build-env:latest
             credentials:
                 username: ${{ github.actor }}
                 password: ${{ secrets.github_token }}
-
+        env:
+            CC: ${{ matrix.compiler.cc }}
+            CXX: ${{ matrix.compiler.cxx }}
         defaults:
             run:
                 shell: bash
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
               with:
                   submodules: recursive
 
             - run: git config --global --add safe.directory /__w/servio/servio
 
-            - run: make build
+            - run: cmake --workflow --preset ${{ matrix.preset }}
 
-            - uses: actions/upload-artifact@v4
+            - run: cmake --install _build/${{ matrix.preset }} --prefix _install
+
+            - run: _install/bin/scmdio --help
+
+    asan:
+        # ASan does not link against musl, so this job runs on a glibc image
+        runs-on: ubuntu-latest
+        container: archlinux:latest
+        steps:
+            - run: pacman -Syu --noconfirm git cmake gcc make ninja ccache python
+
+            - uses: actions/checkout@v4
+              with:
+                  submodules: recursive
+
+            - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+            - run: cmake --workflow --preset host_asan
+
+    firmware:
+        strategy:
+            fail-fast: false
+            matrix:
+                preset: [stm32h5_debug, stm32h5_release]
+        runs-on: ubuntu-latest
+        container:
+            image: ghcr.io/emsro/build-env:latest
+            credentials:
+                username: ${{ github.actor }}
+                password: ${{ secrets.github_token }}
+        defaults:
+            run:
+                shell: bash
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  submodules: recursive
+
+            - run: git config --global --add safe.directory /__w/servio/servio
+
+            - run: cmake --workflow --preset ${{ matrix.preset }}
+
+            - if: matrix.preset == 'stm32h5_release'
+              uses: actions/upload-artifact@v4
               with:
                   name: proto4_fw.elf
-                  path: _build/stm32h5_debug/src/brd/proto4/proto4_fw.elf
+                  path: _build/stm32h5_release/src/brd/proto4/proto4_fw.elf
+
+    pre-commit:
+        runs-on: ubuntu-24.04
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-python@v5
+              with:
+                  python-version: 3.x
+
+            - uses: pre-commit/action@v3.0.1
