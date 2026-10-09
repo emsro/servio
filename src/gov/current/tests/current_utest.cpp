@@ -29,9 +29,9 @@ TEST_F( gov_fixture, curr )
                 set_cfg( "curr_loop_d", 0.0F );
                 do_cmd( std::format( "set {}", curr ) );
 
-                for ( std::size_t i : em::range( 100u ) ) {
-                        std::ignore      = i;
-                        microseconds now = 5_ms * i;
+                for ( std::size_t const i : em::range( 100u ) ) {
+                        std::ignore            = i;
+                        microseconds const now = 5_ms * i;
                         this->tick( gov, now );
                 }
 

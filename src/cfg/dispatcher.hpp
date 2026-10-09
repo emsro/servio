@@ -20,7 +20,7 @@ find_iface( iface* root_handler, gov::governor_manager& gm, std::string_view gov
                         return vari::vref< iface >{ *root_handler };
                 return "unknown governor"_err;
         }
-        for ( vari::vref< gov::governor > g : gm.governors() )
+        for ( vari::vref< gov::governor > const g : gm.governors() )
                 if ( g->name() == gov ) {
                         auto* c = g->get_cfg();
                         if ( c )

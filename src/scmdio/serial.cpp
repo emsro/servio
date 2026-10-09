@@ -25,7 +25,7 @@ awaitable< std::string > read( port_iface& port )
 {
 
         std::array< std::byte, buffer_size > reply_buffer;
-        em::view< std::byte* >               deser_msg = co_await port.read_msg( reply_buffer );
+        em::view< std::byte* > const         deser_msg = co_await port.read_msg( reply_buffer );
 
         std::string res{ reinterpret_cast< char* >( deser_msg.begin() ), deser_msg.size() };
         spdlog::debug( "got: {}", res );
@@ -51,7 +51,7 @@ awaitable< nlohmann::json > get_config_field( port_iface& port, std::string_view
 {
         spdlog::debug( "querying config field: {}", name );
 
-        std::string msg = std::format( "cfg get {}", name );
+        std::string const msg = std::format( "cfg get {}", name );
 
         nlohmann::json reply = co_await exchg( port, msg );
         if ( reply.size() != 2 )
@@ -85,7 +85,7 @@ awaitable< std::map< std::string, nlohmann::json > > get_full_config( port_iface
 
 awaitable< void > commit_config( port_iface& port )
 {
-        std::string msg = "cfg commit";
+        std::string const msg = "cfg commit";
 
         auto reply = co_await exchg( port, msg );
         // XXX: check the retcode
@@ -94,7 +94,7 @@ awaitable< void > commit_config( port_iface& port )
 
 awaitable< nlohmann::json > get_property( port_iface& port, std::string_view prop )
 {
-        std::string msg = std::format( "prop {}", prop );
+        std::string const msg = std::format( "prop {}", prop );
 
         nlohmann::json reply = co_await exchg( port, msg );
 

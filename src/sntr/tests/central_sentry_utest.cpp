@@ -30,7 +30,7 @@ struct central_sentry_fixture : ::testing::Test
 
 TEST( central_sentry, record )
 {
-        record rec = default_record();
+        record const rec = default_record();
         EXPECT_EQ( rec.st, record_state::UNSET );
         EXPECT_EQ( rec.tp, microseconds{ 0 } );
         EXPECT_EQ( rec.src, nullptr );
@@ -45,7 +45,7 @@ TEST_F( central_sentry_fixture, empty_inop )
         auto        f           = [&]() {
                 fired_count += 1;
         };
-        central_sentry cs{ clk, {}, buffer_a, f };
+        central_sentry const cs{ clk, {}, buffer_a, f };
 
         EXPECT_EQ( fired_count, 1 );
         EXPECT_TRUE( cs.is_inoperable() );
@@ -57,7 +57,7 @@ TEST_F( central_sentry_fixture, empty_degr )
         auto        f           = [&]() {
                 fired_count += 1;
         };
-        central_sentry cs{ clk, buffer_a, {}, f };
+        central_sentry const cs{ clk, buffer_a, {}, f };
 
         EXPECT_EQ( fired_count, 1 );
         EXPECT_TRUE( cs.is_inoperable() );
@@ -74,11 +74,11 @@ TEST_F( central_sentry_fixture, one_deg_insert )
         EXPECT_EQ( fired_count, 0 );
         EXPECT_FALSE( cs.is_inoperable() );
 
-        char const* src    = "t1";
-        ecode_set   ecodes = 0b1010;
-        char const* emsg   = "esmg";
-        data_type   data   = 42;
-        clk.t              = microseconds{ 666 };
+        char const*     src    = "t1";
+        ecode_set const ecodes = 0b1010;
+        char const*     emsg   = "esmg";
+        data_type const data   = 42;
+        clk.t                  = microseconds{ 666 };
 
         cs.report_degraded( src, ecodes, emsg, data );
 
@@ -106,11 +106,11 @@ TEST_F( central_sentry_fixture, one_inop_insert )
         EXPECT_EQ( fired_count, 0 );
         EXPECT_FALSE( cs.is_inoperable() );
 
-        char const* src    = "t1";
-        ecode_set   ecodes = 0b1010;
-        char const* emsg   = "esmg";
-        data_type   data   = 42;
-        clk.t              = microseconds{ 666 };
+        char const*     src    = "t1";
+        ecode_set const ecodes = 0b1010;
+        char const*     emsg   = "esmg";
+        data_type const data   = 42;
+        clk.t                  = microseconds{ 666 };
 
         cs.report_inoperable( src, ecodes, emsg, data );
 

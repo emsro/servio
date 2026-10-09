@@ -18,7 +18,7 @@ struct stream_iface
 
         awaitable< void > write( std::byte b )
         {
-                std::byte data[] = { b };
+                std::byte const data[] = { b };
                 co_await write( data );
         }
 

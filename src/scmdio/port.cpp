@@ -1,5 +1,6 @@
 #include "./port.hpp"
 
+#include <algorithm>
 #include <array>
 #include <boost/asio/experimental/awaitable_operators.hpp>
 #include <type_traits>
@@ -28,9 +29,9 @@ awaitable< void > serial_stream::write( std::span< std::byte const > msg )
 
 awaitable< bool > serial_stream::read( std::span< std::byte > buffer )
 {
-        std::variant< std::size_t, std::monostate > results = co_await (
+        std::variant< std::size_t, std::monostate > const results = co_await (
             async_read( port, boost::asio::buffer( buffer ), use_awaitable ) || timeout( 100ms ) );
-        std::span< char > b2{ (char*) buffer.data(), buffer.size() };
+        std::span< char > const b2{ (char*) buffer.data(), buffer.size() };
         if ( results.index() == 1 )
                 log_error( "Timeout while reading from serial port" );
         spdlog::debug( "reading: {}", spdlog::to_hex( buffer ) );
@@ -148,9 +149,10 @@ awaitable< void > char_port::write_msg( std::span< std::byte const > msg )
 
 awaitable< std::span< std::byte > > char_port::read_msg( std::span< std::byte > buffer )
 {
-        std::span< std::byte > dview = co_await _pool_buffer( port, read_buffer, std::byte{ ch } );
+        std::span< std::byte > const dview =
+            co_await _pool_buffer( port, read_buffer, std::byte{ ch } );
         assert( dview.size() <= buffer.size() );
-        std::copy( dview.begin(), dview.end(), buffer.begin() );
+        std::ranges::copy( dview, buffer.begin() );
         read_buffer.erase( read_buffer.begin(), read_buffer.begin() + (long) dview.size() );
         co_return std::span{ buffer.data(), dview.size() };
 }

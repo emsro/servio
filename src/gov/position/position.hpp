@@ -13,8 +13,12 @@ namespace servio::gov::pos
 struct _position_gov final : governor, handle
 {
         _position_gov()
-          : curr_pid( 0, { { .p = 1.F, .i = 0.F, .d = 0.F }, { -10.F, 10.F } } )
-          , pos_pid( 0, { { .p = 1.F, .i = 0.F, .d = 0.F }, { -10.F, 10.F } } )
+          : curr_pid(
+                0,
+                { .coefficients = { .p = 1.F, .i = 0.F, .d = 0.F }, .limits = { -10.F, 10.F } } )
+          , pos_pid(
+                0,
+                { .coefficients = { .p = 1.F, .i = 0.F, .d = 0.F }, .limits = { -10.F, 10.F } } )
         {
         }
 
@@ -66,7 +70,7 @@ struct _position_gov final : governor, handle
         engage_res engage( em::pmr::memory_resource& ) override
         {
                 goal_pos = 0.F;
-                return { status::success, this };
+                return { .stat = status::success, .h = this };
         }
 
         status disengage( handle& ) override
@@ -92,8 +96,8 @@ struct _position_gov final : governor, handle
 
         pwr current_irq( microseconds now, float current ) override
         {
-                auto  lims         = em::intersection( curr_pid.cfg.limits, derived_curr_lims );
-                float desired_curr = clamp( goal_curr, lims );
+                auto        lims = em::intersection( curr_pid.cfg.limits, derived_curr_lims );
+                float const desired_curr = clamp( goal_curr, lims );
 
                 float const fpower = em::update( curr_pid, now.count(), current, desired_curr );
                 auto        power_ = pwr( fpower );

@@ -21,7 +21,7 @@ static std::tuple< set_stmt, parse_status > _set( arg_parser ap )
         set_stmt                 res;
         std::array< arg_def, 1 > arg_defs = {
             arg_def{ .st = arg_status::MISSING, .kw = "goal", .val = res.goal } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
+        parse_status const st = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }

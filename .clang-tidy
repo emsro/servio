@@ -3,12 +3,13 @@ Checks: >
     -*,
     bugprone*,-bugprone-easily-swappable-parameters,-bugprone-macro-parentheses,-bugprone-exception-escape,-bugprone-unchecked-optional-access,
     concurrency*,
-    modernize*,-modernize-use-trailing-return-type,-modernize-avoid-c-arrays,-modernize-use-nullptr,-modernize-use-nodiscard,
+    modernize*,-modernize-use-trailing-return-type,-modernize-avoid-c-arrays,-modernize-use-nullptr,-modernize-use-nodiscard,-modernize-avoid-c-style-cast,
     misc*,
     performance*,
-    portability*,
-WarningsAsErrors: true
+    portability*,-portability-avoid-pragma-once,
+WarningsAsErrors: '*'
 HeaderFilterRegex: .*
+ExcludeHeaderFilterRegex: /(dep|_build)/
 FormatStyle: file
 CheckOptions:
     - key: readability-function-cognitive-complexity.IgnoreMacros

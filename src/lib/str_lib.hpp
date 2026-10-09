@@ -103,7 +103,7 @@ struct adder
 
 constexpr void u_to_s( char*& p, char* e, std::unsigned_integral auto x ) noexcept
 {
-        bits::adder add{ p, e };
+        bits::adder add{ .p = p, .e = e };
 
         char* pp = p;
         do {
@@ -126,7 +126,7 @@ constexpr void i_to_s( char*& p, char* e, std::signed_integral auto x ) noexcept
 
 constexpr void f_to_s( char*& p, char* e, float x ) noexcept
 {
-        bits::adder add{ p, e };
+        bits::adder add{ .p = p, .e = e };
         if ( x < 0.0F ) {
                 add( '-' );
                 x *= -1.0F;
@@ -151,7 +151,7 @@ constexpr bool hex_to_n( char const*& p, char const* e, int32_t& x ) noexcept
                 return false;
         uint32_t y = 0u;
         for ( std::size_t i = 0; i < sizeof( x ) * 2; i++ ) {
-                char c = *p++;
+                char const c = *p++;
                 y *= 16u;
                 if ( c > 'a' )
                         y += 10u + static_cast< uint32_t >( c - 'a' );
@@ -173,7 +173,7 @@ namespace bits
 {
 consteval uint32_t i32_lowest_as_u32()
 {
-        int64_t x = std::numeric_limits< int32_t >::lowest();
+        int64_t const x = std::numeric_limits< int32_t >::lowest();
         return (uint32_t) -x;
 }
 }  // namespace bits
@@ -185,7 +185,7 @@ constexpr bool udec_to_n( char const*& p, char const* e, uint32_t& x ) noexcept
         uint32_t y = 0;
         for ( ;; ) {
                 if ( bits::is_dec( *p ) ) {
-                        uint32_t yy = y * 10 + static_cast< uint32_t >( *p++ - '0' );
+                        uint32_t const yy = y * 10 + static_cast< uint32_t >( *p++ - '0' );
                         if ( yy < y )
                                 return false;
                         y = yy;

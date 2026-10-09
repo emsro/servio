@@ -39,7 +39,7 @@ awaitable< void > init_comm( stream_iface& port )
 
 awaitable< void > send( stream_iface& port, auto&& data, std::byte checksum = 0x00_b )
 {
-        std::byte b =
+        std::byte const b =
             checksum ^
             std::accumulate(
                 data.begin(), data.end(), std::byte{ 0 }, [&]( std::byte a, std::byte b ) {
@@ -80,8 +80,8 @@ awaitable< void > wait_for_ack( stream_iface& port )
 awaitable< void > cmd( stream_iface& port, cmd_e cmd )
 {
         spdlog::debug( "Sending command: {}", magic_enum::enum_name( cmd ) );
-        auto      b      = static_cast< std::byte >( cmd );
-        std::byte data[] = { b, ~b };
+        auto            b      = static_cast< std::byte >( cmd );
+        std::byte const data[] = { b, ~b };
         co_await port.write( data );
         co_await wait_for_ack( port );
 }
@@ -106,7 +106,7 @@ awaitable< get_data > get( stream_iface& port )
             .ver  = (uint8_t) vec[0],
             .cmds = {},
         };
-        for ( std::byte b : em::tail( vec ) )
+        for ( std::byte const b : em::tail( vec ) )
                 res.cmds.emplace_back( (uint8_t) b );
 
         co_await wait_for_ack( port );
@@ -195,11 +195,11 @@ awaitable< chip_info const* > get_chip_id( stream_iface& port )
 awaitable< void > dfu_info( stream_iface& port, std::ostream& os )
 {
         co_await init_comm( port );
-        uint16_t id = co_await get_id( port );
+        uint16_t const id = co_await get_id( port );
         os << "id: 0x" << std::hex << +id << '\n';
-        get_data d = co_await get( port );
+        get_data const d = co_await get( port );
         os << "version: " << std::dec << +d.ver << '\n';
-        for ( uint8_t x : d.cmds )
+        for ( uint8_t const x : d.cmds )
                 os << "cmd: " << magic_enum::enum_name( (cmd_e) x ) << '\n';
 }
 
@@ -208,7 +208,7 @@ awaitable< void > dfu_download( stream_iface& port, std::ostream& os )
         co_await init_comm( port );
         chip_info const* ci = co_await get_chip_id( port );
         for ( uint32_t addr = ci->flash.min(); addr < ci->flash.max(); addr += mem_step ) {
-                std::size_t s = std::min( mem_step, (std::size_t) ci->flash.max() - addr );
+                std::size_t const s = std::min( mem_step, (std::size_t) ci->flash.max() - addr );
                 std::vector< std::byte > tmp( s, 0x00_b );
                 if ( addr % ( mem_step * 8 ) == 0 )
                         spdlog::info( "Reading from 0x{:08X}", addr );
@@ -223,7 +223,7 @@ awaitable< void > dfu_upload_raw( stream_iface& port, std::istream& is )
         chip_info const* ci = co_await get_chip_id( port );
         co_await full_erase( port );
         for ( uint32_t addr = ci->flash.min(); addr < ci->flash.max(); addr += mem_step ) {
-                std::size_t s = std::min( mem_step, (std::size_t) ci->flash.max() - addr );
+                std::size_t const s = std::min( mem_step, (std::size_t) ci->flash.max() - addr );
                 std::vector< std::byte > tmp( s, 0x00_b );
                 is.read( (char*) tmp.data(), (long) tmp.size() );
                 tmp.resize( (unsigned long) is.gcount() );
@@ -287,12 +287,12 @@ awaitable< void > dfu_reset( stream_iface& port )
         // Response: DataPacket (Size(2) + Size bytes) + StatusPacket (Size(2) + Size bytes) + ACK
         std::array< std::byte, 2 > size_buf;
         co_await port.read( size_buf );
-        std::size_t ndata = ( (std::size_t) size_buf[0] << 8 ) | (std::size_t) size_buf[1];
+        std::size_t const ndata = ( (std::size_t) size_buf[0] << 8 ) | (std::size_t) size_buf[1];
         for ( std::size_t i = 0; i < ndata; ++i )
                 co_await port.read();
 
         co_await port.read( size_buf );
-        std::size_t nstatus = ( (std::size_t) size_buf[0] << 8 ) | (std::size_t) size_buf[1];
+        std::size_t const nstatus = ( (std::size_t) size_buf[0] << 8 ) | (std::size_t) size_buf[1];
         for ( std::size_t i = 0; i < nstatus; ++i )
                 co_await port.read();
 

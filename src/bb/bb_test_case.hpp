@@ -6,6 +6,7 @@
 #include <chrono>
 #include <filesystem>
 #include <gtest/gtest.h>
+#include <utility>
 
 #pragma once
 
@@ -24,7 +25,7 @@ struct bb_test_case : ::testing::Test
             std::function< test_signature >       test,
             std::chrono::milliseconds             timeout )
           : io_ctx( ctx )
-          , port( port )
+          , port( std::move( port ) )
           , test( std::move( test ) )
           , timeout( timeout )
         {
@@ -74,7 +75,7 @@ inline void register_test(
             __FILE__,
             __LINE__,
             [&io_ctx, &port, test = std::move( test ), timeout] {
-                    return new bb_test_case( io_ctx, port, std::move( test ), timeout );
+                    return new bb_test_case( io_ctx, port, test, timeout );
             } );
 }
 

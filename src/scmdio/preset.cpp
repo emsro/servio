@@ -29,8 +29,8 @@ raw_preset_def load_raw_preset( std::filesystem::path const& folder )
         if ( meta.contains( "inherits" ) ) {
                 raw_preset_def parent =
                     load_raw_preset( folder.parent_path() / meta["inherits"].get< std::string >() );
-                parent.meta.merge_patch( std::move( meta ) );
-                parent.config.merge_patch( std::move( config ) );
+                parent.meta.merge_patch( meta );
+                parent.config.merge_patch( config );
                 return parent;
         }
 

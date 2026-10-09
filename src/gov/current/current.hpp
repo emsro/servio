@@ -13,7 +13,7 @@ namespace servio::gov::curr
 struct _current_gov final : governor, handle
 {
         _current_gov()
-          : pid( 0, { { .p = 1.F, .i = 0.F, .d = 0.F }, { 0.F, 1.F } } )
+          : pid( 0, { .coefficients = { .p = 1.F, .i = 0.F, .d = 0.F }, .limits = { 0.F, 1.F } } )
           , power( 0.F )
         {
         }
@@ -52,7 +52,7 @@ struct _current_gov final : governor, handle
         engage_res engage( em::pmr::memory_resource& ) override
         {
                 power = pwr( 0.F );
-                return { status::success, this };
+                return { .stat = status::success, .h = this };
         }
 
         status disengage( handle& ) override
@@ -84,7 +84,7 @@ struct _current_gov final : governor, handle
 
         pwr current_irq( microseconds now, float current ) override
         {
-                limits< float > goal_lims = em::intersection(
+                limits< float > const goal_lims = em::intersection(
                     limits< float >{ cfg.curr_lim_min, cfg.curr_lim_max }, derived_curr_lims );
                 float const desired = clamp( goal, goal_lims );
 

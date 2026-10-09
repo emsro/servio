@@ -113,7 +113,7 @@ struct stm32_bootloader_mock : stream_iface
         static std::vector< std::byte > setup_mem( std::size_t k )
         {
                 std::vector< std::byte > res;
-                std::size_t              n = 1 << k;
+                std::size_t const        n = 1 << k;
                 res.reserve( n );
                 for ( std::size_t i = 0; i < n; ++i )
                         res.emplace_back( 0x00_b );
@@ -154,7 +154,7 @@ struct stm32_bootloader_mock : stream_iface
 
         void reply_data( auto&& data )
         {
-                for ( std::byte b : data )
+                for ( std::byte const b : data )
                         buffer.emplace_back( b );
                 buffer.emplace_back( ACK );
         }
@@ -265,7 +265,7 @@ TEST( scmdio, info )
 
         ctx.run();
 
-        std::string_view expected =
+        std::string_view const expected =
             R"(id: 0x468
 version: 10
 cmd: GET

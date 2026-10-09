@@ -11,8 +11,6 @@
 namespace servio::str_lib
 {
 
-namespace em = emlabcpp;
-
 template < typename T >
 using opt = std::optional< T >;
 
@@ -65,9 +63,9 @@ void check(
 
 TEST( lib, numreal )
 {
-        std::string_view s = "2.2250738585072014e-308";
-        char const*      p = s.data();
-        char const*      e = s.data() + s.size();
+        std::string_view const s = "2.2250738585072014e-308";
+        char const*            p = s.data();
+        char const*            e = s.data() + s.size();
 
         s_to_nr_res nrs;
         s_to_nr( p, e, nrs );

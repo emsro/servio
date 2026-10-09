@@ -30,9 +30,9 @@ TEST_F( gov_fixture, vel )
                 do_cmd( "cfg set static_friction_scale 1" );
                 do_cmd( std::format( "set {}", vel ) );
 
-                for ( std::size_t i : em::range( 100u ) ) {
-                        std::ignore      = i;
-                        microseconds now = 5_ms * i;
+                for ( std::size_t const i : em::range( 100u ) ) {
+                        std::ignore            = i;
+                        microseconds const now = 5_ms * i;
                         this->tick( gov, now );
                 }
 

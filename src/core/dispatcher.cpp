@@ -77,8 +77,8 @@ void handle_gov_message(
                             std::move( out ).ok()( gov->name() );
             },
             [&]( iface::govctl_list_stmt const& st ) {
-                    auto      i    = (uint32_t) st.index;
-                    std::span govs = gv.governors();
+                    auto            i    = (uint32_t) st.index;
+                    std::span const govs = gv.governors();
                     if ( i < govs.size() )
                             std::move( out ).ok()( govs[i]->name() );
                     else
@@ -192,7 +192,7 @@ std::tuple< status, em::view< std::byte* > > handle_message(
     em::view< std::byte* >       output_buffer )
 {
         // XXX: well, technically, em::view could've had data if it has pointer?
-        std::string_view inpt{ (char const*) input_data.begin(), input_data.size() };
+        std::string_view const inpt{ (char const*) input_data.begin(), input_data.size() };
 
         json::jval_ser out{ output_buffer };
         using R = status;

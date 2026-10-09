@@ -9,8 +9,7 @@
 
 #include <emlabcpp/algorithm.hpp>
 #include <filesystem>
-
-namespace em = emlabcpp;
+#include <utility>
 
 namespace servio::scmdio
 {
@@ -25,7 +24,7 @@ void field_option( CLI::App* app, std::string& field )
         app->add_option( "field", field, "Field name" );
 }
 
-void handle_eptr( std::exception_ptr eptr )
+void handle_eptr( std::exception_ptr const& eptr )
 {
         try {
                 if ( eptr )
@@ -68,14 +67,14 @@ void cfg_def( CLI::App& app, io_context& io_ctx )
 
         auto* query = cfg->add_subcommand( "query", "list all config options from the servo" );
         json_flag( query, ctx->json );
-        port_callback( query, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
+        port_callback( query, io_ctx, ctx, [ctx]( sptr< char_port > const& p ) {
                 return cfg_query_cmd( p, ctx->json );
         } );
 
         auto* get = cfg->add_subcommand( "get", "retrivies a configuration option from the servo" );
         field_option( get, ctx->field );
         json_flag( get, ctx->json );
-        port_callback( get, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
+        port_callback( get, io_ctx, ctx, [ctx]( sptr< char_port > const& p ) {
                 return cfg_get_cmd( p, ctx->field, ctx->json );
         } );
 
@@ -83,25 +82,25 @@ void cfg_def( CLI::App& app, io_context& io_ctx )
             cfg->add_subcommand( "set", "sets a configuration option to value in the servo" );
         field_option( set, ctx->field );
         set->add_option( "value", ctx->value, "Value to set" );
-        port_callback( set, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
+        port_callback( set, io_ctx, ctx, [ctx]( sptr< char_port > const& p ) {
                 nlohmann::json j = nlohmann::json::parse( ctx->value );
                 return cfg_set_cmd( p, ctx->field, std::move( j ) );
         } );
 
         auto* commit = cfg->add_subcommand(
             "commit", "stores the current configuration of servo in its persistent memory" );
-        port_callback( commit, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
+        port_callback( commit, io_ctx, ctx, [ctx]( sptr< char_port > const& p ) {
                 return cfg_commit_cmd( p );
         } );
 
         auto* clear = cfg->add_subcommand( "clear", "clear latest store config from the servo" );
-        port_callback( clear, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
+        port_callback( clear, io_ctx, ctx, [ctx]( sptr< char_port > const& p ) {
                 return cfg_clear_cmd( p );
         } );
 
         auto* load = cfg->add_subcommand( "load", "load config from a file" );
         load->add_option( "path", ctx->path, "Path to a file" );
-        port_callback( load, io_ctx, ctx, [ctx]( sptr< char_port > p ) {
+        port_callback( load, io_ctx, ctx, [ctx]( sptr< char_port > const& p ) {
                 return cfg_load_cmd( p, ctx->path );
         } );
 }
@@ -110,7 +109,7 @@ awaitable< void >
 pool_cmd( io_context&, sptr< char_port > port, std::vector< std::string > const& props )
 {
         if ( props.empty() ) {
-                std::cout << "got an empty property list, not pooling" << std::endl;
+                std::cout << "got an empty property list, not pooling" << '\n';
                 co_return;
         }
 
@@ -120,7 +119,7 @@ pool_cmd( io_context&, sptr< char_port > port, std::vector< std::string > const&
                         auto val = co_await get_property( *port, field );
                         vals.emplace_back( val.dump() );
                 }
-                std::cout << em::joined( vals, std::string{ "\t" } ) << std::endl;
+                std::cout << em::joined( vals, std::string{ "\t" } ) << '\n';
         }
 }
 
@@ -138,7 +137,7 @@ void pool_def( CLI::App& app, io_context& io_ctx )
         port_opts( *pool, ctx->port );
         pool->add_option( "properties", ctx->data, "properties to pool" );
         port_callback( pool, io_ctx, ctx, [&io_ctx, ctx]( sptr< char_port > p ) {
-                return pool_cmd( io_ctx, p, ctx->data );
+                return pool_cmd( io_ctx, std::move( p ), ctx->data );
         } );
 }
 
@@ -172,7 +171,7 @@ void govctl_def( CLI::App& app, io_context& io_ctx )
         auto* active = gov->add_subcommand( "active", "get currently active governor" );
         port_callback( active, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
                 auto s = co_await govctl_active( *p );
-                std::cout << "gov: " << s << std::endl;
+                std::cout << "gov: " << s << '\n';
         } );
 
         auto* list = gov->add_subcommand( "list", "list governors" );
@@ -181,7 +180,7 @@ void govctl_def( CLI::App& app, io_context& io_ctx )
                         auto s = co_await govctl_list( *p, i );
                         if ( !s )
                                 break;
-                        std::cout << "gov: " << *s << std::endl;
+                        std::cout << "gov: " << *s << '\n';
                 }
         } );
 }
@@ -243,8 +242,8 @@ void dfu_def( CLI::App& app, io_context& io_ctx )
 
         auto serial_cb = [&]( CLI::App* cmd, auto f ) {
                 cmd->callback( [&io_ctx, flash_ctx, f = std::move( f )]() {
-                        sptr< serial_stream > ss = flash_ctx->port.get( io_ctx );
-                        using spb                = boost::asio::serial_port_base;
+                        sptr< serial_stream > const ss = flash_ctx->port.get( io_ctx );
+                        using spb                      = boost::asio::serial_port_base;
                         ss->port.set_option( spb::parity( spb::parity::even ) );
                         ss->port.set_option( spb::character_size( 8 ) );
                         ss->port.set_option( spb::stop_bits( spb::stop_bits::one ) );

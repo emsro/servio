@@ -28,7 +28,7 @@ boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio
                 boost::asio::steady_timer t( io, 200ms );
                 co_await t.async_wait( boost::asio::use_awaitable );
 
-                float current = co_await scmdio::get_property( port, "current" );
+                float const current = co_await scmdio::get_property( port, "current" );
 
                 EXPECT_NEAR( curr, current, 0.2F );
         }

@@ -35,9 +35,9 @@ TEST_F( gov_fixture, pos )
                 set_cfg( "pos_to_curr_lim_scale", 10.0F );
                 do_cmd( std::format( "set {}", angle ) );
 
-                for ( std::size_t i : em::range( 500u ) ) {
-                        std::ignore      = i;
-                        microseconds now = 1_ms * i;
+                for ( std::size_t const i : em::range( 500u ) ) {
+                        std::ignore            = i;
+                        microseconds const now = 1_ms * i;
                         this->tick( gov, now );
                 }
 

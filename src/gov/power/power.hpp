@@ -25,7 +25,7 @@ struct _power_gov final : governor, handle
         engage_res engage( em::pmr::memory_resource& ) override
         {
                 power = 0_pwr;
-                return { status::success, this };
+                return { .stat = status::success, .h = this };
         }
 
         status disengage( handle& ) override

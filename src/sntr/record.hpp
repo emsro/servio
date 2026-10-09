@@ -22,7 +22,7 @@ struct record
         data_type    data;
 };
 
-static_assert( std::is_trivially_default_constructible< record >::value );
+static_assert( std::is_trivially_default_constructible_v< record > );
 
 constexpr record default_record()
 {

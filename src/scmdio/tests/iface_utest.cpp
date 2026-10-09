@@ -14,23 +14,23 @@ TEST( iface, base )
 {
         boost::asio::io_context ctx;
 
-        drv::mock::pwm_mot mot;
-        drv::mock::pos     gp;
-        drv::mock::curr    gc;
-        drv::mock::vcc     gv;
-        drv::mock::temp    tm;
-        drv::mock::stor    sd;
-        core::core         cor{ 0_ms, gv, tm };
-        cfg::map           m{};
-        port_mock          pm( port_mock::attrs{
-                     .motor    = mot,
-                     .pos_drv  = gp,
-                     .curr_drv = gc,
-                     .vcc_drv  = gv,
-                     .temp_drv = tm,
-                     .cor      = cor,
-                     .cfg_map  = m,
-                     .stor_drv = sd,
+        drv::mock::pwm_mot    mot;
+        drv::mock::pos        gp;
+        drv::mock::curr const gc{};
+        drv::mock::vcc const  gv{};
+        drv::mock::temp const tm{};
+        drv::mock::stor       sd;
+        core::core            cor{ 0_ms, gv, tm };
+        cfg::map              m{};
+        port_mock             pm( port_mock::attrs{
+                        .motor    = mot,
+                        .pos_drv  = gp,
+                        .curr_drv = gc,
+                        .vcc_drv  = gv,
+                        .temp_drv = tm,
+                        .cor      = cor,
+                        .cfg_map  = m,
+                        .stor_drv = sd,
         } );
 
         gov::create_governors( cor.gov_, cor.gov_mem );

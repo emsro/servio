@@ -48,6 +48,8 @@ def gen_arg_cmd(
     )
 
     basic_types = ["string", "int32_t", "float", "bool", "expr_tok"]
+    # st is reassigned below only when an argument needs a conversion
+    st_const = "" if any(arg["type"] not in basic_types for arg in args) else " const"
 
     arg_def = []
     for arg in args:
@@ -64,7 +66,7 @@ def gen_arg_cmd(
         f"""
         {name}_stmt res;
         std::array<arg_def, {n}> arg_defs = {{{",".join(arg_def)}}};
-        parse_status st = std::move(ap).parse_args(arg_defs);
+        parse_status{st_const} st = std::move(ap).parse_args(arg_defs);
     """
     )
 

@@ -54,13 +54,13 @@ TEST( core, dispatcher )
                 auto [res, used] = handle_message(
                     disp, em::view_n( (std::byte const*) inpt.data(), inpt.size() ), buff );
                 EXPECT_EQ( res, status::success ) << inpt;
-                std::string_view res_str( (char*) used.begin(), used.size() );
+                std::string_view const res_str( (char*) used.begin(), used.size() );
                 return nlohmann::json::parse( res_str );
         };
 
-        auto test = [&]( std::string_view     inpt,
-                         nlohmann::json       j,
-                         std::source_location loc = std::source_location::current() ) {
+        auto test = [&]( std::string_view      inpt,
+                         nlohmann::json const& j,
+                         std::source_location  loc = std::source_location::current() ) {
                 auto res_j = exec( inpt );
                 EXPECT_EQ( res_j, j ) << "inpt: " << inpt << "\n"
                                       << "at " << loc.file_name() << ":" << loc.line() << "\n";
@@ -145,7 +145,7 @@ TEST( core, dispatcher )
                             else
                                     EXPECT_EQ( res_j.at( 1 ), x )
                                         << "key: " << to_str( k ) << " type: " << typeid( x ).name()
-                                        << std::endl;
+                                        << '\n';
                     } );
 
                 // vary
@@ -206,7 +206,7 @@ TEST( core, dispatcher )
                             else
                                     EXPECT_EQ( res_j.at( 1 ), x )
                                         << "key: " << to_str( k ) << " type: " << typeid( x ).name()
-                                        << std::endl;
+                                        << '\n';
                     } );
         }
 

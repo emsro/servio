@@ -61,8 +61,8 @@ void central_sentry::report_inoperable(
     char const*      emsg,
     data_type const& data )
 {
-        microseconds now    = clk_.get_us();
-        record*      target = get_next_free( inop_buffer_, inop_i_ );
+        microseconds const now    = clk_.get_us();
+        record*            target = get_next_free( inop_buffer_, inop_i_ );
         if ( target ) {
                 target->st     = record_state::SET;
                 target->tp     = now;
@@ -80,8 +80,8 @@ void central_sentry::report_degraded(
     char const*      emsg,
     data_type const& data )
 {
-        microseconds now    = clk_.get_us();
-        record*      target = get_next_free( degr_buffer_, degr_i_ );
+        microseconds const now    = clk_.get_us();
+        record*            target = get_next_free( degr_buffer_, degr_i_ );
         if ( target ) {
                 target->st     = record_state::SET;
                 target->tp     = now;

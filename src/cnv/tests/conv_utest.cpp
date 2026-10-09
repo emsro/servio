@@ -5,6 +5,7 @@
 #include <emlabcpp/algorithm.hpp>
 #include <emlabcpp/range.hpp>
 #include <gtest/gtest.h>
+#include <numbers>
 #include <random>
 
 namespace servio::cnv::tests
@@ -21,15 +22,15 @@ TEST( cnv, linear )
 
         linear_converter lc{ .offset = 0, .scale = 0 };
 
-        for ( float s : { 0.0F, -1.0F, 1.0F, 3.1415F } )
-                for ( float o : { 0.0F, -1.0F, 1.0F, 3.1415F } ) {
+        for ( float const s : { 0.0F, -1.0F, 1.0F, std::numbers::pi_v< float > } )
+                for ( float const o : { 0.0F, -1.0F, 1.0F, std::numbers::pi_v< float > } ) {
                         lc.offset = o;
                         lc.scale  = s;
                         for ( auto i : em::range( ATTEMPT_N ) ) {
                                 std::ignore = i;
 
-                                uint32_t v = bd( e );
-                                float    expected =
+                                uint32_t const v = bd( e );
+                                float const    expected =
                                     em::map_range( v, 0U, ATTEMPT_N, o, o + ATTEMPT_N * s );
                                 EXPECT_FLOAT_EQ( lc.convert( v ), expected );
                         }
@@ -45,19 +46,19 @@ TEST( cnv, converter )
         converter cnv;
 
         for ( auto i : em::range( ATTEMPT_N ) ) {
-                std::ignore = i;
-                uint32_t lv = bd( e );
-                float    la = nd( e );
-                uint32_t hv = bd( e );
-                float    ha = nd( e );
+                std::ignore       = i;
+                uint32_t const lv = bd( e );
+                float const    la = nd( e );
+                uint32_t const hv = bd( e );
+                float const    ha = nd( e );
                 cnv.set_position_cfg( lv, la, hv, ha );
 
-                uint32_t v = bd( e );
+                uint32_t const v = bd( e );
 
                 if ( lv == hv )
                         continue;
 
-                float expected = em::map_range< float, float >(
+                auto const expected = em::map_range< float, float >(
                     static_cast< float >( v ),
                     static_cast< float >( lv ),
                     static_cast< float >( hv ),

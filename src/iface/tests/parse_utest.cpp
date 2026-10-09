@@ -16,7 +16,7 @@ void test_valid_parse( parser::parser& p, std::string_view inpt, S expected_stmt
         auto res = parse( p );
         res.visit(
             [&]( vari::vref< stmt > s ) {
-                    vari::vval< stmts > expected{ std::move( expected_stmt ) };
+                    vari::vval< stmts > const expected{ std::move( expected_stmt ) };
                     EXPECT_EQ( s->sub, expected ) << "inpt: " << inpt;
             },
             [&]( invalid_stmt& ) {
@@ -65,7 +65,7 @@ TEST( IfaceParse, ValidParse )
             p,
             "cfg set foo bar",
             cfg_stmt{ cfg_set_stmt{ .field = "foo", .value = { iface::string{ "bar" } } } } );
-        test_valid_parse( p, "cfg get foo", cfg_stmt{ cfg_get_stmt{ "foo" } } );
+        test_valid_parse( p, "cfg get foo", cfg_stmt{ cfg_get_stmt{ .field = "foo" } } );
         test_valid_parse( p, "cfg list 1", cfg_stmt{ cfg_list_stmt{ .index = 1 } } );
         test_valid_parse( p, "cfg commit", cfg_stmt{ cfg_commit_stmt{} } );
         test_valid_parse( p, "cfg clear", cfg_stmt{ cfg_clear_stmt{} } );

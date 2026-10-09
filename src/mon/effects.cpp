@@ -12,7 +12,7 @@ bool blinker::update( microseconds now )
         if ( now < next_e )
                 return output;
 
-        std::size_t state_i = i / 2;
+        std::size_t const state_i = i / 2;
 
         output = i % 2 == 0 && state[state_i];
         state.reset( state_i );

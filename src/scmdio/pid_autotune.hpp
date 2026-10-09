@@ -78,16 +78,16 @@ struct line
 
 inline line linear_least_squares( std::span< double > ys )
 {
-        auto   n   = static_cast< double >( ys.size() );
-        double si  = n * ( n + 1.0 ) / 2.0;
-        double sii = n * ( n + 1 ) * ( 2 * n + 1 ) / 6.0;
-        double sy  = em::sum( ys );
-        double siy = 0.0;
+        auto         n   = static_cast< double >( ys.size() );
+        double const si  = n * ( n + 1.0 ) / 2.0;
+        double const sii = n * ( n + 1 ) * ( 2 * n + 1 ) / 6.0;
+        double const sy  = em::sum( ys );
+        double       siy = 0.0;
         for ( auto [i, y] : em::enumerate( ys ) )
                 siy += static_cast< double >( i + 1 ) * y;
 
-        double b = ( n * siy - si * sy ) / ( n * sii - si * si );
-        double a = ( sy - b * si ) / n;
+        double const b = ( n * siy - si * sy ) / ( n * sii - si * si );
+        double const a = ( sy - b * si ) / n;
         return {
             .off   = a,
             .scale = b,
@@ -108,13 +108,13 @@ awaitable< std::vector< double > > pid_collect( float u, auto&& set_f, auto&& ge
 inline void pid_calculate( std::span< double > buff )
 {
 
-        em::min_max mm    = em::min_max_elem( buff );
-        double      range = mm.max() - mm.min();
-        double      from  = mm.min() + range * 0.2;
-        double      to    = mm.min() + range * 0.8;
+        em::min_max  mm    = em::min_max_elem( buff );
+        double const range = mm.max() - mm.min();
+        double       from  = mm.min() + range * 0.2;
+        double       to    = mm.min() + range * 0.8;
 
-        std::cout << "buff size: " << buff.size() << std::endl;
-        std::cout << "range: " << range << "\tfrom: " << from << "\tto:" << to << std::endl;
+        std::cout << "buff size: " << buff.size() << '\n';
+        std::cout << "range: " << range << "\tfrom: " << from << "\tto:" << to << '\n';
 
         auto beg_iter = em::find_if( buff, [&]( double v ) {
                 return v > from;
@@ -123,30 +123,30 @@ inline void pid_calculate( std::span< double > buff )
                 return v > to;
         } );
 
-        std::span< double > lls_span{
+        std::span< double > const lls_span{
             &*beg_iter, static_cast< std::size_t >( std::distance( beg_iter, end_iter ) ) };
-        std::cout << "lls_span size: " << lls_span.size() << std::endl;
-        line guide = linear_least_squares( lls_span );
-        std::cout << "guide: " << guide.off << " + " << guide.scale << " * x" << std::endl;
-        double K = range;
-        double L = -guide.off;
+        std::cout << "lls_span size: " << lls_span.size() << '\n';
+        line const guide = linear_least_squares( lls_span );
+        std::cout << "guide: " << guide.off << " + " << guide.scale << " * x" << '\n';
+        double const K = range;
+        double const L = -guide.off;
         // y = a + b*x
         // x = (y-a)/b
-        double T = ( K - guide.off ) / guide.scale - L;
+        double const T = ( K - guide.off ) / guide.scale - L;
 
-        std::cout << "K: " << K << "\tL: " << L << "\tT: " << T << std::endl;
+        std::cout << "K: " << K << "\tL: " << L << "\tT: " << T << '\n';
 
         // Cohen coon, inspiration:
         // https://www.incatools.com/pid-tuning/pid-tuning-methods/
-        double tau = L / ( L + T );
-        double a   = K * L / T;
+        double const tau = L / ( L + T );
+        double const a   = K * L / T;
 
-        double K_p = ( 1.35 / a ) * ( 1 + 0.18 * tau / ( 1 - tau ) );
-        double T_i = L * ( 2.5 - 2.0 * tau ) / ( 1 - 0.39 * tau );
-        double T_d = L * ( 0.37 - 0.37 * tau ) / ( 1 - 0.81 * tau );
-        double K_i = K_p / T_i;
-        double K_d = K_p * T_d;
-        std::cout << "P: " << K_p << "\tI: " << K_i << "\tD: " << K_d << std::endl;
+        double const K_p = ( 1.35 / a ) * ( 1 + 0.18 * tau / ( 1 - tau ) );
+        double const T_i = L * ( 2.5 - 2.0 * tau ) / ( 1 - 0.39 * tau );
+        double const T_d = L * ( 0.37 - 0.37 * tau ) / ( 1 - 0.81 * tau );
+        double const K_i = K_p / T_i;
+        double const K_d = K_p * T_d;
+        std::cout << "P: " << K_p << "\tI: " << K_i << "\tD: " << K_d << '\n';
 }
 
 }  // namespace servio::scmdio

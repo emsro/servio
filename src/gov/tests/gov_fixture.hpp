@@ -23,7 +23,7 @@ struct gov_fixture : public ::testing::Test
         {
 
                 gov.metrics_irq( now, motor.current, motor.velocity, true );
-                pwr p = gov.current_irq( now, motor.current );
+                pwr const p = gov.current_irq( now, motor.current );
                 motor.apply_power( now, p );
                 std::cout << "time: " << now.count() << "ms, " << "power: " << p << ", "
                           << "curr: " << motor.current << ", " << "vel: " << motor.velocity << ", "

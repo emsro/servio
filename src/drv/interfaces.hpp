@@ -81,7 +81,7 @@ struct clk_iface
 
 inline void wait_for( clk_iface& clk, microseconds ms )
 {
-        microseconds end = clk.get_us() + ms;
+        microseconds const end = clk.get_us() + ms;
         while ( clk.get_us() < end )
                 asm( "nop" );
 }

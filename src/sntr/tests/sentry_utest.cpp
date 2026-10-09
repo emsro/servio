@@ -49,9 +49,9 @@ TEST_F( sentry_fixture, insert_inop )
         EXPECT_EQ( central.is_inoperable(), false );
         EXPECT_EQ( stop_counter, 0 );
 
-        std::size_t eid  = 7;
-        char const* emsg = "saq";
-        data_type   data = 0b10101;
+        std::size_t const eid  = 7;
+        char const*       emsg = "saq";
+        data_type const   data = 0b10101;
         s1.set_inoperable( eid, emsg, data );
 
         EXPECT_EQ( central.is_inoperable(), true );
@@ -67,17 +67,17 @@ TEST_F( sentry_fixture, insert_inop )
 
 TEST_F( sentry_fixture, insert_degr )
 {
-        char const*  name = "s1";
-        sentry       s1( name, central );
-        microseconds t1{ 23232 };
+        char const*        name = "s1";
+        sentry             s1( name, central );
+        microseconds const t1{ 23232 };
         clk.t = t1;
 
         EXPECT_EQ( central.is_inoperable(), false );
         EXPECT_EQ( stop_counter, 0 );
 
-        std::size_t eid  = 7;
-        char const* emsg = "saq";
-        data_type   data = 0b10101;
+        std::size_t const eid  = 7;
+        char const*       emsg = "saq";
+        data_type const   data = 0b10101;
         s1.set_degraded( eid, emsg, data );
 
         EXPECT_EQ( central.is_inoperable(), false );

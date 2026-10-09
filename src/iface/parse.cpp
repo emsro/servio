@@ -88,8 +88,8 @@ parse_status arg_parser::parse_args( std::span< arg_def > args ) &&
                 if ( st != parse_status::SUCCESS )
                         return st;
         }
-        for ( std::size_t i = 0; i < args.size(); i++ )
-                if ( args[i].st == arg_status::MISSING )
+        for ( auto& arg : args )
+                if ( arg.st == arg_status::MISSING )
                         return parse_status::ARG_MISSING;
         return parse_status::SUCCESS;
 }
@@ -137,7 +137,7 @@ static std::tuple< govctl_activate_stmt, parse_status > _govctl_activate( arg_pa
         govctl_activate_stmt     res;
         std::array< arg_def, 1 > arg_defs = {
             arg_def{ .st = arg_status::MISSING, .kw = "governor", .val = res.governor } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
+        parse_status const st = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
@@ -147,7 +147,7 @@ static std::tuple< govctl_deactivate_stmt, parse_status > _govctl_deactivate( ar
 
         govctl_deactivate_stmt   res;
         std::array< arg_def, 0 > arg_defs = {};
-        parse_status             st       = std::move( ap ).parse_args( arg_defs );
+        parse_status const       st       = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
@@ -157,7 +157,7 @@ static std::tuple< govctl_active_stmt, parse_status > _govctl_active( arg_parser
 
         govctl_active_stmt       res;
         std::array< arg_def, 0 > arg_defs = {};
-        parse_status             st       = std::move( ap ).parse_args( arg_defs );
+        parse_status const       st       = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
@@ -168,7 +168,7 @@ static std::tuple< govctl_list_stmt, parse_status > _govctl_list( arg_parser ap 
         govctl_list_stmt         res;
         std::array< arg_def, 1 > arg_defs = {
             arg_def{ .st = arg_status::MISSING, .kw = "index", .val = res.index } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
+        parse_status const st = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
@@ -221,7 +221,7 @@ static std::tuple< cfg_set_stmt, parse_status > _cfg_set( arg_parser ap )
             arg_def{ .st = arg_status::MISSING, .kw = "field", .val = res.field },
             arg_def{ .st = arg_status::MISSING, .kw = "value", .val = res.value },
             arg_def{ .st = arg_status::DEFAULT, .kw = "governor", .val = res.governor } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
+        parse_status const st = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
@@ -233,7 +233,7 @@ static std::tuple< cfg_get_stmt, parse_status > _cfg_get( arg_parser ap )
         std::array< arg_def, 2 > arg_defs = {
             arg_def{ .st = arg_status::MISSING, .kw = "field", .val = res.field },
             arg_def{ .st = arg_status::DEFAULT, .kw = "governor", .val = res.governor } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
+        parse_status const st = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
@@ -245,7 +245,7 @@ static std::tuple< cfg_list_stmt, parse_status > _cfg_list( arg_parser ap )
         std::array< arg_def, 2 > arg_defs = {
             arg_def{ .st = arg_status::DEFAULT, .kw = "index", .val = res.index },
             arg_def{ .st = arg_status::DEFAULT, .kw = "governor", .val = res.governor } };
-        parse_status st = std::move( ap ).parse_args( arg_defs );
+        parse_status const st = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
@@ -255,7 +255,7 @@ static std::tuple< cfg_commit_stmt, parse_status > _cfg_commit( arg_parser ap )
 
         cfg_commit_stmt          res;
         std::array< arg_def, 0 > arg_defs = {};
-        parse_status             st       = std::move( ap ).parse_args( arg_defs );
+        parse_status const       st       = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
@@ -265,7 +265,7 @@ static std::tuple< cfg_clear_stmt, parse_status > _cfg_clear( arg_parser ap )
 
         cfg_clear_stmt           res;
         std::array< arg_def, 0 > arg_defs = {};
-        parse_status             st       = std::move( ap ).parse_args( arg_defs );
+        parse_status const       st       = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }
@@ -297,7 +297,7 @@ static std::tuple< info_stmt, parse_status > _info( arg_parser ap )
 
         info_stmt                res;
         std::array< arg_def, 0 > arg_defs = {};
-        parse_status             st       = std::move( ap ).parse_args( arg_defs );
+        parse_status const       st       = std::move( ap ).parse_args( arg_defs );
 
         return { std::move( res ), st };
 }

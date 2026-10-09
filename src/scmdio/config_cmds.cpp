@@ -6,8 +6,6 @@
 #include <fstream>
 #include <iostream>
 
-namespace em = emlabcpp;
-
 namespace servio::scmdio
 {
 namespace
@@ -16,7 +14,7 @@ void print_configs( std::map< std::string, nlohmann::json > const& out )
 {
         std::cout << em::joined( out, std::string{ "\n" }, [&]( auto const& cfg ) -> std::string {
                 return std::format( "{}:\t{}", cfg.first, cfg.second );
-        } ) << std::endl;
+        } ) << '\n';
 }
 
 void print_configs_json( std::map< std::string, nlohmann::json > const& out )
@@ -28,7 +26,7 @@ void print_configs_json( std::map< std::string, nlohmann::json > const& out )
                          [&]( auto const& cfg ) -> std::string {
                                  return std::format( "{{ {}:{} }}", cfg.first, cfg.second );
                          } )
-                  << "]" << std::endl;
+                  << "]" << '\n';
 }
 }  // namespace
 
@@ -44,7 +42,7 @@ awaitable< void > cfg_query_cmd( sptr< port_iface > port, bool json )
 
 awaitable< void > cfg_commit_cmd( sptr< port_iface > port )
 {
-        std::string msg = std::format( "cfg commit" );
+        std::string const msg = std::format( "cfg commit" );
 
         auto reply = co_await exchg( *port, msg );
         // XXX: check the retcode
@@ -53,9 +51,9 @@ awaitable< void > cfg_commit_cmd( sptr< port_iface > port )
 
 awaitable< void > cfg_clear_cmd( sptr< port_iface > port )
 {
-        std::string msg   = std::format( "cfg clear" );
-        auto        reply = co_await exchg( *port, msg );
-        std::ignore       = reply;
+        std::string const msg   = std::format( "cfg clear" );
+        auto              reply = co_await exchg( *port, msg );
+        std::ignore             = reply;
 }
 
 awaitable< void > cfg_get_cmd( sptr< port_iface > port, std::string const& name, bool json )
@@ -63,9 +61,9 @@ awaitable< void > cfg_get_cmd( sptr< port_iface > port, std::string const& name,
         auto val = co_await get_config_field( *port, name );
 
         if ( json )
-                std::cout << std::format( "[{{ {}:{} }}]", name, val ) << std::endl;
+                std::cout << std::format( "[{{ {}:{} }}]", name, val ) << '\n';
         else
-                std::cout << std::format( "{},{}", name, val ) << std::endl;
+                std::cout << std::format( "{},{}", name, val ) << '\n';
 }
 
 awaitable< void >

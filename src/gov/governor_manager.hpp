@@ -38,7 +38,7 @@ struct governor_manager
                         if ( disengage() != status::success )
                                 return status::error;
                 }
-                for ( vari::vref< governor > g : governors_ ) {
+                for ( vari::vref< governor > const g : governors_ ) {
                         if ( g->name() == name ) {
                                 active_ = g.get();
 

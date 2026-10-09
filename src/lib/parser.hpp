@@ -102,7 +102,7 @@ struct lexer
                 char const* pp = p;
                 if ( !str_lib::lex_letters( p, e ) )
                         return err{};
-                std::string_view id{ pp, p };
+                std::string_view const id{ pp, p };
                 if ( id == "true" )
                         return true;
                 else if ( id == "false" )

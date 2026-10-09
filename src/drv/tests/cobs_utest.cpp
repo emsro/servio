@@ -17,7 +17,7 @@ namespace servio::drv
 
 TEST( COBS, cont )
 {
-        std::vector< std::vector< std::byte > > data{
+        std::vector< std::vector< std::byte > > const data{
             { 0x1_b, 0x2_b },
             { 0x3_b, 0x4_b },
             { 0x4_b, 0x5_b, 0x6_b },
@@ -29,7 +29,7 @@ TEST( COBS, cont )
                 std::array< std::byte, 32 > buffer;
                 auto [succes, sub] = em::encode_cobs( msg, buffer );
                 EXPECT_TRUE( succes );
-                for ( std::byte b : sub )
+                for ( std::byte const b : sub )
                         bits::on_rx_cplt_irq( cont, b );
                 bits::on_rx_cplt_irq( cont, 0x0_b );
         }

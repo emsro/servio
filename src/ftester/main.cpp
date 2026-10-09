@@ -10,6 +10,7 @@
 #include <cstdarg>
 #include <cstdio>
 #include <memory>
+#include <print>
 #include <sstream>
 
 using namespace std::literals::chrono_literals;
@@ -91,15 +92,15 @@ int main( int argc, char* argv[] )
         if ( !params_file.empty() ) {
                 params = param_config_from_file( params_file );
                 if ( !params ) {
-                        std::fprintf( stderr, "Failed to load param config\n" );
+                        std::println( stderr, "Failed to load param config" );
                         std::exit( 1 );
                 }
         }
 
         std::string peer_errmsg;
-        int         peer_fd = asrtio::open_serial_port( peer_cfg, peer_errmsg );
+        int const   peer_fd = asrtio::open_serial_port( peer_cfg, peer_errmsg );
         if ( peer_fd < 0 ) {
-                std::fprintf( stderr, "Failed to open peer port: %s\n", peer_errmsg.c_str() );
+                std::println( stderr, "Failed to open peer port: {}", peer_errmsg );
                 std::exit( 1 );
         }
         harness h{ ctx, g_bar, peer_fd };
@@ -120,7 +121,7 @@ int main( int argc, char* argv[] )
                 output_dir.empty() ? static_cast< output_fs& >( nfs ) : rfs,
                 output_dir,
                 h ),
-            final_receiver{ &idle, &g_active_bar } );
+            final_receiver{ .idle = &idle, .active_bar = &g_active_bar } );
         g_active_bar = &g_bar;
 
         idle.data = &ctx;
