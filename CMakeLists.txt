@@ -41,8 +41,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(emlabcpp cmake_git_version_tracking zll)
 
 if(${SERVIO_PLATFORM} STREQUAL "host")
-  # asrt adds ecor, CLI11 and json through CPM, which reuses content already
-  # populated under the same name, so these have to be available before asrt.
+  # asrt declares ecor, CLI11 and json too, and the first FetchContent
+  # declaration of a name wins, so servio's have to come before asrt.
   FetchContent_Declare(
     CLI11
     GIT_REPOSITORY https://github.com/CLIUtils/CLI11

@@ -4,7 +4,7 @@
 [![Build](https://github.com/emsro/servio/actions/workflows/build.yml/badge.svg)](https://github.com/emsro/servio/actions/workflows/build.yml)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nlohmann/json/master/LICENSE.MIT)
 
-Open firmware for DC servomotors written in C++20.
+Open firmware for DC servomotors written in C++23.
 The FW uses closed control loops, serial communication, and has automated testing infrastructure.
 More details in [Documentation](https://emsro.github.io/servio/index.html)
 

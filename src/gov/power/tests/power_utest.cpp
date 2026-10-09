@@ -15,7 +15,7 @@
 
 namespace servio::gov::pow::tests
 {
-TEST_F( gov_fixture, vel )
+TEST_F( gov_fixture, pow )
 {
 
         for ( float pow : { 1.F, 0.F, -1.F } ) {
