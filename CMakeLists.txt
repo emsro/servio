@@ -30,7 +30,7 @@ include(cmake/utils.cmake)
 cpmaddpackage(
   "gh:andrew-hardin/cmake-git-version-tracking#6c0cb87edd029ddfb403a8e24577c144a03605a6"
 )
-cpmaddpackage("gh:koniarik/zll@1.0.0")
+cpmaddpackage("gh:koniarik/zll@2.0.1")
 if(${SERVIO_PLATFORM} STREQUAL "host")
   set(_servio_asrt_libs "asrtl;asrtc;asrtr;asrtlpp;asrtcpp;asrtrpp;asrtio")
   set(_servio_asrt_targets asrtl asrtc asrtr asrtlpp asrtcpp asrtrpp)
@@ -41,7 +41,8 @@ endif()
 set(ASRT_LIBRARIES
     "${_servio_asrt_libs}"
     CACHE STRING "" FORCE)
-cpmaddpackage(NAME ecor SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dep/ecor)
+cpmaddpackage(NAME ecor VERSION 0.4.0 SOURCE_DIR
+              ${CMAKE_CURRENT_SOURCE_DIR}/dep/ecor)
 cpmaddpackage(NAME asrt SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dep/asrt)
 foreach(_asrt_target IN LISTS _servio_asrt_targets)
   set_target_properties(${_asrt_target} PROPERTIES SYSTEM TRUE)
