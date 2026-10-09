@@ -1,0 +1,106 @@
+---
+name: release
+
+on:
+    push:
+        tags:
+            - v[0-9]+.[0-9]+.[0-9]+
+    # a manual run builds and packages everything but publishes nothing
+    workflow_dispatch:
+
+jobs:
+    firmware:
+        runs-on: ubuntu-latest
+        container:
+            image: ghcr.io/emsro/build-env:latest
+            credentials:
+                username: ${{ github.actor }}
+                password: ${{ secrets.github_token }}
+        defaults:
+            run:
+                shell: bash
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  submodules: recursive
+
+            - run: git config --global --add safe.directory /__w/servio/servio
+
+            - run: cmake --workflow --preset stm32h5_release
+
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: firmware
+                  path: |
+                      _build/stm32h5_release/src/brd/proto4/proto4_fw.elf
+                      _build/stm32h5_release/src/brd/proto4/proto4_fw.bin
+                      _build/stm32h5_release/src/brd/proto4/proto4_fw.hex
+
+    scmdio-linux:
+        runs-on: ubuntu-latest
+        container:
+            image: ghcr.io/emsro/build-env:latest
+            credentials:
+                username: ${{ github.actor }}
+                password: ${{ secrets.github_token }}
+        defaults:
+            run:
+                shell: bash
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  submodules: recursive
+
+            - run: git config --global --add safe.directory /__w/servio/servio
+
+            - run: cmake --workflow --preset host_static
+
+            - run: cmake --install _build/host_static --prefix _install --strip
+
+            - run: _install/bin/scmdio --help
+
+            - run: tar -C _install/bin -czf scmdio-linux-x86_64.tar.gz scmdio
+
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: scmdio-linux
+                  path: scmdio-linux-x86_64.tar.gz
+
+    scmdio-windows:
+        runs-on: windows-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  submodules: recursive
+
+            - uses: ilammy/msvc-dev-cmd@v1
+
+            - run: cmake --workflow --preset windows_release
+
+            - run: cmake --install _build/windows_release --prefix _install
+
+            - run: ./_install/bin/scmdio.exe --help
+
+            - run: Compress-Archive -Path _install/bin/scmdio.exe -DestinationPath scmdio-windows-x86_64.zip
+
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: scmdio-windows
+                  path: scmdio-windows-x86_64.zip
+
+    release:
+        if: github.ref_type == 'tag'
+        needs: [firmware, scmdio-linux, scmdio-windows]
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/download-artifact@v4
+              with:
+                  path: dist
+                  merge-multiple: true
+
+            - uses: softprops/action-gh-release@v2
+              with:
+                  generate_release_notes: true
+                  files: dist/*
