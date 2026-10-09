@@ -41,7 +41,6 @@ struct _current_gov final : governor, handle
                         break;
                 case cfg::key::curr_lim_min:
                 case cfg::key::curr_lim_max:
-                        break;
                 case cfg::key::pos_lim_min:
                 case cfg::key::pos_lim_max:
                 case cfg::key::pos_to_curr_lim_scale:

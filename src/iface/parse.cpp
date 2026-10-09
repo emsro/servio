@@ -342,8 +342,8 @@ vari::vval< stmt, invalid_stmt > parse( parser::parser& p )
 
         auto [res, st] = _root( p );
         if ( st != parse_status::SUCCESS )
-                return vari::vval< stmt, invalid_stmt >( invalid_stmt{ .st = st } );
-        return vari::vval< stmt, invalid_stmt >( std::move( res ) );
+                return { invalid_stmt{ .st = st } };
+        return { std::move( res ) };
 }
 
 }  // namespace servio::iface

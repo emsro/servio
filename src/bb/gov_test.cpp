@@ -13,6 +13,8 @@
 
 namespace servio::bb
 {
+namespace
+{
 
 boost::asio::awaitable< void >
 check_mode( scmdio::port_iface& port, std::string_view expected, std::optional< float > val = {} )
@@ -49,6 +51,7 @@ test_position( boost::asio::io_context& io, scmdio::port_iface& port )
         co_await govctl_deactivate( port );
 }
 
+}  // namespace
 }  // namespace servio::bb
 
 int main( int argc, char** argv )

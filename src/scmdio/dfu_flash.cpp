@@ -19,9 +19,9 @@
 #include <ios>
 #include <istream>
 #include <magic_enum/magic_enum.hpp>
-#include <map>
 #include <ostream>
 #include <spdlog/spdlog.h>
+#include <utility>
 #include <vector>
 
 namespace servio::scmdio
@@ -59,7 +59,7 @@ awaitable< void > send( stream_iface& port, auto&& data, std::byte checksum = 0x
             checksum ^
             std::accumulate(
                 data.begin(), data.end(), std::byte{ 0 }, [&]( std::byte a, std::byte b ) {
-                        std::bitset< 8 > lh{ (unsigned long) a }, rh{ (unsigned long) b };
+                        std::bitset< 8 > const lh{ (unsigned long) a }, rh{ (unsigned long) b };
                         return ( std::byte )( lh ^ rh ).to_ulong();
                 } );
         co_await port.write( data );
@@ -191,15 +191,15 @@ struct chip_info
         em::min_max< uint32_t > flash;
 };
 
-static std::map< uint16_t, chip_info > const chips = {
+constexpr std::array< std::pair< uint16_t, chip_info >, 2 > chips = { {
     { 0x468, chip_info{ .flash = { 0x0800'0000, 0x0802'0000 } } },  // STM32G432
     { 0x474, chip_info{ .flash = { 0x0800'0000, 0x0802'0000 } } },  // STM32H503
-};
+} };
 
 awaitable< chip_info const* > get_chip_id( stream_iface& port )
 {
         uint16_t id   = co_await get_id( port );
-        auto     iter = chips.find( id );
+        auto     iter = std::ranges::find( chips, id, &std::pair< uint16_t, chip_info >::first );
         if ( iter == chips.end() )
                 log_error( "Unknown chip id:", id );
         spdlog::info( "chip id: {}", id );

@@ -1,3 +1,5 @@
+#include "./config_cmds.hpp"
+
 #include "./base.hpp"
 #include "./port.hpp"
 #include "./serial.hpp"

@@ -7,13 +7,16 @@
 namespace servio::gov
 {
 
-static auto& get_registry()
+namespace
+{
+auto& get_registry()
 {
         static zll::ll_list< governor_factory > governor_factory_registry;
         return governor_factory_registry;
 }
+}  // namespace
 
-void register_factory( governor_factory& factory )
+void register_factory( governor_factory& factory ) noexcept
 {
         get_registry().link_back( factory );
 }

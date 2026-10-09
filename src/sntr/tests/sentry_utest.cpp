@@ -21,6 +21,8 @@ static_assert( !std::is_move_constructible_v< sentry > );
 static_assert( !std::is_copy_assignable_v< sentry > );
 static_assert( !std::is_move_assignable_v< sentry > );
 
+namespace
+{
 struct test_clk : drv::clk_iface
 {
         microseconds t{ 0 };
@@ -42,6 +44,8 @@ struct sentry_fixture : ::testing::Test
         };
         central_sentry central{ clk, buffer_a, buffer_b, f };
 };
+
+}  // namespace
 
 TEST_F( sentry_fixture, init )
 {

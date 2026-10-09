@@ -1,12 +1,12 @@
 ---
 Checks: >
     -*,
-    bugprone*,-bugprone-easily-swappable-parameters,-bugprone-macro-parentheses,-bugprone-exception-escape,-bugprone-unchecked-optional-access,
+    bugprone*,-bugprone-easily-swappable-parameters,-bugprone-macro-parentheses,-bugprone-exception-escape,-bugprone-unchecked-optional-access,-bugprone-std-namespace-modification,-bugprone-random-generator-seed,-bugprone-invalid-enum-default-initialization,
     concurrency*,
     modernize*,-modernize-use-trailing-return-type,-modernize-avoid-c-arrays,-modernize-use-nullptr,-modernize-use-nodiscard,-modernize-avoid-c-style-cast,
-    misc*,
-    performance*,
-    portability*,-portability-avoid-pragma-once,
+    misc*,-misc-no-recursion,-misc-non-private-member-variables-in-classes,
+    performance*,-performance-enum-size,
+    portability*,-portability-avoid-pragma-once,-portability-template-virtual-member-function,
 WarningsAsErrors: '*'
 HeaderFilterRegex: .*
 ExcludeHeaderFilterRegex: /(dep|_build)/
@@ -14,6 +14,8 @@ FormatStyle: file
 CheckOptions:
     # libstdc++, Boost and nlohmann declare these symbols in internal headers;
     # servio includes the public ones instead
+    - key: performance-move-const-arg.CheckTriviallyCopyableMove
+      value: false
     - key: misc-include-cleaner.IgnoreHeaders
       value: bits/.*;chrono;boost/asio/impl/.*;boost/asio/co_spawn\.hpp;nlohmann/json(_fwd)?\.hpp
     - key: readability-function-cognitive-complexity.IgnoreMacros

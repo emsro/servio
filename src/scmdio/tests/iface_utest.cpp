@@ -54,12 +54,12 @@ TEST( iface, base )
                                 co_await set_config_field( pm, to_str( k ), "quad" );
                         else if ( k == cfg::key::model )
                                 co_await set_config_field( pm, to_str( k ), "wololo" );
-                        else if ( k == cfg::key::id || k == cfg::key::group_id )
+                        else if (
+                            k == cfg::key::id || k == cfg::key::group_id ||
+                            k == cfg::key::quad_encoder_range )
                                 co_await set_config_field( pm, to_str( k ), 0 );
                         else if ( k == cfg::key::invert_hbridge )
                                 co_await set_config_field( pm, to_str( k ), false );
-                        else if ( k == cfg::key::quad_encoder_range )
-                                co_await set_config_field( pm, to_str( k ), 0 );
                         else
                                 co_await set_config_field( pm, to_str( k ), 0.0 );
 

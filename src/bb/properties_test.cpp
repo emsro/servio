@@ -12,6 +12,8 @@
 
 namespace servio::bb
 {
+namespace
+{
 
 boost::asio::awaitable< void >
 test_properties_querying( boost::asio::io_context&, scmdio::port_iface& port )
@@ -20,6 +22,7 @@ test_properties_querying( boost::asio::io_context&, scmdio::port_iface& port )
                 co_await scmdio::get_property( port, to_str( k ) );
 }
 
+}  // namespace
 }  // namespace servio::bb
 
 int main( int argc, char** argv )

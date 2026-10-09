@@ -36,6 +36,7 @@ struct bb_test_case : ::testing::Test
         std::function< test_signature >       test;
         std::chrono::milliseconds             timeout;
 
+private:
         void TestBody() final
         {
                 io_ctx.restart();

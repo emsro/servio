@@ -26,6 +26,8 @@ namespace servio::scmdio
 
 using namespace servio::literals;
 
+namespace
+{
 template < typename T >
 struct consumer
 {
@@ -269,6 +271,8 @@ struct stm32_bootloader_mock : stream_iface
                 co_return true;
         }
 };
+
+}  // namespace
 
 TEST( scmdio, info )
 {

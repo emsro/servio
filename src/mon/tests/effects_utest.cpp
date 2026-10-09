@@ -56,9 +56,10 @@ TEST( mon, pulser )
         auto   pi = std::numbers::pi_v< float >;
         pulser p;
 
-        for ( float i = 0.F; i < 10.F; i += 0.01F ) {
-                p.val  = i;
-                auto v = static_cast< uint8_t >(
+        for ( int step = 0; step < 1000; ++step ) {
+                float const i = static_cast< float >( step ) * 0.01F;
+                p.val         = i;
+                auto v        = static_cast< uint8_t >(
                     em::map_range( std::sin( i - pi ), -1.F, 1.F, 0.F, 255.F ) );
                 uint8_t const v2             = p.update();
                 uint8_t const tolerable_diff = 10;

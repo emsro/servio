@@ -36,7 +36,7 @@ template < typename... Args >
         throw servio_exception{ "Critical error occured" };
 }
 
-inline std::filesystem::path const& check_path( std::filesystem::path const& p )
+inline std::filesystem::path check_path( std::filesystem::path const& p )
 {
         if ( !std::filesystem::exists( p ) )
                 throw std::runtime_error( "Path " + p.string() + " does not exist" );

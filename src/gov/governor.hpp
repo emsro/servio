@@ -51,13 +51,13 @@ struct governor_factory : zll::ll_base< governor_factory >
         virtual governor* create( em::pmr::memory_resource& ) = 0;
 };
 
-void register_factory( governor_factory& factory );
+void register_factory( governor_factory& factory ) noexcept;
 void for_each_factory( em::function_view< void( governor_factory& ) > const& fn );
 
 template < typename T >
 struct auto_factory : governor_factory
 {
-        auto_factory()
+        auto_factory() noexcept
         {
                 register_factory( *this );
         }

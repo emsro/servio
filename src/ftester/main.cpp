@@ -17,7 +17,6 @@
 #include <chrono>
 #include <cstdarg>
 #include <cstdint>
-#include <cstdlib>
 #include <memory>
 #include <optional>
 #include <ostream>
@@ -29,7 +28,6 @@ using namespace std::literals::chrono_literals;
 
 namespace
 {
-pbar::terminal_progress  g_bar;
 pbar::terminal_progress* g_active_bar = nullptr;
 asrt_log_level           g_log_level  = ASRT_LOG_ERROR;
 std::ostream*            g_log_file   = nullptr;
@@ -48,6 +46,7 @@ void asrt_log( enum asrt_log_level level, char const* module, char const* fmt, .
 
 int main( int argc, char* argv[] )
 {
+        pbar::terminal_progress bar;
         using namespace asrtio;
         uv_loop_t* loop = uv_default_loop();
         std::optional< complete_arena_connect_result< task< void >, final_receiver > > t;
@@ -105,7 +104,7 @@ int main( int argc, char* argv[] )
                 params = param_config_from_file( params_file );
                 if ( !params ) {
                         std::println( stderr, "Failed to load param config" );
-                        std::exit( 1 );
+                        return 1;
                 }
         }
 
@@ -113,9 +112,9 @@ int main( int argc, char* argv[] )
         int const   peer_fd = asrtio::open_serial_port( peer_cfg, peer_errmsg );
         if ( peer_fd < 0 ) {
                 std::println( stderr, "Failed to open peer port: {}", peer_errmsg );
-                std::exit( 1 );
+                return 1;
         }
-        harness h{ ctx, g_bar, peer_fd };
+        harness h{ ctx, bar, peer_fd };
         h.add( "comms_echo", std::make_unique< echo_peer >( ctx, loop, peer_fd ) );
         h.add( "comms_timeout", std::make_unique< echo_peer >( ctx, loop, peer_fd ) );
 
@@ -134,7 +133,7 @@ int main( int argc, char* argv[] )
                 output_dir,
                 h ),
             final_receiver{ .idle = &idle, .active_bar = &g_active_bar } );
-        g_active_bar = &g_bar;
+        g_active_bar = &bar;
 
         idle.data = &ctx;
         uv_idle_init( loop, &idle );
@@ -148,7 +147,7 @@ int main( int argc, char* argv[] )
 
         uv_run( loop, UV_RUN_DEFAULT );
         uv_loop_close( loop );
-        g_bar.finish();
+        bar.finish();
 
         g_log_file = nullptr;
         log_writer.reset();

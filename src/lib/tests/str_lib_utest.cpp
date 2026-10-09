@@ -16,14 +16,14 @@ namespace servio::str_lib
 template < typename T >
 using opt = std::optional< T >;
 
+namespace
+{
 struct _invalid
 {
 };
 
 constexpr _invalid invalid;
 
-namespace
-{
 consteval opt< s_to_nr_res > test_f( std::string_view s )
 {
         char const* p = s.data();
@@ -44,7 +44,8 @@ void check(
         static constexpr bool is_valid = !std::same_as< T, _invalid >;
         if ( nrs ) {
                 if constexpr ( !is_valid )
-                        FAIL() << "Expected no result, got " << ( nrs->is_num ? nrs->n : nrs->r )
+                        FAIL() << "Expected no result, got "
+                               << ( nrs->is_num ? static_cast< real >( nrs->n ) : nrs->r )
                                << "\n loc: " << loc.file_name() << ":" << loc.line();
                 else if constexpr ( std::is_same_v< T, num > )
                         EXPECT_EQ( nrs->n, n )

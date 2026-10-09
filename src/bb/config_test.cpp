@@ -20,13 +20,16 @@
 namespace avakar
 {
 template < auto... Ts >
-std::ostream& operator<<( std::ostream& os, atom< Ts... > const& a )
+// NOLINTNEXTLINE(misc-use-anonymous-namespace): only ADL in namespace avakar finds it
+static std::ostream& operator<<( std::ostream& os, atom< Ts... > const& a )
 {
         return os << a.to_string();
 }
 }  // namespace avakar
 
 namespace servio::bb
+{
+namespace
 {
 
 void vary_value( std::string_view k, nlohmann::json& x )
@@ -110,6 +113,7 @@ boost::asio::awaitable< void > test_config( boost::asio::io_context&, scmdio::po
         }
 }
 
+}  // namespace
 }  // namespace servio::bb
 
 int main( int argc, char** argv )

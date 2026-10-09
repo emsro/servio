@@ -12,7 +12,7 @@
 #include <boost/asio/co_spawn.hpp>
 #include <boost/asio/io_context.hpp>
 #include <boost/asio/serial_port_base.hpp>
-#include <cstddef>
+#include <cstdint>
 #include <emlabcpp/algorithm.hpp>
 #include <exception>
 #include <filesystem>
@@ -25,6 +25,9 @@
 #include <vector>
 
 namespace servio::scmdio
+{
+
+namespace
 {
 
 void json_flag( CLI::App* app, bool& flag )
@@ -189,7 +192,7 @@ void govctl_def( CLI::App& app, io_context& io_ctx )
 
         auto* list = gov->add_subcommand( "list", "list governors" );
         port_callback( list, io_ctx, ctx, [ctx]( sptr< char_port > p ) -> R {
-                for ( std::size_t i = 0;; ++i ) {
+                for ( int32_t i = 0;; ++i ) {
                         auto s = co_await govctl_list( *p, i );
                         if ( !s )
                                 break;
@@ -313,7 +316,7 @@ struct preset_ctx
         char_cli              port;
 };
 
-void preset_def( CLI::App& app, io_context& io_ctx )
+void preset_cmd_def( CLI::App& app, io_context& io_ctx )
 {
         auto ctx = std::make_shared< preset_ctx >();
 
@@ -371,6 +374,8 @@ void flash_def( CLI::App& app, io_context& io_ctx )
         } );
 }
 
+}  // namespace
+
 }  // namespace servio::scmdio
 
 int main( int argc, char* argv[] )
@@ -390,7 +395,7 @@ int main( int argc, char* argv[] )
         scmdio::info_def( app, ctx );
         scmdio::flash_def( app, ctx );
         scmdio::dfu_def( app, ctx );
-        scmdio::preset_def( app, ctx );
+        scmdio::preset_cmd_def( app, ctx );
 
         app.require_subcommand( 1 );
 

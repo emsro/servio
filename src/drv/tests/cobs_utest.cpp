@@ -13,7 +13,8 @@
 
 namespace std
 {
-ostream& operator<<( ostream& os, byte b )
+// NOLINTNEXTLINE(misc-use-anonymous-namespace): only ADL in namespace std finds it
+static ostream& operator<<( ostream& os, byte b )
 {
         return os << static_cast< int >( b );
 }

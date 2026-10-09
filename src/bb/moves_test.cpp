@@ -14,6 +14,8 @@
 
 namespace servio::bb
 {
+namespace
+{
 
 using namespace std::chrono_literals;
 
@@ -67,6 +69,7 @@ test_position( boost::asio::io_context& io, scmdio::port_iface& port )
         co_await scmdio::govctl_deactivate( port );
 }
 
+}  // namespace
 }  // namespace servio::bb
 
 int main( int argc, char** argv )

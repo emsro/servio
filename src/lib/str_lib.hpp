@@ -41,9 +41,7 @@ constexpr bool is_id_letter( char c ) noexcept
 
 constexpr bool hex_prefix( char const* p, char const* e )
 {
-        if ( p != e && *p == '0' && p++ != e && *p == 'x' )
-                return true;
-        return false;
+        return e - p >= 2 && p[0] == '0' && p[1] == 'x';
 }
 
 constexpr bool has_exp_suffix( char const* p, char const* e )
@@ -265,7 +263,7 @@ constexpr bool s_to_nr( char const*& p, char const* e, s_to_nr_res& x ) noexcept
                 while ( ++p != e )
                         if ( bits::is_dec( *p ) ) {
                                 exp *= 10.0F;
-                                y = ( y * 10 ) + ( *p - '0' );
+                                y = ( y * 10 ) + static_cast< float >( *p - '0' );
                         } else if ( *p == '\'' ) {
                                 continue;
                         } else
@@ -291,8 +289,9 @@ constexpr bool lex_letters( char const*& p, char const* e ) noexcept
 {
         if ( p == e || !bits::is_letter( *p ) )
                 return false;
-        while ( p != e && bits::is_id_letter( *++p ) )
-                continue;
+        ++p;
+        while ( p != e && bits::is_id_letter( *p ) )
+                ++p;
         return true;
 }
 
