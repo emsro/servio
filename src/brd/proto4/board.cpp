@@ -246,8 +246,9 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
                                  },
                          } ) != status::success ?
                          status::error :
-                     plt::setup_adc_timer( TIM6_HANDLE, TIM6 ) != status::success ? status::error :
-                                                                                    status::success;
+                     plt::setup_adc_timer( TIM6_HANDLE, *TIM6 ) != status::success ?
+                         status::error :
+                         status::success;
 
         if ( res != status::success )
                 return nullptr;
@@ -422,7 +423,7 @@ drv::pos_iface* quad_encoder_setup( uint32_t period )
         plt::setup_gpio( ch2 );
 
         // XXX: technicaly we are missing PA8 - encoder clk - indication of zero
-        error_code res = plt::setup_encoder_timer( TIM3_HANDLE, TIM3, period - 1U );
+        error_code res = plt::setup_encoder_timer( TIM3_HANDLE, *TIM3, period - 1U );
         if ( res != status::success )
                 return nullptr;
 
@@ -552,11 +553,11 @@ core::drivers setup_core_drivers()
                 fw::stop_exec();
 
         __HAL_RCC_TIM2_CLK_ENABLE();
-        if ( plt::setup_clock_timer( TIM2_HANDLE, TIM2, TIM2_IRQn ) != status::success )
+        if ( plt::setup_clock_timer( TIM2_HANDLE, *TIM2, TIM2_IRQn ) != status::success )
                 fw::stop_exec();
 
         __HAL_RCC_DTS_CLK_ENABLE();
-        if ( plt::setup_dts( DTS_HANDLE, DTS ) != status::success )
+        if ( plt::setup_dts( DTS_HANDLE, *DTS ) != status::success )
                 fw::stop_exec();
         if ( HAL_DTS_Start( &DTS_HANDLE ) != HAL_OK )
                 fw::stop_exec();

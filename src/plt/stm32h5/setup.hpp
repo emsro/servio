@@ -80,7 +80,7 @@ cfg::map get_default_config();
 
 status setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg );
 void setup_adc_channel( ADC_ChannelConfTypeDef& channel, uint32_t ch_id, opt< drv::pin_cfg > cfg );
-status setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance );
+status setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef& instance );
 
 status setup_dac( DAC_HandleTypeDef& dac, drv::pin_cfg const& cfg );
 
@@ -94,10 +94,10 @@ void setup_gpio( drv::pin_cfg const& cfg );
 
 status setup_clk();
 
-status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq );
+status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef& instance, IRQn_Type irq );
 
-status setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint32_t period );
+status setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef& instance, uint32_t period );
 
-status setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst );
+status setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef& inst );
 
 }  // namespace servio::plt

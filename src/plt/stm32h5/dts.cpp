@@ -3,9 +3,9 @@
 namespace servio::plt
 {
 
-status setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef* inst )
+status setup_dts( DTS_HandleTypeDef& h, DTS_TypeDef& inst )
 {
-        h.Instance           = inst;
+        h.Instance           = &inst;
         h.Init.QuickMeasure  = DTS_QUICKMEAS_DISABLE;
         h.Init.RefClock      = DTS_REFCLKSEL_PCLK;
         h.Init.TriggerInput  = DTS_TRIGGER_HW_NONE;

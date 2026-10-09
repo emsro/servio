@@ -76,9 +76,9 @@ status setup_hbridge_timers( TIM_HandleTypeDef& tim, hb_timer_cfg cfg )
         return status::success;
 }
 
-status setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
+status setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef& instance )
 {
-        tim.Instance               = instance;
+        tim.Instance               = &instance;
         tim.Init.Prescaler         = 0;
         tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
         tim.Init.Period            = 256;
@@ -98,9 +98,9 @@ status setup_adc_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance )
         return status::success;
 }
 
-status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Type irq )
+status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef& instance, IRQn_Type irq )
 {
-        tim.Instance               = instance;
+        tim.Instance               = &instance;
         tim.Init.Prescaler         = __HAL_TIM_CALC_PSC( HAL_RCC_GetPCLK1Freq(), 1'000'000 );
         tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
         tim.Init.Period            = 5'000;
@@ -129,9 +129,9 @@ status setup_clock_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, IRQn_Ty
         return status::success;
 }
 
-status setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef* instance, uint32_t period )
+status setup_encoder_timer( TIM_HandleTypeDef& tim, TIM_TypeDef& instance, uint32_t period )
 {
-        tim.Instance               = instance;
+        tim.Instance               = &instance;
         tim.Init.Prescaler         = 0;
         tim.Init.CounterMode       = TIM_COUNTERMODE_UP;
         tim.Init.Period            = period;
