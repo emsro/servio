@@ -9,7 +9,7 @@ var searchData=
   ['decay_6',['decay',['../structservio_1_1linear__transition__regulator.html#a4c8e3ab4a50bdde7f52bc95ba04093e9',1,'servio::linear_transition_regulator']]],
   ['decompose_20message_20communication_20to_20be_20independent_20on_20underlying_20transport_20layer_7',['REQ4.2 System should decompose message communication to be independent on underlying transport layer',['../comms.html#autotoc_md111',1,'']]],
   ['decomposition_8',['REQ1.1.1 Decomposition',['../sys.html#autotoc_md95',1,'']]],
-  ['def_2ehpp_9',['def.hpp',['../iface_2def_8hpp.html',1,'(Global Namespace)'],['../cfg_2def_8hpp.html',1,'(Global Namespace)']]],
+  ['def_2ehpp_9',['def.hpp',['../cfg_2def_8hpp.html',1,'(Global Namespace)'],['../iface_2def_8hpp.html',1,'(Global Namespace)']]],
   ['default_10',['DEFAULT',['../namespaceservio_1_1iface.html#a07806d6a9710889454ebc6662cf4c71da5b39c8b553c821e7cddc6da64b5bd2ee',1,'servio::iface']]],
   ['default_5frecord_11',['default_record',['../namespaceservio_1_1sntr.html#a3b8dd8a106554a9a31a43f91746adf78',1,'servio::sntr']]],
   ['defined_20in_20tbd_12',['REQ4.4 Major communication message shall be defined in TBD',['../comms.html#autotoc_md113',1,'']]],
@@ -46,7 +46,7 @@ var searchData=
   ['disp_5futest_2ecpp_43',['disp_utest.cpp',['../disp__utest_8cpp.html',1,'']]],
   ['dispatcher_44',['dispatcher',['../structservio_1_1cfg_1_1dispatcher.html',1,'servio::cfg::dispatcher'],['../namespaceservio_1_1core.html#structservio_1_1core_1_1dispatcher',1,'servio::core::dispatcher']]],
   ['dispatcher_2ecpp_45',['dispatcher.cpp',['../core_2dispatcher_8cpp.html',1,'(Global Namespace)'],['../cfg_2dispatcher_8cpp.html',1,'(Global Namespace)']]],
-  ['dispatcher_2ehpp_46',['dispatcher.hpp',['../cfg_2dispatcher_8hpp.html',1,'(Global Namespace)'],['../core_2dispatcher_8hpp.html',1,'(Global Namespace)']]],
+  ['dispatcher_2ehpp_46',['dispatcher.hpp',['../core_2dispatcher_8hpp.html',1,'(Global Namespace)'],['../cfg_2dispatcher_8hpp.html',1,'(Global Namespace)']]],
   ['dma_47',['dma',['../namespaceservio_1_1plt.html#a86a48d377d92187ee93f68bed0aad67f',1,'servio::plt::adc_cfg']]],
   ['dma_5fcfg_48',['dma_cfg',['../namespaceservio_1_1plt.html#structservio_1_1plt_1_1dma__cfg',1,'servio::plt']]],
   ['do_5fgov_49',['do_gov',['../namespaceservio_1_1scmdio.html#af4573216114aa8f60292cbf4e34c9211',1,'servio::scmdio']]],
@@ -59,5 +59,6 @@ var searchData=
   ['dts_5fhandle_56',['DTS_HANDLE',['../namespaceservio_1_1brd.html#ac98826a0db7719c6623fe0d921bc6962',1,'servio::brd']]],
   ['dts_5ftemp_57',['dts_temp',['../classservio_1_1drv_1_1dts__temp.html',1,'servio::drv::dts_temp'],['../classservio_1_1drv_1_1dts__temp.html#aa13ee2580fde51156ccb0cd0bebde958',1,'servio::drv::dts_temp::dts_temp()']]],
   ['dts_5ftemp_2ehpp_58',['dts_temp.hpp',['../dts__temp_8hpp.html',1,'']]],
-  ['duration_59',['duration',['../structservio_1_1ftest_1_1__wait__for__sender.html#a4330125ada70f812a6898972cdedff84',1,'servio::ftest::_wait_for_sender']]]
+  ['duration_59',['duration',['../structservio_1_1ftest_1_1__wait__for__sender.html#a4330125ada70f812a6898972cdedff84',1,'servio::ftest::_wait_for_sender']]],
+  ['duration_5fms_60',['duration_ms',['../harness_8hpp.html#a2974373fb1c028cc909f28fecced133c',1,'test_run_result']]]
 ];

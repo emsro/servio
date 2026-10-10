@@ -371,5 +371,6 @@ var annotated_dup =
     [ "echo_peer", "structecho__peer.html", "structecho__peer" ],
     [ "harness", "structharness.html", "structharness" ],
     [ "peer_hook", "structpeer__hook.html", "structpeer__hook" ],
-    [ "silent_peer", "structsilent__peer.html", "structsilent__peer" ]
+    [ "silent_peer", "structsilent__peer.html", "structsilent__peer" ],
+    [ "test_run_result", "harness_8hpp.html#structtest__run__result", "harness_8hpp_structtest__run__result" ]
 ];

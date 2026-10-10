@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data_0',['data',['../structservio_1_1parser_1_1expr__tok.html#a23c279d402a3d142ad392c7ddaed99b9',1,'servio::parser::expr_tok::data'],['../namespaceservio_1_1sntr.html#add92c4f308a02a7af7a4ddd626ab8f8a',1,'servio::sntr::record::data']]],
+  ['data_0',['data',['../namespaceservio_1_1sntr.html#add92c4f308a02a7af7a4ddd626ab8f8a',1,'servio::sntr::record::data'],['../structservio_1_1parser_1_1expr__tok.html#a23c279d402a3d142ad392c7ddaed99b9',1,'servio::parser::expr_tok::data']]],
   ['debug_5fcomms_1',['debug_comms',['../structservio_1_1ftest_1_1testing__system.html#a15c347a9b819cf50b3768cae86d126cb',1,'servio::ftest::testing_system::debug_comms'],['../namespaceservio_1_1brd.html#ad7acc0f3dbfde0575a7230b2a53744d5',1,'servio::brd::DEBUG_COMMS']]],
   ['decay_2',['decay',['../structservio_1_1linear__transition__regulator.html#a4c8e3ab4a50bdde7f52bc95ba04093e9',1,'servio::linear_transition_regulator']]],
   ['degraded_5frecords_3',['DEGRADED_RECORDS',['../namespaceservio_1_1brd.html#ac1e9012d3c60aec6e72b21b7d38255e7',1,'servio::brd']]],
@@ -11,5 +11,6 @@ var searchData=
   ['dma_8',['dma',['../namespaceservio_1_1plt.html#a86a48d377d92187ee93f68bed0aad67f',1,'servio::plt::adc_cfg']]],
   ['dts_5fdrv_9',['DTS_DRV',['../namespaceservio_1_1brd.html#a6f72e0496d5ab998f9c9f5860478271a',1,'servio::brd']]],
   ['dts_5fhandle_10',['DTS_HANDLE',['../namespaceservio_1_1brd.html#ac98826a0db7719c6623fe0d921bc6962',1,'servio::brd']]],
-  ['duration_11',['duration',['../structservio_1_1ftest_1_1__wait__for__sender.html#a4330125ada70f812a6898972cdedff84',1,'servio::ftest::_wait_for_sender']]]
+  ['duration_11',['duration',['../structservio_1_1ftest_1_1__wait__for__sender.html#a4330125ada70f812a6898972cdedff84',1,'servio::ftest::_wait_for_sender']]],
+  ['duration_5fms_12',['duration_ms',['../harness_8hpp.html#a2974373fb1c028cc909f28fecced133c',1,'test_run_result']]]
 ];

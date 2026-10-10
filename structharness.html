@@ -137,6 +137,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aefc46b89656821dc5d52a36b441da1fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22d6e553f5edb51807d36d76d20e7ba7" id="r_a22d6e553f5edb51807d36d76d20e7ba7"><td class="memItemLeft" align="right" valign="top">asrtio::task&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structharness.html#a22d6e553f5edb51807d36d76d20e7ba7">on_test_done</a> (std::string_view name, bool passed, double duration_ms, uint32_t run_idx, uint32_t run_total) override</td></tr>
 <tr class="separator:a22d6e553f5edb51807d36d76d20e7ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24bc507114b88d36158cb20d402b1e81" id="r_a24bc507114b88d36158cb20d402b1e81"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="harness_8hpp.html#structtest__run__result">test_run_result</a> &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structharness.html#a24bc507114b88d36158cb20d402b1e81">results</a> () const</td></tr>
+<tr class="memdesc:a24bc507114b88d36158cb20d402b1e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Results of the runs finished so far, in the order they finished.  <br /></td></tr>
+<tr class="separator:a24bc507114b88d36158cb20d402b1e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48fc6f8ad2a38595f2d583b66500260f" id="r_a48fc6f8ad2a38595f2d583b66500260f"><td class="memItemLeft" align="right" valign="top">asrtio::task&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structharness.html#a48fc6f8ad2a38595f2d583b66500260f">on_diagnostic</a> (std::string_view file, uint32_t line, std::string_view extra) override</td></tr>
 <tr class="separator:a48fc6f8ad2a38595f2d583b66500260f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf791b7c6b6363f17db031bb384ff64d" id="r_abf791b7c6b6363f17db031bb384ff64d"><td class="memItemLeft" align="right" valign="top">asrtio::task&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structharness.html#abf791b7c6b6363f17db031bb384ff64d">on_collect_data</a> (std::string_view name, asrt_flat_tree const *tree) override</td></tr>
@@ -536,6 +539,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a24bc507114b88d36158cb20d402b1e81" name="a24bc507114b88d36158cb20d402b1e81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24bc507114b88d36158cb20d402b1e81">&#9670;&#160;</a></span>results()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="harness_8hpp.html#structtest__run__result">test_run_result</a> &gt; const  &amp; harness::results </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Results of the runs finished so far, in the order they finished. </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/ftester/<a class="el" href="harness_8hpp_source.html">harness.hpp</a></li>
 <li>src/ftester/<a class="el" href="harness_8cpp.html">harness.cpp</a></li>
@@ -546,7 +576,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structharness.html">harness</a></li>
-    <li class="footer">Generated on Fri Oct 9 2026 21:33:32 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

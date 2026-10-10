@@ -1,5 +1,10 @@
 var NAVTREEINDEX6 =
 {
+"namespaceservio_1_1gov_1_1pow_1_1iface.html":[17,0,4,8,2,0],
+"namespaceservio_1_1gov_1_1pow_1_1iface.html#a8c0e88cfefd9efad9c139898f0d610ee":[17,0,4,8,2,0,2],
+"namespaceservio_1_1gov_1_1pow_1_1iface.html#ad9f1a01c56a6e0c5e7d5d0c8c9af4643":[17,0,4,8,2,0,3],
+"namespaceservio_1_1gov_1_1pow_1_1tests.html":[17,0,4,8,2,1],
+"namespaceservio_1_1gov_1_1pow_1_1tests.html#a51ff73a6a10beecc1a162989e4d42ab0":[17,0,4,8,2,1,0],
 "namespaceservio_1_1gov_1_1vel.html":[17,0,4,8,3],
 "namespaceservio_1_1gov_1_1vel_1_1cfg.html":[17,0,4,8,3,0],
 "namespaceservio_1_1gov_1_1vel_1_1cfg.html#a15870a333a5f651e68e219eaf09741c5":[19,0,1,9,4,1,7,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX6 =
 "namespaceservio_1_1scmdio.html#a40ca775c56c260d187fd81d3730fef47":[17,0,4,17,53],
 "namespaceservio_1_1scmdio.html#a41a0c7db546210a6cf63cc1ce46db502":[17,0,4,17,24],
 "namespaceservio_1_1scmdio.html#a46626ef4592ca7c5fd26dfb876358105":[17,0,4,17,65],
-"namespaceservio_1_1scmdio.html#a4f26aff200a45784b8b1f697a69ebd78":[17,0,4,17,32],
-"namespaceservio_1_1scmdio.html#a52eafa2387f12f1ab90e769356d9cc5b":[17,0,4,17,37],
-"namespaceservio_1_1scmdio.html#a541a193834ccc76608db019f895238e6":[17,0,4,17,72],
-"namespaceservio_1_1scmdio.html#a54e3bd40a8656f4f5610d379bc3484e6":[17,0,4,17,56],
-"namespaceservio_1_1scmdio.html#a5698f80e4c7a222fcc97fff343ea42e5":[17,0,4,17,67],
-"namespaceservio_1_1scmdio.html#a58574b7237f6a644eaa2df1da28f8529":[17,0,4,17,54]
+"namespaceservio_1_1scmdio.html#a4f26aff200a45784b8b1f697a69ebd78":[17,0,4,17,32]
 };

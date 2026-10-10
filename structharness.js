@@ -10,5 +10,6 @@ var structharness =
     [ "on_stream_data", "structharness.html#a422a7a094c354e8a785de8e46315be39", null ],
     [ "on_test_done", "structharness.html#a22d6e553f5edb51807d36d76d20e7ba7", null ],
     [ "on_test_start", "structharness.html#aefc46b89656821dc5d52a36b441da1fb", null ],
-    [ "operator=", "structharness.html#a56b7288f84a129b47cb7c9596664e718", null ]
+    [ "operator=", "structharness.html#a56b7288f84a129b47cb7c9596664e718", null ],
+    [ "results", "structharness.html#a24bc507114b88d36158cb20d402b1e81", null ]
 ];

@@ -104,125 +104,151 @@ $(document).ready(function(){initNavTree('harness_8hpp_source.html',''); initRes
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;pbar_reporter.hpp&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;transport.hpp&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structpeer__hook.html">   10</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structpeer__hook.html">peer_hook</a></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structpeer__hook.html#ab22b3106ef2ec9582e1bc20eda263c48">   12</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="structpeer__hook.html#ab22b3106ef2ec9582e1bc20eda263c48">peer_hook</a>( asrtio::task_ctx&amp; ctx )</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>          : <a class="code hl_variable" href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">ctx_</a>( ctx )</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        }</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structpeer__hook.html">   12</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structpeer__hook.html">peer_hook</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structpeer__hook.html#ab22b3106ef2ec9582e1bc20eda263c48">   14</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="structpeer__hook.html#ab22b3106ef2ec9582e1bc20eda263c48">peer_hook</a>( asrtio::task_ctx&amp; ctx )</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>          : <a class="code hl_variable" href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">ctx_</a>( ctx )</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        }</div>
 </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structpeer__hook.html#a9eea3ba3508ea2b5134680db65949898">   17</a></span>        <span class="keyword">auto</span>&amp; <a class="code hl_function" href="structpeer__hook.html#a9eea3ba3508ea2b5134680db65949898">query</a>( ecor::get_memory_resource_t tag )</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">ctx_</a>.query( tag );</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structpeer__hook.html#a9eea3ba3508ea2b5134680db65949898">   19</a></span>        <span class="keyword">auto</span>&amp; <a class="code hl_function" href="structpeer__hook.html#a9eea3ba3508ea2b5134680db65949898">query</a>( ecor::get_memory_resource_t tag )</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">ctx_</a>.query( tag );</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        }</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structpeer__hook.html#a0b1fd35f7f2f55da3ea1eb5780a1136f">   22</a></span>        <span class="keyword">auto</span>&amp; <a class="code hl_function" href="structpeer__hook.html#a0b1fd35f7f2f55da3ea1eb5780a1136f">query</a>( ecor::get_task_core_t tag )</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">ctx_</a>.query( tag );</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structpeer__hook.html#a0b1fd35f7f2f55da3ea1eb5780a1136f">   24</a></span>        <span class="keyword">auto</span>&amp; <a class="code hl_function" href="structpeer__hook.html#a0b1fd35f7f2f55da3ea1eb5780a1136f">query</a>( ecor::get_task_core_t tag )</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">ctx_</a>.query( tag );</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
 </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structpeer__hook.html#ab295524ff78b19a4424a1d6472a7d203">   27</a></span>        <span class="keyword">virtual</span> asrtio::task&lt; void &gt; <a class="code hl_function" href="structpeer__hook.html#ab295524ff78b19a4424a1d6472a7d203">before</a>() = 0;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structpeer__hook.html#a03965063a4b678b40cf74985b098804d">   28</a></span>        <span class="keyword">virtual</span> asrtio::task&lt; void &gt; <a class="code hl_function" href="structpeer__hook.html#a03965063a4b678b40cf74985b098804d">after</a>()  = 0;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structpeer__hook.html#aa2412529d9d6fefbe05b0893238870d8">   29</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="structpeer__hook.html#aa2412529d9d6fefbe05b0893238870d8">~peer_hook</a>()                  = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">   32</a></span>        asrtio::task_ctx&amp; <a class="code hl_variable" href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">ctx_</a>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structpeer__hook.html#ab295524ff78b19a4424a1d6472a7d203">   29</a></span>        <span class="keyword">virtual</span> asrtio::task&lt; void &gt; <a class="code hl_function" href="structpeer__hook.html#ab295524ff78b19a4424a1d6472a7d203">before</a>() = 0;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structpeer__hook.html#a03965063a4b678b40cf74985b098804d">   30</a></span>        <span class="keyword">virtual</span> asrtio::task&lt; void &gt; <a class="code hl_function" href="structpeer__hook.html#a03965063a4b678b40cf74985b098804d">after</a>()  = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structpeer__hook.html#aa2412529d9d6fefbe05b0893238870d8">   31</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="structpeer__hook.html#aa2412529d9d6fefbe05b0893238870d8">~peer_hook</a>()                  = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">   34</a></span>        asrtio::task_ctx&amp; <a class="code hl_variable" href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">ctx_</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
 </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structharness.html">   41</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structharness.html">harness</a> : asrtio::reporter_base</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_struct" href="structharness.html">harness</a>( asrtio::task_ctx&amp; ctx, pbar::terminal_progress&amp; bar, <span class="keywordtype">int</span> peer_fd );</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_function" href="structharness.html#a3eaf390c671a970a6a46f287b42d1fac">~harness</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structharness.html#a90e33548022e3e53d811e5978c48ff0f">   48</a></span>        <a class="code hl_function" href="structharness.html#a90e33548022e3e53d811e5978c48ff0f">harness</a>( <a class="code hl_struct" href="structharness.html">harness</a> <span class="keyword">const</span>&amp; )            = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structharness.html#a56b7288f84a129b47cb7c9596664e718">   49</a></span>        <a class="code hl_struct" href="structharness.html">harness</a>&amp; <a class="code hl_function" href="structharness.html#a56b7288f84a129b47cb7c9596664e718">operator=</a>( <a class="code hl_struct" href="structharness.html">harness</a> <span class="keyword">const</span>&amp; ) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structharness.html#ab88358586461bbc31a6e4ccf7dc5fe75">   52</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structharness.html#ab88358586461bbc31a6e4ccf7dc5fe75">add</a>( std::string name, std::unique_ptr&lt; peer_hook &gt; hook )</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                registry_.insert_or_assign( std::move( name ), std::move( hook ) );</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="harness_8hpp.html">   38</a></span><span class="keyword">struct </span><a class="code hl_struct" href="harness_8hpp.html#structtest__run__result">test_run_result</a></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="harness_8hpp.html#aca9f7e5c523d27db16448dc92e7bf47a">   40</a></span>        std::string <a class="code hl_variable" href="harness_8hpp.html#aca9f7e5c523d27db16448dc92e7bf47a">name</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="harness_8hpp.html#ad7644514e98af1b379fe810fd519407c">   42</a></span>        uint32_t <a class="code hl_variable" href="harness_8hpp.html#ad7644514e98af1b379fe810fd519407c">run</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="harness_8hpp.html#a8b8a1b6fd539ea4ed6d20d4579718bd7">   43</a></span>        <span class="keywordtype">bool</span>     <a class="code hl_variable" href="harness_8hpp.html#a8b8a1b6fd539ea4ed6d20d4579718bd7">passed</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="harness_8hpp.html#a2974373fb1c028cc909f28fecced133c">   44</a></span>        <span class="keywordtype">double</span>   <a class="code hl_variable" href="harness_8hpp.html#a2974373fb1c028cc909f28fecced133c">duration_ms</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structharness.html#ac2905e9d9f46501419f5e21ebb78ee09">   57</a></span>        asrtio::task&lt; void &gt; <a class="code hl_function" href="structharness.html#ac2905e9d9f46501419f5e21ebb78ee09">on_count</a>( uint32_t total )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keyword">co_await</span> pr_.on_count( total );</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structharness.html">   53</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structharness.html">harness</a> : asrtio::reporter_base</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_struct" href="structharness.html">harness</a>( asrtio::task_ctx&amp; ctx, pbar::terminal_progress&amp; bar, <span class="keywordtype">int</span> peer_fd );</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_function" href="structharness.html#a3eaf390c671a970a6a46f287b42d1fac">~harness</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structharness.html#a90e33548022e3e53d811e5978c48ff0f">   60</a></span>        <a class="code hl_function" href="structharness.html#a90e33548022e3e53d811e5978c48ff0f">harness</a>( <a class="code hl_struct" href="structharness.html">harness</a> <span class="keyword">const</span>&amp; )            = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structharness.html#a56b7288f84a129b47cb7c9596664e718">   61</a></span>        <a class="code hl_struct" href="structharness.html">harness</a>&amp; <a class="code hl_function" href="structharness.html#a56b7288f84a129b47cb7c9596664e718">operator=</a>( <a class="code hl_struct" href="structharness.html">harness</a> <span class="keyword">const</span>&amp; ) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structharness.html#ab88358586461bbc31a6e4ccf7dc5fe75">   64</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structharness.html#ab88358586461bbc31a6e4ccf7dc5fe75">add</a>( std::string name, std::unique_ptr&lt; peer_hook &gt; hook )</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                registry_.insert_or_assign( std::move( name ), std::move( hook ) );</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        asrtio::task&lt; void &gt;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_function" href="structharness.html#aefc46b89656821dc5d52a36b441da1fb">on_test_start</a>( std::string_view name, uint32_t run_idx, uint32_t run_total ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        asrtio::task&lt; void &gt; <a class="code hl_function" href="structharness.html#a22d6e553f5edb51807d36d76d20e7ba7">on_test_done</a>(</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            std::string_view name,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordtype">bool</span>             passed,</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordtype">double</span>           duration_ms,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            uint32_t         run_idx,</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            uint32_t         run_total ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        asrtio::task&lt; void &gt;</div>
-<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structharness.html#a48fc6f8ad2a38595f2d583b66500260f">   73</a></span>        <a class="code hl_function" href="structharness.html#a48fc6f8ad2a38595f2d583b66500260f">on_diagnostic</a>( std::string_view file, uint32_t line, std::string_view extra )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="keyword">co_await</span> pr_.on_diagnostic( file, line, extra );</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structharness.html#ac2905e9d9f46501419f5e21ebb78ee09">   69</a></span>        asrtio::task&lt; void &gt; <a class="code hl_function" href="structharness.html#ac2905e9d9f46501419f5e21ebb78ee09">on_count</a>( uint32_t total )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <span class="keyword">co_await</span> pr_.on_count( total );</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
 </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        asrtio::task&lt; void &gt;</div>
-<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structharness.html#abf791b7c6b6363f17db031bb384ff64d">   79</a></span>        <a class="code hl_function" href="structharness.html#abf791b7c6b6363f17db031bb384ff64d">on_collect_data</a>( std::string_view name, asrt_flat_tree <span class="keyword">const</span>* tree )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keyword">co_await</span> pr_.on_collect_data( name, tree );</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
-</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        asrtio::task&lt; void &gt;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <a class="code hl_function" href="structharness.html#aefc46b89656821dc5d52a36b441da1fb">on_test_start</a>( std::string_view name, uint32_t run_idx, uint32_t run_total ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        asrtio::task&lt; void &gt; <a class="code hl_function" href="structharness.html#a22d6e553f5edb51807d36d76d20e7ba7">on_test_done</a>(</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            std::string_view name,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordtype">bool</span>             passed,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordtype">double</span>           duration_ms,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            uint32_t         run_idx,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            uint32_t         run_total ) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        asrtio::task&lt; void &gt;</div>
 <div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structharness.html#a422a7a094c354e8a785de8e46315be39">   85</a></span>        <a class="code hl_function" href="structharness.html#a422a7a094c354e8a785de8e46315be39">on_stream_data</a>( std::string_view name, asrt::stream_schemas <span class="keyword">const</span>&amp; schemas )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structharness.html#a24bc507114b88d36158cb20d402b1e81">   85</a></span>        std::vector&lt; test_run_result &gt; <span class="keyword">const</span>&amp; <a class="code hl_function" href="structharness.html#a24bc507114b88d36158cb20d402b1e81">results</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keyword">co_await</span> pr_.on_stream_data( name, schemas );</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keywordflow">return</span> results_;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
 </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        asrtio::pbar_reporter                                 pr_;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        std::map&lt; std::string, std::unique_ptr&lt; peer_hook &gt; &gt; registry_;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordtype">int</span>                                                   peer_fd_;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        asrtio::task&lt; void &gt;</div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structharness.html#a48fc6f8ad2a38595f2d583b66500260f">   91</a></span>        <a class="code hl_function" href="structharness.html#a48fc6f8ad2a38595f2d583b66500260f">on_diagnostic</a>( std::string_view file, uint32_t line, std::string_view extra )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                <span class="keyword">co_await</span> pr_.on_diagnostic( file, line, extra );</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
 </div>
-<div class="ttc" id="astructharness_html"><div class="ttname"><a href="structharness.html">harness</a></div><div class="ttdoc">harness wraps pbar_reporter and adds per-test lifecycle hooks for a peer device connected via a dedic...</div><div class="ttdef"><b>Definition</b> harness.hpp:42</div></div>
-<div class="ttc" id="astructharness_html_a22d6e553f5edb51807d36d76d20e7ba7"><div class="ttname"><a href="structharness.html#a22d6e553f5edb51807d36d76d20e7ba7">harness::on_test_done</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_test_done(std::string_view name, bool passed, double duration_ms, uint32_t run_idx, uint32_t run_total) override</div><div class="ttdef"><b>Definition</b> harness.cpp:36</div></div>
-<div class="ttc" id="astructharness_html_a3eaf390c671a970a6a46f287b42d1fac"><div class="ttname"><a href="structharness.html#a3eaf390c671a970a6a46f287b42d1fac">harness::~harness</a></div><div class="ttdeci">~harness() override</div><div class="ttdef"><b>Definition</b> harness.cpp:19</div></div>
-<div class="ttc" id="astructharness_html_a422a7a094c354e8a785de8e46315be39"><div class="ttname"><a href="structharness.html#a422a7a094c354e8a785de8e46315be39">harness::on_stream_data</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_stream_data(std::string_view name, asrt::stream_schemas const &amp;schemas) override</div><div class="ttdef"><b>Definition</b> harness.hpp:85</div></div>
-<div class="ttc" id="astructharness_html_a48fc6f8ad2a38595f2d583b66500260f"><div class="ttname"><a href="structharness.html#a48fc6f8ad2a38595f2d583b66500260f">harness::on_diagnostic</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_diagnostic(std::string_view file, uint32_t line, std::string_view extra) override</div><div class="ttdef"><b>Definition</b> harness.hpp:73</div></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        asrtio::task&lt; void &gt;</div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="structharness.html#abf791b7c6b6363f17db031bb384ff64d">   97</a></span>        <a class="code hl_function" href="structharness.html#abf791b7c6b6363f17db031bb384ff64d">on_collect_data</a>( std::string_view name, asrt_flat_tree <span class="keyword">const</span>* tree )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keyword">co_await</span> pr_.on_collect_data( name, tree );</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        asrtio::task&lt; void &gt;</div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="structharness.html#a422a7a094c354e8a785de8e46315be39">  103</a></span>        <a class="code hl_function" href="structharness.html#a422a7a094c354e8a785de8e46315be39">on_stream_data</a>( std::string_view name, asrt::stream_schemas <span class="keyword">const</span>&amp; schemas )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                <span class="keyword">co_await</span> pr_.on_stream_data( name, schemas );</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        }</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        asrtio::pbar_reporter                                 pr_;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        std::map&lt; std::string, std::unique_ptr&lt; peer_hook &gt; &gt; registry_;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        std::vector&lt; test_run_result &gt;                        results_;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordtype">int</span>                                                   peer_fd_;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
+</div>
+<div class="ttc" id="aharness_8hpp_html_a2974373fb1c028cc909f28fecced133c"><div class="ttname"><a href="harness_8hpp.html#a2974373fb1c028cc909f28fecced133c">test_run_result::duration_ms</a></div><div class="ttdeci">double duration_ms</div><div class="ttdef"><b>Definition</b> harness.hpp:44</div></div>
+<div class="ttc" id="aharness_8hpp_html_a8b8a1b6fd539ea4ed6d20d4579718bd7"><div class="ttname"><a href="harness_8hpp.html#a8b8a1b6fd539ea4ed6d20d4579718bd7">test_run_result::passed</a></div><div class="ttdeci">bool passed</div><div class="ttdef"><b>Definition</b> harness.hpp:43</div></div>
+<div class="ttc" id="aharness_8hpp_html_aca9f7e5c523d27db16448dc92e7bf47a"><div class="ttname"><a href="harness_8hpp.html#aca9f7e5c523d27db16448dc92e7bf47a">test_run_result::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition</b> harness.hpp:40</div></div>
+<div class="ttc" id="aharness_8hpp_html_ad7644514e98af1b379fe810fd519407c"><div class="ttname"><a href="harness_8hpp.html#ad7644514e98af1b379fe810fd519407c">test_run_result::run</a></div><div class="ttdeci">uint32_t run</div><div class="ttdoc">Zero-based, as in the run's output directory.</div><div class="ttdef"><b>Definition</b> harness.hpp:42</div></div>
+<div class="ttc" id="aharness_8hpp_html_structtest__run__result"><div class="ttname"><a href="harness_8hpp.html#structtest__run__result">test_run_result</a></div><div class="ttdoc">Outcome of one run of a test.</div><div class="ttdef"><b>Definition</b> harness.hpp:39</div></div>
+<div class="ttc" id="astructharness_html"><div class="ttname"><a href="structharness.html">harness</a></div><div class="ttdoc">harness wraps pbar_reporter and adds per-test lifecycle hooks for a peer device connected via a dedic...</div><div class="ttdef"><b>Definition</b> harness.hpp:54</div></div>
+<div class="ttc" id="astructharness_html_a22d6e553f5edb51807d36d76d20e7ba7"><div class="ttname"><a href="structharness.html#a22d6e553f5edb51807d36d76d20e7ba7">harness::on_test_done</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_test_done(std::string_view name, bool passed, double duration_ms, uint32_t run_idx, uint32_t run_total) override</div><div class="ttdef"><b>Definition</b> harness.cpp:37</div></div>
+<div class="ttc" id="astructharness_html_a24bc507114b88d36158cb20d402b1e81"><div class="ttname"><a href="structharness.html#a24bc507114b88d36158cb20d402b1e81">harness::results</a></div><div class="ttdeci">std::vector&lt; test_run_result &gt; const &amp; results() const</div><div class="ttdoc">Results of the runs finished so far, in the order they finished.</div><div class="ttdef"><b>Definition</b> harness.hpp:85</div></div>
+<div class="ttc" id="astructharness_html_a3eaf390c671a970a6a46f287b42d1fac"><div class="ttname"><a href="structharness.html#a3eaf390c671a970a6a46f287b42d1fac">harness::~harness</a></div><div class="ttdeci">~harness() override</div><div class="ttdef"><b>Definition</b> harness.cpp:20</div></div>
+<div class="ttc" id="astructharness_html_a422a7a094c354e8a785de8e46315be39"><div class="ttname"><a href="structharness.html#a422a7a094c354e8a785de8e46315be39">harness::on_stream_data</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_stream_data(std::string_view name, asrt::stream_schemas const &amp;schemas) override</div><div class="ttdef"><b>Definition</b> harness.hpp:103</div></div>
+<div class="ttc" id="astructharness_html_a48fc6f8ad2a38595f2d583b66500260f"><div class="ttname"><a href="structharness.html#a48fc6f8ad2a38595f2d583b66500260f">harness::on_diagnostic</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_diagnostic(std::string_view file, uint32_t line, std::string_view extra) override</div><div class="ttdef"><b>Definition</b> harness.hpp:91</div></div>
 <div class="ttc" id="astructharness_html_a56b7288f84a129b47cb7c9596664e718"><div class="ttname"><a href="structharness.html#a56b7288f84a129b47cb7c9596664e718">harness::operator=</a></div><div class="ttdeci">harness &amp; operator=(harness const &amp;)=delete</div></div>
 <div class="ttc" id="astructharness_html_a90e33548022e3e53d811e5978c48ff0f"><div class="ttname"><a href="structharness.html#a90e33548022e3e53d811e5978c48ff0f">harness::harness</a></div><div class="ttdeci">harness(harness const &amp;)=delete</div></div>
-<div class="ttc" id="astructharness_html_ab88358586461bbc31a6e4ccf7dc5fe75"><div class="ttname"><a href="structharness.html#ab88358586461bbc31a6e4ccf7dc5fe75">harness::add</a></div><div class="ttdeci">void add(std::string name, std::unique_ptr&lt; peer_hook &gt; hook)</div><div class="ttdoc">Register a hook for a test identified by name.</div><div class="ttdef"><b>Definition</b> harness.hpp:52</div></div>
-<div class="ttc" id="astructharness_html_abf791b7c6b6363f17db031bb384ff64d"><div class="ttname"><a href="structharness.html#abf791b7c6b6363f17db031bb384ff64d">harness::on_collect_data</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_collect_data(std::string_view name, asrt_flat_tree const *tree) override</div><div class="ttdef"><b>Definition</b> harness.hpp:79</div></div>
-<div class="ttc" id="astructharness_html_ac2905e9d9f46501419f5e21ebb78ee09"><div class="ttname"><a href="structharness.html#ac2905e9d9f46501419f5e21ebb78ee09">harness::on_count</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_count(uint32_t total) override</div><div class="ttdef"><b>Definition</b> harness.hpp:57</div></div>
-<div class="ttc" id="astructharness_html_aefc46b89656821dc5d52a36b441da1fb"><div class="ttname"><a href="structharness.html#aefc46b89656821dc5d52a36b441da1fb">harness::on_test_start</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_test_start(std::string_view name, uint32_t run_idx, uint32_t run_total) override</div><div class="ttdef"><b>Definition</b> harness.cpp:26</div></div>
-<div class="ttc" id="astructpeer__hook_html"><div class="ttname"><a href="structpeer__hook.html">peer_hook</a></div><div class="ttdef"><b>Definition</b> harness.hpp:11</div></div>
-<div class="ttc" id="astructpeer__hook_html_a02a13e658b4b091e52178449c6f5e4fa"><div class="ttname"><a href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">peer_hook::ctx_</a></div><div class="ttdeci">asrtio::task_ctx &amp; ctx_</div><div class="ttdef"><b>Definition</b> harness.hpp:32</div></div>
+<div class="ttc" id="astructharness_html_ab88358586461bbc31a6e4ccf7dc5fe75"><div class="ttname"><a href="structharness.html#ab88358586461bbc31a6e4ccf7dc5fe75">harness::add</a></div><div class="ttdeci">void add(std::string name, std::unique_ptr&lt; peer_hook &gt; hook)</div><div class="ttdoc">Register a hook for a test identified by name.</div><div class="ttdef"><b>Definition</b> harness.hpp:64</div></div>
+<div class="ttc" id="astructharness_html_abf791b7c6b6363f17db031bb384ff64d"><div class="ttname"><a href="structharness.html#abf791b7c6b6363f17db031bb384ff64d">harness::on_collect_data</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_collect_data(std::string_view name, asrt_flat_tree const *tree) override</div><div class="ttdef"><b>Definition</b> harness.hpp:97</div></div>
+<div class="ttc" id="astructharness_html_ac2905e9d9f46501419f5e21ebb78ee09"><div class="ttname"><a href="structharness.html#ac2905e9d9f46501419f5e21ebb78ee09">harness::on_count</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_count(uint32_t total) override</div><div class="ttdef"><b>Definition</b> harness.hpp:69</div></div>
+<div class="ttc" id="astructharness_html_aefc46b89656821dc5d52a36b441da1fb"><div class="ttname"><a href="structharness.html#aefc46b89656821dc5d52a36b441da1fb">harness::on_test_start</a></div><div class="ttdeci">asrtio::task&lt; void &gt; on_test_start(std::string_view name, uint32_t run_idx, uint32_t run_total) override</div><div class="ttdef"><b>Definition</b> harness.cpp:27</div></div>
+<div class="ttc" id="astructpeer__hook_html"><div class="ttname"><a href="structpeer__hook.html">peer_hook</a></div><div class="ttdef"><b>Definition</b> harness.hpp:13</div></div>
+<div class="ttc" id="astructpeer__hook_html_a02a13e658b4b091e52178449c6f5e4fa"><div class="ttname"><a href="structpeer__hook.html#a02a13e658b4b091e52178449c6f5e4fa">peer_hook::ctx_</a></div><div class="ttdeci">asrtio::task_ctx &amp; ctx_</div><div class="ttdef"><b>Definition</b> harness.hpp:34</div></div>
 <div class="ttc" id="astructpeer__hook_html_a03965063a4b678b40cf74985b098804d"><div class="ttname"><a href="structpeer__hook.html#a03965063a4b678b40cf74985b098804d">peer_hook::after</a></div><div class="ttdeci">virtual asrtio::task&lt; void &gt; after()=0</div></div>
-<div class="ttc" id="astructpeer__hook_html_a0b1fd35f7f2f55da3ea1eb5780a1136f"><div class="ttname"><a href="structpeer__hook.html#a0b1fd35f7f2f55da3ea1eb5780a1136f">peer_hook::query</a></div><div class="ttdeci">auto &amp; query(ecor::get_task_core_t tag)</div><div class="ttdef"><b>Definition</b> harness.hpp:22</div></div>
-<div class="ttc" id="astructpeer__hook_html_a9eea3ba3508ea2b5134680db65949898"><div class="ttname"><a href="structpeer__hook.html#a9eea3ba3508ea2b5134680db65949898">peer_hook::query</a></div><div class="ttdeci">auto &amp; query(ecor::get_memory_resource_t tag)</div><div class="ttdef"><b>Definition</b> harness.hpp:17</div></div>
+<div class="ttc" id="astructpeer__hook_html_a0b1fd35f7f2f55da3ea1eb5780a1136f"><div class="ttname"><a href="structpeer__hook.html#a0b1fd35f7f2f55da3ea1eb5780a1136f">peer_hook::query</a></div><div class="ttdeci">auto &amp; query(ecor::get_task_core_t tag)</div><div class="ttdef"><b>Definition</b> harness.hpp:24</div></div>
+<div class="ttc" id="astructpeer__hook_html_a9eea3ba3508ea2b5134680db65949898"><div class="ttname"><a href="structpeer__hook.html#a9eea3ba3508ea2b5134680db65949898">peer_hook::query</a></div><div class="ttdeci">auto &amp; query(ecor::get_memory_resource_t tag)</div><div class="ttdef"><b>Definition</b> harness.hpp:19</div></div>
 <div class="ttc" id="astructpeer__hook_html_aa2412529d9d6fefbe05b0893238870d8"><div class="ttname"><a href="structpeer__hook.html#aa2412529d9d6fefbe05b0893238870d8">peer_hook::~peer_hook</a></div><div class="ttdeci">virtual ~peer_hook()=default</div></div>
-<div class="ttc" id="astructpeer__hook_html_ab22b3106ef2ec9582e1bc20eda263c48"><div class="ttname"><a href="structpeer__hook.html#ab22b3106ef2ec9582e1bc20eda263c48">peer_hook::peer_hook</a></div><div class="ttdeci">peer_hook(asrtio::task_ctx &amp;ctx)</div><div class="ttdef"><b>Definition</b> harness.hpp:12</div></div>
+<div class="ttc" id="astructpeer__hook_html_ab22b3106ef2ec9582e1bc20eda263c48"><div class="ttname"><a href="structpeer__hook.html#ab22b3106ef2ec9582e1bc20eda263c48">peer_hook::peer_hook</a></div><div class="ttdeci">peer_hook(asrtio::task_ctx &amp;ctx)</div><div class="ttdef"><b>Definition</b> harness.hpp:14</div></div>
 <div class="ttc" id="astructpeer__hook_html_ab295524ff78b19a4424a1d6472a7d203"><div class="ttname"><a href="structpeer__hook.html#ab295524ff78b19a4424a1d6472a7d203">peer_hook::before</a></div><div class="ttdeci">virtual asrtio::task&lt; void &gt; before()=0</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -230,7 +256,7 @@ $(document).ready(function(){initNavTree('harness_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="harness_8hpp.html">harness.hpp</a></li>
-    <li class="footer">Generated on Fri Oct 9 2026 21:33:32 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -1,5 +1,11 @@
 var NAVTREEINDEX17 =
 {
+"structsilent__peer.html#acce90d674abb643638b3a5163336ed27":[18,0,7,2],
+"structstd_1_1formatter_3_01A_00_01char_01_4.html":[17,0,5,0],
+"structstd_1_1formatter_3_01A_00_01char_01_4.html":[18,0,3,0],
+"structstd_1_1formatter_3_01A_00_01char_01_4.html#af37f36e10a12baf1b5fc6083a320f237":[17,0,5,0,0],
+"structstd_1_1formatter_3_01A_00_01char_01_4.html#af37f36e10a12baf1b5fc6083a320f237":[18,0,3,0,0],
+"structstd_1_1formatter_3_01A_00_01char_01_4.html#af3ad8edccb5a7222ac0bd6317d9a20a6":[17,0,5,0,1],
 "structstd_1_1formatter_3_01A_00_01char_01_4.html#af3ad8edccb5a7222ac0bd6317d9a20a6":[18,0,3,0,1],
 "structstd_1_1formatter_3_01avakar_1_1atom_3_01As_8_8_8_01_4_00_01char_01_4.html":[18,0,3,1],
 "structstd_1_1formatter_3_01avakar_1_1atom_3_01As_8_8_8_01_4_00_01char_01_4.html":[17,0,5,1],

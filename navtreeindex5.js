@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"namespaceservio_1_1cfg.html#ac80d4a995f39ca9ccba86cf314ae22e5":[17,0,4,2,35],
+"namespaceservio_1_1cfg.html#ac8f5435c9fa3c13484cc024555065971":[19,0,1,2,1,9,0],
+"namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451":[17,0,4,2,32],
+"namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a02c9adc0d63e270f7ea08ef4008e81bf":[17,0,4,2,32,0],
+"namespaceservio_1_1cfg.html#ac95eb32082e3a9fbeb45c101ed4e6451a9a7821516bdd5d9a1586f094d6e1aacb":[17,0,4,2,32,1],
 "namespaceservio_1_1cfg.html#ad3a87c381f3fd90e336373a20951af56":[17,0,4,2,39],
 "namespaceservio_1_1cfg.html#add50dd121470b669a8dca5537607c825":[19,0,1,2,1,3,0],
 "namespaceservio_1_1cfg.html#adde3a4db34ea4358f6fa074ea98f6f61":[17,0,4,2,31],
@@ -244,10 +249,5 @@ var NAVTREEINDEX5 =
 "namespaceservio_1_1gov_1_1pos_1_1iface.html#aed9a3de05828b4c09344c840d0d5a248":[17,0,4,8,1,1,2],
 "namespaceservio_1_1gov_1_1pos_1_1tests.html":[17,0,4,8,1,2],
 "namespaceservio_1_1gov_1_1pos_1_1tests.html#a59a0bb64366975749b1f2c8dc89ada0d":[17,0,4,8,1,2,0],
-"namespaceservio_1_1gov_1_1pow.html":[17,0,4,8,2],
-"namespaceservio_1_1gov_1_1pow_1_1iface.html":[17,0,4,8,2,0],
-"namespaceservio_1_1gov_1_1pow_1_1iface.html#a8c0e88cfefd9efad9c139898f0d610ee":[17,0,4,8,2,0,2],
-"namespaceservio_1_1gov_1_1pow_1_1iface.html#ad9f1a01c56a6e0c5e7d5d0c8c9af4643":[17,0,4,8,2,0,3],
-"namespaceservio_1_1gov_1_1pow_1_1tests.html":[17,0,4,8,2,1],
-"namespaceservio_1_1gov_1_1pow_1_1tests.html#a51ff73a6a10beecc1a162989e4d42ab0":[17,0,4,8,2,1,0]
+"namespaceservio_1_1gov_1_1pow.html":[17,0,4,8,2]
 };

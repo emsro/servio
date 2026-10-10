@@ -98,15 +98,17 @@ $(document).ready(function(){initNavTree('harness_8hpp.html',''); initResizable(
 <div class="contents">
 <div class="textblock"><code>#include &quot;pbar_reporter.hpp&quot;</code><br />
 <code>#include &quot;transport.hpp&quot;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for harness.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="harness_8hpp__incl.svg" width="542" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="harness_8hpp__incl.svg" width="719" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="harness_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -115,17 +117,70 @@ $(document).ready(function(){initNavTree('harness_8hpp.html',''); initResizable(
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpeer__hook.html">peer_hook</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structtest__run__result" id="r_structtest__run__result"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="harness_8hpp.html#structtest__run__result">test_run_result</a></td></tr>
+<tr class="memdesc:structtest__run__result"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outcome of one run of a test.  <a href="harness_8hpp.html#structtest__run__result">More...</a><br /></td></tr>
+<tr class="separator:structtest__run__result"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structharness.html">harness</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">harness wraps pbar_reporter and adds per-test lifecycle hooks for a peer device connected via a dedicated serial port.  <a href="structharness.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structtest__run__result" id="structtest__run__result"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structtest__run__result">&#9670;&#160;</a></span>test_run_result</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct test_run_result</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>Outcome of one run of a test. </p>
+</div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for test_run_result:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structtest__run__result__coll__graph.svg" width="150" height="214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a2974373fb1c028cc909f28fecced133c" name="a2974373fb1c028cc909f28fecced133c"></a>double</td>
+<td class="fieldname">
+duration_ms</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aca9f7e5c523d27db16448dc92e7bf47a" name="aca9f7e5c523d27db16448dc92e7bf47a"></a>string</td>
+<td class="fieldname">
+name</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a8b8a1b6fd539ea4ed6d20d4579718bd7" name="a8b8a1b6fd539ea4ed6d20d4579718bd7"></a>bool</td>
+<td class="fieldname">
+passed</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ad7644514e98af1b379fe810fd519407c" name="ad7644514e98af1b379fe810fd519407c"></a>uint32_t</td>
+<td class="fieldname">
+run</td>
+<td class="fielddoc">
+Zero-based, as in the run's output directory. </td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0b2bb1ceeda43d52e603b768763011a.html">ftester</a></li><li class="navelem"><a class="el" href="harness_8hpp.html">harness.hpp</a></li>
-    <li class="footer">Generated on Fri Oct 9 2026 21:33:32 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

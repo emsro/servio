@@ -337,6 +337,7 @@ var hierarchy =
       [ "servio::bb::bb_test_case", "structservio_1_1bb_1_1bb__test__case.html", null ],
       [ "servio::gov::gov_fixture", "structservio_1_1gov_1_1gov__fixture.html", null ]
     ] ],
+    [ "test_run_result", "harness_8hpp.html#structtest__run__result", null ],
     [ "servio::ftest::testing_system", "structservio_1_1ftest_1_1testing__system.html", null ],
     [ "std::true_type", null, [
       [ "boost::asio::is_match_condition< servio::scmdio::match_byte >", "structboost_1_1asio_1_1is__match__condition_3_01servio_1_1scmdio_1_1match__byte_01_4.html", null ]
