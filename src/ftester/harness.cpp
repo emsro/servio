@@ -5,6 +5,7 @@
 #include "task.hpp"
 
 #include <cstdint>
+#include <string>
 #include <string_view>
 #include <termios.h>
 #include <unistd.h>
@@ -41,6 +42,11 @@ asrtio::task< void > harness::on_test_done(
     uint32_t         run_total )
 {
         co_await pr_.on_test_done( name, passed, duration_ms, run_idx, run_total );
+        results_.push_back(
+            { .name        = std::string{ name },
+              .run         = run_idx - 1,
+              .passed      = passed,
+              .duration_ms = duration_ms } );
         auto const it = registry_.find( std::string{ name } );
         if ( it != registry_.end() ) {
                 co_await it->second->after();

@@ -12,12 +12,16 @@
 #include "util.hpp"
 
 #include <CLI/CLI.hpp>
+#include <algorithm>
 #include <asrtl/log.h>
 #include <asrtlpp/task.hpp>
 #include <chrono>
 #include <cstdarg>
 #include <cstdint>
+#include <ecor/ecor.hpp>
+#include <filesystem>
 #include <memory>
+#include <nlohmann/json.hpp>
 #include <optional>
 #include <ostream>
 #include <print>
@@ -31,6 +35,36 @@ namespace
 pbar::terminal_progress* g_active_bar = nullptr;
 asrt_log_level           g_log_level  = ASRT_LOG_ERROR;
 std::ostream*            g_log_file   = nullptr;
+
+/// Forwards to final_receiver and records whether the test suite ran to completion.
+struct outcome_receiver
+{
+        using receiver_concept = ecor::receiver_t;
+
+        asrtio::final_receiver inner;
+        bool*                  completed;
+
+        void set_value()
+        {
+                *completed = true;
+                inner.set_value();
+        }
+
+        void set_error( ecor::task_error e )
+        {
+                inner.set_error( e );
+        }
+
+        void set_error( asrt::status s )
+        {
+                inner.set_error( s );
+        }
+
+        void set_stopped()
+        {
+                inner.set_stopped();
+        }
+};
 
 }  // namespace
 
@@ -48,11 +82,12 @@ int main( int argc, char* argv[] )
 {
         pbar::terminal_progress bar;
         using namespace asrtio;
-        uv_loop_t* loop = uv_default_loop();
-        std::optional< complete_arena_connect_result< task< void >, final_receiver > > t;
-        asrt::malloc_free_memory_resource                                              mem_res;
-        real_fs                                                                        rfs;
-        null_fs                                                                        nfs;
+        uv_loop_t* loop      = uv_default_loop();
+        bool       completed = false;
+        std::optional< complete_arena_connect_result< task< void >, outcome_receiver > > t;
+        asrt::malloc_free_memory_resource                                                mem_res;
+        real_fs                                                                          rfs;
+        null_fs                                                                          nfs;
         task_ctx     ctx{ mem_res };
         arena        ar{ ctx, mem_res };
         steady_clock clk;
@@ -132,7 +167,9 @@ int main( int argc, char* argv[] )
                 output_dir.empty() ? static_cast< output_fs& >( nfs ) : rfs,
                 output_dir,
                 h ),
-            final_receiver{ .idle = &idle, .active_bar = &g_active_bar } );
+            outcome_receiver{
+                .inner     = { .idle = &idle, .active_bar = &g_active_bar },
+                .completed = &completed } );
         g_active_bar = &bar;
 
         idle.data = &ctx;
@@ -149,8 +186,21 @@ int main( int argc, char* argv[] )
         uv_loop_close( loop );
         bar.finish();
 
+        if ( !output_dir.empty() ) {
+                nlohmann::json results = nlohmann::json::array();
+                for ( test_run_result const& r : h.results() )
+                        results.push_back(
+                            { { "name", r.name },
+                              { "run", r.run },
+                              { "passed", r.passed },
+                              { "duration_ms", r.duration_ms } } );
+                auto w = rfs.open_write( std::filesystem::path{ output_dir } / "results.json" );
+                w.stream() << results.dump( 2 ) << '\n';
+        }
+
         g_log_file = nullptr;
         log_writer.reset();
 
-        return 0;
+        bool const all_passed = std::ranges::all_of( h.results(), &test_run_result::passed );
+        return completed && all_passed ? 0 : 1;
 }

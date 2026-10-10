@@ -3,9 +3,11 @@
 #include "pbar_reporter.hpp"
 #include "transport.hpp"
 
+#include <cstdint>
 #include <map>
 #include <memory>
 #include <string>
+#include <vector>
 
 struct peer_hook
 {
@@ -30,6 +32,16 @@ struct peer_hook
 
 protected:
         asrtio::task_ctx& ctx_;
+};
+
+/// Outcome of one run of a test.
+struct test_run_result
+{
+        std::string name;
+        /// Zero-based, as in the run's output directory.
+        uint32_t run;
+        bool     passed;
+        double   duration_ms;
 };
 
 /// harness wraps pbar_reporter and adds per-test lifecycle hooks for a peer
@@ -69,6 +81,12 @@ struct harness : asrtio::reporter_base
             uint32_t         run_idx,
             uint32_t         run_total ) override;
 
+        /// Results of the runs finished so far, in the order they finished.
+        std::vector< test_run_result > const& results() const
+        {
+                return results_;
+        }
+
         asrtio::task< void >
         on_diagnostic( std::string_view file, uint32_t line, std::string_view extra ) override
         {
@@ -90,5 +108,6 @@ struct harness : asrtio::reporter_base
 private:
         asrtio::pbar_reporter                                 pr_;
         std::map< std::string, std::unique_ptr< peer_hook > > registry_;
+        std::vector< test_run_result >                        results_;
         int                                                   peer_fd_;
 };
