@@ -7,7 +7,10 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 99)
 
 cmake_policy(SET CMP0077 NEW)
-option(SERVIO_PLATFORM "Target platform")
+set(SERVIO_PLATFORM
+    ""
+    CACHE STRING "Target platform")
+set_property(CACHE SERVIO_PLATFORM PROPERTY STRINGS host stm32h5)
 
 if(${SERVIO_PLATFORM} STREQUAL "stm32h5")
   set(SERVIO_CPU_FLAGS

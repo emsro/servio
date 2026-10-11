@@ -26,28 +26,28 @@ check_mode( scmdio::port_iface& port, std::string_view expected, std::optional< 
 }
 
 boost::asio::awaitable< void >
-test_power( boost::asio::io_context const& io, scmdio::port_iface& port )
+test_power( boost::asio::io_context const&, scmdio::port_iface& port )
 {
         co_await check_mode( port, "power", 0.0f );
         co_await govctl_deactivate( port );
 }
 
 boost::asio::awaitable< void >
-test_current( boost::asio::io_context const& io, scmdio::port_iface& port )
+test_current( boost::asio::io_context const&, scmdio::port_iface& port )
 {
         co_await check_mode( port, "current", 0.0f );
         co_await govctl_deactivate( port );
 }
 
 boost::asio::awaitable< void >
-test_velocity( boost::asio::io_context const& io, scmdio::port_iface& port )
+test_velocity( boost::asio::io_context const&, scmdio::port_iface& port )
 {
         co_await check_mode( port, "velocity", 0.0f );
         co_await govctl_deactivate( port );
 }
 
 boost::asio::awaitable< void >
-test_position( boost::asio::io_context const& io, scmdio::port_iface& port )
+test_position( boost::asio::io_context const&, scmdio::port_iface& port )
 {
         co_await check_mode( port, "position", 0.0f );
         co_await govctl_deactivate( port );

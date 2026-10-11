@@ -43,20 +43,20 @@ void check(
 {
         static constexpr bool is_valid = !std::same_as< T, _invalid >;
         if ( nrs ) {
-                if constexpr ( !is_valid )
+                if constexpr ( !is_valid ) {
                         FAIL() << "Expected no result, got "
                                << ( nrs->is_num ? static_cast< real >( nrs->n ) : nrs->r )
                                << "\n loc: " << loc.file_name() << ":" << loc.line();
-                else if constexpr ( std::is_same_v< T, num > )
+                } else if constexpr ( std::is_same_v< T, num > ) {
                         EXPECT_EQ( nrs->n, n )
                             << "\n loc: " << loc.file_name() << ":" << loc.line();
-                else if constexpr ( std::is_same_v< T, real > )
+                } else if constexpr ( std::is_same_v< T, real > ) {
                         EXPECT_NEAR( nrs->r, n, 1e-6 )
                             << "\n loc: " << loc.file_name() << ":" << loc.line();
-        } else {
-                if constexpr ( !std::is_same_v< T, _invalid > )
-                        FAIL() << "Expected result, got none" << "\n loc: " << loc.file_name()
-                               << ":" << loc.line();
+                }
+        } else if constexpr ( !std::is_same_v< T, _invalid > ) {
+                FAIL() << "Expected result, got none" << "\n loc: " << loc.file_name() << ":"
+                       << loc.line();
         }
 }
 

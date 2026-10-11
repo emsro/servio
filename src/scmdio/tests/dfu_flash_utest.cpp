@@ -178,7 +178,7 @@ struct stm32_bootloader_mock : stream_iface
         cons state_machine()
         {
                 auto b = co_await cons::get< 1 >{};
-                assert( b[0] == INIT );
+                EXPECT_EQ( b[0], INIT );
                 buffer.emplace_back( ACK );
 
                 while ( true ) {

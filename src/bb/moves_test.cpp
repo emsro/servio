@@ -46,7 +46,7 @@ boost::asio::awaitable< void > test_current( boost::asio::io_context& io, scmdio
 }
 
 boost::asio::awaitable< void >
-test_position( boost::asio::io_context const& io, scmdio::port_iface& port )
+test_position( boost::asio::io_context const&, scmdio::port_iface& port )
 {
         co_await scmdio::govctl_activate( port, "position" );
         for ( float pos : { pi / 4, pi * 3 / 2, pi } ) {

@@ -212,6 +212,7 @@ void gov_def( CLI::App& app, io_context& io_ctx )
         auto ctx = std::make_shared< gov_opts >();
 
         auto* gov = app.add_subcommand( "gov", "interact with a specific governor" );
+        gov->allow_extras();
         gov->add_option( "governor", ctx->governor, "governor to interact with" )->required();
         port_opts( *gov, ctx->port );
 
@@ -391,7 +392,8 @@ int main( int argc, char* argv[] )
         scmdio::cfg_def( app, ctx );
         scmdio::pool_def( app, ctx );
         scmdio::govctl_def( app, ctx );
-        // scmdio::autotune_def( app, ctx ); XXX: finish
+        scmdio::gov_def( app, ctx );
+        scmdio::autotune_def( app, ctx );
         scmdio::info_def( app, ctx );
         scmdio::flash_def( app, ctx );
         scmdio::dfu_def( app, ctx );
