@@ -48,9 +48,11 @@ struct _current_gov final : governor, handle
                 }
         }
 
-        engage_res engage( em::pmr::memory_resource& ) override
+        engage_res engage( em::pmr::memory_resource&, microseconds now, float, float ) override
         {
                 power = pwr( 0.F );
+                goal  = 0.F;
+                em::reset( pid, now.count(), 0.F );
                 return { .stat = status::success, .h = this };
         }
 

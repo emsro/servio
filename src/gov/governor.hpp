@@ -48,8 +48,13 @@ struct governor
         virtual cfg::iface*      get_cfg()                                                    = 0;
         virtual std::string_view name() const                                                 = 0;
         virtual status           on_cmd( iface::cmd_parser cmd, servio::iface::root_ser out ) = 0;
-        virtual engage_res       engage( em::pmr::memory_resource& mem )                      = 0;
         virtual status           disengage( handle& )                                         = 0;
+
+        virtual engage_res engage(
+            em::pmr::memory_resource& mem,
+            microseconds              now,
+            float                     position,
+            float                     velocity ) = 0;
 
         virtual uint16_t cfg_section() const
         {

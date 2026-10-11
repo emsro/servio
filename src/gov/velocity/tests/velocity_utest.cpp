@@ -3,11 +3,13 @@
 #include "../../../lib/json_ser.hpp"
 #include "../../../lib/parser.hpp"
 #include "../../../status.hpp"
+#include "../../governor_manager.hpp"
 #include "../../tests/gov_fixture.hpp"
 #include "../velocity.hpp"
 
 #include <cmath>
 #include <cstddef>
+#include <emlabcpp/pmr/new_delete_resource.hpp>
 #include <emlabcpp/range.hpp>
 #include <format>
 #include <gtest/gtest.h>
@@ -69,5 +71,38 @@ TEST( vel_gov, power_and_outer_integrator_stay_in_limits )
                         EXPECT_GE( gov.vel_pid.i_sum, gov.cfg.curr_lim_min ) << "goal: " << goal;
                 }
         }
+}
+
+TEST( vel_gov, engage_after_idle_has_no_output_step )
+{
+        _velocity_gov gov;
+        gov.cfg.curr_loop_p = 0.F;
+        gov.cfg.curr_loop_i = 3.F;
+        gov.cfg.vel_loop_p  = 0.F;
+        gov.cfg.vel_loop_i  = 10.F;
+        gov.get_cfg()->apply_all();
+
+        governor_manager gm;
+        ASSERT_TRUE( gm.add_gov( gov ) );
+        auto const tick = [&]( microseconds now ) {
+                gm.metrics_irq( now, 0.F, 0.F, true );
+                return gm.current_irq( now, 0.F );
+        };
+
+        ASSERT_EQ(
+            gm.activate( "velocity", em::pmr::new_delete_resource(), 0_ms, 0.F, 0.F ),
+            status::success );
+        gov.goal_vel = 1.F;
+        for ( std::size_t const i : em::range( 100U ) )
+                std::ignore = tick( 1_ms * ( i + 1 ) );
+        ASSERT_EQ( gm.deactivate(), status::success );
+
+        ASSERT_EQ(
+            gm.activate( "velocity", em::pmr::new_delete_resource(), 10_s, 0.F, 0.F ),
+            status::success );
+        gov.goal_vel = 0.1F;
+        std::ignore  = tick( 10_s );
+        pwr const p  = tick( 10_s + 1_ms );
+        EXPECT_NEAR( *p, 0.F, 1e-3F );
 }
 }  // namespace servio::gov::vel::tests

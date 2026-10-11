@@ -29,7 +29,12 @@ struct current_ctl_test : utest
                 em::defer d = setup_poweroff( cor.govs.manager );
 
                 float expected = 0.2F;
-                std::ignore    = cor.govs.manager.activate( "current", cor.govs.mem );
+                std::ignore    = cor.govs.manager.activate(
+                    "current",
+                    cor.govs.mem,
+                    clk.get_us(),
+                    cor.met.get_position(),
+                    cor.met.get_velocity() );
                 auto* p = dynamic_cast< gov::curr::_current_gov* >( cor.govs.manager.active() );
                 co_await expect( *this, p != nullptr );
                 p->set_goal_current( expected );
@@ -76,8 +81,13 @@ struct sign_test : utest
                         return ecor::just();
                 } );
 
-                std::ignore = cor.govs.manager.activate( "power", cor.govs.mem );
-                auto* p     = dynamic_cast< gov::pow::_power_gov* >( cor.govs.manager.active() );
+                std::ignore = cor.govs.manager.activate(
+                    "power",
+                    cor.govs.mem,
+                    clk.get_us(),
+                    cor.met.get_position(),
+                    cor.met.get_velocity() );
+                auto* p = dynamic_cast< gov::pow::_power_gov* >( cor.govs.manager.active() );
                 co_await expect( *this, p != nullptr );
                 p->power = p_low / 2.F;
                 co_await wait_for( *this, clk, 200_ms );

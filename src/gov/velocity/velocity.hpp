@@ -67,9 +67,14 @@ struct _velocity_gov final : governor, handle
                 }
         }
 
-        engage_res engage( em::pmr::memory_resource& ) override
+        engage_res
+        engage( em::pmr::memory_resource&, microseconds now, float, float velocity ) override
         {
-                goal_vel = 0.F;
+                goal_vel  = 0.F;
+                goal_curr = 0.F;
+                em::reset( curr_pid, now.count(), 0.F );
+                em::reset( vel_pid, now.count(), velocity );
+                current_scale_regl.reset( now );
                 return { .stat = status::success, .h = this };
         }
 

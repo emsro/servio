@@ -33,7 +33,12 @@ struct governor_manager
                 return status::failure;
         }
 
-        status activate( std::string_view name, em::pmr::memory_resource& buffer )
+        status activate(
+            std::string_view          name,
+            em::pmr::memory_resource& buffer,
+            microseconds              now,
+            float                     position,
+            float                     velocity )
         {
                 status s = status::error;
                 if ( active_ ) {
@@ -44,7 +49,8 @@ struct governor_manager
                         if ( g->name() == name ) {
                                 active_ = g.get();
 
-                                std::tie( s, active_h_ ) = g->engage( buffer );
+                                std::tie( s, active_h_ ) =
+                                    g->engage( buffer, now, position, velocity );
                                 break;
                         }
                 }

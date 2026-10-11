@@ -22,7 +22,7 @@ struct _power_gov final : governor, handle
                 return nullptr;
         };
 
-        engage_res engage( em::pmr::memory_resource& ) override
+        engage_res engage( em::pmr::memory_resource&, microseconds, float, float ) override
         {
                 power = 0_pwr;
                 return { .stat = status::success, .h = this };

@@ -3,11 +3,13 @@
 #include "../../../lib/json_ser.hpp"
 #include "../../../lib/parser.hpp"
 #include "../../../status.hpp"
+#include "../../governor_manager.hpp"
 #include "../../tests/gov_fixture.hpp"
 #include "../position.hpp"
 
 #include <cmath>
 #include <cstddef>
+#include <emlabcpp/pmr/new_delete_resource.hpp>
 #include <emlabcpp/range.hpp>
 #include <format>
 #include <gtest/gtest.h>
@@ -74,5 +76,26 @@ TEST( pos_gov, power_and_outer_integrator_stay_in_limits )
                         EXPECT_GE( gov.pos_pid.i_sum, gov.cfg.curr_lim_min ) << "goal: " << goal;
                 }
         }
+}
+
+TEST( pos_gov, engage_holds_measured_position )
+{
+        _position_gov gov;
+        gov.get_cfg()->apply_all();
+
+        float const      theta = 1.F;
+        governor_manager gm;
+        ASSERT_TRUE( gm.add_gov( gov ) );
+        ASSERT_EQ(
+            gm.activate( "position", em::pmr::new_delete_resource(), 10_s, theta, 0.F ),
+            status::success );
+
+        for ( std::size_t const i : em::range( 100U ) ) {
+                microseconds const now = 10_s + 1_ms * i;
+                gm.metrics_irq( now, theta, 0.F, false );
+                pwr const p = gm.current_irq( now, 0.F );
+                EXPECT_NEAR( *p, 0.F, 1e-3F );
+        }
+        EXPECT_EQ( gov.goal_pos, theta );
 }
 }  // namespace servio::gov::pos::tests

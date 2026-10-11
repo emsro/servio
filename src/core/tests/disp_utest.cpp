@@ -91,7 +91,8 @@ TEST( core, dispatcher )
         // XXX: negative tests
 
         // mode
-        auto const tmp = cor.govs.manager.activate( "power", em::pmr::new_delete_resource() );
+        auto const tmp =
+            cor.govs.manager.activate( "power", em::pmr::new_delete_resource(), 0_ms, 0.F, 0.F );
         EXPECT_EQ( tmp, status::success );
         test( "govctl deactivate", R"(["OK"])"_json );
         EXPECT_EQ( cor.govs.manager.active(), nullptr );

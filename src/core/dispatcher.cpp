@@ -68,11 +68,14 @@ void handle_gov_message(
     vari::vref< iface::govctl_stmts const > inpt,
     em::pmr::memory_resource&               mem,
     gov::governor_manager&                  gv,
+    microseconds                            now,
+    mtr::metrics const&                     met,
     iface::root_ser                         out )
 {
         inpt.visit(
             [&]( iface::govctl_activate_stmt const& a ) {
-                    error_code s = gv.activate( a.governor, mem );
+                    error_code s =
+                        gv.activate( a.governor, mem, now, met.get_position(), met.get_velocity() );
                     if ( s == status::success )
                             std::move( out ).ok();
                     else
@@ -106,7 +109,8 @@ status handle_message( dispatcher& dis, vari::vref< iface::stmts > inpt, iface::
 {
         inpt.visit(
             [&]( iface::govctl_stmt const& g ) {
-                    handle_gov_message( g.sub, dis.mem, dis.gov, std::move( out ) );
+                    handle_gov_message(
+                        g.sub, dis.mem, dis.gov, dis.now, dis.met, std::move( out ) );
             },
             [&]( iface::gov_stmt& g ) {
                     auto cmd = g.parser.next_cmd();

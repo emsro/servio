@@ -99,8 +99,12 @@ struct _rewind_sender
 
                 void start()
                 {
-                        if ( pcor->govs.manager.activate( "current", pcor->govs.mem ) !=
-                             status::success ) {
+                        if ( pcor->govs.manager.activate(
+                                 "current",
+                                 pcor->govs.mem,
+                                 piclk->get_us(),
+                                 pcor->met.get_position(),
+                                 pcor->met.get_velocity() ) != status::success ) {
                                 receiver.set_error( ASRT_FAILURE );
                                 return;
                         }

@@ -3,10 +3,12 @@
 #include "../../../lib/json_ser.hpp"
 #include "../../../lib/parser.hpp"
 #include "../../../status.hpp"
+#include "../../governor_manager.hpp"
 #include "../../tests/gov_fixture.hpp"
 #include "../current.hpp"
 
 #include <cstddef>
+#include <emlabcpp/pmr/new_delete_resource.hpp>
 #include <emlabcpp/range.hpp>
 #include <format>
 #include <gtest/gtest.h>
@@ -47,5 +49,37 @@ TEST_F( gov_fixture, curr )
                 EXPECT_NEAR( motor.current, curr, 0.02F )
                     << "curr: " << curr << " motor current: " << motor.current;
         }
+}
+
+TEST( curr_gov, engage_after_idle_has_no_output_step )
+{
+        _current_gov gov;
+        gov.cfg.curr_loop_p = 0.F;
+        gov.cfg.curr_loop_i = 3.F;
+        gov.get_cfg()->apply_all();
+
+        governor_manager gm;
+        ASSERT_TRUE( gm.add_gov( gov ) );
+        auto const tick = [&]( microseconds now ) {
+                gm.metrics_irq( now, 0.F, 0.F, false );
+                return gm.current_irq( now, 0.F );
+        };
+
+        ASSERT_EQ(
+            gm.activate( "current", em::pmr::new_delete_resource(), 0_ms, 0.F, 0.F ),
+            status::success );
+        gov.set_goal_current( 0.5F );
+        for ( std::size_t const i : em::range( 100U ) )
+                std::ignore = tick( 1_ms * ( i + 1 ) );
+        ASSERT_EQ( gm.deactivate(), status::success );
+
+        ASSERT_EQ(
+            gm.activate( "current", em::pmr::new_delete_resource(), 10_s, 0.F, 0.F ),
+            status::success );
+        EXPECT_EQ( gov.goal, 0.F );
+        gov.set_goal_current( 0.1F );
+        std::ignore = tick( 10_s );
+        pwr const p = tick( 10_s + 100_us );
+        EXPECT_NEAR( *p, 0.F, 1e-3F );
 }
 }  // namespace servio::gov::curr::tests

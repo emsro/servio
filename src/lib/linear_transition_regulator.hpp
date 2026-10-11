@@ -23,6 +23,12 @@ struct linear_transition_regulator
                 decay      = dec / 1'000'000.F;  // input decay is /s, this makes it /us
         }
 
+        void reset( microseconds now )
+        {
+                last_time = now;
+                state     = low_point;
+        }
+
         void update( microseconds now, bool is_moving )
         {
                 auto const  tdiff = now - last_time;
