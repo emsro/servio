@@ -24,7 +24,7 @@ struct meas_cur_test : utest
         {
                 co_await init_utest( *this );
 
-                em::defer d = setup_poweroff( cor.gov_ );
+                em::defer d = setup_poweroff( cor.govs.manager );
 
                 em::defer             dc = drv::retain_callback( curr );
                 drv::empty_current_cb ccb;
@@ -58,7 +58,7 @@ struct meas_pos_test : utest
         {
                 co_await init_utest( *this );
 
-                em::defer d = setup_poweroff( cor.gov_ );
+                em::defer d = setup_poweroff( cor.govs.manager );
 
                 em::defer             dc = drv::retain_callback( curr );
                 drv::empty_current_cb ccb;
@@ -98,7 +98,7 @@ struct meas_vel_test : utest
         {
                 co_await init_utest( *this );
 
-                em::defer d = setup_poweroff( cor.gov_ );
+                em::defer d = setup_poweroff( cor.govs.manager );
 
                 em::defer             dc = drv::retain_callback( curr );
                 drv::empty_current_cb ccb;

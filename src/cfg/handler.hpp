@@ -5,9 +5,14 @@
 #include "../iface/base.hpp"
 #include "./base.hpp"
 
+#include <algorithm>
+#include <bitset>
+#include <cstddef>
+#include <cstdint>
 #include <emlabcpp/experimental/cfg/handler.hpp>
 #include <emlabcpp/experimental/function_view.hpp>
 #include <emlabcpp/static_function.hpp>
+#include <span>
 
 namespace servio::cfg
 {
@@ -19,6 +24,7 @@ struct handler : iface
 
         T&                                    _x;
         em::function_view< void( key_type ) > _on_cmd_set;
+        std::bitset< T::ids.size() >          _seen;
 
         handler( T& x, em::function_view< void( key_type ) > on_cmd_set )
           : _x( x )
@@ -113,6 +119,45 @@ struct handler : iface
                                 return val != *newval;
                         return false;
                 } );
+        }
+
+        void set_apply( em::function_view< void( key_type ) > f )
+        {
+                _on_cmd_set = f;
+        }
+
+        void storage_reset_seen() override
+        {
+                _seen.reset();
+        }
+
+        bool storage_mark_seen( uint32_t id ) override
+        {
+                auto const it = std::ranges::find( T::ids, id );
+                if ( it == T::ids.end() )
+                        return false;
+                auto const i = static_cast< std::size_t >( it - T::ids.begin() );
+                if ( _seen[i] )
+                        return false;
+                _seen[i] = true;
+                return true;
+        }
+
+        opt< uint32_t > storage_take_unseen() override
+        {
+                for ( std::size_t i = 0; i < T::ids.size(); ++i ) {
+                        if ( _seen[i] )
+                                continue;
+                        _seen[i] = true;
+                        return T::ids[i];
+                }
+                return {};
+        }
+
+        void apply_all() override
+        {
+                for ( key_type const k : T::keys )
+                        _on_cmd_set( k );
         }
 };
 

@@ -21,8 +21,10 @@ struct port_mock : port_iface
                 drv::vcc_iface const&      vcc_drv;
                 drv::temp_iface const&     temp_drv;
                 core::core&                cor;
-                cfg::map&                  cfg_map;
+                cfg::iface&                root_cfg;
                 drv::storage_iface&        stor_drv;
+
+                zll::ll_list< cfg::iface >& cfgs;
         };
 
         port_mock( attrs const& attr )
@@ -43,13 +45,14 @@ struct port_mock : port_iface
                     .curr_drv = a.curr_drv,
                     .vcc_drv  = a.vcc_drv,
                     .temp_drv = a.temp_drv,
-                    .gov      = a.cor.gov_,
+                    .gov      = a.cor.govs.manager,
                     .met      = a.cor.met,
                     .mon      = a.cor.mon,
-                    .cfg_map  = a.cfg_map,
+                    .root_cfg = a.root_cfg,
                     .stor_drv = a.stor_drv,
                     .conv     = a.cor.conv,
                     .now      = 0_ms,  // XXX: rethink
+                    .cfgs     = a.cfgs,
                 };
                 std::byte tmp[666];
                 auto [res, used] = core::handle_message( disp, msg, tmp );

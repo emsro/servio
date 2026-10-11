@@ -3,6 +3,11 @@
 #include "../status.hpp"
 #include "interfaces.hpp"
 
+#include <cstddef>
+#include <cstdint>
+#include <map>
+#include <vector>
+
 namespace servio::drv::mock
 {
 struct pwm_mot : drv::pwm_motor_iface
@@ -82,24 +87,46 @@ struct temp : drv::temp_iface
 
 struct stor : drv::storage_iface
 {
-        std::size_t store_cnt = 0;
-        std::size_t clear_cnt = 0;
+        std::size_t                                    store_cnt = 0;
+        std::size_t                                    clear_cnt = 0;
+        std::map< uint32_t, std::vector< std::byte > > records;
 
-        error_code store_cfg( cfg::map const& ) override
+        error_code store_cfg( zll::ll_list< cfg::iface >& cfgs ) override
         {
                 store_cnt += 1;
+                for ( cfg::iface& c : cfgs ) {
+                        c.storage_reset_seen();
+                        while ( auto const key = c.storage_take_unseen() ) {
+                                std::byte  buffer[64];
+                                auto const data = c.on_storage_save( *key, buffer );
+                                if ( !data )
+                                        return status::error;
+                                records[cfg_storage_id( c.section, *key )].assign(
+                                    data->begin(), data->end() );
+                        }
+                }
                 return status::success;
         }
 
-        error_code load_cfg( cfg::map& data ) override
+        error_code load_cfg( zll::ll_list< cfg::iface >& cfgs ) override
         {
-                std::ignore = data;
+                for ( cfg::iface& c : cfgs ) {
+                        c.storage_reset_seen();
+                        while ( auto const key = c.storage_take_unseen() ) {
+                                auto const it = records.find( cfg_storage_id( c.section, *key ) );
+                                if ( it == records.end() )
+                                        continue;
+                                if ( c.on_storage_load( *key, it->second ) != status::success )
+                                        return status::error;
+                        }
+                }
                 return status::success;
         }
 
         error_code clear_cfg() override
         {
                 clear_cnt += 1;
+                records.clear();
                 return status::success;
         }
 };

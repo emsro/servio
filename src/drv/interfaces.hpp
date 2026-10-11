@@ -1,4 +1,5 @@
 #include "../base.hpp"
+#include "../cfg/base.hpp"
 #include "../cfg/def.hpp"
 #include "../status.hpp"
 
@@ -61,11 +62,16 @@ inline error_code send( com_iface& comms, microseconds timeout, std::span< std::
         return comms.send( f, timeout );
 }
 
+constexpr uint32_t cfg_storage_id( uint16_t section, uint32_t key )
+{
+        return ( static_cast< uint32_t >( section ) << 16U ) | key;
+}
+
 struct storage_iface
 {
-        virtual error_code store_cfg( cfg::map const& m ) = 0;
-        virtual error_code load_cfg( cfg::map& m )        = 0;
-        virtual error_code clear_cfg()                    = 0;
+        virtual error_code store_cfg( zll::ll_list< cfg::iface >& cfgs ) = 0;
+        virtual error_code load_cfg( zll::ll_list< cfg::iface >& cfgs )  = 0;
+        virtual error_code clear_cfg()                                   = 0;
 };
 
 struct leds_iface

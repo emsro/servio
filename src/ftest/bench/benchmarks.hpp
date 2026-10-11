@@ -156,10 +156,10 @@ struct profile : utest
 
                 auto&     curr_cb = curr.get_current_callback();
                 em::defer d2      = drv::retain_callback( curr );
-                em::defer d       = setup_poweroff( cor.gov_ );
+                em::defer d       = setup_poweroff( cor.govs.manager );
 
-                std::ignore = cor.gov_.activate( "power", cor.gov_mem );
-                auto* p     = dynamic_cast< gov::pow::_power_gov* >( cor.gov_.active() );
+                std::ignore = cor.govs.manager.activate( "power", cor.govs.mem );
+                auto* p     = dynamic_cast< gov::pow::_power_gov* >( cor.govs.manager.active() );
                 co_await expect( *this, p != nullptr );
 
                 p->power                = p_max;

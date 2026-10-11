@@ -20,10 +20,12 @@ struct dispatcher
         gov::governor_manager&     gov;
         mtr::metrics&              met;
         mon::monitor&              mon;
-        cfg::map&                  cfg_map;
+        cfg::iface&                root_cfg;
         drv::storage_iface&        stor_drv;
         cnv::converter&            conv;
         microseconds               now;
+
+        zll::ll_list< cfg::iface >& cfgs;
 };
 
 std::tuple< status, em::view< std::byte* > > handle_message(

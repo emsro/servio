@@ -116,22 +116,6 @@ constexpr key id_to_key( uint32_t id )
                 return key::curr_lim_max;
         return {};
 }
-
-constexpr std::array< uint32_t, 13 > ids = {
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-};
 template < key K >
 struct key_trait;
 
@@ -230,6 +214,21 @@ struct map
             key::vel_to_curr_lim_scale,
             key::curr_lim_min,
             key::curr_lim_max,
+        };
+        static constexpr std::array< uint32_t, 13 > ids = {
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
         };
         float vel_loop_p  = 1.0F;
         float vel_loop_i  = 0.0001F;

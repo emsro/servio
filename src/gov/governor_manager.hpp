@@ -3,7 +3,9 @@
 
 #include "./governor.hpp"
 
+#include <emlabcpp/pmr/stack_resource.hpp>
 #include <emlabcpp/static_vector.hpp>
+#include <iterator>
 
 namespace servio::gov
 {
@@ -91,7 +93,22 @@ private:
         handle*                                        active_h_  = nullptr;
 };
 
-inline void create_governors( governor_manager& gm, em::pmr::memory_resource& mem )
+inline status check_cfg_sections( zll::ll_list< cfg::iface >& cfgs )
+{
+        for ( auto i = cfgs.begin(); i != cfgs.end(); ++i ) {
+                if ( i->section == cfg::root_cfg_section )
+                        return status::error;
+                for ( auto j = std::next( i ); j != cfgs.end(); ++j )
+                        if ( j->section == i->section )
+                                return status::error;
+        }
+        return status::success;
+}
+
+inline void create_governors(
+    governor_manager&           gm,
+    em::pmr::memory_resource&   mem,
+    zll::ll_list< cfg::iface >& cfgs )
 {
         auto f = [&]( governor_factory& fac ) {
                 // XXX: error handling?
@@ -100,8 +117,34 @@ inline void create_governors( governor_manager& gm, em::pmr::memory_resource& me
                         return;
                 if ( !gm.add_gov( *p ) )
                         return;
+                if ( cfg::iface* c = p->get_cfg() ) {
+                        c->section = p->cfg_section();
+                        cfgs.link_back( *c );
+                }
         };
         for_each_factory( f );
 }
+
+struct governors_ctx
+{
+        em::pmr::stack_resource< 1024 > mem;
+        governor_manager                manager;
+        zll::ll_list< cfg::iface >      cfgs;
+
+        governors_ctx()
+        {
+                create_governors( manager, mem, cfgs );
+                valid_ =
+                    !manager.governors().empty() && check_cfg_sections( cfgs ) == status::success;
+        }
+
+        [[nodiscard]] bool valid() const
+        {
+                return valid_;
+        }
+
+private:
+        bool valid_ = false;
+};
 
 }  // namespace servio::gov

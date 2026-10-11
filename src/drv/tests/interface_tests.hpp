@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../../cfg/handler.hpp"
 #include "../../ftest/utest.hpp"
 #include "../callbacks.hpp"
 #include "../interfaces.hpp"
@@ -319,12 +320,19 @@ struct storage_iface_test : ftest::utest
                 co_await init_utest( *this );
 
                 // XXX: this could be improved a lot
-                cfg::map m;
-                co_await expect( *this, iface.load_cfg( m ) == status::success );
-                co_await expect( *this, iface.store_cfg( m ) == status::success );
+                auto                       no_apply = []( cfg::key ) {};
+                cfg::map                   m;
+                cfg::handler< cfg::map >   test_handler{ m, no_apply };
+                cfg::handler< cfg::map >   restore_handler{ cfg, no_apply };
+                zll::ll_list< cfg::iface > test_cfgs;
+                test_cfgs.link_back( test_handler );
+                zll::ll_list< cfg::iface > restore_cfgs;
+                restore_cfgs.link_back( restore_handler );
+                co_await expect( *this, iface.load_cfg( test_cfgs ) == status::success );
+                co_await expect( *this, iface.store_cfg( test_cfgs ) == status::success );
                 co_await expect( *this, iface.clear_cfg() == status::success );
                 // Restore before-test settings
-                co_await expect( *this, iface.store_cfg( cfg ) == status::success );
+                co_await expect( *this, iface.store_cfg( restore_cfgs ) == status::success );
         }
 };
 

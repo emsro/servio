@@ -26,11 +26,11 @@ struct current_ctl_test : utest
         {
                 co_await init_utest( *this );
 
-                em::defer d = setup_poweroff( cor.gov_ );
+                em::defer d = setup_poweroff( cor.govs.manager );
 
                 float expected = 0.2F;
-                std::ignore    = cor.gov_.activate( "current", cor.gov_mem );
-                auto* p        = dynamic_cast< gov::curr::_current_gov* >( cor.gov_.active() );
+                std::ignore    = cor.govs.manager.activate( "current", cor.govs.mem );
+                auto* p = dynamic_cast< gov::curr::_current_gov* >( cor.govs.manager.active() );
                 co_await expect( *this, p != nullptr );
                 p->set_goal_current( expected );
 
@@ -71,13 +71,13 @@ struct sign_test : utest
         {
                 co_await init_utest( *this );
 
-                em::defer d = setup_poweroff( cor.gov_ );
+                em::defer d = setup_poweroff( cor.govs.manager );
                 co_await rewind( *this, cor, clk, pos, 250_ms, { 0.0f, 0.3f }, 0.5f, []() {
                         return ecor::just();
                 } );
 
-                std::ignore = cor.gov_.activate( "power", cor.gov_mem );
-                auto* p     = dynamic_cast< gov::pow::_power_gov* >( cor.gov_.active() );
+                std::ignore = cor.govs.manager.activate( "power", cor.govs.mem );
+                auto* p     = dynamic_cast< gov::pow::_power_gov* >( cor.govs.manager.active() );
                 co_await expect( *this, p != nullptr );
                 p->power = p_low / 2.F;
                 co_await wait_for( *this, clk, 200_ms );
@@ -97,7 +97,7 @@ struct sign_test : utest
                 co_await store_metric( *this, "csum", csum );
                 co_await store_metric( *this, "vsum", vsum );
                 co_await expect( *this, std::signbit( csum ) == std::signbit( vsum ) );
-                co_await expect( *this, cor.gov_.deactivate() == status::success );
+                co_await expect( *this, cor.govs.manager.deactivate() == status::success );
         }
 };
 

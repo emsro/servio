@@ -53,7 +53,6 @@ resolve_governor( std::string_view field, std::string_view governor )
 struct root_handler
 {
         map&                  m;
-        cfg::handler< map >   m_handler{ m, em::member_function< &root_handler::apply >{ *this } };
         cnv::converter&       conv;
         mtr::metrics&         met;
         mon::monitor&         mon;
@@ -73,7 +72,6 @@ struct root_handler
                 return m.ref_by_key< Key >();
         }
 
-        void full_apply();
         void apply( key k );
 };
 

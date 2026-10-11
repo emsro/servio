@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../cfg/base.hpp"
 #include "../core/drivers.hpp"
 
 namespace servio::brd
@@ -10,7 +11,7 @@ namespace servio::brd
 status setup_board();
 
 /// Initialize all core drivers for the servo
-core::drivers setup_core_drivers();
+core::drivers setup_core_drivers( zll::ll_list< cfg::iface >& cfgs );
 
 /// Initialize debug interface
 drv::com_iface* setup_debug_comms();

@@ -25,8 +25,8 @@ struct i2c_eeprom : public storage_iface
 
         uint8_t dev_addr;
 
-        error_code store_cfg( cfg::map const& m ) override;
-        error_code load_cfg( cfg::map& m ) override;
+        error_code store_cfg( zll::ll_list< cfg::iface >& cfgs ) override;
+        error_code load_cfg( zll::ll_list< cfg::iface >& cfgs ) override;
         error_code clear_cfg() override;
 
 private:

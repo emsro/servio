@@ -7,7 +7,6 @@
 #include "../../drv/cobs_uart.hpp"
 #include "../../drv/drv8251.hpp"
 #include "../../drv/dts_temp.hpp"
-#include "../../drv/flash_cfg.hpp"
 #include "../../drv/hbridge.hpp"
 #include "../../drv/leds.hpp"
 #include "../../drv/paged_i2c_eeprom.hpp"
@@ -552,10 +551,11 @@ status setup_board()
         return plt::setup_clk();
 }
 
-core::drivers setup_core_drivers()
+core::drivers setup_core_drivers( zll::ll_list< cfg::iface >& cfgs )
 {
         drv::storage_iface* eeprom = eeprom_setup();
-        if ( eeprom && eeprom->load_cfg( CFG.map ) != status::success )
+        cfgs.link_front( CFG.handler );
+        if ( eeprom && eeprom->load_cfg( cfgs ) != status::success )
                 fw::stop_exec();
 
         __HAL_RCC_TIM2_CLK_ENABLE();
@@ -591,8 +591,7 @@ core::drivers setup_core_drivers()
                 install_stop_callback( *hb, &leds );
 
         return core::drivers{
-            .cfg = &CFG,
-            //.storage     = &FLASH_STORAGE,
+            .cfg         = &CFG,
             .storage     = eeprom,
             .clock       = &CLOCK,
             .position    = pos,

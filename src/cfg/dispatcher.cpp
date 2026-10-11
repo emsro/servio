@@ -51,10 +51,4 @@ void root_handler::apply( key key )
         }
 }
 
-void root_handler::full_apply()
-{
-        for ( auto const key : map::keys )
-                root_handler::apply( key );
-}
-
 }  // namespace servio::cfg

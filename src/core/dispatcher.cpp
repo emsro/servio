@@ -135,16 +135,8 @@ status handle_message( dispatcher& dis, vari::vref< iface::stmts > inpt, iface::
                         std::move( out ) );
             },
             [&]( iface::cfg_stmt const& cfg ) {
-                    cfg::root_handler rh{
-                        .m     = dis.cfg_map,
-                        .conv  = dis.conv,
-                        .met   = dis.met,
-                        .mon   = dis.mon,
-                        .motor = dis.motor,
-                        .pos   = dis.pos_drv,
-                    };
                     cfg::dispatcher cfg_disp{
-                        .root_handler = &rh.m_handler,
+                        .root_handler = &dis.root_cfg,
                         .gov          = dis.gov,
                     };
                     cfg.sub.visit(
@@ -180,7 +172,7 @@ status handle_message( dispatcher& dis, vari::vref< iface::stmts > inpt, iface::
                                         } );
                         },
                         [&]( iface::cfg_commit_stmt const& ) {
-                                if ( dis.stor_drv.store_cfg( dis.cfg_map ) == status::success )
+                                if ( dis.stor_drv.store_cfg( dis.cfgs ) == status::success )
                                         std::move( out ).ok();
                                 else
                                         std::move( out ).nok();

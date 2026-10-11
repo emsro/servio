@@ -7,6 +7,7 @@
 #include "../status.hpp"
 
 #include <emlabcpp/experimental/function_view.hpp>
+#include <emlabcpp/hash.hpp>
 #include <emlabcpp/pmr/memory_resource.hpp>
 #include <span>
 #include <string_view>
@@ -36,6 +37,12 @@ struct engage_res
         }
 };
 
+constexpr uint16_t default_cfg_section( std::string_view name )
+{
+        uint32_t const h = em::fnv1a( name );
+        return static_cast< uint16_t >( ( h >> 16U ) ^ h );
+}
+
 struct governor
 {
         virtual cfg::iface*      get_cfg()                                                    = 0;
@@ -43,6 +50,12 @@ struct governor
         virtual status           on_cmd( iface::cmd_parser cmd, servio::iface::root_ser out ) = 0;
         virtual engage_res       engage( em::pmr::memory_resource& mem )                      = 0;
         virtual status           disengage( handle& )                                         = 0;
+
+        virtual uint16_t cfg_section() const
+        {
+                return default_cfg_section( name() );
+        }
+
         virtual ~governor() = default;
 };
 

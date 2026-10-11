@@ -22,7 +22,7 @@ servio_gen_iface(
 servio_add_library(
   TARGET ifacelib
   SOURCES parse.cpp
-  LIBS avakar::atom vari servio_emlabcpp platform
+  LIBS avakar::atom vari zll servio_emlabcpp platform
   OPTS -Os)
 add_dependencies(ifacelib ifacelib_def)
 

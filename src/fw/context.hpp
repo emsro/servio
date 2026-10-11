@@ -13,16 +13,24 @@ struct context
         core::drivers            cdrv;
         core::core               core;
         core::standard_callbacks scbs;
+        cfg::root_handler        root_cfg;
 
-        context( core::drivers cdrv )
+        context( core::drivers cdrv, gov::governors_ctx& govs )
           : cdrv( std::move( cdrv ) )
-          , core( cdrv.clock->get_us(), *this->cdrv.vcc, *this->cdrv.temperature )
+          , core( govs, this->cdrv.clock->get_us(), *this->cdrv.vcc, *this->cdrv.temperature )
           , scbs(
                 *this->cdrv.motor,
                 *this->cdrv.clock,
-                this->core.gov_,
+                this->core.govs.manager,
                 this->core.met,
                 this->core.conv )
+          , root_cfg{
+                .m     = this->cdrv.cfg->map,
+                .conv  = this->core.conv,
+                .met   = this->core.met,
+                .mon   = this->core.mon,
+                .motor = *this->cdrv.motor,
+                .pos   = *this->cdrv.position }
         {
         }
 

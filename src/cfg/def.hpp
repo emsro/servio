@@ -1,6 +1,7 @@
 #pragma once
 
 #include "./base.hpp"
+#include "./handler.hpp"
 
 namespace servio::cfg
 {
@@ -185,25 +186,6 @@ constexpr key id_to_key( uint32_t id )
                 return key::quad_encoder_range;
         return {};
 }
-
-constexpr std::array< uint32_t, 16 > ids = {
-    1,
-    2,
-    3,
-    4,
-    11,
-    12,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    62,
-    65,
-    66,
-    80,
-};
 template < key K >
 struct key_trait;
 
@@ -323,6 +305,24 @@ struct map
             key::maximum_temperature,
             key::moving_detection_step,
             key::quad_encoder_range,
+        };
+        static constexpr std::array< uint32_t, 16 > ids = {
+            1,
+            2,
+            3,
+            4,
+            11,
+            12,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            62,
+            65,
+            66,
+            80,
         };
         // Model of the servomotor, used for debugging purposes
         string model = "no model";
@@ -588,7 +588,8 @@ struct map
 
 struct context
 {
-        cfg::map map;
+        cfg::map                 map;
+        cfg::handler< cfg::map > handler{ map, +[]( key ) {} };
 };
 
 }  // namespace servio::cfg

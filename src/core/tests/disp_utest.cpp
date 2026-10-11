@@ -2,6 +2,7 @@
 #include "../../base.hpp"
 #include "../../cfg/base.hpp"
 #include "../../cfg/def.hpp"
+#include "../../cfg/dispatcher.hpp"
 #include "../../drv/mock.hpp"
 #include "../../gov/current/current.hpp"
 #include "../../gov/governor_manager.hpp"
@@ -15,6 +16,7 @@
 #include <concepts>
 #include <cstddef>
 #include <cstdint>
+#include <emlabcpp/experimental/function_view.hpp>
 #include <emlabcpp/pmr/new_delete_resource.hpp>
 #include <emlabcpp/view.hpp>
 #include <format>
@@ -38,8 +40,19 @@ TEST( core, dispatcher )
         drv::mock::temp    tm;
         drv::mock::stor    sd;
 
-        cfg::map m{};
-        core     cor{ 0_ms, gv, tm };
+        gov::governors_ctx govs;
+        core               cor{ govs, 0_ms, gv, tm };
+
+        cfg::context      cc{};
+        cfg::root_handler rh{
+            .m     = cc.map,
+            .conv  = cor.conv,
+            .met   = cor.met,
+            .mon   = cor.mon,
+            .motor = mot,
+            .pos   = gp };
+        cc.handler.set_apply( em::member_function< &cfg::root_handler::apply >{ rh } );
+        govs.cfgs.link_front( cc.handler );
 
         dispatcher disp{
             .mem      = em::pmr::new_delete_resource(),
@@ -48,16 +61,15 @@ TEST( core, dispatcher )
             .curr_drv = gc,
             .vcc_drv  = gv,
             .temp_drv = tm,
-            .gov      = cor.gov_,
+            .gov      = cor.govs.manager,
             .met      = cor.met,
             .mon      = cor.mon,
-            .cfg_map  = m,
+            .root_cfg = cc.handler,
             .stor_drv = sd,
             .conv     = cor.conv,
             .now      = 0_ms,
+            .cfgs     = govs.cfgs,
         };
-
-        gov::create_governors( cor.gov_, cor.gov_mem );
 
         auto exec = [&]( std::string_view inpt ) {
                 std::byte buff[666];
@@ -79,36 +91,36 @@ TEST( core, dispatcher )
         // XXX: negative tests
 
         // mode
-        auto const tmp = cor.gov_.activate( "power", em::pmr::new_delete_resource() );
+        auto const tmp = cor.govs.manager.activate( "power", em::pmr::new_delete_resource() );
         EXPECT_EQ( tmp, status::success );
         test( "govctl deactivate", R"(["OK"])"_json );
-        EXPECT_EQ( cor.gov_.active(), nullptr );
+        EXPECT_EQ( cor.govs.manager.active(), nullptr );
         test( "govctl active", R"(["OK"])"_json );
 
         test( "govctl activate power", R"(["OK"])"_json );
         test( "gov power set 0.2", R"(["OK"])"_json );
-        auto const& p = dynamic_cast< gov::pow::_power_gov& >( *cor.gov_.active() );
+        auto const& p = dynamic_cast< gov::pow::_power_gov& >( *cor.govs.manager.active() );
         EXPECT_EQ( p.power, 0.2_pwr );
         test( "govctl active", R"(["OK", "power"])"_json );
         test( "govctl deactivate", R"(["OK"])"_json );
 
         test( "govctl activate current", R"(["OK"])"_json );
         test( "gov current set 0.5", R"(["OK"])"_json );
-        auto const& c = dynamic_cast< gov::curr::_current_gov& >( *cor.gov_.active() );
+        auto const& c = dynamic_cast< gov::curr::_current_gov& >( *cor.govs.manager.active() );
         EXPECT_EQ( c.goal, 0.5F );
         test( "govctl active", R"(["OK", "current"])"_json );
         test( "govctl deactivate", R"(["OK"])"_json );
 
         test( "govctl activate velocity", R"(["OK"])"_json );
         test( "gov velocity set 0.22", R"(["OK"])"_json );
-        auto const& v = dynamic_cast< gov::vel::_velocity_gov& >( *cor.gov_.active() );
+        auto const& v = dynamic_cast< gov::vel::_velocity_gov& >( *cor.govs.manager.active() );
         EXPECT_EQ( v.goal_vel, 0.22F );
         test( "govctl active", R"(["OK", "velocity"])"_json );
         test( "govctl deactivate", R"(["OK"])"_json );
 
         test( "govctl activate position", R"(["OK"])"_json );
         test( "gov position set -1", R"(["OK"])"_json );
-        auto const& pos = dynamic_cast< gov::pos::_position_gov& >( *cor.gov_.active() );
+        auto const& pos = dynamic_cast< gov::pos::_position_gov& >( *cor.govs.manager.active() );
         EXPECT_EQ( pos.goal_pos, -1.0F );
         test( "govctl active", R"(["OK", "position"])"_json );
         test( "govctl deactivate", R"(["OK"])"_json );
@@ -142,7 +154,7 @@ TEST( core, dispatcher )
                 auto res_j = exec( std::format( "cfg get {}", to_str( k ) ) );
 
                 // verify get
-                auto expected = m.ref_by_key( k );
+                auto expected = cc.map.ref_by_key( k );
                 expected.visit(
                     [&]( vari::empty_t ) {
                             FAIL();
@@ -209,7 +221,7 @@ TEST( core, dispatcher )
                 res_j = exec( std::format( "cfg get {}", to_str( k ) ) );
 
                 // verify change
-                expected = m.ref_by_key( k );
+                expected = cc.map.ref_by_key( k );
                 expected.visit(
                     [&]( vari::empty_t ) {
                             FAIL();

@@ -16,8 +16,6 @@ namespace servio::drv
 
 namespace
 {
-#pragma GCC push_options
-#pragma GCC optimize( "O0" )
 
 status write_data(
     I2C_HandleTypeDef*           hi2c,
@@ -80,28 +78,47 @@ status clear_range(
             hi2c, clk, dev_addr, addr, end_addr, std::span< std::byte >( buffer ) );
 }
 
-#pragma GCC pop_options
+cfg::iface* find_section( zll::ll_list< cfg::iface >& cfgs, uint32_t id )
+{
+        for ( cfg::iface& c : cfgs )
+                if ( c.section == id >> 16U )
+                        return &c;
+        return nullptr;
+}
+
+void reset_seen( zll::ll_list< cfg::iface >& cfgs )
+{
+        for ( cfg::iface& c : cfgs )
+                c.storage_reset_seen();
+}
+
+em::cfg::cache_res check_seen( zll::ll_list< cfg::iface >& cfgs, uint32_t id )
+{
+        cfg::iface* c = find_section( cfgs, id );
+        if ( c && c->storage_mark_seen( id & 0xFFFFU ) )
+                return em::cfg::cache_res::NOT_SEEN;
+        return em::cfg::cache_res::SEEN;
+}
 
 struct update_iface : em::cfg::update_iface
 {
-        std::byte                                      buffer[42];
-        em::static_vector< uint32_t, cfg::ids.size() > unseen_ids{ cfg::ids };
+        std::byte buffer[42];
 
-        cfg::map const&    cfg;
-        I2C_HandleTypeDef* i2c;
-        clk_iface&         clk;
-        uint16_t           dev_addr;
-        uint32_t           mem_size;
-        uint32_t           page_size;
+        zll::ll_list< cfg::iface >& cfgs;
+        I2C_HandleTypeDef*          i2c;
+        clk_iface&                  clk;
+        uint16_t                    dev_addr;
+        uint32_t                    mem_size;
+        uint32_t                    page_size;
 
         update_iface(
-            cfg::map const&    cfg,
-            I2C_HandleTypeDef* i2c,
-            clk_iface&         clk,
-            uint16_t           dev_addr,
-            uint32_t           mem_size,
-            uint32_t           page_size )
-          : cfg( cfg )
+            zll::ll_list< cfg::iface >& cfgs,
+            I2C_HandleTypeDef*          i2c,
+            clk_iface&                  clk,
+            uint16_t                    dev_addr,
+            uint32_t                    mem_size,
+            uint32_t                    page_size )
+          : cfgs( cfgs )
           , i2c( i2c )
           , clk( clk )
           , dev_addr( dev_addr )
@@ -131,46 +148,38 @@ struct update_iface : em::cfg::update_iface
 
         em::cfg::cache_res check_key_cache( uint32_t id ) override
         {
-                return em::cfg::key_check_unseen_container( unseen_ids, id );
+                return check_seen( cfgs, id );
         }
 
         bool value_changed( uint32_t id, std::span< std::byte const > data ) override
         {
-                auto ptr = cfg.ref_by_id( id );
-                if ( !ptr )  // XXX: maybe rethink?
+                cfg::iface* c = find_section( cfgs, id );
+                if ( !c )
                         return false;
-                return ptr.vref().visit( [&]< typename T >( T const& val ) {
-                        auto newval = em::cfg::get_val< T >( data );
-                        if ( newval )
-                                return val != *newval;
-                        return false;
-                } );
+                return c->on_storage_change_check( id & 0xFFFFU, data );
         }
 
         opt< std::span< std::byte const > >
         serialize_value( uint32_t id, std::span< std::byte > buffer ) override
         {
-                opt< std::span< std::byte > > res;
-                auto                          ptr = cfg.ref_by_id( id );
-                if ( !ptr )
-                        return res;
-                ptr.vref().visit( [&]< typename T >( T const& val ) {
-                        auto ran = em::cfg::store_val( val, buffer );
-                        if ( ran )
-                                res = *ran;
-                } );
-                return res;
+                cfg::iface* c = find_section( cfgs, id );
+                if ( !c )
+                        return {};
+                return c->on_storage_save( id & 0xFFFFU, buffer );
         }
 
         error_code reset_keys() override
         {
-                unseen_ids = cfg::ids;
+                reset_seen( cfgs );
                 return status::success;
         }
 
         opt< uint32_t > take_unseen_key() override
         {
-                return em::cfg::pop_from_container( unseen_ids );
+                for ( cfg::iface& c : cfgs )
+                        if ( auto const k = c.storage_take_unseen() )
+                                return cfg_storage_id( c.section, *k );
+                return {};
         }
 
         error_code clear_page( std::size_t addr ) override
@@ -183,10 +192,10 @@ struct update_iface : em::cfg::update_iface
 
 }  // namespace
 
-error_code i2c_eeprom::store_cfg( cfg::map const& m )
+error_code i2c_eeprom::store_cfg( zll::ll_list< cfg::iface >& cfgs )
 {
-
-        update_iface lb{ m, i2c_, clk_, dev_addr, mem_size_, page_size_ };
+        reset_seen( cfgs );
+        update_iface lb{ cfgs, i2c_, clk_, dev_addr, mem_size_, page_size_ };
         auto         res = em::cfg::update( mem_size_, page_size_, lb );
         return res == em::cfg::status::SUCCESS ? status::success : status::error;
 }
@@ -197,14 +206,12 @@ struct load_iface : em::cfg::load_iface
 {
         std::byte buffer[42];
 
-        em::static_vector< uint32_t, cfg::ids.size() > unseen_ids{ cfg::ids };
+        zll::ll_list< cfg::iface >& cfgs;
+        I2C_HandleTypeDef*          i2c;
+        uint16_t                    dev_addr;
 
-        cfg::map&          cfg;
-        I2C_HandleTypeDef* i2c;
-        uint16_t           dev_addr;
-
-        load_iface( cfg::map& cfg, I2C_HandleTypeDef* i2c, uint16_t dev_addr )
-          : cfg( cfg )
+        load_iface( zll::ll_list< cfg::iface >& cfgs, I2C_HandleTypeDef* i2c, uint16_t dev_addr )
+          : cfgs( cfgs )
           , i2c( i2c )
           , dev_addr( dev_addr )
         {
@@ -223,29 +230,23 @@ struct load_iface : em::cfg::load_iface
 
         em::cfg::cache_res check_key_cache( uint32_t id ) override
         {
-                return em::cfg::key_check_unseen_container( unseen_ids, id );
+                return check_seen( cfgs, id );
         }
 
         error_code on_kval( uint32_t id, std::span< std::byte > data ) override
         {
-                auto ptr = cfg.ref_by_id( id );
-                if ( !ptr )
+                cfg::iface* c = find_section( cfgs, id );
+                if ( !c )
                         return status::error;
-                return ptr.vref().visit( [&]< typename T >( T& val ) -> error_code {
-                        auto newval = em::cfg::get_val< T >( data );
-                        if ( newval ) {
-                                val = *newval;
-                                return status::success;
-                        }
-                        return status::error;
-                } );
+                return c->on_storage_load( id & 0xFFFFU, data );
         }
 };
 }  // namespace
 
-error_code i2c_eeprom::load_cfg( cfg::map& m )
+error_code i2c_eeprom::load_cfg( zll::ll_list< cfg::iface >& cfgs )
 {
-        load_iface liface{ m, i2c_, dev_addr };
+        reset_seen( cfgs );
+        load_iface liface{ cfgs, i2c_, dev_addr };
 
         auto r = em::cfg::load( mem_size_, page_size_, liface );
         return r == em::cfg::status::SUCCESS ? status::success : status::error;

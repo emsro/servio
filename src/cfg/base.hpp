@@ -6,12 +6,15 @@
 
 #include <emlabcpp/experimental/string_buffer.hpp>
 #include <vari/vref.h>
+#include <zll.hpp>
 
 namespace servio::cfg
 {
 
 namespace em = emlabcpp;
 using string = em::string_buffer< 32 >;
+
+constexpr uint16_t root_cfg_section = 0;
 
 // Set of basic configure types used for exchanging configuration data
 using base_t = vari::typelist< string, float, int32_t, bool >;
@@ -69,8 +72,10 @@ vari::vval< base_t > store_value( T val )
         }
 }
 
-struct iface
+struct iface : zll::ll_base< iface >
 {
+        uint16_t section = root_cfg_section;
+
         virtual opt_str_err
         on_cmd_set( std::string_view key, vari::vref< base_t const > value )     = 0;
         virtual vari::vval< base_t, str_err > on_cmd_get( std::string_view key ) = 0;
@@ -81,6 +86,10 @@ struct iface
         virtual opt< std::span< std::byte const > >
                      on_storage_save( uint32_t id, std::span< std::byte > buffer )             = 0;
         virtual bool on_storage_change_check( uint32_t id, std::span< std::byte const > data ) = 0;
+        virtual void storage_reset_seen()                                                      = 0;
+        virtual bool storage_mark_seen( uint32_t id )                                          = 0;
+        virtual opt< uint32_t > storage_take_unseen()                                          = 0;
+        virtual void            apply_all()                                                    = 0;
 };
 
 void for_each_key( iface& ifa, auto&& f )

@@ -12,24 +12,14 @@ void context::setup()
         scbs.set_callbacks( *cdrv.period, *cdrv.period_cb, *cdrv.position, *cdrv.current );
         cdrv.leds->update( core.ind.get_state() );
 
-        cfg::root_handler rh{
-            .m     = cdrv.cfg->map,
-            .conv  = core.conv,
-            .met   = core.met,
-            .mon   = core.mon,
-            .motor = *cdrv.motor,
-            .pos   = *cdrv.position };
-
-        rh.full_apply();
+        cdrv.cfg->handler.set_apply( em::member_function< &cfg::root_handler::apply >{ root_cfg } );
+        for ( cfg::iface& c : core.govs.cfgs )
+                c.apply_all();
 
         if ( cdrv.start_cb( cdrv ) != status::success )
                 fw::stop_exec();
 
         core.ind.on_event( cdrv.clock->get_us(), mon::indication_event::INITIALIZED );
-
-        gov::create_governors( core.gov_, core.gov_mem );
-        if ( core.gov_.governors().empty() )
-                fw::stop_exec();
 }
 
 }  // namespace servio::fw

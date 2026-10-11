@@ -26,10 +26,14 @@ int main()
         if ( brd::setup_board() != status::success )
                 fw::stop_exec();
 
-        core::drivers cdrv = brd::setup_core_drivers();
+        gov::governors_ctx govs;
+        if ( !govs.valid() )
+                fw::stop_exec();
+
+        core::drivers cdrv = brd::setup_core_drivers( govs.cfgs );
         if ( cdrv.any_uninitialized() )
                 fw::stop_exec();
-        fw::context ctx{ cdrv };
+        fw::context ctx{ cdrv, govs };
         ctx.setup();
 
         drv::com_iface* dbg_comms = brd::setup_debug_comms();

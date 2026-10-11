@@ -14,28 +14,33 @@ int main()
         if ( brd::setup_board() != status::success )
                 fw::stop_exec();
 
-        core::drivers cdrv = brd::setup_core_drivers();
+        gov::governors_ctx govs;
+        if ( !govs.valid() )
+                fw::stop_exec();
+
+        core::drivers cdrv = brd::setup_core_drivers( govs.cfgs );
         if ( cdrv.any_uninitialized() )
                 fw::stop_exec();
-        fw::context ctx{ std::move( cdrv ) };
+        fw::context ctx{ std::move( cdrv ), govs };
         ctx.setup();
         while ( true ) {
                 ctx.tick();
 
                 core::dispatcher dis{
-                    .mem      = ctx.core.gov_mem,
+                    .mem      = ctx.core.govs.mem,
                     .motor    = *ctx.cdrv.motor,
                     .pos_drv  = *ctx.cdrv.position,
                     .curr_drv = *ctx.cdrv.current,
                     .vcc_drv  = *ctx.cdrv.vcc,
                     .temp_drv = *ctx.cdrv.temperature,
-                    .gov      = ctx.core.gov_,
+                    .gov      = ctx.core.govs.manager,
                     .met      = ctx.core.met,
                     .mon      = ctx.core.mon,
-                    .cfg_map  = ctx.cdrv.cfg->map,
+                    .root_cfg = ctx.cdrv.cfg->handler,
                     .stor_drv = *ctx.cdrv.storage,
                     .conv     = ctx.core.conv,
-                    .now      = ctx.cdrv.clock->get_us() };
+                    .now      = ctx.cdrv.clock->get_us(),
+                    .cfgs     = ctx.core.govs.cfgs };
 
                 auto [lsucc, ldata] = ctx.cdrv.comms->recv( INPUT_BUFFER );
 

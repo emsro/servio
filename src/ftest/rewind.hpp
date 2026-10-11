@@ -99,11 +99,12 @@ struct _rewind_sender
 
                 void start()
                 {
-                        if ( pcor->gov_.activate( "current", pcor->gov_mem ) != status::success ) {
+                        if ( pcor->govs.manager.activate( "current", pcor->govs.mem ) !=
+                             status::success ) {
                                 receiver.set_error( ASRT_FAILURE );
                                 return;
                         }
-                        p = dynamic_cast< gov::curr::_current_gov* >( pcor->gov_.active() );
+                        p = dynamic_cast< gov::curr::_current_gov* >( pcor->govs.manager.active() );
                         if ( !p ) {
                                 receiver.set_error( ASRT_FAILURE );
                                 return;
@@ -126,7 +127,7 @@ struct _rewind_sender
                                 float dir = area.max() < pos ? -1.f : 1.f;
                                 p->set_goal_current( dir * current );
                         } else if ( piclk->get_us() >= end ) {
-                                if ( pcor->gov_.deactivate() != status::success )
+                                if ( pcor->govs.manager.deactivate() != status::success )
                                         receiver.set_error( ASRT_FAILURE );
                                 else
                                         receiver.set_value();

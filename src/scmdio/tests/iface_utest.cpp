@@ -1,6 +1,7 @@
 
 #include "../../base.hpp"
 #include "../../cfg/def.hpp"
+#include "../../cfg/dispatcher.hpp"
 #include "../../core/core.hpp"
 #include "../../drv/mock.hpp"
 #include "../../gov/governor_manager.hpp"
@@ -12,6 +13,7 @@
 #include <boost/asio/awaitable.hpp>
 #include <boost/asio/co_spawn.hpp>
 #include <boost/asio/io_context.hpp>
+#include <emlabcpp/experimental/function_view.hpp>
 #include <gtest/gtest.h>
 
 namespace servio::scmdio
@@ -29,20 +31,32 @@ TEST( iface, base )
         drv::mock::vcc const  gv{};
         drv::mock::temp const tm{};
         drv::mock::stor       sd;
-        core::core            cor{ 0_ms, gv, tm };
-        cfg::map              m{};
-        port_mock             pm( port_mock::attrs{
-                        .motor    = mot,
-                        .pos_drv  = gp,
-                        .curr_drv = gc,
-                        .vcc_drv  = gv,
-                        .temp_drv = tm,
-                        .cor      = cor,
-                        .cfg_map  = m,
-                        .stor_drv = sd,
-        } );
 
-        gov::create_governors( cor.gov_, cor.gov_mem );
+        gov::governors_ctx govs;
+        core::core         cor{ govs, 0_ms, gv, tm };
+
+        cfg::context      cc{};
+        cfg::root_handler rh{
+            .m     = cc.map,
+            .conv  = cor.conv,
+            .met   = cor.met,
+            .mon   = cor.mon,
+            .motor = mot,
+            .pos   = gp };
+        cc.handler.set_apply( em::member_function< &cfg::root_handler::apply >{ rh } );
+        govs.cfgs.link_front( cc.handler );
+
+        port_mock pm( port_mock::attrs{
+            .motor    = mot,
+            .pos_drv  = gp,
+            .curr_drv = gc,
+            .vcc_drv  = gv,
+            .temp_drv = tm,
+            .cor      = cor,
+            .root_cfg = cc.handler,
+            .stor_drv = sd,
+            .cfgs     = govs.cfgs,
+        } );
 
         bool       finished = false;
         auto const run_f    = [&]() -> boost::asio::awaitable< void > {

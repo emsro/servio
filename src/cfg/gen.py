@@ -36,7 +36,7 @@ def generate_key_values(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
     fd.write("};\n")
 
 def generate_ids(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
-    fd.write(f"constexpr std::array<uint32_t, {len(fields)}> ids = {{")
+    fd.write(f"static constexpr std::array<uint32_t, {len(fields)}> ids = {{")
     for field in fields:
         fd.write(f"{field['id']}, ")
     fd.write("};\n")
@@ -77,6 +77,7 @@ def generate_map(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
     fd.write("struct map {\n")
     fd.write("    using key_type = key;\n")
     generate_key_values(fd, fields)
+    generate_ids(fd, fields)
 
     for field in fields:
         if field['desc'] != "":
@@ -145,7 +146,6 @@ def generate_cfg(fd: TextIO, fields: List[Dict[str, Any]]) -> None:
     generate_to_str(fd, fields)
     generate_key_to_id(fd, fields)
     generate_id_to_key(fd, fields)
-    generate_ids(fd, fields)
     generate_key_trait(fd, fields)
     generate_map(fd, fields)
 
