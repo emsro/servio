@@ -106,154 +106,215 @@ $(document).ready(function(){initNavTree('handler_8hpp_source.html',''); initRes
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../iface/base.hpp&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="sntr_2base_8hpp.html">./base.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;emlabcpp/experimental/cfg/handler.hpp&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.hpp&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;emlabcpp/static_function.hpp&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1cfg.html">servio::cfg</a></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html">   16</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1cfg_1_1handler.html">handler</a> : <a class="code hl_struct" href="structservio_1_1cfg_1_1iface.html">iface</a></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">   18</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a> = <span class="keyword">typename</span> T::key_type;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;bitset&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;emlabcpp/experimental/cfg/handler.hpp&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;emlabcpp/experimental/function_view.hpp&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;emlabcpp/static_function.hpp&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;span&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1cfg.html">servio::cfg</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#af918871453ee5768d48f84e950554f46">   20</a></span>        T&amp;                                    <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#af918871453ee5768d48f84e950554f46">_x</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">   21</a></span>        em::function_view&lt; void( <a class="code hl_typedef" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a> ) &gt; <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">_on_cmd_set</a>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a18214f0e22c9544ed51bf56bec9037ac">   23</a></span>        <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a18214f0e22c9544ed51bf56bec9037ac">handler</a>( T&amp; x, em::function_view&lt; <span class="keywordtype">void</span>( <a class="code hl_typedef" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a> ) &gt; <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a74ea185bc3b9702545ece2efb583d20e">on_cmd_set</a> )</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>          : <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#af918871453ee5768d48f84e950554f46">_x</a>( x )</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>          , <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">_on_cmd_set</a>( <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a74ea185bc3b9702545ece2efb583d20e">on_cmd_set</a> )</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
-</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html">   21</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1cfg_1_1handler.html">handler</a> : <a class="code hl_struct" href="structservio_1_1cfg_1_1iface.html">iface</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">   23</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a> = <span class="keyword">typename</span> T::key_type;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#af918871453ee5768d48f84e950554f46">   25</a></span>        T&amp;                                    <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#af918871453ee5768d48f84e950554f46">_x</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">   26</a></span>        em::function_view&lt; void( <a class="code hl_typedef" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a> ) &gt; <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">_on_cmd_set</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a0fd7270ed65eb3f2bf99e855f0968a81">   27</a></span>        std::bitset&lt; T::ids.size() &gt;          <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#a0fd7270ed65eb3f2bf99e855f0968a81">_seen</a>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_struct" href="structservio_1_1opt__str__err.html">opt_str_err</a></div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a74ea185bc3b9702545ece2efb583d20e">   30</a></span>        <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a74ea185bc3b9702545ece2efb583d20e">on_cmd_set</a>( std::string_view <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a>, vari::vref&lt; servio::cfg::base_t const &gt; value )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                <span class="keyword">auto</span> k_opt = T::str_to_key( <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> );</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                <span class="keywordflow">if</span> ( !k_opt )</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                        <span class="keywordflow">return</span> <span class="stringliteral">&quot;unknown key&quot;</span>_err;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <span class="keyword">auto</span> opt_e = <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#af918871453ee5768d48f84e950554f46">_x</a>.ref_by_key( *k_opt ).visit(</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                    [&amp;]( vari::empty_t ) -&gt; <a class="code hl_struct" href="structservio_1_1opt__str__err.html">opt_str_err</a> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                            return <span class="stringliteral">&quot;internal error&quot;</span>_err;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                    },</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                    [&amp;]( <span class="keyword">auto</span>&amp; x ) -&gt; <a class="code hl_struct" href="structservio_1_1opt__str__err.html">opt_str_err</a> {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                            auto opt_e = servio::cfg::load_value( x, value );</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                            if ( opt_e )</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                                    return opt_e;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                            return {};</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                    } );</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                <span class="keywordflow">if</span> ( !opt_e )</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                        <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">_on_cmd_set</a>( *k_opt );</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                <span class="keywordflow">return</span> opt_e;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a18214f0e22c9544ed51bf56bec9037ac">   29</a></span>        <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a18214f0e22c9544ed51bf56bec9037ac">handler</a>( T&amp; x, em::function_view&lt; <span class="keywordtype">void</span>( <a class="code hl_typedef" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a> ) &gt; <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a74ea185bc3b9702545ece2efb583d20e">on_cmd_set</a> )</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>          : <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#af918871453ee5768d48f84e950554f46">_x</a>( x )</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>          , <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">_on_cmd_set</a>( <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a74ea185bc3b9702545ece2efb583d20e">on_cmd_set</a> )</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        }</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a7698e8f1d886e8d2882729813cf1f9bf">   50</a></span>        std::string_view <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a7698e8f1d886e8d2882729813cf1f9bf">on_cmd_list</a>( int32_t offset )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <span class="keywordflow">if</span> ( offset &lt; 0 )</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keywordflow">if</span> ( offset &gt;= (int32_t) T::keys.size() )</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceservio_1_1cfg.html#ab92ef77e7efafe1116ada6bda301b5b1">to_str</a>( T::keys[(uint32_t) offset] );</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_struct" href="structservio_1_1opt__str__err.html">opt_str_err</a></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a74ea185bc3b9702545ece2efb583d20e">   36</a></span>        <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a74ea185bc3b9702545ece2efb583d20e">on_cmd_set</a>( std::string_view <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a>, vari::vref&lt; servio::cfg::base_t const &gt; value )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                <span class="keyword">auto</span> k_opt = T::str_to_key( <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> );</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <span class="keywordflow">if</span> ( !k_opt )</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                        <span class="keywordflow">return</span> <span class="stringliteral">&quot;unknown key&quot;</span>_err;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="keyword">auto</span> opt_e = <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#af918871453ee5768d48f84e950554f46">_x</a>.ref_by_key( *k_opt ).visit(</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                    [&amp;]( vari::empty_t ) -&gt; <a class="code hl_struct" href="structservio_1_1opt__str__err.html">opt_str_err</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                            return <span class="stringliteral">&quot;internal error&quot;</span>_err;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                    },</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                    [&amp;]( <span class="keyword">auto</span>&amp; x ) -&gt; <a class="code hl_struct" href="structservio_1_1opt__str__err.html">opt_str_err</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                            auto opt_e = servio::cfg::load_value( x, value );</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                            if ( opt_e )</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                    return opt_e;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                            return {};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    } );</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="keywordflow">if</span> ( !opt_e )</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                        <a class="code hl_variable" href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">_on_cmd_set</a>( *k_opt );</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                <span class="keywordflow">return</span> opt_e;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a91ac3d6bc1f72e863af96808dece7467">   59</a></span>        vari::vval&lt; base_t, str_err &gt; <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a91ac3d6bc1f72e863af96808dece7467">on_cmd_get</a>( std::string_view <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keyword">auto</span> k_opt = T::str_to_key( <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> );</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <span class="keywordflow">if</span> ( !k_opt )</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                        <span class="keywordflow">return</span> <span class="stringliteral">&quot;unknown key&quot;</span>_err;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a7698e8f1d886e8d2882729813cf1f9bf">   56</a></span>        std::string_view <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a7698e8f1d886e8d2882729813cf1f9bf">on_cmd_list</a>( int32_t offset )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="keywordflow">if</span> ( offset &lt; 0 )</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                <span class="keywordflow">if</span> ( offset &gt;= (int32_t) T::keys.size() )</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceservio_1_1cfg.html#ab92ef77e7efafe1116ada6bda301b5b1">to_str</a>( T::keys[(uint32_t) offset] );</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keyword">using </span>R = vari::vval&lt; base_t, str_err &gt;;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                <span class="keywordflow">return</span> _x.ref_by_key( *k_opt ).visit(</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                    [&amp;]( vari::empty_t ) -&gt; R {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                            return <span class="stringliteral">&quot;internal_error&quot;</span>_err;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                    },</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                    [&amp;]( <span class="keyword">auto</span>&amp; x ) -&gt; R {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                            return servio::cfg::store_value( x );</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                    } );</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a91ac3d6bc1f72e863af96808dece7467">   65</a></span>        vari::vval&lt; base_t, str_err &gt; <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a91ac3d6bc1f72e863af96808dece7467">on_cmd_get</a>( std::string_view <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                <span class="keyword">auto</span> k_opt = T::str_to_key( <a class="code hl_enumeration" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> );</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keywordflow">if</span> ( !k_opt )</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                        <span class="keywordflow">return</span> <span class="stringliteral">&quot;unknown key&quot;</span>_err;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <span class="keyword">using </span>R = vari::vval&lt; base_t, str_err &gt;;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">return</span> _x.ref_by_key( *k_opt ).visit(</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    [&amp;]( vari::empty_t ) -&gt; R {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                            return <span class="stringliteral">&quot;internal_error&quot;</span>_err;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    },</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    [&amp;]( <span class="keyword">auto</span>&amp; x ) -&gt; R {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                            return servio::cfg::store_value( x );</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    } );</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
 </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a8aa733e6116c5d37e9f1b01b9b1cd1bc">   75</a></span>        <a class="code hl_enumeration" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a8aa733e6116c5d37e9f1b01b9b1cd1bc">on_storage_load</a>( uint32_t <span class="keywordtype">id</span>, std::span&lt; std::byte const &gt; data )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <span class="keyword">auto</span> <span class="keyword">const</span> ptr = _x.ref_by_id( <span class="keywordtype">id</span> );</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">if</span> ( !ptr )</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">status::error</a>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">return</span> ptr.vref().visit( [&amp;]&lt; <span class="keyword">typename</span> U &gt;( U&amp; val ) -&gt; <a class="code hl_enumeration" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                        <span class="keyword">auto</span> newval = em::cfg::get_val&lt; U &gt;( data );</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                        <span class="keywordflow">if</span> ( newval ) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                                val = *newval;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                        }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">status::error</a>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                } );</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a8aa733e6116c5d37e9f1b01b9b1cd1bc">   81</a></span>        <a class="code hl_enumeration" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a8aa733e6116c5d37e9f1b01b9b1cd1bc">on_storage_load</a>( uint32_t <span class="keywordtype">id</span>, std::span&lt; std::byte const &gt; data )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <span class="keyword">auto</span> <span class="keyword">const</span> ptr = _x.ref_by_id( <span class="keywordtype">id</span> );</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="keywordflow">if</span> ( !ptr )</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">status::error</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="keywordflow">return</span> ptr.vref().visit( [&amp;]&lt; <span class="keyword">typename</span> U &gt;( U&amp; val ) -&gt; <a class="code hl_enumeration" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                        <span class="keyword">auto</span> newval = em::cfg::get_val&lt; U &gt;( data );</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                        <span class="keywordflow">if</span> ( newval ) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                                val = *newval;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                        }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">status::error</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                } );</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
 </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <a class="code hl_typedef" href="namespaceservio.html#a61b877b22095a520cf71c2099e4888dc">opt&lt; std::span&lt; std::byte const &gt;</a> &gt;</div>
-<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#aeed85ab7238e3a07599b63ce94ae032e">   91</a></span>        <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#aeed85ab7238e3a07599b63ce94ae032e">on_storage_save</a>( uint32_t <span class="keywordtype">id</span>, std::span&lt; std::byte &gt; buffer )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                <a class="code hl_typedef" href="namespaceservio.html#a61b877b22095a520cf71c2099e4888dc">opt&lt; std::span&lt; std::byte &gt;</a> &gt; res;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <span class="keyword">auto</span> <span class="keyword">const</span>                    ptr = _x.ref_by_id( <span class="keywordtype">id</span> );</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                <span class="keywordflow">if</span> ( !ptr )</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                        <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                ptr.vref().visit( [&amp;]&lt; <span class="keyword">typename</span> U &gt;( U <span class="keyword">const</span>&amp; val ) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                        <span class="keyword">auto</span> ran = em::cfg::store_val( val, buffer );</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                        <span class="keywordflow">if</span> ( ran )</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                                res = *ran;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                } );</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_typedef" href="namespaceservio.html#a61b877b22095a520cf71c2099e4888dc">opt&lt; std::span&lt; std::byte const &gt;</a> &gt;</div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#aeed85ab7238e3a07599b63ce94ae032e">   97</a></span>        <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#aeed85ab7238e3a07599b63ce94ae032e">on_storage_save</a>( uint32_t <span class="keywordtype">id</span>, std::span&lt; std::byte &gt; buffer )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <a class="code hl_typedef" href="namespaceservio.html#a61b877b22095a520cf71c2099e4888dc">opt&lt; std::span&lt; std::byte &gt;</a> &gt; res;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                <span class="keyword">auto</span> <span class="keyword">const</span>                    ptr = _x.ref_by_id( <span class="keywordtype">id</span> );</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                <span class="keywordflow">if</span> ( !ptr )</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                ptr.vref().visit( [&amp;]&lt; <span class="keyword">typename</span> U &gt;( U <span class="keyword">const</span>&amp; val ) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                        <span class="keyword">auto</span> ran = em::cfg::store_val( val, buffer );</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                        <span class="keywordflow">if</span> ( ran )</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                                res = *ran;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                } );</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#adf15900c650d0019c1ee8017cf37c09b">  105</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#adf15900c650d0019c1ee8017cf37c09b">on_storage_change_check</a>( uint32_t <span class="keywordtype">id</span>, std::span&lt; std::byte const &gt; data )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                <span class="keyword">auto</span> <span class="keyword">const</span> ptr = _x.ref_by_id( <span class="keywordtype">id</span> );</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="keywordflow">if</span> ( !ptr )  <span class="comment">// XXX: maybe rethink?</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <span class="keywordflow">return</span> ptr.vref().visit( [&amp;]&lt; <span class="keyword">typename</span> U &gt;( U <span class="keyword">const</span>&amp; val ) {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                        <span class="keyword">auto</span> newval = em::cfg::get_val&lt; U &gt;( data );</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                        <span class="keywordflow">if</span> ( newval )</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                                <span class="keywordflow">return</span> val != *newval;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                } );</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#adf15900c650d0019c1ee8017cf37c09b">  111</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#adf15900c650d0019c1ee8017cf37c09b">on_storage_change_check</a>( uint32_t <span class="keywordtype">id</span>, std::span&lt; std::byte const &gt; data )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <span class="keyword">auto</span> <span class="keyword">const</span> ptr = _x.ref_by_id( <span class="keywordtype">id</span> );</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                <span class="keywordflow">if</span> ( !ptr )  <span class="comment">// XXX: maybe rethink?</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                <span class="keywordflow">return</span> ptr.vref().visit( [&amp;]&lt; <span class="keyword">typename</span> U &gt;( U <span class="keyword">const</span>&amp; val ) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                        <span class="keyword">auto</span> newval = em::cfg::get_val&lt; U &gt;( data );</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                        <span class="keywordflow">if</span> ( newval )</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                <span class="keywordflow">return</span> val != *newval;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                } );</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
 </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>};</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a0407fb101a5dd9ce6da22f6d75babc0d">  124</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a0407fb101a5dd9ce6da22f6d75babc0d">set_apply</a>( em::function_view&lt; <span class="keywordtype">void</span>( <a class="code hl_typedef" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a> ) &gt; f )</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                _on_cmd_set = f;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
 </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}  <span class="comment">// namespace servio::cfg</span></div>
-<div class="ttc" id="anamespaceservio_1_1cfg_html"><div class="ttname"><a href="namespaceservio_1_1cfg.html">servio::cfg</a></div><div class="ttdef"><b>Definition</b> base.hpp:11</div></div>
-<div class="ttc" id="anamespaceservio_1_1cfg_html_a17a7e0a2edf8384906b0f662d462cfd3"><div class="ttname"><a href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">servio::cfg::key</a></div><div class="ttdeci">key</div><div class="ttdef"><b>Definition</b> def.hpp:59</div></div>
-<div class="ttc" id="anamespaceservio_1_1cfg_html_ab92ef77e7efafe1116ada6bda301b5b1"><div class="ttname"><a href="namespaceservio_1_1cfg.html#ab92ef77e7efafe1116ada6bda301b5b1">servio::cfg::to_str</a></div><div class="ttdeci">constexpr std::string_view to_str(key k)</div><div class="ttdef"><b>Definition</b> def.hpp:78</div></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#af57c02dc8b096916d2987fe032c92ced">  129</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#af57c02dc8b096916d2987fe032c92ced">storage_reset_seen</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                _seen.reset();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        }</div>
+</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#aecfef5a0c3c13d712fefaac983bbf417">  134</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#aecfef5a0c3c13d712fefaac983bbf417">storage_mark_seen</a>( uint32_t <span class="keywordtype">id</span> )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                <span class="keyword">auto</span> <span class="keyword">const</span> it = std::ranges::find( T::ids, <span class="keywordtype">id</span> );</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                <span class="keywordflow">if</span> ( it == T::ids.end() )</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                <span class="keyword">auto</span> <span class="keyword">const</span> i = <span class="keyword">static_cast&lt;</span> std::size_t <span class="keyword">&gt;</span>( it - T::ids.begin() );</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                <span class="keywordflow">if</span> ( _seen[i] )</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                _seen[i] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        }</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a656db9490afb4d35a00601ef4e596261">  146</a></span>        <a class="code hl_typedef" href="namespaceservio.html#a61b877b22095a520cf71c2099e4888dc">opt&lt; uint32_t &gt;</a> <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a656db9490afb4d35a00601ef4e596261">storage_take_unseen</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                <span class="keywordflow">for</span> ( std::size_t i = 0; i &lt; T::ids.size(); ++i ) {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                        <span class="keywordflow">if</span> ( _seen[i] )</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                        _seen[i] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                        <span class="keywordflow">return</span> T::ids[i];</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        }</div>
+</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="foldopen" id="foldopen00157" data-start="{" data-end="}">
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="structservio_1_1cfg_1_1handler.html#a341329ac2fc496998049aa40ef69ecd0">  157</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structservio_1_1cfg_1_1handler.html#a341329ac2fc496998049aa40ef69ecd0">apply_all</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                <span class="keywordflow">for</span> ( <a class="code hl_typedef" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a> <span class="keyword">const</span> k : T::keys )</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                        _on_cmd_set( k );</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        }</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>};</div>
+</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>}  <span class="comment">// namespace servio::cfg</span></div>
+<div class="ttc" id="anamespaceservio_1_1cfg_html"><div class="ttname"><a href="namespaceservio_1_1cfg.html">servio::cfg</a></div><div class="ttdef"><b>Definition</b> base.hpp:12</div></div>
+<div class="ttc" id="anamespaceservio_1_1cfg_html_a17a7e0a2edf8384906b0f662d462cfd3"><div class="ttname"><a href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">servio::cfg::key</a></div><div class="ttdeci">key</div><div class="ttdef"><b>Definition</b> def.hpp:60</div></div>
+<div class="ttc" id="anamespaceservio_1_1cfg_html_ab92ef77e7efafe1116ada6bda301b5b1"><div class="ttname"><a href="namespaceservio_1_1cfg.html#ab92ef77e7efafe1116ada6bda301b5b1">servio::cfg::to_str</a></div><div class="ttdeci">constexpr std::string_view to_str(key k)</div><div class="ttdef"><b>Definition</b> def.hpp:79</div></div>
 <div class="ttc" id="anamespaceservio_html_a61b877b22095a520cf71c2099e4888dc"><div class="ttname"><a href="namespaceservio.html#a61b877b22095a520cf71c2099e4888dc">servio::opt</a></div><div class="ttdeci">std::optional&lt; T &gt; opt</div><div class="ttdef"><b>Definition</b> base.hpp:19</div></div>
 <div class="ttc" id="anamespaceservio_html_ae7c15dfa3e6c95de6c389ae86dd84d15"><div class="ttname"><a href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">servio::status</a></div><div class="ttdeci">status</div><div class="ttdef"><b>Definition</b> status.hpp:12</div></div>
 <div class="ttc" id="anamespaceservio_html_ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076"><div class="ttname"><a href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">servio::status::success</a></div><div class="ttdeci">@ success</div></div>
 <div class="ttc" id="anamespaceservio_html_ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282"><div class="ttname"><a href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">servio::status::error</a></div><div class="ttdeci">@ error</div></div>
 <div class="ttc" id="asntr_2base_8hpp_html"><div class="ttname"><a href="sntr_2base_8hpp.html">base.hpp</a></div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a></div><div class="ttdef"><b>Definition</b> handler.hpp:17</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a18214f0e22c9544ed51bf56bec9037ac"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a18214f0e22c9544ed51bf56bec9037ac">servio::cfg::handler::handler</a></div><div class="ttdeci">handler(T &amp;x, em::function_view&lt; void(key_type) &gt; on_cmd_set)</div><div class="ttdef"><b>Definition</b> handler.hpp:23</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a74ea185bc3b9702545ece2efb583d20e"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a74ea185bc3b9702545ece2efb583d20e">servio::cfg::handler::on_cmd_set</a></div><div class="ttdeci">opt_str_err on_cmd_set(std::string_view key, vari::vref&lt; servio::cfg::base_t const &gt; value) override</div><div class="ttdef"><b>Definition</b> handler.hpp:30</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a7698e8f1d886e8d2882729813cf1f9bf"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a7698e8f1d886e8d2882729813cf1f9bf">servio::cfg::handler::on_cmd_list</a></div><div class="ttdeci">std::string_view on_cmd_list(int32_t offset) override</div><div class="ttdef"><b>Definition</b> handler.hpp:50</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a8aa733e6116c5d37e9f1b01b9b1cd1bc"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a8aa733e6116c5d37e9f1b01b9b1cd1bc">servio::cfg::handler::on_storage_load</a></div><div class="ttdeci">status on_storage_load(uint32_t id, std::span&lt; std::byte const &gt; data) override</div><div class="ttdef"><b>Definition</b> handler.hpp:75</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a91ac3d6bc1f72e863af96808dece7467"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a91ac3d6bc1f72e863af96808dece7467">servio::cfg::handler::on_cmd_get</a></div><div class="ttdeci">vari::vval&lt; base_t, str_err &gt; on_cmd_get(std::string_view key) override</div><div class="ttdef"><b>Definition</b> handler.hpp:59</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_ac69359cfc7346e325a43143cd002a490"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">servio::cfg::handler::_on_cmd_set</a></div><div class="ttdeci">em::function_view&lt; void(key_type) &gt; _on_cmd_set</div><div class="ttdef"><b>Definition</b> handler.hpp:21</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_adf15900c650d0019c1ee8017cf37c09b"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#adf15900c650d0019c1ee8017cf37c09b">servio::cfg::handler::on_storage_change_check</a></div><div class="ttdeci">bool on_storage_change_check(uint32_t id, std::span&lt; std::byte const &gt; data) override</div><div class="ttdef"><b>Definition</b> handler.hpp:105</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_ae59c96a13b4b39dfa802461132855d71"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">servio::cfg::handler::key_type</a></div><div class="ttdeci">typename T::key_type key_type</div><div class="ttdef"><b>Definition</b> handler.hpp:18</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_aeed85ab7238e3a07599b63ce94ae032e"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#aeed85ab7238e3a07599b63ce94ae032e">servio::cfg::handler::on_storage_save</a></div><div class="ttdeci">opt&lt; std::span&lt; std::byte const &gt; &gt; on_storage_save(uint32_t id, std::span&lt; std::byte &gt; buffer) override</div><div class="ttdef"><b>Definition</b> handler.hpp:91</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_af918871453ee5768d48f84e950554f46"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#af918871453ee5768d48f84e950554f46">servio::cfg::handler::_x</a></div><div class="ttdeci">T &amp; _x</div><div class="ttdef"><b>Definition</b> handler.hpp:20</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1iface_html"><div class="ttname"><a href="structservio_1_1cfg_1_1iface.html">servio::cfg::iface</a></div><div class="ttdef"><b>Definition</b> base.hpp:73</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a></div><div class="ttdef"><b>Definition</b> handler.hpp:22</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a0407fb101a5dd9ce6da22f6d75babc0d"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a0407fb101a5dd9ce6da22f6d75babc0d">servio::cfg::handler::set_apply</a></div><div class="ttdeci">void set_apply(em::function_view&lt; void(key_type) &gt; f)</div><div class="ttdef"><b>Definition</b> handler.hpp:124</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a0fd7270ed65eb3f2bf99e855f0968a81"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a0fd7270ed65eb3f2bf99e855f0968a81">servio::cfg::handler::_seen</a></div><div class="ttdeci">std::bitset&lt; T::ids.size() &gt; _seen</div><div class="ttdef"><b>Definition</b> handler.hpp:27</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a18214f0e22c9544ed51bf56bec9037ac"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a18214f0e22c9544ed51bf56bec9037ac">servio::cfg::handler::handler</a></div><div class="ttdeci">handler(T &amp;x, em::function_view&lt; void(key_type) &gt; on_cmd_set)</div><div class="ttdef"><b>Definition</b> handler.hpp:29</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a341329ac2fc496998049aa40ef69ecd0"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a341329ac2fc496998049aa40ef69ecd0">servio::cfg::handler::apply_all</a></div><div class="ttdeci">void apply_all() override</div><div class="ttdef"><b>Definition</b> handler.hpp:157</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a656db9490afb4d35a00601ef4e596261"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a656db9490afb4d35a00601ef4e596261">servio::cfg::handler::storage_take_unseen</a></div><div class="ttdeci">opt&lt; uint32_t &gt; storage_take_unseen() override</div><div class="ttdef"><b>Definition</b> handler.hpp:146</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a74ea185bc3b9702545ece2efb583d20e"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a74ea185bc3b9702545ece2efb583d20e">servio::cfg::handler::on_cmd_set</a></div><div class="ttdeci">opt_str_err on_cmd_set(std::string_view key, vari::vref&lt; servio::cfg::base_t const &gt; value) override</div><div class="ttdef"><b>Definition</b> handler.hpp:36</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a7698e8f1d886e8d2882729813cf1f9bf"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a7698e8f1d886e8d2882729813cf1f9bf">servio::cfg::handler::on_cmd_list</a></div><div class="ttdeci">std::string_view on_cmd_list(int32_t offset) override</div><div class="ttdef"><b>Definition</b> handler.hpp:56</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a8aa733e6116c5d37e9f1b01b9b1cd1bc"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a8aa733e6116c5d37e9f1b01b9b1cd1bc">servio::cfg::handler::on_storage_load</a></div><div class="ttdeci">status on_storage_load(uint32_t id, std::span&lt; std::byte const &gt; data) override</div><div class="ttdef"><b>Definition</b> handler.hpp:81</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_a91ac3d6bc1f72e863af96808dece7467"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#a91ac3d6bc1f72e863af96808dece7467">servio::cfg::handler::on_cmd_get</a></div><div class="ttdeci">vari::vval&lt; base_t, str_err &gt; on_cmd_get(std::string_view key) override</div><div class="ttdef"><b>Definition</b> handler.hpp:65</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_ac69359cfc7346e325a43143cd002a490"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">servio::cfg::handler::_on_cmd_set</a></div><div class="ttdeci">em::function_view&lt; void(key_type) &gt; _on_cmd_set</div><div class="ttdef"><b>Definition</b> handler.hpp:26</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_adf15900c650d0019c1ee8017cf37c09b"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#adf15900c650d0019c1ee8017cf37c09b">servio::cfg::handler::on_storage_change_check</a></div><div class="ttdeci">bool on_storage_change_check(uint32_t id, std::span&lt; std::byte const &gt; data) override</div><div class="ttdef"><b>Definition</b> handler.hpp:111</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_ae59c96a13b4b39dfa802461132855d71"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">servio::cfg::handler::key_type</a></div><div class="ttdeci">typename T::key_type key_type</div><div class="ttdef"><b>Definition</b> handler.hpp:23</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_aecfef5a0c3c13d712fefaac983bbf417"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#aecfef5a0c3c13d712fefaac983bbf417">servio::cfg::handler::storage_mark_seen</a></div><div class="ttdeci">bool storage_mark_seen(uint32_t id) override</div><div class="ttdef"><b>Definition</b> handler.hpp:134</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_aeed85ab7238e3a07599b63ce94ae032e"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#aeed85ab7238e3a07599b63ce94ae032e">servio::cfg::handler::on_storage_save</a></div><div class="ttdeci">opt&lt; std::span&lt; std::byte const &gt; &gt; on_storage_save(uint32_t id, std::span&lt; std::byte &gt; buffer) override</div><div class="ttdef"><b>Definition</b> handler.hpp:97</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_af57c02dc8b096916d2987fe032c92ced"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#af57c02dc8b096916d2987fe032c92ced">servio::cfg::handler::storage_reset_seen</a></div><div class="ttdeci">void storage_reset_seen() override</div><div class="ttdef"><b>Definition</b> handler.hpp:129</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1handler_html_af918871453ee5768d48f84e950554f46"><div class="ttname"><a href="structservio_1_1cfg_1_1handler.html#af918871453ee5768d48f84e950554f46">servio::cfg::handler::_x</a></div><div class="ttdeci">T &amp; _x</div><div class="ttdef"><b>Definition</b> handler.hpp:25</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1iface_html"><div class="ttname"><a href="structservio_1_1cfg_1_1iface.html">servio::cfg::iface</a></div><div class="ttdef"><b>Definition</b> base.hpp:76</div></div>
 <div class="ttc" id="astructservio_1_1opt__str__err_html"><div class="ttname"><a href="structservio_1_1opt__str__err.html">servio::opt_str_err</a></div><div class="ttdef"><b>Definition</b> base.hpp:93</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -261,7 +322,7 @@ $(document).ready(function(){initNavTree('handler_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1e869ebbc6cce176ee0dbb76743ac339.html">cfg</a></li><li class="navelem"><a class="el" href="handler_8hpp.html">handler.hpp</a></li>
-    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 17:41:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

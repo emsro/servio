@@ -1,7 +1,7 @@
 var searchData=
 [
   ['m_0',['m',['../structservio_1_1cfg_1_1root__handler.html#a667400ee5615959d58397741ad3c1393',1,'servio::cfg::root_handler']]],
-  ['m_5fhandler_1',['m_handler',['../structservio_1_1cfg_1_1root__handler.html#af1f63e6a735d61c142a1ebcae8eac6d1',1,'servio::cfg::root_handler']]],
+  ['manager_1',['manager',['../structservio_1_1gov_1_1governors__ctx.html#a1ef856e97ba77a5d2c0164fc6890f1d7',1,'servio::gov::governors_ctx']]],
   ['map_2',['map',['../namespaceservio_1_1cfg.html#a3dbb7cf8f857ae3e9ab69908e1674f69',1,'servio::cfg::context']]],
   ['max_5feid_3',['max_eid',['../namespaceservio_1_1sntr.html#a9cd819b8dac7557532809cf4f1a1f073',1,'servio::sntr']]],
   ['maximum_5ftemperature_4',['maximum_temperature',['../structservio_1_1cfg_1_1map.html#a6fcb998a25b9456787e604581aed42c7',1,'servio::cfg::map']]],
@@ -9,8 +9,8 @@ var searchData=
   ['mc1_5fpin_6',['mc1_pin',['../namespaceservio_1_1plt.html#abf83c9b9ef5f51ca968ce2bfd819b19a',1,'servio::plt::hb_timer_cfg']]],
   ['mc2_5fch_7',['mc2_ch',['../namespaceservio_1_1plt.html#af748fc48605aa9327b8a17cff5681907',1,'servio::plt::hb_timer_cfg']]],
   ['mc2_5fpin_8',['mc2_pin',['../namespaceservio_1_1plt.html#a343a2e6d97e198ad0c85add7bb96ec86',1,'servio::plt::hb_timer_cfg']]],
-  ['mem_9',['mem',['../namespaceservio_1_1core.html#a60f4044fe51ef47ac4a51aa7ab72c27b',1,'servio::core::dispatcher']]],
-  ['met_10',['met',['../namespaceservio_1_1core.html#a69a198f45973f8414dfae87f38a1550f',1,'servio::core::dispatcher::met'],['../structservio_1_1cfg_1_1root__handler.html#ac897eb06d45a885f37941359a4e346e9',1,'servio::cfg::root_handler::met'],['../structservio_1_1core_1_1core.html#af79a219de96e8d0dfcf16ed14b8f8d0b',1,'servio::core::core::met']]],
+  ['mem_9',['mem',['../namespaceservio_1_1core.html#a60f4044fe51ef47ac4a51aa7ab72c27b',1,'servio::core::dispatcher::mem'],['../structservio_1_1gov_1_1governors__ctx.html#aec576383bfd3d08ad4e242ab27561dd5',1,'servio::gov::governors_ctx::mem']]],
+  ['met_10',['met',['../structservio_1_1core_1_1core.html#af79a219de96e8d0dfcf16ed14b8f8d0b',1,'servio::core::core::met'],['../namespaceservio_1_1core.html#a69a198f45973f8414dfae87f38a1550f',1,'servio::core::dispatcher::met'],['../structservio_1_1cfg_1_1root__handler.html#ac897eb06d45a885f37941359a4e346e9',1,'servio::cfg::root_handler::met']]],
   ['met_5fid_11',['met_id',['../structservio_1_1ftest_1_1utest.html#ae90f670814f00d9aba64fa01412be059',1,'servio::ftest::utest']]],
   ['meta_12',['meta',['../namespaceservio_1_1scmdio.html#a5fea6003be161f442586771ace5607ac',1,'servio::scmdio::raw_preset_def']]],
   ['metric_5fvalue_13',['metric_value',['../structservio_1_1ftest_1_1__store__metric__ctx.html#a54f98d30357cbeca1a4fea783142d697',1,'servio::ftest::_store_metric_ctx']]],

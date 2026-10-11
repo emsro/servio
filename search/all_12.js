@@ -65,7 +65,7 @@ var searchData=
   ['handle_62',['handle',['../structservio_1_1gov_1_1handle.html',1,'servio::gov']]],
   ['handle_5feptr_63',['handle_eptr',['../namespaceservio_1_1scmdio.html#a8b4e680f37715056404dba44635ecf45',1,'servio::scmdio']]],
   ['handle_5fmessage_64',['handle_message',['../namespaceservio_1_1core.html#afd0bb8edfce26e988b98d2d2adf45dc3',1,'servio::core']]],
-  ['handler_65',['handler',['../structservio_1_1cfg_1_1handler.html',1,'servio::cfg::handler&lt; T &gt;'],['../structservio_1_1cfg_1_1handler.html#a18214f0e22c9544ed51bf56bec9037ac',1,'servio::cfg::handler::handler()']]],
+  ['handler_65',['handler',['../structservio_1_1cfg_1_1handler.html',1,'servio::cfg::handler&lt; T &gt;'],['../structservio_1_1cfg_1_1handler.html#a18214f0e22c9544ed51bf56bec9037ac',1,'servio::cfg::handler::handler()'],['../namespaceservio_1_1cfg.html#a1668b59e4e7408461a976fff3617bf45',1,'servio::cfg::context::handler']]],
   ['handler_2ehpp_66',['handler.hpp',['../handler_8hpp.html',1,'']]],
   ['handler_3c_20servio_3a_3acfg_3a_3amap_20_3e_67',['handler&lt; servio::cfg::map &gt;',['../structservio_1_1cfg_1_1handler.html',1,'servio::cfg']]],
   ['handler_3c_20servio_3a_3agov_3a_3acurr_3a_3acfg_3a_3amap_20_3e_68',['handler&lt; servio::gov::curr::cfg::map &gt;',['../structservio_1_1cfg_1_1handler.html',1,'servio::cfg']]],

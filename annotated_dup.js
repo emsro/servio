@@ -112,7 +112,6 @@ var annotated_dup =
         [ "empty_detailed_cb", "structservio_1_1drv_1_1empty__detailed__cb.html", "structservio_1_1drv_1_1empty__detailed__cb" ],
         [ "empty_period_cb", "structservio_1_1drv_1_1empty__period__cb.html", "structservio_1_1drv_1_1empty__period__cb" ],
         [ "empty_value_cb", "structservio_1_1drv_1_1empty__value__cb.html", "structservio_1_1drv_1_1empty__value__cb" ],
-        [ "flash_storage", "structservio_1_1drv_1_1flash__storage.html", "structservio_1_1drv_1_1flash__storage" ],
         [ "get_curr_iface", "structservio_1_1drv_1_1get__curr__iface.html", "structservio_1_1drv_1_1get__curr__iface" ],
         [ "get_pos_iface", "structservio_1_1drv_1_1get__pos__iface.html", "structservio_1_1drv_1_1get__pos__iface" ],
         [ "hbridge", "classservio_1_1drv_1_1hbridge.html", "classservio_1_1drv_1_1hbridge" ],
@@ -251,6 +250,7 @@ var annotated_dup =
         [ "governor", "structservio_1_1gov_1_1governor.html", "structservio_1_1gov_1_1governor" ],
         [ "governor_factory", "structservio_1_1gov_1_1governor__factory.html", "structservio_1_1gov_1_1governor__factory" ],
         [ "governor_manager", "structservio_1_1gov_1_1governor__manager.html", "structservio_1_1gov_1_1governor__manager" ],
+        [ "governors_ctx", "structservio_1_1gov_1_1governors__ctx.html", "structservio_1_1gov_1_1governors__ctx" ],
         [ "handle", "structservio_1_1gov_1_1handle.html", "structservio_1_1gov_1_1handle" ]
       ] ],
       [ "iface", "namespaceservio_1_1iface.html", [

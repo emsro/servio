@@ -12,6 +12,7 @@ var structservio_1_1gov_1_1vel_1_1cfg_1_1map =
     [ "curr_loop_d", "structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#a9c03f79838ef6b21716884ef76bedc31", null ],
     [ "curr_loop_i", "structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#a225d04bc7048901f62268b69c1a2e330", null ],
     [ "curr_loop_p", "structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#a05aa280cb253417d0e4bc242941a604e", null ],
+    [ "ids", "structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#ad1664caa04a641d38030ac14d02a546a", null ],
     [ "keys", "structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#abc31a3dfe63a01cbbb7018a4c229d469", null ],
     [ "static_friction_decay", "structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#a0bccd40acc215fbe10d90770eb583541", null ],
     [ "static_friction_scale", "structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#acfbd5cc570ebe43fd1f3c1c051995c27", null ],

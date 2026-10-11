@@ -1,13 +1,15 @@
 <map id="servio::drv::tests::storage_iface_test" name="servio::drv::tests::storage_iface_test">
-<area shape="rect" id="Node000001" title=" " alt="" coords="160,196,311,236"/>
-<area shape="rect" id="Node000002" href="$structservio_1_1ftest_1_1utest.html" title=" " alt="" coords="5,101,145,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,131,207,194,204,198,104,136"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="17,5,131,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,44,78,101,73,101,72,44"/>
-<area shape="rect" id="Node000004" href="$structservio_1_1cfg_1_1map.html" title=" " alt="" coords="172,101,299,126"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="238,140,238,196,233,196,233,140"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="156,5,317,31"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="239,44,238,101,233,101,234,44"/>
-<area shape="rect" id="Node000006" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="323,93,470,133"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="356,143,267,198,264,194,353,138"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="160,211,311,251"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1ftest_1_1utest.html" title=" " alt="" coords="5,115,145,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,146,207,208,204,213,104,150"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="15,13,130,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="76,52,78,115,72,115,71,52"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1cfg_1_1map.html" title=" " alt="" coords="172,115,299,141"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="238,154,238,211,233,211,233,154"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="155,13,316,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="238,52,238,115,233,115,233,52"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="340,5,480,45"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="367,55,257,117,254,113,364,50"/>
+<area shape="rect" id="Node000007" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="323,108,470,148"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="356,157,267,213,264,208,353,153"/>
 </map>

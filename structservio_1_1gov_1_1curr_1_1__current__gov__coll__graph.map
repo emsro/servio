@@ -1,20 +1,24 @@
 <map id="servio::gov::curr::_current_gov" name="servio::gov::curr::_current_gov">
-<area shape="rect" id="Node000001" title=" " alt="" coords="745,111,880,151"/>
-<area shape="rect" id="Node000002" href="$structservio_1_1gov_1_1governor.html" title=" " alt="" coords="457,5,616,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="595,32,617,39,670,58,722,80,779,109,776,114,720,84,668,63,615,45,593,37"/>
-<area shape="rect" id="Node000003" href="$structservio_1_1gov_1_1handle.html" title=" " alt="" coords="464,55,609,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="607,81,746,113,745,118,605,86"/>
-<area shape="rect" id="Node000004" href="$structservio_1_1gov_1_1curr_1_1cfg_1_1map.html" title=" " alt="" coords="248,166,383,206"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="397,189,501,190,616,182,687,168,753,149,754,154,689,173,616,187,501,195,397,194"/>
-<area shape="rect" id="Node000006" href="$structservio_1_1cfg_1_1handler.html" title=" " alt="" coords="462,104,611,159"/>
-<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="395,164,461,147,462,152,397,169"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="5,173,159,199"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="173,183,248,183,248,189,173,189"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="625,129,745,129,745,134,625,134"/>
-<area shape="rect" id="Node000007" href="$structservio_1_1cfg_1_1iface.html" title=" " alt="" coords="250,107,381,132"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="395,121,462,125,462,130,394,126"/>
-<area shape="rect" id="Node000008" href="$structservio_1_1pwr.html" title=" " alt="" coords="489,247,584,272"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="597,258,659,250,690,242,720,229,744,212,766,191,797,150,801,153,770,195,748,216,723,234,692,247,660,255,598,263"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="241,239,389,279"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="403,257,489,257,489,262,403,262"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="811,111,945,151"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1gov_1_1governor.html" title=" " alt="" coords="523,5,681,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="660,32,682,39,736,58,788,80,844,109,841,114,786,84,734,63,680,45,659,37"/>
+<area shape="rect" id="Node000003" href="$structservio_1_1gov_1_1handle.html" title=" " alt="" coords="529,55,675,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="672,81,811,113,810,118,671,86"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1gov_1_1curr_1_1cfg_1_1map.html" title=" " alt="" coords="269,161,404,201"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="418,185,542,190,612,188,681,182,753,168,818,149,820,154,754,173,682,187,612,194,542,195,418,191"/>
+<area shape="rect" id="Node000007" href="$structservio_1_1cfg_1_1handler.html" title=" " alt="" coords="527,104,677,159"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="417,163,527,143,527,148,418,168"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,140,159,165"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="173,160,269,171,269,176,172,165"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="12,190,152,230"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="165,198,269,186,269,191,166,203"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="690,129,810,129,810,134,690,134"/>
+<area shape="rect" id="Node000008" href="$structservio_1_1cfg_1_1iface.html" title=" " alt="" coords="271,47,402,72"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="406,73,499,97,528,105,527,110,498,102,405,78"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="241,96,432,121"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="446,115,527,122,527,128,445,121"/>
+<area shape="rect" id="Node000011" href="$structservio_1_1pwr.html" title=" " alt="" coords="555,247,649,272"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="663,258,724,250,756,242,785,229,810,212,831,191,862,150,867,153,835,195,813,216,788,234,758,247,725,255,663,263"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="263,239,411,279"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="425,257,555,257,555,262,425,262"/>
 </map>

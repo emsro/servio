@@ -99,13 +99,15 @@ $(document).ready(function(){initNavTree('governor__manager_8hpp.html',''); init
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="governor_8hpp_source.html">./governor.hpp</a>&quot;</code><br />
+<code>#include &lt;emlabcpp/pmr/stack_resource.hpp&gt;</code><br />
 <code>#include &lt;emlabcpp/static_vector.hpp&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for governor_manager.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="governor__manager_8hpp__incl.svg" width="1128" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="governor__manager_8hpp__incl.svg" width="1290" height="286"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="governor__manager_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -113,6 +115,8 @@ $(document).ready(function(){initNavTree('governor__manager_8hpp.html',''); init
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1governor__manager.html">servio::gov::governor_manager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1governors__ctx.html">servio::gov::governors_ctx</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -124,8 +128,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aed8922310724cfa1c95f0075b497c590" id="r_aed8922310724cfa1c95f0075b497c590"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#aed8922310724cfa1c95f0075b497c590">servio::gov::create_governors</a> (<a class="el" href="structservio_1_1gov_1_1governor__manager.html">governor_manager</a> &amp;gm, em::pmr::memory_resource &amp;mem)</td></tr>
-<tr class="separator:aed8922310724cfa1c95f0075b497c590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213a1943d8fd383519f8a80ffdd32e24" id="r_a213a1943d8fd383519f8a80ffdd32e24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#a213a1943d8fd383519f8a80ffdd32e24">servio::gov::check_cfg_sections</a> (zll::ll_list&lt; <a class="el" href="structservio_1_1cfg_1_1iface.html">cfg::iface</a> &gt; &amp;cfgs)</td></tr>
+<tr class="separator:a213a1943d8fd383519f8a80ffdd32e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cb036420be28b3b958fc8233838016e" id="r_a7cb036420be28b3b958fc8233838016e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#a7cb036420be28b3b958fc8233838016e">servio::gov::create_governors</a> (<a class="el" href="structservio_1_1gov_1_1governor__manager.html">governor_manager</a> &amp;gm, em::pmr::memory_resource &amp;mem, zll::ll_list&lt; <a class="el" href="structservio_1_1cfg_1_1iface.html">cfg::iface</a> &gt; &amp;cfgs)</td></tr>
+<tr class="separator:a7cb036420be28b3b958fc8233838016e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -133,7 +139,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7d62d1059ec54d5dc63de032b83eaa8e.html">gov</a></li><li class="navelem"><a class="el" href="governor__manager_8hpp.html">governor_manager.hpp</a></li>
-    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 17:41:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

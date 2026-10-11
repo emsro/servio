@@ -51,6 +51,7 @@ var cfg_2def_8hpp =
     ] ],
     [ "servio::cfg::map", "structservio_1_1cfg_1_1map.html", "structservio_1_1cfg_1_1map" ],
     [ "servio::cfg::context", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1context", [
+      [ "handler", "namespaceservio_1_1cfg.html#a1668b59e4e7408461a976fff3617bf45", null ],
       [ "map", "namespaceservio_1_1cfg.html#a3dbb7cf8f857ae3e9ab69908e1674f69", null ]
     ] ],
     [ "value_type", "cfg_2def_8hpp.html#a8c8b49831fe2989e12becc172c32f462", null ],
@@ -81,6 +82,5 @@ var cfg_2def_8hpp =
     [ "id_to_key", "cfg_2def_8hpp.html#a1e1087069c21f5e087e55da1f2a9f95e", null ],
     [ "key_to_id", "cfg_2def_8hpp.html#ad3a87c381f3fd90e336373a20951af56", null ],
     [ "str_to_encoder_mode", "cfg_2def_8hpp.html#a6eb8fc3fad9e683169acc64a7148a604", null ],
-    [ "to_str", "cfg_2def_8hpp.html#ab92ef77e7efafe1116ada6bda301b5b1", null ],
-    [ "ids", "cfg_2def_8hpp.html#a42bdc42292e3d36a9559e4e6f70f6b61", null ]
+    [ "to_str", "cfg_2def_8hpp.html#ab92ef77e7efafe1116ada6bda301b5b1", null ]
 ];

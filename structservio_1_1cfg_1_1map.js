@@ -12,6 +12,7 @@ var structservio_1_1cfg_1_1map =
     [ "encoder_mode", "structservio_1_1cfg_1_1map.html#a1ed1f3ea354aaafb27844f008015e243", null ],
     [ "group_id", "structservio_1_1cfg_1_1map.html#ac42b48936f0e0bdcbe1981d43345f8ca", null ],
     [ "id", "structservio_1_1cfg_1_1map.html#a32dcc7fc83036ab431b582961477ec60", null ],
+    [ "ids", "structservio_1_1cfg_1_1map.html#a3538c89f9a45b72470ded961fa84ed1e", null ],
     [ "invert_hbridge", "structservio_1_1cfg_1_1map.html#a4ca07664e6a957c576b4044140ccdddd", null ],
     [ "keys", "structservio_1_1cfg_1_1map.html#a79ab48912c8c8f7219cb41ca9235b0cb", null ],
     [ "maximum_temperature", "structservio_1_1cfg_1_1map.html#a6fcb998a25b9456787e604581aed42c7", null ],

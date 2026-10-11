@@ -2,7 +2,7 @@ var namespaceservio_1_1drv =
 [
     [ "bits", "namespaceservio_1_1drv_1_1bits.html", "namespaceservio_1_1drv_1_1bits" ],
     [ "drv8251", "namespaceservio_1_1drv_1_1drv8251.html", [
-      [ "get_curr_coeff", "namespaceservio_1_1drv_1_1drv8251.html#a137ccaabbaf7114ac8aed68632e19bf5", null ]
+      [ "get_curr_coeff", "namespaceservio_1_1drv_1_1drv8251.html#a32d4916751ad4939aa23224b09a0f216", null ]
     ] ],
     [ "mock", "namespaceservio_1_1drv_1_1mock.html", "namespaceservio_1_1drv_1_1mock" ],
     [ "tests", "namespaceservio_1_1drv_1_1tests.html", "namespaceservio_1_1drv_1_1tests" ],
@@ -28,7 +28,6 @@ var namespaceservio_1_1drv =
     [ "empty_detailed_cb", "structservio_1_1drv_1_1empty__detailed__cb.html", "structservio_1_1drv_1_1empty__detailed__cb" ],
     [ "empty_period_cb", "structservio_1_1drv_1_1empty__period__cb.html", "structservio_1_1drv_1_1empty__period__cb" ],
     [ "empty_value_cb", "structservio_1_1drv_1_1empty__value__cb.html", "structservio_1_1drv_1_1empty__value__cb" ],
-    [ "flash_storage", "structservio_1_1drv_1_1flash__storage.html", "structservio_1_1drv_1_1flash__storage" ],
     [ "get_curr_iface", "structservio_1_1drv_1_1get__curr__iface.html", "structservio_1_1drv_1_1get__curr__iface" ],
     [ "get_pos_iface", "structservio_1_1drv_1_1get__pos__iface.html", "structservio_1_1drv_1_1get__pos__iface" ],
     [ "hbridge", "classservio_1_1drv_1_1hbridge.html", "classservio_1_1drv_1_1hbridge" ],
@@ -78,8 +77,7 @@ var namespaceservio_1_1drv =
       [ "NL_HAL_ERROR_IRQ_ERR", "namespaceservio_1_1drv.html#a0cce3df4ac7f4050e4b0c02208b51128a57d5ca509fdc17d87a5cd7299609b5e6", null ],
       [ "NL_HAL_RX_START_ERR", "namespaceservio_1_1drv.html#a0cce3df4ac7f4050e4b0c02208b51128ac174cd3da2d8d184f1ab628d315fb2e9", null ]
     ] ],
-    [ "cfg_erase", "namespaceservio_1_1drv.html#a19a2cf65697fc271377dfbf1bc8c1dc3", null ],
-    [ "cfg_write", "namespaceservio_1_1drv.html#a500eb08ac25ba30d034e0a70f40f1156", null ],
+    [ "cfg_storage_id", "namespaceservio_1_1drv.html#a204d2674b25bc5d7226c4cba7046bbc4", null ],
     [ "retain_callback", "namespaceservio_1_1drv.html#adc59015cd12f6be58b23024501b3fe6c", null ],
     [ "retain_callback", "namespaceservio_1_1drv.html#a5e3395c31d8cff501ff1b9241e107d9c", null ],
     [ "retain_callback", "namespaceservio_1_1drv.html#a2854d66adb35885d265babb165cb5c63", null ],

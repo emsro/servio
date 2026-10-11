@@ -1,5 +1,9 @@
 <map id="servio::drv::mock::stor" name="servio::drv::mock::stor">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,172,119"/>
-<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="15,5,162,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,59,91,93,86,93,86,59"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="55,196,222,221"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1drv_1_1storage__iface.html" title=" " alt="" coords="5,93,152,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,143,133,194,129,197,96,146"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="176,93,373,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,143,157,198,154,194,234,139"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="185,5,364,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="277,44,277,93,272,93,272,44"/>
 </map>

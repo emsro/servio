@@ -11,5 +11,6 @@ var searchData=
   ['govctl_5fstmt_8',['govctl_stmt',['../structservio_1_1iface_1_1govctl__stmt.html',1,'servio::iface']]],
   ['governor_9',['governor',['../structservio_1_1gov_1_1governor.html',1,'servio::gov']]],
   ['governor_5ffactory_10',['governor_factory',['../structservio_1_1gov_1_1governor__factory.html',1,'servio::gov']]],
-  ['governor_5fmanager_11',['governor_manager',['../structservio_1_1gov_1_1governor__manager.html',1,'servio::gov']]]
+  ['governor_5fmanager_11',['governor_manager',['../structservio_1_1gov_1_1governor__manager.html',1,'servio::gov']]],
+  ['governors_5fctx_12',['governors_ctx',['../structservio_1_1gov_1_1governors__ctx.html',1,'servio::gov']]]
 ];

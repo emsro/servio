@@ -107,6 +107,8 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceservio_1_1gov_1_1pow" id="r_namespaceservio_1_1gov_1_1pow"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov_1_1pow.html">pow</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceservio_1_1gov_1_1tests" id="r_namespaceservio_1_1gov_1_1tests"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov_1_1tests.html">tests</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceservio_1_1gov_1_1vel" id="r_namespaceservio_1_1gov_1_1vel"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov_1_1vel.html">vel</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -124,6 +126,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1governor__manager.html">governor_manager</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1governors__ctx.html">governors_ctx</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1handle.html">handle</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -133,12 +137,44 @@ Functions</h2></td></tr>
 <tr class="separator:a14148c786b015ed791f034e41f75198a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77dbd0ad7b53ff98af410d564e530d2f" id="r_a77dbd0ad7b53ff98af410d564e530d2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#a77dbd0ad7b53ff98af410d564e530d2f">for_each_factory</a> (em::function_view&lt; void(<a class="el" href="structservio_1_1gov_1_1governor__factory.html">governor_factory</a> &amp;) &gt; const &amp;fn)</td></tr>
 <tr class="separator:a77dbd0ad7b53ff98af410d564e530d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed8922310724cfa1c95f0075b497c590" id="r_aed8922310724cfa1c95f0075b497c590"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#aed8922310724cfa1c95f0075b497c590">create_governors</a> (<a class="el" href="structservio_1_1gov_1_1governor__manager.html">governor_manager</a> &amp;gm, em::pmr::memory_resource &amp;mem)</td></tr>
-<tr class="separator:aed8922310724cfa1c95f0075b497c590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80ce7348dbcf812d76243494a26ae934" id="r_a80ce7348dbcf812d76243494a26ae934"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#a80ce7348dbcf812d76243494a26ae934">default_cfg_section</a> (std::string_view name)</td></tr>
+<tr class="separator:a80ce7348dbcf812d76243494a26ae934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213a1943d8fd383519f8a80ffdd32e24" id="r_a213a1943d8fd383519f8a80ffdd32e24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#a213a1943d8fd383519f8a80ffdd32e24">check_cfg_sections</a> (zll::ll_list&lt; <a class="el" href="structservio_1_1cfg_1_1iface.html">cfg::iface</a> &gt; &amp;cfgs)</td></tr>
+<tr class="separator:a213a1943d8fd383519f8a80ffdd32e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cb036420be28b3b958fc8233838016e" id="r_a7cb036420be28b3b958fc8233838016e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1gov.html#a7cb036420be28b3b958fc8233838016e">create_governors</a> (<a class="el" href="structservio_1_1gov_1_1governor__manager.html">governor_manager</a> &amp;gm, em::pmr::memory_resource &amp;mem, zll::ll_list&lt; <a class="el" href="structservio_1_1cfg_1_1iface.html">cfg::iface</a> &gt; &amp;cfgs)</td></tr>
+<tr class="separator:a7cb036420be28b3b958fc8233838016e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aed8922310724cfa1c95f0075b497c590" name="aed8922310724cfa1c95f0075b497c590"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed8922310724cfa1c95f0075b497c590">&#9670;&#160;</a></span>create_governors()</h2>
+<a id="a213a1943d8fd383519f8a80ffdd32e24" name="a213a1943d8fd383519f8a80ffdd32e24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a213a1943d8fd383519f8a80ffdd32e24">&#9670;&#160;</a></span>check_cfg_sections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a> servio::gov::check_cfg_sections </td>
+          <td>(</td>
+          <td class="paramtype">zll::ll_list&lt; <a class="el" href="structservio_1_1cfg_1_1iface.html">cfg::iface</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cfgs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">servio::error</a>, <a class="el" href="namespaceservio_1_1cfg.html#ab7079a7e0001a626a0a80ee2f365ac83">servio::cfg::root_cfg_section</a>, and <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">servio::success</a>.</p>
+
+</div>
+</div>
+<a id="a7cb036420be28b3b958fc8233838016e" name="a7cb036420be28b3b958fc8233838016e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cb036420be28b3b958fc8233838016e">&#9670;&#160;</a></span>create_governors()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,7 +192,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">em::pmr::memory_resource &amp;&#160;</td>
-          <td class="paramname"><em>mem</em>&#160;</td>
+          <td class="paramname"><em>mem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">zll::ll_list&lt; <a class="el" href="structservio_1_1cfg_1_1iface.html">cfg::iface</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cfgs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -172,6 +214,32 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="structservio_1_1gov_1_1governor__manager.html#a526696772fcddff1564ef33f13c44dbc">servio::gov::governor_manager::add_gov()</a>, and <a class="el" href="namespaceservio_1_1gov.html#a77dbd0ad7b53ff98af410d564e530d2f">for_each_factory()</a>.</p>
+
+</div>
+</div>
+<a id="a80ce7348dbcf812d76243494a26ae934" name="a80ce7348dbcf812d76243494a26ae934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80ce7348dbcf812d76243494a26ae934">&#9670;&#160;</a></span>default_cfg_section()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint16_t servio::gov::default_cfg_section </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -225,7 +293,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1gov.html">gov</a></li>
-    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 17:41:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

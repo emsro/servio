@@ -58,6 +58,5 @@ var position_2cfg_8hpp =
     ] ],
     [ "id_to_key", "position_2cfg_8hpp.html#aa572ebc8e3f7fc0c54bc089c84aa4595", null ],
     [ "key_to_id", "position_2cfg_8hpp.html#ac612dde7fb9933547a5acdca93ebe105", null ],
-    [ "to_str", "position_2cfg_8hpp.html#a09ea00ba3acbc6d4dac2bb0016a79fe9", null ],
-    [ "ids", "position_2cfg_8hpp.html#af71d5593b397555b355c239ea11249e8", null ]
+    [ "to_str", "position_2cfg_8hpp.html#a09ea00ba3acbc6d4dac2bb0016a79fe9", null ]
 ];

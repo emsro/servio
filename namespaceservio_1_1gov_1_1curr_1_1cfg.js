@@ -23,6 +23,5 @@ var namespaceservio_1_1gov_1_1curr_1_1cfg =
     ] ],
     [ "id_to_key", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#acc834d56f82560af9a66609c7fb23d20", null ],
     [ "key_to_id", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#af2ec2c1621d98d1d7fc273fb02b8b342", null ],
-    [ "to_str", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#ab36e3ec09cf23539b29b87589a3a8ceb", null ],
-    [ "ids", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#a6218055464b1d86ac819ed2ac6483497", null ]
+    [ "to_str", "namespaceservio_1_1gov_1_1curr_1_1cfg.html#ab36e3ec09cf23539b29b87589a3a8ceb", null ]
 ];

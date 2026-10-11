@@ -65,5 +65,5 @@ var namespaceservio_1_1cfg =
     [ "store_value", "namespaceservio_1_1cfg.html#aa3666331efe92a695e134ea69efe552f", null ],
     [ "str_to_encoder_mode", "namespaceservio_1_1cfg.html#a6eb8fc3fad9e683169acc64a7148a604", null ],
     [ "to_str", "namespaceservio_1_1cfg.html#ab92ef77e7efafe1116ada6bda301b5b1", null ],
-    [ "ids", "namespaceservio_1_1cfg.html#a42bdc42292e3d36a9559e4e6f70f6b61", null ]
+    [ "root_cfg_section", "namespaceservio_1_1cfg.html#ab7079a7e0001a626a0a80ee2f365ac83", null ]
 ];

@@ -104,187 +104,217 @@ $(document).ready(function(){initNavTree('mock_8hpp_source.html',''); initResiza
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../status.hpp&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="interfaces_8hpp.html">interfaces.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1mock.html">    6</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1drv_1_1mock.html">servio::drv::mock</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html">    8</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html">pwm_mot</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#acdc07ba6a6c6af32158b8ffa0379f844">   10</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#acdc07ba6a6c6af32158b8ffa0379f844">set_invert</a>( <span class="keywordtype">bool</span> )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        }</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1mock.html">   11</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1drv_1_1mock.html">servio::drv::mock</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html">   13</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html">pwm_mot</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1pwm__motor__iface.html">drv::pwm_motor_iface</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#acdc07ba6a6c6af32158b8ffa0379f844">   15</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#acdc07ba6a6c6af32158b8ffa0379f844">set_invert</a>( <span class="keywordtype">bool</span> )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        }</div>
 </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a3f8f7eaa0cf2b2379861ccdaa4e5f15d">   14</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a3f8f7eaa0cf2b2379861ccdaa4e5f15d">set_power</a>( <a class="code hl_struct" href="structservio_1_1pwr.html">pwr</a> )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a3f8f7eaa0cf2b2379861ccdaa4e5f15d">   19</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a3f8f7eaa0cf2b2379861ccdaa4e5f15d">set_power</a>( <a class="code hl_struct" href="structservio_1_1pwr.html">pwr</a> )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        }</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a5c1e8e642aac32eef24058092c25206f">   18</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a5c1e8e642aac32eef24058092c25206f">force_stop</a>()<span class="keyword"> override</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
-</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a445ee8260acd38d4a964c450689668aa">   22</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a445ee8260acd38d4a964c450689668aa">is_stopped</a>()<span class="keyword"> const override</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a5c1e8e642aac32eef24058092c25206f">   23</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a5c1e8e642aac32eef24058092c25206f">force_stop</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">        </span>{</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
 </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a2a05fb48b55263d6108d0a9875bcb720">   27</a></span>        int8_t <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a2a05fb48b55263d6108d0a9875bcb720">get_direction</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a445ee8260acd38d4a964c450689668aa">   27</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a445ee8260acd38d4a964c450689668aa">is_stopped</a>()<span class="keyword"> const override</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        };</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
 </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a03831277ba9c1c7918353f0efd19c944">   32</a></span>        <a class="code hl_struct" href="structservio_1_1pwr.html">pwr</a> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a03831277ba9c1c7918353f0efd19c944">get_power</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a2a05fb48b55263d6108d0a9875bcb720">   32</a></span>        int8_t <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a2a05fb48b55263d6108d0a9875bcb720">get_direction</a>()<span class="keyword"> const override</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordflow">return</span> 0_pwr;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        };</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a03831277ba9c1c7918353f0efd19c944">   37</a></span>        <a class="code hl_struct" href="structservio_1_1pwr.html">pwr</a> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a03831277ba9c1c7918353f0efd19c944">get_power</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <span class="keywordflow">return</span> 0_pwr;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pos.html">   38</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1pos.html">pos</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1get__pos__iface.html">drv::get_pos_iface</a></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pos.html#aaaf3be8fab93e97587b4334b07b82fd6">   40</a></span>        uint32_t <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1pos.html#aaaf3be8fab93e97587b4334b07b82fd6">x</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pos.html#a1005a34fef42ec241c20a7efc4d43776">   42</a></span>        uint32_t <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pos.html#a1005a34fef42ec241c20a7efc4d43776">get_position</a>()<span class="keyword"> const override</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1pos.html#aaaf3be8fab93e97587b4334b07b82fd6">x</a>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
 </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pos.html">   43</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1pos.html">pos</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1get__pos__iface.html">drv::get_pos_iface</a></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pos.html#aaaf3be8fab93e97587b4334b07b82fd6">   45</a></span>        uint32_t <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1pos.html#aaaf3be8fab93e97587b4334b07b82fd6">x</a>;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pos.html#ace58b96d8352bb779a173185b6526957">   47</a></span>        <a class="code hl_typedef" href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">limits&lt; uint32_t &gt;</a> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pos.html#ace58b96d8352bb779a173185b6526957">get_position_range</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pos.html#a1005a34fef42ec241c20a7efc4d43776">   47</a></span>        uint32_t <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pos.html#a1005a34fef42ec241c20a7efc4d43776">get_position</a>()<span class="keyword"> const override</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">return</span> { 0, 1024 };</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1pos.html#aaaf3be8fab93e97587b4334b07b82fd6">x</a>;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1pos.html#ace58b96d8352bb779a173185b6526957">   52</a></span>        <a class="code hl_typedef" href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">limits&lt; uint32_t &gt;</a> <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1pos.html#ace58b96d8352bb779a173185b6526957">get_position_range</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keywordflow">return</span> { 0, 1024 };</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1curr.html">   53</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1curr.html">curr</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1get__curr__iface.html">drv::get_curr_iface</a></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1curr.html#a1a53430ee03d5d83d2f383267c7f311b">   55</a></span>        uint32_t <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1curr.html#a1a53430ee03d5d83d2f383267c7f311b">x</a>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1curr.html#adfd81313c3ab541ae97303ca83da566d">   57</a></span>        uint32_t <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1curr.html#adfd81313c3ab541ae97303ca83da566d">get_current</a>()<span class="keyword"> const override</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1curr.html#a1a53430ee03d5d83d2f383267c7f311b">x</a>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1curr.html">   58</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1curr.html">curr</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1get__curr__iface.html">drv::get_curr_iface</a></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1curr.html#a1a53430ee03d5d83d2f383267c7f311b">   60</a></span>        uint32_t <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1curr.html#a1a53430ee03d5d83d2f383267c7f311b">x</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1curr.html#adfd81313c3ab541ae97303ca83da566d">   62</a></span>        uint32_t <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1curr.html#adfd81313c3ab541ae97303ca83da566d">get_current</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1curr.html#a1a53430ee03d5d83d2f383267c7f311b">x</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
 </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="foldopen" id="foldopen00063" data-start="{" data-end="};">
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1vcc.html">   63</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1vcc.html">vcc</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1vcc__iface.html">drv::vcc_iface</a></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1vcc.html#a283ca0c50c0b4dd325a4f9fdaba43f4a">   65</a></span>        uint32_t <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1vcc.html#a283ca0c50c0b4dd325a4f9fdaba43f4a">x</a>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1vcc.html#af03767c47749fbf5de9d6fd4913987f2">   67</a></span>        uint32_t <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1vcc.html#af03767c47749fbf5de9d6fd4913987f2">get_vcc</a>()<span class="keyword"> const override</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1vcc.html#a283ca0c50c0b4dd325a4f9fdaba43f4a">x</a>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="};">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1vcc.html">   68</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1vcc.html">vcc</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1vcc__iface.html">drv::vcc_iface</a></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1vcc.html#a283ca0c50c0b4dd325a4f9fdaba43f4a">   70</a></span>        uint32_t <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1vcc.html#a283ca0c50c0b4dd325a4f9fdaba43f4a">x</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1vcc.html#af03767c47749fbf5de9d6fd4913987f2">   72</a></span>        uint32_t <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1vcc.html#af03767c47749fbf5de9d6fd4913987f2">get_vcc</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1vcc.html#a283ca0c50c0b4dd325a4f9fdaba43f4a">x</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
 </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="foldopen" id="foldopen00073" data-start="{" data-end="};">
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1temp.html">   73</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1temp.html">temp</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1temp__iface.html">drv::temp_iface</a></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>{</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1temp.html#a7e3bd411a63d81f56bc311ac716aca0e">   75</a></span>        int32_t <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1temp.html#a7e3bd411a63d81f56bc311ac716aca0e">x</a>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1temp.html#ac8715d934dd47057775941b311fa7ece">   77</a></span>        int32_t <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1temp.html#ac8715d934dd47057775941b311fa7ece">get_temperature</a>()<span class="keyword"> const override</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1temp.html#a7e3bd411a63d81f56bc311ac716aca0e">x</a>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="};">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1temp.html">   78</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1temp.html">temp</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1temp__iface.html">drv::temp_iface</a></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1temp.html#a7e3bd411a63d81f56bc311ac716aca0e">   80</a></span>        int32_t <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1temp.html#a7e3bd411a63d81f56bc311ac716aca0e">x</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1temp.html#ac8715d934dd47057775941b311fa7ece">   82</a></span>        int32_t <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1temp.html#ac8715d934dd47057775941b311fa7ece">get_temperature</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1temp.html#a7e3bd411a63d81f56bc311ac716aca0e">x</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
 </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="foldopen" id="foldopen00083" data-start="{" data-end="};">
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html">   83</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1stor.html">stor</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1storage__iface.html">drv::storage_iface</a></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#a7acdaf5638ad3cf91fec7513f7a36405">   85</a></span>        std::size_t <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a7acdaf5638ad3cf91fec7513f7a36405">store_cnt</a> = 0;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#a276aa8a1ac3fcd5edca5c3417624ac36">   86</a></span>        std::size_t <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a276aa8a1ac3fcd5edca5c3417624ac36">clear_cnt</a> = 0;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
+</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#ac9e367d3779a7bd554a6cfd0705c411b">   88</a></span>        error_code <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1stor.html#ac9e367d3779a7bd554a6cfd0705c411b">store_cfg</a>( <a class="code hl_struct" href="structservio_1_1cfg_1_1map.html">cfg::map</a> <span class="keyword">const</span>&amp; )<span class="keyword"> override</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a7acdaf5638ad3cf91fec7513f7a36405">store_cnt</a> += 1;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
-</div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="};">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html">   88</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structservio_1_1drv_1_1mock_1_1stor.html">stor</a> : <a class="code hl_struct" href="structservio_1_1drv_1_1storage__iface.html">drv::storage_iface</a></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>{</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#a7acdaf5638ad3cf91fec7513f7a36405">   90</a></span>        std::size_t                                    <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a7acdaf5638ad3cf91fec7513f7a36405">store_cnt</a> = 0;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#a276aa8a1ac3fcd5edca5c3417624ac36">   91</a></span>        std::size_t                                    <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a276aa8a1ac3fcd5edca5c3417624ac36">clear_cnt</a> = 0;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#a8898aad26deba12b53ddbddc484c1e63">   92</a></span>        std::map&lt; uint32_t, std::vector&lt; std::byte &gt; &gt; <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a8898aad26deba12b53ddbddc484c1e63">records</a>;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#a32949e390bf4bc5a1696154c68dafc87">   94</a></span>        error_code <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1stor.html#a32949e390bf4bc5a1696154c68dafc87">load_cfg</a>( <a class="code hl_struct" href="structservio_1_1cfg_1_1map.html">cfg::map</a>&amp; data )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#a512819523d5a81e59c2998794231a57a">   94</a></span>        error_code <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1stor.html#a512819523d5a81e59c2998794231a57a">store_cfg</a>( zll::ll_list&lt; cfg::iface &gt;&amp; cfgs )<span class="keyword"> override</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                std::ignore = data;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a7acdaf5638ad3cf91fec7513f7a36405">store_cnt</a> += 1;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <span class="keywordflow">for</span> ( <a class="code hl_struct" href="structservio_1_1cfg_1_1iface.html">cfg::iface</a>&amp; c : cfgs ) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                        c.storage_reset_seen();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                        <span class="keywordflow">while</span> ( <span class="keyword">auto</span> <span class="keyword">const</span> key = c.storage_take_unseen() ) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                                std::byte  buffer[64];</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                                <span class="keyword">auto</span> <span class="keyword">const</span> data = c.on_storage_save( *key, buffer );</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                                <span class="keywordflow">if</span> ( !data )</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                                        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">status::error</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                                <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a8898aad26deba12b53ddbddc484c1e63">records</a>[<a class="code hl_function" href="namespaceservio_1_1drv.html#a204d2674b25bc5d7226c4cba7046bbc4">cfg_storage_id</a>( c.section, *key )].assign(</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                                    data-&gt;begin(), data-&gt;end() );</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                        }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
 </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#a8116a4b86e2be3de838dee5f59cfdcc5">  100</a></span>        error_code <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1stor.html#a8116a4b86e2be3de838dee5f59cfdcc5">clear_cfg</a>()<span class="keyword"> override</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a276aa8a1ac3fcd5edca5c3417624ac36">clear_cnt</a> += 1;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#a657aa67e4ffaa2a8cdea07e20074e00b">  111</a></span>        error_code <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1stor.html#a657aa67e4ffaa2a8cdea07e20074e00b">load_cfg</a>( zll::ll_list&lt; cfg::iface &gt;&amp; cfgs )<span class="keyword"> override</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <span class="keywordflow">for</span> ( <a class="code hl_struct" href="structservio_1_1cfg_1_1iface.html">cfg::iface</a>&amp; c : cfgs ) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                        c.storage_reset_seen();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                        <span class="keywordflow">while</span> ( <span class="keyword">auto</span> <span class="keyword">const</span> key = c.storage_take_unseen() ) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                                <span class="keyword">auto</span> <span class="keyword">const</span> it = <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a8898aad26deba12b53ddbddc484c1e63">records</a>.find( <a class="code hl_function" href="namespaceservio_1_1drv.html#a204d2674b25bc5d7226c4cba7046bbc4">cfg_storage_id</a>( c.section, *key ) );</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                <span class="keywordflow">if</span> ( it == <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a8898aad26deba12b53ddbddc484c1e63">records</a>.end() )</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                <span class="keywordflow">if</span> ( c.on_storage_load( *key, it-&gt;second ) != <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a> )</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                                        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">status::error</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                        }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        }</div>
 </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="structservio_1_1drv_1_1mock_1_1stor.html#a8116a4b86e2be3de838dee5f59cfdcc5">  126</a></span>        error_code <a class="code hl_function" href="structservio_1_1drv_1_1mock_1_1stor.html#a8116a4b86e2be3de838dee5f59cfdcc5">clear_cfg</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a276aa8a1ac3fcd5edca5c3417624ac36">clear_cnt</a> += 1;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <a class="code hl_variable" href="structservio_1_1drv_1_1mock_1_1stor.html#a8898aad26deba12b53ddbddc484c1e63">records</a>.clear();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">status::success</a>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
 </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}  <span class="comment">// namespace servio::drv::mock</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>};</div>
+</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}  <span class="comment">// namespace servio::drv::mock</span></div>
 </div>
 <div class="ttc" id="ainterfaces_8hpp_html"><div class="ttname"><a href="interfaces_8hpp.html">interfaces.hpp</a></div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_1_1mock_html"><div class="ttname"><a href="namespaceservio_1_1drv_1_1mock.html">servio::drv::mock</a></div><div class="ttdef"><b>Definition</b> mock.hpp:7</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_1_1mock_html"><div class="ttname"><a href="namespaceservio_1_1drv_1_1mock.html">servio::drv::mock</a></div><div class="ttdef"><b>Definition</b> mock.hpp:12</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_html_a204d2674b25bc5d7226c4cba7046bbc4"><div class="ttname"><a href="namespaceservio_1_1drv.html#a204d2674b25bc5d7226c4cba7046bbc4">servio::drv::cfg_storage_id</a></div><div class="ttdeci">constexpr uint32_t cfg_storage_id(uint16_t section, uint32_t key)</div><div class="ttdef"><b>Definition</b> interfaces.hpp:65</div></div>
 <div class="ttc" id="anamespaceservio_html_a7f7743aa58139aab9b7d4db0cde30f55"><div class="ttname"><a href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">servio::limits</a></div><div class="ttdeci">em::min_max&lt; T &gt; limits</div><div class="ttdef"><b>Definition</b> base.hpp:53</div></div>
 <div class="ttc" id="anamespaceservio_html_ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076"><div class="ttname"><a href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">servio::status::success</a></div><div class="ttdeci">@ success</div></div>
-<div class="ttc" id="astructservio_1_1cfg_1_1map_html"><div class="ttname"><a href="structservio_1_1cfg_1_1map.html">servio::cfg::map</a></div><div class="ttdef"><b>Definition</b> def.hpp:307</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1get__curr__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1get__curr__iface.html">servio::drv::get_curr_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:144</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1get__pos__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1get__pos__iface.html">servio::drv::get_pos_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:121</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1curr_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1curr.html">servio::drv::mock::curr</a></div><div class="ttdef"><b>Definition</b> mock.hpp:54</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1curr_html_a1a53430ee03d5d83d2f383267c7f311b"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1curr.html#a1a53430ee03d5d83d2f383267c7f311b">servio::drv::mock::curr::x</a></div><div class="ttdeci">uint32_t x</div><div class="ttdef"><b>Definition</b> mock.hpp:55</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1curr_html_adfd81313c3ab541ae97303ca83da566d"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1curr.html#adfd81313c3ab541ae97303ca83da566d">servio::drv::mock::curr::get_current</a></div><div class="ttdeci">uint32_t get_current() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:57</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pos_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pos.html">servio::drv::mock::pos</a></div><div class="ttdef"><b>Definition</b> mock.hpp:39</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pos_html_a1005a34fef42ec241c20a7efc4d43776"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pos.html#a1005a34fef42ec241c20a7efc4d43776">servio::drv::mock::pos::get_position</a></div><div class="ttdeci">uint32_t get_position() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:42</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pos_html_aaaf3be8fab93e97587b4334b07b82fd6"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pos.html#aaaf3be8fab93e97587b4334b07b82fd6">servio::drv::mock::pos::x</a></div><div class="ttdeci">uint32_t x</div><div class="ttdef"><b>Definition</b> mock.hpp:40</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pos_html_ace58b96d8352bb779a173185b6526957"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pos.html#ace58b96d8352bb779a173185b6526957">servio::drv::mock::pos::get_position_range</a></div><div class="ttdeci">limits&lt; uint32_t &gt; get_position_range() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:47</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html">servio::drv::mock::pwm_mot</a></div><div class="ttdef"><b>Definition</b> mock.hpp:9</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_a03831277ba9c1c7918353f0efd19c944"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a03831277ba9c1c7918353f0efd19c944">servio::drv::mock::pwm_mot::get_power</a></div><div class="ttdeci">pwr get_power() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:32</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_a2a05fb48b55263d6108d0a9875bcb720"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a2a05fb48b55263d6108d0a9875bcb720">servio::drv::mock::pwm_mot::get_direction</a></div><div class="ttdeci">int8_t get_direction() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:27</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_a3f8f7eaa0cf2b2379861ccdaa4e5f15d"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a3f8f7eaa0cf2b2379861ccdaa4e5f15d">servio::drv::mock::pwm_mot::set_power</a></div><div class="ttdeci">void set_power(pwr) override</div><div class="ttdef"><b>Definition</b> mock.hpp:14</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_a445ee8260acd38d4a964c450689668aa"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a445ee8260acd38d4a964c450689668aa">servio::drv::mock::pwm_mot::is_stopped</a></div><div class="ttdeci">bool is_stopped() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:22</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_a5c1e8e642aac32eef24058092c25206f"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a5c1e8e642aac32eef24058092c25206f">servio::drv::mock::pwm_mot::force_stop</a></div><div class="ttdeci">void force_stop() override</div><div class="ttdef"><b>Definition</b> mock.hpp:18</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_acdc07ba6a6c6af32158b8ffa0379f844"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#acdc07ba6a6c6af32158b8ffa0379f844">servio::drv::mock::pwm_mot::set_invert</a></div><div class="ttdeci">void set_invert(bool) override</div><div class="ttdef"><b>Definition</b> mock.hpp:10</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html">servio::drv::mock::stor</a></div><div class="ttdef"><b>Definition</b> mock.hpp:84</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_a276aa8a1ac3fcd5edca5c3417624ac36"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#a276aa8a1ac3fcd5edca5c3417624ac36">servio::drv::mock::stor::clear_cnt</a></div><div class="ttdeci">std::size_t clear_cnt</div><div class="ttdef"><b>Definition</b> mock.hpp:86</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_a32949e390bf4bc5a1696154c68dafc87"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#a32949e390bf4bc5a1696154c68dafc87">servio::drv::mock::stor::load_cfg</a></div><div class="ttdeci">error_code load_cfg(cfg::map &amp;data) override</div><div class="ttdef"><b>Definition</b> mock.hpp:94</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_a7acdaf5638ad3cf91fec7513f7a36405"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#a7acdaf5638ad3cf91fec7513f7a36405">servio::drv::mock::stor::store_cnt</a></div><div class="ttdeci">std::size_t store_cnt</div><div class="ttdef"><b>Definition</b> mock.hpp:85</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_a8116a4b86e2be3de838dee5f59cfdcc5"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#a8116a4b86e2be3de838dee5f59cfdcc5">servio::drv::mock::stor::clear_cfg</a></div><div class="ttdeci">error_code clear_cfg() override</div><div class="ttdef"><b>Definition</b> mock.hpp:100</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_ac9e367d3779a7bd554a6cfd0705c411b"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#ac9e367d3779a7bd554a6cfd0705c411b">servio::drv::mock::stor::store_cfg</a></div><div class="ttdeci">error_code store_cfg(cfg::map const &amp;) override</div><div class="ttdef"><b>Definition</b> mock.hpp:88</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1temp_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1temp.html">servio::drv::mock::temp</a></div><div class="ttdef"><b>Definition</b> mock.hpp:74</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1temp_html_a7e3bd411a63d81f56bc311ac716aca0e"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1temp.html#a7e3bd411a63d81f56bc311ac716aca0e">servio::drv::mock::temp::x</a></div><div class="ttdeci">int32_t x</div><div class="ttdef"><b>Definition</b> mock.hpp:75</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1temp_html_ac8715d934dd47057775941b311fa7ece"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1temp.html#ac8715d934dd47057775941b311fa7ece">servio::drv::mock::temp::get_temperature</a></div><div class="ttdeci">int32_t get_temperature() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:77</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1vcc_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1vcc.html">servio::drv::mock::vcc</a></div><div class="ttdef"><b>Definition</b> mock.hpp:64</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1vcc_html_a283ca0c50c0b4dd325a4f9fdaba43f4a"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1vcc.html#a283ca0c50c0b4dd325a4f9fdaba43f4a">servio::drv::mock::vcc::x</a></div><div class="ttdeci">uint32_t x</div><div class="ttdef"><b>Definition</b> mock.hpp:65</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1vcc_html_af03767c47749fbf5de9d6fd4913987f2"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1vcc.html#af03767c47749fbf5de9d6fd4913987f2">servio::drv::mock::vcc::get_vcc</a></div><div class="ttdeci">uint32_t get_vcc() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:67</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1pwm__motor__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1pwm__motor__iface.html">servio::drv::pwm_motor_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:113</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1storage__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1storage__iface.html">servio::drv::storage_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:65</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1temp__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1temp__iface.html">servio::drv::temp_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:138</div></div>
-<div class="ttc" id="astructservio_1_1drv_1_1vcc__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1vcc__iface.html">servio::drv::vcc_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:133</div></div>
+<div class="ttc" id="anamespaceservio_html_ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282"><div class="ttname"><a href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15acb5e100e5a9a3e7f6d1fd97512215282">servio::status::error</a></div><div class="ttdeci">@ error</div></div>
+<div class="ttc" id="astructservio_1_1cfg_1_1iface_html"><div class="ttname"><a href="structservio_1_1cfg_1_1iface.html">servio::cfg::iface</a></div><div class="ttdef"><b>Definition</b> base.hpp:76</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1get__curr__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1get__curr__iface.html">servio::drv::get_curr_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:150</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1get__pos__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1get__pos__iface.html">servio::drv::get_pos_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:127</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1curr_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1curr.html">servio::drv::mock::curr</a></div><div class="ttdef"><b>Definition</b> mock.hpp:59</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1curr_html_a1a53430ee03d5d83d2f383267c7f311b"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1curr.html#a1a53430ee03d5d83d2f383267c7f311b">servio::drv::mock::curr::x</a></div><div class="ttdeci">uint32_t x</div><div class="ttdef"><b>Definition</b> mock.hpp:60</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1curr_html_adfd81313c3ab541ae97303ca83da566d"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1curr.html#adfd81313c3ab541ae97303ca83da566d">servio::drv::mock::curr::get_current</a></div><div class="ttdeci">uint32_t get_current() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:62</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pos_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pos.html">servio::drv::mock::pos</a></div><div class="ttdef"><b>Definition</b> mock.hpp:44</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pos_html_a1005a34fef42ec241c20a7efc4d43776"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pos.html#a1005a34fef42ec241c20a7efc4d43776">servio::drv::mock::pos::get_position</a></div><div class="ttdeci">uint32_t get_position() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:47</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pos_html_aaaf3be8fab93e97587b4334b07b82fd6"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pos.html#aaaf3be8fab93e97587b4334b07b82fd6">servio::drv::mock::pos::x</a></div><div class="ttdeci">uint32_t x</div><div class="ttdef"><b>Definition</b> mock.hpp:45</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pos_html_ace58b96d8352bb779a173185b6526957"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pos.html#ace58b96d8352bb779a173185b6526957">servio::drv::mock::pos::get_position_range</a></div><div class="ttdeci">limits&lt; uint32_t &gt; get_position_range() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:52</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html">servio::drv::mock::pwm_mot</a></div><div class="ttdef"><b>Definition</b> mock.hpp:14</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_a03831277ba9c1c7918353f0efd19c944"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a03831277ba9c1c7918353f0efd19c944">servio::drv::mock::pwm_mot::get_power</a></div><div class="ttdeci">pwr get_power() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:37</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_a2a05fb48b55263d6108d0a9875bcb720"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a2a05fb48b55263d6108d0a9875bcb720">servio::drv::mock::pwm_mot::get_direction</a></div><div class="ttdeci">int8_t get_direction() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:32</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_a3f8f7eaa0cf2b2379861ccdaa4e5f15d"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a3f8f7eaa0cf2b2379861ccdaa4e5f15d">servio::drv::mock::pwm_mot::set_power</a></div><div class="ttdeci">void set_power(pwr) override</div><div class="ttdef"><b>Definition</b> mock.hpp:19</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_a445ee8260acd38d4a964c450689668aa"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a445ee8260acd38d4a964c450689668aa">servio::drv::mock::pwm_mot::is_stopped</a></div><div class="ttdeci">bool is_stopped() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:27</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_a5c1e8e642aac32eef24058092c25206f"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#a5c1e8e642aac32eef24058092c25206f">servio::drv::mock::pwm_mot::force_stop</a></div><div class="ttdeci">void force_stop() override</div><div class="ttdef"><b>Definition</b> mock.hpp:23</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1pwm__mot_html_acdc07ba6a6c6af32158b8ffa0379f844"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1pwm__mot.html#acdc07ba6a6c6af32158b8ffa0379f844">servio::drv::mock::pwm_mot::set_invert</a></div><div class="ttdeci">void set_invert(bool) override</div><div class="ttdef"><b>Definition</b> mock.hpp:15</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html">servio::drv::mock::stor</a></div><div class="ttdef"><b>Definition</b> mock.hpp:89</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_a276aa8a1ac3fcd5edca5c3417624ac36"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#a276aa8a1ac3fcd5edca5c3417624ac36">servio::drv::mock::stor::clear_cnt</a></div><div class="ttdeci">std::size_t clear_cnt</div><div class="ttdef"><b>Definition</b> mock.hpp:91</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_a512819523d5a81e59c2998794231a57a"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#a512819523d5a81e59c2998794231a57a">servio::drv::mock::stor::store_cfg</a></div><div class="ttdeci">error_code store_cfg(zll::ll_list&lt; cfg::iface &gt; &amp;cfgs) override</div><div class="ttdef"><b>Definition</b> mock.hpp:94</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_a657aa67e4ffaa2a8cdea07e20074e00b"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#a657aa67e4ffaa2a8cdea07e20074e00b">servio::drv::mock::stor::load_cfg</a></div><div class="ttdeci">error_code load_cfg(zll::ll_list&lt; cfg::iface &gt; &amp;cfgs) override</div><div class="ttdef"><b>Definition</b> mock.hpp:111</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_a7acdaf5638ad3cf91fec7513f7a36405"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#a7acdaf5638ad3cf91fec7513f7a36405">servio::drv::mock::stor::store_cnt</a></div><div class="ttdeci">std::size_t store_cnt</div><div class="ttdef"><b>Definition</b> mock.hpp:90</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_a8116a4b86e2be3de838dee5f59cfdcc5"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#a8116a4b86e2be3de838dee5f59cfdcc5">servio::drv::mock::stor::clear_cfg</a></div><div class="ttdeci">error_code clear_cfg() override</div><div class="ttdef"><b>Definition</b> mock.hpp:126</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1stor_html_a8898aad26deba12b53ddbddc484c1e63"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1stor.html#a8898aad26deba12b53ddbddc484c1e63">servio::drv::mock::stor::records</a></div><div class="ttdeci">std::map&lt; uint32_t, std::vector&lt; std::byte &gt; &gt; records</div><div class="ttdef"><b>Definition</b> mock.hpp:92</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1temp_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1temp.html">servio::drv::mock::temp</a></div><div class="ttdef"><b>Definition</b> mock.hpp:79</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1temp_html_a7e3bd411a63d81f56bc311ac716aca0e"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1temp.html#a7e3bd411a63d81f56bc311ac716aca0e">servio::drv::mock::temp::x</a></div><div class="ttdeci">int32_t x</div><div class="ttdef"><b>Definition</b> mock.hpp:80</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1temp_html_ac8715d934dd47057775941b311fa7ece"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1temp.html#ac8715d934dd47057775941b311fa7ece">servio::drv::mock::temp::get_temperature</a></div><div class="ttdeci">int32_t get_temperature() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:82</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1vcc_html"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1vcc.html">servio::drv::mock::vcc</a></div><div class="ttdef"><b>Definition</b> mock.hpp:69</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1vcc_html_a283ca0c50c0b4dd325a4f9fdaba43f4a"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1vcc.html#a283ca0c50c0b4dd325a4f9fdaba43f4a">servio::drv::mock::vcc::x</a></div><div class="ttdeci">uint32_t x</div><div class="ttdef"><b>Definition</b> mock.hpp:70</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1mock_1_1vcc_html_af03767c47749fbf5de9d6fd4913987f2"><div class="ttname"><a href="structservio_1_1drv_1_1mock_1_1vcc.html#af03767c47749fbf5de9d6fd4913987f2">servio::drv::mock::vcc::get_vcc</a></div><div class="ttdeci">uint32_t get_vcc() const override</div><div class="ttdef"><b>Definition</b> mock.hpp:72</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1pwm__motor__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1pwm__motor__iface.html">servio::drv::pwm_motor_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:119</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1storage__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1storage__iface.html">servio::drv::storage_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:71</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1temp__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1temp__iface.html">servio::drv::temp_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:144</div></div>
+<div class="ttc" id="astructservio_1_1drv_1_1vcc__iface_html"><div class="ttname"><a href="structservio_1_1drv_1_1vcc__iface.html">servio::drv::vcc_iface</a></div><div class="ttdef"><b>Definition</b> interfaces.hpp:139</div></div>
 <div class="ttc" id="astructservio_1_1pwr_html"><div class="ttname"><a href="structservio_1_1pwr.html">servio::pwr</a></div><div class="ttdef"><b>Definition</b> base.hpp:67</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -292,7 +322,7 @@ $(document).ready(function(){initNavTree('mock_8hpp_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="mock_8hpp.html">mock.hpp</a></li>
-    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 17:41:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

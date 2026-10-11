@@ -11,12 +11,13 @@ var searchData=
   ['adc_5fperiod_5fcb_8',['ADC_PERIOD_CB',['../namespaceservio_1_1brd.html#a9fd563d901e739e49f3a9b8754686117',1,'servio::brd']]],
   ['adc_5fpooler_9',['ADC_POOLER',['../namespaceservio_1_1brd.html#a991f10f53fec7bf1caa79b8438ed01c1',1,'servio::brd']]],
   ['adc_5fposition_10',['ADC_POSITION',['../namespaceservio_1_1brd.html#ae5f38137289f200368426a1f7298b834',1,'servio::brd']]],
-  ['adc_5ftrigger_11',['adc_trigger',['../namespaceservio_1_1plt.html#a03cac8a5dbc15f966a3b411492fffb0d',1,'servio::plt::adc_cfg']]],
-  ['adc_5fvcc_12',['ADC_VCC',['../namespaceservio_1_1brd.html#a426f85a0dea9eb2dd9aa43e5f98f91e0',1,'servio::brd']]],
-  ['alternate_13',['alternate',['../namespaceservio_1_1drv.html#a3b5744acf3762f9fd7ff7cb9c8211640',1,'servio::drv::pin_cfg']]],
-  ['angle_14',['angle',['../structservio_1_1mtr_1_1posvel__kalman.html#a2ac393ceac1eb1e6e7713a988a279147',1,'servio::mtr::posvel_kalman']]],
-  ['area_15',['area',['../structservio_1_1ftest_1_1__rewind__sender_1_1__op.html#a833c647803e8d567c0466c61721e0395',1,'servio::ftest::_rewind_sender::_op::area'],['../structservio_1_1ftest_1_1__rewind__sender.html#a49dcf193b6b661a1d3314e3ca0a35534',1,'servio::ftest::_rewind_sender::area']]],
-  ['args_16',['args',['../namespacegen.html#a33517ff0695f1e1d552f649c9f0a1e1a',1,'gen']]],
-  ['assm_17',['assm',['../structservio_1_1ftest_1_1testing__system.html#a6491f69aa6b572dcb0dcde8de15f0e34',1,'servio::ftest::testing_system::assm'],['../structservio_1_1ftest_1_1utest.html#a49bea1a4fd74db2b4f53f05cb25c97aa',1,'servio::ftest::utest::assm']]],
-  ['attempt_5fn_18',['ATTEMPT_N',['../namespaceservio_1_1cnv_1_1tests.html#a51fc9b65a1f2fbfd9cf62801705adeb9',1,'servio::cnv::tests']]]
+  ['adc_5fresolution_5fbits_11',['ADC_RESOLUTION_BITS',['../namespaceservio_1_1brd.html#a28897b00eed564e4e4d41d0fe0c363c2',1,'servio::brd']]],
+  ['adc_5ftrigger_12',['adc_trigger',['../namespaceservio_1_1plt.html#a03cac8a5dbc15f966a3b411492fffb0d',1,'servio::plt::adc_cfg']]],
+  ['adc_5fvcc_13',['ADC_VCC',['../namespaceservio_1_1brd.html#a426f85a0dea9eb2dd9aa43e5f98f91e0',1,'servio::brd']]],
+  ['alternate_14',['alternate',['../namespaceservio_1_1drv.html#a3b5744acf3762f9fd7ff7cb9c8211640',1,'servio::drv::pin_cfg']]],
+  ['angle_15',['angle',['../structservio_1_1mtr_1_1posvel__kalman.html#a2ac393ceac1eb1e6e7713a988a279147',1,'servio::mtr::posvel_kalman']]],
+  ['area_16',['area',['../structservio_1_1ftest_1_1__rewind__sender_1_1__op.html#a833c647803e8d567c0466c61721e0395',1,'servio::ftest::_rewind_sender::_op::area'],['../structservio_1_1ftest_1_1__rewind__sender.html#a49dcf193b6b661a1d3314e3ca0a35534',1,'servio::ftest::_rewind_sender::area']]],
+  ['args_17',['args',['../namespacegen.html#a33517ff0695f1e1d552f649c9f0a1e1a',1,'gen']]],
+  ['assm_18',['assm',['../structservio_1_1ftest_1_1testing__system.html#a6491f69aa6b572dcb0dcde8de15f0e34',1,'servio::ftest::testing_system::assm'],['../structservio_1_1ftest_1_1utest.html#a49bea1a4fd74db2b4f53f05cb25c97aa',1,'servio::ftest::utest::assm']]],
+  ['attempt_5fn_19',['ATTEMPT_N',['../namespaceservio_1_1cnv_1_1tests.html#a51fc9b65a1f2fbfd9cf62801705adeb9',1,'servio::cnv::tests']]]
 ];

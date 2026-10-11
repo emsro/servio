@@ -1,5 +1,9 @@
 <map id="servio::cfg::handler&lt; T &gt;" name="servio::cfg::handler&lt; T &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,191,104"/>
-<area shape="rect" id="Node000002" href="$structservio_1_1cfg_1_1iface.html" title=" " alt="" coords="33,5,163,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,44,101,79,95,79,95,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="81,168,267,193"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1cfg_1_1iface.html" title=" " alt="" coords="17,80,147,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,113,163,166,159,169,103,117"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,159,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,45,85,80,79,80,79,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="172,80,363,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="246,117,189,169,185,165,243,113"/>
 </map>

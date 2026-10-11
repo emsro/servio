@@ -1,5 +1,7 @@
 <map id="src/drv/drv8251.hpp" name="src/drv/drv8251.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,156,31"/>
-<area shape="rect" id="Node000002" href="$cnv_2setup_8hpp.html" title=" " alt="" coords="18,79,143,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,31,83,65,78,65,78,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="53,5,203,31"/>
+<area shape="rect" id="Node000002" href="$cnv_2setup_8hpp.html" title=" " alt="" coords="5,79,131,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,33,89,70,84,66,116,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="155,79,221,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,29,172,66,167,70,136,33"/>
 </map>

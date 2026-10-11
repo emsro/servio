@@ -213,23 +213,23 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc_8cpp.html",
-"classservio_1_1drv_1_1hbridge.html#a1756b1fc5080d2f1d13d24a12e6f7a50",
-"current_2cfg_8hpp.html#ab36e3ec09cf23539b29b87589a3a8ceb",
-"gov_2velocity_2parse_8cpp.html",
-"md_src_2iface_2iface.html#autotoc_md84",
-"namespaceservio_1_1cfg.html#ac80d4a995f39ca9ccba86cf314ae22e5",
-"namespaceservio_1_1gov_1_1pow_1_1iface.html",
-"namespaceservio_1_1scmdio.html#a52eafa2387f12f1ab90e769356d9cc5b",
-"scmdio_2base_8hpp.html#adec9aeb6f81f1c6f3db642544d88f967",
-"structservio_1_1bb_1_1bb__test__case.html#a053e7d170ad5e723685fef5d153d5009",
-"structservio_1_1drv_1_1adc__channel.html#addb153a7d723e9d1e935dd07fd456f01",
-"structservio_1_1drv_1_1mock_1_1curr.html#adfd81313c3ab541ae97303ca83da566d",
-"structservio_1_1ftest_1_1__init__utest__ctx.html",
-"structservio_1_1ftest_1_1intg_1_1meas__cur__test.html#a7890e771c3138e8148f91986118cead6",
-"structservio_1_1gov_1_1pos_1_1__position__gov.html#a55965786764ad3fd4930e79127118361",
-"structservio_1_1iface_1_1cfg__set__stmt.html#a115c626571a663aa03580d1db7a13aaf",
-"structservio_1_1parser_1_1lexer.html",
-"structsilent__peer.html#acce90d674abb643638b3a5163336ed27"
+"classservio_1_1drv_1_1dts__temp.html#a3833ead6722273c733f3adc7ff73e008",
+"current_2cfg_8hpp.html#a15d5708d4e4cb2bd5d9620a0e604b8cba46ea574807fcb4723a0cf6d58850bbea",
+"globals_func.html",
+"md_src_2iface_2iface.html#autotoc_md73",
+"namespaceservio_1_1cfg.html#a6eb8fc3fad9e683169acc64a7148a604",
+"namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__lim__min_01_4",
+"namespaceservio_1_1plt.html#structservio_1_1plt_1_1leds__gpio__cfg",
+"retainers_8hpp.html#a5e3395c31d8cff501ff1b9241e107d9c",
+"structpeer__hook.html#a0b1fd35f7f2f55da3ea1eb5780a1136f",
+"structservio_1_1core_1_1drivers.html#ad5f31d5e8ee94f3469eb1691c770621e",
+"structservio_1_1drv_1_1i2c__eeprom.html#aa8248f1958751fe409d4e95e9d0e9d73",
+"structservio_1_1drv_1_1value__cb.html#a5be57860304083ed3d985eca390d5089",
+"structservio_1_1ftest_1_1bench_1_1usage.html#adaac867b90ba46a380e93adc4003eb22",
+"structservio_1_1gov_1_1governor__manager.html#a1b327d6c093850ec247d579b006fead5",
+"structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#ad75461570923bfda6fad53c5ff23ee37",
+"structservio_1_1mtr_1_1posvel__kalman.html#a55f74d8a68d2e371a4838e358e3efbc3",
+"structservio_1_1sim_1_1simple__motor.html#ade2481293d955630a63a394b11beeafc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

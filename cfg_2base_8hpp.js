@@ -7,5 +7,6 @@ var cfg_2base_8hpp =
     [ "string", "cfg_2base_8hpp.html#a0f0c899d587e9afa2024fce1921729a5", null ],
     [ "for_each_key", "cfg_2base_8hpp.html#a81b873f43db665eeb84edf3c7b471808", null ],
     [ "load_value", "cfg_2base_8hpp.html#a43af68038247236b1999ae324754229c", null ],
-    [ "store_value", "cfg_2base_8hpp.html#aa3666331efe92a695e134ea69efe552f", null ]
+    [ "store_value", "cfg_2base_8hpp.html#aa3666331efe92a695e134ea69efe552f", null ],
+    [ "root_cfg_section", "cfg_2base_8hpp.html#ab7079a7e0001a626a0a80ee2f365ac83", null ]
 ];

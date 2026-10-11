@@ -2,15 +2,15 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="113,5,309,31"/>
 <area shape="rect" id="Node000002" href="$current_8hpp.html" title=" " alt="" coords="238,79,342,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,29,269,68,265,71,222,33"/>
-<area shape="rect" id="Node000031" href="$governor_8hpp.html" title=" " alt="" coords="5,152,124,177"/>
-<area shape="poly" id="edge7_Node000001_Node000031" title=" " alt="" coords="201,33,88,144,84,141,197,29"/>
+<area shape="rect" id="Node000036" href="$governor_8hpp.html" title=" " alt="" coords="5,152,124,177"/>
+<area shape="poly" id="edge7_Node000001_Node000036" title=" " alt="" coords="201,33,88,144,84,141,197,29"/>
 <area shape="rect" id="Node000003" href="$handler_8hpp.html" title=" " alt="" coords="149,152,295,177"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="281,106,245,144,241,140,277,102"/>
-<area shape="poly" id="edge3_Node000002_Node000031" title=" " alt="" coords="255,107,115,150,113,145,253,101"/>
-<area shape="rect" id="Node000035" href="$current_2cfg_8hpp.html" title=" " alt="" coords="320,152,399,177"/>
-<area shape="poly" id="edge4_Node000002_Node000035" title=" " alt="" coords="303,102,341,140,337,144,300,106"/>
-<area shape="rect" id="Node000036" href="$current_2iface_8hpp.html" title=" " alt="" coords="423,152,514,177"/>
-<area shape="poly" id="edge5_Node000002_Node000036" title=" " alt="" coords="320,102,428,144,426,149,318,107"/>
-<area shape="rect" id="Node000037" title=" " alt="" coords="538,152,677,177"/>
-<area shape="poly" id="edge6_Node000002_Node000037" title=" " alt="" coords="342,101,544,146,542,152,340,107"/>
+<area shape="poly" id="edge3_Node000002_Node000036" title=" " alt="" coords="255,107,115,150,113,145,253,101"/>
+<area shape="rect" id="Node000039" href="$current_2cfg_8hpp.html" title=" " alt="" coords="320,152,399,177"/>
+<area shape="poly" id="edge4_Node000002_Node000039" title=" " alt="" coords="303,102,341,140,337,144,300,106"/>
+<area shape="rect" id="Node000040" href="$current_2iface_8hpp.html" title=" " alt="" coords="423,152,514,177"/>
+<area shape="poly" id="edge5_Node000002_Node000040" title=" " alt="" coords="320,102,428,144,426,149,318,107"/>
+<area shape="rect" id="Node000041" title=" " alt="" coords="538,152,677,177"/>
+<area shape="poly" id="edge6_Node000002_Node000041" title=" " alt="" coords="342,101,544,146,542,152,340,107"/>
 </map>

@@ -96,18 +96,18 @@ $(document).ready(function(){initNavTree('cfg_2def_8hpp.html',''); initResizable
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">def.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="cfg_2base_8hpp_source.html">./base.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="handler_8hpp_source.html">./handler.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for def.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="cfg_2def_8hpp__incl.svg" width="542" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="cfg_2def_8hpp__incl.svg" width="1400" height="359"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="cfg_2def_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -224,11 +224,6 @@ Functions</h2></td></tr>
 <tr class="separator:ad3a87c381f3fd90e336373a20951af56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e1087069c21f5e087e55da1f2a9f95e" id="r_a1e1087069c21f5e087e55da1f2a9f95e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a1e1087069c21f5e087e55da1f2a9f95e">servio::cfg::id_to_key</a> (uint32_t <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f">id</a>)</td></tr>
 <tr class="separator:a1e1087069c21f5e087e55da1f2a9f95e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a42bdc42292e3d36a9559e4e6f70f6b61" id="r_a42bdc42292e3d36a9559e4e6f70f6b61"><td class="memItemLeft" align="right" valign="top">constexpr std::array&lt; uint32_t, 16 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1cfg.html#a42bdc42292e3d36a9559e4e6f70f6b61">servio::cfg::ids</a></td></tr>
-<tr class="separator:a42bdc42292e3d36a9559e4e6f70f6b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structservio_1_1cfg_1_1key__trait_3_01key_1_1model_01_4" id="structservio_1_1cfg_1_1key__trait_3_01key_1_1model_01_4"></a>
@@ -615,10 +610,16 @@ type</td>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1cfg_1_1context__coll__graph.svg" width="172" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1cfg_1_1context__coll__graph.svg" width="942" height="191"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a1668b59e4e7408461a976fff3617bf45" name="a1668b59e4e7408461a976fff3617bf45"></a><a class="el" href="structservio_1_1cfg_1_1handler.html">handler</a>&lt; <a class="el" href="structservio_1_1cfg_1_1map.html">map</a> &gt;</td>
+<td class="fieldname">
+handler { <a class="el" href="structservio_1_1cfg_1_1map.html">map</a>, +[]( <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a> ) {} }</td>
+<td class="fielddoc">
+</td></tr>
 <tr><td class="fieldtype">
 <a id="a3dbb7cf8f857ae3e9ab69908e1674f69" name="a3dbb7cf8f857ae3e9ab69908e1674f69"></a><a class="el" href="structservio_1_1cfg_1_1map.html">map</a></td>
 <td class="fieldname">
@@ -635,7 +636,7 @@ map</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1e869ebbc6cce176ee0dbb76743ac339.html">cfg</a></li><li class="navelem"><a class="el" href="cfg_2def_8hpp.html">def.hpp</a></li>
-    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 17:41:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

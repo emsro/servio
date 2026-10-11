@@ -1,7 +1,9 @@
 <map id="servio::cfg::dispatcher" name="servio::cfg::dispatcher">
-<area shape="rect" id="Node000001" title=" " alt="" coords="71,108,238,133"/>
-<area shape="rect" id="Node000002" href="$structservio_1_1cfg_1_1iface.html" title=" " alt="" coords="5,13,136,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,46,146,106,142,110,88,50"/>
-<area shape="rect" id="Node000003" href="$structservio_1_1gov_1_1governor__manager.html" title=" " alt="" coords="161,5,319,45"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,60,213,86,181,110,177,106,209,82,225,57"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="84,183,251,208"/>
+<area shape="rect" id="Node000002" href="$structservio_1_1cfg_1_1iface.html" title=" " alt="" coords="17,87,147,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,124,111,157,126,170,142,180,140,185,122,174,107,160,87,127"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,159,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,44,85,87,79,87,79,44"/>
+<area shape="rect" id="Node000004" href="$structservio_1_1gov_1_1governor__manager.html" title=" " alt="" coords="172,80,331,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,132,203,160,180,184,177,180,199,157,224,128"/>
 </map>

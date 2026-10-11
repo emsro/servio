@@ -159,8 +159,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1empty__value__cb.html">empty_value_cb</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1flash__storage.html">flash_storage</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1get__curr__iface.html">get_curr_iface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1drv_1_1get__pos__iface.html">get_pos_iface</a></td></tr>
@@ -266,12 +264,10 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a19a2cf65697fc271377dfbf1bc8c1dc3" id="r_a19a2cf65697fc271377dfbf1bc8c1dc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a19a2cf65697fc271377dfbf1bc8c1dc3">cfg_erase</a> (uint32_t start_addr)</td></tr>
-<tr class="separator:a19a2cf65697fc271377dfbf1bc8c1dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a500eb08ac25ba30d034e0a70f40f1156" id="r_a500eb08ac25ba30d034e0a70f40f1156"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a500eb08ac25ba30d034e0a70f40f1156">cfg_write</a> (uint32_t addr, std::span&lt; std::byte const &gt; buffer)</td></tr>
-<tr class="separator:a500eb08ac25ba30d034e0a70f40f1156"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28ddfb5f94ab6a643d78ff0e91d80bc1" id="r_a28ddfb5f94ab6a643d78ff0e91d80bc1"><td class="memItemLeft" align="right" valign="top">error_code&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a28ddfb5f94ab6a643d78ff0e91d80bc1">send</a> (<a class="el" href="structservio_1_1drv_1_1com__iface.html">com_iface</a> &amp;comms, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout, std::span&lt; std::byte const &gt; data)</td></tr>
 <tr class="separator:a28ddfb5f94ab6a643d78ff0e91d80bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a204d2674b25bc5d7226c4cba7046bbc4" id="r_a204d2674b25bc5d7226c4cba7046bbc4"><td class="memItemLeft" align="right" valign="top">constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a204d2674b25bc5d7226c4cba7046bbc4">cfg_storage_id</a> (uint16_t section, uint32_t key)</td></tr>
+<tr class="separator:a204d2674b25bc5d7226c4cba7046bbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40b5c094f9145bb1145198ee924ff3cb" id="r_a40b5c094f9145bb1145198ee924ff3cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#a40b5c094f9145bb1145198ee924ff3cb">wait_for</a> (<a class="el" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;clk, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> ms)</td></tr>
 <tr class="separator:a40b5c094f9145bb1145198ee924ff3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5a00aab7fb2191912d0d268bc82af56" id="r_ab5a00aab7fb2191912d0d268bc82af56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceservio_1_1drv.html#ab5a00aab7fb2191912d0d268bc82af56">spin_with_timeout</a> (<a class="el" href="structservio_1_1drv_1_1clk__iface.html">clk_iface</a> &amp;clk, bool const volatile &amp;cond, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> timeout)</td></tr>
@@ -532,43 +528,26 @@ template&lt;typename Callable &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a19a2cf65697fc271377dfbf1bc8c1dc3" name="a19a2cf65697fc271377dfbf1bc8c1dc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19a2cf65697fc271377dfbf1bc8c1dc3">&#9670;&#160;</a></span>cfg_erase()</h2>
+<a id="a204d2674b25bc5d7226c4cba7046bbc4" name="a204d2674b25bc5d7226c4cba7046bbc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a204d2674b25bc5d7226c4cba7046bbc4">&#9670;&#160;</a></span>cfg_storage_id()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void servio::drv::cfg_erase </td>
+          <td class="memname">constexpr uint32_t servio::drv::cfg_storage_id </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>start_addr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>.</p>
-
-</div>
-</div>
-<a id="a500eb08ac25ba30d034e0a70f40f1156" name="a500eb08ac25ba30d034e0a70f40f1156"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a500eb08ac25ba30d034e0a70f40f1156">&#9670;&#160;</a></span>cfg_write()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool servio::drv::cfg_write </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>addr</em>, </td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>section</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::span&lt; std::byte const &gt;&#160;</td>
-          <td class="paramname"><em>buffer</em>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -576,9 +555,12 @@ template&lt;typename Callable &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="namespaceservio_1_1fw.html#a16b95de16e9d3e2d29ea57b34bbf80da">servio::fw::stop_exec()</a>.</p>
 
 </div>
 </div>
@@ -985,7 +967,7 @@ template&lt;typename Callable &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1drv.html">drv</a></li>
-    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 17:41:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

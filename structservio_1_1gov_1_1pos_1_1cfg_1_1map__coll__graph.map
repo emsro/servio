@@ -1,5 +1,7 @@
 <map id="servio::gov::pos::cfg::map" name="servio::gov::pos::cfg::map">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,195,119"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="19,5,181,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,45,103,93,97,93,97,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="78,108,267,133"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,167,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,46,164,106,160,110,104,50"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="191,5,331,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,57,186,109,182,106,232,53"/>
 </map>

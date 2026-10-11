@@ -104,34 +104,37 @@ $(document).ready(function(){initNavTree('drv8251_8hpp_source.html',''); initRes
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../cnv/setup.hpp&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1drv8251.html">    6</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1drv_1_1drv8251.html">servio::drv::drv8251</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// XXX: duplicated and actually property of our hbridge</span></div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1drv8251.html#a137ccaabbaf7114ac8aed68632e19bf5">   10</a></span><span class="keyword">consteval</span> <a class="code hl_struct" href="namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale">cnv::off_scale</a> <a class="code hl_function" href="namespaceservio_1_1drv_1_1drv8251.html#a137ccaabbaf7114ac8aed68632e19bf5">get_curr_coeff</a>()</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="comment">// mirror scale: 1575 uA/A</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="comment">// resistor: 1k</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">constexpr</span> <span class="keywordtype">float</span> gain = 1&#39;575.F / 1&#39;000&#39;000.F;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceservio_1_1cnv.html#ae3dc9df6f52fc1747f055d1eef694629">cnv::calc_current_conversion</a>( 3.3F, 0.0F, 1 &lt;&lt; 12, 1&#39;000.F, gain );</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1drv8251.html">    8</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceservio_1_1drv_1_1drv8251.html">servio::drv::drv8251</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// XXX: duplicated and actually property of our hbridge</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespaceservio_1_1drv_1_1drv8251.html#a32d4916751ad4939aa23224b09a0f216">   12</a></span><span class="keyword">consteval</span> <a class="code hl_struct" href="namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale">cnv::off_scale</a> <a class="code hl_function" href="namespaceservio_1_1drv_1_1drv8251.html#a32d4916751ad4939aa23224b09a0f216">get_curr_coeff</a>( uint32_t adc_resolution_bits )</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="comment">// mirror scale: 1575 uA/A</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="comment">// resistor: 1k</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">constexpr</span> <span class="keywordtype">float</span> gain = 1&#39;575.F / 1&#39;000&#39;000.F;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceservio_1_1cnv.html#ae3dc9df6f52fc1747f055d1eef694629">cnv::calc_current_conversion</a>(</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            3.3F, 0.0F, <span class="keyword">static_cast&lt;</span> <span class="keywordtype">float</span> <span class="keyword">&gt;</span>( 1U &lt;&lt; adc_resolution_bits ), 1&#39;000.F, gain );</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}  <span class="comment">// namespace servio::drv::drv8251</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}  <span class="comment">// namespace servio::drv::drv8251</span></div>
 </div>
 <div class="ttc" id="anamespaceservio_1_1cnv_html_ae3dc9df6f52fc1747f055d1eef694629"><div class="ttname"><a href="namespaceservio_1_1cnv.html#ae3dc9df6f52fc1747f055d1eef694629">servio::cnv::calc_current_conversion</a></div><div class="ttdeci">constexpr off_scale calc_current_conversion(float v_max, float v_min, float steps, float r_shunt, float gain)</div><div class="ttdef"><b>Definition</b> setup.hpp:28</div></div>
 <div class="ttc" id="anamespaceservio_1_1cnv_html_structservio_1_1cnv_1_1off__scale"><div class="ttname"><a href="namespaceservio_1_1cnv.html#structservio_1_1cnv_1_1off__scale">servio::cnv::off_scale</a></div><div class="ttdef"><b>Definition</b> setup.hpp:7</div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_1_1drv8251_html"><div class="ttname"><a href="namespaceservio_1_1drv_1_1drv8251.html">servio::drv::drv8251</a></div><div class="ttdef"><b>Definition</b> drv8251.hpp:7</div></div>
-<div class="ttc" id="anamespaceservio_1_1drv_1_1drv8251_html_a137ccaabbaf7114ac8aed68632e19bf5"><div class="ttname"><a href="namespaceservio_1_1drv_1_1drv8251.html#a137ccaabbaf7114ac8aed68632e19bf5">servio::drv::drv8251::get_curr_coeff</a></div><div class="ttdeci">consteval cnv::off_scale get_curr_coeff()</div><div class="ttdef"><b>Definition</b> drv8251.hpp:10</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_1_1drv8251_html"><div class="ttname"><a href="namespaceservio_1_1drv_1_1drv8251.html">servio::drv::drv8251</a></div><div class="ttdef"><b>Definition</b> drv8251.hpp:9</div></div>
+<div class="ttc" id="anamespaceservio_1_1drv_1_1drv8251_html_a32d4916751ad4939aa23224b09a0f216"><div class="ttname"><a href="namespaceservio_1_1drv_1_1drv8251.html#a32d4916751ad4939aa23224b09a0f216">servio::drv::drv8251::get_curr_coeff</a></div><div class="ttdeci">consteval cnv::off_scale get_curr_coeff(uint32_t adc_resolution_bits)</div><div class="ttdef"><b>Definition</b> drv8251.hpp:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="drv8251_8hpp.html">drv8251.hpp</a></li>
-    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 17:41:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

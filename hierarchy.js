@@ -118,6 +118,7 @@ var hierarchy =
       [ "servio::gov::vel::_velocity_gov", "structservio_1_1gov_1_1vel_1_1__velocity__gov.html", null ]
     ] ],
     [ "servio::gov::governor_manager", "structservio_1_1gov_1_1governor__manager.html", null ],
+    [ "servio::gov::governors_ctx", "structservio_1_1gov_1_1governors__ctx.html", null ],
     [ "servio::gov::handle", "structservio_1_1gov_1_1handle.html", [
       [ "servio::gov::curr::_current_gov", "structservio_1_1gov_1_1curr_1_1__current__gov.html", null ],
       [ "servio::gov::pos::_position_gov", "structservio_1_1gov_1_1pos_1_1__position__gov.html", null ],
@@ -127,13 +128,6 @@ var hierarchy =
     [ "servio::plt::hb_timer_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1hb__timer__cfg", null ],
     [ "servio::plt::i2c_cfg", "namespaceservio_1_1plt.html#structservio_1_1plt_1_1i2c__cfg", null ],
     [ "servio::parser::id_t", "namespaceservio_1_1parser.html#structservio_1_1parser_1_1id__t", null ],
-    [ "servio::cfg::iface", "structservio_1_1cfg_1_1iface.html", [
-      [ "servio::cfg::handler< servio::cfg::map >", "structservio_1_1cfg_1_1handler.html", null ],
-      [ "servio::cfg::handler< servio::gov::curr::cfg::map >", "structservio_1_1cfg_1_1handler.html", null ],
-      [ "servio::cfg::handler< servio::gov::pos::cfg::map >", "structservio_1_1cfg_1_1handler.html", null ],
-      [ "servio::cfg::handler< servio::gov::vel::cfg::map >", "structservio_1_1cfg_1_1handler.html", null ],
-      [ "servio::cfg::handler< T >", "structservio_1_1cfg_1_1handler.html", null ]
-    ] ],
     [ "servio::mon::indication", "classservio_1_1mon_1_1indication.html", null ],
     [ "servio::iface::info_stmt", "structservio_1_1iface_1_1info__stmt.html", null ],
     [ "servio::iface::invalid_stmt", "namespaceservio_1_1iface.html#structservio_1_1iface_1_1invalid__stmt", null ],
@@ -208,6 +202,13 @@ var hierarchy =
     [ "servio::cnv::linear_converter", "structservio_1_1cnv_1_1linear__converter.html", null ],
     [ "servio::linear_transition_regulator", "structservio_1_1linear__transition__regulator.html", null ],
     [ "zll::ll_base", null, [
+      [ "servio::cfg::iface", "structservio_1_1cfg_1_1iface.html", [
+        [ "servio::cfg::handler< servio::cfg::map >", "structservio_1_1cfg_1_1handler.html", null ],
+        [ "servio::cfg::handler< servio::gov::curr::cfg::map >", "structservio_1_1cfg_1_1handler.html", null ],
+        [ "servio::cfg::handler< servio::gov::pos::cfg::map >", "structservio_1_1cfg_1_1handler.html", null ],
+        [ "servio::cfg::handler< servio::gov::vel::cfg::map >", "structservio_1_1cfg_1_1handler.html", null ],
+        [ "servio::cfg::handler< T >", "structservio_1_1cfg_1_1handler.html", null ]
+      ] ],
       [ "servio::gov::governor_factory", "structservio_1_1gov_1_1governor__factory.html", [
         [ "servio::gov::auto_factory< T >", "structservio_1_1gov_1_1auto__factory.html", null ]
       ] ]
@@ -294,7 +295,6 @@ var hierarchy =
     [ "servio::gov::vel::iface::stmt", "structservio_1_1gov_1_1vel_1_1iface_1_1stmt.html", null ],
     [ "servio::iface::stmt", "structservio_1_1iface_1_1stmt.html", null ],
     [ "servio::drv::storage_iface", "structservio_1_1drv_1_1storage__iface.html", [
-      [ "servio::drv::flash_storage", "structservio_1_1drv_1_1flash__storage.html", null ],
       [ "servio::drv::i2c_eeprom", "structservio_1_1drv_1_1i2c__eeprom.html", null ],
       [ "servio::drv::mock::stor", "structservio_1_1drv_1_1mock_1_1stor.html", null ]
     ] ],

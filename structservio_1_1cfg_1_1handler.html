@@ -106,14 +106,14 @@ $(document).ready(function(){initNavTree('structservio_1_1cfg_1_1handler.html','
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1cfg_1_1handler__inherit__graph.svg" width="196" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1cfg_1_1handler__inherit__graph.svg" width="196" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for servio::cfg::handler&lt; T &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1cfg_1_1handler__coll__graph.svg" width="196" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structservio_1_1cfg_1_1handler__coll__graph.svg" width="368" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -137,6 +137,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeed85ab7238e3a07599b63ce94ae032e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf15900c650d0019c1ee8017cf37c09b" id="r_adf15900c650d0019c1ee8017cf37c09b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#adf15900c650d0019c1ee8017cf37c09b">on_storage_change_check</a> (uint32_t <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f">id</a>, std::span&lt; std::byte const &gt; data) override</td></tr>
 <tr class="separator:adf15900c650d0019c1ee8017cf37c09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0407fb101a5dd9ce6da22f6d75babc0d" id="r_a0407fb101a5dd9ce6da22f6d75babc0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#a0407fb101a5dd9ce6da22f6d75babc0d">set_apply</a> (em::function_view&lt; void(<a class="el" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a>) &gt; f)</td></tr>
+<tr class="separator:a0407fb101a5dd9ce6da22f6d75babc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af57c02dc8b096916d2987fe032c92ced" id="r_af57c02dc8b096916d2987fe032c92ced"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#af57c02dc8b096916d2987fe032c92ced">storage_reset_seen</a> () override</td></tr>
+<tr class="separator:af57c02dc8b096916d2987fe032c92ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecfef5a0c3c13d712fefaac983bbf417" id="r_aecfef5a0c3c13d712fefaac983bbf417"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#aecfef5a0c3c13d712fefaac983bbf417">storage_mark_seen</a> (uint32_t <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3ab80bb7740288fda1f201890375a60c8f">id</a>) override</td></tr>
+<tr class="separator:aecfef5a0c3c13d712fefaac983bbf417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a656db9490afb4d35a00601ef4e596261" id="r_a656db9490afb4d35a00601ef4e596261"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio.html#a61b877b22095a520cf71c2099e4888dc">opt</a>&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#a656db9490afb4d35a00601ef4e596261">storage_take_unseen</a> () override</td></tr>
+<tr class="separator:a656db9490afb4d35a00601ef4e596261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a341329ac2fc496998049aa40ef69ecd0" id="r_a341329ac2fc496998049aa40ef69ecd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#a341329ac2fc496998049aa40ef69ecd0">apply_all</a> () override</td></tr>
+<tr class="separator:a341329ac2fc496998049aa40ef69ecd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structservio_1_1cfg_1_1iface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structservio_1_1cfg_1_1iface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structservio_1_1cfg_1_1iface.html">servio::cfg::iface</a></td></tr>
 <tr class="memitem:aaafa77cba512bf4467c6f1f93428e0f7 inherit pub_methods_structservio_1_1cfg_1_1iface" id="r_aaafa77cba512bf4467c6f1f93428e0f7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structservio_1_1opt__str__err.html">opt_str_err</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1iface.html#aaafa77cba512bf4467c6f1f93428e0f7">on_cmd_set</a> (std::string_view <a class="el" href="namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3">key</a>, vari::vref&lt; <a class="el" href="namespaceservio_1_1cfg.html#a215c26edc6be40e5ceb18f9e75f96e62">base_t</a> const &gt; value)=0</td></tr>
 <tr class="separator:aaafa77cba512bf4467c6f1f93428e0f7 inherit pub_methods_structservio_1_1cfg_1_1iface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,6 +157,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:af918871453ee5768d48f84e950554f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac69359cfc7346e325a43143cd002a490" id="r_ac69359cfc7346e325a43143cd002a490"><td class="memItemLeft" align="right" valign="top">em::function_view&lt; void(<a class="el" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a>) &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#ac69359cfc7346e325a43143cd002a490">_on_cmd_set</a></td></tr>
 <tr class="separator:ac69359cfc7346e325a43143cd002a490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd7270ed65eb3f2bf99e855f0968a81" id="r_a0fd7270ed65eb3f2bf99e855f0968a81"><td class="memItemLeft" align="right" valign="top">std::bitset&lt; T::ids.size() &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1handler.html#a0fd7270ed65eb3f2bf99e855f0968a81">_seen</a></td></tr>
+<tr class="separator:a0fd7270ed65eb3f2bf99e855f0968a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_structservio_1_1cfg_1_1iface"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_structservio_1_1cfg_1_1iface')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="structservio_1_1cfg_1_1iface.html">servio::cfg::iface</a></td></tr>
+<tr class="memitem:a4801fa84756224c62cb663778eb9da31 inherit pub_attribs_structservio_1_1cfg_1_1iface" id="r_a4801fa84756224c62cb663778eb9da31"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1cfg_1_1iface.html#a4801fa84756224c62cb663778eb9da31">section</a> = <a class="el" href="namespaceservio_1_1cfg.html#ab7079a7e0001a626a0a80ee2f365ac83">root_cfg_section</a></td></tr>
+<tr class="separator:a4801fa84756224c62cb663778eb9da31 inherit pub_attribs_structservio_1_1cfg_1_1iface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae59c96a13b4b39dfa802461132855d71" name="ae59c96a13b4b39dfa802461132855d71"></a>
@@ -205,6 +220,35 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a341329ac2fc496998049aa40ef69ecd0" name="a341329ac2fc496998049aa40ef69ecd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a341329ac2fc496998049aa40ef69ecd0">&#9670;&#160;</a></span>apply_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a>&lt; T &gt;::apply_all </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="structservio_1_1cfg_1_1iface.html#ad2be64e7c8de8e335d8bfd5e4da90479">servio::cfg::iface</a>.</p>
+
+</div>
+</div>
 <a id="a91ac3d6bc1f72e863af96808dece7467" name="a91ac3d6bc1f72e863af96808dece7467"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a91ac3d6bc1f72e863af96808dece7467">&#9670;&#160;</a></span>on_cmd_get()</h2>
 
@@ -429,6 +473,122 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a0407fb101a5dd9ce6da22f6d75babc0d" name="a0407fb101a5dd9ce6da22f6d75babc0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0407fb101a5dd9ce6da22f6d75babc0d">&#9670;&#160;</a></span>set_apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a>&lt; T &gt;::set_apply </td>
+          <td>(</td>
+          <td class="paramtype">em::function_view&lt; void(<a class="el" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a>) &gt;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aecfef5a0c3c13d712fefaac983bbf417" name="aecfef5a0c3c13d712fefaac983bbf417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecfef5a0c3c13d712fefaac983bbf417">&#9670;&#160;</a></span>storage_mark_seen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a>&lt; T &gt;::storage_mark_seen </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="structservio_1_1cfg_1_1iface.html#ac08feb86d07b9e0bc5deec4e59a78d52">servio::cfg::iface</a>.</p>
+
+</div>
+</div>
+<a id="af57c02dc8b096916d2987fe032c92ced" name="af57c02dc8b096916d2987fe032c92ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af57c02dc8b096916d2987fe032c92ced">&#9670;&#160;</a></span>storage_reset_seen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a>&lt; T &gt;::storage_reset_seen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="structservio_1_1cfg_1_1iface.html#a3f58c9ff19e8bf301e2674e11690eb7a">servio::cfg::iface</a>.</p>
+
+</div>
+</div>
+<a id="a656db9490afb4d35a00601ef4e596261" name="a656db9490afb4d35a00601ef4e596261"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a656db9490afb4d35a00601ef4e596261">&#9670;&#160;</a></span>storage_take_unseen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceservio.html#a61b877b22095a520cf71c2099e4888dc">opt</a>&lt; uint32_t &gt; <a class="el" href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a>&lt; T &gt;::storage_take_unseen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="structservio_1_1cfg_1_1iface.html#abc32b43e4bd43886d741ffe604a8713d">servio::cfg::iface</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="ac69359cfc7346e325a43143cd002a490" name="ac69359cfc7346e325a43143cd002a490"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac69359cfc7346e325a43143cd002a490">&#9670;&#160;</a></span>_on_cmd_set</h2>
@@ -440,6 +600,22 @@ template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">em::function_view&lt; void( <a class="el" href="structservio_1_1cfg_1_1handler.html#ae59c96a13b4b39dfa802461132855d71">key_type</a> ) &gt; <a class="el" href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a>&lt; T &gt;::_on_cmd_set</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0fd7270ed65eb3f2bf99e855f0968a81" name="a0fd7270ed65eb3f2bf99e855f0968a81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fd7270ed65eb3f2bf99e855f0968a81">&#9670;&#160;</a></span>_seen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::bitset&lt; T::ids.size() &gt; <a class="el" href="structservio_1_1cfg_1_1handler.html">servio::cfg::handler</a>&lt; T &gt;::_seen</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -471,7 +647,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1cfg.html">cfg</a></li><li class="navelem"><a class="el" href="structservio_1_1cfg_1_1handler.html">handler</a></li>
-    <li class="footer">Generated on Sat Oct 10 2026 20:42:44 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 17:41:07 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
