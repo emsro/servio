@@ -58,7 +58,9 @@ struct detailed_adc_channel
 
                 std::span const readings( std::data( buffer ), used );
 
-                last_value = em::avg( readings );
+                last_value = em::avg( readings, []( uint16_t v ) -> uint32_t {
+                        return v;
+                } );
                 callback->on_value_irq( last_value, readings );
         }
 
