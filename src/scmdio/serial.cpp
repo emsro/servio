@@ -55,7 +55,7 @@ awaitable< nlohmann::json > exchg( port_iface& port, std::string const& msg )
                 log_error(
                     "Expected message with at least one field in array: {} input: {}", reply, msg );
         if ( jr[0] != "OK" )
-                log_error( "Expected OK message, got: {}", jr.dump() );
+                log_error( "Expected OK message, got: {} input: {}", jr.dump(), msg );
         spdlog::debug( "json reply: {}", jr.dump() );
         co_return jr;
 }
