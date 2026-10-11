@@ -15,7 +15,7 @@ struct _velocity_gov final : governor, handle
         _velocity_gov()
           : curr_pid(
                 0,
-                { .coefficients = { .p = 1.F, .i = 0.F, .d = 0.F }, .limits = { -10.F, 10.F } } )
+                { .coefficients = { .p = 1.F, .i = 0.F, .d = 0.F }, .limits = { -1.F, 1.F } } )
           , vel_pid(
                 0,
                 { .coefficients = { .p = 1.F, .i = 0.F, .d = 0.F }, .limits = { -10.F, 10.F } } )
@@ -58,7 +58,7 @@ struct _velocity_gov final : governor, handle
                         break;
                 case cfg::key::curr_lim_min:
                 case cfg::key::curr_lim_max:
-                        em::update_limits( curr_pid, { cfg.curr_lim_min, cfg.curr_lim_max } );
+                        em::update_limits( vel_pid, { cfg.curr_lim_min, cfg.curr_lim_max } );
                         break;
                 case cfg::key::vel_lim_min:
                 case cfg::key::vel_lim_max:
@@ -97,7 +97,8 @@ struct _velocity_gov final : governor, handle
 
         pwr current_irq( microseconds now, float current ) override
         {
-                auto const  lims = em::intersection( curr_pid.cfg.limits, derived_curr_lims );
+                auto const lims = em::intersection(
+                    limits< float >{ cfg.curr_lim_min, cfg.curr_lim_max }, derived_curr_lims );
                 float const desired_curr = clamp( goal_curr, lims );
 
                 float const fpower = em::update( curr_pid, now.count(), current, desired_curr );

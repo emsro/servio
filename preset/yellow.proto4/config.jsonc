@@ -7,7 +7,7 @@
     "current.curr_loop_p": 0.2,
     "current.curr_loop_i": 0.5,
     "current.curr_loop_d": 0.0,
-    // PID output clamped to full PWM range; also serves as max goal magnitude (A)
+    // Bounds the goal current (A)
     "current.curr_lim_min": -1.0,
     "current.curr_lim_max": 1.0,
     // Continuous wheel motor: no position limits
