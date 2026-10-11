@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"namespaceservio_1_1cfg.html#a61867bf070989fe2425d36885eb9dec0":[19,0,1,2,1,10,0],
 "namespaceservio_1_1cfg.html#a6eb8fc3fad9e683169acc64a7148a604":[17,0,4,2,43],
 "namespaceservio_1_1cfg.html#a75b2c726df0d6bed53466456a1d2cf79":[19,0,1,2,1,13,0],
 "namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811":[17,0,4,2,34],
@@ -210,7 +211,8 @@ var NAVTREEINDEX5 =
 "namespaceservio_1_1gov_1_1curr_1_1iface.html#a05cf44bb6ea58b6d8333abe12940c3f4":[17,0,4,8,0,1,2],
 "namespaceservio_1_1gov_1_1curr_1_1iface.html#a9445b9e34d5d1d0075a70457c9e7ab98":[17,0,4,8,0,1,3],
 "namespaceservio_1_1gov_1_1curr_1_1tests.html":[17,0,4,8,0,2],
-"namespaceservio_1_1gov_1_1curr_1_1tests.html#a263f8518018923449536b35270d14993":[17,0,4,8,0,2,0],
+"namespaceservio_1_1gov_1_1curr_1_1tests.html#a263f8518018923449536b35270d14993":[17,0,4,8,0,2,1],
+"namespaceservio_1_1gov_1_1curr_1_1tests.html#abca7616308002e0778b0f7eccb8aa7c1":[17,0,4,8,0,2,0],
 "namespaceservio_1_1gov_1_1pos.html":[17,0,4,8,1],
 "namespaceservio_1_1gov_1_1pos_1_1cfg.html":[17,0,4,8,1,0],
 "namespaceservio_1_1gov_1_1pos_1_1cfg.html#a08fc8e683d57be83a2d52c159c4a9564":[19,0,1,9,1,1,3,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__max_01_4":[19,0,1,9,1,1,12],
 "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__lim__min_01_4":[19,0,1,9,1,1,11],
 "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__d_01_4":[19,0,1,9,1,1,5],
-"namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__i_01_4":[19,0,1,9,1,1,4],
-"namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__p_01_4":[19,0,1,9,1,1,3],
-"namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1pos__lim__max_01_4":[19,0,1,9,1,1,9]
+"namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__i_01_4":[19,0,1,9,1,1,4]
 };

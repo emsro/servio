@@ -134,8 +134,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a90f7bcf5d65b53d175e1adfdee3e9494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca6d9f95583cad8c2b231dc51063129d" id="r_aca6d9f95583cad8c2b231dc51063129d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#aca6d9f95583cad8c2b231dc51063129d">apply_cfg</a> (<a class="el" href="namespaceservio_1_1gov_1_1pos_1_1cfg.html#aa80c59490c8be41e7df270764d3703c2">cfg::key</a> k)</td></tr>
 <tr class="separator:aca6d9f95583cad8c2b231dc51063129d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27b2b3c64871db9445a57d1753ff4507" id="r_a27b2b3c64871db9445a57d1753ff4507"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1gov_1_1engage__res.html">engage_res</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a27b2b3c64871db9445a57d1753ff4507">engage</a> (em::pmr::memory_resource &amp;) override</td></tr>
-<tr class="separator:a27b2b3c64871db9445a57d1753ff4507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a800ac7fbdf297b0f899f74d11c4a30" id="r_a7a800ac7fbdf297b0f899f74d11c4a30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1gov_1_1engage__res.html">engage_res</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a7a800ac7fbdf297b0f899f74d11c4a30">engage</a> (em::pmr::memory_resource &amp;, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> now, float position, float) override</td></tr>
+<tr class="separator:a7a800ac7fbdf297b0f899f74d11c4a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3054037337a2c6da47c83ad1ca59228e" id="r_a3054037337a2c6da47c83ad1ca59228e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a3054037337a2c6da47c83ad1ca59228e">disengage</a> (<a class="el" href="structservio_1_1gov_1_1handle.html">handle</a> &amp;) override</td></tr>
 <tr class="separator:a3054037337a2c6da47c83ad1ca59228e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad80df49ad32a076d7679c8d18ae9018" id="r_aad80df49ad32a076d7679c8d18ae9018"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#aad80df49ad32a076d7679c8d18ae9018">on_cmd</a> (<a class="el" href="structservio_1_1iface_1_1cmd__parser.html">iface::cmd_parser</a> cmd, <a class="el" href="structservio_1_1iface_1_1root__ser.html">servio::iface::root_ser</a> out) override</td></tr>
@@ -331,8 +331,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a27b2b3c64871db9445a57d1753ff4507" name="a27b2b3c64871db9445a57d1753ff4507"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27b2b3c64871db9445a57d1753ff4507">&#9670;&#160;</a></span>engage()</h2>
+<a id="a7a800ac7fbdf297b0f899f74d11c4a30" name="a7a800ac7fbdf297b0f899f74d11c4a30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a800ac7fbdf297b0f899f74d11c4a30">&#9670;&#160;</a></span>engage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -344,8 +344,30 @@ Static Public Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="structservio_1_1gov_1_1engage__res.html">engage_res</a> servio::gov::pos::_position_gov::engage </td>
           <td>(</td>
           <td class="paramtype">em::pmr::memory_resource &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a>&#160;</td>
+          <td class="paramname"><em>now</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -355,9 +377,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structservio_1_1gov_1_1governor.html#abd47669978680c380aaa08fe6ff7762f">servio::gov::governor</a>.</p>
+<p>Implements <a class="el" href="structservio_1_1gov_1_1governor.html#aad0bb38c6cb434882a4661f135f8075f">servio::gov::governor</a>.</p>
 
-<p class="reference">References <a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a8981218b30168441f715660938930349">goal_pos</a>, <a class="el" href="structservio_1_1gov_1_1engage__res.html#a13d6691125683be2c40662c5ff47e6c5">servio::gov::engage_res::stat</a>, and <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">servio::success</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#ad2934c001b35ac6286658934a08fd92b">curr_pid</a>, <a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a6f4042efb3ca7bf37d081ace0da088eb">current_scale_regl</a>, <a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a19f9e343f69865e4420309bb6dec5b34">goal_curr</a>, <a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a8981218b30168441f715660938930349">goal_pos</a>, <a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a55965786764ad3fd4930e79127118361">pos_pid</a>, <a class="el" href="structservio_1_1linear__transition__regulator.html#a3cc687bd5f4c0ceb163e6350f0ab7baa">servio::linear_transition_regulator::reset()</a>, and <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">servio::success</a>.</p>
 
 </div>
 </div>
@@ -538,7 +560,7 @@ Static Public Attributes</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">            <a class="code hl_variable" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a1252b09d0f5339f70b852da3a13c2e0a">cfg</a>,</div>
 <div class="line">            em::member_function&lt; &amp;_position_gov::apply_cfg &gt;{ *<span class="keyword">this</span> } }</div>
-<div class="ttc" id="astructservio_1_1gov_1_1pos_1_1__position__gov_html_a1252b09d0f5339f70b852da3a13c2e0a"><div class="ttname"><a href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a1252b09d0f5339f70b852da3a13c2e0a">servio::gov::pos::_position_gov::cfg</a></div><div class="ttdeci">cfg::map cfg</div><div class="ttdef"><b>Definition</b> position.hpp:128</div></div>
+<div class="ttc" id="astructservio_1_1gov_1_1pos_1_1__position__gov_html_a1252b09d0f5339f70b852da3a13c2e0a"><div class="ttname"><a href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a1252b09d0f5339f70b852da3a13c2e0a">servio::gov::pos::_position_gov::cfg</a></div><div class="ttdeci">cfg::map cfg</div><div class="ttdef"><b>Definition</b> position.hpp:133</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -657,7 +679,7 @@ Static Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1gov.html">gov</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1gov_1_1pos.html">pos</a></li><li class="navelem"><a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html">_position_gov</a></li>
-    <li class="footer">Generated on Sun Oct 11 2026 17:53:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 18:31:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

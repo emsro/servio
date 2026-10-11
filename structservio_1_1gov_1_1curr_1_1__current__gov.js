@@ -6,7 +6,7 @@ var structservio_1_1gov_1_1curr_1_1__current__gov =
     [ "apply_cfg", "structservio_1_1gov_1_1curr_1_1__current__gov.html#ac65a642b4a9b3acc7330c6b1113bdaab", null ],
     [ "current_irq", "structservio_1_1gov_1_1curr_1_1__current__gov.html#abcf7f3e9f87be0626dc636685fe7982e", null ],
     [ "disengage", "structservio_1_1gov_1_1curr_1_1__current__gov.html#a3438554d0bf695230b20d7df21100512", null ],
-    [ "engage", "structservio_1_1gov_1_1curr_1_1__current__gov.html#acffd06c8bc643efecdacd9cd1534b9d5", null ],
+    [ "engage", "structservio_1_1gov_1_1curr_1_1__current__gov.html#a290b5e55acbe034e333eedeadf3b238d", null ],
     [ "get_cfg", "structservio_1_1gov_1_1curr_1_1__current__gov.html#a66d5d87ae01f1fa1e9c7e3ca0cf698e4", null ],
     [ "metrics_irq", "structservio_1_1gov_1_1curr_1_1__current__gov.html#ab54086d526c83c4f89b96a9f155cba62", null ],
     [ "name", "structservio_1_1gov_1_1curr_1_1__current__gov.html#aeb963bda3766234588514e401ad72f88", null ],

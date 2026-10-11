@@ -1,6 +1,6 @@
 var structservio_1_1gov_1_1governor__manager =
 [
-    [ "activate", "structservio_1_1gov_1_1governor__manager.html#a14f7a6814b1a0639f4de9e705c3b3090", null ],
+    [ "activate", "structservio_1_1gov_1_1governor__manager.html#a754a04c7d4c451929823da718e5a23ab", null ],
     [ "active", "structservio_1_1gov_1_1governor__manager.html#abfb31c65edc80225d4304de149e7de29", null ],
     [ "add_gov", "structservio_1_1gov_1_1governor__manager.html#a526696772fcddff1564ef33f13c44dbc", null ],
     [ "current_irq", "structservio_1_1gov_1_1governor__manager.html#a1b327d6c093850ec247d579b006fead5", null ],

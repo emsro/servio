@@ -129,8 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaf7d4dd87898ac95ced7dec9bc3ed722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa35687ffe8becbb2cacfbd2e86b68a" id="r_a6aa35687ffe8becbb2cacfbd2e86b68a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1cfg_1_1iface.html">servio::cfg::iface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pow_1_1__power__gov.html#a6aa35687ffe8becbb2cacfbd2e86b68a">get_cfg</a> () override</td></tr>
 <tr class="separator:a6aa35687ffe8becbb2cacfbd2e86b68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91adae32fa97064878ad73ec379a1f76" id="r_a91adae32fa97064878ad73ec379a1f76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1gov_1_1engage__res.html">engage_res</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pow_1_1__power__gov.html#a91adae32fa97064878ad73ec379a1f76">engage</a> (em::pmr::memory_resource &amp;) override</td></tr>
-<tr class="separator:a91adae32fa97064878ad73ec379a1f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373c24a2e858ec8349f993adbd23f73b" id="r_a373c24a2e858ec8349f993adbd23f73b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structservio_1_1gov_1_1engage__res.html">engage_res</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pow_1_1__power__gov.html#a373c24a2e858ec8349f993adbd23f73b">engage</a> (em::pmr::memory_resource &amp;, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a>, float, float) override</td></tr>
+<tr class="separator:a373c24a2e858ec8349f993adbd23f73b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac63ba12ae494117ca27d9f7d7eb5f91d" id="r_ac63ba12ae494117ca27d9f7d7eb5f91d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pow_1_1__power__gov.html#ac63ba12ae494117ca27d9f7d7eb5f91d">disengage</a> (<a class="el" href="structservio_1_1gov_1_1handle.html">handle</a> &amp;) override</td></tr>
 <tr class="separator:ac63ba12ae494117ca27d9f7d7eb5f91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3448313a41156c6a7486c14948aa9ffd" id="r_a3448313a41156c6a7486c14948aa9ffd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pow_1_1__power__gov.html#a3448313a41156c6a7486c14948aa9ffd">on_cmd</a> (<a class="el" href="structservio_1_1iface_1_1cmd__parser.html">iface::cmd_parser</a> cmd, <a class="el" href="structservio_1_1iface_1_1root__ser.html">servio::iface::root_ser</a> out) override</td></tr>
@@ -265,8 +265,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a91adae32fa97064878ad73ec379a1f76" name="a91adae32fa97064878ad73ec379a1f76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91adae32fa97064878ad73ec379a1f76">&#9670;&#160;</a></span>engage()</h2>
+<a id="a373c24a2e858ec8349f993adbd23f73b" name="a373c24a2e858ec8349f993adbd23f73b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373c24a2e858ec8349f993adbd23f73b">&#9670;&#160;</a></span>engage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,8 +278,30 @@ Public Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="structservio_1_1gov_1_1engage__res.html">engage_res</a> servio::gov::pow::_power_gov::engage </td>
           <td>(</td>
           <td class="paramtype">em::pmr::memory_resource &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -289,7 +311,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structservio_1_1gov_1_1governor.html#abd47669978680c380aaa08fe6ff7762f">servio::gov::governor</a>.</p>
+<p>Implements <a class="el" href="structservio_1_1gov_1_1governor.html#aad0bb38c6cb434882a4661f135f8075f">servio::gov::governor</a>.</p>
 
 <p class="reference">References <a class="el" href="structservio_1_1gov_1_1pow_1_1__power__gov.html#a1a3813d1b06109e3db48991d4f1585a8">power</a>, and <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15a260ca9dd8a4577fc00b7bd5810298076">servio::success</a>.</p>
 
@@ -463,7 +485,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1gov.html">gov</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1gov_1_1pow.html">pow</a></li><li class="navelem"><a class="el" href="structservio_1_1gov_1_1pow_1_1__power__gov.html">_power_gov</a></li>
-    <li class="footer">Generated on Sun Oct 11 2026 17:53:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 18:31:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

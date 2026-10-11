@@ -6,7 +6,7 @@ var structservio_1_1gov_1_1vel_1_1__velocity__gov =
     [ "apply_cfg", "structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a2434d7f99ba4befc5d704dc000cce7dd", null ],
     [ "current_irq", "structservio_1_1gov_1_1vel_1_1__velocity__gov.html#ae2e48cea5bf0413f59204187df000882", null ],
     [ "disengage", "structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a494525cfb361763f23de3b42b5012497", null ],
-    [ "engage", "structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a1b0105595760d110990307cb16c7f5f6", null ],
+    [ "engage", "structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a525b694292ab2fbc640b0dafa74ba8e0", null ],
     [ "get_cfg", "structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a8f41eb8bef8a2914a3accf8d2beca650", null ],
     [ "metrics_irq", "structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a7236cbd1b55ffb855782cee48638c384", null ],
     [ "name", "structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a3d8b574b8360f2397c30869b62ec2c1a", null ],

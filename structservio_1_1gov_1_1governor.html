@@ -115,10 +115,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7a7827c0b57cab54cc4c482a0d488c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88de4699479676c38d91bb84e3977e0f" id="r_a88de4699479676c38d91bb84e3977e0f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1governor.html#a88de4699479676c38d91bb84e3977e0f">on_cmd</a> (<a class="el" href="structservio_1_1iface_1_1cmd__parser.html">iface::cmd_parser</a> cmd, <a class="el" href="structservio_1_1iface_1_1root__ser.html">servio::iface::root_ser</a> out)=0</td></tr>
 <tr class="separator:a88de4699479676c38d91bb84e3977e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd47669978680c380aaa08fe6ff7762f" id="r_abd47669978680c380aaa08fe6ff7762f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structservio_1_1gov_1_1engage__res.html">engage_res</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1governor.html#abd47669978680c380aaa08fe6ff7762f">engage</a> (em::pmr::memory_resource &amp;mem)=0</td></tr>
-<tr class="separator:abd47669978680c380aaa08fe6ff7762f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a692aad0827eaa053dbeacbeb304af8" id="r_a1a692aad0827eaa053dbeacbeb304af8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceservio.html#ae7c15dfa3e6c95de6c389ae86dd84d15">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1governor.html#a1a692aad0827eaa053dbeacbeb304af8">disengage</a> (<a class="el" href="structservio_1_1gov_1_1handle.html">handle</a> &amp;)=0</td></tr>
 <tr class="separator:a1a692aad0827eaa053dbeacbeb304af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad0bb38c6cb434882a4661f135f8075f" id="r_aad0bb38c6cb434882a4661f135f8075f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structservio_1_1gov_1_1engage__res.html">engage_res</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1governor.html#aad0bb38c6cb434882a4661f135f8075f">engage</a> (em::pmr::memory_resource &amp;mem, <a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> now, float position, float velocity)=0</td></tr>
+<tr class="separator:aad0bb38c6cb434882a4661f135f8075f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a108044c909231222a853a4f2aa5bba37" id="r_a108044c909231222a853a4f2aa5bba37"><td class="memItemLeft" align="right" valign="top">virtual uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1governor.html#a108044c909231222a853a4f2aa5bba37">cfg_section</a> () const</td></tr>
 <tr class="separator:a108044c909231222a853a4f2aa5bba37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2c3f324205d9f6035e460f3cf98e155" id="r_af2c3f324205d9f6035e460f3cf98e155"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1governor.html#af2c3f324205d9f6035e460f3cf98e155">~governor</a> ()=default</td></tr>
@@ -206,8 +206,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abd47669978680c380aaa08fe6ff7762f" name="abd47669978680c380aaa08fe6ff7762f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd47669978680c380aaa08fe6ff7762f">&#9670;&#160;</a></span>engage()</h2>
+<a id="aad0bb38c6cb434882a4661f135f8075f" name="aad0bb38c6cb434882a4661f135f8075f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad0bb38c6cb434882a4661f135f8075f">&#9670;&#160;</a></span>engage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,8 +219,30 @@ Public Member Functions</h2></td></tr>
           <td class="memname">virtual <a class="el" href="structservio_1_1gov_1_1engage__res.html">engage_res</a> servio::gov::governor::engage </td>
           <td>(</td>
           <td class="paramtype">em::pmr::memory_resource &amp;&#160;</td>
-          <td class="paramname"><em>mem</em></td><td>)</td>
+          <td class="paramname"><em>mem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a>&#160;</td>
+          <td class="paramname"><em>now</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -230,7 +252,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="structservio_1_1gov_1_1curr_1_1__current__gov.html#acffd06c8bc643efecdacd9cd1534b9d5">servio::gov::curr::_current_gov</a>, <a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a27b2b3c64871db9445a57d1753ff4507">servio::gov::pos::_position_gov</a>, <a class="el" href="structservio_1_1gov_1_1pow_1_1__power__gov.html#a91adae32fa97064878ad73ec379a1f76">servio::gov::pow::_power_gov</a>, and <a class="el" href="structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a1b0105595760d110990307cb16c7f5f6">servio::gov::vel::_velocity_gov</a>.</p>
+<p>Implemented in <a class="el" href="structservio_1_1gov_1_1pos_1_1__position__gov.html#a7a800ac7fbdf297b0f899f74d11c4a30">servio::gov::pos::_position_gov</a>, <a class="el" href="structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a525b694292ab2fbc640b0dafa74ba8e0">servio::gov::vel::_velocity_gov</a>, <a class="el" href="structservio_1_1gov_1_1curr_1_1__current__gov.html#a290b5e55acbe034e333eedeadf3b238d">servio::gov::curr::_current_gov</a>, and <a class="el" href="structservio_1_1gov_1_1pow_1_1__power__gov.html#a373c24a2e858ec8349f993adbd23f73b">servio::gov::pow::_power_gov</a>.</p>
 
 </div>
 </div>
@@ -335,7 +357,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1gov.html">gov</a></li><li class="navelem"><a class="el" href="structservio_1_1gov_1_1governor.html">governor</a></li>
-    <li class="footer">Generated on Sun Oct 11 2026 17:53:50 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Oct 11 2026 18:31:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

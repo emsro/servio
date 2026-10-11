@@ -1,5 +1,6 @@
 var structservio_1_1linear__transition__regulator =
 [
+    [ "reset", "structservio_1_1linear__transition__regulator.html#a3cc687bd5f4c0ceb163e6350f0ab7baa", null ],
     [ "set_config", "structservio_1_1linear__transition__regulator.html#a9e98e473898b4188b025c012fbc4f718", null ],
     [ "update", "structservio_1_1linear__transition__regulator.html#ad5c9e8e422a3e48c6f35bc656ca62311", null ],
     [ "decay", "structservio_1_1linear__transition__regulator.html#a4c8e3ab4a50bdde7f52bc95ba04093e9", null ],

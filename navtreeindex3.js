@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"globals_defs.html":[19,1,3],
 "globals_func.html":[19,1,1],
 "globals_vars.html":[19,1,2],
 "gov_2current_2parse_8cpp.html":[19,0,1,9,0,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "md_src_2iface_2iface.html#autotoc_md68":[14,2],
 "md_src_2iface_2iface.html#autotoc_md69":[14,2,0],
 "md_src_2iface_2iface.html#autotoc_md70":[14,2,1],
-"md_src_2iface_2iface.html#autotoc_md71":[14,2,2],
-"md_src_2iface_2iface.html#autotoc_md72":[14,2,3]
+"md_src_2iface_2iface.html#autotoc_md71":[14,2,2]
 };
