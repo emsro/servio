@@ -41,4 +41,22 @@ TEST_F( gov_fixture, pow )
                     << "angle: " << pow << " motor power: " << motor.power;
         }
 }
+
+TEST( pow_gov, out_of_range_goal_is_rejected )
+{
+        _power_gov gov;
+
+        auto const do_cmd = [&]( std::string_view cmd ) {
+                parser::parser p{ cmd };
+                char           buff[128];
+                json::jval_ser jser{ buff };
+                return gov.on_cmd( p, jser );
+        };
+
+        EXPECT_EQ( do_cmd( "set 0.5" ), status::success );
+        for ( std::string_view const cmd : { "set 1.5", "set -1.01" } ) {
+                EXPECT_EQ( do_cmd( cmd ), status::error ) << "cmd: " << cmd;
+                EXPECT_EQ( gov.current_irq( 0_ms, 0.F ), 0.5_pwr ) << "cmd: " << cmd;
+        }
+}
 }  // namespace servio::gov::pow::tests

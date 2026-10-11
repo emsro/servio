@@ -44,6 +44,10 @@ struct _power_gov final : governor, handle
 
                 using R = status;
                 return stm.sub.visit( [&]( iface::set_stmt const& s ) -> R {
+                        if ( !( s.goal >= -1.F && s.goal <= 1.F ) ) {
+                                std::move( out ).nok()( "goal out of range" );
+                                return status::error;
+                        }
                         power = pwr{ s.goal };
                         std::move( out ).ok();
                         return status::success;

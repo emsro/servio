@@ -195,13 +195,15 @@ struct pwm_motor_test : ftest::utest
 
                 for ( test_case const tc : {
                           test_case{ -0.5_pwr, -1 },
-                          test_case{ 0_pwr, 1 },
+                          test_case{ 0_pwr, -1 },
                           test_case{ 0.5_pwr, 1 },
+                          test_case{ 0_pwr, 1 },
                       } ) {
                         iface.set_power( tc.power );
                         co_await store_metric( *this, "last_dir", iface.get_direction() );
                         co_await store_metric( *this, "expected", tc.expected );
                         co_await expect( *this, iface.get_direction() == tc.expected );
+                        co_await expect( *this, iface.get_power() == tc.power );
                 }
         }
 };

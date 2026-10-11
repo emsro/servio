@@ -63,14 +63,18 @@ void hbridge::set_power( pwr power )
 
         using namespace std;
 
-        auto mc1_val = static_cast< float >( timer_max_ );
-        auto mc2_val = static_cast< float >( timer_max_ );
+        last_power_ = power;
 
-        if ( power == 0_pwr ) {
-        } else if ( power > 0_pwr )
+        auto mc1_val = static_cast< float >( period_ticks_ );
+        auto mc2_val = static_cast< float >( period_ticks_ );
+
+        if ( power > 0_pwr ) {
                 mc1_val *= 1.0F - *power;
-        else
+                direction_ = 1;
+        } else if ( power < 0_pwr ) {
                 mc2_val *= 1.0F + *power;
+                direction_ = -1;
+        }
 
         if ( inverted_ )
                 swap( mc1_val, mc2_val );
@@ -81,19 +85,7 @@ void hbridge::set_power( pwr power )
 
 int8_t hbridge::get_direction() const
 {
-        if ( tim_ == nullptr )
-                return 1;
-
-        if ( __HAL_TIM_GET_COMPARE( tim_, mc1_channel_ ) ==
-             __HAL_TIM_GET_COMPARE( tim_, mc2_channel_ ) )
-                return 1;
-
-        int8_t v = inverted_ ? -1 : 1;
-
-        return __HAL_TIM_GET_COMPARE( tim_, mc1_channel_ ) <=
-                       __HAL_TIM_GET_COMPARE( tim_, mc2_channel_ ) ?
-                   v :
-                   -v;
+        return direction_;
 }
 
 }  // namespace servio::drv

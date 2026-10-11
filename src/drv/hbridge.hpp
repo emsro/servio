@@ -44,7 +44,7 @@ public:
         //  - limits<pwr>::max is full forward
         void set_power( pwr ) override;
 
-        // returns either -1 or 1 based on direction last set to power
+        // returns either -1 or 1 based on the direction of the last non-zero power
         int8_t get_direction() const override;
 
         // starts the timers
@@ -58,12 +58,13 @@ public:
 
 private:
         period_cb_iface*   period_cb_;
-        int32_t            timer_max_ = 0;
+        int32_t            period_ticks_ = 0;
         TIM_HandleTypeDef* tim_;
         bool               inverted_    = false;
         uint32_t           mc1_channel_ = 0;
         uint32_t           mc2_channel_ = 0;
         pwr                last_power_  = 0_pwr;
+        int8_t             direction_   = 1;
 };
 
 inline hbridge::hbridge( TIM_HandleTypeDef* tim )
@@ -78,7 +79,7 @@ inline hbridge* hbridge::setup( uint32_t mc1_channel, uint32_t mc2_channel )
         mc2_channel_ = mc2_channel;
 
         if ( tim_ != nullptr )
-                timer_max_ = static_cast< int32_t >( tim_->Init.Period );
+                period_ticks_ = static_cast< int32_t >( tim_->Init.Period ) + 1;
         else
                 return nullptr;
 
