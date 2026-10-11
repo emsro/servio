@@ -23,9 +23,25 @@ void setup_adc_channel( ADC_ChannelConfTypeDef& channel, uint32_t ch, opt< drv::
 
 status setup_adc( ADC_HandleTypeDef& adc, DMA_HandleTypeDef& dma, adc_cfg cfg )
 {
+        switch ( cfg.resolution_bits ) {
+        case 12:
+                adc.Init.Resolution = ADC_RESOLUTION_12B;
+                break;
+        case 10:
+                adc.Init.Resolution = ADC_RESOLUTION_10B;
+                break;
+        case 8:
+                adc.Init.Resolution = ADC_RESOLUTION_8B;
+                break;
+        case 6:
+                adc.Init.Resolution = ADC_RESOLUTION_6B;
+                break;
+        default:
+                return status::error;
+        }
+
         adc.Instance                  = cfg.adc_instance;
         adc.Init.ClockPrescaler       = ADC_CLOCK_ASYNC_DIV1;
-        adc.Init.Resolution           = ADC_RESOLUTION_12B;
         adc.Init.DataAlign            = ADC_DATAALIGN_RIGHT;
         adc.Init.ScanConvMode         = ADC_SCAN_DISABLE;
         adc.Init.EOCSelection         = ADC_EOC_SINGLE_CONV;

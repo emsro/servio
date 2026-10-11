@@ -24,6 +24,7 @@ struct adc_cfg
         ADC_TypeDef* adc_instance;
         uint32_t     adc_irq_priority;
         uint32_t     adc_trigger;
+        uint32_t     resolution_bits;
         dma_cfg      dma;
 };
 

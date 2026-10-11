@@ -26,6 +26,8 @@ namespace servio::brd
 {
 using namespace literals;
 
+constexpr uint32_t ADC_RESOLUTION_BITS = 12;
+
 drv::pin_cfg HBRDIGE_VREF_PIN{
     .pin  = GPIO_PIN_4,
     .port = GPIOA,
@@ -36,10 +38,13 @@ cfg::map get_default_config()
 {
         cfg::map m = plt::get_default_config();
 
-        cnv::off_scale const curr_cfg = drv::drv8251::get_curr_coeff();
+        cnv::off_scale const curr_cfg = drv::drv8251::get_curr_coeff( ADC_RESOLUTION_BITS );
 
         m.current_conv_scale  = curr_cfg.scale;
         m.current_conv_offset = curr_cfg.offset;
+        m.voltage_conv_scale =
+            3.3F / static_cast< float >( 1U << ADC_RESOLUTION_BITS ) * ( 100.F + 10.F ) / 10.F;
+        m.minimum_voltage = 4.5F;
 
         return m;
 }
@@ -236,6 +241,7 @@ adc_pooler_type* adc_pooler_setup( bool enable_pos )
                              .adc_instance     = ADC1,
                              .adc_irq_priority = 1,
                              .adc_trigger      = ADC_EXTERNALTRIG_T6_TRGO,
+                             .resolution_bits  = ADC_RESOLUTION_BITS,
                              .dma =
                                  plt::dma_cfg{
                                      .irq          = GPDMA1_Channel0_IRQn,
