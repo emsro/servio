@@ -21,7 +21,8 @@ var NAVTREEINDEX6 =
 "namespaceservio_1_1gov_1_1pow_1_1iface.html#a8c0e88cfefd9efad9c139898f0d610ee":[17,0,4,8,2,0,2],
 "namespaceservio_1_1gov_1_1pow_1_1iface.html#ad9f1a01c56a6e0c5e7d5d0c8c9af4643":[17,0,4,8,2,0,3],
 "namespaceservio_1_1gov_1_1pow_1_1tests.html":[17,0,4,8,2,1],
-"namespaceservio_1_1gov_1_1pow_1_1tests.html#a51ff73a6a10beecc1a162989e4d42ab0":[17,0,4,8,2,1,0],
+"namespaceservio_1_1gov_1_1pow_1_1tests.html#a1f494edaea128c6377e9abeedef58970":[17,0,4,8,2,1,0],
+"namespaceservio_1_1gov_1_1pow_1_1tests.html#a51ff73a6a10beecc1a162989e4d42ab0":[17,0,4,8,2,1,1],
 "namespaceservio_1_1gov_1_1tests.html":[17,0,4,8,3],
 "namespaceservio_1_1gov_1_1tests.html#a02724bd89cb583491d0fee143b2c3316":[17,0,4,8,3,0],
 "namespaceservio_1_1gov_1_1tests.html#a1be1b0b5e7046ce25919ec85161a56e7":[17,0,4,8,3,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "namespaceservio_1_1plt.html#adad93e2611f6799cedf41c16211afb44":[19,0,1,15,0,8,5,1],
 "namespaceservio_1_1plt.html#adf9c7748837cc319665c30d97fcebcb1":[17,0,4,16,14],
 "namespaceservio_1_1plt.html#ae21141c4d9265d7910aad9b924eadd20":[17,0,4,16,15],
-"namespaceservio_1_1plt.html#ae5039a71d1fe46ae0b2b77ece05e8914":[17,0,4,16,19],
-"namespaceservio_1_1plt.html#ae634bafb995aba994e778d86113e6fcd":[19,0,1,15,0,8,0,0]
+"namespaceservio_1_1plt.html#ae5039a71d1fe46ae0b2b77ece05e8914":[17,0,4,16,19]
 };

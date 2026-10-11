@@ -219,17 +219,17 @@ var NAVTREEINDEX =
 "md_src_2iface_2iface.html#autotoc_md72",
 "namespaceservio_1_1cfg.html#a61867bf070989fe2425d36885eb9dec0",
 "namespaceservio_1_1gov_1_1pos_1_1cfg.html#structservio_1_1gov_1_1pos_1_1cfg_1_1key__trait_3_01key_1_1curr__loop__p_01_4",
-"namespaceservio_1_1plt.html#aeed92ba820bd465927f2cf4cbe9db673",
-"record_8hpp.html#a3b8dd8a106554a9a31a43f91746adf78",
-"structharness.html#aefc46b89656821dc5d52a36b441da1fb",
-"structservio_1_1core_1_1drivers.html#a8cc3ac64667269991eac2f401fadba19",
-"structservio_1_1drv_1_1get__pos__iface.html#adfcf4b8b7552a2f3d07c938a95425844",
-"structservio_1_1drv_1_1tests_1_1vcc__test.html#a60dc6c91134a52bd5bc8cdfd644459b1",
-"structservio_1_1ftest_1_1bench_1_1usage.html#a5bab4cfec4211e905f37ea3c4abb007d",
-"structservio_1_1gov_1_1governor__manager.html",
-"structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#ab8804ff20aca394753845fa20e63bc6b",
-"structservio_1_1mtr_1_1posvel__kalman.html#a073b4525c78cab66a6d0f8cd0a389753",
-"structservio_1_1sim_1_1simple__motor.html#a7f652550464f4ff90e6867324453c473"
+"namespaceservio_1_1plt.html#ae634bafb995aba994e778d86113e6fcd",
+"quad__encoder_8hpp_source.html",
+"structharness.html#abf791b7c6b6363f17db031bb384ff64d",
+"structservio_1_1core_1_1drivers.html#a84c58d510bcc173e7a41d72de1975b73",
+"structservio_1_1drv_1_1get__pos__iface.html#a600d2e49b0072590674888239630ef71",
+"structservio_1_1drv_1_1tests_1_1vcc__test.html",
+"structservio_1_1ftest_1_1bench_1_1usage.html",
+"structservio_1_1gov_1_1governor__factory.html#a0b332c1d16e5d589637d1d42fd888ce2",
+"structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#ab25534d9a546fc9d716ded89a9874bd5",
+"structservio_1_1mtr_1_1posvel__kalman.html#a03d4dca7f879c0a59c1c10ad04de4abe",
+"structservio_1_1sim_1_1simple__motor.html#a6efb3825c4da30b8feaf2b886eecbb29"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
