@@ -1,6 +1,7 @@
 #include "../../base.hpp"
 #include "../metrics.hpp"
 
+#include <algorithm>
 #include <cmath>
 #include <cstddef>
 #include <gtest/gtest.h>
@@ -17,16 +18,17 @@ TEST( Metrics, base )
         std::normal_distribution< float > od{ 0, observation_deviation };
 
         float              angle    = 0.f;
-        float const        velocity = 0.1f;
+        float const        velocity = 100.f;
         microseconds       t        = 0_ms;
         microseconds const tstep    = 10_us;
 
-        metrics met{ t, angle, 0.F, { 0, 2 * pi } };
+        metrics met{ t, angle, velocity, { 0, 2 * pi } };
 
-        for ( std::size_t i = 0; i < 200; i++ ) {
+        for ( std::size_t i = 0; i < 30'000; i++ ) {
                 t += tstep;
                 float const step_scale = 1.f + od( gen ) / 2.f;
-                angle += step_scale * velocity * static_cast< float >( tstep.count() ) / 1000.f;
+                angle +=
+                    step_scale * velocity * static_cast< float >( tstep.count() ) / 1'000'000.f;
                 angle = std::fmod( angle, 2 * pi );
 
                 met.position_irq( t, angle );
@@ -34,7 +36,8 @@ TEST( Metrics, base )
                 if ( t < 200_ms )  // we kinda ignore first 200ms
                         continue;
 
-                EXPECT_NEAR( met.get_position(), angle, 0.01 )
+                float const err = std::abs( met.get_position() - angle );
+                EXPECT_LT( std::min( err, 2 * pi - err ), 0.01 )
                     << "t: " << static_cast< double >( t.count() ) / 1000.0 << ", " << "i: " << i;
         }
 }

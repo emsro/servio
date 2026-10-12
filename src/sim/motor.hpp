@@ -85,7 +85,7 @@ struct simple_motor
 
         static float resistance( float vel )
         {
-                return std::min( 0.05f, vel ) + vel * 0.1F;
+                return std::copysign( std::min( 0.05f, std::abs( vel ) ), vel ) + vel * 0.1F;
         }
 
         static float power_to_current( float p )

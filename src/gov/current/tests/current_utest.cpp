@@ -38,6 +38,8 @@ TEST_F( gov_fixture, curr )
                 set_cfg( "curr_loop_p", 0.0625F );
                 set_cfg( "curr_loop_i", 5.12F );
                 set_cfg( "curr_loop_d", 0.0F );
+                set_cfg( "pos_lim_min", -1e30F );
+                set_cfg( "pos_lim_max", 1e30F );
                 do_cmd( std::format( "set {}", curr ) );
 
                 for ( std::size_t const i : em::range( 100u ) ) {

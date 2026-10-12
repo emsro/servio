@@ -20,8 +20,6 @@ namespace servio::gov::vel::tests
 {
 TEST_F( gov_fixture, vel )
 {
-        GTEST_SKIP() << "uncalibrated";
-
         for ( float vel : { 1.F, 2.F, 1.F, -1.F } ) {
                 _velocity_gov gov;
 
@@ -33,16 +31,24 @@ TEST_F( gov_fixture, vel )
                         EXPECT_EQ( s, status::success ) << "cmd: " << cmd << "\n";
                 };
 
-                do_cmd( "cfg set curr_loop_p 0.0625" );
-                do_cmd( "cfg set curr_loop_i 5.12" );
-                do_cmd( "cfg set curr_loop_d 0.0" );
-                do_cmd( "cfg set vel_loop_p 16.0" );
-                do_cmd( "cfg set vel_loop_i 500" );
-                do_cmd( "cfg set vel_loop_d 0.0" );
-                do_cmd( "cfg set static_friction_scale 1" );
+                auto const set_cfg = [&]( std::string_view key, auto value ) {
+                        auto const s = gov.get_cfg()->on_cmd_set( key, value );
+                        EXPECT_TRUE( !s );
+                };
+
+                gov.get_cfg()->apply_all();
+                set_cfg( "curr_loop_p", 0.0625F );
+                set_cfg( "curr_loop_i", 5.12F );
+                set_cfg( "curr_loop_d", 0.0F );
+                set_cfg( "vel_loop_p", 16.0F );
+                set_cfg( "vel_loop_i", 500.0F );
+                set_cfg( "vel_loop_d", 0.0F );
+                set_cfg( "static_friction_scale", 1.0F );
+                set_cfg( "vel_lim_min", -5.0F );
+                set_cfg( "vel_lim_max", 5.0F );
                 do_cmd( std::format( "set {}", vel ) );
 
-                for ( std::size_t const i : em::range( 100u ) ) {
+                for ( std::size_t const i : em::range( 400u ) ) {
                         std::ignore            = i;
                         microseconds const now = 5_ms * i;
                         this->tick( gov, now );

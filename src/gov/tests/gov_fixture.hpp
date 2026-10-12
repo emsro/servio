@@ -22,7 +22,7 @@ struct gov_fixture : public ::testing::Test
         void tick( handle& gov, microseconds now )
         {
 
-                gov.metrics_irq( now, motor.current, motor.velocity, true );
+                gov.metrics_irq( now, motor.position(), motor.velocity, true );
                 pwr const p = gov.current_irq( now, motor.current );
                 motor.apply_power( now, p );
                 std::cout << "time: " << now.count() << "ms, " << "power: " << p << ", "

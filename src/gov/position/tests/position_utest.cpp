@@ -20,7 +20,6 @@ namespace servio::gov::pos::tests
 {
 TEST_F( gov_fixture, pos )
 {
-        GTEST_SKIP() << "uncalibrated";
         for ( float angle : { 1.F, 2.F, 1.F, -1.F } ) {
                 _position_gov gov;
 
@@ -37,19 +36,22 @@ TEST_F( gov_fixture, pos )
                         EXPECT_TRUE( !s );
                 };
 
+                gov.get_cfg()->apply_all();
                 set_cfg( "curr_loop_p", 0.0625F );
-                set_cfg( "curr_loop_i", 0.0000005F );
+                set_cfg( "curr_loop_i", 5.12F );
                 set_cfg( "curr_loop_d", 0.0F );
                 set_cfg( "pos_loop_p", 2.0F );
                 set_cfg( "pos_loop_i", 0.0F );
-                set_cfg( "pos_loop_d", 0.0F );
+                set_cfg( "pos_loop_d", 0.5F );
                 set_cfg( "static_friction_scale", 1.0F );
                 set_cfg( "pos_to_curr_lim_scale", 10.0F );
+                set_cfg( "pos_lim_min", -4.0F );
+                set_cfg( "pos_lim_max", 4.0F );
                 do_cmd( std::format( "set {}", angle ) );
 
-                for ( std::size_t const i : em::range( 500u ) ) {
+                for ( std::size_t const i : em::range( 400u ) ) {
                         std::ignore            = i;
-                        microseconds const now = 1_ms * i;
+                        microseconds const now = 5_ms * i;
                         this->tick( gov, now );
                 }
 
