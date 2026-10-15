@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                        us = __HAL_TIM_GET_COUNTER( &amp;tim_ );</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                } <span class="keywordflow">while</span> ( ic != irq_count_ || ( us &amp; uif_mask ) != 0 );</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                uint64_t val = ic * tim_.Init.Period + us;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                uint64_t val = ic * ( tim_.Init.Period + 1 ) + us;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a>{ val };</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
 </div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('clock_8hpp_source.html',''); initResiz
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="clock_8hpp.html">clock.hpp</a></li>
-    <li class="footer">Generated on Thu Oct 15 2026 19:41:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Oct 15 2026 20:15:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

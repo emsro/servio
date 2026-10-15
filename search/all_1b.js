@@ -5,6 +5,7 @@ var searchData=
   ['quad_5fencoder_2ehpp_2',['quad_encoder.hpp',['../quad__encoder_8hpp.html',1,'']]],
   ['quad_5fencoder_5frange_3',['quad_encoder_range',['../md_src_2cfg_2cfg.html#autotoc_md24',1,'80 quad_encoder_range'],['../structservio_1_1cfg_1_1map.html#abc0c4221ce60eda3fe1bd379b95e3c37',1,'servio::cfg::map::quad_encoder_range'],['../namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed',1,'servio::cfg::quad_encoder_range']]],
   ['quad_5fencoder_5fsetup_4',['quad_encoder_setup',['../namespaceservio_1_1brd.html#a064090e0ba34cfb1d6f51f247cf479aa',1,'servio::brd']]],
-  ['quad_5ftrigger_5ftimer_5',['QUAD_TRIGGER_TIMER',['../namespaceservio_1_1brd.html#af60883934036a3959a709e9d81fb0999',1,'servio::brd']]],
-  ['query_6',['query',['../structpeer__hook.html#a9eea3ba3508ea2b5134680db65949898',1,'peer_hook::query(ecor::get_memory_resource_t tag)'],['../structpeer__hook.html#a0b1fd35f7f2f55da3ea1eb5780a1136f',1,'peer_hook::query(ecor::get_task_core_t tag)']]]
+  ['quad_5fencoder_5ftest_5',['quad_encoder_test',['../structservio_1_1drv_1_1tests_1_1quad__encoder__test.html',1,'servio::drv::tests']]],
+  ['quad_5ftrigger_5ftimer_6',['QUAD_TRIGGER_TIMER',['../namespaceservio_1_1brd.html#af60883934036a3959a709e9d81fb0999',1,'servio::brd']]],
+  ['query_7',['query',['../structpeer__hook.html#a9eea3ba3508ea2b5134680db65949898',1,'peer_hook::query(ecor::get_memory_resource_t tag)'],['../structpeer__hook.html#a0b1fd35f7f2f55da3ea1eb5780a1136f',1,'peer_hook::query(ecor::get_task_core_t tag)']]]
 ];

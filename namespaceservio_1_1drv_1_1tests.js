@@ -1,6 +1,7 @@
 var namespaceservio_1_1drv_1_1tests =
 [
     [ "adc_pooler_test", "namespaceservio_1_1drv_1_1tests.html#structservio_1_1drv_1_1tests_1_1adc__pooler__test", null ],
+    [ "clock_overflow_test", "structservio_1_1drv_1_1tests_1_1clock__overflow__test.html", "structservio_1_1drv_1_1tests_1_1clock__overflow__test" ],
     [ "clock_test", "structservio_1_1drv_1_1tests_1_1clock__test.html", "structservio_1_1drv_1_1tests_1_1clock__test" ],
     [ "cobs_uart_err_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test" ],
     [ "cobs_uart_rx_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test" ],
@@ -12,6 +13,7 @@ var namespaceservio_1_1drv_1_1tests =
     [ "period_iface_test", "structservio_1_1drv_1_1tests_1_1period__iface__test.html", "structservio_1_1drv_1_1tests_1_1period__iface__test" ],
     [ "position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", "structservio_1_1drv_1_1tests_1_1position__test" ],
     [ "pwm_motor_test", "structservio_1_1drv_1_1tests_1_1pwm__motor__test.html", "structservio_1_1drv_1_1tests_1_1pwm__motor__test" ],
+    [ "quad_encoder_test", "structservio_1_1drv_1_1tests_1_1quad__encoder__test.html", "structservio_1_1drv_1_1tests_1_1quad__encoder__test" ],
     [ "storage_iface_test", "structservio_1_1drv_1_1tests_1_1storage__iface__test.html", "structservio_1_1drv_1_1tests_1_1storage__iface__test" ],
     [ "temperature_test", "structservio_1_1drv_1_1tests_1_1temperature__test.html", "structservio_1_1drv_1_1tests_1_1temperature__test" ],
     [ "vcc_test", "structservio_1_1drv_1_1tests_1_1vcc__test.html", "structservio_1_1drv_1_1tests_1_1vcc__test" ],

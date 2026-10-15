@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('quad__encoder_8hpp_source.html',''); i
 <div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classservio_1_1drv_1_1quad__encoder.html#a94358f8c846235f54f3a30ad83704c9a">   24</a></span>        <a class="code hl_typedef" href="namespaceservio.html#a7f7743aa58139aab9b7d4db0cde30f55">limits&lt; uint32_t &gt;</a> <a class="code hl_function" href="classservio_1_1drv_1_1quad__encoder.html#a94358f8c846235f54f3a30ad83704c9a">get_position_range</a>()<span class="keyword"> const override</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                <span class="keywordflow">return</span> { 0, h_.Init.Period };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                <span class="keywordflow">return</span> { 0, h_.Init.Period + 1 };</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
 </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('quad__encoder_8hpp_source.html',''); i
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <span class="keywordflow">if</span> ( irq_counter_ == 0 ) {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                        callback_-&gt;<a class="code hl_function" href="structservio_1_1drv_1_1value__cb__iface.html#a570e1b674c6d87cdb422dbfc6b1d2864">on_value_irq</a>( __HAL_TIM_GET_COUNTER( &amp;h_ ) );</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                        irq_counter_ = irq_count_max_;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                        irq_counter_ = irq_count_max_ - 1;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                } <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                        irq_counter_--;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('quad__encoder_8hpp_source.html',''); i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3eb9293956666843c80aafe8402e6c73.html">drv</a></li><li class="navelem"><a class="el" href="quad__encoder_8hpp.html">quad_encoder.hpp</a></li>
-    <li class="footer">Generated on Thu Oct 15 2026 19:41:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Oct 15 2026 20:15:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

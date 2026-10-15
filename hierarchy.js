@@ -306,6 +306,7 @@ var hierarchy =
     [ "servio::ftest::_rewind_sender< CB >::_op< R >::sub_receiver", "structservio_1_1ftest_1_1__rewind__sender_1_1__op_1_1sub__receiver.html", null ],
     [ "asrt::task_test", null, [
       [ "servio::ftest::utest", "structservio_1_1ftest_1_1utest.html", [
+        [ "servio::drv::tests::clock_overflow_test", "structservio_1_1drv_1_1tests_1_1clock__overflow__test.html", null ],
         [ "servio::drv::tests::clock_test", "structservio_1_1drv_1_1tests_1_1clock__test.html", null ],
         [ "servio::drv::tests::cobs_uart_err_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__err__test.html", null ],
         [ "servio::drv::tests::cobs_uart_rx_test", "structservio_1_1drv_1_1tests_1_1cobs__uart__rx__test.html", null ],
@@ -316,6 +317,7 @@ var hierarchy =
         [ "servio::drv::tests::period_iface_test", "structservio_1_1drv_1_1tests_1_1period__iface__test.html", null ],
         [ "servio::drv::tests::position_test", "structservio_1_1drv_1_1tests_1_1position__test.html", null ],
         [ "servio::drv::tests::pwm_motor_test", "structservio_1_1drv_1_1tests_1_1pwm__motor__test.html", null ],
+        [ "servio::drv::tests::quad_encoder_test", "structservio_1_1drv_1_1tests_1_1quad__encoder__test.html", null ],
         [ "servio::drv::tests::storage_iface_test", "structservio_1_1drv_1_1tests_1_1storage__iface__test.html", null ],
         [ "servio::drv::tests::temperature_test", "structservio_1_1drv_1_1tests_1_1temperature__test.html", null ],
         [ "servio::drv::tests::vcc_test", "structservio_1_1drv_1_1tests_1_1vcc__test.html", null ],

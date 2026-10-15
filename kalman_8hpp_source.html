@@ -243,7 +243,7 @@ $(document).ready(function(){initNavTree('kalman_8hpp_source.html',''); initResi
 <div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f">  119</a></span><span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="namespaceservio_1_1klmn.html#ac2656c673261ab9f79dd300223947a4f">angle_mod</a>( <span class="keywordtype">float</span> v, <a class="code hl_struct" href="namespaceservio_1_1klmn.html#structservio_1_1klmn_1_1state__range">state_range</a> r )</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">while</span> ( v &lt; 0.F )</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">while</span> ( v &lt; r.<a class="code hl_variable" href="namespaceservio_1_1klmn.html#a08e7455b4711a4c4657bc1a613543ec1">offset</a> )</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                v += r.<a class="code hl_variable" href="namespaceservio_1_1klmn.html#a6012e20714154f03136eb5812a2abef2">size</a>;</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordflow">return</span> std::fmod( v - r.<a class="code hl_variable" href="namespaceservio_1_1klmn.html#a08e7455b4711a4c4657bc1a613543ec1">offset</a>, r.<a class="code hl_variable" href="namespaceservio_1_1klmn.html#a6012e20714154f03136eb5812a2abef2">size</a> ) + r.<a class="code hl_variable" href="namespaceservio_1_1klmn.html#a08e7455b4711a4c4657bc1a613543ec1">offset</a>;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
@@ -294,7 +294,7 @@ $(document).ready(function(){initNavTree('kalman_8hpp_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_9dddf5cf0927eef839735694c66ca8bc.html">klmn</a></li><li class="navelem"><a class="el" href="kalman_8hpp.html">kalman.hpp</a></li>
-    <li class="footer">Generated on Thu Oct 15 2026 19:41:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Oct 15 2026 20:15:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
