@@ -38,9 +38,9 @@ Scaling of current in case of non-moving servo
  - _default_: `3.0`
 
 ## 8 static_friction_decay
-Time required for the static friction compensation to decay to be ineffective
+Rate per second at which the static friction compensation rises while static and decays while moving
  - _type_: `float`
- - _unit_: s
+ - _unit_: 1/s
  - _default_: `1.0`
 
 ## 9 vel_lim_min

@@ -74,10 +74,16 @@ Maximum temperature for the servomotor to operate
  - _default_: `80.0`
 
 ## 66 moving_detection_step
-Deadband for the moving detection
+Position change within moving_detection_window that counts as moving
  - _type_: `float`
  - _unit_: rad
  - _default_: `0.05F`
+
+## 67 moving_detection_window
+Time without a moving_detection_step change after which the servomotor counts as static
+ - _type_: `float`
+ - _unit_: s
+ - _default_: `0.2F`
 
 ## 80 quad_encoder_range
 Number of pulses per revolution of the quadrature encoder

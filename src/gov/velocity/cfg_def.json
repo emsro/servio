@@ -61,8 +61,8 @@
             "name": "static_friction_decay",
             "type": "float",
             "default": 1.0,
-            "unit": "s",
-            "desc": "Time required for the static friction compensation to decay to be ineffective"
+            "unit": "1/s",
+            "desc": "Rate per second at which the static friction compensation rises while static and decays while moving"
         },
         {
             "id": 9,

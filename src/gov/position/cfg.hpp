@@ -238,7 +238,8 @@ struct map
         float curr_loop_d = 0.0F;
         // Scaling of current in case of non-moving servo
         float static_friction_scale = 3.0;
-        // Time required for the static friction compensation to decay to be ineffective
+        // Rate per second at which the static friction compensation rises while static and decays
+        // while moving
         float static_friction_decay = 1.0;
         // Soft limit for lowest position
         float pos_lim_min = -2.0F;

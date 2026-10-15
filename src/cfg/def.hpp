@@ -58,22 +58,23 @@ using value_variant = std::variant< uint32_t, float, bool, encoder_mode, string 
 // GEN BEGIN HERE
 enum class key : uint32_t
 {
-        model                 = 1,
-        id                    = 2,
-        group_id              = 3,
-        encoder_mode          = 4,
-        position_low_angle    = 11,
-        position_high_angle   = 12,
-        current_conv_scale    = 14,
-        current_conv_offset   = 15,
-        temp_conv_scale       = 16,
-        temp_conv_offset      = 17,
-        voltage_conv_scale    = 18,
-        invert_hbridge        = 19,
-        minimum_voltage       = 62,
-        maximum_temperature   = 65,
-        moving_detection_step = 66,
-        quad_encoder_range    = 80,
+        model                   = 1,
+        id                      = 2,
+        group_id                = 3,
+        encoder_mode            = 4,
+        position_low_angle      = 11,
+        position_high_angle     = 12,
+        current_conv_scale      = 14,
+        current_conv_offset     = 15,
+        temp_conv_scale         = 16,
+        temp_conv_offset        = 17,
+        voltage_conv_scale      = 18,
+        invert_hbridge          = 19,
+        minimum_voltage         = 62,
+        maximum_temperature     = 65,
+        moving_detection_step   = 66,
+        moving_detection_window = 67,
+        quad_encoder_range      = 80,
 };
 
 constexpr std::string_view to_str( key k )
@@ -108,6 +109,8 @@ constexpr std::string_view to_str( key k )
                 return "maximum_temperature";
         if ( k == key::moving_detection_step )
                 return "moving_detection_step";
+        if ( k == key::moving_detection_window )
+                return "moving_detection_window";
         if ( k == key::quad_encoder_range )
                 return "quad_encoder_range";
         return {};
@@ -145,6 +148,8 @@ constexpr uint32_t key_to_id( key k )
                 return 65;
         if ( k == key::moving_detection_step )
                 return 66;
+        if ( k == key::moving_detection_window )
+                return 67;
         if ( k == key::quad_encoder_range )
                 return 80;
         return {};
@@ -182,6 +187,8 @@ constexpr key id_to_key( uint32_t id )
                 return key::maximum_temperature;
         if ( id == 66 )
                 return key::moving_detection_step;
+        if ( id == 67 )
+                return key::moving_detection_window;
         if ( id == 80 )
                 return key::quad_encoder_range;
         return {};
@@ -280,6 +287,12 @@ struct key_trait< key::moving_detection_step >
 };
 
 template <>
+struct key_trait< key::moving_detection_window >
+{
+        using type = float;
+};
+
+template <>
 struct key_trait< key::quad_encoder_range >
 {
         using type = uint32_t;
@@ -288,7 +301,7 @@ struct key_trait< key::quad_encoder_range >
 struct map
 {
         using key_type                              = key;
-        static constexpr std::array< key, 16 > keys = {
+        static constexpr std::array< key, 17 > keys = {
             key::model,
             key::id,
             key::group_id,
@@ -304,9 +317,10 @@ struct map
             key::minimum_voltage,
             key::maximum_temperature,
             key::moving_detection_step,
+            key::moving_detection_window,
             key::quad_encoder_range,
         };
-        static constexpr std::array< uint32_t, 16 > ids = {
+        static constexpr std::array< uint32_t, 17 > ids = {
             1,
             2,
             3,
@@ -322,6 +336,7 @@ struct map
             62,
             65,
             66,
+            67,
             80,
         };
         // Model of the servomotor, used for debugging purposes
@@ -352,8 +367,10 @@ struct map
         float minimum_voltage = 6.0;
         // Maximum temperature for the servomotor to operate
         float maximum_temperature = 80.0;
-        // Deadband for the moving detection
+        // Position change within moving_detection_window that counts as moving
         float moving_detection_step = 0.05F;
+        // Time without a moving_detection_step change after which the servomotor counts as static
+        float moving_detection_window = 0.2F;
         // Number of pulses per revolution of the quadrature encoder
         uint32_t quad_encoder_range = 2048;
 
@@ -390,6 +407,8 @@ struct map
                         return maximum_temperature;
                 if constexpr ( K == key::moving_detection_step )
                         return moving_detection_step;
+                if constexpr ( K == key::moving_detection_window )
+                        return moving_detection_window;
                 if constexpr ( K == key::quad_encoder_range )
                         return quad_encoder_range;
         }
@@ -427,6 +446,8 @@ struct map
                         return &maximum_temperature;
                 case key::moving_detection_step:
                         return &moving_detection_step;
+                case key::moving_detection_window:
+                        return &moving_detection_window;
                 case key::quad_encoder_range:
                         return &quad_encoder_range;
                 }
@@ -466,6 +487,8 @@ struct map
                         return &maximum_temperature;
                 case key::moving_detection_step:
                         return &moving_detection_step;
+                case key::moving_detection_window:
+                        return &moving_detection_window;
                 case key::quad_encoder_range:
                         return &quad_encoder_range;
                 }
@@ -504,6 +527,8 @@ struct map
                         return &maximum_temperature;
                 if ( id == 66 )
                         return &moving_detection_step;
+                if ( id == 67 )
+                        return &moving_detection_window;
                 if ( id == 80 )
                         return &quad_encoder_range;
                 return {};
@@ -541,6 +566,8 @@ struct map
                         return &maximum_temperature;
                 if ( id == 66 )
                         return &moving_detection_step;
+                if ( id == 67 )
+                        return &moving_detection_window;
                 if ( id == 80 )
                         return &quad_encoder_range;
                 return {};
@@ -578,6 +605,8 @@ struct map
                         return key::maximum_temperature;
                 if ( str == "moving_detection_step" )
                         return key::moving_detection_step;
+                if ( str == "moving_detection_window" )
+                        return key::moving_detection_window;
                 if ( str == "quad_encoder_range" )
                         return key::quad_encoder_range;
                 return {};

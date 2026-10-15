@@ -21,6 +21,7 @@ public:
 
         void set_position_range( limits< float > position_range );
         void set_moving_step( float step );
+        void set_moving_window( float window );
 
         void position_irq( microseconds now, float position );
 

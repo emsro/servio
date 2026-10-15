@@ -46,6 +46,9 @@ void root_handler::apply( key key )
         case key::moving_detection_step:
                 met.set_moving_step( m.moving_detection_step );
                 break;
+        case key::moving_detection_window:
+                met.set_moving_window( m.moving_detection_window );
+                break;
         default:
                 break;
         }
