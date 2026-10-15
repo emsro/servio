@@ -86,7 +86,7 @@ Time without a moving_detection_step change after which the servomotor counts as
  - _default_: `0.2F`
 
 ## 80 quad_encoder_range
-Number of pulses per revolution of the quadrature encoder
+Counts per revolution of the quadrature encoder, four per encoder pulse
  - _type_: `uint32_t`
  - _default_: `2048`
          <!-- GEN END HERE -->

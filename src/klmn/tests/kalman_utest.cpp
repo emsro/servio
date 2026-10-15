@@ -188,4 +188,15 @@ TEST( Kalman, stationary_dither_near_overlap_matches_midrange )
         EXPECT_NEAR( seam_avg, mid_avg, 0.00005F );
 }
 
+TEST( kalman, angle_mod_wraps_relative_to_range_start )
+{
+        state_range const sr{ .offset = 1.F, .size = 2 * pi };
+        for ( float const v : { 0.5F, 1.F, 3.F, 7.5F, -1.F } ) {
+                float const r = angle_mod( v, sr );
+                EXPECT_GE( r, sr.offset ) << "v: " << v;
+                EXPECT_LT( r, sr.offset + sr.size ) << "v: " << v;
+                EXPECT_NEAR( std::remainder( r - v, sr.size ), 0.F, 1e-5F ) << "v: " << v;
+        }
+}
+
 }  // namespace servio::klmn::tests

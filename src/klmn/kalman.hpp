@@ -118,7 +118,7 @@ constexpr bool requires_offset( float const v, state_range const& r )
 
 inline float angle_mod( float v, state_range r )
 {
-        while ( v < 0.F )
+        while ( v < r.offset )
                 v += r.size;
         return std::fmod( v - r.offset, r.size ) + r.offset;
 }

@@ -371,7 +371,7 @@ struct map
         float moving_detection_step = 0.05F;
         // Time without a moving_detection_step change after which the servomotor counts as static
         float moving_detection_window = 0.2F;
-        // Number of pulses per revolution of the quadrature encoder
+        // Counts per revolution of the quadrature encoder, four per encoder pulse
         uint32_t quad_encoder_range = 2048;
 
         template < key K >

@@ -23,7 +23,7 @@ public:
 
         limits< uint32_t > get_position_range() const override
         {
-                return { 0, h_.Init.Period };
+                return { 0, h_.Init.Period + 1 };
         }
 
         uint32_t get_position() const override
@@ -35,7 +35,7 @@ public:
         {
                 if ( irq_counter_ == 0 ) {
                         callback_->on_value_irq( __HAL_TIM_GET_COUNTER( &h_ ) );
-                        irq_counter_ = irq_count_max_;
+                        irq_counter_ = irq_count_max_ - 1;
                 } else
                         irq_counter_--;
         }

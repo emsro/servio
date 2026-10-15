@@ -134,7 +134,7 @@
             "type": "uint32_t",
             "default": 2048,
             "unit": "",
-            "desc": "Number of pulses per revolution of the quadrature encoder"
+            "desc": "Counts per revolution of the quadrature encoder, four per encoder pulse"
         }
     ]
 }

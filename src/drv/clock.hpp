@@ -37,7 +37,7 @@ public:
                         us = __HAL_TIM_GET_COUNTER( &tim_ );
                 } while ( ic != irq_count_ || ( us & uif_mask ) != 0 );
 
-                uint64_t val = ic * tim_.Init.Period + us;
+                uint64_t val = ic * ( tim_.Init.Period + 1 ) + us;
                 return microseconds{ val };
         }
 
