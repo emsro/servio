@@ -84,7 +84,7 @@
             "id": 11,
             "name": "vel_to_curr_lim_scale",
             "type": "float",
-            "default": "0.1F",
+            "default": "10.0F",
             "unit": "",
             "desc": "Scale factor for velocity to current limit conversion"
         },

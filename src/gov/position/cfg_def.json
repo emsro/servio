@@ -68,7 +68,7 @@
             "id": 9,
             "name": "pos_lim_min",
             "type": "float",
-            "default": "-2.0F",
+            "default": "0.0F",
             "unit": "",
             "desc": "Soft limit for lowest position"
         },
@@ -76,7 +76,7 @@
             "id": 10,
             "name": "pos_lim_max",
             "type": "float",
-            "default": "2.0F",
+            "default": "2*pi",
             "unit": "",
             "desc": "Soft limit for highest position"
         },
@@ -84,7 +84,7 @@
             "id": 11,
             "name": "pos_to_curr_lim_scale",
             "type": "float",
-            "default": "0.1F",
+            "default": "10.0F",
             "unit": "",
             "desc": "Scale factor for position to current limit conversion"
         },

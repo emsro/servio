@@ -246,7 +246,7 @@ struct map
         // Soft limit for highest velocity
         float vel_lim_max = 2.0F;
         // Scale factor for velocity to current limit conversion
-        float vel_to_curr_lim_scale = 0.1F;
+        float vel_to_curr_lim_scale = 10.0F;
         // Soft limit for lowest current
         float curr_lim_min = -2.0F;
         // Soft limit for highest current

@@ -30,15 +30,15 @@ Soft limit for highest current
 ## 6 pos_lim_min
 Soft limit for lowest position
  - _type_: `float`
- - _default_: `-2.0F`
+ - _default_: `0.0F`
 
 ## 7 pos_lim_max
 Soft limit for highest position
  - _type_: `float`
- - _default_: `2.0F`
+ - _default_: `2*pi`
 
 ## 8 pos_to_curr_lim_scale
 Scale factor for position to current limit conversion
  - _type_: `float`
- - _default_: `0.1F`
+ - _default_: `10.0F`
 <!-- GEN END HERE -->

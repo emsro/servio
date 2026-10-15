@@ -162,11 +162,11 @@ struct map
         // Soft limit for highest current
         float curr_lim_max = 2.0F;
         // Soft limit for lowest position
-        float pos_lim_min = -2.0F;
+        float pos_lim_min = 0.0F;
         // Soft limit for highest position
-        float pos_lim_max = 2.0F;
+        float pos_lim_max = 2 * pi;
         // Scale factor for position to current limit conversion
-        float pos_to_curr_lim_scale = 0.1F;
+        float pos_to_curr_lim_scale = 10.0F;
 
         template < key K >
         constexpr auto& ref_by_key()

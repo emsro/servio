@@ -56,7 +56,7 @@ Soft limit for highest velocity
 ## 11 vel_to_curr_lim_scale
 Scale factor for velocity to current limit conversion
  - _type_: `float`
- - _default_: `0.1F`
+ - _default_: `10.0F`
 
 ## 12 curr_lim_min
 Soft limit for lowest current

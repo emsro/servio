@@ -46,17 +46,17 @@ Rate per second at which the static friction compensation rises while static and
 ## 9 pos_lim_min
 Soft limit for lowest position
  - _type_: `float`
- - _default_: `-2.0F`
+ - _default_: `0.0F`
 
 ## 10 pos_lim_max
 Soft limit for highest position
  - _type_: `float`
- - _default_: `2.0F`
+ - _default_: `2*pi`
 
 ## 11 pos_to_curr_lim_scale
 Scale factor for position to current limit conversion
  - _type_: `float`
- - _default_: `0.1F`
+ - _default_: `10.0F`
 
 ## 12 curr_lim_min
 Soft limit for lowest current
