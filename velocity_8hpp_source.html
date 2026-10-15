@@ -248,7 +248,7 @@ $(document).ready(function(){initNavTree('velocity_8hpp_source.html',''); initRe
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="structservio_1_1gov_1_1vel_1_1__velocity__gov.html#ae7f3bb9231a23849719fe1997ab36f25">  128</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="structservio_1_1gov_1_1vel_1_1__velocity__gov.html#ae7f3bb9231a23849719fe1997ab36f25">pid_t</a>   = em::pid&lt; typename microseconds::rep &gt;;</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a2e8e97ce56880cf657a828fd22a1e71a">  129</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a2e8e97ce56880cf657a828fd22a1e71a">pid_per</a> = microseconds::period;</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="comment">// magical constant to vary P and D coefficients of PID controller according to time units</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="comment">// magical constant to vary I and D coefficients of PID controller according to time units</span></div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="structservio_1_1gov_1_1vel_1_1__velocity__gov.html#ae30353accd232ac0c309d229c9a995c3">  132</a></span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="structservio_1_1gov_1_1vel_1_1__velocity__gov.html#ae30353accd232ac0c309d229c9a995c3">pid_r</a> = <span class="keywordtype">float</span>{ pid_per::den } / <span class="keywordtype">float</span>{ pid_per::num };</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a4ca57849094b286254b448efd7e06ea2">  134</a></span>        <a class="code hl_struct" href="structservio_1_1gov_1_1vel_1_1cfg_1_1map.html">cfg::map</a>                         <a class="code hl_variable" href="structservio_1_1gov_1_1vel_1_1__velocity__gov.html#a4ca57849094b286254b448efd7e06ea2">cfg</a>;</div>
@@ -350,7 +350,7 @@ $(document).ready(function(){initNavTree('velocity_8hpp_source.html',''); initRe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7d62d1059ec54d5dc63de032b83eaa8e.html">gov</a></li><li class="navelem"><a class="el" href="dir_340b49ea9d5b59c4c183ee40d782a23f.html">velocity</a></li><li class="navelem"><a class="el" href="velocity_8hpp.html">velocity.hpp</a></li>
-    <li class="footer">Generated on Thu Oct 15 2026 20:15:20 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Oct 15 2026 20:25:29 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
