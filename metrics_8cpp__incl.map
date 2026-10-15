@@ -1,19 +1,20 @@
 <map id="src/mtr/metrics.cpp" name="src/mtr/metrics.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="307,5,455,31"/>
-<area shape="rect" id="Node000002" href="$metrics_8hpp.html" title=" " alt="" coords="332,79,431,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="384,31,384,65,379,65,379,31"/>
-<area shape="rect" id="Node000003" href="$base_8hpp.html" title=" " alt="" coords="5,152,99,177"/>
-<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="356,33,92,149,90,144,354,28"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="320,225,387,251"/>
-<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="437,28,514,49,555,64,592,81,622,101,641,124,646,137,646,151,642,165,633,179,617,192,594,203,532,219,463,230,401,236,400,231,462,225,531,214,592,198,614,187,629,176,637,162,641,150,640,138,636,127,618,105,589,86,553,69,513,55,436,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="332,106,113,153,112,148,331,101"/>
-<area shape="rect" id="Node000011" href="$posvel__kalman_8hpp.html" title=" " alt="" coords="123,152,279,177"/>
-<area shape="poly" id="edge4_Node000002_Node000011" title=" " alt="" coords="353,107,244,149,242,144,351,102"/>
-<area shape="rect" id="Node000014" href="$static__detector_8hpp.html" title=" " alt="" coords="304,152,459,177"/>
-<area shape="poly" id="edge5_Node000002_Node000014" title=" " alt="" coords="384,104,384,138,379,138,379,104"/>
-<area shape="rect" id="Node000016" title=" " alt="" coords="483,152,539,177"/>
-<area shape="poly" id="edge6_Node000002_Node000016" title=" " alt="" coords="403,102,478,143,476,147,401,106"/>
-<area shape="rect" id="Node000017" title=" " alt="" coords="563,152,618,177"/>
-<area shape="poly" id="edge7_Node000002_Node000017" title=" " alt="" coords="416,101,551,147,549,152,414,107"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="100,174,307,223,306,228,98,180"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="482,5,630,31"/>
+<area shape="rect" id="Node000002" href="$metrics_8hpp.html" title=" " alt="" coords="297,79,396,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="523,33,395,77,393,72,522,28"/>
+<area shape="rect" id="Node000003" href="$base_8hpp.html" title=" " alt="" coords="356,225,449,251"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="560,31,562,59,561,98,552,140,533,179,518,194,501,207,464,225,462,220,498,202,515,190,529,176,547,139,556,98,557,60,555,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="411,299,477,324"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="564,30,579,78,582,107,579,130,559,179,538,212,514,243,469,291,465,287,510,239,534,209,554,176,574,129,576,107,574,79,559,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="297,97,222,101,136,111,60,128,31,140,13,154,8,165,13,176,34,192,67,204,156,222,255,231,343,234,342,239,255,236,155,227,66,210,32,196,9,179,3,165,9,150,29,135,58,123,135,105,222,96,297,91"/>
+<area shape="rect" id="Node000011" href="$posvel__kalman_8hpp.html" title=" " alt="" coords="23,152,179,177"/>
+<area shape="poly" id="edge4_Node000002_Node000011" title=" " alt="" coords="308,107,155,151,153,146,307,101"/>
+<area shape="rect" id="Node000014" href="$static__detector_8hpp.html" title=" " alt="" coords="204,152,359,177"/>
+<area shape="poly" id="edge5_Node000002_Node000014" title=" " alt="" coords="338,106,303,144,299,140,334,103"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="383,152,439,177"/>
+<area shape="poly" id="edge7_Node000002_Node000017" title=" " alt="" coords="359,103,393,140,389,144,355,106"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="463,152,518,177"/>
+<area shape="poly" id="edge8_Node000002_Node000018" title=" " alt="" coords="371,102,456,143,454,148,369,106"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="412,250,433,285,428,288,407,252"/>
+<area shape="poly" id="edge6_Node000014_Node000003" title=" " alt="" coords="302,175,373,216,370,221,300,180"/>
 </map>

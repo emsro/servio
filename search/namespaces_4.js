@@ -51,5 +51,6 @@ var searchData=
   ['servio_3a_3asntr_3a_3atests_48',['tests',['../namespaceservio_1_1sntr_1_1tests.html',1,'servio::sntr']]],
   ['servio_3a_3astr_5flib_49',['str_lib',['../namespaceservio_1_1str__lib.html',1,'servio']]],
   ['servio_3a_3astr_5flib_3a_3abits_50',['bits',['../namespaceservio_1_1str__lib_1_1bits.html',1,'servio::str_lib']]],
-  ['std_51',['std',['../namespacestd.html',1,'']]]
+  ['servio_3a_3atests_51',['tests',['../namespaceservio_1_1tests.html',1,'servio']]],
+  ['std_52',['std',['../namespacestd.html',1,'']]]
 ];

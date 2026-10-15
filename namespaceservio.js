@@ -29,6 +29,9 @@ var namespaceservio =
     [ "sim", "namespaceservio_1_1sim.html", "namespaceservio_1_1sim" ],
     [ "sntr", "namespaceservio_1_1sntr.html", "namespaceservio_1_1sntr" ],
     [ "str_lib", "namespaceservio_1_1str__lib.html", "namespaceservio_1_1str__lib" ],
+    [ "tests", "namespaceservio_1_1tests.html", [
+      [ "TEST", "namespaceservio_1_1tests.html#af1a6009bc1818e62fe30f004eea1d1f9", null ]
+    ] ],
     [ "atom_sv_key", "structservio_1_1atom__sv__key.html", "structservio_1_1atom__sv__key" ],
     [ "key_atom_literal", "structservio_1_1key__atom__literal.html", "structservio_1_1key__atom__literal" ],
     [ "leds_vals", "namespaceservio.html#structservio_1_1leds__vals", "namespaceservio_structservio_1_1leds__vals_dup" ],

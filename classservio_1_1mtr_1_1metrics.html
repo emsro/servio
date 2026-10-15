@@ -108,6 +108,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a85079921356db92eb1730d0bfe8dda68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83c4c1efb619f47bb70563fba78634c9" id="r_a83c4c1efb619f47bb70563fba78634c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1mtr_1_1metrics.html#a83c4c1efb619f47bb70563fba78634c9">set_moving_step</a> (float step)</td></tr>
 <tr class="separator:a83c4c1efb619f47bb70563fba78634c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae72431b288305309a731b63cfc8c4871" id="r_ae72431b288305309a731b63cfc8c4871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1mtr_1_1metrics.html#ae72431b288305309a731b63cfc8c4871">set_moving_window</a> (float window)</td></tr>
+<tr class="separator:ae72431b288305309a731b63cfc8c4871"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebdb5e475782f8b4cb326ed55e987d9d" id="r_aebdb5e475782f8b4cb326ed55e987d9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1mtr_1_1metrics.html#aebdb5e475782f8b4cb326ed55e987d9d">position_irq</a> (<a class="el" href="namespaceservio.html#aab8d1fc6dacb69519e755e25ea3392fe">microseconds</a> now, float position)</td></tr>
 <tr class="separator:aebdb5e475782f8b4cb326ed55e987d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ecbdefc8370d0a38f6a7f7ef619bc5b" id="r_a5ecbdefc8370d0a38f6a7f7ef619bc5b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classservio_1_1mtr_1_1metrics.html#a5ecbdefc8370d0a38f6a7f7ef619bc5b">is_moving</a> () const</td></tr>
@@ -268,7 +270,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structservio_1_1mtr_1_1static__detector.html#a3747d808d9165e6de18a06be3ff32676">servio::mtr::static_detector::update()</a>, and <a class="el" href="structservio_1_1mtr_1_1posvel__kalman.html#ac9b1bf4df781b341f465a3951da6e543">servio::mtr::posvel_kalman::update()</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1mtr_1_1static__detector.html#a3907e56d4ff9f5f2c1e76f4757ab7bba">servio::mtr::static_detector::update()</a>, and <a class="el" href="structservio_1_1mtr_1_1posvel__kalman.html#ac9b1bf4df781b341f465a3951da6e543">servio::mtr::posvel_kalman::update()</a>.</p>
 
 </div>
 </div>
@@ -292,6 +294,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae72431b288305309a731b63cfc8c4871" name="ae72431b288305309a731b63cfc8c4871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae72431b288305309a731b63cfc8c4871">&#9670;&#160;</a></span>set_moving_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void servio::mtr::metrics::set_moving_window </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="structservio_1_1mtr_1_1static__detector.html#ae0ff668b754d6e195343ca186bf83d7e">servio::mtr::static_detector::set_window()</a>.</p>
+
+</div>
+</div>
 <a id="a85079921356db92eb1730d0bfe8dda68" name="a85079921356db92eb1730d0bfe8dda68"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85079921356db92eb1730d0bfe8dda68">&#9670;&#160;</a></span>set_position_range()</h2>
 
@@ -308,7 +330,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="structservio_1_1mtr_1_1posvel__kalman.html#a55f74d8a68d2e371a4838e358e3efbc3">servio::mtr::posvel_kalman::set_position_range()</a>.</p>
+<p class="reference">References <a class="el" href="structservio_1_1mtr_1_1posvel__kalman.html#a55f74d8a68d2e371a4838e358e3efbc3">servio::mtr::posvel_kalman::set_position_range()</a>, and <a class="el" href="structservio_1_1mtr_1_1static__detector.html#a4ffb1460c562a02b6369885a767fa597">servio::mtr::static_detector::set_range()</a>.</p>
 
 </div>
 </div>
@@ -322,7 +344,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1mtr.html">mtr</a></li><li class="navelem"><a class="el" href="classservio_1_1mtr_1_1metrics.html">metrics</a></li>
-    <li class="footer">Generated on Mon Oct 12 2026 05:55:29 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Oct 15 2026 19:20:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

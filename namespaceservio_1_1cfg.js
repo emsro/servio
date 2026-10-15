@@ -18,6 +18,7 @@ var namespaceservio_1_1cfg =
     [ "key_trait< key::minimum_voltage >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1minimum__voltage_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1minimum__voltage_01_4_dup" ],
     [ "key_trait< key::model >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1model_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1model_01_4_dup" ],
     [ "key_trait< key::moving_detection_step >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1moving__detection__step_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1moving__detection__step_01_4_dup" ],
+    [ "key_trait< key::moving_detection_window >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1moving__detection__window_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1moving__detection__window_01_4_dup" ],
     [ "key_trait< key::position_high_angle >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__high__angle_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1position__high__angle_01_4_dup" ],
     [ "key_trait< key::position_low_angle >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1position__low__angle_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1position__low__angle_01_4_dup" ],
     [ "key_trait< key::quad_encoder_range >", "namespaceservio_1_1cfg.html#structservio_1_1cfg_1_1key__trait_3_01key_1_1quad__encoder__range_01_4", "namespaceservio_1_1cfg_structservio_1_1cfg_1_1key__trait_3_01key_1_1quad__encoder__range_01_4_dup" ],
@@ -52,6 +53,7 @@ var namespaceservio_1_1cfg =
       [ "minimum_voltage", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a21b6369c006cbd75d5205c4cf174c913", null ],
       [ "maximum_temperature", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aad42c6ceec9c979572dfdac1898051c9", null ],
       [ "moving_detection_step", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a6205b4ef989f8fa005cf3d6a4445afdb", null ],
+      [ "moving_detection_window", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3a51e190a67e028138b90a621b1f598af7", null ],
       [ "quad_encoder_range", "namespaceservio_1_1cfg.html#a17a7e0a2edf8384906b0f662d462cfd3aaeb502298cfe5db090df0fa7e74441ed", null ]
     ] ],
     [ "calculate_current_conversion", "namespaceservio_1_1cfg.html#a80a4e62e0bd44de593e5680623556811", null ],
