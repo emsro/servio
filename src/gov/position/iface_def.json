@@ -9,7 +9,7 @@
                 {
                     "name": "goal",
                     "type": "float",
-                    "desc": "Goal position"
+                    "desc": "Goal position in rad"
                 }
             ]
         }

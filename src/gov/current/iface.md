@@ -6,5 +6,5 @@ Commands
 
 Set goal current for the servomotor
 
-- _goal_: Goal current
+- _goal_: Goal current in A
   - type: _float_

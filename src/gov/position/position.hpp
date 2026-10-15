@@ -127,7 +127,7 @@ struct _position_gov final : governor, handle
         using pid     = em::pid< typename microseconds::rep >;
         using pid_per = microseconds::period;
 
-        // magical constant to vary P and D coefficients of PID controller according to time units
+        // magical constant to vary I and D coefficients of PID controller according to time units
         static constexpr auto pid_r = float{ pid_per::den } / float{ pid_per::num };
 
         cfg::map                         cfg;

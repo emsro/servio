@@ -47,7 +47,7 @@ struct detailed_adc_channel
 
         [[gnu::flatten]] void period_stop( ADC_HandleTypeDef& h )
         {
-                // XXX well it is not really obvious why /2 is necessary here
+                // the DMA counter counts the remaining bytes, two per sample
                 used = N - __HAL_DMA_GET_COUNTER( h.DMA_Handle ) / 2;
                 if ( HAL_ADC_Stop_DMA( &h ) != HAL_OK )
                         sentry_.set_inoperable( ADC_POOLER_DSTOP_ERR, "hal dstop err", ID );

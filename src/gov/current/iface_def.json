@@ -9,7 +9,7 @@
                 {
                     "name": "goal",
                     "type": "float",
-                    "desc": "Goal current"
+                    "desc": "Goal current in A"
                 }
             ]
         }

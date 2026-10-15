@@ -31,7 +31,7 @@ Sources:
 | Ohm's law | $V = IR$||
 | Torque to current | $\tau = I_a K_T$ | $I_a$ is armature current
 | Motor constant | $K_m = \frac{\tau}{\sqrt{P}} = \frac{K_T I}{\sqrt{P}} = \frac{K_T I}{\sqrt{I^2 R}} = \frac{K_T}{\sqrt{R}}$ | $P$ is resistive power loss
-| Back EMF | $V_{emf} = K_v \omega$ |
+| Back EMF | $V_{emf} = \frac{\omega}{K_v}$ |
 | Motor velocity constant | $K_v = \frac{\omega_n}{V_{peak}} $ | Note the velocity without load
 | Torque to force | $\tau = r F$ | $r$ is radius and $F$ is force
 | Rot. equivalent of 2. Newton's law | $\tau = J \alpha$

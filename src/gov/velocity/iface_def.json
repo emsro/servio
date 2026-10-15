@@ -9,7 +9,7 @@
                 {
                     "name": "goal",
                     "type": "float",
-                    "desc": "Goal velocity"
+                    "desc": "Goal velocity in rad/s"
                 }
             ]
         }

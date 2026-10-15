@@ -6,5 +6,5 @@ Commands
 
 Set position of the servomotor
 
-- _goal_: Goal position
+- _goal_: Goal position in rad
   - type: _float_

@@ -278,7 +278,7 @@ drv::hbridge* hbridge_setup()
             .mc1_ch         = TIM_CHANNEL_1,
             .mc1_pin =
                 {
-                    .pin       = GPIO_PIN_6,
+                    .pin       = GPIO_PIN_7,
                     .port      = GPIOB,
                     .mode      = GPIO_MODE_AF_PP,
                     .alternate = GPIO_AF14_TIM1,
@@ -286,7 +286,7 @@ drv::hbridge* hbridge_setup()
             .mc2_ch = TIM_CHANNEL_2,
             .mc2_pin =
                 {
-                    .pin       = GPIO_PIN_7,
+                    .pin       = GPIO_PIN_6,
                     .port      = GPIOB,
                     .mode      = GPIO_MODE_AF_PP,
                     .alternate = GPIO_AF14_TIM1,
@@ -427,7 +427,7 @@ drv::pos_iface* quad_encoder_setup( uint32_t period )
         };
         plt::setup_gpio( ch2 );
 
-        // XXX: technicaly we are missing PA8 - encoder clk - indication of zero
+        // XXX: technicaly we are missing PA2 - encoder index, TIM3_ETR on AF2 - indication of zero
         error_code res = plt::setup_encoder_timer( TIM3_HANDLE, *TIM3, period - 1U );
         if ( res != status::success )
                 return nullptr;
@@ -466,13 +466,13 @@ drv::storage_iface* eeprom_setup()
         __HAL_RCC_GPIOA_CLK_ENABLE();
         __HAL_RCC_I2C2_CLK_ENABLE();
 
-        drv::pin_cfg pwr{
+        drv::pin_cfg wp{
             .pin  = GPIO_PIN_15,
             .port = GPIOA,
             .mode = GPIO_MODE_OUTPUT_PP,
         };
-        plt::setup_gpio( pwr );
-        HAL_GPIO_WritePin( pwr.port, pwr.pin, GPIO_PIN_RESET );
+        plt::setup_gpio( wp );
+        HAL_GPIO_WritePin( wp.port, wp.pin, GPIO_PIN_RESET );
 
         plt::i2c_cfg cfg{
             .instance        = I2C2,

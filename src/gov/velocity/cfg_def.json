@@ -5,7 +5,7 @@
             "name": "vel_loop_p",
             "type": "float",
             "default": "1.0F",
-            "unit": "",
+            "unit": "A s/rad",
             "desc": ""
         },
         {
@@ -13,7 +13,7 @@
             "name": "vel_loop_i",
             "type": "float",
             "default": "0.0001F",
-            "unit": "",
+            "unit": "A/rad",
             "desc": ""
         },
         {
@@ -21,7 +21,7 @@
             "name": "vel_loop_d",
             "type": "float",
             "default": "0.0F",
-            "unit": "",
+            "unit": "A s^2/rad",
             "desc": ""
         },
         {
@@ -29,7 +29,7 @@
             "name": "curr_loop_p",
             "type": "float",
             "default": "1.0F",
-            "unit": "",
+            "unit": "1/A",
             "desc": ""
         },
         {
@@ -37,7 +37,7 @@
             "name": "curr_loop_i",
             "type": "float",
             "default": "0.0001F",
-            "unit": "",
+            "unit": "1/(A s)",
             "desc": ""
         },
         {
@@ -45,7 +45,7 @@
             "name": "curr_loop_d",
             "type": "float",
             "default": "0.0F",
-            "unit": "",
+            "unit": "s/A",
             "desc": ""
         },
         {
@@ -69,7 +69,7 @@
             "name": "vel_lim_min",
             "type": "float",
             "default": "-2.0F",
-            "unit": "",
+            "unit": "rad/s",
             "desc": "Soft limit for lowest velocity"
         },
         {
@@ -77,7 +77,7 @@
             "name": "vel_lim_max",
             "type": "float",
             "default": "2.0F",
-            "unit": "",
+            "unit": "rad/s",
             "desc": "Soft limit for highest velocity"
         },
         {
@@ -85,7 +85,7 @@
             "name": "vel_to_curr_lim_scale",
             "type": "float",
             "default": "10.0F",
-            "unit": "",
+            "unit": "A s/rad",
             "desc": "Scale factor for velocity to current limit conversion"
         },
         {
@@ -93,7 +93,7 @@
             "name": "curr_lim_min",
             "type": "float",
             "default": "-2.0F",
-            "unit": "",
+            "unit": "A",
             "desc": "Soft limit for lowest current"
         },
         {
@@ -101,7 +101,7 @@
             "name": "curr_lim_max",
             "type": "float",
             "default": "2.0F",
-            "unit": "",
+            "unit": "A",
             "desc": "Soft limit for highest current"
         }
     ]
