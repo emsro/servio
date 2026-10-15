@@ -1,5 +1,8 @@
 var NAVTREEINDEX17 =
 {
+"structservio_1_1scmdio_1_1serial__stream.html#aa6b00ecd161a0b8800178ee026be3eeb":[18,0,2,16,14,1],
+"structservio_1_1scmdio_1_1servio__exception.html":[17,0,4,17,15],
+"structservio_1_1scmdio_1_1servio__exception.html":[18,0,2,16,15],
 "structservio_1_1scmdio_1_1stream__iface.html":[18,0,2,16,16],
 "structservio_1_1scmdio_1_1stream__iface.html":[17,0,4,17,16],
 "structservio_1_1scmdio_1_1stream__iface.html#a2b87212d9aea3daf2b643f5fb0924c7e":[17,0,4,17,16,4],

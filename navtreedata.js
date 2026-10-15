@@ -220,17 +220,17 @@ var NAVTREEINDEX =
 "md_src_2iface_2iface.html",
 "namespaceservio_1_1cfg.html#a215c26edc6be40e5ceb18f9e75f96e62",
 "namespaceservio_1_1gov_1_1pos_1_1cfg.html#aaa160cd48f4ef9e5aab483168573d96d",
-"namespaceservio_1_1plt.html#a9d808c8e4af01c8ace4848aef68ac0bf",
-"power_8hpp.html",
-"str__lib_8hpp.html#adb8a5deec2c1fad6596bfa40151541ee",
-"structservio_1_1core_1_1core.html#a5dea352454d7a5a598e0448249729db8",
-"structservio_1_1drv_1_1detailed__cb.html#afda7ab97f6620810cb8f3165831d9fd5",
-"structservio_1_1drv_1_1tests_1_1pwm__motor__test.html#a684887cd2e4de9a66cf70f72d942182b",
-"structservio_1_1ftest_1_1bench_1_1loop__frequency.html#a9a5f757d51ea67d2be5bfde265051234",
-"structservio_1_1gov_1_1gov__fixture.html#ab661e7ea6eed74e20b1ac526ef22dd97",
-"structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#a0c5250e3f903715a63b8fc5bbff53a8a",
-"structservio_1_1linear__transition__regulator.html#ad5c9e8e422a3e48c6f35bc656ca62311",
-"structservio_1_1scmdio_1_1stream__iface.html"
+"namespaceservio_1_1plt.html#a9b84499420f471615a09ab94300d09e4",
+"power_8cpp.html",
+"str__lib_8hpp.html#aa45a43e85a14382a4f7b45d379c8c07e",
+"structservio_1_1core_1_1core.html",
+"structservio_1_1drv_1_1detailed__cb.html#a133cfe9835ab78ca47ed2fef1116a84c",
+"structservio_1_1drv_1_1tests_1_1pwm__motor__test.html",
+"structservio_1_1ftest_1_1bench_1_1loop__frequency.html",
+"structservio_1_1gov_1_1engage__res.html#ae8298d91dc86efc9a6e1d40e04b38e77",
+"structservio_1_1gov_1_1vel_1_1cfg_1_1map.html#a05aa280cb253417d0e4bc242941a604e",
+"structservio_1_1linear__transition__regulator.html#a9e98e473898b4188b025c012fbc4f718",
+"structservio_1_1scmdio_1_1serial__stream.html#aa6b00ecd161a0b8800178ee026be3eeb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

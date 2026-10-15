@@ -10,7 +10,8 @@ var namespaceservio_1_1gov =
       [ "TEST", "namespaceservio_1_1gov_1_1tests.html#a1be1b0b5e7046ce25919ec85161a56e7", null ],
       [ "TEST", "namespaceservio_1_1gov_1_1tests.html#a43a1bd05917ae45e808426fa078eb2fd", null ],
       [ "TEST", "namespaceservio_1_1gov_1_1tests.html#a54c64963092504c85a434528f35d18da", null ],
-      [ "TEST", "namespaceservio_1_1gov_1_1tests.html#a50701701ff3bbb78c9fdaa540521cda8", null ]
+      [ "TEST", "namespaceservio_1_1gov_1_1tests.html#a50701701ff3bbb78c9fdaa540521cda8", null ],
+      [ "TEST", "namespaceservio_1_1gov_1_1tests.html#ac6e102395c316eebde1dad482aad2679", null ]
     ] ],
     [ "vel", "namespaceservio_1_1gov_1_1vel.html", "namespaceservio_1_1gov_1_1vel" ],
     [ "auto_factory", "structservio_1_1gov_1_1auto__factory.html", "structservio_1_1gov_1_1auto__factory" ],

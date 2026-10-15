@@ -153,11 +153,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a02f7bb804f518ce24fb48edad710aea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88dc74e7604d17b6cb83e6e2e66f3271" id="r_a88dc74e7604d17b6cb83e6e2e66f3271"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1cfg_1_1map.html#a88dc74e7604d17b6cb83e6e2e66f3271">static_friction_decay</a> = 1.0</td></tr>
 <tr class="separator:a88dc74e7604d17b6cb83e6e2e66f3271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bb07898768786c3cf4d0189995a7cb1" id="r_a9bb07898768786c3cf4d0189995a7cb1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1cfg_1_1map.html#a9bb07898768786c3cf4d0189995a7cb1">pos_lim_min</a> = -2.0F</td></tr>
+<tr class="memitem:a9bb07898768786c3cf4d0189995a7cb1" id="r_a9bb07898768786c3cf4d0189995a7cb1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1cfg_1_1map.html#a9bb07898768786c3cf4d0189995a7cb1">pos_lim_min</a> = 0.0F</td></tr>
 <tr class="separator:a9bb07898768786c3cf4d0189995a7cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3bc92de24628d11175d3bddffe6742d" id="r_ab3bc92de24628d11175d3bddffe6742d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1cfg_1_1map.html#ab3bc92de24628d11175d3bddffe6742d">pos_lim_max</a> = 2.0F</td></tr>
+<tr class="memitem:ab3bc92de24628d11175d3bddffe6742d" id="r_ab3bc92de24628d11175d3bddffe6742d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1cfg_1_1map.html#ab3bc92de24628d11175d3bddffe6742d">pos_lim_max</a> = 2 * <a class="el" href="namespaceservio.html#a20c15193768c59a28a88e172aba5ab20">pi</a></td></tr>
 <tr class="separator:ab3bc92de24628d11175d3bddffe6742d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1df037517d363d17812b7a785671211" id="r_ad1df037517d363d17812b7a785671211"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1cfg_1_1map.html#ad1df037517d363d17812b7a785671211">pos_to_curr_lim_scale</a> = 0.1F</td></tr>
+<tr class="memitem:ad1df037517d363d17812b7a785671211" id="r_ad1df037517d363d17812b7a785671211"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1cfg_1_1map.html#ad1df037517d363d17812b7a785671211">pos_to_curr_lim_scale</a> = 10.0F</td></tr>
 <tr class="separator:ad1df037517d363d17812b7a785671211"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacbfb82baa120b47c7a4109ff02fd275" id="r_aacbfb82baa120b47c7a4109ff02fd275"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structservio_1_1gov_1_1pos_1_1cfg_1_1map.html#aacbfb82baa120b47c7a4109ff02fd275">curr_lim_min</a> = -2.0F</td></tr>
 <tr class="separator:aacbfb82baa120b47c7a4109ff02fd275"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -521,7 +521,7 @@ template&lt;<a class="el" href="namespaceservio_1_1gov_1_1pos_1_1cfg.html#aa80c5
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float servio::gov::pos::cfg::map::pos_lim_max = 2.0F</td>
+          <td class="memname">float servio::gov::pos::cfg::map::pos_lim_max = 2 * <a class="el" href="namespaceservio.html#a20c15193768c59a28a88e172aba5ab20">pi</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -535,7 +535,7 @@ template&lt;<a class="el" href="namespaceservio_1_1gov_1_1pos_1_1cfg.html#aa80c5
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float servio::gov::pos::cfg::map::pos_lim_min = -2.0F</td>
+          <td class="memname">float servio::gov::pos::cfg::map::pos_lim_min = 0.0F</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -591,7 +591,7 @@ template&lt;<a class="el" href="namespaceservio_1_1gov_1_1pos_1_1cfg.html#aa80c5
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float servio::gov::pos::cfg::map::pos_to_curr_lim_scale = 0.1F</td>
+          <td class="memname">float servio::gov::pos::cfg::map::pos_to_curr_lim_scale = 10.0F</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -635,7 +635,7 @@ template&lt;<a class="el" href="namespaceservio_1_1gov_1_1pos_1_1cfg.html#aa80c5
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceservio.html">servio</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1gov.html">gov</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1gov_1_1pos.html">pos</a></li><li class="navelem"><a class="el" href="namespaceservio_1_1gov_1_1pos_1_1cfg.html">cfg</a></li><li class="navelem"><a class="el" href="structservio_1_1gov_1_1pos_1_1cfg_1_1map.html">map</a></li>
-    <li class="footer">Generated on Thu Oct 15 2026 19:20:13 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Oct 15 2026 19:41:36 for servio by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

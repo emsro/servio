@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"namespaceservio_1_1plt.html#a9b84499420f471615a09ab94300d09e4":[19,0,1,15,0,8,3,6],
 "namespaceservio_1_1plt.html#a9d808c8e4af01c8ace4848aef68ac0bf":[17,0,4,16,7],
 "namespaceservio_1_1plt.html#a9dd4647ad22e65f5bed71ae108f45679":[19,0,1,15,0,8,2,4],
 "namespaceservio_1_1plt.html#ab213bda5719bf57b4e2404e4c53e0c48":[19,0,1,15,0,8,3,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "power_2iface_8hpp.html":[19,0,1,9,2,1],
 "power_2iface_8hpp.html#a8c0e88cfefd9efad9c139898f0d610ee":[19,0,1,9,2,1,2],
 "power_2iface_8hpp.html#ad9f1a01c56a6e0c5e7d5d0c8c9af4643":[19,0,1,9,2,1,3],
-"power_2iface_8hpp_source.html":[19,0,1,9,2,1],
-"power_8cpp.html":[19,0,1,9,2,3]
+"power_2iface_8hpp_source.html":[19,0,1,9,2,1]
 };
