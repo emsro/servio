@@ -5,7 +5,7 @@ function(servio_compile_options target)
     PRIVATE -fmacro-prefix-map=${PROJECT_SOURCE_DIR}/=
             -ffile-prefix-map=${PROJECT_SOURCE_DIR}/=
             -Wall
-            # -Werror
+            -Werror
             -Wextra
             -Wpedantic
             -Wunused
