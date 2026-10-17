@@ -498,78 +498,78 @@ struct map
         constexpr vari::vptr< value_type > ref_by_id( uint32_t id )
         {
                 if ( id == 1 )
-                        return &model;
+                        return &this->model;
                 if ( id == 2 )
-                        return &id;
+                        return &this->id;
                 if ( id == 3 )
-                        return &group_id;
+                        return &this->group_id;
                 if ( id == 4 )
-                        return &encoder_mode;
+                        return &this->encoder_mode;
                 if ( id == 11 )
-                        return &position_low_angle;
+                        return &this->position_low_angle;
                 if ( id == 12 )
-                        return &position_high_angle;
+                        return &this->position_high_angle;
                 if ( id == 14 )
-                        return &current_conv_scale;
+                        return &this->current_conv_scale;
                 if ( id == 15 )
-                        return &current_conv_offset;
+                        return &this->current_conv_offset;
                 if ( id == 16 )
-                        return &temp_conv_scale;
+                        return &this->temp_conv_scale;
                 if ( id == 17 )
-                        return &temp_conv_offset;
+                        return &this->temp_conv_offset;
                 if ( id == 18 )
-                        return &voltage_conv_scale;
+                        return &this->voltage_conv_scale;
                 if ( id == 19 )
-                        return &invert_hbridge;
+                        return &this->invert_hbridge;
                 if ( id == 62 )
-                        return &minimum_voltage;
+                        return &this->minimum_voltage;
                 if ( id == 65 )
-                        return &maximum_temperature;
+                        return &this->maximum_temperature;
                 if ( id == 66 )
-                        return &moving_detection_step;
+                        return &this->moving_detection_step;
                 if ( id == 67 )
-                        return &moving_detection_window;
+                        return &this->moving_detection_window;
                 if ( id == 80 )
-                        return &quad_encoder_range;
+                        return &this->quad_encoder_range;
                 return {};
         }
 
         constexpr vari::vptr< value_type const > ref_by_id( uint32_t id ) const
         {
                 if ( id == 1 )
-                        return &model;
+                        return &this->model;
                 if ( id == 2 )
-                        return &id;
+                        return &this->id;
                 if ( id == 3 )
-                        return &group_id;
+                        return &this->group_id;
                 if ( id == 4 )
-                        return &encoder_mode;
+                        return &this->encoder_mode;
                 if ( id == 11 )
-                        return &position_low_angle;
+                        return &this->position_low_angle;
                 if ( id == 12 )
-                        return &position_high_angle;
+                        return &this->position_high_angle;
                 if ( id == 14 )
-                        return &current_conv_scale;
+                        return &this->current_conv_scale;
                 if ( id == 15 )
-                        return &current_conv_offset;
+                        return &this->current_conv_offset;
                 if ( id == 16 )
-                        return &temp_conv_scale;
+                        return &this->temp_conv_scale;
                 if ( id == 17 )
-                        return &temp_conv_offset;
+                        return &this->temp_conv_offset;
                 if ( id == 18 )
-                        return &voltage_conv_scale;
+                        return &this->voltage_conv_scale;
                 if ( id == 19 )
-                        return &invert_hbridge;
+                        return &this->invert_hbridge;
                 if ( id == 62 )
-                        return &minimum_voltage;
+                        return &this->minimum_voltage;
                 if ( id == 65 )
-                        return &maximum_temperature;
+                        return &this->maximum_temperature;
                 if ( id == 66 )
-                        return &moving_detection_step;
+                        return &this->moving_detection_step;
                 if ( id == 67 )
-                        return &moving_detection_window;
+                        return &this->moving_detection_window;
                 if ( id == 80 )
-                        return &quad_encoder_range;
+                        return &this->quad_encoder_range;
                 return {};
         }
 

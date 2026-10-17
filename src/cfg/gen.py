@@ -108,7 +108,7 @@ constexpr vari::vptr<value_type {const_modifier}> ref_by_id(uint32_t id) {const_
 """)
         for field in fields:
             fd.write(f"""    if (id == {field['id']})
-        return &{field['name']};
+        return &this->{field['name']};
 """)
         fd.write("    return {};\n}\n")
 
